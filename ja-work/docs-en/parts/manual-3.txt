@@ -1,0 +1,476 @@
+G.                                  ITEMS
+------------------------------------------------------------------------
+
+In the dungeons of Crawl there are many different kinds of normal and
+magical items to be found and used. Some of them are useful, some are
+nasty, and some give great power, but at a price. Some items are unique;
+these have interesting properties which can make your life rather bizarre
+for a while. They all fall into several classes of items, each of which is
+used in a different way. Here is a general list of what you might find in
+the course of your adventures, how they are displayed, and what commands
+there are to use them:
+
+=======  =============  ================================================
+)        weapons        (use 'w'ield)
+(        missiles       (use 'f'ire or 'F'ire, 'Q' to quiver)
+[        armour         (use 'W'ear and 'T'ake off)
+?        scrolls        (use 'r'ead)
+!        potions        (use 'q'uaff)
+/        wands          (use 'V' to evoke, 'Q' to quiver)
+=        rings          (use 'P'ut on and 'R'emove)
+"        amulets        (use 'P'ut on and 'R'emove)
+|        staves         (use 'w'ield)
+:        spellbooks     (use 'M'emorise and 'z'ap, 'Q' to quiver)
+%        talismans      (use 'P'ut on and 'R'remove)
+}        miscellaneous  (use 'V' to evoke, 'Q' to quiver)
+$        gold           (use 'g' to pick up)
+=======  =============  ================================================
+
+There are several general keys for item management:
+
+d
+  drop item; if you want to drop only some items from a stack (of arrows,
+  for example), then press 'd' followed by a number and then the item's
+  slot key
+
+g
+  pick up item from the ground (also with the comma key ',')
+
+=
+  reassign item slot (works also for spell slots and abilities)
+
+i
+  show inventory - pressing the key of an item shows additional information
+
+{
+  inscribe item (see Appendix 5. "Inscriptions")
+
+\
+  check list of already discovered items
+
+Item usage
+========================================
+
+You pick up items with the 'g'et or ',' (comma) command, and drop them with
+the 'd'rop command. When you are given a prompt like "drop which item?", if
+you type a number before the letter of the item, you will drop that
+quantity of the item (similarly when picking up). The same works if you
+want to pick up only part of a stack and there are several types of items
+on the square (so that they are shown in a list). When there is only a
+single stack of arrows and you want to pick up only some of them, use the
+';' command. Note that picking up items from one square takes exactly one
+turn. However, dropping several items at once takes more turns.
+
+Typing 'i' displays your inventory (what you are carrying). When you are
+given a prompt like "Throw [or Wield, Wear, etc] which item?", you usually
+get a list of all available options. You can press '*' in case you want to
+wield something unusual. When the inventory screen shows "-more-", to show
+you that there is another page of items, you can type the letter of the
+item you want, even if it is not visible, instead of pressing Space or
+Enter to see the next page.
+
+You can carry at most 52 items at once, and your item slot usage is printed
+at the top of the inventory screen.
+
+You can use the adjust command (the '=' key) to change the letters to which
+your possessions are assigned. This command can be used to change spell or
+ability letters, too.
+
+Items like scrolls, potions, and some other types each have a
+characteristic, like a label or a colour, which will let you tell them
+apart on the basis of their function. However, these characteristics change
+between each game, so while in one game every potion of curing may be
+yellow, in another game they might all be purple and bubbly. Once you have
+discovered the function of such an item, you will remember it for the rest
+of the current game. You can access your item discoveries with the '\' key.
+
+In order to get a description of what an item does, bring up the inventory
+(with 'i') and press the letter of that item. Try this when comparing
+different types of armours and weapons, but don't expect too much
+information from examining unidentified items.
+
+In most equipment-related prompts and menus, the ';' key is a shortcut for
+"last unequipped item," meaning the armour, jewellery or weapon you most
+recently took off or unwielded.
+
+Another useful command is the '{' key, which lets you inscribe items with a
+comment. You can also inscribe items when looking at your inventory with
+'i', simply by pressing the letter of an item. For more details, and how to
+automate this process, check Appendix 5. "Inscriptions".
+
+) Weapons
+========================================
+
+These are rather important. You will find a variety of weapons in the
+dungeon, ranging from small and quick daggers to huge, cumbersome
+battleaxes and polearms. Each type of weapon does a different amount of
+damage, has a different chance of hitting its target, and takes a different
+amount of time to swing. There are several weapon skills (press 'm' to show
+a list of those that you are training) like Short Blades, Long Blades,
+Axes, etc. These skills affect damage, accuracy, and speed (up to a point).
+The same goes for Unarmed Combat.
+
+Weapons can be enchanted; when you first identify them, you reveal values
+which tell you how much more effective they are than an unenchanted
+version. Weapons which are not enchanted are simply '+0'. Some weapons also
+have special magical effects which make them very effective against
+vulnerable enemies.
+
+You can wield weapons with the 'w' command, which is a very quick action.
+If for some reason you want to go bare-handed, type 'w' followed by a
+hyphen ('-').
+
+The ' (apostrophe) key is a shortcut which automatically wields the item in
+slot a. If item a is being wielded, ' causes you to wield item b instead,
+if possible. Try assigning the letter a to your primary weapon, and b to
+your bow or something else you need to wield only sometimes. Note that this
+is just a typing shortcut and is not functionally different to wielding
+these items normally.
+
+( Missiles
+========================================
+
+If monsters are disobligingly distant, you can use missiles to weaken (or
+kill!) them from afar. You'll find a variety of type, ranging from simple
+stones and piercing javelins to sophisticated darts covered in many types
+of poisons. Upon impact, missiles may become destroyed. The chance for this
+to occur depends on the type of missile.
+
+The 'F' and 'f' commands can be used to throw a missile. The default type
+to be thrown (which 'f' will launch) is shown in the "quiver" display below
+your weapon. Many other items, spells, and abilities can fill this quiver
+as well.
+
+See Appendix 5. "Inscriptions" for inscriptions which let you fine-tune the
+list of items to choose from. See also the Missiles section of
+options_guide.txt.
+
+Use the '(', ')' to cycle through your quiver without firing, and 'Q' to
+choose a quivered item from a list. If you would like to choose something
+to fire without inserting it into the quiver, use 'F' instead.
+
+The interface for shooting or throwing things is also used for evoking
+wands and casting certain spells, and is described in detail in section I
+(Targeting).
+
+[ Armour
+========================================
+
+This is also rather important. Most worn armour improves your Armour Class,
+which decreases the amount of damage you take from most types of injury.
+The heavier an armour is, the more AC (armour class) it will provide, at
+the expense of your EV (evasion) and stealth. Wearing heavy armour also
+increases your chances of miscasting spells and slow your attacks with
+missile weapons, effects which are only slightly reduced by your Armour
+skill. These penalties are larger if you have low Strength.
+
+A shield normally increases neither your AC nor your evasion, but it lets
+you attempt to block melee attacks and some ranged attacks aimed at you.
+Wearing a shield (especially larger shields) slows your attacks, hampers
+your ability to cast spells, and lowers your evasion. Weaker characters are
+more affected by these penalties, but all characters can reduce and
+eventually eliminate these penalties by mastering the Shields skill. You
+also obviously cannot wield a two-handed weapon while wearing a shield.
+Shields are limited in how many attacks they can block each turn; larger
+shields can block more.
+
+Some magical armours have special powers. These powers are sometimes
+automatic, affecting you whenever you wear the armour, and sometimes must
+be activated with the 'a' command.
+
+You can wear armour with the 'W' command, and take it off with the 'T'
+command. With '[' you can have a quick look at your current gear.
+
+Most armours can be improved by reading the appropriate scroll. Body armour
+and bardings can be enchanted up to the base value of AC they provide.
+Shields can be enchanted up to +3, +5, or +8, depending on their size.
+Other gear is limited to +2.
+
+? Magical Scrolls
+========================================
+
+Scrolls have many different magical spells inscribed on them, some good and
+some bad. One of the most useful scrolls is the scroll of identify, which
+will tell you the function of any item you have in your inventory; you
+might want to save these up for items that are dangerous or wasteful to use
+when unidentified, such as potions or other scrolls. You can read scrolls
+(and by doing so invoke their magic) with the 'r' command.
+
+! Magical Potions
+========================================
+
+While scrolls tend to affect your equipment or your environment, most
+potions affect your character in some way. The most common type is the
+simple curing potion, which restores some health and cures many ailments,
+but there are many other varieties of potions to be found. Potions can be
+quaffed (drunk) with the 'q' command.
+
+/ Wands
+========================================
+
+Sometimes you will be lucky enough to find a stick which contains stored
+magical energies. Wands each have a certain number of charges, which you
+immediately recognise when you pick them up. When you pick up a wand of
+type you already have in inventory, its charges are absorbed into the
+existing one. When a wand's charges are fully depleted, it vanishes.
+
+Wands are aimed in the same way as missile weapons, and you can release the
+power of a wand by evoking it with 'V'. See section I for targeting.
+
+Wands can be 'Q'uivered in order to shoot via the autofire or 'f'ire
+interface, like spells and ammo.
+
+=" Rings and Amulets
+========================================
+
+Magical rings are among the most useful of the items you will find in the
+dungeon. While equipped, they provide some kind of passive benefit to the
+wearer, such as increasing their attributes or providing various types of
+protection. Use the 'P' command to put on rings, and 'R' to remove them.
+You can wear up to two rings simultaneously, one on each hand; which hand
+you put a ring on is immaterial to its function. If you try to put on a
+ring while both ring fingers are full, you will be asked which one to
+remove. Octopodes are an exception, and may wear up to eight rings on their
+tentacles.
+
+Amulets are similar to rings, but have different range of effects. Amulets
+are worn around the neck, and you can wear only one at a time. It is very
+quick to wear or remove a ring, but amulets' magics make them cumbersome to
+put on or take off.
+
+You can press '"' to quickly check what jewellery you're wearing.
+
+| Staves
+========================================
+
+There are a number of types of magical staves, each attuned to a different
+class of spells. While wielded they greatly increase the power of that
+class of spells. They can even be used in melee combat, although with
+mediocre effectiveness unless you can harness their special power, using a
+combination of the Evocations skill and the skill specific to the staff's
+type.
+
+: Books
+========================================
+
+Most books contain magical spells which your character may be able to
+learn. Upon picking up a book, all of the spells in it will be added to
+your spell library, allowing you to access a description of each spell or
+memorise spells from it with the 'M' command.
+
+Occasionally you will find manuals of some skill. When you pick one up,
+your experience will have twice the usual effect when used for training
+that skill. Once a certain amount of bonus experience has been gained in
+this way, you will automatically discard the finished manual.
+
+% Talismans
+========================================
+
+Talismans allow their user to shift into a different form. Entering or
+leaving a form with a talisman requires a brief period of concentration,
+but otherwise, forms last until the user chooses to leave them.
+
+Most talismans require some amount of Shapeshifting skill, without which a
+user will find their maximum health reduced until they leave the form.
+Shapeshifting skill also increases other benefits provided by talismans'
+forms, though weaker talismans have a limit to how helpful skill can be.
+
+{ Miscellaneous
+========================================
+
+These are items which don't fall into any other category. They can be
+evoked with 'V', just like wands. Runes, a particular item in this
+category, have no function whatsoever except to open the endgame. You must
+collect at least three in order to enter the Realm of Zot. Some
+particularly cocky adventurers brag about having retrieved ten or even
+fifteen runes through their strength and cunning, but most scholars on the
+subject of Zot agree that such a thing is probably impossible in the first
+place, and secondly would be a meaningless achievement in any regard.
+
+Miscellany can often be 'Q'uivered in order to shoot via the autofire or
+'f'ire interface, like spells and ammo.
+
+$ Gold and Gems
+========================================
+
+Gold can be used to buy items should you run across shops. There are also a
+few more esoteric uses for gold.
+
+Gems are extremely rare items found at the end of many dungeon branches.
+They are completely useless within the dungeon, and only a particularly
+cocky adventurer would set out to retrieve even one to the outside world.
+Zot hoards these gems jealously, and will spitefully smash them soon after
+an adventurer enters the branch of the dungeon in which they rest.
+
+Still, a very quick-moving adventurer might seize a gem first and keep its
+precious shards. Zot cannot track gems outside their home branches, so with
+truly astonishing speed, it might even be possible to abscond with one
+still intact... but such a feat is difficult to credit, and likely
+pointless besides.
+
+Once the Orb of Zot is taken, Zot will be unable to smash any gems.
+
+Artefacts
+========================================
+
+Weapons, armour, jewellery and spellbooks can be artefacts. These come in
+two flavours: randomly created artefacts ('randarts') and predefined ones
+('unrandarts'). Randarts will always carry unusual names, such as "golden
+double sword" or "shimmering scale mail". Artefacts cannot be modified in
+any way, including enchantments.
+
+Apart from that, otherwise mundane items can get one special property.
+These are called 'ego items', and examples are: boots of flight, a weapon
+of flaming, a helmet of see invisible, and so on. Note that, unlike
+artefacts, such items can be modified by enchanting scrolls.
+
+All ego items are noted with special adjectives but not all items noted in
+this way need have a special property (they often have some positive
+enchantment, instead):
+
+:general: glowing, runed;
+:metal armours: shiny;
+:leather armours: dyed;
+:other armours: embroidered.
+
+------------------------------------------------------------------------
+H.                              SPELLCASTING
+------------------------------------------------------------------------
+
+Magical spells are a very important part of surviving in the dungeon. Every
+character can make use of magical spells.
+
+There are many skills related to magic, the principal one being
+Spellcasting. Spellcasting determines the number of Magic Points available;
+it also helps to cast any spell, though less so than schools associated
+with a spell. Next, there are several general magical schools (Conjuration,
+Hexes, Summoning, Necromancy, Forgecraft, Translocation and Alchemy) as
+well as several elemental schools (Fire, Ice, Air and Earth). A particular
+spell can belong to up to three schools. Being skilled in a spell's schools
+improves the casting chance and the power of that spell.
+
+Spells are stored in books, which you will occasionally find in the
+dungeon. Once you have picked up a book and added its contents to your
+spell library, you can memorise a spell using the 'M' command.
+
+In addition to picking up new spells, your character may also wish to get
+rid of old ones by reading a scroll of amnesia, which will let you pick a
+spell to forget.
+
+Each spell has a level. A spell's level denotes the amount of skill
+required to use it, the MP cost of casting it, and indicates how powerful
+it may be. You can only memorise a certain number of levels of spells; type
+'M' to find out how many. When you gain experience levels or advance the
+Spellcasting skill, your maximum increases; you will need to save up for
+several levels to memorise the more powerful spells.
+
+There are two ways to activate memorised spells: by "quivering" them and
+using the fire interface, or directly by pressing 'z' (for Zap). To choose
+a spell for the quiver, use 'Q', or '(' and ')' to cycle among possible
+actions. Press 'f' to enter the targeting interface, or shift-tab / 'p' to
+autofire a quivered spell at the nearest monster.
+
+Use 'I' to display a list of all memorised spells without actually casting
+one. The spells available are labelled with letters; you are free to change
+this labelling with the '=' command. You can assign both lowercase and
+uppercase letters to spells. Some spells, for example most damage dealing
+ones, require a target. See the next section for details on how to target.
+
+Most spells have caps on their effects: no matter how intelligent and
+proficient you are, there is a limit to the damage you can achieve with a
+Magic Dart. In general, it is a good idea to look at the output of the 'I'
+and 'II' screens to get a picture on your casting abilities. This is
+especially useful if you're about to change armour or rings.
+
+High level spells are difficult to cast, and you may miscast them every
+once in a while (resulting in a waste of magic and possibly dangerous
+side-effects). Your chance of failing to cast a spell properly depends on
+your skills, your intelligence, the level of the spell and whether you are
+wearing heavy armour. The chance of miscasting a spell is displayed on the
+spell screen, and coloured based on severity (yellow for moderate damage,
+light red for major damage, red for extreme damage, and magenta for
+potentially lethal damage).
+
+Be careful of magic-using enemies! Some of them can use magic just as well
+as you, if not better, and often use it intelligently.
+
+------------------------------------------------------------------------
+I.                                TARGETING
+------------------------------------------------------------------------
+
+When throwing or firing something, evoking wands, or casting certain
+spells, you are asked for a direction. There are several ways to tell Crawl
+which monster to target.
+
+You can press '?' when asked for a direction; this will bring up a help
+screen. Otherwise, you use the following commands:
+
+- The cursor will target on the monster which is closest to your position.
+  Should you have been firing at something previously, with the offender
+  still being in sight, the cursor will instead rest on the previous
+  target.
+- Pressing '+' or '=' moves the cursor to the next monster, going from
+nearer to
+  further away. Similarly, '-' cycles backwards.
+- Any direction key moves the cursor by one square. Occasionally, it can be
+  useful to target non-inhabited squares.
+- Targets can be selected from a list by pressing 'Ctrl-X'.
+- When you are content with your choice of target, press one key of Enter,
+Del,
+  or Space to fire at the target. If you press '.', you also fire, but the
+  spell/missile will stop at the target's square if it misses. This can be
+  useful to keep friendlies out of the fire, or to make sure your precious
+  missiles won't end up in deep water.
+- You can press Escape if you changed your mind - no turns are deducted.
+
+There are some shortcuts while targeting:
+
+- Typing Shift-direction on your keypad fires straight away in that
+direction. - Pressing 'p' or 'f' fires at the previous target (if it is
+still alive and in
+  sight). Due to this, most hunters can go a long way by pressing 'vf' to
+  fire their ammunition at a monster and then keep firing at it with
+  further 'vf' strokes. At times, it will be useful to switch targets with
+  the '+' or '-' commands, though.
+
+If you target yourself while firing something harmful (which can be
+sensible at times), you will be asked for confirmation.
+
+Finally, the ':' key allows you to hide the path of your
+spell/wand/missile.
+
+------------------------------------------------------------------------
+J.                                RELIGION
+------------------------------------------------------------------------
+
+There are a number of gods, demons and other assorted powers who will
+accept your character's worship, and sometimes give out favours in
+exchange. You can use the '^' command to check the requirements of whoever
+it is that you worship, and if you find religion to be an inconvenience you
+can always renounce your faith (use the 'a' command - but most gods resent
+being scorned). Further details can be seen with '!' while in the '^'
+screen.
+
+To use any powers which your god deems you fit for, access the abilities
+menu via the 'a' command; god-given abilities are listed as invocations.
+Many god abilities can be 'Q'uivered in order to trigger via the 'f'ire or
+autofire interface.
+
+Depending on background, some characters start out religious; others have
+to pray at an altar to dedicate themselves to a life of servitude. There
+are altars scattered all over the dungeon, and there are rumours of a
+special temple somewhere near the surface.
+
+At an altar, you can enter a god's service by pressing < or >. You'll first
+be given a description of the god, and then be asked if you really want to
+join. To see a list of the standard gods and which of their altars you've
+seen in your current game, press 'Ctrl-O'. You can also learn about all
+gods by pressing '?/G'.
+
+Note that some gods are picky about who can enter their service; for
+example, good gods will not accept demonic or undead devotees.
+
+If you would like to start the game with a religion, choose your background
+from Berserker, Chaos Knight, or Cinder Acolyte.
+
+------------------------------------------------------------------------

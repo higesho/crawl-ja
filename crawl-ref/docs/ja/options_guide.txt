@@ -1,0 +1,3209 @@
+Crawl のオプションの説明
+========================
+
+この文書では、Dungeon Crawl Stone Soup の最新版にあるすべてのオプションを説明す
+る。行き詰まったときや、うまく動かないように見えるところがあるときは、
+http://crawl.develz.org/ に挙げられているコミュニティの交流の場のどれかで助けを
+求めるとよい。
+
+この文書の内容は次のとおり:
+
+0-  一般事項
+0-a     標準のオプションファイルと追加のオプションファイル
+0-b     コマンドラインでのオプション
+0-c     オプションとその設定のしかた
+0-d     リスト型のオプション
+0-e     別名と変数
+1-  開始画面
+                name, type, remember_name, weapon, species, background, combo,
+                restart_after_game, restart_after_save, newgame_after_quit,
+                name_bypasses_menu, default_manual_training,
+                autopickup_starting_ammo, game_seed, pregen_dungeon,
+                suppress_startup_errors, map, fully_random, arena_teams
+2-  ファイルシステムと音
+                crawl_dir, morgue_dir, save_dir, macro_dir, sound, hold_sound,
+                sound_file_path, one_SDL_sound_channel
+3-  インターフェース
+3-a     拾う・置く
+                autopickup, autopickup_exceptions, default_autopickup,
+                pickup_thrown, assign_item_slot, pickup_menu_limit,
+                drop_filter, drop_disables_autopickup
+3-b     受動的な発見(感知したもの・記憶しているもの)
+                detected_monster_colour, detected_item_colour,
+                remembered_monster_colour
+3-c     ダンジョン画面でのアイテムとモンスターの強調表示
+                friend_highlight, neutral_highlight, unusual_highlight,
+                stab_highlight, may_stab_highlight, heap_highlight,
+                feature_item_highlight, trap_item_highlight
+3-d     階のマップの機能
+                level_map_cursor_step
+3-e     表示範囲(ビューポート)のオプション
+                view_max_width, view_max_height, view_lock_x,
+                view_lock_y, view_lock, centre_on_scroll,
+                symmetric_scroll, scroll_margin_x, scroll_margin_y,
+                scroll_margin, always_show_exclusions
+3-f     自動移動と自動探索
+                travel_delay, explore_delay, rest_delay, travel_avoid_terrain,
+                explore_greedy, explore_greedy_visit, explore_item_greed,
+                explore_stop, explore_stop_pickup_ignore, explore_wall_bias,
+                travel_key_stop, travel_one_unsafe_move, tc_reachable,
+                tc_dangerous, tc_disconnected, tc_excluded, tc_exclude_circle,
+                tc_forbidden, runrest_ignore_message, runrest_stop_message,
+                interrupt_<delay>, delay_safe_poison, runrest_ignore_monster,
+                rest_wait_both, rest_wait_ancestor, rest_wait_percent,
+                explore_auto_rest, explore_auto_rest_status,
+                auto_exclude, travel_open_doors
+3-g     コマンドの便利機能
+                auto_switch, easy_unequip, equip_unequip, jewellery_prompt,
+                easy_confirm, simple_targeting, force_spell_targeter,
+                force_ability_targeter, force_scroll_targeter,
+                show_invis_targeter allow_self_target, ability_menu,
+                spell_menu,
+                easy_floor_use, sort_menus, spell_slot, gear_slot,
+                consumable_shortcut, ability_slot, autofight_stop,
+                autofight_warning, autofight_fires, autofight_nomove_fires,
+                autofight_fire_stop, autofight_caught, autofight_wait,
+                autofight_prompt_range, automagic_enable, automagic_slot,
+                automagic_fight, automagic_stop, fail_severity_to_confirm,
+                easy_door, warn_hatches, enable_recast_spell, confirm_action,
+                regex_search, autopickup_search, bad_item_prompt,
+                auto_hide_spells, menu_arrow_control, single_column_item_menus,
+                show_paged_inventory
+3-h     メッセージと表示の改善
+                hp_warning, mp_warning, hp_colour, mp_colour, stat_colour,
+                status_caption_colour, enemy_hp_colour, clear_messages,
+                show_more, small_more, show_newturn_mark, show_game_time,
+                equip_bar, animate_equip_bar, item_stack_summary_minimum,
+                mlist_min_height, mlist_allow_alternative_layout,
+                monster_item_view_coordinates, monster_item_view_features,
+                msg_min_height, msg_max_height, msg_webtiles_height,
+                messages_at_top, msg_condense_repeats, msg_condense_short,
+                show_travel_trail, skill_focus, default_show_all_skills,
+                monster_list_colour, view_delay, reduce_animations,
+                use_animations, unusual_monster_items, darken_beyond_range,
+                show_blood, food_snacking_frequency, fountain_line_frequency,
+                force_more_message, flash_screen_message, monster_alert,
+                cloud_status, always_show_zot, always_show_gems, more_gem_info,
+                action_panel, action_panel_filter,
+                action_panel_show_unidentified, _panel_scale,
+                action_panel_orientation, action_panel_font_family,
+                action_panel_font_size, show_resist_percent
+3-i     色(メッセージとメニュー)
+                menu_colour, message_colour
+3-j     準備、射撃、矢弾
+                fire_items_start, fire_order, fire_order_spell,
+                fire_order_ability, fail_severity_to_quiver,
+                quiver_menu_focus
+3-k     メッセージチャンネル
+                plain, prompt, god, duration, danger, warning, recovery,
+                talk, talk_visual, timed_portal, sound, intrinsic_gain,
+                mutation, monster_spell, monster_enchant, monster_warning,
+                friend_spell, friend_enchant, friend_action, monster_damage,
+                monster_target, banishment, equipment, floor, multiturn,
+                examine, examine_filter, diagnostic, error, tutorial, orb,
+                hell_effect, dgl_message
+3-l     銘(インスクリプション)
+                autoinscribe, show_god_gift
+3-m     マクロ関係のオプション
+                flush.failure, flush.command, flush.message,
+                additional_macro_file, bindkey
+3-n     タイル版のオプション
+                tile_show_items, tile_skip_title, tile_menu_icons,
+                tile_player_col, tile_monster_col, tile_neutral_col,
+                tile_peaceful_col, tile_friendly_col, tile_plant_col,
+                tile_item_col, tile_unseen_col, tile_floor_col, tile_wall_col,
+                tile_mapped_floor_col, tile_mapped_wall_col,
+                tile_explore_horizon_col, tile_door_col, tile_downstairs_col,
+                tile_upstairs_col, tile_branchstairs_col, tile_portal_col,
+                tile_transporter_col, tile_transporter_landing_col,
+                tile_feature_col, tile_trap_col, tile_water_col,
+                tile_deep_water_col, tile_lava_col, tile_excluded_col,
+                tile_excl_centre_col, tile_window_col, tile_update_rate,
+                tile_runrest_rate, tile_key_repeat_delay, tile_tooltip_ms,
+                tile_tag_pref, tile_window_width, tile_window_height,
+                tile_window_ratio, tile_window_limit_size, game_scale,
+                tile_map_pixels, tile_viewport_scale, tile_map_scale,
+                tile_cell_pixels, tile_sidebar_pixels, tile_filter_scaling,
+                tile_force_overlay, tile_overlay_col,
+                tile_min_stat_width_characters, tile_overlay_alpha_percent,
+                tile_full_screen, tile_use_small_layout, tile_font_crt_file,
+                tile_font_stat_file, tile_font_msg_file, tile_font_tip_file,
+                tile_font_lbl_file, tile_font_crt_family,
+                tile_font_stat_family, tile_font_msg_family,
+                tile_font_lbl_family, tile_font_crt_size, tile_font_stat_size,
+                tile_font_msg_size, tile_font_tip_size, tile_font_lbl_size,
+                tile_font_ft_light, glyph_mode_font, glyph_mode_font_size,
+                tile_show_minihealthbar, tile_show_minimagicbar,
+                tile_show_demon_tier, tile_water_anim, tile_misc_anim,
+                tile_realtime_anim, tile_show_player_species,
+                tile_player_status_icons, tile_show_threat_levels,
+                tile_layout_priority, tile_display_mode,
+                tile_level_map_hide_messages, tile_level_map_hide_sidebar,
+                tile_player_tile, tile_weapon_offsets, tile_shield_offsets,
+                tile_grinch, tile_web_mouse_control,
+                tile_web_mobile_input_helper
+4-  キャラクターダンプ
+4-a     保存
+                dump_on_save
+4-b     アイテムと撃破
+                kill_map, dump_kill_places, dump_item_origins,
+                dump_item_origin_price, dump_message_count, dump_order,
+                dump_kill_breakdowns
+4-c     ノート
+                user_note_prefix, note_items, note_monsters, note_hp_percent,
+                note_skill_levels, note_all_skill_levels, note_skill_max,
+                note_xom_effects, note_messages, note_chat_messages,
+                note_dgl_messages
+5-  その他
+5-a     すべての OS
+                mouse_input, wiz_mode, explore_mode, char_set, colour,
+                display_char, feature, mon_glyph, item_glyph,
+                use_fake_player_cursor, show_player_species,
+                use_modifier_prefix_keys, language, fake_lang, messaging
+                read_persist_options
+
+5-b     Windows
+                dos_use_background_intensity
+5-c     Unix
+                blink_brightens_background, bold_brightens_foreground,
+                best_effort_brighten_background,
+                best_effort_brighten_foreground, allow_extended_colours,
+                background_colour, foreground_colour,
+                use_default_terminal_colours, use_fake_cursor
+
+6-  Lua
+                lua_max_memory
+6-a     Lua ファイルの読み込み
+6-b     Lua をその場で実行する
+6-c     条件付きのオプション
+6-d     条件付きのオプションの注意点
+
+7-  目の不自由なプレイヤー向けの推奨オプション
+
+------------------------------------------------------------------------
+
+0-  オプションの一般事項
+========================
+
+オプションを初期設定から変える標準のやり方は、オプションファイルに手で書いて設
+定することだ。詳しくは下の (0-a) と (0-c) を参照。少数のオプションは、関係する
+ゲーム内の画面での現在の値が自動的に保存される。こうしたオプションは説明に
+"(persistent)"(保存される)と記してあり、オプションファイルに手で設定すればそち
+らが優先される。
+
+0-a     標準のオプションファイルと追加のオプションファイル
+----------------------------------------------------------
+
+オンラインでプレイする場合は、WebTiles のゲーム選択画面で "edit rc" を選ぶか、
+ssh から rc ファイルのエディタに入る。
+
+オフラインでプレイする場合、Crawl は次の一覧のうち最初に見つかったファイルをオ
+プションファイルとして使う:
+
+* settings/init.txt
+* init.txt (Crawl のディレクトリにあるもの)
+* .crawlrc (Unix のホームディレクトリにあるもの)
+
+または、コマンドラインオプション
+    -rc <file>
+を使うと、Crawl にちょうどそのファイルを使わせることができる。
+
+開始画面には、Crawl がどの init ファイルを使っているか(使っていれば)が表示され
+る。Crawl のディレクトリの場所はシステムによって異なる。
+
+オプションファイルの中には、次のようにしてほかのファイルを取り込むことができる:
+    include = <file>
+取り込んだファイルは、その内容をそのままオプションファイルに書いた場合と同じに
+扱われる。初期設定では、Crawl はこうして取り込むファイルをすべて settings/ ディ
+レクトリから探すが、コマンドラインオプション
+    -rcdir <dir>
+で特定のフォルダを指定することもできる。
+
+外部のオプションファイルにはいくつかの使い道がある。Crawl の全体的な見た目(メッ
+セージの色付けや非表示、持ち物一覧の表示形式)を手早く変えられる。もっと凝ったオ
+プションの仕掛け(たいてい Lua を含む)も、この方法で手軽に隠しておける。さらに、
+settings/ ディレクトリにはほかにもいくつかのオプションファイルがあり、一部のオ
+プションやモンスターの表示文字を旧バージョンの初期設定に戻せる。詳しくは標準の
+init.txt の冒頭を参照。
+
+次のファイルは手軽に使えるように Crawl に同梱されており、特に準備しなくても取り
+込める:
+
+* advanced_optioneering.txt
+* dvorak_command_keys.txt
+* colemak_command_keys.txt
+* neo_command_keys.txt
+* no_vi_command_keys.txt
+* safe_move_shift.txt
+
+0-b     コマンドラインでのオプション
+------------------------------------
+
+別のオプションファイルに切り替えずにオプションを少しだけ変える手軽な方法は、コ
+マンドラインオプション -extra-opt-first か -extra-opt-last を使うことだ。指定し
+たオプションが、それぞれオプションファイルの先頭か末尾に書いてあるのと同じ扱い
+になる。例えば、
+
+    -extra-opt-last wiz_mode=yes
+
+とすると、新しいゲームはすべてウィザードモードで始まる。-extra-opt-first と
+-extra-opt-last は、同じコマンドラインで何度でも使える。
+
+0-c     オプションとその設定のしかた
+------------------------------------
+
+Crawl のオプションは大きく 3 種類に分かれる。真偽値(ブール値)、任意の値、値のリ
+ストである。この文書では、オプションはふつう既定値(あれば)とともに記してあり、
+それを見ればどの種類のオプションかもわかるはずだ。各オプションには典型的な使い
+方についての説明を付けてあるが、どのオプションを使いたくなるかはプレイスタイル
+によって、ときには OS によっても変わることを覚えておいてほしい。
+
+オプションの設定には 2 つの書き方がある。1 つは昔ながらの name=value の書き方
+で、1 行に 1 つのオプションを書く:
+    remember_name  = true
+    explore_greedy = false
+
+もう 1 つは NetHack 風の、複数のオプションをまとめて書く行だ:
+    OPTION = remember_name, !explore_greedy
+
+2 つ目の書き方は単純なオプションを数行で指定するのに便利だが、複雑な値のリスト
+をとるオプション(autopickup_exceptions オプションなど)には使えない。
+
+パスを引数にとるオプションもある。その場合は、使っているシステムに合ったファイ
+ルシステムのパスを書く必要がある。正規表現(regex)を受け付けるオプションもある。
+その場合は、ふつうの文字列をそのまま使ってもよいし、例として挙げた正規表現を必
+要に合わせて変えてもよいし、インターネットで正規表現の書き方を調べてもよい。
+
+なお、チュートリアルと解説付きモードでは、説明しやすくするため、オプションの設
+定の一部が上書きされることがある。対象となるオプションと、チュートリアルのゲー
+ムで強制される設定は次のとおり:
+   clear_messages      = true
+   weapon              = hand axe (解説付きモードの狂戦士の場合)
+
+0-d     リスト型のオプション
+----------------------------
+
+値のリストを持てるオプションがいくつかある。そうしたオプションのほとんど(すべて
+ではない)では、1 行にコンマで区切って複数の値を設定できる。こうしたオプション
+は、リセットしたり、項目を足したり、項目を取り除いたりできる。
+   リストの末尾に値を足す(append):
+      drop_filter += useless, enchant
+   リストの先頭に値を足す(prepend):
+      drop_filter ^= forbidden
+   リストから値を取り除く(完全に一致するものだけ):
+      drop_filter -= enchant
+   リストをリセットする:
+      drop_filter = bad_item, dangerous_item
+   リストを空にする:
+      drop_filter =
+
+"listopt = value" の書き方は、まずリストを空にしてから値を足す。以前のバージョ
+ンの Crawl では += と同じ意味で、値を書かない "listopt =" だけがリストを空にし
+ていた。
+
+drop_filter など多くのオプションでは、末尾に足しても先頭に足しても実質的な違い
+はない。しかし message_colour などほかのオプションでは項目の順序が意味を持つ。
+こうしたオプションは説明に「順序付きリストのオプション」と記してある。ほとんど
+の場合、前の項目が後の項目より優先されるので、+= では既にある一致(初期設定を含
+む)のほうが優先され、^= では既にある一致より優先される。そのため例えば、次のよ
+うにオプションを続けて設定すると:
+   message_colour  = cyan:hits
+   message_colour ^= red:crimson
+   message_colour += yellow:killer
+"The crimson imp hits you!" というメッセージは赤(red)で表示され、"The killer
+bee hits you!" は水色(cyan)で表示される。
+
+0-e     別名、変数、その他の指示
+--------------------------------
+
+長いオプション名には、次のようにしてオプションの別名を定義できる:
+    alias := long_option_name
+例えば、次のように書くと:
+    ae := autopickup_exceptions
+以後は "autopickup_exceptions" の代わりに "ae" を使える:
+    ae += >uselessness, >inaccuracy
+
+オプションの値の短縮名(変数)も定義できる。例えば、
+    $useless := darkgrey
+と定義すると、次のように組み合わせて使える:
+    menu_colour += $useless:random uselessness
+
+変数が変更されないようにするには、定数にすればよい:
+    constant = useless
+
+これは、取り込んだファイルに変数を書き換えられないようにしたいときに役立つ。
+
+別名と変数の使い方は dat/defaults/standard_colours.txt を参照。なお、これらの
+ファイルで定義されている変数を変えても、影響するのは自分の設定ファイルだけだ。
+初期設定のオプションはすでに読み込まれているからである。それらを変えたいなら、
+オプションそのものを上書きする必要がある。
+
+値を初期設定に戻すには、次のようにする:
+    default = option_name
+
+独自の解析をする一部のオプションでは、これは使えない。
+
+1-  開始画面
+============
+
+次のオプションは、Crawl のゲームを手早く始めたり、ゲームの開始をファイルやコマ
+ンドラインから設定したりするための便利な機能だ。
+
+name = Delilah
+        設定すると、Crawl のキャラクターはすべてこの名前になる。これを設定する
+        と、初期設定ではメインメニューを飛ばす。`name_bypasses_menu` を参照。
+
+type = normal
+        ゲームの種類を選ぶ。有効な値は
+        "normal"、"seeded"、"tutorial"、"arena"、"sprint"、"descent"、"hints"。
+        (既定のままにせず)明示的に設定すると、メインメニューで最初に選ばれてい
+        るゲームの種類がこれになる。(`name` を設定するなどして)メインメニューを
+        飛ばす場合は、このオプションでゲームの種類を決められる。"descent" はア
+        ルファ版(開発版)のビルドでのみ有効。
+
+remember_name = true
+        Crawl は、最後のキャラクターを作ったときに選んだもの(種族、職業など)を
+        覚えている。開始画面で、それを新しいキャラクターに使い回せる。このオプ
+        ションを true にすると、Crawl は最後に使った名前も覚えておく。
+
+        このオプションを使っていて、種族と職業を選んだ _後で_ 名前を入力したい
+        場合は、最初の名前の入力で . を入力する必要がある。remember_name が設定
+        されていると、名前の入力で Enter を押しても前の名前がそのまま使われるだ
+        けだ。
+
+weapon += (short sword |...| unarmed | random | viable), <weapon>, ...
+        (リスト型のオプション)
+        weapon オプションを指定すると、武器の選択画面を飛ばせる。トライデント、
+        フレイル、レイピア、ロングソード、ウォーアックスは戦士と闘士だけが、六
+        尺棒は闘士だけが選べる。選んだ職業では選べない武器を指定した場合は、通
+        常の武器の選択画面が表示される。"viable" を指定すると、選んだキャラク
+        ターに「向いている」武器の中から無作為に選ぶ。複数の武器を指定すると、
+        指定した中から無作為に 1 つが選ばれる。combo オプションとこのオプション
+        は互いに上書きし合う。
+
+species += (Human |...| Revenant | random | viable), <species>, ...
+        (リスト型のオプション)
+        通常の略称(Hu、MD など)が使える。職業を先に選んだ場合、"viable" はその
+        職業に向いた種族を選ぶ。複数の種族を指定すると、指定した中から無作為に
+        1 つが選ばれる。combo オプションとこのオプションは互いに上書きし合う。
+
+background += (Fighter |...| Wanderer | random | viable), <background>, ...
+        (リスト型のオプション)
+        ここでも略称(Fi、HW、CA など)が使える。"viable" についても同じ注意が当
+        てはまり、species オプションも設定している場合にしか実際には意味がな
+        い。複数の職業を指定すると、指定した中から無作為に 1 つが選ばれる。
+        combo オプションとこのオプションは互いに上書きし合う。
+
+combo += (HuFi . short sword | Human Monk | ...), <combo>, ...
+        (リスト型のオプション)
+        種族、職業、(必要なら)武器の組み合わせ全体を指定する。武器の選択が必要
+        な組み合わせで武器を指定しなかった場合は、入力を求められる。組み合わせ
+        は略して書いても、省略せずに書いてもよい。複数の組み合わせを指定する
+        と、指定した中から無作為に 1 つが選ばれる。weapon、species、background
+        の各オプションとこのオプションは互いに上書きし合う。
+
+restart_after_game = maybe/true
+        true にすると、ゲームが終わったときに crawl はメインメニューに戻る。
+        maybe にすると、開始時のオプションがメインメニューを飛ばさない場合だけ
+        メインメニューに戻り、そうでなければ終了する。false にすると、常に終了
+        する。初期設定では、ローカルのタイル版のビルドでは true、それ以外のビル
+        ドでは maybe になっている。オンラインのゲームではこのオプションは無視さ
+        れる。
+
+restart_after_save = true
+        ゲームをセーブしたときにメインメニューに戻る。このオプションは、
+        restart_after_game が maybe か true のときだけ効果がある。オンラインの
+        ゲームではこのオプションは無視される。
+
+newgame_after_quit = false
+        true にすると、名前や組み合わせが設定されている場合、ゲームを放棄(quit)
+        するとすぐに次のゲームを始める。この設定で restart_after_game が false
+        以外だと、crawl を終了するにはセーブするしかなくなることがある。
+
+name_bypasses_menu = true
+        true にすると、オプションで有効な名前が設定されている場合、メインメ
+        ニューを飛ばして、すぐにゲーム(セーブがなければキャラクターの選択)に進
+        む。
+
+default_manual_training = false (persistent)
+        true にすると、新しいキャラクターの技能の訓練が、自動モードではなく手動
+        モードで始まる。また、技能の (m) メニューの [!] の選択も、初期設定で
+        「割り振り」(training)ではなく「コスト」(cost)になる。
+
+autopickup_starting_ammo = true
+        設定すると、ゲームの開始時に、プレイヤーの初期の矢弾の種類について自動
+        拾いが(\ メニューで設定したのと同じように)強制的に有効になる。このオプ
+        ションを設定していても、ゲームが始まった後で \ メニューからそのアイテム
+        の自動拾いを無効にできる。
+
+game_seed = none
+        乱数生成器を初期化するシード値を表す数。ある範囲内では、同じシード値か
+        らは必ず同じダンジョンが生成される。"none" か 0 にすると、シード値は無
+        作為に選ばれる。コマンドラインの "-seed" で直接設定することもでき、そち
+        らは rc ファイルの設定より優先される。この値は符号なし 64 ビット整数で
+        ある。
+
+pregen_dungeon = incremental
+        新しいゲームでの階層の生成方法を決める設定で、乱数のシード値と関係する
+        (マニュアルの「Seeded play」の節を参照)。シード値から安定したダンジョン
+        を生成するには、階層を決まった順序で生成する必要がある。推奨の設定の
+        `incremental` では、新しい階層に入るときに必要に応じて階層を生成し、
+        ゲームが常に同じ順序で階層を生成するようにする。標準の順序から階層を飛
+        ばしたときは、飛ばした分を追いついて生成することがある。
+
+        `true` か `full` にすると、新しいキャラクターを始めるときに、つながって
+        いるダンジョン全体を前もって生成する。こうすると、特定のゲームのシード
+        値に対してダンジョンの生成が決定的になり、階層に入るときの読み込み時間
+        もなくなるが、その代わりゲームの開始が遅くなる。オンラインのプレイで
+        は、全体の事前生成を認めていないサーバーもある。
+
+        `false` か `classic` にすると、0.23 より前の決まりと同じく、どの階層も
+        その階層に入るときに生成する。このオプションでは、シード値を与えてもダ
+        ンジョンは安定しない。
+
+suppress_startup_errors = false
+        false の場合、ゲームの最初の起動時に(設定ファイルの誤りなどの)エラーが
+        見つかると、読み込みの前にそれを表示する画面を出す。
+
+        この設定にかかわらず、メインメニューにはエラーの警告が表示される。ま
+        た、この設定は、キャラクターを読み込むときに見つかったエラーの扱いには
+        影響しない。
+
+map = ""
+        スプリントのマップを選ぶのに使える。rc ファイルで設定すると、スプリント
+        のマップを選ぶサブメニューを飛ばす。有効な値は dungeon_sprint_1,
+        the_violet_keep_of_menkaure, dungeon_sprint_mu, dungeon_sprint_fedhas,
+        sprint_v, arena_sprint, pitsprint, meatsprint, linesprint。
+
+fully_random = false
+        true にすると、組み合わせを無作為に選ぶ。species か job のどちらかが
+        `viable` に設定されていれば「おすすめ」のキャラクターの中から組み合わせ
+        を選び、そうでなければまったく無作為に組み合わせを選ぶ。設定すると、
+        キャラクターの選択メニューの代わりに、組み合わせを示して、それを受け入
+        れるか選び直すかを選ばせる入力が表示される。
+
+arena_teams = ""
+        アリーナモードのチームをあらかじめ選んでおくために設定する。設定する
+        と、アリーナモードはすぐに対戦に進む。
+
+2-  ファイルシステム
+====================
+
+次のディレクトリのオプションは、システムやビルドによっては無視されたり上書きさ
+れたりすることがある。例えば、オンラインのプレイでは rc ファイルで設定できな
+い。これらはコマンドラインからも設定できる。
+
+crawl_dir = <path>
+        ほかのファイルを探すときに、相対パスの基準として使うパス。この値の初期
+        設定はシステムとビルドの種類によって異なる。このオプションは環境変数
+        `CRAWL_DIR` でも設定できる。設定すると、次の 3 つのディレクトリのオプ
+        ションが前に設定されていても、それらを上書きする。
+
+save_dir = saves/
+        セーブと骨ファイル(bones)を保存するディレクトリ。相対パスは `crawl_dir`
+        の値からの相対パスとして解釈される。
+
+morgue_dir = morgues/
+        死亡ダンプのファイル(morgue*.txt と morgue*.lst)と、キャラクターダンプ
+        のファイルを書き出すディレクトリ。相対パスは `crawl_dir` の値からの相対
+        パスとして解釈される。
+
+macro_dir = <path>
+        macro.txt を読み込むディレクトリ。末尾はパスの区切り文字にする必要があ
+        る。この値の初期設定はシステムとビルドの種類によって異なる。
+
+sounds_on = true
+        ("Sound support" が必要。バージョン情報で確かめること)
+        true にすると、さまざまな場面で効果音を鳴らす。
+
+sound ^= <regex>:<path to sound file>, <regex>:<path>,
+        (順序付きリストのオプション)
+        メッセージが正規表現(regex)に一致すると、そのサウンドファイルを鳴らす。
+        複数の正規表現が一致した場合は、最後の正規表現の音だけが鳴る。正規表現
+        にはコンマやコロンを含めないこと。例えば
+             sound += LOW HITPOINT WARNING:sound\sounds2\danger3.wav
+        あらかじめ定義された正規表現もいくつかあり、正規表現の文字列では一致さ
+        せられないものに対して音を鳴らすのに使える。例えば、正規表現として
+        FIRE_PROMPT_SOUND を使うと、射撃の対象選択が開くたびに Crawl が音を鳴ら
+        す。あらかじめ定義された正規表現の文字列の一覧は sound.h を参照。
+
+sound_file_path = <path>
+        (上のオプションで)音を鳴らすとき、この変数の内容がパスの先頭に付け足さ
+        れる。これは、1 つの設定を複数のプラットフォームで使い回しやすくするた
+        めのものだ。次の 2 行は上の例と同じ意味になる:
+             sound_file_path = sound\sounds2\
+             sound += LOW HITPOINT WARNING:danger3.wav
+        このオプションは最後に書いたものが有効になり、それより前に書いた sound
+        オプションにさかのぼって適用されることはない。
+
+one_SDL_sound_channel = false
+        true にすると、(SDL を使っている場合)一度に 1 つの音しか鳴らない。SDL
+        以外の音声のバックエンドはこうした制御に対応していないので、初期設定は
+        false になっている。
+3-  インターフェース
+====================
+
+3-a     拾う・置く
+------------------
+
+autopickup = $?!+"/♦
+        上の行は初期設定の一覧である。使える記号は次のとおり:
+        )       武器
+        (       矢弾
+        [       防具
+        /       ワンド
+        ?       巻物
+        " か =  装身具
+        !       薬
+        + か :  魔法書
+        |       魔法の杖
+        0       オーブ
+        %       タリスマン
+        }       道具
+        $       金貨
+        ♦       宝石
+        •       ボーブル
+        なお、アイテムを自動で拾う「かどうか」は、ゲーム内で Ctrl-A を押して切
+        り替える。また、拾うにはターンがかかるが、(アイテムの数によらず)1ターン
+        だけで済む。テレポートやブリンクで、気になるアイテムのあるマスに移った
+        場合、そのアイテムは拾われない。
+
+autopickup_exceptions ^= <pickup-regex, >don't-pickup-regex, ...
+        (順序つきリストのオプション)
+        一致したアイテムを必ず拾う(前に < を付けた場合)、または決して拾わない
+        (前に > を付けた場合)ようにする正規表現の集まり。このリストは順序に意味
+        があり、アイテムには最初に一致した規則が適用される。
+
+        例:
+             autopickup_exceptions += <curare-tipped dart
+        こうすると、"autopickup" オプションで矢弾を指定していなくても、クラーレ
+        毒を塗ったダーツをすべて自動で拾うようになる。
+
+        <> と一致させる式の間の空白にも意味があるので、次のように書くとうまくい
+        かない:
+             autopickup_exceptions += <   box of beasts
+
+        autopickup_exceptions は、以前の ban_pickup に代わるものである。
+             autopickup_exceptions += >uselessness, >inaccuracy
+        と書くのは、
+             ban_pickup += uselessness, inaccuracy
+        と書くのと同じである。
+
+        正規表現の前に < も > も付けなければ > を付けたものとみなされるので、上
+        の設定は次のようにも書ける。
+             autopickup_exceptions += uselessness, inaccuracy
+
+        autopickup_exceptions の行は何行でも書ける。例を挙げる:
+             autopickup_exceptions += inaccuracy, immolation
+             autopickup_exceptions += uselessness, noise, torment
+
+        例外の一覧を消去しないかぎり、ごく特殊な場合を除けば、薬について自動拾
+        いの例外を設定する必要はおそらくない。
+
+default_autopickup = true
+        false にすると、自動拾いを切った状態でゲームが始まる。その場合でも、
+        ゲーム内で Ctrl-A を押せば自動拾いを切り替えられる。
+
+pickup_thrown = true
+        pickup_thrown = true にすると、投げた矢弾を自動拾いで拾うようになる。自
+        動拾いには1ターンかかることに注意。ただし、敵対するモンスターが見えてい
+        るときは自動拾いは働かない。
+
+assign_item_slot = (forward | backward)
+        アイテムを拾ったとき、そのアイテムが入る持ち物の欄は、ふつうは a-zA-Z
+        のうち最初の空いている欄になる(これが初期設定の "forward" の動作)。
+        assign_item_slot を "backward" にすると、最後に使っている欄の次の文字に
+        入るようになる。
+        例えば、'a' と 'c' にアイテムがあるとき、
+          assign_item_slot = forward なら、次のアイテムは 'b' に入り、
+          assign_item_slot = backward なら、次のアイテムは代わりに 'd' に入る。
+        "backward" にすると、置いたり撃ったりしたあとで拾い直したアイテムが、元
+        の欄に戻りやすくなる。
+
+pickup_menu_limit = 1
+        自分のいるマスにこの数より多くのアイテムがあるとき、複数のアイテムを拾
+        うのに、アイテムを1つずつ尋ねる代わりにメニューを表示する。0 ならメ
+        ニューは使わない。負の数なら、代わりに item_stack_summary_minimum - 1
+        の値を使う。
+
+        このオプションの値にかかわらず、拾うのには常に1ターンかかる。
+
+drop_filter += <regex>, <regex>, ...
+        (リストのオプション)
+        まとめて置くメニューで、全体を選択・選択解除するキー(',' や '-')を使っ
+        てアイテムを選ぶとき、このオプションを使うと、検索の正規表現に一致する
+        アイテムだけを選ぶようにできる。
+
+        例えば、信仰する神に禁じられているアイテムを素早く選ぶには、次のように
+        する:
+             drop_filter += forbidden
+
+        drop_filter は、menu_colour と同じキーワードに対して照合する。ただし鑑
+        定の状態は含まない。初期設定は useless_item である。
+
+        drop_filter を設定してあるとき、選択・選択解除のキーを使うと、フィル
+        ターの式に一致するアイテムの選択を設定・解除する。
+
+drop_disables_autopickup = false
+        drop_disables_autopickup = true にすると、置いたアイテム(矢弾を除く)を
+        自動で自動拾いの対象から外す。
+
+3-b     受動的な発見(感知したもの・記憶しているもの)
+----------------------------------------------------
+
+detected_monster_colour = lightred
+        感知したモンスターをこの色で表示する。
+
+detected_item_colour = green
+        感知したアイテムをこの色で表示する。
+
+remembered_monster_colour = darkgrey
+        以前に見たことのあるモンスターの色。
+
+3-c     ダンジョン画面でのアイテムとモンスターの強調表示
+--------------------------------------------------------
+
+これらのオプションを使うと、コンソール版のダンジョン画面で、特定のモンスターや
+アイテムの表示のしかたを、色を変えたり前景と背景を反転させたりして制御できる。
+強調表示には次のような選択肢がある(どこでも機能するわけではなく、OS と端末に
+よって変わる):
+   none             -- その分類の強調表示を無効にする
+   standout         -- たいてい reverse と同じだが、下線や暗い表示に
+                       なることもある
+   bold             -- カラーの curses で前景色を明るくするのに使われる
+   blink            -- カラーの curses で背景色を明るくするのに使われる
+   reverse          -- おそらく機能する
+   dim              -- おそらく効果はない
+   underline        -- おそらく機能する
+   highlight:colour -- 強調表示するモンスターの背景色を "colour" に
+                       する
+最後のものは hi:colour と略して書ける。
+dos_use_background_intensity については、Windows の節(5-b)を参照。
+
+以前、これらのオプションは `..._brand` という名前だった。互換性のために、古い名
+前も使える。
+
+friend_highlight = hi:green
+        味方を何らかの方法で強調表示する。召喚を使うキャラクターにはとても役に
+        立つ。初期設定では、味方を緑の背景で表示する。味方自体が緑なら、緑の背
+        景に黒で表示される。
+
+neutral_highlight = hi:lightgrey
+        中立のモンスターを何らかの方法で強調表示する。中立のモンスターの通り道
+        からどくのにも、うっかり殺してしまわないようにするのにも役に立つ。初期
+        設定では、中立のモンスターを暗い灰色の背景で表示する。もう暗い灰色のモ
+        ンスターの記号はないので、これで問題はない。
+
+unusual_highlight = hi:magenta
+        珍しいアイテムを持っている敵対モンスターを強調表示する。ワンドや歪曲の
+        武器のような普通ではないアイテムを持っているために、扱いに注意すべきモ
+        ンスターかどうかがわかって便利である。
+
+        これは unusual_monster_items オプションと組み合わせて使う。どのアイテム
+        を持っているモンスターを強調表示するかは、unusual_monster_items で決ま
+        る。
+
+stab_highlight = hi:blue
+        このオプションは、プレイヤーにまったく気づいていないモンスターを強調表
+        示する。そうしたモンスターは攻撃してこず、プレイヤーが適切に攻撃すれば
+        必ず急所攻撃のダメージを受ける。
+
+may_stab_highlight = hi:brown
+        このオプションは、例えば混乱したり気が散ったりしていて、プレイヤーにう
+        まく注意を向けられないモンスターを強調表示する。そうしたモンスターに
+        は、隠密や武器の技能のレベル、そのほかさまざまな要因によっては急所攻撃
+        ができることがあり、(少なくとも)その状態ではプレイヤーをうまく攻撃でき
+        ない。
+
+heap_highlight = reverse
+        アイテムの山(2つ以上のアイテムまたはひとまとまり)を強調表示する。
+
+feature_item_highlight = reverse
+        アイテムに隠れて見えなくなる地形(階段、店、祭壇)を強調表示する。このオ
+        プションを使うと、そのマスのアイテムの記号は地形の記号に隠れて見えなく
+        なる。
+
+trap_item_highlight = reverse
+        アイテムに隠れて見えなくなる罠を強調表示する。このオプションを使うと、
+        そのマスのアイテムの記号は罠の記号(^)に隠れて見えなくなる。
+
+3-d     階のマップの機能
+------------------------
+
+level_map_cursor_step = 7
+        階のマップで Shift-方向キーを使ったとき、カーソルが動くマスの数。
+
+3-e     表示範囲(ビューポート)のオプション
+------------------------------------------
+
+表示範囲(ビューポート)とは、通常のプレイ中に表示されるマップの部分のことであ
+る。表示範囲の大きさは初期設定では 33x17 だが、もっと大きな端末を使っているな
+ら、これらのオプションを設定して、より広い範囲を表示させられる。
+
+これらのオプションはどれもゲームの進行には影響しない。特に、キャラクターの視界
+はこれらのオプションの影響を受けない。
+
+view_max_width = 33 (最大 81)
+        表示範囲の幅の最大値を設定する(初期設定は 33)。これを大きくすると、大き
+        な端末では Crawl がより横に広い範囲を表示できるようになる。タイル版では
+        このオプションは無視され、表示範囲は常に使える場所をすべて使う。
+
+view_max_height = 21 (最大 71)
+        view_max_width と同様だが、表示範囲の高さの最大値を設定する。タイル版で
+        は、この値は、どの時点から余った場所を表示範囲ではなくメッセージ欄に割
+        り当て始めるかを決めるのに使われる。メッセージ欄が msg_max_height に達
+        すると、残りの場所は表示範囲に割り当てられる。動作の速さの都合で表示範
+        囲を小さくしたいなら、ウィンドウを小さくするか、メッセージ欄を大きくす
+        ること。
+
+* 表示範囲を大きくすると、ゲームが遅くなることがあるので注意。
+
+view_lock_x = true
+        キャラクターを表示範囲の横方向の中央に置いたままにし、キャラクターの動
+        きに合わせて表示範囲を常にスクロールさせる。これを設定しないと、キャラ
+        クターは表示範囲の中で横に動けるようになり、表示範囲はキャラクターの視
+        界が左右の端に届いたときだけスクロールする。
+
+view_lock_y = true
+        キャラクターを表示範囲の縦方向の中央に置いたままにする。
+
+view_lock = true
+        view_lock_x と view_lock_y の両方を設定する別名のオプション。
+
+centre_on_scroll = false
+        これを設定すると、表示範囲はスクロールするたびにキャラクターを中央に置
+        くようになる(view_lock_x と view_lock_y を設定してあるなら、このオプ
+        ションは関係ない)。
+
+symmetric_scroll = true
+        これを設定すると、表示範囲は、スクロールのきっかけになったキャラクター
+        の動きに合った方向にスクロールする。
+
+        例を挙げて説明しよう。キャラクターが表示範囲の下の端にいるが、横方向で
+        は中央に近いとする。ここでキャラクターが右下に斜めに動くと、表示範囲は1
+        行ぶん上にスクロールすることになる。symmetric_scroll を設定してあると、
+        キャラクターの斜めの動きに合わせて、表示範囲は1桁ぶん左にもスクロールす
+        る。symmetric_scroll を設定していなければ、表示範囲は上にスクロールする
+        だけで、横にはスクロールしない。symmetric_scroll は、自由なスクロールよ
+        りも方向を見失いにくい。
+
+        view_lock か centre_on_scroll を設定してあるなら、このオプションは関係
+        ない。
+
+scroll_margin_x = 2
+        左右の端からどれだけ離れたところでスクロールを始めるか。初期設定では、
+        キャラクターの視界のマスが端から2マスより近づくと、表示範囲がスクロール
+        する。0 にすると、表示範囲は視界の円が表示範囲の端に届いたときだけスク
+        ロールする。
+
+scroll_margin_y = 2
+        上下の端からどれだけ離れたところでスクロールを始めるか。
+
+scroll_margin = 2
+        scroll_margin_x と scroll_margin_y の両方を設定する別名のオプション。
+
+always_show_exclusions = true
+        true なら、立入禁止区域とその半径を表示範囲に表示する。階のマップ(X で
+        開く)では、このオプションの値にかかわらず、立入禁止区域は常に表示され
+        る。地形のみの表示(| で切り替える)でも、立入禁止区域は表示される。タイ
+        ル版ではこのオプションは効果がなく、立入禁止区域は表示範囲と階のマップ
+        の両方に常に表示される。
+
+3-f     自動移動と自動探索
+--------------------------
+
+travel_delay = 20 (オンラインのサーバーでは初期設定は -1)
+        自動移動で1歩ごとに待つ時間(ミリ秒)。explore_delay を設定していなけれ
+        ば、自動探索で1歩ごとに待つ時間もこれになる。動作はプラットフォームに
+        よって変わる。-1 にすると自動移動の終わりまで一気に飛び、1歩ずつの動き
+        は見えない。
+
+explore_delay = -1
+        自動探索で1歩ごとに待つ時間(ミリ秒)。動作はプラットフォームによって変わ
+        る。特に、travel_delay = -1 かつ explore_delay = 20 にすると、自動探索
+        の1歩ずつの動きは見えるが、ほかの種類の自動移動の1歩ずつの動きは見えな
+        くなる。-1 にすると、自動探索で待つ時間は travel_delay と同じになる。
+
+rest_delay = 0 (オンラインのサーバーでは初期設定は -1)
+        休憩で1ターンごとに待つ時間(ミリ秒)。動作はプラットフォームによって変わ
+        る。rest_delay = -1 にすると、休憩の間は画面を更新しない。
+
+travel_avoid_terrain = (shallow water | deep water)
+        自動移動が浅い水の中を通らないようにする。初期設定では、どの地形も避け
+        ない。水棲の民や、ずっと飛行できるキャラクターなら、
+             travel_avoid_terrain = shallow water, deep water
+        と書くと、自動移動や自動探索がどんな水の中も通らないようになる。このオ
+        プションはリストの書き方が使える。
+
+explore_greedy = true
+        貪欲探索では、階を探索するのに加えて、自動拾いの対象になるアイテムのと
+        ころへも移動する。それ以外は通常の探索と同じである。自動拾いを切ってい
+        ると(Ctrl-A)、貪欲探索は無効になる。
+
+explore_greedy_visit = artefacts,glowing_items
+explore_greedy_visit += stacks
+        (リストのオプション)
+        貪欲探索では、次の条件に基づいて、アイテムのあるマスに立ち寄る。
+
+        stacks: 自動拾いの対象になるアイテムがあるとは限らなくても、
+        explore_greedy がすべてのアイテムの山に立ち寄るようにする
+
+        glowing_items: 山になっていなくても、explore_greedy が輝くアイテム
+        (glowing_items)に立ち寄るようにする
+
+        artefacts: 山になっていなくても、explore_greedy がアーティファクトに立
+        ち寄るようにする
+
+explore_item_greed = 10
+        貪欲探索で、アイテムのあるマスに立ち寄るか新しいマスを探索するかを決め
+        るとき、アイテムをこの数だけ近くに(負の数なら遠くに)あるものとして扱
+        う。
+
+explore_stop  = items,stairs,shops,altars,portals,branches,runed_doors
+explore_stop += greedy_pickup_smart,greedy_visited_item_stack
+        (リストのオプション)
+        自動探索は、これらの条件のどれかが起きると止まる。このオプションに何を
+        設定しても、自動移動を止めるものはすべて自動探索も止める。
+
+        "branches" の条件では、分岐の入口では止まるが、それ以外の種類の階段や
+        ポータルでは止まらない。
+
+        注意: runrest_ignore_message は explore_stop には影響しない。
+
+        貪欲でない探索では、items にすると、新しいアイテムが見えるたびに自動探
+        索が止まる。貪欲探索では、それぞれの条件は次のように働く:
+
+        items: 自動拾いの対象にならないアイテムが見えたときに止まる。
+
+        greedy_items: 自動拾いの対象になるアイテムが見えたときに止まる。
+
+        greedy_pickup: 自動拾いの対象になるアイテムを自動で拾ったあとに
+            止まる。金貨は除くが、プレイヤーが投げたり撃ったりしたアイテム
+            は含む。explore_stop_pickup_ignore オプションを使うと、特定の
+            アイテムでは止まら「ない」ようにできる。
+
+        greedy_pickup_gold: 貪欲探索の間に金貨を自動で拾ったときに止まる。
+
+        greedy_pickup_smart: greedy_pickup に似ているが、賢く止まろうと
+            する。つまり、持ち物にあるどれとも似ていないアイテムでだけ
+            止まる。プレイヤーが投げたり撃ったりしたアイテムを自動で
+            拾ったときには止まらない。それでも止まってほしいなら、
+            "greedy_pickup_thrown" を追加する。
+
+        greedy_pickup_thrown: 自分が投げたり撃ったりしたアイテムを拾った
+            あとに止まる。greedy_pickup はこれを自動で行うが、
+            greedy_pickup_smart は行わない。explore_stop_pickup_ignore は
+            この条件には影響しない。
+
+        greedy_visited_item_stack: プレイヤーがまだ知らないアイテムの山に
+            立ち寄ったときに止まる。山の中に自動拾いの対象になるものが
+            なくても止まる。
+
+        glowing_items: items と同様だが、輝く、ルーンが刻まれた、刺繍
+            された、などのアイテムだけが対象。
+
+        artefacts: items と同様だが、アーティファクトだけが対象。
+
+        runes: items と同様だが、ルーンだけが対象。
+
+explore_stop_pickup_ignore += <regex>, <regex>, ...
+        (リストのオプション)
+        explore_stop に greedy_pickup か greedy_pickup_smart を設定してあると
+        き、リストのどれかの正規表現に一致するアイテムを拾っても、自動探索は止
+        まら「ない」。
+
+        このオプションは、プレイヤーが投げたアイテムには影響しない。
+
+explore_wall_bias = 0
+        自動探索が、部屋の外周や隅を見つけようとするのをどれだけ優先するかを調
+        整する。値が大きいほど、自動探索は壁の隣のマスに行くのを強く優先する。0
+        なら、まったく優先しない。負の値なら、壁から離れていようとする。0 以外
+        の値にすると、たいていは階を探索し尽くすのが遅くなることに注意。
+
+travel_key_stop = true
+        true にすると、何かキーを押すと自動移動が止まる。
+
+travel_one_unsafe_move = false
+        true にすると、自動移動は、近くの危険を確かめる前に1歩だけ動く。
+
+tc_reachable      = blue
+tc_dangerous      = cyan
+tc_disconnected   = darkgrey
+tc_excluded       = lightmagenta
+tc_exclude_circle = red
+tc_forbidden      = lightcyan
+        上の6つは、階のマップ('X')の色分けを決める。
+        それぞれ次のとおり:
+          reachable: (階を離れずに)安全にたどり着けるすべてのマス
+          dangerous: 罠などを通らないとつながっていないマス
+          disconnected: 階を離れないとたどり着けないマス
+          excluded: 立入禁止区域の中心('e')の色
+          excluded_circle: 立入禁止区域のうち、中心以外の部分の色
+          forbidden: 立入禁止区域のマスを通らないとたどり着けないマス
+
+runrest_ignore_message ^= <regex>, <regex>, ...
+runrest_stop_message ^= <regex>, <regex>, ...
+        (リストのオプション)
+        これらを使うと、特定のメッセージで自動移動や休憩を必ず中断させたり、中
+        断させないようにしたりできる。照合はメッセージの文全体に対して行われ
+        る。部分文字列の照合をあるメッセージチャンネルに限るには、部分文字列の
+        前にチャンネル名とコロンを付ける(メッセージチャンネルについては、下の
+        3-k 節を参照)。例えば、神罰を受けたときに自動移動を止めたいなら、次のよ
+        うにする:
+             runrest_stop_message ^= god:wrath finds you
+
+        あるいは、切れかけている呪文をかけ直すのを忘れないようにするには:
+             runrest_stop_message ^= Your transformation is almost over
+             runrest_stop_message ^= You are starting to lose your buoyancy
+
+        あるいは、いくつかのメッセージを明示的に無視させることもできる:
+             runrest_ignore_message ^= pleased with you,exalted
+
+        なお、モンスターのしゃべる言葉やダンジョンの物音は、初期設定でも連続移
+        動や休憩を中断させない。
+
+        何行でも書ける。ignore と stop の両方のメッセージのうち、最も前にある一
+        致がそれより後の行に優先する。runrest_messages.txt というファイルには、
+        初期設定がいくつも書いてある。これらのオプションでは、前に足す `^=` と
+        後ろに足す `+=` が使える。初期設定を上書きするには前者が必要である
+        (`ignore` の一致の初期設定を `stop` の一致で上書きする場合や、その逆の
+        場合も含む)。
+
+        どちらかのオプションをリセットすると、両方がリセットされる。
+
+        また、runrest_ignore_message は explore_stop で止まるものには影響しない
+        ことにも注意。
+
+interrupt_<delay> += <activity_interrupt_type>, <activity_interrupt_type>, ...
+        (リストのオプション)
+        このオプションを使うと、時間のかかる行動(delay)を、特定のきっかけでは中
+        断させないようにできる。例えば、
+            interrupt_travel -= sense_monster
+        とすると、モンスターの気配を感じただけで姿は見えていないときには、自動
+        移動を中断しなくなる。
+
+        使える delay の種類は次のとおり: equip_on, equip_off, ascending_stairs,
+        descending_stairs, imbue_servitor, imprint_weapon, macro,
+        macro_process_key, memorise, multidrop, passwall, rest, run,
+        shaft_self, transform, travel。(これらは delay.h の `name()` 関数から
+        取ったものである。)
+
+        使える中断の種類は次のとおり: abyss_exit_spawned, ally_attacked,
+        ancestor_hp, force, full_hp, full_mp, hp_loss, hit_monster, keypress,
+        message, mimic, monster, monster_attack, sense_monster, teleport。(これ
+        らは delay.cc の `activity_interrupt_names` 配列から取ったものである。)
+
+
+delay_safe_poison = <% of hp>:<% of mhp>
+        delay_safe_poison = x:y と設定してあるとき、毒のダメージで減る HP の見
+        込みが、今の HP の x% 未満、かつ最大 HP の y% 未満なら、毒のダメージを
+        無視する。これはすべての時間のかかる行動に当てはまる。delay_safe_poison
+        の行は1行しか考慮されない。これを連続移動や休憩で働かせるには、ダメージ
+        だけでなく "You feel sick" のメッセージも無視するよう Crawl に知らせる
+        必要があることに注意。例えば、
+             runrest_ignore_message ^= You feel.*sick
+             delay_safe_poison = 80:100
+        が初期設定である。
+
+runrest_ignore_monster ^= <regex>:<distance>, <regex>:<distance>, ...
+        (順序つきリストのオプション)
+        正規表現に一致するモンスターは、自分とそのモンスターとの距離が指定した
+        数より小さいときだけ、行動を中断させる。例えば、
+             runrest_ignore_monster ^= bat:3
+        とすると、コウモリ、吸血コウモリ、火炎コウモリ、戦闘球は、距離が3以上あ
+        るかぎり、自動移動、自動探索、休憩にとって安全とみなされる。モンスター
+        が複数の式に一致するときは、最初に一致したものと距離を比べる。
+
+rest_wait_both = false
+        rest_wait_both を true にすると、休憩は、HP と MP のどちらか一方が回復
+        したときではなく、両方とも完全に回復したときにだけ止まる。
+
+rest_wait_ancestor = false
+        rest_wait_ancestor を true にすると、休憩は、プレイヤーの HP か
+        MP(rest_wait_both を設定してあれば両方)に加えて、祖霊の体力も完全に回復
+        したときにだけ止まる。
+
+rest_wait_percent = 100
+        休憩するとき、HP か MP が満タンのこの割合より少なければ、最大 HP か最大
+        MP のこの割合まで回復したところで休憩を止める。その時点からさらに休憩す
+        れば、100% まで休憩する。
+
+explore_auto_rest = true
+        true なら、自動探索は、HP と MP の両方が rest_wait_percent に達するまで
+        待ってから動く。
+
+explore_auto_rest_status = <status name>, <cooldown name>, <duration name>...
+        (リストのオプション)
+        自動探索は、リストにあるすべての状態、持続時間、再使用までの待ち時間が
+        終わるまで待ってから動く。このリストには、持続時間に基づくたいていの状
+        態を、状態表示の名前でも % の画面に出る言い回しでも書ける。
+
+        特別な値がいくつかある:
+            "all_negative"   = 時間に基づくすべての悪い状態(例: Slow)
+            "all_cooldown"   = 時間に基づくすべての再使用待ち(例: -Blink)
+            "contam"         = どれだけの量であっても魔力汚染
+            "transformation" = 時間に基づくすべての悪い変身(豚、ウィスプなど)
+
+        all_negative や all_cooldown から特定の状態を除くには、その状態の頭に *
+        を付けて書く。例えば、
+            explore_auto_rest_status += *-blink
+        とすると、待つ対象の再使用待ちの一覧から -blink が除かれる。
+
+        初期設定は "all_negative", "all_cooldown", "contam"。
+
+auto_exclude += <monster name>, <monster name>, ...
+        (リストのオプション)
+        探索中に、このリストに含まれる眠っているモンスターや動かないモンスター
+        に出会うと、そのモンスターを中心とする立入禁止区域が自動で設定される。
+        つまり、自動探索がそのモンスターの視界に入ることは決してない。そのモン
+        スターが見えている間に死んだり目を覚ましたりすると、この立入禁止区域は
+        自動でまた取り除かれる。
+
+travel_open_doors = (avoid | approach | open)
+        自動探索や自動移動で扉をどう扱うかを設定する。
+           avoid = 自動探索・自動移動は、閉じた扉を壁と同じように扱う。
+                   探索や移動を続けるには閉じた扉を通るしかないときは、
+                   閉じた扉のそばで止まる。
+        approach = 自動探索・自動移動は扉を開けず、通り道にある扉の前で
+                   止まる。
+            open = 自動探索・自動移動は扉を開ける。(初期設定)
+        これは、ルーンで封印された扉には影響しない。そうした扉は常に避ける。
+3-g     コマンドの便利機能
+-----------------------------
+
+auto_switch = false
+        近接攻撃をするとき、適した武器に自動で持ち替えられるようにする。ただ
+        し、今持っている武器と持ち替える先の武器が、どちらも所持品の文字 'a' か
+        'b' にある場合に限る。「適した」武器とは、近接攻撃用で、攻撃をさせない
+        ための銘(`!a`)が刻まれておらず、プレイヤーの神が嫌っていないものを言
+        う。
+
+easy_unequip = true
+        防具や装身具を置くとき、自動で外せるようにする。
+
+equip_unequip = true
+        true にすると、'w'、'W'、'P' のメニュー(それぞれ武器、防具、装身具)です
+        でに装備しているものを選んだとき、それを外す。
+
+jewellery_prompt = false
+        true にすると、装身具を外すとき、装身具を 1 つしか身につけていなくても
+        確認を飛ばさず、外すものを必ず尋ねる。また、装身具を身につけるときに枠
+        がすべて埋まっていれば、身につけているものがすべて同じでも、どれを外す
+        かを尋ねる。
+
+easy_confirm = (none | safe | all)
+        確認の質問に答えやすくする:
+           none = Y/N の質問と能力値の上昇では大文字の入力を必須にする
+           safe = 危険な質問と能力値の上昇でだけ大文字を必須にする(既定)
+            all = 大文字を必須にしない
+        PuTTY を使う人への注意: PuTTY の設定でテンキーを「NetHack mode」にして
+        いると、テンキーの '7' が文字の 'y' に割り当てられ、うっかり質問に「は
+        い」と答えてしまうことがある。
+
+simple_targeting = false
+        true にすると、爆発する呪文と跳ね返るボルトの呪文の賢い照準を無効にす
+        る。自分を巻き込まずに複数のモンスターに当たる位置を探す代わりに、射程
+        内でいちばん近いモンスターを自動で狙うようになる。これは呪文を唱えると
+        きの目標の選択にも、準備した呪文の自動の目標の選択にも適用される。
+
+force_spell_targeter = hailstorm, starburst, frozen ramparts, ignition,
+                       eringya's noxious bog, anguish, cause fear, alistair's
+                       intoxication, discord, dispersal,
+                       metabolic englaciation, gloom, flame wave, plasma beam,
+                       maxwell's portable piledriver, diamond sawblades,
+                       fortress blast
+        ここに挙げた呪文を普通に唱えるとき、目標を指定しない呪文でも、照準表示
+        を必ず出す。実際に効果があるのは、既定値に挙げたもののように効果範囲が
+        決まっている呪文だけである。特に、変わった形の効果範囲を持つ呪文で便利
+        だ。オプションのリストに "all" があると、リストの残りは(どう組み立てて
+        も)無視され、すべての呪文で照準表示が出る。
+
+force_ability_targeter = sanctuary, cleansing flame, word of chaos, recite,
+                         elemental force, oozemancy, galvanic breath,
+                         fathomless shackles, slouch, disaster area,
+                         apocalypse, corrupt, foxfire swarm, siphon essence,
+                         shadowslip, watery grave
+        ここに挙げた能力を普通に使うとき、目標を指定しない能力でも、照準表示を
+        必ず出す。実際に効果があるのは、既定値に挙げたもののように効果範囲が決
+        まっている能力だけである。特に、変わった形の効果範囲を持つ能力で便利
+        だ。オプションのリストに "all" があると、リストの残りは(どう組み立てて
+        も)無視され、すべての能力で照準表示が出る。
+
+force_scroll_targeter = fear, silence, vulnerability, immolation, torment
+        ここに挙げた巻物を普通に読むとき、照準表示を必ず出す(これらは狙いをつけ
+        ない巻物なので、主に成功率や、効果を受けそうな対象を見せるためのもの
+        だ)。オプションのリストに "all" があると、リストの残りは(どう組み立てて
+        も)無視され、照準表示のある巻物すべてで照準表示が出る。
+
+show_invis_targeter = true
+        透明になる前に、視界内のどのモンスターが実際にあなたを見失うかを示す照
+        準表示を出す(視界内の敵がすべて霊視(sInv)を持っていれば確認する)。
+
+allow_self_target = prompt
+        危険な魔法(例えば呪文の石錐の矢(Stone Arrow)や金縛りのワンド)で自分を狙
+        えるようにする。値: (yes | no | prompt)。'yes' にすると、自分も正しい目
+        標になる。'no' にすると、そうした呪文で自分を狙えない。'prompt'(既定)に
+        すると、自分を狙うときに確認が必要になる。このオプションは、悪臭の雲
+        (Mephitic Cloud)のような範囲に効果のある呪文には影響しない。そうした呪
+        文では、自分は常に正しい目標である。
+
+prompt_menu = true (tiles default), false (console default)
+        できれば、確認のメニューをメッセージ欄ではなく常にポップアップで出す。
+        今のところ、これは Y/N の確認と、`G`(Go)のメニューに適用される。
+
+ability_menu = true
+        全画面の 'a'(能力)のメニューを常に出す。false にすると、'a' はメッセー
+        ジ欄で尋ね、'?' か '*' でメニューを見られる。
+
+spell_menu = false
+        true にすると、'z' を使うとき、全画面の呪文を選ぶメニューを常に出す。
+        false にすると、'z' はメッセージ欄で尋ね、'?' か '*' でメニューを見られ
+        る。
+
+easy_floor_use = true
+        true にすると、床のアイテムも使えるアイテム操作のメニューで、',' を押し
+        て所持品のアイテムから床のアイテムに切り替えたとき、床のアイテムが 1 つ
+        だけなら、メニューを切り替える代わりにそのアイテムを選ぶ。例えば 'r,'
+        と押すと、床の巻物が 1 つだけならそれを読む。これは所持品に当てはまるア
+        イテムがなくても働く。
+
+sort_menus = [menu:](true | false | auto:X)[:sort_order]
+        所持品と拾うときのメニューで、アイテムを並べ替えるかどうかと、どう並べ
+        替えるかを決める。
+
+        sort_menus = false(既定)のとき、アイテムは並べ替えず、所持品の文字の順
+        (床のアイテムなら積まれている順)に並ぶ。
+
+        sort_menus = true のとき、アイテムは指定した sort_order に従って並べ替
+        える。既定の sort_order は次のとおり:
+             equipped, basename, qualname, curse, qty
+
+        sort_menus = auto:X のとき、同じ分類のアイテムが X 個以上あれば並べ替え
+        る。例えば:
+             sort_menus = auto:5
+        とすると、アイテムが 5 個以上ある分類を並べ替える。例えば、薬が 4 種類
+        なら並べ替えないが、5 種類なら並べ替える。
+
+        並べ替えの基準は、sort_menus オプションで次のように明示できる:
+             sort_menus = true : art, basename, qualname, curse, qty
+
+        2 つのアイテムは、両者が異なる最初の基準で比べる。つまり上の sort_menus
+        の行なら、異なる 2 つのアイテムのうち片方だけが既知のアーティファクトな
+        らそちらを先に並べる。そうでなければ(両方ともアーティファクトか、両方と
+        もそうでなければ)basename が違うなら basename をアルファベット順に比べ
+        る。basename が同じで qualified name(qualname)が違えば qualified name
+        を比べる、という具合に続く。
+
+        使える並べ替えの基準は次のとおり:
+
+        * basename:
+          アイテムの種類の名前。"a +0 robe"、"an embroidered robe"、"the cursed
+          +2 robe of Ponies" の basename はどれも "robe" だ。"a brass ring" と
+          "a ring of fire resistance" の basename はどちらも "ring" だ。
+
+        * qualname:
+          冠詞(a/an/the)、数量、強化値、呪いの状態を除いたアイテムの名前。上に
+          挙げたローブの qualified name は、それぞれ "robe"、"embroidered
+          robe"、"robe of Ponies" だ。上に挙げた指輪の qualified name は、それ
+          ぞれ "brass ring"、"ring of fire resistance" だ。
+
+        * fullname:
+          メニューに表示されるとおりのアイテムの名前(数量、呪いの状態などを含
+          む)。
+
+        * dbname:
+          アイテムの説明に結びついた、内部の固有の名前で並べ替える。説明が同じ
+          アイテムはまとめて並ぶ。
+
+        * curse:
+          アイテムの呪いの状態(わかっていれば)。呪われていないアイテムが先に並
+          ぶ。
+
+        * equipped:
+          装備しているアイテムが先に並ぶ。
+
+        * art:
+          鑑定済みのアーティファクトが先に並ぶ。
+
+        * ego:
+          鑑定済みのエゴアイテムが先に並ぶ。
+
+        * glowing:
+          未鑑定の、光る・輝く・ルーンの刻まれた、などのアイテムが先に並ぶ。
+
+        * identified:
+          同じ種類の未鑑定のアイテムより、鑑定済みのアイテムが先に並ぶ。アイテ
+          ムは、その細かい種類かエゴがわかった時点で鑑定済みとみなす。
+
+        * qty:
+          重ねられるアイテム(巻物、薬など)の数量。
+
+        * slot:
+          所持品にあるアイテムの所持品の文字。床のアイテムには関係ない。
+
+        * charged:
+          使える残量のある発動アイテムを、空のものより先に並べる。ほかの種類の
+          アイテムには関係ない。
+
+        * usefulness:
+          消耗品を、今の「役立ち度」で次の順に並べる: 緊急(例: ?blinking、!heal
+          wounds)、良い(例: ?acquirement)、普通、危険(例: !lignification)、悪い
+          (例: 善神を信仰しているときの ?torment)、最後に永久に役に立たないも
+          の。
+
+        並べ替えの基準の 1 つ以上の前に > を付けると、降順で並べ替えられる:
+             sort_menus = true : basename, >qty
+
+        特定のメニューでだけ並べ替えるようにもできる:
+             sort_menus = pickup: true
+        または
+             sort_menus = inv: true
+        (メニューの種類は name: のように、名前とコロンの間に空白を入れずに指定
+        する。)
+
+        使えるメニューの選択子は次のとおり:
+
+        pickup: 所持品にないアイテムのための、すべての拾うメニュー、アイテム
+                検索のメニューなど。
+        drop:   アイテムを置くメニュー。
+        inv:    あらゆるコマンドの所持品の一覧(ただし、アイテムを置くときは
+                除く)。
+        any:    すべてのメニュー。指定しないときはこれになる。
+
+        例えば、
+             sort_menus = true : equipped, basename, qualname, curse, qty
+        とすると、所持品と置くメニューは既定と同じになるが、身につけている・手
+        に持っているアイテムがすべて先に並ぶ点だけが異なる。これは '.' コマンド
+        で続くアイテムを選ぶときに便利だ。
+        2 つ以上の選択子で sort_menus を違うように定義すると、常に最後に当ては
+        まったものが優先される。つまり "any" を最後に設定すると、ほかの設定をす
+        べて上書きする。
+
+        既定では拾うメニューは並べ替えられ、その基準は次のとおり:
+             "equipped, basename, qualname, curse, qty".
+        所持品と置くメニューの基準は "equipped, charged, identified,
+             usefulness, slot" である。
+
+spell_slot ^= <regex>:<list of spell letters>
+        (順序付きリストのオプション。1 行に値 1 つ)
+        正規表現に当てはまる呪文を覚えると、その呪文はリストの中で最初に空いて
+        いる文字に割り当てられる。文字のリストの中の + は「上書きモード」をオン
+        にする: 次の "-" までの文字は、すでに割り当てられていても、すべて空いて
+        いるとみなす。この場合、その文字にすでに割り当てられている呪文は、同じ
+        <regex> に当てはまらない限り、ほかの文字に移される。
+
+        呪文が当てはまるどの正規表現についても、リストの文字がすべて埋まってい
+        れば、既定の順 abc...xyzABC..XYZ を使う。呪文が複数の正規表現に当てはま
+        るときは、最初のものだけを見る。
+
+        例:
+        * 収拾(Apportation)を A に置きたいとき:
+            spell_slot ^= Apportation:A
+        * オゾクブの鎧(Ozocubu's Armour)を普段は r に、r が使えなければ R に置
+          きたいとき:
+            spell_slot ^= Ozocubu's Armour:rR
+        * 名前に "Bolt" を含む最初の呪文を、すでにほかの(Bolt でない)呪文がそこ
+          にあっても a に置きたいとき:
+            spell_slot ^= Bolt:+a
+        * 呪文の文字の既定の割り当てを、大文字を使うように変えたいとき(ほかの
+          spell_slot の行すべての後に置く):
+            spell_slot += .*:ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+gear_slot ^= <regex>:<inventory letters>
+        (順序付きリストのオプション。1 行に値 1 つ)
+        spell_slot と同じ書き方を使うが、上書きモードが最初からオンになってい
+        る。上書きモードは、文字のリストの中の - でオフにできる。
+
+consumable_shortcut += <item name>:<inventory letter>
+        (順序付きリストのオプション。1 行に値 1 つ)
+        gear_slot に似ているが、消耗品の名前 1 つにつき文字を 1 つしか受け付け
+        ず、正規表現も扱わない。
+
+        このオプションで対応を決めた文字には、ゲームはできる限りその消耗品を自
+        動で割り当てようとする。ただし、別の分類の鑑定済みアイテムは除く。(例:
+        'potion of curing:c' とすると、ほかの薬が 'c' に自動で割り当てられるこ
+        とは決してなく、未鑑定の巻物もできる限り 'c' を避ける。薬と巻物は ?id
+        のメニューを共有しているからだ。)
+
+ability_slot ^= <regex>:<ability letters>
+        (順序付きリストのオプション。1 行に値 1 つ)
+        spell_slot と同じ書き方を使うが、'a' のメニューの能力に適用される。
+
+autofight_stop = 50
+        体力(HP)が最大体力のこの割合(%)以下のとき、自動戦闘は何もしない。0 にす
+        ると無効。この設定は自動戦闘と自動射撃の両方に適用される。
+
+autofight_warning = 0
+        自動戦闘のコマンドの間に最低限の時間(ミリ秒)をあけさせる。この時間内に
+        自動戦闘のコマンドを 2 回続けて出すと(例えば Tab キーを押しっぱなしにし
+        たとき)、後のコマンドは無視され、danger のチャンネルに「あなたはむやみ
+        に攻撃すべきではない！」というメッセージが出る。0 以下の値にすると、こ
+        の検査は無効になる。
+
+autofight_fires = false
+        準備した行動が、敵に直接ダメージを与える放てる行動なら、通常の
+        CMD_AUTOFIGHT(初期設定のキー割り当てでは Tab)は、近接攻撃の届かない敵に
+        それを使う。このオプションがなければ、CMD_AUTOFIGHT で使われるのは手に
+        持った射撃武器(弓、クロスボウ、スリング)だけである。直接ダメージを与え
+        る行動を準備していても射程外なら、敵に向かって移動する。直接ダメージを
+        与えない行動を準備しているなら、CMD_AUTOFIGHT はそれをまったく無視す
+        る。移動をまったくしないようにするには、CMD_AUTOFIGHT の代わりに
+        CMD_AUTOFIGHT_NOMOVE をキーに割り当てる。(以前の名前:
+        `autofight_throw`。)
+
+autofight_nomove_fires = true
+        このオプションは、上の `autofight_fires` が CMD_AUTOFIGHT を変えるのと
+        同じように、CMD_AUTOFIGHT_NOMOVE(初期設定ではキーが割り当てられていな
+        い)の動作を変える。(以前の名前: `autofight_throw_nomove`。)
+
+autofight_fire_stop = false
+        自動戦闘で飛び道具を撃ったり物を投げたりするとき、このオプションが true
+        なら、弾は目標を越えて進まずに目標で止まる("f." と同じ)。貫通の飛び道具
+        では、この設定ははっきり不利になりうることに注意。
+
+autofight_caught = false
+        true にすると、視界に敵がいなくても、自動戦闘はあなたを捕らえている蜘蛛
+        の巣や網から抜け出そうとする。
+
+autofight_wait = false
+        true にすると、敵が射程内にいないときの ===hit_closest_nomove は、自動
+        戦闘を中止する代わりに 1 ターン待機する。
+
+autofight_prompt_range = true
+        普通なら攻撃するときに確認が出る武器(!a の銘がある武器や、神が嫌う武器
+        など)を持っているとき、このオプションが true なら、実際に攻撃しようとす
+        るときだけでなく、自動戦闘が敵に向かって歩こうとするときにも確認を出
+        す。
+
+automagic_enable = false
+        古い自動魔法のシステムを有効にするオプション。新しいプレイヤーには、た
+        だ呪文を準備して使うことを勧める。true にすると、自動戦闘(つまり初期設
+        定のキー割り当てでは Tab)は、指定した文字の呪文を目標に唱える。最初の呪
+        文の文字は a。(廃止予定)
+
+automagic_slot = a
+        これを設定すると、古い自動魔法のシステムの最初の呪文の文字が変わる。
+        ゲームの途中でも、===am_set_spell を呼ぶマクロを設定すれば変えられる。
+
+automagic_fight = false
+        古い自動魔法のシステムが有効なとき、これを true にすると、魔力(MP)が足
+        りない呪文を唱えようとしたときや、魔力が設定したしきい値を下回っている
+        ときに、通常の自動戦闘(近接攻撃など)に切り替わる。false にすると、メッ
+        セージが出て、それ以上は何もしない。
+
+automagic_stop = 0
+        autofight_stop と同じように、魔力(MP)がこの数(最大値に対する割合(%))を
+        下回ると、自動戦闘や自動射撃で呪文を唱えさせない。0 にすると無効。
+
+fail_severity_to_confirm = 3
+        失敗すると重い罰を受ける呪文を唱えようとするとき、確認を求める。呪文の
+        失敗の重さ(呪文を唱えるメニューに表示される色)がここで指定した数以上な
+        ら確認する:
+
+          5: マゼンタ(失敗すると最大体力を超えるダメージを受けうる)
+          4: 暗い赤(最大 70% のダメージ)
+          3: 明るい赤(最大 50% のダメージ)
+          2: 黄(最大 30% のダメージ)
+          1: 白(最大 10% のダメージ)
+
+        値に 0 か -1 を与えると、呪文の失敗について確認しない。
+
+easy_door = true
+        扉を開ける(O)か閉める(C)とき、隣の扉が 1 つだけなら方向を尋ねない。この
+        オプションは、扉に向かって歩いて開けるときには影響しない。
+
+warn_hatches = false
+        一方通行の脱出ハッチや縦穴を使う前に確認を求める。
+
+warn_contam_cost = true
+        魔力汚染の代償がある呪文を唱える前に、今の魔力汚染の度合いで唱えると有
+        害な度合いの汚染に達するおそれがあれば、確認を求める。
+
+enable_recast_spell = true
+        有効にすると、呪文を唱えるときの入力で Enter か '.' を押して、前に唱え
+        た呪文をもう一度唱えられる。
+
+confirm_action += <regex>, <regex>, ...
+        (リストのオプション)
+        与えた正規表現のどれかに名前が当てはまる呪文や能力を使うとき、使う前に
+        確認する。
+
+regex_search = false
+        有効にすると、^F でのアイテムの検索は、部分文字列の検索ではなく、既定で
+        正規表現の書き方を使う。この設定にかかわらず、/ で始まる検索語は正規表
+        現の検索として、= で始まる検索語は部分文字列の検索として行われることに
+        注意。
+
+autopickup_search = false
+        有効にすると、^F で検索するとき、自動拾いで拾われるアイテムには
+        {autopickup} の注記が付く。つまり "autopickup" で検索すると、そうしたア
+        イテムがすべて一覧に出る。自前の複雑な自動拾いの関数を使っていると、こ
+        のオプションでゲームが遅くなることがあるので注意。
+
+bad_item_prompt = true
+        悪い、または危険な巻物や薬を使う前に確認を求める。
+
+auto_hide_spells = false
+        true にすると、呪文ライブラリに加わった呪文が自動で隠される。
+
+menu_arrow_control = true
+        false にすると、メニューの選択を矢印キーで操作できなくなる。これはメ
+        ニューのマウス操作には影響せず、選択にホットキーを使うメニューにだけ影
+        響する。(例えば、ローカルで遊ぶときのメインメニューは影響を受けない。)
+
+single_column_item_menus = true
+        false にすると、一部のアイテムのメニューは、今の画面に収まらないほど長
+        い場合に限り、アイテムを 2 列で並べる。true にすると、どんな場合でもす
+        べてのメニューが 1 列になる。このオプションはローカルのタイル版とコン
+        ソール版でだけ使える。WebTiles では、このオプションの値にかかわらず、す
+        べてのメニューが 1 列になる。
+
+show_paged_inventory = true
+        true にすると、'i' のメニューは、'd'(置く)のメニューと同じように、プレ
+        イヤーのアイテムをページ(装備品、薬、巻物、発動できるアイテム)に分け
+        る。
+3-h     メッセージと表示の改善
+------------------------------------------
+
+hp_warning = 10
+        ダメージを受けたときに体力が最大値のこの割合(%)より少なければ、danger
+        チャンネルに "* * * LOW HITPOINT WARNING * * *"(日本語版では「* * * HP
+        低下警告 * * *」)と出す(0 にするとこのメッセージは出ない)。
+
+mp_warning = 0
+        魔力が最大値のこの割合(%)より下がったときに、danger チャンネルに "* * *
+        LOW MAGIC WARNING * * *"(日本語版では「* * * MP低下警告 * * *」)と出す
+        (0 にするとこのメッセージは出ない)。
+
+hp_colour = 70:yellow, 40:red
+        (リストのオプション)
+        ステータス欄の体力の表示を、残りに応じた色にする。初期設定では、体力が
+        25% 未満なら赤、50% 未満なら黄色、それ以外は通常の色で表示する。
+
+mp_colour = 50:yellow, 25:red
+        (リストのオプション)
+        hp_colour が体力に対してするのと同じことを魔力に対してする。
+
+stat_colour = 1:lightred, 3:red
+        (リストのオプション)
+        能力値が指定の値より下がったときに、その能力値に色を付ける。書いた順に
+        調べる。この判定は、腕力強化や能力値の低下などによる色付けより先に行わ
+        れる。
+        通常の灰色の表示にするには、次のように設定する:
+           stat_colour -= 3:red
+
+status_caption_colour = brown
+        ステータス欄の見出しの表示に使う色を決める(たとえば「体力: 10/10」の
+        「体力:」)。
+
+enemy_hp_colour = green green brown brown magenta red
+        モンスター一覧で、敵の体力を状態に応じた色で表示する。色は順に、無傷、
+        軽傷、中程度の傷、重傷、深手、瀕死に対応する。色の名前のほかに
+        "default" も使え、省いた色は通常の色になる。
+
+clear_messages = false
+        true にすると、プレイヤーが行動するたびにメッセージを消す(初期値の
+        false では、メッセージ欄がいっぱいになるまで消さない)。
+
+show_more = false
+        true にすると、1 画面に収まらない量のメッセージが一度に出たときに確認を
+        求める。clear_messages を設定しているときは効果がない。また、
+        force_more_message が働くかどうかにも影響しない。
+
+small_more = false
+        small_more = false(初期値)では、--more-- の表示はメッセージ欄の一番下の
+        別の行に出る。small_more = true では、左下の 1 文字だけになる。
+        注意: clear_messages を設定していると、メッセージの最後の行の最初の文字
+        に上書きされる。
+
+show_newturn_mark = true
+        false にすると、1 ターンの最初の行の頭に表示するアンダースコア(_)を出さ
+        なくする。
+
+show_game_time = true
+        初期設定では、ステータス欄のカウンターは経過したゲーム内時間を表示す
+        る。たいていの行動は 1 単位の時間がかかるが、速く済むもの(指輪をはめ
+        る、武器を構える、など)や時間のかかるもの(技能の低い武器を振る、鎧を着
+        替える、など)もある。
+        false にすると、カウンターは代わりにプレイヤーのターン数を表示する。こ
+        れは、かかった時間に関係なく、行動した回数である。スコアの計算に使うの
+        はこのターン数である(このターン数は % の概要画面でいつでも見られる)。
+        直前の行動にかかった時間が、時間またはターン数の表示の後ろに括弧で表示
+        される。
+
+equip_bar = false
+        true にすると、騒音のバーの代わりに「装備バー」を表示する。いま装備して
+        いるアイテムすべての記号を表示し、使えるのに何も装備していない装備欄は
+        空けて表示する。
+
+animate_equip_bar = false
+        true にすると、装備バーに表示するアイテムのうち、色の変わるものを動かし
+        て表示する。
+
+item_stack_summary_minimum = 4
+        この数以上のアイテムが積まれた場所に踏み込むと、説明の 1 行目に、そこに
+        あるアイテムすべて(50 個まで)の要約を次のような形で表示する:
+          Items here: !! """ ( )))))) [[[
+        固定アーティファクトと発動具は lightcyan、ランダムアーティファクトは
+        yellow、光っているアイテムやルーン文字の刻まれたアイテムは white で表示
+        する(エゴアイテムでないことがすでにわかっている場合は除く)。
+
+mlist_min_height = 4
+        メッセージ欄とモンスター一覧に使える余分な場所があるとき、モンスター一
+        覧はまずこの高さまで広がり、その後でメッセージ欄が広がる。
+        (モンスター一覧は ASCII 版でしか使えないことに注意。)
+
+mlist_allow_alternative_layout = false
+        モンスター一覧を、ステータス欄の下の決まった位置ではなく、コンソールの
+        画面で Crawl が空きを見つけた場所(たいていはマップの左)に表示する。
+        このオプションはタイル版では使えない。
+
+monster_item_view_coordinates = false
+        ^x の視界の説明に、プレイヤーを中心とした座標を表示する。
+
+monster_item_view_features += <regex>, <regex>
+        (リストのオプション)
+        ^x の視界の説明に、<regex> に一致する地形を表示する。それぞれの <regex>
+        は、ダンジョンの地形を表す正規表現である。この正規表現は、'x' コマンド
+        を使ったときの説明に一致するように書く。正規表現が複数の説明に一致する
+        場合は、それらの地形をすべて表示する。
+
+        ここでは特別なキーワードが 2 つ使える。いずれかのパターンが文字列
+        "stair" に一致すれば、階段のコマンドで使える地形をすべて表示する。いず
+        れかのパターンが "trap" に一致すれば、罠の地形(蜘蛛の巣を含む)をすべて
+        表示する。
+
+msg_min_height = 7
+        これを減らすと、マップの表示に使える場所が広がる。最小値は 5。コンソー
+        ル版では、この値が大きすぎてマップが収まらないと、Crawl は起動しない。
+
+msg_max_height = 10
+        コンソール版では、モンスター一覧が広がった後でまだ余分な場所があれば、
+        メッセージ欄がこの高さまで広がる。残りはモンスター一覧が使う。
+        タイル版では、メッセージ欄の最大の大きさを決める。残りはマップの表示が
+        使う。
+
+msg_webtiles_height = -1
+        WebTiles(だけ)で、メッセージ欄の高さを決め、それに合わせてマップの大き
+        さを変える。`msg_min_height` より小さい値は効果がなく、その場合のメッ
+        セージ欄の高さはコンソール版から引き継ぐ(そのため、ふつうは 7 になる)。
+        ほかの設定によっては、このうちの 1 行が `more` のメッセージ用に取られる
+        ことがある。
+
+messages_at_top = false
+        メッセージ欄を画面の上に置く。clear_messages=true を使っていなければ、
+        最新のメッセージが画面の中央近くに来る。
+
+msg_condense_repeats = true
+        同じターンに同じメッセージが何度も出た場合、何回くり返したかを示す縮め
+        た形で表示する。同じ出力(回数を含む)が何ターンにもわたってくり返された
+        場合は、過去のメッセージを見るコマンド(Ctrl-P)でも同じように 1 つにまと
+        める。たとえば:
+            The killer bee misses you. x5
+
+msg_condense_short = true
+        設定すると、同じチャンネルの短いメッセージは、すべてを新しい行で始める
+        のではなく、1 行にまとめて表示する。
+
+show_travel_trail = false (オンラインのサーバーでは初期値は true)
+        true にすると、自動探索や自動移動でたどった道筋を強調表示する。道筋のコ
+        ンソールでの色と記号は、feature オプションで "travel trail" の地形を上
+        書きすれば、さらに設定できる。道筋が表示されているときは、マップを消去
+        するコマンド(Ctrl-C)はマップではなく道筋を消す(もう一度押すと、いつもど
+        おりマップを消す)。
+
+skill_focus = true
+        true にすると、技能画面で技能を無効、有効、集中の順に切り替える。
+        false にすると、有効と無効の切り替えだけになる。"toggle" にすると、スキ
+        ル画面にこの動作をゲーム中に切り替えるスイッチが付く。
+
+default_show_all_skills = false
+        true にすると、技能(m)のメニューで、訓練していない技能や訓練できな
+        い技能も含めて、すべての技能を最初から表示する。いつもどおり、'*'
+        で訓練できる技能の表示に戻る。このオプションはヒントモードとチュート
+        リアルのゲームには影響しない。
+
+monster_list_colour = friendly:green, neutral:brown, good_neutral:brown
+monster_list_colour += trivial:darkgrey, easy:lightgrey, tough:yellow,
+                       nasty:lightred, unusual:lightmagenta
+        (リストのオプション)
+        モンスター一覧でモンスターの名前を表示する色を変える。使えるキーと、そ
+        の最初の色は次のとおり:
+
+           モンスターの態度:
+             friendly       - green
+             neutral        - brown (「無関心」)
+             good_neutral   - brown (「平和的」)
+
+           敵対するモンスターの脅威度:
+             trivial        - darkgrey
+             easy           - lightgrey
+             tough          - yellow
+             nasty          - lightred
+             unusual        - lightmagenta
+
+        設定していない種類や色の抜けている種類は lightgrey になる。`-=` で取り
+        除くときは、種類の名前だけを書くこともでき、その種類の設定がすべて消え
+        る(lightgrey になる)。
+
+view_delay = 600
+        射撃や魔法による攻撃、見た目の効果がある祈祷などのアニメーションの速さ
+        を決める。
+
+reduce_animations = false
+        true にすると、一部のアニメーションを簡単にし、途中の段階を描かない。た
+        とえば、光線の呪文を唱えたり射撃武器を撃ったりしたときは、最後の光線の
+        道筋だけを表示する。webtiles のゲームでは初期値は `true`。
+
+use_animations = beam, range, hp, monster_in_sight, pickup, monster, player
+use_animations += branch_entry
+        追放されたときなどの特別なアニメーションを出すかどうかを決める。初期設
+        定ではすべてのアニメーションが有効で、別々に有効・無効にできる種類は次
+        のとおり:
+
+          beam             - 光線の呪文を唱えたり射撃武器を撃ったりしたときの
+                             アニメーション。
+          range            - 呪文の射程内にモンスターがいないとき、唱えようと
+                             した呪文の実際の射程を示す重ね表示で画面を光らせ
+                             る。
+          hp               - hp_warning オプションで指定した値より体力が少なく
+                             なるダメージを受けるたびに、画面を赤く光らせる。
+          monster_in_sight - 危険なモンスターが見えているときに休憩、走る、自
+                             動移動、自動探索をしようとすると、モンスター自身
+                             を見やすくするために、画面のモンスターのいない部
+                             分を光らせる。
+          pickup           - アイテムを拾ったときのさまざまなアニメーション。
+                             今のところ、アニメーションがあるのはルーンとオー
+                             ブだけ。
+          monster          - モンスターが能力を使ったり呪文を唱えたりしたとき
+                             のアニメーション。
+          player           - プレイヤーが能力を使ったり呪文を唱えたりしたとき
+                             のアニメーション。
+          branch_entry     - 新しい支部に入ったときのアニメーション。今のとこ
+                             ろ、アニメーションがあるのはアビスとゾットの領域
+                             だけ。
+
+unusual_monster_items += <regex>, <regex>, ...
+        (リストのオプション)
+        持ち物がこのコンマ区切りのリストの正規表現に一致するモンスターは、脅威
+        度が unusual(珍しい)として表示される。たとえば:
+            unusual_monster_items =  wand
+            unusual_monster_items += disto,chaos
+            unusual_monster_items += curare,atropa,datura,dispersal
+            unusual_monster_items += throwing net
+        照合に使うアイテムの説明は、'xv' でモンスターを調べたときにふつう表示さ
+        れる、アイテムの短い名前である。
+
+        このオプションは、tile_show_threat_levels(タイル版のみ)、
+        monster_list_colour、unusual_highlight(コンソール版のみ)の各オプション
+        で、どのモンスターを "unusual"(珍しい)とみなすかを決める。
+
+darken_beyond_range = true
+        true にすると、狙いを付けるときに射程の外にあるものをすべて灰色で表示す
+        る。false にすると、use_animations オプションの "range" の種類も無効に
+        なる。
+
+show_blood = true
+        false にすると、床や壁に飛び散った血を表示しない。タイル版では、死体を
+        骸骨として表示する。
+
+food_snacking_frequency = 40
+        果物や肉やパンなどの食べ物の貯えの上を歩いたときに、雰囲気づくりのメッ
+        セージを出す頻度を決める。数値は確率(%)である。当然ながら、100% なら必
+        ず、0% なら決して出ず、初期値の 40% なら 5 回に 2 回出る。頻度を 100%
+        にしていなければ、たいていの場合、敵対するモンスターが見えているときは
+        確率が 4 分の 1 に下がる。
+
+fountain_line_frequency = 40
+        どんな種類の泉でも、その上を歩いたときに雰囲気づくりのメッセージを出す
+        頻度を決める。数値は確率(%)である。前のオプションと同じく、100% なら必
+        ず、0% なら決して出ず、初期値の 40% なら 5 回に 2 回出る。100% でなけれ
+        ば、敵対するモンスターが見えているときは確率が下がる。
+
+force_more_message += <regex>, <regex>
+        (リストのオプション)
+        ここで指定した正規表現を含むメッセージが出ると、必ず --More-- の確認を
+        出す。そのため、本当に大事な出来事を目立たせるのに使える。このオプショ
+        ンは show_more オプションに関係なく働く。初期設定では、このオプションは
+        自動移動などの中断はしない。中断させたいときは代わりに
+        runrest_stop_message を使う。書き方は runrest_ignore_message (3-f) と同
+        じ。日本語版ではメッセージを日本語で表示するので、正規表現も日本語の
+        メッセージに合わせて書く。
+
+flash_screen_message += <regex>, <regex>
+        (リストのオプション)
+        ここで指定した正規表現を含むメッセージが出ると、画面を黄色く光らせる。
+        そのため、とても大事な出来事を目立たせるのに使える。
+        書き方は force_more_message と同じ。
+
+monster_alert += <monster name or symbol>
+        (リストのオプション)
+        ここに名前を挙げたモンスターに初めて出会ったとき、--More-- の確認を出
+        す。モンスターの集まりに一致する特別な値もいくつか使える:
+          -nasty, tough, easy, trivial  脅威度がその値以上のモンスターすべて。
+          -uniques                      すべてのユニーク。
+          -unusual                      珍しいアイテムを持つモンスターすべて
+                                        (unusual_monster_items で定める)
+
+cloud_status = true
+        「雲烟」の状態表示を出すかどうか。初期値は true だが、タイル版では自分
+        のいる場所の雲が見えるので、初期値は false。
+
+always_show_zot = false
+        「ゾット」の状態表示を、時間が十分に残っているときも含めて、いつも出す
+        かどうか。
+
+always_show_gems = false
+        今いる支部の宝石が砕けるまでの時間を示す「宝石」の状態表示を出すかどう
+        か(その支部に宝石がある場合)。
+
+more_gem_info = false
+        持っている宝石の制限時間と、宝石が砕けたときの効果音を出すかどうか。
+
+action_panel_show = true
+        アクションパネルを表示するか隠すか。このオプションはゲームをまたいで自
+        動的に保存され、Webtiles でだけ使える。
+
+action_panel = /?!}
+        上はアクションパネルに表示するアイテムの初期設定のリストである。使える
+        記号は次のとおり:
+        ?       巻物
+        !       薬
+        }       道具
+        /       ワンド
+        空の文字列にすると、パネルを完全に隠す。このオプションでのアイテムの種
+        類の並びが、アクションパネルでのアイテムの種類の並びになる。同じ種類の
+        中では持ち物の文字の順に並ぶ。このオプションは Webtiles でだけ使える。
+
+action_panel_filter += <regex>, <regex>, ...
+        (リストのオプション)
+        この絞り込みの式に一致するアイテムは、アクションパネルに表示しない。こ
+        のオプションは Webtiles でだけ使える。
+        ファイル dat/defaults/misc.txt に初期設定がある。
+
+action_panel_show_unidentified = false
+        true にすると、アクションパネルに未識別の巻物と薬も表示する。このオプ
+        ションは Webtiles でだけ使える。
+
+action_panel_scale = 100 (persistent)
+        アクションパネルに適用する拡大率(%)。このオプションはゲームをまたいで自
+        動的に保存され、Webtiles でだけ使える。
+
+action_panel_orientation = horizontal (persistent)
+        (値: horizontal | vertical)
+        'horizontal' にすると、アクションパネルを画面の上の辺に沿って置
+        く。'vertical' にすると、左の辺に沿って置く。このオプションはゲームをま
+        たいで自動的に保存され、Webtiles でだけ使える。
+
+action_panel_font_family = monospace (persistent)
+action_panel_font_size = 16 (persistent)
+        アクションパネルでアイテムの数を表示するのに使うフォント。大きさのオプ
+        ションはゲームをまたいで自動的に保存される。どちらも Webtiles でだけ使
+        える。
+
+action_panel_glyphs = false
+        true にすると、アクションパネルでタイルの代わりに記号を表示する。このオ
+        プションは webtiles でだけ使える。
+
+show_resist_percent = true
+        true にすると、% の画面に、いまの耐性の段階をもとに、それぞれの属性から
+        プレイヤーが受けるダメージの正確な割合(%)を表示する。
+
+always_show_doom_contam = false
+        true にすると、破滅や汚染がまったくないときでも、サイドパネルの右上に破
+        滅と汚染のメーターをいつも表示する。
+
+3-i     色(メッセージとメニュー)
+-----------------
+
+menu_colour ^= <match>:<colour>:<regex>, <colour>:<regex>, ...
+        (順序付きリストのオプション)
+        メニューやアイテムを表示するほかの画面(とその他いくつかの場合。下の一覧
+        を参照)で、正規表現を使って、行の表示に使う色を決められる。たとえば、初
+        期設定のオプションでは次の行を使っている:
+            menu_colour += lightmagenta:.*orb.*Zot
+        これで、アイテムを拾うメニューでゾットのオーブを紫色で目立たせる。アイ
+        テムの場合は、下で説明するアイテムのさまざまな注釈とも正規表現を照合す
+        る。たとえば、次の行:
+            menu_colour += yellow:.*emergency_item.*
+        によって、`emergency_item` の注釈が付くアイテム(テレポートの巻物など)
+        が、持ち物やほかのアイテムのメニューで黄色で目立つ。
+
+        1 つのリストに複数の記述を書けるし、menu_colour の行を複数書くこともで
+        きる。menu_colour の行を複数使うと、_最初に_ 一致した正規表現の色が使わ
+        れる。このオプションは `^=` が使えるので、リストを一から作り直さずに初
+        期設定を上書きするのに便利である。色の一覧は 5-a の colour オプションを
+        参照。
+
+        `match` の部分は、色付けがどの一覧に効くかを指定する。'item' を指定する
+        か、<match>: の部分をまったく書かなければ、パターンはアイテムに関係する
+        すべての種類に効く。match に使える、アイテムに関係する値は次のとおり:
+            inventory     (持ち物と、拾う・置くメニュー)
+            pickup        (拾うメニューと、床の上のアイテム)
+            equip         ([ と " の画面)
+            use_item      (装備する、外す、読む、飲む、など)
+            shop          (店のメニュー)
+            stash         (Ctrl-F の結果)
+            description   (\ の画面)
+            stats         (メイン画面のステータス欄にある、構えているアイテム
+                           と準備したアイテム)
+            resists       (% の画面のアイテム)
+
+        アイテムに関係しない値は次のとおり。これらは `match` をはっきり書く必要
+        がある:
+            help          (マニュアル)
+            notes         (?: の画面)
+
+        アイテムには、色の制御を楽にする便利なタグが多数注釈として付いている。
+        アイテムには基本の種類(armour、weapon、wand など)が注釈として付く。ま
+        た、役に立つかどうかを示す次のようなタグも付く:
+            forbidden       (使うと信仰する神が嫌うアイテム。)
+            emergency_item  (緊急時にとても役立つアイテム。)
+            good_item       (おおむね良いアイテム。)
+            dangerous_item  (使うと危険なことがあるアイテム。)
+            bad_item        (おおむね悪いアイテム。)
+            useless_item    (自分には役に立たないアイテム。)
+
+        ほかにも次のようなさまざまな性質が付く:
+            equipped        (装備しているアイテム。)
+            ego             (攻撃や防御の魔法のブランドが付いたアイテム。)
+            artefact        (アーティファクト。識別したかどうかを問わない。)
+            unrand          (固定アーティファクト。)
+            melee           (近接武器。魔法の杖を含む。)
+            ranged          (射撃武器。)
+            evoker          (元素の発動具。)
+            identified      (完全に識別したアイテム。)
+            known           (アイテムの細かい種類がわかっている。)
+            unidentified    (アイテムの細かい種類がわからない。)
+            god gift        (神から授かったアイテム。)
+            cursed          (アシェンザリに呪われている。)
+
+        (もちろん、これらの一部は、もともと一部のメニューにしか当てはまらない。
+        装備できるのは持っているアイテムだけで、未識別になりうるのは持っていな
+        いアイテムだけ、などである。)
+
+        menu_colour の一致を調べるときは、これらの接頭辞が実際のアイテム名の前
+        に付いているものとして扱う。たとえば:
+            identified evil_item forbidden misc a piece from Xom's
+            chessboard (15/15)
+
+        同じ接頭辞は、その説明に一致するアイテムに関する確認を目立たせたり、
+        autopickup_exceptions を定めたりするのにも使える。
+
+        ほかの例については、`dat/defaults/menu_colours.txt` の初期設定を参照。
+
+        menu_colour は、`notes` の match を使って、ゲーム内のモルグのノート
+        (`?:` で色付きで読める)に色を付けるのにも使える。たとえば、次の行はレベ
+        ルアップを緑で表示する:
+            menu_colour ^= notes:green:Reached XP level
+
+message_colour ^= <colour>:<channel>:<regex>, <colour>:<regex>, ...
+        (順序付きリストのオプション)
+        個々のメッセージの色を上書きできる。たとえば、体力低下の警告が十分に目
+        を引かないと思うなら、次のようにできる:
+             message_colour += yellow:LOW HITPOINT WARNING
+        照合するメッセージを特定のチャンネルに絞ることもできる:
+             message_colour += lightred:god:xom
+        メッセージをまったく見たくなければ、消すこともできる:
+             message_colour += mute:You start resting
+        日本語版ではメッセージを日本語で表示するので、正規表現も日本語のメッ
+        セージに合わせて書く(たとえば LOW HITPOINT WARNING は「HP低下警告」にな
+        る)。
+
+3-j     準備、射撃、矢弾
+----------------------------------
+
+fire_items_start = a
+        準備した飛び道具を順に切り替えるときに、最初に調べる持ち物のアイテム
+        を決める。初期値は a。
+
+fire_order  = launcher, throwing, inscribed, spell, evokable, ability
+        (順序付きリストのオプション)
+        準備する行動を順に切り替えるときのアイテムの順番を決める。種類はコンマ
+        で区切
+        り、先に書いたものほど優先される。書かなかった行動の種類は、準備の切り
+        替えで使わない。このオプションは、ゲーム開始時に自動的に準備するも
+        のにも影響する。
+
+        'launcher' は、構えている射撃武器(クロスボウ、弓、スリングなど)で撃つこ
+        とを指す。'throwing' はすべての投擲用の矢弾を指す。投擲用の矢弾の特定の
+        種類を名前('javelin'、'boomerang'、'stone'、'rock'、'net'、'dart')で指
+        すこともできるが、これらの順番は投擲用の矢弾の種類どうしの順番にしか影
+        響しない。'inscribed' を使うと、"+f" の銘を付けた矢弾の順番を決められ
+        る。銘について詳しくは、Crawl のマニュアルの「銘(インスクリプション)」
+        の節を参照。矢弾の種類を "/" で区切ると、切り替えの順番を持ち物の順番で
+        決めることを表す。同じ種類の中での順番は、該当するサブメニューでの文字
+        の順番(たとえば投擲なら持ち物、など)で決まる。
+
+fire_order_spell = all
+        (リストのオプション)
+        呪文を名前で指定して、fire_order に入れたり外したりできる。呪文どうしの
+        順番は割り当てた文字で決まり、このオプションはリストに何を入れるかだけ
+        を決める。呪文の名前をコンマで区切ったリストにでき、+= と -= が使える。
+        特別な値が 2 つ使える。'all' はすべての呪文を、'attack' は自動戦闘でダ
+        メージを与える呪文とみなす呪文のリストを表す。詳しくは autofight_fires
+        を参照。
+
+fire_order_ability = all
+fire_order_ability -= berserk
+        (リストのオプション)
+        能力を名前で指定して、fire_order に入れたり外したりできる。能力どうしの
+        順番は割り当てた文字で決まり、このオプションはリストに何を入れるかだけ
+        を決める。能力の名前をコンマで区切ったリストにでき、+= と -= が使える。
+        特別な値が 2 つ使える。'all' はすべての呪文(能力)を、'attack' は自動戦
+        闘でダメージを与える呪文とみなす能力のリストを表す。詳しくは
+        autofight_fires を参照。
+
+fail_severity_to_quiver = 2
+        詠唱に失敗したときの深刻度がこの値以上の呪文を、準備の切り替えと自動で
+        準備することから外す。-1 にすると、呪文を自動で準備することを
+        まったくしなくなる。詠唱失敗の深刻度の値の内訳は
+        fail_severity_to_confirm を参照。
+
+launcher_autoquiver = true
+        true にすると、射撃武器を構えたときに準備する行動をその射撃武器に切り替
+        える。
+        false にすると、射撃武器を構えても準備する行動は変わらない。(tab や `v`
+        で撃つ
+        ことはそれでもできる。)
+
+quiver_menu_focus = false (persistent)
+        true にすると、準備のメニューを「絞り込み」の状態で開く。この状態では、
+        行動の文字はアイテム・呪文・能力の文字から取られ、一度に選べるのはこれ
+        らのうちの 1 つだけである。そうでなければ、メニューからどの行動でも選べ
+        るが、このメニューでの文字は固定されない。このオプションはゲームをまた
+        いで保存されるので、準備のメニューでのいまの値が保存され、明示的に設定
+        しない限り自動的に読み込まれる。
+3-k     メッセージチャンネル
+----------------------------
+
+Crawl はメッセージ欄を通じてプレイヤーに情報を伝える。どのメッセージも、いわゆ
+るチャンネルのどれかに属している。各チャンネルの振る舞いは次のオプションで変え
+られる。
+
+     channel.CHANNEL_NAME = (COLOUR | mute | default | on | off | plain)
+
+CHANNEL_NAME には今のところ次のどれかを指定できる:
+   plain           = 普通の文章(と「色の付いていない」もの)
+   prompt          = プレイヤーへの入力の問い合わせ
+   god             = 神からのメッセージ
+   duration        = キャラクターの呪文や効果が切れることについてのメッセージ
+   danger          = キャラクターの存在を脅かす深刻な危険
+   warning         = そのほかのさまざまな警告
+   recovery        = 病気、能力値の低下、毒の状態からの回復
+   talk            = モンスターがしゃべる
+   talk_visual     = プレイヤーに見える、モンスターの何らかの行動
+   timed_portal    = ポータルの時間切れのメッセージ
+   sound           = そのほかの音
+   intrinsic_gain  = レベル、能力値、種族の力の獲得
+   mutation        = 変異を得る、失う
+   monster_spell   = モンスターの身振りや呪文の詠唱についてのメッセージ
+   monster_enchant = モンスターにかかった魔法の効果に関するメッセージ
+   monster_warning = モンスターが視界に入る
+   friend_spell    = monster_spell と同じだが、友好的なモンスターだけ
+   friend_enchant  = monster_enchant と同じだが、友好的なモンスターだけ
+   friend_action   = 友好的なモンスターのそのほかの行動
+   monster_damage  = モンスターがどれだけ傷ついているかを伝えるメッセージ
+   monster_target  = モンスターを目標として示すメッセージ(使われていない)
+   banishment      = アビスへの追放(する、される)についてのメッセージ
+   equipment       = 身に着けている装備や手にしている武器を示すメッセージ
+   floor           = 床のアイテムを見たり、その上を歩いたりしたときのメッセージ
+   multiturn       = 長くかかる行動(防具を着る、解体するなど)を示す
+   examine         = 周りを調べたときのメッセージ
+   examine_filter  = 周りを調べたときの退屈なメッセージ
+   diagnostic      = デバッグ用のメッセージ
+   error           = エラーメッセージ
+   tutorial        = チュートリアルからのメッセージ
+   orb             = ゾットのオーブについてのメッセージ
+   hell_effect     = 地獄の環境の効果についてのメッセージ
+   dgl_message     = 観戦者からのメッセージ(オンラインのコンソール版のみ)
+
+チャンネルのオプションは次のとおり:
+   mute        = そのチャンネルのメッセージを一切表示しない(危険なので注意!)
+   default     = チャンネルを有効にし、初期設定の配色にする
+   alternative = チャンネルを有効にし、別の「色とりどりの」配色にする
+   on          = default と同じ
+   plain       = チャンネルを "plain" チャンネルと同じ色にする
+                 (ただし、plain == mute のときに "mute" にしてしまうような
+                 間の抜けたことはしない)
+   off         = plain と同じ
+
+COLOUR には、5-a 節(colour オプション)で説明する色のどれでも指定できる。
+
+今のところ、複数の色を使うチャンネルは monster_damage と god だけだ。ほかのチャ
+ンネルはすべて初期設定で on になっている。
+
+3-l     銘(インスクリプション)
+------------------------------
+
+銘について詳しくは、crawl のマニュアルの「銘(インスクリプション)」の節を参照。
+
+autoinscribe += <regex>:<inscription>
+        (順序付きリストのオプション、1 行に 1 つの値)
+        説明にその正規表現を含むアイテムには、自動的に銘が付けられる(autopickup
+        が有効になっている場合)。
+
+        例えば、危険かもしれないワンドの使用回数をうっかり使ってしまうのを防ぐ
+        のに、次のように使える。
+             autoinscribe += wand of polymorph:!V
+
+        メニューの色の接頭辞(forbidden など)もここで使える。例:
+             autoinscribe += (bad|dangerous)_item.*scroll:!r
+        とすると、識別済みの悪い巻物や危険かもしれない巻物を、うっかり読んでし
+        まうのを防げる。
+
+        ほとんどの順序付きリストのオプションと違い、当てはまる項目が複数あれ
+        ば、そのすべてが効果を持つ。順序は銘の並び順を決めるだけだ。
+
+show_god_gift = unident|yes|no
+        神からの贈り物として手に入れたアイテムに {god gift}(神の贈り物)を付け加
+        える。"unident" にすると、アイテムの性質がすべてわかった時点でこの印は
+        消える。この設定にかかわらず、アイテムの由来はその説明で確かめられる。
+
+3-m     マクロ関係のオプション
+------------------------------
+macros += M \{9} za
+        このオプションはマクロかキーマップを追加する。
+
+        定義はどれも、空白で区切ったちょうど 3 つの引数からなる。1 つ目は、マク
+        ロかキーマップかを表す。キーマップは主にキーそのものを完全に割り当て直
+        すのに役立ち、マクロより先に処理される。どちらを使えばいいかわからなけ
+        れば、たぶんマクロでよい。
+
+        "M" マクロ(ゲームのコマンドを入力するときに処理される)
+
+        特別な文脈のキーマップ:
+        "K1" 階のマップの文脈のキーマップ(`X` の表示中のみ)
+        "K2" 狙いの文脈のキーマップ(狙いをつけているときと `x` の表示中)
+        "K3" 確認の文脈のキーマップ(y/n の問い合わせに答えるとき)
+        "K4" メニューの文脈のキーマップ(技能のメニュー以外のすべてのメニュー)
+
+        初期設定のキーマップの文脈:
+        "K" 初期設定の文脈のキーマップ(それ以外のすべての文脈)
+
+        2 つ目の引数は起動するキーを表し、そのキーの文字かキーコードを書く(例え
+        ば 'a'、'A'、\{9} はそれぞれ A、Shift-A、Tab キー)。3 つ目の引数はマク
+        ロやキーマップの動作を表し、2 つ目の引数に結び付けるコマンドの並びを書
+        く(例えば "zap" なら、a の文字の呪文を前の目標に向けて唱える)。ファンク
+        ションキー、テンキー、移動キーはテキストのキーコードで入力できる(例:
+        \{F2}、\{NP-}、\{PgUp}、\{Down} など)。
+
+        rc ファイルにマクロやキーマップがあると、読み込みのときに自動的に
+        macro.txt ファイルに保存される。このとき、macro.txt ファイルにすでに保
+        存されているマクロやキーマップは、何も知らされずに上書きされる。
+
+        この書き方は macro.txt ファイルで使う形式をもとにしているが、同じではな
+        い。
+
+flush.failure = true
+flush.command = false
+flush.lua     = true
+        これらはマクロを使うときに役立つ。このサブオプションのどれかを true に
+        すると、入力バッファ全体が捨てられ、事実上マクロが止まる。今あるサブオ
+        プションは次のとおり:
+           failure -- 呪文や能力の発動に失敗したとき
+           command -- ゲームが次のコマンドを受け取ろうとするたび
+           lua     -- lua から crawl.flush_input() が呼ばれるたび
+
+additional_macro_file = path/to/filename
+        macro.txt の後に読み込む、追加のマクロファイルを加える。
+        additional_macro_file の行は複数書ける。
+
+bindkey = [^D] CMD_CHARACTER_DUMP
+        どのキーでどのコマンドが動くかを、マクロより低い段階で変える。マクロは
+        (まだ)互いを呼び出せないが、キーの変わったコマンドを呼び出すことはでき
+        るので役に立つ。
+        書き方はいつも同じで、[key] command だ。
+        まず、角括弧の中に使いたいキーを書く。^X は Ctrl-X を意味する。その後ろ
+        に、そのキーに割り当てるコマンドの名前を書く。ゲームの別々の場面で効く
+        もの(例えば狙いのコマンド 1 つとメインのゲームのコマンド 1 つ)なら、同
+        じキーに複数のコマンドを割り当てられる。同様に、同じコマンドを別々の
+        キーに割り当てることもできる。キーコードを書くにはマクロの割り当てと同
+        じ \{} の書き方が使え、"F1"、"NP+"、"Down" のようなキーコードは [] の中
+        に直接書ける。
+        使えるコマンドの完全な一覧は keybind.txt を参照。
+
+3-n     タイル版のオプション
+----------------------------
+タイル版でないゲームでは、タイル版のオプションは無視される。
+
+tile_show_items = <glyphs>
+        このオプションは、タイル版の持ち物欄でのアイテムの並び順を決める。初期
+        設定の値は !?/=([)}:| である。一覧にない記号のアイテムは最後に表示され
+        る。
+
+tile_skip_title = false
+        これを true にすると、ゲームの読み込みが終わったときにタイトル画面で
+        キーの入力を求められず、そのまま最初のメニューに進む。
+
+tile_menu_icons = true
+        持ち物のメニューやほかのいくつかのメニューにタイルのアイコンを入れ、場
+        所が狭くなる分を補うために、メニューを最大 2 列で表示する。
+        普通のメニューのほうがよければ、このオプションを false にする。
+
+tile_player_col              = white
+tile_monster_col             = #660000
+tile_neutral_col             = #660000
+tile_peaceful_col            = #664400
+tile_friendly_col            = #664400
+tile_plant_col               = #446633
+tile_item_col                = #005544
+tile_unseen_col              = black
+tile_floor_col               = #333333
+tile_wall_col                = #666666
+tile_mapped_floor_col        = #222266
+tile_mapped_wall_col         = #444499
+tile_explore_horizon_col     = #6b301b
+tile_door_col                = #775544
+tile_downstairs_col          = #ff00ff
+tile_upstairs_col            = cyan
+tile_branchstairs_col        = #ff7788
+tile_portal_col              = #ffdd00
+tile_transporter_col         = #0000ff
+tile_transporter_landing_col = #5200aa
+tile_feature_col             = #997700
+tile_trap_col                = #aa6644
+tile_water_col               = #114455
+tile_deep_water_col          = #001122
+tile_lava_col                = #552211
+tile_excluded_col            = #552266
+tile_excl_centre_col         = #552266
+tile_window_col              = #558855
+
+これらのオプションで、ダンジョンの階のミニマップに使う色を設定できる。
+#00ff00(緑)のような RGB の 16 進コードも使える。
+   tile_player_col              - プレイヤーの位置の色。階のマップの表示
+                                  ('X')中は、マップの中心の色でもある
+   tile_monster_col             - 敵対するモンスターの色
+   tile_neutral_col             - 中立のモンスターの色
+   tile_peaceful_col            - 平和的なモンスターの色
+   tile_friendly_col            - 友好的なモンスターの色
+   tile_plant_col               - 経験値が 0 のモンスター(植物や菌類)の色
+   tile_item_col                - 既知または感知したアイテムの色
+   tile_unseen_col              - 見ていない場所の色(たいていは石)
+   tile_floor_col               - 床の色
+   tile_wall_col                - あらゆる種類の壁の色
+   tile_mapped_floor_col        - 魔法の地図で感知した床の色
+   tile_mapped_wall_col         - 魔法の地図で感知した壁の色
+   tile_explore_horizon_col     - 探索済みの範囲の端の色
+   tile_door_col                - 既知の扉の色(開いていても閉じていても)
+   tile_downstairs_col          - 下り階段の色
+   tile_upstairs_col            - 上り階段の色(支部の出口を含む)
+   tile_branchstairs_col        - 支部の入口の色
+   tile_portal_col              - あらゆるポータルの色
+   tile_transporter_col         - 転送装置の色
+   tile_transporter_landing_col - 転送装置の着地点の色
+   tile_feature_col             - 階段とポータル以外のあらゆる地形の色
+                                  (祭壇、店、噴水など)
+   tile_trap_col                - あらゆる種類の既知の罠の色
+   tile_water_col               - 浅い水の色
+   tile_deep_water_col          - 深い水の色
+   tile_lava_col                - 溶岩の色
+   tile_excluded_col            - 自動移動の注意対象(除外)にしたマスの色
+                                  (tile_floor_col の色だけを上書きする)
+   tile_excl_centre_col         - 注意対象の中心の色(tile_floor_col と
+                                  tile_item_col だけを上書きする)
+   tile_window_col              - 今見えている範囲を示す四角い枠の色
+
+custom_text_colours = lightmagenta:#fd59fa, blue:#005afa
+        Crawl のインターフェースで使う 16 の基本的な端末の色のどれかを割り当て
+        直す。色の名前と RGB の 16 進コードの組で指定する。一覧に含めなかった色
+        は初期設定の値のままになる。
+
+tile_update_rate = 1000
+        何も入力がないときに、画面を描き直すまでの時間(ミリ秒)。ゲームの反応が
+        遅ければ、この数を増やしてみる。逆に、反応は問題ないが描き直しがなかな
+        か起こらないなら、小さい値にする。
+
+tile_runrest_rate = 17
+        走ったり休んだりしているときに、画面を描き直すまでの時間(ミリ秒)。走っ
+        たり休んだりしているときに Crawl が遅ければ、この数を増やす。
+
+tile_key_repeat_delay = 200
+        キーを押し続けたとき、押したキーが繰り返し働きだすまでには間がある。こ
+        のオプションはその間をミリ秒で決める。0 にすると、キーの入力は繰り返さ
+        れなくなる。
+
+tile_tooltip_ms = 500
+        画面のどこかにマウスを重ねてから、ツールチップが出るまでの時間(ミリ
+        秒)。このオプションを 0 にすると、ツールチップがまったく出なくなる。
+
+tile_tag_pref = (none| named | enemy | tutorial )
+        この設定は、ローカルのタイル版のダンジョンの表示で、どのモンスターに文
+        字のタグを付けるかを決める。
+            auto     - ゲームのモードによって選ぶ
+            none     - タグをすべて消す
+            all      - すべての敵にタグを表示する
+            named    - 名前のあるモンスターすべての名前を表示する(味方も敵も)
+            enemy    - 名前のある敵のモンスターの名前を表示する
+            tutorial - このゲームでまだ倒していないモンスターすべてと、
+                       名前のある敵のモンスターの名前を表示する
+        「名前のあるモンスター」の例は、ユニークや幽霊だ。auto のときは、通常の
+        ゲームでは "enemy"、闘技場モードでは "named"、チュートリアルと解説付き
+        モードでは "tutorial" を使う。
+
+tile_window_width  = -90
+tile_window_height = -90
+        ウィンドウの幅と高さを設定するオプション(単位はピクセル)。正の値なら、
+        そのままウィンドウの大きさになる。0 にすると、ウィンドウの大きさは自動
+        で決まる。負の数にすると、画面の解像度からその値の分だけ小さくした大き
+        さと解釈される。幅は下の `tile_window_ratio` で上書きされることがあり、
+        その場合 `tile_window_width` は幅の最大値として使われる。ウィンドウマ
+        ネージャによっては、OS のユーザーインターフェースの要素の位置のために、
+        これらの値がもっと小さく制限されることがある。例えば MacOS では、ウィン
+        ドウは Dock やメニューバーと重ならない。
+
+tile_window_ratio  = 1618
+        正の値にすると、タイル版はこの値を使って、ウィンドウの幅をウィンドウの
+        高さとの比(1000 倍した値)として決める。具体的には w = h *
+        tile_window_ratio / 1000 となる。
+        この値を設定すると、`tile_window_width` は幅の最大値として使われる。幅
+        の最小値は UI の配置で決まる。全画面モードでは、この値は無視される。無
+        効にするには 0 以下(<= 0)の値にする。
+
+tile_window_limit_size = true
+        ウィンドウの大きさの最小値を制限する。無効にするのはテストのときだけに
+        すべきだ。
+
+game_scale = 1
+        1 から 8 までの整数の倍率で、UI の要素すべての大きさを大きくする。高
+        DPI に直接対応していない高解像度のディスプレイで高 DPI の描画をまねた
+        り、とても大きなディスプレイで拡大率を調整したりするのに使える。4K の
+        ディスプレイなら 3 か 4 の値を勧める。2K のディスプレイは、たいてい 2
+        で最も見やすくなる。ローカルのタイル版のみ。
+
+tile_map_pixels = 0
+        ミニマップの 1 マスが占めるピクセル数の最大値。解像度が低く、持ち物欄が
+        小さすぎると感じるなら、これを 1 にすると持ち物欄の場所が広がる。欠点
+        は、ミニマップをクリックして移動するのがずっと難しくなることだ。0 にす
+        ると、ミニマップの大きさは自動で決まる。
+
+tile_viewport_scale = 1.0
+        ダンジョンの表示にかける倍率。最小値は 0.2 で、最大値は解像度で決まる。
+        少なくとも視界の範囲がいつも見えるように、拡大には上限がある。ローカル
+        のタイル版では、ゲームの中で ctrl-'-' と ctrl-'='(キーボードによっては
+        ctrl-'+')でも調整できる。
+
+tile_map_scale = 0.6
+        階のマップ(X)でダンジョンの表示にかける倍率。タイル版では階のマップで
+        '{' と '}' でも調整でき、ローカルのタイル版では ctrl-'-' と
+        ctrl-'='(キーボードによっては ctrl-'+')でも調整できる。
+
+tile_cell_pixels = 32
+        倍率 1.0 のときの、ダンジョンの表示のタイルの幅と高さ(単位は(論理)ピク
+        セル)。これは古いオプションで、代わりに tile_viewport_scale で倍率を調
+        整することを勧める。
+
+tile_min_stat_width_characters = 42
+        ステータス欄のサイドバーの最小の幅(文字数)。
+
+tile_sidebar_pixels = 32
+        ローカルのタイル版のサイドバーの表示での、タイルの幅と高さ(単位は(論理)
+        ピクセル)。
+
+tile_filter_scaling = false
+        tile_cell_pixels か tile_sidebar_pixels と組み合わせて使う。true にする
+        とテクスチャにフィルターをかけ、なめらかだがぼやけた画像になる。
+
+tile_force_overlay = false
+        このオプションを true にすると、メッセージ欄を画面の上に重ねて表示す
+        る。このオプションを使うときは、tile_font_msg_size を小さくすると、行数
+        はそのままで重ねて表示する部分が小さくなる。画面に使われていない場所が
+        できたら、view_max_height オプションを大きくする。
+
+tile_overlay_col = #646464
+        tile_force_overlay を true にしたときなどの、重ねて表示するメッセージ欄
+        の背景の色。tile_overlay_alpha_percent と組み合わせて使う。
+
+tile_overlay_alpha_percent = 40
+        tile_force_overlay を true にしたときなどの、重ねて表示するメッセージ欄
+        の背景の透明度の値。このオプションを 0 にすると、メッセージ欄には背景な
+        しで文字だけが表示される。100 にすると、メッセージ欄の背景は不透明にな
+        る。
+
+tile_full_screen = auto
+        このオプションを true か false にすると、全画面モードを強制的に有効また
+        は無効にする。それ以外の値にすると自動のモードになり、画面の解像度の幅
+        が 1200 より小さいか、高さが 800 より小さいときだけ全画面モードになる。
+
+tile_use_small_layout = auto
+        狭い画面向けの別の配置。auto のときは、横の場所が足りず普通の配置を快適
+        に表示できないときに有効になる。
+
+tile_font_crt_file  = VeraMono.ttf
+tile_font_stat_file = VeraMono.ttf
+tile_font_msg_file  = VeraMono.ttf
+tile_font_tip_file  = VeraMono.ttf
+tile_font_lbl_file  = Vera.ttf
+        ローカルのタイル版で、画面のさまざまな部分に使うフォント。Webタイル版で
+        は代わりに tile_font_*_family を使う。別のフォントを使いたければ、対応
+        する *.ttf ファイルを dat/tiles/ フォルダに置く必要がある。
+        画面の部分は次のとおり:
+            crt  - マップ以外の画面(メニュー、メッセージの履歴など)
+            stat - ステータス欄(体力(HP)、AC など)
+            msg  - メッセージ欄
+            tip  - ツールチップ(マウスを重ねたときの情報)
+            lbl  - 持ち物欄やメインのマップでのアイテムやモンスターの名前
+
+tile_font_crt_family  = monospace
+tile_font_stat_family = monospace
+tile_font_msg_family  = monospace
+tile_font_lbl_family  = monospace
+        Webタイル版で、画面のさまざまな部分に使うフォント。ローカルのタイル版で
+        は代わりに tile_font_*_file を使う。
+
+tile_font_crt_size  = 15
+tile_font_stat_size = 16
+tile_font_msg_size  = 14
+tile_font_tip_size  = 15
+tile_font_lbl_size  = 14
+        上に挙げた画面の部分のフォントの大きさ。0(初期設定)にすると、大きさは画
+        面の大きさをもとに決まる。
+
+tile_font_ft_light = false
+        'light' のフォントヒンティングを選ぶ。
+
+glyph_mode_font = DejaVu Sans Mono
+        Webタイル版のグリフ表示モードで、ダンジョンを描くのに使うフォント。
+        monospace にするか、そのフォントが使えないときは、ブラウザの初期設定の
+        等幅フォントが使われる。初期設定の "DejaVu Sans Mono" は Web フォントと
+        して使える(デスクトップ版で使うものと同じ)。このオプションは Webタイル
+        版でのみ使える。
+
+glyph_mode_font_size = 24
+        Webタイル版のグリフ表示モードでの、ダンジョンの表示のフォントの大きさ
+        (ポイント)。このオプションは Webタイル版でのみ使える。
+
+tile_show_minihealthbar = true
+tile_show_minimagicbar  = true
+        プレイヤーが傷ついたり魔力を使ったりしたときに、プレイヤーのタイルの上
+        に体力と魔力のバーを表示する。
+
+tile_show_demon_tier = false
+        悪魔のタイルに、悪魔の中での階級(難しさの格)を表すアイコンを重ねる。こ
+        れは、タイル版でないビルドで使う記号(&, 1, 2, 3, 4, 5)に対応する。
+
+tile_water_anim = true
+        無効にすると、液体のアニメーションを止める。
+        Webタイル版での初期設定は false。
+
+tile_misc_anim = true
+        無効にすると、祭壇やたいまつなど、そのほかのもののアニメーションを止め
+        る。
+
+tile_realtime_anim = false
+        有効にすると、タイルのアニメーションがプレイヤーの行動に縛られず、実時
+        間で動く。
+        このオプションは Webタイル版でのみ使える。
+
+tile_show_player_species = false
+        有効にすると、普通の人形を使って装備を表示する代わりに、プレイヤーの種
+        族のモンスターのタイルでプレイヤーを表示する。
+
+tile_show_threat_levels = nasty, unusual
+        このオプションは、どのモンスターを脅威の度合いで強調表示するかを決め
+        る。使える度合いは次のとおり: trivial, easy, tough, nasty, unusual。複
+        数の度合いを一度に指定することも、'none' を指定することもできる。
+
+        'unusual' を指定したときは、unusual_monster_items オプションで、どのア
+        イテムを持つモンスターを unusual として強調表示するかが決まる。
+
+tile_player_status_icons = slow, constr
+        このオプションは、プレイヤーが特定の状態異常にかかったときに、プレイ
+        ヤーのタイルの上にどのアイコンを表示するかを決める。使える値は次のとお
+        り: slow, fragile, petr, mark, will/2, haste, weak, corr, might, brill,
+        -move。
+
+tile_layout_priority = minimap, inventory, command, spell, monster
+        (順序付きリストのオプション)
+        このオプションで、画面の右側、ステータス欄の下に要素を置く順序を決めら
+        れる。解像度が低いとすべてを置く場所が足りないので、最初のほうの項目だ
+        けが置かれる。いつも表示しておきたくない項目を取り除くこともできる。持
+        ち物のタブはいつもいちばん下に置かれるが、最初は最小の大きさ(4 行)に
+        なっている。オプションの行でタブを持ち物の前に書くと、そのタブはやはり
+        持ち物の上に置かれるが、持ち物より優先されるので、持ち物が最大の大きさ
+        (6 行)まで広がれなくなることがある。ミニマップはいつもステータス欄とタ
+        ブの間に置かれる。呪文の習得と技能のタブも一覧に加えられるが、初期設定
+        では入っていない。使える値は次のとおり: abilities, commands, inventory,
+        memorisation, minimap, monsters, navigation, skills, spells,
+        system commands
+
+tile_display_mode = (tiles | glyphs | hybrid)
+        ダンジョンの描き方を決める。普通のタイル(初期設定)を使うことも、グリフ
+        を使ってコンソール版のような見た目にすることもできる。hybrid はグリフの
+        表示の上にアイコンを重ね、タイルの縦横比を正方形にする。
+
+        このオプションはローカルのタイル版と Webタイル版でのみ使える。
+
+tile_level_map_hide_messages = true
+tile_level_map_hide_sidebar = false
+        階のマップを使うときに、画面のどの要素を隠すかを決める。
+        これらのオプションは Webタイル版でのみ使える。
+
+tile_player_tile = (normal | playermons | mons:<monster> | tile:<monster-tile>)
+        playermons にすると、普通の人形を使う代わりに、プレイヤーの種族のモンス
+        ターのタイルでプレイヤーを表示する。
+
+        mons:<monster> の形の値(<monster> はモンスターの名前)にすると、
+        <monster> の基本のタイルをプレイヤーのタイルとして使う。例えば
+        mons:ijyb という値にすると、『イジェィブ』のタイルが使われる。モンス
+        ターの名前に空白があれば、それも含める。例えば mons:the royal jelly と
+        いう値も正しい。
+
+        tile:<player-tile> の形の値(<player-tile> はプレイヤーのタイルシートに
+        あるタイルの名前)にすると、そのタイルをプレイヤーのタイルとして使う。こ
+        の形は、ヒドラや大型の忌まわしきもののように複数のタイルを持つモンス
+        ターの特定の変種のタイルを使ったり、『シゴトゥヴィの怪物』や、基になる
+        モンスターのないプレイヤーの変身のような特別なタイルを使ったりするのに
+        いちばん役立つ。タイルの名前は完全な名前でなければならない(例:
+        mons_slymdra_7)。例えば、頭がたくさんあるヒドラのタイルを使うには、
+        tile:mons_slymdra_7 という値を使う。タイルの名前は、ソースツリーの
+        source/rltiles フォルダにある dc-mon.txt、dc-demon.txt、dc-player.txt
+        の各ファイルで見つかる。これらのファイルでは、タイルの名前は各項目の画
+        像のファイル名の後の 2 つ目の単語で、照合では大文字と小文字は区別されな
+        い。モンスターのタイルの名前はたいてい mons_<monster-name> の形だが、変
+        身などのほかのタイルは別の名前になっている(例えば、樹化の変身のタイルは
+        tran_tree)。
+
+tile_weapon_offsets = (<x>,<y> | reset)
+tile_shield_offsets = (<x>,<y> | reset)
+        tile_player_tile で独自のタイルを使うとき、これらのオプションは、タイル
+        の中で武器や盾を描く位置のピクセルの x(横)と y(縦)のずれを設定する。x
+        と y のずれは -32 から 32 まで(両端を含む)の整数でなければならない。x
+        が負の値なら左に、y が負の値なら上にずれる。0,0 では、武器はタイルの左
+        側に、盾は右側に描かれる。そのため、(タイルによって)10 から 20 くらいの
+        武器の x のずれと、-10 から -20 くらいの盾の x のずれを組み合わせると、
+        武器と盾の位置を入れ替えられる。
+
+        "reset" という値を使うと、それまでに定義したずれを消す。これは、lua で
+        ゲーム中にタイルを変えるときに役立つ。
+
+tile_grinch = false
+        設定すると、祝日用の特別なタイル(サンタの帽子など)を無効にする。
+
+tile_web_mouse_control = true
+        Webタイル版で、ツールチップやカーソルの操作にマウスを使えるようにするか
+        どうか。この設定の値にかかわらず、ミニマップはマウスの操作に反応する。
+
+tile_web_mobile_input_helper = auto
+        このオプションは、Webタイル版のインターフェースにある補助の入力欄を制御
+        する。この入力欄にフォーカスを当てると、モバイル機器で仮想キーボードを
+        使えるようになる。true か false にすると、手動でこの欄を有効または無効
+        にする。auto にすると、タッチスクリーンのある機器でだけこの欄を表示す
+        る。
+4-  キャラクターダンプ
+===================
+
+4-a     保存
+---------------
+
+dump_on_save = true
+        true にすると、ゲームを保存したときにキャラクターダンプを自動で作成また
+        は更新する。
+
+4-b     アイテムと撃破
+------------------------
+
+キャラクターダンプや morgue ファイルの最後には、キャラクターが活動している間に
+死んだすべてのモンスターの一覧がある。初期設定では、死んだモンスターは次の 3 つ
+に分けられる。
+   倒したモンスター        -- キャラクターが倒したモンスター
+   間接的な殺害            -- 味方のモンスターが倒したもの
+   その他                  -- ほかのすべての死者(罠、敵対的なモンスターなど)
+
+kill_map = friend:you, other:you
+        とすると、味方による撃破とその他の撃破が、倒したモンスターの一覧にまと
+        められる。まとめるのは表示だけであること(ゲームの内部では 3 つの一覧を
+        別々に持ち続ける)と、まとめた項目では倒した場所(下記参照)の順序が正しく
+        ならないことがあることに注意。初期値は空の一覧。
+
+dump_kill_places = (none | all | single)
+        倒したモンスターの一覧で、それぞれを倒した場所をどう表示するかを決め
+        る。'none' にすると場所をまったく表示しない。'all' にすると分かっている
+        すべての場所(5 か所まで)を表示する。'single' にすると初期設定と同じく、
+        1 体だけ倒したモンスターについてのみ場所を表示する。
+
+dump_item_origins = artefacts
+        ゲームはアイテムを見つけた場所を覚えている。この入手場所の記録をダンプ
+        に載せたい場合は、このオプションで注記を付けるアイテムを選ぶ。指定でき
+        るものは次のとおり:
+                artefacts, ego_arm, ego_weap, jewellery, runes,
+                staves, books, all, none.
+        dump_item_origins の行を複数書いた場合は最後の行が有効になり、それより
+        前の行はすべて無視される。
+
+        どのアイテムにも注記を付けたくない場合は、dump_item_origins を none に
+        し、dump_item_origin_price を -1 にする。
+
+dump_item_origin_price = -1
+        アイテムの価格がこの値以上なら、入手場所をダンプに書き出す。-1 にする
+        と、価格では選ばない。
+
+dump_message_count = 20
+        キャラクターダンプに表示する、最近のメッセージの数。
+
+dump_order  = header,hiscore,stats,misc,apostles,inventory,skills,spells,
+dump_order += overview,mutations,messages,screenshot,monlist,kills,
+dump_order += notes,screenshots,vaults,skill_gains,action_counts
+        (順序付きリストのオプション)
+        ダンプの各節の順序を決める。
+
+        追加できる節として "turns_by_place" と "kills_by_place" の 2 つがあり、
+        どこでターンを費やしたか、どこでモンスターを倒したかの詳しい統計を加え
+        る。ダンプに加えるには次のようにする:
+             dump_order += turns_by_place, kills_by_place
+
+        "turns_by_place" の節は、Crawl の trunk 版(リリース版やリリース前のベー
+        タ版ではない)では初期設定で有効になっていて、ダンプの最後に現れる。
+
+        キャラクターダンプを見やすくするには、
+            dump_order += -
+        を加えて、節の間に区切り線を入れるとよい。
+
+        Lua の関数を書いてその名前を一覧に加えれば、自分で節を加えることもでき
+        る。その関数の戻り値がダンプに書き出される。通常の Lua の関数と同じよう
+        にグローバル変数を参照できるが、関数名は小文字でなければならず、呼び出
+        すときに引数は渡されない。
+
+        例:
+          {
+            myRace = you.race()
+            function mydumpfn()
+              return
+                "This will be printed to dump. Your species is " .. myRace
+            end
+          }
+          dump_order += mydumpfn
+
+
+4-c     ノート
+--------------
+
+Crawl はプレイ中の特定の出来事を自動で記録できる。記録はダンプや morgue ファイ
+ルで読める。以下は、この動作を調整するためのオプションである。
+記録される出来事は次のとおり:
+        - 経験レベルが上がる、または下がる
+        - ダンジョンの階に初めて入る
+        - それまでに覚えたどの呪文よりもレベルの高い呪文を覚える
+        - 神の信者になる
+        - 神を棄てる
+        - 贖罪を課される、また許される
+        - 神から贈り物を受け取る(ゾムを除く)
+        - 名前のあるオークの仲間が死ぬ(ベオを信仰しているとき)
+        - 神の力を初めて使えるようになる
+        - ルーン、ゾットのオーブ、アーティファクトを初めて拾う
+        - アイテムを識別する
+        - OOD(その階にしては深すぎる)モンスターやユニークモンスターを倒す(下記
+          参照)
+        - 体力(HP)が危険な水準まで減る(下記参照)
+        - 変異を得る、または失う
+        - 技能が重要なレベルに達する(下記参照)
+        - 死ぬ
+手動でノートを加えるには ':' コマンドを使う。
+
+user_note_prefix = <string>
+        手動で加えたノートの先頭に指定した文字列を付けて、見つけやすくする。現
+        在のところ、このオプション(およびほかのどのオプションも)の末尾に空白を
+        付けることはできないが、代わりに Unicode の非改行空白文字(' ')を使え
+        る。
+
+note_items += <regex>, <regex>, ...
+        (リストのオプション)
+        アイテムを初めて識別したとき、その短い説明が正規表現に合えばノートに記
+        録する。例:
+             note_items += book,acquirement
+        アーティファクト(fixed、unrand、ランダムのどれも)は、note_items にかか
+        わらず、識別したときに必ず記録される。
+
+        照合する説明には、menu_colour オプションの説明にあるものと同じ接頭辞(例
+        えば "emergency_item")が付く。
+
+note_monsters += <regex>, <regex>, ...
+        (リストのオプション)
+        このコンマ区切りの一覧のどれかに名前が合うモンスターは、注目すべきもの
+        とみなされる。note_monsters の行は複数書ける。例:
+             note_monsters += Klown,orb of fire
+
+note_hp_percent = 5
+        体力(HP)が最大体力の一定の割合(note_hp_percent)を下回ると、ノートに記録
+        される。同じ出来事にもとづくノートが繰り返されないようにする処理もあ
+        る。
+
+note_skill_levels = 1,5,10,15,27
+        記録の対象にする技能レベルを決める。1 行で書くが、+= を使って続きを書く
+        こともできる。
+
+note_all_skill_levels = false
+        note_skill_levels = 1,2,..,27 の短縮形。true にすると、すべての技能レベ
+        ルが記録の対象になる。
+
+note_skill_max = true
+        このオプションを設定すると、技能レベルが新しい最高値に達するたびにノー
+        トに記録する。note_skill_max が true で note_skill_levels が空でなけれ
+        ば、どちらかの条件を満たしたときに記録される。
+
+note_xom_effects = true
+        ゾムが何かをするたびにノートに記録する。
+
+note_messages += <regex>, <regex>, ...
+        (リストのオプション)
+        このコンマ区切りの一覧のどれかに合うメッセージは、注目すべきものとみな
+        される。note_messages の行は複数書ける。例:
+             note_messages += Something interferes
+             note_messages += protects you from harm
+        アビスへの追放をすべて記録したい場合は次のようにする:
+             note_messages += [bB]anish.*Abyss
+        ドラコニアンの鱗が <colour> に変わったときに記録したい場合は次のように
+        する:
+             note_messages += Your scales start
+
+note_chat_messages = false
+        false にすると、ほかのプレイヤーからの WebTiles のチャットメッセージを
+        記録しない(この設定はオンラインのサーバーでのみ有効)。
+
+note_dgl_messages = true
+        false にすると、ほかのプレイヤーから送られた DGL メッセージを記録しない
+        (この設定はオンラインのサーバーでのみ有効)。
+
+
+5-  その他
+==================
+
+5-a     すべての OS
+---------------
+
+mouse_input = false
+        有効にすると、一部のプラットフォーム(Windows と Unix)で、ゲームがマウス
+        の入力イベントを使えるようになる。マウスへの対応の程度はプラットフォー
+        ムによって大きく異なり、端末の設定にも強く左右されることに注意。
+
+        Unix では、マウスが使えそうなのは xterm 上の ncurses の場合だけである
+        (具体的には、ncurses がマウスイベントを有効にするには、おそらく $TERM
+        に "xterm" が含まれている必要がある。xterm の中の GNU screen で Crawl
+        を動かしている場合は、たぶんマウスは使えない)。
+
+        Windows では、Crawl でマウスを使うには、コンソールの簡易編集モード
+        (QuickEdit)を無効にする必要がある(QuickEdit は初期設定で無効なので、標
+        準のコンソールを使っているなら何も変えなくてよいはずだ)。QuickEdit を無
+        効にするには、コマンドプロンプトのタイトルバーを右クリックして「プロパ
+        ティ」を選び、「オプション」タブで QuickEdit を無効にする。
+
+wiz_mode = (no | never | yes)
+        ウィザードモードの設定(WIZARD 付きでコンパイルしたものでのみ使える):
+          yes   -- ウィザードモードでゲームを始める(スコアは記録されない)
+          no    -- ゲームを始めた後でもウィザードモードに入れる
+          never -- ウィザードのコマンドを一切使えないようにする
+
+explore_mode = (no | never | yes)
+        探索モードの設定(WIZARD 付きでコンパイルしたものでのみ使える):
+          yes   -- 探索モードでゲームを始める(スコアは記録されない)
+          no    -- ゲームを始めた後でも探索モードに入れる
+          never -- 探索モードに一切入れないようにする
+
+char_set = (default | ascii)
+        ゲーム画面で使う文字セットを、あらかじめ用意されたものから選ぶ。以前の
+        版の Crawl と違い、このオプションで入出力の文字コードを選ぶことはもうな
+        い。
+
+        ibm_glyphs.txt、dec_glyphs.txt、old_unicode_glyphs.txt を読み込めば、も
+        う組み込まれていない古い文字セットを使うこともできる。
+
+        タイル版ではほとんど効果がない。
+
+colour.OLDCOLOUR = NEWCOLOUR
+        一部の色が読みにくい(しかも調整できない)端末で役に立つほか、独自の配色
+        を作るのにも使える。特に、背景が黒でない端末で background オプションと
+        組み合わせると便利である。
+        書き方は colour.OLDCOLOUR = NEWCOLOUR で、後に書いた規則が優先される。
+        NEWCOLOUR は常に文字どおりに解釈される(つまり、さらに別の色に置き換えら
+        れることはない)。
+        使える色は次のとおり:
+                black, blue, green, cyan, red, magenta, brown, lightgrey,
+                darkgrey, lightblue, lightgreen, lightcyan, lightred,
+                lightmagenta, yellow, white
+        lightgray は lightgrey、darkgray は darkgrey と同じ。例:
+          colour.lightgrey = black
+          colour.lightcyan = cyan
+          colour.yellow    = brown
+
+display_char = <dungeon_character_name : symbol>
+        これを複数並べた一覧も書ける。
+
+        dungeon_character_name に指定できるのは次のもの: wall, permawall,
+           wall_magic, floor, floor_magic, door_open, door_closed, trap,
+           stairs_down, stairs_up, grate, altar, arch, fountain, wavy, statue,
+           invis_exposed, item_detected, item_orb, item_rune, item_weapon,
+           item_armour, item_wand, item_scroll, item_ring, item_potion,
+           item_missile, item_book, item_staff, item_rod, item_miscellany,
+           item_corpse, item_skeleton, item_gold, item_gem, item_amulet, cloud,
+           cloud_weak, cloud_fading, cloud_terminal, tree, transporter,
+           transporter_landing, space, fired_bolt, fired_zap, fired_burst,
+           fired_debug, fired_missile, fired_missile, explosion, frame_horiz,
+           frame_vert, frame_top_left, frame_top_right, frame_bottom_left,
+           frame_bottom_right, draw_horiz, draw_vert, draw_slash,
+           draw_backslash, draw_top_left, draw_top_right, draw_bottom_left,
+           draw_bottom_right, draw_down, draw_up, draw_right, draw_left
+
+        ほとんどは名前を見れば分かる。"arch" は店とポータルに使
+        う。"floor_magic" と "wall_magic" は、階のマップで、魔法の地図によって
+        分かったマスを表示するのに使う。"invis_exposed" は、浅い水に潜っている
+        水棲の生き物や、浅い水の中を歩いている透明な生き物を表す文字。"wavy" は
+        水と溶岩。"cloud"、"cloud_weak"、"cloud_fading"、"cloud_terminal" は残
+        りの持続時間で雲を区別するもので、消えるまでが長い順に並べてある。残り
+        の持続時間が見た目に表れない種類の雲には、常に "cloud" の文字を使う。
+
+        記号は文字で指定するか、ASCII/Unicode のコード(10 進数、または前に x を
+        付けた 16 進数)で指定する。
+
+feature += <regex> { <symbol>, <magicmap symbol>, <view colour>,
+                    <levelmap_magic_colour>, <levelmap_seen_colour>,
+                    <emphasised_colour>, <levelmap_emphasised_colour> } ;
+           <regex> { ... }
+feature -= <regex> , <regex>
+        (リストに似たオプション)
+        <regex> はダンジョンの地形を表す正規表現。この正規表現は、'x' コマンド
+        を使ったときに表示される説明に合うようにする。正規表現が複数の説明に合
+        う場合は、それらすべての地形が対象になる。その版の crawl にある地形の一
+        覧は、地形の検索メニュー(`?/f`)で `.*` を検索すれば分かる。
+
+        {...} の一覧は地形の見た目を指定するもので、見れば分かるはずだ。
+        <symbol> は、上の display_char オプションの指定を上書きしたり、同じ文字
+        の地形をさらに細かく区別したりするのに使える。
+
+        'magic' は魔法の地図のこと。つまり <magicmap symbol> は、魔法の地図で分
+        かった地形に使う記号を決める。<magicmap symbol> は、行き先の分からない
+        石の階段や、まだ訪れていない転送装置にも使われる。
+
+        'emphasised_colour' は、行き先の分からない石の階段や転送装置を目立たせ
+        るための色のこと。階段以外の地形では、強調の色を設定しても役に立つこと
+        はない。
+
+        {...} の一覧の前のほうの値は、空にして区切りのコンマだけを書けば省略で
+        きる。後ろのほうの値は、コンマを書かずに省略できる。
+
+        feature オプションの行は複数書ける。また、同じ行にセミコロンで区切って
+        複数の地形の指定を並べることもできる。
+
+        -= を使って正規表現だけ(見た目は書かない)を指定すると、地形の上書きを取
+        り消せる。説明がその正規表現に合うすべての地形が、初期設定の見た目に戻
+        る。
+
+        例:
+         * 岩の壁を赤にする:
+             feature += rock wall { , , red }
+         * どの文字セットでも金属の壁に # を使う:
+             feature += metal wall {#}
+         * 上り階段を緑に、下り階段を赤にする:
+             feature += stone staircase leading up {,,,,green}
+             feature += stone staircase leading down {,,,,red}
+
+        記号は display_char と同じように指定できる。次の
+             feature += metal wall {#}
+             feature += metal wall {35}
+             feature += metal wall {x23}
+        はどれも同じ意味になる。
+
+mon_glyph += <monster name or symbol> : (<colour> <glyph> | <monster name>) ,
+             <monster name or symbol> : <replacement>
+mon_glyph -= <monster name or symbol>
+        (リストのオプション)
+        mon_glyph オプションを使うと、モンスターの表示に使う記号と色を変えられ
+        る。初期設定の記号の完全な一覧はソースコード(mon-data.h)を見るのが一番
+        確実だが、記号はモンスターの検索メニュー(`?/m`)でも確かめられ、モンス
+        ターの一覧もそこで見られる。
+
+        記号は、モンスターの名前か、そのモンスターの今の記号を指定して変えられ
+        る。例えば、エルフを E に、エレメンタルを e にしたい場合は次のようにす
+        る:
+
+             mon_glyph += e : E
+             mon_glyph += E : e
+
+        別の記号、色、またはその両方を、どの順序でも指定できる。ほかの例:
+
+             mon_glyph += deep elf annihilator : E lightmagenta
+             mon_glyph += Xtahua : lightmagenta D
+             mon_glyph += ghoul : darkgrey
+             mon_glyph += cognitogaunt : x
+
+        (: の左側では大文字と小文字を区別する。)
+
+        別のモンスターを指定すると、そのモンスターの基本の記号と色を写す(これは
+        連鎖しない)。例えば、聖なる戦士の色が逆になっていると思うなら次のように
+        する:
+
+            mon_glyph += daeva : angel
+            mon_glyph += angel : daeva
+
+        記号は、"feature" オプションで示した書き方でコードポイントを使って指定
+        できる。Unicode のコードポイントも使える:
+
+             mon_glyph += draconian scorcher : x6e9
+
+        _ を 1 つだけ書くと空白として扱われる。本当の下線を使いたい場合は、次の
+        ように前に \ を付ける:
+
+             mon_glyph += player ghost : \_
+
+        次のいくつかの「疑似」モンスターも設定し直せる:
+
+             player
+             sensed monster
+             {trivial,easy,tough,nasty,friendly} sensed monster
+
+        通常は同じ名前のモンスターがいない、プレイできる種族も設定し直せる。こ
+        れは show_player_species = true と組み合わせて使う。
+
+        -= を使うとモンスターの記号の上書きを取り消せる。指定したモンスター(ま
+        たは指定した記号のすべてのモンスター)が初期設定の見た目に戻る。-= では
+        モンスターの名前か記号だけを指定し、取り消す置き換えの内容は書かない。
+
+item_glyph ^= <regexp> : <colour> <glyph>
+item_glyph -= <regexp>
+        (順序付きリストのオプション)
+        正規表現に合うすべてのアイテムの記号と色(またはそのどちらか)を変える。
+        mon_glyph と違い、名前の一部が合えばよい。
+
+        アイテムの名前の前には、アイテムの記録(stash tracking)とメニューの色付
+        けの両方によるタグが付く。そのため、{artefact} や useless_item に色を付
+        けることもできる。
+
+        1 つのアイテムに複数の規則を適用できるので、色と記号を別々に変えたい場
+        合に役に立つ:
+            item_glyph += dart : x2191
+            item_glyph += curare.*dart : red
+
+        規則は順に適用されるので、後の規則ほど優先される。
+
+        -= で規則を取り除くと、指定した正規表現とまったく同じものを使っているす
+        べての規則が取り除かれる。その場合、色や記号は指定しない。
+
+use_fake_player_cursor = true
+        端末のカーソルを使わずに、メインの画面でプレイヤーを強調表示する。これ
+        により、描画のためにカーソルを消してほかの場所に動かしたときもちらつか
+        ず、初期設定でカーソルを消しておけるようになる。タイル版では効果がな
+        い。
+
+show_player_species = false
+        キャラクターをその種族の一員として表示する。例えば丘オークなら、'@' で
+        はなく 'o' で表示される。タイル版では効果がない。
+
+use_modifier_prefix_keys = true
+        true にすると、'*' が CTRL キー、'/' が SHIFT キーを押したのと同じ働き
+        をする。
+
+language = <two-letter language code>
+        一部の文章を指定した言語で表示する。Dungeon Crawl のすべての文章が対応
+        しているすべての言語に訳されているわけではないが、有志の翻訳者が、神や
+        モンスターの説明のような特に長い文章を訳している。訳がない文章は英語で
+        表示される。言語によってはフォントを変える必要がある。
+
+        一部対応している言語コード:
+        cs: チェコ語
+        da: デンマーク語
+        de: ドイツ語
+        el: ギリシャ語
+        es: スペイン語
+        fi: フィンランド語
+        fr: フランス語
+        hu: ハンガリー語
+        it: イタリア語
+        ja: 日本語
+        ko: 韓国語
+        lt: リトアニア語
+        lv: ラトビア語
+        nl: オランダ語
+        pl: ポーランド語
+        pt: ポルトガル語
+        ru: ロシア語
+        sv: スウェーデン語
+        zh: 中国語
+
+fake_lang = <lang1>[,<lang2>[,...]]
+        1 つ以上の偽の言語を設定する。指定した順に適用される(順序が大事！)。同
+        じ言語を 2 回以上設定することもできるが、あまり意味のある結果にはならな
+        いかもしれない...。一度に設定できる偽の言語は 3 つまで。
+
+        指定できるもの: (dwarven|jagerkin|kraut|runes|wide|grunt|butt:<n>)
+        どうなるかは試してみよう！
+
+messaging = true
+        true にすると、ほかのプレイヤーが送った DGL メッセージを受け取れる(この
+        設定はオンラインのサーバーでのみ有効)。
+
+read_persist_options = false
+        true にすると、Lua の変数 c_persist.options に文字列が入っている場合、
+        ゲームはそこから追加のオプションを読み込む。このオプションは、スクリプ
+        トで明示的に使わない限り効果がない。このオプションは持続するので、技能
+        メニューで設定した現在の値はゲームをまたいで保存され、明示的に設定しな
+        い限り自動で読み込み直される。
+
+5-b     Windows
+------------------------
+
+dos_use_background_intensity = false
+        Windows で、明るい背景色を表示できるコンソールを使っている場合は、この
+        オプションを true にすると味方の強調表示がよくなる。コンソールがこのオ
+        プションに対応していない場合は、一部の味方のモンスターが点滅する文字で
+        表示される(その場合は、正気を保つためにこのオプションを false にしたほ
+        うがよいかもしれない)。
+
+5-c     Unix
+-------------
+allow_extended_colours = true
+        crawl の明るい色に、端末の基本の 8 色より多くの色を使おうとする。最近の
+        端末のほとんどではこの設定にしておくべきだ。うまくいけば、コンソールは
+        16 色モードになる。
+
+        このオプションが有効で、端末で十分な数の色が使える場合は、内部の色に端
+        末の拡張カラーパレットを直接使う。
+
+        対応している端末でこのオプションが期待どおりに働くには、適切な TERM 環
+        境変数を設定しておく必要がある。例えば:
+          * XTerm、MacOS のターミナル、iTerm: xterm-256color
+          * gnome-terminal: vte-256color
+          * PuTTY: putty-256color
+            ('Connection->Data->Terminal-type string' で設定する)
+
+        これらの条件を満たさない場合、crawl は 8 色モードに切り替え、明るい色を
+        文字の属性で表現する。黒の上の濃い灰色を表示するための「代わりの」色に
+        は濃い青を使う。8 色モードでは、次のオプションのどれかを使うほうがよい
+        かもしれない。
+
+bold_brightens_foreground = false
+        8 色モードで、太字の属性を付けると前景色が明るくなるものとみなす。
+        `true` ではなく `force` にすると、16 色モードでも明るい色が太字になる。
+        それ以外の場合、allow_extended_colours によって 16 色モードで動いている
+        ときは、このオプションは無視される。
+
+        太字で色が変わるという前提が成り立たない端末で、8 色モードでこれを有効
+        にすると、同じ基本色の通常の色と明るい色の組み合わせで記号が見えなくな
+        る。例えば、ダンジョンの表示で視界の外のマスが黒く見えるなら、これを
+        `true` にしてはいけない。
+
+blink_brightens_background = false
+        8 色モードで、点滅の属性を付けると背景色が明るくなるものとみなす。
+
+        この前提が成り立たない端末でこれを有効にすると、同じ基本色の通常の色と
+        明るい色の組み合わせで記号が見えなくなる。
+
+        allow_extended_colours によって 16 色モードで動いているときは、このオプ
+        ションは無視される。
+
+best_effort_brighten_background = false
+        true にすると、うまくいくとはみなされていない場合でも、点滅を使って背景
+        色を明るくしようとする。
+
+        このオプションは、明るくしても問題のない色にだけ影響する。
+        blink_brightens_background オプションを true にしている場合、このオプ
+        ションは実質的に無視される。
+
+        allow_extended_colours によって 16 色モードで動いているときは、このオプ
+        ションは無視される。
+
+best_effort_brighten_foreground = true
+        true にすると、うまくいくとはみなされていない場合でも、太字を使って前景
+        色を明るくしようとする。
+
+        このオプションは、明るくしても問題のない色にだけ影響する。
+        bold_brightens_foreground オプションを true にしている場合、このオプ
+        ションは実質的に無視される。
+
+        allow_extended_colours によって 16 色モードで動いているときは、このオプ
+        ションは無視される。
+
+background_colour = black
+        初期設定の背景色を名前で設定する(初期値は BLACK)。背景が黒でない端末を
+        使っていて、crawl の配色をそのまま保ちたい場合に役に立つかもしれない。
+
+        内部では、黒が指定した背景色に、指定した背景色が黒に置き換えられる。
+
+        このオプションを使うには、端末のライブラリと端末そのものの両方が拡張さ
+        れた機能に対応している必要がある。さらに、明るい初期設定の色は、拡張さ
+        れた色に対応していて、しかも allow_extended_colours で明示的に有効にし
+        ていなければ使えない。対応していない場合(まったく対応していない場合も、
+        選んだ色に対応していない場合も)、このオプションは実質的に black を指定
+        したのと同じになる。
+
+        明るい初期設定の色を使えるようにする方法について詳しくは、
+        allow_extended_colours オプションを参照。terminfo ファイルには、バグが
+        あるものや誤解を招く内容のものがあるので注意すること。
+
+foreground_colour = lightgrey
+        初期設定の前景色を名前で設定する(初期値は LIGHTGREY)。
+
+        内部では、lightgrey が指定した前景色に、指定した前景色が lightgrey に置
+        き換えられる。
+
+        このオプションには、background_colour オプションと同じ制約がある。詳し
+        くはその説明を参照。
+
+use_terminal_default_colours = false
+        端末の初期設定の前景色と背景色を使う。これを使うと背景を透明にできる。
+
+use_fake_cursor = true
+        true にすると、端末にカーソルを描かせるのではなく、階のマップと目標選択
+        の画面で Crawl がカーソルを自分で描く。端末が濃い灰色や黒のマスの上に
+        カーソルを表示できない場合に使う。
+        Unix 以外の版では、このオプションの初期値は false で、true にすると予期
+        しない結果になるかもしれない。
+
+
+6-  Lua
+========
+
+lua_max_memory = 16
+        ユーザーの Lua スクリプトが使えるメモリの上限(MB 単位)。
+
+6-a  Lua ファイルの読み込み
+-------------------------
+
+Lua ファイルは、既存のコマンドに新しい意味を持たせたり、新しいコマンドを作った
+り(マクロで使う)できるスクリプトである。Lua ファイルを使うには、Crawl がユー
+ザーの Lua スクリプトに対応するようにコンパイルされている必要がある。使っている
+Crawl が Lua に対応しているかどうかは、ゲーム中に ?V を押せば確かめられる。
+Crawl が表示する機能の一覧に「Lua ユーザースクリプト」が含まれていればよい。
+
+Lua ファイルは lua_file オプションで読み込む(1 行に 1 ファイル):
+
+lua_file = <path/name.lua>
+
+ゲーム中にマクロの動作を "===" とそれに続く関数名にすれば、Lua の関数をマクロに
+できる。
+
+ウィザードモードの Lua インタープリター(&^T)は、最初に呼び出されたときに、
+terp_file オプションで指定したすべてのファイルを読み込む:
+
+terp_file = <path/name.lua>
+
+これらのファイルの Lua からは、Crawl の Lua の内部のすべてにアクセスできる(つま
+り、clua ではなく dlua の文脈で実行される)。
+
+6-b     Lua をその場で実行する
+-----------------------------
+
+init.txt/.crawlrc の中で Lua のコードを直接使える。次の書き方で Lua のコードを
+実行できる。
+
+: Single line of lua code
+
+< Possibly multi-line
+  Lua code >
+
+{ Possibly multi-line
+  Lua code }
+
+2 つ目と 3 つ目の場合は、開始の区切り文字を行の先頭に、終了の区切り文字を行の末
+尾に置かなければならない、という制限がある。<> と {} の違いは、コードが実行され
+る時点である。{} のコードはすぐに実行される。それ以外の Lua のコードは、init
+ファイル全体を読み込んだ後で初めて実行される。
+
+例:
+
+# Print a welcome message
+: crawl.mpr("Hello " .. you.name())
+
+<
+-- Another welcome message (lua code uses lua comments)
+crawl.mpr("Hi there")
+>
+
+{
+function ch_autopickup(it) [ ... body omitted ... ] end
+}
+
+6-c     条件付きのオプション
+----------------------------
+
+同じ書き方で Lua を使えば、init.txt の一部を(例えばキャラクターの種類に応じて)
+選んで読み込ませることができる。
+
+例:
+
+: if you.race() == "Mummy" then
+autopickup = $?+"/
+: else
+autopickup = $?+"/!
+: end
+
+Lua からは "options.option_name" でオプションを参照できる。例えば:
+
+:if string.find(options.autopickup, "!") then
+# Do something here if potions are included in autopickup
+:end
+
+"options.option_name" は、crawl 自身が認識しないオプションにも使える。これをコ
+マンドラインでのオプションの設定(0-b 節を参照)と組み合わせれば、オプションファ
+イルの中のオプションを条件付きにするかどうかをコマンドラインで制御できる。例え
+ば、コマンドラインで "-extra-opt-first foobar=true" としてオプション "foobar"
+を設定しておき、次のようにする:
+
+:if options.foobar then
+# Do things here
+:end
+
+6-d     条件付きのオプションの注意点
+-----------------------------------
+
+「開始画面」(1 節)に挙げたオプションは、どれも条件付きで設定できないことに注
+意。これは、オプションファイルが実は 2 回読み込まれるためである。1 回目はキャラ
+クター作成の前に Lua を無効にして、2 回目はキャラクター作成の後に Lua を有効に
+して読み込まれる。開始画面のオプションを条件付きで設定しようとしても、どんな条
+件を書いたかにかかわらず、オプションファイルの一番下にある値が使われる。
+
+上の注意点は "wiz_mode" オプションにも当てはまる。wiz_mode を条件付きにする代わ
+りに、コマンドラインに "-extra-opt-last wiz_mode=yes" を加えれば、新しく始める
+ゲームがどれもウィザードモードで始まる。
+
+7-  目の不自由なプレイヤー向けの推奨オプション
+==========================================
+
+コンソールで画面読み上げソフトを使って crawl を遊びやすくするために、次の設定を
+勧める。
+
+アニメーションと表示の遅延をなくし、コマンドを実行するたびにすぐ画面が更新され
+るようにする:
+    view_delay = 0
+    travel_delay = -1
+    rest_delay = -1
+    use_animations = 0
+
+画面を読み上げやすくするために、メッセージを画面の上部に表示し、メッセージをま
+とめる処理をなくす:
+    messages_at_top = true
+    clear_messages = true
+    msg_condense_short = false
+
+プレイヤーに独自の記号を設定して、画面の読み上げでプレイヤーのカーソルを追いや
+すくする:
+    use_fake_player_cursor = false
+    show_player_species = false
+    mon_glyph += player:x263A
+
+自動移動にマウスのクリックを使う(端末の設定の詳細については、mouse_input オプ
+ションの説明を参照):
+    mouse_input = true
+
+モンスターがいるときでも、自動移動や移動で 1 歩だけ進めるようにする:
+    travel_one_unsafe_move = true
+
+^x の表示に、プレイヤーからの相対座標を載せる:
+    monster_item_view_coordinates = true
+
+^x の表示には、正規表現で指定した地形を載せられる。例えば、すべての水を ^x に含
+めるには次のように設定する:
+    monster_item_view_features += water
+
+自動移動でたどった経路と、自動探索の境界を特別な文字で示す:
+    show_travel_trail = true
+    feature += travel trail {x25AA}
+    feature += explore horizon {x25AB}
+
+まだ訪れていない階段と転送装置に別の記号を設定する:
+    feature += stone staircase leading up {<,x25C2}
+    feature += stone staircase leading down {>,x25B8}
+    feature += transporter {xA9, x25CE}
+
+自動探索のときにアイテムの山があるマスを訪れて、新しく見つけたアイテムをすべて
+表示する:
+    explore_greedy_visit += stacks

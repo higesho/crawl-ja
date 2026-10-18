@@ -1,0 +1,518 @@
+3-k     メッセージチャンネル
+----------------------------
+
+Crawl はメッセージ欄を通じてプレイヤーに情報を伝える。どのメッセージも、いわゆ
+るチャンネルのどれかに属している。各チャンネルの振る舞いは次のオプションで変え
+られる。
+
+     channel.CHANNEL_NAME = (COLOUR | mute | default | on | off | plain)
+
+CHANNEL_NAME には今のところ次のどれかを指定できる:
+   plain           = 普通の文章(と「色の付いていない」もの)
+   prompt          = プレイヤーへの入力の問い合わせ
+   god             = 神からのメッセージ
+   duration        = キャラクターの呪文や効果が切れることについてのメッセージ
+   danger          = キャラクターの存在を脅かす深刻な危険
+   warning         = そのほかのさまざまな警告
+   recovery        = 病気、能力値の低下、毒の状態からの回復
+   talk            = モンスターがしゃべる
+   talk_visual     = プレイヤーに見える、モンスターの何らかの行動
+   timed_portal    = ポータルの時間切れのメッセージ
+   sound           = そのほかの音
+   intrinsic_gain  = レベル、能力値、種族の力の獲得
+   mutation        = 変異を得る、失う
+   monster_spell   = モンスターの身振りや呪文の詠唱についてのメッセージ
+   monster_enchant = モンスターにかかった魔法の効果に関するメッセージ
+   monster_warning = モンスターが視界に入る
+   friend_spell    = monster_spell と同じだが、友好的なモンスターだけ
+   friend_enchant  = monster_enchant と同じだが、友好的なモンスターだけ
+   friend_action   = 友好的なモンスターのそのほかの行動
+   monster_damage  = モンスターがどれだけ傷ついているかを伝えるメッセージ
+   monster_target  = モンスターを目標として示すメッセージ(使われていない)
+   banishment      = アビスへの追放(する、される)についてのメッセージ
+   equipment       = 身に着けている装備や手にしている武器を示すメッセージ
+   floor           = 床のアイテムを見たり、その上を歩いたりしたときのメッセージ
+   multiturn       = 長くかかる行動(防具を着る、解体するなど)を示す
+   examine         = 周りを調べたときのメッセージ
+   examine_filter  = 周りを調べたときの退屈なメッセージ
+   diagnostic      = デバッグ用のメッセージ
+   error           = エラーメッセージ
+   tutorial        = チュートリアルからのメッセージ
+   orb             = ゾットのオーブについてのメッセージ
+   hell_effect     = 地獄の環境の効果についてのメッセージ
+   dgl_message     = 観戦者からのメッセージ(オンラインのコンソール版のみ)
+
+チャンネルのオプションは次のとおり:
+   mute        = そのチャンネルのメッセージを一切表示しない(危険なので注意!)
+   default     = チャンネルを有効にし、初期設定の配色にする
+   alternative = チャンネルを有効にし、別の「色とりどりの」配色にする
+   on          = default と同じ
+   plain       = チャンネルを "plain" チャンネルと同じ色にする
+                 (ただし、plain == mute のときに "mute" にしてしまうような
+                 間の抜けたことはしない)
+   off         = plain と同じ
+
+COLOUR には、5-a 節(colour オプション)で説明する色のどれでも指定できる。
+
+今のところ、複数の色を使うチャンネルは monster_damage と god だけだ。ほかのチャ
+ンネルはすべて初期設定で on になっている。
+
+3-l     銘(インスクリプション)
+------------------------------
+
+銘について詳しくは、crawl のマニュアルの「銘(インスクリプション)」の節を参照。
+
+autoinscribe += <regex>:<inscription>
+        (順序付きリストのオプション、1 行に 1 つの値)
+        説明にその正規表現を含むアイテムには、自動的に銘が付けられる(autopickup
+        が有効になっている場合)。
+
+        例えば、危険かもしれないワンドの使用回数をうっかり使ってしまうのを防ぐ
+        のに、次のように使える。
+             autoinscribe += wand of polymorph:!V
+
+        メニューの色の接頭辞(forbidden など)もここで使える。例:
+             autoinscribe += (bad|dangerous)_item.*scroll:!r
+        とすると、識別済みの悪い巻物や危険かもしれない巻物を、うっかり読んでし
+        まうのを防げる。
+
+        ほとんどの順序付きリストのオプションと違い、当てはまる項目が複数あれ
+        ば、そのすべてが効果を持つ。順序は銘の並び順を決めるだけだ。
+
+show_god_gift = unident|yes|no
+        神からの贈り物として手に入れたアイテムに {god gift}(神の贈り物)を付け加
+        える。"unident" にすると、アイテムの性質がすべてわかった時点でこの印は
+        消える。この設定にかかわらず、アイテムの由来はその説明で確かめられる。
+
+3-m     マクロ関係のオプション
+------------------------------
+macros += M \{9} za
+        このオプションはマクロかキーマップを追加する。
+
+        定義はどれも、空白で区切ったちょうど 3 つの引数からなる。1 つ目は、マク
+        ロかキーマップかを表す。キーマップは主にキーそのものを完全に割り当て直
+        すのに役立ち、マクロより先に処理される。どちらを使えばいいかわからなけ
+        れば、たぶんマクロでよい。
+
+        "M" マクロ(ゲームのコマンドを入力するときに処理される)
+
+        特別な文脈のキーマップ:
+        "K1" 階のマップの文脈のキーマップ(`X` の表示中のみ)
+        "K2" 狙いの文脈のキーマップ(狙いをつけているときと `x` の表示中)
+        "K3" 確認の文脈のキーマップ(y/n の問い合わせに答えるとき)
+        "K4" メニューの文脈のキーマップ(技能のメニュー以外のすべてのメニュー)
+
+        初期設定のキーマップの文脈:
+        "K" 初期設定の文脈のキーマップ(それ以外のすべての文脈)
+
+        2 つ目の引数は起動するキーを表し、そのキーの文字かキーコードを書く(例え
+        ば 'a'、'A'、\{9} はそれぞれ A、Shift-A、Tab キー)。3 つ目の引数はマク
+        ロやキーマップの動作を表し、2 つ目の引数に結び付けるコマンドの並びを書
+        く(例えば "zap" なら、a の文字の呪文を前の目標に向けて唱える)。ファンク
+        ションキー、テンキー、移動キーはテキストのキーコードで入力できる(例:
+        \{F2}、\{NP-}、\{PgUp}、\{Down} など)。
+
+        rc ファイルにマクロやキーマップがあると、読み込みのときに自動的に
+        macro.txt ファイルに保存される。このとき、macro.txt ファイルにすでに保
+        存されているマクロやキーマップは、何も知らされずに上書きされる。
+
+        この書き方は macro.txt ファイルで使う形式をもとにしているが、同じではな
+        い。
+
+flush.failure = true
+flush.command = false
+flush.lua     = true
+        これらはマクロを使うときに役立つ。このサブオプションのどれかを true に
+        すると、入力バッファ全体が捨てられ、事実上マクロが止まる。今あるサブオ
+        プションは次のとおり:
+           failure -- 呪文や能力の発動に失敗したとき
+           command -- ゲームが次のコマンドを受け取ろうとするたび
+           lua     -- lua から crawl.flush_input() が呼ばれるたび
+
+additional_macro_file = path/to/filename
+        macro.txt の後に読み込む、追加のマクロファイルを加える。
+        additional_macro_file の行は複数書ける。
+
+bindkey = [^D] CMD_CHARACTER_DUMP
+        どのキーでどのコマンドが動くかを、マクロより低い段階で変える。マクロは
+        (まだ)互いを呼び出せないが、キーの変わったコマンドを呼び出すことはでき
+        るので役に立つ。
+        書き方はいつも同じで、[key] command だ。
+        まず、角括弧の中に使いたいキーを書く。^X は Ctrl-X を意味する。その後ろ
+        に、そのキーに割り当てるコマンドの名前を書く。ゲームの別々の場面で効く
+        もの(例えば狙いのコマンド 1 つとメインのゲームのコマンド 1 つ)なら、同
+        じキーに複数のコマンドを割り当てられる。同様に、同じコマンドを別々の
+        キーに割り当てることもできる。キーコードを書くにはマクロの割り当てと同
+        じ \{} の書き方が使え、"F1"、"NP+"、"Down" のようなキーコードは [] の中
+        に直接書ける。
+        使えるコマンドの完全な一覧は keybind.txt を参照。
+
+3-n     タイル版のオプション
+----------------------------
+タイル版でないゲームでは、タイル版のオプションは無視される。
+
+tile_show_items = <glyphs>
+        このオプションは、タイル版の持ち物欄でのアイテムの並び順を決める。初期
+        設定の値は !?/=([)}:| である。一覧にない記号のアイテムは最後に表示され
+        る。
+
+tile_skip_title = false
+        これを true にすると、ゲームの読み込みが終わったときにタイトル画面で
+        キーの入力を求められず、そのまま最初のメニューに進む。
+
+tile_menu_icons = true
+        持ち物のメニューやほかのいくつかのメニューにタイルのアイコンを入れ、場
+        所が狭くなる分を補うために、メニューを最大 2 列で表示する。
+        普通のメニューのほうがよければ、このオプションを false にする。
+
+tile_player_col              = white
+tile_monster_col             = #660000
+tile_neutral_col             = #660000
+tile_peaceful_col            = #664400
+tile_friendly_col            = #664400
+tile_plant_col               = #446633
+tile_item_col                = #005544
+tile_unseen_col              = black
+tile_floor_col               = #333333
+tile_wall_col                = #666666
+tile_mapped_floor_col        = #222266
+tile_mapped_wall_col         = #444499
+tile_explore_horizon_col     = #6b301b
+tile_door_col                = #775544
+tile_downstairs_col          = #ff00ff
+tile_upstairs_col            = cyan
+tile_branchstairs_col        = #ff7788
+tile_portal_col              = #ffdd00
+tile_transporter_col         = #0000ff
+tile_transporter_landing_col = #5200aa
+tile_feature_col             = #997700
+tile_trap_col                = #aa6644
+tile_water_col               = #114455
+tile_deep_water_col          = #001122
+tile_lava_col                = #552211
+tile_excluded_col            = #552266
+tile_excl_centre_col         = #552266
+tile_window_col              = #558855
+
+これらのオプションで、ダンジョンの階のミニマップに使う色を設定できる。
+#00ff00(緑)のような RGB の 16 進コードも使える。
+   tile_player_col              - プレイヤーの位置の色。階のマップの表示
+                                  ('X')中は、マップの中心の色でもある
+   tile_monster_col             - 敵対するモンスターの色
+   tile_neutral_col             - 中立のモンスターの色
+   tile_peaceful_col            - 平和的なモンスターの色
+   tile_friendly_col            - 友好的なモンスターの色
+   tile_plant_col               - 経験値が 0 のモンスター(植物や菌類)の色
+   tile_item_col                - 既知または感知したアイテムの色
+   tile_unseen_col              - 見ていない場所の色(たいていは石)
+   tile_floor_col               - 床の色
+   tile_wall_col                - あらゆる種類の壁の色
+   tile_mapped_floor_col        - 魔法の地図で感知した床の色
+   tile_mapped_wall_col         - 魔法の地図で感知した壁の色
+   tile_explore_horizon_col     - 探索済みの範囲の端の色
+   tile_door_col                - 既知の扉の色(開いていても閉じていても)
+   tile_downstairs_col          - 下り階段の色
+   tile_upstairs_col            - 上り階段の色(支部の出口を含む)
+   tile_branchstairs_col        - 支部の入口の色
+   tile_portal_col              - あらゆるポータルの色
+   tile_transporter_col         - 転送装置の色
+   tile_transporter_landing_col - 転送装置の着地点の色
+   tile_feature_col             - 階段とポータル以外のあらゆる地形の色
+                                  (祭壇、店、噴水など)
+   tile_trap_col                - あらゆる種類の既知の罠の色
+   tile_water_col               - 浅い水の色
+   tile_deep_water_col          - 深い水の色
+   tile_lava_col                - 溶岩の色
+   tile_excluded_col            - 自動移動の注意対象(除外)にしたマスの色
+                                  (tile_floor_col の色だけを上書きする)
+   tile_excl_centre_col         - 注意対象の中心の色(tile_floor_col と
+                                  tile_item_col だけを上書きする)
+   tile_window_col              - 今見えている範囲を示す四角い枠の色
+
+custom_text_colours = lightmagenta:#fd59fa, blue:#005afa
+        Crawl のインターフェースで使う 16 の基本的な端末の色のどれかを割り当て
+        直す。色の名前と RGB の 16 進コードの組で指定する。一覧に含めなかった色
+        は初期設定の値のままになる。
+
+tile_update_rate = 1000
+        何も入力がないときに、画面を描き直すまでの時間(ミリ秒)。ゲームの反応が
+        遅ければ、この数を増やしてみる。逆に、反応は問題ないが描き直しがなかな
+        か起こらないなら、小さい値にする。
+
+tile_runrest_rate = 17
+        走ったり休んだりしているときに、画面を描き直すまでの時間(ミリ秒)。走っ
+        たり休んだりしているときに Crawl が遅ければ、この数を増やす。
+
+tile_key_repeat_delay = 200
+        キーを押し続けたとき、押したキーが繰り返し働きだすまでには間がある。こ
+        のオプションはその間をミリ秒で決める。0 にすると、キーの入力は繰り返さ
+        れなくなる。
+
+tile_tooltip_ms = 500
+        画面のどこかにマウスを重ねてから、ツールチップが出るまでの時間(ミリ
+        秒)。このオプションを 0 にすると、ツールチップがまったく出なくなる。
+
+tile_tag_pref = (none| named | enemy | tutorial )
+        この設定は、ローカルのタイル版のダンジョンの表示で、どのモンスターに文
+        字のタグを付けるかを決める。
+            auto     - ゲームのモードによって選ぶ
+            none     - タグをすべて消す
+            all      - すべての敵にタグを表示する
+            named    - 名前のあるモンスターすべての名前を表示する(味方も敵も)
+            enemy    - 名前のある敵のモンスターの名前を表示する
+            tutorial - このゲームでまだ倒していないモンスターすべてと、
+                       名前のある敵のモンスターの名前を表示する
+        「名前のあるモンスター」の例は、ユニークや幽霊だ。auto のときは、通常の
+        ゲームでは "enemy"、闘技場モードでは "named"、チュートリアルと解説付き
+        モードでは "tutorial" を使う。
+
+tile_window_width  = -90
+tile_window_height = -90
+        ウィンドウの幅と高さを設定するオプション(単位はピクセル)。正の値なら、
+        そのままウィンドウの大きさになる。0 にすると、ウィンドウの大きさは自動
+        で決まる。負の数にすると、画面の解像度からその値の分だけ小さくした大き
+        さと解釈される。幅は下の `tile_window_ratio` で上書きされることがあり、
+        その場合 `tile_window_width` は幅の最大値として使われる。ウィンドウマ
+        ネージャによっては、OS のユーザーインターフェースの要素の位置のために、
+        これらの値がもっと小さく制限されることがある。例えば MacOS では、ウィン
+        ドウは Dock やメニューバーと重ならない。
+
+tile_window_ratio  = 1618
+        正の値にすると、タイル版はこの値を使って、ウィンドウの幅をウィンドウの
+        高さとの比(1000 倍した値)として決める。具体的には w = h *
+        tile_window_ratio / 1000 となる。
+        この値を設定すると、`tile_window_width` は幅の最大値として使われる。幅
+        の最小値は UI の配置で決まる。全画面モードでは、この値は無視される。無
+        効にするには 0 以下(<= 0)の値にする。
+
+tile_window_limit_size = true
+        ウィンドウの大きさの最小値を制限する。無効にするのはテストのときだけに
+        すべきだ。
+
+game_scale = 1
+        1 から 8 までの整数の倍率で、UI の要素すべての大きさを大きくする。高
+        DPI に直接対応していない高解像度のディスプレイで高 DPI の描画をまねた
+        り、とても大きなディスプレイで拡大率を調整したりするのに使える。4K の
+        ディスプレイなら 3 か 4 の値を勧める。2K のディスプレイは、たいてい 2
+        で最も見やすくなる。ローカルのタイル版のみ。
+
+tile_map_pixels = 0
+        ミニマップの 1 マスが占めるピクセル数の最大値。解像度が低く、持ち物欄が
+        小さすぎると感じるなら、これを 1 にすると持ち物欄の場所が広がる。欠点
+        は、ミニマップをクリックして移動するのがずっと難しくなることだ。0 にす
+        ると、ミニマップの大きさは自動で決まる。
+
+tile_viewport_scale = 1.0
+        ダンジョンの表示にかける倍率。最小値は 0.2 で、最大値は解像度で決まる。
+        少なくとも視界の範囲がいつも見えるように、拡大には上限がある。ローカル
+        のタイル版では、ゲームの中で ctrl-'-' と ctrl-'='(キーボードによっては
+        ctrl-'+')でも調整できる。
+
+tile_map_scale = 0.6
+        階のマップ(X)でダンジョンの表示にかける倍率。タイル版では階のマップで
+        '{' と '}' でも調整でき、ローカルのタイル版では ctrl-'-' と
+        ctrl-'='(キーボードによっては ctrl-'+')でも調整できる。
+
+tile_cell_pixels = 32
+        倍率 1.0 のときの、ダンジョンの表示のタイルの幅と高さ(単位は(論理)ピク
+        セル)。これは古いオプションで、代わりに tile_viewport_scale で倍率を調
+        整することを勧める。
+
+tile_min_stat_width_characters = 42
+        ステータス欄のサイドバーの最小の幅(文字数)。
+
+tile_sidebar_pixels = 32
+        ローカルのタイル版のサイドバーの表示での、タイルの幅と高さ(単位は(論理)
+        ピクセル)。
+
+tile_filter_scaling = false
+        tile_cell_pixels か tile_sidebar_pixels と組み合わせて使う。true にする
+        とテクスチャにフィルターをかけ、なめらかだがぼやけた画像になる。
+
+tile_force_overlay = false
+        このオプションを true にすると、メッセージ欄を画面の上に重ねて表示す
+        る。このオプションを使うときは、tile_font_msg_size を小さくすると、行数
+        はそのままで重ねて表示する部分が小さくなる。画面に使われていない場所が
+        できたら、view_max_height オプションを大きくする。
+
+tile_overlay_col = #646464
+        tile_force_overlay を true にしたときなどの、重ねて表示するメッセージ欄
+        の背景の色。tile_overlay_alpha_percent と組み合わせて使う。
+
+tile_overlay_alpha_percent = 40
+        tile_force_overlay を true にしたときなどの、重ねて表示するメッセージ欄
+        の背景の透明度の値。このオプションを 0 にすると、メッセージ欄には背景な
+        しで文字だけが表示される。100 にすると、メッセージ欄の背景は不透明にな
+        る。
+
+tile_full_screen = auto
+        このオプションを true か false にすると、全画面モードを強制的に有効また
+        は無効にする。それ以外の値にすると自動のモードになり、画面の解像度の幅
+        が 1200 より小さいか、高さが 800 より小さいときだけ全画面モードになる。
+
+tile_use_small_layout = auto
+        狭い画面向けの別の配置。auto のときは、横の場所が足りず普通の配置を快適
+        に表示できないときに有効になる。
+
+tile_font_crt_file  = VeraMono.ttf
+tile_font_stat_file = VeraMono.ttf
+tile_font_msg_file  = VeraMono.ttf
+tile_font_tip_file  = VeraMono.ttf
+tile_font_lbl_file  = Vera.ttf
+        ローカルのタイル版で、画面のさまざまな部分に使うフォント。Webタイル版で
+        は代わりに tile_font_*_family を使う。別のフォントを使いたければ、対応
+        する *.ttf ファイルを dat/tiles/ フォルダに置く必要がある。
+        画面の部分は次のとおり:
+            crt  - マップ以外の画面(メニュー、メッセージの履歴など)
+            stat - ステータス欄(体力(HP)、AC など)
+            msg  - メッセージ欄
+            tip  - ツールチップ(マウスを重ねたときの情報)
+            lbl  - 持ち物欄やメインのマップでのアイテムやモンスターの名前
+
+tile_font_crt_family  = monospace
+tile_font_stat_family = monospace
+tile_font_msg_family  = monospace
+tile_font_lbl_family  = monospace
+        Webタイル版で、画面のさまざまな部分に使うフォント。ローカルのタイル版で
+        は代わりに tile_font_*_file を使う。
+
+tile_font_crt_size  = 15
+tile_font_stat_size = 16
+tile_font_msg_size  = 14
+tile_font_tip_size  = 15
+tile_font_lbl_size  = 14
+        上に挙げた画面の部分のフォントの大きさ。0(初期設定)にすると、大きさは画
+        面の大きさをもとに決まる。
+
+tile_font_ft_light = false
+        'light' のフォントヒンティングを選ぶ。
+
+glyph_mode_font = DejaVu Sans Mono
+        Webタイル版のグリフ表示モードで、ダンジョンを描くのに使うフォント。
+        monospace にするか、そのフォントが使えないときは、ブラウザの初期設定の
+        等幅フォントが使われる。初期設定の "DejaVu Sans Mono" は Web フォントと
+        して使える(デスクトップ版で使うものと同じ)。このオプションは Webタイル
+        版でのみ使える。
+
+glyph_mode_font_size = 24
+        Webタイル版のグリフ表示モードでの、ダンジョンの表示のフォントの大きさ
+        (ポイント)。このオプションは Webタイル版でのみ使える。
+
+tile_show_minihealthbar = true
+tile_show_minimagicbar  = true
+        プレイヤーが傷ついたり魔力を使ったりしたときに、プレイヤーのタイルの上
+        に体力と魔力のバーを表示する。
+
+tile_show_demon_tier = false
+        悪魔のタイルに、悪魔の中での階級(難しさの格)を表すアイコンを重ねる。こ
+        れは、タイル版でないビルドで使う記号(&, 1, 2, 3, 4, 5)に対応する。
+
+tile_water_anim = true
+        無効にすると、液体のアニメーションを止める。
+        Webタイル版での初期設定は false。
+
+tile_misc_anim = true
+        無効にすると、祭壇やたいまつなど、そのほかのもののアニメーションを止め
+        る。
+
+tile_realtime_anim = false
+        有効にすると、タイルのアニメーションがプレイヤーの行動に縛られず、実時
+        間で動く。
+        このオプションは Webタイル版でのみ使える。
+
+tile_show_player_species = false
+        有効にすると、普通の人形を使って装備を表示する代わりに、プレイヤーの種
+        族のモンスターのタイルでプレイヤーを表示する。
+
+tile_show_threat_levels = nasty, unusual
+        このオプションは、どのモンスターを脅威の度合いで強調表示するかを決め
+        る。使える度合いは次のとおり: trivial, easy, tough, nasty, unusual。複
+        数の度合いを一度に指定することも、'none' を指定することもできる。
+
+        'unusual' を指定したときは、unusual_monster_items オプションで、どのア
+        イテムを持つモンスターを unusual として強調表示するかが決まる。
+
+tile_player_status_icons = slow, constr
+        このオプションは、プレイヤーが特定の状態異常にかかったときに、プレイ
+        ヤーのタイルの上にどのアイコンを表示するかを決める。使える値は次のとお
+        り: slow, fragile, petr, mark, will/2, haste, weak, corr, might, brill,
+        -move。
+
+tile_layout_priority = minimap, inventory, command, spell, monster
+        (順序付きリストのオプション)
+        このオプションで、画面の右側、ステータス欄の下に要素を置く順序を決めら
+        れる。解像度が低いとすべてを置く場所が足りないので、最初のほうの項目だ
+        けが置かれる。いつも表示しておきたくない項目を取り除くこともできる。持
+        ち物のタブはいつもいちばん下に置かれるが、最初は最小の大きさ(4 行)に
+        なっている。オプションの行でタブを持ち物の前に書くと、そのタブはやはり
+        持ち物の上に置かれるが、持ち物より優先されるので、持ち物が最大の大きさ
+        (6 行)まで広がれなくなることがある。ミニマップはいつもステータス欄とタ
+        ブの間に置かれる。呪文の習得と技能のタブも一覧に加えられるが、初期設定
+        では入っていない。使える値は次のとおり: abilities, commands, inventory,
+        memorisation, minimap, monsters, navigation, skills, spells,
+        system commands
+
+tile_display_mode = (tiles | glyphs | hybrid)
+        ダンジョンの描き方を決める。普通のタイル(初期設定)を使うことも、グリフ
+        を使ってコンソール版のような見た目にすることもできる。hybrid はグリフの
+        表示の上にアイコンを重ね、タイルの縦横比を正方形にする。
+
+        このオプションはローカルのタイル版と Webタイル版でのみ使える。
+
+tile_level_map_hide_messages = true
+tile_level_map_hide_sidebar = false
+        階のマップを使うときに、画面のどの要素を隠すかを決める。
+        これらのオプションは Webタイル版でのみ使える。
+
+tile_player_tile = (normal | playermons | mons:<monster> | tile:<monster-tile>)
+        playermons にすると、普通の人形を使う代わりに、プレイヤーの種族のモンス
+        ターのタイルでプレイヤーを表示する。
+
+        mons:<monster> の形の値(<monster> はモンスターの名前)にすると、
+        <monster> の基本のタイルをプレイヤーのタイルとして使う。例えば
+        mons:ijyb という値にすると、『イジェィブ』のタイルが使われる。モンス
+        ターの名前に空白があれば、それも含める。例えば mons:the royal jelly と
+        いう値も正しい。
+
+        tile:<player-tile> の形の値(<player-tile> はプレイヤーのタイルシートに
+        あるタイルの名前)にすると、そのタイルをプレイヤーのタイルとして使う。こ
+        の形は、ヒドラや大型の忌まわしきもののように複数のタイルを持つモンス
+        ターの特定の変種のタイルを使ったり、『シゴトゥヴィの怪物』や、基になる
+        モンスターのないプレイヤーの変身のような特別なタイルを使ったりするのに
+        いちばん役立つ。タイルの名前は完全な名前でなければならない(例:
+        mons_slymdra_7)。例えば、頭がたくさんあるヒドラのタイルを使うには、
+        tile:mons_slymdra_7 という値を使う。タイルの名前は、ソースツリーの
+        source/rltiles フォルダにある dc-mon.txt、dc-demon.txt、dc-player.txt
+        の各ファイルで見つかる。これらのファイルでは、タイルの名前は各項目の画
+        像のファイル名の後の 2 つ目の単語で、照合では大文字と小文字は区別されな
+        い。モンスターのタイルの名前はたいてい mons_<monster-name> の形だが、変
+        身などのほかのタイルは別の名前になっている(例えば、樹化の変身のタイルは
+        tran_tree)。
+
+tile_weapon_offsets = (<x>,<y> | reset)
+tile_shield_offsets = (<x>,<y> | reset)
+        tile_player_tile で独自のタイルを使うとき、これらのオプションは、タイル
+        の中で武器や盾を描く位置のピクセルの x(横)と y(縦)のずれを設定する。x
+        と y のずれは -32 から 32 まで(両端を含む)の整数でなければならない。x
+        が負の値なら左に、y が負の値なら上にずれる。0,0 では、武器はタイルの左
+        側に、盾は右側に描かれる。そのため、(タイルによって)10 から 20 くらいの
+        武器の x のずれと、-10 から -20 くらいの盾の x のずれを組み合わせると、
+        武器と盾の位置を入れ替えられる。
+
+        "reset" という値を使うと、それまでに定義したずれを消す。これは、lua で
+        ゲーム中にタイルを変えるときに役立つ。
+
+tile_grinch = false
+        設定すると、祝日用の特別なタイル(サンタの帽子など)を無効にする。
+
+tile_web_mouse_control = true
+        Webタイル版で、ツールチップやカーソルの操作にマウスを使えるようにするか
+        どうか。この設定の値にかかわらず、ミニマップはマウスの操作に反応する。
+
+tile_web_mobile_input_helper = auto
+        このオプションは、Webタイル版のインターフェースにある補助の入力欄を制御
+        する。この入力欄にフォーカスを当てると、モバイル機器で仮想キーボードを
+        使えるようになる。true か false にすると、手動でこの欄を有効または無効
+        にする。auto にすると、タッチスクリーンのある機器でだけこの欄を表示す
+        る。
+

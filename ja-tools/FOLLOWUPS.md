@@ -78,7 +78,7 @@
 - spl-miscast.cc の "'s body" 除去は英文向けのまま(体のないモンスターでも「〜の体」が残る)。
 - 英語版の誤り(訳では直した): graffiti の `@graffiti_author_any@`(下線抜け)、decorlines の
   `Jiyva peaceful fountain_blue` の重複、hints のタグの誤り。monstatus と mutations にも重複キー。
-- docs のヘルプ(マニュアル、適性表、changelog)は英語のまま。
+- docs のヘルプは訳して crawl-ref/docs/ja/ に置いた(下の「ヘルプ文書」)。
 
 ## newgame.cc
 - `_highlight_pattern()` は英語の種族名を `show_help('%')` に渡している。適性表を訳すときは
@@ -130,3 +130,26 @@
   TextRegion の cbuf を直接読み書きする処理を足すときはこれに合わせる。ウェブタイル版
   (tileweb-text.cc)は別の仕組みで、手を入れていない(未確認)。
 - 結合文字(幅 0)・制御文字は TextRegion で 1 マスのまま(本家の TODO のとおり)。
+
+## ヘルプ文書(crawl-ref/docs/ja/)
+- 訳はゲームが読む完成形(折り返し済みテキスト)。command.cc の `_doc_path()` が、日本語のとき
+  `docs/ja/<名前>` を先に探す。対象はマニュアル、適性表、クイックスタート、マクロ、オプション、
+  タイル版ヘルプ、更新履歴(0.34 系の部分だけ。版の見出し `Stone Soup 0.34.x` と `Highlights` の
+  語はゲームが探すので残す)。
+- 作業の形: 英語の控え `ja-work/docs-en/`(分担用に `parts/`)、訳 `ja-work/docs-ja/parts/`、規約
+  `ja-work/docs-ja/RULES.md`。`python -I ja-tools/assemble_docs.py` で組み合わせて docs/ja/ に書き、
+  幅を検査し、適性表を作る。`ja-tools/docwrap.py` は表示幅 79 桁での折り返しと検査。
+- 本家の文書が変わったら、ビルドで生成される `crawl-ref/docs/crawl_manual.txt` などと控えの差分を
+  見て訳を直す。英語版のマニュアルとクイックスタートは rst/md から生成されるもの(util/gen-all.py)。
+- 適性表 `docs/ja/aptitudes.txt` は `ja-tools/gen_apt_ja.py` が英語版の表から作る(前文は
+  `crawl-ref/docs/template/ja/apt-preface.txt`、種族名は data-species.txt)。gen-all.py(MSVC の
+  ビルド前処理)から呼ぶ。Linux の Makefile には足していない。
+- 新規ゲームの画面から適性表を開くときの種族名の強調(newgame.cc の `_highlight_pattern`)は
+  訳した種族名で探す。
+- 用語: quiver は「準備(準備中の行動)」、inscription は「銘」、mutation は「変異」、skill は
+  「技能」(ゲーム画面の一部は「スキル」のまま)。マニュアルの目次はゲーム内の目次(command.txt)と
+  同じ見出し。
+- 用語を置き換えたところは、行が短いまま残っている(段落を詰め直していない)。
+- 訳さずに残したもの: オプション名・値・rc の例・Lua、正規表現の例の英文(message_colour など
+  日本語版では日本語のメッセージに一致させる旨は説明に添えた)、menu_colour の英語のアイテム名
+  (英語名で照合する)。

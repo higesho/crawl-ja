@@ -1,0 +1,716 @@
+4-  キャラクターダンプ
+===================
+
+4-a     保存
+---------------
+
+dump_on_save = true
+        true にすると、ゲームを保存したときにキャラクターダンプを自動で作成また
+        は更新する。
+
+4-b     アイテムと撃破
+------------------------
+
+キャラクターダンプや morgue ファイルの最後には、キャラクターが活動している間に
+死んだすべてのモンスターの一覧がある。初期設定では、死んだモンスターは次の 3 つ
+に分けられる。
+   倒したモンスター        -- キャラクターが倒したモンスター
+   間接的な殺害            -- 味方のモンスターが倒したもの
+   その他                  -- ほかのすべての死者(罠、敵対的なモンスターなど)
+
+kill_map = friend:you, other:you
+        とすると、味方による撃破とその他の撃破が、倒したモンスターの一覧にまと
+        められる。まとめるのは表示だけであること(ゲームの内部では 3 つの一覧を
+        別々に持ち続ける)と、まとめた項目では倒した場所(下記参照)の順序が正しく
+        ならないことがあることに注意。初期値は空の一覧。
+
+dump_kill_places = (none | all | single)
+        倒したモンスターの一覧で、それぞれを倒した場所をどう表示するかを決め
+        る。'none' にすると場所をまったく表示しない。'all' にすると分かっている
+        すべての場所(5 か所まで)を表示する。'single' にすると初期設定と同じく、
+        1 体だけ倒したモンスターについてのみ場所を表示する。
+
+dump_item_origins = artefacts
+        ゲームはアイテムを見つけた場所を覚えている。この入手場所の記録をダンプ
+        に載せたい場合は、このオプションで注記を付けるアイテムを選ぶ。指定でき
+        るものは次のとおり:
+                artefacts, ego_arm, ego_weap, jewellery, runes,
+                staves, books, all, none.
+        dump_item_origins の行を複数書いた場合は最後の行が有効になり、それより
+        前の行はすべて無視される。
+
+        どのアイテムにも注記を付けたくない場合は、dump_item_origins を none に
+        し、dump_item_origin_price を -1 にする。
+
+dump_item_origin_price = -1
+        アイテムの価格がこの値以上なら、入手場所をダンプに書き出す。-1 にする
+        と、価格では選ばない。
+
+dump_message_count = 20
+        キャラクターダンプに表示する、最近のメッセージの数。
+
+dump_order  = header,hiscore,stats,misc,apostles,inventory,skills,spells,
+dump_order += overview,mutations,messages,screenshot,monlist,kills,
+dump_order += notes,screenshots,vaults,skill_gains,action_counts
+        (順序付きリストのオプション)
+        ダンプの各節の順序を決める。
+
+        追加できる節として "turns_by_place" と "kills_by_place" の 2 つがあり、
+        どこでターンを費やしたか、どこでモンスターを倒したかの詳しい統計を加え
+        る。ダンプに加えるには次のようにする:
+             dump_order += turns_by_place, kills_by_place
+
+        "turns_by_place" の節は、Crawl の trunk 版(リリース版やリリース前のベー
+        タ版ではない)では初期設定で有効になっていて、ダンプの最後に現れる。
+
+        キャラクターダンプを見やすくするには、
+            dump_order += -
+        を加えて、節の間に区切り線を入れるとよい。
+
+        Lua の関数を書いてその名前を一覧に加えれば、自分で節を加えることもでき
+        る。その関数の戻り値がダンプに書き出される。通常の Lua の関数と同じよう
+        にグローバル変数を参照できるが、関数名は小文字でなければならず、呼び出
+        すときに引数は渡されない。
+
+        例:
+          {
+            myRace = you.race()
+            function mydumpfn()
+              return
+                "This will be printed to dump. Your species is " .. myRace
+            end
+          }
+          dump_order += mydumpfn
+
+
+4-c     ノート
+--------------
+
+Crawl はプレイ中の特定の出来事を自動で記録できる。記録はダンプや morgue ファイ
+ルで読める。以下は、この動作を調整するためのオプションである。
+記録される出来事は次のとおり:
+        - 経験レベルが上がる、または下がる
+        - ダンジョンの階に初めて入る
+        - それまでに覚えたどの呪文よりもレベルの高い呪文を覚える
+        - 神の信者になる
+        - 神を棄てる
+        - 贖罪を課される、また許される
+        - 神から贈り物を受け取る(ゾムを除く)
+        - 名前のあるオークの仲間が死ぬ(ベオを信仰しているとき)
+        - 神の力を初めて使えるようになる
+        - ルーン、ゾットのオーブ、アーティファクトを初めて拾う
+        - アイテムを識別する
+        - OOD(その階にしては深すぎる)モンスターやユニークモンスターを倒す(下記
+          参照)
+        - 体力(HP)が危険な水準まで減る(下記参照)
+        - 変異を得る、または失う
+        - 技能が重要なレベルに達する(下記参照)
+        - 死ぬ
+手動でノートを加えるには ':' コマンドを使う。
+
+user_note_prefix = <string>
+        手動で加えたノートの先頭に指定した文字列を付けて、見つけやすくする。現
+        在のところ、このオプション(およびほかのどのオプションも)の末尾に空白を
+        付けることはできないが、代わりに Unicode の非改行空白文字(' ')を使え
+        る。
+
+note_items += <regex>, <regex>, ...
+        (リストのオプション)
+        アイテムを初めて識別したとき、その短い説明が正規表現に合えばノートに記
+        録する。例:
+             note_items += book,acquirement
+        アーティファクト(fixed、unrand、ランダムのどれも)は、note_items にかか
+        わらず、識別したときに必ず記録される。
+
+        照合する説明には、menu_colour オプションの説明にあるものと同じ接頭辞(例
+        えば "emergency_item")が付く。
+
+note_monsters += <regex>, <regex>, ...
+        (リストのオプション)
+        このコンマ区切りの一覧のどれかに名前が合うモンスターは、注目すべきもの
+        とみなされる。note_monsters の行は複数書ける。例:
+             note_monsters += Klown,orb of fire
+
+note_hp_percent = 5
+        体力(HP)が最大体力の一定の割合(note_hp_percent)を下回ると、ノートに記録
+        される。同じ出来事にもとづくノートが繰り返されないようにする処理もあ
+        る。
+
+note_skill_levels = 1,5,10,15,27
+        記録の対象にする技能レベルを決める。1 行で書くが、+= を使って続きを書く
+        こともできる。
+
+note_all_skill_levels = false
+        note_skill_levels = 1,2,..,27 の短縮形。true にすると、すべての技能レベ
+        ルが記録の対象になる。
+
+note_skill_max = true
+        このオプションを設定すると、技能レベルが新しい最高値に達するたびにノー
+        トに記録する。note_skill_max が true で note_skill_levels が空でなけれ
+        ば、どちらかの条件を満たしたときに記録される。
+
+note_xom_effects = true
+        ゾムが何かをするたびにノートに記録する。
+
+note_messages += <regex>, <regex>, ...
+        (リストのオプション)
+        このコンマ区切りの一覧のどれかに合うメッセージは、注目すべきものとみな
+        される。note_messages の行は複数書ける。例:
+             note_messages += Something interferes
+             note_messages += protects you from harm
+        アビスへの追放をすべて記録したい場合は次のようにする:
+             note_messages += [bB]anish.*Abyss
+        ドラコニアンの鱗が <colour> に変わったときに記録したい場合は次のように
+        する:
+             note_messages += Your scales start
+
+note_chat_messages = false
+        false にすると、ほかのプレイヤーからの WebTiles のチャットメッセージを
+        記録しない(この設定はオンラインのサーバーでのみ有効)。
+
+note_dgl_messages = true
+        false にすると、ほかのプレイヤーから送られた DGL メッセージを記録しない
+        (この設定はオンラインのサーバーでのみ有効)。
+
+
+5-  その他
+==================
+
+5-a     すべての OS
+---------------
+
+mouse_input = false
+        有効にすると、一部のプラットフォーム(Windows と Unix)で、ゲームがマウス
+        の入力イベントを使えるようになる。マウスへの対応の程度はプラットフォー
+        ムによって大きく異なり、端末の設定にも強く左右されることに注意。
+
+        Unix では、マウスが使えそうなのは xterm 上の ncurses の場合だけである
+        (具体的には、ncurses がマウスイベントを有効にするには、おそらく $TERM
+        に "xterm" が含まれている必要がある。xterm の中の GNU screen で Crawl
+        を動かしている場合は、たぶんマウスは使えない)。
+
+        Windows では、Crawl でマウスを使うには、コンソールの簡易編集モード
+        (QuickEdit)を無効にする必要がある(QuickEdit は初期設定で無効なので、標
+        準のコンソールを使っているなら何も変えなくてよいはずだ)。QuickEdit を無
+        効にするには、コマンドプロンプトのタイトルバーを右クリックして「プロパ
+        ティ」を選び、「オプション」タブで QuickEdit を無効にする。
+
+wiz_mode = (no | never | yes)
+        ウィザードモードの設定(WIZARD 付きでコンパイルしたものでのみ使える):
+          yes   -- ウィザードモードでゲームを始める(スコアは記録されない)
+          no    -- ゲームを始めた後でもウィザードモードに入れる
+          never -- ウィザードのコマンドを一切使えないようにする
+
+explore_mode = (no | never | yes)
+        探索モードの設定(WIZARD 付きでコンパイルしたものでのみ使える):
+          yes   -- 探索モードでゲームを始める(スコアは記録されない)
+          no    -- ゲームを始めた後でも探索モードに入れる
+          never -- 探索モードに一切入れないようにする
+
+char_set = (default | ascii)
+        ゲーム画面で使う文字セットを、あらかじめ用意されたものから選ぶ。以前の
+        版の Crawl と違い、このオプションで入出力の文字コードを選ぶことはもうな
+        い。
+
+        ibm_glyphs.txt、dec_glyphs.txt、old_unicode_glyphs.txt を読み込めば、も
+        う組み込まれていない古い文字セットを使うこともできる。
+
+        タイル版ではほとんど効果がない。
+
+colour.OLDCOLOUR = NEWCOLOUR
+        一部の色が読みにくい(しかも調整できない)端末で役に立つほか、独自の配色
+        を作るのにも使える。特に、背景が黒でない端末で background オプションと
+        組み合わせると便利である。
+        書き方は colour.OLDCOLOUR = NEWCOLOUR で、後に書いた規則が優先される。
+        NEWCOLOUR は常に文字どおりに解釈される(つまり、さらに別の色に置き換えら
+        れることはない)。
+        使える色は次のとおり:
+                black, blue, green, cyan, red, magenta, brown, lightgrey,
+                darkgrey, lightblue, lightgreen, lightcyan, lightred,
+                lightmagenta, yellow, white
+        lightgray は lightgrey、darkgray は darkgrey と同じ。例:
+          colour.lightgrey = black
+          colour.lightcyan = cyan
+          colour.yellow    = brown
+
+display_char = <dungeon_character_name : symbol>
+        これを複数並べた一覧も書ける。
+
+        dungeon_character_name に指定できるのは次のもの: wall, permawall,
+           wall_magic, floor, floor_magic, door_open, door_closed, trap,
+           stairs_down, stairs_up, grate, altar, arch, fountain, wavy, statue,
+           invis_exposed, item_detected, item_orb, item_rune, item_weapon,
+           item_armour, item_wand, item_scroll, item_ring, item_potion,
+           item_missile, item_book, item_staff, item_rod, item_miscellany,
+           item_corpse, item_skeleton, item_gold, item_gem, item_amulet, cloud,
+           cloud_weak, cloud_fading, cloud_terminal, tree, transporter,
+           transporter_landing, space, fired_bolt, fired_zap, fired_burst,
+           fired_debug, fired_missile, fired_missile, explosion, frame_horiz,
+           frame_vert, frame_top_left, frame_top_right, frame_bottom_left,
+           frame_bottom_right, draw_horiz, draw_vert, draw_slash,
+           draw_backslash, draw_top_left, draw_top_right, draw_bottom_left,
+           draw_bottom_right, draw_down, draw_up, draw_right, draw_left
+
+        ほとんどは名前を見れば分かる。"arch" は店とポータルに使
+        う。"floor_magic" と "wall_magic" は、階のマップで、魔法の地図によって
+        分かったマスを表示するのに使う。"invis_exposed" は、浅い水に潜っている
+        水棲の生き物や、浅い水の中を歩いている透明な生き物を表す文字。"wavy" は
+        水と溶岩。"cloud"、"cloud_weak"、"cloud_fading"、"cloud_terminal" は残
+        りの持続時間で雲を区別するもので、消えるまでが長い順に並べてある。残り
+        の持続時間が見た目に表れない種類の雲には、常に "cloud" の文字を使う。
+
+        記号は文字で指定するか、ASCII/Unicode のコード(10 進数、または前に x を
+        付けた 16 進数)で指定する。
+
+feature += <regex> { <symbol>, <magicmap symbol>, <view colour>,
+                    <levelmap_magic_colour>, <levelmap_seen_colour>,
+                    <emphasised_colour>, <levelmap_emphasised_colour> } ;
+           <regex> { ... }
+feature -= <regex> , <regex>
+        (リストに似たオプション)
+        <regex> はダンジョンの地形を表す正規表現。この正規表現は、'x' コマンド
+        を使ったときに表示される説明に合うようにする。正規表現が複数の説明に合
+        う場合は、それらすべての地形が対象になる。その版の crawl にある地形の一
+        覧は、地形の検索メニュー(`?/f`)で `.*` を検索すれば分かる。
+
+        {...} の一覧は地形の見た目を指定するもので、見れば分かるはずだ。
+        <symbol> は、上の display_char オプションの指定を上書きしたり、同じ文字
+        の地形をさらに細かく区別したりするのに使える。
+
+        'magic' は魔法の地図のこと。つまり <magicmap symbol> は、魔法の地図で分
+        かった地形に使う記号を決める。<magicmap symbol> は、行き先の分からない
+        石の階段や、まだ訪れていない転送装置にも使われる。
+
+        'emphasised_colour' は、行き先の分からない石の階段や転送装置を目立たせ
+        るための色のこと。階段以外の地形では、強調の色を設定しても役に立つこと
+        はない。
+
+        {...} の一覧の前のほうの値は、空にして区切りのコンマだけを書けば省略で
+        きる。後ろのほうの値は、コンマを書かずに省略できる。
+
+        feature オプションの行は複数書ける。また、同じ行にセミコロンで区切って
+        複数の地形の指定を並べることもできる。
+
+        -= を使って正規表現だけ(見た目は書かない)を指定すると、地形の上書きを取
+        り消せる。説明がその正規表現に合うすべての地形が、初期設定の見た目に戻
+        る。
+
+        例:
+         * 岩の壁を赤にする:
+             feature += rock wall { , , red }
+         * どの文字セットでも金属の壁に # を使う:
+             feature += metal wall {#}
+         * 上り階段を緑に、下り階段を赤にする:
+             feature += stone staircase leading up {,,,,green}
+             feature += stone staircase leading down {,,,,red}
+
+        記号は display_char と同じように指定できる。次の
+             feature += metal wall {#}
+             feature += metal wall {35}
+             feature += metal wall {x23}
+        はどれも同じ意味になる。
+
+mon_glyph += <monster name or symbol> : (<colour> <glyph> | <monster name>) ,
+             <monster name or symbol> : <replacement>
+mon_glyph -= <monster name or symbol>
+        (リストのオプション)
+        mon_glyph オプションを使うと、モンスターの表示に使う記号と色を変えられ
+        る。初期設定の記号の完全な一覧はソースコード(mon-data.h)を見るのが一番
+        確実だが、記号はモンスターの検索メニュー(`?/m`)でも確かめられ、モンス
+        ターの一覧もそこで見られる。
+
+        記号は、モンスターの名前か、そのモンスターの今の記号を指定して変えられ
+        る。例えば、エルフを E に、エレメンタルを e にしたい場合は次のようにす
+        る:
+
+             mon_glyph += e : E
+             mon_glyph += E : e
+
+        別の記号、色、またはその両方を、どの順序でも指定できる。ほかの例:
+
+             mon_glyph += deep elf annihilator : E lightmagenta
+             mon_glyph += Xtahua : lightmagenta D
+             mon_glyph += ghoul : darkgrey
+             mon_glyph += cognitogaunt : x
+
+        (: の左側では大文字と小文字を区別する。)
+
+        別のモンスターを指定すると、そのモンスターの基本の記号と色を写す(これは
+        連鎖しない)。例えば、聖なる戦士の色が逆になっていると思うなら次のように
+        する:
+
+            mon_glyph += daeva : angel
+            mon_glyph += angel : daeva
+
+        記号は、"feature" オプションで示した書き方でコードポイントを使って指定
+        できる。Unicode のコードポイントも使える:
+
+             mon_glyph += draconian scorcher : x6e9
+
+        _ を 1 つだけ書くと空白として扱われる。本当の下線を使いたい場合は、次の
+        ように前に \ を付ける:
+
+             mon_glyph += player ghost : \_
+
+        次のいくつかの「疑似」モンスターも設定し直せる:
+
+             player
+             sensed monster
+             {trivial,easy,tough,nasty,friendly} sensed monster
+
+        通常は同じ名前のモンスターがいない、プレイできる種族も設定し直せる。こ
+        れは show_player_species = true と組み合わせて使う。
+
+        -= を使うとモンスターの記号の上書きを取り消せる。指定したモンスター(ま
+        たは指定した記号のすべてのモンスター)が初期設定の見た目に戻る。-= では
+        モンスターの名前か記号だけを指定し、取り消す置き換えの内容は書かない。
+
+item_glyph ^= <regexp> : <colour> <glyph>
+item_glyph -= <regexp>
+        (順序付きリストのオプション)
+        正規表現に合うすべてのアイテムの記号と色(またはそのどちらか)を変える。
+        mon_glyph と違い、名前の一部が合えばよい。
+
+        アイテムの名前の前には、アイテムの記録(stash tracking)とメニューの色付
+        けの両方によるタグが付く。そのため、{artefact} や useless_item に色を付
+        けることもできる。
+
+        1 つのアイテムに複数の規則を適用できるので、色と記号を別々に変えたい場
+        合に役に立つ:
+            item_glyph += dart : x2191
+            item_glyph += curare.*dart : red
+
+        規則は順に適用されるので、後の規則ほど優先される。
+
+        -= で規則を取り除くと、指定した正規表現とまったく同じものを使っているす
+        べての規則が取り除かれる。その場合、色や記号は指定しない。
+
+use_fake_player_cursor = true
+        端末のカーソルを使わずに、メインの画面でプレイヤーを強調表示する。これ
+        により、描画のためにカーソルを消してほかの場所に動かしたときもちらつか
+        ず、初期設定でカーソルを消しておけるようになる。タイル版では効果がな
+        い。
+
+show_player_species = false
+        キャラクターをその種族の一員として表示する。例えば丘オークなら、'@' で
+        はなく 'o' で表示される。タイル版では効果がない。
+
+use_modifier_prefix_keys = true
+        true にすると、'*' が CTRL キー、'/' が SHIFT キーを押したのと同じ働き
+        をする。
+
+language = <two-letter language code>
+        一部の文章を指定した言語で表示する。Dungeon Crawl のすべての文章が対応
+        しているすべての言語に訳されているわけではないが、有志の翻訳者が、神や
+        モンスターの説明のような特に長い文章を訳している。訳がない文章は英語で
+        表示される。言語によってはフォントを変える必要がある。
+
+        一部対応している言語コード:
+        cs: チェコ語
+        da: デンマーク語
+        de: ドイツ語
+        el: ギリシャ語
+        es: スペイン語
+        fi: フィンランド語
+        fr: フランス語
+        hu: ハンガリー語
+        it: イタリア語
+        ja: 日本語
+        ko: 韓国語
+        lt: リトアニア語
+        lv: ラトビア語
+        nl: オランダ語
+        pl: ポーランド語
+        pt: ポルトガル語
+        ru: ロシア語
+        sv: スウェーデン語
+        zh: 中国語
+
+fake_lang = <lang1>[,<lang2>[,...]]
+        1 つ以上の偽の言語を設定する。指定した順に適用される(順序が大事！)。同
+        じ言語を 2 回以上設定することもできるが、あまり意味のある結果にはならな
+        いかもしれない...。一度に設定できる偽の言語は 3 つまで。
+
+        指定できるもの: (dwarven|jagerkin|kraut|runes|wide|grunt|butt:<n>)
+        どうなるかは試してみよう！
+
+messaging = true
+        true にすると、ほかのプレイヤーが送った DGL メッセージを受け取れる(この
+        設定はオンラインのサーバーでのみ有効)。
+
+read_persist_options = false
+        true にすると、Lua の変数 c_persist.options に文字列が入っている場合、
+        ゲームはそこから追加のオプションを読み込む。このオプションは、スクリプ
+        トで明示的に使わない限り効果がない。このオプションは持続するので、技能
+        メニューで設定した現在の値はゲームをまたいで保存され、明示的に設定しな
+        い限り自動で読み込み直される。
+
+5-b     Windows
+------------------------
+
+dos_use_background_intensity = false
+        Windows で、明るい背景色を表示できるコンソールを使っている場合は、この
+        オプションを true にすると味方の強調表示がよくなる。コンソールがこのオ
+        プションに対応していない場合は、一部の味方のモンスターが点滅する文字で
+        表示される(その場合は、正気を保つためにこのオプションを false にしたほ
+        うがよいかもしれない)。
+
+5-c     Unix
+-------------
+allow_extended_colours = true
+        crawl の明るい色に、端末の基本の 8 色より多くの色を使おうとする。最近の
+        端末のほとんどではこの設定にしておくべきだ。うまくいけば、コンソールは
+        16 色モードになる。
+
+        このオプションが有効で、端末で十分な数の色が使える場合は、内部の色に端
+        末の拡張カラーパレットを直接使う。
+
+        対応している端末でこのオプションが期待どおりに働くには、適切な TERM 環
+        境変数を設定しておく必要がある。例えば:
+          * XTerm、MacOS のターミナル、iTerm: xterm-256color
+          * gnome-terminal: vte-256color
+          * PuTTY: putty-256color
+            ('Connection->Data->Terminal-type string' で設定する)
+
+        これらの条件を満たさない場合、crawl は 8 色モードに切り替え、明るい色を
+        文字の属性で表現する。黒の上の濃い灰色を表示するための「代わりの」色に
+        は濃い青を使う。8 色モードでは、次のオプションのどれかを使うほうがよい
+        かもしれない。
+
+bold_brightens_foreground = false
+        8 色モードで、太字の属性を付けると前景色が明るくなるものとみなす。
+        `true` ではなく `force` にすると、16 色モードでも明るい色が太字になる。
+        それ以外の場合、allow_extended_colours によって 16 色モードで動いている
+        ときは、このオプションは無視される。
+
+        太字で色が変わるという前提が成り立たない端末で、8 色モードでこれを有効
+        にすると、同じ基本色の通常の色と明るい色の組み合わせで記号が見えなくな
+        る。例えば、ダンジョンの表示で視界の外のマスが黒く見えるなら、これを
+        `true` にしてはいけない。
+
+blink_brightens_background = false
+        8 色モードで、点滅の属性を付けると背景色が明るくなるものとみなす。
+
+        この前提が成り立たない端末でこれを有効にすると、同じ基本色の通常の色と
+        明るい色の組み合わせで記号が見えなくなる。
+
+        allow_extended_colours によって 16 色モードで動いているときは、このオプ
+        ションは無視される。
+
+best_effort_brighten_background = false
+        true にすると、うまくいくとはみなされていない場合でも、点滅を使って背景
+        色を明るくしようとする。
+
+        このオプションは、明るくしても問題のない色にだけ影響する。
+        blink_brightens_background オプションを true にしている場合、このオプ
+        ションは実質的に無視される。
+
+        allow_extended_colours によって 16 色モードで動いているときは、このオプ
+        ションは無視される。
+
+best_effort_brighten_foreground = true
+        true にすると、うまくいくとはみなされていない場合でも、太字を使って前景
+        色を明るくしようとする。
+
+        このオプションは、明るくしても問題のない色にだけ影響する。
+        bold_brightens_foreground オプションを true にしている場合、このオプ
+        ションは実質的に無視される。
+
+        allow_extended_colours によって 16 色モードで動いているときは、このオプ
+        ションは無視される。
+
+background_colour = black
+        初期設定の背景色を名前で設定する(初期値は BLACK)。背景が黒でない端末を
+        使っていて、crawl の配色をそのまま保ちたい場合に役に立つかもしれない。
+
+        内部では、黒が指定した背景色に、指定した背景色が黒に置き換えられる。
+
+        このオプションを使うには、端末のライブラリと端末そのものの両方が拡張さ
+        れた機能に対応している必要がある。さらに、明るい初期設定の色は、拡張さ
+        れた色に対応していて、しかも allow_extended_colours で明示的に有効にし
+        ていなければ使えない。対応していない場合(まったく対応していない場合も、
+        選んだ色に対応していない場合も)、このオプションは実質的に black を指定
+        したのと同じになる。
+
+        明るい初期設定の色を使えるようにする方法について詳しくは、
+        allow_extended_colours オプションを参照。terminfo ファイルには、バグが
+        あるものや誤解を招く内容のものがあるので注意すること。
+
+foreground_colour = lightgrey
+        初期設定の前景色を名前で設定する(初期値は LIGHTGREY)。
+
+        内部では、lightgrey が指定した前景色に、指定した前景色が lightgrey に置
+        き換えられる。
+
+        このオプションには、background_colour オプションと同じ制約がある。詳し
+        くはその説明を参照。
+
+use_terminal_default_colours = false
+        端末の初期設定の前景色と背景色を使う。これを使うと背景を透明にできる。
+
+use_fake_cursor = true
+        true にすると、端末にカーソルを描かせるのではなく、階のマップと目標選択
+        の画面で Crawl がカーソルを自分で描く。端末が濃い灰色や黒のマスの上に
+        カーソルを表示できない場合に使う。
+        Unix 以外の版では、このオプションの初期値は false で、true にすると予期
+        しない結果になるかもしれない。
+
+
+6-  Lua
+========
+
+lua_max_memory = 16
+        ユーザーの Lua スクリプトが使えるメモリの上限(MB 単位)。
+
+6-a  Lua ファイルの読み込み
+-------------------------
+
+Lua ファイルは、既存のコマンドに新しい意味を持たせたり、新しいコマンドを作った
+り(マクロで使う)できるスクリプトである。Lua ファイルを使うには、Crawl がユー
+ザーの Lua スクリプトに対応するようにコンパイルされている必要がある。使っている
+Crawl が Lua に対応しているかどうかは、ゲーム中に ?V を押せば確かめられる。
+Crawl が表示する機能の一覧に「Lua ユーザースクリプト」が含まれていればよい。
+
+Lua ファイルは lua_file オプションで読み込む(1 行に 1 ファイル):
+
+lua_file = <path/name.lua>
+
+ゲーム中にマクロの動作を "===" とそれに続く関数名にすれば、Lua の関数をマクロに
+できる。
+
+ウィザードモードの Lua インタープリター(&^T)は、最初に呼び出されたときに、
+terp_file オプションで指定したすべてのファイルを読み込む:
+
+terp_file = <path/name.lua>
+
+これらのファイルの Lua からは、Crawl の Lua の内部のすべてにアクセスできる(つま
+り、clua ではなく dlua の文脈で実行される)。
+
+6-b     Lua をその場で実行する
+-----------------------------
+
+init.txt/.crawlrc の中で Lua のコードを直接使える。次の書き方で Lua のコードを
+実行できる。
+
+: Single line of lua code
+
+< Possibly multi-line
+  Lua code >
+
+{ Possibly multi-line
+  Lua code }
+
+2 つ目と 3 つ目の場合は、開始の区切り文字を行の先頭に、終了の区切り文字を行の末
+尾に置かなければならない、という制限がある。<> と {} の違いは、コードが実行され
+る時点である。{} のコードはすぐに実行される。それ以外の Lua のコードは、init
+ファイル全体を読み込んだ後で初めて実行される。
+
+例:
+
+# Print a welcome message
+: crawl.mpr("Hello " .. you.name())
+
+<
+-- Another welcome message (lua code uses lua comments)
+crawl.mpr("Hi there")
+>
+
+{
+function ch_autopickup(it) [ ... body omitted ... ] end
+}
+
+6-c     条件付きのオプション
+----------------------------
+
+同じ書き方で Lua を使えば、init.txt の一部を(例えばキャラクターの種類に応じて)
+選んで読み込ませることができる。
+
+例:
+
+: if you.race() == "Mummy" then
+autopickup = $?+"/
+: else
+autopickup = $?+"/!
+: end
+
+Lua からは "options.option_name" でオプションを参照できる。例えば:
+
+:if string.find(options.autopickup, "!") then
+# Do something here if potions are included in autopickup
+:end
+
+"options.option_name" は、crawl 自身が認識しないオプションにも使える。これをコ
+マンドラインでのオプションの設定(0-b 節を参照)と組み合わせれば、オプションファ
+イルの中のオプションを条件付きにするかどうかをコマンドラインで制御できる。例え
+ば、コマンドラインで "-extra-opt-first foobar=true" としてオプション "foobar"
+を設定しておき、次のようにする:
+
+:if options.foobar then
+# Do things here
+:end
+
+6-d     条件付きのオプションの注意点
+-----------------------------------
+
+「開始画面」(1 節)に挙げたオプションは、どれも条件付きで設定できないことに注
+意。これは、オプションファイルが実は 2 回読み込まれるためである。1 回目はキャラ
+クター作成の前に Lua を無効にして、2 回目はキャラクター作成の後に Lua を有効に
+して読み込まれる。開始画面のオプションを条件付きで設定しようとしても、どんな条
+件を書いたかにかかわらず、オプションファイルの一番下にある値が使われる。
+
+上の注意点は "wiz_mode" オプションにも当てはまる。wiz_mode を条件付きにする代わ
+りに、コマンドラインに "-extra-opt-last wiz_mode=yes" を加えれば、新しく始める
+ゲームがどれもウィザードモードで始まる。
+
+7-  目の不自由なプレイヤー向けの推奨オプション
+==========================================
+
+コンソールで画面読み上げソフトを使って crawl を遊びやすくするために、次の設定を
+勧める。
+
+アニメーションと表示の遅延をなくし、コマンドを実行するたびにすぐ画面が更新され
+るようにする:
+    view_delay = 0
+    travel_delay = -1
+    rest_delay = -1
+    use_animations = 0
+
+画面を読み上げやすくするために、メッセージを画面の上部に表示し、メッセージをま
+とめる処理をなくす:
+    messages_at_top = true
+    clear_messages = true
+    msg_condense_short = false
+
+プレイヤーに独自の記号を設定して、画面の読み上げでプレイヤーのカーソルを追いや
+すくする:
+    use_fake_player_cursor = false
+    show_player_species = false
+    mon_glyph += player:x263A
+
+自動移動にマウスのクリックを使う(端末の設定の詳細については、mouse_input オプ
+ションの説明を参照):
+    mouse_input = true
+
+モンスターがいるときでも、自動移動や移動で 1 歩だけ進めるようにする:
+    travel_one_unsafe_move = true
+
+^x の表示に、プレイヤーからの相対座標を載せる:
+    monster_item_view_coordinates = true
+
+^x の表示には、正規表現で指定した地形を載せられる。例えば、すべての水を ^x に含
+めるには次のように設定する:
+    monster_item_view_features += water
+
+自動移動でたどった経路と、自動探索の境界を特別な文字で示す:
+    show_travel_trail = true
+    feature += travel trail {x25AA}
+    feature += explore horizon {x25AB}
+
+まだ訪れていない階段と転送装置に別の記号を設定する:
+    feature += stone staircase leading up {<,x25C2}
+    feature += stone staircase leading down {>,x25B8}
+    feature += transporter {xA9, x25CE}
+
+自動探索のときにアイテムの山があるマスを訪れて、新しく見つけたアイテムをすべて
+表示する:
+    explore_greedy_visit += stacks

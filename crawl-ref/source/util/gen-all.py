@@ -80,6 +80,14 @@ def gen_all(perl):
     command = [perl, input_files[0]] + generated_files + input_files[1:]
     run_if_needed(generated_files, input_files, command)
 
+    # 日本語版の適性表(英語版の表を訳した前文・種族名に差し替える)
+    generated_files = ['../docs/ja/aptitudes.txt']
+    input_files = ['../../ja-tools/gen_apt_ja.py', '../docs/aptitudes.txt',
+                   '../docs/template/ja/apt-preface.txt',
+                   'dat/database/ja/jtrans/data-species.txt']
+    command = [python, '-I', input_files[0]]
+    run_if_needed(generated_files, input_files, command)
+
     generated_files = ['../docs/FAQ.html']
     input_files = ['util/FAQ2html.pl', 'dat/database/FAQ.txt']
     command = [perl] + input_files + generated_files

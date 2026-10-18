@@ -1,0 +1,766 @@
+4-  Character Dump.
+===================
+
+4-a     Saving.
+---------------
+
+dump_on_save = true
+        If set to true, a character dump will automatically be created or
+        updated when the game is saved.
+
+4-b     Items and Kills.
+------------------------
+
+The character dump or morgue files end with a list of all monsters that
+perished while the character was active. By default, dead monsters are
+grouped in three parts:
+   Vanquished Creatures    -- monsters killed by the character
+   Collateral Kills        -- kills of friendly monsters
+   Others                  -- all other casualties (e.g. traps, hostile
+                              monsters)
+
+kill_map = friend:you, other:you
+        will merge friendly and other kills into the main vanquished
+        creatures list. Note that the merging is only for display (the
+        game still maintains three separate lists internally) and that
+        kill places (see below) may be in the wrong order for merged
+        entries. The default is an empty list.
+
+dump_kill_places = (none | all | single)
+        In the Vanquished Creatures list, this option controls how the
+        locations of each kill are displayed. Use 'none' to suppress
+        place display altogether, 'all' to display all known (up to 5)
+        kill places, and 'single' to use the default of showing kill
+        places only for single kills.
+
+dump_item_origins = artefacts
+        The game remembers where you find items. If you want this item
+        origin memory listed in your dumps, use this option to select
+        which items get annotated. Available selectors are:
+                artefacts, ego_arm, ego_weap, jewellery, runes,
+                staves, books, all, none.
+        If you use multiple dump_item_origins lines, the last line takes
+        effect; all preceding lines are ignored.
+
+        If you don't want any items to be annotated, set
+        dump_item_origins to none, and set dump_item_origin_price to -1.
+
+dump_item_origin_price = -1
+        Item origins are dumped if the price of the item is greater than
+        or equal to this amount. Set this to -1 to prevent selection by
+        price.
+
+dump_message_count = 20
+        The number of last messages to be displayed in character dump
+        files.
+
+dump_order  = header,hiscore,stats,misc,apostles,inventory,skills,spells,
+dump_order += overview,mutations,messages,screenshot,monlist,kills,
+dump_order += notes,screenshots,vaults,skill_gains,action_counts
+        (Ordered list option)
+        Controls the order of sections in the dump.
+
+        Two optional dump sections are "turns_by_place" and
+        "kills_by_place", which add detailed statistics to where turns
+        were spent and monsters were killed. You can add them to your
+        dump as:
+             dump_order += turns_by_place, kills_by_place
+
+        The "turns_by_place" section is enabled by default
+        in trunk builds of Crawl (not releases or pre-release betas),
+        appearing at the end of the dump.
+
+        For making your chardump prettier, you can add
+            dump_order += -
+        to place a separator between sections.
+
+        You can also add your own sections by writing a Lua function and
+        adding its name to the list. The function's return value will then
+        be dumped. You can reference global variables just like regular Lua
+        functions, but its name must be in lowercase, and no call arguments
+        will be provided.
+
+        Example:
+          {
+            myRace = you.race()
+            function mydumpfn()
+              return
+                "This will be printed to dump. Your species is " .. myRace
+            end
+          }
+          dump_order += mydumpfn
+
+
+4-c     Notes.
+--------------
+
+Crawl can automatically log certain events during play. You can read
+these in the dump or morgue files. Below are the options for tweaking this
+behaviour.
+The following events are logged:
+        - Gaining or losing a level
+        - Entering a dungeon level for the first time
+        - Memorising a spell of higher level than any learned before
+        - Becoming a worshipper of a god
+        - Abandoning a god
+        - Being put under penance and being forgiven
+        - Receiving a gift from a god (except Xom)
+        - Death of a named orcish ally (when worshipping Beogh)
+        - Being able to invoke a godly power for the first time
+        - Picking up a rune, the Orb of Zot, or an artefact for the first time.
+        - Identifying items.
+        - Killing OOD or unique monsters (see below)
+        - Reaching critical HP levels (see below)
+        - Gaining or losing mutations
+        - Reaching significant levels in a skill (see below)
+        - Dying
+You can use the command ':' for manually adding notes.
+
+user_note_prefix = <string>
+        Prefixes manually added notes with the given string, to make
+        them easier to find. It is not currently possible to add a
+        space at the end of this or any option, but you can use the
+        Unicode non-breaking space character ' ' instead.
+
+note_items += <regex>, <regex>, ...
+        (List option)
+        When an item is identified for the first time, it will be
+        noted if its short description matches a regex. E.g.
+             note_items += book,acquirement
+        Artefacts (fixed, unrand, or random) will always be noted when
+        identified, regardless of note_items.
+
+        The description matched against has the same prefixes as notes
+        for the menu_colour option (e.g., "emergency_item").
+
+note_monsters += <regex>, <regex>, ...
+        (List option)
+        Monsters whose name matches an item in this comma-separated list
+        are considered interesting. You can have multiple note_monsters
+        lines. E.g.
+             note_monsters += Klown,orb of fire
+
+note_hp_percent = 5
+        If your HP falls below a certain note_hp_percentage of your max
+        hit points, a note will be taken. There is some code to avoid
+        repetitions of notes based on the same incident.
+
+note_skill_levels = 1,5,10,15,27
+        This sets which skill levels are noteworthy. It's a single line,
+        although you can use += as a continuation.
+
+note_all_skill_levels = false
+        This is a shortcut for note_skill_levels = 1,2,..,27. If you set
+        this to true, all skill levels are considered noteworthy.
+
+note_skill_max = true
+        Setting this option will cause a note whenever a new maximum in
+        skill levels is reached. If note_skill_max is true and
+        note_skill_levels is nonempty, notes will be taken whenever
+        either of the criteria are met.
+
+note_xom_effects = true
+        This will add a note whenever Xom does something.
+
+note_messages += <regex>, <regex>, ...
+        (List option)
+        Messages which match an item in this comma-separated list are
+        considered interesting. You can have multiple note_messages
+        lines. E.g.
+             note_messages += Something interferes
+             note_messages += protects you from harm
+        If you want all banishments to the Abyss noted, use
+             note_messages += [bB]anish.*Abyss
+        If you want a note when your draconian scales turn <colour>, use
+             note_messages += Your scales start
+
+note_chat_messages = false
+        If set to false, this will disable logging of WebTiles chat
+        messages from other players. (This setting only applies on the
+        online servers).
+
+note_dgl_messages = true
+        If set to false, this will disable logging of DGL messages
+        sent by other players. (This setting only applies on the online
+        servers).
+
+
+5-  Miscellaneous.
+==================
+
+5-a     All OS.
+---------------
+
+mouse_input = false
+        When enabled, the mouse_input option allows the game to use
+        mouse input events on certain platforms (Windows and Unix).
+        Note that the extent of mouse support varies greatly across
+        platforms and is strongly influenced by your terminal settings.
+
+        On Unixes, you're only likely to get mouse support working with
+        ncurses in xterms (specifically your $TERM probably needs to
+        contain "xterm" for ncurses to activate its mouse events;
+        if you're running Crawl in GNU screen in an xterm, the mouse
+        will probably not work).
+
+        On Windows, you'll need to disable QuickEdit Mode on your
+        console for Crawl to use the mouse (QuickEdit is disabled by
+        default, so you shouldn't need to change anything if you're
+        using a stock console). You can disable QuickEdit by
+        right-clicking the titlebar of your command-prompt, selecting
+        Properties and disabling QuickEdit in the Options tab.
+
+wiz_mode = (no | never | yes)
+        Wizard mode options (available only in WIZARD compiles):
+          yes   -- start games in wizard mode (game will not be scored)
+          no    -- still allows player to enter wizard mode after start
+                   of game
+          never -- never allow a wizard command to be used
+
+explore_mode = (no | never | yes)
+        Explore mode options (available only in WIZARD compiles):
+          yes   -- start games in explore mode (game will not be scored)
+          no    -- still allows player to enter explore mode after start
+                   of game
+          never -- never allow explore mode to be entered
+
+char_set = (default | ascii)
+        Chooses different pre-set character sets for the game play screen.
+        Unlike previous versions of Crawl, this does not select the I/O
+        encoding anymore.
+
+        You can also include ibm_glyphs.txt, dec_glyphs.txt, or old_unicode_
+        glyphs.txt to bring back some older character sets that are
+        no longer built-in.
+
+        Has negligible effect in the Tiles build.
+
+colour.OLDCOLOUR = NEWCOLOUR
+        Useful for terminals where some colours are hard to read (and
+        cannot be adjusted), as well as for creating a custom scheme,
+        especially when used with the background option on a terminal
+        with a non-black background.
+        Format is colour.OLDCOLOUR = NEWCOLOUR, later rules take
+        precedence and the NEWCOLOUR is always literal (ie. it won't
+        re-evaluate to a different colour).
+        The colours are:
+                black, blue, green, cyan, red, magenta, brown, lightgrey,
+                darkgrey, lightblue, lightgreen, lightcyan, lightred,
+                lightmagenta, yellow, white
+        with lightgray = lightgrey, darkgray = darkgrey. Some examples:
+          colour.lightgrey = black
+          colour.lightcyan = cyan
+          colour.yellow    = brown
+
+display_char = <dungeon_character_name : symbol>
+        a list of these is allowed, as well.
+
+        The possible entries for dungeon_character_name are: wall, permawall,
+           wall_magic, floor, floor_magic, door_open, door_closed, trap,
+           stairs_down, stairs_up, grate, altar, arch, fountain, wavy, statue,
+           invis_exposed, item_detected, item_orb, item_rune, item_weapon,
+           item_armour, item_wand, item_scroll, item_ring, item_potion,
+           item_missile, item_book, item_staff, item_rod, item_miscellany,
+           item_corpse, item_skeleton, item_gold, item_gem, item_amulet, cloud,
+           cloud_weak, cloud_fading, cloud_terminal, tree, transporter,
+           transporter_landing, space, fired_bolt, fired_zap, fired_burst,
+           fired_debug, fired_missile, fired_missile, explosion, frame_horiz,
+           frame_vert, frame_top_left, frame_top_right, frame_bottom_left,
+           frame_bottom_right, draw_horiz, draw_vert, draw_slash,
+           draw_backslash, draw_top_left, draw_top_right, draw_bottom_left,
+           draw_bottom_right, draw_down, draw_up, draw_right, draw_left
+
+        Most of these are self-explanatory. "arch" is used for shops and
+        portals. "floor_magic" and "wall_magic" are used to display magic-mapped
+        squares on the level map. "invis_exposed" is the character for water
+        creatures submerged in shallow water, or invisible creatures wading in
+        shallow water. "wavy" is water and lava. "cloud", "cloud_weak",
+        "cloud_fading", and "cloud_terminal" distinguish clouds by remaining
+        duration, listed from furthest to nearest expiry; cloud types that do
+        not visually reveal their remaining duration always use the "cloud"
+        glyph.
+
+        Symbols can be specified using a letter, or by its ASCII/Unicode
+        code: a decimal number or a hexadecimal one (prefixed with x).
+
+feature += <regex> { <symbol>, <magicmap symbol>, <view colour>,
+                    <levelmap_magic_colour>, <levelmap_seen_colour>,
+                    <emphasised_colour>, <levelmap_emphasised_colour> } ;
+           <regex> { ... }
+feature -= <regex> , <regex>
+        (List-like option)
+        where <regex> is a regular expression describing a dungeon
+        feature. This regex should match the description when using the
+        'x' command. In case the regex matches several descriptions, all
+        such features are affected. The set of possible features in a
+        given version of crawl can be found by searching for `.*` in the
+        lookup feature menu (`?/f`).
+
+        The list in {...} specifies the appearance of the dungeon
+        feature(s), and should be self-explanatory. <symbol> can be used
+        to override the above display_char options, or also to distinguish
+        among subtypes of a character.
+
+        'magic' refers to magic mapping. So the <magicmap symbol>
+        entry determines what symbol will be used for features
+        detected via magic mapping. The <magicmap symbol> will also be used
+        for stone stairs with unknown destination and unvisited transporters.
+
+        'emphasised_colour' refers to the colour used to highlight stone stairs
+        and transporters with unknown destination; for non-stair features,
+        setting emphasis colours does nothing useful.
+
+        Leading parameters in the {...} list can be omitted by leaving
+        them blank and using placeholder commas. Trailing parameters can
+        be omitted without placeholder commas.
+
+        Multiple feature option lines can be used, as can multiple
+        feature descriptions strung together on the same line separated
+        by semicolons.
+
+        Feature overrides can be cleared using -=, providing a regex only
+        (and not an appearance). This will restore all features whose
+        descriptions match the regex to their default appearances.
+
+        Examples:
+         * Colour rock walls red:
+             feature += rock wall { , , red }
+         * Use # for metal walls in all character sets:
+             feature += metal wall {#}
+         * Colour upstairs green and downstairs red:
+             feature += stone staircase leading up {,,,,green}
+             feature += stone staircase leading down {,,,,red}
+
+        Symbols can be specified as with display_char:
+             feature += metal wall {#}
+             feature += metal wall {35}
+             feature += metal wall {x23}
+        all do the same thing.
+
+mon_glyph += <monster name or symbol> : (<colour> <glyph> | <monster name>) ,
+             <monster name or symbol> : <replacement>
+mon_glyph -= <monster name or symbol>
+        (List option)
+        The mon_glyph option allows you to customise the symbol and
+        colour used to display a monster. The full list of default glyphs
+        can be most reliably found by looking at the source code (mon-data.h),
+        but glyph information can be checked in the lookup monster menu
+        (`?/m`), as can the list of monsters.
+
+        You can customise symbols based on monster names or their
+        existing symbols. For instance, if you want to put elves on E
+        and elementals on e, you can do this:
+
+             mon_glyph += e : E
+             mon_glyph += E : e
+
+        You can specify a different symbol, or a colour, or both, in any
+        order. Here are more examples:
+
+             mon_glyph += deep elf annihilator : E lightmagenta
+             mon_glyph += Xtahua : lightmagenta D
+             mon_glyph += ghoul : darkgrey
+             mon_glyph += cognitogaunt : x
+
+        (The left hand side of the : is case-sensitive.)
+
+        You can also specify another monster, so that it copies the base
+        symbol and colour of that monster (this is not transitive). For
+        example, if you think that holy warrior colours are backwards:
+
+            mon_glyph += daeva : angel
+            mon_glyph += angel : daeva
+
+        You can specify symbols using their code points using the syntax
+        as shown in the "feature" option. You can also use Unicode code
+        points:
+
+             mon_glyph += draconian scorcher : x6e9
+
+        A single _ is treated as a space; if you want a real underscore,
+        put a \ in front of it like this:
+
+             mon_glyph += player ghost : \_
+
+        You can also redefine several "pseudo" monsters, them being:
+
+             player
+             sensed monster
+             {trivial,easy,tough,nasty,friendly} sensed monster
+
+        Playable species that normally have no monster of the same name can
+        also be redefined, for use with show_player_species = true.
+
+        Monster glyph overrides can be cleared using -=, which restores
+        the named monster (or all monsters of the given glyph) to its default
+        appearance. Specify only the monster name or glyph for -=, not the
+        replacement being removed.
+
+item_glyph ^= <regexp> : <colour> <glyph>
+item_glyph -= <regexp>
+        (Ordered list option)
+        Customizes the symbol and/or colour of all items matching the regexp.
+        Unlike mon_glyph, this is a partial name match.
+
+        Items are prefixed by tags, both those from stash tracking and from
+        menu colouring. Thus, you can colour {artefact} or useless_item.
+
+        Multiple rules can modify a single item, which is useful if you want
+        to change the colour and glyph separately:
+            item_glyph += dart : x2191
+            item_glyph += curare.*dart : red
+
+        Rules are applied in order, so later rules are higher priority.
+
+        Removing a rule with -= removes all rules using the exact regexp
+        provided; do not specify a colour or glyph in that case.
+
+use_fake_player_cursor = true
+        Makes the main view highlight the player without using the
+        terminal cursor. This means it won't flicker when the cursor
+        is turned off to move elsewhere for drawing, and allows
+        turning the cursor off by default. Has no effect in the Tiles build.
+
+show_player_species = false
+        Displays your character as a member of its species. For example, if
+        you're a Hill Orc, you will be shown as an 'o' rather than '@'. Has
+        no effect in Tiles.
+
+use_modifier_prefix_keys = true
+        When true, '*' behaves as a CTRL keypress, and '/' as SHIFT.
+
+language = <two-letter language code>
+        Displays some text in the given language. Not all text in Dungeon Crawl
+        has translations in every supported language, but volunteer translators
+        have offered translations of particularly wordy text such as god and
+        monster descriptions. Text with no known translation will be displayed
+        in English. Some languages may require changing the font.
+
+        Partially supported language codes:
+        cs: Czech
+        da: Danish
+        de: German
+        el: Greek
+        es: Spanish
+        fi: Finnish
+        fr: French
+        hu: Hungarian
+        it: Italian
+        ja: Japanese
+        ko: Korean
+        lt: Lithuanian
+        lv: Latvian
+        nl: Dutch
+        pl: Polish
+        pt: Portuguese
+        ru: Russian
+        sv: Swedish
+        zh: Chinese
+
+fake_lang = <lang1>[,<lang2>[,...]]
+        Set one or more fake languages, applied in the order provided (order
+        does matter!) The same language can be set more than once, though it
+        may not end up making much sense... At most 3 fake langs can be set at
+        a time.
+
+        Options are: (dwarven|jagerkin|kraut|runes|wide|grunt|butt:<n>)
+        Experiment to find out what they do!
+
+messaging = true
+        If set to true, this allows you to receive DGL messages sent
+        by other players. (This setting only applies on the online servers).
+
+read_persist_options = false
+        When set to true, the game will read additional options from
+        the lua variable c_persist.options if it contains a string.
+        This option has no effect unless explicitly used in scripting.
+        This option is persistent so that the current value as set in
+        the skill menu is saved across games and automatically reloaded,
+        unless set explicitly.
+
+5-b     Windows.
+------------------------
+
+dos_use_background_intensity = false
+        On Windows, if you're using a console that can do high-intensity
+        background colours, set this option to true for superior
+        friend-highlighting. If your console doesn't like this option,
+        some friendly monsters will appear as blinking characters (and
+        setting this option to false may be advisable to preserve your
+        sanity in such cases).
+
+5-c     Unix.
+-------------
+allow_extended_colours = true
+        Attempt to use more than the eight basic terminal colours for crawl's
+        bright colours. Most modern terminals should use this setting. If
+        successful, this puts console into 16-color mode.
+
+        If this option is enabled and there are enough colours available in
+        the terminal, use the terminal's extended colour palette directly for
+        internal colours.
+
+        An appropriate TERM environment variable must be set for this option to
+        function as expected for capable terminals. For example:
+          * XTerm, MacOS Terminal, or iTerm: xterm-256color
+          * gnome-terminal: vte-256color
+          * PuTTY: putty-256color
+            (set in 'Connection->Data->Terminal-type string')
+
+        If these conditions are not met, crawl will fall back to 8-colour mode
+        and use character attributes to render bright colours, with dark blue
+        as a "fallback" color for rendering dark grey on black. In 8-colour
+        mode, one of the following options may be better.
+
+bold_brightens_foreground = false
+        For 8-colour mode, assume that a bold text attribute will end up
+        brightening the foreground colour. If set to `force` instead of `true`,
+        bright colours will be bolded even in 16-colour mode. Otherwise,
+        this option is ignored when running in 16-colour mode via
+        allow_extended_colours.
+
+        If enabled in 8 color mode on a terminal where the assumption that bold
+        changes the color does not hold, this will result in invisible glyphs
+        for normal/bright colour combos of the same base colour. For example,
+        in the dungeon display, if squares that are out of line of sight appear
+        black, you should not set this to `true`.
+
+blink_brightens_background = false
+        For 8-colour mode, assume that a blink text attribute will end up
+        brightening the background colour.
+
+        If enabled on a terminal where this assumption does not hold, this will
+        result in invisible glyphs for normal/bright colour combos of the same
+        base colour.
+
+        This option is ignored when running in 16-colour mode via
+        allow_extended_colours.
+
+best_effort_brighten_background = false
+        If set to true, try to brighten a background colour using blink even if
+        it is not assumed to be successful.
+
+        This option only affects colours which are safe to brighten. If the
+        blink_brightens_background option is set to true, this option is
+        effectively ignored.
+
+        This option is ignored when running in 16-colour mode via
+        allow_extended_colours.
+
+best_effort_brighten_foreground = true
+        If set to true, try to brighten a foreground colour using bold even if
+        it is not assumed to be successful.
+
+        This option only affects colours which are safe to brighten. If the
+        bold_brightens_foreground option is set to true, this option is
+        effectively ignored.
+
+        This option is ignored when running in 16-colour mode via
+        allow_extended_colours.
+
+background_colour = black
+        Sets the default background colour by name (defaults to BLACK).
+        This may be useful if you're using a terminal with a background
+        colour other than black and wish to retain the colour scheme for crawl.
+
+        Internally, black is mapped to the the passed background colour and
+        vice-versa.
+
+        This option requires extended support by the terminal library as well
+        as the terminal itself. Additionally, bright default colours are not
+        available unless extended colour support is present and explicitly
+        enabled via allow_extended_colours. If support is not present, either
+        outright or for the selected colour, this option will have an effective
+        value of black.
+
+        See the allow_extended_colours option for more information on enabling
+        use of bright default colours. Beware of buggy or misleading terminfo
+        files.
+
+foreground_colour = lightgrey
+        Sets the default foreground colour by name (defaults to LIGHTGREY).
+
+        Internally, lightgrey is mapped to the passed foreground colour and
+        vice-versa.
+
+        This option comes with the same baggage as the background_colour option.
+        See its documentation for more details.
+
+use_terminal_default_colours = false
+        Use the terminal's default foreground and background colors. This can
+        be used to enable a transparent background.
+
+use_fake_cursor = true
+        If true, Crawl draws the cursor explicitly on the level-map and
+        targeting screens instead of relying on the term to draw the
+        cursor. Use this if your term cannot show a cursor over
+        darkgrey/black squares.
+        On non-Unix builds this option defaults to false, and setting it to
+        to true may have unpredictable results.
+
+
+6-  Lua.
+========
+
+lua_max_memory = 16
+        Max memory in MB allowed for user Lua scripts.
+
+6-a  Including lua files.
+-------------------------
+
+Lua files are scripts which can provide existing commands with a new
+meaning or create new commands (to be used in macros). To use Lua
+files, Crawl needs to be compiled with support for user Lua scripts.
+You can check to see if your Crawl has Lua support by hitting ?V in-game.
+The list of features Crawl displays should include "Lua user scripts".
+
+Lua files are included using the lua_file option (one file per line):
+
+lua_file = <path/name.lua>
+
+Lua functions can be macroed in-game by setting the macro action to "===",
+followed by the function name.
+
+The wizard-mode Lua interpreter (&^T) will, the first time it's invoked,
+load all of the files that are specified with the terp_file option:
+
+terp_file = <path/name.lua>
+
+The Lua in these files will have access to all of the Crawl Lua internals
+(that is, will be run in the context of dlua, not clua).
+
+6-b     Executing inline lua.
+-----------------------------
+
+Lua code can be used directly in your init.txt/.crawlrc. You can
+execute Lua code using the following syntax.
+
+: Single line of lua code
+
+< Possibly multi-line
+  Lua code >
+
+{ Possibly multi-line
+  Lua code }
+
+In the second and third cases, the restriction is that the delimiter
+characters appear at the beginning and end of a line, respectively.
+The difference between the <> and {} is when the code gets executed.
+Code {}, it is executed right away. Other Lua code is executed only
+after the entire init file is read in.
+
+Examples:
+
+# Print a welcome message
+: crawl.mpr("Hello " .. you.name())
+
+<
+-- Another welcome message (lua code uses lua comments)
+crawl.mpr("Hi there")
+>
+
+{
+function ch_autopickup(it) [ ... body omitted ... ] end
+}
+
+6-c     Conditional options.
+----------------------------
+
+You can use Lua to selectively include parts of your init.txt (based
+on character type, for instance) using the same syntax.
+
+Example:
+
+: if you.race() == "Mummy" then
+autopickup = $?+"/
+: else
+autopickup = $?+"/!
+: end
+
+Options can be referenced by lua via "options.option_name". For
+example:
+
+:if string.find(options.autopickup, "!") then
+# Do something here if potions are included in autopickup
+:end
+
+"options.option_name" can even be used for options that crawl itself
+doesn't recognize. This can be combined with setting options on the
+command line (see section 0-b) to use the command line to control
+conditionalization of options in the options files. For example, on the
+command line you could set the option "foobar" with "-extra-opt-first
+foobar=true", and then do:
+
+:if options.foobar then
+# Do things here
+:end
+
+6-d     Conditional option caveats.
+-----------------------------------
+
+Note that none of the options listed under "Starting Screen" (section 1)
+can be set conditionally. This is because the options files are
+actually read in twice: once before character creation with Lua turned
+off, and a second time after character creation with Lua turned on. If
+you attempt to set a starting-screen option conditionally then the value
+furthest down in the options file will be used regardless of what
+conditions you set.
+
+The above caveat applies to the "wiz_mode" option as well. Instead of
+conditionalized wiz_mode, you can add to the command line
+"-extra-opt-last wiz_mode=yes" to make any new game start in wizard
+mode.
+
+7-  Recommended Options for Blind Players.
+==========================================
+
+The following settings are recommended to facilitate using crawl in console
+with a screenreader.
+
+Disable animations and view delays so the screen updates immediately after each
+command:
+    view_delay = 0
+    travel_delay = -1
+    rest_delay = -1
+    use_animations = 0
+
+Place messages at the top of the screen and remove message condensing for
+easier screen reading:
+    messages_at_top = true
+    clear_messages = true
+    msg_condense_short = false
+
+Make the player cursor easier to track with screen reading, by setting a custom
+symbol for the player:
+    use_fake_player_cursor = false
+    show_player_species = false
+    mon_glyph += player:x263A
+
+Use mouse input clicks for automove (see the discussion of the mouse_input
+option for terminal configuration specifics):
+    mouse_input = true
+
+Allow auto-travel/move to advance one step even when monsters are present:
+    travel_one_unsafe_move = true
+
+List player-relative coordinates in the ^x display:
+    monster_item_view_coordinates = true
+
+The ^x display can list a customizable set of features controlled with regular
+expressions. For example, to include all water in ^x set:
+    monster_item_view_features += water
+
+Mark the path taken by auto-travel and the exploration horizon with special
+characters:
+    show_travel_trail = true
+    feature += travel trail {x25AA}
+    feature += explore horizon {x25AB}
+
+Set a separate glyph for unvisited stairs and transporters:
+    feature += stone staircase leading up {<,x25C2}
+    feature += stone staircase leading down {>,x25B8}
+    feature += transporter {xA9, x25CE}
+
+Visit squares with stacks of items when exploring to print all newly
+encountered items:
+    explore_greedy_visit += stacks

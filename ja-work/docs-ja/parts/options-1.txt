@@ -1,0 +1,544 @@
+Crawl のオプションの説明
+========================
+
+この文書では、Dungeon Crawl Stone Soup の最新版にあるすべてのオプションを説明す
+る。行き詰まったときや、うまく動かないように見えるところがあるときは、
+http://crawl.develz.org/ に挙げられているコミュニティの交流の場のどれかで助けを
+求めるとよい。
+
+この文書の内容は次のとおり:
+
+0-  一般事項
+0-a     標準のオプションファイルと追加のオプションファイル
+0-b     コマンドラインでのオプション
+0-c     オプションとその設定のしかた
+0-d     リスト型のオプション
+0-e     別名と変数
+1-  開始画面
+                name, type, remember_name, weapon, species, background, combo,
+                restart_after_game, restart_after_save, newgame_after_quit,
+                name_bypasses_menu, default_manual_training,
+                autopickup_starting_ammo, game_seed, pregen_dungeon,
+                suppress_startup_errors, map, fully_random, arena_teams
+2-  ファイルシステムと音
+                crawl_dir, morgue_dir, save_dir, macro_dir, sound, hold_sound,
+                sound_file_path, one_SDL_sound_channel
+3-  インターフェース
+3-a     拾う・置く
+                autopickup, autopickup_exceptions, default_autopickup,
+                pickup_thrown, assign_item_slot, pickup_menu_limit,
+                drop_filter, drop_disables_autopickup
+3-b     受動的な発見(感知したもの・記憶しているもの)
+                detected_monster_colour, detected_item_colour,
+                remembered_monster_colour
+3-c     ダンジョン画面でのアイテムとモンスターの強調表示
+                friend_highlight, neutral_highlight, unusual_highlight,
+                stab_highlight, may_stab_highlight, heap_highlight,
+                feature_item_highlight, trap_item_highlight
+3-d     階のマップの機能
+                level_map_cursor_step
+3-e     表示範囲(ビューポート)のオプション
+                view_max_width, view_max_height, view_lock_x,
+                view_lock_y, view_lock, centre_on_scroll,
+                symmetric_scroll, scroll_margin_x, scroll_margin_y,
+                scroll_margin, always_show_exclusions
+3-f     自動移動と自動探索
+                travel_delay, explore_delay, rest_delay, travel_avoid_terrain,
+                explore_greedy, explore_greedy_visit, explore_item_greed,
+                explore_stop, explore_stop_pickup_ignore, explore_wall_bias,
+                travel_key_stop, travel_one_unsafe_move, tc_reachable,
+                tc_dangerous, tc_disconnected, tc_excluded, tc_exclude_circle,
+                tc_forbidden, runrest_ignore_message, runrest_stop_message,
+                interrupt_<delay>, delay_safe_poison, runrest_ignore_monster,
+                rest_wait_both, rest_wait_ancestor, rest_wait_percent,
+                explore_auto_rest, explore_auto_rest_status,
+                auto_exclude, travel_open_doors
+3-g     コマンドの便利機能
+                auto_switch, easy_unequip, equip_unequip, jewellery_prompt,
+                easy_confirm, simple_targeting, force_spell_targeter,
+                force_ability_targeter, force_scroll_targeter,
+                show_invis_targeter allow_self_target, ability_menu,
+                spell_menu,
+                easy_floor_use, sort_menus, spell_slot, gear_slot,
+                consumable_shortcut, ability_slot, autofight_stop,
+                autofight_warning, autofight_fires, autofight_nomove_fires,
+                autofight_fire_stop, autofight_caught, autofight_wait,
+                autofight_prompt_range, automagic_enable, automagic_slot,
+                automagic_fight, automagic_stop, fail_severity_to_confirm,
+                easy_door, warn_hatches, enable_recast_spell, confirm_action,
+                regex_search, autopickup_search, bad_item_prompt,
+                auto_hide_spells, menu_arrow_control, single_column_item_menus,
+                show_paged_inventory
+3-h     メッセージと表示の改善
+                hp_warning, mp_warning, hp_colour, mp_colour, stat_colour,
+                status_caption_colour, enemy_hp_colour, clear_messages,
+                show_more, small_more, show_newturn_mark, show_game_time,
+                equip_bar, animate_equip_bar, item_stack_summary_minimum,
+                mlist_min_height, mlist_allow_alternative_layout,
+                monster_item_view_coordinates, monster_item_view_features,
+                msg_min_height, msg_max_height, msg_webtiles_height,
+                messages_at_top, msg_condense_repeats, msg_condense_short,
+                show_travel_trail, skill_focus, default_show_all_skills,
+                monster_list_colour, view_delay, reduce_animations,
+                use_animations, unusual_monster_items, darken_beyond_range,
+                show_blood, food_snacking_frequency, fountain_line_frequency,
+                force_more_message, flash_screen_message, monster_alert,
+                cloud_status, always_show_zot, always_show_gems, more_gem_info,
+                action_panel, action_panel_filter,
+                action_panel_show_unidentified, _panel_scale,
+                action_panel_orientation, action_panel_font_family,
+                action_panel_font_size, show_resist_percent
+3-i     色(メッセージとメニュー)
+                menu_colour, message_colour
+3-j     準備、射撃、矢弾
+                fire_items_start, fire_order, fire_order_spell,
+                fire_order_ability, fail_severity_to_quiver,
+                quiver_menu_focus
+3-k     メッセージチャンネル
+                plain, prompt, god, duration, danger, warning, recovery,
+                talk, talk_visual, timed_portal, sound, intrinsic_gain,
+                mutation, monster_spell, monster_enchant, monster_warning,
+                friend_spell, friend_enchant, friend_action, monster_damage,
+                monster_target, banishment, equipment, floor, multiturn,
+                examine, examine_filter, diagnostic, error, tutorial, orb,
+                hell_effect, dgl_message
+3-l     銘(インスクリプション)
+                autoinscribe, show_god_gift
+3-m     マクロ関係のオプション
+                flush.failure, flush.command, flush.message,
+                additional_macro_file, bindkey
+3-n     タイル版のオプション
+                tile_show_items, tile_skip_title, tile_menu_icons,
+                tile_player_col, tile_monster_col, tile_neutral_col,
+                tile_peaceful_col, tile_friendly_col, tile_plant_col,
+                tile_item_col, tile_unseen_col, tile_floor_col, tile_wall_col,
+                tile_mapped_floor_col, tile_mapped_wall_col,
+                tile_explore_horizon_col, tile_door_col, tile_downstairs_col,
+                tile_upstairs_col, tile_branchstairs_col, tile_portal_col,
+                tile_transporter_col, tile_transporter_landing_col,
+                tile_feature_col, tile_trap_col, tile_water_col,
+                tile_deep_water_col, tile_lava_col, tile_excluded_col,
+                tile_excl_centre_col, tile_window_col, tile_update_rate,
+                tile_runrest_rate, tile_key_repeat_delay, tile_tooltip_ms,
+                tile_tag_pref, tile_window_width, tile_window_height,
+                tile_window_ratio, tile_window_limit_size, game_scale,
+                tile_map_pixels, tile_viewport_scale, tile_map_scale,
+                tile_cell_pixels, tile_sidebar_pixels, tile_filter_scaling,
+                tile_force_overlay, tile_overlay_col,
+                tile_min_stat_width_characters, tile_overlay_alpha_percent,
+                tile_full_screen, tile_use_small_layout, tile_font_crt_file,
+                tile_font_stat_file, tile_font_msg_file, tile_font_tip_file,
+                tile_font_lbl_file, tile_font_crt_family,
+                tile_font_stat_family, tile_font_msg_family,
+                tile_font_lbl_family, tile_font_crt_size, tile_font_stat_size,
+                tile_font_msg_size, tile_font_tip_size, tile_font_lbl_size,
+                tile_font_ft_light, glyph_mode_font, glyph_mode_font_size,
+                tile_show_minihealthbar, tile_show_minimagicbar,
+                tile_show_demon_tier, tile_water_anim, tile_misc_anim,
+                tile_realtime_anim, tile_show_player_species,
+                tile_player_status_icons, tile_show_threat_levels,
+                tile_layout_priority, tile_display_mode,
+                tile_level_map_hide_messages, tile_level_map_hide_sidebar,
+                tile_player_tile, tile_weapon_offsets, tile_shield_offsets,
+                tile_grinch, tile_web_mouse_control,
+                tile_web_mobile_input_helper
+4-  キャラクターダンプ
+4-a     保存
+                dump_on_save
+4-b     アイテムと撃破
+                kill_map, dump_kill_places, dump_item_origins,
+                dump_item_origin_price, dump_message_count, dump_order,
+                dump_kill_breakdowns
+4-c     ノート
+                user_note_prefix, note_items, note_monsters, note_hp_percent,
+                note_skill_levels, note_all_skill_levels, note_skill_max,
+                note_xom_effects, note_messages, note_chat_messages,
+                note_dgl_messages
+5-  その他
+5-a     すべての OS
+                mouse_input, wiz_mode, explore_mode, char_set, colour,
+                display_char, feature, mon_glyph, item_glyph,
+                use_fake_player_cursor, show_player_species,
+                use_modifier_prefix_keys, language, fake_lang, messaging
+                read_persist_options
+
+5-b     Windows
+                dos_use_background_intensity
+5-c     Unix
+                blink_brightens_background, bold_brightens_foreground,
+                best_effort_brighten_background,
+                best_effort_brighten_foreground, allow_extended_colours,
+                background_colour, foreground_colour,
+                use_default_terminal_colours, use_fake_cursor
+
+6-  Lua
+                lua_max_memory
+6-a     Lua ファイルの読み込み
+6-b     Lua をその場で実行する
+6-c     条件付きのオプション
+6-d     条件付きのオプションの注意点
+
+7-  目の不自由なプレイヤー向けの推奨オプション
+
+------------------------------------------------------------------------
+
+0-  オプションの一般事項
+========================
+
+オプションを初期設定から変える標準のやり方は、オプションファイルに手で書いて設
+定することだ。詳しくは下の (0-a) と (0-c) を参照。少数のオプションは、関係する
+ゲーム内の画面での現在の値が自動的に保存される。こうしたオプションは説明に
+"(persistent)"(保存される)と記してあり、オプションファイルに手で設定すればそち
+らが優先される。
+
+0-a     標準のオプションファイルと追加のオプションファイル
+----------------------------------------------------------
+
+オンラインでプレイする場合は、WebTiles のゲーム選択画面で "edit rc" を選ぶか、
+ssh から rc ファイルのエディタに入る。
+
+オフラインでプレイする場合、Crawl は次の一覧のうち最初に見つかったファイルをオ
+プションファイルとして使う:
+
+* settings/init.txt
+* init.txt (Crawl のディレクトリにあるもの)
+* .crawlrc (Unix のホームディレクトリにあるもの)
+
+または、コマンドラインオプション
+    -rc <file>
+を使うと、Crawl にちょうどそのファイルを使わせることができる。
+
+開始画面には、Crawl がどの init ファイルを使っているか(使っていれば)が表示され
+る。Crawl のディレクトリの場所はシステムによって異なる。
+
+オプションファイルの中には、次のようにしてほかのファイルを取り込むことができる:
+    include = <file>
+取り込んだファイルは、その内容をそのままオプションファイルに書いた場合と同じに
+扱われる。初期設定では、Crawl はこうして取り込むファイルをすべて settings/ ディ
+レクトリから探すが、コマンドラインオプション
+    -rcdir <dir>
+で特定のフォルダを指定することもできる。
+
+外部のオプションファイルにはいくつかの使い道がある。Crawl の全体的な見た目(メッ
+セージの色付けや非表示、持ち物一覧の表示形式)を手早く変えられる。もっと凝ったオ
+プションの仕掛け(たいてい Lua を含む)も、この方法で手軽に隠しておける。さらに、
+settings/ ディレクトリにはほかにもいくつかのオプションファイルがあり、一部のオ
+プションやモンスターの表示文字を旧バージョンの初期設定に戻せる。詳しくは標準の
+init.txt の冒頭を参照。
+
+次のファイルは手軽に使えるように Crawl に同梱されており、特に準備しなくても取り
+込める:
+
+* advanced_optioneering.txt
+* dvorak_command_keys.txt
+* colemak_command_keys.txt
+* neo_command_keys.txt
+* no_vi_command_keys.txt
+* safe_move_shift.txt
+
+0-b     コマンドラインでのオプション
+------------------------------------
+
+別のオプションファイルに切り替えずにオプションを少しだけ変える手軽な方法は、コ
+マンドラインオプション -extra-opt-first か -extra-opt-last を使うことだ。指定し
+たオプションが、それぞれオプションファイルの先頭か末尾に書いてあるのと同じ扱い
+になる。例えば、
+
+    -extra-opt-last wiz_mode=yes
+
+とすると、新しいゲームはすべてウィザードモードで始まる。-extra-opt-first と
+-extra-opt-last は、同じコマンドラインで何度でも使える。
+
+0-c     オプションとその設定のしかた
+------------------------------------
+
+Crawl のオプションは大きく 3 種類に分かれる。真偽値(ブール値)、任意の値、値のリ
+ストである。この文書では、オプションはふつう既定値(あれば)とともに記してあり、
+それを見ればどの種類のオプションかもわかるはずだ。各オプションには典型的な使い
+方についての説明を付けてあるが、どのオプションを使いたくなるかはプレイスタイル
+によって、ときには OS によっても変わることを覚えておいてほしい。
+
+オプションの設定には 2 つの書き方がある。1 つは昔ながらの name=value の書き方
+で、1 行に 1 つのオプションを書く:
+    remember_name  = true
+    explore_greedy = false
+
+もう 1 つは NetHack 風の、複数のオプションをまとめて書く行だ:
+    OPTION = remember_name, !explore_greedy
+
+2 つ目の書き方は単純なオプションを数行で指定するのに便利だが、複雑な値のリスト
+をとるオプション(autopickup_exceptions オプションなど)には使えない。
+
+パスを引数にとるオプションもある。その場合は、使っているシステムに合ったファイ
+ルシステムのパスを書く必要がある。正規表現(regex)を受け付けるオプションもある。
+その場合は、ふつうの文字列をそのまま使ってもよいし、例として挙げた正規表現を必
+要に合わせて変えてもよいし、インターネットで正規表現の書き方を調べてもよい。
+
+なお、チュートリアルと解説付きモードでは、説明しやすくするため、オプションの設
+定の一部が上書きされることがある。対象となるオプションと、チュートリアルのゲー
+ムで強制される設定は次のとおり:
+   clear_messages      = true
+   weapon              = hand axe (解説付きモードの狂戦士の場合)
+
+0-d     リスト型のオプション
+----------------------------
+
+値のリストを持てるオプションがいくつかある。そうしたオプションのほとんど(すべて
+ではない)では、1 行にコンマで区切って複数の値を設定できる。こうしたオプション
+は、リセットしたり、項目を足したり、項目を取り除いたりできる。
+   リストの末尾に値を足す(append):
+      drop_filter += useless, enchant
+   リストの先頭に値を足す(prepend):
+      drop_filter ^= forbidden
+   リストから値を取り除く(完全に一致するものだけ):
+      drop_filter -= enchant
+   リストをリセットする:
+      drop_filter = bad_item, dangerous_item
+   リストを空にする:
+      drop_filter =
+
+"listopt = value" の書き方は、まずリストを空にしてから値を足す。以前のバージョ
+ンの Crawl では += と同じ意味で、値を書かない "listopt =" だけがリストを空にし
+ていた。
+
+drop_filter など多くのオプションでは、末尾に足しても先頭に足しても実質的な違い
+はない。しかし message_colour などほかのオプションでは項目の順序が意味を持つ。
+こうしたオプションは説明に「順序付きリストのオプション」と記してある。ほとんど
+の場合、前の項目が後の項目より優先されるので、+= では既にある一致(初期設定を含
+む)のほうが優先され、^= では既にある一致より優先される。そのため例えば、次のよ
+うにオプションを続けて設定すると:
+   message_colour  = cyan:hits
+   message_colour ^= red:crimson
+   message_colour += yellow:killer
+"The crimson imp hits you!" というメッセージは赤(red)で表示され、"The killer
+bee hits you!" は水色(cyan)で表示される。
+
+0-e     別名、変数、その他の指示
+--------------------------------
+
+長いオプション名には、次のようにしてオプションの別名を定義できる:
+    alias := long_option_name
+例えば、次のように書くと:
+    ae := autopickup_exceptions
+以後は "autopickup_exceptions" の代わりに "ae" を使える:
+    ae += >uselessness, >inaccuracy
+
+オプションの値の短縮名(変数)も定義できる。例えば、
+    $useless := darkgrey
+と定義すると、次のように組み合わせて使える:
+    menu_colour += $useless:random uselessness
+
+変数が変更されないようにするには、定数にすればよい:
+    constant = useless
+
+これは、取り込んだファイルに変数を書き換えられないようにしたいときに役立つ。
+
+別名と変数の使い方は dat/defaults/standard_colours.txt を参照。なお、これらの
+ファイルで定義されている変数を変えても、影響するのは自分の設定ファイルだけだ。
+初期設定のオプションはすでに読み込まれているからである。それらを変えたいなら、
+オプションそのものを上書きする必要がある。
+
+値を初期設定に戻すには、次のようにする:
+    default = option_name
+
+独自の解析をする一部のオプションでは、これは使えない。
+
+1-  開始画面
+============
+
+次のオプションは、Crawl のゲームを手早く始めたり、ゲームの開始をファイルやコマ
+ンドラインから設定したりするための便利な機能だ。
+
+name = Delilah
+        設定すると、Crawl のキャラクターはすべてこの名前になる。これを設定する
+        と、初期設定ではメインメニューを飛ばす。`name_bypasses_menu` を参照。
+
+type = normal
+        ゲームの種類を選ぶ。有効な値は
+        "normal"、"seeded"、"tutorial"、"arena"、"sprint"、"descent"、"hints"。
+        (既定のままにせず)明示的に設定すると、メインメニューで最初に選ばれてい
+        るゲームの種類がこれになる。(`name` を設定するなどして)メインメニューを
+        飛ばす場合は、このオプションでゲームの種類を決められる。"descent" はア
+        ルファ版(開発版)のビルドでのみ有効。
+
+remember_name = true
+        Crawl は、最後のキャラクターを作ったときに選んだもの(種族、職業など)を
+        覚えている。開始画面で、それを新しいキャラクターに使い回せる。このオプ
+        ションを true にすると、Crawl は最後に使った名前も覚えておく。
+
+        このオプションを使っていて、種族と職業を選んだ _後で_ 名前を入力したい
+        場合は、最初の名前の入力で . を入力する必要がある。remember_name が設定
+        されていると、名前の入力で Enter を押しても前の名前がそのまま使われるだ
+        けだ。
+
+weapon += (short sword |...| unarmed | random | viable), <weapon>, ...
+        (リスト型のオプション)
+        weapon オプションを指定すると、武器の選択画面を飛ばせる。トライデント、
+        フレイル、レイピア、ロングソード、ウォーアックスは戦士と闘士だけが、六
+        尺棒は闘士だけが選べる。選んだ職業では選べない武器を指定した場合は、通
+        常の武器の選択画面が表示される。"viable" を指定すると、選んだキャラク
+        ターに「向いている」武器の中から無作為に選ぶ。複数の武器を指定すると、
+        指定した中から無作為に 1 つが選ばれる。combo オプションとこのオプション
+        は互いに上書きし合う。
+
+species += (Human |...| Revenant | random | viable), <species>, ...
+        (リスト型のオプション)
+        通常の略称(Hu、MD など)が使える。職業を先に選んだ場合、"viable" はその
+        職業に向いた種族を選ぶ。複数の種族を指定すると、指定した中から無作為に
+        1 つが選ばれる。combo オプションとこのオプションは互いに上書きし合う。
+
+background += (Fighter |...| Wanderer | random | viable), <background>, ...
+        (リスト型のオプション)
+        ここでも略称(Fi、HW、CA など)が使える。"viable" についても同じ注意が当
+        てはまり、species オプションも設定している場合にしか実際には意味がな
+        い。複数の職業を指定すると、指定した中から無作為に 1 つが選ばれる。
+        combo オプションとこのオプションは互いに上書きし合う。
+
+combo += (HuFi . short sword | Human Monk | ...), <combo>, ...
+        (リスト型のオプション)
+        種族、職業、(必要なら)武器の組み合わせ全体を指定する。武器の選択が必要
+        な組み合わせで武器を指定しなかった場合は、入力を求められる。組み合わせ
+        は略して書いても、省略せずに書いてもよい。複数の組み合わせを指定する
+        と、指定した中から無作為に 1 つが選ばれる。weapon、species、background
+        の各オプションとこのオプションは互いに上書きし合う。
+
+restart_after_game = maybe/true
+        true にすると、ゲームが終わったときに crawl はメインメニューに戻る。
+        maybe にすると、開始時のオプションがメインメニューを飛ばさない場合だけ
+        メインメニューに戻り、そうでなければ終了する。false にすると、常に終了
+        する。初期設定では、ローカルのタイル版のビルドでは true、それ以外のビル
+        ドでは maybe になっている。オンラインのゲームではこのオプションは無視さ
+        れる。
+
+restart_after_save = true
+        ゲームをセーブしたときにメインメニューに戻る。このオプションは、
+        restart_after_game が maybe か true のときだけ効果がある。オンラインの
+        ゲームではこのオプションは無視される。
+
+newgame_after_quit = false
+        true にすると、名前や組み合わせが設定されている場合、ゲームを放棄(quit)
+        するとすぐに次のゲームを始める。この設定で restart_after_game が false
+        以外だと、crawl を終了するにはセーブするしかなくなることがある。
+
+name_bypasses_menu = true
+        true にすると、オプションで有効な名前が設定されている場合、メインメ
+        ニューを飛ばして、すぐにゲーム(セーブがなければキャラクターの選択)に進
+        む。
+
+default_manual_training = false (persistent)
+        true にすると、新しいキャラクターの技能の訓練が、自動モードではなく手動
+        モードで始まる。また、技能の (m) メニューの [!] の選択も、初期設定で
+        「割り振り」(training)ではなく「コスト」(cost)になる。
+
+autopickup_starting_ammo = true
+        設定すると、ゲームの開始時に、プレイヤーの初期の矢弾の種類について自動
+        拾いが(\ メニューで設定したのと同じように)強制的に有効になる。このオプ
+        ションを設定していても、ゲームが始まった後で \ メニューからそのアイテム
+        の自動拾いを無効にできる。
+
+game_seed = none
+        乱数生成器を初期化するシード値を表す数。ある範囲内では、同じシード値か
+        らは必ず同じダンジョンが生成される。"none" か 0 にすると、シード値は無
+        作為に選ばれる。コマンドラインの "-seed" で直接設定することもでき、そち
+        らは rc ファイルの設定より優先される。この値は符号なし 64 ビット整数で
+        ある。
+
+pregen_dungeon = incremental
+        新しいゲームでの階層の生成方法を決める設定で、乱数のシード値と関係する
+        (マニュアルの「Seeded play」の節を参照)。シード値から安定したダンジョン
+        を生成するには、階層を決まった順序で生成する必要がある。推奨の設定の
+        `incremental` では、新しい階層に入るときに必要に応じて階層を生成し、
+        ゲームが常に同じ順序で階層を生成するようにする。標準の順序から階層を飛
+        ばしたときは、飛ばした分を追いついて生成することがある。
+
+        `true` か `full` にすると、新しいキャラクターを始めるときに、つながって
+        いるダンジョン全体を前もって生成する。こうすると、特定のゲームのシード
+        値に対してダンジョンの生成が決定的になり、階層に入るときの読み込み時間
+        もなくなるが、その代わりゲームの開始が遅くなる。オンラインのプレイで
+        は、全体の事前生成を認めていないサーバーもある。
+
+        `false` か `classic` にすると、0.23 より前の決まりと同じく、どの階層も
+        その階層に入るときに生成する。このオプションでは、シード値を与えてもダ
+        ンジョンは安定しない。
+
+suppress_startup_errors = false
+        false の場合、ゲームの最初の起動時に(設定ファイルの誤りなどの)エラーが
+        見つかると、読み込みの前にそれを表示する画面を出す。
+
+        この設定にかかわらず、メインメニューにはエラーの警告が表示される。ま
+        た、この設定は、キャラクターを読み込むときに見つかったエラーの扱いには
+        影響しない。
+
+map = ""
+        スプリントのマップを選ぶのに使える。rc ファイルで設定すると、スプリント
+        のマップを選ぶサブメニューを飛ばす。有効な値は dungeon_sprint_1,
+        the_violet_keep_of_menkaure, dungeon_sprint_mu, dungeon_sprint_fedhas,
+        sprint_v, arena_sprint, pitsprint, meatsprint, linesprint。
+
+fully_random = false
+        true にすると、組み合わせを無作為に選ぶ。species か job のどちらかが
+        `viable` に設定されていれば「おすすめ」のキャラクターの中から組み合わせ
+        を選び、そうでなければまったく無作為に組み合わせを選ぶ。設定すると、
+        キャラクターの選択メニューの代わりに、組み合わせを示して、それを受け入
+        れるか選び直すかを選ばせる入力が表示される。
+
+arena_teams = ""
+        アリーナモードのチームをあらかじめ選んでおくために設定する。設定する
+        と、アリーナモードはすぐに対戦に進む。
+
+2-  ファイルシステム
+====================
+
+次のディレクトリのオプションは、システムやビルドによっては無視されたり上書きさ
+れたりすることがある。例えば、オンラインのプレイでは rc ファイルで設定できな
+い。これらはコマンドラインからも設定できる。
+
+crawl_dir = <path>
+        ほかのファイルを探すときに、相対パスの基準として使うパス。この値の初期
+        設定はシステムとビルドの種類によって異なる。このオプションは環境変数
+        `CRAWL_DIR` でも設定できる。設定すると、次の 3 つのディレクトリのオプ
+        ションが前に設定されていても、それらを上書きする。
+
+save_dir = saves/
+        セーブと骨ファイル(bones)を保存するディレクトリ。相対パスは `crawl_dir`
+        の値からの相対パスとして解釈される。
+
+morgue_dir = morgues/
+        死亡ダンプのファイル(morgue*.txt と morgue*.lst)と、キャラクターダンプ
+        のファイルを書き出すディレクトリ。相対パスは `crawl_dir` の値からの相対
+        パスとして解釈される。
+
+macro_dir = <path>
+        macro.txt を読み込むディレクトリ。末尾はパスの区切り文字にする必要があ
+        る。この値の初期設定はシステムとビルドの種類によって異なる。
+
+sounds_on = true
+        ("Sound support" が必要。バージョン情報で確かめること)
+        true にすると、さまざまな場面で効果音を鳴らす。
+
+sound ^= <regex>:<path to sound file>, <regex>:<path>,
+        (順序付きリストのオプション)
+        メッセージが正規表現(regex)に一致すると、そのサウンドファイルを鳴らす。
+        複数の正規表現が一致した場合は、最後の正規表現の音だけが鳴る。正規表現
+        にはコンマやコロンを含めないこと。例えば
+             sound += LOW HITPOINT WARNING:sound\sounds2\danger3.wav
+        あらかじめ定義された正規表現もいくつかあり、正規表現の文字列では一致さ
+        せられないものに対して音を鳴らすのに使える。例えば、正規表現として
+        FIRE_PROMPT_SOUND を使うと、射撃の対象選択が開くたびに Crawl が音を鳴ら
+        す。あらかじめ定義された正規表現の文字列の一覧は sound.h を参照。
+
+sound_file_path = <path>
+        (上のオプションで)音を鳴らすとき、この変数の内容がパスの先頭に付け足さ
+        れる。これは、1 つの設定を複数のプラットフォームで使い回しやすくするた
+        めのものだ。次の 2 行は上の例と同じ意味になる:
+             sound_file_path = sound\sounds2\
+             sound += LOW HITPOINT WARNING:danger3.wav
+        このオプションは最後に書いたものが有効になり、それより前に書いた sound
+        オプションにさかのぼって適用されることはない。
+
+one_SDL_sound_channel = false
+        true にすると、(SDL を使っている場合)一度に 1 つの音しか鳴らない。SDL
+        以外の音声のバックエンドはこうした制御に対応していないので、初期設定は
+        false になっている。
+
+

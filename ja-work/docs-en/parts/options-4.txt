@@ -1,0 +1,544 @@
+3-h     Message and Display Enhancements.
+------------------------------------------
+
+hp_warning = 10
+        hp_warning gives "* * * LOW HITPOINT WARNING * * *" on the
+        danger channel when the player takes damage and their hitpoints
+        are less than this percentage of their maximum (use 0 to turn
+        off these messages).
+
+mp_warning = 0
+        mp_warning gives "* * * LOW MAGIC WARNING * * *" on the danger
+        channel when the player's magic points drop below this
+        percentage of their maximum (use 0 to turn off these messages).
+
+hp_colour = 70:yellow, 40:red
+        (List option)
+        hp_colour colours your Health appropriately in the status
+        display. In the default setting, your health will appear in
+        red if at less than 25%, yellow if at less than 50%, and in
+        the default colour otherwise.
+
+mp_colour = 50:yellow, 25:red
+        (List option)
+        mp_colour does to Magic what hp_colour does to Health.
+
+stat_colour = 1:lightred, 3:red
+        (List option)
+        stat_colour colours your stats if they drop below a given value,
+        in the order of their definition. This check takes place before
+        the ones for e.g. Might or degeneration.
+        For normal grey colouring, set it to
+           stat_colour -= 3:red
+
+status_caption_colour = brown
+        Sets the colour that is used to display the captions in the status
+        area (for instance the "Health:" in "Health: 10/10").
+
+enemy_hp_colour = green green brown brown magenta red
+        Colours enemy health appropriately in the monster pane. The
+        colourings correspond to full health, lightly wounded, moderately
+        wounded, heavily wounded, severely wounded, and almost dead. In
+        addition to colour names, "default" can be used in this list, and
+        omitted colour slots will be set to the default.
+
+clear_messages = false
+        Setting this option to true will cause messages to cleared
+        between player actions (default is false which will delay the
+        clearing of messages until the message space is full).
+
+show_more = false
+        Setting this option to true will cause the game to prompt if more
+        than a window-full of messages are output at once. This option
+        has no effect if clear_messages is set. Additionally, it has no
+        effect on whether force_more_message triggers.
+
+small_more = false
+        With small_more = false (default), the --more-- prompt is on a
+        separate line at the bottom of the message window. With
+        small_more = true, it is just the bottom left character.
+        Note: This will overwrite the first letter of the last message
+              line if clear_messages is set.
+
+show_newturn_mark = true
+        When set to false, this option disables the underscore (_) displayed in
+        front of the first line of a turn.
+
+show_game_time = true
+        By default, the counter in the stat area displays elapsed game time.
+        Most actions take one unit of time, but some are quicker (putting on a
+        ring, wielding a weapon, ...) and others are slower (swinging a weapon
+        with low skill, changing armour, ...).
+        When set to false, the counter will display player turns instead, which
+        is the number of actions taken regardless of their duration. It is this
+        turn count which is used for scoring (and this turn count is always
+        visible on the % overview screen).
+        The duration of the last action is displayed in parenthesis, after the
+        time/player turns display.
+
+equip_bar = false
+        When set to true, this option replaces the noise bar with an
+        "equipment bar" showing the glyphs of all currently equipped items,
+        with gaps for available but currently unfilled equipment slots.
+
+animate_equip_bar = false
+        When set to true, any items displayed in the equipment bar that have a
+        variable colour will be animated.
+
+item_stack_summary_minimum = 4
+        If you step over a stack with this number or more of items in
+        it, the first description line will contain a summary of all the
+        items in the stack (up to 50 items), in a format which looks
+        like this:
+          Items here: !! """ ( )))))) [[[
+        Non-random artefacts and evokers will be coloured in lightcyan; random
+        artefacts will be in yellow; glowing or runed items will be in white,
+        unless you already know that they are not ego items.
+
+mlist_min_height = 4
+        If there is extra space available for the message area and
+        monster list, the monster list will expand to this height
+        before letting the message area get more.
+        (Note that the monster list is only available for ASCII.)
+
+mlist_allow_alternative_layout = false
+        Display the monster list wherever Crawl may find space on
+        your console display, usually to the left of the map, rather
+        than using the fixed position below the stat area.
+        This option is not supported in the tiles build.
+
+monster_item_view_coordinates = false
+        Display player-centred coordinates in the ^x view description.
+
+monster_item_view_features += <regex>, <regex>
+        (List option)
+        Display features matching the <regex> in the ^x view description. Each
+        <regex> is a regular expression describing a dungeon feature. This
+        regex should match the description when using the 'x' command. In case
+        the regex matches several descriptions, all such features are listed.
+
+        Two special keywords are active here, if any pattern matches the string
+        "stair" all features that can be interacted with using the stair
+        commands are shown; if any pattern matches "trap" all trap features
+        (including webs) are shown.
+
+msg_min_height = 7
+        You can reduce this to give more space to the map display. The
+        minimum value is 5. In console, if this value is large enough
+        that the map won't fit, crawl will not start.
+
+msg_max_height = 10
+        In console, if there is extra space available after the monster list
+        has expanded, the message area will expand up to this height.
+        The monster list will get the rest.
+        In tiles, control the maximum size of the message area. The viewport
+        will get the rest.
+
+msg_webtiles_height = -1
+        This will set the height of the messages pane in (only) WebTiles,
+        scaling the map accordingly. Values less than `msg_min_height` will
+        have no impact; in this case the height of the message pane is
+        inherited from console (and so will typically be 7). One of these
+        lines may be reserved for `more` messages depending on other
+        settings.
+
+messages_at_top = false
+        Put the message window at the top of the screen. This moves
+        the last message close to the centre of the view when not
+        using clear_messages=true.
+
+msg_condense_repeats = true
+        If the same message is repeated multiple times during the same
+        turn, then it will be output in a condensed format indicating
+        how many times it was repeated. If the same output (including the
+        counter) is repeated over several turns, the Show Previous Message
+        command (Ctrl-P) will likewise condense them into one. For example:
+            The killer bee misses you. x5
+
+msg_condense_short = true
+        If set, short messages on the same channel don't all start a new
+        line.
+
+show_travel_trail = false (defaults to true for online servers)
+        When set to true, the path taken during autoexplore or travel
+        will be highlighted. The console colour and glyph of the travel trail
+        can be further configured using the feature option to override the
+        "travel trail" feature. If a travel trail is currently being displayed,
+        the Clear Map command (Ctrl-C) clears the trail instead of the map
+        (pressing it a second time then clears the map as usual).
+
+skill_focus = true
+        When set to true, skills cycle between disabled, enabled and focus in
+        the skill screen. When set to false, they only toggle between enabled
+        and disabled. Setting the option to "toggle" adds a toggle to the skill
+        screen to change the behaviour in-game.
+
+default_show_all_skills = false
+        When set to true, the skill (m) menu defaults to showing all skills,
+        even untrained and untrainable ones. As usual, '*' toggles back to
+        trainable mode. This option does not affect hints and tutorial games.
+
+monster_list_colour = friendly:green, neutral:brown, good_neutral:brown
+monster_list_colour += trivial:darkgrey, easy:lightgrey, tough:yellow,
+                       nasty:lightred, unusual:lightmagenta
+        (List option)
+        Change the colours used to display monster names in the monster list.
+        Valid keys, and their initial colours, are:
+
+           Monster attitudes:
+             friendly       - green
+             neutral        - brown ("indifferent")
+             good_neutral   - brown ("peaceful")
+
+           Threat levels for hostile monsters:
+             trivial        - darkgrey
+             easy           - lightgrey
+             tough          - yellow
+             nasty          - lightred
+             unusual        - lightmagenta
+
+        If a category is unset or has a missing colour, its colour defaults to
+        lightgrey. For removal with `-=`, the category name can be used alone,
+        and will clear any mapping for that category (setting it to lightgrey).
+
+view_delay = 600
+        Controls the speed of animations from, e.g., ranged and magical
+        attacks and invocations with visual effects.
+
+reduce_animations = false
+        If set to true, simplify some animations so that incremental steps are
+        not drawn. For example, for casting a beam spell or firing a ranged
+        weapon, only the final beam path is shown. Defaults to `true` for
+        webtiles games.
+
+use_animations = beam, range, hp, monster_in_sight, pickup, monster, player
+use_animations += branch_entry
+        Controls whether or not to run special animations, such as when being
+        banished. All animations are enabled by default, and the categories
+        that can be enabled/disabled independently are:
+
+          beam             - Animation for casting a beam spell or firing a
+                             ranged weapon.
+          range            - Flashes the screen with an overlay indicating the
+                             actual range of an attempted spell, if there are
+                             no monsters within the spell's range.
+          hp               - Flashes the screen red whenever you take damage
+                             below the level indicated by the hp_warning
+                             option.
+          monster_in_sight - When attempting to rest, run, travel, or explore
+                             with dangerous monsters in view, flashes the parts
+                             of the screen where monsters aren't, in order to
+                             help make the monsters themselves more visible.
+          pickup           - Various animations that occur when picking up
+                             items. Currently only runes and the orb have
+                             animations.
+          monster          - Animations that run when a monster uses an ability
+                             or casts a spell.
+          player           - Animations that run when the player uses an
+                             ability or casts a spell.
+          branch_entry     - Animations that run when you enter a new branch.
+                             Currently only the Abyss and Zot have animations.
+
+unusual_monster_items += <regex>, <regex>, ...
+        (List option)
+        Monsters whose inventory items match a regex in this comma-separated
+        list will display with unusual threat level. E.g.
+            unusual_monster_items =  wand
+            unusual_monster_items += disto,chaos
+            unusual_monster_items += curare,atropa,datura,dispersal
+            unusual_monster_items += throwing net
+        The item descriptions matched against are the short item names that
+        ordinarily display when a monster is examined with 'xv'.
+
+        This option determines which monsters will be regarded as "unusual" for
+        the options tile_show_threat_levels (tiles only), monster_list_colour,
+        and unusual_highlight (console only).
+
+darken_beyond_range = true
+        If set to true, everything beyond range when targeting will be
+        coloured grey. Setting this to false will also disable the "range"
+        category of the use_animations option.
+
+show_blood = true
+        Setting this option to false will hide blood splatters in the floor
+        and on the walls. In tiles, corpses will be displayed as skeletons.
+
+food_snacking_frequency = 40
+        Controls the frequency of producing flavour messages when walking on a
+        cache of fruit, meat, or baked goods, with the number corresponding to a
+        percent chance. As one would expect, 100% means always, 0% means never,
+        and the default 40% means two-fifths of the time. Unless the frequency
+        is set to 100%, the chance is lowered to a fourth if there are hostile
+        enemies in sight in most situations.
+
+fountain_line_frequency = 40
+        Controls the frequency of producing flavour messages when walking on
+        any type of fountain, with the number corresponding to a percent
+        chance. As with the previous option, 100% means always, 0% means
+        never, the default 40% means two-fifths of the time, and a non-100%
+        frequency has lowered chances if hostile enemies are in sight.
+
+force_more_message += <regex>, <regex>
+        (List option)
+        Any message that contains a regex specified here will enforce a
+        --More-- prompt, so it can be used to highlight really important
+        events. This option ignores the show_more option. This option will
+        not interrupt travel delays by default; use runrest_stop_message
+        for that instead. The syntax is identical to that of
+        runrest_ignore_message (3-f).
+
+flash_screen_message += <regex>, <regex>
+        (List option)
+        Any message that contains a regex specified here will flash the
+        screen yellow, so it can be used to highlight very important events
+        indeed.
+        The syntax is identical to that of force_more_message.
+
+monster_alert += <monster name or symbol>
+        (List option)
+        Any monster listed here by name will cause a --More-- prompt whenever it
+        is first encountered by the player. Several special values are also
+        available, which will match groups of monsters:
+          -nasty, tough, easy, trivial  Any monster whose threat level is
+                                        at least as high.
+          -uniques                      All uniques.
+          -unusual                      Any monster carrying usual items
+                                        (as defined by unusual_monster_items)
+
+cloud_status = true
+        Whether to show the "Cloud" status light; defaults to true, except if
+        playing with tiles, where you can see the cloud on top of you, where it
+        defaults to false.
+
+always_show_zot = false
+        Whether to show the "Zot" status light at all times, even when you've
+        got plenty of time left.
+
+always_show_gems = false
+        Whether to show the "Gem" status light, indicating how long until the
+        gem in the current branch shatters (if applicable).
+
+more_gem_info = false
+        Whether to show held gem time limits and sfx for shattering.
+
+action_panel_show = true
+        Whether to show or hide the action panel. This option is automatically
+        saved between games, and is only available on Webtiles.
+
+action_panel = /?!}
+        The above is the default list of items to show on the action panel.
+        The valid symbols are
+        ?       Scrolls
+        !       Potions
+        }       Misc. items
+        /       Wands
+        If set to an empty string, the panel will be hidden entirely. The order
+        of item types in this option determines the order of item types in the
+        action panel; sub-order is determined by inventory letter. This option
+        is only available on Webtiles.
+
+action_panel_filter += <regex>, <regex>, ...
+        (List option)
+        Any item matching the filter expression(s) will not be shown on the
+        action panel. This option is only available on Webtiles.
+        The file dat/defaults/misc.txt contains default settings.
+
+action_panel_show_unidentified = false
+        When set to true, the action panel will show unidentified scrolls
+        and potions. This option is only available on Webtiles.
+
+action_panel_scale = 100 (persistent)
+        A percentage scale factor to apply to the action panel. This option is
+        automatically saved between games, and only available on Webtiles.
+
+action_panel_orientation = horizontal (persistent)
+        (values: horizontal | vertical)
+        When set to 'horizontal', the action panel will be placed along the top
+        edge of the screen. When set to 'vertical', the panel will be placed
+        along the left edge. This option is automatically saved between games,
+        and is only available on Webtiles.
+
+action_panel_font_family = monospace (persistent)
+action_panel_font_size = 16 (persistent)
+        Font used for displaying quantities of items in the action panel.
+        The size option is automatically saved between games, and both are only
+        available on Webtiles.
+
+action_panel_glyphs = false
+        If set to true, show glyphs instead of tiles in the action panel. This
+        option is only available on webtiles.
+
+show_resist_percent = true
+        When set to true, the exact percentage of damage the player will take
+        from each element, based on their current pips of resistance, will be
+        shown on the % screen.
+
+always_show_doom_contam = false
+        If set to true, always display the doom and contam meters in the
+        upper-right of the side panel, even if the player doesn't currently
+        have any doom or contamination.
+
+3-i     Colours (messages and menus)
+-----------------
+
+menu_colour ^= <match>:<colour>:<regex>, <colour>:<regex>, ...
+        (Ordered list option)
+        For menus and other screens that print items (and a few other cases; see
+        list below) this option allows you to control the colour that is used to
+        display a line by using a regular expression. For example, the default
+        options use the following line:
+            menu_colour += lightmagenta:.*orb.*Zot
+        to highlight the orb of Zot as purple in the item pickup menu. For
+        items, the regular expression is also checked against various item
+        annotations as described below. For example, the following line:
+            menu_colour += yellow:.*emergency_item.*
+        causes items that get the `emergency_item` annotation (such as scrolls
+        of teleportation) to be highlighted in yellow in inventory and other
+        item menus.
+
+        There can be several statements in a list, and also several menu_colour
+        lines. When using several menu_colour lines, the colour of the _first_
+        matching regex is applied; the option supports `^=`, which is useful
+        for overriding default settings without building the list from scratch.
+        For a list of colours, check the colour option in 5-a.
+
+        The `match` part specifies which listings are affected by the
+        colouring. If you specify 'item', or completely skip the <match>:
+        part, then the pattern will apply to all item-related categories.
+        Possible item-related values for match are:
+            inventory     (inventory and pickup/drop menus)
+            pickup        (pickup menus, and items on the floor)
+            equip         (the [ and " screens)
+            use_item      (equip, unequip, read, quaff, etc)
+            shop          (shop menus)
+            stash         (the results from Ctrl-F)
+            description   (the \ screen)
+            stats         (wielded/quivered items on the main screen stats
+                           panel)
+            resists       (items on the % screen)
+
+        Possible non-item-related values are as follows; these require an
+        explicit `match`:
+            help          (the manual)
+            notes         (the ?: screen)
+
+        Items are annotated with many useful tags that make controlling colour
+        easier. Items are annotated with their base type (armour, weapon, wand,
+        etc.) They are also annotated with certain tags indicating usefulness:
+            forbidden       (Your god would hate it if you used this item.)
+            emergency_item  (This item is invaluable in emergencies.)
+            good_item       (This item is generally a good item.)
+            dangerous_item  (Using this item can be dangerous.)
+            bad_item        (This item is generally a bad item.)
+            useless_item    (This item is of no use to you.)
+
+        as well as a range of other properties:
+            equipped        (Equipped items.)
+            ego             (Items with an offensive/defensive magical brand.)
+            artefact        (For artefacts, whether identified or not.)
+            unrand          (For non-random artefacts.)
+            melee           (Melee weapons, including magical staves.)
+            ranged          (Ranged weapons.)
+            evoker          (Elemental evokers.)
+            identified      (The item is fully identified.)
+            known           (You recognize the item's subtype.)
+            unidentified    (You don't recognize the item's subtype.)
+            god gift        (an item gifted to you by a god.)
+            cursed          (Cursed by Ashenzari.)
+
+        (Of course, some of these will only apply to some menus inherently: only
+        carried items can be equipped, only non-carried items can be
+        unidentified, etc.)
+
+        When looking for menu_colour matches, these prefixes are treated as if
+        they are prepended to the actual item name, for example:
+            identified evil_item forbidden misc a piece from Xom's
+            chessboard (15/15)
+
+        The same prefixes can also be used for highlighting prompts pertaining
+        to items matching the description, or to define autopickup_exceptions.
+
+        For more examples, see the default settings in
+        `dat/defaults/menu_colours.txt`.
+
+        menu_colour can also be used to colour in-game morgue notes (readable
+        in colour with `?:`), by using the `notes` match. For example, the
+        following line will show level-ups in green:
+            menu_colour ^= notes:green:Reached XP level
+
+message_colour ^= <colour>:<channel>:<regex>, <colour>:<regex>, ...
+        (Ordered list option)
+        message_colour allows you to override colours for individual
+        messages. For instance, if you find the low hp warning to be
+        insufficiently attention grabbing, you could do something like
+             message_colour += yellow:LOW HITPOINT WARNING
+        You can also narrow the message match to a specific channel:
+             message_colour += lightred:god:xom
+        If you don't want to see a message at all, you can mute it:
+             message_colour += mute:You start resting
+
+3-j     Quivers, firing, and ammo.
+----------------------------------
+
+fire_items_start = a
+        Sets the first inventory item to consider when cycling through missiles
+        to fire via the quiver. The default is a.
+
+fire_order  = launcher, throwing, inscribed, spell, evokable, ability
+        (Ordered list option)
+        Controls the order of items when cycling the quiver. Types
+        should be separated by commas and items that appear first get
+        higher priority. Absent action types are not used when cycling
+        the quiver. This option also affects autoquivering on game start.
+
+        'launcher' refers to firing a wielded ranged weapon (i.e. crossbow,
+        bow, sling). 'throwing' refers to all throwing ammo. Specific throwing
+        ammo types can be referred to by name ('javelin', 'boomerang', 'stone',
+        'rock', 'net', 'dart'), but order of these only affects order internal
+        to throwing ammo types; 'inscribed' can also be used to control the
+        order of ammo that has been inscribed with "+f". See the "Inscriptions"
+        section of Crawl's manual for more information about inscriptions. Ammo
+        types can be separated with a "/" to indicate that inventory order
+        should determine cycle order. Order within types is determined by letter
+        order in the relevant submenu (e.g. inventory for throwing, etc).
+
+fire_order_spell = all
+        (list option)
+        This allows you to exclude or include spells from the fire order by
+        name. Order within spells is determined by letter assignment, this
+        only controls what is in the list. This can be a comma separated list
+        of spells by name, and supports += and -=. It allows two special values:
+        'all' is shorthand for all spells, and 'attack' is shorthand for the
+        list of spells that are considered damage spells for autofight
+        purposes; see autofight_fires for more information.
+
+fire_order_ability = all
+fire_order_ability -= berserk
+        (list option)
+        This allows you to exclude or include abilities from the fire order by
+        name. Order within abilities is determined by letter assignment, this
+        only controls what is in the list. This can be a comma separated list
+        of abilities by name, and supports += and -=. It allows two special
+        values: 'all' is shorthand for all spells, and 'attack' is shorthand for
+        the list of abilities that are considered damage spells for autofight
+        purposes; see autofight_fires for more information.
+
+fail_severity_to_quiver = 2
+        Exclude spells with this miscast level or higher from quiver cycling
+        and automatic quivering. -1 can be used to exclude spells entirely from
+        automatic quivering. See fail_severity_to_confirm for a breakdown of
+        miscast values.
+
+launcher_autoquiver = true
+        If set to true, change the quiver to the launcher on wielding it;
+        if set to false, the quiver is unchanged on wielding a launcher.
+        (Firing via tab or `v` will still work.).
+
+quiver_menu_focus = false (persistent)
+        If set to true, start the quiver menu in "focused" mode where action
+        lettering is drawn from item/spell/ability lettering and only one of
+        these can be selected at a time. Otherwise, any action can be selected
+        from the menu, but lettering is not stable in this menu. This option
+        is persistent so that the current value in the quiver menu is saved
+        across games and automatically reloaded unless set explicitly.
+

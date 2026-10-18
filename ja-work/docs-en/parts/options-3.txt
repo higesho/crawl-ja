@@ -1,0 +1,442 @@
+3-g     Command Enhancements.
+-----------------------------
+
+auto_switch = false
+        This option will allow you to automatically switch to an appropriate
+        weapon when attacking in melee, as long as the one you are wielding
+        and the one you switch to are both in slot 'a' or 'b'. An "appropriate"
+        weapon is one that is intended for melee, not inscribed with a
+        non-attack inscription (`!a`), and not hated by the player's god.
+
+easy_unequip = true
+        Allows auto removal of armour and jewellery when dropping it.
+
+equip_unequip = true
+        If this is true, selecting an already-equipped piece of equipment via
+        the 'w', 'W' or 'P' menus (for weapons, armour or jewellery
+        respectively) will unequip that item.
+
+jewellery_prompt = false
+        If this is true, unequipping jewellery will always prompt for an item
+        to remove, instead of skipping the prompt if only one item of jewellery
+        is equipped. Also, if all slots are filled when equipping a jewellery
+        item, it will prompt for which you remove even if they are all identical.
+
+easy_confirm = (none | safe | all)
+        Make confirmation questions easier to answer:
+           none = force capitals on Y/N questions and stat increases
+           safe = force only on dangerous questions and stat increases (default)
+            all = never force capitals
+        WARNING TO PUTTY USERS: If your Putty configuration sets the
+        numeric keypad to "NetHack mode", the keypad '7' will be mapped
+        to the letter 'y', which can result in accidentally answering
+        yes to questions.
+
+simple_targeting = false
+        If set to true, disables smart targeting for explosion and bouncing
+        bolt spells, making them automatically target the closest monster in
+        range rather than trying to find a spot that affects multiple monsters
+        while avoiding the player. This applies to target selection when
+        zapping as well as autotarget selection for quivered spells.
+
+force_spell_targeter = hailstorm, starburst, frozen ramparts, ignition,
+                       eringya's noxious bog, anguish, cause fear, alistair's
+                       intoxication, discord, dispersal, metabolic englaciation,
+                       gloom, flame wave, plasma beam,
+                       maxwell's portable piledriver, diamond sawblades,
+                       fortress blast
+        Force showing a targeter for the listed spells when casting normally,
+        even if the spell isn't targeted. This for practical purposes only has
+        an effect on statically targeted spells, such as the ones in the
+        default value; it is particularly useful for spells with an unusual
+        targeting pattern. If "all" appears in the options list, the rest of
+        the list (however constructed) will be ignored, and targeters will
+        be shown with every spell.
+
+force_ability_targeter = sanctuary, cleansing flame, word of chaos, recite,
+                         elemental force, oozemancy, galvanic breath,
+                         fathomless shackles, slouch, disaster area, apocalypse,
+                         corrupt, foxfire swarm, siphon essence, shadowslip,
+                         watery grave
+        Force showing a targeter for the listed abilities when activating them
+        normally, even if the ability isn't targeted. This for practical
+        purposes only has an effect on statically targeted abilities, such as
+        the ones in the default value; it is particularly useful for abilities
+        with an unusual targeting pattern. If "all" appears in the options list,
+        the rest of the list (however constructed) will be ignored, and
+        targeters will be shown with every ability.
+
+force_scroll_targeter = fear, silence, vulnerability, immolation, torment
+        Force showing a targeter for the listed scrolls when reading them
+        normally (since these are unaimed, this is generally to show success
+        chance or what targets might be affected). If "all" appears in the
+        options list, the rest of the list (however constructed) will be
+        ignored, and targeters will be shown for every scroll that has one.
+
+show_invis_targeter = true
+        Before turning invisible, show a targeter indicating what monsters in
+        view would actually lose sight of you (and prompt if all enemies in
+        line of sight have sInv).
+
+allow_self_target = prompt
+        Allow targeting yourself with risky magic (e.g., the spell Stone Arrow
+        or a wand of paralysis.) Values: (yes | no | prompt).
+        When set to 'yes', you are a valid target. When set to 'no', you cannot
+        target yourself with such spells. When set to 'prompt' (the default),
+        you will be required to confirm self-targeting. This option has no
+        effect on area-effect spells, such as Mephitic Cloud, where you are
+        always a valid target.
+
+prompt_menu = true (tiles default), false (console default)
+        Always show prompt menus as popups if possible, rather than in the
+        message pane. This currently applies to Y/N prompts, and to the `G`o
+        menu.
+
+ability_menu = true
+        Always show the full-screen 'a'bility menu. If false, 'a' prompts
+        in the message area, and the menu can be seen with '?' or '*'.
+
+spell_menu = false
+        If set to true, the full-screen spell selection menu will always be
+        shown when using 'z'. If false, 'z' prompts in the message area, and
+        the menu can be seen with '?' or '*'.
+
+easy_floor_use = true
+        If set to true, item interaction menus that allow using items from the
+        ground will respond to switching from inventory items to floor items by
+        pressing ',' whenever there is only one floor item, by selecting that
+        item rather than toggling the menu. For example, 'r,' will read the
+        scroll on the ground, if there is only one. This will work even if
+        there are no matching items in your inventory.
+
+sort_menus = [menu:](true | false | auto:X)[:sort_order]
+        Controls if and how items are sorted in inventory and pickup
+        menus.
+
+        When sort_menus = false (the default), items are not sorted, and
+        will be ordered by inventory letter (or in the order they're
+        stacked for items on the floor).
+
+        When sort_menus = true, items are sorted according to the specified
+        sort_order, with the default being:
+             equipped, basename, qualname, curse, qty
+
+        If sort_menus = auto:X, items are sorted if there are at least
+        X items in the same category. For instance:
+             sort_menus = auto:5
+        will sort item classes that have at least 5 items. For instance,
+        having 4 kinds of potions would not sort them, but having 5
+        would.
+
+        You can explicitly specify sort criteria in the sort_menus
+        option as:
+             sort_menus = true : art, basename, qualname, curse, qty
+
+        Two items will be compared based on the first sort criteria
+        where they differ. So with the sort_menus line given above,
+        if only one of two different items is a known artefact, it will be
+        listed first, else (if both or neither are artefacts) if their
+        basenames are different they will be alphabetically compared using
+        their basenames; if the basenames are the same but the qualified
+        names are different it will compare their qualified names, and so
+        on.
+
+        The available sort criteria are:
+
+        * basename:
+          This is the name of the item type. The basename for all of
+          "a +0 robe", "an embroidered robe" and "the cursed +2 robe of
+          Ponies" is just "robe". The basename for both of "a brass
+          ring" and "a ring of fire resistance" are "ring".
+
+        * qualname:
+          The name of the item without articles (a/an/the), quantities,
+          enchantments, or curse-status. The qualified names for the
+          robes described above are "robe", "embroidered robe" and "robe
+          of Ponies", respectively. The qualified names for the rings
+          described above are "brass ring" and "ring of fire
+          resistance", respectively.
+
+        * fullname:
+          This is the name of the item as displayed in menus (including
+          (quantities, curse-status, etc.)
+
+        * dbname:
+          Sorts based on an item's unique internal name which is linked
+          to its description. Items with the same description will be
+          grouped together.
+
+        * curse:
+          Curse-status of the item (if known). Uncursed items show up
+          first.
+
+        * equipped:
+          Equipped items show up first.
+
+        * art:
+          Identified artefacts show up first.
+
+        * ego:
+          Identified ego items show up first.
+
+        * glowing:
+          Unidentified glowing/shiny/runed/etc items show up first.
+
+        * identified:
+          Identified items show up before unidentified ones of the
+          same type. An item is regarded as identified once you know
+          its subtype or ego.
+
+        * qty:
+          The quantity for stackable items (such as scrolls, potions,
+          etc.)
+
+        * slot:
+          The inventory letter for items in inventory; irrelevant for
+          items on the floor.
+
+        * charged:
+          Makes evokers with available charges appear before those which
+          are empty; irrelevant for all other item types.
+
+        * usefulness:
+          Sorts consumables by their current 'usefulness' in the
+          following order: Emergency (eg: ?blinking, !heal wounds),
+          Good (eg: ?acquirement), Normal, Dangerous (eg: !lignification),
+          Bad (eg: ?torment while worshipping a good god), and finally
+          permanently useless.
+
+        You can ask for a descending order sort by prefixing one or more
+        sort criteria with > as:
+             sort_menus = true : basename, >qty
+
+        You can also request sorting only for specific menus:
+             sort_menus = pickup: true
+        or
+             sort_menus = inv: true
+        (Menu types must be specified as name:, with no space between
+        name and colon.)
+
+        The menu selectors available are:
+
+        pickup: All pickup menus, stash-search menus, etc. for items not
+                in your inventory.
+        drop:   The item drop menu.
+        inv:    Inventory listings for any command (but not for dropping
+                items).
+        any:    All menus; this is the default when unspecified.
+
+        For example,
+             sort_menus = true : equipped, basename, qualname, curse, qty
+        will produce the same inventory and drop menus as by default,
+        with the exception that all worn/wielded items come first. This
+        can be convenient if you use the '.' command to select
+        subsequent items.
+        If you define sort_menus differently for two or more selectors,
+        the last one matching will always take precedence, i.e. "any"
+        as last setting would override any of the others.
+
+        By default pickup menus are sorted, and the sort criteria are:
+             "equipped, basename, qualname, curse, qty".
+        Inv and drop menus are sorted by "equipped, charged, identified,
+             usefulness, slot".
+
+spell_slot ^= <regex>:<list of spell letters>
+        (Ordered list option, one value per line)
+        When you memorise any spell that matches the regex, it will assign
+        itself to the first available letter in the list. A + in the list of
+        letters turns on "overwrite mode": all letters up to the next "-" are
+        considered available even if already assigned; in that case, any
+        spell already assigned to that slot, as long as it does not also
+        match the same <regex>, will be moved.
+
+        If all letters in the list are occupied for each regex the spell
+        matches, it will use the default ordering abc...xyzABC..XYZ. If a
+        spell matches multiple regexes, only the first is considered.
+
+        Examples:
+        * if you want Apportation to be placed on A:
+            spell_slot ^= Apportation:A
+        * if you want Ozocubu's Armour to be placed on r normally or R if
+          r is unavailable:
+            spell_slot ^= Ozocubu's Armour:rR
+        * if you want the first "Bolt" spell to be placed on a, even if
+          there is already a non-bolt spell there:
+            spell_slot ^= Bolt:+a
+        * if you want to change the default spell slot assignment
+          to use capital letters: (place this after all other
+          spell_slot lines):
+            spell_slot += .*:ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+gear_slot ^= <regex>:<inventory letters>
+        (Ordered list option, one value per line)
+        Uses the same interface as spell_slot, except that overwrite mode
+        is on by default; overwrite mode can be disabled with a - in the
+        list of letters.
+
+consumable_shortcut += <item name>:<inventory letter>
+        (Ordered list option, one value per line)
+        Similar to gear_slot, but accepts only a single letter per consumable
+        name and does not handle regex.
+
+        The game will try very hard to automatically assign a consumable to
+        any letter given a mapping by this option, unless it is an identified
+        item of a different category. (eg: 'potion of curing:c' will result
+        in no other potion ever being auto-assigned to 'c' and unidentified
+        scrolls also avoiding it where possible, since they share the ?id menu
+        together.)
+
+ability_slot ^= <regex>:<ability letters>
+        (Ordered list option, one value per line)
+        Uses the same interface as spell_slot, but applies to abilities
+        in the 'a' menu.
+
+autofight_stop = 50
+        Autofight will not act if your HP is at or lower than this
+        percentage of your max HP. Disabled when set to 0. This setting applies
+        both to autofight and to autofire.
+
+autofight_warning = 0
+        Enforce a minimum time (in milliseconds) between autofight commands.
+        If you issue two consecutive autofight commands within this amount
+        of time (for example, by holding down the tab key), the subsequent
+        commands will be ignored, and the message "You should not fight
+        recklessly!" printed to the danger channel. Any value less than
+        or equal to zero disables this check.
+
+autofight_fires = false
+        If your quiver contains contains a fireable action that does direct
+        damage to the enemy, regular CMD_AUTOFIGHT (tab on the default
+        binding) will trigger it at enemies out of melee range. Without this
+        option, only a wielded launcher (a bow, crossbow or sling) will be
+        triggered by CMD_AUTOFIGHT. If an action that does direct damage is
+        quivered but out of range, you will move towards the enemy. If an
+        action is quivered that does not do direct damage, CMD_AUTOFIGHT will
+        ignore it entirely. To prevent moving altogether, rebind with
+        CMD_AUTOFIGHT_NOMOVE instead of CMD_AUTOFIGHT. (Legacy name:
+        `autofight_throw`.)
+
+autofight_nomove_fires = true
+        This option modifies the behavior of CMD_AUTOFIGHT_NOMOVE (unbound by
+        default) in a similar way to how `autofight_fires`, above, modifies
+        CMD_AUTOFIGHT. (Legacy name: `autofight_throw_nomove`.)
+
+autofight_fire_stop = false
+        When firing missiles or throwing objects using autofight, if this
+        option is true, shots will stop at the target (like "f.") rather than
+        continuing past. Note that this setting may be decidedly suboptimal
+        for missiles of penetration.
+
+autofight_caught = false
+        If true, autofight will attempt to escape webs or nets that are
+        holding you, even if no enemies are in view.
+
+autofight_wait = false
+        If true, ===hit_closest_nomove while not in range of an enemy will
+        wait for a turn instead of aborting autofight.
+
+autofight_prompt_range = true
+        When wielding a weapon that would normally cause a prompt on attacking
+        (such as a weapon with a !a inscription, or one disliked by your god),
+        if this option is true then the prompt will be displayed when autofight
+        tries to walk towards an enemy, instead of only when actually trying
+        to attack.
+
+automagic_enable = false
+        Option to enable the old automagic system; new players are recommended
+        to just use quivered spells. If true, autofight (i.e. tab on the
+        default bindings) will cast a spell in a designated slot at a target.
+        Initial spell slot is a. (deprecated)
+
+automagic_slot = a
+        Setting this changes the initial spell slot for the old automagic
+        system. Can be changed for games in progress in-game by setting a macro
+        to call ===am_set_spell.
+
+automagic_fight = false
+        With the old automagic system enabled, setting this to true causes
+        a fallback to regular autofight (e.g. melee) when trying to cast a
+        spell that you either do not have enough magic points for, or are below
+        the set threshold. If false, a message will appear and no further
+        action is taken.
+
+automagic_stop = 0
+        Similar to autofight_stop, if magic points are below this number
+        (percentage of total), casting via autofight/autofire is prevented.
+        Disabled when set to 0.
+
+fail_severity_to_confirm = 3
+        Ask for confirmation when attempting to cast a spell where a miscast
+        would cause severe penalties. Prompt if the miscast severity of the
+        spell (the colour shown in the spellcasting menu) is greater than
+        or equal to the number specified:
+
+          5: magenta (miscasting may deal greater damage than max HP)
+          4: dark red (up to 70% damage)
+          3: light red (up to 50% damage)
+          2: yellow (up to 30% damage)
+          1: white (up to 10% damage)
+
+        If the value 0 or -1 is given, never prompt about miscasts.
+
+easy_door = true
+        When (O)pening or (C)losing doors, do not prompt for a direction
+        if there is only one adjacent door. This option does not affect
+        opening doors by walking into them.
+
+warn_hatches = false
+        Ask for confirmation before using a one-way escape hatch or shaft.
+
+warn_contam_cost = true
+        Ask for confirmation before casting a spell with a contam cost, if it
+        is possible that casting it at your current level of magic contamination
+        could cause you to reach harmful levels of contamination.
+
+enable_recast_spell = true
+        If enabled, allows recasting the previously cast spell by pressing
+        Enter or '.' at the spellcasting prompt.
+
+confirm_action += <regex>, <regex>, ...
+        (List option)
+        Casting a spell or ability with a name matching any of the given regular
+        expressions will prompt before use.
+
+regex_search = false
+        If enabled, searching for items with ^F uses regular expression syntax
+        by default, instead of substring searching. Note that regardless of
+        this setting, queries prefixed with / will be performed as a regular
+        expression search and queries prefixed with = will be performed as a
+        substring search.
+
+autopickup_search = false
+        If enabled, items are annotated with {autopickup} while searching
+        with ^F if they would be picked up by autopickup. This means that
+        searching for "autopickup" will list all such items. Note that this
+        option may slow down your game if you have a complicated custom
+        autopickup function.
+
+bad_item_prompt = true
+        Ask for confirmation before using bad or dangerous scrolls and potions.
+
+auto_hide_spells = false
+        When set to true, spells added to the library will automatically be
+        hidden.
+
+menu_arrow_control = true
+        If set to false, disable using arrow keys to control menu selection.
+        This has no effect on mouse interactions with menus, and only affects
+        menus that use hotkeys for selection. (E.g. the main menu for local
+        play is not affected.)
+
+single_column_item_menus = true
+        If set to false, certain item menus will list items in two columns,
+        as long as the menu is too long to fit in the current screen. If set
+        to true, all menus will use a single column under any circumstances.
+        This option is only available on local tiles and console; on WebTiles
+        all menus are single-column regardless of the value of this option.
+
+show_paged_inventory = true
+        If set to true, the 'i' menu will divide the player's items into
+        pages (gear, potions, scrolls, and evocable items) in the same way
+        that the 'd'rop menu does.
+

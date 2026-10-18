@@ -24,6 +24,7 @@
 #include "invent.h"
 #include "item-prop.h"
 #include "item-name.h"
+#include "japanese.h"
 #include "items.h"
 #include "libutil.h"
 #include "lookup-help.h"
@@ -146,16 +147,29 @@ static string _get_version_features()
     return result;
 }
 
+// 日本語: ヘルプ文書は訳があれば docs/ja/ のものを使う
+static string _doc_path(const string &fname)
+{
+    if (jtrans_enabled())
+    {
+        const string ja = datafile_path("ja/" + fname, false);
+        if (!ja.empty())
+            return ja;
+    }
+    return datafile_path(fname, false);
+}
+
 static string _get_version_changes()
 {
     // Attempts to print "Highlights" of the latest version.
-    FILE* fp = fopen_u(datafile_path("changelog.txt", false).c_str(), "r");
+    FILE* fp = fopen_u(_doc_path("changelog.txt").c_str(), "r");
     if (!fp)
         return "";
 
     string result = "";
     string help;
-    char buf[200];
+    // 日本語: 訳の行は UTF-8 で長いので、行の途中で切れないよう大きめに
+    char buf[1024];
     bool start = false;
     while (fgets(buf, sizeof buf, fp))
     {
@@ -1352,9 +1366,10 @@ static int _get_help_section(int section, formatted_string &header_out, formatte
         {
             formatted_string text;
             bool next_is_hotkey = false;
-            char buf[200];
+            // 日本語: 訳の行は UTF-8 で長いので、行の途中で切れないよう大きめに
+            char buf[1024];
             string fname = canonicalise_file_separator(help_files[i].name);
-            FILE* fp = fopen_u(datafile_path(fname, false).c_str(), "r");
+            FILE* fp = fopen_u(_doc_path(fname).c_str(), "r");
             ASSERTM(fp, "Failed to open '%s'!", fname.c_str());
             while (fgets(buf, sizeof buf, fp))
             {

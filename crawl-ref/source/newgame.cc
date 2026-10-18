@@ -308,10 +308,11 @@ static void _resolve_species_job(newgame_def& ng, const newgame_def& ng_choice)
     }
 }
 
+// 日本語: 適性表(docs/ja/aptitudes.txt)の種族名は日本語なので、訳した名前で探す
 static string _highlight_pattern(const newgame_def& ng)
 {
     if (ng.species != SP_UNKNOWN)
-        return species::name(ng.species) + "  ";
+        return species_name_j(ng.species) + "  ";
 
     if (ng.job == JOB_UNKNOWN)
         return "";
@@ -320,7 +321,7 @@ static string _highlight_pattern(const newgame_def& ng)
 
     for (const auto sp : playable_species())
         if (species_allowed(ng.job, sp) == CC_UNRESTRICTED)
-            ret += species::name(sp) + "  |";
+            ret += species_name_j(sp) + "  |";
 
     if (!ret.empty())
         ret.resize(ret.size() - 1);

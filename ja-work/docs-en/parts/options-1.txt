@@ -1,0 +1,574 @@
+Guide to Crawl's options
+========================
+
+This document explains all of the options in the latest version of Dungeon
+Crawl Stone Soup. If you get stuck or some things don't seem to work properly,
+ask for help in any of the community discussion resources described at
+http://crawl.develz.org/.
+
+The contents of this text are:
+
+0-  Generalities.
+0-a     Standard and additional option files.
+0-b     Options on the command line.
+0-c     Options and how to set them.
+0-d     List options.
+0-e     Aliases and variables.
+1-  Starting Screen.
+                name, type, remember_name, weapon, species, background, combo,
+                restart_after_game, restart_after_save, newgame_after_quit,
+                name_bypasses_menu, default_manual_training,
+                autopickup_starting_ammo, game_seed, pregen_dungeon,
+                suppress_startup_errors, map, fully_random, arena_teams
+2-  File System and Sound.
+                crawl_dir, morgue_dir, save_dir, macro_dir, sound, hold_sound,
+                sound_file_path, one_SDL_sound_channel
+3-  Interface.
+3-a     Dropping and Picking up.
+                autopickup, autopickup_exceptions, default_autopickup,
+                pickup_thrown, assign_item_slot, pickup_menu_limit,
+                drop_filter, drop_disables_autopickup
+3-b     Passive Sightings (detected and remembered entities).
+                detected_monster_colour, detected_item_colour,
+                remembered_monster_colour
+3-c     Dungeon View Item and Monster Highlighting.
+                friend_highlight, neutral_highlight, unusual_highlight,
+                stab_highlight, may_stab_highlight, heap_highlight,
+                feature_item_highlight, trap_item_highlight
+3-d     Level Map Functions.
+                level_map_cursor_step
+3-e     Viewport Display Options.
+                view_max_width, view_max_height, view_lock_x,
+                view_lock_y, view_lock, centre_on_scroll,
+                symmetric_scroll, scroll_margin_x, scroll_margin_y,
+                scroll_margin, always_show_exclusions
+3-f     Travel and Exploration.
+                travel_delay, explore_delay, rest_delay, travel_avoid_terrain,
+                explore_greedy, explore_greedy_visit, explore_item_greed,
+                explore_stop, explore_stop_pickup_ignore, explore_wall_bias,
+                travel_key_stop, travel_one_unsafe_move, tc_reachable,
+                tc_dangerous, tc_disconnected, tc_excluded, tc_exclude_circle,
+                tc_forbidden, runrest_ignore_message, runrest_stop_message,
+                interrupt_<delay>, delay_safe_poison, runrest_ignore_monster,
+                rest_wait_both, rest_wait_ancestor, rest_wait_percent,
+                explore_auto_rest, explore_auto_rest_status,
+                auto_exclude, travel_open_doors
+3-g     Command Enhancements.
+                auto_switch, easy_unequip, equip_unequip, jewellery_prompt,
+                easy_confirm, simple_targeting, force_spell_targeter,
+                force_ability_targeter, force_scroll_targeter,
+                show_invis_targeter allow_self_target, ability_menu, spell_menu,
+                easy_floor_use, sort_menus, spell_slot, gear_slot,
+                consumable_shortcut, ability_slot, autofight_stop,
+                autofight_warning, autofight_fires, autofight_nomove_fires,
+                autofight_fire_stop, autofight_caught, autofight_wait,
+                autofight_prompt_range, automagic_enable, automagic_slot,
+                automagic_fight, automagic_stop, fail_severity_to_confirm,
+                easy_door, warn_hatches, enable_recast_spell, confirm_action,
+                regex_search, autopickup_search, bad_item_prompt,
+                auto_hide_spells, menu_arrow_control, single_column_item_menus,
+                show_paged_inventory
+3-h     Message and Display Enhancements.
+                hp_warning, mp_warning, hp_colour, mp_colour, stat_colour,
+                status_caption_colour, enemy_hp_colour, clear_messages,
+                show_more, small_more, show_newturn_mark, show_game_time,
+                equip_bar, animate_equip_bar, item_stack_summary_minimum,
+                mlist_min_height, mlist_allow_alternative_layout,
+                monster_item_view_coordinates, monster_item_view_features,
+                msg_min_height, msg_max_height, msg_webtiles_height,
+                messages_at_top, msg_condense_repeats, msg_condense_short,
+                show_travel_trail, skill_focus, default_show_all_skills,
+                monster_list_colour, view_delay, reduce_animations,
+                use_animations, unusual_monster_items, darken_beyond_range,
+                show_blood, food_snacking_frequency, fountain_line_frequency,
+                force_more_message, flash_screen_message, monster_alert,
+                cloud_status, always_show_zot, always_show_gems, more_gem_info,
+                action_panel, action_panel_filter,
+                action_panel_show_unidentified, _panel_scale,
+                action_panel_orientation, action_panel_font_family,
+                action_panel_font_size, show_resist_percent
+3-i     Colours (messages and menus).
+                menu_colour, message_colour
+3-j     Quivers, firing, and ammo.
+                fire_items_start, fire_order, fire_order_spell,
+                fire_order_ability, fail_severity_to_quiver,
+                quiver_menu_focus
+3-k     Message Channels.
+                plain, prompt, god, duration, danger, warning, recovery,
+                talk, talk_visual, timed_portal, sound, intrinsic_gain,
+                mutation, monster_spell, monster_enchant, monster_warning,
+                friend_spell, friend_enchant, friend_action, monster_damage,
+                monster_target, banishment, equipment, floor, multiturn,
+                examine, examine_filter, diagnostic, error, tutorial, orb,
+                hell_effect, dgl_message
+3-l     Inscriptions.
+                autoinscribe, show_god_gift
+3-m     Macro related Options.
+                flush.failure, flush.command, flush.message,
+                additional_macro_file, bindkey
+3-n     Tiles Options.
+                tile_show_items, tile_skip_title, tile_menu_icons,
+                tile_player_col, tile_monster_col, tile_neutral_col,
+                tile_peaceful_col, tile_friendly_col, tile_plant_col,
+                tile_item_col, tile_unseen_col, tile_floor_col, tile_wall_col,
+                tile_mapped_floor_col, tile_mapped_wall_col,
+                tile_explore_horizon_col, tile_door_col, tile_downstairs_col,
+                tile_upstairs_col, tile_branchstairs_col, tile_portal_col,
+                tile_transporter_col, tile_transporter_landing_col,
+                tile_feature_col, tile_trap_col, tile_water_col,
+                tile_deep_water_col, tile_lava_col, tile_excluded_col,
+                tile_excl_centre_col, tile_window_col, tile_update_rate,
+                tile_runrest_rate, tile_key_repeat_delay, tile_tooltip_ms,
+                tile_tag_pref, tile_window_width, tile_window_height,
+                tile_window_ratio, tile_window_limit_size, game_scale,
+                tile_map_pixels, tile_viewport_scale, tile_map_scale,
+                tile_cell_pixels, tile_sidebar_pixels, tile_filter_scaling,
+                tile_force_overlay, tile_overlay_col,
+                tile_min_stat_width_characters, tile_overlay_alpha_percent,
+                tile_full_screen, tile_use_small_layout, tile_font_crt_file,
+                tile_font_stat_file, tile_font_msg_file, tile_font_tip_file,
+                tile_font_lbl_file, tile_font_crt_family,
+                tile_font_stat_family, tile_font_msg_family,
+                tile_font_lbl_family, tile_font_crt_size, tile_font_stat_size,
+                tile_font_msg_size, tile_font_tip_size, tile_font_lbl_size,
+                tile_font_ft_light, glyph_mode_font, glyph_mode_font_size,
+                tile_show_minihealthbar, tile_show_minimagicbar,
+                tile_show_demon_tier, tile_water_anim, tile_misc_anim,
+                tile_realtime_anim, tile_show_player_species,
+                tile_player_status_icons, tile_show_threat_levels,
+                tile_layout_priority, tile_display_mode,
+                tile_level_map_hide_messages, tile_level_map_hide_sidebar,
+                tile_player_tile, tile_weapon_offsets, tile_shield_offsets,
+                tile_grinch, tile_web_mouse_control,
+                tile_web_mobile_input_helper
+4-  Character Dump.
+4-a     Saving.
+                dump_on_save
+4-b     Items and Kills.
+                kill_map, dump_kill_places, dump_item_origins,
+                dump_item_origin_price, dump_message_count, dump_order,
+                dump_kill_breakdowns
+4-c     Notes.
+                user_note_prefix, note_items, note_monsters, note_hp_percent,
+                note_skill_levels, note_all_skill_levels, note_skill_max,
+                note_xom_effects, note_messages, note_chat_messages,
+                note_dgl_messages
+5-  Miscellaneous.
+5-a     All OS.
+                mouse_input, wiz_mode, explore_mode, char_set, colour,
+                display_char, feature, mon_glyph, item_glyph,
+                use_fake_player_cursor, show_player_species,
+                use_modifier_prefix_keys, language, fake_lang, messaging
+                read_persist_options
+
+5-b     Windows.
+                dos_use_background_intensity
+5-c     Unix.
+                blink_brightens_background, bold_brightens_foreground,
+                best_effort_brighten_background,
+                best_effort_brighten_foreground, allow_extended_colours,
+                background_colour, foreground_colour,
+                use_default_terminal_colours, use_fake_cursor
+
+6-  Lua.
+                lua_max_memory
+6-a     Including lua files.
+6-b     Executing inline lua.
+6-c     Conditional options.
+6-d     Conditional option caveats.
+
+7-  Recommended Options for Blind Players.
+
+------------------------------------------------------------------------
+
+0-  Generalities on options.
+============================
+
+The standard way of adjusting an option from the default is to manually
+set it in your options file; see (0-a) and (0-c) below for details. A small
+number of options are saved automatically from their current values in the
+relevant in-game user interface; these are marked with "(persistent)" in
+their documentation and can be overridden by a manual setting in the
+options file.
+
+0-a     Standard and additional option files.
+---------------------------------------------
+
+In online play, choose "edit rc" from the webtiles game selection screen,
+or enter the rc file editor via ssh.
+
+In offline play, Crawl uses the first file of the following list as its option
+file:
+
+* settings/init.txt
+* init.txt (in the Crawl directory)
+* .crawlrc (in the Unix home directory)
+
+Alternatively, you can use the command line option
+    -rc <file>
+which tells Crawl to use precisely that file.
+
+On the starting screen, Crawl tells you which init file it uses, if any. The
+Crawl directory location is system-specific.
+
+It is possible to include additional files within the options file via
+    include = <file>
+Note that these are treated as if their content was entered verbatim
+in the options file. By default, Crawl searches for all these included
+files in the settings/ directory but you can specify a special folder
+using the command line option
+    -rcdir <dir>
+
+External option files have several uses: They allow quick customisation
+of Crawl's general appearance (colouring/suppression of messages, and
+the inventory style). More elaborate option magic (usually containing
+lua) can also be conveniently hidden this way. Finally, there are some
+additional option files in the settings/ directory; these allow setting
+some options and monster glyphs to their defaults from older versions.
+See the header of the default init.txt for more details.
+
+The following files are automatically included with Crawl for easy usage, and
+can be included without any further setup:
+
+* advanced_optioneering.txt
+* dvorak_command_keys.txt
+* colemak_command_keys.txt
+* neo_command_keys.txt
+* no_vi_command_keys.txt
+* safe_move_shift.txt
+
+0-b     Options on the command line.
+------------------------------------
+
+A quick way to make small changes to the options, without having to
+switch to a different option file, is to use the command line options
+-extra-opt-first or -extra-opt-last, which make it as if the given
+option was (respectively) at the top or bottom of the option file. For
+example,
+
+    -extra-opt-last wiz_mode=yes
+
+will cause any new game to start in wizard mode. -extra-opt-first and
+-extra-opt-last can be used multiple times on the same command line.
+
+0-c     Options and how to set them.
+------------------------------------
+
+There are three broad types of Crawl options: true/false values
+(booleans), arbitrary values, and lists of values. In this document,
+options are usually described with their default values (if there is a
+default); this should also explain which of the above-mentioned types
+it is. Each option should have some remarks on how it's typically used
+- but keep in mind that the options you want to use depend on your
+playing style and sometimes also on your operating system.
+
+There are two styles you can use to set options. The classic
+name=value syntax, one option per-line:
+    remember_name  = true
+    explore_greedy = false
+
+And the NetHack-style combined option line:
+    OPTION = remember_name, !explore_greedy
+
+The second style is useful to specify simple options in a few lines,
+but it cannot be used for options that take complex lists of values
+(such as the autopickup_exceptions option).
+
+Some options need a path as an argument; here you have to use a
+filesystem path suitable for your system. Other options accept regular
+expressions (regexes): here you can simply use ordinary strings, adapt
+the suggested regexes to your needs or search the internet for regex
+syntax.
+
+Note that in the tutorial and hints modes, some of your options settings may
+get overwritten to facilitate the explanations. This concerns the following
+options, and their enforced setting for tutorial games are as follows:
+   clear_messages      = true
+   weapon              = hand axe, for Berserkers in hints mode
+
+0-d     List options.
+---------------------
+
+A number of options can have a list of values. Most but not all of these
+options allow setting multiple values in a single line, separated by commas.
+It is possible to reset, add items to, or remove items from such an option.
+   Add values to the end of the list (append):
+      drop_filter += useless, enchant
+   Add values to the beginning of the list (prepend):
+      drop_filter ^= forbidden
+   Remove values from the list (exact match only):
+      drop_filter -= enchant
+   Reset the list:
+      drop_filter = bad_item, dangerous_item
+   Empty the list:
+      drop_filter =
+
+The "listopt = value" syntax first clears the list, then adds values. In
+previous versions of Crawl it was a synonym for +=, and only bare
+"listopt =" cleared the list.
+
+For many options, such as drop_filter, there is effectively no difference
+between appending and prepending. However, other options, such as
+message_colour, do care about the order of items; these will be noted as
+"Ordered list options" in their descriptions. In most cases, earlier items
+take precedence over later ones, so += defers to existing matches (including
+defaults) while ^= overrides them. So, for example, with the sequence of
+options:
+   message_colour  = cyan:hits
+   message_colour ^= red:crimson
+   message_colour += yellow:killer
+the message "The crimson imp hits you!" will be displayed in red, while "The
+killer bee hits you!" will be displayed in cyan.
+
+0-e     Aliases, variables, and other directives
+------------------------------------------------
+
+For long option names, you can define option aliases by doing:
+    alias := long_option_name
+For instance, you can use:
+    ae := autopickup_exceptions
+and thereafter use "ae" instead of "autopickup_exceptions":
+    ae += >uselessness, >inaccuracy
+
+You can define shortcuts for option values (variables). For example,
+    $useless := darkgrey
+could be used in conjunction with
+    menu_colour += $useless:random uselessness
+
+To prevent a variable from being changed you can make it a constant:
+    constant = useless
+
+This is useful if you wish to prevent an included file from altering
+a variable.
+
+See dat/defaults/standard_colours.txt for usage of aliases and variables. Note
+that changing the variables defined in these files will only affect your own
+configuration file, as the default options will have already been loaded. If
+you want to change them, you will have to override the options themselves.
+
+To reset a value to its defaults, you can use:
+    default = option_name
+
+This won't work for certain options that have custom parsing.
+
+1-  Starting Screen.
+====================
+
+The following options are a convenience to help you quickly start your
+game of Crawl, and/or configure the start of the game from a file or the
+command line.
+
+name = Delilah
+        If set, that's the name all your Crawl characters will get. Setting
+        this will bypass the main menu by default; see `name_bypasses_menu`.
+
+type = normal
+        Choose a game type. Valid values are "normal", "seeded", "tutorial",
+        "arena", "sprint", "descent", and "hints". If explicitly set (not just
+        left to the default), this sets the default game type at the main menu.
+        If the main menu is bypassed (e.g. by setting `name`), this option can
+        be used to determine the game type. "descent" is only valid in alpha
+        (development) builds.
+
+remember_name = true
+        Crawl remembers the options (species, background etc.) you used
+        to create your last character. You may recycle them in the
+        starting screen for a new character. If this option is set to
+        true, Crawl will also remember the last name you used.
+
+        If you use this option and want to enter a name _after_
+        choosing your species and background, you must enter . at the
+        initial name prompt - hitting Enter at the name prompt will
+        simply reuse your old name if remember_name is set.
+
+weapon += (short sword |...| unarmed | random | viable), <weapon>, ...
+        (List option)
+        Specifying the weapon option allows you to bypass the weapon
+        selection screen. Tridents, flails, rapiers, long swords, and war
+        axes are restricted to fighters and gladiators, and quarterstaves
+        are restricted to gladiators only. The standard weapon prompt will be
+        shown if an illegal choice for the selected background is specified.
+        The "viable" option makes a random choice from among the "good" weapons
+        for the chosen character. Specifying more than one option causes the
+        game to randomly select a weapon from the given list. The combo option
+        overrides (and is overridden by) this option.
+
+species += (Human |...| Revenant | random | viable), <species>, ...
+        (List option)
+        The usual abbreviations (Hu, MD, etc.) work. "viable" will choose a
+        viable species for a given background if the background is chosen
+        first. Specifying multiple species causes one to be selected at
+        random from the given species. The combo option overrides (and is
+        overridden by) this option.
+
+background += (Fighter |...| Wanderer | random | viable), <background>, ...
+        (List option)
+        Here again the abbreviations (Fi, HW, CA, etc.) can be used. The same
+        caveat applies to "viable": it is only really meaningful if the
+        species option is also set. Specifying multiple backgrounds causes
+        one to be selected at random from the given species. The combo option
+        overrides (and is overridden by) this option.
+
+combo += (HuFi . short sword | Human Monk | ...), <combo>, ...
+        (List option)
+        Specifies a complete set of species, background, and (where
+        applicable) weapon. If a combo requires a weapon choice and one isn't
+        specified, it is prompted for. Combos may be abbreviated or specified
+        in full. If multiple combos are specified, one is selected randomly
+        from the specified combos. The weapon, species, and background
+        options are overridden by (and override) this option.
+
+restart_after_game = maybe/true
+        When set to true, at the game end, crawl will return to the main menu.
+        If set to maybe, crawl will return to the main menu only if the startup
+        options don't bypass the main menu, otherwise it will exit. If set to
+        false, it will exit unconditionally. This option is set to true for
+        local tiles builds by default, and maybe by default for other builds.
+        This option is ignored for online games.
+
+restart_after_save = true
+        When the game is saved, return to the main menu. This option
+        only has an effect if restart_after_game is set to maybe or true.
+        This option is ignored for online games.
+
+newgame_after_quit = false
+        When true, if a name/combo is set, quit will do a fast restart. On this
+        setting, with restart_after_game as non-false, it may be possible to
+        exit crawl only via saving.
+
+name_bypasses_menu = true
+        When set to true, having a valid name set via options will skip the main
+        menu and jump right to a game or character selection (if there is no
+        save).
+
+default_manual_training = false (persistent)
+        When set to true, new characters will start with skill training
+        set to manual mode instead of automatic mode. This will also set the
+        [!] selection on the skill (m) menu to "cost" by default, instead of
+        "training".
+
+autopickup_starting_ammo = true
+        When set, at game start, autopickup is forced on (as per the \ menu)
+        for the player's starting ammunition type. Even when this option is
+        set, autopickup of those items can be disabled from the \ menu once
+        the game has begun.
+
+game_seed = none
+        A number indicating the seed to initialize the random number generator
+        from. Within certain limits, the same seed will deterministically lead
+        to the same dungeon. If set to "none" or 0, the seed will be chosen
+        randomly. This can also be set directly via the command line with
+        "-seed", which will override any rc file setting. This value is an
+        unsigned 64 bit integer.
+
+pregen_dungeon = incremental
+        This setting determines the level generation mode for new games, which
+        interacts with random seeding (see the "Seeded play" section of the
+        manual). In order to generate a stable dungeon from a seed, levels need
+        to be generated in a consistent order. The recommended setting of
+        `incremental` will generate levels as needed when entering a new level
+        so that the game always generates levels in the same order, potentially
+        catching up when skipping levels in the standard order.
+
+        When set to `true` or `full`, the game will pregenerate the entire
+        connected dungeon when starting a new character. This leads to
+        deterministic dungeon generation relative to a particular game seed,
+        and no load times when entering levels, but at the cost of a slow game
+        start. Some servers may disallow full pregeneration for online play.
+
+        When set to `false` or `classic`, the game will generate all levels on
+        level entry, as was the rule before 0.23. Dungeons will not be stable
+        given a seed with this option.
+
+suppress_startup_errors = false
+        If this is false, and an error is detected as the game first starts
+        (such as a mistake in a configuration file), bring up a screen before
+        loading to display these.
+
+        The main menu will contain a warning of errors regardless of this
+        setting, and it does not affect what happens with errors detected as a
+        character is loaded.
+
+map = ""
+        This can be used to choose a sprint map. If set in an rc file, this
+        value skips the sprint map selection submenu. Valid options are:
+        dungeon_sprint_1, the_violet_keep_of_menkaure, dungeon_sprint_mu,
+        dungeon_sprint_fedhas, sprint_v, arena_sprint, pitsprint, meatsprint,
+        and linesprint.
+
+fully_random = false
+        Set to true to choose a combo randomly. If either species or job is
+        set to `viable`, this will choose a combo from "recommended"
+        characters, otherwise, it will choose combos entirely randomly. When
+        set, the character selection menus are replaced with a prompt that
+        offers you a combo, and allows you to accept or reroll.
+
+arena_teams = ""
+        Set to preselect teams in arena mode. When set, arena mode goes directly
+        to the competition.
+
+2-  File System.
+================
+
+The following directory options may be ignored or overridden on some systems
+and builds. For example, they cannot be set in an rc file for online play. They
+can also be set via the command line.
+
+crawl_dir = <path>
+        A path to be used for the relative paths when looking for other
+        files. The default for this value is dependent on the system and
+        build type. This option can also be set the `CRAWL_DIR` environment
+        variable. When set, this will override the following three directory
+        options if they have been previously set.
+
+save_dir = saves/
+        Directory where saves and bones are stored. A relative path
+        will be interpreted relative to the value of `crawl_dir`.
+
+morgue_dir = morgues/
+        Directory where morgue dumps files (morgue*.txt and
+        morgue*.lst) as well as character dumps files are written. A relative
+        path will be interpreted relative to the value of `crawl_dir`.
+
+macro_dir = <path>
+        Directory for reading macro.txt.
+        It should end with the path delimiter. The default value for this
+        is dependent on system and build type.
+
+sounds_on = true
+        (Requires "Sound support"; check your version info)
+        If true, plays sound effects in various situations.
+
+sound ^= <regex>:<path to sound file>, <regex>:<path>,
+        (Ordered list option)
+        Plays the sound file if a message contains regex. In case of
+        multiple matching regexes, only the sound of the last regex
+        is played. The regex should not include commas or colons.
+        For example
+             sound += LOW HITPOINT WARNING:sound\sounds2\danger3.wav
+        There are certain pre-defined regexes, as well, which can be
+        used to get a sound to trigger for something that cannot
+        otherwise be matched using a regex string. For example,
+        using FIRE_PROMPT_SOUND for the regex will cause Crawl to
+        play a sound whenever the fire prompt is opened. Check
+        sound.h for a full listing of all these pre-defined regex
+        strings.
+
+sound_file_path = <path>
+        When playing sounds (with the option above), the contents of
+        this variable is appended to the start of the path. This is
+        intended to make it easier to take one configuration across
+        several platforms. These two lines are equivalent to the
+        example above:
+             sound_file_path = sound\sounds2\
+             sound += LOW HITPOINT WARNING:danger3.wav
+        The most recent instance of this option is the one that
+        takes effect, and is not applied retroactively to previous
+        instances of the sound option.
+
+one_SDL_sound_channel = false
+        When true, only one sound can play at a time (if using SDL).
+        Is false by default since non-SDL sound backends don't
+        support such control.
+
+

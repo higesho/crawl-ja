@@ -1,0 +1,334 @@
+                       DUNGEON CRAWL Stone Soup
+                            - the manual -
+
+Contents
+--------
+A.      Overview
+B.      Starting screen
+C.      Attributes and stats
+D.      Exploring the dungeon
+E.      Experience and skills
+F.      Monsters
+G.      Items
+H.      Spellcasting
+I.      Targeting
+J.      Religion
+K.      Mutations
+L.      Licence, contact, history
+M.      Macros, options, performance
+N.      Philosophy (pas de faq)
+
+Appendices
+1.      List of character species
+2.      List of character backgrounds
+3.      List of skills
+4.      List of keys and commands
+5.      Inscriptions
+6.      Dungeon sprint modes
+
+
+------------------------------------------------------------------------
+A.                                OVERVIEW
+------------------------------------------------------------------------
+
+Crawl is a fun game in the grand tradition of similar games like Rogue,
+Hack and Moria. The objective is to travel deep into a subterranean cave
+complex and retrieve the Orb of Zot, guarded by many horrible and hideous
+creatures.
+
+If you have never played Crawl (or a similar game) before, select the
+tutorial from the starting menu. The tutorial explains the interface in
+five easy lessons. Once you're familiar with the controls, you may want to
+play a few games using hints mode.
+
+Detailed instructions for playing Crawl follow. To simplify this manual, we
+assume you're using the standard distribution and you've not changed the
+default options. If you don't want to read the whole manual and prefer a
+short summary of the important points, review the quick-start guide file
+(quickstart.txt) and learn as you play.
+
+You can also read these documents while playing Crawl by hitting '?' at the
+help menu. A list of frequently asked questions about gameplay and design
+can be accessed by pressing '?Q' in the game.
+
+While Crawl is strictly a single player game, you can interact with others
+over a server. Connecting to a server opens several interesting options.
+
+You can:
+
+- watch other players and even communicate with them
+- view your past games or those of others
+- battle ghosts of other players
+- compete using a common score list
+- take part in the semiannual tournament
+- play the most recent development version
+
+See the Crawl website to find an online server, links to download the game
+for offline play, and other community resources:
+
+  http://crawl.develz.org/
+
+------------------------------------------------------------------------
+B.                             STARTING SCREEN
+------------------------------------------------------------------------
+
+At the Crawl start screen, you will be presented with various game modes, a
+list of saved games (if any), and will be prompted to type a name for your
+character. You can navigate the game modes and saved games with the cursor
+'up' and 'down' arrow keys.
+
+Game modes are:
+
+Dungeon Crawl
+  Start a standard game of Crawl.
+
+Choose game seed
+  Start a standard game of Crawl with a custom seed (see "Seeded play"
+  below).
+
+Tutorial for Dungeon Crawl
+  Start one of several specialised tutorials to learn how to play.
+
+Hints Mode for Dungeon Crawl
+  Start a standard game of Crawl, modified to provide help as you play.
+
+Dungeon Sprint
+  Start one of several single-map challenge mode games of Crawl.
+
+Instructions
+  View the instructional help text you are currently reading.
+
+The Arena
+  Initiate an automated fight mode between two specified combatant groups.
+
+High Scores
+  View scores for prior games played, sorted by decreasing score.
+
+Pressing 'enter' immediately after typing your name will select standard
+Dungeon Crawl mode, and you will be prompted to select a species and
+background. Names are unique; entering a name from the saved game list will
+continue that saved game. If you select a game mode instead of entering a
+name, you will eventually be prompted to enter a name.
+
+You can choose species and background in either order or randomise any
+combination if you would rather have the game decide for you. If both are
+random, you will be prompted to confirm the chosen combination before the
+game starts.
+
+The choice of species affects several important characteristics, in
+particular the speed at which you learn different skills. This is very
+important, and helps to clearly differentiate the many available species.
+The following factors are species-dependent:
+
+Major:
+
+- The amount of health you get each level
+- Your rate of skill advancement
+- Your initial primary attributes (this also depends on background)
+- Various special abilities, powers and limitations
+
+Minor:
+
+- Your rate of level advancement
+- Occasional bonus points added to some primary attributes
+- The amount of magic points you get each level
+- Your innate willpower, your resistance to subtle magic
+- Your initial equipment (this also depends on background)
+
+Note:  Humans are the average to which all other species are compared.
+
+The choice of character background is definitely less decisive than that of
+species in Crawl. Basically, the background determines what the character
+has learned prior to entering the dungeon (i.e. the starting skills), and
+also helps determine equipment at start.
+
+You will notice that a different set of backgrounds will be recommended
+(white) for each species. Although you are free to pick any background with
+almost any species (the only restrictions are religious backgrounds where
+some species are not permitted to worship certain gods, or backgrounds
+where the starting equipment is completely unusable by a given species),
+looking at the recommended combinations should give you a rough impression
+of the weaknesses, strengths, and roleplaying flavour of the different
+species.
+
+For some backgrounds, you must pick a starting weapon before starting the
+game.
+
+When you start a new character (or load an old one) and want to get a rough
+impression, you may read the full character dump with ?# or examine it with
+the following commands:
+
+A
+  shows any peculiarities like unusual speed or body parts
+
+m
+  shows your skills and lets you disable (or focus) training as desired
+
+i
+  lists equipment and items
+
+^
+  displays information on your god, should you have started with a religion
+
+%
+  gives a general, if terse, overview of your gear and most attributes
+
+Ctrl-O
+  gives an overview of the parts of the dungeon you have discovered so far
+
+------------------------------------------------------------------------
+C.                          ATTRIBUTES AND STATS
+------------------------------------------------------------------------
+
+The stat area to the right of the playing map shows a lot of information.
+It starts with the character's name and title (determined by the
+character's highest skill), followed by a line listing the species. If the
+character worships a god, the name of the deity is also listed in the
+second line, together with an indicator of piety. Below these two lines
+follow a lot of numbers. These describe different aspects of the character.
+
+Health
+  A measure of life force. Synonymous with hit points and sometimes
+  abbreviated as HP. You die if your health drops to zero or less (although
+  you can die in other ways, too). The main screen shows both your current
+  and maximum health. Usually, you regain health slowly over time. Pressing
+  '5' or Shift-Num-5 lets you wait for a longer period.
+
+Magic
+  A measure of magic or other intrinsic power. This is used primarily for
+  spellcasting, but is sometimes also used for the evoking and invoking of
+  many other special abilities. They are displayed in the same way as
+  health; nothing bad happens if these drop to zero, except, of course,
+  that you can't cast any spells. Resting also restores your reserves of
+  magic.
+
+Next come your defences. For all of them, more is better.
+
+Armour Class
+  Abbreviated to "AC". Your AC reduces the amount of damage you suffer from
+  most attacks (with a few rare exceptions), and provides some guaranteed
+  minimum protection against damage from melee attacks.
+
+Evasion
+  Abbreviated to "EV". This helps you avoid being hit by unpleasant things
+  (but will not reduce the amount of damage you suffer if you do get hit).
+
+Shield
+  Abbreviated to "SH". This number is a measure of how good your shield (if
+  any) is at blocking attacks.
+
+Your character's primary attributes are Strength, Intelligence and
+Dexterity:
+
+Strength
+  Abbreviated to "Str". Increases your damage with melee weapons (except
+  for long and short blades), with unarmed combat, and with throwing
+  weapons. Reduces penalties from wearing shields or heavy armour.
+
+Intelligence
+  Abbreviated to "Int". Affects your odds of successfully casting spells
+  and how powerful those spells are.
+
+Dexterity
+  Abbreviated to "Dex". Increases your accuracy with melee and ranged
+  weapons, and your damage with ranged weapons and long and short blades.
+  Significantly affects your ability to dodge attacks aimed at you, your
+  effectiveness with shields, your stealth, and your effectiveness when
+  stabbing unaware enemies.
+
+These primary attributes grow permanently from gaining levels, and may
+increase or decrease temporarily from mutations or while using certain
+artefacts or abilities. Upon gaining levels 3, 9, 15, etc., you may choose
+an attribute to raise by two points. Most species gain additional
+attributes at some levels, with the frequency and the attribute to be
+increased determined by species.
+
+If any attribute drops to zero for some reason, you will experience very
+unpleasant side-effects, being slowed and suffering some stat-specific
+negative effects. These effects will persist for a short while even after
+the attribute is restored.
+
+Finally some additional information about your character and your progress
+through the dungeon is displayed.
+
+Experience Level
+  Abbreviated to "XL". Starting characters have experience level 1; the
+  highest possible level is 27. Gaining a level nets additional health and
+  magic points, and will grant spell slots and sometimes primary
+  attributes.
+
+Place
+  This shows the branch you are currently in, as well as the level within
+  the branch. The starting branch is called Dungeon, so that the place
+  information will read "Dungeon:1" for a new character.
+
+Noise
+  This is a coloured bar indicating the loudness of noise that you heard on
+  your last turn. The colour provides a rough guide to how far away the
+  noise it indicates might be audible. If the bar is gray, the sound is
+  less likely to be audible outside of your line of sight (at least in an
+  open area); if it is yellow, the sound is likely to be audible outside of
+  your line of sight; and if it is red, the sound will be audible at a
+  substantial distance. If the bar turns magenta, you have made one of the
+  loudest noises in the dungeon. N.b.: terrain can reduce or block the
+  spread of noise.
+
+Time
+  This indicates the amount of time that has passed since entering the
+  dungeon, and also displays in brackets the amount of time that your
+  previous action took. Most actions take 1.0 units of time, but certain
+  actions are particularly slow or quick (such as changing armour and
+  swapping weapons respectively), and other actions can vary in time taken
+  depending on your status (such as attacking with different weapons and at
+  different skill levels).
+
+There are some additional stats that aren't as important on a turn to turn
+basis and thus aren't listed in the main stats area. They can easily be
+checked with the '@' or '%' commands, though.
+
+Willpower
+  Affects your ability to resist the effects of enchantments and similar
+  magic directed at you. Has no effect on direct damage dealt by magic,
+  just on more subtle effects. Although your willpower increases with your
+  level to an extent determined by your character's species, the creatures
+  you will meet deeper in the dungeon are better at casting spells, and are
+  more likely to be able to affect you. You can get a rough idea of your
+  current Will by pressing '%'.
+
+Size
+  Different species have different sizes: Spriggans and Felids are very
+  small; Kobolds are small; Oni and Trolls are large; Nagas and Armataurs
+  are large with a medium torso; all other species are medium-sized. Many
+  talismans will change your size. Size affects your evasion: the smaller
+  your character, the more evasive it is. On the other hand, characters of
+  larger than medium size do not suffer the usual attack penalties when
+  standing in shallow water. Characters of smaller than medium size will
+  have problems with some larger weapons. Very small characters and large
+  characters are not able to use most types of armour. Players and monsters
+  can only constrict foes of the same size or smaller. In the dungeon you
+  can also meet tiny and giant foes.
+
+Stealth
+  High stealth allows your character to move through the dungeon
+  undetected. It is affected by your species, dexterity, Stealth skill, and
+  the encumbrance of your body armour. Your current Stealth level can also
+  been seen by pressing '@' or '%'.
+
+There are many ailments or enchantments that can temporarily befall you.
+These are noted in the stats area below the experience line. Many of them
+are self-explanatory, like Pois or Slow. Many others, however, can be
+subtle, and their effects can be examined by pressing '?/T' and searching
+for the name of status effect.
+
+Monsters within your field of vision are listed on a special panel, the
+monster list. Single monsters also get indicators of their health status in
+the form of a coloured box, and also on effects they enjoy or suffer from.
+If there are many monsters in view, the extended monster list can be
+displayed with 'Ctrl-X'. Within target mode you can directly target single
+monsters by use of the monster list by using 'Ctrl-X'.
+
+Sometimes characters will be able to use special abilities, e.g. the Naga's
+ability to spit poison or the magical power to turn invisible granted by a
+scarf of invisibility. These are accessed through the 'a' command.
+
+------------------------------------------------------------------------

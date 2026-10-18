@@ -1,0 +1,572 @@
+3-  Interface.
+==============
+
+3-a     Picking up and Dropping.
+--------------------------------
+
+autopickup = $?!+"/♦
+        The above is the default list. The valid symbols are
+        )       Weapons
+        (       Missiles
+        [       Armour
+        /       Wands
+        ?       Scrolls
+        " or =  Jewellery
+        !       Potions
+        + or :  Books
+        |       Staves
+        0       Orbs
+        %       Talismans
+        }       Misc. items
+        $       Gold
+        ♦       Gems
+        •       Baubles
+        Note that _whether_ items are picked up automatically or not, is
+        controlled by the in-game toggle Ctrl-A. Also note that picking
+        up takes a turn, but only one turn (regardless of the number of
+        items). If you teleport or blink onto a square with interesting
+        items, these will not be picked up.
+
+autopickup_exceptions ^= <pickup-regex, >don't-pickup-regex, ...
+        (Ordered list option)
+        A set of regexes that force matching items to be picked up (if
+        prefixed with <), or never picked up (if prefixed with >).
+        The list is order sensitive: the first matching rule will be applied to
+        an item.
+
+        An example:
+             autopickup_exceptions += <curare-tipped dart
+        Forces autopickup to grab all curare-tipped darts, even if
+        missiles are not set in the "autopickup" option.
+
+        Whitespace between <> and the match expression is significant,
+        so the following won't work:
+             autopickup_exceptions += <   box of beasts
+
+        autopickup_exceptions replace the older ban_pickup. Using
+             autopickup_exceptions += >uselessness, >inaccuracy
+        is the same as using
+             ban_pickup += uselessness, inaccuracy
+
+        If the regexes are not prefixed with < or >, > is implied, so
+        the option setting above can also be written as
+             autopickup_exceptions += uselessness, inaccuracy
+
+        You can use multiple autopickup_exceptions lines. Some examples:
+             autopickup_exceptions += inaccuracy, immolation
+             autopickup_exceptions += uselessness, noise, torment
+
+        Unless you clear the list of exceptions, you won't need to set
+        autopickup exceptions for potions except maybe for very special
+        cases.
+
+default_autopickup = true
+        When set to false, the game starts with autopickup turned off.
+        You can still toggle autopickup in-game with Ctrl-A.
+
+pickup_thrown = true
+        pickup_thrown = true causes autopickup to pick up thrown missiles,
+        Be aware that autopickup uses a turn, though it won't trigger if
+        there are hostile monsters in sight.
+
+assign_item_slot = (forward | backward)
+        When picking up items, the inventory slot into which the item
+        goes is normally the first free slot from a-zA-Z (this is the
+        default "forward" behaviour). Setting assign_item_slot to
+        "backward" changes the slot assignment to the first letter after
+        the last slot.
+        For instance, if you have items on 'a' and 'c', then with
+          assign_item_slot = forward, the next item will go into 'b',
+          assign_item_slot = backward, the next item will go to 'd'
+        instead.
+        With "backward", items dropped/fired and picked up later are
+        more likely to get their old slot back.
+
+pickup_menu_limit = 1
+        If there are more items than this on your square, a menu will be
+        displayed when picking up multiple items instead of prompting for each
+        item. If zero, never use the menu. If negative, use the value of
+        item_stack_summary_minimum - 1, instead.
+
+        Note that no matter the value of the option, picking up will always
+        take one turn.
+
+drop_filter += <regex>, <regex>, ...
+        (List option)
+        When selecting items using the global (de)select keys (',' or
+        '-') in a multidrop menu, you can choose to select only items
+        that match a search regex using this option.
+
+        For instance, to quickly select items forbidden by your god, you could
+        use:
+             drop_filter += forbidden
+
+        drop_filter will match against the same keywords menu_colour uses,
+        except that it lacks identification status. It defaults to
+        useless_item.
+
+        When a drop_filter is set, using the select/deselect keys will
+        set/clear selection of items that match the filter
+        expression(s).
+
+drop_disables_autopickup = false
+        drop_disables_autopickup = true automatically removes dropped
+        non-missile items from autopickup.
+
+3-b     Passive Sightings (detected or remembered entities).
+------------------------------------------------------------
+
+detected_monster_colour = lightred
+        Detected monsters will be given this colour.
+
+detected_item_colour = green
+        Detected items will be given this colour.
+
+remembered_monster_colour = darkgrey
+        The colour for monsters you have seen before.
+
+3-c     Dungeon View Item and monster highlighting
+-------------------------------------------------
+
+These options allow controlling the way certain monsters and items are shown
+in console dungeon view, by changing their colour or reversing fore- and
+background. There are several highlighting choices (these will not work
+everywhere; it depends on OS and terminal):
+   none             -- disable highlighting for the category
+   standout         -- often the same as reverse, might be underline or
+                       dim
+   bold             -- used by colour curses for brightening foreground
+                       colours
+   blink            -- used by colour curses for brightening background
+                       colours
+   reverse          -- this will probably work
+   dim              -- probably no effect
+   underline        -- this will probably work
+   highlight:colour -- set background colour of highlighted monsters to
+                       "colour"
+The last can be abbreviated to hi:colour.
+See part Windows (5-b) for dos_use_background_intensity.
+
+Previously these options were named `..._brand`, and the old names are
+available for backwards-compatibility.
+
+friend_highlight = hi:green
+        Highlight friends in some way. This is very helpful for summoners. The
+        default setting shows friends with a green background. If the friend is
+        itself green, it'll show up as black on green.
+
+neutral_highlight = hi:lightgrey
+        Highlight neutral monsters in some way. Useful both to get out of
+        a neutral monster's path, and to avoid accidentally killing it.
+        The default setting shows neutrals with a dark grey background. Since
+        there are no darkgrey monster glyphs anymore, this works fine.
+
+unusual_highlight = hi:magenta
+        Highlight hostile monsters carrying unusual items. Useful to show if a
+        monster should be handled with care because it has an atypical item,
+        such as a wand or a distortion weapon.
+
+        This is used in conjunction with the unusual_monster_items option:
+        unusual_monster_items determines which items will cause a monster to be
+        highlighted.
+
+stab_highlight = hi:blue
+        This option highlights monsters that are fully unaware of the player
+        and therefore are will not attack, and are guaranteed to take stab
+        damage if attacked appropriately by the player.
+
+may_stab_highlight = hi:brown
+        This option highlights monsters that are having trouble paying
+        attention to the player by, for example, being confused or
+        distracted. These monsters may be able to be stabbed, depending
+        on Stealth and weapon skill levels and various other factors, and will
+        (at least) have trouble attacking the player with their current status.
+
+heap_highlight = reverse
+        Highlights heaps of items (more than one item or stack).
+
+feature_item_highlight = reverse
+        Highlights features (stairs, shops, altars) that would otherwise be
+        hidden by items. If you use this option, the item glyph(s) on the
+        square are hidden by the feature symbol.
+
+trap_item_highlight = reverse
+        Highlights traps that would otherwise be hidden by items. If you
+        use this option, the item glyph(s) on the square are hidden by the trap
+        symbol (^).
+
+3-d     Level Map Functions.
+----------------------------
+
+level_map_cursor_step = 7
+        How many squares the cursor moves on the level map when using
+        Shift-direction.
+
+3-e     Viewport Display Options.
+---------------------------------
+
+The viewport is the portion of the map that is displayed during normal
+play. The viewport is 33x17 by default, but if you use larger terminal
+sizes, you can set these options to make the game show a larger
+viewport.
+
+None of these options affects gameplay. In particular, your character's
+line-of-sight is unaffected by these options.
+
+view_max_width = 33 (max 81)
+        Sets the maximum width of the viewport (defaults to 33).
+        Making this larger will allow Crawl to show a wider viewport
+        on larger terminals. This is ignored in tiles, the viewport will
+        always use all the available space.
+
+view_max_height = 21 (max 71)
+        Similar to view_max_width, but sets the viewport's maximum height.
+        In tiles, this value is used to set when space starts to be affected
+        to the message area instead of the viewport. When the message area
+        reaches msg_max_height, the remaining space goes to the viewport.
+        If for performance reason you need a smaller viewport, either reduce
+        the window size, or increase the message area.
+
+* Note that using large viewports can slow the game down.
+
+view_lock_x = true
+        Keeps the player character centred horizontally in the
+        viewport, continuously scrolling the viewport to match the
+        PC's movements. If this is not set, the player character can
+        move horizontally within the viewport, and the viewport will
+        scroll only when the character's line-of-sight reaches the
+        left or right edge.
+
+view_lock_y = true
+        Keeps the character centred vertically in the viewport.
+
+view_lock = true
+        Aliased option that sets both view_lock_x and view_lock_y.
+
+centre_on_scroll = false
+        If this is set, the viewport centres on the player character
+        whenever it scrolls (this option is irrelevant if view_lock_x
+        and view_lock_y are set).
+
+symmetric_scroll = true
+        If this is set, the viewport will scroll in a manner consistent
+        with the character movement that caused the scroll.
+
+        To illustrate, let's say the PC is at the lower edge of the
+        viewport, but is near the horizontal centre. Now the PC moves
+        diagonally down and right, forcing the viewport to scroll up
+        one line. If symmetric_scroll is set, the viewport will also
+        scroll left one column to match the PC's diagonal movement. If
+        symmetric_scroll is not set, the viewport will only scroll up,
+        not horizontally. symmetric_scroll can be less disorienting
+        than free scrolling.
+
+        This option is not relevant if view_lock or centre_on_scroll
+        are set.
+
+scroll_margin_x = 2
+        How far from the left or right edges scrolling starts. By
+        default, if the PC's square of line-of-sight is closer than
+        two squares from the edge, the viewport scrolls. If set at
+        zero, the viewport scrolls only when the LOS circle reaches
+        the viewport edge.
+
+scroll_margin_y = 2
+        How far from the top or bottom edges scrolling starts.
+
+scroll_margin = 2
+        An aliased option that sets both scroll_margin_x and
+        scroll_margin_y.
+
+always_show_exclusions = true
+        If true, display travel exclusions and their exclusion radius in
+        the viewport. Exclusions are always visible on the level map
+        (access with X) regardless of the value of this option.
+        Exclusions are also visible in terrain-only mode (access with |).
+        This option has no effect in tiles builds, where exclusions are
+        always shown both in the viewport and on the level map.
+
+3-f     Travel and Exploration.
+-------------------------------
+
+travel_delay = 20 (defaults to -1 for online servers)
+        How long travel waits after each move (milliseconds), and also
+        how long auto-explore waits after each move unless explore_delay
+        is set. Depends on platform. Setting to -1 will jump to end of
+        travel - you will not see the individual moves.
+
+explore_delay = -1
+        How long auto-explore waits after each move (milliseconds). Depends on
+        platform. In particular, setting travel_delay = -1 and
+        explore_delay = 20 means you will see the individual moves of
+        autoexplore, but not the individual moves of other forms of travel.
+        Setting to -1 means the auto-explore delay will be the same as
+        travel_delay.
+
+rest_delay = 0 (defaults to -1 for online servers)
+        How long resting waits after each move (milliseconds). Depends on
+        platform. Setting rest_delay = -1 will prevent the display updating
+        during resting.
+
+travel_avoid_terrain = (shallow water | deep water)
+        Prevent travel from routing through shallow water. By default,
+        no terrain is avoided. For merfolk and/or characters with
+        permanent flight,
+             travel_avoid_terrain = shallow water, deep water
+        will prevent travel or explore from going through any water.
+        This option supports list syntax.
+
+explore_greedy = true
+        Greedy explore travels to items that are eligible for
+        autopickup in addition to exploring the level, but is
+        otherwise identical to regular explore. Explore greed is
+        disabled if autopickup is off (Ctrl-A).
+
+explore_greedy_visit = artefacts,glowing_items
+explore_greedy_visit += stacks
+        (List option)
+        Greedy exploration will visit squares with items based on
+        these conditions.
+
+        stacks: makes explore_greedy visit all stacks even if they don't
+        necessarily have target auto pickup items
+
+        glowing_items: makes explore_greedy visit glowing_items,
+        even if not in a stack
+
+        artefacts: makes explore_greedy visit artefacts, even
+        if not in a stack
+
+explore_item_greed = 10
+        Greedy exploration treats items as if they were this much closer (or
+        further away, if negative) when deciding whether to visit a square with
+        an item or explore a new square.
+
+explore_stop  = items,stairs,shops,altars,portals,branches,runed_doors
+explore_stop += greedy_pickup_smart,greedy_visited_item_stack
+        (List option)
+        Explore will stop for one of these conditions. Whatever you
+        set this option to, anything that stops travel will also stop
+        explore.
+
+        The "branches" condition stops for branch entrances but not for
+        other kinds of stairs or portals.
+
+        NOTE: runrest_ignore_message has no effect on explore_stop.
+
+        When using non-greedy explore, items causes explore to stop
+        when any new item comes into view. When using greedy explore,
+        the conditions act as follows:
+
+        items: stop when items that aren't eligible for autopickup come
+            into view.
+
+        greedy_items: stop when items that are eligible for autopickup
+            come into view.
+
+        greedy_pickup: stop after you automatically pick up any item
+            eligible for autopickup, excluding gold, but including
+            items thrown/fired by the player. You can make certain items
+            *not* trigger this with the option explore_stop_pickup_ignore
+
+        greedy_pickup_gold: stop when automatically picking up gold during
+            greedy explore.
+
+        greedy_pickup_smart: Similar to greedy_pickup, but tries to be
+            smart about it, meaning only stopping for items which aren't
+            similar to any you already have in your inventory. It
+            doesn't stop for automatically picking up items which were
+            thrown/fired by the player; you can add "greedy_pickup_thrown"
+            if you want to stop for those.
+
+        greedy_pickup_thrown: Stops after you pick up any item you've
+            thrown/fired. greedy_pickup automatically does this, but
+            greedy_pickup_smart does not. explore_stop_pickup_ignore
+            does not affect this condition.
+
+        greedy_visited_item_stack: Stop when visiting a stack of items
+            previously unknown to the player, even if the stack contains
+            nothing eligible for autopickup.
+
+        glowing_items: like items, but only for items which are
+            glowing/runed/embroidered/etc.
+
+        artefacts: like items, but only for artefacts.
+
+        runes: like items, but only for runes.
+
+explore_stop_pickup_ignore += <regex>, <regex>, ...
+        (List option)
+        If explore_stop has greedy_pickup or greedy_pickup_smart set,
+        then picking up any items matching any of the regexes in the list
+        will *not* stop auto-explore.
+
+        This option has no effect on items which were thrown by the player.
+
+explore_wall_bias = 0
+        Adjusts how much autoexplore favours attempting to discover room
+        perimeters and corners. At higher values, autoexplore will more
+        heavily favour visiting squares that are next to walls; at 0 it
+        will not favour them at all. At negative values it will prefer
+        to stay away from walls. Note that setting this to a non-0 value
+        generally makes it slower to completely explore a level.
+
+travel_key_stop = true
+        If set to true then travel will stop at any keypress.
+
+travel_one_unsafe_move = false
+        If set to true then travel will make one move before conducting safety
+        checks for nearby danger.
+
+tc_reachable      = blue
+tc_dangerous      = cyan
+tc_disconnected   = darkgrey
+tc_excluded       = lightmagenta
+tc_exclude_circle = red
+tc_forbidden      = lightcyan
+        The above six settle the colouring of the level map ('X').
+        They are
+          reachable: all squares safely reachable (without leaving the
+                     level)
+          dangerous: squares which are only connected to you via traps,
+                     etc.
+          disconnected: squares which cannot be reached without leaving
+                        the level
+          excluded: the colour for the centre of travel exclusions ('e')
+          excluded_circle: the colour for travel exclusions apart from
+                           centre
+          forbidden: squares which cannot be reached without crossing excluded
+                     squares.
+
+runrest_ignore_message ^= <regex>, <regex>, ...
+runrest_stop_message ^= <regex>, <regex>, ...
+        (List option)
+        Use these to force messages to interrupt travel and resting, or not.
+        These are matched against full message text. To limit a substring
+        match to a message channel, prefix the substring with the channel name
+        and a colon (see section 3-k below on Message Channels). For instance,
+        if you want travel to stop when you're hit by divine retribution, you
+        could use:
+             runrest_stop_message ^= god:wrath finds you
+
+        Or to remind yourself to renew expiring spells:
+             runrest_stop_message ^= Your transformation is almost over
+             runrest_stop_message ^= You are starting to lose your buoyancy
+
+        Or you can explicitly ignore some messages:
+             runrest_ignore_message ^= pleased with you,exalted
+
+        Note that monster talk and dungeon noises already do not interrupt
+        running or resting, by default.
+
+        Multiple lines can be used. The earliest match among both ignore and
+        stop messages overrides later lines. The file runrest_messages.txt
+        contains a number of default settings. These options accept `^=` to
+        prepend and `+=` to add; the former is necessary in order to override
+        defaults, including overriding defaults for `ignore` matches with
+        `stop` matches and vice versa.
+
+        Resetting either option has the effect of resetting both.
+
+        Note also that runrest_ignore_message has no effect on what
+        explore_stop stops for.
+
+interrupt_<delay> += <activity_interrupt_type>, <activity_interrupt_type>, ...
+        (List option)
+        Use this option to not interrupt a delayed action on a certain trigger.
+        For example, use
+            interrupt_travel -= sense_monster
+        to not interrupt autotravel when a monster is sensed but not seen.
+
+        Possible delay types are: equip_on, equip_off, ascending_stairs,
+        descending_stairs, imbue_servitor, imprint_weapon, macro,
+	macro_process_key, memorise, multidrop, passwall, rest, run,
+	shaft_self, transform, travel. (These are derived from the `name()`
+	functions in delay.h.)
+
+        Possible interrupt types are: abyss_exit_spawned, ally_attacked,
+        ancestor_hp, force, full_hp, full_mp, hp_loss, hit_monster, keypress,
+        message, mimic, monster, monster_attack, sense_monster, teleport.
+        (These are derived from the `activity_interrupt_names` array in
+        delay.cc.)
+
+
+delay_safe_poison = <% of hp>:<% of mhp>
+        Poison damage will be ignored if it is projected to drop your hp
+        by less than x% of your current hp and less than y% of your max
+        hp if you have defined delay_safe_poison = x:y. This applies to all
+        delays. Only one delay_safe_poison line is considered. Note that for
+        this to work with running and resting, Crawl needs to know to ignore
+        the "You feel sick" messages as well as the damage. For example,
+             runrest_ignore_message ^= You feel.*sick
+             delay_safe_poison = 80:100
+        are the defaults.
+
+runrest_ignore_monster ^= <regex>:<distance>, <regex>:<distance>, ...
+        (Ordered list option)
+        Any monster matching the regular expression will only interrupt your
+        activity if the distance between you and the monster is less than the
+        specified number. E.g. with
+             runrest_ignore_monster ^= bat:3
+        bats, vampire bats, fire bats, and battlespheres will be considered
+        safe for travel, explore and resting as long as the distance is at
+        least 3. If a monster matches multiple expressions, its distance is
+        compared with the first match.
+
+rest_wait_both = false
+        If rest_wait_both is set to true then resting will only stop
+        when both HP and MP are fully restored, not when either one of
+        them is restored.
+
+rest_wait_ancestor = false
+        If rest_wait_ancestor is set to true then resting will only stop when
+        the ancestor's health is fully restored in addition to player HP or MP
+        (or both, if rest_wait_both is set).
+
+rest_wait_percent = 100
+        When resting, if your HP or MP is below this percentage of being full,
+        it will stop resting when this percent of maximum HP or MP is refilled.
+        Resting after this point will still rest up to 100%.
+
+explore_auto_rest = true
+        If true, auto-explore waits until your HP and MP are both at
+        rest_wait_percent before moving.
+
+explore_auto_rest_status = <status name>, <cooldown name>, <duration name>...
+        (List option)
+        Auto-explore will wait until all statuses, durations, and cooldowns in
+        the list are finished before moving. The list will accept most
+        duration-based statuses by either the name of their status light or
+        the phrasing that appears on the % screen.
+
+        There are several special values:
+            "all_negative"   = all time-based negative statuses (eg: Slow)
+            "all_cooldown"   = all time-based cooldowns (eg: -Blink)
+            "contam"         = any amount of magic contamination
+            "transformation" = any time-based negative form (ie: pig/wisp).
+
+        To exclude a specific status from all_negative or all_cooldown, include
+        the status with an * at the start. For instance:
+            explore_auto_rest_status += *-blink
+        will remove -blink from the list of cooldowns it wants to wait on.
+
+        Defaults to "all_negative", "all_cooldown", "contam".
+
+auto_exclude += <monster name>, <monster name>, ...
+        (List option)
+        Whenever you encounter a sleeping or stationary monster during
+        exploration that is included in this list, a travel exclusion is
+        automatically set centred on this monster, meaning autoexplore won't
+        ever bring you into its line of sight. If the monster dies or wakes up
+        while you are in sight, this exclusion is automatically removed again.
+
+travel_open_doors = (avoid | approach | open)
+        Configure how autoexplore/travel interacts with doors.
+           avoid = Autoexplore/travel will treat closed doors like walls. If
+                   the only way for exploration or travel to continue is through
+                   a closed door, it will stop by a closed door.
+        approach = Autoexplore/travel will not open doors, instead stopping
+                   in front of any door in its path.
+            open = Autoexplore/travel will open doors. (default)
+        This does not affect runed doors, which are always avoided.
+

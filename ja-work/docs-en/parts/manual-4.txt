@@ -1,0 +1,355 @@
+K.                                MUTATIONS
+------------------------------------------------------------------------
+
+The Dungeon contains many sources of mutagenic radiation and magical
+contamination, which may cause your character to gain semi-permanent
+mutations if affected. You can use the 'A' command to view a list of any
+mutations that you have acquired. Individual mutations can be examined in
+further detail by pressing the letter they are labelled with.
+
+Many mutations are actually beneficial to your character, but there are
+plenty of nasty ones as well. Some mutations have multiple levels, each of
+which counts as a single mutation.
+
+Miscasting spells will cause magical contamination, which in turn can cause
+mutations if too much contamination is accrued at once. Certain powerful
+magical spells (such as 'Irradiate') also cause contamination as a
+side-effect even when successful. A single use of these effects is safe on
+its own, but multiple uses in short succession, or usage with existing
+contamination from other sources can cause dangerous levels of
+contamination.
+
+Mutations from magical contamination are almost always harmful. Mutations
+can also be caused by specific potions or by spells cast by powerful
+enemies found deep in the dungeon.
+
+It is more difficult to get rid of bad mutations than to get one. Using
+potions of mutation will remove a number of your current mutations, but
+will give you more mutations. These might be better to your taste. However,
+the only sure-fire ways is to join the gods Zin or Jiyva, each of whom
+provides some remedy against mutations.
+
+Demonspawn are a special case. Characters of this species get certain
+special mutations as they gain levels; these are listed in cyan. They are
+permanent and can never be removed. If one of your Demonspawn powers has
+been augmented by a random mutation, it is displayed in a lighter colour.
+
+Many species have special intrinsic features, like Trolls' claws and
+Felids' fur. These can also be viewed on the 'A' screen. If enhanced by a
+mutation, they will be displayed in light blue. (Mutations cannot remove
+species intrinsics.) Some of these innate features will provide an
+activated ability, which can be used with the 'a' command.
+
+Some mutations are only temporary and will dissipate after slaying more
+enemies. These are listed in purple on the list of mutations, and marked as
+temporary.
+
+------------------------------------------------------------------------
+L.                        LICENCE, CONTACT, HISTORY
+------------------------------------------------------------------------
+
+See licence.txt for information about Crawl's licensing. Most of the game's
+components are licensed under version 2 or later of the GNU General Public
+License; those that aren't are under compatible licenses.
+
+Disclaimer
+  This software is provided as is, with absolutely no warranty express or
+  implied. Use of it is at the sole risk of the user. No liability is
+  accepted for any damage to the user or to any of the user's possessions.
+
+Contact and community information
+========================================
+
+Crawl's homepage is at:
+
+  http://crawl.develz.org
+
+Use this page for direct links to downloads of the most recent version. You
+can also submit bug reports on the GitHub issue tracker at:
+
+  https://github.com/crawl/crawl/issues
+
+If you'd like to discuss Crawl, a good place to do so is the #dcss channel
+of the Roguelikes Discord:
+
+  https://discord.gg/GtT7xMe
+
+There's also an active subreddit for game discussion:
+
+  https://www.reddit.com/r/dcss/
+
+In both of these communities, topics related to this game usually meet a
+warm response, including tales of runes seized, victories (especially first
+victories), and sad stories of deceased characters. There are also usually
+experienced players around ready to give advice on equipment choices, tight
+spots, or other dilemmas. The Discord has a relay to the Sequell IRC bot
+that provides helpful information and statistics about the game.
+
+Some players frequent the #crawl channel on the Libera IRC network, which
+is also the home of Sequell and other info bots. For those interested in
+game development, see the #crawl-dev channel, which is frequented by many
+members of the game's development team.
+
+History
+========================================
+
+Crawl began as Linley's Dungeon Crawl, created in 1995 by Linley Henzell.
+Linley based Crawl on popular roguelikes of the time, namely Moria, Hack,
+and NetHack, also taking inspiration from traditional RPGs like Ultima IV.
+The object of your quest in Crawl, the Orb of Zot, was taken from Wizard's
+Castle, a text adventure written in BASIC.
+
+Linley produced Crawl versions up to 3.30, released in March 1999. Further
+work was then carried out by a group of developers who released 3.40 in
+February 2000. Of these developers, Brent Ross emerged as the single
+maintainer, producing versions until 4.0 beta 26 in 2002. Brent released an
+alpha version 4.1 in August 2005, which vastly overhauled the codebase and
+reworked many of the game's aspects, but also considerably increased its
+difficulty. By this point, Brent no longer had enough free time to develop
+Crawl. Hence Darshan Shaligram, who had previously contributed many UI
+improvements, recruited longtime player Erik Piper to start a new project
+and continue development.
+
+Darshan and Erik aimed to incorporate ideas from the 4.1 alpha and produce
+a more balanced an enjoyable game. Calling their project "Dungeon Crawl:
+Stone Soup" in reference to their collaborative process, they pulled many
+4.1 improvements into the 4.0 beta 26 codebase, play-testing and adjusting
+the results. Dungeon Crawl: Stone Soup version 0.1 was released to USENET
+in September 2006, with many additional developers subsequently joining the
+team. See Darshan's own account of the project's creation here:
+
+  https://crawl.develz.org/wordpress/the-dawn-of-stone-soup
+
+The development of Crawl proceeds to this day, with a team of many
+developers and hundreds of contributors.
+
+------------------------------------------------------------------------
+M.                      MACROS, OPTIONS, PERFORMANCE
+------------------------------------------------------------------------
+
+Crawl supports redefining keys via key maps. This is useful when your
+keyboard layout makes some key awkward to use. You can also define macros:
+these are command sequences which can make playing a great deal more
+convenient. Note that mapping 'a' to some other key will treat almost all
+pressings of 'a' in that new way (including dropping and wielding, etc.),
+so is not recommended. Macroing 'a' to some other key will only change the
+command key 'a'.
+
+You can set up key maps and macros in-game with the '~' key ('Ctrl-D' will
+also work); this also allows for saving all current key bindings and
+macros. Alternatively, you can directly edit the macro.txt file. For more
+information on both and for examples, see macros_guide.txt.
+
+Crawl supports a large number of options that allow for great flexibility
+in the interface. They are fully documented in the file options_guide.txt.
+The options themselves are set in the file ~/.crawlrc (for UNIX systems -
+copy over init.txt to ~/.crawlrc) or init.txt (for Windows).
+
+Several interface routines are outsourced to external Lua scripts. The
+standard distribution has them in the dat/clua/ directory. Have a look at
+the single scripts for short descriptions.
+
+Generally, Crawl should run swiftly on all machines (it compiles out of the
+box for Linux, Windows, OS X, and, to some lesser extent, other Unices).
+If, for some reason, you find Crawl runs unacceptably slowly on your
+machine, there are a few measures which may improve the situation:
+
+  - set travel_delay = -1 to avoid screen redraws during travel (this might
+  be
+    especially useful if playing on a remote server)
+  - try playing in console mode rather than tiles
+
+------------------------------------------------------------------------
+N.                         PHILOSOPHY (PAS DE FAQ)
+------------------------------------------------------------------------
+
+In a nutshell: This game aims to be a tactical fantasy-themed dungeon
+crawl. We strive for strategy being a concern, too, and for exquisite
+gameplay and interface. However, don't expect plots or quests.
+
+You may ponder about the wisdom of certain design decisions of Crawl. This
+section tries to explain some of them. It could also be of interest if you
+are used to other roguelikes and want a bit of background on the
+differences. Prime mainstays of Crawl development are the following, most
+of which are explained in more detail below. Note that many of these date
+back to Linley's first versions.
+
+Major design goals
+  * challenging and random gameplay, with skill making a real difference
+  * meaningful decisions (no no-brainers)
+  * avoidance of grinding (no scumming)
+  * gameplay supporting painless interface and newbie support
+
+Minor design goals
+  * clarity (playability without need for spoilers)
+  * internal consistency
+  * replayability (using branches, species, playing styles and gods)
+  * proper use of out of depth monsters
+
+Balance
+========================================
+
+The notions of balance, or being imbalanced, are extremely vague. Here is
+our definition: Crawl is designed to be a challenging game, and is also
+renowned for its randomness. However, this does not mean that wins are an
+arbitrary matter of luck: the skill of players will have the largest
+impact. So, yes, there may be situations where you are doomed - no action
+could have saved your life. But then, from the midgame on, most deaths are
+not of this type: By this stage, almost all casualties can be traced back
+to actual mistakes; if not tactical ones, then of a strategical type, like
+wrong skilling (too broad or too narrow), unwise use of resources (too
+conservative or too liberal), or wrong decisions about branch/god/gear.
+
+The possibility of unavoidable deaths is a larger topic in computer games.
+Ideally, a game like this would be really challenging and have both random
+layout and random course of action, yet still be winnable with perfect
+play. This goal seems out of reach. Thus, computer games can be soft in the
+sense that optimal play ensures a win. Apart from puzzles, though, this
+means that the game is solved from the outset; this is where the lack of a
+human game-master is obvious. Alternatively, they can be hard in the sense
+that unavoidable deaths can occur. We feel that the latter choice provides
+much more fun in the long run.
+
+Crawl has a huge number of handmade vaults/maps to tweak the randomness.
+While the placement, and often parts of the contents, of such vaults are
+random as well, they provide several advantages: vaults offer challenges
+that are very hard to get via just random monster and layout generation;
+they may centre on some theme, providing additional immersion; finally,
+they will often contain some loot, forcing players to decide between safety
+and greed.
+
+(The next topic can also be filed under balance; see Replayability for what
+balance does not mean to us.)
+
+Crusade against no-brainers
+========================================
+
+A very important point in Crawl is steering away from no-brainers. Speaking
+about games in general, wherever there's a no-brainer, that means the
+development team put a lot of effort into providing a "choice" that's
+really not an interesting choice at all. And that's a horrible lost
+opportunity for fun. Examples for this are the resistances: there are very
+few permanent sources, most involve a choice (like rings or specific
+armour) or are only semi-permanent (like mutations). Another example is the
+absence of clear-cut best items, which comes from the fact that most
+artefacts are randomly generated. Furthermore, scrolls of acquirement offer
+a random selection of items instead of a specific wish. Likewise, there are
+no sure-fire means of life saving (the closest equivalents are scrolls of
+blinking, and good religious standings for some deities).
+
+Anti-grinding
+========================================
+
+Another basic design principle is avoidance of grinding (also known as
+scumming). These are activities that have low risk, take a lot of time, and
+bring some reward. This is bad for a game's design because it encourages
+players to bore themselves. Even worse, it may be optimal to do so. We try
+to avoid this!
+
+This explains why shops don't buy: otherwise players would hoover the
+dungeon for items to sell. Not messing with lighting also falls into this
+category: there might be a benefit to mood when players have to carry
+candles/torches, but we don't see any gameplay benefit. The deep tactical
+gameplay Crawl aims for necessitates permanent dungeon levels. Many a time
+characters have to choose between descending or battling. While caution is
+a virtue in Crawl, as it is in many other roguelikes, there are strong
+forces driving characters deeper.
+
+Interface
+========================================
+
+The interface is radically designed to make gameplay easy - this sounds
+trivial, but we mean it. All tedious, but necessary, chores should be
+automated. Examples are long-distance travel, exploration and taking notes.
+Also, we try to cater for different preferences: both ASCII and tiles are
+supported; as are vi-keys and numpad. Documentation is plenty,
+context-specific and always available in-game. Finally, we ease getting
+started via tutorials.
+
+Clarity
+========================================
+
+Things ought to work in an intuitive way. Crawl definitely is winnable
+without spoiler access. Concerning important but hidden details (i.e. facts
+subject to spoilers) our policy is this: the joy of discovering something
+spoily is nice, once. (And disappears before it can start if you feel you
+need to read spoilers - a legitimate feeling.) The joy of dealing with
+ever-changing, unexpected and challenging strategic and tactical situations
+that arise out of transparent rules, on the other hand, is nice again and
+again. That said, we believe that qualitative feedback is often better than
+precise numbers.
+
+In concrete terms, we either spell out a gameplay mechanic explicitly
+(either in the manual, or by in-game feedback) or leave it to min-maxers if
+we feel that the naive approach is good enough.
+
+Consistency
+========================================
+
+While there is no plot to speak of, the game should still be set in a
+consistent Crawl universe. For example, names of artefacts should fit the
+mood, vaults should be sensibly placed and monsters should somehow fit as
+well. Essentially, this is about player immersion. As such, it's good to
+have in mind, but consistency is always secondary to gameplay. A typical
+example is player vs. monster behaviour: while we try to make these
+identical (or similar), there are good reasons for keeping them distinct in
+certain cases.
+
+Replayability
+========================================
+
+This is actually quite important, but in some sense just a corollary to the
+major design goals. Besides these, there are several other points helping
+to make playing Crawl fun over and over again:
+
+Diversity
+  whenever there are choices to the player, be that choice of species, god,
+  weapon or spell, the various options should be genuinely different. It is
+  no good to provide dozens of weapons with different names (and perhaps
+  even numbers) if, in the end, they all play the same.
+
+Many different species
+  This is partly due to the skills and aptitude system. Similarly important
+  are the built-in starting bonuses/handicaps of species; these often have
+  great impact on play. To us, balance does not mean that all combinations
+  of background and species play equally well! Some are much more
+  challenging than others, and this is fine with us. Each species has at
+  least some backgrounds playing rather well, though.
+
+Dungeon layout
+  Even veteran players may find the Tomb or the Hells exciting (which are
+  designed such that life endangering situations can always pop up). These
+  and other branches may or may not fit a given character's buildup. By the
+  way, we strongly believe that games are pointless if you can reach the
+  invincible state.
+
+Religion
+  This addresses new players, as getting to the Temple and choosing a god
+  becomes the first major task of most games. But religion is also a point
+  in favour of replayability for experienced players, since the choice of
+  god can matter as much as species does.
+
+Playing styles
+  Related to, but encompassing, species, background, god are fundamentally
+  different playing styles like melee oriented fighter, stabber, etc.
+  Deciding on whether (and when!) to make a transition of style can make or
+  break games.
+
+Out of the depths
+========================================
+
+From time to time a discussion about Crawl's unfair OOD (out of depth)
+monsters turns up, like a dragon on the second dungeon level. These are not
+bugs! Actually, they are part of the randomness design goal. In this case,
+they also serve as additional motivation: in many situations, the OOD
+monster can be survived somehow, and the mental bond with the character
+will then surely grow. OOD monsters also help to keep players on their toes
+by making shallow levels still not trivial. In a similar vein, early trips
+to the Abyss are not deficits: there's more than one way out, and
+successfully escaping is exciting for anyone.
+
+########################################
+Appendices
+########################################
+
+------------------------------------------------------------------------

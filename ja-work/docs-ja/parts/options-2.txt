@@ -1,0 +1,529 @@
+3-  インターフェース
+====================
+
+3-a     拾う・置く
+------------------
+
+autopickup = $?!+"/♦
+        上の行は初期設定の一覧である。使える記号は次のとおり:
+        )       武器
+        (       矢弾
+        [       防具
+        /       ワンド
+        ?       巻物
+        " か =  装身具
+        !       薬
+        + か :  魔法書
+        |       魔法の杖
+        0       オーブ
+        %       タリスマン
+        }       道具
+        $       金貨
+        ♦       宝石
+        •       ボーブル
+        なお、アイテムを自動で拾う「かどうか」は、ゲーム内で Ctrl-A を押して切
+        り替える。また、拾うにはターンがかかるが、(アイテムの数によらず)1ターン
+        だけで済む。テレポートやブリンクで、気になるアイテムのあるマスに移った
+        場合、そのアイテムは拾われない。
+
+autopickup_exceptions ^= <pickup-regex, >don't-pickup-regex, ...
+        (順序つきリストのオプション)
+        一致したアイテムを必ず拾う(前に < を付けた場合)、または決して拾わない
+        (前に > を付けた場合)ようにする正規表現の集まり。このリストは順序に意味
+        があり、アイテムには最初に一致した規則が適用される。
+
+        例:
+             autopickup_exceptions += <curare-tipped dart
+        こうすると、"autopickup" オプションで矢弾を指定していなくても、クラーレ
+        毒を塗ったダーツをすべて自動で拾うようになる。
+
+        <> と一致させる式の間の空白にも意味があるので、次のように書くとうまくい
+        かない:
+             autopickup_exceptions += <   box of beasts
+
+        autopickup_exceptions は、以前の ban_pickup に代わるものである。
+             autopickup_exceptions += >uselessness, >inaccuracy
+        と書くのは、
+             ban_pickup += uselessness, inaccuracy
+        と書くのと同じである。
+
+        正規表現の前に < も > も付けなければ > を付けたものとみなされるので、上
+        の設定は次のようにも書ける。
+             autopickup_exceptions += uselessness, inaccuracy
+
+        autopickup_exceptions の行は何行でも書ける。例を挙げる:
+             autopickup_exceptions += inaccuracy, immolation
+             autopickup_exceptions += uselessness, noise, torment
+
+        例外の一覧を消去しないかぎり、ごく特殊な場合を除けば、薬について自動拾
+        いの例外を設定する必要はおそらくない。
+
+default_autopickup = true
+        false にすると、自動拾いを切った状態でゲームが始まる。その場合でも、
+        ゲーム内で Ctrl-A を押せば自動拾いを切り替えられる。
+
+pickup_thrown = true
+        pickup_thrown = true にすると、投げた矢弾を自動拾いで拾うようになる。自
+        動拾いには1ターンかかることに注意。ただし、敵対するモンスターが見えてい
+        るときは自動拾いは働かない。
+
+assign_item_slot = (forward | backward)
+        アイテムを拾ったとき、そのアイテムが入る持ち物の欄は、ふつうは a-zA-Z
+        のうち最初の空いている欄になる(これが初期設定の "forward" の動作)。
+        assign_item_slot を "backward" にすると、最後に使っている欄の次の文字に
+        入るようになる。
+        例えば、'a' と 'c' にアイテムがあるとき、
+          assign_item_slot = forward なら、次のアイテムは 'b' に入り、
+          assign_item_slot = backward なら、次のアイテムは代わりに 'd' に入る。
+        "backward" にすると、置いたり撃ったりしたあとで拾い直したアイテムが、元
+        の欄に戻りやすくなる。
+
+pickup_menu_limit = 1
+        自分のいるマスにこの数より多くのアイテムがあるとき、複数のアイテムを拾
+        うのに、アイテムを1つずつ尋ねる代わりにメニューを表示する。0 ならメ
+        ニューは使わない。負の数なら、代わりに item_stack_summary_minimum - 1
+        の値を使う。
+
+        このオプションの値にかかわらず、拾うのには常に1ターンかかる。
+
+drop_filter += <regex>, <regex>, ...
+        (リストのオプション)
+        まとめて置くメニューで、全体を選択・選択解除するキー(',' や '-')を使っ
+        てアイテムを選ぶとき、このオプションを使うと、検索の正規表現に一致する
+        アイテムだけを選ぶようにできる。
+
+        例えば、信仰する神に禁じられているアイテムを素早く選ぶには、次のように
+        する:
+             drop_filter += forbidden
+
+        drop_filter は、menu_colour と同じキーワードに対して照合する。ただし鑑
+        定の状態は含まない。初期設定は useless_item である。
+
+        drop_filter を設定してあるとき、選択・選択解除のキーを使うと、フィル
+        ターの式に一致するアイテムの選択を設定・解除する。
+
+drop_disables_autopickup = false
+        drop_disables_autopickup = true にすると、置いたアイテム(矢弾を除く)を
+        自動で自動拾いの対象から外す。
+
+3-b     受動的な発見(感知したもの・記憶しているもの)
+----------------------------------------------------
+
+detected_monster_colour = lightred
+        感知したモンスターをこの色で表示する。
+
+detected_item_colour = green
+        感知したアイテムをこの色で表示する。
+
+remembered_monster_colour = darkgrey
+        以前に見たことのあるモンスターの色。
+
+3-c     ダンジョン画面でのアイテムとモンスターの強調表示
+--------------------------------------------------------
+
+これらのオプションを使うと、コンソール版のダンジョン画面で、特定のモンスターや
+アイテムの表示のしかたを、色を変えたり前景と背景を反転させたりして制御できる。
+強調表示には次のような選択肢がある(どこでも機能するわけではなく、OS と端末に
+よって変わる):
+   none             -- その分類の強調表示を無効にする
+   standout         -- たいてい reverse と同じだが、下線や暗い表示に
+                       なることもある
+   bold             -- カラーの curses で前景色を明るくするのに使われる
+   blink            -- カラーの curses で背景色を明るくするのに使われる
+   reverse          -- おそらく機能する
+   dim              -- おそらく効果はない
+   underline        -- おそらく機能する
+   highlight:colour -- 強調表示するモンスターの背景色を "colour" に
+                       する
+最後のものは hi:colour と略して書ける。
+dos_use_background_intensity については、Windows の節(5-b)を参照。
+
+以前、これらのオプションは `..._brand` という名前だった。互換性のために、古い名
+前も使える。
+
+friend_highlight = hi:green
+        味方を何らかの方法で強調表示する。召喚を使うキャラクターにはとても役に
+        立つ。初期設定では、味方を緑の背景で表示する。味方自体が緑なら、緑の背
+        景に黒で表示される。
+
+neutral_highlight = hi:lightgrey
+        中立のモンスターを何らかの方法で強調表示する。中立のモンスターの通り道
+        からどくのにも、うっかり殺してしまわないようにするのにも役に立つ。初期
+        設定では、中立のモンスターを暗い灰色の背景で表示する。もう暗い灰色のモ
+        ンスターの記号はないので、これで問題はない。
+
+unusual_highlight = hi:magenta
+        珍しいアイテムを持っている敵対モンスターを強調表示する。ワンドや歪曲の
+        武器のような普通ではないアイテムを持っているために、扱いに注意すべきモ
+        ンスターかどうかがわかって便利である。
+
+        これは unusual_monster_items オプションと組み合わせて使う。どのアイテム
+        を持っているモンスターを強調表示するかは、unusual_monster_items で決ま
+        る。
+
+stab_highlight = hi:blue
+        このオプションは、プレイヤーにまったく気づいていないモンスターを強調表
+        示する。そうしたモンスターは攻撃してこず、プレイヤーが適切に攻撃すれば
+        必ず急所攻撃のダメージを受ける。
+
+may_stab_highlight = hi:brown
+        このオプションは、例えば混乱したり気が散ったりしていて、プレイヤーにう
+        まく注意を向けられないモンスターを強調表示する。そうしたモンスターに
+        は、隠密や武器の技能のレベル、そのほかさまざまな要因によっては急所攻撃
+        ができることがあり、(少なくとも)その状態ではプレイヤーをうまく攻撃でき
+        ない。
+
+heap_highlight = reverse
+        アイテムの山(2つ以上のアイテムまたはひとまとまり)を強調表示する。
+
+feature_item_highlight = reverse
+        アイテムに隠れて見えなくなる地形(階段、店、祭壇)を強調表示する。このオ
+        プションを使うと、そのマスのアイテムの記号は地形の記号に隠れて見えなく
+        なる。
+
+trap_item_highlight = reverse
+        アイテムに隠れて見えなくなる罠を強調表示する。このオプションを使うと、
+        そのマスのアイテムの記号は罠の記号(^)に隠れて見えなくなる。
+
+3-d     階のマップの機能
+------------------------
+
+level_map_cursor_step = 7
+        階のマップで Shift-方向キーを使ったとき、カーソルが動くマスの数。
+
+3-e     表示範囲(ビューポート)のオプション
+------------------------------------------
+
+表示範囲(ビューポート)とは、通常のプレイ中に表示されるマップの部分のことであ
+る。表示範囲の大きさは初期設定では 33x17 だが、もっと大きな端末を使っているな
+ら、これらのオプションを設定して、より広い範囲を表示させられる。
+
+これらのオプションはどれもゲームの進行には影響しない。特に、キャラクターの視界
+はこれらのオプションの影響を受けない。
+
+view_max_width = 33 (最大 81)
+        表示範囲の幅の最大値を設定する(初期設定は 33)。これを大きくすると、大き
+        な端末では Crawl がより横に広い範囲を表示できるようになる。タイル版では
+        このオプションは無視され、表示範囲は常に使える場所をすべて使う。
+
+view_max_height = 21 (最大 71)
+        view_max_width と同様だが、表示範囲の高さの最大値を設定する。タイル版で
+        は、この値は、どの時点から余った場所を表示範囲ではなくメッセージ欄に割
+        り当て始めるかを決めるのに使われる。メッセージ欄が msg_max_height に達
+        すると、残りの場所は表示範囲に割り当てられる。動作の速さの都合で表示範
+        囲を小さくしたいなら、ウィンドウを小さくするか、メッセージ欄を大きくす
+        ること。
+
+* 表示範囲を大きくすると、ゲームが遅くなることがあるので注意。
+
+view_lock_x = true
+        キャラクターを表示範囲の横方向の中央に置いたままにし、キャラクターの動
+        きに合わせて表示範囲を常にスクロールさせる。これを設定しないと、キャラ
+        クターは表示範囲の中で横に動けるようになり、表示範囲はキャラクターの視
+        界が左右の端に届いたときだけスクロールする。
+
+view_lock_y = true
+        キャラクターを表示範囲の縦方向の中央に置いたままにする。
+
+view_lock = true
+        view_lock_x と view_lock_y の両方を設定する別名のオプション。
+
+centre_on_scroll = false
+        これを設定すると、表示範囲はスクロールするたびにキャラクターを中央に置
+        くようになる(view_lock_x と view_lock_y を設定してあるなら、このオプ
+        ションは関係ない)。
+
+symmetric_scroll = true
+        これを設定すると、表示範囲は、スクロールのきっかけになったキャラクター
+        の動きに合った方向にスクロールする。
+
+        例を挙げて説明しよう。キャラクターが表示範囲の下の端にいるが、横方向で
+        は中央に近いとする。ここでキャラクターが右下に斜めに動くと、表示範囲は1
+        行ぶん上にスクロールすることになる。symmetric_scroll を設定してあると、
+        キャラクターの斜めの動きに合わせて、表示範囲は1桁ぶん左にもスクロールす
+        る。symmetric_scroll を設定していなければ、表示範囲は上にスクロールする
+        だけで、横にはスクロールしない。symmetric_scroll は、自由なスクロールよ
+        りも方向を見失いにくい。
+
+        view_lock か centre_on_scroll を設定してあるなら、このオプションは関係
+        ない。
+
+scroll_margin_x = 2
+        左右の端からどれだけ離れたところでスクロールを始めるか。初期設定では、
+        キャラクターの視界のマスが端から2マスより近づくと、表示範囲がスクロール
+        する。0 にすると、表示範囲は視界の円が表示範囲の端に届いたときだけスク
+        ロールする。
+
+scroll_margin_y = 2
+        上下の端からどれだけ離れたところでスクロールを始めるか。
+
+scroll_margin = 2
+        scroll_margin_x と scroll_margin_y の両方を設定する別名のオプション。
+
+always_show_exclusions = true
+        true なら、立入禁止区域とその半径を表示範囲に表示する。階のマップ(X で
+        開く)では、このオプションの値にかかわらず、立入禁止区域は常に表示され
+        る。地形のみの表示(| で切り替える)でも、立入禁止区域は表示される。タイ
+        ル版ではこのオプションは効果がなく、立入禁止区域は表示範囲と階のマップ
+        の両方に常に表示される。
+
+3-f     自動移動と自動探索
+--------------------------
+
+travel_delay = 20 (オンラインのサーバーでは初期設定は -1)
+        自動移動で1歩ごとに待つ時間(ミリ秒)。explore_delay を設定していなけれ
+        ば、自動探索で1歩ごとに待つ時間もこれになる。動作はプラットフォームに
+        よって変わる。-1 にすると自動移動の終わりまで一気に飛び、1歩ずつの動き
+        は見えない。
+
+explore_delay = -1
+        自動探索で1歩ごとに待つ時間(ミリ秒)。動作はプラットフォームによって変わ
+        る。特に、travel_delay = -1 かつ explore_delay = 20 にすると、自動探索
+        の1歩ずつの動きは見えるが、ほかの種類の自動移動の1歩ずつの動きは見えな
+        くなる。-1 にすると、自動探索で待つ時間は travel_delay と同じになる。
+
+rest_delay = 0 (オンラインのサーバーでは初期設定は -1)
+        休憩で1ターンごとに待つ時間(ミリ秒)。動作はプラットフォームによって変わ
+        る。rest_delay = -1 にすると、休憩の間は画面を更新しない。
+
+travel_avoid_terrain = (shallow water | deep water)
+        自動移動が浅い水の中を通らないようにする。初期設定では、どの地形も避け
+        ない。水棲の民や、ずっと飛行できるキャラクターなら、
+             travel_avoid_terrain = shallow water, deep water
+        と書くと、自動移動や自動探索がどんな水の中も通らないようになる。このオ
+        プションはリストの書き方が使える。
+
+explore_greedy = true
+        貪欲探索では、階を探索するのに加えて、自動拾いの対象になるアイテムのと
+        ころへも移動する。それ以外は通常の探索と同じである。自動拾いを切ってい
+        ると(Ctrl-A)、貪欲探索は無効になる。
+
+explore_greedy_visit = artefacts,glowing_items
+explore_greedy_visit += stacks
+        (リストのオプション)
+        貪欲探索では、次の条件に基づいて、アイテムのあるマスに立ち寄る。
+
+        stacks: 自動拾いの対象になるアイテムがあるとは限らなくても、
+        explore_greedy がすべてのアイテムの山に立ち寄るようにする
+
+        glowing_items: 山になっていなくても、explore_greedy が輝くアイテム
+        (glowing_items)に立ち寄るようにする
+
+        artefacts: 山になっていなくても、explore_greedy がアーティファクトに立
+        ち寄るようにする
+
+explore_item_greed = 10
+        貪欲探索で、アイテムのあるマスに立ち寄るか新しいマスを探索するかを決め
+        るとき、アイテムをこの数だけ近くに(負の数なら遠くに)あるものとして扱
+        う。
+
+explore_stop  = items,stairs,shops,altars,portals,branches,runed_doors
+explore_stop += greedy_pickup_smart,greedy_visited_item_stack
+        (リストのオプション)
+        自動探索は、これらの条件のどれかが起きると止まる。このオプションに何を
+        設定しても、自動移動を止めるものはすべて自動探索も止める。
+
+        "branches" の条件では、分岐の入口では止まるが、それ以外の種類の階段や
+        ポータルでは止まらない。
+
+        注意: runrest_ignore_message は explore_stop には影響しない。
+
+        貪欲でない探索では、items にすると、新しいアイテムが見えるたびに自動探
+        索が止まる。貪欲探索では、それぞれの条件は次のように働く:
+
+        items: 自動拾いの対象にならないアイテムが見えたときに止まる。
+
+        greedy_items: 自動拾いの対象になるアイテムが見えたときに止まる。
+
+        greedy_pickup: 自動拾いの対象になるアイテムを自動で拾ったあとに
+            止まる。金貨は除くが、プレイヤーが投げたり撃ったりしたアイテム
+            は含む。explore_stop_pickup_ignore オプションを使うと、特定の
+            アイテムでは止まら「ない」ようにできる。
+
+        greedy_pickup_gold: 貪欲探索の間に金貨を自動で拾ったときに止まる。
+
+        greedy_pickup_smart: greedy_pickup に似ているが、賢く止まろうと
+            する。つまり、持ち物にあるどれとも似ていないアイテムでだけ
+            止まる。プレイヤーが投げたり撃ったりしたアイテムを自動で
+            拾ったときには止まらない。それでも止まってほしいなら、
+            "greedy_pickup_thrown" を追加する。
+
+        greedy_pickup_thrown: 自分が投げたり撃ったりしたアイテムを拾った
+            あとに止まる。greedy_pickup はこれを自動で行うが、
+            greedy_pickup_smart は行わない。explore_stop_pickup_ignore は
+            この条件には影響しない。
+
+        greedy_visited_item_stack: プレイヤーがまだ知らないアイテムの山に
+            立ち寄ったときに止まる。山の中に自動拾いの対象になるものが
+            なくても止まる。
+
+        glowing_items: items と同様だが、輝く、ルーンが刻まれた、刺繍
+            された、などのアイテムだけが対象。
+
+        artefacts: items と同様だが、アーティファクトだけが対象。
+
+        runes: items と同様だが、ルーンだけが対象。
+
+explore_stop_pickup_ignore += <regex>, <regex>, ...
+        (リストのオプション)
+        explore_stop に greedy_pickup か greedy_pickup_smart を設定してあると
+        き、リストのどれかの正規表現に一致するアイテムを拾っても、自動探索は止
+        まら「ない」。
+
+        このオプションは、プレイヤーが投げたアイテムには影響しない。
+
+explore_wall_bias = 0
+        自動探索が、部屋の外周や隅を見つけようとするのをどれだけ優先するかを調
+        整する。値が大きいほど、自動探索は壁の隣のマスに行くのを強く優先する。0
+        なら、まったく優先しない。負の値なら、壁から離れていようとする。0 以外
+        の値にすると、たいていは階を探索し尽くすのが遅くなることに注意。
+
+travel_key_stop = true
+        true にすると、何かキーを押すと自動移動が止まる。
+
+travel_one_unsafe_move = false
+        true にすると、自動移動は、近くの危険を確かめる前に1歩だけ動く。
+
+tc_reachable      = blue
+tc_dangerous      = cyan
+tc_disconnected   = darkgrey
+tc_excluded       = lightmagenta
+tc_exclude_circle = red
+tc_forbidden      = lightcyan
+        上の6つは、階のマップ('X')の色分けを決める。
+        それぞれ次のとおり:
+          reachable: (階を離れずに)安全にたどり着けるすべてのマス
+          dangerous: 罠などを通らないとつながっていないマス
+          disconnected: 階を離れないとたどり着けないマス
+          excluded: 立入禁止区域の中心('e')の色
+          excluded_circle: 立入禁止区域のうち、中心以外の部分の色
+          forbidden: 立入禁止区域のマスを通らないとたどり着けないマス
+
+runrest_ignore_message ^= <regex>, <regex>, ...
+runrest_stop_message ^= <regex>, <regex>, ...
+        (リストのオプション)
+        これらを使うと、特定のメッセージで自動移動や休憩を必ず中断させたり、中
+        断させないようにしたりできる。照合はメッセージの文全体に対して行われ
+        る。部分文字列の照合をあるメッセージチャンネルに限るには、部分文字列の
+        前にチャンネル名とコロンを付ける(メッセージチャンネルについては、下の
+        3-k 節を参照)。例えば、神罰を受けたときに自動移動を止めたいなら、次のよ
+        うにする:
+             runrest_stop_message ^= god:wrath finds you
+
+        あるいは、切れかけている呪文をかけ直すのを忘れないようにするには:
+             runrest_stop_message ^= Your transformation is almost over
+             runrest_stop_message ^= You are starting to lose your buoyancy
+
+        あるいは、いくつかのメッセージを明示的に無視させることもできる:
+             runrest_ignore_message ^= pleased with you,exalted
+
+        なお、モンスターのしゃべる言葉やダンジョンの物音は、初期設定でも連続移
+        動や休憩を中断させない。
+
+        何行でも書ける。ignore と stop の両方のメッセージのうち、最も前にある一
+        致がそれより後の行に優先する。runrest_messages.txt というファイルには、
+        初期設定がいくつも書いてある。これらのオプションでは、前に足す `^=` と
+        後ろに足す `+=` が使える。初期設定を上書きするには前者が必要である
+        (`ignore` の一致の初期設定を `stop` の一致で上書きする場合や、その逆の
+        場合も含む)。
+
+        どちらかのオプションをリセットすると、両方がリセットされる。
+
+        また、runrest_ignore_message は explore_stop で止まるものには影響しない
+        ことにも注意。
+
+interrupt_<delay> += <activity_interrupt_type>, <activity_interrupt_type>, ...
+        (リストのオプション)
+        このオプションを使うと、時間のかかる行動(delay)を、特定のきっかけでは中
+        断させないようにできる。例えば、
+            interrupt_travel -= sense_monster
+        とすると、モンスターの気配を感じただけで姿は見えていないときには、自動
+        移動を中断しなくなる。
+
+        使える delay の種類は次のとおり: equip_on, equip_off, ascending_stairs,
+        descending_stairs, imbue_servitor, imprint_weapon, macro,
+        macro_process_key, memorise, multidrop, passwall, rest, run,
+        shaft_self, transform, travel。(これらは delay.h の `name()` 関数から
+        取ったものである。)
+
+        使える中断の種類は次のとおり: abyss_exit_spawned, ally_attacked,
+        ancestor_hp, force, full_hp, full_mp, hp_loss, hit_monster, keypress,
+        message, mimic, monster, monster_attack, sense_monster, teleport。(これ
+        らは delay.cc の `activity_interrupt_names` 配列から取ったものである。)
+
+
+delay_safe_poison = <% of hp>:<% of mhp>
+        delay_safe_poison = x:y と設定してあるとき、毒のダメージで減る HP の見
+        込みが、今の HP の x% 未満、かつ最大 HP の y% 未満なら、毒のダメージを
+        無視する。これはすべての時間のかかる行動に当てはまる。delay_safe_poison
+        の行は1行しか考慮されない。これを連続移動や休憩で働かせるには、ダメージ
+        だけでなく "You feel sick" のメッセージも無視するよう Crawl に知らせる
+        必要があることに注意。例えば、
+             runrest_ignore_message ^= You feel.*sick
+             delay_safe_poison = 80:100
+        が初期設定である。
+
+runrest_ignore_monster ^= <regex>:<distance>, <regex>:<distance>, ...
+        (順序つきリストのオプション)
+        正規表現に一致するモンスターは、自分とそのモンスターとの距離が指定した
+        数より小さいときだけ、行動を中断させる。例えば、
+             runrest_ignore_monster ^= bat:3
+        とすると、コウモリ、吸血コウモリ、火炎コウモリ、戦闘球は、距離が3以上あ
+        るかぎり、自動移動、自動探索、休憩にとって安全とみなされる。モンスター
+        が複数の式に一致するときは、最初に一致したものと距離を比べる。
+
+rest_wait_both = false
+        rest_wait_both を true にすると、休憩は、HP と MP のどちらか一方が回復
+        したときではなく、両方とも完全に回復したときにだけ止まる。
+
+rest_wait_ancestor = false
+        rest_wait_ancestor を true にすると、休憩は、プレイヤーの HP か
+        MP(rest_wait_both を設定してあれば両方)に加えて、祖霊の体力も完全に回復
+        したときにだけ止まる。
+
+rest_wait_percent = 100
+        休憩するとき、HP か MP が満タンのこの割合より少なければ、最大 HP か最大
+        MP のこの割合まで回復したところで休憩を止める。その時点からさらに休憩す
+        れば、100% まで休憩する。
+
+explore_auto_rest = true
+        true なら、自動探索は、HP と MP の両方が rest_wait_percent に達するまで
+        待ってから動く。
+
+explore_auto_rest_status = <status name>, <cooldown name>, <duration name>...
+        (リストのオプション)
+        自動探索は、リストにあるすべての状態、持続時間、再使用までの待ち時間が
+        終わるまで待ってから動く。このリストには、持続時間に基づくたいていの状
+        態を、状態表示の名前でも % の画面に出る言い回しでも書ける。
+
+        特別な値がいくつかある:
+            "all_negative"   = 時間に基づくすべての悪い状態(例: Slow)
+            "all_cooldown"   = 時間に基づくすべての再使用待ち(例: -Blink)
+            "contam"         = どれだけの量であっても魔力汚染
+            "transformation" = 時間に基づくすべての悪い変身(豚、ウィスプなど)
+
+        all_negative や all_cooldown から特定の状態を除くには、その状態の頭に *
+        を付けて書く。例えば、
+            explore_auto_rest_status += *-blink
+        とすると、待つ対象の再使用待ちの一覧から -blink が除かれる。
+
+        初期設定は "all_negative", "all_cooldown", "contam"。
+
+auto_exclude += <monster name>, <monster name>, ...
+        (リストのオプション)
+        探索中に、このリストに含まれる眠っているモンスターや動かないモンスター
+        に出会うと、そのモンスターを中心とする立入禁止区域が自動で設定される。
+        つまり、自動探索がそのモンスターの視界に入ることは決してない。そのモン
+        スターが見えている間に死んだり目を覚ましたりすると、この立入禁止区域は
+        自動でまた取り除かれる。
+
+travel_open_doors = (avoid | approach | open)
+        自動探索や自動移動で扉をどう扱うかを設定する。
+           avoid = 自動探索・自動移動は、閉じた扉を壁と同じように扱う。
+                   探索や移動を続けるには閉じた扉を通るしかないときは、
+                   閉じた扉のそばで止まる。
+        approach = 自動探索・自動移動は扉を開けず、通り道にある扉の前で
+                   止まる。
+            open = 自動探索・自動移動は扉を開ける。(初期設定)
+        これは、ルーンで封印された扉には影響しない。そうした扉は常に避ける。
+
