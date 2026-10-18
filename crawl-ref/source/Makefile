@@ -1554,6 +1554,7 @@ endif
 	mkdir -p $(datadir_fp)/docs/develop
 	mkdir -p $(datadir_fp)/docs/develop/levels
 	mkdir -p $(datadir_fp)/docs/license
+	mkdir -p $(datadir_fp)/docs/ja
 	mkdir -p $(datadir_fp)/settings
 	$(COPY_R) dat/des/* $(datadir_fp)/dat/des/
 	$(COPY_R) dat/dlua/* $(datadir_fp)/dat/dlua/
@@ -1577,6 +1578,7 @@ endif
 	$(COPY) ../docs/develop/*.txt $(datadir_fp)/docs/develop/
 	$(COPY) ../docs/develop/levels/*.txt $(datadir_fp)/docs/develop/levels/
 	$(COPY) ../docs/license/*.txt $(datadir_fp)/docs/license/
+	$(COPY) ../docs/ja/*.txt $(datadir_fp)/docs/ja/
 	$(COPY) ../CREDITS.txt $(datadir_fp)/docs/
 	$(COPY_R) ../settings/* $(datadir_fp)/settings/
 ifeq ($(GAME),crawl.exe)

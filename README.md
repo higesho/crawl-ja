@@ -1,3 +1,5 @@
+> 日本語版のフォークです。日本語での説明は [README.ja.md](README.ja.md) を見てください。本家は https://github.com/crawl/crawl です。
+
 [![Build Status](https://github.com/crawl/crawl/workflows/Build/badge.svg)](https://github.com/crawl/crawl/actions/)
 
 # Dungeon Crawl Stone Soup

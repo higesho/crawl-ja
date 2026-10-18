@@ -15,6 +15,19 @@
 #  * ~/init.txt (Unix only)
 #  * settings/init.txt (in the Crawl directory)
 
+##### 日本語版の設定 ################################################
+# この日本語版では、ゲームを日本語で表示する。タイル版のフォントには
+# Windows に標準で入っている BIZ UDゴシックを使う。
+# 英語で遊びたいときは language の行の先頭に # を付ける。
+# BIZ UDゴシックがない環境では、日本語の入ったフォントのファイルを
+# tile_font_*_file に指定する(例: C:/Windows/Fonts/meiryo.ttc)。
+language = ja
+tile_font_crt_file = C:/Windows/Fonts/BIZ-UDGothicR.ttc
+tile_font_msg_file = C:/Windows/Fonts/BIZ-UDGothicR.ttc
+tile_font_stat_file = C:/Windows/Fonts/BIZ-UDGothicR.ttc
+tile_font_tip_file = C:/Windows/Fonts/BIZ-UDGothicR.ttc
+tile_font_lbl_file = C:/Windows/Fonts/BIZ-UDGothicR.ttc
+
 ##### Some basic explanation of option syntax #######################
 # Lines beginning with '#' are comments. The basic syntax is:
 #
