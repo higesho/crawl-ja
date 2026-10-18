@@ -1,7 +1,15 @@
 # 日本語化の進捗と引き継ぎ(ja-0.34)
 
 新しいスレッドで作業を再開するときは、まずこのファイルと
-`CONVENTIONS.md`、`README.md`、リポジトリの 1 つ上の `../CLAUDE.md` を読む。
+`CONVENTIONS.md`、`FOLLOWUPS.md`(ファイル別の申し送り)、`README.md`、
+リポジトリの 1 つ上の `../CLAUDE.md`(日本語で話すルール)を読む。
+
+## 次にやること(2026-10-18 時点)
+
+C++ 張り直しの第 2 陣から。下の「第 2 陣以降の候補」から 5〜7 グループを選び、
+サブエージェントに並行で割り当てる(指示文の型は第 1 陣と同じ: CONVENTIONS.md を
+読ませ、担当ファイルを列挙し、FOLLOWUPS.md の該当項目も対応させる。
+ビルド・コミットはさせない)。全員の完了後にまとめてビルド → 起動確認 → コミット。
 
 ## 目標
 
@@ -20,13 +28,16 @@
 - 全角文字の折り返し・禁則(libutil.cc, stringutil.cc, fontwrapper-ft.cc)
 - 所有格「〜の」(english.cc の apostrophise)
 - message.cc(canned_msg、神の発言、--more-- 案内)
+- 第 1 陣(コミット ffb31efe8c): 下記の第 1 陣の全ファイル。実機で、アイテム名
+  (「ハンドアックス (+0)」「2本の…薬」)とモンスター名(「オークの魔術師」)が
+  日本語で表示されることを確認済み。辞書の未訳 0・重複 0。
 
 ## C++ 張り直しの分担計画
 
 各ファイルは規約の手順(old → wrap → 手作業 → harvest → 翻訳 → check)で処理。
 サブエージェントに 5〜10 ファイルずつ割り当て、終わるたびにまとめてビルド。
 
-第 1 陣(実行中、または完了済み。git log で確認):
+第 1 陣(完了):
 - item-name.cc/.h(アイテム名の中核)
 - mon-info.cc/.h, mon-util.cc/.h, monster.cc/.h(モンスター名の中核)
 - データ辞書: data-spells/skills/species/jobs/gods/branches/features/zaps.txt
@@ -99,6 +110,6 @@ tile_font_lbl_file = C:/Windows/Fonts/BIZ-UDGothicR.ttc
 - 既定の設定(settings/init.txt)にはまだ `language = ja` とフォント指定を
   入れていない。配布時は OFL の日本語フォント(BIZ UDGothic 等)を同梱して
   既定にする予定。
-- 辞書の重複キー(同じ英文を複数ファイルに書いたもの)は最後にまとめて整理する。
+- 辞書の重複キーは `python -I ja-tools/jtools.py dups` で確認する(各陣の後に 0 件にする)。
 - コミットは `git -c user.name=yamashirok -c user.email=yamashirok@n-ring.jp commit`
   (git の利用者設定がないため)。
