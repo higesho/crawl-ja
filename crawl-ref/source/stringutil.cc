@@ -176,7 +176,7 @@ string wordwrap_line(string &s, int width, bool tags, bool indent, int force_ind
 
     const char *cp0 = s.c_str();
     const char *cp = cp0, *space = 0;
-    char32_t c;
+    char32_t c, prev = 0;
     bool seen_nonspace = false;
 
     while (int clen = utf8towc(&c, cp))
@@ -193,7 +193,13 @@ string wordwrap_line(string &s, int width, bool tags, bool indent, int force_ind
             break;
         }
         else
+        {
+            // Text with wide characters (e.g. Japanese) has no spaces, so
+            // allow breaking right before this character.
+            if (seen_nonspace && wide_char_break_ok(prev, c))
+                space = cp;
             seen_nonspace = true;
+        }
 
         if (c == '<' && tags)
         {
@@ -227,6 +233,8 @@ string wordwrap_line(string &s, int width, bool tags, bool indent, int force_ind
 
         if (cw >= 0)
             width -= cw;
+        if (cw > 0)
+            prev = c;
         cp += clen;
     }
 

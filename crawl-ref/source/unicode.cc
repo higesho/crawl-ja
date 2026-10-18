@@ -557,3 +557,38 @@ string chop_string(const string &s, int width, bool spaces)
 {
     return chop_string(s.c_str(), width, spaces);
 }
+
+/**
+ * Whether a line may be broken between two adjacent characters that have no
+ * space between them. This is only allowed next to wide (CJK) characters,
+ * since such text is written without spaces, and follows the most common
+ * Japanese line breaking rules (kinsoku): no line starts with closing
+ * punctuation or small kana, and none ends with opening brackets.
+ */
+bool wide_char_break_ok(char32_t prev, char32_t next)
+{
+    if (!prev || !next || prev == ' ' || next == ' ')
+        return false;
+    if (wcwidth(prev) != 2 && wcwidth(next) != 2)
+        return false;
+
+    static const char32_t no_line_start[] =
+        U"、。，．・：；？！"
+        U"ー…‥）〕］｝〉》"
+        U"」』】々゛゜"
+        U"ぁぃぅぇぉっゃゅょゎ"
+        U"ァィゥェォッャュョヮ"
+        U"ヵヶ"
+        U".,:;!?)]}'\"%";
+    static const char32_t no_line_end[] =
+        U"（〔［｛〈《「『【"
+        U"([{";
+
+    for (const char32_t *c = no_line_start; *c; ++c)
+        if (*c == next)
+            return false;
+    for (const char32_t *c = no_line_end; *c; ++c)
+        if (*c == prev)
+            return false;
+    return true;
+}

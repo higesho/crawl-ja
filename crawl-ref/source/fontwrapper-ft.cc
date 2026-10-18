@@ -572,6 +572,38 @@ static int _find_newline(const char *s)
     return nl ? nl-s : INT_MAX;
 }
 
+// Whether a line can be broken right before `s` although there is no space,
+// as in text with wide characters (e.g. Japanese).
+static bool _wide_break_before(char *s, char *line)
+{
+    char *prev = prev_glyph(s, line);
+    if (!prev)
+        return false;
+    char32_t pc, nc;
+    utf8towc(&pc, prev);
+    utf8towc(&nc, s);
+    return wide_char_break_ok(pc, nc);
+}
+
+// Insert a newline at each of the given byte offsets (ascending).
+static formatted_string _insert_newlines(const formatted_string &str,
+                                         const vector<int> &offsets)
+{
+    if (offsets.empty())
+        return str;
+
+    formatted_string ret;
+    int prev = 0;
+    for (int pos : offsets)
+    {
+        ret += str.substr_bytes(prev, pos - prev);
+        ret += "\n";
+        prev = pos;
+    }
+    ret += str.substr_bytes(prev, INT_MAX);
+    return ret;
+}
+
 formatted_string FTFontWrapper::split(const formatted_string &str,
                                       unsigned int max_str_width,
                                       unsigned int max_str_height)
@@ -587,6 +619,8 @@ formatted_string FTFontWrapper::split(const formatted_string &str,
 
     string base = str.tostring();
     int num_lines = 0;
+    // Line breaks without a space to replace, as offsets into base.
+    vector<int> inserted_breaks;
 
     char *line = &base[0];
     while (true)
@@ -597,6 +631,7 @@ formatted_string FTFontWrapper::split(const formatted_string &str,
             break;
 
         int space_idx = 0;
+        bool insert_break = false;
         if (nl < line_end)
             space_idx = nl;
         else
@@ -609,6 +644,12 @@ formatted_string FTFontWrapper::split(const formatted_string &str,
                 if (*search == ' ')
                 {
                     space_idx = search - line;
+                    break;
+                }
+                if (_wide_break_before(search, line))
+                {
+                    space_idx = search - line;
+                    insert_break = true;
                     break;
                 }
             }
@@ -631,8 +672,15 @@ formatted_string FTFontWrapper::split(const formatted_string &str,
             }
 
             ret = ret.chop_bytes(&line[ellipses] - &base[0]);
+            ret = _insert_newlines(ret, inserted_breaks);
             ret += "..";
             return ret;
+        }
+        else if (insert_break)
+        {
+            inserted_breaks.push_back(&line[space_idx] - &base[0]);
+            line = &line[space_idx];
+            continue;
         }
         else if (space_idx != nl)
         {
@@ -643,7 +691,7 @@ formatted_string FTFontWrapper::split(const formatted_string &str,
         line = &line[space_idx+1];
     }
 
-    return ret;
+    return _insert_newlines(ret, inserted_breaks);
 }
 
 /**

@@ -502,6 +502,43 @@ mouse_control::~mouse_control()
     ms_current_mode = m_previous_mode;
 }
 
+// The codepoint ending just before byte offset pos (0 if none).
+static char32_t _codepoint_before(const string &s, size_t pos)
+{
+    if (pos == 0)
+        return 0;
+    size_t start = pos - 1;
+    while (start > 0 && (static_cast<unsigned char>(s[start]) & 0xC0) == 0x80)
+        start--;
+    char32_t c = 0;
+    utf8towc(&c, s.c_str() + start);
+    return c;
+}
+
+// Replace each newline with a space, or with nothing if the characters on
+// either side of it is wide (e.g. Japanese), since such text has no spaces
+// between words.
+static string _join_wrapped_lines(const string &desc)
+{
+    string result;
+    result.reserve(desc.size());
+    for (size_t i = 0; i < desc.size(); i++)
+    {
+        if (desc[i] != '\n')
+        {
+            result += desc[i];
+            continue;
+        }
+        char32_t before = _codepoint_before(desc, i);
+        char32_t after = 0;
+        if (i + 1 < desc.size())
+            utf8towc(&after, desc.c_str() + i + 1);
+        if (wcwidth(before) != 2 && wcwidth(after) != 2)
+            result += ' ';
+    }
+    return result;
+}
+
 string unwrap_desc(string&& desc)
 {
     // Don't append a newline to an empty description.
@@ -530,8 +567,9 @@ string unwrap_desc(string&& desc)
 
     // Don't add whitespaces between tags
     desc = replace_all(desc, ">\n<", "><");
-    // Newlines are still whitespace.
-    desc = replace_all(desc, "\n", " ");
+    // Newlines are still whitespace, except next to wide (CJK) characters,
+    // where text is written without spaces.
+    desc = _join_wrapped_lines(desc);
     // Can force a newline with a literal "\n".
     desc = replace_all(desc, "\\n", "\n");
 
