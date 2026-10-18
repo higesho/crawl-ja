@@ -1,0 +1,217 @@
+%%%%
+Nothing appears to happen.
+
+何も起こらなかったようだ。
+%%%%
+You are unaffected.
+
+あなたは影響を受けない。
+%%%%
+You resist.
+
+あなたは抵抗に成功した。
+%%%%
+You partially resist.
+
+あなたにはある程度耐性がある。
+%%%%
+You are too berserk!
+
+あなたは狂暴化しすぎている！
+%%%%
+You are too confused!
+
+あなたは混乱している！
+%%%%
+You can't do that in your present form.
+
+あなたは現在の姿ではそうすることはできない。
+%%%%
+You aren't carrying anything.
+
+あなたは何も所持していない。
+%%%%
+You can't do that yet.
+
+あなたはまだそれをすることができない。
+%%%%
+Okay, then.
+
+了解。
+%%%%
+Why would you want to do that?
+
+どうしてそのようなことをしたいのですか？
+%%%%
+There's nothing there!
+
+そこには何もない！
+%%%%
+There's nothing close enough!
+
+近くには何もいない！
+%%%%
+The spell fizzles.
+
+呪文は失敗した。
+%%%%
+Huh?
+
+なんだって？
+%%%%
+Your mouth is %s empty.
+
+あなたの口は%s空っぽだ。
+%%%%
+You are %s empty-clawed.
+
+あなたは%s何も持っていない。
+%%%%
+You are %s empty-tentacled.
+
+あなたは%s何も持っていない。
+%%%%
+You are %s empty-handed.
+
+あなたは%s何も持っていない。
+%%%%
+You blink.
+
+あなたは瞬間移動した。
+%%%%
+You feel a strange sense of stasis.
+
+あなたは奇妙な停滞感を覚えた。
+%%%%
+You don't know any spells.
+
+あなたは呪文を何一つ知らない。
+%%%%
+You feel your magic capacity increase.
+
+あなたは魔力の容量が増大するのを感じた。
+%%%%
+You feel your magic capacity decrease.
+
+あなたは魔力の容量が減少するのを感じた。
+%%%%
+You feel momentarily disoriented.
+
+あなたは一時的な見当識喪失に陥った。
+%%%%
+You detect nothing.
+
+あなたは何も感知できなかった。
+%%%%
+You cannot move.
+
+あなたは動けない。
+%%%%
+You die...
+
+あなたは死にました……
+%%%%
+You see a ghostly outline there, and the spell fizzles.
+
+あなたはぼんやりとした輪郭を目にし、呪文は失敗した。
+%%%%
+Your reserves of magic are already full.
+
+あなたの魔力はすでにいっぱいだ。
+%%%%
+You feel better.
+
+あなたは気分がよくなった。
+%%%%
+You feel your power returning.
+
+あなたは魔力が回復したようだ。
+%%%%
+You suddenly feel drained of magical energy!
+
+あなたは突然魔力を吸われたような気がした！
+%%%%
+There's something in the way.
+
+その方向には何かがある。
+%%%%
+You can't see that place.
+
+あなたからはその場所は見えない。
+%%%%
+Something appears at your feet!
+
+あなたの足元に何かが現れた！
+%%%%
+Something appears before you!
+
+あなたの目の前に何かが現れた！
+%%%%
+[empty-handed]already
+
+すでに
+%%%%
+[empty-handed]now
+
+今や
+%%%%
+Your health is already full.
+
+あなたの体力はすでに満タンだ。
+%%%%
+You feel momentarily drained.
+
+あなたは一瞬、力が抜けたような気がした。
+%%%%
+Your god isn't willing to do this for you now.
+
+あなたの神は今、その願いを聞き入れるつもりはないようだ。
+%%%%
+There is no available space!
+
+空いている場所がない！
+%%%%
+The Council
+
+評議会
+%%%%
+Sifu %s
+
+師父%s
+%%%%
+Yunchang
+
+雲長
+%%%%
+Lu Zhishen
+
+魯智深
+%%%%
+Xiang Ba
+
+項覇
+%%%%
+Ma Yunglu
+
+馬雲禄
+%%%%
+Hu Sanniang
+
+扈三娘
+%%%%
+Gene Jian Bin
+
+ジーン・ジェン・ビン
+%%%%
+Cai Fang
+
+蔡芳
+%%%%
+--more-- Press Space or click to continue. You can later reread messages with Ctrl-P.
+
+--more-- スペースキーかクリックで続きます。メッセージは後で Ctrl-P で読み返せます。
+%%%%
+--more-- Press Space to continue. You can later reread messages with Ctrl-P.
+
+--more-- スペースキーで続きます。メッセージは後で Ctrl-P で読み返せます。
+%%%%

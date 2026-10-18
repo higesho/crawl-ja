@@ -5,6 +5,7 @@
 
 #include "AppHdr.h"
 
+#include "database.h"
 #include "message.h"
 
 #include <sstream>
@@ -15,6 +16,7 @@
 #include "english.h"
 #include "hints.h"
 #include "initfile.h"
+#include "japanese.h"
 #include "libutil.h"
 #include "luaterp.h"
 #include "macro.h"
@@ -720,11 +722,11 @@ public:
             textcolour(channel_to_colour(MSGCH_PROMPT));
             if (crawl_state.game_is_hints())
             {
-                string more_str = "--more-- Press Space ";
-                if (is_tiles())
-                    more_str += "or click ";
-                more_str += "to continue. You can later reread messages with "
-                            "Ctrl-P.";
+                const string more_str = jtrans(is_tiles()
+                    ? "--more-- Press Space or click to continue. You can "
+                      "later reread messages with Ctrl-P."
+                    : "--more-- Press Space to continue. You can later "
+                      "reread messages with Ctrl-P.");
                 cprintf(more_str.c_str());
             }
             else
@@ -1953,140 +1955,140 @@ void canned_msg(canned_message_type which_message)
     switch (which_message)
     {
         case MSG_SOMETHING_APPEARS:
-            mprf("Something appears %s!",
-                 player_has_feet() ? "at your feet" : "before you");
+            mpr(jtrans(player_has_feet() ? "Something appears at your feet!"
+                                         : "Something appears before you!"));
             break;
         case MSG_NOTHING_HAPPENS:
-            mpr("Nothing appears to happen.");
+            mpr(jtrans("Nothing appears to happen."));
             break;
         case MSG_YOU_UNAFFECTED:
-            mpr("You are unaffected.");
+            mpr(jtrans("You are unaffected."));
             break;
         case MSG_YOU_RESIST:
-            mpr("You resist.");
+            mpr(jtrans("You resist."));
             learned_something_new(HINT_YOU_RESIST);
             break;
         case MSG_YOU_PARTIALLY_RESIST:
-            mpr("You partially resist.");
+            mpr(jtrans("You partially resist."));
             break;
         case MSG_TOO_BERSERK:
-            mpr("You are too berserk!");
+            mpr(jtrans("You are too berserk!"));
             crawl_state.cancel_cmd_repeat();
             break;
         case MSG_TOO_CONFUSED:
-            mpr("You are too confused!");
+            mpr(jtrans("You are too confused!"));
             break;
         case MSG_PRESENT_FORM:
-            mpr("You can't do that in your present form.");
+            mpr(jtrans("You can't do that in your present form."));
             crawl_state.cancel_cmd_repeat();
             break;
         case MSG_NOTHING_CARRIED:
-            mpr("You aren't carrying anything.");
+            mpr(jtrans("You aren't carrying anything."));
             crawl_state.cancel_cmd_repeat();
             break;
         case MSG_CANNOT_DO_YET:
-            mpr("You can't do that yet.");
+            mpr(jtrans("You can't do that yet."));
             crawl_state.cancel_cmd_repeat();
             break;
         case MSG_OK:
-            mprf(MSGCH_PROMPT, "Okay, then.");
+            mprf(MSGCH_PROMPT, jtransc("Okay, then."));
             crawl_state.cancel_cmd_repeat();
             break;
         case MSG_UNTHINKING_ACT:
-            mpr("Why would you want to do that?");
+            mpr(jtrans("Why would you want to do that?"));
             crawl_state.cancel_cmd_repeat();
             break;
         case MSG_NOTHING_THERE:
-            mpr("There's nothing there!");
+            mpr(jtrans("There's nothing there!"));
             crawl_state.cancel_cmd_repeat();
             break;
         case MSG_NOTHING_CLOSE_ENOUGH:
-            mpr("There's nothing close enough!");
+            mpr(jtrans("There's nothing close enough!"));
             crawl_state.cancel_cmd_repeat();
             break;
         case MSG_SPELL_FIZZLES:
-            mpr("The spell fizzles.");
+            mpr(jtrans("The spell fizzles."));
             break;
         case MSG_HUH:
-            mprf(MSGCH_EXAMINE_FILTER, "Huh?");
+            mprf(MSGCH_EXAMINE_FILTER, jtransc("Huh?"));
             crawl_state.cancel_cmd_repeat();
             break;
         case MSG_EMPTY_HANDED_ALREADY:
         case MSG_EMPTY_HANDED_NOW:
         {
-            const char* when =
-            (which_message == MSG_EMPTY_HANDED_ALREADY ? "already" : "now");
+            const string when = tagged_jtrans("[empty-handed]",
+            (which_message == MSG_EMPTY_HANDED_ALREADY ? "already" : "now"));
             if (you.has_mutation(MUT_NO_GRASPING))
-                mprf("Your mouth is %s empty.", when);
+                mprf(jtransc("Your mouth is %s empty."), when.c_str());
             else if (you.has_usable_claws(true))
-                mprf("You are %s empty-clawed.", when);
+                mprf(jtransc("You are %s empty-clawed."), when.c_str());
             else if (you.has_usable_tentacles(true))
-                mprf("You are %s empty-tentacled.", when);
+                mprf(jtransc("You are %s empty-tentacled."), when.c_str());
             else
-                mprf("You are %s empty-handed.", when);
+                mprf(jtransc("You are %s empty-handed."), when.c_str());
             break;
         }
         case MSG_YOU_BLINK:
-            mpr("You blink.");
+            mpr(jtrans("You blink."));
             break;
         case MSG_STRANGE_STASIS:
-            mpr("You feel a strange sense of stasis.");
+            mpr(jtrans("You feel a strange sense of stasis."));
             break;
         case MSG_NO_SPELLS:
-            mpr("You don't know any spells.");
+            mpr(jtrans("You don't know any spells."));
             break;
         case MSG_MANA_INCREASE:
-            mpr("You feel your magic capacity increase.");
+            mpr(jtrans("You feel your magic capacity increase."));
             break;
         case MSG_MANA_DECREASE:
-            mpr("You feel your magic capacity decrease.");
+            mpr(jtrans("You feel your magic capacity decrease."));
             break;
         case MSG_DISORIENTED:
-            mpr("You feel momentarily disoriented.");
+            mpr(jtrans("You feel momentarily disoriented."));
             break;
         case MSG_DETECT_NOTHING:
-            mpr("You detect nothing.");
+            mpr(jtrans("You detect nothing."));
             break;
         case MSG_CANNOT_MOVE:
-            mpr("You cannot move.");
+            mpr(jtrans("You cannot move."));
             break;
         case MSG_YOU_DIE:
-            mpr_nojoin(MSGCH_PLAIN, "You die...");
+            mpr_nojoin(MSGCH_PLAIN, jtrans("You die..."));
             break;
         case MSG_GHOSTLY_OUTLINE:
-            mpr("You see a ghostly outline there, and the spell fizzles.");
+            mpr(jtrans("You see a ghostly outline there, and the spell fizzles."));
             break;
         case MSG_FULL_HEALTH:
-            mpr("Your health is already full.");
+            mpr(jtrans("Your health is already full."));
             break;
         case MSG_FULL_MAGIC:
-            mpr("Your reserves of magic are already full.");
+            mpr(jtrans("Your reserves of magic are already full."));
             break;
         case MSG_GAIN_HEALTH:
-            mpr("You feel better.");
+            mpr(jtrans("You feel better."));
             break;
         case MSG_GAIN_MAGIC:
-            mpr("You feel your power returning.");
+            mpr(jtrans("You feel your power returning."));
             break;
         case MSG_MAGIC_DRAIN:
         {
             if (you.has_mutation(MUT_HP_CASTING))
-                mpr("You feel momentarily drained.");
+                mpr(jtrans("You feel momentarily drained."));
             else
-                mprf(MSGCH_WARN, "You suddenly feel drained of magical energy!");
+                mprf(MSGCH_WARN, jtransc("You suddenly feel drained of magical energy!"));
             break;
         }
         case MSG_SOMETHING_IN_WAY:
-            mpr("There's something in the way.");
+            mpr(jtrans("There's something in the way."));
             break;
         case MSG_CANNOT_SEE:
-            mpr("You can't see that place.");
+            mpr(jtrans("You can't see that place."));
             break;
         case MSG_GOD_DECLINES:
-            mpr("Your god isn't willing to do this for you now.");
+            mpr(jtrans("Your god isn't willing to do this for you now."));
             break;
         case MSG_NO_AVAILABLE_SPACE:
-            mpr("There is no available space!");
+            mpr(jtrans("There is no available space!"));
             break;
     }
 }
@@ -2123,9 +2125,9 @@ bool simple_monster_message(const monster& mons, const char *event,
 string god_speaker(god_type which_deity)
 {
     if (which_deity == GOD_WU_JIAN)
-       return "The Council";
+       return jtrans("The Council");
     else
-       return uppercase_first(god_name(which_deity));
+       return uppercase_first(god_name_j(which_deity));
 }
 
 // yet another wrapper for mpr() {dlb}:
@@ -2143,7 +2145,8 @@ void simple_god_message(const char *event, bool need_possessive,
 void wu_jian_sifu_message(const char *event)
 {
     string msg;
-    msg = uppercase_first(string("Sifu ") + wu_jian_random_sifu_name() + event);
+    msg = make_stringf(jtransc("Sifu %s"),
+                       jtransc(wu_jian_random_sifu_name())) + event;
     god_speaks(GOD_WU_JIAN, msg.c_str());
 }
 

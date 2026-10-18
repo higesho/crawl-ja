@@ -209,7 +209,10 @@ def _literal_keys(arg):
     "A"、cond ? "A" : "B" のような形だけを対象にし、make_stringf や
     文字列の連結(+)を含む動的な式は対象外(空リスト)。"""
     outside = re.sub(STR_LIT, '""', arg)
-    if 'make_stringf' in outside or '+' in outside or '(' in outside:
+    if 'make_stringf' in outside or '+' in outside:
+        return []
+    # 関数呼び出しを含む式は、三項演算子の選択肢のリテラルだけを見る
+    if '(' in outside and '?' not in outside:
         return []
     return [unescape(m.group(0)) for m in re.finditer(LITS, arg)]
 
@@ -374,7 +377,9 @@ def wrap_text(code):
         def repl(m):
             nonlocal total
             lit = m.group('lit')
-            if not re.search(r'[A-Za-z]{2,}', unescape(lit)):
+            text = re.sub(r'</?[a-z_]+>|%[-+ #0-9.]*[a-zA-Z]', '',
+                          unescape(lit))
+            if not re.search(r'[A-Za-z]{2,}', text):
                 return m.group(0)
             total += 1
             return f'{m.group("pre")}{func}({lit})'
