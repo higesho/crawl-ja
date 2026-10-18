@@ -745,15 +745,15 @@ mutation resistance
 %%%%
 You are somewhat resistant to further mutation.
 
-あなたは突然変異の進行にいくらかの抵抗力がある。
+あなたは変異の進行にいくらかの抵抗力がある。
 %%%%
 You are somewhat resistant to both further mutation and mutation removal.
 
-あなたは突然変異の進行と除去の両方にいくらかの抵抗力がある。
+あなたは変異の進行と除去の両方にいくらかの抵抗力がある。
 %%%%
 You are almost entirely resistant to further mutation and mutation removal.
 
-あなたは突然変異の進行と除去の両方をほとんど無効化する。
+あなたは変異の進行と除去の両方をほとんど無効化する。
 %%%%
 You feel genetically stable.
 
@@ -832,7 +832,7 @@ protean grace
 %%%%
 You are empowered by your non-innate mutations. (+
 
-あなたは生来のものでない突然変異によって力を得ている。(+
+あなたは生来のものでない変異によって力を得ている。(+
 %%%%
 Mutagenic power surges through your limbs.
 
@@ -4563,5 +4563,5 @@ You will become an instrument of Makhleb's will.
 # MUT_REMOVED_MUTATION
 Removed Mutation
 
-削除された突然変異
+削除された変異
 %%%%

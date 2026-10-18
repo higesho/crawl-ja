@@ -464,7 +464,7 @@ HINT_SEEN_ARMOUR
 {{
     if you.get_base_mutation_level("horns") > 0 then
         return "角があるため兜をかぶれないことに注意してください。"
-               .. "(突然変異と生まれつきの能力の一覧は"
+               .. "(変異と生まれつきの能力の一覧は"
                .. "<input>$cmd[CMD_DISPLAY_MUTATIONS]</input>を押すと見られます。)"
     end
 }}
@@ -1006,7 +1006,7 @@ HINT_YOU_MUTATED
 #   Mutations can be good or bad. Potions of mutation are the most common way to
 #   remove bad mutations, though they can also give you new ones. Check your
 #   mutations with <w>$cmd[CMD_DISPLAY_MUTATIONS]</w>.
-突然変異には良いものも悪いものもあります。悪い突然変異を取り除く一番よくある方法は突然変異の薬ですが、新しい突然変異が付くこともあります。突然変異は<input>$cmd[CMD_DISPLAY_MUTATIONS]</input>で確かめられます。
+変異には良いものも悪いものもあります。悪い変異を取り除く一番よくある方法は突然変異の薬ですが、新しい変異が付くこともあります。変異は<input>$cmd[CMD_DISPLAY_MUTATIONS]</input>で確かめられます。
 %%%%
 HINT_NEW_ABILITY_GOD_PASSIVE
 
@@ -1194,7 +1194,7 @@ HINT_MISCAST_CONTAMINATION_AND_MP
 #
 #   Note that a miscast spell will still consume the full amount of MP that a
 #   successfully cast spell would.
-呪文の成功率が高ければ(<input>$cmd[CMD_CAST_SPELL]\?</input>か<input>$cmd[CMD_DISPLAY_SPELLS]</input>で確かめられます)、失敗しても呪文が効かず、無害な副作用が起きるだけです。しかし失敗率の高い呪文では、魔術的汚染を受ける可能性があり、さらに有害な副作用が起きる可能性もあります。魔術的汚染は時間とともに抜けていくので通常は問題になりませんが、短い間に何度も汚染を受けると、突然変異を起こしたり、ほかの悪い副作用に苦しんだりします。
+呪文の成功率が高ければ(<input>$cmd[CMD_CAST_SPELL]\?</input>か<input>$cmd[CMD_DISPLAY_SPELLS]</input>で確かめられます)、失敗しても呪文が効かず、無害な副作用が起きるだけです。しかし失敗率の高い呪文では、魔術的汚染を受ける可能性があり、さらに有害な副作用が起きる可能性もあります。魔術的汚染は時間とともに抜けていくので通常は問題になりませんが、短い間に何度も汚染を受けると、変異を起こしたり、ほかの悪い副作用に苦しんだりします。
 
 失敗した呪文でも、成功したときと同じだけのMPを消費することに注意してください。
 %%%%
@@ -1214,7 +1214,7 @@ HINT_CONTAMINATION_MILD
 #   you'll eventually start glowing for real, which can have nasty effects, such as
 #   mutating you or dealing direct damage. In addition, glowing is going to make you
 #   much more noticeable.
-この状態が灰色で表示されている間は、実際には何も起きません。しかし魔術的汚染を受け続けると、やがて本当に光り始め、突然変異を起こしたり直接ダメージを受けたりといった厄介な影響が出ることがあります。さらに、光っているとずっと目立つようになります。
+この状態が灰色で表示されている間は、実際には何も起きません。しかし魔術的汚染を受け続けると、やがて本当に光り始め、変異を起こしたり直接ダメージを受けたりといった厄介な影響が出ることがあります。さらに、光っているとずっと目立つようになります。
 %%%%
 HINT_CONTAMINATION_SEVERE
 
@@ -1223,7 +1223,7 @@ HINT_CONTAMINATION_SEVERE
 #   it seems that you've accumulated so much contamination over a short amount of
 #   time that it can have nasty effects, such as mutating you or dealing direct
 #   damage. In addition, glowing is going to make you much more noticeable.
-汚染は少しずつ自然に抜けていくので通常は問題になりませんが、短い間に汚染がたまりすぎて、突然変異を起こしたり直接ダメージを受けたりといった厄介な影響が出るおそれがあるようです。さらに、光っているとずっと目立つようになります。
+汚染は少しずつ自然に抜けていくので通常は問題になりませんが、短い間に汚染がたまりすぎて、変異を起こしたり直接ダメージを受けたりといった厄介な影響が出るおそれがあるようです。さらに、光っているとずっと目立つようになります。
 %%%%
 HINT_YOU_RESIST
 

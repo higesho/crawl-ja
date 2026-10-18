@@ -113,7 +113,7 @@ CMD_DISPLAY_MUTATIONS
 
 # en:
 #   Display mutations
-突然変異の表示
+変異の表示
 %%%%
 CMD_DISPLAY_SKILLS
 

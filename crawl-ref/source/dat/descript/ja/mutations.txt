@@ -218,7 +218,7 @@ protean grace mutation
 #       num = math.min(you.how_mutated(true, false, false, true, false), 7) - 1
 #       return "+" .. num .. " EV and Slay +" .. num .. " from this mutation."
 #   }}
-あなたの四肢には形態形成の力があふれ、あらゆる動きを導いている。あなたが持つ生来のものでない他の突然変異1つにつき、回避+1と殺傷+1を得て(最大7まで)、近接攻撃と射撃の命中とダメージが高まる。これは、別の形態によって突然変異が抑えられているときにも適用される。
+あなたの四肢には形態形成の力があふれ、あらゆる動きを導いている。あなたが持つ生来のものでない他の変異1つにつき、回避+1と殺傷+1を得て(最大7まで)、近接攻撃と射撃の命中とダメージが高まる。これは、別の形態によって変異が抑えられているときにも適用される。
 
 あなたは現在、この変異によって{{
     num = math.min(you.how_mutated(true, false, false, true, false), 7) - 1
@@ -404,7 +404,7 @@ mutation resistance mutation
 #   Your genetic code is unusually stable, making it less likely that you will be
 #   mutated (or have existing mutations removed). Each level of this mutation makes
 #   you more resistant.
-あなたの遺伝子は異常なほど安定しており、突然変異しにくい(既存の突然変異が取り除かれることも起こりにくい)。この変異のレベルが上がるごとに、より耐性が高まる。
+あなたの遺伝子は異常なほど安定しており、変異しにくい(既存の変異が取り除かれることも起こりにくい)。この変異のレベルが上がるごとに、より耐性が高まる。
 %%%%
 torment resistance mutation
 
@@ -575,14 +575,14 @@ evolution mutation
 # en:
 #   As you gain experience, your body's hidden potential will express itself in the
 #   form of new beneficial mutations.
-経験を積むにつれて、あなたの体に秘められた可能性が、新たな有益な突然変異という形で現れる。
+経験を積むにつれて、あなたの体に秘められた可能性が、新たな有益な変異という形で現れる。
 %%%%
 devolution mutation
 
 # en:
 #   As you gain experience, your body's hidden potential will express itself in the
 #   form of new detrimental mutations.
-経験を積むにつれて、あなたの体に秘められた可能性が、新たな有害な突然変異という形で現れる。
+経験を積むにつれて、あなたの体に秘められた可能性が、新たな有害な変異という形で現れる。
 %%%%
 wild magic mutation
 
@@ -849,7 +849,7 @@ corrupting presence mutation
 #   weapons and defences. The second level of this mutation makes matters even
 #   worse, adding a chance that your wretched victims may become mutated and
 #   deformed.
-あなたが敵を傷つけると、あなたの存在がダメージを強め、敵の武器や防具を腐食させることがある。この変異のレベル2ではさらに事態が悪化し、哀れな犠牲者が突然変異して変形する可能性も加わる。
+あなたが敵を傷つけると、あなたの存在がダメージを強め、敵の武器や防具を腐食させることがある。この変異のレベル2ではさらに事態が悪化し、哀れな犠牲者が変異して変形する可能性も加わる。
 %%%%
 black mark mutation
 
@@ -1548,7 +1548,7 @@ contaminating mutation
 #   surging through will contaminate them. Upon landing the third strike in a row,
 #   this contamination will grow so acute that it will twist their bodily form,
 #   inflicting significant AC-ignoring damage and malmutating them.
-あなたが近接攻撃で敵を打つと、体をほとばしる変成のエネルギーの一部が敵を汚染する。3回連続で攻撃を当てると、汚染はあまりに激しくなり、敵の体の形をねじ曲げて、ACを無視する大きなダメージを与え、有害な突然変異を引き起こす。
+あなたが近接攻撃で敵を打つと、体をほとばしる変成のエネルギーの一部が敵を汚染する。3回連続で攻撃を当てると、汚染はあまりに激しくなり、敵の体の形をねじ曲げて、ACを無視する大きなダメージを与え、有害な変異を引き起こす。
 %%%%
 maw attack mutation
 

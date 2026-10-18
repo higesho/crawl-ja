@@ -210,7 +210,7 @@ show religion screen
 %%%%
 show Abilities/mutations
 
-能力や突然変異の一覧を見る。
+能力や変異の一覧を見る。
 %%%%
 show item knowledge
 

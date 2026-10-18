@@ -318,7 +318,7 @@ plutonium sword
 %%%%
 Mutate:    It occasionally inflicts wild transmutation effects on those it strikes, inflicting malmutation or extra damage, or polymorphing them into a new form.
 
-Mutate:    攻撃した相手に時々激しい変成の効果を及ぼし、有害な突然変異や追加ダメージを与えたり、新たな姿に変身させたりする。
+Mutate:    攻撃した相手に時々激しい変成の効果を及ぼし、有害な変異や追加ダメージを与えたり、新たな姿に変身させたりする。
 %%%%
 # UNRAND_UNDEADHUNTER
 great mace "Undeadhunter"
@@ -732,7 +732,7 @@ lajatang of Order
 %%%%
 Silver:    It inflicts extra damage upon those it strikes, and deals substantially increased damage to chaotic, mutated and magically transformed beings.
 
-Silver:    攻撃した相手に追加ダメージを与え、混沌の存在、突然変異した存在、魔法で変身した存在には大幅に増加したダメージを与える。
+Silver:    攻撃した相手に追加ダメージを与え、混沌の存在、変異した存在、魔法で変身した存在には大幅に増加したダメージを与える。
 %%%%
 # UNRAND_FIRESTARTER
 great mace "Firestarter"

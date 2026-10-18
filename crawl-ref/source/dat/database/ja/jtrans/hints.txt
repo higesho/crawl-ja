@@ -174,7 +174,7 @@ your <w>%</w>bilities
 %%%%
 your set of mutations (<w>%</w>)
 
-突然変異(<w>%</w>)
+変異(<w>%</w>)
 %%%%
 your religious standing (<w>%</w>)
 
@@ -198,7 +198,7 @@ are good things to check.
 %%%%
 This screen shows your character's set of talents. You can gain new abilities via certain items, through religion or by way of mutations. Activation of an ability usually comes at a cost, e.g. Magic power. Press '<w>!</w>' or '<w>?</w>' to toggle between ability selection and description.
 
-この画面にはあなたのキャラクターが持つ能力の一覧が表示されます。特定のアイテム、信仰、突然変異によって新しい能力を得られます。能力の発動には通常、魔力などのコストがかかります。'<w>!</w>'か'<w>?</w>'を押すと、能力の選択と解説の表示を切り替えられます。
+この画面にはあなたのキャラクターが持つ能力の一覧が表示されます。特定のアイテム、信仰、変異によって新しい能力を得られます。能力の発動には通常、魔力などのコストがかかります。'<w>!</w>'か'<w>?</w>'を押すと、能力の選択と解説の表示を切り替えられます。
 %%%%
 This screen shows the skill set of your character. The number next to the skill is your current level, the higher the better. <w>Training</w> displays training percentages. <w>Costs</w> displays relative training costs. <w>Targets</w> displays skill training targets. You can toggle which skills to train by pressing their slot letters. A <darkgrey>grey</darkgrey> skill will not be trained and ease the training of others.
 
@@ -327,7 +327,7 @@ To attack a monster, you can simply walk into it.
 %%%%
 Because of your horns you cannot wear helmets. (Press <w>%</w> to see a list of your mutations and innate abilities.)
 
-あなたには角があるので兜をかぶれない。(突然変異と生まれつきの能力の一覧を見るには<w>[%]</w>を押すこと)
+あなたには角があるので兜をかぶれない。(変異と生まれつきの能力の一覧を見るには<w>[%]</w>を押すこと)
 %%%%
 Only nagas and armataurs can wear barding.
 

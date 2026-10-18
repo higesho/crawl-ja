@@ -470,8 +470,8 @@ Malmutate spell
 # en:
 #   Bestows a mutation on a target. The mutation is almost always harmful. It
 #   cannot affect artificial beings, and the undead will decompose if affected.
-この呪文は対象に突然変異を与える。この突然変異はほぼ確実に有害である。
-人工的な存在は突然変異せず、アンデッドは突然変異しない代わりにいくらか腐敗する。
+この呪文は対象に変異を与える。この変異はほぼ確実に有害である。
+人工的な存在は変異せず、アンデッドは変異しない代わりにいくらか腐敗する。
 %%%%
 Mass Confusion spell
 

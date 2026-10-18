@@ -142,7 +142,7 @@ Exit help lookup
 %%%%
 [lookup type]mutation
 
-突然変異
+変異
 %%%%
 [lookup type]bane
 

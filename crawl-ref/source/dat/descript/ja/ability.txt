@@ -86,7 +86,7 @@ Cure All Mutations ability
 
 # en:
 #   Cures all your mutations — but only once.
-全ての突然変異を治療する-ただし1度だけ。
+全ての変異を治療する-ただし1度だけ。
 %%%%
 Divine Shield ability
 

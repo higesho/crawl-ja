@@ -105,11 +105,11 @@ You fade further into invisibility.
 %%%%
 You cannot mutate at present.
 
-あなたは今のところ突然変異できない。
+あなたは今のところ変異できない。
 %%%%
 You cannot mutate.
 
-あなたは突然変異できない。
+あなたは変異できない。
 %%%%
 Really become a tree while standing in a cloud of %s?
 
@@ -117,7 +117,7 @@ Really become a tree while standing in a cloud of %s?
 %%%%
 Really drink that potion of mutation while resistant to mutation?
 
-突然変異への耐性を持っていますが、本当に突然変異の薬を飲みますか？
+変異への耐性を持っていますが、本当に突然変異の薬を飲みますか？
 %%%%
 Really drink that potion of mutation?
 

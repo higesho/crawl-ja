@@ -649,11 +649,11 @@ fake shatter
 %%%%
 give mutations
 
-突然変異の付与
+変異の付与
 %%%%
 give mutation
 
-突然変異の付与
+変異の付与
 %%%%
 divine lightning + %d bolts
 

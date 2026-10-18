@@ -8,7 +8,7 @@
 # A 画面・変異の一覧
 Innate Abilities, Weirdness & Mutations
 
-先天的/超自然的/もしくは突然変異の能力
+生まれつきの能力・異能・変異
 %%%%
 You are rather mundane.
 

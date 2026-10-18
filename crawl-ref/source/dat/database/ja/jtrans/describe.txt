@@ -170,7 +170,7 @@ It protects you from acid and corrosion.
 %%%%
 It protects you from mutation.
 
-あなたを突然変異から守る。
+あなたを変異から守る。
 %%%%
 It may corrode you when you take damage.
 

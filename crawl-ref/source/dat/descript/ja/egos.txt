@@ -567,5 +567,5 @@ silver (silver) missile ego
 #   It deals increased damage compared to normal missiles and substantially
 #   increased damage to chaotic and magically transformed beings. It also inflicts
 #   extra damage against mutated beings, depending on how mutated they are.
-通常の矢弾より大きなダメージを与え、混沌の存在や魔法で変身した存在にはさらに大きなダメージを与える。突然変異した存在にも、その変異の程度に応じて追加のダメージを与える。
+通常の矢弾より大きなダメージを与え、混沌の存在や魔法で変身した存在にはさらに大きなダメージを与える。変異した存在にも、その変異の程度に応じて追加のダメージを与える。
 %%%%

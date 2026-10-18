@@ -899,7 +899,7 @@ wiz-monster
 
 使える色は<w>brown</w>、<w>cyan</w>、<w>green</w>、<w>purple</w>、<w>red</w>、<w>white</w>。
 
-突然変異獣は、前に成熟度とハイフン区切りの特徴を付けて、以下のように指定できる:
+異形の怪物は、前に成熟度とハイフン区切りの特徴を付けて、以下のように指定できる:
 
 <w>mature shock-weird mutant beast</w>
 

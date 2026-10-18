@@ -44,7 +44,7 @@ The game lasted %s (%d turns).
 %%%%
 ... and %d runes
 
-... さらに%d個のルーンを手にして
+... %d個のルーンとともに
 %%%%
 ... with %d runes
 
@@ -52,7 +52,7 @@ The game lasted %s (%d turns).
 %%%%
 ... and %d gems
 
-... さらに%d個の宝石を手にして
+... %d個の宝石とともに
 %%%%
 ... with %d gems
 

@@ -13,7 +13,7 @@ Cost level: %d  Total experience: %d  Next cost level: %d Skill cost: %d
 %%%%
 Failure to give mutation.
 
-突然変異の付与に失敗しました。
+変異の付与に失敗しました。
 %%%%
 Not a <magenta>Wizard</magenta> Command.
 
@@ -133,7 +133,7 @@ set gold to a specified value
 %%%%
 get a mutation
 
-突然変異を得る
+変異を得る
 %%%%
 toggle a bane
 

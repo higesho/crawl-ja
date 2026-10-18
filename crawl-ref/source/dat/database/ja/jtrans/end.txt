@@ -23,11 +23,11 @@ Best Crawlers - %s
 %%%%
 You can find your morgue file in the '%s' directory.
 
-死亡ダンプは'%s'ディレクトリに置いてあります。
+キャラクターダンプは'%s'ディレクトリに置いてあります。
 %%%%
 You can find your morgue file in the \n'%s'\n directory.
 
-死亡ダンプは\n'%s'\nディレクトリに置いてあります。
+キャラクターダンプは\n'%s'\nディレクトリに置いてあります。
 %%%%
 [insc]unknown
 
