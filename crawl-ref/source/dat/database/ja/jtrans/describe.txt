@@ -1626,11 +1626,11 @@ You are here.
 %%%%
 [item action](q)uiver
 
-(q)矢筒に入れる
+(q)セットする
 %%%%
 [item action]qui(v)er
 
-(v)矢筒に入れる
+(v)セットする
 %%%%
 [item action](w)ear
 

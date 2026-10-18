@@ -146,7 +146,7 @@ Your spells (%s)
 %%%%
 [spell action]quiver
 
-射撃準備
+セット
 %%%%
 # spl-selfench.cc は今は日本語の「忘却」を渡している(訳がなければそのまま表示)
 [spell action]forget

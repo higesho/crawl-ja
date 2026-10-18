@@ -90,7 +90,7 @@ http://crawl.develz.org/ に挙げられているコミュニティの交流の�
                 action_panel_font_size, show_resist_percent
 3-i     色(メッセージとメニュー)
                 menu_colour, message_colour
-3-j     準備、射撃、矢弾
+3-j     セット、射撃、矢弾
                 fire_items_start, fire_order, fire_order_spell,
                 fire_order_ability, fail_severity_to_quiver,
                 quiver_menu_focus

@@ -45,7 +45,7 @@ set Waypoint
 %%%%
 <brown>(</brown> : missiles (<w>%</w>uiver, <w>%</w>ire, <w>%</w>/<w>%</w> cycle)
 
-<brown>(</brown> : 矢弾等 / <w>%</w>)uiverで準備する。
+<brown>(</brown> : 矢弾等 / <w>%</w>)uiverでセットする。
     <w>%</w>)ireで射撃、<w>%</w>/<w>%</w>で切り替える。
 %%%%
 <cyan>[</cyan> : armour (<w>%</w>ear and <w>%</w>ake off)
@@ -375,7 +375,7 @@ autoexplore
 %%%%
 <console><brown>(</brown> : </console>missiles (<w>%</w>uiver, <w>%</w>ire, <w>%</w>/<w>%</w> cycle)
 
-<console><brown>(</brown> : </console>矢弾等 / <w>%</w>)uiverで準備する。
+<console><brown>(</brown> : </console>矢弾等 / <w>%</w>)uiverでセットする。
     <w>%</w>)ireで射撃、<w>%</w>/<w>%</w>で切り替える。
 %%%%
 <console><cyan>[</cyan> : </console>armour (<w>%</w>ear and <w>%</w>ake off)
@@ -768,7 +768,7 @@ HPかMPが全快になるか、何かを発見
 <h>自動戦闘:
 <w>Tab</w>          : 一番近くのモンスターを
                必要なら移動して攻撃する。
-<w>Shift-Tab</w>, <w>p</w> : 準備中の行動を使う。
+<w>Shift-Tab</w>, <w>p</w> : セットした行動を使う。
                照準が必要なら一番近くの
                モンスターを狙う。
 %%%%
@@ -835,15 +835,15 @@ mute/unmute sound effects
 %%%%
 Fire the currently quivered action
 
-準備中の行動を実行する。
+セットした行動を実行する。
 %%%%
 select action to be Quivered
 
-準備する行動を選ぶ。
+セットする行動を選ぶ。
 %%%%
 swap between most recent quiver actions
 
-直前に準備していた行動と入れ替える。
+直前にセットしていた行動と入れ替える。
 %%%%
 Read a scroll
 

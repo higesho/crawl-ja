@@ -415,7 +415,7 @@ tutorial2 exit
   <input>$cmd[CMD_PICKUP]</input>  アイテムを拾う
   <input>$cmd[CMD_EQUIP]</input>  アイテムを装備する<localtiles>
   インベントリの武器を<input>クリック</input>しても可能です。</localtiles>
-  <input>$cmd[CMD_QUIVER_ITEM]</input>  矢筒を設定する
+  <input>$cmd[CMD_QUIVER_ITEM]</input>  行動をセットする
 
 <yellow>モンスター</yellow><localtiles>
   <input>マウスオーバー</input>  モンスターを調べる
@@ -423,8 +423,8 @@ tutorial2 exit
   <input>$cmd[CMD_LOOK_AROUND]</input>  モンスターを調べる
   <input>$cmd[CMD_LOOK_AROUND]$cmd[CMD_TARGET_DESCRIBE]</input> 詳しい説明を読む</nomouse>
   <input>$cmd[CMD_PRIMARY_ATTACK]</input> 手に持った武器で射撃する
-  <input>$cmd[CMD_FIRE]$cmd[CMD_TARGET_SELECT]</input> 選択済みのモンスターに矢筒のものを発射する
-  <input>shift-tab</input>, <input>p</input> 最も近いモンスターに矢筒のものを発射する
+  <input>$cmd[CMD_FIRE]$cmd[CMD_TARGET_SELECT]</input> 選択済みのモンスターにセットしたものを放つ
+  <input>shift-tab</input>, <input>p</input> 最も近いモンスターにセットしたものを放つ
   <input>$cmd[CMD_FIRE]$cmd[CMD_TARGET_CYCLE_FORWARD]</input> 別のモンスターを狙う<localtiles>
   飛び道具を<input>クリック</input>し、<input>Enter</input>で対象を決定しても発射できます。</localtiles>
 
@@ -909,7 +909,7 @@ tutorial4 exit
   <input>$cmd[CMD_CAST_SPELL]</input>  呪文を唱える<localtiles>
   <w>呪文記憶タブ</w>からも新しい呪文を記憶できます。
   記憶している呪文は<input>左クリック</input>で唱えることができ、<input>マウスオーバー</input>か<input>右クリック</input>で説明を読んだり熟練度を確認したりできます。</localtiles>
-  <input>$cmd[CMD_QUIVER_ITEM]</input>  矢筒を設定する
+  <input>$cmd[CMD_QUIVER_ITEM]</input>  行動をセットする
 
   <input>$cmd[CMD_REST]</input>  最大100ターン休息して魔力と体力を回復する
   <input>$cmd[CMD_SHOUT]</input>  味方に命令する
@@ -1107,8 +1107,8 @@ tutorial4 spellquivering
 #   Once you are out of magic points, retreat and rest to regain them with
 #   <input>$cmd[CMD_REST]</input><localtiles> or by <input>clicking</input> the
 #   rest icon in the command panel</localtiles>.
-呪文は、矢弾と同じように矢筒の欄に表示されるので、<input>$cmd[CMD_QUIVER_ITEM]</input>で呪文を矢筒に用意しておくことができます。
-<input>$cmd[CMD_FIRE]</input>か<input>shift-tab</input>で、矢筒に用意した呪文を放ちます。
+呪文は、矢弾と同じようにセットの欄に表示されるので、<input>$cmd[CMD_QUIVER_ITEM]</input>で呪文をセットしておくことができます。
+<input>$cmd[CMD_FIRE]</input>か<input>shift-tab</input>で、セットした呪文を放ちます。
 
 魔力が尽きたら、安全な場所に退いて、<input>$cmd[CMD_REST]</input>を押<localtiles>すか、
 コマンドパネルの休息アイコンを<input>クリック</input></localtiles>して休息し、魔力を回復しましょう。

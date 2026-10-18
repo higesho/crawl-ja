@@ -235,7 +235,7 @@ You aren't wearing any uncursed rings.
 %%%%
 You don't have any quiverable items.
 
-あなたは射撃準備できるアイテムを持っていない。
+あなたはセットできるアイテムを持っていない。
 %%%%
 You aren't carrying any such object.
 

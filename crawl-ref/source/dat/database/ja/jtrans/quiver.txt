@@ -39,14 +39,14 @@ You are too depleted to draw on your magic recklessly!
 
 あなたは消耗しすぎており、むやみに魔力を使えない！
 %%%%
-# ステータス欄の射撃準備の行(quiver_description)
+# ステータス欄のセット(quiver)の行(quiver_description)
 <darkgrey>Empty</darkgrey>
 
 <darkgrey>なし</darkgrey>
 %%%%
 <darkgrey>Nothing quivered</darkgrey>
 
-<darkgrey>射撃準備なし</darkgrey>
+<darkgrey>セットなし</darkgrey>
 %%%%
 # 照準のキー案内(% は insert_commands がキーに置き換える)
 , <w>%</w> - select action
@@ -82,7 +82,7 @@ You fail to reach past %s.
 
 あなたの攻撃は%sに阻まれて届かなかった。
 %%%%
-# 射撃準備の行の見出し(後ろの空白は jtrans_notrim で残る)
+# セットの行の見出し(後ろの空白は jtrans_notrim で残る)
 Continue:
 
 継続:
@@ -99,7 +99,7 @@ Abil:
 
 容量結合
 %%%%
-# 射撃準備の行の動詞(quiver_verb()。変身の素手攻撃の動詞を含む)
+# セットの行の動詞(quiver_verb()。変身の素手攻撃の動詞を含む)
 [quiver verb]confused %s
 
 %s(混乱中)
@@ -255,23 +255,23 @@ off|<w>on</w>
 %%%%
 <lightred>No regular actions available to quiver.</lightred>
 
-<lightred>射撃準備できる通常の行動がない。</lightred>
+<lightred>セットできる通常の行動がない。</lightred>
 %%%%
 Quiver which item? (- for none)
 
-どのアイテムを射撃準備しますか？ (- で準備解除)
+どのアイテムをセットしますか？ (- でセット解除)
 %%%%
 Quiver which item?
 
-どのアイテムを射撃準備しますか？
+どのアイテムをセットしますか？
 %%%%
 Clearing quiver.
 
-射撃準備を解除した。
+セットを解除した。
 %%%%
 Quiver which action?
 
-どの行動を射撃準備しますか？
+どの行動をセットしますか？
 %%%%
 ([<w>-</w>] to clear)
 
@@ -279,9 +279,9 @@ Quiver which action?
 %%%%
 You have nothing to quiver.
 
-射撃準備できるものがない。
+セットできるものがない。
 %%%%
 Really quiver %s?
 
-本当に%sを射撃準備しますか？
+本当に%sをセットしますか？
 %%%%

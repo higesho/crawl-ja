@@ -157,7 +157,7 @@ replica
 %%%%
 (quivered)
 
-(準備中)
+(セット中)
 # 由来の刻印 {…}
 %%%%
 [item origin]god gift

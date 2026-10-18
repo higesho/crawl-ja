@@ -396,7 +396,7 @@ Really rest while Zot is near?
 
 ゾットが近くにいるのに、本当に休憩しますか？
 %%%%
-# --- 射撃の準備 ---
+# --- セット(quiver) ---
 No %squiver actions available for cycling.%s
 
 切り替えられる%s行動がない。%s
@@ -411,7 +411,7 @@ Use [<white>Q</white>] to select from all actions.
 %%%%
 Nothing quivered!
 
-何も準備されていない！
+何もセットされていない！
 %%%%
 You also have %d voucher%s.
 
