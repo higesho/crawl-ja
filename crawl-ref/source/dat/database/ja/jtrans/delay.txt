@@ -335,3 +335,28 @@ Ancestor HP restored.
 
 走行
 %%%%
+You finish doing something buggy.
+
+
+%%%%
+You continue memorising.
+
+あなたは呪文の習得を続けている。
+%%%%
+You continue meditating on the rock.
+
+あなたは壁に向かって瞑想を続けている。
+%%%%
+You continue digging a shaft.
+
+あなたは縦穴を掘り続けている。
+%%%%
+%%%%
+You continue imbuing your servitor.
+
+あなたは従者への付与を続けている。
+%%%%
+You continue imprinting.
+
+あなたは刻印を続けている。
+%%%%

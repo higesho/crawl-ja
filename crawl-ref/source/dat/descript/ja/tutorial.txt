@@ -7,7 +7,8 @@ tutorial intro
 #   <localtiles> or <input>left click</input> with mouse</localtiles> to clear the
 #   <cyan>--more--</cyan> prompts.
 <input>$cmd[CMD_REPLAY_MESSAGES]</input>でいつでもメッセージを読み返すことができます。
-そして、 <cyan>--続く--</cyan> が表示された場合、 <input>Space</input>を押してメッセージ送りしてください。
+また、<cyan>--続く--</cyan>が表示された場合は、<input>Space</input>を押す<localtiles>か、
+マウスで<input>左クリック</input>する</localtiles>とメッセージを送ることができます。
 %%%%
 tutorial1 start
 
@@ -30,22 +31,20 @@ tutorial1 diagonal
 # en:
 #   :nowrap
 #   Move diagonally with the <input>number pad</input> (try Numlock on/off)<localtiles>,</localtiles> <console>or the </console><input>vi keys</input><console>.</console><localtiles>, or <input>mouse</input>.</localtiles>
-#   
+#
 #     Numpad:     <w>7 8 9</w>       vi-keys: <w>   $cmd[CMD_MOVE_UP_LEFT] $cmd[CMD_MOVE_UP] $cmd[CMD_MOVE_UP_RIGHT]</w><localtiles>    Mouse:     <w>click</w> on the floor</localtiles>
 #                  \|/                     \|/
 #                 <w>4</w>-<w>.</w>-<w>6</w> <w>                  $cmd[CMD_MOVE_LEFT]</w>-<w>.</w>-<w>$cmd[CMD_MOVE_RIGHT]</w>
 #                  /|\                     /|\
 #                 <w>1 2 3</w> <w>                  $cmd[CMD_MOVE_DOWN_LEFT] $cmd[CMD_MOVE_DOWN] $cmd[CMD_MOVE_DOWN_RIGHT]</w>
 :nowrap
-あなたは<input>テンキー</input> (Numlockキーで切り替え)または、<input>viキー</input> を使って斜め方向に移動できます。
+<input>テンキー</input>(Numlockのオン/オフを試してください)<localtiles>、</localtiles><console>または</console><input>viキー</input><localtiles>、<input>マウス</input></localtiles>を使って斜め方向に移動できます。
 
-  テンキー:     <w>7 8 9</w>             viキー:   <w>$cmd[CMD_MOVE_UP_LEFT] $cmd[CMD_MOVE_UP] $cmd[CMD_MOVE_UP_RIGHT]</w>
-                 \|/                         \|/
-                <w>4</w>-<w>.</w>-<w>6</w> <w>                      $cmd[CMD_MOVE_LEFT]</w>-<w>.</w>-<w>$cmd[CMD_MOVE_RIGHT]</w>
-                 /|\                         /|\
-                <w>1 2 3</w> <w>                      $cmd[CMD_MOVE_DOWN_LEFT] $cmd[CMD_MOVE_DOWN] $cmd[CMD_MOVE_DOWN_RIGHT]</w>
-
-<localtiles>同様に<input>マウスクリック</input>でも移動することが可能です</localtiles>
+  テンキー:   <w>7 8 9</w>       viキー:  <w>   $cmd[CMD_MOVE_UP_LEFT] $cmd[CMD_MOVE_UP] $cmd[CMD_MOVE_UP_RIGHT]</w><localtiles>    マウス:    床を<w>クリック</w></localtiles>
+               \|/                     \|/
+              <w>4</w>-<w>.</w>-<w>6</w> <w>                  $cmd[CMD_MOVE_LEFT]</w>-<w>.</w>-<w>$cmd[CMD_MOVE_RIGHT]</w>
+               /|\                     /|\
+              <w>1 2 3</w> <w>                  $cmd[CMD_MOVE_DOWN_LEFT] $cmd[CMD_MOVE_DOWN] $cmd[CMD_MOVE_DOWN_RIGHT]</w>
 %%%%
 tutorial1 shiftmove
 
@@ -63,7 +62,7 @@ tutorial1 downstairs
 #   with <input>$cmd[CMD_GO_DOWNSTAIRS]</input><localtiles> or with
 #   a <input>left click</input> on your character</localtiles>.
 下り階段のところに立っているとき、 <input>$cmd[CMD_GO_DOWNSTAIRS]</input>を押<localtiles>すか、
-プレイヤーキャラの上で<input>Shift+クリック</input></localtiles>して一つ下の階層へ移動します。
+プレイヤーキャラを<input>左クリック</input></localtiles>して次の階層へ移動します。
 %%%%
 tutorial1 levelmap
 
@@ -135,7 +134,7 @@ tutorial1 tutorial_end
 
 # en:
 #   Congratulations! You've completed the first lesson!
-#   
+#
 #   To exit the tutorial, simply go up these stairs with
 #   <input>$cmd[CMD_GO_UPSTAIRS]</input><localtiles> or by
 #   <input>left clicking</input> on your character</localtiles>. Confirm the
@@ -143,7 +142,7 @@ tutorial1 tutorial_end
 おめでとう！ あなたは最初のレッスンをやり遂げました！
 
 チュートリアルを終了するには、 <input>$cmd[CMD_GO_UPSTAIRS]</input>を押<localtiles>すか、
-プレイヤーキャラの上で<input>Shift+クリック</input></localtiles>して階段を上ってください。
+プレイヤーキャラを<input>左クリック</input></localtiles>して階段を上ってください。
 その際に現れる入力プロンプトには大文字の<input>Y</input>を入力してください。
 %%%%
 tutorial1 newlevel
@@ -183,62 +182,61 @@ tutorial1 upstairs
 #   with <input>$cmd[CMD_GO_UPSTAIRS]</input><localtiles> or by
 #   <input>left clicking</input> on your character</localtiles>.
 上り階段のところに立っているときに<input>$cmd[CMD_GO_UPSTAIRS]</input>を押<localtiles>すか、
-プレイヤーキャラの上で<input>Shift+クリック</input></localtiles>して一つ上の階層へ移動します。
+プレイヤーキャラを<input>左クリック</input></localtiles>して前の階層へ移動します。
 %%%%
 tutorial1 exit
 
 # en:
 #   :nowrap
 #   <white>Tutorial 1 summary: Movement</white>
-#   
+#
 #   <yellow>Movement commands</yellow>
 #      Numpad:       <w>7 8 9</w>           vi-keys:    <w>$cmd[CMD_MOVE_UP_LEFT] $cmd[CMD_MOVE_UP] $cmd[CMD_MOVE_UP_RIGHT]</w>
 #                     \|/                         \|/
 #                    <w>4</w>-<w>.</w>-<w>6</w>                       <w>$cmd[CMD_MOVE_LEFT]</w>-<w>.</w>-<w>$cmd[CMD_MOVE_RIGHT]</w>
 #                     /|\                         /|\
 #                    <w>1 2 3</w>                       <w>$cmd[CMD_MOVE_DOWN_LEFT] $cmd[CMD_MOVE_DOWN] $cmd[CMD_MOVE_DOWN_RIGHT]</w>
-#   
+#
 #     <input>Shift + direction</input> moves you several squares in this direction.<localtiles>
 #     You also can move by <input>clicking</input> somewhere in sight or on the <w>minimap</w>.</localtiles>
-#   
+#
 #   <yellow>Staircases</yellow>
 #     <input>$cmd[CMD_GO_UPSTAIRS]</input>  go back to the previous level
 #     <input>$cmd[CMD_GO_DOWNSTAIRS]</input>  enter the next level
 #     <input>$cmd[CMD_DISPLAY_MAP]></input>/<input>$cmd[CMD_DISPLAY_MAP]<<</input> travel to the nearest up/downstairs
-#   
+#
 #   <yellow>Doors</yellow> can be opened by walking into them
 #     <input>$cmd[CMD_CLOSE_DOOR]</input>  close an open door
-#   
+#
 #   <yellow>Travel</yellow><localtiles>
 #     mouseclick on the <w>minimap</w></localtiles><nomouse>
 #     <input>$cmd[CMD_DISPLAY_MAP]</input>  enter the level map, travel with <input>Enter</input></nomouse>
 #     <input>$cmd[CMD_EXPLORE]</input>  autoexplore
 :nowrap
+<white>チュートリアル1のまとめ: 移動</white>
+
 <yellow>移動コマンド</yellow>
-  テンキー:      <w>7 8 9</w>             viキー:   <w>$cmd[CMD_MOVE_UP_LEFT] $cmd[CMD_MOVE_UP] $cmd[CMD_MOVE_UP_RIGHT]</w>
+   テンキー:     <w>7 8 9</w>           viキー:     <w>$cmd[CMD_MOVE_UP_LEFT] $cmd[CMD_MOVE_UP] $cmd[CMD_MOVE_UP_RIGHT]</w>
                   \|/                         \|/
                  <w>4</w>-<w>.</w>-<w>6</w>                       <w>$cmd[CMD_MOVE_LEFT]</w>-<w>.</w>-<w>$cmd[CMD_MOVE_RIGHT]</w>
                   /|\                         /|\
                  <w>1 2 3</w>                       <w>$cmd[CMD_MOVE_DOWN_LEFT] $cmd[CMD_MOVE_DOWN] $cmd[CMD_MOVE_DOWN_RIGHT]</w>
 
-  <input>Shift + 方向</input> は指定した方向へ数マス移動します。<localtiles>
-  視界内の任意の地点や <input>ミニマップ</input> を <input>クリック</input> しても移動出来ます。</localtiles>
+  <input>Shift + 方向</input>で、その方向へ何マスか移動します。<localtiles>
+  視界内の任意の地点や<w>ミニマップ</w>を<input>クリック</input>しても移動できます。</localtiles>
 
 <yellow>階段</yellow>
-  <input>$cmd[CMD_GO_UPSTAIRS]</input>  上の階層へ移動する
-  <input>$cmd[CMD_GO_DOWNSTAIRS]</input>  次の階層へ移動する
-  <input>$cmd[CMD_DISPLAY_MAP]></input>/<input>$cmd[CMD_DISPLAY_MAP]<<</input>  最寄りの階段へトラベル
+  <input>$cmd[CMD_GO_UPSTAIRS]</input>  前の階層へ戻る
+  <input>$cmd[CMD_GO_DOWNSTAIRS]</input>  次の階層へ進む
+  <input>$cmd[CMD_DISPLAY_MAP]></input>/<input>$cmd[CMD_DISPLAY_MAP]<<</input> 最寄りの上り/下り階段へトラベル
 
-<yellow>ドア</yellow>
-  ドアのある方向に移動することで開く
-  <input>$cmd[CMD_CLOSE_DOOR]</input>  開いたドアを閉める
+<yellow>扉</yellow>は、その方向へ移動すると開く
+  <input>$cmd[CMD_CLOSE_DOOR]</input>  開いた扉を閉める
 
 <yellow>トラベル</yellow><localtiles>
-  <input>ミニマップ</input>上をクリック</localtiles><nomouse>
+  <w>ミニマップ</w>上をクリック</localtiles><nomouse>
   <input>$cmd[CMD_DISPLAY_MAP]</input>  階層マップを開き、<input>Enter</input>でトラベル</nomouse>
   <input>$cmd[CMD_EXPLORE]</input>  自動探索
-
-                                 <cyan>この画面は <input>任意のキー</input> を押すと終了します...</cyan>
 %%%%
 tutorial2 start
 
@@ -255,10 +253,8 @@ tutorial2 pickup_weapon
 #   then wield it by clicking on it again. Alternatively, pick it up</localtiles>
 #   with <input>$cmd[CMD_PICKUP]</input> or <input>g</input> and then wield it with
 #   <input>$cmd[CMD_EQUIP]</input>.
-<input>$cmd[CMD_PICKUP]</input> または <input>g</input> を押して武器を拾い、
- <input>$cmd[CMD_WIELD_WEAPON]</input> で装備してください。<localtiles> また、
-どちらの行動もインベントリパネルを <input>クリック</input> して実行できます。
-</localtiles>
+<localtiles>インベントリパネルのこの武器を<input>クリック</input>して拾い、もう一度クリックして装備してください。または、</localtiles><input>$cmd[CMD_PICKUP]</input>か<input>g</input>でこの武器を拾い、
+<input>$cmd[CMD_EQUIP]</input>で装備してください。
 %%%%
 tutorial2 melee
 
@@ -275,8 +271,8 @@ tutorial2 resting
 #   minimap</localtiles>. This will make you rest until your health is full, but
 #   will be interrupted by important events.
 いいですね！
-<input>$cmd[CMD_REST]</input><localtiles>を押すか、 もしくはミニマップ下部のコマンドバーの'休息'ボタン</localtiles>を押して休息をとることでHPの減少を回復することができます。
-これは100ターン経つかHPが全快するまでの間休息を取りますが、 様々な重大な出来事が起きると中断されます。
+<input>$cmd[CMD_REST]</input>を押<localtiles>すか、 もしくはミニマップ下部のコマンドバーの'休息'ボタンを押</localtiles>して休息をとることでHPを回復することができます。
+これはHPが全快するまで休息をとりますが、 重大な出来事が起きると中断されます。
 %%%%
 tutorial2 wait
 
@@ -306,11 +302,10 @@ tutorial2 compare_monster_desc
 #   <nomouse>by pressing <input>$cmd[CMD_TARGET_DESCRIBE]</input> while selecting
 #   them in examine mode</nomouse>)
 #   to find out which of these cages is safer to fight through.
-:nowrap
-モンスターを調査してみましょう。(<localtiles><input>マウスオーバー</input></localtiles><nomouse><input>$cmd[CMD_LOOK_AROUND]</input>を押して調査モードに入り、
-<input>$cmd[CMD_TARGET_CYCLE_FORWARD]</input>を押して対象を切り替える</nomouse>)
-そして両者の説明文(<localtiles><input>右クリック</input></localtiles><nomouse>調査モードで対象を選択した状態で<input>$cmd[CMD_TARGET_DESCRIBE]</input>を押す</nomouse>)を比べてみて、
-どちらの檻を通り抜けるべきか判断してください。
+モンスターを調べて(<localtiles><input>マウスオーバー</input>で</localtiles><nomouse><input>$cmd[CMD_LOOK_AROUND]</input>を押して調査モードに入り、
+<input>$cmd[CMD_TARGET_CYCLE_FORWARD]</input>を押して近くのモンスターを切り替えて</nomouse>)、
+両者の説明文を比べ(<localtiles><input>右クリック</input>で</localtiles><nomouse>調査モードで対象を選択した状態で<input>$cmd[CMD_TARGET_DESCRIBE]</input>を押して</nomouse>)、
+どちらの檻を戦いながら通り抜ける方が安全か判断してください。
 %%%%
 tutorial2 downstairs
 
@@ -337,18 +332,18 @@ tutorial2 throwing
 #   panel</localtiles>. To confirm the auto-targeted monster, press
 #   <input>$cmd[CMD_TARGET_SELECT]</input> or <input>Enter</input>. You can skip
 #   this and fire at the closest monster with <input>shift-tab</input> or <input>p</input>.
-<input>$cmd[CMD_FIRE]</input>を押して、
-<localtiles>または持ち物欄の投げ矢を<input>クリック</input>して</localtiles>モンスターに投げ矢を発射することができます。
-自動で選択されたモンスターに発射する場合、
-<input>$cmd[CMD_TARGET_SELECT]</input>または<input>Enter</input>を押してください。
+<input>$cmd[CMD_FIRE]</input>を押<localtiles>すか、
+インベントリパネルのブーメランを<input>クリック</input></localtiles>して、モンスターにブーメランを投げることができます。
+自動で選択されたモンスターに決めるには、<input>$cmd[CMD_TARGET_SELECT]</input>か<input>Enter</input>を押してください。
+これを省いて、<input>shift-tab</input>か<input>p</input>で最も近いモンスターに投げることもできます。
 %%%%
 tutorial2 wield_bow
 
 # en:
 #   Pick up this shortbow and wield it with <input>$cmd[CMD_EQUIP]</input>
 #   <localtiles> or by <input>mouseclick</input></localtiles>.
-弓を拾い、<input>$cmd[CMD_WIELD_WEAPON]</input>
-<localtiles>または<input>マウスクリック</input></localtiles>で装備してください。
+このショートボウを拾い、<input>$cmd[CMD_EQUIP]</input>を押<localtiles>すか、
+<input>マウスクリック</input></localtiles>して装備してください。
 %%%%
 tutorial2 firing
 
@@ -360,14 +355,11 @@ tutorial2 firing
 #   harmless behind the lava, so concentrate on the dummy which can fire at you.
 #   Again, confirm your choice with <input>$cmd[CMD_TARGET_SELECT]</input> or
 #   <input>Enter</input>.
-装備した弓を用いて矢を打ち出すことは投げ矢を投げることと同様に<input>$cmd[CMD_FIRE]</input>
-<localtiles>、または<input>クリック</input></localtiles> から行います。
-ターゲットモード中に<input>$cmd[CMD_TARGET_CYCLE_FORWARD]</input>を押すことで、
-対象になるモンスターを変更することが出来ます。
-ワームは溶岩の先にいて無害ですので、
-あなたに攻撃してくるダミーに集中して攻撃しましょう。
-攻撃を開始するには<input>$cmd[CMD_TARGET_SELECT]</input>、
-または<input>Enter</input>を押して下さい。
+装備したショートボウで矢を放つのは、ブーメランを投げるのとは少し違います。
+<input>$cmd[CMD_PRIMARY_ATTACK]</input>を押<localtiles>すか、<input>マウスクリック</input></localtiles>してください。
+照準モード中に<input>$cmd[CMD_TARGET_CYCLE_FORWARD]</input>を押すと、対象のモンスターを変更できます。
+ワームは溶岩の向こうにいて無害なので、あなたを撃ってくるダミーに集中しましょう。
+ここでも<input>$cmd[CMD_TARGET_SELECT]</input>か<input>Enter</input>を押して決定してください。
 %%%%
 tutorial2 travel_reminder
 
@@ -395,13 +387,13 @@ tutorial2 exit
 # en:
 #   :nowrap
 #   <white>Tutorial 2 summary: Combat</white>
-#   
+#
 #   <yellow>Weapons<console> <cyan>)</cyan></console></yellow>
 #     <input>$cmd[CMD_PICKUP]</input>  pick up an item
 #     <input>$cmd[CMD_EQUIP]</input>  equip an item<localtiles>
 #     You can also do this by <input>clicking</input> on the weapon in your inventory.</localtiles>
 #     <input>$cmd[CMD_QUIVER_ITEM]</input>  adjust your quiver
-#   
+#
 #   <yellow>Monsters</yellow><localtiles>
 #     <input>mouseover</input>  examine a monster
 #     <input>rightclick</input> read a more detailed description</localtiles><nomouse>
@@ -412,30 +404,33 @@ tutorial2 exit
 #     <input>shift-tab</input>, <input>p</input> fire quiver at closest monster
 #     <input>$cmd[CMD_FIRE]$cmd[CMD_TARGET_CYCLE_FORWARD]</input> target another monster<localtiles>
 #     You can also fire a missile by <input>clicking</input> on it, then confirming the target with <input>Enter</input>.</localtiles>
-#   
+#
 #   <yellow>Resting</yellow>
 #     <input>$cmd[CMD_WAIT]</input>  wait and rest a single turn
 #     <input>$cmd[CMD_REST]</input>  wait and rest up to 100 turns
 :nowrap
+<white>チュートリアル2のまとめ: 戦闘</white>
+
 <yellow>武器<console> <cyan>)</cyan></console></yellow>
   <input>$cmd[CMD_PICKUP]</input>  アイテムを拾う
-  <input>$cmd[CMD_WIELD_WEAPON]</input>  武器を装備する<localtiles>
-  インベントリ内の武器を <input>クリック</input> しても可能です。</localtiles>
+  <input>$cmd[CMD_EQUIP]</input>  アイテムを装備する<localtiles>
+  インベントリの武器を<input>クリック</input>しても可能です。</localtiles>
+  <input>$cmd[CMD_QUIVER_ITEM]</input>  矢筒を設定する
 
 <yellow>モンスター</yellow><localtiles>
-  <input>マウスオーバー</input> モンスターを調べる
+  <input>マウスオーバー</input>  モンスターを調べる
   <input>右クリック</input> 詳しい説明を読む</localtiles><nomouse>
   <input>$cmd[CMD_LOOK_AROUND]</input>  モンスターを調べる
   <input>$cmd[CMD_LOOK_AROUND]$cmd[CMD_TARGET_DESCRIBE]</input> 詳しい説明を読む</nomouse>
-  <input>$cmd[CMD_FIRE]$cmd[CMD_TARGET_SELECT]</input> ターゲットに射撃
-  <input>$cmd[CMD_FIRE]$cmd[CMD_TARGET_CYCLE_FORWARD]</input> ターゲット切り替え<localtiles>
-  インベントリ内の矢弾を <input>クリック</input> することでも射撃ができ、 <input>Enter</input>でターゲットを決定できます。</localtiles>
+  <input>$cmd[CMD_PRIMARY_ATTACK]</input> 手に持った武器で射撃する
+  <input>$cmd[CMD_FIRE]$cmd[CMD_TARGET_SELECT]</input> 選択済みのモンスターに矢筒のものを発射する
+  <input>shift-tab</input>, <input>p</input> 最も近いモンスターに矢筒のものを発射する
+  <input>$cmd[CMD_FIRE]$cmd[CMD_TARGET_CYCLE_FORWARD]</input> 別のモンスターを狙う<localtiles>
+  飛び道具を<input>クリック</input>し、<input>Enter</input>で対象を決定しても発射できます。</localtiles>
 
 <yellow>休息</yellow>
   <input>$cmd[CMD_WAIT]</input>  1ターン待機して休息する
-  <input>$cmd[CMD_REST]</input>  100ターン待機して休息する
-
-                                 <cyan>この画面は <input>任意のキー</input> を押すと終了します...</cyan>
+  <input>$cmd[CMD_REST]</input>  最大100ターン待機して休息する
 %%%%
 tutorial3 start
 
@@ -449,9 +444,8 @@ tutorial3 armour
 #   Pick up these boots with <input>$cmd[CMD_PICKUP]</input> and wear them with
 #   <input>$cmd[CMD_EQUIP]</input>.<localtiles> Or simply <input>mouseclick</input>
 #   on them in the inventory panel.</localtiles>
-<input>$cmd[CMD_PICKUP]</input>でブーツを拾い、
-<input>$cmd[CMD_WEAR_ARMOUR]</input>で装備してください。また、
-インベントリ内のブーツを<input>クリック</input>しても装備できます。
+<input>$cmd[CMD_PICKUP]</input>でこのブーツを拾い、
+<input>$cmd[CMD_EQUIP]</input>で装備してください。<localtiles>または、インベントリパネルのブーツを<input>マウスクリック</input>するだけでも装備できます。</localtiles>
 %%%%
 tutorial3 autopickup
 
@@ -491,11 +485,9 @@ tutorial3 ego_weapon
 #   <lightblue>glowing</lightblue> will always be enchanted, or have special
 #   properties, or both. Once you step on top of such an item, its properties will
 #   be revealed to you.
-<lightblue>ルーンが刻まれた</lightblue>または<lightblue>輝く</lightblue>と描写されたアイテムは全て魔術が付与されているか、
-特別な能力を持っているか、あるいはその両方の性質を持っています。
-このシミターを装備して(<input>$cmd[CMD_WIELD_WEAPON]</input>で<localtiles>、
-またはインベントリ内で<input>クリック</input></localtiles>)
-どのようなものか判別してみましょう。
+<lightblue>ルーンが刻まれた</lightblue>または<lightblue>輝く</lightblue>と描写されたアイテムは、必ず強化されているか、
+特別な能力を持っているか、あるいはその両方です。
+そのようなアイテムの上に立つと、その能力が明らかになります。
 %%%%
 tutorial3 inventory
 
@@ -515,8 +507,8 @@ tutorial3 battle
 #   Once you've successfully managed to poison a monster, it is sometimes best to
 #   retreat and let the poison do the work. Don't forget to retreat to heal too, if
 #   necessary.
-あなたがモンスターに毒を盛ることに成功したら、 一旦逃げて毒が回るのを待つのが多くの場合良策です。
-逃げている間に体が回復していくことを忘れずに。
+あなたがモンスターに毒を盛ることに成功したら、 一旦退いて毒が効くのを待つのが良策なこともあります。
+必要であれば、退いて傷を癒すことも忘れずに。
 %%%%
 tutorial3 downstairs
 
@@ -524,9 +516,9 @@ tutorial3 downstairs
 #   Well fought! If necessary, rest up with <input>$cmd[CMD_REST]</input>, then
 #   continue downwards with <input>$cmd[CMD_GO_DOWNSTAIRS]</input><localtiles> or
 #   with a <input>click</input> on your character</localtiles>.
-良い戦いでした! 必要であれば <input>$cmd[CMD_REST]</input> で休息を取り、
-<input>$cmd[CMD_GO_DOWNSTAIRS]</input> <localtiles> または階段の上で
-<input>Shift-クリック</input> </localtiles>で階段を降りて先に進んで下さい。
+よい戦いでした! 必要であれば<input>$cmd[CMD_REST]</input>で休息をとり、
+<input>$cmd[CMD_GO_DOWNSTAIRS]</input>を押<localtiles>すか、
+キャラクターを<input>クリック</input></localtiles>して、さらに下へ進んでください。
 %%%%
 tutorial3 command_help
 
@@ -562,13 +554,10 @@ tutorial3 artefact_armour
 #   unidentified until you step on top of them. Try equipping this cloak with
 #   <input>$cmd[CMD_EQUIP]</input><localtiles> or <input>mouseclick</input>
 #   in the inventory panel</localtiles>.
-<w>珍しい</w> 名前のアイテムはアーティファクトです。
-アーティファクトは多くの特別な能力を持っています。
-例えばこのクロークのようないくらかのアイテムは有名で能力が鑑定済みになりますが、
-一方でランダムな能力を持ち、効果の分からないものも存在します。
-<input>$cmd[CMD_WEAR_ARMOUR]</input><localtiles>、
-またはインベントリ内で<input>クリック</input></localtiles>
-でこのクロークを装備してみてください。
+<w>変わった名前</w>のアイテムはアーティファクトです。アーティファクトはさまざまな特別な能力を持つことがあります。
+(このクロークのような)一部のユニークなアーティファクトは、常に鑑定済みで、他では見られない特別な能力を持っていることがあります!
+それ以外のアーティファクトはランダムに選ばれた能力を持って生成され、その上に立つまでは未鑑定です。
+<input>$cmd[CMD_EQUIP]</input>を押<localtiles>すか、インベントリパネルで<input>マウスクリック</input></localtiles>して、このクロークを装備してみてください。
 %%%%
 tutorial3 wand_fire
 
@@ -594,10 +583,8 @@ tutorial3 amulet
 # en:
 #   Jewellery is put on with <input>$cmd[CMD_EQUIP]</input><localtiles>
 #   or with <input>mouseclick</input> in the inventory panel</localtiles>.
-装飾品は<input>$cmd[CMD_WEAR_JEWELLERY]</input><localtiles>
-またはインベントリ内で<input>クリック</input>
-</localtiles>で装備することができます。幾つかの装飾品は装備した際に鑑定されます。
-その他の装飾品は別の手段で鑑定しなければなりません。
+装飾品は<input>$cmd[CMD_EQUIP]</input>を押<localtiles>すか、
+インベントリパネルで<input>マウスクリック</input></localtiles>して装備します。
 %%%%
 tutorial3 drop
 
@@ -606,9 +593,9 @@ tutorial3 drop
 #   but here and now, it's useless. You may want to drop it with
 #   <input>$cmd[CMD_DROP]</input><localtiles> or by
 #   <input>Shift-leftclicking</input> it in the inventory panel</localtiles>.
-この護符は役立たずだ。これを捨てたいのであれば<input>$cmd[CMD_DROP]</input>
-<localtiles>またはインベントリ内で <input>Shift-クリック</input>
-</localtiles>を押してください。
+この護符は、あなたのキャラクターに崇拝する神がいればとても強力なのですが、今ここでは役に立ちません。
+<input>$cmd[CMD_DROP]</input>を押<localtiles>すか、
+インベントリパネルで<input>Shift+左クリック</input></localtiles>して捨てるとよいでしょう。
 %%%%
 tutorial3 gold
 
@@ -630,11 +617,11 @@ tutorial3 enter_shop
 #   <input>click</input> on your character</localtiles>. To buy items,
 #   select them with their hotkey, hit <input>Enter</input> and confirm with
 #   <input>y</input>es. You can switch to description mode with <input>!</input>.
-店に入るには<input>$cmd[CMD_GO_UPSTAIRS] または $cmd[CMD_GO_DOWNSTAIRS]</input>を押<localtiles>すか、
-プレイヤーキャラの上で<input>クリック</input></localtiles>してください。
-アイテムを購入するにはアイテムに割り当てられた文字を選択し、
+店に入るには<input>$cmd[CMD_GO_UPSTAIRS]</input>を押<localtiles>すか、
+プレイヤーキャラを<input>クリック</input></localtiles>してください。
+アイテムを購入するにはアイテムに割り当てられた文字で選択し、
 <input>Enter</input>を押して、 <input>y</input>esで確定してください。
-<input>!</input>で説明文表示モードと切り替えることもできます。
+<input>!</input>で説明文表示モードに切り替えることもできます。
 %%%%
 tutorial3 autoexplore_reminder
 
@@ -653,11 +640,11 @@ tutorial3 go_shopping
 #   and then enter “<w>shop</w>”. Select the result to start travelling.<localtiles>
 #   You can also <input>click</input> on the search button in the command panel, or
 #   use the minimap to return to the shop.</localtiles>
-あなたは今本格的な買い物に十分な金額を所持しています!店に戻る最も速い手段は検索することです。
+本格的な買い物ができるだけのお金が貯まりました! 店に戻る最も速い方法は、検索することです。
 <input>$cmd[CMD_SEARCH_STASHES]</input>を押して、
-「<w>shop</w>」と入力してください。結果を選択すると自動で移動を開始します。
-<localtiles>同様にコマンドパネルの検索ボタンを<input>クリック</input>するか、
-ミニマップを利用して店に戻ることも可能です。</localtiles>
+「<w>shop</w>」と入力してください。結果を選択するとトラベルを開始します。<localtiles>
+コマンドパネルの検索ボタンを<input>クリック</input>するか、
+ミニマップを使って店に戻ることもできます。</localtiles>
 %%%%
 tutorial3 optional_battle
 
@@ -682,7 +669,7 @@ tutorial3 exit
 # en:
 #   :nowrap
 #   <white>Tutorial 3 summary: Items</white>
-#   
+#
 #   <yellow>Item commands</yellow>
 #     <input>$cmd[CMD_PICKUP]</input>  pick up an item
 #     <input>$cmd[CMD_DROP]</input>  drop an item
@@ -691,44 +678,41 @@ tutorial3 exit
 #     <input>$cmd[CMD_READ]</input>  read a scroll
 #     <input>$cmd[CMD_QUAFF]</input>  quaff a potion
 #     <input>$cmd[CMD_EVOKE]</input>  evoke a wand
-#   
+#
 #     Use and (un)equip commands are also available from item descriptions in the inventory menu (<input>$cmd[CMD_DISPLAY_INVENTORY]</input>).<localtiles>
 #     And of course, <input>mouseclicks</input> also work.</localtiles>
-#   
+#
 #   <yellow>Other</yellow>
 #     <input>$cmd[CMD_DISPLAY_COMMANDS]?</input> access the command help
 #     <input>$cmd[CMD_EXPLORE]</input>  explore automatically
 #     <input>$cmd[CMD_SEARCH_STASHES]</input> search for items/features previously seen<localtiles>
 #     Several of these commands can also be executed by clicking in the <w>command panel</w>.</localtiles>
 :nowrap
+<white>チュートリアル3のまとめ: アイテム</white>
+
 <yellow>アイテムコマンド</yellow>
   <input>$cmd[CMD_PICKUP]</input>  アイテムを拾う
-  <input>$cmd[CMD_WEAR_ARMOUR]</input>  防具を装備する
+  <input>$cmd[CMD_DROP]</input>  アイテムを捨てる
+  <input>$cmd[CMD_EQUIP]</input>  防具、武器、装飾品を装備する
+  <input>$cmd[CMD_UNEQUIP]</input>  防具、武器、装飾品を外す
   <input>$cmd[CMD_READ]</input>  巻物を読む
-  <input>$cmd[CMD_WIELD_WEAPON]</input>  武器を装備する
   <input>$cmd[CMD_QUAFF]</input>  薬を飲む
   <input>$cmd[CMD_EVOKE]</input>  ワンドを発動する
-  <input>$cmd[CMD_WEAR_JEWELLERY]</input>  装飾品を装備する
-  <input>$cmd[CMD_REMOVE_JEWELLERY]</input>  装飾品を外す
-  <input>$cmd[CMD_DROP]</input>  アイテムを落とす
-  これらのコマンドはインベントリ(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)からも使用することができ、アイテム説明文からも同様に可能です。<localtiles>
-  そしてもちろん、 <input>クリック</input> でも可能です。</localtiles>
+
+  使用や装備・解除のコマンドは、インベントリメニュー(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)のアイテム説明からも使えます。<localtiles>
+  そしてもちろん、<input>マウスクリック</input>でも可能です。</localtiles>
 
 <yellow>その他</yellow>
   <input>$cmd[CMD_DISPLAY_COMMANDS]?</input> コマンドヘルプを見る
-  <input>$cmd[CMD_RESISTS_SCREEN]</input>  キャラクター情報を表示する
-  <input>$cmd[CMD_USE_ABILITY]</input>  能力を使用する
   <input>$cmd[CMD_EXPLORE]</input>  自動探索
-  <input>$cmd[CMD_SEARCH_STASHES]</input> 既知のアイテム/施設を検索<localtiles>
-  幾つかのコマンドは <w>コマンドパネル</w> をクリックして実行することができます。</localtiles>
-
-                                 <cyan>この画面は <input>任意のキー</input> を押すと終了します...</cyan>
+  <input>$cmd[CMD_SEARCH_STASHES]</input> 以前に見たアイテム/地形を検索する<localtiles>
+  これらのコマンドのいくつかは、<w>コマンドパネル</w>をクリックしても実行できます。</localtiles>
 %%%%
 tutorial4 start
 
 # en:
 #   In this lesson you're going to learn how to memorise and cast spells.
-このレッスンでは魔法の記憶と詠唱の方法を学んでいきます。
+このレッスンでは呪文の記憶と詠唱の方法を学びます。
 %%%%
 tutorial4 spellcasting
 
@@ -736,17 +720,14 @@ tutorial4 spellcasting
 #   To cast a spell, first memorise it with <input>$cmd[CMD_MEMORISE_SPELL]</input>.
 #   You can then cast it with <input>$cmd[CMD_CAST_SPELL]</input><localtiles> or by
 #   <input>clicking</input> on the spell tile</localtiles>.
-#   
+#
 #   Press <input>$cmd[CMD_CAST_SPELL]</input>, then press <input>?</input> to get a
 #   list of your spells.
- <input>$cmd[CMD_CAST_SPELL]</input><localtiles>
-または呪文タイルを<input>クリック</input>
-</localtiles>で呪文を唱えることができます。
-<input>$cmd[CMD_CAST_SPELL]</input>で覚えている呪文の一覧を参照できます。
+呪文を唱えるには、まず<input>$cmd[CMD_MEMORISE_SPELL]</input>でそれを記憶してください。
+その後、<input>$cmd[CMD_CAST_SPELL]</input>を押<localtiles>すか、
+呪文のアイコンを<input>クリック</input></localtiles>して唱えることができます。
 
-魔力が足りなくなってしまった場合は安全な場所に退避して、
-<input>$cmd[CMD_REST]</input>
-<localtiles>またはコマンドパネル内の休息アイコンを<input>クリック</input>して</localtiles>休息を取りましょう。
+<input>$cmd[CMD_CAST_SPELL]</input>を押してから<input>?</input>を押すと、覚えている呪文の一覧が表示されます。
 %%%%
 tutorial4 ring_power
 
@@ -754,9 +735,9 @@ tutorial4 ring_power
 #   Put on this ring with <input>$cmd[CMD_EQUIP]</input><localtiles> or
 #   by <input>clicking</input> it in the inventory panel</localtiles>, and then
 #   rest up to your new full potential.
-この指輪を<input>$cmd[CMD_WEAR_JEWELLERY]</input>で<localtiles>
-またはインベントリ内で<input>クリック</input>して</localtiles>装備し、
-新たな力を存分に振るえるよう休息をとってください。
+<input>$cmd[CMD_EQUIP]</input>を押<localtiles>すか、
+インベントリパネルでこの指輪を<input>クリック</input></localtiles>して装備し、
+新たに増えた力が満ちるまで休息をとってください。
 %%%%
 tutorial4 undead
 
@@ -774,10 +755,9 @@ tutorial4 spell_success
 #   <localtiles> or <input>mouseover</input> over your memorised
 #   spells</localtiles>. Compare your spell failure rates before and after wearing
 #   this ring.
-<input>$cmd[CMD_DISPLAY_SPELLS]</input><localtiles> 、
-または覚えている呪文に<input>マウスオーバー</input>
-</localtiles>であなたの呪文の熟練度を知ることが出来ます。
-この杖を装備する前と後の呪文の成功率を比べてみてください。
+呪文の熟練度を確かめるには、<input>$cmd[CMD_DISPLAY_SPELLS]</input>を押<localtiles>すか、
+記憶している呪文に<input>マウスオーバー</input></localtiles>してください。
+この指輪を装備する前と後で、呪文の失敗率を比べてみてください。
 %%%%
 tutorial4 mephitic_cloud
 
@@ -823,12 +803,11 @@ tutorial4 forget_spell
 #   <input>clicking</input> on it</localtiles>), and then select the spell you want
 #   to forget. You can relearn forgotten spells from your spell library later, as
 #   long as you have spell slots available.
-経験レベルと呪文詠唱スキルが上昇することで呪文を記憶するための記憶容量を得ることができます。
-新たな呪文を記憶するために<input>呪文を忘れる</input> ことも可能です。
-呪文を忘れる最も簡単な手段は忘却の巻物を使用することです。
-巻物を読み(<input>$cmd[CMD_READ]</input><localtiles>、
-または忘却の巻物を<input>クリック</input>して</localtiles>)、
-忘れたい呪文を選択してください。
+経験レベルが上がったり呪文詠唱スキルが上がったりすると、呪文に割り当てられる呪文スロットが増えます。
+忘却の巻物を読んで<w>記憶している呪文を忘れ</w>、新しい呪文のための空きを作ることもできます。
+巻物を読んで(<input>$cmd[CMD_READ]</input>を押<localtiles>すか、
+巻物を<input>クリック</input></localtiles>して)、忘れたい呪文を選んでください。
+呪文スロットが空いていれば、忘れた呪文は後で呪文ライブラリから記憶し直せます。
 %%%%
 tutorial4 memorise2
 
@@ -837,9 +816,9 @@ tutorial4 memorise2
 #   with <input>$cmd[CMD_MEMORISE_SPELL]</input><localtiles> or by
 #   <input>clicking</input> on the memorisation tab and selecting the spell
 #   tile</localtiles>. Then try your new spell and summon some demonic allies!
-繰り返しになりますが、<input>$cmd[CMD_MEMORISE_SPELL]</input><localtiles>、
-または呪文の記憶タブを<input>クリック</input>して呪文を選択</localtiles>で新たに呪文を記憶することができます。
-するとあなたはアンデッドの軍勢を得ることができます!
+古い呪文をひとつ忘れて空きを作ったら、<input>$cmd[CMD_MEMORISE_SPELL]</input>を押<localtiles>すか、
+呪文記憶タブを<input>クリック</input>して呪文のアイコンを選択</localtiles>して、この新しい呪文を記憶してください。
+そして新しい呪文を試して、悪魔の味方を召喚してみましょう!
 %%%%
 tutorial4 displace_allies
 
@@ -858,9 +837,9 @@ tutorial4 order_allies
 #   wait with <input>$cmd[CMD_WAIT]</input> until your allies have caught
 #   up with you. Your summons will only stick around for a short time, so don't
 #   wait too long, or summon some new ones before starting a fight.
-しもべに敵を殺害させてみましょう!必要であれば、
-<input>$cmd[CMD_SHOUT]</input>でしもべに命令することができます。
-この門を開ける前に<input>$cmd[CMD_WAIT]</input>で待機してしもべがあなたに追いつくまで待つこともできます。
+味方に敵を倒させてみましょう! 必要であれば、<input>$cmd[CMD_SHOUT]</input>で味方に命令することができます。
+この門を開ける前に、<input>$cmd[CMD_WAIT]</input>で待機して、味方があなたに追いつくのを待つとよいでしょう。
+召喚したものは短い時間しかとどまらないので、待ちすぎないようにするか、戦闘を始める前に新しく召喚し直しましょう。
 %%%%
 tutorial4 heavy_armour
 
@@ -872,14 +851,11 @@ tutorial4 heavy_armour
 #   <input>mouseovering</input> your memorised spells</localtiles>. You can take
 #   armour off again with <input>$cmd[CMD_UNEQUIP]</input><localtiles> or,
 #   again, via <input>mouseclick</input></localtiles>.
-重い鎧は呪文の詠唱を大きく阻害します。試しに鎧と盾を身につけ(
-<input>$cmd[CMD_WEAR_ARMOUR]</input><localtiles>、
-または装備したいアイテムを<input>クリック</input></localtiles>)、
-<input>$cmd[CMD_DISPLAY_SPELLS]</input><localtiles>、
-または記憶している呪文に<input>マウスオーバー</input>
-</localtiles>で呪文の成功率を比較してみて下さい。
-<input>$cmd[CMD_REMOVE_ARMOUR]</input><localtiles>、
-または<input>クリック</input></localtiles>で装備を外すことができます。
+重い鎧は呪文の詠唱を大きく妨げます。試しにその鎧と盾を身につけて(<input>$cmd[CMD_EQUIP]</input>を押<localtiles>すか、
+それらを<input>クリック</input></localtiles>して)、<input>$cmd[CMD_DISPLAY_SPELLS]</input>を押<localtiles>すか、
+記憶している呪文に<input>マウスオーバー</input></localtiles>して、呪文の失敗率を比べてみてください。
+<input>$cmd[CMD_UNEQUIP]</input>を押<localtiles>すか、
+ここでも<input>マウスクリック</input></localtiles>して、防具を外すことができます。
 %%%%
 tutorial4 resting_reminder
 
@@ -887,18 +863,17 @@ tutorial4 resting_reminder
 #   Make sure you are at full health and magic points before entering a new area.
 #   If necessary, rest up with <input>$cmd[CMD_REST]</input><localtiles> or by
 #   <input>mouseclick</input> in the command panel</localtiles>.
-#   
+#
 #   You can only summon a limited number of allies at once from any given spell,
 #   so try to take advantage of a wide range of spells. For example, your summoned
 #   imps are resistant to poison, so you can cast Mephitic Cloud to fight alongside
 #   them without harming your allies.
-新たなエリアに入る前に体力と魔力をしっかりと最大まで回復しておきましょう。
-必要であれば、<input>$cmd[CMD_REST]</input><localtiles>、
-またはコマンドパネルの休憩タブを<input>クリック</input>
-</localtiles>で休息を取りましょう。
+新しい場所に入る前に、体力と魔力を最大まで回復させておきましょう。
+必要であれば、<input>$cmd[CMD_REST]</input>を押<localtiles>すか、
+コマンドパネルで<input>マウスクリック</input></localtiles>して休息をとりましょう。
 
-また、アンデッドは呼吸をしませんので、
-しもべに影響を与えることなく悪臭の雲を使用することができます。
+ひとつの呪文で一度に召喚できる味方の数には限りがあるので、さまざまな呪文をうまく活用しましょう。
+例えば、召喚したインプは毒に耐性があるので、悪臭の雲を唱えても味方を傷つけることなく一緒に戦えます。
 %%%%
 tutorial4 tutorial_end
 
@@ -913,7 +888,7 @@ tutorial4 exit
 # en:
 #   :nowrap
 #   <white>Tutorial 4 summary: Magic</white>
-#   
+#
 #   <yellow>Spellcasting commands</yellow>
 #     <input>$cmd[CMD_MEMORISE_SPELL]</input>  learn a new spell
 #     <input>$cmd[CMD_DISPLAY_SPELLS]</input>  check spell proficiency
@@ -921,27 +896,24 @@ tutorial4 exit
 #     You can also learn new spells via the <w>memorisation tab</w>.
 #     You can cast memorised spells via <input>leftclick</input>, and read their descriptions and check your spell proficiency by <input>mouseover</input> or <input>rightclick</input></localtiles>
 #     <input>$cmd[CMD_QUIVER_ITEM]</input>  adjust your quiver
-#   
+#
 #     <input>$cmd[CMD_REST]</input>  rest up to 100 turns to regain magic points and health
 #     <input>$cmd[CMD_SHOUT]</input>  order allies
 #     <input>$cmd[CMD_UNEQUIP]</input>  take off equipment
 :nowrap
+<white>チュートリアル4のまとめ: 魔法</white>
+
 <yellow>魔法コマンド</yellow>
-  <input>$cmd[CMD_MEMORISE_SPELL]</input>  新たに呪文を記憶する
-  <input>$cmd[CMD_DISPLAY_SPELLS]</input>  呪文の熟練度を表示する
-  <input>$cmd[CMD_CAST_SPELL]</input>  呪文を唱える
-<localtiles>      <w>呪文の記憶タブ</w>からでも呪文を記憶することができます。
-     記憶している呪文を<input>クリック</input>することでも呪文を唱えることができ、
-<input>マウスオーバー</input>または<input>右クリック</input>で呪文の説明と熟練度を参照できます。
-</localtiles>
+  <input>$cmd[CMD_MEMORISE_SPELL]</input>  新しい呪文を記憶する
+  <input>$cmd[CMD_DISPLAY_SPELLS]</input>  呪文の熟練度を確認する
+  <input>$cmd[CMD_CAST_SPELL]</input>  呪文を唱える<localtiles>
+  <w>呪文記憶タブ</w>からも新しい呪文を記憶できます。
+  記憶している呪文は<input>左クリック</input>で唱えることができ、<input>マウスオーバー</input>か<input>右クリック</input>で説明を読んだり熟練度を確認したりできます。</localtiles>
+  <input>$cmd[CMD_QUIVER_ITEM]</input>  矢筒を設定する
 
-  <input>$cmd[CMD_READ]</input>  魔法書の説明文を読む、忘却の巻物で呪文を忘れる
-  <input>$cmd[CMD_REST]</input>  100ターン休息して魔力と体力を回復させる。
-  <input>$cmd[CMD_SHOUT]</input>  しもべに命令する
-  <input>$cmd[CMD_REMOVE_ARMOUR]</input>  防具を外す
-
-
-                                 <cyan>この画面は<w>任意のキー</w>を押すと終了します...</cyan>
+  <input>$cmd[CMD_REST]</input>  最大100ターン休息して魔力と体力を回復する
+  <input>$cmd[CMD_SHOUT]</input>  味方に命令する
+  <input>$cmd[CMD_UNEQUIP]</input>  装備を外す
 %%%%
 tutorial5 start
 
@@ -970,18 +942,15 @@ tutorial5 altar
 #   you press <input>!</input><localtiles> or
 #   <input>rightclick</input></localtiles> on the religion screen, you can see a
 #   more detailed description.
-#   
+#
 #   Confirm your choice with <input>J</input> or <input>Enter</input>.
-祭壇の上で<input>$cmd[CMD_PRAY]</input>を押すと、<localtiles>
-(または<input>コマンドパネル内をクリック</input>するか、
-キャラクターを<input>Shift-クリック</input>)</localtiles>
-その神があなたにどのような恩恵をもたらすのか知ることができ、
-入信することができます。その画面を表示している際に、
-<input>!</input>を押す<localtiles>、
-または<input>右クリック</input>する</localtiles>ことで、
-あなたの信仰する神についてのより詳細な説明を見ることができます。
+祭壇の上で<input>$cmd[CMD_GO_DOWNSTAIRS]</input>を押す<localtiles>
+(またはキャラクターを<input>左クリック</input>する)</localtiles>と、祈りを捧げて、
+その神があなたに何をもたらしてくれるのかを知り、入信することができます。
+信仰の画面で<input>!</input>を押す<localtiles>か、
+<input>右クリック</input>する</localtiles>と、より詳しい説明を見ることができます。
 
-大文字の<input>Y</input>を押してあなたの選択を確かなものにしてください。
+<input>J</input>か<input>Enter</input>を押して決定してください。
 %%%%
 tutorial5 religion
 
@@ -1020,10 +989,8 @@ tutorial5 exhaustion
 #   for a short while and are slowed. It's best to rest with
 #   <input>$cmd[CMD_REST]</input><localtiles> (or via the
 #   <w>command panel</w>)</localtiles> until you feel fit again.
-狂戦士の怒りを使用すると非常に疲労してしまいます。
-疲労している間は狂戦士化することができず、減速もします。
-<input>$cmd[CMD_REST]</input><localtiles>
-(または<w>コマンドパネル</w>から)</localtiles>で体調がもとに戻るまで休息をとるのが最善でしょう。
+狂戦士化の怒りは本当に疲れるものです。それが終わった後は、しばらく再び狂戦士化することができず、減速もします。
+<input>$cmd[CMD_REST]</input>で<localtiles>(または<w>コマンドパネル</w>から)</localtiles>体調が戻るまで休息をとるのが一番です。
 %%%%
 tutorial5 berserk2
 
@@ -1049,34 +1016,100 @@ tutorial5 exit
 # en:
 #   :nowrap
 #   <white>Tutorial 5 summary: Religion</white>
-#   
+#
 #   <yellow>Religious commands</yellow>
 #     <input>$cmd[CMD_GO_DOWNSTAIRS]</input>  pray at an altar to join a god
 #     <input>$cmd[CMD_USE_ABILITY]</input>  use a divine ability
 #     <input>$cmd[CMD_DISPLAY_RELIGION]</input>  check your religious standing<localtiles>
 #     A <input>rightclick</input> on the player tile will also bring up the religion screen.</localtiles>
-#   
+#
 #   <yellow>Resting</yellow>
 #     <input>$cmd[CMD_WAIT]</input>  wait and rest a single turn
 #     <input>$cmd[CMD_REST]</input>  wait and rest up to 100 turns
-#   
+#
 #   <yellow>Other commands</yellow>
 #     <input>$cmd[CMD_DISPLAY_OVERMAP]</input> display an overview of the dungeon
 #     <input>$cmd[CMD_DISPLAY_COMMANDS]/</input>  search the description database
 :nowrap
-<yellow>信仰関連のコマンド</yellow>
-  <input>$cmd[CMD_PRAY]</input>  祭壇に祈りを捧げ入信する、死体を捧げる
-  <input>$cmd[CMD_USE_ABILITY]</input>  神の力を行使する
-  <input>$cmd[CMD_DISPLAY_RELIGION]</input>  あなたの信仰の評価を確認する<localtiles>
-  キャラクターを<input>右クリック</input>することでも信仰画面が表示される。</localtiles>
+<white>チュートリアル5のまとめ: 信仰</white>
+
+<yellow>信仰のコマンド</yellow>
+  <input>$cmd[CMD_GO_DOWNSTAIRS]</input>  祭壇で祈りを捧げて神に入信する
+  <input>$cmd[CMD_USE_ABILITY]</input>  神の能力を使う
+  <input>$cmd[CMD_DISPLAY_RELIGION]</input>  信仰の状態を確認する<localtiles>
+  キャラクターのタイルを<input>右クリック</input>しても信仰の画面が表示されます。</localtiles>
 
 <yellow>休息</yellow>
-  <input>$cmd[CMD_WAIT]</input>  1ターン待機し、休息する
-  <input>$cmd[CMD_REST]</input>  100ターン待機し、休息する
+  <input>$cmd[CMD_WAIT]</input>  1ターン待機して休息する
+  <input>$cmd[CMD_REST]</input>  最大100ターン待機して休息する
 
 <yellow>その他のコマンド</yellow>
-  <input>$cmd[CMD_DISPLAY_OVERMAP]</input> ダンジョンの概観を表示する
-  <input>$cmd[CMD_DISPLAY_COMMANDS]/</input>  解説一覧から探す
+  <input>$cmd[CMD_DISPLAY_OVERMAP]</input> 迷宮の概観を表示する
+  <input>$cmd[CMD_DISPLAY_COMMANDS]/</input>  解説データベースを検索する
+%%%%
+tutorial death
 
-                                 <cyan>この画面は<input>任意のキー</input>を押すと終了します...</cyan>
+# en:
+#   You die...
+#
+#   In Crawl, death is a sad but common occurrence. Note that there's usually
+#   something you could have done to survive, for example by using some kind of
+#   item, running away, resting between fights, or by avoiding combat entirely.
+#   Keep trying, eventually you'll prevail!
+あなたは死んだ…
+
+Crawl では、死は悲しいことですがよくある出来事です。たいていは、生き延びるためにできたことが何かあったはずです。例えば、何らかのアイテムを使う、逃げる、戦闘の合間に休息をとる、あるいは戦闘そのものを避ける、といったことです。
+挑戦し続ければ、いつかは勝利できるでしょう!
+%%%%
+tutorial2 boomerangs
+
+# en:
+#   Now, for ranged combat! Pick up these boomerangs with
+#   <input>$cmd[CMD_PICKUP]</input> or <input>g</input><localtiles>, or by
+#   <input>mouseclick</input>,</localtiles> and continue.
+次は遠隔戦闘です! <input>$cmd[CMD_PICKUP]</input>か<input>g</input><localtiles>、または
+<input>マウスクリック</input></localtiles>でこのブーメランを拾って、先に進んでください。
+%%%%
+tutorial3 trap
+
+# en:
+#   Traps can have a variety of unpleasant effects, such as alerting monsters or
+#   teleporting you into danger. Some traps are permanent and will always be
+#   revealed as part of the map, but other traps can be triggered by exploring new
+#   tiles, and won't exist after being triggered. If there's no way around, you'll
+#   have to trigger the trap and deal with the consequences.
+罠はさまざまな不愉快な効果をもたらします。例えば、モンスターに警報を鳴らしたり、あなたを危険のただ中にテレポートさせたりします。
+常設の罠もあり、それらは必ずマップの一部として表示されますが、それ以外の罠は新しいマスを探索したときに作動することがあり、作動した後は消えてしまいます。
+迂回する道がなければ、罠を作動させて、その結果に対処しなければならないでしょう。
+%%%%
+tutorial4 spellbook
+
+# en:
+#   You can memorise a spell from your spell library with
+#   <input>$cmd[CMD_MEMORISE_SPELL]</input><localtiles> or by
+#   <input>clicking</input> on the memorisation tab and selecting the spell
+#   tile</localtiles>. At experience level 1, only level 1 spells are available to
+#   you. This will change as you gain experience. To find new spells, find and pick
+#   up spellbooks, and the spells will be added to your library.
+<input>$cmd[CMD_MEMORISE_SPELL]</input>を押<localtiles>すか、
+呪文記憶タブを<input>クリック</input>して呪文のアイコンを選択</localtiles>して、呪文ライブラリから呪文を記憶することができます。
+経験レベル1では、レベル1の呪文しか使えません。これは経験を積むにつれて変わっていきます。
+新しい呪文を手に入れるには、魔法書を見つけて拾ってください。その呪文が呪文ライブラリに加わります。
+%%%%
+tutorial4 spellquivering
+
+# en:
+#   Spells, like ammo, are shown in the quiver slot, so you can use
+#   <input>$cmd[CMD_QUIVER_ITEM]</input> to ready a spell in the quiver. Use
+#   <input>$cmd[CMD_FIRE]</input> or <input>shift-tab</input> to fire the currently
+#   quivered spell.
+#
+#   Once you are out of magic points, retreat and rest to regain them with
+#   <input>$cmd[CMD_REST]</input><localtiles> or by <input>clicking</input> the
+#   rest icon in the command panel</localtiles>.
+呪文は、矢弾と同じように矢筒の欄に表示されるので、<input>$cmd[CMD_QUIVER_ITEM]</input>で呪文を矢筒に用意しておくことができます。
+<input>$cmd[CMD_FIRE]</input>か<input>shift-tab</input>で、矢筒に用意した呪文を放ちます。
+
+魔力が尽きたら、安全な場所に退いて、<input>$cmd[CMD_REST]</input>を押<localtiles>すか、
+コマンドパネルの休息アイコンを<input>クリック</input></localtiles>して休息し、魔力を回復しましょう。
 %%%%

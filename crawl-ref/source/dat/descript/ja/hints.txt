@@ -1,4 +1,51 @@
 %%%%
+welcome
+
+# en:
+#   <white>Welcome to Dungeon Crawl!</white>
+#
+#   Your objective is to lead your <w>{{ return you.race() }} {{ return you.class()
+#   }}</w> safely through the depths of the dungeon, retrieving the fabled Orb of
+#   Zot and returning it to the surface. In the beginning, however, let discovery
+#   be your main goal. Try to delve as deeply as possible but beware; death lurks
+#   around every corner.
+#
+#   For the moment, just remember the following keys and their functions:
+#     <input>$cmd[CMD_DISPLAY_COMMANDS]?</input> — shows the items and the commands
+#     <input>$cmd[CMD_SAVE_GAME]</input>  — saves the game, to be resumed later
+#   (but note that death is permanent)
+#     <input>$cmd[CMD_LOOK_AROUND]</input>  — examines something in your vicinity
+#
+#   The hint mode will help you play Crawl without reading any documentation. If
+#   you haven't yet, you might want to try out the tutorial. Also, if you feel
+#   intrigued, there is more information available in the following files from the
+#   docs/ directory (all of which can also be read in-game):
+#     <lightblue>quickstart.txt</lightblue>     — A very short guide to Crawl.
+#     <lightblue>crawl_manual.txt</lightblue>   — This contains all details on
+#   species, magic, skills, etc.
+#     <lightblue>options_guide.txt</lightblue>  — Crawl's interface is highly
+#   configurable. This document explains all the options.
+#
+#   Happy Crawling!
+<white>Dungeon Crawl へようこそ！</white>
+
+あなたの目的は、<w>{{ return crawl.tagged_jtrans("[spec name]", you.race()) }}の{{ return crawl.tagged_jtrans("[job]", you.class()) }}</w>を無事にダンジョンの深みへと導き、伝説のゾットのオーブを手に入れて地上へ持ち帰ることです。とはいえ、最初のうちは発見することを一番の目標にしてください。できるだけ深くまで潜ってみましょう。ただし気をつけてください。死はあらゆる曲がり角に潜んでいます。
+
+さしあたっては、以下のキーとその働きだけを覚えておいてください:
+  <input>$cmd[CMD_DISPLAY_COMMANDS]?</input> — アイテムとコマンドの一覧を表示します
+  <input>$cmd[CMD_SAVE_GAME]</input>  — ゲームを保存し、後で再開できるようにします
+(ただし、死んだらそれまでです)
+  <input>$cmd[CMD_LOOK_AROUND]</input>  — 周りにあるものを調べます
+
+解説モードは、説明書を読まなくても Crawl を遊べるよう手助けします。まだなら、チュートリアルも試してみるとよいでしょう。また、興味が湧いたら、docs/ ディレクトリにある以下のファイルにさらに詳しい情報があります(どれもゲーム内でも読めます):
+  <lightblue>quickstart.txt</lightblue>     — Crawl のごく短い手引きです。
+  <lightblue>crawl_manual.txt</lightblue>   — 種族、魔法、技能などのすべての詳細が
+載っています。
+  <lightblue>options_guide.txt</lightblue>  — Crawl のインターフェイスは細かく設定
+できます。この文書はすべてのオプションを説明しています。
+
+それでは、Crawl をお楽しみください！
+%%%%
 death
 
 # en:
@@ -21,12 +68,18 @@ death conjurer melee
 あなたは妖術師ですので、攻撃魔法を主に武器として使うべきでしょう。
 もっと頻繁に呪文を唱えましょう！ 魔力が低下したときには休憩するのを覚えておいてください。
 %%%%
+death berserker unberserked
+
+# en:
+#   Don't forget to go berserk when fighting particularly difficult foes. It's
+#   risky, but makes you faster and beefier.
+特に手ごわい敵と戦うときは、バーサークするのを忘れないでください。危険はありますが、素早く、たくましくなれます。
+%%%%
 death ranger melee
 
 # en:
 #   Your bow and arrows are extremely powerful against distant monsters.
-あなたの持つ弓と矢は、距離をとってモンスターを攻撃することに便利だ。
-ダンジョンの中でそれらを発見したら、必ず確保しておけ！
+あなたの弓と矢は、離れたモンスターに対してとても強力です。
 %%%%
 death random 0
 
@@ -55,6 +108,13 @@ death random 2
 敵との遭遇の合間に、もし可能なら探索済みかつモンスターも掃討した区域内で休息しましょう。
 <input>$cmd[CMD_REST]</input>を押<localtiles>すか、またはコマンドタブの'休息して傷を癒やす'ボタンを<input>クリック</input></localtiles>すと100ターン経過するか、あるいは全快するまで休息します。
 %%%%
+death random 3
+
+# en:
+#   Remember to use those scrolls, potions or wands you've found. Learn to
+#   improvise: you will need to identify potions and scrolls by using them.
+見つけた巻物、薬、ワンドを使うのを忘れないでください。臨機応変に動くことを覚えましょう。薬と巻物は、使ってみて鑑定する必要があります。
+%%%%
 death random 4
 
 # en:
@@ -71,6 +131,15 @@ death random 5
 #   corridor so that they are forced to fight you one on one.
 できうる限り複数の敵と戦わないようにしてください。
 あなたとの一対一の戦いを相手に強いるため、常に通路の奥に引っ込みましょう。
+%%%%
+finished
+
+# en:
+#   Congrats! You survived until the end of hints mode — be sure to try the
+#   other characters as well. Note that the command help screen
+#   (<input>$cmd[CMD_DISPLAY_COMMANDS]?</input>) will look very different from now
+#   on. Here's a last playing hint:
+おめでとうございます！ 解説モードの終わりまで生き延びました。ほかのキャラクターもぜひ試してみてください。コマンドのヘルプ画面(<input>$cmd[CMD_DISPLAY_COMMANDS]?</input>)は、これからはかなり違って見えることに注意してください。最後にプレイのヒントをひとつ:
 %%%%
 finished explored
 
@@ -123,6 +192,17 @@ finished random 0
 .txtで終わる片方のファイルにはあなたの行動記録の写しが含まれています。
 プレイしている最中、<input>$cmd[CMD_CHARACTER_DUMP]</input>を押すことでダンプファイルを生成できます。
 %%%%
+finished random 1
+
+# en:
+#   Crawl has a macro function built in: press <input>$cmd[CMD_MACRO_MENU]</input>
+#   to define a macro by first specifying a trigger key (say, <input>F1</input>)
+#   and a command sequence, for example <input>za.</input>. The latter will make
+#   the <input>F1</input> key always zap the spell in slot a at the nearest
+#   monster. For more information on macros, type
+#   <input>$cmd[CMD_DISPLAY_COMMANDS]~</input>.
+Crawl にはマクロ機能が組み込まれています。<input>$cmd[CMD_MACRO_MENU]</input>を押し、まず起動するキー(例えば<input>F1</input>)を、次にコマンドの並び(例えば<input>za.</input>)を指定してマクロを定義します。こうすると、<input>F1</input>キーで常に a の枠の呪文を一番近いモンスターに放つようになります。マクロについて詳しくは<input>$cmd[CMD_DISPLAY_COMMANDS]~</input>と入力してください。
+%%%%
 finished random 2
 
 # en:
@@ -134,6 +214,72 @@ finished random 2
 全てのオプションは<w>docs</w>フォルダー内の<w>options_guide.txt</w>で説明されています。
 各オプションは<w>init.txt</w>もしくは<w>.crawlrc</w>で設定されています。
 どちらのファイルも見つからなかった場合はエラー表示されます。
+%%%%
+finished random 3
+
+# en:
+#   You can ask other Crawl players for advice and help using any of the community
+#   resources described at http://crawl.develz.org/
+http://crawl.develz.org/ に載っているコミュニティの交流の場で、ほかの Crawl のプレイヤーに助言や助けを求めることができます。
+%%%%
+HINT_CONVERT Ashenzari
+
+# en:
+#   You've just converted to worshipping <w>Ashenzari</w>. Unlike other gods,
+#   Ashenzari only cares about curses. As you explore the dungeon, Ashenzari will
+#   offer curses, locking an item onto you. The more cursed items you wear, the more
+#   Ashenzari will enhance your skills and otherwise help you.
+あなたはたった今<w>アシェンザリ</w>に入信しました。ほかの神と違い、アシェンザリは呪いにしか関心がありません。ダンジョンを探索していくと、アシェンザリはアイテムをあなたから外せなくする呪いを申し出てきます。呪われたアイテムを多く身に着けるほど、アシェンザリはあなたの技能を高め、ほかにも様々な形であなたを助けてくれます。
+%%%%
+HINT_CONVERT Gozag
+
+# en:
+#   You've just converted to worshipping <w>Gozag</w>. Unlike other gods, Gozag only
+#   cares about gold; each divine power costs gold, and your foes turn to gold on
+#   death.
+あなたはたった今<w>ゴザーグ</w>に入信しました。ほかの神と違い、ゴザーグは金にしか関心がありません。神の力を使うたびに金がかかり、あなたの敵は死ぬと金に変わります。
+%%%%
+HINT_CONVERT Ru
+
+# en:
+#   You've just converted to worshipping <w>Ru</w>. Unlike other gods, Ru grants
+#   piety (divine favour) in exchange for permanent sacrifices, like losing the
+#   ability to train certain skills, or permanently losing a hand. The more piety
+#   you have, the more abilities Ru will grant, and the more powerful those
+#   abilities will become. Ru will offer more sacrifices as you explore the depths
+#   of the dungeon.
+あなたはたった今<w>ルー</w>に入信しました。ほかの神と違い、ルーは、特定の技能を鍛えられなくなる、片手を永久に失うといった永続的な犠牲と引き換えに、信仰値(神の恩寵)を授けます。信仰値が高いほど、ルーはより多くの能力を授け、その能力も強力になっていきます。ダンジョンの深みを探索するにつれて、ルーはさらに犠牲を申し出てきます。
+%%%%
+HINT_CONVERT Uskayaw
+
+# en:
+#   You've just converted to worshipping <w>Uskayaw</w>. Unlike other gods,
+#   Uskayaw's favour cannot be gradually gained as you explore the dungeon or slay
+#   monsters. Instead, piety with Uskayaw is gained rapidly in combat as you deal
+#   damage. The longer you remain in combat and the more damage you deal, the
+#   greater the powers you will be offered. Once combat ends, Uskayaw's favour will
+#   be quickly lost, and must be regained in the next battle.
+あなたはたった今<w>ウスカヤー</w>に入信しました。ほかの神と違い、ウスカヤーの恩寵は、ダンジョンを探索したりモンスターを倒したりしても少しずつ得られるものではありません。代わりに、戦闘でダメージを与えると、ウスカヤーへの信仰値が急速に得られます。戦闘を長く続け、多くのダメージを与えるほど、より大きな力が授けられます。戦闘が終わるとウスカヤーの恩寵はすぐに失われ、次の戦いで取り戻さなければなりません。
+%%%%
+HINT_CONVERT Xom
+
+# en:
+#   You've just converted to worshipping <w>Xom</w>. As a follower of Xom, you'll
+#   be treated like a plaything, randomly helped or harmed for Xom's own amusement.
+#
+#   There is no way to guarantee Xom remains in a good mood - the best any follower
+#   can hope for is to avoid letting Xom grow bored!
+あなたはたった今<w>ゾム</w>に入信しました。ゾムの信者はおもちゃのように扱われ、ゾム自身の楽しみのために、気まぐれに助けられたり傷つけられたりします。
+
+ゾムの機嫌が良いままでいることを保証する方法はありません。信者が望める最善のことは、ゾムを退屈させないようにすることだけです！
+%%%%
+HINT_CONVERT Yredelemnul
+
+# en:
+#   You've just converted to worshipping <w>Yredelemnul</w>. Unlike other gods,
+#   Yredelemnul only cares about souls. Your enemies may rise to serve you after
+#   death, and you can expend them to invoke Yredelemnul's aid.
+あなたはたった今<w>イレデレンヌル</w>に入信しました。ほかの神と違い、イレデレンヌルは魂にしか関心がありません。あなたの敵は死後によみがえってあなたに仕えることがあり、その者たちを費やしてイレデレンヌルの助けを呼ぶことができます。
 %%%%
 HINT_CONVERT
 
@@ -153,9 +299,1020 @@ HINT_CONVERT
 あなたは<input>$cmd[CMD_DISPLAY_RELIGION]</input>を押す<localtiles>か、<input>Shift+右クリック</input>する</localtiles>ことであなたの現在の信仰の篤さや神から授けられた能力はもちろん、
 神の好む/嫌う行為を確認することができます。
 %%%%
+HINT_SEEN_FIRST_OBJECT
+
+# en:
+#   That <console>$1 </console>is an item. If you move there and press
+#   <input>$cmd[CMD_PICKUP]</input><localtiles>, or <input>left-click</input> on it
+#   in your inventory</localtiles>, you will pick it up.<console> Generally, items
+#   are shown by non-letter symbols like <w>%?!"=()[</w>.</console> Some
+#   objects<tiles>, marked with a green frame,</tiles> will be picked up
+#   automatically.
+#
+#   Once it is in your inventory, you can drop it again with <localtiles>a
+#   <input>Shift-left-click</input>. Whenever you <input>right-click</input> on an
+#   item</localtiles><console><input>$cmd[CMD_DROP]</input>. Any time you look at an
+#   item in your inventory (<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)</console>,
+#   you can read about its properties and its description.
+それ<console>($1)</console>はアイテムです。そこへ移動して<input>$cmd[CMD_PICKUP]</input>を押す<localtiles>か、所持品の欄でそれを<input>左クリック</input>する</localtiles>と、拾い上げます。<console>一般に、アイテムは<w>%?!"=()[</w>のような文字以外の記号で表示されます。</console>一部の物<tiles>(緑の枠で示されます)</tiles>は自動的に拾い上げられます。
+
+所持品に入れた後は、<localtiles><input>Shift+左クリック</input></localtiles><console><input>$cmd[CMD_DROP]</input></console>でまた置くことができます。<localtiles>アイテムを<input>右クリック</input>すればいつでも</localtiles><console>所持品一覧(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)でアイテムを見ればいつでも</console>、その特性と説明を読むことができます。
+%%%%
+HINT_SEEN_POTION
+
+# en:
+#   You have picked up your first potion<console> ('<w>$item[potion]</w>')</console>.
+#   <localtiles>Simply <w>left-click</w> on it, or press</localtiles>
+#   <nomouse>Press</nomouse> <w>$cmd[CMD_QUAFF]</w> to quaff it.
+#
+#   Once you've identified a potion, either with a scroll of identification or by
+#   drinking it, you'll automatically recognise all other potions of the same type;
+#   this means it's sometimes useful to drink potions just to identify them.
+最初の薬<console>('<w>$item[potion]</w>')</console>を拾いました。<localtiles>それを<w>[左クリック]</w>するか、</localtiles><input>$cmd[CMD_QUAFF]</input>を押すと飲めます。
+
+鑑定の巻物を使うか飲むかして薬を一度鑑定すると、同じ種類のほかの薬もすべて自動的に分かるようになります。そのため、鑑定するためだけに薬を飲むのが役に立つこともあります。
+%%%%
+HINT_SEEN_SCROLL
+
+# en:
+#   You have picked up your first scroll<console> ('<w>$item[scroll]</w>')</console>.
+#   <localtiles>Simply <w>left-click</w> on it, or press</localtiles>
+#   <nomouse>Press</nomouse> <w>$cmd[CMD_READ]</w> to read it.
+#
+#   Once you've identified a scroll, either with a scroll of identification or by
+#   reading it, you'll automatically recognise all other scrolls of the same type;
+#   this means it's sometimes useful to read scrolls just to identify them.
+最初の巻物<console>('<w>$item[scroll]</w>')</console>を拾いました。<localtiles>それを<w>[左クリック]</w>するか、</localtiles><input>$cmd[CMD_READ]</input>を押すと読めます。
+
+鑑定の巻物を使うか読むかして巻物を一度鑑定すると、同じ種類のほかの巻物もすべて自動的に分かるようになります。そのため、鑑定するためだけに巻物を読むのが役に立つこともあります。
+%%%%
+HINT_SEEN_WAND
+
+# en:
+#   You have picked up your first wand<console> ('<w>$item[wand]</w>')</console>.
+#   <localtiles>Simply <w>left-click</w> on it, or press</localtiles>
+#   <nomouse>Press</nomouse> <w>$cmd[CMD_EVOKE]</w> to evoke it.
+#
+#   If you find more wands of the same type, they'll merge into this wand and add
+#   charges to it.
+最初のワンド<console>('<w>$item[wand]</w>')</console>を拾いました。<localtiles>それを<w>[左クリック]</w>するか、</localtiles><input>$cmd[CMD_EVOKE]</input>を押すと発動できます。
+
+同じ種類のワンドをさらに見つけると、このワンドにまとまり、使用回数が増えます。
+%%%%
+HINT_SEEN_SPBOOK
+
+# en:
+#   You have picked up a book<console> ('<w>$item[book]</w>')</console>. On pickup,
+#   its spells are immediately added to your library. You'll be able to memorise
+#   spells from it via <w>$cmd[CMD_MEMORISE_SPELL]</w>, and cast them with
+#   <w>$cmd[CMD_CAST_SPELL]</w>.
+#   {{
+#       if you.god() == "Trog" then
+#           return "Trog hates it when you memorise or study magic, though!"
+#       end
+#   }}
+本<console>('<w>$item[book]</w>')</console>を拾いました。拾うと、その本の呪文はすぐにあなたの呪文ライブラリに加わります。その呪文は<input>$cmd[CMD_MEMORISE_SPELL]</input>で記憶し、<input>$cmd[CMD_CAST_SPELL]</input>で唱えることができます。
+{{
+    if you.god() == "Trog" then
+        return "ただし、トログはあなたが魔法を記憶したり学んだりするのをひどく嫌います！"
+    end
+}}
+%%%%
+HINT_SEEN_WEAPON
+
+# en:
+#   This is the first weapon<console> ('<w>$item[weapon]</w>')</console> you've
+#   picked up. Use <w>$cmd[CMD_WIELD_WEAPON]</w><localtiles> or
+#   <w>left-click</w> on it</localtiles> to wield it, but be aware that this
+#   weapon might train a different skill from your current one. You can view the
+#   weapon's properties from your
+#   <w>$cmd[CMD_DISPLAY_INVENTORY]</w>nventory<localtiles> or by
+#   <w>right-clicking</w> on it</localtiles>.
+#
+#   {{
+#       if crawl.hints_type() == "berserk" then
+#           return "You should probably stick with axes. Checking other axes'"
+#                  .. " enchantments can be worthwhile, though!"
+#       end
+#   }}
+これはあなたが最初に拾った武器<console>('<w>$item[weapon]</w>')</console>です。<input>$cmd[CMD_WIELD_WEAPON]</input><localtiles>か<w>[左クリック]</w></localtiles>で手に持てますが、この武器は今の武器とは別の技能を鍛えるかもしれないことに注意してください。武器の特性は所持品一覧(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)<localtiles>か、武器を<w>[右クリック]</w>すること</localtiles>で見られます。
+
+{{
+    if crawl.hints_type() == "berserk" then
+        return "おそらく斧を使い続けるべきでしょう。ただ、ほかの斧の強化値を"
+               .. "確かめてみる価値はあります！"
+    end
+}}
+%%%%
+HINT_SEEN_MISSILES
+
+# en:
+#   This is the first stack of missiles<console> ('<w>$item[missile]</w>')</console>
+#   you've picked up. Missiles like boomerangs and throwing nets can be thrown by
+#   hand, and become more effective as you train the Throwing skill.
+#   <localtiles><w>Right-click</w> on</localtiles><nomouse>Select</nomouse>
+#   the item in your <w>$cmd[CMD_DISPLAY_INVENTORY]</w>nventory to see more
+#   information.
+#
+#   {{
+#       if crawl.hints_type() == "ranger" then
+#           return "As you're already trained in Ranged Weapons, you don't really "
+#                  .. "need another type of ranged attack."
+#       elseif crawl.hints_type() == "magic" then
+#           return "However, as a spellslinger, you don't really need another type"
+#                  .. " of ranged attack."
+#       else
+#           return ""
+#       end
+#   }}
+これはあなたが最初に拾った飛び道具の山<console>('<w>$item[missile]</w>')</console>です。ブーメランや投げ網のような飛び道具は手で投げることができ、投擲の技能を鍛えるほど効果が高まります。所持品一覧(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)でそのアイテムを<localtiles><w>[右クリック]</w></localtiles><nomouse>選ぶ</nomouse>と、詳しい情報が見られます。
+
+{{
+    if crawl.hints_type() == "ranger" then
+        return "すでに射撃武器を鍛えているので、別の種類の遠隔攻撃は"
+               .. "あまり必要ありません。"
+    elseif crawl.hints_type() == "magic" then
+        return "とはいえ、呪文の使い手であるあなたには、別の種類の遠隔攻撃は"
+               .. "あまり必要ありません。"
+    else
+        return ""
+    end
+}}
+%%%%
+HINT_SEEN_ARMOUR
+
+# en:
+#   This is the first piece of armour<console> ('<w>$item[armour]</w>')</console>
+#   you've picked up. <localtiles>You can click on it to wear it, and click again
+#   to remove it. <w>Right-clicking</w> on it will give more information.
+#   </localtiles><nomouse>Use <w>$cmd[CMD_WEAR_ARMOUR]</w> to wear it and
+#   <w>$cmd[CMD_REMOVE_ARMOUR]</w> to take it off again. You can view its
+#   properties from your <w>$cmd[CMD_DISPLAY_INVENTORY]</w>nventory.
+#   </nomouse>
+#
+#   {{
+#       if you.get_base_mutation_level("horns") > 0 then
+#           return "Note that because of your horns you will be unable to wear"
+#                  .. " helmets. (Press <w>$cmd[CMD_DISPLAY_MUTATIONS]</w> to see"
+#                  .. " a list of your mutations and innate abilities.)"
+#       end
+#   }}
+これはあなたが最初に拾った防具<console>('<w>$item[armour]</w>')</console>です。<localtiles>クリックすると着用し、もう一度クリックすると脱ぎます。<w>[右クリック]</w>すると詳しい情報が見られます。
+</localtiles><nomouse><input>$cmd[CMD_WEAR_ARMOUR]</input>で着用し、<input>$cmd[CMD_REMOVE_ARMOUR]</input>で脱ぎます。防具の特性は所持品一覧(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)で見られます。
+</nomouse>
+
+{{
+    if you.get_base_mutation_level("horns") > 0 then
+        return "角があるため兜をかぶれないことに注意してください。"
+               .. "(突然変異と生まれつきの能力の一覧は"
+               .. "<input>$cmd[CMD_DISPLAY_MUTATIONS]</input>を押すと見られます。)"
+    end
+}}
+%%%%
+HINT_SEEN_JEWELLERY
+
+# en:
+#   You have picked up a piece of jewellery, either a ring
+#   <console>('<w>$item[jewellery]</w>') </console>or an
+#   amulet<console> ('<w>$item[amulet]</w>')</console>.
+#   <nomouse>Press <w>$cmd[CMD_WEAR_JEWELLERY]</w> to put it on and
+#   <w>$cmd[CMD_REMOVE_JEWELLERY]</w> to remove it. You can view its properties
+#   from your <w>$cmd[CMD_DISPLAY_INVENTORY]</w>nventory.</nomouse>
+#   <localtiles>You can click on it to put it on, and click again to remove it. By
+#   <w>right-clicking</w> on it, you can view its properties.</localtiles>
+装飾品を拾いました。指輪<console>('<w>$item[jewellery]</w>')</console>か護符<console>('<w>$item[amulet]</w>')</console>のどちらかです。<nomouse><input>$cmd[CMD_WEAR_JEWELLERY]</input>で身に着け、<input>$cmd[CMD_REMOVE_JEWELLERY]</input>で外します。特性は所持品一覧(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)で見られます。</nomouse><localtiles>クリックすると身に着け、もう一度クリックすると外します。<w>[右クリック]</w>すると特性が見られます。</localtiles>
+%%%%
+HINT_SEEN_MISC
+
+# en:
+#   This is a curious object indeed. You can play around with it to find out what
+#   it does by <localtiles>clicking on it to e<w>$cmd[CMD_EVOKE]</w>oke </localtiles>
+#   <nomouse>e<w>$cmd[CMD_EVOKE]</w>oking </nomouse>it. As usual, selecting it from
+#   your <w>$cmd[CMD_DISPLAY_INVENTORY]</w>nventory might give you more information.
+これは実に不思議な物です。<localtiles>クリックして</localtiles>発動(<input>$cmd[CMD_EVOKE]</input>)していろいろ試してみれば、何をするものか分かるでしょう。いつものように、所持品一覧(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)で選ぶと詳しい情報が分かるかもしれません。
+%%%%
+HINT_SEEN_STAFF
+
+# en:
+#   You have picked up a magic staff<console> ('<w>$item[magical staff]</w>')</console>.
+#   It must be <w>$cmd[CMD_WIELD_WEAPON]</w>ielded to be of use. Magicians use
+#   staves to increase their power in certain spell schools. It can also be used as
+#   a weapon.<localtiles> You can wield a staff by <w>left-clicking</w>.</localtiles>
+魔法の杖<console>('<w>$item[magical staff]</w>')</console>を拾いました。役立てるには手に持つ(<input>$cmd[CMD_WIELD_WEAPON]</input>)必要があります。魔術師は杖を使って特定の呪文の系統の力を高めます。武器としても使えます。<localtiles>杖は<w>[左クリック]</w>で手に持てます。</localtiles>
+%%%%
+HINT_SEEN_GOLD
+
+# en:
+#   You have picked up your first pile of gold<console>
+#   ('<yellow>$item[gold]</yellow>')</console>. Press <w>$cmd[CMD_LIST_GOLD]</w> to
+#   see how much you have. Gold is used in shops you'll find as you explore.
+最初の金貨の山<console>('<yellow>$item[gold]</yellow>')</console>を拾いました。<input>$cmd[CMD_LIST_GOLD]</input>を押すと所持金が分かります。金貨は、探索中に見つかる店で使います。
+%%%%
+HINT_SEEN_STAIRS
+
+# en:
+#   These<console> '$1'</console> are downstairs. You can enter the next (deeper)
+#   level by following them down (<w>$cmd[CMD_GO_DOWNSTAIRS]</w>). To return to this
+#   level, press <w>$cmd[CMD_GO_UPSTAIRS]</w> while standing on the upstairs. When
+#   you take stairs, you are guaranteed a opportunity to act before any monsters you
+#   have not seen before; after that, monsters get to move first.
+#
+#   <localtiles>Alternatively, you can <w>left-click</w> on stairs you're standing
+#   on to use them.</localtiles>
+これ<console>('$1')</console>は下り階段です。階段を下りる(<input>$cmd[CMD_GO_DOWNSTAIRS]</input>)と、次の(より深い)階に入ります。この階に戻るには、上り階段の上で<input>$cmd[CMD_GO_UPSTAIRS]</input>を押します。階段を使うと、まだ見たことのないモンスターよりも先に行動する機会が必ず得られます。その後は、モンスターが先に動きます。
+
+<localtiles>立っている階段を<w>[左クリック]</w>して使うこともできます。</localtiles>
+%%%%
+HINT_SEEN_ESCAPE_HATCH
+
+# en:
+#   This<console> '$1'</console> is an escape hatch. You can use it to leave a
+#   level with <w>$cmd[CMD_GO_UPSTAIRS]</w> and <w>$cmd[CMD_GO_DOWNSTAIRS]</w>
+#   respectively<localtiles> (or by<w>left-clicking</w>)</localtiles>, like stairs;
+#   unlike stairs, however, hatches are a one-way trip, so be careful when
+#   descending!
+これ<console>('$1')</console>は脱出用のハッチです。階段と同じように、<input>$cmd[CMD_GO_UPSTAIRS]</input>や<input>$cmd[CMD_GO_DOWNSTAIRS]</input><localtiles>(または<w>[左クリック]</w>)</localtiles>でその階を離れるのに使えます。ただし階段と違い、ハッチは一方通行なので、下りるときは気をつけてください！
+%%%%
+HINT_SEEN_BRANCH
+
+# en:
+#   This<console> '$1'</console> is the entrance to a different branch of the
+#   dungeon. Each branch has different terrain and monsters, and some contain
+#   entrances to other branches. You can learn more by examining this
+#   entrance<localtiles> by hovering your mouse over its tile</localtiles><nomouse
+#   by pressing <w>$cmd[CMD_LOOK_AROUND]</w> and moving the cursor onto it."
+#
+#   Some branches will be much safer and more rewarding than your current branch.
+#   Others can be very dangerous, better visited when your character is more
+#   powerful.
+これ<console>('$1')</console>は、ダンジョンの別の分岐への入口です。分岐ごとに地形やモンスターが違い、中にはさらに別の分岐への入口がある分岐もあります。<localtiles>マウスをこの入口のタイルに重ねて</localtiles><nomouse><input>$cmd[CMD_LOOK_AROUND]</input>を押し、カーソルを入口に合わせて</nomouse>調べると、詳しいことが分かります。
+
+分岐の中には、今いる分岐よりずっと安全で実入りの良いものもあります。一方で、とても危険で、キャラクターがもっと強くなってから訪れた方がよいものもあります。
+%%%%
+HINT_SEEN_PORTAL
+
+# en:
+#   This<console> '$1'</console> is a portal to an optional level, offering extra
+#   loot in exchange for extra danger. There's no penalty for skipping it, but the
+#   portal will disappear if you wait, so you have to decide now if you want to risk
+#   it.
+これ<console>('$1')</console>は、追加の危険と引き換えに追加の戦利品が得られる、寄り道の階へのポータルです。入らなくても罰はありませんが、待っているとポータルは消えてしまうので、危険を冒すかどうかは今決めなければなりません。
+%%%%
+HINT_SEEN_BAZAAR_PORTAL
+
+# en:
+#   This<console> '$1'</console> is a portal to an inter-dimensional bazaar filled
+#   with shops. It will disappear if you don't enter it soon, so hurry.
+これ<console>('$1')</console>は、店が立ち並ぶ異次元のバザールへのポータルです。すぐに入らないと消えてしまうので、急いでください。
+%%%%
+HINT_SEEN_PORTAL_2
+
+# en:
+#   You can enter a portal just like a set of stairs, by standing on it and
+#   <localtiles><w>clicking</w> or </localtiles>pressing
+#   <w>$cmd[CMD_GO_DOWNSTAIRS]</w>. To return, find <tiles>a similar looking portal.
+#   </tiles><console>another $1 - but NOT the ancient stone arch you'll start out
+#   on!</console>
+ポータルには階段と同じように、その上に立って<localtiles><w>[クリック]</w>するか、</localtiles><input>$cmd[CMD_GO_DOWNSTAIRS]</input>を押すと入れます。戻るには、<tiles>似た見た目のポータルを</tiles><console>別の$1を(ただし、最初に立っていた古代の石のアーチではありません！)</console>探してください。
+%%%%
+HINT_STAIR_BRAND
+
+# en:
+#   <tiles>A small symbol on a stair tile signifies that there are items in that
+#   position that you may want to check out.</tiles>
+#   <console>If any items are covering stairs or an escape hatch, then that will
+#   be indicated by highlighting the <w><<</w> or <w>></w> symbol, instead of hiding
+#   the stair symbol with an item glyph.</console>
+<tiles>階段のタイルに小さな記号があるときは、その場所に調べてみたくなるようなアイテムがあることを示しています。</tiles>
+<console>階段や脱出用のハッチの上にアイテムがあるときは、階段の記号をアイテムの記号で隠す代わりに、<w><<</w>や<w>></w>の記号を強調表示して示します。</console>
+%%%%
+HINT_HEAP_BRAND
+
+# en:
+#   <tiles>A small symbol on an item tile signifies that there is at least one other
+#   item in the same heap that you may want to check out.</tiles>
+#   <console>If two or more items are on a single square, then the square will be
+#   highlighted, and the symbol for the item on the top of the heap will be shown.
+#   </console>
+<tiles>アイテムのタイルに小さな記号があるときは、同じ山の中に調べてみたくなるようなアイテムがほかにも少なくとも1つあることを示しています。</tiles>
+<console>1つのマスに2つ以上のアイテムがあるときは、そのマスが強調表示され、山の一番上のアイテムの記号が表示されます。
+</console>
+%%%%
+HINT_TRAP_BRAND
+
+# en:
+#   <console>If any items are covering a trap, then that will be indicated by
+#   highlighting the <w>^</w> symbol, instead of hiding the trap symbol with an item
+#   glyph.</console>
+<console>罠の上にアイテムがあるときは、罠の記号をアイテムの記号で隠す代わりに、<w>^</w>の記号を強調表示して示します。</console>
+%%%%
+HINT_SEEN_TRAP
+
+# en:
+#   You just discovered a trap. You'll occasionally find these nasty
+#   constructions.
+罠を発見しました。こうした厄介な仕掛けには時々出くわします。
+%%%%
+HINT_SEEN_ALTAR
+
+# en:
+#   That<console> $1</console> is an altar.
+#   <localtiles>By <w>right-clicking</w> on it with your mouse</localtiles>
+#   <nomouse>If you target the altar with <w>$cmd[CMD_LOOK_AROUND]</w>, then press
+#   <w>$cmd[CMD_TARGET_DESCRIBE]</w></nomouse> you can get a short description.
+#
+#   Press <w>$cmd[CMD_GO_UPSTAIRS]</w> or <w>$cmd[CMD_GO_DOWNSTAIRS]</w> while
+#   standing on the square to join the faith or read some information about the god
+#   in question. Before taking up the corresponding faith you'll be asked for
+#   confirmation.
+#
+#   {{
+#       if you.god() == "No God" and crawl.hints_type() == "magic" then
+#           return "The simplest god for an inexperienced conjurer is probably "
+#                  .. "Vehumet, though many other gods, like Sif Muna, can also "
+#                  .. "work well."
+#       end
+#   }}
+これ<console>($1)</console>は祭壇です。<localtiles>マウスで<w>[右クリック]</w>する</localtiles><nomouse><input>$cmd[CMD_LOOK_AROUND]</input>で祭壇に狙いを付けてから<input>$cmd[CMD_TARGET_DESCRIBE]</input>を押す</nomouse>と、短い説明が読めます。
+
+そのマスの上に立って<input>$cmd[CMD_GO_UPSTAIRS]</input>か<input>$cmd[CMD_GO_DOWNSTAIRS]</input>を押すと、その神に入信したり、その神についての情報を読んだりできます。入信する前には確認を求められます。
+
+{{
+    if you.god() == "No God" and crawl.hints_type() == "magic" then
+        return "経験の浅い妖術師にとって一番分かりやすい神は、おそらく"
+               .. "ヴェフメットでしょう。ただし、シフ・ムーナなどほかの多くの神も"
+               .. "うまく合います。"
+    end
+}}
+%%%%
+HINT_SEEN_SHOP
+
+# en:
+#   That<console> $1</console> is a shop. You can enter it by typing
+#   <w>$cmd[CMD_GO_UPSTAIRS]</w> or <w>$cmd[CMD_GO_DOWNSTAIRS]</w>
+#   <tiles>, or by <w>left-clicking</w> on it<tiles>
+#   while standing on the square.
+#
+#   If there's anything you want which you can't afford yet, you can hold
+#   <w>Shift</w> and press the corresponding letter to put it on your shopping list.
+#   The game will then remind you when you gather enough gold to buy it.
+これ<console>($1)</console>は店です。そのマスの上に立って<input>$cmd[CMD_GO_UPSTAIRS]</input>か<input>$cmd[CMD_GO_DOWNSTAIRS]</input>を押す<tiles>か、店を<w>[左クリック]</w>する</tiles>と中に入れます。
+
+まだ買えない欲しい物があるときは、<w>[Shift]</w>を押しながら対応する文字を押すと、買い物リストに加えられます。買えるだけの金貨が集まると、ゲームが知らせてくれます。
+%%%%
+HINT_SEEN_DOOR
+
+# en:
+#   That<console> $1</console> is a closed door. You can open it by walking into it.
+#   Sometimes it is useful to close a door. Do so by <nomouse>pressing
+#   <w>$cmd[CMD_CLOSE_DOOR]</w> while next to it. If there are several doors, you
+#   will then be prompted for a direction.</nomouse><localtiles>clicking on the door
+#   while next to it.</localtiles>
+これ<console>($1)</console>は閉じた扉です。扉に向かって歩けば開けられます。扉を閉めると役に立つこともあります。閉めるには、<nomouse>扉の隣で<input>$cmd[CMD_CLOSE_DOOR]</input>を押します。扉が複数ある場合は、方向を尋ねられます。</nomouse><localtiles>扉の隣でその扉をクリックします。</localtiles>
+%%%%
+HINT_SEEN_RUNED_DOOR
+
+# en:
+#   That<console> $1</console> is a runed door, which is probably in front of
+#   something unusually dangerous. Monsters will never open it. If you do, the runes
+#   will be broken, and it will become a normal door.
+これ<console>($1)</console>はルーンで封印された扉で、おそらく並外れて危険な何かの前にあります。モンスターがこの扉を開けることは決してありません。あなたが開けるとルーンが壊れ、普通の扉になります。
+%%%%
+HINT_KILLED_MONSTER
+
+# en:
+#   Congratulations, your character just gained experience by killing this monster!
+#   This will raise some of your skills, making you more deadly.
+#   {{
+#       if you.god() == "Trog" then
+#           return "Also, most kills will grant you favour in the eyes of Trog."
+#       end
+#   }}
+おめでとうございます。このモンスターを倒して、あなたのキャラクターは経験値を得ました！ これによりいくつかの技能が上がり、より手ごわくなります。
+{{
+    if you.god() == "Trog" then
+        return "また、たいていのモンスターを倒すと、トログの覚えがめでたくなります。"
+    end
+}}
+%%%%
+HINT_NEW_LEVEL
+
+# en:
+#   Well done! Reaching a new experience level is always a nice event. You get more
+#   health and magic points, and occasionally increases to your attributes:
+#   strength, intelligence, and dexterity.
+#
+#   {{
+#       if crawl.hints_type() == "magic" then
+#           return "Gaining an experience level also lets you learn more difficult"
+#                  .. " spells. You can memorise a second spell with"
+#                  .. " <w>$cmd[CMD_MEMORISE_SPELL]</w><tiles> or by"
+#                  .. " <w>clicking</w> on it in the memorisation tab</tiles>."
+#       end
+#   }}
+よくやりました！ 新しい経験レベルに達するのはいつでも嬉しいことです。体力と魔力が増え、ときどき能力値(腕力、知力、器用さ)も上がります。
+
+{{
+    if crawl.hints_type() == "magic" then
+        return "経験レベルが上がると、より難しい呪文も覚えられるようになります。"
+               .. "2つ目の呪文は<input>$cmd[CMD_MEMORISE_SPELL]</input><tiles>か、"
+               .. "記憶のタブで呪文を<w>[クリック]</w>すること</tiles>で記憶できます。"
+    end
+}}
+%%%%
+HINT_SKILL_RAISE
+
+# en:
+#   One of your skills just reached a milestone. The skills you use are
+#   automatically trained whenever you gain experience, by killing monsters. By
+#   default, experience goes to skills you actively use. To view or manage your
+#   skills, type <w>$cmd[CMD_DISPLAY_SKILLS]</w><localtiles> or click on the skill
+#   tab in the bottom-right</localtiles>.
+技能の1つが節目に達しました。使っている技能は、モンスターを倒して経験値を得るたびに自動的に訓練されます。初期設定では、経験値は実際に使っている技能に配分されます。<input>$cmd[CMD_DISPLAY_SKILLS]</input>を押す<localtiles>か、右下の技能のタブをクリックする</localtiles>と、技能を見たり管理したりできます。
+%%%%
+HINT_GAINED_MAGICAL_SKILL
+
+# en:
+#   Being skilled in a magical "school" makes it easier to learn and cast spells of
+#   that school. Many spells belong to a combination of several schools, in which
+#   case the average skill in these schools will determine spellcasting success and
+#   power.
+魔法の「系統」の技能が高いと、その系統の呪文を覚えたり唱えたりしやすくなります。多くの呪文は複数の系統の組み合わせに属しており、その場合はそれらの系統の技能の平均で、呪文の成功率と威力が決まります。
+%%%%
+HINT_GAINED_MELEE_SKILL
+
+# en:
+#   Being skilled with a particular type of weapon will make you deal slightly more
+#   damage and attack significantly faster with all weapons of that type. It's a
+#   good idea to focus on just one weapon type, usually one you start with, though
+#   finding a particularly good weapon may justify a switch.
+特定の種類の武器の技能が高いと、その種類のすべての武器で、与えるダメージがわずかに増え、攻撃がかなり速くなります。1つの種類の武器(たいていは最初に持っているもの)に絞るのがよい考えですが、特に良い武器を見つけたなら乗り換えるのもよいでしょう。
+%%%%
+HINT_GAINED_RANGED_SKILL
+
+# en:
+#   Being skilled with ranged weapons will let you deal slightly more damage and
+#   attack significantly faster with them. Remember that wearing heavy armour makes
+#   you attack more slowly with ranged weapons.
+射撃武器の技能が高いと、射撃武器で与えるダメージがわずかに増え、攻撃がかなり速くなります。重い鎧を着ていると、射撃武器での攻撃が遅くなることを覚えておいてください。
+%%%%
+HINT_CHOOSE_STAT
+
+# en:
+#   Upon gaining levels 3, 9, 15, etc., you get to choose an attribute to raise:
+#   strength, intelligence, or dexterity.
+#
+#   <w>Strength</w> makes heavy armour less cumbersome and slightly increases most
+#   weapons' damage.
+#
+#   <w>Intelligence</w> makes your spells more reliable and powerful.
+#
+#   <w>Dexterity</w> increases your evasion and stealth, and slightly increases the
+#   damage of blades and ranged weapons.
+レベル3、9、15……に達するたびに、上げる能力値(腕力、知力、器用さ)を1つ選べます。
+
+<w>腕力</w>は重い鎧を扱いやすくし、たいていの武器のダメージをわずかに増やします。
+
+<w>知力</w>は呪文をより確実に、より強力にします。
+
+<w>器用さ</w>は回避と隠密を高め、刃物と射撃武器のダメージをわずかに増やします。
+%%%%
+HINT_MALEVOLENCE
+
+# en:
+#   As you explore the dungeon and reveal new tiles, the malevolent forces of the
+#   dungeon may randomly cause bad things to happen to you. When this happens,
+#   pause, think carefully, and be ready to use consumables or abilities. Fight to
+#   survive!"
+ダンジョンを探索して新しいマスを明らかにしていくと、ダンジョンの悪意ある力が、ランダムにあなたに悪いことを起こすことがあります。そうなったら、一度手を止めてよく考え、消耗品や能力を使う準備をしてください。生き延びるために戦いましょう！
+%%%%
+HINT_OPPORTUNITY_ATTACK
+
+# en:
+#   When you move away from an enemy, they have a small (1/3) chance of taking
+#   advantage and launching a free attack. Repositioning and retreating is often
+#   still good, but keep an eye out for those extra attacks.
+敵から離れるように動くと、敵は小さな確率(1/3)でその隙をついてただで攻撃してきます。位置を変えたり退いたりするのは多くの場合それでも良い手ですが、この追加の攻撃には気をつけてください。
+%%%%
+HINT_YOU_ENCHANTED
+
+# en:
+#   Enchantments of all types can befall you temporarily.
+#   Brief descriptions of these appear at the lower end of the stats area.
+#   Press <w>$cmd[CMD_DISPLAY_CHARACTER_STATUS]</w> for more details. You can search
+#   for full enchantment descriptions by pressing <w>$cmd[CMD_DISPLAY_COMMANDS]/T</w>.
+あらゆる種類の状態が一時的にあなたにかかることがあります。その簡単な説明は、能力値の欄の下の方に表示されます。詳しくは<input>$cmd[CMD_DISPLAY_CHARACTER_STATUS]</input>を押してください。<input>$cmd[CMD_DISPLAY_COMMANDS]/T</input>を押すと、状態の詳しい説明を検索できます。
+%%%%
+HINT_YOU_POISON
+
+# en:
+#   Poison will rapidly reduce your health. You can wait it out with
+#   <w>$cmd[CMD_REST]</w>, but if you're in combat or lethally poisoned, you'll
+#   probably want to quaff a potion of curing.
+毒は体力を急速に減らします。<input>$cmd[CMD_REST]</input>で毒が抜けるのを待つこともできますが、戦闘中や命に関わるほどの毒を受けているなら、治療の薬を飲んだ方がよいでしょう。
+%%%%
+HINT_MULTI_PICKUP
+
+# en:
+#   There are a lot of items here. You choose what to pick up from a menu:
+#   press <w>$cmd[CMD_PICKUP]</w><localtiles> or <w>click</w> on the player
+#   doll</localtiles> to enter the pickup menu. To leave the menu, confirm your
+#   selection with <w>Enter</w>.
+ここにはたくさんのアイテムがあります。何を拾うかはメニューから選べます。<input>$cmd[CMD_PICKUP]</input>を押す<localtiles>か、プレイヤーの人形を<w>[クリック]</w>する</localtiles>と、拾うメニューに入ります。メニューを出るには、<w>[Enter]</w>で選択を確定してください。
+%%%%
+HINT_FULL_INVENTORY
+
+# en:
+#   Sadly, your inventory is limited to 52 items, and it appears your knapsack is
+#   full. However, this is easy enough to rectify: simply <w>$cmd[CMD_DROP]</w>rop
+#   some of the stuff you don't need right now. In the drop menu you can then
+#   comfortably select which items to drop by pressing their inventory
+#   letter<localtiles>, or by clicking on them</localtiles>.
+残念ながら所持品は52個までで、背負い袋はいっぱいのようです。とはいえ、これは簡単に解決できます。今は必要のない物をいくつか置けばよいのです(<input>$cmd[CMD_DROP]</input>)。置くメニューでは、所持品の文字を押す<localtiles>かアイテムをクリックする</localtiles>ことで、置くアイテムを楽に選べます。
+%%%%
+HINT_SHIFT_RUN
+
+# en:
+#   Walking around takes fewer keystrokes if you press <w>Shift-direction</w> or
+#   <w>/ direction</w>. That will let you run until a monster comes into sight or
+#   your character sees something interesting.
+<w>[Shift+方向]</w>か<w>[/ 方向]</w>を押すと、少ないキー操作で歩き回れます。モンスターが見えるか、キャラクターが何か気になるものを見つけるまで走り続けます。
+%%%%
+HINT_MAP_VIEW
+
+# en:
+#   As you explore a level, orientation can become difficult. Press
+#   <w>$cmd[CMD_DISPLAY_MAP]</w> to bring up the level map. Typing <w>?</w> shows
+#   the list of level map commands. Most importantly, moving the cursor to a spot
+#   and pressing <w>.</w> or <w>Enter</w> lets your character move there on its own.
+#
+#   <localtiles>Also, clicking on the right-side minimap with your <w>right mouse
+#   button</w> will zoom into that dungeon area. Clicking with the <w>left mouse
+#   button</w> instead will let you move there.</localtiles>
+階を探索していると、方向が分からなくなることがあります。<input>$cmd[CMD_DISPLAY_MAP]</input>を押すと階のマップが表示されます。<w>[?]</w>を押すと階のマップのコマンドの一覧が表示されます。最も重要なのは、カーソルをある地点に動かして<w>[.]</w>か<w>[Enter]</w>を押すと、キャラクターがひとりでにそこへ移動することです。
+
+<localtiles>また、右側のミニマップを<w>[右クリック]</w>すると、そのダンジョンの区域を拡大表示します。代わりに<w>[左クリック]</w>すると、そこへ移動します。</localtiles>
+%%%%
+HINT_AUTO_EXPLORE
+
+# en:
+#   Fully exploring a level and picking up all the interesting looking items can be
+#   tedious. To save on this tedium you can press <w>$cmd[CMD_EXPLORE]</w> to
+#   auto-explore, which will automatically explore unmapped regions, automatically
+#   pick up interesting items, and stop if a monster or interesting dungeon feature
+#   (stairs, altar, etc.) is encountered.
+階をくまなく探索し、面白そうなアイテムを全部拾うのは面倒なことがあります。この手間を省くには、<input>$cmd[CMD_EXPLORE]</input>を押して自動探索をしましょう。地図にない区域を自動的に探索し、面白そうなアイテムを自動的に拾い、モンスターや気になる地形(階段や祭壇など)に出会うと止まります。
+%%%%
+HINT_DONE_EXPLORE
+
+# en:
+#   Hey, you've finished exploring the dungeon on this level! You can search for
+#   stairs from the level map (<w>$cmd[CMD_DISPLAY_MAP]</w>) by pressing <w>></w>.
+#   The cursor will jump to the nearest staircase, and by pressing <w>.</w> or
+#   <w>Enter</w> your character can move there, too. Each level of Crawl has three
+#   <console>white </console>up and three <console>white </console>down stairs.
+#   Unexplored parts can often be accessed via another level.
+おや、この階のダンジョンの探索が終わりましたね！ 階のマップ(<input>$cmd[CMD_DISPLAY_MAP]</input>)で<w>[>]</w>を押すと階段を探せます。カーソルが一番近い階段に跳び、<w>[.]</w>か<w>[Enter]</w>を押すとキャラクターがそこへ移動します。Crawl の各階には、<console>白い</console>上り階段が3つと<console>白い</console>下り階段が3つあります。探索していない部分には、別の階から行けることがよくあります。
+%%%%
+HINT_AUTO_EXCLUSION
+
+# en:
+#   To prevent autotravel or autoexplore taking you into dangerous territory, you
+#   can set travel exclusions by entering the map view (<w>$cmd[CMD_DISPLAY_MAP]</w>)
+#   and then toggling the exclusion radius on the monster position with <w>e</w>.
+#   To make this easier, some immobile monsters listed in the <w>auto_exclude</w>
+#   option (such as this one) are considered dangerous enough to warrant an
+#   automatic setting of an exclusion. It will be automatically cleared if you
+#   manage to kill the monster. You could also manually remove the exclusion with
+#   <w>$cmd[CMD_DISPLAY_MAP]ee</w> but unless you remove this monster from the
+#   auto_exclude list, the exclusion will be reset the next turn.
+自動移動や自動探索で危険な場所に入り込まないよう、マップ画面(<input>$cmd[CMD_DISPLAY_MAP]</input>)に入り、モンスターの位置で<w>[e]</w>を押して立入禁止区域の半径を切り替えることで、立入禁止区域を設定できます。これを楽にするため、<w>auto_exclude</w>オプションに載っている動かないモンスターの一部(このモンスターもそうです)は、自動的に立入禁止区域を設定するほど危険だとみなされます。このモンスターを倒せば、立入禁止区域は自動的に解除されます。<input>$cmd[CMD_DISPLAY_MAP]ee</input>で手動で立入禁止区域を取り除くこともできますが、このモンスターを auto_exclude の一覧から外さない限り、次のターンには立入禁止区域が設定し直されます。
+%%%%
+HINT_HEALING_POTIONS
+
+# en:
+#   Your health is getting dangerously low. Retreating and/or quaffing a potion of
+#   heal wounds or curing might be a good idea.
+体力が危険なほど少なくなっています。退くか、怪我の治療の薬や治療の薬を飲む(あるいはその両方)のがよいでしょう。
+%%%%
+HINT_NEED_HEALING
+
+# en:
+#   If you're low on health or magic and there's no urgent need to move, you can
+#   rest for a bit. Ideally, you should retreat to an area you've already explored
+#   and cleared of monsters before resting, since resting on the edge of the
+#   explored terrain increases the risk of rest being interrupted by a wandering
+#   monster. Press <w>$cmd[CMD_REST]</w> or <w>shift-numpad-5</w>
+#   <localtiles>, or click on the 'rest' button,</localtiles> to do so.
+体力や魔力が少なく、急いで動く必要がないなら、しばらく休むことができます。理想的には、休む前にすでに探索してモンスターを片付けた場所まで退くべきです。探索済みの場所の端で休むと、うろついているモンスターに休息を邪魔される危険が高くなるからです。<input>$cmd[CMD_REST]</input>か<w>[Shift+テンキーの5]</w>を押す<localtiles>か、「休息」ボタンをクリックする</localtiles>と休めます。
+%%%%
+HINT_NEED_POISON_HEALING
+
+# en:
+#   You are lethally poisoned, so now would be a good time to
+#   <w>$cmd[CMD_QUAFF]</w>uaff a potion of heal wounds or, better yet, a potion of
+#   curing. If you have seen neither of these so far, try unknown potions in your
+#   inventory. Good luck!
+命に関わるほどの毒を受けています。今こそ怪我の治療の薬、できれば治療の薬を飲む(<input>$cmd[CMD_QUAFF]</input>)ときです。どちらもまだ見たことがないなら、所持品にある正体不明の薬を試してみてください。幸運を！
+%%%%
+HINT_ON_FIRE
+
+# en:
+#   You have been covered in sticky liquid flame. You can put this out more quickly
+#   by spending your turns moving, or put it out entirely by walking into a nearby
+#   pool of water. Whatever covered you in liquid flames may light you further on
+#   fire while you run around, however.
+べとつく液体の炎に包まれました。移動してターンを過ごすと早く消すことができ、近くの水たまりに入れば完全に消せます。ただし、あなたを液体の炎で包んだ何者かは、あなたが走り回っている間にさらに火をつけてくるかもしれません。
+%%%%
+HINT_INVISIBLE_DANGER
+
+# en:
+#   Fighting against a monster you cannot see is difficult. If you don't have a
+#   source of see invisibility, you can find invisible monsters by luring them into
+#   shallow water, opaque clouds (from a scroll of fog), or a corridor, where their
+#   movements will be more predictable. If things go south, try teleporting out, or
+#   leaving the level entirely!
+見えないモンスターと戦うのは難しいことです。霊視の手段がないなら、浅い水、(煙幕の巻物による)見通せない雲、通路などにおびき寄せると、動きが読みやすくなって見つけられます。状況が悪くなったら、テレポートで逃げるか、その階から完全に離れてみてください！
+%%%%
+HINT_NEED_HEALING_INVIS
+
+# en:
+#   You recently noticed an invisible monster, so unless you killed it or left the
+#   scene, resting might not be safe. If you still need to replenish your health or
+#   magic, you'll have to quaff an appropriate potion. For normal resting you will
+#   first have to get away from the danger.
+最近、見えないモンスターに気づきました。そのモンスターを倒すかその場を離れるかしない限り、休むのは安全ではないかもしれません。それでも体力や魔力を回復する必要があるなら、適切な薬を飲むしかありません。普通に休むには、まず危険から離れなければなりません。
+%%%%
+HINT_CAN_BERSERK
+
+# en:
+#   Against particularly difficult foes, you should use your Berserk
+#   <w>$cmd[CMD_USE_ABILITY]</w>bility. Killing monsters while berserking makes it
+#   last longer.
+特に手ごわい敵には、バーサークの能力(<input>$cmd[CMD_USE_ABILITY]</input>)を使うべきです。バーサーク中にモンスターを倒すと、効果が長く続きます。
+%%%%
+HINT_POSTBERSERK
+
+# en:
+#   Berserking is extremely exhausting! Afterwards you are slowed down, and you
+#   won't be able to berserk again until enough time passes for your exhaustion to
+#   fade.
+バーサークはひどく疲れます！ 効果が切れると動きが遅くなり、疲れが消えるだけの時間がたつまでは、もう一度バーサークすることはできません。
+%%%%
+HINT_RUN_AWAY_1
+
+# en:
+#   Whenever your health is very low and you're in danger of dying, check your
+#   options carefully. Often, retreat or use of some item might be a viable
+#   alternative to fighting on.
+体力がとても少なく死にそうなときは、取れる手をよく考えてください。退いたり何かのアイテムを使ったりするのが、戦い続けるよりも有効な手であることはよくあります。
+%%%%
+HINT_LAST_MINUTE_BERSERK
+
+# en:
+#   With Trog's support, you can use your Berserk ability
+#   (<w>$cmd[CMD_USE_ABILITY]</w>) to temporarily gain more health and greater
+#   strength. Bear in mind that berserking at the last minute is often risky,
+#   and prevents you from using items to escape!
+トログの助けがあれば、バーサークの能力(<input>$cmd[CMD_USE_ABILITY]</input>)を使って一時的に体力を増やし、力を強めることができます。土壇場でのバーサークはしばしば危険で、アイテムを使って逃げることもできなくなることを覚えておいてください！
+%%%%
+HINT_RUN_AWAY_2
+
+# en:
+#   If retreating to another level, keep in mind that monsters may follow you if
+#   they're standing right next to you when you start climbing or descending the
+#   stairs. And even if you've managed to shake them off, they'll still be there
+#   when you come back, so you might want to use a different set of stairs when you
+#   return.
+別の階へ退くときは、階段を上り下りし始めるときにすぐ隣にいるモンスターはついて来ることがあるのを覚えておいてください。また、うまく振り切れたとしても、戻ってきたときにはまだそこにいるので、戻るときは別の階段を使うとよいでしょう。
+%%%%
+HINT_RETREAT_CASTER
+
+# en:
+#   Without magical power you're unable to cast spells. While melee is a
+#   possibility, that's not where your strengths lie, so retreat (if possible) might
+#   be the better option.
+魔力がなければ呪文を唱えられません。接近戦もできなくはありませんが、それはあなたの得意とするところではないので、(できるなら)退く方がよいでしょう。
+%%%%
+HINT_ADVISE_USE_WAND
+
+# en:
+#   \nOr you could e<w>$cmd[CMD_EVOKE]</w>oke a wand to harm or weaken your foes.
+\nあるいは、ワンドを発動(<input>$cmd[CMD_EVOKE]</input>)して敵を傷つけたり弱らせたりすることもできます。
+%%%%
+HINT_YOU_MUTATED
+
+# en:
+#   Mutations can be good or bad. Potions of mutation are the most common way to
+#   remove bad mutations, though they can also give you new ones. Check your
+#   mutations with <w>$cmd[CMD_DISPLAY_MUTATIONS]</w>.
+突然変異には良いものも悪いものもあります。悪い突然変異を取り除く一番よくある方法は突然変異の薬ですが、新しい突然変異が付くこともあります。突然変異は<input>$cmd[CMD_DISPLAY_MUTATIONS]</input>で確かめられます。
+%%%%
+HINT_NEW_ABILITY_GOD_PASSIVE
+
+# en:
+#   You just gained a divine ability. Press <w>$cmd[CMD_DISPLAY_RELIGION]</w>
+#   <localtiles> or press <w>Shift</w> and <w>right-click</w> on the player
+#   tile</localtiles> to take a look at your abilities.
+神の能力を得ました。<input>$cmd[CMD_DISPLAY_RELIGION]</input>を押す<localtiles>か、<w>[Shift]</w>を押しながらプレイヤーのタイルを<w>[右クリック]</w>する</localtiles>と、能力を見られます。
+%%%%
+HINT_NEW_ABILITY_GOD_ACTIVE
+
+# en:
+#   You just gained a divine ability. Press <w>$cmd[CMD_USE_ABILITY]</w> to take a
+#   look at your abilities or to use one of them.
+神の能力を得ました。<input>$cmd[CMD_USE_ABILITY]</input>を押すと、能力を見たり使ったりできます。
+%%%%
+HINT_NEW_ABILITY_ITEM
+
+# en:
+#   That item you just equipped granted you a new ability. Press
+#   <w>$cmd[CMD_USE_ABILITY]</w><localtiles> (or <w>click</w> in the <w>command
+#   panel</w>)</localtiles> to take a look at your abilities or to use one of them.
+装備したアイテムが新しい能力を授けてくれました。<input>$cmd[CMD_USE_ABILITY]</input>を押す<localtiles>(か<w>コマンドパネル</w>で<w>[クリック]</w>する)</localtiles>と、能力を見たり使ったりできます。
+%%%%
+HINT_ITEM_FLIGHT
+
+# en:
+#   Flight will allow you to cross deep water or lava. Items that allow you to fly
+#   will activate automatically when worn.
+飛行すれば深い水や溶岩を渡れます。飛行できるようにするアイテムは、身に着けると自動的に働きます。
+%%%%
+HINT_ITEM_RESISTANCES
+
+# en:
+#   Equipping this item affects your resistances. Check the overview screen
+#   (<w>$cmd[CMD_RESISTS_SCREEN]</w><localtiles> or click on the <w>character
+#   overview button</w> in the command panel</localtiles>) for details.
+このアイテムを装備すると耐性が変わります。詳しくは概要の画面(<input>$cmd[CMD_RESISTS_SCREEN]</input><localtiles>か、コマンドパネルの<w>キャラクター概要のボタン</w>をクリック</localtiles>)を確かめてください。
+%%%%
+HINT_GOD_DISPLEASED
+
+# en:
+#   Uh-oh, $1 is growing displeased because your piety is running low. Possibly this
+#   is the case because you're committing heretical acts, because $1 finds your
+#   worship lacking, or a combination of the two. If your piety goes to zero, then
+#   you'll be excommunicated. Better get cracking on raising your piety, and/or stop
+#   annoying your god. In any case, you'd better reread the religious description.
+#   To do so, press <w>$cmd[CMD_DISPLAY_RELIGION]</w><localtiles> or press
+#   <w>Shift</w> and <w>right-click</w> on your avatar</localtiles>.
+おっと、信仰値が下がってきたため、$1が不満を募らせています。おそらくは異端の行いをしているか、$1があなたの信仰を物足りないと思っているか、その両方でしょう。信仰値がゼロになると破門されます。信仰値を上げることに取りかかるか、神を怒らせるのをやめた方がよいでしょう(あるいはその両方を)。いずれにしても、信仰の説明を読み直した方がよいでしょう。読むには<input>$cmd[CMD_DISPLAY_RELIGION]</input>を押してください<localtiles>(または<w>[Shift]</w>を押しながら自分のキャラクターを<w>[右クリック]</w>してください)</localtiles>。
+%%%%
+HINT_WIELD_WEAPON
+
+# en:
+#   You can easily switch back to your weapon in slot a by
+#   pressing <w>$cmd[CMD_WEAPON_SWAP]</w>. To change the slot of an item, press
+#   <w>$cmd[CMD_ADJUST_INVENTORY]i</w> and choose the appropriate slots.
+<input>$cmd[CMD_WEAPON_SWAP]</input>を押すと、a の枠にある武器に簡単に持ち替えられます。アイテムの枠を変えるには、<input>$cmd[CMD_ADJUST_INVENTORY]i</input>を押して適切な枠を選んでください。
+%%%%
+HINT_FLEEING_MONSTER
+
+# en:
+#   Now that monster is scared of you! Note that you do not absolutely have to
+#   follow it. Rather, you can let it run away. Sometimes, though, it can be useful
+#   to attack a fleeing creature by throwing something after it. If you have any
+#   stones in your <w>$cmd[CMD_DISPLAY_INVENTORY]</w>nventory, you can look at one
+#   of them to read an explanation of how to do this.
+あのモンスターはあなたを恐れています！ 必ずしも追いかける必要はないことに注意してください。むしろ逃がしてもよいのです。とはいえ、逃げる相手に何かを投げつけて攻撃するのが役に立つこともあります。所持品(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)に石があれば、そのうちの1つを調べると、そのやり方の説明が読めます。
+%%%%
+HINT_MONSTER_UNUSUAL
+
+# en:
+#   That monster looks a bit unusual. You might wish to examine it a bit more
+#   closely by <localtiles>hovering your mouse over its tile.</localtiles>
+#   <nomouse>pressing <w>$cmd[CMD_LOOK_AROUND]</w> and moving the cursor onto its
+#   square.</nomouse>
+あのモンスターは少し変わった様子です。<localtiles>マウスをそのタイルに重ねて</localtiles><nomouse><input>$cmd[CMD_LOOK_AROUND]</input>を押し、カーソルをそのマスに合わせて</nomouse>、もう少しよく調べてみるとよいでしょう。
+%%%%
+HINT_MONSTER_FRIENDLY
+
+# en:
+#   That monster is friendly to you and will attack your enemies. You can command
+#   your allies by pressing <w>$cmd[CMD_SHOUT]</w>.
+あのモンスターはあなたに友好的で、あなたの敵を攻撃してくれます。<input>$cmd[CMD_SHOUT]</input>を押すと、仲間に命令できます。
+%%%%
+HINT_TEMPORARILY_FRIENDLY
+
+# en:
+#   However, it is only <w>temporarily</w> friendly, and will become dangerous
+#   again when this friendliness wears off.
+ただし、友好的なのは<w>一時的</w>で、その効果が切れるとまた危険な存在に戻ります。
+%%%%
+HINT_MONSTER_SHOUTED_UNSEEN
+
+# en:
+#   Uh-oh, some monster noticed you, either one that's around a corner or one that's
+#   invisible. Plus, the noise it made will alert other monsters in the vicinity,
+#   who will come to check out what the commotion was about.
+おっと、どこかのモンスター(角の向こうにいるか、透明なもの)があなたに気づきました。さらに、そのモンスターが立てた音で近くのほかのモンスターも気づき、何の騒ぎかと確かめにやって来ます。
+%%%%
+HINT_MONSTER_SHOUTED_SEEN
+
+# en:
+#   Uh-oh, that monster noticed you! Plus, the noise it made will alert other
+#   monsters in the vicinity, who will come to check out what the commotion
+#   was about.
+おっと、あのモンスターがあなたに気づきました！ さらに、そのモンスターが立てた音で近くのほかのモンスターも気づき、何の騒ぎかと確かめにやって来ます。
+%%%%
+HINT_MONSTER_NO_SHOUT
+
+# en:
+#   Uh-oh, that monster noticed you! Fortunately, it didn't make any noise, but many
+#   monsters do make noise when they notice you. That will alert other monsters in
+#   the area, who will come to check out what the commotion was about.
+おっと、あのモンスターがあなたに気づきました！ 幸い音は立てませんでしたが、多くのモンスターはあなたに気づくと音を立てます。そうなると近くのほかのモンスターも気づき、何の騒ぎかと確かめにやって来ます。
+%%%%
+HINT_MONSTER_LEFT_LOS
+
+# en:
+#   $1 didn't vanish, but merely moved onto a square which you can't currently see.
+#   It's still nearby, unless something happens to it in the short amount of time
+#   it's out of sight.
+$1は消えたのではなく、今は見えないマスに移動しただけです。見えない短い間に何かが起きない限り、まだ近くにいます。
+%%%%
+HINT_SEEN_ZERO_EXP_MON
+
+# en:
+#   That<console> $1</console> is $2. While <w>technically</w> a monster, it's
+#   more like dungeon furniture, since it's harmless and doesn't move. If it's in
+#   your way you can attack and kill it like other monsters, but you won't get any
+#   experience for doing so.
+これ<console>($1)</console>は$2です。<w>厳密に言えば</w>モンスターですが、無害で動かないので、むしろダンジョンの調度品のようなものです。邪魔なら、ほかのモンスターと同じように攻撃して倒せますが、そうしても経験値は得られません。
+%%%%
+HINT_ABYSS
+
+# en:
+#   Uh-oh, you've wound up in the Abyss! The Abyss is a special place where you
+#   cannot remember or map where you've been; it is filled with nasty monsters, and
+#   you're probably going to die.
+#
+#   To increase your chances of survival until you can find the exit<console> (a
+#   flickering <w>$1</w>)</console>, keep moving, don't fight any of the monsters,
+#   and don't chase after items on the ground. If monsters are closing in, try to
+#   use items and abilities to get away.
+おっと、アビスに来てしまいました！ アビスは特殊な場所で、通ってきた場所を覚えたり地図にしたりできません。厄介なモンスターでいっぱいで、おそらくあなたは死ぬことになるでしょう。
+
+出口<console>(ちらちら光る<w>$1</w>)</console>を見つけるまで生き延びる見込みを上げるには、動き続け、モンスターとは戦わず、床のアイテムを追いかけないことです。モンスターが迫ってきたら、アイテムや能力を使って逃げてみてください。
+%%%%
+HINT_SPELL_MISCAST_EFFECTS
+
+# en:
+#   Miscasting a spell can have nasty consequences, particularly for the more
+#   difficult spells. Your chance of successfully casting a spell increases with
+#   your magic skills, and can also be improved with the help of some items. Use
+#   the <w>$cmd[CMD_DISPLAY_SPELLS]</w> command<localtiles> or mouse over the spell
+#   tiles</localtiles> to check your current failure rates.
+呪文の失敗は、特に難しい呪文では厄介な結果を招くことがあります。呪文の成功率は魔法の技能とともに上がり、アイテムの助けでも上げられます。<input>$cmd[CMD_DISPLAY_SPELLS]</input>のコマンドを使う<localtiles>か、呪文のタイルにマウスを重ねる</localtiles>と、今の失敗率を確かめられます。
+%%%%
 HINT_YOU_MISCAST
 
 # en:
 #   You just miscast a spell.
 あなたは今魔法を唱えるのを失敗しました。
+%%%%
+HINT_MISCAST_ARMOUR
+
+# en:
+#   Wearing heavy body armour or using a shield, especially a large one, can
+#   severely hamper your spellcasting abilities. You can check the effect of this
+#   by comparing the failure rates on the <w>$cmd[CMD_CAST_SPELL]\?</w> screen with
+#   and without the item being worn.
+重い胴鎧を着たり盾(特に大きなもの)を使ったりすると、呪文を唱える能力がひどく妨げられることがあります。その影響は、そのアイテムを着けているときと着けていないときで、<input>$cmd[CMD_CAST_SPELL]\?</input>の画面の失敗率を比べれば確かめられます。
+%%%%
+HINT_MISCAST_CONTAMINATION_AND_MP
+
+# en:
+#   If the spellcasting success chance is high (which can be checked by entering
+#   <w>$cmd[CMD_CAST_SPELL]\?</w> or <w>$cmd[CMD_DISPLAY_SPELLS]</w>) then a miscast
+#   merely means the spell is not working, along with a harmless side effect.
+#   However, for spells with a high failure rate, there's a chance of contaminating
+#   yourself with magical energy, plus a chance of an additional harmful side
+#   effect. Normally this isn't a problem, since magical contamination bleeds off
+#   over time, but if you're repeatedly contaminated in a short amount of time
+#   you'll mutate or suffer from other ill side effects.
+#
+#   Note that a miscast spell will still consume the full amount of MP that a
+#   successfully cast spell would.
+呪文の成功率が高ければ(<input>$cmd[CMD_CAST_SPELL]\?</input>か<input>$cmd[CMD_DISPLAY_SPELLS]</input>で確かめられます)、失敗しても呪文が効かず、無害な副作用が起きるだけです。しかし失敗率の高い呪文では、魔術的汚染を受ける可能性があり、さらに有害な副作用が起きる可能性もあります。魔術的汚染は時間とともに抜けていくので通常は問題になりませんが、短い間に何度も汚染を受けると、突然変異を起こしたり、ほかの悪い副作用に苦しんだりします。
+
+失敗した呪文でも、成功したときと同じだけのMPを消費することに注意してください。
+%%%%
+HINT_GLOWING
+
+# en:
+#   You've accumulated so much magical contamination that you're glowing! You
+#   usually acquire magical contamination from using some powerful magics, like
+#   invisibility, or from miscasting spells.
+魔術的汚染がたまりすぎて、体が光っています！ 魔術的汚染は、透明化のような強力な魔法を使ったり、呪文に失敗したりすると受けるのが普通です。
+%%%%
+HINT_CONTAMINATION_MILD
+
+# en:
+#   As long as the status only shows in grey nothing will actually happen as a
+#   result of it, but as you continue suffusing yourself with magical contamination
+#   you'll eventually start glowing for real, which can have nasty effects, such as
+#   mutating you or dealing direct damage. In addition, glowing is going to make you
+#   much more noticeable.
+この状態が灰色で表示されている間は、実際には何も起きません。しかし魔術的汚染を受け続けると、やがて本当に光り始め、突然変異を起こしたり直接ダメージを受けたりといった厄介な影響が出ることがあります。さらに、光っているとずっと目立つようになります。
+%%%%
+HINT_CONTAMINATION_SEVERE
+
+# en:
+#   This normally isn't a problem as contamination slowly bleeds off on its own, but
+#   it seems that you've accumulated so much contamination over a short amount of
+#   time that it can have nasty effects, such as mutating you or dealing direct
+#   damage. In addition, glowing is going to make you much more noticeable.
+汚染は少しずつ自然に抜けていくので通常は問題になりませんが、短い間に汚染がたまりすぎて、突然変異を起こしたり直接ダメージを受けたりといった厄介な影響が出るおそれがあるようです。さらに、光っているとずっと目立つようになります。
+%%%%
+HINT_YOU_RESIST
+
+# en:
+#   Most attacks in Crawl are defended against by your AC. Some, like fire or
+#   draining attacks, can be further reduced by specific resistances. Other magical
+#   effects, such as Slow or Confusion hexes, are resisted by your willpower.
+#   You'll find items that increase both kinds of resistances.
+#
+#   To view your current set of resistances, <localtiles><w>right-click</w> on the
+#   player avatar, or </localtiles>press <w>$cmd[CMD_RESISTS_SCREEN]</w>.
+Crawl のたいていの攻撃はACで防がれます。炎や生命力吸収のような一部の攻撃は、特定の耐性でさらに軽減できます。減速や混乱の呪術のようなほかの魔法の効果には、意志力で抵抗します。どちらの種類の抵抗力も高めるアイテムが見つかります。
+
+今の耐性を見るには、<localtiles>プレイヤーのアバターを<w>[右クリック]</w>するか、</localtiles><input>$cmd[CMD_RESISTS_SCREEN]</input>を押してください。
+%%%%
+HINT_CAUGHT_IN_NET
+
+# en:
+#   While you are held in a net, you cannot move around or engage monsters in
+#   combat. Instead, any movement you take is counted as an attempt to struggle free
+#   from the net.
+#   {{
+#       if crawl.hints_type() == "magic" then
+#           return "Note that casting spells is still very much possible, as is"
+#                  .. " using wands, scrolls and potions."
+#       else
+#           return "Note that using wands, scrolls and potions is still very much"
+#                  .. " possible."
+#       end
+#   }}
+網に捕らわれている間は、動き回ることもモンスターと戦うこともできません。代わりに、移動しようとすると網から抜け出そうともがくことになります。
+{{
+    if crawl.hints_type() == "magic" then
+        return "ただし、呪文を唱えることも、ワンド、巻物、薬を使うことも、"
+               .. "問題なくできます。"
+    else
+        return "ただし、ワンド、巻物、薬を使うことは問題なくできます。"
+    end
+}}
+%%%%
+HINT_YOU_SILENCE
+
+# en:
+#   While you are silenced, you cannot cast spells, read scrolls or use divine
+#   invocations. The same is true for any monster within the effect radius. The
+#   field of silence (recognizable by <tiles>the special-looking frame tiles</tiles>
+#   <console>different-coloured floor squares</console>) is always centered on you
+#   and will move along with you. The radius will gradually shrink, eventually
+#   making you the only one affected, before the effect fades entirely.
+静寂の中にいる間は、呪文を唱えることも、巻物を読むことも、神の力を使うこともできません。効果の範囲内にいるモンスターも同じです。静寂の場(<tiles>特別な見た目の枠のタイル</tiles><console>色の違う床のマス</console>で分かります)は常にあなたが中心で、あなたと一緒に動きます。半径は少しずつ縮んでいき、最後にはあなただけが影響を受けるようになり、やがて効果が完全に消えます。
+%%%%
+HINT_AUTOPICKUP_THROWN
+
+# en:
+#   When stepping on items you've thrown, they will be picked up automatically.
+自分が投げたアイテムの上に乗ると、自動的に拾い上げます。
+%%%%
+HINT_GAINED_SPELLCASTING
+
+# en:
+#   As your Spellcasting skill increases, you will be able to memorise more spells,
+#   and will have somewhat more MP. You'll also beomce lsightly better at casting
+#   all kinds of spells.
+#
+#   Press <w>$cmd[CMD_DISPLAY_SKILLS]</w> <localtiles>(or click on the <w>skill
+#   button </w>in the command panel)</localtiles>to have a look at your skills and
+#   manage their training.
+呪文詠唱の技能が上がると、より多くの呪文を記憶でき、MPも少し増えます。また、あらゆる種類の呪文を唱えるのが少しうまくなります。
+
+<input>$cmd[CMD_DISPLAY_SKILLS]</input>を押す<localtiles>(かコマンドパネルの<w>技能のボタン</w>をクリックする)</localtiles>と、技能を見て訓練を管理できます。
+%%%%
+HINT_FUMBLING_SHALLOW_WATER
+
+# en:
+#   Fighting in shallow water will sometimes cause you to slip and fumble your
+#   attack. If possible, try to fight on firm ground.
+浅い水の中で戦うと、ときどき足を滑らせて攻撃をしくじります。できれば、しっかりした地面の上で戦うようにしてください。
+%%%%
+HINT_CLOUD_WARNING
+
+# en:
+#   Rather than step into this cloud and hurt yourself, you should either wait for a
+#   few turns to see if it vanishes (with <w>$cmd[CMD_WAIT]</w>), or just step
+#   around it.
+この雲に踏み込んで怪我をするよりは、数ターン待って消えるかどうか見る(<input>$cmd[CMD_WAIT]</input>)か、単に雲を避けて回り込むべきです。
+%%%%
+HINT_FOUND_UNKNOWN
+
+# en:
+#   You've found something new (but I don't know what)!
+何か新しいものを見つけました(でも、それが何かは分かりません)！
 %%%%

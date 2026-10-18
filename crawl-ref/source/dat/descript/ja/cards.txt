@@ -1,4 +1,79 @@
 %%%%
+Velocity card
+
+# en:
+#   The card depicts an empty, well-worn pair of boots. Sand, ashes, and turf
+#   coat the boots' soles.
+#
+#   Drawing this card can grant great speed to allies or terrible slowness to foes.
+このカードには履き古された一足のブーツが描かれている。
+砂、灰、そして草がブーツの裏にこびりついている。
+
+このカードを引くと、味方を大きく加速させたり、敵をひどく減速させたりすることがある。
+%%%%
+the Tomb card
+
+# en:
+#   The card depicts a royal crypt, its entrance sealed by a heavy stone slab.
+#
+#   Drawing this card entombs its user in protective, temporary walls of solid rock.
+#   At lower power levels or with adjacent creatures, the tomb may be imperfect.
+#
+#   The tomb is sustained by the presence of its creator within it, and moving from
+#   the centre of the tomb will cause its walls to crumble away.
+このカードには、入口を重厚な石盤で封じられた王家の墳墓が描かれている。
+
+このカードを引くと、使用者を一時的な堅い岩の壁で囲んで守る。
+低威力の場合や隣接している者がいる場合などは、完全には壁で囲まれないことがある。
+
+この墓は中にいる作り手の存在によって保たれており、墓の中央から動くと壁は崩れ去る。
+%%%%
+Exile card
+
+# en:
+#   The card depicts ceaseless hands from a yawning portal overcoming a panicked
+#   figure.
+#
+#   Drawing this card can banish nearby creatures to the abyss, with more being banished
+#   at higher power levels. It will never banish the user.
+このカードには、口を開けたポータルから絶え間なく伸びるいくつもの手が恐慌した人物を襲う様子が描かれている。
+
+このカードを引くと周囲の者をアビスへと追放することがあり、威力が高いほど多くの者が追放される。使用者自身が追放されることはない。
+%%%%
+the Shaft card
+
+# en:
+#   The card depicts a traveller plummeting into a chasm that has opened beneath
+#   them.
+#
+#   Drawing this card will create a shaft beneath the user, and possibly beneath
+#   their enemies.
+このカードには、旅人がその足下に開いた割れ目に真っ逆さまに転がり落ちる様子が描かれている。
+
+このカードを引くと使用者の足下に縦穴を作り出す。また、使用者に敵対する者の足下にも作り出すことがある。
+%%%%
+the Elixir card
+
+# en:
+#   The card depicts a smug smile formed out of nine chalices.
+#
+#   Drawing this card rapidly restores the user's health and magic.
+このカードには9つの杯で形作られた得意げな笑顔が描かれている。
+
+このカードを引くと、使用者の体力と魔力を急速に回復させる。
+%%%%
+the Cloud card
+
+# en:
+#   The card depicts an iron gate enshrouded in mist.
+#
+#   Drawing this card enshrouds the user's foes in rings of detrimental clouds. The
+#   effects of such clouds will vary with card power.
+このカードには霧に覆われた鉄の門が描かれている。
+
+このカードを引くと、使用者の敵を有害な雲の輪で包み込む。
+雲の効果はカードの威力によって変わる。
+%%%%
 Vitriol card
 
 # en:
@@ -8,6 +83,19 @@ Vitriol card
 このカードには、腐食性の液体を分泌するオクロブ草が描かれている。
 
 このカードを引くと、腐食性の攻撃呪文を放つ。
+%%%%
+the Storm card
+
+# en:
+#   The card depicts a ship at sea sinking in a thunderstorm.
+#
+#   Drawing this card unleashes a storm of wind and electrical discharges.
+#   Increasing card power will result in a stronger wind force and stronger, more
+#   numerous discharges.
+このカードには、激しい嵐の中海に沈んでいく船が描かれている。
+
+このカードを引くと、風と放電の嵐が解き放たれる。
+カードの威力が高いほど風は強くなり、放電も強く、数も多くなる。
 %%%%
 Pain card
 
@@ -42,6 +130,19 @@ Degeneration card
 このカードを引くと、周囲の敵をより弱くなる形に変化および悪性変異させ、
 変化することのできないものに対してはしばらくの間眩暈を与える。
 %%%%
+Wild Magic card
+
+# en:
+#   The card depicts a pointy wizard's hat, scorched and resting on a pile of ashes.
+#
+#   Drawing this card causes wild magic (as if from miscasting a spell) to act upon
+#   its user's enemies. Each creature affected will restore some of the user's
+#   magic.
+このカードには先の尖っている焼け焦げた魔法使いの帽子が灰の山の上に置かれている様子が描かれている。
+
+このカードを引くと魔法の暴走(呪文の詠唱失敗と同様)を引き起こし、使用者の敵に影響を及ぼす。
+効果を受けた者ごとに使用者の魔力がいくらか回復する。
+%%%%
 the Elements card
 
 # en:
@@ -51,6 +152,18 @@ the Elements card
 このカードには砂嵐に潜む巨獣の姿が描かれている。
 
 このカードを引くと、四元素の力を持つ3体のモンスターが召喚される。
+%%%%
+the Pentagram card
+
+# en:
+#   The card depicts cultists marking out a ritual pentagram on the floor.
+#
+#   Drawing this card will summon a pair of demons to the user's aid. There is a
+#   small chance one of the demons will be hostile.
+このカードには、信仰者が儀式用の五芒星を地面に描いている様子が描かれている。
+
+このカードを引くと、使用者を手助けする悪魔が2体召喚される。
+わずかな確率で、そのうち1体が敵対することがある。
 %%%%
 the Dance card
 
@@ -64,6 +177,16 @@ the Dance card
 
 このカードを引くと宙を舞う武器が召喚される。
 その質、魔力、そして友好的か敵対的かはすべてカードの威力に依存する。
+%%%%
+the Swarm card
+
+# en:
+#   The card depicts a bear surrounded by a swarm of bees. It hums ominously.
+#
+#   Drawing this card will summon bees.
+このカードには、蜂の群れに囲まれた熊が描かれている。不気味な羽音を立てている。
+
+このカードを引くと、蜂を召喚する。
 %%%%
 the Rangers card
 

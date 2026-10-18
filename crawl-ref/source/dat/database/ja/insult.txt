@@ -1,0 +1,2321 @@
+%%%%
+imp_taunt
+
+# en:
+#   @run_or_give_up@, thou @generic_insult@!
+この@generic_insult@め、@run_or_give_up@！
+%%%%
+run_or_give_up
+
+# en:
+#   w:6
+#   @run_away@
+#
+#   w:1
+#   @give_up@
+w:6
+@run_away@
+
+w:1
+@give_up@
+%%%%
+demon_taunt
+
+# en:
+#   w:1
+#   @run_away@, thou @generic_insult@!
+#
+#   w:2
+#   @give_up@, thou @generic_insult@!
+#
+#   w:3
+#   @demon_taunt_special@
+w:1
+この@generic_insult@め、@run_away@！
+
+w:2
+この@generic_insult@め、@give_up@！
+
+w:3
+@demon_taunt_special@
+%%%%
+demon_taunt_special
+
+# en:
+#   Thy @body_or_spiritual_part@ shall be my @meal@!
+#
+#   @give_up@, thou tasty @meal@!
+#
+#   @run_away@ @whilst_thou_can@!
+#
+#   I @will_or_shall@ @feast_or_devour@ thy @body_or_spiritual_part@!
+貴様の@body_or_spiritual_part@は我が@meal@となるのだ！
+
+この旨そうな@meal@め、@give_up@！
+
+@whilst_thou_can@@run_away@！
+
+貴様の@body_or_spiritual_part@を@feast_or_devour@@will_or_shall@！
+%%%%
+run_away
+
+# en:
+#   Away with thee
+#
+#   Back with thee
+#
+#   Begone
+#
+#   Bolt
+#
+#   Crawl home
+#
+#   Decamp
+#
+#   Escape
+#
+#   Flee
+#
+#   Fly
+#
+#   Get thee gone
+#
+#   Get thee hence
+#
+#   Give up
+#
+#   Go and return not
+#
+#   Leave
+#
+#   Out, out
+#
+#   Quit
+#
+#   Remove thy stench
+#
+#   Return whence thou came
+#
+#   Run away
+#
+#   Scamper away
+#
+#   Scamper hence
+#
+#   Scamper home
+#
+#   Slither away
+#
+#   Slither hence
+#
+#   Slither home
+#
+#   Take thy face hence
+#
+#   Turn tail
+去れ
+
+下がれ
+
+消え失せろ
+
+逃げ出せ
+
+這って家に帰れ
+
+退散しろ
+
+逃げおおせてみよ
+
+逃げよ
+
+飛んで逃げろ
+
+立ち去れ
+
+ここから去れ
+
+諦めろ
+
+去って二度と戻るな
+
+出て行け
+
+出ろ、出て行け
+
+やめてしまえ
+
+その悪臭を持ち去れ
+
+来た所へ帰れ
+
+逃げろ
+
+ちょこまかと逃げろ
+
+ちょこまかとここから逃げ去れ
+
+ちょこまかと家へ逃げ帰れ
+
+這いずって逃げろ
+
+這いずってここから去れ
+
+這いずって家へ帰れ
+
+その面をここから持ち去れ
+
+尻尾を巻いて逃げろ
+%%%%
+give_up
+
+# en:
+#   Abandon hope
+#
+#   Accept thy failure
+#
+#   Accept thy fall
+#
+#   Accept thy doom
+#
+#   Admit defeat
+#
+#   Beg for mercy
+#
+#   Capitulate
+#
+#   Despair
+#
+#   Despond
+#
+#   Disclaim thyself
+#
+#   Embrace submission
+#
+#   Embrace thy dedition
+#
+#   Embrace thy doom
+#
+#   Embrace thy failure
+#
+#   Embrace thy fall
+#
+#   Face thy fugue
+#
+#   Face thy requiem
+#
+#   Flounder
+#
+#   Give in
+#
+#   Give up
+#
+#   Kneel
+#
+#   Quail
+#
+#   Quit
+#
+#   Surrender
+#
+#   Succumb
+#
+#   Submit
+#
+#   Tremble
+#
+#   Relinquish hope
+#
+#   Repent
+#
+#   Taste defeat
+希望を捨てよ
+
+己の失敗を受け入れよ
+
+己の没落を受け入れよ
+
+己の破滅を受け入れよ
+
+負けを認めよ
+
+慈悲を乞え
+
+降伏せよ
+
+絶望せよ
+
+落胆せよ
+
+己を捨てよ
+
+服従を受け入れよ
+
+降伏を受け入れよ
+
+破滅を抱きしめよ
+
+失敗を抱きしめよ
+
+没落を抱きしめよ
+
+己の遁走曲に向き合え
+
+己の鎮魂歌に向き合え
+
+もがけ
+
+屈せよ
+
+諦めよ
+
+跪け
+
+怖じ気づけ
+
+投げ出せ
+
+降参せよ
+
+屈服せよ
+
+服従せよ
+
+震えよ
+
+望みを捨てよ
+
+悔い改めよ
+
+敗北を味わえ
+%%%%
+whilst_thou_can
+
+# en:
+#   whilst thou can
+#
+#   whilst thou may
+#
+#   whilst thou are able
+#
+#   if wit thou hast
+#
+#   whilst thy luck holds
+#
+#   before doom catcheth thee
+#
+#   lest death find thee
+#
+#   whilst thou art whole
+#
+#   whilst life thou hast
+できるうちに
+
+許されるうちに
+
+まだ動けるうちに
+
+知恵があるなら
+
+運が尽きぬうちに
+
+破滅に捕まる前に
+
+死に見つからぬうちに
+
+五体満足なうちに
+
+命あるうちに
+%%%%
+body_or_spiritual_part
+
+# en:
+#   w:3
+#   @important_body_part@
+#
+#   w:1
+#   @important_spiritual_part@
+w:3
+@important_body_part@
+
+w:1
+@important_spiritual_part@
+%%%%
+will_or_shall
+
+# en:
+#   will
+#
+#   shall
+やる
+
+くれよう
+%%%%
+feast_or_devour
+
+# en:
+#   feast on
+#
+#   devour
+貪り食って
+
+喰らい尽くして
+%%%%
+important_body_part
+
+# en:
+#   head
+#
+#   brain
+#
+#   heart
+#
+#   viscera
+#
+#   eyes
+#
+#   lungs
+#
+#   liver
+#
+#   throat
+#
+#   neck
+#
+#   gizzard
+#
+#   skull
+#
+#   spine
+頭
+
+脳髄
+
+心臓
+
+臓物
+
+目玉
+
+肺
+
+肝臓
+
+喉
+
+首
+
+胃袋
+
+頭蓋骨
+
+背骨
+%%%%
+important_spiritual_part
+
+# en:
+#   soul
+#
+#   spirit
+#
+#   inner light
+#
+#   hope
+#
+#   faith
+#
+#   will
+#
+#   heart
+#
+#   mind
+#
+#   sanity
+#
+#   fortitude
+#
+#   life force
+#
+#   vitality
+魂
+
+霊
+
+内なる光
+
+希望
+
+信仰
+
+意志
+
+心
+
+精神
+
+正気
+
+不屈の心
+
+生命力
+
+活力
+%%%%
+meal
+
+# en:
+#   meal
+#
+#   breakfast
+#
+#   lunch
+#
+#   dinner
+#
+#   supper
+#
+#   repast
+#
+#   snack
+#
+#   victuals
+#
+#   refection
+#
+#   junket
+#
+#   luncheon
+#
+#   snackling
+#
+#   curdle
+#
+#   snacklet
+#
+#   mouthful
+食事
+
+朝食
+
+昼食
+
+晩餐
+
+夕餉
+
+馳走
+
+おやつ
+
+食糧
+
+軽食
+
+宴の馳走
+
+午餐
+
+小さなおやつ
+
+凝乳
+
+ひと口おやつ
+
+ひと口
+%%%%
+generic_insult
+
+# en:
+#   @insult_adjective1@ @insult_adjective2@ @insult_noun@
+@insult_adjective1@@insult_adjective2@@insult_noun@
+%%%%
+insult_adjective1
+
+# en:
+#   w:5
+#   @species_insult_adj1@
+#
+#   @insult general adj1@
+w:5
+@species_insult_adj1@
+
+@insult general adj1@
+%%%%
+insult general adj1
+
+# en:
+#   artless
+#
+#   baffled
+#
+#   bawdy
+#
+#   beslubbering
+#
+#   bootless
+#
+#   bumbling
+#
+#   canting
+#
+#   churlish
+#
+#   cockered
+#
+#   clouted
+#
+#   craven
+#
+#   currish
+#
+#   defiled
+#
+#   dankish
+#
+#   dissembling
+#
+#   droning
+#
+#   ducking
+#
+#   erky
+#
+#   errant
+#
+#   euchred
+#
+#   fawning
+#
+#   feckless
+#
+#   feeble
+#
+#   fobbing
+#
+#   foisting
+#
+#   foppish
+#
+#   froward
+#
+#   frothy
+#
+#   fulsome
+#
+#   gleeking
+#
+#   goatish
+#
+#   gorbellied
+#
+#   grime-gilt
+#
+#   horrid
+#
+#   hateful
+#
+#   impertinent
+#
+#   infectious
+#
+#   jarring
+#
+#   loggerheaded
+#
+#   lumpish
+#
+#   mammering
+#
+#   mangled
+#
+#   mewling
+#
+#   obnoxious
+#
+#   odious
+#
+#   paunchy
+#
+#   peaked
+#
+#   peeagling
+#
+#   pribbling
+#
+#   puking
+#
+#   puny
+#
+#   pandering
+#
+#   pecksniffian
+#
+#   plume-plucked
+#
+#   pottle-deep
+#
+#   pox-marked
+#
+#   qualling
+#
+#   quaking
+#
+#   rank
+#
+#   reeling-ripe
+#
+#   rough-hewn
+#
+#   simpering
+#
+#   skyhacking
+#
+#   spongy
+#
+#   surly
+#
+#   tottering
+#
+#   twisted
+#
+#   unctious
+#
+#   unhinged
+#
+#   unmuzzled
+#
+#   vain
+#
+#   venomed
+#
+#   villainous
+#
+#   warped
+#
+#   wayward
+#
+#   weedy
+#
+#   worthless
+#
+#   yeasty
+無芸な
+
+途方に暮れた
+
+下品な
+
+よだれまみれの
+
+役立たずの
+
+へまばかりの
+
+偽善ぶった
+
+無作法な
+
+甘やかされた
+
+つぎはぎの
+
+臆病な
+
+野良犬のような
+
+汚れた
+
+じめじめした
+
+猫かぶりの
+
+のろくさい
+
+ぺこぺこする
+
+いけ好かない
+
+さまよえる
+
+出し抜かれた
+
+へつらう
+
+無能な
+
+ひ弱な
+
+ごまかし屋の
+
+いかさまの
+
+めかし屋の
+
+ひねくれた
+
+泡を吹く
+
+鼻持ちならない
+
+あざけり屋の
+
+山羊みたいな
+
+太鼓腹の
+
+垢まみれの
+
+ぞっとする
+
+憎たらしい
+
+生意気な
+
+病気持ちの
+
+耳障りな
+
+でくの坊の
+
+鈍重な
+
+口ごもる
+
+ずたずたの
+
+めそめそした
+
+不快な
+
+忌まわしい
+
+腹の出た
+
+やつれた
+
+ぴいぴい泣く
+
+屁理屈屋の
+
+げろを吐く
+
+ちっぽけな
+
+ぽん引きの
+
+偽善者の
+
+羽をむしられた
+
+へべれけの
+
+あばた面の
+
+怖気づいた
+
+震える
+
+臭い
+
+千鳥足の
+
+粗削りな
+
+にやけた
+
+空を切るばかりの
+
+ぶよぶよした
+
+不機嫌な
+
+よろよろの
+
+ねじくれた
+
+脂ぎった
+
+狂った
+
+口の減らない
+
+うぬぼれた
+
+毒持ちの
+
+悪党の
+
+歪んだ
+
+気まぐれな
+
+貧弱な
+
+無価値な
+
+浮ついた
+%%%%
+insult elf adj1
+
+# en:
+#   weakly
+#
+#   sickly
+#
+#   frail
+#
+#   delicate
+#
+#   fragile
+#
+#   frumpy
+#
+#   brittle
+#
+#   tender
+#
+#   mooning
+#
+#   painted
+#
+#   lily-hearted
+#
+#   dandy
+#
+#   featherweight
+#
+#   flimsy
+#
+#   rootless
+#
+#   spindly
+#
+#   puny
+#
+#   shaky
+#
+#   prissy
+#
+#   underdone
+弱々しい
+
+病弱な
+
+虚弱な
+
+華奢な
+
+壊れやすい
+
+野暮ったい
+
+もろい
+
+柔な
+
+ぼんやりした
+
+厚化粧の
+
+腰抜けの
+
+気取り屋の
+
+羽のように軽い
+
+ペラペラの
+
+根無し草の
+
+ひょろひょろの
+
+ちっぽけな
+
+ぐらぐらの
+
+お上品ぶった
+
+生煮えの
+%%%%
+insult felid adj1
+
+# en:
+#   matted
+#
+#   grungy
+#
+#   rabid
+#
+#   picayune
+#
+#   weenchy
+#
+#   crummy
+#
+#   daggy
+#
+#   feral
+#
+#   stray
+#
+#   sticky
+#
+#   musky
+#
+#   slinking
+毛玉だらけの
+
+薄汚い
+
+狂犬病の
+
+ちんけな
+
+ちっこい
+
+しょぼい
+
+尻の毛が汚れた
+
+野良の
+
+迷い猫の
+
+べたべたの
+
+じゃこう臭い
+
+こそこそした
+%%%%
+insult_adjective2
+
+# en:
+#   w:5
+#   @species_insult_adj2@
+#
+#   @insult general adj2@
+w:5
+@species_insult_adj2@
+
+@insult general adj2@
+%%%%
+insult general adj2
+
+# en:
+#   base-court
+#
+#   bat-fowling
+#
+#   beef-witted
+#
+#   beetle-headed
+#
+#   boil-brained
+#
+#   clapper-clawed
+#
+#   clay-brained
+#
+#   common-kissing
+#
+#   crook-pated
+#
+#   dismal-dreaming
+#
+#   ditch-delivered
+#
+#   dizzy-eyed
+#
+#   doghearted
+#
+#   dread-bolted
+#
+#   earth-vexing
+#
+#   elf-skinned
+#
+#   fat-kidneyed
+#
+#   fen-sucked
+#
+#   flap-mouthed
+#
+#   flat-headed
+#
+#   fly-bitten
+#
+#   fob-snatching
+#
+#   folly-fallen
+#
+#   fool-born
+#
+#   fool-headed
+#
+#   full-gorged
+#
+#   guts-griping
+#
+#   half-faced
+#
+#   hasty-witted
+#
+#   hedge-born
+#
+#   hell-hated
+#
+#   idle-headed
+#
+#   ill-breeding
+#
+#   ill-nurtured
+#
+#   kobold-kissing
+#
+#   knotty-pated
+#
+#   limp-willed
+#
+#   milk-livered
+#
+#   miscreant
+#
+#   moon-mazed
+#
+#   motley-minded
+#
+#   moldwarp
+#
+#   mumble-news
+#
+#   nose-picking
+#
+#   nut-hook
+#
+#   onion-eyed
+#
+#   pigeon-egg
+#
+#   roguish
+#
+#   rude-growing
+#
+#   rump-fed
+#
+#   ruttish
+#
+#   saucy
+#
+#   shard-borne
+#
+#   sheep-biting
+#
+#   sow-suckled
+#
+#   spleeny
+#
+#   spur-galled
+#
+#   swag-bellied
+#
+#   tardy-gaited
+#
+#   tickle-brained
+#
+#   tip-merry
+#
+#   toad-spotted
+#
+#   toenail-biting
+#
+#   toot-wallowing
+#
+#   two-tin-hat
+#
+#   unchin-snouted
+#
+#   weather-bitten
+#
+#   weeb-spouting
+#
+#   weevil-witted
+#
+#   wibble-sucking
+裏庭育ちの
+
+こそ泥の
+
+牛並みの知恵の
+
+木槌頭の
+
+煮えた脳みその
+
+引っかき傷だらけの
+
+泥の脳みその
+
+誰とでも口づけする
+
+曲がった頭の
+
+陰気な夢を見る
+
+ドブで生まれた
+
+目の回った
+
+犬の心根の
+
+恐怖に駆られた
+
+大地を悩ます
+
+エルフの皮の
+
+腎臓まで太った
+
+沼の毒気を吸った
+
+だぶだぶ口の
+
+平べったい頭の
+
+蝿にたかられた
+
+スリ稼業の
+
+愚行に堕ちた
+
+阿呆から生まれた
+
+阿呆頭の
+
+食い過ぎの
+
+腹下しの
+
+半人前の面の
+
+早合点の
+
+どこの馬の骨とも知れぬ
+
+地獄にも嫌われた
+
+ぼんくら頭の
+
+育ちの悪い
+
+しつけの悪い
+
+コボルドと口づけする
+
+こぶだらけの頭の
+
+意志薄弱な
+
+意気地のない
+
+ならず者の
+
+月に惑わされた
+
+まだら頭の
+
+もぐら並みの
+
+噂好きの
+
+鼻ほじりの
+
+小役人の
+
+玉ねぎで涙目の
+
+鳩の卵みたいな
+
+ごろつきの
+
+粗野に育った
+
+尻肉で肥えた
+
+盛りのついた
+
+小生意気な
+
+糞虫のような
+
+羊泥棒の
+
+雌豚の乳で育った
+
+癇癪持ちの
+
+拍車で擦りむけた
+
+布袋腹の
+
+のろのろ歩きの
+
+酔いどれの
+
+ほろ酔いの
+
+ガマのような斑の
+
+足の爪を噛む
+
+汚物に転げ回る
+
+二束三文の
+
+顎なし鼻面の
+
+風雨に晒された
+
+戯言をまき散らす
+
+コクゾウムシ並みの知恵の
+
+ぐずぐず言う
+%%%%
+insult dwarf adj2
+
+# en:
+#   dirt-grubbing
+#
+#   grit-sucking
+#
+#   muck-plodding
+#
+#   stone-broke
+#
+#   pelf-dandling
+#
+#   fault-botching
+#
+#   gravel-grovelling
+#
+#   boodle-bothering
+#
+#   cabbage-coddling
+#
+#   rhino-ravelling
+#
+#   thigh-biting
+#
+#   dirt-delving
+土をほじくる
+
+砂利をしゃぶる
+
+泥の中をのし歩く
+
+一文無しの
+
+小銭をいじくる
+
+細工しくじりの
+
+砂利に這いつくばる
+
+小銭に目がない
+
+キャベツを甘やかす
+
+金勘定でこんがらがった
+
+太腿に噛みつく
+
+泥を掘る
+%%%%
+insult felid adj2
+
+# en:
+#   worm-riddled
+#
+#   mange-covered
+#
+#   gunky-eyed
+#
+#   death-cheating
+#
+#   cutty-eyed
+#
+#   gristle-gnawing
+#
+#   spot-chasing
+#
+#   chapped-arsed
+#
+#   key-stepping
+#
+#   rot-lapping
+寄生虫だらけの
+
+疥癬まみれの
+
+目やにだらけの
+
+死神を出し抜く
+
+横目で睨む
+
+軟骨をかじる
+
+光の点を追いかける
+
+尻のひび割れた
+
+鍵盤を踏み歩く
+
+腐ったものを舐める
+%%%%
+insult tengu adj2
+
+# en:
+#   hollow-boned
+#
+#   feather-brained
+#
+#   beak-witted
+#
+#   hen-pecked
+#
+#   lightweight
+#
+#   frail-limbed
+#
+#   bird-brained
+#
+#   featherweight
+#
+#   pigeon-toed
+#
+#   crow-beaked
+#
+#   magpie-eyed
+#
+#   mallardish
+骨すかすかの
+
+羽毛頭の
+
+くちばし並みの知恵の
+
+尻に敷かれた
+
+軽量級の
+
+か細い手足の
+
+鳥頭の
+
+羽のように軽い
+
+内股の
+
+カラスくちばしの
+
+光り物好きの
+
+鴨みたいな
+%%%%
+insult mummy adj2
+
+# en:
+#   desiccated
+#
+#   dried
+#
+#   musty
+#
+#   flammable
+#
+#   inflammable
+#
+#   ignitable
+#
+#   combustible
+#
+#   smouldering
+#
+#   shrink-wrapped
+#
+#   crepe-taped
+#
+#   duct-taped
+#
+#   fraying
+#
+#   hand-wound
+#
+#   tightly wound
+#
+#   high-strung
+#
+#   straight-laced
+#
+#   grave-robbed
+#
+#   w:30
+#   @insult undead adj2@
+干からびた
+
+乾いた
+
+かび臭い
+
+燃えやすい
+
+可燃性の
+
+着火しやすい
+
+よく燃える
+
+くすぶる
+
+真空パックの
+
+クレープテープ巻きの
+
+ガムテープ巻きの
+
+ほつれた
+
+手巻きの
+
+きつく巻かれた
+
+ぴりぴりした
+
+堅苦しい
+
+墓を荒らされた
+
+w:30
+@insult undead adj2@
+%%%%
+insult vampire adj2
+
+# en:
+#   bat-flapping
+#
+#   blood-sucking
+#
+#   light-shying
+#
+#   pallid
+#
+#   sallow
+#
+#   cream-faced
+#
+#   whey-faced
+#
+#   anaemic
+#
+#   bloodless
+#
+#   exsanguinous
+#
+#   w:20
+#   @insult undead adj2@
+蝙蝠みたいにばたつく
+
+血を吸う
+
+光を怖がる
+
+青ざめた
+
+土気色の
+
+青白い顔の
+
+乳清みたいな顔色の
+
+貧血の
+
+血の気のない
+
+血の抜けた
+
+w:20
+@insult undead adj2@
+%%%%
+insult undead adj2
+
+# en:
+#   deathlike
+#
+#   lifeless
+#
+#   undead
+#
+#   corpse-like
+#
+#   deado
+死人のような
+
+生気のない
+
+不死の
+
+屍のような
+
+くたばり損ないの
+%%%%
+insult_noun
+
+# en:
+#   w:5
+#   @species_insult_noun@
+#
+#   @insult general noun@
+w:5
+@species_insult_noun@
+
+@insult general noun@
+%%%%
+insult general noun
+
+# en:
+#   apple-john
+#
+#   baggage
+#
+#   bandersnitch
+#
+#   barnacle
+#
+#   beggar
+#
+#   blabberskite
+#
+#   bladder
+#
+#   bloater
+#
+#   boar-pig
+#
+#   bootlicker
+#
+#   bounder
+#
+#   brigand
+#
+#   bugbear
+#
+#   bum-bailey
+#
+#   buzzard-bait
+#
+#   canker-blossom
+#
+#   clack-dish
+#
+#   clam
+#
+#   clotpole
+#
+#   Cock-Lorel
+#
+#   coxcomb
+#
+#   codpiece
+#
+#   crab-lanthorn
+#
+#   cross-patch
+#
+#   dandiprat
+#
+#   deadneck
+#
+#   death-token
+#
+#   dewberry
+#
+#   dingleberry
+#
+#   efter
+#
+#   erk
+#
+#   flap-bat
+#
+#   flax-wench
+#
+#   fleecer
+#
+#   flim-flammer
+#
+#   flirt-gill
+#
+#   foot-licker
+#
+#   frater
+#
+#   fustilarian
+#
+#   giglet
+#
+#   gnoll-tail
+#
+#   gonus
+#
+#   gudgeon
+#
+#   guttersnipe
+#
+#   haggard
+#
+#   harpy
+#
+#   hedge-pig
+#
+#   hugger-mugger
+#
+#   jarkman
+#
+#   joithead
+#
+#   lewdster
+#
+#   lout
+#
+#   maggot-pie
+#
+#   malt-worm
+#
+#   mammet
+#
+#   measle
+#
+#   mendicant
+#
+#   minnow reeky
+#
+#   mish-mash
+#
+#   mule
+#
+#   nert
+#
+#   nightsoil
+#
+#   nobody
+#
+#   nothing
+#
+#   pigeon-egg
+#
+#   pignut
+#
+#   pimple
+#
+#   pissant
+#
+#   pot-faker
+#
+#   prigger-of-prances
+#
+#   pustule
+#
+#   puttock
+#
+#   pumpion
+#
+#   ratsbane
+#
+#   reprobate
+#
+#   scavenger
+#
+#   scut
+#
+#   serf
+#
+#   simpleton
+#
+#   skainsmate
+#
+#   slabber
+#
+#   slime mould
+#
+#   snaffler
+#
+#   snake-molt
+#
+#   socdollager
+#
+#   strumpet
+#
+#   surfacer
+#
+#   swadder
+#
+#   tinkerer
+#
+#   tiddler
+#
+#   tiler
+#
+#   toady
+#
+#   urchin
+#
+#   varlet
+#
+#   vassal
+#
+#   vulture
+#
+#   wastrel
+#
+#   wagtail
+#
+#   whey-face
+#
+#   whip-jack
+#
+#   wormtrail
+#
+#   yak-dropping
+#
+#   zombie-fodder
+しなびた林檎
+
+あばずれ
+
+バンダースナッチ
+
+フジツボ
+
+乞食
+
+おしゃべり屋
+
+膀胱野郎
+
+燻製ニシン
+
+雄豚
+
+おべっか使い
+
+ろくでなし
+
+山賊
+
+お化け
+
+下っ端役人
+
+ハゲタカの餌
+
+虫食い花
+
+物乞いの皿
+
+ハマグリ
+
+間抜け
+
+悪党の親玉
+
+洒落者
+
+股袋
+
+カニ提灯
+
+気難し屋
+
+小人物
+
+くたばり首
+
+死の兆し
+
+野イチゴ
+
+尻の汚れ
+
+こそ泥
+
+新兵
+
+バタバタ蝙蝠
+
+糸紡ぎ女
+
+ぼったくり屋
+
+ペテン師
+
+尻軽
+
+足舐め
+
+托鉢詐欺師
+
+でぶ
+
+おてんば
+
+ノールの尻尾
+
+とんま
+
+カモ
+
+浮浪児
+
+鷹のなりそこない
+
+ハーピー
+
+ハリネズミ
+
+こそこそ屋
+
+偽造屋
+
+でくの坊
+
+好色漢
+
+田舎者
+
+カササギ
+
+呑んだくれ
+
+操り人形
+
+はしか
+
+物乞い
+
+臭い雑魚
+
+ごちゃまぜ
+
+ラバ
+
+ばか
+
+下肥
+
+取るに足らぬ奴
+
+無
+
+鳩の卵
+
+落花生
+
+にきび
+
+小物
+
+偽物作り
+
+馬泥棒
+
+膿疱
+
+鳶
+
+カボチャ
+
+殺鼠剤
+
+悪党
+
+腐肉漁り
+
+尻尾
+
+農奴
+
+お人好し
+
+ごろつき仲間
+
+よだれ垂らし
+
+粘菌
+
+泥棒
+
+蛇の抜け殻
+
+とどめの一撃
+
+売女
+
+地上人
+
+行商人
+
+いじくり屋
+
+小魚
+
+瓦職人
+
+太鼓持ち
+
+小僧
+
+下郎
+
+家来
+
+ハゲタカ
+
+穀潰し
+
+セキレイ
+
+青びょうたん
+
+偽船乗り
+
+ミミズの這い跡
+
+ヤクの糞
+
+ゾンビの餌
+%%%%
+small_food
+
+# en:
+#   snackling
+#
+#   crunchlet
+#
+#   half-meal
+#
+#   supper-setting
+#
+#   snacklet
+#
+#   noshlet
+#
+#   morsel
+#
+#   mug-up
+#
+#   bite-bait
+#
+#   crunch-chow
+#
+#   snack-pap
+#
+#   grub
+#
+#   mouthful
+#
+#   half-pint
+#
+#   weenchy-treat
+小さなおやつ
+
+かりかりおやつ
+
+半人前の食事
+
+夕食の付け合わせ
+
+ひと口おやつ
+
+つまみ食い
+
+一切れ
+
+夜食
+
+一口餌
+
+ぱりぱりご飯
+
+おやつ粥
+
+飯
+
+ひと口
+
+ちび
+
+ちっこいご褒美
+%%%%
+insult felid noun
+
+# en:
+#   kitten
+#
+#   fleabag
+#
+#   vermin
+#
+#   loo-gargler
+#
+#   pate-warmer
+#
+#   pander-nanny
+#
+#   hissie
+#
+#   cooking-fat
+#
+#   sand-tongue
+#
+#   scamp
+#
+#   fur-fop
+#
+#   toe-scratcher
+#
+#   filth-coat
+#
+#   gob-dollager
+子猫
+
+蚤袋
+
+害獣
+
+便器の水飲み
+
+頭温め係
+
+ぽん引き乳母
+
+シャーシャー屋
+
+料理用の脂
+
+砂舌
+
+悪たれ
+
+毛皮気取り
+
+足の指ひっかき
+
+汚れ毛皮
+
+毛玉吐き
+%%%%
+insult spriggan noun
+
+# en:
+#   w:100
+#   @small_food@
+#
+#   rat-rider
+#
+#   quarter-pint
+#
+#   nissette
+#
+#   fizzle-flop
+#
+#   spell-botch
+#
+#   feeblet
+#
+#   weakling
+#
+#   pinchbeck-pixie
+#
+#   ankle-biter
+#
+#   bootstain
+#
+#   nano-nebbish
+#
+#   sopling
+#
+#   shrunken violet
+#
+#   sissy-prig
+#
+#   pussyfoot
+#
+#   creepsneak
+w:100
+@small_food@
+
+ネズミ乗り
+
+ちびすけ
+
+小妖精
+
+不発弾
+
+呪文しくじり
+
+弱虫
+
+虚弱者
+
+まがい物の妖精
+
+足首噛み
+
+靴の染み
+
+極小の小心者
+
+泣き虫
+
+しなびたスミレ
+
+気取った弱虫
+
+忍び足
+
+こそこそ虫
+%%%%
+insult minotaur noun
+
+# en:
+#   bovine
+#
+#   brisket
+#
+#   bull-brain
+#
+#   cud-chewer
+#
+#   calf-wit
+#
+#   cloven-toed
+#
+#   cretin
+#
+#   cow
+#
+#   cattle
+#
+#   horn-beast
+#
+#   meatloaf
+#
+#   meatball
+#
+#   mooer
+#
+#   rump-roast
+#
+#   ruminant
+#
+#   veal
+#
+#   walking sirloin
+牛
+
+牛の胸肉
+
+牛脳
+
+反芻屋
+
+子牛並みの知恵
+
+割れ蹄
+
+うすのろ
+
+雌牛
+
+家畜
+
+角獣
+
+ミートローフ
+
+肉団子
+
+モーモー屋
+
+尻肉のロースト
+
+反芻動物
+
+子牛肉
+
+歩くサーロイン
+%%%%
+insult mummy noun
+
+# en:
+#   dustbag
+#
+#   deado
+#
+#   fogey
+#
+#   linensack
+#
+#   clothbag
+#
+#   tombling
+#
+#   mummylet
+#
+#   shroud
+#
+#   paper wrap
+#
+#   roll of bandages
+#
+#   bundle of gauze
+#
+#   cotton waste
+#
+#   wrapping tissue
+#
+#   pyre
+#
+#   tinder
+埃袋
+
+死に損ない
+
+時代遅れ
+
+亜麻布袋
+
+布袋
+
+墓っ子
+
+ミイラもどき
+
+経帷子
+
+紙包み
+
+包帯一巻き
+
+ガーゼの束
+
+綿くず
+
+包み紙
+
+火葬の薪
+
+焚きつけ
+%%%%

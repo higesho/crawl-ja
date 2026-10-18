@@ -1,0 +1,1298 @@
+%%%%
+default peaceful fountain_blue
+
+# en:
+#   {{
+#     -- Wisps can drink potions, so no need for another message here.
+#     if you.transform() == "death" or you.race() == "Mummy" then
+#       if crawl.one_chance_in(3) then
+#         return "You briefly stare at the drinking fountain and sigh."
+#       else
+#         return "__NONE"
+#       end
+#     elseif you.transform() == "storm" then
+#       return "The fountain crackles underneath you."
+#     else
+#       return "You take a small sip from the fountain. Refreshing.";
+#     end
+#   }}
+#
+#   {{
+#     if you.transform() == "storm" then
+#       return "Small shocks surge through the fountain."
+#     elseif you.transform() == "wisp" then
+#       return "Your reflection flickers strangely in the water."
+#     elseif crawl.coinflip() or you.god() == "Okawaru" then
+#       return "You briefly stop to wash @your_hands@."
+#     else
+#       return "You briefly stop to clean @your_weapon@."
+#     end
+#   }}
+#
+#   w:1
+#   You see @any_graffiti@ on the fountain.
+{{
+  -- Wisps can drink potions, so no need for another message here.
+  if you.transform() == "death" or you.race() == "Mummy" then
+    if crawl.one_chance_in(3) then
+      return "あなたは水飲み場をしばし見つめ、ため息をついた。"
+    else
+      return "__NONE"
+    end
+  elseif you.transform() == "storm" then
+    return "あなたの下で噴水がぱちぱちと音を立てた。"
+  else
+    return "あなたは噴水の水を少し口に含んだ。爽やかだ。";
+  end
+}}
+
+{{
+  if you.transform() == "storm" then
+    return "噴水に小さな電撃が走った。"
+  elseif you.transform() == "wisp" then
+    return "水面に映るあなたの姿が奇妙に揺らめいた。"
+  elseif crawl.coinflip() or you.god() == "Okawaru" then
+    return "あなたは少し立ち止まって@your_hands@を洗った。"
+  else
+    return "あなたは少し立ち止まって@your_weapon@を清めた。"
+  end
+}}
+
+w:1
+噴水に@any_graffiti@が見えた。
+%%%%
+default fountain_blue
+
+# en:
+#   The fountain briefly ripples from your approaching presence.
+#
+#   w:1
+#   You see @any_graffiti@ on the fountain.
+あなたが近づくと、噴水の水面がかすかに波立った。
+
+w:1
+噴水に@any_graffiti@が見えた。
+%%%%
+default peaceful fountain_sparkling
+
+# en:
+#   {{
+#     if you.transform() == "death" or you.race() == "Mummy" then
+#       if crawl.one_chance_in(3) then
+#         return "You briefly stare at the sparkling fountain and sigh."
+#       else
+#         return "__NONE"
+#       end
+#     elseif you.transform() == "storm" then
+#       return "The fountain curiously crackles underneath you."
+#     elseif crawl.coinflip() or you.god == "Zin" or you.god == "Cheibriados" then
+#       return "The fountain pulses with strange @any_colour_pattern@, and you decide not to drink from it."
+#     else
+#       return "You take a small sip from the fountain. @sparkling_message@"
+#     end
+#   }}
+#
+#   w:1
+#   You see @any_graffiti@ on the fountain.
+{{
+  if you.transform() == "death" or you.race() == "Mummy" then
+    if crawl.one_chance_in(3) then
+      return "あなたはきらめく噴水をしばし見つめ、ため息をついた。"
+    else
+      return "__NONE"
+    end
+  elseif you.transform() == "storm" then
+    return "あなたの下で噴水が不思議にぱちぱちと音を立てた。"
+  elseif crawl.coinflip() or you.god == "Zin" or you.god == "Cheibriados" then
+    return "噴水は奇妙な@any_colour_pattern@に脈打っている。あなたは飲まないことにした。"
+  else
+    return "あなたは噴水の水を少し口に含んだ。@sparkling_message@"
+  end
+}}
+
+w:1
+噴水に@any_graffiti@が見えた。
+%%%%
+sparkling_message
+
+# en:
+#   You feel fleetingly lighter.
+#
+#   You feel a fleeting jolt of bravery.
+#
+#   You feel nauseous for a moment.
+#
+#   Your emotions uncomfortably twist.
+一瞬、体が軽くなった気がした。
+
+一瞬、勇気が湧き上がった。
+
+一瞬、吐き気を覚えた。
+
+感情が不快にねじれた。
+%%%%
+default fountain_sparkling
+
+# en:
+#   The sparkling fountain shimmers a faint @any_colour@.
+#
+#   w:1
+#   You see @any_graffiti@ on the fountain.
+きらめく噴水がかすかな@any_colour@に揺らめいた。
+
+w:1
+噴水に@any_graffiti@が見えた。
+%%%%
+default fountain_blood
+
+# en:
+#   {{
+#      if you.can_smell() then
+#        return "You smell the mouldering metallic scent of the fountain's ceaseless blood."
+#      elseif you.god() == "Trog" then
+#        return "You make sure not to track any more blood on yourself."
+#      else
+#        return "You make sure not to track any blood on yourself."
+#      end
+#   }}
+#
+#   Miniscule mosquitoes swarm blood-drunk across the fountain's surface.
+#
+#   w:3
+#   Your reflection in the fountain of blood stares back at you in silent [judgement|horror].
+#
+#   w:3
+#   The fountain of blood pulses in murmuring sobs.
+#
+#   w:1
+#   The blood fountain gushes with blood, as blood fountains often do.
+{{
+   if you.can_smell() then
+     return "噴水から絶え間なく流れる血の、腐りかけた金気臭い匂いがした。"
+   elseif you.god() == "Trog" then
+     return "これ以上血を体に付けないよう気をつけた。"
+   else
+     return "体に血が付かないよう気をつけた。"
+   end
+}}
+
+血に酔った小さな蚊が噴水の水面を群れ飛んでいる。
+
+w:3
+血の噴水に映るあなたの姿が、無言の[非難|恐怖]を込めてあなたを見つめ返している。
+
+w:3
+血の噴水は、つぶやくようなすすり泣きとともに脈打っている。
+
+w:1
+血の噴水は血を噴き上げている。血の噴水がよくそうするように。
+%%%%
+default fountain_eyes
+
+# en:
+#   The fountain's eyes stare blankly through you.
+#
+#   The fountain's eyes stare idly in all directions.
+#
+#   The fountain's eyes stare into nothing.
+噴水の目玉はうつろにあなたを素通りして見つめている。
+
+噴水の目玉はぼんやりと四方八方を見つめている。
+
+噴水の目玉は虚空を見つめている。
+%%%%
+default peaceful dry_fountain
+
+# en:
+#   w:1
+#   You see @any_graffiti@ on the fountain.
+w:1
+噴水に@any_graffiti@が見えた。
+%%%%
+default dry_fountain
+
+# en:
+#   w:1
+#   You see @any_graffiti@ on the fountain.
+w:1
+噴水に@any_graffiti@が見えた。
+%%%%
+Ashenzari peaceful fountain_blue
+
+# en:
+#   You attempt to scry through the fountain, but the Dungeon's magics reject you.
+噴水を通して占おうとしたが、ダンジョンの魔力に拒まれた。
+%%%%
+Ashenzari fountain_blue
+
+# en:
+#   You catch brief visions of the Dungeon's past in the fountain's reflection.
+噴水に映る像の中に、ダンジョンの過去の光景が一瞬垣間見えた。
+%%%%
+Beogh fountain_blue
+
+# en:
+#   You look at your reflection in the fountain and see a proud orc.
+噴水に映る自分の姿を見ると、誇り高きオークがそこにいた。
+%%%%
+Beogh fountain_sparkling
+
+# en:
+#   You look at your [shimmering|glittering] reflection in the fountain and see a proud orc.
+[揺らめく|きらきらと輝く]噴水に映る自分の姿を見ると、誇り高きオークがそこにいた。
+%%%%
+Cheibriados fountain_sparkling
+
+# en:
+#   You briefly disapprove of the fountain's mystically arrhythmic flow.
+噴水の神秘的に不規則な流れに、あなたは一瞬眉をひそめた。
+%%%%
+Cheibriados peaceful dry_fountain
+
+# en:
+#   You briefly muse on the calm stillness of an empty fountain.
+空の噴水の穏やかな静けさに、しばし思いを巡らせた。
+%%%%
+Dithmenos fountain_blood
+
+# en:
+#   You scoff at the overwrought melodramatics of this fountain.
+この噴水の大げさで芝居がかった演出を、あなたは鼻で笑った。
+%%%%
+Elyvilon peaceful fountain_blue
+
+# en:
+#   You approve of the purity and functionality of this drinking fountain.
+#
+#   @default peaceful fountain_blue@
+この水飲み場の清らかさと実用性を、あなたは好ましく思った。
+
+@default peaceful fountain_blue@
+%%%%
+Fedhas peaceful fountain_blue
+
+# en:
+#   You briefly survey the algae on the fountain's rim. They seem healthy.
+噴水の縁の藻をしばし観察した。元気そうだ。
+%%%%
+Fedhas peaceful fountain_sparkling
+
+# en:
+#   You briefly survey the algae on the fountain's rim. They shimmer back.
+噴水の縁の藻をしばし観察した。藻はきらめき返してきた。
+%%%%
+Fedhas peaceful fountain_blood
+
+# en:
+#   You briefly survey the mould on the fountain's rim. It seems... concerning.
+噴水の縁の黴をしばし観察した。どうも……気がかりだ。
+%%%%
+Fedhas peaceful fountain_eyes
+
+# en:
+#   You briefly survey the mould on the fountain's rim. It possibly surveys back.
+噴水の縁の黴をしばし観察した。黴の方もこちらを観察しているのかもしれない。
+%%%%
+Gozag peaceful fountain_blue
+
+# en:
+#   You look for coins within the fountain, but they're all too worthless to bother.
+噴水の中に硬貨がないか探したが、どれも拾う価値のないものばかりだった。
+%%%%
+Gozag peaceful fountain_sparkling
+
+# en:
+#   @Gozag peaceful fountain_blue@
+@Gozag peaceful fountain_blue@
+%%%%
+Gozag fountain_blood
+
+# en:
+#   w:2
+#   You flinch at the exorbitant financial cost of maintaining this fountain.
+#
+#   @default fountain_blood@
+w:2
+この噴水の維持にかかる法外な費用を思い、あなたはたじろいだ。
+
+@default fountain_blood@
+%%%%
+Hepliaklqana fountain_blue
+
+# en:
+#   The fountain's ripples stir distant, transient memories.
+噴水の波紋が、遠くはかない記憶を呼び覚ました。
+%%%%
+Hepliaklqana dry_fountain
+
+# en:
+#   You swear to never forget your legacy as this fountain's builders were forgotten.
+この噴水を造った者たちが忘れられたように、自らの遺産を忘れることは決してすまいと誓った。
+%%%%
+Hepliaklqana peaceful fountain_blood
+
+# en:
+#   You observe a moment of silence for whomever's blood flows through this fountain.
+この噴水を流れる血の主が誰であれ、その者のために一瞬黙祷を捧げた。
+%%%%
+Ignis fountain_blue
+
+# en:
+#   The fountain's water lightly sizzles in your presence.
+#
+#   w:1
+#   The dying flame fearfully flickers in the reflection of the fountain.
+あなたがいると、噴水の水がかすかにじゅうじゅうと音を立てた。
+
+w:1
+噴水に映る消えゆく炎が、怯えたように揺らめいた。
+%%%%
+Ignis fountain_sparkling
+
+# en:
+#   The fountain's sparkling water lightly sizzles and shimmers in your presence.
+#
+#   w:1
+#   The dying flame fearfully flickers in the reflection of the sparkling fountain.
+あなたがいると、噴水のきらめく水がかすかにじゅうじゅうと音を立てて揺らめいた。
+
+w:1
+きらめく噴水に映る消えゆく炎が、怯えたように揺らめいた。
+%%%%
+Ignis fountain_blood
+
+# en:
+#   The fountain's blood briefly boils in your presence.
+あなたがいると、噴水の血が一瞬沸き立った。
+%%%%
+Jiyva peaceful fountain_blue
+
+# en:
+#   You stop to admire the sparkling slime slowly growing over the fountain's rim.
+立ち止まり、噴水の縁にゆっくりと広がっていくきらめくスライムに見とれた。
+%%%%
+Jiyva fountain_eyes
+
+# en:
+#   Your genes instinctively attempt to commune with the fountain's eyes and fail.
+#
+#   A few eyes on the fountain briefly shift into confused golden shades.
+あなたの遺伝子が本能的に噴水の目玉と交感しようとしたが、うまくいかなかった。
+
+噴水の目玉のいくつかが、一瞬戸惑ったような金色に変わった。
+%%%%
+Kikubaaqudgha peaceful dry_fountain
+
+# en:
+#   You muse upon the day when the entire world will share this fountain's fate.
+世界全体がこの噴水と同じ運命をたどる日に思いを馳せた。
+%%%%
+Lugonu peaceful fountain_eyes
+
+# en:
+#   You muse on Lugonu's promise to warp all of reality as thoroughly as this fountain.
+この噴水と同じくらい徹底的に全現実を歪めるというルゴヌの約束に思いを馳せた。
+%%%%
+Makhleb peaceful fountain_blood
+
+# en:
+#   You stop to admire the quantity of blood running through this fountain.
+#
+#   Your mind is briefly consumed by the idea of bathing in this fountain.
+#
+#   You anoint yourself with the fountain's blood.
+#
+#   You briefly wash @your_weapon@ in the fountain with ritualistic fervour.
+立ち止まり、この噴水を流れる血の量に感嘆した。
+
+この噴水で血を浴びるという考えに、一瞬心を奪われた。
+
+噴水の血を自らに塗りつけた。
+
+儀式めいた熱情を込めて、噴水で@your_weapon@を少し洗った。
+%%%%
+Nemelex Xobeh peaceful fountain_blue
+
+# en:
+#   You toss an ancient coin into the fountain for a little extra luck.
+ちょっとした幸運を願って、古い硬貨を噴水に投げ入れた。
+%%%%
+Nemelex Xobeh peaceful fountain_sparkling
+
+# en:
+#   You toss an ancient coin into the fountain for some extra glamorous luck.
+華やかな幸運を願って、古い硬貨を噴水に投げ入れた。
+%%%%
+Okawaru peaceful fountain_blue
+
+# en:
+#   You briefly wash @your_weapon@ with practiced discipline.
+鍛えられた手つきで@your_weapon@を手早く洗った。
+%%%%
+Qazlal peaceful fountain_blue
+
+# en:
+#   w:5
+#   You scoff at such attempts to contain the uncontrollable elements.
+#
+#   @Qazlal fountain_blue@
+w:5
+制御できぬ元素を閉じ込めようとするこうした試みを、あなたは鼻で笑った。
+
+@Qazlal fountain_blue@
+%%%%
+Qazlal fountain_blue
+
+# en:
+#   The fountain bubbles and surges in the storm.
+嵐の中で噴水が泡立ち、うねった。
+%%%%
+Qazlal fountain_sparkling
+
+# en:
+#   The fountain bubbles and surges violently in the storm.
+嵐の中で噴水が激しく泡立ち、うねった。
+%%%%
+Qazlal fountain_blood
+
+# en:
+#   The fountain's blood bubbles and surges in the storm.
+嵐の中で噴水の血が泡立ち、うねった。
+%%%%
+Ru peaceful fountain_blue
+
+# en:
+#   The water in the fountain reflects the world, which is itself a mere reflection.
+噴水の水は世界を映している。その世界もまた、ただの映し身にすぎない。
+%%%%
+Ru peaceful fountain_eyes
+
+# en:
+#   w:2
+#   The eyes in the fountain cannot see the truth any more than any other material.
+#
+#   @default fountain_eyes@
+w:2
+噴水の目玉も、他のどんな物質と同じく、真実を見ることはできない。
+
+@default fountain_eyes@
+%%%%
+Sif Muna peaceful fountain_sparkling
+
+# en:
+#   You struggle to determine the manifold diluted potions present in the fountain.
+噴水に溶け込んだ多種多様な薄い薬を見極めようと苦心した。
+%%%%
+Sif Muna peaceful fountain_blood
+
+# en:
+#   You struggle to identify the manner of creatures' blood used in this fountain.
+この噴水に使われているのがどんな生き物の血なのか、見極めようと苦心した。
+%%%%
+Sif Muna peaceful fountain_eyes
+
+# en:
+#   You idly identify at least [five|six] types of eyes growing in the fountain.
+噴水に生えている目玉が少なくとも[五|六]種類あることを、何気なく見分けた。
+%%%%
+Trog peaceful fountain_blue
+
+# en:
+#   {{
+#   if you.transform() == "wisp" then
+#     return "Your reflection in the fountain writhes with quiet rage."
+#   elseif you.transform() == "fungus" then
+#     return "You briefly stop and wring some of the blood out of your mycelia."
+#   else
+#     return "You briefly stop and wash some of the blood off your face."
+#   end
+#   }}
+{{
+if you.transform() == "wisp" then
+  return "噴水に映るあなたの姿が、静かな怒りに身をよじった。"
+elseif you.transform() == "fungus" then
+  return "少し立ち止まり、菌糸に染みた血をいくらか絞り出した。"
+else
+  return "少し立ち止まり、顔に付いた血をいくらか洗い流した。"
+end
+}}
+%%%%
+Uskayaw peaceful fountain_blue
+
+# en:
+#   You do an impromptu, brief dance in the water, like the crinaeae of old.
+古の泉の精クレーネーのように、水の中で即興の短い踊りを披露した。
+%%%%
+Uskayaw fountain_blood
+
+# en:
+#   The fountain of blood pulses a joyous rhythm of life and death.
+血の噴水は、生と死の喜ばしいリズムで脈打っている。
+%%%%
+Vehumet fountain_blood
+
+# en:
+#   You sense the potent destructive power at rest in within this fountain.
+この噴水の中に眠る強力な破壊の力を感じた。
+%%%%
+Wu Jian peaceful fountain_blue
+
+# en:
+#   You briefly muse on the need to flow like the water through this fountain.
+#
+#   w:5
+#   The fountain is calm. The water trickles softly. Here one can find peace.
+この噴水を流れる水のように流れることの大切さに、しばし思いを巡らせた。
+
+w:5
+噴水は静かだ。水がそっと滴っている。ここでは安らぎが得られる。
+%%%%
+Xom fountain_blue
+
+# en:
+#   Harmless butterflyfish stare at you from within the fountain.
+#
+#   w:1
+#   For a brief moment, you thought you saw Xom summoned an eel in this fountain.
+#
+#   w:1
+#   For a terrifying moment, you swear Xom summoned a kraken in this fountain.
+無害なチョウチョウウオが噴水の中からあなたを見つめている。
+
+w:1
+一瞬、ゾムがこの噴水にウナギを召喚したのが見えた気がした。
+
+w:1
+恐ろしいことに一瞬、ゾムがこの噴水にクラーケンを召喚したのが確かに見えた気がした。
+%%%%
+Xom fountain_sparkling
+
+# en:
+#   Shimmering and harmless butterflyfish glower at you from within the fountain.
+#
+#   w:1
+#   For a brief moment, you swear Xom called forth a formless jellyfish here.
+揺らめく無害なチョウチョウウオが噴水の中からあなたを睨んでいる。
+
+w:1
+一瞬、ゾムがここに形なきクラゲを呼び出したのが確かに見えた気がした。
+%%%%
+Xom fountain_blood
+
+# en:
+#   Harmless vampiric butterflyfish glare at you from within the fountain.
+#
+#   w:1
+#   For a terrifying moment, you swear Xom placed a vampire kraken in this fountain.
+無害な吸血チョウチョウウオが噴水の中からあなたを睨みつけている。
+
+w:1
+恐ろしいことに一瞬、ゾムがこの噴水に吸血クラーケンを置いたのが確かに見えた気がした。
+%%%%
+Yredelemnul fountain_blue
+
+# en:
+#   A miniscule dead [mosquito|moth] on the fountain's rim briefly twitches under your umbra.
+噴水の縁で死んでいる小さな[蚊|蛾]が、あなたの影の下で一瞬ぴくりと動いた。
+%%%%
+Yredelemnul fountain_sparkling
+
+# en:
+#   @Yredelemnul fountain_blue@
+@Yredelemnul fountain_blue@
+%%%%
+Yredelemnul fountain_blood
+
+# en:
+#   You dismiss the blood in this fountain as useless to your harvest.
+この噴水の血は収穫の役に立たないと、あなたは切り捨てた。
+%%%%
+Zin fountain_sparkling
+
+# en:
+#   You avert your eyes from the scattered magic in the fountain's sparkles.
+噴水のきらめきに散らばる魔力から、あなたは目をそらした。
+%%%%
+Zin fountain_eyes
+
+# en:
+#   You avert your eyes from the unclean eyes pooled in the fountain.
+噴水に溜まった不浄な目玉から、あなたは目をそらした。
+%%%%
+The Shining One fountain_blood
+
+# en:
+#   You quietly vow to avenge the poor creatures bled out for this fountain.
+この噴水のために血を抜かれた哀れな生き物たちの仇を討つと、静かに誓った。
+%%%%
+fruit cache
+
+# en:
+#   You reach down and sample @_fruit_and_reaction_@
+手を伸ばして一口味わった。@_fruit_and_reaction_@
+%%%%
+meat cache
+
+# en:
+#   You reach down and sample @_meat_and_reaction_@
+手を伸ばして一口味わった。@_meat_and_reaction_@
+%%%%
+baked goods cache
+
+# en:
+#   You reach down and sample @_baked_good_and_reaction_@
+手を伸ばして一口味わった。@_baked_good_and_reaction_@
+%%%%
+_fruit_and_reaction_
+
+# en:
+#   an apple. Crisp.
+#
+#   an apricot. Delicious.
+#
+#   a banana. Delicious.
+#
+#   a choko. Bland.
+#
+#   some grapes. Delicious.
+#
+#   some lychee. Delicately sweet.
+#
+#   an orange. Delicious.
+#
+#   some rambutans. Delicious.
+#
+#   some strawberries. Delicious.
+#
+#   a snozzcumber. Putrid!
+#
+#
+#   a tomato. Savoury.
+#
+#   a cherimoya. Tangy!
+#
+#   a mango. Yummy.
+#
+#   a tamarind. Juicy!
+林檎だ。シャキシャキしている。
+
+杏だ。美味しい。
+
+バナナだ。美味しい。
+
+ハヤトウリだ。味気ない。
+
+葡萄だ。美味しい。
+
+ライチだ。上品な甘さだ。
+
+オレンジだ。美味しい。
+
+ランブータンだ。美味しい。
+
+苺だ。美味しい。
+
+スノッズキュウリだ。腐った味がする！
+
+トマトだ。風味豊かだ。
+
+チェリモヤだ。甘酸っぱい！
+
+マンゴーだ。うまい。
+
+タマリンドだ。ジューシーだ！
+%%%%
+_meat_and_reaction_
+
+# en:
+#   a smoked eel. Savoury!
+#
+#   a yak sausage. Delicious.
+#
+#   a cured ham hock. Salty.
+#
+#   some adder jerky. Delicious.
+#
+#   a slice of magically-preserved pepperoni pizza. Delicious.
+#
+#   w:6
+#   some smoked snail. Delicious.
+#
+#   w:6
+#   some death yak haggis. Delicious.
+#
+#   w:6
+#   some alligator jerky. Delicious.
+#
+#   w:6
+#   some cured dream mutton. Ephemeral.
+#
+#   w:6
+#   a slice of magically-preserved Pandemonium pizza. Delectable.
+#
+#   w:2
+#   a candy-coated scorpion. Crunchy.
+#
+#   w:2
+#   a pickled kraken tentacle. Astonishing!
+#
+#   w:2
+#   a cured hell ham hock. Spicy!
+#
+#   w:2
+#   some shrike confit. Tangy!
+#
+#   w:2
+#   a century hydra egg. An acquired taste.
+ウナギの燻製だ。風味豊かだ！
+
+ヤクのソーセージだ。美味しい。
+
+塩漬けの豚すね肉だ。しょっぱい。
+
+マムシのジャーキーだ。美味しい。
+
+魔法で保存されたペパロニピザの一切れだ。美味しい。
+
+w:6
+カタツムリの燻製だ。美味しい。
+
+w:6
+人食いヤクのハギスだ。美味しい。
+
+w:6
+アリゲーターのジャーキーだ。美味しい。
+
+w:6
+眠りの羊の塩漬け肉だ。はかない味だ。
+
+w:6
+魔法で保存されたパンデモニウム・ピザの一切れだ。絶品だ。
+
+w:2
+砂糖がけのサソリだ。カリカリだ。
+
+w:2
+クラーケンの触手の酢漬けだ。驚きの味だ！
+
+w:2
+地獄の豚のすね肉の塩漬けだ。辛い！
+
+w:2
+モズのコンフィだ。ぴりっとする！
+
+w:2
+ヒドラの卵のピータンだ。通好みの味だ。
+%%%%
+_baked_good_and_reaction_
+
+# en:
+#   w:24
+#   some spriggan [bread loaf|tarts|rock buns|scones|biscuits|hardtack]. Delicious.
+#
+#   w:14
+#   an orcish [pirog|pastel de nata|bizcocho]. Tasty.
+#
+#   w:14
+#   some elven [shortbread|rye rolls]. Refined.
+#
+#   some merfolk [baklava|tsoureki]. Decadent.
+#
+#   a stuffed naga paratha. Phenomenal.
+#
+#   a draconian baguette. Hearty and warming.
+#
+#   w:6
+#   some [dwarven|kobold|kobold] pretzels. Scrumptious.
+#
+#   w:6
+#   some choko cake. Less bland than expected!
+#
+#   w:2
+#   some [trollish|giant|giant] [wittenberger|grovbrød]. Savoury.
+#
+#   w:2
+#   some tengu anpan. Delightful.
+#
+#   w:2
+#   some ghoulish sourdough. A strange taste.
+#
+#   w:2
+#   some vault guards' spare rations. Filling.
+#
+#   w:2
+#   a strangely fresh circus pie. Mirthful.
+#
+#   w:2
+#   some starflower jam biscuits. A disquieting taste.
+w:24
+スプリガンの[パン|タルト|ロックケーキ|スコーン|ビスケット|乾パン]だ。美味しい。
+
+w:14
+オークの[ピローグ|エッグタルト|ビスコチョ]だ。おいしい。
+
+w:14
+エルフの[ショートブレッド|ライ麦ロール]だ。洗練された味だ。
+
+水棲の民の[バクラヴァ|ツレキ]だ。退廃的な味わいだ。
+
+ナーガの具入りパラータだ。驚異的だ。
+
+ドラコニアンのバゲットだ。食べごたえがあって体が温まる。
+
+w:6
+[ドワーフ|コボルド|コボルド]のプレッツェルだ。とびきり美味しい。
+
+w:6
+ハヤトウリのケーキだ。思ったより味気なくない！
+
+w:2
+[トロル|巨人|巨人]の[ヴィッテンベルガー|グローブブロート]だ。風味豊かだ。
+
+w:2
+天狗のあんパンだ。すばらしい。
+
+w:2
+グールのサワードウだ。奇妙な味だ。
+
+w:2
+宝物庫の番人の予備の糧食だ。腹にたまる。
+
+w:2
+妙に新鮮なサーカスのパイだ。愉快な味だ。
+
+w:2
+星の花のジャムのビスケットだ。不穏な味だ。
+%%%%
+carnivore fruit cache
+
+# en:
+#   You peruse the fruit pile and shrug.
+果物の山を眺めて、肩をすくめた。
+%%%%
+carnivore baked goods cache
+
+# en:
+#   You peruse the pile and make a meat sandwich with @_baked_good_and_reaction_@
+山を物色し、肉をはさんでサンドイッチにした。@_baked_good_and_reaction_@
+%%%%
+short fruit cache
+
+# en:
+#   You root around and sample @_fruit_and_reaction_@
+あたりをかき回して一口味わった。@_fruit_and_reaction_@
+%%%%
+short meat cache
+
+# en:
+#   You root around and sample @_meat_and_reaction_@
+あたりをかき回して一口味わった。@_meat_and_reaction_@
+%%%%
+short baked goods cache
+
+# en:
+#   You root around and sample @_baked_good_and_reaction_@
+あたりをかき回して一口味わった。@_baked_good_and_reaction_@
+%%%%
+stone fruit cache
+
+# en:
+#   You pestle and swallow @_fruit_and_reaction_@
+すりつぶして飲み込んだ。@_fruit_and_reaction_@
+%%%%
+stone meat cache
+
+# en:
+#   You pestle and swallow @_meat_and_reaction_@
+すりつぶして飲み込んだ。@_meat_and_reaction_@
+%%%%
+stone baked goods cache
+
+# en:
+#   You mill down and swallow @_baked_good_and_reaction_@
+細かく挽いて飲み込んだ。@_baked_good_and_reaction_@
+%%%%
+inediate fruit cache
+
+# en:
+#   You briefly stare at the fruit pile and sigh.
+果物の山をしばし見つめ、ため息をついた。
+%%%%
+inediate meat cache
+
+# en:
+#   You briefly stare at the meat pile and sigh.
+肉の山をしばし見つめ、ため息をついた。
+%%%%
+inediate baked goods cache
+
+# en:
+#   You briefly stare at the breadstuffs pile and sigh.
+パンの山をしばし見つめ、ため息をついた。
+%%%%
+draconian fruit cache
+
+# en:
+#   You reach down and sample @_fruit_and_reaction_@
+#
+#   w:1
+#   You reach down and sample a dragonfruit. You feel vaguely uncomfortable.
+手を伸ばして一口味わった。@_fruit_and_reaction_@
+
+w:1
+手を伸ばしてドラゴンフルーツを一口味わった。なんとなく落ち着かない気分だ。
+%%%%
+felid fruit cache
+
+# en:
+#   You dice up an apple and nibble upon it. Bland.
+#
+#   You dice up a banana and nibble upon it. Bland.
+#
+#   You pick out some berries and nibble upon them. Bland.
+林檎を細かく刻んで少しかじった。味気ない。
+
+バナナを細かく刻んで少しかじった。味気ない。
+
+木の実をいくつか選んで少しかじった。味気ない。
+%%%%
+felid meat cache
+
+# en:
+#   You nibble upon @_meat_and_reaction_@
+少しかじった。@_meat_and_reaction_@
+%%%%
+felid baked goods cache
+
+# en:
+#   You nibble upon @_baked_good_and_reaction_@
+少しかじった。@_baked_good_and_reaction_@
+%%%%
+gargoyle fruit cache
+
+# en:
+#   @stone fruit cache@
+@stone fruit cache@
+%%%%
+gargoyle meat cache
+
+# en:
+#   @stone meat cache@
+@stone meat cache@
+%%%%
+gargoyle baked goods cache
+
+# en:
+#   @stone baked goods cache@
+@stone baked goods cache@
+%%%%
+kobold fruit cache
+
+# en:
+#   @carnivore fruit cache@
+@carnivore fruit cache@
+%%%%
+kobold meat cache
+
+# en:
+#   @short meat cache@
+@short meat cache@
+%%%%
+kobold baked goods cache
+
+# en:
+#   @carnivore baked goods cache@
+@carnivore baked goods cache@
+%%%%
+mummy fruit cache
+
+# en:
+#   @inediate fruit cache@
+@inediate fruit cache@
+%%%%
+mummy meat cache
+
+# en:
+#   @inediate meat cache@
+@inediate meat cache@
+%%%%
+mummy baked goods cache
+
+# en:
+#   @inediate baked goods cache@
+@inediate baked goods cache@
+%%%%
+oni fruit cache
+
+# en:
+#   You reach down and grab @_fruit_and_reaction_@ You go for seconds.
+手を伸ばしてつかみ取った。@_fruit_and_reaction_@おかわりもした。
+%%%%
+oni baked goods cache
+
+# en:
+#   You reach down and grab @_baked_good_and_reaction_@ You go for seconds.
+手を伸ばしてつかみ取った。@_baked_good_and_reaction_@おかわりもした。
+%%%%
+poltergeist fruit cache
+
+# en:
+#   @inediate fruit cache@
+@inediate fruit cache@
+%%%%
+poltergeist meat cache
+
+# en:
+#   @inediate meat cache@
+@inediate meat cache@
+%%%%
+poltergeist baked goods cache
+
+# en:
+#   @inediate baked goods cache@
+@inediate baked goods cache@
+%%%%
+revenant fruit cache
+
+# en:
+#   @inediate fruit cache@
+@inediate fruit cache@
+%%%%
+revenant meat cache
+
+# en:
+#   @inediate meat cache@
+@inediate meat cache@
+%%%%
+revenant baked goods cache
+
+# en:
+#   @inediate baked goods cache@
+@inediate baked goods cache@
+%%%%
+spriggan fruit cache
+
+# en:
+#   @short fruit cache@
+@short fruit cache@
+%%%%
+spriggan meat cache
+
+# en:
+#   You root around, looking for pizza, but fail to find any.
+#
+#   w:4
+#   You find a slice of magically-preserved pizza, and pick the meat off. Delicious!
+ピザを探してあたりをかき回したが、見つからなかった。
+
+w:4
+魔法で保存されたピザの一切れを見つけ、肉だけをつまみ取った。美味しい！
+%%%%
+spriggan baked goods cache
+
+# en:
+#   You root around and eagerly enjoy @_baked_good_and_reaction_@
+あたりをかき回して夢中で味わった。@_baked_good_and_reaction_@
+%%%%
+tengu baked goods cache
+
+# en:
+#   You reach down and peck at @_baked_good_and_reaction_@
+手を伸ばしてついばんだ。@_baked_good_and_reaction_@
+%%%%
+troll fruit cache
+
+# en:
+#   @oni fruit cache@
+@oni fruit cache@
+%%%%
+troll baked goods cache
+
+# en:
+#   @oni baked goods cache@
+@oni baked goods cache@
+%%%%
+amphisbaena fruit cache
+
+# en:
+#   You distend one of your jaws to swallow @_fruit_and_reaction_@
+片方の顎を大きく広げて丸呑みにした。@_fruit_and_reaction_@
+%%%%
+amphisbaena meat cache
+
+# en:
+#   You distend one of your jaws to swallow @_meat_and_reaction_@
+片方の顎を大きく広げて丸呑みにした。@_meat_and_reaction_@
+%%%%
+amphisbaena baked goods cache
+
+# en:
+#   You distend one of your jaws to swallow @_baked_good_and_reaction_@
+片方の顎を大きく広げて丸呑みにした。@_baked_good_and_reaction_@
+%%%%
+bat fruit cache
+
+# en:
+#   You slurp up @_fruit_and_reaction_@
+果汁をすすった。@_fruit_and_reaction_@
+%%%%
+bat baked goods cache
+
+# en:
+#   You swoop down and nibble at @_baked_good_and_reaction_@
+舞い降りて少しかじった。@_baked_good_and_reaction_@
+%%%%
+blade fruit cache
+
+# en:
+#   You try to grab some fruit with your blades, but fail!
+#
+#   w:4
+#   You use your hands like chopsticks to delicately eat @_fruit_and_reaction_@
+刃で果物をつかもうとしたが、うまくいかなかった！
+
+w:4
+両手を箸のように使って上品に食べた。@_fruit_and_reaction_@
+%%%%
+blade meat cache
+
+# en:
+#   You try to grab some meat with your blades, but fail!
+#
+#   You skewer and sample @_meat_and_reaction_@
+刃で肉をつかもうとしたが、うまくいかなかった！
+
+刃で突き刺して味わった。@_meat_and_reaction_@
+%%%%
+death fruit cache
+
+# en:
+#   @inediate fruit cache@
+@inediate fruit cache@
+%%%%
+death meat cache
+
+# en:
+#   @inediate meat cache@
+@inediate meat cache@
+%%%%
+death baked goods cache
+
+# en:
+#   @inediate baked goods cache@
+@inediate baked goods cache@
+%%%%
+dragon fruit cache
+
+# en:
+#   You devour @_fruit_and_reaction_@
+#
+#   w:1
+#   You devour a dragonfruit. You feel vaguely uncomfortable.
+むさぼり食った。@_fruit_and_reaction_@
+
+w:1
+ドラゴンフルーツをむさぼり食った。なんとなく落ち着かない気分だ。
+%%%%
+maw fruit cache
+
+# en:
+#   You devour half the fruit pile! It's not enough.
+果物の山を半分むさぼり食った！ まだ足りない。
+%%%%
+maw meat cache
+
+# en:
+#   You devour half the meat pile! It's not enough.
+肉の山を半分むさぼり食った！ まだ足りない。
+%%%%
+maw baked goods cache
+
+# en:
+#   You devour half the baked goods pile! It's not enough.
+パンの山を半分むさぼり食った！ まだ足りない。
+%%%%
+pig fruit cache
+
+# en:
+#   @short fruit cache@
+@short fruit cache@
+%%%%
+pig meat cache
+
+# en:
+#   @short meat cache@
+@short meat cache@
+%%%%
+pig baked goods cache
+
+# en:
+#   @short baked goods cache@
+@short baked goods cache@
+%%%%
+statue fruit cache
+
+# en:
+#   @stone fruit cache@
+@stone fruit cache@
+%%%%
+statue meat cache
+
+# en:
+#   @stone meat cache@
+@stone meat cache@
+%%%%
+statue baked goods cache
+
+# en:
+#   @stone baked goods cache@
+@stone baked goods cache@
+%%%%
+storm fruit cache
+
+# en:
+#   You reach down and electrolyse @_fruit_and_reaction_@
+手を伸ばして電気分解した。@_fruit_and_reaction_@
+%%%%
+storm meat cache
+
+# en:
+#   You reach down and electrolyse @_meat_and_reaction_@
+手を伸ばして電気分解した。@_meat_and_reaction_@
+%%%%
+tree fruit cache
+
+# en:
+#   @short fruit cache@
+@short fruit cache@
+%%%%
+tree meat cache
+
+# en:
+#   @short meat cache@
+@short meat cache@
+%%%%
+tree baked goods cache
+
+# en:
+#   @short baked goods cache@
+@short baked goods cache@
+%%%%
+vampire fruit cache
+
+# en:
+#   You root around, looking for a blood orange, but fail to find any.
+#
+#   w:4
+#   You reach down and find a blood orange. Delicious.
+ブラッドオレンジを探してあたりをかき回したが、見つからなかった。
+
+w:4
+手を伸ばすと、ブラッドオレンジが見つかった。美味しい。
+%%%%
+vampire baked goods cache
+
+# en:
+#   You reach down and sample @_baked_good_and_reaction_@ Not filling, though, alas.
+手を伸ばして一口味わった。@_baked_good_and_reaction_@ただ残念ながら、腹は満たされない。
+%%%%

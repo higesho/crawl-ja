@@ -46,12 +46,10 @@ Fedhas
 #   harming any species under Fedhas' protection. In return, Fedhas grants a number
 #   of abilities that promote the growth of plants and fungi. These abilities may
 #   incidentally prove useful to adventurers.
-フェダス・マダシュは植物と菌類の神である。
-フェダスは信者に死体を腐敗させるよう要求をする。
-信者はフェダスの保護下にあるいかなる類を傷つけること、
-そして死体へ影響を与える死霊術の使用を禁止されている。
-その引き換えにフェダスは植物と菌類を成長させる幾つかの能力をもたらす。
-これらの能力は冒険者にとっても有用になるであろう。
+フェダスは植物と菌類の神である。
+信徒はフェダスの保護下にあるいかなる種を傷つけることも禁じられている。
+その引き換えに、フェダスは植物と菌類の成長を促すいくつかの能力をもたらす。
+これらの能力は、ついでながら冒険者にとっても有用であろう。
 %%%%
 Gozag
 
@@ -90,12 +88,9 @@ Jiyva
 #   support the spread and satiation of their fellow slimes by allowing them to
 #   consume items, and are prevented from harming any slimes. Especially favoured
 #   followers will become as shapeless as their god, mutating wildly.
-ジーヴァはスライムの混沌の古代神である。
-信者は同行するスライム達にアイテムを消化させ彼らの拡散と飽食を手助けすることが要求され、
-いかなるスライムを傷つけることを禁止されている。
-ジーヴァはいずれ信者がダンジョンのいかなる場所に残したアイテムまでも消化するようになる。
-敬虔な信者達は彼らの神と同じく不定形になり、
-ジーヴァの影響下では彼らの特性は変化し続けるようになる。
+ジーヴァはスライムを司る古代の神である。
+信徒は仲間のスライムたちにアイテムを消化させてその拡散と飽食を手助けすることが求められ、いかなるスライムも傷つけることを禁じられている。
+特に寵愛を受けた信徒は神と同じく不定形になり、激しく変異していく。
 %%%%
 Kikubaaqudgha
 
@@ -106,9 +101,9 @@ Kikubaaqudgha
 #   Kikubaaqudgha offers great assistance to the aspiring necromancer: a supply of
 #   useful bodies, knowledge of dark magic, and protection against necromantic
 #   backlash.
-キクバークッグァは恐るべき悪魔の神であり、
-死の力についての知識を探求する者たちが仕えている。キクバークッグァは悪であり、
-キクバークッグァは出来る限り生ける存在の殺戮を要求している。
+キクバークッグァは恐るべき悪魔の神であり、死の力に耽溺しようとする者たちが仕えている。
+悪神キクバークッグァは、できる限り多くの生き物に死と破壊をもたらすことを信徒に要求する。
+それと引き換えに、キクバークッグァは死人使いを志す者に大いなる助力をもたらす。役に立つ死体の供給、暗黒の魔術の知識、そして死霊術の反動からの防護である。
 %%%%
 Lugonu
 
@@ -144,11 +139,10 @@ Okawaru
 #   own strength alone, and so worshippers are forbidden from gaining allies by any
 #   means. Okawaru pays little heed to easy victories, but will reward worshippers
 #   for heroic feats against mighty foes.
-オカワルは好戦的で強力な戦いの神である。信徒は戦いにおいて有用な数々の力と、
-褒美の品を得る。しかし信者は戦いと死体との献上をもって、
-常に信仰を証明しなくてはならない。オカワルはより強い敵に対する勇敢な偉業を好み、
-楽な勝利には小さな留意となる。その上、公正な戦いは求められず、
-手下に危害を与えることはオカワルの懲罰を受けることになる。
+オカワルは危険で強力な戦いの神である。
+信徒は戦いにおいて常に自らの力を証明することが求められ、自らの武勇を高めるためにオカワルの力を引き出すことができる。
+オカワルは信徒に自らの力のみで己を証明することを求めるため、信徒はいかなる手段であれ味方を得ることを禁じられている。
+オカワルは楽な勝利にはほとんど関心を払わないが、強敵に対する英雄的な偉業には信徒に褒美を与える。
 %%%%
 Qazlal
 
@@ -187,9 +181,9 @@ Sif Muna
 #   the Loreminder for magical power and the ability to cast spells beyond their
 #   magical training. The devout are rewarded with a supply of spellbooks taken
 #   directly from Sif Muna's legendary library.
-知識の守護者シフ・ムーナは瞑想的ではあるが強力な神であり、
-魔法の知識を探求する者たちが仕えている。
-知識の守護者は呪文の詠唱スキルを伸ばすことを評価する。
+知識の守護者シフ・ムーナは瞑想的ではあるが強力な神であり、魔法の知識を探求する者たちが仕えている。
+敵に打ち勝った信徒は、知識の守護者に魔力と、自らの魔法の修練を超えた呪文を唱える力を求めることができる。
+敬虔な者には、シフ・ムーナの伝説の書庫から直接取り出された魔法書が与えられる。
 %%%%
 the Shining One
 
@@ -214,10 +208,10 @@ Trog
 #   gain the ability to go berserk at will in combat, and will be granted
 #   assistance in the form of powerful weapons and mighty allies. Followers are
 #   absolutely forbidden the use of spell magic.
-トログは怒りと暴力を司る古代の神である。信徒はトログの名に於いて殺すことと、
-死体を奉納することを期待される。そして見返りとして戦闘における能力と、
-時には褒美の品を得る。トログは魔術師を憎んでおり、燃える呪文書を見ることを好む。
-信者は魔法の使用が禁じられている。
+トログは怒りと暴力を司る古代の神である。
+信徒はトログの名において殺すこと、とりわけ魔術師を殺すことが求められる。
+その見返りとして、トログの信徒は戦闘中に自分の意志で狂戦士化する能力を手にし、強力な武器や力強い仲間という形で助力を授かる。
+信徒は呪文による魔法の使用を固く禁じられている。
 %%%%
 Vehumet
 
@@ -253,14 +247,8 @@ Yredelemnul
 #   would conquer in Yredelemnul's name are granted the power to reap an army of the
 #   dead and bind powerful souls into eternal service - provided they can sweep
 #   across the land in a tide as inexorable as their god.
-暗黒のイレデレンヌルは邪悪な神でり、
-死とアンデッドへの支配力を探求している者たちによって崇拝されている。
-信徒は聖なる物と敵対しなければならない。
-イレデレンヌルの信徒は奴隷化したアンデッドの軍勢を呼び起こすことができ、
-他にも多くの(不快ではあるが)有用な力を獲得する。イレデレンヌルは殺しを喜ぶが、
-死体については捧げられるよりも蘇生するなどして利用することを好む。
-人工物は真に生きてはいないが、死や不死に服従してもいないため、
-イレデレンヌルは人工物の破壊もまた善しとする。
+遥か昔に善なる神々によって打ち倒されたイレデレンヌルは、善なる神々の被造物を蹂躙し、すべての生ける魂を抗えぬ手中に縛りつけようとしている。
+イレデレンヌルの名において征服をなそうとする信徒には、死者の軍勢を刈り取り、強大な魂を永遠の奉仕に縛りつける力が与えられる。ただし、その神と同じように抗えぬ潮流となって大地を席巻できればの話である。
 %%%%
 Cheibriados powers
 
@@ -271,12 +259,10 @@ Cheibriados powers
 #   power to briefly distort the flow of time. Devout worshippers will gain the
 #   ability to inflict great harm on all those who move more quickly than they do,
 #   and finally the ability to step out of the flow of time entirely.
-ケイブリアドスの信徒は歓心を得るにつれよりゆっくりと移動するようになる。そして、
-彼らよりも素早い生物を殺すことで歓心を得る。あまり素早く動いたり、
-加速の魔術のかかった武器の使用は不興を買う。
-ケイブリアドスは信仰の報酬として新陳代謝を遅くし、他者を遅くする力、
-時の流れを歪める力、より素早く動く者を痛めつける力、
-そしてついには完全に時間の流れから抜け出す能力を授ける。
+ケイブリアドスの信徒は歓心を得るにつれて、よりゆっくりと移動するようになる。
+動きが遅くなるにつれて、ケイブリアドスの信徒は強化された能力値を授かる。
+ケイブリアドスは忠実な信徒に、他の生き物を減速させる力と、しばらくの間時の流れを歪める力を与える。
+敬虔な信徒は、自分より速く動くすべての者に大きな害を与える能力を得て、最終的には時の流れから完全に抜け出す能力を得る。
 %%%%
 Elyvilon powers
 
@@ -287,10 +273,10 @@ Elyvilon powers
 #   life, and if there has been no such intervention recently, is sure to prevent
 #   a killing blow against especially pious followers. Elyvilon may also
 #   occasionally protect the follower's allies from death.
-癒し手は信徒に自身の損傷やその他の悪い効果を癒す方法を提示する。
-エリヴィロンは敵対する怪物を中立に変えるために癒すことを許可する。
-エリヴィロンは信徒の生命を守るために直接介在するかもしれない。
-特に要求がある場合や、非常に敬虔な信徒はへの援助は確実なものとなるだろう。
+癒し手は信徒に、自身の傷やその他の悪い効果を癒すいくつかの手段を授ける。
+また信徒は、敵対するモンスターをなだめて中立にしようと試みることもできる。
+エリヴィロンは信徒の生命を救うために直接介入することがあり、最近そのような介入がなかった場合、特に敬虔な信徒への致命の一撃を確実に防ぐ。
+またエリヴィロンは、ときおり信徒の味方を死から守ることもある。
 %%%%
 Fedhas powers
 
@@ -303,13 +289,11 @@ Fedhas powers
 #   ballistomycetes that fire damaging spores whose explosions confuse living
 #   creatures. Devout followers can overgrow a stretch of solid terrain with a
 #   cluster of plant allies or even summon a mighty oklob plant.
-植物や菌類は憤慨させなければフェダスの信徒に攻撃することはない。
-フェダスの信徒は植物や菌類を通り抜けることができ、飛び道具や呪文でさえ、
-それらに危害を加えずに発射することができる。
-フェダスは植物や菌類をより強い種に促進する能力を授ける。
-信徒はいずれ植物の壁を生じさせ、
-死体から破裂する胞子を生成することができるようになる。
-さらに彼らは陽光や豪雨さえも引き起こす、天候の制御能力が与えられる。
+植物や菌類は、挑発しない限りフェダスの信徒を攻撃しない。
+信徒は植物や菌類を通り抜けることができ、飛び道具や呪文でさえ、それらを傷つけることなく通して放つことができる。
+フェダスは、さまざまな植物の味方を一時的に生やす力を授ける。その強さと持続時間は祈祷スキルに応じて増す。
+信徒は身を守る茨の茂みの壁や、爆発して生き物を混乱させる有害な胞子を放つ放出菌糸を生やすことができる。
+敬虔な信徒は、固い地形の一帯を植物の味方の群れで覆い尽くしたり、強力なオクロブ草を呼び出したりすることさえできる。
 %%%%
 Hepliaklqana powers
 
@@ -403,13 +387,10 @@ Zin powers
 #   can eventually find temporary safety in a divine refuge. As piety grows,
 #   followers will be protected from mutation and the Hells, and Zin may even
 #   occasionally directly intervene to save a follower's life.
-ジンは信徒に無知なる集団に説法する能力、
-身体を活性化さえ天恵の力を得る能力を与える。
-活性化の力は様々な苦痛から彼らを守り、さらに飢えをしのぐ栄養を与える。
-その後に信徒は敵対者を一時的に閉じ込める能力を得る。最終的に信徒は聖域を作り、
-一時的な安全を得ることが可能となる。
-信仰心が増すにつれ信徒は変異からの保護を得る。時々、
-ジンは信徒の生命を守るために直接介在するかもしれない。
+ジンは信徒に、無知なる大衆に説法する能力と、身体を活性化させてさまざまな苦痛から身を守る力を与える。
+のちに信徒は、敵を一時的に閉じ込める能力を得る。
+最終的に信徒は、神聖な聖域で一時的な安全を得ることができるようになる。
+信仰心が増すにつれ、信徒は変異と地獄から守られるようになり、ジンはときおり信徒の生命を救うために直接介入することさえある。
 %%%%
 Beogh wrath
 
@@ -520,4 +501,592 @@ Xom wrath
 不忠義なる元信者はゾムがそれについて忘れてしまうまでゾムの不機嫌に苦しめ続けられる。
 しかしゾムの気まぐれは依然としてそのままであり、
 忠実なる者が罰せられるのと同じ程度に、不忠義者が褒美を授かることがある。
+%%%%
+Beogh
+
+# en:
+#   A god of outcasts, pariahs, and the dispossessed, Beogh's altars are rarely
+#   found among those of other faiths, but Beogh's missionaries may always be sought
+#   by those looking for a place to belong. Worshippers will find many friends
+#   within the dungeon, and those who prove their strength to Beogh may gain
+#   lifelong companions the equal of any adventurer. To worship Beogh is to believe
+#   there is strength that transcends species and bloodline. To worship Beogh is to
+#   be an orc.
+のけ者、追放された者、虐げられた者たちの神であるベオの祭壇が他の宗派の祭壇と並んでいることはめったにないが、居場所を求める者はいつでもベオの宣教師を探し求めることができる。
+信徒は迷宮の中で多くの友を見いだし、ベオに力を証明した者は、どんな冒険者にも引けを取らない生涯の仲間を得られるかもしれない。
+ベオを崇拝することは、種族や血筋を超えた力があると信じることである。
+ベオを崇拝することは、オークになることである。
+%%%%
+Dithmenos
+
+# en:
+#   Dithmenos is the god of night and of things half-seen in flickering torchlight.
+#   Worshipped by actors as often as thieves, followers of Dithmenos can learn to
+#   control their own shadow as if it were an extension of their body - misdirecting
+#   onlookers and acting upon the world with force as tangible as anything that has
+#   ever been imagined lurking in the dark.
+ディスメノスは夜と、揺らめく松明の明かりの中でおぼろげに見えるものの神である。
+盗賊と同じくらい役者にも崇拝されており、ディスメノスの信徒は自らの影をまるで体の一部であるかのように操ることを学ぶ。見る者を惑わし、闇に潜むと想像されたどんなものにも劣らぬ確かな力で世界に働きかけるのだ。
+%%%%
+Ignis
+
+# en:
+#   Ignis the Dying Flame offers followers power over fire in many forms. All of
+#   Ignis' power is offered unconditionally to any who would deign to worship, but
+#   once used, it can never be replenished. Ignis' other worshippers deserted long
+#   ago; the divine fire burns low, and soon it will go out.
+消えゆく炎イグニスは、さまざまな形で炎を操る力を信徒に授ける。
+イグニスの力はすべて、崇拝してくれる者になら誰にでも無条件に与えられるが、一度使ってしまうと二度と補充されることはない。
+イグニスの他の信徒たちはとうの昔に去っていった。神の炎は弱々しく燃えており、もうすぐ消えてしまうだろう。
+%%%%
+Nemelex Xobeh
+
+# en:
+#   Nemelex is a strange and unpredictable chaotic trickster god, whose powers are
+#   invoked through magical packs of cards painted in the ichor of demons. Followers
+#   will be granted decks of cards as they traverse the dungeon, and are encouraged
+#   to trust in the cards to provide them with divine assistance. However, the
+#   Trickster can also ensure that fortune favours the bold.
+ネメレクスは奇妙で予想の付かない混沌のトリックスターの神であり、その力は悪魔の体液で描かれた魔法のカードの束を通じて発揮される。
+信徒は迷宮を進むにつれてカードのデッキを授かり、神の助けを得るためにカードを信じることが奨励される。
+とはいえトリックスターは、幸運が勇者に味方するようにもしてくれる。
+%%%%
+Pakellas
+
+# en:
+#   Pakellas the Inventive believes in the supremacy of devices, magical or
+#   otherwise, over spells and other forms of magic. Followers, although cut off
+#   from ambient magical power, are provided with magical energy to empower their
+#   devices so long as they use them to assert Pakellas' supremacy. Pakellas will
+#   grant devout worshippers access to increasingly powerful devices.
+発明家パケラスは、魔法のものであれそうでないものであれ、道具が呪文やその他の形の魔法に勝ると信じている。
+信徒は周囲の魔力から切り離されるが、パケラスの優位を示すために道具を使う限り、その道具を強化するための魔力が与えられる。
+パケラスは敬虔な信徒に、より強力な道具を次々と授ける。
+%%%%
+Uskayaw
+
+# en:
+#   Uskayaw the Reveller is a god of ecstatic dance. In the dungeon, Uskayaw
+#   appreciates the passion and rhythm of combat, rewarding followers for each
+#   strike they deliver and for the damage they deal their foes. The longer the
+#   dance continues, the greater powers Uskayaw offers. When the dance ends,
+#   Uskayaw quickly loses interest.
+酔客ウスカヤーは恍惚とした踊りの神である。
+迷宮の中では、ウスカヤーは戦いの情熱とリズムを高く評価し、信徒が繰り出す一撃一撃と、敵に与えるダメージに対して見返りを与える。
+踊りが長く続けば続くほど、ウスカヤーはより強力な力を授ける。
+踊りが終わると、ウスカヤーはすぐに興味を失ってしまう。
+%%%%
+Wu Jian
+
+# en:
+#   The Wu Jian Council is a congregation of martial monks, ascended to divinity
+#   after battling their way out of the afterlife. Disciples of the Council are
+#   able to execute acrobatic martial maneuvers, such as wall jumps, spinning
+#   attacks and punishing lunges. They will eventually become able to request
+#   help in the form of a storm of heavenly clouds.
+ウー・ジアン評議会は武術を修めた僧たちの集まりであり、死後の世界から戦って抜け出した末に神へと昇華した。
+評議会の弟子たちは、壁蹴り、回転攻撃、痛烈な突進といった曲芸的な武術の技を繰り出すことができる。
+やがては、天の雲の嵐という形で助けを求めることもできるようになる。
+%%%%
+Zin
+
+# en:
+#   Zin is a god of discipline. Followers must remain pure of body and soul,
+#   refraining from dark magic and chaotic acts. They must also tithe a fraction of
+#   all gold gained, preferably followed by donations of more. In exchange,
+#   worshippers may invoke Zin's wrath upon sinners, and eventually gain various
+#   divine protections. Zin's followers can convert to Elyvilon or the Shining One
+#   while keeping some piety.
+ジンは規律の神である。
+信徒は心身ともに純粋であり続け、暗黒の魔術と混沌の行為を慎まなければならない。
+また、手に入れた金貨のすべてから一部を十分の一税として納めなければならず、さらに寄付をすればなおよい。
+その代わり、信徒は罪人にジンの怒りを下すことができ、やがてさまざまな神の加護を得る。
+ジンの信徒は信心深さをいくらか保ったままエリヴィロンや輝けるものに改宗することができる。
+%%%%
+Ashenzari powers
+
+# en:
+#   Ashenzari exhorts followers to curse their possessions, periodically offering
+#   these curses to worshippers as they explore. These curses grant improvements
+#   to specific skills, but cursed equipment cannot normally be enchanted and can
+#   only be removed by shattering it forever. As worshippers equip more cursed
+#   equipment, Ashenzari will grant increasing knowledge of the surrounding dungeon.
+#   Eventually, Ashenzari will reveal the invisible, grant clarity of mind, and
+#   protect worshippers from the Dungeon's malevolent forces.
+アシェンザリは信徒に持ち物を呪うよう勧め、探索するにつれて定期的にそうした呪いを信徒に提示する。
+これらの呪いは特定のスキルを向上させるが、呪われた装備は通常は強化することができず、永遠に砕くことでしか外せない。
+信徒が呪われた装備を多く身につけるほど、アシェンザリは周囲の迷宮についてより多くの知識を授ける。
+やがてアシェンザリは見えないものを明らかにし、心の明晰さをもたらし、迷宮の悪意ある力から信徒を守るようになる。
+%%%%
+Beogh powers
+
+# en:
+#   Worshippers will gain the power to call down Beogh's wrath upon their
+#   oppressors, and other orcs will start to see them as one of their own.
+#   Especially promising adherents will find themselves beset by rivals for Beogh's
+#   favour, but overcoming these trials without fleeing will gain them loyal
+#   companions whom Beogh will resurrect time and time again, so long as they
+#   continue to fight and avenge in Beogh's name. A true chosen one may even rally
+#   an entire orcish army to avenge a wrongful death.
+信徒は迫害者にベオの怒りを下す力を得て、他のオークたちは信徒を自分たちの一員とみなすようになる。
+特に将来有望な信徒は、ベオの寵愛を争う好敵手たちに襲われることになるが、逃げずにこの試練を乗り越えれば、忠実な仲間を得られる。信徒がベオの名において戦い、復讐を続ける限り、ベオはその仲間を何度でも蘇らせる。
+真に選ばれし者は、不当な死に報いるため、オークの全軍を奮い立たせることさえできるかもしれない。
+%%%%
+Dithmenos powers
+
+# en:
+#   Followers of Dithmenos are surrounded by an unnatural quiet, which helps the
+#   sounds they make go unnoticed. As they rise in devotion, they will find their
+#   own shadow begins to imitate some of their actions, attacking when they attack
+#   and even casting shadowy magics that mimic the form - if not the substance - of
+#   whichever schools of magic they had been utilising.
+#
+#   More devout worshippers additionally gain the ability to swap places with their
+#   shadow to mislead enemies, grasp other beings' shadows to unleash their magic on
+#   the worshipper's behalf, and finally call down a night so dark that it hides all
+#   denizens of the dungeon from each other.
+ディスメノスの信徒は不自然な静けさに包まれており、立てた音に気づかれにくくなる。
+信仰が高まるにつれて、信徒は自らの影がその行動の一部をまねし始めることに気づくだろう。信徒が攻撃すると影も攻撃し、さらには信徒が使ってきた魔法の系統を、中身はともかく形の上ではまねた影の魔法まで唱えるのである。
+
+より敬虔な信徒はさらに、敵を惑わすために自らの影と位置を入れ替える能力、他の存在の影をつかんでその魔法を信徒の代わりに解き放たせる能力、そして最後には、迷宮のすべての住人を互いから覆い隠すほど暗い夜を呼び下ろす能力を得る。
+%%%%
+Gozag powers
+
+# en:
+#   For Gozag, both flesh and spirit are inferior to wealth, and therefore all
+#   monsters are turned to gold upon death. Other monsters may then be briefly
+#   distracted by imaginings of great wealth. Stalwarts can purchase immediate help
+#   in the form of potions, and may also pay to attract shopkeepers into the
+#   dungeon. Particularly well-off adherents may bribe the inhabitants of a branch
+#   of the dungeon to turn a blind eye to their presence, or even to change their
+#   allegiance.
+ゴザーグにとって肉体も精神も富に劣るものであり、それゆえすべてのモンスターは死ぬと金貨に変わる。
+すると他のモンスターは、莫大な富を思い描いて一時的に気を取られることがある。
+忠実な信徒は薬という形で即座に助けを買うことができ、金を払って商人を迷宮に呼び寄せることもできる。
+特に裕福な信徒は、迷宮の支部の住人を買収して自分の存在を見逃させたり、さらには寝返らせたりすることもできる。
+%%%%
+Ignis powers
+
+# en:
+#   Followers can armour themselves in flame, call a swarm of foxfires against their
+#   foes, or let Ignis' heat lift them to another level of the dungeon. However, the
+#   guttering flames of Ignis' power will only sustain a limited number of
+#   invocations before only flickering embers remain. No matter how depleted, Ignis
+#   will always grant followers resistance to fire.
+信徒は炎で身を鎧ったり、狐火の群れを敵にけしかけたり、イグニスの熱に乗って迷宮の別の階層へ昇ったりすることができる。
+しかし、イグニスの力の消えかけた炎は、限られた回数の祈祷しか支えられず、その後にはかすかに揺らめく燃えさしが残るだけである。
+どれほど力が尽きていようとも、イグニスは常に信徒に炎への耐性を授ける。
+%%%%
+Jiyva powers
+
+# en:
+#   Jiyva will gradually fill the dungeon with jellies. These and any other fellow
+#   slimes will rapidly consume nearby items, as well as slowly consuming items from
+#   elsewhere in the dungeon. As they spread slime across more of the dungeon, Jiyva
+#   will grant followers increasingly rapid health and magic regeneration, and will
+#   begin mutating them to better reflect Jiyva's image. Followers will later become
+#   able to call forth acidic ooze from the walls of the dungeon, and to turn
+#   monsters to slime with a touch.
+ジーヴァは次第に迷宮をゼリーで満たしていく。
+これらのゼリーや仲間のスライムたちは、近くのアイテムを素早く消化し、迷宮の他の場所にあるアイテムもゆっくりと消化していく。
+スライムが迷宮の広くに広がるにつれ、ジーヴァは信徒の体力と魔力の回復をますます速め、信徒をジーヴァの似姿によりふさわしい姿へと変異させ始める。
+信徒はのちに、迷宮の壁から酸性の軟泥を呼び出したり、触れるだけでモンスターをスライムに変えたりできるようになる。
+%%%%
+Kikubaaqudgha powers
+
+# en:
+#   Kikubaaqudgha will enhance servants' necromantic prowess with gifts of
+#   Necromancy spells. Kikubaaqudgha will protect followers from the effects of
+#   necromantic miscasts and death curses, and may even shield them from unholy
+#   torment. Followers can unearth dying wretches as necromantic fodder, and may
+#   invoke the sign of ruin to harm their enemies. Kikubaaqudgha will eventually
+#   allow followers to either receive knowledge of the most forbidden necromantic
+#   magic, or to have their weapon imbued with pain.
+キクバークッグァは死霊術の呪文を授けることで、しもべの死霊術の腕前を高める。
+キクバークッグァは信徒を死霊術の詠唱失敗や死の呪いの影響から守り、不浄なる苦痛からさえ守ってくれることがある。
+信徒は死霊術の材料として死にかけの亡者を掘り起こすことができ、破滅の印を発動して敵を害することができる。
+最終的にキクバークッグァは、最も禁じられた死霊術の魔法の知識を授かるか、武器に苦痛の力を吹き込んでもらうかのどちらかを信徒に選ばせてくれる。
+%%%%
+Lugonu powers
+
+# en:
+#   Followers of Lugonu gain powers to depart the Abyss at will, to banish monsters
+#   there, and to flee back inside when needed. Lugonu will also banish nearby foes
+#   if any other god attempts to interfere with their followers. Later, followers
+#   will be able to corrupt the ordered world, opening a gate for creatures
+#   of the Abyss to pass through, and to gate themselves directly into this realm of
+#   chaos. Lugonu will protect followers who unwield weapons imbued with the
+#   distorting energies of the Abyss, and eventually will offer to distort a
+#   follower's melee weapon. Lugonu expects followers to spread unceasing
+#   chaos in the overworld, and as such does not grant piety to worshippers while
+#   they remain in the Abyss itself.
+ルゴヌの信徒は、自らの意志でアビスを離れる力、モンスターをアビスへと追放する力、そして必要なときにアビスの中へ逃げ戻る力を得る。
+また、他の神が信徒に干渉しようとすると、ルゴヌは近くの敵を追放する。
+のちに信徒は、秩序ある世界を堕落させ、アビスの生き物が通り抜ける門を開いたり、自らこの混沌の領域へ直接転移したりすることができるようになる。
+ルゴヌは、アビスの歪める力を吹き込まれた武器を手放す信徒を守り、やがては信徒の近接武器を歪める申し出をする。
+ルゴヌは信徒が地上に絶え間ない混沌を広めることを期待しているため、信徒がアビスそのものの中にいる間は信仰心を与えない。
+%%%%
+Makhleb powers
+
+# en:
+#   Makhleb offers followers the ability to unleash bolts of chaotic destruction at
+#   the cost of their own health as well as call in help from powerful (if sometimes
+#   uncooperative) demons. The most devoted of worshippers will eventually be gifted
+#   with knowledge of Infernal Marks, allowing them to ritually brand their own
+#   bodies in exchange for one of the Destroyer's many hellish powers.
+#
+#   Makhleb's powers all come with a price in blood. However, Makhleb will grant
+#   followers renewed health in return for killing beings of all kinds.
+マクレブは信徒に、自らの体力を代償として混沌の破壊の矢を解き放つ能力と、強力な(ときに非協力的な)悪魔の助けを呼ぶ能力を授ける。
+最も献身的な信徒はやがて地獄の印の知識を授かり、儀式によって自らの体に印を刻み込むことで、破壊者の数多くの地獄の力のひとつを得られるようになる。
+
+マクレブの力はすべて、血の代償を伴う。
+しかし、マクレブはあらゆる種類の存在を殺すことと引き換えに、信徒の体力を回復させてくれる。
+%%%%
+Nemelex Xobeh powers
+
+# en:
+#   The Trickster's followers gain various ways to influence fate when playing
+#   their cards. The effects of the cards will be more powerful with higher piety
+#   and with greater Invocations skill. Later, followers will gain powerful
+#   abilities to manipulate the cards, allowing them to choose one of three drawn
+#   cards, to gain the effects of multiple cards at once, and finally to stack
+#   decks and re-order their contents.
+トリックスターの信徒は、カードを使うときに運命に干渉するさまざまな方法を得る。
+カードの効果は、信仰心が高く、祈祷スキルが高いほど強力になる。
+のちに信徒はカードを操作する強力な能力を得る。引いた3枚のカードから1枚を選んだり、複数のカードの効果を一度に得たり、最終的にはデッキを積み込んでその中身を並べ替えたりすることができる。
+%%%%
+Okawaru powers
+
+# en:
+#   Followers of Okawaru will gain the ability to temporarily increase their skills
+#   in combat, and, much later, to deal much faster blows. Okawaru will eventually
+#   gift followers with ammunition, weapons and armour. The most favoured of
+#   Okawaru may challenge their foes to honourable single combat.
+オカワルの信徒は、戦闘中に一時的にスキルを高める能力を得て、ずっと後には、はるかに素早い攻撃を繰り出す能力を得る。
+オカワルはやがて信徒に矢弾、武器、防具を贈るようになる。
+オカワルに最も寵愛された者は、敵に名誉ある一騎打ちを挑むことができる。
+%%%%
+Pakellas powers
+
+# en:
+#   Followers of Pakellas do not regenerate their magic power naturally, and are
+#   forbidden from using external means to do so; instead, they are granted
+#   magical energy on killing beings. They may use increasing amounts of magical
+#   energy to strengthen their devices, temporarily granting them additional
+#   power, and can also use their magical energy to recharge their devices.
+#   Sufficiently devout followers will receive new devices from Pakellas, and may
+#   eventually petition Pakellas to personally charge one of their devices beyond
+#   its normal limits.
+パケラスの信徒は魔力が自然に回復せず、外部の手段で回復することも禁じられている。そのかわり、生き物を殺すと魔力が与えられる。
+信徒はより多くの魔力を使って道具を強化し、一時的に追加の力を与えることができ、また魔力を使って道具を再充填することもできる。
+十分に敬虔な信徒はパケラスから新しい道具を授かり、やがてはパケラスに頼んで、道具のひとつを通常の限界を超えて自ら充填してもらうこともできる。
+%%%%
+Qazlal powers
+
+# en:
+#   Followers of Qazlal are protected from all clouds. As a follower of Qazlal
+#   gains divine favour, they are slowly surrounded by a loud storm. In addition to
+#   generating noise, the storm causes elemental clouds to appear near followers,
+#   blocks attacks, and (for the particularly devout) deflects incoming
+#   projectiles. Qazlal allows followers to incite nature against their foes,
+#   causing a localised natural disturbance or, for particularly devout followers,
+#   a more widespread disaster. Followers of Qazlal eventually gain temporary
+#   resistances after taking damage, and can give life to clouds, turning them into
+#   allied elementals.
+クァズラルの信徒はすべての雲から守られる。
+クァズラルの信徒は神の歓心を得るにつれて、次第に騒々しい嵐に包まれていく。
+この嵐は騒音を立てるだけでなく、信徒の近くに元素の雲を発生させ、攻撃を防ぎ、(特に敬虔な信徒の場合は)飛んでくる飛び道具をそらす。
+クァズラルは信徒が敵に対して自然をけしかけることを許し、局地的な自然の異変を、特に敬虔な信徒の場合はより広範囲の災害を引き起こさせる。
+クァズラルの信徒はやがて、ダメージを受けた後に一時的な耐性を得られるようになり、雲に命を吹き込んで味方の精霊に変えることもできるようになる。
+%%%%
+Ru powers
+
+# en:
+#   Ru will offer followers a number of sacrifices as they travel the dungeon. On
+#   accepting these sacrifices, followers will gradually gain an aura of immense
+#   power. This aura will initially cause foes that attempt to harm them to falter
+#   and become stricken with maladies. After making further sacrifices, followers
+#   will be able to draw on this power to restore their health and magic, or to
+#   make a lightning-fast explosive leap. Exceptional sacrificants can unleash
+#   their power in a massive strike against all their foes. Each of the powers of
+#   Ru's sacrificants increases in strength with more piety from more sacrifices.
+ルーは、信徒が迷宮を旅するにつれていくつもの捧げ物を提案する。
+これらの捧げ物を受け入れると、信徒は次第に莫大な力のオーラを得ていく。
+このオーラは最初は、信徒を傷つけようとする敵をたじろがせ、病に冒させる。
+さらに捧げ物をすると、信徒はこの力を引き出して体力と魔力を回復したり、電光石火の爆発的な跳躍をしたりできるようになる。
+並外れた捧げ物をした者は、その力を解き放ってすべての敵に大打撃を与えることができる。
+ルーに捧げ物をした者の力はいずれも、捧げ物を重ねて信仰心が高まるほど強くなる。
+%%%%
+Sif Muna powers
+
+# en:
+#   Sif Muna grants followers the ability to rapidly restore their magical energy,
+#   and to forget spells at will, so as to learn new ones. Worshippers can call
+#   upon the Loreminder to help cast any spell they've discovered, even if it's
+#   well beyond their current magical training. Over time, devout followers will
+#   receive spellbooks containing a vast range of spells.
+シフ・ムーナは信徒に、魔力を素早く回復する能力と、新しい呪文を覚えるために好きなときに呪文を忘れる能力を与える。
+信徒は、知識の守護者に助けを求めて、見つけたどんな呪文でも、たとえ今の魔法の修練をはるかに超えていても唱えることができる。
+時が経つにつれ、敬虔な信徒は膨大な種類の呪文を記した魔法書を受け取るだろう。
+%%%%
+Trog powers
+
+# en:
+#   Trog offers various powers to help followers in battle. Followers will gain the
+#   ability to go berserk at will, and Trog will extend the duration of their
+#   berserk rage on killing foes. Trog will grant followers the ability to rapidly
+#   heal their wounds while fortifying their willpower, and later the ability to
+#   call in powerful raging allies. Eventually, Trog will gift followers with
+#   weapons, often with antimagic effects.
+トログは戦闘で信徒を助けるさまざまな力をもたらす。
+信徒は自分の意志で狂戦士化する能力を得て、トログは信徒が敵を倒すと狂戦士化の怒りの持続時間を延ばしてくれる。
+トログは信徒に、意志力を高めつつ傷を素早く癒す能力を与え、のちに強力な怒れる仲間を呼び出す能力を与える。
+最終的に、トログはしばしば反魔法の効果を持つ武器を信徒に贈るようになる。
+%%%%
+Wu Jian powers
+
+# en:
+#   Disciples of the Council learn to perform three martial techniques while moving
+#   around in combat. They will also be taught to move at unfathomable speeds for
+#   short distances, and become able to summon a storm of golden clouds to increase
+#   their precision and damage for as long as they keep using martial attacks.
+評議会の弟子たちは、戦闘中に動き回りながら3つの武術の技を繰り出すことを学ぶ。
+また、短い距離を計り知れない速さで移動することを教わり、武術の攻撃を続ける限り命中率とダメージを高める黄金の雲の嵐を呼び出せるようになる。
+%%%%
+Yredelemnul powers
+
+# en:
+#   Followers of Yredelemnul carry the Black Torch, allowing them to gather souls
+#   and surround themselves in darkness. They can raise foes who die in the light of
+#   the torch as mindless servants, hurl torchlight to scour the living and empower
+#   the dead, and bind especially noteworthy souls to fight for them in death with
+#   the full capacities they held in life. Especially devout worshippers can even
+#   call down the inescapable grip of the Fallen directly, binding foes helplessly
+#   in place as the very life is sucked from them. Yredelemnul will also dispatch
+#   undead servants to aid followers at the start of each new conquest.
+イレデレンヌルの信徒は黒き松明を携えており、それによって魂を集め、闇で身を包むことができる。
+信徒は、松明の光の中で死んだ敵を心なきしもべとして蘇らせたり、松明の光を投げつけて生者を苛み死者を強化したり、特に注目すべき魂を縛って、生前と同じ力のすべてをもって死後に自分のために戦わせたりできる。
+特に敬虔な信徒は、堕ちたる神の逃れられぬ手を直接呼び下ろし、敵をなすすべもなくその場に縛りつけて生命そのものを吸い取ることさえできる。
+またイレデレンヌルは、新たな征服を始めるたびに、信徒を助けるアンデッドのしもべを送り込む。
+%%%%
+Ashenzari wrath
+
+# en:
+#   Those who abandon Ashenzari will immediately have their curses shattered,
+#   destroying whichever items they imbued with divine wisdom. Thereafter,
+#   Ashenzari's wrath is constant and unrelenting for its duration. Victims will
+#   find their skills impaired, and their enemies divinely guided – never losing
+#   track of them, never ending the hunt.
+アシェンザリを見捨てた者は、ただちに呪いを砕かれ、神の英知を吹き込んだアイテムをすべて失う。
+その後、アシェンザリの怒りは、それが続く間、絶え間なく容赦なく降りかかる。
+罰を受けた者はスキルが損なわれ、敵は神に導かれて、決して見失うことなく、狩りを終えることもない。
+%%%%
+Cheibriados wrath
+
+# en:
+#   Offenders against Cheibriados will find their movements remain slow while
+#   the attention of Cheibriados remains upon them, and may have any magical hasting
+#   stripped away. They may also become further slowed, be put to sleep, or be
+#   beset by the unparalleled volume of the inevitable passage of time ringing
+#   throughout the Dungeon.
+ケイブリアドスに背いた者は、ケイブリアドスの注意が向けられている間、動きが遅いままになり、魔法による加速も剥ぎ取られることがある。
+また、さらに減速させられたり、眠らされたり、迷宮中に鳴り響く、避けられぬ時の流れのかつてない轟音に襲われたりすることもある。
+%%%%
+Dithmenos wrath
+
+# en:
+#   When angered, Dithmenos turns the shadows against victims. Monsters emerge from
+#   the darkness, both illusions woven from shadow and the very shadow themselves
+#   turning against sinners. Dithmenos' subtle punishments are, if anything, more
+#   dangerous: victims find the shadows ripped away from them, hunted with nowhere
+#   to hide; or find themselves smothered in shadow and sleeping, perhaps forever.
+怒ったディスメノスは、影を犠牲者に差し向ける。
+闇の中からモンスターが現れ、影から織りなされた幻影と影そのものの両方が罪人に牙をむく。
+ディスメノスのひそやかな懲罰は、むしろそれ以上に危険である。犠牲者は自らの影を剥ぎ取られ、隠れ場所もないまま狩り立てられたり、影に包まれて眠りに落ち、ひょっとすると二度と目覚めなかったりする。
+%%%%
+Elyvilon wrath
+
+# en:
+#   Elyvilon is not a god known for wrath. Still, those earning Elyvilon's ire will
+#   find the Healer occasionally protecting their foes from their attacks, and even
+#   from death.
+エリヴィロンは怒りで知られる神ではない。
+とはいえ、エリヴィロンの憤りを買った者は、癒し手がときおり敵を自分の攻撃から、さらには死からも守ってしまうことに気づくだろう。
+%%%%
+Fedhas wrath
+
+# en:
+#   Those who offend Fedhas will find the forces of nature invoked against them
+#   through a dramatic increase in greenery. They may find themselves transmuted
+#   into the plants they have forsaken, or surrounded by impenetrable walls of
+#   briars plus vicious acid-spitting oklob plants.
+フェダスに背いた者は、緑の劇的な増加を通じて自然の力を差し向けられる。
+自らが見捨てた植物に変えられたり、通り抜けられない茨の壁と、酸を吐く凶悪なオクロブ草に囲まれたりすることがある。
+%%%%
+Gozag wrath
+
+# en:
+#   The first of Gozag's punishments is commercial: all shops opened through
+#   Gozag's intervention shut their doors forever. The disloyal are advised to
+#   finish their shopping before they launch their betrayal. For as long as Gozag
+#   remains angered, ex-worshippers may sometimes be bedazzled by the glint of coin,
+#   and their potions will have a chance to fail when quaffed. Any foes that are
+#   encountered may also be granted potions of their own to assist them against
+#   those who resign from Gozag's service.
+ゴザーグの最初の罰は商業的なものである。ゴザーグの仲介で開いた店はすべて永遠に扉を閉ざす。
+不忠義者は、裏切りに踏み切る前に買い物を済ませておくのがよいだろう。
+ゴザーグの怒りが続く間、元信徒はときおり金貨のきらめきに目がくらみ、薬を飲んでも効かないことがある。
+出くわした敵もまた、ゴザーグに仕えるのをやめた者に対抗するために、自分の薬を授かることがある。
+%%%%
+Ignis wrath
+
+# en:
+#   The wrath of Ignis is now weaker than that of most other gods. Apostates will
+#   find their resistance to fire stripped away completely, and will be periodically
+#   assaulted by fire elementals, find their enemies strengthened by fire, or even
+#   have the floor burned out from beneath them. Experienced and cautious
+#   adventurers will likely overmaster these assaults.
+イグニスの怒りは、今ではほとんどの他の神々よりも弱い。
+背教者は炎への耐性を完全に剥ぎ取られ、定期的に火の精霊に襲われたり、敵が炎によって強化されたり、足元の床を焼き抜かれたりさえする。
+経験を積んだ慎重な冒険者なら、おそらくこれらの襲撃を乗り越えられるだろう。
+%%%%
+Jiyva wrath
+
+# en:
+#   Jiyva's vengeance is swift and gurgling. All slimes turn against those who
+#   offend Jiyva, and Jiyva ensures a plentiful supply of further slimes. Victims,
+#   too, will find their own bodies becoming unstable; acquiring debilitating
+#   mutations or contamination, as well as having any gifts of slime mutations
+#   stripped away from them.
+ジーヴァの復讐は素早く、ごぼごぼと音を立てる。
+ジーヴァに背いた者には、すべてのスライムが敵対し、ジーヴァはさらに多くのスライムを確実に送り込む。
+犠牲者はまた、自らの体が不安定になっていくことに気づくだろう。衰弱させる変異や魔力汚染を受け、授かったスライムの変異もすべて剥ぎ取られる。
+%%%%
+Kikubaaqudgha wrath
+
+# en:
+#   Kikubaaqudgha's wrath brings forth all the dread powers of necromancy. Victims
+#   may witness the devastating Sign of Ruin form upon themselves, or both doomed
+#   and drained without any respect for their negative energy resistance.
+#   Furthermore, Kikubaaqudgha's gifts become tainted: the dead rise again as foes,
+#   and those that attempt to use necromantic magic to fend off wrath will find it
+#   backfiring on them when least expected.
+キクバークッグァの怒りは、死霊術の恐るべき力のすべてをもたらす。
+犠牲者は、自らの身に恐るべき破滅の印が形作られるのを目にしたり、負のエネルギーへの耐性を無視して破滅をもたらされ、生命力を吸い取られたりする。
+さらに、キクバークッグァの贈り物は汚れたものとなる。死者は敵として再び起き上がり、怒りを退けようと死霊術の魔法を使う者は、思いもよらないときにその反動を受けることになる。
+%%%%
+Nemelex Xobeh wrath
+
+# en:
+#   Those who abandon Nemelex Xobeh have all of their gifted decks revoked
+#   immediately. They are also regularly forced to draw from the deck of
+#   Punishment, inflicting a range of unpleasant effects including draining,
+#   torment and polymorphing, as well as calling upon other gods to assist in
+#   inflicting wrath.
+ネメレクス・ソベーを見捨てた者は、授かったデッキをただちにすべて取り上げられる。
+また、定期的に懲罰のデッキからカードを引かされ、生命力の吸収、苦痛、変身など、さまざまな不快な効果を受けるうえ、他の神々も怒りを下すのに手を貸すよう呼び寄せられる。
+%%%%
+Pakellas wrath
+
+# en:
+#   Those that offend Pakellas will find themselves completely unable to make use
+#   of their devices for the duration of Pakellas' displeasure. Those who abandon
+#   Pakellas altogether will also continue to be unable to regenerate their magical
+#   power so long as Pakellas' attention remains on them.
+パケラスに背いた者は、パケラスの不興が続く間、道具をまったく使えなくなる。
+パケラスを完全に見捨てた者は、パケラスの注意が向けられている限り、魔力も回復できないままとなる。
+%%%%
+the Shining One wrath
+
+# en:
+#   The Shining One's wrath is straightforward and unmistakable. Its victims find
+#   themselves smitten with holy fire and beset with holy warriors. Sinners will be
+#   silenced, and the Shining One will also shout to alert the victim's foes.
+輝けるものの怒りは率直で、まぎれもないものである。
+その犠牲者は聖なる炎に打たれ、聖なる戦士たちに取り囲まれる。
+罪人は沈黙させられ、輝けるものは大声を上げて犠牲者の敵に知らせもする。
+%%%%
+Trog wrath
+
+# en:
+#   Trog's wrath is incandescent. Offenders find themselves swarmed by berserkers –
+#   from packs of bears to, for the most powerful, mobs of giants and trolls.
+#   Otherwise, those who anger Trog will regularly lose both their strength and
+#   self-control as they thoughtlessly thrash in place.
+トログの怒りは灼熱のごとく激しい。
+罪人は狂戦士たちに群がられる。熊の群れから、最も強い者に対しては巨人やトロルの集団まで。
+それ以外にも、トログを怒らせた者は定期的に力も自制心も失い、その場で考えもなく暴れ回る。
+%%%%
+Uskayaw wrath
+
+# en:
+#   Uskayaw's wrath turns the powers of the dance against the offender. The prude
+#   will find their foes going berserk and will be forced to helplessly watch as
+#   foes execute their own solos. When the dance is getting too slow, Uskayaw will
+#   cause noise to attract more revellers.
+ウスカヤーの怒りは、踊りの力を背いた者に差し向ける。
+無粋な者は、敵が狂戦士化するのを目にし、敵が独演を繰り広げるのをなすすべもなく見せつけられることになる。
+踊りが遅くなりすぎると、ウスカヤーは騒音を立てて、さらに多くの酔客を呼び寄せる。
+%%%%
+Wu Jian wrath
+
+# en:
+#   Those who turn against the Council must be prepared to endure death by a
+#   thousand cuts. No hiding place is secure, no disguise perfect enough to avoid
+#   the sudden spring of traps, the flying daggers and the armies of animated
+#   weapons that will ambush the betrayer.
+評議会に背いた者は、千の切り傷による死に耐える覚悟をしなければならない。
+裏切り者を待ち伏せる不意の罠、飛び交う短剣、動き出した武器の軍勢から逃れられる、安全な隠れ場所も完璧な変装も存在しない。
+%%%%
+Yredelemnul wrath
+
+# en:
+#   Those who anger Yredelemnul find themselves beset by legions of the dead.
+#   Sometimes, the god will also intervene directly, binding the unfaithful in
+#   inescapable chains as Yredelemnul's dark army demonstrates the price of
+#   betrayal.
+イレデレンヌルを怒らせた者は、死者の軍勢に取り囲まれる。
+ときには神が直接介入し、イレデレンヌルの暗黒の軍勢が裏切りの代償を見せつける中、不忠義者を逃れられぬ鎖で縛りつけることもある。
+%%%%
+Zin wrath
+
+# en:
+#   Those under Zin's wrath will find their beneficial mutations stripped away,
+#   their enemies alerted, and their senses confounded by the axioms of Law;
+#   confusion, fainting, blindness and complete paralysis will be their lot.
+ジンの怒りを受けた者は、有益な変異を剥ぎ取られ、敵に居場所を知らされ、法の公理によって感覚を乱される。
+混乱、卒倒、盲目、そして完全な麻痺が、その者の運命となるだろう。
+%%%%
+Wu Jian extra
+
+# en:
+#   :nowrap
+#     .......       .......  (.) <lightred>Lunge</lightred>: Move directly towards an enemy to deal
+#     ..<lightred>@</lightred>.O..  -->  ...<lightred>@</lightred>O..  extra damage.
+#     .......       .......
+#
+#     .......       ...<lightred>@</lightred>...  (*) <lightred>Whirlwind</lightred>: Move between two tiles adjacent to
+#     ...<lightred>@</lightred>O..  -->  ....O..  an enemy to strike them lightly. Multiple adjacent
+#     .......       .......  foes can be attacked simultaneously this way.
+#
+#     ..#....       ..#....  (**) <lightred>Wall Jump</lightred>: Vault off a nearby wall and strike
+#     ..#<lightred>@</lightred>O..  -->  ..#.O<lightred>@</lightred>.  enemies adjacent to the landing spot. Vaulting takes
+#     ..#....       ..#....  two turns. Activated via the (a)bility menu.
+#
+#   These prevent enemies from getting free attacks on you while you move away.
+:nowrap
+  .......       .......  (.) <lightred>突進</lightred>: 敵に向かってまっすぐ移動し、
+  ..<lightred>@</lightred>.O..  -->  ...<lightred>@</lightred>O..  追加のダメージを与える。
+  .......       .......
+
+  .......       ...<lightred>@</lightred>...  (*) <lightred>旋風</lightred>: 敵に隣接するマスの間を移動すると、
+  ...<lightred>@</lightred>O..  -->  ....O..  その敵に軽く攻撃する。この方法で、隣接する
+  .......       .......  複数の敵を同時に攻撃できる。
+
+  ..#....       ..#....  (**) <lightred>壁蹴り</lightred>: 近くの壁を蹴って跳び、着地点に
+  ..#<lightred>@</lightred>O..  -->  ..#.O<lightred>@</lightred>.  隣接する敵を打つ。跳躍には2ターンかかる。
+  ..#....       ..#....  (a)能力メニューから使う。
+
+これらの技を使えば、敵から離れようとして移動する間に、敵に隙を突かれて攻撃されることがない。
 %%%%

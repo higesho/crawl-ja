@@ -1,0 +1,3545 @@
+%%%%
+any orc name
+
+# en:
+#   w:1
+#   @_orc_warrior_name_@
+#
+#   w:1
+#   @_orc_wizard_name_@
+#
+#   w:1
+#   @_orc_priest_name_@
+#
+#   w:50
+#   @orc name@
+w:1
+@_orc_warrior_name_@
+
+w:1
+@_orc_wizard_name_@
+
+w:1
+@_orc_priest_name_@
+
+w:50
+@orc name@
+%%%%
+orc name
+
+# en:
+#   w:14
+#   @_beogh_name_@
+#
+#   w:12
+#   @_orcish_name_@
+#
+#   w:45
+#   @_other_orcish_name_@
+w:14
+@_beogh_name_@
+
+w:12
+@_orcish_name_@
+
+w:45
+@_other_orcish_name_@
+%%%%
+orc apostle warrior name
+
+# en:
+#   w:1
+#   @_orc_warrior_name_@
+#
+#   w:50
+#   @orc name@
+w:1
+@_orc_warrior_name_@
+
+w:50
+@orc name@
+%%%%
+orc apostle wizard name
+
+# en:
+#   w:1
+#   @_orc_wizard_name_@
+#
+#   w:50
+#   @orc name@
+w:1
+@_orc_wizard_name_@
+
+w:50
+@orc name@
+%%%%
+orc apostle priest name
+
+# en:
+#   w:1
+#   @_orc_priest_name_@
+#
+#   w:50
+#   @orc name@
+w:1
+@_orc_priest_name_@
+
+w:50
+@orc name@
+%%%%
+_orc_warrior_name_
+
+# en:
+#   Orconan
+オルコナン
+%%%%
+_orc_wizard_name_
+
+# en:
+#   Simorc Magus
+シモルク・マグス
+%%%%
+_orc_priest_name_
+
+# en:
+#   Judas
+ユダ
+%%%%
+_beogh_name_
+
+# en:
+#   Arbeogh
+#
+#   Bogbarth
+#
+#   Bogdan
+#
+#   Bogdar
+#
+#   Bogbrand
+#
+#   Bogfrid
+#
+#   Boghold
+#
+#   Bogloth
+#
+#   Bogmar
+#
+#   Bogric
+#
+#   Bogrim
+#
+#   Bogwald
+#
+#   Bogward
+#
+#   Bogwik
+#
+#   Korbok
+#
+#   Marbaugh
+#
+#   Morbeogh
+#
+#   Orbeogh
+#
+#   Vorbog
+#
+#   Warbeogh
+アルベオ
+
+ボグバース
+
+ボグダン
+
+ボグダール
+
+ボグブランド
+
+ボグフリッド
+
+ボグホールド
+
+ボグロス
+
+ボグマール
+
+ボグリック
+
+ボグリム
+
+ボグヴァルト
+
+ボグワード
+
+ボグウィック
+
+コルボク
+
+マーボー
+
+モルベオ
+
+オルベオ
+
+ヴォルボグ
+
+ワルベオ
+%%%%
+_orcish_name_
+
+# en:
+#   Alork
+#
+#   Borgk
+#
+#   Boruk
+#
+#   Geork
+#
+#   Horkud
+#
+#   Marbork
+#
+#   Milork
+#
+#   Orcesus
+#
+#   Ogrik
+#
+#   Orkidu
+#
+#   Okrist
+#
+#   Oreg
+#
+#   Orgrim
+#
+#   Orik
+#
+#   Orkrul
+#
+#   Orkwin
+#
+#   Oruk
+#
+#   Pellinorc
+#
+#   Urtork
+#
+#   Xexorm
+#
+#   Zandor
+アローク
+
+ボルグク
+
+ボルク
+
+ゲオルク
+
+ホルクド
+
+マルボルク
+
+ミロルク
+
+オルケスス
+
+オグリク
+
+オルキドゥ
+
+オクリスト
+
+オレグ
+
+オーグリム
+
+オリク
+
+オルクルル
+
+オークウィン
+
+オルク
+
+ペリノルク
+
+ウルトルク
+
+ゼクゾルム
+
+ザンドール
+%%%%
+_other_orcish_name_
+
+# en:
+#   Agrik
+#
+#   Arbolt
+#
+#   Argrim
+#
+#   Arkwar
+#
+#   Beowulf
+#
+#   Berold
+#
+#   Benkei
+#
+#   Bladwarg
+#
+#   Blodwig
+#
+#   Boderik
+#
+#   Boldo
+#
+#   Bolgrim
+#
+#   Borgoth
+#
+#   Borgun
+#
+#   Brandogh
+#
+#   Brun
+#
+#   Brunolf
+#
+#   Creb
+#
+#   Dorog
+#
+#   Garatoth
+#
+#   Garbold
+#
+#   Gorbash
+#
+#   Gorg
+#
+#   Gorm
+#
+#   Grimold
+#
+#   Hawl
+#
+#   Herok
+#
+#   Hilgar
+#
+#   Jathrek
+#
+#   Jorge
+#
+#   Koronagh
+#
+#   Learuk
+#
+#   Lorvak
+#
+#   Margrim
+#
+#   Mogdar
+#
+#   Morguth
+#
+#   Morun
+#
+#   Mugrim
+#
+#   Murdo
+#
+#   Myglar
+#
+#   Norbak
+#
+#   Nordag
+#
+#   Ognian
+#
+#   Olfik
+#
+#   Olfrun
+#
+#   Ortolf
+#
+#   Rocco
+#
+#   Shobas
+#
+#   Spirok
+#
+#   Syrus
+#
+#   Thalvi
+#
+#   Thorok
+#
+#   Ugbert
+#
+#   Ugrim
+#
+#   Wardok
+#
+#   Wargath
+#
+#   Wargrak
+#
+#   Warrok
+#
+#   Worak
+#
+#   Wulfoc
+#
+#   Zartorak
+#
+#   Zorug
+アグリク
+
+アルボルト
+
+アルグリム
+
+アークウォー
+
+ベーオウルフ
+
+ベロルド
+
+ベンケイ
+
+ブラドワーグ
+
+ブロドヴィヒ
+
+ボデリック
+
+ボルド
+
+ボルグリム
+
+ボルゴス
+
+ボルグン
+
+ブランドッグ
+
+ブルン
+
+ブルノルフ
+
+クレブ
+
+ドログ
+
+ガラトス
+
+ガルボルド
+
+ゴルバッシュ
+
+ゴルグ
+
+ゴルム
+
+グリモルド
+
+ホウル
+
+ヘロク
+
+ヒルガー
+
+ジャスレク
+
+ホルヘ
+
+コロナッハ
+
+レアルク
+
+ロルヴァク
+
+マルグリム
+
+モグダール
+
+モルグス
+
+モルン
+
+ムグリム
+
+マード
+
+ミグラー
+
+ノルバク
+
+ノルダグ
+
+オグニアン
+
+オルフィク
+
+オルフルン
+
+オルトルフ
+
+ロッコ
+
+ショバス
+
+スピロク
+
+サイラス
+
+サルヴィ
+
+ソロク
+
+ウグバート
+
+ウグリム
+
+ワードク
+
+ワーガス
+
+ワーグラク
+
+ワロク
+
+ウォラク
+
+ウルフォク
+
+ザルトラク
+
+ゾルグ
+%%%%
+ancestor name
+
+# en:
+#   @ancestor male name@
+#
+#   @ancestor female name@
+@ancestor male name@
+
+@ancestor female name@
+%%%%
+ancestor male name
+
+# en:
+#   @_west_european_male_name_@
+#
+#   @_roman_male_name_@
+#
+#   @_aztec_male_name_@
+#
+#   @_mesopotamian_male_name_@
+#
+#   @_egyptian_male_name_@
+#
+#   @_zulu_male_name_@
+#
+#   w:5
+#   @_arabic_male_name_@
+#
+#   w:5
+#   @_slavic_male_name_@
+#
+#   w:2
+#   @_brazilian_male_name_@
+@_west_european_male_name_@
+
+@_roman_male_name_@
+
+@_aztec_male_name_@
+
+@_mesopotamian_male_name_@
+
+@_egyptian_male_name_@
+
+@_zulu_male_name_@
+
+w:5
+@_arabic_male_name_@
+
+w:5
+@_slavic_male_name_@
+
+w:2
+@_brazilian_male_name_@
+%%%%
+ancestor female name
+
+# en:
+#   @_west_european_female_name_@
+#
+#   @_roman_female_name_@
+#
+#   @_aztec_female_name_@
+#
+#   @_mesopotamian_female_name_@
+#
+#   @_egyptian_female_name_@
+#
+#   @_zulu_female_name_@
+#
+#   w:5
+#   @_arabic_female_name_@
+#
+#   w:5
+#   @_slavic_female_name_@
+#
+#   w:2
+#   @_brazilian_female_name_@
+@_west_european_female_name_@
+
+@_roman_female_name_@
+
+@_aztec_female_name_@
+
+@_mesopotamian_female_name_@
+
+@_egyptian_female_name_@
+
+@_zulu_female_name_@
+
+w:5
+@_arabic_female_name_@
+
+w:5
+@_slavic_female_name_@
+
+w:2
+@_brazilian_female_name_@
+%%%%
+_west_european_male_name_
+
+# en:
+#   Æschere
+#
+#   Ælfric
+#
+#   Æthelred
+#
+#   Aylmer
+#
+#   Beorhtric
+#
+#   Cenhelm
+#
+#   Cynebald
+#
+#   Dunstan
+#
+#   Eadwine
+#
+#   Eideard
+#
+#   Erdrick
+#
+#   Esmond
+#
+#   Florimund
+#
+#   Gaiseric
+#
+#   Gladwin
+#
+#   Hondscioh
+#
+#   Hrodric
+#
+#   Hrodulf
+#
+#   Hrothgar
+#
+#   Kenrick
+#
+#   Leofdaeg
+#
+#   Leofric
+#
+#   Leofsige
+#
+#   Osbert
+#
+#   Sigurd
+#
+#   Theodoric
+#
+#   Ulric
+#
+#   Vidar
+#
+#   Wigmund
+#
+#   Wilburh
+#
+#   Wolf
+#
+#   Wystan
+アシュヘレ
+
+エルフリック
+
+エゼルレッド
+
+エイルマー
+
+ベオルフトリック
+
+ケンヘルム
+
+キュネバルド
+
+ダンスタン
+
+エドウィン
+
+エイデアルド
+
+エルドリック
+
+エズモンド
+
+フロリムント
+
+ガイセリック
+
+グラッドウィン
+
+ホンドシオ
+
+フロドリック
+
+フロズルフ
+
+フロースガール
+
+ケンリック
+
+レオフデーグ
+
+レオフリック
+
+レオフシゲ
+
+オズバート
+
+シグルズ
+
+テオドリック
+
+ウルリック
+
+ヴィーダル
+
+ウィグムンド
+
+ウィルブルフ
+
+ウルフ
+
+ウィスタン
+%%%%
+_roman_male_name_
+
+# en:
+#   Appius
+#
+#   Gaius
+#
+#   Gnaeus
+#
+#   Lucius
+#
+#   Octavius
+#
+#   Paullus
+#
+#   Publius
+#
+#   Quintus
+#
+#   Septimus
+#
+#   Servius
+#
+#   Sextus
+#
+#   Tiberius
+#
+#   Titus
+アッピウス
+
+ガイウス
+
+グナエウス
+
+ルキウス
+
+オクタウィウス
+
+パウッルス
+
+プブリウス
+
+クィントゥス
+
+セプティムス
+
+セルウィウス
+
+セクストゥス
+
+ティベリウス
+
+ティトゥス
+%%%%
+_aztec_male_name_
+
+# en:
+#   Cipactli
+#
+#   Cuahtemoc
+#
+#   Cuetlachtli
+#
+#   Huemac
+#
+#   Necuametl
+#
+#   Tenoch
+#
+#   Tepiltzin
+#
+#   Tlaloc
+#
+#   Tochtli
+#
+#   Xochipepe
+#
+#   Zolin
+シパクトリ
+
+クアウテモック
+
+クエトラクトリ
+
+ウエマク
+
+ネクアメトル
+
+テノチ
+
+テピルツィン
+
+トラロック
+
+トチトリ
+
+ショチペペ
+
+ソリン
+%%%%
+_mesopotamian_male_name_
+
+# en:
+#   Ahumratum
+#
+#   Akiya
+#
+#   Ammiditana
+#
+#   Amnanu
+#
+#   Arammadara
+#
+#   Baqqanum
+#
+#   Belanum
+#
+#   Beli-Ashared
+#
+#   Belshunu
+#
+#   Eanasir
+#
+#   Illuratum
+#
+#   Ilshubani
+#
+#   Imgur-Sin
+#
+#   Marduk-asir
+#
+#   Nammahani
+#
+#   Namzu
+#
+#   Sagil-Zimu
+#
+#   Shatamurrim
+#
+#   Sinnashi
+#
+#   Taribatum
+#
+#   Ur-Dumizida
+#
+#   Yamquzzuhalamma
+#
+#   Yayatum
+#
+#   Zimri-Dagan
+アフムラトゥム
+
+アキヤ
+
+アンミ・ディタナ
+
+アムナヌ
+
+アランマダラ
+
+バッカヌム
+
+ベラヌム
+
+ベリ・アシャレド
+
+ベルシュヌ
+
+エア・ナシル
+
+イッルラトゥム
+
+イルシュバニ
+
+イムグル・シン
+
+マルドゥク・アシル
+
+ナンマハニ
+
+ナムズ
+
+サギル・ジム
+
+シャタムリム
+
+シンナシ
+
+タリバトゥム
+
+ウル・ドゥムジダ
+
+ヤムクッズハランマ
+
+ヤヤトゥム
+
+ジムリ・ダガン
+%%%%
+_egyptian_male_name_
+
+# en:
+#   Aahotepre
+#
+#   Agathocles
+#
+#   Ahmose
+#
+#   Akhenaten
+#
+#   Amyrtaeus
+#
+#   Anedjib
+#
+#   Ankherfenedjef
+#
+#   Caesarion
+#
+#   Demetirus
+#
+#   Duaenre
+#
+#   Hori
+#
+#   Hsekiu
+#
+#   Khabaw
+#
+#   Kheti
+#
+#   Merenptah
+#
+#   Paser
+#
+#   Psammuthes
+#
+#   Ramose
+#
+#   Senakhtenre
+#
+#   Shedsu-nefertum
+#
+#   Si-Tayit
+#
+#   w:1
+#   Snaaib
+#
+#   Sosibius
+#
+#   Thamphthis
+#
+#   Udjahorresnet
+アアホテプラー
+
+アガトクレス
+
+イアフメス
+
+アクエンアテン
+
+アミルタイオス
+
+アネジブ
+
+アンケルフェネジェフ
+
+カエサリオン
+
+デメトリオス
+
+ドゥアエンラー
+
+ホリ
+
+ヘセキウ
+
+カーバウ
+
+ケティ
+
+メルエンプタハ
+
+パセル
+
+プサムテス
+
+ラモーゼ
+
+セナクトエンラー
+
+シェドス・ネフェルトゥム
+
+シ・タイト
+
+w:1
+スナアイブ
+
+ソシビオス
+
+タムフティス
+
+ウジャホルレスネト
+%%%%
+_zulu_male_name_
+
+# en:
+#   Ayize
+#
+#   w:1
+#   Bongani
+#
+#   Cashile
+#
+#   Chakide
+#
+#   Chitauli
+#
+#   Dube
+#
+#   Ingiyab
+#
+#   Impisi
+#
+#   Jabu
+#
+#   Londisizwe
+#
+#   Manelesi
+#
+#   Msizi
+#
+#   Njabulo
+#
+#   Qinisela
+#
+#   Sanele
+#
+#   Sizwe
+#
+#   Thabo
+#
+#   Thulani
+#
+#   Vusi
+#
+#   Xolani
+アイゼ
+
+w:1
+ボンガニ
+
+カシレ
+
+チャキデ
+
+チタウリ
+
+ドゥベ
+
+インギヤブ
+
+インピシ
+
+ジャブ
+
+ロンディシズウェ
+
+マネレシ
+
+ムシジ
+
+ンジャブロ
+
+キニセラ
+
+サネレ
+
+シズウェ
+
+タボ
+
+トゥラニ
+
+ヴシ
+
+ショラニ
+%%%%
+_arabic_male_name_
+
+# en:
+#   Arif
+#
+#   Ferran
+#
+#   Hamal
+#
+#   Kateb
+#
+#   Lufti
+#
+#   w:1
+#   Rigel
+#
+#   Rabi
+#
+#   Shunnar
+#
+#   Sofian
+#
+#   Tawil
+#
+#   w:1
+#   Zero
+アリフ
+
+フェラン
+
+ハマル
+
+カテブ
+
+ルフティ
+
+w:1
+リゲル
+
+ラビ
+
+シュンナール
+
+ソフィアン
+
+タウィール
+
+w:1
+ゼロ
+%%%%
+_slavic_male_name_
+
+# en:
+#   Bolek
+#
+#   Bor
+#
+#   Branko
+#
+#   Dejan
+#
+#   Laslo
+#
+#   w:1
+#   Lech
+#
+#   Milos
+#
+#   Mirko
+#
+#   Plamen
+#
+#   Preben
+#
+#   Stanko
+#
+#   Tihomir
+#
+#   Vojtech
+#
+#   Wenzel
+#
+#   Zdislav
+#
+#   Zoran
+ボレク
+
+ボル
+
+ブランコ
+
+デヤン
+
+ラスロ
+
+w:1
+レフ
+
+ミロシュ
+
+ミルコ
+
+プラメン
+
+プレベン
+
+スタンコ
+
+ティホミル
+
+ヴォイテフ
+
+ヴェンツェル
+
+ズディスラフ
+
+ゾラン
+%%%%
+_west_european_female_name_
+
+# en:
+#   Ælfthryth
+#
+#   Ælfwynn
+#
+#   Æðelind
+#
+#   Audrea
+#
+#   Bealdhild
+#
+#   Cyneburga
+#
+#   Cynethryth
+#
+#   Eadburga
+#
+#   Ealdgyð
+#
+#   Edmée
+#
+#   Edwyna
+#
+#   Eormenhild
+#
+#   Friðuswiþ
+#
+#   Godgifu
+#
+#   Gudrun
+#
+#   Kendra
+#
+#   Milburga
+#
+#   Saranna
+#
+#   Solveig
+#
+#   Sunngifu
+#
+#   Synnove
+#
+#   Walburga
+#
+#   Wilfreda
+#
+#   Wynnflæd
+エルフスリス
+
+エルフウィン
+
+エゼリンド
+
+オードリア
+
+ベアルドヒルド
+
+キュネブルガ
+
+キュネスリス
+
+エアドブルガ
+
+エアルドギス
+
+エドメ
+
+エドウィナ
+
+エオルメンヒルド
+
+フリズスウィス
+
+ゴドギフ
+
+グドルーン
+
+ケンドラ
+
+ミルブルガ
+
+サランナ
+
+ソルヴェイグ
+
+スンギフ
+
+シンノーヴェ
+
+ヴァルブルガ
+
+ウィルフレダ
+
+ウィンフレド
+%%%%
+_roman_female_name_
+
+# en:
+#   Appia
+#
+#   Aula
+#
+#   Decima
+#
+#   Lucia
+#
+#   Mettia
+#
+#   Numeria
+#
+#   Octavia
+#
+#   Publia
+#
+#   Septima
+#
+#   Servia
+#
+#   Tertia
+#
+#   Tiberia
+アッピア
+
+アウラ
+
+デキマ
+
+ルキア
+
+メッティア
+
+ヌメリア
+
+オクタウィア
+
+プブリア
+
+セプティマ
+
+セルウィア
+
+テルティア
+
+ティベリア
+%%%%
+_aztec_female_name_
+
+# en:
+#   Centenhua
+#
+#   Cihuaton
+#
+#   Citlalmina
+#
+#   Izel
+#
+#   Nenetl
+#
+#   Teicuih
+#
+#   Tlalli
+#
+#   Xiloxoch
+#
+#   Xiuhtonal
+#
+#   Xochitl
+センテンワ
+
+シワトン
+
+シトラルミナ
+
+イセル
+
+ネネトル
+
+テイクイ
+
+トラリ
+
+シロショチ
+
+シウトナル
+
+ショチトル
+%%%%
+_mesopotamian_female_name_
+
+# en:
+#   Amurritum
+#
+#   Belessunu
+#
+#   Ealamassi
+#
+#   Enheduana
+#
+#   Eshargamelat
+#
+#   Iltani
+#
+#   Ishtar-belessa
+#
+#   Kammani
+#
+#   Ku-aya
+#
+#   Nakurtum
+#
+#   Nindada
+#
+#   Shatu-murrim
+#
+#   Shiptu
+#
+#   Takurtum
+#
+#   Yadidatum
+アムリトゥム
+
+ベレッスヌ
+
+エアラマッシ
+
+エンヘドゥアンナ
+
+エシャルガメラト
+
+イルタニ
+
+イシュタル・ベレッサ
+
+カンマニ
+
+ク・アヤ
+
+ナクルトゥム
+
+ニンダダ
+
+シャトゥ・ムリム
+
+シプトゥ
+
+タクルトゥム
+
+ヤディダトゥム
+%%%%
+_egyptian_female_name_
+
+# en:
+#   Agathoclea
+#
+#   Ahhotep
+#
+#   Ankhesenamen
+#
+#   Amenemopet
+#
+#   Arsinoe
+#
+#   Artakama
+#
+#   Bintanath
+#
+#   Djefatnebti
+#
+#   Henutmehyt
+#
+#   Inhapi
+#
+#   Henutemipet
+#
+#   Keminub
+#
+#   Khenut
+#
+#   Matia
+#
+#   Nebetia
+#
+#   Nefertari
+アガトクレア
+
+イアフヘテプ
+
+アンケセナーメン
+
+アメンエムオペト
+
+アルシノエ
+
+アルタカマ
+
+ビントアナト
+
+ジェファトネブティ
+
+ヘヌトメヒト
+
+インハピ
+
+ヘヌトエムイペト
+
+ケミヌブ
+
+ケヌト
+
+マティア
+
+ネベティア
+
+ネフェルタリ
+%%%%
+_zulu_female_name_
+
+# en:
+#   Busisiwe
+#
+#   Fikile
+#
+#   Ingwe
+#
+#   Kaya
+#
+#   Lwandle
+#
+#   Mbali
+#
+#   Nhalahla
+#
+#   Nkonkoni
+#
+#   Nolwazi
+#
+#   Nomusa
+#
+#   Nozipho
+#
+#   Ntombi
+#
+#   Simosihle
+#
+#   Thoko
+#
+#   Zola
+ブシシウェ
+
+フィキレ
+
+イングウェ
+
+カヤ
+
+ルワンドレ
+
+ムバリ
+
+ンハラフラ
+
+ンコンコニ
+
+ノルワジ
+
+ノムサ
+
+ノジポ
+
+ントンビ
+
+シモシレ
+
+トコ
+
+ゾラ
+%%%%
+_arabic_female_name_
+
+# en:
+#   Amala
+#
+#   Ara
+#
+#   Atia
+#
+#   Caliana
+#
+#   Jaydra
+#
+#   Khalidah
+#
+#   w:5
+#   Manar
+#
+#   Melek
+#
+#   Muriel
+#
+#   Oma
+#
+#   Qitarah
+#
+#   Rabi
+#
+#   Rana
+#
+#   Shunnareh
+#
+#   Waqi
+#
+#   Zada
+#
+#   Zayda
+#
+#   Zulima
+アマラ
+
+アラ
+
+アティア
+
+カリアナ
+
+ジェイドラ
+
+ハリダ
+
+w:5
+マナール
+
+メレク
+
+ミュリエル
+
+オマ
+
+キタラ
+
+ラビ
+
+ラナ
+
+シュンナーレ
+
+ワーキ
+
+ザダ
+
+ザイダ
+
+ズリマ
+%%%%
+_slavic_female_name_
+
+# en:
+#   Bojana
+#
+#   Bozena
+#
+#   Bozidara
+#
+#   Dagmar
+#
+#   Dusana
+#
+#   Libusa
+#
+#   w:5
+#   Marzanna
+#
+#   w:5
+#   Marzena
+#
+#   Mira
+#
+#   Mirna
+#
+#   Rodica
+#
+#   w:5
+#   Vesna
+#
+#   Zarja
+#
+#   Zorana
+ボヤナ
+
+ボジェナ
+
+ボジダラ
+
+ダグマル
+
+ドゥシャナ
+
+リブシェ
+
+w:5
+マルザンナ
+
+w:5
+マルジェナ
+
+ミラ
+
+ミルナ
+
+ロディカ
+
+w:5
+ヴェスナ
+
+ザリャ
+
+ゾラナ
+%%%%
+_brazilian_female_name_
+
+# en:
+#   Apolônia
+#
+#   Clarinda
+#
+#   Etelvina
+#
+#   Josefina
+#
+#   Laurinda
+#
+#   Úrsula
+アポローニア
+
+クラリンダ
+
+エテルヴィーナ
+
+ジョゼフィーナ
+
+ラウリンダ
+
+ウルスラ
+%%%%
+_brazilian_male_name_
+
+# en:
+#   Amaro
+#
+#   Anacleto
+#
+#   Aníbal
+#
+#   Bonifácio
+#
+#   Cândido
+#
+#   Epaminondas
+#
+#   Eustáquio
+#
+#   Honório
+#
+#   Januári
+アマーロ
+
+アナクレト
+
+アニバル
+
+ボニファシオ
+
+カンジド
+
+エパミノンダス
+
+エウスタキオ
+
+オノリオ
+
+ジャヌアリ
+%%%%
+steelspirit name
+
+# en:
+#   w:50
+#   @ancestor name@
+#
+#   w:1
+#   @RANDGEN@
+#
+#
+#   w:1
+#   @bland name@
+#
+#   @_cantonese_female_name_@
+#
+#   @_cantonese_male_name_@
+#
+#   @_german_female_name_@
+#
+#   @_german_male_name_@
+#
+#   @_korean_female_name_@
+#
+#   @_korean_male_name_@
+#
+#   w:15
+#   @_hispanic_female_name_@
+#
+#   w:15
+#   @_hispanic_male_name_@
+#
+#   @_japanese_female_name_@
+#
+#   @_japanese_male_name_@
+#
+#   @_sikh_female_name_@
+#
+#   @_sikh_male_name_@
+#
+#   @_thai_female_name_@
+#
+#   @_thai_male_name_@
+w:50
+@ancestor name@
+
+w:1
+@RANDGEN@
+
+
+w:1
+@bland name@
+
+@_cantonese_female_name_@
+
+@_cantonese_male_name_@
+
+@_german_female_name_@
+
+@_german_male_name_@
+
+@_korean_female_name_@
+
+@_korean_male_name_@
+
+w:15
+@_hispanic_female_name_@
+
+w:15
+@_hispanic_male_name_@
+
+@_japanese_female_name_@
+
+@_japanese_male_name_@
+
+@_sikh_female_name_@
+
+@_sikh_male_name_@
+
+@_thai_female_name_@
+
+@_thai_male_name_@
+%%%%
+bland name
+
+# en:
+#   @_bland_female_name_@
+#
+#   @_bland_male_name_@
+@_bland_female_name_@
+
+@_bland_male_name_@
+%%%%
+_bland_female_name_
+
+# en:
+#   Abby
+#
+#   Babs
+#
+#   Betsy
+#
+#   Carrie
+#
+#   Deb
+#
+#   Izzy
+#
+#   Jen
+#
+#   Mia
+#
+#   Sue
+#
+#   Vera
+アビー
+
+バブス
+
+ベッツィー
+
+キャリー
+
+デブ
+
+イジー
+
+ジェン
+
+ミア
+
+スー
+
+ヴェラ
+%%%%
+_bland_male_name_
+
+# en:
+#   Bill
+#
+#   Bob
+#
+#   Cal
+#
+#   Dave
+#
+#   Doug
+#
+#   Jeff
+#
+#   Jim
+#
+#   Mack
+#
+#   Ned
+#
+#   Pete
+ビル
+
+ボブ
+
+カル
+
+デイブ
+
+ダグ
+
+ジェフ
+
+ジム
+
+マック
+
+ネッド
+
+ピート
+%%%%
+_cantonese_female_name_
+
+# en:
+#   Ai
+#
+#   Caihong
+#
+#   Chun
+#
+#   Hua
+#
+#   Jingyi
+#
+#   Kun
+#
+#   Lan
+#
+#   Li
+#
+#   Mei
+#
+#   Ning
+#
+#   Qing
+#
+#   Qiuyue
+#
+#   Shu
+#
+#   Xiuying
+#
+#   Xue
+#
+#   Yan
+#
+#   Yawen
+#
+#   Zhen
+アイ
+
+ツァイホン
+
+チュン
+
+ホア
+
+ジンイー
+
+クン
+
+ラン
+
+リー
+
+メイ
+
+ニン
+
+チン
+
+チウユエ
+
+シュー
+
+シウイン
+
+シュエ
+
+イェン
+
+ヤーウェン
+
+ジェン
+%%%%
+_cantonese_male_name_
+
+# en:
+#   Aiguo
+#
+#   Bo
+#
+#   Chang
+#
+#   Feng
+#
+#   Haoran
+#
+#   Hong
+#
+#   Jin
+#
+#   Kai
+#
+#   Liang
+#
+#   Lin
+#
+#   Ming
+#
+#   Qiang
+#
+#   Qiu
+#
+#   Shi
+#
+#   Wei
+#
+#   Wu
+#
+#   Xiang
+#
+#   Yuxuan
+#
+#   Zihan
+アイグオ
+
+ボー
+
+チャン
+
+フォン
+
+ハオラン
+
+ホン
+
+ジン
+
+カイ
+
+リャン
+
+リン
+
+ミン
+
+チアン
+
+チウ
+
+シー
+
+ウェイ
+
+ウー
+
+シアン
+
+ユーシュエン
+
+ズーハン
+%%%%
+_german_female_name_
+
+# en:
+#   Anneliese
+#
+#   Annika
+#
+#   Astrid
+#
+#   Berta
+#
+#   Birgit
+#
+#   Constanze
+#
+#   Dagmar
+#
+#   Edeltraud
+#
+#   Else
+#
+#   Ermengarde
+#
+#   Frauke
+#
+#   Friedl
+#
+#   Gerda
+#
+#   Gisele
+#
+#   Heidi
+#
+#   Hilda
+#
+#   Ilse
+#
+#   Ingrid
+#
+#   Isolde
+#
+#   Juhanna
+#
+#   Karolin
+#
+#   Katrin
+#
+#   Liesl
+#
+#   Lisbeth
+#
+#   Margit
+#
+#   Olga
+#
+#   Renate
+#
+#   Sieglinde
+#
+#   Silke
+#
+#   Svenja
+#
+#   Tamara
+#
+#   Therese
+#
+#   Ulrike
+#
+#   Wilhemina
+#
+#   Yvonne
+アンネリーゼ
+
+アンニカ
+
+アストリッド
+
+ベルタ
+
+ビルギット
+
+コンスタンツェ
+
+ダグマル
+
+エーデルトラウト
+
+エルゼ
+
+エルメンガルト
+
+フラウケ
+
+フリードル
+
+ゲルダ
+
+ギゼーレ
+
+ハイジ
+
+ヒルダ
+
+イルゼ
+
+イングリット
+
+イゾルデ
+
+ユハンナ
+
+カロリン
+
+カトリン
+
+リーズル
+
+リスベート
+
+マルギット
+
+オルガ
+
+レナーテ
+
+ジークリンデ
+
+ジルケ
+
+スヴェンヤ
+
+タマラ
+
+テレーゼ
+
+ウルリケ
+
+ヴィルヘルミーナ
+
+イヴォンヌ
+%%%%
+_german_male_name_
+
+# en:
+#   Adalbert
+#
+#   Albrecht
+#
+#   Arnulf
+#
+#   Bastian
+#
+#   Bernhard
+#
+#   Conrad
+#
+#   Dietrich
+#
+#   Egbert
+#
+#   Egon
+#
+#   Ernst
+#
+#   Fredrik
+#
+#   Fritz
+#
+#   Gebhard
+#
+#   Gilbert
+#
+#   Gottfried
+#
+#   Gunther
+#
+#   Gustav
+#
+#   Hans
+#
+#   Heine
+#
+#   Helmut
+#
+#   Jakob
+#
+#   Johann
+#
+#   Karl
+#
+#   Kaspar
+#
+#   Lars
+#
+#   Lukas
+#
+#   Magnus
+#
+#   Niklaus
+#
+#   Olaf
+#
+#   Oskar
+#
+#   Otto
+#
+#   Raimund
+#
+#   Rupprecht
+#
+#   Siegfried
+#
+#   Theobald
+#
+#   Tiedemann
+#
+#   Ulrich
+#
+#   Valter
+#
+#   Waldo
+#
+#   Wilfried
+アダルベルト
+
+アルブレヒト
+
+アルヌルフ
+
+バスティアン
+
+ベルンハルト
+
+コンラート
+
+ディートリッヒ
+
+エグベルト
+
+エゴン
+
+エルンスト
+
+フレドリク
+
+フリッツ
+
+ゲープハルト
+
+ギルベルト
+
+ゴットフリート
+
+グンター
+
+グスタフ
+
+ハンス
+
+ハイネ
+
+ヘルムート
+
+ヤーコプ
+
+ヨハン
+
+カール
+
+カスパー
+
+ラルス
+
+ルーカス
+
+マグヌス
+
+ニクラウス
+
+オーラフ
+
+オスカー
+
+オットー
+
+ライムント
+
+ループレヒト
+
+ジークフリート
+
+テオバルト
+
+ティーデマン
+
+ウルリッヒ
+
+ヴァルター
+
+ヴァルド
+
+ヴィルフリート
+%%%%
+_hispanic_female_name_
+
+# en:
+#   Aida
+#
+#   Adela
+#
+#   Alejandra
+#
+#   Ana
+#
+#   Araceli
+#
+#   Bianca
+#
+#   Carmen
+#
+#   Clara
+#
+#   Consuela
+#
+#   Elena
+#
+#   Fernanda
+#
+#   Francisca
+#
+#   Gabriela
+#
+#   Gloria
+#
+#   Inés
+#
+#   Isabel
+#
+#   Jacinta
+#
+#   Leticia
+#
+#   Lucía
+#
+#   Malena
+#
+#   María
+#
+#   Marisol
+#
+#   Miranda
+#
+#   Paloma
+#
+#   Soledad
+#
+#   Ximena
+#
+#   Yolanda
+アイダ
+
+アデラ
+
+アレハンドラ
+
+アナ
+
+アラセリ
+
+ビアンカ
+
+カルメン
+
+クララ
+
+コンスエラ
+
+エレナ
+
+フェルナンダ
+
+フランシスカ
+
+ガブリエラ
+
+グロリア
+
+イネス
+
+イサベル
+
+ハシンタ
+
+レティシア
+
+ルシア
+
+マレナ
+
+マリア
+
+マリソル
+
+ミランダ
+
+パロマ
+
+ソレダード
+
+ヒメナ
+
+ヨランダ
+%%%%
+_hispanic_male_name_
+
+# en:
+#   Agustín
+#
+#   Armando
+#
+#   Carlos
+#
+#   Cedro
+#
+#   Cortez
+#
+#   Diego
+#
+#   Enrique
+#
+#   Esteban
+#
+#   Fernando
+#
+#   Francisco
+#
+#   Guillermo
+#
+#   Gustavo
+#
+#   Hugo
+#
+#   w:1
+#   Ignacio
+#
+#   Javier
+#
+#   José
+#
+#   Juan
+#
+#   Luis
+#
+#   Pancho
+#
+#   Rafael
+#
+#   Ramón
+#
+#   Raúl
+#
+#   Rubén
+#
+#   Salvador
+#
+#   Santiago
+#
+#   Santos
+#
+#   Sebastián
+#
+#   Tomás
+#
+#   Vicente
+アグスティン
+
+アルマンド
+
+カルロス
+
+セドロ
+
+コルテス
+
+ディエゴ
+
+エンリケ
+
+エステバン
+
+フェルナンド
+
+フランシスコ
+
+ギジェルモ
+
+グスタボ
+
+ウーゴ
+
+w:1
+イグナシオ
+
+ハビエル
+
+ホセ
+
+フアン
+
+ルイス
+
+パンチョ
+
+ラファエル
+
+ラモン
+
+ラウル
+
+ルベン
+
+サルバドール
+
+サンティアゴ
+
+サントス
+
+セバスティアン
+
+トマス
+
+ビセンテ
+%%%%
+_irish_female_name_
+
+# en:
+#   Áedammair
+#
+#   Áine
+#
+#   Aoife
+#
+#   Bryna
+#
+#   Caitlin
+#
+#   Caoimhe
+#
+#   Ciara
+#
+#   Deidre
+#
+#   Dubhchobhlaigh
+#
+#   Eithne
+#
+#   Fiadh
+#
+#   Íde
+#
+#   Maeve
+#
+#   Máire
+#
+#   Niamh
+#
+#   Nóirín
+#
+#   Onóra
+#
+#   Órlaith
+#
+#   Raghnailt
+#
+#   Róisín
+#
+#   Saoirse
+#
+#   Sinéad
+#
+#   Siobhan
+#
+#   Síofra
+#
+#   Uasal
+アエダマル
+
+オーニャ
+
+イーファ
+
+ブリナ
+
+ケイトリン
+
+キーヴァ
+
+キアラ
+
+ディアドラ
+
+ドゥヴコヴラ
+
+エニャ
+
+フィア
+
+イーデ
+
+メイヴ
+
+モイラ
+
+ニーヴ
+
+ノーリーン
+
+オノーラ
+
+オーラ
+
+ラナルト
+
+ロシーン
+
+シアーシャ
+
+シネイド
+
+シボーン
+
+シーフラ
+
+ウアサル
+%%%%
+_irish_male_name_
+
+# en:
+#   Aodhán
+#
+#   Cian
+#
+#   Ciarán
+#
+#   Colm
+#
+#   Cormac
+#
+#   Diarmaid
+#
+#   Eamonn
+#
+#   Eógan
+#
+#   Eoin
+#
+#   Fearghal
+#
+#   Fiachra
+#
+#   Flann
+#
+#   Fothad
+#
+#   Muiredach
+#
+#   Niall
+#
+#   Pádraig
+#
+#   Rónán
+#
+#   Séamus
+#
+#   w:1
+#   Toirdhealbhach
+エイダン
+
+キアン
+
+キーラン
+
+コルム
+
+コーマック
+
+ディアミッド
+
+イーモン
+
+エオガン
+
+オーエン
+
+ファーガル
+
+フィアクラ
+
+フラン
+
+フォサド
+
+ムイレダハ
+
+ニール
+
+パードリグ
+
+ローナン
+
+シェイマス
+
+w:1
+トーラッハ
+%%%%
+_japanese_female_name_
+
+# en:
+#   Chidori
+#
+#   Chisato
+#
+#   Eiko
+#
+#   Etsuko
+#
+#   Fubuki
+#
+#   Fuyuko
+#
+#   Hana
+#
+#   Hideko
+#
+#   Hisae
+#
+#   Io
+#
+#   Kaede
+#
+#   Kaori
+#
+#   Kiko
+#
+#   Koruri
+#
+#   Kyoko
+#
+#   Mai
+#
+#   Mariya
+#
+#   Matsuko
+#
+#   Mizue
+#
+#   Natsumi
+#
+#   Nodoka
+#
+#   Ran
+#
+#   Ruka
+#
+#   Sachi
+#
+#   Sarina
+#
+#   Tae
+#
+#   Tamao
+#
+#   Umi
+#
+#   Yae
+#
+#   Yuina
+#
+#   Yume
+チドリ
+
+チサト
+
+エイコ
+
+エツコ
+
+フブキ
+
+フユコ
+
+ハナ
+
+ヒデコ
+
+ヒサエ
+
+イオ
+
+カエデ
+
+カオリ
+
+キコ
+
+コルリ
+
+キョウコ
+
+マイ
+
+マリヤ
+
+マツコ
+
+ミズエ
+
+ナツミ
+
+ノドカ
+
+ラン
+
+ルカ
+
+サチ
+
+サリナ
+
+テ
+
+タマオ
+
+ウミ
+
+ヤエ
+
+ユイナ
+
+ユメ
+%%%%
+_japanese_male_name_
+
+# en:
+#   Akihito
+#
+#   Arashi
+#
+#   Azuma
+#
+#   Chikashi
+#
+#   Chujiro
+#
+#   Daichi
+#
+#   Daisaku
+#
+#   Eiko
+#
+#   Eitaro
+#
+#   Fumito
+#
+#   Fusazane
+#
+#   Genichi
+#
+#   Goro
+#
+#   Gota
+#
+#   Hachiro
+#
+#   Haruki
+#
+#   Hayata
+#
+#   Hidetaka
+#
+#   Hisao
+#
+#   Ichio
+#
+#   Ikko
+#
+#   Iwao
+#
+#   Joji
+#
+#   Jubei
+#
+#   Junzo
+#
+#   Kagemori
+#
+#   Kanehira
+#
+#   Kansuke
+#
+#   Kazuki
+#
+#   Kenji
+#
+#   Kenzo
+#
+#   Kiyoto
+#
+#   Kyogo
+#
+#   Masaaki
+#
+#   Masataka
+#
+#   Minoru
+アキヒト
+
+アラシ
+
+アズマ
+
+チカシ
+
+チュウジロウ
+
+ダイチ
+
+ダイサク
+
+エイコ
+
+エイタロウ
+
+フミト
+
+フサザネ
+
+ゲンイチ
+
+ゴロウ
+
+ゴウタ
+
+ハチロウ
+
+ハルキ
+
+ハヤタ
+
+ヒデタカ
+
+ヒサオ
+
+イチオ
+
+イッコウ
+
+イワオ
+
+ジョウジ
+
+ジュウベエ
+
+ジュンゾウ
+
+カゲモリ
+
+カネヒラ
+
+カンスケ
+
+カズキ
+
+ケンジ
+
+ケンゾウ
+
+キヨト
+
+キョウゴ
+
+マサアキ
+
+マサタカ
+
+ミノル
+%%%%
+_korean_female_name_
+
+# en:
+#   Chaewon
+#
+#   Choonhe
+#
+#   Eunkyung
+#
+#   Gyeongja
+#
+#   Haeun
+#
+#   Hwan
+#
+#   Iseul
+#
+#   Jia
+#
+#   Jinae
+#
+#   Minjee
+#
+#   Mishil
+#
+#   Myungok
+#
+#   Nari
+#
+#   Sanghe
+#
+#   Seoyun
+#
+#   Yeongsuk
+チェウォン
+
+チュンヒ
+
+ウンギョン
+
+キョンジャ
+
+ハウン
+
+ファン
+
+イスル
+
+ジア
+
+ジネ
+
+ミンジ
+
+ミシル
+
+ミョンオク
+
+ナリ
+
+サンヒ
+
+ソユン
+
+ヨンスク
+%%%%
+_korean_male_name_
+
+# en:
+#   Bonhwa
+#
+#   Byeongho
+#
+#   Chinhae
+#
+#   Daeho
+#
+#   Dongyul
+#
+#   Doyun
+#
+#   Eunwoo
+#
+#   Hajoon
+#
+#   Jihoo
+#
+#   Juwon
+#
+#   Minjun
+#
+#   Seojun
+#
+#   Tae
+#
+#   Yejun
+#
+#   Yongsun
+ボンファ
+
+ビョンホ
+
+チネ
+
+デホ
+
+ドンユル
+
+ドユン
+
+ウヌ
+
+ハジュン
+
+ジフ
+
+ジュウォン
+
+ミンジュン
+
+ソジュン
+
+テ
+
+イェジュン
+
+ヨンスン
+%%%%
+_sikh_female_name_
+
+# en:
+#   Ashmeen
+#
+#   Ajinder
+#
+#   Deepnoor
+#
+#   Gurmehar
+#
+#   Harkiran
+#
+#   Ishleen
+#
+#   Ishpreet
+#
+#   Jasleen
+#
+#   Jaspreet
+#
+#   Kamaljyot
+#
+#   Manveen
+#
+#   Nimrit
+#
+#   Noor
+#
+#   Rabni
+#
+#   Tejnoor
+#
+#   Ujjalroop
+#
+#   Yashnoor
+アシュミーン
+
+アジンダー
+
+ディープヌール
+
+グルメハル
+
+ハルキラン
+
+イシュリーン
+
+イシュプリート
+
+ジャスリーン
+
+ジャスプリート
+
+カマルジョット
+
+マンヴィーン
+
+ニムリット
+
+ヌール
+
+ラブニ
+
+テジヌール
+
+ウッジャルループ
+
+ヤシュヌール
+%%%%
+_sikh_male_name_
+
+# en:
+#   Agam
+#
+#   Akal
+#
+#   Balvinder
+#
+#   Dalbir
+#
+#   Ekveer
+#
+#   Fatehjeet
+#
+#   Imanvir
+#
+#   Kulveer
+#
+#   Navbir
+#
+#   Paramjit
+#
+#   Surjit
+#
+#   Teghnoor
+#
+#   Uttamveer
+#
+#   Vikramjeet
+#
+#   Zorawar
+アガム
+
+アカル
+
+バルヴィンダー
+
+ダルビール
+
+エクヴィール
+
+ファテージート
+
+イマンヴィール
+
+クルヴィール
+
+ナヴビール
+
+パラムジート
+
+スルジート
+
+テグヌール
+
+ウッタムヴィール
+
+ヴィクラムジート
+
+ゾラワール
+%%%%
+_thai_female_name_
+
+# en:
+#   Bangon
+#
+#   Chiraphon
+#
+#   Kanchana
+#
+#   Kanlaya
+#
+#   Kannika
+#
+#   Latda
+#
+#   Malki
+#
+#   Nittaya
+#
+#   Prani
+#
+#   Somchit
+#
+#   Sukanya
+#
+#   Suphaphon
+#
+#   Suni
+#
+#   Thatsani
+#
+#   Urai
+#
+#   Wanphen
+#
+#   Yuphin
+バンオン
+
+チラポーン
+
+カンチャナー
+
+カンラヤー
+
+カンニカー
+
+ラッダー
+
+マルキー
+
+ニッタヤー
+
+プラニー
+
+ソムチット
+
+スカンヤー
+
+スパポーン
+
+スニー
+
+タッサニー
+
+ウライ
+
+ワンペン
+
+ユーピン
+%%%%
+_thai_male_name_
+
+# en:
+#   Anan
+#
+#   Ari
+#
+#   Arun
+#
+#   Bunsong
+#
+#   Charoen
+#
+#   Kasem
+#
+#   Narong
+#
+#   Prasit
+#
+#   Somchai
+#
+#   Suchat
+#
+#   Surin
+#
+#   Suthep
+#
+#   Wira
+#
+#   Udom
+アナン
+
+アリ
+
+アルン
+
+ブンソン
+
+チャルーン
+
+カセーム
+
+ナロン
+
+プラシット
+
+ソムチャイ
+
+スチャート
+
+スリン
+
+ステープ
+
+ウィラ
+
+ウドム
+%%%%

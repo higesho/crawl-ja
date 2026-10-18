@@ -11,11 +11,23 @@ Aizul title
 #   Aizul the Neglectful Guardian
 怠慢なる番人『アイズル』
 %%%%
+Amaemon title
+
+# en:
+#   Amaemon the Diabolical Poisoner
+悪魔的なる毒殺者『アマイモン』
+%%%%
 Antaeus title
 
 # en:
 #   Antaeus, Guardian of Cocytus
 コキュートスの番人『アンテウス』
+%%%%
+Arachne title
+
+# en:
+#   Arachne the Outcast
+追放されし『アラクネ』
 %%%%
 Asmodeus title
 
@@ -46,6 +58,12 @@ Boris title
 # en:
 #   Boris, Master of Life and Death
 生と死の熟達者『ボリス』
+%%%%
+Cassandra title
+
+# en:
+#   Cassandra the Doomed Oracle
+呪われし預言者『カサンドラ』
 %%%%
 Cerebov title
 
@@ -167,6 +185,12 @@ Grum title
 #   Grum the Hunter
 狩人『グルム』
 %%%%
+Grunn title
+
+# en:
+#   Grunn the Punished
+罰せられし『グルン』
+%%%%
 Harold title
 
 # en:
@@ -185,11 +209,23 @@ Ilsuiw title
 #   Ilsuiw, Witch of the Tides
 海流の魔女『イルスィウ』
 %%%%
+Ijyb title
+
+# en:
+#   Ijyb the Inquisitive
+好奇心旺盛な『イジェィブ』
+%%%%
 Jessica title
 
 # en:
 #   Jessica the Apprentice Sorceress
 見習い魔法使い『ジェシカ』
+%%%%
+Jeremiah title
+
+# en:
+#   Jeremiah, Barachi Dreamer
+バラキの夢想家『ジェレマイア』
 %%%%
 Jorgrun title
 
@@ -209,6 +245,12 @@ Joseph title
 #   Joseph, a Mercenary
 傭兵『ジョセフ』
 %%%%
+Josephina title
+
+# en:
+#   Josephina the Ice-Lich
+氷のリッチ『ジョセフィーナ』
+%%%%
 Josephine title
 
 # en:
@@ -227,6 +269,12 @@ Kirke title
 #   Kirke, Weaver of Myths
 秘蹟の編み手『キルケー』
 %%%%
+Lodul title
+
+# en:
+#   Lodul the Thunderous
+雷鳴の『ロドゥル』
+%%%%
 Lom Lobon title
 
 # en:
@@ -238,6 +286,12 @@ Louise title
 # en:
 #   Louise the Corrupted
 崩壊せし者『ルイーズ』
+%%%%
+Maggie title
+
+# en:
+#   Maggie the Vainglorious
+うぬぼれ屋の『マギー』
 %%%%
 Mara title
 
@@ -269,6 +323,12 @@ Mennas title
 #   Mennas, the Voice of Zin
 ジンの代弁者『メナス』
 %%%%
+Mlioglotl title
+
+# en:
+#   Mlioglotl, the Unformed Horror
+形なき恐怖『ムリオグロトル』
+%%%%
 Mnoleg title
 
 # en:
@@ -293,6 +353,12 @@ Nellie title
 #   Nellie, Star of the Show
 興業の星『ネリー』
 %%%%
+Nergalle title
+
+# en:
+#   Nergalle, Lorekeeper of the Fallen
+堕ちたる者たちの伝承の守り手『ネルガレ』
+%%%%
 Nessos title
 
 # en:
@@ -304,6 +370,36 @@ Nikola title
 # en:
 #   Nikola the Mad Inventor
 狂気の発明者『ニコラ』
+%%%%
+Nobody title
+
+# en:
+#   Nobody, Grudge of the Unmourned
+悼まれぬ者たちの怨念『名無し』
+%%%%
+Norris title
+
+# en:
+#   Norris the Philosopher
+哲学者『ノリス』
+%%%%
+Parghit title
+
+# en:
+#   Parghit the Mighty
+強大なる『パーギット』
+%%%%
+Pargi title
+
+# en:
+#   Pargi the Meek
+弱気な『パルギ』
+%%%%
+Pikel title
+
+# en:
+#   Pikel, Merchant of Souls
+魂の商人『ピケル』
 %%%%
 Polyphemus title
 
@@ -359,6 +455,18 @@ Sonja title
 #   Sonja, the Graceful Assassin
 優美なる暗殺者『ソーニャ』
 %%%%
+Sprozz title
+
+# en:
+#   Sprozz, Inventive Apiarist
+独創的な養蜂家『スプロッズ』
+%%%%
+Terence title
+
+# en:
+#   Terence the Veteran
+歴戦の『テレンス』
+%%%%
 Tiamat title
 
 # en:
@@ -371,15 +479,39 @@ Urug title
 #   Urug the Orcish Ballista
 オークの槍投手『ウルグ』
 %%%%
+Wiglaf title
+
+# en:
+#   Wiglaf the Gunnerdwarf
+砲手ドワーフ『ウィーグラフ』
+%%%%
 Vashnia title
 
 # en:
 #   Vashnia the Elite Marksnaga
 ナーガの精鋭射手『ヴァシュニア』
 %%%%
+Vv title
+
+# en:
+#   Vv the Exile
+追放者『Vv』
+%%%%
+Xak'krixis title
+
+# en:
+#   Xak'krixis, Royal Expeditionary Alchemist
+王立遠征隊の錬金術師『ザックリクシス』
+%%%%
 Xtahua title
 
 # en:
 #   Xtahua the Ancient
 古代竜『ザッハ』
+%%%%
+Zenata title
+
+# en:
+#   Zenata, Seeker of Sheza
+シェザを求める者『ゼナータ』
 %%%%

@@ -1,0 +1,1853 @@
+%%%%
+_graffiti_author_any_
+
+# en:
+#   w:50
+#   @ancestor name@
+#
+#   @_graffiti_author_orc_@
+#
+#   w:2
+#   @_graffiti_author_bland_@
+#
+#   w:2
+#   @RANDGEN@
+#
+#   w:1
+#   @_rare_graffiti_author_any_@
+w:50
+@ancestor name@
+
+@_graffiti_author_orc_@
+
+w:2
+@_graffiti_author_bland_@
+
+w:2
+@RANDGEN@
+
+w:1
+@_rare_graffiti_author_any_@
+%%%%
+_graffiti_author_any_changeable_
+
+# en:
+#   w:50
+#   @ancestor name@
+#
+#   w:2
+#   @_graffiti_author_bland_@
+#
+#   w:2
+#   @RANDGEN@
+w:50
+@ancestor name@
+
+w:2
+@_graffiti_author_bland_@
+
+w:2
+@RANDGEN@
+%%%%
+_graffiti_author_any_changeable_non-randgen_
+
+# en:
+#   w:50
+#   @ancestor name@
+#
+#   w:2
+#   @_graffiti_author_bland_@
+w:50
+@ancestor name@
+
+w:2
+@_graffiti_author_bland_@
+%%%%
+_graffiti_author_any_non-orc_
+
+# en:
+#   w:50
+#   @ancestor name@
+#
+#   w:2
+#   @_graffiti_author_bland_@
+#
+#   w:2
+#   @RANDGEN@
+#
+#   w:1
+#   @_rare_graffiti_author_any_non-orc_@
+w:50
+@ancestor name@
+
+w:2
+@_graffiti_author_bland_@
+
+w:2
+@RANDGEN@
+
+w:1
+@_rare_graffiti_author_any_non-orc_@
+%%%%
+_graffiti_author_bland_
+
+# en:
+#   @bland name@
+#
+#   w:2
+#   @bland name@ (not that one)
+#
+#   w:2
+#   @bland name@ (the other one)
+#
+#   w:2
+#   @bland name@ (yes, that one)
+@bland name@
+
+w:2
+@bland name@(そっちじゃない方)
+
+w:2
+@bland name@(もう一人の方)
+
+w:2
+@bland name@(そう、あの人)
+%%%%
+_graffiti_author_orc_
+
+# en:
+#   @any orc name@ the orc
+オークの@any orc name@
+%%%%
+_rare_graffiti_author_any_
+
+# en:
+#   @_rare_graffiti_author_ordinary_@
+#
+#   w:2
+#   @_rare_graffiti_author_orc_@
+#
+#   w:2
+#   @_rare_graffiti_author_title_@
+#
+#   w:1
+#   @_rare_graffiti_author_god_@
+@_rare_graffiti_author_ordinary_@
+
+w:2
+@_rare_graffiti_author_orc_@
+
+w:2
+@_rare_graffiti_author_title_@
+
+w:1
+@_rare_graffiti_author_god_@
+%%%%
+_rare_graffiti_author_any_non-orc_
+
+# en:
+#   @_rare_graffiti_author_ordinary_@
+#
+#   w:2
+#   @_rare_graffiti_author_title_@
+#
+#   w:1
+#   @_rare_graffiti_author_god_@
+@_rare_graffiti_author_ordinary_@
+
+w:2
+@_rare_graffiti_author_title_@
+
+w:1
+@_rare_graffiti_author_god_@
+%%%%
+_rare_graffiti_author_god_
+
+# en:
+#   Woog the god
+神ウーグ
+%%%%
+_rare_graffiti_author_orc_
+
+# en:
+#   Spartorcus the orc
+オークのスパルトルクス
+%%%%
+_rare_graffiti_author_ordinary_
+
+# en:
+#   Durwent the kobold
+#
+#   Zlaz the goblin
+#
+#   Fneeb the oni
+#
+#   Vethion the elf
+#
+#   Frobof the imp
+コボルドのダーウェント
+
+ゴブリンのズラズ
+
+鬼のフニーブ
+
+エルフのヴェシオン
+
+インプのフロボフ
+%%%%
+_rare_graffiti_author_title_
+
+# en:
+#   Kilroy
+#
+#   Garc the Great
+#
+#   Plog the Peerless
+#
+#   Dead Wendell
+#
+#   Lady Dreamflight
+キルロイ
+
+偉大なるガーク
+
+比類なきプログ
+
+死せるウェンデル
+
+レディ・ドリームフライト
+%%%%
+_pattern_type_
+
+# en:
+#   @any_colour_pattern@
+#
+#   @any_glowing_colour_pattern@
+@any_colour_pattern@
+
+@any_glowing_colour_pattern@
+%%%%
+_writing_adj_
+
+# en:
+#   angular
+#
+#   blocky
+#
+#   bold
+#
+#   curvy
+#
+#   flowing
+#
+#   jagged
+#
+#   pulsating
+#
+#   shifting
+#
+#   sinuous
+#
+#   sloping
+#
+#   spidery
+#
+#   swirling
+#
+#   throbbing
+#
+#   twitching
+#
+#   writhing
+角張った
+
+ごつごつした
+
+太い
+
+曲線的な
+
+流れるような
+
+ぎざぎざの
+
+脈打つ
+
+移ろう
+
+うねうねした
+
+傾いた
+
+蜘蛛の脚のような
+
+渦巻く
+
+ずきずきと脈動する
+
+ぴくぴく動く
+
+のたうつ
+%%%%
+_writing_noun_
+
+# en:
+#   binary code
+#
+#   characters
+#
+#   cuneiform
+#
+#   figures
+#
+#   glyphs
+#
+#   hieroglyphics
+#
+#   ideograms
+#
+#   letters
+#
+#   print-out
+#
+#   runes
+#
+#   scrawl
+#
+#   sigils
+#
+#   symbols
+#
+#   text
+#
+#   writing
+二進コード
+
+文字
+
+楔形文字
+
+図形
+
+象形
+
+ヒエログリフ
+
+表意文字
+
+字
+
+印字
+
+ルーン文字
+
+走り書き
+
+印章
+
+記号
+
+文章
+
+書き文字
+%%%%
+_writing_style_
+
+# en:
+#   @any_colour@
+#
+#   @_writing_adj_@ @any_colour@
+#
+#   @any_glowing_colour@
+@any_colour@の
+
+@_writing_adj_@@any_colour@の
+
+@any_glowing_colour@の
+%%%%
+_writing_type_
+
+# en:
+#   @_writing_style_@ @_writing_noun_@
+@_writing_style_@@_writing_noun_@
+%%%%
+_graffiti_type_
+
+# en:
+#   @_writing_style_@ graffiti
+@_writing_style_@落書き
+%%%%
+_graffiti_type_with_signature_maybe_
+
+# en:
+#   @_graffiti_type_@
+#
+#   @_graffiti_type_@ signed by @_graffiti_author_any_@
+@_graffiti_type_@
+
+@_graffiti_author_any_@の署名がある@_graffiti_type_@
+%%%%
+_graffiti_type_with_signature_maybe_non-orc_
+
+# en:
+#   @_graffiti_type_@
+#
+#   @_graffiti_type_@ signed by @_graffiti_author_any_non-orc_@
+@_graffiti_type_@
+
+@_graffiti_author_any_non-orc_@の署名がある@_graffiti_type_@
+%%%%
+_graffiti_type_with_signature_maybe_orc_
+
+# en:
+#   @_graffiti_type_@
+#
+#   @_graffiti_type_@ signed by @_graffiti_author_orc_@
+@_graffiti_type_@
+
+@_graffiti_author_orc_@の署名がある@_graffiti_type_@
+%%%%
+_graffiti_advertisement_
+
+# en:
+#   advertising a meeting @_graffiti_mass_meeting_ordinary_@
+#
+#   advertising a meeting @_graffiti_mass_meeting_religious_@
+#
+#   advertising a shop in the dungeon with [cheap|exclusive|expensive|quality|rare|useful] goods
+#
+#   w:2
+#   advertising @_graffiti_class_any_@
+#
+#   w:1
+#   advertising a meet-up with @_graffiti_author_any_@ to learn how to survive in the dungeon
+#
+#   w:1
+#   advertising a meet-up with @_graffiti_author_any_@ for a good time
+#
+#   w:1
+#   advertising the very paint used to make it
+@_graffiti_mass_meeting_ordinary_@集会を宣伝する
+
+@_graffiti_mass_meeting_religious_@集会を宣伝する
+
+[安い|限定の|高価な|上質な|珍しい|役に立つ]品を扱うダンジョンの店を宣伝する
+
+w:2
+@_graffiti_class_any_@を宣伝する
+
+w:1
+ダンジョンで生き延びる方法を学ぶ、@_graffiti_author_any_@との集いを宣伝する
+
+w:1
+@_graffiti_author_any_@と楽しいひとときを過ごす集いを宣伝する
+
+w:1
+まさにその落書きに使われた塗料を宣伝する
+%%%%
+_graffiti_changed_names_
+
+# en:
+#   @_graffiti_author_any_changeable_@ has changed names and now goes by @_graffiti_author_any_changeable_@
+#
+#   w:2
+#   @_graffiti_author_orc_@ has changed names and now goes by @_graffiti_author_orc_@
+#
+#   w:2
+#   @_rare_graffiti_author_any_@ has passed on the name to someone else worthy of it
+#
+#   w:1
+#   @_graffiti_author_any_changeable_non-randgen_@ has changed names due to Xom's influence and now goes by @RANDGEN@
+@_graffiti_author_any_changeable_@は改名し、今は@_graffiti_author_any_changeable_@と名乗っている
+
+w:2
+@_graffiti_author_orc_@は改名し、今は@_graffiti_author_orc_@と名乗っている
+
+w:2
+@_rare_graffiti_author_any_@はその名をふさわしい別の者に譲った
+
+w:1
+@_graffiti_author_any_changeable_non-randgen_@はゾムの影響で改名し、今は@RANDGEN@と名乗っている
+%%%%
+_graffiti_changed_or_compared_religions_
+
+# en:
+#   @_graffiti_author_any_@ has abandoned @random_god@
+#
+#   @_graffiti_author_any_@ has converted away from @random_god@
+#
+#   @_graffiti_author_any_@ has converted to @random_god@
+#
+#   @_graffiti_author_any_@ is @_graffiti_religion_better_or_worse_@ than @_graffiti_author_any_@
+#
+#   @_graffiti_author_any_@ is secretly an atheist
+#
+#   @_graffiti_author_any_@ is secretly not an atheist
+#
+#   @_graffiti_author_any_@ is secretly @random_god@
+#
+#   @_graffiti_author_any_@ secretly worships Zin
+#
+#   @_graffiti_author_any_@ secretly worships Zin instead of @random_god_chaotic@
+#
+#   @_graffiti_author_any_@ secretly worships @random_god_chaotic@
+#
+#   @_graffiti_author_any_@ secretly worships @random_god_chaotic@ instead of Zin
+#
+#   @_graffiti_author_any_@ secretly worships @random_god_good@
+#
+#   @_graffiti_author_any_@ secretly worships @random_god_good@ instead of @random_god_evil@
+#
+#   @_graffiti_author_any_@ secretly worships @random_god_evil@
+#
+#   @_graffiti_author_any_@ secretly worships @random_god_evil@ instead of @random_god_good@
+#
+#   w:1
+#   @_graffiti_author_any_@ is secretly @_graffiti_hailed_god_@
+#
+#   w:1
+#   @_graffiti_author_any_@ secretly worships @_graffiti_hailed_god_@
+@_graffiti_author_any_@は@random_god@を捨てた
+
+@_graffiti_author_any_@は@random_god@から改宗した
+
+@_graffiti_author_any_@は@random_god@に改宗した
+
+@_graffiti_author_any_@は@_graffiti_author_any_@より@_graffiti_religion_better_or_worse_@
+
+@_graffiti_author_any_@は実は無神論者だ
+
+@_graffiti_author_any_@は実は無神論者ではない
+
+@_graffiti_author_any_@の正体は@random_god@だ
+
+@_graffiti_author_any_@は密かにジンを崇拝している
+
+@_graffiti_author_any_@は@random_god_chaotic@ではなく密かにジンを崇拝している
+
+@_graffiti_author_any_@は密かに@random_god_chaotic@を崇拝している
+
+@_graffiti_author_any_@はジンではなく密かに@random_god_chaotic@を崇拝している
+
+@_graffiti_author_any_@は密かに@random_god_good@を崇拝している
+
+@_graffiti_author_any_@は@random_god_evil@ではなく密かに@random_god_good@を崇拝している
+
+@_graffiti_author_any_@は密かに@random_god_evil@を崇拝している
+
+@_graffiti_author_any_@は@random_god_good@ではなく密かに@random_god_evil@を崇拝している
+
+w:1
+@_graffiti_author_any_@の正体は@_graffiti_hailed_god_@だ
+
+w:1
+@_graffiti_author_any_@は密かに@_graffiti_hailed_god_@を崇拝している
+%%%%
+_graffiti_class_any_
+
+# en:
+#   @_graffiti_class_remedial_@
+#
+#   w:2
+#   @_graffiti_class_master_@
+@_graffiti_class_remedial_@
+
+w:2
+@_graffiti_class_master_@
+%%%%
+_graffiti_class_master_
+
+# en:
+#   a master class on excavation taught by formicids
+#
+#   a master class on insults taught by [demons|imps]
+#
+#   a master class on the many uses of giant clubs taught by [ogres|oni]
+#
+#   a master class on Unarmed Combat taught by felids
+#
+#   w:1
+#   a master class on [art|calligraphy] taught by anonymous graffiti authors
+フォーミシッドによる掘削の上級講座
+
+[悪魔|インプ]による悪口の上級講座
+
+[オーガ|鬼]による巨大棍棒の様々な使い方の上級講座
+
+フェリッドによる徒手格闘の上級講座
+
+w:1
+匿名の落書き作者たちによる[美術|書道]の上級講座
+%%%%
+_graffiti_class_remedial_
+
+# en:
+#   a Remedial @random_skill@ class taught by @_graffiti_professor_@
+#
+#   a Remedial @random_skill_magic@ class taught by the @_graffiti_professor_magic_type_@ @_graffiti_professor_@
+#
+#   a Remedial @random_skill_mundane@ class taught by the @_graffiti_professor_mundane_type_@ @_graffiti_professor_@
+#
+#   w:2
+#   a Remedial Evocations class taught by the @_graffiti_professor_evocations_type_@ @_graffiti_professor_@
+#
+#   w:2
+#   a Remedial Invocations class taught by the @_graffiti_professor_invocations_type_@ @_graffiti_professor_@
+#
+#   w:2
+#   a Remedial Shapeshifting class taught by the @_graffiti_professor_shapeshifting_type_@ @_graffiti_professor_@
+#
+#
+#   w:2
+#   a Remedial Necromancy class taught by the @_graffiti_professor_necromancy_type_@ @_graffiti_professor_@
+#
+#   w:2
+#   a Remedial @random_skill_magic@ class taught by the @_graffiti_professor_necromancy_type_@ @_graffiti_professor_@
+@_graffiti_professor_@による@random_skill@の補習講座
+
+@_graffiti_professor_magic_type_@の@_graffiti_professor_@による@random_skill_magic@の補習講座
+
+@_graffiti_professor_mundane_type_@の@_graffiti_professor_@による@random_skill_mundane@の補習講座
+
+w:2
+@_graffiti_professor_evocations_type_@の@_graffiti_professor_@による発動の補習講座
+
+w:2
+@_graffiti_professor_invocations_type_@の@_graffiti_professor_@による祈祷の補習講座
+
+w:2
+@_graffiti_professor_shapeshifting_type_@の@_graffiti_professor_@による変身術の補習講座
+
+w:2
+@_graffiti_professor_necromancy_type_@の@_graffiti_professor_@による死霊術の補習講座
+
+w:2
+@_graffiti_professor_necromancy_type_@の@_graffiti_professor_@による@random_skill_magic@の補習講座
+%%%%
+_graffiti_duplicate_
+
+# en:
+#   a duplicate
+#
+#   a duplicate indistinguishable from the original
+#
+#   an impostor
+#
+#   an impostor from another reality
+#
+#   a shapeshifter
+複製
+
+本物と見分けのつかない複製
+
+偽者
+
+別の現実から来た偽者
+
+変身者
+%%%%
+_graffiti_fight_
+
+# en:
+#   of an argument between @_graffiti_author_any_@ and @_graffiti_author_any_@
+#
+#   of a three-way argument between @_graffiti_author_any_@, @_graffiti_author_any_@, and @_graffiti_author_any_@
+#
+#   w:2
+#   of a fight between [berserkers|Trog worshippers] and erythrospite sufferers over the true meaning of blood rage
+#
+#   w:2
+#   of a fight between ["artists"|artists|Dithmenos worshippers] and [death knights|death mages|Yredelemnul worshippers|necromancers] over whether something was a shadow or a shadowghast
+@_graffiti_author_any_@と@_graffiti_author_any_@の口論を描いた
+
+@_graffiti_author_any_@、@_graffiti_author_any_@、@_graffiti_author_any_@の三つ巴の口論を描いた
+
+w:2
+血の怒りの真の意味をめぐる、[狂戦士|トログの信者]とエリスロスパイトに冒された者たちの喧嘩を描いた
+
+w:2
+何かが影なのかシャドウガーストなのかをめぐる、[「芸術家」|芸術家|ディスメノスの信者]と[死の騎士|死の魔術師|イレデレンヌルの信者|死人使い]の喧嘩を描いた
+%%%%
+_graffiti_hailed_god_
+
+# en:
+#   Xom
+#
+#   w:2
+#   an unknown god
+#
+#   w:1
+#   @_rare_graffiti_author_god_@
+#
+#   w:1
+#   the power of cheese
+#
+#   w:1
+#   a wagon full of pancakes
+ゾム
+
+w:2
+未知の神
+
+w:1
+@_rare_graffiti_author_god_@
+
+w:1
+チーズの力
+
+w:1
+パンケーキ満載の荷馬車
+%%%%
+_graffiti_happened_reason_
+
+# en:
+#   an accident
+#
+#   a coincidence
+#
+#   a coincidence but @_graffiti_author_any_@ doesn't trust coincidences
+#
+#   a cover-up
+#
+#   a farce
+#
+#   a frame-up
+#
+#   a mistake
+#
+#   a travesty
+#
+#   a warning to others
+#
+#   against the will of the gods
+#
+#   completely random
+#
+#   deliberate
+#
+#   deserved
+#
+#   just
+#
+#   necessary
+#
+#   no accident
+#
+#   no mistake
+#
+#   part of a larger plot
+#
+#   the work of the "Plog" Conspiracy
+#
+#   self-inflicted
+#
+#   the will of the gods
+#
+#   uncalled for
+#
+#   undeserved
+#
+#   unjust
+#
+#   unnecessary
+#
+#   unthinkable
+事故だった
+
+偶然だった
+
+偶然だったが、@_graffiti_author_any_@は偶然を信じない
+
+隠蔽工作だった
+
+茶番だった
+
+でっち上げだった
+
+間違いだった
+
+冒涜だった
+
+他の者への見せしめだった
+
+神々の意志に反していた
+
+まったくのでたらめだった
+
+故意だった
+
+当然の報いだった
+
+正当だった
+
+必要なことだった
+
+事故ではなかった
+
+間違いではなかった
+
+より大きな陰謀の一部だった
+
+「プログ」陰謀団の仕業だった
+
+自業自得だった
+
+神々の意志だった
+
+いわれのないことだった
+
+不当な報いだった
+
+不正だった
+
+不要なことだった
+
+考えられないことだった
+%%%%
+_graffiti_image_
+
+# en:
+#   of [a goblin|a kobold|a spriggan] with its head poking out of a tunnel
+#
+#   of [a dragon|an elephant|a yak] trampling over all in its path
+#
+#   of [a gnoll|a human|an orc] brandishing a nasty-looking weapon
+#
+#   of [an ogre|an oni|a troll] ripping one of its enemies in half
+#
+#   of [a deep elf|a lich|a tengu] shooting a blast of magic
+#
+#   of a felid hanging from a tree branch
+#
+#   of a demon grinning evilly
+#
+#   of an eggplant just sitting there
+#
+#   that looks like nothing you recognise
+トンネルから首を突き出した[ゴブリン|コボルド|スプリガン]を描いた
+
+行く手のすべてを踏みつぶす[ドラゴン|象|ヤク]を描いた
+
+物騒な武器を振りかざす[ノール|人間|オーク]を描いた
+
+敵を真っ二つに引き裂く[オーガ|鬼|トロル]を描いた
+
+魔法の一撃を放つ[闇エルフ|リッチ|天狗]を描いた
+
+木の枝にぶら下がるフェリッドを描いた
+
+邪悪な笑みを浮かべる悪魔を描いた
+
+ただそこにあるだけの茄子を描いた
+
+何を描いたのかさっぱりわからない
+%%%%
+_graffiti_life_or_death_
+
+# en:
+#   deserves death
+#
+#   deserves undeath
+#
+#   deserves life
+#
+#   is dead
+#
+#   is undead
+#
+#   lives
+死に値する
+
+不死に値する
+
+生きるに値する
+
+死んだ
+
+不死者だ
+
+生きている
+%%%%
+_graffiti_loves_or_hates_
+
+# en:
+#   curses
+#
+#   defends
+#
+#   hates
+#
+#   insults
+#
+#   loves
+#
+#   praises
+呪う
+
+守る
+
+憎む
+
+侮辱する
+
+愛する
+
+称える
+%%%%
+_graffiti_mass_meeting_ordinary_
+
+# en:
+#   of an athletic club playing [cards|darts|hammer throw|javelin throw|Whack-A-Rock-Fish]
+#
+#   of an artificer club [testing|tinkering with] [devices|evokables|wands]
+#
+#   of a support group for veterans of the surface wars
+#
+#   of a group of [bakers|fruit vendors|meat vendors|shopkeepers] peddling their wares in the dungeon
+#
+#   of a group of [apiarists|hive talisman users] discussing the [antics|emotional state|health] of their bees
+#
+#   of a group of rich people discussing how to make more money
+#
+#   of a group of [knights|veterans|warlords|warriors] practising barely-restrained combat
+#
+#   of a group of [knights|veterans|warlords|warriors] practising solo combat
+#
+#   of a group of [mages|sorcerers|spellcasters|wizards] practising [eclectic|esoteric] magic
+#
+#   of a group of [mages|sorcerers|spellcasters|wizards] practising [cataclysmic|destructive] magic
+#
+#   of a group of [death mages|necromancers] practising [necromancy|bringing things to unlife]
+#
+#   of a group of philosophers discussing [perfection|the nature of time] for who knows how long
+#
+#   of a group of [masochists|sadists] holding a pain endurance contest
+#
+#   of a group of gardeners showing off their green thumbs
+#
+#   of a group of [bards|historians|lorekeepers] sharing glorious tales of their ancestors
+#
+#   of a group of revellers throwing a wild dance party
+#
+#   of a group of ["artists" holding a "shadow play"|artists holding a shadow play]
+#
+#   of a group of monks practising martial [attacks|movements]
+#
+#   of a group of potion makers practising healing others
+#
+#   of a group of ascetics despising their bodies and discussing sacrifices
+#
+#   of a group of [crusaders|moralists] [discussing|opposing] evil in the world
+#
+#   of a varied group of people discussing their experiences in the Abyss
+[カード|ダーツ|ハンマー投げ|やり投げ|岩魚叩き]をする運動クラブの
+
+[装置|発動具|ワンド]を[試す|いじくる]発動術師クラブの
+
+地上戦争の退役兵の支援グループの
+
+ダンジョンで品物を売り歩く[パン屋|果物売り|肉売り|店主]たちの
+
+自分の蜂の[おふざけ|心の状態|健康]について語り合う[養蜂家|蜂の巣のタリスマンの使い手]たちの
+
+もっと金を稼ぐ方法を語り合う金持ちたちの
+
+かろうじて抑えの利いた戦闘を練習する[騎士|古参兵|将軍|戦士]たちの
+
+一騎打ちを練習する[騎士|古参兵|将軍|戦士]たちの
+
+[折衷的な|秘伝の]魔法を練習する[魔術師|妖術師|呪文使い|魔法使い]たちの
+
+[破滅的な|破壊的な]魔法を練習する[魔術師|妖術師|呪文使い|魔法使い]たちの
+
+[死霊術|ものを不死にすること]を練習する[死の魔術師|死人使い]たちの
+
+いつまでとも知れず[完全性|時の本質]について議論する哲学者たちの
+
+痛み我慢大会を開く[マゾヒスト|サディスト]たちの
+
+園芸の腕前を見せびらかす庭師たちの
+
+祖先の輝かしい物語を語り合う[吟遊詩人|歴史家|伝承の守り手]たちの
+
+熱狂的なダンスパーティーを開く浮かれ騒ぐ者たちの
+
+[「影絵芝居」を催す「芸術家」|影絵芝居を催す芸術家]たちの
+
+武術の[攻撃|動き]を練習する修行僧たちの
+
+他者の治療を練習する薬師たちの
+
+自らの肉体を蔑み、犠牲について語り合う苦行者たちの
+
+世の悪[について議論する|に立ち向かう][十字軍|道徳家]たちの
+
+アビスでの体験を語り合う様々な人々の
+%%%%
+_graffiti_mass_meeting_religious_
+
+# en:
+#   of a [sharper club|group of Nemelex Xobeh worshippers] playing cards the way Nemelex Xobeh intended
+#
+#   of a group of Zin worshippers supporting the Axioms of Law
+#
+#   of a group of [chaos knights|Xom worshippers] contemplating the Divine Madness
+#
+#   of a group of [death knights|Yredelemnul worshippers] embracing the Inexorable Grip
+#
+#   of a group of Gozag worshippers discussing how to make more money
+#
+#   of a group of [berserkers|Trog worshippers] practising barely-restrained combat
+#
+#   of a group of Okawaru worshippers practising solo combat
+#
+#   of a group of Sif Muna worshippers practising [eclectic|esoteric] magic
+#
+#   of a group of Vehumet worshippers practising [cataclysmic|destructive] magic
+#
+#   of a group of Kikubaaqudgha worshippers practising [necromancy|bringing things to unlife]
+#
+#   of a group of Cheibriados worshippers discussing [perfection|the nature of time] for who knows how long
+#
+#   of a group of Makhleb worshippers holding a pain endurance contest
+#
+#   of a group of Fedhas worshippers showing off their green thumbs
+#
+#   of a group of Hepliaklqana worshippers sharing glorious tales of their ancestors
+#
+#   of a group of Uskayaw worshippers throwing a wild dance party
+#
+#   of a group of Dithmenos worshippers holding a ["shadow play"|shadow play]
+#
+#   of a group of worshippers of the Wu Jian Council practising martial [attacks|movements]
+#
+#   of a group of Qazlal worshippers changing the weather indoors
+#
+#   of a group of Elyvilon worshippers practising healing others
+#
+#   of a group of Ashenzari worshippers practising scrying on things
+#
+#   of a group of Ru worshippers despising their bodies and discussing sacrifices
+#
+#   of a group of worshippers of the Shining One [discussing|opposing] evil in the world
+#
+#   of a group of [Lugonu worshippers|mad acolytes of Lugonu] discussing their experiences in the Abyss
+#
+#   of a group of orcs promoting Beogh's word
+ネメレクス・ソベーの意図した通りにカードをする[いかさま師クラブ|ネメレクス・ソベーの信者たち]の
+
+法の公理を支持するジンの信者たちの
+
+神聖なる狂気について瞑想する[混沌の騎士|ゾムの信者]たちの
+
+逃れられぬ掌握を受け入れる[死の騎士|イレデレンヌルの信者]たちの
+
+もっと金を稼ぐ方法を語り合うゴザーグの信者たちの
+
+かろうじて抑えの利いた戦闘を練習する[狂戦士|トログの信者]たちの
+
+一騎打ちを練習するオカワルの信者たちの
+
+[折衷的な|秘伝の]魔法を練習するシフ・ムーナの信者たちの
+
+[破滅的な|破壊的な]魔法を練習するヴェフメットの信者たちの
+
+[死霊術|ものを不死にすること]を練習するキクバークッグァの信者たちの
+
+いつまでとも知れず[完全性|時の本質]について議論するケイブリアドスの信者たちの
+
+痛み我慢大会を開くマクレブの信者たちの
+
+園芸の腕前を見せびらかすフェダスの信者たちの
+
+祖先の輝かしい物語を語り合うヘプリアクルカナの信者たちの
+
+熱狂的なダンスパーティーを開くウスカヤーの信者たちの
+
+[「影絵芝居」|影絵芝居]を催すディスメノスの信者たちの
+
+武術の[攻撃|動き]を練習するウー・ジアン評議会の信者たちの
+
+屋内で天気を変えるクァズラルの信者たちの
+
+他者の治療を練習するエリヴィロンの信者たちの
+
+物事の透視を練習するアシェンザリの信者たちの
+
+自らの肉体を蔑み、犠牲について語り合うルーの信者たちの
+
+世の悪[について議論する|に立ち向かう]輝けるものの信者たちの
+
+アビスでの体験を語り合う[ルゴヌの信者|ルゴヌの狂える侍祭]たちの
+
+ベオの教えを広めるオークたちの
+%%%%
+_graffiti_obscenities_
+
+# en:
+#   of various obscenities
+#
+#   w:1
+#   of some very imaginative obscenities you've never seen before
+様々な卑猥な言葉を書き連ねた
+
+w:1
+見たこともないほど想像力豊かな卑猥な言葉を書き連ねた
+%%%%
+_graffiti_professor_
+
+# en:
+#   @_graffiti_author_any_changeable_@
+#
+#   w:2
+#   @_graffiti_author_orc_@
+#
+#   w:1
+#   @_rare_graffiti_author_any_@ (supposedly)
+@_graffiti_author_any_changeable_@
+
+w:2
+@_graffiti_author_orc_@
+
+w:1
+@_rare_graffiti_author_any_@(自称)
+%%%%
+_graffiti_professor_evocations_type_
+
+# en:
+#   artificer
+#
+#   tinkerer
+発動術師
+
+機械いじり屋
+%%%%
+_graffiti_professor_invocations_type_
+
+# en:
+#   cleric
+#
+#   high priest
+#
+#   priest
+#
+#   theologian
+聖職者
+
+大司祭
+
+司祭
+
+神学者
+%%%%
+_graffiti_professor_magic_type_
+
+# en:
+#   mage
+#
+#   sorcerer
+#
+#   spellcaster
+#
+#   wizard
+魔術師
+
+妖術師
+
+呪文使い
+
+魔法使い
+%%%%
+_graffiti_professor_mundane_type_
+
+# en:
+#   knight
+#
+#   veteran
+#
+#   warlord
+#
+#   warrior
+騎士
+
+古参兵
+
+将軍
+
+戦士
+%%%%
+_graffiti_professor_necromancy_type_
+
+# en:
+#   death mage
+#
+#   necromancer
+死の魔術師
+
+死人使い
+%%%%
+_graffiti_professor_shapeshifting_type_
+
+# en:
+#   shapeshifter
+#
+#   talismancer
+変身術師
+
+タリスマン使い
+%%%%
+_graffiti_relative_or_quality_
+
+# en:
+#   all associates
+#
+#   the bloodline
+#
+#   the child
+#
+#   the children
+#
+#   the clan
+#
+#   the dexterity
+#
+#   the entire species
+#
+#   the family
+#
+#   the friend
+#
+#   the friends
+#
+#   the god
+#
+#   the intelligence
+#
+#   the lover
+#
+#   the lovers
+#
+#   the mate
+#
+#   the mates
+#
+#   the parent
+#
+#   the parents
+#
+#   the personality
+#
+#   the spouse
+#
+#   the spouses
+#
+#   the strength
+仲間全員
+
+血筋
+
+子
+
+子供たち
+
+一族
+
+器用さ
+
+種族全体
+
+家族
+
+友
+
+友人たち
+
+神
+
+知性
+
+恋人
+
+恋人たち
+
+相棒
+
+相棒たち
+
+親
+
+両親
+
+人柄
+
+配偶者
+
+配偶者たち
+
+腕力
+%%%%
+_graffiti_religion_better_or_worse_
+
+# en:
+#   less of a believer
+#
+#   more of a believer
+#
+#
+#   w:1
+#   a better atheist
+#
+#   w:1
+#   a worse atheist
+信心が薄い
+
+信心深い
+
+w:1
+優れた無神論者だ
+
+w:1
+劣った無神論者だ
+%%%%
+_graffiti_religion_non-orc_
+
+# en:
+#   lauding Zin and Zin's laws
+#
+#   lauding Zin and talking about how following Zin's laws is essential
+#
+#   lauding Zin and talking about how those who break Zin's laws deserve punishment
+#
+#   lauding Zin but warning that putting graffiti on surfaces is often unlawful
+ジンとジンの法を称える
+
+ジンを称え、ジンの法に従うことが不可欠だと語る
+
+ジンを称え、ジンの法を破る者は罰に値すると語る
+
+ジンを称えつつ、物に落書きするのはたいてい法に反すると警告する
+%%%%
+_graffiti_religion_not_non-orc_or_orc_
+
+# en:
+#   [glorifying|blaspheming] the gods
+#
+#   glorifying @random_god@ and blaspheming @random_god@
+#
+#
+#   revering Xom and the randomness of everything
+#
+#   delighting in Nemelex Xobeh and whatever the next card deck brings
+#
+#   extolling Yredelemnul and all things unholy
+#
+#   commending Gozag and talking about how enough gold can buy anything
+#
+#   praising Trog and talking about how blood rage can get rid of anything in your way
+#
+#   adoring Okawaru and talking about how Okawaru is the only ally you need as a warrior
+#
+#   applauding Sif Muna and talking about how all magic is accessible with enough effort
+#
+#   venerating Vehumet and talking about how weaponised magic is the key to victory
+#
+#   fawning over Kikubaaqudgha and talking about how necromancy turns all flesh and blood into useful tools
+#
+#   giving kudos to Cheibriados and talking about how the slow and steady can conquer all
+#
+#   paying tribute to Makhleb and talking about all the powers of hell that Makhleb grants
+#
+#   exulting Fedhas and the enduring powers of nature
+#
+#   honouring Hepliaklqana and talking about how those who live on in others' memories never truly die
+#
+#   showing devotion to Uskayaw and talking about the complex dance that is life itself
+#
+#   doting on Dithmenos and talking about the many things [shadows|the night] can do
+#
+#   giving thanks to the Wu Jian Council and talking about how proper discipline is the key to greatness
+#
+#   acclaiming Qazlal and talking about how the elements can work for you
+#
+#   promoting Elyvilon and talking about how bringing peace to the world is essential
+#
+#   admiring Ashenzari and talking about how curses and bondage are blessings when they lead to knowledge
+#
+#   paying homage to Ru and talking about how all of reality is not what you think it is
+#
+#   giving adulation to the Shining One and talking about how honourably removing evil from the world is essential
+#
+#   flattering Lugonu and talking about how Lugonu and the forces of the Abyss will soon rule over all
+#
+#   w:1
+#   glorifying an unknown god
+#
+#   w:1
+#   not just hailing but glorifying @_graffiti_hailed_god_@
+神々を[賛美する|冒涜する]
+
+@random_god@を賛美し、@random_god@を冒涜する
+
+ゾムと万物のでたらめさを崇める
+
+ネメレクス・ソベーと、次のデッキが何をもたらすかを楽しむ
+
+イレデレンヌルとあらゆる不浄なものを褒め称える
+
+ゴザーグを称え、金さえあれば何でも買えると語る
+
+トログを称え、血の怒りがあれば邪魔なものは何でも片付けられると語る
+
+オカワルを敬い、戦士に必要な味方はオカワルだけだと語る
+
+シフ・ムーナを称賛し、努力すればどんな魔法も身につけられると語る
+
+ヴェフメットを崇敬し、武器としての魔法こそ勝利の鍵だと語る
+
+キクバークッグァにへつらい、死霊術はあらゆる血肉を役立つ道具に変えると語る
+
+ケイブリアドスを称え、ゆっくり着実に進む者がすべてを制すると語る
+
+マクレブに敬意を表し、マクレブが授ける地獄のあらゆる力について語る
+
+フェダスと不朽の自然の力を讃える
+
+ヘプリアクルカナを敬い、人々の記憶に生き続ける者は本当には死なないと語る
+
+ウスカヤーに献身し、生命そのものである複雑な舞踏について語る
+
+ディスメノスに心酔し、[影|夜]にできる様々なことについて語る
+
+ウー・ジアン評議会に感謝し、正しい鍛錬こそ偉大さへの鍵だと語る
+
+クァズラルを喝采し、元素は自分のために働かせられると語る
+
+エリヴィロンを広め、世界に平和をもたらすことが不可欠だと語る
+
+アシェンザリを賛美し、呪いと束縛も知識につながるなら祝福だと語る
+
+ルーに敬意を払い、現実のすべては思っているようなものではないと語る
+
+輝けるものを熱烈に崇め、名誉をもって世界から悪を取り除くことが不可欠だと語る
+
+ルゴヌにおもねり、ルゴヌとアビスの軍勢がまもなくすべてを支配すると語る
+
+w:1
+未知の神を賛美する
+
+w:1
+@_graffiti_hailed_god_@をただ讃えるだけでなく賛美する
+%%%%
+_graffiti_religion_orc_
+
+# en:
+#   proselytising for Beogh and proper orcishness
+#
+#   proclaiming that Beogh's messiah will soon come
+#
+#   thanking Beogh for granting salvation while the other gods just watched
+#
+#   talking about how Beogh will help you when the other gods turn away from you
+#
+#   talking about how Beogh is with them and not those other heretic orcs
+ベオと正しいオークらしさへの改宗を勧める
+
+ベオの救世主がまもなく現れると宣言する
+
+他の神々がただ見ていた時に救いを与えてくれたベオに感謝する
+
+他の神々に見放されてもベオは助けてくれると語る
+
+ベオがついているのは自分たちであって、あの異端のオークどもではないと語る
+%%%%
+_graffiti_rumour_
+
+# en:
+#   speculating about the powers of the Orb of Zot
+#
+#   talking about how the Orb of Zot will [save|destroy] everyone and everything
+#
+#   talking about how everyone is mistaken and the Orb of Zot is really the [Cube|Egg|Pyramid] of Zot
+#
+#   telling of a secret passageway straight from here to the Orb of Zot
+#
+#   counting down the days until the world ends
+#
+#   claiming to know the meaning of [life|unlife]
+#
+#   claiming to have found the elusive [cave yeti|death quokka|dire dormouse]
+#
+#   alluding to the "Plog" Conspiracy and why it hides that word everywhere
+ゾットのオーブの力について推測する
+
+ゾットのオーブがすべてを[救う|滅ぼす]と語る
+
+皆は間違っていて、ゾットのオーブは本当はゾットの[キューブ|卵|ピラミッド]なのだと語る
+
+ここからゾットのオーブへ直行する秘密の通路について語る
+
+世界が終わるまでの日数を数える
+
+[生|不死]の意味を知っていると主張する
+
+幻の[洞窟イエティ|死のクオッカ|恐るべきヤマネ]を見つけたと主張する
+
+「プログ」陰謀団と、それがなぜあらゆる所にその言葉を隠すのかをほのめかす
+%%%%
+_graffiti_short_saying_
+
+# en:
+#   @_graffiti_author_any_@ was here
+#
+#   @_graffiti_author_any_@ @_graffiti_loves_or_hates_@ @_graffiti_author_any_@
+#
+#   @_graffiti_author_any_@ @_graffiti_loves_or_hates_@ @_graffiti_relative_or_quality_@ of @_graffiti_author_any_@
+#
+#   @_graffiti_author_any_@ @_graffiti_life_or_death_@
+#
+#   @_graffiti_author_any_@ sells @_graffiti_wares_quality_@ wares
+#
+#   @_graffiti_author_any_@ steals from @_graffiti_author_any_@
+#
+#   what happened to @_graffiti_author_any_@ was @_graffiti_happened_reason_@
+#
+#   @_graffiti_author_any_@ has been replaced by @_graffiti_duplicate_@
+#
+#   @_graffiti_vengeance_@
+#
+#   @_graffiti_changed_or_compared_religions_@
+#
+#   all life begins with "Plog" and ends with "Plog"
+#
+#   w:2
+#   @_graffiti_changed_names_@
+@_graffiti_author_any_@ここに参上
+
+@_graffiti_author_any_@は@_graffiti_author_any_@を@_graffiti_loves_or_hates_@
+
+@_graffiti_author_any_@は@_graffiti_author_any_@の@_graffiti_relative_or_quality_@を@_graffiti_loves_or_hates_@
+
+@_graffiti_author_any_@は@_graffiti_life_or_death_@
+
+@_graffiti_author_any_@は@_graffiti_wares_quality_@品を売っている
+
+@_graffiti_author_any_@は@_graffiti_author_any_@から盗む
+
+@_graffiti_author_any_@に起きたことは@_graffiti_happened_reason_@
+
+@_graffiti_author_any_@は@_graffiti_duplicate_@にすり替えられた
+
+@_graffiti_vengeance_@
+
+@_graffiti_changed_or_compared_religions_@
+
+すべての生命は「プログ」に始まり「プログ」に終わる
+
+w:2
+@_graffiti_changed_names_@
+%%%%
+_graffiti_species_
+
+# en:
+#   bemoaning how bizarre coglin engineering is to non-coglins
+#
+#   repeating the legend of the lost prototype exo-suit that let a coglin wield three weapons at once
+#
+#   wondering what led the barachim to rebel against the gods
+#
+#   wondering if boneless species can ever spawn revenants
+#
+#   wondering if Trog stops dead berserkers from spawning revenants
+#
+#   claiming to know where goblins originally came from
+#
+#   claiming to know the true origin of kobolds
+#
+#   detailing the persecution of the cave orcs' ancestors
+#
+#   claiming that some of the gods secretly serve the oni instead of the other way around
+#
+#
+#   claiming that some of the hill dwarves still live
+#
+#   wondering what really happened to the last of the sludge elves
+#
+#
+#   claiming that gnomes really exist and are just superb at hiding
+コグリン以外にはコグリンの工学がいかに奇妙かを嘆く
+
+コグリンが三つの武器を同時に扱えたという、失われた試作外骨格の伝説を繰り返す
+
+バラキが神々に反逆したのはなぜなのかと首をかしげる
+
+骨のない種族からもレヴナントが生まれることはあるのかと首をかしげる
+
+トログは死んだ狂戦士がレヴナントになるのを止めているのかと首をかしげる
+
+ゴブリンがもともとどこから来たのかを知っていると主張する
+
+コボルドの真の起源を知っていると主張する
+
+洞窟オークの祖先が受けた迫害を詳しく記した
+
+鬼が神々に仕えているのではなく、実は一部の神々が鬼に仕えているのだと主張する
+
+ヒル・ドワーフの一部はまだ生きていると主張する
+
+汚泥エルフの最後の生き残りに本当は何が起きたのかと首をかしげる
+
+ノームは実在していて、ただ隠れるのがものすごく上手なだけだと主張する
+%%%%
+_graffiti_unique_comment_
+
+# en:
+#   saying that Cassandra should stop being so negative
+#
+#   saying that Crazy Yiuf needs to stop making so [little|much] sense
+#
+#   saying that Donald should shut up and stop complaining
+#
+#   saying that Sigmund needs to put down the scythe
+#
+#   saying that Edmund needs to get over himself
+#
+#   saying that Sprozz has gone too far trying to replace real bees with mechanical ones
+#
+#   wondering how Robin can possibly throw that hard
+#
+#   wondering why Terence wants to spend his retirement in the dungeon
+#
+#   wondering whether Dowan and Duvessa are secretly triplets and have a third sibling
+#
+#   wondering what else Ijyb can make besides wands
+#
+#   speculating on the true nature of Jeremiah's master
+『カサンドラ』はそんなに悲観的になるのをやめるべきだと訴える
+
+『狂人ヰゥフ』はあんなに[筋の通らない|筋の通った]ことを言うのをやめるべきだと訴える
+
+『ドナルド』は黙って文句を言うのをやめるべきだと訴える
+
+『シグムンド』は大鎌を置くべきだと訴える
+
+『エドマンド』はうぬぼれるのをやめるべきだと訴える
+
+『スプロッズ』は本物の蜂を機械の蜂に置き換えようとしてやりすぎだと訴える
+
+『ロビン』がどうしてあれほど強く投げられるのかと首をかしげる
+
+『テレンス』はなぜ老後をダンジョンで過ごしたいのかと首をかしげる
+
+『ドウェン』と『デュヴェッサ』は実は三つ子で、三人目のきょうだいがいるのではと勘ぐる
+
+『イジェィブ』はワンドのほかに何を作れるのかと首をかしげる
+
+『ジェレマイア』の主人の正体を推測する
+%%%%
+_graffiti_unreadable_
+
+# en:
+#   graffiti of unreadable @_writing_type_@
+#
+#   graffiti of @_writing_type_@ that are unreadable except for a signature by @_graffiti_author_any_@
+#
+#   w:1
+#   graffiti of @_writing_type_@ that are unreadable except for bits hailing @_graffiti_hailed_god_@
+#
+#   w:1
+#   graffiti of @_writing_type_@ that are unreadable except for bits hailing @_graffiti_hailed_god_@ and a signature by @_graffiti_author_any_@
+読めない@_writing_type_@の落書き
+
+@_graffiti_author_any_@の署名以外は読めない、@_writing_type_@の落書き
+
+w:1
+@_graffiti_hailed_god_@を讃える部分以外は読めない、@_writing_type_@の落書き
+
+w:1
+@_graffiti_hailed_god_@を讃える部分と@_graffiti_author_any_@の署名以外は読めない、@_writing_type_@の落書き
+%%%%
+_graffiti_vengeance_
+
+# en:
+#   @_graffiti_author_any_@ has avenged @_graffiti_author_any_@
+#
+#   @_graffiti_author_any_@ has avenged @graffiti_author_any@ for @_graffiti_vengeance_reason_@
+#
+#   @_graffiti_author_any_@ swears vengeance on @_graffiti_author_any_@
+#
+#   @_graffiti_author_any_@ swears vengeance on @_graffiti_author_any_@ for @_graffiti_vengeance_reason_@
+#
+#   the ghost of @_graffiti_author_any_@ still haunts @_graffiti_author_any_@
+#
+#   the ghost of @_graffiti_author_any_@ still haunts @_graffiti_author_any_@ for @_graffiti_vengeance_reason_@
+#
+#
+#   @_graffiti_author_orc_@ has avenged @_graffiti_author_any_@
+#
+#   @_graffiti_author_orc_@ has avenged @_graffiti_author_any_@ for @_graffiti_vengeance_reason_@
+#
+#   @_graffiti_author_orc_@ swears vengeance on @_graffiti_author_any_@
+#
+#   @_graffiti_author_orc_@ swears vengeance on @_graffiti_author_any_@ for @_graffiti_vengeance_reason_@
+#
+#   the ghost of @_graffiti_author_orc_@ still haunts @_graffiti_author_any_@
+#
+#   the ghost of @_graffiti_author_orc_@ still haunts @_graffiti_author_any_@ for @_graffiti_vengeance_reason_@
+@_graffiti_author_any_@は@_graffiti_author_any_@の仇を討った
+
+@_graffiti_author_any_@は@_graffiti_vengeance_reason_@@_graffiti_author_any_@の仇を討った
+
+@_graffiti_author_any_@は@_graffiti_author_any_@への復讐を誓う
+
+@_graffiti_author_any_@は@_graffiti_vengeance_reason_@@_graffiti_author_any_@への復讐を誓う
+
+@_graffiti_author_any_@の亡霊は今も@_graffiti_author_any_@に取り憑いている
+
+@_graffiti_author_any_@の亡霊は@_graffiti_vengeance_reason_@今も@_graffiti_author_any_@に取り憑いている
+
+@_graffiti_author_orc_@は@_graffiti_author_any_@の仇を討った
+
+@_graffiti_author_orc_@は@_graffiti_vengeance_reason_@@_graffiti_author_any_@の仇を討った
+
+@_graffiti_author_orc_@は@_graffiti_author_any_@への復讐を誓う
+
+@_graffiti_author_orc_@は@_graffiti_vengeance_reason_@@_graffiti_author_any_@への復讐を誓う
+
+@_graffiti_author_orc_@の亡霊は今も@_graffiti_author_any_@に取り憑いている
+
+@_graffiti_author_orc_@の亡霊は@_graffiti_vengeance_reason_@今も@_graffiti_author_any_@に取り憑いている
+%%%%
+_graffiti_vengeance_reason_
+
+# en:
+#   abandoning @_graffiti_author_any_@
+#
+#   abandoning them
+#
+#   betraying @_graffiti_author_any_@
+#
+#   betraying them
+#
+#   killing @_graffiti_author_any_@
+#
+#   killing them
+#
+#   stealing from @_graffiti_author_any_@
+#
+#   stealing from them
+#
+#   wounding @_graffiti_author_any_@
+#
+#   wounding them
+@_graffiti_author_any_@を見捨てた件で
+
+見捨てた件で
+
+@_graffiti_author_any_@を裏切った件で
+
+裏切った件で
+
+@_graffiti_author_any_@を殺した件で
+
+殺した件で
+
+@_graffiti_author_any_@から盗んだ件で
+
+盗みを働いた件で
+
+@_graffiti_author_any_@を傷つけた件で
+
+傷つけた件で
+%%%%
+_graffiti_wares_quality_
+
+# en:
+#   inferior
+#
+#   high-quality
+#
+#   low-quality
+#
+#   mediocre
+#
+#   superior
+粗悪な
+
+高品質な
+
+低品質な
+
+平凡な
+
+優れた
+%%%%
+any_graffiti
+
+# en:
+#   graffiti of @_pattern_type_@
+#
+#   graffiti of @_writing_type_@
+#
+#   @_graffiti_unreadable_@
+#
+#   @_graffiti_type_with_signature_maybe_@
+#
+#   @_graffiti_type_with_signature_maybe_@ @_graffiti_image_@
+#
+#   @_graffiti_type_with_signature_maybe_@ @_graffiti_rumour_@
+#
+#   @_graffiti_type_with_signature_maybe_@ @_graffiti_unique_comment_@
+#
+#   @_graffiti_type_with_signature_maybe_@ @_graffiti_species_@
+#
+#   @_graffiti_type_@ @_graffiti_fight_@
+#
+#   @_graffiti_type_@ @_graffiti_advertisement_@
+#
+#   @_graffiti_type_@ saying that @_graffiti_short_saying_@
+#
+#   w:2
+#   @_graffiti_type_with_signature_maybe_@ @_graffiti_religion_not_non-orc_or_orc_@
+#
+#   w:2
+#   @_graffiti_type_with_signature_maybe_non-orc_@ @_graffiti_religion_non-orc_@
+#
+#   w:2
+#   @_graffiti_type_with_signature_maybe_orc_@ @_graffiti_religion_orc_@
+#
+#   w:1
+#   @_graffiti_type_@ @_graffiti_obscenities_@
+@_pattern_type_@の落書き
+
+@_writing_type_@の落書き
+
+@_graffiti_unreadable_@
+
+@_graffiti_type_with_signature_maybe_@
+
+@_graffiti_image_@、@_graffiti_type_with_signature_maybe_@
+
+@_graffiti_rumour_@、@_graffiti_type_with_signature_maybe_@
+
+@_graffiti_unique_comment_@、@_graffiti_type_with_signature_maybe_@
+
+@_graffiti_species_@、@_graffiti_type_with_signature_maybe_@
+
+@_graffiti_fight_@、@_graffiti_type_@
+
+@_graffiti_advertisement_@、@_graffiti_type_@
+
+「@_graffiti_short_saying_@」と書かれた@_graffiti_type_@
+
+w:2
+@_graffiti_religion_not_non-orc_or_orc_@、@_graffiti_type_with_signature_maybe_@
+
+w:2
+@_graffiti_religion_non-orc_@、@_graffiti_type_with_signature_maybe_non-orc_@
+
+w:2
+@_graffiti_religion_orc_@、@_graffiti_type_with_signature_maybe_orc_@
+
+w:1
+@_graffiti_obscenities_@、@_graffiti_type_@
+%%%%

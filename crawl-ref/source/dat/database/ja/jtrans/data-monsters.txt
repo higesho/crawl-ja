@@ -98,7 +98,7 @@ arcanist
 %%%%
 armataur
 
-アーマトール
+アルマタウル
 %%%%
 armour echo
 

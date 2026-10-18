@@ -5,6 +5,12 @@ Zin lastname
 #   Zin the Law-Giver
 法の制定者『ジン』
 %%%%
+Yredelemnul lastname
+
+# en:
+#   Yredelemnul the Fallen
+堕ちたる『イレデレンヌル』
+%%%%
 Okawaru lastname
 
 # en:
@@ -41,6 +47,12 @@ Lugonu lastname
 #   Lugonu the Unformed
 無形の『ルゴヌ』
 %%%%
+Beogh lastname
+
+# en:
+#   Beogh the Shepherd
+牧者『ベオ』
+%%%%
 Fedhas lastname
 
 # en:
@@ -58,6 +70,12 @@ Ashenzari lastname
 # en:
 #   Ashenzari the Shackled
 束縛されしもの『アシェンザリ』
+%%%%
+Dithmenos lastname
+
+# en:
+#   Dithmenos the Shrouded
+覆い隠されし『ディスメノス』
 %%%%
 Nemelex Xobeh lastname
 
@@ -83,9 +101,191 @@ Ru lastname
 #   Ru the Awakened
 覚者『ルー』
 %%%%
+Pakellas lastname
+
+# en:
+#   Pakellas the Inventive
+発明家『パケラス』
+%%%%
+Uskayaw lastname
+
+# en:
+#   Uskayaw the Reveller
+酔客『ウスカヤー』
+%%%%
 Hepliaklqana lastname
 
 # en:
 #   Hepliaklqana the Forgotten
 忘れられし『ヘプリアクルカナ』
+%%%%
+Ignis lastname
+
+# en:
+#   Ignis, the Dying Flame
+消えゆく炎『イグニス』
+%%%%
+Wu Jian lastname
+
+# en:
+#   the Wu Jian Council
+『ウー・ジアン評議会』
+%%%%
+Xom lastname
+
+# en:
+#   w:280
+#   Xom of Chaos
+#
+#   w:20
+#   Xom the Chaotic
+#
+#   w:5
+#   Xom the Random
+#
+#   w:5
+#   Xom the Random Number God
+#
+#   w:5
+#   Xom the Elder Chaos God
+#
+#   Xom the Tricky
+#
+#   w:5
+#   Xom the Less-Predictable
+#
+#   w:5
+#   Xom the Unpredictable
+#
+#   Xom of Many Doors
+#
+#   Xom the Capricious
+#
+#   w:5
+#   Xom of Bloodstained Whimsey
+#
+#   w:5
+#   Xom of Enforced Whimsey
+#
+#   Xom of Bone-Dry Humour
+#
+#   w:5
+#   Xom of Malevolent Giggling
+#
+#   w:5
+#   Xom of Malicious Giggling
+#
+#   w:2
+#   Xom of Gnomic Intent
+#
+#   w:2
+#   Xom of Ineffable Intent
+#
+#   w:2
+#   Xom of Fickle Intent
+#
+#   w:2
+#   Xom of Swiftly Tilting Intent
+#
+#   w:2
+#   Xom of Unknown Intent
+#
+#   Xom the Fickle
+#
+#   Xom of Unknown Intention
+#
+#   w:4
+#   The Xom-Meister
+#
+#   w:2
+#   The Xom-Meister, Xom-a-lom-a-ding-dong
+#
+#   w:2
+#   The Xom-Meister, Xom-o-Rama
+#
+#   w:2
+#   The Xom-Meister, Xom-Xom-bo-Bom, Banana-Fana-fo-Fom
+#
+#   w:5
+#   Xom the Begetter of Turbulence
+#
+#   w:5
+#   Xom the Begetter of Discontinuities
+w:280
+混沌の『ゾム』
+
+w:20
+混沌たる『ゾム』
+
+w:5
+無秩序の『ゾム』
+
+w:5
+乱数の神『ゾム』
+
+w:5
+太古の混沌神『ゾム』
+
+トリックの『ゾム』
+
+w:5
+予測不能の『ゾム』
+
+w:5
+予測不可能の『ゾム』
+
+数多の扉の『ゾム』
+
+気紛れの『ゾム』
+
+w:5
+血塗られし奇想の『ゾム』
+
+w:5
+奇想の執行者『ゾム』
+
+残忍なる機知の『ゾム』
+
+w:5
+邪悪なる戯れの『ゾム』
+
+w:5
+悪意ある冗談の『ゾム』
+
+w:2
+戯れの『ゾム』
+
+w:2
+恐るべき『ゾム』
+
+w:2
+移り気の『ゾム』
+
+w:2
+前言撤回の『ゾム』
+
+w:2
+知られざる意図の『ゾム』
+
+移り気の『ゾム』
+
+知られざる意図の『ゾム』
+
+w:4
+『ゾム・マイスター』
+
+w:2
+『ゾム・マイスター ゾム-ア-ロム-ア-ディン-ドン』
+
+w:2
+『ゾム・マイスター ゾム-オ-ラマ』
+
+w:2
+『ゾム・マイスター ゾム-ゾム-ボ-ボン バナナ-ファナ-フォ-フォム』
+
+w:5
+争乱をもたらすもの『ゾム』
+
+w:5
+無秩序をもたらすもの『ゾム』
 %%%%

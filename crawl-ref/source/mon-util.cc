@@ -4688,6 +4688,7 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
 }
 
 // This should take a small subset of what do_mon_str_replacements() does.
+// 名前の DB(ja/monname.txt など)は日本語なので、神名・技能名も日本語で入れる
 string do_mon_name_replacements(const string& in_name)
 {
     string name = in_name;
@@ -4698,23 +4699,23 @@ string do_mon_name_replacements(const string& in_name)
     if (name.find("@random_god") != string::npos)
     {
         name = replace_all(name, "@random_god@",
-                           _random_class_of_god_name(_is_any_god));
+                           _random_class_of_god_name(_is_any_god, true));
         name = replace_all(name, "@random_god_chaotic@",
-                           _random_class_of_god_name(is_chaotic_god));
+                           _random_class_of_god_name(is_chaotic_god, true));
         name = replace_all(name, "@random_god_evil@",
-                           _random_class_of_god_name(is_evil_god));
+                           _random_class_of_god_name(is_evil_god, true));
         name = replace_all(name, "@random_god_good@",
-                           _random_class_of_god_name(is_good_god));
+                           _random_class_of_god_name(is_good_god, true));
     }
 
     if (name.find("@random_skill") != string::npos)
     {
         name = replace_all(name, "@random_skill@",
-                           _random_class_of_skill_name(_is_any_skill));
+                           _random_class_of_skill_name(_is_any_skill, true));
         name = replace_all(name, "@random_skill_magic@",
-                           _random_class_of_skill_name(is_magic_skill));
+                           _random_class_of_skill_name(is_magic_skill, true));
         name = replace_all(name, "@random_skill_mundane@",
-                           _random_class_of_skill_name(is_mundane_skill));
+                           _random_class_of_skill_name(is_mundane_skill, true));
     }
 
     return name;

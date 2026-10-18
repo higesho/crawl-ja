@@ -24,6 +24,7 @@
 #include "hints.h"
 #include "item-name.h"
 #include "item-status-flag-type.h"
+#include "japanese.h"
 #include "jobs.h"
 #include "libutil.h"
 #include "macro.h"
@@ -356,23 +357,24 @@ void item_noise(const item_def &item, actor &act, string msg, int loudness)
 
     // Replace weapon references. Can't use DESC_THE because that includes
     // pluses etc. and we want just the basename.
-    msg = replace_all(msg, "@The_weapon@", "The @weapon@");
-    msg = replace_all(msg, "@the_weapon@", "the @weapon@");
-    msg = replace_all(msg, "@Your_weapon@", "Your @weapon@");
-    msg = replace_all(msg, "@your_weapon@", "your @weapon@");
+    // 日本語: 冠詞は付けず、"Your" は「あなたの」にする
+    msg = replace_all(msg, "@The_weapon@", "@weapon@");
+    msg = replace_all(msg, "@the_weapon@", "@weapon@");
+    msg = replace_all(msg, "@Your_weapon@", jtrans("your") + "@weapon@");
+    msg = replace_all(msg, "@your_weapon@", jtrans("your") + "@weapon@");
     msg = replace_all(msg, "@weapon@", item.name(DESC_BASENAME));
 
     // replace references to player name and god
     msg = replace_all(msg, "@player_name@", you.your_name);
     msg = replace_all(msg, "@player_god@",
-                      you_worship(GOD_NO_GOD) ? "atheism"
-                      : god_name(you.religion, coinflip()));
-    msg = replace_all(msg, "@player_genus@",
+                      you_worship(GOD_NO_GOD) ? jtrans("atheism")
+                      : god_name_j(you.religion, coinflip()));
+    // 日本語: 種族の総称は冠詞・複数形なしで訳す
+    const string genus_j = tagged_jtrans("[spec genus]",
                 species::name(you.species, species::SPNAME_GENUS));
-    msg = replace_all(msg, "@a_player_genus@",
-                article_a(species::name(you.species, species::SPNAME_GENUS)));
-    msg = replace_all(msg, "@player_genus_plural@",
-                pluralise(species::name(you.species, species::SPNAME_GENUS)));
+    msg = replace_all(msg, "@player_genus@", genus_j);
+    msg = replace_all(msg, "@a_player_genus@", genus_j);
+    msg = replace_all(msg, "@player_genus_plural@", genus_j);
 
     msg = maybe_pick_random_substring(msg);
     msg = maybe_capitalise_substring(msg);

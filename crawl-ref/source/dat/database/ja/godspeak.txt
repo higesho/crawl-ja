@@ -685,3 +685,2015 @@ Zin welcome
 #   Zin says: Spread the light, my child.
 ジンは言った：『わが信徒よ、光の版図を広めよ』
 %%%%
+Xom orb gift
+
+# en:
+#   "Is this the Orb you wanted?"
+#   
+#   "Many adventurers have sought this Orb."
+#   
+#   w:3
+#   "Ponder my incredible Orb!"
+『これがお前の欲しかったオーブか？』
+
+『多くの冒険者がこのオーブを求めてきたものだ』
+
+w:3
+『私の驚くべきオーブをとくと眺めるがいい！』
+%%%%
+Xom animate monster weapon
+
+# en:
+#   "Time to have some fun!"
+#   
+#   You hear Xom's maniacal laughter.
+#   
+#   Xom grants you a minor favour.
+#   
+#   Xom smiles on you.
+『さあ、お楽しみの時間だ！』
+
+あなたはゾムの狂気の笑い声を聞いた。
+
+ゾムはあなたにささやかな恩恵を与えた。
+
+ゾムはあなたに微笑んだ。
+%%%%
+Xom flora ring
+
+# en:
+#   Xom shows off a fistful of green thumbs.
+#   
+#   Xom spreads life in this Dungeon full of death.
+#   
+#   Xom incites some dramatic evolution in the adjacent floor mould.
+#   
+#   "It's alive! It's alive!"
+#   
+#   w:5
+#   Xom adds fresh vegetables to this Dungeon dish.
+#   
+#   w:5
+#   Xom plants some magic beans in the ground.
+ゾムは園芸の腕前をこれ見よがしに披露した。
+
+ゾムは死に満ちたこのダンジョンに生命を広めた。
+
+ゾムは隣の床のカビに劇的な進化を促した。
+
+『生きている！ 生きているぞ！』
+
+w:5
+ゾムはこのダンジョン料理に新鮮な野菜を添えた。
+
+w:5
+ゾムは地面に魔法の豆を植えた。
+%%%%
+Xom scenery generic
+
+# en:
+#   Xom briefly touches your surroundings.
+#   
+#   Xom complains about the scenery.
+#   
+#   Xom alters the dungeon around you.
+ゾムはあなたの周囲にちょっと手を触れた。
+
+ゾムは景色に文句をつけた。
+
+ゾムはあなたの周りのダンジョンを作り変えた。
+%%%%
+Xom scenery open_door
+
+# en:
+#   @Xom scenery generic@
+@Xom scenery generic@
+%%%%
+Xom scenery closed_door
+
+# en:
+#   @Xom scenery generic@
+@Xom scenery generic@
+%%%%
+Xom scenery altar_xom
+
+# en:
+#   Xom adds some personal touches to your environment.
+#   
+#   "There, this looks better."
+#   
+#   "Just a minor improvement..."
+#   
+#   @Xom scenery generic@
+ゾムはあなたの周囲に自分好みの手を加えた。
+
+『ほら、こっちの方が見栄えがいい』
+
+『ほんのちょっとした改良さ……』
+
+@Xom scenery generic@
+%%%%
+Xom scenery cache_of_fruit
+
+# en:
+#   Xom accidentally drops some snacks.
+#   
+#   Xom prepares the finest cultivars of fruit found anywhere, then drops them.
+ゾムはうっかりおやつを落としてしまった。
+
+ゾムはどこを探してもないような極上の品種の果物を用意して、それから落とした。
+%%%%
+Xom scenery cache_of_meat
+
+# en:
+#   Xom [offers|fetches] you some snacks.
+#   
+#   Xom prepares a banquet formed from your trail of carnage through the Dungeon.
+ゾムはあなたにおやつを[差し出した|持ってきた]。
+
+ゾムはあなたがダンジョンに残してきた殺戮の跡から宴の料理をこしらえた。
+%%%%
+Xom scenery cache_of_baked_goods
+
+# en:
+#   Xom offers some snacks, fresh out of the oven.
+ゾムは焼きたてのおやつを差し出した。
+%%%%
+Xom scenery enter_abyss
+
+# en:
+#   Xom suggests a refreshing change of pace.
+#   
+#   Xom tears open a few small holes in reality.
+#   
+#   Xom bends space into knots.
+ゾムはさわやかな気分転換を勧めた。
+
+ゾムは現実に小さな穴をいくつか開けた。
+
+ゾムは空間をこんがらがらせた。
+%%%%
+Xom scenery trap_teleport
+
+# en:
+#   @Xom scenery enter_abyss@
+@Xom scenery enter_abyss@
+%%%%
+Xom kind door ring
+
+# en:
+#   A short distance around you seems to assume a strange safe solidity.
+#   
+#   Xom creates a safe adventurer enclosure.
+#   
+#   "Would you like some space to yourself, mortal?"
+あなたの周りのわずかな範囲が、奇妙で安全な堅固さを帯びたようだ。
+
+ゾムは冒険者用の安全な囲いをこしらえた。
+
+『定命の者よ、一人きりになれる場所が欲しいかね？』
+%%%%
+Xom mean door ring
+
+# en:
+#   Xom raises up and pulls in a makeshift [warmonger|duelist]'s arena.
+#   
+#   Xom locks you up as an exhibit to study.
+#   
+#   w:5
+#   Xom constructs another @player_genus@ Petting Zoo.
+ゾムは[戦争屋|決闘者]向けの急ごしらえの闘技場をせり上げ、引き寄せた。
+
+ゾムはあなたを研究用の展示物として閉じ込めた。
+
+w:5
+ゾムは@player_genus@ふれあい動物園をまた一つ建てた。
+%%%%
+Xom bazaar trip
+
+# en:
+#   Xom whisks you away into a realm of unfathomable savings!
+#   
+#   Xom casts you into... a shopping extravaganza?
+#   
+#   Xom offers you everything you could ever need (to amuse Xom).
+#   
+#   w:5
+#   Xom offers you everything you could ever need (in Xom's infallible divine judgment).
+#   
+#   The world spins wildly as Xom's jovial laughter rings.
+#   
+#   w:2
+#   "Your coin purse has grown too comfortable in its little world, mortal!"
+ゾムはあなたを計り知れないほどお得な世界へとさらっていった！
+
+ゾムはあなたを……大売り出しの真っただ中に放り込んだ？
+
+ゾムは(ゾムを楽しませるために)あなたが必要とするかもしれないものを全て差し出した。
+
+w:5
+ゾムは(ゾムの絶対に誤らない神の判断によって)あなたが必要とするかもしれないものを全て差し出した。
+
+ゾムの陽気な笑い声が響くと、世界は激しく回転した。
+
+w:2
+『定命の者よ、お前の財布はそのちっぽけな世界に安住しすぎている！』
+%%%%
+_xom_number_
+
+# en:
+#   two
+#   
+#   three
+#   
+#   four
+#   
+#   five
+#   
+#   six
+二
+
+三
+
+四
+
+五
+
+六
+%%%%
+Xom feature lava
+
+# en:
+#   @The_feature@ spits out sparks!
+#   
+#   @The_feature@ briefly solidifies.
+@The_feature@は火花を吐き出した！
+
+@The_feature@は一瞬固まった。
+%%%%
+Xom feature shallow water
+
+# en:
+#   @The_feature@ briefly bubbles.
+#   
+#   @The_feature@ briefly swirls.
+#   
+#   @The_feature@ briefly glows.
+#   
+#   @The_feature@ briefly glows @any_glowing_colour@.
+#   
+#   @The_feature@ briefly flashes @any_colour@.
+#   
+#   @The_feature@ briefly boils.
+#   
+#   @The_feature@ briefly freezes.
+@The_feature@は一瞬泡立った。
+
+@The_feature@は一瞬渦を巻いた。
+
+@The_feature@は一瞬光った。
+
+@The_feature@は一瞬@any_glowing_colour@に光った。
+
+@The_feature@は一瞬@any_colour@にきらめいた。
+
+@The_feature@は一瞬煮えたぎった。
+
+@The_feature@は一瞬凍りついた。
+%%%%
+Xom feature deep water
+
+# en:
+#   @Xom feature shallow water@
+#   
+#   Off to the side, you spot something lurking in @the_feature@.
+@Xom feature shallow water@
+
+あなたは視界の端で、@the_feature@の中に何かが潜んでいるのを見つけた。
+%%%%
+Xom feature blood
+
+# en:
+#   @Xom feature shallow water@
+#   
+#   @The_feature@ briefly coagulates.
+@Xom feature shallow water@
+
+@The_feature@は一瞬凝固した。
+%%%%
+Xom feature eyes
+
+# en:
+#   @The_feature@ looks at you curiously.
+#   
+#   @The_feature@ looks right through you.
+@The_feature@は不思議そうにあなたを見つめた。
+
+@The_feature@はあなたを素通りして向こうを見た。
+%%%%
+Xom feature dry
+
+# en:
+#   Water briefly sprays from @the_feature@.
+#   
+#   Sparkling water briefly sprays from @the_feature@.
+#   
+#   Blood briefly sprays from @the_feature@.
+#   
+#   Dust puffs up from @the_feature@.
+@the_feature@から一瞬水が噴き出した。
+
+@the_feature@から一瞬きらめく水が噴き出した。
+
+@the_feature@から一瞬血が噴き出した。
+
+@the_feature@から埃がふわりと舞い上がった。
+%%%%
+Xom feature statuelike
+
+# en:
+#   @The_feature@ turns to glare at you.
+#   
+#   @The_feature@ turns to stare at you.
+#   
+#   @The_feature@ turns away from you.
+#   
+#   @The_feature@ spins in place.
+@The_feature@は振り向いてあなたを睨みつけた。
+
+@The_feature@は振り向いてあなたを見つめた。
+
+@The_feature@はあなたから顔をそむけた。
+
+@The_feature@はその場でくるりと回った。
+%%%%
+Xom feature tree
+
+# en:
+#   @The_feature@ bends towards you.
+#   
+#   @The_feature@ bends away from you.
+#   
+#   @The_feature@ sways in place.
+@The_feature@はあなたの方へしなった。
+
+@The_feature@はあなたから離れるようにしなった。
+
+@The_feature@はその場で揺れた。
+%%%%
+Xom feature translucent wall
+
+# en:
+#   Dim shapes swim through @the_feature@.
+#   
+#   Faint @any_colour@ flames crawl over @the_feature@.
+#   
+#   @The_feature@ is briefly covered in @any_colour_pattern@.
+#   
+#   @The_feature@ is briefly covered in @any_glowing_colour_pattern@.
+#   
+#   @The_feature@ is briefly covered in @any_graffiti@.
+@the_feature@の中をぼんやりした影が泳いでいった。
+
+@the_feature@の上をかすかな@any_colour@の炎が這った。
+
+@The_feature@は一瞬@any_colour_pattern@で覆われた。
+
+@The_feature@は一瞬@any_glowing_colour_pattern@で覆われた。
+
+@The_feature@は一瞬@any_graffiti@で覆われた。
+%%%%
+Xom feature metal wall
+
+# en:
+#   Tendrils of electricity crawl over @the_feature@.
+#   
+#   @The_feature@ briefly appears tarnished.
+@the_feature@の上を電気の触手が這った。
+
+@The_feature@は一瞬錆びついたように見えた。
+%%%%
+Xom feature stone arch
+
+# en:
+#   @The_feature@ briefly shows a sunny meadow on the other side.
+#   
+#   @The_feature@ briefly shows a lifeless wasteland on the other side.
+#   
+#   @The_feature@ briefly shows strange @glowing_adj@ figures on the other side.
+#   
+#   @The_feature@ briefly shows bizarre @glowing_adj@ buildings on the other side.
+#   
+#   @The_feature@ briefly shows a translucent wall covered in @any_colour_pattern@ on the other side.
+#   
+#   @The_feature@ briefly shows a translucent wall covered in @any_glowing_colour_pattern@ on the other side.
+#   
+#   @The_feature@ briefly shows a translucent wall covered in @any_graffiti@ on the other side.
+@The_feature@の向こう側に、一瞬日の当たる草原が見えた。
+
+@The_feature@の向こう側に、一瞬生命のない荒野が見えた。
+
+@The_feature@の向こう側に、一瞬奇妙な@glowing_adj@人影が見えた。
+
+@The_feature@の向こう側に、一瞬奇怪な@glowing_adj@建物が見えた。
+
+@The_feature@の向こう側に、一瞬@any_colour_pattern@で覆われた半透明の壁が見えた。
+
+@The_feature@の向こう側に、一瞬@any_glowing_colour_pattern@で覆われた半透明の壁が見えた。
+
+@The_feature@の向こう側に、一瞬@any_graffiti@で覆われた半透明の壁が見えた。
+%%%%
+Xom underfoot general
+
+# en:
+#   @The_feature@ briefly shifts under you.
+#   
+#   An imperceptible spirit brushes against @the_feature@ beside you.
+@The_feature@があなたの足元で一瞬ずれた。
+
+目に見えない精霊が、あなたのそばの@the_feature@をかすめていった。
+%%%%
+Xom underfoot water
+
+# en:
+#   @The_feature@ briefly recedes away from you.
+#   
+#   An imperceptible spirit sends ripples through @the_feature@ beside you.
+@The_feature@が一瞬あなたから引いていった。
+
+目に見えない精霊が、あなたのそばの@the_feature@に波紋を立てた。
+%%%%
+Xom underfoot airborne general
+
+# en:
+#   @The_feature@ seems to fall away from under you!
+#   
+#   @The_feature@ seems to rush up at you!
+@The_feature@があなたの下から遠ざかっていくように見えた！
+
+@The_feature@があなたに向かって迫ってくるように見えた！
+%%%%
+Xom underfoot airborne water
+
+# en:
+#   @Xom underfoot airborne general@
+#   
+#   An imperceptible spirit flows into @the_feature@ beneath you.
+@Xom underfoot airborne general@
+
+目に見えない精霊が、あなたの下の@the_feature@へと流れ込んでいった。
+%%%%
+Xom inventory singular
+
+# en:
+#   @Your_item@ briefly glows.
+#   
+#   @Your_item@ briefly glows @any_glowing_colour@.
+#   
+#   @Your_item@ briefly vibrates.
+#   
+#   @Your_item@ briefly flashes @any_colour@.
+@Your_item@が一瞬光った。
+
+@Your_item@が一瞬@any_glowing_colour@に光った。
+
+@Your_item@が一瞬震えた。
+
+@Your_item@が一瞬@any_colour@にきらめいた。
+%%%%
+Xom inventory plural
+
+# en:
+#   One of @your_item@ briefly glows.
+#   
+#   One of @your_item@ briefly glows @any_glowing_colour@.
+#   
+#   One of @your_item@ briefly vibrates.
+#   
+#   One of @your_item@ briefly flashes @any_colour@.
+#   
+#   @Your_item@ briefly glow.
+#   
+#   @Your_item@ briefly glow @any_glowing_colour@.
+#   
+#   @Your_item@ briefly vibrate.
+#   
+#   @Your_item@ briefly flash @any_colour@.
+@Your_item@のうちの一つが一瞬光った。
+
+@Your_item@のうちの一つが一瞬@any_glowing_colour@に光った。
+
+@Your_item@のうちの一つが一瞬震えた。
+
+@Your_item@のうちの一つが一瞬@any_colour@にきらめいた。
+
+@Your_item@が一斉に一瞬光った。
+
+@Your_item@が一斉に一瞬@any_glowing_colour@に光った。
+
+@Your_item@が一斉に一瞬震えた。
+
+@Your_item@が一斉に一瞬@any_colour@にきらめいた。
+%%%%
+Xom floor inventory singular
+
+# en:
+#   @Xom inventory singular@
+#   
+#   @Your_item@ falls out of your pack, then immediately jumps back in!
+@Xom inventory singular@
+
+@Your_item@が荷物から転がり落ち、すぐにまた飛び込んで戻った！
+%%%%
+Xom floor inventory plural
+
+# en:
+#   @Xom inventory plural@
+#   
+#   One of @your_item@ falls out of your pack, then immediately jumps back in!
+#   
+#   @Your_item@ fall out of your pack, then immediately jump back in!
+@Xom inventory plural@
+
+@Your_item@のうちの一つが荷物から転がり落ち、すぐにまた飛び込んで戻った！
+
+@Your_item@が荷物から転がり落ち、すぐにまた一斉に飛び込んで戻った！
+%%%%
+Xom floor bandages
+
+# en:
+#   @Xom bandages@
+#   
+#   You trip over your bandages.
+@Xom bandages@
+
+あなたは自分の包帯につまずいた。
+%%%%
+Xom one eye
+
+# en:
+#   A monocle briefly appears over your eye.
+#   
+#   An eyepatch briefly covers your eye.
+#   
+#   A burst of @any_colour@ light briefly shoots from your eye!
+一瞬、あなたの目に片眼鏡が現れた。
+
+一瞬、あなたの目が眼帯で覆われた。
+
+あなたの目から一瞬@any_colour@の光がほとばしった！
+%%%%
+Xom eyes
+
+# en:
+#   A monocle briefly appears over one of your eyes.
+#   
+#   An eyepatch briefly covers one of your eyes.
+#   
+#   Bursts of @any_colour@ light briefly shoot from your eyes!
+一瞬、あなたの片目に片眼鏡が現れた。
+
+一瞬、あなたの片目が眼帯で覆われた。
+
+あなたの両目から一瞬@any_colour@の光がほとばしった！
+%%%%
+Xom ears
+
+# en:
+#   Your ears flap wildly.
+#   
+#   Your ears wiggle.
+#   
+#   [Smoke|Steam] briefly shoots from your ears!
+あなたの耳が激しくぱたぱたと動いた。
+
+あなたの耳がぴくぴく動いた。
+
+あなたの耳から一瞬[煙|湯気]が噴き出した！
+%%%%
+Xom mouth
+
+# en:
+#   Your mouth briefly shrinks away entirely.
+#   
+#   Your mouth briefly widens across your entire face.
+#   
+#   You briefly grow another mouth.
+#   
+#   [Smoke|Steam] briefly pours from your mouth!
+あなたの口が一瞬すっかり縮んで消えた。
+
+あなたの口が一瞬顔いっぱいに広がった。
+
+一瞬、あなたにもう一つ口が生えた。
+
+あなたの口から一瞬[煙|湯気]があふれ出した！
+%%%%
+Xom hair
+
+# en:
+#   Your eyebrows briefly feel incredibly bushy.
+#   
+#   Your eyebrows wriggle.
+#   
+#   You briefly grow a large moustache and beard.
+一瞬、眉毛がとてつもなくふさふさになった気がした。
+
+あなたの眉毛がうねうねと動いた。
+
+一瞬、あなたに立派な口ひげとあごひげが生えた。
+%%%%
+Xom impromptu dance
+
+# en:
+#   You perform an impromptu @dance_name@.
+#   
+#   You do an impromptu @acrobatic_move_name@.
+#   
+#   You compulsively click your heels together @_xom_number_@ times.
+#   
+#   You compulsively stomp your @feet@ @_xom_number_@ times.
+あなたは即興で@dance_name@を踊った。
+
+あなたは即興で@acrobatic_move_name@をした。
+
+あなたはどうしてもかかとを打ち鳴らさずにいられず、@_xom_number_@回打ち鳴らした。
+
+あなたはどうしても足を踏み鳴らさずにいられず、@feet@を@_xom_number_@回踏み鳴らした。
+%%%%
+dance_name
+
+# en:
+#   ballet
+#   
+#   cha-cha
+#   
+#   fandango
+#   
+#   jig
+#   
+#   line dance
+#   
+#   macarena
+#   
+#   tango
+#   
+#   tapdance
+#   
+#   waltz
+バレエ
+
+チャチャチャ
+
+ファンダンゴ
+
+ジグ
+
+ラインダンス
+
+マカレナ
+
+タンゴ
+
+タップダンス
+
+ワルツ
+%%%%
+acrobatic_move_name
+
+# en:
+#   @hand@stand
+#   
+#   cartwheel
+#   
+#   pirouette
+#   
+#   somersault
+逆立ち
+
+側転
+
+ピルエット
+
+宙返り
+%%%%
+Xom tail
+
+# en:
+#   Your tail briefly retracts into your body.
+#   
+#   Your tail briefly grows to an incredible length.
+#   
+#   You briefly grow another tail.
+あなたの尻尾が一瞬体の中に引っ込んだ。
+
+あなたの尻尾が一瞬とてつもない長さに伸びた。
+
+一瞬、あなたにもう一本尻尾が生えた。
+%%%%
+Xom random body part singular
+
+# en:
+#   Your @random_body_part_internal_singular@ briefly wanders out of your body, then fuses itself back in!
+#   
+#   Your @random_body_part_external_singular@ briefly jumps off your body, then reattaches itself!
+あなたの@random_body_part_internal_singular@が一瞬体から抜け出してさまよい、それからまた体に溶け込んだ！
+
+あなたの@random_body_part_external_singular@が一瞬体から飛び出し、それからまたくっついた！
+%%%%
+Xom random body part plural
+
+# en:
+#   Your @random_body_part_internal_plural@ briefly wander out of your body, then fuse themselves back in!
+#   
+#   Your @random_body_part_external_plural@ briefly jump off your body, then reattach themselves!
+あなたの@random_body_part_internal_plural@が一瞬体から抜け出してさまよい、それからまた体に溶け込んだ！
+
+あなたの@random_body_part_external_plural@が一瞬体から飛び出し、それからまたくっついた！
+%%%%
+Xom unarmed one hand
+
+# en:
+#   A fancy cane briefly appears in your @hand@.
+#   
+#   You compulsively punch the air.
+一瞬、あなたの@hand@に洒落たステッキが現れた。
+
+あなたはどうしても宙を殴らずにいられなかった。
+%%%%
+Xom unarmed two hands
+
+# en:
+#   @Xom unarmed one hand@
+#   
+#   Two fancy canes briefly appear in your @hands@.
+#   
+#   You compulsively clap your @hands@ @_xom_number_@ times.
+@Xom unarmed one hand@
+
+一瞬、あなたの@hands@に洒落たステッキが二本現れた。
+
+あなたはどうしても@hands@を打ち鳴らさずにいられず、@_xom_number_@回手を叩いた。
+%%%%
+Xom cloak slot
+
+# en:
+#   @Your_item@ billows in an unfelt wind.
+#   
+#   @Your_item@ briefly wraps itself around your @head@!
+#   
+#   @Your_item@ is briefly covered in @any_glowing_colour_pattern@!
+@Your_item@が感じられない風にはためいた。
+
+@Your_item@が一瞬あなたの@head@に巻きついた！
+
+@Your_item@が一瞬@any_glowing_colour_pattern@で覆われた！
+%%%%
+Xom helmet slot
+
+# en:
+#   @Your_item@ leaps into the air, briefly spins, then lands back on your @head@!
+@Your_item@が宙に跳び上がってくるりと回り、またあなたの@head@の上に戻った！
+%%%%
+Xom offhand slot
+
+# en:
+#   @Your_item@ spins!
+#   
+#   @Your_item@ briefly flashes @any_glowing_colour@!
+@Your_item@がくるくる回った！
+
+@Your_item@が一瞬@any_glowing_colour@にきらめいた！
+%%%%
+Xom gloves slot
+
+# en:
+#   @Your_item@ briefly grows @_xom_number_@ extra fingers!
+@Your_item@に一瞬、指が@_xom_number_@本余分に生えた！
+%%%%
+Xom boots slot
+
+# en:
+#   @Your_item@ grows to a huge size, then shrinks back down!
+@Your_item@が巨大に膨らみ、それからまた元の大きさに縮んだ！
+%%%%
+Xom amulet slot
+
+# en:
+#   @Your_item@ pulsates!
+#   
+#   @Your_item@ flares @any_glowing_colour@, then returns to normal.
+#   
+#   @Your_item@ briefly flies off and hovers over your @head@!
+@Your_item@が脈動した！
+
+@Your_item@が@any_glowing_colour@に燃え上がり、それから元に戻った！
+
+@Your_item@が一瞬飛び立ち、あなたの@head@の上を漂った！
+%%%%
+Xom gizmo slot
+
+# en:
+#   @Your_item@ jiggles!
+#   
+#   @Your_item@ leaks @rainbow_colour@ smoke!
+@Your_item@がぷるぷる揺れた！
+
+@Your_item@から@rainbow_colour@の煙が漏れ出した！
+%%%%
+Xom ring slot
+
+# en:
+#   @Your_item@ twitches!
+#   
+#   @Your_item@ briefly dulls, then brightens again!
+#   
+#   @Your_item@ briefly brightens, then dulls again!
+@Your_item@がぴくりと動いた！
+
+@Your_item@が一瞬くすみ、それからまた輝きを取り戻した！
+
+@Your_item@が一瞬輝き、それからまたくすんだ！
+%%%%
+Xom dragon armour
+
+# en:
+#   The scales on @your_item@ wiggle briefly.
+@your_item@の鱗が一瞬うねうねと動いた。
+%%%%
+Xom animal skin
+
+# en:
+#   The fur on @your_item@ grows longer at an alarming rate, then retracts back to normal.
+@your_item@の毛皮がとんでもない速さで伸び、それからまた元に戻った。
+%%%%
+Xom leather armour
+
+# en:
+#   @Your_item@ briefly grows fur, then returns to normal.
+@Your_item@に一瞬毛が生え、それからまた元に戻った。
+%%%%
+Xom robe
+
+# en:
+#   You briefly become tangled in @your_item@.
+あなたは一瞬@your_item@に絡まってしまった。
+%%%%
+Xom metal armour
+
+# en:
+#   @Your_item@ briefly appears rusty.
+@Your_item@が一瞬錆びついたように見えた。
+%%%%
+Xom drinkless confusion
+
+# en:
+#   "Stumble well, my pet!"
+#   
+#   Xom's power touches upon your body and mind for a moment.
+『上手によろめけよ、私のペット！』
+
+ゾムの力が一瞬あなたの体と心に触れた。
+%%%%
+Xom suffering
+
+# en:
+#   "You have displeased me, mortal."
+#   
+#   "You have grown too confident for your meagre worth."
+#   
+#   Xom's power touches on you for a moment.
+#   
+#   You hear Xom's maniacal laughter.
+#   
+#   "Suffer!"
+#   
+#   Xom's malign attention turns to you for a moment.
+『定命の者よ、お前は私を不愉快にさせた』
+
+『つまらない価値しかないくせに、お前は自信を持ちすぎだ』
+
+ゾムの力が一瞬あなたに触れた。
+
+あなたはゾムの狂気の笑い声を聞いた。
+
+『苦しめ！』
+
+ゾムの悪意ある注意が一瞬あなたに向けられた。
+%%%%
+Xom torment all
+
+# en:
+#   Xom torments the living!
+#   
+#   Xom spreads torment and darkness!
+#   
+#   Xom unleashes waves of agony!
+#   
+#   Xom's malign attention turns towards your situation for a moment.
+#   
+#   w:5
+#   The hand of Xom pokes all present souls.
+ゾムは生ける者を苦しめた！
+
+ゾムは苦痛と暗闇をまき散らした！
+
+ゾムは苦悶の波を解き放った！
+
+ゾムの悪意ある注意が一瞬あなたの置かれた状況に向けられた。
+
+w:5
+ゾムの手がその場にいる全ての魂をつついた。
+%%%%
+Xom send in the clones
+
+# en:
+#   Xom feels like there should be more of you to share with the Dungeon.
+#   
+#   Xom gently smashes a mirror over your [@random_body_part_external_singular@|@random_body_part_external_plural@].
+#   
+#   "Multiply and go forth!"
+ゾムは、ダンジョンと分かち合うにはあなたがもっと大勢いるべきだと思ったようだ。
+
+ゾムはあなたの[@random_body_part_external_singular@|@random_body_part_external_plural@]の上で鏡をそっと叩き割った。
+
+『増えよ、そして進め！』
+%%%%
+Xom brain drain
+
+# en:
+#   w:20
+#   Xom displaces most of your magic for a moment.
+#   
+#   w:20
+#   Xom reveals to you one of the great and terrible secrets of magic.
+#   
+#   w:20
+#   Xom curiously channels energy out of your body.
+#   
+#   Xom picks up your mind and accidentally drops it.
+#   
+#   Xom gives you a terrible headache.
+#   
+#   "You don't need this, do you?"
+w:20
+ゾムは一瞬あなたの魔力のほとんどを別の場所へ移した。
+
+w:20
+ゾムは魔術の偉大で恐るべき秘密の一つをあなたに明かした。
+
+w:20
+ゾムは興味深そうにあなたの体からエネルギーを吸い出した。
+
+ゾムはあなたの心をつまみ上げ、うっかり落としてしまった。
+
+ゾムはあなたにひどい頭痛を与えた。
+
+『これは要らないだろう？』
+%%%%
+Xom drained brain
+
+# en:
+#   w:20
+#   Your magic slithers out of your reeling mind!
+#   
+#   Your power and thoughts are overwhelmed by magic-eaters manifest!
+#   
+#   Your magic wrenches itself out of your [@random_body_part_internal_singular@|@random_body_part_internal_plural@]!
+#   
+#   Your magic flows out through your [@random_body_part_external_singular@|@random_body_part_external_plural@]!
+#   
+#   Your magic rips itself out through your [@random_body_part_any_singular@|@random_body_part_any_plural@]!
+w:20
+あなたの魔力が、くらくらする頭からぬるりと抜け出していった！
+
+具現化した魔力喰らいたちに、あなたの力と思考は圧倒された！
+
+あなたの魔力が、あなたの[@random_body_part_internal_singular@|@random_body_part_internal_plural@]からもぎ取られるように抜け出した！
+
+あなたの魔力が、あなたの[@random_body_part_external_singular@|@random_body_part_external_plural@]から流れ出していった！
+
+あなたの魔力が、あなたの[@random_body_part_any_singular@|@random_body_part_any_plural@]を引き裂いて飛び出した！
+%%%%
+Xom banishment
+
+# en:
+#   "You have grown too comfortable in your little world, mortal!"
+#   
+#   Xom casts you into the Abyss!
+#   
+#   The world seems to spin as Xom's maniacal laughter rings.
+『定命の者よ、お前はこのちっぽけな世界に安住しすぎている！』
+
+ゾムはあなたをアビスに放り込んだ！
+
+ゾムの狂気の笑い声が響き渡り、世界が回転しているかのようだ。
+%%%%
+Xom fake shatter
+
+# en:
+#   w:30
+#   "Ka-crash!"
+#   
+#   "Let the forces of chaos tear it all down!"
+#   
+#   Xom reshapes the earth.
+#   
+#   w:1
+#   Xom reveals the great annihilating truth to the Dungeon's walls!
+w:30
+『ガッシャーン！』
+
+『混沌の力よ、全てを打ち崩せ！』
+
+ゾムは大地を作り変えた。
+
+w:1
+ゾムはダンジョンの壁に、全てを滅ぼす偉大な真理を明かした！
+%%%%
+Xom fast forward
+
+# en:
+#   Xom speeds up the battle.
+#   
+#   Xom demands a faster pace.
+#   
+#   "Hurry it up!"
+ゾムは戦いの速度を上げた。
+
+ゾムはもっと速い展開を求めた。
+
+『急げ急げ！』
+%%%%
+Xom slow motion
+
+# en:
+#   Xom feels like nobody present is taking it easy enough.
+#   
+#   Xom bends time into knots.
+#   
+#   "Don't be so hasty!"
+ゾムは、この場の誰も十分にのんびりしていないと思ったようだ。
+
+ゾムは時間をこんがらがらせた。
+
+『そう焦るな！』
+%%%%
+Xom pause
+
+# en:
+#   Xom stops everything to savour the moment.
+#   
+#   Xom stomps on time for a few moments.
+#   
+#   w:1
+#   Xom prepares the audience for the floor's solo!
+ゾムはこの瞬間を味わうために全てを止めた。
+
+ゾムはしばらくの間、時間を踏みつけた。
+
+w:1
+ゾムは床の独り舞台のために観客の準備を整えた！
+%%%%
+Xom grant word of recall
+
+# en:
+#   Xom feels like this meagre party needs more guests.
+#   
+#   Xom sends out highly concerning invitations.
+ゾムは、このしけた集まりにはもっと客が必要だと思ったようだ。
+
+ゾムはきわめて不穏な招待状を送り出した。
+%%%%
+Xom grant voiceless word of recall
+
+# en:
+#   Xom demands a dramatic dialogue!
+#   
+#   Xom grants a terrible voice to the voiceless.
+ゾムは劇的な対話を求めた！
+
+ゾムは声なき者に恐ろしい声を授けた。
+%%%%
+Xom cleaving
+
+# en:
+#   @Xom potion effect@
+@Xom potion effect@
+%%%%
+Xom cloud trail
+
+# en:
+#   "Go forth and redecorate, my child!"
+#   
+#   "This place needs a little more atmosphere."
+『さあ行け、そして模様替えをしてこい、我が子よ！』
+
+『この場所にはもう少し雰囲気が必要だな』
+%%%%
+Xom good monster polymorph
+
+# en:
+#   "This might be better!"
+#   
+#   "Hum-dee-hum-dee-hum..."
+#   
+#   Xom's power touches your surroundings.
+#   
+#   You hear Xom's avuncular chuckle.
+『この方がいいかもしれないぞ！』
+
+『ふん、ふふん、ふふーん……』
+
+ゾムの力があなたの周囲に触れた。
+
+あなたはゾムの親しげなくすくす笑いを聞いた。
+%%%%
+Xom bad monster polymorph
+
+# en:
+#   @Xom good monster polymorph@
+@Xom good monster polymorph@
+%%%%
+Xom wave of despair
+
+# en:
+#   Xom recounts a horror story in an instant.
+#   
+#   w:2
+#   Xom joyfully recalls the collapse of multiple Dungeon civilisations.
+ゾムは一瞬のうちに怪談を語り聞かせた。
+
+w:2
+ゾムはいくつものダンジョン文明が崩壊したことを楽しげに思い出した。
+%%%%
+Xom good mutations
+
+# en:
+#   "You need some minor adjustments, mortal!"
+#   
+#   "Let me alter your pitiful body."
+#   
+#   Xom's power touches on you for a moment.
+#   
+#   You hear Xom's maniacal cackling.
+#   
+#   With a gout of [@rainbow_colour@|@misc_colour@] light, Xom rebuilds you.
+『定命の者よ！ お前には少々調整が必要なようだ』
+
+『お前の哀れな体を変化させてやろう』
+
+ゾムの力が一瞬あなたに触れた。
+
+あなたはゾムの狂気の笑い声を聞いた。
+
+[@rainbow_colour@|@misc_colour@]の光がほとばしり、ゾムはあなたを作り変えた。
+%%%%
+Xom random mutations
+
+# en:
+#   "You need some minor improvements, mortal!"
+#   
+#   "Let me alter your body."
+#   
+#   Xom's power brushes against you for a moment.
+#   
+#   You hear Xom's avuncular chuckle.
+#   
+#   With a flash of [@rainbow_colour@|@misc_colour@] light, Xom rebuilds you.
+『定命の者よ！ お前には少々改良が必要なようだ』
+
+『お前の体を変化させてやろう』
+
+ゾムの力が一瞬あなたをかすめた。
+
+あなたはゾムの親しげなくすくす笑いを聞いた。
+
+[@rainbow_colour@|@misc_colour@]の光がひらめき、ゾムはあなたを作り変えた。
+%%%%
+Xom divine lightning
+
+# en:
+#   The area is suffused with divine lightning!
+#   
+#   Xom hurls blasts of lightning!
+#   
+#   "Ready, aim, fire!"
+辺り一帯が神の稲妻で満たされた！
+
+ゾムは稲妻を叩きつけた！
+
+『構え、狙え、撃て！』
+%%%%
+Xom snakes to sticks
+
+# en:
+#   Xom transforms those around you.
+#   
+#   "I like them better like this."
+#   
+#   "Never liked these squiggly things."
+#   
+#   Xom touches your surroundings.
+#   
+#   @Xom good monster polymorph@
+ゾムはあなたの周囲のものを変化させた。
+
+『私はこっちの方が好みだ』
+
+『くねくねしたものは前から好きじゃなかった』
+
+ゾムはあなたの周囲に触れた。
+
+@Xom good monster polymorph@
+%%%%
+Xom lights up webs
+
+# en:
+#   Xom [gleefully|mirthfully] wrecks local arachnid artwork.
+#   
+#   The light of Xom [brushes upon|sweeps through] your surroundings.
+#   
+#   w:1
+#   @Xom fake destruction@
+ゾムは辺りの蜘蛛の芸術作品を[嬉々として|面白がって]台無しにした。
+
+ゾムの光があなたの周囲を[なでた|駆け抜けた]。
+
+w:1
+@Xom fake destruction@
+%%%%
+Xom destruction
+
+# en:
+#   "Burn, baby, burn!"
+#   
+#   "Ka-boom!"
+#   
+#   Xom calls forth mighty explosions.
+#   
+#   Xom rains down devastation!
+#   
+#   w:5
+#   Xom sneezes violently.
+#   
+#   @Xom fake destruction@
+『燃えろ！ ベイビー！ 燃えろ！』
+
+『ドカーン！』
+
+ゾムは大爆発を引き起こした。
+
+ゾムは破壊の雨を降らせた！
+
+w:5
+ゾムは激しくくしゃみをした。
+
+@Xom fake destruction@
+%%%%
+Xom force lance fleet
+
+# en:
+#   Xom drops down a force battalion!
+#   
+#   Xom calls in the force cavalry!
+#   
+#   Xom lights up the force fireworks!
+#   
+#   w:1
+#   Xom launches an entire fire-cart's barrage!
+#   
+#   w:1
+#   Xom manifests dramatic pipe organ chords!
+ゾムは力場の大隊を投下した！
+
+ゾムは力場の騎兵隊を呼び寄せた！
+
+ゾムは力場の花火に火をつけた！
+
+w:1
+ゾムは火車一台分の一斉射撃をまるごと打ち上げた！
+
+w:1
+ゾムはパイプオルガンの劇的な和音を響かせた！
+%%%%
+Xom resurrection
+
+# en:
+#   "Let me repair your body."
+#   
+#   Xom tricks Death into leaving you alone.
+#   
+#   Xom's maniacal laughter scares Death away.
+#   
+#   Xom's power revives you.
+#   
+#   Xom brings you back to life.
+#   
+#   Xom smiles on you.
+#   
+#   "Toy, don't you die on me yet!"
+#   
+#   Xom saves you before everything goes @mono_colour@.
+#   
+#   w:1
+#   "One more [life|try|go]."
+『お前の体を修復させてくれ』
+
+ゾムは死神を騙し、あなたを置いて行かせた。
+
+ゾムの狂気の笑い声が死神を追い払った。
+
+ゾムの力があなたを復活させた。
+
+ゾムはあなたを蘇らせた。
+
+ゾムはあなたに微笑んだ。
+
+『玩具よ、まだ死ぬんじゃないぞ！』
+
+全てが@mono_colour@に染まる前に、ゾムはあなたを救った。
+
+w:1
+『もう[一回|一度|一勝負]だ』
+%%%%
+Xom repel stairs
+
+# en:
+#   Xom changes the scenery.
+#   
+#   Xom pokes at a nearby @staircase@.
+#   
+#   Xom pushes on a nearby @staircase@.
+#   
+#   Xom pulls on a nearby @staircase@.
+#   
+#   "Tag, you're it!"
+#   
+#   Xom alters the dungeon around you.
+ゾムは風景を変貌させた。
+
+ゾムは近くの@staircase@をつついた。
+
+ゾムは近くの@staircase@を押した。
+
+ゾムは近くの@staircase@を引っ張った。
+
+『タッチ、お前が鬼だ！』
+
+ゾムはあなたの周囲を変化させた。
+%%%%
+Xom good enchant monster
+
+# en:
+#   @Xom good monster polymorph@
+@Xom good monster polymorph@
+%%%%
+Xom bad enchant monster
+
+# en:
+#   @Xom good enchant monster@
+@Xom good enchant monster@
+%%%%
+Xom good hyper enchant monster
+
+# en:
+#   "Witness the rise of a true [hero|champion]!"
+#   
+#   Xom demands grand glory in combat!
+#   
+#   Xom's power very briefly touches upon your surroundings.
+#   
+#   You hear Xom's avuncular cackling.
+『真の[英雄|勇者]の誕生を見届けるがいい！』
+
+ゾムは戦いにおける壮大な栄光を求めた！
+
+ゾムの力がほんの一瞬あなたの周囲に触れた。
+
+あなたはゾムの親しげな高笑いを聞いた。
+%%%%
+Xom mass charm
+
+# en:
+#   Xom readies the chaos crusade!
+#   
+#   Xom seizes a variety of puppet strings.
+#   
+#   "Would you like more friends, my child?"
+#   
+#   w:5
+#   Xom bribes nearby enemies with the offer of @_trout_species_@ trout.
+#   
+#   w:5
+#   The hand of Xom pokes present minds.
+ゾムは混沌の十字軍の準備を整えた！
+
+ゾムは操り人形の糸をあれこれとつかんだ。
+
+『もっと友達が欲しいかね、我が子よ？』
+
+w:5
+ゾムは@_trout_species_@トラウトを差し出して、近くの敵を買収した。
+
+w:5
+ゾムの手がその場にいる心をつついた。
+%%%%
+Xom stealth player
+
+# en:
+#   Xom shushes you conspicuously.
+#   
+#   Xom whispers: Shhh!
+ゾムはこれ見よがしにあなたを黙らせた。
+
+ゾムは囁いた：『シーッ！』
+%%%%
+Xom life saving actor
+
+# en:
+#   w:20
+#   @Xom life saving general@
+#   
+#   "Hey, that's my @_xom_plaything_@!"
+#   
+#   "Oh, no, you don't!"
+#   
+#   "That's my @_xom_plaything_@, go get your own!"
+#   
+#   "Leave my @_xom_plaything_@ alone!"
+w:20
+@Xom life saving general@
+
+『おい、それは私の@_xom_plaything_@だぞ！』
+
+『おっと、そうはさせないぞ！』
+
+『それは私の@_xom_plaything_@だ！ 自分のを探してこい！』
+
+『私の@_xom_plaything_@に手を出すな！』
+%%%%
+_xom_plaything_
+
+# en:
+#   {{
+#   if you.piety_rank() > 4 then
+#       return "teddy bear"
+#   elseif you.piety_rank() > 2 then
+#       return "toy"
+#   else
+#       return "plaything"
+#   end
+#   }}
+{{
+if you.piety_rank() > 4 then
+    return "テディベア"
+elseif you.piety_rank() > 2 then
+    return "玩具"
+else
+    return "慰みもの"
+end
+}}
+%%%%
+recite_closure
+
+# en:
+#   "Amen!"
+#   
+#   "Glory to Zin!"
+#   
+#   "And thus was it written."
+#   
+#   "So sayeth Zin."
+#   
+#   "Purity be upon you all."
+#   
+#   "Written in blood; sealed by your death."
+#   
+#   "From Zin's mouth, by Zin's hand."
+#   
+#   w:5
+#   "Thus shall it ever be."
+#   
+#   w:3
+#   "In fire! In pain!"
+『アーメン！』
+
+『ジンに栄光あれ！』
+
+『かくして、そう記されたり』
+
+『ジンはかく語りき』
+
+『汝ら全てに清浄のあらんことを』
+
+『血をもって記され、汝の死をもって封ぜられん』
+
+『ジンの口より、ジンの手によりて』
+
+w:5
+『とこしえにかくあるべし』
+
+w:3
+『炎の中に！ 苦痛の中に！』
+%%%%
+Ignis elemental wrath
+
+# en:
+#   "Attack, my last stalwart servants!"
+#   
+#   Ignis wails with rage, and rains down burning fury!
+#   
+#   Ignis calls forth spirits of fire to unmake you!
+#   
+#   "Burn! Burn until nothing is left!"
+#   
+#   "These will know how to inflict the punishment due to you!"
+#   
+#   "Betrayer! Apostate! Perish!"
+#   
+#   w:5
+#   "With a thousand fires I burned cities, but these will suffice for you!"
+#   
+#   w:5
+#   "My hands, my teeth, my burning tears: these will never betray me!"
+『かかれ、我が最後の忠実なるしもべたちよ！』
+
+イグニスは怒りに泣き叫び、燃え盛る憤怒を降り注がせた！
+
+イグニスはあなたを消し去るために炎の精霊を呼び出した！
+
+『燃えろ！ 何も残らなくなるまで燃えろ！』
+
+『この者たちなら、お前にふさわしい罰の与え方を心得ていよう！』
+
+『裏切り者！ 背教者！ 滅びよ！』
+
+w:5
+『千の炎で私は都市を焼き尽くしたが、お前にはこれで十分だ！』
+
+w:5
+『我が手、我が牙、我が燃える涙：これらだけは決して私を裏切らぬ！』
+%%%%
+Makhleb executioner chatter
+
+# en:
+#   w:40
+#   "Kill. Kill. Kill!"
+#   
+#   "More. More. More!"
+#   
+#   "Another! And another! And another!"
+#   
+#   "Slaughter. Them. All!"
+#   
+#   w:5
+#   "Everything deserves to die!"
+w:40
+『殺せ。殺せ。殺せ！』
+
+『もっと。もっと。もっとだ！』
+
+『次だ！ 次も！ その次も！』
+
+『皆殺しに。しろ。全員！』
+
+w:5
+『あらゆるものは死に値する！』
+%%%%
+Beogh welcome
+
+# en:
+#   Beogh says: Show the world what it means to be an orc!
+ベオは言った：『オークであるとはどういうことか、世界に示すのだ！』
+%%%%
+Beogh apostle challenge
+
+# en:
+#   Beware that a challenger has come seeking you in battle. Prove your devotion to me! Unite all my children beneath one banner!
+#   
+#   The time has come, seeker, to test your mettle in combat. Prove yourself an orc! Join your true people!
+#   
+#   Screw your courage to the sticking place, and face a challenge. Fight to survive! In the great war, all will be orcs!
+『心せよ、挑戦者が汝との戦いを求めてやって来た。我への献身を証明せよ！ 我が子らすべてを一つの旗のもとに束ねるのだ！』
+
+『時は来た、求道者よ、戦いで汝の真価を試すのだ。汝がオークであることを証明せよ！ 真の同胞に加わるのだ！』
+
+『勇気を奮い起こし、挑戦に立ち向かえ。生き残るために戦え！ 大いなる戦いの果てに、すべての者はオークとなるのだ！』
+%%%%
+Cheibriados death
+
+# en:
+#   Cheibriados appreciates the motionlessness of death.
+ケイブリアドスは死の不動を称賛した。
+%%%%
+Dithmenos welcome
+
+# en:
+#   Dithmenos says: Walk in the dark places.
+ディスメノスは言った：『暗き場所を歩め』
+%%%%
+Fedhas death
+
+# en:
+#   Fedhas appreciates your contribution to the ecosystem.
+フェダスはあなたの生態系への貢献に感謝した。
+%%%%
+Hepliaklqana welcome
+
+# en:
+#   Hepliaklqana says: Your past becomes your present!
+ヘプリアクルカナは言った：『汝の過去は汝の現在となる！』
+%%%%
+Hepliaklqana death
+
+# en:
+#   Hepliaklqana delivers you to your ancestors.
+ヘプリアクルカナはあなたを祖先たちのもとへ送り届けた。
+%%%%
+Ignis welcome
+
+# en:
+#   The flames of Ignis gently warm you.
+イグニスの炎が優しくあなたを温めた。
+%%%%
+Ignis death
+
+# en:
+#   Ignis goes out, and joins you in death.
+イグニスの火は消え、死の中であなたと一つになった。
+%%%%
+Jiyva welcome
+
+# en:
+#   Slime for the Slime God!
+#   
+#   w:1
+#   Long live the new flesh!
+スライム神の名において全てをどろどろにせよ！
+
+w:1
+新たなる肉、万歳！
+%%%%
+Jiyva death corpse
+
+# en:
+#   Jiyva sends a jelly to digest your remains.
+ジーヴァはあなたの亡骸を消化するためにゼリーを遣わした。
+%%%%
+Jiyva death corpse undead
+
+# en:
+#   @Jiyva death corpse@
+@Jiyva death corpse@
+%%%%
+Jiyva death corpse nonliving
+
+# en:
+#   Jiyva sends a jelly to digest your equipment.
+ジーヴァはあなたの装備品を消化するためにゼリーを遣わした。
+%%%%
+Kikubaaqudgha welcome
+
+# en:
+#   Kikubaaqudgha says: Spread unending ruin and despair!
+キクバークッグァは言った：『終わりなき破滅と絶望を広めるのだ！』
+%%%%
+Kikubaaqudgha death
+
+# en:
+#   Kikubaaqudgha rasps: You have failed me! Welcome... death!
+キクバークッグァはしわがれ声で言った：『汝は我を失望させた！ ようこそ……死へ！』
+%%%%
+Kikubaaqudgha death corpse undead
+
+# en:
+#   Kikubaaqudgha rasps: You have failed me! Welcome... oblivion!
+キクバークッグァはしわがれ声で言った：『汝は我を失望させた！ ようこそ……忘却へ！』
+%%%%
+Kikubaaqudgha death corpse nonliving
+
+# en:
+#   @Kikubaaqudgha death corpse undead@
+@Kikubaaqudgha death corpse undead@
+%%%%
+Kikubaaqudgha death undead
+
+# en:
+#   @Kikubaaqudgha death corpse undead@
+@Kikubaaqudgha death corpse undead@
+%%%%
+Kikubaaqudgha death nonliving
+
+# en:
+#   @Kikubaaqudgha death corpse undead@
+@Kikubaaqudgha death corpse undead@
+%%%%
+Pakellas penance
+
+# en:
+#   Pakellas says: That's one approach which won't work here.
+#   
+#   Pakellas says: Disappointing results so far.
+#   
+#   Pakellas says: We may have to discontinue the experiment at this rate.
+#   
+#   Pakellas says: Do not stand in the way of progress!
+パケラスは言った：『そのやり方はここでは通用しない』
+
+パケラスは言った：『今のところ期待外れの結果だな』
+
+パケラスは言った：『この調子では実験を打ち切らねばなるまい』
+
+パケラスは言った：『進歩の邪魔をするな！』
+%%%%
+Pakellas welcome
+
+# en:
+#   Pakellas says: Time to continue the experiment.
+#   
+#   Pakellas says: Time to find some more test subjects.
+#   
+#   Pakellas says: Ready to try out some more devices?
+#   
+#   Pakellas says: This is producing some very interesting results.
+#   
+#   Pakellas says: What solutions will you come up with next?
+#   
+#   Pakellas says: Progress or perish!
+#   
+#   w:5
+#   Pakellas says: No one tells a god not to play god!
+#   
+#   w:1
+#   Pakellas says: They called me mad... well, we'll show them!
+パケラスは言った：『実験を続ける時だ』
+
+パケラスは言った：『もっと被験者を見つける時だ』
+
+パケラスは言った：『もっと装置を試してみる準備はいいか？』
+
+パケラスは言った：『実に興味深い結果が出ているぞ』
+
+パケラスは言った：『次はどんな解決策を思いつくかな？』
+
+パケラスは言った：『進歩か、さもなくば滅びか！』
+
+w:5
+パケラスは言った：『神に向かって神のまねをするなと言える者などいない！』
+
+w:1
+パケラスは言った：『奴らは私を狂っていると言った……ならば見せつけてやろうではないか！』
+%%%%
+Pakellas death
+
+# en:
+#   Pakellas says: Back to the drawing board!
+#   
+#   Pakellas says: Good help is so hard to find these days!
+#   
+#   Pakellas says: Time to find a new assistant...
+#   
+#   Pakellas says: That's one more possible approach eliminated.
+#   
+#   Pakellas says: Time to start the next experiment...
+パケラスは言った：『また一からやり直しだ！』
+
+パケラスは言った：『近頃は良い助手がなかなか見つからん！』
+
+パケラスは言った：『新しい助手を探す時だな……』
+
+パケラスは言った：『これでまた一つ、可能性のある手法が消えたわけだ』
+
+パケラスは言った：『次の実験を始める時だ……』
+%%%%
+Ru welcome
+
+# en:
+#   Ru says: Cut away your false body!
+ルーは言った：『偽りの肉体を切り捨てよ！』
+%%%%
+Ru death
+
+# en:
+#   Ru respects your ultimate sacrifice.
+ルーはあなたの究極の犠牲に敬意を表した。
+%%%%
+Uskayaw welcome
+
+# en:
+#   Uskayaw says: Surrender yourself to the rhythm!
+ウスカヤーは言った：『リズムに身を委ねよ！』
+%%%%
+Uskayaw death corpse
+
+# en:
+#   Your body falls in perfect tune with the rhythm.
+あなたの体はリズムと完璧に調和して崩れ落ちた。
+%%%%
+Uskayaw death corpse undead
+
+# en:
+#   @Uskayaw death corpse@
+@Uskayaw death corpse@
+%%%%
+Uskayaw death corpse nonliving
+
+# en:
+#   @Uskayaw death corpse@
+@Uskayaw death corpse@
+%%%%
+Wu Jian welcome
+
+# en:
+#   The Council says: Follow the path of wisdom and battle!
+評議会は言った：『知恵と戦いの道を歩め！』
+%%%%
+Xom bored
+
+# en:
+#   Xom yawns.
+#   
+#   "I wonder what else is on..."
+#   
+#   @Xom welcome@
+ゾムはあくびをした。
+
+『他に何かやってないかな……』
+
+@Xom welcome@
+%%%%
+Xom welcome
+
+# en:
+#   Xom snickers.
+#   
+#   Xom titters.
+#   
+#   w:3
+#   @_xom_welcome_rare_@
+ゾムはくすくす笑った。
+
+ゾムはけらけら笑った。
+
+w:3
+@_xom_welcome_rare_@
+%%%%
+_xom_welcome_rare_
+
+# en:
+#   Xom says: I'm watching you, my @_xom_child_@ child.
+#   
+#   Xom slaps you with @_trout_species_@ trout!
+ゾムは言った：『見ているぞ、我が@_xom_child_@子よ』
+
+ゾムは@_trout_species_@トラウトであなたをひっぱたいた！
+%%%%
+_trout_species_
+
+# en:
+#   a rainbow
+#   
+#   a flathead
+#   
+#   a cutthroat
+#   
+#   a bull
+#   
+#   a silver
+#   
+#   w:3
+#   @_trout_species_rare_@
+レインボー
+
+フラットヘッド
+
+カットスロート
+
+ブル
+
+シルバー
+
+w:3
+@_trout_species_rare_@
+%%%%
+_trout_species_rare_
+
+# en:
+#   a complex
+#   
+#   a polygonal
+#   
+#   an imaginary
+#   
+#   an inverse
+#   
+#   an unlikely
+#   
+#   a used
+#   
+#   a second-hand
+#   
+#   a prohibited
+#   
+#   a challenging
+#   
+#   a delicious
+#   
+#   a mouldy
+#   
+#   a fake
+#   
+#   a moist
+#   
+#   w:2
+#   a kilgore
+複素数の
+
+多角形の
+
+虚数の
+
+逆数の
+
+ありそうもない
+
+使用済みの
+
+中古の
+
+禁制の
+
+手ごわい
+
+美味しい
+
+かび臭い
+
+偽物の
+
+湿った
+
+w:2
+キルゴア・
+%%%%
+Yredelemnul death corpse undead
+
+# en:
+#   You join the legions of the undead harvest.
+あなたは不死の収穫の軍勢に加わった。
+%%%%
+Yredelemnul death corpse nonliving
+
+# en:
+#   Your body vanishes in a gout of umbral fire.
+あなたの体は影の炎の噴出の中に消え去った。
+%%%%
+Yredelemnul death undead
+
+# en:
+#   @Yredelemnul death corpse undead@
+@Yredelemnul death corpse undead@
+%%%%
+Zot death
+
+# en:
+#   Zot has found you!
+#   
+#   Zot unmakes you!
+#   
+#   Zot excises you from existence.
+#   
+#   Zot touches you for a single instant, and you cease to be.
+#   
+#   w:5
+#   Zot's tendrils burst from within you!
+#   
+#   w:3
+#   Zot's will forges a new reality, without you in it.
+#   
+#   w:3
+#   Zot snuffs you out like a light.
+#   
+#   w:3
+#   Zot's power takes hold, and you dissolve into a dark mist.
+ゾットがあなたを見つけた！
+
+ゾットはあなたを無に帰した！
+
+ゾットはあなたを存在から切り取った。
+
+ゾットがほんの一瞬あなたに触れ、あなたは存在をやめた。
+
+w:5
+ゾットの触手があなたの内側から突き破って現れた！
+
+w:3
+ゾットの意志が、あなたのいない新たな現実を鍛え上げた。
+
+w:3
+ゾットは明かりを消すようにあなたを吹き消した。
+
+w:3
+ゾットの力に捕らえられ、あなたは暗い霧となって溶け去った。
+%%%%

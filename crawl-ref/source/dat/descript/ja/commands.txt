@@ -281,7 +281,7 @@ CMD_MEMORISE_SPELL verbose
 
 # en:
 #   Memorises a chosen spell from your spell library.
-所持している本、もしくは足元にある本を読み、呪文を記憶に留める。
+呪文ライブラリから選んだ呪文を記憶する。
 %%%%
 CMD_LOOKUP_HELP
 
@@ -546,4 +546,59 @@ CMD_ZOOM_OUT verbose
 # en:
 #   Zooms out on dungeon area.
 ダンジョン領域を縮小表示する。
+%%%%
+CMD_EXPLORE_NO_REST
+
+# en:
+#   Automatically explores the current level, collecting items on the way.
+#   Exploration stops as soon as a hostile monster comes into view, or when you
+#   encounter new items or features. Unlike CMD_EXPLORE, will treat
+#   explore_auto_rest as if it were false and explore_auto_rest_status as if it were
+#   empty.
+自動で現在の階層を探索し、経路上のアイテムを収集する。
+敵対的なモンスターが視界に入ったり、新しいアイテムや地形を発見したりすると、探索はすぐに中止される。CMD_EXPLORE と違い、explore_auto_rest を false、explore_auto_rest_status を空とみなす。
+%%%%
+CMD_SHOW_CHARACTER_DUMP
+
+# en:
+#   Dump and show character's progress
+キャラクターの進捗情報を出力して表示する
+%%%%
+CMD_SHOW_CHARACTER_DUMP verbose
+
+# en:
+#   Dumps detailed information about your character into a file ‘playername.txt’ in
+#   the morgue directory, and shows the file in-game. This includes main stats,
+#   equipment, spells, skills, notes, etc.
+'morgue'フォルダーの(プレイヤー名).txtというファイルにあなたのキャラクターについての詳細な情報を出力し、ゲーム内でそのファイルを表示する。主な能力値、装備、呪文、スキル、ノートなどが含まれる。
+%%%%
+CMD_MAP_EXIT_MAP
+
+# en:
+#   Exit map mode
+マップモードの終了
+%%%%
+CMD_TOGGLE_KEYBOARD
+
+# en:
+#   Toggle keyboard
+キーボードの表示切り替え
+%%%%
+CMD_TOGGLE_KEYBOARD verbose
+
+# en:
+#   Toggles the on-screen keyboard visibility.
+画面上のキーボードの表示・非表示を切り替える。
+%%%%
+CMD_GAME_MENU
+
+# en:
+#   Show game menu
+ゲームメニューの表示
+%%%%
+CMD_GAME_MENU verbose
+
+# en:
+#   Show the game menu
+ゲームメニューを表示する。
 %%%%

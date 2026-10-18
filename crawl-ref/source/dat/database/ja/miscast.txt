@@ -1,0 +1,853 @@
+%%%%
+conjuration miscast player
+
+# en:
+#   Sparks fly from your @hands@
+#
+#   A strange surge of energy strikes you from nowhere
+#
+#   A wave of violent energy washes through your body
+#
+#   Energy rips through your body
+#
+#   You are caught in a violent explosion
+#
+#   You are blasted with magical energy
+あなたの@hands@から火花が飛び散った
+
+どこからともなく奇妙なエネルギーの奔流があなたを打った
+
+激しいエネルギーの波があなたの体を駆け抜けた
+
+エネルギーがあなたの体を引き裂くように走った
+
+あなたは激しい爆発に巻き込まれた
+
+あなたは魔法のエネルギーを浴びせられた
+%%%%
+conjuration miscast monster
+
+# en:
+#   Sparks fly from @the_monster_possessive@ @hands@
+#
+#   @The_monster@ emits a flash of light
+#
+#   @The_monster@ lurches violently
+#
+#   @The_monster@ jerks violently
+#
+#   @The_monster@ is caught in a violent explosion
+#
+#   @The_monster@ is blasted with magical energy
+@the_monster_possessive@@hands@から火花が飛び散った
+
+@The_monster@は閃光を放った
+
+@The_monster@は激しくよろめいた
+
+@The_monster@は激しく痙攣した
+
+@The_monster@は激しい爆発に巻き込まれた
+
+@The_monster@は魔法のエネルギーを浴びせられた
+%%%%
+conjuration miscast unseen
+
+# en:
+#   A violent explosion happens from out of thin air
+#
+#   There is a sudden explosion of magical energy
+何もない空間で激しい爆発が起きた
+
+突然、魔法のエネルギーが爆発した
+%%%%
+hexes miscast player
+
+# en:
+#   Multicoloured lights dance before your eyes
+#
+#   You feel a bit tired
+#
+#   The light around you dims momentarily
+#
+#   You hear an indistinct dissonance whispering inside your mind
+#
+#   You feel a strange surge of energy
+#
+#   Waves of @any_colour@ light ripple over your body
+#
+#   You feel enfeebled
+#
+#   Magic surges out from your body
+色とりどりの光があなたの目の前で踊った
+
+あなたは少し疲れを感じた
+
+あなたの周りの光が一瞬かげった
+
+頭の中でぼんやりとした不協和音がささやくのが聞こえた
+
+あなたは奇妙なエネルギーの高まりを感じた
+
+@any_colour@の光の波があなたの体の上を揺らめいた
+
+あなたは力が抜けるのを感じた
+
+あなたの体から魔力がほとばしった
+%%%%
+hexes miscast monster
+
+# en:
+#   Multicoloured lights dance around @the_monster@
+#
+#   @The_monster@ looks sleepy for a second
+#
+#   The light around @the_monster@ dims momentarily
+#
+#   @The_monster@ twitches
+#
+#   @The_monster_possessive@ body glows momentarily
+#
+#   Waves of @any_colour@ light ripple over @the_monster_possessive@ body
+#
+#   Magic surges out from @the_monster@
+色とりどりの光が@the_monster@の周りで踊った
+
+@The_monster@は一瞬眠そうな様子を見せた
+
+@the_monster@の周りの光が一瞬かげった
+
+@The_monster@はぴくりと身を震わせた
+
+@The_monster_possessive@体が一瞬輝いた
+
+@any_colour@の光の波が@the_monster_possessive@体の上を揺らめいた
+
+@the_monster@から魔力がほとばしった
+%%%%
+hexes miscast unseen
+
+# en:
+#   Multicoloured lights dance in the air
+#
+#   A patch of light dims momentarily
+#
+#   Magic surges out from thin air
+色とりどりの光が空中で踊った
+
+一角の光が一瞬かげった
+
+何もない空間から魔力がほとばしった
+%%%%
+summoning miscast player
+
+# en:
+#   A fistful of eyes flickers past your view
+#
+#   Distant voices call out in your mind
+#
+#   Something forms from out of thin air
+#
+#   A chorus of moans calls out in your mind
+#
+#   Desperate hands claw out at you
+ひとつかみほどの目玉が視界をちらりとよぎった
+
+遠くの声があなたの心に呼びかけた
+
+何もない空間から何かが形を成した
+
+うめき声の合唱があなたの心に呼びかけた
+
+必死な手があなたにつかみかかった
+%%%%
+summoning miscast monster
+
+# en:
+#   Desperate hands claw out at @the_monster@
+必死な手が@the_monster@につかみかかった
+%%%%
+summoning miscast unseen
+
+# en:
+#   Desperate hands claw out at random
+必死な手がでたらめにつかみかかった
+%%%%
+necromancy miscast player
+
+# en:
+#   You hear strange and distant voices
+#
+#   The world around you seems to dim momentarily
+#
+#   You feel as though something walked over your grave
+#
+#   You sense a malignant aura
+#
+#   You feel very uncomfortable
+#
+#   Pain shoots through your body
+#
+#   You feel horribly lethargic
+#
+#   Your flesh rots away
+#
+#   Flickering shadows surround you
+#
+#   You are engulfed in negative energy
+#
+#   You convulse helplessly as pain tears through your body
+奇妙な遠い声が聞こえた
+
+周りの世界が一瞬暗くなったように思えた
+
+何かが自分の墓の上を歩いたような寒気を感じた
+
+悪意に満ちた気配を感じた
+
+ひどく不快な気分になった
+
+痛みが体を貫いた
+
+ひどい倦怠感に襲われた
+
+あなたの肉が腐り落ちた
+
+ゆらめく影があなたを取り囲んだ
+
+あなたは負のエネルギーに包まれた
+
+体を引き裂く痛みに、あなたはなすすべもなく痙攣した
+%%%%
+necromancy miscast monster
+
+# en:
+#   @The_monster@ twitches violently
+#
+#   @The_monster@ pauses, visibly distraught
+#
+#   @The_monster@ seems to dim momentarily
+#
+#   @The_monster@ looks as though something walked over @possessive@ grave
+#
+#   @The_monster@ is briefly tinged with black
+#
+#   @The_monster@ scowls horribly
+#
+#   @The_monster@ convulses with pain
+#
+#   @The_monster@ looks incredibly listless
+#
+#   @The_monster@ rots away
+#
+#   Flickering shadows surround @the_monster@
+#
+#   @The_monster@ is engulfed in negative energy
+#
+#   @The_monster@ convulses helplessly with pain
+#
+#   @The_monster@ seems frightened for a moment
+@The_monster@は激しく身を震わせた
+
+@The_monster@は動きを止め、目に見えて取り乱した
+
+@The_monster@が一瞬暗くなったように見えた
+
+@The_monster@は何かが自分の墓の上を歩いたような顔をした
+
+@The_monster@が一瞬黒く染まった
+
+@The_monster@はひどく顔をしかめた
+
+@The_monster@は痛みに痙攣した
+
+@The_monster@はひどくぐったりとした様子を見せた
+
+@The_monster_possessive@肉が腐り落ちた
+
+ゆらめく影が@the_monster@を取り囲んだ
+
+@The_monster@は負のエネルギーに包まれた
+
+@The_monster@は痛みになすすべもなく痙攣した
+
+@The_monster@は一瞬おびえたように見えた
+%%%%
+necromancy miscast unseen
+
+# en:
+#   The air has a black tinge for a moment
+#
+#   Shadows flicker in the thin air
+空気が一瞬黒みを帯びた
+
+何もない空間で影がゆらめいた
+%%%%
+translocation miscast player
+
+# en:
+#   You catch a glimpse of the back of your own head
+#
+#   You feel a wrenching sensation
+#
+#   You feel off-balance for a moment
+#
+#   The floor and the ceiling briefly switch places
+#
+#   You spin around
+#
+#   The world appears momentarily distorted
+#
+#   You are caught in a field of spatial distortion
+#
+#   Space twists in upon itself
+#
+#   Space [bends|warps] [crazily |]around you
+自分の後頭部がちらりと見えた
+
+ねじ切られるような感覚に襲われた
+
+一瞬平衡感覚を失った
+
+床と天井が一瞬入れ替わった
+
+あなたはくるりと回転した
+
+世界が一瞬歪んで見えた
+
+あなたは空間の歪みの場に捕らえられた
+
+空間がねじれて内側へ折り重なった
+
+あなたの周りで空間が[めちゃくちゃに|][曲がった|歪んだ]
+%%%%
+translocation miscast monster
+
+# en:
+#   @The_monster@ jerks violently for a moment
+#
+#   @The_monster@ looks off-balance for a moment
+#
+#   @The_monster@ spins around
+#
+#   @The_monster@ appears momentarily distorted
+#
+#   @The_monster_possessive@ features rearrange themselves for a while
+#
+#   @The_monster@ is caught in a field of spatial distortion
+#
+#   Space [bends|warps] [crazily |]around @the_monster@
+@The_monster@は一瞬激しく痙攣した
+
+@The_monster@は一瞬平衡を失ったように見えた
+
+@The_monster@はくるりと回転した
+
+@The_monster@が一瞬歪んで見えた
+
+@The_monster_possessive@顔の造作がしばし入れ替わった
+
+@The_monster@は空間の歪みの場に捕らえられた
+
+@the_monster@の周りで空間が[めちゃくちゃに|][曲がった|歪んだ]
+%%%%
+translocation miscast unseen
+
+# en:
+#   The space around something warps impossibly
+#
+#   A piece of empty space twists and distorts
+#
+#   A rift temporarily opens in the fabric of space
+何かの周りの空間がありえないほど歪んだ
+
+何もない空間の一部がねじれ、歪んだ
+
+空間の織り目に一時的に裂け目が開いた
+%%%%
+fire miscast player
+
+# en:
+#   [Cinders|Ashes] fly from your @hands@
+#
+#   The air around you burns with energy
+#
+#   Heat runs through your body
+#
+#   You feel uncomfortably hot
+#
+#   Fire whirls out from your @hands@
+#
+#   Flames sear your flesh
+#
+#   You are blasted with [searing |][fire|flames]
+#
+#   You are caught in a fiery explosion
+#
+#   There is a sudden and violent explosion of flames
+あなたの@hands@から[燃えさし|灰]が飛び散った
+
+あなたの周りの空気がエネルギーで燃え上がった
+
+熱があなたの体を駆け巡った
+
+不快なほどの暑さを感じた
+
+あなたの@hands@から炎が渦巻いて噴き出した
+
+炎があなたの肉を焦がした
+
+あなたは[焼けつくような|][火|炎]を浴びせられた
+
+あなたは炎の爆発に巻き込まれた
+
+突然、炎が激しく爆発した
+%%%%
+fire miscast monster
+
+# en:
+#   [Cinders|Ashes] fly from @the_monster_possessive@ @hands@
+#
+#   The air around @the_monster@ burns with energy
+#
+#   Dim flames ripple over @the_monster_possessive@ body
+#
+#   Fire whirls out @the_monster_possessive@ @hands@
+#
+#   Flames sear @the_monster@
+#
+#   @The_monster@ is blasted with [searing |][fire|flames]
+#
+#   @The_monster@ is caught in a fiery explosion
+@the_monster_possessive@@hands@から[燃えさし|灰]が飛び散った
+
+@the_monster@の周りの空気がエネルギーで燃え上がった
+
+薄暗い炎が@the_monster_possessive@体の上を揺らめいた
+
+@the_monster_possessive@@hands@から炎が渦巻いて噴き出した
+
+炎が@the_monster@を焦がした
+
+@The_monster@は[焼けつくような|][火|炎]を浴びせられた
+
+@The_monster@は炎の爆発に巻き込まれた
+%%%%
+fire miscast unseen
+
+# en:
+#   Fire whirls out of nowhere
+#
+#   A flame briefly burns in thin air
+#
+#   Fire explodes from out of thin air
+#
+#   A large flame burns hotly for a moment in the thin air
+どこからともなく炎が渦巻いた
+
+何もない空間で炎が一瞬燃えた
+
+何もない空間から炎が爆発した
+
+何もない空間で大きな炎が一瞬激しく燃えた
+%%%%
+ice miscast player
+
+# en:
+#   You shiver with cold
+#
+#   A chill runs through your body
+#
+#   Your @hands@ feel@hand_conj@ numb with cold
+#
+#   You feel [a little bit|uncomfortably|extremely] cold
+#
+#   [Ice|Frost] covers your body
+#
+#   You are encased in [ice|frost]
+#
+#   You are covered in a thin layer of [ice|frost]
+#
+#   Heat is drained from your body
+#
+#   You are caught in an explosion of ice and frost
+あなたは寒さに震えた
+
+悪寒が体を走った
+
+あなたの@hands@が寒さでかじかんだ
+
+[少し|不快なほど|ひどく]寒く感じた
+
+[氷|霜]があなたの体を覆った
+
+あなたは[氷|霜]に閉じ込められた
+
+あなたは薄い[氷|霜]の層に覆われた
+
+体から熱が奪われた
+
+あなたは氷と霜の爆発に巻き込まれた
+%%%%
+ice miscast monster
+
+# en:
+#   @The_monster@ shivers with cold
+#
+#   Frost covers @the_monster_possessive@ body
+#
+#   @The_monster@ shivers
+#
+#   @The_monster@ is covered in a thin layer of [ice|frost]
+#
+#   Heat is drained from @the_monster@
+#
+#   @The_monster@ is caught in an explosion of ice and frost
+#
+#   @The_monster@ is encased in [ice|frost]
+@The_monster@は寒さに震えた
+
+霜が@the_monster_possessive@体を覆った
+
+@The_monster@は身震いした
+
+@The_monster@は薄い[氷|霜]の層に覆われた
+
+@the_monster@から熱が奪われた
+
+@The_monster@は氷と霜の爆発に巻き込まれた
+
+@The_monster@は[氷|霜]に閉じ込められた
+%%%%
+ice miscast unseen
+
+# en:
+#   Wisps of condensation drift in the air
+#
+#   Ice and frost explode from out of thin air
+#
+#   An unseen figure is encased in [ice|frost]
+結露の筋が空中を漂った
+
+何もない空間から氷と霜が爆発した
+
+見えない何者かが[氷|霜]に閉じ込められた
+%%%%
+air miscast player
+
+# en:
+#   Sparks of electricity dance around you
+#
+#   The air around you crackles with energy
+#
+#   You are blasted with air
+#
+#   There is a short, sharp shower of sparks
+#
+#   The wind whips around you
+#
+#   You feel a sudden electric shock
+#
+#   Electricity courses through your body
+#
+#   You are caught in an explosion of electrical discharges
+電気の火花があなたの周りで踊った
+
+あなたの周りの空気がエネルギーでぱちぱちと鳴った
+
+あなたは突風を浴びせられた
+
+一瞬、鋭い火花が降り注いだ
+
+風があなたの周りで吹き荒れた
+
+突然電気ショックを感じた
+
+電気があなたの体を駆け巡った
+
+あなたは放電の爆発に巻き込まれた
+%%%%
+air miscast monster
+
+# en:
+#   @The_monster@ bobs in the air for a moment
+#
+#   Sparks of electricity dance between @the_monster_possessive@ @hands@
+#
+#   The air around @the_monster@ crackles with energy
+#
+#   @The_monster@ is blasted with air
+#
+#   @The_monster@ is briefly showered in sparks
+#
+#   The wind whips around @the_monster@
+#
+#   @The_monster@ is jolted
+#
+#   @The_monster@ is caught in an explosion of electrical discharges
+#
+#   @The_monster@ is struck by twisting air
+@The_monster@は一瞬宙に浮き沈みした
+
+電気の火花が@the_monster_possessive@@hands@の間で踊った
+
+@the_monster@の周りの空気がエネルギーでぱちぱちと鳴った
+
+@The_monster@は突風を浴びせられた
+
+@The_monster@に一瞬火花が降り注いだ
+
+風が@the_monster@の周りで吹き荒れた
+
+@The_monster@は感電した
+
+@The_monster@は放電の爆発に巻き込まれた
+
+@The_monster@はねじれる空気に打たれた
+%%%%
+air miscast unseen
+
+# en:
+#   The wind whips up out of nowhere
+#
+#   Something invisible sparkles with electricity
+#
+#   The air around something crackles with energy
+#
+#   Electrical discharges explode from out of thin air
+#
+#   The air madly twists around a spot
+どこからともなく風が吹き荒れた
+
+何か見えないものが電気の火花を散らした
+
+何かの周りの空気がエネルギーでぱちぱちと鳴った
+
+何もない空間から放電が爆発した
+
+ある一点の周りで空気が狂ったようにねじれた
+%%%%
+earth miscast player
+
+# en:
+#   [Sand|Gravel] pours from your @hands@
+#
+#   You feel a surge of energy from the ground
+#
+#   The floor [shifts|shudders|quakes|rumbles] beneath you alarmingly
+#
+#   You are hit by flying rocks
+#
+#   You are blasted with sand
+#
+#   Rocks fall onto you out of nowhere
+#
+#   You are caught in an explosion of flying shrapnel
+あなたの@hands@から[砂|砂利]がこぼれ落ちた
+
+地面からエネルギーが湧き上がるのを感じた
+
+足元の床が不気味に[ずれた|震えた|揺れた|轟いた]
+
+あなたは飛んできた岩に打たれた
+
+あなたは砂を浴びせられた
+
+どこからともなく岩があなたの上に降ってきた
+
+あなたは飛び散る破片の爆発に巻き込まれた
+%%%%
+earth miscast monster
+
+# en:
+#   [Sand|Gravel] pours from @the_monster_possessive@ @hands@
+#
+#   @The_monster@ is hit by flying rocks
+#
+#   @The_monster@ is blasted with sand
+#
+#   Rocks fall onto @the_monster@ out of nowhere
+#
+#   @The_monster@ is caught in an explosion of flying shrapnel
+@the_monster_possessive@@hands@から[砂|砂利]がこぼれ落ちた
+
+@The_monster@は飛んできた岩に打たれた
+
+@The_monster@は砂を浴びせられた
+
+どこからともなく岩が@the_monster@の上に降ってきた
+
+@The_monster@は飛び散る破片の爆発に巻き込まれた
+%%%%
+earth miscast unseen
+
+# en:
+#   Flying rocks appear out of thin air
+#
+#   A miniature sandstorm briefly appears
+#
+#   Rocks fall out of nowhere
+#
+#   Flying shrapnel explodes from thin air
+何もない空間から岩が飛び出した
+
+小さな砂嵐が一瞬巻き起こった
+
+どこからともなく岩が降ってきた
+
+何もない空間から破片が爆発的に飛び散った
+%%%%
+alchemy miscast player
+
+# en:
+#   You are engulfed in toxic fumes
+#
+#   There is a flash of cinnabar
+#
+#   [Mercury|Quicksilver|Fool's gold|Saltpeter|Sulphur|Liquid metal] flows from your @hands@
+#
+#   Parts of your body briefly turn [golden|silvery|metallic|leaden|crystalline]
+#
+#   w:4
+#   You are overcome by clouds of @any_colour@ smoke
+#
+#   w:4
+#   The inside of your mouth momentarily tastes like @any_colour@
+#
+#   w:2
+#   Your skin changes to @any_colour_pattern@
+#
+#   w:2
+#   You are surrounded by clouds of @any_glowing_colour@ dust
+あなたは有毒な煙に包まれた
+
+辰砂色の閃光が走った
+
+あなたの@hands@から[水銀|みずがね|愚者の金|硝石|硫黄|液体金属]が流れ出た
+
+体の一部が一瞬[金色|銀色|金属質|鉛色|水晶質]に変わった
+
+w:4
+あなたは@any_colour@の煙にまかれた
+
+w:4
+口の中が一瞬@any_colour@の味になった
+
+w:2
+あなたの肌が@any_colour_pattern@に変わった
+
+w:2
+あなたは@any_glowing_colour@の塵の雲に取り巻かれた
+%%%%
+alchemy miscast monster
+
+# en:
+#   @The_monster@ is engulfed in toxic fumes
+#
+#   @The_monster@ is [blasted|coated] with [cinnabar|sulphur] dust
+#
+#   @The_monster@ is coated in salt
+#
+#   @The_monster@ starts coughing violently
+#
+#   @The_monster@ looks incredibly sick
+#
+#   w:5
+#   @The_monster@ is overcome by clouds of @any_colour@ smoke
+#
+#   w:5
+#   @The_monster_possessive@ skin changes to @any_colour_pattern@
+#
+#   w:5
+#   @The_monster@ is surrounded by clouds of @any_glowing_colour@ dust
+@The_monster@は有毒な煙に包まれた
+
+@The_monster@は[辰砂|硫黄]の粉を[浴びせられた|まぶされた]
+
+@The_monster@は塩にまみれた
+
+@The_monster@は激しく咳き込み始めた
+
+@The_monster@はひどく具合が悪そうになった
+
+w:5
+@The_monster@は@any_colour@の煙にまかれた
+
+w:5
+@The_monster_possessive@肌が@any_colour_pattern@に変わった
+
+w:5
+@The_monster@は@any_glowing_colour@の塵の雲に取り巻かれた
+%%%%
+alchemy miscast unseen
+
+# en:
+#   The air has a green tinge for a moment
+#
+#   Sulphurous heat explodes from thin air
+#
+#   An unseen figure is coated in salt
+空気が一瞬緑色を帯びた
+
+何もない空間から硫黄臭い熱気が噴き出した
+
+見えない何者かが塩にまみれた
+%%%%
+forgecraft miscast player
+
+# en:
+#   You lose structural integrity
+#
+#   You feel yourself deconstruct slightly
+#
+#   A [buzzing|clanking|creaking|whirring] sound echoes in your mind
+#
+#   Metal odds and ends fall onto you out of nowhere
+#
+#   You are covered in metallic shards
+#
+#   You are caught in an explosion of metallic debris
+あなたは構造の健全性を失った
+
+自分の体が少し分解されるのを感じた
+
+[ブーンという|ガチャガチャという|ギシギシという|ウィーンという]音が頭の中に響いた
+
+どこからともなく金属のがらくたがあなたの上に降ってきた
+
+あなたは金属の破片にまみれた
+
+あなたは金属の破片の爆発に巻き込まれた
+%%%%
+forgecraft miscast monster
+
+# en:
+#   @The_monster@ loses structural integrity
+#
+#   Metal odds and ends fall onto @the_monster@ out of nowhere
+#
+#   @The_monster@ is covered in metallic shards
+#
+#   @The_monster@ is caught in an explosion of metallic debris
+@The_monster@は構造の健全性を失った
+
+どこからともなく金属のがらくたが@the_monster@の上に降ってきた
+
+@The_monster@は金属の破片にまみれた
+
+@The_monster@は金属の破片の爆発に巻き込まれた
+%%%%
+forgecraft miscast unseen
+
+# en:
+#   Metal odds and ends rain from above
+#
+#   An unseen figure is covered in metallic shards
+#
+#   Metallic debris explodes from thin air
+上から金属のがらくたが降り注いだ
+
+見えない何者かが金属の破片にまみれた
+
+何もない空間から金属の破片が爆発的に飛び散った
+%%%%

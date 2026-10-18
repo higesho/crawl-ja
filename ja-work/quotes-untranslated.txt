@@ -1,0 +1,196 @@
+# descript/quotes.txt で訳さなかった項目(英語版のまま表示される)
+# 書式: キー<TAB>出典・理由。区分ごとにまとめる。
+
+## 近年の英訳・英訳者不明(原典は古いが、英訳に著作権が残る、または確認できない)(26 件)
+An opulent altar of Gozag	ケベード(1645 年没)。英訳 Christopher Johnson 2009
+A gateway to Hell	ダンテ『神曲』地獄篇第 3 歌。英訳 John Ciardi 1954(1986 年没)
+A stormy altar of Qazlal	ヴァルター・ベンヤミン(1940 年没)。英訳 Harry Zohn 1969
+Banishment spell	エルネスト・ルナン(1892 年没)。英訳者不明
+amulet	ヴィクトル・ユゴー『ノートルダム・ド・パリ』。英訳者不明
+horn of Geryon	聖書の新リビング訳(1996)
+long sword	ベルナール・ディアス・デル・カスティーリョ。英訳 J. M. Cohen 1963
+ring of see invisible	サン=テグジュペリ『星の王子さま』。英訳者不明(Katherine Woods 訳なら 1968 年没)
+ring of strength	ニーチェ。英訳者不明
+greatsling "Punk"	ウェルギリウス『アエネーイス』。英訳 E. Fairfax Taylor(没年未確認)
+Geryon	ヘシオドス『神統記』。英訳者不明(表記からラティモア訳 1959 と思われる)
+mad acolyte of Lugonu	ニーチェ『善悪の彼岸』。英訳者不明
+__c_suffix	オウィディウス『変身物語』。英訳者不明(A. S. Kline 訳 2000 と思われる)
+daeva	『アヴェスター』。英訳 1951(訳者の没年未確認)
+efreet	コーラン。英訳者不明(表記から Rashad Khalifa 訳 1989 と思われる)
+eidolon	ホメロス『イリアス』。英訳 Robert Fagles 1990
+emperor scorpion	カッシウス・ディオ。英訳 Earnest Cary 1925(没年未確認)
+harpy	ウェルギリウス(英訳 C. Day Lewis と思われる)とアポロニオス(英訳 E. V. Rieu と思われる)
+kraken	ヤコブ・ヴァレンベリ(1781)。英訳の出所不明
+nagaraja	パーリ経典。英訳 Thanissaro Bhikkhu(存命)
+ophan	聖書の新国際版(NIV)
+protean progenitor	『オルペウス讃歌』。英訳 2013
+shadow demon	シュテファン・ツヴァイク(1942 年没)。英訳者不明
+stone giant	セルバンテス『ドン・キホーテ』。英訳 1997 と表記
+training dummy	ヴァルター・ベンヤミン。英訳 Scott J. Thompson 1997
+ushabti	『死者の書』。英訳 2010(John H. Taylor 編)
+
+## 作者の没後 70 年未満(1956 年以降に没、または存命)(67 件)
+calcifying dust cloud	T・S・エリオット「荒地」(1922)。1965 年没
+The open sea	アヴラム・デイヴィッドソン「Dagon」(1959)。1993 年没
+A portal to somewhere	ローレンス・イェップ『Dragon War』(1992)。存命
+A shaft	J・B・S・ホールデン「On Being The Right Size」(1926)。1964 年没
+A staircase leading out of the dungeon	T・S・エリオット「リトル・ギディング」(1943)
+Abyss	Jonathan Wojcik『Awful Hospital』(2021)
+Desolation	パブロ・ネルーダ「塩へのオード」(1957)。1973 年没。英訳 Philip Levine
+Elven Halls	テリー・プラチェット『Lords and Ladies』(1992)。2015 年没
+Corrupt ability	T・S・エリオット「Prufrock's Pervigilium」(1996 公刊)
+Dragon's Call spell	テリー・プラチェット『Guards! Guards!』(1989)
+Mercury Arrow spell	Karen Pinkus『Alchemical Mercury』(2009)
+Passwall spell	ロバート・フロスト(1963 年没)
+Poison Arrow spell	ボルヘス(1986 年没)。英訳 Mildred Boyle
+Sticky Flame spell	テリー・プラチェット『Jingo』(1997)
+dark maul	ヤヌシュ・クリスタ『Kajko i Kokosz』。2008 年没
+demon whip	J・R・R・トールキン『旅の仲間』(1954)。1973 年没
+eveningstar "Brilliance"	A. C. H. Smith『ダーククリスタル』ノベライズ(1982)
+hand cannon	スティーヴン・キング『ダーク・タワー III』。存命
+manual	ロバート・フルガム。存命
+phantom mirror	ボルヘス「トレーン、ウクバール、オルビス・テルティウス」。英訳 Andrew Hurley 1998
+potion of curing	Noah S. Sweat Jr.「If By Whiskey」(1952)。1996 年没
+potion of moonshine	Noah S. Sweat Jr.「If By Whiskey」(1952)。1996 年没
+ring of flight	ガルシア=マルケス(2014 年没)。英訳 Gregory Rabassa
+ring of ice	ロバート・フロスト「炎と氷」(1920)。1963 年没
+scimitar	ボルヘス「剣の形」。英訳 Andrew Hurley
+scroll of acquirement	ストルガツキー兄弟『路傍のピクニック』(1972)。英訳 Antonina W. Bouis 1977
+scroll of amnesia	Tera Lynn Childs。存命
+scroll of butterflies	ニール・ゲイマン&テリー・プラチェット『グッド・オーメンズ』(1990)
+scroll of noise	Giorgio de Maria『The Twenty Days of Turin』(1975)。英訳 2016
+scythe	レイ・ブラッドベリ(2012 年没)
+staff of fire	ボルヘス「円環の廃墟」。英訳 Anthony Bonner 1962
+storm talisman	ブランドン・サンダースン。存命
+Asterion	ボルヘス「アステリオーンの家」。英訳 2008
+Ilsuiw	T・S・エリオット「J・アルフレッド・プルーフロックの恋歌」
+Norris	ジョルジュ・プーレ。1991 年没
+Vv	N・K・ジェミシン『第五の季節』(2015)。存命
+spriggan baker	Emory R. Frie『Wonderland』(2016)
+apocalypse crab	T・S・エリオット「J・アルフレッド・プルーフロックの恋歌」
+diamond obelisk	サンディア国立研究所の報告書(1993)
+dream sheep	フィリップ・K・ディック。1982 年没
+fire crab	ダグラス・アダムス『銀河ヒッチハイク・ガイド』(1979)。2001 年没
+gnoll	ダンセイニ卿(1912)。1957 年没
+goblin	J・R・R・トールキン『ホビットの冒険』
+golden dragon	フィリップ・ラーキン。1985 年没
+guardian golem	アヴラム・デイヴィッドソン「ゴーレム」(1955)。1993 年没
+hog	E・B・ホワイト『シャーロットのおくりもの』。1985 年没
+human	ベルトルト・ブレヒト(1956 年没)。英訳者不明
+komodo dragon	ダグラス・アダムス『これが見納め』(1990)
+nameless horror	アーシュラ・K・ル=グウィン『影との戦い』(1968)。2018 年没
+nekomata	テリー・プラチェット(2001)
+octopode	トマス・ピンチョン『重力の虹』(1973)。存命
+oni incarcerator	Noriko T. Reider『Japanese Demon Lore』(2010)
+program bug	ジェラルド・ワインバーグ。2018 年没
+shadowghast	T・S・エリオット「うつろな人間」(1925)
+shadow wraith	ヒューズ・マーンズ「Antigonish」。1965 年没
+simulacrum	ジャン・ボードリヤール(1994)。2007 年没。英訳 1995
+sixfirhy	カール・サンドバーグ「Gargoyle」(1918)。1967 年没
+sky beast	ジェイムズ・サーバー(1934)。1961 年没
+soul eater	E・M・シオラン(1956)。1995 年没
+spatial maelstrom	レザ・ネガレスターニー『Cyclonopedia』(2008)
+tentacled monstrosity	ラヴクラフト&ヘイゼル・ヒールド「永劫より」(1935)。ヒールドは 1961 年没
+toenail golem	ボルヘス「足の爪」。英訳 Andrew Hurley 1998
+ufetubus	チェスワフ・ミウォシュ。2004 年没
+vampire bat	セオドア・レトキ「The Bat」(1938)。1963 年没
+vine stalker	クラーク・アシュトン・スミス(1933)。1961 年没
+wraith	ルイス・アンターマイヤー「Prayer」(1919)。1977 年没
+wyrmhole	N・デイヴィッド・マーミン(1998)。存命
+
+## リンク先が未訳(リンク先が英語のままなので項目を作らない)(16 件)
+A crumbling gateway	<Desolation>
+A gateway leading deeper into the Abyss.	<Abyss>
+A staircase to the Elven Halls	<Elven Halls>
+A staircase to the Orcish Mines	<Orcish Mines>
+A staircase to the Shoals	<Shoals>
+Agony spell	<Curse of Agony spell>
+Spellspark Servitor spell	<spellspark servitor>
+amulet of faith	<amulet>
+amulet of guardian spirit	<amulet>
+amulet of magic regeneration	<amulet>
+amulet of reflection	<amulet>
+amulet of regeneration	<amulet>
+amulet of the acrobat	<amulet>
+amulet of nothing	<amulet>
+dreamdust necklace	<dreamshard necklace>
+__q_suffix	<__d_suffix>
+
+## 映画・テレビ・ゲーム・漫画・ウェブ(34 件)
+A gateway to a ziggurat	ゲーム『ゼロウィング』(1990)
+A shimmering altar of Xom	dril(Twitter、2014)
+Shoals	ゲーム『The Sea Will Claim Everything』(2012)
+Awaken Forest spell	ウェブ漫画『The Order of the Stick』
+Brain Bite spell	テレビ『レッド・ドワーフ』(1993)
+Curse of Agony spell	映画『ヘルレイザー3』(1992)
+Fire Storm spell	カードゲーム『マジック:ザ・ギャザリング』
+Iskenderun's Battlesphere spell	ウェブ漫画『Schlock Mercenary』(2008)
+Petrify spell	ウェブ漫画『Cat and Girl』(2011)
+Slimify ability	映画『フライングハイ』(1980)
+Swiftness spell	Twitter(2018)
+cloak of the Thief	dril(Twitter、2016)
+frozen axe "Frostbite"	映画『スタートレックII カーンの逆襲』(1982)
+iron giant	映画『アイアン・ジャイアント』(1999)
+potion of enlightenment	テレビ『レジェンド・オブ・コーラ』(2014)
+ring of intelligence	漫画『カルビンとホッブス』(1993)
+ring of poison resistance	映画『プリンセス・ブライド・ストーリー』(1987)
+scroll of fog	漫画『カルビンとホッブス』(1993)
+Lodul	ウェブ漫画『Cat and Girl』(2010)
+Murray	ゲーム『モンキー・アイランド』
+Parghit	Twitter(2017)
+__d_suffix	ウェブアニメ『Homestar Runner』の「Trogdor」(2003)
+bes kemwar	ウェブサイト『A Book of Creatures』(2020)
+chonchon	ウェブサイト『A Book of Creatures』(2015)
+demonspawn soul scholar	ウェブ漫画『Schlock Mercenary』(2008)
+dryad	ウェブ漫画『The Order of the Stick』
+hell knight	ウェブ漫画『Exiern』
+kobold	カードゲーム『マジック:ザ・ギャザリング』
+lost soul	カードゲーム『マジック:ザ・ギャザリング』
+merfolk impaler	映画『ライトハウス』(2019)
+tyrant leech	テレビ『X-ファイル』(1994)
+vampire	ウェブ漫画『Yet Another Fantasy Gamer Comic』
+very ugly thing	テレビ『マペット・ショー』(1977)
+water nymph	映画『モンティ・パイソン・アンド・ホーリー・グレイル』(1975)
+
+## 歌詞(近現代の歌)(38 件)
+A sacrificial altar of Ru	Celestial Navigations「The Sniper」(1995)
+Orcish Mines	マール・トラヴィス「Sixteen Tons」(1946)
+Bat Form ability	バウハウス「Bela Lugosi's Dead」(1979)
+Bend Time ability	リチャード・オブライエン「Time Warp」(1975)
+Cause Fear spell	The Mars Volta(2005)
+Ensorcelled Hibernation spell	ユーリズミックス「Sweet Dreams」(1983)
+Frozen Ramparts spell	ジェスロ・タル(1974)
+Irradiate spell	ブラック・サバス「Electric Funeral」(1970)
+Magic Dart spell	ASP「Verwandlungen I-III」(2008)
+Slouch ability	リチャード・オブライエン「Time Warp」(1975)
+Step From Time ability	リチャード・オブライエン「Time Warp」(1975)
+Summon Illusion spell	ナイン・インチ・ネイルズ「Copy Of A」(2013)
+Temporal Distortion ability	リチャード・オブライエン「Time Warp」(1975)
+Waterstrike spell	トーキング・ヘッズ「Once in a Lifetime」(1980)
+dreamshard necklace	「Was It a Dream?」(1928)。作詞の Sam Coslow は 1982 年没
+hammer	Onah L. Spencer の「John Henry」(20 世紀初め)。採録者の没年不明
+ring of fire	ジューン・カーター&マール・キルゴア「Ring of Fire」(1963)
+ring of stealth	ハワード・ジョーンズ「Hide and Seek」(1984)
+scroll of silence	サイモン&ガーファンクル「サウンド・オブ・サイレンス」(1964)
+talisman of death	ノーマ・タネガ「You're Dead」(1966)
+tower shield of Ignorance	ホール&オーツ「No Brain, No Pain」(1979)
+Aizul	テイラー・スウィフト「Innocent」(2010)
+Harold	Front 242「Headhunter」
+Cloud Mage	アンドリュー・バード「Banking on a Myth」(2005)
+battlesphere	They Might Be Giants「Birdhouse in Your Soul」(1989)
+bullfrog	「Hello! Ma Baby」(1899)。作曲の Joseph E. Howard は 1961 年没
+ghost moth	ジューダス・プリースト「Electric Eye」(1982)
+jelly	バート・バカラック&マック・デイヴィッド「Beware of the Blob」(1958)
+Killer Klown	コール・ポーター「Be a Clown」(1948)。1964 年没
+necromancer	ラッシュ「The Necromancer」(1975)
+Orb Guardian	DMX「X Gon' Give It To Ya」(2002)
+profane servitor	Dissection「Where Dead Angels Lie」(1996)
+reaper	ブルー・オイスター・カルト「(Don't Fear) The Reaper」(1976)
+shambling mangrove	ラッシュ「The Trees」(1978)
+spellspark servitor	スージー・アンド・ザ・バンシーズ「Spellbound」
+starcursed mass	Thee Silver Mt. Zion(2010)
+tengu warrior	Andrew Bird's Bowl of Fire「Cock o' the Walk」(1998)
+wretched star	The Sunbeams「The Tug」(2020)
+
+## 作者の没年不明(1 件)
+eveningstar	T. M. Allison(1908)。没年不明

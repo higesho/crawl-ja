@@ -61,25 +61,25 @@
 - Lua の構文確認は `crawl.exe -builddb -rc <rc>`(DB と迷宮定義を作って終了。エラーは標準出力)。
 
 ## DB テキスト(dat/database/ja, dat/descript/ja)
-進み具合は `python -I ja-tools/dbtools.py status` で見る。主な未訳・注意点:
-- 台詞 DB: "Beogh apostle challenge" など、ja/godspeak.txt のゾムの台詞、ja/monspeak.txt の
-  `nobody_recollection fire` など、`recite_closure`(ジンの朗唱の結び)、`eel hand actions` /
-  `eel hand solo actions`、`getMiscString(<名前> + " title")`(名前付きモンスターの肩書き)、
-  `harlequin_trap_lines`(今は traps.txt で表示側 jtrans)。
-- mon-speak.cc の `_invalid_msg` は、プレイヤーが相手でないときに「あなた」を含む ja 台詞を
-  弾く。mon-cast.cc は台詞の日本語文を「身振り」「指さ」「指差」で探して身振りか判定する。
-  台詞を訳すときは注意。
-- ja/shout.txt: imp の台詞、Sphinx riddle(`_riddle_*`)、`__BUGGY` など未訳
-  (今は jtrans/shout.txt のテンプレート訳で応急対処。DB を訳したらテンプレート訳と整合を取る)。
-- ja/wpnnoise.txt、ja/colourname.txt(宝石を全部集めたときの色名)、misc DB の噴水・食料の文
-  (`_walk_on_decor`。`@your_weapon@` / `@your_hands@` には英語名を入れている)、
-  `hell_effect_noisy` / `hell_effect_quiet`、呪文失敗時の文(spl-miscast の `_do_msg`)、
-  `summon_horrible_things` の ja を確認・作成する。spl-miscast.cc の "'s body" 除去は英文向け。
-- descript/ja/hints.txt はほぼ未訳。神の説明画面の能力・神罰の段落も未訳がある。
-- descript/ja/branches.txt の Lair などに 0.34 で変わった旧訳(「8の階層」など)が残る。
-- descript/ja/backgrounds.txt の Artificer「熟練工」・Warper「転移術師」を職業名
-  (data-jobs.txt の発動術師・転位術師)に揃える。dat/database/ja/godname.txt は一部のみ。
+第 7 陣で全訳済み(`python -I ja-tools/dbtools.py status` で未訳は quotes.txt の 182 件だけ)。
+- quotes.txt の 182 件は著作権の関係で英語のまま(一覧と理由は ja-work/quotes-untranslated.txt)。
+- 台詞の注意: mon-speak.cc の `_invalid_msg` は、プレイヤーが相手でないときに「あなた」を含む
+  ja 台詞を弾く。mon-cast.cc は台詞の「身振り」「指さ」「指差」で身振りかを判定する。
+  `@to_foe@` / `@at_foe@` の直後は「に」「を」「に向かって」のどれか(mon-util.cc の消去規則)。
+  内部キー(`_recite_what_` など)の形は ja/monspeak.txt の訳に合わせる。
+- jtrans/shout.txt のテンプレート訳は ja/shout.txt ができたので使われなくなった(消してよい)。
+- player-reacts.cc の `_do_eel_flavour_msg` の `@head@` / `@skin@` は英語(今は訳文で未使用)。
+- mon-info.cc の `_mname_j`: 全角を含む名前は『』を付けずに返す(「オークの司祭ボグダン」)。
+- monname.txt を訳したので、使徒・祖霊の名前とコグリンの武器の銘は日本語でセーブ・
+  morgue・スコアに残る(日本語専用のフォークなのでこれでよい)。
+- spl-miscast.cc の "'s body" 除去は英文向けのまま(体のないモンスターでも「〜の体」が残る)。
+- 英語版の誤り(訳では直した): graffiti の `@graffiti_author_any@`(下線抜け)、decorlines の
+  `Jiyva peaceful fountain_blue` の重複、hints のタグの誤り。monstatus と mutations にも重複キー。
 - docs のヘルプ(マニュアル、適性表、changelog)は英語のまま。
+
+## art-func.h(固定アーティファクトの効果)
+- 107 件のメッセージが未包(jtrans 0 件。ヘッダなので jtools の check の対象外だった)。
+  "A voice whispers, \"" は player-equip.txt の `A voice whispers, "%s"` を使える。
 
 ## notes.cc
 - `NOTE_INFERNAL_MARK`("Branded self with the %s")と `NOTE_ANCESTOR_TYPE` の定型文が英語の

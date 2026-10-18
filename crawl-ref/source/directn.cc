@@ -3124,13 +3124,14 @@ void _walk_on_decor(dungeon_feature_type new_grid)
 
         // XXX: Ugly, but it'd take a lot of restructuring
         //      to follow melee_attack's use of @your_weapon@.
-        // 噴水などの文(misc DB)はまだ英語なので、英語の名前を入れる。
-        // TODO: DB を訳すときは日本語の名前(「あなたの」+ name())に替える。
-        string weap = "your " + (you.weapon() ? you.weapon()->name(DESC_DBNAME).c_str()
-                                              : you.hand_name_en(true));
+        // 噴水などの文(ja/decorlines.txt)は日本語なので、日本語の名前を入れる
+        const string weap = jtrans("your")
+                            + (you.weapon() ? you.weapon()->name(DESC_BASENAME)
+                                            : you.hand_name(true));
 
         decorLine = replace_all(decorLine, "@your_weapon@", weap);
-        decorLine = replace_all(decorLine, "@your_hands@", "your " + you.hand_name_en(true));
+        decorLine = replace_all(decorLine, "@your_hands@",
+                                jtrans("your") + you.hand_name(true));
 
         // For name-related bits in graffiti.
         decorLine = do_mon_name_replacements(decorLine);

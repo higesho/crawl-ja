@@ -130,7 +130,7 @@ class Delay
      */
     virtual void finish()
     {
-        mpr("You finish doing something buggy.");
+        mpr(jtrans("You finish doing something buggy."));
     }
 protected:
     bool started = false;
@@ -309,7 +309,7 @@ class MemoriseDelay : public Delay
 
     void tick() override
     {
-        mprf(MSGCH_MULTITURN_ACTION, "You continue memorising.");
+        mprf(MSGCH_MULTITURN_ACTION, jtransc("You continue memorising."));
     }
 
     void finish() override;
@@ -335,7 +335,7 @@ class PasswallDelay : public Delay
 
     void tick() override
     {
-        mprf(MSGCH_MULTITURN_ACTION, "You continue meditating on the rock.");
+        mprf(MSGCH_MULTITURN_ACTION, jtransc("You continue meditating on the rock."));
     }
 
     void finish() override;
@@ -617,7 +617,7 @@ class ShaftSelfDelay : public Delay
 
     void tick() override
     {
-        mprf(MSGCH_MULTITURN_ACTION, "You continue digging a shaft.");
+        mprf(MSGCH_MULTITURN_ACTION, jtransc("You continue digging a shaft."));
     }
 
     void finish() override;
@@ -670,7 +670,7 @@ class ImbueDelay : public Delay
 
     void tick() override
     {
-        mprf(MSGCH_MULTITURN_ACTION, "You continue imbuing your servitor.");
+        mprf(MSGCH_MULTITURN_ACTION, jtransc("You continue imbuing your servitor."));
     }
 
     void finish() override;
@@ -695,7 +695,7 @@ class ImprintDelay : public Delay
 
     void tick() override
     {
-        mprf(MSGCH_MULTITURN_ACTION, "You continue imprinting.");
+        mprf(MSGCH_MULTITURN_ACTION, jtransc("You continue imprinting."));
     }
 
     void finish() override;

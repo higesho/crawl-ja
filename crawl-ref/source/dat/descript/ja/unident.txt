@@ -6,6 +6,12 @@ amulet
 #   of unknown provenance.
 首飾りとして身につけるお守りだ。何かしらの魔力が込められている。
 %%%%
+book
+
+# en:
+#   An arcane textbook containing magical spells of unknown origin.
+出所の知れない魔法の呪文を記した魔術の教本だ。
+%%%%
 potion
 
 # en:
@@ -17,7 +23,7 @@ ring
 # en:
 #   A ring charged with arcane forces of unknown provenance, to be worn as jewellery
 #   on a finger.
-指輪として身につけるお守りだ。何かしらの魔力が込められている。
+指にはめる装身具の指輪だ。何かしらの魔力が込められている。
 %%%%
 scroll
 

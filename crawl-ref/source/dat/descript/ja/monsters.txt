@@ -3318,7 +3318,7 @@ Terence
 # en:
 #   A veteran of a war against the armataurs' elephant-riders. He has recently
 #   retired to make a new home in the dungeon.
-アーマトールの象騎兵との戦争を戦い抜いた古参兵だ。最近引退し、ダンジョンに新たな住まいを構えた。
+アルマタウルの象騎兵との戦争を戦い抜いた古参兵だ。最近引退し、ダンジョンに新たな住まいを構えた。
 %%%%
 Tiamat
 

@@ -4,7 +4,7 @@ Deep Elf
 # en:
 #   Deep Elves have a strong affinity for all kinds of magic, but are very fragile.
 #   They regenerate magical power rapidly.
-闇エルフは魔法の使用に熟達しているが、非常に軟弱である。
+闇エルフはあらゆる種類の魔法に強い親和性を持つが、とても体が貧弱だ。魔力の回復が速い。
 %%%%
 Demigod
 
@@ -42,30 +42,28 @@ Felid
 
 # en:
 #   Felids are many-lived sentient cats. They cannot use armour or weapons.
-フェリッドは優れた知覚を持ち、何度も生き返る。しかし高度な道具や武器、
-鎧を扱うことができない。
+フェリッドは何度も生き返る知性ある猫だ。防具や武器を扱うことができない。
 %%%%
 Gargoyle
 
 # en:
 #   Made of living stone, Gargoyles have a preternatural affinity for earth magic.
 #   They have low health, but their stone bodies are incredibly tough.
-ガーゴイルは生ける石で作られており、大地と異常なまでの親和性を持つ。
+ガーゴイルは生ける石で作られており、地の魔術に異常なまでの親和性を持つ。体力は少ないが、その石の体は信じがたいほど丈夫だ。
 %%%%
 Human
 
 # en:
 #   Humans are natural explorers. Discovering new places refreshes and invigorates them.
 #   They are otherwise completely average.
-普通で平凡な人間だ。
+人間は生まれながらの探検家だ。新しい場所を発見すると、元気を取り戻し活力がみなぎる。それ以外はまったく平均的な種族である。
 %%%%
 Tengu
 
 # en:
 #   Tengu are bird-people who love to fight, both with weapons and spells. They are
 #   fragile but agile, and eventually learn to fly.
-戦いを好む鳥人間で、武器も呪文も扱う。彼らはずいぶん軟弱だが、
-後に高速な飛行を習得する。
+天狗は戦いを好む鳥人間で、武器も呪文も扱う。体は貧弱だが身軽で、やがて飛行を習得する。
 %%%%
 Merfolk
 
@@ -88,37 +86,110 @@ Mummy
 # en:
 #   Compelled to walk by an ancient curse, Mummies have innate faith and are adept
 #   at Necromancy, but learn other skills very slowly. They cannot drink potions.
-包帯と防腐液に覆われたアンデッドの姿だ。それは古代の呪いで動いている。
+古代の呪いによって歩かされているミイラは、生まれつき信仰心を持ち、死霊術に長けているが、他のスキルを習得するのはとても遅い。薬を飲むことができない。
 %%%%
 Naga
 
 # en:
 #   Nagas are hybrids: human from the waist up, with a snake-like tail instead of
 #   legs. They move very slowly but are naturally resilient.
-ナーガは胸から上が人間で、下半身は鱗のある蛇のような混血種だ。
-彼らの移動は遅いが、生まれつき頑強である。
+ナーガは腰から上が人間で、脚のかわりに蛇のような尾を持つ混血種だ。移動はとても遅いが、生まれつき頑強である。
 %%%%
 Octopode
 
 # en:
 #   Octopodes are a species of amphibious cephalopods. They can wear eight rings,
 #   but almost no armour fits them.
-オクトポードは水陸両生の頭足類である。彼らは8つの指輪を身に付けることができるが、
-ほとんどの鎧を装備することができない。
+オクトポードは水陸両生の頭足類である。8つの指輪を身に付けることができるが、体に合う防具はほとんどない。
 %%%%
 Spriggan
 
 # en:
 #   Very small, very frail and very fast, Spriggans are highly competent stabbers
 #   and spellcasters.
-スプリガンはとても小さく、とても虚弱で、とてもすばしっこい。
-スプリガンは暗殺や呪文詠唱に優れている。
+とても小さく、とても虚弱で、とてもすばしっこいスプリガンは、急所突きや呪文詠唱に優れている。
 %%%%
 Troll
 
 # en:
 #   Trolls are monstrous creatures with powerful claws. They regenerate health
 #   rapidly.
-トロルは巨大で凶暴で、躊躇うことなく全てを鉤爪で引き裂こうとしている。
-彼らはいつも空腹である。
+トロルは強力な鉤爪を持つ怪物じみた生き物だ。体力の回復が速い。
+%%%%
+Armataur
+
+# en:
+#   Scaled mammals the size of horses, Armataurs are fast-rolling and tenacious when
+#   pursuing enemies, but lack dexterity.
+馬ほどの大きさの鱗を持つ哺乳類であるアルマタウルは、素早く転がり、しつこく敵を追いかけるが、器用さに欠ける。
+%%%%
+Barachi
+
+# en:
+#   Barachim are slow-moving, amphibious humanoids who can hop long distances.
+#   Their extended range of vision also allows them to be seen from further away.
+バラチは動きの遅い水陸両生の人型の種族で、遠くまで跳躍することができる。視界が広いが、そのぶん遠くからでも見つかってしまう。
+%%%%
+Coglin
+
+# en:
+#   Coglins ride enchanted exoskeletons able to wield weapons in both hands,
+#   wrapping slow-revving metal around their puny goblinoid frames.
+コグリンは魔法をかけられた外骨格に乗り込み、ちっぽけなゴブリンの体をゆっくりと回転する金属で包んでいる。外骨格は両手にそれぞれ武器を持つことができる。
+%%%%
+Djinni
+
+# en:
+#   Djinn are ever-burning spirits. They learn spells automatically as they grow,
+#   and cast by drawing down their own fires.
+ジンニーは永遠に燃え続ける精霊である。成長するにつれて自然に呪文を覚え、自らの炎を引き出して呪文を唱える。
+%%%%
+Gnoll
+
+# en:
+#   Gnolls are canine-like humanoids. They are unable to specialise in any single
+#   skill, but instead gradually become proficient in all skills at once.
+ノールは犬のような人型の種族だ。ひとつのスキルを専門的に鍛えることができず、そのかわりすべてのスキルが同時に少しずつ上達していく。
+%%%%
+Kobold
+
+# en:
+#   Kobolds are attuned to the shadows and can only see or be seen at a close range.
+#   They are small and a little fragile, and are talented in most skills.
+コボルドは影に親しんでおり、近くのものしか見えず、近くからしか見つからない。小柄でやや体が貧弱だが、ほとんどのスキルに才能がある。
+%%%%
+Mountain Dwarf
+
+# en:
+#   Mountain Dwarves are strong melee fighters and capable heavy-armoured casters.
+#   They can use scrolls to enchant even some artefacts.
+山ドワーフは強力な近接戦闘の戦士で、重い鎧を着たままでも呪文をこなせる。巻物を使って、一部のアーティファクトにさえ強化を施すことができる。
+%%%%
+Oni
+
+# en:
+#   Large, robust, and extremely fond of drinking, Oni make capable brawlers and
+#   spellcasters and gain extra benefits from healing potions.
+大柄で頑丈で、無類の酒好きである鬼は、有能な喧嘩屋にも呪文の使い手にもなり、回復の薬からより多くの恩恵を得る。
+%%%%
+Poltergeist
+
+# en:
+#   Formless ghosts who delight in hexing their enemies. They can equip many
+#   different hats, gloves, boots, or cloaks at once, but cannot wear body armour.
+敵に呪術をかけることを好む、形のない幽霊。多くの帽子、籠手、ブーツ、クロークを同時に装備できるが、胴体の鎧は着られない。
+%%%%
+Revenant
+
+# en:
+#   Revenants are skeletal undead who are strong at melee combat and can empower
+#   damage-dealing spells by consuming memories they harvest from their victims.
+レヴナントは骸骨のアンデッドで、近接戦闘に強く、犠牲者から刈り取った記憶を消費することで、ダメージを与える呪文を強化することができる。
+%%%%
+Vine Stalker
+
+# en:
+#   Frail symbionts, Vine Stalkers cannot regain health from potions. Their magical
+#   reserves absorb damage, and they pack a magic-restoring bite.
+虚弱な共生生物である歩き蔓は、薬で体力を回復することができない。魔力の蓄えがダメージを吸収し、魔力を回復する噛みつきを持つ。
 %%%%

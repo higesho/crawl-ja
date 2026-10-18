@@ -283,3 +283,389 @@ glowing orange brain
 #   VISUAL:@The_monster@ turns @possessive@ attention towards you.
 VISUAL:@The_monster@はあなたに注意を向けた。
 %%%%
+__BUGGY
+
+# en:
+#   SOUND:You hear doubly buggy behaviour!
+SOUND:あなたは二重にバグった音を耳にした！
+%%%%
+__SKITTER unseen
+
+# en:
+#   SOUND:You hear a skittering sound.
+SOUND:あなたはカサカサという音を耳にした。
+%%%%
+__SKITTER seen
+
+# en:
+#   SOUND:@The_monster_possessive@ many legs skitter.
+SOUND:@The_monster_possessive@たくさんの脚がカサカサと音を立てた。
+%%%%
+__FAINT_SKITTER unseen
+
+# en:
+#   SOUND:You hear a faint skittering sound.
+SOUND:あなたはかすかなカサカサという音を耳にした。
+%%%%
+__FAINT_SKITTER seen
+
+# en:
+#   SOUND:@The_monster_possessive@ many legs skitter faintly.
+SOUND:@The_monster_possessive@たくさんの脚がかすかにカサカサと音を立てた。
+%%%%
+__CHERUB seen
+
+# en:
+#   SOUND:@The_monster_possessive@ eagle head screeches!
+#   
+#   SOUND:@The_monster_possessive@ lion head roars!
+#   
+#   SOUND:@The_monster_possessive@ ox head lows!
+#   
+#   SOUND:@The_monster_possessive@ human head shouts!
+SOUND:@The_monster_possessive@鷲の頭が金切り声を上げた！
+
+SOUND:@The_monster_possessive@獅子の頭が咆哮した！
+
+SOUND:@The_monster_possessive@雄牛の頭がモーと鳴いた！
+
+SOUND:@The_monster_possessive@人間の頭が叫んだ！
+%%%%
+__RUSTLE unseen
+
+# en:
+#   SOUND:You hear a loud rustle.
+SOUND:あなたは紙が大きくこすれる音を耳にした。
+%%%%
+__RUSTLE seen
+
+# en:
+#   SOUND:@The_monster_possessive@ pages rustle loudly.
+SOUND:@The_monster_possessive@ページが大きな音を立ててめくれた。
+%%%%
+__SQUEAK unseen
+
+# en:
+#   SOUND:You hear a loud squeak.
+SOUND:あなたは大きなキーキーという鳴き声を耳にした。
+%%%%
+__SQUEAK seen
+
+# en:
+#   SOUND:@The_monster@ squeaks loudly.
+SOUND:@The_monster@は大きな声でキーキーと鳴いた。
+%%%%
+__LAUGH seen
+
+# en:
+#   SOUND:@The_monster@ laughs maniacally.
+SOUND:@The_monster@は狂ったように笑った。
+%%%%
+__LAUGH unseen
+
+# en:
+#   SOUND:You hear maniacal laughter.
+SOUND:あなたは狂気じみた笑い声を耳にした。
+%%%%
+Fighter player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Hedge Wizard player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Gladiator player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Necromancer player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Brigand player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Berserker player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Hunter player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Conjurer player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Enchanter player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Fire Elementalist player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Ice Elementalist player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Summoner player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Air Elementalist player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Earth Elementalist player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Alchemist player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Chaos Knight player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Shapeshifter player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Monk player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Warper player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+Wanderer player ghost
+
+# en:
+#   @player ghost@
+@player ghost@
+%%%%
+'&'
+
+# en:
+#   @__DEMON_TAUNT@
+@__DEMON_TAUNT@
+%%%%
+'cap-J'
+
+# en:
+#   VISUAL:@The_monster@ quivers.
+VISUAL:@The_monster@はぷるぷると震えた。
+%%%%
+giant slug
+
+# en:
+#   VISUAL:@The_monster@ swivels @possessive@ eye-stalks towards you.
+VISUAL:@The_monster@は眼柄をあなたの方へ向けた。
+%%%%
+imp
+
+# en:
+#   @__SHOUT@
+#   
+#   SOUND:@The_monster@ @says@, "@imp_taunt@"
+@__SHOUT@
+
+SOUND:@The_monster@は『@imp_taunt@』と@says@。
+%%%%
+moth of wrath
+
+# en:
+#   VISUAL:@The_monster_possessive@ fur bristles in rage as it notices you.
+VISUAL:@The_monster@はあなたに気づき、怒りで毛を逆立てた。
+%%%%
+iron imp
+
+# en:
+#   @imp@
+@imp@
+%%%%
+shadow imp
+
+# en:
+#   @imp@
+@imp@
+%%%%
+white imp
+
+# en:
+#   @imp@
+@imp@
+%%%%
+Polyphemus
+
+# en:
+#   SOUND:@The_monster@ shouts, "Attack, my pets! Attack!"
+SOUND:@The_monster@は『かかれ、わがペットたちよ！ かかれ！』と叫んだ。
+%%%%
+Player sphinx riddle lines
+
+# en:
+%%%%
+_riddle_adj_
+
+# en:
+#   a baffling
+#   
+#   a brilliant
+#   
+#   w:20
+#   a clever
+#   
+#   a confusing
+#   
+#   w:20
+#   a cunning
+#   
+#   an impossible
+#   
+#   an ingenious
+#   
+#   a masterful
+#   
+#   a mind-bending
+#   
+#   a perplexing
+#   
+#   a vexing
+不可解な
+
+見事な
+
+w:20
+気の利いた
+
+ややこしい
+
+w:20
+狡猾な
+
+解けるはずのない
+
+巧妙な
+
+練り上げられた
+
+頭がねじれそうな
+
+難解な
+
+厄介な
+%%%%
+_riddle_fail_acknowledged_
+
+# en:
+#   , but @subjective@ doesn't care.
+#   
+#   , but @subjective@ is unimpressed.
+#   
+#   , but @subjective@ scoffs.
+が、相手は気にも留めなかった。
+
+が、相手は感心しなかった。
+
+が、相手は鼻で笑った。
+%%%%
+_riddle_fail_general_
+
+# en:
+#   , but @subjective@ ignores you.
+#   
+#   , but @subjective@ doesn't understand.
+#   
+#   , but @subjective@ pretends not to notice.
+#   
+#   , but @subjective@ ignores you.
+#   
+#   w:40
+#   @_riddle_fail_acknowledged_@
+が、相手はあなたを無視した。
+
+が、相手には理解できなかった。
+
+が、相手は気づかないふりをした。
+
+が、相手はあなたを無視した。
+
+w:40
+@_riddle_fail_acknowledged_@
+%%%%
+_riddle_prefix_
+
+# en:
+#   You pose @_riddle_adj_@ riddle to @the_monster@
+#   
+#   You ask @the_monster@ @_riddle_adj_@ riddle
+#   
+#   You challenge @the_monster@ with @_riddle_adj_@ riddle
+あなたは@the_monster@に@_riddle_adj_@謎をかけた
+
+あなたは@the_monster@に@_riddle_adj_@なぞなぞを出した
+
+あなたは@_riddle_adj_@謎で@the_monster@に挑んだ
+%%%%
+Sphinx riddle success
+
+# en:
+#   @_riddle_prefix_@.
+@_riddle_prefix_@。
+%%%%
+Sphinx riddle failure
+
+# en:
+#   @_riddle_prefix_@@_riddle_fail_general_@
+@_riddle_prefix_@@_riddle_fail_general_@
+%%%%
+Sphinx riddle failure acknowledged
+
+# en:
+#   @_riddle_prefix_@@_riddle_fail_acknowledged_@
+@_riddle_prefix_@@_riddle_fail_acknowledged_@
+%%%%

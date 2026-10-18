@@ -1,4 +1,405 @@
 %%%%
+pick-up
+
+# en:
+#                      <h>Picking up and dropping items</h>
+#
+#   <h>Navigation and selecting items</h>
+#   Use the usual navigation keys (<w>arrow</w> keys, <w>pgdn</w>/<w>pgup</w>, <w>home</w>, <w>end</w>) to select
+#   items, and <w>Space</w>/<w>.</w> to toggle whether the selected item will be picked up or
+#   dropped. Pressing an item's letter key will also toggle its pickup/drop state.
+#   Gear, potions, scrolls, and evocable items are on separate pages which can be
+#   switched between by <w>left arrow</w> and <w>right arrow</w> or <w>Tab</w> and <w>Shift-Tab</w>.
+#   Press <w>Return</w> to accept the current set of items.
+#
+#   Entering a number before selecting by letter will toggle just that quantity of
+#   a stack of items.
+#
+#   <h>Regular expressions</h>
+#   You can press <w>Ctrl-F</w> to enter a word (or a regular expression). All matching
+#   items will be selected.
+#
+#   <h>Category shortcuts</h>
+#   You can quickly select items by type by pressing:
+#   <w>!</w>   potions      <w>(</w>   weapons        <w>)</w>   ammunition      <w>[</w>   armour
+#   <w>/</w>   wands        <w>|</w>   magical staves <w>?</w>   scrolls         <w>:</w>   books
+#   <w>"</w>   amulets      <w>=</w>   rings          <w>}</w>   miscellaneous
+#   Global selects:  <w>,</w>   select all     <w>*</w>   invert all      <w>-</w>   deselect all
+#                    <w>;</w>   select last unequipped
+#   Note that for dropping, the <w>,</w> command uses the <w>drop_filter</w> option, which
+#   narrows the range of items to be (de)selected. The default is all useless items.
+                   <h>アイテムを拾う・置く</h>
+
+<h>移動とアイテムの選択</h>
+通常の移動キー(<w>矢印</w>キー、<w>pgdn</w>/<w>pgup</w>、<w>home</w>、<w>end</w>)でアイテムを選び、
+<w>Space</w>/<w>.</w>で選んだアイテムを拾う(置く)かどうかを切り替える。
+アイテムの文字のキーを押しても、拾う(置く)かどうかを切り替えられる。
+装備品、薬、巻物、発動できるアイテムはそれぞれ別のページにあり、
+<w>左矢印</w>と<w>右矢印</w>、または<w>Tab</w>と<w>Shift-Tab</w>でページを切り替えられる。
+<w>Return</w>を押すと、選んだアイテムで確定する。
+
+文字で選ぶ前に数字を入力すると、ひと山のアイテムのうちその数だけを切り替える。
+
+<h>正規表現</h>
+<w>Ctrl-F</w>を押すと単語(または正規表現)を入力できる。それに一致するアイテムが
+すべて選択される。
+
+<h>種類ごとの選択</h>
+以下のキーで、種類ごとにまとめて選択できる:
+<w>!</w>   薬           <w>(</w>   武器           <w>)</w>   矢弾            <w>[</w>   防具
+<w>/</w>   ワンド       <w>|</w>   魔法の杖       <w>?</w>   巻物            <w>:</w>   本
+<w>"</w>   護符         <w>=</w>   指輪           <w>}</w>   その他
+全体選択:  <w>,</w>   すべて選択     <w>*</w>   すべて反転      <w>-</w>   すべて解除
+           <w>;</w>   最後に外した装備を選択
+置くときの<w>,</w>コマンドは<w>drop_filter</w>オプションを使い、(解除の)対象となる
+アイテムを絞り込むことに注意。初期設定では役に立たないアイテムすべてが対象になる。
+%%%%
+known-menu
+
+# en:
+#                      <h>Known items menu</h>
+#
+#   <h>Navigation and selecting items</h>
+#   Use the usual navigation keys (<w>arrow</w> keys, <w>pgdn</w>/<w>pgup</w>, <w>home</w>, <w>end</w>) to select
+#   items, and <w>Space</w>/<w>.</w> to toggle the autopickup mode for the selected item type.
+#   Pressing an item type's letter key will also toggle its autopickup state.
+#
+#   <h>Selecting item types</h>
+#   Item types displayed in grey use the default autopickup options set in your
+#   configuration file. (Items that are useless to your character are displayed
+#   in <darkgrey>dark grey</darkgrey>.) Selecting a type of item overrides those options
+#   (indicated by <w>white</w> text), and toggles the item between the states:
+#    <w>+</w>  Items of this type will be picked up automatically.
+#    <w>-</w>  Items of this type will not be picked up automatically.
+#   Autopickup can also be toggled for all unknown items of a given category.
+#
+#   <h>Category shortcuts</h>
+#   You can quickly select all item types in a given category by pressing:
+#   <w>!</w>   potions      <w>?</w>   scrolls      <w>(</w>   ammunition        <w>"</w>   amulets
+#   <w>=</w>   rings        <w>/</w>   wands        <w>|</w>   magical staves
+#   Global selects:  <w>*</w>   invert all   <w>^</w>   reset all to default
+#
+#   <h>Viewing unknown and known items</h>
+#   <w>\</w> and <w>-</w> toggle between the known and unknown items menus. Note
+#   that none of the above features are available from the unknown items menu.
+#
+#   <h>Restoring autopickup defaults</h>
+#   Pressing <w>Ctrl-D</w> followed by an item letter or a category shortcut
+#   cancels the override and restores the selected item or items to their default
+#   settings.
+#
+#   <h>Regular expressions</h>
+#   You can press <w>Ctrl-F</w> to enter a word (or a regular expression).
+#   All matching items will be selected.
+                   <h>既知のアイテム一覧</h>
+
+<h>移動とアイテムの選択</h>
+通常の移動キー(<w>矢印</w>キー、<w>pgdn</w>/<w>pgup</w>、<w>home</w>、<w>end</w>)でアイテムを選び、
+<w>Space</w>/<w>.</w>で選んだアイテムの種類の自動拾いの設定を切り替える。
+アイテムの種類の文字のキーを押しても、自動拾いの設定を切り替えられる。
+
+<h>アイテムの種類の選択</h>
+灰色で表示されているアイテムの種類には、設定ファイルにある自動拾いの初期設定が
+使われる。(あなたのキャラクターにとって役に立たないアイテムは<darkgrey>暗い灰色</darkgrey>で
+表示される。)アイテムの種類を選ぶとその設定を上書きし(<w>白</w>の文字で示される)、
+以下の状態を切り替える:
+ <w>+</w>  この種類のアイテムを自動的に拾う。
+ <w>-</w>  この種類のアイテムを自動的には拾わない。
+各分類の未鑑定のアイテムすべてについても、自動拾いを切り替えられる。
+
+<h>分類ごとの選択</h>
+以下のキーで、その分類に入るアイテムの種類をまとめて選択できる:
+<w>!</w>   薬           <w>?</w>   巻物         <w>(</w>   矢弾              <w>"</w>   護符
+<w>=</w>   指輪         <w>/</w>   ワンド       <w>|</w>   魔法の杖
+全体選択:  <w>*</w>   すべて反転   <w>^</w>   すべて初期設定に戻す
+
+<h>未鑑定と既知のアイテムの表示</h>
+<w>\</w>と<w>-</w>で、既知のアイテムの一覧と未鑑定のアイテムの一覧を切り替える。
+未鑑定のアイテムの一覧では、上の機能はどれも使えないことに注意。
+
+<h>自動拾いの初期設定に戻す</h>
+<w>Ctrl-D</w>に続けてアイテムの文字か分類のキーを押すと、上書きを取り消し、
+選んだアイテムを初期設定に戻す。
+
+<h>正規表現</h>
+<w>Ctrl-F</w>を押すと単語(または正規表現)を入力できる。
+それに一致するアイテムがすべて選択される。
+%%%%
+stash-search.prompt
+
+# en:
+#   <h>Searching the stash-tracker</h>
+#
+#   You can search for items and dungeon features by name (or a substring of the
+#   name). In the list of search results, you can select a search result by its
+#   hotkey to travel to its location.
+#
+#   Some examples of search strings:
+#   <w>mutation</w>      find all potions of mutation, including potions in shops.
+#   <w>throwing net</w>  finds every single throwing net and piles of nets.
+#   <w>shop</w>          lists all shops. Press <w>!</w> and a shop's letter for the stock.
+#   <w>Lair:2</w>        find everything known to be on Lair:2.
+#   <w>/D:[2-4]</w>      finds everything on Dungeon levels 2-4. Regexes are allowed!
+#                 Note that /D:[3-10] will not work as intended, since [x-y] is a
+#                 regex character range.
+#   <w>rPois</w>         finds all items with an rPois resistance.
+#   <w>rC++</w>          finds all items with an rC++ resistance.
+#   <w>+3</w>            finds all items with a +3 enchantment.
+#   <w>/Lair.*axe</w> and <w>axe && Lair</w> both show all axes in the Lair.
+#
+#   Some shortcuts:
+#   <w>.</w>             lists everything on your current level.
+#   <w>..</w>            lists all items you know.
+#   <w>0</w> to <w>9</w>        lists all items at the specified waypoint.
+#   <w>*</w>             lists all items at all waypoints.
+#   <w>@<<query></w>      lists everything matching <<query> on your current level.
+#   <w>/<<regex></w>      lists items matching <<regex> as a regular expression.
+#   <w>=<<string></w>     lists items containing <<string> as a substring.
+#
+#   You can also examine shops and items in the search results by pressing <w>?</w> and
+#   then selecting the hotkey for the search result. This will give a description
+#   of the item or the contents of the shop.
+#
+#   The stash search string is case-insensitive.
+#
+#   <h>Searching by item properties:</h>
+#
+#   You can search for spell names (such as <w>Ignite Poison</w>) to find spellbooks
+#   that contain the spell.
+#
+#   You can search for artefact item properties (such as <w>/prevents.*teleport</w>)
+#   to find artefacts that have the property.
+#
+#   You can search by some additional item properties: <w>artefact</w> or
+#   <w>artifact</w> will find identified artefacts, <w>ego</w> or <w>branded</w>
+#   will find non-artefacts with a brand and unidentified items which may be
+#   branded, <w>throwable</w> will find things you can throw, <w>dropped</w> will
+#   find items you have dropped, <w>in_shop</w> will find items in shops, and (if
+#   the autopickup_search option is enabled) <w>autopickup</w> will find items that
+#   would be automatically picked up.
+#
+#   Skill names (such as <w>Polearms</w> or <w>Long Blades</w>) will find all weapons that
+#   train that skill. You can also look for <w>melee weapon</w> and <w>ranged weapon</w>.
+#
+#   You can also search by item types such as <w>book</w> or <w>manual</w> or <w>jewellery</w>.
+#   For armour slots, use <w>helmet</w> (all headgear), <w>gloves</w>, <w>shield</w>, and <w>body</w>.
+#   Use <w>armour && !!body</w> to list all armour pieces except for body armour.
+#
+#   <h>Finding Dungeon Features:</h>
+#
+#   You can search for dungeon features by name: all shops will be found by a search
+#   for <w>shop</w> (including shops that do not have "shop" in their name); other
+#   dungeon features can also be found by name: <w>dispersal trap</w>, <w>altar</w>,
+#   etc. You can also search for altars by deity name: <w>Zin</w>.
+#
+#   <h>Non-regex operators:</h>
+#
+#   You can use !! to negate a search string, && for a boolean AND, || for
+#   boolean OR, and <<<< >> for grouping.
+#
+#   For instance, to find rings (jewellery) but not ring mail you could use:
+#   <w>ring && !!mail</w>
+#
+#   Note that <w>/</w> and <w>=</w> apply to individual patterns, not the entire query:
+#   you should search for <w>armour && /r(C|F|Pois|Elec)</w>, not
+#   <w>/armour && r(C|F|Pois|Elec)</w>.
+<h>アイテム記録の検索</h>
+
+アイテムやダンジョンの地形を、名前(または名前の一部)で検索できる。
+検索結果の一覧では、結果のキーを押すとその場所へ移動できる。
+アイテムの名前は日本語でも英語でも検索できる。
+
+検索文字列の例:
+<w>mutation</w>      店にあるものも含め、すべての突然変異の薬を探す。
+<w>throwing net</w>  投網と投網の山をひとつ残らず探す。
+<w>shop</w>          すべての店を一覧表示する。<w>!</w>と店の文字で品揃えを見る。
+<w>Lair:2</w>        Lair:2 にあると分かっているものをすべて探す。
+<w>/D:[2-4]</w>      ダンジョンの2～4階にあるものをすべて探す。正規表現が使える！
+              ただし /D:[3-10] は意図した通りには動かない。[x-y] は正規表現の
+              文字の範囲指定だからだ。
+<w>rPois</w>         毒耐性(rPois)を持つアイテムをすべて探す。
+<w>rC++</w>          冷気耐性 rC++ を持つアイテムをすべて探す。
+<w>+3</w>            強化値が+3のアイテムをすべて探す。
+<w>/Lair.*axe</w>と<w>axe && Lair</w>は、どちらもLairにあるすべての斧を表示する。
+
+ショートカット:
+<w>.</w>             今いる階にあるものをすべて一覧表示する。
+<w>..</w>            知っているアイテムをすべて一覧表示する。
+<w>0</w>～<w>9</w>        指定した中継地点にあるアイテムをすべて一覧表示する。
+<w>*</w>             すべての中継地点にあるアイテムをすべて一覧表示する。
+<w>@<<query></w>      今いる階で<<query>に一致するものをすべて一覧表示する。
+<w>/<<regex></w>      正規表現<<regex>に一致するアイテムを一覧表示する。
+<w>=<<string></w>     文字列<<string>を含むアイテムを一覧表示する。
+
+検索結果の一覧で<w>?</w>を押してから結果のキーを押すと、その店やアイテムを調べられる。
+アイテムの説明や店の品揃えが表示される。
+
+検索文字列では大文字と小文字を区別しない。
+
+<h>アイテムの特性による検索:</h>
+
+呪文の名前(<w>Ignite Poison</w>など)で検索すると、その呪文の載った魔法書が見つかる。
+
+アーティファクトの特性(<w>/prevents.*teleport</w>など)で検索すると、その特性を
+持つアーティファクトが見つかる。
+
+ほかにもいくつかのアイテムの特性で検索できる: <w>artefact</w>または
+<w>artifact</w>で鑑定済みのアーティファクト、<w>ego</w>または<w>branded</w>で
+エゴを持つアーティファクト以外のアイテムとエゴを持つかもしれない未鑑定のアイテム、
+<w>throwable</w>で投げられる物、<w>dropped</w>で自分が置いたアイテム、
+<w>in_shop</w>で店にあるアイテム、(autopickup_search オプションが有効なら)
+<w>autopickup</w>で自動的に拾われるアイテムが見つかる。
+
+技能の名前(<w>Polearms</w>や<w>Long Blades</w>など)で検索すると、その技能を鍛える武器が
+すべて見つかる。<w>melee weapon</w>や<w>ranged weapon</w>でも探せる。
+
+<w>book</w>、<w>manual</w>、<w>jewellery</w>のようなアイテムの種類でも検索できる。
+防具の部位は<w>helmet</w>(頭の防具すべて)、<w>gloves</w>、<w>shield</w>、<w>body</w>を使う。
+<w>armour && !!body</w>で、胴の防具以外の防具をすべて一覧表示する。
+
+<h>ダンジョンの地形の検索:</h>
+
+ダンジョンの地形を名前で検索できる。<w>shop</w>で検索するとすべての店が見つかる
+(名前に「shop」を含まない店も含む)。ほかの地形も名前で見つかる: <w>dispersal trap</w>、
+<w>altar</w>など。神の名前(<w>Zin</w>)で祭壇を探すこともできる。
+
+<h>正規表現でない演算子:</h>
+
+!!で検索文字列の否定、&&で論理積(AND)、||で論理和(OR)、<<<< >>でグループ化ができる。
+
+例えば、指輪(装飾品)を探したいが鎖帷子(ring mail)は除きたいときは:
+<w>ring && !!mail</w>
+
+<w>/</w>と<w>=</w>は検索式全体ではなく個々のパターンに適用されることに注意:
+<w>/armour && r(C|F|Pois|Elec)</w>ではなく、<w>armour && /r(C|F|Pois|Elec)</w>と
+検索すること。
+%%%%
+level-map
+
+# en:
+#   <h>Level Map ('<w>X</w>' in the main screen):</h>
+#   <w>Esc</w>        : Leave level map (also <w>Space</w> or any unused key).
+#   <w>Dir.</w>       : Move the cursor.
+#   <w>Shift-Dir.</w> : Move the cursor in larger steps (7 by default).
+#   <w>-</w> or <w>+</w>     : Scroll level map 20 grids up or down.
+#   <w>.</w>          : Start travel (also <w>Enter</w> and <w>,</w> and <w>;</w>).
+#                (Moves cursor to the last travel destination if still on @.)
+#   <w>[</w> or <w>]</w>     : Examine the next higher or lower level.
+#                (Moves cursor to the staircase destination if a known staircase is
+#                highlighted.)
+#   <w>G</w>          : View another level by choosing a branch and depth.
+#   <w>o</w>          : Move the cursor to the next autoexplore target.
+#   <w>{</w> or <w>}</w>     : Zoom out or in (tiles only).
+#
+#   <h>Travel exclusions</h>
+#   <w>e</w>          : Create a travel exclusion, change its radius, or remove it.
+#   <w>R#</w>         : Create a travel exclusion with a specified radius or change
+#                its radius to #, where # is a number from 1 to 8.
+#   <w>E</w>          : Cycle through travel exclusions.
+#   <w>Ctrl-E</w>     : Erase all travel exclusions on the level.
+#
+#   <h>Waypoints</h>
+#   <w>w</w>          : Set waypoint to current position.
+#   <w>W</w>          : Cycle through all waypoints on the level.
+#
+#   <h>Cycle through features</h>
+#   <w><<</w> or <w>></w>     : Cycle through up or down stairs.
+#   <w>^</w>          : Cycle through traps.
+#   <w>\</w> or <w>Tab</w>   : Cycle through shops and portals.
+#   <w>I</w>          : Cycle forward through all items.
+#   <w>O</w>          : Cycle backward through all items.
+#   <w>_</w>          : Cycle through altars.
+#
+#   <h>Other</h>
+#   <w>v</w>          : Examine the last remembered state of the indicated tile.
+#   <w>!</w>          : Annotate level.
+#   <w>Ctrl-C</w>     : Clear monster memory.
+#   <w>Ctrl-F</w>     : Forget level map.
+#   <w>Ctrl-U</w>     : Restore forgotten level map.{{
+#   if you.wizard() then
+#       return "\n\n"
+#             .. "<h>Wizard commands</h>\n"
+#             .. "<w>T</w>          : Teleport to cursor.\n"
+#             .. "<w>Ctrl-X</w>     : Completely wipe out map."
+#   end }}
+<h>階のマップ(メイン画面で'<w>X</w>'):</h>
+<w>Esc</w>        : 階のマップを閉じる(<w>Space</w>や割り当てのないキーでも可)。
+<w>方向</w>       : カーソルを動かす。
+<w>Shift-方向</w> : カーソルを大きく動かす(初期設定では7マス)。
+<w>-</w>か<w>+</w>       : 階のマップを20マス上または下にスクロールする。
+<w>.</w>          : 自動移動を始める(<w>Enter</w>、<w>,</w>、<w>;</w>でも可)。
+             (カーソルが@の上にあるときは、最後の目的地にカーソルを動かす。)
+<w>[</w>か<w>]</w>       : 1つ上または下の階を調べる。
+             (既知の階段にカーソルがあるときは、階段の行き先にカーソルを
+             動かす。)
+<w>G</w>          : 分岐と階を選んでほかの階を見る。
+<w>o</w>          : 次の自動探索の目標にカーソルを動かす。
+<w>{</w>か<w>}</w>       : 縮小・拡大する(タイル版のみ)。
+
+<h>立入禁止区域</h>
+<w>e</w>          : 立入禁止区域を作る、半径を変える、または取り除く。
+<w>R#</w>         : 半径を指定して立入禁止区域を作るか、半径を#に変える。
+             #は1～8の数字。
+<w>E</w>          : 立入禁止区域を順に選ぶ。
+<w>Ctrl-E</w>     : この階の立入禁止区域をすべて消す。
+
+<h>中継地点</h>
+<w>w</w>          : 今の位置を中継地点にする。
+<w>W</w>          : この階の中継地点を順に選ぶ。
+
+<h>地形を順に選ぶ</h>
+<w><<</w>か<w>></w>       : 上り階段・下り階段を順に選ぶ。
+<w>^</w>          : 罠を順に選ぶ。
+<w>\</w>か<w>Tab</w>     : 店とポータルを順に選ぶ。
+<w>I</w>          : すべてのアイテムを順に選ぶ。
+<w>O</w>          : すべてのアイテムを逆順に選ぶ。
+<w>_</w>          : 祭壇を順に選ぶ。
+
+<h>その他</h>
+<w>v</w>          : 指定したマスの最後に覚えている状態を調べる。
+<w>!</w>          : 階に注釈を付ける。
+<w>Ctrl-C</w>     : モンスターの記憶を消す。
+<w>Ctrl-F</w>     : 階のマップを忘れる。
+<w>Ctrl-U</w>     : 忘れた階のマップを元に戻す。{{
+if you.wizard() then
+    return "\n\n"
+          .. "<h>ウィザード用コマンド</h>\n"
+          .. "<w>T</w>          : カーソルの位置へテレポートする。\n"
+          .. "<w>Ctrl-X</w>     : マップを完全に消し去る。"
+end }}
+%%%%
+interlevel-travel.branch.prompt
+
+# en:
+#   <h>Interlevel Travel (choose a branch):
+#    Use the shortcut letter for a branch to select the branch for travel.
+#
+#    Once you select a branch, you will be prompted for a depth in that
+#    branch (more help is available there).
+#
+#    <w>Tab</w>    : Repeat last interlevel travel.
+#    <w>.</w>      : Travel to a level in the current branch.
+#    <w><<</w>      : Go up the nearest stairs.
+#    <w>></w>      : Go down the nearest stairs.
+#    <w>Ctrl-P</w> : Travel to a level in the branch above this one.
+#    <w>*</w>      : Show available waypoints (if any are set).
+#    <w>0</w>-<w>9</w>    : Go to the numbered waypoint.
+#    <w>_</w>      : Show available altars (if any are discovered).
+<h>階層間の自動移動(分岐を選ぶ):
+ 分岐のショートカット文字で、自動移動する分岐を選ぶ。
+
+ 分岐を選ぶと、その分岐の階の深さを尋ねられる(そこでもヘルプを
+ 見られる)。
+
+ <w>Tab</w>    : 前回の階層間の自動移動を繰り返す。
+ <w>.</w>      : 今いる分岐の階へ移動する。
+ <w><<</w>      : 一番近い階段を上る。
+ <w>></w>      : 一番近い階段を下りる。
+ <w>Ctrl-P</w> : この分岐の1つ上の分岐の階へ移動する。
+ <w>*</w>      : 使える中継地点を表示する(設定してあれば)。
+ <w>0</w>-<w>9</w>    : その番号の中継地点へ移動する。
+ <w>_</w>      : 使える祭壇を表示する(見つけてあれば)。
+%%%%
 interlevel-travel.depth.prompt
 
 # en:
@@ -20,4 +421,960 @@ interlevel-travel.depth.prompt
  <w>-</w> または <w>p</w> : 初期値を上に位置する分岐に変更する
  <w>$</w>          : 初期値をその分岐で到達した最も深い階層に変更する
  <w>^</w>          : 初期値を今いる分岐の入口に変更する
+%%%%
+interlevel-travel.altar.prompt
+
+# en:
+#   <h>Interlevel Travel (go to an altar):
+#    Use the shortcut letter (the initial of a god, with TSO being replaced by 1)
+#    to select the altar for travel.
+#
+#    Once you select a god, you will begin travelling to the nearst altar.
+#
+#    <w>Enter</w>  : Repeat last interlevel travel.
+<h>階層間の自動移動(祭壇へ行く):
+ ショートカット文字(神の頭文字。輝けるものは1)で、自動移動する祭壇を
+ 選ぶ。
+
+ 神を選ぶと、一番近い祭壇への自動移動を始める。
+
+ <w>Enter</w>  : 前回の階層間の自動移動を繰り返す。
+%%%%
+annotate.prompt
+
+# en:
+#   <h>Annotate (select level):
+#    <w>Enter</w> or <w>.</w> : Annotate current level.
+#    any <w>letter</w> : Annotate a level in the branch corresponding to the letter.
+#    <w><<</w>          : Annotate the level upstairs.
+#    <w>></w>          : Annotate the level downstairs.
+#    <w>Ctrl-P</w>     : Annotate a level in the branch above this one.
+#    <w>!</w>          : Show list of dungeon branches.
+<h>注釈(階を選ぶ):
+ <w>Enter</w>か<w>.</w>   : 今いる階に注釈を付ける。
+ 任意の<w>文字</w> : その文字に対応する分岐の階に注釈を付ける。
+ <w><<</w>          : 上の階に注釈を付ける。
+ <w>></w>          : 下の階に注釈を付ける。
+ <w>Ctrl-P</w>     : この分岐の1つ上の分岐の階に注釈を付ける。
+ <w>!</w>          : ダンジョンの分岐の一覧を表示する。
+%%%%
+skill-menu
+
+# en:
+#                           <h>Skill management</h>
+#
+#   You gain experience for killing monsters (and very few other activities). This
+#   experience is used to train skills. The skill screen allows you to select which
+#   skills to train.
+#
+#   By pressing its letter, you can cycle if and how a skill is trained:
+#     <darkgrey>- deselected</darkgrey>    Skill will not be trained.
+#     + selected      Skill will be trained.
+#     <w>* focused</w>       Skill will be weighted higher for training.
+#
+#   Pressing a capital letter selects that skill and deselects all the others.
+#   This shortcut is useful when you want to train only one skill.
+#
+#   Training can be done in two modes, which are toggled with the <w>/</w> key.
+#     - automatic:    Skills are weighted based on your use of them.
+#     - manual:       Experience is spread evenly across all activated skills.
+#
+#   In training target mode you can set skill training targets: target skill levels
+#   at which training of the skill will be automatically disabled.
+#
+#   How fast you train a skill is governed by the following factors:
+#     - aptitude: Shown <white>white</white> in the Apt column. Higher numbers mean that less
+#                 experience is needed to advance a skill. Depends on species.
+#     - skill manuals: Rare books giving an aptitude bonus of <lightred>+4</lightred> in one skill.
+#
+#   On top of that, there are some effects which directly modify a skill, for
+#   example having trained a related skill (crosstraining), or certain god powers.
+#   Reduced skills are shown in <magenta>magenta</magenta>, and enhanced skills in <green>green</green>.
+#   The training percentage (in <brown>brown</brown>) shows the relative amount of experience
+#   which will be used to train this skill.
+#
+#   Apart from (de)selecting skills, you also have the following toggles:
+#     <w>/</w> :  Switch between automatic and manual training modes.
+#     <w>*</w> :  Display all skills, even those which aren't currently useful.
+#     <w>?</w> :  Allows you to read the descriptions of skills.
+#     <w>_</w> :  Show or hide skill level modifications (god powers, crosstraining).
+#     <w>!</w> :  Switch between displaying training percentage, skill cost, or training
+#          targets.
+                        <h>技能の管理</h>
+
+モンスターを倒す(ほかにごくわずかな行動もある)と経験値を得る。この経験値は
+技能の訓練に使われる。技能の画面では、どの技能を訓練するかを選べる。
+
+技能の文字を押すと、その技能を訓練するかどうか、どう訓練するかを順に切り替える:
+  <darkgrey>- 非選択</darkgrey>        その技能は訓練しない。
+  + 選択          その技能を訓練する。
+  <w>* 集中</w>          その技能を優先して訓練する。
+
+大文字を押すと、その技能を選択し、ほかの技能をすべて非選択にする。
+1つの技能だけを訓練したいときに便利なショートカットだ。
+
+訓練には2つのモードがあり、<w>/</w>キーで切り替える。
+  - 自動:   使った度合いに応じて技能に経験値が配分される。
+  - 手動:   有効にしたすべての技能に経験値が均等に配分される。
+
+訓練目標モードでは、技能の訓練目標を設定できる。技能のレベルがその目標に
+達すると、その技能の訓練は自動的に止まる。
+
+技能の上がりやすさは以下の要因で決まる:
+  - 適性:     適性の列に<white>白</white>で表示される。数字が大きいほど、技能を上げるのに
+              必要な経験値が少ない。種族によって決まる。
+  - 技能の教本: 1つの技能の適性に<lightred>+4</lightred>のボーナスを与える珍しい本。
+
+これに加えて、技能の値を直接変える効果もある。例えば関連する技能を訓練して
+いること(相互訓練)や、神の力などだ。
+下がった技能は<magenta>マゼンタ</magenta>で、上がった技能は<green>緑</green>で表示される。
+訓練の割合(<brown>茶色</brown>)は、その技能の訓練に使われる経験値の相対的な量を示す。
+
+技能の選択・非選択のほかに、以下の切り替えがある:
+  <w>/</w> :  自動訓練と手動訓練を切り替える。
+  <w>*</w> :  今は役に立たない技能も含め、すべての技能を表示する。
+  <w>?</w> :  技能の説明を読む。
+  <w>_</w> :  技能のレベルの修正(神の力、相互訓練)を表示・非表示にする。
+  <w>!</w> :  訓練の割合、技能のコスト、訓練目標の表示を切り替える。
+%%%%
+spell-library
+
+# en:
+#   <h>Spell Library</h>
+#   <w>Tab</w> or <w>!</w>  : Cycle forward through <w>Memorise</w>, <w>Describe</w>, <w>Hide</w>, and <w>Show</w> pages.
+#   <w>Shift-Tab</w> : Cycle backward through these pages.
+#   <w>Ctrl-F</w>    : Filter the list of spells shown with a regex.
+#   <w>?</w>         : Show this help.
+#
+#   By default, the spell library opens to the <w>Memorise</w> page; to begin memorising a
+#   spell, just press its letter. To read a spell's description, first switch to
+#   the <w>Describe</w> page by pressing <w>Tab</w>, then press the spell's letter.
+#
+#   Most characters will not be interested in memorising the majority of spells that
+#   accumulate in their spell library; this is where the <w>Show</w> and <w>Hide</w> pages come in
+#   handy. To hide a spell from the <w>Memorise</w> and <w>Describe</w> pages, press its spell
+#   letter from the <w>Hide</w> page. Hidden spells can be shown again from the <w>Show</w> page.
+#
+#   The <w>auto_hide_spells</w> option can be useful; when enabled, all newly discovered
+#   spells are hidden by default.
+#
+#   <w>Ctrl-F</w> can be used to filter the list of spells. Any filter set in this way will
+#   persist until the spell library is closed and reopened, or until a new filter is
+#   set with <w>Ctrl-F</w>. If <w>Enter</w> is pressed at the prompt without entering any text,
+#   that will reset the filter to none.
+#   You can filter spells by name and by spell school.
+<h>呪文ライブラリ</h>
+<w>Tab</w>か<w>!</w>    : <w>記憶</w>、<w>説明</w>、<w>隠す</w>、<w>表示</w>のページを順に切り替える。
+<w>Shift-Tab</w> : これらのページを逆順に切り替える。
+<w>Ctrl-F</w>    : 表示する呪文の一覧を正規表現で絞り込む。
+<w>?</w>         : このヘルプを表示する。
+
+呪文ライブラリは、初期設定では<w>記憶</w>のページで開く。呪文を記憶し始めるには、
+その文字を押すだけでよい。呪文の説明を読むには、まず<w>Tab</w>を押して<w>説明</w>の
+ページに切り替え、それから呪文の文字を押す。
+
+ほとんどのキャラクターは、呪文ライブラリにたまっていく呪文の大半を記憶するつもりは
+ないだろう。そこで役に立つのが<w>表示</w>と<w>隠す</w>のページだ。呪文を<w>記憶</w>と<w>説明</w>の
+ページから隠すには、<w>隠す</w>のページでその呪文の文字を押す。隠した呪文は<w>表示</w>の
+ページからまた表示できる。
+
+<w>auto_hide_spells</w>オプションも便利だ。有効にすると、新しく見つけた呪文はすべて
+初めから隠される。
+
+<w>Ctrl-F</w>で呪文の一覧を絞り込める。こうして設定した絞り込みは、呪文ライブラリを
+閉じて開き直すか、<w>Ctrl-F</w>で新しく絞り込むまで続く。何も入力せずに<w>Enter</w>を
+押すと、絞り込みが解除される。
+呪文は名前と呪文の系統で絞り込める。
+%%%%
+wiz-monster
+
+# en:
+#   <h>Create specified monster</h>
+#
+#   To create a monster with the default equipment for its species, simply enter
+#   the species name, such as <w>kobold</w> or <w>Yiuf</w>.
+#
+#   A hydra or slymdra can be given a specific number of heads by calling it an
+#   n<w>-headed</w> <w>hydra</w> or n<w>-headed</w> <w>slymdra</w> (with a maximum of 20 heads):
+#
+#   <w>four-headed hydra</w>
+#
+#   To set the colour a (very) ugly thing takes when it is first created, use:
+#
+#   <w>white very ugly thing</w>
+#
+#   The valid colours are <w>brown</w>, <w>cyan</w>, <w>green</w>, <w>purple</w>, <w>red</w> and <w>white</w>.
+#
+#   A mutant beast can be customised by prefacing it with a maturity level and/or
+#   hyphen-separated set of traits, as follows:
+#
+#   <w>mature shock-weird mutant beast</w>
+#
+#   The valid maturity levels are <w>larval</w>, <w>juvenile</w>, <w>mature</w>, <w>elder</w> and <w>primal</w>. The
+#   facets are <w>sting</w>, <w>bat</w>, <w>fire</w>, <w>weird</w>, <w>shock</w> and <w>ox</w>.
+#
+#   A slime creature's size can be set to other than normal using the prefixes
+#   <w>large</w>, <w>very large</w>, <w>enormous</w> or <w>titanic</w>:
+#
+#   <w>very large slime creature</w>
+#
+#   If a monster is a member of a band, you can request that it be eligible for
+#   band members by adding the keyword <w>band</w> to the name. For instance:
+#
+#   <w>orc warlord band</w>
+#
+#   Specifying <w>band</w> doesn't force bands to be placed - it requests that the game
+#   use the normal chances of creating a band. A band will only be placed if there
+#   is space for it.
+#
+#   A monster can be given specific items by following the monster name with a
+#   semi-colon and then with an item list. For example:
+#
+#   <w>orc ; rapier | quick blade . chain mail | plate armour</w>
+#
+#   will generate an orc wielding either a rapier or a quick blade and wearing
+#   either chain mail or plate armour. Randarts and ego items are only generated
+#   if they are explicitly requested. Note that any items that the monster was
+#   originally generated with will be removed and destroyed. This can be used to
+#   force a monster to have no items whatsoever:
+#
+#   <w>orc; nothing</w>
+#
+#   For further information, see <cyan>docs/develop/levels/syntax.txt</cyan>, section <cyan>ITEMS</cyan>.
+#   Any reference to a slash (<w>/</w>) should be replaced with a pipe (<w>|</w>) and any comma
+#   (<w>,</w>) with a full stop (<w>.</w>).
+#
+#   The same syntax is also used to create a specific type of dancing weapon:
+#
+#   <w>dancing weapon; rapier</w>
+#
+#   Limitations: If a monster is given a random launcher, there is no way to force
+#   the ammo type to match the launcher type. As a special case, however, a
+#   launcher dancing weapon is always generated with some suitable ammunition.
+#
+#   You can specify that a monster will always generate a corpse by using the tag
+#   <w>always_corpse</w>, or that it will never generate a corpse with <w>never_corpse</w>.
+#
+#   By default, monsters are generated asleep. This is changed by prefixing the
+#   name with <w>generate_awake</w>.
+#
+#   <w>generate_awake boulder beetle</w>
+#
+#   A prefix of <w>patrolling</w> prevents it from walking out of sight of the the place
+#   where it was created.
+#
+#   You can set the monster's god using the <w>god</w>: specifier as follows:
+#
+#   <w>orc god:the_shining_one</w>
+#
+#   If the monster is to be a gift of the specified god, this should be suffixed
+#   with <w>god_gift</w>:
+#
+#   <w>orc god:the_shining_one god_gift</w>
+#
+#   Note that the monster will not be considered a god gift unless <w>god_gift</w> is
+#   explicitly set.
+#
+#   You can set the monster's faction by specifying <w>att</w>: one of:
+#
+#   * <w>att:hostile</w> -- the default
+#   * <w>att:friendly</w> -- tame, will follow you
+#   * <w>att:neutral</w> -- hostile to both you and att:hostile monsters
+#   * <w>att:good_neutral</w> -- hostile to att:hostile
+#   * <w>att:fellow_slime</w> -- tame, won't follow you
+#
+#   Monsters can be given colours that override their default colour:
+#
+#   <w>col:darkgrey fungus</w>
+#
+#   The colour <w>any</w> can be given, in which case a random colour will be chosen.
+#
+#   You can override the displayed monster tile using the <w>tile</w>: specifier as
+#   follows:
+#
+#   <w>rat tile:mons_giant_bat</w>
+#
+#   In tiles version, this would create a monster that uses the "<cyan>mons_giant_bat</cyan>"
+#   tile, but is otherwise identical to a rat. In ASCII mode, this will do
+#   nothing.
+#
+#   If you want to place a random monster suitable for the level the map is
+#   generated on, you can use
+#
+#   <w>random</w>
+#
+#   If you want to place a random monster suitable for some other place, you can
+#   use a place: tag in the monster spec:
+#
+#   <w>place:Abyss</w>
+#
+#   Using <w>place</w>: implies that you want a random monster. You can also request
+#   zombies from random monsters suitable for some other depth as (e.g.):
+#
+#   <w>place:Elf:3 zombie</w>
+#
+#   The available modifiers are <w>zombie</w>, <w>draugr</w>, <w>simulacrum</w>, and <w>spectre</w>.
+#
+#   <h>Overriding Monster Names</h>
+#
+#   Individual monsters can be given names as follows:
+#
+#   <w>kobold name:Durwent</w>
+#
+#   This will cause the monster to appear as "<cyan>Durwent the kobold</cyan>". Spaces can be
+#   placed in the name by substituting them with the _ symbol. It is worth noting
+#   that "<cyan>the <<race></cyan>" will be appended to all names, which should be considered
+#   when coming up with them.
+#
+#   There are three different modifiers that can be used on a name:
+#   <w>name_adjective</w>, <w>name_suffix and </w>name_replace. <w>name_adjective</w> makes the
+#   name act as an adjective. For example:
+#
+#   <w>kobold name:ugly name_adjective</w>
+#
+#   Will cause "<cyan>An ugly kobold</cyan>", "<cyan>The ugly kobold hits you</cyan>", and so on.
+#
+#   <w>name_suffix</w> does the same, but after the monster's base name:
+#
+#   <w>kobold name:wearing_mittens name_suffix</w>
+#
+#   Will give "<cyan>A kobold wearing mittens</cyan>", "<cyan>The kobold wearing mittens hits you</cyan>",
+#   and so on.
+#
+#   <w>name_replace</w> causes the base name to be replaced by given name, as if the
+#   monster was a unique:
+#
+#   <w>kobold name:Durwent name_replace</w>
+#
+#   Will result in "<cyan>Durwent</cyan>" rather than "<cyan>Durwent the kobold</cyan>". The corpse will
+#   still be a "<cyan>kobold corpse of Durwent</cyan>".
+#
+#   <w>name_species</w> uses the name for corpses as-is, without prefixing it with
+#   "<cyan>kobold</cyan> <cyan>corpse of X</cyan>" for <w>name_replace</w>. It also avoids the usual name tag
+#   that displays above unique and renamed monsters in local tiles.
+#
+#   In combination with <w>name_replace</w> or <w>name_species</w>, there are two further tags
+#   that can be used when renaming monsters, but not giving them an actual "name":
+#   <w>name_descriptor</w>, and <w>name_definite</w>.
+#
+#   For example:
+#
+#   <w>kobold name:goblin name_replace</w>
+#
+#   Will result in "<cyan>goblin hits you</cyan>". However, adding <w>name_descriptor</w> from the
+#   above flags will result in "<cyan>The goblin hits you</cyan>" and in the description of the
+#   monster, "<cyan>A goblin</cyan>".
+#
+#   <w>kobold name:goblin name_replace name_descriptor</w>
+#
+#   The <w>name_definite</w> flag ensures that it is never referred to as "<cyan>a</cyan>" or "<cyan>an</cyan>",
+#   but that the definite object is always used. Therefore, you will see "<cyan>The
+#   <cyan>goblin</cyan> <cyan>hits you</cyan>", as per above, but also "<cyan>The goblin</cyan>" in its description.
+#   Setting <w>name_definite</w> will automatically set the flag <w>name_descriptor</w>,
+#   therefore meaning that:
+#
+#   <w>kobold name:goblin name_replace name_definite</w>
+#
+#   is exactly the same as:
+#
+#   <w>kobold name:goblin name_replace name_descriptor name_definite</w>
+#
+#   <w>name_zombie</w> can be used to redefine already zombified monsters (including
+#   draugr, simulacra and spectrals).
+#
+#   Finally, <w>name_nocorpse</w> will cause the name to be completely ignored for
+#   corpses. For example:
+#
+#   <w>wizard name:sad name_adjective name_nocorpse</w>
+#
+#   will result in "<cyan>a sad wizard</cyan>" that leaves "<cyan>a wizard corpse</cyan>".
+#
+#   For instances where space in definitions is limited, you can use abbreviated
+#   forms of these tags:
+#
+#   * <w>name_suffix</w> -> <w>n_suf</w>
+#   * <w>name_adjective</w> -> <w>n_adj</w>
+#   * <w>name_replace</w> -> <w>n_rpl</w>
+#   * <w>name_species</w> -> <w>n_spe</w>
+#   * <w>name_descriptor</w> -> <w>n_des</w>
+#   * <w>name_definite</w> -> <w>n_the</w>
+#   * <w>name_zombie</w> -> <w>n_zom</w>
+#   * <w>name_nocorpse</w> -> <w>n_noc</w>
+#
+#   <h>Overriding Monster Stats</h>
+#
+#   Further monster customisation can be made by using <w>hd</w> and <w>hp</w>. These two tags
+#   allow you to completely overwrite the original hit dice and hit points of a
+#   monster:
+#
+#   <w>kobold hd:20</w>
+#
+#   Creates a kobold with a hit dice of 20. As its hp is randomised, based on its
+#   hit dice, this will also be re-rolled. Monsters with a specific hit point
+#   value will not have this value change.
+#
+#   You can also have a specific value for hit points:
+#
+#   <w>kobold hp:20</w>
+#
+#   Creates a kobold with 20 hit points. This is also useful for monsters (such as
+#   statues) which come with non-randomised HP values.
+#
+#   Monsters can be marked as summoned by using <w>dur</w> and <w>sum</w> tags. The <w>dur</w> tag
+#   accepts an integer between 1 and 6 inclusive. The <w>sum</w> tag accepts the name of
+#   a spell (parsed as per the <w>spells</w> tag, described below) or any of <w>clone</w>
+#   (Rakshasa), <w>animate</w> (from animate dead), <w>chaos</w> (made from pure chaos), <w>miscast</w>
+#   (summoned from by spell miscast effect), <w>zot</w> (summoned by a Zot trap), <w>wrath</w>
+#   (summoned by a god in an act of retribution), <w>aid</w> (summoned by a god in order
+#   to give aid).
+#
+#   Of the spells, <w>shadow_creatures</w> has the most significant effect, in that
+#   monsters will dissipate into the shadows rather than disappear in a puff of
+#   smoke. Using non-summoning spells will also have no effect.
+#
+#   Tagging a monster with <w>seen</w> will override the system and force that monster to
+#   be marked as already viewed; this means that it won't generate messages such
+#   as "<cyan>A kobold comes into view</cyan>".
+#
+#   <h>Overriding Monster Spells</h>
+#
+#   Monster spell sets can be overridden with a <w>spells</w>: tag, used as follows:
+#
+#   *<w>goblin spells:throw_flame.50.wizard</w>
+#   *<w>ancient lich spells:symbol_of_torment.26.wizard; glaciate.51.wizard</w>
+#
+#   (a list of spell slots, consisting of a spell name with spaces replaced with
+#   underscores, a frequency of casting and set of spell slot flags specified
+#   afterwards with <w>.</w>, with slots separated by <w>;</w>. There should be no spaces around
+#   the <w>;</w> or after the <w>spells</w>: prefix)
+#
+#   Spell names must exactly match the names in <cyan>spl-data.h</cyan>, with spaces replaced
+#   by underscores. Spell frequencies are an (x in 200) chance that that spell
+#   will be cast. Spell flags include:
+#
+#   * <w>natural</w>, <w>magical</w>, <w>demonic</w>, <w>wizard</w>, or <w>priest</w> - the manner in which this
+#   spell is being cast. Wizards and priests can be silenced and will trigger
+#   appropriate conducts (Trog will appreciate killing wizards, Beogh will
+#   appreciate killing priests). Magical, demonic, and wizard spells are subject
+#   to anti-magic effects. Natural spells do not generate noise.
+#   * <w>emergency</w> - the monster will only cast the spell when low on health.
+#   * <w>breath</w> - the spell is a breath weapon, and using it triggers a breath
+#   timeout during which the spell cannot be cast again.
+#   * <w>no_silent</w> - the spell cannot be used while silent, even if it is an ability
+#   type normally not subject to silence.
+#   * <w>instant</w> - the spell does not expend the monster's energy; they may take
+#   another action on the same turn.
+#   * <w>noisy</w> - forces the spell to make noise even if it is a natural ability.
+#
+#   You may use <w>none</w> specify that a slot should be left empty. You can force a
+#   spell-less monster with:
+#
+#   <w>orc wizard spells:none</w>
+#
+#   <h>Setting enchantments</h>
+#
+#   You may give a monster any number of enchantments. It may start hasted, blind,
+#   have permanent RMsl, etc. The syntax is <w>ench:<<name>:<<duration>:<<degree></w> or
+#   <w>perm_ench:<<name>:<<degree></w>. The <w><<degree></w> and <w><<duration></w> fields may be
+#   omitted.
+#
+#   For example:
+#
+#   * <w>orc perm_ench:blind perm_ench:mad</w>
+#   * <w>dream sheep ench:sticky_flame</w>
+#   * <w>stone giant dur:1 ench:berserk</w>
+<h>指定したモンスターを作る</h>
+
+その種族の標準の装備を持ったモンスターを作るには、<w>kobold</w>や<w>Yiuf</w>のように
+種族名を入力するだけでよい。
+
+ヒドラやスライムドラは、n<w>-headed</w> <w>hydra</w>またはn<w>-headed</w> <w>slymdra</w>と呼ぶと
+首の数を指定できる(最大20本):
+
+<w>four-headed hydra</w>
+
+(とても)醜いものが作られるときの色を指定するには:
+
+<w>white very ugly thing</w>
+
+使える色は<w>brown</w>、<w>cyan</w>、<w>green</w>、<w>purple</w>、<w>red</w>、<w>white</w>。
+
+突然変異獣は、前に成熟度とハイフン区切りの特徴を付けて、以下のように指定できる:
+
+<w>mature shock-weird mutant beast</w>
+
+使える成熟度は<w>larval</w>、<w>juvenile</w>、<w>mature</w>、<w>elder</w>、<w>primal</w>。
+特徴は<w>sting</w>、<w>bat</w>、<w>fire</w>、<w>weird</w>、<w>shock</w>、<w>ox</w>。
+
+スライムの大きさは、<w>large</w>、<w>very large</w>、<w>enormous</w>、<w>titanic</w>を前に付けると
+通常以外にできる:
+
+<w>very large slime creature</w>
+
+群れを作るモンスターは、名前に<w>band</w>を付けると群れの仲間を伴えるようにできる。
+例えば:
+
+<w>orc warlord band</w>
+
+<w>band</w>を指定しても群れが必ず置かれるわけではない。群れを作る通常の確率を使う
+ように頼むだけだ。群れは置く場所があるときだけ置かれる。
+
+モンスターの名前に続けてセミコロンとアイテムの一覧を書くと、特定のアイテムを
+持たせられる。例えば:
+
+<w>orc ; rapier | quick blade . chain mail | plate armour</w>
+
+は、レイピアかクイックブレードを持ち、鎖帷子かプレートアーマーを着たオークを作る。
+ランダムアーティファクトやエゴのアイテムは、明示的に指定したときだけ作られる。
+モンスターが最初に持っていたアイテムは取り除かれて消えることに注意。これを使って、
+モンスターに何も持たせないようにもできる:
+
+<w>orc; nothing</w>
+
+詳しくは<cyan>docs/develop/levels/syntax.txt</cyan>の<cyan>ITEMS</cyan>の節を参照。
+スラッシュ(<w>/</w>)はパイプ(<w>|</w>)に、コンマ(<w>,</w>)はピリオド(<w>.</w>)に置き換えること。
+
+同じ書き方で、特定の種類の踊る武器も作れる:
+
+<w>dancing weapon; rapier</w>
+
+制限: ランダムな射出武器を持たせた場合、弾の種類を射出武器に合わせることは
+できない。ただし特例として、射出武器の踊る武器は必ず合った弾を伴って作られる。
+
+<w>always_corpse</w>の札を付けると必ず死体を残し、<w>never_corpse</w>を付けると決して
+死体を残さないモンスターにできる。
+
+初期設定ではモンスターは眠った状態で作られる。名前の前に<w>generate_awake</w>を
+付けると、これを変えられる。
+
+<w>generate_awake boulder beetle</w>
+
+前に<w>patrolling</w>を付けると、作られた場所が見えないところまで歩いて行かなくなる。
+
+モンスターの神は、以下のように<w>god</w>:で指定できる:
+
+<w>orc god:the_shining_one</w>
+
+モンスターをその神からの贈り物にするには、後ろに<w>god_gift</w>を付ける:
+
+<w>orc god:the_shining_one god_gift</w>
+
+<w>god_gift</w>を明示的に指定しない限り、神からの贈り物とはみなされないことに注意。
+
+モンスターの陣営は<w>att</w>:で以下のどれかを指定できる:
+
+* <w>att:hostile</w> -- 初期設定(敵対)
+* <w>att:friendly</w> -- 仲間になり、あなたについて来る
+* <w>att:neutral</w> -- あなたにも att:hostile のモンスターにも敵対する
+* <w>att:good_neutral</w> -- att:hostile のモンスターに敵対する
+* <w>att:fellow_slime</w> -- 仲間になるが、あなたについて来ない
+
+モンスターには、通常の色の代わりの色を付けられる:
+
+<w>col:darkgrey fungus</w>
+
+色に<w>any</w>を指定すると、ランダムな色が選ばれる。
+
+表示されるモンスターのタイルは、以下のように<w>tile</w>:で上書きできる:
+
+<w>rat tile:mons_giant_bat</w>
+
+タイル版では、これで「<cyan>mons_giant_bat</cyan>」のタイルを使うが、それ以外はネズミと
+同じモンスターが作られる。ASCII 版では何も起きない。
+
+マップが作られる階にふさわしいランダムなモンスターを置くには:
+
+<w>random</w>
+
+別の場所にふさわしいランダムなモンスターを置くには、モンスターの指定に place: の
+札を使う:
+
+<w>place:Abyss</w>
+
+<w>place</w>:を使うと、ランダムなモンスターを求めたことになる。別の深さにふさわしい
+ランダムなモンスターのゾンビも、(例えば)以下のように求められる:
+
+<w>place:Elf:3 zombie</w>
+
+使える修飾語は<w>zombie</w>、<w>draugr</w>、<w>simulacrum</w>、<w>spectre</w>。
+
+<h>モンスターの名前の上書き</h>
+
+個々のモンスターに、以下のように名前を付けられる:
+
+<w>kobold name:Durwent</w>
+
+これでモンスターは「<cyan>Durwent the kobold</cyan>」と表示される。名前の空白は _ 記号で
+書く。すべての名前に「<cyan>the <<race></cyan>」が付け加えられることは、名前を考えるときに
+考慮しておくとよい。
+
+名前には3種類の修飾子を使える:
+<w>name_adjective</w>、<w>name_suffix</w>、<w>name_replace</w>。<w>name_adjective</w>は名前を
+形容詞として働かせる。例えば:
+
+<w>kobold name:ugly name_adjective</w>
+
+で「<cyan>An ugly kobold</cyan>」、「<cyan>The ugly kobold hits you</cyan>」などになる。
+
+<w>name_suffix</w>も同様だが、モンスターの基本の名前の後ろに付く:
+
+<w>kobold name:wearing_mittens name_suffix</w>
+
+で「<cyan>A kobold wearing mittens</cyan>」、「<cyan>The kobold wearing mittens hits you</cyan>」
+などになる。
+
+<w>name_replace</w>は、ユニークのように基本の名前を指定した名前で置き換える:
+
+<w>kobold name:Durwent name_replace</w>
+
+で「<cyan>Durwent the kobold</cyan>」ではなく「<cyan>Durwent</cyan>」になる。死体は
+「<cyan>kobold corpse of Durwent</cyan>」のままだ。
+
+<w>name_species</w>は、<w>name_replace</w>のときに「<cyan>kobold</cyan> <cyan>corpse of X</cyan>」を
+前に付けず、死体にも名前をそのまま使う。また、ローカルのタイル版でユニークや
+名前を変えたモンスターの上に表示される名札も出なくなる。
+
+<w>name_replace</w>か<w>name_species</w>と組み合わせて、モンスターの名前を変えるが本当の
+「名前」は付けないときに使える札がさらに2つある: <w>name_descriptor</w>と<w>name_definite</w>。
+
+例えば:
+
+<w>kobold name:goblin name_replace</w>
+
+は「<cyan>goblin hits you</cyan>」になる。上の札に<w>name_descriptor</w>を加えると、
+「<cyan>The goblin hits you</cyan>」になり、モンスターの説明では「<cyan>A goblin</cyan>」になる。
+
+<w>kobold name:goblin name_replace name_descriptor</w>
+
+<w>name_definite</w>の札を付けると、「<cyan>a</cyan>」や「<cyan>an</cyan>」で呼ばれることはなくなり、
+常に定冠詞が使われる。したがって、上と同じく「<cyan>The
+<cyan>goblin</cyan> <cyan>hits you</cyan>」になるだけでなく、説明でも「<cyan>The goblin</cyan>」になる。
+<w>name_definite</w>を設定すると自動的に<w>name_descriptor</w>の札も設定されるので:
+
+<w>kobold name:goblin name_replace name_definite</w>
+
+は以下とまったく同じだ:
+
+<w>kobold name:goblin name_replace name_descriptor name_definite</w>
+
+<w>name_zombie</w>は、すでにゾンビ化したモンスター(ドラウグル、シミュラクラム、
+スペクトラルを含む)の名前を定め直すのに使える。
+
+最後に、<w>name_nocorpse</w>を付けると死体では名前がまったく無視される。例えば:
+
+<w>wizard name:sad name_adjective name_nocorpse</w>
+
+は「<cyan>a wizard corpse</cyan>」を残す「<cyan>a sad wizard</cyan>」になる。
+
+定義に使える文字数が限られているときは、これらの札の省略形を使える:
+
+* <w>name_suffix</w> -> <w>n_suf</w>
+* <w>name_adjective</w> -> <w>n_adj</w>
+* <w>name_replace</w> -> <w>n_rpl</w>
+* <w>name_species</w> -> <w>n_spe</w>
+* <w>name_descriptor</w> -> <w>n_des</w>
+* <w>name_definite</w> -> <w>n_the</w>
+* <w>name_zombie</w> -> <w>n_zom</w>
+* <w>name_nocorpse</w> -> <w>n_noc</w>
+
+<h>モンスターの能力値の上書き</h>
+
+<w>hd</w>と<w>hp</w>でさらにモンスターを調整できる。この2つの札で、モンスターの本来の
+ヒットダイスとヒットポイントを完全に上書きできる:
+
+<w>kobold hd:20</w>
+
+でヒットダイスが20のコボルドが作られる。HPはヒットダイスに基づいてランダムに
+決まるので、これも振り直される。HPの値が決まっているモンスターでは、その値は
+変わらない。
+
+HPの値を指定することもできる:
+
+<w>kobold hp:20</w>
+
+でHPが20のコボルドが作られる。(像のように)HPがランダムでないモンスターにも
+便利だ。
+
+<w>dur</w>と<w>sum</w>の札で、モンスターを召喚されたものとして扱える。<w>dur</w>の札は
+1～6の整数を受け付ける。<w>sum</w>の札は呪文の名前(下で説明する<w>spells</w>の札と同じように
+解釈される)か、以下のどれかを受け付ける: <w>clone</w>(ラークシャサ)、<w>animate</w>(死体蘇生)、
+<w>chaos</w>(純粋な混沌から作られた)、<w>miscast</w>(呪文の失敗で召喚された)、<w>zot</w>(ゾットの罠で
+召喚された)、<w>wrath</w>(神が神罰として召喚した)、<w>aid</w>(神が助けとして召喚した)。
+
+呪文のうち<w>shadow_creatures</w>の効果が最も大きく、モンスターは煙とともに消える
+代わりに影の中へ消えていく。召喚でない呪文を使っても効果はない。
+
+モンスターに<w>seen</w>の札を付けると、そのモンスターを強制的に「すでに見た」ことに
+する。つまり「<cyan>A kobold comes into view</cyan>」のようなメッセージが出なくなる。
+
+<h>モンスターの呪文の上書き</h>
+
+モンスターの呪文の組は、以下のように<w>spells</w>:の札で上書きできる:
+
+*<w>goblin spells:throw_flame.50.wizard</w>
+*<w>ancient lich spells:symbol_of_torment.26.wizard; glaciate.51.wizard</w>
+
+(呪文の枠の一覧で、各枠は空白をアンダースコアに置き換えた呪文の名前、使う頻度、
+<w>.</w>で区切って後ろに付ける枠のフラグの組からなり、枠どうしは<w>;</w>で区切る。
+<w>;</w>の前後と<w>spells</w>:の後には空白を入れないこと)
+
+呪文の名前は<cyan>spl-data.h</cyan>にある名前と、空白をアンダースコアに置き換えた形で
+完全に一致しなければならない。呪文の頻度は、その呪文を使う確率(200 分の x)だ。
+呪文のフラグには以下がある:
+
+* <w>natural</w>、<w>magical</w>、<w>demonic</w>、<w>wizard</w>、<w>priest</w> - その呪文を使う方法。
+wizard と priest は沈黙させられ、適切な行いの判定が起きる(トログは wizard を
+倒すと喜び、ベオは priest を倒すと喜ぶ)。magical、demonic、wizard の呪文は
+反魔法の効果を受ける。natural の呪文は音を立てない。
+* <w>emergency</w> - モンスターは体力が少ないときだけその呪文を使う。
+* <w>breath</w> - その呪文はブレスで、使うとブレスの待ち時間が始まり、その間は
+その呪文を再び使えない。
+* <w>no_silent</w> - 通常は沈黙の影響を受けない種類の能力でも、沈黙中は使えない。
+* <w>instant</w> - その呪文はモンスターの行動力を消費しない。同じターンに別の行動が
+できる。
+* <w>noisy</w> - natural の能力であっても、その呪文に音を立てさせる。
+
+<w>none</w>を使うと、その枠を空けておくことを指定できる。呪文を持たないモンスターは
+以下のように強制できる:
+
+<w>orc wizard spells:none</w>
+
+<h>状態の設定</h>
+
+モンスターには状態をいくつでも与えられる。加速した状態や盲目の状態で始めたり、
+永続的な rMsl を持たせたりなどができる。書き方は<w>ench:<<name>:<<duration>:<<degree></w>
+または<w>perm_ench:<<name>:<<degree></w>。<w><<degree></w>と<w><<duration></w>は
+省略できる。
+
+例えば:
+
+* <w>orc perm_ench:blind perm_ench:mad</w>
+* <w>dream sheep ench:sticky_flame</w>
+* <w>stone giant dur:1 ench:berserk</w>
+%%%%
+macro-menu
+
+# en:
+#   <h>Editing macros and keymaps</h>
+#
+#   To edit a current macro/keymap, select from the menu using the arrow keys or
+#   by hotkey. (Hotkeys that are used to navigate the menu can be selected by
+#   arrow keys). To create a new mapping by entering a key, use the [<w>~</w>] key
+#   or the corresponding menu item, and then enter the key. This allows you to
+#   create (and edit) mappings that use menu keys. Use the [<w>!</w>] key to switch
+#   to keymap editing mode (see below for more information on keymaps).
+#
+#   <w>Macros</w> allow remapping keys that are sent to the game when inputting
+#   commands. This can be used to redefine a command key, or to define an unused
+#   key. They map a key to a sequence of keystrokes, and keystrokes do carry over
+#   into submenus.
+#
+#   Example 1: mapping <w>e</w> to <w>p</w> would let the `e` key trigger the same
+#   command as the `p` key (which on the default settings is autofire).
+#
+#   Example 2: mapping <w>1</w> to the sequence <w>zaf</w> would let the `1` key
+#   cast a spell that is on the letter `a` with default targeting.
+#
+#   Example 3: mapping <w>F1</w> to <w>Q&a</w> would let the F1 key quiver the spell
+#   that is on letter `a`.
+#
+#   <w>Keymaps</w> are lower-level key substitutions that replace keys entirely with
+#   a sequence of keystrokes. They are recommended for changing keys uniformly to
+#   deal with alternative keyboard layouts. Keymaps are contextual, and the
+#   default/"regular" context is used anywhere that a non-specialised context is not
+#   active. Macros take the result of keymaps as input.
+#
+#   Example: In some European keyboard layouts, the § symbol replaces ~. Therefore,
+#   it could be useful to keymap § to ~ in both the regular and menu keymap contexts
+#   so that the main menu and macro menu become a bit easier to access. (In other
+#   layouts, this applies instead to ½.)
+#
+#   When used for mapping commands, keymaps can have unexpected side effects: e.g.
+#   mapping <w>1</w> to <w>zaf</w> via keymap is not recommended, because this will
+#   make it hard to type `1` when entering a skill target.
+#
+#   <w>Keycodes</w>: Both macros and keymaps accept keycodes when describing the
+#   action, in the form of <w>\{n}</w> to enter keycode <w>n</w>. (Use <w>\\</w> to
+#   enter a backslash.) For example, use <w>\{9}</w> to enter the keycode for the
+#   <w>tab</w> button. You can bind macros and keymaps by keycode by using <w>~~</w>
+#   at the macro edit menu.
+#
+#   <w>Saving</w>: Bindings edited at this menu are saved in a .macro file in your
+#   save directory. They will be overridden by settings in your options file. See
+#   the `macro` command in options_guide.txt for more information.
+<h>マクロとキーマップの編集</h>
+
+今あるマクロやキーマップを編集するには、矢印キーかホットキーでメニューから選ぶ。
+(メニューの移動に使うホットキーは矢印キーで選べる。)キーを入力して新しい割り当てを
+作るには、[<w>~</w>]キーか対応するメニュー項目を使い、キーを入力する。これで、
+メニューのキーを使う割り当ても作れる(編集できる)。[<w>!</w>]キーでキーマップの編集
+モードに切り替える(キーマップについて詳しくは下を参照)。
+
+<w>マクロ</w>は、コマンドを入力するときにゲームに送られるキーを割り当て直す。
+コマンドのキーを定義し直したり、使われていないキーを定義したりするのに使える。
+マクロはキーを一連のキー入力に割り当て、そのキー入力はサブメニューにも引き継がれる。
+
+例1: <w>e</w>を<w>p</w>に割り当てると、`e`キーで`p`キー(初期設定では自動射撃)と同じ
+コマンドを使える。
+
+例2: <w>1</w>を<w>zaf</w>という並びに割り当てると、`1`キーで`a`の文字の呪文を初期設定の
+狙いで唱えられる。
+
+例3: <w>F1</w>を<w>Q&a</w>に割り当てると、F1キーで`a`の文字の呪文を矢筒に入れられる。
+
+<w>キーマップ</w>は、キーを一連のキー入力に完全に置き換える、より低い段階のキーの
+置き換えだ。別のキーボード配列に対応するために、キーをまとめて変えるときに勧められる。
+キーマップには文脈があり、特別な文脈でない所ではどこでも初期設定/「通常」の文脈が
+使われる。マクロはキーマップの結果を入力として受け取る。
+
+例: ヨーロッパのキーボード配列の中には、~ の代わりに § の記号があるものがある。
+そのため、通常とメニューの両方のキーマップの文脈で § を ~ に割り当てておくと、
+メインメニューとマクロのメニューを少し開きやすくなる。(ほかの配列では、代わりに
+½ がこれに当たる。)
+
+コマンドの割り当てにキーマップを使うと、思わぬ副作用が出ることがある。例えば、
+<w>1</w>をキーマップで<w>zaf</w>に割り当てるのは勧められない。技能の訓練目標を入力する
+ときに`1`を入力しにくくなるからだ。
+
+<w>キーコード</w>: マクロとキーマップはどちらも、動作を記述するときにキーコードを
+受け付ける。キーコード<w>n</w>を入力するには<w>\{n}</w>の形で書く。(バックスラッシュは
+<w>\\</w>で入力する。)例えば、<w>tab</w>ボタンのキーコードは<w>\{9}</w>で入力する。
+マクロの編集メニューで<w>~~</w>を使うと、キーコードでマクロやキーマップを割り当てられる。
+
+<w>保存</w>: このメニューで編集した割り当ては、セーブディレクトリの .macro ファイルに
+保存される。オプションファイルの設定があれば、そちらが優先される。詳しくは
+options_guide.txt の `macro` コマンドを参照。
+%%%%
+console-keycodes
+
+# en:
+#   <h>Keycodes for console and webtiles</h>
+#
+#   Keycodes can be entered as numbers, or in some cases, human readable strings.
+#   The following tables give both the numeric keycode, and the string; modified
+#   keys generally must be entered by number. When entering a keycode  as part of a
+#   macro action, it should be wrapped using the following syntax for keycode n:
+#   <w>\{n}</w>. This should also be used when defining a keycode by number in your
+#   rc file. Example: when defining a macro that triggers F1, you can write
+#   "\{F1\}" or "\{-265}". For named keys as part of a macro definition, the \{}
+#   may be omitted.
+#
+#   Positive numeric values are ASCII character codes. Negative values are
+#   crawl-internal keycodes for special keys. The sign is required for these to
+#   be interpreted correctly. Keyboards vary quite a bit, and so not all of these
+#   bindings are available on all keyboards; cases where there is often variation
+#   are indicated specifically below.
+#
+#   The following is a quick-reference for some of the main keys you might want to
+#   bind.
+#
+#   <w>8</w>: Backspace (and/or Delete, depending on keyboard)
+#   <w>9</w>: Tab
+#   <w>13</w>: Enter (and/or the Return key, depending on keyboard)
+#   <w>27</w>: Esc
+#
+#   <w>-233</w>: Shift-Tab
+#   <w>-222</w>: Ctrl-Tab (on some keyboards)
+#   <w>-255</w>: Delete (on some keyboards)
+#   <w>-265</w>: F1   <w>-264</w>: F2   <w>-263</w>: F3   <w>-262</w>: F4   <w>-261</w>: F5
+#   <w>-260</w>: F6   <w>-259</w>: F7   <w>-258</w>: F8   <w>-257</w>: F9   <w>-256</w>: F10
+#
+#   Keycodes up to F22 are defined, but may not work on all builds. (On webtiles,
+#   F11 and F12 are reserved.)
+#
+#   <w>Number pad and navigation keys:</w>
+#
+#   On many keyboards, <w>numlock</w> switches between the number keys and
+#   navigation keys. Modifiers for these keys may not work on all keyboards. When
+#   modified number pad keys do work, Shift and Ctrl typically treats those keys as
+#   modified navigation keys regardless of numlock status.
+#
+#   Navigation keys:
+#
+#   <w>-245</w>: PgDn    <w>-234</w>: Shift-PgDn    <w>-223</w>: Ctrl-PgDn
+#   <w>-246</w>: PgUp    <w>-235</w>: Shift-PgUp    <w>-224</w>: Ctrl-PgUp
+#   <w>-247</w>: Clear   <w>-236</w>: Shift-Clear   <w>-225</w>: Ctrl-Clear
+#   <w>-248</w>: End     <w>-237</w>: Shift-End     <w>-226</w>: Ctrl-End
+#   <w>-249</w>: Home    <w>-238</w>: Shift-Home    <w>-227</w>: Ctrl-Home
+#   <w>-250</w>: Insert  <w>-239</w>: Shift-Insert  <w>-228</w>: Ctrl-Insert
+#   <w>-251</w>: Right   <w>-240</w>: Shift-Right   <w>-229</w>: Ctrl-Right
+#   <w>-252</w>: Left    <w>-241</w>: Shift-Left    <w>-230</w>: Ctrl-Left
+#   <w>-253</w>: Down    <w>-242</w>: Shift-Down    <w>-231</w>: Ctrl-Down
+#   <w>-254</w>: Up      <w>-243</w>: Shift-Up      <w>-232</w>: Ctrl-Up
+#
+#   Number pad keys:
+#
+#   <w>-1007</w>: NP7   <w>-1008</w>: NP8   <w>-1009</w>: NP9
+#   <w>-1004</w>: NP4   <w>-1005</w>: NP5   <w>-1006</w>: NP6
+#   <w>-1001</w>: NP1   <w>-1002</w>: NP2   <w>-1003</w>: NP3
+#   <w>-1000</w>: NP0
+#   <w>-1010</w>: NPenter
+#   <w>-1012</w>: NP/   <w>-1015</w>: NP*   <w>-1016</w>: NP+   <w>-1018</w>: NP-
+#   <w>-1019</w>: NP.   <w>-1021</w>: NP=
+#
+#   Some number pad punctuation keys may not be distinguished from their "regular"
+#   counterparts, again depending on keyboard and build.
+<h>コンソール版とWebタイル版のキーコード</h>
+
+キーコードは数字で、または場合によっては人が読める文字列で入力できる。
+以下の表では、数字のキーコードと文字列の両方を示す。修飾キー付きのキーは、
+通常は数字で入力しなければならない。マクロの動作の一部としてキーコードを
+入力するときは、キーコード n を<w>\{n}</w>のように囲んで書く。rc ファイルで数字で
+キーコードを定義するときも、これを使う。例: F1 を押すと動くマクロを定義するときは、
+"\{F1\}"または"\{-265}"と書ける。マクロの定義の一部としての名前付きのキーでは、
+\{} を省略してもよい。
+
+正の数は ASCII の文字コードだ。負の数は、特殊なキーのための crawl 内部のキーコード
+だ。正しく解釈されるには符号が必要だ。キーボードはかなり様々なので、これらの
+割り当てがすべてのキーボードで使えるわけではない。よく違いが出るものは下で
+特に示してある。
+
+以下は、割り当てたくなりそうな主なキーの早見表だ。
+
+<w>8</w>: Backspace(キーボードによっては Delete も)
+<w>9</w>: Tab
+<w>13</w>: Enter(キーボードによっては Return キーも)
+<w>27</w>: Esc
+
+<w>-233</w>: Shift-Tab
+<w>-222</w>: Ctrl-Tab(一部のキーボード)
+<w>-255</w>: Delete(一部のキーボード)
+<w>-265</w>: F1   <w>-264</w>: F2   <w>-263</w>: F3   <w>-262</w>: F4   <w>-261</w>: F5
+<w>-260</w>: F6   <w>-259</w>: F7   <w>-258</w>: F8   <w>-257</w>: F9   <w>-256</w>: F10
+
+F22 までのキーコードが定義されているが、すべてのビルドで動くとは限らない。
+(Webタイル版では F11 と F12 は予約されている。)
+
+<w>テンキーと移動キー:</w>
+
+多くのキーボードでは、<w>numlock</w>で数字キーと移動キーが切り替わる。これらのキーの
+修飾キーは、すべてのキーボードで使えるとは限らない。修飾キー付きのテンキーが
+使える場合、Shift と Ctrl は、numlock の状態に関係なく、通常それらのキーを修飾キー
+付きの移動キーとして扱う。
+
+移動キー:
+
+<w>-245</w>: PgDn    <w>-234</w>: Shift-PgDn    <w>-223</w>: Ctrl-PgDn
+<w>-246</w>: PgUp    <w>-235</w>: Shift-PgUp    <w>-224</w>: Ctrl-PgUp
+<w>-247</w>: Clear   <w>-236</w>: Shift-Clear   <w>-225</w>: Ctrl-Clear
+<w>-248</w>: End     <w>-237</w>: Shift-End     <w>-226</w>: Ctrl-End
+<w>-249</w>: Home    <w>-238</w>: Shift-Home    <w>-227</w>: Ctrl-Home
+<w>-250</w>: Insert  <w>-239</w>: Shift-Insert  <w>-228</w>: Ctrl-Insert
+<w>-251</w>: Right   <w>-240</w>: Shift-Right   <w>-229</w>: Ctrl-Right
+<w>-252</w>: Left    <w>-241</w>: Shift-Left    <w>-230</w>: Ctrl-Left
+<w>-253</w>: Down    <w>-242</w>: Shift-Down    <w>-231</w>: Ctrl-Down
+<w>-254</w>: Up      <w>-243</w>: Shift-Up      <w>-232</w>: Ctrl-Up
+
+テンキー:
+
+<w>-1007</w>: NP7   <w>-1008</w>: NP8   <w>-1009</w>: NP9
+<w>-1004</w>: NP4   <w>-1005</w>: NP5   <w>-1006</w>: NP6
+<w>-1001</w>: NP1   <w>-1002</w>: NP2   <w>-1003</w>: NP3
+<w>-1000</w>: NP0
+<w>-1010</w>: NPenter
+<w>-1012</w>: NP/   <w>-1015</w>: NP*   <w>-1016</w>: NP+   <w>-1018</w>: NP-
+<w>-1019</w>: NP.   <w>-1021</w>: NP=
+
+テンキーの記号のキーの中には、キーボードやビルドによっては「通常」のキーと
+区別されないものがある。
 %%%%

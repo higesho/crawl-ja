@@ -1,0 +1,1759 @@
+%%%%
+rainbow_colour
+
+# en:
+#   red
+#
+#   orange
+#
+#   yellow
+#
+#   green
+#
+#   blue
+#
+#   indigo
+#
+#   violet
+赤
+
+橙色
+
+黄色
+
+緑
+
+青
+
+藍色
+
+紫
+%%%%
+misc_colour
+
+# en:
+#   aero
+#
+#   alabaster
+#
+#   alizarin crimson
+#
+#   almond
+#
+#   amaranth
+#
+#   amaranth pink
+#
+#   amaranth purple
+#
+#   amethyst
+#
+#   ametrine
+#
+#   amber
+#
+#   annatto
+#
+#   apple green
+#
+#   apple red
+#
+#   apple yellow
+#
+#   apricot
+#
+#   aqua
+#
+#   aquamarine
+#
+#   artichoke green
+#
+#   asparagus green
+#
+#   atrovirens
+#
+#   aubergine
+#
+#   auburn
+#
+#   aureolin
+#
+#   avocado green
+#
+#   azure
+#
+#   azurite
+#
+#   baby blue
+#
+#   banana yellow
+#
+#   beetroot red
+#
+#   beige
+#
+#   bisque
+#
+#   bistre
+#
+#   blaze orange
+#
+#   blood orange
+#
+#   blood red
+#
+#   blueberry
+#
+#   blush
+#
+#   bole
+#
+#   brass
+#
+#   bronze
+#
+#   brown
+#
+#   brown ochre
+#
+#   buff
+#
+#   burgundy
+#
+#   burlywood
+#
+#   burnt amber
+#
+#   burnt ochre
+#
+#   burnt orange
+#
+#   burnt sienna
+#
+#   burnt umber
+#
+#   byzantium
+#
+#   cadmium red
+#
+#   cadmium green
+#
+#   cadmium orange
+#
+#   cadmium yellow
+#
+#   cameo pink
+#
+#   candy apple green
+#
+#   candy apple red
+#
+#   candy apple yellow
+#
+#   caput mortuum
+#
+#   cardinal red
+#
+#   carmine
+#
+#   carnation
+#
+#   carnelian
+#
+#   carrot orange
+#
+#   cattleya
+#
+#   celadon
+#
+#   celeste
+#
+#   celestial blue
+#
+#   cerise
+#
+#   cerulean
+#
+#   charcoal
+#
+#   chartreuse
+#
+#   chartreuse green
+#
+#   cherry red
+#
+#   chestnut
+#
+#   china blue
+#
+#   chocolate
+#
+#   chocolate cosmos
+#
+#   chrome green
+#
+#   chrome orange
+#
+#   chrome yellow
+#
+#   cinnabar
+#
+#   cinnamon
+#
+#   citreous
+#
+#   citrine
+#
+#   citron
+#
+#   cloudy blue
+#
+#   cobalt blue
+#
+#   cobalt green
+#
+#   cobalt violet
+#
+#   cobalt yellow
+#
+#   coffee
+#
+#   cornflower blue
+#
+#   copper
+#
+#   coquelicot
+#
+#   coral pink
+#
+#   cordovan
+#
+#   cream
+#
+#   crimson
+#
+#   crocoite
+#
+#   cyan
+#
+#   cyclamen
+#
+#   dragon's blood
+#
+#   duck blue
+#
+#   dun
+#
+#   dusty orange
+#
+#   dusty rose
+#
+#   ebony
+#
+#   ecru
+#
+#   eggplant
+#
+#   electric blue
+#
+#   electric indigo
+#
+#   electric magenta
+#
+#   electric purple
+#
+#   electric violet
+#
+#   emerald
+#
+#   eminence
+#
+#   erin
+#
+#   evergreen
+#
+#   fallow
+#
+#   falu red
+#
+#   fandango
+#
+#   fawn
+#
+#   feldgrau
+#
+#   fern green
+#
+#   fire orange
+#
+#   fire red
+#
+#   flax
+#
+#   flirt
+#
+#   fluorescent blue
+#
+#   forest green
+#
+#   fuchsia
+#
+#   fuchsine
+#
+#   fulvous
+#
+#   gamboge
+#
+#   garnet
+#
+#   glaucous
+#
+#   goblin blue
+#
+#   goblin scarlet
+#
+#   green earth
+#
+#   green ochre
+#
+#   greenockite
+#
+#   greige
+#
+#   gold
+#
+#   gold ochre
+#
+#   gold poppy
+#
+#   golden brown
+#
+#   goldenrod
+#
+#   goshenite
+#
+#   gridelin
+#
+#   grullo
+#
+#   haint blue
+#
+#   hansa yellow
+#
+#   harlequin
+#
+#   heliodor
+#
+#   heliotrope
+#
+#   hibiscus
+#
+#   hot pink
+#
+#   hunter green
+#
+#   hunter orange
+#
+#   hyacinth
+#
+#   hyacinth blue
+#
+#   icterine
+#
+#   imperial blue
+#
+#   imperial orange
+#
+#   imperial purple
+#
+#   imperial red
+#
+#   imperial yellow
+#
+#   indanthrone blue
+#
+#   independence
+#
+#   irresistible
+#
+#   iris
+#
+#   isabelline
+#
+#   ivy green
+#
+#   jade
+#
+#   jale
+#
+#   jasmine
+#
+#   jonquil
+#
+#   kachi indigo
+#
+#   khaki
+#
+#   kobicha
+#
+#   kombu green
+#
+#   labradorite
+#
+#   lapis lazuli
+#
+#   laurel green
+#
+#   lavender
+#
+#   lavender blue
+#
+#   lavender purple
+#
+#   lavender indigo
+#
+#   lavender magenta
+#
+#   lavender rose
+#
+#   leaf green
+#
+#   leek green
+#
+#   lemon yellow
+#
+#   liberty
+#
+#   lilac
+#
+#   lime green
+#
+#   liseran purple
+#
+#   lusty gallant
+#
+#   madder
+#
+#   magenta
+#
+#   mahogany
+#
+#   malachite
+#
+#   mandarin
+#
+#   manganese violet
+#
+#   mango
+#
+#   marigold
+#
+#   marine blue
+#
+#   marmalade
+#
+#   maroon
+#
+#   mauve
+#
+#   mauve taupe
+#
+#   mauveine
+#
+#   maxixe
+#
+#   mazarine
+#
+#   mellow yellow
+#
+#   midnight blue
+#
+#   mikado
+#
+#   mindaro
+#
+#   minium
+#
+#   mint green
+#
+#   morganite
+#
+#   morning blue
+#
+#   moss green
+#
+#   mulberry
+#
+#   mustard brown
+#
+#   mustard green
+#
+#   mustard yellow
+#
+#   myrtle
+#
+#   nattier
+#
+#   navy blue
+#
+#   navy purple
+#
+#   nickel
+#
+#   nutmeg
+#
+#   nyanza
+#
+#   ochre
+#
+#   octarine
+#
+#   old helio
+#
+#   old heliotrope
+#
+#   old rose
+#
+#   olive green
+#
+#   olive drab
+#
+#   olive ochre
+#
+#   olivine
+#
+#   olo
+#
+#   orange ochre
+#
+#   orchid
+#
+#   orpiment
+#
+#   oxblood
+#
+#   palatinate
+#
+#   palatinate blue
+#
+#   palatinate purple
+#
+#   peach
+#
+#   pear green
+#
+#   pear yellow
+#
+#   peridot
+#
+#   periwinkle
+#
+#   persimmon
+#
+#   phlox
+#
+#   picotee blue
+#
+#   pine green
+#
+#   pine tree
+#
+#   pink
+#
+#   pink lavender
+#
+#   pistachio
+#
+#   plum
+#
+#   ponceau
+#
+#   poppy red
+#
+#   powder blue
+#
+#   prase
+#
+#   primrose yellow
+#
+#   puce
+#
+#   pumpkin
+#
+#   purple
+#
+#   purple ochre
+#
+#   purple taupe
+#
+#   purpura
+#
+#   purpureus
+#
+#   quartz
+#
+#   quercitron
+#
+#   raspberry
+#
+#   raspberry rose
+#
+#   realgar
+#
+#   red emerald
+#
+#   red ochre
+#
+#   rej
+#
+#   rocket green
+#
+#   rockmelon
+#
+#   rose
+#
+#   rose quartz
+#
+#   rose vale
+#
+#   rubric
+#
+#   ruby
+#
+#   ruddy blue
+#
+#   rufous
+#
+#   russet
+#
+#   rust
+#
+#   safflower orange
+#
+#   saffron
+#
+#   salmon
+#
+#   sanguine
+#
+#   sap green
+#
+#   sapphire
+#
+#   sea blue
+#
+#   sea green
+#
+#   sepia
+#
+#   scarlet
+#
+#   scarlet emerald
+#
+#   shocking pink
+#
+#   sienna
+#
+#   silver
+#
+#   silver pink
+#
+#   sinopia
+#
+#   skobeloff
+#
+#   sky blue
+#
+#   sky magenta
+#
+#   slate
+#
+#   slate blue
+#
+#   smalt
+#
+#   smaragdine
+#
+#   sorcerer's violet
+#
+#   spring bud
+#
+#   spring green
+#
+#   steel blue
+#
+#   strawberry red
+#
+#   strontium yellow
+#
+#   tamarind
+#
+#   tang blue
+#
+#   tangerine
+#
+#   taupe
+#
+#   tawny
+#
+#   tea green
+#
+#   teal
+#
+#   teal blue
+#
+#   teal green
+#
+#   telemagenta
+#
+#   terracotta
+#
+#   terre verte
+#
+#   thistle
+#
+#   tiger's eye
+#
+#   titanium yellow
+#
+#   tomato red
+#
+#   topaz
+#
+#   turmeric
+#
+#   turquoise
+#
+#   ulfire
+#
+#   ultramarine
+#
+#   umber
+#
+#   vanilla
+#
+#   verdigris
+#
+#   vermilion
+#
+#   veronica
+#
+#   viridian
+#
+#   walnut
+#
+#   watermelon green
+#
+#   watermelon red
+#
+#   wenge
+#
+#   wheat
+#
+#   wine
+#
+#   wisteria
+#
+#   xanthic
+#
+#   xanthous
+#
+#   yam
+#
+#   yellow ochre
+#
+#   zaffre
+#
+#   zinc yellow
+#
+#   zinnwaldite
+#
+#   zomp
+#
+#   zucchini green
+エアロブルー
+
+アラバスター色
+
+アリザリンクリムゾン
+
+アーモンド色
+
+アマランス色
+
+アマランスピンク
+
+アマランスパープル
+
+紫水晶色
+
+アメトリン色
+
+琥珀色
+
+アナトー色
+
+アップルグリーン
+
+アップルレッド
+
+アップルイエロー
+
+アプリコット色
+
+アクア
+
+アクアマリン
+
+アーティチョークグリーン
+
+アスパラガスグリーン
+
+黒緑色
+
+茄子紺
+
+赤褐色
+
+オーレオリン
+
+アボカドグリーン
+
+紺碧
+
+藍銅鉱色
+
+ベビーブルー
+
+バナナイエロー
+
+ビートレッド
+
+ベージュ
+
+ビスク色
+
+ビスタ色
+
+ブレイズオレンジ
+
+ブラッドオレンジ
+
+血の赤
+
+ブルーベリー色
+
+頬紅色
+
+赤土色
+
+真鍮色
+
+青銅色
+
+茶色
+
+ブラウンオーカー
+
+バフ色
+
+バーガンディ
+
+バーリーウッド
+
+焦げた琥珀色
+
+バーントオーカー
+
+バーントオレンジ
+
+バーントシエナ
+
+バーントアンバー
+
+ビザンチウム
+
+カドミウムレッド
+
+カドミウムグリーン
+
+カドミウムオレンジ
+
+カドミウムイエロー
+
+カメオピンク
+
+キャンディアップルグリーン
+
+キャンディアップルレッド
+
+キャンディアップルイエロー
+
+カプト・モルトゥーム
+
+カーディナルレッド
+
+カーマイン
+
+カーネーション色
+
+紅玉髄色
+
+キャロットオレンジ
+
+カトレア色
+
+青磁色
+
+セレステ
+
+セレスティアルブルー
+
+スリーズ
+
+セルリアンブルー
+
+消し炭色
+
+シャルトルーズ
+
+シャルトルーズグリーン
+
+チェリーレッド
+
+栗色
+
+チャイナブルー
+
+チョコレート色
+
+チョコレートコスモス色
+
+クロムグリーン
+
+クロムオレンジ
+
+クロムイエロー
+
+辰砂色
+
+シナモン色
+
+淡い黄緑色
+
+シトリン色
+
+シトロン色
+
+クラウディブルー
+
+コバルトブルー
+
+コバルトグリーン
+
+コバルトバイオレット
+
+コバルトイエロー
+
+コーヒー色
+
+コーンフラワーブルー
+
+銅色
+
+コクリコ
+
+コーラルピンク
+
+コードバン
+
+クリーム色
+
+深紅
+
+紅鉛鉱色
+
+シアン
+
+シクラメン色
+
+竜血色
+
+ダックブルー
+
+灰褐色
+
+ダスティオレンジ
+
+ダスティローズ
+
+黒檀色
+
+エクリュ
+
+茄子色
+
+エレクトリックブルー
+
+エレクトリックインディゴ
+
+エレクトリックマゼンタ
+
+エレクトリックパープル
+
+エレクトリックバイオレット
+
+エメラルドグリーン
+
+エミネンス
+
+エリン
+
+エバーグリーン
+
+淡黄褐色
+
+ファールンレッド
+
+ファンダンゴ
+
+子鹿色
+
+フェルトグラウ
+
+ファーングリーン
+
+ファイアオレンジ
+
+ファイアレッド
+
+亜麻色
+
+フラート
+
+蛍光ブルー
+
+フォレストグリーン
+
+フクシア
+
+フクシン
+
+黄褐色
+
+雌黄色
+
+ガーネット色
+
+グローカス
+
+ゴブリンブルー
+
+ゴブリンスカーレット
+
+緑土色
+
+グリーンオーカー
+
+硫カドミウム鉱色
+
+グレージュ
+
+金色
+
+ゴールドオーカー
+
+ゴールドポピー
+
+ゴールデンブラウン
+
+ゴールデンロッド
+
+ゴシェナイト色
+
+グリドラン
+
+グルーロ
+
+ヘイントブルー
+
+ハンザイエロー
+
+ハーレクイン
+
+ヘリオドール色
+
+ヘリオトロープ
+
+ハイビスカス色
+
+ホットピンク
+
+ハンターグリーン
+
+ハンターオレンジ
+
+ヒヤシンス色
+
+ヒヤシンスブルー
+
+黄疸色
+
+インペリアルブルー
+
+インペリアルオレンジ
+
+帝王紫
+
+インペリアルレッド
+
+インペリアルイエロー
+
+インダンスロンブルー
+
+インディペンデンス
+
+イレジスティブル
+
+菖蒲色
+
+イザベル色
+
+アイビーグリーン
+
+翡翠色
+
+ジェール色
+
+ジャスミン色
+
+黄水仙色
+
+搗色
+
+カーキ色
+
+媚茶
+
+昆布色
+
+ラブラドライト色
+
+瑠璃色
+
+ローレルグリーン
+
+ラベンダー色
+
+ラベンダーブルー
+
+ラベンダーパープル
+
+ラベンダーインディゴ
+
+ラベンダーマゼンタ
+
+ラベンダーローズ
+
+リーフグリーン
+
+葱色
+
+レモンイエロー
+
+リバティ
+
+ライラック色
+
+ライムグリーン
+
+リズランパープル
+
+ラスティ・ギャラント
+
+茜色
+
+マゼンタ
+
+マホガニー色
+
+孔雀石色
+
+マンダリン
+
+マンガンバイオレット
+
+マンゴー色
+
+マリーゴールド色
+
+マリンブルー
+
+マーマレード色
+
+海老茶色
+
+モーブ
+
+モーブトープ
+
+モーベイン
+
+マシーシェ
+
+マザリンブルー
+
+メロウイエロー
+
+ミッドナイトブルー
+
+ミカドイエロー
+
+ミンダロ
+
+鉛丹色
+
+ミントグリーン
+
+モルガナイト色
+
+モーニングブルー
+
+苔色
+
+桑の実色
+
+マスタードブラウン
+
+マスタードグリーン
+
+マスタードイエロー
+
+マートル
+
+ナティエブルー
+
+ネイビーブルー
+
+ネイビーパープル
+
+ニッケル色
+
+ナツメグ色
+
+ニャンザ
+
+黄土色
+
+八番目の色
+
+オールドヘリオ
+
+オールドヘリオトロープ
+
+オールドローズ
+
+オリーブグリーン
+
+オリーブドラブ
+
+オリーブオーカー
+
+橄欖石色
+
+オロ
+
+オレンジオーカー
+
+オーキッド
+
+雄黄色
+
+オックスブラッド
+
+パラティネート
+
+パラティネートブルー
+
+パラティネートパープル
+
+桃色
+
+ペアグリーン
+
+ペアイエロー
+
+ペリドット色
+
+ペリウィンクル
+
+柿色
+
+フロックス
+
+ピコティーブルー
+
+パイングリーン
+
+松葉色
+
+ピンク
+
+ピンクラベンダー
+
+ピスタチオ色
+
+プラム色
+
+ポンソー
+
+ポピーレッド
+
+パウダーブルー
+
+緑石英色
+
+プリムローズイエロー
+
+ピュース
+
+南瓜色
+
+紫
+
+パープルオーカー
+
+パープルトープ
+
+プルプラ
+
+プルプレウス
+
+石英色
+
+クエルシトロン
+
+ラズベリー色
+
+ラズベリーローズ
+
+鶏冠石色
+
+レッドエメラルド
+
+弁柄色
+
+レジ
+
+ロケットグリーン
+
+ロックメロン色
+
+薔薇色
+
+ローズクォーツ
+
+ローズヴェール
+
+朱墨色
+
+ルビー色
+
+ラディブルー
+
+赤錆色
+
+ラセット
+
+錆色
+
+紅花色
+
+サフラン色
+
+サーモンピンク
+
+サンギーヌ
+
+サップグリーン
+
+サファイア色
+
+シーブルー
+
+シーグリーン
+
+セピア
+
+緋色
+
+スカーレットエメラルド
+
+ショッキングピンク
+
+シエナ
+
+銀色
+
+シルバーピンク
+
+シノピア
+
+スコベロフ
+
+空色
+
+スカイマゼンタ
+
+スレート色
+
+スレートブルー
+
+花紺青
+
+翠緑色
+
+魔術師の菫色
+
+スプリングバド
+
+スプリンググリーン
+
+スチールブルー
+
+ストロベリーレッド
+
+ストロンチウムイエロー
+
+タマリンド色
+
+タンブルー
+
+タンジェリン
+
+トープ
+
+狐色
+
+ティーグリーン
+
+ティール
+
+ティールブルー
+
+ティールグリーン
+
+テレマゼンタ
+
+テラコッタ
+
+テールヴェルト
+
+薊色
+
+虎目石色
+
+チタンイエロー
+
+トマトレッド
+
+トパーズ色
+
+鬱金色
+
+ターコイズ
+
+ウルファイア
+
+群青色
+
+アンバー
+
+バニラ色
+
+緑青色
+
+朱色
+
+ベロニカ
+
+ビリジアン
+
+胡桃色
+
+ウォーターメロングリーン
+
+西瓜色
+
+ウェンジ
+
+小麦色
+
+ワイン色
+
+藤色
+
+黄ばんだ色
+
+刈安色
+
+ヤム色
+
+イエローオーカー
+
+ザッフル
+
+亜鉛黄
+
+ツィンワルダイト色
+
+ゾンプ
+
+ズッキーニグリーン
+%%%%
+mono_colour
+
+# en:
+#   black
+#
+#   white
+#
+#   grey
+黒
+
+白
+
+灰色
+%%%%
+any_colour
+
+# en:
+#   w:40
+#   @rainbow_colour@
+#
+#   w:20
+#   @misc_colour@
+#
+#   @mono_colour@
+w:40
+@rainbow_colour@
+
+w:20
+@misc_colour@
+
+@mono_colour@
+%%%%
+any_pattern
+
+# en:
+#   arabesque
+#
+#   arrows
+#
+#   chequers
+#
+#   chevrons
+#
+#   diamonds
+#
+#   flamestitch
+#
+#   fractals
+#
+#   gingham
+#
+#   herringbone
+#
+#   houndstooth
+#
+#   leopard spots
+#
+#   ogee
+#
+#   ombre
+#
+#   paisley
+#
+#   pinstripes
+#
+#   plaid
+#
+#   polka dots
+#
+#   quatrefoil
+#
+#   stripes
+#
+#   spirals
+#
+#   spots
+#
+#   squares
+#
+#   stars
+#
+#   tartan
+#
+#   triangles
+#
+#   whorls
+唐草模様
+
+矢羽根模様
+
+市松模様
+
+山形模様
+
+菱形模様
+
+フレイムステッチ
+
+フラクタル模様
+
+ギンガムチェック
+
+ヘリンボーン
+
+千鳥格子
+
+豹柄
+
+オジー模様
+
+グラデーション
+
+ペイズリー柄
+
+ピンストライプ
+
+チェック柄
+
+水玉模様
+
+四つ葉模様
+
+縞模様
+
+渦巻き模様
+
+斑点模様
+
+四角模様
+
+星模様
+
+タータンチェック
+
+三角模様
+
+渦紋
+%%%%
+glowing_adj
+
+# en:
+#   bright
+#
+#   brilliant
+#
+#   dark
+#
+#   dull
+#
+#   dusky
+#
+#   faint
+#
+#   gleaming
+#
+#   glossy
+#
+#   intense
+#
+#   luminous
+#
+#   lurid
+#
+#   lustrous
+#
+#   mottled
+#
+#   murky
+#
+#   pale
+#
+#   shimmering
+#
+#   shining
+#
+#   vivid
+明るい
+
+鮮烈な
+
+暗い
+
+くすんだ
+
+薄暗い
+
+かすかな
+
+きらめく
+
+つややかな
+
+強烈な
+
+光り輝く
+
+けばけばしい
+
+光沢のある
+
+まだらの
+
+濁った
+
+淡い
+
+ちらちら光る
+
+輝く
+
+鮮やかな
+%%%%
+any_glowing_colour
+
+# en:
+#   @glowing_adj@ @any_colour@
+@glowing_adj@@any_colour@
+%%%%
+any_colour_pattern
+
+# en:
+#   @any_colour@ @any_pattern@
+#
+#   @any_colour@ on @any_colour@ @any_pattern@
+@any_colour@の@any_pattern@
+
+@any_colour@地に@any_colour@の@any_pattern@
+%%%%
+any_glowing_colour_pattern
+
+# en:
+#   @any_glowing_colour@ @any_pattern@
+#
+#   @any_glowing_colour@ on @any_colour@ @any_pattern@
+#
+#   @any_colour@ on @any_glowing_colour@ @any_pattern@
+#
+#   @any_glowing_colour@ on @any_glowing_colour@ @any_pattern@
+@any_glowing_colour@の@any_pattern@
+
+@any_colour@地に@any_glowing_colour@の@any_pattern@
+
+@any_glowing_colour@地に@any_colour@の@any_pattern@
+
+@any_glowing_colour@地に@any_glowing_colour@の@any_pattern@
+%%%%

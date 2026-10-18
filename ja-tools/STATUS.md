@@ -6,16 +6,9 @@
 
 ## 次にやること(2026-10-19 時点)
 
-C++ の張り直し(目標の 1)はほぼ完了(残りはデバッグ・ウィザード用と FOLLOWUPS の細部)。
-目標の 2(dat/des・dat/dlua の表示文)は第 6 陣で済み、目標の 3(説明文・DB の全訳)の途中。
-下の「第 7 陣の案」の 7 グループをサブエージェントに並行で割り当てる(指示は第 6 陣と同じく、
-共通ルールを scratchpad の db-rules.md に書いて読ませた。新しいスレッドでは ja-tools/dbtools.py
-の説明と CONVENTIONS.md から書き直す)。
-DB の訳の進み具合は `python -I ja-tools/dbtools.py status`(未訳・要再翻訳の一覧は
-`todo` / `keys`)で見る。同じ ja/*.txt を 2 人に同時に書かせない(大きいファイルを分けるときは
-ja-work/new/ に別ファイルで書かせ、取りまとめ役が結合する)。
-全員の完了後にまとめて dups/check/fmt/dbtools status → ビルド → 起動確認 →
-FOLLOWUPS.md 更新 → コミット。
+目標の 1〜3 はほぼ完了(DB は 5,800 項目中 5,618 項目が訳あり。残りは著作権の関係で英語の
+ままにする引用文)。残りは第 8 陣の案(仕上げ)と、目標の 4(実機での総点検)。
+実機の確認は IME の窓が前面に居座るとキー入力できないので、ユーザーに閉じてもらってから行う。
 
 ## 目標
 
@@ -70,6 +63,12 @@ FOLLOWUPS.md 更新 → コミット。
   BOM なしの dat ファイルを CP932 で読んでいた不具合を unicode.cc で修正(Lua に日本語を
   書くと構文エラーになっていた)。`crawl.exe -builddb` と起動(タイトル画面の読み込み完了)
   まで確認。キー入力は IME の窓のため未確認。
+
+- 第 7 陣: DB の残りを全訳。monspeak(731 件)、monspell・godspeak・shout・wpnnoise、
+  items・egos・unrand・unident・cards、gods・branches・skills・species・backgrounds・
+  commands・tutorial、hints と小さな DB 12 ファイル、quotes(283 件。182 件は著作権の
+  関係で英語のまま)。取りまとめで duration-data.h・delay.h を包み、喋る武器の台詞・
+  噴水の文・名前の生成の置換を日本語化、訳語を統一。`-builddb` まで確認。
 
 ## C++ 張り直しの分担計画
 
@@ -130,17 +129,18 @@ FOLLOWUPS.md 更新 → コミット。
 第 6 陣(完了): dat/dlua、dat/des、descript の monsters / features / clouds / monstatus /
 passives / status / mutations / spells / ability
 
-第 7 陣の案(DB の残り。`dbtools.py status` で未訳の多い順):
-1. database/monspeak.txt の前半(大。分けるときは ja-work/new/ に書かせて dbmerge.py で結合)
-2. database/monspeak.txt の後半
-3. database/monspell.txt, godspeak.txt, shout.txt, wpnnoise.txt
-4. descript/items.txt, egos.txt, unrand.txt, unident.txt, cards.txt
-5. descript/gods.txt, branches.txt, skills.txt, species.txt, backgrounds.txt, commands.txt, tutorial.txt
-6. descript/hints.txt と database の小さいファイル(montitle, monname, decorlines, graffiti,
-   insult, miscast, miscname, godname, colourname, help, FAQ)
-7. descript/quotes.txt(引用文。著作権が切れていない作品は英語のまま残す)
+第 7 陣(完了): DB の残り全部(上の「完了」を参照)
 
-その後: wiz-*.cc(優先度低)、tileweb.cc(Web 版)、FOLLOWUPS の細部、実機での総点検。
+第 8 陣の案(仕上げ):
+1. art-func.h(固定アーティファクトの効果。107 件)
+2. FOLLOWUPS の C++ の細部(notes.cc の定型文、game-options/macro のエラー文、acquire.cc の
+   ギズモ名の区切り、describe.cc の trap_name、invent の選択メニューの題名、player-reacts の
+   eel、mon-info の『』、movement.cc の veto_reason など)
+3. wiz-*.cc(ウィザードモード。優先度低)
+4. 全体の洗い出し: 包み忘れの英文(scratchpad の unwrapped.py のような grep)、辞書の未使用キー、
+   訳語の揺れ(同じ英語に違う訳)の一覧と統一
+5. 実機での総点検(キャラ作成、各画面、戦闘、神、店、ダンプ、死亡画面)。ユーザーに IME の窓を
+   閉じてもらってから。
 
 実機で見えた未訳(第 2 陣の確認時): タイトル・キャラ作成画面(startup.cc, newgame.cc,
 ng-*.cc)、ステータス欄(output.cc)、"You encounter ..."(player-notices.cc)、

@@ -1,25 +1,571 @@
 %%%%
+acid (acid) weapon ego
+
+# en:
+#   It splashes victims with acid (2d4 damage, Corrosion).
+攻撃した相手に酸を浴びせる(2d4のダメージ、腐食)。
+%%%%
+antimagic (antimagic) weapon ego
+
+# en:
+#   It reduces your magical energy, and disrupts the spells and magical abilities of
+#   those it strikes. Natural abilities and divine invocations are not affected.
+あなたの魔力を減らし、攻撃した相手の呪文や魔法の能力を妨害する。生来の能力や神の祈祷には影響しない。
+%%%%
+chaos (chaos) weapon ego
+
+# en:
+#   Each hit from it has a different, random effect.
+攻撃が命中するたびに、異なるランダムな効果が生じる。
+%%%%
+concussion (concuss) weapon ego
+
+# en:
+#   It pushes those it hits backwards, briefly stunning them in the process. If it
+#   pushes them into a solid feature, they will instead take an additional one-third
+#   of any damage that pierces their armour.
+攻撃した相手を後ろへ押しやり、その際に短時間朦朧とさせる。相手を固い地形に押しつけた場合は、代わりに鎧を貫いたダメージの3分の1の追加ダメージを与える。
+%%%%
+distortion (distort) weapon ego
+
+# en:
+#   It warps and distorts space around it, and may blink, banish, or inflict extra
+#   damage upon those it strikes. Unwielding it can teleport you to foes or banish
+#   you to the Abyss.
+周囲の空間を歪め、攻撃した相手を瞬間移動させたり、追放したり、追加のダメージを与えたりすることがある。装備を外すと、あなたが敵のもとへテレポートしたり、アビスへ追放されたりすることがある。
+%%%%
+devious (devious) weapon ego
+
+# en:
+#   It has an increased chance to perform stab attacks against vulnerable targets,
+#   and temporarily increases the wielder's EV and slaying each time they do so.
+無防備な相手に急所攻撃を行える確率が高まり、急所攻撃を行うたびに使い手の回避力と殺傷力が一時的に高まる。
+%%%%
+draining (drain) weapon ego
+
+# en:
+#   It sometimes drains living victims (1/2 chance). This deals an additional
+#   one-quarter of any damage that pierces defenders' armour as well as a flat 2-4
+#   damage, and also weakens them slightly.
+生きている相手から生命力を吸い取ることがある(確率1/2)。これは相手の鎧を貫いたダメージの4分の1と、さらに固定で2～4の追加ダメージを与え、相手をわずかに弱らせる。
+%%%%
+electrocution (elec) weapon ego
+
+# en:
+#   It sometimes electrocutes victims (1/4 chance, 8-20 damage).
+攻撃した相手を感電させることがある(確率1/4、8～20のダメージ)。
+%%%%
+entangling (entangle) weapon ego
+
+# en:
+#   It sometimes constricts those it attacks with vines. (1/2 chance, 2-4 damage).
+攻撃した相手を蔓で締めつけることがある(確率1/2、2～4のダメージ)。
+%%%%
+flaming (flame) weapon ego
+
+# en:
+#   It burns victims, dealing an additional one-quarter of any damage that pierces
+#   defenders' armour.
+攻撃した相手を焼き、相手の鎧を貫いたダメージの4分の1の追加ダメージを与える。
+%%%%
+flaming (flame) weapon ego blade
+
+# en:
+#   It burns victims, dealing an additional one-quarter of any damage that pierces
+#   defenders' armour. Big, fiery blades are also staple armaments of hydra-hunters.
+攻撃した相手を焼き、相手の鎧を貫いたダメージの4分の1の追加ダメージを与える。大きな炎の刃は、ヒドラ狩りの定番の武器でもある。
+%%%%
+freezing (freeze) weapon ego
+
+# en:
+#   It freezes victims, dealing an additional one-quarter of any damage that pierces
+#   defenders' armour. It may also slow down cold-blooded creatures.
+攻撃した相手を凍えさせ、相手の鎧を貫いたダメージの4分の1の追加ダメージを与える。冷血の生き物を減速させることもある。
+%%%%
+foul flame (foul flame) weapon ego
+
+# en:
+#   It has been infused with foul flame, dealing an additional three-quarters damage
+#   to holy beings, an additional one-quarter damage to undead and demons, and an
+#   additional half damage to all others, so long as it pierces armour. Holy beings
+#   and good god worshippers cannot use this.
+穢れた炎が込められており、鎧を貫いたダメージに応じて、聖なる存在には4分の3、アンデッドと悪魔には4分の1、その他のすべての者には2分の1の追加ダメージを与える。聖なる存在と善の神の信者はこれを使えない。
+%%%%
+heavy (heavy) weapon ego
+
+# en:
+#   It deals dramatically more damage, but attacks with it are much slower.
+与えるダメージが劇的に増えるが、攻撃がずっと遅くなる。
+%%%%
+heavy (heavy) weapon ego ranged
+
+# en:
+#   Any ammunition fired from it deals dramatically more damage, but attacks with
+#   it are much slower.
+これで放った矢弾が与えるダメージが劇的に増えるが、攻撃がずっと遅くなる。
+%%%%
+holy wrath (holy) weapon ego
+
+# en:
+#   It has been blessed by the Shining One, dealing an additional three-quarters of
+#   any damage that pierces undead and demons' armour. Undead and demons cannot use
+#   this.
+輝けるものの祝福を受けており、アンデッドと悪魔に対しては、鎧を貫いたダメージの4分の3の追加ダメージを与える。アンデッドと悪魔はこれを使えない。
+%%%%
+pain (pain) weapon ego
+
+# en:
+#   It inflicts extra damage on living creatures proportional to your Necromancy
+#   skill.{{
+#       if you.god() == "Trog" then
+#           return " Trog prevents you from unleashing this effect.";
+#       end
+#   }}{{
+#       if you.is_useless_skill("necromancy") then
+#           return " Your inability to study Necromancy prevents you from drawing on the full power of this weapon.";
+#       end
+#   }}
+生きている相手に、あなたの死霊術の技能に比例した追加のダメージを与える。{{
+    if you.god() == "Trog" then
+        return "トログはあなたがこの効果を解き放つのを許さない。";
+    end
+}}{{
+    if you.is_useless_skill("necromancy") then
+        return "あなたは死霊術を学べないため、この武器の真価を引き出すことができない。";
+    end
+}}
+%%%%
+penetration (penet) weapon ego
+
+# en:
+#   Any ammunition fired by it continues flying after striking targets, potentially
+#   hitting everything in its path until it leaves sight.
+これで放った矢弾は相手に当たっても飛び続け、視界の外に出るまで進路上のすべてに命中しうる。
+%%%%
+protection (protect) weapon ego
+
+# en:
+#   It grants you temporary protection after it strikes (+7 AC).
+攻撃が命中した後、一時的にあなたを守る(AC+7)。
+%%%%
+reaping (reap) weapon ego
+
+# en:
+#   Any living, holy, or demonic foe damaged by it may be temporarily reanimated
+#   upon death as a friendly spectral, with an increasing chance as more damage is
+#   dealt.
+これでダメージを与えた生きている敵、聖なる敵、悪魔の敵は、死んだときに友好的な幽体として一時的に蘇ることがある。与えたダメージが多いほど、その確率は高くなる。
+%%%%
+rebuke (rebuke) weapon ego
+
+# en:
+#   It shields the wearer if their last action was a melee attack (+10 SH) and
+#   redirects blocked melee attacks to other nearby enemies.
+直前の行動が近接攻撃だった場合に使い手を守り(SH+10)、防いだ近接攻撃を近くの別の敵へとそらす。
+%%%%
+spectralising (spect) weapon ego
+
+# en:
+#   When you attack with it, this weapon's spirit leaps out and launches a second,
+#   slightly weaker strike. The spirit shares part of any damage it takes with you.
+これで攻撃すると、武器の霊が飛び出して、少し弱い2撃目を繰り出す。霊が受けたダメージの一部はあなたにも及ぶ。
+%%%%
+speed (speed) weapon ego
+
+# en:
+#   Attacks with it are significantly faster.
+これによる攻撃がかなり速くなる。
+%%%%
+sundering (sunder) weapon ego
+
+# en:
+#   After you perform multiple consecutive attacks, its next attack will deal
+#   greatly increased damage and also cleave into targets an extra space away.
+何度か続けて攻撃した後、次の攻撃のダメージが大きく増え、さらに1マス先の相手まで薙ぎ払う。
+%%%%
+valour (valour) weapon ego
+
+# en:
+#   It fires a beam of energy whenever it strikes an enemy while its wielder has
+#   no less than 80% of their maximum hit points remaining. Unwielding it will
+#   briefly Weaken its wielder.
+使い手の体力が最大値の80%以上残っている間、敵に攻撃が命中するたびにエネルギーの光線を放つ。装備を外すと、使い手は短時間虚弱になる。
+%%%%
+vampirism (vamp) weapon ego
+
+# en:
+#   It occasionally heals you for a portion of the damage dealt when it wounds a
+#   living creature.
+生きている相手を傷つけたとき、与えたダメージの一部であなたの体力を回復することがある。
+%%%%
+venom (venom) weapon ego
+
+# en:
+#   It poisons victims.
+攻撃した相手を毒に冒す。
+%%%%
+air (Air) armour ego
+
+# en:
+#   It enhances your Air magic.
+あなたの風の魔術の力を強める。
+%%%%
+archery (Archery) armour ego
+
+# en:
+#   It has half the normal encumbrance for the purpose of ranged combat.
+射撃戦闘においては、装備の重さによる妨げが通常の半分になる。
+%%%%
+attunement (Attunement) armour ego
+
+# en:
+#   When worn alongside a magical staff, it doubles the effectiveness of that
+#   staff's primary enhancer and causes melee attacks made with it to restore a
+#   small amount of MP.
+魔法の杖と一緒に身につけると、その杖の主な強化効果を2倍にし、杖による近接攻撃で少量のMPを回復するようになる。
+%%%%
+cold resistance (rC+) armour ego
+
+# en:
+#   It protects you from cold.
+あなたを冷気から守る。
+%%%%
+command (Command) armour ego
+
+# en:
+#   It improves the power and success of your Summoning spells in proportion to your
+#   Armour skill.
+あなたの甲冑の技能に比例して、召喚術の呪文の威力と成功率を高める。
+%%%%
+corrosion resistance (rCorr) armour ego
+
+# en:
+#   It protects you from the effects of acid and corrosion.
+あなたを酸と腐食の影響から守る。
+%%%%
+death (Death) armour ego
+
+# en:
+#   It empowers your Necromancy spells and improves their success rate, but imposes
+#   a health cost for other magic.
+あなたの死霊術の呪文を強化し、その成功率を高めるが、それ以外の魔法には体力の消費を課す。
+%%%%
+dexterity (Dex+3) armour ego
+
+# en:
+#   It increases your dexterity (Dex +3).
+あなたの器用さを高める(Dex +3)。
+%%%%
+earth (Earth) armour ego
+
+# en:
+#   It enhances your Earth magic.
+あなたの地の魔術の力を強める。
+%%%%
+energy (Energy) armour ego
+
+# en:
+#   It may return the magic spent to cast spells, but lowers their success rate. It
+#   always returns the magic spent on miscasts. The spell refund chance is increased
+#   by your Evocations skill.
+呪文の詠唱に費やした魔力を戻すことがあるが、呪文の成功率を下げる。詠唱に失敗したときは、費やした魔力を必ず戻す。魔力が戻る確率は、あなたの発動の技能によって高まる。
+%%%%
 fire (Fire) armour ego
 
 # en:
 #   It enhances your Fire magic.
-この%sはあなたの炎の魔術の力を強める。
+あなたの炎の魔術の力を強める。
+%%%%
+fire resistance (rF+) armour ego
+
+# en:
+#   It protects you from fire.
+あなたを火炎から守る。
+%%%%
+flying (Fly) armour ego
+
+# en:
+#   It grants you flight.
+あなたに飛行能力を与える。
+%%%%
+glass (Glass) armour ego
+
+# en:
+#   It may vitrify enemies when you injure them, making them more vulnerable to
+#   further damage. Your Evocations skill increases the likelihood and duration of
+#   vitrification.
+敵を傷つけたとき、相手をガラス化させてさらなるダメージを受けやすくすることがある。ガラス化の確率と持続時間は、あなたの発動の技能によって高まる。
+%%%%
+guile (Guile) armour ego
+
+# en:
+#   It weakens both your willpower and the willpower of everyone you hex, the latter
+#   of which is increased by your Evocations skill.
+あなた自身の意志力と、あなたが呪術をかける相手すべての意志力を弱める。後者の効果は、あなたの発動の技能によって高まる。
 %%%%
 harm (Harm) armour ego
 
 # en:
 #   It increases damage dealt and taken.
-この%sは与えるダメージと受けるダメージの双方を増やす。
+与えるダメージと受けるダメージの双方を増やす。
+%%%%
+hurling (Hurl) armour ego
+
+# en:
+#   It improves your accuracy and damage with thrown weapons, such as rocks and
+#   javelins (Slay +4).
+石や投げ槍などの投擲武器の命中率とダメージを高める(Slay +4)。
 %%%%
 ice (Ice) armour ego
 
 # en:
 #   It enhances your Ice magic.
-この%sはあなたの冷気の魔術の力を強める。
+あなたの氷の魔術の力を強める。
+%%%%
+infusion (Infuse) armour ego
+
+# en:
+#   It empowers each of your melee hits with a small part of your magic.
+あなたの近接攻撃の一撃ごとに、あなたの魔力の一部を込めて強化する。
+%%%%
+intelligence (Int+3) armour ego
+
+# en:
+#   It increases your intelligence (Int +3).
+あなたの知力を高める(Int +3)。
+%%%%
+invisibility (+Inv) armour ego
+
+# en:
+#   When activated, it grants you temporary invisibility, but also drains your
+#   maximum health.
+発動すると一時的に透明になれるが、あなたの最大体力も吸い取る。
+%%%%
+light (Light) armour ego
+
+# en:
+#   It surrounds you with a glowing halo, revealing invisible creatures, increasing
+#   accuracy against all within it other than you, and reducing your stealth.
+あなたを輝く光輪で包み、透明な生き物を見えるようにし、光輪内にいるあなた以外のすべての者への命中率を高めるが、あなたの隠密性を下げる。
+%%%%
+mayhem (Mayhem) armour ego
+
+# en:
+#   It causes witnesses of your kills to go into a frenzy, attacking everything
+#   nearby with great strength and speed.
+あなたが敵を倒すところを目撃した者を狂乱させ、絶大な力と速さで周囲のあらゆるものに襲いかからせる。
+%%%%
+mesmerism (Mesmerism) armour ego
+
+# en:
+#   When you are struck in melee, it briefly dazes all nearby enemies, then must
+#   recharge by standing still for a while. Its duration, radius, and recharge
+#   speed are improved by your Evocations skill.
+あなたが近接攻撃を受けると、周囲のすべての敵を短時間眩惑させる。その後は、しばらくじっとしていなければ再び使えない。効果の持続時間、範囲、再使用までの速さは、あなたの発動の技能によって向上する。
+%%%%
+parrying (Parrying) armour ego
+
+# en:
+#   It shields you if your last action was a melee attack. The shielding is half as
+#   effective if your offhand is occupied by an item other than a weapon.
+直前の行動が近接攻撃だった場合にあなたを守る。もう片方の手に武器以外の物を持っていると、守りの効果は半分になる。
+%%%%
+poison resistance (rPois) armour ego
+
+# en:
+#   It protects you from poison.
+あなたを毒から守る。
+%%%%
+ponderousness (Ponderous) armour ego
+
+# en:
+#   It is very cumbersome, slowing your movement.
+とても重くかさばり、あなたの移動を遅くする。
+%%%%
+positive energy (rN+) armour ego
+
+# en:
+#   It protects you from the effects of negative energy.
+あなたを負のエネルギーの影響から守る。
+%%%%
+protection (AC+3) armour ego
+
+# en:
+#   It protects you from most sources of damage (AC +3).
+ほとんどのダメージからあなたを守る(AC +3)。
+%%%%
+pyromania (Pyromania) armour ego
+
+# en:
+#   It enhances your Fire magic and may unleash a blast of flames around you
+#   whenever you kill an enemy by any means other than an attack. The explosion
+#   chance and damage both scale with Evocations and it may trigger no more than
+#   once each turn.
+あなたの炎の魔術の力を強め、攻撃以外の手段で敵を倒すたびに、あなたの周囲に炎の爆発を起こすことがある。爆発の確率とダメージはどちらも発動の技能に応じて増え、爆発は1ターンに1回までしか起こらない。
+%%%%
+rampaging (Rampage) armour ego
+
+# en:
+#   It causes one to take an extra step when moving towards enemies, briefly
+#   stunning them if this results in an attack.
+敵に向かって移動するとき余分に1歩進み、それで攻撃に至った場合は相手を短時間朦朧とさせる。
+%%%%
+reflection (Reflect) armour ego
+
+# en:
+#   It reflects blocked missile attacks.
+防いだ飛び道具による攻撃を跳ね返す。
+%%%%
+repulsion (Repulsion) armour ego
+
+# en:
+#   It helps you evade both magical and non-magical projectiles (EV +15).
+魔法によるものとそうでないもののどちらの飛び道具も躱しやすくなる(EV +15)。
+%%%%
+resistance (rC+ rF+) armour ego
+
+# en:
+#   It protects you from the effects of both fire and cold.
+あなたを火炎と冷気の両方の影響から守る。
+%%%%
+resonance (Resonance) armour ego
+
+# en:
+#   It improves the success rate of your Forgecraft spells and enhances your melee
+#   attacks proportionally to your Forgecraft skill.
+あなたの鍛造術の呪文の成功率を高め、鍛造術の技能に比例してあなたの近接攻撃を強化する。
+%%%%
+see invisible (SInv) armour ego
+
+# en:
+#   It allows you to see invisible things.
+透明なものが見えるようになる。
+%%%%
+shadows (Shadows) armour ego
+
+# en:
+#   It reduces the distance you can be seen at and can see.
+あなたが見つかる距離と、あなたが見通せる距離を縮める。
+%%%%
+sniping (Snipe) armour ego
+
+# en:
+#   It increases your damage by an additional 50% with ranged and thrown weapons
+#   against incapacitated targets. Incapacitated targets are those that are asleep,
+#   paralysed, petrified, confused or caught in a net.
+行動不能な相手に対して、射撃武器と投擲武器で与えるダメージがさらに50%増える。行動不能な相手とは、眠っている、麻痺している、石化している、混乱している、または網に捕らわれている者のことである。
+%%%%
+spirit shield (Spirit) armour ego
+
+# en:
+#   It causes incoming damage to be divided between your reserves of health and
+#   magic.
+受けるダメージを体力と魔力に分散させる。
+%%%%
+stardust (Stardust) armour ego
+
+# en:
+#   It conjures a barrage of shooting stars the first time you spend MP to use a
+#   spell or ability each battle, recharging only when your MP is restored and no
+#   more enemies remain. Your Evocations skill increases the number and damage of
+#   the stars and MP spent further increases damage.
+戦闘ごとに、初めてMPを消費して呪文や能力を使ったとき、流れ星の弾幕を呼び出す。MPが回復し、敵が残っていない状態になって初めて再び使えるようになる。流れ星の数とダメージはあなたの発動の技能によって増え、消費したMPが多いほどダメージはさらに増える。
+%%%%
+stealth (Stlth+) armour ego
+
+# en:
+#   It enhances your stealth.
+あなたの隠密性を高める。
+%%%%
+strength (Str+3) armour ego
+
+# en:
+#   It increases your strength (Str +3).
+あなたの腕力を高める(Str +3)。
+%%%%
+the Archmagi (Archmagi) armour ego
+
+# en:
+#   It increases the power of your magical spells.
+あなたの呪文の威力を高める。
+%%%%
+willpower (Will+) armour ego
+
+# en:
+#   It increases your willpower, protecting against certain magical effects.
+あなたの意志力を高め、特定の魔法の効果から守る。
+%%%%
+wrath (*Rage) armour ego
+
+# en:
+#   It berserks you when you make melee attacks (20% chance).
+近接攻撃をすると、あなたをバーサークさせることがある(確率20%)。
+%%%%
+atropa-tipped (atropa) missile ego
+
+# en:
+#   It is tipped with a substance that causes blindness and brief confusion.
+#
+#   The chance of successfully applying its effect increases with your Throwing and
+#   Stealth skill.
+先端に、盲目と短時間の混乱を引き起こす物質が塗られている。
+
+効果を与えられる確率は、あなたの投擲と隠密の技能に応じて高まる。
+%%%%
+chaos (chaos) missile ego
+
+# en:
+#   When thrown, it has a random effect.
+投げると、ランダムな効果が生じる。
+%%%%
+curare-tipped (curare) missile ego
+
+# en:
+#   It is tipped with a substance that causes asphyxiation, dealing direct damage as
+#   well as poisoning and slowing those it strikes.
+#
+#   It is twice as likely to be destroyed on impact as other darts.
+先端に窒息を引き起こす物質が塗られており、命中した相手に直接のダメージを与えるとともに、毒に冒して減速させる。
+
+他の矢弾に比べ、命中時に壊れる確率が2倍高い。
+%%%%
+datura-tipped (datura) missile ego
+
+# en:
+#   It is tipped with a substance that sends those it hits into a mindless frenzy,
+#   attacking friend and foe alike.
+#
+#   The chance of successfully applying its effect increases with your Throwing and
+#   Stealth skill.
+先端に、命中した相手を我を忘れた狂乱状態に陥らせ、敵味方の区別なく襲いかからせる物質が塗られている。
+
+効果を与えられる確率は、あなたの投擲と隠密の技能に応じて高まる。
+%%%%
+disjunction (disjunct) missile ego
+
+# en:
+#   It causes any target it hits to become temporarily untethered in space, blinking
+#   away from you for several turns and taking minor damage each time it does so.
+命中した相手を一時的に空間から切り離し、数ターンの間あなたから離れる方向へ瞬間移動させ続け、そのたびにわずかなダメージを与える。
+%%%%
+dispersal (disperse) missile ego
+
+# en:
+#   It causes any target it hits to blink, with a tendency towards blinking further
+#   away from you.
+命中した相手を瞬間移動させる。あなたからより遠くへ飛ばされやすい。
 %%%%
 poisoned (poison) missile ego
 
 # en:
 #   It is coated with poison.
-この%sは毒に浸されている。
+毒が塗られている。
+%%%%
+silver (silver) missile ego
+
+# en:
+#   It deals increased damage compared to normal missiles and substantially
+#   increased damage to chaotic and magically transformed beings. It also inflicts
+#   extra damage against mutated beings, depending on how mutated they are.
+通常の矢弾より大きなダメージを与え、混沌の存在や魔法で変身した存在にはさらに大きなダメージを与える。突然変異した存在にも、その変異の程度に応じて追加のダメージを与える。
 %%%%
