@@ -13,6 +13,7 @@
 #include <string>
 
 #include "stringutil.h"
+#include "unicode.h"
 
 const char * const standard_plural_qualifiers[] =
 {
@@ -197,6 +198,10 @@ string apostrophise(const string &name)
 {
     if (name.empty())
         return name;
+
+    // 日本語の名前の所有格は「〜の」
+    if (has_wide_char(name))
+        return name + "の";
 
     if (name == "you" || name == "You")
         return name + "r";

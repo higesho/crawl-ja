@@ -75,6 +75,7 @@ char *prev_glyph(char *s, char *start);
 char *next_glyph(char *s);
 
 bool wide_char_break_ok(char32_t prev, char32_t next);
+bool has_wide_char(const string &s);
 
 #define OUTS(x) utf8_to_mb(x).c_str()
 #define OUTW(x) utf8_to_16(x).c_str()

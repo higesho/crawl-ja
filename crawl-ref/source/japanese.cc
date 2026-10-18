@@ -12,7 +12,12 @@
 #include "english.h"
 #include "item-def.h"
 #include "item-name.h"
+#include "jobs.h"
 #include "options.h"
+#include "religion.h"
+#include "skills.h"
+#include "species.h"
+#include "spl-util.h"
 #include "stringutil.h"
 
 /// language = ja のとき true。日本語向けに処理を分けるときに使う。
@@ -201,4 +206,32 @@ string jnumber_for_hydra_heads(int heads)
     num += nums[heads % 10];
 
     return num;
+}
+
+string spell_title_j(spell_type spell)
+{
+    return tagged_jtrans("[spell]", spell_title(spell));
+}
+
+string skill_name_j(skill_type skill)
+{
+    return tagged_jtrans("[skill]", skill_name(skill));
+}
+
+string species_name_j(species_type species, bool adjective)
+{
+    if (adjective)
+        return tagged_jtrans("[spec adj]",
+                             species::name(species, species::SPNAME_ADJ));
+    return tagged_jtrans("[spec name]", species::name(species));
+}
+
+string job_name_j(job_type job)
+{
+    return tagged_jtrans("[job]", get_job_name(job));
+}
+
+string god_name_j(god_type god, bool long_name)
+{
+    return jtrans(god_name(god, long_name));
 }

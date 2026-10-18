@@ -12,6 +12,8 @@
                      (FILE 省略時は全ソース)
   harvest FILE...    FILE の未訳キーのうち、旧辞書に同じキーがあるものを
                      dat/database/ja/jtrans/<FILE の拡張子なし>.txt に追記
+  wrap FILE...       mpr("...") などの定型パターンの英文を機械的に
+                     jtrans/jtransc で包む(残りは手で包む)
 
 辞書: crawl-ref/source/dat/database/ja/jtrans/*.txt(ゲームが読み込む)
 旧辞書: 0.19-ja の jtrans_*.txt と 0.16-ja の jtrans.txt(git から読む)
@@ -179,6 +181,39 @@ def strip_comments(code):
     return ''.join(out)
 
 
+def _call_arg(code, start):
+    """code[start] が '(' のとき、対応する ')' までの第 1 引数を返す。"""
+    depth, i, n = 0, start, len(code)
+    while i < n:
+        c = code[i]
+        if c == '"' or c == "'":
+            j = i + 1
+            while j < n and code[j] != c:
+                j += 2 if code[j] == '\\' else 1
+            i = j + 1
+            continue
+        if c in '([{':
+            depth += 1
+        elif c in ')]}':
+            depth -= 1
+            if depth == 0:
+                return code[start + 1:i]
+        elif c == ',' and depth == 1:
+            return code[start + 1:i]
+        i += 1
+    return ''
+
+
+def _literal_keys(arg):
+    """jtrans の引数式からキーになるリテラルを取り出す。
+    "A"、cond ? "A" : "B" のような形だけを対象にし、make_stringf や
+    文字列の連結(+)を含む動的な式は対象外(空リスト)。"""
+    outside = re.sub(STR_LIT, '""', arg)
+    if 'make_stringf' in outside or '+' in outside or '(' in outside:
+        return []
+    return [unescape(m.group(0)) for m in re.finditer(LITS, arg)]
+
+
 def source_keys(path):
     """ファイル中の jtrans 系呼び出しのリテラル引数を
     [(行番号, [候補キー...])] で返す。候補のどれかが辞書にあれば訳あり。"""
@@ -186,9 +221,10 @@ def source_keys(path):
         code = strip_comments(fp.read())
     res = []
     plain = '|'.join(JTRANS_FUNCS)
-    for m in re.finditer(rf'\b(?:{plain})\s*\(\s*({LITS})\s*[,)]', code):
+    for m in re.finditer(rf'\b(?:{plain})\s*(?=\()', code):
         line = code.count('\n', 0, m.start()) + 1
-        res.append((line, [unescape(m.group(1))]))
+        for key in _literal_keys(_call_arg(code, m.end())):
+            res.append((line, [key]))
     tagged = '|'.join(TAGGED_FUNCS)
     for m in re.finditer(rf'\b(?:{tagged})\s*\(\s*({LITS})\s*,\s*({LITS})\s*[,)]',
                          code):
@@ -308,6 +344,119 @@ def cmd_harvest(args):
             print(f'  {line}: {k!r}')
 
 
+# 機械的に包める定型パターン: (正規表現, 置換関数)
+# 各パターンのグループ 'pre' はそのまま残し、'lit' を包む。
+_CH = r'(?:MSGCH_\w+|channel|chan|ch)'
+WRAP_PATTERNS = [
+    # mpr("...") / mpr_nojoin(ch, "...")
+    (rf'(?P<pre>\bmpr\(\s*)(?P<lit>{LITS})(?=\s*\))', 'jtrans'),
+    (rf'(?P<pre>\bmpr_nojoin\(\s*{_CH}\s*,\s*)(?P<lit>{LITS})(?=\s*\))',
+     'jtrans'),
+    # mprf("fmt", ...) / mprf(ch, "fmt", ...) / mprf(ch, param, "fmt", ...)
+    (rf'(?P<pre>\bmprf(?:_nojoin|_nocap)?\(\s*(?:{_CH}\s*,\s*'
+     rf'(?:[^,"()]+,\s*)?)?)(?P<lit>{LITS})', 'jtransc'),
+    (rf'(?P<pre>\bsimple_monster_message\(\s*[^,()]+(?:\([^()]*\))?\s*,\s*)'
+     rf'(?P<lit>{LITS})', 'jtransc'),
+    (rf'(?P<pre>\bsimple_god_message\(\s*)(?P<lit>{LITS})', 'jtransc'),
+    (rf'(?P<pre>\bgod_speaks\(\s*[^,()]+\s*,\s*)(?P<lit>{LITS})', 'jtransc'),
+    (rf'(?P<pre>\byesno\(\s*)(?P<lit>{LITS})', 'jtransc'),
+    (rf'(?P<pre>\byes_or_no\(\s*)(?P<lit>{LITS})', 'jtransc'),
+    (rf'(?P<pre>\*reason\s*=\s*)(?P<lit>{LITS})(?=\s*;)', 'jtrans'),
+    (rf'(?P<pre>\bfail_reason\s*=\s*)(?P<lit>{LITS})(?=\s*;)', 'jtrans'),
+]
+
+
+def wrap_text(code):
+    """定型パターンの英文リテラルを jtrans/jtransc で包む。
+    戻り値: (新しいコード, 包んだ件数)。コメント内は対象外。"""
+    total = 0
+    for pat, func in WRAP_PATTERNS:
+        def repl(m):
+            nonlocal total
+            lit = m.group('lit')
+            if not re.search(r'[A-Za-z]{2,}', unescape(lit)):
+                return m.group(0)
+            total += 1
+            return f'{m.group("pre")}{func}({lit})'
+        code = _sub_outside_comments(pat, repl, code)
+    return code, total
+
+
+def _sub_outside_comments(pat, repl, code):
+    # コメント部分を伏せた写しでマッチ位置を探し、元のコードを置換する
+    masked = strip_comments_keep_len(code)
+    out, last = [], 0
+    for m in re.finditer(pat, masked):
+        m2 = re.match(pat, code[m.start():])
+        if not m2 or m2.end() != m.end() - m.start():
+            continue
+        out.append(code[last:m.start()])
+        out.append(repl(m2))
+        last = m.end()
+    out.append(code[last:])
+    return ''.join(out)
+
+
+def strip_comments_keep_len(code):
+    """コメントを同じ長さの空白に置き換える(文字列リテラルは残す)。"""
+    out = list(code)
+    i, n = 0, len(code)
+    while i < n:
+        c = code[i]
+        if c == '"' or c == "'":
+            j = i + 1
+            while j < n and code[j] != c and code[j] != '\n':
+                j += 2 if code[j] == '\\' else 1
+            i = j + 1
+        elif code.startswith('//', i):
+            j = code.find('\n', i)
+            j = n if j < 0 else j
+            for k in range(i, j):
+                out[k] = ' '
+            i = j
+        elif code.startswith('/*', i):
+            j = code.find('*/', i + 2)
+            j = n if j < 0 else j + 2
+            for k in range(i, j):
+                if out[k] != '\n':
+                    out[k] = ' '
+            i = j
+        else:
+            i += 1
+    return ''.join(out)
+
+
+def cmd_wrap(args):
+    for path in source_files(args):
+        with open(path, encoding='utf-8', newline='') as fp:
+            code = fp.read()
+        new, n = wrap_text(code)
+        if n and '#include "database.h"' not in new:
+            new = _add_include(new, 'database.h')
+        if new != code:
+            with open(path, 'w', encoding='utf-8', newline='') as fp:
+                fp.write(new)
+        print(f'{path}: {n} 箇所を包んだ')
+
+
+def _add_include(code, header):
+    """#include 群のアルファベット順の位置に header を足す。"""
+    lines = code.split('\n')
+    incs = [i for i, l in enumerate(lines)
+            if re.match(r'#include "(?!AppHdr)', l)]
+    if not incs:
+        return code
+    nl = '\r' if lines[0].endswith('\r') else ''
+    pos = incs[-1] + 1
+    for i in incs:
+        name = re.match(r'#include "([^"]+)"', lines[i]).group(1)
+        if name.lower() > header.lower():
+            pos = i
+            break
+    lines.insert(pos, f'#include "{header}"{nl}')
+    return '\n'.join(lines)
+
+
 def main():
     if not os.path.isdir(SRC):
         sys.exit('リポジトリのルートで実行してください')
@@ -316,7 +465,7 @@ def main():
     cmd, args = sys.argv[1], sys.argv[2:]
     sys.stdout.reconfigure(encoding='utf-8')
     {'old': cmd_old, 'olddict': cmd_olddict, 'find': cmd_find,
-     'check': cmd_check, 'harvest': cmd_harvest}[cmd](args)
+     'check': cmd_check, 'harvest': cmd_harvest, 'wrap': cmd_wrap}[cmd](args)
 
 
 if __name__ == '__main__':

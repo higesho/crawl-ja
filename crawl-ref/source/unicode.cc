@@ -592,3 +592,14 @@ bool wide_char_break_ok(char32_t prev, char32_t next)
             return false;
     return true;
 }
+
+/// Whether the string contains any wide (e.g. Japanese) character, i.e.
+/// whether it is text that has been translated into such a language.
+bool has_wide_char(const string &s)
+{
+    char32_t c;
+    for (const char *p = s.c_str(); int l = utf8towc(&c, p); p += l)
+        if (wcwidth(c) == 2)
+            return true;
+    return false;
+}

@@ -8,8 +8,11 @@
 
 1. `python -I ja-tools/jtools.py old <file.cc>` で 0.19-ja の差分を見る
    (0.34 で消えた・書き換わったコードも多いので、そのまま当てない)。
-2. 0.34 のファイルを読み、プレイヤーに見える英文を包む(下記)。
-   必要なら `#include "database.h"`(jtrans 系)と `#include "japanese.h"` を足す。
+2. `python -I ja-tools/jtools.py wrap <file.cc>` で `mpr("...")` などの
+   定型パターンを機械的に包む(`#include "database.h"` も足される)。
+   そのあと 0.34 のファイルを読み、残りのプレイヤーに見える英文を手で包む
+   (下記)。機械的に包んだ箇所も、語順の組み替えが必要なものは直す。
+   必要なら `#include "japanese.h"` を足す。
 3. `python -I ja-tools/jtools.py harvest <file.cc>` で旧辞書に同じ英文がある
    ものを `jtrans/<ファイル名>.txt` に自動で取り込む。
 4. 残った未訳キーを訳して同じ辞書ファイルに書く。
@@ -55,9 +58,25 @@ verb_j("hits"), adj_j(...), adv_j(...)   // [verb] 等のタグ付き省略形
 
 ## 名前
 
-- モンスター名・アイテム名・呪文名・神の名前などは、名前を作る中核
-  (item-name.cc, mon-info.cc, mon-util.cc, spl-util.cc, religion.cc など)で
-  日本語にする。呼び出し側で `jtrans(mon->name(...))` のように二重に包まない。
+- **モンスター名・アイテム名**は名前を作る関数(`monster::name()`,
+  `monster_info` の名前関数, `item_def::name()`)自体が日本語を返すように
+  する(担当: mon-info.cc / mon-util.cc / monster.cc / item-name.cc)。
+  呼び出し側では `jtrans(mon->name(...))` のように二重に包まない。
+  `DESC_DBNAME` は説明文の検索キーなので英語のまま。
+- **呪文・技能・種族・職業・神**の名前関数(`spell_title()`, `skill_name()`,
+  `species::name()`, `get_job_name()`, `god_name()`)は検索キーなどにも
+  使われるので英語のまま残し、**表示する箇所で** `japanese.h` の
+  `spell_title_j()`, `skill_name_j()`, `species_name_j()`, `job_name_j()`,
+  `god_name_j()`(`_jc` は `c_str()` 版)に置き換える。
+- その他の名前(地形・雲・状態・能力・変異など)は、データの英文を
+  表示する箇所で `jtrans(name)` / `tagged_jtrans("[タグ]", name)` で包む。
+  データ表(`*-data.h`)の訳は辞書 `jtrans/data-*.txt` にまとめて作る。
+  旧辞書のタグに合わせる(`[feature]`, `[dur]`, `[ability]`, `[cloud]`,
+  `[form]`, `[card]`, `[branch]`, `[zap]` など。`jtools.py find` で確認)。
+- `simple_monster_message(mon, jtransc(" is healed!"))` のように、名前の後ろに
+  つなぐ文は訳を助詞から始める(「は傷が癒えた！」)。所有格
+  (`need_possessive`)や `apostrophise()` は日本語の名前なら自動で「〜の」に
+  なるので、訳は「の」の後ろから書く(「魔力が高まった！」)。
 - 名前のあとに助詞を付ける: `"%sは%sを攻撃した。"`
 - 代名詞(he/she/it/its)は日本語では省くか、名前で言い換える。
 
@@ -99,3 +118,34 @@ You feel better.
 - `#` で始まる行はコメント。
 - 同じキーを複数のファイルに書かない(先に読まれたものが使われる)。
   別の意味で訳し分けたいときはタグ付きキーにする。
+
+## データ辞書のキー形式(全員共通)
+
+名前・データ表の訳は `jtrans/data-<種類>.txt` に置く。キーは旧辞書に合わせる。
+
+| 内容 | 出典 | キーの形 | 辞書ファイル |
+|---|---|---|---|
+| モンスター名 | mon-data.h | `goblin`(タグなし) | data-monsters.txt |
+| アイテム名 | item-name.cc 等 | `potion of curing`, `hand axe`(タグなし) | data-items.txt |
+| 助数詞 | | `[counter]hand axe`, `[counter class]Weapons` | data-items.txt |
+| 固定アーティファクト名 | art-data.h | `Singing Sword`(タグなし) | data-unrands.txt |
+| 呪文名 | spl-data.h | `[spell]Magic Dart` | data-spells.txt |
+| 技能名 | skills.cc | `[skill]Fighting` | data-skills.txt |
+| 称号 | skills.cc, religion.cc | `[title]Fighter` | data-skills.txt |
+| 種族名 | species-data.h | `[spec name]Human`, `[spec adj]Human` | data-species.txt |
+| 職業名 | job-data.h | `[job]Fighter` | data-jobs.txt |
+| 神の名前 | religion.cc | `Trog`, `Trog the Wrathful`(タグなし) | data-gods.txt |
+| 支部名 | branch-data.h | `[branch]Dungeon` | data-branches.txt |
+| 地形名 | feature-data.h | `[feature]closed door` | data-features.txt |
+| ビーム名 | zap-data.h | `[zap]puff of flame` | data-zaps.txt |
+| 状態表示 | duration-data.h | 表示文字列そのもの(`[dur]` は短縮表示) | data-durations.txt |
+| 変身 | form-data.h | `[form]...` | data-forms.txt |
+| 変異 | mutation-data.h | 文章そのもの(タグなし) | data-mutations.txt |
+
+## 並行作業のルール
+
+- 割り当てられたファイル(と、その辞書ファイル `jtrans/<ファイル名>.txt`)
+  以外は編集しない。他のファイルの変更が必要なら報告に書く。
+- ビルド(MSBuild)はしない。取りまとめ役がまとめてビルドする。
+  コンパイルが通るよう、型(`string` と `const char*`)や include に注意する。
+- git のコミット・ブランチ操作はしない。
