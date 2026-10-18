@@ -6,7 +6,7 @@ Inventory:
 %%%%
 %d/%d gear slots
 
-装備品の枠: %d/%d
+%d/%d 枠
 %%%%
 # 持ち物メニュー(ページ表示)の見出し
 Gear:

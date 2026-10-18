@@ -227,6 +227,13 @@ bool FTFontWrapper::resize(unsigned int size)
 
 FTFontWrapper::GlyphInfo& FTFontWrapper::get_glyph_info(char32_t ch)
 {
+    // 全角文字(日本語など)の送り幅は半角(空白)のちょうど 2 倍にそろえる。
+    // 送り幅は整数ピクセルに丸められるので、そのままだと 2:1 にならず、
+    // 空白で桁をそろえた表(ヘルプの 2 段組みなど)が行ごとにずれる。
+    // (先に空白の情報を取っておく。m_glyphs の resize で参照が無効になるため)
+    const bool wide = ch != ' ' && wcwidth(ch) == 2;
+    const int half_advance = wide ? get_glyph_info(' ').advance : 0;
+
     // cache glyph info in a single large buffer by unicode codepoint
     // currently dat/ only has codepoints going up to around 65536
     if (ch >= m_glyphs.size())
@@ -255,6 +262,13 @@ FTFontWrapper::GlyphInfo& FTFontWrapper::get_glyph_info(char32_t ch)
         glyph.width = bmp->width;
         glyph.renderable = !!bmp->buffer;
         glyph.valid = true;
+
+        if (wide && half_advance > 0 && glyph.advance != 2 * half_advance)
+        {
+            const int target = 2 * half_advance;
+            glyph.offset += (target - glyph.advance) / 2;
+            glyph.advance = target;
+        }
     }
     return glyph;
 }

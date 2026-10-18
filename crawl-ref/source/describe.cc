@@ -4049,7 +4049,8 @@ command_type describe_item_popup(const item_def &item,
     // Dead players use no items.
     do_actions = do_actions && !(you.pending_revival || crawl_state.updating_scores);
 
-    string name = item.name(DESC_INVENTORY_EQUIP) + "。";
+    // 日本語: 見出しの名前には句点を付けない
+    string name = item.name(DESC_INVENTORY_EQUIP);
 
     string desc = "";
     level_id loc = _item_level_id(item);

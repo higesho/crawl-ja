@@ -634,7 +634,7 @@ static string _sdump_god_conduct_info(god_type god, const map<int, ConductPietyI
     string header = _align_right_w(jtrans("Conduct"), 21);
     for (int lt = 0; lt < max_lt; lt++)
         header += make_stringf(" | %2d-%2d", lt * 3 + 1, lt * 3 + 3);
-    header += " || total\n";
+    header += jtrans_notrim(" || total\n");
     string divider = string(22, '-');
     for (int lt = 0; lt < max_lt; lt++)
         divider += "+-------";
@@ -1714,7 +1714,7 @@ static void _sdump_action_counts(dump_params &par)
     par.text += chop_string(tagged_jtrans("[desc action]", "Action"), 26);
     for (int lt = 0; lt < max_lt; lt++)
         par.text += make_stringf(" | %2d-%2d", lt * 3 + 1, lt * 3 + 3);
-    par.text += " || total\n" + string(27, '-');
+    par.text += jtrans_notrim(" || total\n") + string(27, '-');
     for (int lt = 0; lt < max_lt; lt++)
         par.text += "+-------";
     par.text += "++-------\n";
@@ -2008,7 +2008,9 @@ static bool _write_dump(const string &fname, const dump_params &par, bool quiet)
 
     if (handle != nullptr)
     {
-        fputs(OUTS(par.text), handle);
+        // 日本語: ダンプは UTF-8 のまま書く(OUTS はシステムの文字コードに変換するので、
+        // 日本語版 Windows では CP932 になり、CP932 にない字が "?" に化ける)
+        fputs(par.text.c_str(), handle);
         fclose(handle);
         succeeded = true;
         if (!quiet)

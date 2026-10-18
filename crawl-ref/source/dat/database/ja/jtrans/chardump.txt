@@ -808,3 +808,9 @@ Error opening file '%s'
 
 魔術の品の使用
 %%%%
+%%%%
+|| total
+
+|| 合計
+
+%%%%

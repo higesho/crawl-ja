@@ -62,8 +62,17 @@ static bool _ends_in_punctuation(const string& text)
     case ':':
         return true;
     default:
-        return false;
+        break;
     }
+    // 日本語の文は全角の句読点や閉じ括弧で終わる。そのときは "; " を挟まない。
+    static const char * const ja_punct[] =
+    {
+        "。", "！", "？", "、", "：", "；", "」", "』", "）",
+    };
+    for (const char *p : ja_punct)
+        if (ends_with(text, p))
+            return true;
+    return false;
 }
 
 struct message_particle
@@ -412,7 +421,9 @@ class message_window
     {
         cgotoxy(1, n + 1, GOTO_MSG);
         line.display();
-        cprintf("%*s", width() - line.width(), "");
+        // 日本語: タイル版の文字領域は 1 文字 1 マスなので、表示幅(全角は 2)で
+        // 空白を足すと全角の行では消し足りず、前の行の末尾が残る。行末まで消す。
+        clear_to_end_of_line();
     }
 
     // Place cursor at end of last non-empty line to handle prompts.

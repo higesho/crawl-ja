@@ -9,6 +9,7 @@
 
 #include "build.h"
 #include "compflag.h"
+#include "database.h"
 #include "notes.h"
 #include "player.h"
 #include "state.h"
@@ -80,7 +81,7 @@ void Version::record(string prev)
     {
         you.props[VERSION_HISTORY_PROP].get_vector().push_back(
                                                     CrawlStoreValue(Long));
-        const string note = make_stringf("Upgraded the game from %s to %s",
+        const string note = make_stringf(jtransc("Upgraded the game from %s to %s"),
                                          prev.c_str(), Long);
         take_note(Note(NOTE_MESSAGE, 0, 0, note));
     }

@@ -1,0 +1,5 @@
+%%%%
+Upgraded the game from %s to %s
+
+ゲームを %s から %s に更新した。
+%%%%
