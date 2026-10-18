@@ -303,3 +303,22 @@ namespace std
     }
 }
 #endif
+
+// 日本語化用の補助(0.19-ja から移植)
+static inline string sp2nbsp(const string &s)
+{
+    // replace spaces to no-break spaces (U+00A0)
+    return replace_all(s, " ", u8" ");
+}
+#define sp2nbspc(s) (sp2nbsp(s).c_str())
+static inline string nbsp2sp(const string &s)
+{
+    // replace no-break spaces (U+00A0) to spaces
+    return replace_all(s, u8" ", " ");
+}
+#define nbsp2spc(s) (nbsp2sp(s).c_str())
+
+// zero-width space
+#define ZWSP u8"​"
+
+#define to_stringc(s) (to_string(s).c_str())

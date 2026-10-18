@@ -753,6 +753,9 @@
     <ClCompile Include="..\items.cc">
       <Filter>cc</Filter>
     </ClCompile>
+    <ClCompile Include="..\japanese.cc">
+      <Filter>cc</Filter>
+    </ClCompile>
     <ClCompile Include="..\item-prop.cc">
       <Filter>cc</Filter>
     </ClCompile>
@@ -1402,6 +1405,9 @@
       <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="..\items.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\japanese.h">
       <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="..\item-status-flag-type.h">

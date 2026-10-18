@@ -18,6 +18,7 @@
 #include "clua.h"
 #include "end.h"
 #include "files.h"
+#include "japanese.h"
 #include "libutil.h"
 #include "options.h"
 #include "random.h"
@@ -172,11 +173,6 @@ static TextDB& FAQDB         = AllDBs[8];
 static TextDB& HintsDB       = AllDBs[9];
 static TextDB& EgosDB        = AllDBs[10];
 static TextDB& JtransDB      = AllDBs[11];
-
-static bool _jtrans_enabled()
-{
-    return Options.language == lang_t::JA;
-}
 
 static string _db_cache_path(string db, const char *lang)
 {
@@ -354,7 +350,7 @@ void TextDB::_regenerate_db()
 
 static void _init_jtrans_files()
 {
-    if (!_jtrans_enabled())
+    if (!jtrans_enabled())
         return;
 
     const string dir = datafile_path("database/ja/jtrans/", false, false,
@@ -1011,7 +1007,7 @@ string jtrans(const string &key, const bool linefeed)
 {
     if (key.empty())
         return "";
-    if (!_jtrans_enabled() || !JtransDB)
+    if (!jtrans_enabled() || !JtransDB)
         return key;
 
     string tmp_key(key);

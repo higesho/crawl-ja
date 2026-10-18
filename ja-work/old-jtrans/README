@@ -1,0 +1,3 @@
+# 0.19-ja (dplusplus/dcss-0.19-ja) の jtrans 辞書。参照専用で、ゲームは読まない。
+# 0.34 用の辞書は crawl-ref/source/dat/database/ja/jtrans/ にソースファイル単位で作る。
+# 旧辞書から訳を引くには: python -I ja-tools/jtools.py find <英文> / harvest <file>
