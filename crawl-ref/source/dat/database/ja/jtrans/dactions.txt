@@ -1,0 +1,29 @@
+%%%%
+returns to the mists of memory.
+
+は追憶の霧の中へと還っていった。
+%%%%
+departs this earthly plane.
+
+はこの世から去っていった。
+%%%%
+Pikel's spell is broken, but his former minions can only feel hate for you!
+
+『ピケル』の呪縛は破れたものの、元手下たちはあなたに憎しみしか抱かなかった！
+%%%%
+Pikel's spell is broken, but his former minion can only feel hate for you!
+
+『ピケル』の呪縛は破れたものの、元手下はあなたに憎しみしか抱かなかった！
+%%%%
+With Pikel's spell broken, his former minions thank you for their freedom.
+
+『ピケル』の呪縛が破れ、元手下たちは自由を与えてくれたあなたに感謝した。
+%%%%
+With Pikel's spell broken, his former minion thanks you for its freedom.
+
+『ピケル』の呪縛が破れ、元手下は自由を与えてくれたあなたに感謝した。
+%%%%
+The hog vanishes!
+
+豚の姿は消えた！
+%%%%

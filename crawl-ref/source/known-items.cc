@@ -5,6 +5,7 @@
 
 #include "AppHdr.h"
 
+#include "database.h"
 #include "decks.h"
 #include "describe.h"
 #include "english.h"
@@ -118,7 +119,7 @@ protected:
             {
                 lastch = CONTROL('D');
                 temp_title = title->text;
-                set_title("Select to reset item to default ([*] for all): ");
+                set_title(jtrans_notrim("Select to reset item to default ([*] for all): "));
             }
 
             return true;
@@ -135,42 +136,47 @@ protected:
             if (scrollable)
             {
                 navigation +=
-                    menu_keyhelp_cmd(CMD_MENU_PAGE_DOWN) + " page down  "
-                    + menu_keyhelp_cmd(CMD_MENU_PAGE_UP) + " page up  ";
+                    menu_keyhelp_cmd(CMD_MENU_PAGE_DOWN)
+                    + jtrans_notrim(" page down  ")
+                    + menu_keyhelp_cmd(CMD_MENU_PAGE_UP)
+                    + jtrans_notrim(" page up  ");
             }
-            navigation += "[<w>-</w>] recognised  "
-                            + menu_keyhelp_cmd(CMD_MENU_EXIT) + " exit"
-                            "</lightgrey>";
+            navigation += jtrans_notrim("[<w>-</w>] recognised  ")
+                            + menu_keyhelp_cmd(CMD_MENU_EXIT)
+                            + jtrans_notrim(" exit")
+                            + "</lightgrey>";
         }
         else
         {
             // very similar to the MF_MULTISELECT case for regular Menus, but
             // various differences require an override
             navigation = "<lightgrey>" + menu_keyhelp_select_keys()
-                         + " select  ";
+                         + jtrans_notrim(" select  ");
 
             if (scrollable)
             {
                 navigation +=
-                    menu_keyhelp_cmd(CMD_MENU_PAGE_DOWN) + " page down  "
-                    + menu_keyhelp_cmd(CMD_MENU_PAGE_UP) + " page up  ";
+                    menu_keyhelp_cmd(CMD_MENU_PAGE_DOWN)
+                    + jtrans_notrim(" page down  ")
+                    + menu_keyhelp_cmd(CMD_MENU_PAGE_UP)
+                    + jtrans_notrim(" page up  ");
             }
             navigation += "</lightgrey>";
             navigation = pad_more_with_esc(navigation);
             navigation +=
                     "\n<lightgrey>"
-                    "Letters toggle autopickup  ";
+                    + jtrans_notrim("Letters toggle autopickup  ");
             if (is_set(MF_ARROWS_SELECT))
             {
                 navigation += menu_keyhelp_cmd(CMD_MENU_TOGGLE_SELECTED)
-                    + " toggle selected  ";
+                    + jtrans_notrim(" toggle selected  ");
             }
 
             if (!all_items_known)
             {
                 navigation +=
-                    "[<w>-</w>] unrecognised"
-                    "</lightgrey>";
+                    jtrans("[<w>-</w>] unrecognised")
+                    + "</lightgrey>";
             }
         }
 
@@ -195,49 +201,44 @@ public:
         string name;
 
         if (item->base_type == OBJ_MISCELLANY)
-            name = pluralise(item->name(DESC_DBNAME));
+            name = jtrans(item->name(DESC_DBNAME));
 #if TAG_MAJOR_VERSION == 34
         else if (item->base_type == OBJ_FOOD)
-            name = "removed food";
+            name = jtrans("removed food");
 #endif
         else if (item->is_type(OBJ_BOOKS, BOOK_MANUAL))
-            name = "manuals";
+            name = tagged_jtrans("[known items]", "manuals");
         else if (item->is_type(OBJ_BOOKS, 0))
-            name = "spellbooks";
+            name = tagged_jtrans("[known items]", "spellbooks");
         else if (item->is_type(OBJ_JEWELLERY, NUM_RINGS))
-            name = "unknown rings";
+            name = tagged_jtrans("[known items]", "unknown rings");
         else if (item->is_type(OBJ_JEWELLERY, NUM_JEWELLERY))
-            name = "unknown amulets";
+            name = tagged_jtrans("[known items]", "unknown amulets");
         else if (item->base_type == OBJ_GOLD)
-        {
-            name = lowercase_string(item_class_name(item->base_type));
-            name = pluralise(name);
-        }
+            name = tagged_jtrans("[item class]", item_class_name(item->base_type));
         else if (item->base_type == OBJ_RUNES)
-            name = "runes";
+            name = tagged_jtrans("[known items]", "runes");
         else if (item->base_type == OBJ_GEMS)
-            name = "gems";
+            name = tagged_jtrans("[known items]", "gems");
         else if (item->sub_type == get_max_subtype(item->base_type))
         {
-            name = "unknown "
-                   + lowercase_string(item_class_name(item->base_type));
+            name = make_stringf(jtransc("unknown %s"),
+                       tagged_jtrans("[item class]",
+                                     item_class_name(item->base_type)).c_str());
         }
         else if (item->base_type == OBJ_JEWELLERY
                  || item->base_type == OBJ_WANDS)
         {
-            name = pluralise(item->name(DESC_DBNAME));
+            name = jtrans(item->name(DESC_DBNAME));
         }
         else if (item->base_type == OBJ_SCROLLS
                  || item->base_type == OBJ_POTIONS)
         {
-            name = pluralise(item->name(DESC_DBNAME))
+            name = jtrans(item->name(DESC_DBNAME))
                    + " (" + describe_item_rarity(*item) + ")";
         }
         else
-        {
             name = item->name(DESC_PLAIN, false, true, false, false);
-            name = pluralise(name);
-        }
 
         char symbol;
         if (selected_qty == 0)
@@ -502,13 +503,13 @@ void check_item_knowledge(bool unknown_items)
     string stitle;
 
     if (unknown_items)
-        stitle = "Items not yet recognised:";
+        stitle = jtrans("Items not yet recognised:");
     else if (!all_items_known)
-        stitle = "Recognised items. (Select to toggle autopickup)";
+        stitle = jtrans("Recognised items. (Select to toggle autopickup)");
     else
-        stitle = "You recognise all items. (Select to toggle autopickup)";
+        stitle = jtrans("You recognise all items. (Select to toggle autopickup)");
 
-    string prompt = "(_ for help)";
+    string prompt = jtrans("(_ for help)");
     //TODO: when the menu is opened, the text is not justified properly.
     stitle = stitle + string(max(0, MIN_COLS - strwidth(stitle + prompt)),
                              ' ') + prompt;
@@ -527,7 +528,7 @@ void check_item_knowledge(bool unknown_items)
     ml = menu.load_items(items_baubles, known_item_mangle, ml, false);
     if (!items_other.empty())
     {
-        menu.add_entry(new MenuEntry("Other Items", MEL_SUBTITLE));
+        menu.add_entry(new MenuEntry(jtrans("Other Items"), MEL_SUBTITLE));
         ml = menu.load_items_seq(items_other, known_item_mangle, ml);
     }
 

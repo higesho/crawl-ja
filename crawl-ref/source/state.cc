@@ -11,6 +11,7 @@
 #include <unistd.h>
 #endif
 
+#include "database.h"
 #include "dbg-util.h"
 #include "delay.h"
 #include "directn.h"
@@ -171,7 +172,7 @@ void game_state::cancel_cmd_all(string reason)
 void game_state::cant_cmd_repeat(string reason)
 {
     if (reason.empty())
-        reason = "Can't repeat that command.";
+        reason = jtrans("Can't repeat that command.");
 
     cancel_cmd_repeat(reason);
 }
@@ -179,7 +180,7 @@ void game_state::cant_cmd_repeat(string reason)
 void game_state::cant_cmd_again(string reason)
 {
     if (reason.empty())
-        reason = "Can't redo that command.";
+        reason = jtrans("Can't redo that command.");
 
     cancel_cmd_again(reason);
 }
@@ -216,7 +217,7 @@ bool interrupt_cmd_repeat(activity_interrupt ai,
     case activity_interrupt::hp_loss:
     case activity_interrupt::monster_attacks:
     case activity_interrupt::mimic:
-        crawl_state.cancel_cmd_repeat("Command repetition interrupted.");
+        crawl_state.cancel_cmd_repeat(jtrans("Command repetition interrupted."));
         return true;
 
     default:
@@ -262,11 +263,11 @@ bool interrupt_cmd_repeat(activity_interrupt ai,
     if (crawl_state.repeat_cmd == CMD_WAIT)
     {
         if (ai == activity_interrupt::full_mp)
-            crawl_state.cancel_cmd_repeat("Magic restored.");
+            crawl_state.cancel_cmd_repeat(jtrans("Magic restored."));
         else if (ai == activity_interrupt::full_hp)
-            crawl_state.cancel_cmd_repeat("HP restored");
+            crawl_state.cancel_cmd_repeat(jtrans("HP restored"));
         else
-            crawl_state.cancel_cmd_repeat("Command repetition interrupted.");
+            crawl_state.cancel_cmd_repeat(jtrans("Command repetition interrupted."));
 
         return true;
     }
@@ -284,7 +285,7 @@ bool interrupt_cmd_repeat(activity_interrupt ai,
         if (!mons_is_threatening(*mon) && mon->visible_to(&you))
             return false;
 
-        crawl_state.cancel_cmd_repeat("Command repetition interrupted.");
+        crawl_state.cancel_cmd_repeat(jtrans("Command repetition interrupted."));
         return true;
     }
 

@@ -18,6 +18,7 @@
 #include "command.h"
 #include "coordit.h"
 #include "corpse.h"
+#include "database.h"
 #include "describe.h"
 #include "describe-spells.h"
 #include "directn.h"
@@ -27,6 +28,7 @@
 #include "god-passive.h"
 #include "hints.h"
 #include "invent.h"
+#include "item-name.h" // item_name_en
 #include "item-prop.h"
 #include "item-status-flag-type.h"
 #include "items.h"
@@ -58,7 +60,7 @@ string userdef_annotate_item(const char *s, const item_def *item)
     lua_stack_cleaner cleaner(clua);
     clua_push_item(clua, const_cast<item_def*>(item));
     if (!clua.callfn(s, 1, 1) && !clua.error.empty())
-        ui::error(make_stringf("Lua error: %s", clua.error.c_str()));
+        ui::error(make_stringf(jtransc("Lua error: %s"), clua.error.c_str()));
     string ann;
     if (lua_isstring(clua, -1))
         ann = luaL_checkstring(clua, -1);
@@ -122,7 +124,7 @@ string get_stash_desc(const coord_def& c)
         {
             const string desc = s->description();
             if (!desc.empty())
-                return "[Stash: " + desc + "]";
+                return make_stringf(jtransc("[Stash: %s]"), desc.c_str());
         }
     }
     return "";
@@ -261,7 +263,7 @@ void Stash::update()
     {
         feat = env.grid(pos);
         trap = get_trap_type(pos);
-        feat_desc = feature_description_at(pos, false, DESC_A);
+        feat_desc = feature_description_at_j(pos, false, DESC_A);
     }
 
     int previous_size = items.size();
@@ -327,7 +329,7 @@ string Stash::stash_item_name(const item_def &item)
     {
         name = item.name(DESC_INVENTORY_EQUIP); // add `(worn)`, etc
         // use [] to match with the location info
-        name.insert(0, "[carried] ");
+        name.insert(0, jtrans_notrim("[carried] "));
         return name;
     }
     else
@@ -338,8 +340,8 @@ string Stash::stash_item_name(const item_def &item)
         return name;
 
     if (mons_has_skeleton(item.mon_type))
-        return name + " (skeletalised by now)";
-    return name + " (gone by now)";
+        return name + jtrans_notrim(" (skeletalised by now)");
+    return name + jtrans_notrim(" (gone by now)");
 }
 
 string Stash::description() const
@@ -378,7 +380,9 @@ vector<stash_search_result> Stash::matches_search(
     {
         const string s   = stash_item_name(item);
         const string ann = stash_annotate_item(STASH_LUA_SEARCH_ANNOTATE, &item);
-        string haystack = prefix + " " + ann + " " + s;
+        // 英語の名前でも検索できるように英語名も混ぜる(表示はしない)。
+        string haystack = prefix + " " + ann + " " + s + " "
+                          + item_name_en(item, DESC_A);
         if (is_dumpable_artefact(item))
             haystack += " " + chardump_desc(item);
         if (search.matches(haystack))
@@ -395,7 +399,9 @@ vector<stash_search_result> Stash::matches_search(
     if (feat != DNGN_FLOOR)
     {
         const string fdesc = feature_description();
-        if (!fdesc.empty() && search.matches(prefix + " " + fdesc))
+        const string fdesc_en = ::feature_description(feat, trap, "", DESC_A);
+        if (!fdesc.empty()
+            && search.matches(prefix + " " + fdesc + " " + fdesc_en))
         {
             stash_search_result res;
             res.match_type = MATCH_FEATURE;
@@ -491,7 +497,8 @@ void Stash::write(FILE *f, coord_def refpos, string place, bool identify) const
         }
 
         fprintf(f, "  %s%s%s\n", OUTS(s), OUTS(ann),
-            (!visited && (items.size() > 1 || i) ? " (still there?)" : ""));
+            (!visited && (items.size() > 1 || i)
+             ? jtrans_notrimc(" (still there?)") : ""));
 
         if (is_dumpable_artefact(item))
         {
@@ -514,7 +521,7 @@ void Stash::write(FILE *f, coord_def refpos, string place, bool identify) const
     }
 
     if (items.size() <= 1 && !visited)
-        fprintf(f, "  (unseen)\n");
+        fprintf(f, "  %s\n", jtransc("(unseen)"));
 }
 
 void Stash::save(writer& outf) const
@@ -572,9 +579,10 @@ ShopInfo::ShopInfo(const shop_struct& shop_)
 
 string ShopInfo::shop_item_name(const item_def &it) const
 {
-    return make_stringf("%s%s (%d gold)",
+    return make_stringf(jtransc("%s%s (%d gold)"),
                         Stash::stash_item_name(it).c_str(),
-                        shop_item_unknown(it) ? " (unknown)" : "",
+                        shop_item_unknown(it) ? jtrans_notrimc(" (unknown)")
+                                              : "",
                         item_price(it, shop));
 }
 
@@ -643,6 +651,7 @@ vector<stash_search_result> ShopInfo::matches_search(
                                                  &item);
 
         string text = prefix + " " + ann + " " + sname + " {" + shoptitle + "}"
+                      + " " + item_name_en(item, DESC_A)
                       + shop_item_desc(item);
         if (search.matches(text))
         {
@@ -662,7 +671,7 @@ vector<stash_search_result> ShopInfo::matches_search(
 void ShopInfo::write(FILE *f, bool identify) const
 {
     no_notes nx;
-    fprintf(f, "[Shop] %s\n", OUTS(shop_name(shop)));
+    fprintf(f, jtrans_notrimc("[Shop] %s\n"), OUTS(shop_name(shop)));
     if (!shop.stock.empty())
     {
         for (item_def item : shop.stock) // intentional copy
@@ -677,7 +686,7 @@ void ShopInfo::write(FILE *f, bool identify) const
         }
     }
     else
-        fprintf(f, "  (Shop contents are unknown)\n");
+        fprintf(f, "  %s\n", jtransc("(Shop contents are unknown)"));
 }
 
 LevelStashes::LevelStashes()
@@ -804,7 +813,8 @@ bool LevelStashes::is_current() const
 
 string LevelStashes::level_name() const
 {
-    return m_place.describe(true, true);
+    // ダンプ(表示)にだけ使うので日本語の階層名。
+    return m_place.describe_j(true, true);
 }
 
 string LevelStashes::short_level_name() const
@@ -1019,7 +1029,7 @@ void StashTracker::write(FILE *f, bool identify) const
 {
     fprintf(f, "%s\n\n", OUTS(you.your_name));
     if (!levels.size())
-        fprintf(f, "  You have no stashes.\n");
+        fprintf(f, "  %s\n", jtransc("You have no stashes."));
     else
     {
         for (const auto &entry : levels)
@@ -1092,18 +1102,19 @@ string StashTracker::stash_search_prompt()
     {
         const string disp = replace_all(lastsearch, "<", "<<");
         opts.push_back(
-            make_stringf("Enter for \"%s\"", disp.c_str()));
+            make_stringf(jtransc("Enter for \"%s\""), disp.c_str()));
     }
     if (lastsearch != ".")
-        opts.emplace_back("? for help");
+        opts.emplace_back(jtrans("? for help"));
 
     string prompt_qual =
-        comma_separated_line(opts.begin(), opts.end(), ", or ", ", or ");
+        comma_separated_line(opts.begin(), opts.end(), "、", "、");
 
     if (!prompt_qual.empty())
         prompt_qual = " [" + prompt_qual + "]";
 
-    return make_stringf("Search for what%s? ", prompt_qual.c_str());
+    return make_stringf(jtrans_notrimc("Search for what%s? "),
+                        prompt_qual.c_str());
 }
 
 void StashTracker::remove_shop(const level_pos &pos)
@@ -1408,7 +1419,7 @@ void StashTracker::search_stashes(string search_term)
 
     if (!search->valid() && csearch != "*")
     {
-        mprf(MSGCH_PLAIN, "Your search expression is invalid.");
+        mprf(MSGCH_PLAIN, jtransc("Your search expression is invalid."));
         return ;
     }
 
@@ -1423,7 +1434,7 @@ void StashTracker::search_stashes(string search_term)
 
     if (results.empty())
     {
-        mprf(MSGCH_PLAIN, "Can't find anything matching that.");
+        mprf(MSGCH_PLAIN, jtransc("Can't find anything matching that."));
         return;
     }
 
@@ -1432,7 +1443,7 @@ void StashTracker::search_stashes(string search_term)
 
     if (dedup_results.size() > SEARCH_SPAM_THRESHOLD)
     {
-        mprf(MSGCH_PLAIN, "Too many matches; use a more specific search.");
+        mprf(MSGCH_PLAIN, jtransc("Too many matches; use a more specific search."));
         return;
     }
 
@@ -1571,9 +1582,9 @@ formatted_string StashSearchMenu::calc_title()
     formatted_string fs;
     fs.textcolour(title->colour);
     string prefixes[] = {
-        make_stringf("%d match%s",
+        make_stringf(jtransc("%d match%s"),
             num_alt_matches, num_alt_matches == 1 ? "" : "es"),
-        make_stringf("%d match%s",
+        make_stringf(jtransc("%d match%s"),
             num_matches, num_matches == 1 ? "" : "es"),
     };
     const bool f = num_matches != num_alt_matches;
@@ -1584,20 +1595,22 @@ formatted_string StashSearchMenu::calc_title()
         // display loop if only useless items are found.
         fs += formatted_string::parse_string(
             "<lightgrey>"
-            ": only useless items found; press <w>=</w> to show."
-            "                    "
+            + jtrans(": only useless items found; press <w>=</w> to show.")
+            + "                    "
             "</lightgrey>");
     }
     else
     {
         fs += formatted_string::parse_string(make_stringf(
-            "<lightgrey>"
+            jtransc("<lightgrey>"
             ": <w>%s</w> [toggle: <w>!</w>],"
             " by <w>%s</w> [<w>/</w>],"
             " <w>%s</w> useless & duplicates [<w>=</w>]"
-            "</lightgrey>",
-            menu_action == ACT_EXECUTE ? "travel" : "view  ",
-            sort_style, filtered));
+            "</lightgrey>"),
+            tagged_jtrans("[stash menu]",
+                          menu_action == ACT_EXECUTE ? "travel" : "view").c_str(),
+            tagged_jtrans("[stash menu]", sort_style).c_str(),
+            tagged_jtrans("[stash menu]", filtered).c_str()));
     }
     fs.cprintf(string(max(0, strwidth(prefixes[!f])-strwidth(prefixes[f])),
                       ' '));
@@ -1718,7 +1731,7 @@ bool StashTracker::display_search_results(
         if (need_here_subtitle && (here || res.in_inventory))
         {
             // LIGHTCYAN for better contrast. XX change the default?
-            first_hdr = new StashMenuEntry("Results at your position",
+            first_hdr = new StashMenuEntry(jtrans("Results at your position"),
                                                     MEL_SUBTITLE, LIGHTCYAN);
             stashmenu.add_entry(first_hdr);
             // only show the `elsewhere` subtitle if there are any `here`
@@ -1730,9 +1743,11 @@ bool StashTracker::display_search_results(
 
         if (need_there_subtitle && !(here || res.in_inventory))
         {
-            const string cycle_keyhelp = " <lightgrey>([<w>,</w>] to cycle)</lightgrey>";
+            const string cycle_keyhelp
+                = jtrans_notrim(" <lightgrey>([<w>,</w>] to cycle)</lightgrey>");
             stashmenu.add_entry(new StashMenuEntry(
-                "Results elsewhere" + cycle_keyhelp, MEL_SUBTITLE, LIGHTCYAN));
+                jtrans("Results elsewhere") + cycle_keyhelp, MEL_SUBTITLE,
+                LIGHTCYAN));
             ASSERT(first_hdr);
             first_hdr->text += cycle_keyhelp;
             need_there_subtitle = false;
@@ -1744,22 +1759,25 @@ bool StashTracker::display_search_results(
             if (const uint8_t waypoint = travel_cache.is_waypoint(res.pos))
                 matchtitle << "(" << waypoint << ") ";
             if (here)
-                matchtitle << "[right here] ";
+                matchtitle << jtrans_notrim("[right here] ");
             else
-                matchtitle << "[" << res.pos.id.describe() << "] ";
+                matchtitle << "[" << res.pos.id.describe_j() << "] ";
         }
 
         matchtitle << res.match;
         if (res.duplicates > 0)
         {
-            matchtitle << " (" << res.duplicates << " further duplicate" <<
-                (res.duplicates == 1 ? "" : "s");
+            // 日本語: 「 (他に重複 3 件、2 か所)」
+            matchtitle << make_stringf(jtrans_notrimc(" (%d further duplicate%s"),
+                                       res.duplicates,
+                                       res.duplicates == 1 ? "" : "s");
             if (res.duplicates != res.duplicate_piles  // piles are only
                                                        // meaningful for items
                 && res.match_type == MATCH_ITEM)
             {
-                matchtitle << " in " << res.duplicate_piles
-                           << " pile" << (res.duplicate_piles == 1 ? "" : "s");
+                matchtitle << make_stringf(jtrans_notrimc(" in %d pile%s"),
+                                           res.duplicate_piles,
+                                           res.duplicate_piles == 1 ? "" : "s");
             }
             matchtitle << ")";
         }
@@ -1769,7 +1787,7 @@ bool StashTracker::display_search_results(
             colour = CYAN;
         else if (res.item.defined())
         {
-            const int itemcol = menu_colour(res.item.name(DESC_PLAIN).c_str(),
+            const int itemcol = menu_colour(item_name_en(res.item, DESC_PLAIN),
                                         item_prefix(res.item, false), "pickup", false);
             if (itemcol != -1)
                 colour = itemcol;

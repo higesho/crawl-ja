@@ -82,6 +82,40 @@ static int dgn_feature_desc_at(lua_State *ls)
     return 1;
 }
 
+// 表示用の地形名(日本語)。feature_desc / feature_desc_at は Lua 側で
+// 比較・目録に使われるので英語のまま残す。日本語には冠詞がないので
+// 説明の段階(dtype)は無視され、need_stop は「。」を付ける。
+static int dgn_feature_desc_j(lua_State *ls)
+{
+    const dungeon_feature_type feat =
+    static_cast<dungeon_feature_type>(luaL_safe_checkint(ls, 1));
+    const description_level_type dtype =
+        lua_isnumber(ls, 2)?
+        static_cast<description_level_type>(luaL_safe_checkint(ls, 2)) :
+            description_type_by_name(lua_tostring(ls, 2));
+    const bool need_stop = lua_isboolean(ls, 3)? lua_toboolean(ls, 3) : false;
+    const string s = feature_description_j(feat, NUM_TRAPS, "", dtype)
+        + (need_stop ? "。" : "");
+    lua_pushstring(ls, s.c_str());
+    return 1;
+}
+
+static int dgn_feature_desc_at_j(lua_State *ls)
+{
+    const description_level_type dtype =
+        lua_isnumber(ls, 3) ?
+        static_cast<description_level_type>(luaL_safe_checkint(ls, 3)) :
+            description_type_by_name(lua_tostring(ls, 3));
+    const bool need_stop = lua_isboolean(ls, 4)? lua_toboolean(ls, 4) : false;
+    const string s = feature_description_at_j(
+                         coord_def(luaL_safe_checkint(ls, 1),
+                                   luaL_safe_checkint(ls, 2)),
+                         false, dtype)
+        + (need_stop ? "。" : "");
+    lua_pushstring(ls, s.c_str());
+    return 1;
+}
+
 static int dgn_max_bounds(lua_State *ls)
 {
     lua_pushinteger(ls, GXM);
@@ -148,6 +182,8 @@ const struct luaL_Reg dgn_grid_dlib[] =
 { "feature_name", dgn_feature_name },
 { "feature_desc", dgn_feature_desc },
 { "feature_desc_at", dgn_feature_desc_at },
+{ "feature_desc_j", dgn_feature_desc_j },
+{ "feature_desc_at_j", dgn_feature_desc_at_j },
 { "seen_destroy_feat", dgn_seen_destroy_feat },
 
 { "grid", dgn_grid },

@@ -1448,12 +1448,12 @@ void ouch(int dam, kill_method_type death_type, mid_t source, const char *aux,
             // for note taking
             string damage_desc;
             if (!see_source)
-                damage_desc = make_stringf("something (%d)", dam);
+                damage_desc = make_stringf(jtransc("something (%d)"), dam);
             else
             {
                 damage_desc = scorefile_entry(dam, source,
                                               death_type, aux, true)
-                    .death_description(scorefile_entry::DDV_TERSE);
+                    .death_description_j(scorefile_entry::DDV_TERSE);
             }
 
             take_note(Note(NOTE_HP_CHANGE, you.hp, you.hp_max,
@@ -1583,7 +1583,7 @@ void ouch(int dam, kill_method_type death_type, mid_t source, const char *aux,
 
     // Okay, so you're dead.
     take_note(Note(NOTE_DEATH, you.hp, you.hp_max,
-                    se.death_description(scorefile_entry::DDV_NORMAL).c_str()),
+                    se.death_description_j(scorefile_entry::DDV_NORMAL).c_str()),
               true);
     if (you.lives && !non_death)
     {

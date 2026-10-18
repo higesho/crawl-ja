@@ -1233,7 +1233,7 @@ static string _origin_monster_name(const item_def &item)
         return jtrans("a player ghost");
     else if (monnum == MONS_PANDEMONIUM_LORD)
         return jtrans("a pandemonium lord");
-    return mons_type_name(monnum, DESC_A);
+    return mons_type_name_j(monnum, DESC_A);
 }
 
 static string _origin_place_desc(const item_def &item)
@@ -2005,7 +2005,7 @@ static void _get_gem(const item_def& it, bool quiet)
     flash_view_delay(UA_PICKUP, it.gem_colour(), 300);
     // XXX: consider customizing this message per-gem
     mprf(jtransc("You pick up %s and feel its impossibly delicate weight in your %s."),
-         it.name(DESC_THE).c_str(), jtransc(you.hand_name(true)));
+         it.name(DESC_THE).c_str(), you.hand_name(true).c_str());
     if (_got_all_gems())
     {
         mprf(jtransc("You've found all the gems! Together, they sparkle an otherworldly %s!"),
@@ -2811,7 +2811,7 @@ static bool _check_dangerous_drop(const item_def & item)
         jtransc("Are you sure you want to drop %s into %s? You won't be able "
                 "to retrieve it."),
         item.name(DESC_THE).c_str(),
-        feature_description_at(you.pos(), false, DESC_A).c_str());
+        feature_description_at_j(you.pos(), false, DESC_A).c_str());
 
     // don't interrupt delays; this might do something strange to macros
     // that trigger it, but the main way drops interact with delays is
@@ -4535,8 +4535,12 @@ static void _rune_from_specs(const char* _specs, item_def &item)
         {
             item.sub_type = i;
 
-            if (lowercase_string(item.name(DESC_PLAIN)).find(specs) != string::npos)
+            // 英語の入力と照合するので英語の名前を使う
+            if (lowercase_string(item_name_en(item, DESC_PLAIN)).find(specs)
+                != string::npos)
+            {
                 return;
+            }
         }
     }
 
@@ -4730,7 +4734,8 @@ bool get_item_by_name(item_def *item, const char* specs,
             for (int i = SPWPN_NORMAL + 1; i < brand_index; ++i)
             {
                 item->brand = i;
-                size_t pos = lowercase_string(item->name(DESC_PLAIN)).find(buf_lwr);
+                size_t pos = lowercase_string(item_name_en(*item, DESC_PLAIN))
+                                 .find(buf_lwr);
                 if (pos != string::npos)
                 {
                     // earliest match is the winner

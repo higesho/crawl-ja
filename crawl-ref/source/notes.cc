@@ -12,9 +12,11 @@
 #include <vector>
 
 #include "branch.h"
+#include "database.h"
 #include "english.h"
 #include "hiscores.h"
 #include "item-prop.h" // gem_adj
+#include "japanese.h"
 #include "message.h"
 #include "mutation.h"
 #include "options.h"
@@ -183,13 +185,21 @@ static bool _is_noteworthy(const Note& note)
             break;
 
         default:
-            mpr("Buggy note passed: unknown note type");
+            mpr(jtrans("Buggy note passed: unknown note type"));
             // Return now, rather than give a "Buggy note passed" message
             // for each note of the matching type in the note list.
             return true;
         }
     }
     return true;
+}
+
+// ノートの名前・説明(name, desc)は、作った側によって日本語のことも英語の
+// こともある(セーブに残る)。英語の部分は表示するときに辞書で訳す
+// (death_name_j() は日本語をそのまま返す)。
+static string _note_name_j(const string &name)
+{
+    return death_name_j(name);
 }
 
 string Note::describe(bool when, bool where, bool what) const
@@ -202,12 +212,13 @@ string Note::describe(bool when, bool where, bool what) const
     if (where)
     {
         result << "| "
-               << chop_string(place.describe(), MAX_NOTE_PLACE_LEN)
+               << chop_string(place.describe_j(), MAX_NOTE_PLACE_LEN)
                << " | ";
     }
 
     if (what)
     {
+        const char *nm = name.c_str();
         switch (type)
         {
         case NOTE_HP_CHANGE:
@@ -217,136 +228,153 @@ string Note::describe(bool when, bool where, bool what) const
                    << " [" << name << "]";
             break;
         case NOTE_XOM_REVIVAL:
-            result << "Xom revived you";
+            result << jtrans("Xom revived you");
             break;
         case NOTE_MP_CHANGE:
-            result << "Magic: " << first << "/" << second;
+            result << make_stringf(jtransc("Magic: %d/%d"), first, second);
             break;
         case NOTE_MAXHP_CHANGE:
-            result << "Reached " << first << " max health";
+            result << make_stringf(jtransc("Reached %d max health"), first);
             break;
         case NOTE_MAXMP_CHANGE:
-            result << "Reached " << first << " max magic points";
+            result << make_stringf(jtransc("Reached %d max magic points"), first);
             break;
         case NOTE_XP_LEVEL_CHANGE:
-            result << "Reached XP level " << first << ". " << name;
+            result << make_stringf(jtransc("Reached XP level %d. %s"), first, nm);
             break;
         case NOTE_DUNGEON_LEVEL_CHANGE:
             if (!desc.empty())
-                result << desc;
+                result << jtrans(desc);
             else
-                result << "Entered "
-                       << place.describe(true, true);
+            {
+                result << make_stringf(jtransc("Entered %s"),
+                                       place.describe_j(true, true).c_str());
+            }
             break;
         case NOTE_LEARN_SPELL:
-            result << "Learned a level "
-                   << spell_difficulty(static_cast<spell_type>(first))
-                   << " spell: "
-                   << spell_title(static_cast<spell_type>(first));
+            // 引数: 呪文のレベル, 呪文
+            result << make_stringf(jtransc("Learned a level %d spell: %s"),
+                        spell_difficulty(static_cast<spell_type>(first)),
+                        spell_title_jc(static_cast<spell_type>(first)));
             break;
         case NOTE_GET_GOD:
-            result << "Became a worshipper of "
-                   << god_name(static_cast<god_type>(first), true);
+            result << make_stringf(jtransc("Became a worshipper of %s"),
+                        god_name_j(static_cast<god_type>(first), true).c_str());
             break;
         case NOTE_LOSE_GOD:
-            result << "Fell from the grace of "
-                   << god_name(static_cast<god_type>(first));
+            result << make_stringf(jtransc("Fell from the grace of %s"),
+                        god_name_jc(static_cast<god_type>(first)));
             break;
         case NOTE_PENANCE:
-            result << "Was placed under penance by "
-                   << god_name(static_cast<god_type>(first));
+            result << make_stringf(jtransc("Was placed under penance by %s"),
+                        god_name_jc(static_cast<god_type>(first)));
             break;
         case NOTE_MOLLIFY_GOD:
-            result << "Was forgiven by "
-                   << god_name(static_cast<god_type>(first));
+            result << make_stringf(jtransc("Was forgiven by %s"),
+                        god_name_jc(static_cast<god_type>(first)));
             break;
         case NOTE_GOD_GIFT:
-            result << "Received a gift from "
-                   << god_name(static_cast<god_type>(first));
+            result << make_stringf(jtransc("Received a gift from %s"),
+                        god_name_jc(static_cast<god_type>(first)));
             if (!name.empty())
-                result << " (" << name << ")";
+                result << " (" << jtrans(name) << ")";
             break;
         case NOTE_ID_ITEM:
-            result << "Identified " << name;
+            result << make_stringf(jtransc("Identified %s"), nm);
             if (!desc.empty())
                 result << " (" << desc << ")";
             break;
         case NOTE_GET_ITEM:
-            result << "Got " << name;
+            result << make_stringf(jtransc("Got %s"), nm);
             if (first != 0) // gems
             {
                 const int turns = (first + 9) / 10;
-                result << " with " << turns << " turn"
-                       << (first == 1 ? "" : "s") << " to spare";
+                result << make_stringf(jtransc("(with %d turns to spare)"),
+                                       turns);
             }
             break;
         case NOTE_ACQUIRE_ITEM:
-            result << "Acquired " << name;
+            result << make_stringf(jtransc("Acquired %s"), nm);
             break;
         case NOTE_BUY_ITEM:
-            result << "Bought " << name << " for " << first << " gold piece"
-                   << (first == 1 ? "" : "s");
+            result << make_stringf(jtransc("Bought %s for %d gold pieces"),
+                                   nm, first);
             break;
         case NOTE_DONATE_MONEY:
-            result << "Donated " << first << " gold piece"
-                   << (first == 1 ? "" : "s") << " to Zin";
+            result << make_stringf(jtransc("Donated %d gold pieces to Zin"),
+                                   first);
             break;
         case NOTE_GAIN_SKILL:
-            result << "Reached skill level " << second
-                   << " in " << skill_name(static_cast<skill_type>(first));
+            result << make_stringf(jtransc("Skill %s reached level %d"),
+                        skill_name_jc(static_cast<skill_type>(first)), second);
             break;
         case NOTE_LOSE_SKILL:
-            result << "Reduced skill "
-                   << skill_name(static_cast<skill_type>(first))
-                   << " to level " << second;
+            result << make_stringf(jtransc("Reduced skill %s to level %d"),
+                        skill_name_jc(static_cast<skill_type>(first)), second);
             break;
         case NOTE_SEEN_MONSTER:
-            result << "Encountered " << name;
+            result << make_stringf(jtransc("Encountered %s"),
+                                   _note_name_j(name).c_str());
             break;
         case NOTE_DEFEAT_MONSTER:
+        {
+            // desc は英語の動詞("killed" など。mon-death.cc)
+            const string verb = tagged_jtrans(second ? "[kill verb passive]"
+                                                     : "[kill verb]", desc);
+            const string who = _note_name_j(name);
             if (second)
-                result << name << " (ally) was " << desc;
+            {
+                result << make_stringf(jtransc("%s (ally) was %s"),
+                                       who.c_str(), verb.c_str());
+            }
             else
-                result << uppercase_first(desc) << " " << name;
+            {
+                // 「〜を倒した」
+                result << make_stringf(tagged_jtransc("[note]", "%s %s"),
+                                       who.c_str(), verb.c_str());
+            }
             break;
+        }
         case NOTE_POLY_MONSTER:
-            result << name << " changed into " << desc;
+            result << make_stringf(jtransc("%s changed into %s"),
+                                   _note_name_j(name).c_str(),
+                                   _note_name_j(desc).c_str());
             break;
         case NOTE_PIETY_RANK:
-            result << "Reached "
-                   << string(second, '*')
-                   << " piety under "
-                   << god_name(static_cast<god_type>(first));
+            // 引数: 神, ★(日本語の語順)
+            result << make_stringf(jtransc("Reached %s piety under %s"),
+                        god_name_jc(static_cast<god_type>(first)),
+                        string(second, '*').c_str());
             break;
         case NOTE_GET_MUTATION:
-            result << "Gained mutation: "
+            result << jtrans("Gained mutation:") << " "
                    << mutation_desc(static_cast<mutation_type>(first),
                                     second == 0 ? 1 : second);
             if (!name.empty())
-                result << " [" << name << "]";
+                result << " [" << _note_name_j(name) << "]";
             break;
         case NOTE_LOSE_MUTATION:
-            result << "Lost mutation: "
+            result << jtrans("Lost mutation:") << " "
                    << mutation_desc(static_cast<mutation_type>(first),
                                     second == 3 ? 3 : second+1);
             if (!name.empty())
-                result << " [" << name << "]";
+                result << " [" << _note_name_j(name) << "]";
             break;
         case NOTE_PERM_MUTATION:
-            result << "Mutation became permanent: "
+            result << jtrans("Mutation became permanent:") << " "
                    << mutation_desc(static_cast<mutation_type>(first),
                                     second == 0 ? 1 : second);
             if (!name.empty())
-                result << " [" << name << "]";
+                result << " [" << _note_name_j(name) << "]";
             break;
         case NOTE_GET_BANE:
-            result << "Gained bane: "
+            result << jtrans("Gained bane:") << " "
                    << bane_name(static_cast<bane_type>(first));
             if (!name.empty())
-                result << " [" << name << "]";
+                result << " [" << _note_name_j(name) << "]";
             break;
         case NOTE_LOSE_BANE:
-            result << "Lost bane: "
+            result << jtrans("Lost bane:") << " "
                    << bane_name(static_cast<bane_type>(first));
             break;
         case NOTE_DEATH:
@@ -356,16 +384,16 @@ string Note::describe(bool when, bool where, bool what) const
             result << Options.user_note_prefix << name;
             break;
         case NOTE_MESSAGE:
-            result << name;
+            result << jtrans(name);
             break;
         case NOTE_SEEN_FEAT:
-            result << "Found " << name;
+            result << make_stringf(jtransc("Found %s"), nm);
             break;
         case NOTE_FEAT_MIMIC:
-            result << name <<" was a mimic.";
+            result << make_stringf(jtransc("%s was a mimic."), nm);
             break;
         case NOTE_XOM_EFFECT:
-            result << "XOM: " << name;
+            result << "XOM: " << jtrans(name);
 #if defined(DEBUG_XOM) || defined(NOTE_DEBUG_XOM)
             // If debugging, also take note of piety and tension.
             result << " (piety: " << first;
@@ -377,69 +405,78 @@ string Note::describe(bool when, bool where, bool what) const
         case NOTE_PARALYSIS:
         {
             const float turns = first / 10.0;
-            result << "Paralysed by " << name << " for " << setprecision(2) << turns << " turns";
+            ostringstream t;
+            t << setprecision(2) << turns;
+            result << make_stringf(jtransc("Paralysed by %s for %s turns"),
+                                   _note_name_j(name).c_str(), t.str().c_str());
         }
             break;
         case NOTE_VEXED:
-            result << "Vexed by " << name << " for " << first << " turns";
+            result << make_stringf(jtransc("Vexed by %s for %d turns"),
+                                   _note_name_j(name).c_str(), first);
             break;
         case NOTE_RECRUITED_APOSTLE:
-            result << "Anointed " << name << " the " << desc << " as your apostle";
+            result << make_stringf(jtransc("Anointed %s the %s as your apostle"),
+                                   nm, desc.c_str());
             break;
         case NOTE_ALLY_DEATH:
-            result << "Your ally " << name << " died";
+            result << make_stringf(jtransc("Your ally %s died"), nm);
             break;
         case NOTE_OFFERED_SPELL:
-            result << "Offered knowledge of "
-                   << spell_title(static_cast<spell_type>(first))
-                   << " by Vehumet.";
+            result << make_stringf(jtransc("Offered knowledge of %s by Vehumet."),
+                        spell_title_jc(static_cast<spell_type>(first)));
             break;
         case NOTE_ANCESTOR_TYPE:
-            result << "Remembered your ancestor " << hepliaklqana_ally_name()
-                   << " as " << name;
+            result << make_stringf(jtransc("Remembered your ancestor %s as %s"),
+                                   hepliaklqana_ally_name().c_str(), nm);
             break;
 #if TAG_MAJOR_VERSION == 34
         case NOTE_ANCESTOR_SPECIALIZATION:
-            result << "Remembered your ancestor " << hepliaklqana_ally_name()
-                   << " " << name;
+            result << make_stringf(jtransc("Remembered your ancestor %s %s"),
+                                   hepliaklqana_ally_name().c_str(),
+                                   jtrans(name).c_str());
             break;
         case NOTE_ANCESTOR_DEATH:
-            result << "Remembered your ancestor "
-                   << apostrophise(hepliaklqana_ally_name())
-                   << " " << name << " death";
+            result << make_stringf(jtransc("Remembered your ancestor %s's %s death"),
+                                   hepliaklqana_ally_name().c_str(),
+                                   jtrans(name).c_str());
             break;
 #endif
           case NOTE_FOUND_UNRAND:
-            result << "Found " << name;
+            result << make_stringf(jtransc("Found %s"), nm);
             break;
         case NOTE_ZOT_TOUCHED:
-            result << "Touched by the power of Zot (MHP " << first << " -> " << second << ")";
+            result << make_stringf(jtransc("Touched by the power of Zot (MHP %d -> %d)"),
+                                   first, second);
             break;
         case NOTE_DREAMSHARD:
-            result << "Saved by the dreamshard amulet";
+            result << jtrans("Saved by the dreamshard amulet");
             break;
         case NOTE_GEM_LOST:
-            result << "Lost the "
-                   << gem_adj(static_cast<gem_type>(first))
-                   << " gem through the power of Zot.";
+            result << make_stringf(jtransc("Lost the %s through the power of Zot."),
+                        jtrans(string(gem_adj(static_cast<gem_type>(first)))
+                               + " gem").c_str());
             break;
         case NOTE_GAIN_LIFE:
-            result << "Gained a life (" << first << (first == 1 ? " life " : " lives ") << "remaining)";
+            result << make_stringf(jtransc("Gained a life (%d lives remaining)"),
+                                   first);
             break;
         case NOTE_LOSE_LIFE:
-            result << "Lost a life ("   << first << (first == 1 ? " life " : " lives ") << "remaining)";
+            result << make_stringf(jtransc("Lost a life (%d lives remaining)"),
+                                   first);
             break;
         case NOTE_FLED_CHALLENGE:
-            result << "Fled from a divine trial";
+            result << jtrans("Fled from a divine trial");
             break;
         case NOTE_INFERNAL_MARK:
-            result << "Branded self with the " << name;
+            result << make_stringf(jtransc("Branded self with the %s"),
+                                   jtrans(name).c_str());
             break;
         case NOTE_TESSERACT_ACTIVATED:
-            result << "Activated a boundless tesseract";
+            result << jtrans("Activated a boundless tesseract");
             break;
         default:
-            result << "Buggy note description: unknown note type";
+            result << jtrans("Buggy note description: unknown note type");
             break;
         }
     }
@@ -447,7 +484,7 @@ string Note::describe(bool when, bool where, bool what) const
     if (type == NOTE_SEEN_MONSTER || type == NOTE_DEFEAT_MONSTER)
     {
         if (what && first == MONS_PANDEMONIUM_LORD)
-            result << " the pandemonium lord";
+            result << jtrans("(the pandemonium lord)");
     }
     return result.str();
 }
@@ -586,7 +623,8 @@ void load_notes(reader& inf)
 void make_user_note()
 {
     char buf[400];
-    bool validline = !msgwin_get_line("Enter note: ", buf, sizeof(buf));
+    bool validline = !msgwin_get_line(jtrans_notrim("Enter note: "), buf,
+                                      sizeof(buf));
     if (!validline || (!*buf))
         return;
     Note unote(NOTE_USER_NOTE);

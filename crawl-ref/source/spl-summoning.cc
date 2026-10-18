@@ -402,7 +402,7 @@ spret cast_monstrous_menagerie(monster* caster, int pow)
     if (you.can_see(*beast))
     {
         mprf(jtransc("%s summons %s!"), caster->name(DESC_THE).c_str(),
-                          mons_type_name(type, DESC_A).c_str());
+                          mons_type_name_j(type, DESC_A).c_str());
     }
     else
         canned_msg(MSG_NOTHING_HAPPENS);
@@ -2711,7 +2711,7 @@ void fedhas_wall_of_briars()
 static void _overgrow_wall(const coord_def &pos)
 {
     const dungeon_feature_type feat = env.grid(pos);
-    const string what = feature_description(feat, NUM_TRAPS, "", DESC_THE);
+    const string what = feature_description_j(feat, NUM_TRAPS, "", DESC_THE);
 
     if (monster_at(pos))
     {

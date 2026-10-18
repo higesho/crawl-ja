@@ -49,7 +49,14 @@ void push_monster(lua_State *ls, monster* mons)
     return 1;                                                         \
     }
 
+// Lua(dlua, des, ユーザーの rc)は名前を英語で比べるので、名前の
+// フィールドは英語の名前を返す。表示用の日本語の名前は *_j を使う。
 MDEF(name)
+{
+    PLUARET(string, mons->name_en(DESC_PLAIN, true).c_str());
+}
+
+MDEF(name_j)
 {
     PLUARET(string, mons->name(DESC_PLAIN, true).c_str());
 }
@@ -61,10 +68,15 @@ MDEF(unique)
 
 MDEF(base_name)
 {
-    PLUARET(string, mons->base_name(DESC_PLAIN, true).c_str());
+    PLUARET(string, mons->base_name_en(DESC_PLAIN, true).c_str());
 }
 
 MDEF(full_name)
+{
+    PLUARET(string, mons->full_name_en(DESC_PLAIN).c_str());
+}
+
+MDEF(full_name_j)
 {
     PLUARET(string, mons->full_name(DESC_PLAIN).c_str());
 }
@@ -153,9 +165,12 @@ MDEFN(add_energy, add_energy)
     }                                             \
     MDEFN(name, name##_fn)                        \
 
-LUANAMEFN(mname, mons->name(dtype, true))
-LUANAMEFN(mfull_name, mons->full_name(dtype))
-LUANAMEFN(mbase_name, mons->base_name(dtype, true))
+LUANAMEFN(mname, mons->name_en(dtype, true))
+LUANAMEFN(mfull_name, mons->full_name_en(dtype))
+LUANAMEFN(mbase_name, mons->base_name_en(dtype, true))
+// 表示用(日本語。冠詞は付かない)
+LUANAMEFN(mname_j, mons->name(dtype, true))
+LUANAMEFN(mfull_name_j, mons->full_name(dtype))
 
 MDEF(hd)
 {
@@ -525,8 +540,10 @@ struct MonsAccessor
 static MonsAccessor mons_attrs[] =
 {
     { "name",           l_mons_name      },
+    { "name_j",         l_mons_name_j    },
     { "base_name",      l_mons_base_name },
     { "full_name",      l_mons_full_name },
+    { "full_name_j",    l_mons_full_name_j },
     { "db_name",        l_mons_db_name   },
     { "type_name",      l_mons_type_name },
     { "entry_name",     l_mons_entry_name },
@@ -548,6 +565,8 @@ static MonsAccessor mons_attrs[] =
     { "mname",           l_mons_mname           },
     { "mfull_name",      l_mons_mfull_name      },
     { "mbase_name",      l_mons_mbase_name      },
+    { "mname_j",         l_mons_mname_j         },
+    { "mfull_name_j",    l_mons_mfull_name_j    },
     { "energy",          l_mons_energy          },
     { "add_energy",      l_mons_add_energy      },
     { "dismiss",         l_mons_dismiss         },

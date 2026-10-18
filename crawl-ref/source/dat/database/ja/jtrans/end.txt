@@ -1,0 +1,35 @@
+%%%%
+Fatal error:
+
+致命的なエラー:
+%%%%
+Hit any key to exit...
+
+終了するにはどれかキーを押してください……
+%%%%
+Goodbye, %s.
+
+さようなら、%s！
+%%%%
+# 通常のゲーム(種類名が空)のとき
+Best Crawlers
+
+スコアランキング
+%%%%
+# %s はゲームの種類([game type])
+Best Crawlers - %s
+
+スコアランキング: %s
+%%%%
+You can find your morgue file in the '%s' directory.
+
+死亡ダンプは'%s'ディレクトリに置いてあります。
+%%%%
+You can find your morgue file in the \n'%s'\n directory.
+
+死亡ダンプは\n'%s'\nディレクトリに置いてあります。
+%%%%
+[insc]unknown
+
+未鑑定
+%%%%

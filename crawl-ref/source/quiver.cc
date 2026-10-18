@@ -658,9 +658,8 @@ namespace quiver
                 if (you.confused())
                 {
                     mprf(jtransc("You attack %s."),
-                         tagged_jtrans("[feature]",
-                             feature_description_at(target.target,
-                                                    false, DESC_PLAIN)).c_str());
+                         feature_description_at_j(target.target,
+                                                  false, DESC_PLAIN).c_str());
                     you.time_taken = attack_delay;
                     you.turn_is_over = true;
                     return;

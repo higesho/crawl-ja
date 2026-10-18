@@ -1301,11 +1301,11 @@ void bolt::do_fire()
             else
             {
                 blockee = make_stringf(jtransc("the targeted %s"),
-                        feature_description_at(target, false, DESC_PLAIN).c_str());
+                        feature_description_at_j(target, false, DESC_PLAIN).c_str());
             }
 
             const string blocker = feat_is_solid(feat) ?
-                        feature_description_at(pos(), false, DESC_A) :
+                        feature_description_at_j(pos(), false, DESC_A) :
                         monster_at(pos())->name(DESC_A);
 
             tracer->blocked(make_stringf(
@@ -7965,23 +7965,30 @@ bool cancel_beam_prompt(const bolt& beam, const player_beam_tracer& tracer,
             victims.add(*target.mon, target.adj, target.suffix, target.penance);
 
         const string mon_name = victims.describe();
-        // 日本語化: "fire at/in ... direction/towards" で文を分ける
-        const char* fmt = "Really fire towards %s%s?%s";
+        const bool penance = victims.penance();
+        const string penance_msg =
+            penance ? jtrans(" This would place you under penance!") : "";
+
+        // 日本語化: 単体なら fight.cc の stop_attack_prompt() と同じ
+        // 「〜を撃ち」+「本当に%s%sますか？%s」の形にする
+        string prompt;
         if (tracer.bad_attack_targets.size() == 1)
         {
             const monster* mon = tracer.bad_attack_targets[0].mon;
-            if (beam.target == mon->pos() && spell != SPELL_STARBURST)
-                fmt = "Really fire at %s%s?%s";
-            else
-                fmt = "Really fire in %s direction%s?%s";
+            const string verb =
+                (beam.target == mon->pos() && spell != SPELL_STARBURST)
+                    ? make_stringf(jtransc("fire at %s"), mon_name.c_str())
+                    : make_stringf(jtransc("fire in %s direction"),
+                                   mon_name.c_str());
+            prompt = make_stringf(jtransc("Really %s%s?%s"), verb.c_str(),
+                                  victims.suffix(), penance_msg.c_str());
         }
-        const bool penance = victims.penance();
-
-        const string prompt = make_stringf(jtransc(fmt),
-                        mon_name.c_str(),
-                        victims.suffix(),
-                        penance ? jtransc(" This would place you under penance!")
-                                : "");
+        else
+        {
+            prompt = make_stringf(jtransc("Really fire towards %s%s?%s"),
+                                  mon_name.c_str(), victims.suffix(),
+                                  penance_msg.c_str());
+        }
 
         if (!yesno(prompt.c_str(), false, 'n'))
         {

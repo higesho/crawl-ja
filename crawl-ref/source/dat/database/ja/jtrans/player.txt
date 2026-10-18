@@ -1098,14 +1098,15 @@ A shaft appears beneath you!
 
 縦穴があなたの足下に空いた！
 %%%%
-# ゴザーグの能力(god_power::display() が書式を辞書で引く)
+# ゴザーグの能力(god_power::display() が書式を辞書で引く。%s は religion.txt の
+# 「〜すること」形の部分文)
 You now have enough gold to %s.
 
-あなたは%sのに十分な金を手に入れた。
+あなたの所持金は、%sができる額に達した。
 %%%%
 You no longer have enough gold to %s.
 
-あなたは%sのに十分な金を失った。
+あなたの所持金は、%sができる額を下回った。
 %%%%
 # attempt_escape(): 引数は「〜の」で終わる
 You escape %s grasp.

@@ -874,9 +874,10 @@ You hear an extremely violent squelch.
 あなたは凄まじくぐしゃっという音を耳にした。
 %%%%
 # 確認プロンプト
+# stop_summoning_prompt() の動詞(連用形)
 charm %s
 
-%sを魅了
+%sを魅了し
 %%%%
 That %s could hit you up to %d times. Continue anyway?
 

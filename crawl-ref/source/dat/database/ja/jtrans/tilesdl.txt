@@ -1,0 +1,14 @@
+# tilesdl.cc(タイル版の画面)
+%%%%
+Couldn't find font '%s', falling back on '%s'
+
+フォント '%s' が見つからないので '%s' を使う
+%%%%
+Failed to find a valid window layout: screen too small or game_scale too large?
+
+有効なウィンドウの配置が見つからない。画面が小さすぎるか、game_scale が大きすぎる可能性がある。
+%%%%
+Zooming to %.2f
+
+表示倍率: %.2f
+%%%%

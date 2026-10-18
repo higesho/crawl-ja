@@ -1,11 +1,3358 @@
+# rand_wpn.txt(主に武器の語彙)。0.19-ja の訳を移し、0.34 で増えた項目を追訳。
+
+%%%%
+_power_or_anger_
+
+# en:
+#   @_power_name_@
+#
+#   w:7
+#   @_conflict_name_@
+#
+#   w:7
+#   @_anger_name_@
+@_power_name_@
+
+w:7
+@_conflict_name_@
+
+w:7
+@_anger_name_@
+%%%%
+_power_name_
+
+# en:
+#   Big Damage
+#
+#   Dominance
+#
+#   Domination
+#
+#   Friendship
+#
+#   Glory
+#
+#   Grandeur
+#
+#   Hubris
+#
+#   Intimidation
+#
+#   Invincibility
+#
+#   Magnificence
+#
+#   Mastery
+#
+#   Might
+#
+#   Success
+#
+#   Superiority
+#
+#   Triumph
+#
+#   Victory
+#
+#   Wondrous Power
+大ダメージ
+
+優越
+
+制覇
+
+友情
+
+栄光
+
+威厳
+
+傲慢
+
+威嚇
+
+無敵
+
+壮大
+
+熟達
+
+剛力
+
+成功
+
+卓越
+
+征服
+
+勝利
+
+怪力
+%%%%
+_conflict_name_
+
+# en:
+#   Brawling
+#
+#   Conflict
+#
+#   Contention
+#
+#   Discord
+#
+#   Dissent
+#
+#   Division
+#
+#   Doubt
+#
+#   Internal Strife
+#
+#   Melee
+#
+#   Resumed Hostilities
+#
+#   Tension
+乱闘
+
+闘争
+
+論争
+
+不和
+
+異議
+
+分裂
+
+猜疑
+
+内紛
+
+白兵戦
+
+緊張
+%%%%
+_anger_name_
+
+# en:
+#   @_anger_quality_@
+#
+#   w:3
+#   @_anger_possessive_@
+@_anger_quality_@
+
+w:3
+@_anger_possessive_@
+%%%%
+_anger_quality_
+
+# en:
+#   Anger
+#
+#   Brutal Revenge
+#
+#   Disproportionate Response
+#
+#   Fury
+#
+#   Hatred
+#
+#   Indignation
+#
+#   Outrage
+#
+#   Righteous Anger
+#
+#   Righteous Fury
+#
+#   Scorn
+#
+#   Vengeance
+#
+#   Wrath
+怒り
+
+復讐
+
+過剰報復
+
+激怒
+
+嫌悪
+
+憤慨
+
+憤り
+
+義憤
+
+義憤
+
+軽蔑
+
+報復
+
+憤怒
+%%%%
+_anger_possessive_
+
+# en:
+#   the Extremely Mad
+#
+#   the Absolute Madman
+#
+#   the Incandescent
+#
+#   the Furious
+#
+#   the Howling One
+#
+#   the Gibberer
+#
+#   the Hated
+#
+#   the Scorned
+#
+#   the Abhorred
+激怒せし者
+
+真の狂人
+
+怒髪天を衝く者
+
+憤怒する者
+
+吠える者
+
+わめく者
+
+憎まれし者
+
+蔑まれし者
+
+忌まれし者
+%%%%
+_battle_or_war_
+
+# en:
+#   Crusades
+#
+#   Eternal War
+#
+#   Iconoclasm
+#
+#   Plunder
+#
+#   Ravage
+#
+#   Regicide
+#
+#   Skirmishing
+#
+#   War
+#
+#   the Doomed Warrior
+#
+#   the Endless March
+#
+#   the Eternal Warrior
+#
+#   the Onslaught
+#
+#   the Pyrrhic Victory
+#
+#   the Warrior
+#
+#   Blood
+#
+#   Blood-Lust
+#
+#   Callousness
+#
+#   Diet Blood
+#
+#   Fear
+#
+#   Joyful Slaughter
+#
+#   Massacring
+#
+#   Wounding
+#
+#
+#   Agony
+#
+#   Hacking and Slashing
+#
+#   Insufficient Pleasure
+#
+#   Trauma
+#
+#
+#   Dullness
+#
+#   Precise Incision
+#
+#   Laceration
+#
+#   Severance
+#
+#   Truncation
+#
+#   Death's Door
+#
+#   Mourning
+#
+#   the Grave
+聖戦
+
+終わりなき戦争
+
+偶像破壊
+
+掠奪
+
+荒廃
+
+大逆
+
+小競り合い
+
+戦争
+
+運命の戦士
+
+終わりなき進軍
+
+永遠の戦士
+
+猛攻
+
+割に合わぬ勝利
+
+戦士
+
+流血
+
+血の渇望
+
+非人情
+
+ダイエット流血
+
+不安
+
+快楽殺人者
+
+皆殺し
+
+負傷
+
+苦悶
+
+めった切り
+
+欲求不満
+
+トラウマ
+
+単調
+
+精密切開
+
+裂傷
+
+断絶
+
+切断
+
+死のとば口
+
+悲嘆
+
+墓石
+%%%%
+death_or_doom
+
+# en:
+#   Bloody Death
+#
+#   Certain Death
+#
+#   Death
+#
+#   Exquisite Death
+#
+#   Imminent Death
+#
+#   Instant Death
+#
+#   Pain and Death
+#
+#   Painful Death
+#
+#   Quick Death
+#
+#   Slow Death
+#
+#   Sudden Death
+#
+#   Uncertain Death
+#
+#   Untimely Demise
+#
+#   Destruction
+#
+#   Disembowelment
+#
+#   Doom
+#
+#   Evisceration
+#
+#   Execution
+#
+#   Extermination
+#
+#   Extinguishment
+#
+#   Peril
+#
+#   Premature Burial
+#
+#
+#   Anguish
+#
+#   Dismemberment
+#
+#   Excruciating Pain
+#
+#   Exquisite Torment
+#
+#   Infinite Pain
+#
+#   Misery
+#
+#   Terror
+#
+#   Woe
+確実なる死
+
+死
+
+即死
+
+苦痛と死
+
+突然死
+
+破壊
+
+八つ裂き
+
+破滅
+
+内臓摘出
+
+処刑
+
+絶滅
+
+消滅
+
+危機
+
+早すぎた埋葬
+
+苦悩
+
+切断
+
+耐えがたき苦痛
+
+無限の苦痛
+
+悲惨
+
+恐怖
+
+悲痛
+%%%%
+_strategy_or_justice_
+
+# en:
+#   w:2
+#   @_strategy_name_@
+#
+#   w:4
+#   @_valour_name_@
+#
+#   w:3
+#   @_justice_name_@
+w:2
+@_strategy_name_@
+
+w:4
+@_valour_name_@
+
+w:3
+@_justice_name_@
+%%%%
+_strategy_name_
+
+# en:
+#   Defence
+#
+#   Defence by Offence
+#
+#   Expedience
+#
+#   Guile
+#
+#   Offence
+#
+#   Optimality
+#
+#   Overwhelming Force
+#
+#   Reinforcement
+#
+#   Strategic Superiority
+#
+#   Subterfuge
+防御
+
+攻防一体
+
+好都合
+
+悪知恵
+
+攻撃
+
+最適
+
+猛威
+
+増援
+
+戦略的優越
+
+逃げ口上
+%%%%
+_valour_name_
+
+# en:
+#   Action
+#
+#   Conatus
+#
+#   Conscience
+#
+#   Courage
+#
+#   Daring
+#
+#   Defiance
+#
+#   Duty
+#
+#   Eternal Vigilance
+#
+#   Fortitude
+#
+#   Gallantry
+#
+#   Honour
+#
+#   Indomitability
+#
+#   Integrity
+#
+#   Prudence
+#
+#   Purpose
+#
+#   Resourcefulness
+#
+#   Responsibility
+#
+#   Tenacity
+#
+#   True Grit
+#
+#   Valiance
+#
+#   Watchfulness
+行動
+
+コナトゥス
+
+良心
+
+勇気
+
+大胆
+
+反抗
+
+義務
+
+絶えざる警戒
+
+不屈
+
+勇猛
+
+名誉
+
+不撓不屈
+
+高潔
+
+慎重
+
+決意
+
+知略
+
+責任
+
+頑強
+
+真なる闘志
+
+剛勇
+
+気配り
+%%%%
+_justice_name_
+
+# en:
+#   Absolution
+#
+#   Accidental Termination
+#
+#   Blind Justice
+#
+#   Capital Punishment
+#
+#   Corporal Punishment
+#
+#   Cruel Justice
+#
+#   Exoneration
+#
+#   Extenuating Circumstances
+#
+#   False Accusations
+#
+#   Forgiveness
+#
+#   Guilt
+#
+#   Innocence
+#
+#   Judgement
+#
+#   Punishment
+#
+#   Tender Mercy
+#
+#   Tortfeasance
+#
+#   Trial by Ordeal
+#
+#   Wrongful Imprisonment
+赦罪
+
+予期せぬ終結
+
+盲目的正義
+
+極刑
+
+体刑
+
+無慈悲なる正義
+
+赦免
+
+情状酌量
+
+虚偽告訴
+
+容赦
+
+罪悪
+
+無垢
+
+審判
+
+懲罰
+
+かよわき慈悲
+
+不法作為
+
+神明裁判
+
+冤罪
+%%%%
+_diviner_name_
+
+# en:
+#   Augurer
+#
+#   Fortune-Teller
+#
+#   Oracle
+#
+#   Seeker
+#
+#   Seer
+#
+#   Soothsayer
+#
+#   Sybil
+#
+#   Visionary
+#
+#   Water Diviner
+占い師
+
+予見師
+
+神託所
+
+探求者
+
+予見師
+
+預言者
+
+空想家
+
+風水師
+%%%%
+_people_name_
+
+# en:
+#   Ancients
+#
+#   Coward
+#
+#   Enemy
+#
+#   Fool
+#
+#   Genius
+#
+#   Hero
+#
+#   Jester
+#
+#   King
+#
+#   Madman
+#
+#   Messenger
+#
+#   Pariah
+#
+#   Philosopher
+#
+#   Priest
+#
+#   Queen
+#
+#   Saviour
+#
+#   Scapegrace
+#
+#   Scavenger
+#
+#   Traitor
+#
+#   w:15
+#   @_diviner_name_@
+太古
+
+臆病者
+
+怨敵
+
+愚者
+
+天賦
+
+英雄
+
+道化師
+
+王
+
+狂人
+
+伝令
+
+爪弾き者
+
+哲学者
+
+司祭
+
+女王
+
+救世主
+
+ろくでなし
+
+屑拾い
+
+反逆者
+
+w:15
+@_diviner_name_@
+%%%%
+_weapon_animal_
+
+# en:
+#   @_arachnid_name_@
+#
+#   @_crustacean_name_@
+#
+#   @_fish_name_@
+#
+#   @_amphibian_name_@
+#
+#   @_reptile_name_@
+#
+#   @_bird_name_@
+#
+#   @_mammal_name_@
+@_arachnid_name_@
+
+@_crustacean_name_@
+
+@_fish_name_@
+
+@_amphibian_name_@
+
+@_reptile_name_@
+
+@_bird_name_@
+
+@_mammal_name_@
+%%%%
+_crustacean_name_
+
+# en:
+#   Ant
+#
+#   Barnacle
+#
+#   Bee
+#
+#   Blowfly
+#
+#   Bristletail
+#
+#   Butterfly
+#
+#   Caddisfly
+#
+#   Crab
+#
+#   Crayfish
+#
+#   Damselfly
+#
+#   Dragonfly
+#
+#   Firefly
+#
+#   Flea
+#
+#   Gnat
+#
+#   Hornet
+#
+#   June-Bug
+#
+#   Krill
+#
+#   Lacewing
+#
+#   Lobster
+#
+#   Louse
+#
+#   Mayfly
+#
+#   Mosquito
+#
+#   Moth
+#
+#   Pill Bug
+#
+#   Prawn
+#
+#   Shrimp
+#
+#   Silverfish
+#
+#   Wasp
+#
+#   Weta
+#
+#   Woodlouse
+#
+#   Yellowjacket
+蟻
+
+フジツボ
+
+ミツバチ
+
+黒蠅
+
+イシノミ
+
+胡蝶
+
+トビケラ
+
+カニ
+
+ザリガニ
+
+イトトンボ
+
+蜻蛉
+
+蛍
+
+ノミ
+
+ブヨ
+
+スズメバチ
+
+コガネムシ
+
+オキアミ
+
+クサカゲロウ
+
+海老
+
+シラミ
+
+カゲロウ
+
+蚊
+
+蛾
+
+ダンゴムシ
+
+クルマエビ
+
+小エビ
+
+シミ
+
+雀蜂
+
+ウェタ
+
+ワラジムシ
+
+キイロスズメバチ
+%%%%
+_arachnid_name_
+
+# en:
+#   Harvestman
+#
+#   Scorpion
+#
+#   Spider
+#
+#   Tick
+ザトウムシ
+
+蠍
+
+蜘蛛
+
+ダニ
+%%%%
+_amphibian_name_
+
+# en:
+#   Axolotl
+#
+#   Caecilian
+#
+#   Frog
+#
+#   Hellbender
+#
+#   Newt
+#
+#   Olm
+#
+#   Salamander
+#
+#   Siren
+#
+#   Toad
+ウーパールーパー
+
+アシナシイモリ
+
+蛙
+
+ヘルベンダー
+
+イモリ
+
+ホライモリ
+
+山椒魚
+
+サイレン
+
+ヒキガエル
+%%%%
+_reptile_name_
+
+# en:
+#   Alligator
+#
+#   Asp
+#
+#   Crocodile
+#
+#   Gecko
+#
+#   Gharial
+#
+#   Krait
+#
+#   Leatherback
+#
+#   Lizard
+#
+#   Python
+#
+#   Rattlesnake
+#
+#   Skink
+#
+#   Terrapin
+#
+#   Tortoise
+#
+#   Turtle
+#
+#   Viper
+アリゲーター
+
+コブラ
+
+クロコダイル
+
+ヤモリ
+
+ガビアル
+
+アマガサヘビ
+
+オサガメ
+
+トカゲ
+
+ニシキヘビ
+
+ガラガラヘビ
+
+トカゲ
+
+ヌマガメ
+
+陸亀
+
+海亀
+
+クサリヘビ
+%%%%
+_fish_name_
+
+# en:
+#   Big Fish
+#
+#   Eel
+#
+#   Lamprey
+#
+#   Salmon
+#
+#   Shark
+大魚
+
+ウナギ
+
+ヤツメウナギ
+
+鮭
+
+サメ
+%%%%
+_bird_name_
+
+# en:
+#   Apostlebird
+#
+#   Arctic Tern
+#
+#   Auk
+#
+#   Bustard
+#
+#   Buzzard
+#
+#   Cardinal
+#
+#   Cassowary
+#
+#   Dove
+#
+#   Duck
+#
+#   Emu
+#
+#   Flamingo
+#
+#   Forest Kingfisher
+#
+#   Fulmar
+#
+#   Goose
+#
+#   Guillemot
+#
+#   Hawk
+#
+#   Hummingbird
+#
+#   Hoatzin
+#
+#   Kiwi
+#
+#   Kookaburra
+#
+#   Moa
+#
+#   Noisy Friarbird
+#
+#   Ostrich
+#
+#   Owl
+#
+#   Penguin
+#
+#   Pigeon
+#
+#   Potoo
+#
+#   Puffin
+#
+#   Rainbow Bee-Eater
+#
+#   Razorbill
+#
+#   Rhea
+#
+#   Roseate Spoonbill
+#
+#   Sage Grouse
+#
+#   Shrike
+#
+#   Stork
+#
+#   Swan
+#
+#   Superb Lyrebird
+#
+#   Tawny Frogmouth
+#
+#   Vulture
+ツチスドリ
+
+キョクアジサシ
+
+ウミスズメ
+
+ノガン
+
+ノスリ
+
+紅冠鳥
+
+ヒクイドリ
+
+鳩
+
+アヒル
+
+エミュー
+
+フラミンゴ
+
+モリショウビン
+
+カモメ
+
+ガチョウ
+
+ウミガラス
+
+鷹
+
+ハチドリ
+
+ツメバケイ
+
+キーウィ
+
+ワライカワセミ
+
+モア
+
+ハゲミツスイ
+
+ダチョウ
+
+フクロウ
+
+ペンギン
+
+ハト
+
+タチヨタカ
+
+角目鳥
+
+ハチクイ
+
+オオハシウミガラス
+
+レア
+
+ベニヘラサギ
+
+キジオライチョウ
+
+モズ
+
+コウノトリ
+
+白鳥
+
+コトドリ
+
+ガマグチヨタカ
+
+ハゲワシ
+%%%%
+_mammal_name_
+
+# en:
+#   Ass
+#
+#   Badger
+#
+#   Bear
+#
+#   Boar
+#
+#   Fox
+#
+#   Goat
+#
+#   Rat
+#
+#   w:5
+#   Stoat
+#
+#   Tiger
+#
+#   w:5
+#   Weasel
+#
+#   Whale
+#
+#   Wolf
+ロバ
+
+アナグマ
+
+熊
+
+イノシシ
+
+狐
+
+山羊
+
+ネズミ
+
+w:5
+オコジョ
+
+虎
+
+w:5
+イタチ
+
+鯨
+
+狼
+%%%%
+_plant_name_
+
+# en:
+#   Eggplant
+#
+#   Chickpea
+#
+#   Lettuce
+#
+#   Radish
+#
+#   Sugar Beet
+#
+#   Shallot
+#
+#   Tomato
+#
+#   Turnip
+#
+#   Whelk
+#
+#
+#   w:5
+#   Magic Mushroom
+#
+#   Mushroom
+#
+#   Puffball
+#
+#   Slime-mould
+#
+#   Toadstool
+ナス
+
+ひよこまめ
+
+レタス
+
+大根
+
+砂糖大根
+
+エシャロット
+
+トマト
+
+蕪
+
+w:5
+幻覚キノコ
+
+マッシュルーム
+
+ホコリタケ
+
+ねばねばカビ
+
+からかさキノコ
+%%%%
+_evil_stuff_
+
+# en:
+#   Abomination
+#
+#   Abuse
+#
+#   Ancient Evil
+#
+#   Corruption
+#
+#   Debasement
+#
+#   Defilement
+#
+#   Deformation
+#
+#   Demonkind
+#
+#   Evil
+#
+#   Hell's Wrath
+#
+#   Infection
+#
+#   Mutilation
+#
+#   Nightmares
+#
+#   Perversion
+#
+#   Putrescence
+#
+#   Shrieking Terror
+#
+#   Vitiation
+#
+#   the Beast
+#
+#   the Crawling Thing
+#
+#   the Dead
+#
+#   the Evil Eye
+#
+#   the Ghost
+#
+#   the Living Dead
+#
+#   the Lurker
+#
+#   the Reaper
+#
+#   the Spectre
+#
+#   the Thing
+#
+#   the Undead
+#
+#   the Unliving
+#
+#   the Unspeakable One
+#
+#   the Wraith
+おぞましきもの
+
+濫用
+
+古代の悪魔
+
+崩壊
+
+堕落
+
+汚染
+
+奇形
+
+魔族
+
+邪悪
+
+地獄の怒り
+
+感染
+
+切除
+
+悪夢
+
+曲解
+
+腐敗
+
+叫喚地獄
+
+腐敗
+
+獣
+
+這いよるもの
+
+死者
+
+邪眼
+
+亡霊
+
+生ける死者
+
+蠢くもの
+
+死神
+
+幽体
+
+物体X
+
+不死者
+
+命なきもの
+
+名状しがたきもの
+
+霊魂
+%%%%
+_catastrophe_name_
+
+# en:
+#   Earthquakes
+#
+#   Cataclysm
+#
+#   Drought
+#
+#   Floods
+#
+#   Ruination
+#
+#   the Inferno
+#
+#
+#   Annihilation
+#
+#   Armageddon
+#
+#   Fimbulwinter
+#
+#   Ragnarok
+#
+#   World Downfall
+#
+#   World's End
+#
+#   the Apocalypse
+#
+#   the End of Times
+#
+#   Famine
+#
+#   Pestilence
+#
+#   Plague
+#
+#   War
+地震
+
+大変動
+
+干魃
+
+洪水
+
+零落
+
+地獄
+
+殺戮
+
+ハルマゲドン
+
+フィンブルの冬
+
+神々の黄昏
+
+世界滅亡
+
+世界の終末
+
+黙示録
+
+末世
+
+飢餓
+
+疫病
+
+戦争
+%%%%
+_chaos_name_
+
+# en:
+#   Ambiguity
+#
+#   Arbitration
+#
+#   Calamity
+#
+#   Chance
+#
+#   Change
+#
+#   Confusion
+#
+#   Constant Reorganisation
+#
+#   Contradiction
+#
+#   Disarray
+#
+#   Disaster
+#
+#   Disharmony
+#
+#   Disintegration
+#
+#   Disorder
+#
+#   Dissolution
+#
+#   Distraction
+#
+#   Extremism
+#
+#   Goblin Mode
+#
+#   Havoc
+#
+#   Imbalance
+#
+#   Impermanence
+#
+#   Incongruity
+#
+#   Mayhem
+#
+#   Revolt
+#
+#   True Chaos
+#
+#   Tumult
+#
+#   Turmoil
+#
+#   Upheaval
+#
+#   the Extremes
+#
+#   the Farrago
+#
+#   the Fray
+#
+#   the Hodge-Podge
+#
+#   the Mish-Mash
+曖昧
+
+仲裁
+
+惨事
+
+好機
+
+変容
+
+混乱
+
+改廃
+
+矛盾
+
+乱雑
+
+災害
+
+不協和
+
+分解
+
+障害
+
+溶解
+
+散漫
+
+極端
+
+ゴブリンモード
+
+大混乱
+
+不均衡
+
+儚さ
+
+不調和
+
+大騒ぎ
+
+反乱
+
+真の混沌
+
+騒動
+
+騒動
+
+激変
+
+極限状況
+
+ごたまぜ
+
+論争
+
+ごった煮
+
+ちゃんぽん
+%%%%
+_balance_or_order_
+
+# en:
+#   Accord
+#
+#   Arrival
+#
+#   Ascent
+#
+#   Balance
+#
+#   Bodily Harmony
+#
+#   Circularity
+#
+#   Conformity
+#
+#   Departure
+#
+#   Descent
+#
+#   Due Proportion
+#
+#   Equilibrium
+#
+#   Equivalence
+#
+#   Eternal Harmony
+#
+#   Fragile Peace
+#
+#   Harmony
+#
+#   Law
+#
+#   Linearity
+#
+#   Moderation
+#
+#   Peace
+#
+#   Propriety
+#
+#   Symmetry
+#
+#   the Establishment
+#
+#   the Final Decision
+#
+#   the Median
+#
+#   the Middle
+一致
+
+到達
+
+上昇
+
+均衡
+
+循環性
+
+相似
+
+出発
+
+下降
+
+釣りあい
+
+平衡
+
+等価
+
+永久調和
+
+儚き平和
+
+調和
+
+秩序
+
+線形性
+
+穏健
+
+平和
+
+礼節
+
+均整
+
+確立
+
+最終決定
+
+中央値
+
+中庸
+%%%%
+_economics_or_politics_
+
+# en:
+#   Amortisation
+#
+#   Animal Spirits
+#
+#   Bankruptcy
+#
+#   Collusion
+#
+#   Compound Interest
+#
+#   Currency
+#
+#   Debt
+#
+#   Deflation
+#
+#   Demand
+#
+#   Dividends
+#
+#   Exchange
+#
+#   Growth
+#
+#   Income
+#
+#   Inflation
+#
+#   Luxury
+#
+#   Profit
+#
+#   Risk Management
+#
+#   Supply
+#
+#   Taxation
+#
+#   Valuable Assets
+#
+#   Welfare
+#
+#   Attainder
+#
+#   Breach
+#
+#   Checks and Balances
+#
+#   Conservatism
+#
+#   Defenestration
+#
+#   Fee Simple
+#
+#   Freehold
+#
+#   Fundamental Breach
+#
+#   Governance
+#
+#   Greatest Utility
+#
+#   Impeachment
+#
+#   Mandamus
+#
+#   Popular Demand
+#
+#   Poverty
+#
+#   Radicalism
+#
+#   Reapportionment
+#
+#   Royalism
+#
+#   Sequestration
+#
+#   Termination
+#
+#   Wealth
+#
+#   the Common Good
+#
+#   the Dark Horse
+#
+#   the Demagogue
+#
+#   the Imperium
+#
+#   the Lame Duck
+#
+#   the Lesser Evil
+#
+#   the Little People
+#
+#   the People
+#
+#   the Revolution
+#
+#   the Silent Majority
+#
+#
+#   Actus Reus
+#
+#   Ad Valorem
+#
+#   Adverse Possession
+#
+#   Corpus Delicti
+#
+#   Eminent Domain
+#
+#   In Flagrante Delicto
+#
+#   Ipse Dixit
+#
+#   Locus Delicti
+#
+#   Malum In Se
+#
+#   Malum Prohibitum
+#
+#   Mens Rea
+#
+#   Nolo Contendere
+#
+#   Non Obstante Veredicto
+#
+#   Obiter Dictum
+#
+#   Res Ipsa Loquitur
+#
+#   Res Judicata
+償還
+
+破産
+
+談合
+
+複利
+
+通貨
+
+借金
+
+デフレ
+
+需要
+
+配当
+
+両替
+
+増大
+
+所得
+
+インフレ
+
+贅沢
+
+利益
+
+危機管理
+
+供給
+
+徴税
+
+資産
+
+福祉
+
+公権喪失
+
+不履行
+
+抑制と均衡
+
+保守主義
+
+窓外投擲
+
+所有権
+
+統治
+
+弾劾
+
+執行令状
+
+貧困
+
+過激派
+
+定数是正
+
+君主主義
+
+差し押さえ
+
+終結
+
+富
+
+公益
+
+ダークホース
+
+デマゴーグ
+
+最高権力
+
+レームダック
+
+小市民
+
+人民
+
+革命
+
+見えざる多数派
+
+犯罪行為
+
+従価税
+
+取得時効
+
+罪体
+
+土地収用
+
+現行犯
+
+独断
+
+犯行地
+
+自然犯
+
+法定犯
+
+故意
+
+不抗争答弁
+
+評決破棄
+
+傍論
+
+過失推定
+
+既判力
+%%%%
+_place_name_
+
+# en:
+#   Beyond
+#
+#   Distant Shores
+#
+#   Distant Worlds
+#
+#   Parts Unknown
+#
+#   Proximity
+#
+#   Somewhere Else
+#
+#   the Blessed Realm
+#
+#   the Desert
+#
+#   the Equator
+#
+#   the Eternal Void
+#
+#   the Forest
+#
+#   the Hidden Vale
+#
+#   the Hills
+#
+#   the Known World
+#
+#   the Land of Plenty
+#
+#   the Maze
+#
+#   the New World
+#
+#   the Old World
+#
+#   the Other Side
+#
+#   the Pit
+#
+#   the Poles
+#
+#   the Sea
+#
+#   the Shore
+#
+#   the Spheres
+#
+#   the Trees
+#
+#   the Tundras
+#
+#   the Unseen Realm
+#
+#   the Valley
+#
+#   the Valley of Death
+#
+#   the Volcano
+#
+#   the Wasteland
+#
+#   the Wilderness
+#
+#   the World
+最果て
+
+ここではないどこか
+
+祝福の地
+
+砂漠
+
+赤道
+
+永劫の虚無
+
+森林
+
+丘
+
+既知世界
+
+豊穣なる大地
+
+迷路
+
+新世界
+
+旧世界
+
+穴ぐら
+
+極圏
+
+海洋
+
+海岸
+
+樹木
+
+ツンドラ
+
+知られざる領域
+
+谷
+
+死の谷
+
+火山
+
+荒野
+
+荒れ地
+
+世界
+%%%%
+_discomfort_weapon_
+
+# en:
+#   Annoyance
+#
+#   Anxiety
+#
+#   Awkwardness
+#
+#   Chagrin
+#
+#   Desperation
+#
+#   Discomfort
+#
+#   Disgust
+#
+#   Dismay
+#
+#   Dissatisfaction
+#
+#   Embarrassment
+#
+#   Flawed Execution
+#
+#   Foul Odours
+#
+#   Frustration
+#
+#   Gloom
+#
+#   Inconvenience
+#
+#   Irritation
+#
+#   Malaise
+#
+#   Shame
+#
+#   Stickiness
+#
+#   Uncomfortable Rashes
+#
+#   Unpleasantness
+#
+#   Urgency
+苛立ち
+
+心配事
+
+不自然さ
+
+無念
+
+自暴自棄
+
+狼狽
+
+不満
+
+当惑
+
+悪臭
+
+欲求不満
+
+陰鬱
+
+不便
+
+立腹
+
+沈滞
+
+恥
+
+べたつき
+
+不快
+
+切迫
+%%%%
+_philosophy_or_science_
+
+# en:
+#   @_philosophy_name_@
+#
+#   @_science_name_@
+@_philosophy_name_@
+
+@_science_name_@
+%%%%
+_philosophy_name_
+
+# en:
+#   Absolutism
+#
+#   Abstinence
+#
+#   Activism
+#
+#   Agnosticism
+#
+#   Altruism
+#
+#   Anarchy
+#
+#   Asceticism
+#
+#   Atheism
+#
+#   Autotheism
+#
+#   Cynicism
+#
+#   Disestablishmentarianism
+#
+#   Dogma
+#
+#   Egalitarianism
+#
+#   Elitism
+#
+#   Ethics
+#
+#   Existentialism
+#
+#   Fallacy
+#
+#   Fanaticism
+#
+#   Free Expression
+#
+#   Free Will
+#
+#   Hedonism
+#
+#   Henotheism
+#
+#   Heresy
+#
+#   Idealism
+#
+#   Kathenotheism
+#
+#   Levity
+#
+#   Liberalism
+#
+#   Limitation
+#
+#   Maltheism
+#
+#   Monotheism
+#
+#   Morality
+#
+#   Mutualism
+#
+#   Mysticism
+#
+#   Nihilism
+#
+#   Optimism
+#
+#   Orthodoxy
+#
+#   Panentheism
+#
+#   Pantheism
+#
+#   Pessimism
+#
+#   Polytheism
+#
+#   Pragmatism
+#
+#   Rationality
+#
+#   Relativism
+#
+#   Serendipity
+#
+#   Skepticism
+#
+#   Sophism
+#
+#   Stoicism
+#
+#   Syndicalism
+#
+#   Theistic Finitism
+#
+#   the Ego
+絶対論
+
+禁欲
+
+行動主義
+
+不可知論
+
+利他主義
+
+無秩序
+
+禁欲主義
+
+無神論
+
+犬儒主義
+
+国教廃止論
+
+教義
+
+平等主義
+
+選良意識
+
+倫理
+
+実存主義
+
+誤謬
+
+狂信
+
+表現の自由
+
+自由意志
+
+快楽主義
+
+異端
+
+理想主義
+
+交替神教
+
+不謹慎
+
+自由主義
+
+悪神論
+
+一神教
+
+道徳
+
+共生
+
+神秘主義
+
+虚無主義
+
+楽観主義
+
+厭世主義
+
+多神教
+
+実用主義
+
+合理性
+
+相対主義
+
+懐疑論
+
+詭弁
+
+ストア主義
+
+有限神論
+
+自尊心
+%%%%
+_science_name_
+
+# en:
+#   Analysis
+#
+#   Articulation
+#
+#   Calculation
+#
+#   Circular Logic
+#
+#   Classification
+#
+#   Context
+#
+#   Evolution
+#
+#   Experimentation
+#
+#   Focus
+#
+#   Gravity
+#
+#   Inference
+#
+#   Infinity
+#
+#   Inquiry
+#
+#   Instinct
+#
+#   Intuition
+#
+#   Objectivity
+#
+#   Patterns
+#
+#   Quantum Leap
+#
+#   Reason
+#
+#   Rotation
+#
+#   Subjectivity
+#
+#   Theory
+#
+#   Unreason
+#
+#   the Beginning
+#
+#   the Big Bang
+#
+#   the Boiling Point
+#
+#   the End
+#
+#   the Mind
+#
+#   the Nexus
+分析
+
+発音
+
+打算
+
+循環論法
+
+分類
+
+文脈
+
+進化
+
+実験
+
+焦点
+
+重力
+
+推論
+
+無限
+
+探求
+
+直感
+
+客観性
+
+様式
+
+量子飛躍
+
+道理
+
+回転
+
+主観性
+
+理論
+
+暴論
+
+始まり
+
+ビッグバン
+
+沸点
+
+終わり
+
+精神
+%%%%
+_item_name_
+
+# en:
+#   Candelabrum
+#
+#   Candle
+#
+#   Chain
+#
+#   Coin
+#
+#   Cup
+#
+#   Egg
+#
+#   Feather
+#
+#   Girdle
+#
+#   Globe
+#
+#   Horn
+#
+#   Key
+#
+#   Orb
+#
+#   Pillar
+#
+#   Purse
+#
+#   Ring
+#
+#   Scroll
+#
+#   Ship
+#
+#   Tent
+#
+#   Vase
+#
+#   Vine
+#
+#   Walnut
+#
+#   Wheel
+#
+#   Yoke
+#
+#   Brain
+#
+#   Foot
+#
+#   Hand
+#
+#   Head
+#
+#   Heart
+#
+#   Kidney
+#
+#   Mouth
+#
+#   Throat
+#
+#   Tooth
+燭台
+
+蝋燭
+
+鎖
+
+コイン
+
+杯
+
+卵
+
+羽根
+
+帯
+
+天体
+
+角
+
+鍵
+
+オーブ
+
+柱
+
+財布
+
+輪
+
+巻物
+
+船
+
+テント
+
+花瓶
+
+蔓
+
+胡桃
+
+車輪
+
+軛
+
+脳髄
+
+脚
+
+手
+
+頭
+
+心臓
+
+腎臓
+
+口
+
+喉
+
+歯
+%%%%
+_magic_name_
+
+# en:
+#   the Hierophant
+#
+#   the Magi
+#
+#   the Sage
+#
+#   the Warrior-Mage
+教皇
+
+魔法使い
+
+賢人
+
+魔法戦士
+%%%%
+_substance_name_
+
+# en:
+#   Ash
+#
+#   Bile
+#
+#   Bloodstone
+#
+#   Bodily Humours
+#
+#   Bread
+#
+#   Cheese
+#
+#   Cobwebs
+#
+#   Crystal
+#
+#   Dried Tears
+#
+#   Dung
+#
+#   Ichor
+#
+#   Ointment
+#
+#   Oozing Pus
+#
+#   Paper
+#
+#   Rubbish
+#
+#   Salt
+#
+#   Saltpetre
+#
+#   Sharkskin
+#
+#   Slime
+#
+#   Sulphur
+#
+#   Terra Cotta
+#
+#   Dust
+#
+#   Mana
+#
+#   Spores
+#
+#   Yeast
+灰
+
+血玉髄
+
+パン
+
+チーズ
+
+蜘蛛の巣
+
+水晶
+
+乾いた涙
+
+肥やし
+
+霊血
+
+軟膏
+
+うごめく膿
+
+紙
+
+がらくた
+
+塩
+
+鮫皮
+
+スライム
+
+硫黄
+
+テラコッタ
+
+塵
+
+マナ
+
+胞子
+
+酵母
+%%%%
+other_weapon_name
+
+# en:
+#   Broken Luck
+#
+#   Butchery
+#
+#   Checkmate
+#
+#   Conversion
+#
+#   Crawling
+#
+#   Desertification
+#
+#   Doors
+#
+#   Entrepreneurial Spirit
+#
+#   False Hope
+#
+#   Fulguration
+#
+#   Gin and Tonic
+#
+#   Grontol
+#
+#   Hard Scrabble
+#
+#   Interdependent Arising
+#
+#   Irrepressible Laughter
+#
+#   No Interval
+#
+#   Prescription
+#
+#   Red Wine
+#
+#   Res Nullius
+#
+#   Spontaneous Combustion
+#
+#   Terra Nullius
+#
+#   Traps
+#
+#   Undoing
+#
+#   Vodka
+#
+#   the Blind Eye
+#
+#   the Briny Deep
+#
+#   the Empty Page
+#
+#   the Final Chapter
+#
+#   the Omega Point
+#
+#   the Open Hand
+#
+#   the Pharaoh's Fist
+#
+#   the Real Monster
+#
+#   the Spinneret
+#
+#   the Two Names
+#
+#   the Unkillable
+#
+#   the Vendetta
+屠殺
+
+詰み
+
+探索行
+
+砂漠化
+
+扉
+
+偽りの希望
+
+閃光
+
+ジントニック
+
+赤ワイン
+
+罠
+
+ウォッカ
+
+盲目
+
+白紙
+
+最終局面
+
+徒手空拳
+
+ファラオの拳
+
+真の怪物
+
+復讐
+%%%%
+short_monster_name_
+
+# en:
+#   w:1
+#   Acarine
+#
+#   Beast
+#
+#   Beetle
+#
+#   Demon
+#
+#   Dragon
+#
+#   Giant
+#
+#   Goblin
+#
+#   Hydra
+#
+#   Imp
+#
+#   Jelly
+#
+#   w:1
+#   Lacertilian
+#
+#   Newt
+#
+#   Ogre
+#
+#   Spider
+#
+#   w:1
+#   Testudine
+w:1
+ダニ
+
+獣
+
+甲虫
+
+悪魔
+
+ドラゴン
+
+巨人
+
+ゴブリン
+
+ヒドラ
+
+インプ
+
+ジェリー
+
+w:1
+トカゲ
+
+イモリ
+
+オーガ
+
+蜘蛛
+
+w:1
+亀
+%%%%
+_monster_name_
+
+# en:
+#   @short_monster_name_@
+#
+#   @player_species@
+#
+#   Killer Bee
+#
+#   Killer Klown
+#
+#   Orb Guardian
+@short_monster_name_@
+
+@player_species@
+
+殺人蜂
+
+殺人ピエロ
+
+オーブの守護者
 %%%%
 _short_killer_name_
 
 # en:
 #   bane
-#   
+#
 #   slayer
 狩り
 
 殺し
+%%%%
+killer_name
+
+# en:
+#   's Bane
+#
+#   's Curse
+#
+#   's Death
+#
+#   's Doom
+#
+#   's Foe
+#
+#   's Peril
+#
+#   's Regret
+の天敵
+%%%%
+_long_killer_name_
+
+# en:
+#   's Death Toll
+#
+#   's Demise
+#
+#   's Funeral
+#
+#   's Nightmare
+#
+#   's Undoing
+#
+#   w:1
+#   's Looming Annihilation
+にとっての悪夢
+%%%%
+_real_weapon_name_
+
+# en:
+#   Arbiter
+#
+#   Arcanum
+#
+#   Concordance
+#
+#   Conservator
+#
+#   Death Rattle
+#
+#   Dragon's Tongue
+#
+#   Earthworm
+#
+#   Embalmer
+#
+#   Eviscerator
+#
+#   Grim
+#
+#   Grim Tooth
+#
+#   Hell-Harrower
+#
+#   Hellblazer
+#
+#   Leviticus
+#
+#   Lifebane
+#
+#   Murmur
+#
+#   Pendulum
+#
+#   Sarcophage
+#
+#   Tormentor
+#
+#   Transmigrator
+#
+#   Trog's @_anger_quality_@
+#
+#   Ultimatum
+#
+#   Undertaker
+#
+#   w:5
+#   Widowermaker
+#
+#   w:5
+#   Widowmaker
+#
+#   Worm
+#
+#   Worm's Wrath
+#
+#   Gram
+調停者
+
+アルカナ
+
+調和
+
+介添人
+
+臨終喘鳴
+
+龍の舌
+
+蚯蚓
+
+殺し屋
+
+グリム
+
+グリムトゥース
+
+レビ記
+
+命の破滅
+
+不平不満
+
+優柔不断
+
+石棺
+
+拷問吏
+
+魂の輪廻
+
+トログの@_anger_quality_@
+
+最後通牒
+
+葬儀屋
+
+w:5
+ウィドワメイカー
+
+w:5
+ウィドウメイカー
+
+虫けら
+
+虫けらの逆襲
+
+グラム
+%%%%
+_joke_weapon_name_
+
+# en:
+#   Aubergine
+#
+#   Backscratcher
+#
+#   Bingo
+#
+#   Blob
+#
+#   Brush
+#
+#   Bung
+#
+#   Cookie Cutter
+#
+#   ETAOIN SHRDLU
+#
+#   Egg
+#
+#   Fish
+#
+#   Giant's Toothpick
+#
+#   Globulus
+#
+#   Grom
+#
+#   Grum
+#
+#   Hulk
+#
+#   Lorem Ipsum
+#
+#   Mud Pie of Death
+#
+#   No More Talking
+#
+#   Omelette
+#
+#   Ox
+#
+#   Q
+#
+#   Raisin
+#
+#   Rummage
+#
+#   Secret Weapon
+#
+#   Starlight
+#
+#   String
+#
+#   Stringbean
+#
+#   Tattletale
+#
+#   Thing
+#
+#   With Two Names
+#
+#   X
+#
+#   Xom's @_xom_esteem_@
+#
+#   Z
+#
+#   Glorpo
+#
+#   Loopy
+#
+#   Plojy
+なすび
+
+おべっか使い
+
+大正解
+
+ブロブ
+
+鎧袖一触
+
+袖の下
+
+未熟者
+
+淫売野郎
+
+巨人の爪楊枝
+
+グロブルス
+
+グロム
+
+グルム
+
+ハルク
+
+*ここに本文を入れてください*
+
+死の泥饅頭
+
+絶交
+
+オムレット
+
+雄牛
+
+Q
+
+皺くちゃ婆ア
+
+虱潰し
+
+秘密兵器
+
+星月夜
+
+絞首刑
+
+八頭体
+
+告げ口屋
+
+物体X
+
+X
+
+ゾムの@_xom_esteem_@
+
+Z
+%%%%
+_plain_weapon_name_
+
+# en:
+#   w:15
+#   @short_monster_name_@@_short_killer_name_@
+#
+#   w:8
+#   @_monster_name_@@killer_name@
+#
+#   w:2
+#   @short_monster_name_@@_long_killer_name_@
+#
+#   w:1
+#   @player_death@
+#
+#   w:15
+#   @_real_weapon_name_@
+#
+#   w:5
+#   @_joke_weapon_name_@
+w:15
+@short_monster_name_@@_short_killer_name_@
+
+w:8
+@_monster_name_@@killer_name@
+
+w:2
+@short_monster_name_@@_long_killer_name_@
+
+w:1
+@player_death@
+
+w:15
+@_real_weapon_name_@
+
+w:5
+@_joke_weapon_name_@
 %%%%

@@ -1,0 +1,61 @@
+%%%%
+unknown %s
+
+未鑑定の%s
+%%%%
+You recognise all items. (Select to toggle autopickup)
+
+あなたはすべてのアイテムを鑑定済だ。 (選択して自動拾いを切替)
+%%%%
+Other Items
+
+その他のアイテム
+%%%%
+Select to reset item to default ([*] for all):
+
+自動拾いを初期設定に戻すアイテムを選択([*] ですべて):
+%%%%
+[<w>-</w>] recognised
+
+[<w>-</w>] 鑑定済み
+%%%%
+Letters toggle autopickup
+
+文字キーで自動拾いを切替
+%%%%
+[<w>-</w>] unrecognised
+
+[<w>-</w>] 未鑑定
+%%%%
+Items not yet recognised:
+
+未鑑定のアイテム:
+%%%%
+Recognised items. (Select to toggle autopickup)
+
+鑑定済みのアイテム (選択して自動拾いを切替)
+%%%%
+[known items]manuals
+
+虎の巻
+%%%%
+[known items]spellbooks
+
+魔法書
+%%%%
+[known items]unknown rings
+
+未鑑定の指輪
+%%%%
+[known items]unknown amulets
+
+未鑑定の護符
+%%%%
+[known items]runes
+
+ルーン
+%%%%
+[known items]gems
+
+古代の宝石
+%%%%

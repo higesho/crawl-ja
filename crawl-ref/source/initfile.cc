@@ -13,6 +13,7 @@
 
 #include "initfile.h"
 
+#include "database.h"
 #include "json.h"
 #include "json-wrapper.h"
 
@@ -167,7 +168,7 @@ mlc_mapping::mlc_mapping(const string &s)
     // let -1 for "" through
     if ((scolour >= 16 || scolour < 0) && (thesplit.size() > 1 && !thesplit[1].empty()))
     {
-        mprf(MSGCH_ERROR, "Options error: Bad monster_list_colour: '%s'",
+        mprf(MSGCH_ERROR, jtransc("Options error: Bad monster_list_colour: '%s'"),
             thesplit[1].c_str());
         return;
     }
@@ -175,7 +176,7 @@ mlc_mapping::mlc_mapping(const string &s)
     category = _str_to_mlc(thesplit[0]);
     if (category == NUM_MLC)
     {
-        mprf(MSGCH_ERROR, "Bad monster_list_colour key: %s\n",
+        mprf(MSGCH_ERROR, jtransc("Bad monster_list_colour key: %s\n"),
                      thesplit[0].c_str());
     }
 }
@@ -189,7 +190,7 @@ colour_remapping::colour_remapping(const string &s)
     // let -1 for "" through
     if ((scolour >= 16 || scolour < 0) && (thesplit.size() > 1 && !thesplit[0].empty()))
     {
-        mprf(MSGCH_ERROR, "Options error: Bad custom_text_colours key: '%s'",
+        mprf(MSGCH_ERROR, jtransc("Options error: Bad custom_text_colours key: '%s'"),
             thesplit[1].c_str());
         return;
     }
@@ -198,7 +199,7 @@ colour_remapping::colour_remapping(const string &s)
     colour_def = str_to_tile_colour(thesplit[1]);
     if (colour_index == NUM_TERM_COLOURS)
     {
-        mprf(MSGCH_ERROR, "Bad custom_text_colours: %s\n",
+        mprf(MSGCH_ERROR, jtransc("Bad custom_text_colours: %s\n"),
                      thesplit[0].c_str());
     }
 }
@@ -342,8 +343,8 @@ const vector<GameOption*> game_options::build_options_list()
             {
                 if (!set_lang(language_option.c_str()))
                 {
-                    report_error("No translations for language '%s'.\n"
-                                 "Languages with at least partial translation: %s",
+                    report_error(jtransc("No translations for language '%s'.\n"
+                                 "Languages with at least partial translation: %s"),
                                  language_option.c_str(),
                                  _supported_language_listing().c_str());
                 }
@@ -384,7 +385,7 @@ const vector<GameOption*> game_options::build_options_list()
                     // if the directory exists but is incomplete / can't be
                     // initialized for some reason, the above call will call
                     // end().
-                    report_error("Can't find crawl_dir: '%s'", crawl_dir_option.c_str());
+                    report_error(jtransc("Can't find crawl_dir: '%s'"), crawl_dir_option.c_str());
                     crawl_dir_option = "";
                     return;
                 }
@@ -1304,7 +1305,7 @@ static species_type _str_to_species(const string &str)
         ret = SP_UNKNOWN;
 
     if (ret == SP_UNKNOWN)
-        mprf(MSGCH_ERROR, "Unknown species choice: %s\n", str.c_str());
+        mprf(MSGCH_ERROR, jtransc("Unknown species choice: %s\n"), str.c_str());
 
     return ret;
 }
@@ -1339,7 +1340,7 @@ job_type str_to_job(const string &str)
         job = JOB_UNKNOWN;
 
     if (job == JOB_UNKNOWN)
-        mprf(MSGCH_ERROR, "Unknown background choice: %s\n", str.c_str());
+        mprf(MSGCH_ERROR, jtransc("Unknown background choice: %s\n"), str.c_str());
 
     return job;
 }
@@ -1377,14 +1378,14 @@ void game_options::update_enemy_hp_colour()
         const int col = str_to_colour(colour_list[i]);
         if (col < 0)
         {
-            report_error("Bad enemy_hp_colour: %s\n", colour_list[i].c_str());
+            report_error(jtransc("Bad enemy_hp_colour: %s\n"), colour_list[i].c_str());
             continue;
         }
         enemy_hp_colour[i] = col;
     }
     if (colour_list.size() > enemy_hp_colour.size())
     {
-        report_error("Extraneous enemy hp color values ignored in '%s'",
+        report_error(jtransc("Extraneous enemy hp color values ignored in '%s'"),
             enemy_hp_colour_option.c_str());
     }
 }
@@ -1427,7 +1428,7 @@ void game_options::set_activity_interrupt(
         string delay_name =
             _correct_spelling(interrupt.substr(interrupt_prefix.length()));
         if (!activity_interrupts.count(delay_name))
-            return report_error("Unknown delay: %s\n", delay_name.c_str());
+            return report_error(jtransc("Unknown delay: %s\n"), delay_name.c_str());
 
         FixedBitVector<NUM_ACTIVITY_INTERRUPTS> &refints =
             activity_interrupts[delay_name];
@@ -1439,7 +1440,7 @@ void game_options::set_activity_interrupt(
     activity_interrupt ai = get_activity_interrupt(interrupt);
     if (ai == activity_interrupt::COUNT)
     {
-        return report_error("Delay interrupt name \"%s\" not recognised.\n",
+        return report_error(jtransc("Delay interrupt name \"%s\" not recognised.\n"),
                             interrupt.c_str());
     }
 
@@ -1737,7 +1738,7 @@ char32_t get_glyph_override(int c)
         c = -c;
     if (wcwidth(c) != 1)
     {
-        mprf(MSGCH_ERROR, "Invalid glyph override: %X", c);
+        mprf(MSGCH_ERROR, jtransc("Invalid glyph override: %X"), c);
         c = 0;
     }
     return c;
@@ -1800,7 +1801,7 @@ void game_options::set_fire_order_ability(const string &s, bool append, bool rem
         ability_type abil = ability_by_name(slot);
         if (abil == ABIL_NON_ABILITY)
         {
-            report_error("Unknown ability '%s'\n", slot.c_str());
+            report_error(jtransc("Unknown ability '%s'\n"), slot.c_str());
             return;
         }
         if (remove)
@@ -1851,7 +1852,7 @@ void game_options::set_fire_order_spell(const string &s, bool append, bool remov
                 fire_order_spell.insert(spell);
         }
         else
-            report_error("Unknown spell '%s'\n", slot.c_str());
+            report_error(jtransc("Unknown spell '%s'\n"), slot.c_str());
     }
 }
 
@@ -1892,7 +1893,7 @@ void game_options::add_force_spell_targeter(const string &s, bool)
     if (is_valid_spell(spell))
         force_spell_targeter.insert(spell);
     else
-        report_error("Unknown spell '%s'\n", s.c_str());
+        report_error(jtransc("Unknown spell '%s'\n"), s.c_str());
 }
 
 void game_options::remove_force_spell_targeter(const string &s)
@@ -1906,7 +1907,7 @@ void game_options::remove_force_spell_targeter(const string &s)
     if (is_valid_spell(spell))
         force_spell_targeter.erase(spell);
     else
-        report_error("Unknown spell '%s'\n", s.c_str());
+        report_error(jtransc("Unknown spell '%s'\n"), s.c_str());
 }
 
 void game_options::add_force_ability_targeter(const string &s, bool)
@@ -1918,7 +1919,7 @@ void game_options::add_force_ability_targeter(const string &s, bool)
     }
     auto abil = ability_by_name(s);
     if (abil == ABIL_NON_ABILITY)
-        report_error("Unknown ability '%s'\n", s.c_str());
+        report_error(jtransc("Unknown ability '%s'\n"), s.c_str());
     else
         force_ability_targeter.insert(abil);
 }
@@ -1932,7 +1933,7 @@ void game_options::remove_force_ability_targeter(const string &s)
     }
     auto abil = ability_by_name(s);
     if (abil == ABIL_NON_ABILITY)
-        report_error("Unknown ability '%s'\n", s.c_str());
+        report_error(jtransc("Unknown ability '%s'\n"), s.c_str());
     else
         force_ability_targeter.erase(abil);
 }
@@ -1955,7 +1956,7 @@ void game_options::add_force_scroll_targeter(const string &s, bool)
     if (kind.base_type == OBJ_SCROLLS)
         force_scroll_targeter.insert(kind.sub_type);
     else
-        report_error("Unknown scroll '%s'\n", s.c_str());
+        report_error(jtransc("Unknown scroll '%s'\n"), s.c_str());
 }
 
 void game_options::remove_force_scroll_targeter(const string &s)
@@ -1976,7 +1977,7 @@ void game_options::remove_force_scroll_targeter(const string &s)
     if (kind.base_type == OBJ_SCROLLS)
         force_scroll_targeter.erase(kind.sub_type);
     else
-        report_error("Unknown scroll '%s'\n", s.c_str());
+        report_error(jtransc("Unknown scroll '%s'\n"), s.c_str());
 }
 
 static monster_type _mons_class_by_string(const string &name)
@@ -2037,7 +2038,7 @@ void game_options::remove_mon_glyph_override(const string &text)
         const monster_type m = _mons_class_by_string(override[0]);
         if (m == MONS_0)
         {
-            report_error("Unknown monster: \"%s\"", text.c_str());
+            report_error(jtransc("Unknown monster: \"%s\""), text.c_str());
             return;
         }
         matches.insert(m);
@@ -2060,7 +2061,7 @@ void game_options::add_mon_glyph_override(const string &text, bool /*prepend*/)
         const monster_type m = _mons_class_by_string(override[0]);
         if (m == MONS_0)
         {
-            report_error("Unknown monster: \"%s\"", text.c_str());
+            report_error(jtransc("Unknown monster: \"%s\""), text.c_str());
             return;
         }
         matches.insert(m);
@@ -2299,7 +2300,7 @@ void read_init_file(bool runscripts)
         {
             clua.execfile(builtin, false, false);
             if (!clua.error.empty())
-                mprf(MSGCH_ERROR, "Lua error: %s", clua.error.c_str());
+                mprf(MSGCH_ERROR, jtransc("Lua error: %s"), clua.error.c_str());
         }
     }
 
@@ -2794,14 +2795,14 @@ void base_game_options::read_options(LineInput &il, bool runscripts,
 #ifdef CLUA_BINDINGS
                 if (luacode.run(clua))
                 {
-                    mprf(MSGCH_ERROR, "Lua error: %s",
+                    mprf(MSGCH_ERROR, jtransc("Lua error: %s"),
                          luacode.orig_error().c_str());
                 }
                 luacode.clear();
 #else
                 if (!clua_error_printed)
                 {
-                    mprf(MSGCH_ERROR, "User lua is disabled in this build! `%s`", str.c_str());
+                    mprf(MSGCH_ERROR, jtransc("User lua is disabled in this build! `%s`"), str.c_str());
                     clua_error_printed = true;
                 }
 #endif
@@ -2817,14 +2818,14 @@ void base_game_options::read_options(LineInput &il, bool runscripts,
             {
                 if (luacode.run(clua))
                 {
-                    mprf(MSGCH_ERROR, "Lua error: %s",
+                    mprf(MSGCH_ERROR, jtransc("Lua error: %s"),
                          luacode.orig_error().c_str());
                 }
             }
 #else
             if (!clua_error_printed)
             {
-                mprf(MSGCH_ERROR, "User lua is disabled in this build! `%s`", str.c_str());
+                mprf(MSGCH_ERROR, jtransc("User lua is disabled in this build! `%s`"), str.c_str());
                 clua_error_printed = true;
             }
 #endif
@@ -2858,11 +2859,11 @@ void base_game_options::read_options(LineInput &il, bool runscripts,
         if (l_init)
             luacond.add(line, "]==])");
         if (luacond.run(clua))
-            mprf(MSGCH_ERROR, "Lua error: %s", luacond.orig_error().c_str());
+            mprf(MSGCH_ERROR, jtransc("Lua error: %s"), luacond.orig_error().c_str());
 #else
         if (!clua_error_printed)
         {
-            mprf(MSGCH_ERROR, "User lua is disabled in this build! (file: %s)", filename.c_str());
+            mprf(MSGCH_ERROR, jtransc("User lua is disabled in this build! (file: %s)"), filename.c_str());
             clua_error_printed = true;
         }
 #endif
@@ -3024,8 +3025,8 @@ void game_options::set_player_tile(const string &field)
                 base_tname = base_tname.substr(0, found);
                 if (!tile_player_index(base_tname.c_str(), &base_tile))
                 {
-                    report_error("Can't find base tile \"%s\" of variant "
-                                 "tile \"%s\"", base_tname.c_str(),
+                    report_error(jtransc("Can't find base tile \"%s\" of variant "
+                                 "tile \"%s\""), base_tname.c_str(),
                                  fields[1].c_str());
                     return;
                 }
@@ -3034,7 +3035,7 @@ void game_options::set_player_tile(const string &field)
         }
         else if (!tile_player_index(fields[1].c_str(), &tile_player_tile))
         {
-            report_error("Unknown tile: \"%s\"", fields[1].c_str());
+            report_error(jtransc("Unknown tile: \"%s\""), fields[1].c_str());
             return;
         }
         tile_use_monster = MONS_PLAYER;
@@ -3044,11 +3045,11 @@ void game_options::set_player_tile(const string &field)
         // Handle mons:<monster-name> values
         const monster_type m = _mons_class_by_string(fields[1]);
         if (m == MONS_0)
-            report_error("Unknown monster: \"%s\"", fields[1].c_str());
+            report_error(jtransc("Unknown monster: \"%s\""), fields[1].c_str());
         else if (mons_class_is_animated_object(m) || mons_is_sensed(m))
         {
             report_error(
-                "Can't use that monster as a mons: player tile, sorry: \"%s\"",
+                jtransc("Can't use that monster as a mons: player tile, sorry: \"%s\""),
                 fields[1].c_str());
         }
         else
@@ -3059,7 +3060,7 @@ void game_options::set_player_tile(const string &field)
     }
     else
     {
-        report_error("Invalid setting for tile_player_tile: \"%s\"",
+        report_error(jtransc("Invalid setting for tile_player_tile: \"%s\""),
                      field.c_str());
     }
 }
@@ -3087,7 +3088,7 @@ void game_options::set_tile_offsets(const string &field, bool set_shield)
         || !parse_int(offs[1].c_str(), offsets->second)
         || abs(offsets->second) > 32)
     {
-        report_error("Invalid %s tile offsets: \"%s\"",
+        report_error(jtransc("Invalid %s tile offsets: \"%s\""),
                      set_shield ? "shield" : "weapon", field.c_str());
         error = true;
     }
@@ -3131,7 +3132,7 @@ void game_options::update_travel_terrain()
         if (tfeat >= 0)
             travel_avoid_terrain[tfeat] = 1;
         else
-            report_error("Unknown terrain type '%s'", t.c_str());
+            report_error(jtransc("Unknown terrain type '%s'"), t.c_str());
     }
 }
 
@@ -3146,7 +3147,7 @@ void game_options::update_consumable_shortcuts()
         item_kind kind = item_kind_by_name(entry.first);
         if (kind.base_type == OBJ_UNASSIGNED)
         {
-            report_error("Unknown consumable type: %s\n", entry.first.c_str());
+            report_error(jtransc("Unknown consumable type: %s\n"), entry.first.c_str());
             continue;
         }
 
@@ -3244,7 +3245,7 @@ void game_options::update_use_animations()
         if (search != ANIMATION_TYPES.end())
             animations |= search->second;
         else
-            report_error("Unknown animation type '%s'", type.c_str());
+            report_error(jtransc("Unknown animation type '%s'"), type.c_str());
     }
 
     use_animations = animations;
@@ -3287,7 +3288,7 @@ void game_options::update_explore_stop_conditions()
         if (search != STOP_CONDITIONS.end())
             conditions |= search->second;
         else
-            report_error("Unknown explore stop condition '%s'", c.c_str());
+            report_error(jtransc("Unknown explore stop condition '%s'"), c.c_str());
     }
     explore_stop = conditions;
 }
@@ -3313,7 +3314,7 @@ void game_options::update_explore_greedy_visit_conditions()
         if (search != GREEDY_CONDITIONS.end())
             conditions |= search->second;
         else
-            report_error("Unknown greedy visit condition '%s'", c.c_str());
+            report_error(jtransc("Unknown greedy visit condition '%s'"), c.c_str());
     }
     explore_greedy_visit = conditions;
 }
@@ -3400,7 +3401,7 @@ message_colour_mapping::message_colour_mapping(const string &s)
 
     if (cmap.size() != 2)
     {
-        mprf(MSGCH_ERROR, "Options error: Missing colour in message_colour setting: '%s'", s.c_str());
+        mprf(MSGCH_ERROR, jtransc("Options error: Missing colour in message_colour setting: '%s'"), s.c_str());
         return; // XX better error handling??
     }
 
@@ -3409,7 +3410,7 @@ message_colour_mapping::message_colour_mapping(const string &s)
         colour = MSGCOL_MUTED;
     else if (col < 0 || col >= NUM_TERM_COLOURS)
     {
-        mprf(MSGCH_ERROR, "Options error: Bad colour '%s' in message_colour setting: '%s'",
+        mprf(MSGCH_ERROR, jtransc("Options error: Bad colour '%s' in message_colour setting: '%s'"),
             cmap[0].c_str(), s.c_str());
         return;
     }
@@ -3426,7 +3427,7 @@ colour_mapping::colour_mapping(const string &s)
     string tagname, colname;
     if (subseg.size() < 2)
     {
-        mprf(MSGCH_ERROR, "Options error: Missing tag/color in colour mapping: '%s'", s.c_str());
+        mprf(MSGCH_ERROR, jtransc("Options error: Missing tag/color in colour mapping: '%s'"), s.c_str());
         return;
     }
     else if (subseg.size() == 3)
@@ -3445,7 +3446,7 @@ colour_mapping::colour_mapping(const string &s)
     const int col = str_to_colour(colname);
     if (col < 0 || col > NUM_TERM_COLOURS)
     {
-        mprf(MSGCH_ERROR, "Options error: Unknown color in colour mapping: '%s'", s.c_str());
+        mprf(MSGCH_ERROR, jtransc("Options error: Unknown color in colour mapping: '%s'"), s.c_str());
         return;
     }
 
@@ -3467,7 +3468,7 @@ sound_mapping::sound_mapping(const string &s)
     string::size_type cpos = s.find(":", 0); // TODO: allow escaping?
     if (cpos == string::npos)
     {
-        mprf(MSGCH_ERROR, "Options error: invalid sound mapping '%s'", s.c_str());
+        mprf(MSGCH_ERROR, jtransc("Options error: invalid sound mapping '%s'"), s.c_str());
         return;
     }
 #if !defined(USE_SOUND) || !defined(WINMM_PLAY_SOUNDS) || !defined(SOUND_PLAY_COMMAND) || !defined(USE_SDL)
@@ -3478,7 +3479,7 @@ sound_mapping::sound_mapping(const string &s)
         // This might be a bit non-ideal, as it only shows up in the main menu
         // message log...
         _sound_warning_issued = true;
-        mprf(MSGCH_PLAIN, "Options warning: `sound` will have no effect on this build.");
+        mprf(MSGCH_PLAIN, jtransc("Options warning: `sound` will have no effect on this build."));
     }
 #endif
 
@@ -3492,7 +3493,7 @@ static pair<text_pattern,string> _slot_mapping(const string &s)
     vector<string> thesplit = split_string(":", s, true, false, 1);
     if (thesplit.size() != 2)
     {
-        mprf(MSGCH_ERROR, "Error parsing slot mapping: '%s'\n",
+        mprf(MSGCH_ERROR, jtransc("Error parsing slot mapping: '%s'\n"),
                             s.c_str());
         return make_pair(text_pattern(), ""); // pattern is marked as invalid
     }
@@ -3504,7 +3505,7 @@ static pair<string, char> _consumable_mapping(const string &s)
     vector<string> thesplit = split_string(":", s, true, false, 1);
     if (thesplit.size() != 2)
     {
-        mprf(MSGCH_ERROR, "Error parsing consumable mapping: '%s'\n",
+        mprf(MSGCH_ERROR, jtransc("Error parsing consumable mapping: '%s'\n"),
                             s.c_str());
         return make_pair("", '-'); // pattern is marked as invalid
     }
@@ -3571,7 +3572,7 @@ static bool _set_crawl_dir(const string &d)
     const string new_crawl_dir = _resolve_dir(d, "");
     if (!dir_exists(new_crawl_dir))
         return false;
-    mprf("Setting crawl_dir to `%s`.", new_crawl_dir.c_str());
+    mprf(jtransc("Setting crawl_dir to `%s`."), new_crawl_dir.c_str());
     SysEnv.crawl_dir = new_crawl_dir;
     // need to double check that a valid data directory can still be found,so
     // revalidate.
@@ -3592,7 +3593,7 @@ static void _bindkey(string field)
         || end_bracket == string::npos
         || start_bracket > end_bracket)
     {
-        mprf(MSGCH_ERROR, "Bad bindkey bracketing in '%s'",
+        mprf(MSGCH_ERROR, jtransc("Bad bindkey bracketing in '%s'"),
              field.c_str());
         return;
     }
@@ -3614,7 +3615,7 @@ static void _bindkey(string field)
 
     if (wchars.size() == 0)
     {
-        mprf(MSGCH_ERROR, "No key in bindkey directive '%s'",
+        mprf(MSGCH_ERROR, jtransc("No key in bindkey directive '%s'"),
              field.c_str());
         return;
     }
@@ -3626,7 +3627,7 @@ static void _bindkey(string field)
         keyseq ks = parse_keyseq(key_str);
         if (ks.size() != 1)
         {
-            mprf(MSGCH_ERROR, "Invalid keyseq '%s' in bindkey directive '%s'",
+            mprf(MSGCH_ERROR, jtransc("Invalid keyseq '%s' in bindkey directive '%s'"),
                 key_str.c_str(), field.c_str());
         }
         key = ks[0];
@@ -3639,7 +3640,7 @@ static void _bindkey(string field)
         key = read_key_code(key_str);
         if (key == CK_NO_KEY)
         {
-            mprf(MSGCH_ERROR, "Invalid key '%s' in bindkey directive '%s'",
+            mprf(MSGCH_ERROR, jtransc("Invalid key '%s' in bindkey directive '%s'"),
                  key_str.c_str(), field.c_str());
             return;
         }
@@ -3648,7 +3649,7 @@ static void _bindkey(string field)
     const size_t start_name = field.find_first_not_of(' ', end_bracket + 1);
     if (start_name == string::npos)
     {
-        mprf(MSGCH_ERROR, "No command name for bindkey directive '%s'",
+        mprf(MSGCH_ERROR, jtransc("No command name for bindkey directive '%s'"),
              field.c_str());
         return;
     }
@@ -3657,7 +3658,7 @@ static void _bindkey(string field)
     const command_type cmd  = name_to_command(name);
     if (cmd == CMD_NO_CMD)
     {
-        mprf(MSGCH_ERROR, "No command named '%s'", name.c_str());
+        mprf(MSGCH_ERROR, jtransc("No command named '%s'"), name.c_str());
         return;
     }
 
@@ -3809,7 +3810,7 @@ void base_game_options::set_from_defaults(const string &opt)
 
     if (!defaults.count(opt))
     {
-        report_error("Unknown option name for default: '%s'", opt.c_str());
+        report_error(jtransc("Unknown option name for default: '%s'"), opt.c_str());
         return;
     }
 
@@ -3855,10 +3856,10 @@ void base_game_options::read_option_line(const string &str, bool runscripts)
     else if (state.key == "lua_max_memory")
     {
 #ifdef DGAMELAUNCH
-        report_error("Option 'lua_max_memory' is disabled in this build.");
+        report_error(jtransc("Option 'lua_max_memory' is disabled in this build."));
 #else
         if (!sscanf(state.field.c_str(), "%" SCNu64, &crawl_state.clua_max_memory_mb))
-            report_error("Couldn't parse integer option lua_max_memory: \"%s\"", state.field.c_str());
+            report_error(jtransc("Couldn't parse integer option lua_max_memory: \"%s\""), state.field.c_str());
 #endif
     }
     else if (state.key == "lua_file")
@@ -3868,10 +3869,10 @@ void base_game_options::read_option_line(const string &str, bool runscripts)
         {
             clua.execfile(state.raw_field.c_str(), false, false);
             if (!clua.error.empty())
-                mprf(MSGCH_ERROR, "Lua error: %s", clua.error.c_str());
+                mprf(MSGCH_ERROR, jtransc("Lua error: %s"), clua.error.c_str());
         }
 #else
-        mprf(MSGCH_ERROR, "lua_file failed: clua not enabled on this build!");
+        mprf(MSGCH_ERROR, jtransc("lua_file failed: clua not enabled on this build!"));
 #endif
         return;
     }
@@ -3885,9 +3886,9 @@ void base_game_options::read_option_line(const string &str, bool runscripts)
     {
         // should this really be case insensitive?
         if (!variables.count(state.field))
-            report_error("No variable named '%s' to make constant", state.field.c_str());
+            report_error(jtransc("No variable named '%s' to make constant"), state.field.c_str());
         else if (constants.count(state.field))
-            report_error("'%s' is already a constant", state.field.c_str());
+            report_error(jtransc("'%s' is already a constant"), state.field.c_str());
         else
             constants.insert(state.field);
         return;
@@ -3942,7 +3943,7 @@ void base_game_options::read_option_line(const string &str, bool runscripts)
                 state.key.c_str(), state.raw_field.c_str(), state.lua_mode()))
         {
             if (!clua.error.empty())
-                mprf(MSGCH_ERROR, "Lua error: %s", clua.error.c_str());
+                mprf(MSGCH_ERROR, jtransc("Lua error: %s"), clua.error.c_str());
             named_options[state.key] = state.raw_field;
         }
     }
@@ -3974,7 +3975,7 @@ bool game_options::read_custom_option(opt_parse_state &state, bool runscripts)
             if (type < NUM_OBJECT_CLASSES)
                 autopickups.set(type);
             else
-                report_error("Bad object type '%*s' for autopickup.\n", s, tp);
+                report_error(jtransc("Bad object type '%*s' for autopickup.\n"), s, tp);
         }
         return true;
     }
@@ -3987,7 +3988,7 @@ bool game_options::read_custom_option(opt_parse_state &state, bool runscripts)
             colour[orig_col] = result_col;
         else
         {
-            report_error("Bad colour -- %s=%d or %s=%d\n",
+            report_error(jtransc("Bad colour -- %s=%d or %s=%d\n"),
                      state.subkey.c_str(), orig_col, state.field.c_str(), result_col);
         }
         return true;
@@ -4000,9 +4001,9 @@ bool game_options::read_custom_option(opt_parse_state &state, bool runscripts)
         if (chnl != -1 && col != MSGCOL_NONE)
             channels[chnl] = col;
         else if (chnl == -1)
-            report_error("Bad channel -- %s", state.subkey.c_str());
+            report_error(jtransc("Bad channel -- %s"), state.subkey.c_str());
         else if (col == MSGCOL_NONE)
-            report_error("Bad colour -- %s", state.field.c_str());
+            report_error(jtransc("Bad colour -- %s"), state.field.c_str());
         return true;
     }
     else if (starts_with(key, interrupt_prefix))
@@ -4075,7 +4076,7 @@ bool game_options::read_custom_option(opt_parse_state &state, bool runscripts)
         if (isaalpha(state.raw_field[0]))
             fire_items_start = letter_to_index(state.raw_field[0]);
         else
-            report_error("Bad fire item start index: %s\n", state.raw_field.c_str());
+            report_error(jtransc("Bad fire item start index: %s\n"), state.raw_field.c_str());
         return true;
     }
     else if (key == "fire_order")
@@ -4185,21 +4186,21 @@ bool game_options::read_custom_option(opt_parse_state &state, bool runscripts)
         const size_t last  = state.raw_field.find_last_of(':');
         if (first == string::npos || first != last)
         {
-            report_error("Autoinscribe string must have exactly "
-                                "one colon: %s\n", state.raw_field.c_str());
+            report_error(jtransc("Autoinscribe string must have exactly "
+                                "one colon: %s\n"), state.raw_field.c_str());
             return true;
         }
 
         if (first == 0)
         {
-            report_error("Autoinscribe pattern is empty: %s\n",
+            report_error(jtransc("Autoinscribe pattern is empty: %s\n"),
                 state.raw_field.c_str());
             return true;
         }
 
         if (last == state.raw_field.length() - 1)
         {
-            report_error("Autoinscribe result is empty: %s\n",
+            report_error(jtransc("Autoinscribe result is empty: %s\n"),
                 state.raw_field.c_str());
             return true;
         }
@@ -4208,7 +4209,7 @@ bool game_options::read_custom_option(opt_parse_state &state, bool runscripts)
 
         if (thesplit.size() != 2)
         {
-            report_error("Error parsing autoinscribe string: %s\n",
+            report_error(jtransc("Error parsing autoinscribe string: %s\n"),
                          state.raw_field.c_str());
             return true;
         }
@@ -4235,7 +4236,7 @@ bool game_options::read_custom_option(opt_parse_state &state, bool runscripts)
                 note_skill_levels.set(num, !state.minus_equal());
             else
             {
-                report_error("Bad skill level to note -- %s\n",
+                report_error(jtransc("Bad skill level to note -- %s\n"),
                              thesplit[i].c_str());
                 continue;
             }
@@ -4375,7 +4376,7 @@ bool game_options::read_custom_option(opt_parse_state &state, bool runscripts)
             }
             else
             {
-                report_error("Bad item type '%*s' for action_panel.\n",
+                report_error(jtransc("Bad item type '%*s' for action_panel.\n"),
                              s, tp);
             }
         }
@@ -4521,7 +4522,7 @@ void game_options::set_fake_langs(const string &input)
         const int MAX_LANGS = 3;
         if (fake_langs.size() >= (size_t) MAX_LANGS)
         {
-            report_error("Too many fake langs; maximum is %d", MAX_LANGS);
+            report_error(jtransc("Too many fake langs; maximum is %d"), MAX_LANGS);
             break;
         }
 
@@ -4529,7 +4530,7 @@ void game_options::set_fake_langs(const string &input)
         const string flang_name = split_flang[0];
         if (split_flang.size() > 2)
         {
-            report_error("Invalid fake-lang format: %s", flang_text.c_str());
+            report_error(jtransc("Invalid fake-lang format: %s"), flang_text.c_str());
             continue;
         }
 
@@ -4544,14 +4545,14 @@ void game_options::set_fake_langs(const string &input)
             {
                 if (*flang != flang_t::butt)
                 {
-                    report_error("Lang %s doesn't take a value",
+                    report_error(jtransc("Lang %s doesn't take a value"),
                                  flang_name.c_str());
                     continue;
                 }
 
                 if (value == -1)
                 {
-                    report_error("Invalid value '%s' provided for lang",
+                    report_error(jtransc("Invalid value '%s' provided for lang"),
                                  split_flang[1].c_str());
                     continue;
                 }
@@ -4560,7 +4561,7 @@ void game_options::set_fake_langs(const string &input)
             fake_langs.push_back({*flang, value});
         }
         else
-            report_error("Unknown language %s!", flang_name.c_str());
+            report_error(jtransc("Unknown language %s!"), flang_name.c_str());
 
     }
 }
@@ -4622,12 +4623,12 @@ string base_game_options::resolve_include(const string &file, const char *type)
         const string resolved = resolve_include(filename, file, &SysEnv.rcdirs);
 
         if (resolved.empty())
-            report_error("Cannot find %sfile \"%s\".", type, file.c_str());
+            report_error(jtransc("Cannot find %sfile \"%s\"."), type, file.c_str());
         return resolved;
     }
     catch (const unsafe_path &err)
     {
-        report_error("Cannot include %sfile: %s", type, err.what());
+        report_error(jtransc("Cannot include %sfile: %s"), type, err.what());
         return "";
     }
 }
@@ -4670,7 +4671,7 @@ void base_game_options::report_error(const char* format, ...)
     string error = vmake_stringf(format, args);
     va_end(args);
 
-    mprf(MSGCH_ERROR, "Options error: %s (%s:%d)", error.c_str(),
+    mprf(MSGCH_ERROR, jtransc("Options error: %s (%s:%d)"), error.c_str(),
          basefilename.c_str(), line_num);
 }
 

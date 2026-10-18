@@ -12,6 +12,7 @@
 #include "act-iter.h"
 #include "colour.h"
 #include "command.h"
+#include "database.h"
 #include "dungeon.h"
 #include "end.h"
 #include "initfile.h"
@@ -285,7 +286,7 @@ namespace arena
                 {
                     game_ended_with_error(
                         make_stringf(
-                            "Failed to create monster at (%d,%d) env.grid: %s",
+                            jtransc("Failed to create monster at (%d,%d) env.grid: %s"),
                             loc.x, loc.y, dungeon_feature_name(env.grid(loc))));
                 }
                 list_eq(mon);
@@ -338,7 +339,7 @@ namespace arena
 
         if (!map)
         {
-            throw arena_error_f("No arena maps named \"%s\"",
+            throw arena_error_f(jtransc("No arena maps named \"%s\""),
                                 arena_type.c_str());
         }
 
@@ -352,7 +353,7 @@ namespace arena
         bool success = dgn_place_map(map, false, true);
         if (!success)
         {
-            throw arena_error_f("Failed to create arena named \"%s\"",
+            throw arena_error_f(jtransc("Failed to create arena named \"%s\""),
                                 arena_type.c_str());
         }
         link_items();
@@ -412,7 +413,7 @@ namespace arena
 
         if (real_summons && respawn)
         {
-            throw arena_error("Can't set real_summons and respawn at same time.",
+            throw arena_error(jtrans("Can't set real_summons and respawn at same time."),
                                     false);
         }
 
@@ -448,7 +449,7 @@ namespace arena
             }
             catch (const bad_level_id &err)
             {
-                throw arena_error_nonfatal_f("Bad place '%s': %s",
+                throw arena_error_nonfatal_f(jtransc("Bad place '%s': %s"),
                                     arena_place.c_str(),
                                     err.what());
             }
@@ -466,8 +467,8 @@ namespace arena
         if (factions.size() != 2)
         {
             throw arena_error_nonfatal_f(
-                                "Expected arena monster spec \"xxx v yyy\", "
-                                "but got \"%s\"", spec.c_str());
+                                jtransc("Expected arena monster spec \"xxx v yyy\", "
+                                "but got \"%s\""), spec.c_str());
         }
 
         try
@@ -477,7 +478,7 @@ namespace arena
         }
         catch (const arena_error &err)
         {
-            throw arena_error_nonfatal_f("Bad monster spec \"%s\": %s",
+            throw arena_error_nonfatal_f(jtransc("Bad monster spec \"%s\": %s"),
                                 spec.c_str(),
                                 err.what());
         }
@@ -545,7 +546,7 @@ namespace arena
             cgotoxy(1, line++, GOTO_STAT);
             textcolour(BROWN);
             center_print(crawl_view.hudsz.x,
-                         make_stringf("Round %d of %d",
+                         make_stringf(jtransc("Round %d of %d"),
                                       after_fight ? trials_done
                                                   : trials_done + 1,
                                       total_trials));
@@ -611,10 +612,10 @@ namespace arena
         int orig_b = faction_b.active_members;
 
         if (orig_a < 0)
-            mprf(MSGCH_ERROR, "Book-keeping says faction_a has negative active members.");
+            mprf(MSGCH_ERROR, jtransc("Book-keeping says faction_a has negative active members."));
 
         if (orig_b < 0)
-            mprf(MSGCH_ERROR, "Book-keeping says faction_b has negative active members.");
+            mprf(MSGCH_ERROR, jtransc("Book-keeping says faction_b has negative active members."));
 
         faction_a.active_members = 0;
         faction_b.active_members = 0;
@@ -632,8 +633,8 @@ namespace arena
         if (orig_a != faction_a.active_members
             || orig_b != faction_b.active_members)
         {
-            mprf(MSGCH_ERROR, "Book-keeping error in faction member count: "
-                              "%d:%d instead of %d:%d",
+            mprf(MSGCH_ERROR, jtransc("Book-keeping error in faction member count: "
+                              "%d:%d instead of %d:%d"),
                               orig_a, orig_b,
                               faction_a.active_members, faction_b.active_members);
 
@@ -659,7 +660,7 @@ namespace arena
         {
             if (faction_a.won || faction_b.won)
             {
-                mprf(MSGCH_ERROR, "Both factions alive but one declared the winner.");
+                mprf(MSGCH_ERROR, jtransc("Both factions alive but one declared the winner."));
                 faction_a.won = false;
                 faction_b.won = false;
             }
@@ -683,8 +684,8 @@ namespace arena
 
         if (faction_a.active_members == 0 || faction_b.active_members == 0)
         {
-            mprf(MSGCH_ERROR, "ERROR: Both sides have spawners, but the active "
-                 "member count of one side has been reduced to zero!");
+            mprf(MSGCH_ERROR, jtransc("ERROR: Both sides have spawners, but the active "
+                 "member count of one side has been reduced to zero!"));
             return;
         }
 
@@ -785,8 +786,8 @@ namespace arena
                     // The other monster isn't a respawner itself, so
                     // just get rid of it.
                     mprf(MSGCH_DIAGNOSTICS,
-                         "Dismissing non-respawner %s to make room for "
-                         "respawner whose side has 0 active members.",
+                         jtransc("Dismissing non-respawner %s to make room for "
+                         "respawner whose side has 0 active members."),
                          other.name(DESC_PLAIN, true).c_str());
                     monster_die(other, KILL_RESET_KEEP_ITEMS, NON_MONSTER);
                 }
@@ -794,8 +795,8 @@ namespace arena
                 {
                     // Other monster is a respawner, try to move it.
                     mprf(MSGCH_DIAGNOSTICS,
-                         "Teleporting respawner %s to make room for "
-                         "other respawner whose side has 0 active members.",
+                         jtransc("Teleporting respawner %s to make room for "
+                         "other respawner whose side has 0 active members."),
                          other.name(DESC_PLAIN, true).c_str());
                     monster_teleport(&other, true);
                 }
@@ -865,7 +866,7 @@ namespace arena
 
         if (contest_cancelled)
         {
-            mpr("Cancelling contest at user request");
+            mpr(jtrans("Cancelling contest at user request"));
             clear_messages();
             return;
         }
@@ -882,13 +883,13 @@ namespace arena
         {
             if (faction_a.active_members > 0)
             {
-                mprf(MSGCH_ERROR, "Tie declared, but faction_a won.");
+                mprf(MSGCH_ERROR, jtransc("Tie declared, but faction_a won."));
                 team_a_wins++;
                 faction_a.won = true;
             }
             else if (faction_b.active_members > 0)
             {
-                mprf(MSGCH_ERROR, "Tie declared, but faction_b won.");
+                mprf(MSGCH_ERROR, jtransc("Tie declared, but faction_b won."));
                 faction_b.won = true;
             }
             else
@@ -902,21 +903,21 @@ namespace arena
             faction_a.won = false;
             faction_b.won = false;
 
-            mprf(MSGCH_ERROR, "*BOTH* factions won?!");
+            mprf(MSGCH_ERROR, jtransc("*BOTH* factions won?!"));
             if (faction_a.active_members > 0)
             {
-                mprf(MSGCH_ERROR, "Faction_a real winner.");
+                mprf(MSGCH_ERROR, jtransc("Faction_a real winner."));
                 team_a_wins++;
                 faction_a.won = true;
             }
             else if (faction_b.active_members > 0)
             {
-                mprf(MSGCH_ERROR, "Faction_b real winner.");
+                mprf(MSGCH_ERROR, jtransc("Faction_b real winner."));
                 faction_b.won = true;
             }
             else
             {
-                mprf(MSGCH_ERROR, "Both sides dead.");
+                mprf(MSGCH_ERROR, jtransc("Both sides dead."));
                 ties++;
                 was_tied = true;
             }
@@ -928,9 +929,9 @@ namespace arena
 
         string msg;
         if (was_tied)
-            msg = "Tie";
+            msg = jtrans("Tie");
         else
-            msg = "Winner: %s!";
+            msg = jtrans("Winner: %s!");
 
         if (Options.arena_dump_msgs || Options.arena_list_eq)
             msg = "---------- " + msg + " ----------";
@@ -1064,21 +1065,23 @@ namespace arena
         if (trials_done > 0)
         {
             string outcome = make_stringf(
-                "Final score: %s (%d); %s (%d) [%d ties]",
+                jtransc("Final score: %s (%d); %s (%d) [%d ties]"),
                  faction_a.desc.c_str(), team_a_wins,
                  faction_b.desc.c_str(), trials_done - team_a_wins - ties,
                  ties);
             if (contest_cancelled)
             {
-                outcome += make_stringf("\n(Cancelled after %d trial%s)",
-                    trials_done, trials_done > 1 ? "s" : "");
+                outcome += "\n" + make_stringf(
+                    jtransc("(Cancelled after %d trials)"), trials_done);
             }
 
-            mpr("---- Contest finished ----\n" + outcome);
+            mpr(jtrans("---- Contest finished ----") + "\n" + outcome);
             if (!skipped_arena_ui)
             {
-                ui::message(outcome, "Arena results:",
-                    "<cyan>Hit any key to continue, ctrl-p for the full log.</cyan>");
+                ui::message(outcome, jtrans("Arena results:"),
+                    "<cyan>"
+                    + jtrans("Hit any key to continue, ctrl-p for the full log.")
+                    + "</cyan>");
             }
         }
 
@@ -1119,7 +1122,7 @@ monster_type arena_pick_random_monster(const level_id &place)
     }
 
     game_ended_with_error(
-        make_stringf("No random monsters for place '%s'",
+        make_stringf(jtransc("No random monsters for place '%s'"),
                      arena::place.describe().c_str()));
 }
 
@@ -1275,7 +1278,7 @@ void arena_monster_died(monster* mons, killer_type killer,
              && arena::faction_b.active_members <= 0)
     {
         if (mons->flags & MF_HARD_RESET && !MON_KILL(killer))
-            mpr("Last arena monster was dismissed.");
+            mpr(jtrans("Last arena monster was dismissed."));
         // If all monsters are dead, and the last one to die is a giant
         // spore or ball lightning, then that monster's faction is the
         // winner, since self-destruction is their purpose. But if a
@@ -1468,7 +1471,8 @@ static void _choose_arena_teams(newgame_def& choice,
     arena::skipped_arena_ui = false;
     clear_message_store();
 
-    auto text = make_shared<Text>("Enter your choice of teams:\n ");
+    auto text = make_shared<Text>(jtrans("Enter your choice of teams:")
+                                  + "\n ");
     auto vbox = make_shared<Box>(ui::Widget::VERT);
     vbox->add_child(text);
     vbox->set_cross_alignment(Widget::Align::STRETCH);
@@ -1477,7 +1481,7 @@ static void _choose_arena_teams(newgame_def& choice,
     teams_input->set_text(default_arena_teams);
     vbox->add_child(teams_input);
     formatted_string prompt;
-    prompt.cprintf("\nExamples:\n");
+    prompt.cprintf("\n%s\n", jtransc("Examples:"));
     prompt.cprintf("  Sigmund v Jessica\n");
     prompt.cprintf("  99 orc v Royal Jelly\n");
     prompt.cprintf("  20-headed hydra v 10 kobold ; scimitar ego:flaming");

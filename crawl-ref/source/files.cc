@@ -43,6 +43,7 @@
 #include "cloud.h"
 #include "coordit.h"
 #include "dactions.h"
+#include "database.h"
 #include "dbg-util.h"
 #include "dgn-overview.h"
 #include "directn.h"
@@ -531,14 +532,14 @@ void validate_basedirs()
             if (!found)
             {
                 mprf(MSGCH_ERROR,
-                    "Incomplete or corrupted data directory '%s'",
+                    jtransc("Incomplete or corrupted data directory '%s'"),
                             d.c_str());
             }
         }
         else // true -- found a complete data directory
         {
             if (!found)
-                mprf(MSGCH_PLAIN, "Data directory '%s' found.", d.c_str());
+                mprf(MSGCH_PLAIN, jtransc("Data directory '%s' found."), d.c_str());
             found = true;
         }
     }
@@ -1294,16 +1295,26 @@ static void _grab_followers_and_expire_summons()
         // Summons won't follow and will time out.
         if (non_stair_using_summons > 0)
         {
-            mprf("Your summoned %s left behind.",
-                 non_stair_using_allies > 1 ? "allies are" : "ally is");
+            mpr(non_stair_using_allies > 1
+                ? jtrans("Your summoned allies are left behind.")
+                : jtrans("Your summoned ally is left behind."));
         }
         else
         {
             const bool all_dead = non_stair_using_undead == non_stair_using_allies;
             // Permanent undead are left behind but stay.
-            mprf("Your mindless puppet%s behind%s.",
-                 non_stair_using_allies > 1 ? "s stay" : " stays",
-                 all_dead ? " to rot" : "");
+            if (all_dead)
+            {
+                mpr(non_stair_using_allies > 1
+                    ? jtrans("Your mindless puppets stay behind to rot.")
+                    : jtrans("Your mindless puppet stays behind to rot."));
+            }
+            else
+            {
+                mpr(non_stair_using_allies > 1
+                    ? jtrans("Your mindless puppets stay behind.")
+                    : jtrans("Your mindless puppet stays behind."));
+            }
         }
     }
 
@@ -1651,7 +1662,7 @@ void update_portal_entrances()
                          whither.branch) == 1);
             if (brentry[whither.branch] != level_id())
             {
-                mprf(MSGCH_ERROR, "Second portal entrance for %s!",
+                mprf(MSGCH_ERROR, jtransc("Second portal entrance for %s!"),
                     whither.describe().c_str());
             }
             brentry[whither.branch] = cur_level;
@@ -1696,7 +1707,7 @@ static int _generate_portal_levels()
             // Should this crash? Reaching this case means that multiple
             // entrances to a non-reusable portal generated.
             if (you.save->has_chunk(lid.describe()))
-                mprf(MSGCH_ERROR, "Portal %s already exists!", lid.describe().c_str());
+                mprf(MSGCH_ERROR, jtransc("Portal %s already exists!"), lid.describe().c_str());
             else
                 return -1;
         }
@@ -1948,25 +1959,28 @@ bool pregen_dungeon(const level_id &stopping_point)
         // be sure that AK start doesn't interfere with the builder
         unwind_var<game_chapter> chapter(you.chapter, CHAPTER_ORB_HUNTING);
 
-        ui::progress_popup progress("Generating dungeon...\n\n", 35);
+        ui::progress_popup progress(jtrans("Generating dungeon...") + "\n\n",
+                                    35);
         progress.advance_progress();
 
         for (const level_id &new_level : to_generate)
         {
-            string status = "\nbuilding ";
+            string status = "\n";
 
             switch (new_level.branch)
             {
             case BRANCH_SPIDER:
             case BRANCH_SNAKE:
-                status += "a lair branch";
+                status += jtrans("building a lair branch");
                 break;
             case BRANCH_SHOALS:
             case BRANCH_SWAMP:
-                status += "another lair branch";
+                status += jtrans("building another lair branch");
                 break;
             default:
-                status += branches[new_level.branch].longname;
+                status += make_stringf(jtransc("building %s"),
+                              tagged_jtransc("[branch]",
+                                  branches[new_level.branch].longname));
                 break;
             }
             progress.set_status_text(status);
@@ -1994,8 +2008,8 @@ static void _rescue_player_from_wall()
         // position relative to where they were. Rescue them by trying to find
         // a seen staircase, with a clear space near the wall as just a
         // a fallback.
-        mprf(MSGCH_ERROR, "Emergency fixup: removing player from wall "
-                          "at %d,%d. Please report this as a bug!",
+        mprf(MSGCH_ERROR, jtransc("Emergency fixup: removing player from wall "
+                          "at %d,%d. Please report this as a bug!"),
                           you.pos().x, you.pos().y);
         vector<coord_def> upstairs;
         vector<coord_def> downstairs;
@@ -2342,7 +2356,7 @@ bool load_level(dungeon_feature_type stair_taken, load_mode_type load_mode,
         && !get_level_annotation().empty()
         && !crawl_state.level_annotation_shown)
     {
-        mprf(MSGCH_PLAIN, YELLOW, "Level annotation: %s",
+        mprf(MSGCH_PLAIN, YELLOW, jtransc("Level annotation: %s"),
              get_level_annotation().c_str());
     }
 
@@ -2402,7 +2416,7 @@ bool load_level(dungeon_feature_type stair_taken, load_mode_type load_mode,
             if (crawl_state.prev_cmd != CMD_WIZARD)
             {
                 mprf(MSGCH_ERROR,
-                    "Fixing up corrupted PlaceInfo for %s (levels_seen is %d)",
+                    jtransc("Fixing up corrupted PlaceInfo for %s (levels_seen is %d)"),
                     branches[curr_PlaceInfo.branch].shortname,
                     curr_PlaceInfo.levels_seen);
             }
@@ -2457,21 +2471,23 @@ bool load_level(dungeon_feature_type stair_taken, load_mode_type load_mode,
                 && feat_stair_direction(feat) != CMD_NO_CMD
                 && feat_stair_direction(stair_taken) != CMD_NO_CMD)
             {
-                string stair_str = feature_description(feat, NUM_TRAPS, "",
-                                                       DESC_THE);
-                string verb = stair_climb_verb(feat);
+                string stair_str = feature_description_at_j(you.pos(), false,
+                                                            DESC_THE);
+                // 訳は終止形(「使う」など)。
+                string verb = tagged_jtrans("[stair slide verb]",
+                                            stair_climb_verb(feat));
 
                 if (coinflip()
                     && slide_feature_over(you.pos()))
                 {
-                    mprf("%s slides away from you right after you %s it!",
+                    mprf(jtransc("%s slides away from you right after you %s it!"),
                          stair_str.c_str(), verb.c_str());
                 }
 
                 if (coinflip())
                 {
                     // Stairs stop fleeing from you now you actually caught one.
-                    mprf("%s settles down.", stair_str.c_str());
+                    mprf(jtransc("%s settles down."), stair_str.c_str());
                     you.duration[DUR_REPEL_STAIRS_MOVE]  = 0;
                     you.duration[DUR_REPEL_STAIRS_CLIMB] = 0;
                 }
@@ -2638,7 +2654,7 @@ void save_game(bool leave_game, const char *farewellmsg)
     {
         if (!dump_char(you.your_name, true))
         {
-            mpr("Char dump unsuccessful! Sorry about that.");
+            mpr(jtrans("Char dump unsuccessful! Sorry about that."));
             if (!crawl_state.seen_hups)
                 more();
         }
@@ -2676,7 +2692,8 @@ void save_game(bool leave_game, const char *farewellmsg)
     _save_game_exit();
 
     game_ended(game_exit::save, farewellmsg ? farewellmsg
-                                : "See you soon, " + you.your_name + "!");
+                                : make_stringf(jtransc("See you soon, %s!"),
+                                               you.your_name.c_str()));
 }
 
 // Saves the game without exiting.
@@ -2734,14 +2751,14 @@ static string _bones_permastore_file()
     FILE *src = fopen_u(dist_full_path.c_str(), "rb");
     if (!src)
     {
-        mprf(MSGCH_ERROR, "Bones file exists but can't be opened: %s",
+        mprf(MSGCH_ERROR, jtransc("Bones file exists but can't be opened: %s"),
             dist_full_path.c_str());
         return "";
     }
     FILE *target = lk_open("wb", full_path);
     if (!target)
     {
-        mprf(MSGCH_ERROR, "Unable to open bones file %s for writing",
+        mprf(MSGCH_ERROR, jtransc("Unable to open bones file %s for writing"),
             full_path.c_str());
         fclose(src);
         return "";
@@ -2759,12 +2776,12 @@ static string _bones_permastore_file()
 
     if (!feof(src))
     {
-        mprf(MSGCH_ERROR, "Error installing bones file to %s",
+        mprf(MSGCH_ERROR, jtransc("Error installing bones file to %s"),
                                                     full_path.c_str());
         if (unlink(full_path.c_str()) != 0)
         {
             mprf(MSGCH_ERROR,
-                "Failed to unlink probably corrupt bones file: %s",
+                jtransc("Failed to unlink probably corrupt bones file: %s"),
                 full_path.c_str());
         }
         fclose(src);
@@ -2859,14 +2876,14 @@ static bool _backup_bones_for_upgrade(string ghost_filename, save_version &v)
     FILE *backup_src = lk_open("rb", ghost_filename);
     if (!backup_src)
     {
-        mprf(MSGCH_ERROR, "Bones file to back up doesn't exist: %s",
+        mprf(MSGCH_ERROR, jtransc("Bones file to back up doesn't exist: %s"),
             ghost_filename.c_str());
         return false;
     }
     FILE *backup_target = lk_open("wb", upgrade_filename);
     if (!backup_target)
     {
-        mprf(MSGCH_ERROR, "Unable to open bones backup file %s for writing",
+        mprf(MSGCH_ERROR, jtransc("Unable to open bones backup file %s for writing"),
             upgrade_filename.c_str());
         lk_close(backup_src);
         return false;
@@ -2882,12 +2899,12 @@ static bool _backup_bones_for_upgrade(string ghost_filename, save_version &v)
 
     if (!feof(backup_src))
     {
-        mprf(MSGCH_ERROR, "Error backing up bones file to %s",
+        mprf(MSGCH_ERROR, jtransc("Error backing up bones file to %s"),
                                                     upgrade_filename.c_str());
         if (unlink(upgrade_filename.c_str()) != 0)
         {
             mprf(MSGCH_ERROR,
-                "Failed to unlink probably corrupt bones file: %s",
+                jtransc("Failed to unlink probably corrupt bones file: %s"),
                 upgrade_filename.c_str());
         }
         lk_close(backup_src);
@@ -2927,7 +2944,7 @@ save_version read_ghost_header(reader &inf)
     catch (const short_read_exception&)
     {
         mprf(MSGCH_ERROR,
-             "Ghost file \"%s\" seems to be invalid (short read); deleting it.",
+             jtransc("Ghost file \"%s\" seems to be invalid (short read); deleting it."),
              inf.filename().c_str());
         return save_version();
     }
@@ -2954,7 +2971,8 @@ vector<ghost_demon> load_bones_file(string ghost_filename, bool backup)
     save_version version = read_ghost_header(inf);
     if (!_ghost_version_compatible(version))
     {
-        string error = "Incompatible bones file: " + ghost_filename;
+        string error = make_stringf(jtransc("Incompatible bones file: %s"),
+                                    ghost_filename.c_str());
         throw corrupted_save(error, version);
     }
     inf.setMinorVersion(version.minor);
@@ -2968,7 +2986,8 @@ vector<ghost_demon> load_bones_file(string ghost_filename, bool backup)
     }
     catch (const short_read_exception&)
     {
-        string error = "Broken bones file: " + ghost_filename;
+        string error = make_stringf(jtransc("Broken bones file: %s"),
+                                    ghost_filename.c_str());
         throw corrupted_save(error, version);
     }
     inf.close();
@@ -2976,7 +2995,9 @@ vector<ghost_demon> load_bones_file(string ghost_filename, bool backup)
     string err_msg;
     if (!debug_check_ghosts(result, err_msg))
     {
-        string error = "Bones file is buggy: " + ghost_filename + "\n" + err_msg;;
+        string error = make_stringf(jtransc("Bones file is buggy: %s"),
+                                    ghost_filename.c_str())
+                       + "\n" + err_msg;
         throw corrupted_save(error, version);
     }
 
@@ -3007,8 +3028,8 @@ static vector<ghost_demon> _load_ghosts_core(string filename,
                 return load_bones_file(old_bones, false);
             }
             else
-                mprf(MSGCH_ERROR, "Mismatch between bones backup "
-                    "filename '%s' and version %d.%d!", filename.c_str(),
+                mprf(MSGCH_ERROR, jtransc("Mismatch between bones backup "
+                    "filename '%s' and version %d.%d!"), filename.c_str(),
                     err.version.major, err.version.minor);
             // intentional fallthrough -- unlink the misnamed file
         }
@@ -3018,9 +3039,9 @@ static vector<ghost_demon> _load_ghosts_core(string filename,
         // if we get to this point the bones file is unreadable and needs to
         // be scrapped
         if (unlink(filename.c_str()) != 0)
-            report = "Failed to unlink bad bones file";
+            report = jtrans("Failed to unlink bad bones file");
         else
-            report = "Clearing bad bones file";
+            report = jtrans("Clearing bad bones file");
         mprf(MSGCH_ERROR, "%s: %s", report.c_str(), filename.c_str());
     }
     return results;
@@ -3042,7 +3063,7 @@ static vector<ghost_demon> _load_ephemeral_ghosts()
 
     if (unlink(ghost_filename.c_str()) != 0)
     {
-        mprf(MSGCH_ERROR, "Failed to unlink bones file: %s",
+        mprf(MSGCH_ERROR, jtransc("Failed to unlink bones file: %s"),
                 ghost_filename.c_str());
     }
     return results;
@@ -3084,10 +3105,10 @@ bool define_ghost_from_bones(monster& mons)
     mons.ghost_init(false);
 
     if (!mons.alive())
-        mprf(MSGCH_ERROR, "Placed ghost is not alive.");
+        mprf(MSGCH_ERROR, jtransc("Placed ghost is not alive."));
     else if (mons.type != MONS_PLAYER_GHOST)
     {
-        mprf(MSGCH_ERROR, "Placed ghost is not MONS_PLAYER_GHOST, but %s",
+        mprf(MSGCH_ERROR, jtransc("Placed ghost is not MONS_PLAYER_GHOST, but %s"),
              mons.name(DESC_PLAIN, true).c_str());
     }
 
@@ -3210,11 +3231,17 @@ static bool _restore_game(const string& filename)
     {
         // Note: if we are here, the save info was properly read, it would
         // raise an exception otherwise.
-        if (yesno(("There is an existing game for name '" + save_info.name +
-                   "' from an incompatible version of Crawl ("
-                   + save_info.prev_save_version + ").\n"
-                   "Unless you reinstall that version, you can't load it.\n"
-                   "Do you want to DELETE that game and start a new one?"
+        if (yesno((make_stringf(jtransc("There is an existing game for name "
+                                        "'%s' from an incompatible version of "
+                                        "Crawl (%s)."),
+                                save_info.name.c_str(),
+                                save_info.prev_save_version.c_str())
+                   + "\n"
+                   + jtrans("Unless you reinstall that version, you can't "
+                            "load it.")
+                   + "\n"
+                   + jtrans("Do you want to DELETE that game and start a new "
+                            "one?")
                   ).c_str(),
                   true, 'n'))
         {
@@ -3228,17 +3255,20 @@ static bool _restore_game(const string& filename)
         delete you.save;
         you.save = 0;
         game_ended(game_exit::abort,
-                save_info.name
-                + " is from an incompatible version and can't be loaded.");
+                make_stringf(jtransc("%s is from an incompatible version and "
+                                     "can't be loaded."),
+                             save_info.name.c_str()));
     }
 
     if (!crawl_state.bypassed_startup_menu
         && menu_game_type != crawl_state.type)
     {
-        auto atype = article_a(_type_name_processed(save_info.saved_game_type));
-        if (!yesno(("You already have " + atype +
-                    " game saved under the name '" + save_info.name + "';\n"
-                    "do you want to load that instead?").c_str(),
+        const string atype = tagged_jtrans("[game type]",
+                _type_name_processed(save_info.saved_game_type));
+        if (!yesno(make_stringf(jtransc("You already have %s game saved under "
+                                        "the name '%s';\n"
+                                        "do you want to load that instead?"),
+                                atype.c_str(), save_info.name.c_str()).c_str(),
                    true, 'n'))
         {
             you.save->abort(); // don't even rewrite the header
@@ -3246,8 +3276,10 @@ static bool _restore_game(const string& filename)
             you.save = 0;
             // explicitly don't set default startup name here
             game_ended(game_exit::abort,
-                "Please use a different name to start a new " +
-                _type_name_processed(menu_game_type) + " game, then.");
+                make_stringf(jtransc("Please use a different name to start a "
+                                     "new %s game, then."),
+                             tagged_jtransc("[game type]",
+                                 _type_name_processed(menu_game_type))));
         }
     }
     if (Options.remember_name)
@@ -3256,17 +3288,20 @@ static bool _restore_game(const string& filename)
     if (numcmp(save_info.prev_save_version.c_str(), Version::Long, 2) == -1
         && version_is_stable(save_info.prev_save_version.c_str()))
     {
-        if (!yesno(("This game comes from a previous release of Crawl (" +
-                    save_info.prev_save_version + ").\n\nIf you load it now,"
-                    " you won't be able to go back. Continue?").c_str(),
+        if (!yesno(make_stringf(jtransc("This game comes from a previous "
+                                        "release of Crawl (%s).\n\nIf you load "
+                                        "it now, you won't be able to go back. "
+                                        "Continue?"),
+                                save_info.prev_save_version.c_str()).c_str(),
                     true, 'n'))
         {
             you.save->abort(); // don't even rewrite the header
             delete you.save;
             you.save = 0;
-            game_ended(game_exit::abort, "Please use version " +
-                save_info.prev_save_version
-                + " to load " + save_info.name + " then.");
+            game_ended(game_exit::abort,
+                make_stringf(jtransc("Please use version %s to load %s then."),
+                             save_info.prev_save_version.c_str(),
+                             save_info.name.c_str()));
         }
     }
     you.init_from_save_info(save_info);
@@ -3352,10 +3387,10 @@ bool restore_game(const string& filename)
     }
     catch (corrupted_save &err)
     {
-        if (yesno(make_stringf(
+        if (yesno(make_stringf(jtransc(
                    "There exists a save by that name but it appears to be invalid.\n"
                    "Do you want to delete it?\n"
-                   "Error: %s", err.what()).c_str(), // TODO linebreak error
+                   "Error: %s"), err.what()).c_str(), // TODO linebreak error
                   true, 'n'))
         {
             if (you.save)
@@ -3549,16 +3584,16 @@ static bool _convert_obsolete_species()
     if (you.species == SP_LAVA_ORC)
     {
         if (!yesno(
-            "This Lava Orc save game cannot be loaded as-is. If you load it now,\n"
-            "your character will be converted to a Mountain Dwarf. Continue?",
+            jtransc("This Lava Orc save game cannot be loaded as-is. If you load it now,\n"
+            "your character will be converted to a Mountain Dwarf. Continue?"),
                        false, 'N'))
         {
             you.save->abort(); // don't even rewrite the header
             delete you.save;
             you.save = 0;
             game_ended(game_exit::abort,
-                "Please load the save in an earlier version "
-                "if you want to keep it as a Lava Orc.");
+                jtrans("Please load the save in an earlier version "
+                "if you want to keep it as a Lava Orc."));
         }
         change_species_to(SP_MOUNTAIN_DWARF);
         // No need for conservation
@@ -3574,16 +3609,16 @@ static bool _convert_obsolete_species()
     else if (you.species == SP_VAMPIRE)
     {
         if (!yesno(
-            "This Vampire save game cannot be loaded as-is. If you load it now,\n"
-            "your character will be converted to a Human. Continue?",
+            jtransc("This Vampire save game cannot be loaded as-is. If you load it now,\n"
+            "your character will be converted to a Human. Continue?"),
                        false, 'N'))
         {
             you.save->abort(); // don't even rewrite the header
             delete you.save;
             you.save = 0;
             game_ended(game_exit::abort,
-                "Please load the save in an earlier version "
-                "if you want to remain a Vampire.");
+                jtrans("Please load the save in an earlier version "
+                "if you want to remain a Vampire."));
         }
         change_species_to(SP_HUMAN);
         return true;
@@ -3657,7 +3692,7 @@ static bool _tagged_chunk_version_compatible(reader &inf, string* reason)
 
     if (!version.valid())
     {
-        *reason = make_stringf("File is corrupt (found version %d,%d).",
+        *reason = make_stringf(jtransc("File is corrupt (found version %d,%d)."),
                                 version.major, version.minor);
         return false;
     }
@@ -3667,29 +3702,35 @@ static bool _tagged_chunk_version_compatible(reader &inf, string* reason)
         if (version.is_ancient())
         {
             const auto min_supported = save_version::minimum_supported();
-            *reason = make_stringf("This save is from an older version.\n"
-                    "\n"
-                    CRAWL " %s is not compatible with save files this old. You can:\n"
-                    " • continue your game with an older version of " CRAWL "\n"
-                    " • delete it and start a new game\n"
-                    "\n"
-                    "This save's version: (%d.%d) (must be >= %d.%d)",
-                    Version::Short,
-                    version.major, version.minor,
-                    min_supported.major, min_supported.minor);
+            *reason = jtrans("This save is from an older version.") + "\n\n"
+                + make_stringf(jtransc("%s %s is not compatible with save "
+                                       "files this old. You can:"),
+                               CRAWL, Version::Short)
+                + "\n • "
+                + make_stringf(jtransc("continue your game with an older "
+                                       "version of %s"), CRAWL)
+                + "\n • " + jtrans("delete it and start a new game")
+                + "\n\n"
+                + make_stringf(jtransc("This save's version: (%d.%d) "
+                                       "(must be >= %d.%d)"),
+                               version.major, version.minor,
+                               min_supported.major, min_supported.minor);
         }
         else if (version.is_future())
         {
             const auto current = save_version::current();
-            *reason = make_stringf("This save is from a newer version.\n"
-                    "\n"
-                    CRAWL " cannot load saves from newer versions. You can:\n"
-                    " • continue your game with a newer version of " CRAWL "\n"
-                    " • delete it and start a new game\n"
-                    "\n"
-                    "This save's version: (%d.%d) (must be <= %d.%d)",
-                    version.major, version.minor,
-                    current.major, current.minor);
+            *reason = jtrans("This save is from a newer version.") + "\n\n"
+                + make_stringf(jtransc("%s cannot load saves from newer "
+                                       "versions. You can:"), CRAWL)
+                + "\n • "
+                + make_stringf(jtransc("continue your game with a newer "
+                                       "version of %s"), CRAWL)
+                + "\n • " + jtrans("delete it and start a new game")
+                + "\n\n"
+                + make_stringf(jtransc("This save's version: (%d.%d) "
+                                       "(must be <= %d.%d)"),
+                               version.major, version.minor,
+                               current.major, current.minor);
         }
         return false;
     }
@@ -3711,7 +3752,7 @@ static bool _restore_tagged_chunk(package *save, const string &name,
             return false;
         }
         else
-            end(-1, false, "\n%s %s\n", complaint, reason.c_str());
+            end(-1, false, "\n%s %s\n", jtransc(complaint), reason.c_str());
     }
 
     crawl_state.minor_version = inf.getMinorVersion();
@@ -3962,7 +4003,7 @@ FILE *lk_open(const char *mode, const string &file)
     const bool write_lock = mode[0] != 'r' || strchr(mode, '+');
     if (!lock_file_handle(handle, write_lock))
     {
-        mprf(MSGCH_ERROR, "ERROR: Could not lock file %s", file.c_str());
+        mprf(MSGCH_ERROR, jtransc("ERROR: Could not lock file %s"), file.c_str());
         fclose(handle);
         handle = nullptr;
     }
@@ -3986,7 +4027,7 @@ FILE *lk_open_exclusive(const string &file)
 
     if (!lock_file(fd, true))
     {
-        mprf(MSGCH_ERROR, "ERROR: Could not lock file %s", file.c_str());
+        mprf(MSGCH_ERROR, jtransc("ERROR: Could not lock file %s"), file.c_str());
         close(fd);
         return nullptr;
     }

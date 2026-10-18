@@ -85,6 +85,7 @@
 #include "random.h"
 #include "random-pick.h"
 #include "religion.h"
+#include "shopping.h"
 #include "shout.h"
 #include "skill-menu.h"
 #include "spl-book.h"
@@ -3490,8 +3491,10 @@ static void _setup_gozag_shop(int index, vector<shop_type> &valid_shops)
     valid_shops.erase(valid_shops.begin() + choice);
     you.props[make_stringf(GOZAG_SHOP_TYPE_KEY, index)].get_int() = type;
 
+    // 日本語化: 店主名は make_name() の英語の合成名ではなく、
+    // shopping.cc の日本語の店主名から選ぶ
     you.props[make_stringf(GOZAG_SHOPKEEPER_NAME_KEY, index)].get_string()
-                                    = make_name();
+                                    = rand_store_names(random2(1000));
 
     const bool need_suffix = type != SHOP_GENERAL
                              && type != SHOP_GENERAL_ANTIQUE
@@ -3519,7 +3522,7 @@ static string _describe_gozag_shop(int index)
     const int cost = _gozag_shop_price(index);
 
     const char offer_letter = 'a' + index;
-    // 店主の名前は英語の合成名なので、所有格は「の」を直接付ける
+    // 店主の名前は日本語(rand_store_names())なので、所有格は「の」を直接付ける
     const string shop_name =
         you.props[make_stringf(GOZAG_SHOPKEEPER_NAME_KEY,
                                index)].get_string() + "の";
@@ -3958,8 +3961,7 @@ spret qazlal_upheaval(coord_def target, bool quiet, bool fail, dist *player_targ
         if (cell_is_invalid_target(beam.target))
         {
             mprf(jtransc("There is %s there."),
-                 tagged_jtransc("[feature]",
-                                feat_type_name(env.grid(beam.target))));
+                 feature_description_j(env.grid(beam.target)).c_str());
             return spret::abort;
         }
 
@@ -5150,7 +5152,8 @@ bool ru_do_sacrifice(ability_type sac)
                 }
                 if (!sac_text_j.empty())
                     sac_text_j += "、";
-                sac_text_j += skill_name_j(arcane_mutation_to_skill(mut));
+                sac_text_j += spelltype_long_name_j(
+                    skill2spell_type(arcane_mutation_to_skill(mut)));
             }
             else
             {
@@ -5916,7 +5919,7 @@ spret uskayaw_grand_finale(bool fail)
         {
             clear_messages();
             mprf(jtransc("You cannot occupy %s."),
-                 tagged_jtransc("[feature]", feat_type_name(env.grid(beam.target))));
+                 feature_description_j(env.grid(beam.target)).c_str());
         }
         else if (you.see_cell_no_trans(beam.target))
         {
@@ -6341,7 +6344,7 @@ bool wu_jian_can_wall_jump(const coord_def& target, string &error_ret)
         if (!feat_can_wall_jump_against(env.grid(target)))
         {
             error_ret = make_stringf(jtransc("You cannot wall jump against %s."),
-                feature_description_at(target, false, DESC_THE).c_str());
+                feature_description_at_j(target, false, DESC_THE).c_str());
         }
         else
             error_ret = "";
@@ -7046,7 +7049,8 @@ void makhleb_infernal_servant()
             beam.ex_size = 2;
 
             mprf(jtransc("%s appears in a burst of %s!"), demon->name(DESC_A).c_str(),
-                                        beam.get_short_name().c_str());
+                                        tagged_jtransc("[beam name]",
+                                                       beam.get_short_name()));
 
             beam.explode();
         }

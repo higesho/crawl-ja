@@ -1,0 +1,867 @@
+# hiscores.cc: スコア一覧・死因の表示(日本語)
+# スコアファイルには英語を残し、表示する時に訳す(hiscores.cc の *_j())。
+# 「引数は日本語の語順」とコメントのある呼び出しは、%s の順がキーの英文と違う。
+%%%%
+ERROR: failure writing to the logfile.
+
+エラー: ログファイルに書き込めなかった。
+%%%%
+No scores.
+
+スコアがない。
+%%%%
+No high scores yet...
+
+まだハイスコアはない……
+%%%%
+miscasting %s
+
+%sの詠唱の失敗
+%%%%
+gaining the %s mutation
+
+%sの変異を得たこと
+%%%%
+losing the %s mutation
+
+%sの変異を失ったこと
+%%%%
+gaining the %s transformation
+
+%sへの変身
+%%%%
+%d days
+
+%d日
+%%%%
+(%d damage)
+
+(%dダメージ)
+%%%%
+The game lasted %s (%d turns).
+
+ゲーム時間: %s (%dターン)
+%%%%
+... and %d runes
+
+... さらに%d個のルーンを手にして
+%%%%
+... with %d runes
+
+... %d個のルーンを手にして
+%%%%
+... and %d gems
+
+... さらに%d個の宝石を手にして
+%%%%
+... with %d gems
+
+... %d個の宝石を手にして
+%%%%
+(intact)
+
+(無傷)
+%%%%
+(both intact)
+
+(どちらも無傷)
+%%%%
+(all intact)
+
+(すべて無傷)
+%%%%
+(%d intact)
+
+(%d個が無傷)
+%%%%
+# 引数: 得点, 称号, 名前, レベル
+%8d %s the %s (level %d
+
+%8d %s『%s』(レベル%d
+%%%%
+# 引数: 得点, 種族, 職業, 名前, レベル
+%8d %s the %s %s (level %d
+
+%8d %sの%s『%s』(レベル%d
+%%%%
+, %d/%d HPs
+
+, HP %d/%d
+%%%%
+# 引数: 日付, 種族, 職業
+Began as a %s %s on %s.
+
+%sに%sの%sとして冒険を始めた。
+%%%%
+Was a Favourite Plaything of Xom.
+
+ゾムのお気に入りの慰みものだった。
+%%%%
+Was a Plaything of Xom.
+
+ゾムの慰みものだった。
+%%%%
+# 引数: 神, 位, 「。」または「(贖罪中)。」
+Was %s of %s%s
+
+%sの%sだった%s
+%%%%
+(penitent).
+
+(贖罪中)。
+%%%%
+[piety rank]the Champion
+
+勇者
+%%%%
+[piety rank]a High Priest
+
+大司祭
+%%%%
+[piety rank]an Elder
+
+長老
+%%%%
+[piety rank]a Priest
+
+司祭
+%%%%
+[piety rank]a Believer
+
+熱心な信者
+%%%%
+[piety rank]a Follower
+
+信者
+%%%%
+[piety rank]an Initiate
+
+入信者
+%%%%
+# 引数: 日付, 場所
+... in %s on %s.
+
+... %s、%sにて。
+%%%%
+... in %s.
+
+... %sにて。
+%%%%
+slain by %s
+
+%sに殺された
+%%%%
+Mangled by %s
+
+%sに切り刻まれた
+%%%%
+Demolished by %s
+
+%sに粉砕された
+%%%%
+Annihilated by %s
+
+%sに消し飛ばされた
+%%%%
+%s's headbutt
+
+%sの頭突き
+%%%%
+Headbutted by %s
+
+%sの頭突きで死んだ
+%%%%
+squashed by %s
+
+%sに轢かれた
+%%%%
+Rolled over by %s
+
+%sに轢かれて死んだ
+%%%%
+%s's spines
+
+%sの棘
+%%%%
+Impaled on %s's spines
+
+%sの棘に串刺しにされて死んだ
+%%%%
+Succumbed to poison
+
+毒に冒されて死んだ
+%%%%
+poisoned by %s
+
+%sの毒
+%%%%
+Succumbed to %s
+
+%sに冒されて死んだ
+%%%%
+Succumbed to their own %s
+
+自らの%sに冒されて死んだ
+%%%%
+Succumbed to %s's %s
+
+%sの%sに冒されて死んだ
+%%%%
+cloud of %s
+
+%sの雲
+%%%%
+Engulfed by a cloud of %s
+
+%sの雲に包まれて死んだ
+%%%%
+Engulfed by their own %s
+
+自らの%sに包まれて死んだ
+%%%%
+Engulfed by %s's %s
+
+%sの%sに包まれて死んだ
+%%%%
+shot by %s
+
+%sに射抜かれた
+%%%%
+hit from afar by %s
+
+%sに遠くから仕留められた
+%%%%
+blasted by %s
+
+%sに吹き飛ばされた
+%%%%
+# 引数: 撃った者, 投射物
+Shot with %s by %s
+
+%sに%sで射抜かれた
+%%%%
+# 引数: 投げた者, 投射物
+Hit by %s thrown by %s
+
+%sが投げた%sに当たった
+%%%%
+Killed by their own %s
+
+自らの%sで死んだ
+%%%%
+Killed by %s
+
+%sによって死んだ
+%%%%
+Killed from afar by themself
+
+自らの攻撃で死んだ
+%%%%
+Killed from afar by %s
+
+%sに遠くから殺された
+%%%%
+Turned to ash by lava
+
+溶岩で灰になって死んだ
+%%%%
+Took a swim in molten lava
+
+溶岩にダイブして死んだ
+%%%%
+Soaked and fell apart
+
+水に浸かってバラバラになった
+%%%%
+Sank and fell apart
+
+水に沈んでバラバラになった
+%%%%
+Drowned by %s
+
+%sに溺れさせられて死んだ
+%%%%
+Drowned
+
+溺れ死んだ
+%%%%
+Forgot to exist
+
+存在することを忘れて消滅した
+%%%%
+Forgot to breathe
+
+呼吸することを忘れて死んだ
+%%%%
+Collapsed under their own weight
+
+自重に耐えきれず体が崩壊した
+%%%%
+Slipped on a banana peel
+
+バナナの皮で滑って死んだ
+%%%%
+Killed by triggering %s
+
+%sを作動させて死んだ
+%%%%
+Got out of the dungeon
+
+ダンジョンを脱出した
+%%%%
+Safely got out of the dungeon
+
+安全にダンジョンを脱出した
+%%%%
+Got out of the dungeon alive
+
+ダンジョンから生還した
+%%%%
+Escaped with the Orb
+
+オーブを手にして脱出した
+%%%%
+Quit the game
+
+ゲームを放棄した
+%%%%
+Entered wizard mode
+
+ウィザードモードに入った
+%%%%
+Entered explore mode
+
+探索モードに入った
+%%%%
+Drained of all life by %s
+
+%sに生命力をすべて吸い取られた
+%%%%
+Drained of all life
+
+生命力をすべて吸い取られた
+%%%%
+Starved to death
+
+餓死した
+%%%%
+Frozen to death by %s
+
+%sに凍らされて死んだ
+%%%%
+Frozen to death
+
+凍死した
+%%%%
+Incinerated by %s
+
+%sに焼き殺された
+%%%%
+Burnt to a crisp
+
+黒焦げになって死んだ
+%%%%
+Disjoined by %s
+
+%sに体を引き裂かれて死んだ
+%%%%
+Killed by wild magic
+
+魔力の暴走によって死んだ
+%%%%
+Killed for Xom's enjoyment
+
+ゾムにもてあそばれて死んだ
+%%%%
+Rotted away
+
+体が腐敗して死んだ
+%%%%
+Killed themself with bad targeting
+
+狙いを誤って自らを殺した
+%%%%
+Killed themself with a badly aimed %s
+
+狙いを誤った%sで自らを殺した
+%%%%
+Killed by a reflected %s
+
+跳ね返された%sで死んだ
+%%%%
+... reflected by %s
+
+... %sに跳ね返された
+%%%%
+Killed themself with a bounced %s
+
+跳ね返った自らの%sで死んだ
+%%%%
+Shot themself with %s
+
+自らを%sで撃って死んだ
+%%%%
+Killed by an exploding %s
+
+爆発した%sに巻き込まれて死んだ
+%%%%
+Smitten by the Shining One
+
+輝けるものの打擲によって死んだ
+%%%%
+Smitten by Beogh
+
+ベオの打擲によって死んだ
+%%%%
+Turned to stone
+
+体が石になって死んだ
+%%%%
+... wielded by %s
+
+... %sが振るっていた
+%%%%
+%s death curse
+
+%sの死の呪い
+%%%%
+Slain by %s's death curse
+
+%sの死の呪いで死んだ
+%%%%
+Died
+
+死んだ
+%%%%
+Fell down a flight of stairs
+
+階段から転げ落ちて死んだ
+%%%%
+Fell down through a gate
+
+ゲートをくぐり抜けて落ちて死んだ
+%%%%
+Splashed by %s's acid
+
+%sの酸を浴びて死んだ
+%%%%
+Splashed with acid
+
+酸を浴びて死んだ
+%%%%
+Asphyxiated
+
+窒息して死んだ
+%%%%
+Killed by divine wrath
+
+神の怒りによって死んだ
+%%%%
+Blew themself up
+
+自らを分解して死んだ
+%%%%
+Blown up by %s
+
+%sに分解されて死んだ
+%%%%
+Killed by mirror damage
+
+跳ね返されたダメージで死んだ
+%%%%
+Became unviable by %s
+
+%sで生きられない体になって死んだ
+%%%%
+Succumbed to barbed spike wounds
+
+逆棘の傷がもとで死んだ
+%%%%
+%s's throw
+
+%sの投げ
+%%%%
+Thrown by %s
+
+%sに投げ飛ばされて死んだ
+%%%%
+%s collision
+
+%sとの衝突
+%%%%
+Collided with %s
+
+%sと衝突して死んだ
+%%%%
+Tarried too long and was consumed by Zot
+
+長居しすぎてゾットに呑み込まれた
+%%%%
+Constricted to death by %s
+
+%sに締め殺された
+%%%%
+Nibbled to death by software bugs
+
+ソフトウェアのバグにかじられて死んだ
+%%%%
+... caused by %s
+
+... 原因: %s
+%%%%
+... wielding %s
+
+... %sを手にしていた
+%%%%
+... with %s
+
+... %sで
+%%%%
+... after being knocked back by %s
+
+... %sに吹き飛ばされて
+%%%%
+... awakened by %s
+
+... %sが目覚めさせた
+%%%%
+... generated by %s
+
+... %sが生み出した
+%%%%
+... invoked by %s
+
+... %sが引き起こした
+%%%%
+... while paralysed
+
+... 麻痺している間に
+%%%%
+... while paralysed by %s
+
+... %sに麻痺させられている間に
+%%%%
+... while petrified
+
+... 石化している間に
+%%%%
+... while petrified by %s
+
+... %sに石化させられている間に
+%%%%
+... while put to sleep
+
+... 眠っている間に
+%%%%
+... while put to sleep by %s
+
+... %sに眠らされている間に
+%%%%
+... while vexed
+
+... 苛立っている間に
+%%%%
+... while vexed by %s
+
+... %sに苛立たされている間に
+%%%%
+[death]poison
+
+毒
+%%%%
+[death]self
+
+自分
+%%%%
+[death]blasted by themself
+
+自らの攻撃で死んだ
+%%%%
+[death]themself
+
+自分自身
+%%%%
+[death]lava
+
+溶岩
+%%%%
+[death]fell apart
+
+バラバラになった
+%%%%
+[death]drowned by %s
+
+%sに溺れさせられた
+%%%%
+[death]drowned
+
+溺死
+%%%%
+[death]stupidity
+
+知力低下
+%%%%
+[death]collapsed
+
+身体崩壊
+%%%%
+[death]clumsiness
+
+致命的な不器用
+%%%%
+[death]left
+
+脱出
+%%%%
+[death]escaped
+
+脱出した
+%%%%
+[death]quit
+
+放棄
+%%%%
+[death]wizmode
+
+ウィザードモード
+%%%%
+[death]exploremode
+
+探索モード
+%%%%
+[death]drained
+
+衰弱
+%%%%
+[death]starvation
+
+餓死
+%%%%
+[death]frozen
+
+凍死
+%%%%
+[death]burnt
+
+焼死
+%%%%
+[death]disjoined
+
+分断
+%%%%
+[death]rotting
+
+腐敗
+%%%%
+[death]shot self
+
+自分を射撃
+%%%%
+[death]reflected bolt
+
+跳ね返された矢弾
+%%%%
+[death]bounced beam
+
+跳ね返った光線
+%%%%
+[death]bolt
+
+矢弾
+%%%%
+[death]beam
+
+光線
+%%%%
+[death]suicidal targeting
+
+自殺的な照準
+%%%%
+[death]a beam
+
+光線
+%%%%
+[death]death explosion
+
+断末魔の爆発
+%%%%
+[death]monster
+
+モンスター
+%%%%
+[death]smitten by Shining One
+
+輝けるものの打擲
+%%%%
+[death]smitten by Beogh
+
+ベオの打擲
+%%%%
+[death]petrified
+
+石化
+%%%%
+[death]a death curse
+
+死の呪い
+%%%%
+[death]died
+
+死亡
+%%%%
+[death]fell downstairs
+
+階段から転落
+%%%%
+[death]fell through a gate
+
+ゲートから転落
+%%%%
+[death]acid
+
+酸
+%%%%
+[death]asphyx
+
+窒息死
+%%%%
+[death]divine wrath
+
+神の怒り
+%%%%
+[death]disintegration
+
+分解
+%%%%
+[death]mirror damage
+
+跳ね返されたダメージ
+%%%%
+[death]frailty
+
+虚弱
+%%%%
+[death]barbs
+
+逆棘
+%%%%
+[death]Zot
+
+ゾット
+%%%%
+[death]constriction
+
+締め付け
+%%%%
+[death]wild magic
+
+暴走する魔力
+%%%%
+[death]xom
+
+ゾム
+%%%%
+[death]program bug
+
+プログラムのバグ
+%%%%
+(shapeshifter)
+
+(変身能力者)
+%%%%
+(glowing shapeshifter)
+
+(輝く変身能力者)
+%%%%
+(illusionary)
+
+(幻影)
+%%%%
+their own shadow
+
+自らの影
+%%%%
+an ally
+
+味方
+%%%%
+the player character
+
+あなた
+%%%%
+unknown source
+
+不明な原因
+%%%%
+[blame]summoned by %s
+
+%sに召喚された
+%%%%
+[blame]woven by %s
+
+%sに紡がれた
+%%%%
+[blame]animated by %s
+
+%sに動かされた
+%%%%
+[blame]called from beyond by %s
+
+%sに彼方から呼び出された
+%%%%
+[blame]called by %s
+
+%sに呼び出された
+%%%%
+[blame]attached to %s
+
+%sにつながっていた
+%%%%
+[blame]created by %s
+
+%sに作り出された
+%%%%
+[blame]led by %s
+
+%sに率いられていた
+%%%%
+[blame]anointed by %s
+
+%sに聖別された
+%%%%
+[blame]hexed by %s
+
+%sに呪われた
+%%%%
+[blame]manifested out of %s
+
+%sから現れた
+%%%%
+[blame]spawned from %s
+
+%sから生まれた
+%%%%
+[blame]mirrored by %s
+
+%sに映し出された
+%%%%
+[blame]unearthed by %s
+
+%sに掘り起こされた
+%%%%
+an inevitable fate
+
+避けられない運命
+%%%%
+Trog's wrath
+
+トログの怒り
+%%%%
+Jiyva's grace
+
+ジーヴァの恩寵
+%%%%
+Makhleb's blessing
+
+マクレブの祝福
+%%%%

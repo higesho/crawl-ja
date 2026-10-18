@@ -104,7 +104,7 @@ local function move_towards(dx, dy)
     if move == nil then move = try_move(sign(dx), 0) end
   end
   if move == nil then
-    crawl.mpr("Failed to move towards target.")
+    crawl.mpr(crawl.jtrans("Failed to move towards target."))
   else
     crawl.process_keys(move)
   end
@@ -249,66 +249,68 @@ function mag_attack(allow_movement)
   local x, y, info = get_target()
   local cur_mana = you.race() == "Djinni" and you.hp() or you.mp()
   if af_hp_is_low() then
-    crawl.mpr("You are too injured to fight recklessly!")
+    crawl.mpr(crawl.jtrans("You are too injured to fight recklessly!"))
   elseif you.confused() then
-    crawl.mpr("You are too confused!")
+    crawl.mpr(crawl.jtrans("You are too confused!"))
   elseif info == nil then
-    crawl.mpr("No target in view!")
+    crawl.mpr(crawl.jtrans("No target in view!"))
   elseif spells.mana_cost(you.spell_table()[AUTOMAGIC_SPELL_SLOT]) > cur_mana then
     -- If you want to resort to melee, set AUTOMAGIC_FIGHT to true in rc
     -- First check for enough magic points, then check if below threshold
     if AUTOMAGIC_FIGHT then
       attack(allow_movement)
     else
-      crawl.mpr("You don't have enough magic to cast " ..
-          you.spell_table()[AUTOMAGIC_SPELL_SLOT] .. "!")
+      crawl.mpr(crawl.jtrans("You don't have enough magic to cast %s!",
+          crawl.tagged_jtrans("[spell]",
+                              you.spell_table()[AUTOMAGIC_SPELL_SLOT])))
     end
   elseif mp_is_low() then
     if AUTOMAGIC_FIGHT then
       attack(allow_movement)
     else
-      crawl.mpr("You are too depleted to cast spells recklessly!")
+      crawl.mpr(crawl.jtrans("You are too depleted to cast spells recklessly!"))
     end
   elseif info.attack_type == 1 then
     spell_attack(x,y)
   elseif allow_movement then
     move_towards(x,y)
   else
-    crawl.mpr("No target in range!")
+    crawl.mpr(crawl.jtrans("No target in range!"))
   end
 end
 
 -- Set this as a macro to change which spell is cast, in game!
 function am_set_spell()
-  crawl.mpr("Which spell slot to assign to automagic? (Enter to disable, Esc to cancel)", "prompt")
+  crawl.mpr(crawl.jtrans("Which spell slot to assign to automagic? (Enter to disable, Esc to cancel)"), "prompt")
   local slot = getkey()
   crawl.clear_messages()
 
   if slot == "escape" then
-    crawl.mpr("Cancelled.")
+    crawl.mpr(crawl.jtrans("Cancelled."))
     return false
 
   elseif slot == "null" then
-    crawl.mpr("Deactivated automagic.")
+    crawl.mpr(crawl.jtrans("Deactivated automagic."))
     crawl.setopt("automagic_enable = false")
     return false
 
   elseif slot == "invalid" then
-    crawl.mpr("Invalid spell slot.")
+    crawl.mpr(crawl.jtrans("Invalid spell slot."))
     return false
 
   else
-    message = ""
+    message = "Automagic will cast spell in slot %s (%s)."
     -- All conditional checks completed, continue to assign a slot now. If automagic
     -- had been disabled, enable it now.
     if AUTOMAGIC_ACTIVE == false then
       crawl.setopt("automagic_enable = true")
-      message = " enabled,"
+      message = "Automagic enabled, will cast spell in slot %s (%s)."
     end
     AUTOMAGIC_SPELL_SLOT = slot
-    spell_name = you.spell_table()[AUTOMAGIC_SPELL_SLOT] or "no spell currently"
-    crawl.mpr("Automagic" .. message .. " will cast spell in slot " .. slot .. " (" ..
-        spell_name .. ")" .. ".")
+    local spell = you.spell_table()[AUTOMAGIC_SPELL_SLOT]
+    spell_name = spell and crawl.tagged_jtrans("[spell]", spell)
+                 or crawl.jtrans("no spell currently")
+    crawl.mpr(crawl.jtrans(message, slot, spell_name))
     return false
 
   end

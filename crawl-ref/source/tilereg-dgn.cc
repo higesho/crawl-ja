@@ -1082,7 +1082,11 @@ bool DungeonRegion::update_alt_text(string &alt)
     alt = process_description(inf);
 
     // Suppress floor description
-    if (alt == "Floor.")
+    // (地形名は日本語になるので、日本語の「床。」とも比べる。ただし
+    //  get_square_desc() は何もない床では空文字列を返すので、実際には
+    //  ほぼ一致しない)
+    if (alt == "Floor."
+        || alt == tagged_jtrans("[feature]", "floor") + "。")
     {
         alt.clear();
         return false;

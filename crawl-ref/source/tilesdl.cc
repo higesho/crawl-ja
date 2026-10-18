@@ -9,6 +9,7 @@
 #include "cio.h"
 #include "command.h"
 #include "coord.h"
+#include "database.h"
 #include "env.h"
 #include "files.h"
 #include "glwrapper.h"
@@ -464,7 +465,7 @@ FontWrapper* TilesFramework::load_font(const char *font_file, int font_size,
             // TODO: this never happens because load_font will die on a missing
             // font file. This setup needs to be smoothed out, but also maybe
             // MONOSPACE_FONT needs to be validated first.
-            mprf(MSGCH_ERROR, "Couldn't find font '%s', falling back on '%s'",
+            mprf(MSGCH_ERROR, jtransc("Couldn't find font '%s', falling back on '%s'"),
                                             font_file, MONOSPACED_FONT);
             return load_font(MONOSPACED_FONT, 12, false);
         }
@@ -1004,9 +1005,9 @@ void TilesFramework::do_layout()
         // TODO: if game_scale is too large, it would be better to drop the
         // bad scale first. Also, it is possible to get an unusable but valid
         // layout -- this only really protects against cases that will crash.
-        end(1, false,
-            "Failed to find a valid window layout:"
-            " screen too small or game_scale too large?");
+        end(1, false, "%s",
+            jtransc("Failed to find a valid window layout:"
+                    " screen too small or game_scale too large?"));
     }
     crawl_view.hudsz.x = m_region_stat->mx;
     crawl_view.hudsz.y = m_region_stat->my;
@@ -1042,7 +1043,7 @@ void TilesFramework::zoom_dungeon(bool in)
     do_layout(); // recalculate the viewport setup
     redraw_screen(false);
     if (current_scale != orig)
-        mprf(MSGCH_PROMPT, "Zooming to %.2f", (float) current_scale);
+        mprf(MSGCH_PROMPT, jtransc("Zooming to %.2f"), (float) current_scale);
     update_screen();
 #endif
 }

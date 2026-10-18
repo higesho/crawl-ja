@@ -1,0 +1,37 @@
+%%%%
+%s has recharged.
+
+%sは再び使えるようになった。
+%%%%
+You learned that %s is actually %s.
+
+あなたは%sが実は%sだと知った。
+%%%%
+%%s has regained %s charge%s.
+
+%%sの使用回数が%s回分回復した。
+%%%%
+You hear a faint sloshing from %s as it returns to readiness.
+
+%sからかすかに水の揺れる音が聞こえ、再び使えるようになった。
+%%%%
+Water glimmers in %s, now refilled and ready to use.
+
+%sの中で水がきらめいた。再び満たされ、使えるようになった。
+%%%%
+You hear chittering from %s. It's ready.
+
+%sからキチキチという音が聞こえた。使えるようになった。
+%%%%
+%s twitches, refilled and ready to use.
+
+%sがぴくりと動いた。中身が満ち、使えるようになった。
+%%%%
+%s jingles faintly as it regains its power.
+
+%sはかすかにシャンと鳴り、力を取り戻した。
+%%%%
+%s shakes itself petulantly as it silently regains its power.
+
+%sはすねたように身を震わせ、音もなく力を取り戻した。
+%%%%

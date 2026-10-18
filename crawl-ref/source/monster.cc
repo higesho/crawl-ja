@@ -5557,7 +5557,7 @@ void monster::finalise_movement(const actor* to_blame)
             if (you.can_see(*this))
             {
                 mprf(jtransc("%s dives back into the %s!"), name(DESC_THE).c_str(),
-                                                   tagged_jtransc("[feature]", feat_type_name(env.grid(pos()))));
+                                                   feature_description_j(env.grid(pos())).c_str());
             }
             del_ench(ENCH_AQUATIC_LAND);
         }
@@ -5598,7 +5598,7 @@ void monster::finalise_movement(const actor* to_blame)
             if (you.see_cell(pos()) && !visible_to(&you))
             {
                 string desc =
-                    feature_description_at(pos(), false, DESC_THE);
+                    feature_description_at_j(pos(), false, DESC_THE);
                 mprf(jtransc("The bloodstain on %s disappears!"), desc.c_str());
             }
         }

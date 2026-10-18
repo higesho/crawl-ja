@@ -110,7 +110,8 @@ namespace ui
 // Returns true if the user typed "yes", false if something else or cancel.
 bool confirm_prompt(const char* require, const char* fmt, ...)
 {
-    char buf[200];
+    // 日本語は 1 文字 3 バイトなので、200 バイトから広げている
+    char buf[1024];
     va_list args;
     va_start(args, fmt);
     vsnprintf(buf, sizeof buf, fmt, args);

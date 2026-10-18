@@ -16,6 +16,7 @@
 #include "artefact.h"
 #include "art-enum.h"
 #include "branch.h" // gem_time_limit
+#include "database.h"
 #include "describe.h"
 #include "english.h" // number_in_words
 #include "equipment-slot.h"
@@ -3334,9 +3335,9 @@ void seen_item(item_def &item)
                 && you.inv[i].sub_type == item.sub_type)
             {
                 held = &you.inv[i];
-                mprf("You learned that %s %s actually %s.",
+                // 日本語では is / are の区別がないので、その引数は渡さない。
+                mprf(jtransc("You learned that %s is actually %s."),
                         held->name(DESC_YOUR).c_str(),
-                        held->quantity > 1 ? "are" : "is",
                         held->name(DESC_A, false, true).c_str());
                 break;
             }
@@ -3457,11 +3458,12 @@ static string _xp_evoker_recharge_msg(const item_def &evoker, int gained, bool s
     ASSERT(edata);
     const string msg = silenced ? edata->recharge_msg.silent : edata->recharge_msg.noisy;
     if (!msg.empty())
-        return msg;
+        return jtrans(msg);
     if (edata->max_charges == 1)
-        return "%s has recharged.";
-    return make_stringf("%%s has regained %s charge%s.",
-                        number_in_words(gained).c_str(),
+        return jtrans("%s has recharged.");
+    // 日本語では回数を数字で書く(複数形の引数は訳では使わない)。
+    return make_stringf(jtransc("%%s has regained %s charge%s."),
+                        to_string(gained).c_str(),
                         gained > 1 ? "s" : "");
 }
 

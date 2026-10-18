@@ -10,6 +10,7 @@
 #include "chardump.h"
 #include "cluautil.h"
 #include "command.h"
+#include "database.h"
 #include "delay.h"
 #include "describe.h"
 #include "directn.h"
@@ -1499,6 +1500,77 @@ static int crawl_bane_desc(lua_State *ls)
     return 1;
 }
 
+/*** Translate a string with the Japanese dictionary (jtrans).
+ * Looks up the English string in dat/database/ja/jtrans/ and returns the
+ * translation, or the string itself if there is none. Leading and trailing
+ * whitespace of the key is ignored (and dropped from the result).
+ * If more arguments are given, the translation is used as a format string
+ * for string.format, so the translation must keep the same specifiers in
+ * the same order as the English key.
+ *
+ *     crawl.mpr(crawl.jtrans("No target in view!"))
+ *     crawl.mpr(crawl.jtrans("No spell in slot %s!", slot))
+ * @tparam string key the English string
+ * @param[opt] ... arguments for string.format
+ * @treturn string
+ * @function jtrans
+ */
+static int crawl_jtrans(lua_State *ls)
+{
+    const char *key = luaL_checkstring(ls, 1);
+    const string tr = jtrans(key);
+    const int nargs = lua_gettop(ls);
+    if (nargs <= 1)
+    {
+        lua_pushstring(ls, tr.c_str());
+        return 1;
+    }
+
+    // string.format(tr, ...)
+    lua_getglobal(ls, "string");
+    if (lua_istable(ls, -1))
+        lua_getfield(ls, -1, "format");
+    else
+        lua_pushnil(ls);
+    if (!lua_isfunction(ls, -1))
+        return luaL_error(ls, "crawl.jtrans: string.format is not available");
+    lua_remove(ls, -2); // the string table
+    lua_pushstring(ls, tr.c_str());
+    for (int i = 2; i <= nargs; ++i)
+        lua_pushvalue(ls, i);
+    lua_call(ls, nargs, 1);
+    return 1;
+}
+
+/*** Translate a string with a tag (jtrans with a "[tag]" prefix).
+ * Returns the translation of tag .. key if the dictionary has it, otherwise
+ * the translation of key. For example
+ * <code>crawl.tagged_jtrans("[spell]", "Magic Dart")</code>.
+ * @tparam string tag such as "[spell]"
+ * @tparam string key the English string
+ * @treturn string
+ * @function tagged_jtrans
+ */
+static int crawl_tagged_jtrans(lua_State *ls)
+{
+    const char *tag = luaL_checkstring(ls, 1);
+    const char *key = luaL_checkstring(ls, 2);
+    lua_pushstring(ls, tagged_jtrans(tag, key).c_str());
+    return 1;
+}
+
+/*** Does the Japanese dictionary have a translation for this string?
+ * @tparam string key the English string
+ * @treturn boolean
+ * @function jtrans_has_key
+ */
+static int crawl_jtrans_has_key(lua_State *ls)
+{
+    const char *key = luaL_checkstring(ls, 1);
+    lua_pushboolean(ls, jtrans_has_key(key));
+    return 1;
+}
+
 static const struct luaL_Reg crawl_clib[] =
 {
     { "mpr",                crawl_mpr },
@@ -1573,6 +1645,9 @@ static const struct luaL_Reg crawl_clib[] =
     { "hints_type",         crawl_hints_type },
     { "bane_name",          crawl_bane_name },
     { "bane_description",   crawl_bane_desc },
+    { "jtrans",             crawl_jtrans },
+    { "tagged_jtrans",      crawl_tagged_jtrans },
+    { "jtrans_has_key",     crawl_jtrans_has_key },
     { nullptr, nullptr },
 };
 

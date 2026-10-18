@@ -1,0 +1,2465 @@
+# rand_all.txt(装身具と全種共通の語彙)。0.19-ja の訳を移し、0.34 で増えた項目を追訳。
+# 名詞は後ろに「の」を付けて名前の前に置ける形。_verbing_ は動詞の連体形、
+# _adjective_ は連体修飾の形。
+
+%%%%
+_jewellery_animal_
+
+# en:
+#   Death Scarab
+#
+#   Firefly
+#
+#   Scarab
+#
+#   w:5
+#   Magpie
+#
+#   w:5
+#   Raven
+死のスカラベ
+
+蛍
+
+スカラベ
+
+w:5
+カササギ
+
+w:5
+鴉
+%%%%
+_jewellery_special_name_
+
+# en:
+#   Attitude
+#
+#   Disaster
+#
+#   Ephemeral Luck
+#
+#   False Pretenses
+#
+#   Finality
+#
+#   Lady Luck
+#
+#   Moodiness
+#
+#   Reimbursement
+#
+#   the Tempest
+#
+#   Temptation
+#
+#   Velleity
+#
+#   Wishful Thinking
+#
+#   Yendor
+心構え
+
+災い
+
+薄幸
+
+詐欺
+
+最終決定
+
+幸運の女神
+
+不機嫌
+
+償還
+
+暴風
+
+誘惑
+
+淡い望み
+
+希望的観測
+
+イェンダー
+%%%%
+_suspicion_no_conflict_name_
+
+# en:
+#   Doubts
+#
+#   Incredulity
+#
+#   Jealousy
+#
+#   Mistrust
+#
+#   Paranoia
+#
+#   Scepticism
+#
+#   Secrets
+#
+#   Suspected Treachery
+#
+#   Suspicion
+#
+#   Trepidation
+疑惑
+
+懐疑
+
+羨望
+
+不信
+
+妄想狂
+
+猜疑
+
+秘密
+
+邪推
+
+疑惑
+
+狼狽
+%%%%
+_suspicion_name_
+
+# en:
+#   @_suspicion_no_conflict_name_@
+#
+#   w:2
+#   @_conflict_name_@
+@_suspicion_no_conflict_name_@
+
+w:2
+@_conflict_name_@
+%%%%
+divine_esteem
+
+# en:
+#   Approval
+#
+#   Benevolence
+#
+#   Delight
+#
+#   Esteem
+#
+#   Favour
+#
+#   w:5
+#   Felicitations
+#
+#   Generosity
+#
+#   Grace
+#
+#   Hope
+#
+#   Inspiration
+#
+#   Pride
+#
+#   Regard
+#
+#   w:5
+#   Respect
+#
+#   Supremacy
+#
+#   Whim
+#
+#   Castigation
+#
+#   Condemnation
+#
+#   Displeasure
+#
+#   Envy
+#
+#   Reproof
+#
+#   w:70
+#   @_anger_quality_@
+お墨付き
+
+慈悲
+
+歓喜
+
+好意
+
+寵愛
+
+w:5
+祝意
+
+寛容
+
+気品
+
+希望
+
+霊感
+
+誇り
+
+敬意
+
+w:5
+尊敬
+
+覇権
+
+気紛れ
+
+折檻
+
+審判
+
+不興
+
+嫉妬
+
+叱責
+
+w:70
+@_anger_quality_@
+%%%%
+_xom_esteem_
+
+# en:
+#   w:40
+#   @divine_esteem@
+#
+#   Absentmindedness
+#
+#   Amusement
+#
+#   Attic
+#
+#   Bemusement
+#
+#   Best Wishes
+#
+#   Capriciousness
+#
+#   Entertainment
+#
+#   Facetiousness
+#
+#   Fair Game
+#
+#   Flight of Fancy
+#
+#   Full Attention
+#
+#   Malicious Joy
+#
+#   Passing Interest
+#
+#   Recklessness
+#
+#   Ringing Laughter
+#
+#   Sleight of Hands
+#
+#   Taradiddle
+#
+#   Temerity
+#
+#   Wantonness
+#
+#   Whimsicality
+w:40
+@divine_esteem@
+
+放心
+
+慰みもの
+
+機知
+
+困惑
+
+敬具
+
+酔狂
+
+娯楽
+
+悪ふざけ
+
+フェアプレー
+
+空想
+
+傾注
+
+愉悦
+
+無関心
+
+蛮勇
+
+爆笑
+
+手妻
+
+法螺話
+
+無鉄砲
+
+浮気
+
+奇行
+%%%%
+_time_name_
+
+# en:
+#   Autumn
+#
+#   Dawn
+#
+#   Day
+#
+#   Dusk
+#
+#   Eternal Night
+#
+#   Eternal Winter
+#
+#   Eternity
+#
+#   Evenfall
+#
+#   Midnight
+#
+#   Midsummer
+#
+#   Midwinter
+#
+#   Noon
+#
+#   w:5
+#   Spring
+#
+#   w:5
+#   Springtime
+#
+#   w:5
+#   Summer
+#
+#   w:5
+#   Summertime
+#
+#   Time Moved Backwards
+#
+#   Tomorrow
+#
+#   Twilight
+#
+#   Winter
+#
+#   Yesterday
+#
+#   the Distant Future
+#
+#   the Equinox
+#
+#   the Evening
+#
+#   the Everdark
+#
+#   the Harvest
+#
+#   the Morning
+#
+#   the Past
+#
+#   the Present
+#
+#   the Solstice
+秋
+
+暁
+
+昼
+
+夕暮れ
+
+明けざる夜
+
+永遠の冬
+
+永劫
+
+日暮れ
+
+真夜中
+
+真夏
+
+真冬
+
+正午
+
+w:5
+春
+
+w:5
+夏
+
+時間逆行
+
+明日
+
+黄昏
+
+冬
+
+昨日
+
+遠い未来
+
+春分
+
+夕暮れ
+
+常闇
+
+収穫
+
+朝
+
+過去
+
+現在
+
+夏至
+%%%%
+_sky_colour_name_
+
+# en:
+#   Black
+#
+#   Blue
+#
+#   Grey
+#
+#   Indigo
+#
+#   Orange
+#
+#   Purple
+#
+#   Red
+黒
+
+青
+
+灰
+
+藍
+
+橙
+
+紫
+
+赤
+%%%%
+_sky_or_light_
+
+# en:
+#   Darkness
+#
+#   Dim Light
+#
+#   Light
+#
+#   Starshine
+#
+#   Sunlight
+#
+#   the Endless Expanse
+#
+#   the Gloaming
+#
+#   the Heavens
+#
+#   the Moon
+#
+#   the Shining Light
+#
+#   the Skies Above
+#
+#   the Sky
+#
+#   the Sun
+#
+#   the @_sky_colour_name_@ Skies
+暗黒
+
+薄明かり
+
+光明
+
+星影
+
+陽光
+
+果てなき空
+
+薄暮
+
+天国
+
+月
+
+烈光
+
+天空
+
+蒼穹
+
+太陽
+
+@_sky_colour_name_@色の空
+%%%%
+_virtue_or_vice_
+
+# en:
+#   w:5
+#   @_virtue_name_@
+#
+#   @_valour_name_@
+#
+#   @_vice_name_@
+w:5
+@_virtue_name_@
+
+@_valour_name_@
+
+@_vice_name_@
+%%%%
+_virtue_name_
+
+# en:
+#   Benevolence
+#
+#   Charity
+#
+#   Compassion
+#
+#   Devotion
+#
+#   Discretion
+#
+#   Generosity
+#
+#   Grace
+#
+#   Honesty
+#
+#   Hospitality
+#
+#   Kindness
+#
+#   Largesse
+#
+#   Modesty
+#
+#   Patience
+#
+#   Temperance
+#
+#   Thoughtfulness
+#
+#   Truth
+#
+#   Understanding
+#
+#   Virtue
+#
+#   Wariness
+#
+#   Wisdom
+慈悲
+
+慈善
+
+哀れみ
+
+献身
+
+分別
+
+雅量
+
+気品
+
+誠実
+
+歓待
+
+いたわり
+
+気前良さ
+
+謙遜
+
+忍耐
+
+節制
+
+思いやり
+
+真実
+
+理解
+
+美徳
+
+慎重
+
+賢明
+%%%%
+_vice_name_
+
+# en:
+#   Gluttony
+#
+#   Greed
+#
+#   Lust
+#
+#   Pride
+#
+#   Sloth
+#
+#   Vanity
+#
+#   Amorality
+#
+#   Cowardice
+#
+#   Dishonesty
+#
+#   Dishonour
+#
+#   Equivocation
+#
+#   Foolhardiness
+#
+#   Immorality
+#
+#   Impatience
+#
+#   Lies
+#
+#   Misconduct
+#
+#   Moral Flaws
+#
+#   Past Mistakes
+#
+#   Recklessness
+#
+#   Sin
+#
+#   Spite
+#
+#   Tergiversation
+#
+#   Untruth
+#
+#   Vice
+#
+#   Youthful Indiscretion
+#
+#   the Original Sin
+貪食
+
+強欲
+
+色欲
+
+傲慢
+
+怠惰
+
+虚栄
+
+非道
+
+臆病
+
+不実
+
+不名誉
+
+言い逃れ
+
+無鉄砲
+
+背徳
+
+短気
+
+虚言
+
+不品行
+
+不道徳
+
+過去の過ち
+
+蛮勇
+
+罪業
+
+悪意
+
+変節
+
+虚偽
+
+悪徳
+
+若気の至り
+
+原罪
+%%%%
+_destiny_name_
+
+# en:
+#   Causality
+#
+#   Destiny
+#
+#   Doom
+#
+#   Fate
+#
+#   Karma
+#
+#   Kismet
+#
+#   Wyrd
+因果
+
+宿命
+
+破滅
+
+運命
+
+因業
+
+天運
+
+命運
+%%%%
+_number_or_qualifier_
+
+# en:
+#   the Three
+#
+#   the Four
+#
+#   the Five
+#
+#   the Six
+#
+#   the Seven
+#
+#   the Eight
+#
+#   the Nine
+#
+#   the Ten
+#
+#   the Eleven
+#
+#   w:5
+#   the Twelve
+#
+#   w:5
+#   the Dozen
+#
+#   the Thirteen
+#
+#   w:5
+#   the Twenty
+#
+#   w:1
+#   the Twenty-Seven
+#
+#   the Fifty
+#
+#   w:5
+#   the Sixty-Six
+#
+#   w:5
+#   the Seventy-Seven
+#
+#   w:5
+#   the Ninety-Nine
+#
+#   w:5
+#   a Hundred
+#
+#   w:5
+#   the Hundredfold
+#
+#   a Thousand
+#
+#   a Million
+#
+#   a Billion
+#
+#   the
+#
+#   the Assorted
+#
+#   the Countless
+#
+#   the Manifold
+#
+#   the Many
+#
+#   the Several
+#
+#   the Aged
+#
+#   the Ageless
+#
+#   the Ancient
+#
+#   the Battered
+#
+#   the Bouncing
+#
+#   the Bruised
+#
+#   the Crushed
+#
+#   the Curious
+#
+#   the Disturbing
+#
+#   the Endless
+#
+#   the Exiled
+#
+#   the Final
+#
+#   the First
+#
+#   the Foremost
+#
+#   the Forgotten
+#
+#   the Forsaken
+#
+#   the Hidden
+#
+#   the Illusory
+#
+#   the Immovable
+#
+#   the Inquisitive
+#
+#   the Insatiable
+#
+#   the Invisible
+#
+#   the Jolly
+#
+#   the Last
+#
+#   the Lonely
+#
+#   the Lost
+#
+#   the Lumpy
+#
+#   the Modern
+#
+#   the Neverending
+#
+#   the Peculiar
+#
+#   the Postmodern
+#
+#   the Pure
+#
+#   the Secret
+#
+#   the Sneaky
+#
+#   the Special
+#
+#   the Thirsty
+#
+#   the Thoughtful
+#
+#   the Tired
+#
+#   the Unstoppable
+#
+#   the Vanishing
+#
+#   the Wary
+#
+#   the Well-Known
+三つの
+
+四つの
+
+五つの
+
+六つの
+
+七つの
+
+八つの
+
+九つの
+
+十の
+
+十一の
+
+w:5
+十二の
+
+w:5
+一ダースの
+
+十三の
+
+w:5
+二十の
+
+w:1
+二十七の
+
+五十の
+
+w:5
+六十六の
+
+w:5
+七十七の
+
+w:5
+九十九の
+
+w:5
+百の
+
+w:5
+百倍の
+
+千の
+
+百万の
+
+十億の
+
+詰め合わせの
+
+無数の
+
+多数の
+
+数多の
+
+幾つかの
+
+年経た
+
+不老の
+
+太古の
+
+壊れた
+
+元気な
+
+傷ついた
+
+砕かれた
+
+珍しい
+
+不穏な
+
+果てなき
+
+追放された
+
+最後の
+
+始原の
+
+主たる
+
+忘れられし
+
+見捨てられた
+
+隠された
+
+架空の
+
+不動の
+
+知りたがりの
+
+飽くなき
+
+見えざる
+
+陽気な
+
+最後の
+
+孤独な
+
+失われし
+
+瘤だらけの
+
+現代の
+
+終わりなき
+
+奇妙な
+
+ポストモダンの
+
+純粋な
+
+秘密の
+
+忍び寄る
+
+特別な
+
+渇いた
+
+思慮深き
+
+疲れた
+
+止められぬ
+
+消えゆく
+
+慎重な
+
+名高い
+%%%%
+_thing_names_
+
+# en:
+#   Allies
+#
+#   Artisans
+#
+#   Artists
+#
+#   Beasts
+#
+#   Beds
+#
+#   Beggars
+#
+#   Blessings
+#
+#   Bones
+#
+#   Bounties
+#
+#   Brambles
+#
+#   w:5
+#   Cities
+#
+#   Coins
+#
+#   Continents
+#
+#   Curses
+#
+#   Dances
+#
+#   Deaths
+#
+#   Defenders
+#
+#   Domains
+#
+#   Demons
+#
+#   Dreams
+#
+#   Ears
+#
+#   Emperors
+#
+#   Eyes
+#
+#   Friends
+#
+#   Friars
+#
+#   Geomancers
+#
+#   Ghosts
+#
+#   Gods
+#
+#   Heavens
+#
+#   Hells
+#
+#   Hosts
+#
+#   Interlopers
+#
+#   Invaders
+#
+#   Knaves
+#
+#   w:25
+#   Knives
+#
+#   Leylines
+#
+#   Lies
+#
+#   Lives
+#
+#   Loafs
+#
+#   Lovers
+#
+#   Mice
+#
+#   Moons
+#
+#   Mouths
+#
+#   Mystics
+#
+#   w:5
+#   Nightcaps
+#
+#   Nightingales
+#
+#   Nightmares
+#
+#   Nights
+#
+#   Olives
+#
+#   Orbs
+#
+#   People
+#
+#   Persimmons
+#
+#   Places
+#
+#   Planets
+#
+#   Portals
+#
+#   Priests
+#
+#   Princes
+#
+#   Prophets
+#
+#   Queens
+#
+#   Quests
+#
+#   Realms
+#
+#   Runes
+#
+#   Scars
+#
+#   Seas
+#
+#   Seers
+#
+#   Servitors
+#
+#   Ships
+#
+#   Shrikes
+#
+#   Songs
+#
+#   Souls
+#
+#   Spines
+#
+#   Spirits
+#
+#   w:5
+#   Spreadsheets
+#
+#   Stars
+#
+#   Stories
+#
+#   Suns
+#
+#   Tables
+#
+#   Tales
+#
+#   Teeth
+#
+#   Thickets
+#
+#   w:5
+#   Things
+#
+#   w:5
+#   Towns
+#
+#   Tusks
+#
+#   Ultimatums
+#
+#   Underlurkers
+#
+#   w:5
+#   Villages
+#
+#   Violins
+#
+#   Visionaries
+#
+#   Visions
+#
+#   Wars
+#
+#   Wishes
+#
+#   Wonders
+#
+#   Xalams
+#
+#   Xenops
+#
+#   Xeniums
+#
+#   w:5
+#   Xenophobes
+#
+#   Yaks
+#
+#   Youths
+#
+#   Ziggurats
+盟友
+
+職人
+
+芸術家
+
+獣
+
+ベッド
+
+乞食
+
+祝福
+
+骨
+
+恵み
+
+茨
+
+w:5
+都市
+
+硬貨
+
+大陸
+
+呪い
+
+踊り
+
+死
+
+守り手
+
+領域
+
+悪魔
+
+夢
+
+耳
+
+皇帝
+
+目
+
+友
+
+托鉢僧
+
+風水師
+
+幽霊
+
+神々
+
+天
+
+地獄
+
+軍勢
+
+闖入者
+
+侵略者
+
+悪漢
+
+w:25
+ナイフ
+
+龍脈
+
+嘘
+
+生命
+
+パン
+
+恋人
+
+鼠
+
+月
+
+口
+
+神秘家
+
+w:5
+寝酒
+
+小夜鳴鳥
+
+悪夢
+
+夜
+
+オリーブ
+
+オーブ
+
+人々
+
+柿
+
+場所
+
+惑星
+
+異界の門
+
+司祭
+
+王子
+
+預言者
+
+女王
+
+探求
+
+領域
+
+ルーン
+
+傷跡
+
+海
+
+予見者
+
+従者
+
+船
+
+百舌
+
+歌
+
+魂
+
+棘
+
+精霊
+
+w:5
+表計算
+
+星
+
+物語
+
+太陽
+
+卓
+
+物語
+
+歯
+
+藪
+
+w:5
+事物
+
+w:5
+町
+
+牙
+
+最後通牒
+
+地下に潜むもの
+
+w:5
+村
+
+ヴァイオリン
+
+夢想家
+
+幻視
+
+争い
+
+願い
+
+不思議
+
+ハラム
+
+クセノプス
+
+引き出物
+
+w:5
+外国嫌い
+
+ヤク
+
+若者
+
+ジッグラト
+%%%%
+_verbing_
+
+# en:
+#   w:5
+#   Ageing
+#
+#   w:5
+#   Baking
+#
+#   Bedazzling
+#
+#   Bedighting
+#
+#   Bespelling
+#
+#   Blushing
+#
+#   w:5
+#   Breathing
+#
+#   Brewing
+#
+#   Building
+#
+#   Burning
+#
+#   w:5
+#   Bursting
+#
+#   Changing
+#
+#   Charming
+#
+#   Chewing
+#
+#   Conjuring
+#
+#   Crafting
+#
+#   Cursing
+#
+#   Dancing
+#
+#   Destroying
+#
+#   Devouring
+#
+#   Disbelieving
+#
+#   w:5
+#   Dripping
+#
+#   Enchanting
+#
+#   Enfolding
+#
+#   Feeding
+#
+#   Flying
+#
+#   Forging
+#
+#   Fortifying
+#
+#   Freezing
+#
+#   Gazing
+#
+#   w:5
+#   Glimmering
+#
+#   w:5
+#   Glowing
+#
+#   Gnashing
+#
+#   Grinning
+#
+#   Growing
+#
+#   Hammering
+#
+#   Healing
+#
+#   Holding
+#
+#   Howling
+#
+#   w:5
+#   Hugging
+#
+#   Hungering
+#
+#   Hurling
+#
+#   Hurting
+#
+#   Hurtling
+#
+#   Imbibing
+#
+#   Inviting
+#
+#   Jumping
+#
+#   Kissing
+#
+#   Keeping
+#
+#   Leaping
+#
+#   Loving
+#
+#   Lusting
+#
+#   w:1
+#   Malding
+#
+#   Mauling
+#
+#   Mashing
+#
+#   Muttering
+#
+#   Nurturing
+#
+#   Protecting
+#
+#   Rescuing
+#
+#   Riding
+#
+#   Scorching
+#
+#   Screaming
+#
+#   Sharing
+#
+#   Sheltering
+#
+#   Shifting
+#
+#   Shimmering
+#
+#   Shouting
+#
+#   Shrinking
+#
+#   Singing
+#
+#   Smoking
+#
+#   Stopping
+#
+#   Summoning
+#
+#   Supporting
+#
+#   Teaching
+#
+#   Telling
+#
+#   Thieving
+#
+#   Threshing
+#
+#   Transmuting
+#
+#   Twisting
+#
+#   Uplifting
+#
+#   Usurping
+#
+#   Winnowing
+#
+#   Witching
+#
+#   Wizarding
+#
+#   Writhing
+#
+#   w:5
+#   Bashing
+#
+#   w:5
+#   Slashing
+#
+#   w:5
+#   Piercing
+w:5
+老いゆく
+
+w:5
+焼く
+
+眩惑する
+
+着飾る
+
+呪文を唱える
+
+赤面する
+
+w:5
+息づく
+
+醸す
+
+築く
+
+燃える
+
+w:5
+弾ける
+
+変わる
+
+魅了する
+
+噛む
+
+呼び出す
+
+細工する
+
+呪う
+
+踊る
+
+破壊する
+
+貪る
+
+信じない
+
+w:5
+滴る
+
+魔法をかける
+
+包み込む
+
+養う
+
+飛ぶ
+
+鍛える
+
+強化する
+
+凍える
+
+見つめる
+
+w:5
+瞬く
+
+w:5
+輝く
+
+歯噛みする
+
+にやける
+
+育つ
+
+槌打つ
+
+癒す
+
+掴む
+
+吠える
+
+w:5
+抱きしめる
+
+飢える
+
+投げつける
+
+傷つける
+
+突進する
+
+飲み干す
+
+招く
+
+跳ぶ
+
+口づける
+
+保つ
+
+跳ねる
+
+愛する
+
+欲情する
+
+w:1
+キレる
+
+引き裂く
+
+潰す
+
+呟く
+
+育む
+
+護る
+
+救う
+
+騎乗する
+
+焦がす
+
+叫ぶ
+
+分かち合う
+
+匿う
+
+移ろう
+
+揺らめく
+
+怒鳴る
+
+縮む
+
+歌う
+
+燻る
+
+止める
+
+召喚する
+
+支える
+
+教える
+
+語る
+
+盗む
+
+脱穀する
+
+変成する
+
+ねじる
+
+励ます
+
+簒奪する
+
+選り分ける
+
+妖術を使う
+
+魔術を使う
+
+身悶える
+
+w:5
+殴る
+
+w:5
+斬る
+
+w:5
+貫く
+%%%%
+_adjective_
+
+# en:
+#   Blue
+#
+#   Green
+#
+#   Red
+#
+#   w:5
+#   Amorous
+#
+#   Antique
+#
+#   Arcadian
+#
+#   w:5
+#   Avant Garde
+#
+#   Baleful
+#
+#   Barnacled
+#
+#   Beastly
+#
+#   Bedazzled
+#
+#   Bellicose
+#
+#   Beloved
+#
+#   Bequeathed
+#
+#   Bespelled
+#
+#   Bright
+#
+#   Burning
+#
+#   Bursted
+#
+#   w:5
+#   Burnt
+#
+#   Carved
+#
+#   Caustic
+#
+#   Clean
+#
+#   Cleverly Designed
+#
+#   Charmed
+#
+#   w:5
+#   Charred
+#
+#   Contumacious
+#
+#   Damp
+#
+#   Decaying
+#
+#   Deeply Unsettling
+#
+#   Delicate
+#
+#   Delightful
+#
+#   Demonic
+#
+#   Divine
+#
+#   Doomed
+#
+#   Dowdy
+#
+#   Dull
+#
+#   Durable
+#
+#   Enormous
+#
+#   Ethereal
+#
+#   Exceptional
+#
+#   Extremely Toothy
+#
+#   Eye-covered
+#
+#   Fabulous
+#
+#   Fae
+#
+#   Feral
+#
+#   Ferocious
+#
+#   Festooned
+#
+#   Filigreed
+#
+#   Floral
+#
+#   Freezing
+#
+#   Fresh
+#
+#   w:5
+#   Futuristic
+#
+#   Fuzzy
+#
+#   Ghostly
+#
+#   Glamorous
+#
+#   Golden
+#
+#   Grand
+#
+#   Grim
+#
+#   Hairy
+#
+#   Haunted
+#
+#   Histrionic
+#
+#   Impassible
+#
+#   Impish
+#
+#   Indestructible
+#
+#   Intense
+#
+#   Irksome
+#
+#   Jocular
+#
+#   Lachrymose
+#
+#   Living
+#
+#   Majestic
+#
+#   Meager
+#
+#   w:5
+#   Modern
+#
+#   Mordant
+#
+#   Narrow
+#
+#   Nice
+#
+#   Noxious
+#
+#   Oily
+#
+#   Ornamental
+#
+#   Painted
+#
+#   Parsimonious
+#
+#   Powerful
+#
+#   Puckish
+#
+#   Quiescent
+#
+#   Quick
+#
+#   Reasonable
+#
+#   Resonant
+#
+#   Rotten
+#
+#   Sandy
+#
+#   Scuffed
+#
+#   Sharp
+#
+#   Shrieking
+#
+#   w:5
+#   Silly
+#
+#   Slimy
+#
+#   Solemn
+#
+#   Soft
+#
+#   Squeaky
+#
+#   Stained
+#
+#   Sufficient
+#
+#   Tentacled
+#
+#   Terrible
+#
+#   Toothy
+#
+#   Tortured
+#
+#   Transparent
+#
+#   Ubiquitous
+#
+#   Unbearable
+#
+#   Verdant
+#
+#   Viny
+#
+#   Voracious
+#
+#   Weak
+#
+#   Wicked
+#
+#   Wonderful
+#
+#   Zealous
+青
+
+緑の
+
+赤
+
+w:5
+恋する
+
+古風な
+
+牧歌的な
+
+w:5
+前衛的な
+
+禍々しい
+
+フジツボだらけの
+
+獣じみた
+
+煌びやかな
+
+好戦的な
+
+愛しき
+
+遺された
+
+魅入られた
+
+明るい
+
+燃え盛る
+
+破裂した
+
+w:5
+焼けた
+
+彫られた
+
+辛辣な
+
+清潔な
+
+巧妙な
+
+魅せられた
+
+w:5
+焦げた
+
+反抗的な
+
+湿った
+
+朽ちゆく
+
+不穏極まる
+
+繊細な
+
+愉快な
+
+悪魔的な
+
+神々しい
+
+滅びゆく
+
+野暮ったい
+
+退屈な
+
+丈夫な
+
+巨大な
+
+霊妙な
+
+非凡な
+
+歯だらけの
+
+目だらけの
+
+夢のような
+
+妖精の
+
+野生の
+
+獰猛な
+
+飾り立てた
+
+金線細工の
+
+花柄の
+
+凍てつく
+
+新鮮な
+
+w:5
+未来的な
+
+もふもふの
+
+亡霊めいた
+
+華やかな
+
+黄金の
+
+壮大な
+
+グリム
+
+毛深い
+
+憑かれた
+
+芝居がかった
+
+動じない
+
+小鬼めいた
+
+不壊の
+
+強烈な
+
+鬱陶しい
+
+剽軽な
+
+涙もろい
+
+生ける
+
+荘厳な
+
+乏しい
+
+w:5
+現代的な
+
+痛烈な
+
+狭い
+
+素敵な
+
+有害な
+
+脂ぎった
+
+装飾的な
+
+彩られた
+
+けちな
+
+強力な
+
+悪戯好きの
+
+鎮まった
+
+素早い
+
+分別ある
+
+響き渡る
+
+腐った
+
+砂まみれの
+
+擦り切れた
+
+鋭い
+
+金切り声の
+
+w:5
+間抜けな
+
+ぬめった
+
+厳粛な
+
+柔らかい
+
+きしむ
+
+染みのある
+
+十分な
+
+触手の生えた
+
+恐ろしい
+
+歯の多い
+
+苦悶する
+
+透明な
+
+遍在する
+
+耐え難い
+
+緑豊かな
+
+蔦の絡む
+
+貪欲な
+
+弱々しい
+
+邪悪な
+
+素晴らしい
+
+熱狂的な
+%%%%
+_fruit_name_
+
+# en:
+#   Orange
+#
+#   Banana
+#
+#   Banana Bread
+#
+#   Pear
+#
+#   Apple
+#
+#   Apricot
+#
+#   Tomato
+#
+#   Peach
+#
+#   Plum
+#
+#   Rambutan
+#
+#   Lychee
+#
+#   Mango
+#
+#   Watermelon
+#
+#   Rockmelon
+#
+#   Strawberry
+#
+#   Coconut
+#
+#   Breadfruit
+#
+#   Eggfruit
+#
+#   Dragonfruit
+#
+#   Durian
+#
+#   Jackfruit
+#
+#   Longan
+#
+#   Tamarind
+#
+#   Guava
+#
+#   Mangosteen
+#
+#   Soursop
+#
+#   Tangerine
+#
+#   Cherry
+#
+#   Grape
+#
+#   Sultana
+#
+#   Fig
+#
+#   Date
+#
+#   Lemon
+#
+#   Lime
+#
+#   Medlar
+橙
+
+バナナ
+
+バナナブレッド
+
+洋梨
+
+林檎
+
+杏
+
+トマト
+
+桃
+
+李
+
+ランブータン
+
+ライチ
+
+マンゴー
+
+西瓜
+
+メロン
+
+苺
+
+ココナツ
+
+パンノキ
+
+エッグフルーツ
+
+ドラゴンフルーツ
+
+ドリアン
+
+ジャックフルーツ
+
+竜眼
+
+タマリンド
+
+グアバ
+
+マンゴスチン
+
+サワーソップ
+
+蜜柑
+
+桜桃
+
+葡萄
+
+干し葡萄
+
+無花果
+
+ナツメヤシ
+
+レモン
+
+ライム
+
+西洋カリン
+%%%%

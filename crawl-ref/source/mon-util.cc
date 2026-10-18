@@ -1021,14 +1021,14 @@ void discover_mimic(const coord_def& pos)
     }
 
     const string name = feature_mimic
-                            ? tagged_jtrans("[feature]", feat_type_name(feat))
+                            ? feature_description_j(feat)
                             : item->name(DESC_THE, false, false, false, true);
 
     if (you.see_cell(pos))
         mprf(jtransc("%s is a mimic!"), name.c_str());
 
     const string shortname = feature_mimic
-                                ? tagged_jtrans("[feature]", feat_type_name(feat))
+                                ? feature_description_j(feat)
                                 : item->name(DESC_BASENAME);
     if (item)
         destroy_item(item->index(), true);
@@ -4430,7 +4430,7 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
         else
             msg = replace_all(msg, "@surface@", tagged_jtrans("[surface]", "ground"));
 
-        msg = replace_all(msg, "@feature@", raw_feature_description(mons.pos()));
+        msg = replace_all(msg, "@feature@", raw_feature_description_j(mons.pos()));
     }
     else
     {

@@ -2541,7 +2541,7 @@ static string _name_aux_j(const item_def &item, description_level_type desc,
         {
             const monster_type mc = item.mon_type;
             if (!(mons_is_unique(mc) && mons_species(mc) == mc))
-                buff << jtrans(mons_type_name(mc, DESC_PLAIN)) << "の";
+                buff << mons_type_name_j(mc, DESC_PLAIN) << "の";
         }
 
         if (!_name.empty() && name_type == MF_NAME_SUFFIX)

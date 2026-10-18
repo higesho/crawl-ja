@@ -90,7 +90,10 @@ static void _ouch(actor& target, const actor * source, int dam,
         bool see_source = source && you.can_see(*source);
         ouch(dam, KILLED_BY_DEATH_CURSE, source ? source->mid : MID_NOBODY,
              cause.c_str(), see_source,
-             source ? source->name(DESC_A, true).c_str() : nullptr);
+             // スコアファイルに残るので英語の名前
+             !source ? nullptr
+             : source->is_player() ? "you"
+             : source->as_monster()->name_en(DESC_A, true).c_str());
     }
 }
 

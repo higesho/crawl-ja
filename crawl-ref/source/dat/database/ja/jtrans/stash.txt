@@ -1,0 +1,125 @@
+%%%%
+(skeletalised by now)
+
+(白骨化中)
+%%%%
+(gone by now)
+
+(腐敗中)
+%%%%
+(still there?)
+
+(まだある？)
+%%%%
+(unseen)
+
+(未確認)
+%%%%
+%s%s (%d gold)
+
+%s%s (%dゴールド)
+%%%%
+(Shop contents are unknown)
+
+(品揃え不明)
+%%%%
+You have no stashes.
+
+記録されたアイテムはない。
+%%%%
+Enter for "%s"
+
+Enterで"%s"を検索
+%%%%
+? for help
+
+? キーでヘルプ
+%%%%
+Search for what%s?
+
+何を検索しますか？ %s
+%%%%
+Your search expression is invalid.
+
+検索条件が無効です。
+%%%%
+Can't find anything matching that.
+
+一致するものを見つけられませんでした。
+%%%%
+Too many matches; use a more specific search.
+
+一致件数が多すぎます。もう少し条件を絞ってください。
+%%%%
+[Stash: %s]
+
+[記録: %s]
+%%%%
+[carried]
+
+[所持品]
+%%%%
+[Shop] %s
+
+[店] %s
+%%%%
+%d match%s
+
+%d件
+%%%%
+: only useless items found; press <w>=</w> to show.
+
+: 役に立たないアイテムしか見つからない([<w>=</w>] で表示)
+%%%%
+<lightgrey>: <w>%s</w> [toggle: <w>!</w>], by <w>%s</w> [<w>/</w>], <w>%s</w> useless & duplicates [<w>=</w>]</lightgrey>
+
+<lightgrey>: <w>%s</w> [切替: <w>!</w>]、<w>%s</w>順 [<w>/</w>]、不要品と重複を<w>%s</w> [<w>=</w>]</lightgrey>
+%%%%
+[stash menu]travel
+
+移動
+%%%%
+[stash menu]view
+
+閲覧
+%%%%
+[stash menu]dist
+
+距離
+%%%%
+[stash menu]name
+
+名前
+%%%%
+[stash menu]hide
+
+隠す
+%%%%
+[stash menu]show
+
+表示
+%%%%
+Results at your position
+
+現在地の結果
+%%%%
+<lightgrey>([<w>,</w>] to cycle)</lightgrey>
+
+<lightgrey>([<w>,</w>] で切替)</lightgrey>
+%%%%
+Results elsewhere
+
+他の場所の結果
+%%%%
+[right here]
+
+[ここ]
+%%%%
+(%d further duplicate%s
+
+(他に重複%d件
+%%%%
+in %d pile%s
+
+、%dか所
+%%%%

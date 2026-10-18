@@ -1,0 +1,314 @@
+# notes.cc: ノートの表示
+%%%%
+Buggy note passed: unknown note type
+
+バグ: 不明な種類のノートが渡された
+%%%%
+Xom revived you
+
+ゾムがあなたを生き返らせた
+%%%%
+Magic: %d/%d
+
+MP: %d/%d
+%%%%
+Reached %d max health
+
+最大HPが%dに達した
+%%%%
+Reached %d max magic points
+
+最大MPが%dに達した
+%%%%
+Reached XP level %d. %s
+
+経験レベル%dに達した。%s
+%%%%
+Entered %s
+
+%sに入った
+%%%%
+# 引数: 呪文のレベル, 呪文
+Learned a level %d spell: %s
+
+レベル%dの呪文を習得した: %s
+%%%%
+Became a worshipper of %s
+
+%sの信者になった
+%%%%
+Fell from the grace of %s
+
+%sの寵愛を失った
+%%%%
+Was placed under penance by %s
+
+%sに贖罪を課された
+%%%%
+Was forgiven by %s
+
+%sに許された
+%%%%
+Received a gift from %s
+
+%sから授かり物を受け取った
+%%%%
+Identified %s
+
+%sを識別した
+%%%%
+Got %s
+
+%sを手に入れた
+%%%%
+(with %d turns to spare)
+
+(残り%dターン)
+%%%%
+Acquired %s
+
+%sを獲得した
+%%%%
+Bought %s for %d gold pieces
+
+%sを金貨%d枚で買った
+%%%%
+Donated %d gold pieces to Zin
+
+ジンに金貨%d枚を寄進した
+%%%%
+Skill %s reached level %d
+
+%sの技能レベルが%dに達した
+%%%%
+Reduced skill %s to level %d
+
+%sの技能レベルを%dに下げた
+%%%%
+Encountered %s
+
+%sに遭遇した
+%%%%
+%s (ally) was %s
+
+味方の%sが%s
+%%%%
+[note]%s %s
+
+%sを%s
+%%%%
+[kill verb]killed
+
+倒した
+%%%%
+[kill verb]banished
+
+追放した
+%%%%
+[kill verb]pacified
+
+鎮めた
+%%%%
+[kill verb]bound
+
+縛り付けた
+%%%%
+[kill verb]slimified
+
+スライムに変えた
+%%%%
+[kill verb passive]killed
+
+倒された
+%%%%
+[kill verb passive]banished
+
+追放された
+%%%%
+[kill verb passive]pacified
+
+鎮められた
+%%%%
+[kill verb passive]bound
+
+縛り付けられた
+%%%%
+[kill verb passive]slimified
+
+スライムに変えられた
+%%%%
+%s changed into %s
+
+%sが%sに変化した
+%%%%
+# 引数: 神, ★
+Reached %s piety under %s
+
+%sへの信仰心が%sに達した
+%%%%
+Gained mutation:
+
+変異を得た:
+%%%%
+Lost mutation:
+
+変異を失った:
+%%%%
+Mutation became permanent:
+
+変異が永続化した:
+%%%%
+Gained bane:
+
+災厄を受けた:
+%%%%
+Lost bane:
+
+災厄が消えた:
+%%%%
+Found %s
+
+%sを見つけた
+%%%%
+%s was a mimic.
+
+%sはミミックだった。
+%%%%
+Paralysed by %s for %s turns
+
+%sによって%sターン麻痺した
+%%%%
+Vexed by %s for %d turns
+
+%sによって%dターン苛立たされた
+%%%%
+Anointed %s the %s as your apostle
+
+%s(%s)を使徒として聖別した
+%%%%
+Your ally %s died
+
+味方の%sが死んだ
+%%%%
+Offered knowledge of %s by Vehumet.
+
+ヴェフメットから%sの知識を授けられた。
+%%%%
+Remembered your ancestor %s as %s
+
+祖霊%sを%sとして思い出した
+%%%%
+Remembered your ancestor %s %s
+
+祖霊%sの%sを思い出した
+%%%%
+Remembered your ancestor %s's %s death
+
+祖霊%sの%sの死を思い出した
+%%%%
+Touched by the power of Zot (MHP %d -> %d)
+
+ゾットの力に触れた(最大HP %d -> %d)
+%%%%
+Saved by the dreamshard amulet
+
+夢の欠片の首飾りに救われた
+%%%%
+Lost the %s through the power of Zot.
+
+ゾットの力で%sを失った。
+%%%%
+Gained a life (%d lives remaining)
+
+命を一つ得た(残り%d)
+%%%%
+Lost a life (%d lives remaining)
+
+命を一つ失った(残り%d)
+%%%%
+Fled from a divine trial
+
+神の試練から逃げ出した
+%%%%
+Branded self with the %s
+
+自らに%sを刻んだ
+%%%%
+Activated a boundless tesseract
+
+果てなきテッセラクトを起動した
+%%%%
+Buggy note description: unknown note type
+
+バグ: 不明な種類のノート
+%%%%
+(the pandemonium lord)
+
+(パンデモニウムの君主)
+%%%%
+Enter note:
+
+ノートを入力:
+%%%%
+# 変異・災厄の理由(英語で保存される。notes.cc で death_name_j() を通して引く)
+%%%%
+Xom's mischief
+
+ゾムのいたずら
+%%%%
+Xom's lifesaving
+
+ゾムによる救命
+%%%%
+mutagenic cloud
+
+変異をもたらす雲
+%%%%
+mutagenic glow
+
+変異をもたらす輝き
+%%%%
+mutagenic gaze
+
+変異をもたらす凝視
+%%%%
+Ru sacrifice
+
+ルーへの代償
+%%%%
+Your corrupting presence
+
+あなたの堕落をもたらす存在
+%%%%
+hidden defects expressed
+
+隠れた欠陥の発現
+%%%%
+hidden potential expressed
+
+隠れた潜在能力の発現
+%%%%
+inscribed by the player
+
+プレイヤーによる刻印
+%%%%
+warp body
+
+肉体歪曲
+%%%%
+wizard power
+
+ウィザードの力
+%%%%
+Equipping an artefact
+
+アーティファクトの装備
+%%%%
+The Wrath of Qazlal
+
+クァズラルの怒り
+%%%%
+level change
+
+レベルの変化
+%%%%

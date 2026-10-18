@@ -1,0 +1,44 @@
+# i_feel_safe() の理由。警告ではこの後に「！」を付けて表示し、
+# 他の確認文(「%s状態ですが、…しますか？」など)にも入る。
+%%%%
+%s is nearby
+
+%sが近くにいる
+%%%%
+there are monsters nearby
+
+近くにモンスターがいる
+%%%%
+there is a strange disturbance nearby
+
+近くで奇妙な気配がする
+%%%%
+# %s は雲の名前([cloud])
+you are in a cloud of %s
+
+あなたは%sの中にいる
+%%%%
+there is a lethal amount of poison in your body
+
+あなたの体に致死量の毒が回っている
+%%%%
+you are contaminated with a potentially lethal amount of magic
+
+あなたは致命的になりうるほど魔力に汚染されている
+%%%%
+you are on fire
+
+あなたの体は燃えている
+%%%%
+you are being drained by your emergency flight
+
+あなたは緊急飛行で力を消耗している
+%%%%
+You are too frail to live.
+
+あなたは虚弱すぎて死んでしまった。
+%%%%
+You rejoin the land of the living...
+
+あなたは生者の世界へと舞い戻った……
+%%%%

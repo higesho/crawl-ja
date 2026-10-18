@@ -132,7 +132,7 @@ bool fatal_error_notification(string error_msg)
     tiles.send_exit_reason("error", error_msg);
 #endif
 
-    ui::error(error_msg, "Fatal error:", true);
+    ui::error(error_msg, jtrans("Fatal error:"), true);
     return true;
 }
 
@@ -226,7 +226,9 @@ NORETURN void screen_end_game(string text, game_exit exit)
     delete_files();
 
     if (!text.empty())
-        ui::message(text, "", "<cyan>Hit any key to exit...</cyan>", true);
+        ui::message(text, "",
+                    "<cyan>" + jtrans("Hit any key to exit...") + "</cyan>",
+                    true);
 
     game_ended(exit); // TODO: is this the right exit condition?
 }
@@ -304,7 +306,7 @@ NORETURN void end_game(scorefile_entry &se)
 
     for (auto &item : you.inv)
         if (item.defined() && !item.is_identified())
-            add_inscription(item, "unknown");
+            add_inscription(item, tagged_jtrans("[insc]", "unknown"));
 
     identify_inventory();
 
@@ -312,7 +314,7 @@ NORETURN void end_game(scorefile_entry &se)
 
     string fname = morgue_name(you.your_name, se.get_death_time());
     if (!dump_char(fname, true, true, &se))
-        mpr("Char dump unsuccessful! Sorry about that.");
+        mpr(jtrans("Char dump unsuccessful! Sorry about that."));
 #ifdef USE_TILE_WEB
     else
         tiles.send_dump_info("morgue", fname);
@@ -352,7 +354,8 @@ NORETURN void end_game(scorefile_entry &se)
     tile->set_margin_for_sdl(0, 10, 0, 0);
     title_hbox->add_child(std::move(tile));
 #endif
-    string goodbye_title = make_stringf("Goodbye, %s.", you.your_name.c_str());
+    string goodbye_title = make_stringf(jtransc("Goodbye, %s."),
+                                        you.your_name.c_str());
     title_hbox->add_child(make_shared<Text>(goodbye_title));
     title_hbox->set_cross_alignment(Widget::CENTER);
     title_hbox->set_margin_for_sdl(0, 0, 20, 0);
@@ -368,8 +371,15 @@ NORETURN void end_game(scorefile_entry &se)
 
     goodbye_msg += hiscore;
 
-    goodbye_msg += make_stringf("\nBest Crawlers - %s\n",
-            crawl_state.game_type_name().c_str());
+    {
+        const string type = crawl_state.game_type_name();
+        goodbye_msg += "\n";
+        goodbye_msg += type.empty()
+            ? jtrans("Best Crawlers")
+            : make_stringf(jtransc("Best Crawlers - %s"),
+                           tagged_jtransc("[game type]", type));
+        goodbye_msg += "\n";
+    }
 
 #ifdef USE_TILE_LOCAL
         const int line_height = in_headless_mode() ? 1 : tiles.get_crt_font()->char_height();
@@ -394,9 +404,11 @@ NORETURN void end_game(scorefile_entry &se)
 
 #ifndef DGAMELAUNCH
 # ifndef __ANDROID__
-    string morgue_dir = make_stringf("\nYou can find your morgue file in the '%s' directory.",
+    string morgue_dir = "\n" + make_stringf(
+        jtransc("You can find your morgue file in the '%s' directory."),
 # else
-    string morgue_dir = make_stringf("\nYou can find your morgue file in the \n'%s'\n directory.",
+    string morgue_dir = "\n" + make_stringf(
+        jtransc("You can find your morgue file in the \n'%s'\n directory."),
 # endif
             morgue_directory().c_str());
     vbox->add_child(make_shared<Text>(formatted_string::parse_string(morgue_dir)));

@@ -1807,3 +1807,8 @@ The @sinners@ stood before Zin, and in that instant...
 
 叱責
 %%%%
+# okawaru_remove_finesse(): player::hands_act() のキー。%s は手の名前
+[hands act]your hands slow down.
+
+あなたの%sの速さは元に戻った。
+%%%%

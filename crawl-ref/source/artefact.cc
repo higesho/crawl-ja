@@ -24,6 +24,7 @@
 #include "item-prop.h"
 #include "item-status-flag-type.h"
 #include "items.h"
+#include "japanese.h"
 #include "libutil.h"
 #include "makeitem.h"
 #include "random.h"
@@ -167,6 +168,10 @@ static bool _god_fits_artefact(const god_type which_god, const item_def &item,
     return true;
 }
 
+// ランダムアーティファクト(とランダム呪文書)の名前は、0.19-ja と同じく
+// 生成時に日本語の語順で組み立てて props に保存する。語彙は
+// dat/database/ja/randname.txt などから引き、ここで差し込む語も日本語にする。
+// (既存のセーブに入っている英語の名前は英語のまま表示される。)
 string replace_name_parts(const string &name_in, const item_def& item)
 {
     string name = name_in;
@@ -184,33 +189,37 @@ string replace_name_parts(const string &name_in, const item_def& item)
                                "@player_name@"
                                + getRandNameString("killer_name"));
             name = replace_all(name, "@player_doom@",
-                               "@player_name_possessive@ "
+                               "@player_name_possessive@"
                                + getRandNameString("death_or_doom"));
         }
         else
         {
             // Simply overwrite the name with one of type "God's Favour".
-            name = "of ";
-            name += apostrophise(god_name(god_gift, false));
-            name += getRandNameString("divine_esteem");
+            // 「<神>の<寵愛>の」(基本名の前に付く形。呪文書は名前そのもの)
+            name = god_name_j(god_gift) + "の"
+                   + getRandNameString("divine_esteem");
+            if (item.base_type != OBJ_BOOKS)
+                name += "の";
         }
     }
     name = replace_all(name, "@player_name@", you.your_name);
+    // プレイヤー名は英字のことが多いので apostrophise() ではなく「の」を付ける。
     name = replace_all(name, "@player_name_possessive@",
-                       apostrophise(you.your_name));
+                       you.your_name + "の");
 
     name = replace_all(name, "@player_species@",
-                 species::name(you.species, species::SPNAME_GENUS));
+                 tagged_jtrans("[spec name]",
+                     species::name(you.species, species::SPNAME_GENUS)));
 
     if (name.find("@branch_name@", 0) != string::npos)
     {
         string place = branches[random2(NUM_BRANCHES)].longname;
         if (!place.empty())
-            name = replace_all(name, "@branch_name@", place);
+            name = replace_all(name, "@branch_name@", branch_name_j(place));
     }
 
     // Occasionally use long name for Xom (see religion.cc).
-    name = replace_all(name, "@xom_name@", god_name(GOD_XOM, coinflip()));
+    name = replace_all(name, "@xom_name@", god_name_j(GOD_XOM, coinflip()));
 
     if (name.find("@god_name@", 0) != string::npos
         || name.find("@god_name_possessive@", 0) != string::npos)
@@ -229,9 +238,9 @@ string replace_name_parts(const string &name_in, const item_def& item)
             while (!_god_fits_artefact(which_god, item, true));
         }
 
-        name = replace_all(name, "@god_name@", god_name(which_god, false));
+        name = replace_all(name, "@god_name@", god_name_j(which_god));
         name = replace_all(name, "@god_name_possessive@",
-                           apostrophise(god_name(which_god, false)));
+                           god_name_j(which_god) + "の");
     }
 
     return name;
@@ -1591,6 +1600,203 @@ static string _base_name(const item_def &item)
     return item_base_name(item);
 }
 
+/// 日本語の基本名(杖は空。item-name.cc が杖の種類の後ろに名前をつなぐ)。
+static string _base_name_j(const item_def &item)
+{
+    const string base = _base_name(item);
+    return base.empty() ? base : jtrans(base);
+}
+
+/**
+ * 日本語の名前と基本名をつなぐ。
+ *
+ * DB の名前は「〜の」で終わる形(英語の "of X")か『〜』の形(英語の "\"X\"")。
+ * 「〜の」は基本名の前に、『〜』は後ろに置く(「力のロングソード」、
+ * 「ロングソード『雷鳴』」)。杖は基本名なしで item-name.cc が
+ * 「<杖の種類>」の後ろにつなぐので、『〜』の形にそろえる。
+ */
+static string _join_name_j(string name, const string &base)
+{
+    if (ends_with(name, "』"))
+        return base + name;
+    if (base.empty())
+    {
+        if (ends_with(name, "の"))
+            name.erase(name.size() - strlen("の"));
+        return "『" + name + "』";
+    }
+    return name + base;
+}
+
+/// 「イェンダーの」は護符にだけ付ける(指輪には付けない)。
+static bool _is_ring_of_yendor(const string &name, const item_def &item)
+{
+    return starts_with(name, "イェンダーの")
+           && item.base_type == OBJ_JEWELLERY && !jewellery_is_amulet(item);
+}
+
+/**
+ * make_name() の英字の名前をカタカナに写す(ランダムな固有名の日本語版)。
+ * 子音+母音を 1 拍とし、母音の続かない子音は「ク」「ス」などにする。
+ */
+static string _katakana_name(const string &name_in)
+{
+    struct kana_row
+    {
+        const char *cons;
+        const char *kana[5]; // a i u e o
+        const char *coda;    // 母音が続かないとき
+    };
+    static const kana_row rows[] =
+    {
+        { "sh", { "シャ", "シ", "シュ", "シェ", "ショ" }, "シュ" },
+        { "ch", { "チャ", "チ", "チュ", "チェ", "チョ" }, "チ" },
+        { "th", { "サ", "シ", "ス", "セ", "ソ" }, "ス" },
+        { "ph", { "ファ", "フィ", "フ", "フェ", "フォ" }, "フ" },
+        { "kh", { "カ", "キ", "ク", "ケ", "コ" }, "ク" },
+        { "zh", { "ジャ", "ジ", "ジュ", "ジェ", "ジョ" }, "ジュ" },
+        { "ck", { "ッカ", "ッキ", "ック", "ッケ", "ッコ" }, "ック" },
+        { "qu", { "クァ", "クィ", "ク", "クェ", "クォ" }, "ク" },
+        { "k", { "カ", "キ", "ク", "ケ", "コ" }, "ク" },
+        { "c", { "カ", "シ", "ク", "セ", "コ" }, "ク" },
+        { "g", { "ガ", "ギ", "グ", "ゲ", "ゴ" }, "グ" },
+        { "s", { "サ", "シ", "ス", "セ", "ソ" }, "ス" },
+        { "z", { "ザ", "ジ", "ズ", "ゼ", "ゾ" }, "ズ" },
+        { "t", { "タ", "ティ", "トゥ", "テ", "ト" }, "ト" },
+        { "d", { "ダ", "ディ", "ドゥ", "デ", "ド" }, "ド" },
+        { "n", { "ナ", "ニ", "ヌ", "ネ", "ノ" }, "ン" },
+        { "h", { "ハ", "ヒ", "フ", "ヘ", "ホ" }, "" },
+        { "b", { "バ", "ビ", "ブ", "ベ", "ボ" }, "ブ" },
+        { "p", { "パ", "ピ", "プ", "ペ", "ポ" }, "プ" },
+        { "m", { "マ", "ミ", "ム", "メ", "モ" }, "ム" },
+        { "y", { "ヤ", "イ", "ユ", "イェ", "ヨ" }, "イ" },
+        { "r", { "ラ", "リ", "ル", "レ", "ロ" }, "ル" },
+        { "l", { "ラ", "リ", "ル", "レ", "ロ" }, "ル" },
+        { "w", { "ワ", "ウィ", "ウ", "ウェ", "ウォ" }, "ウ" },
+        { "v", { "ヴァ", "ヴィ", "ヴ", "ヴェ", "ヴォ" }, "ヴ" },
+        { "f", { "ファ", "フィ", "フ", "フェ", "フォ" }, "フ" },
+        { "j", { "ジャ", "ジ", "ジュ", "ジェ", "ジョ" }, "ジ" },
+        { "x", { "ザ", "ジ", "ズ", "ゼ", "ゾ" }, "クス" },
+        { "q", { "カ", "キ", "ク", "ケ", "コ" }, "ク" },
+    };
+    static const char * const vowel_kana[5] = { "ア", "イ", "ウ", "エ", "オ" };
+    static const char * const small_kana[5] = { "ャ", "ィ", "ュ", "ェ", "ョ" };
+
+    const string s = lowercase_string(name_in);
+    const int n = s.size();
+    auto vowel_index = [](char c) -> int
+    {
+        switch (c)
+        {
+        case 'a': return 0;
+        case 'i': return 1;
+        case 'u': return 2;
+        case 'e': return 3;
+        case 'o': return 4;
+        default:  return -1;
+        }
+    };
+    // 母音として読む文字か(y は後ろに母音がなければ「イ」)
+    auto vowel_at = [&](int i) -> int
+    {
+        if (i >= n)
+            return -1;
+        if (s[i] == 'y')
+            return i + 1 < n && vowel_index(s[i + 1]) >= 0 ? -1 : 1;
+        return vowel_index(s[i]);
+    };
+
+    string out;
+    int i = 0;
+    while (i < n)
+    {
+        const char c = s[i];
+        if (c == ' ')
+        {
+            out += "・";
+            ++i;
+            continue;
+        }
+        if (c < 'a' || c > 'z')
+        {
+            ++i;
+            continue;
+        }
+
+        int v = vowel_at(i);
+        if (v >= 0)
+        {
+            out += vowel_kana[v];
+            ++i;
+            // 同じ母音が続けば長音
+            if (i < n && s[i] == c && vowel_index(c) >= 0)
+            {
+                out += "ー";
+                ++i;
+            }
+            continue;
+        }
+
+        const kana_row *row = nullptr;
+        for (const kana_row &r : rows)
+            if (s.compare(i, strlen(r.cons), r.cons) == 0)
+            {
+                row = &r;
+                break;
+            }
+        if (!row)
+        {
+            ++i;
+            continue;
+        }
+        int j = i + strlen(row->cons);
+
+        // 同じ子音の重なり: 「ッ」(n, m は母音の前なら「ン」、l, r は 1 つ
+        // として読む)
+        if (strlen(row->cons) == 1 && j < n && s[j] == c)
+        {
+            if (c == 'n' || c == 'm')
+            {
+                if (vowel_at(j + 1) >= 0)
+                    out += "ン";
+            }
+            else if (c != 'l' && c != 'r')
+                out += "ッ";
+            ++j;
+        }
+
+        v = vowel_at(j);
+        if (v >= 0)
+        {
+            out += row->kana[v];
+            const char vc = s[j];
+            i = j + 1;
+            if (i < n && s[i] == vc && vowel_index(vc) >= 0)
+            {
+                out += "ー";
+                ++i;
+            }
+        }
+        else if (j + 1 < n && s[j] == 'y' && vowel_index(s[j + 1]) >= 0
+                 && strcmp(row->cons, "y") != 0)
+        {
+            // 「ky」+母音など: 「キャ」「ミュ」
+            out += row->kana[1];
+            out += small_kana[vowel_index(s[j + 1])];
+            i = j + 2;
+        }
+        else
+        {
+            if (c == 'm' && j < n && (s[j] == 'b' || s[j] == 'p'))
+                out += "ン";
+            else
+                out += row->coda;
+            i = j;
+        }
+    }
+    return out;
+}
+
 string make_artefact_name(const item_def &item, bool appearance)
 {
     ASSERT(is_artefact(item));
@@ -1631,27 +1837,26 @@ string make_artefact_name(const item_def &item, bool appearance)
     // get base type
     lookup += _get_artefact_type(item, appearance);
 
-    const string base_name = _base_name(item);
+    // 日本語の基本名。名前は日本語の語順で組み立てる(_join_name_j)。
+    const string base_name = _base_name_j(item);
     if (appearance)
     {
+        // 外見の形容は連体修飾の形(「輝く」)で、基本名の前に付く。
         string appear = getRandNameString(lookup, " appearance");
         if (appear.empty())
         {
             appear = getRandNameString("general appearance");
             if (appear.empty()) // still nothing found?
-                appear = "non-descript";
+                appear = "ありふれた";
         }
 
         result += appear;
-        result += " ";
         result += base_name;
         return result;
     }
 
     if (_pick_db_name(item))
     {
-        result += base_name + " ";
-
         int tries = 100;
         string name;
         do
@@ -1668,30 +1873,23 @@ string make_artefact_name(const item_def &item, bool appearance)
              // If still nothing found, try base type alone.
              || _artefact_name_lookup(name, item, _get_artefact_type(item)));
         }
-        while (--tries > 0 && strwidth(name) > 25);
+        while (--tries > 0
+               && (strwidth(name) > 25 || _is_ring_of_yendor(name, item)));
 
         if (name.empty()) // still nothing found?
-            result += "of Bugginess";
-        else
-            result += name;
+            name = "バグの";
+        result += _join_name_j(name, base_name);
     }
     else
     {
         // construct a unique name
-        const string st_p = make_name();
-        result += base_name;
+        // 英字の合成名をカタカナにして「<名>の」か『<名>』の形にする。
+        const string st_p = _katakana_name(make_name());
 
         if (one_chance_in(3))
-        {
-            result += " of ";
-            result += st_p;
-        }
+            result += _join_name_j(st_p + "の", base_name);
         else
-        {
-            result += " \"";
-            result += st_p;
-            result += "\"";
-        }
+            result += _join_name_j("『" + st_p + "』", base_name);
     }
 
     return result;
@@ -2066,7 +2264,8 @@ static string _ashenzari_artefact_name(item_def &item)
 
     item.orig_monnum = old_orig;
 
-    return _base_name(item) + " " + (name.empty() ? "of Ashenzari" : name);
+    return _join_name_j(name.empty() ? god_name_j(GOD_ASHENZARI) + "の" : name,
+                        _base_name_j(item));
 }
 
 void make_ashenzari_randart(item_def &item)

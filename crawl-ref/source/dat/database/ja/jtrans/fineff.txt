@@ -1,0 +1,108 @@
+%%%%
+%s reflects your damage back at you!
+
+%sはあなたの与えたダメージをそのまま返した！
+%%%%
+Your damage is reflected back at you!
+
+あなたの与えたダメージがそのまま返ってきた！
+%%%%
+suffers a backlash!
+
+は反撃を受けた！
+%%%%
+# %s は攻撃の強さの句読点(「。」「！」など)
+is wracked by anguish%s
+
+は苦悶に苛まれた%s
+%%%%
+# 2 番目の %s は [adv] の副詞(空のこともある)
+%s shudders%s.
+
+%sは%s身を震わせた。
+%%%%
+[adv]alarmingly
+
+猛烈に
+%%%%
+[adv]violently
+
+激しく
+%%%%
+[adv]vigorously
+
+勢いよく
+%%%%
+%s spits out another jelly.
+
+%sの体からジェリーが分裂した。
+%%%%
+%s spits out %s more jellies.
+
+%sは%s体のジェリーの群れを生み出した。
+%%%%
+One of the Royal Jelly's fragments survives.
+
+『ロイヤルジェリー』の破片の一つはまだ生き残っている。
+%%%%
+The dying Royal Jelly spits out %s more jellies.
+
+『ロイヤルジェリー』は死に際に%s体のジェリーの群れを生み出した。
+%%%%
+shudders and is absorbed by its neighbour.
+
+は身を震わせ、隣の群れと融合した。
+%%%%
+shudders and withdraws towards its neighbour.
+
+は身を震わせ、隣の群れの方へ退いた。
+%%%%
+# 「%s(〜の)%s(電気のオーラ)が%s(副詞)放電し、%sを感電させた%s(句読点)」
+%s %s discharges%s, shocking %s%s
+
+%s%sが%s放電し、%sを感電させた%s
+%%%%
+[shock source]electric aura
+
+電気のオーラ
+%%%%
+The air sparks with electricity, shocking %s%s
+
+電気の火花が空中で炸裂し、%sを感電させた%s
+%%%%
+%s is knocked back by the blast.
+
+%sは爆風で吹き飛ばされた。
+%%%%
+The injured %s weaves a defensive illusion!
+
+手負いの%sは身を守るために幻影を生み出した！
+%%%%
+%s bursts from %s!
+
+%sが%sの体内から飛び出してきた！
+%%%%
+You feel extremely nervous for a moment...
+
+あなたは一瞬きわめて神経質になった……
+%%%%
+A malignant aura surrounds %s.
+
+悪意のオーラが%sを包んだ。
+%%%%
+A flurry of magic pours from %s injured body!
+
+%s傷ついた体から魔力が奔流となって溢れ出した！
+%%%%
+%s orb unleashes a flurry of shooting stars!
+
+%s宝珠から流れ星が次々と放たれた！
+%%%%
+Your orb flickers with a hungry flame!
+
+あなたの宝珠が飢えた炎で揺らめいた！
+%%%%
+You consecrate your suffering and invoke the rites of blood!
+
+あなたは己の苦痛を捧げ、血の儀式を執り行った！
+%%%%

@@ -994,7 +994,8 @@ static int you_known_items(lua_State *ls)
                 item_def it = item_def();
                 it.base_type = basetype;
                 it.sub_type  = subtype;
-                lua_pushstring(ls, it.name(DESC_PLAIN, true).c_str());
+                // Lua は英語の名前で比べる
+                lua_pushstring(ls, item_name_en(it, DESC_PLAIN, true).c_str());
                 lua_rawseti(ls, -2, ++index);
             }
         }
@@ -1107,8 +1108,13 @@ LUARET1(you_have_orb, boolean, player_has_orb())
  */
 LUAFN(you_caught)
 {
+    // held_status() は日本語を返すので、Lua 用に英語で返す
+    // (autofight.lua は "You are " .. caught .. "!" を辞書で引く)
     if (you.caught())
-        lua_pushstring(ls, held_status(&you));
+    {
+        lua_pushstring(ls, you.caught_by() >= CAUGHT_NET ? "held in a net"
+                                                         : "caught in a web");
+    }
     else
         lua_pushnil(ls);
 

@@ -1,0 +1,25 @@
+%%%%
+Clearing travel trail.
+
+自動探索の足跡を消去した。
+%%%%
+You feel aware of your surroundings.
+
+あなたは周囲の地形を感知した。
+%%%%
+%d altar%s
+
+%dつの祭壇
+%%%%
+%d shop%s/portal%s
+
+%dつの商店またはポータル
+%%%%
+You sensed %s.
+
+あなたは%sを見つけた。
+%%%%
+Clearing monster memory.
+
+モンスターの記憶を消去した。
+%%%%

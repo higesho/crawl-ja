@@ -1,0 +1,34 @@
+# kills.cc: 撃破数の一覧(Vanquished Creatures と [kill category] の訳は clua.txt)
+%%%%
+Grand Total: %d creatures vanquished
+
+総計: %d体のモンスターを倒した
+%%%%
+Lua error:
+
+Lua のエラー:
+%%%%
+%d creatures vanquished.
+
+%d体のモンスターを倒した。
+%%%%
+%u creatures vanquished.
+
+%u体のモンスターを倒した。
+%%%%
+[kills]%d %s
+
+%d体の%s
+%%%%
+(once)
+
+(1回)
+%%%%
+(twice)
+
+(2回)
+%%%%
+(thrice)
+
+(3回)
+%%%%

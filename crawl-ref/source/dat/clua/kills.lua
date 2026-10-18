@@ -52,7 +52,7 @@ function group_kills(a, namemap, keys, selector)
                 kills.rawwrite("")
             end
             count = count + 1
-            kills.rawwrite("    " .. namemap[key])
+            kills.rawwrite("    " .. crawl.jtrans(namemap[key]))
             show_sorted_list(selected)
         end
     end
@@ -72,7 +72,7 @@ function holiness_list(a)
     local holysort = { "strange", "unique",
                        "natural", "nonliving",
                        "undead", "demonic", "plant" }
-    kills.rawwrite("  Monster Nature")
+    kills.rawwrite("  " .. crawl.jtrans("Monster Nature"))
     group_kills(a, holies, holysort,
         function (key, kill)
             return (kills.holiness(kill) == key and not kills.isunique(kill))
@@ -84,7 +84,7 @@ function holiness_list(a)
 end
 
 function count_list(a, ascending)
-    kills.rawwrite("  Ascending Order")
+    kills.rawwrite("  " .. crawl.jtrans("Ascending Order"))
     show_sorted_list(a,
         "  ",
         function (x, y)
@@ -113,7 +113,7 @@ function symbol_list(a)
     for sym, dud in pairs(allsyms) do table.insert(sortedsyms, sym) end
     table.sort(sortedsyms)
 
-    kills.rawwrite("  Monster Symbol")
+    kills.rawwrite("  " .. crawl.jtrans("Monster Symbol"))
     for i, sym in ipairs(sortedsyms) do
         if i > 1 then
             kills.rawwrite("")
@@ -124,7 +124,7 @@ function symbol_list(a)
                     return kills.symbol(k) == sym
                 end
         )
-        kills.rawwrite("    All '" .. sym .. "'")
+        kills.rawwrite("    " .. crawl.jtrans("All '%s'", sym))
         show_sorted_list(symlist)
     end
 
@@ -192,9 +192,10 @@ function c_kill_list(a, who, needsep)
         separator()
     end
 
-    local title = "Vanquished Creatures"
+    local title = crawl.jtrans("Vanquished Creatures")
     if who then
-        title = title .. " (" .. who .. ")"
+        -- who は kills.cc の英語の分類名("collateral kills", "others")
+        title = title .. " (" .. crawl.tagged_jtrans("[kill category]", who) .. ")"
     end
 
     kills.rawwrite(title)
@@ -235,7 +236,7 @@ function c_kill_list(a, who, needsep)
 
     -- Show only monsters with 3 digit kill count
     classic_list(
-        "  The 3-digit Club",
+        "  " .. crawl.jtrans("The 3-digit Club"),
         kill_filter(a,
             function (k)
                 return kills.nkills(k) > 99

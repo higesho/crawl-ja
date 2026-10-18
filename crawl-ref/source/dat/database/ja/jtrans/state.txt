@@ -1,0 +1,17 @@
+%%%%
+Can't repeat that command.
+
+このコマンドを繰り返すことはできません。
+%%%%
+Can't redo that command.
+
+このコマンドを再使用することはできません。
+%%%%
+Command repetition interrupted.
+
+繰り返しコマンド実行は中断されました。
+%%%%
+HP restored
+
+体力が全快した。
+%%%%

@@ -27,9 +27,14 @@ string hiscores_print_list(int display_count, int format, int newest_entry, int&
 void hiscores_print_all(int display_count = -1, int format = SCORE_TERSE);
 void show_hiscore_table();
 
+// 表示用(日本語)の行。スコアファイルの英語は scorefile_entry::hiscore_line()。
 string hiscores_format_single(const scorefile_entry &se);
 string hiscores_format_single_long(const scorefile_entry &se,
                                    bool verbose = false);
+
+// 英語で保存された名前(死因の相手・召喚者・神罰・変異の理由など)を
+// 表示用に訳す。日本語はそのまま、訳せなければ英語のまま返す。
+string death_name_j(const string &name);
 
 void mark_milestone(const string &type, const string &milestone,
                     const string &origin_level = "", time_t t = 0);
@@ -186,6 +191,13 @@ public:
     string death_place(death_desc_verbosity) const;
     string game_time(death_desc_verbosity) const;
 
+    // 表示用(日本語)。上の英語版はスコアファイル・マイルストーン用。
+    string hiscore_line_j(death_desc_verbosity verbosity) const;
+    string character_description_j(death_desc_verbosity) const;
+    string death_description_j(death_desc_verbosity) const;
+    string death_place_j(death_desc_verbosity) const;
+    string game_time_j(death_desc_verbosity) const;
+
     string get_name() const       { return name; }
     int    get_score() const      { return points; }
     int    get_death_type() const { return death_type; }
@@ -208,6 +220,8 @@ private:
     string death_source_desc() const;
     string damage_string(bool terse = false) const;
     string runes_gems_desc(bool semiverbose) const;
+    string damage_string_j(bool terse = false) const;
+    string runes_gems_desc_j() const;
 
     bool parse_scoreline(const string &line);
 

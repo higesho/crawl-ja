@@ -4,6 +4,7 @@
 
 #include "cloud.h"
 #include "coordit.h"
+#include "database.h"
 #include "directn.h"
 #include "dgn-overview.h"
 #include "env.h"
@@ -83,12 +84,12 @@ void clear_map_or_travel_trail()
 {
     if (Options.show_travel_trail && env.travel_trail.size())
     {
-        mpr("Clearing travel trail.");
+        mpr(jtrans("Clearing travel trail."));
         clear_travel_trail();
     }
     else
     {
-        mpr("Clearing monster memory.");
+        mpr(jtrans("Clearing monster memory."));
         /* Items (other than corpses) cannot in general be moved or destroyed
          * once they have been seen, so there is no need to clear them.
          */
@@ -136,7 +137,8 @@ void set_terrain_seen(const coord_def pos)
             && (!env.map_forgotten
                 || ~(*env.map_forgotten)(pos).flags & MAP_SEEN_FLAG))
         {
-            string desc = feature_description_at(pos, false, DESC_A) + ".";
+            // ノートには日本語の地形名を入れる(句点なし。文は notes.cc で組む)。
+            string desc = feature_description_at_j(pos, false, DESC_A);
             take_note(Note(NOTE_SEEN_FEAT, 0, 0, desc));
         }
     }
@@ -563,7 +565,7 @@ bool magic_mapping(int map_radius, int proportion, bool suppress_msg,
     if (!suppress_msg)
     {
         if (did_map)
-            mpr("You feel aware of your surroundings.");
+            mpr(jtrans("You feel aware of your surroundings."));
         else
             canned_msg(MSG_DISORIENTED);
 
@@ -571,19 +573,23 @@ bool magic_mapping(int map_radius, int proportion, bool suppress_msg,
 
         if (num_altars > 0)
         {
-            sensed.push_back(make_stringf("%d altar%s", num_altars,
+            sensed.push_back(make_stringf(jtransc("%d altar%s"), num_altars,
                                           num_altars > 1 ? "s" : ""));
         }
 
         if (num_shops_portals > 0)
         {
             const char* plur = num_shops_portals > 1 ? "s" : "";
-            sensed.push_back(make_stringf("%d shop%s/portal%s",
+            sensed.push_back(make_stringf(jtransc("%d shop%s/portal%s"),
                                           num_shops_portals, plur, plur));
         }
 
         if (!sensed.empty())
-            mpr_comma_separated_list("You sensed ", sensed);
+        {
+            mprf(jtransc("You sensed %s."),
+                 comma_separated_line(sensed.begin(), sensed.end(),
+                                      "と", "、").c_str());
+        }
     }
 
     return did_map;

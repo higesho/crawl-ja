@@ -1,0 +1,22 @@
+# dgl-message.cc(オンラインのメッセージ機能)
+%%%%
+Couldn't read %s: %s
+
+%s を読み込めない: %s
+%%%%
+Failed to lock %s: %s
+
+%s をロックできない: %s
+%%%%
+Unable to write lock %s: %s
+
+%s を書き込みロックできない: %s
+%%%%
+Your messages:
+
+あなた宛てのメッセージ:
+%%%%
+Beep! Your pager goes off! Use _ to check your messages.
+
+ピピッ！ポケベルが鳴った！ _ でメッセージを確認できる。
+%%%%

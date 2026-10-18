@@ -525,6 +525,8 @@ void ghost_demon::init_player_ghost()
     best_skill = ::best_skill(SK_FIRST_SKILL, SK_LAST_SKILL);
     best_skill_level = you.skills[best_skill];
     xl = you.experience_level;
+    // 日本語版の player_title() は日本語の称号を返すので、ゴーストファイルにも
+    // 日本語で保存される(英語の称号を返す関数が skills.cc にまだない)。
     title = player_title();
 
     flies = true;

@@ -1,0 +1,810 @@
+# chardump.cc: キャラクターダンプ
+%%%%
+Game seed:
+
+ゲームのシード:
+%%%%
+(custom seed)
+
+(シード指定)
+%%%%
+(classic levelgen)
+
+(旧式のレベル生成)
+%%%%
+%s version %s%s character file.
+
+%s 日本語版 %s%s キャラクターファイル
+%%%%
+You visited %d branches of the dungeon, and saw %d of its levels.
+
+あなたはダンジョンの%d個の支部を訪れ、%d個の階層を目にした。
+%%%%
+You have visited %d branches of the dungeon, and seen %d of its levels.
+
+あなたはダンジョンの%d個の支部を訪れ、%d個の階層を目にしている。
+%%%%
+You visited %d branch.
+
+あなたは%d個の支部を訪れた。
+%%%%
+You have visited %d branch.
+
+あなたは%d個の支部を訪れている。
+%%%%
+You visited Pandemonium %d times, and saw %d of its levels.
+
+あなたはパンデモニウムを%d回訪れ、%d個の階層を目にした。
+%%%%
+You have visited Pandemonium %d times, and seen %d of its levels.
+
+あなたはパンデモニウムを%d回訪れ、%d個の階層を目にしている。
+%%%%
+You visited the Abyss %d times.
+
+あなたはアビスを%d回訪れた。
+%%%%
+You have visited the Abyss %d times.
+
+あなたはアビスを%d回訪れている。
+%%%%
+You visited %d bazaars.
+
+あなたは%d回バザールを訪れた。
+%%%%
+You have visited %d bazaars.
+
+あなたは%d回バザールを訪れている。
+%%%%
+You visited the chambers of the Necropolis %d times.
+
+あなたは死者の都の部屋を%d回訪れた。
+%%%%
+You have visited the chambers of the Necropolis %d times.
+
+あなたは死者の都の部屋を%d回訪れている。
+%%%%
+You completed %d ziggurats
+
+あなたは%d個のジグラットを踏破し
+%%%%
+You have completed %d ziggurats
+
+あなたは%d個のジグラットを踏破し
+%%%%
+You visited %d ziggurats
+
+あなたは%d個のジグラットを訪れ
+%%%%
+You have visited %d ziggurats
+
+あなたは%d個のジグラットを訪れ
+%%%%
+(completing %d)
+
+(うち%d個を踏破)
+%%%%
+, and saw %d of their levels
+
+、%d個の階層を目にした
+%%%%
+, and have seen %d of their levels
+
+、%d個の階層を目にしている
+%%%%
+(deepest: %d)
+
+(最深: %d階)
+%%%%
+(%d times)
+
+(%d回)
+%%%%
+You also visited: %s.
+
+あなたは他に次の場所も訪れた: %s。
+%%%%
+You have also visited: %s.
+
+あなたは他に次の場所も訪れている: %s。
+%%%%
+You collected %d gold pieces.
+
+あなたは%d枚の金貨を集めた。
+%%%%
+You have collected %d gold pieces.
+
+あなたは%d枚の金貨を集めている。
+%%%%
+You spent %d gold pieces at shops.
+
+あなたは店で%d枚の金貨を使った。
+%%%%
+You have spent %d gold pieces at shops.
+
+あなたは店で%d枚の金貨を使っている。
+%%%%
+You donated %d gold pieces to Zin.
+
+あなたはジンに%d枚の金貨を寄進した。
+%%%%
+You have donated %d gold pieces to Zin.
+
+あなたはジンに%d枚の金貨を寄進している。
+%%%%
+You paid %d gold pieces to Gozag.
+
+あなたはゴザーグに%d枚の金貨を支払った。
+%%%%
+You have paid %d gold pieces to Gozag.
+
+あなたはゴザーグに%d枚の金貨を支払っている。
+%%%%
+You used %d gold pieces for miscellaneous purposes.
+
+あなたはその他の用途に%d枚の金貨を使った。
+%%%%
+You have used %d gold pieces for miscellaneous purposes.
+
+あなたはその他の用途に%d枚の金貨を使っている。
+%%%%
+Table legend: (Time is in decaauts)\n A = Elapsed time spent in this place.\n B = Non-inter-level travel time spent in this place.\n C = Inter-level travel time spent in this place.\n D = Time resting spent in this place.\n E = Time spent auto-exploring this place.\n F = Levels seen in this place.\n G = Mean time per level.
+
+表の見方: (時間の単位は 10aut)
+ A = この場所で経過した時間
+ B = この場所での階層間移動以外の移動時間
+ C = この場所での階層間移動の時間
+ D = この場所で休憩した時間
+ E = この場所で自動探索した時間
+ F = この場所で目にした階層の数
+ G = 1階層あたりの平均時間
+%%%%
+Top non-repeatable levels by time:
+
+時間のかかった階層(繰り返し訪れられない階層のみ):
+%%%%
+%s: %d daAuts
+
+%s: %d (10aut)
+%%%%
+Note: time per level data comes from an upgraded game and may be incomplete.
+
+注意: 階層ごとの時間はバージョンを更新したゲームのデータなので、不完全な場合がある。
+%%%%
+Table legend:\n A = Non-vault XP\n B = Vault XP\n C = Vault XP percentage of total XP\n D = Non-vault monster count\n E = Vault monster count\n F = Vault count percentage of total count
+
+表の見方:
+ A = vault 以外で得た経験値
+ B = vault で得た経験値
+ C = 全経験値に占める vault の経験値の割合
+ D = vault 以外のモンスターの数
+ E = vault のモンスターの数
+ F = 全モンスターに占める vault のモンスターの割合
+
+%%%%
+Conducts for god: %s
+
+%sに対する行い
+%%%%
+Piety from conduct
+
+行いによる信仰心
+%%%%
+Conduct
+
+行い
+%%%%
+Conduct count
+
+行いの回数
+%%%%
+Table legend:\n A = God\n B = Rank\n C = Start time\n D = Start piety\n E = Piety gained\n F = Piety on gifts\n G = Piety on penance\n H = Piety on stepdowns\n I = Piety decays\n J = Piety lost (inc. decay)
+
+表の見方:
+ A = 神
+ B = 位
+ C = 開始時期
+ D = 開始時の信仰心
+ E = 得た信仰心
+ F = 授かり物で減った信仰心
+ G = 贖罪で得た信仰心
+ H = 位の降格で減った信仰心
+ I = 自然に減った信仰心
+ J = 失った信仰心(自然減を含む)
+%%%%
+Lua dump error:
+
+Lua のダンプのエラー:
+%%%%
+Message History
+
+メッセージ履歴
+
+%%%%
+Illustrated notes
+
+画面つきのノート
+
+%%%%
+Turn %d on %s:
+
+%dターン、%s:
+%%%%
+Notes
+
+ノート
+%%%%
+Turn   | Place    | Note
+
+ターン | 場所     | ノート
+%%%%
+You escaped.
+
+あなたは脱出した。
+%%%%
+You were in %s.
+
+あなたは%sにいた。
+%%%%
+You are in %s.
+
+あなたは%sにいる。
+%%%%
+You worshipped %s.
+
+あなたは%sを信仰していた。
+%%%%
+You worship %s.
+
+あなたは%sを信仰している。
+%%%%
+%s was demanding penance.
+
+%sはあなたに贖罪を求めていた。
+%%%%
+%s is demanding penance.
+
+%sはあなたに贖罪を求めている。
+%%%%
+Skills:
+
+技能:
+%%%%
+You had one spell level left.
+
+呪文の空きレベルは残り1だった。
+%%%%
+You have one spell level left.
+
+呪文の空きレベルは残り1だ。
+%%%%
+You couldn't memorise any spells.
+
+これ以上呪文を覚えられなかった。
+%%%%
+You cannot memorise any spells.
+
+これ以上呪文を覚えられない。
+%%%%
+You had %d spell levels left.
+
+呪文の空きレベルは残り%dだった。
+%%%%
+You have %d spell levels left.
+
+呪文の空きレベルは残り%dだ。
+%%%%
+You didn't know any spells.
+
+あなたは呪文を一つも知らなかった。
+%%%%
+You knew the following spells:
+
+あなたは以下の呪文を知っていた:
+
+%%%%
+You know the following spells:
+
+あなたは以下の呪文を知っている:
+
+%%%%
+Your spell library was empty.
+
+呪文ライブラリは空だった。
+
+%%%%
+Your spell library is empty.
+
+呪文ライブラリは空だ。
+
+%%%%
+Your spell library contained the following spells:
+
+呪文ライブラリには以下の呪文があった:
+
+%%%%
+Your spell library contains the following spells:
+
+呪文ライブラリには以下の呪文がある:
+
+%%%%
+Table legend:\n A = Kills in this place as a percentage of kills in the entire game.\n B = Kills by you in this place as a percentage of kills by you in\n     the entire game.\n C = Kills by friends in this place as a percentage of kills by\n     friends in the entire game.\n D = Other kills in this place as a percentage of other kills in the\n     entire game.\n E = Experience gained in this place as a percentage of experience\n     gained in the entire game.\n F = Experience gained in this place divided by the number of levels of\n     this place that you have seen.
+
+表の見方:
+ A = ゲーム全体の撃破数に占める、この場所での撃破数の割合
+ B = ゲーム全体のあなたの撃破数に占める、この場所でのあなたの撃破数の割合
+ C = ゲーム全体の味方の撃破数に占める、この場所での味方の撃破数の割合
+ D = ゲーム全体のその他の撃破数に占める、この場所でのその他の撃破数の割合
+ E = ゲーム全体で得た経験値に占める、この場所で得た経験値の割合
+ F = この場所で得た経験値を、この場所で目にした階層の数で割ったもの
+
+%%%%
+Levels and vault maps discovered:
+
+見つけた階層と vault のマップ:
+%%%%
+DLua errors:
+
+DLua のエラー:
+%%%%
+Skill      XL:
+
+技能       XL:
+%%%%
+Apostles:
+
+使徒:
+
+%%%%
+Char dumped successfully.
+
+キャラクターダンプを書き出した。
+%%%%
+Char dumped to '%s'.
+
+キャラクターダンプを'%s'に書き出した。
+%%%%
+Error opening file '%s'
+
+ファイル'%s'を開けなかった
+%%%%
+[dump]Total
+
+合計
+%%%%
+[dump]Type
+
+系統
+%%%%
+[dump]Power
+
+威力
+%%%%
+[dump]Damage
+
+ダメージ
+%%%%
+[dump]Failure
+
+失敗率
+%%%%
+[dump]Level
+
+レベル
+%%%%
+[dump]Your Spells
+
+あなたの呪文
+%%%%
+[dump]Spells
+
+呪文
+%%%%
+[dump]Unusable
+
+使用不可
+%%%%
+[desc action]Action
+
+行動
+%%%%
+[desc action]Melee
+
+近接
+%%%%
+[desc action]Fire
+
+射撃
+%%%%
+[desc action]Throw
+
+投擲
+%%%%
+[desc action]Armour
+
+防具
+%%%%
+[desc action]Block
+
+防御
+%%%%
+[desc action]Dodge
+
+回避
+%%%%
+[desc action]Cast
+
+詠唱
+%%%%
+[desc action]Invoke
+
+祈祷
+%%%%
+[desc action]Ability
+
+能力
+%%%%
+[desc action]Evoke
+
+発動
+%%%%
+[desc action]Use
+
+使用
+%%%%
+[desc action]Stab
+
+急所
+%%%%
+[desc action]Eat
+
+食事
+%%%%
+[desc action]Riposte
+
+反撃
+%%%%
+[desc action]Form
+
+変身
+%%%%
+[desc action]Attack
+
+攻撃
+%%%%
+[desc action]Drink
+
+飲む
+%%%%
+[desc action]Read
+
+読む
+%%%%
+[desc action]Error
+
+エラー
+%%%%
+[desc action]Other
+
+その他
+%%%%
+[desc action]Unarmed
+
+素手
+%%%%
+[desc action]Reflection
+
+反射
+%%%%
+[desc action]Dodged
+
+回避
+%%%%
+[desc action]Repelled
+
+逸らした
+%%%%
+[desc action]None
+
+なし
+%%%%
+[desc action]Default
+
+通常の姿
+%%%%
+[desc action]Wand
+
+ワンド
+%%%%
+[desc action]Rod
+
+ロッド
+%%%%
+[desc action]Deck
+
+デッキ
+%%%%
+[desc action]Miscellaneous
+
+道具
+%%%%
+[desc action]tome
+
+魔導書
+%%%%
+[desc action]Removed food
+
+(削除された食料)
+%%%%
+[desc action]Normal
+
+通常
+%%%%
+[desc action]Distracted
+
+注意散漫
+%%%%
+[desc action]Confused
+
+混乱
+%%%%
+[desc action]Fleeing
+
+逃走中
+%%%%
+[desc action]Invisible
+
+不可視
+%%%%
+[desc action]Held in net/web
+
+網・蜘蛛の巣に捕縛
+%%%%
+[desc action]Petrifying
+
+石化中
+%%%%
+[desc action]Petrified
+
+石化
+%%%%
+[desc action]Paralysed
+
+麻痺
+%%%%
+[desc action]Sleeping
+
+睡眠
+%%%%
+[desc action]Betrayed ally
+
+裏切った味方
+%%%%
+[desc action]Blind
+
+盲目
+%%%%
+[desc action]No attack
+
+攻撃なし
+%%%%
+[desc action]Constrict
+
+締め付け
+%%%%
+[desc action]Kick
+
+蹴り
+%%%%
+[desc action]Headbutt
+
+頭突き
+%%%%
+[desc action]Peck
+
+つつき
+%%%%
+[desc action]Tailslap
+
+尻尾打ち
+%%%%
+[desc action]Touch
+
+接触
+%%%%
+[desc action]Punch
+
+パンチ
+%%%%
+[desc action]Bite
+
+噛みつき
+%%%%
+[desc action]Pseudopods
+
+偽足
+%%%%
+[desc action]Tentacles
+
+触手
+%%%%
+[desc action]Maw
+
+大口
+%%%%
+[desc action]Executioner Blades
+
+処刑の刃
+%%%%
+[desc action]Fungal Fists
+
+菌類の拳
+%%%%
+[desc action]Stingers
+
+毒針
+%%%%
+[desc action]Blades
+
+刃
+%%%%
+[desc action]Lunge
+
+突進
+%%%%
+[desc action]Whirlwind
+
+旋風
+%%%%
+[desc action]Spellmotor
+
+呪文駆動
+%%%%
+[desc action]Spellclaws
+
+呪文の爪
+%%%%
+[desc action]Drunken Brawl
+
+酔拳
+%%%%
+[desc action]Sundering
+
+粉砕
+%%%%
+[conduct]Evil
+
+邪悪
+%%%%
+[conduct]Holy
+
+神聖
+%%%%
+[conduct]Attack Holy
+
+神聖な者への攻撃
+%%%%
+[conduct]Attack Neutral
+
+中立の者への攻撃
+%%%%
+[conduct]Attack Friend
+
+味方への攻撃
+%%%%
+[conduct]Kill Living
+
+生者の殺害
+%%%%
+[conduct]Kill Undead
+
+アンデッドの殺害
+%%%%
+[conduct]Kill Demon
+
+悪魔の殺害
+%%%%
+[conduct]Kill Natural Evil
+
+邪悪な生き物の殺害
+%%%%
+[conduct]Kill Unclean
+
+不浄な者の殺害
+%%%%
+[conduct]Kill Chaotic
+
+混沌の者の殺害
+%%%%
+[conduct]Kill Wizard
+
+魔法使いの殺害
+%%%%
+[conduct]Kill Priest
+
+僧侶の殺害
+%%%%
+[conduct]Kill Holy
+
+神聖な者の殺害
+%%%%
+[conduct]Kill Fast
+
+素早い者の殺害
+%%%%
+[conduct]Banishment
+
+追放
+%%%%
+[conduct]Spell Memorise
+
+呪文の習得
+%%%%
+[conduct]Spell Cast
+
+呪文の詠唱
+%%%%
+[conduct]Spell Practise
+
+呪文の練習
+%%%%
+[conduct]Cannibalism
+
+共食い
+%%%%
+[conduct]Deliberate Mutation
+
+意図的な変異
+%%%%
+[conduct]Cause Glowing
+
+魔力汚染
+%%%%
+[conduct]Use Unclean
+
+不浄な物の使用
+%%%%
+[conduct]Use Chaos
+
+混沌の使用
+%%%%
+[conduct]Desecrate Orcish Remains
+
+オークの遺骸の冒涜
+%%%%
+[conduct]Kill Slime
+
+スライムの殺害
+%%%%
+[conduct]Was Hasty
+
+加速
+%%%%
+[conduct]Attack In Sanctuary
+
+聖域での攻撃
+%%%%
+[conduct]Kill Nonliving
+
+非生物の殺害
+%%%%
+[conduct]Exploration
+
+探索
+%%%%
+[conduct]Seen Monster
+
+モンスターの発見
+%%%%
+[conduct]Sacrificed Love
+
+愛の代償
+%%%%
+[conduct]Hurt Foe
+
+敵への攻撃
+%%%%
+[conduct]Use Wizardly Item
+
+魔術の品の使用
+%%%%

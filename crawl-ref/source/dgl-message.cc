@@ -11,6 +11,7 @@
 #include <unistd.h>
 #endif
 
+#include "database.h"
 #include "files.h"
 #include "initfile.h"
 #include "libutil.h"
@@ -57,7 +58,7 @@ static void _read_each_message()
     FILE *mf = fopen_u(SysEnv.messagefile.c_str(), "r+");
     if (!mf)
     {
-        mprf(MSGCH_ERROR, "Couldn't read %s: %s", SysEnv.messagefile.c_str(),
+        mprf(MSGCH_ERROR, jtransc("Couldn't read %s: %s"), SysEnv.messagefile.c_str(),
              strerror(errno));
         _kill_messaging(mf);
         return;
@@ -68,7 +69,7 @@ static void _read_each_message()
 
     if (!lock_file_handle(mf, false))
     {
-        mprf(MSGCH_ERROR, "Failed to lock %s: %s", SysEnv.messagefile.c_str(),
+        mprf(MSGCH_ERROR, jtransc("Failed to lock %s: %s"), SysEnv.messagefile.c_str(),
              strerror(errno));
         _kill_messaging(mf);
         return;
@@ -86,7 +87,7 @@ static void _read_each_message()
 
             if (say_got_msg)
             {
-                mprf(MSGCH_DGL_MESSAGE, "Your messages:");
+                mprf(MSGCH_DGL_MESSAGE, jtransc("Your messages:"));
                 say_got_msg = false;
             }
 
@@ -95,7 +96,7 @@ static void _read_each_message()
 
         if (!lock_file_handle(mf, false))
         {
-            mprf(MSGCH_ERROR, "Failed to lock %s: %s",
+            mprf(MSGCH_ERROR, jtransc("Failed to lock %s: %s"),
                  SysEnv.messagefile.c_str(),
                  strerror(errno));
             _kill_messaging(mf);
@@ -104,7 +105,7 @@ static void _read_each_message()
     }
     if (!lock_file_handle(mf, true))
     {
-        mprf(MSGCH_ERROR, "Unable to write lock %s: %s",
+        mprf(MSGCH_ERROR, jtransc("Unable to write lock %s: %s"),
              SysEnv.messagefile.c_str(),
              strerror(errno));
     }
@@ -125,7 +126,7 @@ void read_messages()
 static void _announce_messages()
 {
     // XXX: We could do a NetHack-like mail daemon here at some point.
-    mprf(MSGCH_DGL_MESSAGE, "Beep! Your pager goes off! Use _ to check your messages.");
+    mprf(MSGCH_DGL_MESSAGE, jtransc("Beep! Your pager goes off! Use _ to check your messages."));
 }
 
 void check_messages()

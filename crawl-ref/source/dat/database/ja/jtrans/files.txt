@@ -1,0 +1,273 @@
+%%%%
+Incomplete or corrupted data directory '%s'
+
+データディレクトリ'%s'が不完全か、破損しています
+%%%%
+Data directory '%s' found.
+
+データディレクトリ'%s'が見つかりました。
+%%%%
+Your summoned allies are left behind.
+
+召喚されたあなたの従者たちは置き去りにされた。
+%%%%
+Your summoned ally is left behind.
+
+召喚されたあなたの従者は置き去りにされた。
+%%%%
+Your mindless puppets stay behind to rot.
+
+あなたの知性なき下僕たちは置き去りにされ、朽ちるに任された。
+%%%%
+Your mindless puppet stays behind to rot.
+
+あなたの知性なき下僕は置き去りにされ、朽ちるに任された。
+%%%%
+Your mindless puppets stay behind.
+
+あなたの知性なき下僕たちはその場に残された。
+%%%%
+Your mindless puppet stays behind.
+
+あなたの知性なき下僕はその場に残された。
+%%%%
+Second portal entrance for %s!
+
+%sへの2つ目のポータルの入口があります！
+%%%%
+Portal %s already exists!
+
+ポータル%sは既に存在します！
+%%%%
+Generating dungeon...
+
+ダンジョンを生成しています……
+%%%%
+building a lair branch
+
+獣の巣の支部を構築中
+%%%%
+building another lair branch
+
+獣の巣のもう一つの支部を構築中
+%%%%
+building %s
+
+%sを構築中
+%%%%
+Emergency fixup: removing player from wall at %d,%d. Please report this as a bug!
+
+緊急修正: 壁の中(%d,%d)からプレイヤーを移動します。バグとして報告してください！
+%%%%
+Fixing up corrupted PlaceInfo for %s (levels_seen is %d)
+
+%sの破損した PlaceInfo を修正します(levels_seen: %d)
+%%%%
+Level annotation: %s
+
+階層の特記事項: %s
+%%%%
+# 階段から逃げられる効果。最初の %s は地形名、次の %s は [stair slide verb] の動詞(終止形)。
+%s slides away from you right after you %s it!
+
+あなたが%sを%sやいなや、それは滑るように移動して遠ざかった！
+%%%%
+[stair slide verb]climb
+
+使う
+%%%%
+[stair slide verb]use
+
+使う
+%%%%
+[stair slide verb]pass through
+
+通り抜ける
+%%%%
+%s settles down.
+
+%sはその場で動かなくなった。
+%%%%
+See you soon, %s!
+
+また会いましょう、%s！
+%%%%
+Bones file exists but can't be opened: %s
+
+骨ファイルはありますが、開けません: %s
+%%%%
+Unable to open bones file %s for writing
+
+骨ファイル%sを書き込み用に開けません
+%%%%
+Error installing bones file to %s
+
+骨ファイルを%sに設置できませんでした
+%%%%
+Failed to unlink probably corrupt bones file: %s
+
+破損している可能性のある骨ファイルを削除できませんでした: %s
+%%%%
+Bones file to back up doesn't exist: %s
+
+バックアップする骨ファイルがありません: %s
+%%%%
+Unable to open bones backup file %s for writing
+
+骨ファイルのバックアップ%sを書き込み用に開けません
+%%%%
+Error backing up bones file to %s
+
+骨ファイルを%sにバックアップできませんでした
+%%%%
+Ghost file "%s" seems to be invalid (short read); deleting it.
+
+ゴーストファイル"%s"は不正なようです(読み込みが途中で終わりました)。削除します。
+%%%%
+Incompatible bones file: %s
+
+互換性のない骨ファイル: %s
+%%%%
+Broken bones file: %s
+
+壊れた骨ファイル: %s
+%%%%
+Bones file is buggy: %s
+
+骨ファイルに不具合があります: %s
+%%%%
+Mismatch between bones backup filename '%s' and version %d.%d!
+
+骨ファイルのバックアップのファイル名'%s'とバージョン%d.%dが一致しません！
+%%%%
+Failed to unlink bad bones file
+
+不正な骨ファイルを削除できませんでした
+%%%%
+Clearing bad bones file
+
+不正な骨ファイルを削除します
+%%%%
+Failed to unlink bones file: %s
+
+骨ファイルを削除できませんでした: %s
+%%%%
+Placed ghost is not alive.
+
+配置したゴーストが生きていません。
+%%%%
+Placed ghost is not MONS_PLAYER_GHOST, but %s
+
+配置したゴーストが MONS_PLAYER_GHOST ではなく%sです
+%%%%
+There is an existing game for name '%s' from an incompatible version of Crawl (%s).
+
+'%s'という名前で、互換性のないバージョンの Crawl (%s) のゲームが保存されています。
+%%%%
+Unless you reinstall that version, you can't load it.
+
+該当するバージョンをインストールしないと読み込みできません。
+%%%%
+Do you want to DELETE that game and start a new one?
+
+このセーブデータを削除して新たにゲームを開始しますか？
+%%%%
+%s is from an incompatible version and can't be loaded.
+
+%sは互換性のないバージョンのゲームなので読み込めません。
+%%%%
+# %s はゲームの種類([game type])
+You already have %s game saved under the name '%s';\ndo you want to load that instead?
+
+%sのゲームが'%s'という名前で既に保存されています。\n代わりにそちらを読み込みますか？
+%%%%
+[game type]regular
+
+通常
+%%%%
+Please use a different name to start a new %s game, then.
+
+新しく%sのゲームを始めるには、別の名前を使ってください。
+%%%%
+This game comes from a previous release of Crawl (%s).\n\nIf you load it now, you won't be able to go back. Continue?
+
+このゲームは以前のリリースの Crawl (%s) のものです。\n\n今読み込むと、元のバージョンには戻せなくなります。続けますか？
+%%%%
+Please use version %s to load %s then.
+
+バージョン%sを使って%sを読み込んでください。
+%%%%
+There exists a save by that name but it appears to be invalid.\nDo you want to delete it?\nError: %s
+
+その名前のセーブデータがありますが、不正なデータのようです。\n削除しますか？\nエラー: %s
+%%%%
+This Lava Orc save game cannot be loaded as-is. If you load it now,\nyour character will be converted to a Mountain Dwarf. Continue?
+
+この溶岩オークのセーブデータはそのままでは読み込めません。今読み込むと、\nキャラクターは山ドワーフに変換されます。続けますか？
+%%%%
+Please load the save in an earlier version if you want to keep it as a Lava Orc.
+
+溶岩オークのままにしたい場合は、以前のバージョンでセーブデータを読み込んでください。
+%%%%
+This Vampire save game cannot be loaded as-is. If you load it now,\nyour character will be converted to a Human. Continue?
+
+この吸血鬼のセーブデータはそのままでは読み込めません。今読み込むと、\nキャラクターは人間に変換されます。続けますか？
+%%%%
+Please load the save in an earlier version if you want to remain a Vampire.
+
+吸血鬼のままにしたい場合は、以前のバージョンでセーブデータを読み込んでください。
+%%%%
+File is corrupt (found version %d,%d).
+
+ファイルが破損しています(バージョン %d,%d)。
+%%%%
+This save is from an older version.
+
+このセーブデータは古いバージョンのものです。
+%%%%
+# 最初の %s は "Dungeon Crawl Stone Soup"、次はバージョン
+%s %s is not compatible with save files this old. You can:
+
+%s %sはこれほど古いセーブデータには対応していません。次のどちらかを選んでください:
+%%%%
+continue your game with an older version of %s
+
+古いバージョンの%sでゲームを続ける
+%%%%
+delete it and start a new game
+
+セーブデータを削除して新しいゲームを始める
+%%%%
+This save's version: (%d.%d) (must be >= %d.%d)
+
+このセーブデータのバージョン: (%d.%d) (%d.%d以上が必要)
+%%%%
+This save is from a newer version.
+
+このセーブデータは新しいバージョンのものです。
+%%%%
+%s cannot load saves from newer versions. You can:
+
+%sは新しいバージョンのセーブデータを読み込めません。次のどちらかを選んでください:
+%%%%
+continue your game with a newer version of %s
+
+新しいバージョンの%sでゲームを続ける
+%%%%
+This save's version: (%d.%d) (must be <= %d.%d)
+
+このセーブデータのバージョン: (%d.%d) (%d.%d以下が必要)
+%%%%
+# _restore_tagged_chunk() に渡す complaint
+Level file is invalid.
+
+階層のファイルが不正です。
+%%%%
+Save data is invalid.
+
+セーブデータが不正です。
+%%%%
+ERROR: Could not lock file %s
+
+エラー: ファイル%sをロックできません
+%%%%

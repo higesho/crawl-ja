@@ -253,6 +253,13 @@ static void _monster_headsup(const vector<monster*> &monsters,
             get_monster_equipment_desc(mi, level, DESC_NONE));
         if (mon->type == MONS_DANCING_WEAPON && monsters.size() > 1)
             out << make_stringf(jtransc("There is %s."), equip.c_str());
+        else if (mon->type == MONS_DANCING_WEAPON)
+        {
+            // 踊る武器の DESC_WEAPON は武器の名前(名詞)なので「〜だ。」にする
+            out << make_stringf(tagged_jtransc("[encounter dancing weapon]",
+                                               "%s is %s."),
+                                monname.c_str(), equip.c_str());
+        }
         else
         {
             out << make_stringf(tagged_jtransc("[encounter equipment]",
@@ -614,8 +621,17 @@ void seen_monster(monster* mons, bool do_encounter_message)
         string name = mons->name(DESC_A, true);
         if (mons->type == MONS_PLAYER_GHOST)
         {
-            name += make_stringf(" (%s)",
-                                 short_ghost_description(mons, true).c_str());
+            // short_ghost_description() は英語の「階級 種族職業の略号」。
+            // 先頭の階級(1 語)だけ訳す(訳は describe.txt の [xl rank])。
+            string ghost_desc = short_ghost_description(mons, true);
+            const size_t sp = ghost_desc.find(' ');
+            if (sp != string::npos)
+            {
+                ghost_desc = tagged_jtrans("[xl rank]",
+                                           ghost_desc.substr(0, sp))
+                             + ghost_desc.substr(sp);
+            }
+            name += make_stringf(" (%s)", ghost_desc.c_str());
         }
         else if (mons->flags & MF_KNOWN_SHIFTER)
         {

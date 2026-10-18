@@ -13,6 +13,7 @@
 #include "art-enum.h" // unrand -> magic staff silliness
 #include "artefact.h"
 #include "colour.h"
+#include "database.h"
 #include "describe.h"
 #include "dungeon.h"
 #include "item-name.h"
@@ -54,7 +55,8 @@ int create_item_named(string name, coord_def pos, string *error)
     if (item != NON_ITEM)
         link_items();
     else if (error)
-        *error = "Failed to create item '" + name + "'";
+        *error = make_stringf(jtransc("Failed to create item '%s'"),
+                              name.c_str());
 
     return item;
 }
@@ -2349,7 +2351,7 @@ void lucky_upgrade_item(item_def& item)
         // Messaging is really weird if we don't do this, and it seems a
         // relatively unimportant freebie.
         identify_item(item);
-        mprf("<cyan>Lucky! %s was actually %s</cyan>!", old_name.c_str(), item.name(DESC_THE).c_str());
+        mprf(jtransc("<cyan>Lucky! %s was actually %s</cyan>!"), old_name.c_str(), item.name(DESC_THE).c_str());
     }
 }
 

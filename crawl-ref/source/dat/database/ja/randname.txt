@@ -1,0 +1,2426 @@
+# randname.txt(ランダムアーティファクト名のテンプレートと外見)。
+# 0.19-ja の訳を 0.34 のキーに合わせて移し、増えた項目を追訳。
+# artefact.cc が日本語の語順で組み立てて props に保存する:
+#   「〜の」で終わる名前(英語の "of X")は基本名の前、
+#   『〜』の名前(英語の "\"X\"")は基本名の後ろに付く。
+#   外見(appearance)は連体修飾の形で基本名の前に付く。
+
+%%%%
+weapon
+
+# en:
+#   of @_power_or_anger_@
+#
+#   of @_battle_or_war_@
+#
+#   w:1
+#   of @player_doom@
+#
+#   w:8
+#   of @death_or_doom@
+#
+#   w:1
+#   of @_verbing_@ @death_or_doom@
+#
+#   w:6
+#   of @_adjective_@ @_strategy_or_justice_@
+#
+#   of @_strategy_or_justice_@
+#
+#   w:3
+#   of the @_verbing_@ @_people_name_@
+#
+#   w:3
+#   of the @_people_name_@
+#
+#   w:2
+#   of the @_verbing_@ @_diviner_name_@
+#
+#   w:5
+#   of the @_verbing_@ @_weapon_animal_@
+#
+#   w:5
+#   of the @_weapon_animal_@
+#
+#   w:2
+#   of the @_plant_name_@
+#
+#   w:7
+#   of @_evil_stuff_@
+#
+#   w:5
+#   of @_catastrophe_name_@
+#
+#   w:8
+#   of @_chaos_name_@
+#
+#   w:8
+#   of @_balance_or_order_@
+#
+#   of @_economics_or_politics_@
+#
+#   w:8
+#   of @branch_name@
+#
+#   w:7
+#   of @_place_name_@
+#
+#   w:5
+#   of @_discomfort_weapon_@
+#
+#   w:4
+#   of the @_item_name_@
+#
+#   w:1
+#   of @_magic_name_@
+#
+#   w:5
+#   of @_substance_name_@
+#
+#   w:7
+#   of @_science_name_@
+#
+#   w:5
+#   of @other_weapon_name@
+#
+#   w:30
+#   "@_plain_weapon_name_@"
+#
+#   w:5
+#   of @_time_name_@
+#
+#   w:5
+#   of @_sky_or_light_@
+#
+#   w:18
+#   of @_virtue_or_vice_@
+#
+#   of @_number_or_qualifier_@ @_thing_names_@
+#
+#   w:5
+#   of @_destiny_name_@
+#
+#   w:9
+#   of @god_name_possessive@ @divine_esteem@
+#
+#   w:4
+#   of the @_verbing_@ Gods
+#
+#   w:4
+#   of the @_adjective_@ God
+#
+#   w:2
+#   of @god_name@, @_verbing_@
+#
+#   w:1
+#   of @god_name@
+@_power_or_anger_@の
+
+@_battle_or_war_@の
+
+w:1
+@player_doom@の
+
+w:8
+@death_or_doom@の
+
+w:1
+@_verbing_@@death_or_doom@の
+
+w:6
+@_adjective_@@_strategy_or_justice_@の
+
+@_strategy_or_justice_@の
+
+w:3
+@_verbing_@@_people_name_@の
+
+w:3
+@_people_name_@の
+
+w:2
+@_verbing_@@_diviner_name_@の
+
+w:5
+@_verbing_@@_weapon_animal_@の
+
+w:5
+@_weapon_animal_@の
+
+w:2
+@_plant_name_@の
+
+w:7
+@_evil_stuff_@の
+
+w:5
+@_catastrophe_name_@の
+
+w:8
+@_chaos_name_@の
+
+w:8
+@_balance_or_order_@の
+
+@_economics_or_politics_@の
+
+w:8
+@branch_name@の
+
+w:7
+@_place_name_@の
+
+w:5
+@_discomfort_weapon_@の
+
+w:4
+@_item_name_@の
+
+w:1
+@_magic_name_@の
+
+w:5
+@_substance_name_@の
+
+w:7
+@_science_name_@の
+
+w:5
+@other_weapon_name@の
+
+w:30
+『@_plain_weapon_name_@』
+
+w:5
+@_time_name_@の
+
+w:5
+@_sky_or_light_@の
+
+w:18
+@_virtue_or_vice_@の
+
+@_number_or_qualifier_@@_thing_names_@の
+
+w:5
+@_destiny_name_@の
+
+w:9
+@god_name_possessive@@divine_esteem@の
+
+w:4
+@_verbing_@神々の
+
+w:4
+@_adjective_@神の
+
+w:2
+@_verbing_@@god_name@の
+
+w:1
+@god_name@の
+%%%%
+talisman
+
+# en:
+#   @armour@
+@armour@
+%%%%
+armour
+
+# en:
+#   of @_armour_name_shielding_@
+#
+#   w:8
+#   of @_armour_property_name_@
+#
+#   w:20
+#   of @_wacky_armour_name_@
+#
+#   of the @_profession_name_@
+#
+#   w:5
+#   of the @_adjective_@ @_profession_name_@
+#   of @_politics_name_armour_@
+#
+#   w:3
+#   of @_weather_name_@
+#
+#   w:9
+#   of @_good_or_divine_@
+#
+#   w:9
+#   of @_adjective_@ @_good_or_divine_@
+#
+#   w:5
+#   of the @_celestial_bodies_@
+#
+#   w:5
+#   of @_instrument_name_@
+#
+#   w:20
+#   of the @_armour_animal_@
+#
+#   w:1
+#   of the @_adjective_@ @_armour_animal_@
+#
+#   w:3
+#   of @_flower_name_@
+#
+#   w:1
+#   of the @_fruit_name_@
+#
+#   w:2
+#   of the @_critter_name_@
+#
+#   w:1
+#   of the @_adjective_@ @_critter_name_@
+#
+#   w:5
+#   of @_evil_being_@
+#
+#   of @_discomfort_and_inaction_@
+#
+#   of @_game_name_@
+#
+#   w:15
+#   of @_other_armour_name_@
+#
+#   w:2
+#   "@_plain_armour_name_@"
+#
+#   w:25
+#   of @_philosophy_or_science_@
+#
+#   w:15
+#   of @_place_name_@
+#
+#   of @_time_name_@
+#
+#   w:8
+#   of @_sky_or_light_@
+#
+#   w:30
+#   of @_virtue_or_vice_@
+#
+#   w:6
+#   of @_number_or_qualifier_@ @_verbing_@ @_thing_names_@
+#
+#   of @_number_or_qualifier_@ @_thing_names_@
+#
+#   w:20
+#   of @god_name_possessive@ @divine_esteem@
+#
+#   w:4
+#   of the @_verbing_@ Gods
+#
+#   w:4
+#   of the @_adjective_@ God
+#
+#   w:2
+#   of @god_name@, @_verbing_@
+#
+#   w:1
+#   of @god_name@
+#
+#   w:15
+#   of @branch_name@
+@_armour_name_shielding_@の
+
+w:8
+@_armour_property_name_@の
+
+w:20
+@_wacky_armour_name_@の
+
+@_profession_name_@の
+
+w:5
+@_adjective_@@_profession_name_@の
+
+@_politics_name_armour_@の
+
+w:3
+@_weather_name_@の
+
+w:9
+@_good_or_divine_@の
+
+w:9
+@_adjective_@@_good_or_divine_@の
+
+w:5
+@_celestial_bodies_@の
+
+w:5
+@_instrument_name_@の
+
+w:20
+@_armour_animal_@の
+
+w:1
+@_adjective_@@_armour_animal_@の
+
+w:3
+@_flower_name_@の
+
+w:1
+@_fruit_name_@の
+
+w:2
+@_critter_name_@の
+
+w:1
+@_adjective_@@_critter_name_@の
+
+w:5
+@_evil_being_@の
+
+@_discomfort_and_inaction_@の
+
+@_game_name_@の
+
+w:15
+@_other_armour_name_@の
+
+w:2
+『@_plain_armour_name_@』
+
+w:25
+@_philosophy_or_science_@の
+
+w:15
+@_place_name_@の
+
+@_time_name_@の
+
+w:8
+@_sky_or_light_@の
+
+w:30
+@_virtue_or_vice_@の
+
+w:6
+@_number_or_qualifier_@@_verbing_@@_thing_names_@の
+
+@_number_or_qualifier_@@_thing_names_@の
+
+w:20
+@god_name_possessive@@divine_esteem@の
+
+w:4
+@_verbing_@神々の
+
+w:4
+@_adjective_@神の
+
+w:2
+@_verbing_@@god_name@の
+
+w:1
+@god_name@の
+
+w:15
+@branch_name@の
+%%%%
+jewellery
+
+# en:
+#   w:3
+#   of the @_jewellery_animal_@
+#
+#   of @_jewellery_special_name_@
+#
+#   of @_suspicion_name_@
+#
+#   of the @_people_name_@
+#
+#   w:5
+#   of the @_verbing_@ @_people_name_@
+#
+#   w:17
+#   of @_balance_or_order_@
+#
+#   w:14
+#   of @_philosophy_name_@
+#
+#   of @other_weapon_name@
+#
+#   w:20
+#   of the @_armour_animal_@
+#
+#   w:3
+#   of @_flower_name_@
+#
+#   w:3
+#   of the @_adjective_@ @_fruit_name_@
+#
+#   w:5
+#   of @_evil_being_@
+#
+#   w:20
+#   of @_good_or_divine_@
+#
+#   w:12
+#   of @_politics_name_armour_@
+#
+#   w:2
+#   "@_plain_armour_name_@"
+#
+#   w:13
+#   of @_time_name_@
+#
+#   of @_sky_or_light_@
+#
+#   w:20
+#   of @god_name_possessive@ @divine_esteem@
+#
+#   w:4
+#   of the @_verbing_@ Gods
+#
+#   w:4
+#   of the @_adjective_@ God
+#
+#   w:2
+#   of @god_name@, @_verbing_@
+#
+#   of Xom's @_xom_esteem_@
+#
+#   w:7
+#   of @_virtue_name_@
+#
+#   w:13
+#   of @_vice_name_@
+#
+#   of @_number_or_qualifier_@ @_thing_names_@
+#
+#   of @_number_or_qualifier_@ @_verbing_@ @_thing_names_@
+w:3
+@_jewellery_animal_@の
+
+@_jewellery_special_name_@の
+
+@_suspicion_name_@の
+
+@_people_name_@の
+
+w:5
+@_verbing_@@_people_name_@の
+
+w:17
+@_balance_or_order_@の
+
+w:14
+@_philosophy_name_@の
+
+@other_weapon_name@の
+
+w:20
+@_armour_animal_@の
+
+w:3
+@_flower_name_@の
+
+w:3
+@_adjective_@@_fruit_name_@の
+
+w:5
+@_evil_being_@の
+
+w:20
+@_good_or_divine_@の
+
+w:12
+@_politics_name_armour_@の
+
+w:2
+『@_plain_armour_name_@』
+
+w:13
+@_time_name_@の
+
+@_sky_or_light_@の
+
+w:20
+@god_name_possessive@@divine_esteem@の
+
+w:4
+@_verbing_@神々の
+
+w:4
+@_adjective_@神の
+
+w:2
+@_verbing_@@god_name@の
+
+ゾムの@_xom_esteem_@の
+
+w:7
+@_virtue_name_@の
+
+w:13
+@_vice_name_@の
+
+@_number_or_qualifier_@@_thing_names_@の
+
+@_number_or_qualifier_@@_verbing_@@_thing_names_@の
+%%%%
+Trog weapon
+
+# en:
+#   w:20
+#   of @_power_or_anger_@
+#
+#   w:5
+#   of @_adjective_@ @_power_or_anger_@
+#
+#   w:20
+#   of @_battle_or_war_@
+#
+#   w:5
+#   of the @_verbing_@ @_battle_or_war_@
+#
+#   w:20
+#   of @death_or_doom@
+#
+#   w:5
+#   of @_adjective_@ @death_or_doom@
+#
+#   w:7
+#   of @_strategy_name_@
+#
+#   w:15
+#   of @_justice_name_@
+#
+#   w:30
+#   of @_virtue_or_vice_@
+#
+#   w:1
+#   of Trog
+#
+#   w:20
+#   of Trog's @divine_esteem@
+#
+#   of Trog's @_anger_quality_@
+#
+#   w:15
+#   of the @_weapon_animal_@
+#
+#   w:15
+#   of @_evil_stuff_@
+#
+#   of @_catastrophe_name_@
+#
+#   w:15
+#   of @_chaos_name_@
+#
+#   w:20
+#   of @_balance_or_order_@
+#
+#   w:20
+#   of @_economics_or_politics_@
+#
+#   w:15
+#   of @branch_name@
+#
+#   w:15
+#   of @_place_name_@
+#
+#   w:15
+#   of @_time_name_@
+#
+#   of @_sky_or_light_@
+#
+#   w:20
+#   of @_number_or_qualifier_@ @_thing_names_@
+#
+#   of @_discomfort_weapon_@
+#
+#   of the @_item_name_@
+#
+#   w:15
+#   of @_philosophy_name_@
+#
+#   of @_science_name_@
+#
+#   of @other_weapon_name@
+#
+#   of @_monster_name_@@killer_name@
+#
+#   w:30
+#   "@_plain_weapon_name_@"
+#
+#   "@_adjective_@ @_plain_weapon_name_@"
+w:20
+@_power_or_anger_@の
+
+w:5
+@_adjective_@@_power_or_anger_@の
+
+w:20
+@_battle_or_war_@の
+
+w:5
+@_verbing_@@_battle_or_war_@の
+
+w:20
+@death_or_doom@の
+
+w:5
+@_adjective_@@death_or_doom@の
+
+w:7
+@_strategy_name_@の
+
+w:15
+@_justice_name_@の
+
+w:30
+@_virtue_or_vice_@の
+
+w:1
+トログの
+
+w:20
+トログの@divine_esteem@の
+
+トログの@_anger_quality_@の
+
+w:15
+@_weapon_animal_@の
+
+w:15
+@_evil_stuff_@の
+
+@_catastrophe_name_@の
+
+w:15
+@_chaos_name_@の
+
+w:20
+@_balance_or_order_@の
+
+w:20
+@_economics_or_politics_@の
+
+w:15
+@branch_name@の
+
+w:15
+@_place_name_@の
+
+w:15
+@_time_name_@の
+
+@_sky_or_light_@の
+
+w:20
+@_number_or_qualifier_@@_thing_names_@の
+
+@_discomfort_weapon_@の
+
+@_item_name_@の
+
+w:15
+@_philosophy_name_@の
+
+@_science_name_@の
+
+@other_weapon_name@の
+
+@_monster_name_@@killer_name@の
+
+w:30
+『@_plain_weapon_name_@』
+
+『@_adjective_@@_plain_weapon_name_@』
+%%%%
+Okawaru weapon
+
+# en:
+#   w:400
+#   @weapon@
+#
+#   w:2
+#   of @player_name_possessive@ @_valour_name_@
+#
+#   w:3
+#   of Okawaru's @divine_esteem@
+#
+#   w:1
+#   of Okawaru, @_verbing_@
+#
+#   of @_strategy_or_justice_@
+#
+#   w:5
+#   of @_philosophy_name_@
+#
+#   w:3
+#   of @_balance_or_order_@
+#
+#   w:5
+#   of @_power_name_@
+#
+#   w:2
+#   of @_virtue_name_@
+#
+#   w:1
+#   of the @_diviner_name_@
+#
+#   w:5
+#   of the @_weapon_animal_@
+#
+#   w:5
+#   of @_place_name_@
+#
+#   w:2
+#   of @_item_name_@
+w:400
+@weapon@
+
+w:2
+@player_name_possessive@@_valour_name_@の
+
+w:3
+オカワルの@divine_esteem@の
+
+w:1
+@_verbing_@オカワルの
+
+@_strategy_or_justice_@の
+
+w:5
+@_philosophy_name_@の
+
+w:3
+@_balance_or_order_@の
+
+w:5
+@_power_name_@の
+
+w:2
+@_virtue_name_@の
+
+w:1
+@_diviner_name_@の
+
+w:5
+@_weapon_animal_@の
+
+w:5
+@_place_name_@の
+
+w:2
+@_item_name_@の
+%%%%
+Okawaru robe
+
+# en:
+#   @Okawaru armour@
+@Okawaru armour@
+%%%%
+Okawaru body armour
+
+# en:
+#   @Okawaru armour@
+@Okawaru armour@
+%%%%
+Okawaru armour
+
+# en:
+#   w:400
+#   @armour@
+#
+#   w:2
+#   of @player_name_possessive@ @_valour_name_@
+#
+#   w:2
+#   of Okawaru's @divine_esteem@
+#
+#   w:2
+#   of the @_armour_animal_@
+#
+#   w:1
+#   of @_good_or_divine_@
+#
+#   w:2
+#   of @_armour_name_shielding_@
+#
+#   w:1
+#   of @_armour_property_name_@
+#
+#   w:1
+#   of @_wacky_armour_name_@
+#
+#   w:2
+#   of @_politics_name_armour_@
+w:400
+@armour@
+
+w:2
+@player_name_possessive@@_valour_name_@の
+
+w:2
+オカワルの@divine_esteem@の
+
+w:2
+@_armour_animal_@の
+
+w:1
+@_good_or_divine_@の
+
+w:2
+@_armour_name_shielding_@の
+
+w:1
+@_armour_property_name_@の
+
+w:1
+@_wacky_armour_name_@の
+
+w:2
+@_politics_name_armour_@の
+%%%%
+Xom weapon
+
+# en:
+#   w:5
+#   of @_chaos_name_@
+#
+#   w:5
+#   of Xom's @_xom_esteem_@
+#
+#   w:2
+#   of Xom's @divine_esteem@
+#
+#   w:2
+#   "Xom, @_verbing_@ and @_verbing_@"
+#
+#   w:2
+#   of the @_verbing_@ @_fruit_name_@
+#
+#   w:1
+#   of @xom_name@
+#
+#   w:1
+#   of @_game_name_@
+#
+#   w:400
+#   @weapon@
+#
+#   @jewellery@
+#
+#   @armour@
+w:5
+@_chaos_name_@の
+
+w:5
+ゾムの@_xom_esteem_@の
+
+w:2
+ゾムの@divine_esteem@の
+
+w:2
+『@_verbing_@ゾム、@_verbing_@ゾム』
+
+w:2
+@_verbing_@@_fruit_name_@の
+
+w:1
+@xom_name@の
+
+w:1
+@_game_name_@の
+
+w:400
+@weapon@
+
+@jewellery@
+
+@armour@
+%%%%
+Xom robe
+
+# en:
+#   @Xom armour@
+@Xom armour@
+%%%%
+Xom body armour
+
+# en:
+#   @Xom armour@
+@Xom armour@
+%%%%
+Xom armour
+
+# en:
+#   w:5
+#   of @_chaos_name_@
+#
+#   w:5
+#   of Xom's @_xom_esteem_@
+#
+#   w:2
+#   of Xom's @divine_esteem@
+#
+#   w:2
+#   "@_adjective_@ Xom"
+#
+#   w:1
+#   of @xom_name@
+#
+#   w:1
+#   of @_game_name_@
+#
+#   w:1
+#   of @player_death@
+#
+#   w:400
+#   @armour@
+#
+#   @jewellery@
+w:5
+@_chaos_name_@の
+
+w:5
+ゾムの@_xom_esteem_@の
+
+w:2
+ゾムの@divine_esteem@の
+
+w:2
+『@_adjective_@ゾム』
+
+w:1
+@xom_name@の
+
+w:1
+@_game_name_@の
+
+w:1
+@player_death@の
+
+w:400
+@armour@
+
+@jewellery@
+%%%%
+Xom jewellery
+
+# en:
+#   w:5
+#   of @_chaos_name_@
+#
+#   w:5
+#   of Xom's @_xom_esteem_@
+#
+#   w:2
+#   of Xom's @divine_esteem@
+#
+#   w:2
+#   of @_verbing_@ Xom
+#
+#   w:1
+#   of @xom_name@
+#
+#   w:1
+#   of @_game_name_@
+#
+#   w:1
+#   of @player_death@
+#
+#   w:1
+#   of @player_doom@
+#
+#   w:300
+#   @jewellery@
+#
+#   @armour@
+w:5
+@_chaos_name_@の
+
+w:5
+ゾムの@_xom_esteem_@の
+
+w:2
+ゾムの@divine_esteem@の
+
+w:2
+@_verbing_@ゾムの
+
+w:1
+@xom_name@の
+
+w:1
+@_game_name_@の
+
+w:1
+@player_death@の
+
+w:1
+@player_doom@の
+
+w:300
+@jewellery@
+
+@armour@
+%%%%
+Ashenzari
+
+# en:
+#   w:100
+#   of the @_ashenzari_adjective_@ @_ashenzari_object_@
+#
+#   w:100
+#   of @god_name_possessive@ @_ashenzari_object_@
+#
+#   w:100
+#   "@_ashenzari_adjective_@ @_ashenzari_object_@"
+#
+#   w:50
+#   "@_ashenzari_object_@ of @god_name@"
+#
+#   w:100
+#   "@_ashenzari_object_@ of the @_ashenzari_epithet_@"
+#
+#   w:20
+#   "@_celestial_bodies_@ of the @_ashenzari_epithet_@"
+#
+#   w:20
+#   of the @_ashenzari_epithet_@
+#
+#   w:20
+#   of the @_ashenzari_bound_adjective_@ @_celestial_bodies_@
+#
+#   w:20
+#   of the @_ashenzari_knowledge_adjective_@ @_celestial_bodies_@
+#
+#   w:20
+#   of @god_name_possessive@ @_celestial_bodies_@
+#
+#   w:20
+#   "Share My @_ashenzari_object_@"
+#
+#   w:20
+#   "@_ashenzari_bound_adjective_@ With Me"
+#
+#   w:20
+#   "@_ashenzari_bound_adjective_@ Together"
+#
+#   of the @_ashenzari_bound_adjective_@ @_ashenzari_heavens_@
+#
+#   of the @_ashenzari_knowledge_adjective_@ @_ashenzari_heavens_@
+#
+#   of the Fated @_ashenzari_object_@
+#
+#   w:5
+#   of Apeoromancy
+#
+#   w:5
+#   "At What Cost Knowledge?"
+#
+#   w:5
+#   "Behold Eternity"
+#
+#   w:5
+#   of Cremastomancy
+#
+#   w:5
+#   of Curses and Power
+#
+#   w:5
+#   of Desmomancy
+#
+#   w:5
+#   of the Eye in the Sky
+#
+#   w:5
+#   "Gaze Upon Infinity"
+#
+#   w:5
+#   "I Knew You'd Do That"
+#
+#   w:5
+#   "I Foresaw This"
+#
+#   w:5
+#   of Ouranomancy
+#
+#   w:5
+#   "Overhang to Understand"
+#
+#   w:5
+#   "Per Aspera Ad Scientiam"
+#
+#   w:5
+#   of Panopticon
+#
+#   w:5
+#   of Star-Bound Wisdom
+#
+#   w:5
+#   of Supernal Gnosis
+#
+#   w:5
+#   of Supernal Knowledge
+#
+#   w:5
+#   of Supernal Understanding
+#
+#   w:5
+#   of Supernal Wisdom
+#
+#   w:5
+#   "Thunder Perfect Mind"
+#
+#   w:5
+#   of Toth-Mos' Legacy
+#
+#   w:5
+#   of the Unyielding Gaze
+#
+#   w:5
+#   of the Wild Blue Yonder
+#
+#   w:1
+#   "Oscillating Fan"
+w:100
+@_ashenzari_adjective_@@_ashenzari_object_@の
+
+w:100
+@god_name_possessive@@_ashenzari_object_@の
+
+w:100
+『@_ashenzari_adjective_@@_ashenzari_object_@』
+
+w:50
+『@god_name@の@_ashenzari_object_@』
+
+w:100
+『@_ashenzari_epithet_@の@_ashenzari_object_@』
+
+w:20
+『@_ashenzari_epithet_@の@_celestial_bodies_@』
+
+w:20
+@_ashenzari_epithet_@の
+
+w:20
+@_ashenzari_bound_adjective_@@_celestial_bodies_@の
+
+w:20
+@_ashenzari_knowledge_adjective_@@_celestial_bodies_@の
+
+w:20
+@god_name_possessive@@_celestial_bodies_@の
+
+w:20
+『我が@_ashenzari_object_@を分かち合え』
+
+w:20
+『@_ashenzari_bound_adjective_@者よ、我と共に』
+
+w:20
+『共に@_ashenzari_bound_adjective_@者たち』
+
+@_ashenzari_bound_adjective_@@_ashenzari_heavens_@の
+
+@_ashenzari_knowledge_adjective_@@_ashenzari_heavens_@の
+
+宿命の@_ashenzari_object_@の
+
+w:5
+無限占術の
+
+w:5
+『知識の代償は』
+
+w:5
+『永遠を見よ』
+
+w:5
+懸垂占術の
+
+w:5
+呪いと力の
+
+w:5
+束縛占術の
+
+w:5
+天空の眼の
+
+w:5
+『無限を見つめよ』
+
+w:5
+『そうすると思っていた』
+
+w:5
+『予見していた』
+
+w:5
+天空占術の
+
+w:5
+『見下ろして見通す』
+
+w:5
+『困難を越えて知識へ』
+
+w:5
+パノプティコンの
+
+w:5
+星に縛られし叡智の
+
+w:5
+天上のグノーシスの
+
+w:5
+天上の知識の
+
+w:5
+天上の理解の
+
+w:5
+天上の叡智の
+
+w:5
+『雷・全きヌース』
+
+w:5
+トト=モスの遺産の
+
+w:5
+揺るがぬ眼差しの
+
+w:5
+遥かなる蒼穹の
+
+w:1
+『首振り扇風機』
+%%%%
+_ashenzari_object_
+
+# en:
+#   Adversity
+#
+#   Affliction
+#
+#   Burden
+#
+#   Fetters
+#
+#   Gnosis
+#
+#   Loss
+#
+#   Omen
+#
+#   Ordeal
+#
+#   Portent
+#
+#   Prison
+#
+#   Regret
+#
+#   Repose
+#
+#   Ressentiment
+#
+#   Sorrow
+#
+#   Vision
+#
+#   Yoke
+#
+#   w:100
+#   @_diviner_name_@
+#
+#   w:150
+#   @_discomfort_weapon_@
+#
+#   w:100
+#   @_philosophy_name_@
+#
+#   w:100
+#   @_discomfort_and_inaction_@
+#
+#   w:100
+#   @_suspicion_no_conflict_name_@
+逆境
+
+苦悩
+
+重荷
+
+枷
+
+霊知
+
+喪失
+
+前兆
+
+試練
+
+凶兆
+
+牢獄
+
+悔恨
+
+安息
+
+ルサンチマン
+
+悲嘆
+
+幻視
+
+軛
+
+w:100
+@_diviner_name_@
+
+w:150
+@_discomfort_weapon_@
+
+w:100
+@_philosophy_name_@
+
+w:100
+@_discomfort_and_inaction_@
+
+w:100
+@_suspicion_no_conflict_name_@
+%%%%
+_ashenzari_adjective_
+
+# en:
+#   w:50
+#   @_ashenzari_bound_adjective_@
+#
+#   w:50
+#   @_ashenzari_knowledge_adjective_@
+#
+#   @_ashenzari_celestial_adjective_@
+w:50
+@_ashenzari_bound_adjective_@
+
+w:50
+@_ashenzari_knowledge_adjective_@
+
+@_ashenzari_celestial_adjective_@
+%%%%
+_ashenzari_bound_adjective_
+
+# en:
+#   Bound
+#
+#   Chained
+#
+#   Circumscribed
+#
+#   Cursed
+#
+#   Ensconced
+#
+#   Eternal
+#
+#   Lashed
+#
+#   Restrained
+#
+#   Ruined
+#
+#   Shackled
+#
+#   Shattered
+#
+#   Tethered
+縛られた
+
+鎖に繋がれた
+
+制限された
+
+呪われた
+
+秘め置かれた
+
+永遠の
+
+縛り付けられた
+
+拘束された
+
+破滅した
+
+枷をはめられた
+
+砕かれた
+
+繋がれた
+%%%%
+_ashenzari_celestial_adjective_
+
+# en:
+#   Astral
+#
+#   Celestial
+#
+#   Cosmic
+#
+#   Distant
+#
+#   Elysian
+#
+#   Sidereal
+#
+#   Stellar
+#
+#   Sublime
+星界の
+
+天上の
+
+宇宙の
+
+遥かなる
+
+楽園の
+
+恒星の
+
+星の
+
+崇高なる
+%%%%
+_ashenzari_knowledge_adjective_
+
+# en:
+#   All-seeing
+#
+#   Astrological
+#
+#   Clairvoyant
+#
+#   Cryptic
+#
+#   Enlightened
+#
+#   Enigmatic
+#
+#   Esoteric
+#
+#   Gnostic
+#
+#   Manifest
+#
+#   Mantic
+#
+#   Omniscient
+#
+#   Oracular
+#
+#   Pangnostic
+#
+#   Perceptive
+#
+#   Prescient
+#
+#   Profound
+#
+#   Prophetic
+#
+#   Revealing
+#
+#   Sibylline
+#
+#   Unveiling
+#
+#   Visionary
+全てを見通す
+
+占星の
+
+千里眼の
+
+謎めいた
+
+悟りし
+
+不可解な
+
+秘教の
+
+霊知の
+
+顕現せし
+
+占いの
+
+全知の
+
+神託の
+
+万知の
+
+慧眼の
+
+先見の
+
+深遠なる
+
+預言の
+
+暴き出す
+
+巫女の
+
+覆いを剥ぐ
+
+空想家
+%%%%
+_ashenzari_epithet_
+
+# en:
+#   w:100
+#   @_ashenzari_adjective_@ God
+#
+#   w:50
+#   @_ashenzari_bound_adjective_@ Augur
+#
+#   w:50
+#   @_ashenzari_celestial_adjective_@ Augur
+#
+#   w:50
+#   @_ashenzari_bound_adjective_@ Sage
+#
+#   w:50
+#   @_ashenzari_celestial_adjective_@ Sage
+#
+#   w:50
+#   @_ashenzari_bound_adjective_@ Seer
+#
+#   w:50
+#   @_ashenzari_celestial_adjective_@ Seer
+#
+#   All-Knowing
+#
+#   Curse-Bearer
+#
+#   Soothsayer
+#
+#   Unmoving One
+w:100
+@_ashenzari_adjective_@神
+
+w:50
+@_ashenzari_bound_adjective_@卜者
+
+w:50
+@_ashenzari_celestial_adjective_@卜者
+
+w:50
+@_ashenzari_bound_adjective_@賢者
+
+w:50
+@_ashenzari_celestial_adjective_@賢者
+
+w:50
+@_ashenzari_bound_adjective_@予見者
+
+w:50
+@_ashenzari_celestial_adjective_@予見者
+
+全知なる者
+
+呪いを負う者
+
+預言者
+
+動かざる者
+%%%%
+_ashenzari_heavens_
+
+# en:
+#   Cosmos
+#
+#   Empyrean
+#
+#   Ether
+#
+#   Firmament
+#
+#   Heavens
+#
+#   w:40
+#   Sky
+#
+#   Sphere
+#
+#   Welkin
+宇宙
+
+最高天
+
+エーテル
+
+蒼穹
+
+天
+
+w:40
+空
+
+天球
+
+天空
+%%%%
+general appearance
+
+# en:
+#   brightly glowing
+#
+#   smoking
+#
+#   scorched
+#
+#   twisted
+#
+#   shimmering
+#
+#   warped
+#
+#   transparent
+#
+#   translucent
+#
+#   encrusted
+#
+#   pitted
+#
+#   slimy
+#
+#   polished
+#
+#   fine
+#
+#   incandescent
+#
+#   ancient
+#
+#   faintly glowing
+#
+#   steaming
+#
+#   dazzling
+#
+#   masterwork
+#
+#   w:2
+#   smouldering
+#
+#   w:5
+#   glimmering
+#
+#   w:2
+#   buzzing
+#
+#   w:5
+#   fading
+#
+#   w:2
+#   blackened
+明るく輝く
+
+煙を上げる
+
+焼け焦げた
+
+捻じ曲がった
+
+チカチカ光る
+
+歪んだ
+
+透明な
+
+半透明な
+
+装飾された
+
+穴だらけの
+
+ぬるぬるした
+
+磨き上げられた
+
+豪華な
+
+白熱した
+
+古ぼけた
+
+弱く輝く
+
+蒸気を上げる
+
+まばゆい
+
+名工の
+
+w:2
+燻る
+
+w:5
+微かに光る
+
+w:2
+唸りを上げる
+
+w:5
+色褪せた
+
+w:2
+黒光りした
+%%%%
+weapon appearance
+
+# en:
+#   iridescent
+#
+#   bloodstained
+#
+#   crystal
+#
+#   jewelled
+#
+#   ichor-stained
+#
+#   w:3
+#   ivory
+#
+#   w:3
+#   bone
+#
+#   w:1
+#   sapphire
+#
+#   w:3
+#   ebony
+#
+#   w:180
+#   @general appearance@
+玉虫色の
+
+血に染まった
+
+水晶の
+
+宝石で飾られた
+
+膿のついた
+
+w:3
+象牙の
+
+w:3
+骨の
+
+w:1
+サファイアの
+
+w:3
+真っ黒な
+
+w:180
+@general appearance@
+%%%%
+robe appearance
+
+# en:
+#   fabulously ornate
+#
+#   dull
+#
+#   sheer
+#
+#   thick
+#
+#   heavy
+#
+#   wizard
+#
+#   ominously black
+#
+#   brightly glowing
+#
+#   smoking
+#
+#   twisted
+#
+#   shimmering
+#
+#   warped
+#
+#   transparent
+#
+#   slimy
+#
+#   fine
+#
+#   luminous
+#
+#   ripped
+#
+#   colourful
+#
+#   creamy pearl
+#
+#   opalescent
+#
+#   ancient
+#
+#   faintly glowing
+#
+#   steaming
+#
+#   faintly humming
+#
+#   bloodstained
+#
+#   heavily jewelled
+#
+#   ichor-stained
+#
+#   distressingly furry
+#
+#   tattered
+#
+#   silken
+#
+#   shadowed
+素晴らしく飾り立てられた
+
+冴えない
+
+薄手の
+
+厚手の
+
+濃い色の
+
+魔法使いの
+
+不気味な黒い
+
+明るく輝く
+
+煙を上げる
+
+捻じ曲がった
+
+チカチカ光る
+
+歪んだ
+
+透明な
+
+ぬるぬるした
+
+豪華な
+
+光を放つ
+
+切り裂かれた
+
+色とりどりの
+
+真珠色の
+
+オパール色の
+
+古代の
+
+弱く輝く
+
+蒸気を上げる
+
+かすかに唸る
+
+血に染まった
+
+宝石に埋め尽くされた
+
+膿のついた
+
+毛皮の
+
+着古した
+
+絹の
+
+真っ黒な
+%%%%
+body armour appearance
+
+# en:
+#   w:3
+#   smelly
+#
+#   w:3
+#   bronze
+#
+#   w:2
+#   @_gemstone_@-studded
+#
+#   @_gemstone_@-encrusted
+#
+#   w:200
+#   @armour appearance@
+w:3
+臭う
+
+w:3
+青銅の
+
+w:2
+@_gemstone_@の付いた
+
+@_gemstone_@で飾られた
+
+w:200
+@armour appearance@
+%%%%
+armour appearance
+
+# en:
+#   faintly humming
+#
+#   bloodstained
+#
+#   heavily runed
+#
+#   jewelled
+#
+#   ichor-stained
+#
+#   distressingly furry
+#
+#   spiked
+#
+#   w:160
+#   @general appearance@
+かすかに唸る
+
+血に染まった
+
+ルーンに埋め尽くされた
+
+宝石で飾られた
+
+膿のついた
+
+毛皮の
+
+棘の生えた
+
+w:160
+@general appearance@
+%%%%
+_gemstone_
+
+# en:
+#   diamond
+#
+#   ruby
+#
+#   jacinth
+#
+#   sapphire
+#
+#   black opal
+#
+#   emerald
+#
+#   turquoise
+#
+#   citrine
+#
+#   aquamarine
+#
+#   amber
+#
+#   topaz
+#
+#   jet
+#
+#   opal
+#
+#   garnet
+#
+#   amethyst
+#
+#   jasper
+#
+#   obsidian
+#
+#   agate
+#
+#   jade
+#
+#   pearl
+#
+#   tiger eye
+#
+#   ametrine
+ダイヤモンド
+
+ルビー
+
+青玉
+
+サファイア
+
+黒オパール
+
+エメラルド
+
+ターコイズ
+
+シトリン
+
+アクアマリン
+
+琥珀
+
+トパーズ
+
+黒玉
+
+オパール
+
+ガーネット
+
+アメジスト
+
+ジャスパー
+
+黒曜石
+
+瑪瑙
+
+翡翠
+
+真珠
+
+虎目石
+
+アメトリン
+%%%%
+_jewellery appearance_
+
+# en:
+#   scintillating
+#
+#   sparkling
+#
+#   flickering
+#
+#   glittering
+#
+#   smoking
+#
+#   scorched
+#
+#   shimmering
+#
+#   wavering
+#
+#   warped
+#
+#   transparent
+#
+#   translucent
+#
+#   pitted
+#
+#   slimy
+#
+#   fine
+#
+#   radiant
+#
+#   ancient
+#
+#   brightly glowing
+#
+#   faintly glowing
+#
+#   steaming
+#
+#   heavily runed
+#
+#   vibrating
+#
+#   twitching
+#
+#   coiled
+#
+#   bound
+#
+#   clouded
+#
+#   w:2
+#   serpentine
+きらきら光る
+
+光彩を放つ
+
+明滅する
+
+光り輝く
+
+煙を上げる
+
+焼け焦げた
+
+チカチカ光る
+
+震える
+
+歪んだ
+
+透明な
+
+半透明な
+
+穴だらけの
+
+ぬるぬるした
+
+豪華な
+
+燦然と輝く
+
+古ぼけた
+
+明るく輝く
+
+弱く輝く
+
+蒸気を上げる
+
+ルーンに埋め尽くされた
+
+振動する
+
+ぴくぴく動く
+
+ばねのような
+
+雲をまとった
+
+w:2
+曲がりくねった
+%%%%
+_ring material_
+
+# en:
+#   wooden
+#
+#   ivory
+#
+#   bone
+#
+#   amber
+#
+#   silver
+#
+#   golden
+#
+#   platinum
+#
+#   iron
+#
+#   steel
+#
+#   bronze
+#
+#   brass
+#
+#   copper
+#
+#   tin
+#
+#   lead
+#
+#   pewter
+#
+#   granite
+#
+#   marble
+#
+#   jade
+#
+#   turquoise
+#
+#   lapis lazuli
+#
+#   glass
+#
+#   carnelian
+#
+#   w:2
+#   gossamer
+木の
+
+象牙の
+
+骨の
+
+琥珀の
+
+銀の
+
+黄金の
+
+白金の
+
+鉄の
+
+鋼鉄の
+
+青銅の
+
+真鍮の
+
+銅の
+
+スズの
+
+鉛の
+
+花崗岩の
+
+大理石の
+
+翡翠の
+
+ターコイズの
+
+ラピスラズリの
+
+ガラスの
+
+紅玉髄の
+%%%%
+_amulet material_
+
+# en:
+#   ivory
+#
+#   bone
+#
+#   graven
+#
+#   silver
+#
+#   golden
+#
+#   platinum
+#
+#   iron
+#
+#   steel
+#
+#   bronze
+#
+#   brass
+#
+#   copper
+#
+#   tin
+#
+#   lead
+#
+#   pewter
+#
+#   zirconium
+#
+#   sapphire
+#
+#   emerald
+#
+#   garnet
+#
+#   ruby
+#
+#   jade
+#
+#   crystal
+#
+#   diamond
+#
+#   amethyst
+象牙の
+
+骨の
+
+銘の彫られた
+
+銀の
+
+黄金の
+
+白金の
+
+鉄の
+
+鋼鉄の
+
+青銅の
+
+真鍮の
+
+銅の
+
+スズの
+
+鉛の
+
+ジルコンの
+
+サファイアの
+
+エメラルドの
+
+ガーネットの
+
+ルビーの
+
+翡翠の
+
+水晶の
+
+ダイヤモンドの
+
+アメジストの
+%%%%
+ring appearance
+
+# en:
+#   @_jewellery appearance_@ @_ring material_@
+@_jewellery appearance_@@_ring material_@
+%%%%
+amulet appearance
+
+# en:
+#   @_jewellery appearance_@ @_amulet material_@
+@_jewellery appearance_@@_amulet material_@
+%%%%

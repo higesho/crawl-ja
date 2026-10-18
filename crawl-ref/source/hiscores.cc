@@ -26,14 +26,17 @@
 #include "branch.h"
 #include "chardump.h"
 #include "cio.h"
+#include "database.h"
 #include "dungeon.h"
 #include "end.h"
 #include "english.h"
 #include "files.h"
 #include "initfile.h"
+#include "item-name.h"
 #include "item-prop.h"
 #include "item-status-flag-type.h"
 #include "items.h"
+#include "japanese.h"
 #include "jobs.h"
 #ifdef USE_TILE_WEB
 # include "json.h"
@@ -203,7 +206,7 @@ void logfile_new_entry(const scorefile_entry &ne)
     logfile = _hs_open("a", _log_file_name());
     if (logfile == nullptr)
     {
-        mprf(MSGCH_ERROR, "ERROR: failure writing to the logfile.");
+        mprf(MSGCH_ERROR, "%s", jtransc("ERROR: failure writing to the logfile."));
         return;
     }
 
@@ -269,7 +272,7 @@ void hiscores_print_all(int display_count, int format)
     if (scores == nullptr)
     {
         // will only happen from command line
-        puts("No scores.");
+        puts(jtransc("No scores."));
         return;
     }
 
@@ -428,7 +431,7 @@ UIHiscoresMenu::UIHiscoresMenu()
 #endif
 
     auto title = make_shared<Text>(formatted_string(
-                CRAWL ": High Scores", YELLOW));
+                string(CRAWL) + ": " + jtrans("High Scores"), YELLOW));
     title->set_margin_for_sdl(0, 0, 0, 16);
     title_hbox->add_child(std::move(title));
 
@@ -449,7 +452,7 @@ UIHiscoresMenu::UIHiscoresMenu()
     }
     else
     {
-        auto placeholder = formatted_string("No high scores yet...", DARKGRAY);
+        auto placeholder = formatted_string(jtrans("No high scores yet..."), DARKGRAY);
         m_root->add_child(make_shared<Text>(placeholder));
         initial_focus = this;
     }
@@ -553,9 +556,10 @@ static const char *_range_type_verb(const char *const aux)
     return "blasted";                                 // spells, wands
 }
 
+// 表示用(日本語)。スコアファイルに残す英語は hiscore_line() で作る。
 string hiscores_format_single(const scorefile_entry &se)
 {
-    return se.hiscore_line(scorefile_entry::DDV_ONELINE);
+    return se.hiscore_line_j(scorefile_entry::DDV_ONELINE);
 }
 
 static bool _hiscore_same_day(time_t t1, time_t t2)
@@ -586,10 +590,11 @@ static string _hiscore_newline_string()
     return "\n             ";
 }
 
+// 表示用(日本語)。スコアファイルに残す英語は hiscore_line() で作る。
 string hiscores_format_single_long(const scorefile_entry &se, bool verbose)
 {
-    return se.hiscore_line(verbose ? scorefile_entry::DDV_VERBOSE
-                                   : scorefile_entry::DDV_NORMAL);
+    return se.hiscore_line_j(verbose ? scorefile_entry::DDV_VERBOSE
+                                     : scorefile_entry::DDV_NORMAL);
 }
 
 // --------------------------------------------------------------------------
@@ -1401,7 +1406,9 @@ void scorefile_entry::init_death_cause(int dam, mid_t dsrc,
             // we do care about the above identification. -- bwr
             if (!mons_class_is_animated_weapon(mons->type))
             {
-                auxkilldata = env.item[mons->inv[MSLOT_WEAPON]].name(DESC_A);
+                // スコアファイルに残るので英語の名前(表示するときに訳す)
+                auxkilldata = item_name_en(env.item[mons->inv[MSLOT_WEAPON]],
+                                           DESC_A);
                 if (mons->has_ench(ENCH_ARMED))
                     auxkilldata += " (from an undying armoury)";
             }
@@ -1412,10 +1419,11 @@ void scorefile_entry::init_death_cause(int dam, mid_t dsrc,
         const description_level_type desc =
             death_type == KILLED_BY_DEATH_EXPLOSION ? DESC_PLAIN : DESC_A;
 
-        death_source_name = mons->name(desc, death);
+        // スコアファイルに残るので英語の名前(表示するときに訳す)
+        death_source_name = mons->name_en(desc, death);
 
         if (death || you.can_see(*mons))
-            death_source_name = mons->full_name(desc);
+            death_source_name = mons->full_name_en(desc);
 
         if (mons_is_player_shadow(*mons))
             death_source_name = "their own shadow"; // heh
@@ -1511,6 +1519,11 @@ void scorefile_entry::init_death_cause(int dam, mid_t dsrc,
         death_source_name = you.props[BLINKITIS_SOURCE_KEY].get_string();
         auxkilldata = you.props[BLINKITIS_AUX_KEY].get_string();
     }
+
+    // props に「あなた」(player::name() の日本語)が入っていることがあるので、
+    // スコアファイル用の英語の "you" に戻す。
+    if (!death_source_name.empty() && death_source_name == jtrans("you"))
+        death_source_name = "you";
 }
 
 void scorefile_entry::reset()
@@ -2987,6 +3000,1475 @@ string scorefile_entry::death_description(death_desc_verbosity verbosity) const
         trim_string(desc);
         desc = strip_article_a(desc);
     }
+
+    return desc;
+}
+
+// ===========================================================================
+// 表示用(日本語)のスコア行・死因
+//
+// スコアファイル(scores, logfile, milestones)には英語の文を残すので、
+// hiscore_line() / death_description() などは英語のまま(logfile の tmsg /
+// vmsg、マイルストーンに使われる)。画面・ダンプ・ノートに出す行は以下の
+// *_j() で組み立てる。英語で保存された名前(死因の相手、武器、召喚者、
+// 神罰など)は表示するときに辞書で訳す。訳せない部分は英語のまま残す。
+// ===========================================================================
+
+static bool _non_ascii(const string &s)
+{
+    for (unsigned char c : s)
+        if (c >= 0x80)
+            return true;
+    return false;
+}
+
+// 辞書に (tag +) key があれば、その訳を out に入れて true を返す。
+static bool _jtrans_try(const string &key, string &out,
+                        const char *tag = nullptr)
+{
+    const string k = tag ? string(tag) + key : key;
+    if (jtrans_has_key(k))
+    {
+        out = jtrans(k);
+        return true;
+    }
+    return false;
+}
+
+static string _strip_article_any(const string &s)
+{
+    static const char * const articles[] =
+    {
+        "a ", "an ", "the ", "A ", "An ", "The ",
+    };
+    for (const char *art : articles)
+        if (starts_with(s, art))
+            return s.substr(strlen(art));
+    return s;
+}
+
+static bool _is_you_name(const string &s)
+{
+    // 古いセーブの props には「あなた」が残っていることがある
+    return s == "you" || s == jtrans("you");
+}
+
+// 固有名(英語)。辞書になければ『』で囲む(mon-info.cc の _mname_j() と同じ)。
+static string _proper_name_j(const string &name)
+{
+    string out;
+    if (_non_ascii(name))
+        return name;
+    if (_jtrans_try(name, out))
+        return out;
+    return "『" + name + "』";
+}
+
+// 英語のモンスター名("an orc priest", "Arbolt the orc priest",
+// "a 7-headed hydra zombie" など)を訳す。訳せたら true。
+static bool _mons_name_j(const string &name, string &out)
+{
+    if (name.empty())
+        return false;
+    if (_non_ascii(name))
+    {
+        out = name;
+        return true;
+    }
+    if (_jtrans_try(name, out))
+        return true;
+
+    // init_death_cause() で後ろに足す修飾
+    static const char * const suffixes[] =
+    {
+        " (shapeshifter)", " (glowing shapeshifter)", " (illusionary)",
+    };
+    for (const char *suf : suffixes)
+    {
+        if (!ends_with(name, suf))
+            continue;
+        const string base = name.substr(0, name.size() - strlen(suf));
+        string base_j;
+        if (!_mons_name_j(base, base_j))
+            base_j = base;
+        out = base_j + jtrans(trimmed_string(suf));
+        return true;
+    }
+
+    const string panlord = " the pandemonium lord";
+    if (ends_with(name, panlord))
+    {
+        out = jtrans("pandemonium lord")
+              + _proper_name_j(name.substr(0, name.size() - panlord.size()));
+        return true;
+    }
+
+    const string bare = _strip_article_any(name);
+    if (bare != name && _jtrans_try(bare, out))
+        return true;
+
+    // プレイヤーの幽霊・幻影(名前は訳さない)
+    if (ends_with(bare, "'s ghost"))
+    {
+        out = make_stringf(jtransc("%s's ghost"),
+                           bare.substr(0, bare.size() - 8).c_str());
+        return true;
+    }
+    if (ends_with(bare, "'s illusion"))
+    {
+        out = make_stringf(jtransc("%s's illusion"),
+                           bare.substr(0, bare.size() - 11).c_str());
+        return true;
+    }
+
+    // "7-headed hydra"
+    const string::size_type dash = bare.find("-headed ");
+    if (dash != string::npos && dash > 0 && dash <= 2
+        && isadigit(bare[0]) && isadigit(bare[dash - 1]))
+    {
+        const int heads = atoi(bare.substr(0, dash).c_str());
+        string rest;
+        if (heads > 0 && heads <= 27
+            && _mons_name_j(bare.substr(dash + 8), rest))
+        {
+            out = jnumber_for_hydra_heads(heads)
+                  + tagged_jtrans("[mon prefix]", "-headed") + rest;
+            return true;
+        }
+    }
+
+    // 前に付く修飾("spectral orc")
+    static const char * const prefixes[] =
+    {
+        "spectral", "ghostly", "bound", "helpless", "vampire",
+    };
+    for (const char *pre : prefixes)
+    {
+        const string p = string(pre) + " ";
+        string rest;
+        if (starts_with(bare, p) && _mons_name_j(bare.substr(p.size()), rest))
+        {
+            out = tagged_jtrans("[mon prefix]", pre) + rest;
+            return true;
+        }
+    }
+
+    // 後ろに付く種類("orc zombie")
+    static const char * const kinds[] =
+    {
+        "zombie", "draugr", "simulacrum",
+    };
+    for (const char *kind : kinds)
+    {
+        const string k = string(" ") + kind;
+        string base;
+        if (ends_with(bare, k)
+            && _mons_name_j(bare.substr(0, bare.size() - k.size()), base))
+        {
+            out = base + "の" + tagged_jtrans("[mon suffix]", kind);
+            return true;
+        }
+    }
+
+    // 名前付きのモンスター("Arbolt the orc priest")
+    const string::size_type the = bare.find(" the ");
+    if (the != string::npos && the > 0)
+    {
+        string common;
+        if (_mons_name_j(bare.substr(the + 5), common))
+        {
+            out = common + _proper_name_j(bare.substr(0, the));
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * 英語で保存された名前(死因の相手、召喚者、毒・麻痺の原因、神罰の名前、
+ * 変異の理由など)を表示用に訳す。日本語の文字列はそのまま返し、
+ * 訳せなければ英語のまま返す。"you" は「あなた」。
+ */
+string death_name_j(const string &name)
+{
+    const string s = trimmed_string(name);
+    if (s.empty() || _non_ascii(s))
+        return s;
+    if (_is_you_name(s))
+        return jtrans("you");
+
+    string out;
+    return _mons_name_j(s, out) ? out : s;
+}
+
+// 英語のアイテム名("a +2 broad axe of flaming", "the Singing Sword")を訳す。
+static bool _item_name_j(const string &name, string &out)
+{
+    if (name.empty())
+        return false;
+    if (_non_ascii(name))
+    {
+        out = name;
+        return true;
+    }
+    if (_jtrans_try(name, out))
+        return true;
+
+    const string armoury = " (from an undying armoury)";
+    if (ends_with(name, armoury))
+    {
+        const string base = name.substr(0, name.size() - armoury.size());
+        string base_j;
+        if (!_item_name_j(base, base_j))
+            base_j = base;
+        out = base_j + jtrans("(from an undying armoury)");
+        return true;
+    }
+
+    const string bare = _strip_article_any(name);
+    if (bare != name && _jtrans_try(bare, out))
+        return true;
+
+    // 強化値("+2 ")はそのまま
+    if (bare.size() > 2 && (bare[0] == '+' || bare[0] == '-')
+        && isadigit(bare[1]))
+    {
+        const string::size_type sp = bare.find(' ');
+        string rest;
+        if (sp != string::npos && _item_name_j(bare.substr(sp + 1), rest))
+        {
+            out = bare.substr(0, sp + 1) + rest;
+            return true;
+        }
+    }
+
+    // ランダムアーティファクトの名前("...")はそのまま
+    if (ends_with(bare, "\""))
+    {
+        const string::size_type q = bare.find(" \"");
+        string rest;
+        if (q != string::npos && _item_name_j(bare.substr(0, q), rest))
+        {
+            out = rest + bare.substr(q);
+            return true;
+        }
+    }
+
+    // "dagger of venom" → 「毒液のダガー」
+    const string::size_type of = bare.find(" of ");
+    if (of != string::npos)
+    {
+        string base, ego;
+        if (_jtrans_try("of " + bare.substr(of + 4), ego, "[item adj]")
+            && _item_name_j(bare.substr(0, of), base))
+        {
+            out = ego + base;
+            return true;
+        }
+    }
+
+    // 前に付く形容詞("vampiric dagger")
+    const string::size_type sp = bare.find(' ');
+    if (sp != string::npos)
+    {
+        string adj, base;
+        if ((_jtrans_try(bare.substr(0, sp + 1), adj, "[item adj]")
+             || _jtrans_try(bare.substr(0, sp), adj, "[item adj]"))
+            && _item_name_j(bare.substr(sp + 1), base))
+        {
+            out = adj + base;
+            return true;
+        }
+    }
+
+    return false;
+}
+
+// 死因の補足(ビーム・雲・呪文・アイテムなどの英語)を訳す。
+static string _cause_j(const string &cause)
+{
+    const string s = trimmed_string(cause);
+    if (s.empty() || _non_ascii(s))
+        return s;
+
+    static const char * const tags[] =
+    {
+        "[zap]", "[cloud]", "[spell]",
+    };
+
+    string out;
+    for (const char *tag : tags)
+        if (_jtrans_try(s, out, tag))
+            return out;
+    if (_jtrans_try(s, out))
+        return out;
+
+    // 決まった形の死因
+    if (starts_with(s, "miscasting "))
+    {
+        return make_stringf(jtransc("miscasting %s"),
+                            tagged_jtrans("[spell]", s.substr(11)).c_str());
+    }
+    if (starts_with(s, "gaining the ") && ends_with(s, " mutation")
+        && s.size() > 21)
+    {
+        return make_stringf(jtransc("gaining the %s mutation"),
+                            jtrans(s.substr(12, s.size() - 21)).c_str());
+    }
+    if (starts_with(s, "losing the ") && ends_with(s, " mutation")
+        && s.size() > 20)
+    {
+        return make_stringf(jtransc("losing the %s mutation"),
+                            jtrans(s.substr(11, s.size() - 20)).c_str());
+    }
+    if (starts_with(s, "gaining the ") && ends_with(s, " transformation")
+        && s.size() > 27)
+    {
+        return make_stringf(jtransc("gaining the %s transformation"),
+                            tagged_jtrans("[form]",
+                                          s.substr(12, s.size() - 27)).c_str());
+    }
+
+    const string bare = _strip_article_any(s);
+    if (bare != s)
+    {
+        for (const char *tag : tags)
+            if (_jtrans_try(bare, out, tag))
+                return out;
+        if (_jtrans_try(bare, out))
+            return out;
+    }
+
+    if (_item_name_j(s, out) || _mons_name_j(s, out))
+        return out;
+
+    return s;
+}
+
+// 召喚者などの記録("summoned by an orc sorcerer")を訳す。
+static string _blame_j(const string &blame)
+{
+    // mon-place.cc などが付ける接頭辞(キーは "[blame]summoned by %s" など)
+    static const char * const prefixes[] =
+    {
+        "summoned by ", "woven by ", "animated by ", "called from beyond by ",
+        "called by ", "attached to ", "created by ", "led by ", "anointed by ",
+        "hexed by ", "manifested out of ", "spawned from ", "mirrored by ",
+        "unearthed by ",
+    };
+
+    const string s = trimmed_string(blame);
+    if (s.empty() || _non_ascii(s))
+        return s;
+
+    string out;
+    if (_jtrans_try(s, out))
+        return out;
+
+    for (const char *pre : prefixes)
+    {
+        if (!starts_with(s, pre))
+            continue;
+        const string who = s.substr(strlen(pre));
+        return make_stringf(tagged_jtransc("[blame]", string(pre) + "%s"),
+                            death_name_j(who).c_str());
+    }
+
+    return death_name_j(s);
+}
+
+static string _hiscore_date_string_j(time_t time)
+{
+    struct tm *date = TIME_FN(&time);
+
+    return make_stringf("%04d/%02d/%02d", date->tm_year + 1900,
+                        date->tm_mon + 1, date->tm_mday);
+}
+
+static string _time_string_j(time_t abs_time)
+{
+    const int days  = abs_time / 86400;
+    const int hours = (abs_time % 86400) / 3600;
+    const int mins  = (abs_time % 3600) / 60;
+    const int secs  = abs_time % 60;
+
+    string buff;
+    if (days > 0)
+        buff += make_stringf(jtransc("%d days "), days);
+    return buff + make_stringf("%02d:%02d:%02d", hours, mins, secs);
+}
+
+static string _append_sentence_delimiter_j(const string &sentence,
+                                           const string &delimiter)
+{
+    if (sentence.empty())
+        return sentence;
+
+    if (ends_with(sentence, "。") || ends_with(sentence, "！")
+        || ends_with(sentence, "!") || ends_with(sentence, "."))
+    {
+        return sentence;
+    }
+
+    return sentence + delimiter;
+}
+
+static string _species_name_j(int race)
+{
+    if (race >= 0 && race < NUM_SPECIES)
+        return species_name_j(static_cast<species_type>(race));
+    return tagged_jtrans("[spec name]", _species_name(race));
+}
+
+static string _job_name_j(int job)
+{
+    if (job >= 0 && job < NUM_JOBS)
+        return job_name_j(static_cast<job_type>(job));
+    return tagged_jtrans("[job]", _job_name(job));
+}
+
+// 称号(スコアファイルの title)。英語で保存されていれば辞書で訳す。
+static string _title_j(const string &title)
+{
+    if (title.empty() || _non_ascii(title))
+        return title;
+    return tagged_jtrans("[title]", title);
+}
+
+string scorefile_entry::damage_string_j(bool terse) const
+{
+    return terse ? make_stringf("(%d)", damage)
+                 : make_stringf(jtransc("(%d damage)"), damage);
+}
+
+string scorefile_entry::hiscore_line_j(death_desc_verbosity verbosity) const
+{
+    string line = character_description_j(verbosity);
+    line += death_description_j(verbosity);
+    line += death_place_j(verbosity);
+    line += game_time_j(verbosity);
+
+    return line;
+}
+
+string scorefile_entry::game_time_j(death_desc_verbosity verbosity) const
+{
+    string line;
+
+    if (verbosity == DDV_VERBOSE)
+    {
+        line += make_stringf(jtransc("The game lasted %s (%d turns)."),
+                             _time_string_j(real_time).c_str(), num_turns);
+
+        line += _hiscore_newline_string();
+    }
+
+    return line;
+}
+
+string scorefile_entry::runes_gems_desc_j() const
+{
+    if (num_runes < 1 && gems_found < 1)
+        return "";
+
+    string desc = "";
+
+    bool extra = (death_type == KILLED_BY_WINNING);
+    if (num_runes >= 1)
+    {
+        desc += _hiscore_newline_string();
+        desc += make_stringf(jtransc(extra ? "... and %d runes"
+                                           : "... with %d runes"),
+                             num_runes);
+        extra = true;
+    }
+    if (gems_found >= 1)
+    {
+        desc += _hiscore_newline_string();
+        desc += make_stringf(jtransc(extra ? "... and %d gems"
+                                           : "... with %d gems"),
+                             gems_found);
+        if (Options.more_gem_info)
+        {
+            if (gems_intact == 1 && gems_found == 1)
+                desc += jtrans("(intact)");
+            else if (gems_intact == 2 && gems_found == 2)
+                desc += jtrans("(both intact)");
+            else if (gems_intact == gems_found)
+                desc += jtrans("(all intact)");
+            else
+                desc += make_stringf(jtransc("(%d intact)"), gems_intact);
+        }
+    }
+    if (death_time > 0 && !_hiscore_same_day(birth_time, death_time))
+        desc += "(" + _hiscore_date_string_j(death_time) + ")";
+
+    desc = _append_sentence_delimiter_j(desc, "！");
+    return desc + _hiscore_newline_string();
+}
+
+string
+scorefile_entry::character_description_j(death_desc_verbosity verbosity) const
+{
+    bool single  = verbosity == DDV_TERSE || verbosity == DDV_ONELINE;
+
+    if (single)
+        return single_cdesc();
+
+    bool verbose = verbosity == DDV_VERBOSE;
+
+    string desc;
+    // 引数は日本語の語順(称号、名前 / 種族、職業、名前)
+    if (verbose)
+    {
+        desc = make_stringf(jtransc("%8d %s the %s (level %d"),
+                  points, _title_j(title).c_str(), name.c_str(), lvl);
+    }
+    else
+    {
+        desc = make_stringf(jtransc("%8d %s the %s %s (level %d"),
+                  points, _species_name_j(race).c_str(),
+                  _job_name_j(job).c_str(), name.c_str(), lvl);
+    }
+
+    if (final_max_max_hp > 0)  // as the other two may be negative
+    {
+        desc += make_stringf(jtransc(", %d/%d HPs"), final_hp, final_max_hp);
+
+        if (final_max_hp < final_max_max_hp)
+            desc += make_stringf(" (%d)", final_max_max_hp);
+    }
+
+    desc += wiz_mode ? ") *WIZ*" : explore_mode ? ") *EXPLORE*" : ")";
+    desc += _hiscore_newline_string();
+
+    if (verbose)
+    {
+        ASSERT(birth_time);
+        // 引数は日本語の語順(日付、種族、職業)
+        desc += make_stringf(jtransc("Began as a %s %s on %s."),
+                             _hiscore_date_string_j(birth_time).c_str(),
+                             _species_name_j(race).c_str(),
+                             _job_name_j(job).c_str());
+        desc += _hiscore_newline_string();
+
+        if (god != GOD_NO_GOD
+            // XX is this check really needed?
+            && !species::mutation_level(static_cast<species_type>(race), MUT_FORLORN))
+        {
+            if (god == GOD_XOM)
+            {
+                desc += jtrans(lvl >= 20 ? "Was a Favourite Plaything of Xom."
+                                         : "Was a Plaything of Xom.");
+
+                desc += _hiscore_newline_string();
+            }
+            else
+            {
+                const char *rank =
+                    (piety >= piety_breakpoint(5)) ? "the Champion" :
+                    (piety >= piety_breakpoint(4)) ? "a High Priest" :
+                    (piety >= piety_breakpoint(3)) ? "an Elder" :
+                    (piety >= piety_breakpoint(2)) ? "a Priest" :
+                    (piety >= piety_breakpoint(1)) ? "a Believer" :
+                    (piety >= piety_breakpoint(0)) ? "a Follower"
+                                                   : "an Initiate";
+                // 引数は日本語の語順(神、位)
+                desc += make_stringf(jtransc("Was %s of %s%s"),
+                             god_name_jc(god),
+                             tagged_jtrans("[piety rank]", rank).c_str(),
+                             (penance > 0) ? jtransc("(penitent).") : "。");
+
+                desc += _hiscore_newline_string();
+            }
+        }
+    }
+
+    return desc;
+}
+
+string scorefile_entry::death_place_j(death_desc_verbosity verbosity) const
+{
+    bool verbose = (verbosity == DDV_VERBOSE);
+
+    if (death_type == KILLED_BY_LEAVING || death_type == KILLED_BY_WINNING)
+        return "";
+
+    if (verbosity == DDV_ONELINE || verbosity == DDV_TERSE)
+        return " (" + level_id(branch, dlvl).describe_j() + ")";
+
+    // where did we die?
+    string where = prep_branch_level_name(level_id(branch, dlvl));
+
+    if (!mapdesc.empty())
+        where += "(" + jtrans(mapdesc) + ")";
+
+    const bool other_day = verbose && death_time
+                           && !_hiscore_same_day(birth_time, death_time);
+
+    string place;
+    if (verbose && !_very_boring_death_type(death_type))
+    {
+        // 「... 2024/01/02、ダンジョンの3階にて。」
+        if (other_day)
+        {
+            // 引数は日本語の語順(日付、場所)
+            place = make_stringf(jtransc("... in %s on %s."),
+                                 _hiscore_date_string_j(death_time).c_str(),
+                                 where.c_str());
+        }
+        else
+            place = make_stringf(jtransc("... in %s."), where.c_str());
+    }
+    else
+    {
+        place = " (" + where;
+        if (other_day)
+            place += "、" + _hiscore_date_string_j(death_time);
+        place += ")";
+    }
+
+    place += _hiscore_newline_string();
+
+    return place;
+}
+
+/**
+ * death_description() の表示用(日本語)版。DDV_LOGVERBOSE は DDV_VERBOSE と
+ * 同じに扱う(ログ用の英語は death_description() で作る)。
+ */
+string scorefile_entry::death_description_j(death_desc_verbosity verbosity) const
+{
+    bool needs_beam_cause_line = false;
+    bool needs_called_by_monster_line = false;
+    bool needs_damage = false;
+
+    const bool terse   = (verbosity == DDV_TERSE);
+    const bool verbose = (verbosity == DDV_VERBOSE
+                          || verbosity == DDV_LOGVERBOSE);
+    const bool oneline = (verbosity == DDV_ONELINE);
+
+    const bool by_you = _is_you_name(death_source_name);
+    // 死因の相手と補足(表示用)
+    const string source = death_name_j(death_source_desc());
+    const char *src = source.c_str();
+    const string aux_j = _cause_j(auxkilldata);
+    const char *aux = aux_j.c_str();
+
+    string desc;
+
+    if (oneline)
+        desc = " ";
+
+    switch (death_type)
+    {
+    case KILLED_BY_MONSTER:
+        if (terse)
+            desc += source;
+        else if (oneline)
+            desc += make_stringf(jtransc("slain by %s"), src);
+        else
+        {
+            desc += make_stringf(jtransc(final_hp > -6  ? "Slain by %s" :
+                                         final_hp > -14 ? "Mangled by %s" :
+                                         final_hp > -22 ? "Demolished by %s"
+                                                        : "Annihilated by %s"),
+                                 src);
+        }
+
+        // put the damage on the weapon line if there is one
+        if (auxkilldata.empty())
+            needs_damage = true;
+        break;
+
+    case KILLED_BY_HEADBUTT:
+        if (terse)
+            desc += make_stringf(jtransc("%s's headbutt"), src);
+        else
+            desc += make_stringf(jtransc("Headbutted by %s"), src);
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_ROLLING:
+        if (terse)
+            desc += make_stringf(jtransc("squashed by %s"), src);
+        else
+            desc += make_stringf(jtransc("Rolled over by %s"), src);
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_SPINES:
+        if (terse)
+            desc += make_stringf(jtransc("%s's spines"), src);
+        else
+            desc += make_stringf(jtransc("Impaled on %s's spines"), src);
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_POISON:
+        if (death_source_name.empty() || terse)
+        {
+            if (!terse)
+                desc += jtrans("Succumbed to poison");
+            else if (!death_source_name.empty())
+                desc += make_stringf(jtransc("poisoned by %s"), src);
+            else
+                desc += tagged_jtrans("[death]", "poison");
+            if (!auxkilldata.empty())
+                desc += " (" + aux_j + ")";
+        }
+        else if (auxkilldata.empty()
+                 && death_source_name.find("poison") != string::npos)
+        {
+            desc += make_stringf(jtransc("Succumbed to %s"), src);
+        }
+        else
+        {
+            const string what = auxkilldata.empty() ? tagged_jtrans("[death]", "poison") : aux_j;
+            if (by_you)
+            {
+                desc += make_stringf(jtransc("Succumbed to their own %s"),
+                                     what.c_str());
+            }
+            else
+            {
+                desc += make_stringf(jtransc("Succumbed to %s's %s"),
+                                     src, what.c_str());
+            }
+        }
+        break;
+
+    case KILLED_BY_CLOUD:
+        if (terse)
+        {
+            desc += make_stringf(jtransc("cloud of %s"), aux);
+            if (!death_source_name.empty())
+                desc += "[" + (by_you ? tagged_jtrans("[death]", "self") : source) + "]";
+        }
+        else if (death_source_name.empty())
+            desc += make_stringf(jtransc("Engulfed by a cloud of %s"), aux);
+        else if (by_you)
+            desc += make_stringf(jtransc("Engulfed by their own %s"), aux);
+        else
+            desc += make_stringf(jtransc("Engulfed by %s's %s"), src, aux);
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_BEAM:
+    {
+        const bool shot = starts_with(auxkilldata, "Shot with ");
+        const bool thrown = starts_with(auxkilldata, "Hit by ");
+        if (oneline)
+        {
+            // keeping this short to leave room for the deep elf spellcasters:
+            if (by_you)
+                desc += tagged_jtrans("[death]", "blasted by themself");
+            else if (shot)
+                desc += make_stringf(jtransc("shot by %s"), src);
+            else if (auxkilldata.empty() || thrown
+                     || starts_with(auxkilldata, "volley "))
+            {
+                desc += make_stringf(jtransc("hit from afar by %s"), src);
+            }
+            else
+                desc += make_stringf(jtransc("blasted by %s"), src);
+        }
+        else if (shot || thrown)  // already made (ie shot arrows)
+        {
+            // "Shot with a%s %s by %s" / "Hit by a%s %s thrown by %s"
+            const string::size_type by = auxkilldata.rfind(" by ");
+            const string who = by == string::npos
+                               ? "" : death_name_j(auxkilldata.substr(by + 4));
+            const string missile_j = _cause_j(terse_missile_name());
+
+            if (terse)
+            {
+                desc += who;
+                if (!missile_j.empty())
+                    desc += "/" + missile_j;
+            }
+            else
+            {
+                // 引数は日本語の語順(撃った者、投射物)
+                desc += make_stringf(jtransc(shot ? "Shot with %s by %s"
+                                                  : "Hit by %s thrown by %s"),
+                                     who.c_str(), missile_j.c_str());
+            }
+            needs_damage = true;
+        }
+        else if (!auxkilldata.empty() && isupper(auxkilldata[0]))
+        {
+            desc += aux_j;
+            needs_damage = true;
+        }
+        else if (verbose && starts_with(auxkilldata, "by "))
+        {
+            // "by" is used for priest attacks where the effect is indirect
+            // in verbose format we have another line for the monster
+            const string cause = _cause_j(auxkilldata.substr(3));
+            if (by_you)
+            {
+                needs_damage = true;
+                desc += make_stringf(jtransc("Killed by their own %s"),
+                                     cause.c_str());
+            }
+            else
+            {
+                needs_called_by_monster_line = true;
+                desc += make_stringf(jtransc("Killed by %s"), cause.c_str());
+            }
+        }
+        else
+        {
+            if (terse)
+                desc += by_you ? tagged_jtrans("[death]", "themself") : source;
+            else if (by_you)
+                desc += jtrans("Killed from afar by themself");
+            else
+                desc += make_stringf(jtransc("Killed from afar by %s"), src);
+
+            if (!auxkilldata.empty())
+                needs_beam_cause_line = true;
+
+            needs_damage = true;
+        }
+        break;
+    }
+
+    case KILLED_BY_LAVA:
+        if (terse)
+            desc += tagged_jtrans("[death]", "lava");
+        else
+        {
+            if (starts_with(species::skin_name(
+                        static_cast<species_type>(race)), "bandage"))
+            {
+                desc += jtrans("Turned to ash by lava");
+            }
+            else
+                desc += jtrans("Took a swim in molten lava");
+        }
+        break;
+
+    case KILLED_BY_WATER:
+        if (species::is_undead(static_cast<species_type>(race)))
+        {
+            if (terse)
+                desc = tagged_jtrans("[death]", "fell apart");
+            else if (starts_with(species::skin_name(
+                        static_cast<species_type>(race)), "bandage"))
+            {
+                desc = jtrans("Soaked and fell apart");
+            }
+            else
+                desc = jtrans("Sank and fell apart");
+        }
+        else
+        {
+            if (!death_source_name.empty())
+            {
+                if (terse)
+                {
+                    desc += make_stringf(tagged_jtransc("[death]",
+                                                        "drowned by %s"),
+                                         src);
+                }
+                else
+                    desc += make_stringf(jtransc("Drowned by %s"), src);
+                needs_damage = true;
+            }
+            else if (terse)
+                desc += tagged_jtrans("[death]", "drowned");
+            else
+                desc += jtrans("Drowned");
+        }
+        break;
+
+    case KILLED_BY_STUPIDITY:
+        if (terse)
+            desc += tagged_jtrans("[death]", "stupidity");
+        else if (race >= 0 && // not a removed race
+                 (species::is_undead(static_cast<species_type>(race))
+                  || species::is_nonliving(static_cast<species_type>(race))))
+        {
+            desc += jtrans("Forgot to exist");
+        }
+        else
+            desc += jtrans("Forgot to breathe");
+        break;
+
+    case KILLED_BY_WEAKNESS:
+        desc += terse ? tagged_jtrans("[death]", "collapsed")
+                      : jtrans("Collapsed under their own weight");
+        break;
+
+    case KILLED_BY_CLUMSINESS:
+        desc += terse ? tagged_jtrans("[death]", "clumsiness")
+                      : jtrans("Slipped on a banana peel");
+        break;
+
+    case KILLED_BY_TRAP:
+        if (terse)
+            desc += aux_j;
+        else
+            desc += make_stringf(jtransc("Killed by triggering %s"), aux);
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_LEAVING:
+        if (terse)
+            desc += tagged_jtrans("[death]", "left");
+        else
+        {
+            if (num_runes > 0 || gems_found > 0)
+                desc += jtrans("Got out of the dungeon");
+            else if (species::is_undead(static_cast<species_type>(race)))
+                desc += jtrans("Safely got out of the dungeon");
+            else
+                desc += jtrans("Got out of the dungeon alive");
+        }
+        break;
+
+    case KILLED_BY_WINNING:
+        desc += terse ? tagged_jtrans("[death]", "escaped") : jtrans("Escaped with the Orb");
+        if (num_runes < 1 && gems_found < 1)
+            desc += "！";
+        break;
+
+    case KILLED_BY_QUITTING:
+        desc += terse ? tagged_jtrans("[death]", "quit") : jtrans("Quit the game");
+        break;
+
+    case KILLED_BY_WIZMODE:
+        desc += terse ? tagged_jtrans("[death]", "wizmode") : jtrans("Entered wizard mode");
+        break;
+
+    case KILLED_BY_EXPLORING:
+        desc += terse ? tagged_jtrans("[death]", "exploremode") : jtrans("Entered explore mode");
+        break;
+
+    case KILLED_BY_DRAINING:
+        if (terse)
+            desc += tagged_jtrans("[death]", "drained");
+        else
+        {
+            if (!death_source_desc().empty())
+            {
+                desc += make_stringf(jtransc("Drained of all life by %s"), src);
+
+                if (!auxkilldata.empty())
+                    needs_beam_cause_line = true;
+            }
+            else if (!auxkilldata.empty())
+                desc += make_stringf(jtransc("Drained of all life by %s"), aux);
+            else
+                desc += jtrans("Drained of all life");
+        }
+        break;
+
+    case KILLED_BY_STARVATION:
+        desc += terse ? tagged_jtrans("[death]", "starvation") : jtrans("Starved to death");
+        break;
+
+    case KILLED_BY_FREEZING:    // Freeze, Fridge spells
+        if (terse)
+            desc += tagged_jtrans("[death]", "frozen");
+        else if (!death_source_desc().empty())
+            desc += make_stringf(jtransc("Frozen to death by %s"), src);
+        else
+            desc += jtrans("Frozen to death");
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_BURNING:     // sticky flame
+        if (terse)
+            desc += tagged_jtrans("[death]", "burnt");
+        else if (!death_source_desc().empty())
+        {
+            desc += make_stringf(jtransc("Incinerated by %s"), src);
+
+            if (!auxkilldata.empty())
+                needs_beam_cause_line = true;
+        }
+        else
+            desc += jtrans("Burnt to a crisp");
+
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_BLINKING:     // disjunction darts
+        if (terse)
+            desc += tagged_jtrans("[death]", "disjoined");
+        else if (!death_source_desc().empty())
+        {
+            desc += make_stringf(jtransc("Disjoined by %s"), src);
+
+            if (!auxkilldata.empty())
+                needs_beam_cause_line = true;
+        }
+
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_WILD_MAGIC:
+        if (auxkilldata.empty())
+        {
+            desc += terse ? tagged_jtrans("[death]", "wild magic")
+                          : jtrans("Killed by wild magic");
+        }
+        else
+        {
+            // A lot of sources for this case... some have "by" already.
+            const string cause = _cause_j(terse_wild_magic());
+            if (terse)
+                desc += cause;
+            else
+                desc += make_stringf(jtransc("Killed by %s"), cause.c_str());
+        }
+
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_XOM:
+        if (terse)
+            desc += tagged_jtrans("[death]", "xom");
+        else if (auxkilldata.empty())
+            desc += jtrans("Killed for Xom's enjoyment");
+        else
+            desc += make_stringf(jtransc("Killed by %s"), aux);
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_ROTTING:
+        desc += terse ? tagged_jtrans("[death]", "rotting") : jtrans("Rotted away");
+        if (!auxkilldata.empty())
+            desc += " (" + aux_j + ")";
+        if (!death_source_desc().empty())
+            desc += " (" + source + ")";
+        break;
+
+    case KILLED_BY_TARGETING:
+        if (terse)
+            desc += tagged_jtrans("[death]", "shot self");
+        else if (auxkilldata.empty())
+            desc += jtrans("Killed themself with bad targeting");
+        else
+        {
+            desc += make_stringf(jtransc("Killed themself with a badly aimed %s"),
+                                 aux);
+        }
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_REFLECTION:
+        needs_damage = true;
+        if (terse)
+            desc += tagged_jtrans("[death]", "reflected bolt");
+        else
+        {
+            desc += make_stringf(jtransc("Killed by a reflected %s"),
+                                 auxkilldata.empty() ? tagged_jtransc("[death]", "bolt") : aux);
+
+            if (!death_source_name.empty() && !oneline)
+            {
+                desc += _hiscore_newline_string();
+                desc += make_stringf(jtransc("... reflected by %s"), src);
+                needs_damage = false;
+            }
+        }
+        break;
+
+    case KILLED_BY_BOUNCE:
+        if (terse)
+            desc += tagged_jtrans("[death]", "bounced beam");
+        else
+        {
+            desc += make_stringf(jtransc("Killed themself with a bounced %s"),
+                                 auxkilldata.empty() ? tagged_jtransc("[death]", "beam") : aux);
+        }
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_SELF_AIMED:
+        if (terse)
+            desc += tagged_jtrans("[death]", "suicidal targeting");
+        else
+        {
+            desc += make_stringf(jtransc("Shot themself with %s"),
+                                 auxkilldata.empty() ? tagged_jtransc("[death]", "a beam") : aux);
+        }
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_DEATH_EXPLOSION:
+        if (terse)
+        {
+            if (death_source_name.empty())
+                desc += tagged_jtrans("[death]", "death explosion");
+            else
+                desc += source;
+        }
+        else
+        {
+            desc += make_stringf(jtransc("Killed by an exploding %s"),
+                                 death_source_name.empty()
+                                     ? tagged_jtransc("[death]", "monster") : src);
+        }
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_TSO_SMITING:
+        desc += terse ? tagged_jtrans("[death]", "smitten by Shining One")
+                      : jtrans("Smitten by the Shining One");
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_BEOGH_SMITING:
+        desc += terse ? tagged_jtrans("[death]", "smitten by Beogh")
+                      : jtrans("Smitten by Beogh");
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_PETRIFICATION:
+        desc += terse ? tagged_jtrans("[death]", "petrified") : jtrans("Turned to stone");
+        break;
+
+    case KILLED_BY_DEATH_CURSE:
+    {
+        if (!auxkilldata.empty())
+        {
+            if (terse)
+                desc += aux_j;
+            else
+            {
+                desc += make_stringf(jtransc("Slain by %s"), aux);
+                if (!death_source_name.empty())
+                {
+                    desc += _hiscore_newline_string();
+                    desc += make_stringf(jtransc("... wielded by %s"), src);
+                }
+            }
+        }
+        else if (terse)
+        {
+            if (death_source_name.empty())
+                desc += tagged_jtrans("[death]", "a death curse");
+            else
+                desc += make_stringf(jtransc("%s death curse"), src);
+        }
+        else
+            desc += make_stringf(jtransc("Slain by %s's death curse"), src);
+        needs_damage = true;
+        break;
+    }
+
+    case KILLED_BY_SOMETHING:
+        if (!auxkilldata.empty())
+        {
+            if (terse)
+                desc += aux_j;
+            else
+                desc += make_stringf(jtransc("Killed by %s"), aux);
+        }
+        else if (terse)
+            desc += tagged_jtrans("[death]", "died");
+        else
+            desc += jtrans("Died");
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_FALLING_DOWN_STAIRS:
+        desc += terse ? tagged_jtrans("[death]", "fell downstairs")
+                      : jtrans("Fell down a flight of stairs");
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_FALLING_THROUGH_GATE:
+        desc += terse ? tagged_jtrans("[death]", "fell through a gate")
+                      : jtrans("Fell down through a gate");
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_ACID:
+        if (terse)
+            desc += tagged_jtrans("[death]", "acid");
+        else if (!death_source_desc().empty())
+            desc += make_stringf(jtransc("Splashed by %s's acid"), src);
+        else
+            desc += jtrans("Splashed with acid");
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_CURARE:
+        desc += terse ? tagged_jtrans("[death]", "asphyx") : jtrans("Asphyxiated");
+        break;
+
+    case KILLED_BY_DIVINE_WRATH:
+        if (terse)
+            desc += tagged_jtrans("[death]", "divine wrath");
+        else if (auxkilldata.empty())
+            desc += jtrans("Killed by divine wrath");
+        else
+        {
+            // Lugonu's touch or "the <retribution> of <deity>";
+            // otherwise it's a beam
+            desc += make_stringf(jtransc("Killed by %s"), aux);
+        }
+        needs_damage = true;
+        if (!death_source_name.empty())
+            needs_called_by_monster_line = true;
+        break;
+
+    case KILLED_BY_DISINT:
+        if (terse)
+            desc += tagged_jtrans("[death]", "disintegration");
+        else
+        {
+            if (by_you)
+                desc += jtrans("Blew themself up");
+            else
+                desc += make_stringf(jtransc("Blown up by %s"), src);
+            needs_beam_cause_line = true;
+        }
+
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_MIRROR_DAMAGE:
+        desc += terse ? tagged_jtrans("[death]", "mirror damage")
+                      : jtrans("Killed by mirror damage");
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_FRAILTY:
+        if (terse)
+            desc += tagged_jtrans("[death]", "frailty");
+        else
+            desc += make_stringf(jtransc("Became unviable by %s"), aux);
+        break;
+
+    case KILLED_BY_BARBS:
+        desc += terse ? tagged_jtrans("[death]", "barbs")
+                      : jtrans("Succumbed to barbed spike wounds");
+        break;
+
+    case KILLED_BY_BEING_THROWN:
+        if (terse)
+            desc += make_stringf(jtransc("%s's throw"), src);
+        else
+            desc += make_stringf(jtransc("Thrown by %s"), src);
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_COLLISION:
+        if (terse)
+            desc += make_stringf(jtransc("%s collision"), aux);
+        else
+        {
+            desc += make_stringf(jtransc("Collided with %s"), aux);
+            needs_called_by_monster_line = true;
+        }
+        needs_damage = true;
+        break;
+
+    case KILLED_BY_ZOT:
+        desc += terse ? tagged_jtrans("[death]", "Zot")
+                      : jtrans("Tarried too long and was consumed by Zot");
+        break;
+
+    case KILLED_BY_CONSTRICTION:
+        if (terse)
+            desc += tagged_jtrans("[death]", "constriction");
+        else
+            desc += make_stringf(jtransc("Constricted to death by %s"), src);
+        needs_damage = true;
+        break;
+
+    default:
+        desc += terse ? tagged_jtrans("[death]", "program bug")
+                      : jtrans("Nibbled to death by software bugs");
+        break;
+    }                           // end switch
+
+    switch (death_type)
+    {
+    case KILLED_BY_STUPIDITY:
+    case KILLED_BY_WEAKNESS:
+    case KILLED_BY_CLUMSINESS:
+        if (terse || oneline)
+            desc += " (" + aux_j + ")";
+        else
+        {
+            desc += _hiscore_newline_string();
+            desc += make_stringf(jtransc("... caused by %s"), aux);
+        }
+        break;
+
+    default:
+        break;
+    }
+
+    if (terse)
+    {
+        if (death_type == KILLED_BY_MONSTER && !auxkilldata.empty())
+        {
+            desc += "/";
+            desc += aux_j;
+            needs_damage = true;
+        }
+        else if (needs_beam_cause_line)
+            desc += "/" + _cause_j(terse_beam_cause());
+        else if (needs_called_by_monster_line)
+            desc += "/" + source;
+
+        if (!killerpath.empty())
+            desc += "[" + death_name_j(indirectkiller) + "]";
+
+        if (needs_damage && damage > 0)
+            desc += " " + damage_string_j(true);
+    }
+    else if (verbose)
+    {
+        bool done_damage = false;  // paranoia
+
+        if (needs_damage && damage > 0)
+        {
+            desc += damage_string_j();
+            needs_damage = false;
+            done_damage = true;
+        }
+
+        if (death_type == KILLED_BY_LEAVING
+            || death_type == KILLED_BY_WINNING)
+        {
+            if (num_runes < 1 && gems_found < 1)
+                desc = _append_sentence_delimiter_j(desc, "。");
+            else
+                desc += runes_gems_desc_j();
+        }
+        else if (!_very_boring_death_type(death_type))
+        {
+            desc += _hiscore_newline_string();
+
+            if (death_type == KILLED_BY_MONSTER && !auxkilldata.empty())
+            {
+                desc += make_stringf(jtransc("... wielding %s"), aux);
+                needs_damage = true;
+                desc += _hiscore_newline_string();
+            }
+            else if (needs_beam_cause_line)
+            {
+                desc += make_stringf(jtransc("... with %s"),
+                                     _cause_j(terse_beam_cause()).c_str());
+                desc += _hiscore_newline_string();
+                needs_damage = true;
+            }
+            else if (needs_called_by_monster_line)
+            {
+                const bool trees = auxkilldata == "by angry trees";
+                const bool freeze = auxkilldata == "by Freeze";
+                desc += make_stringf(jtransc(
+                    death_type == KILLED_BY_COLLISION
+                                ? "... after being knocked back by %s" :
+                    trees       ? "... awakened by %s" :
+                    freeze      ? "... generated by %s"
+                                : "... invoked by %s"),
+                    src);
+                desc += _hiscore_newline_string();
+                needs_damage = true;
+            }
+
+            if (!killerpath.empty())
+            {
+                vector<string> summoners = _xlog_split_fields(killerpath);
+
+                for (const auto &sumname : summoners)
+                {
+                    desc += "... " + _blame_j(sumname);
+                    desc += _hiscore_newline_string();
+                }
+            }
+
+            if (needs_damage && !done_damage && damage > 0)
+                desc += damage_string_j();
+
+            if (needs_damage && !done_damage)
+                desc += _hiscore_newline_string();
+
+            // 麻痺などの原因は英語(プレイヤー自身なら "you")で保存されている
+            const string disabler = you.props.exists(DISABLED_BY_KEY)
+                ? death_name_j(you.props[DISABLED_BY_KEY].get_string())
+                : "";
+
+            if (you.duration[DUR_PARALYSIS])
+            {
+                if (disabler.empty())
+                    desc += jtrans("... while paralysed");
+                else
+                {
+                    desc += make_stringf(jtransc("... while paralysed by %s"),
+                                         disabler.c_str());
+                }
+                desc += _hiscore_newline_string();
+            }
+            else if (you.duration[DUR_PETRIFIED])
+            {
+                if (disabler.empty())
+                    desc += jtrans("... while petrified");
+                else
+                {
+                    desc += make_stringf(jtransc("... while petrified by %s"),
+                                         disabler.c_str());
+                }
+                desc += _hiscore_newline_string();
+            }
+            else if (you.duration[DUR_SLEEP])
+            {
+                if (disabler.empty())
+                    desc += jtrans("... while put to sleep");
+                else
+                {
+                    desc += make_stringf(jtransc("... while put to sleep by %s"),
+                                         disabler.c_str());
+                }
+            }
+            else if (you.duration[DUR_VEXED])
+            {
+                if (disabler.empty())
+                    desc += jtrans("... while vexed");
+                else
+                {
+                    desc += make_stringf(jtransc("... while vexed by %s"),
+                                         disabler.c_str());
+                }
+            }
+        }
+    }
+
+    if (!oneline)
+    {
+        if (death_type == KILLED_BY_LEAVING
+            || death_type == KILLED_BY_WINNING)
+        {
+            if (verbosity == DDV_NORMAL)
+            {
+                const bool cool = num_runes > 0 || gems_found > 0;
+                desc = _append_sentence_delimiter_j(desc, cool ? "！" : "。");
+            }
+            desc += _hiscore_newline_string();
+        }
+    }
+
+    if (death_type == KILLED_BY_DEATH_EXPLOSION && !terse && !auxkilldata.empty())
+    {
+        desc += "... ";
+        desc += aux_j;
+        desc += _hiscore_newline_string();
+    }
+
+    if (terse)
+        trim_string(desc);
 
     return desc;
 }

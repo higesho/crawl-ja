@@ -1,0 +1,277 @@
+# initfile.cc(オプション解析のエラー)
+# 最初の rc 読み込みは DB の初期化より前なので、その時点では英語のまま出る。
+# オプション名・値・キーワードは英語のまま訳に残す。
+# report_error() の文は "Options error: %s (%s:%d)" の %s に入る。
+%%%%
+Options error: Bad monster_list_colour: '%s'
+
+オプションエラー: monster_list_colour の色が不正: '%s'
+%%%%
+Bad monster_list_colour key: %s
+
+monster_list_colour のキーが不正: %s
+%%%%
+Options error: Bad custom_text_colours key: '%s'
+
+オプションエラー: custom_text_colours のキーが不正: '%s'
+%%%%
+Bad custom_text_colours: %s
+
+custom_text_colours が不正: %s
+%%%%
+No translations for language '%s'.\nLanguages with at least partial translation: %s
+
+言語 '%s' の翻訳がない。\n一部でも翻訳がある言語: %s
+%%%%
+Can't find crawl_dir: '%s'
+
+crawl_dir が見つからない: '%s'
+%%%%
+Unknown species choice: %s
+
+不明な種族の指定: %s
+%%%%
+Unknown background choice: %s
+
+不明な職業の指定: %s
+%%%%
+Bad enemy_hp_colour: %s
+
+enemy_hp_colour が不正: %s
+%%%%
+Extraneous enemy hp color values ignored in '%s'
+
+'%s' の余分な敵の体力の色の指定は無視した
+%%%%
+Unknown delay: %s
+
+不明な行動の種類: %s
+%%%%
+Delay interrupt name "%s" not recognised.
+
+行動の中断条件の名前 "%s" が認識できない。
+%%%%
+Invalid glyph override: %X
+
+不正な文字の置き換え: %X
+%%%%
+Unknown ability '%s'
+
+不明な能力 '%s'
+%%%%
+Unknown spell '%s'
+
+不明な呪文 '%s'
+%%%%
+Unknown scroll '%s'
+
+不明な巻物 '%s'
+%%%%
+Unknown monster: "%s"
+
+不明なモンスター: "%s"
+%%%%
+User lua is disabled in this build! `%s`
+
+このビルドではユーザーの Lua は無効になっている！ `%s`
+%%%%
+User lua is disabled in this build! (file: %s)
+
+このビルドではユーザーの Lua は無効になっている！ (ファイル: %s)
+%%%%
+Can't find base tile "%s" of variant tile "%s"
+
+元のタイル "%s" が見つからない(派生タイル "%s")
+%%%%
+Unknown tile: "%s"
+
+不明なタイル: "%s"
+%%%%
+Can't use that monster as a mons: player tile, sorry: "%s"
+
+そのモンスターは mons: のプレイヤータイルには使えない: "%s"
+%%%%
+Invalid setting for tile_player_tile: "%s"
+
+tile_player_tile の設定が不正: "%s"
+%%%%
+Invalid %s tile offsets: "%s"
+
+%s のタイルの位置補正が不正: "%s"
+%%%%
+Unknown terrain type '%s'
+
+不明な地形の種類 '%s'
+%%%%
+Unknown consumable type: %s
+
+不明な消耗品の種類: %s
+%%%%
+Unknown animation type '%s'
+
+不明なアニメーションの種類 '%s'
+%%%%
+Unknown explore stop condition '%s'
+
+不明な自動探索の停止条件 '%s'
+%%%%
+Unknown greedy visit condition '%s'
+
+不明な自動探索の立ち寄り条件 '%s'
+%%%%
+Options error: Missing colour in message_colour setting: '%s'
+
+オプションエラー: message_colour の設定に色がない: '%s'
+%%%%
+Options error: Bad colour '%s' in message_colour setting: '%s'
+
+オプションエラー: message_colour の設定の色 '%s' が不正: '%s'
+%%%%
+Options error: Missing tag/color in colour mapping: '%s'
+
+オプションエラー: 色の対応付けにタグか色がない: '%s'
+%%%%
+Options error: Unknown color in colour mapping: '%s'
+
+オプションエラー: 色の対応付けに不明な色がある: '%s'
+%%%%
+Options error: invalid sound mapping '%s'
+
+オプションエラー: 不正な効果音の対応付け '%s'
+%%%%
+Options warning: `sound` will have no effect on this build.
+
+オプションの警告: このビルドでは `sound` は効果がない。
+%%%%
+Error parsing slot mapping: '%s'
+
+スロットの対応付けの解析に失敗した: '%s'
+%%%%
+Error parsing consumable mapping: '%s'
+
+消耗品の対応付けの解析に失敗した: '%s'
+%%%%
+Setting crawl_dir to `%s`.
+
+crawl_dir を `%s` に設定した。
+%%%%
+Bad bindkey bracketing in '%s'
+
+'%s' の bindkey の括弧が不正
+%%%%
+No key in bindkey directive '%s'
+
+bindkey の指定 '%s' にキーがない
+%%%%
+Invalid keyseq '%s' in bindkey directive '%s'
+
+bindkey の指定のキー列 '%s' が不正: '%s'
+%%%%
+Invalid key '%s' in bindkey directive '%s'
+
+bindkey の指定のキー '%s' が不正: '%s'
+%%%%
+No command name for bindkey directive '%s'
+
+bindkey の指定 '%s' にコマンド名がない
+%%%%
+No command named '%s'
+
+'%s' という名前のコマンドはない
+%%%%
+Unknown option name for default: '%s'
+
+default に不明なオプション名: '%s'
+%%%%
+Option 'lua_max_memory' is disabled in this build.
+
+このビルドではオプション 'lua_max_memory' は無効。
+%%%%
+Couldn't parse integer option lua_max_memory: "%s"
+
+整数のオプション lua_max_memory を解析できない: "%s"
+%%%%
+lua_file failed: clua not enabled on this build!
+
+lua_file に失敗した: このビルドでは clua が無効！
+%%%%
+No variable named '%s' to make constant
+
+定数にする変数 '%s' がない
+%%%%
+'%s' is already a constant
+
+'%s' はすでに定数
+%%%%
+Bad object type '%*s' for autopickup.
+
+autopickup の物の種類 '%*s' が不正。
+%%%%
+Bad colour -- %s=%d or %s=%d
+
+色が不正 -- %s=%d または %s=%d
+%%%%
+Bad channel -- %s
+
+チャンネルが不正 -- %s
+%%%%
+Bad fire item start index: %s
+
+投射物の開始番号が不正: %s
+%%%%
+Autoinscribe string must have exactly one colon: %s
+
+autoinscribe の文字列にはコロンがちょうど 1 つ必要: %s
+%%%%
+Autoinscribe pattern is empty: %s
+
+autoinscribe のパターンが空: %s
+%%%%
+Autoinscribe result is empty: %s
+
+autoinscribe の刻む文字列が空: %s
+%%%%
+Error parsing autoinscribe string: %s
+
+autoinscribe の文字列の解析に失敗した: %s
+%%%%
+Bad skill level to note -- %s
+
+ノートに記録する技能レベルが不正 -- %s
+%%%%
+Bad item type '%*s' for action_panel.
+
+action_panel のアイテムの種類 '%*s' が不正。
+%%%%
+Too many fake langs; maximum is %d
+
+疑似言語が多すぎる。最大 %d 個
+%%%%
+Invalid fake-lang format: %s
+
+疑似言語の書式が不正: %s
+%%%%
+Lang %s doesn't take a value
+
+言語 %s には値を指定できない
+%%%%
+Invalid value '%s' provided for lang
+
+言語に不正な値 '%s' が指定された
+%%%%
+Unknown language %s!
+
+不明な言語 %s！
+%%%%
+Cannot find %sfile "%s".
+
+%sファイル "%s" が見つからない。
+%%%%
+Cannot include %sfile: %s
+
+%sファイルを include できない: %s
+%%%%
+Options error: %s (%s:%d)
+
+オプションエラー: %s (%s:%d)
+%%%%

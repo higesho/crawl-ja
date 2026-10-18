@@ -1,0 +1,9 @@
+%%%%
+Failed to create item '%s'
+
+'%s'というアイテムを生成するのに失敗しました。
+%%%%
+<cyan>Lucky! %s was actually %s</cyan>!
+
+<cyan>幸運！%sは実は%sだった</cyan>！
+%%%%

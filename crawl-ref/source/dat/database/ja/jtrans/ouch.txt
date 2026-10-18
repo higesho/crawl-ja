@@ -180,3 +180,8 @@ Your spilled blood starts moving with violent intent!
 
 あなたの流した血が凶暴な意思を持って動き始めた！
 %%%%
+%%%%
+something (%d)
+
+何か (%d)
+%%%%

@@ -832,7 +832,8 @@ LUAFN(moninf_get_status)
     if (lua_gettop(ls) >= 2)
         which = luaL_checkstring(ls, 2);
 
-    vector<string> status = mi->attributes();
+    // Lua(autofight.lua やユーザーの rc)は英語の状態名で比べる
+    vector<string> status = mi->attributes_en();
     if (!which)
     {
         PLUARET(string, comma_separated_line(status.begin(),
@@ -855,7 +856,26 @@ LUAFN(moninf_get_status)
 LUAFN(moninf_get_name)
 {
     MONINF(ls, 1, mi);
-    string s = mi->full_name();
+    // 比較に使われるので英語の名前を返す。表示には name_j を使う。
+    string s = mi->full_name_en();
+    lua_pushstring(ls, s.c_str());
+    return 1;
+}
+
+/*** The monster's full name for display (Japanese).
+ * Same as @{name}, but translated. Use this only for messages; compare
+ * names with @{name}.
+ * @tparam[opt="plain"] string desc description type
+ * @treturn string
+ * @function name_j
+ */
+LUAFN(moninf_get_name_j)
+{
+    MONINF(ls, 1, mi);
+    description_level_type desc = DESC_PLAIN;
+    if (lua_isstring(ls, 2))
+        desc = description_type_by_name(lua_tostring(ls, 2));
+    string s = mi->full_name(desc);
     lua_pushstring(ls, s.c_str());
     return 1;
 }
@@ -921,6 +941,7 @@ static const struct luaL_Reg moninf_lib[] =
     MIREG(desc),
     MIREG(status),
     MIREG(name),
+    MIREG(name_j),
     MIREG(speed_description),
     MIREG(spells),
     MIREG(res_poison),

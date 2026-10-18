@@ -289,7 +289,7 @@ You can't shoot while berserk! Really wield %s?
 %%%%
 Spend multiple turns changing equipment while %s?
 
-%s状態ですが、数ターンかけて装備を変更しますか？
+%sが、数ターンかけて装備を変更しますか？
 %%%%
 Removing %s right now would cause you to drown!
 

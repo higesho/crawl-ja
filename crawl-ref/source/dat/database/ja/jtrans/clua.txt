@@ -1,0 +1,154 @@
+# dat/clua/*.lua(プレイヤー側の Lua)の表示文。Lua からは crawl.jtrans(...) で引く。
+# 書式付きのキーは crawl.jtrans(key, ...) が string.format に渡すので、
+# %s の数と順番を英文と同じに保つこと。
+# "You are too confused!" は message.txt、"You are too injured to fight recklessly!" は
+# quiver.txt、"You are caught in a web!" は traps.txt にある。
+%%%%
+# autofight.lua
+Failed to move towards target.
+
+標的まで向かうことに失敗した。
+%%%%
+Failed to move towards target because you cannot move.
+
+あなたは動けないため、標的まで向かうことに失敗した。
+%%%%
+You are held in a net!
+
+あなたは網で拘束されている！
+%%%%
+No target in view!
+
+視界内に敵はいない！
+%%%%
+No reachable target in view!
+
+視界内には攻撃の届く敵がいない！
+%%%%
+No target in range!
+
+射程内に敵はいない！
+%%%%
+No spell in slot %s!
+
+スロット%sに呪文がない！
+%%%%
+Enabling autothrow.
+
+自動投擲をオンにしました。
+%%%%
+Disabling autothrow.
+
+自動投擲をオフにしました。
+%%%%
+# automagic.lua
+You don't have enough magic to cast %s!
+
+%sを唱えるだけの魔力がない！
+%%%%
+You are too depleted to cast spells recklessly!
+
+あなたは魔力が枯渇しておりむやみに呪文を唱えられない！
+%%%%
+Which spell slot to assign to automagic? (Enter to disable, Esc to cancel)
+
+どの呪文を自動詠唱に割り当てますか？ (Enterで使用不可、Escでキャンセル)
+%%%%
+Cancelled.
+
+キャンセルしました。
+%%%%
+Deactivated automagic.
+
+自動詠唱をオフにしました。
+%%%%
+Invalid spell slot.
+
+無効なスロットです。
+%%%%
+Automagic will cast spell in slot %s (%s).
+
+自動詠唱はスロット%sの呪文(%s)を唱えます。
+%%%%
+Automagic enabled, will cast spell in slot %s (%s).
+
+自動詠唱をオンにしました。スロット%sの呪文(%s)を唱えます。
+%%%%
+no spell currently
+
+現在は呪文なし
+%%%%
+# kills.lua(dump_kill_breakdowns = true のときのキャラクターダンプ)
+Vanquished Creatures
+
+倒したモンスター
+%%%%
+[kill category]collateral kills
+
+間接的な殺害
+%%%%
+[kill category]others
+
+その他
+%%%%
+Monster Nature
+
+モンスターの性質
+%%%%
+Strange Monsters
+
+奇妙なモンスター
+%%%%
+Uniques
+
+ユニーク
+%%%%
+Holy Monsters
+
+聖なるモンスター
+%%%%
+Natural Monsters
+
+自然のモンスター
+%%%%
+Undead Monsters
+
+アンデッド
+%%%%
+Demonic Monsters
+
+悪魔
+%%%%
+Non-Living Monsters
+
+生命を持たぬもの
+%%%%
+Plants
+
+植物
+%%%%
+Ascending Order
+
+撃破数の少ない順
+%%%%
+Monster Symbol
+
+モンスターの記号
+%%%%
+All '%s'
+
+記号'%s'のモンスター
+%%%%
+The 3-digit Club
+
+撃破数3桁クラブ
+%%%%
+# delays.lua(オプション runrest_* の誤り)
+Missing channel name for runrest: '%s'
+
+runrest のチャンネル名が指定されていない: '%s'
+%%%%
+Bad channel name '%s' for runrest: '%s'
+
+runrest のチャンネル名 '%s' は不正: '%s'
+%%%%

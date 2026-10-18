@@ -16,6 +16,7 @@
 #include "cloud.h"
 #include "clua.h"
 #include "coordit.h"
+#include "database.h"
 #include "delay.h"
 #include "directn.h"
 #include "env.h"
@@ -150,18 +151,19 @@ static string _seen_monsters_announcement(const vector<monster*> &visible,
     if (visible.size() == 1)
     {
         const monster& m = *visible[0];
-        return make_stringf("%s is nearby", m.name(DESC_A).c_str());
+        return make_stringf(jtransc("%s is nearby"), m.name(DESC_A).c_str());
     }
     if (visible.size() > 1)
-        return "there are monsters nearby";
+        return jtrans("there are monsters nearby");
     if (sensed_monster)
-        return "there is a strange disturbance nearby";
+        return jtrans("there is a strange disturbance nearby");
     return "";
 }
 
 static void _announce_monsters(string announcement, vector<monster*> &visible)
 {
-    mprf(MSGCH_WARN, "%s!", announcement.c_str());
+    // 日本語版: 理由の文(「近くに〜がいる」)に全角の「！」を付ける。
+    mprf(MSGCH_WARN, "%s！", announcement.c_str());
 
     if (Options.use_animations & UA_MONSTER_IN_SIGHT)
     {
@@ -230,7 +232,7 @@ vector<monster* > get_nearby_monsters(bool want_move,
     if (announce || reason)                         \
     {                                               \
         if (announce)                               \
-            mprf(MSGCH_WARN, "%s!", msg);           \
+            mprf(MSGCH_WARN, "%s！", msg);          \
         if (reason)                                 \
             *reason = msg;                          \
         return false;                               \
@@ -251,20 +253,20 @@ bool i_feel_safe(bool announce, bool want_move, bool just_monsters,
             // Qazlal immunity will allow for it, however.
             bool your_fault = cloud_is_yours_at(you.pos());
             if (cloud_damages_over_time(type, want_move, your_fault))
-                UNSAFE_MSG(make_stringf("you are in a cloud of %s", cloud_type_name(type).c_str()).c_str());
+                UNSAFE_MSG(make_stringf(jtransc("you are in a cloud of %s"), tagged_jtransc("[cloud]", cloud_type_name(type))).c_str());
         }
 
         if (poison_is_lethal())
-            UNSAFE_MSG("there is a lethal amount of poison in your body");
+            UNSAFE_MSG(jtransc("there is a lethal amount of poison in your body"));
 
         if (contam_max_damage() >= you.hp)
-            UNSAFE_MSG("you are contaminated with a potentially lethal amount of magic");
+            UNSAFE_MSG(jtransc("you are contaminated with a potentially lethal amount of magic"));
 
         if (you.duration[DUR_STICKY_FLAME])
-            UNSAFE_MSG("you are on fire");
+            UNSAFE_MSG(jtransc("you are on fire"));
 
         if (you.props[EMERGENCY_FLIGHT_KEY])
-            UNSAFE_MSG("you are being drained by your emergency flight");
+            UNSAFE_MSG(jtransc("you are being drained by your emergency flight"));
 
         // No monster will attack you inside a sanctuary,
         // so presence of monsters won't matter -- until it starts shrinking...
@@ -492,12 +494,12 @@ void revive()
     if (you.hp_max <= 0)
     {
         you.lives = 0;
-        mpr("You are too frail to live.");
+        mpr(jtrans("You are too frail to live."));
         // possible only with an extreme abuse of Borgnjor's
         // might be impossible now that felids don't level down on death?
         ouch(INSTANT_DEATH, KILLED_BY_DRAINING);
     }
 
-    mpr("You rejoin the land of the living...");
+    mpr(jtrans("You rejoin the land of the living..."));
     // included in default force_more_message
 }

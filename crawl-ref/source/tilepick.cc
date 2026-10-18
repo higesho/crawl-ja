@@ -3951,7 +3951,8 @@ tileidx_t tileidx_skill(skill_type skill, int train)
     case SK_SHIELDS:        ch = TILEG_SHIELDS_ON; break;
     case SK_UNARMED_COMBAT:
         {
-            const string hand = you.hand_name(false);
+            // hand_name() は日本語を返すので、英語版で比べる
+            const string hand = you.hand_name_en(false);
             if (hand == "hand")
                 ch = TILEG_UNARMED_COMBAT_ON;
             else if (hand == "paw")

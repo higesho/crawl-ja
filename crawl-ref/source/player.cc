@@ -134,9 +134,8 @@ static void _moveto_maybe_repel_stairs()
 
     if (x_chance_in_y(pct, 100))
     {
-        const string stair_str = tagged_jtrans("[feature]",
-                                    feature_description_at(you.pos(), false,
-                                                           DESC_PLAIN));
+        const string stair_str = feature_description_at_j(you.pos(), false,
+                                                          DESC_PLAIN);
         const string prep = tagged_jtrans("[stair slide prep]",
                                 feat_preposition(new_grid, true, &you));
 
@@ -237,9 +236,8 @@ bool check_moveto_trap(const coord_def& p, const string &move_verb,
             *prompted = true;
         // 日本語の語順に合わせて引数を入れ替えている(罠の名前、助詞、動作名)
         prompt = make_stringf(jtransc("Really %s %s that %s?"),
-                              tagged_jtrans("[feature]",
-                                  feature_description_at(p, false,
-                                                         DESC_BASENAME)).c_str(),
+                              feature_description_at_j(p, false,
+                                                       DESC_BASENAME).c_str(),
                               tagged_jtransc("[moveto prep]",
                                   (trap->type == TRAP_ALARM
                                    || trap->type == TRAP_PLATE) ? "onto"
@@ -3616,7 +3614,7 @@ void display_char_status()
     for (unsigned i = 0; i <= STATUS_LAST_STATUS; ++i)
     {
         if (fill_status_info(i, inf) && !inf.long_text.empty())
-            mpr(jtrans(inf.long_text));
+            mpr(inf.long_text); // fill_status_info() は日本語を返す
     }
     string cinfo = _constriction_description();
     if (!cinfo.empty())
@@ -4526,6 +4524,16 @@ bool confuse_player(int amount, bool quiet, bool force)
     return true;
 }
 
+// 毒・麻痺などの原因として props(POISONER_KEY、DISABLED_BY_KEY)に保存する
+// 名前。player::name() は「あなた」を返すが、hiscores.cc は保存値を "you" と
+// 比べるので、プレイヤー自身なら英語の "you" で保存する。
+static string _disabler_save_name(const string &name)
+{
+    if (name == you.name(DESC_A, true) || name == "you")
+        return "you";
+    return name;
+}
+
 bool poison_player(int amount, string source, string source_aux, bool force)
 {
     ASSERT(!crawl_state.game_is_arena());
@@ -4573,7 +4581,7 @@ bool poison_player(int amount, string source, string source_aux, bool force)
         learned_something_new(HINT_YOU_POISON);
     }
 
-    you.props[POISONER_KEY] = source;
+    you.props[POISONER_KEY] = _disabler_save_name(source);
     you.props[POISON_AUX_KEY] = source_aux;
 
     // Display the poisoned segment of our health, in case we take no damage
@@ -7548,8 +7556,9 @@ void player::paralyse(const actor *who, int str, string source)
     {
         take_note(Note(NOTE_PARALYSIS, you.duration[DUR_PARALYSIS], 0, source));
         // use the real name here even for invisible monsters
-        props[DISABLED_BY_KEY] = use_actor_name ? who->name(DESC_A, true)
-                                               : source;
+        props[DISABLED_BY_KEY] = _disabler_save_name(
+                                    use_actor_name ? who->name(DESC_A, true)
+                                                   : source);
     }
     else
         props.erase(DISABLED_BY_KEY);
@@ -7579,7 +7588,8 @@ void player::petrify(const actor *who, bool force)
     duration[DUR_PETRIFYING] = 30 + you.time_taken;
 
     if (who)
-        props[DISABLED_BY_KEY] = who->name(DESC_A, true);
+        props[DISABLED_BY_KEY] = who->is_player() ? "you"
+                                 : who->as_monster()->name_en(DESC_A, true);
     else
         props.erase(DISABLED_BY_KEY);
 
@@ -7629,8 +7639,9 @@ bool player::vex(const actor* who, int dur, string source, string special_msg)
     if (!source.empty())
     {
         take_note(Note(NOTE_VEXED, dur, 0, source));
-        props[DISABLED_BY_KEY] = use_actor_name ? who->name(DESC_A, true)
-                                               : source;
+        props[DISABLED_BY_KEY] = _disabler_save_name(
+                                    use_actor_name ? who->name(DESC_A, true)
+                                                   : source);
     }
     else
         props.erase(DISABLED_BY_KEY);
@@ -8192,7 +8203,8 @@ void player::put_to_sleep(actor* source, int dur, bool hibernate)
     }
 
     if (source)
-        props[DISABLED_BY_KEY] = source->name(DESC_A, true).c_str();
+        props[DISABLED_BY_KEY] =
+            _disabler_save_name(source->name(DESC_A, true));
     else
         props.erase(DISABLED_BY_KEY);
 

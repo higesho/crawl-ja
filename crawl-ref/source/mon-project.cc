@@ -581,7 +581,7 @@ move_again:
             && you.see_cell(starting_pos))
         {
             mprf(jtransc("%s hits %s."), mon.name(DESC_THE, true).c_str(),
-                 feature_description_at(pos, false, DESC_A).c_str());
+                 feature_description_at_j(pos, false, DESC_A).c_str());
         }
 
         monster* mons = (victim && victim->is_monster()) ?

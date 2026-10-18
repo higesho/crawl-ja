@@ -74,6 +74,7 @@
 #include "tileview.h"
 #include "timed-effects.h"
 #include "traps.h"
+#include "unicode.h"
 #include "unique-creature-list-type.h"
 #ifdef WIZARD
 #include "wiz-dgn.h"
@@ -7628,14 +7629,16 @@ string dump_vault_maps()
                 out += "[-gen]      ";
                 if (!you.vault_list.count(lid))
                 {
-                    out +=  lid.describe() + "\n";
+                    out +=  lid.describe_j() + "\n";
                     continue;
                 }
             }
             else
                 out += you.level_visited(lid) ? "[+gen,+vis] " : "[+gen,-vis] ";
         }
-        out += lid.describe();
+        // 場所名は日本語(全角を含む)なので表示幅で揃える
+        const string place_name = lid.describe_j();
+        out += place_name;
         vector<string> &maps(you.vault_list[lid]);
         if (maps.size() == 0)
         {
@@ -7643,7 +7646,7 @@ string dump_vault_maps()
             continue;
         }
 
-        out += ": " + string(max(8 - int(lid.describe().length()), 0), ' ');
+        out += ": " + string(max(10 - strwidth(place_name), 0), ' ');
 
         // TODO: some way of showing no_dump maps in wizmode?
 
@@ -7651,7 +7654,7 @@ string dump_vault_maps()
         out += wordwrap_line(vaults, you.wizard ? 58 : 70) + "\n";
         while (!vaults.empty())
         {
-            out += string(you.wizard ? 22 : 10, ' ')
+            out += string(you.wizard ? 24 : 12, ' ')
                     + wordwrap_line(vaults, you.wizard ? 58 : 70, false) + "\n";
         }
 

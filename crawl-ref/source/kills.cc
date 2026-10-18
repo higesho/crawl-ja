@@ -10,10 +10,12 @@
 #include <algorithm>
 
 #include "clua.h"
+#include "database.h"
 #include "describe.h"
 #include "english.h"
 #include "files.h"
 #include "ghost.h"
+#include "japanese.h"
 #include "libutil.h"
 #include "l-libs.h"
 #include "mon-death.h"
@@ -24,6 +26,7 @@
 #include "tags.h"
 #include "tag-version.h"
 #include "travel.h"
+#include "unicode.h"
 #include "unwind.h"
 #include "viewchar.h"
 
@@ -153,11 +156,8 @@ string KillMaster::kill_info() const
     string grandt;
     if (categories > 1)
     {
-        char buf[200];
-        snprintf(buf, sizeof buf,
-                "Grand Total: %d creatures vanquished",
-                grandtotal);
-        grandt = buf;
+        grandt = make_stringf(jtransc("Grand Total: %d creatures vanquished"),
+                              grandtotal);
     }
 
     bool custom = false;
@@ -205,23 +205,27 @@ void KillMaster::add_kill_info(string &killtext,
     {
         if (!clua.error.empty())
         {
-            killtext += "Lua error:\n";
+            killtext += jtrans_notrim("Lua error:\n");
             killtext += clua.error + "\n\n";
         }
         if (separator)
             killtext += "\n";
 
-        killtext += "Vanquished Creatures";
+        // 訳は clua.txt(kills.lua と共通)
+        killtext += jtrans("Vanquished Creatures");
         if (category)
-            killtext += string(" (") + category + ")";
+        {
+            killtext += string(" (")
+                        + tagged_jtrans("[kill category]", category) + ")";
+        }
 
         killtext += "\n";
 
         for (const kill_exp &kill : kills)
             killtext += "  " + kill.desc + "\n";
 
-        killtext += make_stringf("%d creature%s vanquished.\n",
-                                 count, count == 1 ? "" : "s");
+        killtext += make_stringf(jtrans_notrimc("%d creatures vanquished.\n"),
+                                 count);
     }
     lua_pop(clua, 1);
 }
@@ -400,16 +404,13 @@ kill_def::kill_def(const monster* mon) : kills(0), exp(0)
 
 // For a non-unique monster, prefixes a suitable article if we have only one
 // kill, else prefixes a kill count and pluralises the monster name.
+// 日本語: name は訳した名前。2体以上なら「12体のオーク」。
 static string n_names(const string &name, int n)
 {
     if (n > 1)
-    {
-        char buf[20];
-        snprintf(buf, sizeof buf, "%d ", n);
-        return buf + pluralise_monster(name);
-    }
+        return make_stringf(tagged_jtransc("[kills]", "%d %s"), n, name.c_str());
     else
-        return article_a(name, false);
+        return name;
 }
 
 // Returns a string describing the number of times a unique has been killed.
@@ -417,23 +418,17 @@ static string n_names(const string &name, int n)
 //
 static string kill_times(int kills)
 {
-    char buf[50];
     switch (kills)
     {
     case 1:
-        strcpy(buf, " (once)");
-        break;
+        return jtrans("(once)");
     case 2:
-        strcpy(buf, " (twice)");
-        break;
+        return jtrans("(twice)");
     case 3:
-        strcpy(buf, " (thrice)");
-        break;
+        return jtrans("(thrice)");
     default:
-        snprintf(buf, sizeof buf, " (%d times)", kills);
-        break;
+        return make_stringf(jtransc("(%d times)"), kills);
     }
-    return string(buf);
 }
 
 void kill_def::merge(const kill_def &k, bool uniq)
@@ -495,9 +490,39 @@ string kill_def::base_name(const kill_monster_desc &md) const
     return name;
 }
 
+// base_name() の表示用(日本語)版。base_name() は Lua の並べ替えに使うので英語。
+static string _base_name_j(const kill_monster_desc &md)
+{
+    string name;
+    if (md.monnum == MONS_PANDEMONIUM_LORD)
+        name = jtrans("pandemonium lord");
+    else
+        name = mons_type_name_j(md.monnum, DESC_PLAIN);
+
+    switch (md.modifier)
+    {
+    case kill_monster_desc::M_ZOMBIE:
+        name += "の" + tagged_jtrans("[mon suffix]", "zombie");
+        break;
+    case kill_monster_desc::M_DRAUGR:
+        name += "の" + tagged_jtrans("[mon suffix]", "draugr");
+        break;
+    case kill_monster_desc::M_SIMULACRUM:
+        name += "の" + tagged_jtrans("[mon suffix]", "simulacrum");
+        break;
+    case kill_monster_desc::M_SPECTRE:
+        name = tagged_jtrans("[mon prefix]", "spectral") + name;
+        break;
+    default:
+        break;
+    }
+
+    return name;
+}
+
 string kill_def::info(const kill_monster_desc &md) const
 {
-    string name = base_name(md);
+    string name = _base_name_j(md);
 
     if (!mons_is_unique(md.monnum))
     {
@@ -511,7 +536,7 @@ string kill_def::info(const kill_monster_desc &md) const
             && md.monnum != MONS_SHAPESHIFTER
             && md.monnum != MONS_GLOWING_SHAPESHIFTER)
         {
-            name += " (shapeshifter)";
+            name += jtrans("(shapeshifter)");
         }
     }
     else if (kills > 1)
@@ -540,7 +565,7 @@ string kill_def::append_places(const kill_monster_desc &md,
         {
             if (iter != places.begin())
                 augmented += " ";
-            augmented += iter->describe();
+            augmented += iter->describe_j();
         }
         augmented += ")";
         return augmented;
@@ -600,11 +625,64 @@ kill_ghost::kill_ghost(const monster* mon)
     }
 }
 
+// 保存された英語の幽霊の名前
+// ("The ghost of 名前 the 称号, a 経験ランク 種族職業[ of 神]")を表示用に訳す。
+// 形が違えばそのまま返す。
+static string _ghost_name_j(const string &ghost_name)
+{
+    const string prefix = "The ghost of ";
+    if (!starts_with(ghost_name, prefix))
+        return ghost_name;
+
+    const string rest = ghost_name.substr(prefix.size());
+    const string::size_type the = rest.find(" the ");
+    const string::size_type comma = rest.rfind(", ");
+    if (the == string::npos || comma == string::npos || comma < the)
+        return ghost_name;
+
+    const string name = rest.substr(0, the);
+    string title = rest.substr(the + 5, comma - the - 5);
+    if (!has_wide_char(title))
+        title = tagged_jtrans("[title]", title);
+
+    // "an adept MiFi of Trog"
+    string tail = rest.substr(comma + 2);
+    if (starts_with(tail, "a "))
+        tail = tail.substr(2);
+    else if (starts_with(tail, "an "))
+        tail = tail.substr(3);
+
+    string god;
+    const string::size_type of = tail.find(" of ");
+    if (of != string::npos)
+    {
+        god = tail.substr(of + 4);
+        tail = tail.substr(0, of);
+    }
+
+    const string::size_type sp = tail.find(' ');
+    if (sp == string::npos)
+        return ghost_name;
+
+    // get_ghost_description_j() の concise と同じ形
+    string what = tagged_jtrans("[xl rank]", tail.substr(0, sp))
+                  + tail.substr(sp);
+    if (!god.empty())
+    {
+        what += make_stringf(jtrans_notrimc(" (worshipper of %s)"),
+                             jtransc(god));
+    }
+
+    const string desc = make_stringf(jtransc("%s the %s, %s"), name.c_str(),
+                                     title.c_str(), what.c_str());
+    return make_stringf(jtransc("%s's ghost"), desc.c_str());
+}
+
 string kill_ghost::info() const
 {
-    return ghost_name
+    return _ghost_name_j(ghost_name)
            + (Options.dump_kill_places != KDO_NO_PLACES ?
-                " (" + place.describe() + ")" :
+                " (" + place.describe_j() + ")" :
                 string(""));
 }
 
@@ -941,8 +1019,8 @@ static int kill_lualc_summary(lua_State *ls)
     *buf = 0;
     if (count)
     {
-        snprintf(buf, sizeof buf, "%u creature%s vanquished.",
-                count, count > 1? "s" : "");
+        snprintf(buf, sizeof buf, "%s",
+                 make_stringf(jtransc("%u creatures vanquished."), count).c_str());
     }
     lua_pushstring(ls, buf);
     return 1;

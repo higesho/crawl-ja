@@ -19,6 +19,7 @@
 #include "env.h"
 #include "evoke.h" // evoke_damage_string()
 #include "invent.h"
+#include "item-name.h" // item_name_en
 #include "item-prop.h"
 #include "item-status-flag-type.h"
 #include "items.h"
@@ -404,7 +405,9 @@ IDEF(cursed)
     return 1;
 }
 
-static string _item_name(lua_State *ls, item_def* item)
+// Lua(dat/clua の stash.lua、dlua、des、ユーザーの rc)はアイテム名を英語で
+// 比べる・検索するので、name() は英語の名前を返す。表示には name_j() を使う。
+static string _item_name(lua_State *ls, item_def* item, bool japanese = false)
 {
     description_level_type ndesc = DESC_PLAIN;
     if (lua_type(ls, 1) == LUA_TSTRING)
@@ -412,7 +415,8 @@ static string _item_name(lua_State *ls, item_def* item)
     else if (lua_type(ls, 1) == LUA_TNUMBER)
         ndesc = static_cast<description_level_type>(luaL_safe_checkint(ls, 1));
     const bool terse = lua_toboolean(ls, 2);
-    return item->name(ndesc, terse);
+    return japanese ? item->name(ndesc, terse)
+                    : item_name_en(*item, ndesc, terse);
 }
 
 static int l_item_do_name(lua_State *ls)
@@ -421,6 +425,17 @@ static int l_item_do_name(lua_State *ls)
 
     if (item)
         lua_pushstring(ls, _item_name(ls, item).c_str());
+    else
+        lua_pushnil(ls);
+    return 1;
+}
+
+static int l_item_do_name_j(lua_State *ls)
+{
+    UDATA_ITEM(item);
+
+    if (item)
+        lua_pushstring(ls, _item_name(ls, item, true).c_str());
     else
         lua_pushnil(ls);
     return 1;
@@ -435,14 +450,26 @@ static int l_item_do_name(lua_State *ls)
  */
 IDEFN(name, do_name)
 
+/*** Get this item's name for display (Japanese).
+ * Same as @{name}, but translated. Use this only for messages; compare
+ * names with @{name}.
+ * @tparam[opt="plain"] string desc description type
+ * @tparam[opt="false"] boolean terse
+ * @treturn string
+ * @function name_j
+ */
+IDEFN(name_j, do_name_j)
+
 static int l_item_do_name_coloured(lua_State *ls)
 {
     UDATA_ITEM(item);
 
     if (item)
     {
-        string name   = _item_name(ls, item);
-        int    col    = menu_colour(name, item_prefix(*item), "item", false);
+        // menu_colour のパターンは英語の名前と照合し、表示は日本語の名前
+        const string name_en = _item_name(ls, item);
+        string name   = _item_name(ls, item, true);
+        int    col    = menu_colour(name_en, item_prefix(*item), "item", false);
         string colstr = colour_to_str(col);
 
         ostringstream out;
@@ -1778,6 +1805,7 @@ static ItemAccessor item_attrs[] =
     { "ego",               l_item_ego },
     { "cursed",            l_item_cursed },
     { "name",              l_item_name },
+    { "name_j",            l_item_name_j },
     { "name_coloured",     l_item_name_coloured },
     { "stacks",            l_item_stacks },
     { "quantity",          l_item_quantity },

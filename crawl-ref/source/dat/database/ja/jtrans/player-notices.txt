@@ -42,6 +42,11 @@ warns you: %s is a foul %s.
 
 %sは%s。
 %%%%
+# 踊る武器が単独のとき。2 番目の %s は武器の名前(名詞)
+[encounter dancing weapon]%s is %s.
+
+%sは%sだ。
+%%%%
 # 深淵での出現メッセージ(_abyss_monster_creation_message、名前の後ろにつなぐ)
 appears in a shower of translocational energy.
 

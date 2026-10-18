@@ -1,0 +1,133 @@
+%%%%
+Failed to create monster at (%d,%d) env.grid: %s
+
+(%d,%d)にモンスターを生成できませんでした。env.grid: %s
+%%%%
+No arena maps named "%s"
+
+"%s"という名前の闘技場のマップはありません
+%%%%
+Failed to create arena named "%s"
+
+闘技場"%s"を生成できませんでした
+%%%%
+Can't set real_summons and respawn at same time.
+
+real_summons と respawn は同時に指定できません。
+%%%%
+Bad place '%s': %s
+
+不正な場所'%s': %s
+%%%%
+Expected arena monster spec "xxx v yyy", but got "%s"
+
+闘技場のモンスター指定は"xxx v yyy"の形にしてください(入力: "%s")
+%%%%
+Bad monster spec "%s": %s
+
+不正なモンスター指定"%s": %s
+%%%%
+Round %d of %d
+
+ラウンド%d (全%d回)
+%%%%
+Book-keeping says faction_a has negative active members.
+
+集計エラー: faction_a の生存数が負になっています。
+%%%%
+Book-keeping says faction_b has negative active members.
+
+集計エラー: faction_b の生存数が負になっています。
+%%%%
+Book-keeping error in faction member count: %d:%d instead of %d:%d
+
+陣営の生存数の集計エラー: %d:%d (正しくは %d:%d)
+%%%%
+Both factions alive but one declared the winner.
+
+両陣営とも生存しているのに、一方が勝者になっています。
+%%%%
+ERROR: Both sides have spawners, but the active member count of one side has been reduced to zero!
+
+エラー: 両陣営に生成装置があるのに、一方の生存数が 0 になりました！
+%%%%
+Dismissing non-respawner %s to make room for respawner whose side has 0 active members.
+
+生存数 0 の陣営の再生成モンスターのために、再生成しない%sを退場させます。
+%%%%
+Teleporting respawner %s to make room for other respawner whose side has 0 active members.
+
+生存数 0 の陣営の再生成モンスターのために、再生成モンスター%sをテレポートさせます。
+%%%%
+Cancelling contest at user request
+
+ユーザーの要求により対戦を中止します
+%%%%
+Tie declared, but faction_a won.
+
+引き分けと判定されたが、faction_a が勝っている。
+%%%%
+Tie declared, but faction_b won.
+
+引き分けと判定されたが、faction_b が勝っている。
+%%%%
+*BOTH* factions won?!
+
+*両方の*陣営が勝った？！
+%%%%
+Faction_a real winner.
+
+本当の勝者は faction_a。
+%%%%
+Faction_b real winner.
+
+本当の勝者は faction_b。
+%%%%
+Both sides dead.
+
+両陣営とも全滅した。
+%%%%
+Tie
+
+引き分け
+%%%%
+Winner: %s!
+
+勝者: %s！
+%%%%
+Final score: %s (%d); %s (%d) [%d ties]
+
+最終結果: %s (%d勝)、%s (%d勝) [引き分け%d回]
+%%%%
+(Cancelled after %d trials)
+
+(%d回目で中止)
+%%%%
+---- Contest finished ----
+
+---- 対戦終了 ----
+%%%%
+Arena results:
+
+闘技場の結果:
+%%%%
+Hit any key to continue, ctrl-p for the full log.
+
+どれかキーを押すと続行、ctrl-p で全記録を表示します。
+%%%%
+No random monsters for place '%s'
+
+'%s'にはランダムに選べるモンスターがいません
+%%%%
+Last arena monster was dismissed.
+
+闘技場の最後のモンスターが退場させられた。
+%%%%
+Enter your choice of teams:
+
+対戦組み合わせを入力してください:
+%%%%
+Examples:
+
+指定例:
+%%%%

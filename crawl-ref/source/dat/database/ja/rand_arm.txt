@@ -1,33 +1,2056 @@
+# rand_arm.txt(主に防具の語彙)。0.19-ja の訳を移し、0.34 で増えた項目を追訳。
+
+%%%%
+_armour_animal_
+
+# en:
+#   Amoeba
+#
+#   Tardigrade
+#
+#   Ant
+#
+#   Butterfly
+#
+#   Cicada
+#
+#   Cockroach
+#
+#   Cricket
+#
+#   Ladybird
+#
+#   Locust
+#
+#   Louse
+#
+#   Mantidfly
+#
+#   Tick
+#
+#   Centipede
+#
+#   Cuttlefish
+#
+#   Gastropod
+#
+#   Slug
+#
+#   Snail
+#
+#   Trilobite
+#
+#   Worm
+#
+#   Barnacle
+#
+#   Clam
+#
+#   Lobster
+#
+#   Quahog
+#
+#   Tarantula
+#
+#   Frog
+#
+#   Komodo Dragon
+#
+#   Lizard
+#
+#   Salamander
+#
+#   Serpent
+#
+#   Turtle
+#
+#   Barracuda
+#
+#   Catfish
+#
+#   Cichlid
+#
+#   Mackerel
+#
+#   Marlin
+#
+#   Salmon
+#
+#   Sturgeon
+#
+#   Sunfish
+#
+#   Trout
+#
+#   Tuna
+#
+#   Albatross
+#
+#   Eagle
+#
+#   Falcon
+#
+#   Heron
+#
+#   Meadowlark
+#
+#   Nightingale
+#
+#   Raven
+#
+#   Robin
+#
+#   Shrike
+#
+#   Sparrow
+#
+#   Swan
+#
+#   Turtledove
+#
+#   Bull
+#
+#   Camelopard
+#
+#   Catamount
+#
+#   Dolphin
+#
+#   Echidna
+#
+#   Elephant
+#
+#   Hart
+#
+#   Hippo
+#
+#   Kangaroo
+#
+#   Lion
+#
+#   Monkey
+#
+#   Okapi
+#
+#   Stag
+#
+#   Stallion
+#
+#   Zebra
+#
+#   Circus Animal
+#
+#   Monkey's Uncle
+#
+#   Centaur
+#
+#   Cockatrice
+#
+#   Chimera
+#
+#   Dragon
+#
+#   Griffon
+#
+#   Hecatoncheires
+#
+#   Hippogriff
+#
+#   Kraken
+#
+#   Leogriff
+#
+#   Nuckelavee
+#
+#   Pooka
+#
+#   Quinotaur
+#
+#   Sea Goat
+#
+#   Skiapode
+#
+#   Unicorn
+#
+#
+#   Akabeko
+#
+#   Baku
+#
+#   Byakko
+#
+#   Ikuchi
+#
+#   Kappa
+#
+#   Kitsune
+#
+#   Kodama
+#
+#   Oni
+#
+#   Shishi
+#
+#   Tsukumogami
+#
+#
+#   Carbunclo
+#
+#   Cherruve
+#
+#   Cuero
+#
+#   Curupira
+#
+#   Ebigane
+#
+#   Gasogonaga
+#
+#   Mpinguari
+#
+#   Tapire-iauara
+#
+#
+#   Biloko
+#
+#   Guiamala
+#
+#   Impundulu
+#
+#   Isitwalangcengce
+#
+#   Nkala
+#
+#   Zankallala
+#
+#
+#   Bakunawa
+#
+#   Minokawa
+#
+#
+#   Giraffataur
+#
+#   Elephantaur
+#
+#   Mertaur
+#
+#   Merwolf
+#
+#   Platytaur
+#
+#   Rhinotaur
+#
+#   Taurataur
+#
+#   Treeataur
+#
+#   Wereyak
+#
+#   Zebrataur
+#
+#   Chupacabra
+#
+#   Dropbear
+#
+#   Jackalope
+#
+#   Jersey Devil
+#
+#   Skvader
+#
+#   Snallygaster
+#
+#   Tatzelwurm
+#
+#   Wild Haggis
+#
+#   Yeti
+アメーバ
+
+クマムシ
+
+蟻
+
+胡蝶
+
+蝉
+
+ゴキブリ
+
+蟋蟀
+
+天道虫
+
+蝗
+
+シラミ
+
+蟷螂
+
+ダニ
+
+百足
+
+烏賊
+
+蛞蝓
+
+蝸牛
+
+三葉虫
+
+芋虫
+
+フジツボ
+
+アサリ
+
+海老
+
+ハマグリ
+
+タランチュラ
+
+蛙
+
+コモドドラゴン
+
+トカゲ
+
+山椒魚
+
+大蛇
+
+海亀
+
+バラクーダ
+
+ナマズ
+
+シクリッド
+
+鯖
+
+マカジキ
+
+鮭
+
+チョウザメ
+
+マンボウ
+
+鱒
+
+マグロ
+
+アホウドリ
+
+鷲
+
+ハヤブサ
+
+サギ
+
+マキバドリ
+
+ナイチンゲール
+
+鴉
+
+駒鳥
+
+百舌
+
+雀
+
+白鳥
+
+キジバト
+
+雄牛
+
+麒麟
+
+山猫
+
+イルカ
+
+ハリモグラ
+
+象
+
+雄鹿
+
+カバ
+
+カンガルー
+
+獅子
+
+猿
+
+オカピ
+
+雄鹿
+
+種馬
+
+シマウマ
+
+サーカスの動物
+
+驚き桃の木
+
+ケンタウロス
+
+コカトリス
+
+キマイラ
+
+ドラゴン
+
+グリフォン
+
+ヘカトンケイル
+
+ヒッポグリフ
+
+クラーケン
+
+レオグリフ
+
+ヌッケラヴィー
+
+プーカ
+
+クイノタウロス
+
+海山羊
+
+スキアポデス
+
+一角獣
+
+赤べこ
+
+獏
+
+白虎
+
+イクチ
+
+河童
+
+狐
+
+木霊
+
+鬼
+
+獅子
+
+付喪神
+
+カーバンクル
+
+チェルーヴェ
+
+クエロ
+
+クルピラ
+
+エビガネ
+
+ガソゴナガ
+
+ムピングアリ
+
+タピレイアウアラ
+
+ビロコ
+
+ギアマラ
+
+インプンドゥル
+
+イシトワランセンセ
+
+ンカラ
+
+ザンカララ
+
+バクナワ
+
+ミノカワ
+
+キリンタウロス
+
+ゾウタウロス
+
+マータウロス
+
+マーウルフ
+
+鴨嘴タウロス
+
+サイタウロス
+
+タウロタウロス
+
+樹木タウロス
+
+ワーヤク
+
+シマウマタウロス
+
+チュパカブラ
+
+殺人コアラ
+
+鹿角兎
+
+ジャージーデビル
+
+スクヴェイダー
+
+スナリーガスター
+
+タッツェルヴルム
+
+野生のハギス
+
+雪男
+%%%%
+_flower_name_
+
+# en:
+#   Daffodils
+#
+#   Daisies
+#
+#   Lilacs
+#
+#   Periwinkles
+#
+#   Purple Dead-Nettles
+#
+#   Tulips
+#
+#   Violets
+#
+#   the Garden
+#
+#   the Horehound
+#
+#   the Lily
+#
+#   the Lotus Blossom
+#
+#   the Rose
+#
+#   the Thistle
+喇叭水仙
+
+デイジー
+
+ライラック
+
+蔓日日草
+
+ヒメオドリコソウ
+
+チューリップ
+
+菫
+
+庭草
+
+ニガハッカ
+
+百合
+
+睡蓮
+
+薔薇
+
+アザミ
+%%%%
+_critter_name_
+
+# en:
+#   Alphagorgon
+#
+#   Slorg
+#
+#   Eight Boll Weevils
+#
+#   Grue
+#
+#   Hot Ocelot
+#
+#   Jabberwock
+#
+#   w:1
+#   Were-rabbit
+#
+#   Wumpus
+アルファ・ゴーゴン
+
+マダラナメクジ
+
+グルー
+
+ジャバウォック
+
+w:1
+兎人間
+
+ワンパス
+%%%%
+_discomfort_and_inaction_
+
+# en:
+#   Bad Feelings
+#
+#   Bitterness
+#
+#   Disappointment
+#
+#   Entitlement
+#
+#   Failure
+#
+#   Insecurity
+#
+#   Minor Irritation
+#
+#   Negation
+#
+#   Servitude
+#
+#   Submission
+#
+#   Vexation
+#
+#   Apathy
+#
+#   Boredom
+#
+#   Ennui
+#
+#   Inaction
+#
+#   Lethargy
+#
+#   Lifelessness
+#
+#   Negligence
+#
+#   Oblivion
+#
+#   Omission
+#
+#   Restlessness
+#
+#   the Doldrums
+嫌な予感
+
+苦み
+
+失望
+
+権利
+
+失敗
+
+不安
+
+いらつき
+
+否定
+
+隷属
+
+服従
+
+心痛
+
+無感情
+
+退屈
+
+憂鬱
+
+不活
+
+無気力
+
+無生命
+
+過失
+
+忘却
+
+怠慢
+
+焦燥
+
+抑鬱
+%%%%
+_good_or_divine_
+
+# en:
+#   Amelioration
+#
+#   Awe
+#
+#   Beauty
+#
+#   Birdsong
+#
+#   Cleverness
+#
+#   Contentment
+#
+#   Creativity
+#
+#   Curiosity
+#
+#   Freedom
+#
+#   Fun
+#
+#   Happiness
+#
+#   Joy
+#
+#   Knowledge
+#
+#   Leaves
+#
+#   Liberty
+#
+#   Life
+#
+#   Lucidity
+#
+#   Mirth
+#
+#   Music
+#
+#   New Discoveries
+#
+#   Satisfaction
+#
+#   Surprise
+#
+#   Tender Moments
+#
+#   Wonder
+#
+#   the Good
+#
+#   the Leaf
+#
+#   Divine Compulsion
+#
+#   Divine Intervention
+#
+#   Intercession
+#
+#   Miracles
+#
+#   Salvation
+#
+#   the Invisible Hand
+#
+#   the Will of the Gods
+改善
+
+畏怖
+
+美
+
+囀り
+
+聡明
+
+満足
+
+独創性
+
+好奇心
+
+自由
+
+楽しみ
+
+幸福
+
+喜び
+
+知識
+
+葉
+
+解放
+
+生命
+
+明快
+
+歓喜
+
+音楽
+
+新発見
+
+満足
+
+驚き
+
+優しき日々
+
+不思議
+
+優良
+
+天啓
+
+神の介在
+
+調停
+
+奇跡
+
+救済
+
+見えざる手
+
+神の意志
+%%%%
+_armour_name_shielding_
+
+# en:
+#   Complete Protection
+#
+#   Death's Door
+#
+#   Defence
+#
+#   Exclusion
+#
+#   Fortification
+#
+#   Impermeability
+#
+#   Inviolability
+#
+#   Refuge
+#
+#   Repulsion
+#
+#   Shielding
+#
+#   the Armoured One
+#
+#   the Bulwark
+#
+#   the Gate
+#
+#   the Saviour
+#
+#   the Stone Wall
+#
+#   the Unbroken
+#
+#   the Untouchables
+#
+#   the Ward
+完全防御
+
+死のとば口
+
+防御
+
+排除
+
+要塞
+
+不透過
+
+不可侵
+
+拒絶
+
+斥力
+
+盾
+
+鎧いしもの
+
+砦
+
+門扉
+
+救世主
+
+石壁
+
+不屈
+
+禁断
+
+監房
+%%%%
+_armour_property_name_
+
+# en:
+#   Death Resistance
+#
+#   Disguise
+#
+#   Fashionability
+#
+#   Fullness
+#
+#   Grace
+#
+#   Gravitas
+#
+#   Impressiveness
+#
+#   Least Resistance
+#
+#   Polish
+#
+#   Privacy
+#
+#   Protective Custody
+#
+#   Resilience
+#
+#   Shadows and Fog
+#
+#   Supple Strength
+#
+#   Weightlessness
+死なず
+
+霧隠れ
+
+ファッション性
+
+充溢
+
+優美
+
+実直さ
+
+印象深さ
+
+最小作用
+
+光沢
+
+プライバシー
+
+保護拘置
+
+弾力
+
+煙霧
+
+柔軟
+
+軽業
+%%%%
+_wacky_armour_name_
+
+# en:
+#   Absence
+#
+#   Anaesthesia
+#
+#   Baldness
+#
+#   Compression
+#
+#   Decompression
+#
+#   Dramatic Exits
+#
+#   Duck's Teeth
+#
+#   Forking Paths
+#
+#   Good Intentions
+#
+#   Hadjma
+#
+#   Hairiness
+#
+#   Hedging
+#
+#   Hubris
+#
+#   Incorporation
+#
+#   Indecent Exposure
+#
+#   Indemnity
+#
+#   Limited Liability
+#
+#   Loss
+#
+#   Love and Death
+#
+#   Mezcal
+#
+#   Pathos
+#
+#   Philately
+#
+#   Plasticity
+#
+#   Poor Excuses
+#
+#   Precision Catastrophes
+#
+#   Space
+#
+#   Terror
+#
+#   Thrice Damned Blessings
+#
+#   Too Many Cooks
+#
+#   Untold Secrets
+#
+#   Vlad
+#
+#   Weirdness
+#
+#   the Arcane
+#
+#   the Armadillo
+#
+#   the Blind Marksman
+#
+#   the Earth
+#
+#   the Eternal Fruit
+#
+#   the Loofah
+#
+#   the Old and Reckless
+#
+#   the Onion
+#
+#   the Pink Corner
+#
+#   the Plethaurus
+#
+#   the Road Less Travelled
+#
+#   the True Pharaoh
+#
+#   the Unemployed Unperson
+#
+#   the Vacuum
+不在
+
+麻酔
+
+禿頭
+
+圧縮
+
+減圧
+
+劇的な退場
+
+分かれ道
+
+善意
+
+ハジャム
+
+多毛
+
+回避
+
+傲慢
+
+結社
+
+公然猥褻
+
+賠償
+
+有限責任
+
+喪失
+
+愛と死
+
+覇王樹
+
+哀愁
+
+切手収集
+
+可塑性
+
+苦しい言い訳
+
+空間
+
+恐怖
+
+多すぎる料理人
+
+語られざりし秘密
+
+ヴラド候
+
+不気味
+
+秘蹟
+
+アルマジロ
+
+盲目の射手
+
+地球
+
+永遠の果実
+
+ヘチマ
+
+年寄りの冷や水
+
+タマネギ
+
+類語の洪水
+
+獣道
+
+真のファラオ
+
+抹消された無職
+
+真空
+%%%%
+_celestial_bodies_
+
+# en:
+#   w:5
+#   Blue Moon
+#
+#   Comet
+#
+#   Constellations
+#
+#   Evening Star
+#
+#   w:5
+#   Harvest Moon
+#
+#   w:5
+#   Midnight Sun
+#
+#   Moon
+#
+#   Morning Star
+#
+#   Northern Lights
+#
+#   Planets
+#
+#   Pleiades
+#
+#   Stars
+#
+#   Sun
+#
+#   Black Moon
+w:5
+青冷めた月
+
+彗星
+
+星座
+
+宵の明星
+
+w:5
+中秋の満月
+
+w:5
+真夜中の太陽
+
+月
+
+明けの明星
+
+オーロラ
+
+惑星
+
+昴星
+
+星
+
+太陽
+
+黒き月
+%%%%
+_instrument_name_
+
+# en:
+#   Chimes
+#
+#   Pan-Flutes
+#
+#   Trumpets
+#
+#   the Accordion
+#
+#   the Bagpipe
+#
+#   the Bells
+#
+#   the Fiddle
+#
+#   the Fife
+#
+#   the Flute
+#
+#   the Gusle
+#
+#   the Harp
+#
+#   the Kazoo
+#
+#   the Kettle-Drum
+#
+#   the Lute
+#
+#   the Trombone
+チャイム
+
+角笛
+
+トランペット
+
+アコーディオン
+
+バグパイプ
+
+ベル
+
+ヴァイオリン
+
+横笛
+
+フルート
+
+ハープ
+
+カズー
+
+ドラム
+
+リュート
+
+トロンボーン
+%%%%
+_evil_being_
+
+# en:
+#   Demons
+#
+#   Greater Demons
+#
+#   Lesser Demons
+#
+#   Tempters
+#
+#   Vampiric Thralls
+#
+#   w:5
+#   the Archfiend
+#
+#   the Demon Prince
+#
+#   the Devil
+#
+#   the Devil's Advocate
+#
+#   the Devil's Team
+#
+#   the Evil One
+#
+#   the Fiend
+#
+#   the Furies
+#
+#   the Imp
+#
+#   the Iron Devil
+#
+#   the Lich-sworn
+#
+#   the Little Devil
+#
+#   the Prince of Darkness
+#
+#   the Tormentor
+#
+#   the Villain
+悪魔
+
+上位の悪魔
+
+下位の悪魔
+
+誘惑者
+
+w:5
+大魔神
+
+悪魔の貴公子
+
+悪魔の代弁者
+
+悪魔軍団
+
+邪悪なるもの
+
+魔神
+
+フューリー
+
+インプ
+
+鉄の悪魔
+
+小悪魔
+
+暗黒の貴公子
+
+悪党
+%%%%
+_weather_name_
+
+# en:
+#   Blue Skies
+#
+#   Boiling Hail
+#
+#   Chill Winds
+#
+#   Cloud Cover
+#
+#   Dust Devils
+#
+#   Howling Wind
+#
+#   Lightning Storm
+#
+#   Perpetual Drought
+#
+#   Pleasant Breezes
+#
+#   Quiet Fog
+#
+#   Soft Rains
+#
+#   Spring Thaw
+#
+#   the Blizzard
+#
+#   the First Snow
+#
+#   the Hurricane
+#
+#   the Thunderstorm
+青空
+
+煮えたぎる雹
+
+木枯らし
+
+曇り空
+
+塵旋風
+
+吠える風
+
+雷嵐
+
+永遠の日照り
+
+そよ風
+
+静かな霧
+
+優しい雨
+
+雪解け
+
+猛吹雪
+
+初雪
+
+ハリケーン
+
+雷雲
+%%%%
+_profession_name_
+
+# en:
+#   Apprentice
+#
+#   Apothecary
+#
+#   Baker
+#
+#   Barber Surgeon
+#
+#   Bard
+#
+#   Beekeeper
+#
+#   Beggar
+#
+#   Blacksmith
+#
+#   Buccaneer
+#
+#   Butcher
+#
+#   Candlemaker
+#
+#   Carpenter
+#
+#   Cartwright
+#
+#   Cobbler
+#
+#   Cooper
+#
+#   Ditch-Digger
+#
+#   Engineer
+#
+#   Farmer
+#
+#   Farrier
+#
+#   Fisher
+#
+#   Fletcher
+#
+#   Furrier
+#
+#   Gardener
+#
+#   Goldsmith
+#
+#   Gravedigger
+#
+#   Guardian
+#
+#   Guild-Master
+#
+#   Guilds
+#
+#   Hunter
+#
+#   Journeyman
+#
+#   Learner
+#
+#   Merchant
+#
+#   Miller
+#
+#   Minstrel
+#
+#   Moneychanger
+#
+#   Monk
+#
+#   Pirate
+#
+#   Playwright
+#
+#   Sailor
+#
+#   Scribe
+#
+#   Silversmith
+#
+#   Soldier
+#
+#   Stonemason
+#
+#   Tanner
+#
+#   Teacher
+#
+#   Thinker
+#
+#   Undertaker
+#
+#   Watchman
+#
+#   Weaver
+#
+#   Wheelwright
+見習い
+
+薬師
+
+パン屋
+
+理容師
+
+吟遊詩人
+
+養蜂家
+
+乞食
+
+鍛冶屋
+
+肉屋
+
+蝋燭職人
+
+大工
+
+荷車大工
+
+靴屋
+
+桶屋
+
+ドブさらい
+
+技師
+
+農夫
+
+蹄鉄工
+
+漁師
+
+矢職人
+
+毛皮職人
+
+庭師
+
+金細工師
+
+墓掘り人
+
+番人
+
+ギルドマスター
+
+ガイド
+
+狩人
+
+職人
+
+初学者
+
+商人
+
+粉屋
+
+吟遊詩人
+
+両替商
+
+修道士
+
+海賊
+
+劇作家
+
+水夫
+
+筆写者
+
+銀細工師
+
+軍人
+
+石工
+
+皮なめし
+
+教師
+
+思想家
+
+葬儀屋
+
+夜警
+
+機織り
+
+車大工
+%%%%
+_game_name_
+
+# en:
+#   Dice, Bag, and Bottle
+#
+#   Fun and Games
+#
+#   Parlour Games
+#
+#   the Game Afoot
+#
+#   the Game of Kings
+#
+#   the Great Game
+#
+#   Follow the Leader
+#
+#   Hide-and-Seek
+#
+#   Hopscotch
+#
+#   Leapfrog
+#
+#   Mumblety Peg
+#
+#   Peek-a-Boo
+#
+#   the King of the Hill
+#
+#   Card Tricks
+#
+#   Hangman
+#
+#   Jigsaw
+#
+#   Marbles
+#
+#   Noughts and Crosses
+#
+#   Snakes and Ladders
+#
+#   Whack-A-Mole
+#
+#   the Dice
+#
+#   the Game of Life
+楽しいゲーム
+
+室内ゲーム
+
+進行中のゲーム
+
+王様ゲーム
+
+グレート・ゲーム
+
+かくれんぼ
+
+石蹴り遊び
+
+馬跳び
+
+いないいないばあ
+
+トランプ手品
+
+ハングマン
+
+ジグソーパズル
+
+ビー玉遊び
+
+三目並べ
+
+すごろく
+
+モグラ叩き
+
+サイコロ遊び
+
+人生ゲーム
+%%%%
+_politics_name_armour_
+
+# en:
+#   Coronation
+#
+#   Democracy
+#
+#   Nobility
+#
+#   Royalty
+#
+#   Sovereignty
+#
+#   the Ban
+#
+#   the Burgomaster
+#
+#   the Cast Vote
+#
+#   the Castellan
+#
+#   the City
+#
+#   the Commoners
+#
+#   the Country
+#
+#   the Crown
+#
+#   the Doge
+#
+#   the Duchess
+#
+#   the Duke
+#
+#   the Empire
+#
+#   the Failed Coup
+#
+#   the Greedy
+#
+#   the King
+#
+#   the Komtur
+#
+#   the Mutiny
+#
+#   the Oligarchy
+#
+#   the Peasants
+#
+#   the Prince
+#
+#   the Princeling
+#
+#   the Princess
+#
+#   the Queen
+#
+#   the Rabble
+#
+#   the Republic
+#
+#   the Suburbs
+#
+#   the Townfolk
+#
+#   the Voivode
+戴冠
+
+民主主義
+
+貴族
+
+王権
+
+主権
+
+禁令
+
+市長
+
+投票
+
+城主
+
+都市
+
+平民
+
+国
+
+王冠
+
+総督
+
+公爵夫人
+
+公爵
+
+帝国
+
+政変
+
+王
+
+騎士
+
+暴動
+
+寡頭政治
+
+小作人
+
+貴公子
+
+小公子
+
+姫
+
+女王
+
+庶民
+
+共和国
+
+郊外
+
+町の住民
+%%%%
+_other_armour_name_
+
+# en:
+#   Filth
+#
+#   w:5
+#   Grot
+#
+#   w:5
+#   Grottiness
+#
+#   Slovenliness
+#
+#   Bedevilment
+#
+#   Broken Taboos
+#
+#   Gestures
+#
+#   Magic
+#
+#   Muttered Phrases
+#
+#   Sorcery
+#
+#   Words of Power
+#
+#   the Arcane
+#
+#   Crawling
+#
+#   Disaster
+#
+#   Dogmatism
+#
+#   Feasting
+#
+#   Going Fast
+#
+#   Happy Babbling
+#
+#   Hedge Wizardry
+#
+#   Imperfection
+#
+#   Inevitability
+#
+#   Insatiable Hunger
+#
+#   Insurance
+#
+#   Misanthropy
+#
+#   Perfidy
+#
+#   Time Monsters
+#
+#   Trial and Error
+#
+#   Unambiguity
+#
+#   Undesirable Species
+#
+#   Wasted Space
+#
+#   Wrong Decisions
+#
+#   the @_card_@ of @_suit_@
+#
+#   the Hanged Man
+#
+#   the Lost Path
+#
+#   the Moon Troll
+#
+#   the Orb
+#
+#   the Orb Guardian
+#
+#   the Other World
+#
+#   the Sacrificial Victim
+#
+#   the Slightly Bent
+#
+#   the Storm King
+#
+#   Ravioli
+#
+#   Spaghetti
+#
+#   Tortelloni
+#
+#   Farfalle
+#
+#   Rotini
+#
+#   Vermicelli
+#
+#   Macaroni
+#
+#   Strozzapreti
+#
+#   w:1
+#   the Pastamancer
+#
+#   Meatballs
+汚物
+
+w:5
+がらくた
+
+w:5
+ゴミクズ
+
+不潔
+
+掟破り
+
+身振り手振り
+
+魔術
+
+呟き声
+
+魔法
+
+力ある言葉
+
+秘術
+
+探索行
+
+災害
+
+独断主義
+
+饗宴
+
+疾走
+
+赤ちゃん言葉
+
+欠点
+
+不可避
+
+飽くなき飢え
+
+保険
+
+厭世
+
+裏切り
+
+試行錯誤
+
+一意性
+
+空き地
+
+誤判断
+
+@_suit_@の@_card_@
+
+吊られた男
+
+月世界のトロル
+
+ゾットのオーブ
+
+オーブの守護者
+
+異世界
+
+生贄の供物
+
+雷の王
+
+ラビオリ
+
+スパゲッティ
+
+トルテローニ
+
+ファルファッレ
+
+ロティーニ
+
+バーミセリ
+
+マカロニ
+
+坊主殺し
+
+w:1
+パスタ術師
+
+ミートボール
 %%%%
 _card_
 
 # en:
 #   Two
-#   
+#
 #   Three
-#   
+#
 #   Four
-#   
+#
 #   Five
-#   
+#
 #   Six
-#   
+#
 #   Seven
-#   
+#
 #   Eight
-#   
+#
 #   Nine
-#   
+#
 #   Ten
-#   
+#
 #   Page
-#   
+#
 #   Knight
-#   
+#
 #   Queen
-#   
+#
 #   King
-#   
+#
 #   Ace
 2
 
@@ -55,4 +2078,48 @@ _card_
 キング
 
 エース
+%%%%
+_suit_
+
+# en:
+#   Cups
+#
+#   Pentacles
+#
+#   Swords
+#
+#   Wands
+ハート
+
+ダイヤ
+
+スペード
+
+クラブ
+%%%%
+_plain_armour_name_
+
+# en:
+#   Damnable Contraption
+#
+#   Earthly Heaven
+#
+#   Forget-Me-Not
+#
+#   Hero's Friend
+#
+#   Put-Me-On
+#
+#   Trusted Companion
+忌々しき絡繰
+
+地上の楽園
+
+私を忘れないで
+
+英雄の盟友
+
+私を着て
+
+刎頸之交
 %%%%

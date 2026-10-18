@@ -261,9 +261,11 @@ static cglyph_t _get_item_override(const item_def &item)
     // TODO: the caching here avoids the regex penalty, but annotation and
     // item.name themselves are quite heavy when called a lot, so some better
     // caching might be in order. (Or more efficient calls to this function.)
+    // (オプションのパターンと照合するので英語の名前を使う)
     string name = stash_annotate_item(STASH_LUA_SEARCH_ANNOTATE, &item)
                 + " {" + item_prefix(item, false) + "} "
-                + item.name(item.base_type == OBJ_GOLD ? DESC_QUALNAME : DESC_PLAIN);
+                + item_name_en(item, item.base_type == OBJ_GOLD ? DESC_QUALNAME
+                                                                : DESC_PLAIN);
 
     {
         // Check the cache...
