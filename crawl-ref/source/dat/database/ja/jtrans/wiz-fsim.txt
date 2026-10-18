@@ -1,0 +1,41 @@
+%%%%
+Select a monster, or hit Escape to use default.
+
+モンスターを選択するか、Escを押してデフォルトの対象にしてください。
+%%%%
+Enter monster name (or MONS spec):
+
+モンスターの名称(またはモンスター指定文)を入力してください:
+%%%%
+Failed to create monster.
+
+モンスターの生成に失敗しました。
+%%%%
+Could not put monster adjacent to player.
+
+プレイヤーの隣接位置にモンスターを配置することができませんでした。
+%%%%
+Cancelling simulation.
+
+シミュレーションを中断しました。
+%%%%
+Can't write %s: %s
+
+%sに書き込めません: %s
+%%%%
+Cannot wield weapon
+
+武器を装備できません。
+%%%%
+Fighting %s with %s
+
+%sを相手に%sで戦闘中
+%%%%
+(A)ttack or (D)efence?
+
+攻撃(A)と防御(D)のどちらですか？
+%%%%
+Aborting sim on %s
+
+%sでのシミュレーションを中止しました。
+%%%%

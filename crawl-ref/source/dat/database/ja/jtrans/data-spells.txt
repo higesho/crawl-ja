@@ -548,7 +548,7 @@
 %%%%
 [spell]Caustic Breath
 
-腐蝕のブレス
+腐食のブレス
 %%%%
 [spell]Pyre Arrow
 
@@ -932,7 +932,7 @@
 %%%%
 [spell]Corrosive Bolt
 
-腐蝕の矢
+腐食の矢
 %%%%
 [spell]Bolt of Light
 
@@ -1996,7 +1996,7 @@
 %%%%
 [spell]Corpse Rot
 
-死体の腐蝕
+死体の腐食
 %%%%
 [spell]Flame Tongue
 

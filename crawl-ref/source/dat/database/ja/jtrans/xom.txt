@@ -327,7 +327,7 @@ You detect creatures, but no further items.
 %%%%
 Not even Xom can make wizards leave Sprint. Aborting Xom's Bazaar banishment.
 
-ゾムでさえウィザードをスプリントから出すことはできない。ゾムのバザーへの追放を中止した。
+ゾムでさえウィザードをスプリントから出すことはできない。ゾムのバザールへの追放を中止した。
 %%%%
 %d web bursts into flame!
 
@@ -495,7 +495,7 @@ You feel more stealthy.
 %%%%
 [xom repel stairs]escape hatch
 
-脱出用ハッチ
+脱出ハッチ
 %%%%
 [xom repel stairs]gate
 
@@ -609,7 +609,7 @@ divination: all
 %%%%
 banished to a bazaar
 
-バザーへの追放
+バザールへの追放
 %%%%
 potion effect (%s)
 

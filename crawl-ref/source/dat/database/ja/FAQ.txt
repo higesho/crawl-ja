@@ -156,7 +156,7 @@ A:downstairs
 #   its lowest level and have to turn around to explore another one. Check the
 #   dungeon overview ('Ctrl-O') to see how deep you've delved into a given branch,
 #   or the database ('?/b') for the number of levels for unseen branches.
-A: 下り階段は、あなたが来た上り階段からはたどり着けない場所にあるのかもしれません。1つ上の階に戻り、別の階段から下りてきてみてください。脱出用のハッチを数えなければ、ほとんどの階には下り階段が3つと上り階段が3つあることに注意してください。
+A: 下り階段は、あなたが来た上り階段からはたどり着けない場所にあるのかもしれません。1つ上の階に戻り、別の階段から下りてきてみてください。脱出ハッチを数えなければ、ほとんどの階には下り階段が3つと上り階段が3つあることに注意してください。
 
 あるいは、分岐の中にいるなら、その最下層にたどり着いていて、引き返して別の分岐を探索する必要があるのかもしれません。ダンジョンの概要('Ctrl-O')で各分岐をどこまで潜ったかを、データベース('?/b')でまだ見ていない分岐の階の数を確かめてください。
 %%%%

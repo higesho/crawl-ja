@@ -99,7 +99,7 @@ emitting a toxic aura
 %%%%
 spewing a noxious bog
 
-有毒な沼を吐き出している
+毒沼を吐き出している
 %%%%
 in the middle of a polar vortex
 

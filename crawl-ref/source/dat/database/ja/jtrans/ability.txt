@@ -45,7 +45,7 @@
 %%%%
 [ability]Caustic Breath
 
-腐蝕のブレス
+腐食のブレス
 %%%%
 [ability]Mud Breath
 
@@ -105,7 +105,7 @@
 %%%%
 [ability]Bat Swarm
 
-蝙蝠群
+コウモリ群
 %%%%
 [ability]Enkindle
 
@@ -299,7 +299,7 @@
 %%%%
 [ability]Heal Other
 
-他者への癒し
+他者の治癒
 %%%%
 [ability]Heal Self
 
@@ -1067,7 +1067,7 @@ You aren't haunting any armour at the moment!
 %%%%
 You must recover your energy before scattering into bats again.
 
-再び蝙蝠の群れに散る前に、力を回復しなければならない。
+再びコウモリの群れに散る前に、力を回復しなければならない。
 %%%%
 You are already burning your memories away!
 
@@ -1240,7 +1240,7 @@ Select an artefact weapon to imprint upon your Paragon.
 %%%%
 You scatter into a swarm of vampire bats!
 
-あなたは吸血蝙蝠の群れとなって散った！
+あなたは吸血コウモリの群れとなって散った！
 %%%%
 Your flames flare with remembrance!
 
@@ -1261,7 +1261,7 @@ will bless one of your weapons.
 %%%%
 You invoke the name of Kikubaaqudgha!
 
-あなたはキクバークドゥグハの名を唱えた！
+あなたはキクバークッグァの名を唱えた！
 %%%%
 will bloody one of your weapons with pain.
 

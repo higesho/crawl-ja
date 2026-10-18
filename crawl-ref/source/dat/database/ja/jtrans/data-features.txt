@@ -750,7 +750,7 @@
 %%%%
 [feature]escape hatch
 
-脱出用のハッチ
+脱出ハッチ
 %%%%
 [feature]portal
 
@@ -771,4 +771,9 @@
 [feature]unknown terrain
 
 未知の地形
+%%%%
+# 第8陣で追加
+[feature]gas trap
+
+ガスの罠
 %%%%

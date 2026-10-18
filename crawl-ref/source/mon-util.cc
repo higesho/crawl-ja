@@ -5766,8 +5766,9 @@ bool shoot_through_actor(const actor* agent, const actor* target, bool announce)
             if (announce && you.can_see(*target))
             {
                 simple_god_message(
-                            make_stringf(" protects %s plant from harm.",
-                                agent->is_player() ? "your" : "a").c_str(),
+                            agent->is_player()
+                                ? jtransc(" protects your plant from harm.")
+                                : jtransc(" protects a plant from harm."),
                             false, GOD_FEDHAS);
             }
             return true;

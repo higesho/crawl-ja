@@ -183,7 +183,7 @@ You feel yourself come back to life.
 %%%%
 You feel less batty.
 
-あなたは蝙蝠らしさが抜けた。
+あなたはコウモリらしさが抜けた。
 %%%%
 You feel less porcine.
 

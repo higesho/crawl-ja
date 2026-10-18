@@ -12,10 +12,12 @@
 #include "beam.h"
 #include "bitary.h"
 #include "coordit.h"
+#include "database.h"
 #include "dbg-util.h"
 #include "directn.h"
 #include "env.h"
 #include "fight.h"
+#include "item-name.h"
 #include "item-prop.h"
 #include "items.h"
 #include "item-use.h"
@@ -194,7 +196,8 @@ static bool _equip_weapon(const string &weapon, bool &abort)
         if (!you.inv[i].defined())
             continue;
 
-        if (you.inv[i].name(DESC_PLAIN).find(weapon) != string::npos)
+        // 入力は英語名なので英語の名前で照合する
+        if (item_name_en(you.inv[i], DESC_PLAIN).find(weapon) != string::npos)
         {
             if (you.weapon() != &you.inv[i])
             {
@@ -241,7 +244,7 @@ static bool _fsim_kit_equip(const string &kit, string &error)
 
         if (abort)
         {
-            error = "Cannot wield weapon";
+            error = jtrans("Cannot wield weapon");
             return false;
         }
     }
@@ -257,7 +260,8 @@ static bool _fsim_kit_equip(const string &kit, string &error)
             if (!you.inv[i].defined())
                 continue;
 
-            if (you.inv[i].name(DESC_PLAIN).find(missile) != string::npos)
+            if (item_name_en(you.inv[i], DESC_PLAIN).find(missile)
+                != string::npos)
             {
                 you.quiver_action.set_from_slot(i);
                 quiver::set_needs_redraw();
@@ -283,7 +287,7 @@ static monster* _init_fsim()
         dist moves;
         direction_chooser_args args;
         args.needs_path = false;
-        args.top_prompt = "Select a monster, or hit Escape to use default.";
+        args.top_prompt = jtrans("Select a monster, or hit Escape to use default.");
         direction(moves, args);
         if (monster_at(moves.target))
         {
@@ -298,7 +302,8 @@ static monster* _init_fsim()
         if (mtype == MONS_PROGRAM_BUG)
         {
             char specs[100];
-            mprf(MSGCH_PROMPT, "Enter monster name (or MONS spec): ");
+            mprf(MSGCH_PROMPT, "%s",
+                 jtrans_notrimc("Enter monster name (or MONS spec): "));
             if (cancellable_get_line_autohist(specs, sizeof specs) || !*specs)
             {
                 canned_msg(MSG_OK);
@@ -318,7 +323,7 @@ static monster* _init_fsim()
         mon = create_monster(temp);
         if (!mon)
         {
-            mpr("Failed to create monster.");
+            mpr(jtrans("Failed to create monster."));
             return nullptr;
         }
     }
@@ -336,7 +341,7 @@ static monster* _init_fsim()
     if (!adjacent(mon->pos(), you.pos()))
     {
         monster_die(*mon, KILL_RESET, NON_MONSTER);
-        mpr("Could not put monster adjacent to player.");
+        mpr(jtrans("Could not put monster adjacent to player."));
         return 0;
     }
 
@@ -528,7 +533,8 @@ void wizard_quick_fsim()
     if (!mon)
         return;
 
-    mprf("Fighting %s with %s\n", mon->name(DESC_PLAIN, true).c_str(), _equipped_weapon_name(false).c_str());
+    mprf(jtransc("Fighting %s with %s"), mon->name(DESC_PLAIN, true).c_str(),
+         _equipped_weapon_name(false).c_str());
 
     const int iter_limit = Options.fsim_rounds;
     fight_data fdata = _get_fight_data(*mon, iter_limit, false);
@@ -649,7 +655,7 @@ static void _fsim_simple_scale(FILE * o, monster* mon, bool defense)
         // kill the loop if the user hits escape
         if (kbhit() && getch_ck() == 27)
         {
-            mpr("Cancelling simulation.\n");
+            mpr(jtrans("Cancelling simulation."));
             fprintf(o, "Simulation cancelled!\n\n");
             break;
         }
@@ -714,7 +720,7 @@ static void _fsim_double_scale(FILE * o, monster* mon, bool defense)
             // kill the loop if the user hits escape
             if (kbhit() && getch_ck() == 27)
             {
-                mpr("Cancelling simulation.\n");
+                mpr(jtrans("Cancelling simulation."));
                 fprintf(o, "\nSimulation cancelled!\n\n");
                 return;
             }
@@ -736,7 +742,7 @@ void wizard_fight_sim(bool double_scale)
     FILE * o = fopen_u(fightstat, "a");
     if (!o)
     {
-        mprf(MSGCH_ERROR, "Can't write %s: %s", fightstat, strerror(errno));
+        mprf(MSGCH_ERROR, jtransc("Can't write %s: %s"), fightstat, strerror(errno));
         _uninit_fsim(mon);
         return;
     }
@@ -750,7 +756,7 @@ void wizard_fight_sim(bool double_scale)
     }
     else
     {
-        mprf(MSGCH_PROMPT, "(A)ttack or (D)efence?");
+        mprf(MSGCH_PROMPT, "%s", jtransc("(A)ttack or (D)efence?"));
 
         switch (toalower(getch_ck()))
         {
@@ -804,7 +810,7 @@ void wizard_fight_sim(bool double_scale)
             }
             else
             {
-                mprf("Aborting sim on %s", kit.c_str());
+                mprf(jtransc("Aborting sim on %s"), kit.c_str());
                 if (!error.empty())
                     mpr(error);
                 break;
@@ -821,7 +827,7 @@ void wizard_fight_sim(bool double_scale)
         set_xl(xl, false);
 
     _uninit_fsim(mon);
-    mpr("Done.");
+    mpr(jtrans("Done."));
 }
 
 #endif

@@ -12,10 +12,12 @@
 
 #include "abyss.h"
 #include "acquire.h"
+#include "database.h"
 #include "dbg-util.h"
 #include "god-abil.h"
 #include "god-wrath.h"
 #include "item-use.h"
+#include "japanese.h"
 #include "jobs.h"
 #include "libutil.h"
 #include "macro.h"
@@ -113,7 +115,7 @@ void wizard_change_species()
 {
     char specs[80];
 
-    msgwin_get_line("What species would you like to be now? " ,
+    msgwin_get_line(jtrans_notrim("What species would you like to be now? "),
                     specs, sizeof(specs));
 
     if (specs[0] == '\0')
@@ -127,7 +129,7 @@ void wizard_change_species()
     // Means from_str_loose couldn't interpret `specs`.
     if (sp == SP_UNKNOWN)
     {
-        mpr("That species isn't available.");
+        mpr(jtrans("That species isn't available."));
         return;
     }
 
@@ -140,7 +142,7 @@ void wizard_cast_spec_spell()
     char specs[80], *end;
     int spell;
 
-    mprf(MSGCH_PROMPT, "Cast which spell? ");
+    mprf(MSGCH_PROMPT, "%s", jtrans_notrimc("Cast which spell? "));
     if (cancellable_get_line_autohist(specs, sizeof(specs))
         || specs[0] == '\0')
     {
@@ -155,7 +157,7 @@ void wizard_cast_spec_spell()
     {
         if ((spell = spell_by_name(specs, true)) == SPELL_NO_SPELL)
         {
-            mpr("Cannot find that spell.");
+            mpr(jtrans("Cannot find that spell."));
             crawl_state.cancel_cmd_repeat();
             return;
         }
@@ -170,7 +172,7 @@ void wizard_memorise_spec_spell()
     char specs[80], *end;
     int spell;
 
-    mprf(MSGCH_PROMPT, "Memorise which spell? ");
+    mprf(MSGCH_PROMPT, "%s", jtrans_notrimc("Memorise which spell? "));
     if (cancellable_get_line_autohist(specs, sizeof(specs))
         || specs[0] == '\0')
     {
@@ -185,14 +187,14 @@ void wizard_memorise_spec_spell()
     {
         if ((spell = spell_by_name(specs, true)) == SPELL_NO_SPELL)
         {
-            mpr("Cannot find that spell.");
+            mpr(jtrans("Cannot find that spell."));
             crawl_state.cancel_cmd_repeat();
             return;
         }
     }
 
     if (spell_is_monster_only(static_cast<spell_type>(spell)))
-        mpr("Spell is monster-only - unpredictable behaviour may result.");
+        mpr(jtrans("Spell is monster-only - unpredictable behaviour may result."));
     if (!learn_spell(static_cast<spell_type>(spell), true))
         crawl_state.cancel_cmd_repeat();
 }
@@ -201,7 +203,7 @@ void wizard_heal(bool super_heal)
 {
     if (super_heal)
     {
-        mpr("Super healing.");
+        mpr(jtrans("Super healing."));
         // Clear more stuff.
         undrain_hp(9999);
         you.magic_contamination = 0;
@@ -266,7 +268,7 @@ void wizard_heal(bool super_heal)
         you.props.erase(COGLIN_GIZMO_KEY);
     }
     else
-        mpr("Healing.");
+        mpr(jtrans("Healing."));
 
     // Clear some status ailments.
     you.duration[DUR_CONF]      = 0;
@@ -282,12 +284,12 @@ void wizard_set_piety_to(int newpiety, bool force)
 {
     if (newpiety < 0 || newpiety > MAX_PIETY)
     {
-        mprf("Piety needs to be between 0 and %d.", MAX_PIETY);
+        mprf(jtransc("Piety needs to be between 0 and %d."), MAX_PIETY);
         return;
     }
     if (newpiety > piety_breakpoint(5) && you_worship(GOD_RU))
     {
-        mprf("Ru piety can't be greater than %d.", piety_breakpoint(5));
+        mprf(jtransc("Ru piety can't be greater than %d."), piety_breakpoint(5));
         return;
     }
 
@@ -303,7 +305,7 @@ void wizard_set_piety_to(int newpiety, bool force)
 
             // For Xom, also allow setting interest.
             mprf(MSGCH_PROMPT,
-                 "Enter new interest (current = %d, Enter for 0): ",
+                 jtrans_notrimc("Enter new interest (current = %d, Enter for 0): "),
                  you.gift_timeout);
 
             if (cancellable_get_line_autohist(buf, sizeof buf))
@@ -320,19 +322,20 @@ void wizard_set_piety_to(int newpiety, bool force)
         if (newinterest >= 0 && newinterest < 256)
             you.gift_timeout = newinterest;
         else
-            mpr("Interest must be between 0 and 255.");
+            mpr(jtrans("Interest must be between 0 and 255."));
 
-        mprf("Set piety to %d, interest to %d.", you.raw_piety, newinterest);
+        mprf(jtransc("Set piety to %d, interest to %d."), you.raw_piety, newinterest);
 
         const string new_xom_favour = describe_xom_favour();
-        const string msg = "You are now " + new_xom_favour;
+        // 訳は xom.txt の "You are now ..." の各項目
+        const string msg = jtrans("You are now " + new_xom_favour);
         god_speaks(you.religion, msg.c_str());
         return;
     }
 
     if (newpiety < 1 && !force)
     {
-        if (yesno("Are you sure you want to be excommunicated?", false, 'n'))
+        if (yesno(jtransc("Are you sure you want to be excommunicated?"), false, 'n'))
         {
             you.raw_piety = 0;
             excommunication();
@@ -341,7 +344,7 @@ void wizard_set_piety_to(int newpiety, bool force)
             canned_msg(MSG_OK);
         return;
     }
-    mprf("Setting piety to %d.", newpiety);
+    mprf(jtransc("Setting piety to %d."), newpiety);
     set_piety(newpiety);
 
     // Automatically reduce penance to 0.
@@ -352,7 +355,8 @@ void wizard_set_piety_to(int newpiety, bool force)
 void wizard_set_gold()
 {
     const int default_gold = you.gold + 1000;
-    mprf(MSGCH_PROMPT, "Enter new gold value (current = %d, Enter for %d): ",
+    mprf(MSGCH_PROMPT,
+         jtrans_notrimc("Enter new gold value (current = %d, Enter for %d): "),
          you.gold, default_gold);
 
     char buf[30];
@@ -367,25 +371,26 @@ void wizard_set_gold()
     else
         you.set_gold(max(atoi(buf), 0));
 
-    mprf("You now have %d gold piece%s.", you.gold, you.gold != 1 ? "s" : "");
+    mprf(jtransc("You now have %d gold pieces."), you.gold);
 }
 
 void wizard_set_piety()
 {
     if (you_worship(GOD_NO_GOD))
     {
-        mpr("You are not religious!");
+        mpr(jtrans("You are not religious!"));
         return;
     }
 
     if (you_worship(GOD_RU))
     {
-        mprf("Current progress to next sacrifice: %d  Progress needed: %d",
+        mprf(jtransc("Current progress to next sacrifice: %d  Progress needed: %d"),
             you.props[RU_SACRIFICE_PROGRESS_KEY].get_int(),
             you.props[RU_SACRIFICE_DELAY_KEY].get_int());
     }
 
-    mprf(MSGCH_PROMPT, "Enter new piety value (current = %d, Enter for 0): ",
+    mprf(MSGCH_PROMPT,
+         jtrans_notrimc("Enter new piety value (current = %d, Enter for 0): "),
          you.raw_piety);
     char buf[30];
     if (cancellable_get_line_autohist(buf, sizeof buf))
@@ -399,15 +404,15 @@ void wizard_set_piety()
 
 void wizard_exercise_skill()
 {
-    skill_type skill = debug_prompt_for_skill("Which skill (by name)? ");
+    skill_type skill = debug_prompt_for_skill(jtrans_notrimc("Which skill (by name)? "));
 
     if (skill == SK_NONE)
-        mpr("That skill doesn't seem to exist.");
+        mpr(jtrans("That skill doesn't seem to exist."));
     else if (is_removed_skill(skill))
-        mpr("That skill was removed.");
+        mpr(jtrans("That skill was removed."));
     else
     {
-        mpr("Exercising...");
+        mpr(jtrans("Exercising..."));
         exercise(skill, 10);
     }
 }
@@ -415,28 +420,28 @@ void wizard_exercise_skill()
 void wizard_set_skill_level(skill_type skill)
 {
     if (skill == SK_NONE)
-        skill = debug_prompt_for_skill("Which skill (by name)? ");
+        skill = debug_prompt_for_skill(jtrans_notrimc("Which skill (by name)? "));
 
     if (is_removed_skill(skill)){
-        mpr("That skill was removed.");
+        mpr(jtrans("That skill was removed."));
         return;
     }
 
     if (skill == SK_NONE)
     {
-        mpr("That skill doesn't seem to exist.");
+        mpr(jtrans("That skill doesn't seem to exist."));
         return;
     }
 
     if (is_useless_skill(skill))
     {
-        mpr("Can't change a useless skill.");
+        mpr(jtrans("Can't change a useless skill."));
         return;
     }
 
-    mpr(skill_name(skill));
+    mpr(skill_name_j(skill));
     const double old_amount = you.skill(skill, 10, true) * 0.1;
-    string prompt = make_stringf("To what level? (current = %.1f) ",
+    string prompt = make_stringf(jtrans_notrimc("To what level? (current = %.1f) "),
                                  old_amount);
     double amount = prompt_for_float(prompt.c_str());
 
@@ -458,15 +463,15 @@ void wizard_set_skill_level(skill_type skill)
 
     redraw_skill(skill);
 
-    mprf("%s %s to skill level %.1f.", (old_amount < amount ? "Increased" :
-                                      old_amount > amount ? "Lowered"
-                                                          : "Reset"),
-         skill_name(skill), amount);
+    mprf(old_amount < amount ? jtransc("Increased %s to skill level %.1f.") :
+         old_amount > amount ? jtransc("Lowered %s to skill level %.1f.")
+                             : jtransc("Reset %s to skill level %.1f."),
+         skill_name_jc(skill), amount);
 }
 
 void wizard_set_all_skills()
 {
-    double amount = prompt_for_float("Set all skills to what level? ");
+    double amount = prompt_for_float(jtrans_notrimc("Set all skills to what level? "));
 
     if (amount < 0)             // cancel returns -1 -- bwr
         canned_msg(MSG_OK);
@@ -507,10 +512,10 @@ bool wizard_add_mutation()
     char specs[80];
 
     if (you.has_mutation(MUT_MUTATION_RESISTANCE))
-        mpr("Ignoring mut resistance to apply mutation.");
+        mpr(jtrans("Ignoring mut resistance to apply mutation."));
 
-    msgwin_get_line("Which mutation (name, 'good', 'bad', 'any', "
-                    "'xom', 'slime', 'qazlal')? ",
+    msgwin_get_line(jtrans_notrim("Which mutation (name, 'good', 'bad', 'any', "
+                                  "'xom', 'slime', 'qazlal')? "),
                     specs, sizeof(specs));
 
     if (specs[0] == '\0')
@@ -530,7 +535,7 @@ bool wizard_add_mutation()
         crawl_state.cancel_cmd_repeat();
 
         if (partial_matches.empty())
-            mpr("No matching mutation names.");
+            mpr(jtrans("No matching mutation names."));
         else
         {
             vector<string> matches;
@@ -542,11 +547,13 @@ bool wizard_add_mutation()
                 matches.emplace_back(mutname);
             }
 
-            string prefix = make_stringf("No exact match for mutation '%s', possible matches are: ", specs);
+            string prefix = make_stringf(
+                jtrans_notrimc("No exact match for mutation '%s', possible matches are: "),
+                specs);
 
             // Use mpr_comma_separated_list() because the list
             // might be *LONG*.
-            mpr_comma_separated_list(prefix, matches, " and ", ", ",
+            mpr_comma_separated_list(prefix, matches, ", ", ", ",
                                      MSGCH_DIAGNOSTICS);
         }
 
@@ -554,12 +561,12 @@ bool wizard_add_mutation()
     }
     else
     {
-        mprf("Found #%d: %s (\"%s\")", (int) mutat,
+        mprf(jtransc("Found #%d: %s (\"%s\")"), (int) mutat,
              mutation_name(mutat),
              mutation_desc(mutat, 1, false).c_str());
 
         const int levels =
-            prompt_for_int("How many levels to increase or decrease? ",
+            prompt_for_int(jtrans_notrimc("How many levels to increase or decrease? "),
                                   false);
 
         if (levels == 0)
@@ -589,7 +596,7 @@ bool wizard_toggle_bane()
     bool success = false;
     char specs[80];
 
-    msgwin_get_line("Which bane? ", specs, sizeof(specs));
+    msgwin_get_line(jtrans_notrim("Which bane? "), specs, sizeof(specs));
 
     if (specs[0] == '\0')
     {
@@ -605,7 +612,7 @@ bool wizard_toggle_bane()
         crawl_state.cancel_cmd_repeat();
 
         if (partial_matches.empty())
-            mpr("No matching bane names.");
+            mpr(jtrans("No matching bane names."));
         else
         {
             vector<string> matches;
@@ -617,11 +624,13 @@ bool wizard_toggle_bane()
                 matches.emplace_back(banname);
             }
 
-            string prefix = make_stringf("No exact match for bane '%s', possible matches are: ", specs);
+            string prefix = make_stringf(
+                jtrans_notrimc("No exact match for bane '%s', possible matches are: "),
+                specs);
 
             // Use mpr_comma_separated_list() because the list
             // might be *LONG*.
-            mpr_comma_separated_list(prefix, matches, " and ", ", ",
+            mpr_comma_separated_list(prefix, matches, ", ", ", ",
                                      MSGCH_DIAGNOSTICS);
         }
 
@@ -629,7 +638,7 @@ bool wizard_toggle_bane()
     }
     else
     {
-        mprf("Found #%d: %s (\"%s\")", (int) bane,
+        mprf(jtransc("Found #%d: %s (\"%s\")"), (int) bane,
              bane_name(bane).c_str(),
              bane_desc(bane).c_str());
 
@@ -648,7 +657,8 @@ bool wizard_toggle_bane()
 void wizard_set_abyss()
 {
     char buf[80];
-    mprf(MSGCH_PROMPT, "Enter values for X, Y, Z (space separated) or return: ");
+    mprf(MSGCH_PROMPT, "%s",
+         jtrans_notrimc("Enter values for X, Y, Z (space separated) or return: "));
     if (!cancellable_get_line_autohist(buf, sizeof buf))
         abyss_teleport();
 
@@ -660,7 +670,8 @@ void wizard_set_abyss()
 void wizard_set_stats()
 {
     char buf[80];
-    mprf(MSGCH_PROMPT, "Enter values for Str, Int, Dex (space separated): ");
+    mprf(MSGCH_PROMPT, "%s",
+         jtrans_notrimc("Enter values for Str, Int, Dex (space separated): "));
     if (cancellable_get_line_autohist(buf, sizeof buf) || buf[0] == '\0')
     {
         canned_msg(MSG_OK);
@@ -673,7 +684,7 @@ void wizard_set_stats()
 
     sscanf(buf, "%d %d %d", &sstr, &sint, &sdex);
 
-    mprf("Setting attributes (Str, Int, Dex) to: %i, %i, %i", sstr, sint, sdex);
+    mprf(jtransc("Setting attributes (Str, Int, Dex) to: %i, %i, %i"), sstr, sint, sdex);
     you.base_stats[STAT_STR] = debug_cap_stat(sstr);
     you.base_stats[STAT_INT] = debug_cap_stat(sint);
     you.base_stats[STAT_DEX] = debug_cap_stat(sdex);
@@ -688,7 +699,7 @@ static bool _wizard_enter_duration_name(duration_type &choice)
     char buf[80];
     vector<string> match_names;
 
-    mprf(MSGCH_PROMPT, "Edit which duration (name)? ");
+    mprf(MSGCH_PROMPT, "%s", jtrans_notrimc("Edit which duration (name)? "));
 
     if (cancellable_get_line_autohist(buf, sizeof buf) || !*buf
         || !strlcpy(buf, lowercase_string(trimmed_string(buf)).c_str(),
@@ -716,16 +727,16 @@ static bool _wizard_enter_duration_name(duration_type &choice)
         return true;
     else if (match_names.empty())
     {
-        mprf(MSGCH_PROMPT, "No durations matching '%s'.", buf);
+        mprf(MSGCH_PROMPT, jtransc("No durations matching '%s'."), buf);
         return false;
     }
     else
     {
-        string prefix = "No exact match for duration '";
-        prefix += buf;
-        prefix += "', possible matches are: ";
+        string prefix = make_stringf(
+            jtrans_notrimc("No exact match for duration '%s', possible matches are: "),
+            buf);
 
-        mpr_comma_separated_list(prefix, match_names, " and ", ", ",
+        mpr_comma_separated_list(prefix, match_names, ", ", ", ",
                                  MSGCH_DIAGNOSTICS);
         return false;
     }
@@ -746,8 +757,8 @@ void wizard_edit_durations()
     }
     if (!active.empty())
     {
-        active.emplace_back('*', "other durations", NUM_DURATIONS);
-        auto menu = WizardMenu("Edit which duration (ESC to exit)?", active);
+        active.emplace_back('*', jtrans("other durations"), NUM_DURATIONS);
+        auto menu = WizardMenu(jtrans("Edit which duration (ESC to exit)?"), active);
         if (!menu.run(true))
             return;
         choice = static_cast<duration_type>(menu.result());
@@ -757,13 +768,13 @@ void wizard_edit_durations()
     else if (!_wizard_enter_duration_name(choice))
         return;
 
-    char buf[80];
-    snprintf(buf, sizeof(buf), "Set '%s' to: ", duration_name(choice));
-    int num = prompt_for_int(buf, false);
+    const string prompt = make_stringf(jtrans_notrimc("Set '%s' to: "),
+                                       duration_name(choice));
+    int num = prompt_for_int(prompt.c_str(), false);
 
     if (num == 0)
     {
-        mprf(MSGCH_PROMPT, "Can't set duration directly to 0, setting it to 1 instead.");
+        mprf(MSGCH_PROMPT, jtransc("Can't set duration directly to 0, setting it to 1 instead."));
         num = 1;
     }
     you.duration[choice] = num;
@@ -869,7 +880,7 @@ static void debug_downtick_xl(int newxl)
 
 void wizard_set_xl(bool change_skills)
 {
-    mprf(MSGCH_PROMPT, "Enter new experience level: ");
+    mprf(MSGCH_PROMPT, "%s", jtrans_notrimc("Enter new experience level: "));
     char buf[30];
     if (cancellable_get_line_autohist(buf, sizeof buf))
     {
@@ -885,7 +896,7 @@ void wizard_set_xl(bool change_skills)
     }
 
     set_xl(newxl, change_skills);
-    mprf("Experience level set to %d.", newxl);
+    mprf(jtransc("Experience level set to %d."), newxl);
 }
 
 void set_xl(const int newxl, const bool train, const bool silent)
@@ -902,7 +913,7 @@ void wizard_get_god_gift()
 {
     if (you_worship(GOD_NO_GOD))
     {
-        mpr("You are not religious!");
+        mpr(jtrans("You are not religious!"));
         return;
     }
 
@@ -919,13 +930,14 @@ void wizard_get_god_gift()
     }
 
     if (!do_god_gift(true))
-        mpr("Nothing happens.");
+        mpr(jtrans("Nothing happens."));
 }
 
 void wizard_toggle_xray_vision()
 {
     you.wizard_vision = !you.wizard_vision;
-    mprf("X-ray vision %s.", you.wizard_vision ? "enabled" : "disabled");
+    mpr(you.wizard_vision ? jtrans("X-ray vision enabled.")
+                          : jtrans("X-ray vision disabled."));
     viewwindow(true);
     update_screen();
 }
@@ -937,12 +949,12 @@ void wizard_freeze_time()
     if (props.exists(FREEZE_TIME_KEY))
     {
         props.erase(FREEZE_TIME_KEY);
-        mpr("You allow the flow of time to resume.");
+        mpr(jtrans("You allow the flow of time to resume."));
     }
     else
     {
         props[FREEZE_TIME_KEY] = true;
-        mpr("You bring the flow of time to a stop.");
+        mpr(jtrans("You bring the flow of time to a stop."));
     }
 }
 
@@ -950,13 +962,13 @@ void wizard_god_wrath()
 {
     const god_type god = choose_god(you.religion);
     if (god == NUM_GODS)
-        mpr("That god doesn't seem to exist!");
+        mpr(jtrans("That god doesn't seem to exist!"));
     else if (god == GOD_NO_GOD)
-        mpr("You suffer the terrible wrath of No God.");
+        mpr(jtrans("You suffer the terrible wrath of No God."));
     else if (!divine_retribution(god, true, true))
     {
         // Dead Jiyva, or Ru/Gozag/Ashenzari.
-        mprf("%s is not feeling wrathful today.", god_name(god).c_str());
+        mprf(jtransc("%s is not feeling wrathful today."), god_name_jc(god));
     }
 }
 
@@ -972,7 +984,7 @@ void wizard_god_mollify()
         }
     }
     if (!mollified)
-        mpr("You are not under penance.");
+        mpr(jtrans("You are not under penance."));
 }
 
 void wizard_transform()
@@ -1001,7 +1013,7 @@ void wizard_transform()
     for (size_t i = 0; i < form_names.size(); ++i)
         choices.emplace_back(WizardEntry(0, form_names[i].second, i));
 
-    auto menu = WizardMenu("Which form (ESC to exit)?", choices);
+    auto menu = WizardMenu(jtrans("Which form (ESC to exit)?"), choices);
     if (!menu.run(true))
         return;
     auto form = static_cast<transformation>(form_names[menu.result()].first);
@@ -1013,28 +1025,28 @@ void wizard_transform()
         you.cur_talisman = -1;
     }
     if (!transform(200, form, true) && you.form != form)
-        mpr("Transformation failed.");
+        mpr(jtrans("Transformation failed."));
 }
 
 void wizard_join_religion()
 {
     if (you.has_mutation(MUT_FORLORN))
     {
-        mpr("Not even in wizmode may divine creatures worship a god!");
+        mpr(jtrans("Not even in wizmode may divine creatures worship a god!"));
         return;
     }
     god_type god = choose_god();
     if (god == NUM_GODS)
-        mpr("That god doesn't seem to exist!");
+        mpr(jtrans("That god doesn't seem to exist!"));
     else if (god == GOD_NO_GOD)
     {
         if (you_worship(GOD_NO_GOD))
-            mpr("You already have no god!");
+            mpr(jtrans("You already have no god!"));
         else
             excommunication();
     }
     else if (you_worship(god))
-        mpr("You already worship that god!");
+        mpr(jtrans("You already worship that god!"));
     else
     {
         if (god == GOD_GOZAG)
@@ -1045,18 +1057,20 @@ void wizard_join_religion()
 
 void wizard_get_god_tension()
 {
-    mpr("(Tension uses a given god's perspective to check on their summons; use 'No God' to ignore this.)");
+    mpr(jtrans("(Tension uses a given god's perspective to check on their summons; use 'No God' to ignore this.)"));
     god_type god = choose_god(you.religion);
     int tension = get_tension(god);
-    mprf("%s tension value: %d", !(god == GOD_NO_GOD) ? god_name(god).c_str()
-                                                      : "General", tension);
+    if (god == GOD_NO_GOD)
+        mprf(jtransc("General tension value: %d"), tension);
+    else
+        mprf(jtransc("%s tension value: %d"), god_name_jc(god), tension);
 }
 
 void wizard_xom_acts()
 {
     char specs[80];
 
-    msgwin_get_line("What action should Xom take? (Blank = any) " ,
+    msgwin_get_line(jtrans_notrim("What action should Xom take? (Blank = any) "),
                     specs, sizeof(specs));
 
     const int severity = you_worship(GOD_XOM) ? abs(you.raw_piety - HALF_MAX_PIETY)
@@ -1089,15 +1103,15 @@ void wizard_set_zot_clock()
 {
     const int max_zot_clock = MAX_ZOT_CLOCK / BASELINE_DELAY;
 
-    string prompt = make_stringf("Enter new Zot clock value "
-                                 "(current = %d, from 0 to %d): ",
+    string prompt = make_stringf(jtrans_notrimc("Enter new Zot clock value "
+                                                "(current = %d, from 0 to %d): "),
                                  turns_until_zot(), max_zot_clock);
     int turns_left = prompt_for_int(prompt.c_str(), true);
 
     if (turns_left == -1)
         canned_msg(MSG_OK);
     else if (turns_left > max_zot_clock)
-        mprf("Zot clock should be between 0 and %d", max_zot_clock);
+        mprf(jtransc("Zot clock should be between 0 and %d"), max_zot_clock);
     else
         set_turns_until_zot(turns_left);
 }

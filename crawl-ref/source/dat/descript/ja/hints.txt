@@ -531,7 +531,7 @@ HINT_SEEN_ESCAPE_HATCH
 #   respectively<localtiles> (or by<w>left-clicking</w>)</localtiles>, like stairs;
 #   unlike stairs, however, hatches are a one-way trip, so be careful when
 #   descending!
-これ<console>('$1')</console>は脱出用のハッチです。階段と同じように、<input>$cmd[CMD_GO_UPSTAIRS]</input>や<input>$cmd[CMD_GO_DOWNSTAIRS]</input><localtiles>(または<w>[左クリック]</w>)</localtiles>でその階を離れるのに使えます。ただし階段と違い、ハッチは一方通行なので、下りるときは気をつけてください！
+これ<console>('$1')</console>は脱出ハッチです。階段と同じように、<input>$cmd[CMD_GO_UPSTAIRS]</input>や<input>$cmd[CMD_GO_DOWNSTAIRS]</input><localtiles>(または<w>[左クリック]</w>)</localtiles>でその階を離れるのに使えます。ただし階段と違い、ハッチは一方通行なので、下りるときは気をつけてください！
 %%%%
 HINT_SEEN_BRANCH
 
@@ -584,7 +584,7 @@ HINT_STAIR_BRAND
 #   be indicated by highlighting the <w><<</w> or <w>></w> symbol, instead of hiding
 #   the stair symbol with an item glyph.</console>
 <tiles>階段のタイルに小さな記号があるときは、その場所に調べてみたくなるようなアイテムがあることを示しています。</tiles>
-<console>階段や脱出用のハッチの上にアイテムがあるときは、階段の記号をアイテムの記号で隠す代わりに、<w><<</w>や<w>></w>の記号を強調表示して示します。</console>
+<console>階段や脱出ハッチの上にアイテムがあるときは、階段の記号をアイテムの記号で隠す代わりに、<w><<</w>や<w>></w>の記号を強調表示して示します。</console>
 %%%%
 HINT_HEAP_BRAND
 

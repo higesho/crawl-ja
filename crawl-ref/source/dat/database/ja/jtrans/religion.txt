@@ -649,7 +649,7 @@ Yredelemnul will no longer gift you temporary undead servants when you light the
 %%%%
 hurl gouts of umbral torchlight
 
-陰りの松明の炎を投げつけること
+陰影の松明を投げつけること
 %%%%
 bind living souls
 
@@ -785,11 +785,11 @@ rally a vengeful horde
 %%%%
 Jiyva is now protecting you from corrosive effects.
 
-ジーヴァはあなたを腐蝕効果から守ってくれるようになった。
+ジーヴァはあなたを腐食効果から守ってくれるようになった。
 %%%%
 Jiyva will no longer protect you from corrosive effects.
 
-ジーヴァはもうあなたを腐蝕効果から守ってはくれない。
+ジーヴァはもうあなたを腐食効果から守ってはくれない。
 %%%%
 Jiyva will now mutate your body as you gain piety.
 

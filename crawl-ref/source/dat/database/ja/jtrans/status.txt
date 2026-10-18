@@ -50,11 +50,11 @@ You have no %s!
 %%%%
 [dur]Corr (%d)
 
-腐蝕(%d)
+腐食(%d)
 %%%%
 [dur]corroded (%d)
 
-装備の腐蝕(%d)
+装備の腐食(%d)
 %%%%
 [dur]Flay (%d)
 
@@ -412,11 +412,11 @@ You cannot resist fire.
 %%%%
 [dur]fortress blast
 
-要塞砲撃
+要塞の爆風
 %%%%
 Preparing a Fortress Blast.
 
-要塞砲撃を準備している。
+要塞の爆風を準備している。
 %%%%
 [dur]!Tele!
 

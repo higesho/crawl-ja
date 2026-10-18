@@ -630,7 +630,7 @@ __NONE
 %%%%
 [frag terrain]spike launcher
 
-棘の射出装置
+棘射出機
 %%%%
 [frag terrain]stone door frame
 

@@ -114,7 +114,7 @@ Closed door
 %%%%
 Runed door
 
-ルーンの刻まれた扉
+ルーンで封印された扉
 %%%%
 Uh-oh, %s just excommunicated you for running out of piety (your divine favour went to nothing). Maybe you repeatedly violated the religious rules, or maybe you failed to please your deity often enough, or some combination of the two. If you can find an altar dedicated to %s you can re-convert, and all will be well.
 

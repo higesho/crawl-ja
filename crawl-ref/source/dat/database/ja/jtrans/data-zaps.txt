@@ -296,7 +296,7 @@
 %%%%
 [zap]bolt of acid
 
-腐蝕の矢
+腐食の矢
 %%%%
 [zap]bolt of light
 
@@ -681,7 +681,7 @@
 %%%%
 [zap]orb of destruction
 
-破壊の発露
+破壊の爆裂球
 %%%%
 [zap]porkalator
 

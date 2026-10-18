@@ -1072,7 +1072,7 @@ Your tunneler's instincts keep you from falling into a shaft!
 %%%%
 Yredelemnul refuses to let your conquest be stopped by a trick of the earth!
 
-イェレデルムヌルは大地の悪戯ごときであなたの征服が阻まれることを許さなかった！
+イレデレンヌルは大地の悪戯ごときであなたの征服が阻まれることを許さなかった！
 %%%%
 You can't shaft yourself in your current form.
 

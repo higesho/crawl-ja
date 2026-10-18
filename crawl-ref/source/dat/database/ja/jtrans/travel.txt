@@ -105,7 +105,7 @@ Partly explored, %s.
 %%%%
 [explore reason]unopened runed door
 
-未開封のルーンの扉がある
+未開封のルーンで封印された扉がある
 %%%%
 [explore reason]unopened door
 
@@ -193,7 +193,7 @@ Waypoint %d re-assigned to %s.
 %%%%
 [explore found]runed door
 
-ルーンの扉
+ルーンで封印された扉
 %%%%
 [explore found]runelights
 

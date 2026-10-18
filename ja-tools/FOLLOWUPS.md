@@ -41,6 +41,12 @@
   外側の `jtrans`、item-use.cc:433 の `jtransc(no_selectables_message(...))`
 
 ## 決めたこと
+- 訳語の正はデータ辞書(jtrans/data-*.txt)。揺れの監査結果は ja-work/term-audit.md。
+  腐食(腐蝕は使わない)、脱出ハッチ、コウモリ(蝙蝠は使わない)に統一した。
+  支部名は「迷宮」、地の文の the Dungeon は「ダンジョン」。
+- 罠の名前 `trap_name()` / `full_trap_name()` は比較・Lua 用に英語のまま。表示は
+  `tagged_jtrans("[feature]", full_trap_name(t))`。
+- ギズモの名前は日本語(「・」区切り)でセーブにも残る。
 - スコアファイル・ゴーストファイルに保存される称号は日本語のままでよい(このフォークは
   日本語専用のため)。`god_title_en()` などは作らない。
 - 毒・麻痺などの原因(DISABLED_BY_KEY, POISONER_KEY)と死因に残る名前は英語で保存し、
@@ -51,8 +57,6 @@
   jtrans/des.txt(des の文と `[feature]` の地形名)と jtrans/dlua.txt(timed_msg の verb /
   noisemaker / ranges、timed_marker の entity、trove の toll_desc をタグ付きで)。
   des に verb・noisemaker・ranges・entity の新しい値を足すときは dlua.txt にも足す。
-- movement.cc の `veto_reason` と `door_verb_already_open` は訳さずに `mpr` している
-  (今は sprint_mu.des 側で包んでいる。movement.cc で `jtrans` をかければ des 側は不要)。
 - des の MONS の `name:`(bag_of_meat など独自のモンスター名)と、KFEAT の店名
   (name:Gozag type:Platinum suffix:Reserve など。shopping.cc 側)は未対応。
 - dat 以下の .lua / .des に日本語(非 ASCII)を書いてよい。BOM なしのファイルは
@@ -68,7 +72,6 @@
   `@to_foe@` / `@at_foe@` の直後は「に」「を」「に向かって」のどれか(mon-util.cc の消去規則)。
   内部キー(`_recite_what_` など)の形は ja/monspeak.txt の訳に合わせる。
 - jtrans/shout.txt のテンプレート訳は ja/shout.txt ができたので使われなくなった(消してよい)。
-- player-reacts.cc の `_do_eel_flavour_msg` の `@head@` / `@skin@` は英語(今は訳文で未使用)。
 - mon-info.cc の `_mname_j`: 全角を含む名前は『』を付けずに返す(「オークの司祭ボグダン」)。
 - monname.txt を訳したので、使徒・祖霊の名前とコグリンの武器の銘は日本語でセーブ・
   morgue・スコアに残る(日本語専用のフォークなのでこれでよい)。
@@ -76,25 +79,6 @@
 - 英語版の誤り(訳では直した): graffiti の `@graffiti_author_any@`(下線抜け)、decorlines の
   `Jiyva peaceful fountain_blue` の重複、hints のタグの誤り。monstatus と mutations にも重複キー。
 - docs のヘルプ(マニュアル、適性表、changelog)は英語のまま。
-
-## art-func.h(固定アーティファクトの効果)
-- 107 件のメッセージが未包(jtrans 0 件。ヘッダなので jtools の check の対象外だった)。
-  "A voice whispers, \"" は player-equip.txt の `A voice whispers, "%s"` を使える。
-
-## notes.cc
-- `NOTE_INFERNAL_MARK`("Branded self with the %s")と `NOTE_ANCESTOR_TYPE` の定型文が英語の
-  ままで、日本語の名前が入る。
-
-## game-options.cc / macro.cc
-- `loadFromParseState()`(game-options.cc)と `read_rc_file_macro()`(macro.cc)が返す
-  エラー文は initfile.cc の `report_error("%s", …)` を通ってそのまま出る。各ファイル側で包む。
-
-## acquire.cc
-- `_generate_gizmo_name()` は「形容詞 + 半角空白 + 名詞」。カタカナ語なら「・」区切りか
-  空白なしの方が自然。
-
-## describe.cc
-- `trap_name()` / `full_trap_name()` が英語のまま。
 
 ## newgame.cc
 - `_highlight_pattern()` は英語の種族名を `show_help('%')` に渡している。適性表を訳すときは
@@ -107,10 +91,6 @@
 
 ## initfile.cc
 - 最初の rc 読み込みは DB の初期化より前なので、その時点のオプションのエラー文は英語。
-
-## invent.cc / 選択メニュー
-- `prompt_invent_item()`・`select_items()`・`_invent_select()` は渡された題名を訳さない。
-  呼び出し側で包む。`equip_slot_name()` は英語のまま(表示側で `[equip slot]`)。
 
 ## アイテム関係の名前関数の表示
 - `sub_type_string`, `ego_type_string`, `missile_brand_name`, `potion_type_name`
@@ -129,8 +109,10 @@
 - menu.txt にタグなしの短いキー("exit" "select" "page up" "page down")がある。
   衝突したらタグ付きに替える。
 - beam.txt に使わなくなったキー("Really fire at %s%s?%s"、"Really fire in %s direction%s?%s")。
-- C++ に残る英文は、ほぼデバッグ・内部エラー・ウィザード用(wiz-*.cc は未着手)。
-  `scratchpad` の unwrapped.py のような grep で時々洗い出す。
+- C++ に残る英文は、ほぼデバッグ・内部エラー・死因など意図して残したもの。包み忘れは
+  `python -I ja-tools/find_unwrapped.py`(通常と `-v`)で洗い出せる。
+- output.cc のタッチ UI(Android)の固定幅ラベル "XL Next" / "Place" / "Noise" は英語のまま。
+- wiz-item.cc:907 に本家のバグ(`if (entry.slot = SLOT_GIZMO)`。触っていない)。
 
 ## 全体
 - 死因の文字列(ouch/hurt に渡す aux、"miscasting ..." など)とマイルストーンは

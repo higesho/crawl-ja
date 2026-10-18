@@ -209,15 +209,15 @@ attempts to avoid the deathblow, but fails!
 %%%%
 %s avoids the killing blow by scattering into a rainbow of bats!
 
-%sは虹色の蝙蝠の群れに散って、とどめの一撃を避けた！
+%sは虹色のコウモリの群れに散って、とどめの一撃を避けた！
 %%%%
 The bat shimmers and %s reappears in a puff of iridescent mist.
 
-蝙蝠が揺らめき、虹色の霧とともに%sが再び姿を現した。
+コウモリが揺らめき、虹色の霧とともに%sが再び姿を現した。
 %%%%
 The bats swarm back together and %s reappears in a puff of iridescent mist.
 
-蝙蝠の群れが寄り集まり、虹色の霧とともに%sが再び姿を現した。
+コウモリの群れが寄り集まり、虹色の霧とともに%sが再び姿を現した。
 %%%%
 pulls their child back from the Abyss.
 

@@ -885,7 +885,7 @@ ring of see invisible
 %%%%
 ring of resist corrosion
 
-腐蝕阻止の指輪
+腐食阻止の指輪
 %%%%
 ring of evasion
 
@@ -1467,7 +1467,7 @@ scarab talisman
 %%%%
 medusa talisman
 
-メドゥーサのタリスマン
+メデューサのタリスマン
 %%%%
 spore talisman
 

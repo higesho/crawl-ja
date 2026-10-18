@@ -1011,7 +1011,7 @@ unusually resistant monstatus
 # en:
 #   This creature's resistance to fire, cold, poison, electricity, and corrosion
 #   are all increased by one level.
-この生き物の火炎、冷気、毒、電撃、腐蝕への耐性は、すべて 1 段階上がっている。
+この生き物の火炎、冷気、毒、電撃、腐食への耐性は、すべて 1 段階上がっている。
 %%%%
 very poisoned monstatus
 

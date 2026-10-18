@@ -574,7 +574,7 @@ tutorial3 wand_digging
 #   <input>$cmd[CMD_LOOK_AROUND]][$cmd[CMD_TARGET_DESCRIBE]</input> <localtiles>or
 #   <input>mouseover</input>/<input>right click</input> </localtiles>to check wall
 #   types.
-採掘のワンドは岩の壁を壊すことができます。
+掘削のワンドは岩の壁を壊すことができます。
 <input>$cmd[CMD_LOOK_AROUND]][$cmd[CMD_TARGET_DESCRIBE]</input>を押<localtiles>すか、
 <input>マウスオーバー</input>/<input>右クリック</input></localtiles>して壁の種類を調べてみてください。
 %%%%
@@ -929,7 +929,7 @@ tutorial5 dungeon_overview
 #   or <input>click the dungeon overmap button</input> in the command
 #   panel</localtiles> for a list of all altars and other interesting features
 #   found so far.
-この先にあるのは怒れるトログの祭壇です！ トログは数多の神々のうちの一柱です。
+この先にあるのは激怒せるトログの祭壇です！ トログは数多の神々のうちの一柱です。
 実際のゲームでは、 <input>$cmd[CMD_DISPLAY_OVERMAP]</input>を押<localtiles>すか、
 コマンドパネル<input>ダンジョン全体図ボタンをクリック</input></localtiles>してそれまでに発見した全ての祭壇や施設の一覧を見ることができます。
 %%%%

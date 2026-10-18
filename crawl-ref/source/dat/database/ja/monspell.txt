@@ -531,7 +531,7 @@ Spectral Cloud revenant cast
 
 # en:
 #   @The_monster@ conjures spectral mists around @target@.
-@The_monster@は@target@の周囲に幽体の霧を生み出した。
+@The_monster@は@target@の周囲に霊体の霧を生み出した。
 %%%%
 Dispel Undead revenant cast
 

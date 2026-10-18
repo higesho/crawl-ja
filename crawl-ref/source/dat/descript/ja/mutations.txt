@@ -52,7 +52,7 @@ yellow scales mutation
 #   You are covered in yellow scales, providing a small amount of protection. Each
 #   level of this mutation provides more AC. The third level of this mutation also
 #   provides resistance to acid and corrosion.
-あなたは黄色の鱗に覆われており、わずかな防御力をもたらしている。この変異のレベルが上がるごとにACが増える。この変異のレベル3では、酸と腐蝕への耐性も得る。
+あなたは黄色の鱗に覆われており、わずかな防御力をもたらしている。この変異のレベルが上がるごとにACが増える。この変異のレベル3では、酸と腐食への耐性も得る。
 %%%%
 thin metallic scales mutation
 
@@ -279,7 +279,7 @@ acidic bite mutation
 # en:
 #   You have acidic saliva, allowing you to bite foes and apply corrosion to them
 #   when launching melee attacks.
-あなたは酸性の唾液を持っており、近接攻撃の際に敵に噛みついて腐蝕させることができる。
+あなたは酸性の唾液を持っており、近接攻撃の際に敵に噛みついて腐食させることができる。
 %%%%
 antimagic bite mutation
 
@@ -446,7 +446,7 @@ acid resistance mutation
 # en:
 #   You resist acid (rCorr), taking less damage from it. You are also less likely to
 #   become corroded.
-あなたは酸に耐性があり(rCorr)、酸から受けるダメージが減る。また、腐蝕も受けにくい。
+あなたは酸に耐性があり(rCorr)、酸から受けるダメージが減る。また、腐食も受けにくい。
 %%%%
 negative energy resistance mutation
 
@@ -849,7 +849,7 @@ corrupting presence mutation
 #   weapons and defences. The second level of this mutation makes matters even
 #   worse, adding a chance that your wretched victims may become mutated and
 #   deformed.
-あなたが敵を傷つけると、あなたの存在がダメージを強め、敵の武器や防具を腐蝕させることがある。この変異のレベル2ではさらに事態が悪化し、哀れな犠牲者が突然変異して変形する可能性も加わる。
+あなたが敵を傷つけると、あなたの存在がダメージを強め、敵の武器や防具を腐食させることがある。この変異のレベル2ではさらに事態が悪化し、哀れな犠牲者が突然変異して変形する可能性も加わる。
 %%%%
 black mark mutation
 
@@ -1753,7 +1753,7 @@ Mark of Haemoclasm mutation
 #   gore, which damages adjacent foes proportional to the victim's maximum health.
 #
 #   Enemies who die to this explosion will always explode themselves.
-あなたが敵を倒すと、敵はわずかな確率で激しい血肉の雨となって爆発し、その犠牲者の最大体力に比例したダメージを隣接する敵に与える。
+あなたが敵を倒すと、敵はわずかな確率で激しい血の雨となって爆発し、その犠牲者の最大体力に比例したダメージを隣接する敵に与える。
 
 この爆発で死んだ敵は、必ず自らも爆発する。
 %%%%

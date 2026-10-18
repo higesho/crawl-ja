@@ -21,7 +21,7 @@ corrode self passive
 
 # en:
 #   You have a chance of being corroded when you take damage.
-あなたはダメージを受けると、一定の確率で腐蝕する。
+あなたはダメージを受けると、一定の確率で腐食する。
 %%%%
 slow self passive
 

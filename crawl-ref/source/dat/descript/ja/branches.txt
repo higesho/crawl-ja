@@ -40,7 +40,7 @@ Volcano
 #   once have served as a temple to some strange deity, or perhaps the dwelling of
 #   a mighty fire giant. The air shimmers with oppressive heat, and the dull roar
 #   of the volcano's heart never ceases.
-巨大な黒曜石の塊で築かれた火山のうだるように暑い部屋は、かつては何か奇妙な神の神殿として、あるいは強大なファイアジャイアントの住処として使われていたのかもしれない。空気は息苦しいほどの熱で揺らめき、火山の心臓の鈍い轟きは止むことがない。
+巨大な黒曜石の塊で築かれた火山のうだるように暑い部屋は、かつては何か奇妙な神の神殿として、あるいは強大な炎の巨人の住処として使われていたのかもしれない。空気は息苦しいほどの熱で揺らめき、火山の心臓の鈍い轟きは止むことがない。
 %%%%
 Dungeon
 

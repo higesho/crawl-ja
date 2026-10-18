@@ -165,7 +165,7 @@
 %%%%
 [cloud]bats
 
-蝙蝠の群れ
+コウモリの群れ
 %%%%
 [cloud]blastmotes
 

@@ -84,7 +84,7 @@
 %%%%
 [mon suffix]block of ice
 
-氷塊
+氷の塊
 %%%%
 [mon suffix]shaped shifter
 
@@ -586,7 +586,7 @@ Speed: %d%%
 %%%%
 [info]corroded
 
-腐蝕
+腐食
 %%%%
 [info]flayed
 
@@ -985,7 +985,7 @@ Speed: %d%%
 %%%%
 [attr]surrounded by acidic fog
 
-酸の霧に包まれている
+酸性の霧に包まれている
 %%%%
 [attr]surrounded by foul miasma
 
@@ -1145,7 +1145,7 @@ Speed: %d%%
 %%%%
 [attr]corroded
 
-腐蝕している
+腐食している
 %%%%
 [attr]covered in terrible wounds
 

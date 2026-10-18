@@ -1,0 +1,13 @@
+%%%%
+Unknown species: %s
+
+不明な種族: %s
+%%%%
+Unknown job: %s
+
+不明な職業: %s
+%%%%
+unknown item: %s
+
+不明なアイテム: %s
+%%%%

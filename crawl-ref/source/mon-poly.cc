@@ -25,6 +25,7 @@
 #include "item-prop.h"
 #include "item-status-flag-type.h"
 #include "items.h"
+#include "japanese.h"
 #include "level-state-type.h"
 #include "libutil.h"
 #include "message.h"
@@ -117,8 +118,8 @@ void monster_drop_things(monster* mons,
                 && you.see_cell(mons->pos())
                 && x_chance_in_y(env.item[item].quantity, 100))
             {
-                string msg = make_stringf("%s dazzles you with the glint of coin.",
-                    god_name(GOD_GOZAG).c_str());
+                string msg = make_stringf(jtransc("%s dazzles you with the glint of coin."),
+                    god_name_jc(GOD_GOZAG));
                 mprf(MSGCH_GOD, GOD_GOZAG, "%s", msg.c_str());
                 blind_player(10 + random2(8), ETC_GOLD);
             }

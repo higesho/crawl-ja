@@ -218,7 +218,7 @@ you must harvest more living souls to recharge this spell.
 %%%%
 there are no nearby walls to construct a spike launcher in.
 
-近くにスパイク発射機を組み込める壁がない。
+近くに棘射出機を組み込める壁がない。
 %%%%
 there is no room to construct a sawblade.
 

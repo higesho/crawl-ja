@@ -675,7 +675,7 @@ manticore
 #   A hideous cross-breed, bearing the features of a human and a lion, with great
 #   bat-like wings. Its tail bristles with spikes that can be loosed at potential
 #   prey.
-ひどく醜い交雑生物だ。人間とライオンの顔と、とても大きな蝙蝠の羽とを持つ。
+ひどく醜い交雑生物だ。人間とライオンの顔と、とても大きなコウモリの羽とを持つ。
 その尻尾には、獲物となるものに向けて発射することも可能な棘が逆立っている。
 %%%%
 minotaur
@@ -1262,7 +1262,7 @@ black bear
 
 # en:
 #   A small black bear. Like all ursines, it will become enraged if badly hurt.
-小型の黒い熊だ。他の熊類と同様に、ひどく傷つくと凶暴化する。
+小型の黒熊だ。他の熊類と同様に、ひどく傷つくと凶暴化する。
 %%%%
 black draconian
 
@@ -1356,7 +1356,7 @@ bone dragon
 #   dragons by powerful necromantic magic. The collective despair of such
 #   desecrated dragons gives this horror its own undying breath weapon, in
 #   billowing clouds of excruciating misery.
-強力な死霊術によって多くのドラゴンの砕けた骨を継ぎ合わせて作られた、強大なアンデッドの忌まわしき存在だ。冒涜されたドラゴンたちの集合的な絶望が、この怪物に不滅のブレス、すなわち渦巻く耐え難い苦悶の雲を与えている。
+強力な死霊術によって多くのドラゴンの砕けた骨を継ぎ合わせて作られた、強大なアンデッドの忌まわしき存在だ。冒涜されたドラゴンたちの集合的な絶望が、この怪物に不滅のブレス、すなわち渦巻く耐えがたい苦悶の雲を与えている。
 %%%%
 boulder
 
@@ -3496,7 +3496,7 @@ merfolk avatar
 # en:
 #   A beguiling merfolk whose voice mesmerises listeners. It carries no weapon,
 #   but its song summons drowned souls to defend the sea against intruders.
-その声で聞く者を魅了する、魅惑的な水棲の民だ。武器は持たないが、その歌は溺死者の魂を呼び寄せ、侵入者から海を守らせる。
+その声で聞く者を魅了する、魅惑的な水棲の民だ。武器は持たないが、その歌は水死者の魂を呼び寄せ、侵入者から海を守らせる。
 %%%%
 merfolk impaler
 
@@ -4129,7 +4129,7 @@ raiju
 # en:
 #   A profoundly unnatural hound, crackling with electricity. It travels in packs,
 #   and covers great distances by bursting into living lightning.
-電気をパチパチと放つ、ひどく不自然な猟犬だ。群れで移動し、生きた稲妻となってほとばしることで長い距離を一気に移動する。
+電気をパチパチと放つ、ひどく不自然な猟犬だ。群れで移動し、生ける稲妻となってほとばしることで長い距離を一気に移動する。
 %%%%
 red devil
 
@@ -4926,7 +4926,7 @@ ugly thing
 # en:
 #   An ugly thing. According to legend, it is the otherworldly spawn of a wizard's
 #   breeding experiment. Yuck.
-醜いものだ。伝説によれば、ある魔術師の交配実験から生まれた異界の落とし子だという。おえっ。
+醜きものだ。伝説によれば、ある魔術師の交配実験から生まれた異界の落とし子だという。おえっ。
 %%%%
 undertaker
 
@@ -5016,7 +5016,7 @@ very ugly thing
 # en:
 #   A very ugly thing. According to legend, it is the otherworldly spawn of a
 #   wizard's breeding experiment. Double yuck!
-ひどく醜いものだ。伝説によれば、ある魔術師の交配実験から生まれた異界の落とし子だという。おえっ、おえっ！
+甚だしく醜きものだ。伝説によれば、ある魔術師の交配実験から生まれた異界の落とし子だという。おえっ、おえっ！
 %%%%
 vine stalker
 

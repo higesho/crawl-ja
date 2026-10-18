@@ -1524,7 +1524,7 @@ insult vampire adj2
 #
 #   w:20
 #   @insult undead adj2@
-蝙蝠みたいにばたつく
+コウモリみたいにばたつく
 
 血を吸う
 
@@ -1851,7 +1851,7 @@ insult general noun
 
 新兵
 
-バタバタ蝙蝠
+バタバタコウモリ
 
 糸紡ぎ女
 

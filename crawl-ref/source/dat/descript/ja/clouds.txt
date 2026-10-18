@@ -198,7 +198,7 @@ acidic fog cloud
 # en:
 #   A cloud of flesh-searing acid, which will deal damage and apply corrosion to
 #   those within it. Resistance to corrosion will provide immunity to its effects.
-肉を焼く酸の雲。中にいる者にダメージを与え、腐蝕させる。腐蝕への耐性があれば、その効果を受けない。
+肉を焼く酸の雲。中にいる者にダメージを与え、腐食させる。腐食への耐性があれば、その効果を受けない。
 %%%%
 thunder cloud
 
@@ -291,12 +291,12 @@ bats cloud
 #   They will relentlessly assail anything but the undead who stands in their midst,
 #   gradually lulling them to sleep with their soporific bites - and continuing to
 #   feed off their helpless body, once they fall.
-小さな吸血蝙蝠の群れ。数えきれないほど密集している。群れの真ん中に立つアンデッド以外のあらゆるものに容赦なく襲いかかり、眠りを誘う噛みつきで次第に眠らせてしまう。そして相手が倒れると、その無力な体から血を吸い続けるのだ。
+小さな吸血コウモリの群れ。数えきれないほど密集している。群れの真ん中に立つアンデッド以外のあらゆるものに容赦なく襲いかかり、眠りを誘う噛みつきで次第に眠らせてしまう。そして相手が倒れると、その無力な体から血を吸い続けるのだ。
 %%%%
 rust cloud
 
 # en:
 #   A cloud of oxidising vapour that continuously corrodes and weakens the attacks
 #   of whatever stands inside it (but does only minimal damage).
-中に立つものを絶えず腐蝕させ、その攻撃を弱める酸化性の蒸気の雲(ただし与えるダメージはごくわずか)。
+中に立つものを絶えず腐食させ、その攻撃を弱める酸化性の蒸気の雲(ただし与えるダメージはごくわずか)。
 %%%%

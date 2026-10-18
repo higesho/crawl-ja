@@ -6,9 +6,12 @@
 
 ## 次にやること(2026-10-19 時点)
 
-目標の 1〜3 はほぼ完了(DB は 5,800 項目中 5,618 項目が訳あり。残りは著作権の関係で英語の
-ままにする引用文)。残りは第 8 陣の案(仕上げ)と、目標の 4(実機での総点検)。
-実機の確認は IME の窓が前面に居座るとキー入力できないので、ユーザーに閉じてもらってから行う。
+目標の 1〜3 は完了(C++ の張り直し、des・dlua、説明文・DB の全訳。DB は 5,800 項目中 5,618 項目が
+訳あり、残り 182 件は著作権の関係で英語のままにする引用文)。第 8 陣で仕上げ(art-func.h、
+wiz-*.cc、包み忘れの洗い出し、訳語の揺れの統一)も済んだ。
+残りは目標の 4: 実機での総点検(キャラ作成、各画面、戦闘、魔法、神、店、ダンプ、死亡画面)で
+表示の崩れ・不自然な訳・英語の残りを見つけて直す。IME(TextInputHost)の窓が前面に居座ると
+キー入力できないので、ユーザーに閉じてもらってから行う。
 
 ## 目標
 
@@ -69,6 +72,11 @@
   commands・tutorial、hints と小さな DB 12 ファイル、quotes(283 件。182 件は著作権の
   関係で英語のまま)。取りまとめで duration-data.h・delay.h を包み、喋る武器の台詞・
   噴水の文・名前の生成の置換を日本語化、訳語を統一。`-builddb` まで確認。
+
+- 第 8 陣(仕上げ): art-func.h(103 件)、wiz-*.cc(371 件+wiz-dump)、C++ の細部
+  (ギズモ名の区切り、movement の veto_reason、eel の部位名)、包み忘れの洗い出し
+  (13 箇所、ja-tools/find_unwrapped.py)、訳語の揺れの監査と統一(約 200 箇所、
+  ja-work/term-audit.md)。ビルドは警告 0、`-builddb` まで確認。
 
 ## C++ 張り直しの分担計画
 
@@ -131,16 +139,7 @@ passives / status / mutations / spells / ability
 
 第 7 陣(完了): DB の残り全部(上の「完了」を参照)
 
-第 8 陣の案(仕上げ):
-1. art-func.h(固定アーティファクトの効果。107 件)
-2. FOLLOWUPS の C++ の細部(notes.cc の定型文、game-options/macro のエラー文、acquire.cc の
-   ギズモ名の区切り、describe.cc の trap_name、invent の選択メニューの題名、player-reacts の
-   eel、mon-info の『』、movement.cc の veto_reason など)
-3. wiz-*.cc(ウィザードモード。優先度低)
-4. 全体の洗い出し: 包み忘れの英文(scratchpad の unwrapped.py のような grep)、辞書の未使用キー、
-   訳語の揺れ(同じ英語に違う訳)の一覧と統一
-5. 実機での総点検(キャラ作成、各画面、戦闘、神、店、ダンプ、死亡画面)。ユーザーに IME の窓を
-   閉じてもらってから。
+第 8 陣(完了): 上の「完了」を参照。
 
 実機で見えた未訳(第 2 陣の確認時): タイトル・キャラ作成画面(startup.cc, newgame.cc,
 ng-*.cc)、ステータス欄(output.cc)、"You encounter ..."(player-notices.cc)、

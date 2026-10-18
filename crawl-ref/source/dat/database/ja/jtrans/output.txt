@@ -172,7 +172,7 @@ Deaths:
 %%%%
 [overview]rCorr
 
-腐蝕阻止
+腐食阻止
 %%%%
 [overview]SInv
 

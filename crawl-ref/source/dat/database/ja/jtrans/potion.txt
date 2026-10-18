@@ -141,7 +141,7 @@ Really drink that potion of mutation?
 %%%%
 [glow]!!!QUAD DAMAGE!!!
 
-四倍ダメージボーナス
+！！！四重ダメージ！！！
 %%%%
 You cannot heal while in death's door.
 

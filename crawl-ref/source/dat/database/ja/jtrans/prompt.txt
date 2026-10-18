@@ -42,3 +42,12 @@ Uppercase
 
 [Y]はい か [N]いいえ
 %%%%
+# prompt.h の ui::message / ui::error の既定値(prompt.cc で訳す)
+<cyan>Hit any key to continue...</cyan>
+
+<cyan>どれかキーを押すと続行します……</cyan>
+%%%%
+Error!
+
+エラー！
+%%%%

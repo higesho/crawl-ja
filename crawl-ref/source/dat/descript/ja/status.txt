@@ -331,7 +331,7 @@ Corr status
 # en:
 #   You are corroded, reducing your damage in physical combat and your armour by an
 #   amount depending on the severity of the corrosion.
-あなたは腐蝕を受けており、腐蝕の程度に応じて、物理戦闘で与えるダメージとACが低下している。
+あなたは腐食を受けており、腐食の程度に応じて、物理戦闘で与えるダメージとACが低下している。
 %%%%
 Flay status
 
@@ -819,7 +819,7 @@ Bat status
 #   Any equipped weapons, armour and rings are melded, and you are unable to cast
 #   spells. The effectiveness of your melee attacks while in this form is based on
 #   experience level instead of on Unarmed Combat skill.
-あなたは素早く動く蝙蝠に変身しており、回避は高まるが、近接攻撃は大幅に弱くなる。
+あなたは素早く動くコウモリに変身しており、回避は高まるが、近接攻撃は大幅に弱くなる。
 
 装備している武器、防具、指輪はすべて体と融合し、呪文を唱えることもできない。この形態での近接攻撃の効果は、徒手格闘のスキルではなく経験レベルによって決まる。
 %%%%
@@ -1199,7 +1199,7 @@ Bog status
 # en:
 #   You are creating a toxic bog in the nearby area, and are immune to its effects.
 #   You cannot sustain this transformation in areas out of your line of sight.
-あなたは周囲に有毒な沼を作り出しており、その効果を受けない。視界の外の場所では、この変化を維持できない。
+あなたは周囲に毒沼を作り出しており、その効果を受けない。視界の外の場所では、この変化を維持できない。
 %%%%
 Enlightened status
 
@@ -1583,7 +1583,7 @@ Swarm status
 # en:
 #   You have transformed into a swarm of vampire bats, allowing you to move quickly
 #   and evasively. You may trail clouds of bats in your wake.
-あなたは吸血蝙蝠の群れに変身しており、素早く、身をかわしながら移動できる。通った跡に蝙蝠の雲を残すことがある。
+あなたは吸血コウモリの群れに変身しており、素早く、身をかわしながら移動できる。通った跡にコウモリの雲を残すことがある。
 %%%%
 Memories status
 

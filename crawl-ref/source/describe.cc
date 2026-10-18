@@ -953,6 +953,9 @@ static const char *trap_names[] =
 #endif
 };
 
+// 日本語版: trap_name() / full_trap_name() は Lua(c_trap_is_safe, l-view.cc)や
+// 英語の地形名(directn.cc の _base_feature_desc)に使うので英語のまま。
+// 表示側で tagged_jtrans("[feature]", full_trap_name(...)) で訳す。
 string trap_name(trap_type trap)
 {
     COMPILE_CHECK(ARRAYSZ(trap_names) == NUM_TRAPS);

@@ -185,3 +185,11 @@ something (%d)
 
 何か (%d)
 %%%%
+butterfly on damage
+
+被弾時に蝶が噴き出た
+%%%%
+smoke on damage
+
+被弾時に色とりどりの煙が出た
+%%%%

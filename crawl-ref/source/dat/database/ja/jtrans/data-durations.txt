@@ -1060,19 +1060,19 @@ Your protection from physical attacks is fading.
 # DUR_CORROSION
 [dur]Corr
 
-腐蝕
+腐食
 %%%%
 [dur]corroded
 
-装備の腐蝕
+装備の腐食
 %%%%
 You are corroded.
 
-あなたは腐蝕を受けている。
+あなたは腐食を受けている。
 %%%%
 You are no longer corroded.
 
-あなたはもう腐蝕していない。
+あなたはもう腐食していない。
 %%%%
 # DUR_HORROR
 [dur]Horr
@@ -1686,7 +1686,7 @@ You feel more stable.
 %%%%
 You are making an unholy racket with your haunted armour.
 
-あなたは呪われた鎧でけたたましい騒音を立てている。
+あなたは取り憑かれた鎧でけたたましい騒音を立てている。
 %%%%
 # DUR_ENKINDLED
 [dur]Enkindled
@@ -1832,7 +1832,7 @@ You feel the effects of Trog's Hand fading.
 %%%%
 You are spewing a noxious bog.
 
-あなたは有毒な沼を吐き出している。
+あなたは毒沼を吐き出している。
 %%%%
 Your noxious spew wanes.
 

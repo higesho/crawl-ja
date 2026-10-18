@@ -77,7 +77,7 @@ You can't produce a sound!
 %%%%
 QUAD DAMAGE!
 
-ダメージが4倍になった！
+四重ダメージ！
 %%%%
 You conserve a charge of your wand.
 

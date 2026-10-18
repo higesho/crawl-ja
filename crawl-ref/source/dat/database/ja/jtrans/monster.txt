@@ -158,11 +158,11 @@ is devoured by a tear in reality.
 # %s: 腐蝕させたもの([corrode]...) / モンスター名
 %s corrodes %s!
 
-%sは%sを腐蝕させた！
+%sは%sを腐食させた！
 %%%%
 %s seems to be corroded for longer.
 
-%sの腐蝕はさらに長引きそうだ。
+%sの腐食はさらに長引きそうだ。
 %%%%
 # 2 つ目の %s は攻撃の強さを表す句読点(「。」「！」など)
 %s is splashed with acid%s
@@ -290,7 +290,7 @@ Flame seeps out of %s.
 # 腐蝕させたもの(%corrode の対象)。%s: 名前の所有格
 %s corrosive artefact
 
-%s腐蝕のアーティファクト
+%s腐食のアーティファクト
 %%%%
 As its mount dies, %s plunges down into lava and is incinerated!
 
@@ -594,11 +594,11 @@ You now have %d gold.
 %%%%
 [body part]front hoof
 
-前足の蹄
+前の蹄
 %%%%
 [body part]front hooves
 
-前足の蹄
+前の蹄
 %%%%
 [body part]front paw
 
@@ -618,11 +618,11 @@ You now have %d gold.
 %%%%
 [body part]front trotter
 
-前足の蹄
+前の蹄
 %%%%
 [body part]front trotters
 
-前足の蹄
+前の蹄
 %%%%
 [body part]front claw
 

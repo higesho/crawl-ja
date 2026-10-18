@@ -669,7 +669,7 @@ You can breathe blasts of antimagic.
 %%%%
 You can breathe blasts of explosive embers.
 
-あなたは爆発する燃えさしを吐くことができる。
+あなたは爆発する残り火を吐くことができる。
 %%%%
 You can breathe blasts of noxious fumes.
 
@@ -721,7 +721,7 @@ almost no armour
 %%%%
 breathe sticky flame splash
 
-粘着炎の吐きかけ
+焼夷の炎の吐きかけ
 %%%%
 caustic breath
 
@@ -737,7 +737,7 @@ dig shafts and tunnels
 %%%%
 galvanic breath
 
-電撃のブレス
+電流のブレス
 %%%%
 glacial breath
 
@@ -999,4 +999,21 @@ Your teeth grow more tusk-like, and your tympanum bulges.
 [spec name]Yellow Orconian
 
 黄色オーコニアン
+%%%%
+# 第8陣で追加: オーク化の文(species-data.h)
+A small pair of tusks begins to pierce through your wrappings.
+
+小さな一対の牙が、あなたの包帯を突き破って伸び始めた。
+%%%%
+A pair of ivory tusks grows out from your maw, and flowers begin to bloom upon you.
+
+あなたの口から一対の象牙色の牙が生え、体に花が咲き始めた。
+%%%%
+A small pair of spectral tusks begins to grow in your mouth.
+
+あなたの口に小さな一対の霊体の牙が生え始めた。
+%%%%
+A small pair of tusks begins to sprout from your jawbone.
+
+あなたの顎の骨から小さな一対の牙が生え始めた。
 %%%%

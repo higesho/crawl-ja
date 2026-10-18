@@ -72,9 +72,11 @@ namespace ui
     int message(string msg, string title, string prompt, bool format_msg)
     {
         // XX could this just always accept a format string msg?
+        // 既定の "<cyan>Hit any key to continue...</cyan>" を訳す
+        // (呼び出し側で訳した文は辞書にないのでそのまま)
         message_scroller ms(
             format_msg ? msg : replace_all(msg, "<", "<<"),
-            title, prompt);
+            title, jtrans(prompt));
         ms.show();
         return ms.get_lastch();
     }
@@ -95,8 +97,9 @@ namespace ui
         {
             if (title.size())
             {
+                // 既定の "Error!" を訳す
                 title = string("<lightred>")
-                        + replace_all(title, "<", "<<")
+                        + replace_all(jtrans(title), "<", "<<")
                         + "</lightred>";
             }
             return message(err, title);

@@ -1089,3 +1089,12 @@ scarf of invisibility
 
 透明化のスカーフ
 %%%%
+# 第8陣で追加: 謳う剣が名前を変えたとき
+Sulking Sword
+
+憂う剣
+%%%%
+Screaming Sword
+
+叫ぶ剣
+%%%%

@@ -1968,7 +1968,8 @@ static string _generate_gizmo_name()
                 noun = modifier + noun;
         }
 
-        name = adj + " " + noun;
+        // 語彙(ja/gizmo.txt)はカタカナ語なので「・」でつなぐ
+        name = adj + "・" + noun;
     }
 
     return name;
@@ -2046,7 +2047,7 @@ void coglin_announce_gizmo_name()
     string name = _generate_gizmo_name();
     names.push_back(name);
 
-    // ギズモ名は英語の合成名(artefact.cc / gizmo.txt の項)。冠詞は付けない
+    // ギズモ名は ja/gizmo.txt のカタカナ語の合成名。冠詞は付けない
     mprf(jtransc("Your brain swirls with designs for %s. You just need some more time..."),
          name.c_str());
 }

@@ -47,3 +47,7 @@ quivers momentarily.
 
 %sは一瞬消え、%sに変化した！
 %%%%
+%s dazzles you with the glint of coin.
+
+%sは硬貨のきらめきであなたの目をくらませた。
+%%%%

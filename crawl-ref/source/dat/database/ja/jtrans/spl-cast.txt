@@ -403,7 +403,7 @@ You stop channelling waves of flame.
 %%%%
 You stop channelling your searing ray.
 
-あなたは灼熱の光線の維持をやめた。
+あなたは焼灼の光線の維持をやめた。
 %%%%
 The insufficient charge dissipates harmlessly.
 
@@ -411,7 +411,7 @@ The insufficient charge dissipates harmlessly.
 %%%%
 You stop assembling your clockwork bee.
 
-あなたは機械仕掛けの蜂の組み立てをやめた。
+あなたは時計仕掛けの蜂の組み立てをやめた。
 %%%%
 Casting this now could dangerously contaminate you. Continue?
 

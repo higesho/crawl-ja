@@ -454,7 +454,7 @@ It has a %s body.
 %%%%
 [demon wings]with small, bat-like wings
 
-蝙蝠のような小さな翼を持つ。
+コウモリのような小さな翼を持つ。
 %%%%
 [demon wings]with bony wings
 
@@ -1778,7 +1778,7 @@ How on earth did you manage to pick this up?
 %%%%
 [miscast]summons a nameless horror
 
-名状しがたい恐怖を召喚する
+名状しがたき恐怖を召喚する
 %%%%
 [miscast]anchors you in place
 
@@ -3090,7 +3090,7 @@ MP
 %%%%
 [form table]Bat Swarm Recharge
 
-蝙蝠の群れの再充填
+コウモリの群れの再充填
 %%%%
 [form table]Daze Power
 
@@ -3114,7 +3114,7 @@ MP
 %%%%
 [form table]Frigid Wall Dmg
 
-凍てつく壁のダメージ
+極寒の壁ダメージ
 %%%%
 [form table]Quill Dmg
 

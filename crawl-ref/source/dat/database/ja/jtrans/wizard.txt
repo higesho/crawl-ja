@@ -1,0 +1,465 @@
+%%%%
+You can only abyss_teleport() inside the Abyss.
+
+このコマンドはアビス内部でしか使えません。
+%%%%
+Running Jiyva off-level sacrifice.
+
+別の階層にあるアイテムをジーヴァに捧げます。
+%%%%
+Cost level: %d  Total experience: %d  Next cost level: %d Skill cost: %d
+
+コストレベル: %d 累計経験値: %d 次のコストレベルまで: %d スキルコスト: %d
+%%%%
+Failure to give mutation.
+
+突然変異の付与に失敗しました。
+%%%%
+Not a <magenta>Wizard</magenta> Command.
+
+<magenta>ウィザードモード</magenta>用のコマンドではありません。
+%%%%
+WARNING: ABOUT TO ENTER WIZARD MODE!
+
+警告: ウィザードモードに入ろうとしています！
+%%%%
+If you continue, your game will not be scored!
+
+続行した場合、スコア一覧には載りません！
+%%%%
+Do you really want to enter wizard mode?
+
+本当にウィザードモードに移行しますか？
+%%%%
+Entered wizard mode.
+
+ウィザードモードに移行した。
+%%%%
+Can't repeat entering wizard mode.
+
+ウィザードモード移行コマンドを繰り返すことはできません。
+%%%%
+Enter Wizard Command (? - help):
+
+ウィザードコマンドを入力してください (? - ヘルプ):
+%%%%
+You cannot repeat that wizard command.
+
+そのウィザードコマンドを繰り返すことはできません。
+%%%%
+WARNING: ABOUT TO ENTER EXPLORE MODE!
+
+警告: 探索モードに入ろうとしています！
+%%%%
+Do you really want to enter explore mode?
+
+本当に探索モードに移行しますか？
+%%%%
+Entered explore mode.
+
+探索モードに移行した。
+%%%%
+Can't repeat entering explore mode
+
+探索モード移行コマンドを繰り返すことはできません。
+%%%%
+(not prefixed with <w>&</w>!)
+
+('<w>&</w>'を頭に付けない！)
+%%%%
+Failure to toggle bane.
+
+災厄の付け外しに失敗しました。
+%%%%
+Re-activating wizard mode.
+
+ウィザードモードを再開します。
+%%%%
+Can't repeat re-activating wizard mode.
+
+ウィザードモード再開コマンドを繰り返すことはできません。
+%%%%
+In explore mode, death is optional.
+
+探索モードでは、死ぬかどうかを選べます。
+%%%%
+Once you set a character to explore mode, you can't switch back.
+
+一度探索モードにしたキャラクターは、元に戻せません。
+%%%%
+Player stats
+
+プレイヤーの能力
+%%%%
+set all skills to level
+
+全スキルを指定レベルにする
+%%%%
+change enchantments/durations
+
+持続効果を変更する
+%%%%
+exercise a skill
+
+スキルを鍛える
+%%%%
+change experience level and skills
+
+経験レベルとスキルを変更する
+%%%%
+change experience level
+
+経験レベルを変更する
+%%%%
+list props
+
+プロパティを列挙する
+%%%%
+change character's species
+
+種族を変更する
+%%%%
+set skill to level
+
+スキルを指定レベルにする
+%%%%
+gain an experience level
+
+経験レベルを1上げる
+%%%%
+set gold to a specified value
+
+所持金を指定した値にする
+%%%%
+get a mutation
+
+突然変異を得る
+%%%%
+toggle a bane
+
+災厄を付ける/外す
+%%%%
+gain religion
+
+神を信仰する
+%%%%
+set piety to a value
+
+信仰値を変更する
+%%%%
+set Str Int Dex
+
+腕力/知力/器用さを変更する
+%%%%
+load character from a dump file
+
+ダンプからキャラクターを読み込む
+%%%%
+list all divine followers
+
+神の従者をすべて列挙する
+%%%%
+show info about skill points
+
+スキルポイントの情報を表示する
+%%%%
+set Zot clock to a value
+
+ゾットの時計を変更する
+%%%%
+get current tension value
+
+現在の緊張度を表示する
+%%%%
+Dungeon features
+
+ダンジョンの地形
+%%%%
+make a trap
+
+罠を設置する
+%%%%
+create up/down staircase
+
+上り/下り階段を作る
+%%%%
+turn cell into feature
+
+このマスを別の地形に変える
+%%%%
+make a shop
+
+店を作る
+%%%%
+Builder debugging
+
+階層生成のデバッグ
+%%%%
+place a vault by name
+
+名前を指定してvaultを置く
+%%%%
+create a level based on a vault
+
+vaultをもとに階層を作る
+%%%%
+regenerate current level
+
+現在の階層を作り直す
+%%%%
+generate new Abyss area
+
+新しいアビスの領域を作る
+%%%%
+mark all vaults as unused
+
+全vaultを未使用扱いにする
+%%%%
+find branches and overflow temples in the dungeon
+
+支部と寺院外の祭壇の場所を表示する
+%%%%
+list known levels and counters
+
+既知の階層とカウンターを表示する
+%%%%
+dump level builder information
+
+階層生成の情報を出力する
+%%%%
+show builder logs for level
+
+階層生成のログを表示する
+%%%%
+Other level related commands
+
+その他の階層関連コマンド
+%%%%
+magic mapping
+
+魔法の地図の効果
+%%%%
+controlled blink
+
+行き先を指定して瞬間移動する
+%%%%
+controlled teleport
+
+行き先を指定してテレポートする
+%%%%
+go to a specific level
+
+指定した階層へ移動する
+%%%%
+shift up/down one level
+
+1階上/下へ移動する
+%%%%
+trigger explore traps
+
+罠の効果を発動させる
+%%%%
+banish yourself to the Abyss
+
+自らをアビスに追放する
+%%%%
+change Abyss speed
+
+アビスの変容速度を変更する
+%%%%
+change Shoals' tide speed
+
+浅瀬の潮の速度を変更する
+%%%%
+Other player related effects
+
+その他のプレイヤーへの効果
+%%%%
+card effect
+
+カードを引く効果
+%%%%
+save/load ghost (bones file)
+
+ゴーストを保存/読み込み
+%%%%
+heal yourself (super-Heal)
+
+回復する(Hは完全回復)
+%%%%
+make Xom do something now
+
+ゾムに何かをさせる
+%%%%
+cast spell by number/name
+
+番号/名前で呪文を唱える
+%%%%
+memorise spell
+
+呪文を覚える
+%%%%
+god wrath
+
+神の怒りを落とす
+%%%%
+god mollification
+
+神の怒りをなだめる
+%%%%
+polymorph into a form
+
+変身する
+%%%%
+toggle xray vision
+
+壁透視の切り替え
+%%%%
+(un)freeze time
+
+時間を停止/再開する
+%%%%
+Monster related commands
+
+モンスター関連コマンド
+%%%%
+create specified monster
+
+指定したモンスターを作る
+%%%%
+detect all monsters
+
+全モンスターを感知する
+%%%%
+dismiss all monsters
+
+全モンスターを消す
+%%%%
+list monsters
+
+モンスターを列挙する
+%%%%
+Item related commands
+
+アイテム関連コマンド
+%%%%
+acquirement
+
+獲得の効果
+%%%%
+identify/unidentify inventory
+
+所持品を鑑定/未鑑定にする
+%%%%
+id/unid item types+level items
+
+全種類と階層の品を鑑定/未鑑定
+%%%%
+create an object
+
+アイテムを作る
+%%%%
+tweak object properties
+
+アイテムの設定値を変更する
+%%%%
+recharge all XP evokers
+
+経験値で充填する道具を全て充填
+%%%%
+show gold value of an item
+
+アイテムの価格を表示する
+%%%%
+get a god gift
+
+神の授かり物を得る
+%%%%
+create all unrand artefacts
+
+全ての固定アーティファクトを作る
+%%%%
+create all unrands / fallbacks
+
+全ての固定アーティファクト/代替品を作る
+%%%%
+make randart from item
+
+アイテムをランダムアーティファクトにする
+%%%%
+list items
+
+アイテムを列挙する
+%%%%
+Jiyva off-level sacrifice
+
+別の階層の品をジーヴァに捧げる
+%%%%
+Unobtain runes and Orb of Zot
+
+ルーンとゾットのオーブを失う
+%%%%
+Debugging commands
+
+デバッグ用コマンド
+%%%%
+quick fight simulation
+
+簡易戦闘シミュレーション
+%%%%
+single scale fsim
+
+fsim(シングルスケール)
+%%%%
+double scale fsim
+
+fsim(ダブルスケール)
+%%%%
+item generation stats
+
+アイテム生成の統計
+%%%%
+measure exploration time
+
+探索ターンを計測する
+%%%%
+dungeon (D)Lua interpreter
+
+ダンジョン(D)Luaインタプリタ
+%%%%
+client (C)Lua interpreter
+
+クライアント(C)Luaインタプリタ
+%%%%
+Xom effect stats
+
+ゾムの効果の統計
+%%%%
+make some debug messages quiet
+
+一部のデバッグ出力を抑える
+%%%%
+temporarily suppress wizmode
+
+一時的にウィザードモードを解除
+%%%%
+force a crash
+
+強制的にクラッシュさせる
+%%%%
+list unassigned command keys
+
+未割り当てのコマンドキーを列挙
+%%%%
+Other wizard commands
+
+その他のウィザードコマンド
+%%%%
+list targeted commands
+
+照準コマンドを列挙する
+%%%%
+list map-mode commands
+
+マップモードのコマンドを列挙する
+%%%%

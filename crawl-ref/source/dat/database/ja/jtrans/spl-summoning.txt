@@ -413,31 +413,31 @@ With a deafening crack, the ground splits apart in the path of %s chthonic artil
 %%%%
 A fragment of %s is already outside their body!
 
-%sの魂の欠片はすでに体の外に出ている！
+%sの魂の鬼火はすでに体の外に出ている！
 %%%%
 A fragment of %s soul is dislodged from their body.
 
-%s魂の欠片が肉体から引き剥がされた。
+%s魂の鬼火が肉体から引き剥がされた。
 %%%%
 There's no room for the soul wisp to form!
 
-魂の欠片が形をとる場所がない！
+魂の鬼火が形をとる場所がない！
 %%%%
 You continue winding your clockwork bee...
 
-あなたは機械仕掛けの蜂のぜんまいを巻き続けた……
+あなたは時計仕掛けの蜂のぜんまいを巻き続けた……
 %%%%
 Without a target, your clockwork bee falls to the ground.
 
-標的がいないため、機械仕掛けの蜂は地面に落ちた。
+標的がいないため、時計仕掛けの蜂は地面に落ちた。
 %%%%
 Without a target and with nowhere to land, your clockwork bee falls apart in a shower of cogs and coils.
 
-標的も降りる場所もなく、機械仕掛けの蜂は歯車とばねを撒き散らしてばらばらになった。
+標的も降りる場所もなく、時計仕掛けの蜂は歯車とばねを撒き散らしてばらばらになった。
 %%%%
 With a metallic buzz, %s clockwork bee launches itself at %s.
 
-金属的な羽音を立てて、%s機械仕掛けの蜂が%sに向かって飛び出した。
+金属的な羽音を立てて、%s時計仕掛けの蜂が%sに向かって飛び出した。
 %%%%
 Your bee fails to deploy!
 
@@ -465,11 +465,11 @@ Your existing bee falls apart.
 %%%%
 Your clockwork bee winds down and falls to the ground.
 
-あなたの機械仕掛けの蜂はぜんまいが切れ、地面に落ちた。
+あなたの時計仕掛けの蜂はぜんまいが切れ、地面に落ちた。
 %%%%
 The clockwork bee winds down and falls to the ground.
 
-機械仕掛けの蜂はぜんまいが切れ、地面に落ちた。
+時計仕掛けの蜂はぜんまいが切れ、地面に落ちた。
 %%%%
 If you tried to rewind gears in your present state, you'd only break them.
 
@@ -485,11 +485,11 @@ You lack sufficient magical power to recharge your bee.
 %%%%
 %s winds their clockwork bee back up and it locks its sights upon %s!
 
-%sが機械仕掛けの蜂のぜんまいを巻き直すと、蜂は%sに狙いを定めた！
+%sが時計仕掛けの蜂のぜんまいを巻き直すと、蜂は%sに狙いを定めた！
 %%%%
 %s clockwork bee locks its sights upon %s.
 
-%s機械仕掛けの蜂は%sに狙いを定めた。
+%s時計仕掛けの蜂は%sに狙いを定めた。
 %%%%
 You try to forge sawblades, but something it already there!
 
@@ -605,7 +605,7 @@ You construct a shell of ice in front of yourself.
 %%%%
 %s fragments into a salvo of icicles!
 
-%sは砕け散り、氷柱の一斉射撃となった！
+%sは砕け散り、氷柱の斉射となった！
 %%%%
 A rock-encrusted egg appears nearby and begins to stir.
 

@@ -269,11 +269,11 @@ being dragged
 %%%%
 A beckoning whirlwind drags %s forward!
 
-招き寄せる旋風が%sを前へと引きずった！
+引き寄せの旋風が%sを前へと引きずった！
 %%%%
 A beckoning whirlwind swirls around %s.
 
-招き寄せる旋風が%sの周りで渦巻いた。
+引き寄せの旋風が%sの周りで渦巻いた。
 %%%%
  wounds begin to rapidly close.
 

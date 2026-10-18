@@ -177,7 +177,7 @@ Gloorx Vloq title
 
 # en:
 #   Gloorx Vloq, Demon Lord of Darkness
-暗闇の魔王『グルオルクス・ヴロック』
+暗闇の魔王『グロオルクス・ヴロック』
 %%%%
 Grum title
 
@@ -225,7 +225,7 @@ Jeremiah title
 
 # en:
 #   Jeremiah, Barachi Dreamer
-バラキの夢想家『ジェレマイア』
+バラチの夢想家『ジェレマイア』
 %%%%
 Jorgrun title
 

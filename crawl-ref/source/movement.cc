@@ -400,7 +400,7 @@ void open_door_action(coord_def move)
         if (door_veto_message.empty())
             mpr(jtrans("The door is shut tight!"));
         else
-            mpr(door_veto_message);
+            mpr(jtrans(door_veto_message)); // des 側で包んでいれば訳はそのまま
         if (you.confused())
             you.turn_is_over = true;
 
@@ -428,7 +428,7 @@ void open_door_action(coord_def move)
         }
 
         if (!door_already_open.empty())
-            mpr(door_already_open);
+            mpr(jtrans(door_already_open));
         else
             mpr(jtrans("It's already open!"));
         break;

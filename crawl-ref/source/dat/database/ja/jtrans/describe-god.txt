@@ -446,7 +446,7 @@ You can %s.
 %%%%
 Jiyva will unlock the Slime Pits vaults.
 
-ジーヴァはスライムの穴の宝物庫を開く。
+ジーヴァはスライムの穴ぐらの宝物庫を開く。
 %%%%
 # ---- 画面下の切り替え表示 ----
 [god desc tab]Overview
@@ -562,7 +562,7 @@ Your apostles are sometimes healed when you deal damage.
 %%%%
 Jiyva protects you from corrosive effects.
 
-ジーヴァはあなたを腐蝕効果から守る。
+ジーヴァはあなたを腐食効果から守る。
 %%%%
 Jiyva will mutate your body as you gain piety.
 

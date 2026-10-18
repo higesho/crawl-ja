@@ -626,7 +626,7 @@ Quicksilver Bolt spell
 # en:
 #   Fires a bolt of dispelling energy at a targeted creature, possibly removing
 #   some of its enchantments.
-指定したモンスターに魔力消去のエネルギーの矢を放ち、そのモンスターにかかっている魔法の効果の一部を取り除くことがある。
+指定したモンスターに魔法解除の矢を放ち、そのモンスターにかかっている魔法の効果の一部を取り除くことがある。
 %%%%
 Sandblast spell
 
@@ -675,7 +675,7 @@ Shock spell
 
 # en:
 #   Throws a bouncing bolt of electricity. It bypasses half of defenders' armour.
-跳ね返る電気の矢を投げつける。防御側の鎧の半分を無視する。
+跳ね返る電光の矢を投げつける。防御側の鎧の半分を無視する。
 %%%%
 Sleep spell
 
@@ -854,7 +854,7 @@ Acid Ball spell
 
 # en:
 #   Hurls an explosive ball of corrosive acid.
-腐蝕性の酸の爆裂球を投げつける。
+腐食性の酸の爆裂球を投げつける。
 %%%%
 Agonising Touch spell
 
@@ -934,7 +934,7 @@ Awaken Flesh spell
 #   Channels a surge of chaotic energy through each pile of flesh in the caster's
 #   sight, animating them into empowered large abominations and dealing chaos damage
 #   to any foes unfortunate enough to be standing next to them.
-術者の視界内にある肉塊の山それぞれに混沌のエネルギーを奔流のごとく注ぎ込み、強化された大型の忌まわしきものとして動き出させる。その際、不運にも肉塊の隣に立っていた敵には混沌のダメージを与える。
+術者の視界内にある肉の山それぞれに混沌のエネルギーを奔流のごとく注ぎ込み、強化された大型の忌まわしきものとして動き出させる。その際、不運にも肉塊の隣に立っていた敵には混沌のダメージを与える。
 %%%%
 Banishment spell
 
@@ -1242,7 +1242,7 @@ Corrosive Bolt spell
 
 # en:
 #   Fires a penetrating bolt of highly-corrosive acid.
-貫通する強い腐蝕性の酸の矢を放つ。
+貫通する強い腐食性の酸の矢を放つ。
 %%%%
 Corrupt spell
 
@@ -1459,7 +1459,7 @@ Electrical Bolt spell
 
 # en:
 #   Throws a bolt of electricity at the target, with high accuracy.
-対象に向けて高い命中率の電気の矢を投げつける。
+対象に向けて高い命中率の電光の矢を投げつける。
 %%%%
 Enfeeble spell
 
@@ -1481,7 +1481,7 @@ Entropic Weave spell
 
 # en:
 #   Corrodes the target, with no direct line of fire required.
-対象を腐蝕させる。直接の射線を必要としない。
+対象を腐食させる。直接の射線を必要としない。
 %%%%
 Eringya's Noxious Bog spell
 
@@ -1492,7 +1492,7 @@ Eringya's Noxious Bog spell
 #   features, nor on areas that lack solid floor, like deep water or lava. The
 #   transformation is temporary and cannot be sustained out of the caster's sight.
 #   Spellpower will increase how long the bog lingers.
-術者から汚泥を奔流のように噴き出させ、近くの一帯を有毒な沼に変える。汚泥はすべてのモンスターにダメージを与えて毒に冒す。毒への耐性を持つ者も例外ではない。複数の固い地形に隣接する場所や、深い水や溶岩のように固い床のない場所には沼はできない。この変化は一時的なもので、術者の視界の外では維持できない。呪文の威力が高いほど沼が長く残る。
+術者から汚泥を奔流のように噴き出させ、近くの一帯を毒沼に変える。汚泥はすべてのモンスターにダメージを与えて毒に冒す。毒への耐性を持つ者も例外ではない。複数の固い地形に隣接する場所や、深い水や溶岩のように固い床のない場所には沼はできない。この変化は一時的なもので、術者の視界の外では維持できない。呪文の威力が高いほど沼が長く残る。
 %%%%
 Eringya's Surprising Crocodile spell
 
@@ -1600,7 +1600,7 @@ Forge Lightning Spire spell
 #   Constructs an immobile lightning spire at a nearby location. This spire
 #   irregularly discharges bolts of electricity at the caster's foes, prioritizing
 #   whichever of them is most distant from it.
-近くの場所に動かない稲妻の渦巻を組み立てる。この渦巻は術者の敵に向けて不規則に電気の矢を放ち、敵のうち自分から最も遠くにいる者を優先して狙う。
+近くの場所に動かない稲妻の渦巻を組み立てる。この渦巻は術者の敵に向けて不規則に電光の矢を放ち、敵のうち自分から最も遠くにいる者を優先して狙う。
 %%%%
 Forge Monarch Bomb spell
 
@@ -1613,9 +1613,9 @@ Forge Monarch Bomb spell
 #   Recasting this spell while anything it has created is still active will
 #   detonate the monarch bomb and all bomblets, dealing a combination of fire and
 #   physical damage to everything adjacent to them besides the caster themselves.
-空を飛ぶ焼夷弾の工場を組み立てる。中には小型爆弾がぎっしり詰め込まれており、近接戦闘で繰り出すことも遠くへ撃ち出すこともできる。親玉爆弾の小型爆弾は自らは攻撃しないが、爆発の合図を受けるまで術者の敵を追い続ける。
+空を飛ぶ焼夷弾の工場を組み立てる。中には小型爆弾がぎっしり詰め込まれており、近接戦闘で繰り出すことも遠くへ撃ち出すこともできる。君主爆弾の小型爆弾は自らは攻撃しないが、爆発の合図を受けるまで術者の敵を追い続ける。
 
-この呪文で生み出したものがまだ活動している間に再び唱えると、親玉爆弾とすべての小型爆弾が爆発し、隣接するものすべて(術者自身を除く)に炎と物理のダメージを与える。
+この呪文で生み出したものがまだ活動している間に再び唱えると、君主爆弾とすべての小型爆弾が爆発し、隣接するものすべて(術者自身を除く)に炎と物理のダメージを与える。
 %%%%
 Forge Phalanx Beetle spell
 
@@ -1916,7 +1916,7 @@ Hurl Torchlight spell
 #   Hurls a gout of umbral torchlight which deals irresistible damage to living,
 #   demonic, and holy beings. The torchlight will also briefly empower any friendly
 #   undead caught in its blast and is harmless to those who worship Yredelemnul.
-陰鬱な松明の光の塊を投げつけ、生き物、悪魔、神聖な存在に抵抗できないダメージを与える。また、松明の光は爆発に巻き込まれた味方のアンデッドを短い間強化し、イレデレンヌルを崇拝する者には無害である。
+陰影の松明の光の塊を投げつけ、生き物、悪魔、神聖な存在に抵抗できないダメージを与える。また、松明の光は爆発に巻き込まれた味方のアンデッドを短い間強化し、イレデレンヌルを崇拝する者には無害である。
 %%%%
 Iceblast spell
 
@@ -2063,7 +2063,7 @@ Launch Sporangium spell
 #   nutrients - such as yourself - and engulf them in a massive acidic explosion.
 #   Nascent plasmodia, capable of firing acid of their own, may take root on any
 #   walls this explosion touches - though none within 2 tiles of any other.
-腐蝕性の胞子嚢を撃ち出す。胞子嚢は興味をそそる栄養源(たとえばあなた自身)を追いかけ、酸の大爆発でそれを包み込む。この爆発が触れた壁には、自らも酸を撃ち出せる生まれたての変形体が根を下ろすことがある。ただし、他の変形体から2マス以内には根を下ろさない。
+焼酸の胞子嚢を撃ち出す。胞子嚢は興味をそそる栄養源(たとえばあなた自身)を追いかけ、酸の大爆発でそれを包み込む。この爆発が触れた壁には、自らも酸を撃ち出せる生まれたての変形体が根を下ろすことがある。ただし、他の変形体から2マス以内には根を下ろさない。
 %%%%
 Legendary Destruction spell
 
@@ -2701,13 +2701,13 @@ Shadow Shard spell
 
 # en:
 #   Fires a shard of hardened shadow at a single enemy.
-固めた影の破片を一体の敵に向けて放つ。
+硬化した影の破片を一体の敵に向けて放つ。
 %%%%
 Shadow Shot spell
 
 # en:
 #   Fires a small bullet of hardened shadow at a single enemy.
-固めた影の小さな弾丸を一体の敵に向けて放つ。
+硬化した影の小さな弾丸を一体の敵に向けて放つ。
 %%%%
 Shadow Tempest spell
 
@@ -2729,7 +2729,7 @@ Shadow Turret spell
 # en:
 #   Forms a stationary turret of solidified shadow that repeatedly fires upon the
 #   caster's enemies.
-固めた影から動かない砲塔を作り出す。砲塔は術者の敵に繰り返し撃ちかける。
+硬化した影から動かない砲塔を作り出す。砲塔は術者の敵に繰り返し撃ちかける。
 %%%%
 Sheza's Dance spell
 
@@ -2858,7 +2858,7 @@ Spectral Cloud spell
 #   Creates a cloud of spectral mist, dealing minor damage to all creatures other
 #   than the undead. Dangerous but short-lived spectral undead creatures will
 #   coalesce from the mist over time.
-幽体の霧の雲を生み出し、アンデッド以外のすべてのモンスターに軽いダメージを与える。時間が経つにつれ、霧から危険だが短命な幽体のアンデッドが凝集して現れる。
+霊体の霧の雲を生み出し、アンデッド以外のすべてのモンスターに軽いダメージを与える。時間が経つにつれ、霧から危険だが短命な幽体のアンデッドが凝集して現れる。
 %%%%
 Spellspark Servitor spell
 
@@ -3259,7 +3259,7 @@ Venom Bolt spell
 
 # en:
 #   Fires a penetrating bolt of poison.
-貫通する毒の矢を放つ。
+貫通する猛毒の矢を放つ。
 %%%%
 Vex spell
 

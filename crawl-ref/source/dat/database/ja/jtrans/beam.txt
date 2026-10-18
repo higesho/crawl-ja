@@ -173,7 +173,7 @@ You are encased in ice.
 %%%%
 is frozen into a solid block of ice!
 
-は氷塊に閉じ込められ凍りついた！
+は氷の塊に閉じ込められ凍りついた！
 %%%%
 is flash-frozen.
 
@@ -305,7 +305,7 @@ The mangrove smoulders and burns.
 %%%%
 The demonic tree burns, releasing chaotic energy.
 
-魔性の木が燃え、混沌のエネルギーを放った。
+悪魔の樹が燃え、混沌のエネルギーを放った。
 %%%%
 You smell burning wood.
 
@@ -726,7 +726,7 @@ an explosion
 %%%%
 The orb of electricity explodes!
 
-電撃の球体が爆発した！
+電撃の爆裂球が爆発した！
 %%%%
 a clap of thunder
 
@@ -838,7 +838,7 @@ a quiet whistle
 %%%%
 The ball of acid explodes!
 
-酸の球が爆発した！
+酸の爆裂球が爆発した！
 %%%%
 a violent squelch
 
@@ -1147,7 +1147,7 @@ Really fire towards %s%s?%s
 %%%%
 [beam name]calcifying dust
 
-石化の粉塵
+石化する雲
 %%%%
 [beam name]magic web
 
@@ -1255,7 +1255,7 @@ Really fire towards %s%s?%s
 %%%%
 [beam name]umbral torchlight
 
-冥い松明の光
+陰影の松明
 %%%%
 [beam name]crystallising
 
@@ -1307,7 +1307,7 @@ Really fire towards %s%s?%s
 %%%%
 [beam name]cloud of bats
 
-蝙蝠の群れ
+コウモリの群れ
 %%%%
 [beam name]omen
 

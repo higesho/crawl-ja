@@ -1,0 +1,419 @@
+%%%%
+The sword of Cerebov burns away your fire resistance.
+
+セレボブの剣はあなたの火への耐性を焼きはらった。
+%%%%
+The sword of Cerebov burns away %s fire resistance.
+
+セレボブの剣は%s火への耐性を焼きはらった。
+%%%%
+A shiver runs down your spine.
+
+戦慄が脊髄まで走った。
+%%%%
+You smell chlorine.
+
+あなたは塩素の臭いを嗅いだ。
+%%%%
+The staff glows a sickly green.
+
+杖は毒々しい緑色に輝いた。
+%%%%
+The smell of chlorine vanishes.
+
+塩素の臭いが消えた。
+%%%%
+The staff's sickly green glow vanishes.
+
+杖は毒々しい緑色に輝くのをやめた。
+%%%%
+The sword says, "Hi! I'm the Singing Sword!"
+
+その剣は『やあ！ わたしは謳う剣だよ！』と喋った。
+%%%%
+The Singing Sword hums in delight!
+
+『謳う剣』は歓喜の唸りを上げた！
+%%%%
+The Singing Sword sighs.
+
+『謳う剣』は溜息を漏らした。
+%%%%
+You feel rather sluggish.
+
+あなたは動きが鈍くなったように感じた。
+%%%%
+You feel less violent.
+
+あなたの凶暴さはいくぶん収まった。
+%%%%
+You sense an extremely unholy aura.
+
+あなたは非常に邪悪なオーラを感じた。
+%%%%
+You hear a strange loud sound.
+
+あなたは奇妙な轟音を耳にした。
+%%%%
+Visions of slaying %s flood into your mind.
+
+%sを抹殺する光景があなたの脳裏に浮かんだ。
+%%%%
+Your confusion fades away as the thirst for blood takes over your mind.
+
+血に飢えた感情があなたの精神を支配するとともに混乱が薄れていった。
+%%%%
+Your thirst for blood fades away.
+
+あなたの血に飢えた感情が薄れていった。
+%%%%
+You feel an overwhelming desire to slay dragons!
+
+あなたは突然ドラゴンを殺したい欲望にとらわれた！
+%%%%
+<white>The lance glows brightly as it skewers %s. You feel that it has reached its full power.</white>
+
+<white>ランスは%sを串刺しにしてまばゆく輝いた。どうやらランスの威力は最大になったようだ。</white>
+%%%%
+<green>The lance glows as it skewers %s.</green>
+
+<green>ランスは%sを串刺しにして輝いた。</green>
+%%%%
+Time to lay down the shillelagh law.
+
+戦いのルールを定めるときが来た。
+%%%%
+You feel oddly protected from the elements.
+
+あなたは不思議と元素の力から守られたような気分がした。
+%%%%
+You no longer feel protected from the elements.
+
+あなたはもう元素の力から守られてはいない。
+%%%%
+The light fades from your surroundings.
+
+あなたの周囲から明かりが去っていった。
+%%%%
+The light returns to your surroundings.
+
+あなたの周囲に明かりが戻ってきた。
+%%%%
+The arc blade crackles to life.
+
+電弧の刃は放電を始めた。
+%%%%
+The arc blade stops crackling.
+
+電弧の刃は放電をやめた。
+%%%%
+The arc blade crackles.
+
+電弧の刃は放電している。
+%%%%
+You are filled with an inner flame.
+
+あなたは内なる炎に満たされた。
+%%%%
+Your inner flame fades away.
+
+あなたの内なる炎は消え去った。
+%%%%
+%s is filled with an inner flame.
+
+%sは内なる炎に満たされた。
+%%%%
+The dagger glows with an icy blue light!
+
+短刀は氷を思わせる蒼い光に輝いた！
+%%%%
+The dagger stops glowing.
+
+短刀は輝きを止めた。
+%%%%
+%s is flash-frozen.
+
+%sは一瞬のうちに凍結された。
+%%%%
+The scimitar bursts into red hot flame!
+
+シミターは赤熱の炎を吹き上げた！
+%%%%
+The scimitar stops flaming.
+
+シミターは燃えさかるのを止めた。
+%%%%
+You feel a darkness envelop your magic.
+
+あなたは闇の力が魔力を覆い隠すのを感じた。
+%%%%
+The darkness slowly releases its grasp on your magic.
+
+闇の力が支配していたあなたの魔力がゆっくりと解放された。
+%%%%
+You feel like a king!
+
+あなたは王様になった気分だ！
+%%%%
+You feel regal.
+
+あなたは王様にふさわしくなったような気がした。
+%%%%
+The captain's cutlass flashes! You lacerate %s!!
+
+船長のカトラスが閃いた！ あなたは%sを切り裂いた！！
+%%%%
+%s %s falls to the floor!
+
+%s%sは床に落ちた！
+%%%%
+En garde!
+
+アンガルド(構え)！
+%%%%
+You sense a greater flux of ambient magical fields.
+
+あなたは周囲の魔力が流れ込んでくるのを感じた。
+%%%%
+The vines latch onto your body!
+
+蔓があなたの体を覆った！
+%%%%
+The vines fall away from your body!
+
+蔓はあなたの体からはがれ落ちた！
+%%%%
+Your corpse armour falls away.
+
+あなたの纏う屍肉の鎧は剥がれ落ちた。
+%%%%
+A chunk of your corpse armour falls away.
+
+あなたを覆う屍肉の鎧がいくらか剥がれ落ちた。
+%%%%
+The bodies of the dead rush to embrace you!
+
+死体があなたに集まり、鎧を形成した！
+%%%%
+Your shell of carrion and bone grows thicker.
+
+あなたの纏う屍肉と骨の鎧は厚みを増した。
+%%%%
+The air around you leaps into flame!
+
+あなたの周りの大気が炎へと変わった！
+%%%%
+Your ring of flames gutters out.
+
+炎の輪は弱まって消えた。
+%%%%
+You feel a strange sense of familiarity.
+
+あなたは不思議な懐かしさを覚えた。
+%%%%
+You feel oddly sad, like being parted from an old friend.
+
+あなたは旧友と別れるときのような、妙な寂しさを覚えた。
+%%%%
+# 喉裂き: %s(攻撃者)は%s(相手)を……
+{attacker} puts {defender} out of its misery!
+
+%sは%sを苦しみから解放した！
+%%%%
+{attacker} beheads {defender} thoroughly!
+
+%sは%sの首をことごとくはねた！
+%%%%
+{attacker} beheads {defender}!
+
+%sは%sの首をはねた！
+%%%%
+You struggle to resist the curse of the Prune...
+
+あなたはプルーンの呪いに必死に抗った……
+%%%%
+The curse of the Prune has no hold on the dead.
+
+プルーンの呪いも死者には効かない。
+%%%%
+The curse of the Prune lifts from you.
+
+プルーンの呪いがあなたから解けた。
+%%%%
+You feel lightning quick.
+
+あなたは稲妻のように素早くなった気がした。
+%%%%
+A terrible, searing pain shoots up your arm!
+
+恐ろしい灼けるような痛みがあなたの腕を駆けのぼった！
+%%%%
+You feel the exhaustion of battles past.
+
+あなたは過ぎ去った戦いの疲れがどっと押し寄せるのを感じた。
+%%%%
+The mace of Variability scintillates.
+
+変幻のメイスがきらめいた。
+%%%%
+A gate to Pandemonium opens briefly!
+
+パンデモニウムへの門が一瞬開いた！
+%%%%
+You feel an uncomfortable desire to slay dragons.
+
+あなたはドラゴンを殺したいという落ち着かない欲望にとらわれた。
+%%%%
+%s is blasted by disruptive energy%s
+
+%sは破壊の力をその身に浴びた%s
+%%%%
+Mutagenic energy flows through %s!
+
+%sを通じて変異性のエネルギーが流れ込んだ！
+%%%%
+Your body deforms painfully.
+
+あなたの体は苦痛とともに歪んだ。
+%%%%
+Your limbs ache and wobble like jelly.
+
+あなたの手足は痛み、ゼリーのようにぐらついた。
+%%%%
+Your body is flooded with magical radiation.
+
+あなたの体は魔力の放射にさらされた。
+%%%%
+Your attunement to healing potions increases.
+
+あなたと治癒の水薬との同調が強まった。
+%%%%
+Your attunement to healing potions decreases.
+
+あなたと治癒の水薬との同調は弱まった。
+%%%%
+The engine hums to life!
+
+機関が唸りを上げて動き出した！
+%%%%
+The engine shudders to a halt.
+
+機関は身震いして停止した。
+%%%%
+Your spectral weapon disappears.
+
+幽体の武器は消え去った。
+%%%%
+The crystal ball is unable to connect with your magical essence.
+
+水晶球はあなたの魔力とつながることができない。
+%%%%
+You feel ready to stride towards your foes.
+
+あなたは敵に向かってひとまたぎで踏み込めそうな気がした。
+%%%%
+You no longer feel ready to stride towards your foes.
+
+あなたはもう敵に向かってひとまたぎで踏み込めそうにない。
+%%%%
+Storm clouds gather above %s.
+
+%sの頭上に嵐雲が集まった。
+%%%%
+The gloves are unable to connect with your magical essence.
+
+手袋はあなたの魔力とつながることができない。
+%%%%
+You feel an incredible surge of magic.
+
+あなたは信じがたいほどの魔力の高まりを感じた。
+%%%%
+The surge of magic dissipates.
+
+魔力の高まりは消え去った。
+%%%%
+You feel a whimsical energy watch over you.
+
+あなたは気まぐれな力に見守られているのを感じた。
+%%%%
+The world feels relentlessly logical and grey.
+
+世界は容赦なく理詰めで灰色に感じられた。
+%%%%
+%s slices through the folds of space itself!
+
+%sは空間の襞そのものを切り裂いた！
+%%%%
+%s glows brightly.
+
+%sはまばゆく輝いた。
+%%%%
+%s glows.
+
+%sは輝いた。
+%%%%
+The sceptre summons one of its terrible servants.
+
+王笏は恐るべきしもべのひとつを召喚した。
+%%%%
+Fedhas smiles on your commitment to the cycle of life.
+
+フェダスは生命の循環へのあなたの献身に微笑んだ。
+%%%%
+Your thoughts feel a little more lonely.
+
+あなたの思考は少し寂しくなった。
+%%%%
+You feel supremely confident.
+
+あなたはこの上ない自信に満ちあふれた。
+%%%%
+ liquefies into a cloud of blood!
+
+は溶けて血の霧と化した！
+%%%%
+# 以下は実行時に組み立てるキー(check には出ない)
+# Woe(災厄の斧): verb_j(動詞 + 副詞)
+[verb]cleave in twain
+
+真っ二つに切り裂いた
+%%%%
+[verb]pulverise into a thin bloody mist
+
+粉々にして血の霧に変えた
+%%%%
+[verb]hew violently
+
+荒っぽく叩き切った
+%%%%
+[verb]fatally mangle
+
+徹底的に切り刻んだ
+%%%%
+[verb]dissect like a pig carcass
+
+豚のように切り裂いた
+%%%%
+[verb]butcher messily
+
+乱暴に解体した
+%%%%
+[verb]slaughter joyfully
+
+歓喜しながら虐殺した
+%%%%
+# 元素の杖(burn / freeze / crush は他の辞書にある)
+[verb]electrocute
+
+感電させた
+%%%%
+# Force Lance のノックバック("%s is knocked back by the %s.")
+[zap]blow
+
+一撃
+%%%%
+# 嵐の女王の盾の放電(fineff.cc の "%s %s discharges%s, shocking %s%s")
+[shock source]shield
+
+盾
+%%%%

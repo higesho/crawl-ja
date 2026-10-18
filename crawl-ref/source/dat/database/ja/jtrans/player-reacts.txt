@@ -181,3 +181,7 @@ You carefully extract the barbed spikes from your body.
 
 あなたは体に刺さった逆棘を慎重に引き抜いた。
 %%%%
+[body part]form
+
+体
+%%%%

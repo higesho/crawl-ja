@@ -150,7 +150,7 @@ balrug
 %%%%
 barachi
 
-バラキ
+バラチ
 %%%%
 basilisk
 
@@ -582,7 +582,7 @@ Dissolution
 %%%%
 djinni
 
-ジン
+ジンニー
 %%%%
 Donald
 
@@ -2758,7 +2758,7 @@ titanic slime creature
 %%%%
 [mutant facet]bat
 
-蝙蝠のような
+コウモリのような
 %%%%
 [mutant facet]fire
 
@@ -2872,11 +2872,11 @@ titanic slime creature
 %%%%
 [name adj]air elementalist
 
-大気の精霊使いの
+風の精霊使いの
 %%%%
 [name adj]fire elementalist
 
-炎の精霊使いの
+火の精霊使いの
 %%%%
 [name adj]water elementalist
 
@@ -2884,7 +2884,7 @@ titanic slime creature
 %%%%
 [name adj]earth elementalist
 
-大地の精霊使いの
+地の精霊使いの
 %%%%
 [name adj]archer
 

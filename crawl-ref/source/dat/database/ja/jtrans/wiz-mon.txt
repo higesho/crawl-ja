@@ -1,0 +1,249 @@
+%%%%
+Such a monster couldn't be found.
+
+そのようなモンスターは見つかりませんでした。
+%%%%
+Found no space to place monster.
+
+モンスターを配置する場所がありません。
+%%%%
+Unable to place monster.
+
+モンスターの配置に失敗しました。
+%%%%
+%d monsters, %d total exp value (%d non-uniq)
+
+%d体のモンスター(合計経験値 %d、非ユニーク合計経験値 %d)
+%%%%
+%d monsters, %d total exp value (%d non-uniq, %d adjusted)
+
+%d体のモンスター(合計経験値 %d、非ユニーク合計経験値 %d, 補正済み合計経験値 %d)
+%%%%
+Which monster?
+
+どのモンスターを調べますか？
+%%%%
+What monsters to dismiss (ENTER for all, "harmful", "mobile", "los" or a regex, "keepitem" to leave items)?
+
+どのモンスターを消しますか？ (ENTERで全て、"harmful" "mobile" "los" または正規表現、"keepitem"でアイテムを残す)
+%%%%
+Make the monster (S)hout or (T)alk?
+
+モンスターに叫ばせ(S)ますか、喋らせ(T)ますか？
+%%%%
+The monster is invisible and likely won't speak.
+
+そのモンスターは目に見えず、喋ろうとしないようだ。
+%%%%
+You are silenced but the monster isn't; you will probably hear/see nothing.
+
+あなたは静寂に包まれているがそのモンスターはそうではない。 あなたは何も見えず、何も聞こえないようだ。
+%%%%
+The monster is silenced and likely won't say anything.
+
+そのモンスターは静寂に包まれており、何も喋れないようだ。
+%%%%
+Both you and the monster are silenced, so you likely won't hear anything.
+
+あなたとそのモンスターは共に静寂に包まれており、何も聞くことができないようだ。
+%%%%
+== Done ==
+
+== 終了 ==
+%%%%
+%s won't bless this monster for you!
+
+%sはあなたのためにそのモンスターを祝福したりはしない！
+%%%%
+That type of monster can't use any items.
+
+その種別のモンスターはどのアイテムも扱うことができない。
+%%%%
+Can't give equipped items to a monster.
+
+装備中のアイテムをモンスターに与えることはできません。
+%%%%
+You can't give that type of item to a monster.
+
+その種別のアイテムをモンスターに与えることはできません。
+%%%%
+Error: monster failed to take item.
+
+エラー: モンスターはアイテムを受け取るのに失敗しました。
+%%%%
+Already doing a move command.
+
+既に移動コマンドを実行中です。
+%%%%
+You can't move yourself into the arena.
+
+アリーナの中に自分自身を移動させることはできません。
+%%%%
+Monster is already summoned.
+
+モンスターは既に召喚されています。
+%%%%
+No such spell.
+
+そのような呪文は存在しません。
+%%%%
+Monster is now summoned.
+
+このモンスターは召喚されたものとして扱われました。
+%%%%
+Invalid monster type.
+
+不正なモンスター種別です。
+%%%%
+Old type and new type are the same, not polymorphing.
+
+変化前と変化後が同一のため、変化を行いませんでした。
+%%%%
+Target species must be different from current species.
+
+変化後の種族と現在の種族は異なっている必要があります。
+%%%%
+Polymorph killed monster?
+
+変身でモンスターが死んだ？
+%%%%
+Trying harder
+
+再試行します。
+%%%%
+Polymorph failed.
+
+変化に失敗しました。
+%%%%
+Monster turned into something other than the desired type.
+
+モンスターはなにか目的のとは違う種別に変化した。
+%%%%
+Choose a destination!
+
+目的地を選択してください！
+%%%%
+Attempting to calculate a path from (%d, %d) to (%d, %d)...
+
+(%d, %d) から(%d, %d)への経路を計算しています……
+%%%%
+Here's the shortest path:
+
+最短経路は以下の通りです:
+%%%%
+-> path length: %u
+
+-> 経路長: %u
+%%%%
+And here are the needed waypoints:
+
+そして、以下の中継ポイントが必要となります:
+%%%%
+-> #waypoints: %u
+
+-> #中継ポイント: %u
+%%%%
+Can't make already dead target miscast.
+
+既に死んでしまったものに対し魔法失敗効果を発動させることはできません。
+%%%%
+Miscast which school or spell, by name?
+
+どの魔法種別、もしくは呪文名の失敗効果を指定しますか？
+%%%%
+No matching spell or spell school.
+
+該当する魔法や魔法種別がありません。
+%%%%
+Ambiguous: can be spell '%s' or school '%s'.
+
+曖昧な入力: ｢%s｣の魔法、もしくは｢%s｣領域。
+%%%%
+Spell '%s' has no disciplines.
+
+｢%s｣の魔法には魔法種別情報がありません。
+%%%%
+Miscasting spell %s.
+
+%sの呪文を失敗させます。
+%%%%
+Miscasting school %s.
+
+%s領域の魔法を失敗させます。
+%%%%
+Key pressed, interrupting miscast testing.
+
+キーが押されたため、魔法失敗のテストを中断します。
+%%%%
+Monsters:
+
+モンスター:
+%%%%
+How many times?
+
+何回ですか？
+%%%%
+Give which item to monster?
+
+モンスターに何のアイテムを与えますか？
+%%%%
+Move monster to where?
+
+モンスターをどこに移動させますか？
+%%%%
+What summon longevity (1 to 6)?
+
+召喚が維持される度合いをどう設定しますか？ (1～6)
+%%%%
+Cast which spell by name?
+
+どの呪文名を指定して実行しますか？
+%%%%
+Number of repetitions?
+
+何回繰り返しますか？
+%%%%
+[wiz count]%d %s
+
+%d体の%s
+%%%%
+Enter monster name (or MONS spec) (? for help):
+
+モンスターの名称(またはモンスター指定文)を入力してください(?でヘルプ):
+%%%%
+Detected %i monsters.
+
+%i体のモンスターを感知しました。
+%%%%
+Dismissed %i monsters.
+
+%i体のモンスターを消しました。
+%%%%
+Apply blessing of the (S)hining One?
+
+輝けるものの祝福(S)を与えますか？
+%%%%
+Cannot move out of bounds.
+
+範囲外には移動できません。
+%%%%
+Which summon type (ESC to exit)?
+
+どの種類の召喚にしますか？ (ESCで終了)
+%%%%
+Enter fail:
+
+失敗度を入力してください:
+%%%%
+Enter level, fail:
+
+レベルと失敗度を入力してください(レベル,失敗度):
+%%%%
+Can only enter spell level for schools, not spells.
+
+呪文レベルを指定できるのは系統だけで、呪文には指定できません。
+%%%%
+Spell level can be at most 9.
+
+呪文レベルは9までです。
+%%%%

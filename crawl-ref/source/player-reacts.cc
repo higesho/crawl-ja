@@ -1281,10 +1281,15 @@ static void _do_eel_flavour_msg()
 
     // XXX: Apologies for the ad hoc string replacement. We really need a
     //      centralised place to do this...
+    // 日本語版: 今の訳文(ja/wpnnoise.txt)は @head@ / @skin@ を使っていないが、
+    // 使ったときのために日本語の部位名にしておく
     msg = replace_all(msg, "@head@",
-                        you.has_mutation(MUT_FORMLESS) ? "form" : "head");
+                        tagged_jtrans("[body part]",
+                            you.has_mutation(MUT_FORMLESS) ? "form" : "head"));
 
-    msg = replace_all(msg, "@skin@", species::skin_name(you.species).c_str());
+    msg = replace_all(msg, "@skin@",
+                      tagged_jtrans("[body part]",
+                                    species::skin_name(you.species)));
 
     mprf(MSGCH_TALK, "%s", msg.c_str());
 }

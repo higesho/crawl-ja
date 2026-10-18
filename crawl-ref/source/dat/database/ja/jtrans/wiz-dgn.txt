@@ -1,0 +1,177 @@
+%%%%
+Can't go down from the bottom of a branch.
+
+分岐の最下階から下には行けません。
+%%%%
+Bug in determining level exit.
+
+階層の出口の判定にバグがあります。
+%%%%
+Create what kind of feature mimic?
+
+どの種類の地形のミミックを生成しますか？
+%%%%
+Create which feature?
+
+どの種類の地形を生成しますか？
+%%%%
+Set fprops "%s" at (%d,%d)
+
+地形属性"%s"を(%d,%d)に設定しました。
+%%%%
+No features matching '%s'
+
+'%s'という地形は見つかりませんでした。
+%%%%
+This isn't a valid feature mimic. Create it anyway?
+
+この地形ではミミックとして生成できません。それでも生成しますか？
+%%%%
+Branch %d (%s) is on %s
+
+分岐#%d(%s)への入り口は%sに生成されました。
+%%%%
+Branch %d (%s) was not generated this game
+
+分岐#%d(%s)は今回のゲーム中では生成されていません。
+%%%%
+Overflow temples:
+
+寺院外に生成された祭壇:
+%%%%
+%u on D:%u (%s)
+
+%u箇所/迷宮:%u階 (%s)
+%%%%
+Force level to be mappable?
+
+強制的にマップを表示しますか？
+%%%%
+Mapping level.
+
+全体マップを表示しました。
+%%%%
+Created %s.
+
+%sを作成しました。
+%%%%
+NOTE: Shaft traps aren't valid on this level.
+
+注意: 縦穴の罠がこの階にあると異常な結果を及ぼすことがあります。
+%%%%
+Insufficient floor-space for new Wal-Mart.
+
+このマスは店を開くのに適した立地ではありません。
+%%%%
+Done.
+
+完了。
+%%%%
+Can't find map named '%s'.
+
+'%s'という名称のマップは見つかりませんでした。
+%%%%
+Placing %s on top of you would put part of the map outside of the level, cancelling.
+
+'%s'マップをあなたのいる位置に置くと階層からはみ出してしまうため、中断します。
+%%%%
+%s decides where it goes, can't place where you are.
+
+'%s'マップはどこに配置されるか決められているため、あなたのいる位置に置くことはできません。
+%%%%
+Successfully placed %s.
+
+マップ'%s'の生成に成功しました。
+%%%%
+Explore took %d turns.
+
+探索には%dターンかかります。
+%%%%
+Level stack:
+
+階層スタック:
+%%%%
+Known levels:
+
+既知の階層:
+%%%%
+Regenerating level.
+
+階層を再構成しました。
+%%%%
+All vaults are now eligible for [re]use.
+
+全てのvaultが(再)使用可能になった。
+%%%%
+Set Abyss speed to what? (now %d, higher value = higher speed)
+
+アビスの変容速度を何に設定しますか？ (現在%d、値が大きいほど速くなる)
+%%%%
+Setting Abyss speed to %i.
+
+アビスの変容速度を%iに設定しました。
+%%%%
+Creating downstairs.
+
+下り階段を生成しました。
+%%%%
+Creating upstairs.
+
+上り階段を生成しました。
+%%%%
+No exact match for feature '%s', possible matches are:
+
+'%s'に完全一致する名称の地形はありませんでした。ありそうな候補は以下の通り:
+%%%%
+a random trap
+
+ランダムな種類の罠
+%%%%
+Only match is '%s', use that?
+
+見つかった候補は'%s'のみですが、これを選択しますか？
+%%%%
+No exact matches for '%s', possible matches are:
+
+'%s'に完全一致する名称のマップはありませんでした。ありそうな候補は以下の通り:
+%%%%
+Enter map name:
+
+マップ名を入力してください:
+%%%%
+Enter map name (prefix it with * for local placement):
+
+マップ名を入力してください(頭に*を付けることで今いる場所に生成できます):
+%%%%
+Building '<w>%s</w>'.\n[<w>.</w>] place feature and continue, [<w>ret</w>] place and exit, [<w>esc</w>] exit.
+
+'<w>%s</w>'を建設中。\n[<w>.</w>] 置いて続ける、[<w>ret</w>] 置いて終了、[<w>esc</w>] 終了
+%%%%
+You can only make a trap on a floor square.
+
+罠は床のマスにしか作れません。
+%%%%
+You can only make a %s on a floor square.
+
+%sは床のマスにしか作れません。
+%%%%
+Make which kind of trap?
+
+どの種類の罠を作りますか？
+%%%%
+Make which kind of shop?
+
+どの種類の店を作りますか？
+%%%%
+Warning: this is an encompass vault not designed for this location; placing it with &P may result in crashes and save corruption. Continue?
+
+警告: これはこの場所向けに作られていない、階層全体を覆うvaultです。&Pで配置するとクラッシュやセーブの破損を招くことがあります。続けますか？
+%%%%
+Ok; try placing with &L or go to the relevant location to safely place with &P.
+
+中止しました。&Lで配置するか、対応する場所へ移動してから&Pで安全に配置してください。
+%%%%
+Failed to place %s; last builder error: %s
+
+%sの配置に失敗しました。最後の生成エラー: %s
+%%%%

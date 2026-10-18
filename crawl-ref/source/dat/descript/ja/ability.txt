@@ -117,7 +117,7 @@ Summon Divine Warrior ability
 #   Summons a powerful warrior against evil, either an angel or a daeva. The
 #   duration of their assistance is increased by Invocations skill, and glory in
 #   battle may lead the Shining One to bless them with an even longer stay.
-悪を撃つ強力な戦士である天使やディーヴァを召喚する。
+悪を撃つ強力な戦士である天使やデーヴァを召喚する。
 彼らは『輝けるもの』によってこの世界により長く滞在するように祝福される。
 %%%%
 Recall Undead Harvest ability
@@ -373,7 +373,7 @@ Caustic Breath ability
 # en:
 #   Breathes a spray of concentrated acid which leaves corrosive clouds on any
 #   unoccupied tiles it passes over and corrodes whatever it hits.
-濃縮された酸を噴きつける。酸は通過した誰もいないマスに腐蝕性の雲を残し、当たったものを腐蝕させる。
+濃縮された酸を噴きつける。酸は通過した誰もいないマスに腐食性の雲を残し、当たったものを腐食させる。
 %%%%
 Noxious Breath ability
 
@@ -533,7 +533,7 @@ Breathe Rust ability
 #   Exhales a blast of oxidizing vapour that continuously corrodes and weakens the
 #   attacks of creatures which stand inside it. These clouds are long-lasting, but
 #   do only minimal damage.
-酸化させる蒸気の爆風を吐き出す。蒸気は、その中に立つモンスターを絶えず腐蝕させ、その攻撃を弱める。この雲は長く残るが、与えるダメージはごくわずかである。
+酸化させる蒸気の爆風を吐き出す。蒸気は、その中に立つモンスターを絶えず腐食させ、その攻撃を弱める。この雲は長く残るが、与えるダメージはごくわずかである。
 %%%%
 Golden Breath ability
 
@@ -988,7 +988,7 @@ Grow Oklob ability
 #
 #   Invocations skill increases the health and duration of the oklob as well as the
 #   frequency with which it sprays its acid.
-あなたが選んだ場所に短命のオクロブ草を生やす。この危険な植物は、あなたの敵に腐蝕性の硫酸を噴きつける。
+あなたが選んだ場所に短命のオクロブ草を生やす。この危険な植物は、あなたの敵に腐食性の硫酸を噴きつける。
 
 祈祷の技能が高いほど、オクロブ草の体力と持続時間、そして酸を噴きつける頻度が増す。
 %%%%

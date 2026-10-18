@@ -311,7 +311,7 @@ Your melee attacks drain, slow and weaken victims.
 %%%%
 siphon essence
 
-精気吸収
+精髄の吸収
 %%%%
 You can torment nearby foes to heal from their wounds.
 
@@ -344,15 +344,15 @@ You recover more slowly from Doom and Banes.
 # transformation::bat
 [form]Bat
 
-蝙蝠
+コウモリ
 %%%%
 bat-form
 
-蝙蝠の形態
+コウモリの形態
 %%%%
 a bat.
 
-蝙蝠の姿を
+コウモリの姿を
 %%%%
 Teeth
 
@@ -862,7 +862,7 @@ blinkbolt
 %%%%
 You can turn into living lightning.
 
-あなたは生きた稲妻に変化できる。
+あなたは生ける稲妻に変化できる。
 %%%%
 # transformation::quill
 [form]Quill
@@ -1043,11 +1043,11 @@ When you kill a living creature with a stab, you may create a vampiric thrall.
 %%%%
 bat form
 
-蝙蝠化
+コウモリ化
 %%%%
 You can occasionally transform into a swarm of bats.
 
-あなたは時々蝙蝠の群れに変身できる。
+あなたは時々コウモリの群れに変身できる。
 %%%%
 hypnotic gaze
 
@@ -1076,15 +1076,15 @@ You do not regenerate when monsters are visible.
 # transformation::bat_swarm
 [form]Bat Swarm
 
-蝙蝠群
+コウモリ群
 %%%%
 batswarm-form
 
-蝙蝠群の形態
+コウモリ群の形態
 %%%%
 a swarm of vampire bats.
 
-吸血蝙蝠の群れの姿を
+吸血コウモリの群れの姿を
 %%%%
 # transformation::rime_yak
 [form]Yak
@@ -1129,7 +1129,7 @@ Horns
 %%%%
 Frigid Wall Dmg
 
-凍壁ダメージ
+極寒の壁ダメージ
 %%%%
 frigid aura
 
@@ -1443,7 +1443,7 @@ Your body armour is fused into your shell, improving its AC and properties.
 %%%%
 rust breath
 
-錆の息
+錆のブレス
 %%%%
 You can exhale clouds of rust.
 
@@ -1583,7 +1583,7 @@ spore-form
 %%%%
 Burstshroom damage
 
-爆裂茸ダメージ
+破裂キノコダメージ
 %%%%
 weakening spores
 
@@ -1599,7 +1599,7 @@ sporulate
 %%%%
 Your melee attacks cause explosive burstshrooms to grow.
 
-あなたの近接攻撃は爆発する爆裂茸を生やす。
+あなたの近接攻撃は爆発する破裂キノコを生やす。
 %%%%
 # 第2陣で追加: 変身中の祈りの動作
 [verb]hover solemnly before

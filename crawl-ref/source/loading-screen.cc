@@ -3,6 +3,7 @@
 #ifdef USE_TILE_LOCAL
 
 #include "loading-screen.h"
+#include "database.h"
 #include "files.h"
 #include "options.h"
 #include "random.h"
@@ -85,8 +86,9 @@ void loading_screen_close()
     bool done = Options.tile_skip_title
         || crawl_state.test || crawl_state.script;
     popup->on_keydown_event([&](const KeyEvent&) { return done = true; });
+    // データベースの読み込み後なので訳せる
     if (!done)
-        loading_screen_update_msg(load_complete_msg);
+        loading_screen_update_msg(jtrans(load_complete_msg));
     while (!done && !crawl_state.seen_hups)
         ui::pump_events();
     ui::pop_layout();

@@ -312,7 +312,7 @@ A slime covered rock wall
 # en:
 #   A rock wall coated with acidic green slime; just standing near it is enough to
 #   cause temporary corrosion.
-酸性の緑色のスライムに覆われた岩の壁。そばに立っているだけで、一時的に腐蝕してしまう。
+酸性の緑色のスライムに覆われた岩の壁。そばに立っているだけで、一時的に腐食してしまう。
 %%%%
 A metal wall
 
@@ -1186,7 +1186,7 @@ A devourer's trap
 #   interdimensional predators. When you or a hostile monster steps on it, it has a
 #   high chance it will expel digestive acid onto you, corroding you. Your allies
 #   will avoid stepping on it.
-神の残酷さによって、計り知れない異次元の捕食者たちの胃袋とつながった魔法の罠。あなたか敵対的なモンスターがこれを踏むと、高い確率であなたに消化液を浴びせ、あなたを腐蝕させる。あなたの仲間はこれを踏まないようにする。
+神の残酷さによって、計り知れない異次元の捕食者たちの胃袋とつながった魔法の罠。あなたか敵対的なモンスターがこれを踏むと、高い確率であなたに消化液を浴びせ、あなたを腐食させる。あなたの仲間はこれを踏まないようにする。
 %%%%
 A dispersal trap
 
@@ -1541,7 +1541,7 @@ Zonguldrok's gravestone
 
 # en:
 #   A gravestone of the house of Zonguldrok, still dripping with brackish ichor.
-ゾングルドロク家の墓石。今なお濁った体液を滴らせている。
+ゾングルドルック家の墓石。今なお濁った体液を滴らせている。
 %%%%
 A gravestone
 
@@ -2024,7 +2024,7 @@ disjunction haloed
 #   This area is bathed in translocational energy, causing creatures to blink away
 #   from the originator of the energy with an increasing chance the closer they are
 #   to the caster.
-この一帯は転移のエネルギーに満たされている。生き物はこのエネルギーの発生源から瞬間移動で遠ざけられ、術者に近いほどその確率は高くなる。
+この一帯は転位のエネルギーに満たされている。生き物はこのエネルギーの発生源から瞬間移動で遠ざけられ、術者に近いほどその確率は高くなる。
 %%%%
 ice covered
 

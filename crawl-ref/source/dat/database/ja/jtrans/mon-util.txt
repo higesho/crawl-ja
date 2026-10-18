@@ -236,3 +236,11 @@ protects your slime from harm.
 
 笑った
 %%%%
+ protects your plant from harm.
+
+はあなたの植物が傷つくのを防いだ。
+%%%%
+ protects a plant from harm.
+
+は植物が傷つくのを防いだ。
+%%%%

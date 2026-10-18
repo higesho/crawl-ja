@@ -14,6 +14,7 @@
 #include "cio.h" // cursor_control
 #include "clua.h"
 #include "command.h" // show_keyhelp_menu
+#include "database.h"
 #include "dbg-util.h"
 #include "dgn-shoals.h" // wizard_mod_tide
 #include "files.h" // save_game
@@ -63,7 +64,7 @@ static void _do_wizard_command(int wiz_command)
         if (player_in_branch(BRANCH_ABYSS))
             wizard_set_abyss();
         else
-            mpr("You can only abyss_teleport() inside the Abyss.");
+            mpr(jtrans("You can only abyss_teleport() inside the Abyss."));
         break;
 
     case 'b': wizard_blink(); break;
@@ -106,7 +107,7 @@ static void _do_wizard_command(int wiz_command)
 
     // case 'j': break;
     case 'J':
-        mpr("Running Jiyva off-level sacrifice.");
+        mpr(jtrans("Running Jiyva off-level sacrifice."));
         jiyva_eat_offlevel_items();
         break;
     // case CONTROL('J'): break;
@@ -195,7 +196,7 @@ static void _do_wizard_command(int wiz_command)
     case '_': wizard_join_religion(); break;
 
     case '=':
-        mprf("Cost level: %d  Total experience: %d  Next cost level: %d Skill cost: %d",
+        mprf(jtransc("Cost level: %d  Total experience: %d  Next cost level: %d Skill cost: %d"),
               you.skill_cost_level, you.total_experience,
               skill_cost_needed(you.skill_cost_level + 1),
               calc_skill_cost(you.skill_cost_level));
@@ -207,12 +208,12 @@ static void _do_wizard_command(int wiz_command)
 
     case ']':
         if (!wizard_add_mutation())
-            mpr("Failure to give mutation.");
+            mpr(jtrans("Failure to give mutation."));
         break;
 
     case '}':
         if (!wizard_toggle_bane())
-            mpr("Failure to toggle bane.");
+            mpr(jtrans("Failure to toggle bane."));
         break;
 
     case '\\': debug_make_shop(); break;
@@ -250,7 +251,7 @@ static void _do_wizard_command(int wiz_command)
         break;
     default:
         formatted_mpr(formatted_string::parse_string(
-                          "Not a <magenta>Wizard</magenta> Command."));
+                          jtrans("Not a <magenta>Wizard</magenta> Command.")));
         break;
     }
     // Force the placement of any delayed monster gifts.
@@ -282,7 +283,7 @@ void handle_wizard_command()
 
     if (you.suppress_wizard)
     {
-        mprf(MSGCH_WARN, "Re-activating wizard mode.");
+        mprf(MSGCH_WARN, jtransc("Re-activating wizard mode."));
         you.wizard = true;
         you.suppress_wizard = false;
 #ifdef USE_TILE_LOCAL
@@ -292,27 +293,27 @@ void handle_wizard_command()
         update_screen();
         if (crawl_state.cmd_repeat_start)
         {
-            crawl_state.cancel_cmd_repeat("Can't repeat re-activating wizard "
-                                          "mode.");
+            crawl_state.cancel_cmd_repeat(jtrans("Can't repeat re-activating wizard "
+                                                 "mode."));
         }
         return;
     }
     else if (!you.wizard)
     {
-        mprf(MSGCH_WARN, "WARNING: ABOUT TO ENTER WIZARD MODE!");
+        mprf(MSGCH_WARN, jtransc("WARNING: ABOUT TO ENTER WIZARD MODE!"));
 
 #ifndef SCORE_WIZARD_CHARACTERS
         if (!you.explore)
-            mprf(MSGCH_WARN, "If you continue, your game will not be scored!");
+            mprf(MSGCH_WARN, jtransc("If you continue, your game will not be scored!"));
 #endif
 
-        if (!confirm_prompt("wiz", "Do you really want to enter wizard mode?"))
+        if (!confirm_prompt("wiz", "%s", jtransc("Do you really want to enter wizard mode?")))
         {
             canned_msg(MSG_OK);
             return;
         }
 
-        take_note(Note(NOTE_MESSAGE, 0, 0, "Entered wizard mode."));
+        take_note(Note(NOTE_MESSAGE, 0, 0, jtrans("Entered wizard mode.")));
 
 #ifndef SCORE_WIZARD_CHARACTERS
         if (!you.explore)
@@ -329,14 +330,14 @@ void handle_wizard_command()
 
         if (crawl_state.cmd_repeat_start)
         {
-            crawl_state.cancel_cmd_repeat("Can't repeat entering wizard "
-                                          "mode.");
+            crawl_state.cancel_cmd_repeat(jtrans("Can't repeat entering wizard "
+                                                 "mode."));
             return;
         }
     }
 
     {
-        mprf(MSGCH_PROMPT, "Enter Wizard Command (? - help): ");
+        mprf(MSGCH_PROMPT, jtrans_notrimc("Enter Wizard Command (? - help): "));
         cursor_control con(true);
         wiz_command = getchm();
         if (wiz_command == '*')
@@ -366,8 +367,8 @@ void handle_wizard_command()
             break;
 
         default:
-            crawl_state.cant_cmd_repeat("You cannot repeat that "
-                                        "wizard command.");
+            crawl_state.cant_cmd_repeat(jtrans("You cannot repeat that "
+                                               "wizard command."));
             return;
         }
     }
@@ -386,21 +387,22 @@ void enter_explore_mode()
         handle_wizard_command();
     else if (!you.explore)
     {
-        mprf(MSGCH_WARN, "WARNING: ABOUT TO ENTER EXPLORE MODE!");
-        mpr("In explore mode, death is optional.");
-        mpr("Once you set a character to explore mode, you can't switch back.");
+        mprf(MSGCH_WARN, jtransc("WARNING: ABOUT TO ENTER EXPLORE MODE!"));
+        mpr(jtrans("In explore mode, death is optional."));
+        mpr(jtrans("Once you set a character to explore mode, you can't switch back."));
 
 #ifndef SCORE_WIZARD_CHARACTERS
-        mprf(MSGCH_WARN, "If you continue, your game will not be scored!");
+        mprf(MSGCH_WARN, jtransc("If you continue, your game will not be scored!"));
 #endif
 
-        if (!confirm_prompt("explore", "Do you really want to enter explore mode?"))
+        if (!confirm_prompt("explore", "%s",
+                            jtransc("Do you really want to enter explore mode?")))
         {
             canned_msg(MSG_OK);
             return;
         }
 
-        take_note(Note(NOTE_MESSAGE, 0, 0, "Entered explore mode."));
+        take_note(Note(NOTE_MESSAGE, 0, 0, jtrans("Entered explore mode.")));
 
 #ifndef SCORE_WIZARD_CHARACTERS
         scorefile_entry se(INSTANT_DEATH, MID_NOBODY, KILLED_BY_EXPLORING, nullptr);
@@ -414,133 +416,144 @@ void enter_explore_mode()
 
         if (crawl_state.cmd_repeat_start)
         {
-            crawl_state.cancel_cmd_repeat("Can't repeat entering explore mode");
+            crawl_state.cancel_cmd_repeat(jtrans("Can't repeat entering explore mode"));
             return;
         }
     }
+}
+
+// ヘルプの見出し
+static string _wiz_head(const char *title)
+{
+    return "<yellow>" + jtrans(title) + "</yellow>\n";
+}
+
+// ヘルプの 1 行(キーの表示 + 説明)
+static string _wiz_help(const char *keys, const char *desc)
+{
+    return string(keys) + jtrans(desc) + "\n";
 }
 
 int list_wizard_commands(bool do_redraw_screen)
 {
     // 2 columns
     column_composer cols(2, 44);
-    cols.add_formatted(0,
-                       "<yellow>Player stats</yellow>\n"
-                       "<w>A</w>      set all skills to level\n"
-                       "<w>Ctrl-D</w> change enchantments/durations\n"
-                       "<w>g</w>      exercise a skill\n"
-                       "<w>k</w>      change experience level and skills\n"
-                       "<w>l</w>      change experience level\n"
-                       "<w>Ctrl-P</w> list props\n"
-                       "<w>r</w>      change character's species\n"
-                       "<w>s</w>      set skill to level\n"
-                       "<w>x</w>      gain an experience level\n"
-                       "<w>$</w>      set gold to a specified value\n"
-                       "<w>]</w>      get a mutation\n"
-                       "<w>}</w>      toggle a bane\n"
-                       "<w>_</w>      gain religion\n"
-                       "<w>^</w>      set piety to a value\n"
-                       "<w>@</w>      set Str Int Dex\n"
-                       "<w>#</w>      load character from a dump file\n"
-                       "<w>&</w>      list all divine followers\n"
-                       "<w>=</w>      show info about skill points\n"
-                       "<w>n</w>      set Zot clock to a value\n"
-                       "<w>N</w>      get current tension value\n"
-                       "\n"
-                       "<yellow>Dungeon features</yellow>\n"
-                       "<w>T</w>      make a trap\n"
-                       "<w>,</w>/<w>.</w>    create up/down staircase\n"
-                       "<w>(</w>      turn cell into feature\n"
-                       "<w>\\</w>      make a shop\n"
-                       "\n"
-                       "<yellow>Builder debugging</yellow>\n"
-                       "<w>L</w>      place a vault by name\n"
-                       "<w>P</w>      create a level based on a vault\n"
-                       "<w>R</w>      regenerate current level\n"
-                       "<w>Ctrl-A</w> generate new Abyss area\n"
-                       "<w>K</w>      mark all vaults as unused\n"
-                       "<w>:</w>      find branches and overflow\n"
-                       "       temples in the dungeon\n"
-                       "<w>;</w>      list known levels and counters\n"
-                       "<w>Ctrl-E</w> dump level builder information\n"
+    string col0;
+    col0 += _wiz_head("Player stats");
+    col0 += _wiz_help("<w>A</w>      ", "set all skills to level");
+    col0 += _wiz_help("<w>Ctrl-D</w> ", "change enchantments/durations");
+    col0 += _wiz_help("<w>g</w>      ", "exercise a skill");
+    col0 += _wiz_help("<w>k</w>      ", "change experience level and skills");
+    col0 += _wiz_help("<w>l</w>      ", "change experience level");
+    col0 += _wiz_help("<w>Ctrl-P</w> ", "list props");
+    col0 += _wiz_help("<w>r</w>      ", "change character's species");
+    col0 += _wiz_help("<w>s</w>      ", "set skill to level");
+    col0 += _wiz_help("<w>x</w>      ", "gain an experience level");
+    col0 += _wiz_help("<w>$</w>      ", "set gold to a specified value");
+    col0 += _wiz_help("<w>]</w>      ", "get a mutation");
+    col0 += _wiz_help("<w>}</w>      ", "toggle a bane");
+    col0 += _wiz_help("<w>_</w>      ", "gain religion");
+    col0 += _wiz_help("<w>^</w>      ", "set piety to a value");
+    col0 += _wiz_help("<w>@</w>      ", "set Str Int Dex");
+    col0 += _wiz_help("<w>#</w>      ", "load character from a dump file");
+    col0 += _wiz_help("<w>&</w>      ", "list all divine followers");
+    col0 += _wiz_help("<w>=</w>      ", "show info about skill points");
+    col0 += _wiz_help("<w>n</w>      ", "set Zot clock to a value");
+    col0 += _wiz_help("<w>N</w>      ", "get current tension value");
+    col0 += "\n";
+    col0 += _wiz_head("Dungeon features");
+    col0 += _wiz_help("<w>T</w>      ", "make a trap");
+    col0 += _wiz_help("<w>,</w>/<w>.</w>    ", "create up/down staircase");
+    col0 += _wiz_help("<w>(</w>      ", "turn cell into feature");
+    col0 += _wiz_help("<w>\\</w>      ", "make a shop");
+    col0 += "\n";
+    col0 += _wiz_head("Builder debugging");
+    col0 += _wiz_help("<w>L</w>      ", "place a vault by name");
+    col0 += _wiz_help("<w>P</w>      ", "create a level based on a vault");
+    col0 += _wiz_help("<w>R</w>      ", "regenerate current level");
+    col0 += _wiz_help("<w>Ctrl-A</w> ", "generate new Abyss area");
+    col0 += _wiz_help("<w>K</w>      ", "mark all vaults as unused");
+    col0 += _wiz_help("<w>:</w>      ", "find branches and overflow temples in the dungeon");
+    col0 += _wiz_help("<w>;</w>      ", "list known levels and counters");
+    col0 += _wiz_help("<w>Ctrl-E</w> ", "dump level builder information");
 #ifdef DEBUG
-                       // might be present in any save, but only generated
-                       // in debug builds; hide this for regular wizmode so as
-                       // to not confuse non-devs. The command will still work.
-                       "<w>Ctrl-L</w> show builder logs for level\n"
+    // might be present in any save, but only generated
+    // in debug builds; hide this for regular wizmode so as
+    // to not confuse non-devs. The command will still work.
+    col0 += _wiz_help("<w>Ctrl-L</w> ", "show builder logs for level");
 #endif
-                       "\n"
-                       "<yellow>Other level related commands</yellow>\n"
-                       "<w>{</w>      magic mapping\n"
-                       "<w>b</w>      controlled blink\n"
-                       "<w>B</w>      controlled teleport\n"
-                       "<w>~</w>      go to a specific level\n"
-                       "<w>u</w>/<w>d</w>    shift up/down one level\n"
-                       "<w>e</w>      trigger explore traps\n"
-                       "<w>Ctrl-B</w> banish yourself to the Abyss\n"
-                       "<w>Ctrl-S</w> change Abyss speed\n"
-                       "<w>Ctrl-W</w> change Shoals' tide speed\n",
-                       true);
+    col0 += "\n";
+    col0 += _wiz_head("Other level related commands");
+    col0 += _wiz_help("<w>{</w>      ", "magic mapping");
+    col0 += _wiz_help("<w>b</w>      ", "controlled blink");
+    col0 += _wiz_help("<w>B</w>      ", "controlled teleport");
+    col0 += _wiz_help("<w>~</w>      ", "go to a specific level");
+    col0 += _wiz_help("<w>u</w>/<w>d</w>    ", "shift up/down one level");
+    col0 += _wiz_help("<w>e</w>      ", "trigger explore traps");
+    col0 += _wiz_help("<w>Ctrl-B</w> ", "banish yourself to the Abyss");
+    col0 += _wiz_help("<w>Ctrl-S</w> ", "change Abyss speed");
+    col0 += _wiz_help("<w>Ctrl-W</w> ", "change Shoals' tide speed");
+    cols.add_formatted(0, col0, true);
 
-    cols.add_formatted(1,
-                       "<yellow>Other player related effects</yellow>\n"
-                       "<w>c</w>      card effect\n"
+    string col1;
+    col1 += _wiz_head("Other player related effects");
+    col1 += _wiz_help("<w>c</w>      ", "card effect");
 #ifdef DEBUG_BONES
-                       "<w>Ctrl-G</w> save/load ghost (bones file)\n"
+    col1 += _wiz_help("<w>Ctrl-G</w> ", "save/load ghost (bones file)");
 #endif
-                       "<w>h</w>/<w>H</w>    heal yourself (super-Heal)\n"
-                       "<w>X</w>      make Xom do something now\n"
-                       "<w>z</w>      cast spell by number/name\n"
-                       "<w>!</w>      memorise spell\n"
-                       "<w>W</w>      god wrath\n"
-                       "<w>w</w>      god mollification\n"
-                       "<w>p</w>      polymorph into a form\n"
-                       "<w>V</w>      toggle xray vision\n"
-                       "<w>E</w>      (un)freeze time\n"
-                       "\n"
-                       "<yellow>Monster related commands</yellow>\n"
-                       "<w>m</w>/<w>M</w>    create specified monster\n"
-                       "<w>D</w>      detect all monsters\n"
-                       "<w>G</w>      dismiss all monsters\n"
-                       "<w>\"</w>      list monsters\n"
-                       "\n"
-                       "<yellow>Item related commands</yellow>\n"
-                       "<w>a</w>      acquirement\n"
-                       "<w>i</w>/<w>I</w>    identify/unidentify inventory\n"
-                       "<w>y</w>/<w>Y</w>    id/unid item types+level items\n"
-                       "<w>o</w>/<w>%</w>    create an object\n"
-                       "<w>t</w>      tweak object properties\n"
-                       "<w>v</w>      recharge all XP evokers\n"
-                       "<w>Ctrl-V</w> show gold value of an item\n"
-                       "<w>-</w>      get a god gift\n"
-                       "<w>|</w>      create all unrand artefacts\n"
-                       "<w>Ctrl-\\</w> create all unrands / fallbacks\n"
-                       "<w>+</w>      make randart from item\n"
-                       "<w>'</w>      list items\n"
-                       "<w>J</w>      Jiyva off-level sacrifice\n"
-                       "<w>Z</w>      Unobtain runes and Orb of Zot\n"
-                       "\n"
-                       "<yellow>Debugging commands</yellow>\n"
-                       "<w>f</w>      quick fight simulation\n"
-                       "<w>F</w>      single scale fsim\n"
-                       "<w>Ctrl-F</w> double scale fsim\n"
-                       "<w>Ctrl-I</w> item generation stats\n"
-                       "<w>O</w>      measure exploration time\n"
-                       "<w>Ctrl-T</w> dungeon (D)Lua interpreter\n"
-                       "<w>Ctrl-U</w> client (C)Lua interpreter\n"
-                       "<w>Ctrl-X</w> Xom effect stats\n"
+    col1 += _wiz_help("<w>h</w>/<w>H</w>    ", "heal yourself (super-Heal)");
+    col1 += _wiz_help("<w>X</w>      ", "make Xom do something now");
+    col1 += _wiz_help("<w>z</w>      ", "cast spell by number/name");
+    col1 += _wiz_help("<w>!</w>      ", "memorise spell");
+    col1 += _wiz_help("<w>W</w>      ", "god wrath");
+    col1 += _wiz_help("<w>w</w>      ", "god mollification");
+    col1 += _wiz_help("<w>p</w>      ", "polymorph into a form");
+    col1 += _wiz_help("<w>V</w>      ", "toggle xray vision");
+    col1 += _wiz_help("<w>E</w>      ", "(un)freeze time");
+    col1 += "\n";
+    col1 += _wiz_head("Monster related commands");
+    col1 += _wiz_help("<w>m</w>/<w>M</w>    ", "create specified monster");
+    col1 += _wiz_help("<w>D</w>      ", "detect all monsters");
+    col1 += _wiz_help("<w>G</w>      ", "dismiss all monsters");
+    col1 += _wiz_help("<w>\"</w>      ", "list monsters");
+    col1 += "\n";
+    col1 += _wiz_head("Item related commands");
+    col1 += _wiz_help("<w>a</w>      ", "acquirement");
+    col1 += _wiz_help("<w>i</w>/<w>I</w>    ", "identify/unidentify inventory");
+    col1 += _wiz_help("<w>y</w>/<w>Y</w>    ", "id/unid item types+level items");
+    col1 += _wiz_help("<w>o</w>/<w>%</w>    ", "create an object");
+    col1 += _wiz_help("<w>t</w>      ", "tweak object properties");
+    col1 += _wiz_help("<w>v</w>      ", "recharge all XP evokers");
+    col1 += _wiz_help("<w>Ctrl-V</w> ", "show gold value of an item");
+    col1 += _wiz_help("<w>-</w>      ", "get a god gift");
+    col1 += _wiz_help("<w>|</w>      ", "create all unrand artefacts");
+    col1 += _wiz_help("<w>Ctrl-\\</w> ", "create all unrands / fallbacks");
+    col1 += _wiz_help("<w>+</w>      ", "make randart from item");
+    col1 += _wiz_help("<w>'</w>      ", "list items");
+    col1 += _wiz_help("<w>J</w>      ", "Jiyva off-level sacrifice");
+    col1 += _wiz_help("<w>Z</w>      ", "Unobtain runes and Orb of Zot");
+    col1 += "\n";
+    col1 += _wiz_head("Debugging commands");
+    col1 += _wiz_help("<w>f</w>      ", "quick fight simulation");
+    col1 += _wiz_help("<w>F</w>      ", "single scale fsim");
+    col1 += _wiz_help("<w>Ctrl-F</w> ", "double scale fsim");
+    col1 += _wiz_help("<w>Ctrl-I</w> ", "item generation stats");
+    col1 += _wiz_help("<w>O</w>      ", "measure exploration time");
+    col1 += _wiz_help("<w>Ctrl-T</w> ", "dungeon (D)Lua interpreter");
+    col1 += _wiz_help("<w>Ctrl-U</w> ", "client (C)Lua interpreter");
+    col1 += _wiz_help("<w>Ctrl-X</w> ", "Xom effect stats");
 #ifdef DEBUG_DIAGNOSTICS
-                       "<w>Ctrl-Q</w> make some debug messages quiet\n"
+    col1 += _wiz_help("<w>Ctrl-Q</w> ", "make some debug messages quiet");
 #endif
-                       "<w>Ctrl-Y</w> temporarily suppress wizmode\n"
-                       "<w>Ctrl-C</w> force a crash\n"
-                       "<w>`</w>      list unassigned command keys\n"
-                       "\n"
-                       "<yellow>Other wizard commands</yellow>\n"
-                       "(not prefixed with <w>&</w>!)\n"
-                       "<w>x?</w>     list targeted commands\n"
-                       "<w>X?</w>     list map-mode commands\n",
-                       true);
+    col1 += _wiz_help("<w>Ctrl-Y</w> ", "temporarily suppress wizmode");
+    col1 += _wiz_help("<w>Ctrl-C</w> ", "force a crash");
+    col1 += _wiz_help("<w>`</w>      ", "list unassigned command keys");
+    col1 += "\n";
+    col1 += _wiz_head("Other wizard commands");
+    col1 += jtrans("(not prefixed with <w>&</w>!)") + "\n";
+    col1 += _wiz_help("<w>x?</w>     ", "list targeted commands");
+    col1 += _wiz_help("<w>X?</w>     ", "list map-mode commands");
+    cols.add_formatted(1, col1, true);
 
     int key = show_keyhelp_menu(cols.formatted_lines());
     if (do_redraw_screen)

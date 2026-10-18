@@ -1,0 +1,273 @@
+%%%%
+Enter name of item (or ITEM spec):
+
+アイテムの名称(またはアイテム指定文)を入力してください:
+%%%%
+Error: %s
+
+エラー: %s
+%%%%
+Could not allocate item.
+
+アイテムの割り当てができませんでした。
+%%%%
+No such monster.
+
+そのようなモンスターはいません。
+%%%%
+That monster doesn't leave corpses.
+
+そのモンスターは死体を残すことはありません。
+%%%%
+You can't make a draconian corpse by its background.
+
+ドラコニアンの職業を区別して死体を生成することはできません。
+%%%%
+Failed to create corpse.
+
+死体を生成するのに失敗しました。
+%%%%
+No such item.
+
+そのようなアイテムはありません。
+%%%%
+You can't tweak the randart properties of an equipped item.
+
+アーティファクトの設定を装備中に調整することはできません。
+%%%%
+%s was %d.
+
+%sの値は現在%dになっています。
+%%%%
+Value for %s must be non-negative
+
+%sの値は0以上でないといけません。
+%%%%
+%s was %s.
+
+%sは現在%sです。
+%%%%
+No such ego as: %s
+
+そのようなエゴ銘はありません: %s
+%%%%
+Ego '%s' is invalid for %s.
+
+エゴ'%s'は%sに付けられません。
+%%%%
+You can't set this flag on a non-artefact.
+
+このフラグはアーティファクトでないアイテムには設定できません。
+%%%%
+Make book fixed [t]heme or fixed [l]evel?
+
+魔法書を[t]テーマ固定と[l]レベル固定のどちらにしますか？
+%%%%
+Real value: %d (known: %d)
+
+真の価値: %d (既知の価値: %d)
+%%%%
+Value: %d
+
+価値: %d
+%%%%
+That item is already an unrandom artefact.
+
+そのアイテムは固定アーティファクトです。
+%%%%
+That item cannot be turned into an artefact.
+
+そのアイテムをアーティファクト化することはできません。
+%%%%
+Is already a randart; wipe and re-use?
+
+そのアイテムはすでにランダムアーティファクトです。再生成しますか？
+%%%%
+Fake item as gift from which god (ENTER to leave alone):
+
+どの神からの授かり物として扱いますか？ (ENTERで無視):
+%%%%
+No such god, leaving item origin alone.
+
+該当する神がいませんでした。
+%%%%
+God gift of %s.
+
+%sからの授かり物として扱います。
+%%%%
+Failed to turn book into randart.
+
+魔法書をランダムアーティファクト化するのに失敗しました。
+%%%%
+Failed to turn item into randart.
+
+アイテムをランダムアーティファクト化するのに失敗しました。
+%%%%
+You feel a rush of knowledge.
+
+所持アイテムを全て鑑定しました。
+%%%%
+You feel a rush of antiknowledge.
+
+所持アイテムを全て未鑑定状態にしました。
+%%%%
+Item stacks (by location and top item):
+
+アイテムの山(場所と一番上のアイテム):
+%%%%
+Floor items (stacks only show top item):
+
+床のアイテム(山は一番上のみ表示):
+%%%%
+%3d at (%2d,%2d): %s%s
+
+%3d: (%2d,%2d) %s%s
+%%%%
+Too many items on level.
+
+この階にはアイテムが多すぎます。
+%%%%
+Stopping early due to keyboard input.
+
+キーボード入力により中断しました。
+%%%%
+Acquirement failed, stopping early.
+
+獲得に失敗したため、中断しました。
+%%%%
+No items generated.
+
+アイテムは生成されませんでした。
+%%%%
+Generate stats for: [a] acquirement [b] randart properties
+
+[a]獲得 [b]ランダムアーティファクト生成 に関して統計を取ります。
+%%%%
+Unknown card.
+
+不明なカード名です。
+%%%%
+How much gold?
+
+金貨をどのくらい生成しますか？
+%%%%
+How many heads?
+
+ヒドラの首を何本にしますか？
+%%%%
+("all" for all)
+
+("all"で全ての魔法書を生成)
+%%%%
+New value?
+
+新しい値は？
+%%%%
+New ego?
+
+新しいエゴは？
+%%%%
+Tweak which item?
+
+どのアイテムの数値を調整しますか？
+%%%%
+Value of which item?
+
+どのアイテムの価値を見ますか？
+%%%%
+Made %s (%s)
+
+%s(%s)を生成しました。
+%%%%
+Made %s
+
+%sを生成しました。
+%%%%
+Make an artefact out of which item?
+
+どのアイテムをアーティファクト化しますか？
+%%%%
+How many iterations?
+
+何回測定を行いますか？
+%%%%
+Which card?
+
+どのカードの効果を発揮しますか？
+%%%%
+Which item class (ESC to exit)?
+
+どの分類のアイテムを作りますか？ (ESCで終了)
+%%%%
+What type of %s?
+
+どの種類の%sを作りますか？
+%%%%
+Change which field (ESC to exit)?
+
+どの項目を変更しますか？ (ESCで終了)
+%%%%
+Toggling %s off.
+
+%sをオフにしました。
+%%%%
+Toggling %s on.
+
+%sをオンにしました。
+%%%%
+Which field (Esc to exit)?
+
+どの項目を変更しますか？ (Escで終了)
+%%%%
+Old value:
+
+元の値:
+%%%%
+Failed to generate item for '%s'
+
+'%s'のアイテムの生成に失敗しました。
+%%%%
+Made non-artefact '%s' when trying to make '%s'
+
+アーティファクトでない'%s'ができました('%s'を作成中)。
+%%%%
+(mimic)
+
+(ミミック)
+%%%%
+What kind of item would you like to get acquirement stats on (ESC to exit)?
+
+どの分類のアイテムの獲得統計を取りますか？ (ESCで終了)
+%%%%
+Can't write to acquirement_stats.txt: %s
+
+acquirement_stats.txt に書き込めません: %s
+%%%%
+%d%% done.
+
+%d%%完了。
+%%%%
+Results written into acquirement_stats.txt.
+
+結果を acquirement_stats.txt に書き込みました。
+%%%%
+Can't write to randart_stats.txt: %s
+
+randart_stats.txt に書き込めません: %s
+%%%%
+Unable to make artefact from '%s'
+
+'%s'からアーティファクトを作れませんでした。
+%%%%
+Results written into 'randart_stats.txt'.
+
+結果を 'randart_stats.txt' に書き込みました。
+%%%%
+Evokers recharged.
+
+発動具を充填しました。
+%%%%
+Unobtained all runes and the Orb of Zot.
+
+すべてのルーンとゾットのオーブを未入手の状態にしました。
+%%%%

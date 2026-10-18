@@ -215,3 +215,15 @@ Cai Fang
 
 --more-- スペースキーで続きます。メッセージは後で Ctrl-P で読み返せます。
 %%%%
+<cyan>Press Esc to close, arrows/pgup/pgdn to scroll.</cyan>
+
+<cyan>Escで閉じる、矢印キー/PgUp/PgDnでスクロール</cyan>
+%%%%
+<yellow>Crawl encountered errors during initialization:</yellow>
+
+<yellow>初期化中にエラーが発生しました:</yellow>
+%%%%
+<yellow>Initialization log:</yellow>
+
+<yellow>初期化ログ:</yellow>
+%%%%

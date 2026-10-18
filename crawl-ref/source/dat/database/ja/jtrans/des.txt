@@ -253,7 +253,7 @@ Shadowy figures dance across your vision.
 %%%%
 The mighty Pandemonium lord %s resides here.
 
-強大なパンデモニウムの王%sがここに住んでいる。
+強大なパンデモニウムの君主%sがここに住んでいる。
 %%%%
 They guard the %s.
 
@@ -273,7 +273,7 @@ The demonic rune of Zot may be found here.
 %%%%
 A powerful Pandemonium lord resides here.
 
-強大なパンデモニウムの王がここに住んでいる。
+強大なパンデモニウムの君主がここに住んでいる。
 %%%%
 It guards the demonic rune of Zot.
 
@@ -551,7 +551,7 @@ Tukima's Studio
 %%%%
 Alistair's Party Mansion
 
-アリステアのパーティー屋敷
+アリステイアのパーティー屋敷
 %%%%
 The walls briefly shake.
 
@@ -880,7 +880,7 @@ You hear a click.
 %%%%
 You step on to a pressure plate.
 
-あなたは踏み板を踏んだ。
+あなたは足踏みスイッチを踏んだ。
 %%%%
 Suddenly a wall slides open!
 

@@ -1,0 +1,5 @@
+%%%%
+Loading complete, press any key to start.
+
+読み込みが完了しました。開始するには任意のキーを押してください。
+%%%%

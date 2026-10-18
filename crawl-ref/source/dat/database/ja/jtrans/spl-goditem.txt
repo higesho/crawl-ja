@@ -125,7 +125,7 @@ You are no longer on fire.
 %%%%
 Your fortress blast dissipates harmlessly.
 
-あなたの城塞の爆風は害なく消散した。
+あなたの要塞の爆風は害なく消散した。
 %%%%
 magical effects unravel!
 
