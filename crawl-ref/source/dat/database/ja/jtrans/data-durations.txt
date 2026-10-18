@@ -1391,11 +1391,11 @@ Gravity stabilises in your vicinity.
 %%%%
 [dur]on hellfire mortar cooldown
 
-地獄の迫撃砲不可
+業火の迫撃砲不可
 %%%%
 You are unable to cast Hellfire Mortar.
 
-あなたは地獄の迫撃砲を唱えることができない。
+あなたは業火の迫撃砲を唱えることができない。
 %%%%
 You feel ready to split the earth once more.
 

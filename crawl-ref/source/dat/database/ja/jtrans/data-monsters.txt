@@ -1470,7 +1470,7 @@ molten gargoyle
 %%%%
 monarch bomb
 
-親玉爆弾
+君主爆弾
 %%%%
 moon troll
 
@@ -2038,7 +2038,7 @@ shadow prism
 %%%%
 shadow puppet
 
-影絵人形
+影の人形
 %%%%
 shadow turret
 
@@ -2198,7 +2198,7 @@ spectral weapon
 %%%%
 spellspark servitor
 
-呪文の火花の従者
+魔火花の従者
 %%%%
 sphinx
 
@@ -2948,7 +2948,7 @@ Master Blaster
 %%%%
 Statue of Wucad Mu
 
-ワカド・ムーの像
+ウカド・ムーの像
 %%%%
 The Captor
 

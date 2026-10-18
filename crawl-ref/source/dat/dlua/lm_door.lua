@@ -79,7 +79,7 @@ function LockDoor:check_veto (marker, pname, dry_run)
     return "veto"
   else
     if self.props.opened_message ~= nil then
-      crawl.mpr(self.props.opened_message)
+      crawl.mpr(crawl.jtrans(self.props.opened_message))
     end
 
     if self.props.opened_function ~= nil then

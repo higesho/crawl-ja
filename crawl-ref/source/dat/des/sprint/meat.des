@@ -154,20 +154,49 @@
     "------------------------------------------------------------------------------\n" ..
     "------------------------------------------------------------------------------"
 
+  -- 日本語: 枠の中の 1 行を訳し、表示幅(ASCII 以外の文字は 2 と数える)で
+  -- 中央に寄せる。hl なら明るい赤で強調する。
+  function meat_frame_line(text, hl)
+    local t = text == "" and "" or crawl.jtrans(text)
+    local w = 0
+    for i = 1, #t do
+      local b = t:byte(i)
+      if b < 128 then
+        w = w + 1
+      elseif b >= 192 then
+        w = w + 2
+      end
+    end
+    local left = math.max(0, math.floor((74 - w) / 2))
+    local right = math.max(0, 74 - w - left)
+    if hl then
+      t = "</red><lightred>" .. t .. "</lightred><red>"
+    end
+    return "--" .. string.rep(" ", left) .. t .. string.rep(" ", right) .. "--"
+  end
+
+  function meat_frame(lines)
+    local out = {}
+    for _, l in ipairs(lines) do
+      table.insert(out, meat_frame_line(l))
+    end
+    return table.concat(out, "\n")
+  end
+
   function meatlord_stuff(data, triggerable, triggerer, marker, ev)
     local you_x, you_y = you.pos()
 
     if triggerer.type == "monster_dies" then
       crawl.more()
-      crawl.mpr("<red>" .. border_top .. "" ..
-      "--                    </red><lightred>You have destroyed The Meatlord.</lightred><red>                      --\n" ..
-      "" .. border_bottom .. "</red>")
+      crawl.mpr("<red>" .. border_top ..
+      meat_frame_line("You have destroyed The Meatlord.", true) .. "\n" ..
+      border_bottom .. "</red>")
       crawl.more()
-      crawl.mpr("<red>" .. border_top .. "" ..
-      "--                        </red><lightred>You will die a champion.</lightred><red>                          --\n" ..
-      "" .. border_bottom .. "</red>")
+      crawl.mpr("<red>" .. border_top ..
+      meat_frame_line("You will die a champion.", true) .. "\n" ..
+      border_bottom .. "</red>")
       crawl.more()
-      crawl.mpr("The Orb of Zot has appeared underneath you.", "orb")
+      crawl.mpr(crawl.jtrans("The Orb of Zot has appeared underneath you."), "orb")
       dgn.create_item(you_x, you_y, "orb of zot")
       crawl.more()
       return
@@ -179,11 +208,11 @@
 
     if triggerer.type == "monster_dies" then
       crawl.more()
-      crawl.mpr("<red>" .. border_top .. "" ..
-      "--                    </red><lightred>You have destroyed The Unspeakable.</lightred><red>                   --\n" ..
-      "" .. border_bottom .. "</red>")
+      crawl.mpr("<red>" .. border_top ..
+      meat_frame_line("You have destroyed The Unspeakable.", true) .. "\n" ..
+      border_bottom .. "</red>")
       crawl.more()
-      crawl.mpr("<lightgreen>The slimy rune of Zot has appeared underneath you.</lightgreen>")
+      crawl.mpr(crawl.jtrans("<lightgreen>The slimy rune of Zot has appeared underneath you.</lightgreen>"))
       dgn.create_item(you_x, you_y, "slimy rune of zot")
       return
     end
@@ -289,9 +318,9 @@
         end
           dgn.create_monster(m_x, m_y, meatlord)
           crawl.more()
-          crawl.mpr("<red>" .. border_top .. "" ..
-          "--                      </red><lightred>The Meatlord has descended...</lightred><red>                       --\n" ..
-          "" .. border_bottom .. "</red>")
+          crawl.mpr("<red>" .. border_top ..
+          meat_frame_line("The Meatlord has descended...", true) .. "\n" ..
+          border_bottom .. "</red>")
           crawl.more()
     elseif data.spawn_count == 300 then
       create_and_tele(33, 63, avatar)
@@ -367,38 +396,35 @@ NSUBST:    ' = 1:& / *:.
 -----11------------------------------------@@------------------------------------11
     "------------------------------------------------------------------------------\n" ..
     "------------------------------------------------------------------------------\n" ..
-    "--                                                                          --\n" ..
-    "--                            The Arena Of Blood                            --\n" ..
-    "--                                                                          --\n" ..
-    "--                                                                          --" ..
+    meat_frame({ "", "The Arena Of Blood", "", "" }) ..
     "</red>")
   crawl.more()
   crawl.mpr("<red>" ..
-    "--                                                                          --\n" ..
-    "--                You descend into the pit of gibs and meat,                --\n" ..
-    "--                    The sunken abyss of the depraved,                     --\n" ..
-    "--                       The mill of turgid gutspawn.                       --\n" ..
-    "--                The writhen instruments serve in adoration,               --\n" ..
-    "--                     Immured beneath a rotten throne.                     --" ..
+    meat_frame({ "",
+                 "You descend into the pit of gibs and meat,",
+                 "The sunken abyss of the depraved,",
+                 "The mill of turgid gutspawn.",
+                 "The writhen instruments serve in adoration,",
+                 "Immured beneath a rotten throne." }) ..
     "</red>")
   crawl.more()
   crawl.mpr("<red>" ..
-    "--                                                                          --\n" ..
-    "--                  Before you lies the servitor of chaos,                  --\n" ..
-    "--                           The cleaver,                                   --\n" ..
-    "--                             The blasphemer,                              --\n" ..
-    "--                              The destroyer,                              --\n" ..
-    "--                               The Axe of Woe.                            --" ..
+    meat_frame({ "",
+                 "Before you lies the servitor of chaos,",
+                 "The cleaver,",
+                 "The blasphemer,",
+                 "The destroyer,",
+                 "The Axe of Woe." }) ..
     "</red>")
   crawl.more()
   crawl.mpr("<red>" ..
-    "--                                                                          --\n" ..
-    "--                            Vessel of Makhleb,                            --\n" ..
-    "--                           You are the unmaker,                           --\n" ..
-    "--                          You bring the rapture,                          --\n" ..
-    "--                     The murmurs of the thralls rise...                   --\n" ..
-    "--                       The theatre of blood begins.                       --\n" ..
-    "--                                                                          --\n" ..
+    meat_frame({ "",
+                 "Vessel of Makhleb,",
+                 "You are the unmaker,",
+                 "You bring the rapture,",
+                 "The murmurs of the thralls rise...",
+                 "The theatre of blood begins.",
+                 "" }) .. "\n" ..
     "------------------------------------------------------------------------------\n" ..
     "------------------------------------------------------------------------------" ..
     "</red>")

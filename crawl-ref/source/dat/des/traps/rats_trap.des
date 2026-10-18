@@ -20,7 +20,7 @@ function callback.rats_trap_stepped(data, triggerable, triggerer, marker, ev)
     else
       data.triggered = true
       dgn.grid(x,y,"floor")
-      crawl.mpr("You hear a faint click.")
+      crawl.mpr(crawl.jtrans("You hear a faint click."))
       return
     end
   end
@@ -33,13 +33,13 @@ function callback.rats_trap_stepped(data, triggerable, triggerer, marker, ev)
         dgn.terrain_changed(replica.x, replica.y, "floor", false)
         dgn.create_item(replica.x, replica.y, "stone q:3 / stone q:2 / stone")
       else
-        crawl.mpr("You hear a click.")
+        crawl.mpr(crawl.jtrans("You hear a click."))
         return
       end
   end
 
-  crawl.mpr("You step on to a pressure plate.")
-  crawl.mpr("Suddenly a wall slides open!")
+  crawl.mpr(crawl.jtrans("You step on to a pressure plate."))
+  crawl.mpr(crawl.jtrans("Suddenly a wall slides open!"))
 
 end
 

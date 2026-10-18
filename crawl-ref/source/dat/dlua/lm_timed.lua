@@ -81,18 +81,20 @@ function TimedMarker:timeout(marker, verbose)
 
   if x == yx and y == yy and you.taking_stairs() then
     if verbose then
-      crawl.mpr( dgn.feature_desc_at(x, y, "The") .. " vanishes " ..
-                "just as you enter it!")
+      crawl.mpr(crawl.jtrans("%s vanishes just as you enter it!",
+                             dgn.feature_desc_at_j(x, y, "The")))
       return
     end
   end
 
   if verbose then
     if you.see_cell(marker:pos()) then
-      crawl.mpr( util.expand_entity(self.props.entity, self.props.disappear) or
-                 dgn.feature_desc_at(x, y, "The") .. " disappears!")
+      -- disappear は des から英語で渡される(訳は des の辞書)
+      crawl.mpr( util.expand_entity_j(self.props.entity, self.props.disappear) or
+                 crawl.jtrans("%s disappears!",
+                              dgn.feature_desc_at_j(x, y, "The")))
     else
-      crawl.mpr("The walls and floor vibrate strangely for a moment.")
+      crawl.mpr(crawl.jtrans("The walls and floor vibrate strangely for a moment."))
     end
   end
 

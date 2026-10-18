@@ -8,7 +8,7 @@ function callback.kb_xom_exploding_sheep(data, triggerable,
 
   local x, y = marker:pos()
 
-  crawl.mpr("The walls suddenly crumble!")
+  crawl.mpr(crawl.jtrans("The walls suddenly crumble!"))
   for p in iter.replica_iterator("feat_remove", 1) do
     dgn.terrain_changed(p.x, p.y, "floor", false)
   end
@@ -40,11 +40,11 @@ function callback.kb_xom_exploding_sheep(data, triggerable,
     sheep.targetx = you_x
     sheep.targety = you_y
     if visarray[i] then
-      crawl.mpr("A dream sheep catches fire!", "warning")
+      crawl.mpr(crawl.jtrans("A dream sheep catches fire!"), "warning")
       sheep.speak("dream sheep flee")
     end
   end
-  crawl.god_speaks("Xom", "You hear mad divine giggling.")
+  crawl.god_speaks("Xom", crawl.jtrans("You hear mad divine giggling."))
 end
 }}
 

@@ -40,10 +40,10 @@ function callback.zig_tele(data, triggerable, triggerer, marker, ev)
   my_replicas = dgn.find_marker_positions_by_prop("teleport_spot",
                                                   data.teleport_spot)
   you.teleport_to(my_replicas[1].x, my_replicas[1].y)
-  crawl.mpr("Your surroundings seem different!")
+  crawl.mpr(crawl.jtrans("Your surroundings seem different!"))
   if data.teleport_spot < 28 then
-    crawl.mpr("Welcome to arena " .. data.teleport_spot .. ".")
-    crawl.take_note("Entered arena " .. data.teleport_spot .. ".")
+    crawl.mpr(crawl.jtrans("Welcome to arena %s.", data.teleport_spot))
+    crawl.take_note(crawl.jtrans("Entered arena %s.", data.teleport_spot))
 --  crawl.mark_milestone("sprint", "entered arena " .. data.teleport_spot ..
 --                       " of Ziggurat Sprint.", "")
   end
@@ -52,8 +52,8 @@ end
 
 function callback.zig_message(data, triggerable, triggerer, marker, ev)
   if data.arena_number > 1 then
-    crawl.mpr("Welcome to arena " .. data.arena_number - 1 .. ".")
-    crawl.take_note("Entered arena " .. data.arena_number .. ".")
+    crawl.mpr(crawl.jtrans("Welcome to arena %s.", data.arena_number - 1))
+    crawl.take_note(crawl.jtrans("Entered arena %s.", data.arena_number))
 --  crawl.mark_milestone("sprint", "entered arena " .. data.arena_number ..
 --                       " of Ziggurat Sprint.", "")
   end
@@ -64,7 +64,7 @@ function callback.make_hatch(data, triggerable, triggerer, marker, ev)
         dgn.terrain_changed(replica.x, replica.y, "exit_dungeon", false)
         dgn.apply_area_cloud(replica.x, replica.y, 1, 10, 1, 9, "purple smoke", "other", -1)
     end
-    crawl.mpr("<magenta>An exit appears before you!</magenta>")
+    crawl.mpr(crawl.jtrans("<magenta>An exit appears before you!</magenta>"))
 end
 
 function setup_room(e, id)

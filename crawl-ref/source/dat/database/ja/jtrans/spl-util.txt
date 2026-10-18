@@ -69,7 +69,7 @@ you cannot issue another dragon's call so soon.
 %%%%
 (You may use Imprint Weapon from the <w>%s</w>bility menu to change which weapon your Paragon wields.)
 
-(<w>%s</w>キーの能力メニューの『武器の刻印』で、模範者が振るう武器を変更できる)
+(<w>%s</w>キーの能力メニューの『武器の刻印』で、傑作が振るう武器を変更できる)
 %%%%
 # spell_uselessness_reason() などの理由。日本語では完結した文として返す。
 you aren't experienced enough to cast this spell.
@@ -234,11 +234,11 @@ your pet crocodile is still here.
 %%%%
 you must imprint a weapon on your paragon first! (Use the Imprint Weapon ability)
 
-まず模範者に武器を刻印しなければならない！(『武器の刻印』の能力を使う)
+まず傑作に武器を刻印しなければならない！(『武器の刻印』の能力を使う)
 %%%%
 your paragon is already deployed, but not yet charged.
 
-模範者は既に展開されているが、まだ充填されていない。
+傑作は既に展開されているが、まだ充填されていない。
 %%%%
 you are already charging a Fortress Blast.
 

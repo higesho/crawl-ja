@@ -1077,7 +1077,7 @@ Your rising flame fizzles out.
 %%%%
 %s removes the imprint of %s from your paragon.
 
-%sはあなたの模範者から%sの刻印を取り除いた。
+%sはあなたの傑作から%sの刻印を取り除いた。
 %%%%
 Your summoned allies are dismissed!
 

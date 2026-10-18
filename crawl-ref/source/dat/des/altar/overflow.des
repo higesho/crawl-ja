@@ -82,8 +82,8 @@ end
 
 function callback.vampire_church_blood(data, triggerable, triggerer, marker, ev)
   local replicas = dgn.find_marker_positions_by_prop("replica_name", "vampire_church_blood")
-  crawl.god_speaks("Kikubaaqudgha", "As you approach the altar, the fountains"
-                                 .. " begin to flow with blood!")
+  crawl.god_speaks("Kikubaaqudgha", crawl.jtrans("As you approach the altar, the fountains"
+                                 .. " begin to flow with blood!"))
   for i, replica in ipairs(replicas) do
     dgn.terrain_changed(replica.x, replica.y, "fountain_blood", false)
   end
@@ -101,7 +101,7 @@ function callback.hep_ancestral_shrine_los(data, triggerable, triggerer, marker,
     for i, replica in ipairs(slime) do
       dgn.colour_at(replica.x, replica.y, "blue")
     end
-    crawl.god_speaks("Hepliaklqana", "Let the past return from memory!")
+    crawl.god_speaks("Hepliaklqana", crawl.jtrans("Let the past return from memory!"))
     dgn.persist.hep_ancestral_shrine_reborn = true
   end
 end
@@ -111,8 +111,8 @@ function callback.xom_greatest_gift(data, triggerable, triggerer, marker, ev)
     dgn.persist.xom_gg_heard = true
     dgn.persist.xom_gg_granted = true
   elseif not dgn.persist.xom_gg_heard and you.god() ~= "Xom" then
-    crawl.god_speaks("Xom", '"WORSHIP ME, MORTAL," Xom booms, "AND I SHALL'
-                            .. ' GRANT YOU THE GREATEST GIFT OF ALL."')
+    crawl.god_speaks("Xom", crawl.jtrans('"WORSHIP ME, MORTAL," Xom booms, "AND I SHALL'
+                            .. ' GRANT YOU THE GREATEST GIFT OF ALL."'))
     dgn.persist.xom_gg_heard = true
   elseif not dgn.persist.xom_gg_granted and you.god() == "Xom" then
     local pos = dgn.find_marker_positions_by_prop("gift", "altar")
@@ -121,16 +121,16 @@ function callback.xom_greatest_gift(data, triggerable, triggerer, marker, ev)
                 "perm_ench:resistant perm_ench:regen perm_ench:magic_res " ..
                 "perm_ench:doubled_vigour perm_ench:mirror_dam perm_ench:swift"
     dgn.create_monster(pos[1].x, pos[1].y, gob)
-    crawl.god_speaks("Xom", 'A goblin pops into existence! It looks at you'
-                     .. ' with admiration.')
-    crawl.god_speaks("Xom", '"Friendship. The greatest gift is friendship!"')
+    crawl.god_speaks("Xom", crawl.jtrans('A goblin pops into existence! It looks at you'
+                     .. ' with admiration.'))
+    crawl.god_speaks("Xom", crawl.jtrans('"Friendship. The greatest gift is friendship!"'))
 
     dgn.persist.xom_gg_granted = true
   end
 end
 
 function callback.five_deadly_venoms(data, triggerable, triggerer, marker, ev)
-  crawl.god_speaks("Wu Jian", "For a moment, you catch a glimpse of warriors who walked this path long ago.")
+  crawl.god_speaks("Wu Jian", crawl.jtrans("For a moment, you catch a glimpse of warriors who walked this path long ago."))
   local positions = dgn.find_marker_positions_by_prop(
     "positions", "five_deadly_venoms")
   for i, pos in ipairs(positions) do
@@ -208,12 +208,20 @@ function callback.do_species_mock(data, triggerable, triggerer, marker, ev)
   elseif you.race() == "Mountain Dwarf" then
     sp = "goblin"
   end
-  crawl.god_speaks("Xom", '"I found one of your ancestors!"')
+  crawl.god_speaks("Xom", crawl.jtrans('"I found one of your ancestors!"'))
+  local name_j = nil
   for i, pos in ipairs(positions) do
     local x, y = pos:xy()
-    dgn.create_monster(x, y, "generate_awake " .. species_mock())
+    local mon = dgn.create_monster(x, y, "generate_awake " .. species_mock())
+    if mon and not name_j then
+      name_j = mon.name_j
+    end
   end
-  crawl.mpr("A " .. sp .. " emerges from the mists of... memory?....")
+  -- 日本語: 名前は作ったモンスターから取る(Poltergeist は「踊る武器」)
+  if you.race() == "Poltergeist" or not name_j then
+    name_j = crawl.jtrans(sp)
+  end
+  crawl.mpr(crawl.jtrans("A %s emerges from the mists of... memory?....", name_j))
 end
 }}
 

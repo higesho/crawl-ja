@@ -1,0 +1,355 @@
+# dat/dlua/*.lua(迷宮生成・マーカー・ポータルの Lua)の表示文。Lua からは
+# crawl.jtrans(...) で引く。書式付きのキーは crawl.jtrans(key, ...) が
+# string.format に渡すので、%s の数と順番を英文と同じに保つこと。
+# des から英語で渡される文(timed_msg の initmsg / finalmsg / messages、
+# timed_marker の disappear、fog_machine・message_at_spot・monster_on_trigger・
+# tutorial_message の文など)は、dlua 側で受け取ってから crawl.jtrans で訳す。
+# それらの訳は des の辞書(des.txt)に置く。この辞書には dlua が組み立てる文と、
+# dlua 専用のタグ付きキー([timed ...], [entity])を置く。
+# "Okay, then." は message.txt、アイテム名・助数詞は data-items.txt にある。
+%%%%
+# ---- lm_timed.lua
+%%%%
+%s vanishes just as you enter it!
+
+%sはあなたが入ったとたんに消滅した！
+%%%%
+%s disappears!
+
+%sは消滅した！
+%%%%
+The walls and floor vibrate strangely for a moment.
+
+壁と床が一瞬奇妙に振動した。
+%%%%
+# ---- lm_tmsg.lua(時限ポータルの音の知らせ)
+# 「あなたは<距離><音の主>の<ranges の語><verb>を聞いた。」の形で組み立てる。
+# 例: あなたは遠くの鐘の厳かに鳴り響く音を聞いた。
+From %s, you hear the %s.
+
+あなたは%sの%sを聞いた。
+%%%%
+# 距離の語(%s に音の主)。英語版の range_adjectives
+[timed distance]very distant
+
+かなり遠くの%s
+%%%%
+[timed distance]distant
+
+遠くの%s
+%%%%
+[timed distance]$F nearby
+
+近くの%s
+%%%%
+[timed distance]$F very nearby
+
+すぐ近くの%s
+%%%%
+[timed distance]$F
+
+%s
+%%%%
+# ranges の語(副詞句。verb のない necropolis は名詞句)。lm_tmsg.lua の既定と
+# des(portals/*.des)の timed_msg の ranges
+[timed range]stately
+
+厳かに
+%%%%
+[timed range]brisk
+
+小気味よく
+%%%%
+[timed range]urgent
+
+急き立てるように
+%%%%
+[timed range]frantic
+
+狂ったように
+%%%%
+[timed range]faint
+
+かすかに
+%%%%
+[timed range]quiet
+
+静かに
+%%%%
+[timed range]steady
+
+規則正しく
+%%%%
+[timed range]quick
+
+せわしなく
+%%%%
+[timed range]loud
+
+大きく
+%%%%
+[timed range]ear-piercing
+
+耳をつんざくように
+%%%%
+[timed range]thunderous
+
+雷鳴のように
+%%%%
+[timed range]deafening
+
+耳を聾するほどに
+%%%%
+[timed range]slow
+
+ゆっくりと
+%%%%
+[timed range]rapid
+
+激しく
+%%%%
+[timed range]lone wailing
+
+ひとりきりの嘆きの声
+%%%%
+[timed range]small ensemble
+
+小さな合唱
+%%%%
+[timed range]gathering chorus
+
+集まりつつある合唱
+%%%%
+[timed range]rising multitudes
+
+高まりゆく群衆の声
+%%%%
+[timed range]full choir
+
+大合唱
+%%%%
+# verb(「〜音」まで含む)。des の timed_msg の verb
+[timed verb]creaking
+
+きしむ音
+%%%%
+[timed verb]tolling
+
+鳴り響く音
+%%%%
+[timed verb]whistling
+
+ヒュウヒュウと鳴る音
+%%%%
+[timed verb]beating
+
+打ち鳴らされる音
+%%%%
+[timed verb]crackling
+
+ピキピキと鳴る音
+%%%%
+[timed verb]hiss
+
+サラサラと流れる音
+%%%%
+[timed verb]rusting
+
+錆びついていく音
+%%%%
+[timed verb]rumble
+
+崩れ落ちる轟音
+%%%%
+[timed verb]crackle
+
+パチパチと鳴る音
+%%%%
+# 音の主。des の timed_msg の noisemaker
+[timed noise]portcullis
+
+吊るし門
+%%%%
+[timed noise]bell
+
+鐘
+%%%%
+[timed noise]wind
+
+風
+%%%%
+[timed noise]drum
+
+太鼓
+%%%%
+[timed noise]melting archway
+
+溶けゆくアーチ
+%%%%
+[timed noise]funeral chant
+
+葬送の詠唱
+%%%%
+[timed noise]avalanche of sand
+
+砂の雪崩
+%%%%
+[timed noise]drain
+
+排水溝
+%%%%
+[timed noise]avalanche of rocks
+
+岩の雪崩
+%%%%
+[timed noise]magical portal
+
+魔法のポータル
+%%%%
+# ---- util.lua(util.expand_entity_j の $F に入る名前。des の timed_marker の
+# entity。ないものは "[feature]<英語>" で引く)
+[entity]portcullis
+
+吊るし門
+%%%%
+[entity]archway
+
+アーチ
+%%%%
+[entity]staircase
+
+階段
+%%%%
+[entity]drain
+
+排水溝
+%%%%
+[entity]gateway
+
+門
+%%%%
+[entity]tunnel
+
+トンネル
+%%%%
+[entity]portal
+
+ポータル
+%%%%
+# ---- lm_trove.lua(宝の埋蔵庫のポータル)
+# 説明画面(feature_description_long)
+This portal requires the presence of %s to function.
+
+このポータルを動かすには%sを持っている必要がある。
+%%%%
+This portal needs %s to function.
+
+このポータルを動かすには%sを手放す必要がある。
+%%%%
+The portal is engraved with runes symbolizing the primacy of the material over the divine. Those who enter it may find riches, but when they return, they will find that whatever gods they held dear have forgotten them in their absence.
+
+このポータルには神性に対する物性の優越を意味するルーンが刻まれている。それをくぐり抜けた者は財宝を目にするが、戻った時に自らが信仰していた神に忘れ去られてしまったことに気付くだろう。
+%%%%
+# %s は災厄の名前(crawl.bane_name。「倦怠の災厄」など)。後ろに災厄の説明が続く
+The portal is guarded from trespassers with a powerful curse. All who enter will suffer the %s:
+
+このポータルは強力な呪いによって侵入者から守られている。入った者は誰であれ%sを受ける：
+%%%%
+The portal is warded with dark magic that will temporarily drain a significant fraction of the maximum health of whoever enters it.
+
+このポータルは闇の魔術で守られており、入った者は誰であれ一時的に最大体力のかなりの部分を奪われる。
+%%%%
+# ダンジョンの概要の注記(「(〜)」で表示)
+show %s
+
+%sを見せる
+%%%%
+give %s
+
+%sを渡す
+%%%%
+lose all piety
+
+信仰値を全て失う
+%%%%
+suffer the %s
+
+%sを受ける
+%%%%
+suffer draining
+
+衰弱を受ける
+%%%%
+# 通行料のアイテム名(item_name)
+demon weapon
+
+悪魔の武器
+%%%%
+# 入るときの確認とメッセージ
+This trove requires the presence of %s to function. Show it the item?
+
+この埋蔵庫を動かすには%sを呈示する必要があります。呈示しますか？
+%%%%
+This trove needs %s to function. Give it the item?
+
+この埋蔵庫を動かすには%sが必要です。手放しますか？
+%%%%
+The portal draws power from the presence of the item and buzzes to life!
+
+ポータルはアイテムから力を吸収し、うなりを上げて作動を開始した！
+%%%%
+You don't have %s with you.
+
+あなたはまだ%sを手にしていない。
+%%%%
+You don't have the item to give!
+
+あなたは渡すべきアイテムを持っていない！
+%%%%
+You must unequip the item first!
+
+まずはそのアイテムの装備を外さなければならない！
+%%%%
+The portal accepts the item and buzzes to life!
+
+ポータルはアイテムを飲み込み、うなりを上げて作動を開始した！
+%%%%
+This portal proclaims the superiority of the material over the divine; entrants will become Ostracised and temporarily lose all standing with their god.\nEnter anyway?
+
+このポータルは神性に対する物性の優越を宣言している。入った者は追放状態となり、一時的に信仰する神からの評価をすべて失う。
+それでも入りますか？
+%%%%
+# 1 つ目の %s は災厄の名前、2 つ目は経験レベルの数
+The portal is guarded from trespassers with a powerful curse. All who enter will suffer the %s for %s XL. Enter anyway?
+
+このポータルは強力な呪いによって侵入者から守られている。入った者は誰であれ%sを受け、それは経験レベル%s分続く。それでも入りますか？
+%%%%
+The portal is warded with dark magic that will temporarily drain a significant fraction of the maximum health of whoever enters it. Enter anyway?
+
+このポータルは闇の魔術で守られており、入った者は誰であれ一時的に最大体力のかなりの部分を奪われる。それでも入りますか？
+%%%%
+# 災厄を受けた理由(ノートに英語で残り、notes.cc で訳す)
+Entering a Trove
+
+埋蔵庫への進入
+%%%%
+# ノート。1 つ目の %s は toll_desc(下)または "at %s"、2 つ目はアイテム名
+# 「あなたは宝の埋蔵庫に入るため、2巻の獲得の巻物を通行料として支払った」
+%s: you paid a toll of %s
+
+あなたは%s、%sを通行料として支払った
+%%%%
+%s: you showed %s
+
+あなたは%s、%sを見せた
+%%%%
+# toll_desc(des の trove.des から英語で渡される)
+to enter a treasure trove
+
+宝の埋蔵庫に入るため
+%%%%
+# toll_desc がないとき。%s はポータルの地形名
+[toll desc]at %s
+
+%sで
+%%%%

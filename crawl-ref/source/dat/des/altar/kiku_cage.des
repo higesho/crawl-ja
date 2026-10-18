@@ -32,7 +32,7 @@ function callback.tgw_kikubaaqudgha_kill_human(data, triggerable,
     end
         dgn.place_cloud(_x, _y, "foul pestilence", 4)
         crawl.god_speaks("Kikubaaqudgha",
-                         "Miasma emanates from the human's flesh.")
+                         crawl.jtrans("Miasma emanates from the human's flesh."))
     data.triggered = true
   end
 end
@@ -46,7 +46,7 @@ function callback.tgw_kikubaaqudgha_zombify(data, triggerable,
 
   dgn.create_monster(pt[1].x, pt[1].y, "generate_awake human zombie")
   if you.see_cell(pt[1].x, pt[1].y) then
-    crawl.god_speaks("Kikubaaqudgha", "The human rises from the dead!")
+    crawl.god_speaks("Kikubaaqudgha", crawl.jtrans("The human rises from the dead!"))
   end
 end
 }}

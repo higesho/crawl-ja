@@ -47,13 +47,18 @@
   表示側(hiscores の `death_name_j()`)で訳す。プレイヤー自身は "you"。
 
 ## des(dat/des)と dlua(dat/dlua)
-- vault の扉 marker(`door_description_*`、"veto_reason", "door_verb_already_open")と
-  `feat_renames` は英語のまま(directn.cc / movement.cc は訳があれば訳す作り)。
-- lm_trove.lua の `it.name()`、lm_timed.lua の `feature_desc_at` と "vanishes" などの文は
-  英語の名前・文を表示している。`name_j()`、`feature_desc_at_j()`、`crawl.jtrans` に替える。
-  `crawl.bane_name` は日本語を返すので `crawl.jtrans("… %s …", crawl.bane_name(…))` の形で。
-- dlua/des の名前比較(lm_trig、test.lua、trog_wizard.des、trog_burn_book.des、trove.des、
-  iter.lua)は英語の値が前提(第 5 陣で英語に戻した)。
+- 方式: des は英語のまま dlua に渡し、dlua が受け取る側で `crawl.jtrans` する。訳は
+  jtrans/des.txt(des の文と `[feature]` の地形名)と jtrans/dlua.txt(timed_msg の verb /
+  noisemaker / ranges、timed_marker の entity、trove の toll_desc をタグ付きで)。
+  des に verb・noisemaker・ranges・entity の新しい値を足すときは dlua.txt にも足す。
+- movement.cc の `veto_reason` と `door_verb_already_open` は訳さずに `mpr` している
+  (今は sprint_mu.des 側で包んでいる。movement.cc で `jtrans` をかければ des 側は不要)。
+- des の MONS の `name:`(bag_of_meat など独自のモンスター名)と、KFEAT の店名
+  (name:Gozag type:Platinum suffix:Reserve など。shopping.cc 側)は未対応。
+- dat 以下の .lua / .des に日本語(非 ASCII)を書いてよい。BOM なしのファイルは
+  unicode.cc の FileLineInput が UTF-8 として正しければそのまま読む(第 6 陣で修正。
+  それ以前は日本語版 Windows で CP932 として読まれ、Lua の構文エラーになった)。
+- Lua の構文確認は `crawl.exe -builddb -rc <rc>`(DB と迷宮定義を作って終了。エラーは標準出力)。
 
 ## DB テキスト(dat/database/ja, dat/descript/ja)
 進み具合は `python -I ja-tools/dbtools.py status` で見る。主な未訳・注意点:
@@ -70,7 +75,6 @@
   (`_walk_on_decor`。`@your_weapon@` / `@your_hands@` には英語名を入れている)、
   `hell_effect_noisy` / `hell_effect_quiet`、呪文失敗時の文(spl-miscast の `_do_msg`)、
   `summon_horrible_things` の ja を確認・作成する。spl-miscast.cc の "'s body" 除去は英文向け。
-- descript/ja/mutations.txt にマクレブの印 9 種("Mark of … mutation")の説明がない。
 - descript/ja/hints.txt はほぼ未訳。神の説明画面の能力・神罰の段落も未訳がある。
 - descript/ja/branches.txt の Lair などに 0.34 で変わった旧訳(「8の階層」など)が残る。
 - descript/ja/backgrounds.txt の Artificer「熟練工」・Warper「転移術師」を職業名

@@ -98,9 +98,9 @@ function MonsterOnTrigger:on_trigger(triggerer, marker, ev)
   if (not dgn.create_monster(x, y, self.new_monster)) then
     return
   elseif self.message_seen ~= "" and see_cell then
-    crawl.mpr(self.message_seen)
+    crawl.mpr(crawl.jtrans(self.message_seen))
   elseif self.message_unseen ~= "" and not see_cell then
-    crawl.mpr(self.message_unseen)
+    crawl.mpr(crawl.jtrans(self.message_unseen))
   end
 
   self:remove(marker)

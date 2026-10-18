@@ -357,9 +357,9 @@ function warning_machine_warning_func(self, fog_machine, triggerer, marker, ev)
   then
     if not self.warning_done then
       if self.see_message and self.see_function(point.x, point.y) then
-        crawl.mpr(self.see_message, "warning")
+        crawl.mpr(crawl.jtrans(self.see_message), "warning")
       elseif self.cantsee_message then
-        crawl.mpr(self.cantsee_message, "warning")
+        crawl.mpr(crawl.jtrans(self.cantsee_message), "warning")
       end
       self.warning_done = true
     end
@@ -391,9 +391,9 @@ function trigger_machine_trigger_func(self, fog_machine, triggerer, marker, ev)
   if triggerer.type == "turn" and triggerer.sub_type == "countdown" then
     channel = self.channel or ""
     if self.see_message ~= nil and self.see_function(point.x, point.y) then
-      crawl.mpr(self.see_message, channel)
+      crawl.mpr(crawl.jtrans(self.see_message), channel)
     elseif self.cantsee_message ~= nil then
-      crawl.mpr(self.cantsee_message, channel)
+      crawl.mpr(crawl.jtrans(self.cantsee_message), channel)
     end
   end
 end
@@ -433,9 +433,9 @@ function tw_machine_tw_func(self, fog_machine, triggerer, marker, ev)
   then
     if self.warning_done ~= true then
       if self.warning_see_message and self.see_function(point.x, point.y) then
-        crawl.mpr(self.warning_see_message, "warning")
+        crawl.mpr(crawl.jtrans(self.warning_see_message), "warning")
       elseif self.warning_cantsee_message ~= nil then
-        crawl.mpr(self.warning_cantsee_message, "warning")
+        crawl.mpr(crawl.jtrans(self.warning_cantsee_message), "warning")
       end
       self.warning_done = true
     end
@@ -443,9 +443,9 @@ function tw_machine_tw_func(self, fog_machine, triggerer, marker, ev)
     self.warning_done = false
     channel = self.trigger_channel or ""
     if self.trigger_see_message and self.see_function(point.x, point.y) then
-      crawl.mpr(self.trigger_see_message, channel)
+      crawl.mpr(crawl.jtrans(self.trigger_see_message), channel)
     elseif self.trigger_cantsee_message ~= nil then
-      crawl.mpr(self.trigger_cantsee_message, channel)
+      crawl.mpr(crawl.jtrans(self.trigger_cantsee_message), channel)
     end
   end
 end

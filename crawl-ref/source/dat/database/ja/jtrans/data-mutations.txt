@@ -3274,36 +3274,36 @@ You have regained your courage.
 # MUT_NO_DODGING
 inability to train dodging
 
-回避の訓練不可
+躱し身の訓練不可
 %%%%
 You cannot train Dodging skill.
 
-あなたは回避スキルを鍛えることができない。
+あなたは躱し身スキルを鍛えることができない。
 %%%%
 You can no longer train Dodging skill.
 
-あなたはもはや回避スキルを鍛えることができない。
+あなたはもはや躱し身スキルを鍛えることができない。
 %%%%
 You can once more train Dodging skill.
 
-あなたはふたたび回避スキルを鍛えることができるようになった。
+あなたはふたたび躱し身スキルを鍛えることができるようになった。
 %%%%
 # MUT_NO_ARMOUR_SKILL
 inability to train armour
 
-鎧の訓練不可
+甲冑の訓練不可
 %%%%
 You cannot train Armour skill.
 
-あなたは鎧スキルを鍛えることができない。
+あなたは甲冑スキルを鍛えることができない。
 %%%%
 You can no longer train Armour skill.
 
-あなたはもはや鎧スキルを鍛えることができない。
+あなたはもはや甲冑スキルを鍛えることができない。
 %%%%
 You can once more train Armour skill.
 
-あなたはふたたび鎧スキルを鍛えることができるようになった。
+あなたはふたたび甲冑スキルを鍛えることができるようになった。
 %%%%
 # MUT_NO_AIR_MAGIC
 no air magic
@@ -3342,36 +3342,36 @@ You can once more study and cast Conjurations magic.
 # MUT_NO_EARTH_MAGIC
 no earth magic
 
-大地の魔術不可
+地の魔術不可
 %%%%
 You cannot study or cast Earth magic.
 
-あなたは大地の魔術を唱えることができない。
+あなたは地の魔術を唱えることができない。
 %%%%
 You can no longer study or cast Earth magic.
 
-あなたはもはや大地の魔術を唱えることができない。
+あなたはもはや地の魔術を唱えることができない。
 %%%%
 You can once more study and cast Earth magic.
 
-あなたはふたたび大地の魔術を唱えることができるようになった。
+あなたはふたたび地の魔術を唱えることができるようになった。
 %%%%
 # MUT_NO_FIRE_MAGIC
 no fire magic
 
-火の魔術不可
+炎の魔術不可
 %%%%
 You cannot study or cast Fire magic.
 
-あなたは火の魔術を唱えることができない。
+あなたは炎の魔術を唱えることができない。
 %%%%
 You can no longer study or cast Fire magic.
 
-あなたはもはや火の魔術を唱えることができない。
+あなたはもはや炎の魔術を唱えることができない。
 %%%%
 You can once more study and cast Fire magic.
 
-あなたはふたたび火の魔術を唱えることができるようになった。
+あなたはふたたび炎の魔術を唱えることができるようになった。
 %%%%
 # MUT_NO_HEXES_MAGIC
 no hexes magic
@@ -3444,19 +3444,19 @@ You can once more study and cast Alchemy magic.
 # MUT_NO_FORGECRAFT_MAGIC
 no forgecraft magic
 
-鍛冶術不可
+鍛造術不可
 %%%%
 You cannot study or cast Forgecraft magic.
 
-あなたは鍛冶術の呪文を習得することも唱えることもできない。
+あなたは鍛造術の呪文を習得することも唱えることもできない。
 %%%%
 You can no longer study or cast Forgecraft magic.
 
-あなたはもう鍛冶術の呪文を習得することも唱えることもできない。
+あなたはもう鍛造術の呪文を習得することも唱えることもできない。
 %%%%
 You can once more study and cast Forgecraft magic.
 
-あなたは再び鍛冶術の呪文を習得し、唱えることができるようになった。
+あなたは再び鍛造術の呪文を習得し、唱えることができるようになった。
 %%%%
 # MUT_NO_SUMMONING_MAGIC
 no summoning magic

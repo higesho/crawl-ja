@@ -28,9 +28,9 @@ function crypt_drop_grates(data, triggerable, triggerer, marker, ev)
         end
     end
     if did_change then
-      crawl.mpr("There is a click. Suddenly, the grates are dropped!", "warning")
+      crawl.mpr(crawl.jtrans("There is a click. Suddenly, the grates are dropped!"), "warning")
     else
-      crawl.mpr("There is a click. Nothing appears to happen.", "warning")
+      crawl.mpr(crawl.jtrans("There is a click. Nothing appears to happen."), "warning")
     end
 end
 
@@ -43,11 +43,11 @@ function callback.grunt_crypt_arrival_guards_awaken(data,triggerable,trigger,mar
         end
     end
     if seen then
-        crawl.mpr("Something awakens from inside the sarcophagi!", "warning")
+        crawl.mpr(crawl.jtrans("Something awakens from inside the sarcophagi!"), "warning")
     elseif you.silenced() then
-        crawl.mpr("The ground shakes!", "warning")
+        crawl.mpr(crawl.jtrans("The ground shakes!"), "warning")
     else
-        crawl.mpr("You hear grinding stone!", "warning");
+        crawl.mpr(crawl.jtrans("You hear grinding stone!"), "warning");
     end
     for replica in iter.replica_iterator("trap_sarcophagus", 1) do
         if dgn.feature_name(dgn.grid(replica.x, replica.y)) == "granite_statue" then

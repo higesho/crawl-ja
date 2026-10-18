@@ -726,7 +726,7 @@
 %%%%
 [title]Earth Mage
 
-大地の魔術師
+地の魔術師
 %%%%
 [title]Metallomancer
 

@@ -59,7 +59,7 @@ function callback.tgw_lugonu_bribe_lugonu_item (data, triggerable,
     if item[you.god()] ~= nil then
       dgn.place_cloud(x, y, "purple smoke", 1)
       dgn.create_item(x, y, item[you.god()])
-      crawl.god_speaks("Lugonu", "An item emerges from the Abyss! Perhaps it is an incitement to worship... or even an insult?")
+      crawl.god_speaks("Lugonu", crawl.jtrans("An item emerges from the Abyss! Perhaps it is an incitement to worship... or even an insult?"))
     end
   end
 end

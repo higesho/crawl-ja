@@ -31,9 +31,9 @@ function callback.grunt_gauntlet_trap_activate(data,triggerable,trigger,marker,e
         dgn.terrain_changed(replica.x, replica.y, "stone_wall", false)
         dgn.colour_at(replica.x, replica.y, "lightmagenta")
     end
-    crawl.mpr("You hear an unearthly scream, and the grinding of stone!",
+    crawl.mpr(crawl.jtrans("You hear an unearthly scream, and the grinding of stone!"),
              "warning")
-    crawl.mpr("The path is suddenly blocked!", "warning")
+    crawl.mpr(crawl.jtrans("The path is suddenly blocked!"), "warning")
     end
 end
 

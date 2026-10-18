@@ -405,7 +405,7 @@ You sublimate a sliver of %s essence and reconstitute it in ice.
 %%%%
 Something prevents your mortar from forming!
 
-何かが臼砲の形成を妨げた！
+何かが迫撃砲の形成を妨げた！
 %%%%
 With a deafening crack, the ground splits apart in the path of %s chthonic artillery!
 

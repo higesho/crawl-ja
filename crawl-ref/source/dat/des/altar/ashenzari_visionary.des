@@ -4,25 +4,23 @@ function callback.grunt_ashenzari_visionary_reveal(data,triggerable,triggerer,ma
         return
     end
     data.trig = true
-    crawl.god_speaks("Ashenzari", "Ashenzari says: See what I see, mortal...")
+    crawl.god_speaks("Ashenzari", crawl.jtrans("Ashenzari says: See what I see, mortal..."))
     for replica in iter.replica_iterator("revealing_wall", 1) do
         dgn.terrain_changed(replica.x, replica.y, "clear_stone_wall", false)
     end
-    local msg = ""
-    if #data.branches > 0 then
-      msg = " of"
-      for i, name in ipairs(data.branches) do
-        if i == 1 then
-        elseif i == #data.branches then
-          msg = msg .. " and"
-        else
-          msg = msg .. ","
-        end
-        msg = msg .. " the " .. name
-      end
-      crawl.take_note("Saw a vision" .. msg .. ".")
+    -- 日本語: 支部名を「と」でつなぐ
+    local names_j = {}
+    for i, name in ipairs(data.branches) do
+      table.insert(names_j, crawl.tagged_jtrans("[branch]", name))
     end
-    crawl.god_speaks("Ashenzari", "You have a sudden vision" .. msg .. "!")
+    if #names_j > 0 then
+      local msg = table.concat(names_j, "と")
+      crawl.take_note(crawl.jtrans("Saw a vision of %s.", msg))
+      crawl.god_speaks("Ashenzari",
+                       crawl.jtrans("You have a sudden vision of %s!", msg))
+    else
+      crawl.god_speaks("Ashenzari", crawl.jtrans("You have a sudden vision!"))
+    end
 end
 }}
 

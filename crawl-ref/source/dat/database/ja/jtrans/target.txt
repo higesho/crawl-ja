@@ -146,5 +146,5 @@ You must target an enemy who is afraid.
 %%%%
 Your paragon could not survive being deployed there.
 
-あなたの模範者はそこに配置されると生き延びられない。
+あなたの傑作はそこに配置されると生き延びられない。
 %%%%

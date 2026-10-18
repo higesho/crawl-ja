@@ -74,7 +74,7 @@ function callback.grunt_zot_stairs_roulette_door_open(data, triggerable,
 
   data.triggered = true
 
-  crawl.mpr("Several panes of glass retract into the floor.")
+  crawl.mpr(crawl.jtrans("Several panes of glass retract into the floor."))
   for p in iter.replica_iterator("hidden_door", 1) do
     dgn.terrain_changed(p.x, p.y, "floor", false)
   end
@@ -84,9 +84,9 @@ function callback.grunt_zot_stairs_roulette_teleport(data, triggerable,
                                                      triggerer, marker, ev)
   replica = dgn.find_marker_positions_by_prop("dest", data.dest)
   if you.teleport_to(replica[1].x, replica[1].y) then
-      crawl.mpr("Your surroundings suddenly seem different.")
+      crawl.mpr(crawl.jtrans("Your surroundings suddenly seem different."))
   else
-      crawl.mpr("There is a strange hissing noise.")
+      crawl.mpr(crawl.jtrans("There is a strange hissing noise."))
   end
 end
 
@@ -98,9 +98,9 @@ function teleporter_serial_action_fn
 
   -- third parameter is whether to teleport whatever is on the receiving pad
   if you.teleport_to(my_replicas[1].x, my_replicas[1].y, false) then
-    crawl.mpr("Your surroundings suddenly seem different!")
+    crawl.mpr(crawl.jtrans("Your surroundings suddenly seem different!"))
   else
-    crawl.mpr("There is a strange hissing noise.")
+    crawl.mpr(crawl.jtrans("There is a strange hissing noise."))
   end
 end
 
@@ -116,7 +116,7 @@ function callback.amethyst_srp_altar(data, triggerable, triggerer, marker, ev)
   local replicas = dgn.find_marker_positions_by_prop("teleport_spot",
                                                      data.teleport_spot)
   you.teleport_to(replicas[1].x, replicas[1].y)
-  crawl.mpr("Your surroundings suddenly seem different.")
+  crawl.mpr(crawl.jtrans("Your surroundings suddenly seem different."))
 end
 
 -- Allow people with the ancient champion vault to still clear it.
@@ -142,9 +142,9 @@ function callback.ancient_champions_mu_skele_death(data, triggerable,
   dgn.terrain_changed(wall_pos.x, wall_pos.y, "floor", false)
 
   if you.see_cell(wall_pos.x, wall_pos.y) then
-    crawl.mpr("As the champion is destroyed, a metal wall slides away!")
+    crawl.mpr(crawl.jtrans("As the champion is destroyed, a metal wall slides away!"))
   else
-    crawl.mpr("As the champion is destroyed, you hear a distant grinding noise.")
+    crawl.mpr(crawl.jtrans("As the champion is destroyed, you hear a distant grinding noise."))
   end
 end
 
@@ -169,7 +169,7 @@ function callback.beogh_warn_stepped(data, triggerable, triggerer, marker, ev)
   local x, y = marker:pos()
 
   if you.god() == "Beogh" or you.god() == "No God" then
-     crawl.god_speaks("Beogh" , "Your presence is welcomed at the altar of Beogh.")
+     crawl.god_speaks("Beogh" , crawl.jtrans("Your presence is welcomed at the altar of Beogh."))
      dgn.grid(x, y, "floor")
   end
 end
@@ -184,7 +184,7 @@ function callback.beogh_trap_stepped(data, triggerable, triggerer, marker, ev)
   elseif you.god() == "Beogh" or you.god() == "No God" then
     dgn.grid(x, y, "floor")
   else
-    crawl.god_speaks("Beogh", "Beogh's servants are called upon to defend the altar!")
+    crawl.god_speaks("Beogh", crawl.jtrans("Beogh's servants are called upon to defend the altar!"))
     for replica in iter.replica_iterator("bridge", 1) do
       dgn.terrain_changed(replica.x, replica.y, "floor", false)
     end
@@ -214,25 +214,25 @@ function callback.grunt_nemelex_gamble_start(data,triggerable,triggerer,marker,e
     if crawl.coinflip() then
         replica = dgn.find_marker_positions_by_prop("prize", 1)
         you.teleport_to(replica[1].x, replica[1].y)
-        crawl.god_speaks("Nemelex Xobeh", "Nemelex Xobeh says, \"You win!\"")
+        crawl.god_speaks("Nemelex Xobeh", crawl.jtrans("Nemelex Xobeh says, \"You win!\""))
     else
         replica = dgn.find_marker_positions_by_prop("peril", 1)
         you.teleport_to(replica[1].x, replica[1].y)
-        crawl.god_speaks("Nemelex Xobeh", "Nemelex Xobeh says, \"You lose!\"")
+        crawl.god_speaks("Nemelex Xobeh", crawl.jtrans("Nemelex Xobeh says, \"You lose!\""))
     end
-    crawl.mpr("Your surroundings suddenly seem different.")
+    crawl.mpr(crawl.jtrans("Your surroundings suddenly seem different."))
 end
 
 function callback.grunt_nemelex_gamble_finish1(data,triggerable,triggerer,marker,ev)
     replica = dgn.find_marker_positions_by_prop("exit", 1)
     you.teleport_to(replica[1].x, replica[1].y)
-    crawl.mpr("Your surroundings suddenly seem different.")
+    crawl.mpr(crawl.jtrans("Your surroundings suddenly seem different."))
 end
 
 function callback.grunt_nemelex_gamble_finish2(data,triggerable,triggerer,marker,ev)
     replica = dgn.find_marker_positions_by_prop("exit", 1)
     you.teleport_to(replica[1].x, replica[1].y)
-    crawl.mpr("Your surroundings suddenly seem different.")
+    crawl.mpr(crawl.jtrans("Your surroundings suddenly seem different."))
 end
 
 function callback.grunt_nemelex_gamble_expire(data,triggerable,triggerer,marker,ev)
@@ -250,7 +250,7 @@ function callback.grunt_nemelex_gamble_expire(data,triggerable,triggerer,marker,
     replica = dgn.find_marker_positions_by_prop("start_tele", 1)
     dgn.terrain_changed(replica[1].x, replica[1].y, "floor", false)
     if (you.see_cell(replica[1].x, replica[1].y)) then
-        crawl.mpr("<white>The teleporter glows with a rainbow of weird colours and disappears.</white>")
+        crawl.mpr(crawl.jtrans("<white>The teleporter glows with a rainbow of weird colours and disappears.</white>"))
     end
 end
 
@@ -261,9 +261,9 @@ function teleporter_vault_action_fn(data, triggerable, triggerer, marker, ev)
                                                     data.teleport_spot)
 
     if you.teleport_to(my_replicas[1].x, my_replicas[1].y, true) then
-        crawl.mpr("Your surroundings suddenly seem different!")
+        crawl.mpr(crawl.jtrans("Your surroundings suddenly seem different!"))
     else
-        crawl.mpr("There is a strange hissing noise.")
+        crawl.mpr(crawl.jtrans("There is a strange hissing noise."))
     end
 end
 
@@ -275,7 +275,7 @@ function callback.ice_cave_statue_garden_teleporter(data, triggerable,
     data.teleport_spot)
 
   you.teleport_to(my_replicas[1].x, my_replicas[1].y)
-  crawl.mpr("Your surroundings suddenly seem different!")
+  crawl.mpr(crawl.jtrans("Your surroundings suddenly seem different!"))
 end
 
 function teleporter_golubria_switch_fn(data, triggerable, triggerer, marker, ev)
@@ -284,9 +284,9 @@ function teleporter_golubria_switch_fn(data, triggerable, triggerer, marker, ev)
                                                 data.teleport_spot)
 
   if you.teleport_to(my_replicas[1].x, my_replicas[1].y, true) then
-    crawl.mpr("Your surroundings suddenly seem different!")
+    crawl.mpr(crawl.jtrans("Your surroundings suddenly seem different!"))
   else
-    crawl.mpr("There is a strange hissing noise.")
+    crawl.mpr(crawl.jtrans("There is a strange hissing noise."))
   end
 end
 
@@ -325,7 +325,7 @@ function callback.grunt_zot_stairs_overgrown_start(data, triggerable,
     return
   end
 
-  crawl.mpr("You have a sense of imminent foreboding.", "warning")
+  crawl.mpr(crawl.jtrans("You have a sense of imminent foreboding."), "warning")
   dgn.persist.grunt_zot_stairs_overgrown_started = true
 end
 
@@ -372,9 +372,9 @@ function callback.grunt_zot_stairs_overgrown_oklobify(data, triggerable,
 
   if not data.warned then
     data.warned = true
-    crawl.mpr("One of the plants suddenly grows acid sacs!", "warning")
+    crawl.mpr(crawl.jtrans("One of the plants suddenly grows acid sacs!"), "warning")
   else
-    crawl.mpr("Another plant grows acid sacs!", "warning")
+    crawl.mpr(crawl.jtrans("Another plant grows acid sacs!"), "warning")
   end
 end
 

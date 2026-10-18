@@ -10,10 +10,11 @@ function callback.nemelex_gamble_announce(data,triggerable,triggerer,marker,ev)
             "The prize could be yours... at the risk of your life!",
             "Care for a little wager, mortal?"
         }
-        crawl.god_speaks("Nemelex Xobeh", "Nemelex Xobeh says: " ..
-                         msg[crawl.random_range(1, 4)])
-        crawl.god_speaks("Nemelex Xobeh", "\"Beware! This is a limited " ..
-                         "time offer!\"")
+        crawl.god_speaks("Nemelex Xobeh",
+                         crawl.jtrans("Nemelex Xobeh says: %s",
+                                      crawl.jtrans(msg[crawl.random_range(1, 4)])))
+        crawl.god_speaks("Nemelex Xobeh", crawl.jtrans("\"Beware! This is a limited " ..
+                         "time offer!\""))
     end
 end
 
@@ -22,7 +23,7 @@ function nemelex_gamble_make_transporter(exit_prop, cleanup_prop)
     dest_loc = dgn.find_marker_positions_by_prop("the_gamble_entry", 1)[1]
     dgn.place_transporter(trans_loc.x, trans_loc.y, dest_loc.x, dest_loc.y)
     if (you.see_cell(trans_loc.x, trans_loc.y)) then
-        crawl.mpr("A transporter appears.")
+        crawl.mpr(crawl.jtrans("A transporter appears."))
     end
     cleanup_loc = dgn.find_marker_positions_by_prop(cleanup_prop, 1)[1]
     dgn.terrain_changed(cleanup_loc.x, cleanup_loc.y, "floor", false)
@@ -32,8 +33,8 @@ function nemelex_gamble_remove_transporter()
     replica = dgn.find_marker_positions_by_prop("the_gamble_entry", 1)
     dgn.terrain_changed(replica[1].x, replica[1].y, "floor", false)
     if (you.see_cell(replica[1].x, replica[1].y)) then
-        crawl.mpr("<white>The transporter glows with a rainbow of weird " ..
-                  "colours and disappears.</white>")
+        crawl.mpr(crawl.jtrans("<white>The transporter glows with a rainbow of weird " ..
+                  "colours and disappears.</white>"))
     end
 end
 
@@ -42,7 +43,7 @@ function callback.nemelex_gamble_prize(data,triggerable,triggerer,marker,ev)
         return
     end
 
-    crawl.god_speaks("Nemelex Xobeh", "Nemelex Xobeh says: You win!")
+    crawl.god_speaks("Nemelex Xobeh", crawl.jtrans("Nemelex Xobeh says: You win!"))
     nemelex_gamble_make_transporter("the_gamble_prize",
                                     "the_gamble_peril_landing")
     dgn.persist.nemelex_gamble_triggered = true
@@ -53,7 +54,7 @@ function callback.nemelex_gamble_peril(data,triggerable,triggerer,marker,ev)
         return
     end
 
-    crawl.god_speaks("Nemelex Xobeh", "Nemelex Xobeh says: You lose!")
+    crawl.god_speaks("Nemelex Xobeh", crawl.jtrans("Nemelex Xobeh says: You lose!"))
     nemelex_gamble_make_transporter("the_gamble_peril",
                                     "the_gamble_prize_landing")
     dgn.persist.nemelex_gamble_triggered = true

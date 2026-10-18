@@ -304,6 +304,25 @@ FileLineInput::~FileLineInput()
         fclose(f);
 }
 
+// UTF-8 として正しいバイト列か(ASCII だけの行も真)
+static bool _is_valid_utf8(const char *s)
+{
+    while (*s)
+    {
+        const unsigned char c = *s++;
+        const int tail = c < 0x80 ? 0
+                       : (c & 0xe0) == 0xc0 ? 1
+                       : (c & 0xf0) == 0xe0 ? 2
+                       : (c & 0xf8) == 0xf0 ? 3 : -1;
+        if (tail < 0)
+            return false;
+        for (int i = 0; i < tail; i++)
+            if ((*s++ & 0xc0) != 0x80)
+                return false;
+    }
+    return true;
+}
+
 string FileLineInput::get_line()
 {
     ASSERT(f);
@@ -330,6 +349,11 @@ string FileLineInput::get_line()
                 break;
             }
         } while (!seen_eof);
+        // BOM のないファイル(dat の Lua・des・rc など)は、UTF-8 として正しければ
+        // そのまま使う。日本語版の Windows ではシステムの文字コードが CP932 なので、
+        // mb_to_utf8() だけだと UTF-8 の日本語が壊れて Lua の構文エラーになる。
+        if (_is_valid_utf8(out.c_str()))
+            return out;
         return mb_to_utf8(out.c_str());
 
     case BOM_UTF8:

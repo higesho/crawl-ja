@@ -33,11 +33,13 @@ function pan_lord_epilogue(name)
         ['Gloorx Vloq'] = "dark"
     }
 
-    crawl.mpr(msgs[name], "warning")
-    crawl.mpr("The mighty Pandemonium lord " .. name .. " resides here.", "warning")
+    crawl.mpr(crawl.jtrans(msgs[name]), "warning")
+    crawl.mpr(crawl.jtrans("The mighty Pandemonium lord %s resides here.",
+                           crawl.jtrans(name)), "warning")
     -- Counterpart to branch_rune_desc from lookup-help.cc
-    crawl.mpr("They guard the " .. runes[name] .. " rune of Zot.")
-    crawl.take_note('Entered the realm of ' .. name .. '.')
+    crawl.mpr(crawl.jtrans("They guard the %s.",
+                           crawl.jtrans(runes[name] .. " rune of Zot")))
+    crawl.take_note(crawl.jtrans('Entered the realm of %s.', crawl.jtrans(name)))
     crawl.mark_milestone('br.enter', 'entered the realm of ' .. name .. '.', "")
 end
 
@@ -277,11 +279,11 @@ end
 
 function pan_declare_demonic_rune(holy)
   if holy then
-    crawl.mpr("The tension of great conflict fills the air!", "warning")
-    crawl.mpr("The demonic rune of Zot may be found here.")
+    crawl.mpr(crawl.jtrans("The tension of great conflict fills the air!"), "warning")
+    crawl.mpr(crawl.jtrans("The demonic rune of Zot may be found here."))
   else
-    crawl.mpr("A powerful Pandemonium lord resides here.", "warning")
-    crawl.mpr("It guards the demonic rune of Zot.")
+    crawl.mpr(crawl.jtrans("A powerful Pandemonium lord resides here."), "warning")
+    crawl.mpr(crawl.jtrans("It guards the demonic rune of Zot."))
   end
 end
 
@@ -2662,9 +2664,9 @@ FTILE:   HJKLMNOPQRSTUYZcx-+_. = floor_limestone
 # lords' levels.
 epilogue {{
 if not you.have_rune("demonic") then
-    crawl.mpr("A powerful Pandemonium lord resides here.", "warning")
-    crawl.mpr("<yellow>A demonic rune of Zot can be found here... " ..
-              "for a price.</yellow>")
+    crawl.mpr(crawl.jtrans("A powerful Pandemonium lord resides here."), "warning")
+    crawl.mpr(crawl.jtrans("<yellow>A demonic rune of Zot can be found here... " ..
+              "for a price.</yellow>"))
 end
 }}
 MAP
@@ -3170,9 +3172,9 @@ local function swineherd_die(monster, killer_type, killer_index, silent, wizard)
   end
   dgn.grid(p.x, p.y, "floor")
   if (you.see_cell(p.x, p.y)) then
-    crawl.mpr("The grate goes up!")
+    crawl.mpr(crawl.jtrans("The grate goes up!"))
   else
-    crawl.mpr("You hear a sound of rusty metal sliding.")
+    crawl.mpr(crawl.jtrans("You hear a sound of rusty metal sliding."))
   end
 end
 }}

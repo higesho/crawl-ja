@@ -1,0 +1,302 @@
+%%%%
+flame cloud
+
+# en:
+#   A cloud of raging fire. Any creature not entirely immune to fire will be hurt
+#   by time spent in the flames.
+#
+#   Ranged cold attacks passing through the cloud are substantially reduced in
+#   range, dissipating the cloud in the process.
+#
+#   If placed near or over water, the heat will generate steam nearby.
+猛り狂う炎の雲。炎に完全な耐性を持たない生き物は、炎の中にいる間ダメージを受ける。
+
+雲を通過する遠距離の冷気攻撃は射程が大きく縮み、その過程で雲は消える。
+
+水の近くや上に生じると、その熱で近くに蒸気が発生する。
+%%%%
+noxious fumes cloud
+
+# en:
+#   A cloud of vile, choking fumes. Any creature spending time in it will be at
+#   risk of becoming confused by the gases, unless resistant to poison. Tougher,
+#   more experienced creatures are less likely to be affected.
+吐き気を催す、息の詰まるような悪臭の雲。この中にいる生き物は、毒に耐性がない限り、ガスによって混乱するおそれがある。屈強で経験豊富な生き物ほど影響を受けにくい。
+%%%%
+freezing vapour cloud
+
+# en:
+#   A cloud of freezing air. Any creature not entirely immune to cold will be hurt
+#   by time spent inside.
+#
+#   Ranged fire attacks passing through the cloud are substantially reduced in
+#   range, dissipating the cloud in the process.
+凍てつく大気の雲。冷気に完全な耐性を持たない生き物は、中にいる間ダメージを受ける。
+
+雲を通過する遠距離の火炎攻撃は射程が大きく縮み、その過程で雲は消える。
+%%%%
+poison gas cloud
+
+# en:
+#   A cloud of deadly poison. Any creature without resistance to poison will be
+#   both poisoned and directly harmed by time spent in it.
+致死性の毒の雲。毒に耐性を持たない生き物は、中にいる間、毒に冒されるうえに直接ダメージも受ける。
+%%%%
+_smoke_cloud_
+
+# en:
+#   A cloud of coloured smoke. Harmless, except to the asthmatic.
+色のついた煙の雲。喘息持ちでもない限り無害だ。
+%%%%
+black smoke cloud
+
+# en:
+#   <_smoke_cloud_>
+<_smoke_cloud_>
+%%%%
+grey smoke cloud
+
+# en:
+#   <_smoke_cloud_>
+<_smoke_cloud_>
+%%%%
+blue smoke cloud
+
+# en:
+#   <_smoke_cloud_>
+<_smoke_cloud_>
+%%%%
+purple smoke cloud
+
+# en:
+#   <_smoke_cloud_>
+<_smoke_cloud_>
+%%%%
+translocational energy cloud
+
+# en:
+#   The remnant of some creature that was recently here but is no longer, banished
+#   nearby, across the level, or out of reality itself, all the way into the Abyss.
+#   Some wizards say these are a kind of "allergic reaction" the universe
+#   produces, in response to magic that warps space in impossible ways; a cosmic
+#   sneeze. Perhaps metaphysically gross, but otherwise harmless.
+つい先ほどまでここにいたが、もういない何らかの生き物の名残。近くへ、階層の反対側へ、あるいは現実の外のアビスにまで追放されたのだ。魔術師の中には、ありえない形で空間をねじ曲げる魔法に反応して宇宙が引き起こす一種の「アレルギー反応」――いわば宇宙のくしゃみ――だと言う者もいる。形而上学的には汚らしいかもしれないが、それ以外は無害だ。
+%%%%
+spreading flames cloud
+
+# en:
+#   A raging forest fire. Any creature not entirely immune to fire will be hurt by
+#   time spent in the flames. The flames will intermittently flare up and fill
+#   their surroundings with lesser fires. Any trees unfortunate enough to be nearby
+#   will often find themselves transformed into more kindling for the fire.
+#
+#   Ranged cold attacks passing through the cloud are substantially reduced in
+#   range, dissipating the cloud in the process.
+#
+#   If placed near or over water, the heat will generate steam nearby.
+猛り狂う森林火災。炎に完全な耐性を持たない生き物は、炎の中にいる間ダメージを受ける。炎は断続的に燃え上がり、周囲を小さな火で満たす。運悪く近くにある木は、たいてい炎のさらなる焚きつけになってしまう。
+
+雲を通過する遠距離の冷気攻撃は射程が大きく縮み、その過程で雲は消える。
+
+水の近くや上に生じると、その熱で近くに蒸気が発生する。
+%%%%
+steam cloud
+
+# en:
+#   A cloud of scalding steam. Creatures caught within will be mildly injured,
+#   and fire resistance will further reduce the damage.
+高熱の蒸気の雲。中に捕らわれた生き物は軽いダメージを受け、火炎への耐性があればダメージはさらに減る。
+%%%%
+ink cloud
+
+# en:
+#   A cloud of ink, completely filling the water.
+水中を完全に満たす墨の雲。
+%%%%
+calcifying dust cloud
+
+# en:
+#   A petrifying cloud. Creatures caught in the cloud for any length of time will
+#   find themselves turning to stone, though more experienced creatures may be able
+#   to resist the effects.
+石化をもたらす雲。少しの間でもこの雲に捕らわれた生き物は石に変わり始めるが、経験豊富な生き物はその効果に抵抗できることがある。
+%%%%
+blessed fire cloud
+
+# en:
+#   A cloud of divine fire, imbued with holy power. Those in the service of one of
+#   the good gods will be unaffected by it. All other creatures will be hurt by it,
+#   with undead and demonic creatures being greatly harmed.
+聖なる力が込められた、神の炎の雲。善なる神々のいずれかに仕える者は影響を受けない。それ以外の生き物はすべてダメージを受け、アンデッドや悪魔は大きなダメージを受ける。
+%%%%
+foul pestilence cloud
+
+# en:
+#   A cloud of foul pestilence. Any living being caught within it will find
+#   themselves poisoned, and may also find their movements slowed.
+疫病の瘴気の雲。中に捕らわれた生きている者は毒に冒され、動きが遅くなることもある。
+%%%%
+thin mist cloud
+
+# en:
+#   A cloud of thin mist. Atmospheric, but harmless.
+薄霧の雲。雰囲気はあるが、無害だ。
+%%%%
+seething chaos cloud
+
+# en:
+#   A cloud of seething chaos. A wide variety of unpredictable effects apply to
+#   those within the clouds, ranging from invisibility to berserk rage to complete
+#   paralysis.
+渦巻く混沌の雲。雲の中にいる者には、透明化からバーサーク、完全な麻痺まで、さまざまな予測のつかない効果が及ぶ。
+%%%%
+rain cloud
+
+# en:
+#   An extremely localised rainstorm. It may produce short-lived pools of shallow
+#   water. Beings made of fire are averse to spending much time in the rain.
+ごく局地的な暴風雨。一時的に浅い水たまりができることがある。炎でできた存在は、雨の中に長くいるのを嫌う。
+%%%%
+mutagenic fog cloud
+
+# en:
+#   A cloud of pure, unstructured magic, condensed into a scintillating mist;
+#   essentially toxic magical waste. Creatures venturing within will find
+#   themselves increasingly contaminated with magical radiation, sufficient amounts
+#   of which will inflict negative mutations when dissipating.
+きらめく霧へと凝縮した、純粋で無秩序な魔力の雲。いわば有毒な魔法の廃棄物である。中に踏み込んだ生き物は次第に魔法の放射能に汚染され、十分な量がたまると、それが消えていく際に有害な変異を引き起こす。
+%%%%
+magical condensation cloud
+
+# en:
+#   The wake of some highly concentrated magical energy, itself entirely harmless.
+何らかの高度に凝縮された魔力の名残。それ自体はまったく無害だ。
+%%%%
+whirling frost cloud
+
+# en:
+#   The winds of a polar vortex. It will deal severe damage to anyone within it,
+#   only partially mitigated by resistance to cold.
+極渦の風。中にいる者に深刻なダメージを与え、冷気への耐性があっても一部しか軽減できない。
+%%%%
+sparse dust cloud
+
+# en:
+#   A cloud of sparse dust. Atmospheric, but harmless.
+まばらな塵の雲。雰囲気はあるが、無害だ。
+%%%%
+spectral mist cloud
+
+# en:
+#   A cloud of spectral mist. It causes minor damage to all creatures other than
+#   the undead. Dangerous but short-lived spectral undead creatures will coalesce
+#   from the mist over time.
+霊体の霧の雲。アンデッド以外のすべての生き物に軽いダメージを与える。時間が経つと、危険だが短命な霊体のアンデッドが霧の中から形を成す。
+%%%%
+acidic fog cloud
+
+# en:
+#   A cloud of flesh-searing acid, which will deal damage and apply corrosion to
+#   those within it. Resistance to corrosion will provide immunity to its effects.
+肉を焼く酸の雲。中にいる者にダメージを与え、腐蝕させる。腐蝕への耐性があれば、その効果を受けない。
+%%%%
+thunder cloud
+
+# en:
+#   A dark storm cloud. It will intermittently strike those within with lightning,
+#   dealing severe damage to those without resistance to electricity.
+暗い嵐の雲。中にいる者に断続的に稲妻を落とし、電撃に耐性を持たない者に深刻なダメージを与える。
+%%%%
+excruciating misery cloud
+
+# en:
+#   A cloud of lingering despair and necromantic energy. Living creatures trapped
+#   within will repeatedly lose small fractions of their maximum health, though
+#   protection from negative energy will mitigate the effects.
+消えずに漂う絶望と死霊術のエネルギーの雲。中に捕らわれた生きている生き物は、最大体力のわずかな割合を繰り返し失うが、負のエネルギーへの耐性があれば効果は軽減される。
+%%%%
+white fluffiness cloud
+
+# en:
+#   A white, fluffy cloud. Not actually solid enough to use as a pillow, and yet
+#   still oddly peaceful.
+白くふわふわした雲。枕にできるほど固くはないが、それでもなぜか心が安らぐ。
+%%%%
+salt cloud
+
+# en:
+#   A cloud of rapidly whirling dust and salt. It stings the eyes and skin of any
+#   creatures caught within, although it is ultimately harmless.
+激しく渦巻く塵と塩の雲。中に捕らわれた生き物の目や肌をちくちくと刺すが、結局のところ無害だ。
+%%%%
+golden dust cloud
+
+# en:
+#   A cloud of shimmering golden dust. While within it, followers of the Council
+#   gain tremendous strength in combat.
+きらめく金色の塵の雲。この中にいる間、評議会の信徒は戦闘で絶大な力を得る。
+%%%%
+smouldering embers cloud
+
+# en:
+#   A cloud of smouldering embers. It can easily be smothered by any creature
+#   standing over it, but if left alone will ignite into a blazing cloud of flame.
+くすぶる燃えさしの雲。上に立つ生き物ならたやすく揉み消せるが、放っておくと燃え盛る炎の雲になる。
+%%%%
+wisps of flame cloud
+
+# en:
+#   A trail of sparks and wisps of flame. Atmospheric, but harmless.
+火花と炎の筋が残した跡。雰囲気はあるが、無害だ。
+%%%%
+alcoholic mist cloud
+
+# en:
+#   A haze of aerosolised moonshine so thick that creatures can become drunk just
+#   walking through it.
+霧状になった密造酒の靄。あまりに濃いので、生き物は中を歩くだけで酔っ払ってしまう。
+%%%%
+blastmotes cloud
+
+# en:
+#   A cloud of volatile blastmotes. These explode on contact with flame or creatures.
+#   The explosion is concussive, knocking adjacent creatures away.
+不安定な爆発塵の雲。炎や生き物に触れると爆発する。その爆発は衝撃を伴い、隣にいる生き物を吹き飛ばす。
+%%%%
+sparks cloud
+
+# en:
+#   A trail of electric sparks. Atmospheric, but harmless.
+電気の火花が残した跡。雰囲気はあるが、無害だ。
+%%%%
+faint pestilence cloud
+
+# en:
+#   The faintest hint of foul pestilence, seeping out from somewhere. While not
+#   dense enough to be harmful yet, it is thickening rapidly.
+どこからかにじみ出してくる、ごく微かな疫病の瘴気の気配。まだ害を及ぼすほど濃くはないが、急速に濃くなりつつある。
+%%%%
+magnetised fragments cloud
+
+# en:
+#   A cloud of countless tiny fragments of magnetised metal, still vibrating
+#   slightly from a recent electrical discharge. They will function as an attractor
+#   for the Magnavolt spell until they dissipate.
+磁化した金属の、無数の小さな破片の雲。先ほどの放電の影響で、まだかすかに振動している。消えるまでの間、マグナボルトの呪文を引き寄せる標的となる。
+%%%%
+bats cloud
+
+# en:
+#   A swarm of tiny vampire bats, so dense that it is impossible to count them all.
+#   They will relentlessly assail anything but the undead who stands in their midst,
+#   gradually lulling them to sleep with their soporific bites - and continuing to
+#   feed off their helpless body, once they fall.
+小さな吸血蝙蝠の群れ。数えきれないほど密集している。群れの真ん中に立つアンデッド以外のあらゆるものに容赦なく襲いかかり、眠りを誘う噛みつきで次第に眠らせてしまう。そして相手が倒れると、その無力な体から血を吸い続けるのだ。
+%%%%
+rust cloud
+
+# en:
+#   A cloud of oxidising vapour that continuously corrodes and weakens the attacks
+#   of whatever stands inside it (but does only minimal damage).
+中に立つものを絶えず腐蝕させ、その攻撃を弱める酸化性の蒸気の雲(ただし与えるダメージはごくわずか)。
+%%%%

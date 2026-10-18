@@ -896,7 +896,7 @@
 %%%%
 [spell]Forge Blazeheart Golem
 
-炎心のゴーレムの鍛造
+灼心のゴーレムの鍛造
 %%%%
 [spell]Rebounding Blaze
 
@@ -1448,7 +1448,7 @@
 %%%%
 [spell]Hellfire Mortar
 
-業火の臼砲
+業火の迫撃砲
 %%%%
 [spell]Shadow Shard
 
@@ -1528,7 +1528,7 @@
 %%%%
 [spell]Platinum Paragon
 
-白金の模範者
+白金の傑作
 %%%%
 [spell]Alistair's Walking Alembic
 

@@ -467,6 +467,41 @@ function util.expand_entity(entity, msg)
                      end)
 end
 
+-- 表示用の entity(時限ポータルの "portcullis" など。des から英語で渡される)の
+-- 日本語名。辞書の "[entity]<英語>" を優先し、なければ "[feature]<英語>"。
+function util.entity_name_j(entity)
+  if crawl.jtrans_has_key("[entity]" .. entity) then
+    return crawl.jtrans("[entity]" .. entity)
+  end
+  return crawl.tagged_jtrans("[feature]", entity)
+end
+
+-- util.expand_entity の表示用(日本語)版。msg は英語のまま受け取り、
+-- $F を展開する前の英文をキーにして訳してから、訳の中の $F / $F{...} を
+-- entity の日本語名に置き換える(日本語には冠詞がないので {...} は無視)。
+-- 訳済みの文を渡されてもそのまま使える。
+function util.expand_entity_j(entity, msg)
+  if not msg then
+    return msg
+  end
+
+  local msg_j = crawl.jtrans(msg)
+  if not entity then
+    return msg_j
+  end
+
+  local name = util.entity_name_j(entity)
+  local res = string.gsub(msg_j, "$F%{(%w+)%}",
+                          function (desc)
+                            return name
+                          end)
+  res = string.gsub(res, "$F",
+                    function ()
+                      return name
+                    end)
+  return res
+end
+
 function util.range(start, stop)
   local rt
   for i = start, stop do

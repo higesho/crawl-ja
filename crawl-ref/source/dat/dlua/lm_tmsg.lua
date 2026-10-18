@@ -101,7 +101,9 @@ function TimedMessaging:emit_message(cm, msg)
       return
     end
 
-    crawl.mpr(util.expand_entity(self.entity, msg), self:channel())
+    -- msg は des から英語で渡される(initmsg / finalmsg / messages。訳は des
+    -- の辞書)か、say_message が組み立てた訳済みの文。
+    crawl.mpr(util.expand_entity_j(self.entity, msg), self:channel())
   end
 end
 
@@ -142,6 +144,19 @@ function TimedMessaging:range_adjective(cm, thing)
   end
 end
 
+-- range_adjective の表示用(日本語)。noisemaker・距離の語は英語のまま持ち、
+-- 辞書の "[timed noise]<noisemaker>" と "[timed distance]<距離の語>"
+-- (%s に音の主が入る)で訳す。
+function TimedMessaging:range_adjective_j(cm)
+  local adj = self:choose_range_adjective(self:player_distance(cm))
+  local noise = crawl.tagged_jtrans("[timed noise]", self.noisemaker)
+  local key = "[timed distance]" .. adj
+  if crawl.jtrans_has_key(key) then
+    return crawl.jtrans(key, noise)
+  end
+  return noise
+end
+
 function TimedMessaging:say_message(cm, dur)
   if dur <= 100 then
     self:emit_message(nil, self.finalmsg)
@@ -149,13 +164,19 @@ function TimedMessaging:say_message(cm, dur)
   end
 
   local noisemaker =
-    self.noisemaker and self:range_adjective(cm, self.noisemaker)
+    self.noisemaker and self:range_adjective_j(cm)
 
+  -- 「あなたは遠くの鐘の厳かに鳴り響く音を聞いた。」の形。ranges の語
+  -- ("[timed range]"。副詞句、verb が空なら名詞句)と verb("[timed verb]"。
+  -- 「〜音」まで含む)は des から英語で渡される。
   self:proc_ranges(self.ranges, dur,
                    function (chk)
+                     local sound =
+                       crawl.tagged_jtrans("[timed range]", chk[2])
+                       .. crawl.tagged_jtrans("[timed verb]", self.verb)
                      self:emit_message(nil,
-                                       "You hear the " .. chk[2] .. self.verb
-                                       .. " of " .. noisemaker .. ".")
+                                       crawl.jtrans("From %s, you hear the %s.",
+                                                    noisemaker, sound))
                    end)
 
   self:proc_ranges(self.messages, dur,

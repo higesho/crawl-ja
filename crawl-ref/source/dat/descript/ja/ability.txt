@@ -15,17 +15,7 @@ Breathe Fire ability
 
 # en:
 #   Breathes a blast of fire at a targeted creature.
-{{
-    local desc = "指定したモンスターに炎の爆風を吹きかけ"
-
-    if you.race() == "Red Draconian" then
-       desc = desc .. "、その着弾点には炎の雲が残"
-    end
-
-    desc = desc .. "る。"
-
-    return desc
-}}
+指定したモンスターに炎の爆風を吹きかける。
 %%%%
 Breathe Poison Gas ability
 
@@ -48,19 +38,13 @@ Evoke Berserk Rage ability
 
 # en:
 #   <Berserk ability>
-狂戦士化する。一時的に非常に凶暴になり体力と近接戦闘でのダメージが増加する。
-狂戦士化は何かを殺さない場合すぐに時間切れになるが、
-複数の殺害によって延長することができる。狂戦士化中は、例えば武器の付け外し、
-薬の服用、ワンドやアイテムの発動、呪文の詠唱などの多くの行動ができない。
-狂戦士化の終了後に通常深い疲労状態になり、その間減速し、
-再び狂戦士化することはできない。また狂戦士化の終了後に気を失うことがある。
+<Berserk ability>
 %%%%
 Evoke Invisibility ability
 
 # en:
 #   Turns the user invisible for a short period of time.
-限られた時間あなた自身を透明化することができる。
-透明化はあなたの魔力による汚染を増大させ、最終的に発光を引き起こす可能性がある。
+短い間、使用者を透明にする。
 %%%%
 End Transformation ability
 
@@ -75,9 +59,7 @@ Vitalisation ability
 #   sickness, as well as the effects of clouds of foul pestilence. Your strength,
 #   intelligence and dexterity are also temporarily increased by a degree dependent
 #   on Invocations skill.
-ジンから神聖な気力と糧をえて、あなた自身を活性化する。神聖な気力は病気、毒、
-石化、混乱や腐敗からあなたを保護し、あなたの腕力、知力、
-器用さを向上させ維持する。
+一時的に、毒、混乱、石化、病気、および汚らわしい疫病の雲の効果から身を守る。また、あなたの腕力、知力、器用さも、祈祷の技能に応じた分だけ一時的に上昇する。
 %%%%
 Imprison ability
 
@@ -93,12 +75,12 @@ Sanctuary ability
 #   Transforms the area around the user into a domain of unbreakable law for a short
 #   duration. So long as anyone stands within this sanctuary, no harm may be done to
 #   them by others, and they may do no harm to others in turn.
-#   
+#
 #   Beings with hostile intent are unable to enter a sanctuary and those already
 #   nearby when it is created will be forced to flee.
-短かい時間、神聖な避難所の中で安全を得る。
-聖域の中にいる間はモンスターはあなたを攻撃しないが、
-あなたが一度でも神聖な平和に反してしまうと保護は消える。
+短い間、使用者の周りの一帯を破られることのない法の領域に変える。この聖域の中に立っている者は誰であれ他者から危害を加えられることはなく、また自らも他者に危害を加えることはできない。
+
+敵意を持つ者は聖域に入ることができず、聖域ができたときにすでに近くにいた者は逃げ出さざるを得なくなる。
 %%%%
 Cure All Mutations ability
 
@@ -114,12 +96,12 @@ Divine Shield ability
 #   could be blocked by a mundane shield. Ranged attacks will be reflected and melee
 #   attackers have a chance of being briefly blinded by the resulting flash of
 #   light.
-#   
+#
 #   This shield will block only a limited number of attacks before vanishing, with
 #   Invocations skill increasing how many.
-『輝けるもの』はあなたに神聖な盾を付与する。
-これは神の力によって空中に保持されているため、あなたの装備と干渉しない。しかし、
-これはあなたの意志力によって制御され、盾スキルはこれをうまく扱わせる。
+使用者の前方に、目もくらむほどまばゆい盾を出現させる。輝けるものの力で宙に掲げられたこの盾は、普通の盾で防げる攻撃を、続く何回かにわたって必ず防ぐ。遠隔攻撃は跳ね返され、近接攻撃をした者は、そのとき放たれる閃光で短い間盲目になることがある。
+
+この盾は限られた回数の攻撃を防ぐと消える。防げる回数は祈祷の技能に応じて増える。
 %%%%
 Cleansing Flame ability
 
@@ -127,9 +109,7 @@ Cleansing Flame ability
 #   Invokes a huge blast of divine fury centered on the user, severely damaging
 #   undead and demons and dealing damage to all other hostile creatures. The power
 #   of the blast is increased by Invocations skill.
-あなたに集約された神の怒りの爆風を引き起こし、
-アンデッドや悪魔に著しく損傷を与える。それ以外の敵対者はより少ない損傷を受ける。
-一方であなたとあなたの仲間たちは影響を受けない。
+使用者を中心に神の怒りの大爆発を起こし、アンデッドと悪魔に深刻なダメージを、その他のすべての敵対的なモンスターにもダメージを与える。爆発の威力は祈祷の技能に応じて高まる。
 %%%%
 Summon Divine Warrior ability
 
@@ -145,7 +125,7 @@ Recall Undead Harvest ability
 # en:
 #   Recalls your undead followers from anywhere in the dungeon to your immediate
 #   surroundings.
-ダンジョンのあらゆる場所からあなたのすぐ間近にアンデッドのしもべを招集する。
+迷宮のどこにいるアンデッドの従者も、あなたのすぐ周りへと呼び戻す。
 %%%%
 Bind Soul ability
 
@@ -154,26 +134,23 @@ Bind Soul ability
 #   service. If the targeted monster is slain before it leaves your sight, it will
 #   return as a bound soul, retaining the equipment, spells and abilities it had in
 #   life.
-#   
+#
 #   Only beings who are relatively uninjured may be targeted, and the focus required
 #   to keep their soul from escaping will consume 1/3 of the user's current health -
 #   returning it only upon slaying them. The attempt will fail entirely if the
 #   targeted monster leaves your sight before the process is complete.
-#   
+#
 #   The bound soul's health is influenced by the user's Invocations skill. It will
 #   follow its captor through stairs, and can be recalled from other levels.
-#   
+#
 #   Only one soul can be bound at a time.
-刈り取るに適した知性ある生きたモンスターに印を付ける。
-印を付けられたモンスターが死亡すると、その魂はあなたの物になる。
+生き物、神聖な存在、悪魔の魂を、永遠にあなたに仕えるよう縛りつけようとする。対象のモンスターがあなたの視界から外れる前に殺されると、呪縛された魂として蘇り、生前の装備、呪文、能力を保持する。
 
-隷属した魂はモンスターの身体機能、能力、
-装備だけでなく多少の自動回復能力も保持する。しかしながら、
-比較的無傷のモンスターの魂にのみ印を付けることができ、
-一度に1つまでの魂を隷属させることができる。また、
-印の継続時間は祈祷スキルに依存している。
+比較的傷の浅い者しか対象にできず、魂が逃げ出さないよう集中を保つには、使用者の現在の体力の1/3を費やす必要がある。この体力は対象を倒したときに初めて戻ってくる。過程が完了する前に対象のモンスターがあなたの視界から外れると、試みは完全に失敗する。
 
-隷属した魂は彼らが作成された階層を離れてあなたに従うことができることに注意せよ。
+呪縛された魂の体力は、使用者の祈祷の技能に影響される。魂は階段を通って捕らえた者についていき、他の階層から呼び戻すこともできる。
+
+一度に縛りつけておける魂は一つだけである。
 %%%%
 Heroism ability
 
@@ -205,14 +182,7 @@ Berserk ability
 #   but may be extended by multiple kills. While berserk, almost all actions other
 #   than movement and melee combat are prevented. When the rage expires, the user
 #   will be slowed and unable to berserk again for a short time.
-狂戦士化する。一時的に非常に凶暴になり体力と近接戦闘でのダメージが増加する。
-狂戦士化は何かを殺さない場合すぐに時間切れになるが、
-複数の殺害によって延長することができる。狂戦士化中は、例えば武器の付け外し、
-薬の服用、ワンドやアイテムの発動、呪文の詠唱などの多くの行動ができない。
-狂戦士化の終了後に通常深い疲労状態になり、その間減速し、
-再び狂戦士化することはできない。また狂戦士化の終了後に気を失うことがある。
-他の狂戦士化とは異なり、
-あなたの信仰値に応じて時折トログはあなたの気絶を予防することがある。
+使用者を狂戦士の激怒に駆り立てる。狂戦士化すると、一時的に体力、速度、近接攻撃で与えるダメージが増加する。戦闘していないとすぐに時間切れになるが、敵を次々と倒すことで延長できる。狂戦士化している間は、移動と近接戦闘以外のほとんどすべての行動ができない。激怒が収まると、使用者は減速し、しばらくの間再び狂戦士化することができない。
 %%%%
 Brothers in Arms ability
 
@@ -225,8 +195,7 @@ Purification ability
 # en:
 #   Purges your body of poison, confusion, slowness, petrification, weakness, and
 #   sickness. Any drained maximum health will also be fully restored.
-病気や毒、減速、石化、混乱、腐敗のようなあなたの体の全ての悪影響を消去し、腕力、
-知力、器用さを完全に回復する。
+あなたの体から、毒、混乱、減速、石化、虚弱、病気を取り除く。衰弱した最大体力も完全に回復する。
 %%%%
 Depart the Abyss ability
 
@@ -242,7 +211,7 @@ Banish ability
 #   some piety and the creature's full experience value. Even creatures that resist
 #   are left malmutated and weakened by the brush with the Abyss. Invocations skill
 #   makes Banishment harder to resist.
-モンスターをアビスに追放しようと試みる。
+モンスターをアビスへ追放しようと試みる。試みが成功すると、あなたはいくらかの信仰心と、そのモンスターの経験値をすべて獲得する。抵抗したモンスターでさえ、アビスに触れたことで悪性の変異を受け、弱体化する。祈祷の技能が高いほど、追放に抵抗されにくくなる。
 %%%%
 Corrupt ability
 
@@ -252,35 +221,28 @@ Corrupt ability
 #   Abyss bent on causing destruction. This will not work on levels already
 #   corrupted or in the Abyss itself. The size of the effect is increased by
 #   Invocations skill.
-現在の階層に深淵のエネルギーを解き放つことで階層を崩壊させる。
-これは階層の外観を大幅に変化させ、
-アビスから歪曲を引き起こすことに熱心な悪魔を呼び出す。
-これは既に崩壊している階層やアビスでは機能しない。
+現在の階層にアビスのエネルギーを解き放ち、階層を崩壊させる。これにより周辺の一帯の外観が変わり、破壊をもくろむアビスのモンスターが門を通って現れる。すでに崩壊している階層やアビスの中では働かない。効果の大きさは祈祷の技能に応じて増す。
 %%%%
 Enter the Abyss ability
 
 # en:
 #   Transports you to Lugonu's realm instantly. The effort of even using the
 #   ability will leave your health depleted.
-あなた自身を即座にルゴヌの領域に転移させる。しかしこの能力を使用する試みですら、
-あなたの体力と魔力を激減させる。
+あなたをルゴヌの領域へ即座に転送する。この能力を使おうとするだけでも、あなたの体力は激減する。
 %%%%
 Triple Draw ability
 
 # en:
 #   Draws three cards from any deck, and allows you to choose one to play,
 #   discarding the other two.
-インベントリ内のデッキからカードを3枚引き、それを確認し1枚を選び2枚を捨てる。
+いずれかのデッキからカードを3枚引き、そのうち1枚を選んで使い、残りの2枚を捨てる。
 %%%%
 Deal Four ability
 
 # en:
 #   Plays four cards from a deck in the time it normally takes to draw a
 #   single card.
-マークされていないデッキから通常1枚カードを引く時間で4枚のカードを発動する。
-デッキの残りのカードは失われる。
-デッキに十分なカードが含まれていない場合ネメレクスは余分に一枚カードを与えるが、
-追加のカードは望ましくないものとなるだろう。
+通常カードを1枚引くのにかかる時間で、デッキから4枚のカードを使う。
 %%%%
 Stack Five ability
 
@@ -288,19 +250,18 @@ Stack Five ability
 #   Draws five cards from your choice of decks, and allows you to sort them into
 #   any order. Subsequently, you can draw these cards in the order you chose.
 #   Re-using this ability will discard the current stack.
-あなたのインベントリ中のマークされていないデッキから5枚のカードを引き、
-残りのカードを失う。そしてカードを見て、あなたの任意の順番に入れ替える。
-その後あなたは選んだ順番通りにカードを引くことができる。
+選んだデッキからカードを5枚引き、好きな順番に並べ替える。その後、選んだ順番どおりにこれらのカードを引くことができる。この能力を再び使うと、現在の山札は捨てられる。
 %%%%
 Smiting ability
 
 # en:
 #   [[Smiting spell]] The strength of the smiting is increased by Invocations skill.
-#   
+#
 #   Beogh will not allow you to use this directly against another apostle during a
 #   divine trial.
-あなたの視界内の敵を打ち据える。これには敵までの経路を開くことを必要とせず、
-敵を視界内に入れるだけでよい。
+[[Smiting spell]]打ち据える力は祈祷の技能に応じて高まる。
+
+神の試練の間、ベオはあなたがこれを他の使徒に直接使うことを許さない。
 %%%%
 Bend Time ability
 
@@ -324,12 +285,12 @@ Step From Time ability
 #   and monsters will wander away and sometimes even fall back to sleep. After some
 #   time has passed, you will return in the same state as the very second you
 #   departed.
-#   
+#
 #   Invocations skill increases the likelihood that your absence will have been so
 #   long that alert monsters have fallen asleep again.
-時間の流れからあなた自身を取り除く。あなたの周囲の事象は通常通り急速に変化する。
-モンスターは彷徨い歩き、腐りやすい物は腐敗し、植物は成長する。
-幾らかの時間が経過すると、あなたは離脱したときと同じ状態で帰還する。
+あなたを時の流れから完全に取り除く。時間はいつもどおりに過ぎ、モンスターはさまよい去り、ときには再び眠りにつくことさえある。しばらく時間が経つと、あなたは立ち去ったまさにその瞬間と同じ状態で戻ってくる。
+
+祈祷の技能が高いほど、あなたの不在が長くなり、警戒していたモンスターが再び眠りについている可能性が高まる。
 %%%%
 Slimify ability
 
@@ -362,4 +323,1218 @@ Convert to Beogh ability
 あなたが改宗したことを知らぬオークたちはあなたに敵対的かもしれない。
 
 他の全ての神はビオを嫌い、軽々しく改宗者を受け容れない。
+%%%%
+Combustion Breath ability
+
+# en:
+#   Breathes a blast of volatile embers that explode violently around each creature
+#   they touch. It is harmless to its user.
+揮発性の燃えさしの爆風を吹きかける。燃えさしは触れたモンスターそれぞれの周りで激しく爆発する。使用者には無害である。
+%%%%
+Glacial Breath ability
+
+# en:
+#   Exhales a powerful wave of frost which encases anything it kills in a solid
+#   block of durable ice.
+強力な冷気の波を吐き出す。この波で死んだものは、頑丈な氷の固い塊に閉じ込められる。
+%%%%
+Nullifying Breath ability
+
+# en:
+#   Breathes a large blast of pure antimagic that dispels magical effects from
+#   every creature it hits and also significantly interferes with their ability to
+#   cast spells for a while. It is harmless to its user.
+純粋な反魔法の大きな爆風を吹きかける。当たったすべてのモンスターから魔法の効果を打ち消し、さらにしばらくの間、その呪文を唱える能力を大きく妨げる。使用者には無害である。
+%%%%
+Steam Breath ability
+
+# en:
+#   Breathes a powerful blast of steam, scalding a target and leaving
+#   sight-obscuring steam clouds in its wake.
+強力な蒸気の爆風を吹きかけ、対象を火傷させ、その通り道に視界を遮る蒸気の雲を残す。
+%%%%
+Galvanic Breath ability
+
+# en:
+#   Exhales a charged burst of electricity that will arc through a target and every
+#   other creature that is connected to it.
+帯電した電気の噴流を吐き出す。電気は対象と、それに繋がっている他のすべてのモンスターを弧を描いて伝わる。
+%%%%
+Mud Breath ability
+
+# en:
+#   Spits an enormous ball of mud that knocks back whatever it hits and drenches the
+#   surrounding area in a mud slick which impedes enemy movement and causes them to
+#   sometimes fumble their attacks.
+巨大な泥の球を吐き出す。泥の球は当たったものを押し戻し、周囲一帯をぬかるんだ泥で覆う。泥は敵の移動を妨げ、ときに攻撃をしくじらせる。
+%%%%
+Caustic Breath ability
+
+# en:
+#   Breathes a spray of concentrated acid which leaves corrosive clouds on any
+#   unoccupied tiles it passes over and corrodes whatever it hits.
+濃縮された酸を噴きつける。酸は通過した誰もいないマスに腐蝕性の雲を残し、当たったものを腐蝕させる。
+%%%%
+Noxious Breath ability
+
+# en:
+#   Breathes a line of noxious vapour which can confuse anything standing in it
+#   which does not resist poison. At higher levels, the clouds can cover a larger
+#   area and last longer.
+悪臭の蒸気を一直線に吹きかける。蒸気は、その中に立っている毒への耐性を持たないものを混乱させることがある。レベルが高くなると、雲はより広い範囲を覆い、より長く残る。
+%%%%
+Invent Gizmo ability
+
+# en:
+#   Uses your peerless coglin ingenuity to invent and assemble a one-of-a-kind
+#   piece of equipment and permanently install it in yourself. Such inspiration
+#   does not strike twice, so choose wisely.
+コグリンならではの比類なき独創性を用いて、世界に一つだけの装備品を発明・組み立てし、自分の体に恒久的に組み込む。このようなひらめきは二度と訪れないので、よく考えて選ぶこと。
+%%%%
+Word of Chaos ability
+
+# en:
+#   Speaks a word of chaos, forcing enemies nearby to blink away from the user.
+#   Additionally, those affected may be slowed, ensnared, or terrified by the
+#   experience. Invoking a word of chaos is no easy feat and will drain the user's
+#   maximum health somewhat, and the ability then cannot be used again for a short
+#   time.
+混沌の言葉を唱え、近くの敵を使用者から離れるようにブリンクさせる。さらに、影響を受けた者はこの経験によって減速したり、絡めとられたり、恐慌状態になったりすることがある。混沌の言葉を唱えるのは容易なことではなく、使用者の最大体力がいくらか衰弱する。また、使用後しばらくの間は再び使うことができない。
+%%%%
+Heal Wounds ability
+
+# en:
+#   Heals the user significantly, with a chance of permanently reducing the user's
+#   maximum magic capacity by one.
+使用者の体力を大きく回復する。ただし、使用者の最大魔力が恒久的に1減ることがある。
+%%%%
+Dig ability
+
+# en:
+#   Allows making tunnels through soft rock and rusted grates. Activating the
+#   ability has no cost and simply prepares you to start digging; once active,
+#   moving into a wall will start tunnelling. Doing so makes some noise and drains
+#   the user's maximum health.
+#
+#   Once active, activating the ability again or making any non-digging movement
+#   action will cancel the Dig status.
+柔らかい岩や錆びた格子を掘ってトンネルを作れるようにする。この能力の使用にコストはかからず、単に掘り始める準備をするだけである。有効になった状態で壁に向かって移動すると、トンネルを掘り始める。掘ると多少の音が出て、使用者の最大体力が衰弱する。
+
+有効になったあと、もう一度この能力を使うか、掘ること以外の移動の行動をとると、掘削の状態は解除される。
+%%%%
+Shaft Self ability
+
+# en:
+#   Sends you to a random position one to three floors down, as if you jumped into
+#   a shaft trap. It takes some time to dig the shaft.
+縦穴の罠に飛び込んだかのように、1〜3階層下の無作為な位置へ移動する。縦穴を掘るには多少の時間がかかる。
+%%%%
+Evoke Blink ability
+
+# en:
+#   Randomly translocates the user a short distance. After translocating in this
+#   way, the ability cannot be activated again for a short period of time depending
+#   on Evocations skill.
+使用者を無作為に短距離転移させる。この方法で転移したあとは、発動の技能に応じたしばらくの間、この能力を再び使うことができない。
+%%%%
+Begin Untransformation ability
+
+# en:
+#   Begins to transform you back into your native form. A short period of
+#   concentration is required.
+本来の姿へ戻る変身を始める。短い間の集中が必要である。
+%%%%
+Imbue Servitor ability
+
+# en:
+#   Chooses one of the caster's destructive spells to grant to Spellspark Servitors
+#   they create in the future, replacing any spell granted to them previously. The
+#   caster must be capable of casting this spell themselves with a failure rate of
+#   no more than 20%.
+#
+#   Note: imbuing a spell in this manner will take several turns and also dismiss
+#   your servitor if it is active.
+術者の破壊的な呪文を一つ選び、今後作り出す魔火花の従者に授ける。以前に授けた呪文は置き換えられる。術者自身がその呪文を失敗率20%以下で唱えられなければならない。
+
+注意: この方法で呪文を付与するには数ターンかかり、従者が活動中であれば送還される。
+%%%%
+Imprint Weapon ability
+
+# en:
+#   Analyzes the structural composition of an artefact melee weapon in your
+#   inventory and imprints it upon your Platinum Paragon spell, allowing it to wield
+#   a functional replica of it whenever you create one.
+持ち物の中にあるアーティファクトの近接武器の構造を分析し、それを「白金の傑作」の呪文に刻み込む。これにより、傑作を作り出すたびに、その武器の実用的な複製を振るわせることができる。
+%%%%
+Cacophony ability
+
+# en:
+#   Fully manifests your poltergeist nature, making all the armour you are haunting
+#   fly out and attack independently of your other actions for a short while - boots
+#   and scarves and helmets assailing your foes from all directions while a gleeful
+#   din fills the air.
+#
+#   These items are still tethered to you and cannot be directed more than a short
+#   distance away, but you do not share any damage they suffer and can freely fire
+#   through them. Their attacks may inflict a variety of minor maladies on your
+#   foes - sometimes dazing, draining, or even confusing them.
+#
+#   After using this ability, you must gain experience points before you can recover
+#   enough power to use it again.
+ポルターガイストとしての本性を完全に表し、取り憑いているすべての防具を飛び出させて、しばらくの間あなたの他の行動とは関係なく独自に攻撃させる。歓喜の騒音があたりに満ちる中、ブーツやスカーフや兜があらゆる方向から敵に襲いかかる。
+
+これらのアイテムはなおあなたに繋がっており、少しの距離以上離れた所へは向かわせられないが、アイテムが受けたダメージをあなたが分かち合うことはなく、それらの位置越しに自由に撃つこともできる。その攻撃は敵に様々な軽い不調をもたらすことがあり、ときには眩暈、衰弱、さらには混乱を引き起こす。
+
+この能力を使ったあとは、再び使えるだけの力を取り戻すまでに経験値を得なければならない。
+%%%%
+Bat Swarm ability
+
+# en:
+#   Scatters your physical form into a swarm of vampire bats, melding your equipment
+#   but allowing you to move quickly and evasively. The number of bats that issue
+#   from your body is so immense that it even fills nearby spaces like a choking
+#   cloud, assailing enemies and gradually putting them to sleep.
+#
+#   After using this ability, you must gain experience points before you can recover
+#   enough power to use it again. (Shapeshifting skill will increase the rate at
+#   which this skill recharges.)
+肉体を吸血コウモリの群れへと散らす。装備は体に融合するが、素早く身をかわしながら移動できるようになる。体から飛び立つコウモリの数はあまりにも膨大で、息の詰まる雲のように近くのマスにまで満ち、敵に襲いかかってだんだんと眠らせていく。
+
+この能力を使ったあとは、再び使えるだけの力を取り戻すまでに経験値を得なければならない。(変身術の技能が高いほど、この能力の回復が速くなる。)
+%%%%
+Enkindle ability
+
+# en:
+#   Stokes your ghostly flames to a fever pitch, greatly enhancing your spellcasting
+#   at the cost of burning away all accumulated memories.
+#
+#   While in this state, your damage-dealing spells cost no MP, are unaffected by
+#   encumbrance, and you receive a bonus to their spell success and power (the
+#   latter of which increases with your experience level). Any spellclaw attack made
+#   while Enkindled inflicts bonus damage proportional to the level of spell cast,
+#   and heals you for a percentage of the damage dealt.
+#
+#   Each spell you cast while Enkindled consumes a memory, and the state will end
+#   once you have no more left (or after a short period of time, regardless).
+#
+#   At your current experience level, you can hold enough memories to cast a maximum
+#   of {{return 3 + math.floor(you.xl() * 3 / 20);}} spells in a row this way.
+幽霊の炎を極限まで燃え上がらせ、蓄えたすべての記憶を燃やし尽くす代わりに、呪文の詠唱を大きく強化する。
+
+この状態の間、ダメージを与える呪文はMPを消費せず、装備の重さの影響を受けず、成功率と威力にボーナスを得る(威力のボーナスは経験レベルに応じて増える)。再燃中に行った呪文の爪の攻撃は、唱えた呪文のレベルに比例した追加のダメージを与え、与えたダメージの一定割合だけあなたの体力を回復する。
+
+再燃中に呪文を唱えるたびに記憶を一つ消費し、記憶が尽きるとこの状態は終わる(あるいは、いずれにせよ少し時間が経つと終わる)。
+
+現在の経験レベルでは、この方法で最大{{return 3 + math.floor(you.xl() * 3 / 20);}}回続けて呪文を唱えられるだけの記憶を保つことができる。
+%%%%
+Breathe Rust ability
+
+# en:
+#   Exhales a blast of oxidizing vapour that continuously corrodes and weakens the
+#   attacks of creatures which stand inside it. These clouds are long-lasting, but
+#   do only minimal damage.
+酸化させる蒸気の爆風を吐き出す。蒸気は、その中に立つモンスターを絶えず腐蝕させ、その攻撃を弱める。この雲は長く残るが、与えるダメージはごくわずかである。
+%%%%
+Golden Breath ability
+
+# en:
+#   Exhales a powerful blast of elemental devastation, which inflicts both fire and
+#   cold damage, and leaves clouds of poisonous vapour in its wake.
+元素の破壊の力を強烈な爆風として吐き出す。炎と冷気の両方のダメージを与え、その通り道に毒の蒸気の雲を残す。
+%%%%
+Recite ability
+
+# en:
+#   Preaches to nearby monsters about Zin's laws for a short duration. After
+#   finishing a recitation, it cannot be repeated for a short time.
+#
+#   The recitation will have different effects depending on the target: the chaotic
+#   and unclean will be affected by powerful and damaging effects, undead and
+#   demons will be affected by weaker rebukes, and any other intelligent creatures
+#   will have confusion sown amongst them, with heretics and priests of gods other
+#   than Zin being punished much more strongly. The effectiveness of the recitation
+#   is increased by Invocations skill and piety.
+近くのモンスターに、短い間ジンの法を説く。朗読を終えると、しばらくの間は繰り返すことができない。
+
+朗読は対象によって異なる効果をもたらす。混沌の者や不浄な者には強力でダメージを伴う効果が、アンデッドや悪魔にはより弱い叱責が及び、その他の知性ある者たちの間には混乱がまき散らされる。異端者やジン以外の神々の司祭は、はるかに強く罰せられる。朗読の効果は祈祷の技能と信仰心に応じて高まる。
+%%%%
+Brand Weapon With Holy Wrath ability
+
+# en:
+#   Permanently blesses a weapon of your choice with the holy wrath of the Shining
+#   One. Demon weapons will be converted into a more powerful sacred weapon. This
+#   blessing may only be used once, and it cannot be used on artefact weapons.
+あなたが選んだ武器を、輝けるものの聖なる怒りで恒久的に祝福する。悪魔の武器は、より強力な聖なる武器に作り変えられる。この祝福は一度しか使えず、アーティファクトの武器には使えない。
+%%%%
+Unearth Wretches ability
+
+# en:
+#   Bring forth those near death from Kikubaaqudgha's necropolis, providing ample
+#   fodder for all kinds of necromancy. Their number and quality is dependent on
+#   Necromancy skill.
+キクバークッグァの死者の都から死に瀕した者たちを引き出し、あらゆる死霊術のための豊富な材料をもたらす。その数と質は死霊術の技能に応じて決まる。
+%%%%
+Sign of Ruin ability
+
+# en:
+#   [[Sign of Ruin spell]]
+[[Sign of Ruin spell]]
+%%%%
+Brand Weapon With Pain ability
+
+# en:
+#   Permanently bloodies a weapon of your choice with the essence of pain
+#   itself. This blessing cannot be used on artefact weapons. You must choose
+#   between this gift or that of knowledge of the most powerful necromantic spells,
+#   and either gift may only be received once.
+あなたが選んだ武器を、苦痛の本質そのもので恒久的に血塗らせる。この祝福はアーティファクトの武器には使えない。この贈り物と、最も強力な死霊術の呪文の知識という贈り物のどちらかを選ばなければならず、どちらの贈り物も一度しか受け取れない。
+%%%%
+Receive Forbidden Knowledge ability
+
+# en:
+#   Grants you knowledge of the most powerful and sinister Necromancy spells:
+#   Haunt, Borgnjor's Revivification, Infestation, and Death's Door. You must choose
+#   between this gift or that of branding a weapon with pain, and either gift may
+#   only be received once.
+最も強力で邪悪な死霊術の呪文の知識を授かる。「招霊」「ボーグンジョルの究極治癒」「スカラベの寄生」「死のとば口」である。この贈り物と、武器に苦痛を宿すという贈り物のどちらかを選ばなければならず、どちらの贈り物も一度しか受け取れない。
+%%%%
+Light the Black Torch ability
+
+# en:
+#   Raises the Black Torch aloft and calls upon Yredelemnul to light it aflame,
+#   marking the beginning of your attempt to conquer the current level of the
+#   dungeon. Yredelemnul only grants piety for kills made while the torch is lit.
+#
+#   Those who have earned some of Yredelemnul's favour will be gifted temporary
+#   undead servants to help begin their conquest, with stronger servants being
+#   provided to the experienced and especially pious.
+#
+#   Yredelemnul does not offer second chances - the torch will be extinguished when
+#   you leave the current floor, and it may only be lit once per floor, ever.
+黒き松明を高く掲げ、イレデレンヌルに火を灯すよう呼びかける。これが、迷宮の現在の階層を征服する試みの始まりとなる。イレデレンヌルは、松明が灯っている間に倒した敵に対してしか信仰心を授けない。
+
+イレデレンヌルの寵愛をある程度得た者は、征服を始める助けとして一時的なアンデッドの従者を授かる。経験を積み、とりわけ信仰心の篤い者には、より強い従者が与えられる。
+
+イレデレンヌルは二度目の機会を与えない。現在の階を去ると松明は消え、一つの階で松明を灯せるのは、後にも先にも一度だけである。
+%%%%
+Hurl Torchlight ability
+
+# en:
+#   Hurls a gout of umbral fire from the Black Torch, which deals irresistible
+#   damage to living, demonic, and holy beings. The torchlight will also briefly
+#   empower any of your undead servants caught in its blast, and is harmless to
+#   those who worship Yredelemnul. The damage is increased by Invocations skill.
+#
+#   This ability can be used only while the torch is lit, and only a limited number
+#   of times on each floor. The number of uses available per floor increases with
+#   piety, and stoking the Black Torch's flames with a particularly remarkable soul
+#   by killing a unique named enemy will also provide an additional use.
+黒き松明から陰鬱な炎の塊を投げつけ、生き物、悪魔、神聖な存在に抵抗できないダメージを与える。また、松明の光は爆発に巻き込まれたあなたのアンデッドの従者を短い間強化し、イレデレンヌルを崇拝する者には無害である。ダメージは祈祷の技能に応じて増す。
+
+この能力は松明が灯っている間しか使えず、各階で使える回数に限りがある。一つの階で使える回数は信仰心に応じて増える。また、名前を持つユニークの敵を倒して、とりわけ際立った魂で黒き松明の炎をかき立てると、使える回数が1回増える。
+%%%%
+Fathomless Shackles ability
+
+# en:
+#   Engulfs the user's surroundings in Yredelemnul's inexorable grip. So long as you
+#   remain within this profane sanctuary, all hostile creatures that share it with
+#   you will be bound in place, and their life force will be continuously drained to
+#   restore your own. Victims who are isolated from their allies will take damage at
+#   a greatly increased rate.
+#
+#   The affected area will shrink over time, and a new one cannot be created until
+#   the old one has fully expired.
+使用者の周囲をイレデレンヌルの容赦なき掌握で包み込む。あなたがこの冒涜の聖域の中に留まっている限り、そこにいるすべての敵対的なモンスターはその場に縛りつけられ、その生命力は絶えず吸い取られてあなたの体力を回復する。味方から孤立した犠牲者は、大きく増した割合でダメージを受ける。
+
+効果範囲は時間とともに縮み、古い範囲が完全に消えるまでは新しい範囲を作り出せない。
+%%%%
+Duel ability
+
+# en:
+#   Enters you into single combat with a worthy foe. On success, you and the
+#   challenged foe will be transported to Okawaru's Arena to fight to the death,
+#   with no escape until you either emerge victorious or are slain.
+#
+#   Half of your missing health will be restored as the duel begins, and upon
+#   victory, Okawaru will return your health and magical power to whatever they
+#   were before you issued the challenge - letting you shake off any damage taken
+#   during it in the blink of an eye.
+ふさわしい敵と一騎打ちを始める。成功すると、あなたと挑戦を受けた敵はオカワルの闘技場へと送られて死ぬまで戦うことになり、あなたが勝利するか殺されるまで逃げることはできない。
+
+決闘が始まると減っている体力の半分が回復し、勝利すると、オカワルはあなたの体力と魔力を挑戦を申し込む前の状態に戻してくれる。これにより、決闘の間に受けたダメージをまたたく間に振り払うことができる。
+%%%%
+Receive Weapon ability
+
+# en:
+#   Acquires a weapon from a choice of four. This blessing may only be redeemed
+#   once.
+4つの選択肢の中から武器を一つ授かる。この祝福は一度しか受け取れない。
+%%%%
+Receive Armour ability
+
+# en:
+#   Acquires a piece of armour from a choice of four. This blessing may only be
+#   redeemed once.
+4つの選択肢の中から防具を一つ授かる。この祝福は一度しか受け取れない。
+%%%%
+Unleash Destruction ability
+
+# en:
+#   Channels a blast of hellish {{
+#       if you.get_base_mutation_level("Gehenna destruction") == 1 then
+#           return "piercing fire, lava (from Gehenna's influence), lightning, or negative energy"
+#       elseif you.get_base_mutation_level("Cocytus destruction") == 1 then
+#           return "piercing ice (from Cocytus' influence), cold, lightning, or negative energy"
+#       elseif you.get_base_mutation_level("Tartarus destruction") == 1 then
+#           return "piercing fire, cold, devastation (from Tartarus' influence), or negative energy"
+#       elseif you.get_base_mutation_level("Dis destruction") == 1 then
+#           return "piercing fire, cold, lightning, acid, or metal splinters (the last two from Dis' influence)"
+#       else
+#           return "fire, cold, lightning, or negative energy"
+#       end
+#   }} at a targeted creature. Damage and accuracy are increased by Invocations
+#   skill.
+指定したモンスターに向けて、地獄の{{
+    if you.get_base_mutation_level("Gehenna destruction") == 1 then
+        return "貫通する炎、溶岩(ゲヘナの影響による)、稲妻、負のエネルギー"
+    elseif you.get_base_mutation_level("Cocytus destruction") == 1 then
+        return "貫通する氷(コキュートスの影響による)、冷気、稲妻、負のエネルギー"
+    elseif you.get_base_mutation_level("Tartarus destruction") == 1 then
+        return "貫通する炎、冷気、壊滅(タルタロスの影響による)、負のエネルギー"
+    elseif you.get_base_mutation_level("Dis destruction") == 1 then
+        return "貫通する炎、冷気、稲妻、酸、金属の破片(最後の2つはディースの影響による)"
+    else
+        return "炎、冷気、稲妻、負のエネルギー"
+    end
+}}のいずれかの爆風を放つ。ダメージと命中率は祈祷の技能に応じて高まる。
+%%%%
+Infernal Servant ability
+
+# en:
+#   Beckons a demon from the far reaches of Hell and binds it into service with your
+#   blood. At low Invocations skill, only lesser devils may be summoned, but major
+#   demons and even executioners may answer the call of those with high Invocations
+#   skill.
+#
+#   Beware that the armies of chaos are prone to infighting, and sometimes a
+#   hostile demon may answer the ritual alongside your summoned servant.
+地獄の果てから悪魔を呼び寄せ、あなたの血によって従属させる。祈祷の技能が低いうちは下級の悪魔しか召喚できないが、祈祷の技能が高い者の呼びかけには、上位の悪魔や処刑の悪魔さえ応えることがある。
+
+混沌の軍勢は内輪揉めを起こしがちで、ときには召喚した従者とともに敵対的な悪魔が儀式に応じて現れることもあるので注意すること。
+%%%%
+Brand Self ability
+
+# en:
+#   Permanently carves an Infernal Mark into yourself, forever tainting body and
+#   soul in service of the Destroyer.
+#
+#   So long as you continue to worship Makhleb, this mark will grant you the
+#   following power:
+自らの体に地獄の刻印を恒久的に刻み込み、破壊者に仕えるため、身も魂も永遠に汚す。
+
+マクレブを崇拝し続ける限り、この刻印は以下の力を授ける:
+%%%%
+Infernal Legion ability
+
+# en:
+#   Uses one's own body as a conduit to unleash an army of chaos upon the world.
+#   For a short while, lesser demons will continuously manifest near the user -
+#   provided there is something around for them to fight. While these demons may
+#   be individually short-lived, the legions of chaos as a whole are virtually
+#   inexhaustible.
+自らの体を通り道として、混沌の軍勢を世界に解き放つ。しばらくの間、使用者の近くに下級の悪魔が絶えず現れ続ける。ただし、周りに戦う相手がいる場合に限る。悪魔の一体一体は短命かもしれないが、混沌の軍勢全体としては事実上尽きることがない。
+%%%%
+Globe of Annihilation ability
+
+# en:
+#   Launches a roiling sphere of intense destructive force drawn from the {{
+#       if you.get_base_mutation_level("Gehenna destruction") == 1 then
+#           return "endless fires of Gehenna."
+#       elseif you.get_base_mutation_level("Cocytus destruction") == 1 then
+#           return "frigid wastes of Cocytus."
+#       elseif you.get_base_mutation_level("Tartarus destruction") == 1 then
+#           return "wailing grief of Tartarus."
+#       elseif you.get_base_mutation_level("Dis destruction") == 1 then
+#           return "ruthless spite of Dis."
+#       else
+#           return "very Hells themselves."
+#       end
+#   }}
+#
+#   This sphere gathers strength as it travels, and will attempt to home in on a
+#   designated target, though it moves and turns with considerable inertia. When it
+#   collides with a creature or other obstruction, it will detonate in a violent
+#   explosion of {{
+#       if you.get_base_mutation_level("Gehenna destruction") == 1 then
+#           return "fire or lava"
+#       elseif you.get_base_mutation_level("Cocytus destruction") == 1 then
+#           return "cold or ice"
+#       elseif you.get_base_mutation_level("Tartarus destruction") == 1 then
+#           return "negative energy or devastation"
+#       elseif you.get_base_mutation_level("Dis destruction") == 1 then
+#           return "acid or metal splinters"
+#       else
+#           return "hellish energy"
+#       end
+#   }} whose radius depends on the distance travelled.
+#
+#   You are protected from this explosion yourself.
+{{
+    if you.get_base_mutation_level("Gehenna destruction") == 1 then
+        return "ゲヘナの尽きることなき業火"
+    elseif you.get_base_mutation_level("Cocytus destruction") == 1 then
+        return "コキュートスの極寒の荒野"
+    elseif you.get_base_mutation_level("Tartarus destruction") == 1 then
+        return "タルタロスの泣き叫ぶ悲嘆"
+    elseif you.get_base_mutation_level("Dis destruction") == 1 then
+        return "ディースの容赦なき悪意"
+    else
+        return "地獄そのもの"
+    end
+}}から引き出した、強烈な破壊の力が渦巻く球体を放つ。
+
+この球体は進むにつれて力を増し、指定した対象に向かって追尾しようとするが、その移動と方向転換にはかなりの慣性が働く。モンスターやその他の障害物にぶつかると、{{
+    if you.get_base_mutation_level("Gehenna destruction") == 1 then
+        return "炎または溶岩"
+    elseif you.get_base_mutation_level("Cocytus destruction") == 1 then
+        return "冷気または氷"
+    elseif you.get_base_mutation_level("Tartarus destruction") == 1 then
+        return "負のエネルギーまたは壊滅"
+    elseif you.get_base_mutation_level("Dis destruction") == 1 then
+        return "酸または金属の破片"
+    else
+        return "地獄のエネルギー"
+    end
+}}の激しい爆発を起こす。その半径は進んだ距離によって決まる。
+
+あなた自身はこの爆発から守られる。
+%%%%
+Vessel of Slaughter ability
+
+# en:
+#   Invokes a blood pact with the Destroyer, temporarily granting you enormous power
+#   at a dangerous price.
+#
+#   At the moment the pact is sealed, a massive explosion of damnation will surround
+#   you, and you will transform into a demonic avatar, granting you demonic
+#   resistances, invulnerable will, doubled healing from kills, and reducing all
+#   damage you take by 1/3. You will additionally gain a bonus to all outgoing
+#   damage proportional to how injured you were when you used this ability.
+#
+#   When your transformation expires, you will be dragged down into the Crucible of
+#   Flesh, and made to fight through waves of demons until Makhleb considers your
+#   debt paid.
+破壊者と血の契約を結び、危険な代償と引き換えに一時的に絶大な力を得る。
+
+契約が結ばれた瞬間、あなたの周囲で天罰の大爆発が起こり、あなたは悪魔の化身へと変身する。悪魔としての耐性、無敵の意志力、敵を倒したときの回復量の倍増を得て、受けるすべてのダメージが1/3減る。さらに、この能力を使ったときに傷ついていた度合いに比例して、与えるすべてのダメージにボーナスを得る。
+
+変身が切れると、あなたは肉の坩堝へと引きずり込まれ、マクレブが借りを返したと認めるまで、悪魔の群れと戦い抜かされることになる。
+%%%%
+Channel Magic ability
+
+# en:
+#   Dramatically increases the user's regeneration of magical power for a duration
+#   that increases with Invocations skill.
+使用者の魔力の回復速度を劇的に高める。効果の持続時間は祈祷の技能に応じて延びる。
+%%%%
+Divine Exegesis ability
+
+# en:
+#   Casts any spell from your spell library with guaranteed success. You receive a
+#   bonus to spell power based on your Invocations skill that is worth 50% more
+#   than equivalent levels of training in the relevant skills of the spell itself.
+あなたの呪文の蔵書にある呪文を、どれでも確実に成功させて唱える。祈祷の技能に応じて呪文の威力にボーナスを得る。このボーナスは、その呪文自体に関係する技能を同じだけ鍛えた場合より50%大きい。
+%%%%
+Trog's Hand ability
+
+# en:
+#   Invokes a powerful regeneration ability which stacks with all other sources and
+#   is effective even on those who would not otherwise be able to regenerate. It
+#   also fortifies the user's willpower, protecting against many magical effects.
+強力な再生能力を呼び起こす。この再生は他のすべての再生と重ねがけでき、本来なら再生できない者にも効果がある。また、使用者の意志力を高め、多くの魔法の効果から守る。
+%%%%
+Heal Other ability
+
+# en:
+#   Heals a creature other than yourself by a moderate amount, depending on
+#   Invocations skill. Using this ability on hostile monsters will try to turn them
+#   neutral. This works best on living creatures, with the undead and demons being
+#   progressively harder to pacify. Intelligent creatures are also more difficult
+#   to pacify.
+#
+#   Ghosts of dead adventurers and demon lords are too wrathful to be pacified,
+#   mindless creatures are too unintelligent to be pacified, and no monster can be
+#   pacified while it is asleep.
+#
+#   Whether the pacification succeeds or not, the invested piety and magic points
+#   are lost. If it does succeed, the monster is healed and you gain the monster's
+#   full experience value. Otherwise, the monster is unaffected and you gain
+#   nothing.
+祈祷の技能に応じて、あなた以外の存在をある程度回復させる。敵対的なモンスターにこの能力を使うと、中立化を試みる。これは生き物に最も有効に働き、アンデッドや悪魔の順に中立化が難しくなっていく。知性のあるモンスターもまた中立化しにくい。
+
+死んだ冒険者の幽霊やデーモンの王は怒りが強すぎて中立化できず、精神を持たないモンスターは知性がなさすぎて中立化できない。また、眠っているモンスターは中立化できない。
+
+中立化が成功したか否かにかかわらず、注ぎ込んだ信仰心と魔力は失われる。成功した場合、そのモンスターは回復し、あなたはそのモンスターの経験値をすべて獲得する。失敗した場合、モンスターには効果がなく、あなたは何も得られない。
+%%%%
+Heal Self ability
+
+# en:
+#   Heals a moderate amount of health, depending on Invocations skill.
+祈祷の技能に応じて、体力をある程度回復する。
+%%%%
+Divine Vigour ability
+
+# en:
+#   Greatly increases your maximum health and magic points, depending on
+#   Invocations skill. Your current health and magic points will also be increased
+#   proportionally.
+祈祷の技能に応じて、あなたの最大体力と最大魔力を大きく増やす。現在の体力と魔力も、それに比例して増える。
+%%%%
+Brand Weapon With Distortion ability
+
+# en:
+#   Permanently corrupts a melee weapon of your choice with a localised field of
+#   distortion. This blessing may only be used once, and it cannot be used on
+#   artefact weapons.
+あなたが選んだ近接武器を、局地的な歪曲の場で恒久的に変質させる。この祝福は一度しか使えず、アーティファクトの武器には使えない。
+%%%%
+Draw ability
+
+# en:
+#   Draws a card from a deck of power.
+力のデッキからカードを1枚引く。
+%%%%
+Recall Apostles ability
+
+# en:
+#   Recalls your apostles from anywhere in the dungeon to your immediate
+#   surroundings.
+迷宮のどこにいる使徒も、あなたのすぐ周りへと呼び戻す。
+%%%%
+Dismiss Apostle ability
+
+# en:
+#   Frees this apostle from your service, sending them out to do good in the world
+#   in Beogh's name.
+この使徒をあなたへの奉仕から解き放ち、ベオの名のもとに世界で善を行うよう送り出す。
+%%%%
+Recruit Apostle ability
+
+# en:
+#   Anoints a defeated apostle, and welcomes them as a permanent follower. They will
+#   follow you between floors and into any peril, willingly giving their life for
+#   the cause and their kin.
+#
+#   If they die, Beogh will eventually revive them once you gain sufficient piety -
+#   this process can be greatly accelerated by satisfying Beogh with the slaying of
+#   all foes who may have contributed to their apostle's death.
+#
+#   You can have at most 3 followers accompanying you at a time, though you may
+#   freely dismiss old ones to invite new ones.
+打ち負かした使徒に聖油を注ぎ、恒久的な信奉者として迎え入れる。信奉者は階をまたいで、どんな危険の中にもあなたについてきて、大義と同胞のために喜んで命を捧げる。
+
+信奉者が死んでも、あなたが十分な信仰心を得れば、ベオはいずれその者を蘇らせる。その使徒の死に関わった可能性のある敵をすべて倒してベオを満足させれば、この過程を大きく早めることができる。
+
+一度に連れて歩ける信奉者は最大3人までだが、古い信奉者を自由に解任して新しい者を迎えることができる。
+%%%%
+Blood for Blood ability
+
+# en:
+#   Beseeches Beogh to grant you an army with which to wreak bloody retribution.
+#   The user will be immediately surrounded by orcish allies, with more of them
+#   arriving over time from all directions. The prayer lasts a considerable
+#   length of time, but will expire far more rapidly once there are no more foes in
+#   sight.
+#
+#   Usable only while you are standing over the corpse of one of your apostles, and
+#   at most once per death.
+血の報復を果たすための軍勢を授けてくれるよう、ベオに懇願する。使用者はただちにオークの味方に取り囲まれ、時間とともにあらゆる方向からさらに多くのオークが到着する。祈りはかなり長い間続くが、視界内に敵がいなくなると、はるかに早く切れてしまう。
+
+あなたの使徒の死体の上に立っているときにしか使えず、一人の死につき一度までしか使えない。
+%%%%
+Wall of Briars ability
+
+# en:
+#   Grows short-lived briar patches around you. Monsters attacking these briars will
+#   be damaged by sharp thorns. Invocations skill increases the briars' health.
+あなたの周りに短命の荊棘の茂みを生やす。この荊棘を攻撃したモンスターは、鋭い棘でダメージを受ける。祈祷の技能が高いほど荊棘の体力が増す。
+%%%%
+Grow Ballistomycete ability
+
+# en:
+#   Grows a short-lived ballistomycete at the location you choose. A ballistomycete
+#   occasionally releases spores that quickly seek out foes and violently explode,
+#   damaging and confusing all living things caught in the blast.
+#
+#   Invocations skill increases the health and duration of the ballistomycete as
+#   well as the damage of its exploding spores.
+あなたが選んだ場所に短命の放出菌糸を生やす。放出菌糸はときおり胞子を放ち、胞子は素早く敵を探し出して激しく爆発し、爆風に巻き込まれたすべての生き物にダメージを与えて混乱させる。
+
+祈祷の技能が高いほど、放出菌糸の体力と持続時間、そして爆発する胞子のダメージが増す。
+%%%%
+Overgrow ability
+
+# en:
+#   Permanently destroys a wall-like structure, growing a short-lived plant ally in
+#   its place. Even a tree will give its life to support the will of Fedhas, and
+#   only truly indestructible walls are immune to this power.
+壁のような構造物を恒久的に破壊し、その場所に短命の植物の味方を生やす。樹木でさえフェダスの意志を支えるためにその命を捧げ、本当に破壊できない壁だけがこの力を受けつけない。
+%%%%
+Grow Oklob ability
+
+# en:
+#   Grows a short-lived oklob plant at the location you choose. These dangerous
+#   plants spray corrosive vitriol at your foes.
+#
+#   Invocations skill increases the health and duration of the oklob as well as the
+#   frequency with which it sprays its acid.
+あなたが選んだ場所に短命のオクロブ草を生やす。この危険な植物は、あなたの敵に腐蝕性の硫酸を噴きつける。
+
+祈祷の技能が高いほど、オクロブ草の体力と持続時間、そして酸を噴きつける頻度が増す。
+%%%%
+Slouch ability
+
+# en:
+#   Causes damage to everyone in sight who is moving faster than you, dealing more
+#   damage with greater differences in speed.
+視界内にいる、あなたより速く動いているすべての者にダメージを与える。速さの差が大きいほど、与えるダメージも大きくなる。
+%%%%
+Oozemancy ability
+
+# en:
+#   Calls forth acidic ooze from the walls of the dungeon around you, damaging foes
+#   depending on the number of slimy walls they remain adjacent to.
+あなたの周りの迷宮の壁から酸性の軟泥を呼び出し、敵が隣接しているぬめる壁の数に応じてダメージを与える。
+%%%%
+Curse Item ability
+
+# en:
+#   Curses a chosen equipped item, binding it to the wearer until the curse
+#   and the item both are broken. Cursed items can no longer be enchanted or
+#   modified.
+装備している選んだアイテムを呪い、呪いとアイテムの両方が壊れるまで装備者に縛りつける。呪われたアイテムは、もはや強化も改造もできない。
+%%%%
+Shatter The Chains ability
+
+# en:
+#   Destroys a chosen cursed equipped item, relieving the wearer of the curse.
+装備している選んだ呪われたアイテムを破壊し、装備者を呪いから解放する。
+%%%%
+Shadowslip ability
+
+# en:
+#   Instantly swaps places with your shadow (so long as it is active) and misleads
+#   all enemies in sight about which of the two is which. Enemies which were
+#   previously focused on you will instead focus their attention exclusively upon
+#   your shadow for several turns before they realise their mistake - though if they
+#   succeed in destroying your shadow, the illusion will end prematurely.
+#
+#   The duration of this effect increases with Invocations skill, as will the
+#   durability of your shadow immediately after using it.
+(あなたの影が活動している限り)ただちに影と位置を入れ替え、視界内のすべての敵に、二人のうちどちらがどちらかを見誤らせる。それまであなたを狙っていた敵は、数ターンの間、代わりにあなたの影だけに注意を向け、そのあとで誤りに気づく。ただし、影の破壊に成功すると、幻惑は早めに終わる。
+
+この効果の持続時間は祈祷の技能に応じて延び、使用直後のあなたの影の耐久力も同様に増す。
+%%%%
+Aphotic Marionette ability
+
+# en:
+#   Grabs hold of another creature's shadow and rapidly unleashes their spells and
+#   abilities as if they were your own, aimed at random enemies. Creatures they
+#   summon this way will belong to you, and many beneficial effects that they would
+#   apply to themselves will be applied to you instead. You are also fully protected
+#   from any damage they would cause.
+#
+#   Can only be used on creatures with eligible spells that they could productively
+#   cast at the moment. The process also leaves the victim's shadow too dim to grasp
+#   a second time - once used successfully on a target, it may never be used on them
+#   again.
+#
+#   (Not all spells can be cast via this method; those which cannot will be marked
+#   with an exclamation mark when examined.)
+他のモンスターの影をつかみ、その者の呪文や能力を自分のもののように、無作為な敵に向けて立て続けに放たせる。この方法で召喚されたモンスターはあなたのものとなり、その者が自分にかけるはずの有益な効果の多くは、代わりにあなたにかかる。また、それらが引き起こすダメージからあなたは完全に守られる。
+
+その時点で有効に唱えられる、条件を満たした呪文を持つモンスターにしか使えない。また、この過程で犠牲者の影は薄れすぎて二度とつかめなくなる。一度対象に使って成功すると、その者には二度と使えない。
+
+(この方法では唱えられない呪文もある。そのような呪文は、調べたときに感嘆符で示される。)
+%%%%
+Primordial Nightfall ability
+
+# en:
+#   Invokes a night from before the stars first burned in the sky, engulfing your
+#   surroundings in impenetrable darkness. The user's sight radius will be reduced
+#   to nothing, preventing enemies from tracking or aiming abilities at you, and
+#   slowly expand back to normal over the duration of the effect. Your stealth will
+#   also be increased.
+#
+#   It cannot be invoked again until its effect has fully ended, as even the very
+#   first night of creation must eventually give way to day.
+#
+#   Invocations skill increases the duration of the effect.
+空に初めて星が灯るより前の夜を呼び起こし、あなたの周囲を見通せない闇で包み込む。使用者の視界の半径は無となり、敵はあなたを追跡したり、能力の狙いをつけたりできなくなる。視界は効果の続く間にゆっくりと元に戻っていく。また、あなたの隠密性も高まる。
+
+効果が完全に終わるまで再び祈祷することはできない。創造の最初の夜でさえ、いずれは昼に道を譲らねばならないのだから。
+
+祈祷の技能が高いほど効果の持続時間が延びる。
+%%%%
+Potion Petition ability
+
+# en:
+#   Petitions Gozag to sell you the effects of a set of potions. (These effects will
+#   be applied instantly and directly to the petitioner, rather than being provided
+#   or being drunk as a normal potion.) Gozag will offer three lists at a time, with
+#   varying prices.
+ゴザーグに、一揃いの水薬の効果を売ってくれるよう陳情する。(これらの効果は、通常の水薬として与えられたり飲まれたりするのではなく、陳情者に直接、即座にかかる。)ゴザーグは一度に3つの一覧を、それぞれ異なる値段で提示する。
+%%%%
+Call Merchant ability
+
+# en:
+#   Sends funds to a merchant to help them set up shop at your location. The cost of
+#   funding a shop increases with the number of shops funded.
+商人に資金を送り、あなたのいる場所に店を開く手助けをする。店に出資する費用は、出資した店の数が増えるほど高くなる。
+%%%%
+Bribe Branch ability
+
+# en:
+#   Gives 3000 gold to Gozag to spread throughout the inhabitants of the current
+#   branch, only possible if the branch has intelligent inhabitants. Those monsters
+#   may then become uninterested in fighting you (with tougher inhabitants having
+#   an increasing chance of being bribed), and more rarely will join your ranks,
+#   though they will not leave their home branch. Enemies accepting a bribe will
+#   lower the remaining bribe fund; upon its exhaustion, bribed enemies will become
+#   indifferent if they have not become your allies.
+3000ゴールドをゴザーグに渡し、現在の支部の住人たちにばらまいてもらう。知性ある住人がいる支部でしか行えない。これにより、そこのモンスターたちはあなたと戦うことに興味を失うことがあり(より手強い住人ほど買収される確率が高まる)、まれにはあなたの仲間に加わることもある。ただし、彼らは自分の住む支部を離れない。敵が賄賂を受け取ると残りの買収資金が減り、資金が尽きると、買収された敵のうちあなたの味方になっていない者は無関心な状態になる。
+%%%%
+Upheaval ability
+
+# en:
+#   Calls on the forces of nature to blast a small area with magma, ice, wind,
+#   or rubble. This blast will never harm you or any elementals manifested by you.
+#   Invocations skill increases both damage and area affected.
+自然の力を呼び起こし、狭い範囲に溶岩、氷、風、瓦礫のいずれかを浴びせる。この爆風があなたや、あなたが呼び出した精霊を傷つけることは決してない。祈祷の技能が高いほど、ダメージと効果範囲の両方が増す。
+%%%%
+Elemental Force ability
+
+# en:
+#   Causes your elemental clouds to coalesce into friendly elementals. Your
+#   Invocations skill increases the maximum number of elementals that can be
+#   created with one use of the ability.
+あなたの元素の雲を凝集させ、友好的な精霊に変える。祈祷の技能が高いほど、一度の使用で作り出せる精霊の最大数が増える。
+%%%%
+Disaster Area ability
+
+# en:
+#   Blasts the entire area around you with powerful natural forces. Invocations
+#   skill increases both damage and area affected.
+強力な自然の力で、あなたの周囲一帯に一斉に打撃を浴びせる。祈祷の技能が高いほど、ダメージと効果範囲の両方が増す。
+%%%%
+Draw Out Power ability
+
+# en:
+#   Taps into your inner power to restore health and magic, as well as freeing your
+#   body and mind from external constraints, including nets, webs, constriction,
+#   petrification, slowness, and confusion. The amount of health and magic restored
+#   increases with piety.
+内なる力を引き出して体力と魔力を回復し、さらに網、蜘蛛の巣、締めつけ、石化、減速、混乱といった外部からの拘束から心身を解き放つ。回復する体力と魔力の量は信仰心に応じて増える。
+%%%%
+Power Leap ability
+
+# en:
+#   Performs an incredibly fast leap to a targeted location, causing an explosion
+#   upon landing which damages all adjacent foes. The amount of damage done
+#   increases with your piety and experience level.
+指定した場所へ信じられないほど速く跳躍し、着地時に爆発を起こして隣接するすべての敵にダメージを与える。与えるダメージは信仰心と経験レベルに応じて増える。
+%%%%
+Apocalypse ability
+
+# en:
+#   Reveals Ru's truth to your enemies, dealing severe damage to all enemies in
+#   your line of sight. Affected creatures may be paralysed, slowed or have their
+#   magic drained. The damage dealt increases with your piety and experience level.
+ルーの真理を敵に明かし、視界内のすべての敵に深刻なダメージを与える。影響を受けたモンスターは、麻痺、減速、魔力の流出に見舞われることがある。与えるダメージは信仰心と経験レベルに応じて増える。
+%%%%
+Sacrifice Purity ability
+
+# en:
+#   Sacrifices purity of body or mind, causing a single mutation.
+身体または精神の清浄を犠牲にし、変異を1つ引き起こす。
+%%%%
+Sacrifice Words ability
+
+# en:
+#   Sacrifices the ability to use magical scrolls in combat unless badly injured.
+ひどく傷ついているとき以外、戦闘中に魔法の巻物を使う能力を犠牲にする。
+%%%%
+Sacrifice Drink ability
+
+# en:
+#   Sacrifices the ability to drink potions in combat unless badly injured.
+ひどく傷ついているとき以外、戦闘中に水薬を飲む能力を犠牲にする。
+%%%%
+Sacrifice Essence ability
+
+# en:
+#   Sacrifices magical essence, causing a single mutation.
+魔力の本質を犠牲にし、変異を1つ引き起こす。
+%%%%
+Sacrifice Health ability
+
+# en:
+#   Sacrifices physical health, causing a single mutation.
+身体の健康を犠牲にし、変異を1つ引き起こす。
+%%%%
+Sacrifice Stealth ability
+
+# en:
+#   Sacrifices stealth, causing you to always be noticed by foes and preventing
+#   you from having any ranks in the Stealth skill.
+隠密性を犠牲にする。常に敵に気づかれるようになり、隠密の技能を一切持てなくなる。
+%%%%
+Sacrifice Forms ability
+
+# en:
+#   Sacrifices forms, preventing you from voluntarily changing your form and from
+#   having any ranks in the Shapeshifting skill.
+変身を犠牲にする。自分の意志で姿を変えることができなくなり、変身術の技能を一切持てなくなる。
+%%%%
+Sacrifice Artifice ability
+
+# en:
+#   Sacrifices the ability to evoke any magical items, and prevents you from having
+#   any ranks in the Evocations skill.
+#
+#   This includes wands and other items which use Evocations skill - that is, it does
+#   *not* affect reaching weapons, talismans, and ziggurat figurines. This also renders
+#   magical staves much less effective in melee.
+魔法のアイテムを発動する能力を犠牲にし、発動の技能を一切持てなくなる。
+
+これには、ワンドなど発動の技能を使うアイテムが含まれる。つまり、長射程の武器、護符、ジグラットの小像には影響*しない*。また、魔法の杖の近接戦闘での効果も大きく下がる。
+%%%%
+Sacrifice Love ability
+
+# en:
+#   Sacrifices love, causing all creatures to become hostile, even those created
+#   by you. Monsters that are spell residue and which do not act independently,
+#   such as orbs of destruction and spectral weapons, are the only things which can
+#   remain friendly.
+愛を犠牲にする。あなた自身が生み出したものも含めて、すべてのモンスターが敵対的になる。破壊の球体や幽体の武器のように、呪文の残滓であって独立して行動しないモンスターだけが、友好的なままでいられる。
+%%%%
+Sacrifice Courage ability
+
+# en:
+#   Sacrifices courage, causing you to become terrified of dangerous monsters. Such
+#   monsters fill you with horror, which reduces the power of your spells and your
+#   ability to hit and damage monsters in combat.
+勇気を犠牲にし、危険なモンスターを恐れるようになる。そのようなモンスターはあなたを恐怖で満たし、呪文の威力と、戦闘でモンスターに攻撃を当てダメージを与える能力が下がる。
+%%%%
+Sacrifice Arcana ability
+
+# en:
+#   Sacrifices arcana, causing you to lose the ability to use certain schools of
+#   magic and preventing you from having any ranks in those skills.
+秘術を犠牲にする。特定の系統の魔法を使う能力を失い、その技能を一切持てなくなる。
+%%%%
+Sacrifice Nimbleness ability
+
+# en:
+#   Sacrifices nimbleness, preventing you from having any ranks in the Dodging
+#   skill. This sacrifice is worth more if you cannot train Armour.
+敏捷さを犠牲にし、躱し身の技能を一切持てなくなる。甲冑の技能を鍛えられない場合、この犠牲の価値は高くなる。
+%%%%
+Sacrifice Durability ability
+
+# en:
+#   Sacrifices durability, preventing you from having any ranks in the Armour
+#   skill. This sacrifice is worth more if you cannot train Dodging.
+頑強さを犠牲にし、甲冑の技能を一切持てなくなる。躱し身の技能を鍛えられない場合、この犠牲の価値は高くなる。
+%%%%
+Sacrifice a Hand ability
+
+# en:
+#   Sacrifices a hand, causing you to lose the ability to use shields{{
+#       if you.race() ~= "Formicid" then
+#           return " and two-handed weapons"
+#       end
+#   }}, and to be able to wear one fewer ring.
+片手を犠牲にする。盾{{
+    if you.race() ~= "Formicid" then
+        return "と両手武器"
+    end
+}}を使う能力を失い、はめられる指輪が1つ減る。
+%%%%
+Sacrifice Experience ability
+
+# en:
+#   Sacrifices some of your past experiences, causing you to lose one level
+#   immediately and also to have the maximum level you can attain lowered by one.
+過去の経験の一部を犠牲にする。ただちにレベルが1下がり、到達できる最大レベルも1下がる。
+%%%%
+Sacrifice Skill ability
+
+# en:
+#   Sacrifices your skills, causing you to have all of your skill aptitudes
+#   decreased by one. This will likely cause you to lose ranks in trained skills.
+技能を犠牲にし、すべての技能の適性が1下がる。これにより、鍛えた技能のレベルが下がることが多い。
+%%%%
+Sacrifice an Eye ability
+
+# en:
+#   Sacrifices an eye, causing you to have a much harder time hitting targets.
+片目を犠牲にし、対象に攻撃を当てるのがずっと難しくなる。
+%%%%
+Sacrifice Resistance ability
+
+# en:
+#   Sacrifices your resistance to extreme temperatures, causing you to become
+#   vulnerable to heat and cold.
+極端な温度への耐性を犠牲にし、熱と冷気に弱くなる。
+%%%%
+Reject Sacrifices ability
+
+# en:
+#   Rejects all offered sacrifices. Doing so means Ru will take more time
+#   evaluating your readiness for future sacrifices. Ru will not offer more
+#   sacrifices while there is an existing offer still extended.
+#
+#   Each consecutive rejection increases the sacrifice timer significantly.
+#   Accepting a sacrifice will reset the timer to the standard length.
+提示されたすべての犠牲を拒否する。そうすると、ルーは今後の犠牲を捧げる準備があなたにできているかを見極めるのに、より時間をかけるようになる。提示がまだ有効な間、ルーはさらなる犠牲を提示しない。
+
+続けて拒否するたびに、犠牲の待ち時間は大きく延びる。犠牲を受け入れると、待ち時間は通常の長さに戻る。
+%%%%
+Stomp ability
+
+# en:
+#   Stomps down in time with the rhythm of the dance, sending a shockwave through
+#   all adjacent creatures. The shockwave damages each creature by a fraction of
+#   its current health, plus damage increasing with Invocations skill.
+踊りのリズムに合わせて足を踏み下ろし、隣接するすべてのモンスターに衝撃波を送る。衝撃波は各モンスターに、その現在の体力の一定割合に加えて、祈祷の技能に応じて増えるダメージを与える。
+%%%%
+Line Pass ability
+
+# en:
+#   Passes through a contiguous line of creatures at superhuman speed, ending up
+#   in a new location. Any creatures passed through in this way will be confused
+#   briefly, with the duration of confusion increasing with Invocations skill.
+一列に連なったモンスターの間を超人的な速さで通り抜け、新しい場所に出る。こうして通り抜けられたモンスターは短い間混乱し、混乱の持続時間は祈祷の技能に応じて延びる。
+%%%%
+Grand Finale ability
+
+# en:
+#   Merges with a target emotionally and physically, and then bursts forth from
+#   them, violently splitting them apart and killing them instantly. This ability
+#   becomes easier to use as the worshipper's piety and Invocations skill increase.
+#
+#   More violent Uskayaw sects consider their members not to be true worshippers
+#   until they have performed this rite.
+対象と感情的にも肉体的にも一体となり、その体から飛び出して、激しく引き裂いてたちまち殺す。この能力は、信者の信仰心と祈祷の技能が高まるにつれて使いやすくなる。
+
+ウスカヤーのより過激な宗派では、この儀式を行うまで信者を真の崇拝者とはみなさない。
+%%%%
+Donate Gold ability
+
+# en:
+#   Donates half of your gold to Zin, which will increase your piety over time. The
+#   overall increase is determined by the size of your donation.
+所持金の半分をジンに寄進し、時間をかけて信仰心を高める。全体の上昇量は寄進の額によって決まる。
+%%%%
+Recall Ancestor ability
+
+# en:
+#   Recalls your ancestor from anywhere in the dungeon to your immediate
+#   surroundings.
+迷宮のどこにいる祖霊も、あなたのすぐ周りへと呼び戻す。
+%%%%
+Idealise ability
+
+# en:
+#   Restores your ancestor to an idyllic vision of their best self. Their wounds
+#   are forgotten and a glow of perfection infuses them, giving them a short-lived
+#   but dramatic increase in strength, spellcasting, and armour. The quality of the
+#   healing and duration of the idealisation granted are both improved by the
+#   Invocations skill.
+祖霊を、最良の自分という牧歌的な姿へと戻す。その傷は忘れ去られ、完全さの輝きが満ちて、短い間だが筋力、呪文の詠唱、防御力が劇的に高まる。回復の度合いと理想化の持続時間は、どちらも祈祷の技能に応じて向上する。
+%%%%
+Transference ability
+
+# en:
+#   Forces a targeted creature to pass through the realms of memory and exchange
+#   places with your ancestor.
+#
+#   With great piety, those near the target will be drained to a degree depending
+#   on Invocations skill.
+指定したモンスターを記憶の領域に通り抜けさせ、あなたの祖霊と位置を入れ替えさせる。
+
+信仰心が高いと、対象の近くにいる者は祈祷の技能に応じた度合いで衰弱する。
+%%%%
+Ancestor Life: Knight ability
+
+# en:
+#   Remembers your ancestor as a knight, a strong melee combatant with superior
+#   defences. This choice is permanent and cannot be undone.
+あなたの祖霊を騎士として思い出す。騎士は優れた防御力を持つ、強力な近接戦闘の戦士である。この選択は恒久的で、取り消すことはできない。
+%%%%
+Ancestor Life: Battlemage ability
+
+# en:
+#   Remembers your ancestor as a battlemage, a warrior capable of relentless offence
+#   with both melee and conjurations. This choice is permanent and cannot be undone.
+あなたの祖霊を戦闘魔術師として思い出す。戦闘魔術師は近接戦闘と妖術の両方で容赦なく攻め立てることができる戦士である。この選択は恒久的で、取り消すことはできない。
+%%%%
+Ancestor Life: Hexer ability
+
+# en:
+#   Remembers your ancestor as a hexer, a cunning rogue capable of swift
+#   knifework and debilitating spellcasting. This choice is permanent and cannot be
+#   undone.
+あなたの祖霊を呪術師として思い出す。呪術師は素早い短剣さばきと相手を弱らせる呪文を得意とする、狡猾な盗賊である。この選択は恒久的で、取り消すことはできない。
+%%%%
+Ancestor Identity ability
+
+# en:
+#   Recalls who your ancestor preferred to be known as, correcting their name and
+#   gender.
+あなたの祖霊がどう呼ばれたがっていたかを思い出し、その名前と性別を正す。
+%%%%
+Wall Jump ability
+
+# en:
+#   Vaults off an adjacent wall towards enemies, striking all enemies adjacent to
+#   the landing spot and taking two turns to complete the motion.
+隣接する壁を蹴って敵の方へ跳び、着地点に隣接するすべての敵を打つ。この動作を終えるには2ターンかかる。
+%%%%
+Serpent's Lash ability
+
+# en:
+#   Allows you to move at supernatural speeds, making any normal movements up to a
+#   distance of two tiles instant. Martial attacks performed under the effect of
+#   Serpent's Lash are more damaging and never miss.
+超自然的な速さで動けるようになり、2マスの距離までの通常の移動を一瞬で行えるようにする。蛇の鞭打ちの効果中に行う武術の攻撃は、ダメージが大きく、決して外れない。
+%%%%
+Heavenly Storm ability
+
+# en:
+#   Invokes a storm of heavenly clouds. While the storm rages, your evasion and
+#   combat accuracy and damage are substantially increased, and striking enemies
+#   with martial attacks increases this bonus. The storm weakens over time and
+#   fades away once the bonus reaches zero. The heavenly clouds prevent
+#   invisibility, and obscure the vision of those outside the storm.
+天上の雲の嵐を呼び起こす。嵐が荒れ狂っている間、あなたの回避、戦闘での命中率とダメージは大きく高まり、武術の攻撃で敵を打つとこのボーナスが増える。嵐は時間とともに弱まり、ボーナスが0になると消え去る。天上の雲は透明化を妨げ、嵐の外にいる者の視界を遮る。
+%%%%
+Fiery Armour ability
+
+# en:
+#   Armours yourself in fire, providing +7 AC and searing foes foolish enough to
+#   strike you in melee. The fire takes quite a long time to burn out.
+炎の鎧をまとい、AC+7を得るとともに、愚かにも近接攻撃であなたを打った敵を焼く。炎が燃え尽きるまでにはかなり長い時間がかかる。
+%%%%
+Foxfire Swarm ability
+
+# en:
+#   Conjures a swarm of animate flames all around you. These rapidly seek the
+#   nearest monsters, burning them. They will dissipate harmlessly if unable to
+#   reach a target or if you swap places with them.
+あなたの周り一帯に、生ける炎の群れを呼び出す。炎は最も近くのモンスターを素早く探し出して焼く。対象にたどり着けなかったり、あなたが炎と位置を入れ替えたりすると、害もなく消散する。
+%%%%
+Rising Flame ability
+
+# en:
+#   Sends you floating upward and, after a short delay for Ignis to gather enough
+#   power, blasts you through the ceiling and into the level above. This ability
+#   may only be used once.
+あなたを上空へ浮かび上がらせ、イグニスが十分な力を集めるための少しの間のあと、天井を突き破って上の階層へと吹き飛ばす。この能力は一度しか使えない。
+%%%%
+Hop ability
+
+# en:
+#   Hops toward a chosen destination, landing somewhere nearby. After using this
+#   ability, you will be unable to hop again until you have spent some time not
+#   moving. (Other actions, such as casting spells and attacking, are fine.)
+選んだ目的地に向かって跳び、その近くのどこかに着地する。この能力を使ったあとは、しばらく移動しないで過ごすまで、再び跳ぶことはできない。(呪文を唱えたり攻撃したりといった他の行動は構わない。)
+%%%%
+Blinkbolt ability
+
+# en:
+#   Turns the user into living lightning and zaps them at the chosen monster,
+#   dealing electric damage to everything in their path and depositing the user
+#   at the bolt's end. After using this ability, you will be unable to use it
+#   again for a short time.
+使用者を生ける稲妻に変えて選んだモンスターへと撃ち出し、その通り道にあるすべてのものに電撃のダメージを与え、使用者を稲妻の終点に降ろす。この能力を使ったあとは、しばらくの間再び使うことができない。
+%%%%
+Siphon Essence ability
+
+# en:
+#   Torments nearby living foes, halving their health. The pain inflicted heals
+#   the user to an extent determined by Shapeshifting skill. After using this
+#   ability, you will be unable to use it again for a short time.
+近くにいる生きた敵を苦しめ、その体力を半分にする。与えた苦痛によって、変身術の技能に応じた分だけ使用者の傷を癒す。この能力を使ったあとは、しばらくの間再び使うことができない。
+%%%%
+Evoke the Sceptre of Asmodeus ability
+
+# en:
+#   Calls on the power of Asmodeus to summon fiery demons of Hell. The demons
+#   summoned will remain friendly only for a limited time, eventually becoming
+#   hostile before vanishing. The success of the ability scales with the Evocations
+#   skill, and this ability is available only while wielding the Sceptre of
+#   Asmodeus.
+アスモデウスの力を呼び起こし、地獄の炎の悪魔たちを召喚する。召喚された悪魔は限られた時間しか友好的でいられず、やがて敵対的になったあとで消え去る。この能力の成功は発動の技能に応じて高まり、アスモデウスの王笏を装備している間しか使えない。
+%%%%
+Evoke Damnation ability
+
+# en:
+#   Blasts a targeted enemy with damnation. These unholy forces harm the victim and
+#   anyone adjacent, and are not affected by any means of protection, such as armour
+#   or resistances. However, certain creatures, usually those able to invoke
+#   damnation themselves, are entirely unscathed by damnation. The power of this
+#   ability scales with the Evocations skill.
+指定した敵に天罰を浴びせる。この不浄な力は対象とその隣にいる者すべてを傷つけ、鎧や耐性などのいかなる防御手段の影響も受けない。ただし、一部のモンスター、主に自らも天罰を呼び起こせる者たちは、天罰を受けてもまったく傷つかない。この能力の威力は発動の技能に応じて高まる。
+%%%%
+Evoke the Staff of Olgreb ability
+
+# en:
+#   Causes the caster to radiate toxic energy, continuously inflicting poison on
+#   everything in line of sight for as long as the aura lasts. The power of this
+#   ability scales with the Evocations skill, and this ability is available only
+#   while wielding the Staff of Olgreb.
+使用者に毒の力を放射させ、オーラが続く限り、視界内のすべてのものに絶えず毒を与える。この能力の威力は発動の技能に応じて高まり、オルグレブの杖を装備している間しか使えない。
+%%%%
+Jump ability
+
+# en:
+#   Leaps through the air in the blink of an eye. While it is impossible to control
+#   your destination, the movement is so abrupt and agile that no monster will be
+#   able to land a blow on you until you can act again, and many may lose track of
+#   your position entirely.
+#
+#   You must spend a short while recovering between each use of this ability.
+まばたきする間に宙を跳ぶ。行き先を制御することはできないが、その動きはあまりにも唐突で機敏なため、あなたが再び行動できるようになるまでどのモンスターもあなたに一撃を加えることはできず、多くのモンスターはあなたの居場所を完全に見失うこともある。
+
+この能力を使うたびに、少しの間回復する時間が必要である。
+%%%%
+Watery Grave ability
+
+# en:
+#   Turns all of the water near you into a surging tide that attempts to drown every
+#   enemy standing in or above it. Those who need air to breathe will also become
+#   Flooded, preventing them from casting spells affected by Silence for several
+#   turns and dealing minor asphyxiation damage.
+#
+#   After using this ability, you must gain experience points before you can recover
+#   enough power to use it again.
+あなたの近くのすべての水を押し寄せる潮に変え、その中や上にいるすべての敵を溺れさせようとする。呼吸に空気を必要とする者は浸水の状態にもなり、数ターンの間、静寂の影響を受ける呪文を唱えられなくなり、軽い窒息のダメージを受ける。
+
+この能力を使ったあとは、再び使えるだけの力を取り戻すまでに経験値を得なければならない。
+%%%%
+Bestial Takedown ability
+
+# en:
+#   Unleashes the full power of your predatory instincts to leap towards a terrified
+#   enemy and perform a vicious melee attack against them. This attack receives a
+#   damage multiplier based on your Shapeshifting skill. If it kills them, you will
+#   always perform a Howl afterward.
+#
+#   Can only target an enemy who is afraid, and who has at least one occupiable tile
+#   adjacent to them.
+捕食者の本能の力をすべて解き放ち、恐慌状態の敵に向かって跳びかかって、獰猛な近接攻撃を加える。この攻撃は、変身術の技能に応じたダメージの倍率を得る。この攻撃で敵を倒すと、そのあとで必ず遠吠えを行う。
+
+恐慌状態にあり、隣に少なくとも1つ立ち入れるマスがある敵しか対象にできない。
 %%%%

@@ -47,7 +47,7 @@ function callback.wizard_prison_walls()
   for i, pos in ipairs(wall_pos) do
     dgn.terrain_changed(pos.x, pos.y, "floor", false)
   end
-  crawl.mpr("You hear a hidden mechanism click...the prison walls lower!")
+  crawl.mpr(crawl.jtrans("You hear a hidden mechanism click...the prison walls lower!"))
 end
 
 }}

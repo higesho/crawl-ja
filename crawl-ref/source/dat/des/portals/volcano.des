@@ -292,15 +292,15 @@ function volcano_caves_collapse_doorways(data, triggerable, triggerer,
   local you_x, you_y = you.pos()
 
   if you_x == x and you_y == y then
-    crawl.mpr("There is a rumble as the volcano erupts. The roof shakes.",
+    crawl.mpr(crawl.jtrans("There is a rumble as the volcano erupts. The roof shakes."),
               "warning")
     return
   end
 
   if you.see_cell(marker:pos()) then
-    crawl.mpr("The volcano erupts! Nearby, a roof collapses.", "warning")
+    crawl.mpr(crawl.jtrans("The volcano erupts! Nearby, a roof collapses."), "warning")
   else
-    crawl.mpr("There is a rumble as the volcano erupts. The roof shakes.",
+    crawl.mpr(crawl.jtrans("There is a rumble as the volcano erupts. The roof shakes."),
               "warning")
   end
   dgn.terrain_changed(x, y, "stone_wall", false)
@@ -337,39 +337,39 @@ function volcano_overflow_convert_lava(data, triggerable,
   end
 
   if lp == 1 then
-    crawl.mpr("The ground shudders ominously.", "warning")
+    crawl.mpr(crawl.jtrans("The ground shudders ominously."), "warning")
   elseif lp == 2 then
     my_replicas = dgn.find_marker_positions_by_prop("lava_phase", 2)
-    crawl.mpr("In the distance, the volcano explodes with a roar! Lava spreads "
-               .. "onto the path.", "warning")
+    crawl.mpr(crawl.jtrans("In the distance, the volcano explodes with a roar! Lava spreads "
+               .. "onto the path."), "warning")
     convert_replicas_to_lava(my_replicas)
   elseif lp == 3 then
-    crawl.mpr("The air is thick with the scent of sulphur.", "warning")
+    crawl.mpr(crawl.jtrans("The air is thick with the scent of sulphur."), "warning")
   elseif lp == 4 then
     my_replicas = dgn.find_marker_positions_by_prop("lava_phase", 4)
-    crawl.mpr("There is another distant roar. More lava overflows!", "warning")
+    crawl.mpr(crawl.jtrans("There is another distant roar. More lava overflows!"), "warning")
     convert_replicas_to_lava(my_replicas)
   elseif lp == 5 then
-    crawl.mpr("The ground moves violently!", "warning")
+    crawl.mpr(crawl.jtrans("The ground moves violently!"), "warning")
   elseif lp == 6 then
     my_replicas = dgn.find_marker_positions_by_prop("lava_phase", 6)
-    crawl.mpr("The volcano erupts again! A thin layer of lava overflows to " ..
-              "fill the cavern.", "warning")
+    crawl.mpr(crawl.jtrans("The volcano erupts again! A thin layer of lava overflows to " ..
+              "fill the cavern."), "warning")
     convert_replicas_to_lava(my_replicas)
   elseif lp == 7 then
     my_replicas = dgn.find_marker_positions_by_prop("lava_phase", 6)
-    crawl.mpr("The ground shudders. Some of the lava has hardened enough to walk " ..
-              "over!", "warning")
+    crawl.mpr(crawl.jtrans("The ground shudders. Some of the lava has hardened enough to walk " ..
+              "over!"), "warning")
     convert_replicas_to_lava(my_replicas, true)
   elseif lp == 8 then
     my_replicas = dgn.find_marker_positions_by_prop("lava_phase", 4)
-    crawl.mpr("The ground shudders. Some of the lava has hardened enough to walk " ..
-              "over!", "warning")
+    crawl.mpr(crawl.jtrans("The ground shudders. Some of the lava has hardened enough to walk " ..
+              "over!"), "warning")
     convert_replicas_to_lava(my_replicas, true)
   elseif lp == 9 then
     my_replicas = dgn.find_marker_positions_by_prop("lava_phase", 2)
-    crawl.mpr("The ground shudders. Some of the lava has hardened enough to walk " ..
-              "over!", "warning")
+    crawl.mpr(crawl.jtrans("The ground shudders. Some of the lava has hardened enough to walk " ..
+              "over!"), "warning")
     convert_replicas_to_lava(my_replicas, true)
   end
 end

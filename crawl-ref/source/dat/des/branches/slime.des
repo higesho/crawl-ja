@@ -12,16 +12,16 @@ function fixup_slime_vaults(data, triggerable, triggerer, marker, ev)
 
   if you.god() == "Jiyva" and you.piety_rank() >= 6 then
     if you.silenced() then
-        crawl.mpr("You feel a strange vibration for a moment.", "god")
+        crawl.mpr(crawl.jtrans("You feel a strange vibration for a moment."), "god")
     else
-        crawl.mpr("You hear the sound of toppling stones.", "god")
+        crawl.mpr(crawl.jtrans("You hear the sound of toppling stones."), "god")
     end
   else
     if seen then
-        crawl.mpr("The stone walls suddenly crumble and collapse.",
+        crawl.mpr(crawl.jtrans("The stone walls suddenly crumble and collapse."),
                   "monster_enchant")
     else
-        crawl.mpr("You feel a strange vibration for a moment.",
+        crawl.mpr(crawl.jtrans("You feel a strange vibration for a moment."),
                   "monster_enchant")
     end
   end

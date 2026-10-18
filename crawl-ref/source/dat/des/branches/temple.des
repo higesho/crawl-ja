@@ -5536,7 +5536,7 @@ FTILE:   _G = floor_rough_brown
 :   vault_granite_statue_setup(_G, "G", "broken pillar")
 : set_feature_name("stone_wall", "defaced carved stone wall")
 epilogue{{
-    crawl.mpr("The air is stale and forgotten.")
+    crawl.mpr(crawl.jtrans("The air is stale and forgotten."))
 }}
 MAP
  ccccc

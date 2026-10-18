@@ -505,7 +505,7 @@ function TriggerableMessage:new(pars)
 end
 
 function TriggerableMessage:on_trigger(triggerer, marker, ev)
-  crawl.mpr(self.msg, self.channel)
+  crawl.mpr(crawl.jtrans(self.msg), self.channel)
 
   if not self.repeated then
     self:remove(marker)

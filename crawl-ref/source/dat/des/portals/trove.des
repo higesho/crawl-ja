@@ -206,8 +206,9 @@ end
 
 function trove_milestone (e, trove_desc)
     crawl.mark_milestone("br.enter", "entered " .. trove_desc .. ".", "parent")
-    crawl.take_note("Entered " .. trove_desc)
-    crawl.mpr("You've discovered " .. trove_desc .. "!")
+    local trove_desc_j = crawl.jtrans(trove_desc)
+    crawl.take_note(crawl.jtrans("Entered %s", trove_desc_j))
+    crawl.mpr(crawl.jtrans("You've discovered %s!", trove_desc_j))
 end
 
 function trove_setup(e)

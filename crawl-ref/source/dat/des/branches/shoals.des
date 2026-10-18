@@ -50,7 +50,7 @@ end
 -- When the kraken dies, the tides will control the water, so the items will
 -- be accessible!
 function shoals_atoll_kraken_death(data, triggerable, triggerer, marker, ev)
-    crawl.mpr("The surface of the water froths suddenly, and then rushes away.",
+    crawl.mpr(crawl.jtrans("The surface of the water froths suddenly, and then rushes away."),
               "warning")
 
     local points = dgn.find_marker_positions_by_prop("water_marker", 1)

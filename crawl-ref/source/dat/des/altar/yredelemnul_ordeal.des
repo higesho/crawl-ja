@@ -9,24 +9,24 @@ function callback.dk_yredelemnul_ordeal_los(data, triggerable, triggerer, marker
   if data.triggered == true then
     return
   end
-  crawl.god_speaks("Yredelemnul", "You sense Yredelemnul urging you " ..
-                                  "to kill the trapped human.")
+  crawl.god_speaks("Yredelemnul", crawl.jtrans("You sense Yredelemnul urging you " ..
+                                  "to kill the trapped human."))
   data.triggered = true
 end
 
 function callback.dk_yredelemnul_ordeal(data, triggerable, triggerer, marker, ev)
-  crawl.god_speaks("Yredelemnul", "Yredelemnul welcomes your deed!")
+  crawl.god_speaks("Yredelemnul", crawl.jtrans("Yredelemnul welcomes your deed!"))
 
   for replica in iter.replica_iterator("floor", 1) do
       if not dgn.is_passable(replica.x,replica.y) then
         dgn.terrain_changed(replica.x, replica.y, "floor", false)
         dgn.place_cloud(replica.x, replica.y, "foul pestilence", crawl.random2(15) + 5)
       else
-        crawl.mpr("You feel a numb sensation.")
+        crawl.mpr(crawl.jtrans("You feel a numb sensation."))
         return
       end
   end
-  crawl.mpr("You hear a strange fizzling.")
+  crawl.mpr(crawl.jtrans("You hear a strange fizzling."))
 end
 }}
 

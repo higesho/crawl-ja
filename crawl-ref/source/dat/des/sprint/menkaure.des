@@ -3,7 +3,7 @@ function sprint2_forest_area_1_mons_gen(data, triggerable,
                                         triggerer, marker, ev)
     function spawn_zombie (x, y, spec)
         local mons = dgn.create_monster(x, y, spec)
-        crawl.mpr("Murray drops in to check on your progress.")
+        crawl.mpr(crawl.jtrans("Murray drops in to check on your progress."))
         return mons
     end
 

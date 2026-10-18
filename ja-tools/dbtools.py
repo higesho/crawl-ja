@@ -15,6 +15,9 @@
   要再翻訳  ja/ にあるが "# en:" の英文が今の英文と違う、または ja/ にはなく
             ja-work/stale/ に旧訳があるもの
   未訳      それ以外
+  要確認    訳ありのうち、本家 0.34 の ja/ から取り込んだ訳(ja-work/review/ にある項目)。
+            元の英文が不明で、古い英文の訳のことがある。今の英文と見比べて直し、
+            直したら ja-work/review/ の該当項目を消す
 
 訳の書き方(既存の ja/*.txt と同じ):
 
@@ -100,9 +103,15 @@ def en_comment(comment):
 
 
 def classify(d, f):
-    en = read(f'{DAT}/{d}/{f}')
+    # 同じキーが複数あると database.cc(DBM_REPLACE)では後の項目が使われる
+    en_all = read(f'{DAT}/{d}/{f}')
+    last = {k.lower(): i for i, (k, b, c) in enumerate(en_all)}
+    en = [e for i, e in enumerate(en_all) if last[e[0].lower()] == i]
     ja = {k.lower(): (b, c) for k, b, c in read(f'{DAT}/{d}/ja/{f}')}
     stale = {k.lower(): (b, c) for k, b, c in read(f'{WORK}/stale/{d}/{f}')}
+    # 本家 0.34 の ja/ から取り込んだ訳(元の英文が不明で、古い英文の訳のことがある)。
+    # 見直したら ja-work/review/ の該当項目を消す。
+    review = {k.lower() for k, b, c in read(f'{WORK}/review/{d}/{f}')}
     rows = []
     for k, b, _ in en:
         j = ja.get(k.lower())
@@ -116,6 +125,8 @@ def classify(d, f):
             state = 'stale'
         else:
             state = 'missing'
+        if state == 'ok' and k.lower() in review:
+            state = 'review'
         rows.append((k, b, state, stale.get(k.lower())))
     return rows
 
@@ -134,15 +145,16 @@ def files(arg):
 
 
 def cmd_status(args):
-    tot = [0, 0, 0, 0]
+    tot = [0, 0, 0, 0, 0]
     for d, f in files(args[0] if args else None):
         rows = classify(d, f)
         c = [len(rows), sum(r[2] == 'ok' for r in rows),
-             sum(r[2] == 'stale' for r in rows), sum(r[2] == 'missing' for r in rows)]
+             sum(r[2] == 'stale' for r in rows), sum(r[2] == 'missing' for r in rows),
+             sum(r[2] == 'review' for r in rows)]
         tot = [a + b for a, b in zip(tot, c)]
-        if c[2] or c[3] or args:
-            print(f'{d}/{f}: 項目 {c[0]}  訳あり {c[1]}  要再翻訳 {c[2]}  未訳 {c[3]}')
-    print(f'合計: 項目 {tot[0]}  訳あり {tot[1]}  要再翻訳 {tot[2]}  未訳 {tot[3]}')
+        if c[2] or c[3] or c[4] or args:
+            print(f'{d}/{f}: 項目 {c[0]}  訳あり {c[1]}  要再翻訳 {c[2]}  未訳 {c[3]}  要確認 {c[4]}')
+    print(f'合計: 項目 {tot[0]}  訳あり {tot[1]}  要再翻訳 {tot[2]}  未訳 {tot[3]}  要確認 {tot[4]}')
 
 
 def cmd_todo(args):

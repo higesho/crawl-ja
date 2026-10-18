@@ -1,15 +1,563 @@
 %%%%
+Fast status
+
+# en:
+#   All of your actions are 50% faster.
+あなたのあらゆる行動が50%速くなる。
+%%%%
+Invis status
+
+# en:
+#   You are invisible. Most enemies will be unable to see you and will suffer
+#   penalties to hit, though they may be able to guess at your general location.
+#   If the status is greyed out, it is active but ineffective for some reason (for
+#   example if you are glowing with magical contamination or standing in shallow
+#   water).
+あなたは透明化している。ほとんどの敵はあなたを見ることができず、命中にペナルティを受けるが、おおよその居場所は推測されるかもしれない。この状態が灰色で表示されている場合、効果は続いているが、何らかの理由で効いていない(例えば魔力汚染で光を放っているときや、浅い水の中に立っているとき)。
+%%%%
+Tele status
+
+# en:
+#   You are about to teleport. While waiting to teleport, attempting to apply the
+#   status again (such as by using a scroll of teleportation) will cancel the
+#   teleportation.
+あなたはまもなくテレポートする。テレポートを待っている間に再びこの状態を得ようとすると(テレポートの巻物を使うなど)、テレポートは取り消される。
+%%%%
+!Tele! status
+
+# en:
+#   You are about to teleport towards hostile monsters, if possible. Before this
+#   happens, attempting to teleport again (such as by using a scroll of
+#   teleportation) will cancel this teleportation.
+あなたはまもなく、可能であれば敵対的なモンスターの方へテレポートする。それが起こる前に再びテレポートしようとすると(テレポートの巻物を使うなど)、このテレポートは取り消される。
+%%%%
+Fly status
+
+# en:
+#   You are flying above the ground, and are able to cross water and lava or fight
+#   above shallow water without penalties. Most types of flight will time out – be
+#   careful what you are above when that happens!
+あなたは地面の上を飛んでおり、水や溶岩を越えたり、浅い水の上でペナルティなしに戦ったりできる。ほとんどの飛行は時間切れになる――そのときに何の上にいるかに注意すること！
+%%%%
+Agi status
+
+# en:
+#   You are unnaturally agile, and gain a bonus to your evasion.
+あなたは超自然的に機敏になっており、回避にボーナスを得ている。
+%%%%
+Brill status
+
+# en:
+#   You are unnaturally smart, and gain a bonus to the power of your spells as well
+#   as halving their magic cost (rounding up).
+あなたは超自然的に聡明になっており、呪文の威力にボーナスを得るとともに、呪文の消費魔力が半分(端数切り上げ)になる。
+%%%%
+Might status
+
+# en:
+#   You are unnaturally mighty, doing significantly more damage in physical combat.
+あなたは超自然的に力強くなっており、物理戦闘で与えるダメージが大きく増えている。
+%%%%
+Regen status
+
+# en:
+#   You regenerate health at an unnaturally fast rate. This is only shown for
+#   temporary regeneration.
+あなたは超自然的な速さで体力を再生している。これは一時的な再生の場合にのみ表示される。
+%%%%
+-Regen status
+
+# en:
+#   Your health has stopped regenerating due to the presence of nearby monsters.
+近くにモンスターがいるため、あなたの体力の再生は止まっている。
+%%%%
+MPRegen status
+
+# en:
+#   You regenerate health and magic at an unnaturally fast rate. This is only shown
+#   for temporary regeneration.
+あなたは超自然的な速さで体力と魔力を再生している。これは一時的な再生の場合にのみ表示される。
+%%%%
+Touch status
+
+# en:
+#   Your attacks deal no damage, but have a chance of confusing monsters that they
+#   hit.
+あなたの攻撃はダメージを与えないが、命中したモンスターを混乱させることがある。
+%%%%
+Will++ status
+
+# en:
+#   Your willpower is much stronger, protecting against many magical effects.
+あなたの意志力は大きく強まっており、多くの魔法の効果から守られている。
+%%%%
+Regen Will++ status
+
+# en:
+#   Trog's Hand is simultaneously making you regenerate health at an unnaturally
+#   fast rate and strengthening your willpower to protect you against many magical
+#   effects.
+トログの御手により、あなたは超自然的な速さで体力を再生すると同時に、意志力が強まって多くの魔法の効果から守られている。
+%%%%
+Berserk status
+
+# en:
+#   You are hasted, deal increased damage in combat, and have increased health, but
+#   are unable to perform most actions other than moving and attacking in melee.
+#   The status will wear off very quickly unless you are attacking monsters, and
+#   when it expires you will be slowed and unable to berserk again for a short
+#   duration.
+あなたは加速し、戦闘で与えるダメージが増え、体力も増えているが、移動と近接攻撃以外のほとんどの行動ができない。モンスターを攻撃し続けていないとこの状態はすぐに切れ、切れると減速するうえ、しばらくの間は再びバーサークできなくなる。
+%%%%
+-Berserk status
+
+# en:
+#   You are recovering from your berserk rage, and are unable to berserk again for
+#   a short duration.
+あなたはバーサークの激怒から回復しつつあり、しばらくの間は再びバーサークできない。
+%%%%
+Bearserk status
+
+# en:
+#   You are filled with barbearic rage! You are hasted, deal grizzly damage, and
+#   have greatly increased health, but find it impawsible to do much other than
+#   move and maul foes. You'll bid furwell to this status very quickly unless you
+#   are attacking, and when it expires you will be slowed and unable to bearserk
+#   again for a short duration.
+あなたは熊のごとき激情に満ちている！ あなたは加速し、敵がクマるほどのダメージを与え、体力も大幅に増えているが、移動して敵に爪を立てる以外のことはほとんどできない。攻撃し続けていないとこの状態はあっという間に解けてしまい、解けると減速するうえ、しばらくの間は再び熊狂いになれないのでクマったものだ。
+%%%%
+Pois status
+
+# en:
+#   You are poisoned and will continually lose health. While poisoned, your current
+#   health will be partially recoloured to display the eventual poison damage that
+#   will be dealt. Poison can be cured immediately by potions of curing.
+あなたは毒に冒されており、体力が減り続ける。毒に冒されている間、現在の体力の表示の一部の色が変わり、最終的に受ける毒のダメージを示す。毒は治療の薬ですぐに治せる。
+%%%%
+Conf status
+
+# en:
+#   You are confused. You may stumble in a random direction when attempting to move
+#   or attack, and are unable to cast spells or use most items other than potions.
+#   Confusion can be cured immediately by potions of curing.
+あなたは混乱している。移動や攻撃をしようとすると無作為な方向によろめくことがあり、呪文を唱えることも、薬以外のほとんどのアイテムを使うこともできない。混乱は治療の薬ですぐに治せる。
+%%%%
+Contam status
+
+# en:
+#   You are glowing with mutagenic radiation. This can inflict mutations over time
+#   (usually negative) or even cause you to suffer damage as the unstable magic
+#   explodes violently. In addition, your glow prevents invisibility and reduces
+#   your stealth.
+#   {{
+#       local dmg = you.contam_max_damage();
+#       if dmg > 0 then
+#           return "\nAn explosion at your current level of contamination could " ..
+#                  "inflict up to " .. dmg .. " damage."
+#       end
+#   }}
+あなたは変異を誘発する放射線で光を放っている。これは時間とともに(たいていは有害な)突然変異をもたらしたり、不安定な魔力が激しく爆発してダメージを与えたりすることさえある。さらに、この光のせいで透明化できず、隠密性も低下する。
+{{
+    local dmg = you.contam_max_damage();
+    if dmg > 0 then
+        return "\n現在の汚染度で爆発が起きた場合、最大" .. dmg ..
+               "のダメージを受ける可能性がある。"
+    end
+}}
+%%%%
+Drain status
+
+# en:
+#   Your maximum health has been temporarily drained by negative energy. This
+#   status will not wear off by waiting, but will gradually expire as you gain
+#   experience.
+あなたの最大体力は負のエネルギーによって一時的に吸収されている。この状態は待っていても治らないが、経験値を得るにつれて徐々に回復する。
+%%%%
+-Breath status
+
+# en:
+#   You are catching your breath, and are unable to use your innate breath ability
+#   until the status expires.
+あなたは息を整えている最中で、この状態が切れるまで生来のブレス能力を使えない。
+%%%%
+Breath status
+
+# en:
+#   Indicates how many uses of your draconian breath weapon are available. If the
+#   indicator is dim, there are zero. Otherwise, the number of plusses indicate
+#   additional uses available.
+ドラコニアンのブレスをあと何回使えるかを示す。表示が暗ければ0回だ。そうでなければ、「＋」の数が追加で使える回数を示す。
+%%%%
+Breath+ status
+
+# en:
+#   <Breath status>
+<Breath status>
+%%%%
+Breath++ status
+
+# en:
+#   <Breath status>
+<Breath status>
+%%%%
+Exh status
+
+# en:
+#   You are exhausted, and are unable to activate divine powers that cause
+#   exhaustion until the status expires.
+あなたは疲労しており、この状態が切れるまで、疲労を伴う神の力を発動できない。
+%%%%
+Slow status
+
+# en:
+#   All your actions take 50% longer.
+あなたのあらゆる行動に50%長く時間がかかる。
+%%%%
+Para status
+
+# en:
+#   You are paralysed, and completely unable to act.
+あなたは麻痺しており、まったく行動できない。
+%%%%
+Sleep status
+
+# en:
+#   You are asleep, and completely unable to act. Taking damage will wake you.
+あなたは眠っており、まったく行動できない。ダメージを受けると目を覚ます。
+%%%%
+Held status
+
+# en:
+#   You are held in a net or a spider web. You cannot move freely and will instead
+#   try to struggle free.
+あなたは網か蜘蛛の巣に捕らわれている。自由に移動できず、代わりにもがいて抜け出そうとする。
+%%%%
+Constr status
+
+# en:
+#   You are being constricted by an enemy. Your evasion is impaired, and you will
+#   take damage over time. You are unable to move away from the enemy, although you
+#   can struggle to escape by attempting to do so, and will become increasingly more
+#   likely to succeed and break the constriction when doing so multiple times.
+あなたは敵に締めつけられている。回避が低下し、時間とともにダメージを受ける。敵から離れるように移動することはできないが、そうしようとすることで抜け出そうともがくことができ、何度も試みるほど締めつけを振りほどける可能性が高くなる。
+%%%%
+Mesm status
+
+# en:
+#   You are mesmerised and cannot move away from the monster mesmerising you. The
+#   effect can be broken by killing or confusing the responsible monster or by
+#   breaking line of sight with them.
+あなたは魅了されており、魅了しているモンスターから離れるように移動できない。この効果は、元凶のモンスターを倒すか混乱させるか、その視線を遮ることで解ける。
+%%%%
+Fear status
+
+# en:
+#   You are overcome with fear and cannot move towards the monster causing fear in
+#   you. The effect can be broken by killing or confusing the responsible monster
+#   or by breaking line of sight with them.
+あなたは恐怖に呑まれており、恐怖を与えているモンスターに近づくように移動できない。この効果は、元凶のモンスターを倒すか混乱させるか、その視線を遮ることで解ける。
+%%%%
+-Tele status
+
+# en:
+#   You are prevented from teleporting or blinking.
+あなたはテレポートもブリンクもできなくなっている。
+%%%%
+-Move status
+
+# en:
+#   You cannot walk, fly around, slither, etc. You can still take other actions,
+#   and can still be moved via translocations or by being pushed, pulled, and so on.
+あなたは歩くことも、飛び回ることも、這い進むこともできない。他の行動はとることができ、転位や、押されたり引かれたりすることなどによって動かされることもある。
+%%%%
+Mark status
+
+# en:
+#   Your location is marked due to the effects of a trap or a spell, and monsters
+#   will hunt you down more precisely and will be able to detect you even if you
+#   are not in their vision.
+罠や呪文の効果によってあなたの居場所には印がつけられており、モンスターはより正確にあなたを追いつめ、視界にいなくてもあなたを探知できる。
+%%%%
+Fire status
+
+# en:
+#   You are covered with sticky fire, which causes damage over a moderate duration.
+#   Moving will quell the fire much more rapidly, and entering water will extinguish
+#   it immediately.
+あなたは粘りつく炎に覆われており、ある程度の時間にわたってダメージを受ける。移動すると炎はずっと早く鎮まり、水に入ればすぐに消える。
+%%%%
+Fire+ status
+
+# en:
+#   <Fire status>
+<Fire status>
+%%%%
+Fire++ status
+
+# en:
+#   <Fire status>
+<Fire status>
+%%%%
+Corona status
+
+# en:
+#   You are surrounded by light, greatly reducing your stealth and making you
+#   easier to hit.
+あなたは光に包まれており、隠密性が大きく下がり、攻撃も当たりやすくなっている。
+%%%%
+Barbs status
+
+# en:
+#   There are barbs embedded in your skin, and moving around will cause you to take
+#   damage. Remaining in place for a short time will allow you to remove the barbs
+#   without taking damage.
+あなたの肌には逆棘が刺さっており、動き回るとダメージを受ける。しばらくその場に留まれば、ダメージを受けずに逆棘を取り除ける。
+%%%%
+Sick status
+
+# en:
+#   You have been sickened, and your health will no longer regenerate.
+あなたは病気になっており、体力が自然回復しなくなっている。
+%%%%
+Vertigo status
+
+# en:
+#   You are disoriented and dizzy, reducing your accuracy, evasion, and
+#   spellcasting success rate.
+あなたは平衡感覚を失ってめまいがしており、命中、回避、呪文の成功率が低下している。
+%%%%
+Corr status
+
+# en:
+#   You are corroded, reducing your damage in physical combat and your armour by an
+#   amount depending on the severity of the corrosion.
+あなたは腐蝕を受けており、腐蝕の程度に応じて、物理戦闘で与えるダメージとACが低下している。
+%%%%
+Flay status
+
+# en:
+#   You are covered in illusionary wounds, causing severe damage while the effect
+#   remains active. Destroying the source of the illusion will restore all health
+#   lost to the flaying.
+あなたは幻の傷に覆われており、効果が続く間ひどいダメージを受ける。幻の源を倒せば、皮剥ぎで失った体力はすべて元に戻る。
+%%%%
+Weak status
+
+# en:
+#   Your melee attacks do 25% less damage.
+あなたの近接攻撃のダメージは25%減少する。
+%%%%
+Frozen status
+
+# en:
+#   You are covered in ice, and your movement speed is reduced.
+あなたは氷に覆われており、移動速度が低下している。
+%%%%
+Sap status
+
+# en:
+#   Your magic is sapped. Casting a spell will cause you to lose access to your
+#   magic, briefly preventing you from casting any further spells.
+あなたの魔力は流出しかけている。呪文を唱えると魔法が使えなくなり、しばらくの間それ以上呪文を唱えられなくなる。
+%%%%
 -Cast status
 
 # en:
 #   You are unable to cast spells.
 あなたは呪文を唱えることができない。
 %%%%
+Crippled status
+
+# en:
+#   At least one of your strength, intelligence, or dexterity has fallen to 0 or
+#   below. You will act slowly until this situation is remedied.
+あなたの腕力、知力、器用さの少なくとも一つが0以下になっている。この状態が解消されるまで、あなたの行動は遅くなる。
+%%%%
+DChan status
+
+# en:
+#   You are channelling the dead, causing any living creatures killed in your
+#   vicinity to be raised as spectral servants.
+あなたは死者と交信しており、あなたの近くで殺された生き物はすべて霊体の僕として蘇る。
+%%%%
+Vit status
+
+# en:
+#   You are divinely vitalised, providing protection from poison, confusion,
+#   petrification, and sickness, and increasing and sustaining your strength,
+#   intelligence and dexterity.
+あなたは神の力によって活性化されており、毒、混乱、石化、病気から守られるとともに、腕力、知力、器用さが上昇し、低下しなくなっている。
+%%%%
+Will/2 status
+
+# en:
+#   Your willpower is weaker, making you vulnerable to many magical effects.
+あなたの意志力は弱まっており、多くの魔法の効果を受けやすくなっている。
+%%%%
+Stone status
+
+# en:
+#   You are petrified, and completely unable to act. You are very easy to hit,
+#   but all damage taken is substantially reduced.
+あなたは石化しており、まったく行動できない。攻撃はきわめて当たりやすくなるが、受けるダメージはすべて大幅に軽減される。
+%%%%
+Petr status
+
+# en:
+#   You are turning to stone. Your actions are slowed, all damage taken is slightly
+#   reduced, and you will soon be completely petrified (gaining the Stone status).
+あなたは石になりつつある。行動は遅くなり、受けるダメージはすべてわずかに軽減され、まもなく完全に石化する(石化状態になる)。
+%%%%
+Resist status
+
+# en:
+#   You are more resistant to fire, cold, electricity, poison and acid.
+あなたは火、冷気、電撃、毒、酸への耐性が高まっている。
+%%%%
+Slime status
+
+# en:
+#   Your wielded weapon or your fists are coated in slime, and will turn the next
+#   living or corporeal undead monster you hit into a neutral slime.
+あなたが手にした武器または拳はスライムで覆われており、次に命中させた生きているモンスターか実体のあるアンデッドを中立のスライムに変える。
+%%%%
+Swift status
+
+# en:
+#   You are covering ground swiftly.
+あなたは素早く移動している。
+%%%%
+-Swift status
+
+# en:
+#   You are covering ground slowly.
+あなたの移動は遅くなっている。
+%%%%
+DDoor status
+
+# en:
+#   You are temporarily invulnerable to harm, but are brought close to death in the
+#   process and cannot be affected by healing while the effect is active. After the
+#   spell expires, it cannot be immediately recast.
+あなたは一時的に危害を受けなくなっているが、その代償として死の淵まで追いやられており、効果が続く間は回復の効果を受けない。呪文の効果が切れた後、すぐには唱え直せない。
+%%%%
+-DDoor status
+
+# en:
+#   You are still close to death's doorway, and cannot recast Death's Door for a
+#   short duration.
+あなたはまだ死のとば口の近くにおり、しばらくの間は死のとば口を唱え直せない。
+%%%%
 Quad status
 
 # en:
 #   QUAD DAMAGE!
 ダメージが4倍になった！
+%%%%
+Sil status
+
+# en:
+#   You are silenced. This makes reading scrolls, casting spells, invoking divine
+#   abilities, or shouting impossible.
+あなたは静寂に包まれている。そのため巻物を読むことも、呪文を唱えることも、神の能力を祈祷することも、叫ぶこともできない。
+%%%%
+Flooded status
+
+# en:
+#   Your lungs are filled with liquid, preventing you from breathing properly. This
+#   makes reading scrolls, casting spells, and invoking divine abilities impossible.
+#   You will also take asphyxiation damage every turn.
+あなたの肺は液体で満たされており、まともに呼吸ができない。そのため巻物を読むことも、呪文を唱えることも、神の能力を祈祷することもできない。また、毎ターン窒息によるダメージを受ける。
+%%%%
+Stealth status
+
+# en:
+#   Your stealth is greatly increased.
+あなたの隠密性は大きく高まっている。
+%%%%
+Vortex status
+
+# en:
+#   You are in the eye of a mighty ice storm. After the vortex fades, it cannot be
+#   called forth again for a short time.
+あなたは強大な氷の嵐の目の中にいる。渦が消えた後、しばらくの間は再び呼び出すことができない。
+%%%%
+-Vortex status
+
+# en:
+#   You are surrounded by unstable winds, and cannot recast Polar Vortex for a short
+#   duration.
+あなたは不安定な風に囲まれており、しばらくの間は極渦を唱え直せない。
+%%%%
+Liquid status
+
+# en:
+#   You are liquefying the ground around you, slowing the movement of all creatures
+#   in the area.
+あなたは周囲の地面を液状化させており、その範囲にいるすべての生き物の移動を遅くしている。
+%%%%
+Hero status
+
+# en:
+#   Your combat skills are temporarily increased.
+あなたの戦闘技能は一時的に高まっている。
+%%%%
+Finesse status
+
+# en:
+#   Your combat speed is greatly increased.
+あなたの攻撃速度は大きく高まっている。
+%%%%
+Duel status
+
+# en:
+#   You are duelling a foe in Okawaru's Arena, and will be returned whence you came
+#   if you are victorious.
+あなたはオカワルの闘技場で敵と決闘しており、勝利すれば元いた場所へ帰される。
+%%%%
+Disjoin status
+
+# en:
+#   You are destabilising space around yourself, causing nearby monsters to be
+#   randomly blinked away from you.
+あなたは周囲の空間を不安定にしており、近くのモンスターは無作為にあなたから離れた場所へブリンクさせられる。
+%%%%
+Fugue status
+
+# en:
+#   Your weapon is temporarily enhanced by the souls of the damned, providing
+#   slaying bonuses that increase with every enemy killed. At the maximum bonus,
+#   foes adjacent to your attacks' targets suffer pain damage.
+あなたの武器は呪われた魂によって一時的に強化されており、敵を倒すたびに高まる殺傷力のボーナスを得る。ボーナスが最大になると、攻撃の標的に隣接する敵も苦痛のダメージを受ける。
+%%%%
+Debt status
+
+# en:
+#   You have lived beyond your means. You cannot spend gold again until you earn
+#   enough to cancel out your debt.
+あなたは身の丈を超えた暮らしをしてしまった。借金を帳消しにできるだけの金を稼ぐまで、再び金を使うことはできない。
+%%%%
+Toxic status
+
+# en:
+#   You are radiating toxic energy, and will continuously inflict poison on all
+#   nearby creatures.
+あなたは毒の力を放射しており、近くのすべての生き物を絶えず毒に冒す。
+%%%%
+Recite status
+
+# en:
+#   You are reciting Zin's laws to nearby monsters, with a range of effects
+#   depending on the target. After finishing a recitation, it cannot be repeated
+#   for a short time.
+あなたは近くのモンスターにジンの法を説いており、相手によってさまざまな効果をもたらす。朗読を終えた後、しばらくの間は繰り返せない。
+%%%%
+-Recite status
+
+# en:
+#   You have recently finished reciting Zin's laws, and cannot recite again for a
+#   short duration.
+あなたはジンの法を説き終えたばかりで、しばらくの間は再び朗読できない。
 %%%%
 rF- status
 
@@ -23,11 +571,453 @@ rP- status
 #   You are more vulnerable to poison.
 あなたはさらに毒に弱くなったようだ。
 %%%%
+Bullseye status
+
+# en:
+#   You have targeted an enemy with a dimensional bullseye, causing missiles fired
+#   or thrown at a different enemy to also be teleported at the target.
+あなたは次元の的で敵に狙いを定めており、別の敵に向けて撃ったり投げたりした飛び道具も、その標的へと転送される。
+%%%%
+Forest status
+
+# en:
+#   You are calling a forested plane into temporary existence, and awakening nearby
+#   trees to damage your foes.
+あなたは森の次元を一時的に呼び出しており、近くの木々を目覚めさせて敵にダメージを与えている。
+%%%%
+Dragoncall status
+
+# en:
+#   You are calling forth mighty dragons to attack your foes. Each dragon which
+#   answers the call will drain your magical energy. After the call ends, it cannot
+#   be issued again for a short time.
+あなたは強大なドラゴンを呼び出して敵を攻撃させている。呼びかけに応えたドラゴン1体ごとに、あなたの魔力が吸い取られる。呼びかけが終わった後、しばらくの間は再び呼びかけることができない。
+%%%%
+-Dragoncall status
+
+# en:
+#   You have recently called forth dragons, and cannot recast Dragon's Call for a
+#   short duration.
+あなたは最近ドラゴンを呼び出したばかりで、しばらくの間はドラゴンの呼び声を唱え直せない。
+%%%%
+-Potion status
+
+# en:
+#   You are unable to quaff potions.
+あなたは薬を飲むことができない。
+%%%%
+rF+ status
+
+# en:
+#   You are more resistant to fire.
+あなたは火への耐性が高まっている。
+%%%%
+rC+ status
+
+# en:
+#   You are more resistant to cold.
+あなたは冷気への耐性が高まっている。
+%%%%
+rElec+ status
+
+# en:
+#   You are more resistant to electricity.
+あなたは電撃への耐性が高まっている。
+%%%%
+Horr status
+
+# en:
+#   You are terrified of nearby monsters, reducing your damage and accuracy in
+#   combat as well as the power of your spells.
+あなたは近くのモンスターに怯えており、戦闘でのダメージと命中、呪文の威力が低下している。
+%%%%
+-Scroll status
+
+# en:
+#   You are unable to read scrolls.
+あなたは巻物を読むことができない。
+%%%%
+Cleave status
+
+# en:
+#   Your melee attacks cleave, hitting all adjacent targets.
+あなたの近接攻撃は隣接するすべての標的を薙ぎ払う。
+%%%%
+Ambros status
+
+# en:
+#   You are regenerating health and magic, but are also confused. Curing the
+#   confusion will also end the regeneration.
+あなたは体力と魔力を再生しているが、同時に混乱してもいる。混乱を治すと再生も終わる。
+%%%%
+Surge status
+
+# en:
+#   Your next use of an evokable device will have its power enhanced, at the cost
+#   of some of your magic.
+次に発動する道具は、魔力をいくらか消費する代わりに威力が高まる。
+%%%%
+Howl status
+
+# en:
+#   A terrifying howl is echoing in your mind, calling forth powerful creatures to
+#   attack you.
+恐ろしい遠吠えがあなたの心に響き渡っており、強力な生き物を呼び寄せてあなたを襲わせている。
+%%%%
+Blood status
+
+# en:
+#   Your body is covered in congealed blood, serving as armour for as long as you
+#   remain seriously injured.
+あなたの体は凝固した血に覆われており、重傷を負っている間はそれが鎧の役目を果たす。
+%%%%
+Channel status
+
+# en:
+#   You are channelling magical energy.
+あなたは魔力を導き入れている。
+%%%%
+Beast status
+
+# en:
+#   You have been transformed into a monstrous, furry were-beast. The ferocious
+#   energy pulsing through your limbs keeps you ready to kill.
+あなたは毛むくじゃらの怪物じみた獣人に変身している。四肢を脈打つ獰猛な力によって、あなたはいつでも獲物を殺す準備ができている。
+%%%%
+Flux status
+
+# en:
+#   You are unstable at a fundamental level. You inflict dangerous levels of
+#   magical contamination on foes with each touch. Sufficient contamination
+#   causes a highly localised meltdown, dealing enormous damage.
+#
+#   However, this instability makes you unable to use weapons, shields, or
+#   body armour. You also glow, reducing stealth and preventing invisibility,
+#   and you do less damage in melee, as your limbs sometimes destabilise mid-swing.
+あなたは根源的なレベルで不安定になっている。触れるたびに敵に危険なほどの魔力汚染を与え、十分に汚染された敵は局所的な崩壊を起こして莫大なダメージを受ける。
+
+しかし、この不安定さのせいで武器、盾、胴鎧を使うことができない。また、光を放つため隠密性が下がって透明化できず、振りかぶった途中で四肢が不安定になることがあるため近接攻撃のダメージも低下する。
+%%%%
+Serpent status
+
+# en:
+#   You have been transformed into a giant, cold-blooded, poison-resistant serpent,
+#   ready to wind your coils around foes and crush them to death.
+あなたは巨大で冷血な、毒に強い大蛇に変身しており、敵にとぐろを巻きつけて締め殺す準備ができている。
+%%%%
+Maw status
+
+# en:
+#   Your midsection has transformed into a giant mouth, gnashing and ready to devour
+#   foes. The mouth may devour slain creatures, healing you to an extent increased
+#   by your Shapeshifting skill and the power of the creature eaten. Skill also
+#   increases the damage done by the maw.
+あなたの胴の中ほどは巨大な口に変わっており、歯を鳴らして敵を貪る準備ができている。この口は倒した生き物を貪ることがあり、そのたびにあなたの体力が回復する。回復量は変身術のスキルと食べた生き物の強さに応じて増える。スキルは大口が与えるダメージも増やす。
+%%%%
+Statue status
+
+# en:
+#   You have been transformed into a slow but extremely robust stone statue.
+#   Your melee damage, both unarmed and with weapons, is substantially increased.
+#   Your stone body is immune to poison and miasma, and gains resistance to
+#   electricity, negative energy and torment.
+あなたは鈍重だが極めて頑丈な石像に変身している。素手でも武器でも、近接攻撃のダメージは大幅に増えている。石の体は毒と瘴気を無効化し、電撃、負のエネルギー、苦痛への耐性を得る。
+%%%%
+Dragon status
+
+# en:
+#   {{
+#       local desc = "You have been transformed into a mighty"
+#
+#       if you.race():find("Draconian") then
+#           desc = desc .. " dragon"
+#           if you.race() ~= "Grey Draconian" then
+#               desc = desc .. ", increasing the power of any innate breath attacks"
+#           end
+#           if you.race() == "Red Draconian" then
+#               desc = desc .. ". You are highly resistant to fire and " ..
+#                              "resistant to poison, but vulnerable to cold"
+#           elseif you.race() == "White Draconian" then
+#               desc = desc .. ". You are highly resistant to cold and " ..
+#                              "resistant to poison, but vulnerable to fire"
+#           elseif you.race() == "Green Draconian" then
+#               desc = desc .. " and retaining your innate colour"
+#           else
+#               desc = desc .. ". You retain your innate colour, and are " ..
+#                              "also resistant to poison"
+#           end
+#       else
+#           desc = desc .. ", fire-breathing dragon. You are highly resistant " ..
+#                          "to fire and resistant to poison, but vulnerable to " ..
+#                          "cold"
+#       end
+#
+#       desc = desc .. "."
+#
+#       return desc
+#   }} Your melee attacks deal incredible damage, and you are much more robust but
+#   less evasive.
+{{
+    local desc
+
+    if you.race():find("Draconian") then
+        desc = "あなたは強大なドラゴンに変身して"
+        if you.race() ~= "Grey Draconian" then
+            desc = desc .. "おり、生来のブレス攻撃の威力が高まって"
+        end
+        if you.race() == "Red Draconian" then
+            desc = desc .. "いる。あなたは火に高い耐性と毒への耐性を持つが、" ..
+                           "冷気に弱い"
+        elseif you.race() == "White Draconian" then
+            desc = desc .. "いる。あなたは冷気に高い耐性と毒への耐性を持つが、" ..
+                           "火に弱い"
+        elseif you.race() == "Green Draconian" then
+            desc = desc .. "いる。あなたは生来の色を保っている"
+        else
+            desc = desc .. "いる。あなたは生来の色を保ち、毒への耐性も持つ"
+        end
+    else
+        desc = "あなたは火を吐く強大なドラゴンに変身している。あなたは火に" ..
+               "高い耐性と毒への耐性を持つが、冷気に弱い"
+    end
+
+    desc = desc .. "。"
+
+    return desc
+}}あなたの近接攻撃は凄まじいダメージを与え、体はずっと頑丈になるが、回避は低下する。
+%%%%
+Storm status
+
+# en:
+#   You have been transformed into a lightning-filled tempest. Your melee attacks
+#   are strengthened and electrified, and strike all adjacent foes. You gain flight,
+#   increased evasion, immunity to poison, miasma, petrification, and constriction,
+#   and resistance to electricity. You gain the ability to launch yourself at foes
+#   as a lightning bolt.
+あなたは稲妻に満ちた嵐に変身している。近接攻撃は強化されて電撃を帯び、隣接するすべての敵を打つ。あなたは飛行能力、高い回避、毒・瘴気・石化・締めつけへの免疫、電撃への耐性を得る。また、稲妻と化して敵に向かって突進する能力を得る。
+%%%%
+Death status
+
+# en:
+#   You have been transformed into an undying offence against life itself.
+#
+#   Foes struck by your hands or melee weapons are weakened, slowed, and drained,
+#   and you can heal yourself by tormenting living foes nearby. You also resist
+#   cold, have enhanced willpower, and are immune to poison, miasma, negative
+#   energy, and torment. Unfortunately, you are vulnerable to holy damage and
+#   Dispel Undead, and cannot consume potions.
+あなたは生命そのものに対する不死の冒涜へと変身している。
+
+あなたの手や近接武器で打たれた敵は弱体化し、減速し、生命力を吸収される。また、近くの生きている敵に苦痛を与えて自らを回復することができる。さらに冷気に耐性を持ち、意志力が高まり、毒・瘴気・負のエネルギー・苦痛を無効化する。ただし、聖なるダメージとアンデッドの解呪に弱く、薬を飲むことができない。
+%%%%
+Bat status
+
+# en:
+#   You have been transformed into a swift-moving bat, increasing your evasion but
+#   substantially weakening your melee attacks.
+#
+#   Any equipped weapons, armour and rings are melded, and you are unable to cast
+#   spells. The effectiveness of your melee attacks while in this form is based on
+#   experience level instead of on Unarmed Combat skill.
+あなたは素早く動く蝙蝠に変身しており、回避は高まるが、近接攻撃は大幅に弱くなる。
+
+装備している武器、防具、指輪はすべて体と融合し、呪文を唱えることもできない。この形態での近接攻撃の効果は、徒手格闘のスキルではなく経験レベルによって決まる。
+%%%%
+Pig status
+
+# en:
+#   You have been transformed into a pig. You move quickly but are less effective
+#   in melee.
+#
+#   Any equipped weapons, armour and rings are melded, and you are unable to cast
+#   spells. The effectiveness of your melee attacks while in this form is based on
+#   experience level instead of on Unarmed Combat skill.
+あなたは豚に変身している。素早く移動できるが、近接戦闘では力を発揮しにくい。
+
+装備している武器、防具、指輪はすべて体と融合し、呪文を唱えることもできない。この形態での近接攻撃の効果は、徒手格闘のスキルではなく経験レベルによって決まる。
+%%%%
+App status
+
+# en:
+#   {{
+#       if you.race() == "Octopode" then
+#           return "A vicious spike has grown from one of your tentacles, " ..
+#                  "increasing the damage of your extra tentacle attacks."
+#       else
+#           return "Monstrous horns or talons have grown from your body, " ..
+#                  "granting a chance of making an extra attack in melee."
+#       end
+#   }}
+{{
+    if you.race() == "Octopode" then
+        return "あなたの触手の一本から凶悪な棘が生えており、" ..
+               "追加の触手攻撃のダメージが高まっている。"
+    else
+        return "あなたの体から怪物じみた角や鉤爪が生えており、" ..
+               "近接戦闘で追加の攻撃を行えることがある。"
+    end
+}}
+%%%%
+Tree status
+
+# en:
+#   You have been transformed into a tree and are rooted to the ground, unable to
+#   move or teleport. You have minimal evasion but increased health and natural
+#   armour, and are resistant to poison, and immune to torment and drowning.
+#
+#   Any equipped cloak, helmet, gloves, boots and body armour are melded.
+あなたは樹木に変身して地面に根を張っており、移動もテレポートもできない。回避は最小限だが、体力と天然の防御力が増しており、毒への耐性を持ち、苦痛と溺死を無効化する。
+
+装備している外套、兜、手袋、靴、胴鎧はすべて体と融合する。
+%%%%
+Wisp status
+
+# en:
+#   You have been transformed into an insubstantial wisp of gas. You are highly
+#   evasive and are resistant to fire, cold, electricity and acid, and immune to
+#   poison, and negative energy.
+#
+#   Any equipped weapons, armour and jewellery are melded, and you are unable to
+#   cast spells. The effectiveness of your melee attacks while in this form is based
+#   on experience level instead of on Unarmed Combat skill.
+あなたは実体のない霧に変身している。回避能力が高く、火、冷気、電撃、酸への耐性を持ち、毒と負のエネルギーを無効化する。
+
+装備している武器、防具、装身具はすべて体と融合し、呪文を唱えることもできない。この形態での近接攻撃の効果は、徒手格闘のスキルではなく経験レベルによって決まる。
+%%%%
+Fungus status
+
+# en:
+#   You have been transformed into a sentient fungus. You are highly evasive and
+#   can release spores to cause confusion when attacking in melee, but are unable
+#   to move when hostile creatures are present. You are resistant to poison and
+#   immune to negative energy.
+#
+#   Any equipped weapons and armour are melded, and you are unable to cast spells.
+#   The effectiveness of your melee attacks while in this form is based on
+#   experience level instead of on Unarmed Combat skill.
+あなたは知性あるキノコに変身している。回避能力が高く、近接攻撃の際に胞子を放って混乱させることができるが、敵対的な生き物がいるときは移動できない。毒への耐性を持ち、負のエネルギーを無効化する。
+
+装備している武器と防具はすべて体と融合し、呪文を唱えることもできない。この形態での近接攻撃の効果は、徒手格闘のスキルではなく経験レベルによって決まる。
+%%%%
+Shadow status
+
+# en:
+#   You have been transformed into a swirling mass of dark shadows. You are
+#   permanently invisible and are immune to poison, draining, and torment. All
+#   incoming damage is halved, you bleed smoke on any incoming attack, and you have
+#   infinite willpower. However, your ability to deal damage in melee and with
+#   ranged attacks is halved, your spellcasting power is greatly hampered, and your
+#   maximum health is further drained when taking damage.
+あなたは渦巻く漆黒の影の塊に変身している。常に透明であり、毒、生命力の吸収、苦痛を無効化する。受けるダメージはすべて半減し、攻撃を受けるたびに煙を流し、意志力は無限になる。しかし、近接攻撃と射撃で与えるダメージは半減し、呪文の威力は大きく損なわれ、ダメージを受けると最大体力がさらに吸収される。
+%%%%
+Orb status
+
+# en:
+#   You are near (or perhaps holding) the Orb of Zot, whose energies disrupt
+#   translocation magic. Teleportation will take longer and scrolls of blinking may
+#   transport you a short distance away from your intended destination.
+あなたはゾットのオーブの近くにいる(あるいは手にしているのかもしれない)。オーブの力は転位の魔法を乱すため、テレポートには時間がかかるようになり、瞬間移動の巻物は狙った場所から少し離れた所へあなたを運んでしまうことがある。
+%%%%
+Orb? status
+
+# en:
+#   You are holding the Charlatan's Orb, whose energies disrupt translocation
+#   magic. Teleportation will take longer and scrolls of blinking may transport you
+#   a short distance away from your intended destination.
+あなたはペテン師のオーブを手にしている。オーブの力は転位の魔法を乱すため、テレポートには時間がかかるようになり、瞬間移動の巻物は狙った場所から少し離れた所へあなたを運んでしまうことがある。
+%%%%
+-Hop status
+
+# en:
+#   Your legs are tired, and you are unable to hop. This status will only recover
+#   after you spend several turns not moving. (Other actions, such as attacking or
+#   casting spells, are fine.)
+あなたの脚は疲れており、跳躍できない。この状態は、数ターン移動せずに過ごしたときにだけ回復する(攻撃や呪文の詠唱など、他の行動はしてもかまわない)。
+%%%%
+Ray status
+
+# en:
+#   You are currently channelling a ray of searing magical energy. Pressing
+#   <w>.</w> or <w>s</w> to wait in place will maintain and intensify the ray, at
+#   the cost of 1 MP per turn. Any other action, including recasting the spell,
+#   will end it.
+あなたは今、灼熱の魔力の光線を放ち続けている。<w>.</w>か<w>s</w>を押してその場で待機すると、1ターンにつき1MPを消費して光線を維持し、強めることができる。呪文の唱え直しを含め、他の行動をとると光線は終わる。
+%%%%
+Ray+ status
+
+# en:
+#   <Ray status>
+<Ray status>
+%%%%
+Ray++ status
+
+# en:
+#   <Ray status>
+<Ray status>
+%%%%
+Lash status
+
+# en:
+#   You are moving at supernatural speed, causing movement actions to become
+#   instant. Any martial attacks made while moving in this way deal increased
+#   damage and never miss.
+あなたは超常的な速さで動いており、移動の行動が一瞬で済む。このように移動しながら行う武術攻撃はダメージが増え、決して外れない。
+%%%%
+Heavenly status
+
+# en:
+#   You are surrounded by a storm of heavenly clouds. While the storm rages, your
+#   evasion and combat accuracy and damage are substantially increased, and
+#   striking enemies with martial attacks increases this bonus. The storm weakens
+#   over time and fades away once the bonus reaches zero. The heavenly clouds
+#   prevent invisibility, and obscure the vision of those outside the storm.
+あなたは天の雲の嵐に包まれている。嵐が荒れ狂う間、あなたの回避と、戦闘での命中とダメージは大幅に高まり、武術攻撃で敵を打つとこのボーナスはさらに増える。嵐は時間とともに弱まり、ボーナスが0になると消える。天の雲は透明化を妨げ、嵐の外にいる者の視界を遮る。
+%%%%
 SlowM status
 
 # en:
 #   Your movement is slowed on this liquid ground.
 あなたの動きはぬかるみによって遅くなっている。
+%%%%
+Alive status
+
+# en:
+#   You are full of blood, and regenerate health quickly.
+あなたは血に満ちており、体力を素早く再生する。
+%%%%
+Aug status
+
+# en:
+#   You receive spellcasting and slaying bonuses that scale with your health.
+あなたは体力に応じて高まる、呪文詠唱と殺傷力のボーナスを得ている。
+%%%%
+Beogh status
+
+# en:
+#   You can swear fealty to Beogh, the god of all orcs, through a nearby priest.
+#   To do so, use the Convert to Beogh ability in the ability menu.
+あなたは近くの司祭を通じて、すべてのオークの神であるベオに忠誠を誓うことができる。そうするには、能力メニューから「ベオへの改宗」の能力を使うこと。
+%%%%
+Bloodless status
+
+# en:
+#   Your body is entirely devoid of blood, reducing your maximum health and
+#   preventing you from regenerating health when monsters are visible. You are
+#   immune to poison and negative energy, significantly resist cold, and resist
+#   torment.
+あなたの体には血がまったくなく、最大体力が減少し、モンスターが見えているときは体力が再生しない。毒と負のエネルギーを無効化し、冷気に大きな耐性を持ち、苦痛にも耐性がある。
+%%%%
+Bribe status
+
+# en:
+#   You are bribing the inhabitants of the current branch.
+あなたは現在の支部の住人を買収している。
+%%%%
+Cloud status
+
+# en:
+#   You are in a cloud.
+あなたは雲の中にいる。
 %%%%
 -Clouds status
 
@@ -35,15 +1025,827 @@ SlowM status
 #   The air is too still for clouds to form.
 大気の流れが静止しており、煙幕を形成することができない。
 %%%%
+Dig status
+
+# en:
+#   You are digging.
+あなたは掘削している。
+%%%%
+Elixir status
+
+# en:
+#   Your health and/or magic are being rapidly restored, as well as the health of
+#   your allies.
+あなたの体力と魔力(またはそのどちらか)は、仲間の体力とともに急速に回復している。
+%%%%
 Fast+Slow status
 
 # en:
 #   You are under both slowing and hasting effects.
 あなたは減速と加速両方の効果を受けている。
 %%%%
+Lava status
+
+# en:
+#   You are currently flying over lava.
+あなたは今、溶岩の上を飛んでいる。
+%%%%
 Recall status
 
 # en:
 #   You are recalling your allies.
 あなたは仲間を呼び出している。
+%%%%
+Water status
+
+# en:
+#   {{
+#       local verb = you.flying() and "flying over" or
+#                    you.race() == "Merfolk" and "swimming in" or "standing in"
+#       local feat = view.feature_at(0, 0):gsub("_", " ")
+#
+#       if feat ~= "deep water" and feat ~= "shallow water" then
+#           feat = "water"
+#           verb = "over"
+#       end
+#
+#       return "You are currently " .. verb .. " " .. feat .. "."
+#   }}
+{{
+    local verb = you.flying() and "の上を飛んでいる" or
+                 you.race() == "Merfolk" and "の中を泳いでいる" or "の中に立っている"
+    local feat = view.feature_at(0, 0):gsub("_", " ")
+    local name
+
+    if feat == "deep water" then
+        name = "深い水脈"
+    elseif feat == "shallow water" then
+        name = "浅い水脈"
+    else
+        name = "水"
+        verb = "の上にいる"
+    end
+
+    return "あなたは今、" .. name .. verb .. "。"
+}}
+%%%%
+Attr status
+
+# en:
+#   Enemies are magically translocated toward you. (This won't wake them up.)
+敵は魔法の力であなたの方へ転位させられる(これで敵が目を覚ますことはない)。
+%%%%
+Zot status
+
+# en:
+#   You have spent too much time in one branch, allowing the malevolent power of Zot
+#   to notice you. If you spend the indicated number of turns in the branch without
+#   descending to a new floor, Zot will find you, causing permanent health damage.
+あなたは一つの支部で長く過ごしすぎたため、ゾットの邪悪な力に気付かれてしまった。新しい階層に降りないまま、表示されたターン数をこの支部で過ごすと、ゾットに見つかり、永続的な体力のダメージを受ける。
+%%%%
+Zot count status
+
+# en:
+#   If you spend the indicated number of turns in this branch without descending to
+#   a new floor, Zot will find you, causing permanent health damage.
+新しい階層に降りないまま、表示されたターン数をこの支部で過ごすと、ゾットに見つかり、永続的な体力のダメージを受ける。
+%%%%
+Gem status
+
+# en:
+#   If you spend the indicated number of turns in this branch, its gem will be found
+#   and shattered by the power of Zot.
+表示されたターン数をこの支部で過ごすと、この支部の宝石はゾットの力によって見つけ出され、砕かれてしまう。
+%%%%
+Gem (*) status
+
+# en:
+#   The power of Zot no longer hunts you, but this branch's gem still remains
+#   intact.
+ゾットの力はもうあなたを追っていないが、この支部の宝石はまだ無傷のまま残っている。
+%%%%
+rF0 status
+
+# en:
+#   The wrath of Ignis prevents you from resisting fire.
+イグニスの怒りにより、あなたは火に抵抗できない。
+%%%%
+-Blink status
+
+# en:
+#   You are unstable and cannot cast Blink or activate evoked blink abilities
+#   for a short period of time. Powerful sources of translocation magic such as
+#   scrolls of blinking ignore this limitation, as do external sources of blinking
+#   outside of your control.
+あなたは不安定になっており、しばらくの間は瞬間移動の呪文を唱えることも、発動によるブリンク能力を使うこともできない。瞬間移動の巻物のような強力な転位魔法の源はこの制限を無視し、あなたの制御の及ばない外部からのブリンクも同様だ。
+%%%%
+-Bbolt status
+
+# en:
+#   You are recovering from becoming lightning, and are unable to blinkbolt again
+#   for a short duration.
+あなたは稲妻と化した反動から回復しつつあり、しばらくの間は再び雷化できない。
+%%%%
+Charge- status
+
+# en:
+#   You are currently channelling electrical charge. Pressing <w>.</w> or <w>s</w>
+#   to wait in place will maintain and continue this process until it discharges.
+#   Any other action, including recasting the spell, will dissipate the charge
+#   harmlessly.
+あなたは今、電荷を蓄え続けている。<w>.</w>か<w>s</w>を押してその場で待機すると、放電するまでこの過程を維持して続けることができる。呪文の唱え直しを含め、他の行動をとると電荷は無害に散ってしまう。
+%%%%
+Charge/ status
+
+# en:
+#   <Charge- status>
+<Charge- status>
+%%%%
+Charge\ status
+
+# en:
+#   <Charge- status>
+<Charge- status>
+%%%%
+Charge| status
+
+# en:
+#   <Charge- status>
+<Charge- status>
+%%%%
+Wave status
+
+# en:
+#   You are currently channelling waves of flames. Pressing <w>.</w> or <w>s</w>
+#   to wait in place will maintain and intensify the waves, at the cost of 1 MP per
+#   turn. Any other action, including recasting the spell, will end it.
+あなたは今、炎の波を放ち続けている。<w>.</w>か<w>s</w>を押してその場で待機すると、1ターンにつき1MPを消費して波を維持し、強めることができる。呪文の唱え直しを含め、他の行動をとると波は終わる。
+%%%%
+Wave+ status
+
+# en:
+#   <Wave status>
+<Wave status>
+%%%%
+Ramparts status
+
+# en:
+#   You are encasing nearby walls in ice. The ice will crack and fall away if you
+#   move to a new position.
+あなたは近くの壁を氷で覆っている。新しい位置に移動すると、氷は割れて剥がれ落ちる。
+%%%%
+Bog status
+
+# en:
+#   You are creating a toxic bog in the nearby area, and are immune to its effects.
+#   You cannot sustain this transformation in areas out of your line of sight.
+あなたは周囲に有毒な沼を作り出しており、その効果を受けない。視界の外の場所では、この変化を維持できない。
+%%%%
+Enlightened status
+
+# en:
+#   You are in touch with a greater truth, increasing your resistance to effects
+#   which target your willpower. Tragically, this epiphany won't last.
+あなたはより大いなる真理に触れており、意志力を標的とする効果への抵抗力が高まっている。悲しいかな、この悟りは長くは続かない。
+%%%%
+Will+ status
+
+# en:
+#   <Enlightened status>
+<Enlightened status>
+%%%%
+Reap status
+
+# en:
+#   The dead are hopping! Living creatures you kill may rise as zombified servants.
+死者が跳ね回っている！ あなたが倒した生き物はゾンビの僕として蘇ることがある。
+%%%%
+Peek status
+
+# en:
+#   You are peering down the stairs. You can freely return to the previous level, but
+#   once you take any action on this floor, all stairs leading back up will collapse.
+あなたは階段の下を覗いている。前の階には自由に戻れるが、この階で何か行動をとると、上へ戻る階段はすべて崩れ落ちる。
+%%%%
+Fragile status
+
+# en:
+#   Your body is as fragile and brittle as glass, increasing the damage you take from
+#   all sources.
+あなたの体はガラスのように脆く、あらゆる源から受けるダメージが増えている。
+%%%%
+Ooze status
+
+# en:
+#   Acidic ooze creeps out of the walls around you. Each turn, foes are damaged
+#   depending on the number of slimy walls they remain adjacent to.
+酸性の軟泥があなたの周囲の壁から這い出している。敵は毎ターン、隣接しているぬるぬるした壁の数に応じてダメージを受ける。
+%%%%
+Dog status
+
+# en:
+#   You have summoned your canine familiar.
+あなたは犬の使い魔を召喚している。
+%%%%
+-Dog status
+
+# en:
+#   Your canine familiar is recovering from its injuries, and cannot be summoned
+#   again for a short time.
+あなたの犬の使い魔は傷から回復しつつあり、しばらくの間は再び召喚できない。
+%%%%
+-Siphon status
+
+# en:
+#   You have recently siphoned the essence of the living, and cannot do so again for
+#   a short time.
+あなたは最近生者の精気を吸い取ったばかりで、しばらくの間は再び吸い取ることができない。
+%%%%
+-Word status
+
+# en:
+#   You are fatigued from recently speaking a word of chaos, and are unable to do so
+#   again for a short time.
+あなたは最近混沌の言葉を唱えたばかりで疲れており、しばらくの間は再び唱えることができない。
+%%%%
+Jinx status
+
+# en:
+#   Jinxing spirits encircle you. When you attack foes, those who fail a Will check
+#   are jinxed, taking damage and becoming drained. The spirits depart quickly when
+#   no foes are in sight.
+呪いをかける精霊たちがあなたを取り巻いている。あなたが敵を攻撃すると、意志力の判定に失敗した者は呪われ、ダメージを受けて生命力を吸収される。視界に敵がいないと、精霊たちはすぐに去ってしまう。
+%%%%
+Rise status
+
+# en:
+#   You are hovering upward toward the ceiling. After a short delay, Ignis' power
+#   will blast you into the level above.
+あなたは天井に向かって浮かび上がっている。少し経つと、イグニスの力があなたを上の階へと吹き飛ばす。
+%%%%
+Challenge status
+
+# en:
+#   You have been challenged by a chosen apostle of Beogh, who will know your
+#   location no matter where on the floor you are. Defeat them, and you may recruit
+#   them to join you. If you flee the floor, Beogh will punish you by temporarily
+#   depriving you of allies.
+あなたはベオに選ばれた使徒から挑戦を受けている。使徒はこの階のどこにいてもあなたの居場所を知っている。使徒を打ち負かせば、仲間に勧誘できるかもしれない。この階から逃げ出すと、ベオは罰として一時的にあなたから仲間を奪う。
+%%%%
+Vengeance status
+
+# en:
+#   One of your apostles has been killed, and you have not yet killed all foes who
+#   were involved in their death. If you do so, Beogh will resurrect them sooner.
+あなたの使徒の一人が殺されたが、その死に関わった敵をまだすべて倒していない。すべて倒せば、ベオはその使徒をより早く蘇らせる。
+%%%%
+Pray status
+
+# en:
+#   You have invoked divine aid in avenging the death of a fallen apostle. Orcs will
+#   continuously rally to your side, though your prayer will end more rapidly when
+#   there are no more foes around to fight.
+あなたは倒れた使徒の死に復讐するため、神の助けを求めている。オークたちが絶えずあなたのもとに駆けつけるが、戦うべき敵が周囲にいなくなると、祈りはより早く終わる。
+%%%%
+Recruit status
+
+# en:
+#   An orcish apostle is available to recruit as a permanent companion.
+#   (Use the Recruit Apostle ability)
+オークの使徒を永続的な仲間として勧誘できる。
+(「使徒の勧誘」の能力を使う)
+%%%%
+Torch status
+
+# en:
+#   You carry the Black Torch. If this indicator is dark, the torch is unlit; if it
+#   is bright, you have called upon Yredelemnul to light the torch. So long as the
+#   torch burns, you will gain piety for kills. With sufficient piety, you will be
+#   able to use its umbral fire to empower your undead servants and damage your
+#   enemies.
+あなたは黒き松明を携えている。この表示が暗ければ松明は灯っておらず、明るければ、あなたはイレデレンヌルに願って松明を灯している。松明が燃えている限り、敵を倒すと信仰心を得る。信仰心が十分にあれば、その冥い炎を使ってアンデッドの僕を強化し、敵にダメージを与えることができる。
+%%%%
+Shackles status
+
+# en:
+#   Yredelemnul's grip is engulfing an area in life-stealing chains.
+イレデレンヌルの掌握が、生命を奪う鎖で一帯を呑み込んでいる。
+%%%%
+Rev status
+
+# en:
+#   You're starting to limber up. Your weapon-based and unarmed attacks are closer
+#   to full strength, and will continue to grow more powerful with each swing.
+あなたの体はほぐれはじめている。武器による攻撃と素手攻撃は本来の力に近づきつつあり、攻撃するたびにさらに強力になっていく。
+%%%%
+Rev+ status
+
+# en:
+#   You're limbering up. Your weapon-based and unarmed attacks are close to full
+#   strength, and will continue to grow more powerful with each swing.
+あなたの体はほぐれてきた。武器による攻撃と素手攻撃はほぼ本来の力に達しており、攻撃するたびにさらに強力になっていく。
+%%%%
+Rev* status
+
+# en:
+#   You're limbered up. Your weapon-based and unarmed attacks are at full strength,
+#   and will remain so as long as you keep swinging and for a short while afterward.
+あなたの体は完全にほぐれている。武器による攻撃と素手攻撃は本来の力を発揮しており、攻撃を続ける限り、またその後しばらくの間はその状態が保たれる。
+%%%%
+-Gavotte status
+
+# en:
+#   Gravity around you is still unstable, and you cannot cast Gell's Gavotte again
+#   until it settles back down.
+あなたの周囲の重力はまだ不安定で、それが収まるまでゲルのガヴォットを唱え直せない。
+%%%%
+Fusillade status
+
+# en:
+#   You are hurling conjured alchemical reagents at nearby monsters.
+あなたは魔法で作り出した錬金術の試薬を、近くのモンスターに投げつけている。
+%%%%
+Nightfall status
+
+# en:
+#   You are channelling the deepest night, greatly reducing your sight range. It
+#   will gradually return to normal over time.
+あなたは最も深い夜を導いており、視界の範囲が大きく狭まっている。視界は時間とともに徐々に元に戻る。
+%%%%
+Blind status
+
+# en:
+#   Your vision is badly impaired. All spells and attacks you perform (which do not
+#   automatically hit) have an increased chance to miss. This chance is much greater
+#   the further away you are from your target.
+あなたの視力はひどく損なわれている。あなたが行う呪文や攻撃(必中のものを除く)は外れる可能性が高くなり、その可能性は標的から離れているほどずっと大きくなる。
+%%%%
+Ruin status
+
+# en:
+#   You are marked with the sign of ruin, causing any melee attacks which damage you
+#   to heavily drain and randomly slow, weaken, or blind you.
+あなたには破滅の印が刻まれており、あなたにダメージを与えた近接攻撃は、あなたの生命力を激しく吸収し、さらに無作為に減速、虚弱、盲目のいずれかをもたらす。
+%%%%
+-GClaw status
+
+# en:
+#   You have not yet harvested enough death to cast Grave Claw again.
+あなたはまだ、墓場の鉤爪を再び唱えるのに十分な死を刈り取っていない。
+%%%%
+Legion status
+
+# en:
+#   You are beckoning the legions of chaos; short-lived demons will be periodically
+#   summoned near you.
+あなたは混沌の軍勢を招き寄せている。短命な悪魔たちが定期的にあなたの近くに召喚される。
+%%%%
+-Bloodrite status
+
+# en:
+#   You have recently performed an infernal blood rite and must fully heal before
+#   being able to perform another.
+あなたは最近地獄の血の儀式を執り行ったばかりで、次の儀式を行うには体力を完全に回復しなければならない。
+%%%%
+Execution status
+
+# en:
+#   You are sharing your body with an Executioner, giving you a powerful auxiliary
+#   attack that also triggers when you dodge attacks, as well as letting you rampage
+#   towards foes. This will expire quickly if you stop attacking.
+あなたは処刑の悪魔と体を共有しており、攻撃を躱したときにも発動する強力な補助攻撃と、敵に向かって猛進する能力を得ている。攻撃をやめると、この状態はすぐに切れる。
+%%%%
+Destr status
+
+# en:
+#   Your Unleash Destruction is growing more powerful as you use it consecutively.
+あなたの破壊の解放は、連続して使うほど強力になっていく。
+%%%%
+Destr+ status
+
+# en:
+#   <Destr status>
+<Destr status>
+%%%%
+Destr++ status
+
+# en:
+#   <Destr status>
+<Destr status>
+%%%%
+Destr+++ status
+
+# en:
+#   <Destr status>
+#   If you use it again, it will unleash a salvo of additional bolts aimed at random
+#   targets and this bonus will reset.
+<Destr status>
+もう一度使うと、無作為な標的を狙った追加の矢を一斉に放ち、このボーナスはリセットされる。
+%%%%
+Slaughter status
+
+# en:
+#   You are an instrument of Makhleb's destructive will. Your power and defences are
+#   greatly enhanced, but you must endure the Crucible of Flesh once this effect
+#   ends.
+あなたはマクレブの破壊の意志の道具となっている。力と防御は大きく高まっているが、この効果が終わると肉の坩堝に耐えなければならない。
+%%%%
+Pact status
+
+# en:
+#   Makhleb has come to collect on certain promises made to them.
+#   {{ if you.religion == "Makhleb" then
+#           return "Fulfill your oath as their instrument by slaying the terrified " ..
+#                  "mortals that have been gathered here, and they may grant you " ..
+#                  "freedom once again."
+#      else
+#           return "Fight and bleed and you may be granted freedom once again."
+#       end}}
+マクレブは、かつて交わされた約束の取り立てに来た。
+{{ if you.religion == "Makhleb" then
+        return "その道具としての誓いを果たし、ここに集められた怯える定命の者たちを" ..
+               "殺戮せよ。そうすれば、マクレブは再びあなたに自由を与えるかも" ..
+               "しれない。"
+   else
+        return "戦い、血を流せ。そうすれば、再び自由を与えられるかもしれない。"
+    end}}
+%%%%
+Escape! status
+
+# en:
+#   A path out of the Crucible has opened. Find it and claim your freedom again. For
+#   a time.
+坩堝からの出口が開いた。それを見つけ出し、再び自由を手にせよ。しばらくの間は。
+%%%%
+Shield status
+
+# en:
+#   You are protected by a divine shield. Enemies that strike it in melee will have
+#   their attacks completely blocked, and they may also be blinded by its light.
+あなたは神の盾に守られている。近接攻撃でこの盾を打った敵の攻撃は完全に防がれ、さらにその光で盲目になることもある。
+%%%%
+Blast status
+
+# en:
+#   You are preparing to unleash a kinetic shockwave and cannot move until this is
+#   complete.
+あなたは運動エネルギーの衝撃波を放つ準備をしており、それが完了するまで移動できない。
+%%%%
+Blast. status
+
+# en:
+#   <Blast status>
+<Blast status>
+%%%%
+Blast.. status
+
+# en:
+#   <Blast status>
+<Blast status>
+%%%%
+Blast... status
+
+# en:
+#   <Blast status>
+<Blast status>
+%%%%
+Winding status
+
+# en:
+#   You are winding up your clockwork bee. It cannot attack its target until it is
+#   fully wound up.
+あなたは時計仕掛けの蜂のぜんまいを巻いている。完全に巻き終わるまで、蜂は標的を攻撃できない。
+%%%%
+Winding. status
+
+# en:
+#   <Winding status>
+<Winding status>
+%%%%
+Winding.. status
+
+# en:
+#   <Winding status>
+<Winding status>
+%%%%
+Winding... status
+
+# en:
+#   <Winding status>
+<Winding status>
+%%%%
+Unstable status
+
+# en:
+#   You have become untethered in space, blinking randomly each turn and suffering a
+#   small amount of damage each time you do so.
+あなたは空間に繋ぎ止められなくなっており、毎ターン無作為にブリンクし、そのたびに少量のダメージを受ける。
+%%%%
+Vainglory status
+
+# en:
+#   You have recently announced your regal presence and it simply would not do to
+#   leave the floor again so soon afterward.
+あなたは最近、王者の威厳を高らかに知らしめたばかりであり、そんなにすぐにこの階を立ち去るなど、到底あり得ないことだ。
+%%%%
+Protected status
+
+# en:
+#   Your platinum paragon is close enough to you to sometimes parry attacks directed
+#   at you.
+あなたの白金の傑作はあなたのすぐ近くにいるため、あなたへの攻撃を時々受け流してくれる。
+%%%%
+Vexed status
+
+# en:
+#   Your mind is clouded by frustration. For the next several turns, you will
+#   uncontrollably attack random adjacent creatures (whether friendly or enemy) or
+#   even empty space.
+あなたの心は苛立ちに曇っている。この先数ターンの間、あなたは隣接する無作為な生き物(味方か敵かを問わない)や、何もない空間にさえ、抑えきれずに攻撃してしまう。
+%%%%
+Drowsy status
+
+# en:
+#   You are rapidly growing sleepy and may soon fall asleep completely.
+あなたは急速に眠くなっており、まもなく完全に眠り込んでしまうかもしれない。
+%%%%
+Vampire status
+
+# en:
+#   You are a vampire - a creature that straddles the border between life and
+#   undeath. You can drink the lifeblood of the living to heal, and even turn those
+#   you slay stealthily into vampiric thralls, but do not heal in the presence of
+#   monsters.
+あなたは吸血鬼――生と不死の境界にまたがる存在だ。生者の生き血を飲んで傷を癒し、密かに倒した者を吸血鬼の下僕に変えることさえできるが、モンスターがいるところでは回復しない。
+%%%%
+Swarm status
+
+# en:
+#   You have transformed into a swarm of vampire bats, allowing you to move quickly
+#   and evasively. You may trail clouds of bats in your wake.
+あなたは吸血蝙蝠の群れに変身しており、素早く、身をかわしながら移動できる。通った跡に蝙蝠の雲を残すことがある。
+%%%%
+Memories status
+
+# en:
+#   This indicates how many spells you could cast from accumulated memories if you
+#   Enkindled now.
+今再燃した場合に、蓄えた記憶から何回呪文を唱えられるかを示す。
+%%%%
+Enkindled status
+
+# en:
+#   You are burning accumulated memories for power. Each damage-dealing spell you
+#   cast will consume a memory. In exchange, their power and spell success are
+#   increased, encumbrance penalties are ignored, and your spellclaw attacks do
+#   bonus damage proportional to the spell level and heal you based on the damage
+#   dealt.
+あなたは蓄えた記憶を燃やして力に変えている。ダメージを与える呪文を唱えるたびに、記憶を一つ消費する。その代わりに呪文の威力と成功率が上がり、装備の重さによるペナルティが無視され、呪文の爪による攻撃は呪文のレベルに比例したボーナスダメージを与え、与えたダメージに応じてあなたを回復させる。
+%%%%
+Cacophony status
+
+# en:
+#   You are noisily attacking with all of your armour. Every piece of armour you
+#   haunt currently moves of its own volition; any damage it takes will not affect
+#   you, you can freely fire through it, and its attacks may daze, drain, or confuse
+#   your enemies.
+あなたは自分のすべての防具で騒々しく攻撃している。あなたが取り憑いている防具はそれぞれ自らの意思で動いており、防具が受けたダメージはあなたに影響せず、防具越しに自由に射撃でき、防具の攻撃は敵を眩惑させたり、生命力を吸収したり、混乱させたりすることがある。
+%%%%
+Catalyst status
+
+# en:
+#   You have an explosive catalyst readied. The catalyst will detonate, dealing fire
+#   damage to the primary target of each of your melee attacks and any enemy
+#   adjacent to them, with each hit. Attacking will extend the duration of the
+#   catalyst even if you miss.
+あなたは爆発性の触媒を準備している。触媒は近接攻撃が命中するたびに爆発し、その攻撃の主な標的と、それに隣接するすべての敵に火のダメージを与える。攻撃すると、外れても触媒の持続時間が延びる。
+%%%%
+Shroud status
+
+# en:
+#   You are covered by a thin shroud of slime that may deflect a melee attack. When
+#   it does, the shroud will break for a short time, though it will soon repair
+#   itself naturally.
+あなたは近接攻撃を逸らすことがある、薄いスライムの帷子に覆われている。攻撃を逸らすと帷子はしばらく破れるが、やがて自然に修復される。
+%%%%
+Yak status
+
+# en:
+#   You are a rime yak, fur encrusted with ice.
+あなたは毛皮が氷に覆われた、霧氷のヤクだ。
+%%%%
+Spider status
+
+# en:
+#   You are an agile jumping spider whose attacks can web enemies.
+あなたは攻撃で敵を蜘蛛の巣に絡めとる、敏捷な飛びつき蜘蛛だ。
+%%%%
+Quill status
+
+# en:
+#   You have spiny quills growing out of your body which may damage melee attackers.
+あなたの体からは棘のある針が生えており、近接攻撃してきた相手を傷つけることがある。
+%%%%
+Hive status
+
+# en:
+#   You are a living beehive, abuzz with busy insects.
+あなたは忙しく働く虫たちの羽音が響く、生きた蜂の巣だ。
+%%%%
+-Swarm status
+
+# en:
+#   The insects that dwell within you have recently swarmed to your defence. This
+#   will not happen again until your health fully recovers.
+あなたの中に棲む虫たちは、最近あなたを守るために群がり出たばかりだ。体力が完全に回復するまで、これは再び起こらない。
+%%%%
+Aqua status
+
+# en:
+#   Your body is composed of elemental water that can reach to attack and drown
+#   enemies.
+あなたの体は元素の水でできており、遠くまで伸びて敵を攻撃したり溺れさせたりできる。
+%%%%
+Sphinx status
+
+# en:
+#   You are a cunning, riddle-loving sphinx, with the force of a windstorm in your
+#   paws.
+あなたは前足に暴風の力を宿した、狡猾で謎かけ好きのスフィンクスだ。
+%%%%
+Werewolf status
+
+# en:
+#   You are a vicious werewolf.
+あなたは凶暴な人狼だ。
+%%%%
+Slay status
+
+# en:
+#   The damage and accuracy of your attacks is temporarily increased.
+あなたの攻撃のダメージと命中は一時的に高まっている。
+%%%%
+Scroll status
+
+# en:
+#   You are a walking scroll, parchment crisp and full of magic.
+あなたは歩く巻物で、その羊皮紙はぱりっとしていて魔力に満ちている。
+%%%%
+Crab status
+
+# en:
+#   You are a heavily-armoured crab with rusting breath.
+あなたは錆の息を吐く、重装甲の蟹だ。
+%%%%
+Scarab status
+
+# en:
+#   You are a sun scarab, with solar fire blazing beside you.
+あなたは太陽の炎を傍らに燃え上がらせる、太陽のスカラベだ。
+%%%%
+Medusa status
+
+# en:
+#   You have a mane of venomous tendrils for hair.
+あなたの髪は毒のある触手のたてがみになっている。
+%%%%
+-Lithotox status
+
+# en:
+#   Your lithotoxin has recently activated and will not do so again until you fully
+#   heal.
+あなたの石化毒は最近発動したばかりで、体力が完全に回復するまで再び発動しない。
+%%%%
+Doom status
+
+# en:
+#   A malevolent fate is gathering around you. If your Doom reaches 100%, you will
+#   be afflicted by a random bane and your Doom will reset to 0. Banes have diverse
+#   negative effects that can significantly endanger your character for an extended
+#   period of time.
+#
+#   Both Doom and Banes are only cured by gaining experience, though Banes typically
+#   last much longer.
+邪悪な運命があなたの周りに集まりつつある。破滅が100%に達すると、あなたは無作為な災厄に見舞われ、破滅は0%に戻る。災厄にはさまざまな悪影響があり、長期間にわたってあなたのキャラクターを大きな危険にさらすことがある。
+
+破滅も災厄も経験値を得ることでしか治らないが、たいてい災厄のほうがずっと長く続く。
+%%%%
+Ostracised status
+
+# en:
+#   Your connection to the divine has been partially cut-off, temporarily reducing
+#   your effective piety. Gaining experience will eventually recover all piety that
+#   has been locked away this way.
+あなたと神との繋がりは一部断たれており、実質的な信仰心が一時的に低下している。経験値を得れば、こうして封じられた信仰心はいずれすべて回復する。
+%%%%
+Tesseract status
+
+# en:
+#   A Boundless Tesseract is drawing in forces from a parallel reality. New monsters
+#   will steadily appear at random locations across the floor until either of the
+#   tesseracts is destroyed. If this is allowed to continue for a very long time,
+#   those monsters may sometimes appear near your location instead.
+果てなきテッセラクトが並行世界から力を引き寄せている。どちらかのテッセラクトが破壊されるまで、新たなモンスターがこの階の無作為な場所に絶えず現れる。これを非常に長く放置すると、モンスターが時にはあなたの近くに現れるようにもなる。
+%%%%
+-Star status
+
+# en:
+#   Your orb of stardust has recently expended its energy. It will recharge once
+#   several turns pass while your MP is full and there are no enemies in sight.
+あなたの星屑のオーブは最近力を使い果たした。MPが満タンで視界に敵がいない状態で数ターン経つと、再び力が溜まる。
+%%%%
+-Mesm status
+
+# en:
+#   Your orb of mesmerism has recently expended its energy. It will recharge after
+#   a short length of time (but cannot recharge on turns where you move).
+あなたの魅了のオーブは最近力を使い果たした。少し時間が経つと再び力が溜まる(ただし、移動したターンには溜まらない)。
+%%%%
+Phobia status
+
+# en:
+#   Your claustrophobia has given you a slaying malus. This is dependent on the
+#   number of walls surrounding you.
+閉所恐怖によって、あなたの殺傷力にマイナスの修正がかかっている。これは周囲を囲む壁の数によって決まる。
+%%%%
+Dim status
+
+# en:
+#   The power of all your spells is reduced by half.
+あなたのすべての呪文の威力は半減している。
+%%%%
+Sunder status
+
+# en:
+#   Your next attack will have increased accuracy, inflict three times its normal
+#   damage, and cleave at an increased range. This bonus is lost if you perform any
+#   action besides attacking.
+あなたの次の攻撃は命中が上がり、通常の3倍のダメージを与え、より広い範囲を薙ぎ払う。攻撃以外の行動をとると、このボーナスは失われる。
+%%%%
+Devious status
+
+# en:
+#   Your evasion and slaying are increased. This stacks up to 3 times and will never
+#   expire so long as you continue to perform melee attacks.
+あなたの回避と殺傷力が高まっている。これは3回まで重ねられ、近接攻撃を続ける限り切れることはない。
+%%%%
+Slimifying status
+
+# en:
+#   Your body is slowly being turned into slime. Even if a full transformation
+#   occurs, you have enough force of will to eventually revert back.
+あなたの体はゆっくりとスライムに変わりつつある。完全に変身してしまっても、あなたには十分な意志の力があるので、いずれ元に戻ることができる。
+%%%%
+Jelly status
+
+# en:
+#   You have been temporarily transformed into a jelly. You have several unusual
+#   resistances and extra health, but heavily weakened spells.
+#
+#   Any equipped weapons and armour are melded. The effectiveness of your
+#   newly-acidic melee attacks while in this form is based on your experience level
+#   rather than Unarmed Combat skill.
+あなたは一時的にジェリーに変身している。いくつかの変わった耐性と追加の体力を持つが、呪文は大きく弱まる。
+
+装備している武器と防具はすべて体と融合する。この形態での酸を帯びた近接攻撃の効果は、徒手格闘のスキルではなく経験レベルによって決まる。
+%%%%
+OozeRegen status
+
+# en:
+#   You are covered in regenerative ooze from your recent trip down the stairs. For
+#   a brief time, your wounds will heal rapidly and your reserves of magic will
+#   recover quickly.
+あなたは先ほど階段を降りた際に、再生の軟泥に覆われた。しばらくの間、傷は素早く癒え、魔力の蓄えも素早く回復する。
+%%%%
+-Hellfire status
+
+# en:
+#   You are unable to cast Hellfire Mortar again until the effect of your last cast
+#   ends.
+前回唱えた業火の迫撃砲の効果が終わるまで、あなたは再び業火の迫撃砲を唱えることができない。
+%%%%
+Engorged status
+
+# en:
+#   Your maw has just consumed a delicious meal, greatly increasing your
+#   regeneration until it finishes digesting it.
+あなたの大口はおいしい食事を平らげたばかりで、それを消化し終えるまで再生能力が大きく高まっている。
+%%%%
+Eel status
+
+# en:
+#   Your arms are a pair of electric eels.
+あなたの両腕は一対の電気鰻になっている。
+%%%%
+Blade status
+
+# en:
+#   Multiple vicious blades are growing out of your body.
+あなたの体からは何本もの凶悪な刃が生えている。
+%%%%
+Spore status
+
+# en:
+#   Your arm is a mass of multicoloured fungus.
+あなたの腕は色とりどりの菌類の塊になっている。
 %%%%

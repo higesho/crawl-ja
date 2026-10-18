@@ -1,0 +1,2072 @@
+%%%%
+A detected altar
+
+# en:
+#   An altar of some kind. You cannot tell what deity it is consecrated to without
+#   approaching it.
+何らかの祭壇。近づかなければ、どの神に捧げられたものかは分からない。
+%%%%
+A faded altar of an unknown god
+
+# en:
+#   An ancient altar, stripped of all identifying characteristics by the passage of
+#   aeons. Praying at it will convert you to an unknown god, and the altar's deity
+#   will greatly appreciate conversion at so ancient a site of worship.
+永劫の時の流れによって、見分けのつく特徴をすべて剥ぎ取られた古代の祭壇。ここで祈ると未知の神に改宗することになり、祭壇の神は、これほど古い礼拝の場での改宗を大いに喜ぶだろう。
+%%%%
+A glowing golden altar of the Shining One
+
+# en:
+#   An altar to the Shining One, made from the purest gold and almost blinding in
+#   its radiance.
+輝けるものの祭壇。最も純粋な黄金で造られており、その輝きは目がくらむほどだ。
+%%%%
+A broken altar of Ashenzari
+
+# en:
+#   A crystal altar which shattered to pieces when Ashenzari was cursed. There is
+#   still a great power remaining within it: a dark aura holds the shards in
+#   mid-explosion, suspended in time and space much like the god they herald.
+アシェンザリが呪われたときに粉々に砕け散った水晶の祭壇。その内には今なお大いなる力が残っている。暗いオーラが破片を砕け散る途中の姿のまま押しとどめ、この祭壇が告げる神と同じように、時間と空間の中に宙吊りにしているのだ。
+%%%%
+A roughly hewn altar of Beogh
+
+# en:
+#   An altar to Beogh, unmistakably roughly hewn by orcish artisans.
+ベオの祭壇。紛れもなく、オークの職人の手で荒々しく削り出されたものだ。
+%%%%
+A snail-covered altar of Cheibriados
+
+# en:
+#   A timeless altar to Cheibriados the Contemplative.
+瞑想者ケイブリアドスの、時を超越した祭壇。
+%%%%
+A shadowy altar of Dithmenos
+
+# en:
+#   An altar to Dithmenos the Shadowed. It seems to absorb light from its
+#   surroundings.
+影なるディスメノスの祭壇。周囲の光を吸い込んでいるように見える。
+%%%%
+A white marble altar of Elyvilon
+
+# en:
+#   An altar to Elyvilon the Healer, made from purest white marble and topped by a
+#   sculpture of the Chalice of Purification.
+癒し手エリヴィロンの祭壇。最も純粋な白い大理石で造られ、頂には浄化の聖杯の彫刻が据えられている。
+%%%%
+A blossoming altar of Fedhas
+
+# en:
+#   An altar to Fedhas Madash, covered in vibrant and colourful plant life.
+フェダス・マダシュの祭壇。色とりどりの瑞々しい植物に覆われている。
+%%%%
+An opulent altar of Gozag
+
+# en:
+#   A glittering golden and bejewelled altar to Gozag Ym Sagoz the Greedy, gleaming
+#   brightly even in the dim dungeon light.
+強欲なるゴザーグ・イム・サゴーズの、きらびやかな黄金と宝石で飾られた祭壇。薄暗いダンジョンの明かりの中でさえ、まばゆく輝いている。
+%%%%
+A hazy altar of Hepliaklqana
+
+# en:
+#   An altar to Hepliaklqana the Forgotten, shrouded in mist and difficult to make
+#   out clearly. Something about it seems terribly familiar, but it's impossible to
+#   say exactly why.
+忘れられしヘプリアクルカナの祭壇。霧に包まれていて、はっきりと見て取るのは難しい。どこかひどく懐かしい感じがするが、なぜなのかを正確に言うことはできない。
+%%%%
+A candlelit altar of Ignis
+
+# en:
+#   An altar to Ignis, the Dying Flame. It's completely covered in candles of all
+#   shapes and sizes, but only one remains alight, its slender flame wavering in the
+#   slightest breeze.
+消えゆく炎イグニスの祭壇。大小さまざまな形の蝋燭にすっかり覆われているが、火が灯っているのはただ一本だけで、そのか細い炎はわずかな風にも揺らめいている。
+%%%%
+A viscous altar of Jiyva
+
+# en:
+#   A slimy, ever-shifting altar to Jiyva. You're not sure what it's made from, and
+#   you don't really want to know.
+ぬるぬるとして絶えず形を変える、ジーヴァの祭壇。何でできているのかは分からないし、正直なところ知りたくもない。
+%%%%
+An ancient bone altar of Kikubaaqudgha
+
+# en:
+#   An altar created from piles of ancient bones, dedicated to the terrible
+#   Demon-God Kikubaaqudgha.
+古代の骨を積み上げて造られた祭壇。恐るべき魔神キクバークッグァに捧げられている。
+%%%%
+A corrupted altar of Lugonu
+
+# en:
+#   An altar to Lugonu the Unformed, possibly dedicated to some other power before
+#   it was irrevocably corrupted.
+無形のルゴヌの祭壇。取り返しのつかないほど穢される前は、何か別の力に捧げられていたのかもしれない。
+%%%%
+A burning altar of Makhleb
+
+# en:
+#   An ever-burning altar to Makhleb the Destroyer. Strange, twisting shapes are
+#   visible in the flames.
+破壊者マクレブの、永遠に燃え続ける祭壇。炎の中には奇妙にねじれた形が見える。
+%%%%
+A sparkling altar of Nemelex Xobeh
+
+# en:
+#   An altar sparkling with a lightshow brighter than any gambling den's, to
+#   attract followers for Nemelex Xobeh.
+どんな賭場よりもまばゆい光の演出で煌めいている祭壇。ネメレクス・ソベーの信徒を引き寄せるためのものだ。
+%%%%
+An iron altar of Okawaru
+
+# en:
+#   An altar of iron and steel dedicated to the Warmaster Okawaru. Its edges are
+#   surprisingly sharp.
+戦上手のオカワルに捧げられた、鉄と鋼の祭壇。その縁は驚くほど鋭い。
+%%%%
+A stormy altar of Qazlal
+
+# en:
+#   An altar dedicated to Qazlal Stormbringer, surrounded by fierce winds,
+#   electrical discharges, puffs of fire and magma, and the occasional tremor.
+嵐を呼ぶ者クァズラルに捧げられた祭壇。猛烈な風、放電、炎と溶岩のほとばしり、そして時おりの地揺れに取り巻かれている。
+%%%%
+A sacrificial altar of Ru
+
+# en:
+#   An altar to Ru the Awakened in the shape of a pair of scales, with a heart in
+#   one scale and a pictogram representing power and enlightenment in the other.
+覚者ルーの、天秤の形をした祭壇。片方の皿には心臓が、もう片方の皿には力と悟りを表す絵文字が載っている。
+%%%%
+A shimmering blue altar of Sif Muna
+
+# en:
+#   An altar to Sif Muna the Loreminder, covered in intricate patterns and writings
+#   in long forgotten scripts. Atop a deep blue pedestal hovers a shimmering
+#   condensation of pure magic.
+知識の守護者シフ・ムーナの祭壇。遠い昔に忘れられた文字で記された、複雑な紋様と文章に覆われている。深い青色の台座の上には、純粋な魔力が凝縮したものが揺らめきながら浮かんでいる。
+%%%%
+A bloodstained altar of Trog
+
+# en:
+#   An altar to Trog the Wrathful, crudely made by what seem to be the hands of
+#   giants and covered with bloodstains.
+激怒せるトログの祭壇。巨人の手によるものと思われる粗雑な造りで、血の染みに覆われている。
+%%%%
+A hide-covered altar of Uskayaw
+
+# en:
+#   An altar to Uskayaw the Reveller. It appears to be hollow and covered in a hide,
+#   giving it a resonant surface. Carvings on the side depict grouped figures that
+#   could be dancing or loving or fighting.
+酔客ウスカヤーの祭壇。中は空洞になっていて獣の皮が張られているらしく、よく響く面になっている。側面の彫刻には、踊っているとも、愛し合っているとも、戦っているとも取れる人々の群れが描かれている。
+%%%%
+A radiant altar of Vehumet
+
+# en:
+#   An altar, ablaze in the lights of Iskenderun and promising great destructive
+#   powers to those who would follow Vehumet.
+イスケンデルンの光に燃え立つ祭壇。ヴェフメットに従う者には、大いなる破壊の力を約束している。
+%%%%
+An ornate altar of the Wu Jian Council
+
+# en:
+#   A red and gold altar to the Wu Jian Council. Sharp slivers of steel drift
+#   through the quiet air surrounding it.
+ウー・ジアン評議会の、赤と金の祭壇。その周囲の静かな空気の中を、鋭い鋼の破片が漂っている。
+%%%%
+A shimmering altar of Xom
+
+# en:
+#   An altar constantly shimmering in all visible colours, and probably some
+#   invisible ones, matching the whims of Xom the Unpredictable.
+目に見えるあらゆる色、そしておそらくは目に見えない色にも絶えず揺らめいている祭壇。予測不可能のゾムの気まぐれにふさわしい。
+%%%%
+A basalt altar of Yredelemnul
+
+# en:
+#   An altar to Yredelemnul the Dark, worked from columnar basalt.
+暗きイレデレンヌルの祭壇。柱状の玄武岩から削り出されている。
+%%%%
+A glowing silver altar of Zin
+
+# en:
+#   An altar to Zin the Law-Giver, made from silver as pristine as Zin's followers
+#   are expected to be, and glowing gently.
+法の制定者ジンの祭壇。ジンの信徒に求められるのと同じほど清らかな銀で造られ、穏やかに輝いている。
+%%%%
+The endless lava
+
+# en:
+#   A sea of fire and brimstone as far as the eye can see. Anyone venturing across
+#   it would be roasted in no time.
+見渡す限りの炎と硫黄の海。ここを渡ろうとする者は、たちまち焼け焦げてしまうだろう。
+%%%%
+The floor
+
+# en:
+#   The floor.
+地面。
+%%%%
+Some deep water
+
+# en:
+#   A pool of deep water. Only giant creatures can wade through this, and only
+#   those well-adapted to water can swim through it; for the rest, the only way
+#   through is to fly over.
+深い水をたたえた池。歩いて渡れるのは巨大な生き物だけで、泳いで渡れるのは水によく適応した者だけだ。それ以外の者が通り抜けるには、飛んで越えるしかない。
+%%%%
+Some lava
+
+# en:
+#   An intensely hot pool of molten rock, emitting clouds of sulphurous smoke.
+#   Nothing but the mythical salamander can cross this without flight.
+溶けた岩がたまった、強烈に熱い池。硫黄臭い煙を噴き上げている。伝説のサラマンダー以外は、飛ばずにここを渡ることはできない。
+%%%%
+Some shallow water
+
+# en:
+#   A pool of cloudy, waist-deep water. Those well-adapted to water can swim
+#   through it and attack normally. Non-swimmers must wade through the water slowly
+#   and will occasionally fail to attack in melee when wading through shallow
+#   water; although large creatures are able to keep their balance, move at a
+#   normal speed, and avoid fumbling.
+濁った、腰ほどの深さの水たまり。水によく適応した者は泳いで渡ることができ、普段どおりに攻撃できる。泳げない者は水の中をゆっくりと歩いて渡らねばならず、浅い水の中を歩いている間は時おり近接攻撃に失敗する。ただし、大きな生き物はバランスを保つことができ、普段の速さで移動し、攻撃をしくじることもない。
+%%%%
+A toxic bog
+
+# en:
+#   A filthy pool of poisonous, waist-deep sludge. Wading or swimming through the
+#   sludge will damage and poison any creature, even those resistant to poison.
+#   Those well-adapted to water can swim through it and attack normally.
+#   Non-swimmers must wade through the water slowly and will occasionally fail to
+#   attack in melee when wading through shallow water; although large creatures are
+#   able to keep their balance, move at a normal speed, and avoid fumbling.
+毒を含んだ、腰ほどの深さの汚泥がたまった不潔な沼。この汚泥の中を歩いたり泳いだりすると、どんな生き物でも、たとえ毒に耐性があっても、ダメージを受けて毒に冒される。水によく適応した者は泳いで渡ることができ、普段どおりに攻撃できる。泳げない者は水の中をゆっくりと歩いて渡らねばならず、浅い水の中を歩いている間は時おり近接攻撃に失敗する。ただし、大きな生き物はバランスを保つことができ、普段の速さで移動し、攻撃をしくじることもない。
+%%%%
+Some mud
+
+# en:
+#   A thick layer of gritty mud. [[liquefied]]
+ざらざらとした泥の厚い層。[[liquefied]]
+%%%%
+The open sea
+
+# en:
+#   An expanse of endless wind and waves, with not a lighthouse in sight. Anyone
+#   venturing across it would be lost beyond all hope in short order.
+果てしなく続く風と波の広がり。灯台ひとつ見えない。ここを渡ろうとする者は、たちまち絶望的に迷ってしまうだろう。
+%%%%
+An unnaturally hard rock wall
+
+# en:
+#   A wall imbued with magic that makes it indestructible.
+魔力が込められ、破壊できなくなった壁。
+%%%%
+A wall of the weird stuff which makes up Pandemonium
+
+# en:
+#   A wall made from the weird stuff which makes up Pandemonium. It seems to be
+#   like rock in most other aspects.
+パンデモニウムを構成する不気味な素材でできた壁。それ以外の点では、岩とほとんど変わらないようだ。
+%%%%
+A crystal wall
+
+# en:
+#   A wall made from polished crystal and imbued with arcane magics. They prevent
+#   its easy destruction, and make it reflect heat and cold.
+磨き上げられた水晶でできた、神秘の魔力が込められた壁。その魔力によって容易には破壊できず、熱や冷気を反射する。
+%%%%
+A translucent rock wall
+
+# en:
+#   A rock wall made from a mineral as translucent as good quality glass. Whether
+#   it is natural or magical, you cannot tell.
+上質なガラスのように透き通った鉱物でできた岩の壁。自然のものなのか魔法によるものなのかは分からない。
+%%%%
+A translucent stone wall
+
+# en:
+#   A harder obstacle than rock walls. Only the mightiest magic can shatter stone
+#   walls. It has been imbued with arcane magics which render it translucent.
+岩の壁よりも硬い障害物。石の壁を砕けるのは最も強力な魔法だけだ。神秘の魔力が込められており、半透明になっている。
+%%%%
+A translucent unnaturally hard rock wall
+
+# en:
+#   A wall imbued with magic that not only makes it indestructible but also makes
+#   it translucent like glass.
+魔力が込められ、破壊できないだけでなく、ガラスのように半透明にもなっている壁。
+%%%%
+A stone wall
+
+# en:
+#   A harder obstacle than rock walls. Only the mightiest magic can shatter stone
+#   walls.
+岩の壁よりも硬い障害物。石の壁を砕けるのは最も強力な魔法だけだ。
+%%%%
+A slime covered rock wall
+
+# en:
+#   A rock wall coated with acidic green slime; just standing near it is enough to
+#   cause temporary corrosion.
+酸性の緑色のスライムに覆われた岩の壁。そばに立っているだけで、一時的に腐蝕してしまう。
+%%%%
+A metal wall
+
+# en:
+#   A wall of bluish-grey metal. As every dungeon electrician knows, it will ground
+#   even magical bolts of lightning.
+青みがかった灰色の金属の壁。ダンジョンの電気技師なら誰でも知っているとおり、魔法の稲妻でさえも接地させて逃がしてしまう。
+%%%%
+A rock wall
+
+# en:
+#   A wall consisting of simple rock.
+ただの岩でできた壁。
+%%%%
+A frigid wall
+
+# en:
+#   A wall that radiates a chill so intense it can damage enemies which stand next
+#   to it.
+すさまじい冷気を放つ壁。隣に立つ敵にダメージを与えることがある。
+%%%%
+A shop
+
+# en:
+#   A shop in the dungeon, beyond sight of the world above, manned by a secretive
+#   and reclusive shopkeeper who cannot be bargained with, grants no refunds, and
+#   is interested in nothing you may have to sell. Some shops hawk antiques of
+#   unknown provenance, and offer little hint as to the quality or nature of their
+#   goods.
+地上の世界から遠く離れたダンジョンの中にある店。秘密主義で人嫌いの店主が切り盛りしており、値切りには一切応じず、返品も受け付けず、あなたが売ろうとするものには何の興味も示さない。由来の分からない骨董品を売りつける店もあり、そうした店は品物の質や性質についてほとんど手がかりを与えてくれない。
+%%%%
+A stone staircase leading down
+
+# en:
+#   A staircase leading further down.
+さらに下へと続く階段。
+%%%%
+A stone staircase leading up
+
+# en:
+#   A staircase leading back up.
+上へと戻る階段。
+%%%%
+A metal staircase leading down
+
+# en:
+#   A staircase leading down to the grand vaults containing the silver rune of Zot,
+#   whose wealth attracts the most powerful champions from across the Dungeon to its
+#   defence.
+ゾットの銀のルーンを収めた大宝物庫へと下りる階段。その財宝を守るため、ダンジョン中から最も強力な勇士たちが集まってくる。
+%%%%
+A metal staircase leading up
+
+# en:
+#   A staircase leading up from the grand vaults containing the silver rune of Zot,
+#   whose wealth attracts the most powerful champions from across the Dungeon to its
+#   defence.
+ゾットの銀のルーンを収めた大宝物庫から上へと戻る階段。その財宝を守るため、ダンジョン中から最も強力な勇士たちが集まってくる。
+%%%%
+A slimy stone staircase leading down
+
+# en:
+#   A stone staircase leading further down.
+#
+#   {{
+#       if you.god() == "Jiyva" then
+#           return "It is slick with slippery slime, but that is no obstacle for one " ..
+#                  "such as yourself who has embraced the way of all slime."
+#       else
+#           return "It is slick with slippery slime which will make it impossible " ..
+#                  "for you to climb back up again until the power ruling this place " ..
+#                  "is destroyed (or you choose to join it). However, being coated in " ..
+#                  "this slime will greatly increase your HP and MP regenaration for " ..
+#                  "short while afterward."
+#       end
+#   }}
+さらに下へと続く石の階段。
+
+{{
+    if you.god() == "Jiyva" then
+        return "ぬるぬるした粘液にまみれているが、あらゆる粘液の道を受け入れた" ..
+               "あなたにとっては何の障害にもならない。"
+    else
+        return "ぬるぬるした粘液にまみれており、この場所を支配する力が滅ぼされる" ..
+               "(あるいはあなたがその力に加わる)まで、再びここを上って戻ることは" ..
+               "できない。ただし、この粘液に覆われると、その後しばらくの間、" ..
+               "HP と MP の回復が大きく早まる。"
+    end
+}}
+%%%%
+A slimy stone staircase leading up
+
+# en:
+#   A stone staircase leading back up.
+#
+#   {{
+#       if you.god() == "Jiyva" then
+#           return "It is slick with slippery slime, but that is no obstacle for one " ..
+#                  "such as yourself who has embraced the way of all slime."
+#       else
+#           return "It is slick with slippery slime, making it impossible for you to " ..
+#                  "climb until the power ruling this place is destroyed (or you choose " ..
+#                  "to join it)."
+#       end
+#   }}
+上へと戻る石の階段。
+
+{{
+    if you.god() == "Jiyva" then
+        return "ぬるぬるした粘液にまみれているが、あらゆる粘液の道を受け入れた" ..
+               "あなたにとっては何の障害にもならない。"
+    else
+        return "ぬるぬるした粘液にまみれており、この場所を支配する力が滅ぼされる" ..
+               "(あるいはあなたがその力に加わる)まで、上ることはできない。"
+    end
+}}
+%%%%
+A tree
+
+# en:
+#   A large tree. While in most places the dim light of the dungeon is not bright
+#   enough to sustain large plants, there are spots where, with the grace of
+#   Fedhas, trees as big as those on the surface can grow underground.
+大きな樹木。ダンジョンの薄暗い光は、たいていの場所では大きな植物を育むほど明るくはないが、フェダスの恩寵によって、地上にあるのと同じくらい大きな木が地下で育つ場所もある。
+%%%%
+A mangrove
+
+# en:
+#   This tree is specially adapted for growing in swampy conditions. Its vines are
+#   too thick to see through.
+沼地での生育に特に適応した木。蔓が密に生い茂っていて、向こう側を見通すことはできない。
+%%%%
+A demonic tree
+
+# en:
+#   A tree hideously warped by the demonic forces of chaos. Despite its bizarre
+#   appearance and occasional, unsettling movement, it seems harmless.
+悪魔的な混沌の力によっておぞましく歪められた木。奇怪な見た目で、時おり不気味に動くものの、害はないようだ。
+%%%%
+A petrified tree
+
+# en:
+#   An ancient tree, long ago passed from biology into geology. While no longer
+#   wooden in a material sense, it retains the spiritual qualities of a tree.
+はるか昔に生物から鉱物へと移り変わった古木。物質としてはもはや木ではないが、樹木としての霊的な性質は保っている。
+%%%%
+An abandoned shop
+
+# en:
+#   A shop that has been abandoned.
+放棄された店。
+%%%%
+An orcish idol
+
+# en:
+#   An idol of the orc god Beogh.
+オークの神ベオの像。
+%%%%
+An iron grate
+
+# en:
+#   A rusted iron grate, brittle enough to be disrupted with a spell or a wand
+#   quite easily. It is too strong to be breakable by hand, however.
+錆びた鉄格子。もろくなっているので、呪文やワンドでたやすく壊すことができる。ただし、素手で壊せるほど弱くはない。
+%%%%
+An escape hatch in the floor
+
+# en:
+#   A spring-loaded one-way escape hatch set in the dungeon floor, allowing the
+#   adventurer beset by adversaries to exchange the perils of this level for the
+#   perils of the next.
+ダンジョンの床に設けられた、ばね仕掛けの一方通行の脱出ハッチ。敵に取り囲まれた冒険者は、この階層の危険を次の階層の危険と引き換えにすることができる。
+%%%%
+An escape hatch in the ceiling
+
+# en:
+#   A spring-loaded one-way escape hatch set in the ceiling.
+天井に設けられた、ばね仕掛けの一方通行の脱出ハッチ。
+%%%%
+A shaft
+
+# en:
+#   A hole in the ground, leading to a dungeon level one or more floors deeper.
+地面に開いた穴。1 階層以上深いダンジョンの階層へと続いている。
+%%%%
+A sealed passage leading down
+
+# en:
+#   A descending passage sealed tightly by a magical barricade. It is impossible to
+#   climb through it so long as the magic holds.
+魔法の障壁で固く封印された下りの通路。魔法が保たれている限り、通り抜けることはできない。
+%%%%
+A sealed passage leading up
+
+# en:
+#   An ascending passage sealed tightly by a magical barricade. It is impossible to
+#   climb through it so long as the magic holds.
+魔法の障壁で固く封印された上りの通路。魔法が保たれている限り、通り抜けることはできない。
+%%%%
+An empty arch of ancient stone
+
+# en:
+#   A stone archway that seems to lead to nowhere in particular.
+どこへ続くでもなさそうな石のアーチ。
+%%%%
+A detected shop or portal
+
+# en:
+#   A gateway of some kind. You cannot tell where it leads without approaching it.
+何らかの出入り口。近づかなければ、どこへ通じているのかは分からない。
+%%%%
+A passage of Golubria
+
+# en:
+#   An unstable gateway that allows instantaneous travel to another nearby passage
+#   of Golubria, and will close behind anything passing through it.
+近くにある別のゴルブリアの通り道へと瞬時に移動できる、不安定な出入り口。何かが通り抜けると、その後ろで閉じてしまう。
+%%%%
+A portal to somewhere
+
+# en:
+#   A gash-like tear in reality that looks into some terrifying, starry otherworld.
+#   Thankfully, the magic that opened it also prevents its vacuum from consuming
+#   and swallowing everything in sight.
+恐ろしい星々の異界を覗かせる、切り裂かれたような現実の裂け目。ありがたいことに、これを開いた魔法が、その真空が目に入るものすべてを呑み込んでしまうのを防いでもいる。
+%%%%
+A granite statue
+
+# en:
+#   A stone statue whose features have long since withered away.
+細部がとうの昔にすり減ってしまった石像。
+%%%%
+A gleaming silver wall
+
+# en:
+#   A wall made of pure silver, formed by the power of Zin to temporarily imprison
+#   a monster within its confines.
+ジンの力によって造られた純銀の壁。モンスターを一時的にその内側に閉じ込める。
+%%%%
+A dry fountain
+
+# en:
+#   A dried-up decorative fountain that has seen better days.
+干上がった装飾用の噴水。かつての面影はない。
+%%%%
+A fountain of clear blue water
+
+# en:
+#   A decorative fountain, flowing with clear water.
+澄んだ水が流れ出ている装飾用の噴水。
+%%%%
+A fountain of blood
+
+# en:
+#   A decorative fountain, spurting with foul-looking blood.
+汚らわしげな血が噴き出している装飾用の噴水。
+%%%%
+A fountain of eyes
+
+# en:
+#   A decorative fountain, bubbling over with listless and unmoving eyes.
+生気のない、動かない目玉があふれ出している装飾用の噴水。
+%%%%
+A fountain of sparkling water
+
+# en:
+#   A decorative fountain, flowing with brightly sparkling, faintly magic water.
+きらきらと輝く、かすかに魔力を帯びた水が流れ出ている装飾用の噴水。
+%%%%
+A cache of baked goods
+
+# en:
+#   A hoard of breadstuffs, baked and fried from minor divine gifts of flour and
+#   growth cultures, granted extended shelflife through sacred succour. You already
+#   carry as much food as you will ever need for this journey, but a light snack
+#   shouldn't hurt.
+神からのささやかな賜り物である小麦粉と酵母から、焼いたり揚げたりして作ったパン類の蓄え。神聖な加護によって日持ちするようになっている。この旅に必要なだけの食料はすでに持っているが、軽くつまむくらいなら悪くないだろう。
+%%%%
+A cache of fruit
+
+# en:
+#   A pile of assorted fruit, ranging from common dungeon staples like chokos and
+#   snozzcumbers, to rarer treats such as apples and oranges. You already carry as
+#   much food as you will ever need for this journey, but the occasional nibble
+#   wouldn't hurt.
+ハヤトウリやスノズカンバーのようなダンジョンでおなじみの食べ物から、林檎やオレンジのような珍しいごちそうまで、さまざまな果物の山。この旅に必要なだけの食料はすでに持っているが、たまにかじるくらいなら悪くないだろう。
+%%%%
+A cache of meat
+
+# en:
+#   A stash of preserved meats of varied origins and preparations: strips of jerky,
+#   lumpy smoked sausages, and indeterminate protein rations. You already carry as
+#   much food as you will ever need for this journey, but this could offer the rare
+#   chance to try out yak...
+さまざまな出所と調理法の保存肉の蓄え。ジャーキーの切れ端、でこぼこした燻製ソーセージ、正体の分からない肉の配給食。この旅に必要なだけの食料はすでに持っているが、ヤクを味わってみるまたとない機会かもしれない……。
+%%%%
+A runelight
+
+# en:
+#   An unearthly, glittering light, floating and twisting in midair. A Rune of
+#   Zot is surely nearby, its power overspilling to cause this spectacular sight.
+宙に浮かんでねじれるように揺らめく、この世のものならぬきらめく光。すぐ近くにゾットのルーンがあり、その力があふれ出してこの壮観な光景を生み出しているに違いない。
+%%%%
+A broken pillar
+
+# en:
+#   A ruined and crumbled stone pillar.
+崩れ落ちた石の柱の残骸。
+%%%%
+A one-way staircase leading down
+
+# en:
+#   A cursed staircase leading further down, imbued with magic to prevent any
+#   return back up the stairs. Adventurers taking this passage will need to find a
+#   return stairway somewhere else on the level where they arrive.
+さらに下へと続く呪われた階段。魔法が込められており、この階段を上って戻ることはできない。この通路を進んだ冒険者は、たどり着いた階層のどこか別の場所で、戻るための階段を探さねばならない。
+%%%%
+A one-way staircase leading up
+
+# en:
+#   A cursed staircase leading up, imbued with magic to prevent any return back
+#   down the stairs. Adventurers taking this passage will need to find a return
+#   stairway somewhere else on the level where they arrive.
+上へと続く呪われた階段。魔法が込められており、この階段を下りて戻ることはできない。この通路を進んだ冒険者は、たどり着いた階層のどこか別の場所で、戻るための階段を探さねばならない。
+%%%%
+The orb dais
+
+# en:
+#   A raised pedestal upon which rests the fabled Orb of Zot. More ancient than even
+#   the dungeon itself, it cannot be destroyed or transformed by any means.
+伝説のゾットのオーブが置かれた高い台座。ダンジョンそのものよりも古く、いかなる手段によっても破壊したり変化させたりすることはできない。
+%%%%
+A statue of an orb of fire
+
+# en:
+#   A statue of a terrifying globe of raw primordial fire, said to dwell within the
+#   Realm of Zot.
+ゾットの領域に棲むといわれる、原初の生の炎でできた恐ろしい球体の像。
+%%%%
+A statue of an orb of winter
+
+# en:
+#   A statue of a terrifying globe of uttermost cold, said to dwell within the
+#   Realm of Zot.
+ゾットの領域に棲むといわれる、究極の冷気でできた恐ろしい球体の像。
+%%%%
+A statue of an orb of entropy
+
+# en:
+#   A statue of a terrifying globe of profound nothingness, said to dwell within the
+#   Realm of Zot.
+ゾットの領域に棲むといわれる、深遠なる虚無でできた恐ろしい球体の像。
+%%%%
+A gate leading back out of this place
+
+# en:
+#   A gate that will let you return whence you came.
+来た場所へと戻ることのできる門。
+%%%%
+A gate leading out of Pandemonium
+
+# en:
+#   A gate leading back to the dungeon.
+ダンジョンへと戻る門。
+%%%%
+A gate leading to another region of Pandemonium
+
+# en:
+#   A gate leading to yet another region of Pandemonium. There'll always be more.
+パンデモニウムのさらに別の領域へと続く門。終わりはない。
+%%%%
+A one-way gate leading to the halls of Pandemonium
+
+# en:
+#   A gate leading to the endless halls of Pandemonium.
+パンデモニウムの果てしない大広間へと続く門。
+%%%%
+A staircase to the Depths
+
+# en:
+#   A staircase leading to the Depths.
+深層へと続く階段。
+%%%%
+A gate to the Realm of Zot
+
+# en:
+#   A gate leading to the Realm of Zot.
+ゾットの領域へと続く門。
+%%%%
+A gateway back into the Dungeon
+
+# en:
+#   A gate which allows a feat popularly thought to be impossible: escaping Hell
+#   alive.
+一般には不可能だと考えられている偉業――地獄から生きて脱出すること――を可能にする門。
+%%%%
+A gateway leading out of the Abyss
+
+# en:
+#   A gateway out of the Abyss, shimmering and shifting in the impermanent
+#   landscape.
+移ろいゆく地形の中で、揺らめき変化し続けているアビスからの出口。
+%%%%
+A gateway leading deeper into the Abyss
+
+# en:
+#   A strangely calm gateway amid the roiling landscape of the Abyss. It leads
+#   further into the depths of the Abyss.
+荒れ狂うアビスの地形の中にある、不思議なほど静かな門。アビスのさらに深くへと続いている。
+%%%%
+A gateway to a ziggurat
+
+# en:
+#   A portal leading to a ziggurat.
+ジグラットへと続くポータル。
+%%%%
+A gateway to the ashen valley of Gehenna
+
+# en:
+#   A gateway leading to Gehenna.
+ゲヘナへと続く門。
+%%%%
+A gateway leading out of Gehenna
+
+# en:
+#   A gateway leading back to the Vestibule of Hell.
+地獄の入り口へと戻る門。
+%%%%
+A gateway to Hell
+
+# en:
+#   A gateway leading to the Vestibule of Hell. Few would go there voluntarily.
+地獄の入り口へと続く門。好き好んでそこへ行く者はほとんどいない。
+%%%%
+A gateway to the Iron City of Dis
+
+# en:
+#   A gateway leading to the Iron City of Dis.
+鉄の都ディースへと続く門。
+%%%%
+A gateway leading out of Dis
+
+# en:
+#   <A gateway leading out of Gehenna>
+<A gateway leading out of Gehenna>
+%%%%
+A gateway to the decaying netherworld of Tartarus
+
+# en:
+#   A gateway leading to Tartarus.
+タルタロスへと続く門。
+%%%%
+A gateway leading out of Tartarus
+
+# en:
+#   <A gateway leading out of Gehenna>
+<A gateway leading out of Gehenna>
+%%%%
+A gateway to the freezing wastes of Cocytus
+
+# en:
+#   A gateway leading to Cocytus.
+コキュートスへと続く門。
+%%%%
+A gateway leading out of Cocytus
+
+# en:
+#   <A gateway leading out of Gehenna>
+<A gateway leading out of Gehenna>
+%%%%
+A hole to the Spider Nest
+
+# en:
+#   A passage leading to the Spider Nest.
+蜘蛛の穴ぐらへと続く通路。
+%%%%
+A one-way gate to the infinite horrors of the Abyss
+
+# en:
+#   A gateway leading to the Abyss.
+アビスへと続く門。
+%%%%
+A crawl-hole back to the Lair
+
+# en:
+#   A passage leading back to the Lair of Beasts.
+獣の棲み処へと戻る通路。
+%%%%
+An exit through the horrors of the Abyss
+
+# en:
+#   A gateway leading back to the dungeon via the madness of the Abyss.
+狂気のアビスを経由してダンジョンへと戻る門。
+%%%%
+A staircase back to the Dungeon
+
+# en:
+#   A staircase leading back up to the familiarity of the dungeon.
+慣れ親しんだダンジョンへと上って戻る階段。
+%%%%
+A staircase back to the Lair
+
+# en:
+#   A staircase leading back up to the Lair of Beasts.
+獣の棲み処へと上って戻る階段。
+%%%%
+A staircase back to the Mines
+
+# en:
+#   A staircase leading back to the Orcish Mines.
+オークの坑道へと戻る階段。
+%%%%
+A staircase back to the Vaults
+
+# en:
+#   A staircase leading back to the Vaults.
+宝物庫へと戻る階段。
+%%%%
+A staircase leading out of the dungeon
+
+# en:
+#   This staircase leads back out of the dungeon.
+#
+#   A staircase leading out of the dungeon. Climbing these stairs will end your
+#   quest, whether you carry the Orb with you or not.
+この階段はダンジョンの外へと通じている。
+
+ダンジョンの外へと続く階段。この階段を上れば、オーブを持っていてもいなくても、あなたの冒険は終わる。
+%%%%
+A staircase back to the Crypt
+
+# en:
+#   A staircase leading back to the Crypt.
+地下墓地へと戻る階段。
+%%%%
+A staircase to the Crypt
+
+# en:
+#   A staircase leading to the Crypt.
+地下墓地へと続く階段。
+%%%%
+A staircase to the Ecumenical Temple
+
+# en:
+#   A staircase leading to the Ecumenical Temple.
+諸宗派の寺院へと続く階段。
+%%%%
+A staircase to the Elven Halls
+
+# en:
+#   A staircase leading to the Elven Halls.
+エルフの大広間へと続く階段。
+%%%%
+A staircase to the Lair
+
+# en:
+#   A staircase leading to the Lair of Beasts.
+獣の棲み処へと続く階段。
+%%%%
+A staircase to the Orcish Mines
+
+# en:
+#   A staircase leading to the Orcish Mines.
+オークの坑道へと続く階段。
+%%%%
+A staircase to the Shoals
+
+# en:
+#   A staircase leading to the Shoals.
+浅瀬へと続く階段。
+%%%%
+A staircase to the Slime Pits
+
+# en:
+#   A staircase leading to the Slime Pits.
+スライムの穴ぐらへと続く階段。
+%%%%
+A staircase to the Snake Pit
+
+# en:
+#   A staircase leading to the Snake Pit.
+蛇穴へと続く階段。
+%%%%
+A staircase to the Swamp
+
+# en:
+#   A staircase leading to the Swamp.
+沼へと続く階段。
+%%%%
+A staircase to the Tomb
+
+# en:
+#   A staircase leading to the Tomb of the Ancients.
+太古の霊廟へと続く階段。
+%%%%
+A gate to the Vaults
+
+# en:
+#   A gateway leading to the Vaults.
+宝物庫へと続く門。
+%%%%
+A transporter
+
+# en:
+#   A one-way portal to another place on this level. When using a transporter,
+#   adjacent allies and monsters will travel with you to the other side.
+この階層の別の場所へと続く一方通行のポータル。転送装置を使うと、隣にいる仲間やモンスターも一緒に向こう側へ移動する。
+%%%%
+A transporter landing site
+
+# en:
+#   The destination site of a transporter. As the portal is one-way, you cannot use
+#   this location to return back through the transporter.
+転送装置の行き先。ポータルは一方通行なので、ここから転送装置を通って戻ることはできない。
+%%%%
+An open door
+
+# en:
+#   An open wooden door. If closed again, all monsters that can wield equipment,
+#   and some of them that can't, could open it again. If it is closed and reopened
+#   by a monster that is aware of you, it has a chance of breaking.
+開いた木の扉。閉じても、装備を扱えるモンスターはすべて、扱えないモンスターも一部は、再び開けることができる。閉じた扉を、あなたに気づいているモンスターが開け直すと、壊れることがある。
+%%%%
+A closed door
+
+# en:
+#   A closed wooden door. All monsters that can wield equipment, and some of them
+#   that can't, may open it again. If it is opened by a monster while it is aware
+#   of you, it has a chance of breaking.
+閉じた木の扉。装備を扱えるモンスターはすべて、扱えないモンスターも一部は、これを開けることができる。あなたに気づいているモンスターが開けると、壊れることがある。
+%%%%
+A broken door
+
+# en:
+#   A disappointingly poorly maintained wooden door. It'd take nothing short of
+#   magic to get this properly closed again.
+がっかりするほど手入れの行き届いていない木の扉。魔法でも使わない限り、きちんと閉じることはできないだろう。
+%%%%
+An open translucent door
+
+# en:
+#   An open door made from magically translucent wood. If closed again, all monsters
+#   that can wield equipment, and some of them that can't, could open it again. If
+#   it is closed and reopened by a monster that is aware of you, it has a chance of
+#   breaking.
+魔法で半透明にされた木でできた、開いた扉。閉じても、装備を扱えるモンスターはすべて、扱えないモンスターも一部は、再び開けることができる。閉じた扉を、あなたに気づいているモンスターが開け直すと、壊れることがある。
+%%%%
+A closed translucent door
+
+# en:
+#   A closed door made from magically translucent wood. All monsters that can wield
+#   equipment, and some of them that can't, may open it again. If it is opened by a
+#   monster while it is aware of you, it has a chance of breaking.
+魔法で半透明にされた木でできた、閉じた扉。装備を扱えるモンスターはすべて、扱えないモンスターも一部は、これを開けることができる。あなたに気づいているモンスターが開けると、壊れることがある。
+%%%%
+A broken translucent door
+
+# en:
+#   <A broken door>
+<A broken door>
+%%%%
+A sealed door
+
+# en:
+#   A door sealed tightly by arcane runes. It refuses to open for any creature not
+#   recognised by its magic.
+神秘のルーンによって固く封印された扉。その魔法が認めない者に対しては、決して開かない。
+%%%%
+A runed door
+
+# en:
+#   A door, covered in runic writing. It looks like there is something special
+#   behind it — perhaps danger, perhaps treasure. You may break the runes by
+#   opening it like any other door, but creatures of the dungeon will not dare
+#   to try.
+ルーン文字に覆われた扉。向こう側には何か特別なものがあるようだ――危険か、あるいは財宝か。他の扉と同じように開ければルーンを破ることができるが、ダンジョンの生き物たちはあえてそうしようとはしない。
+%%%%
+A runed translucent door
+
+# en:
+#   A door, covered in runic writing, made from magically translucent wood. It has
+#   been created to seal away great danger or glorious treasure. You may break the
+#   runes by opening it like any other door, but creatures of the dungeon will not
+#   dare to try.
+ルーン文字に覆われた、魔法で半透明にされた木の扉。大いなる危険か、輝かしい財宝を封じるために造られたものだ。他の扉と同じように開ければルーンを破ることができるが、ダンジョンの生き物たちはあえてそうしようとはしない。
+%%%%
+A large runed translucent door
+
+# en:
+#   <A runed translucent door>
+<A runed translucent door>
+%%%%
+A runed translucent gate
+
+# en:
+#   <A runed translucent door>
+<A runed translucent door>
+%%%%
+A huge runed translucent gate
+
+# en:
+#   <A runed translucent door>
+<A runed translucent door>
+%%%%
+A large open door
+
+# en:
+#   <An open door>
+<An open door>
+%%%%
+An open gate
+
+# en:
+#   <An open door>
+<An open door>
+%%%%
+A huge open gate
+
+# en:
+#   <An open door>
+<An open door>
+%%%%
+A large closed door
+
+# en:
+#   <A closed door>
+<A closed door>
+%%%%
+A closed gate
+
+# en:
+#   <A closed door>
+<A closed door>
+%%%%
+A huge closed gate
+
+# en:
+#   <A closed door>
+<A closed door>
+%%%%
+A large runed door
+
+# en:
+#   <A runed door>
+<A runed door>
+%%%%
+A runed gate
+
+# en:
+#   <A runed door>
+<A runed door>
+%%%%
+A huge runed gate
+
+# en:
+#   <A runed door>
+<A runed door>
+%%%%
+A large sealed door
+
+# en:
+#   <A sealed door>
+<A sealed door>
+%%%%
+A sealed gate
+
+# en:
+#   <A sealed door>
+<A sealed door>
+%%%%
+A huge sealed gate
+
+# en:
+#   <A sealed door>
+<A sealed door>
+%%%%
+A large broken door
+
+# en:
+#   <A broken door>
+<A broken door>
+%%%%
+A broken gate
+
+# en:
+#   <A broken door>
+<A broken door>
+%%%%
+A huge broken gate
+
+# en:
+#   <A broken door>
+<A broken door>
+%%%%
+A large translucent open door
+
+# en:
+#   <An open translucent door>
+<An open translucent door>
+%%%%
+An open translucent gate
+
+# en:
+#   <An open translucent door>
+<An open translucent door>
+%%%%
+A huge open translucent gate
+
+# en:
+#   <An open translucent door>
+<An open translucent door>
+%%%%
+A large translucent closed door
+
+# en:
+#   <A closed translucent door>
+<A closed translucent door>
+%%%%
+A closed translucent gate
+
+# en:
+#   <A closed translucent door>
+<A closed translucent door>
+%%%%
+A huge closed translucent gate
+
+# en:
+#   <A closed translucent door>
+<A closed translucent door>
+%%%%
+A large translucent broken door
+
+# en:
+#   <A broken translucent door>
+<A broken translucent door>
+%%%%
+A broken translucent gate
+
+# en:
+#   <A broken translucent door>
+<A broken translucent door>
+%%%%
+A huge broken translucent gate
+
+# en:
+#   <A broken translucent door>
+<A broken translucent door>
+%%%%
+An alarm trap
+
+# en:
+#   A trap that creates a loud noise to attract nearby monsters. In addition to the
+#   noise it creates, it will apply an enchantment making monsters all over the
+#   level aware of your location. Hostile monsters may trigger this trap themselves
+#   to invoke its effects against you, but your allies will avoid stepping on it.
+大きな音を立てて近くのモンスターを呼び寄せる罠。音を出すだけでなく、階層中のモンスターにあなたの居場所を気づかせる魔法をかける。敵対的なモンスターは、あなたに対して効果を及ぼすために自らこの罠を作動させることがあるが、あなたの仲間はこれを踏まないようにする。
+%%%%
+An archmage's trap
+
+# en:
+#   A magical trap crafted by some avaricious master wizard. When you or a hostile
+#   monster steps on it, you will lose a percentage of your mp, while up to three of
+#   the strongest hostile spellcasters in sight will have their spells empowered.
+#   Your allies will avoid stepping on it.
+強欲な大魔術師が作り上げた魔法の罠。あなたか敵対的なモンスターがこれを踏むと、あなたの MP が一定の割合で失われ、視界内で最も強い敵対的な呪文の使い手最大 3 体の呪文が強化される。あなたの仲間はこれを踏まないようにする。
+%%%%
+A devourer's trap
+
+# en:
+#   A magical trap linked by divine cruelty to the stomachs of some unfathomable
+#   interdimensional predators. When you or a hostile monster steps on it, it has a
+#   high chance it will expel digestive acid onto you, corroding you. Your allies
+#   will avoid stepping on it.
+神の残酷さによって、計り知れない異次元の捕食者たちの胃袋とつながった魔法の罠。あなたか敵対的なモンスターがこれを踏むと、高い確率であなたに消化液を浴びせ、あなたを腐蝕させる。あなたの仲間はこれを踏まないようにする。
+%%%%
+A dispersal trap
+
+# en:
+#   Anyone stepping on this trap will translocate themselves and anyone else in view
+#   to a new location nearby. Hostile monsters may trigger this trap, but your
+#   allies will avoid stepping on it.
+#
+#   After triggering, it cannot be triggered again for several turns.
+この罠を踏んだ者は、自分自身と視界内にいる他の全員を、近くの新しい場所へと転移させる。敵対的なモンスターはこの罠を作動させることがあるが、あなたの仲間はこれを踏まないようにする。
+
+一度作動すると、数ターンの間は再び作動しない。
+%%%%
+A dispersal trap (recharging)
+
+# en:
+#   [[A dispersal trap]]
+#
+#   It is currently recharging and will become active again in a short while.
+[[A dispersal trap]]
+
+現在は充填中で、しばらくすると再び作動するようになる。
+%%%%
+A harlequin's trap
+
+# en:
+#   A magical trap left behind by the ineffable, spectacular revues of chaos. When
+#   you or a hostile monster steps on it, up to three of the strongest monsters in
+#   sight will have their attacks temporarily interwoven with a touch of chaos. Your
+#   allies will avoid stepping on it.
+混沌が繰り広げる、言語に絶する壮大なレビューが残していった魔法の罠。あなたか敵対的なモンスターがこれを踏むと、視界内で最も強いモンスター最大 3 体の攻撃に、一時的に混沌の力が織り込まれる。あなたの仲間はこれを踏まないようにする。
+%%%%
+A net trap
+
+# en:
+#   A large concealed net launcher hanging from the dungeon's ceiling. Enchanted by
+#   the power of Zot, whenever an intelligent creature steps here - whether friend
+#   or foe - the net will land only on you.
+ダンジョンの天井から吊り下げられた、隠された大きな網の発射装置。ゾットの力によって魔法がかけられており、知性ある生き物がここを踏むと、それが味方であれ敵であれ、網はあなたの上にだけ落ちてくる。
+%%%%
+A permanent teleport trap
+
+# en:
+#   A magical trap which will displace anyone passing over it to a random place on
+#   the same dungeon level.
+上を通った者を、同じ階層のランダムな場所へ飛ばしてしまう魔法の罠。
+%%%%
+A pressure plate
+
+# en:
+#   A trigger of some sort. You cannot tell what kind of trap it is attached to.
+#   Its complicated detection system will trigger the trap even when someone flies
+#   over it.
+何らかの作動装置。どんな罠につながっているのかは分からない。複雑な感知の仕組みを備えており、誰かが上を飛んで通っても罠を作動させる。
+%%%%
+A spike launcher
+
+# en:
+#   A magical contraption which skewers nearby monsters with sharp spikes. It will
+#   disintegrate after a short length of time or if the caster strays too far away
+#   from it.
+近くのモンスターを鋭い棘で串刺しにする魔法の仕掛け。しばらくすると、あるいは術者が離れすぎると崩れ去る。
+%%%%
+A teleport trap
+
+# en:
+#   A magical trap which will displace anyone passing over it to a random place on
+#   the same dungeon level. It is worn with age, and will dissipate on use.
+上を通った者を、同じ階層のランダムな場所へ飛ばしてしまう魔法の罠。古びているため、一度使うと消えてしまう。
+%%%%
+A tyrant's trap
+
+# en:
+#   A magical trap built to bolster the armies of some conquering despot. When you
+#   or a hostile monster steps on it, your melee attacks will be weakened to make
+#   up to three of the most dangerous monsters in sight become stronger. Your
+#   allies will avoid stepping on it.
+征服者たる暴君の軍勢を強化するために造られた魔法の罠。あなたか敵対的なモンスターがこれを踏むと、あなたの近接攻撃が弱まり、その分、視界内で最も危険なモンスター最大 3 体が強くなる。あなたの仲間はこれを踏まないようにする。
+%%%%
+A web
+
+# en:
+#   A spider's web. The spider who left it must have been huge, as it seems to be
+#   made for trapping {{ return you.genus(true) }} rather than flies.
+蜘蛛の巣。これを張った蜘蛛はさぞ巨大だったに違いない。蝿ではなく、{{ return crawl.tagged_jtrans("[spec name]", you.genus(false)) }}を捕らえるために作られたもののようだ。
+%%%%
+A Zot trap
+
+# en:
+#   A trap which inflicts dangerously unpredictable magical effects on those
+#   unlucky enough to step on it. You may find yourself petrified, contaminated
+#   with enormous amounts of wild magic, have mighty fiends summoned against you,
+#   or the like. Hostile monsters may trigger this trap themselves to invoke its
+#   effects against you, but your allies will avoid stepping on it.
+不運にも踏んでしまった者に、危険で予測のつかない魔法の効果をもたらす罠。石化させられたり、膨大な量の荒れ狂う魔力に汚染されたり、強大な悪魔を差し向けられたりするかもしれない。敵対的なモンスターは、あなたに対して効果を及ぼすために自らこの罠を作動させることがあるが、あなたの仲間はこれを踏まないようにする。
+%%%%
+A flagged portal
+
+# en:
+#   A portal leading to a bailey, gradually fading away as the standard is lowered
+#   to the ground.
+濠城へと続くポータル。旗が地面へと下ろされていくにつれて、少しずつ薄れていく。
+%%%%
+A gauntlet entrance
+
+# en:
+#   A portal leading to a gauntlet.
+試練場へと続くポータル。
+%%%%
+A flickering gateway to a bazaar
+
+# en:
+#   A portal leading to a bazaar, where itinerant merchants gather to sell their
+#   wares. They never stay in one place for very long.
+バザールへと続くポータル。そこでは旅の商人たちが集まり、品物を売っている。商人たちは一か所に長くは留まらない。
+%%%%
+A gateway to a bazaar
+
+# en:
+#   A portal leading to a bazaar, where itinerant merchants gather to sell their
+#   wares. They will wait for you, but once you get a chance to browse their
+#   inventory, the merchants will depart in search of other customers.
+バザールへと続くポータル。そこでは旅の商人たちが集まり、品物を売っている。商人たちはあなたを待っていてくれるが、あなたが品揃えを見る機会を得ると、他の客を求めて去っていく。
+%%%%
+A phantasmal passage
+
+# en:
+#   A portal leading to one of many Necropolis repositories, where the freshly slain
+#   and deeply resentful are sealed away. This wandering rift will eventually move
+#   elsewhere to receive further dead.
+死者の都の数ある保管所のひとつへと続くポータル。そこには死んだばかりの、深い恨みを抱いた者たちが封じ込められている。このさまよう裂け目は、さらなる死者を受け入れるため、いずれ別の場所へと移っていく。
+%%%%
+A frozen archway
+
+# en:
+#   A portal leading to an ice cave. The archway is gradually melting away.
+氷の洞穴へと続くポータル。アーチは少しずつ溶けていく。
+%%%%
+A glacial archway
+
+# en:
+#   A portal leading to a glacial chasm, far more dangerous than the icy caverns
+#   found in the shallower reaches of the Dungeon. The archway is gradually melting
+#   away.
+氷河の裂け目へと続くポータル。ダンジョンの浅い階層にある氷の洞穴よりもはるかに危険だ。アーチは少しずつ溶けていく。
+%%%%
+A sand-covered staircase
+
+# en:
+#   A staircase leading to an ossuary. Sand is continuously pouring onto it,
+#   gradually blocking the entrance.
+納骨堂へと続く階段。砂が絶えず降り注いでおり、少しずつ入口をふさいでいく。
+%%%%
+A glowing drain
+
+# en:
+#   A passage leading to a sewer. It is gradually rusting away.
+下水道へと続く通路。少しずつ錆びて朽ちていく。
+%%%%
+A portal to a secret trove of treasure
+
+# en:
+#   A portal leading to a treasure trove. This portal is unstable and will collapse
+#   after a single use.
+埋蔵庫へと続くポータル。このポータルは不安定で、一度使うと崩れてしまう。
+%%%%
+A dark tunnel
+
+# en:
+#   A portal leading to the heart of a volcano. Rocks are falling from the roof and
+#   sides of the tunnel, filling the entry.
+火山の中心部へと続くポータル。トンネルの天井や壁から岩が落ちてきて、入口を埋めつつある。
+%%%%
+A crumbling gateway
+
+# en:
+#   A salt-encrusted arch, covered with carved entreaties to the good gods to
+#   contain the evils sealed therein. Whatever protections this arch once offered
+#   have finally succumbed to the ravages of time, and a bitter breeze pours forth
+#   from the distant land beyond.
+塩にまみれたアーチ。内に封じた悪を閉じ込めておくよう善なる神々に願う祈りの言葉が刻まれている。かつてこのアーチがもたらしていた守りがどのようなものであれ、ついに時の侵食に屈し、その彼方の遠い地から苦い風が吹き出してくる。
+%%%%
+A magical portal
+
+# en:
+#   A portal leading to a wizard's laboratory. It is fading away.
+魔術師の研究所へと続くポータル。少しずつ薄れていく。
+%%%%
+A collapsed entrance
+
+# en:
+#   A collapsed passage which cannot be used anymore.
+崩れてしまい、もう使うことのできない通路。
+%%%%
+An archival metal wall
+
+# en:
+#   An ensorcelled metal wall coated in an inscrutable non-linear script, recording
+#   the regrets of the interred and their visitors alike. As with all metal walls,
+#   it is next to impossible to destroy, and will ground all varieties of bounding
+#   lightning.
+魔法がかけられた金属の壁。不可解な非線形の文字に覆われており、埋葬された者とその訪問者の双方の悔恨が記録されている。他の金属の壁と同じく、破壊することはほぼ不可能で、跳ね回るあらゆる種類の稲妻を接地させてしまう。
+%%%%
+A large window
+
+# en:
+#   A window embedded in the side of an enormous metal pipe, allowing observation
+#   of the water flowing inside.
+巨大な金属の管の側面にはめ込まれた窓。中を流れる水を観察することができる。
+%%%%
+An ice choked empty arch of ancient stone
+
+# en:
+#   An inoperative portal, nearly completely encased in a mass of ice.
+大量の氷にほぼ完全に覆われた、機能しないポータル。
+%%%%
+An ice covered gate leading back out of this place
+
+# en:
+#   A portal leading back to the place you came from. Its magic is holding the ice
+#   at bay, preventing it from blocking the gate. You will be unable to return here
+#   once you pass through it.
+来た場所へと戻るポータル。その魔力が氷を寄せつけず、門がふさがれるのを防いでいる。一度通り抜けると、ここに戻ってくることはできない。
+%%%%
+An ice covered rock wall
+
+# en:
+#   A rock wall covered by a thick layer of frost and ice.
+霜と氷の厚い層に覆われた岩の壁。
+%%%%
+Some ice crusted deep water
+
+# en:
+#   A pool of deep water, crusted with broken blocks of ice.
+砕けた氷塊に覆われた、深い水をたたえた池。
+%%%%
+Some ice crusted shallow water
+
+# en:
+#   A pool of shallow water, crusted with broken blocks of ice.
+砕けた氷塊に覆われた、浅い水たまり。
+%%%%
+A rock-blocked tunnel
+
+# en:
+#   A tunnel which is no longer passable.
+もう通ることのできないトンネル。
+%%%%
+A rocky tunnel leading out of this place
+
+# en:
+#   An unstable passage in the volcanic rock, admitting a draft of cool air from
+#   beyond. It leads back to the place you came from. You will be unable to return
+#   here once you pass through it.
+火山岩の中の不安定な通路。向こうから冷たい空気が流れ込んでくる。来た場所へと戻る通路だ。一度通り抜けると、ここに戻ってくることはできない。
+%%%%
+An endless expanse of salt
+
+# en:
+#   A seemingly endless, flat plain, wracked by blinding salt-storms. Anyone
+#   venturing across it would be lost beyond all hope in short order.
+目もくらむような塩の嵐が吹き荒れる、果てしなく続くかに見える平原。ここを渡ろうとする者は、たちまち絶望的に迷ってしまうだろう。
+%%%%
+A ruined idol
+
+# en:
+#   A monument to the glory of a dead god. The statue has been methodically
+#   defaced; not a single distinguishing feature remains.
+死んだ神の栄光をたたえる記念碑。像は念入りに削り汚されており、見分けのつく特徴はひとつも残っていない。
+%%%%
+A portal leading out of this place
+
+# en:
+#   A shimmering magical gate leading back to the place you came from. You will be
+#   unable to return here once you pass through it.
+来た場所へと戻る、揺らめく魔法の門。一度通り抜けると、ここに戻ってくることはできない。
+%%%%
+An autumnal tree
+
+# en:
+#   A large tree that appears to be permanently locked in an autumnal moment.
+#   Leaves, coloured red and gold, fall from its branches and float gracefully to
+#   the floor, but before they even reach the ground they shimmer and reappear on
+#   the branches, ready to fall again.
+秋のひとときに永遠に閉じ込められたかのような大きな木。赤や金色に色づいた葉が枝から落ち、優雅に舞いながら床へと漂っていくが、地面に着く前に揺らめいて枝に戻り、再び落ちる時を待つ。
+%%%%
+A crumbled stone wall
+
+# en:
+#   A stone wall on the brink of collapsing from disrepair but somehow remaining
+#   standing, seemingly frozen in time.
+荒れ果てて今にも崩れ落ちそうでありながら、なぜか立ち続けている石の壁。まるで時が止まっているかのようだ。
+%%%%
+A strange statue
+
+# en:
+#   A statue with strange and alien features. Is it because the statue is worn and
+#   tarnished that it has become so unrecognisable? Or is it that the subject was
+#   something demonic and evil?
+奇妙で異質な特徴を持つ像。これほど見分けがつかなくなったのは、像がすり減って色褪せているからだろうか？ それとも、題材が悪魔的で邪悪な何かだったからだろうか？
+%%%%
+A strange rock wall
+
+# en:
+#   A wall decorated with images you might see in a tomb.
+墓所で見かけるような絵で飾られた壁。
+%%%%
+A highly decorated stone wall
+
+# en:
+#   A wall covered with disturbing, horrifying images.
+心をかき乱す、恐ろしい絵に覆われた壁。
+%%%%
+The rough-hewn floor
+
+# en:
+#   The floor. It is rough and uneven in places.
+地面。ところどころ粗くでこぼこしている。
+%%%%
+Viscous fluid
+
+# en:
+#   A sticky fluid which seems to be secreted by the nearby walls. It looks
+#   disgusting.
+近くの壁から分泌されているらしい、ねばねばした液体。気持ちの悪い見た目だ。
+%%%%
+A sinewy wall
+
+# en:
+#   A wall that looks strangely organic, but incredibly tough and durable.
+奇妙に有機的に見えるが、信じられないほど頑丈で丈夫な壁。
+%%%%
+A thin membrane
+
+# en:
+#   A strange membrane, thin enough to see through.
+向こうが透けて見えるほど薄い、奇妙な膜。
+%%%%
+The pulsating floor
+
+# en:
+#   The floor. It pulses to an unknown beat.
+地面。未知の拍子に合わせて脈打っている。
+%%%%
+A broken fleshy orifice
+
+# en:
+#   It seems to be oozing quietly. Best not to touch it.
+静かに何かがにじみ出しているようだ。触れないのが一番だろう。
+%%%%
+Zonguldrok's gravestone
+
+# en:
+#   A gravestone of the house of Zonguldrok, still dripping with brackish ichor.
+ゾングルドロク家の墓石。今なお濁った体液を滴らせている。
+%%%%
+A gravestone
+
+# en:
+#   A nameless grave.
+名もなき墓。
+%%%%
+The dimension's edge
+
+# en:
+#   The edge of this tiny, isolated plane, where space itself dissolves into
+#   oblivion. Entering or affecting this black void is impossible.
+この小さく孤立した次元の果て。ここでは空間そのものが忘却の中へと溶けている。この漆黒の虚空に入ったり、影響を及ぼしたりすることはできない。
+%%%%
+A wall of crystal
+
+# en:
+#   <A crystal wall>
+<A crystal wall>
+%%%%
+The damp floor
+
+# en:
+#   The floor. It remains forever damp, perhaps due to the humidity or the constant
+#   flow of clouds.
+地面。湿気のせいか、絶えず流れる雲のせいか、いつまでも湿ったままだ。
+%%%%
+A wall of orange crystal
+
+# en:
+#   A wall made from orange crystal. It has a mind-boggling sheen.
+橙色の水晶でできた壁。頭がくらくらするような光沢がある。
+%%%%
+A wall of white crystal
+
+# en:
+#   A wall made from low-grade crystal with an opalescent gleam.
+乳白色の輝きを帯びた、低品質の水晶でできた壁。
+%%%%
+A black wall
+
+# en:
+#   A wall made perhaps from stone, or solid charcoal, or a substance found only in
+#   the deepest hells.
+石か、固い木炭か、あるいは地獄の最深部にしかない物質でできているのかもしれない壁。
+%%%%
+A carved rock wall
+
+# en:
+#   A wall decorated with images of death and destruction.
+死と破壊の絵で飾られた壁。
+%%%%
+An unnaturally hard bloodstone wall
+
+# en:
+#   An indestructible bulwark, wrought from blood and tempered in the suffering of
+#   mortal lives beyond count.
+血から鍛え上げられ、数えきれない定命の者たちの苦しみで焼き入れされた、破壊できない防壁。
+%%%%
+A metal statue
+
+# en:
+#   A base type statue for other statue flavours. If you see this, file a bug
+#   report.
+他の種類の像の基本となる像。これが見えたら、バグとして報告してほしい。
+%%%%
+A decorative floor
+
+# en:
+#   A base floor type for various decorations one can walk over. If you see this,
+#   file a bug report.
+上を歩くことのできる、さまざまな装飾の基本となる床。これが見えたら、バグとして報告してほしい。
+%%%%
+A tree of woe
+
+# en:
+#   A half-alive tree burdened with fruits of crystallised sorrow.
+結晶化した悲しみの実をつけた、半ば生きている木。
+%%%%
+A dead tree
+
+# en:
+#   The dry remains of a long-dead tree.
+とうの昔に枯れた木の、乾いた残骸。
+%%%%
+A dead mangrove
+
+# en:
+#   The dry remains of a long-dead mangrove.
+とうの昔に枯れたマングローブの、乾いた残骸。
+%%%%
+A bloodied mop and bucket
+
+# en:
+#   A mop and bucket soaked with the bloody aftermath of demonic torture.
+悪魔の拷問の血なまぐさい後始末で、ぐっしょりと濡れたモップとバケツ。
+%%%%
+An iron statue
+
+# en:
+#   A statue of an ancient warrior, festooned with trophies from fallen victims.
+#   Some dark substance oozes from the gaps in its visor; surely it must be oil..?
+倒した犠牲者からの戦利品で飾り立てられた、古代の戦士の像。兜の面頬の隙間から何か黒っぽいものがにじみ出ている。きっと油に違いない……よね？
+%%%%
+An infernal standard
+
+# en:
+#   A blazing flag of cruel conquest, planted amid the ruins of many a fallen
+#   kingdom to claim their ashes in the name of Hell.
+残酷な征服を示す、燃え盛る旗。滅ぼされた数多の王国の廃墟に立てられ、その灰を地獄の名のもとに我がものとしている。
+%%%%
+Ashen ground
+
+# en:
+#   Ash and embers, littered with broken treasures and worthless coins from realms
+#   long fallen.
+灰と燃えさし。とうの昔に滅んだ国々の、壊れた財宝や価値のない硬貨が散らばっている。
+%%%%
+A tempered metal wall
+
+# en:
+#   Walls of brass and nickel, covered in a thin golden foil steadily peeling away
+#   in the constant, oppressive heat. Designs depict mortals dealing with devils,
+#   but the former rarely seem to come out ahead on the exchange.
+真鍮とニッケルの壁。絶え間ない息苦しい熱気の中で、表面を覆う薄い金箔がじわじわと剥がれ落ちている。描かれているのは悪魔と取引をする定命の者たちだが、得をしているのはたいてい悪魔の方のようだ。
+%%%%
+An ice-covered rock wall
+
+# en:
+#   A rock wall coated in a thick layer of ice. Twisted faces glower beneath the
+#   surface, locked in perpetual grimaces of rage and betrayal.
+厚い氷の層に覆われた岩の壁。表面の下からは歪んだ顔がにらみつけており、怒りと裏切りに満ちたしかめ面のまま、永遠に凍りついている。
+%%%%
+An ice-covered stone wall
+
+# en:
+#   A stone wall coated in a thick layer of ice. Twisted faces glower beneath the
+#   surface, locked in perpetual grimaces of rage and betrayal.
+厚い氷の層に覆われた石の壁。表面の下からは歪んだ顔がにらみつけており、怒りと裏切りに満ちたしかめ面のまま、永遠に凍りついている。
+%%%%
+Frost-covered floor
+
+# en:
+#   Earth locked within perpetual frost and cold. It seems ageless and changeless,
+#   as though it has existed in this state for an eternity.
+永遠の霜と冷気に閉ざされた大地。永劫の昔からこの状態で存在してきたかのように、年を取ることも変わることもないように見える。
+%%%%
+A golden statue
+
+# en:
+#   A solid gold statue of a saint.
+聖人をかたどった純金の像。
+%%%%
+A silver statue
+
+# en:
+#   A geometric statue of solid silver, in both material and form championing
+#   security and stasis.
+純銀でできた幾何学的な像。素材と形の両方で、安定と不変をたたえている。
+%%%%
+A scintillating statue
+
+# en:
+#   A magically shifting statue seemingly content to glimmer and dance in place,
+#   dedicated to the ineffable cosmic games of chaos.
+魔法でうつろい続ける像。その場できらめき踊ることに満足しているようで、混沌の言語に絶する宇宙的な遊戯に捧げられている。
+%%%%
+A mystic cage
+
+# en:
+#   A sturdy metal cage, inscribed with cryptic magics. Whatever it once held -
+#   whether person, beast, or experiment - was evidently already freed in response
+#   to intruders like you infiltrating the Dungeon.
+不可解な魔法の文字が刻まれた頑丈な金属の檻。かつて何を閉じ込めていたにせよ――人であれ、獣であれ、実験体であれ――あなたのような侵入者がダンジョンに入り込んだのを受けて、すでに解き放たれているのは明らかだ。
+%%%%
+An arcane conduit
+
+# en:
+#   A strange but benign metal construct, analysing raw ambient magical energy. If
+#   destroyed and disrupted by sufficiently mighty magic, its destructive mystic
+#   energy will harmlessly disperse.
+奇妙だが無害な金属の構造物で、周囲に満ちる生の魔力を分析している。十分に強力な魔法で破壊され、かき乱されると、その破壊的な神秘のエネルギーは無害に散っていく。
+%%%%
+A misfortune conduit
+
+# en:
+#   A strange but benign metal construct, analysing raw ambient magical energy. If
+#   destroyed and disrupted by sufficiently mighty magic, its malevolent cursed
+#   energy will harmlessly disperse.
+奇妙だが無害な金属の構造物で、周囲に満ちる生の魔力を分析している。十分に強力な魔法で破壊され、かき乱されると、その悪意に満ちた呪いのエネルギーは無害に散っていく。
+%%%%
+A dimensional conduit
+
+# en:
+#   A strange but benign metal construct, analysing raw ambient magical energy. If
+#   destroyed and disrupted by sufficiently mighty magic, its extraplanar warp
+#   energy will harmlessly disperse.
+奇妙だが無害な金属の構造物で、周囲に満ちる生の魔力を分析している。十分に強力な魔法で破壊され、かき乱されると、その異次元の歪みのエネルギーは無害に散っていく。
+%%%%
+A soul conduit
+
+# en:
+#   A strange but benign metal construct, analysing raw ambient magical energy. If
+#   destroyed and disrupted by sufficiently mighty magic, its negative energy will
+#   harmlessly disperse.
+奇妙だが無害な金属の構造物で、周囲に満ちる生の魔力を分析している。十分に強力な魔法で破壊され、かき乱されると、その負のエネルギーは無害に散っていく。
+%%%%
+An alchemical conduit
+
+# en:
+#   A strange but benign metal construct, analysing raw ambient magical energy. If
+#   destroyed and disrupted by sufficiently mighty magic, its venomous churning
+#   energy will harmlessly disperse.
+奇妙だが無害な金属の構造物で、周囲に満ちる生の魔力を分析している。十分に強力な魔法で破壊され、かき乱されると、その毒々しく渦巻くエネルギーは無害に散っていく。
+%%%%
+A fiery conduit
+
+# en:
+#   A strange but benign metal construct, analysing raw ambient magical energy. If
+#   destroyed and disrupted by sufficiently mighty magic, its ever-burning energy
+#   will harmlessly disperse.
+奇妙だが無害な金属の構造物で、周囲に満ちる生の魔力を分析している。十分に強力な魔法で破壊され、かき乱されると、その永遠に燃え続けるエネルギーは無害に散っていく。
+%%%%
+An icy conduit
+
+# en:
+#   A strange but benign metal construct, analysing raw ambient magical energy. If
+#   destroyed and disrupted by sufficiently mighty magic, its chilling cold energy
+#   will harmlessly disperse.
+奇妙だが無害な金属の構造物で、周囲に満ちる生の魔力を分析している。十分に強力な魔法で破壊され、かき乱されると、その凍える冷気のエネルギーは無害に散っていく。
+%%%%
+An earthen conduit
+
+# en:
+#   A strange but benign metal construct, analysing raw ambient magical energy. If
+#   destroyed and disrupted by sufficiently mighty magic, its seismic energy will
+#   harmlessly disperse.
+奇妙だが無害な金属の構造物で、周囲に満ちる生の魔力を分析している。十分に強力な魔法で破壊され、かき乱されると、その地震のエネルギーは無害に散っていく。
+%%%%
+A storm conduit
+
+# en:
+#   A strange but benign metal construct, analysing raw ambient magical energy. If
+#   destroyed and disrupted by sufficiently mighty magic, its crackling energy will
+#   harmlessly disperse.
+奇妙だが無害な金属の構造物で、周囲に満ちる生の魔力を分析している。十分に強力な魔法で破壊され、かき乱されると、そのパチパチと弾けるエネルギーは無害に散っていく。
+%%%%
+An enigmatic dynamo
+
+# en:
+#   A harmless yet sturdy metal construct, arcane both in power-source and
+#   purpose. Whatever it analyses, processes, powers, or produces can neither be
+#   assessed nor accessed by intruders like you infiltrating the Dungeon.
+無害だが頑丈な金属の構造物。動力源も目的も謎に包まれている。それが何を分析し、処理し、動かし、生み出しているにせよ、あなたのようなダンジョンへの侵入者には、推し量ることも利用することもできない。
+%%%%
+A nascence circuit
+
+# en:
+#   A coruscating spark gap of twin electrodes of impenetrably advanced technology.
+#   These are used to forge and power thaumaturgical constructs, though despite the
+#   constant crackling, this one is used up and unable to do much more than
+#   harmlessly dance with the joy of creating life.
+計り知れないほど高度な技術による、一対の電極からなる火花のきらめく放電間隙。魔術的な構造物を鍛え上げ、動かすために使われるものだが、絶え間なくパチパチと音を立てているにもかかわらず、これはすでに使い果たされており、生命を生み出す喜びに無害に踊ること以上のことはほとんどできない。
+%%%%
+A bedevilled crystal wall
+
+# en:
+#   A wall made from shimmering crystal, from which some demonic plane peers out.
+#   While its composition both make it resist destruction plus reflect both fire and
+#   cold, the otherworldly forces within it seem to be entirely harmless... from
+#   this end, anyway.
+揺らめく水晶でできた壁で、その中から何らかの悪魔の次元が覗いている。その組成によって破壊に強く、火と冷気をともに反射する。中にいる異界の力はまったく無害なようだ……少なくとも、こちら側からは。
+%%%%
+A floral vase
+
+# en:
+#   A vibrant bouquet of flowers in a clay vessel, kept alive with ample water
+#   and some minor magic.
+粘土の器に生けられた、色鮮やかな花束。たっぷりの水とちょっとした魔法で、生き生きと保たれている。
+%%%%
+A garden patch
+
+# en:
+#   A small decorative plot of flowers penned in by cobblestone.
+丸石で囲われた、花を植えた小さな飾り花壇。
+%%%%
+A flower patch
+
+# en:
+#   A bed of hardy wildflowers, thriving in this place despite everything.
+たくましい野花の花壇。あらゆる困難をものともせず、この場所で咲き誇っている。
+%%%%
+A mop and bucket
+
+# en:
+#   A mop and bucket, useful for keeping one's environs orderly and clean. Too bad
+#   you're here now.
+モップとバケツ。身の回りを整然と清潔に保つのに役立つ。あなたが来てしまったのは、まったく残念なことだ。
+%%%%
+A fur brush
+
+# en:
+#   A grooming brush laid to rest beside a pile of tangled, matted yak fur.
+もつれて固まったヤクの毛の山のそばに置かれた、手入れ用のブラシ。
+%%%%
+A set of bottled spirits
+
+# en:
+#   A mix of various alcoholic drinks with worn-down labels. Unfortunately, the
+#   preservative magic sealing each bottle makes it impossible to sample from them
+#   without smashing their bottles open.
+ラベルのすり減った、さまざまな酒の詰め合わせ。残念ながら、それぞれの瓶を封じる保存の魔法のせいで、瓶を叩き割らない限り味見することはできない。
+%%%%
+A djembe set
+
+# en:
+#   A drum ensemble whose rhythm serves as peaceful recreation here in the depths of
+#   the earth.
+大地の奥深くのこの場所で、そのリズムが穏やかな娯楽となっている太鼓の一式。
+%%%%
+A caliginous standard
+
+# en:
+#   A murky flag of dark conquest shimmering with vile energies, planted in the name
+#   of some grand despoiling crusade.
+邪悪なエネルギーに揺らめく、暗黒の征服を示す陰鬱な旗。何らかの壮大な略奪の聖戦の名のもとに立てられている。
+%%%%
+a skull pike
+
+# en:
+#   Bones are a common sight in the Dungeon, but skulls left impaled in a shrike's
+#   manner on display send a more deliberate message to trespassers: the pike has
+#   room for one more skull, and whoever set it up is happy to help relieve its
+#   owner of theirs.
+ダンジョンでは骨など珍しくもないが、百舌のはやにえのように串刺しにして晒された頭蓋骨は、侵入者に対してもっとはっきりとしたメッセージを送っている。この槍にはもうひとつ頭蓋骨を刺す余地があり、これを立てた者は、持ち主からその頭蓋骨を喜んで取り外してやるつもりなのだ。
+%%%%
+A mourning vase
+
+# en:
+#   A singular flower, suffused with gloom and held in a ceramic grip. It
+#   is difficult to tell whether it is even still alive.
+陰鬱さに満ち、陶器の器に握られた、ただ一輪の花。まだ生きているのかどうかさえ見分けがつかない。
+%%%%
+A broken floral vase
+
+# en:
+#   A delicate arrangement, smashed to pieces and consigned to slow starvation.
+粉々に砕かれ、ゆっくりと枯れていく運命に委ねられた繊細な生け花。
+%%%%
+A weapon-inlaid floor
+
+# en:
+#   The decorative elvish inlayings of weapons mark here the Hall of Blades, where
+#   many of the Dungeon's keenest weapons originate, magically animated to
+#   demonstrate their own lethality on would-be thieves.
+エルフの手による武器の装飾象嵌が、ここが刃の広間であることを示している。ダンジョンで最も鋭い武器の多くはここで生まれ、盗人になろうとする者に対して、魔法で動き出して自らの殺傷力を示すのだ。
+%%%%
+An orcish standard
+
+# en:
+#   A flag of Beogh, raised to show that this fortification belongs to some arm of
+#   the Dungeon's orcish military.
+ベオの旗。この砦がダンジョンのオーク軍の一部隊に属していることを示すために掲げられている。
+%%%%
+A silver wall
+
+# en:
+#   A wall made of pure silver.
+純銀でできた壁。
+%%%%
+A rune-carved stone wall
+
+# en:
+#   A strangely slime-free stone wall, carved all over with countless protective
+#   runes.
+奇妙なことにスライムがまったく付いていない石の壁。数えきれないほどの守りのルーンが一面に刻まれている。
+%%%%
+A rune-carved clear stone wall
+
+# en:
+#   A strangely slime-free stone wall, with strange lights twinkling within its
+#   airy confines. Mystical runes are scattered across its surface, seemingly
+#   referring to a 'Royal Jelly'.
+奇妙なことにスライムがまったく付いていない石の壁。その澄んだ内部では不思議な光がまたたいている。表面には神秘のルーンが散りばめられており、「ロイヤルジェリー」について述べているようだ。
+%%%%
+A sarcophagus
+
+# en:
+#   An ancient sarcophagus. It appears to be empty.
+古代の石棺。空のようだ。
+%%%%
+A heavily etched metal wall
+
+# en:
+#   A metal wall etched with murals depicting, in great and gruesome detail,
+#   exactly what will be done to anyone caught stealing from the Vaults.
+宝物庫から盗みを働いて捕まった者がどんな目に遭うのかを、微に入り細をうがって残酷に描いた壁画が刻まれた金属の壁。
+%%%%
+A heavily etched crystal wall
+
+# en:
+#   A crystal wall etched with murals depicting, in great and gruesome detail,
+#   exactly what will be done to anyone caught stealing from the Vaults.
+宝物庫から盗みを働いて捕まった者がどんな目に遭うのかを、微に入り細をうがって残酷に描いた壁画が刻まれた水晶の壁。
+%%%%
+An adventurer's gravestone
+
+# en:
+#   The grave of an adventurer who came close to victory.
+勝利まであと一歩に迫った冒険者の墓。
+%%%%
+An elephant-shaped statue
+
+# en:
+#   A worn granite statue depicting an elephant standing guard.
+見張りに立つ象をかたどった、すり減った花崗岩の像。
+%%%%
+A weirdly glowing ball
+
+# en:
+#   A floating ball radiating with shimmering light.
+揺らめく光を放ちながら宙に浮かぶ球。
+%%%%
+A sealed sarcophagus
+
+# en:
+#   An ancient sarcophagus. It is sealed shut.
+古代の石棺。固く封印されている。
+%%%%
+An open sea?
+
+# en:
+#   Though it exists in stark defiance of every conventional rule of physics and
+#   geometry you know to be true, there can be no denying that here, in this tiny
+#   room, is a vast and terrible sea of impossible size.
+#
+#   Either that, or it's a blue wall.
+あなたが真実だと知っている物理学と幾何学のあらゆる常識に真っ向から反して存在しているが、この小さな部屋に、ありえない大きさの広大で恐ろしい海があることは否定しようがない。
+
+あるいは、ただの青い壁なのかもしれない。
+%%%%
+A spawn point
+
+# en:
+#   An entrance that the opposition may appear from.
+敵が現れることのある入口。
+%%%%
+An exit from the tutorial
+
+# en:
+#   A way out of the dungeon, letting you finish this lesson.
+ダンジョンの外へと出る道。ここからこのレッスンを終えることができる。
+%%%%
+haloed
+
+# en:
+#   This area is lit by a divine halo, decreasing your stealth, preventing
+#   invisibility, and increasing the accuracy of attacks against any illuminated
+#   creatures.
+この一帯は神聖な光輪に照らされている。あなたの隠密性が下がり、透明化できなくなり、照らされた生き物への攻撃の命中率が上がる。
+%%%%
+umbraed
+
+# en:
+#   This area is wreathed by an umbra, improving your stealth if you are attuned to
+#   the shadows, and decreasing the accuracy of attacks by those unattuned to the
+#   shadows.
+この一帯は影の帳に包まれている。影と調和していればあなたの隠密性が上がり、影と調和していない者の攻撃の命中率が下がる。
+%%%%
+liquefied
+
+# en:
+#   The ground here is liquefied, making movement slow and causing any attempts to
+#   attack in melee to sometimes fail.
+ここの地面は液状化しており、移動が遅くなり、近接攻撃が時おり失敗する。
+%%%%
+disjunction haloed
+
+# en:
+#   This area is bathed in translocational energy, causing creatures to blink away
+#   from the originator of the energy with an increasing chance the closer they are
+#   to the caster.
+この一帯は転移のエネルギーに満たされている。生き物はこのエネルギーの発生源から瞬間移動で遠ざけられ、術者に近いほどその確率は高くなる。
+%%%%
+ice covered
+
+# en:
+#   This wall is covered in magical ice that freezes victims who wander nearby.
+#   This damage bypasses any armour the target may have, and will slow cold-blooded
+#   creatures. Each victim is only ever affected by one icy wall at a time.
+#
+#   The creator of this icy covering and any of their allies can walk safely past
+#   this wall.
+この壁は魔法の氷に覆われており、近くをうろつく者を凍えさせる。このダメージは対象の防具をすべて無視し、冷血の生き物を減速させる。一度に影響を受けるのは、ひとつの氷の壁からだけである。
+
+この氷の覆いを作り出した者とその仲間は、この壁のそばを安全に通ることができる。
+%%%%
+awoken
+
+# en:
+#   This tree has been temporarily enchanted to grant it some limited motility,
+#   allowing it to lash out out at any adjacent enemies of the creature who awoke
+#   it.
+この木は一時的に魔法をかけられ、わずかに動けるようになっている。目覚めさせた者の敵が隣にいれば、打ちかかる。
+%%%%
+tree burning
+
+# en:
+#   It is susceptible to bolts of lightning and to sufficiently intense sources of
+#   fire. The resulting blaze can flare up, spreading to areas nearby and igniting
+#   other trees.
+稲妻や十分に強い炎によって燃えやすい。燃え上がった炎は激しくなることがあり、近くへと燃え広がって他の木にも火をつける。
+%%%%
+mangrove burning
+
+# en:
+#   It is susceptible to bolts of lightning and to sufficiently intense sources of
+#   fire. Mangroves do not burn as vigorously as normal trees, due to growing on
+#   swampy terrain, and leave behind shallow water after they smoulder.
+稲妻や十分に強い炎によって燃えやすい。マングローブは沼地に生えているため普通の木ほど激しくは燃えず、くすぶり終えた後には浅い水が残る。
+%%%%
+demonic tree burning
+
+# en:
+#   It is susceptible to bolts of lightning and to sufficiently intense sources of
+#   fire. Burning this tree releases a cloud of pure chaos instead of flames.
+稲妻や十分に強い炎によって燃えやすい。この木を燃やすと、炎の代わりに純粋な混沌の雲が放たれる。
+%%%%

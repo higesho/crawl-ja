@@ -91,20 +91,20 @@ function arena_sprint_end_round(data)
 
     -- Place orb / rune
     if arena_sprint_is_boss_round(data.round_id) then
-        crawl.mpr("A rune of Zot has appeared.", "orb")
+        crawl.mpr(crawl.jtrans("A rune of Zot has appeared."), "orb")
         dgn.create_item(you_x, you_y, data.monster_set[3])
         data.time_left = 1500 + crawl.random2(500)
         if data.round_id > 27 then
             local p = dgn.find_marker_positions_by_prop("centre_point", 1)[1]
             dgn.grid(p.x, p.y, "exit_dungeon")
             if data.round_id < 42 then
-                crawl.mpr("The exit has re-opened... for now.", "orb")
+                crawl.mpr(crawl.jtrans("The exit has re-opened... for now."), "orb")
             else
-                crawl.mpr("The exit has re-opened.", "orb")
+                crawl.mpr(crawl.jtrans("The exit has re-opened."), "orb")
             end
         end
     elseif data.round_id == 27 then
-        crawl.mpr("The Orb of Zot has appeared in the centre of the arena!", "orb")
+        crawl.mpr(crawl.jtrans("The Orb of Zot has appeared in the centre of the arena!"), "orb")
         local p = dgn.find_marker_positions_by_prop("centre_point", 1)[1]
         dgn.create_item(p.x, p.y, "orb of zot")
         data.time_left = 1500 + crawl.random2(500)
@@ -124,7 +124,7 @@ function arena_sprint_end_round(data)
     if data.num_killed >= data.round_enemies or data.lightning_round then
         data.style_mult = data.style_mult + 1
         if arena_sprint_is_boss_round(data.round_id) then
-            crawl.mpr("<yellow>You have won a prize for killing the boss!</yellow>", "warning")
+            crawl.mpr(crawl.jtrans("<yellow>You have won a prize for killing the boss!</yellow>"), "warning")
             -- Extra score multiplier for killing the boss.
             data.style_mult = data.style_mult + 1
             -- Reward for boss kills.
@@ -132,17 +132,17 @@ function arena_sprint_end_round(data)
             dgn.create_item(you_x, you_y, "any parchment level:100")
             dgn.create_item(you_x, you_y, "potion of experience q:1 pre_id")
         else
-            crawl.mpr("<yellow>Victory!</yellow>", "warning")
+            crawl.mpr(crawl.jtrans("<yellow>Victory!</yellow>"), "warning")
         end
-        crawl.mpr("Score multiplier: " .. data.style_mult .. "x", "intrinsic_gain")
+        crawl.mpr(crawl.jtrans("Score multiplier: %sx", data.style_mult), "intrinsic_gain")
         -- Gold multiplier is capped at 5x
         gold_gain = gold_gain * math.min(data.style_mult, 5)
     else
         if you.have_orb() and data.style_mult > 27 then
             data.style_mult = 27
-            crawl.mpr("Score multiplier reset to 27x", "intrinsic_gain")
+            crawl.mpr(crawl.jtrans("Score multiplier reset to 27x"), "intrinsic_gain")
         elseif data.style_mult > 1 then
-            crawl.mpr("You lost your score multiplier.", "intrinsic_gain")
+            crawl.mpr(crawl.jtrans("You lost your score multiplier."), "intrinsic_gain")
             data.style_mult = 1
         end
     end
@@ -151,13 +151,13 @@ function arena_sprint_end_round(data)
     local style_points = dgn.persist.arena_style_points + style_gain
     dgn.persist.arena_style_points = style_points
     if style_points > 1 then
-        crawl.mpr("You now have " .. style_points .. " arena points " ..
-                  "(gained " .. style_gain .. ").", "intrinsic_gain")
+        crawl.mpr(crawl.jtrans("You now have %s arena points (gained %s).",
+                               style_points, style_gain), "intrinsic_gain")
     else
-        crawl.mpr("You now have 1 arena point.", "intrinsic_gain")
+        crawl.mpr(crawl.jtrans("You now have 1 arena point."), "intrinsic_gain")
     end
-    crawl.take_note("Arena points: " .. style_points ..
-                    " (+" .. style_gain .. ") [x" .. data.style_mult .. "]",
+    crawl.take_note(crawl.jtrans("Arena points: %s (+%s) [x%s]", style_points,
+                                 style_gain, data.style_mult),
                     "intrinsic_gain")
 
     dgn.create_item(you_x, you_y, "gold q:" .. gold_gain)
@@ -175,9 +175,9 @@ function arena_sprint_end_round(data)
     end
 
     if data.round_id == 42 then
-        crawl.mpr("<white>The arena falls silent. Everyone but you is dead.</white>")
-        crawl.mpr("<white>There is nothing to do now but take the Orb and leave.</white>")
-        crawl.mpr("<white>Congratulations, champion.</white>")
+        crawl.mpr(crawl.jtrans("<white>The arena falls silent. Everyone but you is dead.</white>"))
+        crawl.mpr(crawl.jtrans("<white>There is nothing to do now but take the Orb and leave.</white>"))
+        crawl.mpr(crawl.jtrans("<white>Congratulations, champion.</white>"))
         data.finished = true
     else
         data.round_id = data.round_id + 1
@@ -197,13 +197,13 @@ function arena_sprint_ominous_countdown(time_left, waiting)
         then
             crawl.mpr(time_left / 10 .. "...", "duration")
         elseif time_left <= 0 then
-            crawl.mpr("Time's up!", "duration")
+            crawl.mpr(crawl.jtrans("Time's up!"), "duration")
             --crawl.more()
-            crawl.mpr("The arena falls silent.")
+            crawl.mpr(crawl.jtrans("The arena falls silent."))
         end
     elseif time_left == 20 and waiting then
         -- There was more of a countdown here, but it felt too spammy.
-        crawl.mpr("<yellow>Get ready!</yellow>", "warning")
+        crawl.mpr(crawl.jtrans("<yellow>Get ready!</yellow>"), "warning")
     end
 end
 
@@ -853,16 +853,16 @@ function thing_do_arena(data, triggerable, triggerer, marker, ev)
             arena_sprint_ominous_countdown(data.time_left, data.between_rounds)
 
             if data.time_left <= 0 then
-                crawl.take_note("Round " .. data.round_id .. ".")
-                crawl.mpr("ROUND " .. data.round_id .. "!", "warning")
+                crawl.take_note(crawl.jtrans("Round %s.", data.round_id))
+                crawl.mpr(crawl.jtrans("ROUND %s!", data.round_id), "warning")
                 if data.round_id == 42 then
-                    crawl.mpr("FINAL BOSS!", "warning")
+                    crawl.mpr(crawl.jtrans("FINAL BOSS!"), "warning")
                 elseif arena_sprint_is_boss_round(data.round_id) then
-                    crawl.mpr("BOSS ROUND!", "warning")
+                    crawl.mpr(crawl.jtrans("BOSS ROUND!"), "warning")
                 elseif data.round_id == 27 then
-                    crawl.mpr("ZOT ROUND!", "orb")
+                    crawl.mpr(crawl.jtrans("ZOT ROUND!"), "orb")
                 else
-                    crawl.mpr("FIGHT!", "warning")
+                    crawl.mpr(crawl.jtrans("FIGHT!"), "warning")
                 end
 
                 data.time_left = 510 + crawl.random2(200)
@@ -881,7 +881,7 @@ function thing_do_arena(data, triggerable, triggerer, marker, ev)
                 then
                     data.spawn_rate = 1
                     data.lightning_round = true
-                    crawl.mpr("LIGHTNING ROUND!", "warning")
+                    crawl.mpr(crawl.jtrans("LIGHTNING ROUND!"), "warning")
                 else
                     data.spawn_rate = math.ceil((1000 + crawl.random2(500)) / data.round_enemies)
                 end
@@ -898,7 +898,7 @@ function thing_do_arena(data, triggerable, triggerer, marker, ev)
                     local p = dgn.find_marker_positions_by_prop("centre_point", 1)[1]
                     if feat.is_stair(p.x, p.y) then
                         dgn.grid(p.x, p.y, "floor")
-                        crawl.mpr("The exit has been sealed! It will re-open when you get the next rune.")
+                        crawl.mpr(crawl.jtrans("The exit has been sealed! It will re-open when you get the next rune."))
                     end
                 end
 
@@ -907,7 +907,9 @@ function thing_do_arena(data, triggerable, triggerer, marker, ev)
                 if crawl.coinflip() then
                     local directions = {"north", "east", "south", "west"}
                     data.spawn_dir = directions[crawl.random2(#directions) + 1]
-                    crawl.mpr("You sense a tension in the " .. data.spawn_dir .. ".")
+                    crawl.mpr(crawl.jtrans("You sense a tension in the %s.",
+                                    crawl.tagged_jtrans("[arena dir]",
+                                                        data.spawn_dir)))
                 else
                     data.spawn_dir = "spawn_point"
                 end
@@ -1019,10 +1021,10 @@ LROCKTILE:  wall_hall
 
     set_feature_name("dry_fountain", "spawn point")
 
-    crawl.mpr("<cyan>You have entered the arena!\n" ..
+    crawl.mpr(crawl.jtrans("<cyan>You have entered the arena!\n" ..
               "You will win if you kill everything that spawns (including allies).\n" ..
               "If it is a boss round, you only need to kill the boss in order to win.\n" ..
-              "If it is a lightning round, you only need to survive!</cyan>")
+              "If it is a lightning round, you only need to survive!</cyan>"))
 }}
 # No exploration gods. Positions are random, and you don't have enough time to
 # reach an altar before the game starts.

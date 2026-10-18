@@ -1,0 +1,1826 @@
+# dat/des/**/*.des(vault 定義)の表示文。
+# - des の Lua から crawl.jtrans(...) で引くもの(crawl.mpr, crawl.god_speaks,
+#   crawl.take_note など)。書式付きのキーは crawl.jtrans(key, ...) が
+#   string.format に渡すので、%s の数と順番を英文と同じに保つこと。
+# - des 側は英語のまま渡し、C++ / dlua 側で引くもの(扉の説明 marker、
+#   portal_desc の desc、timed_msg の文など)。各節の注を参照。
+%%%%
+# ---- altar/ashenzari_visionary.des
+%%%%
+Ashenzari says: See what I see, mortal...
+
+アシェンザリは『私の見ている物を見よ、定命の者よ……』と言った。
+%%%%
+Saw a vision of %s.
+
+%sの幻視を見た
+%%%%
+You have a sudden vision of %s!
+
+あなたは突然、%sの幻視を見た！
+%%%%
+You have a sudden vision!
+
+あなたは突然、幻視を見た！
+%%%%
+# ---- altar/kiku_cage.des
+%%%%
+Miasma emanates from the human's flesh.
+
+瘴気がその人間の肉体から湧き出している。
+%%%%
+The human rises from the dead!
+
+人間はゾンビとなって蘇った！
+%%%%
+# ---- altar/lugonu_bribe.des
+%%%%
+An item emerges from the Abyss! Perhaps it is an incitement to worship... or even an insult?
+
+アイテムがアビスから招来された！ これは信仰を鼓舞するものか……はたまた侮辱するものか？
+%%%%
+# ---- altar/nemelex_the_gamble.des
+%%%%
+Nemelex Xobeh says: %s
+
+ネメレクス・ソベーは『%s』と言った。
+%%%%
+Care to risk it all for some fabulous prizes, mortal?
+
+危険を冒して素晴らしき賞品を手に入れるか、定命の者よ？
+%%%%
+Through this portal lies a prize... or peril!
+
+門をくぐれば賞品が……もしくは危機が！
+%%%%
+The prize could be yours... at the risk of your life!
+
+賞品が手に入るやも……命の危険はあるがな！
+%%%%
+Care for a little wager, mortal?
+
+ちょっと賭け事をしてみないか、定命の者よ？
+%%%%
+"Beware! This is a limited time offer!"
+
+『期間限定！ 注意するのだ！』
+%%%%
+A transporter appears.
+
+転送装置が現れた。
+%%%%
+<white>The transporter glows with a rainbow of weird colours and disappears.</white>
+
+<white>転送装置は奇妙な虹色の光に輝き、そして消え去った。</white>
+%%%%
+Nemelex Xobeh says: You win!
+
+ネメレクス・ソベーは『おまえの勝ちだ！』と言った。
+%%%%
+Nemelex Xobeh says: You lose!
+
+ネメレクス・ソベーは『おまえの負けだ！』と言った。
+%%%%
+# ---- altar/okawaru_arena.des
+%%%%
+The portcullises are lifted away, releasing the combatants.
+
+吊るし門が上げられ、戦士たちが解き放たれた。
+%%%%
+The doors seal shut behind you!
+
+あなたの背後の扉が固く閉じられた！
+%%%%
+Okawaru booms: Excellent! You may choose a reward.
+
+オカワルの『素晴らしい！ 褒美を選ぶがよい』という声が響き渡った。
+%%%%
+The gates behind the altar rise, and the entry reopens.
+
+祭壇の奥の鉄格子が上がり、入り口の扉は再び開いた。
+%%%%
+# ---- altar/overflow.des
+%%%%
+As you approach the altar, the fountains begin to flow with blood!
+
+あなたが祭壇に近づくと、噴水から血が湧きだした！
+%%%%
+Let the past return from memory!
+
+『記憶から過去を呼び覚まそう！』
+%%%%
+"WORSHIP ME, MORTAL," Xom booms, "AND I SHALL GRANT YOU THE GREATEST GIFT OF ALL."
+
+<w>『我を崇めよ、定命の者よ』</w>とゾムの声が響き渡った。<w>『そうすればお前に最高の贈り物を授けてやろう』</w>
+%%%%
+A goblin pops into existence! It looks at you with admiration.
+
+ゴブリンが突然現れた！ それはあなたに敬愛の視線を送った。
+%%%%
+"Friendship. The greatest gift is friendship!"
+
+『友情。最高の贈り物は友情さ！』
+%%%%
+For a moment, you catch a glimpse of warriors who walked this path long ago.
+
+一瞬、遠い昔にこの道を歩んだ戦士たちの姿が垣間見えた。
+%%%%
+"I found one of your ancestors!"
+
+『お前のご先祖様を見つけてやったぞ！』
+%%%%
+A %s emerges from the mists of... memory?....
+
+%sが……記憶？の……霧の中から現れた……。
+%%%%
+# ---- altar/trog_burn_book.des
+%%%%
+The spellbook bursts into flames! Trog roars with delight!
+
+魔法書は燃え上がった！ トログは歓喜の声を上げた！
+%%%%
+# ---- altar/trog_wizard.des
+%%%%
+Flames erupt from the bowels of the wizard! Trog roars with satisfaction!
+
+炎が魔術師の体内から吹き上がった！ トログは満足の声を上げた！
+%%%%
+Flames erupt from the wizard's cell! Trog roars with frustration!
+
+炎が魔術師の独房の床から吹き上がった！ トログは不満の声を上げた！
+%%%%
+Flames erupt from the wizard's empty cell! Trog roars with frustration!
+
+炎が魔術師のいない独房の床から吹き上がった！ トログは不満の声を上げた！
+%%%%
+# ---- altar/vehumet_trees.des
+%%%%
+Vehumet offers to free you in exchange for your devotion to destruction.
+
+ヴェフメットは、破壊への献身と引き換えにあなたを解き放とうと申し出た。
+%%%%
+Suddenly, the trees start to burn!
+
+突然木が燃え出した！
+%%%%
+# ---- altar/xom_monty_hall.des
+%%%%
+You feel as though Xom is toying with you.
+
+ゾムがあなたをもてあそんでいるかのような気がした。
+%%%%
+Suddenly, the walls become transparent!
+
+突然壁が透明になった！
+%%%%
+# ---- altar/xom_sheep.des
+%%%%
+The walls suddenly crumble!
+
+壁は突然崩れた！
+%%%%
+A dream sheep catches fire!
+
+眠りの羊の体に火がついた！
+%%%%
+You hear mad divine giggling.
+
+あなたは神の狂気の笑い声を耳にした。
+%%%%
+# ---- altar/yredelemnul_ordeal.des
+%%%%
+You sense Yredelemnul urging you to kill the trapped human.
+
+イレデレンヌルが、捕らわれた人間を殺すようあなたを急き立てているのを感じた。
+%%%%
+Yredelemnul welcomes your deed!
+
+イレデレンヌルはあなたの行いを歓迎した！
+%%%%
+You feel a numb sensation.
+
+あなたは痺れるような感覚を覚えた。
+%%%%
+You hear a strange fizzling.
+
+あなたは奇妙なシュワシュワいう音を耳にした。
+%%%%
+# ---- branches/crypt.des
+%%%%
+There is a click. Suddenly, the grates are dropped!
+
+カチッという音がして、突然鉄格子が降りた！
+%%%%
+There is a click. Nothing appears to happen.
+
+カチッという音がしたが、何も起きなかった。
+%%%%
+Something awakens from inside the sarcophagi!
+
+石棺の中から何かが起き出してきた！
+%%%%
+The ground shakes!
+
+地面が揺れた！
+%%%%
+You hear grinding stone!
+
+あなたは石がギシギシとこすれる音を耳にした！
+%%%%
+# ---- branches/dis.des
+%%%%
+You hear the creaking of ancient metal!
+
+あなたは太古の金属が軋む音を耳にした！
+%%%%
+# ---- branches/pan.des
+%%%%
+The air here is shimmering with an eerie glow.
+
+ここの空気は不気味な光を帯びて揺らめいている。
+%%%%
+You sense a powerful magical presence. It is not pleased.
+
+あなたは強大な魔力の存在を感じた。それは機嫌を損ねているようだ。
+%%%%
+Searing heat pours from the floors and walls of this place.
+
+この場所の床と壁から灼けつくような熱が噴き出している。
+%%%%
+Shadowy figures dance across your vision.
+
+影のような姿があなたの視界を横切って踊っている。
+%%%%
+The mighty Pandemonium lord %s resides here.
+
+強大なパンデモニウムの王%sがここに住んでいる。
+%%%%
+They guard the %s.
+
+その王は%sを守っている。
+%%%%
+Entered the realm of %s.
+
+%sの領域に入った
+%%%%
+The tension of great conflict fills the air!
+
+大いなる争いの緊張が辺りに満ちている！
+%%%%
+The demonic rune of Zot may be found here.
+
+ここには悪魔のルーンがあるようだ。
+%%%%
+A powerful Pandemonium lord resides here.
+
+強大なパンデモニウムの王がここに住んでいる。
+%%%%
+It guards the demonic rune of Zot.
+
+その王は悪魔のルーンを守っている。
+%%%%
+<yellow>A demonic rune of Zot can be found here... for a price.</yellow>
+
+<yellow>ここには悪魔のルーンがある……代価と引き換えに。</yellow>
+%%%%
+The grate goes up!
+
+鉄格子が上がった！
+%%%%
+You hear a sound of rusty metal sliding.
+
+あなたは錆びついた金属が滑るような音を耳にした。
+%%%%
+# ---- branches/shoals.des
+%%%%
+The surface of the water froths suddenly, and then rushes away.
+
+水面が突然泡立ち、そして水が引いていった。
+%%%%
+# ---- branches/slime.des
+%%%%
+You feel a strange vibration for a moment.
+
+あなたは一瞬奇妙な振動を感じた。
+%%%%
+You hear the sound of toppling stones.
+
+あなたは石が崩れ落ちる音を耳にした。
+%%%%
+The stone walls suddenly crumble and collapse.
+
+突然石の壁が砕けて崩れ去った。
+%%%%
+# ---- branches/spider.des, traps/monster_drop.des, variable/compat.des
+%%%%
+A basket of spiders falls from above!
+
+蜘蛛の入った籠が頭上から落ちてきた！
+%%%%
+A basket of snakes falls from above!
+
+蛇の入った籠が頭上から落ちてきた！
+%%%%
+With a honk a tiny klown kar falls from above, and Killer Klowns tumble out!
+
+プップーという音とともに小さなピエロカーが頭上から落ちてきて、殺人ピエロがぞろぞろと転がり出てきた！
+%%%%
+You notice webbing strewn about the room and hear a chittering noise in the background.
+
+あなたは部屋中に張られた蜘蛛の巣と、辺りから聞こえるキチキチという音に気づいた。
+%%%%
+# ---- branches/swamp.des
+%%%%
+A figure emerges from the depths of the water!
+
+何者かの姿が水の深みから現れた！
+%%%%
+The water ripples visibly.
+
+水面にはっきりと波紋が広がった。
+%%%%
+# ---- branches/tar.des
+%%%%
+You hear an unearthly scream, and the grinding of stone!
+
+あなたはこの世のものとも思えぬ絶叫と、石の軋む音を耳にした！
+%%%%
+The path is suddenly blocked!
+
+行く手が突然遮られた！
+%%%%
+# ---- branches/temple.des
+%%%%
+The air is stale and forgotten.
+
+空気はよどみ、忘れ去られている。
+%%%%
+# ---- branches/vaults_rooms_hard.des(message_at_spot。dlua の lm_trig が引く)
+%%%%
+You almost think you hear a voice: "Seek not undue power, mortal."
+
+あなたは声を聞いたような気がした:『過ぎたる力を求めるな、定命の者よ』
+%%%%
+# ---- branches/dis.des(monster_on_death の message_seen / message_unseen。dlua の lm_monst が引く)
+%%%%
+The iron statue comes to life!
+
+鉄の像が動き出した！
+%%%%
+You hear a grinding sound.
+
+あなたは何かが軋む音を耳にした。
+%%%%
+# ---- portals/bazaar.des
+%%%%
+Upon your arrival, your hatred by all makes the other customers disperse.
+
+あなたが到着すると、万人に憎まれるあなたを嫌って他の客たちは散っていった。
+%%%%
+Upon your arrival, your lonesome duelist's vow makes the other customers flee.
+
+あなたが到着すると、孤高の決闘者の誓いに恐れをなして他の客たちは逃げ出した。
+%%%%
+Xom shifts dimensions to make the bazaar a little more interesting.
+
+ゾムがバザールを少し面白くしようと次元をずらした。
+%%%%
+You hear the bustle and chatter of other... customers...?
+
+あなたは他の……客……？の賑わいとおしゃべりを耳にした。
+%%%%
+You hear the chatter and bustle of other customers!
+
+あなたは他の客たちのおしゃべりと賑わいを耳にした！
+%%%%
+# ---- portals/ossuary.des
+%%%%
+There is a click, and some walls slide away!
+
+カチッという音がして、壁がいくつか滑るように開いた！
+%%%%
+# ---- portals/trove.des(trove_milestone。"Entered %s" は notes.txt)
+%%%%
+You've discovered %s!
+
+あなたは%sを発見した！
+%%%%
+The Name-Rending Infernalists' Reservoir
+
+名を裂く地獄術師たちの貯蔵庫
+%%%%
+Ozocubu's Refrigerator
+
+オゾクブの冷蔵庫
+%%%%
+The Storm Queen's Palace Crash-Site
+
+嵐の女王の宮殿の墜落現場
+%%%%
+Leda's Sunken Stockpile
+
+レダの沈んだ備蓄庫
+%%%%
+Eringya's Secret Bog
+
+エリンギャの秘密の沼
+%%%%
+Rutra's Hidden Sanctum
+
+ルトラの隠れた聖域
+%%%%
+The Dread Knight's Derelict Chapel
+
+恐怖の騎士の打ち捨てられた礼拝堂
+%%%%
+The First Justicar's Armoury
+
+初代裁定者の武器庫
+%%%%
+The Octopus King's Forgotten Garden
+
+蛸王の忘れられた庭園
+%%%%
+The Lost Hoard of Erebora
+
+エレボラの失われた財宝
+%%%%
+a devouring Rift
+
+貪り食う裂け目
+%%%%
+an orange crystal hatchery
+
+橙水晶の孵化場
+%%%%
+# ---- portals/volcano.des
+%%%%
+There is a rumble as the volcano erupts. The roof shakes.
+
+火山が噴火して轟音が響き、天井が揺れた。
+%%%%
+The volcano erupts! Nearby, a roof collapses.
+
+火山が噴火した！ 近くで天井が崩れ落ちた。
+%%%%
+The ground shudders ominously.
+
+大地が不気味に震えた。
+%%%%
+In the distance, the volcano explodes with a roar! Lava spreads onto the path.
+
+遠くで火山が轟音とともに爆発した！ 溶岩が通路に広がった。
+%%%%
+The air is thick with the scent of sulphur.
+
+辺りには硫黄の臭いが立ち込めている。
+%%%%
+There is another distant roar. More lava overflows!
+
+遠くでふたたび轟音が響いた。溶岩がさらにあふれ出した！
+%%%%
+The ground moves violently!
+
+大地が激しく揺れ動いた！
+%%%%
+The volcano erupts again! A thin layer of lava overflows to fill the cavern.
+
+火山がふたたび噴火した！ 溶岩が薄くあふれ出して洞窟を満たした。
+%%%%
+The ground shudders. Some of the lava has hardened enough to walk over!
+
+大地が震えた。溶岩の一部が上を歩けるほどに冷え固まった！
+%%%%
+# ---- portals/wizlab.des(wizlab_milestone。"Entered %s" は notes.txt、"Welcome to %s!" は stairs.txt)
+%%%%
+The Chambers of the Cloud Mage
+
+雲烟の魔術師の実験室
+%%%%
+The Hall of the Hellbinder
+
+地獄を束ねしものの大広間
+%%%%
+Doroklohe's Tomb
+
+ドルオクロヒの墳墓
+%%%%
+Cigotuvi's Fleshworks
+
+シゴツヴィの解体場
+%%%%
+Iskenderun's Mystic Tower
+
+イスケンデルンの魔導の塔
+%%%%
+Zonguldrok's Shrine
+
+ゾングルドルックの神殿
+%%%%
+Wucad Mu's Monastery
+
+ウカド・ムーの修道院
+%%%%
+The Roulette of Golubria
+
+ゴルブリアのルーレット
+%%%%
+Lehudib's Moon Base
+
+レフディブの月面基地
+%%%%
+Eringya's Formal Garden
+
+エリンギャの庭園
+%%%%
+Maxwell's Workshop
+
+マクスウェルの工房
+%%%%
+Yara's Duelist Academy
+
+ヤーラの決闘者養成所
+%%%%
+Borgnjor's Mausoleum
+
+ボルグニョールの霊廟
+%%%%
+Tukima's Studio
+
+ツキマーの工房
+%%%%
+Alistair's Party Mansion
+
+アリステアのパーティー屋敷
+%%%%
+The walls briefly shake.
+
+壁が一瞬揺れた。
+%%%%
+The walls violently shake.
+
+壁が激しく揺れた。
+%%%%
+The walls fall away. The entombed are set free!
+
+壁が崩れ落ち、葬られていたものたちが解き放たれた！
+%%%%
+A door appears!
+
+扉が現れた！
+%%%%
+The walls vibrate.
+
+壁が振動した。
+%%%%
+Strange, shadowy figures dance through the air in front of you.
+
+影のような奇妙な人影が、あなたの目の前の宙を舞った。
+%%%%
+This room is filled with shadowy figures, quietly meditating.
+
+この部屋は静かに瞑想する影のような人影で満ちている。
+%%%%
+Here, spectral monks perform complicated, martial routines; they fade quickly.
+
+ここでは幽体の修行僧たちが複雑な武術の型を演じている。その姿はすぐに薄れて消えた。
+%%%%
+Faint laughter comes from somewhere. Too faint to be real.
+
+どこからかかすかな笑い声が聞こえる。現実のものとは思えないほどかすかだ。
+%%%%
+There is a faint scream of pain from a crouched figure. This too fades quickly.
+
+うずくまった人影からかすかな苦痛の叫びが聞こえた。それもすぐに薄れて消えた。
+%%%%
+Grey monks gather around the fountain. They do not speak, nor look at each other.
+
+灰色の修行僧たちが噴水の周りに集っている。彼らは言葉を交わさず、互いに目を合わせようともしない。
+%%%%
+A figure sits in silent meditation. It spots you, gestures wildly, and disappears.
+
+人影が静かに座って瞑想している。それはあなたに気づくと激しく身振りをして、消え失せた。
+%%%%
+One of the shadowy figures appears more solid!
+
+人影の一つが実体を帯びたようだ！
+%%%%
+Shadows coalesce into solid form.
+
+影が凝り固まって実体となった。
+%%%%
+The shadows inhabiting this place fade forever.
+
+この場所に棲む影たちは永遠に消え去った。
+%%%%
+A lost soul coalesces out of thin air!
+
+迷える魂が何もない空間から凝り固まって現れた！
+%%%%
+# ---- sprint/arena_sprint.des
+%%%%
+A rune of Zot has appeared.
+
+ゾットのルーンが出現した。
+%%%%
+The exit has re-opened... for now.
+
+出口が再び開いた……今のところは。
+%%%%
+The exit has re-opened.
+
+出口が再び開いた。
+%%%%
+The Orb of Zot has appeared in the centre of the arena!
+
+ゾットのオーブが闘技場の中央に出現した！
+%%%%
+<yellow>You have won a prize for killing the boss!</yellow>
+
+<yellow>あなたはボスを倒して賞品を手にした！</yellow>
+%%%%
+<yellow>Victory!</yellow>
+
+<yellow>勝利！</yellow>
+%%%%
+Score multiplier: %sx
+
+スコア倍率: %s倍
+%%%%
+Score multiplier reset to 27x
+
+スコア倍率が27倍に戻った。
+%%%%
+You lost your score multiplier.
+
+スコア倍率がなくなった。
+%%%%
+You now have %s arena points (gained %s).
+
+あなたのアリーナポイントは%sポイントになった(%sポイント獲得)。
+%%%%
+You now have 1 arena point.
+
+あなたのアリーナポイントは1ポイントになった。
+%%%%
+Arena points: %s (+%s) [x%s]
+
+アリーナポイント: %s (+%s) [x%s]
+%%%%
+<white>The arena falls silent. Everyone but you is dead.</white>
+
+<white>闘技場が静まりかえった。生き残っているのはあなただけだ。</white>
+%%%%
+<white>There is nothing to do now but take the Orb and leave.</white>
+
+<white>あとはオーブを手にしてここから立ち去るのみだ。</white>
+%%%%
+<white>Congratulations, champion.</white>
+
+<white>おめでとう、チャンピオン。</white>
+%%%%
+Time's up!
+
+時間切れだ！
+%%%%
+The arena falls silent.
+
+闘技場が静まりかえった。
+%%%%
+<yellow>Get ready!</yellow>
+
+<yellow>準備はいいか！</yellow>
+%%%%
+Round %s.
+
+ラウンド%s
+%%%%
+ROUND %s!
+
+ラウンド%s！
+%%%%
+FINAL BOSS!
+
+最終ボスだ！
+%%%%
+BOSS ROUND!
+
+ボスラウンド開始！
+%%%%
+ZOT ROUND!
+
+ゾットラウンド開始！
+%%%%
+FIGHT!
+
+始め！
+%%%%
+LIGHTNING ROUND!
+
+ライトニングラウンド開始！
+%%%%
+The exit has been sealed! It will re-open when you get the next rune.
+
+出口が閉ざされた！ 次のルーンを手にすれば再び開かれる。
+%%%%
+You sense a tension in the %s.
+
+あなたは%sの方角に緊張が高まるのを感じた。
+%%%%
+[arena dir]north
+
+北
+%%%%
+[arena dir]east
+
+東
+%%%%
+[arena dir]south
+
+南
+%%%%
+[arena dir]west
+
+西
+%%%%
+<cyan>You have entered the arena!\nYou will win if you kill everything that spawns (including allies).\nIf it is a boss round, you only need to kill the boss in order to win.\nIf it is a lightning round, you only need to survive!</cyan>
+
+<cyan>あなたは闘技場に入った！\n出現したものをすべて倒せば勝利となる(仲間も含む)。\nボスラウンドでは、ボスを倒しさえすれば勝利となる。\nライトニングラウンドでは、ただ生き残りさえすればよい！</cyan>
+%%%%
+# ---- sprint/meat.des(枠の中の文は meat_frame_line が表示幅で中央に寄せる)
+%%%%
+You have destroyed The Meatlord.
+
+あなたは肉の王を滅ぼした。
+%%%%
+You will die a champion.
+
+あなたは勇者として死ぬだろう。
+%%%%
+The Orb of Zot has appeared underneath you.
+
+ゾットのオーブがあなたの足下に出現した。
+%%%%
+You have destroyed The Unspeakable.
+
+あなたは名状しがたきものを滅ぼした。
+%%%%
+<lightgreen>The slimy rune of Zot has appeared underneath you.</lightgreen>
+
+<lightgreen>ぬめりのルーンがあなたの足下に出現した。</lightgreen>
+%%%%
+The Meatlord has descended...
+
+肉の王が降臨した。
+%%%%
+The Arena Of Blood
+
+血の闘技場
+%%%%
+You descend into the pit of gibs and meat,
+
+汝は臓物と肉の穴へと降りゆく
+%%%%
+The sunken abyss of the depraved,
+
+堕落せしものどもの沈みし深淵
+%%%%
+The mill of turgid gutspawn.
+
+膨れし臓腑の落とし子らの挽き臼へ。
+%%%%
+The writhen instruments serve in adoration,
+
+ねじくれた楽器は崇拝のうちに仕え
+%%%%
+Immured beneath a rotten throne.
+
+腐れし玉座の下に閉じ込められる。
+%%%%
+Before you lies the servitor of chaos,
+
+汝の前には混沌の僕が横たわる
+%%%%
+The cleaver,
+
+断ち割るもの
+%%%%
+The blasphemer,
+
+冒涜するもの
+%%%%
+The destroyer,
+
+滅ぼすもの
+%%%%
+The Axe of Woe.
+
+悲痛の斧。
+%%%%
+Vessel of Makhleb,
+
+マクレブの器よ
+%%%%
+You are the unmaker,
+
+汝こそ無に帰すもの
+%%%%
+You bring the rapture,
+
+汝が法悦をもたらす
+%%%%
+The murmurs of the thralls rise...
+
+奴隷どものささやきが高まりゆき
+%%%%
+The theatre of blood begins.
+
+血の劇場の幕が上がる。
+%%%%
+# ---- sprint/menkaure.des, sprint/sprint_mu.des, sprint/zigsprint.des
+%%%%
+Murray drops in to check on your progress.
+
+『マーリー』があなたの様子を見に立ち寄った。
+%%%%
+You hear a whooshing noise from somewhere close by.
+
+あなたはどこか近くでヒューッという音を耳にした。
+%%%%
+# veto_reason(movement.cc は訳さずに表示するので des 側で crawl.jtrans する)
+You need three runes to open the Realm of Zot!
+
+ゾットの領域の扉を開くにはルーンが3つ必要だ！
+%%%%
+Your surroundings seem different!
+
+周囲の風景が一変した！
+%%%%
+Welcome to arena %s.
+
+闘技場%sにようこそ。
+%%%%
+Entered arena %s.
+
+闘技場%sに入った
+%%%%
+<magenta>An exit appears before you!</magenta>
+
+<magenta>あなたの目の前に出口が現れた！</magenta>
+%%%%
+# ---- traps/rats_trap.des
+%%%%
+You hear a faint click.
+
+あなたはカチッというかすかな音を耳にした。
+%%%%
+You hear a click.
+
+あなたはカチッという音を耳にした。
+%%%%
+You step on to a pressure plate.
+
+あなたは踏み板を踏んだ。
+%%%%
+Suddenly a wall slides open!
+
+突然壁が滑るように開いた！
+%%%%
+# ---- tutorial/lesson3.des
+%%%%
+You hear a click...
+
+あなたはカチッという音を耳にした……
+%%%%
+Nothing continues to happen.
+
+相変わらず何も起こらない。
+%%%%
+Luckily, nothing happens.
+
+幸い、何も起こらなかった。
+%%%%
+# ---- variable/compat.des
+%%%%
+Several panes of glass retract into the floor.
+
+何枚かのガラス板が床に沈んでいった。
+%%%%
+There is a strange hissing noise.
+
+奇妙なシューッという音がした。
+%%%%
+Your surroundings suddenly seem different!
+
+突然周囲の風景が一変した！
+%%%%
+As the champion is destroyed, a metal wall slides away!
+
+王者が倒されると、金属の壁が滑るように開いた！
+%%%%
+As the champion is destroyed, you hear a distant grinding noise.
+
+王者が倒されると、遠くで何かが軋む音がした。
+%%%%
+Your presence is welcomed at the altar of Beogh.
+
+ベオの祭壇はあなたの訪れを歓迎した。
+%%%%
+Beogh's servants are called upon to defend the altar!
+
+ベオの下僕たちが祭壇を守るべく呼び寄せられた！
+%%%%
+Nemelex Xobeh says, "You win!"
+
+ネメレクス・ソベーは『おまえの勝ちだ！』と言った。
+%%%%
+Nemelex Xobeh says, "You lose!"
+
+ネメレクス・ソベーは『おまえの負けだ！』と言った。
+%%%%
+<white>The teleporter glows with a rainbow of weird colours and disappears.</white>
+
+<white>転送装置は奇妙な虹色の光に輝き、そして消え去った。</white>
+%%%%
+You have a sense of imminent foreboding.
+
+あなたは差し迫った危険を予感した。
+%%%%
+One of the plants suddenly grows acid sacs!
+
+植物の一つが突然酸の袋を生やした！
+%%%%
+Another plant grows acid sacs!
+
+別の植物も酸の袋を生やした！
+%%%%
+# ---- variable/geyser.des
+%%%%
+A fountain of clear blue water erupts!
+
+青く澄んだ水が噴き上がった！
+%%%%
+A fountain of sparkling water erupts!
+
+きらめく水が噴き上がった！
+%%%%
+You hear a distant splash.
+
+あなたは遠くで水のはねる音を耳にした。
+%%%%
+The fountain becomes smaller until it vanishes.
+
+噴き上がる水はだんだん小さくなり、やがて消えた。
+%%%%
+# ---- variable/large_themed.des
+%%%%
+You hear a hidden mechanism click...the prison walls lower!
+
+あなたは隠された仕掛けがカチッと鳴るのを耳にした……牢獄の壁が下がった！
+%%%%
+# ---- portals/*.des の timed_msg(initmsg / finalmsg)と timed_marker の disappear。
+# dlua(lm_tmsg.lua / lm_timed.lua の util.expand_entity_j)が英文のまま引く。
+# 訳の中の $F は entity の日本語名([entity]... は dlua.txt)に置き換わる。
+# verb / noisemaker / ranges / entity / toll_desc の訳は dlua.txt にある。
+%%%%
+You hear the roar of battle.
+
+あなたは戦いの鬨の声を聞いた。
+%%%%
+There is an entrance to a bailey on this level. Hurry and find it before the portal closes forever!
+
+この階には濠城への入口がある。ポータルが永遠に閉ざされる前に急いで見つけ出すのだ！
+%%%%
+$F{The} has been lowered almost to the ground.
+
+$Fが地面すれすれまで下げられた。
+%%%%
+The portal closes with a thud.
+
+ポータルは重い音とともに閉じられた。
+%%%%
+You hear coins being counted.
+
+あなたは硬貨を数える音を耳にした。
+%%%%
+An interdimensional caravan has stopped on this level and set up a bazaar. Hurry and find its entrance before they move on!
+
+次元を彷徨う隊商がこの階に留まってバザールを開いている。彼らが立ち去る前に急いで入口を見つけ出すのだ！
+%%%%
+You hear the last, dying notes of the bell.
+
+あなたは鐘の最後の音が消えていくのを聞いた。
+%%%%
+The gate to the bazaar disappears!
+
+バザールへと続く門は消滅した！
+%%%%
+You hear a distant wind.
+
+あなたは遠くの風の音を耳にした。
+%%%%
+There is a portal to the Desolation of Salt on this level. Hurry and find it before the gateway collapses!
+
+この階には塩の荒野へ続くポータルがある。門が崩れ落ちる前に急いで見つけ出すのだ！
+%%%%
+The wind is rapidly growing quiet.
+
+風の音が急速に静まっていく。
+%%%%
+The gateway collapses.
+
+門は崩れ落ちた。
+%%%%
+You hear a distant snort.
+
+あなたは遠くで荒い鼻息を耳にした。
+%%%%
+Hark! There is a gateway to a gauntlet on this level. Find the entrance quickly before the gate is sealed!
+
+聞け！ この階には試練場へ続く門がある。門が封じられる前に急いで入口を見つけ出すのだ！
+%%%%
+After a thunderous strike, the drumbeats cease.
+
+雷鳴のような一打を最後に、太鼓の音が止んだ。
+%%%%
+You feel a wave of frost pass over you.
+
+あなたは冷気の波が体を通り過ぎるのを感じた。
+%%%%
+There is an entrance to an ice cave on this level. Hurry and find it before the portal melts!
+
+この階には氷の洞穴への入口がある。ポータルが溶ける前に急いで見つけ出すのだ！
+%%%%
+The crackling of melting ice is subsiding rapidly.
+
+溶ける氷のピキピキという音が急速に収まっていく。
+%%%%
+The archway melts and disappears.
+
+アーチは溶けて消滅した。
+%%%%
+You hear the solemn chanting of funerary rites.
+
+あなたは葬礼の厳かな詠唱を耳にした。
+%%%%
+There is an entrance to the Necropolis on this level. Hurry and find it before the portal closes!
+
+この階には死者の都への入口がある。ポータルが閉ざされる前に急いで見つけ出すのだ！
+%%%%
+The funeral rites reach a fever pitch!
+
+葬礼が最高潮に達した！
+%%%%
+The funeral rites fall silent, and the phantasmal passage disappears!
+
+葬礼の声が静まり、幻の通路は消え去った！
+%%%%
+You hear the hiss of flowing sand.
+
+あなたは砂がさらさらと流れる音を聞いた。
+%%%%
+There is an entrance to an ossuary on this level. Hurry and find it before the portal is buried!
+
+この階には納骨堂への入口がある。ポータルが埋もれてしまう前に急いで見つけ出すのだ！
+%%%%
+The hiss of flowing sand is almost imperceptible now.
+
+砂の流れる音はもうほとんど聞こえない。
+%%%%
+The hiss of flowing sand is gone.
+
+砂の流れる音は消え去った。
+%%%%
+You hear the sound of rushing water.
+
+あなたは水が勢いよく流れる音を聞いた。
+%%%%
+There is an entrance to a sewer on this level. Hurry and find it before the portal rusts away!
+
+この階には下水道への入口がある。ポータルが錆び朽ちる前に急いで見つけ出すのだ！
+%%%%
+You hear the drain falling apart.
+
+あなたは排水口がばらばらに壊れる音を聞いた。
+%%%%
+The drain falls to bits.
+
+排水口は粉々に砕けた。
+%%%%
+You feel an oppressive heat about you.
+
+あなたはうだるような熱気を感じた。
+%%%%
+There is an entrance to a volcano on this level. Hurry and find it before the entrance collapses!
+
+この階には火山への入口がある。入口が崩れ落ちる前に急いで見つけ出すのだ！
+%%%%
+The sound of falling rocks suddenly begins to subside.
+
+岩の落ちる音が急に収まり始めた。
+%%%%
+There is a deep roar from within the tunnel. Moments later, a river of lava pours forth, sealing it permanently.
+
+隧道の奥から轟音が鳴り響いた。一瞬ののち溶岩の河が流れ出し、隧道を永久に塞いでしまった。
+%%%%
+You hear the crackle of arcane power.
+
+あなたは秘術の力がパチパチと爆ぜる音を聞いた。
+%%%%
+There is an entrance to a wizard's laboratory on this level! Hurry and find it before the portal closes forever!
+
+この階には魔術師の研究所への入口がある！ ポータルが永遠に閉ざされる前に急いで見つけ出すのだ！
+%%%%
+The crackle of the magical portal is almost imperceptible now.
+
+魔法のポータルの爆ぜる音はもうほとんど聞こえない。
+%%%%
+The flow of magic halts.
+
+魔力の流れが止まった。
+%%%%
+# ---- portals/volcano.des の tw_machine(dlua の lm_fog.lua が引く)
+%%%%
+The air gets thick with the scent of sulphur.
+
+辺りに硫黄の臭いが濃く立ち込めてきた。
+%%%%
+In the distance, the volcano erupts with a roar.
+
+遠くで火山が轟音とともに噴火した。
+%%%%
+The volcano comes to life with a roar!
+
+火山が轟音とともに目を覚ました！
+%%%%
+The volcano roars to life, belching forth lava!
+
+火山が轟音とともに目を覚まし、溶岩を噴き出した！
+%%%%
+# ---- 地形名(set_feature_name、vault_*_statue_setup、decorative_floor、
+# portal_desc / one_way_stair / timed_marker の desc)。C++(directn.cc など)が
+# "[feature]<名前>" で引く。des は英語のまま。
+%%%%
+[feature]a dead tree
+
+朽ち木
+%%%%
+[feature]a glacial archway
+
+氷河のアーチ
+%%%%
+[feature]a gravestone
+
+墓石
+%%%%
+[feature]a polished mirror
+
+磨き上げられた鏡
+%%%%
+[feature]a statue of a chess piece
+
+チェスの駒の像
+%%%%
+[feature]a statue of a dreadful foe
+
+恐るべき敵の像
+%%%%
+[feature]a statue of a dwarf
+
+ドワーフの像
+%%%%
+[feature]a statue of a hydra
+
+ヒドラの像
+%%%%
+[feature]a statue of a princess
+
+王女の像
+%%%%
+[feature]a statue of a tengu
+
+天狗の像
+%%%%
+[feature]a statue of an archer
+
+射手の像
+%%%%
+[feature]a statue of an imp
+
+インプの像
+%%%%
+[feature]adventurer's gravestone
+
+冒険者の墓石
+%%%%
+[feature]alchemical conduit
+
+錬金術の導管
+%%%%
+[feature]arcane conduit
+
+秘術の導管
+%%%%
+[feature]archival metal wall
+
+書庫の金属の壁
+%%%%
+[feature]ash-covered pillar
+
+灰に覆われた柱
+%%%%
+[feature]Ashen ground
+
+灰の積もった地面
+%%%%
+[feature]autumnal tree
+
+紅葉の樹木
+%%%%
+[feature]bedevilled crystal wall
+
+魔に憑かれた水晶の壁
+%%%%
+[feature]black wall
+
+真っ黒な壁
+%%%%
+[feature]bloodied mop and bucket
+
+血まみれのモップとバケツ
+%%%%
+[feature]broken floral vase
+
+割れた花瓶
+%%%%
+[feature]broken pillar
+
+崩れた柱
+%%%%
+[feature]broken wreckage
+
+壊れた残骸
+%%%%
+[feature]caliginous standard
+
+闇の軍旗
+%%%%
+[feature]carved rock wall
+
+彫刻のある岩の壁
+%%%%
+[feature]crumbled stone wall
+
+崩れた石の壁
+%%%%
+[feature]damp floor
+
+湿った床
+%%%%
+[feature]dead mangrove
+
+枯れたマングローブ
+%%%%
+[feature]dead tree
+
+朽ち木
+%%%%
+[feature]defaced carved stone wall
+
+彫刻を削り取られた石の壁
+%%%%
+[feature]dimensional conduit
+
+次元の導管
+%%%%
+[feature]djembe set
+
+ジャンベ一式
+%%%%
+[feature]earthen conduit
+
+大地の導管
+%%%%
+[feature]enigmatic dynamo
+
+謎めいた発電機
+%%%%
+[feature]exit from the tutorial
+
+チュートリアルの出口
+%%%%
+[feature]fiery conduit
+
+炎の導管
+%%%%
+[feature]flickering gateway to a bazaar
+
+バザールへ続くきらきら光る門
+%%%%
+[feature]floral vase
+
+花瓶
+%%%%
+[feature]flower patch
+
+花壇
+%%%%
+[feature]Frost-covered floor
+
+霜に覆われた床
+%%%%
+[feature]fur brush
+
+毛皮のブラシ
+%%%%
+[feature]garden patch
+
+菜園
+%%%%
+[feature]golden statue
+
+黄金の像
+%%%%
+[feature]granite statue wielding a fearsome trident
+
+恐ろしげな三叉槍を構えた花崗岩の像
+%%%%
+[feature]granite statue wielding a mighty axe
+
+力強い斧を構えた花崗岩の像
+%%%%
+[feature]gravestone
+
+墓石
+%%%%
+[feature]heavily etched crystal wall
+
+細かな彫刻が施された水晶の壁
+%%%%
+[feature]heavily etched metal wall
+
+細かな彫刻が施された金属の壁
+%%%%
+[feature]highly decorated stone wall
+
+華麗に装飾された石の壁
+%%%%
+[feature]ice choked empty arch of ancient stone
+
+氷に閉ざされた古代の石の空のアーチ
+%%%%
+[feature]ice covered rock wall
+
+氷に覆われた岩の壁
+%%%%
+[feature]ice-covered rock wall
+
+氷に覆われた岩の壁
+%%%%
+[feature]ice-covered stone wall
+
+氷に覆われた石の壁
+%%%%
+[feature]icy conduit
+
+氷の導管
+%%%%
+[feature]infernal standard
+
+地獄の軍旗
+%%%%
+[feature]iron statue
+
+鉄の像
+%%%%
+[feature]large window
+
+大きな窓
+%%%%
+[feature]merfolk statue
+
+マーフォークの像
+%%%%
+[feature]metal staircase leading up
+
+金属の上り階段
+%%%%
+[feature]misfortune conduit
+
+不運の導管
+%%%%
+[feature]mop and bucket
+
+モップとバケツ
+%%%%
+[feature]mourning vase
+
+弔いの花瓶
+%%%%
+[feature]mystic cage
+
+神秘の檻
+%%%%
+[feature]nascence circuit
+
+発生の回路
+%%%%
+[feature]one-way staircase leading down
+
+一方通行の下り階段
+%%%%
+[feature]one-way staircase leading up
+
+一方通行の上り階段
+%%%%
+[feature]open sea?
+
+外海？
+%%%%
+[feature]orcish standard
+
+オークの軍旗
+%%%%
+[feature]otherworldly statue
+
+異界の像
+%%%%
+[feature]pulsating floor
+
+脈打つ床
+%%%%
+[feature]rock-blocked tunnel
+
+岩でふさがれた隧道
+%%%%
+[feature]rough-hewn floor
+
+荒削りの床
+%%%%
+[feature]ruined idol
+
+崩れ去った偶像
+%%%%
+[feature]rune-carved clear stone wall
+
+ルーンの刻まれた透明な石の壁
+%%%%
+[feature]rune-carved stone wall
+
+ルーンの刻まれた石の壁
+%%%%
+[feature]sarcophagus
+
+石棺
+%%%%
+[feature]scintillating statue
+
+きらめく像
+%%%%
+[feature]sealed sarcophagus
+
+封印された石棺
+%%%%
+[feature]set of bottled spirits
+
+酒瓶の一揃い
+%%%%
+[feature]silver statue
+
+銀の像
+%%%%
+[feature]silver wall
+
+白銀の壁
+%%%%
+[feature]sinewy wall
+
+筋張った肉の壁
+%%%%
+[feature]skull pike
+
+髑髏を掲げた槍
+%%%%
+[feature]Some ice crusted deep water
+
+氷の浮かんだ深い水脈
+%%%%
+[feature]Some ice crusted shallow water
+
+氷の浮かんだ浅い水脈
+%%%%
+[feature]soul conduit
+
+魂の導管
+%%%%
+[feature]spawn point
+
+出現地点
+%%%%
+[feature]statue of a hideous four-limbed creature
+
+四肢を持つおぞましい生き物の像
+%%%%
+[feature]storm conduit
+
+嵐の導管
+%%%%
+[feature]strange rock wall
+
+奇妙な岩の壁
+%%%%
+[feature]strange statue
+
+奇妙な像
+%%%%
+[feature]tempered metal wall
+
+鍛えられた金属の壁
+%%%%
+[feature]The dimension's edge
+
+次元の境界
+%%%%
+[feature]thin membrane
+
+薄い膜の壁
+%%%%
+[feature]tree of woe
+
+悲嘆の木
+%%%%
+[feature]unnaturally hard bloodstone wall
+
+異様に硬い血石の壁
+%%%%
+[feature]Viscous fluid
+
+粘り気のある液体
+%%%%
+[feature]wall of crystal
+
+水晶の壁
+%%%%
+[feature]wall of orange crystal
+
+橙水晶の壁
+%%%%
+[feature]wall of white crystal
+
+白水晶の壁
+%%%%
+[feature]weapon-inlaid floor
+
+武器の埋め込まれた床
+%%%%
+[feature]weirdly glowing ball
+
+奇妙に輝く球体
+%%%%
+[feature]Zonguldrok's gravestone
+
+ゾングルドルックの墓石
+%%%%
+# ---- 扉の marker の door_description_suffix / prefix(directn.cc が jtrans で
+# 引く。des は英語のまま。前後の空白はキーに含めない)。日本語では名詞の後ろに
+# 付くので、接尾語は「(〜行き)」の形にする。door_description_noun は player.txt。
+%%%%
+leading to the Armoury (Hard)
+
+(武器庫行き・難)
+%%%%
+to D:27
+
+(D:27行き)
+%%%%
+to Hell & Pan
+
+(地獄・万魔殿行き)
+%%%%
+to Hell
+
+(地獄行き)
+%%%%
+to Lair:5
+
+(Lair:5行き)
+%%%%
+to Orc:2
+
+(Orc:2行き)
+%%%%
+to Shoals:4
+
+(Shoals:4行き)
+%%%%
+to Snake:4
+
+(Snake:4行き)
+%%%%
+to Spider:4
+
+(Spider:4行き)
+%%%%
+to Swamp:4
+
+(Swamp:4行き)
+%%%%
+to Vaults:5
+
+(Vaults:5行き)
+%%%%
+to Zot:5
+
+(Zot:5行き)
+%%%%
+to a Minivault (Hard)
+
+(小部屋行き・難)
+%%%%
+to a bazaar
+
+(バザール行き)
+%%%%
+to the Abyss
+
+(アビス行き)
+%%%%
+to the Armoury (Hard)
+
+(武器庫行き・難)
+%%%%
+to the Coven (Very Hard)
+
+(魔女の集会所行き・至難)
+%%%%
+to the Crypt
+
+(地下墓地行き)
+%%%%
+to the Crystal Vault (Extremely Hard)
+
+(水晶の宝物庫行き・極難)
+%%%%
+to the Dungeon
+
+(迷宮行き)
+%%%%
+to the Ecumenical Temple
+
+(諸宗派の寺院行き)
+%%%%
+to the Elven Halls
+
+(エルフの大広間行き)
+%%%%
+to the Entrance Hall (Safe)
+
+(玄関広間行き・安全)
+%%%%
+to the Final Vault (Nightmare!)
+
+(最後の宝物庫行き・悪夢！)
+%%%%
+to the Forest
+
+(森行き)
+%%%%
+to the Golden Pit (Nightmare!)
+
+(黄金の穴行き・悪夢！)
+%%%%
+to the Grid Vault (Hard)
+
+(格子の宝物庫行き・難)
+%%%%
+to the Hall of Blades
+
+(刃の広間行き)
+%%%%
+to the Hallway of Sentries (Extremely Hard)
+
+(歩哨の回廊行き・極難)
+%%%%
+to the Hive
+
+(蜂の巣行き)
+%%%%
+to the Iron City of Dis
+
+(鉄の都ディース行き)
+%%%%
+to the Iron Vault (Extremely Hard)
+
+(鉄の宝物庫行き・極難)
+%%%%
+to the Lair of Beasts
+
+(獣の棲み処行き)
+%%%%
+to the Lair
+
+(獣の棲み処行き)
+%%%%
+to the Main Hall (Safe)
+
+(大広間行き・安全)
+%%%%
+to the Metal Vault (Medium)
+
+(金属の宝物庫行き・中)
+%%%%
+to the Orcish Mines
+
+(オークの坑道行き)
+%%%%
+to the Pits of Slime
+
+(スライムの穴ぐら行き)
+%%%%
+to the Realm of Zot
+
+(ゾットの領域行き)
+%%%%
+to the Shoals
+
+(浅瀬行き)
+%%%%
+to the Silver Pit (Extremely Hard)
+
+(銀の穴行き・極難)
+%%%%
+to the Slime Pits
+
+(スライムの穴ぐら行き)
+%%%%
+to the Snake Pit
+
+(蛇穴行き)
+%%%%
+to the Spider Nest
+
+(蜘蛛の穴ぐら行き)
+%%%%
+to the Steel Vault (Very Hard)
+
+(鋼の宝物庫行き・至難)
+%%%%
+to the Storerooms (Easy)
+
+(倉庫行き・易)
+%%%%
+to the Swamp
+
+(沼行き)
+%%%%
+to the Temple (Safe)
+
+(寺院行き・安全)
+%%%%
+to the Temple
+
+(寺院行き)
+%%%%
+to the Titanium Vault (Extremely Hard)
+
+(チタンの宝物庫行き・極難)
+%%%%
+to the Tomb of the Ancients
+
+(太古の霊廟行き)
+%%%%
+to the Tomb
+
+(霊廟行き)
+%%%%
+to the Vaults
+
+(宝物庫行き)
+%%%%
+to the Vestibule (Extremely Hard)
+
+(玄関の間行き・極難)
+%%%%
+to the ashen valley of Gehenna
+
+(灰の谷ゲヘナ行き)
+%%%%
+to the decaying netherworld of Tartarus
+
+(朽ちゆく冥界タルタロス行き)
+%%%%
+to the freezing wastes of Cocytus
+
+(凍てつく荒野コキュートス行き)
+%%%%
+to the ~*~Extended Endgame~*~
+
+(~*~延長戦~*~行き)
+%%%%
+flickering
+
+揺らめく
+%%%%
+magically reinforced
+
+魔法で強化された

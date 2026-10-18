@@ -8,9 +8,9 @@ function callback.oka_start_challange(data, triggerable, triggerer, marker, ev)
   for replica in iter.replica_iterator("cage_doors", 1) do
     dgn.terrain_changed(replica.x, replica.y, "floor", false)
   end
-  crawl.mpr("The portcullises are lifted away, releasing the combatants.",
+  crawl.mpr(crawl.jtrans("The portcullises are lifted away, releasing the combatants."),
             "warning")
-  crawl.mpr("The doors seal shut behind you!", "warning")
+  crawl.mpr(crawl.jtrans("The doors seal shut behind you!"), "warning")
   -- Close the door.
   for replica in iter.replica_iterator("iron_doors", 1) do
     dgn.terrain_changed(replica.x, replica.y, "metal_wall", false)
@@ -26,7 +26,7 @@ function callback.oka_monsters_death (data, triggerable, triggerer, marker, ev)
     end
 
     crawl.god_speaks("Okawaru",
-                     "Okawaru booms: Excellent! You may choose a reward.")
+                     crawl.jtrans("Okawaru booms: Excellent! You may choose a reward."))
     -- Open exit.
     for replica in iter.replica_iterator("iron_doors", 1) do
       dgn.terrain_changed(replica.x, replica.y, "floor", false)
@@ -35,7 +35,7 @@ function callback.oka_monsters_death (data, triggerable, triggerer, marker, ev)
     for replica in iter.replica_iterator("loot_doors", 1) do
       dgn.terrain_changed(replica.x, replica.y, "floor", false)
     end
-    crawl.mpr("The gates behind the altar rise, and the entry reopens.")
+    crawl.mpr(crawl.jtrans("The gates behind the altar rise, and the entry reopens."))
   end
 end
 

@@ -88,26 +88,30 @@ function TroveMarker:fdesc_long (marker)
   local state
   local toll = get_toll(self.props)
 
+  -- 表示用(日本語)。item_name() は日本語の名前、crawl.bane_name() と
+  -- crawl.bane_description() は日本語を返す。
   if toll.item then
     if self:showing_item() then
-      state = "This portal requires the presence of " ..
-              self:item_name() .. " to function.\n"
+      state = crawl.jtrans("This portal requires the presence of %s to function.",
+                           self:item_name()) .. "\n"
     else
-      state = "This portal needs " ..
-              self:item_name() .. " to function.\n"
+      state = crawl.jtrans("This portal needs %s to function.",
+                           self:item_name()) .. "\n"
     end
   elseif toll.type == "nopiety" then
-      state = "The portal is engraved with runes symbolizing the primacy of the "
+      state = crawl.jtrans("The portal is engraved with runes symbolizing the primacy of the "
             .. "material over the divine. Those who enter it may find riches, "
             .. "but when they return, they will find that whatever gods they "
-            .. "held dear have forgotten them in their absence.\n"
+            .. "held dear have forgotten them in their absence.") .. "\n"
   elseif toll.type == "bane" then
-      state = "The portal is guarded from trespassers with a powerful curse. "
-            .. "All who enter will suffer the " .. crawl.bane_name(toll.bane) .. ":\n\n"
+      state = crawl.jtrans("The portal is guarded from trespassers with a powerful curse. "
+            .. "All who enter will suffer the %s:", crawl.bane_name(toll.bane))
+            .. "\n\n"
             .. crawl.bane_description(toll.bane)
   elseif toll.type == "drain" then
-      state = "The portal is warded with dark magic that will temporarily drain "
-            .. "a significant fraction of the maximum health of whoever enters it.\n"
+      state = crawl.jtrans("The portal is warded with dark magic that will temporarily drain "
+            .. "a significant fraction of the maximum health of whoever enters it.")
+            .. "\n"
   else
     error("\nThis portal is very buggy.")
   end
@@ -125,20 +129,21 @@ function TroveMarker:showing_item (marker)
   return false
 end
 
+-- ダンジョンの概要に「(〜)」で付く注記。表示用(日本語)。
 function TroveMarker:overview_note (marker)
   local toll = get_toll(self.props)
   if toll.item then
     if self:showing_item() then
-      return "show " .. self:item_name(false)
+      return crawl.jtrans("show %s", self:item_name(false))
     else
-      return "give " .. self:item_name(false)
+      return crawl.jtrans("give %s", self:item_name(false))
     end
   elseif toll.type == "nopiety" then
-    return "lose all piety"
+    return crawl.jtrans("lose all piety")
   elseif toll.type == "bane" then
-    return "suffer the " .. crawl.bane_name(toll.bane)
+    return crawl.jtrans("suffer the %s", crawl.bane_name(toll.bane))
   elseif toll.type == "drain" then
-    return "suffer draining"
+    return crawl.jtrans("suffer draining")
   else
     return "be buggy"
   end
@@ -298,69 +303,61 @@ end
 -- We need to implement our own version of item_name because
 -- self.props.toll_item is not really an item. It is a table that contains
 -- all the important information about what the toll item should be.
+--
+-- 表示用の日本語の名前を返す(メッセージ・説明・ノート用。比較には使わない)。
+-- 日本語には冠詞がないので do_grammar は無視する。アイテムの英語名
+-- (sub_type, ego_type など)はデータ辞書(data-items.txt)で訳す。
+-- 「2巻の獲得の巻物」「+5 悪魔の武器」の形(item-name.cc の日本語名に合わせる)。
 function TroveMarker:item_name(do_grammar)
   local item = get_toll(self).item
   if item == nil then
     error("item_name called on a toll without an item", 2)
   end
 
-  local s = ""
-  if item.quantity > 1 then
-    s = s .. item.quantity
-  end
-
   if item.sub_type == "rune of Zot" then
-    if do_grammar == false then
-      -- See trove.des where the name of the rune is stuffed into this variable.
-      -- The format is "xxx rune of Zot". Not just "xxx".
-      -- Where "xxx" is like "slimy".
-      return item.ego_type
-    else
-      return crawl.grammar(item.ego_type, "the")
-    end
+    -- See trove.des where the name of the rune is stuffed into this variable.
+    -- The format is "xxx rune of Zot". Not just "xxx".
+    -- Where "xxx" is like "slimy".
+    return crawl.jtrans(item.ego_type)
   end
 
   if item.sub_type == "horn of Geryon" then
-    if do_grammar == false then
-      return "horn of Geryon"
-    else
-      return "the horn of Geryon"
+    -- 英語版で "the" が付く固定アーティファクトには ★ を付ける(item-name.cc)
+    return "★" .. crawl.jtrans("horn of Geryon")
+  end
+
+  local name
+  if string.find(item.sub_type, "demon") then
+    name = crawl.jtrans("demon weapon")
+  elseif crawl.jtrans_has_key(item.base_type .. " of " .. item.sub_type) then
+    -- "potion of curing", "scroll of acquirement" など
+    name = crawl.jtrans(item.base_type .. " of " .. item.sub_type)
+  else
+    name = crawl.jtrans(item.sub_type)
+  end
+
+  local s = ""
+  if item.quantity > 1 then
+    -- 助数詞は item-name.cc の counter_suffix() と同じ順で引く
+    local counter = "個"
+    if crawl.jtrans_has_key("[counter]" .. item.sub_type) then
+      counter = crawl.jtrans("[counter]" .. item.sub_type)
+    elseif crawl.jtrans_has_key("[counter class]" .. item.base_type) then
+      counter = crawl.jtrans("[counter class]" .. item.base_type)
     end
+    s = item.quantity .. counter .. "の"
   end
 
   if item.base_type == "weapon" or item.base_type == "armour" then
     if item.plus1 ~= false and item.plus1 ~= nil then
-      s = s .. " "
       if item.plus1 > -1 then
         s = s .. "+"
       end
-      s = s .. item.plus1
+      s = s .. item.plus1 .. " "
     end
   end
 
-  if item.base_type == "potion" or item.base_type == "scroll" then
-    if item.quantity > 1 then
-      s = s .. " " .. item.base_type .. "s of"
-    else
-      s = s .. " " .. item.base_type .. " of"
-    end
-  end
-
-  if string.find(item.sub_type, "demon") then
-    s = s .. " " .. "demon weapon"
-  else
-    s = s .. " " .. item.sub_type
-  end
-
-  s = util.trim(s)
-
-  if string.find(s, "^%d+")
-     or string.find(item.sub_type, "dragon scales")
-     or do_grammar == false then
-    return s
-  else
-    return crawl.grammar(s, "a")
-  end
+  return s .. name
 end
 
 function TroveMarker:search_for_rune(marker, pname, dry_run)
@@ -529,18 +526,19 @@ function TroveMarker:check_item_veto(marker, pname)
   local item = get_toll(self.props).item
   -- The message is slightly different for items that aren't actually taken by
   -- the trove (runes, currently).
+  -- 日本語では単数・複数を分けないので、plural() の "s" は付けない。
   if self:showing_item() then
-    if not crawl.yesno("This trove requires the presence of "
-                       .. self:item_name() .. " to function. Show it the item"
-                       .. self:plural() .. "?", true, "n") then
-      crawl.mpr("Okay, then.", "prompt")
+    if not crawl.yesno(crawl.jtrans("This trove requires the presence of %s "
+                                    .. "to function. Show it the item?",
+                                    self:item_name()), true, "n") then
+      crawl.mpr(crawl.jtrans("Okay, then."), "prompt")
       return "veto"
     end
   else
-    if not crawl.yesno("This trove needs " .. self:item_name() ..
-                       " to function. Give it the item" ..
-                       self:plural() .. "?", true, "n") then
-      crawl.mpr("Okay, then.", "prompt")
+    if not crawl.yesno(crawl.jtrans("This trove needs %s to function. "
+                                    .. "Give it the item?",
+                                    self:item_name()), true, "n") then
+      crawl.mpr(crawl.jtrans("Okay, then."), "prompt")
       return "veto"
     end
   end
@@ -548,12 +546,12 @@ function TroveMarker:check_item_veto(marker, pname)
   if item.sub_type == "rune of Zot" then
     -- Begin by checking for runes.
     if self:search_for_rune() then
-      crawl.mpr("The portal draws power from the presence of the item"
-                .. self:plural() .. " and buzzes to life!")
+      crawl.mpr(crawl.jtrans("The portal draws power from the presence of the "
+                             .. "item and buzzes to life!"))
       self:note_payed("rune", false, item.ego_type)
       return
     else
-      crawl.mpr("You don't have " .. self:item_name() .. " with you.")
+      crawl.mpr(crawl.jtrans("You don't have %s with you.", self:item_name()))
       return "veto"
     end
   end
@@ -564,9 +562,9 @@ function TroveMarker:check_item_veto(marker, pname)
   if #acceptable_items == 0 then
     -- Give a different message for items that are not taken away.
     if self:showing_item() then
-      crawl.mpr("You don't have " .. self:item_name() .. " with you.")
+      crawl.mpr(crawl.jtrans("You don't have %s with you.", self:item_name()))
     else
-      crawl.mpr("You don't have the item" .. self:plural() .. " to give!")
+      crawl.mpr(crawl.jtrans("You don't have the item to give!"))
     end
     return "veto"
   end
@@ -585,19 +583,18 @@ function TroveMarker:check_item_veto(marker, pname)
 
   -- Open the portal and maybe consume the item.
   if self:showing_item() then
-    crawl.mpr("The portal draws power from the presence of the item" ..
-              self:plural() .. " and buzzes to life!")
+    crawl.mpr(crawl.jtrans("The portal draws power from the presence of the "
+                           .. "item and buzzes to life!"))
     self:note_payed(titem, false)
   else
     -- We should not try to take equipped items, there are too many weird edge
     -- cases like distortion.
     if titem.equipped then
-      crawl.mpr("You must unequip the item" .. self:plural() .. " first!")
+      crawl.mpr(crawl.jtrans("You must unequip the item first!"))
       return "veto"
     end
     self:note_payed(titem, true)
-    crawl.mpr("The portal accepts the item" .. self:plural() ..
-              " and buzzes to life!")
+    crawl.mpr(crawl.jtrans("The portal accepts the item and buzzes to life!"))
     titem.dec_quantity(item.quantity)
   end
   return
@@ -617,7 +614,7 @@ function TroveMarker:check_veto(marker, pname)
   if toll.item then
     return self:check_item_veto(marker, pname)
   elseif toll.type == "nopiety" then
-    local yesno_message = (
+    local yesno_message = crawl.jtrans(
       "This portal proclaims the superiority of the material over the divine; "
       .. "entrants will become Ostracised and temporarily lose all standing "
       .. "with their god.\nEnter anyway?")
@@ -627,17 +624,18 @@ function TroveMarker:check_veto(marker, pname)
       return "veto"
     end
   elseif toll.type == "bane" then
-    local yesno_message = (
+    local yesno_message = crawl.jtrans(
       "The portal is guarded from trespassers with a powerful curse. "
-      .. "All who enter will suffer the " .. crawl.bane_name(toll.bane)
-      .. " for " .. (you.xl_to_remove_bane(toll.bane, 200) / 10) .. " XL. Enter anyway?")
+      .. "All who enter will suffer the %s for %s XL. Enter anyway?",
+      crawl.bane_name(toll.bane),
+      tostring(you.xl_to_remove_bane(toll.bane, 200) / 10))
     if crawl.yesno(yesno_message, true, "n") then
       self:accept_bane()
     else
       return "veto"
     end
   elseif toll.type == "drain" then
-    local yesno_message = (
+    local yesno_message = crawl.jtrans(
       "The portal is warded with dark magic that will temporarily drain "
       .. "a significant fraction of the maximum health of whoever enters it. "
       .. "Enter anyway?")
@@ -657,6 +655,7 @@ function TroveMarker:accept_nopiety ()
 end
 
 function TroveMarker:accept_bane ()
+  -- 理由はノートに英語で残り、表示側(notes.cc)で訳す
   you.gain_bane(get_toll(self.props).bane, "Entering a Trove", 200)
 end
 
@@ -665,24 +664,28 @@ function TroveMarker:accept_drain ()
 end
 
 function TroveMarker:note_payed(toll_item, item_taken, rune_name)
+  -- ノートの文(日本語)。toll_desc は des から英語で渡される
+  -- ("to enter a treasure trove")ので、ここで訳す。
   local toll_desc
   if self.props.toll_desc then
-    toll_desc = self.props.toll_desc
+    toll_desc = crawl.jtrans(self.props.toll_desc)
   else
-    toll_desc = "at " .. crawl.article_a(self.props.desc)
+    toll_desc = crawl.jtrans("[toll desc]at %s",
+                             crawl.tagged_jtrans("[feature]", self.props.desc))
   end
 
-  local prefix
+  -- 「あなたは宝の埋蔵庫に入るため、2巻の獲得の巻物を通行料として支払った」
+  local note_key
   if item_taken then
-    prefix = "You paid a toll of "
+    note_key = "%s: you paid a toll of %s"
   else
-    prefix = "You showed "
+    note_key = "%s: you showed %s"
   end
 
   -- Ugly special case. At this point in the code there is no rune item, so we
   -- can not rely on any of the normal item naming code.
   if toll_item == "rune" then
-    crawl.take_note(prefix .. "the " .. rune_name .. " " .. toll_desc)
+    crawl.take_note(crawl.jtrans(note_key, toll_desc, crawl.jtrans(rune_name)))
     return
   end
 
@@ -696,7 +699,7 @@ function TroveMarker:note_payed(toll_item, item_taken, rune_name)
   local real_plus1 = toll_item.pluses()
   requested_item.plus1 = real_plus1
 
-  crawl.take_note(prefix .. self:item_name() .. " " .. toll_desc)
+  crawl.take_note(crawl.jtrans(note_key, toll_desc, self:item_name()))
 
   requested_item.plus1 = target_plus1
 end

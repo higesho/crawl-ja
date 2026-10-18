@@ -7,8 +7,10 @@
 ## 次にやること(2026-10-19 時点)
 
 C++ の張り直し(目標の 1)はほぼ完了(残りはデバッグ・ウィザード用と FOLLOWUPS の細部)。
-第 6 陣から目標の 2(dat/des・dat/dlua の表示文)と 3(説明文・DB の全訳)に入る。
-下の「第 6 陣の案」の 7 グループをサブエージェントに並行で割り当てる。
+目標の 2(dat/des・dat/dlua の表示文)は第 6 陣で済み、目標の 3(説明文・DB の全訳)の途中。
+下の「第 7 陣の案」の 7 グループをサブエージェントに並行で割り当てる(指示は第 6 陣と同じく、
+共通ルールを scratchpad の db-rules.md に書いて読ませた。新しいスレッドでは ja-tools/dbtools.py
+の説明と CONVENTIONS.md から書き直す)。
 DB の訳の進み具合は `python -I ja-tools/dbtools.py status`(未訳・要再翻訳の一覧は
 `todo` / `keys`)で見る。同じ ja/*.txt を 2 人に同時に書かせない(大きいファイルを分けるときは
 ja-work/new/ に別ファイルで書かせ、取りまとめ役が結合する)。
@@ -60,6 +62,14 @@ FOLLOWUPS.md 更新 → コミット。
   英語に)、地形名の表示の日本語化、プレイヤー由来の原因名を "you" で保存。
   一発でビルドが通った。実機確認は IME の窓のため未実施(第 4 陣の分も)。
   辞書の未訳 0・重複 0。
+
+- 第 6 陣: dlua(80 キー)と des(37 ファイル、433 キー)の表示文、説明文 DB の
+  monsters(724 件すべて)、features・clouds・monstatus・passives、status・mutations、
+  spells・ability(本家の旧訳 129 件の見直しを含む)。訳語の統一(君主爆弾、影の人形、
+  魔火花の従者、ウカド・ムー、灼心のゴーレム、業火の迫撃砲、白金の傑作、鉄縛団、技能名)。
+  BOM なしの dat ファイルを CP932 で読んでいた不具合を unicode.cc で修正(Lua に日本語を
+  書くと構文エラーになっていた)。`crawl.exe -builddb` と起動(タイトル画面の読み込み完了)
+  まで確認。キー入力は IME の窓のため未確認。
 
 ## C++ 張り直しの分担計画
 
@@ -117,21 +127,20 @@ FOLLOWUPS.md 更新 → コミット。
   showsymb, tilereg-dgn(+ 取りまとめで ouch, death-curse)
 - Lua: l-crawl, l-moninf, l-mons, l-item, l-you, l-dgngrd と dat/clua
 
-第 6 陣の案(7 グループ。目標の 2 と 3):
-1. dat/dlua/*.lua の表示文(`crawl.jtrans` で包み、訳は jtrans/dlua.txt)
-2. dat/des/**/*.des の表示文(Lua の crawl.mpr、marker の文、扉の説明、feat_renames。訳は jtrans/des.txt)
-3. descript/monsters.txt の前半(キーの A〜L。ja-work/new/monsters-1.txt に書かせて結合)
-4. descript/monsters.txt の後半(M〜Z と記号。ja-work/new/monsters-2.txt)
-5. descript/features.txt, clouds.txt, monstatus.txt, passives.txt
-6. descript/status.txt, mutations.txt
-7. descript/spells.txt, ability.txt
+第 6 陣(完了): dat/dlua、dat/des、descript の monsters / features / clouds / monstatus /
+passives / status / mutations / spells / ability
 
-第 7 陣以降の候補(DB の残り):
-- descript: items, egos, unrand, unident, cards, branches, gods, skills, species, backgrounds,
-  hints, tutorial, commands、quotes(引用文。著作権が切れていない作品は英語のまま残す)
-- database: monspeak(大)、monspell、godspeak、shout、wpnnoise、montitle、monname、
-  decorlines、graffiti、insult、miscast、miscname、godname、colourname、help、FAQ
-- wiz-*.cc(優先度低)、tileweb.cc(Web 版)
+第 7 陣の案(DB の残り。`dbtools.py status` で未訳の多い順):
+1. database/monspeak.txt の前半(大。分けるときは ja-work/new/ に書かせて dbmerge.py で結合)
+2. database/monspeak.txt の後半
+3. database/monspell.txt, godspeak.txt, shout.txt, wpnnoise.txt
+4. descript/items.txt, egos.txt, unrand.txt, unident.txt, cards.txt
+5. descript/gods.txt, branches.txt, skills.txt, species.txt, backgrounds.txt, commands.txt, tutorial.txt
+6. descript/hints.txt と database の小さいファイル(montitle, monname, decorlines, graffiti,
+   insult, miscast, miscname, godname, colourname, help, FAQ)
+7. descript/quotes.txt(引用文。著作権が切れていない作品は英語のまま残す)
+
+その後: wiz-*.cc(優先度低)、tileweb.cc(Web 版)、FOLLOWUPS の細部、実機での総点検。
 
 実機で見えた未訳(第 2 陣の確認時): タイトル・キャラ作成画面(startup.cc, newgame.cc,
 ng-*.cc)、ステータス欄(output.cc)、"You encounter ..."(player-notices.cc)、

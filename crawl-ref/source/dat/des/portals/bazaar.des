@@ -115,22 +115,22 @@ function bazaar_setup(e, randomise_tileset, shop_halo, from_xom)
 
   -- Don't place any other customers if you'd hate them, or if they'd hate you.
   if you.get_base_mutation_level("hated by all") == 1 then
-      crawl.mpr("Upon your arrival, your hatred by all makes the other customers disperse.")
+      crawl.mpr(crawl.jtrans("Upon your arrival, your hatred by all makes the other customers disperse."))
   elseif you.god() == "Okawaru" then
-      crawl.mpr("Upon your arrival, your lonesome duelist's vow makes the other customers flee.")
+      crawl.mpr(crawl.jtrans("Upon your arrival, your lonesome duelist's vow makes the other customers flee."))
   else
       -- Xom sees a flavour opportunity and takes it.
       if you.god() == "Xom" then
           if from_xom == false then
-              crawl.mpr("Xom shifts dimensions to make the bazaar a little more interesting.")
+              crawl.mpr(crawl.jtrans("Xom shifts dimensions to make the bazaar a little more interesting."))
           end
           if you.silenced() == false then
-              crawl.mpr("You hear the bustle and chatter of other... customers...?")
+              crawl.mpr(crawl.jtrans("You hear the bustle and chatter of other... customers...?"))
           end
           e.nsubst(". = 2:K / 4 = K. / 6 : K .:260 / *:.")
       else
           if you.silenced() == false then
-              crawl.mpr("You hear the chatter and bustle of other customers!")
+              crawl.mpr(crawl.jtrans("You hear the chatter and bustle of other customers!"))
           end
           e.nsubst(". = 1:K / 2 = K. / 3 : K .:260 / *:.")
       end

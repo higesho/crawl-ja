@@ -6,11 +6,7 @@ Aizul
 #   disgraced after thieves looted it while she slept. She seeks to make up for her
 #   failure by protecting the only treasure the villains overlooked, a single
 #   precious talisman.
-かつては伝説の宝物庫を守護するサーペントの衛兵の筆頭であったが、
-彼の寝ている間に泥棒が宝物庫に侵入したことでその地位を失ってしまった。
-彼は今ダンジョンを這い回り、全ての略奪を行うであろう輩へ復讐せんと欲している。
-彼は卓越した魔法の使い手であるが、
-彼と同種のモンスターと同様に近接戦闘は致命的に苦手だ。
+かつては伝説の宝物庫を守る守護の大蛇たちの筆頭であったが、眠っている間に泥棒たちに宝物庫を荒らされ、その地位を失った。彼女は悪党たちが見落とした唯一の財宝、たった一つの貴重なタリスマンを守ることで、自らの失態の埋め合わせをしようとしている。
 %%%%
 Asmodeus
 
@@ -18,7 +14,7 @@ Asmodeus
 #   Greatest and most cunning of the Lords of Hell, Asmodeus was born when the twin
 #   fires of greed and treachery first sparked to life within a mortal's heart.
 #   His hideous body is perpetually wreathed in flame.
-炎に取り巻かれた地獄の深層に居を構える偉大なデーモンの一人だ。
+地獄の君主たちの中で最も偉大にして最も狡猾なアスモデウスは、定命の者の心に強欲と裏切りという双子の炎が初めて灯ったときに生まれた。そのおぞましい体は絶えず炎に包まれている。
 %%%%
 Azrael
 
@@ -33,8 +29,7 @@ Boris
 #   regenerate his desiccated skeletal remains even if completely disintegrated.
 #   The same cannot be said for his many victims over his many centuries, from
 #   which he collects and channels their dying woes and regrets.
-古代の強力なリッチだ。他の純粋なリッチと同様にボリスも不死の存在であり、
-完全にバラバラになった時でさえ、その乾燥した骸骨の体を再生させる。
+古代の強力なリッチだ。真のリッチがみなそうであるように、ボリスも不死の存在であり、完全に分解されてもその干からびた骸骨の体を再生させる。幾世紀にもわたる彼の数多の犠牲者たちについては同じことは言えない。彼は犠牲者たちの死に際の苦悩と悔恨を集め、自らの力として操っている。
 %%%%
 Cerebov
 
@@ -69,7 +64,7 @@ Dispater
 #   Greatest and most ruthless of the Lords of Hell, Dispater was born when first an
 #   iron sword drank mortal blood. They despise mortal vanities, the pursuit of
 #   ‘reason’ and ‘beauty’ - the only art they enjoy is the art of war.
-鉄の都ディースの支配者だ。
+地獄の君主たちの中で最も偉大にして最も冷酷なディスペータは、鉄の剣が初めて定命の者の血を吸ったときに生まれた。ディスペータは定命の者の虚栄、すなわち「理性」や「美」の追求を軽蔑しており、好む技芸はただ一つ、戦の技芸だけである。
 %%%%
 Dissolution
 
@@ -79,12 +74,7 @@ Dissolution
 #   only Dissolution survived, for they alone turned faithfully to the Slime God.
 #   Dissolution became a tremendous mass of acidic ooze, yet retained their
 #   intelligence. They are filled with hatred for anything that can hold a form.
-スライムの穴ぐらにはかつて栄えた文明があり、
-この者はそこで崇拝された神の預言者であった。
-この都市が現在の住人に侵略されたとき、生き残ったのは彼だけであった。
-何故なら彼だけはスライムの神に忠誠を誓ったからだ。
-彼は巨大な毒のある分泌物の塊になったが、彼はまだその知性を保っている。
-彼は形を保つ者全てへの憎しみに満たされている。
+スライムの穴ぐらにはかつて栄えた文明があり、溶解者はその神の預言者であった。都市が現在の住人たちに乗っ取られたとき、生き残ったのは溶解者だけだった。ただ一人、忠実にスライムの神へと帰依したからである。溶解者は酸性の粘液の巨大な塊となったが、その知性は保たれている。溶解者は形を保てるあらゆるものへの憎しみに満ちている。
 %%%%
 Donald
 
@@ -122,9 +112,7 @@ Dowan
 #   A beautiful but vain deep elf with an aptitude for magic and little else. His
 #   skills are the perfect complement of his twin sister Duvessa's fighting prowess.
 #   In search of more powerful spells, he journeys to the surface with his sister.
-美しいが自惚れの強いエルフだ。彼は魔法への適性があり、
-その他のこともそれなりにこなす。
-彼の能力は双子の妹デュヴェッサの戦闘技術を完全に補完するためのものだ。
+美しいが自惚れの強い闇エルフで、魔法の才能はあるが、それ以外にはほとんど取り柄がない。彼の技能は、双子の妹デュヴェッサの戦闘能力を完璧に補っている。より強力な呪文を求めて、彼は妹とともに地上へと旅をしている。
 %%%%
 Duvessa
 
@@ -133,9 +121,7 @@ Duvessa
 #   combat, but over-confident because of it. She is complemented by the magical
 #   skills of her twin brother, Dowan. She journeys to the surface to challenge
 #   its greatest champions.
-特に変わったところのないエルフの戦士だ。
-彼女はあらゆる格闘手段に専門的に通じているが、そのために自信過剰になっている。
-彼女の力は双子の兄ドウェインの魔法の力によって補完される。
+見た目は平凡な闇エルフの戦士で、多くの戦闘形式において技術的には卓越しているが、そのせいで自信過剰になっている。双子の兄ドウェンの魔法の技能が彼女を補っている。彼女は地上の最も偉大な勇者たちに挑むために旅をしている。
 %%%%
 Edmund
 
@@ -156,7 +142,7 @@ Ereshkigal
 #   Greatest and most inexorable of the Lords of Hell, Ereshkigal was born when
 #   first a mortal breathed her last. Noiselessly she laughs at lives cut short and
 #   loved ones separated by untimely death, enwreathed in the silence of the grave.
-タルタロスの死の地獄を支配する恐るべき大悪魔だ。
+地獄の君主たちの中で最も偉大にして最も容赦のないエレシュキガルは、定命の者が初めて息を引き取ったときに生まれた。墓の静寂に包まれながら、彼女は断ち切られた命や、早すぎる死によって引き裂かれた愛する者たちを、音もなく嘲笑っている。
 %%%%
 Erolcha
 
@@ -334,12 +320,7 @@ Lom Lobon
 #   they are at times sought out by mortal wizards who offer their souls in
 #   exchange for the secrets of the arcane. Lacking the terrible wrath present in
 #   most demons, Lom Lobon's single eye instead hides a cold, impartial cruelty.
-禁欲的にして深遠な、
-ロム・ロボンはその魔法に精通していることで悪名を馳せる古代のデーモンだ。
-パンデモニウムの大広間で最も博識な存在であり、
-時おり神秘の秘奥の為に魂を差し出そうという常命の魔術師たちを探しにいくと噂されている。
-ほとんどの悪魔に見られる恐るべき怒りに欠けているが、
-ロム・ロボンの単眼はそうではなく、冷たく、誰彼かまわない残酷さを隠し持っている。
+冷静沈着で計り知れないロム・ロボンは、魔法に精通していることで悪名高い太古のデーモンだ。パンデモニウムの大広間で最も博識な存在と噂され、時おり秘術の奥義と引き換えに魂を差し出そうとする定命の魔術師たちに探し求められる。たいていのデーモンに見られる恐るべき怒りを欠いている代わりに、ロム・ロボンの単眼には冷たく分け隔てのない残酷さが潜んでいる。
 %%%%
 Louise
 
@@ -365,7 +346,7 @@ Maurice
 #   and crafty of the thieves and rogues lured by the Orb. The magical parasitic
 #   vines that have claimed his body still wish to continue his life's work, with a
 #   back-up plan of both a vicious magic-drinking maw and potent wands.
-ずる賢く陰謀を企てる盗賊だ。
+ずる賢く陰謀を企てる盗賊だ。伝説を自称する彼は、オーブに引き寄せられた盗賊やならず者の中でも指折りの腕前と狡猾さを持つ一人だった。彼の体を乗っ取った魔法の寄生蔦は今も彼の生涯の仕事を続けようとしており、その備えとして、魔力を吸う凶悪な大口と強力なワンドの両方を用意している。
 %%%%
 Menkaure
 
@@ -386,22 +367,18 @@ Mennas
 #   missionary of Zin, often venturing even into Orcish lands. He beseeched the orcs
 #   to abandon their false tribes and return to the peoples of their birth; only
 #   Zin's light could truly cleanse the weight of sin that had twisted their bodies.
-#   
+#
 #   By all accounts the orcs were not happy with Mennas. Eventually, a group of them
 #   demanded he recant his words and when Mennas remained silent, they cut out his
 #   tongue.
-#   
+#
 #   Whether or not this angel is that same Mennas is something of a mystery, as he
 #   seems to have difficulty speaking.
-かつてメナスと名付けられた人間の司祭がいた。彼は遠方を旅し、
-耳を傾ける者にジンの教えを説教して回った。彼はオークの国にさえ出向き、
-オークたちに神の教えと慈悲を説いた。言うまでもなく、
-メナスはオークたちに受け入れられないかった。
-オークたちは彼にビオこそが唯一の神であると宣誓するように強要し、
-それに対して沈黙を保ったメナスの舌を切り落としてしまった。
+かつてメナスという名の人間の司祭がいた。彼はジンの伝道者として各地を広く旅し、しばしばオークの国にまで足を踏み入れた。彼はオークたちに、偽りの部族を捨てて生まれついた民のもとへ帰るよう懇願した。彼らの体をねじ曲げた罪の重みを真に清められるのはジンの光だけなのだ、と。
 
-この天使がそのメナスと同一のものであるかは謎だが、
-彼は喋るのに難儀しているようだ。
+誰に聞いても、オークたちはメナスを快く思っていなかった。やがてオークの一団が言葉を撤回するよう彼に迫り、メナスが沈黙を守ると、彼らはその舌を切り落とした。
+
+この天使がそのメナスと同一の者であるかどうかは謎だが、彼は喋るのに難儀しているようだ。
 %%%%
 Mnoleg
 
@@ -442,8 +419,7 @@ air elemental
 # en:
 #   A spirit drawn from the elemental plane of air. It exists in this world as a
 #   lightning-spitting spirit, stunning foes with its crackling bursts.
-大気の精霊界から召換された精霊だ。 It exists in this world as a swirling vortex
-of air, often dissipating and reforming.
+大気の精霊界から召喚された精霊だ。この世界では稲妻を吐く精霊として存在し、ぱちぱちと弾ける電撃で敵を気絶させる。
 %%%%
 alligator
 
@@ -488,8 +464,7 @@ apis
 # en:
 #   A placid, sacred bull of Elyvilon. Its status as an exalted envoy of the Healer
 #   lets its very presence double the health of its allies.
-大人しい、エリヴィロンに仕える神聖な牡牛だ。あなたが悪人であれば、
-これは間違いなく襲いかかってくるだろう、注意せよ！
+エリヴィロンに仕える、大人しい神聖な牡牛だ。癒し手の高貴な使者という地位により、その存在だけで仲間の体力を倍にする。
 %%%%
 balrug
 
@@ -542,7 +517,7 @@ earth elemental
 #   A spirit drawn from the elemental plane of earth. It exists in this world as a
 #   sinuous stream of silt and stone, capable of smoothly flowing through solid
 #   rock.
-大地の精霊界から召換された精霊だ。土と岩の塊に宿ることでこの世界に存在している。
+大地の精霊界から召喚された精霊だ。この世界では泥と石のしなやかな流れとして存在し、固い岩の中を滑らかに流れ進むことができる。
 %%%%
 efreet
 
@@ -708,8 +683,7 @@ minotaur
 # en:
 #   A large muscular human with the head of a bull. It makes its home in a
 #   gauntlet where it awaits worthy challengers.
-大きく筋肉質な人間の体に雄牛の頭部を持つモンスターだ。
-隔離された迷宮を棲み処としている。
+大きく筋肉質な人間の体に雄牛の頭部を持つモンスターだ。試練場を棲み処とし、そこで相応しい挑戦者を待ち構えている。
 %%%%
 molten gargoyle
 
@@ -765,7 +739,7 @@ reaper
 # en:
 #   A haunting form wielding a giant scythe, ceaselessly harvesting the souls of
 #   the living.
-巨大な鎌を手にした、骸骨のような姿の存在だ。
+巨大な大鎌を振るう、つきまとうような不気味な姿のもので、生ける者の魂を絶え間なく刈り取っている。
 %%%%
 redback
 
@@ -886,7 +860,7 @@ ufetubus
 # en:
 #   A chattering and shrieking minor demon. They delight in sneaking past and
 #   backstabbing their prey.
-金切り声でペチャクチャ喋る下級デーモンだ。
+金切り声でペチャクチャ喋る下級デーモンだ。獲物の脇をこっそりすり抜けて、背後から刺すのが大好きだ。
 %%%%
 vault guard
 
@@ -944,4 +918,4731 @@ megabat
 # en:
 #   A huge black bat.
 巨大な黒いコウモリだ。
+%%%%
+__(_suffix_examine
+
+# en:
+#   It has been enchanted to dance through the air and attack under its own power.
+これは魔法によって宙を舞い、ひとりでに攻撃するようになっている。
+%%%%
+Agnes
+
+# en:
+#   This spriggan is aged and weathered from years of travel away from the forests
+#   and swamps that are home to her kin. Her choice of weapon and astonishing speed
+#   both speak to the training she underwent. Underestimate her at your peril!
+同族の故郷である森や沼を離れて長年旅を続け、年老いて風雪に晒されたスプリガンだ。その武器の選び方と驚くべき素早さが、彼女の受けた修練のほどを物語っている。侮れば命はない！
+%%%%
+Amaemon
+
+# en:
+#   Amaemon always knew he was different, but it was still a horrific surprise when
+#   his demonic heritage manifested. As his body twisted, Amaemon was forced to flee
+#   far from the surface. The passage of time has only left him more obsessed with
+#   what he has lost - consumed by poison both physical and spiritual.
+アマイモンは自分が他人と違うことを常に分かっていたが、それでも悪魔の血が表に現れたときは恐ろしい衝撃だった。体がねじ曲がっていくにつれ、彼は地上から遠く離れた場所へ逃れざるをえなかった。時が流れるほどに、彼は失ったものへの執着を募らせるばかりで、肉体と精神の両方を毒に蝕まれている。
+%%%%
+Antaeus
+
+# en:
+#   Once a hero among the titans, Antaeus grew jealous of the titan queen. In
+#   single combat he challenged and slew her, and for this crime he was exiled and
+#   descended into the Hells. Finding the inhabitants of that place no match for his
+#   might, Antaeus tore from its substance a fourth Hell, Cocytus, a realm born of
+#   frozen spite.
+かつてタイタンの英雄であったアンテウスは、タイタンの女王に嫉妬を抱くようになった。彼は一騎討ちを挑んで女王を殺し、その罪によって追放されて地獄へと堕ちた。そこの住人たちが自らの力に到底及ばないと知ると、アンテウスは地獄そのものから第四の地獄、凍てついた怨恨から生まれた領域であるコキュートスを引き裂いて作り出した。
+%%%%
+Arachne
+
+# en:
+#   Once a talented human weaver, Arachne was transformed into a monstrous
+#   half-spider by a jealous rival's curse. Driven out of her village, she found
+#   sanctuary for a time among the jorogumo before a bitter feud forced her to
+#   flee once more.
+#
+#   Now she wanders other corners of the dungeon with a small retinue of loyal
+#   students in tow, seeking a new domain in which they can spin their peerless
+#   tapestries in peace.
+アラクネはかつて機織りに秀でた人間であったが、彼女を妬む者の呪いによって、半身が蜘蛛の怪物に変えられてしまった。村を追われた彼女はしばらく女郎蜘蛛たちのもとに身を寄せていたが、激しい確執からまたもや逃げ出さざるをえなくなった。
+
+今、彼女は忠実な弟子たちの小さな一団を引き連れてダンジョンの別の場所をさまよい、比類なきタペストリーを心安らかに織ることのできる新たな領地を探している。
+%%%%
+Asterion
+
+# en:
+#   Once a king infamous for waging bloodthirsty campaigns, Asterion was exiled to
+#   the depths of the dungeon for his crimes. Here he lurks in his tattered finery,
+#   dreaming of a new kingdom. In his lust for power, the minotaur king turned to
+#   the worship of Makhleb, and Makhleb has rewarded him with horrifying
+#   destructive might.
+かつて血に飢えた戦を繰り返したことで悪名高い王であったアステリオンは、その罪によってダンジョンの深みへと追放された。彼はぼろぼろになった豪奢な衣装をまとってここに潜み、新たな王国を夢見ている。権力を渇望するミノタウロスの王はマクレブを崇拝するようになり、マクレブは彼に恐るべき破壊の力を授けた。
+%%%%
+Bai Suzhen
+
+# en:
+#   A weary draconian with foreign and watery scales. She has come to the Dungeon
+#   in hopes of resurrecting her mortal husband; a noble cause, for a being once
+#   known for quarrelling with saints and flooding unfortunate temples. If pressed
+#   to her limits, she will reveal her true form, the mere sight of which struck
+#   her husband dead. Adventurers may wish they were so lucky!
+異国の水を思わせる鱗を持つ、疲れ果てたドラコニアンだ。彼女は人間の夫を蘇らせることを望んでダンジョンにやって来た。かつては聖者と争い、不運な寺院を水浸しにしたことで知られた者にしては、高潔な目的である。追い詰められると彼女は真の姿を現すが、夫はその姿を一目見ただけで死んでしまった。冒険者は自分もそれほど運が良ければと思うかもしれない！
+%%%%
+Blorkula the orcula
+
+# en:
+#   Once a gangly and bedraggled vampire with a strange obsession with colour,
+#   Blorkula was offered succour by a missionary of Beogh and became a portly and
+#   vigorous orc with a strange obsession with colour instead.
+#
+#   He wields magic tinged with every hue of the rainbow, and has mastered the art
+#   of dividing his own form among its many colours to avoid killing blows - though
+#   even he must rest a while before doing so a second time.
+かつては色に奇妙な執着を持つ、ひょろ長くみすぼらしい吸血鬼であったが、ベオの宣教師に救いの手を差し伸べられ、色に奇妙な執着を持つ、恰幅が良く精力的なオークになった。
+
+彼は虹のあらゆる色に彩られた魔法を操り、自らの体をその多くの色に分けて致命の一撃を避ける術を極めている。ただし、彼といえども二度目を行うにはしばらく休まねばならない。
+%%%%
+Cassandra
+
+# en:
+#   As a young woman, Cassandra bound herself in service to Ashenzari and was
+#   blessed and cursed in equal measure - granted the ability to foresee disasters,
+#   but only those she was powerless to prevent.
+#
+#   Eventually driven from her homeland as a harbinger of the very plagues she'd
+#   spent a lifetime warning against, she has come to the dungeon in her final days
+#   in hope of averting one last catastrophe.
+若い頃、カサンドラはアシェンザリに仕える誓いを立て、等しく祝福と呪いを授かった。災厄を予見する力を得たが、それは彼女に防ぐ力のない災厄に限られていたのだ。
+
+生涯をかけて警告してきたまさにその疫病をもたらす者として、ついには故郷を追われた彼女は、最後の破局を一つでも回避することを願って、人生の最後の日々にダンジョンへとやって来た。
+%%%%
+Enchantress
+
+# en:
+#   First and most fearful of her kind, the Enchantress rules over the spriggans of
+#   the dungeon. She wears an opalescent outfit made of dragon skin that shimmers
+#   with many colours.
+同族の中で最初にして最も恐ろしい者であり、ダンジョンのスプリガンたちを統べる女呪術師だ。彼女は竜の皮で作られた、多彩な色にきらめく乳白色の衣装をまとっている。
+%%%%
+Erica
+
+# en:
+#   A wild-tempered adventuress. She's quite prideful for an octopode, and brandishes
+#   their venomous capacity and camouflage talents with cruel force.
+荒々しい気性の女冒険者だ。オクトポードにしてはかなり誇り高く、毒の能力と擬態の才を容赦なく振るう。
+%%%%
+Fannar
+
+# en:
+#   A cold-hearted elven sorcerer, draped in robes of high office. They whisper
+#   grimly to themself as they stalk the dungeon, trailing ice crystals through the
+#   air behind them.
+高い地位を示すローブに身を包んだ、冷酷なエルフの魔道士だ。ダンジョンを忍び歩きながら不気味に独り言を囁いており、通った後には空気中に氷の結晶がたなびいている。
+%%%%
+Grunn
+
+# en:
+#   A brutally twisted undead gnoll in the eternal service of Ereshkigal, lord of
+#   Tartarus. Legend has it that he sold his soul to return his most beloved hunting
+#   dog to life. Whether that hound is a member of his current pack, none can say.
+タルタロスの支配者エレシュキガルに永遠に仕える、無残にねじ曲がったアンデッドのノールだ。伝説によれば、彼は最愛の猟犬を生き返らせるために魂を売ったという。その猟犬が今の彼の群れの一員であるかどうかは、誰にも分からない。
+%%%%
+Ijyb
+
+# en:
+#   A small and shrewd goblin inventor, wearing blue rags coated in soot.
+#   She claims dominion over this level of the dungeon; trespassers will find
+#   themselves on the business end of a homemade wand.
+煤にまみれた青いぼろを着た、小柄で抜け目のないゴブリンの発明家だ。彼女はダンジョンのこの階層の支配権を主張しており、侵入者は手製のワンドの矛先を向けられることになる。
+%%%%
+Jeremiah
+
+# en:
+#   Jeremiah was a peaceful dreamer, prone to impromptu naps. They slipped into
+#   slumber while gazing into a magical orb, and dreamed of an old and hateful
+#   power binding them into service. Now Jeremiah stumbles through the dungeon,
+#   searching for the precious dreamshard that will restore their master’s power,
+#   unsure whether they wake or slumber still. Their dreams leak into reality in
+#   the form of a constant stream of butterflies.
+ジェレマイアは突然うたた寝をしがちな、穏やかな夢想家だった。魔法の宝珠を覗き込んでいるうちに眠りに落ち、古く憎悪に満ちた力に縛られて仕えさせられる夢を見た。今、ジェレマイアは主の力を取り戻す貴重な夢の欠片を探してダンジョンをよろめき歩いているが、自分が目覚めているのか、まだ眠っているのかも定かではない。その夢は絶え間ない蝶の群れとなって現実へ漏れ出している。
+%%%%
+Josephina
+
+# en:
+#   A fearsome necromancer who followed her craft beyond the limits of flesh and
+#   life. Her pursuit of demonic knowledge left her body ruined, but the powers she
+#   gained allowed her to rebuild her missing limbs from glittering ice.
+自らの技を追い求めて、肉体と生命の限界を超えた恐るべき死人使いだ。悪魔の知識を追求したことで体は損なわれたが、得た力によって、失った手足をきらめく氷で作り直すことができた。
+%%%%
+Lernaean hydra
+
+# en:
+#   A huge beast, mightiest of hydras, infamous in myth and legend. It flows
+#   through the water faster than a human can run, swatting aside trees as though
+#   they were matchsticks. Its many heads slaver and gnash constantly as it hunts
+#   for prey to slake its bottomless appetite.
+神話や伝説で悪名高い、ヒドラの中で最も強大な巨獣だ。これは人間が走るよりも速く水中を進み、木々をマッチ棒のように払いのける。底なしの食欲を満たす獲物を探す間、その多くの頭は絶えずよだれを垂らし、歯ぎしりをしている。
+%%%%
+Lodul
+
+# en:
+#   An ogre emissary of the Ironbound Order, sent to find and stop intruders before
+#   they enter the Vaults. Fiercely charismatic, he's rallied a small army of his
+#   kin, overawing them with the long-range lightning array he wears on his back.
+#   (The large coin purse he took from the Vaults is also quite persuasive.)
+侵入者が宝物庫に入る前に見つけ出して食い止めるため、鉄縛団から遣わされたオーガの使者だ。強烈なカリスマを持つ彼は、背負った長距離用の雷撃装置で同族を威圧し、小さな軍勢を集めている(宝物庫から持ち出した大きな財布もかなりの説得力を持っている)。
+%%%%
+acid dragon
+
+# en:
+#   A small dragon with brilliant yellow scales, its mouth dripping with
+#   corrosive slime.
+鮮やかな黄色の鱗を持つ小型のドラゴンだ。その口からは腐食性の粘液が滴っている。
+%%%%
+alderking
+
+# en:
+#   A self-styled monarch of a shambling black alder, half respected and half
+#   ridiculed by other fae. It backs up its aspirations to sovereignty with
+#   unearthly vile magic quite close to a touch of death.
+よろめき歩く黒いハンノキの王を自称する者で、他の妖精たちからは半ば敬われ、半ば嘲笑われている。これは死の一触にも近い、この世ならぬ邪悪な魔法によって、王たらんとする野心を支えている。
+%%%%
+ancestor
+
+# en:
+#   A humanoid construct of insubstantial memory, floating through the air. Though
+#   perhaps somewhat changed in shape and bearing few discernable features, still
+#   they seem somehow to resemble a warrior from the distantly remembered past.
+#   The memory and the memorialist fight in concert, each able to fire past the
+#   other.
+宙に浮かぶ、実体のない記憶で作られた人型の存在だ。姿形はいくらか変わり、目立った特徴もほとんどないかもしれないが、それでも遠い過去に記憶された戦士にどこか似ているように見える。記憶とそれを偲ぶ者は協力して戦い、互いに相手越しに射撃することができる。
+%%%%
+ancient champion
+
+# en:
+#   An unfathomably ancient skeleton. It has hundreds of golden sigils etched onto
+#   its bones, and pulses with terrible, unholy power.
+計り知れないほど古い骸骨だ。骨には何百もの黄金の印章が刻まれており、恐るべき不浄の力で脈打っている。
+%%%%
+ancient zyme
+
+# en:
+#   A nexus of sentient cancer and disease, borne aloft perhaps by malice alone.
+#   Its nature inflicts withering illness on all living beings in its presence.
+知性を持つ病と疫病の結節点で、おそらくは悪意のみによって宙に浮かんでいる。その性質ゆえに、近くにいるすべての生き物に衰弱の病をもたらす。
+%%%%
+apocalypse crab
+
+# en:
+#   An opalescent crab with jet black eyes, and chaotic mists effusing from its
+#   mandibles. Rumours claim that this species is waiting for the end of time.
+真っ黒な目をした乳白色の蟹で、その顎からは混沌の霧が噴き出している。噂によれば、この種は時の終わりを待っているという。
+%%%%
+arcanist
+
+# en:
+#   A wizard fond of spectacle and destruction. They scorn the cowardice of other
+#   magicians, who hide from their foes rather than simply blasting them out of
+#   existence.
+派手な見せ物と破壊を好む魔術師だ。敵をあっさり吹き飛ばして消し去るのではなく、敵から身を隠すような他の魔術師の臆病さを軽蔑している。
+%%%%
+armataur
+
+# en:
+#   A curious quadraped, resembling a cross between an armadillo and a yaktaur.
+アルマジロとヤクトールを掛け合わせたような、奇妙な四足獣だ。
+%%%%
+armour echo
+
+# en:
+#   The sweat and toil of the armourer working leather and steel infuses an
+#   intention into their creation, a unique spark within every cuirass, pauldron and
+#   vambrace. A skilled forgewright can manifest these intentions in physical form,
+#   allowing their armour to protect its wearer in a more aggressive fashion than
+#   armour customarily does.
+革や鋼を加工する鎧職人の汗と労苦は、その作品にある意図を吹き込む。それはあらゆる胴鎧、肩当て、腕甲に宿る唯一無二の火花である。熟練した鍛冶師はこうした意図を物理的な形にして顕現させ、鎧が普通よりも攻撃的なやり方で着用者を守れるようにすることができる。
+%%%%
+aspiring flesh
+
+# en:
+#   The divided and churning remains of a protean progenitor, striving desperately
+#   for form. Whatever they become, the last of their progenitor's power ensure it
+#   will be stronger and swifter than any such creature found elsewhere in the
+#   dungeon.
+変幻の始祖の、分裂して渦巻く残骸であり、必死に形を得ようとしている。それが何になるにせよ、始祖の最後の力によって、ダンジョンの他の場所で見られる同種の生き物よりも強く素早いものになることは間違いない。
+%%%%
+azure jelly
+
+# en:
+#   An extremely cold blob of bright blue cytoplasm, forming bits of frost in the
+#   air around it.
+鮮やかな青色の細胞質でできた極めて冷たい塊で、周囲の空気に霜のかけらを生み出している。
+%%%%
+ball lightning
+
+# en:
+#   A swift sphere of coruscating electrical energy. It will explode at the
+#   slightest disturbance.
+きらめく電気エネルギーでできた素早い球体だ。わずかな刺激でも爆発する。
+%%%%
+ball python
+
+# en:
+#   A small snake that can augment its bite by constricting small creatures.
+小さな生き物を締めつけることで噛みつきを強めることができる、小型の蛇だ。
+%%%%
+ballistomycete
+
+# en:
+#   A lumpy reddish fungus covered in knobbly rhizome growths, growing well in the
+#   dank underground dungeon. When it senses a threat, the ballistomycete may
+#   release a deadly floating spore that explodes on its victims.
+こぶ状の根茎が生えた、ごつごつした赤みがかった菌類で、じめじめした地下のダンジョンでよく育つ。脅威を感じ取ると、放出菌糸は獲物の上で爆発する致命的な浮遊胞子を放つことがある。
+%%%%
+ballistomycete spore
+
+# en:
+#   A fast, gas-filled floating spore released by a ballistomycete when it senses a
+#   threat. After seeking out its foe, the spore will explode, damaging anything
+#   caught in the blast and further confusing living creatures.
+放出菌糸が脅威を感じ取ったときに放つ、ガスの詰まった素早い浮遊胞子だ。敵を探し当てると胞子は爆発し、爆風に巻き込まれたものすべてに損傷を与え、さらに生き物を混乱させる。
+%%%%
+barachi
+
+# en:
+#   An amphibious humanoid with a very ugly attitude.
+ひどく性格の悪い、水陸両生の人型生物だ。
+%%%%
+basilisk
+
+# en:
+#   A crested lizard of middling size with a terrible petrifying gaze.
+恐ろしい石化の視線を持つ、中くらいの大きさのトサカのあるトカゲだ。
+%%%%
+bat
+
+# en:
+#   A large grey bat that, despite being herbivorous, is quite aggressive. It is
+#   myopic and uses echolocation to navigate.
+大型の灰色のコウモリで、草食性にもかかわらずかなり攻撃的だ。これは近眼で、反響定位を使って移動する。
+%%%%
+battlemage
+
+# en:
+#   A humanoid construct of insubstantial memory, floating through the air. Though
+#   perhaps somewhat changed in shape and bearing few discernable features, still
+#   it seems somehow to resemble a warrior from the distantly remembered past,
+#   skilled with both conjurations and melee combat.
+宙に浮かぶ、実体のない記憶で作られた人型の存在だ。姿形はいくらか変わり、目立った特徴もほとんどないかもしれないが、それでも遠い過去に記憶された、攻撃魔法と近接戦闘の両方に長けた戦士にどこか似ているように見える。
+%%%%
+battlesphere
+
+# en:
+#   A small globe of destructive energy. Each time its creator casts an offensive
+#   spell, it will launch a magical barrage at the most injured nearby foe it can
+#   reach.
+破壊のエネルギーでできた小さな球体だ。創造者が攻撃呪文を唱えるたびに、届く範囲で最も傷ついている近くの敵に魔法の弾幕を浴びせる。
+%%%%
+bennu
+
+# en:
+#   A sacred, self-created sunbird, representative of rebirth. It has ascended
+#   past the cycles of life and death, and calls upon aspects of both, rising forth
+#   from death in a burst of unholy flame.
+自ら生まれた神聖な太陽の鳥で、再生の象徴だ。これは生と死の循環を超越しており、その両方の側面を呼び起こし、死から不浄の炎とともに甦る。
+%%%%
+bes kemwar
+
+# en:
+#   A minor hairy maggot spirit, phasing in and out of this plane. Each regional
+#   variant inflicts different minor ailments: the ones found in the Dungeon
+#   cause one's magic to grow weak.
+この次元に出たり入ったりしている、毛深いうじ虫の小さな霊だ。地域ごとの変種がそれぞれ異なる軽い病をもたらし、迷宮で見られるものは魔力を弱らせる。
+%%%%
+black bear
+
+# en:
+#   A small black bear. Like all ursines, it will become enraged if badly hurt.
+小型の黒い熊だ。他の熊類と同様に、ひどく傷つくと凶暴化する。
+%%%%
+black draconian
+
+# en:
+#   A muscular black-scaled humanoid with a reptilian tail and powerful wings.
+爬虫類の尾と力強い翼を持つ、黒い鱗に覆われた筋骨逞しい人型生物だ。
+%%%%
+black mamba
+
+# en:
+#   An astonishingly fast tropical snake whose bite bears a deadly venom.
+驚くほど素早い熱帯の蛇で、その噛みつきは致命的な毒を帯びている。
+%%%%
+blazeheart core
+
+# en:
+#   The exposed elemental core of a blazeheart golem. Far too unstable to remain
+#   without its shell, it is in the process of violently exploding.
+灼心のゴーレムの、むき出しになった精霊の核だ。外殻なしで留まっているにはあまりに不安定で、今まさに激しく爆発しようとしている。
+%%%%
+blazeheart golem
+
+# en:
+#   A volatile elemental spark encased in a shell of slag iron. If destroyed while
+#   its fires still blaze, the exposed core will violently detonate a moment later.
+鉄滓の殻に包まれた、不安定な精霊の火花だ。炎がまだ燃え盛っているうちに破壊されると、むき出しになった核が一瞬ののちに激しく爆発する。
+%%%%
+blink frog
+
+# en:
+#   A species of frog that possesses the ability to blink at will. It can blink
+#   itself close to its intended prey, or blink away to escape harm. It is commonly
+#   found in packs.
+意のままに瞬間移動する能力を持つ種類のカエルだ。狙った獲物の近くに瞬間移動したり、危険から逃れるために瞬間移動したりできる。群れでいることが多い。
+%%%%
+blizzard demon
+
+# en:
+#   A greater demon formed from wistful snow and bitter lightning.
+物悲しい雪と痛烈な稲妻から形作られた上位のデーモンだ。
+%%%%
+bloated husk
+
+# en:
+#   A decaying undead corpse. When it reaches a victim (or if it's destroyed first),
+#   the gases trapped inside it are released and create a large, violent
+#   concussive blast.
+朽ちかけたアンデッドの死体だ。獲物にたどり着くと(あるいはその前に破壊されると)、内部に閉じ込められたガスが放出され、大規模で激しい衝撃の爆発を起こす。
+%%%%
+block of ice
+
+# en:
+#   A block of ice shaped like a statue, but worked by no living hands.
+彫像のような形をした氷の塊だが、生きた者の手によって作られたものではない。
+%%%%
+bog body
+
+# en:
+#   An undead figure preserved by the brackish waters of a bog, and reanimated by
+#   some unknown magic.
+湿地の汽水によって保存され、何らかの未知の魔法によって再び動き出したアンデッドだ。
+%%%%
+boggart
+
+# en:
+#   A malevolent and dangerous little sprite. The shadowy illusions it summons may
+#   not be real, but are deadly all the same.
+悪意に満ちた危険な小妖精だ。これが呼び出す影の幻影は本物ではないかもしれないが、それでも致命的であることに変わりはない。
+%%%%
+bombardier beetle
+
+# en:
+#   An unassuming beetle filled with an incredible amount of hypergolic fluid. The
+#   sticky spray it fires is capable of igniting predators and unwary adventurers
+#   alike, though more experienced ones know to keep moving if they wish to avoid
+#   a fiery grave.
+驚くほど大量の自燃性の液体を体に溜め込んだ、見た目は地味な甲虫だ。これが放つ粘つく液は捕食者や油断した冒険者を等しく燃え上がらせることができるが、経験を積んだ冒険者は、火の墓場を避けたければ動き続けることを知っている。
+%%%%
+bomblet
+
+# en:
+#   A small metal sphere surrounding a core of dormant fire magic. When given the
+#   proper command, it will detonate in a blast of metal and flame that is only
+#   partially affected by fire resistance.
+休眠中の炎の魔法の核を包む、小さな金属の球体だ。適切な命令を与えられると金属と炎を撒き散らして爆発し、その爆発は火炎耐性の影響を一部しか受けない。
+%%%%
+bone dragon
+
+# en:
+#   A mighty undead abomination, pieced together from the broken bones of many
+#   dragons by powerful necromantic magic. The collective despair of such
+#   desecrated dragons gives this horror its own undying breath weapon, in
+#   billowing clouds of excruciating misery.
+強力な死霊術によって多くのドラゴンの砕けた骨を継ぎ合わせて作られた、強大なアンデッドの忌まわしき存在だ。冒涜されたドラゴンたちの集合的な絶望が、この怪物に不滅のブレス、すなわち渦巻く耐え難い苦悶の雲を与えている。
+%%%%
+boulder
+
+# en:
+#   A mass of fast-rolling stone, crushing everything in its path.
+高速で転がる石の塊で、進路上のあらゆるものを押し潰す。
+%%%%
+boulder beetle
+
+# en:
+#   A grey beetle with an almost impenetrable rocky carapace. When at some distance
+#   from its foe, a boulder beetle is capable of rolling at high speed, attempting
+#   to crash into its target for heavy damage.
+ほとんど貫けない岩のような甲殻を持つ灰色の甲虫だ。敵からいくらか離れていると、岩石の甲虫は高速で転がって標的に体当たりし、大きな損傷を与えようとする。
+%%%%
+bound soul
+
+# en:
+#   The soul of a living, holy, or demonic creature, captured by a dark sacrifice
+#   to Yredelemnul. The bound soul will follow its captor through stairs and come
+#   when recalled from a different level.
+イレデレンヌルへの暗黒の生贄によって捕らえられた、生きている者、神聖な者、あるいは悪魔の魂だ。呪縛された魂は捕らえた者について階段を移動し、別の階層から呼び戻されたときにも現れる。
+%%%%
+boundless tesseract
+
+# en:
+#   An impossible shape that scintillates with unearthly colour. The power of Zot
+#   flows heavily through it, overlaying this reality with countless others where
+#   its domain remains pristine.
+#
+#   Each tesseract is inextricably linked to the other, and destroying one will
+#   destroy both (and expel all the creatures they have beckoned to this reality,
+#   as well as dazing even those which they have not). But so long as they are
+#   allowed to exist, there will be no end to the forces which seek to keep you from
+#   the Orb.
+この世ならぬ色にきらめく、ありえない形だ。ゾットの力がこれを通じて激しく流れ込み、この現実に、ゾットの領域が無垢のまま保たれている無数の別の現実を重ね合わせている。
+
+それぞれのテッセラクトは互いに分かちがたく結びついており、一方を破壊すると両方が破壊される(そして、それらがこの現実に招き寄せた生き物はすべて追放され、招かれていないものまで朦朧とする)。だが、それらの存在が許されている限り、あなたをオーブから遠ざけようとする軍勢に終わりはないだろう。
+%%%%
+brain worm
+
+# en:
+#   A slimy fluorescent worm with a greatly distended head. This creature feeds on
+#   others' intellect as it squirms through unworldly grime.
+頭部が大きく膨れ上がった、ぬめぬめした蛍光色のワームだ。この世ならぬ汚泥の中をのたうちながら、他者の知性を喰らう。
+%%%%
+briar patch
+
+# en:
+#   A tangled cluster of thorny briars, sharp enough to pierce thick hide and
+#   armour. Although stationary, its branches are possessed with a will of their
+#   own. They move to allow magic and missiles fired by those friendly to this
+#   plant to pass through unaffected.
+厚い皮や鎧をも貫くほど鋭い、絡み合った茨の茂みだ。動くことはないが、その枝はそれ自身の意志を持っている。この植物に友好的な者が放った魔法や飛び道具は、枝がよけることで影響を受けずに通り抜ける。
+%%%%
+broodmother
+
+# en:
+#   A giant spider swollen with eggs. Its innumerable offspring are always at its
+#   call.
+卵で膨れ上がった巨大な蜘蛛だ。その無数の子供たちは常に呼び声に応じる。
+%%%%
+burial acolyte
+
+# en:
+#   A masked priest in the service of Kikubaaqudgha, well-versed in choral rituals
+#   to both rouse the dead and send them to eternal rest.
+キクバークッグァに仕える仮面をつけた司祭で、死者を呼び起こす儀式と永遠の眠りにつかせる儀式の両方の詠唱に通じている。
+%%%%
+burstshroom
+
+# en:
+#   A rapidly-growing mushroom whose life-cycle culminates in an explosive release
+#   of spores. These spores have a mild psychoactive effect and can sometimes daze
+#   creatures who breathe them in.
+急速に成長するキノコで、その生活環は胞子の爆発的な放出によって頂点を迎える。この胞子には軽い向精神作用があり、吸い込んだ生き物を朦朧とさせることがある。
+%%%%
+bush
+
+# en:
+#   A woody plant. It looks dry enough to be easily set on fire, and its foliage is
+#   not very dense, permitting both magic and missiles to pass through unaffected.
+#   However, it is firmly rooted, and requires significant effort to destroy.
+木質の植物だ。乾燥していて簡単に火がつきそうで、葉もあまり茂っていないため、魔法や飛び道具は影響を受けずに通り抜ける。しかし、しっかりと根を張っているので、破壊するにはかなりの労力を要する。
+%%%%
+bullfrog
+
+# en:
+#   An unusually aggressive amphibian that pursues its prey with rapid hops.
+#   Its croak is loud and distinctive, but unlike its smaller counterparts above
+#   ground, the dungeon bullfrog is as large as it sounds.
+素早く跳ねて獲物を追いかける、異様に攻撃的な両生類だ。その鳴き声は大きく独特だが、地上の小さな同類と違って、ダンジョンのウシガエルは鳴き声に見合う大きさをしている。
+%%%%
+bunyip
+
+# en:
+#   A flesh-eating beast that uses its limbs and tail interchangeably. It moves
+#   with alarming speed, but must pause to reorganise itself after each attack.
+#   Its distinctive screams carry far and wide.
+手足と尾を区別なく使う肉食の獣だ。驚くべき速さで動くが、攻撃するたびに体勢を立て直すために動きを止めなければならない。その独特な叫び声は遠くまで響き渡る。
+%%%%
+butterfly
+
+# en:
+#   A large, brightly coloured butterfly with beautifully patterned wings,
+#   fluttering incongruously through the darkness of the cave.
+美しい模様の翅を持つ、大きく色鮮やかな蝶だ。洞窟の暗闇の中を場違いにひらひらと舞っている。
+%%%%
+cactus giant
+
+# en:
+#   A green-skinned, spiny colossus, with a hearty barrel chest and a thirst for
+#   battle. Any foe that strikes it in melee will be lucky to live to regret it.
+緑色の肌をした棘だらけの巨人で、たくましい樽のような胸板と戦いへの渇望を持っている。これに近接攻撃を加えた敵は、生き延びて後悔できれば幸運な方だ。
+%%%%
+cacodemon
+
+# en:
+#   A maniacal demon, brimming with accursed power. Its gleeful laughter rarely
+#   ceases, even in the heat of battle.
+呪われた力に満ちあふれた、狂気じみたデーモンだ。その楽しげな笑い声は、戦いの最中でさえ止むことはめったにない。
+%%%%
+cane toad
+
+# en:
+#   A hideous toad whose thick, warty hide is covered in poison glands. Unlike its
+#   smaller above-ground relatives, this dungeon-dweller is the size of a wolf.
+分厚くいぼだらけの皮が毒腺に覆われた、おぞましいヒキガエルだ。地上の小さな近縁種と違って、このダンジョンの住人は狼ほどの大きさがある。
+%%%%
+catoblepas
+
+# en:
+#   A sluggish black buffalo, its hide encrusted with dull scales. It carries its
+#   hog-like head just above the ground, protected by a stiff mane of bristles.
+#   Its fearsome breath turns flesh into stone.
+鈍重な黒い水牛で、その皮には鈍い色の鱗がこびりついている。豚のような頭を地面すれすれに垂らし、硬いたてがみの剛毛で守っている。その恐るべき息は肉を石に変える。
+%%%%
+caustic shrike
+
+# en:
+#   A swift, nightmarish bird whose razor-sharp metallic feathers drip with
+#   corrosive acid.
+剃刀のように鋭い金属の羽から腐食性の酸を滴らせる、素早く悪夢のような鳥だ。
+%%%%
+caustic sporangium
+
+# en:
+#   A balloon-like sac of slime mold spores, suspended in a nutrient slurry to
+#   sustain them on their search for a new home. To the great misfortune of any
+#   adventurers in the vicinity, this slurry is also a highly potent acid.
+粘菌の胞子を詰めた風船のような袋で、新たな棲み処を探す旅の間、胞子を養うための栄養液に浸されている。近くにいる冒険者にとって大いに不運なことに、この栄養液は強力な酸でもある。
+%%%%
+centaur
+
+# en:
+#   A hybrid with the torso of a human atop the body of a horse. It is highly
+#   skilled in archery.
+人間の上半身が馬の体の上に乗った混成生物だ。弓術に非常に長けている。
+%%%%
+centaur warrior
+
+# en:
+#   A muscular centaur, veteran of numerous battles, armed with well-made weapons
+#   and able to use them skilfully.
+数多の戦いをくぐり抜けた筋骨逞しいセントールで、よく作られた武器を携え、それを巧みに扱うことができる。
+%%%%
+cerulean imp
+
+# en:
+#   A small, wilful minor demon. Its wings, far larger than its scrawny body, were
+#   made to soar, and it lands only rarely and with the greatest reluctance.
+小柄で強情な下級デーモンだ。やせこけた体よりはるかに大きな翼は空高く舞うためのもので、地上に降りることはめったになく、降りるとしてもひどく嫌々である。
+%%%%
+chaos spawn
+
+# en:
+#   A being of pure chaos, its form is constantly shifting, growing and then losing
+#   eyes, mouths, claws and tentacles. It corrupts everything it touches.
+純粋な混沌の存在で、その姿は絶えず変化し、目や口、鉤爪、触手が生えてはまた失われる。これは触れたものすべてを変質させる。
+%%%%
+cherub
+
+# en:
+#   A throne-bearer of the gods, whose head is beset by four faces: one of a man,
+#   one of an ox, one of a lion, one of an eagle. It is one of the angelic beings
+#   who stand before the good gods, singing eternal hymns of praise to their glory
+#   and greatness.
+神々の玉座を担う者で、その頭には人、牛、獅子、鷲の四つの顔がある。善なる神々の御前に立ち、その栄光と偉大さを讃える永遠の聖歌を歌う天使的な存在の一つだ。
+%%%%
+chonchon
+
+# en:
+#   Some sorcerers care little for unholy realms or undead forms, seeking power
+#   instead in the whims of cruel chaos. This ominous owl-winged head is all that
+#   remains of a former archmage: it delights in spreading misfortune and drinking
+#   blood in its new airborne form.
+不浄の領域やアンデッドの姿にほとんど関心を持たず、残酷な混沌の気まぐれに力を求める魔術師もいる。この不吉な、フクロウの翼を持つ頭部は、かつての大魔術師の成れの果てだ。新たな空飛ぶ姿となったこれは、不幸を撒き散らし、血を啜ることを喜びとしている。
+%%%%
+clockroach
+
+# en:
+#   A common dungeon pest that combines the worst features of a scavenging insect
+#   and a looming deadline.
+#
+#   Time flows strangely around it, rewinding any injuries inflicted upon it unless
+#   the source of them is near enough to be caught up in its timestream.
+ありふれたダンジョンの害虫で、腐肉を漁る昆虫と迫りくる締め切りの最悪の特徴を兼ね備えている。
+
+その周囲では時間が奇妙に流れており、受けた傷はすべて巻き戻されてしまう。ただし、傷を与えたものがその時の流れに巻き込まれるほど近くにいる場合はその限りではない。
+%%%%
+cognitogaunt
+
+# en:
+#   A wizened, headless corpse, animated not by conventional necromancy but by the
+#   mournful malice of dead stars. Its psychic eyes, floating disjointedly from its
+#   body's movements, relentlessly burrow through its victims' minds.
+しなびた首なしの死体で、通常の死霊術ではなく、死んだ星々の哀しげな悪意によって動いている。体の動きとはばらばらに浮かぶその霊的な眼は、犠牲者の心を容赦なく穿つ。
+%%%%
+clockwork bee
+
+# en:
+#   A mechanical insect powered by an intricate array of gears and springs. It is
+#   vicious and resilient to damage, but its clockwork naturally winds down as it
+#   attacks, eventually leaving it unable to move until its creator winds it again.
+歯車とばねの精巧な組み合わせで動く機械仕掛けの昆虫だ。凶暴で損傷にも強いが、攻撃するにつれて仕掛けが自然とほどけていき、やがて創造者が再び巻き直すまで動けなくなる。
+%%%%
+colossal amoeba
+
+# en:
+#   An unfathomably massive pile of mystic pulsating protoplasm. The slightest
+#   threat will cause it to undergo rapid weaponised mitosis, rapidly overwhelming
+#   potential meals in a cytoplasmic tidal wave.
+神秘的に脈打つ原形質の、計り知れないほど巨大な山だ。わずかな脅威を感じただけで急速な武器化した有糸分裂を起こし、細胞質の津波で餌になりそうなものをたちまち飲み込んでしまう。
+%%%%
+crawling flesh cage
+
+# en:
+#   A modern breakthrough in arcane experimentation, this mobile prison cell
+#   weaponises the living fragments of once-escaped ugly things, extending the reach
+#   of their tendrils to thrash multiple foes at once from a distance.
+秘術実験における近年の飛躍的な成果である、この移動式の監房は、かつて脱走した醜きものの生きた断片を兵器として用い、その触手の届く範囲を広げて、離れた所から複数の敵を同時に打ち据える。
+%%%%
+creeping inferno
+
+# en:
+#   A formless mass of ancient fire, bound by heat and malevolence. It longs to
+#   unleash itself as a wild fire storm, yet must first patiently burn towards its
+#   victims with implaceable inevitability.
+熱と悪意によって結びついた、太古の炎の不定形な塊だ。荒れ狂う炎の嵐として解き放たれることを望んでいるが、まずは避けられない運命のように、犠牲者に向かってじっくりと燃え進まなければならない。
+%%%%
+creeping plasmodium
+
+# en:
+#   An enormous and unnervingly motile slime mold colony. It creeps along the
+#   crevices of the walls in search of nutrients and can spread itself to new
+#   locations by launching enormous sporangia.
+巨大で不気味なほど活発に動く粘菌の群体だ。養分を求めて壁の割れ目に沿って這い進み、巨大な胞子嚢を打ち出すことで新たな場所に広がることができる。
+%%%%
+crimson imp
+
+# en:
+#   A small, ugly minor demon. Its fanged maw seems locked in a permanent malign
+#   grin, and its horns protrude obscenely from its scaly pate.
+小さく醜い下級デーモンだ。牙の生えた口は永遠に邪悪な笑みを浮かべたまま固まっているようで、鱗に覆われた頭頂部からは角が卑猥に突き出している。
+%%%%
+crocodile
+
+# en:
+#   A crocodilian with powerful jaws.
+強力な顎を持つワニ類だ。
+%%%%
+crystal echidna
+
+# en:
+#   A spiny, long snouted rodent grown out of pure living crystal. It is
+#   immune to most forms of magic and hurls both crystallising shots and painful
+#   barbs.
+純粋な生ける水晶から育った、棘だらけで鼻の長い齧歯類だ。ほとんどの魔法を受けつけず、結晶化させる弾と痛い棘の両方を投げつけてくる。
+%%%%
+crystal guardian
+
+# en:
+#   An intricate animated statue made of heavily ensorcelled crystal that is
+#   immune to most forms of magic. The spells which created it are so powerful
+#   that even flesh may start to crystallise around any fragments that become
+#   embedded in it - leaving its foes brittle and vulnerable.
+強力な魔法をかけられた水晶でできた精巧な動く像で、ほとんどの魔法を受けつけない。これを作り出した呪文は非常に強力で、体に刺さった破片の周りでは肉体さえも結晶化し始めることがあり、敵は脆く無防備になってしまう。
+%%%%
+culicivora
+
+# en:
+#   A small spider with rudimentary healing abilities. Though not undead, it packs
+#   a nasty vampiric bite.
+初歩的な治癒能力を持つ小型の蜘蛛だ。アンデッドではないが、たちの悪い吸血の噛みつきを持っている。
+%%%%
+daeva
+
+# en:
+#   A towering winged figure radiating an aura of brilliant golden light. It is a
+#   divine agent of the Shining One.
+まばゆい黄金の光のオーラを放つ、翼を持つ見上げるような姿だ。輝けるものの神聖な使いである。
+%%%%
+dancing weapon
+
+# en:
+#   A weapon enchanted to dance through the air and attack under its own power.
+魔法によって宙を舞い、ひとりでに攻撃するようになった武器だ。
+%%%%
+dart slug
+
+# en:
+#   A small invertebrate. It hunts prey considerably larger than itself by firing
+#   chitinous darts, using a concealed air bladder to launch them with remarkable
+#   range and power.
+小型の無脊椎動物だ。隠された気嚢を使ってキチン質の矢を驚くほどの射程と威力で打ち出し、自分よりはるかに大きな獲物を狩る。
+%%%%
+deathcap
+
+# en:
+#   A noxious and deadly fungus suffused with negative energy. While parasitic in
+#   life, undeath has granted it the ability to absorb its nutrients directly from
+#   the life force of others.
+負のエネルギーに満ちた、有害で致命的な菌類だ。生前は寄生性であったが、アンデッドとなったことで、他者の生命力から直接養分を吸収する能力を得た。
+%%%%
+death cob
+
+# en:
+#   A dreadful undead cob of maize. Look, this one was probably a mistake. We're
+#   sorry.
+恐ろしいアンデッドのトウモロコシだ。いや、これはたぶん間違いだった。申し訳ない。
+%%%%
+death drake
+
+# en:
+#   A dark and baleful minor dragon. It breathes a lethally potent miasma from its
+#   pestilential maw.
+暗く邪悪な小型のドラゴンだ。疫病に満ちた口から致命的に強力な瘴気を吐く。
+%%%%
+death knight
+
+# en:
+#   A warrior-priest of Yredelemnul, chanting fearful supplications to its dark god.
+イレデレンヌルの戦士にして司祭であり、暗黒の神に恐ろしい嘆願を唱えている。
+%%%%
+death scarab
+
+# en:
+#   A hideous swarming undead insect, exuding death and decay and feeding on the
+#   life energies of those unfortunate enough to encounter it.
+死と腐敗を撒き散らしながら群がる、おぞましいアンデッドの昆虫で、不運にもこれに出会った者の生命エネルギーを喰らう。
+%%%%
+deep elf annihilator
+
+# en:
+#   A deep elf who exults in conjured mayhem and destruction. It is widely hated
+#   and feared, both for the power and for the precision of its destructive magics.
+召喚した混沌と破壊に歓喜する闇エルフだ。その破壊の魔法の威力と正確さの両方ゆえに、広く憎まれ、恐れられている。
+%%%%
+deep elf archer
+
+# en:
+#   An experienced deep elf fighter with a penchant for ranged combat.
+遠距離戦を好む、熟練した闇エルフの戦士だ。
+%%%%
+deep elf blademaster
+
+# en:
+#   A champion of the deep elves, who scorns magic and is devoted to the study of
+#   the sword. It wields two weapons with astonishing dexterity and speed.
+魔法を軽蔑し、剣の修練に身を捧げた闇エルフの勇士だ。驚くべき器用さと速さで二本の武器を振るう。
+%%%%
+deep elf death mage
+
+# en:
+#   A deep elf surrounded by a shimmering aura of negative energy, as a result of
+#   its practice of necromancy and life-sapping magic.
+死霊術と生命を吸い取る魔法を修めた結果、負のエネルギーのきらめくオーラに包まれた闇エルフだ。
+%%%%
+deep elf demonologist
+
+# en:
+#   A deep elf who is marked heavily by long years of contact with unnatural
+#   demonic forces and the creatures of the Abyss.
+不自然な悪魔の力やアビスの生き物と長年接してきたことで、その痕跡を色濃く刻まれた闇エルフだ。
+%%%%
+deep elf elementalist
+
+# en:
+#   A deep elf commanding the primal forces of the universe. It is renowned for its
+#   ability to pin down even the most elusive foes with powerful, unavoidable magic.
+宇宙の根源的な力を操る闇エルフだ。強力で避けられない魔法によって、最も捉えにくい敵さえも釘付けにする能力で知られている。
+%%%%
+deep elf high priest
+
+# en:
+#   An exalted servant of the ancient dark god of the deep elves, basking in
+#   hellish death magic.
+闇エルフの太古の暗黒神に仕える高位の僕であり、地獄の死の魔法に浸っている。
+%%%%
+deep elf knight
+
+# en:
+#   A battle-hardened deep elf fighter.
+歴戦の闇エルフの戦士だ。
+%%%%
+deep elf master archer
+
+# en:
+#   A deep elf archer who has devoted a lifetime to the mastery of archery,
+#   dismissing magic as a frivolous distraction.
+魔法をくだらない気晴らしとして退け、生涯を弓術の修練に捧げた闇エルフの射手だ。
+%%%%
+deep elf pyromancer
+
+# en:
+#   A deep elf learned in the ways of fiery magic. It is capable of casting a
+#   wide array of scorching spells.
+炎の魔法に通じた闇エルフだ。多種多様な灼熱の呪文を唱えることができる。
+%%%%
+deep elf sorcerer
+
+# en:
+#   A mighty spellcaster who draws power from the very Hells, and possesses lethal
+#   arcane abilities.
+地獄そのものから力を引き出す強大な魔法の使い手で、致命的な秘術の能力を持っている。
+%%%%
+deep elf zephyrmancer
+
+# en:
+#   An elf with a singular focus on the magic of the air, leaving little time to
+#   study anything else.
+大気の魔法だけに専念し、他のことを学ぶ時間がほとんどないエルフだ。
+%%%%
+deep troll
+
+# en:
+#   A stooped troll with dark skin. It often travels in packs.
+黒っぽい肌をした、前かがみのトロルだ。群れで移動することが多い。
+%%%%
+deep troll earth mage
+
+# en:
+#   A particularly intelligent deep troll. It uses its magic to tunnel through the
+#   earth and ambush foes.
+特に知能の高い洞窟トロルだ。魔法を使って地中にトンネルを掘り、敵を待ち伏せる。
+%%%%
+deep troll shaman
+
+# en:
+#   A deep troll blessed with divine power to strengthen and hasten its kin.
+同族を強化し加速させる神聖な力を授かった洞窟トロルだ。
+%%%%
+demigod
+
+# en:
+#   A human-like figure with an aura of power betraying its divine ancestry.
+神の血筋を物語る力のオーラを放つ、人間に似た姿だ。
+%%%%
+demonic crawler
+
+# en:
+#   A hellish insectoid creature, fueled by some infernal power that constantly
+#   regrows its chitinous segments. Nothing short of a lethal blow will stop it
+#   for long.
+地獄の昆虫めいた生き物で、キチン質の体節を絶えず再生させる何らかの地獄の力によって動いている。致命の一撃でもない限り、これを長く止めておくことはできない。
+%%%%
+demonspawn
+
+# en:
+#   A half-mortal, half-demonic creature, with its hellish heritage asserting
+#   itself through a certain devilish cast to its features.
+半ば定命の者、半ば悪魔の生き物で、その顔立ちに見られるある種の悪魔めいた雰囲気が、地獄の血筋を主張している。
+%%%%
+demonspawn blood saint
+
+# en:
+#   A half-mortal, half-demonic creature, radiating an intense heat. It weaves
+#   powerful and unpredictable spells of devastation.
+強烈な熱を放つ、半ば定命の者、半ば悪魔の生き物だ。強力で予測のつかない破壊の呪文を編み上げる。
+%%%%
+demonspawn corrupter
+
+# en:
+#   A half-mortal, half-demonic creature, oozing with dark energies. It twists
+#   space around itself, and can corrupt weapons, armour and even the very flesh of
+#   its opponents.
+暗黒のエネルギーをにじませる、半ば定命の者、半ば悪魔の生き物だ。周囲の空間をねじ曲げ、敵の武器や鎧、さらには肉体そのものまで変質させることができる。
+%%%%
+demonspawn soul scholar
+
+# en:
+#   A half-mortal, half-demonic creature, covered in icy blue scales. Its devotion
+#   to the deities of death grants it great insight into the vulnerabilities and
+#   applications of mortal souls.
+氷のように青い鱗に覆われた、半ば定命の者、半ば悪魔の生き物だ。死の神々への献身によって、定命の者の魂の弱点と使い道について深い洞察を得ている。
+%%%%
+demonspawn warmonger
+
+# en:
+#   A half-mortal, half-demonic creature, now more beast than whatever species it
+#   is descended from. It is devoted to martial combat, disrupting the magic of its
+#   foes as it feasts off of endless conflict.
+半ば定命の者、半ば悪魔の生き物で、今や祖先の種族よりも獣に近い。武術による戦いに身を捧げており、終わりなき戦いを糧としながら敵の魔法を乱す。
+%%%%
+diamond sawblade
+
+# en:
+#   A serrated disc forged of razor-sharp material. It spins in place at high
+#   velocity, shredding through flesh and metal alike.
+剃刀のように鋭い素材で鍛えられた、ぎざぎざの円盤だ。その場で高速回転し、肉も金属も等しく切り裂く。
+%%%%
+diamond obelisk
+
+# en:
+#   A towering obelisk surrounded by a powerful storm.
+強力な嵐に取り巻かれた、そびえ立つ方尖塔だ。
+%%%%
+dire elephant
+
+# en:
+#   A huge pachyderm, wilder and fiercer than normal elephants, with a very thick
+#   hide, powerful legs, and a memory to die for.
+普通の象よりも荒々しく獰猛な巨大な厚皮動物で、非常に分厚い皮と力強い脚、そして死んでも忘れない記憶力を持っている。
+%%%%
+djinni
+
+# en:
+#   An elemental spirit formed from smokeless fire.
+煙のない炎から形作られた精霊だ。
+%%%%
+dormant clockwork bee
+
+# en:
+#   A mechanical insect powered by an intricate array of gears and springs. It has
+#   run out of power and can only be rewound by its creator moving into it.
+歯車とばねの精巧な組み合わせで動く機械仕掛けの昆虫だ。動力が尽きており、創造者がその場所へ移動することでしか巻き直せない。
+%%%%
+draconian
+
+# en:
+#   A brown-scaled humanoid with a reptilian tail and small wings. It is yet to
+#   develop the distinct colouring and powerful breath attack of its mature form.
+爬虫類の尾と小さな翼を持つ、茶色い鱗に覆われた人型生物だ。成体の特徴である明確な体色と強力なブレス攻撃はまだ身につけていない。
+%%%%
+draconian annihilator
+
+# en:
+#   A draconian that uses powerful conjurations to destroy anyone who dares to
+#   stand in its way.
+強力な攻撃魔法を使って、行く手を阻もうとする者を誰であれ滅ぼすドラコニアンだ。
+%%%%
+draconian knight
+
+# en:
+#   A draconian protected by thick scales, skilful weapon use, and complementary
+#   magic.
+分厚い鱗と巧みな武器の扱い、それを補う魔法に守られたドラコニアンだ。
+%%%%
+draconian monk
+
+# en:
+#   A draconian who has eschewed the study of weaponry and magic in order to train
+#   in the art of unarmed combat. Its scaly fists, well-thewed legs, and mighty
+#   tail rain down blows upon its opponents.
+武器と魔法の修練を捨て、素手での格闘術の鍛錬に励んだドラコニアンだ。鱗に覆われた拳と筋骨たくましい脚、そして強大な尾で、敵に雨のように打撃を浴びせる。
+%%%%
+draconian scorcher
+
+# en:
+#   A cunning draconian who has mastered the inner secrets of the element of fire.
+#   Its scales are sooty from years of magical pyrotechnics.
+炎の元素の奥義を極めた狡猾なドラコニアンだ。その鱗は長年の魔法の火術で煤けている。
+%%%%
+draconian shifter
+
+# en:
+#   A draconian master of the warp, who can translocate both itself and anyone else
+#   to any place, either on this world or outside of it.
+空間歪曲の達人であるドラコニアンで、自分自身も他の者も、この世界の内外を問わずどこへでも転移させることができる。
+%%%%
+draconian stormcaller
+
+# en:
+#   A draconian deriving its thunderous powers and draconic allies from the worship
+#   of Qazlal.
+クァズラルを崇拝することで雷鳴の力とドラゴンの仲間を得たドラコニアンだ。
+%%%%
+draugr
+
+# en:
+#   A territorial gnarl of driftwood and shattered bones. Its resentment of the
+#   living has slowly twisted its remains into a monstrous form, capable of
+#   brandishing weapons and spreading terrible curses.
+流木と砕けた骨でできた、縄張り意識の強い節くれ立った塊だ。生者への恨みが長い時をかけてその亡骸をねじ曲げ、武器を振るい恐ろしい呪いを撒き散らすことのできる怪物の姿に変えた。
+%%%%
+dread lich
+
+# en:
+#   A lich who has made terrible pacts with demonic forces to augment its dark
+#   magic.
+悪魔の力と恐ろしい契約を結び、暗黒の魔法を強化したリッチだ。
+%%%%
+dream sheep
+
+# en:
+#   A drowsy, fluffy ovine whose coat sparkles with motes of dream dust. It gathers
+#   in herds and fills the air with dream dust, overwhelming its victims and
+#   putting them to sleep.
+毛皮が夢の粉の粒できらめく、眠たげでふわふわした羊だ。群れをなして空気を夢の粉で満たし、獲物を圧倒して眠らせてしまう。
+%%%%
+drowned soul
+
+# en:
+#   A cold and hollow apparition of the drowned dead, chained by some lingering
+#   attachment to the depths in which it perished. It rushes to embrace the living,
+#   sharing the last moments of its watery fate with whatever it touches.
+溺れ死んだ死者の冷たく虚ろな亡霊で、自らが命を落とした深みへの未練に縛られている。生者を抱きしめようと駆け寄り、触れたものに水中での最期の瞬間を分け与える。
+%%%%
+drude
+
+# en:
+#   A conniving demon born from the nightmares of sleeping mages. It delights in
+#   coaxing the imagined fears of mortals into reality.
+眠っている魔術師の悪夢から生まれた、ずる賢いデーモンだ。定命の者が想像した恐怖を現実へと誘い出すことを喜びとしている。
+%%%%
+dryad
+
+# en:
+#   A spirit of nature, bound to the forest in which it resides. It is capable of
+#   calling upon the trees to defend against incursions.
+自らが棲む森に縛られた自然の精霊だ。木々に呼びかけて侵入者から森を守らせることができる。
+%%%%
+dwarf
+
+# en:
+#   A member of a short, sturdy mountain-dwelling folk.
+背が低く頑丈な、山に住む種族の一員だ。
+%%%%
+eidolon
+
+# en:
+#   An ancient skeletal apparition, sheathed in a cloud of mist. Its form glows
+#   white-hot with debilitating energy.
+霧の雲に包まれた、太古の骸骨の亡霊だ。その姿は衰弱させるエネルギーで白熱して輝いている。
+%%%%
+eldritch tentacle
+
+# en:
+#   An immense, squamous appendage of some unseen creature, dripping with ichor and
+#   tipped with a single, terrible-looking claw.
+何らかの見えない生き物の、鱗に覆われた巨大な付属器官だ。体液を滴らせ、先端には恐ろしげな鉤爪が一つ付いている。
+%%%%
+eldritch tentacle segment
+
+# en:
+#   A part of an immense, squamous appendage. It thrashes and pulsates like no
+#   other living thing.
+鱗に覆われた巨大な付属器官の一部だ。他のどんな生き物とも違うようにのたうち、脈打っている。
+%%%%
+electric golem
+
+# en:
+#   An animated figure made completely of electricity, created in some demented
+#   wizard's experiment.
+どこかの狂った魔術師の実験で作られた、全身が電気でできた動く像だ。
+%%%%
+electric eel
+
+# en:
+#   A type of fish capable of generating a powerful electric field.
+強力な電場を発生させることのできる種類の魚だ。
+%%%%
+eleionoma
+
+# en:
+#   Spirits of marshes and bogs. From the cypresses and willows of the fens stems the
+#   power of these fierce protective spirits. With the boughs and branches they flow,
+#   emerging from trees near their foes to strike.
+沼地と湿地の精霊だ。この猛々しい守護の精霊の力は、沼地の糸杉や柳から生じている。大枝や小枝の間を流れるように移動し、敵の近くの木から現れて襲いかかる。
+%%%%
+elemental wellspring
+
+# en:
+#   A swirling conflux of elemental water streaming from the elemental plane into
+#   this one, with powerful spirits and mighty floods flowing from it.
+精霊界からこの世界へと流れ出る、精霊の水が渦巻く合流点だ。そこからは強力な精霊と大洪水が湧き出してくる。
+%%%%
+elephant
+
+# en:
+#   A large, thick-hided pachyderm. It crushes its foes and then thrashes them with
+#   its trunk.
+分厚い皮を持つ大型の厚皮動物だ。敵を踏み潰し、それから鼻で打ち据える。
+%%%%
+elf
+
+# en:
+#   An elf, a member of an ancient fey race.
+太古の妖精族の一員であるエルフだ。
+%%%%
+emperor scorpion
+
+# en:
+#   A giant scorpion with a massive barb on its tail dripping deadly venom. It is
+#   one of the largest arachnids known.
+尾に致命的な毒を滴らせる巨大な毒針を持った、巨大なサソリだ。知られている中で最大級のクモ類の一つである。
+%%%%
+endoplasm
+
+# en:
+#   A glob of grey sludge that has somehow developed a rudimentary awareness and
+#   limited motility. It periodically draws heat from its surroundings to sustain
+#   itself, freezing enemies unfortunate enough to be adjacent at the time.
+灰色の汚泥の塊で、どういうわけか初歩的な意識と限られた運動能力を身につけた。自らを維持するために定期的に周囲から熱を奪い、その時に不運にも隣にいた敵を凍りつかせる。
+%%%%
+entropy weaver
+
+# en:
+#   A gaunt humanoid with flaking, pale chitin. Its spindly limbs are capable of
+#   startlingly quick movement and end in razor-sharp talons.
+剥がれかけた青白いキチン質に覆われた、やせこけた人型生物だ。そのひょろ長い手足は驚くほど素早く動くことができ、先端には剃刀のように鋭い鉤爪がある。
+%%%%
+erythrospite
+
+# en:
+#   A churning mass of flowing blood that throbs to the beat of an absent heart.
+#
+#   Does it wish to bury itself in your arteries because it recognises, on some
+#   primordial level, that this is where it belongs? Alas, all it is capable of in
+#   this fleeing moment of sentience is violence.
+存在しない心臓の鼓動に合わせて脈打つ、流れる血の渦巻く塊だ。
+
+これがあなたの動脈に潜り込みたがるのは、何らかの原始的な次元で、そこが自分の居場所だと認識しているからだろうか？ 残念ながら、このつかの間の意識の中でこれにできることは暴力だけである。
+%%%%
+ettin
+
+# en:
+#   A two-headed giant, stronger than most, and able to land devastating blows left
+#   and right with its two huge weapons.
+二つの頭を持つ巨人で、たいていの巨人より力が強く、二つの巨大な武器で左右から壊滅的な打撃を加えることができる。
+%%%%
+eye of draining
+
+# en:
+#   A hovering horror, rare and unnatural even amongst servitor eyes, radiating
+#   baleful energies. They monitor the flow of chaotic life and ever-present death
+#   for the divine Jiyva.
+従者の眼の中でも稀で異質な、邪悪なエネルギーを放つ宙に浮かぶ恐怖だ。これらは神聖なるジーヴァのために、混沌とした生命と常に存在する死の流れを見張っている。
+%%%%
+faun
+
+# en:
+#   A hybrid with the torso of a human atop the forelegs of a goat. It is fabled
+#   for its ability to play with the minds of those who intrude into its domain.
+人間の上半身がヤギの前脚の上に乗った混成生物だ。自らの領域に踏み込んだ者の心を弄ぶ能力で伝説的に知られている。
+%%%%
+felid
+
+# en:
+#   A feline creature that has been granted sentience by magical means. It uses the
+#   gift of speech to demand milk, treats and catnip.
+魔法の力によって知性を授けられたネコ科の生き物だ。言葉という贈り物を、ミルクやおやつ、マタタビを要求するために使っている。
+%%%%
+fenstrider witch
+
+# en:
+#   Followers of the ancient swamp ways, these witches rise above the muck and mire
+#   on a pair of stilt-like chicken legs. They are masters of pain and poison.
+太古の沼の流儀に従う者たちで、この魔女たちは竹馬のような一対の鶏の脚で泥やぬかるみの上に立っている。苦痛と毒の達人である。
+%%%%
+fire bat
+
+# en:
+#   A bat whose leathery body burns with a hot flame.
+革のような体が熱い炎で燃えているコウモリだ。
+%%%%
+fire crab
+
+# en:
+#   A variety of crab prized for its brilliantly jewelled shell. The rarity of the
+#   shells is only enhanced by its almost supernatural ability to wade through
+#   molten lava and expel massive quantities of flames.
+見事な宝石のような甲羅で珍重される種類の蟹だ。その甲羅の希少さは、溶岩の中を歩き、大量の炎を吐き出すという、ほとんど超自然的な能力によっていっそう高まっている。
+%%%%
+fire giant
+
+# en:
+#   A giant with obsidian skin and a wild mane of glowing red hair, holding aloft a
+#   fiery sword. Fire giants believe that they are destined to unite and burn the
+#   entire world to cinders.
+黒曜石の肌と輝く赤い髪の荒々しいたてがみを持ち、燃え盛る剣を掲げた巨人だ。炎の巨人たちは、自分たちが団結して全世界を燃やし尽くし灰にする運命にあると信じている。
+%%%%
+flayed ghost
+
+# en:
+#   A hideous floating undead creature, the anguished spirit of a tortured victim,
+#   with torn skin hanging from an emaciated body. It restlessly stalks the
+#   dungeon, inflicting the anguish it felt in life upon those still living.
+やせ衰えた体から裂けた皮膚を垂らした、宙に浮かぶおぞましいアンデッドで、拷問の犠牲者の苦悶する霊だ。生前に味わった苦しみを生者に与えながら、休むことなくダンジョンを徘徊している。
+%%%%
+fravashi
+
+# en:
+#   A beneficent remnant of the countless mortal knights who serve the Shining One.
+#   Their hosts' role in the divine hierarchy is to guide and direct their legions
+#   in righteous moral warfare, though they may also call upon those mortals to
+#   defend themselves.
+輝けるものに仕える無数の定命の騎士たちの、慈悲深い残滓だ。神の序列におけるその軍勢の役割は、正義にかなう戦いにおいて軍団を導き指揮することだが、定命の者たちに自らを守るよう呼びかけることもある。
+%%%%
+frilled lizard
+
+# en:
+#   A lizard with a giant and colourful fringe folded around its neck. It flares
+#   its impressive frill at its victims while hissing angrily.
+首の周りに巨大で色鮮やかなひだを折りたたんだトカゲだ。怒ったようにシューッと音を立てながら、見事なえりまきを獲物に向かって広げる。
+%%%%
+formicid
+
+# en:
+#   A sentient ant that walks upright and is competent at digging.
+直立して歩き、穴掘りに長けた知性あるアリだ。
+%%%%
+formless jellyfish
+
+# en:
+#   A gelatinous assemblage of tentacles and venom, leaving a glistening trail
+#   as it slides along. Surely such a mockery of life could not be natural..?
+触手と毒のゼラチン質の集合体で、滑るように進んだ後にはぬらぬらと光る跡が残る。このような生命の冒涜が自然のものであるはずがない……？
+%%%%
+foxfire
+
+# en:
+#   A thin wisp of flaming swamp gas. It will burn the first hostile thing it
+#   touches and then dissipate.
+燃える沼のガスの細い揺らめきだ。最初に触れた敵対的なものを焼き、その後消え去る。
+%%%%
+freezing wraith
+
+# en:
+#   An incorporeal skeletal form surrounded by a cloud of freezing air, likely the
+#   remains of some unfortunate adventurer. It now floats slowly through the
+#   dungeon, seeking to share its fate with others.
+凍える空気の雲に包まれた実体のない骸骨の姿で、おそらくはどこかの不運な冒険者の成れの果てだ。今は自らの運命を他の者と分かち合おうと、ダンジョンをゆっくりと漂っている。
+%%%%
+frost giant
+
+# en:
+#   A giant with blue skin and hair like ice and snow. Its eyes are as bleak as
+#   winter skies. It marches grimly into battle with a great, frosty axe and
+#   howling blasts of cold.
+青い肌と氷雪のような髪を持つ巨人だ。その目は冬空のように荒涼としている。巨大な霜の斧と吹きすさぶ冷気の突風を携え、厳めしく戦場へと進軍する。
+%%%%
+fulminant prism
+
+# en:
+#   A slender prism of unstable, soft gold that crackles with barely-contained
+#   destructive energy. Any blow which cracks its fragile surface is likely to
+#   result in a violent explosion.
+かろうじて抑え込まれた破壊のエネルギーがぱちぱちと音を立てる、不安定で柔らかい金でできた細長い晶柱だ。脆い表面にひびを入れるような一撃は、激しい爆発を引き起こす可能性が高い。
+%%%%
+gargoyle
+
+# en:
+#   A granite statue of a hideous winged monster, somehow brought to life.
+翼を持つおぞましい怪物をかたどった花崗岩の像で、どういうわけか命を吹き込まれている。
+%%%%
+ghost crab
+
+# en:
+#   A crab twisted by proximity to negative energy. Apparitions of the dead swirl
+#   around it, only barely visible.
+負のエネルギーの近くにいたことで歪んだ蟹だ。その周りでは死者の亡霊が、かろうじて見える程度に渦巻いている。
+%%%%
+ghost moth
+
+# en:
+#   A vile interdimensional predator that feeds on the life force of living beings.
+#   It resembles an enormous, spiny moth.
+生き物の生命力を糧とする、邪悪な異次元の捕食者だ。巨大な棘だらけの蛾のような姿をしている。
+%%%%
+ghoul
+
+# en:
+#   A decayed cadaver, reanimated and accursed with a terrible hunger. It desires
+#   nothing but to feed on the flesh of the living, and will fell its victims with
+#   its vicious claws.
+恐ろしい飢えに呪われて動き出した、腐敗した死体だ。生者の肉を喰らうこと以外には何も望まず、凶暴な鉤爪で獲物を打ち倒す。
+%%%%
+glass eye
+
+# en:
+#   A floating eyeball formed from living glass. Only the divine Jiyva could form
+#   such a curious servitor.
+生ける硝子でできた、宙に浮かぶ眼球だ。神聖なるジーヴァだけが、このような奇妙な従者を作り出すことができる。
+%%%%
+glowing orange brain
+
+# en:
+#   A huge pulsating brain, floating just off the floor and glowing with mutagenic
+#   energies. It radiates a constant psychic influence upon nearby allies, using its
+#   vast intellect to empower their spellcasting abilities.
+地面から少し浮かんで変異性のエネルギーで輝く、巨大な脈打つ脳髄だ。近くの味方に絶えず精神的な影響を及ぼし、その膨大な知性を使って彼らの呪文の能力を高める。
+%%%%
+gnoll
+
+# en:
+#   A taller and better-equipped relative of goblins, and ally of orcs. It is
+#   somewhat doglike in appearance.
+ゴブリンより背が高く装備も良い近縁種で、オークの仲間だ。いくらか犬に似た見た目をしている。
+%%%%
+gnoll bouda
+
+# en:
+#   A gnoll witch possessed by a spirit of spite which flashes out from behind
+#   their eyes. Its strange chants and ululations send other gnolls into a wild
+#   frenzy.
+目の奥から閃く悪意の霊に取り憑かれた、ノールの魔女だ。その奇妙な詠唱と甲高い叫び声は、他のノールたちを荒々しい狂乱へと駆り立てる。
+%%%%
+gnoll sergeant
+
+# en:
+#   A commander of a pack of gnolls. Scars on its stout body give evidence of how
+#   it earned its rank.
+ノールの群れの指揮官だ。頑丈な体の傷跡が、その地位をいかにして勝ち取ったかを物語っている。
+%%%%
+globe of annihilation
+
+# en:
+#   A roiling sphere of intense destructive energies, drawn from the fabric of the
+#   Hells themselves. It pursues a designated target inexorably, growing in size as
+#   it travels. If it collides with either a creature or wall, it will explode
+#   violently - though its creator is protected from the wild destruction unleashed
+#   as it does so.
+地獄そのものの構造から引き出された、強烈な破壊のエネルギーが渦巻く球体だ。定められた標的を容赦なく追いかけ、進むにつれて大きくなる。生き物か壁にぶつかると激しく爆発するが、その際に解き放たれる荒々しい破壊から創造者は守られている。
+%%%%
+goblin
+
+# en:
+#   A short, impatient and unfriendly humanoid. Goblins first appeared only a few
+#   years ago, but are now remarkably numerous. Sadly, no number of raucous goblin
+#   parties will put them in a welcoming mood toward adventurers.
+背が低く、せっかちで不愛想な人型生物だ。ゴブリンはほんの数年前に初めて現れたばかりだが、今では驚くほど数が多い。悲しいことに、ゴブリンたちがどれだけ騒がしい宴を開いても、冒険者を歓迎する気分にはならない。
+%%%%
+goblin rider
+
+# en:
+#   Goblin clans fractured over the advent of steel exoskeletons long ago, prompting
+#   an experimental arms race for goblin hegemony. Some volunteered to join forces
+#   with other species, an alliance that has enabled capturing and taming wyverns.
+#   From uptop their majestic dragon-like mounts, these goblins swiftly soar about
+#   and skewer those who intrude upon their allies' domain.
+遠い昔、ゴブリンの氏族は鋼の外骨格の登場をめぐって分裂し、ゴブリンの覇権を争う実験的な軍拡競争が始まった。一部の者は他の種族と手を組むことを志願し、その同盟によってワイバーンを捕らえて飼い慣らすことが可能になった。これらのゴブリンは竜に似た堂々たる乗騎の上から素早く空を舞い、仲間の領域に踏み込んだ者を串刺しにする。
+%%%%
+golden dragon
+
+# en:
+#   A great winged dragon covered in shining golden scales. Legends say that its
+#   blood runs both hot and cold, and is venomous to boot.
+輝く黄金の鱗に覆われた、翼を持つ巨大なドラゴンだ。伝説によれば、その血は熱くも冷たくもあり、おまけに毒もあるという。
+%%%%
+golden eye
+
+# en:
+#   A tiny and shimmering floating eye, swift as the wind and glistening like gold.
+#   It has a peculiarly hypnotic look.
+風のように素早く、黄金のようにきらめく、小さく輝く浮遊する眼球だ。妙に催眠的な目つきをしている。
+%%%%
+goliath frog
+
+# en:
+#   A frog of exceptional size, for a frog. It lashes its prey with its tongue
+#   from a distance to coat them in its acidic stomach juices.
+カエルとしては並外れた大きさのカエルだ。離れた所から舌で獲物を打ち、酸性の胃液で覆ってしまう。
+%%%%
+great orb of eyes
+
+# en:
+#   A levitating ball, covered in malignant eyes and humming with eldritch
+#   energies. Many is the adventurer ripped limb from limb by its dreadful
+#   eyeteeth.
+悪意に満ちた目に覆われ、別次元のエネルギーでうなりを上げる浮遊する球体だ。その恐ろしい目の牙によって手足を引きちぎられた冒険者は数知れない。
+%%%%
+green draconian
+
+# en:
+#   A muscular green-scaled humanoid with a reptilian tail and small wings.
+爬虫類の尾と小さな翼を持つ、緑の鱗に覆われた筋骨逞しい人型生物だ。
+%%%%
+grey draconian
+
+# en:
+#   A muscular grey-scaled humanoid with a reptilian tail and small wings.
+爬虫類の尾と小さな翼を持つ、灰色の鱗に覆われた筋骨逞しい人型生物だ。
+%%%%
+guardian serpent
+
+# en:
+#   A rare and distinct member of scaly society, light and swift like a snake, yet
+#   also intelligent like a naga. It is said that a guardian serpent would rather
+#   die in battle than leave anything to an intruder.
+鱗ある者たちの社会でも珍しく独特な存在で、蛇のように身軽で素早く、それでいてナーガのように知性を持っている。守護の大蛇は侵入者に何かを残していくくらいなら、戦いの中で死ぬことを選ぶと言われている。
+%%%%
+guardian sphinx
+
+# en:
+#   A fearsome aged hybrid with a woman's head, a lion's body, and the wings of
+#   an eagle. It solemnly guards the temples and treasures of the Dungeon with a
+#   multitude of mind-clouding maledictions.
+女の頭、獅子の体、鷲の翼を持つ、恐るべき年老いた混成生物だ。心を曇らせる数多の呪いを用いて、迷宮の寺院と財宝を厳かに守っている。
+%%%%
+halazid warlock
+
+# en:
+#   An ancient undead sorcerer, exhumed by the living divines Sheza and Sargol and
+#   forced to labour night and day to anchor them to the world. Even after the fall
+#   of the divine twins, it works to resurrect its fallen masters.
+生ける神であるシェザとサーゴルによって掘り起こされ、二柱をこの世界につなぎ留めるために昼夜を問わず働かされた、太古のアンデッドの魔道士だ。双子神が倒れた後も、これは倒れた主たちを復活させるために働き続けている。
+%%%%
+harpy
+
+# en:
+#   A bird-like creature with a human face that roams the coasts endlessly, feared
+#   for its sharp claws and harrying strikes.
+人間の顔をした鳥のような生き物で、果てしなく海岸をさまよっている。その鋭い鉤爪と執拗な攻撃で恐れられている。
+%%%%
+haunted armour
+
+# en:
+#   An ordinary piece of armour, held in your haunting grip. It can attack nearby
+#   enemies, but must return to your side if you ever stray too far from it.
+あなたが憑依の力で掴んでいる、ありふれた鎧だ。近くの敵を攻撃できるが、あなたがこれから遠く離れすぎた場合は、あなたのそばへ戻らなければならない。
+%%%%
+hell hog
+
+# en:
+#   An extremely large and aggressive swine, bred in Hell, whose breath burns its
+#   foes to ash.
+地獄で育てられた非常に大きく攻撃的な豚で、その息は敵を焼き尽くして灰にする。
+%%%%
+hell hound
+
+# en:
+#   A huge black dog with glowing red eyes, and smoke pouring from its fanged
+#   mouth.
+赤く輝く目を持ち、牙の生えた口から煙を吐き出している巨大な黒い犬だ。
+%%%%
+hell knight
+
+# en:
+#   A heavily armoured warrior, in league with the powers of Hell, and usually
+#   accompanied by other unsavoury beings of its ilk.
+地獄の力と手を結んだ重装の戦士で、たいていは同類のいかがわしい者たちを従えている。
+%%%%
+hell rat
+
+# en:
+#   A unusually large rat. Its weird, knobbly orange skin glows with the infernal
+#   energies that spawned it.
+異様に大きなネズミだ。その奇妙なごつごつしたオレンジ色の皮膚は、これを生み出した地獄のエネルギーで輝いている。
+%%%%
+hellephant
+
+# en:
+#   An abhorrent pachyderm, descendant of demons, burning from within with the
+#   fires of Hell.
+悪魔の末裔である忌まわしい厚皮動物で、内側から地獄の炎で燃えている。
+%%%%
+hellfire mortar
+
+# en:
+#   A terrifying weapon hewn from molten rock. It rains fiery destruction down upon
+#   its creators' enemies.
+溶岩から切り出された恐るべき兵器だ。創造者の敵に灼熱の破壊を雨のように降らせる。
+%%%%
+hexer
+
+# en:
+#   A humanoid construct of insubstantial memory, floating through the air. Though
+#   perhaps somewhat changed in shape and bearing few discernable features, still
+#   it seems somehow to resemble a warrior from the distantly remembered past,
+#   ready with debilitating spells and deadly knifework.
+宙に浮かぶ、実体のない記憶で作られた人型の存在だ。姿形はいくらか変わり、目立った特徴もほとんどないかもしれないが、それでも遠い過去に記憶された、相手を弱らせる呪文と致命的なナイフ捌きを備えた戦士にどこか似ているように見える。
+%%%%
+hippogriff
+
+# en:
+#   A large creature with the hindquarters of a horse and the wings, head and
+#   talons of a great eagle. As popular heraldric creatures, some fortresses may
+#   keep them as symbols and defenders alike, where they in turn launch intruders
+#   into the waiting blades of their masters.
+馬の後半身に大鷲の翼と頭と鉤爪を備えた大きな生き物だ。紋章によく使われる生き物として、一部の砦では象徴と守り手を兼ねて飼われており、侵入者を待ち構える主人たちの刃へと吹き飛ばす。
+%%%%
+hoarfrost cannon
+
+# en:
+#   An elegant siege weapon, magically sculpted from crystalline ice. As ephemeral
+#   as a summer snowstorm, every salvo it fires consumes a portion of itself until
+#   nothing is left behind but water.
+結晶質の氷から魔法で彫り出された優美な攻城兵器だ。夏の吹雪のように儚く、一斉射撃を放つたびに自らの一部を消費し、最後には水しか残らない。
+%%%%
+hobgoblin
+
+# en:
+#   A larger and even ruder goblin. Hobgoblins are perfectly capable of wielding
+#   weapons, but most prefer to beat their opponents to death with their bare hands.
+より大きく、さらに無礼なゴブリンだ。ホブゴブリンは十分に武器を扱えるが、たいていは素手で敵を殴り殺すことを好む。
+%%%%
+hog
+
+# en:
+#   A large even-toed ungulate. Like human beings, it is omnivorous, intelligent,
+#   and nearly hairless.
+大型の偶蹄類だ。人間と同じように雑食で知能が高く、ほとんど毛がない。
+%%%%
+holy swine
+
+# en:
+#   A rare celestial version of a usually filthy animal, said to be an angelic
+#   being who succumbed to hostile magic.
+普段は不潔な動物の珍しい天上版で、敵意ある魔法に屈した天使的な存在だと言われている。
+%%%%
+hound
+
+# en:
+#   A fearsome hunting dog, lithe and alert.
+しなやかで油断のない、恐ろしい猟犬だ。
+%%%%
+howler monkey
+
+# en:
+#   An aggressively territorial primate, known for the astonishing variety and
+#   volume of noise it can produce.
+縄張り意識が強く攻撃的な霊長類で、驚くほど多彩で大音量の声を出せることで知られている。
+%%%%
+human
+
+# en:
+#   An uppity sort of surface-dwelling, hairless ape. Dwarves think of them as
+#   fragile, elves think of them as clumsy, and monsters think of them as tasty.
+地上に住む、毛のない思い上がった猿の一種だ。ドワーフは彼らを脆いと考え、エルフは不器用だと考え、モンスターは美味しいと考えている。
+%%%%
+hydra
+
+# en:
+#   A great and nightmarish lacertilian beast. It has many heads, and the potential
+#   to grow many more!
+#
+#   Hitting it with any bladed weapon bigger than a short blade risks lopping a
+#   head off and causing two more to grow in its place. Very large claws, such as
+#   trolls', are long enough to do the same. Only a weapon branded with flame will
+#   cauterise the wound and prevent more heads from growing.
+巨大で悪夢のようなトカゲ類の獣だ。これは多くの頭を持ち、さらに多くの頭を生やす能力がある！
+
+短剣より大きい刃の付いた武器で攻撃すると、頭を切り落としてその場所から二つの頭が生えてくる危険がある。トロルのものなど非常に大きな鉤爪でも、同じことができるほど長い。火炎の魔力を帯びた武器だけが、傷口を焼いて頭が生えてくるのを防ぐ。
+%%%%
+ice dragon
+
+# en:
+#   A white, frost-coated dragon. Snowflakes trickle from its nostrils.
+霜に覆われた白いドラゴンだ。鼻の穴から雪片がこぼれ落ちている。
+%%%%
+ice statue
+
+# en:
+#   An imposing idol of some nameless arctic god, carved in glistening deep blue
+#   ice. Freezing vapours swirl about it, and a chill pervades the air.
+きらめく深い青の氷で彫られた、名もなき極地の神の堂々たる偶像だ。周りには凍える蒸気が渦巻き、冷気があたりに満ちている。
+%%%%
+iguana
+
+# en:
+#   A green lizard with strong jaws and sharp teeth, prized for its flesh.
+強い顎と鋭い歯を持つ緑色のトカゲで、その肉は珍重されている。
+%%%%
+imperial myrmidon
+
+# en:
+#   A warrior initiated in the mysteries of a dying cult, dedicated to serve
+#   thrones long-fallen. Its blows strip away magical defences, leaving its foes
+#   vulnerable to even the simplest hexes.
+滅びゆく秘教の奥義を授けられ、とうに倒れた玉座に仕えることを誓った戦士だ。その一撃は魔法の守りを剥ぎ取り、敵をごく単純な呪いにさえ無防備にしてしまう。
+%%%%
+inugami
+
+# en:
+#   A mystical canine, frequently bound into the service of wizards and sorcerers.
+#   Its eyes flicker with remarkable intelligence, but its bite is no less sharp
+#   than its wilder cousins.
+#
+#   They are difficult to truly kill - when gravely wounded, they instead return to
+#   spiritual form to lick their wounds until ready to be summoned again.
+魔術師や魔道士に縛られて仕えることの多い、神秘的な犬だ。その目には並外れた知性が揺らめいているが、噛みつきの鋭さは野生の同類に劣らない。
+
+これらを本当に殺すのは難しい。重傷を負うと、代わりに霊の姿に戻って傷を癒し、再び召喚される準備が整うのを待つのだ。
+%%%%
+iron dragon
+
+# en:
+#   A very heavy, slow and apparently flightless dragon. It is named for its
+#   scales, which are so tough they might be iron. Small flakes of metal trail from
+#   its nostrils.
+非常に重く鈍重な、どうやら飛べないらしいドラゴンだ。その名は鉄かと思うほど硬い鱗に由来している。鼻の穴からは小さな金属片がこぼれ落ちている。
+%%%%
+iron elemental
+
+# en:
+#   A rare and powerful spirit from the elemental plane of earth, it exists in this
+#   world by inhabiting a hulking mass of iron.
+大地の精霊界から来た稀少で強力な精霊で、巨大な鉄の塊に宿ることでこの世界に存在している。
+%%%%
+iron giant
+
+# en:
+#   A huge, rusting monolith, larger than any other species of giant. It packs
+#   an incredible punch.
+他のどの種類の巨人よりも大きな、錆びついた巨大な一枚岩だ。凄まじい打撃力を持っている。
+%%%%
+iron golem
+
+# en:
+#   A large, ponderous and very solid statue of metal, given the power of
+#   locomotion through some esoteric means.
+何らかの秘儀的な手段によって移動する力を与えられた、大きく鈍重で非常に頑丈な金属の像だ。
+%%%%
+iron imp
+
+# en:
+#   An ugly, twisted little minor demon with metal skin.
+金属の皮膚を持つ、醜くねじ曲がった小さな下級デーモンだ。
+%%%%
+iron troll
+
+# en:
+#   A great troll, mighty of limb and plated with thick scales that resemble
+#   lightly rusted iron, especially in their hardness.
+強靭な手足を持つ巨大なトロルで、うっすらと錆びた鉄に似た、特に硬さにおいてよく似た分厚い鱗に覆われている。
+%%%%
+ironbound beastmaster
+
+# en:
+#   A cruel and unruly brute who growls in the language of the untamed. Its very
+#   presence provokes and overworks non-sapient, living beasts and slimes alike into
+#   a rapid fervour.
+野生の言葉でうなり声を上げる、残酷で手に負えない荒くれ者だ。その存在だけで、知性を持たない生きた獣やスライムを煽り立て、酷使して、激しい興奮状態へと駆り立てる。
+%%%%
+ironbound convoker
+
+# en:
+#   A guardian mage clad in pattern-etched armour. It can recite words of power
+#   to summon distant allies and imbue them with unnatural might.
+紋様を刻んだ鎧に身を包んだ守護の魔術師だ。力ある言葉を唱えて遠くの仲間を呼び寄せ、彼らに不自然な力を吹き込むことができる。
+%%%%
+ironbound frostheart
+
+# en:
+#   An emaciated warrior-mage, bound to guard long-coveted treasures. It calls
+#   forth deadly frost from its surrounds, freezing foes that are next to walls.
+長く狙われてきた財宝を守ることに縛られた、やせ衰えた魔法戦士だ。周囲から致命的な霜を呼び出し、壁際にいる敵を凍りつかせる。
+%%%%
+ironbound mechanist
+
+# en:
+#   A well-armoured coglin whose talents with machinery have been harnessed by the
+#   Ironbound order to repair and augment the many constructs that help guard the
+#   Vaults.
+重装のコグリンで、その機械の才能は、宝物庫の守りを助ける数多くの機械を修理し強化するために鉄縛団に利用されている。
+%%%%
+ironbound thunderhulk
+
+# en:
+#   A brutish figure, hastily armoured in scraps of leather and metal to combat
+#   a fearsome intruder. On its back is an antique, arcane 'lightning rod', which
+#   calls down thunder on distant foes, although it cannot hit nearby targets.
+恐るべき侵入者と戦うために、革と金属の切れ端で急ごしらえの鎧をまとった野蛮な姿だ。背中には古めかしい秘術の「避雷針」を背負っており、離れた敵に雷を落とすが、近くの標的には当てられない。
+%%%%
+ironbound preserver
+
+# en:
+#   A towering, muscular figure, capable of safeguarding its allies by selflessly
+#   accepting a portion of the injuries inflicted upon them.
+見上げるような筋骨逞しい姿で、仲間に加えられた傷の一部を献身的に引き受けることで仲間を守ることができる。
+%%%%
+jiangshi
+
+# en:
+#   A vampiric thrall bound into servitude by esoteric rituals. Though its rigid
+#   limbs give it an awkward gait, it moves with surprising speed, leaping upon its
+#   victims and leeching away their life essence with its vicious claws.
+秘儀的な儀式によって隷属させられた吸血の下僕だ。硬直した手足のためにぎこちない歩き方をするが、驚くほど素早く動き、獲物に飛びかかって凶暴な鉤爪で生命の精髄を吸い取る。
+%%%%
+jorogumo
+
+# en:
+#   A spider spirit that takes the appearance of a human. It weaves deadly magics to
+#   incapacitate and kill its prey.
+人間の姿をとる蜘蛛の妖怪だ。致命的な魔法を紡いで獲物を無力化し、殺す。
+%%%%
+juggernaut
+
+# en:
+#   A gigantic humanoid with thick iron plates welded to its skin. It moves with
+#   alarming speed and deals incredible damage with its immense fists, but must
+#   rest between blows.
+皮膚に分厚い鉄板を溶接した巨大な人型生物だ。驚くべき速さで動き、巨大な拳で凄まじい損傷を与えるが、打撃の合間には休まなければならない。
+%%%%
+jumping spider
+
+# en:
+#   A spider which weaves webs between its front legs and leaps at its prey,
+#   ensnaring them. The speed with which it leaps is almost supernatural.
+前脚の間に網を張り、獲物に飛びかかって絡め取る蜘蛛だ。その跳躍の速さはほとんど超自然的である。
+%%%%
+killer bee
+
+# en:
+#   A giant bee, bearing a deadly barb which can sting repeatedly.
+何度でも刺すことのできる致命的な針を持った巨大な蜂だ。
+%%%%
+knight
+
+# en:
+#   A humanoid construct of insubstantial memory, floating through the air. Though
+#   perhaps somewhat changed in shape and bearing few discernable features, still
+#   it seems somehow to resemble a warrior from the distantly remembered past,
+#   well equipped with arms and armour both.
+宙に浮かぶ、実体のない記憶で作られた人型の存在だ。姿形はいくらか変わり、目立った特徴もほとんどないかもしれないが、それでも遠い過去に記憶された、武器と鎧の両方で十分に身を固めた戦士にどこか似ているように見える。
+%%%%
+kobold
+
+# en:
+#   A small, greyish creature with the look and temperament of a feral dog. No one
+#   knows for sure where kobolds come from, but ancient demon-gods, evil spirits,
+#   and meddling wizards have all been suggested as culprits.
+野良犬のような見た目と気性を持つ、灰色がかった小さな生き物だ。コボルドがどこから来たのかは誰にも確かなことは分からないが、太古の悪魔神、悪霊、おせっかいな魔術師などがその犯人として挙げられている。
+%%%%
+kobold brigand
+
+# en:
+#   A kobold that is bigger and tougher than the ordinary kobold, with a penchant
+#   for underhanded tactics.
+普通のコボルドより大きくてたくましく、卑怯な戦術を好むコボルドだ。
+%%%%
+kobold blastminer
+
+# en:
+#   A kobold, ready with multiple armaments to defend itself from the many
+#   dangers of the depths. The blastmote-packed cannon on its shoulder bears its
+#   maker's mark, and is fiercely loyal; it will fire for none other.
+深層の数多くの危険から身を守るため、複数の武装を備えたコボルドだ。肩に載せた爆発塵を詰めた大砲には作り手の銘が刻まれており、非常に忠実で、他の誰のためにも撃とうとはしない。
+%%%%
+kobold demonologist
+
+# en:
+#   A kobold in league with demonic powers, able to call forth beings from the
+#   depths of Hell.
+悪魔の力と手を結び、地獄の深みから存在を呼び出すことのできるコボルドだ。
+%%%%
+kobold fleshcrafter
+
+# en:
+#   A skull-masked kobold, its body mutated by forbidden magics. It conducts vile
+#   experiments in the service of demonic powers, formulating ever more terrible
+#   monstrosities as vessels for devilish minds.
+髑髏の仮面をつけたコボルドで、その体は禁断の魔法によって変異している。悪魔の力に仕えて邪悪な実験を行い、悪魔の精神の器として、ますます恐ろしい怪物を作り出している。
+%%%%
+kobold geomancer
+
+# en:
+#   A wily kobold who has learned to weaponise every crack and crevice that lines
+#   the walls of its domain.
+自らの領域の壁に走るあらゆる割れ目や裂け目を武器にする術を身につけた、ずる賢いコボルドだ。
+%%%%
+komodo dragon
+
+# en:
+#   An enormous monitor lizard more than capable of preying on large animals.
+大型の動物を捕食することも十分に可能な、巨大なオオトカゲだ。
+%%%%
+kraken
+
+# en:
+#   A gargantuan sea monster, capable of devouring entire ships. Its many tentacles
+#   reach towards the shore and crush any who draw near.
+船を丸ごと飲み込むことのできる途方もなく巨大な海の怪物だ。その多くの触手は岸辺へと伸び、近づく者を押し潰す。
+%%%%
+large abomination
+
+# en:
+#   A hideous conglomeration of mangled body parts, possessed and altered in ways
+#   that challenge sanity. Each varies in speed, strength, or resilience by
+#   the nature of whatever unfortunates were used to make it.
+正気を揺るがすようなやり方で取り憑かれ、改造された、ずたずたの体の部位がおぞましく寄せ集められたものだ。それぞれの速さ、強さ、頑丈さは、材料にされた不運な者たちの性質によって異なる。
+%%%%
+laughing skull
+
+# en:
+#   A blazing swift skull that cackles with the bleak malice of the dead. Fond of
+#   swarming, its laughter grows more spiteful and powerful for each nearby member
+#   of its own kind.
+死者の荒涼とした悪意を込めて高笑いする、燃え盛る素早い頭蓋骨だ。群れることを好み、近くにいる同族の数が増えるほど、その笑い声はより悪意に満ち、強力になっていく。
+%%%%
+lava snake
+
+# en:
+#   A burning red snake which dwells in pools of lava. It spits gobs of molten rock
+#   at passers-by.
+溶岩の池に棲む、燃えるような赤い蛇だ。通りかかる者に溶けた岩の塊を吐きかける。
+%%%%
+lemure
+
+# en:
+#   An accursed soul magically bound to hellish servitude for the highest bidder.
+#   If its master is slain, it will be freed, departing this realm with gratitude.
+魔法によって、最も高値をつけた者のもとで地獄の隷属に縛られた呪われた魂だ。主人が殺されれば解放され、感謝しつつこの領域を去っていく。
+%%%%
+lich
+
+# en:
+#   A powerful wizard who has learned to cheat death itself, now existing as a
+#   skeletal, desiccated corpse kept intact by a mighty exercise of dark magic.
+死そのものを欺く術を身につけた強力な魔術師で、今は強大な暗黒魔法の行使によって形を保った、干からびた骸骨の死体として存在している。
+%%%%
+lightning spire
+
+# en:
+#   A buzzing contraption made from a coil and a rod. It irregularly zaps
+#   electricity at the most distant enemy in its range.
+コイルと棒でできた、ブンブンと音を立てる仕掛けだ。射程内の最も遠い敵に不規則に電撃を浴びせる。
+%%%%
+living spell
+
+# en:
+#   A spell, waiting to cast itself at the first foe that enters its range. Once
+#   it does, it'll dissipate into the ether.
+射程に入った最初の敵に自らを唱えようと待ち構えている呪文だ。唱えられると、エーテルの中へと消え去る。
+%%%%
+lost soul
+
+# en:
+#   The echo of an unmourned soul. Though the memories of its living self are
+#   long-faded, it is drawn to the moment of death by some lingering instinct. It
+#   seizes upon the passage of other souls, losing the last vestiges of its being
+#   in the memories of another's life.
+誰にも悼まれなかった魂の残響だ。生前の自分の記憶はとうに薄れているが、何らかの名残の本能によって死の瞬間に引き寄せられる。他の魂が逝くのをとらえ、他者の生の記憶の中で自らの存在の最後の名残を失う。
+%%%%
+lurking horror
+
+# en:
+#   A formless mass of negative energy, bound to bring terrible torment once the
+#   forces holding it together dissolve. The alien presence of intruders to the
+#   Abyss is sure to unravel it, yet it seems perversely drawn toward them; still,
+#   it seems somehow reluctant to move while being observed.
+負のエネルギーの不定形な塊で、それをまとめている力が解ければ恐ろしい苦痛をもたらす運命にある。アビスへの侵入者の異質な存在は必ずこれをほどいてしまうが、それでもなぜか侵入者に引き寄せられるようだ。とはいえ、見られている間は動くのをどこかためらっているようでもある。
+%%%%
+hornet
+
+# en:
+#   A buzzing hornet with a vicious stinger dripping with paralytic poison.
+麻痺毒を滴らせる凶悪な針を持った、ブンブンと飛ぶスズメバチだ。
+%%%%
+ghost
+
+# en:
+#   The remains of a monster that existed in an older version, but has since been
+#   removed.
+古いバージョンには存在したが、その後削除されたモンスターの残骸だ。
+%%%%
+easy sensed monster
+
+# en:
+#   A weak monster whose presence has been revealed by the power of Ashenzari.
+アシェンザリの力によって存在が明らかになった、弱いモンスターだ。
+%%%%
+friendly sensed monster
+
+# en:
+#   A friendly monster whose presence has been {{
+#       if you.god() == "Ashenzari" then
+#           return "revealed by the power of Ashenzari"
+#       else
+#           return "detected"
+#       end
+#   }}.
+存在が{{
+    if you.god() == "Ashenzari" then
+        return "アシェンザリの力によって明らかになった"
+    else
+        return "感知された"
+    end
+}}友好的なモンスターだ。
+%%%%
+Cloud Mage
+
+# en:
+#   A strange wizard who has attained mastery over clouds, making deft and
+#   foreboding mystic gestures.
+雲を自在に操る術を極めた奇妙な魔術師で、巧みで不吉な神秘の身振りをしている。
+%%%%
+Head Instructor
+
+# en:
+#   A powerful warrior-mage who instructs aspiring students in physical, magical,
+#   and anti-magical combat.
+志ある生徒たちに、肉体、魔法、そして対魔法の戦闘を指導する強力な魔法戦士だ。
+%%%%
+Hellbinder
+
+# en:
+#   A mighty spellcaster wreathed in arcane energies, muttering profane
+#   incantations.
+秘術のエネルギーに包まれ、冒涜的な呪文をつぶやいている強大な魔法の使い手だ。
+%%%%
+lunar statue
+
+# en:
+#   <zot statue>
+<zot statue>
+%%%%
+air elementalist statue
+
+# en:
+#   A delicate statue of a tengu gliding through the air. It looks quite
+#   insubstantial.
+空中を滑空する天狗をかたどった繊細な像だ。まるで実体がないかのように見える。
+%%%%
+antique champion
+
+# en:
+#   An unfathomably expensive skeleton. It has countless sigils engraved into its
+#   bones, and pulses with a ghostly presence.
+計り知れないほど高価な骸骨だ。骨には無数の印章が刻まれており、幽霊のような気配で脈打っている。
+%%%%
+archer statue
+
+# en:
+#   A statue of a beautiful elven archer, sculpted in finest marble. It holds a
+#   bow aloft, and appears to be magically animated, letting it use the bow to
+#   riddle intruders with arrows.
+極上の大理石で彫られた、美しいエルフの射手の像だ。弓を高く掲げており、魔法によって動くようになっているらしく、その弓で侵入者を矢で射抜くことができる。
+%%%%
+bog mummy
+
+# en:
+#   An undead figure preserved by the brackish waters of a bog. It has begun to
+#   decay heavily, and looks fragile.
+湿地の汽水によって保存されたアンデッドだ。腐敗がひどく進んでおり、脆そうに見える。
+%%%%
+captured wizard
+
+# en:
+#   A wild-eyed wizard whose tongue has been cut out, frantically mumbling and
+#   waving its arms but unable to cast a single spell.
+舌を切り取られた、目の血走った魔術師だ。必死に何かをつぶやき腕を振り回しているが、呪文を一つも唱えることができない。
+%%%%
+charred statue
+
+# en:
+#   A statue that has been imbued with flame, allowing it to make use of simple
+#   fire-based conjurations.
+炎を吹き込まれた像で、単純な炎の攻撃魔法を使うことができる。
+%%%%
+Cigotuvi's Monster
+
+# en:
+#   A terrifying creation that appears to have been constructed from the body parts
+#   of every monstrous creature imaginable, with writhing tentacles sprouting from
+#   its form.
+想像しうるあらゆる怪物の体の部位から作られたように見える恐ろしい創造物で、その体からはのたうつ触手が生えている。
+%%%%
+conjurer statue
+
+# en:
+#   A statue able to harness the mightiest of pure conjurations ever devised by
+#   Iskenderun.
+イスケンデルンが編み出した中で最も強力な純粋な攻撃魔法を操ることのできる像だ。
+%%%%
+deformed humanoid
+
+# en:
+#   A poor creature that looks hideously deformed.
+おぞましく奇形化した、哀れな生き物だ。
+%%%%
+demonic plant
+
+# en:
+#   A demonic mockery of a plant, covered with mysterious appendages and writhing
+#   tentacles. It appears to be harmless.
+謎めいた付属器官とのたうつ触手に覆われた、植物を悪魔的に戯画化したものだ。害はないように見える。
+%%%%
+dimme
+
+# en:
+#   A terrible creature with demonic ancestry. Its presence is horrifying, but
+#   supernaturally compelling.
+悪魔の血筋を持つ恐ろしい生き物だ。その存在はぞっとするほど恐ろしいが、超自然的に人を惹きつける。
+%%%%
+drunken dwarf
+
+# en:
+#   A dwarf who seems to be working as an ale quality tester, and is enjoying the
+#   job a little too much.
+エールの品質検査員として働いているらしいが、その仕事を少々楽しみすぎているドワーフだ。
+%%%%
+earth elementalist statue
+
+# en:
+#   A plain statue of a dwarf wielding a pickaxe. It looks incredibly heavy.
+つるはしを手にしたドワーフをかたどった簡素な像だ。信じられないほど重そうに見える。
+%%%%
+fire elementalist statue
+
+# en:
+#   An ornately worked statue of an orc holding a torch aloft, hewn from black
+#   basalt. The air around it shimmers.
+黒い玄武岩から切り出された、松明を高く掲げたオークの精巧な像だ。周りの空気が揺らめいている。
+%%%%
+flesh golem
+
+# en:
+#   An animated mound of misshapen flesh, sculpted over an iron skeleton.
+鉄の骨格の上に形作られた、いびつな肉の動く塊だ。
+%%%%
+frost-covered statue
+
+# en:
+#   A statue of a mage, with frost constantly forming across its surface.
+表面に絶えず霜が生じている、魔術師の像だ。
+%%%%
+ghost-faced bat
+
+# en:
+#   A bat with a spectral visage.
+幽霊のような顔をしたコウモリだ。
+%%%%
+giga bat
+
+# en:
+#   An enormous, bloated bat.
+巨大に膨れ上がったコウモリだ。
+%%%%
+goblin sharper
+
+# en:
+#   A goblin newly converted to Nemelex Xobeh. It's still learning about all the
+#   cards and, thankfully, isn't inclined to use them against you.
+ネメレクス・ソベーに改宗したばかりのゴブリンだ。まだカードのことを勉強中で、ありがたいことに、それをあなたに対して使う気はないようだ。
+%%%%
+greater air elemental
+
+# en:
+#   A mighty spirit drawn from the elemental plane of air, surrounded by a
+#   deadly vortex of frost.
+大気の精霊界から呼び出された強大な精霊で、致命的な霜の渦に取り巻かれている。
+%%%%
+ice bat
+
+# en:
+#   An undead creature in the shape of a bat, made of ice.
+氷でできた、コウモリの姿をしたアンデッドだ。
+%%%%
+flame-cult kobold
+
+# en:
+#   A kobold that has been enchanted to explode in a blaze of fire.
+魔法によって炎とともに爆発するようにされたコボルドだ。
+%%%%
+dire wolf spider
+
+# en:
+#   <wolf spider>
+<wolf spider>
+%%%%
+giant anaconda
+
+# en:
+#   <anaconda>
+<anaconda>
+%%%%
+greater orb of eyes
+
+# en:
+#   <great orb of eyes>
+<great orb of eyes>
+%%%%
+grandmaster elementalist
+
+# en:
+#   <master elementalist>
+<master elementalist>
+%%%%
+bag of meat
+
+# en:
+#   One of the legions of abominations created by the sculptors of flesh. It is a
+#   horrendous imitation of the human form, consisting of an unrecognisable mass of
+#   meat stitched together with limbs sewn on seemingly at random. Its skin hangs
+#   off loosely in some places and bulges repulsively in others. Each one bears a
+#   large symbol carved into its flesh, a mark of pride from its twisted creator.
+肉の彫刻家たちが作り出した忌まわしき軍団の一体だ。人間の姿をおぞましく模倣したもので、見分けのつかない肉の塊を縫い合わせ、手足を一見でたらめに縫い付けてできている。皮膚はところどころだらりと垂れ下がり、別のところでは不快に膨らんでいる。どれも肉に大きな印が刻まれており、それはねじくれた創造者の誇りの証である。
+%%%%
+large bag of meat
+
+# en:
+#   One of the legions of abominations created by the sculptors of flesh. Its
+#   bloated hulk pulsates and throbs constantly with accursed fires. It looks as if
+#   it could explode into a torrent of viscera at any moment.
+肉の彫刻家たちが作り出した忌まわしき軍団の一体だ。その膨れ上がった巨体は、呪われた炎で絶えず脈打ち、うずいている。今にも臓物の奔流となって破裂しそうに見える。
+%%%%
+destroyer
+
+# en:
+#   The destroyers begin to descend upon you. They come in numbers and with wrath,
+#   maws gaping like abaddon, bottomless and abyssal. They bring your doom and will
+#   feast on your remains.
+破壊者たちがあなたの上に降りかかり始める。彼らは群れをなし、怒りを伴ってやって来る。その顎は奈落のように、底なしの深淵のように大きく開いている。彼らはあなたに破滅をもたらし、あなたの亡骸を貪り喰らうだろう。
+%%%%
+accursed
+
+# en:
+#   The accursed are the ones who came before. They have come to ensure you share
+#   their fate.
+呪われし者たちは、あなたより先に来た者たちだ。彼らはあなたが自分たちと同じ運命をたどるのを見届けるためにやって来た。
+%%%%
+dread
+
+# en:
+#   An affront to existence, a void in which there is only torment and damnation.
+#   Its unearthly form is torn and twisted, black and hollow. It is bereft of
+#   rational thought, knowing only hatred and the desire to desecrate your soul.
+存在そのものへの冒涜であり、苦痛と劫罰しかない虚無だ。そのこの世ならぬ姿は引き裂かれてねじれ、黒く虚ろである。理性的な思考を持たず、憎しみと、あなたの魂を穢したいという欲望しか知らない。
+%%%%
+fleshlord
+
+# en:
+#   One of the greatest servants of the Meatlord. It is muscular, agile and full of
+#   malevolence.
+肉の王に仕える最も偉大な僕の一体だ。筋骨逞しく、敏捷で、悪意に満ちている。
+%%%%
+Mara
+
+# en:
+#   This tall and powerful demon is Mara, Lord of Illusions, mighty among dreamers.
+#   He is capable of creating intricately detailed illusions, so real that they are
+#   almost as deadly as the creatures they impersonate.
+この背の高い強大なデーモンこそ、夢見る者たちの間で強大な力を持つ幻影の王、マーラだ。彼は精緻を極めた幻影を生み出すことができ、その幻影はあまりに真に迫っているため、模した当の生物とほとんど変わらぬほど危険である。
+%%%%
+Maggie
+
+# en:
+#   In a distant time, Maggie was apprenticed to the dreaded Hell Knights - but she
+#   grew impatient. In search of a shortcut to fame and fortune (and somewhat short
+#   on imagination), she entered the Dungeon and set out to slay a dragon. Now
+#   having slain one, Maggie sees no reason to stop.
+遠い昔、マギーは恐るべき地獄の騎士たちに弟子入りしていたが、待ちきれなくなってしまった。名声と富への近道を求めて(そしていささか想像力に欠けていたために)、彼女はダンジョンに踏み入り、ドラゴンを倒そうと旅立った。そして一頭を倒した今、マギーには止める理由など見当たらない。
+%%%%
+Margery
+
+# en:
+#   A lithe spellcaster in service to the powers of Hell; it is her duty to ensure
+#   that the inhabitants of the Dungeon never forget their place. She personally
+#   slew the ancient dragon from whose hide her strange armour is crafted.
+地獄の諸勢力に仕える、しなやかな身のこなしの魔法使いだ。ダンジョンの住人たちに己の身の程を決して忘れさせないことが彼女の務めである。彼女の奇妙な鎧は古竜の皮から作られており、その古竜は彼女自らが仕留めたものだ。
+%%%%
+Mlioglotl
+
+# en:
+#   A demon prince once possessed a hunger for power that was exceptional even by
+#   the standards of his kind. He betrayed his realm to Lugonu, and his reward was
+#   to become this twisted mass of corruption, now known only as Mlioglotl.
+かつて、同族の基準に照らしてさえ並外れた権力欲を抱いたデーモンの王子がいた。彼は自らの領域をルゴヌに売り渡し、その見返りとして、今ではムリオグロトルとしてのみ知られる、このねじくれた腐敗の塊と成り果てた。
+%%%%
+Murray
+
+# en:
+#   A demonic skull rolling along the ground.
+地面を転がる悪魔の頭蓋骨だ。
+%%%%
+Natasha
+
+# en:
+#   A fast-moving magical cat. Once a powerful wizard's familiar, Natasha was
+#   abandoned after her master was consumed by the very necromantic forces he sought
+#   to control. Now she patrols the dungeon, taking a bloody vengeance with spell
+#   and claw upon any adventurer who crosses her path.
+#
+#   This cat doesn't have nine lives, but just one death isn't going to be enough
+#   to put her down for good.
+素早く動く魔法の猫だ。ナターシャはかつて強大な魔術師の使い魔だったが、主人が自ら操ろうとした死霊術の力そのものに呑み込まれた後、置き去りにされた。今では彼女はダンジョンを巡回し、行く手を横切る冒険者に呪文と爪で血の復讐を果たしている。
+
+この猫に九つの命はないが、一度死んだくらいでは彼女を永遠に葬ることはできない。
+%%%%
+Nergalle
+
+# en:
+#   A shrewd and wizened orc who has devoted her life to chronicling the bloody
+#   history of her people. She claims to know the names and deeds of every last orc
+#   who lost their life in their great exodus into the Dungeon, and even if this is
+#   a lie, she nonetheless seems to be on a first-name basis with many of them.
+#
+#   More than any other orc still breathing, she knows the blood and sacrifice it
+#   took to make this place a refuge for her kind. She will not brook it being
+#   intruded upon by anyone - least of all you.
+自らの種族の血塗られた歴史を記録することに生涯を捧げてきた、抜け目のない老いたオークだ。彼女は、ダンジョンへの大移住の中で命を落とした最後の一人に至るまで、すべてのオークの名と行いを知っていると称している。たとえそれが嘘だとしても、彼女はその多くと名前で呼び合う仲であったようだ。
+
+今も息をしているどのオークよりも、彼女はこの地を同族の避難所とするためにどれほどの血と犠牲が払われたかを知っている。彼女は誰であれ、この地に踏み入ることを許さない。とりわけあなたには。
+%%%%
+Nessos
+
+# en:
+#   A centaur warrior, skilled at warfare and deceit. They slew a mighty hydra, and
+#   now its deadly blood drips, still-fuming, from their arrows.
+戦いと欺きに長けたセントールの戦士だ。かつて強大なヒドラを討ち取り、その猛毒の血は今もなお煙を上げながら、矢の先から滴り落ちている。
+%%%%
+Nikola
+
+# en:
+#   A brilliant scientist obsessed with electricity. In his attempts to perfect his
+#   electric golem, he was involved in a terrible accident, and now phases in and
+#   out of reality.
+電気に取り憑かれた天才科学者だ。電気のゴーレムを完成させようとする試みの中で恐ろしい事故に巻き込まれ、今では現実の内と外を明滅するように行き来している。
+%%%%
+Nobody
+
+# en:
+#   A time-lost revenant, risen not from the death of a single individual but of
+#   many - its bones fused together from the young and the elderly and different
+#   species altogether. Whether they were all the victims of a single massacre or
+#   a thousand souls discarded over a thousand years is impossible to say now;
+#   history does not remember them.
+#
+#   But one thing is clear: they will fight to change that until every last memory
+#   they have left burns away.
+時に取り残されたレヴナントだ。ただ一人の死からではなく、多くの者の死から蘇ったものであり、その骨は若者と老人、さらにはまったく異なる種族のものが融け合わさってできている。彼らがみな一度の虐殺の犠牲者だったのか、それとも千年にわたって打ち捨てられた千の魂なのか、今となっては知る由もない。歴史は彼らを覚えていないのだ。
+
+だが一つだけ確かなことがある。彼らは残された最後の記憶が燃え尽きるまで、その運命を変えるために戦い続けるだろう。
+%%%%
+Norris
+
+# en:
+#   A relaxed water cultist with a healthy tan and a soothing voice. He
+#   doesn't really care if it is you or he who dies — “both” would probably be the
+#   best option.
+健康的に日焼けした、落ち着いた声の、のんびりとした水の教団員だ。彼は死ぬのがあなたであれ自分であれ、大して気にしていない。「両方」がおそらく最善の選択肢だろう。
+%%%%
+Pargi
+
+# en:
+#   An unusually weak troll.
+並外れて弱いトロルだ。
+%%%%
+Parghit
+
+# en:
+#   An unusually strong troll, his thick frame scarred by many against-the-odds
+#   victories. He has been wounded so many times that his body has adapted, and now
+#   heals almost instantly. His necklace of troll claws is a memento of those who
+#   underestimated him.
+並外れて強いトロルだ。その分厚い体には、劣勢を覆して手にした数多くの勝利の傷跡が刻まれている。あまりにも多くの傷を負ったため体が適応し、今ではほとんど瞬時に傷が癒える。トロルの鉤爪でできた首飾りは、彼を侮った者たちの形見である。
+%%%%
+Pikel
+
+# en:
+#   A wise kobold would fear the forces of Hell, and certainly would not set up a
+#   highly lucrative transdimensional trade in damned souls. But Pikel is better
+#   known for his whip than his wisdom, mercilessly tormenting his piteous charges
+#   as he ferries them to their buyers.
+賢いコボルドならば地獄の勢力を恐れるだろうし、ましてや呪われた魂を扱う、ひどく儲かる異次元間の商売など始めはしないだろう。だがピケルは知恵よりも鞭で知られており、哀れな預かりものたちを買い手のもとへと運びながら、容赦なく責め苛んでいる。
+%%%%
+Polyphemus
+
+# en:
+#   A cyclops shepherd, he is very protective of his charges, whom he watches with
+#   an undying fervor through his single massive eye. Nevertheless, he won't
+#   hesitate to use them as projectiles in a pinch; after all, the best defence is
+#   a good offence.
+サイクロプスの羊飼いだ。彼は自らの家畜をとても大切にしており、その巨大な一つ目で絶えず熱心に見守っている。とはいえ、いざとなれば家畜を投げつけることもためらわない。なにしろ、攻撃は最大の防御なのだから。
+%%%%
+Prince Ribbit
+
+# en:
+#   A frog of unusual size, with a tiny crown perched incongruously atop his head.
+並外れた大きさの蛙で、頭の上にはちっぽけな王冠が不釣り合いに載っている。
+%%%%
+Robin
+
+# en:
+#   A mountain hobgoblin, recently come in search of the legendary Orb. Not
+#   foolhardy or reckless enough to delve into the depths of the Dungeon alone,
+#   Robin has built a small army of minions. Potential competitors will quickly
+#   find a stream of screaming goblins flying toward them!
+伝説のオーブを求めて最近やってきた、山のホブゴブリンだ。単身でダンジョンの深みへ潜るほど無鉄砲でも向こう見ずでもないロビンは、手下たちの小さな軍団を作り上げた。競争相手になりそうな者は、たちまち悲鳴を上げるゴブリンの群れが自分めがけて飛んでくるのを目にすることになる！
+%%%%
+Roxanne
+
+# en:
+#   A strikingly realistic sapphire statue of a famous earth mage who disappeared
+#   after a catastrophic mishap with a magical talisman.
+魔法のタリスマンの壊滅的な事故の後に姿を消した、名高い地の魔術師をかたどった、驚くほど写実的なサファイアの像だ。
+%%%%
+Rupert
+
+# en:
+#   Rippling muscles, glistening pecs, incredible glutes - Rupert is the peak of
+#   physical perfection. Even so, his roars seem louder than even his fantastic form
+#   can explain. Perhaps he holds some talisman that lends supernatural force to his
+#   bellows?
+波打つ筋肉、輝く胸板、驚異的な臀部――ルパートは肉体的完成の極致だ。それにしても、彼の咆哮はその見事な肉体をもってしても説明がつかないほど大きく聞こえる。もしかすると、雄叫びに超自然的な力を与えるタリスマンを持っているのだろうか？
+%%%%
+Saint Roka
+
+# en:
+#   A mighty warlord. Some orcs even say they are the Chosen One of Beogh.
+強大な武将だ。オークの中には、ロカこそベオの選ばれし者だと言う者さえいる。
+%%%%
+Sigmund
+
+# en:
+#   The elder of a pair of brothers who came for the Orb. No one knows what Sigmund
+#   saw in the dungeon to drive him mad, but his shrewd magical tactics and wicked
+#   scythe now leave little time for his victims to wonder. Despite his reputation
+#   as a vicious murderer, his grandiose and dramatic ways have earned him the
+#   admiration of many denizens of the dungeon.
+オーブを求めてやってきた兄弟の兄だ。シグムンドがダンジョンで何を見て狂気に至ったのかは誰も知らないが、その狡猾な魔法の戦術と邪悪な大鎌の前に、犠牲者たちはそれを訝しむ暇もほとんどない。残忍な殺人者という評判にもかかわらず、その大仰で芝居がかった振る舞いは、多くのダンジョンの住人たちの賞賛を集めている。
+%%%%
+Snorg
+
+# en:
+#   A particularly corpulent troll with a short temper and a sizable gut.
+#   Uninterested in the Orb, Snorg delights in the endless parade of adventurers –
+#   that is, easy meals — it attracts.
+短気で太鼓腹の、とりわけでっぷりとしたトロルだ。オーブには興味がなく、スノーグはオーブに引き寄せられてくる冒険者たち――すなわち手軽な食事――の果てしない行列を楽しみにしている。
+%%%%
+Sprozz
+
+# en:
+#   A former beekeeper's apprentice with an ambitious dream: to modernise the whole
+#   world's beekeeping industry with the smooth certainty of disease-proof metal.
+#   His methods may be questionable and his goals dubious, but his prototype's
+#   stinger still looks awfully sharp...
+壮大な夢を抱いた、元養蜂家の見習いだ。その夢とは、病気にかからない金属の滑らかな確かさをもって、世界中の養蜂業を近代化することである。彼の手法は疑わしく、目標も怪しいものだが、その試作品の針は今でも恐ろしく鋭そうに見える……
+%%%%
+Sojobo
+
+# en:
+#   Queen of the tengu, with legendary skill in swordsmanship, tactics, and magic.
+#   Storytellers claim she once trapped a raging tempest in a bottle and kept it
+#   as a talisman.
+剣術、戦術、魔法において伝説的な腕前を持つ天狗の女王だ。語り部たちによれば、彼女はかつて荒れ狂う嵐を瓶に閉じ込め、タリスマンとして持ち歩いていたという。
+%%%%
+Sonja
+
+# en:
+#   A graceful kobold assassin. Admire her graceful pirouettes, thrill at her
+#   daring leaps! But watch out for her knives!
+優美なコボルドの暗殺者だ。その優美なピルエットに見とれ、大胆な跳躍に胸を躍らせるがいい！ だが、彼女のナイフには気をつけろ！
+%%%%
+Terence
+
+# en:
+#   A veteran of a war against the armataurs' elephant-riders. He has recently
+#   retired to make a new home in the dungeon.
+アーマトールの象騎兵との戦争を戦い抜いた古参兵だ。最近引退し、ダンジョンに新たな住まいを構えた。
+%%%%
+Tiamat
+
+# en:
+#   The earthly avatar of Tiamat, deity of dragonkind, here incarnated as a mighty
+#   draconian warrior. Her scales seem to shimmer and change colour as you watch.
+竜族の神ティアマトの地上における化身で、ここでは強大なドラコニアンの戦士として受肉している。見ているうちに、彼女の鱗は揺らめいて色を変えていくようだ。
+%%%%
+Urug
+
+# en:
+#   A coarse and lanky orc. Urug lost her eye in a fight with a harpy, and has
+#   sworn to slay every last one of them. Unfortunately, the vision in her
+#   remaining eye is not very good, and she has mistaken you for one.
+#   {{
+#       if you.can_smell() then
+#           return "She smells terrible."
+#       end
+#   }}
+粗野でひょろ長いオークだ。ウルグはハーピーとの戦いで片目を失い、ハーピーを一匹残らず殺すと誓った。あいにく残った片目の視力はあまり良くなく、彼女はあなたをハーピーと見間違えている。
+{{
+    if you.can_smell() then
+        return "彼女はひどい臭いがする。"
+    end
+}}
+%%%%
+Wiglaf
+
+# en:
+#   A cantankerous dwarf wearing a stupid-looking hat. He eyes you sourly, as if
+#   deciding exactly how much offence he should take to the way you're staring at
+#   it.
+間抜けな帽子をかぶった、気難しいドワーフだ。彼はあなたを苦々しげに眺めている。帽子をじろじろ見るあなたの態度にどれほど腹を立てるべきか、正確に見定めようとしているかのようだ。
+%%%%
+Vashnia
+
+# en:
+#   An elite marksnaga who leads a skilled team of sharpshooters. She is
+#   particularly skilled in translocation magic.
+腕利きの狙撃手たちの部隊を率いる、ナーガの精鋭射手だ。彼女はとりわけ転移術に長けている。
+%%%%
+Vv
+
+# en:
+#   One of the Stoneborn, formed untold aeons ago with supreme command over rock.
+#   Her people shelter deep within the living earth, so whatever has forced Vv
+#   into the oppressive openness of the Dungeon must be dire indeed. But whatever
+#   it is, she's not talking...
+石より生まれし者の一人であり、計り知れぬほど遠い昔に、岩を意のままに操る至高の力をもって形作られた。彼女の一族は生ける大地の奥深くに身を潜めている。Vvをダンジョンの息詰まるような開けた空間へと追いやったものが何であれ、よほど深刻な事態に違いない。だがそれが何であれ、彼女は語ろうとしない……
+%%%%
+Xak'krixis
+
+# en:
+#   It has been centuries since outsiders were last allowed access to the cavernous
+#   libraries of the formicids, but their emissaries are still seen from time to
+#   time - surveying other lands for resources or scientific discoveries that might
+#   aid the colony.
+#
+#   This one's study of the magical fibres excreted by orb spiders has already led
+#   to an alchemical breakthrough, allowing them to shape fulminant prisms such that
+#   their explosions are directed at enemies alone. Alas, their enthusiasm to
+#   conduct a field test bodes poorly for your health.
+フォーミシッドの洞窟の大図書館に部外者が最後に立ち入りを許されてから何世紀も経つが、彼らの使節は今でも時折姿を見せる。コロニーの役に立つかもしれない資源や科学的発見を求めて、他の土地を調査しているのだ。
+
+この者は球体の蜘蛛が分泌する魔法の繊維を研究し、すでに錬金術上の飛躍的な発見を成し遂げた。それによって爆発性の晶柱を、その爆発が敵だけに向かうように形作ることができるのだ。あいにく、実地試験を行おうとするその熱意は、あなたの健康にとって良い兆しではない。
+%%%%
+Zenata
+
+# en:
+#   A master weaponsmith, her flesh melding into steel so smoothly that it's hard to
+#   tell where one ends and the other begins. She entered the Dungeon to search for
+#   the secrets of an ancient, long-suppressed cult, said to have exalted metal over
+#   flesh. The price of knowledge was her humanity - a price she paid eagerly.
+武器鍛冶の名匠だ。その肉体はあまりに滑らかに鋼と融け合っているため、どこまでが肉でどこからが鋼なのか見分けるのは難しい。彼女は、肉よりも金属を崇めたといわれる、長く弾圧されてきた古代の教団の秘密を探るためにダンジョンへやってきた。知識の代償は彼女の人間性だったが、彼女はその代償を喜んで支払った。
+%%%%
+Serpent of Hell gehenna
+
+# en:
+#   A huge, red-glowing, three-headed dragon, shrouded in damnation. It is
+#   possessed by the very essence of Gehenna and its eternal fire.
+赤く輝く巨大な三つ首のドラゴンで、地獄の呪いに包まれている。ゲヘナとその永遠の炎の精髄そのものに取り憑かれている。
+%%%%
+Serpent of Hell cocytus
+
+# en:
+#   A massive white three-headed dragon, covered with shards of gleaming ice,
+#   wholly possessed by the nightmarish cold of Cocytus.
+輝く氷の破片に覆われた、巨大な白い三つ首のドラゴンだ。コキュートスの悪夢のような冷気に完全に取り憑かれている。
+%%%%
+Serpent of Hell dis
+
+# en:
+#   A towering three-headed beast with an army's worth of swords for teeth. Each of
+#   its scales is a shield with a razored edge.
+一軍に匹敵するほどの剣を牙として持つ、そびえ立つ三つ首の獣だ。その鱗の一枚一枚が、剃刀のような縁を持つ盾である。
+%%%%
+Serpent of Hell tartarus
+
+# en:
+#   Seemingly three pairs of lurid magenta eyes hanging in the darkness, the
+#   outline of a vast, sinuous dragon is just barely perceptible behind. Its malice
+#   is palpable.
+闇の中に浮かぶ三対のけばけばしい赤紫色の目のように見えるが、その背後には、うねる巨大なドラゴンの輪郭がかろうじて見て取れる。その悪意は手に取るように感じられる。
+%%%%
+oblivion hound
+
+# en:
+#   A demon lapdog of the queen of Tartarus, bound to hunt her enemies. The first
+#   time a foe hears its howl, it will echo in their mind, calling nightmarish
+#   creatures to hunt them. Those who survive have the small consolation of being
+#   inoculated against that particular hound's howl.
+タルタロスの女王が飼う悪魔の愛玩犬で、彼女の敵を狩るよう縛られている。敵が初めてその遠吠えを耳にすると、それは頭の中で反響し、悪夢のような怪物たちを呼び寄せて敵を狩らせる。生き延びた者にとってのささやかな慰めは、その猟犬の遠吠えに対しては免疫ができることだ。
+%%%%
+sin beast
+
+# en:
+#   A ravenous brute of a demon - as much animal as person. Born from the residue
+#   of mortal depravity, it gorges itself on malice and magic alike.
+人であると同時に獣でもある、貪欲で粗暴なデーモンだ。定命の者の堕落の残滓から生まれ、悪意と魔力を等しく貪り食らう。
+%%%%
+mana viper
+
+# en:
+#   A violet-scaled serpent with faintly glowing eyes. It thirsts for magic as well
+#   as flesh, and its bite can drink dry the magical reservoirs of even a powerful
+#   mage in no time.
+かすかに光る目を持つ、紫色の鱗の大蛇だ。肉と同じように魔力にも飢えており、その噛みつきは強大な魔術師の魔力の蓄えでさえあっという間に吸い尽くしてしまう。
+%%%%
+marrowcuda
+
+# en:
+#   The flame-wreathed skeleton of a carnivorous fish, darting through air as easily
+#   as it once parted water. It burns with a hunger it could not satisfy in life and
+#   is singularly driven by in death.
+#
+#   While a single one may be only a nuisance, the swarm is never far behind, and
+#   every bite it lands will summon more and more of them until every scrap of flesh
+#   on its prey has been devoured.
+炎に包まれた肉食魚の骸骨で、かつて水をかき分けていたのと同じくらいたやすく空中を泳ぎ回る。生前には満たされなかった飢えに燃えており、死してなおその飢えだけに突き動かされている。
+
+一匹だけならただの厄介者にすぎないかもしれないが、群れは決して遠くにはおらず、噛みつきが当たるたびにさらに多くの仲間が呼び寄せられ、ついには獲物の肉が一片残らず食い尽くされる。
+%%%%
+martyred shade
+
+# en:
+#   The wandering shade of a long-dead soul who died for a forgotten cause. Though
+#   their memories have turned to mist, something deep within still compels them to
+#   serve and sacrifice - no matter the cost.
+忘れ去られた大義のために死んだ、遠い昔の魂のさまよえる影だ。その記憶はすでに霧と化しているが、内なる深いところにある何かが、いかなる犠牲を払ってでも仕え、身を捧げるよう今も駆り立てている。
+%%%%
+meliai
+
+# en:
+#   A nymphal hybrid, with a winged torso of a human atop the stinging abdomen
+#   of a bee. The meliai serve under many roles: priestesses of nature, nurses to
+#   the divine, and warrior-champions for their hives.
+有翼の人間の上半身が、針を持つ蜂の腹部の上に乗った、ニンフの合いの子だ。メリアイは多くの役目を担っている。自然の巫女、神々の乳母、そして巣のための戦士にして勇者である。
+%%%%
+merfolk
+
+# en:
+#   A hybrid with the torso of a human and the tail of a fish. It is capable of
+#   dwelling both in water and on land, and fiercely defends its domain.
+人間の上半身と魚の尾を持つ合いの子だ。水中でも陸上でも暮らすことができ、自らの縄張りを激しく守る。
+%%%%
+merfolk aquamancer
+
+# en:
+#   A slender merfolk mystic with unusually webby hands. Its form shifts and
+#   glistens as if seen through ocean spray.
+並外れて水かきの大きな手を持つ、ほっそりとした水棲の民の神秘家だ。その姿は、まるで波しぶき越しに見ているかのように揺らめき、きらめいている。
+%%%%
+merfolk avatar
+
+# en:
+#   A beguiling merfolk whose voice mesmerises listeners. It carries no weapon,
+#   but its song summons drowned souls to defend the sea against intruders.
+その声で聞く者を魅了する、魅惑的な水棲の民だ。武器は持たないが、その歌は溺死者の魂を呼び寄せ、侵入者から海を守らせる。
+%%%%
+merfolk impaler
+
+# en:
+#   A powerfully muscled merfolk warrior, bearing a deadly weapon.
+致命的な武器を携えた、筋骨たくましい水棲の民の戦士だ。
+%%%%
+merfolk javelineer
+
+# en:
+#   A fearsome merfolk champion with a piercing gaze and a large bundle of
+#   javelins.
+鋭い眼光と、投げ槍の大きな束を持つ、恐るべき水棲の民の勇者だ。
+%%%%
+merfolk siren
+
+# en:
+#   A beguiling merfolk whose voice can mesmerise listeners.
+その声で聞く者を魅了することができる、魅惑的な水棲の民だ。
+%%%%
+monarch bomb
+
+# en:
+#   A flying munitions factory, held aloft on jets of fiery exhaust and packed to
+#   the brim with explosives. It can rapidly fill an area with bomblets, and when
+#   commanded by its creator, will explode them all (and itself) to devastating
+#   effect.
+燃え盛る排気の噴射で宙に浮かび、爆薬を限界まで詰め込んだ空飛ぶ兵器工場だ。あたり一帯をたちまち小型爆弾で埋め尽くすことができ、創造主の命令を受けると、それらすべてを(自らもろとも)爆発させて壊滅的な効果をもたらす。
+%%%%
+morphogenic ooze
+
+# en:
+#   A multihued mire of roiling flesh and fluctuating sludge, striving and failing
+#   for more coherence than any other slime. As a fresh carrier of the ruinous
+#   contagion that overtook the Slime Pits, it can impart unto others the same
+#   horrible fate. While it may not be a permanent transformation for you, the
+#   melding of weapons and armour, as well as the severe weakening of spells, may
+#   make it a lethal one regardless.
+渦巻く肉と揺れ動く汚泥からなる多彩な色の泥濘で、他のどんなスライムよりもまとまった形を取ろうともがいては失敗している。スライムの穴ぐらを覆い尽くした破滅的な伝染病の新たな保菌者として、これは他者にも同じ恐ろしい運命を分け与えることができる。あなたにとっては永続的な変化ではないかもしれないが、武器と防具の融合、そして呪文の大幅な弱体化は、いずれにせよ命取りになりかねない。
+%%%%
+moth of wrath
+
+# en:
+#   A moth known for its ability to inspire rage by touching its foes, or merely
+#   gazing at its friends. For some inexplicable reason, it was eradicated from
+#   the surface centuries ago.
+敵に触れることで、あるいは味方をただ見つめるだけで、激しい怒りを呼び起こす力で知られる蛾だ。どういうわけか、何世紀も前に地上からは根絶されてしまった。
+%%%%
+mountainshell
+
+# en:
+#   An enormous land tortoise whose shell is so thick and rock-encrusted that
+#   sleeping ones are frequently mistaken for geological formations. And like a
+#   mountain, its exterior is nearly impervious to any destructive force; only at
+#   close range can one properly aim for the narrow gaps between its plates to
+#   strike the tender flesh within.
+巨大な陸亀で、その甲羅はあまりに分厚く岩に覆われているため、眠っているものはしばしば地層と見間違えられる。そして山のように、その外殻はいかなる破壊の力もほとんど通さない。至近距離でのみ、甲羅の板の間の狭い隙間を正確に狙い、内側の柔らかな肉を打つことができる。
+%%%%
+mummy priest
+
+# en:
+#   An ancient servant of a long forgotten god, embalmed and cursed to walk in
+#   undeath for all eternity.
+遠い昔に忘れ去られた神に仕えた古代の従者で、防腐処理を施され、永遠に不死者として歩き続けるよう呪われている。
+%%%%
+mutant beast
+
+# en:
+#   A bizarre creature, twisted and warped by overexposure to magical radiation.
+#   Each has a different set of traits.
+魔力の放射に過度にさらされて、ねじ曲げられ歪められた奇怪な生物だ。一体ごとに異なる特性を持っている。
+%%%%
+naga
+
+# en:
+#   A hybrid that is human from the waist up; below is a scaly, muscular snakelike
+#   tail. Its mouth drips with venomous saliva.
+腰から上は人間で、下は鱗に覆われた筋肉質の蛇のような尾になっている合いの子だ。その口からは毒を含んだ唾液が滴っている。
+%%%%
+naga mage
+
+# en:
+#   A naga that has trained in the use of magic, trailed by an eldritch nimbus. It
+#   is especially skilled in spells dealing with poison and venom.
+魔法の修練を積んだナーガで、怪しげな光輪をたなびかせている。とりわけ毒を扱う呪文に長けている。
+%%%%
+naga ritualist
+
+# en:
+#   An esoteric mystic draped in talismans. It venerates poison as a sacred gift
+#   and means of spiritual purification.
+タリスマンを身にまとった、奥義を究める神秘家だ。毒を神聖な賜物として、また魂を浄化する手段として崇めている。
+%%%%
+naga sharpshooter
+
+# en:
+#   A naga with exceptionally keen eyesight, adept in the use of ranged weaponry
+#   and simple magics which allows it to snipe at targets across nearly any
+#   obstruction.
+並外れて鋭い視力を持つナーガで、射撃武器と簡単な魔法の扱いに熟達しており、ほとんどどんな障害物越しにでも標的を狙撃することができる。
+%%%%
+naga warrior
+
+# en:
+#   A fearsome naga warrior clad in sturdy armour and wielding a mighty weapon.
+頑丈な鎧に身を包み、強力な武器を振るう、恐るべきナーガの戦士だ。
+%%%%
+nagaraja
+
+# en:
+#   A magnificent example of the naga. It is an expert at both martial and magical
+#   arts.
+ナーガの見事なまでの模範たる存在だ。武術と魔術の両方に熟達している。
+%%%%
+nameless horror
+
+# en:
+#   A malign force from the space between planes. It is hostile to the magic forces
+#   that removed it from its home. These horrors are often the result of mistaken
+#   summoning spells and have slain many aspiring wizards.
+次元と次元の狭間からやってきた邪悪な力だ。自らを故郷から引き離した魔力に対して敵意を抱いている。これらの恐怖は多くの場合、召喚呪文の失敗によって生まれたものであり、数多くの魔術師志望の者を殺してきた。
+%%%%
+nascent plasmodium
+
+# en:
+#   A slime mold colony in an early phase of its life cycle. Not yet mature enough
+#   to reproduce, it can still defend itself by firing globs of potent acid.
+生活環の初期段階にある粘菌の群体だ。まだ繁殖できるほど成熟してはいないが、強力な酸の塊を放って身を守ることはできる。
+%%%%
+nargun
+
+# en:
+#   An ancient stone creature that has lived among these frozen caves since before
+#   Antaeus rent Cocytus into being. It tolerates its new neighbors begrudgingly,
+#   preferring the company of its petrified enemies. Veins of ice permeate its
+#   frozen stone flesh.
+アンテウスがコキュートスを引き裂いて生み出す以前から、この凍てついた洞窟に棲んでいる古代の石の生物だ。新たな隣人たちをしぶしぶ受け入れてはいるが、石と化した敵たちと共にいるほうを好む。その凍った石の肉体には、氷の筋が縦横に走っている。
+%%%%
+necromancer
+
+# en:
+#   An evil wizard who is devoted to the practice of death magic, the mastery of
+#   unholy energies, and the raising of corpses into a parody of life.
+死の魔術の実践、不浄なる力の支配、そして死体を生命のまがいものとして蘇らせることに身を捧げた、邪悪な魔術師だ。
+%%%%
+nekomata
+
+# en:
+#   An upright feliform trickster of an elderly demon, with a forked tail ablaze
+#   with a shimmering haze. It holds a deep disdain for mortal humanoids, a
+#   patronising pity for mortal cats, and enough mystic might to subjugate both.
+直立した猫のような姿の、年老いたデーモンのいたずら者で、二股に分かれた尾はゆらめく陽炎に包まれて燃えている。定命の人型生物を深く軽蔑し、定命の猫には見下したような憐れみを抱いており、その両方を従わせるに足る神秘の力を持っている。
+%%%%
+neqoxec
+
+# en:
+#   A weirdly shaped demon, pulsing and shifting with mutagenic energies, its belly
+#   distended with the devoured brains of its victims.
+奇妙な形をしたデーモンで、変異を引き起こすエネルギーで脈打ち、うごめいている。その腹は、犠牲者から貪り食った脳で膨れ上がっている。
+%%%%
+obsidian bat
+
+# en:
+#   A faceless stone bat unearthed from infernal chasms. Devilish beasts hunt in its
+#   wake.
+地獄の深淵から掘り出された、顔のない石のコウモリだ。その後には悪魔の獣たちが狩りをしながら続いてくる。
+%%%%
+obsidian statue
+
+# en:
+#   A beautiful statue of an unknown creature, jet-black like a tear in reality.
+#   Its eyes glow with an otherworldly, malignant radiance.
+漆黒の、まるで現実に開いた裂け目のような、正体不明の生物をかたどった美しい像だ。その目はこの世ならぬ邪悪な光を放っている。
+%%%%
+occultist
+
+# en:
+#   A wizard fond of illusion and treachery. They scorn the crudeness of other
+#   magicians, who hurl wild conjurations toward their foes rather than cunningly
+#   exploiting their greatest weaknesses.
+幻影と裏切りを好む魔術師だ。敵の最大の弱点を狡猾に突くのではなく、荒っぽい召喚呪文を敵めがけて撃ち込むような他の魔術師たちの粗雑さを軽蔑している。
+%%%%
+octopode
+
+# en:
+#   A more intelligent cousin of the mighty kraken, capable of using tools and
+#   spells. It is fully amphibious, but most of its species choose to stay beneath
+#   the waves and serve their King.
+強大なクラーケンの、より知能の高い親類で、道具や呪文を使うことができる。完全な両生生物だが、その種族の大半は波の下にとどまって彼らの王に仕えることを選んでいる。
+%%%%
+ogre
+
+# en:
+#   A large, ugly, and fat creature, distantly related to goblins. It is
+#   tremendously strong, and likes fighting alongside its orc friends.
+ゴブリンの遠い親戚にあたる、大きく醜い太った生物だ。途方もなく力が強く、友達のオークと肩を並べて戦うことを好む。
+%%%%
+oklob plant
+
+# en:
+#   A very dangerous plant which fends off predators by spraying corrosive vitriol
+#   at them. Even experienced adventurers give oklob plants a wide berth.
+捕食者に腐食性の硫酸を浴びせて身を守る、非常に危険な植物だ。経験豊かな冒険者でさえ、オクロブ草には近づかないようにしている。
+%%%%
+oklob sapling
+
+# en:
+#   A young oklob plant. It is more fragile than the mature specimen, but the acid
+#   it sprays is just as deadly.
+オクロブ草の若い個体だ。成熟したものよりも脆いが、吐きかける酸は同じくらい致命的である。
+%%%%
+oni
+
+# en:
+#   A large, rowdy, and drink-loving creature. When they're not busy with their
+#   duties serving any number of gods, oni mostly love a good fight.
+大柄で騒々しく、酒好きな生物だ。数多の神々に仕える務めで忙しくないときは、鬼は何よりも派手な喧嘩を好む。
+%%%%
+oni incarcerator
+
+# en:
+#   An infamous, dutiful retainer of Gehenna. These immense and indomitable oni
+#   weave their weapons through reality itself to reach and capture the innumerable
+#   damned souls owed to the hells upon their deaths.
+悪名高い、忠実なゲヘナの家臣だ。これらの巨大で不屈の鬼は、現実そのものの中に武器を縫うように通し、死に際して地獄に引き渡されるべき無数の呪われた魂へと届かせて捕らえる。
+%%%%
+ophan
+
+# en:
+#   A creature from the heavenly realms. It consists of a wheel within a wheel, and
+#   both of these are covered in eyes; strange flames of holy fire flicker all over
+#   it. To be seen by its countless eyes is to be highlighted and branded as both
+#   dissident and quarry for its allies to hunt down.
+天上の領域からやってきた生物だ。車輪の中に車輪がある姿をしており、そのどちらも目で覆われている。その全身では、聖なる炎の奇妙な火がちらちらと揺らめいている。その無数の目に見られることは、照らし出され、異端者にして獲物という烙印を押されることであり、その仲間たちに狩り立てられることになる。
+%%%%
+orange crystal statue
+
+# en:
+#   An intricately carved idol of some nameless godling, hewn of translucent orange
+#   crystal. Its lifeless eyes seem to glitter uncannily with a wicked
+#   intelligence. It is capable of unleashing a powerful psychic assault upon the
+#   minds of any who approach it.
+半透明の橙色の水晶を削り出して作られた、名もなき小神の精巧な彫像だ。その生気のない目は、邪悪な知性を宿して不気味にきらめいているように見える。近づく者の精神に強力な精神攻撃を浴びせることができる。
+%%%%
+orange demon
+
+# en:
+#   An amber-coloured demon with a barbed tail not unlike that of a scorpion.
+サソリのものに似た、とげのある尾を持つ琥珀色のデーモンだ。
+%%%%
+Orb Guardian
+
+# en:
+#   A huge, glowing, four-limbed purple creature with heightened senses, created by
+#   the Orb itself. It guards the Orb with enormous punctiliousness and violence,
+#   and its death will alert any Boundless Tesseracts on the level to begin creating
+#   reinforcements.
+#
+#   Unless the Orb has already been disturbed, it will refuse to abandon its duty
+#   by leaving the floor.
+オーブ自身によって生み出された、鋭敏な感覚を持つ、光り輝く巨大な四肢の紫色の生物だ。途方もない几帳面さと暴力をもってオーブを守っており、それが死ぬと、その階にいる果てなきテッセラクトたちに警告が伝わり、増援を生み出し始める。
+
+オーブがまだ動かされていない限り、それは階を離れて自らの務めを放棄することを拒む。
+%%%%
+orb of destruction
+
+# en:
+#   A conjured globe of pure magic that homes onto a designated target, albeit with
+#   massive inertia. A smart and agile person may move out of its path, causing it
+#   to miss its target. It cannot be avoided by Dodging skill, and is able to make
+#   sharp turns to hit adjacent targets.
+指定された標的を追尾する、純粋な魔力が具現化した球体だ。ただし慣性が非常に大きい。賢く身軽な者なら、その進路から外れて標的を外させることができる。躱し身スキルでは回避できず、また鋭く曲がって隣接する標的に命中することもできる。
+%%%%
+orb of entropy
+
+# en:
+#   A globe of profound nothingness and the oblivion that awaits all things - flesh,
+#   souls, and even time itself. When the universe ends, only these will remain.
+あらゆるもの――肉体も、魂も、そして時間そのものさえも――を待ち受ける深遠なる虚無と忘却の球体だ。宇宙が終わるとき、これらだけが残るだろう。
+%%%%
+orb of fire
+
+# en:
+#   A globe of raw primordial fire, capable of impressive pyrotechnics and of
+#   twisting the very flesh of creatures who come into its ken.
+原初の炎そのものの球体で、見事な火炎術を操り、その視界に入った生物の肉体そのものを捻じ曲げることもできる。
+%%%%
+orb of winter
+
+# en:
+#   A globe of deepest cold, still lingering from a time before the stars lit the
+#   heavens. It can shroud the soul in a chill so intense that even the gods cannot
+#   reach it.
+星々が天を照らす以前の時代から今なお残る、最も深い冷気の球体だ。神々でさえ届かぬほど激しい冷気で、魂を包み込むことができる。
+%%%%
+orb spider
+
+# en:
+#   An eerily glowing spider with strands of pure energy emerging from its
+#   spinnerets. It seems to want to keep its distance.
+糸疣から純粋なエネルギーの糸を伸ばしている、不気味に光る蜘蛛だ。距離を保とうとしているようだ。
+%%%%
+orc
+
+# en:
+#   A subterranean tribe whose forebearers were once scattered across every corner
+#   of the surface world. Eons of persecution have taught them the necessity of
+#   violence and the importance of having your brethren at your side.
+かつてはその祖先が地上世界の隅々にまで散らばっていた、地底に住む種族だ。長きにわたる迫害によって、暴力の必要性と、同胞をそばに置くことの大切さを学んできた。
+%%%%
+orc apostle
+
+# en:
+#   An orcish wayfarer who has been touched by the hand of Beogh. Whether out of
+#   religious devotion or personal jealousy, they have come to bar your path.
+#
+#   Hold nothing back - for neither they nor their followers will do so.
+#
+#   Glory to Beogh!
+ベオの御手に触れられた、放浪のオークだ。信仰ゆえか、あるいは個人的な妬みゆえか、あなたの行く手を阻みにやってきた。
+
+一切手加減をしてはならない。彼らも、その信者たちも、手加減などしないのだから。
+
+ベオに栄光あれ！
+%%%%
+orc apostle follower
+
+# en:
+#   A favoured child of Beogh, once not so unlike yourself.
+#
+#   Now that you have proven yourself to them, they will fight and die for both you
+#   and the cause. Shepherd them well.
+ベオに寵愛された子で、かつてはあなたとそれほど違わない存在だった。
+
+あなたが彼らに自らの力を示した今、彼らはあなたと大義のために戦い、死ぬだろう。しっかりと導いてやるがいい。
+%%%%
+orc high priest
+
+# en:
+#   An exalted servant of the orc god Beogh and a master of many foul rites, to
+#   whose aid Beogh will even send beings from the netherworld.
+オークの神ベオに仕える高位の従者で、数多くの忌まわしい儀式に通じている。ベオはその求めに応じて、冥界の存在さえ送り込む。
+%%%%
+orc knight
+
+# en:
+#   A heavily armoured orc, covered in scars from many past battles. It commands
+#   its brethren in battle, rousing them to greater, more violent efforts with
+#   bloodcurdling shouts.
+数多くの戦いの傷跡に覆われた、重装備のオークだ。戦場で同胞を指揮し、血も凍るような叫びで彼らを鼓舞して、より激しく暴力的な奮闘へと駆り立てる。
+%%%%
+orc priest
+
+# en:
+#   A servant of Beogh, the ancient god of the orcs. Beogh rewards its devoted
+#   prayers by striking down its enemies.
+オークの太古の神ベオに仕える者だ。ベオはその熱心な祈りに応えて、敵を打ち倒す。
+%%%%
+orc sorcerer
+
+# en:
+#   An exceptionally competent orcish wizard, in league with hellish and chthonic
+#   forces and motivated by the purest imaginable strain of malevolence.
+並外れて有能なオークの魔術師で、地獄と冥府の勢力と手を結び、想像しうる限り最も純粋な悪意に突き動かされている。
+%%%%
+orc warlord
+
+# en:
+#   A supreme commander of an orc host, skilled at both melee and ranged combat.
+オークの軍勢の最高指揮官で、近接戦闘と遠隔戦闘の両方に長けている。
+%%%%
+orc warrior
+
+# en:
+#   An experienced, armoured and well-armed orc soldier, able to command a small
+#   mob of its fellows.
+経験を積み、鎧と優れた武器を身につけたオークの兵士で、仲間の小集団を指揮することができる。
+%%%%
+orc wizard
+
+# en:
+#   An orc who has gained proficiency in the occult arts, using them for martial
+#   purposes.
+神秘の術を身につけ、それを戦いに用いるオークだ。
+%%%%
+pale draconian
+
+# en:
+#   A muscular humanoid with pale scales, a reptilian tail and small wings.
+蒼白い鱗、爬虫類の尾、小さな翼を持つ、筋骨たくましい人型生物だ。
+%%%%
+pandemonium lord
+
+# en:
+#   A formidable demon lord inhabiting the endless halls of Pandemonium. Each one
+#   is different, with its own set of strengths and weaknesses.
+パンデモニウムの果てしない大広間に住まう、恐るべきデーモンの君主だ。一体一体が異なり、それぞれ独自の長所と弱点を持っている。
+%%%%
+peacekeeper
+
+# en:
+#   A four-legged humanoid construct, tasked with recapturing escaped prisoners and
+#   punishing heretics. Long after the fall of the empire it once served, it
+#   continues to enforce imperial law, knowing no jurisdiction.
+脱走した囚人を捕らえ直し、異端者を罰する任務を負った、四本脚の人型の構造体だ。かつて仕えた帝国が滅んで久しい今も、管轄など知らぬまま帝国の法を執行し続けている。
+%%%%
+pearl dragon
+
+# en:
+#   A dragon consecrated to the holy divine powers. Its breath is blessed fire, and
+#   its claws sear its victims with divine wrath.
+聖なる神々の力に捧げられたドラゴンだ。そのブレスは祝福された炎であり、その爪は神の怒りで犠牲者を焼き焦がす。
+%%%%
+petrified flower
+
+# en:
+#   A sizeable and statuesque flower, fossilised either by bitter grief or the cruel
+#   grace of divinity, standing in its own eternal vigil.
+彫像のような大きな花で、深い悲しみによってか、あるいは神の残酷な恩寵によってか化石と化し、永遠の不寝番に立ち続けている。
+%%%%
+phalanx beetle
+
+# en:
+#   An intricate mechanical beetle covered in reinforced metal plates that resemble
+#   a shield. It projects a kinetic barrier around its creator while adjacent to
+#   them, increasing their armour class.
+#
+#   It will never voluntarily leave its creator's side, and if forcibly seperated,
+#   will prioritise returning to them over any other concerns.
+盾に似た強化金属の板に覆われた、精巧な機械仕掛けの甲虫だ。創造主に隣接している間、その周囲に運動エネルギーの障壁を張り巡らせ、創造主のACを高める。
+
+自分から創造主のそばを離れることは決してなく、無理やり引き離されたときは、他の何よりも創造主のもとへ戻ることを優先する。
+%%%%
+phantasmal warrior
+
+# en:
+#   A hideous translucent green spirit of a warrior fallen in battle but recalled
+#   to this plane by unholy magic. The blade it wields is ethereal, rendering those
+#   it strikes weak-willed and vulnerable to dark magic.
+戦場に斃れながら、不浄なる魔法によってこの次元に呼び戻された戦士の、おぞましい半透明の緑色の霊だ。それが振るう刃は霊体のもので、斬られた者は意志が弱まり、闇の魔法に対して無防備になる。
+%%%%
+phantom
+
+# en:
+#   A nearly-transparent undead spirit, suspected by some sages to be a degenerate
+#   form of ghost, with no memories of its former life. It rarely stays in one
+#   place for long.
+ほとんど透明な不死の霊で、一部の賢者は幽霊の退化した姿ではないかと考えている。生前の記憶は持たない。一か所に長くとどまることはめったにない。
+%%%%
+pharaoh ant
+
+# en:
+#   A royal ant returned to unlife through strange, probably horrifying means. It
+#   binds the souls of its allies when slain, allowing them to fight on after death
+#   as simulacra.
+奇妙な、おそらくはおぞましい方法によって不死の命に蘇った王族のアリだ。殺された仲間の魂を縛りつけ、幻像として死後も戦い続けさせる。
+%%%%
+pile of debris
+
+# en:
+#   A heavily ruptured stonework, surrounded by rubble.
+ひどく砕けた石造物で、周りを瓦礫が取り囲んでいる。
+%%%%
+pile of flesh
+
+# en:
+#   A leftover mess of broken bones, inert grasping organs, and scattered skin.
+#   While some highly-specialised sorcerers might be capable of bringing it to life,
+#   it is otherwise harmless - the possible leftovers of some departed or
+#   absent-minded magus.
+折れた骨、動かない掴むための器官、散らばった皮膚の残骸だ。高度に専門化した魔術師ならば命を吹き込むことができるかもしれないが、そうでなければ無害である。今は亡き、あるいはうっかり者の魔術師の残したものかもしれない。
+%%%%
+pillar of rime
+
+# en:
+#   A spire of strangely tenebrous ice, its brittle tendrils reaching skyward like
+#   the fingers of an outstretched hand. {{
+#       if spells.memorised("rimeblight") then
+#           return "If only the dying breath of every soul could create such art."
+#       else
+#           return "It might even be beautiful if you didn't know the gruesome " ..
+#                  "way it formed."
+#       end
+#   }}
+妙に陰鬱な氷の尖塔で、その脆い巻きひげは、まるで差し伸べられた手の指のように天へと伸びている。{{
+    if spells.memorised("rimeblight") then
+        return "あらゆる魂の今際の息がこのような芸術を生み出せるのならよいのだが。"
+    else
+        return "それがどれほど凄惨な経緯で形作られたのかを知らなければ、" ..
+               "美しいとさえ思えたかもしれない。"
+    end
+}}
+%%%%
+pillar of salt
+
+# en:
+#   A pillar of salt shaped like a statue, but worked by no living hands.
+彫像のような形をした塩の柱だが、生ける者の手によって作られたものではない。
+%%%%
+platinum paragon
+
+# en:
+#   A gleaming warrior, wrought from precious metals and the very pinnacle of
+#   forgecraft techniques. Its every motion flows with a deadly, fluid grace that
+#   belies its artifical nature.
+貴金属から鍛え上げられ、鍛冶の技の極致によって作られた輝く戦士だ。その一挙一動は、人工の存在とは思えぬほど致命的で流れるような優美さをたたえている。
+%%%%
+player ghost
+
+# en:
+#   The apparition of an unfortunate adventurer, retaining many of the skills and
+#   abilities the adventurer had in life. It is condemned to haunt this particular
+#   level of the dungeons, lashing out violently at the next adventurer to cross
+#   its path.
+不運な冒険者の亡霊で、その冒険者が生前に持っていた技能や能力の多くを保っている。ダンジョンのこの階に取り憑くよう呪われており、次に行く手を横切る冒険者に激しく襲いかかる。
+%%%%
+polar bear
+
+# en:
+#   A bear covered in glistening white fur, habituated to cold conditions. Like all
+#   ursines, it will become enraged if badly hurt.
+寒冷な環境に適応した、白く輝く毛皮に覆われた熊だ。他の熊類と同様に、ひどく傷つくと激昂する。
+%%%%
+poltergeist
+
+# en:
+#   A ghostly trickster that is fond of possessing small objects and making them
+#   fly noisily through the air.
+小さな物に取り憑き、それを騒々しく宙に飛ばすことを好む、幽霊のいたずら者だ。
+%%%%
+polterguardian
+
+# en:
+#   Many poltergeists are fiercely territorial over the domains they choose to
+#   haunt, but these have extended that protection even to the people who share
+#   their domain with them. Some say they must be the lingering souls of those who
+#   guarded the Vaults in life; others suggest the Ironbound Order simply recruited
+#   them in common cause. Whichever is true, their very presence shelters other
+#   creatures from missiles, causing sling and spell alike to veer off-course at the
+#   last moment.
+多くのポルターガイストは自らが取り憑くことを選んだ領域に対して激しい縄張り意識を持つが、これらはその守護を、領域を共有する人々にまで広げている。生前に宝物庫を守っていた者たちの残留した魂に違いないと言う者もいれば、鉄縛団が共通の目的のために彼らを雇い入れただけだと言う者もいる。どちらが真実であれ、その存在そのものが他の生物を飛び道具から守っており、投石も呪文も最後の瞬間に軌道を逸らしてしまう。
+%%%%
+profane servitor
+
+# en:
+#   A blasphemous being that was once an angel of the Shining One. It now stands as
+#   unliving proof that not even the holiest of beings are beyond Yredelemnul's
+#   grasp.
+かつては輝けるものの天使であった冒涜的な存在だ。今では、最も神聖な存在でさえイレデレンヌルの掌中から逃れられないことの、生ならざる証として立っている。
+%%%%
+program bug
+
+# en:
+#   A ravenous and incredibly buggy monster. Please report its existence to the
+#   DevTeam.
+貪欲で、とてつもなくバグだらけのモンスターだ。その存在を開発チームに報告してほしい。
+%%%%
+protean progenitor
+
+# en:
+#   A gargantuan humanoid of fractured shape from the aeons when the seas were but
+#   primordial soup. The many shapeshifters of the dungeon once sloughed off from
+#   these unfathomably ancient beings, and when they themselves finally cease, even
+#   their remains will give birth one last time to furious monsters.
+海がまだ原始のスープにすぎなかった太古の時代から存在する、ひび割れた姿の巨大な人型生物だ。ダンジョンの数多くの変身能力者は、かつてこの計り知れぬほど古い存在から剥がれ落ちたものであり、彼ら自身がついに息絶えるときには、その亡骸でさえ最後にもう一度、猛り狂う怪物たちを生み出す。
+%%%%
+putrid mouth
+
+# en:
+#   A starved spirit whose mouth is a pit of rot, emitting vile fumes. Its putrid
+#   maw cannot eat the food it finds, so it moans with rage and desparate hunger.
+口が腐敗の穴と化し、おぞましい悪臭を放っている飢えた霊だ。その腐った口は見つけた食べ物を食べることができず、そのため怒りと必死の飢えにうめき声を上げている。
+%%%%
+purple draconian
+
+# en:
+#   A muscular purple-scaled humanoid with a reptilian tail and small wings.
+紫色の鱗、爬虫類の尾、小さな翼を持つ、筋骨たくましい人型生物だ。
+%%%%
+queen bee
+
+# en:
+#   A ruler of a swarm of bees, even larger and more dangerous than its many
+#   offspring.
+蜂の群れを統べる支配者で、数多くの子供たちよりもさらに大きく危険だ。
+%%%%
+quicksilver elemental
+
+# en:
+#   A mercurial spirit drawn from the elemental plane of earth. It exists in
+#   this world by inhabiting a shimmering body of liquid metal.
+大地の精霊界から呼び出された、移り気な精霊だ。きらめく液体金属の体に宿ることで、この世界に存在している。
+%%%%
+quokka
+
+# en:
+#   A pesky little marsupial that is a bit like a rat, but not quite.
+ネズミに少し似ているが、ネズミとはちょっと違う、厄介な小さい有袋類だ。
+%%%%
+radroach
+
+# en:
+#   A giant cockroach that has been exposed to high amounts of mutagenic energy. It
+#   is horrifyingly mutated, but this has only made it stronger.
+大量の変異を引き起こすエネルギーにさらされた巨大なゴキブリだ。おぞましく変異しているが、それによってかえって強くなっている。
+%%%%
+ragged hierophant
+
+# en:
+#   A bedraggled priest, once-fine robes now lined with salt and dust. Forsaken by
+#   the gods, it now relies on constructs to protect itself.
+みすぼらしい身なりの司祭で、かつては立派だった法衣は今や塩と埃にまみれている。神々に見捨てられ、今では身を守るために構造体に頼っている。
+%%%%
+rakshasa
+
+# en:
+#   A maneater demon, bestial and misshapen, in search of hidden power and
+#   knowledge. It is an expert in the art of illusion, and is exceptionally
+#   intelligent and cruel.
+隠された力と知識を求める、獣のようないびつな姿をした人食いのデーモンだ。幻影の術の達人であり、並外れて賢く残酷である。
+%%%%
+rat
+
+# en:
+#   A dirty rodent that has grown large and aggressive in the dungeon environment.
+ダンジョンの環境で大きく攻撃的に育った、汚らしい齧歯類だ。
+%%%%
+raiju
+
+# en:
+#   A profoundly unnatural hound, crackling with electricity. It travels in packs,
+#   and covers great distances by bursting into living lightning.
+電気をパチパチと放つ、ひどく不自然な猟犬だ。群れで移動し、生きた稲妻となってほとばしることで長い距離を一気に移動する。
+%%%%
+red devil
+
+# en:
+#   A larger cousin of the common imp, with a fiendish grin and two short wings
+#   sprouting from its shoulders. It favours tridents and loves to skewer its
+#   victims with painful barbs.
+ありふれたインプのより大きな親類で、悪魔のような笑みを浮かべ、肩からは二枚の短い翼が生えている。三叉槍を好み、痛みを伴うかえしで犠牲者を串刺しにするのが大好きだ。
+%%%%
+red draconian
+
+# en:
+#   A muscular red-scaled humanoid with a reptilian tail and small wings.
+赤色の鱗、爬虫類の尾、小さな翼を持つ、筋骨たくましい人型生物だ。
+%%%%
+raven
+
+# en:
+#   A jet-black corvid with a nasty beak and a reputation for heralding bad luck.
+#   Most ornithologists consider this a baseless stereotype; the rest are still
+#   recovering from a series of staggeringly unlikely accidents.
+意地の悪いくちばしを持ち、不運の前触れとして知られる漆黒のカラスだ。ほとんどの鳥類学者はこれを根拠のない固定観念と考えているが、残りの鳥類学者は、驚くほどありそうにない一連の事故からいまだに回復しきれていない。
+%%%%
+rending blade
+
+# en:
+#   A crackling weapon formed of condensed magical energy. It can cut through entire
+#   rows of adversaries whenever its creator lands a melee attack.
+凝縮された魔力から形作られた、パチパチと音を立てる武器だ。創造主が近接攻撃を命中させるたびに、敵の列をまるごと切り裂くことができる。
+%%%%
+revenant
+
+# en:
+#   The skeletal remains of someone who died unmourned and forgotten. It burns with
+#   an unquenchable hunger to be remembered.
+悼まれることもなく忘れ去られて死んだ者の、骸骨と化した亡骸だ。覚えていてほしいという癒やしがたい飢えに燃えている。
+%%%%
+revenant soulmonger
+
+# en:
+#   A timeworn revenant whose flames dance with the silhouettes of long-forgotten
+#   atrocities. Cursed with a hunger they can never satisfy, they unleash these
+#   long-dead echoes to reenact violence upon any soul they deem worthy of adding to
+#   their eternal collection.
+長い年月を経たレヴナントで、その炎の中では遠い昔に忘れ去られた残虐行為の影が踊っている。決して満たされることのない飢えに呪われており、これら遠い昔に死んだ者たちの残響を解き放っては、自らの永遠の収集品に加えるに値すると見なした魂に、暴力を再現させる。
+%%%%
+ribbon worm
+
+# en:
+#   A giant annelid, glistening with slime, with unusually large teeth. It expels
+#   fragments of its own innards to ensnare unsuspecting prey.
+粘液でぬらぬらと光る、並外れて大きな歯を持つ巨大な環形動物だ。自らの内臓の断片を吐き出して、油断した獲物を絡め取る。
+%%%%
+rime drake
+
+# en:
+#   A small but dangerous dragon. Its breath is visible even on the warmest days.
+小さいながらも危険なドラゴンだ。その吐息は、どんなに暖かい日でも白く見える。
+%%%%
+river rat
+
+# en:
+#   A rodent with hair of a most peculiar green colour, and a powerful bite. It
+#   tends to form great swarms with its kin.
+ひどく奇妙な緑色の毛と、強力な噛みつきを持つ齧歯類だ。同族と大きな群れを作る傾向がある。
+%%%%
+rock fish
+
+# en:
+#   A strange stone-scaled fish that swims through solid rock with the same ease
+#   that most fish do through water.
+ほとんどの魚が水中を泳ぐのと同じくらいたやすく、固い岩の中を泳ぎ回る、石の鱗を持つ奇妙な魚だ。
+%%%%
+rockslime
+
+# en:
+#   An oozing avalanche, scouring the ground beneath it as it rumbles forward.
+#   It consumes only the metal and bone from its victims, using them to reinforce
+#   itself even further.
+轟音を立てて前進しながら、下の地面を削り取っていく、にじみ出る雪崩だ。犠牲者からは金属と骨だけを取り込み、それを使って自らをさらに強化する。
+%%%%
+Royal Jelly
+
+# en:
+#   A particularly rich and golden gelatinous thing. Smaller jellies swim and pulse
+#   just below its surface, ready to burst forth at the slightest touch.
+とりわけ豪華な、金色をしたゼリー状の存在だ。その表面のすぐ下では小さなジェリーたちが泳ぎ、脈打っており、ほんのわずかに触れただけで飛び出そうと待ち構えている。
+%%%%
+royal mummy
+
+# en:
+#   An ancient pharaoh, embalmed and cursed to undeath, now capable of great and
+#   terrifying feats of magic.
+防腐処理を施され、不死者となるよう呪われた古代のファラオだ。今では恐るべき偉大な魔法の業を行うことができる。
+%%%%
+rust devil
+
+# en:
+#   A hideous humanoid figure with rust-spotted metal skin, spreading corrosion
+#   and decay to all it touches.
+錆の浮いた金属の肌を持つ、おぞましい人型の姿をしたもので、触れるものすべてに腐食と朽ちをもたらす。
+%%%%
+sacred lotus
+
+# en:
+#   A large and vivid bloom drifting placidly upon the surface of the water. The
+#   cradle of the lotus's petals shine with eternity and elegance - while it is
+#   entirely harmless, it would take immense effort to destroy it.
+水面に穏やかに漂う、大きく鮮やかな花だ。蓮の花びらが形作る揺りかごは、永遠と優雅さに輝いている。まったく無害ではあるが、これを破壊するには途方もない労力が必要だろう。
+%%%%
+salamander
+
+# en:
+#   A red, flaming half-human half-snake creature with a legendary affinity for
+#   fire.
+赤く燃え上がる、半人半蛇の生物で、炎との伝説的な親和性を持っている。
+%%%%
+salamander mystic
+
+# en:
+#   A member of the salamander's scholarly caste, possessed of lesser size and
+#   strength, but wise in the ways of magic.
+サラマンダーの学者階級に属する者で、体格と力では劣るが、魔法の道に通じている。
+%%%%
+salamander tyrant
+
+# en:
+#   An intimidating volcano lord. It commands the magma of its realm as an
+#   extension of its body, and the majesty of its gaze can weaken even the proudest
+#   challenger.
+威圧的な火山の王だ。自らの領域の溶岩を体の延長として操り、その眼差しの威厳は、どれほど誇り高い挑戦者でさえ弱らせることができる。
+%%%%
+saltling
+
+# en:
+#   A small, human-shaped agglomeration of salt. It was created by the last
+#   fugitive loyalists of the fallen eastern empire, forced in desperation to
+#   construct golems from local resources to defend themselves.
+塩が集まってできた、小さな人の形をしたものだ。滅亡した東方の帝国の最後の逃亡者である忠臣たちによって作られた。彼らは身を守るため、やむにやまれずその地の資源からゴーレムを作ったのだ。
+%%%%
+satyr
+
+# en:
+#   A more intelligent relative of the faun, often found in their company, and far
+#   more unforgiving of — and dangerous to — interlopers.
+ファウヌスのより知能の高い親類で、しばしば彼らと行動を共にしている。侵入者に対してははるかに容赦がなく、そしてはるかに危険である。
+%%%%
+scorpion
+
+# en:
+#   A loathsome arachnid, armed to the teeth. Its body is covered in a thick
+#   carapace, its tail is tipped by a venomous sting, and its forelimbs are
+#   equipped with a pair of sharp grasping claws.
+完全武装した、忌まわしいクモ形類だ。その体は分厚い甲殻に覆われ、尾の先には毒針があり、前肢には鋭い一対の掴むための鋏が備わっている。
+%%%%
+screaming refraction
+
+# en:
+#   A deeply unfortunate soul mostly processed into crystal by some malevolent tear
+#   in reality. Ethereal reflections of its past and future suffering are cast upon
+#   nearby surfaces and foes.
+現実に開いた何らかの邪悪な裂け目によって、その大部分を水晶へと変えられてしまった、ひどく不運な魂だ。その過去と未来の苦しみの霊妙な反射像が、近くの物の表面や敵の上に投げかけられる。
+%%%%
+scrub nettle
+
+# en:
+#   An irritable, bristling shrub. It fends off anything that might graze upon it by
+#   launching some of its innumerable toxic stinging hairs.
+怒りっぽい、とげだらけの低木だ。無数にある有毒な刺毛の一部を飛ばして、自分を食もうとするものを追い払う。
+%%%%
+sea snake
+
+# en:
+#   A brightly coloured snake, very comfortable in the water. It has a highly
+#   potent venomous bite.
+水中をとても好む、鮮やかな色の蛇だ。非常に強力な毒を持つ噛みつきを備えている。
+%%%%
+searing wretch
+
+# en:
+#   An animated corpse alight with terrible fire. The flames are fueled by its
+#   regenerating flesh, which bubbles and melts as it grows.
+恐ろしい炎に包まれて動く死体だ。その炎は再生し続ける肉体を燃料としており、肉体は伸びるそばから泡立ち、溶けていく。
+%%%%
+seismosaurus
+
+# en:
+#   A stubborn and fiercely territorial lizard with the strength of a mountain. Its
+#   thunderous footfalls herald violent tremors.
+山のような力を持つ、頑固で縄張り意識の激しいトカゲだ。その雷のような足音は激しい揺れの前触れである。
+%%%%
+seismosaurus egg
+
+# en:
+#   A lizard egg the size of a small boulder and nearly as hard. Perhaps as a
+#   defence mechanism, they hatch rapidly in the presence of predators and even a
+#   newborn can give all but the most ambitious of monsters a reason to consider an
+#   easier meal.
+小さな岩ほどの大きさで、ほとんど同じくらい硬いトカゲの卵だ。おそらくは防衛の仕組みとして、捕食者がそばにいると急速に孵化する。生まれたばかりの幼体でさえ、よほど野心的な怪物でもない限り、もっと楽な食事を探そうと思わせるのに十分である。
+%%%%
+seraph
+
+# en:
+#   A six-winged servant of the good gods, of the highest rank of the angelic
+#   hosts. Its eyes burn with divine fire.
+善なる神々に仕える六枚の翼を持つ従者で、天使の軍勢の中でも最高位に属する。その目は神の炎で燃えている。
+%%%%
+servant of whispers
+
+# en:
+#   A member of an order of monks who abandoned their former faith. It now serves
+#   a minor god of wind and whispers, who allows it to calm the air and, when
+#   in great need, to break the stillness with divine thunder.
+かつての信仰を捨てた修道士の教団の一員だ。今では風と囁きを司る小神に仕えており、その神によって大気を鎮め、そして必要に迫られたときには神の雷によって静寂を破ることを許されている。
+%%%%
+shadow
+
+# en:
+#   A featureless silhouette of your own body, moving independently through the
+#   divine power of Dithmenos. No matter how many times it is struck down, it will
+#   reform itself, for a shadow is inextinguishable so long as whatever cast it
+#   remains.
+ディスメノスの神力によって独立して動く、あなた自身の体の、のっぺりとした影法師だ。何度打ち倒されようとも元の姿に戻る。影を落とすものが存在する限り、影は決して消えないのだから。
+%%%%
+shadowghast
+
+# en:
+#   A skulking apparition that disguises itself as a harmless shadow. Attuned to the
+#   dim light of the dungeon, it can slip in and out of sight at will, moving
+#   swiftly from one pool of shade to the next before striking unerringly at the
+#   blind spots of those who cannot see it.
+無害な影に化けてこっそりと動き回る亡霊だ。ダンジョンのほの暗い光に慣れ親しんでおり、意のままに姿を現したり消したりすることができる。影だまりから影だまりへと素早く移動し、自分を見ることができない者の死角を寸分違わず突いてくる。
+%%%%
+shadow dragon
+
+# en:
+#   A great umbral dragon, radiating evil and death. Its breath reeks of the grave.
+邪悪と死を放つ、巨大な影のドラゴンだ。そのブレスは墓場の臭いがする。
+%%%%
+shadow prism
+
+# en:
+#   A prism-like silhouette which wavers with barely-contained destructive energy.
+#   Any blow which disrupts its form will result in a violent blast of shadow.
+かろうじて抑え込まれた破壊のエネルギーで揺らめく、晶柱のような影だ。その形を乱す一撃を受けると、激しい影の爆発が起こる。
+%%%%
+shadow puppet
+
+# en:
+#   A minor servant of living shadow whose form wavers perpetually on the edge of
+#   recognition - as if an unseen light were flickering behind something almost
+#   familiar.
+#
+#   The strength of its attacks increases in proportion with the power of the spell
+#   which summoned it.
+生ける影に仕える下級の従者で、その姿は常に、見覚えがあるかないかの境目で揺らめいている。まるで、見えない光がどこか見覚えのある何かの背後で明滅しているかのようだ。
+
+その攻撃の強さは、それを召喚した呪文の威力に比例して増す。
+%%%%
+shadow turret
+
+# en:
+#   A strangely static silhouette whose form suggests a large cannon. Though it uses
+#   no gunpowder, the depths of its bore flickers angrily with every shot, as if
+#   remembering the fiery light of its ignition.
+大砲のような形をした、奇妙に静止した影だ。火薬は使わないが、その砲身の奥は一発撃つたびに怒ったように揺らめく。まるで点火の炎の光を思い出しているかのようだ。
+%%%%
+shadow wraith
+
+# en:
+#   A mist-wreathed skeletal shadow, hanging in mid-air. It drains away the
+#   life force of living beings.
+霧に包まれた骸骨の影で、宙に浮かんでいる。生ける者の生命力を吸い取る。
+%%%%
+shambling mangrove
+
+# en:
+#   A gnarled mangrove, possessed of sapience and a cantankerous disposition. Its
+#   roots run deep through the water and soil of its marshy home and can make
+#   footing very difficult for those who provoke its ire. Marsh fauna are often
+#   found nesting within its branches, and may not take kindly to being disturbed.
+知性と気難しい気性を持った、節くれだったマングローブだ。その根は湿地の住処の水と土の奥深くまで張り巡らされており、その怒りを買った者の足元をひどくおぼつかなくさせる。湿地の動物たちがその枝の中に巣を作っていることも多く、邪魔をされると黙ってはいないかもしれない。
+%%%%
+shard shrike
+
+# en:
+#   An incredibly fast-moving bird, known for impaling its prey on shards of ice
+#   before tearing them to pieces. It has acclimated to the desolate wastes of
+#   Cocytus, and is enveloped with an accursed chill.
+信じられないほど素早く動く鳥で、獲物を氷の破片に串刺しにしてから引き裂くことで知られている。コキュートスの荒涼とした荒野に順応しており、呪われた冷気に包まれている。
+%%%%
+shining eye
+
+# en:
+#   A strangely deformed floating eyeball, pulsating with flesh-twisting energy.
+肉体を捻じ曲げるエネルギーで脈打つ、奇妙に歪んだ浮遊する眼球だ。
+%%%%
+shock serpent
+
+# en:
+#   A sinuous serpent whose body crackles with volatile electricity. Its electric
+#   shroud can discharge when struck, inflicting a painful shock on any nearby
+#   foes.
+不安定な電気で体をパチパチと鳴らしている、しなやかな大蛇だ。その電気の覆いは攻撃を受けると放電し、近くにいる敵に痛烈な衝撃を与えることがある。
+%%%%
+shooting star
+
+# en:
+#   A glimmering spark of magical energy. It seeks out nearby enemies to expend
+#   itself upon, dealing damage and pushing them backwards.
+#
+#   It does not block its allies' line of fire.
+魔力のきらめく火花だ。近くの敵を探し出して自らを費やし、ダメージを与えて後方へ押し返す。
+
+味方の射線を遮ることはない。
+%%%%
+silent spectre
+
+# en:
+#   A terrible spirit which brings an unearthly silence to the area around it,
+#   making it impossible to recite the magical incantations involved with casting
+#   spells or reading scrolls.
+周囲に異様な静寂をもたらす恐ろしい霊だ。そのせいで、呪文の詠唱や巻物の読み上げに必要な魔法の呪文を唱えることができなくなる。
+%%%%
+simulacrum
+
+# en:
+#   An icy replica of a monster, animated by heretical magics.
+異端の魔術によって動かされている、氷でできたモンスターの似姿だ。
+%%%%
+sixfirhy
+
+# en:
+#   A small vile creature that moves in bursts, stopping then darting with
+#   lightning speed. It sprays sparks as it goes.
+小さく邪悪な生物で、止まっては稲妻のような速さで突進するという断続的な動き方をする。移動しながら火花を撒き散らす。
+%%%%
+sky beast
+
+# en:
+#   A strange aerial creature formed of fleshy clouds and electric feathers. It
+#   commands the faint wind currents of the Dungeon with every strike, which will
+#   buffet its victims in dramatic correlation to the amount of open air around
+#   said prey.
+肉でできた雲と電気の羽根から形作られた、奇妙な空の生物だ。一撃ごとにダンジョンのかすかな風の流れを操り、獲物の周りの開けた空間の広さに劇的に比例して犠牲者を吹き飛ばす。
+%%%%
+skyshark
+
+# en:
+#   Skysharks cut through the air with a thoughtless ease. Just a taste of blood
+#   gives them an enraged strength, and further morsels drive them into a frenzy.
+スカイシャークは何の造作もなく空を切り裂いて進む。血をひと舐めしただけで激昂した力を得て、さらに獲物を口にすると狂乱状態に陥る。
+%%%%
+sleepcap
+
+# en:
+#   A surprisingly ambulatory mushroom. It wafts its spores over prey to send them
+#   into a deep sleep, making it simple for the fungus to kill and devour them.
+#   It can take months for its mycelia to fully infiltrate and digest victims.
+意外にもよく歩き回るキノコだ。獲物に胞子を吹きかけて深い眠りに落とし、楽々と殺して食らう。その菌糸が犠牲者に完全に入り込んで消化するには何か月もかかることがある。
+%%%%
+slime creature
+
+# en:
+#   An icky glob of slime that slithers along the ground. It can merge with other
+#   slime creatures to become dramatically more dangerous, and is especially likely
+#   to do so in confined spaces.
+地面を這い回る、べとべとしたスライムの塊だ。他のスライムと合体することで劇的に危険になることがあり、狭い場所では特にそうしやすい。
+%%%%
+slymdra
+
+# en:
+#   A quivering amalgam of viscous slime, its many pseudopods gnashing at the air
+#   like a throng of reptilian maws. It rapidly absorbs nearby slime creatures into
+#   itself, growing a new 'head' for each one and becoming even more resilient.
+#
+#   Whether through convergent evolution or genetic memory, it also shares the
+#   hydra's most infamous trait: lopping off a head with a bladed weapon will just
+#   make it grow two more unless the wound is cauterised by a flaming weapon.
+#
+#   When not stalking prey, its constituent slimes may separate from it again,
+#   perhaps to seek new food sources on their own.
+粘り気のあるスライムがぶよぶよと寄り集まったもので、その無数の偽足は爬虫類の口の群れのように空中で歯噛みしている。近くのスライムを急速に自らに取り込み、一体ごとに新しい「首」を生やして、さらにしぶとくなっていく。
+
+収斂進化によるものか遺伝的な記憶によるものか、ヒドラの最も悪名高い特徴も持っている。刃のある武器で首を切り落とすと、炎の武器で傷口を焼かない限り、新たに二本の首が生えてくるだけなのだ。
+
+獲物を狙っていないときは、それを構成するスライムたちが再び分かれることがある。おそらくは、それぞれ新たな食料を求めに行くのだろう。
+%%%%
+small abomination
+
+# en:
+#   A hideous mass of body parts. Each varies in speed, strength, or resilience by
+#   the nature of whatever unfortunates were used to make it.
+体の部位がおぞましく寄り集まった塊だ。その素早さ、力強さ、しぶとさは、作るのに使われた不運な者たちの性質によって一体ごとに異なる。
+%%%%
+smoke demon
+
+# en:
+#   An infernal demon that manifests itself as a writhing cloud of smoke. Having
+#   considerable pyrokinetic powers, it can very effectively attack its enemies
+#   from afar.
+のたうつ煙の雲として姿を現す地獄のデーモンだ。かなりの念動発火能力を持ち、遠くから敵を極めて効果的に攻撃することができる。
+%%%%
+snaplasher vine
+
+# en:
+#   A swift and sinuous vine brought alive by a dryad's magic. It can quickly bind
+#   and entangle the dryad's foes, dragging them back to the forest from which it
+#   surges.
+ドライアドの魔法によって命を吹き込まれた、素早くしなやかな蔦だ。ドライアドの敵を素早く縛り上げて絡め取り、蔦が伸び出してきた森へと引きずり戻すことができる。
+%%%%
+snaplasher vine segment
+
+# en:
+#   Part of a swift and sinuous vine brought alive by a dryad's magic. It can
+#   quickly bind and entangle the dryad's foes, dragging them back to the forest
+#   from which it surges.
+ドライアドの魔法によって命を吹き込まれた、素早くしなやかな蔦の一部だ。ドライアドの敵を素早く縛り上げて絡め取り、蔦が伸び出してきた森へと引きずり戻すことができる。
+%%%%
+snapping turtle
+
+# en:
+#   A belligerent testudine with an armoured carapace. Its neck is surprisingly
+#   extensible and can reach out and bite from afar.
+装甲のような甲羅を持つ、喧嘩っ早いカメだ。その首は驚くほどよく伸び、離れたところから噛みつくことができる。
+%%%%
+solar ember
+
+# en:
+#   A mote of intense light and heat manifested by a sun scarab. It is linked to
+#   their essence and will never leave their side, being reconstituted time and time
+#   again whenever it is extinguished.
+#
+#   Some myths even claim that the sun which shines down upon the outside world was
+#   once carried around by such a scarab.
+太陽のスカラベが生み出した、強烈な光と熱の粒だ。スカラベの本質と結びついており、決してそのそばを離れず、消されるたびに何度でも作り直される。
+
+外の世界に降り注ぐ太陽も、かつてはこのようなスカラベが運んでいたのだと語る神話さえある。
+%%%%
+soul eater
+
+# en:
+#   A demon that manifests as a malignantly shifting shadow gliding through the
+#   air. It radiates an intense aura of negative force.
+悪意をもって形を変えながら宙を滑るように進む影として姿を現すデーモンだ。強烈な負のエネルギーのオーラを放っている。
+%%%%
+soul wisp
+
+# en:
+#   A tiny fragment of a living soul, splintered from the body in which it belongs.
+#   Too mindless to be fully controlled, it seeks nothing but to reunite with its
+#   greater self once more - unfortunately, this process tends to be more violent
+#   than the magic which created it.
+生ける魂の小さな欠片で、本来属するべき体から引き裂かれたものだ。完全に制御するにはあまりに無知性で、ただもう一度本来の自分と一つになることだけを求めている。あいにく、その過程はそれを生み出した魔法よりも激しいものになりがちだ。
+%%%%
+spark wasp
+
+# en:
+#   A profoundly unnatural insect covered in vaguely metallic plates. Its stinger
+#   crackles with electricity, capable of delivering a powerful shock to unwary
+#   victims, and is capable of closing the distance with them at shockingly
+#   lethal speed.
+うっすらと金属のような板に覆われた、ひどく不自然な昆虫だ。その針は電気でパチパチと音を立て、油断した犠牲者に強烈な電撃を与えることができる。また、衝撃的なほど致命的な速さで犠牲者との距離を詰めることもできる。
+%%%%
+spatial maelstrom
+
+# en:
+#   A malevolent rift in reality, dissolving all terrain it passes by into swirling
+#   vortices.
+現実に生じた悪意ある裂け目で、通り過ぎるすべての地形を渦巻く渦へと溶かしていく。
+%%%%
+spectral weapon
+
+# en:
+#   A spirit drawn from a weapon — it never strikes on its own. Damage done to it
+#   will be partially mirrored onto the caster.
+武器から引き出された霊だ。自ら攻撃することは決してない。これに与えられたダメージは、その一部が術者に跳ね返る。
+%%%%
+spellspark servitor
+
+# en:
+#   A magical construct forged around a spark of its creator's own arcane power,
+#   allowing it to wield some of their destructive magics directly.
+創造主自身の秘術の力の火花を核として作り出された魔法の構造体で、そのおかげで創造主の破壊魔法の一部を直接振るうことができる。
+%%%%
+sphinx marauder
+
+# en:
+#   A wicked youthful hybrid with a woman's head, a lion's body, and the wings of
+#   an eagle. It gleefully wreaks havoc with both the violent turbulence of
+#   high winds and the frustration of bewildering magics.
+女の頭、獅子の体、鷲の翼を持つ、邪悪で若々しい合いの子だ。強風の激しい乱気流と、人を惑わす魔法による苛立ちの両方で、嬉々として大混乱を引き起こす。
+%%%%
+splinterfrost barricade
+
+# en:
+#   A durable barricade made of ice reinforced with forgecraft magic. A lattice of
+#   precise hairline cracks are visible just beneath its surface which allow it to
+#   fracture into a barrage of razor-sharp projectiles whenever it sustains critical
+#   damage.
+鍛冶の魔法で強化された氷でできた、頑丈なバリケードだ。表面のすぐ下には精密な細いひびが格子状に走っているのが見える。そのおかげで、致命的なダメージを受けると、剃刀のように鋭い飛び道具の弾幕となって砕け散る。
+%%%%
+spriggan
+
+# en:
+#   A small humanoid, resembling a human or elf except for the size. It moves at a
+#   great speed, and loves playing dirty tricks on people.
+大きさを除けば人間やエルフに似た、小さな人型生物だ。非常に素早く動き、人に汚いいたずらを仕掛けるのが大好きだ。
+%%%%
+spriggan air mage
+
+# en:
+#   A magically adept spriggan blessed with the secrets of the winds.
+魔法に長け、風の秘密を授かったスプリガンだ。
+%%%%
+spriggan berserker
+
+# en:
+#   A relatively mighty spriggan that plunges recklessly into combat.
+比較的力の強いスプリガンで、向こう見ずに戦いへと飛び込んでいく。
+%%%%
+spriggan defender
+
+# en:
+#   An elite, well-equipped spriggan warrior, renowned for its unbelievable agility
+#   and its prowess with advanced weaponry.
+装備の整った精鋭のスプリガンの戦士で、信じられないほどの敏捷さと高度な武器の腕前で名高い。
+%%%%
+spriggan druid
+
+# en:
+#   A spriggan whose connection with the birds and the beasts is exceptionally
+#   strong. If it dies, its sacrifice will heal and temporarily strengthen nearby
+#   animals.
+鳥や獣とのつながりが並外れて強いスプリガンだ。これが死ぬと、その犠牲によって近くの動物たちが癒やされ、一時的に強化される。
+%%%%
+spriggan rider
+
+# en:
+#   A spriggan that has tamed a hornet as its mount, and is tasked with protecting
+#   the spriggan fens and cairns from intruders.
+巨大赤色蜂を乗騎として手懐けたスプリガンで、スプリガンの沼地や石塚を侵入者から守る任務を負っている。
+%%%%
+star jelly
+
+# en:
+#   A white gelatinous mound that pulses with a strange iridescence. Its body
+#   absorbs magical energy like a sponge, and when sufficiently injured, will
+#   unleash this energy as a flurry of shooting stars.
+奇妙な虹色の輝きで脈打つ、白いゼリー状の塊だ。その体は魔力をスポンジのように吸収し、十分に傷つくとそのエネルギーを流れ星の嵐として解き放つ。
+%%%%
+starcursed mass
+
+# en:
+#   A mass of stellar detritus that glows with the sickly putrescence of a dying
+#   star, forever shrieking soundlessly in a voice beyond mortal grasp. Its form
+#   undulates constantly, dividing spontaneously and then withdrawing when
+#   threatened. When divided, its deafening chorus of screams can overwhelm the
+#   minds of even the bravest warriors, leaving them stunned and helpless.
+死にゆく星の病的な腐敗の光を放つ、星の残骸の塊で、定命の者には理解の及ばぬ声で永遠に音もなく叫び続けている。その姿は絶えずうねっており、脅かされると自然に分裂し、そして退いていく。分裂すると、その耳をつんざくような叫びの合唱は最も勇敢な戦士の精神さえ圧倒し、気絶させて無力にしてしまう。
+%%%%
+starflower
+
+# en:
+#   A mass of lashing vines and tentacles growing out of the husk of a dead star.
+#   Space itself runs through the xylem and phloem of its branches, which appear to
+#   be in many places at once.
+死んだ星の抜け殻から生え出た、のたうつ蔦と触手の塊だ。その枝の木部と師部には空間そのものが流れており、枝は同時に多くの場所に存在しているように見える。
+%%%%
+starspawn tentacle
+
+# en:
+#   The writhing appendage of a tentacled starspawn, capable of grasping nearly any
+#   prey and dragging it back to be devoured. Any damage dealt to it hurts the
+#   whole creature.
+触手の落とし子のうごめく付属肢で、ほとんどどんな獲物でも掴んで、食らうために引きずり戻すことができる。これに与えられたダメージは、本体全体を傷つける。
+%%%%
+starspawn tentacle segment
+
+# en:
+#   A sinuous length of an extended starspawn tentacle. Any damage dealt to it
+#   hurts the whole creature.
+伸ばされた触手の落とし子の触手の、しなやかに長い一部だ。これに与えられたダメージは、本体全体を傷つける。
+%%%%
+statue
+
+# en:
+#   A piece of sculpted granite with glowing red eyes. Although it is rooted to its
+#   base, it can still move parts of itself.
+赤く光る目を持つ、花崗岩の彫刻だ。台座に根付いてはいるが、体の一部を動かすことはできる。
+%%%%
+steelbarb worm
+
+# en:
+#   A large worm covered with hard, spiky metal plates. Despite the apparent
+#   heaviness of its outer armour, it is rather fast.
+硬くとげだらけの金属の板に覆われた大きなワームだ。外側の装甲は見るからに重そうだが、かなり素早い。
+%%%%
+stoker
+
+# en:
+#   A mortal who made an unholy pact in life, now chained to tend the fires of
+#   hell in undeath as payment.
+生前に不浄な契約を結んだ定命の者で、その代償として、不死者となった今は地獄の炎の番をするよう鎖でつながれている。
+%%%%
+storm dragon
+
+# en:
+#   A powerful dragon with a hide of thick matte scales almost like blue rubber,
+#   and enormous scaly wings crackling with sparks.
+青いゴムにも似た分厚い艶のない鱗の皮を持ち、火花を散らす巨大な鱗の翼を備えた強大なドラゴンだ。
+%%%%
+strange machine
+
+# en:
+#   A strange mechanical contraption, all hisses and pops. Shadows seem to dance
+#   across its reflective surface.
+シューシュー、ポンポンと音を立てる、奇妙な機械仕掛けの装置だ。その反射する表面の上を、影が踊っているように見える。
+%%%%
+sun moth
+
+# en:
+#   A moth of transcendent beauty, coated in pyrophoric scales. Tiny cinders dance
+#   and twirl in its wake and whenever it beats its wings, they ignite in such
+#   spectacular displays of incandescence that one could almost forget how far away
+#   the sun is from this place.
+自然発火する鱗粉に覆われた、超越的な美しさを持つ蛾だ。その後には小さな燃えさしが舞い踊り、羽ばたくたびにそれらが燃え上がって目を見張るような白熱の光景を繰り広げるので、ここから太陽がどれほど遠いかを忘れてしまいそうになるほどだ。
+%%%%
+swamp dragon
+
+# en:
+#   A slimy dragon, its gnarly hide covered in swamp muck. Noxious gases dribble
+#   from its snout.
+沼の泥に覆われた節くれだった皮を持つ、ぬるぬるしたドラゴンだ。その鼻先からは有毒なガスが滴っている。
+%%%%
+tarantella
+
+# en:
+#   A small but greatly-feared spider. Its touch alone causes victims to break into
+#   a frenzied dance.
+小さいながらも大いに恐れられている蜘蛛だ。触れられただけで、犠牲者は狂ったように踊り出してしまう。
+%%%%
+tainted leviathan
+
+# en:
+#   Before even the oldest of ancient liches mastered life and death, a group of
+#   titans attempted to pull themselves free of mortality through brute strength.
+#   They almost succeeded before rot dragged them to Ereshkigal. A glimmer of their
+#   former beauty remains, alluring despite the stench.
+最も古い太古のリッチたちでさえ生と死を極めるより前に、タイタンの一団が力ずくで定命の運命から逃れようとした。彼らはあと一歩で成功するところだったが、腐敗によってエレシュキガルのもとへと引きずり込まれた。かつての美しさの名残がかすかに残っており、悪臭にもかかわらず人を惹きつける。
+%%%%
+tengu
+
+# en:
+#   A humanoid figure with the head and talons of a bird. Its ferociously combative
+#   nature belies its fragile appearance.
+鳥の頭と鉤爪を持つ人型の姿をしたものだ。その猛烈に好戦的な性質は、か弱そうな外見とは裏腹である。
+%%%%
+tengu conjurer
+
+# en:
+#   A tengu with a talent for the destructive magical arts.
+破壊の魔法の術に才能を持つ天狗だ。
+%%%%
+tengu reaver
+
+# en:
+#   An elite, ferocious tengu highly skilled with both steel and spells.
+鋼と呪文の両方に非常に熟達した、獰猛な精鋭の天狗だ。
+%%%%
+tengu warrior
+
+# en:
+#   A particularly bloodthirsty tengu who has opted to hone its skill in airborne
+#   fighting and weaponry instead of spellcasting.
+とりわけ血に飢えた天狗で、呪文の詠唱ではなく空中戦と武器の技を磨くことを選んだ。
+%%%%
+tentacle
+
+# en:
+#   The mighty tentacle of a kraken. Any damage dealt to it hurts the whole
+#   creature.
+クラーケンの強大な触手だ。これに与えられたダメージは、本体全体を傷つける。
+%%%%
+tentacle segment
+
+# en:
+#   A part of the mighty tentacle of a kraken. Any damage dealt to it hurts the
+#   whole creature.
+クラーケンの強大な触手の一部だ。これに与えられたダメージは、本体全体を傷つける。
+%%%%
+tentacled monstrosity
+
+# en:
+#   A writhing mass of tentacles, all covered in putrid mucus.
+腐った粘液にまみれた、のたうつ触手の塊だ。
+%%%%
+tentacled starspawn
+
+# en:
+#   A lumbering maw shrouded in a mass of sinuous tentacles. On spotting prey, its
+#   tentacles lunge outward, dragging victims directly to its waiting gullet.
+しなやかな触手の塊に覆われた、のっそりと動く大口だ。獲物を見つけると触手が外へ突き出され、犠牲者を待ち受ける喉へとまっすぐ引きずり込む。
+%%%%
+thrashing horror
+
+# en:
+#   A seething mass of yellow flesh. It thrashes erratically, staggering foes
+#   beneath the weight of its impacts.
+煮えたぎるような黄色い肉の塊だ。でたらめにのたうち回り、その打撃の重みで敵をよろめかせる。
+%%%%
+thermic dynamo
+
+# en:
+#   A clashing tempest of boundless energy, channelling into capacitor jewels. Its
+#   whirls of fire and ice occasionally escape and ricochet wildly off of walls.
+蓄電の宝石へと流れ込む、果てしないエネルギーがぶつかり合う嵐だ。その炎と氷の渦は時折逃げ出し、壁に当たって激しく跳ね返る。
+%%%%
+thorn hunter
+
+# en:
+#   A predatory marsh plant, possessed of motility and a rudimentary intelligence.
+#   It ensnares its prey with protrusions of spiny brambles and then skewers the
+#   trapped creatures with its razor-sharp thorns.
+運動能力と初歩的な知性を備えた、捕食性の湿地植物だ。とげだらけの茨を突き出して獲物を絡め取り、捕らえた生物を剃刀のように鋭い棘で串刺しにする。
+%%%%
+toadstool
+
+# en:
+#   A short-lived species of fungus typically found on or around decaying organic
+#   matter.
+ふつう朽ちつつある有機物の上やその周りに見られる、短命な種類の菌類だ。
+%%%%
+tormentor
+
+# en:
+#   A malign devil covered in all manner of claws, spines, and cruel hooks. It is
+#   able to inflict torturous agony on those foolish enough to gaze upon it.
+ありとあらゆる種類の鉤爪、とげ、残酷な鉤に覆われた邪悪な悪魔だ。愚かにもその姿を見つめた者に拷問のような苦痛を与えることができる。
+%%%%
+torpor snail
+
+# en:
+#   A ponderous gastropod with a rock-hard shell. It is said to be in some way
+#   connected with the god Cheibriados; its very presence slows the movements of
+#   unwary adventurers, leaving them easy prey for its terrifying, ever-gnashing
+#   radulae.
+岩のように硬い殻を持つ、のろのろとした腹足類だ。ケイブリアドス神と何らかのつながりがあると言われている。その存在そのものが油断した冒険者の動きを鈍らせ、絶えず歯ぎしりする恐ろしい歯舌の格好の餌食にしてしまう。
+%%%%
+training dummy
+
+# en:
+#   A mannequin used for battle practice.
+戦闘訓練に用いられるマネキンだ。
+%%%%
+troll
+
+# en:
+#   A huge and physically powerful humanoid creature. Short on intelligence but
+#   long on brawn, its thick knobbly hide heals rapidly from most wounds.
+巨大で肉体的に強大な人型生物だ。知性には乏しいが腕力にはあふれており、その分厚くこぶだらけの皮膚はほとんどの傷から素早く回復する。
+%%%%
+twister
+
+# en:
+#   A whirling vortex of frost.
+渦巻く冷気の竜巻だ。
+%%%%
+tyrant leech
+
+# en:
+#   An exceptionally aggressive blood-sucking annelid that thrives in swamps and
+#   marshlands.
+沼地や湿地で繁殖する、並外れて攻撃的な吸血性の環形動物だ。
+%%%%
+Tzitzimitl
+
+# en:
+#   A horrific fallen divinity, possessing jaws of gnashing stone and a necklace of
+#   starry organs. It spreads disease and despair, and patiently awaits the end of
+#   days when it will devour the sun.
+石の牙を噛み鳴らす顎と、星のような臓器でできた首飾りを持つ、おぞましい堕ちた神格だ。病と絶望を撒き散らし、太陽を貪り食らう終末の日を辛抱強く待っている。
+%%%%
+undying armoury
+
+# en:
+#   A swirling tempest of souls and steel: knights and blacksmiths and
+#   weaponmasters, all bound to weapons they once held in life. To fight one is like
+#   fighting an entire army.
+魂と鋼が渦巻く嵐だ。騎士、鍛冶師、武芸の達人たちが、生前に手にしていた武器にみな縛りつけられている。これと戦うことは、軍勢をまるごと相手にするようなものだ。
+%%%%
+ugly thing
+
+# en:
+#   An ugly thing. According to legend, it is the otherworldly spawn of a wizard's
+#   breeding experiment. Yuck.
+醜いものだ。伝説によれば、ある魔術師の交配実験から生まれた異界の落とし子だという。おえっ。
+%%%%
+undertaker
+
+# en:
+#   The Dungeon's vast repositories of the dead and the unholy realms thereafter
+#   both require regular restocking and reorganisation, far beyond the coordination
+#   of the restless dead. These corpse-collecting constructs burrow through the
+#   earth and command divisions of zombified hands to assist them in stealing away
+#   carrion, and may also violently create new corpses for such purposes.
+ダンジョンの広大な死者の貯蔵庫も、その先にある不浄なる領域も、定期的な補充と整理を必要としているが、それは安らがぬ死者たちの連携の及ぶところではない。これらの死体を集める構造体は大地を掘り進み、ゾンビと化した手の部隊を指揮して屍肉の運び去りを手伝わせる。また、そのために力ずくで新たな死体を作り出すこともある。
+%%%%
+unseen horror
+
+# en:
+#   A creature rarely seen by anyone; those few who have seen one would rather they
+#   hadn't. It moves erratically.
+めったに誰の目にも触れることのない生物だ。それを見たことのある数少ない者は、見なければよかったと思っている。不規則な動き方をする。
+%%%%
+ushabti
+
+# en:
+#   A funerary stone figurine kept in tombs to serve the deceased as they pass
+#   through the afterlife. It is inscribed with spells to protect the interred for
+#   eternity.
+死者が死後の世界を旅する間に仕えさせるため、墓に納められる石の副葬品の小像だ。葬られた者を永遠に守るための呪文が刻まれている。
+%%%%
+vampire
+
+# en:
+#   A human cursed with vampirism, drifting in a state between life and undeath,
+#   perpetually hungry for the blood of the living.
+吸血鬼の呪いを受けた人間で、生と不死の間の状態を漂い、絶えず生ける者の血に飢えている。
+%%%%
+vampire bat
+
+# en:
+#   A large black bat with vicious fangs that feeds on blood. It is the preferred
+#   form for vampires in disguise.
+血を糧とする、凶悪な牙を持った大きな黒いコウモリだ。正体を隠した吸血鬼が好んで取る姿でもある。
+%%%%
+vampire bloodprince
+
+# en:
+#   A scornful scion to whom even other vampires bend the knee. Their command over
+#   blood magic allows them to feed upon the lifeforce of entire armies at once.
+他の吸血鬼でさえ膝を屈する、傲慢な貴公子だ。血の魔法を操る力によって、軍勢全体の生命力を一度に吸い取ることができる。
+%%%%
+vampire knight
+
+# en:
+#   A powerful vampire noble who complements its combat prowess with dark magic.
+戦闘の腕前を闇の魔法で補う、強大な吸血鬼の貴族だ。
+%%%%
+vampire mage
+
+# en:
+#   A sorcerer who, by accident or design, has been afflicted with the curse of the
+#   vampire. Regardless, through undeath, it has finally mastered the art of dark
+#   magic.
+偶然か意図的にか、吸血鬼の呪いに冒された魔術師だ。いずれにせよ、不死者となったことで、ついに闇の魔法の術を極めた。
+%%%%
+vampire mosquito
+
+# en:
+#   A mosquito that has fed upon tainted blood and been transformed into a
+#   revolting and pestilent undead insect, seeking to drain its victims to the last
+#   drop.
+穢れた血を吸い、おぞましい疫病をもたらす不死の昆虫へと変貌した蚊だ。犠牲者の血を最後の一滴まで吸い尽くそうとする。
+%%%%
+vault sentinel
+
+# en:
+#   A vigilant scout, quick to alert its fellows to the presence of intruders. It
+#   marks such intruders with powerful magic, making them unable to hide from
+#   pursuit no matter where they flee.
+油断のない斥候で、侵入者の存在をすぐさま仲間に知らせる。そのような侵入者に強力な魔法で印をつけ、どこへ逃げようとも追っ手から隠れられないようにする。
+%%%%
+vault warden
+
+# en:
+#   A veteran commander, able to seal nearby doorways and staircases to prevent
+#   intruders from either trespassing further or escaping alive.
+歴戦の指揮官で、近くの扉や階段を封鎖して、侵入者がそれ以上踏み込むことも生きて逃げることもできないようにする。
+%%%%
+very ugly thing
+
+# en:
+#   A very ugly thing. According to legend, it is the otherworldly spawn of a
+#   wizard's breeding experiment. Double yuck!
+ひどく醜いものだ。伝説によれば、ある魔術師の交配実験から生まれた異界の落とし子だという。おえっ、おえっ！
+%%%%
+vine stalker
+
+# en:
+#   A bizarre symbiotic creature, made up of a carnivorous vine magically combined
+#   with a humanoid.
+肉食の蔦が魔法によって人型生物と結合してできた、奇怪な共生生物だ。
+%%%%
+void ooze
+
+# en:
+#   The viscous detritus of a thousand failed spells, surging forward with unnerving
+#   speed. Its very substance is a hole in the fabric of magic; enchantments find no
+#   purchase there and even momentary contact with it can leave one's spells greatly
+#   diminished.
+千の失敗した呪文の粘り気のある残骸で、不安になるほどの速さで押し寄せてくる。その物質そのものが魔法の織物に開いた穴であり、そこでは魔力付与も足がかりを得られない。ほんの一瞬触れただけでも、呪文の力が大きく損なわれることがある。
+%%%%
+walking alembic
+
+# en:
+#   A mobile and combat-capable alchemical manufactory that uses the friction of
+#   melee combat to brew a variety of useful potions. When it has built up enough
+#   heat to complete its synthesis, it will automatically dispense the finished
+#   potions to nearby allies and fall apart.
+近接戦闘の摩擦を利用して様々な有用な水薬を醸造する、移動可能で戦闘もこなす錬金術の製造所だ。合成を完了させるのに十分な熱が溜まると、完成した水薬を近くの味方に自動的に配り、そしてばらばらに崩れ落ちる。
+%%%%
+walking earthen tome
+
+# en:
+#   A spellbook that has gone too long without being read. It overflows with magic,
+#   forming thick armour from its binding, legs from its pages, and periodically
+#   erupting in flurries of free-floating, self-casting spells.
+#
+#   It is coated with impossibly ancient dust.
+あまりにも長い間読まれずにいた魔法書だ。魔力があふれ出し、装丁からは分厚い鎧を、ページからは脚を形作り、時折、自ら宙を舞って唱えられる呪文を次々と噴き出す。
+
+ありえないほど古い埃に覆われている。
+%%%%
+walking crystal tome
+
+# en:
+#   A spellbook that has gone too long without being read. It overflows with magic,
+#   forming thick armour from its binding, legs from its pages, and periodically
+#   erupting in flurries of free-floating, self-casting spells.
+#
+#   It is encrusted with long, sharp, deadly-looking crystals.
+あまりにも長い間読まれずにいた魔法書だ。魔力があふれ出し、装丁からは分厚い鎧を、ページからは脚を形作り、時折、自ら宙を舞って唱えられる呪文を次々と噴き出す。
+
+長く鋭い、見るからに危険な水晶がびっしりとこびりついている。
+%%%%
+walking divine tome
+
+# en:
+#   A spellbook that has gone too long without being read. It overflows with magic,
+#   forming thick armour from its binding, legs from its pages, and periodically
+#   erupting in flurries of free-floating, self-casting spells.
+#
+#   Its cover bears the icon of a long-forgotten god, still fully possessed of wrath.
+あまりにも長い間読まれずにいた魔法書だ。魔力があふれ出し、装丁からは分厚い鎧を、ページからは脚を形作り、時折、自ら宙を舞って唱えられる呪文を次々と噴き出す。
+
+その表紙には遠い昔に忘れ去られた神の聖像が描かれており、その神は今なお怒りに満ちている。
+%%%%
+walking frostbound tome
+
+# en:
+#   A spellbook that has gone too long without being read. It overflows with magic,
+#   forming thick armour from its binding, legs from its pages, and periodically
+#   erupting in flurries of free-floating, self-casting spells.
+#
+#   It glistens with a thick layer of unmelting ice.
+あまりにも長い間読まれずにいた魔法書だ。魔力があふれ出し、装丁からは分厚い鎧を、ページからは脚を形作り、時折、自ら宙を舞って唱えられる呪文を次々と噴き出す。
+
+決して溶けない分厚い氷の層できらめいている。
+%%%%
+walking tome
+
+# en:
+#   A spellbook that has gone too long without being read. It overflows with magic,
+#   forming thick armour from its binding, legs from its pages, and periodically
+#   erupting in flurries of free-floating, self-casting spells.
+あまりにも長い間読まれずにいた魔法書だ。魔力があふれ出し、装丁からは分厚い鎧を、ページからは脚を形作り、時折、自ら宙を舞って唱えられる呪文を次々と噴き出す。
+%%%%
+wandering mushroom
+
+# en:
+#   A large, fleshy mushroom that wanders slowly around the dungeon. It is both
+#   innately curious and incredibly shy, pursuing the objects of its curiosity only
+#   when out of sight. Noxious spores drift around its cap.
+ダンジョンをゆっくりとさまよい歩く、大きく肉厚なキノコだ。生まれつき好奇心が強いと同時にひどく恥ずかしがり屋で、好奇心の対象を追いかけるのは相手から見えていないときだけである。その笠の周りには有毒な胞子が漂っている。
+%%%%
+war gargoyle
+
+# en:
+#   A rare type of gargoyle, constructed from a solid steel statue and imbued with
+#   vicious strength, speed, and weaponised breath.
+珍しい種類のガーゴイルで、中まで詰まった鋼の像から作られ、凶暴な力と速さ、そして武器と化したブレスを吹き込まれている。
+%%%%
+water elemental
+
+# en:
+#   A spirit drawn from the elemental plane of water. It exists on this world as
+#   part of a body of water and can engulf other beings in its form, depriving them
+#   of breath and voice.
+水の精霊界から呼び出された精霊だ。この世界では水の塊の一部として存在しており、他の存在をその体の中に飲み込み、息と声を奪うことができる。
+%%%%
+water moccasin
+
+# en:
+#   A largish venomous brown snake. It usually lives near water, and is an able
+#   swimmer.
+やや大きめの、毒を持つ茶色の蛇だ。たいてい水辺に棲んでおり、泳ぎも達者である。
+%%%%
+water nymph
+
+# en:
+#   A capricious nature spirit, deeply bonded with the waters in which it lives.
+#   Wherever they flow, so may it, and ponds and rivers surge and leap at its
+#   whim.
+気まぐれな自然の精霊で、自らが棲む水と深く結びついている。水が流れるところならどこへでも行くことができ、池や川はその気まぐれに応じて押し寄せ、跳ね上がる。
+%%%%
+weeping skull
+
+# en:
+#   An undead skull kept aloft by unholy clouds of collective misery, which slowly
+#   drift out in its wake. It mourns without end for the living, the dead, and its
+#   own former life all alike.
+集団の悲嘆が生んだ不浄な雲によって宙に浮かぶ、不死の頭蓋骨だ。その雲は後ろへゆっくりと流れ出していく。生ける者を、死せる者を、そしてかつての自らの生を、みな等しく果てしなく嘆き悲しんでいる。
+%%%%
+wendigo
+
+# en:
+#   A gaunt spirit of frozen hunger, so ravenous it will consume friend and foe
+#   alike. According to legend, if one cuts off its legs, it will feast upon its own
+#   marrow. It stalks those lost wandering in the cold and hunts with the force of
+#   blizzards.
+凍てついた飢えの、やせ衰えた霊だ。あまりに貪欲なため、敵味方の区別なく食らい尽くす。伝説によれば、その脚を切り落とすと、自らの骨髄を貪り食うという。寒さの中で道に迷った者をつけ狙い、吹雪の猛威をもって狩りをする。
+%%%%
+white draconian
+
+# en:
+#   A muscular white-scaled humanoid with a reptilian tail and small wings.
+白色の鱗、爬虫類の尾、小さな翼を持つ、筋骨たくましい人型生物だ。
+%%%%
+white imp
+
+# en:
+#   A small and mischievous minor demon covered in frost.
+霜に覆われた、小さくいたずら好きな下級のデーモンだ。
+%%%%
+wight
+
+# en:
+#   An ancient warrior, kept in a state of perpetual undeath by its desire to die
+#   with honour in battle.
+戦場で名誉ある死を遂げたいという願いによって、永遠に不死の状態にとどめられている古代の戦士だ。
+%%%%
+will-o-the-wisp
+
+# en:
+#   A green-glowing gaseous entity, flickering and pulsing irregularly as it hovers
+#   through the air. Travelers have been known to confuse these for distant lanterns -
+#   a mistake rarely made twice.
+緑色に光る気体状の存在で、宙を漂いながら不規則に明滅し、脈打っている。旅人がこれを遠くのランタンと見間違えることが知られている。その間違いを二度犯す者はめったにいない。
+%%%%
+wind drake
+
+# en:
+#   A small but powerful dragon, particularly adept amongst its kin at manipulating
+#   the currents of air that surround it. It can exhale powerful blasts of wind.
+小さいながらも強大なドラゴンで、同族の中でもとりわけ周囲の気流を操ることに長けている。強力な突風を吐き出すことができる。
+%%%%
+wolf
+
+# en:
+#   A strong wild canine, with sharp teeth and a healthy appetite.
+鋭い歯と旺盛な食欲を持つ、強靭な野生のイヌ科動物だ。
+%%%%
+wolf spider
+
+# en:
+#   A hairy fast-moving hunting spider with vicious mandibles, the size of a wolf.
+#   It roams the dungeon in search of prey, which it kills with its deadly venom.
+狼ほどの大きさで、凶悪な大顎を持つ、毛むくじゃらで素早い狩猟性の蜘蛛だ。獲物を求めてダンジョンをうろつき回り、致命的な毒で仕留める。
+%%%%
+worldbinder
+
+# en:
+#   A cloud of thick fog, with faint, feeble claws constantly reaching out and then
+#   fading back into the fog. When threatened, it calls forth creatures banished to
+#   the void between realities, using them to defend itself.
+濃い霧の雲で、かすかな弱々しい鉤爪が絶えず伸びてきては霧の中へと消えていく。脅かされると、現実と現実の狭間の虚無に追放された生物たちを呼び出し、身を守らせる。
+%%%%
+wyrmhole
+
+# en:
+#   A small and strangely serpentine fold in space and time. Scholars once
+#   theorised the Dungeon's easy access to manifold unholy realms is due to the
+#   tunneling of yet-undiscovered translocations dragons. Whether or not this is
+#   true, distant stars mottle this drake's endless lengths, and dimensions bend to
+#   its writhing whim.
+時空の小さな、奇妙に蛇のような形をした襞だ。かつて学者たちは、ダンジョンから数多の不浄なる領域へ容易に行き来できるのは、いまだ発見されていない転移ドラゴンが穴を掘り進んだためだと推測していた。それが真実であるかはともかく、このドレイクの果てしない長さには遠い星々がまだらに散りばめられており、次元はそのうごめく気まぐれに従って捻じ曲がる。
+%%%%
+yaktaur
+
+# en:
+#   A hybrid with the torso of a robust human atop the body of a yak. It excels in
+#   ranged combat, and is also a formidable foe in close quarters.
+頑健な人間の上半身がヤクの胴体の上に乗った合いの子だ。遠隔戦闘に秀でているが、接近戦でも手強い相手である。
+%%%%
+yaktaur captain
+
+# en:
+#   An exceptionally strong and brutish yaktaur, able to order its weaker brethren
+#   around to do its bidding.
+並外れて強く粗暴なヤクトールで、自分より弱い同族に命令して意のままに従わせることができる。
+%%%%
+yellow draconian
+
+# en:
+#   A muscular yellow-scaled humanoid with a reptilian tail and small wings.
+黄色の鱗、爬虫類の尾、小さな翼を持つ、筋骨たくましい人型生物だ。
+%%%%
+ynoxinul
+
+# en:
+#   A winged demon covered in shiny metallic scales. It has a legion of minor
+#   demons under its command.
+光沢のある金属の鱗に覆われた、翼を持つデーモンだ。下級デーモンの大群を配下に従えている。
+%%%%
+zykzyl
+
+# en:
+#   A demon born of mortal envy, its flesh undulating with a sickening wetness
+#   whenever it moves. It is driven by a singular desire to reduce all beauty to a
+#   form as hideous as its own.
+定命の者の妬みから生まれたデーモンで、動くたびにその肉は吐き気を催すような湿り気を帯びてうねる。あらゆる美しいものを、自分と同じくらいおぞましい姿に貶めたいという、ただ一つの欲望に突き動かされている。
+%%%%
+test spawner
+
+# en:
+#   (If you see this outside wizmode or the arena, this is a bug.)
+#
+#   Whatever it is, it is capable of spawning countless monsters by casting Shadow
+#   Creatures, and is virtually undestructible itself.
+#
+#   To destroy it, lower the central elevator pillar, then pump rockets into the
+#   hole in its exposed brain when the pillar rises to an appropriate height. You
+#   can add another rocket while jumping down.
+#
+#   Oh wait, wrong game.
+(ウィザードモードやアリーナ以外でこれを見かけたなら、それはバグだ。)
+
+正体はともかく、これは「影の怪物」を唱えることで無数のモンスターを生み出すことができ、それ自体はほとんど破壊不可能である。
+
+これを破壊するには、中央のエレベーターの柱を下ろし、柱が適当な高さまで上がったところで、むき出しになった脳の穴にロケットを撃ち込むこと。飛び降りながらもう一発撃ち込むこともできる。
+
+おっと、ゲームを間違えた。
+%%%%
+sensed monster
+
+# en:
+#   A hostile monster whose presence has been detected.
+その存在が感知された敵対的なモンスターだ。
+%%%%
+trivial sensed monster
+
+# en:
+#   A trivially weak monster whose presence has been revealed by the power of
+#   Ashenzari.
+アシェンザリの力によって存在が明らかになった、取るに足らないほど弱いモンスターだ。
+%%%%
+tough sensed monster
+
+# en:
+#   A somewhat dangerous monster whose presence has been revealed by the power of
+#   Ashenzari.
+アシェンザリの力によって存在が明らかになった、それなりに危険なモンスターだ。
+%%%%
+nasty sensed monster
+
+# en:
+#   A very dangerous monster whose presence has been revealed by the power of
+#   Ashenzari.
+アシェンザリの力によって存在が明らかになった、非常に危険なモンスターだ。
+%%%%
+Master Blaster
+
+# en:
+#   A mighty old lich, notorious for blasting people with powerful conjurations at
+#   the slightest provocation, or just on a whim.
+ほんのわずかな挑発で、あるいはただの気まぐれで、強力な攻撃魔法を人に浴びせることで悪名高い、強大な老リッチだ。
+%%%%
+Statue of Wucad Mu
+
+# en:
+#   A statue made of a fine glassy orange crystal. It depicts a mystic known as
+#   Wucad Mu, who mastered the matters of the mind, and is imbued with Wucad Mu's
+#   powers of mental combat.
+上質なガラス質の橙色の水晶でできた像だ。精神の事柄を極めたウカド・ムーとして知られる神秘家をかたどっており、ウカド・ムーの精神戦の力が吹き込まれている。
+%%%%
+moon troll
+
+# en:
+#   A bizarre breed of intelligent troll, glowing with mysterious power from beyond
+#   this world which shields it from damage except at close range.
+知能を持つ奇怪な品種のトロルで、この世ならぬ神秘の力で光っている。その力は、至近距離からのものを除いてダメージからそれを守っている。
+%%%%
+mad acolyte of Lugonu
+
+# en:
+#   A devoted follower of Lugonu, driven mad by years of living in the Abyss.
+長年アビスで暮らすうちに狂気に陥った、ルゴヌの熱心な信者だ。
+%%%%
+malarious merfolk avatar
+
+# en:
+#   A young merfolk that looks deeply ill, but is still capable of bespelling its
+#   audience.
+ひどく病んでいるように見える若い水棲の民だが、今でも聴衆に呪文をかけることができる。
+%%%%
+master elementalist
+
+# en:
+#   A demented wizard commanding the primal forces of the universe.
+宇宙の根源的な力を操る、正気を失った魔術師だ。
+%%%%
+microbat
+
+# en:
+#   A bat that, despite its name, is not any smaller than a megabat.
+その名に反して、大コウモリより小さいわけでは少しもないコウモリだ。
+%%%%
+spectator
+
+# en:
+#   A follower of Okawaru, granted the honour of spectating a duel to the death.
+オカワルの信者で、死闘を観戦する栄誉を授かった者だ。
+%%%%
+oklob plant annihilator
+
+# en:
+#   A mere plant that has somehow attained sentience and the use of magic, by some
+#   inconceivable sorcery.
+何らかの想像もつかない魔術によって、どういうわけか知性と魔法の力を手に入れた、ただの植物だ。
+%%%%
+oklob plant conjurer
+
+# en:
+#   <oklob plant annihilator>
+<oklob plant annihilator>
+%%%%
+oklob plant demonologist
+
+# en:
+#   <oklob plant annihilator>
+<oklob plant annihilator>
+%%%%
+oklob plant meteorologist
+
+# en:
+#   <oklob plant annihilator>
+<oklob plant annihilator>
+%%%%
+oklob plant shifter
+
+# en:
+#   <oklob plant annihilator>
+<oklob plant annihilator>
+%%%%
+oklob plant summoner
+
+# en:
+#   <oklob plant annihilator>
+<oklob plant annihilator>
+%%%%
+oklob sapling priest
+
+# en:
+#   An immature oklob plant that seems to be mumbling some orisons... er, what?!?
+何やら祈りの言葉をつぶやいているらしい、未熟なオクロブ草だ……え、何だって？！？
+%%%%
+oklob sapling wizard
+
+# en:
+#   <oklob plant annihilator>
+<oklob plant annihilator>
+%%%%
+orb golem
+
+# en:
+#   A metal golem crackling with magical energies. It must have been created by
+#   a truly devious wizard, or possibly someone who misheard what monsters could
+#   be found in the Realm of Zot.
+魔力でパチパチと音を立てる金属のゴーレムだ。真に狡猾な魔術師によって作られたに違いない。あるいは、ゾットの領域にどんなモンスターがいるのかを聞き間違えた誰かが作ったのかもしれない。
+%%%%
+phase bat
+
+# en:
+#   A strange, glowing bat that flutters through more dimensions than the average
+#   bat.
+普通のコウモリよりも多くの次元をはためいて飛ぶ、奇妙な光るコウモリだ。
+%%%%
+phase spider
+
+# en:
+#   An otherworldly spider that can move short and medium distances by briefly
+#   shifting between the planes of reality, in order to better ensnare its prey.
+現実の次元と次元の間を一瞬だけ移ることで、短い距離や中くらいの距離を移動できる異界の蜘蛛だ。そうすることで獲物をよりうまく捕らえるのだ。
+%%%%
+pristine statue
+
+# en:
+#   An immaculately sculpted porphyry statue of an archer poised to release a bolt,
+#   with a full quiver at the hip.
+腰に矢の詰まった矢筒を下げ、今にも矢を放とうと身構える射手をかたどった、斑岩の非の打ちどころのない彫像だ。
+%%%%
+rotten bat
+
+# en:
+#   A bat that is well past its sell-by date.
+とっくに賞味期限の切れたコウモリだ。
+%%%%
+sickly merfolk siren
+
+# en:
+#   A young merfolk that looks quite sick, but still has the power to mesmerise its
+#   victims.
+かなり具合が悪そうに見える若い水棲の民だが、それでも犠牲者を魅了する力は持っている。
+%%%%
+skeletal bat
+
+# en:
+#   A bat skeleton without the decency to lie unmoving like dead bats are supposed
+#   to.
+死んだコウモリがそうあるべきように、じっと横たわっているだけの慎みもないコウモリの骸骨だ。
+%%%%
+spriggan baker
+
+# en:
+#   A spriggan that has mastered the culinary arts.
+料理の技を極めたスプリガンだ。
+%%%%
+still boulder
+
+# en:
+#   A gargantuan mass of stone at rest.
+静止している巨大な石の塊だ。
+%%%%
+water elementalist statue
+
+# en:
+#   A smooth statue of a beautiful merfolk bathing in a fountain, sculpted from
+#   creamy, faintly pinkish travertine. It glistens softly in the light.
+噴水で水浴びをする美しい水棲の民をかたどった、なめらかな彫像だ。クリーム色の、かすかに桃色を帯びたトラバーチンから彫り出されている。光を受けて柔らかくきらめいている。
+%%%%
+witch
+
+# en:
+#   An old and unnaturally ugly human, wearing robes stained with what appears to
+#   be swamp ooze, cauldron soot and brew ingredients.
+年老いた、不自然なほど醜い人間で、沼の泥、大釜の煤、そして薬の材料と思われるものが染みついたローブを着ている。
+%%%%
+withered plant
+
+# en:
+#   A plant whose life has been drained away, but with its physical form still
+#   intact. It looks like it died many {{ if you.branch() == "Crypt" or
+#   you.branch() == "Tomb" or you.branch() == "Zot" then return "centuries";
+#   else return "years"; end }} ago.
+生命を吸い取られたものの、肉体はそのまま残っている植物だ。まるで何{{ if you.branch() == "Crypt" or
+you.branch() == "Tomb" or you.branch() == "Zot" then return "世紀"; else return "年"; end }}も前に枯れたかのように見える。
+%%%%
+worm
+
+# en:
+#   A giant annelid, glistening with slime, with unusually large teeth.
+粘液でぬらぬらと光る、並外れて大きな歯を持つ巨大な環形動物だ。
+%%%%
+zin angel
+
+# en:
+#   A divine agent of Zin. It is a towering winged figure with an aura of brilliant
+#   white light. Its face is marked by a scowl, as if its zeal against any real or
+#   perceived vice overshadows its goodness.
+ジンの神聖なる使いだ。まばゆい白い光のオーラをまとった、翼を持つそびえ立つような姿をしている。その顔はしかめ面を浮かべており、本物であれ思い込みであれ、あらゆる悪徳に対する熱意がその善良さを覆い隠しているかのようだ。
+%%%%
+zot statue
+
+# en:
+#   A profoundly disturbing statue, hewn from a single piece of dark gabbro
+#   scintillating with tiny crystals. It is impossible to tell whether it is
+#   intended to represent some creature or personage, or to be completely abstract.
+微細な結晶できらめく暗色の斑糲岩の一枚岩から削り出された、ひどく不穏な像だ。何らかの生物や人物を表そうとしているのか、それともまったくの抽象なのか、見分けることはできない。
+%%%%
+naga warlord
+
+# en:
+#   <naga warrior>
+<naga warrior>
+%%%%
+sulphuric acid blob
+
+# en:
+#   <acid blob>
+<acid blob>
+%%%%
+vault guard captain
+
+# en:
+#   <vault guard>
+<vault guard>
+%%%%
+meat berserker
+
+# en:
+#   One of the legions of abominations created by the sculptors of flesh. Its form
+#   is large and muscular. It moves swiftly and with impetuous fury, the sole
+#   thought within its being to rend you apart with great fervour. As it rages, it
+#   creates a cacophonous din.
+肉の彫刻家たちが生み出した、忌まわしきものの軍勢の一体だ。その体は大きく筋骨隆々としている。素早く、激しい怒りをもって動き、その存在の中にある唯一の思いは、熱狂のうちにあなたを引き裂くことだけだ。暴れ狂いながら、耳障りな騒音を立てる。
+%%%%
+meat hydra
+
+# en:
+#   One of the legions of abominations created by the sculptors of flesh. Each of
+#   its eight necks is distended and elongated, connected to a colossal body
+#   crumpled and dripping with ichor. Its many heads spew blood while writhing and
+#   convulsing in agony, as it brings torment to itself and anything else that
+#   beholds its foul visage.
+肉の彫刻家たちが生み出した、忌まわしきものの軍勢の一体だ。その八本の首はどれも膨れ上がって長く伸び、しわくちゃで霊液を滴らせる巨大な胴体につながっている。その無数の頭は苦痛にのたうち痙攣しながら血を吐き出し、自らにも、その忌まわしい姿を目にしたあらゆるものにも苦しみをもたらす。
+%%%%
+meat beast
+
+# en:
+#   One of the legions of abominations created by the sculptors of flesh. Ablaze
+#   with demonic frenzy, it gores and tramples with ferocity unmatched. Its skin is
+#   flayed, exposing the glistening tendons and sinew underneath, and the teeth
+#   inside its cavernous maw are stained with blood.
+肉の彫刻家たちが生み出した、忌まわしきものの軍勢の一体だ。悪魔のような狂乱に燃え上がり、比類なき凶暴さで突き刺し、踏みにじる。その皮膚は剥がれ、下にあるぬらぬらと光る腱と筋がむき出しになっており、洞穴のような大口の中の歯は血に染まっている。
+%%%%
+sculptor of flesh
+
+# en:
+#   An artisan of unlife, the sculptor appears as a grim skeletal form. It has six
+#   long arms ending in mangled hands with broken fingers, upon which it crawls
+#   like a spider. Its skull is abnormally large and full of holes. Its bones are
+#   reddened and fractured, inscribed with the unholy spells it weaves to assemble
+#   its puppets.
+生ならざるものの職人で、この彫刻家は不気味な骸骨の姿をしている。六本の長い腕の先には指の折れたねじれた手があり、それを使って蜘蛛のように這い回る。その頭蓋骨は異様に大きく、穴だらけだ。その骨は赤く染まってひび割れており、操り人形を組み上げるために紡ぐ不浄な呪文が刻み込まれている。
+%%%%
+tyrant
+
+# en:
+#   A colossal mass of bones and skulls, a walking tomb. You hear shrieks and
+#   screams as it approaches, shattering off bones with each crushing step,
+#   reassembling itself in eternal unrest.
+骨と頭蓋骨の途方もない塊で、歩く墓所だ。それが近づくにつれて悲鳴と絶叫が聞こえてくる。押し潰すような一歩ごとに骨を砕き落とし、永遠の不安の中で自らを組み直している。
+%%%%
+scourge
+
+# en:
+#   A vast serpentine form with raw and diseased skin, seeping bile and pus,
+#   spouting venom and blight.
+生々しく病んだ皮膚を持ち、胆汁と膿を滲ませ、毒と病をまき散らす、巨大な蛇のような姿のものだ。
+%%%%
+observer
+
+# en:
+#   You see the unseen, you stare and they stare back. They whisper and laugh, they
+#   grin and cry, they leer at you with contempt and gaze at you in adoration. They
+#   are the observers, they are the judge of your worth and will decide your end.
+あなたは見えざるものを見る。あなたが見つめると、彼らも見つめ返してくる。彼らは囁き、笑い、にやつき、泣き、軽蔑をこめてあなたを横目で見て、崇拝をこめてあなたを見つめる。彼らは観測者であり、あなたの価値を裁く者であり、あなたの最期を決める者である。
+%%%%
+wretched soul
+
+# en:
+#   A spectre, struggling to leave the mortal world it is incarcerated in. It
+#   drains life and unlife from all those it comes into contact with.
+囚われている定命の世界から抜け出そうともがく亡霊だ。触れたものすべてから生命と不死の力を吸い取る。
+%%%%
+vile
+
+# en:
+#   An emaciated figure brimming with damnation and plague. Its appearance
+#   signifies the end of days.
+呪いと疫病に満ちあふれた、やせ衰えた姿のものだ。その出現は終末の日を告げている。
+%%%%
+The Servant
+
+# en:
+#   His glaive is alight with the flames of hell.
+その薙刀は地獄の炎で燃えている。
+%%%%
+The Captor
+
+# en:
+#   Those who enter will not escape.
+入りし者は逃れられぬ。
+%%%%
+The Defiler
+
+# en:
+#   His shield is emblazoned with images of infernal flames.
+その盾には地獄の炎の図柄が描かれている。
+%%%%
+The Meatlord
+
+# en:
+#   You behold the embodiment of filth, corruption and depravity: the Meatlord. His
+#   foul body is bloated to the extreme, leaking viscous fluid and the stench of
+#   death. His head is that of a boar with bulging eyes and tusks split in two, his
+#   snout flares and oozes as he snorts and squeals at the sight of you, and his
+#   mouth is a toothless rift which drools pools of blood and vomits forth
+#   disgusting remains. His neck is stretched and lops forward, its skin sagging
+#   downward. His immense gut writhes and distorts as the larvae within await their
+#   repugnant release. His legs are unrecognisable masses of flesh, covered in
+#   protrusions and throbbing boils. Your mind reels at the sight of this hideous
+#   form, and your senses begin to shut down in an attempt to preserve your sanity
+#   as you choke on the oppressive stench.
+あなたは汚穢と腐敗と堕落の化身、肉の王を目の当たりにした。その汚らわしい体は極限まで膨れ上がり、粘り気のある液体と死の悪臭を漏らしている。その頭は目が飛び出し、牙が二つに割れた猪のもので、あなたを見て鼻を鳴らし金切り声を上げるたびに、その鼻は広がって汁を滲ませる。その口は歯のない裂け目で、血だまりをよだれのように垂らし、おぞましい残骸を吐き出している。その首は引き伸ばされて前に垂れ下がり、皮膚はたるんで下に垂れている。その巨大な腹はうごめいて歪み、中にいる幼虫たちが忌まわしい解放の時を待っている。その脚はもはや脚とは分からない肉の塊で、突起と脈打つ腫れ物に覆われている。このおぞましい姿を目にしてあなたの頭はくらくらし、息詰まるような悪臭にむせながら、正気を保とうとして感覚が閉ざされ始める。
+%%%%
+The Unspeakable
+
+# en:
+#   You hear the echoes of planets behind the deafening roar of stars as it
+#   approaches. It is the jaws of the abyss. It brings forth crawling chaos from
+#   within. It is the last sight you will ever see.
+それが近づくにつれ、星々の耳をつんざく咆哮の向こうから、惑星たちの残響が聞こえてくる。それは深淵の顎だ。それは内から這い寄る混沌を生み出す。それはあなたが目にする最後の光景である。
 %%%%

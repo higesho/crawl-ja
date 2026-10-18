@@ -29,7 +29,7 @@ function callback.grunt_iron_hall_animate(data,triggerable,trigger,marker,ev)
                                "patrolling iron golem generate_awake")
         end
     end
-    crawl.mpr("You hear the creaking of ancient metal!", "warning")
+    crawl.mpr(crawl.jtrans("You hear the creaking of ancient metal!"), "warning")
     end
 end
 

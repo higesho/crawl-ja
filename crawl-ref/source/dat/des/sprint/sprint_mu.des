@@ -4,7 +4,7 @@
 function sprint_mu_zot_mons_gen(data, triggerable, triggerer, marker, ev)
     function spawn_zombie (x, y, spec)
         local mons = dgn.create_monster(x, y, spec)
-        crawl.mpr("You hear a whooshing noise from somewhere close by.")
+        crawl.mpr(crawl.jtrans("You hear a whooshing noise from somewhere close by."))
         return mons
     end
 
@@ -1411,7 +1411,7 @@ COLOUR: # = magenta
 MARKER: # = lua:props_marker({ \
         door_description_suffix=" to the Realm of Zot", \
         door_description_noun="gate", \
-        veto_reason="You need three runes to open the Realm of Zot!", \
+        veto_reason=crawl.jtrans("You need three runes to open the Realm of Zot!"), \
         veto_destroy="veto" \
         })
 MARKER: # = lua:lock_door {}

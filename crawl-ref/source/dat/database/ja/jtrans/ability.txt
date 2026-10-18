@@ -1232,7 +1232,7 @@ Are you sure you want to shaft yourself?
 %%%%
 Select an artefact weapon to imprint upon your Paragon.
 
-模範者に刻印するアーティファクトの武器を選んでください。
+傑作に刻印するアーティファクトの武器を選んでください。
 %%%%
 %s forbids using such a weapon!
 
@@ -1374,4 +1374,13 @@ Ability - describe what?
 Invocations -
 
 祈祷関連能力 -
+%%%%
+%%%%
+[ability]Begin Untransformation
+
+変身の解除の開始
+%%%%
+[ability]Evoke the Sceptre of Asmodeus
+
+アスモデウスの王笏の喚起
 %%%%

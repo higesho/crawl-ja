@@ -164,8 +164,9 @@ end
 
 function wizlab_milestone (e, wizlab_desc)
     crawl.mark_milestone("br.enter", "entered " .. wizlab_desc .. ".", "parent")
-    crawl.take_note("Entered " .. wizlab_desc)
-    crawl.mpr("Welcome to " .. wizlab_desc .. "!")
+    local wizlab_desc_j = crawl.jtrans(wizlab_desc)
+    crawl.take_note(crawl.jtrans("Entered %s", wizlab_desc_j))
+    crawl.mpr(crawl.jtrans("Welcome to %s!", wizlab_desc_j))
 end
 
 function wizlab_doroklohe_convert_boxes(data, triggerable, triggerer,
@@ -176,15 +177,15 @@ function wizlab_doroklohe_convert_boxes(data, triggerable, triggerer,
 
   if data.phase == 1 then
     data.phase = data.phase + 1
-    crawl.mpr("The walls briefly shake.", "warning")
+    crawl.mpr(crawl.jtrans("The walls briefly shake."), "warning")
     return
   elseif data.phase == 2 then
     data.phase = data.phase + 1
-    crawl.mpr("The walls violently shake.", "warning")
+    crawl.mpr(crawl.jtrans("The walls violently shake."), "warning")
     return
   elseif data.phase == 3 then
     data.phase = data.phase + 1
-    crawl.mpr("The walls fall away. The entombed are set free!", "warning")
+    crawl.mpr(crawl.jtrans("The walls fall away. The entombed are set free!"), "warning")
     for _, i in ipairs(dgn.find_marker_positions_by_prop("wall_drop", 1)) do
       dgn.terrain_changed(i.x, i.y, "floor", false)
       dgn.place_cloud(i.x, i.y, "black smoke", 2)
@@ -303,9 +304,9 @@ function wizlab_zonguldrok_killed_zombie(data, triggerable, triggerer,
         dgn.terrain_changed(x, y, "closed_door", false)
         data.door_appeared = true
         if you.see_cell(x, y) then
-            crawl.mpr("A door appears!")
+            crawl.mpr(crawl.jtrans("A door appears!"))
         else
-            crawl.mpr("The walls vibrate.")
+            crawl.mpr(crawl.jtrans("The walls vibrate."))
         end
         local gxm, gym = dgn.max_bounds()
         for p in iter.rect_iterator(dgn.point(1, 1), dgn.point(gxm-1, gym-1)) do
@@ -352,31 +353,31 @@ function wizlab_wucad_msgfn(data, triggerable, triggerer, marker, ev)
   end
 
   if data.spot == 1 then
-    crawl.mpr("Strange, shadowy figures dance through the air in front of you.", "talk_visual")
+    crawl.mpr(crawl.jtrans("Strange, shadowy figures dance through the air in front of you."), "talk_visual")
     data.trig = true
   elseif data.spot == 2 then
-    crawl.mpr("This room is filled with shadowy figures, quietly meditating.", "talk_visual")
+    crawl.mpr(crawl.jtrans("This room is filled with shadowy figures, quietly meditating."), "talk_visual")
     data.trig = true
   elseif data.spot == 3 then
-    crawl.mpr("Here, spectral monks perform complicated, martial routines; they fade quickly.", "talk_visual")
+    crawl.mpr(crawl.jtrans("Here, spectral monks perform complicated, martial routines; they fade quickly."), "talk_visual")
     data.trig = true
   elseif data.spot == 4 then
     if you.silenced() then
       return
     end
-    crawl.mpr("Faint laughter comes from somewhere. Too faint to be real.", "talk_visual")
+    crawl.mpr(crawl.jtrans("Faint laughter comes from somewhere. Too faint to be real."), "talk_visual")
     data.trig = true
   elseif data.spot == 5 then
     if you.silenced() then
       return
     end
-    crawl.mpr("There is a faint scream of pain from a crouched figure. This too fades quickly.", "talk_visual")
+    crawl.mpr(crawl.jtrans("There is a faint scream of pain from a crouched figure. This too fades quickly."), "talk_visual")
     data.trig = true
   elseif data.spot == 6 then
-    crawl.mpr("Grey monks gather around the fountain. They do not speak, nor look at each other.", "talk_visual")
+    crawl.mpr(crawl.jtrans("Grey monks gather around the fountain. They do not speak, nor look at each other."), "talk_visual")
     data.trig = true
   elseif data.spot == 7 then
-    crawl.mpr("A figure sits in silent meditation. It spots you, gestures wildly, and disappears.", "talk_visual")
+    crawl.mpr(crawl.jtrans("A figure sits in silent meditation. It spots you, gestures wildly, and disappears."), "talk_visual")
     data.trig = true
   end
 end
@@ -419,16 +420,16 @@ function wizlab_wucad_summon_monks(data, triggerable, triggerer, marker, ev)
   crawl.redraw_view()
 
   if count == 1 then
-    crawl.mpr("One of the shadowy figures appears more solid!", "warning")
+    crawl.mpr(crawl.jtrans("One of the shadowy figures appears more solid!"), "warning")
   elseif count > 1 then
-    crawl.mpr("Shadows coalesce into solid form.", "warning")
+    crawl.mpr(crawl.jtrans("Shadows coalesce into solid form."), "warning")
   end
 end
 
 function callback.wizlab_wucad_wucad_died(data, triggerable,
                                            triggerer, marker, ev)
   dgn.persist.wucad_mu_died = true
-  crawl.mpr("The shadows inhabiting this place fade forever.", "talk_visual")
+  crawl.mpr(crawl.jtrans("The shadows inhabiting this place fade forever."), "talk_visual")
 end
 
 function wizlab_borgnjor_call_souls(data, triggerable, triggerer, marker, ev)
@@ -469,7 +470,7 @@ function wizlab_borgnjor_call_souls(data, triggerable, triggerer, marker, ev)
   crawl.redraw_view()
 
   if count == 1 then
-    crawl.mpr("A lost soul coalesces out of thin air!", "warning")
+    crawl.mpr(crawl.jtrans("A lost soul coalesces out of thin air!"), "warning")
   end
 end
 }}

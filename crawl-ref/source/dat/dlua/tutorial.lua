@@ -7,7 +7,7 @@
 function tutorial_messenger (data, triggerable, triggerer, marker, ev)
 
   crawl.clear_messages(true)
-  crawl.mpr(data.text, data.channel)
+  crawl.mpr(crawl.jtrans(data.text), data.channel)
   if data.onetime == true then
     triggerable:remove(marker)
   end
@@ -27,7 +27,7 @@ end
 function tutorial_intro (msg)
   if msg ~= nil then
     crawl.clear_messages(true)
-    crawl.mpr(msg, "tutorial")
+    crawl.mpr(crawl.jtrans(msg), "tutorial")
   end
   crawl.tutorial_msg("tutorial intro")
   crawl.more()

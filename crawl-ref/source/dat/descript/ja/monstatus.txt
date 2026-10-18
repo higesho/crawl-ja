@@ -1,0 +1,1069 @@
+%%%%
+ablaze with memories monstatus
+
+# en:
+#   This creature has temporarily gained the ability to cast specific spells.
+#   It will lose access to them again once sufficiently injured.
+この生き物は一時的に特定の呪文を唱える能力を得ている。十分に傷を負うと、再びそれらの呪文を使えなくなる。
+%%%%
+about to teleport monstatus
+
+# en:
+#   After a short delay, this creature will be teleported to somewhere else on the
+#   current floor.
+少し時間が経つと、この生き物は現在の階層のどこか別の場所へテレポートする。
+%%%%
+afflicted by rimeblight monstatus
+
+# en:
+#   This creature suffers AC-ignoring cold damage every turn, and may sometimes
+#   explode in a burst of ice that damages nearby allies. When it dies, it may
+#   spread rimeblight to other nearby allies.
+#
+#   Natural, demonic, or holy creatures will be instantly killed once they reach
+#   low health, and be replaced with pillars of rime.
+この生き物は毎ターン AC を無視する冷気ダメージを受けており、時おり氷の破裂を起こして近くの仲間にダメージを与えることがある。死ぬと、近くにいる他の仲間に霜枯れを広げることがある。
+
+自然の生き物、悪魔、聖なる生き物は、体力が低くなると即座に死に、霜の柱に置き換わる。
+%%%%
+ally target monstatus
+
+# en:
+#   This creature is being targeted by one or more of your allies.
+この生き物は、あなたの仲間の 1 体以上に狙われている。
+%%%%
+anguished monstatus
+
+# en:
+#   When this creature deals damage, it will suffer damage equal to the damage it
+#   dealt.
+この生き物はダメージを与えると、与えたのと同じだけのダメージを自分も受ける。
+%%%%
+asleep monstatus
+
+# en:
+#   This creature is unable to move, act, block, or dodge. Any hostile action will
+#   awaken it, though melee attacks against it (even by other monsters) will deal
+#   increased damage.
+#
+#   [[high-tier stab monstatus]]
+この生き物は移動も行動もできず、攻撃を防ぐことも避けることもできない。敵対的な行動をとると目を覚ますが、この生き物への近接攻撃は(他のモンスターによるものでも)ダメージが増加する。
+
+[[high-tier stab monstatus]]
+%%%%
+berserk monstatus
+
+# en:
+#   This creature has 50% more health, deals 50% more damage with melee attacks, and
+#   both moves and acts 50% faster. They cannot perform any action besides moving
+#   or attacking.
+#
+#   When the berserk rage wears off, they will be slowed and unable to berserk for a
+#   short duration.
+この生き物は体力が 50% 増え、近接攻撃のダメージが 50% 増加し、移動も行動も 50% 速くなっている。移動と攻撃以外の行動はとれない。
+
+バーサークの激昂が収まると、しばらくの間は減速し、再びバーサークすることもできない。
+%%%%
+blind monstatus
+
+# en:
+#   This creature cannot see properly. Its accuracy is greatly decreased, it cannot
+#   make attacks of opportunity, and spells it casts may sometimes be aimed at the
+#   wrong locations.
+#
+#   It may also stumble around and eventually lose track of its target, especially
+#   if it has low intelligence.
+#
+#   [[low-tier stab monstatus]]
+この生き物はまともに目が見えない。命中率が大きく下がり、隙を突いた攻撃ができず、唱えた呪文が時おり誤った場所に向けられることがある。
+
+また、あたりをよろめき歩き、やがて標的を見失うこともある。知性が低い場合は特にそうなりやすい。
+
+[[low-tier stab monstatus]]
+%%%%
+bound in place monstatus
+
+# en:
+#   This creature cannot move under its own power, but may still use translocations
+#   or be forcibly displaced by someone else.
+この生き物は自力で移動することはできないが、転移を使ったり、他の誰かによって強制的に移動させられたりすることはある。
+%%%%
+called by a tesseract monstatus
+
+# en:
+#   This monster has been called from a parallel reality. Killing it will grant no
+#   experience points, but it will be immediately cast back to its original reality
+#   as soon as the tesseract is destroyed.
+このモンスターは並行世界から呼び出された。倒しても経験値は得られないが、テッセラクトが破壊されると、すぐに元の世界へと送り返される。
+%%%%
+catching its breath monstatus
+
+# en:
+#   This creature has used a breath ability recently and cannot use it again for a
+#   short while.
+この生き物は最近ブレスを使ったため、しばらくの間は再び使うことができない。
+%%%%
+catching his breath monstatus
+
+# en:
+#   [[catching its breath monstatus]]
+[[catching its breath monstatus]]
+%%%%
+catching her breath monstatus
+
+# en:
+#   [[catching its breath monstatus]]
+[[catching its breath monstatus]]
+%%%%
+catching their breath monstatus
+
+# en:
+#   [[catching its breath monstatus]]
+[[catching its breath monstatus]]
+%%%%
+chanting recall monstatus
+
+# en:
+#   This creature is chanting a Word of Recall. This will recall intelligent allies
+#   from elsewhere on the floor to the caster's vicinity after a short delay, but can
+#   be interrupted by most effects which would normally prevent it from casting spells.
+この生き物は招集の宣言を詠唱している。少し時間が経つと、階層の他の場所にいる知性ある仲間を術者の近くへ呼び寄せるが、通常呪文の詠唱を妨げるような効果のほとんどによって中断させることができる。
+%%%%
+charmed monstatus
+
+# en:
+#   This creature has been charmed and will fight for your cause for a short while. This
+#   effect will wear off immediately if you attempt to harm it in any way.
+この生き物は魅了されており、しばらくの間あなたのために戦う。あなたが何らかの形で危害を加えようとすると、この効果はただちに切れる。
+%%%%
+concentrated venom monstatus
+
+# en:
+#   This creature's natural venom has been intensified, giving any poison it inflicts
+#   through attacks or breath weapons a chance to slow and asphyxiate susceptible targets.
+この生き物の生来の毒は強められており、攻撃やブレスで与える毒には、影響を受けやすい対象を減速させ、窒息させる可能性がある。
+%%%%
+confused monstatus
+
+# en:
+#   This creature is unable to block or use spells or abilities and will stumble around
+#   at random, attacking whatever it bumps into - be they friend or foe or sometimes even
+#   themselves.
+#
+#   [[low-tier stab monstatus]]
+この生き物は攻撃を防ぐことも呪文や能力を使うこともできず、でたらめにあたりをよろめき歩き、ぶつかった相手を――味方であれ敵であれ、時には自分自身でさえ――攻撃する。
+
+[[low-tier stab monstatus]]
+%%%%
+contaminated monstatus
+
+# en:
+#   This creature has been contaminated by transmutational energy, and will suffer
+#   significant damage every third time such energy is inflicted upon them.
+この生き物は変成のエネルギーに汚染されており、そのようなエネルギーを 3 回浴びるごとに大きなダメージを受ける。
+%%%%
+constricted by roots monstatus
+
+# en:
+#   This creature is being constricted by tree roots, which reduces their evasion and
+#   inflicts some damage each turn. It may also prevent them from moving, though each
+#   attempt to do so has a chance to break this effect entirely.
+この生き物は木の根に締め付けられており、回避力が下がり、毎ターンいくらかのダメージを受けている。移動を妨げられることもあるが、移動しようとするたびに、一定の確率でこの効果を完全に振りほどくことができる。
+%%%%
+constricted by zombie hands monstatus
+
+# en:
+#   This creature is being constricted by clutching corpses from deep beneath the
+#   earth, which reduces their evasion and inflicts some damage each turn. It may also
+#   prevent them from moving, though each attempt to do so has a chance to break this
+#   effect entirely.
+この生き物は地中深くから伸びる、つかみかかる死体に締め付けられており、回避力が下がり、毎ターンいくらかのダメージを受けている。移動を妨げられることもあるが、移動しようとするたびに、一定の確率でこの効果を完全に振りほどくことができる。
+%%%%
+control wrested from you monstatus
+
+# en:
+#   This formerly-friendly creature has been charmed by another creature to join their
+#   side. If you slay the source of this charm, it will regain its senses.
+かつて友好的だったこの生き物は、別の生き物に魅了されてその側についている。この魅了の源を倒せば、正気を取り戻す。
+%%%%
+corroded monstatus
+
+# en:
+#   This creature's AC is reduced by 8.
+この生き物の AC は 8 下がっている。
+%%%%
+covered in liquid flames monstatus
+
+# en:
+#   This creature has been coated in sticky flame, and will take AC-ignoring fire damage
+#   each turn. Movement will shake off the flames, causing it to expire much more
+#   rapidly and stepping into water will extinguish it entirely.
+この生き物は粘りつく炎に覆われており、毎ターン AC を無視する火炎ダメージを受ける。移動すると炎が振り払われて効果がずっと早く切れ、水の中に入ると完全に消える。
+%%%%
+covered in magnetic dust monstatus
+
+# en:
+#   This creature is unable to evade attacks or turn invisible. If it dies, it will leave
+#   behind a cloud of magnetised fragments.
+#
+#   Each time Magnavolt is cast, a beam of electricity will automatically be fired at this
+#   creature.
+この生き物は攻撃を回避することも透明になることもできない。死ぬと、磁化した破片の雲を残す。
+
+マグナボルトが唱えられるたびに、この生き物に向けて自動的に電撃の光線が放たれる。
+%%%%
+covered in terrible wounds monstatus
+
+# en:
+#   This creature has been afflicted with illusory wounds by a flayed ghost. These wounds
+#   will disappear with time or when the flayed ghost is destroyed.
+この生き物は皮剥げ幽霊によって幻の傷を負わされている。この傷は時間が経つか、皮剥げ幽霊が倒されると消える。
+%%%%
+covering ground quickly monstatus
+
+# en:
+#   This creature moves slightly faster.
+この生き物はわずかに速く移動する。
+%%%%
+covering ground slowly monstatus
+
+# en:
+#   This creature is stuck in liquefied ground, causing it to move more slowly and also
+#   fumble 25% of the melee attacks it makes.
+この生き物は液状化した地面にはまっており、移動が遅くなり、近接攻撃の 25% をしくじる。
+%%%%
+crumbling away monstatus
+
+# en:
+#   This creature will be automatically destroyed in a few turns.
+この生き物は数ターンで自動的に崩れ去る。
+%%%%
+cursed with the promise of agony monstatus
+
+# en:
+#   This creature is cursed, and will lose half its current health after the next time
+#   the source of the curse hits it with a melee attack.
+この生き物は呪われており、次に呪いの源から近接攻撃を受けたとき、現在の体力の半分を失う。
+%%%%
+damage-immune at range monstatus
+
+# 英語版にこのキーが 2 つある。database.cc は DBM_REPLACE なので後の項目が使われる。
+# en:
+#   This creature takes no damage by any means unless the original source of that
+#   damage is adjacent to them. Non-damaging side-effects happen normally.
+#
+#   (The source of damage from clouds and projectile-like monsters, such as foxfires,
+#   is always considered whatever creature first created them.)
+この生き物は、ダメージの元が隣にいない限り、どんな手段でもダメージを受けない。ダメージ以外の副次効果は通常どおり起こる。
+
+(雲や、狐火のような飛び道具に似たモンスターによるダメージの元は、常にそれを最初に作り出した生き物とみなされる。)
+%%%%
+dazed monstatus
+
+# en:
+#   This creature is temporarily unable to act, but any hostile action will cause it to
+#   immediately regain its senses.
+この生き物は一時的に行動できないが、敵対的な行動をとると、ただちに我に返る。
+%%%%
+diminished spells monstatus
+
+# en:
+#   This creature's spells are less powerful - dealing less damage, being less able to
+#   overcome their target's willpower, and occasionally being weaker in other ways.
+この生き物の呪文は弱まっている。与えるダメージが減り、対象の意志力を打ち破りにくくなり、その他の点で弱くなることもある。
+%%%%
+dormant monstatus
+
+# en:
+#   [[asleep monstatus]]
+[[asleep monstatus]]
+%%%%
+doubled in vigour monstatus
+
+# en:
+#   This monster's current and maximum health are temporarily doubled.
+このモンスターの現在の体力と最大体力は、一時的に 2 倍になっている。
+%%%%
+empowered by the touch of Beogh monstatus
+
+# en:
+#   This creature has been granted great power by Beogh to challenge you. Their melee
+#   and ranged attacks deal 33% more damage, their health is increased, and they cast
+#   spells more frequently. They are also able to track you, no matter where on the
+#   current floor you flee.
+#
+#   They will lose these bonuses once the challenge is concluded.
+この生き物はあなたに挑むため、ベオから大いなる力を授かっている。近接攻撃と遠距離攻撃のダメージが 33% 増加し、体力が上がり、呪文をより頻繁に唱える。また、あなたが現在の階層のどこへ逃げても追跡することができる。
+
+挑戦が決着すると、これらの強化は失われる。
+%%%%
+encased in ice monstatus
+
+# en:
+#   This creature has been flash-frozen and its movement speed is greatly reduced for
+#   a short time.
+この生き物は瞬時に凍らされており、短い間、移動速度が大きく低下している。
+%%%%
+entangled in a net monstatus
+
+# en:
+#   This creature is caught in a net, greatly reducing its evasion and preventing it
+#   from blocking. Any attempt it makes to move or attack will instead struggle against
+#   the net, which may eventually destroy it. Spellcasting is unimpaired.
+#
+#   [[low-tier stab monstatus]]
+この生き物は網に絡めとられており、回避力が大きく下がり、攻撃を防ぐこともできない。移動や攻撃をしようとすると、代わりに網ともがくことになり、いずれ網を壊すこともある。呪文の詠唱は妨げられない。
+
+[[low-tier stab monstatus]]
+%%%%
+entangled in a web monstatus
+
+# en:
+#   This creature is caught in a spider's web, greatly reducing its evasion and
+#   preventing it from blocking. Any attempt it makes to move or attack will instead
+#   struggle against the web, which may eventually destroy it. Spellcasting is
+#   unimpaired.
+#
+#   [[low-tier stab monstatus]]
+この生き物は蜘蛛の巣に引っかかっており、回避力が大きく下がり、攻撃を防ぐこともできない。移動や攻撃をしようとすると、代わりに巣ともがくことになり、いずれ巣を壊すこともある。呪文の詠唱は妨げられない。
+
+[[low-tier stab monstatus]]
+%%%%
+extremely poisoned monstatus
+
+# en:
+#   This creature suffers poison damage every turn and cannot be poisoned any
+#   further.
+この生き物は毎ターン毒のダメージを受けており、これ以上毒に冒されることはない。
+%%%%
+fast monstatus
+
+# en:
+#   This creature moves and acts 50% faster.
+この生き物は移動も行動も 50% 速い。
+%%%%
+feeble figment monstatus
+
+# en:
+#   This creature is but a fragile duplicate of another creature. Its health is
+#   reduced by 66%, it deals 33% less damage with attacks, and its spells are
+#   significantly weakened.
+この生き物は別の生き物のもろい複製にすぎない。体力は 66% 少なく、攻撃のダメージは 33% 低く、呪文は大きく弱まっている。
+%%%%
+flame-wreathed monstatus
+
+# en:
+#   This creature has been empowered by the flames of Ignis. It deals additional
+#   fire damage with its melee attacks, moves 33% more quickly, and has increased AC
+#   and resistance to fire.
+この生き物はイグニスの炎によって強化されている。近接攻撃で追加の火炎ダメージを与え、33% 速く移動し、AC と火炎への耐性が上がっている。
+%%%%
+fleeing monstatus
+
+# en:
+#   This creature is fleeing in fear and will attempt each turn to move away from
+#   the source of this fear. Beside movement, it may only cast spells which it
+#   thinks could help it escape, such as Blink.
+#
+#   If harmed directly or cornered against terrain, it will turn around to fight
+#   once more.
+この生き物は恐怖のあまり逃げており、毎ターン恐怖の源から遠ざかろうとする。移動以外には、瞬間移動のように逃走に役立つと考える呪文しか唱えない。
+
+直接危害を加えられたり、地形に追い詰められたりすると、振り返って再び戦う。
+%%%%
+fragile as glass monstatus
+
+# en:
+#   This creature receives 50% more damage from all sources.
+この生き物は、あらゆるものから受けるダメージが 50% 増加する。
+%%%%
+frenzied and wild monstatus
+
+# en:
+#   This creature deals 50% more damage with melee attacks and both moves and
+#   attacks 50% faster. It cannot cast spells and will prioritise attacking the
+#   closest other creature present each turn, whether they are friend or foe.
+この生き物は近接攻撃のダメージが 50% 増加し、移動も攻撃も 50% 速くなっている。呪文を唱えることはできず、毎ターン、味方であれ敵であれ、最も近くにいる他の生き物を優先して攻撃する。
+%%%%
+fully charged monstatus
+
+# en:
+#   This creature has gathered all the power it needs to cast its spells.
+この生き物は、呪文を唱えるのに必要な力をすべて蓄えている。
+%%%%
+grapneled monstatus
+
+# en:
+#   This creature has been struck with a kinetic grapnel. The next melee attack
+#   from the grapnel's source will always hit and deal slightly increased damage.
+この生き物は動力式鉤縄を打ち込まれている。鉤縄を打ち込んだ者からの次の近接攻撃は必ず命中し、わずかに増加したダメージを与える。
+%%%%
+heavily contaminated monstatus
+
+# en:
+#   [[contaminated monstatus]]
+[[contaminated monstatus]]
+%%%%
+heavily drained monstatus
+
+# en:
+#   This creature has been heavily drained, lowering the accuracy of their melee
+#   attacks, the power of their spells and special attack properties, and making
+#   them more vulnerable to many status effects.
+この生き物はひどく衰弱しており、近接攻撃の命中率、呪文や特殊攻撃の威力が下がり、多くの状態異常にかかりやすくなっている。
+%%%%
+idealised monstatus
+
+# en:
+#   This creature has glows with the perfection of their best self. They deal 100%
+#   more damage with melee attacks, have additional AC, and cast spells with
+#   substantially more strength.
+この生き物は、最高の自分という完璧さに輝いている。近接攻撃のダメージが 100% 増加し、AC が上乗せされ、呪文をかなり強い力で唱える。
+%%%%
+incited by Gozag monstatus
+
+# en:
+#   This creature has been roused into great speed by the wrath of Gozag Ym Sagoz.
+#   Their haste or berserk state is permanent and will not wear off with time
+#   or through deliberate magical intervention.
+この生き物はゴザーグ・イム・サゴーズの怒りによって奮い立たされ、大いに素早くなっている。その加速やバーサークの状態は永続的で、時間が経っても、意図的な魔法の干渉によっても切れることはない。
+%%%%
+indifferent monstatus
+
+# en:
+#   This creature is neither hostile nor allied and may attack creatures of all
+#   dispositions, should it wander into them.
+この生き物は敵対的でも友好的でもなく、出くわした相手であれば、どんな立場の生き物でも攻撃することがある。
+%%%%
+infested monstatus
+
+# en:
+#   This creature is infested with a death scarab, which will emerge from their
+#   body once they die.
+この生き物には死の太陽虫が寄生しており、死ぬとその体から出てくる。
+%%%%
+inner flame monstatus
+
+# en:
+#   Whenever this creature suffers damage, a flame cloud will briefly appear
+#   beneath them. When they die, they will explode in a violent burst of fire,
+#   damaging anything nearby and leaving behind additional flame clouds.
+#
+#   Giant creatures will trigger an even larger explosion when they die.
+この生き物はダメージを受けるたびに、その足元に一瞬炎の雲が現れる。死ぬと激しく爆発して炎を噴き上げ、近くのものすべてにダメージを与え、さらに炎の雲を残す。
+
+巨大な生き物は、死ぬとさらに大きな爆発を起こす。
+%%%%
+inspiring fear monstatus
+
+# en:
+#   You are currently terrified of this creature, preventing you from deliberately
+#   moving close to them and causing 33% of the melee attacks you make again
+#   against them fail.
+#
+#   This effect will break if you ever lose sight of this creature.
+あなたは現在この生き物を恐れており、自分から近づくことができず、この生き物への近接攻撃の 33% が失敗する。
+
+この生き物が視界から外れると、この効果は解ける。
+%%%%
+interlaced with chaos monstatus
+
+# en:
+#   This creature's melee attacks may inflict additional damage of a random element
+#   or cause various irresistible status effects.
+この生き物の近接攻撃は、ランダムな属性の追加ダメージを与えたり、抵抗できないさまざまな状態異常を引き起こしたりすることがある。
+%%%%
+lashing out in frustration monstatus
+
+# en:
+#   This creature has been magically vexed and is forced to attack a random adjacent
+#   space each turn instead of performing any other actions. It is more likely to
+#   attack a space containing a creature than an empty one, but will attack its own
+#   allies as readily as its enemies.
+この生き物は魔法で苛立たされており、他の行動の代わりに、毎ターン隣接するランダムなマスを攻撃せずにはいられない。何もないマスよりも生き物のいるマスを攻撃しやすいが、敵と同じように自分の仲間も平気で攻撃する。
+%%%%
+lightly drained monstatus
+
+# en:
+#   This creature has been lightly drained, somewhat lowering the accuracy of their
+#   melee attacks, the power of their spells and special attack properties, and
+#   making them slightly more vulnerable to many status effects.
+この生き物は少し衰弱しており、近接攻撃の命中率、呪文や特殊攻撃の威力がやや下がり、多くの状態異常にわずかにかかりやすくなっている。
+%%%%
+lost in madness monstatus
+
+# en:
+#   This creature has been driven to madness by the power of Zin. It will never again
+#   use spells or abilities and will stumble around at random, attacking whatever
+#   it bumps into - be they friend or foe or sometimes even themselves.
+この生き物はジンの力によって狂気に追いやられている。二度と呪文や能力を使うことはなく、でたらめにあたりをよろめき歩き、ぶつかった相手を――味方であれ敵であれ、時には自分自身でさえ――攻撃する。
+%%%%
+magic disrupted monstatus
+
+# en:
+#   This creature's spells and magical abilities have been disrupted and may fail when
+#   used. The chance of failure depends on the remaining duration of this effect.
+この生き物の呪文と魔法の能力はかき乱されており、使うと失敗することがある。失敗する確率は、この効果の残り時間によって決まる。
+%%%%
+magic-sapped monstatus
+
+# en:
+#   This creature has had its access to magic tainted. Whenever it casts a spell, its
+#   magic will be severely disrupted, making it likely any subsequent spells it casts
+#   will fail.
+この生き物は魔力とのつながりを汚されている。呪文を唱えるたびに魔力がひどくかき乱され、その後に唱える呪文は失敗しやすくなる。
+%%%%
+marked with the sign of ruin monstatus
+
+# en:
+#   This creature has been condemned to inexorable decay and ruin. Whenever it takes
+#   damage from melee attacks, it will be drained heavily and either slowed, weakened,
+#   or blinded.
+この生き物は避けられない衰退と破滅を宣告されている。近接攻撃でダメージを受けるたびに、ひどく衰弱し、さらに減速、弱体化、盲目のいずれかになる。
+%%%%
+mesmerising monstatus
+
+# en:
+#   This creature has mesmerised you, making you unable to voluntarily move away
+#   from them.
+#
+#   This effect will break if you ever lose sight of this creature.
+この生き物はあなたを魅惑しており、あなたは自分からこの生き物から遠ざかることができない。
+
+この生き物が視界から外れると、この効果は解ける。
+%%%%
+minion monstatus
+
+# en:
+#   This creature has been created by magic and will cease to be once its creator dies.
+この生き物は魔法によって生み出されたもので、作り手が死ぬと消滅する。
+%%%%
+missing a shadow monstatus
+
+# en:
+#   This creature's shadow has been torn away from it and cannot be affected
+#   by Aphotic Marionette ever again.
+この生き物の影は引き剥がされており、二度と暗黒の操り人形の影響を受けることはない。
+%%%%
+misshapen and mutated monstatus
+
+# en:
+#   This creature's AC is reduced by 8 and its accuracy, spell power, brand damage, and
+#   willpower are moderately reduced.
+この生き物の AC は 8 下がっており、命中率、呪文威力、属性攻撃のダメージ、意志力がそれなりに下がっている。
+%%%%
+more vulnerable to fire monstatus
+
+# en:
+#   This creature's fire resistance is reduced by one level.
+この生き物の火炎への耐性は 1 段階下がっている。
+%%%%
+more vulnerable to poison monstatus
+
+# en:
+#   This creature's poison resistance is reduced by one level.
+この生き物の毒への耐性は 1 段階下がっている。
+%%%%
+mute monstatus
+
+# en:
+#   This creature has been stricken permanently mute by the power of Zin. This
+#   prevents all noise the creature could make, including the vocalisations
+#   required for most creatures to cast spells.
+この生き物はジンの力によって、永久に声を奪われている。これにより、この生き物が立てうるあらゆる音が封じられ、たいていの生き物が呪文を唱えるのに必要な発声もできなくなっている。
+%%%%
+not watching you monstatus
+
+# en:
+#   This creature has been briefly distracted by something else.
+#
+#   [[low-tier stab monstatus]]
+この生き物は何か別のものに一時的に気を取られている。
+
+[[low-tier stab monstatus]]
+%%%%
+paralysed monstatus
+
+# en:
+#   This creature is unable to move, act, block, or dodge attacks.
+#
+#   [[high-tier stab monstatus]]
+この生き物は移動も行動もできず、攻撃を防ぐことも避けることもできない。
+
+[[high-tier stab monstatus]]
+%%%%
+paralysed with fear monstatus
+
+# en:
+#   [[paralysed monstatus]]
+[[paralysed monstatus]]
+%%%%
+partially charged monstatus
+
+# en:
+#   This creature has built up part of the charge it needs to cast a spell or
+#   activate an ability.
+この生き物は、呪文を唱えたり能力を使ったりするのに必要な力の一部を蓄えている。
+%%%%
+peaceful monstatus
+
+# en:
+#   This creature will never attack you and may attack other creatures hostile to
+#   you, but will neither follow you nor obey any direct instructions.
+この生き物は決してあなたを攻撃せず、あなたに敵対する他の生き物を攻撃することもあるが、あなたについてくることも、直接の指示に従うこともない。
+%%%%
+petrifying slowly monstatus
+
+# en:
+#   This creature will soon become fully petrified. Its movement and actions are
+#   50% slower and it is nearly unable to dodge attacks, though it also takes 33%
+#   less damage.
+#
+#   [[low-tier stab monstatus]]
+この生き物はまもなく完全に石化する。移動と行動が 50% 遅くなり、攻撃をほとんど避けられないが、受けるダメージも 33% 減っている。
+
+[[low-tier stab monstatus]]
+%%%%
+petrified monstatus
+
+# en:
+#   This creature is unable to move, act, block, or dodge attacks. By being made
+#   of stone, it also takes 50% less damage, gains immunity to negative energy and
+#   poison, but become vulnerable to deconstruction.
+#
+#   [[high-tier stab monstatus]]
+この生き物は移動も行動もできず、攻撃を防ぐことも避けることもできない。石でできているため、受けるダメージが 50% 減り、負のエネルギーと毒が効かなくなるが、解体の術には弱くなる。
+
+[[high-tier stab monstatus]]
+%%%%
+poisoned monstatus
+
+# en:
+#   This creature suffers poison damage every turn.
+この生き物は毎ターン毒のダメージを受けている。
+%%%%
+radiating silence monstatus
+
+# en:
+#   This creature is surrounded by a field of unnatural silence which eliminates
+#   all noise made within it as well as preventing the vocalisations required for
+#   many creatures (including you) to read scrolls, cast spells, or invoke divine
+#   aid.
+#
+#   If this effect was caused by a spell, the radius of the field will shrink over
+#   time.
+この生き物は不自然な静寂の場に囲まれている。その中で立てられた音はすべて消え、多くの生き物(あなたも含む)が巻物を読んだり、呪文を唱えたり、神の助けを祈ったりするのに必要な発声もできなくなる。
+
+この効果が呪文によるものなら、場の半径は時間とともに縮んでいく。
+%%%%
+radiating toxic energy monstatus
+
+# en:
+#   This creature shines with Olgreb's Toxic Radiance and will continuously inflict
+#   poison damage on all foes in sight for several turns.
+この生き物はオルグレブの毒気の光輪で輝いており、数ターンの間、視界内のすべての敵に絶えず毒のダメージを与える。
+%%%%
+ready to become your apostle monstatus
+
+# en:
+#   This creature has been defeated in honourable combat and may be recruited as
+#   one of your apostles via the ability menu.
+この生き物は名誉ある戦いに敗れた。能力メニューから、あなたの使徒の一人として迎え入れることができる。
+%%%%
+ready to howl monstatus
+
+# en:
+#   This creature has not yet inflicted you with Oblivion Howl and may attempt to do so.
+この生き物はまだあなたに忘却の咆哮を浴びせておらず、これから浴びせようとすることがある。
+%%%%
+ready to sunder monstatus
+
+# en:
+#   This creature's Sundering weapon is fully charged and its next attack will be
+#   more accurate, inflict greatly increased damage, and cleave with increased range.
+#   This effect will be lost if it moves.
+この生き物の断裂の武器は力を蓄えきっており、次の攻撃はより正確になり、ダメージが大きく増加し、より広い範囲を薙ぎ払う。移動すると、この効果は失われる。
+%%%%
+reflecting blocked projectiles monstatus
+
+# en:
+#   This creature reflects any projectile it blocks back to their original source.
+この生き物は、防いだ飛び道具をすべて元の発射元へ跳ね返す。
+%%%%
+reflecting injuries monstatus
+
+# en:
+#   Whenever this creature suffers damage, it inflicts 2/3rds as much damage back upon
+#   whatever damaged it.
+この生き物はダメージを受けるたびに、その 3 分の 2 のダメージを、ダメージを与えた相手に跳ね返す。
+%%%%
+regenerating monstatus
+
+# en:
+#   This creature regenerates health at a greatly increased rate, proportion to their
+#   maximum health.
+この生き物は、最大体力に比例した非常に速い速度で体力を回復する。
+%%%%
+repelling missiles monstatus
+
+# en:
+#   This creature has +15 EV when dodging projectiles, whether physical or magical.
+この生き物は、物理的なものであれ魔法によるものであれ、飛び道具を避けるときの EV が +15 されている。
+%%%%
+retreating monstatus
+
+# en:
+#   This creature has been ordered to flee in a given direction, and will not attack
+#   or return to your side until they are given new instructions or have travelled a
+#   sufficient distance
+この生き物は特定の方向へ退却するよう命じられており、新しい指示を受けるか、十分な距離を移動するまで、攻撃することも、あなたのそばに戻ってくることもない。
+%%%%
+rolling monstatus
+
+# en:
+#   This creature has curled into a ball, increasing its movement speed and melee
+#   damage by 100% until the next time it attacks something (or becomes unable to move).
+この生き物は丸まって球になっており、次に何かを攻撃するまで(あるいは移動できなくなるまで)、移動速度と近接攻撃のダメージが 100% 増加している。
+%%%%
+sharing its pain monstatus
+
+# en:
+#   This creature will inflict a portion of all damage it suffers upon nearby allies,
+#   with those closer to it receiving a greater amount.
+この生き物は、受けたダメージの一部を近くにいる仲間に負わせる。近くにいる仲間ほど、受ける量は多くなる。
+%%%%
+sharing his pain monstatus
+
+# en:
+#   [[sharing its pain monstatus]]
+[[sharing its pain monstatus]]
+%%%%
+sharing her pain monstatus
+
+# en:
+#   [[sharing its pain monstatus]]
+[[sharing its pain monstatus]]
+%%%%
+sharing their pain monstatus
+
+# en:
+#   [[sharing its pain monstatus]]
+[[sharing its pain monstatus]]
+%%%%
+sheltered from injuries monstatus
+
+# en:
+#   Half of the damage suffered by this creature is redirected to the ally protecting it
+#   instead.
+この生き物が受けたダメージの半分は、代わりにこの生き物を守っている仲間に肩代わりされる。
+%%%%
+sick monstatus
+
+# en:
+#   This creature is sick and cannot naturally regenerate.
+この生き物は病気にかかっており、自然に体力を回復することができない。
+%%%%
+silenced monstatus
+
+# en:
+#   This creature is engulfed in a field of unnatural silence, preventing any noise
+#   it might make, including the vocalisations required for many creatures to cast
+#   spells.
+この生き物は不自然な静寂の場に包まれており、立てうるあらゆる音が封じられ、多くの生き物が呪文を唱えるのに必要な発声もできなくなっている。
+%%%%
+skewered by barbs monstatus
+
+# en:
+#   This creature will take minor damage whenever it moves.
+この生き物は移動するたびに軽いダメージを受ける。
+%%%%
+slightly transparent monstatus
+
+# en:
+#   This creature is normally invisible, but your magical sight allows you to see it
+#   nonetheless. This has no effect on you, though any allies you have may not be
+#   able to see it as you can.
+この生き物は本来は透明だが、あなたの魔法の視覚によって見ることができる。あなた自身には何の影響もないが、あなたの仲間は、あなたと同じようにはこの生き物を見られないかもしれない。
+%%%%
+slow monstatus
+
+# en:
+#   This creature moves and acts at 66% of normal speed.
+この生き物は通常の 66% の速さで移動し、行動する。
+%%%%
+softly glowing monstatus
+
+# en:
+#   This creature has been outlined with a halo of light and is easier to hit and
+#   revealed, if invisible.
+この生き物は光の輪郭に縁取られており、攻撃が当たりやすく、透明であっても姿が見えるようになっている。
+%%%%
+soul bound monstatus
+
+# en:
+#   This creature's soul has been bound in ice. When it dies, a simulacrum of its
+#   original form will rise in its place.
+この生き物の魂は氷の中に呪縛されている。死ぬと、その代わりに元の姿の幻像が立ち上がる。
+%%%%
+soul-gripped monstatus
+
+# en:
+#   This creature's soul will be bound in service to you once they die, though
+#   allowing them to stray from your line of sight for more than a brief moment
+#   will cause you to lose your grasp on it.
+この生き物の魂は、死ぬとあなたに仕えるよう縛られる。ただし、わずかな間を超えてあなたの視界から外れると、その魂を掴んでおくことができなくなる。
+%%%%
+soul-splintered monstatus
+
+# en:
+#   A fragment of this creature's soul has been extracted into a soul wisp,
+#   preventing further use of this spell until the wisp reunites with them again.
+この生き物の魂の欠片が魂の鬼火として抜き取られており、鬼火が再びこの生き物と一つになるまで、この呪文をさらに使うことはできない。
+%%%%
+spells empowered monstatus
+
+# en:
+#   This creature's spells are strengthened and it will cast them more frequently.
+この生き物の呪文は強化されており、より頻繁に唱えられる。
+%%%%
+spells diminished monstatus
+
+# en:
+#   This creature's spells are significantly weakened.
+この生き物の呪文は大きく弱まっている。
+%%%%
+stilling the winds monstatus
+
+# en:
+#   This creature is preventing any clouds from being created on the current floor.
+この生き物は、現在の階層で雲が生じるのを妨げている。
+%%%%
+strong monstatus
+
+# en:
+#   This creature's melee attacks deal 50% more damage.
+この生き物の近接攻撃のダメージは 50% 増加している。
+%%%%
+strong-willed monstatus
+
+# en:
+#   This creature's willpower is increased by 2 pips.
+この生き物の意志力は 2 段階上がっている。
+%%%%
+stupefied monstatus
+
+# en:
+#   This creature has been struck dumb by the power of Zin and cannot act.
+#
+#   [[high-tier stab monstatus]]
+この生き物はジンの力によって呆然としており、行動できない。
+
+[[high-tier stab monstatus]]
+%%%%
+surrounded by a freezing vortex monstatus
+
+# en:
+#   This creature is the source of a devastating polar vortex.
+この生き物は、破壊的な極渦の発生源となっている。
+%%%%
+surrounded by acidic fog monstatus
+
+# en:
+#   This creature trails a ring of acidic fog clouds around itself.
+この生き物は、自らの周囲に酸性の霧の雲を輪のようにまとっている。
+%%%%
+surrounded by chaotic energy monstatus
+
+# en:
+#   This creature trails a ring of seething chaos clouds around itself.
+この生き物は、自らの周囲に渦巻く混沌の雲を輪のようにまとっている。
+%%%%
+surrounded by flames monstatus
+
+# en:
+#   This creature trails a ring of flame clouds around itself.
+この生き物は、自らの周囲に炎の雲を輪のようにまとっている。
+%%%%
+surrounded by fog monstatus
+
+# en:
+#   This creature trails a ring of purple smoke around itself.
+この生き物は、自らの周囲に紫の煙を輪のようにまとっている。
+%%%%
+surrounded by foul miasma monstatus
+
+# en:
+#   This creature trails a ring of foul miasma around itself.
+この生き物は、自らの周囲に汚れた瘴気を輪のようにまとっている。
+%%%%
+surrounded by freezing clouds monstatus
+
+# en:
+#   This creature trails a ring of freezing clouds around itself.
+この生き物は、自らの周囲に凍てつく雲を輪のようにまとっている。
+%%%%
+surrounded by mutagenic energy monstatus
+
+# en:
+#   This creature trails a ring of mutagenic fog around itself.
+この生き物は、自らの周囲に変異性の霧を輪のようにまとっている。
+%%%%
+surrounded by negative energy monstatus
+
+# en:
+#   This creature trails a ring of clouds of excruciating misery around itself.
+この生き物は、自らの周囲に耐えがたい苦悶の雲を輪のようにまとっている。
+%%%%
+surrounded by restless winds monstatus
+
+# en:
+#   This creature has recently cast Polar Vortex and cannot cast it again for
+#   a short time.
+この生き物は最近極渦を唱えたため、しばらくの間は再び唱えることができない。
+%%%%
+surrounded by thunder monstatus
+
+# en:
+#   This creature trails a ring of thunder clouds around itself.
+この生き物は、自らの周囲に雷雲を輪のようにまとっている。
+%%%%
+target of orcish vengeance monstatus
+
+# en:
+#   This creature has contributed to the death of one of your apostles. Defeating all
+#   targets of orcish vengeance will significantly speed up the time it takes for
+#   Beogh to resurrect your apostles.
+この生き物は、あなたの使徒の一人の死に関わった。オークの復讐の標的をすべて倒すと、ベオがあなたの使徒を蘇らせるまでの時間が大幅に短くなる。
+%%%%
+targeted by your dimensional bullseye monstatus
+
+# en:
+#   Whenever you perform a ranged attack aimed at a different creature, a copy of
+#   the projectile will be teleported to this creature at the end of its flight.
+あなたが別の生き物を狙って遠距離攻撃をするたびに、飛び道具の複製が、その飛翔の終わりにこの生き物のもとへ転送される。
+%%%%
+tempered monstatus
+
+# en:
+#   This creature's melee attacks deal 25% more damage, its accuracy is slightly
+#   increased, and its spells and abilities have been mildly strengthened.
+この生き物の近接攻撃のダメージは 25% 増加し、命中率がわずかに上がり、呪文と能力がやや強化されている。
+%%%%
+touched by paradox monstatus
+
+# en:
+#   This creature has become unmoored in space, allowing it to Manifold Assault as
+#   a natural ability. Whenever they do, there is 33% chance they will also blink
+#   to a random nearby location.
+この生き物は空間から解き放たれており、多重攻撃を生来の能力として使うことができる。使うたびに、33% の確率で近くのランダムな場所へ瞬間移動もする。
+%%%%
+unable to see you monstatus
+
+# en:
+#   This creature is unable to see you because you are invisible. Its accuracy
+#   against you is greatly decreased, it cannot make attacks of opportunity, and
+#   spells it casts may sometimes be aimed at the wrong locations.
+#
+#   It may also stumble around and eventually lose track of you, especially if it
+#   has low intelligence.
+#
+#   [[low-tier stab monstatus]]
+この生き物は、あなたが透明なためにあなたを見ることができない。あなたへの命中率は大きく下がり、隙を突いた攻撃ができず、唱えた呪文が時おり誤った場所に向けられることがある。
+
+また、あたりをよろめき歩き、やがてあなたを見失うこともある。知性が低い場合は特にそうなりやすい。
+
+[[low-tier stab monstatus]]
+%%%%
+unable to translocate monstatus
+
+# en:
+#   This creature cannot blink or teleport.
+この生き物は、瞬間移動もテレポートもできない。
+%%%%
+unaffected by silence monstatus
+
+# en:
+#   Despite being engulfed in unnatural silence, this creature's magic does not
+#   require vocalisations and thus is unaffected.
+不自然な静寂に包まれているにもかかわらず、この生き物の魔法は発声を必要としないため、影響を受けない。
+%%%%
+unrewarding monstatus
+
+# en:
+#   This creature provides no experience or piety when slain.
+この生き物を倒しても、経験値も信仰心も得られない。
+%%%%
+untethered in space monstatus
+
+# en:
+#   Each turn, this creature blinks a short distance further away from you and
+#   suffers a small amount of damage.
+この生き物は毎ターン、あなたから少し遠くへ瞬間移動し、わずかなダメージを受ける。
+%%%%
+unusually agile monstatus
+
+# en:
+#   This creature's evasion is slightly increased.
+この生き物の回避力はわずかに上がっている。
+%%%%
+unusually resistant monstatus
+
+# en:
+#   This creature's resistance to fire, cold, poison, electricity, and corrosion
+#   are all increased by one level.
+この生き物の火炎、冷気、毒、電撃、腐蝕への耐性は、すべて 1 段階上がっている。
+%%%%
+very poisoned monstatus
+
+# en:
+#   This creature is poisoned and will take damage every turn.
+この生き物は毒に冒されており、毎ターンダメージを受ける。
+%%%%
+unable to breathe monstatus
+
+# en:
+#   This creature is unable to breathe and cannot cast spells or invoke divine aid.
+#   It also takes minor asphyxiation damage every turn.
+この生き物は呼吸ができず、呪文を唱えることも、神の助けを祈ることもできない。また、毎ターン軽い窒息ダメージを受ける。
+%%%%
+weak monstatus
+
+# en:
+#   This creature's melee attacks deal 33% less damage.
+この生き物の近接攻撃のダメージは 33% 減少している。
+%%%%
+weak-willed monstatus
+
+# en:
+#   This creature's willpower is reduced by half.
+この生き物の意志力は半分になっている。
+%%%%
+winding a clockwork bee monstatus
+
+# en:
+#   This creature is preparing to launch a clockwork bee and must focus on this
+#   task for several turns. Most effects that would prevent this creature from
+#   casting spells will also interrupt this process.
+この生き物は時計仕掛けの蜂を放つ準備をしており、数ターンの間この作業に集中しなければならない。通常呪文の詠唱を妨げるような効果のほとんどは、この作業も中断させる。
+%%%%
+withering away monstatus
+
+# en:
+#   This creature will die in a few turns.
+この生き物は数ターンで死ぬ。
+%%%%
+low-tier stab monstatus
+
+# en:
+#   <blue>Melee attacks you make against this creature have a chance (proportional to
+#   your stealth and weapon skill) of catching it off-guard and dealing
+#   increased damage, especially if made with a short blade.</blue>
+<blue>あなたがこの生き物に近接攻撃をすると、(隠密と武器の技能に比例した)一定の確率で不意を突き、増加したダメージを与えられる。短剣で攻撃した場合は特に効果が大きい。</blue>
+%%%%
+high-tier stab monstatus
+
+# en:
+#   <blue>Melee attacks you make against this creature will deal greatly increased damage,
+#   especially if made with a short blade.</blue>
+<blue>あなたがこの生き物に近接攻撃をすると、大きく増加したダメージを与えられる。短剣で攻撃した場合は特に効果が大きい。</blue>
+%%%%
