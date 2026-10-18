@@ -102,6 +102,9 @@ int count_bits(enum_bitfield<E, Exp> bits)
 const char *spell_title(spell_type which_spell);
 const char* spelltype_short_name(spschool which_spelltype);
 const char* spelltype_long_name(spschool which_spelltype);
+// 表示用(日本語)
+string spelltype_short_name_j(spschool which_spelltype);
+string spelltype_long_name_j(spschool which_spelltype);
 
 typedef function<int (coord_def where)> cell_func;
 typedef function<int (coord_def where, int pow, int spreadrate,

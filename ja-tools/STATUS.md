@@ -6,7 +6,7 @@
 
 ## 次にやること(2026-10-19 時点)
 
-C++ 張り直しの第 4 陣から。下の「第 4 陣の案」の 7 グループを
+C++ 張り直しの第 5 陣から。下の「第 5 陣の案」の 7 グループを
 サブエージェントに並行で割り当てる(指示文の型は第 1〜3 陣と同じ: CONVENTIONS.md と
 FOLLOWUPS.md を読ませ、担当ファイルを列挙し、FOLLOWUPS.md の該当項目も対応させる。
 担当ファイルとその辞書以外、japanese.cc/h、data-*.txt は編集させない。
@@ -46,6 +46,13 @@ data-*.txt に足す訳は報告させ、取りまとめ役が書く。ビルド
   波括弧)を直して通し、実機で能力メニュー(「バーサーク」「信仰心-」)、神の画面、
   ステータス欄の称号(「切りつける者」)を確認済み。辞書の未訳 0・重複 0。
 
+- 第 4 陣: 下記の第 4 陣の全ファイル(辞書キー約 2,900)。説明画面、ステータス欄、
+  照準・地形、コマンド・ヘルプ、タイトル・キャラ作成・ヒント、呪文の詠唱・デッキ・店、
+  階段・探索・鳴き声。取りまとめで ja/randbook.txt を 0.19-ja から移植・追訳、
+  ベオ信徒の種族名 46 件、「ギズモ」に訳語統一。ビルドは通った(リンク時に crawl.exe が
+  起動中で 1 回失敗しただけ)。実機確認は IME の窓が前面に居座って入力できず未実施
+  (第 5 陣の確認時にまとめて見る)。辞書の未訳 0・重複 0。
+
 ## C++ 張り直しの分担計画
 
 各ファイルは規約の手順(old → wrap → 手作業 → harvest → 翻訳 → check)で処理。
@@ -81,24 +88,33 @@ data-*.txt に足す訳は報告させ、取りまとめ役が書く。ビルド
   表示する英文なしを確認)
 - actor.cc, misc.cc, traps.cc, cloud.cc(+ 呼び出し側の resist_margin_phrase / held_status の整理)
 
-第 4 陣の案(7 グループ):
-1. describe.cc(7,700 行。単独)
-2. output.cc, quiver.cc, invent.cc, adjust.cc, tilereg-*.cc(画面の表示部品)
-3. directn.cc, target.cc, target-compass.cc, prompt.cc, terrain.cc, viewmap.cc, view.cc, show.cc
-4. main.cc, command.cc, macro.cc, menu.cc, outer-menu.cc, game-options.cc
-5. newgame.cc, ng-*.cc, startup.cc, hints.cc, tutorial.cc, lookup-help.cc, describe-spells.cc
-6. spl-cast.cc, spl-book.cc, spl-util.cc, spl-zap.cc, randbook.cc, decks.cc, shopping.cc, acquire.cc
-7. stairs.cc, travel.cc, abyss.cc, zot.cc, orb.cc, areas.cc, exclude.cc, branch.cc,
-   dgn-overview.cc, shout.cc, teleport.cc, place.cc
+第 4 陣(完了):
+- describe.cc
+- output.cc, quiver.cc, invent.cc, adjust.cc, tilereg-*.cc
+- directn.cc/.h, target.cc, target-compass.cc, prompt.cc, terrain.cc, viewmap.cc, view.cc(show.cc は英文なし)
+- main.cc, command.cc, macro.cc, menu.cc, game-options.cc/.h(outer-menu.cc は英文なし)
+- newgame.cc, ng-input.cc, startup.cc, hints.cc, lookup-help.cc, describe-spells.cc
+- spl-cast.cc, spl-book.cc, spl-util.cc/.h, randbook.cc, decks.cc, shopping.cc/.h, acquire.cc
+- stairs.cc, travel.cc(+ level-id.h), abyss.cc, zot.cc, orb.cc, areas.cc, exclude.cc, branch.cc,
+  dgn-overview.cc, shout.cc, teleport.cc, place.cc
 
-第 5 陣の候補:
-- 記録: hiscores.cc, chardump.cc, notes.cc, kills.cc, end.cc, files.cc, dactions.cc, fineff.cc, arena.cc, wizard.cc
-- アイテム: stash.cc, item-prop.cc, known-items.cc, makeitem.cc, artefact.cc, feature.cc, corpse.cc
-- 残り: ghost.cc, spl-wpnench.cc, spl-tornado.cc など、`jtools.py check` 以外に英文が残るファイル
-  (各陣の後に、jtrans を含まないファイルの mpr/mprf を grep して洗い出す)
-- 対象外・後回し: wiz-*.cc, dbg-*.cc, l-*.cc(Lua バインディング)、tile*.cc の内部処理、
-  mapdef.cc / dungeon.cc / dgn-*.cc(迷宮生成)、initfile.cc(オプション解析。
-  ヘルプ文など表示部分だけ後で)、tags.cc、lang-fake.cc、tileweb.cc(Web 版)
+第 5 陣の案(7 グループ):
+1. hiscores.cc, chardump.cc, notes.cc, kills.cc(死因・ダンプ・ノートの表示)
+2. files.cc, end.cc, dactions.cc, fineff.cc, arena.cc, ghost.cc, player-save-info.cc, state.cc, nearby-danger.cc
+3. stash.cc, item-prop.cc, known-items.cc, makeitem.cc, artefact.cc, feature.cc, corpse.cc, map-knowledge.cc
+4. initfile.cc(表示部分だけ), ui.cc, precision-menu.cc, scroller.cc, message-stream.cc, format.cc,
+   tilesdl.cc, mapmark.cc, dgl-message.cc, dungeon.cc / maps.cc / mapdef.cc(プレイヤーに見える文だけ)
+5. 申し送りの残り(戦闘・モンスター側): beam.cc, fight.cc, ranged-attack.cc, mon-project.cc,
+   monster.cc, mon-util.cc, spl-summoning.cc, spl-vortex.cc, god-abil.cc, god-companions.cc,
+   religion.cc, describe-god.cc, mutation.cc
+6. 申し送りの残り(プレイヤー・アイテム側): player.cc, tilepick.cc, items.cc, item-name.cc,
+   quiver.cc, stairs.cc, prompt.cc, player-notices.cc, showsymb.cc, tilereg-dgn.cc
+7. Lua 連携: l-*.cc(`*_en` への置き換え、`crawl.jtrans` の用意)と dat/clua/*.lua の表示文
+
+第 6 陣以降の候補:
+- jtrans を含まない残りのファイルの洗い出し(各陣の後に grep)、wiz-*.cc(優先度低)
+- C++ の張り直しが一通り済んだら、目標の 2(dat/des, dlua)→ 3(DB の全訳)へ
+- 対象外・後回し: dbg-*.cc、tile*.cc の内部処理、tags.cc、lang-fake.cc、tileweb.cc(Web 版)
 
 実機で見えた未訳(第 2 陣の確認時): タイトル・キャラ作成画面(startup.cc, newgame.cc,
 ng-*.cc)、ステータス欄(output.cc)、"You encounter ..."(player-notices.cc)、
@@ -132,6 +148,9 @@ tile_font_lbl_file = C:/Windows/Fonts/BIZ-UDGothicR.ttc
 name = jatest2
 ```
 
+IME(TextInputHost)の窓が前面に残ると、computer-use のキー入力もクリックも拒否される
+(Windows の前面ロックで PowerShell からも切り替えられない)。その場合はユーザーに
+IME の窓を閉じてもらうか、確認を次の機会に回す。
 画面確認は computer-use で、crawl.exe を起動してから `request_access` に
 `crawl.exe` を指定して許可を取る(表示名は "Crawl")。前面に出すときは `open_application` を
 使わず、ウィンドウをクリックする(`open_application` は rc なしの crawl.exe を別に起動してしまい、

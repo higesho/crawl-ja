@@ -8,12 +8,14 @@
 #include "describe-spells.h"
 
 #include "colour.h"
+#include "database.h"
 #include "delay.h"
 #include "describe.h"
 #include "english.h"
 #include "externs.h"
 #include "god-abil.h"
 #include "invent.h"
+#include "japanese.h"
 #include "libutil.h"
 #include "menu.h"
 #include "mon-book.h"
@@ -107,8 +109,9 @@ static string _ability_type_vulnerabilities(mon_spell_slot_flag type)
     const bool antimagicable = type == MON_SPELL_WIZARD
                                || type == MON_SPELL_MAGICAL;
     ASSERT(silencable || antimagicable);
-    return make_stringf(", which are affected by %s",
-                        _abil_type_vuln_core(silencable, antimagicable));
+    return make_stringf(jtransc(", which are affected by %s"),
+                        tagged_jtransc("[spell vuln]",
+                            _abil_type_vuln_core(silencable, antimagicable)));
 }
 
 /**
@@ -120,28 +123,26 @@ static string _ability_type_vulnerabilities(mon_spell_slot_flag type)
  *                          "has mastered one of the following spellbooks:"
  *                          "possesses the following natural abilities:"
  */
+// 日本語版: 主語(代名詞)も含めた見出し全体を返す(「このモンスターは〜:」)。
+// 英語の動詞の活用(pronoun_plural)は使わない。
 static string _booktype_header(mon_spell_slot_flag type, bool pronoun_plural)
 {
+    UNUSED(pronoun_plural);
     if (type == MON_SPELL_EVOKE)
-    {
-        return make_stringf("%s the following wand spells:",
-                            conjugate_verb("possess", pronoun_plural).c_str());
-    }
+        return jtrans("It possesses the following wand spells:");
 
     const string vulnerabilities = _ability_type_vulnerabilities(type);
 
     if (type == MON_SPELL_WIZARD)
     {
-        return make_stringf("%s mastered %s%s:",
-                            conjugate_verb("have", pronoun_plural).c_str(),
-                            "the following spells",
+        return make_stringf(jtransc("It has mastered the following spells%s:"),
                             vulnerabilities.c_str());
     }
 
-    const string descriptor = _ability_type_descriptor(type);
+    const string descriptor = tagged_jtrans("[spell descriptor]",
+                                            _ability_type_descriptor(type));
 
-    return make_stringf("%s the following %s abilities%s:",
-                        conjugate_verb("possess", pronoun_plural).c_str(),
+    return make_stringf(jtransc("It possesses the following %s abilities%s:"),
                         descriptor.c_str(),
                         vulnerabilities.c_str());
 }
@@ -166,9 +167,8 @@ static void _monster_spellbooks(const monster_info &mi,
 
     spellbook_contents output_book;
 
-    output_book.label += make_stringf("\n%s %s",
-        uppercase_first(mi.pronoun(PRONOUN_SUBJECTIVE)).c_str(),
-        _booktype_header(type, mi.pronoun_plurality()).c_str());
+    // 見出しは主語込みで訳す(代名詞は使わない)
+    output_book.label += "\n" + _booktype_header(type, mi.pronoun_plurality());
 
     // Does the monster have a spell that allows them to cast Abjuration?
     bool mons_abjure = false;
@@ -205,9 +205,8 @@ static void _monster_wand_spellbook(const monster_info &mi,
 
     spellbook_contents book;
 
-    book.label += make_stringf("\n%s %s",
-        uppercase_first(mi.pronoun(PRONOUN_SUBJECTIVE)).c_str(),
-        _booktype_header(MON_SPELL_EVOKE, mi.pronoun_plurality()).c_str());
+    book.label += "\n" + _booktype_header(MON_SPELL_EVOKE,
+                                          mi.pronoun_plurality());
 
     book.is_wand = true;
     book.spells.emplace_back(wand_spell);
@@ -331,7 +330,7 @@ static string _spell_schools(spell_type spell)
 
         if (!schools.empty())
             schools += "/";
-        schools += spelltype_long_name(school_flag);
+        schools += spelltype_long_name_j(school_flag);
     }
 
     return schools;
@@ -528,7 +527,7 @@ static string _effect_string(spell_type spell, const monster_info *mon_owner,
             return "";
         }
         if (you.immune_to_hex(spell))
-            return "(immune)";
+            return jtrans("(immune)");
 
         const string hex_str = make_stringf("%d%%", hex_chance(spell, mon_owner, is_wand));
 
@@ -571,9 +570,9 @@ static string _effect_string(spell_type spell, const monster_info *mon_owner,
         return "";
 
     if (spell == SPELL_AIRSTRIKE)
-        return make_stringf("%dd%d+(2/space)", dam.num, dam.size);
+        return make_stringf(jtransc("%dd%d+(2/space)"), dam.num, dam.size);
     if (spell == SPELL_SLEETSTRIKE)
-        return make_stringf("%dd%d+(3/space)", dam.num, dam.size);
+        return make_stringf(jtransc("%dd%d+(3/space)"), dam.num, dam.size);
     if (spell == SPELL_RESONANCE_STRIKE)
         return describe_resonance_strike_dam(dam);
 
@@ -595,10 +594,12 @@ static string _effect_string(spell_type spell, const monster_info *mon_owner,
         mult = "3x";
     else if (spell == SPELL_ELECTROLUNGE)
         mult = "+";
-    const char* suffix = spell == SPELL_LRD ? "*"
-                       : spell == SPELL_PYRE_ARROW || spell == SPELL_STICKY_FLAME ? "/turn"
-                       : "";
-    return make_stringf("(%s%dd%d%s)", mult.c_str(), dam.num, dam.size, suffix);
+    const string suffix = spell == SPELL_LRD ? string("*")
+                       : spell == SPELL_PYRE_ARROW || spell == SPELL_STICKY_FLAME
+                         ? jtrans("/turn")
+                       : string();
+    return make_stringf("(%s%dd%d%s)", mult.c_str(), dam.num, dam.size,
+                        suffix.c_str());
 }
 
 /**
@@ -624,12 +625,22 @@ static void _describe_book(const spellbook_contents &book,
     description.cprintf("%s", book.label.c_str());
 
     // only display header for book spells
+    // 日本語版: 見出しは表示幅で揃える(英語版と同じ列位置: 呪文 1、系統 37、
+    // レベル 61、習得済み 66〜78)
     if (source_item)
     {
-        description.cprintf(
-            "\n Spells                              Type                    Level");
+        const string header = "\n "
+            + chop_string(tagged_jtrans("[spell list]", "Spells"), 36)
+            + chop_string(tagged_jtrans("[spell list]", "Type"), 24)
+            + tagged_jtrans("[spell list]", "Level");
+        description.cprintf("%s", header.c_str());
         if (crawl_state.need_save)
-            description.cprintf("       Known");
+        {
+            description.cprintf("%s",
+                align_rightc(tagged_jtrans("[spell list]", "Known"),
+                             78 - 61 - strwidth(tagged_jtrans("[spell list]",
+                                                              "Level"))));
+        }
     }
     description.cprintf("\n");
 
@@ -666,7 +677,8 @@ static void _describe_book(const spellbook_contents &book,
                                           ? "<lightmagenta>*</lightmagenta>" : ""
                                         : "";
 
-        const int effect_len = effect_str.length();
+        // 効果の文字列に日本語が入ることがあるので表示幅で数える
+        const int effect_len = strwidth(effect_str);
         const int range_len = range_str.empty() ? 0 : 3;
         const int effect_range_space = effect_len && range_len ? 1 : 0;
         const int chop_len = 32 - effect_len - range_len - effect_range_space
@@ -675,12 +687,12 @@ static void _describe_book(const spellbook_contents &book,
         if (effect_len && !testbits(get_spell_flags(spell), spflag::WL_check))
             effect_str = colourize_str(effect_str, _spell_colour(spell));
 
-        string spell_name = spell_title(spell);
+        string spell_name = spell_title_j(spell);
         if (spell == SPELL_LEHUDIBS_CRYSTAL_SPEAR
-            && chop_len < (int)spell_name.length())
+            && chop_len < strwidth(spell_name))
         {
             // looks nicer than Lehudib's Crystal S
-            spell_name = "Crystal Spear";
+            spell_name = tagged_jtrans("[spell short]", "Crystal Spear");
         }
         description += formatted_string::parse_string(
                 make_stringf("%c - %s%s%s%s%s", spell_letter,
@@ -704,14 +716,20 @@ static void _describe_book(const spellbook_contents &book,
 
         string schools =
 #if TAG_MAJOR_VERSION == 34
-            source_item->base_type == OBJ_RODS ? "Evocations"
+            source_item->base_type == OBJ_RODS ? skill_name_j(SK_EVOCATIONS)
                                                :
 #endif
                          _spell_schools(spell);
 
+        // 習得済みかどうかは見出しの右端(78 桁目)に揃える
         string known = "";
         if (!mon_owner && crawl_state.need_save)
-            known = you.spell_library[spell] ? "         yes" : "          no";
+        {
+            known = align_right(you.spell_library[spell]
+                                    ? tagged_jtrans("[spell list known]", "yes")
+                                    : tagged_jtrans("[spell list known]", "no"),
+                                12);
+        }
 
         description.cprintf("%s%d%s\n",
                             chop_string(schools, 28).c_str(),
@@ -768,7 +786,7 @@ static void _write_book(const spellbook_contents &book,
                                           ? "<lightmagenta>*</lightmagenta>" : ""
                                         : "";
 
-        tiles.json_write_string("title", dith_marker + spell_title(spell));
+        tiles.json_write_string("title", dith_marker + spell_title_j(spell));
         tiles.json_write_int("colour", _spell_colour(spell, source_item));
         tiles.json_write_name("tile");
         tiles.write_tileidx(tileidx_spell(spell));
@@ -790,7 +808,7 @@ static void _write_book(const spellbook_contents &book,
 
 #if TAG_MAJOR_VERSION == 34
         string schools = (source_item && source_item->base_type == OBJ_RODS) ?
-                "Evocations" : _spell_schools(spell);
+                skill_name_j(SK_EVOCATIONS) : _spell_schools(spell);
 #else
         string schools = _spell_schools(spell);
 #endif
@@ -840,12 +858,13 @@ string terse_spell_list(const item_def &item)
     vector<string> spell_descs;
     for (auto spell : spells_in_book(item))
     {
-        spell_descs.push_back(make_stringf("%s (L%d %s)",
-                                           spell_title(spell),
+        spell_descs.push_back(make_stringf(jtransc("%s (L%d %s)"),
+                                           spell_title_jc(spell),
                                            spell_difficulty(spell),
                                            _spell_schools(spell).c_str()));
     }
     // could use comma_separated_fn and skip the intervening vec?
-    return "Spells: " + comma_separated_line(spell_descs.begin(),
-                                             spell_descs.end());
+    return jtrans_notrim("Spells: ")
+           + comma_separated_line(spell_descs.begin(), spell_descs.end(),
+                                  "、", "、");
 }

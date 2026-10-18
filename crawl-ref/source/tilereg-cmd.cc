@@ -7,6 +7,7 @@
 #include "ability.h"
 #include "cio.h"
 #include "command.h"
+#include "database.h"
 #include "describe.h"
 #include "env.h"
 #include "items.h"
@@ -79,9 +80,10 @@ int CommandRegion::handle_mouse(wm_mouse_event &event)
 
 bool CommandRegion::update_tab_tip_text(string &tip, bool active)
 {
-    const char *prefix = active ? "" : "[L-Click] ";
+    const string prefix = active ? "" : jtrans_notrim("[L-Click] ");
 
-    tip = make_stringf("%s%s", prefix, m_help.c_str());
+    // m_help は tilesdl.cc から渡る英文("Execute commands" など)
+    tip = make_stringf("%s%s", prefix.c_str(), jtransc(m_help));
     return true;
 }
 
@@ -95,7 +97,7 @@ bool CommandRegion::update_tip_text(string& tip)
         return false;
 
     const command_type cmd = (command_type) m_items[item_idx].idx;
-    tip = make_stringf("[L-Click] %s",
+    tip = make_stringf(jtransc("[L-Click] %s"),
                        get_command_description(cmd, true).c_str());
 
     if (command_to_key(cmd) != '\0')

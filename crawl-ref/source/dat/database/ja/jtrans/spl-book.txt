@@ -1,0 +1,141 @@
+%%%%
+You already know all available spells.
+
+あなたは習得可能な呪文をすべて習得している。
+%%%%
+You cannot currently memorise any of the available spells because you cannot use those schools of magic.
+
+あなたはその系統の呪文を使えないため、今はどの呪文も記憶することができない。
+%%%%
+You cannot memorise any of the available spells.
+
+あなたはこれらのどの呪文も記憶することができない。
+%%%%
+You can't memorise any new spells for an unknown reason; please file a bug report.
+
+原因不明の理由で新しい呪文を記憶できない。バグ報告をお願いします。
+%%%%
+You already know that spell!
+
+あなたは既にその呪文を習得している！
+%%%%
+You're too inexperienced to learn that spell!
+
+あなたはこの呪文を覚えるにはまだ経験が足らない！
+%%%%
+You can't memorise that many levels of magic yet!
+
+あなたはこのレベルの魔法はまだ覚えられない！
+%%%%
+This spell is impossible to cast!
+
+この呪文を唱えることはできない！
+%%%%
+This spell is %s to cast%s
+
+この呪文を唱えるのは%sだ%s
+%%%%
+You need no library to learn spells.
+
+あなたは呪文を覚えるのに呪文ライブラリを必要としない。
+%%%%
+Your library has no spells.
+
+あなたの呪文ライブラリには呪文がない。
+%%%%
+You add the spells %s to your library.
+
+あなたは%sの呪文を呪文ライブラリに加えた。
+%%%%
+<w>Spells %s                   Type                      %sLevel
+
+<w>呪文   %s                   系統                      %sレベル
+%%%%
+[spell menu]Cast
+
+詠唱
+%%%%
+[spell menu]Memorise
+
+記憶
+%%%%
+[spell menu]Describe
+
+説明
+%%%%
+[spell menu]Hide
+
+隠す
+%%%%
+[spell menu]Imbue
+
+付与
+%%%%
+[spell menu]Show
+
+表示
+%%%%
+[spell menu]Failure
+
+失敗率
+%%%%
+<lightgreen>Casting with Divine Exegesis: %d MP available</lightgreen>
+
+<lightgreen>神聖なる釈義で詠唱: 使用可能なMP %d</lightgreen>
+%%%%
+ spells hidden
+
+件を非表示
+%%%%
+ spell hidden
+
+件を非表示
+%%%%
+Matches: <w>%.*s%s</w>
+
+検索: <w>%.*s%s</w>
+%%%%
+ search
+
+検索
+%%%%
+[<w>Esc</w>] clear
+
+[<w>Esc</w>] 検索解除
+%%%%
+Search for what? (regex)
+
+何を検索しますか？(正規表現)
+%%%%
+<lightgreen>Select a spell to cast with Divine Exegesis: %d MP available</lightgreen>
+
+<lightgreen>神聖なる釈義で唱える呪文を選択: 使用可能なMP %d</lightgreen>
+%%%%
+<lightgreen>Select a spell to imbue your Spellspark Servitor with:</lightgreen>
+
+<lightgreen>魔火花の従者に付与する呪文を選択:</lightgreen>
+%%%%
+<lightgreen>%d spell levels left</lightgreen>
+
+<lightgreen>残り記憶力 %d</lightgreen>
+%%%%
+Your mind is already too full of spells!
+
+あなたの頭は既に呪文でいっぱいだ！
+%%%%
+You haven't found that spell!
+
+あなたはその呪文をまだ見つけていない！
+%%%%
+Memorise %s, consuming %d spell levels and leaving %d?
+
+%sの呪文を記憶しますか？(記憶力を%d消費し、残りは%d)
+%%%%
+You don't know of any spells!
+
+あなたは呪文を何も知らない！
+%%%%
+You don't know any spells that your servitor could cast!
+
+あなたは従者が唱えられる呪文を何も知らない！
+%%%%

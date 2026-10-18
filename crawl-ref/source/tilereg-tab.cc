@@ -6,6 +6,7 @@
 #include "tilereg-tab.h"
 
 #include "cio.h"
+#include "database.h"
 #include "english.h"
 #include "libutil.h"
 #include "state.h"
@@ -281,7 +282,8 @@ void TabbedRegion::draw_tag()
 
     GridRegion *tab = m_tabs[m_mouse_tab].reg;
 
-    draw_desc(tab->name().c_str());
+    // name() は英語のまま(find_tab() で比較する)。表示する所で訳す
+    draw_desc(tagged_jtransc("[tilereg-tab]", tab->name()));
 }
 
 int TabbedRegion::min_height_for_items() const

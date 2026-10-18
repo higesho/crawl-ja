@@ -5,6 +5,7 @@
 #include "tilereg-stat.h"
 
 #include "command.h"
+#include "database.h"
 #include "libutil.h"
 #include "macro.h"
 #include "tiles-build-specific.h"
@@ -41,12 +42,12 @@ bool StatRegion::update_tip_text(string& tip)
 #ifdef __ANDROID__
     if (tiles.is_using_small_layout())
     {
-        tip = "[L-Click] Toggle tab icons";
+        tip = jtrans("[L-Click] Toggle tab icons");
         return true;
     }
 #endif
 
-    tip = "[L-Click] Show player information";
+    tip = jtrans("[L-Click] Show player information");
     return true;
 }
 

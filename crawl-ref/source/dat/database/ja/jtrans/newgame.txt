@@ -1,0 +1,406 @@
+# newgame.cc: キャラクター作成(種族・職業・武器・名前・シード・マップの選択)
+# 種族名・職業名は species_name_j() / job_name_j()、武器名は data-items.txt で引く。
+%%%%
+[newgame]%s %s
+
+%sの%s
+%%%%
+Recommended character
+
+おすすめの組み合わせ
+%%%%
+Random character
+
+ランダムな組み合わせ
+%%%%
+[random job]Random %s
+
+ランダムな職業の%s
+%%%%
+[random job]Recommended %s
+
+おすすめの職業の%s
+%%%%
+[random species]Random %s
+
+ランダムな種族の%s
+%%%%
+[random species]Recommended %s
+
+おすすめの種族の%s
+%%%%
+unnamed
+
+名もなき
+%%%%
+Welcome.
+
+ようこそ。
+%%%%
+Welcome, %s.
+
+ようこそ、%s。
+%%%%
+Incompatible species and background (%s) selected.
+
+選択された種族と職業の組み合わせ(%s)は無効です。
+%%%%
+You are a %s.
+
+あなたは%sだ。
+%%%%
+Do you want to play this combination? [Y/n/q]
+
+この組み合わせで開始しますか？ [Y/n/q]
+%%%%
+Esc - Quit
+
+Esc - 終了
+%%%%
+* - Random name
+
+* - ランダムな名前
+%%%%
+Enter - Begin!
+
+Enter - 開始！
+%%%%
+That's a silly name!
+
+その名前は馬鹿げています！
+%%%%
+What is your name today?
+
+あなたの名前は？
+%%%%
+You have an existing game under this name; really overwrite? [Y/n]
+
+この名前のセーブデータが既にあります。本当に上書きしますか？ [Y/n]
+%%%%
+No player name specified.
+
+プレイヤー名が指定されていません。
+%%%%
+[Enter] Begin!
+
+[Enter] 開始！
+%%%%
+Play a game with a custom seed for version %s.
+
+バージョン %s で、シード値を指定してゲームを開始します。
+%%%%
+Choose 0 for a random seed. [Tab]/[Shift-Tab] to cycle input focus.
+
+0 を指定するとランダムなシード値になります。[Tab]/[Shift-Tab] で入力欄を切り替えます。
+%%%%
+Seed:
+
+シード値:
+%%%%
+[-] Clear
+
+[-] 消去
+%%%%
+[d] Today's daily seed
+
+[d] 今日のデイリーシード
+%%%%
+Press [p] or [ctrl-v] to paste a seed from the clipboard\n(overwriting the current value).
+
+[p] か [ctrl-v] を押すと、クリップボードからシード値を貼り付けます
+(今の値は上書きされます)。
+%%%%
+The seed will determine the dungeon layout, monsters, and items\nthat you discover, relative to this version of crawl. Upgrading\nmid-game may affect seeding. (See the manual for more details.)
+
+シード値によって、このバージョンのクロウルでのダンジョンの構造、
+出会うモンスター、見つかるアイテムが決まります。ゲームの途中で
+バージョンを上げると、シード値の結果が変わることがあります。
+(詳しくは説明書を参照してください)
+%%%%
+Warning: your build of crawl does not support stable seeding!\nLevels may differ from 'official' seeded games.
+
+警告: このビルドのクロウルはシード値の再現性に対応していません！
+階層の内容が「公式」のシード値によるゲームと異なることがあります。
+%%%%
+Fully pregenerate the dungeon
+
+ダンジョンを最初にすべて生成する
+%%%%
+Please select your background.
+
+あなたの職業を選んでください。
+%%%%
+Please select your species.
+
+あなたの種族を選んでください。
+%%%%
+[newgame group]Simple
+
+初級
+%%%%
+[newgame group]Intermediate
+
+中級
+%%%%
+[newgame group]Advanced
+
+上級
+%%%%
+[newgame group]Warrior
+
+戦士
+%%%%
+[newgame group]Zealot
+
+信徒
+%%%%
+[newgame group]Adventurer
+
+冒険者
+%%%%
+[newgame group]Warrior-mage
+
+魔法戦士
+%%%%
+[newgame group]Mage
+
+魔術師
+%%%%
++ - Recommended species
+
++ - おすすめの種族
+%%%%
++ - Recommended background
+
++ - おすすめの職業
+%%%%
+# 英文は種族・職業が逆になっている(本家の英文のまま)。訳は実際の動作に合わせる。
+Picks a random recommended species based on your current background choice.
+
+選んだ種族に合った職業のうちから、ランダムに選びます。
+%%%%
+Picks a random recommended background based on your current species choice.
+
+選んだ職業に合った種族のうちから、ランダムに選びます。
+%%%%
+Shuffles through random recommended character combinations until you accept one.
+
+おすすめの種族と職業の組み合わせをランダムに生成し、あなたが決めるまで繰り返します。
+%%%%
+% - List aptitudes
+
+% - スキル適性の一覧
+%%%%
+Lists the numerical skill train aptitudes for all races.
+
+全種族のスキル適性値の一覧を表示します。
+%%%%
+Lists the numerical skill train aptitudes for all races
+
+全種族のスキル適性値の一覧を表示します。
+%%%%
+? - Help
+
+? - ヘルプ
+%%%%
+Opens the help screen.
+
+ヘルプ画面を開きます。
+%%%%
+Opens the help screen
+
+ヘルプ画面を開きます。
+%%%%
+* - Random background
+
+* - ランダムな職業
+%%%%
+* - Random species
+
+* - ランダムな種族
+%%%%
+Picks a random background.
+
+ランダムに職業を選びます。
+%%%%
+Picks a random species.
+
+ランダムに種族を選びます。
+%%%%
+! - Random character
+
+! - ランダムな組み合わせ
+%%%%
+Shuffles through random character combinations until you accept one.
+
+ランダムな種族と職業の組み合わせを生成し、あなたが決めるまで繰り返します。
+%%%%
+Space - Change species
+
+Space - 種族を変更する
+%%%%
+Space - Change background
+
+Space - 職業を変更する
+%%%%
+Lets you change your species choice.
+
+選んだ種族を選び直します。
+%%%%
+Lets you change your background choice.
+
+選んだ職業を選び直します。
+%%%%
+Space - Pick species first
+
+Space - 種族から選ぶ
+%%%%
+Space - Pick background first
+
+Space - 職業から選ぶ
+%%%%
+Lets you pick your species first.
+
+先に種族の方から選びます。
+%%%%
+Lets you pick your background first.
+
+先に職業の方から選びます。
+%%%%
+Play a new game with your previous choice.
+
+前回選んだ組み合わせで開始します。
+%%%%
+You have a choice of weapons.
+
+武器を選んでください。
+%%%%
+[newgame weapon]unarmed
+
+素手
+%%%%
+[newgame weapon]claws
+
+爪
+%%%%
+[newgame weapon]Random
+
+ランダム
+%%%%
+[newgame weapon]Recommended
+
+おすすめ
+%%%%
+(%+d apt)
+
+(適性%+d)
+%%%%
++ - Recommended random choice
+
++ - おすすめからランダムに選ぶ
+%%%%
+Picks a random recommended weapon
+
+おすすめの武器のうちから、ランダムに選びます。
+%%%%
+* - Random weapon
+
+* - ランダムな武器
+%%%%
+Picks a random weapon
+
+武器をランダムに選びます。
+%%%%
+Bksp - Return to character menu
+
+Bksp - キャラクター選択画面に戻る
+%%%%
+Lets you return back to Character choice menu
+
+キャラクター選択画面に戻ります。
+%%%%
+Select your old weapon
+
+前回選んだ武器を選びます。
+%%%%
+Custom seed:
+
+シード値:
+%%%%
+You have a choice of lessons:
+
+レッスンを選んでください:
+%%%%
+You have a choice of maps:
+
+マップを選んでください:
+%%%%
+* - Random map
+
+* - ランダムなマップ
+%%%%
+Picks a random sprint map
+
+スプリントのマップをランダムに選びます。
+%%%%
+Select your previous sprint map and character
+
+前回選んだマップと種族・職業の組み合わせで開始します。
+%%%%
+# マップ名(dat/des/sprint, dat/des/tutorial の DESC)。表示だけ訳す。
+Sprint I: "Red Sonja"
+
+スプリントⅠ: "Red Sonja"
+%%%%
+Sprint II: "The Violet Keep of Menkaure"
+
+スプリントⅡ: "The Violet Keep of Menkaure"
+%%%%
+Sprint III: "The Ten Rune Challenge"
+
+スプリントⅢ: "The Ten Rune Challenge"
+%%%%
+Sprint IV: "Fedhas' Mad Dash"
+
+スプリントⅣ: "Fedhas' Mad Dash"
+%%%%
+Sprint V: "Ziggurat Sprint"
+
+スプリントⅤ: "Ziggurat Sprint"
+%%%%
+Sprint VI: "Thunderdome"
+
+スプリントⅥ: "Thunderdome"
+%%%%
+Sprint VII: "The Pits"
+
+スプリントⅦ: "The Pits"
+%%%%
+Sprint VIII: "Arena of Blood"
+
+スプリントⅧ: "Arena of Blood"
+%%%%
+Sprint IX: "|||||||||||||||||||||||||||||"
+
+スプリントⅨ: "|||||||||||||||||||||||||||||"
+%%%%
+Lesson 1: Movement and Exploration
+
+レッスン1: 移動とダンジョンの探索
+%%%%
+Lesson 2: Monsters and Combat
+
+レッスン2: モンスターとの遭遇と戦闘
+%%%%
+Lesson 3: Items and Inventory
+
+レッスン3: アイテムとその一覧
+%%%%
+Lesson 4: Magic and Spellcasting
+
+レッスン4: 魔法と呪文詠唱
+%%%%
+Lesson 5: Gods and Divine Abilities
+
+レッスン5: 神と信仰による恩恵
+%%%%

@@ -10,6 +10,7 @@
 #include "cloud.h"
 #include "command.h"
 #include "coord.h"
+#include "database.h"
 #include "describe.h"
 #include "directn.h"
 #include "dgn-height.h"
@@ -507,7 +508,8 @@ int DungeonRegion::handle_mouse(wm_mouse_event &event)
     {
         string desc = get_cell_mouseover_tag(gc);
         // Suppress floor description
-        if (desc == "floor")
+        // (get_cell_mouseover_tag() は日本語の地形名を返す)
+        if (desc == "floor" || desc == tagged_jtrans("[feature]", "floor"))
             desc = "";
 
         if (you.see_cell(gc))
@@ -515,7 +517,7 @@ int DungeonRegion::handle_mouse(wm_mouse_event &event)
             if (cloud_struct* cloud = cloud_at(gc))
             {
                 string terrain_desc = desc;
-                desc = cloud->cloud_name(true);
+                desc = tagged_jtrans("[cloud]", cloud->cloud_name(true));
 
                 if (!terrain_desc.empty())
                     desc += "\n" + terrain_desc;
@@ -885,7 +887,7 @@ bool tile_dungeon_tip(const coord_def &gc, string &tip)
             has_monster = true;
             // TODO: is see_cell_no_trans too strong?
             if (mon->friendly())
-                _add_tip(tip, "[L-Click] Move");
+                _add_tip(tip, jtrans("[L-Click] Move"));
             else if (you.see_cell_no_trans(mon->pos()))
             {
                 tip = mon->name(DESC_A);
@@ -893,7 +895,7 @@ bool tile_dungeon_tip(const coord_def &gc, string &tip)
                 {
                     if (!primary_is_secondary)
                     {
-                        _add_tip(tip, "[L-Click] "
+                        _add_tip(tip, jtrans_notrim("[L-Click] ")
                             + quiver::get_primary_action()->quiver_description().tostring()
                             + " (%)");
                         cmd.push_back(CMD_PRIMARY_ATTACK);
@@ -901,16 +903,16 @@ bool tile_dungeon_tip(const coord_def &gc, string &tip)
                     // else case: tip handled below
                 }
                 else if ((gc - you.pos()).rdist() <= melee_dist)
-                    _add_tip(tip, "[L-Click] Attack"); // show weapon?
+                    _add_tip(tip, jtrans("[L-Click] Attack")); // show weapon?
                 else
-                    _add_tip(tip, "[L-Click] Move towards");
+                    _add_tip(tip, jtrans("[L-Click] Move towards"));
 
                 if (quiver::get_secondary_action()->is_valid())
                 {
                     // this doesn't show the CMD_PRIMARY_ATTACK key
-                    const string clickdesc = primary_is_secondary
+                    const string clickdesc = jtrans_notrim(primary_is_secondary
                         ? "[L-Click / Shift + L-Click] "
-                        : "[Shift + L-Click] ";
+                        : "[Shift + L-Click] ");
                     _add_tip(tip, clickdesc
                         + quiver::get_secondary_action()->quiver_description().tostring()
                         + " (%)");
@@ -922,19 +924,19 @@ bool tile_dungeon_tip(const coord_def &gc, string &tip)
         {
             if (adjacent(gc, you.pos()))
             {
-                _add_tip(tip, "[L-Click] Move");
+                _add_tip(tip, jtrans("[L-Click] Move"));
                 if (feat_is_open_door(env.grid(gc)))
                 {
-                    _add_tip(tip, "[Shift + L-Click] Close (%)");
+                    _add_tip(tip, jtrans("[Shift + L-Click] Close (%)"));
                     cmd.push_back(CMD_CLOSE_DOOR);
                 }
             }
             else if (env.map_knowledge(gc).feat() != DNGN_UNSEEN)
             {
                 if (click_travel_safe(gc))
-                    _add_tip(tip, "[L-Click] Travel");
+                    _add_tip(tip, jtrans("[L-Click] Travel"));
                 else
-                    _add_tip(tip, "[L-Click] Move towards");
+                    _add_tip(tip, jtrans("[L-Click] Move towards"));
             }
         }
         else if (feat_is_closed_door(env.grid(gc)))
@@ -942,13 +944,13 @@ bool tile_dungeon_tip(const coord_def &gc, string &tip)
             if (!adjacent(gc, you.pos()))
             {
                 if (click_travel_safe(gc))
-                    _add_tip(tip, "[L-Click] Travel");
+                    _add_tip(tip, jtrans("[L-Click] Travel"));
                 else
-                    _add_tip(tip, "[L-Click] Move towards");
+                    _add_tip(tip, jtrans("[L-Click] Move towards"));
             }
             else
             {
-                _add_tip(tip, "[L-Click] Open door (%)");
+                _add_tip(tip, jtrans("[L-Click] Open door (%)"));
                 cmd.push_back(CMD_OPEN_DOOR);
             }
         }
@@ -963,7 +965,7 @@ bool tile_dungeon_tip(const coord_def &gc, string &tip)
             const item_def * const item = env.map_knowledge(gc).item();
             if (item && !item_is_stationary(*item))
             {
-                _add_tip(tip, "[L-Click] Pick up items (%)");
+                _add_tip(tip, jtrans("[L-Click] Pick up items (%)"));
                 cmd.push_back(CMD_PICKUP);
             }
         }
@@ -972,18 +974,18 @@ bool tile_dungeon_tip(const coord_def &gc, string &tip)
         const command_type dir = feat_stair_direction(feat);
         if (dir != CMD_NO_CMD)
         {
-            _add_tip(tip, "[Shift + L-Click] ");
+            _add_tip(tip, jtrans_notrim("[Shift + L-Click] "));
             if (feat == DNGN_ENTER_SHOP)
-                tip += "enter shop";
+                tip += jtrans("enter shop");
             else if (feat_is_altar(feat)
                      && player_can_join_god(feat_altar_god(feat)))
             {
-                tip += "pray at altar";
+                tip += jtrans("pray at altar");
             }
             else if (feat_is_gate(feat))
-                tip += "enter gate";
+                tip += jtrans("enter gate");
             else
-                tip += "use stairs";
+                tip += jtrans("use stairs");
 
             tip += " (%)";
             cmd.push_back(dir);
@@ -1002,19 +1004,19 @@ bool tile_dungeon_tip(const coord_def &gc, string &tip)
                 || feat_stair_direction(feat) == CMD_GO_UPSTAIRS)
             {
                 // XXX: wrong for golubria, shops?
-                _add_tip(tip, "[L-Click] Use stairs (%)");
+                _add_tip(tip, jtrans("[L-Click] Use stairs (%)"));
                 cmd.push_back(feat_stair_direction(feat));
             }
             else if (feat_is_altar(feat)
                      && player_can_join_god(feat_altar_god(feat)))
             {
-                _add_tip(tip, "[L-Click] Pray at altar (%)");
+                _add_tip(tip, jtrans("[L-Click] Pray at altar (%)"));
                 cmd.push_back(feat_stair_direction(feat));
             }
             else
             {
                 // otherwise wait
-                _add_tip(tip, "[L-Click] Wait one turn (%)");
+                _add_tip(tip, jtrans("[L-Click] Wait one turn (%)"));
                 cmd.push_back(CMD_WAIT);
             }
         }
@@ -1025,20 +1027,20 @@ bool tile_dungeon_tip(const coord_def &gc, string &tip)
         }
 
         // Character overview.
-        _add_tip(tip, "[R-Click] Overview (%)");
+        _add_tip(tip, jtrans("[R-Click] Overview (%)"));
         cmd.push_back(CMD_RESISTS_SCREEN);
 
         // Religion.
         if (!you_worship(GOD_NO_GOD))
         {
-            _add_tip(tip, "[Shift + R-Click] Religion (%)");
+            _add_tip(tip, jtrans("[Shift + R-Click] Religion (%)"));
             cmd.push_back(CMD_DISPLAY_RELIGION);
         }
     }
     else if (you.see_cell(gc)
              && env.map_knowledge(gc).feat() != DNGN_UNSEEN)
     {
-        _add_tip(tip, "[R-Click] Describe");
+        _add_tip(tip, jtrans("[R-Click] Describe"));
     }
 
     if (!tip.empty())

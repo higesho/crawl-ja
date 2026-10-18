@@ -3,6 +3,7 @@
 #include "branch.h"
 #include "branch-data.h"
 
+#include "database.h"
 #include "item-name.h"
 #include "player.h"
 #include "state.h"
@@ -331,11 +332,13 @@ string branch_noise_desc(branch_type br)
     const int noise = ambient_noise(br);
     if (noise != 0)
     {
-        desc = "This branch is ";
         if (noise > 0)
-            desc += "noisy: sounds don't travel as far here.";
+            desc = jtrans("This branch is noisy: sounds don't travel as far here.");
         else
-            desc += "unnaturally silent: sounds travel farther here.";
+        {
+            desc = jtrans("This branch is unnaturally silent: sounds travel "
+                          "farther here.");
+        }
     }
 
     return desc;
@@ -356,14 +359,15 @@ string branch_rune_desc(branch_type br, bool remaining_only)
 
     for (rune_type rune : branches[br].runes)
         if (!(remaining_only && you.runes[rune]))
-            rune_names.push_back(rune_type_name(rune));
+            rune_names.push_back(jtrans(string(rune_type_name(rune))
+                                        + " rune of Zot"));
 
     if (!rune_names.empty())
     {
-        desc = make_stringf("This branch contains the %s rune%s of Zot.",
+        desc = make_stringf(jtransc("This branch contains %s."),
                             comma_separated_line(begin(rune_names),
-                                                 end(rune_names)).c_str(),
-                            rune_names.size() > 1 ? "s" : "");
+                                                 end(rune_names),
+                                                 "と", "、").c_str());
     }
 
     return desc;

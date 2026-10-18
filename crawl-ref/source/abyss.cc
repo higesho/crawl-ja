@@ -19,6 +19,7 @@
 #include "cloud.h"
 #include "colour.h"
 #include "coordit.h"
+#include "database.h"
 #include "dbg-scan.h"
 #include "dbg-util.h"
 #include "delay.h"
@@ -46,6 +47,7 @@
 #include "mon-transit.h"
 #include "notes.h"
 #include "output.h" // redraw_screens
+#include "place.h"
 #include "religion.h"
 #include "spl-clouds.h" // big_cloud
 #include "stash.h"
@@ -281,7 +283,7 @@ void clear_abyssal_rune_knowledge()
 {
     coord_def &cur_loc = you.props[ABYSSAL_RUNE_LOC_KEY].get_coord();
     if (in_bounds(cur_loc) && !you.runes[RUNE_ABYSSAL])
-        mpr("Your memory of the abyssal rune fades away.");
+        mpr(jtrans("Your memory of the abyssal rune fades away."));
     cur_loc = coord_def(-1,-1);
 }
 
@@ -327,14 +329,21 @@ static void _update_abyssal_map_knowledge()
 
     if (existed)
     {
-        mprf("The abyss shimmers again as the detected "
-            "abyssal rune vanishes from your memory%s.",
-            detected ? " and reappears" : "");
+        if (detected)
+        {
+            mpr(jtrans("The abyss shimmers again as the detected "
+                       "abyssal rune vanishes from your memory and reappears."));
+        }
+        else
+        {
+            mpr(jtrans("The abyss shimmers again as the detected "
+                       "abyssal rune vanishes from your memory."));
+        }
     }
     else if (detected)
     {
-        mpr("The abyssal matter surrounding you shimmers strangely.");
-        mpr("You detect the abyssal rune!");
+        mpr(jtrans("The abyssal matter surrounding you shimmers strangely."));
+        mpr(jtrans("You detect the abyssal rune!"));
     }
 
     // XX could do the xom check from here?
@@ -395,6 +404,12 @@ static string _who_banished(const string &who)
     return who.empty() ? who : " (" + who + ")";
 }
 
+// ノート用(表示用)。追放した者の名前は英語のこともある。
+static string _who_banished_j(const string &who)
+{
+    return who.empty() ? who : "(" + jtrans(who) + ")";
+}
+
 void banished(const string &who)
 {
     ASSERT(!crawl_state.game_is_arena());
@@ -408,7 +423,7 @@ void banished(const string &who)
         else
         {
             // On Abyss:$ we can't go deeper; cause a shift to a new area
-            mprf(MSGCH_BANISHMENT, "You are banished to a different region of the Abyss.");
+            mprf(MSGCH_BANISHMENT, jtransc("You are banished to a different region of the Abyss."));
             abyss_teleport();
         }
         return;
@@ -422,8 +437,8 @@ void banished(const string &who)
                      level_id(BRANCH_ABYSS), true);
     // This is an honest abyss entry, mark milestone and take note
     // floor_transition will determine our final destination in the abyss
-    const string what = make_stringf("Cast into level %d of the Abyss",
-                                     you.depth) + _who_banished(who);
+    const string what = make_stringf(jtransc("Cast into level %d of the Abyss"),
+                                     you.depth) + _who_banished_j(who);
     take_note(Note(NOTE_MESSAGE, 0, 0, what), true);
     mark_milestone("abyss.enter",
         "was cast into the Abyss!" + _who_banished(who), "parent");
@@ -444,11 +459,11 @@ void check_banished()
         mons_reset_just_seen();
         ASSERT(brdepth[BRANCH_ABYSS] != -1);
         if (!player_in_branch(BRANCH_ABYSS))
-            mprf(MSGCH_BANISHMENT, "You are cast into the Abyss!");
+            mprf(MSGCH_BANISHMENT, jtransc("You are cast into the Abyss!"));
         else if (you.depth < brdepth[BRANCH_ABYSS])
-            mprf(MSGCH_BANISHMENT, "You are cast deeper into the Abyss!");
+            mprf(MSGCH_BANISHMENT, jtransc("You are cast deeper into the Abyss!"));
         else
-            mprf(MSGCH_BANISHMENT, "The Abyss bends around you!");
+            mprf(MSGCH_BANISHMENT, jtransc("The Abyss bends around you!"));
         // these are included in default force_more_message
         banished(you.banished_by);
     }
@@ -614,7 +629,7 @@ static void _abyss_lose_monster(monster& mons)
     // make sure we don't end up with an invalid hep ancestor
     else if (hepliaklqana_ancestor() == mons.mid)
     {
-        simple_monster_message(mons, " is pulled into the Abyss.",
+        simple_monster_message(mons, jtransc(" is pulled into the Abyss."),
                 false, MSGCH_BANISHMENT);
         remove_companion(&mons);
         you.duration[DUR_ANCESTOR_DELAY] = random_range(50, 150); //~5-15 turns
@@ -657,7 +672,7 @@ static void _place_displaced_monsters()
             // hep messaging is done in _abyss_lose_monster
             if (you.can_see(*mon) && hepliaklqana_ancestor() != mon->mid)
             {
-                simple_monster_message(*mon, " is pulled into the Abyss.",
+                simple_monster_message(*mon, jtransc(" is pulled into the Abyss."),
                         false, MSGCH_BANISHMENT);
             }
             _abyss_lose_monster(*mon);
@@ -1769,8 +1784,8 @@ void abyss_teleport(bool wizard_tele)
         return;
     }
 
-    mprf(MSGCH_BANISHMENT, "You are suddenly pulled into a different region of"
-        " the Abyss!");
+    mprf(MSGCH_BANISHMENT, jtransc("You are suddenly pulled into a different region of"
+        " the Abyss!"));
     _abyss_generate_new_area();
     _write_abyssal_features();
     env.grid(you.pos()) = _veto_dangerous_terrain(env.grid(you.pos()));
@@ -2270,7 +2285,7 @@ bool is_level_incorruptible(bool quiet)
     if (_is_level_corrupted())
     {
         if (!quiet)
-            mpr("This place is already infused with evil and corruption.");
+            mpr(jtrans("This place is already infused with evil and corruption."));
         return true;
     }
 
@@ -2309,9 +2324,9 @@ void lugonu_corrupt_level(int power)
     if (is_level_incorruptible())
         return;
 
-    simple_god_message(" Hand of Corruption reaches out!", true);
-    take_note(Note(NOTE_MESSAGE, 0, 0, make_stringf("Corrupted %s",
-              level_id::current().describe().c_str()).c_str()));
+    simple_god_message(jtransc(" Hand of Corruption reaches out!"), true);
+    take_note(Note(NOTE_MESSAGE, 0, 0, make_stringf(jtransc("Corrupted %s"),
+              prep_branch_level_name(level_id::current()).c_str()).c_str()));
     mark_corrupted_level(level_id::current());
 
     flash_view(UA_PLAYER, MAGENTA);
@@ -2393,9 +2408,18 @@ void abyss_maybe_spawn_xp_exit()
     big_cloud(CLOUD_TLOC_ENERGY, &you, you.pos(), 3 + random2(3), 3, 3);
     redraw_screen(); // before the force-more
     update_screen();
-    mprf(MSGCH_BANISHMENT,
-         "The substance of the Abyss twists violently,"
-         " and a gateway leading %s appears!", stairs ? "down" : "out");
+    if (stairs)
+    {
+        mprf(MSGCH_BANISHMENT, "%s",
+             jtransc("The substance of the Abyss twists violently,"
+                     " and a gateway leading down appears!"));
+    }
+    else
+    {
+        mprf(MSGCH_BANISHMENT, "%s",
+             jtransc("The substance of the Abyss twists violently,"
+                     " and a gateway leading out appears!"));
+    }
 
     you.props[ABYSS_STAIR_XP_KEY] = EXIT_XP_COST;
     you.props[ABYSS_SPAWNED_XP_EXIT_KEY] = true;

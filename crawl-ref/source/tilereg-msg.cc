@@ -5,6 +5,7 @@
 #include "tilereg-msg.h"
 
 #include "command.h"
+#include "database.h"
 #include "libutil.h"
 #include "format.h"
 #include "macro.h"
@@ -44,7 +45,7 @@ bool MessageRegion::update_tip_text(string& tip)
     if (mouse_control::current_mode() != MOUSE_MODE_COMMAND)
         return false;
 
-    tip = "[L-Click] Browse message history";
+    tip = jtrans("[L-Click] Browse message history");
     return true;
 }
 

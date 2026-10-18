@@ -29,6 +29,7 @@
 #include "item-prop.h"
 #include "item-name.h"
 #include "items.h"
+#include "japanese.h"
 #include "libutil.h" // map_find
 #include "macro.h"
 #include "makeitem.h" // item_colour
@@ -199,6 +200,25 @@ static string _soh_name(monster_type m_type)
     return string("Serpent of Hell (") + branches[b].longname + ")";
 }
 
+// 表示用(日本語)。_soh_name() は英語の名前のまま残す。
+static string _soh_name_j(monster_type m_type)
+{
+    branch_type b = serpent_of_hell_branch(m_type);
+    return mons_type_name_j(m_type, DESC_PLAIN) + "("
+           + branch_name_j(branches[b].longname) + ")";
+}
+
+/**
+ * 一覧の表示名。検索は英語の名前で行うので「日本語名 (英語名)」と併記する。
+ * 訳がない(英語のまま)ときは英語名だけにする。
+ */
+static string _ja_en(const string &ja, const string &en)
+{
+    if (ja.empty() || lowercase_string(ja) == lowercase_string(en))
+        return en;
+    return ja + " (" + en + ")";
+}
+
 static monster_type _mon_by_name(string name)
 {
     return _is_soh(name) ? _soh_type(name) : get_monster_by_name(name);
@@ -260,14 +280,14 @@ namespace
 
         void set_prompt()
         {
-            string prompt = "Describe which? ";
+            string prompt = jtrans_notrim("Describe which? ");
 
             if (toggleable_sort)
             {
                 if (sort_alpha)
-                    prompt += "(CTRL-S to sort by monster toughness)";
+                    prompt += jtrans("(CTRL-S to sort by monster toughness)");
                 else
-                    prompt += "(CTRL-S to sort by name)";
+                    prompt += jtrans("(CTRL-S to sort by name)");
             }
             set_title(new MenuEntry(prompt, MEL_TITLE));
         }
@@ -639,7 +659,10 @@ static MenuEntry* _monster_menu_gen(char letter, const string &str,
     // Create and store fake monsters, so the menu code will
     // have something valid to refer to.
     monster_type m_type = _mon_by_name(str);
-    const string name = _is_soh(str) ? _soh_name(m_type) : str;
+    // 表示は「日本語名 (英語名)」。検索キーは英語のまま
+    const string name = _is_soh(str)
+        ? _ja_en(_soh_name_j(m_type), _soh_name(m_type))
+        : _ja_en(mons_type_name_j(m_type, DESC_PLAIN), str);
 
     monster_type base_type = MONS_NO_MONSTER;
     // HACK: Set an arbitrary humanoid monster as base type.
@@ -692,7 +715,8 @@ static bool _make_item_fake_unrandart(item_def &item, int unrand_index)
  */
 static MenuEntry* _item_menu_gen(char letter, const string &str, string &key)
 {
-    MenuEntry* me = _simple_menu_gen(letter, str, key);
+    // アイテム名・固定アーティファクト名は data-items.txt / data-unrands.txt で引く
+    MenuEntry* me = _simple_menu_gen(letter, _ja_en(jtrans(str), str), key);
     item_def item;
     item_kind kind = item_kind_by_name(key);
     if (kind.base_type == OBJ_UNASSIGNED)
@@ -713,10 +737,13 @@ static MenuEntry* _item_menu_gen(char letter, const string &str, string &key)
  */
 static MenuEntry* _feature_menu_gen(char letter, const string &str, string &key)
 {
-    MenuEntry* me = new MenuEntry(str, MEL_ITEM, 1, letter);
+    const dungeon_feature_type feat = feat_by_desc(str);
+    const string name_j = feat ? feature_description_j(feat, NUM_TRAPS, "",
+                                                       DESC_A, NUM_BRANCHES)
+                               : str;
+    MenuEntry* me = new MenuEntry(_ja_en(name_j, str), MEL_ITEM, 1, letter);
     me->data = &key;
 
-    const dungeon_feature_type feat = feat_by_desc(str);
     if (feat)
     {
         const tileidx_t idx = tileidx_feature_base(feat);
@@ -739,9 +766,11 @@ static MenuEntry* _god_menu_gen(char /*letter*/, const string &/*str*/, string &
  */
 static MenuEntry* _ability_menu_gen(char letter, const string &str, string &key)
 {
-    MenuEntry* me = _simple_menu_gen(letter, str, key);
-
     const ability_type ability = ability_by_name(str);
+    MenuEntry* me = _simple_menu_gen(letter,
+        ability != ABIL_NON_ABILITY ? _ja_en(ability_name_j(ability), str) : str,
+        key);
+
     if (ability != ABIL_NON_ABILITY)
         me->add_tile(tile_def(tileidx_ability(ability)));
 
@@ -753,7 +782,9 @@ static MenuEntry* _ability_menu_gen(char letter, const string &str, string &key)
  */
 static MenuEntry* _card_menu_gen(char letter, const string &str, string &key)
 {
-    MenuEntry* me = _simple_menu_gen(letter, str, key);
+    MenuEntry* me = _simple_menu_gen(letter,
+                                     _ja_en(tagged_jtrans("[card]", str), str),
+                                     key);
     me->add_tile(tile_def(TILEG_NEMELEX_CARD));
     return me;
 }
@@ -763,9 +794,11 @@ static MenuEntry* _card_menu_gen(char letter, const string &str, string &key)
  */
 static MenuEntry* _spell_menu_gen(char letter, const string &str, string &key)
 {
-    MenuEntry* me = _simple_menu_gen(letter, str, key);
-
     const spell_type spell = spell_by_name(str);
+    MenuEntry* me = _simple_menu_gen(letter,
+        spell != SPELL_NO_SPELL ? _ja_en(spell_title_j(spell), str) : str,
+        key);
+
     if (spell != SPELL_NO_SPELL)
         me->add_tile(tile_def(tileidx_spell(spell)));
     me->colour = is_player_spell(spell) ? WHITE
@@ -779,9 +812,10 @@ static MenuEntry* _spell_menu_gen(char letter, const string &str, string &key)
  */
 static MenuEntry* _skill_menu_gen(char letter, const string &str, string &key)
 {
-    MenuEntry* me = _simple_menu_gen(letter, str, key);
-
     const skill_type skill = str_to_skill_safe(str);
+    MenuEntry* me = _simple_menu_gen(letter,
+        skill != SK_NONE ? _ja_en(skill_name_j(skill), str) : str, key);
+
     me->add_tile(tile_def(tileidx_skill(skill, TRAINING_ENABLED)));
 
     return me;
@@ -792,9 +826,13 @@ static MenuEntry* _skill_menu_gen(char letter, const string &str, string &key)
  */
 static MenuEntry* _branch_menu_gen(char letter, const string &str, string &key)
 {
-    MenuEntry* me = _simple_menu_gen(letter, str, key);
-
     const branch_type branch = branch_by_shortname(str);
+    // str は短い名前("D" など)。表示は長い名前の訳と併記する
+    MenuEntry* me = _simple_menu_gen(letter,
+        branch != NUM_BRANCHES
+            ? _ja_en(branch_name_j(branches[branch].longname), str) : str,
+        key);
+
     int hotkey = branches[branch].travel_shortcut;
     me->hotkeys = {hotkey, tolower_safe(hotkey)};
     me->add_tile(tile_def(tileidx_branch(branch)));
@@ -807,7 +845,9 @@ static MenuEntry* _branch_menu_gen(char letter, const string &str, string &key)
  */
 static MenuEntry* _cloud_menu_gen(char letter, const string &str, string &key)
 {
-    MenuEntry* me = _simple_menu_gen(letter, str, key);
+    MenuEntry* me = _simple_menu_gen(letter,
+                                     _ja_en(tagged_jtrans("[cloud]", str), str),
+                                     key);
 
     const string cloud_name = lowercase_string(str);
     const cloud_type cloud = cloud_name_to_type(cloud_name);
@@ -832,7 +872,8 @@ static MenuEntry* _cloud_menu_gen(char letter, const string &str, string &key)
  */
 static MenuEntry* _mut_menu_gen(char letter, const string &str, string &key)
 {
-    MenuEntry* me = _simple_menu_gen(letter, str, key);
+    // 変異の名前は data-mutations.txt で引く
+    MenuEntry* me = _simple_menu_gen(letter, _ja_en(jtrans(str), str), key);
 
     const mutation_type mut = mutation_from_name(str, false);
     if (mut == NUM_MUTATIONS)
@@ -843,6 +884,34 @@ static MenuEntry* _mut_menu_gen(char letter, const string &str, string &key)
         me->add_tile(tile_def(tile + mutation_max_levels(mut) - 1));
 
     return me;
+}
+
+/**
+ * Generate a ?/P menu entry. (ref. _simple_menu_gen()).
+ */
+static MenuEntry* _passive_menu_gen(char letter, const string &str, string &key)
+{
+    return _simple_menu_gen(letter, _ja_en(jtrans(str), str), key);
+}
+
+/**
+ * Generate a ?/T menu entry. (ref. _simple_menu_gen()).
+ * 状態の名前は data-durations.txt の [dur] で引く
+ */
+static MenuEntry* _status_menu_gen(char letter, const string &str, string &key)
+{
+    return _simple_menu_gen(letter, _ja_en(tagged_jtrans("[dur]", str), str),
+                            key);
+}
+
+/**
+ * Generate a ?/N menu entry. (ref. _simple_menu_gen()).
+ * 災厄の名前は mutation.txt の [bane] で引く
+ */
+static MenuEntry* _bane_menu_gen(char letter, const string &str, string &key)
+{
+    return _simple_menu_gen(letter, _ja_en(tagged_jtrans("[bane]", str), str),
+                            key);
 }
 
 
@@ -1000,8 +1069,9 @@ string LookupType::key_to_menu_str(const string &key) const
 int LookupType::describe(const string &key, bool exact_match) const
 {
     const string footer
-        = exact_match ? "This entry is an exact match for '" + key
-        + "'. To see non-exact matches, press space."
+        = exact_match ? make_stringf(jtransc("This entry is an exact match "
+                                "for '%s'. To see non-exact matches, press "
+                                "space."), key.c_str())
         : "";
     return describer(key, suffix(), footer);
 }
@@ -1017,7 +1087,8 @@ int LookupType::describe(const string &key, bool exact_match) const
  */
 static int _describe_key(const string &key, const string &suffix,
                          string footer, const string &extra_info,
-                         const tile_def *tile = nullptr)
+                         const tile_def *tile = nullptr,
+                         const string &title_j = "")
 {
     describe_info inf;
     inf.quote = getQuoteString(key);
@@ -1028,7 +1099,9 @@ static int _describe_key(const string &key, const string &suffix,
     inf.title = [&]() {
         string title = key;
         strip_suffix(title, suffix);
-        return uppercase_first(title);
+        title = uppercase_first(title);
+        // 見出しは日本語名(英語名を併記)。title_j がなければ辞書で引く
+        return _ja_en(title_j.empty() ? jtrans(title) : title_j, title);
     }();
     inf.footer = footer;
 
@@ -1047,6 +1120,19 @@ static int _describe_generic(const string &key, const string &suffix,
                              string footer)
 {
     return _describe_key(key, suffix, footer, "");
+}
+
+/**
+ * Describe the status with the given name. (ref. _describe_generic())
+ * 見出しの状態名は data-durations.txt の [dur] で引く。
+ */
+static int _describe_status(const string &key, const string &suffix,
+                            string footer)
+{
+    string name = key;
+    strip_suffix(name, suffix);
+    return _describe_key(key, suffix, footer, "", nullptr,
+                         tagged_jtrans("[dur]", name));
 }
 
 static map<monster_type, monster_type> draconian_job_to_colour =
@@ -1154,9 +1240,11 @@ static int _describe_card(const string &key, const string &suffix,
     ASSERT(card != NUM_CARDS);
 #ifdef USE_TILE
     tile_def tile = tile_def(TILEG_NEMELEX_CARD);
-    return _describe_key(key, suffix, footer, which_decks(card) + "\n", &tile);
+    return _describe_key(key, suffix, footer, which_decks(card) + "\n", &tile,
+                         tagged_jtrans("[card]", card_name));
 #else
-    return _describe_key(key, suffix, footer, which_decks(card) + "\n");
+    return _describe_key(key, suffix, footer, which_decks(card) + "\n",
+                         nullptr, tagged_jtrans("[card]", card_name));
 #endif
 }
 
@@ -1179,9 +1267,11 @@ static int _describe_cloud(const string &key, const string &suffix,
     fake_cloud_info.type = cloud;
     const tileidx_t idx = tileidx_cloud(fake_cloud_info);
     tile_def tile = tile_def(idx);
-    return _describe_key(key, suffix, footer, extra_cloud_info(cloud), &tile);
+    return _describe_key(key, suffix, footer, extra_cloud_info(cloud), &tile,
+                         tagged_jtrans("[cloud]", cloud_name));
 #else
-    return _describe_key(key, suffix, footer, extra_cloud_info(cloud));
+    return _describe_key(key, suffix, footer, extra_cloud_info(cloud),
+                         nullptr, tagged_jtrans("[cloud]", cloud_name));
 #endif
 }
 
@@ -1242,13 +1332,16 @@ static string _branch_transit_runes(branch_type br)
     if (br != BRANCH_VAULTS && br != BRANCH_ZOT)
         return "";
 
-    string desc;
     const bool exit = br == BRANCH_VAULTS;
     const int num_runes = br == BRANCH_ZOT ? ZOT_ENTRY_RUNES : 1;
-    return make_stringf("\n\nThis branch can only be %sed while carrying at "
-                        "least %d rune%s of Zot.",
-                        exit ? "exit" : "enter",
-                        num_runes, num_runes > 1 ? "s" : "");
+    // 英語では "%sed"(exit/enter)と複数形の s を埋め込んでいるが、
+    // 訳は出る・入るで全文を分ける
+    return "\n\n" + make_stringf(exit
+        ? jtransc("This branch can only be exited while carrying at least %d "
+                  "rune(s) of Zot.")
+        : jtransc("This branch can only be entered while carrying at least %d "
+                  "rune(s) of Zot."),
+        num_runes);
 }
 
 static string _branch_depth(branch_type br)
@@ -1259,15 +1352,16 @@ static string _branch_depth(branch_type br)
     // Abyss depth is explained in the description.
     if (br == BRANCH_ABYSS)
     {
-        desc = make_stringf("\n(If you entered the Abyss now, you could be "
-                            "pulled as deep as Abyss:%d.)", abyss_default_depth(true));
+        desc = "\n" + make_stringf(jtransc("(If you entered the Abyss now, "
+                            "you could be pulled as deep as Abyss:%d.)"),
+                            abyss_default_depth(true));
     }
     if (depth > 1 && br != BRANCH_ABYSS)
     {
-        desc = make_stringf("\n\nThis %s is %d levels deep.",
-                            br == BRANCH_ZIGGURAT ? "portal"
-                                                  : "branch",
-                            depth);
+        desc = "\n\n" + make_stringf(br == BRANCH_ZIGGURAT
+                                     ? jtransc("This portal is %d levels deep.")
+                                     : jtransc("This branch is %d levels deep."),
+                                     depth);
     }
 
     return desc;
@@ -1283,18 +1377,32 @@ static string _branch_location(branch_type br)
     // Ziggurat locations are explained in the description.
     if (parent != NUM_BRANCHES && br != BRANCH_ZIGGURAT)
     {
-        desc = "\n\nThe entrance to this branch can be found ";
+        // 日本語では「〜の第%d階層」と支部名が先に来るので、
+        // 支部名を先に渡す形の文を引く
+        const string parent_name = branch_name_j(branches[parent].longname);
+        desc = "\n\n";
         if (min == max)
         {
             if (branches[parent].numlevels == 1)
-                desc += "in ";
+            {
+                desc += make_stringf(jtransc("The entrance to this branch can "
+                                             "be found in %s."),
+                                     parent_name.c_str());
+            }
             else
-                desc += make_stringf("on level %d of ", min);
+            {
+                desc += make_stringf(jtransc("The entrance to this branch can "
+                                             "be found in %s, on level %d."),
+                                     parent_name.c_str(), min);
+            }
         }
         else
-            desc += make_stringf("between levels %d and %d of ", min, max);
-        desc += branches[parent].longname;
-        desc += ".";
+        {
+            desc += make_stringf(jtransc("The entrance to this branch can be "
+                                         "found in %s, between levels %d and "
+                                         "%d."),
+                                 parent_name.c_str(), min, max);
+        }
     }
 
     return desc;
@@ -1307,15 +1415,19 @@ static string _branch_subbranches(branch_type br)
 
     for (branch_iterator it; it; ++it)
         if (it->parent_branch == br && !branch_is_unfinished(it->id))
-            subbranch_names.push_back(it->longname);
+            subbranch_names.push_back(branch_name_j(it->longname));
 
     // Lair's random branches are explained in the description.
     if (!subbranch_names.empty() && br != BRANCH_LAIR)
     {
-        desc += make_stringf("\n\nThis branch contains the entrance%s to %s.",
-                             subbranch_names.size() > 1 ? "s" : "",
-                             comma_separated_line(begin(subbranch_names),
-                                                  end(subbranch_names)).c_str());
+        const string names = comma_separated_line(begin(subbranch_names),
+                                                  end(subbranch_names),
+                                                  "、", "、");
+        desc += "\n\n";
+        desc += make_stringf(subbranch_names.size() > 1
+                             ? jtransc("This branch contains the entrances to %s.")
+                             : jtransc("This branch contains the entrance to %s."),
+                             names.c_str());
     }
 
     return desc;
@@ -1349,7 +1461,8 @@ static int _describe_branch(const string &key, const string &suffix,
             + branch_rune_desc(branch, false);
 
     tile_def tile = tile_def(tileidx_branch(branch));
-    return _describe_key(key, suffix, footer, info, &tile);
+    return _describe_key(key, suffix, footer, info, &tile,
+                         branch_name_j(branches[branch].longname));
 }
 
 static int _describe_mutation(const string &key, const string &suffix,
@@ -1414,16 +1527,16 @@ static const vector<LookupType> lookup_types = {
                nullptr, _get_cloud_keys, _cloud_menu_gen,
                _describe_cloud, lookup_type::db_suffix),
     LookupType('P', "passive", nullptr, _passive_filter,
-               nullptr, nullptr, _simple_menu_gen,
+               nullptr, nullptr, _passive_menu_gen,
                _describe_generic, lookup_type::db_suffix),
     LookupType('T', "status", nullptr, _status_filter,
-               nullptr, nullptr, _simple_menu_gen,
-               _describe_generic, lookup_type::db_suffix),
+               nullptr, nullptr, _status_menu_gen,
+               _describe_status, lookup_type::db_suffix),
     LookupType('U', "mutation", nullptr, _mutation_filter,
                nullptr, nullptr, _mut_menu_gen,
                _describe_mutation, lookup_type::db_suffix),
     LookupType('N', "bane", nullptr, _bane_filter,
-               nullptr, nullptr, _simple_menu_gen,
+               nullptr, nullptr, _bane_menu_gen,
                _describe_bane, lookup_type::db_suffix),
 };
 
@@ -1466,15 +1579,18 @@ char lookup_help_type_shortcut(lookup_help_type lht)
 static string _prompt_for_regex(const LookupType &lookup_type, string &err)
 {
     const string type = lowercase_string(lookup_type.type);
+    // 種類の名前(「モンスター」など)。英語の複数形・冠詞は付けない
+    const string type_j = tagged_jtrans("[lookup type]", type);
     const string extra = lookup_type.supports_glyph_lookup() ?
-        make_stringf(" Enter a single letter to list %s displayed by that"
-                     " symbol.", pluralise(type).c_str())
-        : lookup_type.type == "spell" ? " Preface with '@' to search by school."
+        make_stringf(jtransc(" Enter a single letter to list %s displayed by "
+                             "that symbol."), type_j.c_str())
+        : lookup_type.type == "spell"
+            ? jtrans(" Preface with '@' to search by school.")
         : "";
     const string prompt = make_stringf(
-         "Describe %s; partial names and regexps are fine.%s\n"
-         "Describe what? ",
-         article_a(type).c_str(), extra.c_str());
+         jtrans_notrimc("Describe %s; partial names and regexps are fine.%s\n"
+                        "Describe what? "),
+         type_j.c_str(), extra.c_str());
 
     char buf[80];
     if (msgwin_get_line(prompt, buf, sizeof(buf)) || buf[0] == '\0')
@@ -1518,14 +1634,18 @@ static string _keylist_invalid_reason(const vector<string> &key_list,
                                       const string &regex,
                                       bool by_symbol)
 {
-    const string plur_type = pluralise(type);
+    // 種類の名前は日本語(複数形にしない)
+    const string type_j = tagged_jtrans("[lookup type]", type);
 
     if (key_list.empty())
     {
         if (by_symbol)
-            return "No " + plur_type + " with symbol '" + regex + "'.";
-        return make_stringf("No matching %s for search string '%s'.",
-            plur_type.c_str(), regex.c_str());
+        {
+            return make_stringf(jtransc("No %s with symbol '%s'."),
+                                type_j.c_str(), regex.c_str());
+        }
+        return make_stringf(jtransc("No matching %s for search string '%s'."),
+            type_j.c_str(), regex.c_str());
     }
 
     // we're good!
@@ -1571,7 +1691,7 @@ bool LookupType::find_description(string &response) const
     // not actually sure how to trigger this branch...
     if (want_regex && regex.empty())
     {
-        response = "Description must contain at least one non-space.";
+        response = jtrans("Description must contain at least one non-space.");
         return true;
     }
 
@@ -1609,7 +1729,9 @@ public:
     {
     public:
         LookupHelpMenuEntry(lookup_help_type lht)
-        : MenuEntry(uppercase_first(lookup_help_type_name(lht)),
+        // 表示は日本語の種類名。lookup_help_type_name() は英語のまま
+        : MenuEntry(tagged_jtrans("[lookup type]",
+                                  lookup_help_type_name(lht)),
                     MEL_ITEM, 1, tolower(lookup_help_type_shortcut(lht))),
           typ(lht)
         {
@@ -1626,7 +1748,7 @@ public:
     {
         action_cycle = Menu::CYCLE_NONE;
         menu_action  = Menu::ACT_EXECUTE;
-        set_title(new MenuEntry("Lookup information about:", MEL_TITLE));
+        set_title(new MenuEntry(jtrans("Lookup information about:"), MEL_TITLE));
         on_single_selection = [](const MenuEntry& item)
         {
             const LookupHelpMenuEntry *lhme
@@ -1643,8 +1765,8 @@ public:
         clear();
         // XX `?/esc` doesn't go back to the main help menu, possibly should
         const string back = back_cmd == CMD_GAME_MENU
-                                ? "Back to game menu"
-                                : "Exit help lookup";
+                                ? jtrans("Back to game menu")
+                                : jtrans("Exit help lookup");
         auto back_button = new MenuEntry(back, MEL_ITEM, 1, CK_ESCAPE);
         if (back_cmd != CMD_NO_CMD)
             back_button->add_tile(tileidx_command(back_cmd));

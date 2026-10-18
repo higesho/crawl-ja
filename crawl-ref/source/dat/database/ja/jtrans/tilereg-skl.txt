@@ -1,0 +1,35 @@
+# tilereg-skl.txt: tilereg-skl.cc(Tiles のスキルタブ)
+%%%%
+You cannot train this skill.
+
+このスキルを鍛えることはできない。
+%%%%
+There's no point to toggling this skill anymore.
+
+このスキルをこれ以上鍛えようとすることには意味がない。
+%%%%
+Manage skills
+
+スキル管理
+%%%%
+You cannot train this skill now.
+
+現状ではこのスキルを鍛えることはできない。
+%%%%
+Disable training
+
+訓練終了
+%%%%
+Enable training
+
+訓練開始
+%%%%
+# %s は幅 14 に詰めた技能名
+%s Skill %4.1f Aptitude %c%d
+
+%s スキル %4.1f 適性 %c%d
+%%%%
+You can't change your training allocations!
+
+あなたは訓練の割り振りを変えられない！
+%%%%

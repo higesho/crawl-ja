@@ -693,5 +693,5 @@ Space warps into you!
 %%%%
 [regen slot]gizmo
 
-ガジェット
+ギズモ
 %%%%

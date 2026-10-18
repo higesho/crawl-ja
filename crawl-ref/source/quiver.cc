@@ -12,15 +12,18 @@
 #include "ability.h"
 #include "artefact.h"
 #include "art-enum.h"
+#include "database.h"
 #include "describe.h" // describe_to_hit
 #include "directn.h"
 #include "env.h"
 #include "evoke.h"
 #include "fight.h"
 #include "invent.h"
+#include "item-name.h"
 #include "item-prop.h"
 #include "item-use.h"
 #include "items.h"
+#include "japanese.h"
 #include "macro.h"
 #include "message.h"
 #include "mon-death.h"
@@ -120,20 +123,21 @@ namespace quiver
                && !clua.callfn("af_mp_is_low", ">b", &af_mp_check))
         {
             if (!clua.error.empty())
-                mprf(MSGCH_ERROR, "Lua error: %s", clua.error.c_str());
+                mprf(MSGCH_ERROR, jtransc("Lua error: %s"), clua.error.c_str());
             return true;
         }
         if (af_hp_check)
-            mpr("You are too injured to fight recklessly!");
+            mpr(jtrans("You are too injured to fight recklessly!"));
         else if (af_mp_check && !you.has_mutation(MUT_HP_CASTING)
             && you.magic_points == 0)
         {
-            mpr("You are out of magic!");
+            mpr(jtrans("You are out of magic!"));
         }
         else if (af_mp_check)
         {
-            mprf("You are too depleted to draw on your %s recklessly!",
-                you.has_mutation(MUT_HP_CASTING) ? "health" : "magic");
+            mpr(jtrans(you.has_mutation(MUT_HP_CASTING)
+                ? "You are too depleted to draw on your health recklessly!"
+                : "You are too depleted to draw on your magic recklessly!"));
         }
         return af_hp_check || af_mp_check;
     }
@@ -141,8 +145,8 @@ namespace quiver
     formatted_string action::quiver_description(bool short_desc) const
     {
         return formatted_string::parse_string(
-                        short_desc ? "<darkgrey>Empty</darkgrey>"
-                                   : "<darkgrey>Nothing quivered</darkgrey>");
+                        jtrans(short_desc ? "<darkgrey>Empty</darkgrey>"
+                                          : "<darkgrey>Nothing quivered</darkgrey>"));
     }
 
     vector<tile_def> action::get_tiles() const
@@ -249,9 +253,9 @@ namespace quiver
     string action_cycler::fire_key_hints() const
     {
         const bool no_other_items = *get() == *next();
-        string key_hint = no_other_items
+        string key_hint = jtrans_notrim(no_other_items
                             ? ", <w>%</w> - select action"
-                            : ", <w>%</w> - select action, <w>%</w> or <w>%</w> - cycle";
+                            : ", <w>%</w> - select action, <w>%</w> or <w>%</w> - cycle");
         insert_commands(key_hint,
                         { CMD_TARGET_SELECT_ACTION,
                           CMD_TARGET_CYCLE_QUIVER_BACKWARD,
@@ -315,6 +319,17 @@ namespace quiver
             order[i] &= 0xffff;
     }
 
+    // 射撃欄などに表示する動詞(「射撃: a) 」)。quiver_verb() は英語のまま
+    // (tileweb.cc が action_verb として送る)なので、表示する所で訳す。
+    static string _quiver_verb_j(const string &verb, bool confused = false)
+    {
+        const string v = tagged_jtrans("[quiver verb]", verb);
+        if (!confused)
+            return v;
+        return make_stringf(tagged_jtransc("[quiver verb]", "confused %s"),
+                            v.c_str());
+    }
+
     // Similar to melee_action (below), but for firing launchers.
     struct ranged_action : public action
     {
@@ -353,7 +368,7 @@ namespace quiver
             monster* mons = monster_at(target.target);
             if (mons && is_valid_tempering_target(*mons, you, true) && !you.confused())
             {
-                mprf("You deconstruct %s.", mons->name(DESC_THE).c_str());
+                mprf(jtransc("You deconstruct %s."), mons->name(DESC_THE).c_str());
                 monster_die(*mons, KILL_RESET, NON_MONSTER);
                 you.turn_is_over = true;
                 return;
@@ -394,15 +409,16 @@ namespace quiver
 
             if (!short_desc)
             {
-                string verb = you.confused() ? "confused " : "";
-                verb += quiver_verb();
-                qdesc.cprintf("%s: %c) ", uppercase_first(verb).c_str(),
-                                weapon.slot);
+                const string verb = _quiver_verb_j(quiver_verb(),
+                                                   you.confused());
+                qdesc.cprintf("%s: %c) ", verb.c_str(), weapon.slot);
             }
 
             const string prefix = item_prefix(weapon);
+            // menu_colour のパターンは英語の名前と照合する
             const int prefcol =
-                menu_colour(weapon.name(DESC_PLAIN), prefix, "stats", false);
+                menu_colour(item_name_en(weapon, DESC_PLAIN), prefix, "stats",
+                            false);
             if (!is_enabled())
                 qdesc.textcolour(DARKGREY);
             else if (prefcol != -1)
@@ -497,17 +513,18 @@ namespace quiver
 
             if (!short_desc)
             {
-                string verb = you.confused() ? "confused " : "";
-
-                verb += quiver_verb();
-                qdesc.cprintf("%s: %c) ", uppercase_first(verb).c_str(),
+                const string verb = _quiver_verb_j(quiver_verb(),
+                                                   you.confused());
+                qdesc.cprintf("%s: %c) ", verb.c_str(),
                                 weapon ? weapon->slot : '-');
             }
 
             const string prefix = weapon ? item_prefix(*weapon) : "";
 
+            // menu_colour のパターンは英語の名前と照合する
             const int prefcol =
-                menu_colour(weapon ? weapon->name(DESC_PLAIN) : "", prefix, "stats", false);
+                menu_colour(weapon ? item_name_en(*weapon, DESC_PLAIN) : "",
+                            prefix, "stats", false);
             if (!is_enabled())
                 qdesc.textcolour(DARKGREY);
             else if (prefcol != -1)
@@ -515,6 +532,7 @@ namespace quiver
             else
                 qdesc.textcolour(LIGHTGREY);
 
+            // unarmed_attack_name() は日本語を返す
             qdesc += weapon ? weapon->name(DESC_PLAIN, true)
                             : you.unarmed_attack_name();
 
@@ -541,7 +559,7 @@ namespace quiver
                         coord_def move(random2(3) - 1, random2(3) - 1);
                         if (move.origin())
                         {
-                            mpr("You nearly hit yourself!");
+                            mpr(jtrans("You nearly hit yourself!"));
                             you.turn_is_over = true;
                             return;
                         }
@@ -553,9 +571,9 @@ namespace quiver
                 else
                 {
                     if (target.needs_targeting())
-                        mpr("You're too confused to aim your attacks!");
+                        mpr(jtrans("You're too confused to aim your attacks!"));
                     else
-                        mpr("You're too confused to attack without stumbling around!");
+                        mpr(jtrans("You're too confused to attack without stumbling around!"));
                     return;
                 }
             }
@@ -563,7 +581,7 @@ namespace quiver
             if (you.caught())
             {
                 if (target.needs_targeting())
-                    mprf("You cannot attack while %s.", held_status());
+                    mprf(jtransc("You cannot attack while %s."), held_status());
                 else
                 {
                     // assume that if a target was explicitly supplied, it was
@@ -628,7 +646,7 @@ namespace quiver
 
             if (x_distance > reach_range || y_distance > reach_range)
             {
-                mpr("Your weapon can't reach that far!");
+                mpr(jtrans("Your weapon can't reach that far!"));
                 return;
             }
 
@@ -639,9 +657,10 @@ namespace quiver
             {
                 if (you.confused())
                 {
-                    mprf("You attack %s.",
-                         feature_description_at(target.target,
-                                                false, DESC_THE).c_str());
+                    mprf(jtransc("You attack %s."),
+                         tagged_jtrans("[feature]",
+                             feature_description_at(target.target,
+                                                    false, DESC_PLAIN)).c_str());
                     you.time_taken = attack_delay;
                     you.turn_is_over = true;
                     return;
@@ -694,7 +713,7 @@ namespace quiver
                     if (midmons->wont_attack())
                     {
                         // Let's assume friendlies cooperate.
-                        mprf("You fail to reach past %s.", midmons->name(DESC_THE).c_str());
+                        mprf(jtransc("You fail to reach past %s."), midmons->name(DESC_THE).c_str());
                         you.time_taken = attack_delay;
                         you.turn_is_over = true;
 
@@ -712,12 +731,12 @@ namespace quiver
                 }
 
                 if (success)
-                    mpr("You reach to attack!");
+                    mpr(jtrans("You reach to attack!"));
                 else
                 {
-                    mprf("%s is in the way.",
+                    mprf(jtransc("%s is in the way."),
                          mons->observable() ? mons->name(DESC_THE).c_str()
-                                            : "Something you can't see");
+                                            : jtransc("Something you can't see"));
                 }
             }
 
@@ -729,9 +748,9 @@ namespace quiver
                 if (!force_player_cleave(target.target) && !you.fumbles_attack())
                 {
                     if (x_distance <= 1 && y_distance <= 1)
-                        mpr("You swing at nothing.");
+                        mpr(jtrans("You swing at nothing."));
                     else
-                        mpr("You attack empty space.");
+                        mpr(jtrans("You attack empty space."));
                 }
                 you.time_taken = attack_delay;
                 you.turn_is_over = true;
@@ -740,7 +759,7 @@ namespace quiver
             {
                 if (is_valid_tempering_target(*mons, you, true) && !you.confused())
                 {
-                    mprf("You deconstruct %s.", mons->name(DESC_THE).c_str());
+                    mprf(jtransc("You deconstruct %s."), mons->name(DESC_THE).c_str());
                     monster_die(*mons, KILL_RESET, NON_MONSTER);
                     you.turn_is_over = true;
                     return;
@@ -821,7 +840,7 @@ namespace quiver
             const item_def& quiver = you.inv[item_slot];
             ASSERT(quiver.link != NON_ITEM);
             qdesc.textcolour(Options.status_caption_colour);
-            qdesc.cprintf("%s: ", quiver_verb().c_str());
+            qdesc.cprintf("%s: ", _quiver_verb_j(quiver_verb()).c_str());
 
             qdesc.textcolour(quiver_color());
             qdesc += quiver.name(DESC_PLAIN, true);
@@ -935,18 +954,19 @@ namespace quiver
             // XX abstract to quiver verb?
             if (!short_desc)
             {
-                const string verb =
-                    make_stringf("%s%s",
-                                 you.confused() ? "confused " : "",
-                                 is_throwable(&you, quiver) ? "throw" : "toss (no damage)");
-                qdesc.cprintf("%s: ", uppercase_first(verb).c_str());
+                const string verb = _quiver_verb_j(
+                    is_throwable(&you, quiver) ? "throw" : "toss (no damage)",
+                    you.confused());
+                qdesc.cprintf("%s: ", verb.c_str());
             }
 
             // TODO: I don't actually know what this prefix stuff is
             const string prefix = item_prefix(quiver);
 
+            // menu_colour のパターンは英語の名前と照合する
             const int prefcol =
-                menu_colour(quiver.name(DESC_PLAIN), prefix, "stats", false);
+                menu_colour(item_name_en(quiver, DESC_PLAIN), prefix, "stats",
+                            false);
             if (!is_enabled())
                 qdesc.textcolour(DARKGREY);
             else if (prefcol != -1)
@@ -1171,15 +1191,16 @@ namespace quiver
 
             qdesc.textcolour(Options.status_caption_colour);
             if (channelled_spell_active(spell))
-                qdesc.cprintf("Continue: ");
+                qdesc.cprintf("%s", jtrans_notrimc("Continue: "));
             else
-                qdesc.cprintf("Cast: ");
+                qdesc.cprintf("%s", jtrans_notrimc("Cast: "));
 
             qdesc.textcolour(quiver_color());
 
             // TODO: is showing the spell letter useful?
-            qdesc.cprintf("%s", spell == SPELL_MAXWELLS_COUPLING ?
-                                "Capacitive Coupling" : spell_title(spell));
+            qdesc.cprintf("%s", spell == SPELL_MAXWELLS_COUPLING
+                    ? tagged_jtransc("[quiver spell]", "Capacitive Coupling")
+                    : spell_title_jc(spell));
 
             if (spell == SPELL_GRAVE_CLAW)
             {
@@ -1294,7 +1315,7 @@ namespace quiver
 
         {
             if (!quiet)
-                mpr("You can't see any hostile targets in range.");
+                mpr(jtrans("You can't see any hostile targets in range."));
             return false;
         }
         return true;
@@ -1452,7 +1473,7 @@ namespace quiver
 
             // TODO: does non-targeted case come up?
             if (target.isCancel && !target.interactive && is_targeted())
-                mpr("No targets found!");
+                mpr(jtrans("No targets found!"));
 
             t = target; // copy back, in case they are different
         }
@@ -1465,10 +1486,9 @@ namespace quiver
             formatted_string qdesc;
 
             qdesc.textcolour(Options.status_caption_colour);
-            qdesc.cprintf("Abil: ");
+            qdesc.cprintf("%s", jtrans_notrimc("Abil: "));
 
             qdesc.textcolour(quiver_color());
-            string abil_name = ability_name(ability);
 #ifdef WIZARD
             int last_feat = you.props[WIZ_LAST_FEATURE_TYPE_PROP].get_int();
             if (ability == ABIL_WIZ_BUILD_TERRAIN
@@ -1479,7 +1499,7 @@ namespace quiver
             }
             else
 #endif
-                qdesc.cprintf("%s", ability_name(ability).c_str());
+                qdesc.cprintf("%s", ability_name_j(ability).c_str());
 
             if (is_card_ability(ability))
                 qdesc.cprintf(" %s", nemelex_card_text(ability).c_str());
@@ -2456,17 +2476,17 @@ namespace quiver
             string s = more_message + "\n";
 
             if (any_items)
-                s += "[<w>*/%</w>] inventory  ";
+                s += jtrans("[<w>*/%</w>] inventory") + "  ";
             if (any_spells)
-                s += "[<w>&</w>] all spells  ";
+                s += jtrans("[<w>&</w>] all spells") + "  ";
             if (any_abilities)
-                s += "[<w>^</w>] all abilities  ";
+                s += jtrans("[<w>^</w>] all abilities") + "  ";
 
 
-            string mode = make_stringf("%s focus mode: %s",
+            string mode = make_stringf(jtransc("%s focus mode: %s"),
                 menu_keyhelp_cmd(CMD_MENU_CYCLE_MODE).c_str(),
-                focus_mode == Focus::NONE ? "<w>off</w>|on"
-                                          : "off|<w>on</w>");;
+                focus_mode == Focus::NONE ? jtransc("<w>off</w>|on")
+                                          : jtransc("off|<w>on</w>"));
 
             return pad_more_with(s, mode);
         }
@@ -2478,7 +2498,7 @@ namespace quiver
                 return;
             string action_desc = a->quiver_description();
             if (you.quiver_action.item_is_quivered(a->get_item()))
-                action_desc += " (quivered)";
+                action_desc += jtrans_notrim(" (quivered)");
             MenuEntry *me = new MenuEntry(action_desc,
                                                 MEL_ITEM, 1,
                                                 (int) hotkey);
@@ -2581,7 +2601,7 @@ namespace quiver
             // this key shortcut does still work without arrow selection, but
             // it typically doesn't do much in this menu.
             const string keyhelp =
-                make_stringf(" <lightgrey>(%s to cycle)</lightgrey>",
+                make_stringf(jtrans_notrimc(" <lightgrey>(%s to cycle)</lightgrey>"),
                             menu_keyhelp_cmd(CMD_MENU_CYCLE_HEADERS).c_str());
 
             first_item = 0;
@@ -2591,7 +2611,7 @@ namespace quiver
             if (it_count && show_headers)
             {
                 add_entry(
-                    new MenuEntry("<lightcyan>Items</lightcyan>" + keyhelp,
+                    new MenuEntry(jtrans("<lightcyan>Items</lightcyan>") + keyhelp,
                     MEL_SUBTITLE));
                 first_spell += 1;
                 first_abil += 1;
@@ -2604,7 +2624,7 @@ namespace quiver
                 if (i == it_count && spell_count && show_headers)
                 {
                     add_entry(
-                        new MenuEntry("<lightcyan>Spells</lightcyan>" + keyhelp,
+                        new MenuEntry(jtrans("<lightcyan>Spells</lightcyan>") + keyhelp,
                         MEL_SUBTITLE));
                     first_spell += 1;
                     first_abil += 1;
@@ -2612,7 +2632,7 @@ namespace quiver
                 else if (i == it_count + spell_count && show_headers)
                 {
                     add_entry(
-                        new MenuEntry("<lightcyan>Abilities</lightcyan>" + keyhelp,
+                        new MenuEntry(jtrans("<lightcyan>Abilities</lightcyan>") + keyhelp,
                         MEL_SUBTITLE));
                     first_abil += 1;
                 }
@@ -2630,7 +2650,7 @@ namespace quiver
             if (actions.size() == 0)
             {
                 more_message =
-                    "<lightred>No regular actions available to quiver.</lightred>";
+                    jtrans("<lightred>No regular actions available to quiver.</lightred>");
             }
             if (last_hovered < 0)
             {
@@ -2661,8 +2681,8 @@ namespace quiver
         bool _choose_from_inv()
         {
             int slot = prompt_invent_item(allow_empty
-                                            ? "Quiver which item? (- for none)"
-                                            : "Quiver which item?",
+                                            ? jtransc("Quiver which item? (- for none)")
+                                            : jtransc("Quiver which item?"),
                                           menu_type::invlist, OSEL_QUIVER_ACTION,
                                           OPER_QUIVER, invprompt_flag::hide_known, '-');
 
@@ -2747,7 +2767,7 @@ namespace quiver
             {
                 set_to_quiver(make_shared<quiver::action>());
                 // TODO maybe drop this messaging?
-                mpr("Clearing quiver.");
+                mpr(jtrans("Clearing quiver."));
                 return false;
             }
             else if (isadigit(key))
@@ -2787,11 +2807,11 @@ namespace quiver
 
         virtual formatted_string calc_title() override
         {
-            string s = "Quiver which action? ";
+            string s = jtrans_notrim("Quiver which action? ");
             vector<string> extra_cmds;
 
             if (allow_empty)
-                s += "([<w>-</w>] to clear)";
+                s += jtrans("([<w>-</w>] to clear)");
             return formatted_string::parse_string(s);
         }
 
@@ -2923,7 +2943,7 @@ namespace quiver
 
         if (menu.pointless())
         {
-            mpr("You have nothing to quiver.");
+            mpr(jtrans("You have nothing to quiver."));
             return;
         }
 
@@ -2937,7 +2957,7 @@ namespace quiver
         {
             if (!_quiver_inscription_ok(s->get_item()))
             {
-                const string prompt = make_stringf("Really quiver %s?",
+                const string prompt = make_stringf(jtransc("Really quiver %s?"),
                     you.inv[s->get_item()].name(DESC_INVENTORY).c_str());
                 if (!yesno(prompt.c_str(), true, 'n'))
                     return false;

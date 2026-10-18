@@ -40,6 +40,7 @@
 
 #include "cio.h"
 #include "command.h"
+#include "database.h"
 #include "files.h"
 #include "initfile.h"
 #include "libutil.h"
@@ -788,7 +789,7 @@ void macro_save()
     f = fopen_u(macrofile.c_str(), "w");
     if (!f)
     {
-        mprf(MSGCH_ERROR, "Couldn't open %s for writing!", macrofile.c_str());
+        mprf(MSGCH_ERROR, jtransc("Couldn't open %s for writing!"), macrofile.c_str());
         return;
     }
 
@@ -826,7 +827,7 @@ static keyseq _getch_mul()
     // get new keys from the user.
     if (crawl_state.is_replaying_keys())
     {
-        mprf(MSGCH_ERROR, "(Key replay ran out of keys)");
+        mprf(MSGCH_ERROR, jtransc("(Key replay ran out of keys)"));
         crawl_state.cancel_cmd_repeat();
         crawl_state.cancel_cmd_again();
     }
@@ -993,7 +994,7 @@ static string _keyseq_desc(const keyseq &key)
 static string _keyseq_action_desc(keyseq &action)
 {
     if (action.empty())
-        return "<red>[none]</red>";
+        return jtrans("<red>[none]</red>");
 
     string action_str = vtostr(action);
     action_str = replace_all(action_str, "<", "<<");
@@ -1044,7 +1045,8 @@ public:
         // TODO: this seems like somehow it should involve ui::Switcher, but I
         // have no idea how to use that class with a Menu
         clear();
-        add_entry(new MenuEntry("Create/edit " + mode_name() + " from key", '~',
+        add_entry(new MenuEntry(make_stringf(jtransc("Create/edit %s from key"),
+                                             mode_name().c_str()), '~',
             [this](const MenuEntry &)
                 {
                     edit_mapping(keyseq());
@@ -1052,7 +1054,8 @@ public:
                 }));
         if (get_map().size())
         {
-            MenuEntry *clear_entry = new MenuEntry("Clear all " + mode_name() + "s", '-',
+            MenuEntry *clear_entry = new MenuEntry(
+                make_stringf(jtransc("Clear all %ss"), mode_name().c_str()), '-',
                 [this](const MenuEntry &)
                     {
                         status_msg = "";
@@ -1066,7 +1069,9 @@ public:
             clear_entry->add_hotkey(CK_NUMPAD_SUBTRACT2);
 
             add_entry(clear_entry);
-            add_entry(new MenuEntry("Current " + mode_name() + "s", MEL_SUBTITLE));
+            add_entry(new MenuEntry(make_stringf(jtransc("Current %ss"),
+                                                 mode_name().c_str()),
+                                    MEL_SUBTITLE));
             for (auto &mapping : get_map())
             {
                 // TODO: indicate if macro is from rc file somehow?
@@ -1126,9 +1131,10 @@ public:
         vector<string> result;
         for (auto m : modes)
             if (keymc == m.first)
-                result.push_back("<w>" + m.second + "</w>");
+                result.push_back("<w>" + tagged_jtrans("[macro cycle]", m.second)
+                                 + "</w>");
             else
-                result.push_back(m.second);
+                result.push_back(tagged_jtrans("[macro cycle]", m.second));
 
         string hint;
         if (keymc != KMC_NONE)
@@ -1137,12 +1143,14 @@ public:
         // there's much less use-case for editing keymaps in-game, so hide the
         // details by default
         string mode_hint = edited_keymaps
-            ? " cycle mode: " + join_strings(result.begin(), result.end(), "|")
-            : " edit keymaps";
+            ? jtrans_notrim(" cycle mode: ")
+              + join_strings(result.begin(), result.end(), "|")
+            : jtrans_notrim(" edit keymaps");
 
         set_more(formatted_string::parse_string(
             status_msg + "\n"
-            "Arrows/[<w>enter</w>] to select, [<w>bksp</w>] to clear selected, [<w>?</w>] for help\n"
+            + jtrans("Arrows/[<w>enter</w>] to select, [<w>bksp</w>] to clear selected, [<w>?</w>] for help")
+            + "\n"
             + menu_keyhelp_cmd(CMD_MENU_CYCLE_MODE)
             + mode_hint));
 
@@ -1153,30 +1161,31 @@ public:
         // XX less stupid implementation
         switch (keymc)
         {
-        case KMC_NONE: return "macro";
-        case KMC_DEFAULT: return "regular keymap";
-        case KMC_MENU: return "menu keymap";
-        case KMC_TARGETING: return "targeting keymap";
-        case KMC_LEVELMAP: return "level map keymap";
-        case KMC_CONFIRM: return "confirmation keymap";
-        default: return "buggy keymap";
+        case KMC_NONE: return tagged_jtrans("[macro mode]", "macro");
+        case KMC_DEFAULT: return tagged_jtrans("[macro mode]", "regular keymap");
+        case KMC_MENU: return tagged_jtrans("[macro mode]", "menu keymap");
+        case KMC_TARGETING: return tagged_jtrans("[macro mode]", "targeting keymap");
+        case KMC_LEVELMAP: return tagged_jtrans("[macro mode]", "level map keymap");
+        case KMC_CONFIRM: return tagged_jtrans("[macro mode]", "confirmation keymap");
+        default: return tagged_jtrans("[macro mode]", "buggy keymap");
         }
     }
 
     virtual formatted_string calc_title() override
     {
         return formatted_string::parse_string(
-            "Editing <w>" + mode_name() + "s</w>.");
+            make_stringf(jtransc("Editing <w>%ss</w>."), mode_name().c_str()));
     }
 
     void clear_all()
     {
-        const string clear_prompt = make_stringf("Really clear all %ss?",
+        const string clear_prompt = make_stringf(jtransc("Really clear all %ss?"),
                 mode_name().c_str());
         if (yesno(clear_prompt.c_str(), true, 'N'))
         {
             get_map() = macromap();
-            status_msg = "All " + mode_name() + "s cleared!";
+            status_msg = make_stringf(jtransc("All %ss cleared!"),
+                                      mode_name().c_str());
             crawl_state.unsaved_macros = true;
             fill_entries();
         }
@@ -1203,7 +1212,7 @@ public:
         action_str = replace_all(action_str, "<", "<<");
         key_str = replace_all(key_str, "<", "<<");
 
-        status_msg = make_stringf("Cleared %s '%s' => '%s'.",
+        status_msg = make_stringf(jtransc("Cleared %s '%s' => '%s'."),
                     mode_name().c_str(),
                     key_str.c_str(),
                  action_str.c_str());
@@ -1274,16 +1283,16 @@ public:
             key.clear();
             set_more(string(""));
             prompt = make_stringf(
-                "Input trigger key to edit or create a %s:",
+                jtransc("Input trigger key to edit or create a %s:"),
                 parent.mode_name().c_str());
             set_title(new MenuEntry(prompt, MEL_TITLE));
-            set_more("<lightgray>([<w>~</w>] to enter by keycode)</lightgray>");
+            set_more(jtrans("<lightgray>([<w>~</w>] to enter by keycode)</lightgray>"));
             doing_key_input = true;
         }
 
         void reset_key_prompt()
         {
-            prompt = make_stringf("Current %s for %s: %s",
+            prompt = make_stringf(jtransc("Current %s for %s: %s"),
                         parent.mode_name().c_str(),
                         _keyseq_desc(key).c_str(),
                         _keyseq_action_desc(action).c_str());
@@ -1299,14 +1308,14 @@ public:
             reset_key_prompt();
             set_more(string(""));
 
-            add_entry(new MenuEntry("redefine", 'r',
+            add_entry(new MenuEntry(tagged_jtrans("[macro menu]", "redefine"), 'r',
                 [this](const MenuEntry &)
                 {
                     set_more("");
                     return !edit_action();
                 }));
 
-            add_entry(new MenuEntry("redefine with raw key entry", 'R',
+            add_entry(new MenuEntry(jtrans("redefine with raw key entry"), 'R',
                 [this](const MenuEntry &)
                 {
                     set_more("");
@@ -1316,7 +1325,7 @@ public:
 
             if (!action.empty())
             {
-                add_entry(new MenuEntry("clear", 'c',
+                add_entry(new MenuEntry(tagged_jtrans("[macro menu]", "clear"), 'c',
                     [this](const MenuEntry &)
                     {
                         //weirdly MSVC requires the use of `this->` here
@@ -1325,7 +1334,7 @@ public:
                     }));
             }
 
-            add_entry(new MenuEntry("abort", 'a',
+            add_entry(new MenuEntry(tagged_jtrans("[macro menu]", "abort"), 'a',
                 [this](const MenuEntry &)
                 {
                     abort = true;
@@ -1341,12 +1350,12 @@ public:
         void edit_action_raw()
         {
             prompt = make_stringf(
-                "<w>%s</w>\nInput (raw) new %s for %s: ",
+                jtrans_notrimc("<w>%s</w>\nInput (raw) new %s for %s: "),
                         prompt.c_str(),
                         parent.mode_name().c_str(),
                         _keyseq_desc(key).c_str());
             set_title(new MenuEntry(prompt, MEL_TITLE));
-            set_more("Raw input: [<w>esc</w>] to abort, [<w>enter</w>] to accept.");
+            set_more(jtrans("Raw input: [<w>esc</w>] to abort, [<w>enter</w>] to accept."));
             update_menu(true);
 #ifdef USE_TILE_WEB
             // put the javascript menu mode in raw input mode
@@ -1364,14 +1373,14 @@ public:
         bool edit_action()
         {
             char buff[1024];
-            const string edit_prompt = make_stringf("<w>%s</w>\nInput new %s for %s:",
+            const string edit_prompt = make_stringf(jtransc("<w>%s</w>\nInput new %s for %s:"),
                         prompt.c_str(),
                         parent.mode_name().c_str(),
                         _keyseq_desc(key).c_str());
 
             int old_last_hovered = last_hovered;
             set_hovered(-1);
-            set_more("Input a key sequence. Use <w>\\{n}</w> to enter keycode <w>n</w>. [<w>esc</w>] for menu");
+            set_more(jtrans("Input a key sequence. Use <w>\\{n}</w> to enter keycode <w>n</w>. [<w>esc</w>] for menu"));
             if (!title_prompt(buff, sizeof(buff), edit_prompt.c_str()))
             {
                 set_hovered(old_last_hovered);
@@ -1385,7 +1394,7 @@ public:
             // issues with backslashes, for example
             if (!new_action.size())
             {
-                set_more(make_stringf("Parsing error in key sequence '%s'", buff));
+                set_more(make_stringf(jtransc("Parsing error in key sequence '%s'"), buff));
                 return true;
             }
             set_hovered(old_last_hovered);
@@ -1458,12 +1467,12 @@ public:
                 else if (keyin == '~')
                 {
                     char buff[10];
-                    set_more("[<w>?</w>] Keycode help. "
+                    set_more(jtrans("[<w>?</w>] Keycode help. "
                         "Quick reference: 8: [<w>bksp</w>], "
                         "9: [<w>tab</w>], 13: [<w>enter</w>], 27: [<w>esc</w>]"
-                        );
+                        ));
                     if (!title_prompt(buff, sizeof(buff),
-                        "Enter keycode by number:"
+                        jtransc("Enter keycode by number:")
 #ifndef USE_TILE_LOCAL
                         , "console-keycodes"
 #endif
@@ -1543,8 +1552,9 @@ public:
                 && (!get_map().count(pop.key) || get_map()[pop.key] != pop.action))
             {
                 macro_add(get_map(), pop.key, pop.action);
-                status_msg = make_stringf("%s %s '%s' => '%s'.",
-                    existed ? "Redefined" : "Created",
+                status_msg = make_stringf(
+                    existed ? jtransc("Redefined %s '%s' => '%s'.")
+                            : jtransc("Created %s '%s' => '%s'."),
                     mode_name().c_str(),
                     _keyseq_desc(pop.key).c_str(),
                     _keyseq_action_desc(pop.key, get_map()).c_str());
@@ -1744,7 +1754,7 @@ string read_rc_file_macro(const string& field)
     const int first_space = field.find(' ');
 
     if (first_space < 0)
-        return "Cannot parse marcos += %s , there is only one argument";
+        return jtrans("Cannot parse marcos += %s , there is only one argument");
 
     // Start by deciding what context the macro/keymap is in
     const string context = field.substr(0, first_space);
@@ -1772,7 +1782,7 @@ string read_rc_file_macro(const string& field)
         keymap = false;
     else
         return "'" + context
-                   + "' is not a valid macro or keymap context (macros += %s)";
+                   + jtrans_notrim("' is not a valid macro or keymap context (macros += %s)");
 
     // Now grab the key and action to be performed
     const string key_and_action = field.substr((first_space + 1));
@@ -1780,7 +1790,7 @@ string read_rc_file_macro(const string& field)
     const int second_space = key_and_action.find(' ');
 
     if (second_space < 0)
-        return "Cannot parse macros += %s , there are only two arguments";
+        return jtrans("Cannot parse macros += %s , there are only two arguments");
 
     const string macro_key_string = key_and_action.substr(0, second_space);
     const string action_string = key_and_action.substr((second_space + 1));
@@ -2285,12 +2295,12 @@ void bind_command_to_key(command_type cmd, int key)
     {
         if (command_name == "CMD_NO_CMD")
         {
-            mprf(MSGCH_ERROR, "Cannot bind command #%d to a key.",
+            mprf(MSGCH_ERROR, jtransc("Cannot bind command #%d to a key."),
                  (int) cmd);
             return;
         }
 
-        mprf(MSGCH_ERROR, "Cannot bind command '%s' to a key.",
+        mprf(MSGCH_ERROR, jtransc("Cannot bind command '%s' to a key."),
              command_name.c_str());
         return;
     }
@@ -2300,7 +2310,7 @@ void bind_command_to_key(command_type cmd, int key)
     {
         // disable because they interact badly with webtiles client code.
         // TODO: is there any way to get these to work on webtiles?
-        mprf(MSGCH_ERROR, "Ignoring menu bindkey of %s for webtiles client",
+        mprf(MSGCH_ERROR, jtransc("Ignoring menu bindkey of %s for webtiles client"),
             command_name.c_str());
         return;
     }
@@ -2308,19 +2318,19 @@ void bind_command_to_key(command_type cmd, int key)
 
     if (is_userfunction(key))
     {
-        mprf(MSGCH_ERROR, "Cannot bind user function keys to a command.");
+        mprf(MSGCH_ERROR, jtransc("Cannot bind user function keys to a command."));
         return;
     }
 
     if (is_synthetic_key(key))
     {
-        mprf(MSGCH_ERROR, "Cannot bind synthetic keys to a command.");
+        mprf(MSGCH_ERROR, jtransc("Cannot bind synthetic keys to a command."));
         return;
     }
 
     if (!_allow_rebinding(key, context))
     {
-        mprf(MSGCH_ERROR, "Key %d in context %d cannot be rebound.",
+        mprf(MSGCH_ERROR, jtransc("Key %d in context %d cannot be rebound."),
             key, (int) context);
         return;
     }
@@ -2341,7 +2351,7 @@ string command_to_string(command_type cmd, bool tutorial)
     if (key >= 32 && key < 256)
     {
         if (tutorial && key >= 'A' && key <= 'Z')
-            result = make_stringf("uppercase %c", (char) key);
+            result = make_stringf(jtransc("uppercase %c"), (char) key);
         else
             result = string(1, (char) key);
     }

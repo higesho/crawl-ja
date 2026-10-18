@@ -23,6 +23,13 @@
 #include "stringutil.h" // make_stringf
 #include "view.h" // flash_view_delay
 
+// 表示用の宝石の名前(「煙った宝石」など)。キーは data-items.txt。
+static string _gem_name_j(gem_type gem)
+{
+    return jtrans(string(gem_adj(gem)) + " gem");
+}
+#define _gem_name_jc(g) (_gem_name_j(g).c_str())
+
 #if TAG_MAJOR_VERSION == 34
 static int _old_zot_clock(const string& branch_name) {
     // The old clock was measured in turns (deca-auts), not aut.
@@ -159,9 +166,9 @@ void decr_zot_clock(bool extra_life)
         if (bezotted())
         {
             if (extra_life)
-                mpr("As you die, Zot loses track of you.");
+                mpr(jtrans("As you die, Zot loses track of you."));
             else
-                mpr("As you enter the new level, Zot loses track of you.");
+                mpr(jtrans("As you enter the new level, Zot loses track of you."));
         }
         zot = max(0, zot - ZOT_CLOCK_PER_FLOOR / div);
     }
@@ -190,7 +197,7 @@ void incr_zot_clock()
 
     if (_zot_clock() >= MAX_ZOT_CLOCK)
     {
-        mpr("Zot's power touches on you...");
+        mpr(jtrans("Zot's power touches on you..."));
         // Use your 'base' MHP (excluding forms, berserk, artefacts...)
         // to calculate loss, so that Dragon Form doesn't penalize extra HP
         // and players in unskilled talisman forms don't lose less HP.
@@ -215,16 +222,16 @@ void incr_zot_clock()
     switch (lvl)
     {
         case 1:
-            mpr("You have lingered too long. Zot senses you. "
-                "Dive deeper or flee this branch before you suffer!");
+            mpr(jtrans("You have lingered too long. Zot senses you. "
+                "Dive deeper or flee this branch before you suffer!"));
             break;
         case 2:
-            mpr("Zot draws nearer. "
-                "Dive deeper or flee this branch before you suffer!");
+            mpr(jtrans("Zot draws nearer. "
+                "Dive deeper or flee this branch before you suffer!"));
             break;
         case 3:
-            mpr("Zot has nearly found you. Suffering is imminent. "
-                "Descend or flee this branch!");
+            mpr(jtrans("Zot has nearly found you. Suffering is imminent. "
+                "Descend or flee this branch!"));
             break;
     }
 
@@ -233,7 +240,7 @@ void incr_zot_clock()
         update_vision_range();
 #endif
 
-    take_note(Note(NOTE_MESSAGE, 0, 0, "Glimpsed the power of Zot."));
+    take_note(Note(NOTE_MESSAGE, 0, 0, jtrans("Glimpsed the power of Zot.")));
     interrupt_activity(activity_interrupt::force);
 }
 
@@ -280,13 +287,13 @@ static void _shatter_floor_gem(gem_type gem, bool quiet = false)
 
             if (was_mimic)
             {
-                mprf("The power of Zot manifests... and reveals the %s gem was"
-                     " a mimic! It cackles and vanishes.", gem_adj(gem));
+                mprf(jtransc("The power of Zot manifests... and reveals the %s gem was"
+                     " a mimic! It cackles and vanishes."), _gem_name_jc(gem));
                 continue;
             }
 
-            mprf("With a frightful flash, the power of Zot shatters the %s"
-                 " gem into ten thousand fragments!", gem_adj(gem));
+            mprf(jtransc("With a frightful flash, the power of Zot shatters the %s"
+                 " gem into ten thousand fragments!"), _gem_name_jc(gem));
             // Using UA_PICKUP here is dubious.
             flash_view_delay(UA_PICKUP, MAGENTA, 100);
             flash_view_delay(UA_PICKUP, LIGHTMAGENTA, 100);
@@ -319,15 +326,15 @@ void print_gem_warnings(int gem_int, int old_time_taken)
 
     if (old_time_taken + 2700 < limit && time_taken + 2700 >= limit)
     {
-        mprf("If you linger in this branch much longer, the power of Zot will "
-             "shatter your %s gem.", gem_adj(gem));
+        mprf(jtransc("If you linger in this branch much longer, the power of Zot will "
+             "shatter your %s gem."), _gem_name_jc(gem));
     }
 
     if (old_time_taken + 1000 < limit && time_taken + 1000 >= limit)
     {
-        mprf("Zot senses the otherworldly energies of your %s gem, and will "
-             "surely shatter it if you linger in this branch any longer!",
-             gem_adj(gem));
+        mprf(jtransc("Zot senses the otherworldly energies of your %s gem, and will "
+             "surely shatter it if you linger in this branch any longer!"),
+             _gem_name_jc(gem));
     }
 }
 
@@ -364,8 +371,8 @@ void incr_gem_clock()
 
         if (Options.more_gem_info)
         {
-            mprf("With a frightful flash, the power of Zot shatters your %s gem "
-                 "into ten thousand fragments!", gem_adj(gem));
+            mprf(jtransc("With a frightful flash, the power of Zot shatters your %s gem "
+                 "into ten thousand fragments!"), _gem_name_jc(gem));
             // Using UA_PICKUP here is dubious.
             flash_view_delay(UA_PICKUP, MAGENTA, 100);
             flash_view_delay(UA_PICKUP, LIGHTMAGENTA, 100);
@@ -405,7 +412,7 @@ string gem_status()
     }
     const int time_left = gem_time_left(gem);
     const int turns_left = (time_left + 9) / 10; // round up
-    return make_stringf("If you linger in this branch for another %d turns, "
-                        "the power of Zot will shatter your %s gem.\n",
-                        turns_left, gem_adj(gem));
+    return make_stringf(jtransc("If you linger in this branch for another %d turns, "
+                        "the power of Zot will shatter your %s gem."),
+                        turns_left, _gem_name_jc(gem)) + "\n";
 }

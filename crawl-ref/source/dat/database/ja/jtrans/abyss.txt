@@ -1,0 +1,85 @@
+%%%%
+You are banished to a different region of the Abyss.
+
+あなたはアビスの別の領域へと追放された。
+%%%%
+Cast into level %d of the Abyss
+
+アビスの第%d層に追放された
+%%%%
+You are cast into the Abyss!
+
+あなたはアビスに追放された！
+%%%%
+You are cast deeper into the Abyss!
+
+あなたはアビスのさらなる奥深くへと追放された！
+%%%%
+The Abyss bends around you!
+
+あなたの周囲の空間が歪曲した！
+%%%%
+is pulled into the Abyss.
+
+はアビスに引きずり込まれた。
+%%%%
+You are suddenly pulled into a different region of the Abyss!
+
+突然あなたはアビスの別の領域へと引き込まれた！
+%%%%
+This place is already infused with evil and corruption.
+
+この空間はすでに邪悪と崩壊に満たされている。
+%%%%
+Corrupted %s
+
+%sを崩壊させた
+%%%%
+The substance of the Abyss twists violently, and a gateway leading down appears!
+
+アビスの構成物が猛烈に渦巻き、深層へと続く門が出現した！
+%%%%
+The substance of the Abyss twists violently, and a gateway leading out appears!
+
+アビスの構成物が猛烈に渦巻き、アビスの外へと続く門が出現した！
+%%%%
+Your memory of the abyssal rune fades away.
+
+深淵のルーンの記憶は薄れていった。
+%%%%
+The abyss shimmers again as the detected abyssal rune vanishes from your memory and reappears.
+
+アビスが再び揺らめき、感知していた深淵のルーンの位置があなたの記憶から消え、また現れた。
+%%%%
+The abyss shimmers again as the detected abyssal rune vanishes from your memory.
+
+アビスが再び揺らめき、感知していた深淵のルーンの位置があなたの記憶から消えた。
+%%%%
+The abyssal matter surrounding you shimmers strangely.
+
+あなたを取り巻くアビスの物質が奇妙に揺らめいた。
+%%%%
+You detect the abyssal rune!
+
+あなたは深淵のルーンを感知した！
+%%%%
+ Hand of Corruption reaches out!
+
+崩壊の手が差しのべられた！
+%%%%
+unwielding a weapon of distortion
+
+歪曲の武器を手放したこと
+%%%%
+rebranding a weapon of distortion
+
+歪曲の武器の銘を変えたこと
+%%%%
+wizard command
+
+ウィザードコマンド
+%%%%
+electric charge
+
+電荷
+%%%%

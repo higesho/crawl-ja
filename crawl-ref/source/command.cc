@@ -23,6 +23,7 @@
 #include "initfile.h"
 #include "invent.h"
 #include "item-prop.h"
+#include "item-name.h"
 #include "items.h"
 #include "libutil.h"
 #include "lookup-help.h"
@@ -86,8 +87,8 @@ static const char *features[] =
 
 static string _get_version_information()
 {
-    string result = string("This is <w>" CRAWL " ") + Version::Long
-        + " (" CRAWL_BUILD_NAME ")</w>";
+    string result = make_stringf(jtransc("This is <w>%s %s (%s)</w>"),
+                                 CRAWL, Version::Long, CRAWL_BUILD_NAME);
     return result;
 }
 
@@ -100,28 +101,29 @@ static string _get_version_features()
         {
             result += seed_description();
             if (Version::history_size() > 1)
-                result += " (seed may be affected by game upgrades)";
+                result += jtrans_notrim(" (seed may be affected by game upgrades)");
         }
         else
-            result += "Game is non-seeded.";
+            result += jtrans("Game is non-seeded.");
         result += "\n\n";
     }
     if (Version::history_size() > 1)
     {
-        result += "Version history for your current game:\n";
+        result += jtrans_notrim("Version history for your current game:\n");
         result += Version::history();
         result += "\n\n";
     }
 
-    result += "Report bugs to: <w>" CRAWL_BUG_REPORT "</w>\n\n";
+    result += make_stringf(jtransc("Report bugs to: <w>%s</w>"),
+                           CRAWL_BUG_REPORT) + "\n\n";
 
-    result += "<w>Features</w>\n"
-                 "--------\n";
+    result += jtrans_notrim("<w>Features</w>\n"
+                 "--------\n");
 
     for (const char *feature : features)
     {
         result += " * ";
-        result += feature;
+        result += jtrans(feature);
         result += "\n";
     }
 
@@ -200,13 +202,13 @@ static string _get_version_changes()
     {
         result.erase(1+result.find_last_not_of('\n'));
         result += "\n\n";
-        result += "For earlier changes, see changelog.txt "
-                  "in the docs/ directory.";
+        result += jtrans("For earlier changes, see changelog.txt "
+                  "in the docs/ directory.");
     }
     else
     {
-        result += "For a list of changes, see changelog.txt in the docs/ "
-                  "directory.";
+        result += jtrans("For a list of changes, see changelog.txt in the docs/ "
+                  "directory.");
     }
 
     return result;
@@ -285,7 +287,9 @@ static void _list_equipment(equipment_slot first_slot, equipment_slot last_slot)
 
         if (slot_is_melded(i))
         {
-            entries.emplace_back(make_stringf("<darkgrey>[%s melded]</darkgrey>", equip_slot_name(i, true)));
+            entries.emplace_back(make_stringf(
+                jtransc("<darkgrey>[%s melded]</darkgrey>"),
+                tagged_jtransc("[equip slot]", equip_slot_name(i, true))));
             continue;
         }
 
@@ -298,27 +302,31 @@ static void _list_equipment(equipment_slot first_slot, equipment_slot last_slot)
             estr.str("");
             estr.clear();
 
-            estr << equip_slot_name(i, true);
+            // 日本語の装備部位名は幅とバイト数が違うので、表示幅で揃える
+            string slot_label = tagged_jtrans("[equip slot]",
+                                              equip_slot_name(i, true));
             if (num_slots > 1)
-                estr << " #" << (num + 1);
-            estr << string(10 - estr.tellp(), ' ') << ": ";
+                slot_label += make_stringf(" #%d", num + 1);
+            estr << slot_label
+                 << string(max(0, 10 - strwidth(slot_label)), ' ') << ": ";
 
             if (num >= (int)items.size())
             {
-                estr << "<lightgrey>(nothing)</lightgrey>";
+                estr << jtrans("<lightgrey>(nothing)</lightgrey>");
                 entries.emplace_back(estr.str());
                 continue;
             }
 
             if (items[num].is_overflow)
-                estr << "<darkgrey>(occupied)</darkgrey>";
+                estr << jtrans("<darkgrey>(occupied)</darkgrey>");
             else if (items[num].melded)
-                estr << "<darkgrey>(unavailable)</darkgrey>";
+                estr << jtrans("<darkgrey>(unavailable)</darkgrey>");
             else
             {
                 const item_def& item = items[num].get_item();
                 const string item_name = item.name(DESC_INVENTORY);
-                colour = menu_colour(item_name, item_prefix(item), "equip", false);
+                colour = menu_colour(item_name_en(item, DESC_INVENTORY),
+                                     item_prefix(item), "equip", false);
                 if (colour == MSGCOL_BLACK)
                     colour = menu_colour(estr.str(), "", "equip", false);
                 estr << "<" << colour_to_str(colour) << ">"
@@ -327,8 +335,8 @@ static void _list_equipment(equipment_slot first_slot, equipment_slot last_slot)
             }
 
             entries.emplace_back(estr.str());
-            if (max_len < (int)entries.back().length())
-                max_len = entries.back().length();
+            if (max_len < strwidth(entries.back()))
+                max_len = strwidth(entries.back());
         }
     }
 
@@ -350,7 +358,7 @@ static void _list_equipment(equipment_slot first_slot, equipment_slot last_slot)
             {
                 // XXX: Must strip color tags out to get the proper actual string
                 //      length to pad.
-                int pad = max(0, (int)(width - formatted_string::parse_string(entries[i]).tostring().length()));
+                int pad = max(0, width - strwidth(formatted_string::parse_string(entries[i]).tostring()));
                 mprf(MSGCH_EQUIPMENT, "%s%s", (entries[i].c_str() + string(pad, ' ')).c_str(),
                                               entries[i+1].c_str());
             }
@@ -370,7 +378,9 @@ void list_jewellery()
     _list_equipment(SLOT_RING, SLOT_GIZMO);
 }
 
-static const char *targeting_help_1 =
+static string _targeting_help_1()
+{
+    return jtrans_notrim(
     "<h>Examine surroundings ('<w>x</w><h>' in main):\n"
     "<w>Esc</w> : cancel (also <w>Space</w>, <w>x</w>)\n"
     "<w>Ctrl-X</w> : list all things in view\n"
@@ -386,7 +396,8 @@ static const char *targeting_help_1 =
     "<w>Tab</w> : cycle through shops and portals\n"
     "<w>r</w> : move cursor to you\n"
     "<w>e</w> : create/remove travel exclusion\n"
-;
+    );
+}
 #ifdef WIZARD
 static const char *targeting_help_wiz =
     "<h>Wizard targeting commands:</h>\n"
@@ -410,7 +421,9 @@ static const char *targeting_help_wiz =
 ;
 #endif
 
-static const char *targeting_help_2 =
+static string _targeting_help_2()
+{
+    return jtrans_notrim(
     "<h>Targeting (zap wands, cast spells, etc.):\n"
     "Most keys from examine surroundings work.\n"
     "Some keys fire at the target. <w>Ctrl-X</w> only\n"
@@ -429,7 +442,8 @@ static const char *targeting_help_2 =
     "<w>Q</w> : choose fire action.\n"
     "<w>(</w> : cycle to previous suitable action\n"
     "<w>)</w> : cycle to next suitable action.\n"
-;
+    );
+}
 
 struct help_file
 {
@@ -458,11 +472,11 @@ static void _handle_FAQ()
     vector<string> question_keys = getAllFAQKeys();
     if (question_keys.empty())
     {
-        mpr("No questions found in FAQ! Please submit a bug report!");
+        mpr(jtrans("No questions found in FAQ! Please submit a bug report!"));
         return;
     }
     Menu FAQmenu(MF_SINGLESELECT | MF_ANYPRINTABLE | MF_ALLOW_FORMATTING);
-    MenuEntry *title = new MenuEntry("Frequently Asked Questions");
+    MenuEntry *title = new MenuEntry(jtrans("Frequently Asked Questions"));
     title->colour = YELLOW;
     FAQmenu.set_title(title);
 
@@ -490,8 +504,8 @@ static void _handle_FAQ()
             string answer = getFAQ_Answer(key);
             if (answer.empty())
             {
-                answer = "No answer found in the FAQ! Please submit a "
-                         "bug report!";
+                answer = jtrans("No answer found in the FAQ! Please submit a "
+                         "bug report!");
             }
             answer = "Q: " + getFAQ_Question(key) + "\n" + answer;
             show_description(answer);
@@ -551,12 +565,12 @@ void show_levelmap_help()
 void show_targeting_help()
 {
     column_composer cols(2, 40);
-    cols.add_formatted(0, targeting_help_1, true);
+    cols.add_formatted(0, _targeting_help_1(), true);
 #ifdef WIZARD
     if (you.wizard)
         cols.add_formatted(0, targeting_help_wiz, true);
 #endif
-    cols.add_formatted(1, targeting_help_2, true);
+    cols.add_formatted(1, _targeting_help_2(), true);
     show_keyhelp_menu(cols.formatted_lines());
 }
 void show_interlevel_travel_branch_help()
@@ -709,40 +723,42 @@ static void _display_diag()
         webtiles_client;
 #endif
 
-    s += make_stringf("Display type: <w>%s</w>\n", info.type.c_str());
+    s += make_stringf(jtrans_notrimc("Display type: <w>%s</w>\n"),
+                      info.type.c_str());
     if (!suppress_unix_stuff)
     {
-        s += make_stringf("Terminal type (`TERM`): <w>%s</w>\n",
+        s += make_stringf(jtrans_notrimc("Terminal type (`TERM`): <w>%s</w>\n"),
                                                         info.term.c_str());
     }
-    s += make_stringf("Terminal colours: %d foreground, %d background\n\n",
+    s += make_stringf(jtrans_notrimc("Terminal colours: %d foreground, %d background\n\n"),
         info.fg_colors, info.bg_colors);
 
     if (webtiles_client)
-        s+= "The webtiles client will display 16 colors.\n\n";
+        s+= jtrans_notrim("The webtiles client will display 16 colors.\n\n");
 
     // TODO: should any of this be shown ever in webtiles?
     if (!suppress_unix_stuff && (info.fg_colors < 16
             || info.bg_colors < 16
             || info.term == "xterm")) // hack for putty. Maybe should set a compat flag in the lib?
     {
-        s += "Your terminal is in <red>compatibility mode</red> and may not display full colours.\n";
+        s += jtrans_notrim("Your terminal is in <red>compatibility mode</red> and may not display full colours.\n");
         // hint for the putty users:
         if (info.term == "xterm")
-            s += "For full 16-colour-mode, try setting a better TERM value than `xterm`, e.g. `xterm-256color` (most terminals) or `putty-256color` (for PuTTY).\n";
+            s += jtrans_notrim("For full 16-colour-mode, try setting a better TERM value than `xterm`, e.g. `xterm-256color` (most terminals) or `putty-256color` (for PuTTY).\n");
 
         // XX is there really value in showing all of these? In 2021 in 99% of
         // scenarios, I think people shouldn't mess with anything except the
         // first, and that's only for cosmetic purposes, not compat purposes
+        s += jtrans_notrim("\nCurrent terminal options (see the Options Guide for details):\n");
         s += make_stringf(
-            "\nCurrent terminal options (see the Options Guide for details):\n"
             "    `<w>allow_extended_colours</w>`: %d%s\n"
             "    `<w>bold_brightens_foreground</w>`: %d"
             "        `<w>blink_brightens_background</w>`: %d\n"
             "    `<w>best_effort_brighten_foreground</w>`: %d"
             "  `<w>best_effort_brighten_background</w>`: %d\n\n",
             (int) Options.allow_extended_colours,
-            Options.allow_extended_colours ? " (overridden by TERM)" : "",
+            Options.allow_extended_colours
+                ? jtrans_notrimc(" (overridden by TERM)") : "",
             (int) Options.bold_brightens_foreground.to_bool(true),
             (int) Options.blink_brightens_background,
             (int) Options.best_effort_brighten_foreground,
@@ -752,12 +768,12 @@ static void _display_diag()
             // these diagnostics are targeted at putty with bold_brightens_background.
             // I have no freaking clue why they don't work, but this is here
             // so that the player knows they are misconfigured.
-            s += "These two blocks should have the same background:"
+            s += jtrans_notrim("These two blocks should have the same background:"
                  "    <bg:darkgrey><darkgrey>Block 1</darkgrey></bg:darkgrey>"
                  "    <bg:darkgrey>Block 2</bg:darkgrey>\n"
                  "The following two spans should have continuous shading between 1 and 2:\n"
                  "    <bg:darkgrey><darkgrey>1          2</darkgrey></bg:darkgrey>\n"
-                 "    <bg:darkgrey><darkgrey>1               2</darkgrey></bg:darkgrey>\n";
+                 "    <bg:darkgrey><darkgrey>1               2</darkgrey></bg:darkgrey>\n");
             // intentional missing \n here so that the key things still fit in
             // 80x25 when these diagnostics are shown
         }
@@ -767,23 +783,23 @@ static void _display_diag()
 
 #ifndef USE_TILE_LOCAL
     // no need to show this twice on local tiles
-    s += "Foreground palette:\n";
+    s += jtrans_notrim("Foreground palette:\n");
 
     // XX should black on black -> blue be explained?
     s += _palette_with_bg(BLACK);
     if (!webtiles_client && info.fg_colors < 16)
-        s += "    (Because of compatibility mode, <darkgrey>darkgrey on black renders as blue</darkgrey>.)\n";
+        s += jtrans_notrim("    (Because of compatibility mode, <darkgrey>darkgrey on black renders as blue</darkgrey>.)\n");
 
     if (!webtiles_client)
     {
         // webtiles and local tiles uses their own hover implementations,
         // ANSI color is irrelevant
-        s += "\nPalette with menu highlight:\n";
+        s += jtrans_notrim("\nPalette with menu highlight:\n");
         s += _palette_with_bg(default_hover_colour());
     }
 #endif
 
-    s += "\nFull palette:\n";
+    s += jtrans_notrim("\nFull palette:\n");
     const int bgs_to_show = webtiles_client ? NUM_TERM_COLOURS : info.bg_colors;
     for (int bg = 0; bg < bgs_to_show; bg++)
         s += _palette_with_bg(bg);
@@ -798,41 +814,44 @@ static void _add_formatted_help_menu(column_composer &cols)
 {
     cols.add_formatted(
         0,
-        "<h>Dungeon Crawl Help\n"
+        jtrans_notrim("<h>Dungeon Crawl Help\n"
         "\n"
         "Press one of the following keys to\n"
         "obtain more information on a certain\n"
         "aspect of Dungeon Crawl.\n"
 
         "<w>?</w>: List of commands\n"
-        "<w>^</w>: Quickstart Guide");
+        "<w>^</w>: Quickstart Guide"));
     if (!crawl_state.game_started)
     {
         cols.add_formatted(0,
-            "<darkgrey>:: Browse character notes</darkgrey>\n"
-            "<darkgrey>#: Browse character dump</darkgrey>", false);
+            jtrans_notrim("<darkgrey>:: Browse character notes</darkgrey>\n"
+            "<darkgrey>#: Browse character dump</darkgrey>"), false);
     }
     else
     {
         cols.add_formatted(0,
-            "<w>:</w>: Browse character notes\n"
-            "<w>#</w>: Browse character dump", false);
+            jtrans_notrim("<w>:</w>: Browse character notes\n"
+            "<w>#</w>: Browse character dump"), false);
     }
-    cols.add_formatted(0,
+    // 日本語化のため #ifdef ごとに分けて辞書を引く
+    string help_keys = jtrans_notrim(
         "<w>~</w>: Macros help\n"
         "<w>&</w>: Options help\n"
         "<w>%</w>: Table of aptitudes\n"
         "<w>/</w>: Lookup description\n"
-        "<w>Q</w>: FAQ\n"
+        "<w>Q</w>: FAQ\n");
 #ifdef USE_TILE_LOCAL
-        "<w>T</w>: Tiles key help\n"
+    help_keys += jtrans_notrim("<w>T</w>: Tiles key help\n");
 #endif
+    help_keys += jtrans_notrim(
         "<w>V</w>: Version information\n"
         "<w>!</w>: Display diagnostics\n"
-        "<w>Home</w>: This screen\n"
+        "<w>Home</w>: This screen\n");
 #ifdef __ANDROID__
-        // XX is this the bet place for this? It should at least be duplicated
-        // in `??`.
+    // XX is this the bet place for this? It should at least be duplicated
+    // in `??`.
+    help_keys += jtrans_notrim(
         "\n"
         "<h>Android Controls\n"
         "\n"
@@ -841,14 +860,14 @@ static void _add_formatted_help_menu(column_composer &cols)
         "Long press for right click.\n"
         "Touch with two fingers for scrolling.\n"
         "Toggle keyboard icon controls the\n"
-        "virtual keyboard visibility.\n"
+        "virtual keyboard visibility.\n");
 #endif
-        , false);
+    cols.add_formatted(0, help_keys, false);
 
     // TODO: generate this from the manual somehow
     cols.add_formatted(
         1,
-        "<h>Manual Contents\n\n"
+        jtrans_notrim("<h>Manual Contents\n\n"
         "<w>*</w>       Table of contents\n"
         "<w>A</w>.      Overview\n"
         "<w>B</w>.      Starting Screen\n"
@@ -869,17 +888,17 @@ static void _add_formatted_help_menu(column_composer &cols)
         "<w>3</w>.      List of Skills\n"
         "<w>4</w>.      List of Keys and Commands\n"
         "<w>5</w>.      Inscriptions\n"
-        "<w>6</w>.      Dungeon sprint modes\n");
+        "<w>6</w>.      Dungeon sprint modes\n"));
 }
 
 static void _add_formatted_keyhelp(column_composer &cols)
 {
     cols.add_formatted(
             0,
-            "<h>Movement:\n"
+            jtrans_notrim("<h>Movement:\n"
             "To move in a direction or to attack, \n"
             "use the numpad (try Numlock off and \n"
-            "on) or vi keys:\n");
+            "on) or vi keys:\n"));
 
     _add_insert_commands(cols, 0, "                 <w>7 8 9      % % %",
                          { CMD_MOVE_UP_LEFT, CMD_MOVE_UP, CMD_MOVE_UP_RIGHT });
@@ -894,248 +913,248 @@ static void _add_formatted_keyhelp(column_composer &cols)
 
     cols.add_formatted(
             0,
-            "<h>Rest:\n");
+            jtrans_notrim("<h>Rest:\n"));
 
-    _add_command(cols, 0, CMD_WAIT, "wait a turn (also <w>s</w>, <w>Del</w>)", 2);
-    _add_command(cols, 0, CMD_REST, "rest and long wait; stops when", 2);
+    _add_command(cols, 0, CMD_WAIT, jtrans("wait a turn (also <w>s</w>, <w>Del</w>)"), 2);
+    _add_command(cols, 0, CMD_REST, jtrans("rest and long wait; stops when"), 2);
     cols.add_formatted(
             0,
-            "    Health or Magic become full or\n"
+            jtrans_notrim("    Health or Magic become full or\n"
             "    something is detected. If Health\n"
             "    and Magic are already full, stops\n"
-            "    when 100 turns over (<w>numpad-5</w>)\n",
+            "    when 100 turns over (<w>numpad-5</w>)\n"),
             false);
 
     cols.add_formatted(
             0,
-            "<h>Extended Movement:\n");
+            jtrans_notrim("<h>Extended Movement:\n"));
 
-    _add_command(cols, 0, CMD_EXPLORE, "auto-explore");
-    _add_command(cols, 0, CMD_INTERLEVEL_TRAVEL, "interlevel travel");
-    _add_command(cols, 0, CMD_SEARCH_STASHES, "Find items");
-    _add_command(cols, 0, CMD_FIX_WAYPOINT, "set Waypoint");
+    _add_command(cols, 0, CMD_EXPLORE, jtrans("auto-explore"));
+    _add_command(cols, 0, CMD_INTERLEVEL_TRAVEL, jtrans("interlevel travel"));
+    _add_command(cols, 0, CMD_SEARCH_STASHES, jtrans("Find items"));
+    _add_command(cols, 0, CMD_FIX_WAYPOINT, jtrans("set Waypoint"));
 
     cols.add_formatted(
             0,
-            "<w>/ Dir.</w>, <w>Shift-Dir.</w>: long walk\n"
-            "<w>* Dir.</w>, <w>Ctrl-Dir.</w> : attack without move \n",
+            jtrans_notrim("<w>/ Dir.</w>, <w>Shift-Dir.</w>: long walk\n"
+            "<w>* Dir.</w>, <w>Ctrl-Dir.</w> : attack without move \n"),
             false);
 
     cols.add_formatted(
             0,
-            "<h>Autofight:\n"
+            jtrans_notrim("<h>Autofight:\n"
             "<w>Tab</w>          : attack nearest monster,\n"
             "               moving if necessary\n"
             "<w>Shift-Tab</w>, <w>p</w> : trigger quivered action;\n"
             "               if targeted, aims at\n"
-            "               nearest monster\n");
+            "               nearest monster\n"));
 
     cols.add_formatted(
             0,
-            "<h>Item types (and common commands)\n");
+            jtrans_notrim("<h>Item types (and common commands)\n"));
 
-    _add_insert_commands(cols, 0, "<cyan>)</cyan> : hand weapons (<w>%</w>ield)",
+    _add_insert_commands(cols, 0, jtrans("<cyan>)</cyan> : hand weapons (<w>%</w>ield)"),
                          { CMD_WIELD_WEAPON });
-    _add_insert_commands(cols, 0, "<brown>(</brown> : missiles (<w>%</w>uiver, "
-                                  "<w>%</w>ire, <w>%</w>/<w>%</w> cycle)",
+    _add_insert_commands(cols, 0, jtrans("<brown>(</brown> : missiles (<w>%</w>uiver, "
+                                  "<w>%</w>ire, <w>%</w>/<w>%</w> cycle)"),
                          { CMD_QUIVER_ITEM, CMD_FIRE, CMD_CYCLE_QUIVER_FORWARD,
                            CMD_CYCLE_QUIVER_BACKWARD });
-    _add_insert_commands(cols, 0, "<cyan>[</cyan> : armour (<w>%</w>ear and <w>%</w>ake off)",
+    _add_insert_commands(cols, 0, jtrans("<cyan>[</cyan> : armour (<w>%</w>ear and <w>%</w>ake off)"),
                          { CMD_WEAR_ARMOUR, CMD_REMOVE_ARMOUR });
-    _add_insert_commands(cols, 0, "<w>?</w> : scrolls (<w>%</w>ead)",
+    _add_insert_commands(cols, 0, jtrans("<w>?</w> : scrolls (<w>%</w>ead)"),
                          { CMD_READ });
-    _add_insert_commands(cols, 0, "<magenta>!</magenta> : potions (<w>%</w>uaff)",
+    _add_insert_commands(cols, 0, jtrans("<magenta>!</magenta> : potions (<w>%</w>uaff)"),
                          { CMD_QUAFF });
-    _add_insert_commands(cols, 0, "<blue>=</blue> : rings (<w>%</w>ut on and <w>%</w>emove)",
+    _add_insert_commands(cols, 0, jtrans("<blue>=</blue> : rings (<w>%</w>ut on and <w>%</w>emove)"),
                          { CMD_WEAR_JEWELLERY, CMD_REMOVE_JEWELLERY });
-    _add_insert_commands(cols, 0, "<red>\"</red> : amulets (<w>%</w>ut on and <w>%</w>emove)",
+    _add_insert_commands(cols, 0, jtrans("<red>\"</red> : amulets (<w>%</w>ut on and <w>%</w>emove)"),
                          { CMD_WEAR_JEWELLERY, CMD_REMOVE_JEWELLERY });
-    _add_insert_commands(cols, 0, "<lightred>percent</lightred> : talismans (e<w>%</w>oke)",
+    _add_insert_commands(cols, 0, jtrans("<lightred>percent</lightred> : talismans (e<w>%</w>oke)"),
                          { CMD_WEAR_JEWELLERY, CMD_REMOVE_JEWELLERY });
-    _add_insert_commands(cols, 0, "<lightgrey>/</lightgrey> : wands (e<w>%</w>oke)",
+    _add_insert_commands(cols, 0, jtrans("<lightgrey>/</lightgrey> : wands (e<w>%</w>oke)"),
                          { CMD_EVOKE });
 
     string item_types = "<lightcyan>";
     item_types += stringize_glyph(get_item_symbol(SHOW_ITEM_BOOK));
     item_types +=
-        "</lightcyan> : books (<w>%</w>emorise, <w>%</w>ap, <w>%</w>ap,\n"
-        "    pick up to add to library)";
+        jtrans("</lightcyan> : books (<w>%</w>emorise, <w>%</w>ap, <w>%</w>ap,\n"
+        "    pick up to add to library)");
     _add_insert_commands(cols, 0, item_types,
                          { CMD_MEMORISE_SPELL, CMD_CAST_SPELL,
                            CMD_FORCE_CAST_SPELL });
-    _add_insert_commands(cols, 0, "<brown>|</brown> : staves (<w>%</w>ield)",
+    _add_insert_commands(cols, 0, jtrans("<brown>|</brown> : staves (<w>%</w>ield)"),
                          { CMD_WIELD_WEAPON});
-    _add_insert_commands(cols, 0, "<lightgreen>}</lightgreen> : miscellaneous items (e<w>%</w>oke)",
+    _add_insert_commands(cols, 0, jtrans("<lightgreen>}</lightgreen> : miscellaneous items (e<w>%</w>oke)"),
                          { CMD_EVOKE });
-    _add_insert_commands(cols, 0, "<yellow>$</yellow> : gold (<w>%</w> counts gold)",
+    _add_insert_commands(cols, 0, jtrans("<yellow>$</yellow> : gold (<w>%</w> counts gold)"),
                          { CMD_LIST_GOLD });
 
     cols.add_formatted(
             0,
-            "<lightmagenta>0</lightmagenta> : the Orb of Zot\n"
-            "    Carry it to the surface and win!\n",
+            jtrans_notrim("<lightmagenta>0</lightmagenta> : the Orb of Zot\n"
+            "    Carry it to the surface and win!\n"),
             false);
 
     cols.add_formatted(
             0,
-            "<h>Other Gameplay Actions:\n");
+            jtrans_notrim("<h>Other Gameplay Actions:\n"));
 
     _add_insert_commands(cols, 0, 2, CMD_USE_ABILITY,
-                         "use special Ability (<w>%!</w> for help)",
+                         jtrans("use special Ability (<w>%!</w> for help)"),
                          { CMD_USE_ABILITY });
-    _add_command(cols, 0, CMD_CAST_SPELL, "cast spell, abort without targets", 2);
-    _add_command(cols, 0, CMD_FORCE_CAST_SPELL, "cast spell, no matter what", 2);
-    _add_command(cols, 0, CMD_DISPLAY_SPELLS, "list all memorised spells", 2);
-    _add_command(cols, 0, CMD_MEMORISE_SPELL, "Memorise a spell from your library", 2);
+    _add_command(cols, 0, CMD_CAST_SPELL, jtrans("cast spell, abort without targets"), 2);
+    _add_command(cols, 0, CMD_FORCE_CAST_SPELL, jtrans("cast spell, no matter what"), 2);
+    _add_command(cols, 0, CMD_DISPLAY_SPELLS, jtrans("list all memorised spells"), 2);
+    _add_command(cols, 0, CMD_MEMORISE_SPELL, jtrans("Memorise a spell from your library"), 2);
 
     _add_insert_commands(cols, 0, 2, CMD_SHOUT,
-                         "tell allies (<w>%t</w> to shout)",
+                         jtrans("tell allies (<w>%t</w> to shout)"),
                          { CMD_SHOUT });
-    _add_command(cols, 0, CMD_PREV_CMD_AGAIN, "re-do previous command", 2);
-    _add_command(cols, 0, CMD_REPEAT_CMD, "repeat next command # of times", 2);
+    _add_command(cols, 0, CMD_PREV_CMD_AGAIN, jtrans("re-do previous command"), 2);
+    _add_command(cols, 0, CMD_REPEAT_CMD, jtrans("repeat next command # of times"), 2);
 
     cols.add_formatted(
             0,
-            "<h>Non-Gameplay Commands / Info\n");
+            jtrans_notrim("<h>Non-Gameplay Commands / Info\n"));
 
-    _add_command(cols, 0, CMD_GAME_MENU, "game menu", 2);
-    _add_command(cols, 0, CMD_REPLAY_MESSAGES, "show Previous messages");
-    _add_command(cols, 0, CMD_REDRAW_SCREEN, "Redraw screen");
-    _add_command(cols, 0, CMD_CLEAR_MAP, "Clear main and level maps");
-    _add_command(cols, 0, CMD_MACRO_ADD, "quick add macro");
-    _add_command(cols, 0, CMD_MACRO_MENU, "edit macros");
-    _add_command(cols, 0, CMD_ANNOTATE_LEVEL, "annotate the dungeon level", 2);
-    _add_command(cols, 0, CMD_CHARACTER_DUMP, "dump character to file", 2);
+    _add_command(cols, 0, CMD_GAME_MENU, jtrans("game menu"), 2);
+    _add_command(cols, 0, CMD_REPLAY_MESSAGES, jtrans("show Previous messages"));
+    _add_command(cols, 0, CMD_REDRAW_SCREEN, jtrans("Redraw screen"));
+    _add_command(cols, 0, CMD_CLEAR_MAP, jtrans("Clear main and level maps"));
+    _add_command(cols, 0, CMD_MACRO_ADD, jtrans("quick add macro"));
+    _add_command(cols, 0, CMD_MACRO_MENU, jtrans("edit macros"));
+    _add_command(cols, 0, CMD_ANNOTATE_LEVEL, jtrans("annotate the dungeon level"), 2);
+    _add_command(cols, 0, CMD_CHARACTER_DUMP, jtrans("dump character to file"), 2);
     _add_insert_commands(cols, 0, 2, CMD_MAKE_NOTE,
-                         "add note (use <w>%:</w> to read notes)",
+                         jtrans("add note (use <w>%:</w> to read notes)"),
                          { CMD_DISPLAY_COMMANDS });
-    _add_command(cols, 0, CMD_ADJUST_INVENTORY, "reassign inventory/spell letters", 2);
+    _add_command(cols, 0, CMD_ADJUST_INVENTORY, jtrans("reassign inventory/spell letters"), 2);
 #ifdef USE_TILE_LOCAL
-    _add_command(cols, 0, CMD_EDIT_PLAYER_TILE, "edit player doll", 2);
+    _add_command(cols, 0, CMD_EDIT_PLAYER_TILE, jtrans("edit player doll"), 2);
 #else
 #ifdef USE_TILE_WEB
     if (tiles.is_controlled_from_web())
     {
-        cols.add_formatted(0, "<w>F12</w> : read messages (online play only)",
+        cols.add_formatted(0, jtrans_notrim("<w>F12</w> : read messages (online play only)"),
                            false);
     }
     else
 #endif
-    _add_command(cols, 0, CMD_READ_MESSAGES, "read messages (online play only)", 2);
+    _add_command(cols, 0, CMD_READ_MESSAGES, jtrans("read messages (online play only)"), 2);
 #endif
 
     cols.add_formatted(
             1,
-            "<h>Game Saving and Quitting:\n");
+            jtrans_notrim("<h>Game Saving and Quitting:\n"));
 
-    _add_command(cols, 1, CMD_SAVE_GAME, "Save game and exit");
-    _add_command(cols, 1, CMD_SAVE_GAME_NOW, "Save and exit without query");
-    _add_command(cols, 1, CMD_QUIT, "Abandon the current character");
-    cols.add_formatted(1, "         and quit the game\n",
+    _add_command(cols, 1, CMD_SAVE_GAME, jtrans("Save game and exit"));
+    _add_command(cols, 1, CMD_SAVE_GAME_NOW, jtrans("Save and exit without query"));
+    _add_command(cols, 1, CMD_QUIT, jtrans("Abandon the current character"));
+    cols.add_formatted(1, jtrans_notrim("         and quit the game\n"),
                        false);
 
     cols.add_formatted(
             1,
-            "<h>Player Character Information:\n");
+            jtrans_notrim("<h>Player Character Information:\n"));
 
-    _add_command(cols, 1, CMD_DISPLAY_CHARACTER_STATUS, "display character status", 2);
-    _add_command(cols, 1, CMD_DISPLAY_SKILLS, "show skill screen", 2);
-    _add_command(cols, 1, CMD_RESISTS_SCREEN, "character overview", 2);
-    _add_command(cols, 1, CMD_DISPLAY_RELIGION, "show religion screen", 2);
-    _add_command(cols, 1, CMD_DISPLAY_MUTATIONS, "show Abilities/mutations", 2);
-    _add_command(cols, 1, CMD_DISPLAY_KNOWN_OBJECTS, "show item knowledge", 2);
-    _add_command(cols, 1, CMD_MEMORISE_SPELL, "show your spell library", 2);
-    _add_command(cols, 1, CMD_DISPLAY_RUNES, "show runes collected", 2);
-    _add_command(cols, 1, CMD_LIST_ARMOUR, "display worn armour", 2);
-    _add_command(cols, 1, CMD_LIST_JEWELLERY, "display worn jewellery", 2);
-    _add_command(cols, 1, CMD_LIST_GOLD, "display gold in possession", 2);
-    _add_command(cols, 1, CMD_EXPERIENCE_CHECK, "display experience info", 2);
+    _add_command(cols, 1, CMD_DISPLAY_CHARACTER_STATUS, jtrans("display character status"), 2);
+    _add_command(cols, 1, CMD_DISPLAY_SKILLS, jtrans("show skill screen"), 2);
+    _add_command(cols, 1, CMD_RESISTS_SCREEN, jtrans("character overview"), 2);
+    _add_command(cols, 1, CMD_DISPLAY_RELIGION, jtrans("show religion screen"), 2);
+    _add_command(cols, 1, CMD_DISPLAY_MUTATIONS, jtrans("show Abilities/mutations"), 2);
+    _add_command(cols, 1, CMD_DISPLAY_KNOWN_OBJECTS, jtrans("show item knowledge"), 2);
+    _add_command(cols, 1, CMD_MEMORISE_SPELL, jtrans("show your spell library"), 2);
+    _add_command(cols, 1, CMD_DISPLAY_RUNES, jtrans("show runes collected"), 2);
+    _add_command(cols, 1, CMD_LIST_ARMOUR, jtrans("display worn armour"), 2);
+    _add_command(cols, 1, CMD_LIST_JEWELLERY, jtrans("display worn jewellery"), 2);
+    _add_command(cols, 1, CMD_LIST_GOLD, jtrans("display gold in possession"), 2);
+    _add_command(cols, 1, CMD_EXPERIENCE_CHECK, jtrans("display experience info"), 2);
 
     cols.add_formatted(
             1,
-            "<h>Dungeon Interaction and Information:\n");
+            jtrans_notrim("<h>Dungeon Interaction and Information:\n"));
 
-    _add_insert_commands(cols, 1, "<w>%</w>/<w>%</w>    : Open/Close door",
+    _add_insert_commands(cols, 1, jtrans("<w>%</w>/<w>%</w>    : Open/Close door"),
                          { CMD_OPEN_DOOR, CMD_CLOSE_DOOR });
-    _add_insert_commands(cols, 1, "<w>%</w>/<w>%</w>    : use staircase",
+    _add_insert_commands(cols, 1, jtrans("<w>%</w>/<w>%</w>    : use staircase"),
                          { CMD_GO_UPSTAIRS, CMD_GO_DOWNSTAIRS });
 
-    _add_command(cols, 1, CMD_INSPECT_FLOOR, "examine occupied tile and");
-    cols.add_formatted(1, "         pickup part of a single stack\n",
+    _add_command(cols, 1, CMD_INSPECT_FLOOR, jtrans("examine occupied tile and"));
+    cols.add_formatted(1, jtrans_notrim("         pickup part of a single stack\n"),
                        false);
 
-    _add_command(cols, 1, CMD_LOOK_AROUND, "eXamine surroundings/targets");
+    _add_command(cols, 1, CMD_LOOK_AROUND, jtrans("eXamine surroundings/targets"));
     _add_insert_commands(cols, 1, 7, CMD_DISPLAY_MAP,
-                         "eXamine level map (<w>%?</w> for help)",
+                         jtrans("eXamine level map (<w>%?</w> for help)"),
                          { CMD_DISPLAY_MAP });
-    _add_command(cols, 1, CMD_FULL_VIEW, "list monsters, items, features");
-    cols.add_formatted(1, "         in view\n",
+    _add_command(cols, 1, CMD_FULL_VIEW, jtrans("list monsters, items, features"));
+    cols.add_formatted(1, jtrans_notrim("         in view\n"),
                        false);
-    _add_command(cols, 1, CMD_SHOW_TERRAIN, "toggle view layers");
-    _add_command(cols, 1, CMD_DISPLAY_OVERMAP, "show dungeon Overview");
-    _add_command(cols, 1, CMD_TOGGLE_AUTOPICKUP, "toggle auto-pickup");
+    _add_command(cols, 1, CMD_SHOW_TERRAIN, jtrans("toggle view layers"));
+    _add_command(cols, 1, CMD_DISPLAY_OVERMAP, jtrans("show dungeon Overview"));
+    _add_command(cols, 1, CMD_TOGGLE_AUTOPICKUP, jtrans("toggle auto-pickup"));
 #ifdef USE_SOUND
-    _add_command(cols, 1, CMD_TOGGLE_SOUND, "mute/unmute sound effects");
+    _add_command(cols, 1, CMD_TOGGLE_SOUND, jtrans("mute/unmute sound effects"));
 #endif
 #ifdef USE_TILE_LOCAL
-    _add_insert_commands(cols, 1, "<w>%</w>/<w>%</w> : zoom out/in",
+    _add_insert_commands(cols, 1, jtrans("<w>%</w>/<w>%</w> : zoom out/in"),
                         { CMD_ZOOM_OUT, CMD_ZOOM_IN });
 #endif
 
     cols.add_formatted(
             1,
-            "<h>Inventory management:\n");
+            jtrans_notrim("<h>Inventory management:\n"));
 
-    _add_command(cols, 1, CMD_DISPLAY_INVENTORY, "show Inventory list", 2);
-    _add_command(cols, 1, CMD_PICKUP, "pick up items (also <w>g</w>)", 2);
+    _add_command(cols, 1, CMD_DISPLAY_INVENTORY, jtrans("show Inventory list"), 2);
+    _add_command(cols, 1, CMD_PICKUP, jtrans("pick up items (also <w>g</w>)"), 2);
     cols.add_formatted(
             1,
-            "    (press twice for pick up menu)\n",
+            jtrans_notrim("    (press twice for pick up menu)\n"),
             false);
 
-    _add_command(cols, 1, CMD_DROP, "Drop an item", 2);
-    _add_insert_commands(cols, 1, "<w>%#</w>: Drop exact number of items",
+    _add_command(cols, 1, CMD_DROP, jtrans("Drop an item"), 2);
+    _add_insert_commands(cols, 1, jtrans("<w>%#</w>: Drop exact number of items"),
                          { CMD_DROP });
-    _add_command(cols, 1, CMD_DROP_LAST, "Drop the last item(s) you picked up", 2);
+    _add_command(cols, 1, CMD_DROP_LAST, jtrans("Drop the last item(s) you picked up"), 2);
 
     cols.add_formatted(
             1,
-            "<h>Item Interaction:\n");
+            jtrans_notrim("<h>Item Interaction:\n"));
 
-    _add_command(cols, 1, CMD_INSCRIBE_ITEM, "inscribe item", 2);
-    _add_command(cols, 1, CMD_FIRE, "Fire the currently quivered action", 2);
-    _add_command(cols, 1, CMD_FIRE_ITEM_NO_QUIVER, "select an item and Fire it", 2);
-    _add_command(cols, 1, CMD_QUIVER_ITEM, "select action to be Quivered", 2);
-    _add_command(cols, 1, CMD_SWAP_QUIVER_RECENT, "swap between most recent quiver actions", 2);
-    _add_command(cols, 1, CMD_QUAFF, "Quaff a potion", 2);
-    _add_command(cols, 1, CMD_READ, "Read a scroll", 2);
-    _add_command(cols, 1, CMD_WIELD_WEAPON, "Wield an item (<w>-</w> for none)", 2);
-    _add_command(cols, 1, CMD_WEAPON_SWAP, "wield item a, or switch to b", 2);
+    _add_command(cols, 1, CMD_INSCRIBE_ITEM, jtrans("inscribe item"), 2);
+    _add_command(cols, 1, CMD_FIRE, jtrans("Fire the currently quivered action"), 2);
+    _add_command(cols, 1, CMD_FIRE_ITEM_NO_QUIVER, jtrans("select an item and Fire it"), 2);
+    _add_command(cols, 1, CMD_QUIVER_ITEM, jtrans("select action to be Quivered"), 2);
+    _add_command(cols, 1, CMD_SWAP_QUIVER_RECENT, jtrans("swap between most recent quiver actions"), 2);
+    _add_command(cols, 1, CMD_QUAFF, jtrans("Quaff a potion"), 2);
+    _add_command(cols, 1, CMD_READ, jtrans("Read a scroll"), 2);
+    _add_command(cols, 1, CMD_WIELD_WEAPON, jtrans("Wield an item (<w>-</w> for none)"), 2);
+    _add_command(cols, 1, CMD_WEAPON_SWAP, jtrans("wield item a, or switch to b"), 2);
 
-    _add_insert_commands(cols, 1, "    (use <w>%</w> to assign slots)",
+    _add_insert_commands(cols, 1, jtrans_notrim("    (use <w>%</w> to assign slots)"),
                          { CMD_ADJUST_INVENTORY });
 
-    _add_command(cols, 1, CMD_PRIMARY_ATTACK, "attack with wielded item", 2);
-    _add_command(cols, 1, CMD_EVOKE, "eVoke wand and miscellaneous item", 2);
+    _add_command(cols, 1, CMD_PRIMARY_ATTACK, jtrans("attack with wielded item"), 2);
+    _add_command(cols, 1, CMD_EVOKE, jtrans("eVoke wand and miscellaneous item"), 2);
 
-    _add_insert_commands(cols, 1, "<w>%</w>/<w>%</w> : Equip or Unequip an item",
+    _add_insert_commands(cols, 1, jtrans("<w>%</w>/<w>%</w> : Equip or Unequip an item"),
                          { CMD_EQUIP, CMD_UNEQUIP });
-    _add_insert_commands(cols, 1, "<w>%</w>/<w>%</w> : Wear or Take off armour",
+    _add_insert_commands(cols, 1, jtrans("<w>%</w>/<w>%</w> : Wear or Take off armour"),
                          { CMD_WEAR_ARMOUR, CMD_REMOVE_ARMOUR });
-    _add_insert_commands(cols, 1, "<w>%</w>/<w>%</w> : Put on or Remove jewellery",
+    _add_insert_commands(cols, 1, jtrans("<w>%</w>/<w>%</w> : Put on or Remove jewellery"),
                          { CMD_WEAR_JEWELLERY, CMD_REMOVE_JEWELLERY });
 
     cols.add_formatted(
             1,
-            "<h>Additional help:\n");
+            jtrans_notrim("<h>Additional help:\n"));
 
-    string text =
+    string text = jtrans(
             "Many commands have context sensitive "
             "help, among them <w>%</w>, <w>%</w>, <w>%</w> (or any "
             "form of targeting), <w>%</w>, and <w>%</w>.\n"
             "You can read descriptions of your "
             "current spells (<w>%</w>), skills (<w>%?</w>) and "
-            "abilities (<w>%!</w>).";
+            "abilities (<w>%!</w>).");
     insert_commands(text, { CMD_DISPLAY_MAP, CMD_LOOK_AROUND, CMD_FIRE,
                             CMD_SEARCH_STASHES, CMD_INTERLEVEL_TRAVEL,
                             CMD_DISPLAY_SPELLS, CMD_DISPLAY_SKILLS,
@@ -1153,10 +1172,10 @@ static void _add_formatted_hints_help(column_composer &cols)
     // First column.
     cols.add_formatted(
             0,
-            "<h>Movement:\n"
+            jtrans_notrim("<h>Movement:\n"
             "To move in a direction or to attack, \n"
             "use the numpad (try Numlock off and \n"
-            "on) or vi keys:\n",
+            "on) or vi keys:\n"),
             false);
 
     _add_insert_commands(cols, 0, "                 <w>7 8 9      % % %",
@@ -1171,97 +1190,97 @@ static void _add_formatted_hints_help(column_composer &cols)
                            CMD_MOVE_DOWN_RIGHT });
 
     cols.add_formatted(0, " ", false);
-    cols.add_formatted(0, "<w>Shift-Dir.</w> runs into one direction",
+    cols.add_formatted(0, jtrans_notrim("<w>Shift-Dir.</w> runs into one direction"),
                        false);
-    _add_insert_commands(cols, 0, "<w>%</w> or <w>%</w> : ascend/descend the stairs",
+    _add_insert_commands(cols, 0, jtrans("<w>%</w> or <w>%</w> : ascend/descend the stairs"),
                          { CMD_GO_UPSTAIRS, CMD_GO_DOWNSTAIRS });
-    _add_command(cols, 0, CMD_EXPLORE, "autoexplore", 2);
+    _add_command(cols, 0, CMD_EXPLORE, jtrans("autoexplore"), 2);
 
     cols.add_formatted(
             0,
-            "<h>Rest:\n");
+            jtrans_notrim("<h>Rest:\n"));
 
-    _add_command(cols, 0, CMD_WAIT, "wait a turn (also <w>s</w>, <w>Del</w>)", 2);
-    _add_command(cols, 0, CMD_REST, "rest and long wait; stops when", 2);
+    _add_command(cols, 0, CMD_WAIT, jtrans("wait a turn (also <w>s</w>, <w>Del</w>)"), 2);
+    _add_command(cols, 0, CMD_REST, jtrans("rest and long wait; stops when"), 2);
     cols.add_formatted(
             0,
-            "    Health or Magic become full or\n"
+            jtrans_notrim("    Health or Magic become full or\n"
             "    something is detected. If Health\n"
             "    and Magic are already full, stops\n"
-            "    when 100 turns over (<w>numpad-5</w>)\n",
+            "    when 100 turns over (<w>numpad-5</w>)\n"),
             false);
 
     cols.add_formatted(
             0,
-            "\n<h>Attacking monsters\n"
+            jtrans_notrim("\n<h>Attacking monsters\n"
             "Walking into a monster will attack it\n"
-            "with the wielded weapon or barehanded.",
+            "with the wielded weapon or barehanded."),
             false);
 
     cols.add_formatted(
             0,
-            "\n<h>Ranged combat and magic\n",
+            jtrans_notrim("\n<h>Ranged combat and magic\n"),
             false);
 
-    _add_insert_commands(cols, 0, "<w>%</w> to throw/fire missiles",
+    _add_insert_commands(cols, 0, jtrans("<w>%</w> to throw/fire missiles"),
                          { CMD_FIRE });
-    _add_insert_commands(cols, 0, "<w>%</w>/<w>%</w> to cast spells "
-                                  "(<w>%?/%</w> lists spells)",
+    _add_insert_commands(cols, 0, jtrans("<w>%</w>/<w>%</w> to cast spells "
+                                  "(<w>%?/%</w> lists spells)"),
                          { CMD_CAST_SPELL, CMD_FORCE_CAST_SPELL, CMD_CAST_SPELL,
                            CMD_DISPLAY_SPELLS });
-    _add_command(cols, 0, CMD_MEMORISE_SPELL, "Memorise spells and view spell\n"
-                                              "    library (get books to add to it)", 2);
+    _add_command(cols, 0, CMD_MEMORISE_SPELL, jtrans("Memorise spells and view spell\n"
+                                              "    library (get books to add to it)"), 2);
 
     // Second column.
     cols.add_formatted(
-            1, "<h>Item types and inventory management\n",
+            1, jtrans_notrim("<h>Item types and inventory management\n"),
             false);
 
     _add_insert_commands(cols, 1,
-                         "<console><cyan>)</cyan> : </console>"
-                         "hand weapons (<w>%</w>ield)",
+                         jtrans("<console><cyan>)</cyan> : </console>"
+                         "hand weapons (<w>%</w>ield)"),
                          { CMD_WIELD_WEAPON });
     _add_insert_commands(cols, 1,
-                         "<console><brown>(</brown> : </console>"
-                         "missiles (<w>%</w>uiver, <w>%</w>ire, <w>%</w>/<w>%</w> cycle)",
+                         jtrans("<console><brown>(</brown> : </console>"
+                         "missiles (<w>%</w>uiver, <w>%</w>ire, <w>%</w>/<w>%</w> cycle)"),
                          { CMD_QUIVER_ITEM, CMD_FIRE, CMD_CYCLE_QUIVER_FORWARD,
                            CMD_CYCLE_QUIVER_BACKWARD });
     _add_insert_commands(cols, 1,
-                         "<console><cyan>[</cyan> : </console>"
-                         "armour (<w>%</w>ear and <w>%</w>ake off)",
+                         jtrans("<console><cyan>[</cyan> : </console>"
+                         "armour (<w>%</w>ear and <w>%</w>ake off)"),
                          { CMD_WEAR_ARMOUR, CMD_REMOVE_ARMOUR });
     _add_insert_commands(cols, 1,
-                         "<console><w>?</w> : </console>"
-                         "scrolls (<w>%</w>ead)",
+                         jtrans("<console><w>?</w> : </console>"
+                         "scrolls (<w>%</w>ead)"),
                          { CMD_READ });
     _add_insert_commands(cols, 1,
-                         "<console><magenta>!</magenta> : </console>"
-                         "potions (<w>%</w>uaff)",
+                         jtrans("<console><magenta>!</magenta> : </console>"
+                         "potions (<w>%</w>uaff)"),
                          { CMD_QUAFF });
     _add_insert_commands(cols, 1,
-                         "<console><blue>=</blue> : </console>"
-                         "rings (<w>%</w>ut on and <w>%</w>emove)",
+                         jtrans("<console><blue>=</blue> : </console>"
+                         "rings (<w>%</w>ut on and <w>%</w>emove)"),
                          { CMD_WEAR_JEWELLERY, CMD_REMOVE_JEWELLERY });
     _add_insert_commands(cols, 1,
-                         "<console><red>\"</red> : </console>"
-                         "amulets (<w>%</w>ut on and <w>%</w>emove)",
+                         jtrans("<console><red>\"</red> : </console>"
+                         "amulets (<w>%</w>ut on and <w>%</w>emove)"),
                          { CMD_WEAR_JEWELLERY, CMD_REMOVE_JEWELLERY });
     _add_insert_commands(cols, 1,
-                         "<console><lightred>percent</lightred> : </console>"
-                         "talismans (e<w>%</w>oke)",
+                         jtrans("<console><lightred>percent</lightred> : </console>"
+                         "talismans (e<w>%</w>oke)"),
                          { CMD_EVOKE });
     _add_insert_commands(cols, 1,
-                         "<console><lightgrey>/</lightgrey> : </console>"
-                         "wands (e<w>%</w>oke)",
+                         jtrans("<console><lightgrey>/</lightgrey> : </console>"
+                         "wands (e<w>%</w>oke)"),
                          { CMD_EVOKE });
 
     string item_types =
                   "<console><lightcyan>";
     item_types += stringize_glyph(get_item_symbol(SHOW_ITEM_BOOK));
     item_types +=
-        "</lightcyan> : </console>"
+        jtrans("</lightcyan> : </console>"
         "books (<w>%</w>emorise, <w>%</w>ap, <w>%</w>ap,\n"
-        "    pick up to add to spell library)";
+        "    pick up to add to spell library)");
     _add_insert_commands(cols, 1, item_types,
                          { CMD_MEMORISE_SPELL, CMD_CAST_SPELL,
                            CMD_FORCE_CAST_SPELL });
@@ -1270,36 +1289,36 @@ static void _add_formatted_hints_help(column_composer &cols)
                   "<console><brown>";
     item_types += stringize_glyph(get_item_symbol(SHOW_ITEM_STAFF));
     item_types +=
-        "</brown> : </console>"
-        "staves (<w>%</w>ield)";
+        jtrans("</brown> : </console>"
+        "staves (<w>%</w>ield)");
     _add_insert_commands(cols, 1, item_types,
                          { CMD_WIELD_WEAPON });
 
     cols.add_formatted(1, " ", false);
-    _add_command(cols, 1, CMD_DISPLAY_INVENTORY, "inventory (select item to view)", 2);
-    _add_command(cols, 1, CMD_PICKUP, "pick up item from ground (also <w>g</w>)", 2);
-    _add_command(cols, 1, CMD_DROP, "drop item", 2);
-    _add_command(cols, 1, CMD_DROP_LAST, "drop the last item(s) you picked up", 2);
+    _add_command(cols, 1, CMD_DISPLAY_INVENTORY, jtrans("inventory (select item to view)"), 2);
+    _add_command(cols, 1, CMD_PICKUP, jtrans("pick up item from ground (also <w>g</w>)"), 2);
+    _add_command(cols, 1, CMD_DROP, jtrans("drop item"), 2);
+    _add_command(cols, 1, CMD_DROP_LAST, jtrans("drop the last item(s) you picked up"), 2);
 
     cols.add_formatted(
             1,
-            "<h>Additional important commands\n");
+            jtrans_notrim("<h>Additional important commands\n"));
 
-    _add_command(cols, 1, CMD_SAVE_GAME_NOW, "Save the game and exit", 2);
-    _add_command(cols, 1, CMD_REPLAY_MESSAGES, "show previous messages", 2);
-    _add_command(cols, 1, CMD_USE_ABILITY, "use an ability", 2);
-    _add_command(cols, 1, CMD_RESISTS_SCREEN, "show character overview", 2);
-    _add_command(cols, 1, CMD_DISPLAY_RELIGION, "show religion overview", 2);
-    _add_command(cols, 1, CMD_DISPLAY_MAP, "show map of the whole level", 2);
-    _add_command(cols, 1, CMD_DISPLAY_OVERMAP, "show dungeon overview", 2);
+    _add_command(cols, 1, CMD_SAVE_GAME_NOW, jtrans("Save the game and exit"), 2);
+    _add_command(cols, 1, CMD_REPLAY_MESSAGES, jtrans("show previous messages"), 2);
+    _add_command(cols, 1, CMD_USE_ABILITY, jtrans("use an ability"), 2);
+    _add_command(cols, 1, CMD_RESISTS_SCREEN, jtrans("show character overview"), 2);
+    _add_command(cols, 1, CMD_DISPLAY_RELIGION, jtrans("show religion overview"), 2);
+    _add_command(cols, 1, CMD_DISPLAY_MAP, jtrans("show map of the whole level"), 2);
+    _add_command(cols, 1, CMD_DISPLAY_OVERMAP, jtrans("show dungeon overview"), 2);
 
     cols.add_formatted(
             1,
-            "\n<h>Targeting\n"
+            jtrans_notrim("\n<h>Targeting\n"
             "<w>Enter</w> or <w>.</w> or <w>Del</w> : confirm target\n"
             "<w>+</w> and <w>-</w> : cycle between targets\n"
             "<w>f</w> or <w>p</w> : shoot at previous target\n"
-            "         if still alive and in sight\n",
+            "         if still alive and in sight\n"),
             false);
 }
 
@@ -1358,9 +1377,11 @@ static int _get_help_section(int section, formatted_string &header_out, formatte
     // All hotkeys are currently on *-page
     const int page = hotkeys.count(section) ? '*' : section;
 
-    string header = headers.count(page) ? ": "+headers[page] : "";
+    string header = headers.count(page)
+        ? ": " + tagged_jtrans("[help header]", headers[page]) : "";
     header_out = formatted_string::parse_string(
-                    "<yellow>Dungeon Crawl Help"+header+"</yellow>");
+                    "<yellow>" + jtrans("Dungeon Crawl Help") + header
+                    + "</yellow>");
     scroll_out = 0;
     switch (section)
     {

@@ -6,6 +6,7 @@
 
 #include "cio.h"
 #include "command.h"
+#include "database.h"
 #include "libutil.h"
 #include "nearby-danger.h"
 #include "player.h"
@@ -280,9 +281,9 @@ bool MapRegion::update_tip_text(string& tip)
     if (mouse_control::current_mode() != MOUSE_MODE_COMMAND)
         return false;
 
-    tip = "[L-Click] Travel / [R-Click] View";
+    tip = jtrans("[L-Click] Travel / [R-Click] View");
     if (i_feel_safe())
-        tip += "\n[Shift + L-Click] Autoexplore";
+        tip += jtrans_notrim("\n[Shift + L-Click] Autoexplore");
     return true;
 }
 

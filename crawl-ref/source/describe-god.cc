@@ -272,7 +272,7 @@ string god_title(god_type which_god, species_type which_species, int piety)
         { "Walking", tagged_jtrans("[walking]", walk) },
         { "Walker", tagged_jtrans("[walker]", walk) },
         { "Child", tagged_jtrans("[child]", species::child_name(which_species)) },
-        { "Orc", jtrans(species::orc_name(which_species)) },
+        { "Orc", tagged_jtrans("[spec name]", species::orc_name(which_species)) },
     };
 
     return replace_keys(tagged_jtrans("[title]", title), replacements);

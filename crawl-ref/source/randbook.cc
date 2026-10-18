@@ -422,6 +422,28 @@ static string _gen_randlevel_owner(god_type god)
     return "";
 }
 
+/**
+ * 呪文書の名前の頭に付ける所有者名(「〜の」)。
+ *
+ * 所有者名は判定(_maybe_gen_book_subject の "Xom" など)に使うので英語のまま
+ * 持ち回り、名前を組み立てるときにだけ日本語にする。神やユニークの名前は
+ * 辞書(data-gods.txt, data-monsters.txt)で引き、ない名前(プレイヤー名や
+ * make_name() の名前など)はそのまま使う。
+ *
+ * ランダム呪文書の名前は 0.19-ja と同じく生成時に日本語の語順で組み立てて
+ * props に保存する。語彙は dat/database/ja/randbook.txt から引く。
+ */
+static string _owner_prefix_j(const string &owner)
+{
+    if (owner.empty())
+        return "";
+
+    string name = jtrans(owner);
+    name = replace_all(name, "『", "");
+    name = replace_all(name, "』", "");
+    return name + "の";
+}
+
 /// What's the DB lookup string for a given randbook spell level?
 static string _randlevel_difficulty_name(int level)
 {
@@ -445,13 +467,13 @@ static string _gen_randlevel_name(int level, god_type god)
 {
     const string owner_name = _gen_randlevel_owner(god);
     const bool has_owner = !owner_name.empty();
-    const string apostrophised_owner = owner_name.empty() ? "" :
-    apostrophise(owner_name) + " ";
+    const string apostrophised_owner = _owner_prefix_j(owner_name);
 
     if (god == GOD_XOM && coinflip())
     {
-        const string xomname = getRandNameString("book_noun") + " of "
-        + getRandNameString("Xom_book_title");
+        // 「<題>の<書>」
+        const string xomname = getRandNameString("Xom_book_title") + "の"
+                               + getRandNameString("book_noun");
         return apostrophised_owner + xomname;
     }
 
@@ -479,7 +501,12 @@ static string _gen_randlevel_name(int level, god_type god)
 
     if (bookname.find("@level@", 0) != string::npos)
     {
-        const string level_name = uppercase_first(number_in_words(level));
+        static const char * const level_names_j[] =
+        {
+            "零", "一", "二", "三", "四", "五", "六", "七", "八", "九",
+        };
+        const string level_name = level >= 0 && level <= 9
+                                  ? level_names_j[level] : to_string(level);
         bookname = replace_all(bookname, "@level@", level_name);
     }
 
@@ -717,27 +744,22 @@ static string _gen_randbook_name(string subject, string owner,
                                  spschool disc1,
                                  spschool disc2)
 {
-    const string apostrophised_owner = owner.empty() ?
-        "" :
-        apostrophise(owner) + " ";
+    const string apostrophised_owner = _owner_prefix_j(owner);
 
     const string real_subject = subject.empty() ?
         _maybe_gen_book_subject(owner) :
-        subject;
+        jtrans(subject);
 
     if (!real_subject.empty())
     {
-        return make_stringf("%s%s of %s",
-                            apostrophised_owner.c_str(),
-                            getRandNameString("book_noun").c_str(),
-                            real_subject.c_str());
+        // 「(〜の)<題>の<書>」
+        return apostrophised_owner + real_subject + "の"
+               + getRandNameString("book_noun");
     }
 
+    // 日本語の語順: 「(〜の)<系統>(と<系統>)の<書>」。
+    // 末尾の「の<書>」(book_name)は最後に付ける。
     string name = apostrophised_owner;
-
-    // Give a name that reflects the primary and secondary
-    // spell disciplines of the spells contained in the book.
-    name += getRandNameString("book_name") + " ";
 
     // For the actual name there's a 66% chance of getting something like
     //  <book> of the Fiery Traveller (Translocation/Fire), else
@@ -754,29 +776,29 @@ static string _gen_randbook_name(string subject, string owner,
         // No adjective found, use the normal method of combining two nouns.
         type_name = getRandNameString(spelltype_long_name(disc1));
         if (type_name.empty())
-            name += spelltype_long_name(disc1);
+            name += spelltype_long_name_j(disc1);
         else
             name += type_name;
 
         if (disc1 != disc2)
         {
-            name += " and ";
+            name += "と";
             type_name = getRandNameString(spelltype_long_name(disc2));
 
             if (type_name.empty())
-                name += spelltype_long_name(disc2);
+                name += spelltype_long_name_j(disc2);
             else
                 name += type_name;
         }
     }
     else
     {
-        string bookname = type_name + " ";
+        string bookname = type_name;
 
         // Add the noun for the first discipline.
         type_name = getRandNameString(spelltype_long_name(disc1));
         if (type_name.empty())
-            bookname += spelltype_long_name(disc1);
+            bookname += spelltype_long_name_j(disc1);
         else
         {
             if (type_name.find("the ", 0) != string::npos)
@@ -788,6 +810,9 @@ static string _gen_randbook_name(string subject, string owner,
         }
         name += bookname;
     }
+
+    // 「の魔導書」など
+    name += getRandNameString("book_name");
 
     return name;
 }

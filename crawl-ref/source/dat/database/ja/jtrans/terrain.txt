@@ -1,0 +1,120 @@
+# terrain.txt: terrain.cc(地形の効果のメッセージ)
+%%%%
+The walls melt %s!
+
+酸の壁が%sの体を溶かした！
+%%%%
+The wall melts %s!
+
+酸の壁が%sの体を溶かした！
+%%%%
+The walls burn %s!
+
+酸の壁が%sの体を焼いた！
+%%%%
+The wall burns %s!
+
+酸の壁が%sの体を焼いた！
+%%%%
+You hear a sizzling splash.
+
+あなたはジューッという音を聞いた。
+#
+# 地形が入れ替わったときの通知(_announce_swap_real)
+# 引数は(地形、相手、位置)の順に渡している。位置は [swap prep] の訳。
+%%%%
+%s suddenly disappears from %s %s!
+
+%sが突然%sの%sから消えた！
+%%%%
+%s suddenly disappears!
+
+%sが突然消えた！
+%%%%
+%s suddenly appears %s %s!
+
+%sが突然%sの%sに現れた！
+%%%%
+%s suddenly appears!
+
+%sが突然現れた！
+%%%%
+# 引数: 地形、元の相手、位置、行き先の相手、位置
+%s moves from %s %s to %s %s!
+
+%sが%sの%sから%sの%sへ移動した！
+%%%%
+%s moves from %s %s!
+
+%sが%sの%sから移動した！
+%%%%
+%s moves to %s %s!
+
+%sが%sの%sへ移動した！
+%%%%
+%s moves!
+
+%sが移動した！
+%%%%
+[swap prep]beside
+
+そば
+%%%%
+[swap prep]around
+
+周り
+%%%%
+[swap prep]under
+
+下
+%%%%
+[swap prep]above
+
+上
+%%%%
+[swap prep]beneath
+
+下
+%%%%
+[swap prep]inside
+
+中
+%%%%
+[swap prep]into
+
+中
+%%%%
+[swap prep]onto
+
+上
+%%%%
+[swap prep]over
+
+上
+#
+%%%%
+You fall into the lava!
+
+あなたは溶岩の中に転がり落ちた！
+%%%%
+You fall into the water!
+
+あなたは水の中に転がり落ちた！
+%%%%
+You fall into the programming rift!
+
+あなたはプログラムの裂け目に転がり落ちた！
+%%%%
+# 引数: 相手、" but does no damage" の訳(または空)、句読点
+The wall freezes %s%s%s
+
+壁が%sを凍えさせた%s%s
+%%%%
+The frigid air chills %s%s%s
+
+凍てつく空気が%sを凍えさせた%s%s
+%%%%
+The exit collapses.
+
+出口が崩れ落ちた。
+%%%%

@@ -1,0 +1,480 @@
+%%%%
+Press <w>?</w> for a list of commands and other information.
+
+コマンド一覧やその他の情報を見るには <w>?</w>キー を押してください。
+%%%%
+You can't repeat informational commands.
+
+情報閲覧コマンドを繰り返すことはできません。
+%%%%
+You can't repeat multi-turn commands.
+
+複数ターンかかるコマンドを繰り返すことはできません。
+%%%%
+You can't repeat that command.
+
+そのコマンドを繰り返すことはできません。
+%%%%
+You can't repeat map commands.
+
+マップコマンドを繰り返すことはできません。
+%%%%
+You can't repeat mouse clicks or movements.
+
+マウスクリックやマウス移動を繰り返すことはできません。
+%%%%
+You can't repeat the repeat command!
+
+反復コマンドを繰り返すことはできません！
+%%%%
+Why would you want to repeat a run command?
+
+走るコマンドを繰り返すことはできません。
+%%%%
+No previous command to repeat.
+
+繰り返すコマンドがありません。
+%%%%
+Unknown command, not repeating.
+
+不明なコマンドだったので繰り返しませんでした。
+%%%%
+Game saved, see you later!
+
+ゲームを保存しました。
+%%%%
+Key pressed, interrupting command repetition.
+
+キーが押されたため、コマンドを繰り返すのを中止しました。
+%%%%
+Infinite lua loop detected, aborting.
+
+luaスクリプトの無限ループを検知したため、中断しました。
+%%%%
+There is nothing on the other side of the stone arch.
+
+石のアーチの向こう側には何もない。
+%%%%
+This shop appears to be closed.
+
+この店は閉まっているようだ。
+%%%%
+A magical barricade bars your way!
+
+魔力の障壁が行く手を塞いでいる！
+%%%%
+You can't go down here!
+
+ここでは降りることができない！
+%%%%
+You can't go up here!
+
+ここでは上ることができない！
+%%%%
+A rune of Zot still resides in this realm, and once you leave you can never return. Are you sure you want to leave?
+
+何らかのルーンが未だこのフロアに残されており、一度ここを離れると決して戻ることはできません。本当に立ち去りますか？
+%%%%
+Are you sure you want to leave this ziggurat?
+
+本当にこのジグラットを立ち去りますか？
+%%%%
+Really leave the Orb behind?
+
+本当にオーブを置いていきますか？
+%%%%
+Are you sure you want to leave %s?%s
+
+本当に%sを立ち去りますか？%s
+%%%%
+This will make you lose the game!
+
+目的を達成しないままゲームを終わることになりますよ！
+%%%%
+Alright, then stay!
+
+了解しました。
+%%%%
+Really go through this one-way escape hatch?
+
+本当に一方通行の脱出ハッチを通り抜けますか？
+%%%%
+Really dive through this shaft in the floor?
+
+本当に床に空いた縦穴に飛びこみますか？
+%%%%
+You are a level %d %s %s.
+
+あなたはレベル%dの%sの%sだ。
+%%%%
+You are %d%% of the way to level %d.
+
+経験値が%d%%貯まっています(次はレベル%d)。
+%%%%
+I'm sorry, level %d is as high as you can go.
+
+残念ながら、レベル%dが到達可能な最高レベルです。
+%%%%
+With the way you've been playing, I'm surprised you got this far.
+
+ここまで生き延びるとは、あなたの手腕には驚きを禁じえません。
+%%%%
+You'll get an extra life in %d.%02d levels' worth of XP.
+
+あと%d.%02dレベル上昇すればさらなる命を得るでしょう。
+%%%%
+If you died right now, you'd get an extra life in %d.%02d levels' worth of XP.
+
+もしあなたが今死んだ場合、あと%d.%02dレベル上昇すればさらなる命を得るでしょう。
+%%%%
+You start waiting.
+
+あなたは待機を始めた。
+%%%%
+You start resting.
+
+あなたは休憩を始めた。
+%%%%
+Move the cursor to view the level map, or type <w>?</w> for a list of commands.
+
+階層マップを見るにはカーソルを動かすか、<w>?</w>キーを押してコマンド一覧を見てください。
+%%%%
+Returning to the game...
+
+ゲームへ復帰中……
+%%%%
+You have %d gold piece%s.
+
+あなたは今%d枚の金貨を持っている。
+%%%%
+You should not fight recklessly!
+
+あなたはむやみに攻撃すべきではない！
+%%%%
+Autopickup is now on.
+
+アイテム自動拾いを開始しました。
+%%%%
+Autopickup is now off.
+
+アイテム自動拾いを停止しました。
+%%%%
+Char dump unsuccessful! Sorry about that.
+
+残念ながらキャラクター情報のファイル出力に失敗しました。
+%%%%
+Save game and return to main menu?
+
+セーブしてメインメニューに戻りますか？
+%%%%
+Save game and exit?
+
+セーブして終了しますか？
+%%%%
+Saving game... please wait.
+
+セーブしています……お待ちください。
+%%%%
+Are you sure you want to abandon this character and quit the game?
+
+本当にこのキャラクターを放棄してゲームを終了しますか？
+%%%%
+Unknown command. (For a list of commands type <w>??</w>.)
+
+そのコマンドは存在しません。(<w>??</w> を押してコマンド一覧を表示)
+%%%%
+Unknown command.
+
+そのコマンドは存在しません。
+%%%%
+Press <w>%</w> or <w>%</w> to pray at altars.
+
+祭壇で祈るには <w>%</w> もしくは <w>%</w> を押してください。
+%%%%
+You have a vision of a gate.
+
+あなたは門の幻影を目にした。
+%%%%
+You have a vision of multiple gates.
+
+あなたはいくつかの門の幻影を目にした。
+%%%%
+Your passage of Golubria closes with a snap!
+
+ゴルブリアの通り道が音を立てて閉じた！
+%%%%
+You hear a snapping sound.
+
+あなたは何かが閉じる音を聞いた。
+%%%%
+Outside, the world ends.
+
+この世の終わりだ。
+%%%%
+Sorry, but your quest for the Orb is now rather pointless. You quit...
+
+あなたの冒険は今や目的を見失っている……ゲームを終了しました。
+%%%%
+You feel a strong urge to attack something.
+
+あなたは激しい攻撃衝動に駆られている。
+%%%%
+Your blood rage is quickly leaving you.
+
+あなたの血に飢えた激情は速やかに消え去った。
+%%%%
+Can't repeat a command which takes no turns (unless it's a wizard command), cancelling
+
+ターンを消費しないコマンド(ウィザードコマンドを除く)は繰り返すことができないため、繰り返しをキャンセルしました。
+%%%%
+Can't repeat a command which takes no turns, cancelling repetitions.
+
+ターンを消費しないコマンドは繰り返すことができないため、繰り返しをキャンセルしました。
+%%%%
+(Key replay stole keys)
+
+(キーリプレイは中断しました)
+%%%%
+Number of times to repeat, then command key:
+
+繰り返す回数を入力してからコマンドを入力してください:
+%%%%
+You must enter the number of times for the command to repeat.
+
+コマンドを繰り返す回数を入力しないといけません。
+%%%%
+Enter command to be repeated:
+
+繰り返すコマンドを入力してください:
+%%%%
+Can't re-do previous command from within a macro.
+
+マクロ内で一つ前のコマンドを再度行うことはできません。
+%%%%
+No previous command to re-do.
+
+再度行うコマンドがありません。
+%%%%
+Trying to re-do re-do command, aborting.
+
+リドゥコマンドを再度行うことはできません。中断しました。
+%%%%
+# --- 開始時のメッセージ(%s は種族・職業・名前の順に渡す) ---
+Welcome, %s the %s %s.
+
+ようこそ、%sの%s『%s』よ。
+%%%%
+Welcome back, %s the %s %s.
+
+よくぞ帰ってきた、%sの%s『%s』よ。
+%%%%
+%s the %s %s began the quest for the Orb.
+
+%sの%s『%s』がオーブを探す冒険を始めた。
+%%%%
+# 放浪者・ジンの開始時の所持品(「あなたは%s%s%sを持って冒険を始めた。」の部品)
+the following items: %s
+
+所持品(%s)
+%%%%
+the following spells memorised: %s
+
+記憶済みの呪文(%s)
+%%%%
+the following spell memorised: %s
+
+記憶済みの呪文(%s)
+%%%%
+the following spells available to memorise: %s
+
+記憶可能な呪文(%s)
+%%%%
+[begin with]; and
+
+と
+%%%%
+You begin with %s%s%s.
+
+あなたは%s%s%sを持って冒険を始めた。
+%%%%
+%s set off with %s%s%s.
+
+%sは%s%s%sを持って出発した。
+%%%%
+# --- コマンドの繰り返し ---
+Really repeat movement command while danger is nearby?
+
+近くに危険があるのに、本当に移動コマンドを繰り返しますか？
+%%%%
+Cannot control self, cancelling command repetition.
+
+自分の体を制御できないため、コマンドの繰り返しを中止しました。
+%%%%
+Banning ready() after %d throttles
+
+%d 回の制限のあと、ready() の実行を禁止しました
+%%%%
+# --- 階段・移動 ---
+You can't repeat shop actions.
+
+店での行動を繰り返すことはできない。
+%%%%
+You can't repeat altar actions.
+
+祭壇での行動を繰り返すことはできない。
+%%%%
+It simply wouldn't do to leave so soon after announcing yourself.
+
+名乗りを上げたばかりで立ち去るわけにはいかない。
+%%%%
+You need a rune to leave the Vaults.
+
+宝物庫から出るにはルーンが必要だ。
+%%%%
+You need at least %d runes to enter the Realm of Zot.
+
+ゾットの領域に入るには少なくとも %d 個のルーンが必要だ。
+%%%%
+The stairs are too slimy for you to climb back up!
+
+階段は粘液でぬめっていて、上ることができない！
+%%%%
+This transporter is marked as excluded!
+
+この転送装置は立入禁止区域に指定されている！
+%%%%
+Enter transporter anyway?
+
+それでも転送装置に入りますか？
+%%%%
+Are you sure you want to leave this trove?
+
+本当にこの埋蔵庫を立ち去りますか？
+%%%%
+Really leave the ziggurat figurine behind?
+
+本当にジグラットの模型を置いていきますか？
+%%%%
+You cannot leave the Vaults without holding a Rune of Zot, and the runes within are jealously guarded. Continue?
+
+ゾットのルーンを持たずに宝物庫から出ることはできず、中のルーンは厳重に守られている。続けますか？
+%%%%
+You will be unable to climb back up again until you either destroy or join the power ruling this place. Continue?
+
+ここを支配する力を滅ぼすか、それに与するまで、二度と上に戻ることはできなくなる。続けますか？
+%%%%
+The transporter is blocked on the other side!
+
+転送装置の向こう側が塞がっている！
+%%%%
+The transporter is blocked by a creature on the other side!
+
+転送装置の向こう側が何者かに塞がれている！
+%%%%
+You enter the transporter and appear at another place.
+
+あなたは転送装置に入り、別の場所に現れた。
+%%%%
+# --- 経験値・プレイ時間 ---
+Play time: %s (%d turns).
+
+プレイ時間: %s (%d ターン)
+%%%%
+You are forever immune to Zot's power.
+
+あなたはもう永遠にゾットの力の影響を受けない。
+%%%%
+You have unlimited time to explore this branch.
+
+この支部では時間を気にせず探索できる。
+%%%%
+Zot will find you in %d turns if you stay in this branch and explore no new floors.
+
+この支部に留まって新しい階層を探索しなければ、%d ターン後にゾットに見つかる。
+%%%%
+Really rest while Zot is near?
+
+ゾットが近くにいるのに、本当に休憩しますか？
+%%%%
+# --- 射撃の準備 ---
+No %squiver actions available for cycling.%s
+
+切り替えられる%s行動がない。%s
+%%%%
+[quiver cycle]other
+
+他の
+%%%%
+Use [<white>Q</white>] to select from all actions.
+
+[<white>Q</white>]ですべての行動から選べる。
+%%%%
+Nothing quivered!
+
+何も準備されていない！
+%%%%
+You also have %d voucher%s.
+
+さらに商品券を%d枚持っている。
+%%%%
+# --- ゲームメニュー ---
+Return to game
+
+ゲームに戻る
+%%%%
+Save and return to main menu
+
+保存してメインメニューに戻る
+%%%%
+Save and exit
+
+保存して終了する
+%%%%
+Generate and view character dump
+
+キャラクターダンプを作成して見る
+%%%%
+Edit player tile
+
+プレイヤーのタイルを編集する
+%%%%
+Help and manual
+
+ヘルプとマニュアル
+%%%%
+Lookup info
+
+情報を調べる
+%%%%
+Show options file in finder
+
+オプションファイルを Finder で表示する
+%%%%
+Toggle on-screen keyboard
+
+画面上のキーボードを表示/非表示にする
+%%%%
+Quit and <lightred>abandon character</lightred>
+
+終了して<lightred>キャラクターを放棄する</lightred>
+%%%%
+Sound effects are now on.
+
+効果音をオンにしました。
+%%%%
+Sound effects are now off.
+
+効果音をオフにしました。
+%%%%
+Are you sure you want to abandon this character?
+
+本当にこのキャラクターを放棄しますか？
+%%%%
+Are you sure you want to abandon this character and return to the main menu?
+
+本当にこのキャラクターを放棄してメインメニューに戻りますか？
+%%%%
+You feel your anger nearly subside.
+
+あなたの怒りは静まりかけている。
+%%%%

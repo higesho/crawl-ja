@@ -15,6 +15,7 @@
 #include "branch.h"
 #include "cio.h"
 #include "colour.h"
+#include "database.h"
 #include "describe.h"
 #include "dgn-overview.h"
 #include "english.h"
@@ -26,6 +27,7 @@
 #include "item-prop.h"
 #include "item-status-flag-type.h"
 #include "items.h"
+#include "japanese.h"
 #include "libutil.h"
 #include "menu.h"
 #include "message.h"
@@ -1013,9 +1015,11 @@ class ShopEntry : public InvEntry
             cost > you.gold                     ? RED :
                                                   YELLOW;
         const string keystr = colour_to_str(keycol);
+        // menu_colour のパターンは英語のアイテム名で照合する
         const string itemstr =
-            colour_to_str(menu_colour(text, item_prefix(*item, false), tag, false));
-        return make_stringf(" <%s>%c %c </%s><%s>%4d gold   %s%s</%s>",
+            colour_to_str(menu_colour(item_name_en(*item, DESC_A),
+                                      item_prefix(*item, false), tag, false));
+        return make_stringf(jtrans_notrimc(" <%s>%c %c </%s><%s>%4d gold   %s%s</%s>"),
                             keystr.c_str(),
                             hotkeys[0],
                             selected() ? '+' : on_list ? '$' : '-',
@@ -1023,7 +1027,7 @@ class ShopEntry : public InvEntry
                             itemstr.c_str(),
                             cost,
                             text.c_str(),
-                            shop_item_unknown(*item) ? " (unknown)" : "",
+                            shop_item_unknown(*item) ? jtrans_notrimc(" (unknown)") : "",
                             itemstr.c_str());
     }
 
@@ -1064,8 +1068,8 @@ ShopMenu::ShopMenu(shop_struct& _shop, const level_pos& _pos, bool _can_purchase
     bought_indices = {};
     update_help();
 
-    set_title("Welcome to " + shop_name(shop) + "! What would you "
-              "like to do?");
+    set_title(make_stringf(jtransc("Welcome to %s! What would you like to do?"),
+                           shop_name(shop).c_str()));
 }
 
 void ShopMenu::init_entries()
@@ -1123,10 +1127,10 @@ void ShopMenu::update_help()
     //[Esc] exit          [Tab] buy|examine items     [a-j] mark item for purchase
     //[/] sort (type)     [Enter] buy marked items    [A-J] put item on shopping list
     const bool voucher = have_voucher();
-    string top_line = make_stringf("<yellow>You have %d gold piece%s%s.",
-                                   you.gold,
-                                   you.gold != 1 ? "s" : "",
-                                   voucher ? " and a voucher" : "");
+    string top_line = make_stringf(voucher
+                    ? jtransc("<yellow>You have %d gold pieces and a voucher.")
+                    : jtransc("<yellow>You have %d gold pieces."),
+                                   you.gold);
     const int total_cost = !can_purchase ? 0 : selected_cost(true);
     if (total_cost > you.gold)
     {
@@ -1135,27 +1139,24 @@ void ShopMenu::update_help()
         {
             top_line += "<lightred>";
             top_line +=
-                make_stringf(" Purchasing will use your shop voucher and %d gold piece%s.",
-                             total_cost - max,
-                             (total_cost - max != 1) ? "s" : "");
+                make_stringf(jtrans_notrimc(" Purchasing will use your shop voucher and %d gold pieces."),
+                             total_cost - max);
             top_line += "</lightred>";
         }
         else
         {
             top_line += "<lightred>";
             top_line +=
-                make_stringf(" You are short %d gold piece%s for the purchase.",
-                             total_cost - you.gold,
-                             (total_cost - you.gold != 1) ? "s" : "");
+                make_stringf(jtrans_notrimc(" You are short %d gold pieces for the purchase."),
+                             total_cost - you.gold);
             top_line += "</lightred>";
         }
     }
     else if (total_cost)
     {
         top_line +=
-            make_stringf(" After the purchase, you will have %d gold piece%s.",
-                         you.gold - total_cost,
-                         (you.gold - total_cost != 1) ? "s" : "");
+            make_stringf(jtrans_notrimc(" After the purchase, you will have %d gold pieces."),
+                         you.gold - total_cost);
     }
     top_line += "</yellow>";
 
@@ -1172,42 +1173,49 @@ void ShopMenu::update_help()
                 || menu_action == ACT_EXAMINE && !is_set(MF_ARROWS_SELECT);
     const string action_key = no_action ? "       " // max: "[Enter]"
         : menu_keyhelp_cmd(CMD_MENU_ACCEPT_SELECTION);
-    const string action_desc = action_key +
-            (no_action                   ? "                  "
-            : menu_action == ACT_EXAMINE ? " describe         "
-            : from_shopping_list         ? " buy shopping list"
-                                         : " buy marked items ");
+    // 日本語は幅が違うので、桁は chop_string で揃える(英語版の幅に合わせる)
+    const string action_desc = action_key + chop_string(
+            no_action                   ? string()
+            : menu_action == ACT_EXAMINE ? jtrans_notrim(" describe")
+            : from_shopping_list         ? jtrans_notrim(" buy shopping list")
+                                         : jtrans_notrim(" buy marked items"),
+            18);
 
     // XX swap shopping list / select by letter?
     const string mode_desc = !can_purchase ? ""
         : menu_keyhelp_cmd(CMD_MENU_CYCLE_MODE)
-            + (menu_action == ACT_EXECUTE ? " <w>buy</w>|examine items"
-                                          : " buy|<w>examine</w> items");
-    string m = menu_keyhelp_cmd(CMD_MENU_EXIT)+ " exit          ";
+            + (menu_action == ACT_EXECUTE ? jtrans_notrim(" <w>buy</w>|examine items")
+                                          : jtrans_notrim(" buy|<w>examine</w> items"));
+    string m = menu_keyhelp_cmd(CMD_MENU_EXIT)
+               + chop_string(" " + tagged_jtrans("[shop help]", "exit"), 15);
     m += mode_desc;
     m = pad_more_with(m, make_stringf("%s %s",
         hyphenated_hotkey_letters(item_count(), 'a').c_str(),
-        menu_action == ACT_EXECUTE ? "mark item for purchase   "
-                                   : "examine item             "));
-    m += make_stringf("\n[<w>/</w>] sort (%s)%s  %s",
-        shopping_order_names[order],
-        string(7 - strwidth(shopping_order_names[order]), ' ').c_str(),
+        chop_string(menu_action == ACT_EXECUTE
+                    ? jtrans("mark item for purchase")
+                    : jtrans("examine item"), 25).c_str()));
+    const string order_name =
+        tagged_jtrans("[order]", shopping_order_names[order]);
+    m += "\n" + make_stringf(jtransc("[<w>/</w>] sort (%s)%s  %s"),
+        order_name.c_str(),
+        string(max(0, 7 - strwidth(order_name)), ' ').c_str(),
         action_desc.c_str());
 
     m = pad_more_with(m, hyphenated_hotkey_letters(item_count(), 'A')
-                                  + " put item on shopping list");
+                                  + jtrans_notrim(" put item on shopping list"));
 
 
     const string col = colour_to_str(channel_to_colour(MSGCH_PROMPT));
     if (outside_items)
     {
         const formatted_string outside = formatted_string::parse_string(make_stringf(
-            "<%s>I'll put %s outside for you.</%s>\n",
+            jtransc("<%s>I'll put %s outside for you.</%s>"),
             col.c_str(),
-            bought_indices.size() == 1             ? "it" :
-      (int) bought_indices.size() == outside_items ? "them"
-                                                   : "some of them",
-            col.c_str()));
+            tagged_jtransc("[shop outside]",
+                bought_indices.size() == 1             ? "it" :
+          (int) bought_indices.size() == outside_items ? "them"
+                                                       : "some of them"),
+            col.c_str()) + "\n");
         set_more(outside + formatted_string::parse_string(top_line + m));
     }
     else
@@ -1265,22 +1273,22 @@ void ShopMenu::purchase_selected()
         if (!have_voucher() || cost - max_cost(buying_from_list) > you.gold)
         {
             more = formatted_string::parse_string(make_stringf(
-                    "<%s>You don't have enough money.</%s>\n",
+                    jtransc("<%s>You don't have enough money.</%s>"),
                     col.c_str(),
-                    col.c_str()));
+                    col.c_str()) + "\n");
             more += old_more;
             update_more();
             return;
         }
     }
     more = formatted_string::parse_string(make_stringf(
-               "<%s>Purchase items%s for %d gold? %s (%s/N)</%s>\n",
+               jtransc("<%s>Purchase items%s for %d gold? %s (%s/N)</%s>"),
                col.c_str(),
-               buying_from_list ? " in shopping list" : "",
+               buying_from_list ? jtransc("in shopping list") : "",
                cost,
-               too_expensive ? "This will use your shop voucher." : "",
+               too_expensive ? jtransc("This will use your shop voucher.") : "",
                Options.easy_confirm == easy_confirm_type::none ? "Y" : "y",
-               col.c_str()));
+               col.c_str()) + "\n");
     more += old_more;
     update_more();
     if (!yesno(nullptr, true, 'n', false, false, true))
@@ -1532,7 +1540,7 @@ void shop()
 {
     if (!shop_at(you.pos()))
     {
-        mprf(MSGCH_ERROR, "Help! Non-existent shop.");
+        mprf(MSGCH_ERROR, jtransc("Help! Non-existent shop."));
         return;
     }
 
@@ -1542,7 +1550,7 @@ void shop()
     // Quick out, if no inventory
     if (shop.stock.empty())
     {
-        mprf("%s appears to be closed.", shopname.c_str());
+        mprf(jtransc("%s appears to be closed."), shopname.c_str());
         destroy_shop_at(you.pos());
         return;
     }
@@ -1574,9 +1582,9 @@ void shop()
     redraw_screen();
     update_screen();
     if (menu.bought_something)
-        mprf("Thank you for shopping at %s!", shopname.c_str());
+        mprf(jtransc("Thank you for shopping at %s!"), shopname.c_str());
     if (any_on_list)
-        mpr("You can access your shopping list by pressing '$'.");
+        mpr(jtrans("You can access your shopping list by pressing '$'."));
 }
 
 void shop(shop_struct& shop, const level_pos& pos)
@@ -1659,6 +1667,68 @@ static const char *_shop_type_suffix(shop_type type, const coord_def &where)
     return suffixnames[(where.x + where.y) % ARRAYSZ(suffixnames)];
 }
 
+// 日本語版の店主名(0.19-ja より)。make_name() の英語の合成名の代わりに使う。
+static const char * const _rand_store_names[] =
+{
+    "アーヴィン",
+    "アラン",
+    "アンディ",
+    "イシュメル",
+    "エグバード",
+    "ガッド",
+    "カルル",
+    "ギュンター",
+    "ジョン",
+    "ジョニー",
+    "ドゥワイト",
+    "ディータ",
+    "デリック",
+    "ナフム",
+    "ネイサン",
+    "バリー",
+    "バルテル",
+    "ブレンダン",
+    "マイク",
+    "マラカイ",
+    "ライナス",
+    "ルーテル",
+    "レイフ",
+    "レスター",
+    "ロジャー",
+    "アラベラ",
+    "アルマ",
+    "アレシア",
+    "アデル",
+    "イルマ",
+    "エレイン",
+    "エステル",
+    "カミラ",
+    "カレン",
+    "テレジア",
+    "ドゥルシラ",
+    "ナタリア",
+    "ネリー",
+    "ハーマイアニ",
+    "パウラ",
+    "マリー",
+    "マルティナ",
+    "モニカ",
+    "リネット",
+    "ルル",
+    "レーナ",
+    "レジナ",
+    "ローレル",
+    "ロウィーナ",
+    "ロレッタ",
+};
+
+const char* rand_store_names(unsigned int seed)
+{
+    return _rand_store_names[seed % ARRAYSZ(_rand_store_names)];
+}
+
+// 日本語の店名: 「<店主>の<種類><接尾語>」(例: 「ジョンの武器専門店」)。
+// shop_type_name() と接尾語は英語のまま持ち、ここで [shop] 付きキーで引く。
 string shop_name(const shop_struct& shop)
 {
     const shop_type type = shop.type;
@@ -1668,31 +1738,31 @@ string shop_name(const shop_struct& shop)
 #if TAG_MAJOR_VERSION == 34
     // xref ShopInfo::load
     if (shop.shop_name == " ")
-        return shop.shop_type_name;
+        return tagged_jtrans("[shop]", shop.shop_type_name);
 #endif
     if (!shop.shop_name.empty())
-        sh_name += apostrophise(shop.shop_name) + " ";
+        sh_name += jtrans(shop.shop_name) + "の";
     else
     {
         uint32_t seed = static_cast<uint32_t>(shop.keeper_name[0])
             | (static_cast<uint32_t>(shop.keeper_name[1]) << 8)
             | (static_cast<uint32_t>(shop.keeper_name[1]) << 16);
 
-        sh_name += apostrophise(make_name(seed)) + " ";
+        sh_name += string(rand_store_names(seed)) + "の";
     }
 
     if (!shop.shop_type_name.empty())
-        sh_name += shop.shop_type_name;
+        sh_name += tagged_jtrans("[shop]", shop.shop_type_name);
     else
-        sh_name += shop_type_name(type);
+        sh_name += tagged_jtrans("[shop]", shop_type_name(type));
 
     if (!shop.shop_suffix_name.empty())
-        sh_name += " " + shop.shop_suffix_name;
+        sh_name += tagged_jtrans("[shop]", shop.shop_suffix_name);
     else
     {
         string sh_suffix = _shop_type_suffix(type, shop.pos);
         if (!sh_suffix.empty())
-            sh_name += " " + sh_suffix;
+            sh_name += tagged_jtrans("[shop]", sh_suffix);
     }
 
     return sh_name;
@@ -1805,7 +1875,7 @@ bool ShoppingList::add_thing(const item_def &item, int cost,
 
     if (!find_thing(item, pos).empty()) // TODO: this check isn't working?
     {
-        ui::error(make_stringf("%s is already on the shopping list.",
+        ui::error(make_stringf(jtransc("%s is already on the shopping list."),
              item.name(DESC_THE).c_str()));
         return false;
     }
@@ -1875,7 +1945,7 @@ bool ShoppingList::del_thing(const item_def &item,
 
     if (indices.empty())
     {
-        ui::error(make_stringf("%s isn't on shopping list, can't delete it.",
+        ui::error(make_stringf(jtransc("%s isn't on shopping list, can't delete it."),
              item.name(DESC_THE).c_str()));
         return false;
     }
@@ -1892,7 +1962,7 @@ bool ShoppingList::del_thing(string desc, const level_pos* _pos)
 
     if (indices.empty())
     {
-        ui::error(make_stringf("%s isn't on shopping list, can't delete it.",
+        ui::error(make_stringf(jtransc("%s isn't on shopping list, can't delete it."),
              desc.c_str()));
         return false;
     }
@@ -2023,8 +2093,8 @@ bool ShoppingList::cull_identical_items(const item_def& item, int cost)
             thing[REPLACE_PROMPTED_KEY] = (bool) true;
 
             string prompt =
-                make_stringf("Shopping list: replace %dgp %s with cheaper "
-                             "one? (Y/n)", list_cost,
+                make_stringf(jtransc("Shopping list: replace %dgp %s with cheaper "
+                             "one? (Y/n)"), list_cost,
                              describe_thing(thing).c_str());
 
             if (yesno(prompt.c_str(), true, 'y', false))
@@ -2043,13 +2113,13 @@ bool ShoppingList::cull_identical_items(const item_def& item, int cost)
                 continue;
             thing[REMOVE_PROMPTED_KEY] = (bool) true;
 
-            string prompt = make_stringf("Shopping list: remove %s? (Y/n)",
+            string prompt = make_stringf(jtransc("Shopping list: remove %s? (Y/n)"),
                                          describe_thing(thing, DESC_A).c_str());
 
             if (yesno(prompt.c_str(), true, 'y', false))
             {
                 to_del.push_back(listed);
-                mprf("Shopping list: removing %s",
+                mprf(jtransc("Shopping list: removing %s"),
                      describe_thing(thing, DESC_A).c_str());
             }
             else
@@ -2057,7 +2127,7 @@ bool ShoppingList::cull_identical_items(const item_def& item, int cost)
         }
         else
         {
-            mprf("Shopping list: removing %s",
+            mprf(jtransc("Shopping list: removing %s"),
                  describe_thing(thing, DESC_A).c_str());
             to_del.push_back(listed);
         }
@@ -2164,7 +2234,7 @@ void ShoppingList::spells_added_to_library(const vector<spell_type>& spells, boo
         for (auto idx : indices_to_del)
         {
             ASSERT_RANGE(idx, 0, list->size());
-            mprf("Shopping list: removing %s",
+            mprf(jtransc("Shopping list: removing %s"),
                 describe_thing((*list)[idx], DESC_A).c_str());
         }
     }
@@ -2305,23 +2375,21 @@ void ShoppingList::gold_changed(int old_amount, int new_amount)
                 break;
             }
 
-            string desc;
+            // 日本語: 「<場所>の<品>を購入する」
+            const string verb = thing.exists(SHOPPING_THING_VERB_KEY)
+                ? thing[SHOPPING_THING_VERB_KEY].get_string()
+                : string("buy");
 
-            if (thing.exists(SHOPPING_THING_VERB_KEY))
-                desc += thing[SHOPPING_THING_VERB_KEY].get_string();
-            else
-                desc = "buy";
-            desc += " ";
-
-            desc += describe_thing(thing, DESC_A);
-
-            descs.push_back(desc);
+            descs.push_back(describe_thing(thing, DESC_A) + "を"
+                            + tagged_jtrans("[shop verb]", verb));
         }
         ASSERT(!descs.empty());
 
-        mpr_comma_separated_list("You now have enough gold to ", descs,
-                                 ", or ");
-        mpr("You can access your shopping list by pressing '$'.");
+        // 訳は player.txt(「あなたは%sのに十分な金を手に入れた。」)
+        mprf(jtransc("You now have enough gold to %s."),
+             comma_separated_line(descs.begin(), descs.end(),
+                                  "か、", "、").c_str());
+        mpr(jtrans("You can access your shopping list by pressing '$'."));
 
         // Our gold has changed, maybe we can buy different things now.
         refresh();
@@ -2348,35 +2416,36 @@ public:
     string get_keyhelp(bool) const override
     {
         const bool voucher = have_voucher();
-        string s = make_stringf("<yellow>You have %d gold pieces%s</yellow>\n"
-                                "<lightgrey>", you.gold,
-                                voucher ? " and a voucher." : "");
+        string s = make_stringf(voucher
+                    ? jtransc("<yellow>You have %d gold pieces and a voucher.</yellow>")
+                    : jtransc("<yellow>You have %d gold pieces</yellow>"),
+                                you.gold) + "\n<lightgrey>";
 
         if (view_only)
-            s += "Choose to examine item  ";
+            s += jtrans_notrim("Choose to examine item  ");
         else
         {
             s += menu_keyhelp_cmd(CMD_MENU_CYCLE_MODE);
             switch (menu_action)
             {
             case ACT_EXECUTE:
-                s += " <w>travel</w>|examine|delete";
+                s += jtrans_notrim(" <w>travel</w>|examine|delete");
                 break;
             case ACT_EXAMINE:
-                s += " travel|<w>examine</w>|delete";
+                s += jtrans_notrim(" travel|<w>examine</w>|delete");
                 break;
             default:
-                s += " travel|examine|<w>delete</w>";
+                s += jtrans_notrim(" travel|examine|<w>delete</w>");
                 break;
             }
 
-            s += " items    ";
+            s += tagged_jtrans("[shop help]", "items") + "    ";
         }
         if (items.size() > 0)
         {
             // could be dropped if there's ever more interesting hotkeys
             s += hyphenated_hotkey_letters(items.size(), 'a')
-                    + " choose item</lightgray>";
+                    + jtrans_notrim(" choose item</lightgray>");
         }
         return pad_more_with_esc(s);
     }
@@ -2394,10 +2463,8 @@ formatted_string ShoppingListMenu::calc_title()
     const int total_cost = you.props[SHOPPING_LIST_COST_KEY];
 
     fs.textcolour(title->colour);
-    fs.cprintf("Shopping list: %d %s%s, total cost %d gold pieces",
-                title->quantity, title->text.c_str(),
-                title->quantity > 1 ? "s" : "",
-                total_cost);
+    fs.cprintf(jtransc("Shopping list: %d items, total cost %d gold pieces"),
+                title->quantity, total_cost);
 
     return fs;
 }
@@ -2429,12 +2496,12 @@ void ShoppingList::fill_out_menu(Menu& shopmenu)
 
         const string etitle =
             make_stringf(
-                "%*s%5d gold  %s%s",
+                jtransc("%*s%5d gold  %s%s"),
                 longest,
                 describe_thing_pos(thing).c_str(),
                 cost,
                 name_thing(thing, DESC_A).c_str(),
-                unknown ? " (unknown)" : "");
+                unknown ? jtrans_notrimc(" (unknown)") : "");
 
         MenuEntry *me = new MenuEntry(etitle, MEL_ITEM, 1, hotkey);
         me->data = &thing;
@@ -2445,7 +2512,8 @@ void ShoppingList::fill_out_menu(Menu& shopmenu)
             const item_def &item = get_thing_item(thing);
 
             const string colprf = item_prefix(item, false);
-            const int col = menu_colour(item.name(DESC_A),
+            // menu_colour のパターンは英語のアイテム名で照合する
+            const int col = menu_colour(item_name_en(item, DESC_A),
                                         colprf, "shop", false);
 
             vector<tile_def> item_tiles;
@@ -2480,7 +2548,7 @@ bool ShoppingListMenu::examine_index(int i)
     {
         // HACK: Assume it's some kind of portal vault.
         const string info = make_stringf(
-                     "%s with an entry fee of %d gold pieces.",
+                     jtransc("%s with an entry fee of %d gold pieces."),
                      list.describe_thing(*thing, DESC_A).c_str(),
                      (int) list.thing_cost(*thing));
         show_description(info.c_str());
@@ -2519,8 +2587,8 @@ void ShoppingList::display(bool view_only)
             if (cost > you.gold)
             {
                 string prompt =
-                   make_stringf("Travel to: %s\nYou cannot afford this item; travel there "
-                                "anyway? (y/N)",
+                   make_stringf(jtransc("Travel to: %s\nYou cannot afford this item; travel there "
+                                "anyway? (y/N)"),
                                 describe_thing(*thing, DESC_A).c_str());
                 clrscr();
                 if (!yesno(prompt.c_str(), true, 'n'))
@@ -2546,7 +2614,7 @@ void ShoppingList::display(bool view_only)
 
             if (this->list->empty())
             {
-                mpr("Your shopping list is now empty.");
+                mpr(jtrans("Your shopping list is now empty."));
                 return false;
             }
 
@@ -2715,22 +2783,19 @@ string ShoppingList::name_thing(const CrawlHashTable& thing,
     else
     {
         string desc = get_thing_desc(thing);
-        return apply_description(descrip, desc);
+        return apply_description_j(descrip, jtrans(desc));
     }
 }
 
 string ShoppingList::describe_thing(const CrawlHashTable& thing,
                                     description_level_type descrip)
 {
-    string desc = name_thing(thing, descrip) + " on ";
-
+    // 日本語: 「<場所>の<品>」
     const level_pos pos = thing_pos(thing);
-    if (pos.id == level_id::current())
-        desc += "this level";
-    else
-        desc += pos.id.describe();
+    string desc = pos.id == level_id::current() ? jtrans("this level")
+                                                : pos.id.describe();
 
-    return desc;
+    return desc + "の" + name_thing(thing, descrip);
 }
 
 // Item name without inscription.

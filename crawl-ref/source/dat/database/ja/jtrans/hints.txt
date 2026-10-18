@@ -1,0 +1,619 @@
+# hints.cc: 解説モード(ヒント)の C++ 内の文。
+# DB(descript/ja/hints.txt)のヒントは getHintString() で引くのでここには書かない。
+# <w>%</w> の % は insert_commands() でキーに置き換わる。訳でも % の数と順番を英文と同じにする。
+# make_stringf を通す文では、キーに置き換える % を %% と書く(英文・訳とも)。
+# 文体: メッセージとして出るヒントは「です・ます」、アイテム・地形・モンスターの
+# 解説文に付く文は「だ・である」(0.19-ja に合わせる)。
+%%%%
+%c - %s %s %s
+
+%c - %sの%s %s
+%%%%
+(Melee oriented character with divine support)
+
+(神の助けを得て接近戦で戦うキャラクター)
+%%%%
+(Magic oriented character)
+
+(魔法を中心に戦うキャラクター)
+%%%%
+(Ranged fighter)
+
+(射撃で戦うキャラクター)
+%%%%
+(erroneous character)
+
+(不正なキャラクター)
+%%%%
+<white>Welcome!</white>\n\n<cyan>You can be:</cyan>
+
+<white>ようこそ！</white>
+
+<cyan>以下から選べます:</cyan>
+%%%%
+* - Random hints mode character
+
+* - 解説モードのキャラクターをランダムに選ぶ
+%%%%
+See you next game!
+
+次のゲームでお会いしましょう！
+%%%%
+Remember to rest between fights and to enter unexplored terrain with full health and magic. Ideally you should retreat into areas you've already explored and cleared of monsters; resting on the edge of the explored terrain increases the chances of your rest being interrupted by wandering monsters. To rest, press <w>5</w> or <w>Shift-numpad 5</w><tiles>, or <w>click the rest button</w></tiles>.
+
+戦闘の合間には休息し、未探索の場所には体力と魔力が満タンの状態で踏み込むようにしましょう。理想的には、既に探索してモンスターを片付けた場所まで戻って休むべきです。探索済みの領域の端で休むと、うろついているモンスターに休息を邪魔される可能性が高くなります。休息するには<w>[5]</w>か<w>[Shift+テンキーの5]</w>を押<tiles>すか、<w>[休息ボタンをクリック]</w></tiles>しましょう。
+%%%%
+Also, berserking might help you not to lose so much health in the first place. To use your abilities press <w>a</w>.
+
+また、バーサークすれば、そもそも体力をそれほど失わずに済むかもしれません。能力を使うには<w>[a]</w>を押しましょう。
+%%%%
+That monster is %s. You can learn about any monster by hovering your mouse over it, and read its description by <w>right-clicking</w> on it.
+
+このモンスターは%sです。モンスターの上にマウスポインタを重ねるとその情報が分かり、<w>[右クリック]</w>すると解説文を読むことができます。
+%%%%
+That %s is a monster, usually depicted by a letter. Some typical early monsters look like <brown>r</brown>, <green>l</green>, <brown>K</brown> or <lightgrey>g</lightgrey>.
+
+この %s はモンスターで、通常は一つの文字で表されます。序盤によく見かけるモンスターは<brown>r</brown>、<green>l</green>、<brown>K</brown>、<lightgrey>g</lightgrey>のように表示されます。
+%%%%
+Your console settings allowing, you'll always see a list of monsters somewhere on the screen.
+
+コンソールの設定によっては、画面のどこかにモンスターの一覧が常に表示されます。
+%%%%
+You can gain information about it by pressing <w>x</w> and moving the cursor over the monster, and read the monster description by then pressing <w>v</w>.
+
+<w>[x]</w>を押してモンスターの上にカーソルを合わせるとその情報が分かり、さらに<w>[v]</w>を押すとモンスターの解説文を読むことができます。
+%%%%
+To attack this monster with your wielded weapon, just move into it.
+
+手に持っている武器でこのモンスターを攻撃するには、モンスターのいる場所に移動するだけです。
+%%%%
+Note that as long as there's a non-friendly monster in view you won't be able to automatically move to distant squares, to avoid death by misclicking.
+
+なお、クリックの誤りによる死を防ぐため、友好的でないモンスターが見えている間は、離れたマスへの自動移動はできません。
+%%%%
+However, as a hunter you will want to deal with it using your bow. If you have a look at your shortbow from your <w>i</w>nventory, you'll find an explanation of how to do this.
+
+とはいえ、狩人であるあなたは弓を使って相手をしたいでしょう。所持品一覧(<w>[i]</w>)からショートボウを調べれば、そのやり方が説明されています。
+%%%%
+First <w>w</w>ield it, then follow the instructions.<tiles>\nAs a short-cut you can also <w>right-click</w> on your shortbow to read its description, and <w>left-click</w> to wield it.</tiles>
+
+まず<w>[w]</w>で手に持ち、説明に従いましょう。<tiles>
+手早く済ませるなら、ショートボウを<w>[右クリック]</w>して解説文を読み、<w>[左クリック]</w>して手に持つこともできます。</tiles>
+%%%%
+<tiles>Clicking with your <w>right mouse button</w> on your shortbow will also let you read its description.</tiles>
+
+<tiles>ショートボウを<w>[右クリック]</w>して解説文を読むこともできます。</tiles>
+%%%%
+However, as a conjurer you will want to deal with it using magic. If you look at the help entry for the <w>M</w>emorisation screen you'll find an explanation of how to do this.
+
+とはいえ、妖術師であるあなたは魔法を使って相手をしたいでしょう。呪文習得画面(<w>[M]</w>)のヘルプを見れば、そのやり方が説明されています。
+%%%%
+Stairs
+
+階段
+%%%%
+Escape hatch
+
+脱出ハッチ
+%%%%
+Branch stairs
+
+支部へ通じる階段
+%%%%
+Portal
+
+ポータル
+%%%%
+An altar to %s
+
+%sの祭壇
+%%%%
+Closed door
+
+閉じた扉
+%%%%
+Runed door
+
+ルーンの刻まれた扉
+%%%%
+Uh-oh, %s just excommunicated you for running out of piety (your divine favour went to nothing). Maybe you repeatedly violated the religious rules, or maybe you failed to please your deity often enough, or some combination of the two. If you can find an altar dedicated to %s you can re-convert, and all will be well.
+
+おっと、信仰心が尽きた(神の恩寵がなくなった)ため、%sはあなたを破門しました。信仰の掟を何度も破ったか、神を喜ばせる機会が足りなかったか、あるいはその両方でしょう。%sの祭壇を見つけることができれば再入信でき、すべて元通りになります。
+%%%%
+Should you decide that abandoning %s wasn't such a smart move after all, and you'd like to return to your old faith, you'll have to find an altar dedicated to %s where you can re-convert, and all will be well.
+
+%sを見捨てたのはやはり賢明ではなかったと考え直し、かつての信仰に戻りたくなったなら、%sの祭壇を見つけて再入信しましょう。そうすればすべて元通りになります。
+%%%%
+Otherwise, you'll have to weather this god's displeasure until their divine wrath is spent.
+
+そうでなければ、神の怒りが収まるまで耐え忍ばなければなりません。
+%%%%
+Fortunately, it seems that %s didn't mind your converting to %s.
+
+幸いにも、%sはあなたが%sに改宗したことを気にしていないようです。
+%%%%
+You even kept some of your piety!
+
+しかも、信仰心をいくらか保てました！
+%%%%
+Note that this kind of alliance only exists between the three good gods, so don't expect this to be the norm.
+
+このような協調関係は三柱の善神の間にしかないので、いつもこうなるとは思わないでください。
+%%%%
+Fortunately, it seems that %s didn't mind your converting to %s. That's because %s is one of the good gods who generally are rather forgiving about change of faith - unless you switch over to the path of evil, in which case their retribution can be nasty indeed!
+
+幸いにも、%sはあなたが%sに改宗したことを気にしていないようです。%sは善神の一柱であり、善神は一般に改宗にかなり寛大なのです――ただし悪の道に転じた場合は別で、その報復は実に恐ろしいものになりかねません！
+%%%%
+Looks like %s didn't appreciate your converting to %s! But really, changing from one of the good gods to an evil one, what did you expect!? For any god not on the opposing side of the faith, %s would have been much more forgiving.
+
+どうやら%sはあなたが%sに改宗したことを快く思っていないようです！ とはいえ、善神から悪神に鞍替えしたのですから、当然でしょう！？ 対立する側の神でなければ、%sはずっと寛大だったはずです。
+%%%%
+Looks like %s didn't appreciate your converting to %s! (Actually, only the three good gods will usually be forgiving about this kind of faithlessness.)
+
+どうやら%sはあなたが%sに改宗したことを快く思っていないようです！(実のところ、このような不信心を普通に許してくれるのは三柱の善神くらいです)
+%%%%
+Unfortunately, while converting back would appease %s, it would annoy %s, so you're stuck with having to suffer the wrath of one god or another.
+
+あいにく、元の信仰に戻れば%sの怒りは収まりますが、今度は%sを怒らせることになります。どちらかの神の怒りに耐えるしかありません。
+%%%%
+Welcome back! If it's been a while, you may want to refresh your memory.
+
+お帰りなさい！ しばらく間が空いたなら、記憶を新たにしておくとよいでしょう。
+%%%%
+Your <w>%</w>nventory
+
+所持品一覧(<w>%</w>)
+%%%%
+your spells (<w>%?</w>)
+
+習得した呪文(<w>%?</w>)
+%%%%
+your <w>%</w>bilities
+
+能力(<w>%</w>)
+%%%%
+your set of mutations (<w>%</w>)
+
+突然変異(<w>%</w>)
+%%%%
+your religious standing (<w>%</w>)
+
+信仰の状況(<w>%</w>)
+%%%%
+the message history (<w>%</w>)
+
+メッセージ履歴(<w>%</w>)
+%%%%
+the character overview screen (<w>%</w>)
+
+キャラクター情報画面(<w>%</w>)
+%%%%
+the dungeon overview screen (<w>%</w>)
+
+ダンジョン概要画面(<w>%</w>)
+%%%%
+are good things to check.
+
+を確認しておくとよいでしょう。
+%%%%
+This screen shows your character's set of talents. You can gain new abilities via certain items, through religion or by way of mutations. Activation of an ability usually comes at a cost, e.g. Magic power. Press '<w>!</w>' or '<w>?</w>' to toggle between ability selection and description.
+
+この画面にはあなたのキャラクターが持つ能力の一覧が表示されます。特定のアイテム、信仰、突然変異によって新しい能力を得られます。能力の発動には通常、魔力などのコストがかかります。'<w>!</w>'か'<w>?</w>'を押すと、能力の選択と解説の表示を切り替えられます。
+%%%%
+This screen shows the skill set of your character. The number next to the skill is your current level, the higher the better. <w>Training</w> displays training percentages. <w>Costs</w> displays relative training costs. <w>Targets</w> displays skill training targets. You can toggle which skills to train by pressing their slot letters. A <darkgrey>grey</darkgrey> skill will not be trained and ease the training of others.
+
+この画面にはあなたのキャラクターのスキルが表示されます。スキル名の横の数字は現在のレベルで、高いほど優れています。<w>割り振り</w>は訓練の割合を、<w>コスト</w>は相対的な訓練コストを、<w>目標</w>はスキルの訓練目標を表示します。各スキルに割り当てられた文字を押すと、そのスキルを訓練するかどうかを切り替えられます。<darkgrey>灰色</darkgrey>のスキルは訓練されず、そのぶん他のスキルの訓練がはかどります。
+%%%%
+The training percentage (in <brown>brown</brown>) shows the relative amount of the experience gained which will be used to train each skill. It is automatically set depending on which skills you have used recently. Disabling a skill sets the training rate to 0.
+
+訓練の割合(<brown>茶色</brown>)は、得た経験値のうち各スキルの訓練に使われる相対的な量を示します。この値は最近どのスキルを使ったかによって自動的に決まります。スキルを無効にすると、訓練の割合は0になります。
+%%%%
+The training cost (in <cyan>cyan</cyan>) shows the experience cost to raise the given skill one level, relative to the cost of raising an aptitude zero skill from level zero to level one.
+
+訓練コスト(<cyan>水色</cyan>)は、そのスキルを1レベル上げるのに必要な経験値を、適性0のスキルをレベル0から1に上げるのに必要な量を基準にして示したものです。
+%%%%
+Press the letter of a skill to set a training target. When the target is reached a message will appear and the training of the skill will be disabled.
+
+スキルの文字を押すと訓練目標を設定できます。目標に達するとメッセージが表示され、そのスキルの訓練は無効になります。
+%%%%
+This screen shows the skill set of your character. Press the letter of a skill to read its description, or press <w>?</w> again to return to the skill selection.
+
+この画面にはあなたのキャラクターのスキルが表示されます。スキルの文字を押すと解説文を読めます。もう一度<w>[?]</w>を押すとスキルの選択に戻ります。
+%%%%
+# 「〜すると、」などの後ろにつながる。%s には "%ap" / "%f" が入る(キーの並び)。
+then be taken to target mode with the nearest monster or previous target already targeted. You can also cycle through all hostile monsters in sight with <w>+</w> or <w>-</w>. Once you're aiming at the correct monster, simply hit <w>f</w>, <w>Enter</w> or <w>.</w> to shoot at it. If you miss, <w>%s</w> fires at the same target again.
+
+一番近くのモンスターか前回の目標に照準が合った状態で照準モードに入る。<w>[+]</w>か<w>[-]</w>で、視界内の敵対的なモンスターを順に選ぶこともできる。狙いたいモンスターに照準が合ったら、<w>[f]</w>、<w>[Enter]</w>、<w>[.]</w>のいずれかを押せば撃てる。外したら、<w>[%s]</w>で同じ目標にもう一度撃てる。
+%%%%
+This screen shows the spells in your spell library. From here you can memorise spells by selecting them, as well as view spell descriptions, search for them, and organize them. As a conjurer, you start with five memorisable spells, and one already memorised: Magic Dart. (To view memorised spells, you can exit this menu and select <w>I</w>.)
+
+この画面には呪文ライブラリにある呪文が表示される。ここでは呪文を選んで習得したり、呪文の解説を見たり、検索したり、整理したりできる。妖術師は、習得できる呪文5つと、習得済みの呪文1つ(魔法の矢)を持って始まる。(習得済みの呪文を見るには、このメニューを閉じて<w>[I]</w>を押す)
+%%%%
+A spell that isn't <darkgray>grayed out</darkgray> or <lightred>forbidden</lightred> can be memorised right away by selecting it at this menu.
+
+<darkgray>灰色</darkgray>や<lightred>禁止</lightred>になっていない呪文は、このメニューで選べばすぐに習得できる。
+%%%%
+You cannot memorise any more spells right now. This will change as you grow in levels and Spellcasting proficiency.
+
+今はこれ以上呪文を習得できない。レベルが上がり、呪文詠唱に熟達するにつれて習得できるようになる。
+%%%%
+You cannot memorise any spells right now. This will change as you grow in levels and Spellcasting proficiency.
+
+今は呪文を習得できない。レベルが上がり、呪文詠唱に熟達するにつれて習得できるようになる。
+%%%%
+To use magic, you can <w>left mouse click</w> on the monster you wish to target (or on your player character to cast a spell on yourself) while pressing the <w>Control key</w>, and then select a spell from the menu. Or you can switch to the spellcasting display by <w>clicking on the</w> corresponding <w>tab</w>.
+
+魔法を使うには、<w>[Ctrl]</w>キーを押しながら目標のモンスター(自分に呪文をかけるなら自分のキャラクター)を<w>[左クリック]</w>し、メニューから呪文を選ぶ。または、対応する<w>タブ</w>を<w>[クリック]</w>して呪文詠唱の表示に切り替えることもできる。
+%%%%
+Alternatively, you can press <w>%</w> and choose a spell, e.g. <w>a</w> (check with <w>?</w>). For attack spells you'll
+
+あるいは、<w>[%]</w>を押して呪文を選ぶ(例えば<w>[a]</w>。<w>[?]</w>で確認できる)。攻撃呪文の場合、
+%%%%
+To use magic, you can press <w>%</w> and choose a spell, e.g. <w>a</w> (check with <w>?</w>). For attack spells you'll
+
+魔法を使うには、<w>[%]</w>を押して呪文を選ぶ(例えば<w>[a]</w>。<w>[?]</w>で確認できる)。攻撃呪文の場合、
+%%%%
+To do this,
+
+そうするには、
+%%%%
+first <w>%</w>ield it
+
+まず<w>[%]</w>で手に持ち
+%%%%
+first <w>%</w>ear it
+
+まず<w>[%]</w>で着用し
+%%%%
+first <w>%</w>ut it on
+
+まず<w>[%]</w>で身につけ
+%%%%
+, then
+
+、それから
+%%%%
+enter the ability menu with <w>%</w>, and then choose the corresponding ability. Note that such an attempt of activation, especially by the untrained, is likely to fail.
+
+<w>[%]</w>で能力メニューを開き、対応する能力を選ぶ。こうした発動の試みは、特に未熟なうちは失敗しやすいことに注意すること。
+%%%%
+To do this, press <w>%%</w> to fire, then <w>%c</w> for this %s. You'll
+
+そうするには、<w>[%%]</w>で射撃を選び、<w>[%c]</w>でこの%sを選ぶ。すると、
+%%%%
+To do this, press <w>%%</w> to fire, then select this %s. You'll
+
+そうするには、<w>[%%]</w>で射撃を選び、この%sを選ぶ。すると、
+%%%%
+When wielded, some weapons (such as this one) offer certain abilities you can activate.
+
+いくつかの武器(この武器もそうだ)は、手に持つと発動可能な特定の能力をもたらす。
+%%%%
+This weapon offers its wearer protection from certain damage sources. For an overview of your resistances (among other things) press <w>%</w> or click on your avatar with the <w>right mouse button</w>.
+
+この武器は持ち主を特定の攻撃から守る。耐性(などの情報)の概要を見るには<w>[%]</w>を押すか、自分のキャラクターを<w>[右クリック]</w>すること。
+%%%%
+This weapon offers its wearer protection from certain damage sources. For an overview of your resistances (among other things) press <w>%</w>.
+
+この武器は持ち主を特定の攻撃から守る。耐性(などの情報)の概要を見るには<w>[%]</w>を押すこと。
+%%%%
+You can wield this weapon with <w>%</w>, or use <w>%</w> to switch between the weapons in slot a and b. (Use <w>%i</w> to adjust item slots.)
+
+この武器は<w>[%]</w>で手に持てる。また、<w>[%]</w>で(a)枠と(b)枠の武器を持ち替えられる。(アイテムの枠を変えるには<w>[%i]</w>を使う)
+%%%%
+However, you've been training in <w>%s</w> for a while, so maybe you should continue training that rather than <w>%s</w>. (Press <w>%%</w> to see the skill management screen for the actual numbers.)
+
+とはいえ、あなたはしばらく<w>%s</w>を訓練してきたので、<w>%s</w>ではなくそちらの訓練を続けるべきかもしれない。(実際の数値はスキル管理画面(<w>[%%]</w>)で確認すること)
+%%%%
+To attack a monster, <w>left mouse click</w> on the monster.
+
+モンスターを攻撃するには、そのモンスターを<w>[左クリック]</w>する。
+%%%%
+To fire a ranged weapon using the keyboard, press <w>%</w>. You'll
+
+キーボードで射撃武器を撃つには、<w>[%]</w>を押す。すると、
+%%%%
+To attack a monster, press <w>%</w>. You'll
+
+モンスターを攻撃するには、<w>[%]</w>を押す。すると、
+%%%%
+To attack a monster, you can simply walk into it.
+
+モンスターを攻撃するには、単にそのモンスターに向かって歩けばよい。
+%%%%
+%s can be <w>%%</w>ired without the use of a launcher.
+
+%sは射出器を使わずに<w>[%%]</w>で投げられる。
+%%%%
+Because of your horns you cannot wear helmets. (Press <w>%</w> to see a list of your mutations and innate abilities.)
+
+あなたには角があるので兜をかぶれない。(突然変異と生まれつきの能力の一覧を見るには<w>[%]</w>を押すこと)
+%%%%
+Only nagas and armataurs can wear barding.
+
+馬甲を装備できるのはナーガとアルマタウルだけだ。
+%%%%
+You can wear pieces of armour with <w>%</w> and take them off again with <w>%</w>, or, alternatively, simply click on their tiles to perform either action.
+
+防具は<w>[%]</w>で着用し、<w>[%]</w>で脱ぐことができる。また、アイコンをクリックするだけでもどちらの行動もできる。
+%%%%
+You can wear pieces of armour with <w>%</w> and take them off again with <w>%</w>.
+
+防具は<w>[%]</w>で着用し、<w>[%]</w>で脱ぐことができる。
+%%%%
+Note that body armour with a high encumbrance rating may hinder your ability to cast spells. Light armour such as robes and leather armour will be generally safe for any aspiring spellcaster.
+
+重さの値が大きい胴鎧は呪文の詠唱を妨げることがあるので注意すること。ローブやレザーアーマーのような軽い防具なら、魔法使いを目指す者にとってたいてい安全だ。
+%%%%
+Note that shields will hinder your ability to cast spells, until you've gained enough Shields skill to remove the penalty.
+
+盾は、十分な盾スキルを身につけてペナルティをなくすまで、呪文の詠唱を妨げることに注意すること。
+%%%%
+Note that many ranged weapons are two handed and so cannot be used with an offhand item.
+
+射撃武器の多くは両手持ちなので、副手のアイテムと一緒には使えないことに注意すること。
+%%%%
+Weapons and armour that have unusual descriptions like this are much more likely to be of higher enchantment or have special properties, good or bad.
+
+このような普通でない説明が付いている武器や防具は、良くも悪くも、強化値が高かったり特別な性能を持っていたりする可能性がずっと高い。
+%%%%
+This armour offers its wearer protection from certain sources. For an overview of your resistances (among other things) press <w>%</w> or click on your avatar with the <w>right mouse button</w>.
+
+この防具は着用者を特定の攻撃から守る。耐性(などの情報)の概要を見るには<w>[%]</w>を押すか、自分のキャラクターを<w>[右クリック]</w>すること。
+%%%%
+This armour offers its wearer protection from certain sources. For an overview of your resistances (among other things) press <w>%</w>.
+
+この防具は着用者を特定の攻撃から守る。耐性(などの情報)の概要を見るには<w>[%]</w>を押すこと。
+%%%%
+When worn, some types of armour (such as this one) offer certain <w>%</w>bilities you can activate.
+
+いくつかの防具(この防具もそうだ)は、着用すると発動可能な特定の能力(<w>[%]</w>)をもたらす。
+%%%%
+The magic within can be unleashed by evoking (<w>%</w>) it.
+
+中に込められた魔法は、発動(<w>[%]</w>)させることで解き放てる。
+%%%%
+# %s は下の "Ctrl + Shift keys" / "Alt key" の訳
+Alternatively, you can 1) <w>left mouse click</w> on the monster you wish to target (or your player character to target yourself) while pressing the <w>%s</w> and pick the wand from the menu, or 2) <w>left mouse click</w> on the wand tile and then <w>left mouse click</w> on your target.
+
+他の方法として、1) <w>%s</w>を押しながら目標のモンスター(自分を目標にするなら自分のキャラクター)を<w>[左クリック]</w>し、メニューからワンドを選ぶ、または 2) ワンドのアイコンを<w>[左クリック]</w>してから目標を<w>[左クリック]</w>することもできる。
+%%%%
+Ctrl + Shift keys
+
+[Ctrl+Shift]キー
+%%%%
+Alt key
+
+[Alt]キー
+%%%%
+# 英文は "scroll" と "or" の間の空白が抜けている(本家のまま)
+Press <w>%</w> to read this scrollor simply click on it with your <w>left mouse button</w>.
+
+この巻物を読むには<w>[%]</w>を押すか、<w>[左クリック]</w>すること。
+%%%%
+Press <w>%</w> to read this scroll.
+
+この巻物を読むには<w>[%]</w>を押すこと。
+%%%%
+Jewellery can be <w>%</w>ut on or <w>%</w>emoved again, though in Tiles, either can be done by clicking on the item in your inventory.
+
+装身具は<w>[%]</w>で身につけ、<w>[%]</w>で外すことができる。タイル版では、所持品一覧のアイテムをクリックしてもどちらもできる。
+%%%%
+Jewellery can be <w>%</w>ut on or <w>%</w>emoved again.
+
+装身具は<w>[%]</w>で身につけ、<w>[%]</w>で外すことができる。
+%%%%
+This ring offers its wearer protection from certain sources. For an overview of your resistances (among other things) press <w>%</w> or click on your avatar with the <w>right mouse button</w>.
+
+この指輪は着用者を特定の攻撃から守る。耐性(などの情報)の概要を見るには<w>[%]</w>を押すか、自分のキャラクターを<w>[右クリック]</w>すること。
+%%%%
+This amulet offers its wearer protection from certain sources. For an overview of your resistances (among other things) press <w>%</w> or click on your avatar with the <w>right mouse button</w>.
+
+この護符は着用者を特定の攻撃から守る。耐性(などの情報)の概要を見るには<w>[%]</w>を押すか、自分のキャラクターを<w>[右クリック]</w>すること。
+%%%%
+This ring offers its wearer protection from certain sources. For an overview of your resistances (among other things) press <w>%</w>.
+
+この指輪は着用者を特定の攻撃から守る。耐性(などの情報)の概要を見るには<w>[%]</w>を押すこと。
+%%%%
+This amulet offers its wearer protection from certain sources. For an overview of your resistances (among other things) press <w>%</w>.
+
+この護符は着用者を特定の攻撃から守る。耐性(などの情報)の概要を見るには<w>[%]</w>を押すこと。
+%%%%
+When worn, some types of jewellery (such as this one) offer certain <w>%</w>bilities you can activate.
+
+いくつかの装身具(この装身具もそうだ)は、身につけると発動可能な特定の能力(<w>[%]</w>)をもたらす。
+%%%%
+# 英文は "potion" と "or" の間の空白が抜けている(本家のまま)
+Press <w>%</w> to quaff this potionor simply click on it with your <w>left mouse button</w>.
+
+この水薬を飲むには<w>[%]</w>を押すか、<w>[左クリック]</w>すること。
+%%%%
+Press <w>%</w> to quaff this potion.
+
+この水薬を飲むには<w>[%]</w>を押すこと。
+%%%%
+A manual can greatly help you in training a skill. After you pick one up, the skill in question will be trained more efficiently and will level up faster until you exhaust the manual's contents.
+
+虎の巻はスキルの訓練を大いに助けてくれる。拾うと、内容を使い切るまで、該当するスキルがより効率よく訓練され、早くレベルが上がるようになる。
+%%%%
+You can pick up a spellbook to add its spells to your spell library. (View your spell library with <w>%</w>.)
+
+魔法書を拾うと、その呪文が呪文ライブラリに加わる。(呪文ライブラリは<w>[%]</w>で見られる)
+%%%%
+Skeletons and corpses can be used as components for certain necromantic spells. Apart from that, they are largely useless.
+
+骸骨や死体は、特定の死霊術の呪文の材料として使える。それ以外にはほとんど役に立たない。
+%%%%
+This staff can enhance your spellcasting, making spells of its related spell school more powerful.
+
+この杖は呪文の詠唱を強化し、関連する系統の呪文をより強力にする。
+%%%%
+It also offers its wielder protection from certain sources. For an overview of your resistances (among other things) press <w>%</w> or click on your avatar with the <w>right mouse button</w>.
+
+また、持ち主を特定の攻撃から守る。耐性(などの情報)の概要を見るには<w>[%]</w>を押すか、自分のキャラクターを<w>[右クリック]</w>すること。
+%%%%
+It also offers its wielder protection from certain sources. For an overview of your resistances (among other things) press <w>%</w>.
+
+また、持ち主を特定の攻撃から守る。耐性(などの情報)の概要を見るには<w>[%]</w>を押すこと。
+%%%%
+Seeing how %s frowns upon the use of magic, this staff will be of little use to you and you might just as well <w>%%</w>rop it now.
+
+%sは魔法の使用を嫌うので、この杖はあなたにはほとんど役に立たない。今すぐ<w>[%%]</w>で捨ててしまってもいいだろう。
+%%%%
+Miscellaneous items sometimes harbour magical powers that can be harnessed by e<w>%</w>oking the item.
+
+その他のアイテムには魔法の力が宿っていることがあり、<w>[%]</w>で発動させるとその力を利用できる。
+%%%%
+These nasty constructions can cause a range of unpleasant effects. You won't be able to avoid tripping traps by flying over them; their magic construction will cause them to be triggered anyway.
+
+これらの厄介な仕掛けは、さまざまな不快な効果をもたらす。上を飛んでいても罠の作動は避けられない。魔法の仕掛けなので、どのみち作動してしまう。
+%%%%
+The dungeon contains a number of natural obstacles such as shafts, which lead one to three levels down. Once you know the shaft is there, you can safely step over it.\nIf you want to jump down there, use <w>></w> to do so. Be warned that getting back here might be difficult.
+
+ダンジョンには縦穴などの天然の障害物がいくつもあり、縦穴は1～3階層下へと続いている。縦穴があると分かっていれば、安全にその上を通れる。
+そこに飛び込みたければ、<w>[>]</w>を押せばよい。ここに戻ってくるのは難しいかもしれないので注意すること。
+%%%%
+Some areas of the dungeon, such as the Spider Nest, may be strewn with giant webs that may ensnare you for a short time. Insects, oozes and incorporeal entities can navigate the webs safely.
+
+蜘蛛の穴ぐらなど、ダンジョンのいくつかの場所には巨大な蜘蛛の巣が張り巡らされていて、短い間あなたを絡め取ることがある。昆虫、ウーズ、実体のない存在は、蜘蛛の巣の中を安全に移動できる。
+%%%%
+You can enter the next (deeper) level by following them down (<w>></w>). To get back to this level again, press <w><<</w> while standing on the upstairs.
+
+これを下りる(<w>[>]</w>)と、一つ次の(深い)階層に入ることができる。この階層に再び戻ってくるには、上り階段の上で<w>[<<]</w>を押すこと。
+%%%%
+In Tiles, you can achieve the same, in either direction, by clicking the <w>left mouse button</w>.
+
+タイル版では、<w>[左クリック]</w>するだけで、どちらの方向にも同じことができる。
+%%%%
+You have not yet passed through this particular set of stairs.
+
+あなたはまだこの階段を通ったことがない。
+%%%%
+These stairs lead out of the dungeon. Following them will end the game. The only way to win is to transport the fabled Orb of Zot outside.
+
+この階段はダンジョンの外へと続いている。これを上るとゲームは終了する。勝利への道はただ一つ、伝説の『ゾットのオーブ』を外へと持ち出すことだ。
+%%%%
+You can enter the previous (shallower) level by following these up (<w><<</w>). This is ideal for retreating or finding a safe resting spot, since the previous level will have less monsters, and monsters on this level can't follow you up unless they're standing right next to you. To get back to this level again, press <w>></w> while standing on the downstairs.
+
+これを上る(<w>[<<]</w>)と、一つ前の(浅い)階層に入ることができる。一つ前の階層にはモンスターが比較的少なく、この階層のモンスターはあなたのすぐ隣にいない限りついて来られないので、一時退却したり安全に休める場所を探したりするのに理想的だ。この階層に再び戻ってくるには、下り階段の上で<w>[>]</w>を押すこと。
+%%%%
+In Tiles, you can perform either action simply by clicking the <w>left mouse button</w> instead.
+
+タイル版では、代わりに<w>[左クリック]</w>するだけで、どちらの行動もできる。
+%%%%
+Escape hatches can be used to quickly leave a level with <w><<</w> and <w>></w>, respectively. Note that you will usually be unable to return right away.
+
+脱出ハッチは、それぞれ<w>[<<]</w>と<w>[>]</w>で、すぐにこの階層から離れるのに使える。通常はすぐには戻って来られないことに注意すること。
+%%%%
+To avoid accidentally opening a door you'd rather remain closed during travel or autoexplore, you can mark it with an exclusion from the map view (<w>X</w>) with <w>ee</w> while your cursor is on the grid in question. Such an exclusion will prevent autotravel from ever entering that grid until you remove the exclusion with another press of <w>Xe</w>.
+
+自動移動や自動探索の間に、閉じたままにしておきたい扉をうっかり開けてしまわないよう、マップ画面(<w>[X]</w>)でそのマスにカーソルを合わせて<w>[ee]</w>を押し、立入禁止の印を付けておくことができる。この印は、もう一度<w>[Xe]</w>で解除するまで、自動移動がそのマスに入らないようにする。
+%%%%
+This is your chance to join a religion! In general, the gods will help their followers, bestowing powers of all sorts upon them, but many of them demand a life of dedication, constant tributes or entertainment in return.
+
+神に入信する好機だ！ 一般に、神々は信者を助けてあらゆる種類の力を授けてくれるが、その見返りとして、多くの神は献身的な生き方や絶え間ない貢ぎ物、あるいは娯楽を求める。
+%%%%
+This particular altar is so ancient that you cannot make out which god it is dedicated to! Converting here by pressing <w>></w> while standing on the altar will enter you into service of a random god, who will grant you some additional piety in thanks.
+
+この祭壇はあまりに古く、どの神に捧げられたものか分からない！ 祭壇の上で<w>[>]</w>を押してここで入信すると、ランダムな神に仕えることになり、その神は感謝のしるしに追加の信仰心を授けてくれる。
+%%%%
+You can get information about <w>%s</w> by pressing <w>></w> while standing on the altar. Before taking up the responding faith you'll be asked for confirmation.
+
+祭壇の上で<w>[>]</w>を押すと、<w>%s</w>についての情報が得られる。その神に入信する前には確認を求められる。
+%%%%
+This particular altar is so ancient that you cannot make out which god it is dedicated to, and %s probably won't like it if you switch allegiance. If you want to take the risk, you can convert here by pressing <w>></w> while standing on the altar. Doing so will enter you into service of a random god, who will grant you some additional piety in thanks.
+
+この祭壇はあまりに古く、どの神に捧げられたものか分からない。また、あなたが鞍替えすれば%sはおそらく快く思わないだろう。危険を冒すつもりなら、祭壇の上で<w>[>]</w>を押してここで入信できる。そうするとランダムな神に仕えることになり、その神は感謝のしるしに追加の信仰心を授けてくれる。
+%%%%
+%s probably won't like it if you switch allegiance, but having a look won't hurt: to get information on <w>%s</w>, press <w>></w> while standing on the altar. Before taking up the responding faith (and abandoning your current one!) you'll be asked for confirmation.
+
+あなたが鞍替えすれば%sはおそらく快く思わないだろうが、見るだけなら問題ない。<w>%s</w>についての情報を得るには、祭壇の上で<w>[>]</w>を押すこと。その神に入信する(そして今の信仰を捨てる！)前には確認を求められる。
+%%%%
+To see your current standing with %s press <w>^</w>, or click with your <w>right mouse button</w> on your avatar while pressing <w>Shift</w>.
+
+%sへの今の信仰の状況を見るには<w>[^]</w>を押すか、<w>[Shift]</w>を押しながら自分のキャラクターを<w>[右クリック]</w>すること。
+%%%%
+To see your current standing with %s press <w>^</w>.
+
+%sへの今の信仰の状況を見るには<w>[^]</w>を押すこと。
+%%%%
+An entryway into one of the many dungeon side branches in Crawl.
+
+クロウルに数多くあるダンジョンの支部の一つへの入口だ。
+%%%%
+Beware, sometimes these can be deadly!
+
+気をつけろ、時に命取りになることもある！
+%%%%
+The %s is harmless.
+
+この%sは無害だ。
+%%%%
+The %s is probably dangerous, and you should stay out of it if you can.
+
+この%sはおそらく危険なので、できるだけ中に入らないようにすること。
+%%%%
+The %s is currently harmless, but that could change at some point. Check the overview screen (<w>%%</w>) to view your resistances.
+
+この%sは今のところ無害だが、いずれ変わるかもしれない。概要画面(<w>%%</w>)で自分の耐性を確認すること。
+%%%%
+This cloud is opaque. If two or more opaque clouds are between you and a square, you won't be able to see anything in that square.
+
+この雲は見通しが利かない。あなたとあるマスの間に見通しの利かない雲が2つ以上あると、そのマスにあるものは何も見えなくなる。
+%%%%
+It is opaque. If two or more opaque clouds are between you and a square, you won't be able to see anything in that square.
+
+また、見通しが利かない。あなたとあるマスの間に見通しの利かない雲が2つ以上あると、そのマスにあるものは何も見えなくなる。
+%%%%
+Did you think you were the only adventurer in the dungeon? Well, you thought wrong! These unique adversaries often possess skills that normal monsters wouldn't, so be careful.
+
+ダンジョンにいる冒険者は自分一人だと思っていただろうか？ それは間違いだ！ こうした唯一無二の敵は、普通のモンスターにはない技能を持っていることが多いので、気をつけること。
+%%%%
+The ghost of a deceased adventurer, it would like nothing better than to send you the same way.
+
+死んだ冒険者の幽霊で、あなたを同じ目にあわせることを何よりも望んでいる。
+%%%%
+This monster appears to be really dangerous!
+
+このモンスターは本当に危険なようだ！
+%%%%
+This monster appears to be quite dangerous.
+
+このモンスターはかなり危険なようだ。
+%%%%
+A berserking monster is bloodthirsty and fighting madly. Such a blood rage makes it particularly dangerous!
+
+バーサークしたモンスターは血に飢え、狂ったように戦う。このように激怒したモンスターは非常に危険だ！
+%%%%
+Friendly monsters will follow you around and attempt to aid you in battle. You can order nearby allies by <w>t</w>alking to them.
+
+友好的なモンスターはあなたについて回り、戦闘で助けてくれようとする。<w>[t]</w>で話しかけると、近くの仲間に指示を出せる。
+%%%%
+However, it is only <w>temporarily</w> friendly, and will become dangerous again when this friendliness wears off.
+
+しかし、あくまで<w>一時的に</w>友好的なだけであり、その効果が切れると再び危険な存在に戻る。
+%%%%
+You can easily mark its square as dangerous to avoid accidentally entering into its field of view when using auto-explore or auto-travel. To do so, enter targeting mode with <w>x</w> and then press <w>e</w> when your cursor is hovering over the monster's grid. Doing so will mark this grid and all surrounding ones within a radius of 8 as "excluded" ones that explore or travel modes won't enter.
+
+自動探索や自動移動のときにうっかりその視界に入ってしまわないよう、そのマスに危険の印を簡単に付けられる。そうするには、<w>[x]</w>で照準モードに入り、モンスターのいるマスにカーソルを合わせて<w>[e]</w>を押すこと。するとそのマスと周囲半径8マスが「立入禁止」になり、自動探索や自動移動では中に入らなくなる。
+%%%%
+This might be a good time to run away or apply your Berserk <w>a</w>bility.
+
+逃げるか、バーサークの能力(<w>[a]</w>)を使うなら今かもしれない。
+%%%%
+This might be a good time to run away.
+
+逃げるなら今かもしれない。
+%%%%
+Apparently it has not noticed you - yet. Note that you do not have to engage every monster you meet. Sometimes, discretion is the better part of valour.
+
+どうやらあなたに気付いていないらしい――今はまだ。出会ったモンスターすべてと戦う必要はないことを覚えておくこと。時には「逃げるが勝ち」ということもある。
+%%%%
+Apparently it has been distracted by something. You could use this opportunity to sneak up on this monster - or to sneak away.
+
+どうやら何かに気を取られているらしい。この隙にモンスターに忍び寄ってもいいし、こっそり逃げ去ってもいい。
+%%%%
+This monster doesn't appear to have any resistances or susceptibilities. It cannot fly and is of average speed. Examining other, possibly more high-level monsters can give important clues as to how to deal with them.
+
+このモンスターは特に耐性や弱点を持っていないようだ。飛ぶこともできず、速さも平均的だ。他の、もっと高レベルのモンスターを調べると、それらを相手にするための重要な手がかりが得られる。
+%%%%

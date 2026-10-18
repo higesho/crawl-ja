@@ -1,0 +1,397 @@
+%%%%
+You hear a strange noise.
+
+あなたは奇妙な騒音を耳にした。
+%%%%
+What are your orders?
+
+どのように命令しますか？
+%%%%
+Orders for allies:
+
+仲間への指示:
+%%%%
+a - Attack new target.
+
+a - 新たな標的を攻撃
+%%%%
+Anything else - Cancel.
+
+その他のキー - キャンセル
+%%%%
+Follow me!
+
+「ついてこい！」
+%%%%
+Stop fighting!
+
+「戦闘やめ！」
+%%%%
+Guard this area!
+
+「この場所を守れ！」
+%%%%
+Gang up on whom?
+
+どれを標的にしますか？
+%%%%
+Retreat in which direction?
+
+どの方向に退却しますか？
+%%%%
+Fall back!
+
+「退却！」
+%%%%
+You're too berserk to give orders, and you can't shout!
+
+バーサークしているため命令を下せない、叫ぶこともできない！
+%%%%
+Attack!
+
+「攻撃！」
+%%%%
+You feel a strong urge to %s, but you are unable to make a sound!
+
+あなたは%s衝動に駆られたが、声を出すことができない！
+%%%%
+You are unable to make a sound!
+
+あなたは音を立てることができない！
+%%%%
+You %s%s at %s!
+
+あなたは%sに向かって%s%s！
+%%%%
+your recitation
+
+ジンの法理を説こうとして
+%%%%
+wildly
+
+荒々しく
+%%%%
+for attention
+
+注意を引きつけるように
+%%%%
+r - Retreat!
+
+r - 退却！
+%%%%
+s - Stop attacking.
+
+s - 攻撃やめ
+%%%%
+g - Guard the area.
+
+g - この場所を守れ
+%%%%
+f - Follow me.
+
+f - ついてこい
+%%%%
+%s is invisible, and you have no allies that can see %s.
+
+%sは透明で、その姿を見ることのできる仲間がいない。
+%%%%
+some of your allies
+
+仲間の何体か
+%%%%
+%s is invisible, and %s can't see %s.
+
+%sは透明で、%sには見えていない。
+%%%%
+You feel %s rip itself from your throat, but you make no sound!
+
+あなたは%sつもりで喉を震わせたが、何の音も出なかった！
+%%%%
+, and the damned howl along
+
+、そして亡者たちも共に吠えた
+%%%%
+You %s%s%s!
+
+あなたは%s%s%s！
+%%%%
+[shout verb]shout
+
+叫ぶ
+%%%%
+[shout past]shout
+
+叫んだ
+%%%%
+[shout verb]yell
+
+わめく
+%%%%
+[shout past]yell
+
+わめいた
+%%%%
+[shout verb]scream
+
+絶叫する
+%%%%
+[shout past]scream
+
+絶叫した
+%%%%
+[shout verb]meow
+
+ニャーと鳴く
+%%%%
+[shout past]meow
+
+ニャーと鳴いた
+%%%%
+[shout verb]yowl
+
+ニャオーンと鳴く
+%%%%
+[shout past]yowl
+
+ニャオーンと鳴いた
+%%%%
+[shout verb]caterwaul
+
+ギャーギャーと鳴く
+%%%%
+[shout past]caterwaul
+
+ギャーギャーと鳴いた
+%%%%
+[shout verb]hiss
+
+シャーッと威嚇する
+%%%%
+[shout past]hiss
+
+シャーッと威嚇した
+%%%%
+[shout verb]croak
+
+ゲロゲロと鳴く
+%%%%
+[shout past]croak
+
+ゲロゲロと鳴いた
+%%%%
+[shout verb]ribbit
+
+ケロケロと鳴く
+%%%%
+[shout past]ribbit
+
+ケロケロと鳴いた
+%%%%
+[shout verb]bellow
+
+轟く声を上げる
+%%%%
+[shout past]bellow
+
+轟く声を上げた
+%%%%
+[shout verb]bark
+
+吠える
+%%%%
+[shout past]bark
+
+吠えた
+%%%%
+[shout verb]growl
+
+うなる
+%%%%
+[shout past]growl
+
+うなった
+%%%%
+[shout verb]howl
+
+遠吠えする
+%%%%
+[shout past]howl
+
+遠吠えした
+%%%%
+[shout verb]screech
+
+金切り声を上げる
+%%%%
+[shout past]screech
+
+金切り声を上げた
+%%%%
+[shout verb]wail
+
+泣き叫ぶ
+%%%%
+[shout past]wail
+
+泣き叫んだ
+%%%%
+[shout verb]shriek
+
+悲鳴を上げる
+%%%%
+[shout past]shriek
+
+悲鳴を上げた
+%%%%
+[shout verb]clack
+
+カチカチと鳴らす
+%%%%
+[shout past]clack
+
+カチカチと鳴らした
+%%%%
+[shout verb]creak
+
+きしむ音を立てる
+%%%%
+[shout past]creak
+
+きしむ音を立てた
+%%%%
+[shout verb]flutter
+
+はためく音を立てる
+%%%%
+[shout past]flutter
+
+はためく音を立てた
+%%%%
+[shout verb]gurgle
+
+ゴボゴボと音を立てる
+%%%%
+[shout past]gurgle
+
+ゴボゴボと音を立てた
+%%%%
+[shout verb]roar
+
+咆哮する
+%%%%
+[shout past]roar
+
+咆哮した
+%%%%
+[shout verb]shout twice
+
+二度叫ぶ
+%%%%
+[shout past]shout twice
+
+二度叫んだ
+%%%%
+[shout verb]sporulate
+
+胞子を放つ
+%%%%
+[shout past]sporulate
+
+胞子を放った
+%%%%
+[shout verb]squeak
+
+キーキー鳴く
+%%%%
+[shout past]squeak
+
+キーキー鳴いた
+%%%%
+[shout verb]squeal
+
+ブーブーと鳴く
+%%%%
+[shout past]squeal
+
+ブーブーと鳴いた
+%%%%
+[shout verb]whoosh
+
+ヒューッと音を立てる
+%%%%
+[shout past]whoosh
+
+ヒューッと音を立てた
+%%%%
+You hear a skittering sound.
+
+あなたはカサカサという音を耳にした。
+%%%%
+@The_monster_possessive@ many legs skitter.
+
+@The_monster_possessive@たくさんの脚がカサカサと音を立てた。
+%%%%
+You hear a faint skittering sound.
+
+あなたはかすかなカサカサという音を耳にした。
+%%%%
+@The_monster_possessive@ many legs skitter faintly.
+
+@The_monster_possessive@たくさんの脚がかすかにカサカサと音を立てた。
+%%%%
+@The_monster_possessive@ eagle head screeches!
+
+@The_monster_possessive@鷲の頭が金切り声を上げた！
+%%%%
+@The_monster_possessive@ lion head roars!
+
+@The_monster_possessive@獅子の頭が吼えた！
+%%%%
+@The_monster_possessive@ ox head lows!
+
+@The_monster_possessive@牡牛の頭がモーと鳴いた！
+%%%%
+@The_monster_possessive@ human head shouts!
+
+@The_monster_possessive@人間の頭が叫んだ！
+%%%%
+You hear a loud rustle.
+
+あなたは紙が大きくこすれる音を耳にした。
+%%%%
+@The_monster_possessive@ pages rustle loudly.
+
+@The_monster_possessive@ページが大きな音を立ててめくれた。
+%%%%
+You hear a loud squeak.
+
+あなたは大きなキーキーという鳴き声を耳にした。
+%%%%
+@The_monster@ squeaks loudly.
+
+@The_monster@は大きな声でキーキーと鳴いた。
+%%%%
+@The_monster@ laughs maniacally.
+
+@The_monster@は狂ったように笑った。
+%%%%
+You hear maniacal laughter.
+
+あなたは狂気じみた笑い声を耳にした。
+%%%%
+@The_monster@ quivers.
+
+@The_monster@はぷるぷると震えた。
+%%%%
+@The_monster@ swivels @possessive@ eye-stalks towards you.
+
+@The_monster@は眼柄をあなたの方へ向けた。
+%%%%
+@The_monster_possessive@ fur bristles in rage as it notices you.
+
+@The_monster@はあなたに気づき、怒りで毛を逆立てた。
+%%%%
+@The_monster@ shouts, "Attack, my pets! Attack!"
+
+@The_monster@は叫んだ。『かかれ、わがペットたちよ！かかれ！』
+%%%%

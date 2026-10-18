@@ -17,6 +17,7 @@
 #include "colour.h"
 #include "coord.h"
 #include "coordit.h"
+#include "database.h"
 #include "dgn-overview.h"
 #include "tile-env.h"
 #include "god-conduct.h"
@@ -1039,17 +1040,23 @@ static void _config_layers_menu()
     {
         viewwindow();
         update_screen();
-        mprf(MSGCH_PROMPT, "Select layers to display:\n"
+#ifdef USE_TILE_LOCAL
+        const string layer_prompt = jtrans("Select layers to display:\n"
+                           "<%s>(m)onsters</%s>|"
+                           "<%s>(p)layer</%s>|"
+                           "<%s>(i)tems</%s>|"
+                           "<%s>(c)louds</%s>");
+#else
+        const string layer_prompt = jtrans("Select layers to display:\n"
                            "<%s>(m)onsters</%s>|"
                            "<%s>(p)layer</%s>|"
                            "<%s>(i)tems</%s>|"
                            "<%s>(c)louds</%s>"
-#ifndef USE_TILE_LOCAL
                            "|"
                            "<%s>monster (w)eapons</%s>|"
-                           "<%s>monster (h)ealth</%s>"
+                           "<%s>monster (h)ealth</%s>");
 #endif
-                           ,
+        mprf(MSGCH_PROMPT, layer_prompt.c_str(),
            _layers & Layer::MONSTERS        ? "lightgrey" : "darkgrey",
            _layers & Layer::MONSTERS        ? "lightgrey" : "darkgrey",
            _layers & Layer::PLAYER          ? "lightgrey" : "darkgrey",
@@ -1066,8 +1073,8 @@ static void _config_layers_menu()
            _layers & Layer::MONSTER_HEALTH  ? "lightgrey" : "darkgrey"
 #endif
         );
-        mprf(MSGCH_PROMPT, "Press 'a' to toggle all layers. "
-                           "Press any other key to exit.");
+        mprf(MSGCH_PROMPT, jtransc("Press 'a' to toggle all layers. "
+                           "Press any other key to exit."));
 
         switch (get_ch())
         {
@@ -1127,7 +1134,7 @@ void toggle_show_terrain()
 void reset_show_terrain()
 {
     if (_layers != LAYERS_ALL)
-        mprf(MSGCH_PROMPT, "Restoring view layers.");
+        mprf(MSGCH_PROMPT, jtransc("Restoring view layers."));
 
     _layers = LAYERS_ALL;
     crawl_state.viewport_weapons    = !!(_layers & Layer::MONSTER_WEAPONS);

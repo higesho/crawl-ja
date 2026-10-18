@@ -97,7 +97,7 @@
 %%%%
 [ability]Invent Gizmo
 
-ガジェットの発明
+ギズモの発明
 %%%%
 [ability]Cacophony
 

@@ -32,6 +32,7 @@
 #include "item-prop.h"
 #include "item-status-flag-type.h"
 #include "items.h"
+#include "japanese.h"
 #include "libutil.h"
 #include "macro.h"
 #include "message.h"
@@ -181,6 +182,19 @@ const char* card_name(card_type card)
     return "a very buggy card";
 }
 
+// 表示用のカード名(日本語)。card_name() は説明文の検索キー(" card")、
+// name_to_card() の照合、ability.cc の stack_top() などに使うので英語のまま。
+static string _card_name_j(card_type card)
+{
+    return tagged_jtrans("[card]", card_name(card));
+}
+
+// 表示用のデッキの種類名(「脱出」など)。deck_type_data::name は英語のまま。
+static string _deck_kind_j(const string &name)
+{
+    return tagged_jtrans("[deck]", name);
+}
+
 bool card_is_removed(card_type card)
 {
     switch (card)
@@ -227,9 +241,10 @@ const string stack_contents()
     output += comma_separated_fn(
                 reverse_iterator<CrawlVector::const_iterator>(stack.end()),
                 reverse_iterator<CrawlVector::const_iterator>(stack.begin()),
-              [](const CrawlStoreValue& card) { return card_name((card_type)card.get_int()); });
+              [](const CrawlStoreValue& card) { return _card_name_j((card_type)card.get_int()); },
+              "、", "、");
     if (!stack.empty())
-        output += ".";
+        output += "。";
 
     return output;
 }
@@ -246,9 +261,8 @@ const string stack_top()
 const string deck_contents(deck_type deck)
 {
     if (deck == DECK_STACK)
-        return "Remaining cards: " + stack_contents();
-
-    string output = "It may contain the following cards: ";
+        return make_stringf(jtransc("Remaining cards: %s"),
+                            stack_contents().c_str());
 
     // This way of doing things is intended to prevent a card
     // that appears in multiple subdecks from showing up twice in the
@@ -258,21 +272,20 @@ const string deck_contents(deck_type deck)
     for (const auto& cww : pdeck)
         cards.insert(cww.first);
 
-    output += comma_separated_fn(cards.begin(), cards.end(), card_name);
-    output += ".";
-
-    return output;
+    return make_stringf(jtransc("It may contain the following cards: %s."),
+                        comma_separated_fn(cards.begin(), cards.end(),
+                                           _card_name_j, "、", "、").c_str());
 }
 
 const string deck_flavour(deck_type deck)
 {
     if (deck == DECK_STACK)
-        return "set aside for later.";
+        return jtrans("set aside for later.");
 
     deck_type_data* deck_data = map_find(all_decks, deck);
 
     if (deck_data)
-        return deck_data->flavour;
+        return jtrans(deck_data->flavour);
 
     return "";
 }
@@ -315,12 +328,13 @@ bool gift_cards()
         for (deck_type deck : sufficiency)
         {
             const deck_type_data *deck_data = map_find(all_decks, deck);
-            deck_names.push_back(deck_data ? deck_data->name : "bugginess");
+            deck_names.push_back(_deck_kind_j(deck_data ? deck_data->name
+                                                        : "bugginess"));
         }
         mprf(MSGCH_GOD, you.religion,
-             "%s goes to deal, but finds you have enough %s cards.",
-             god_name(you.religion).c_str(),
-             join_strings(deck_names.begin(), deck_names.end(), " and ").c_str());
+             jtransc("%s goes to deal, but finds you have enough %s cards."),
+             god_name_jc(you.religion),
+             join_strings(deck_names.begin(), deck_names.end(), "と").c_str());
     }
 
     return dealt_cards;
@@ -343,11 +357,12 @@ string deck_summary()
         const string name = deck_data ? deck_data->name : "bugginess";
         if (cards)
         {
-            stats.push_back(make_stringf("%d %s card%s", cards,
-               name.c_str(), cards == 1 ? "" : "s"));
+            // 「破壊のカード3枚」
+            stats.push_back(make_stringf(jtransc("%s cards: %d"),
+               _deck_kind_j(name).c_str(), cards));
         }
     }
-    return comma_separated_line(stats.begin(), stats.end());
+    return comma_separated_line(stats.begin(), stats.end(), "と", "、");
 }
 
 string which_decks(card_type card)
@@ -363,24 +378,25 @@ string which_decks(card_type card)
         if (deck_data.first == DECK_OF_PUNISHMENT)
             punishment = true;
         else
-            decks.push_back(deck_data.second.name);
+            decks.push_back(_deck_kind_j(deck_data.second.name));
     }
 
     if (!decks.empty())
     {
-        output += "It is found in decks of "
-               +  comma_separated_line(decks.begin(), decks.end());
-        if (punishment)
-            output += ", or in Nemelex Xobeh's deck of punishment";
-        output += ".";
+        const string deck_list =
+            comma_separated_line(decks.begin(), decks.end(), "と", "、");
+        output += make_stringf(punishment
+            ? jtransc("It is found in decks of %s, or in Nemelex Xobeh's deck of punishment.")
+            : jtransc("It is found in decks of %s."),
+            deck_list.c_str());
     }
     else if (punishment)
     {
-        output += "It is only found in Nemelex Xobeh's deck of "
-                  "punishment.";
+        output += jtrans("It is only found in Nemelex Xobeh's deck of "
+                         "punishment.");
     }
     else
-        output += "It is normally not part of any deck.";
+        output += jtrans("It is normally not part of any deck.");
 
     return output;
 }
@@ -410,10 +426,10 @@ static void _describe_cards(CrawlVector& cards)
         string name = card_name(card);
         string desc = getLongDescription(name + " card");
         if (desc.empty())
-            desc = "No description found.\n";
+            desc = jtrans("No description found.") + "\n";
         string decks = which_decks(card);
 
-        name = uppercase_first(name);
+        name = make_stringf(jtransc("the card of %s"), _card_name_j(card).c_str());
         desc = desc + decks;
 
     auto title_hbox = make_shared<Box>(Widget::HORZ);
@@ -467,12 +483,12 @@ static void _describe_cards(CrawlVector& cards)
 
 string deck_status(deck_type deck)
 {
-    const string name = deck_name(deck);
+    const string name = jtrans(deck_name(deck));
     const int cards   = deck_cards(deck);
 
     ostringstream desc;
 
-    desc << chop_string(deck_name(deck), 24)
+    desc << chop_string(name, 24)
          << to_string(cards);
 
     return trimmed_string(desc.str());
@@ -482,8 +498,8 @@ string deck_description(deck_type deck)
 {
     ostringstream desc;
 
-    desc << "A deck of magical cards, ";
-    desc << deck_flavour(deck) << "\n\n";
+    desc << make_stringf(jtransc("A deck of magical cards, %s"),
+                         deck_flavour(deck).c_str()) << "\n\n";
     desc << deck_contents(deck) << "\n";
 
     if (deck != DECK_STACK)
@@ -491,14 +507,13 @@ string deck_description(deck_type deck)
         const int cards = deck_cards(deck);
         desc << "\n";
 
-        if (cards > 1)
-            desc << make_stringf("It currently has %d cards ", cards);
-        else if (cards == 1)
-            desc << "It currently has 1 card ";
+        // 「今は%d枚のカードがあり、」+「最大%d枚まで入る。」
+        if (cards > 0)
+            desc << make_stringf(jtransc("It currently has %d cards "), cards);
         else
-            desc << "It is currently empty ";
+            desc << jtrans("It is currently empty ");
 
-        desc << make_stringf("and can contain up to %d cards.",
+        desc << make_stringf(jtransc("and can contain up to %d cards."),
                              all_decks[deck].deck_max);
         desc << "\n";
     }
@@ -536,12 +551,15 @@ static deck_type _choose_deck(const string title = "Draw")
             | MF_NO_WRAP_ROWS | MF_TOGGLE_ACTION
             | MF_ARROWS_SELECT | MF_INIT_HOVER);
     {
+        // 列はデッキ名(24 桁)と枚数。日本語の幅は chop_string で揃える。
         ToggleableMenuEntry* me =
-            new ToggleableMenuEntry(make_stringf("%s which deck?        "
-                                    "Cards available", title.c_str()),
-                                    "Describe which deck?    "
-                                    "Cards available",
-                                    MEL_TITLE);
+            new ToggleableMenuEntry(
+                chop_string(make_stringf(jtransc("%s which deck?"),
+                            tagged_jtransc("[deck verb]", title)), 24)
+                + jtrans("Cards available"),
+                chop_string(jtrans("Describe which deck?"), 24)
+                + jtrans("Cards available"),
+                MEL_TITLE);
         deck_menu.set_title(me, true, true);
     }
     deck_menu.set_tag("deck");
@@ -553,8 +571,8 @@ static deck_type _choose_deck(const string title = "Draw")
 
     // XX proper keyhelp
     deck_menu.set_more(formatted_string::parse_string(
-        menu_keyhelp_cmd(CMD_MENU_HELP) + " toggle "
-                       "between deck selection and description."));
+        menu_keyhelp_cmd(CMD_MENU_HELP)
+        + jtrans_notrim(" toggle between deck selection and description.")));
 
     int numbers[NUM_DECKS];
 
@@ -606,14 +624,15 @@ static string _empty_deck_msg()
     string message = random_choose("disappears without a trace.",
         "glows slightly and disappears.",
         "glows with a rainbow of weird colours and disappears.");
-    return "The deck of cards " + message;
+    return make_stringf(jtransc("The deck of cards %s"), jtransc(message));
 }
 
 static void _evoke_deck(deck_type deck, bool dealt = false)
 {
     ASSERT(deck_cards(deck) > 0);
 
-    mprf("You %s a card...", dealt ? "deal" : "draw");
+    mprf(jtransc("You %s a card..."),
+         tagged_jtransc("[card verb]", dealt ? "deal" : "draw"));
 
     if (deck == DECK_STACK)
     {
@@ -637,7 +656,7 @@ bool deck_draw(deck_type deck)
 {
     if (!deck_cards(deck))
     {
-        mpr("That deck is empty!");
+        mpr(jtrans("That deck is empty!"));
         return false;
     }
 
@@ -649,7 +668,7 @@ spret deck_stack(bool fail)
 {
     if (crawl_state.is_replaying_keys())
     {
-        crawl_state.cancel_cmd_all("You can't repeat Stack Five.");
+        crawl_state.cancel_cmd_all(jtrans("You can't repeat Stack Five."));
         return spret::abort;
     }
 
@@ -658,7 +677,7 @@ spret deck_stack(bool fail)
     for (int i = FIRST_PLAYER_DECK; i <= LAST_PLAYER_DECK; ++i)
         total_cards += deck_cards((deck_type) i);
 
-    if (deck_cards(DECK_STACK) && !yesno("Replace your current stack?",
+    if (deck_cards(DECK_STACK) && !yesno(jtransc("Replace your current stack?"),
                                           false, 0))
     {
         canned_msg(MSG_OK);
@@ -667,12 +686,12 @@ spret deck_stack(bool fail)
 
     if (!total_cards)
     {
-        mpr("You are out of cards!");
+        mpr(jtrans("You are out of cards!"));
         return spret::abort;
     }
 
-    if (total_cards < 5 && !yesno("You have fewer than five cards, "
-                                  "stack them anyway?", false, 0))
+    if (total_cards < 5 && !yesno(jtransc("You have fewer than five cards, "
+                                  "stack them anyway?"), false, 0))
     {
         canned_msg(MSG_OK);
         return spret::abort;
@@ -704,7 +723,7 @@ bool StackFiveMenu::process_key(int keyin)
     {
         formatted_string old_more = more;
         set_more(formatted_string::parse_string(
-                "Are you done? (press y or Y to confirm)"));
+                jtrans("Are you done? (press y or Y to confirm)")));
         if (yesno(nullptr, true, 'n', false, false, true))
             return false;
         set_more(old_more);
@@ -740,11 +759,13 @@ static void _draw_stack(int to_stack)
             | MF_ARROWS_SELECT | MF_INIT_HOVER);
     {
         ToggleableMenuEntry* me =
-            new ToggleableMenuEntry("Draw which deck?        "
-                                    "Cards available",
-                                    "Describe which deck?    "
-                                    "Cards available",
-                                    MEL_TITLE);
+            new ToggleableMenuEntry(
+                chop_string(make_stringf(jtransc("%s which deck?"),
+                            tagged_jtransc("[deck verb]", "Draw")), 24)
+                + jtrans("Cards available"),
+                chop_string(jtrans("Describe which deck?"), 24)
+                + jtrans("Cards available"),
+                MEL_TITLE);
         deck_menu.set_title(me, true, true);
     }
     deck_menu.set_tag("deck");
@@ -756,17 +777,18 @@ static void _draw_stack(int to_stack)
 
     if (!stack.empty())
     {
-            string status = "Drawn so far: " + stack_contents();
+            string status = make_stringf(jtransc("Drawn so far: %s"),
+                                         stack_contents().c_str());
             deck_menu.set_more(formatted_string::parse_string(
                        status + "\n" +
-                       menu_keyhelp_cmd(CMD_MENU_HELP) + " toggle "
-                       "between deck selection and description."));
+                       menu_keyhelp_cmd(CMD_MENU_HELP)
+                       + jtrans_notrim(" toggle between deck selection and description.")));
     }
     else
     {
         deck_menu.set_more(formatted_string::parse_string(
-            menu_keyhelp_cmd(CMD_MENU_HELP) + " toggle "
-                       "between deck selection and description."));
+            menu_keyhelp_cmd(CMD_MENU_HELP)
+            + jtrans_notrim(" toggle between deck selection and description.")));
     }
 
     int numbers[NUM_DECKS];
@@ -814,14 +836,17 @@ static void _draw_stack(int to_stack)
             stack.push_back(draw);
         }
         else
-            status = "<lightred>That deck is empty!</lightred> ";
+            status = jtrans_notrim("<lightred>That deck is empty!</lightred> ");
 
         if (stack.size() > 0)
-            status += "Drawn so far: " + stack_contents();
+        {
+            status += make_stringf(jtransc("Drawn so far: %s"),
+                                   stack_contents().c_str());
+        }
         deck_menu.set_more(formatted_string::parse_string(
                    status + "\n" +
-                   "Press '<w>!</w>' or '<w>?</w>' to toggle "
-                   "between deck selection and description."));
+                   jtrans("Press '<w>!</w>' or '<w>?</w>' to toggle "
+                          "between deck selection and description.")));
 
         return stack.size() < to_stack;
     };
@@ -842,19 +867,19 @@ bool stack_five(int to_stack)
     }
 
     StackFiveMenu menu(stack);
-    MenuEntry *const title = new MenuEntry("Select two cards to swap them:", MEL_TITLE);
+    MenuEntry *const title = new MenuEntry(jtrans("Select two cards to swap them:"), MEL_TITLE);
     menu.set_title(title);
     for (unsigned int i = 0; i < stack.size(); i++)
     {
         MenuEntry * const entry =
-            new MenuEntry(card_name((card_type)stack[i].get_int()),
+            new MenuEntry(_card_name_j((card_type)stack[i].get_int()),
                           MEL_ITEM, 1, '1'+i);
         entry->add_tile(tile_def(TILEG_NEMELEX_CARD));
         menu.add_entry(entry);
     }
     menu.set_more(formatted_string::parse_string(
-                "<lightgrey>Press <w>?</w> for the card descriptions"
-                " or <w>Enter</w> to accept."));
+                jtrans("<lightgrey>Press <w>?</w> for the card descriptions"
+                       " or <w>Enter</w> to accept.")));
     menu.show();
 
     if (crawl_state.seen_hups)
@@ -879,7 +904,7 @@ spret deck_deal(bool fail)
 
     if (!num_cards)
     {
-        mpr("That deck is empty!");
+        mpr(jtrans("That deck is empty!"));
         return spret::abort;
     }
 
@@ -898,7 +923,7 @@ spret deck_triple_draw(bool fail)
 {
     if (crawl_state.is_replaying_keys())
     {
-        crawl_state.cancel_cmd_all("You can't repeat Triple Draw.");
+        crawl_state.cancel_cmd_all(jtrans("You can't repeat Triple Draw."));
         return spret::abort;
     }
 
@@ -911,12 +936,12 @@ spret deck_triple_draw(bool fail)
 
     if (!num_cards)
     {
-        mpr("That deck is empty!");
+        mpr(jtrans("That deck is empty!"));
         return spret::abort;
     }
 
-    if (num_cards < 3 && !yesno("There's fewer than three cards, "
-                                "still triple draw?", false, 0))
+    if (num_cards < 3 && !yesno(jtransc("There's fewer than three cards, "
+                                "still triple draw?"), false, 0))
     {
         canned_msg(MSG_OK);
         return spret::abort;
@@ -927,7 +952,7 @@ spret deck_triple_draw(bool fail)
     if (num_cards == 1)
     {
         // Only one card to draw, so just draw it.
-        mpr("There's only one card left!");
+        mpr(jtrans("There's only one card left!"));
         _evoke_deck(choice);
         return spret::success;
     }
@@ -956,12 +981,12 @@ bool draw_three()
     {
         if (need_prompt_redraw)
         {
-            mpr("You draw... (choose one card, ? for their descriptions)");
+            mpr(jtrans("You draw... (choose one card, ? for their descriptions)"));
             for (int i = 0; i < draws.size(); ++i)
             {
                 msg::streams(MSGCH_PROMPT)
                     << msg::nocap << (static_cast<char>(i + 'a')) << " - "
-                    << card_name((card_type)draws[i].get_int()) << endl;
+                    << _card_name_j((card_type)draws[i].get_int()) << endl;
             }
             need_prompt_redraw = false;
         }
@@ -997,7 +1022,8 @@ void draw_from_deck_of_punishment(bool deal)
 {
     card_type card = _random_card(DECK_OF_PUNISHMENT);
 
-    mprf("You %s a card...", deal ? "deal" : "draw");
+    mprf(jtransc("You %s a card..."),
+         tagged_jtransc("[card verb]", deal ? "deal" : "draw"));
     card_effect(card, deal, true);
 }
 
@@ -1055,7 +1081,7 @@ static void _velocity_card(int power)
                   }
 
                   if (did_haste)
-                      simple_monster_message(mon, " seems to speed up.");
+                      simple_monster_message(mon, jtransc(" seems to speed up."));
               }
               return affected;
           })
@@ -1107,8 +1133,10 @@ static void _damaging_card(card_type card, int power,
     const char *participle = dealt ? "dealt" : "drawn";
 
     bool done_prompt = false;
-    string prompt = make_stringf("You have %s %s.", participle,
-                                 card_name(card));
+    // 訳は「あなたは%sのカードを%s。」なので、カード名・動詞の順に渡す
+    string prompt = make_stringf(jtransc("You have %s %s."),
+                                 _card_name_j(card).c_str(),
+                                 tagged_jtransc("[card verb]", participle));
 
     dist target;
     zap_type ztype = ZAP_DEBUGGING_RAY;
@@ -1123,7 +1151,7 @@ static void _damaging_card(card_type card, int power,
         {
             done_prompt = true;
             mpr(prompt);
-            mpr("You radiate a wave of entropy!");
+            mpr(jtrans("You radiate a wave of entropy!"));
             apply_visible_monsters([](monster& mons)
             {
                 return !mons.wont_attack()
@@ -1142,7 +1170,7 @@ static void _damaging_card(card_type card, int power,
     case CARD_PAIN:
         if (power_level == 2)
         {
-            mpr("You reveal a symbol of torment!");
+            mpr(jtrans("You reveal a symbol of torment!"));
             torment(&you, TORMENT_CARD_PAIN, you.pos());
         }
 
@@ -1162,12 +1190,13 @@ static void _damaging_card(card_type card, int power,
         args.top_prompt = prompt;
 
     // Confirm aborts as they waste the card.
-    prompt = make_stringf("Aiming: %s", card_name(card));
+    prompt = make_stringf(jtransc("Aiming: the card of %s"),
+                          _card_name_j(card).c_str());
     while (!(spell_direction(target, beam, &args)
             && player_tracer(ZAP_SEARING_RAY, power/6, beam)))
     {
         if (crawl_state.seen_hups
-            || yesno("Really abort (and waste the card)?", false, 0))
+            || yesno(jtransc("Really abort (and waste the card)?"), false, 0))
         {
             canned_msg(MSG_OK);
             return;
@@ -1194,7 +1223,7 @@ static void _elixir_card(int power)
     int power_level = _get_power_level(power);
 
     you.set_duration(DUR_ELIXIR, 1 + 3 * power_level + random2(3));
-    mpr("You begin rapidly regenerating health and magic.");
+    mpr(jtrans("You begin rapidly regenerating health and magic."));
 }
 
 // Special case for *your* god, maybe?
@@ -1209,7 +1238,7 @@ static void _godly_wrath()
             return; // Stop once we find a god willing to punish the player.
     }
 
-    mpr("You somehow manage to escape divine attention...");
+    mpr(jtrans("You somehow manage to escape divine attention..."));
 }
 
 static void _summon_demon_card(int power)
@@ -1246,13 +1275,13 @@ static void _summon_demon_card(int power)
                                   you.pos(), MHITYOU, MG_AUTOFOE)
                         .set_summoned(&you, 0, summ_dur(5 - power_level))))
     {
-        mpr("You see a puff of smoke.");
+        mpr(jtrans("You see a puff of smoke."));
     }
     else if (hostile
              && mons_class_flag(dct, M_INVIS)
              && !you.can_see_invisible())
     {
-        mpr("You sense the presence of something unfriendly.");
+        mpr(jtrans("You sense the presence of something unfriendly."));
     }
 
     _friendly(dct2, 5 - power_level);
@@ -1292,7 +1321,7 @@ static void _summon_dancing_weapon(int power)
 
     if (!mon)
     {
-        mpr("You see a puff of smoke.");
+        mpr(jtrans("You see a puff of smoke."));
         return;
     }
 
@@ -1444,7 +1473,7 @@ static void _cloud_card(int power)
 
     if (something_happened)
     {
-        mpr("Clouds appear around your foes!");
+        mpr(jtrans("Clouds appear around your foes!"));
 
         // Make the player not be immediately affected by clouds that may have
         // been created beneath them until they act again.
@@ -1517,11 +1546,10 @@ static void _storm_card(int power)
         vector<string> thunder_adjectives = { "mighty",
                                               "violent",
                                               "cataclysmic" };
-        mprf("You %s %s%s peal%s of thunder!",
-              heard ? "hear" : "feel",
-              targets.size() > 1 ? "" : "a ",
-              thunder_adjectives[power_level].c_str(),
-              targets.size() > 1 ? "s" : "");
+        // 日本語では単数・複数の区別をしない
+        mprf(heard ? jtransc("You hear %s peals of thunder!")
+                   : jtransc("You feel %s peals of thunder!"),
+             adj_jc(thunder_adjectives[power_level]));
     }
 }
 
@@ -1568,7 +1596,7 @@ static void _degeneration_card(int power)
                {
                    mons.daze(2 + 3 * power_level);
                    simple_monster_message(mons,
-                                          " is dazed by the mutagenic energy.");
+                                          jtransc(" is dazed by the mutagenic energy."));
                }
                return true;
            }))
@@ -1618,7 +1646,7 @@ static void _wild_magic_card(int power)
         for (int i = 0; i < num_affected; ++i)
             mp += random2(5);
 
-        mpr("You feel a surge of magic.");
+        mpr(jtrans("You feel a surge of magic."));
         if (mp && you.magic_points < you.max_magic_points)
         {
             inc_mp(mp);
@@ -1672,7 +1700,9 @@ void card_effect(card_type which_card,
             && which_card != CARD_PAIN
             && which_card != CARD_ORB)
         {
-            mprf("You have %s %s.", participle, card_name(which_card));
+            // 訳は「あなたは%sのカードを%s。」(カード名・動詞の順)
+            mprf(jtransc("You have %s %s."), _card_name_j(which_card).c_str(),
+                 tagged_jtransc("[card verb]", participle));
         }
     }
 
@@ -1709,7 +1739,7 @@ void card_effect(card_type which_card,
         if (transform(roll_dice(10, 10), transformation::pig, true))
             you.transform_uncancellable = true;
         else
-            mpr("You feel a momentary urge to oink.");
+            mpr(jtrans("You feel a momentary urge to oink."));
         break;
 
 #if TAG_MAJOR_VERSION == 34
@@ -1719,13 +1749,17 @@ void card_effect(card_type which_card,
 #endif
     case NUM_CARDS:
         // The compiler will complain if any card remains unhandled.
-        mprf("You have %s a buggy card!", participle);
+        mprf(jtransc("You have %s a buggy card!"),
+             tagged_jtransc("[card verb]", participle));
         break;
     }
 }
 
 /**
  * Return the appropriate name for a known deck of the given type.
+ *
+ * 英語のまま返す(NEMELEX_STACK_KEY や you.props のキーに使われる)。
+ * 表示する箇所で jtrans(deck_name(...)) として引く(訳は decks.txt)。
  *
  * @param sub_type  The type of deck in question.
  * @return          A name, e.g. "deck of destruction".

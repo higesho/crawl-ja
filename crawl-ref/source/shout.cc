@@ -22,6 +22,7 @@
 #include "ghost.h"
 #include "god-passive.h"
 #include "hints.h"
+#include "item-name.h"
 #include "item-status-flag-type.h"
 #include "jobs.h"
 #include "libutil.h"
@@ -35,6 +36,7 @@
 #include "state.h"
 #include "stringutil.h"
 #include "terrain.h"
+#include "unicode.h"
 #include "view.h"
 #include "viewchar.h"
 
@@ -229,6 +231,7 @@ void monster_shout(monster &mons, int shout)
 
         if (channel != MSGCH_TALK_VISUAL || seen)
         {
+            message = jtrans(message);
             message = do_mon_str_replacements(message, mons, s_type);
             msg::streams(channel) << message << endl;
         }
@@ -348,7 +351,7 @@ void item_noise(const item_def &item, actor &act, string msg, int loudness)
     if (msg.empty()) // give default noises
     {
         channel = MSGCH_SOUND;
-        msg = "You hear a strange noise.";
+        msg = jtrans("You hear a strange noise.");
     }
 
     // Replace weapon references. Can't use DESC_THE because that includes
@@ -390,7 +393,8 @@ void noisy_equipment(const item_def &weapon)
 
     if (is_unrandom_artefact(weapon))
     {
-        string name = weapon.name(DESC_QUALNAME, false, true, false, false);
+        string name = item_name_en(weapon, DESC_QUALNAME, false, true, false,
+                                   false);
         msg = getSpeakString(name);
         if (msg == "NONE")
             return;
@@ -470,21 +474,25 @@ static void _set_allies_withdraw(const coord_def &target)
 /// Prompt the player to issue orders. Returns the key pressed.
 static int _issue_orders_prompt()
 {
-    mprf(MSGCH_PROMPT, "What are your orders?");
+    mprf(MSGCH_PROMPT, jtransc("What are your orders?"));
     if (!you.cannot_speak())
     {
-        string cap_shout = you.shout_verb(false);
-        cap_shout[0] = toupper_safe(cap_shout[0]);
-        mprf(" t - %s!", cap_shout.c_str());
+        const string shout_j = tagged_jtrans("[shout verb]", you.shout_verb(false));
+        mprf(" t - %s", shout_j.c_str());
     }
 
     if (!you.berserk() && !you.confused())
     {
-        mpr("Orders for allies: a - Attack new target.");
-        mpr("                   r - Retreat!             s - Stop attacking.");
-        mpr("                   g - Guard the area.      f - Follow me.");
+        // 日本語は表示幅で桁を揃える
+        const string indent(19, ' ');
+        mpr(chop_string(jtrans("Orders for allies:"), 19)
+            + jtrans("a - Attack new target."));
+        mpr(indent + chop_string(jtrans("r - Retreat!"), 25)
+            + jtrans("s - Stop attacking."));
+        mpr(indent + chop_string(jtrans("g - Guard the area."), 25)
+            + jtrans("f - Follow me."));
     }
-    mpr(" Anything else - Cancel.");
+    mpr(" " + jtrans("Anything else - Cancel."));
 
     flush_prev_message(); // buffer doesn't get flushed otherwise
 
@@ -530,14 +538,14 @@ static bool _issue_order(int keyn, int &mons_targd)
             {
                 // Don't reset patrol points for 'Stop fighting!'
                 _set_allies_patrol_point(true);
-                mpr("Follow me!");
+                mpr(jtrans("Follow me!"));
             }
             else
-                mpr("Stop fighting!");
+                mpr(jtrans("Stop fighting!"));
             break;
 
         case 'g':
-            mpr("Guard this area!");
+            mpr(jtrans("Guard this area!"));
             mons_targd = MHITNOT;
             _set_allies_patrol_point();
             break;
@@ -548,7 +556,7 @@ static bool _issue_order(int keyn, int &mons_targd)
             args.restricts = DIR_TARGET;
             args.mode = TARG_HOSTILE;
             args.needs_path = false;
-            args.top_prompt = "Gang up on whom?";
+            args.top_prompt = jtrans("Gang up on whom?");
             dist targ;
             direction(targ, args);
 
@@ -573,7 +581,7 @@ static bool _issue_order(int keyn, int &mons_targd)
 
             if (!_allies_can_see(*m))
             {
-                mprf("%s is invisible, and you have no allies that can see %s.",
+                mprf(jtransc("%s is invisible, and you have no allies that can see %s."),
                      m->name(DESC_THE).c_str(),
                      m->pronoun(PRONOUN_OBJECTIVE).c_str());
                 return false;
@@ -589,7 +597,7 @@ static bool _issue_order(int keyn, int &mons_targd)
             args.restricts = DIR_TARGET;
             args.mode = TARG_NON_ACTOR;
             args.needs_path = false;
-            args.top_prompt = "Retreat in which direction?";
+            args.top_prompt = jtrans("Retreat in which direction?");
             dist targ;
             direction(targ, args);
 
@@ -601,7 +609,7 @@ static bool _issue_order(int keyn, int &mons_targd)
 
             if (targ.isValid)
             {
-                mpr("Fall back!");
+                mpr(jtrans("Fall back!"));
                 mons_targd = MHITNOT;
             }
 
@@ -627,7 +635,7 @@ static string _allies_who_cant_see_invis()
         if (!_follows_orders(*mi) || mi->can_see_invisible())
             continue;
         if (non_sinv_ally)
-            return "some of your allies";
+            return jtrans("some of your allies");
         non_sinv_ally = *mi;
     }
 
@@ -645,7 +653,7 @@ static void _check_unseen_target(int mindex)
     const string allies = _allies_who_cant_see_invis();
     if (allies.empty())
         return;
-    mprf("%s is invisible, and %s can't see %s.",
+    mprf(jtransc("%s is invisible, and %s can't see %s."),
          target.name(DESC_THE).c_str(),
          allies.c_str(),
          target.pronoun(PRONOUN_OBJECTIVE).c_str());
@@ -663,7 +671,7 @@ void issue_orders()
 
     if (you.cannot_speak() && you.berserk())
     {
-        mpr("You're too berserk to give orders, and you can't shout!");
+        mpr(jtrans("You're too berserk to give orders, and you can't shout!"));
         return;
     }
 
@@ -686,7 +694,7 @@ void issue_orders()
 
     if (mons_targd != MHITNOT && mons_targd != MHITYOU)
     {
-        mpr("Attack!");
+        mpr(jtrans("Attack!"));
         _check_unseen_target(mons_targd);
     }
 }
@@ -701,6 +709,8 @@ void yell(const actor* target)
     ASSERT(!crawl_state.game_is_arena());
 
     const string shout_verb = you.shout_verb(target != nullptr);
+    const string shout_verb_j = tagged_jtrans("[shout verb]", shout_verb);
+    const string shout_past_j = tagged_jtrans("[shout past]", shout_verb);
     const int noise_level = you.shout_volume();
 
     if (you.cannot_speak())
@@ -709,39 +719,43 @@ void yell(const actor* target)
         {
             if (silenced(you.pos()))
             {
-                mprf("You feel %s rip itself from your throat, "
-                     "but you make no sound!",
-                     article_a(shout_verb).c_str());
+                mprf(jtransc("You feel %s rip itself from your throat, "
+                     "but you make no sound!"),
+                     shout_verb_j.c_str());
             }
             else
             {
-                mprf("You feel a strong urge to %s, but "
-                     "you are unable to make a sound!",
-                     shout_verb.c_str());
+                mprf(jtransc("You feel a strong urge to %s, but "
+                     "you are unable to make a sound!"),
+                     shout_verb_j.c_str());
             }
         }
         else
-            mpr("You are unable to make a sound!");
+            mpr(jtrans("You are unable to make a sound!"));
 
         return;
     }
 
     if (target)
     {
-        mprf("You %s%s at %s!",
-             shout_verb.c_str(),
-             you.duration[DUR_RECITE] ? " your recitation" : "",
-             target && target->is_player() ? "yourself"
-                                           : target->name(DESC_THE).c_str());
+        // 訳: 「あなたは(相手)に向かって(朗唱を)(叫んだ)！」
+        const string target_name = target->is_player()
+                                   ? jtrans("yourself")
+                                   : target->name(DESC_THE);
+        mprf(jtransc("You %s%s at %s!"),
+             target_name.c_str(),
+             you.duration[DUR_RECITE] ? jtransc(" your recitation") : "",
+             shout_past_j.c_str());
     }
     else
     {
-        const char *fugue_suff = you.duration[DUR_FUGUE] ?
-            ", and the damned howl along" : "";
-        mprf(MSGCH_SOUND, "You %s%s%s!",
-             shout_verb.c_str(),
-             you.berserk() ? " wildly" : " for attention",
-             fugue_suff);
+        // 訳: 「あなたは(荒々しく)(叫んだ)(、亡者たちも…)！」
+        const string fugue_suff = you.duration[DUR_FUGUE] ?
+            jtrans(", and the damned howl along") : "";
+        mprf(MSGCH_SOUND, jtransc("You %s%s%s!"),
+             you.berserk() ? jtransc(" wildly") : jtransc(" for attention"),
+             shout_past_j.c_str(),
+             fugue_suff.c_str());
     }
 
     noisy(noise_level, you.pos());

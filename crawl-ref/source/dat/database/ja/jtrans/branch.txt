@@ -1,0 +1,13 @@
+%%%%
+This branch is noisy: sounds don't travel as far here.
+
+この分岐は物音に満ちあふれており、音があまり遠くまで届かない。
+%%%%
+This branch is unnaturally silent: sounds travel farther here.
+
+この分岐は不自然なまでに静かで、音が遠くまでよく届く。
+%%%%
+This branch contains %s.
+
+この分岐の奥底には%sが隠されている。
+%%%%

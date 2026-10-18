@@ -9,6 +9,7 @@
 
 #include "areas.h"
 #include "art-enum.h"
+#include "database.h"
 #include "god-passive.h" // passive_t::slow_orb_run
 #include "shout.h"
 #include "view.h"
@@ -64,14 +65,14 @@ void orb_pickup_noise(const coord_def& where, int loudness, const char* msg, con
         if (msg)
             mprf(MSGCH_ORB, "%s", msg);
         else
-            mprf(MSGCH_ORB, "The Orb lets out an agonising shriek!");
+            mprf(MSGCH_ORB, jtransc("The Orb lets out an agonising shriek!"));
     }
     else
     {
         if (msg2)
             mprf(MSGCH_ORB, "%s", msg2);
         else
-            mprf(MSGCH_ORB, "The Orb lets out a furious burst of light!");
+            mprf(MSGCH_ORB, jtransc("The Orb lets out a furious burst of light!"));
     }
 }
 
@@ -90,9 +91,9 @@ void start_orb_run(game_chapter chapter, const char* message)
 {
     if (you.chapter != CHAPTER_ANGERED_PANDEMONIUM)
     {
-        mprf(MSGCH_WARN, "The lords of Pandemonium are not amused. Beware!");
+        mprf(MSGCH_WARN, jtransc("The lords of Pandemonium are not amused. Beware!"));
         if (have_passive(passive_t::slow_orb_run))
-            simple_god_message(" tells them not to hurry.");
+            simple_god_message(jtransc(" tells them not to hurry."));
     }
 
     mprf(MSGCH_ORB, "%s", message);

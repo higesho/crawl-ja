@@ -16,6 +16,7 @@
 #include "areas.h"
 #include "branch.h"
 #include "colour.h"
+#include "database.h"
 #include "describe.h"
 #ifndef USE_TILE_LOCAL
 #endif
@@ -28,6 +29,7 @@
 #include "invent.h"
 #include "item-name.h"
 #include "item-prop.h"
+#include "japanese.h"
 #include "jobs.h"
 #include "lang-fake.h"
 #include "libutil.h"
@@ -68,19 +70,38 @@ static bool _is_using_small_layout()
 static string _level_description_string_hud()
 {
     const PlaceInfo& place = you.get_place_info();
-    string short_name = branches[place.branch].shortname;
+    // 日本語では冠詞を付けない
+    string short_name = branch_name_j(branches[place.branch].shortname);
 
     if (brdepth[place.branch] > 1)
         short_name += make_stringf(":%d", you.depth);
-    // Indefinite articles
-    else if (place.branch != BRANCH_PANDEMONIUM
-             && place.branch != BRANCH_DESOLATION
-             && place.branch != BRANCH_ARENA
-             && !is_connected_branch(place.branch))
-    {
-        short_name = article_a(short_name);
-    }
     return short_name;
+}
+
+// ステータス欄の見出しを日本語にして、表示幅 width(省略時は英語と同じ幅)に
+// 詰める(足りなければ空白で埋める)。全角は半角 2 文字分。小さいレイアウト
+// (タッチ UI)では _cprintf_touchui が見出しを先頭のバイト数で切るので英語の
+// ままにする。辞書のキーは前後の空白を除いたもの("Health:" など)。
+static string _hud_caption(const char *en, int width = -1)
+{
+    if (_is_using_small_layout())
+        return en;
+    return chop_string(jtrans(en), width < 0 ? strwidth(en) : width);
+}
+
+static string _time_caption()
+{
+    const char *en = Options.show_game_time ? "Time:" : "Turn:";
+    return _is_using_small_layout() ? string(en) : jtrans(en);
+}
+
+// 時間・ターン数の値を表示する x 座標(見出しの幅に合わせる)。小さい
+// レイアウトでは _cgotoxy_touchui が座標で判定するので元の 19 + 6 のまま。
+static int _turncount_start_x()
+{
+    if (_is_using_small_layout())
+        return 19 + 6;
+    return 19 + max(6, strwidth(_time_caption()) + 1);
 }
 
 #ifdef USE_TILE_LOCAL
@@ -355,10 +376,16 @@ static void _cprintf_touchui(const char *format, ...)
             break;
         case TOUCH_V_PLACE:
             parts = split_string(":", _level_description_string_hud());
+            // 場所名は日本語なので、バイト数ではなく表示幅で切る
             if (parts.size() == 1)
-                cprintf("%-9s", parts[0].substr(0,9).c_str());
+                cprintf("%s", chop_string(parts[0], 9).c_str());
             else
-                cprintf("%s:%s", parts[0].substr(0,8-parts[1].size()).c_str(), parts[1].c_str());
+            {
+                cprintf("%s:%s", chop_string(parts[0],
+                                     max(0, 8 - (int)parts[1].size()),
+                                     false).c_str(),
+                        parts[1].c_str());
+            }
             break;
         case TOUCH_T_NOISE:
             cprintf("Noise");
@@ -647,12 +674,12 @@ void update_message_status()
     if (!SysEnv.have_messages)
         return;
 
-    static const char * const msg = "(Hit _)";
+    const string msg = jtrans("(Hit _)");
 
     textcolour(LIGHTBLUE);
 
     CGOTOXY(crawl_view.hudsz.x - strwidth(msg) + 1, 1, GOTO_STAT);
-    CPRINTF(msg);
+    CPRINTF("%s", msg.c_str());
 
     textcolour(LIGHTGREY);
 }
@@ -671,7 +698,7 @@ void update_turn_count()
         return;
     }
 
-    const int turncount_start_x = 19 + 6;
+    const int turncount_start_x = _turncount_start_x();
     int ypos = 9;
     // TODO: unify this with the calculation in print_stats
     if (you.has_mutation(MUT_HP_CASTING) && !_is_using_small_layout())
@@ -724,7 +751,9 @@ static void _print_stats_equip(int x, int y)
     for (int i = SLOT_FIRST_STANDARD; i < NUM_EQUIP_SLOTS; ++i)
         total_slots += you.equipment.num_slots[i];
 
-    cprintf(total_slots > 8 ? "Eq: " : "Equip: ");
+    // 英語と同じ表示幅(4 / 7)にそろえる
+    cprintf("%s", total_slots > 8 ? _hud_caption("Eq: ").c_str()
+                                  : _hud_caption("Equip: ").c_str());
     textcolour(LIGHTGREY);
     for (equipment_slot slot : slot_order)
     {
@@ -774,7 +803,7 @@ static void _print_stats_noise(int x, int y)
     bool silence = silenced(you.pos());
     int level = silence ? 0 : you.get_noise_perception(true);
     textcolour(HUD_CAPTION_COLOUR);
-    CPRINTF("Noise: ");
+    CPRINTF("%s", _hud_caption("Noise: ").c_str());
     colour_t noisecolour;
 
     // This is calibrated roughly so that in an open-ish area:
@@ -827,7 +856,7 @@ static void _print_stats_noise(int x, int y)
 
         // This needs to be one extra wide in case silence happens
         // immediately after super-loud (magenta) noise
-        CPRINTF("Silenced  ");
+        CPRINTF("%s", chop_string(tagged_jtrans("[hud]", "Silenced"), 10).c_str());
         Noise_Bar.reset(); // so it doesn't display a change bar after silence ends
     }
     else
@@ -869,8 +898,9 @@ static void _print_stats_gold(int x, int y)
     if (!_is_using_small_layout())
     {
         CGOTOXY(x, y, GOTO_STAT);
-        CPRINTF("Gold:");
-        CGOTOXY(x+6, y, GOTO_STAT);
+        const string caption = jtrans("Gold:");
+        CPRINTF("%s", caption.c_str());
+        CGOTOXY(x + max(6, strwidth(caption) + 1), y, GOTO_STAT);
     }
     else
     {
@@ -913,7 +943,8 @@ static void _print_stats_mp(int x, int y)
     }
 
     textcolour(HUD_CAPTION_COLOUR);
-    CPRINTF(player_drained() ? "MP: " : "Magic:  ");
+    CPRINTF("%s", player_drained() ? "MP: "
+                                   : _hud_caption("Magic:  ").c_str());
     textcolour(mp_colour);
     CPRINTF("%d", you.magic_points);
     if (!boosted)
@@ -979,7 +1010,8 @@ static void _print_stats_hp(int x, int y)
     // Health: xxx/yyy (zzz)
     CGOTOXY(x, y, GOTO_STAT);
     textcolour(HUD_CAPTION_COLOUR);
-    CPRINTF(player_drained() ? "HP: " : "Health: ");
+    CPRINTF("%s", player_drained() ? "HP: "
+                                   : _hud_caption("Health: ").c_str());
     textcolour(hp_colour);
     CPRINTF("%d", you.hp);
     if (!boosted)
@@ -1028,12 +1060,15 @@ static short _get_stat_colour(stat_type stat)
 
 static void _print_stat(stat_type stat, int x, int y)
 {
-    CGOTOXY(x+5, y, GOTO_STAT);
+    // 日本語の見出し(「腕力:」は幅 5)の後ろに 1 桁あける。小さいレイアウトは
+    // _cgotoxy_touchui が座標で判定するので元の x+5 のまま。
+    const bool small = _is_using_small_layout();
+    CGOTOXY(x + (small ? 5 : 6), y, GOTO_STAT);
 
     textcolour(_get_stat_colour(stat));
     CPRINTF("%d", you.stat(stat, false));
-    if (!_is_using_small_layout())
-        CPRINTF("    ");
+    if (!small)
+        CPRINTF("   ");
 }
 
 static void _print_stats_doom(int x, int y)
@@ -1051,7 +1086,7 @@ static void _print_stats_doom(int x, int y)
     CGOTOXY(x, y, GOTO_STAT);
     textcolour(HUD_CAPTION_COLOUR);
     if (!_is_using_small_layout())
-        CPRINTF("Doom: ");
+        CPRINTF("%s", _hud_caption("Doom: ").c_str());
     else
         CPRINTF("Doom ");
 
@@ -1084,7 +1119,7 @@ static void _print_stats_contam(int x, int y)
     CGOTOXY(x, y, GOTO_STAT);
     textcolour(HUD_CAPTION_COLOUR);
     if (!_is_using_small_layout())
-        CPRINTF("Contam: ");
+        CPRINTF("%s", _hud_caption("Contam: ").c_str());
     else
         CPRINTF("Cont ");
 
@@ -1101,6 +1136,13 @@ static void _print_stats_contam(int x, int y)
     you.redraw_contam = false;
 }
 
+// AC・EV・SH の値の位置。日本語の見出し(「回避:」は幅 5)の後ろに 1 桁あける。
+// 小さいレイアウトは _cgotoxy_touchui が座標で判定するので元の x+4 のまま。
+static int _ac_ev_sh_value_offset()
+{
+    return _is_using_small_layout() ? 4 : 6;
+}
+
 static void _print_stats_ac(int x, int y)
 {
     // AC:
@@ -1111,7 +1153,7 @@ static void _print_stats_ac(int x, int y)
         ac += make_stringf("(%d%%) ", you.gdr_perc(false));
 #endif
     textcolour(text_col);
-    CGOTOXY(x+4, y, GOTO_STAT);
+    CGOTOXY(x + _ac_ev_sh_value_offset(), y, GOTO_STAT);
     CPRINTF("%-12s", ac.c_str());
 
     // SH: (two lines lower)
@@ -1119,7 +1161,7 @@ static void _print_stats_ac(int x, int y)
 
     string sh = make_stringf("%2d ", player_displayed_shield_class());
     textcolour(text_col);
-    CGOTOXY(x+4, y+2, GOTO_STAT);
+    CGOTOXY(x + _ac_ev_sh_value_offset(), y+2, GOTO_STAT);
     CPRINTF("%-12s", sh.c_str());
 
     you.redraw_armour_class = false;
@@ -1127,7 +1169,7 @@ static void _print_stats_ac(int x, int y)
 
 static void _print_stats_ev(int x, int y)
 {
-    CGOTOXY(x+4, y, GOTO_STAT);
+    CGOTOXY(x + _ac_ev_sh_value_offset(), y, GOTO_STAT);
 
     // Color EV based on whether temporary effects are raising or lowering it
     const int bonus = you.evasion_scaled(100) - you.evasion_scaled(100, true);
@@ -1150,7 +1192,8 @@ static int _wpn_name_colour(const item_def &wpn)
         return RED;
 
     const string prefix = item_prefix(wpn);
-    const int prefcol = menu_colour(wpn.name(DESC_INVENTORY),
+    // menu_colour のパターンは英語の名前と照合する
+    const int prefcol = menu_colour(item_name_en(wpn, DESC_INVENTORY),
                                     prefix, "stats", false);
     if (prefcol != -1)
         return prefcol;
@@ -1328,6 +1371,16 @@ static void _get_status_lights(vector<status_light>& out)
             _add_status_light_to_out(status, out);
 }
 
+#ifdef USE_TILE_LOCAL
+// 先頭の 1 文字(日本語は 3 バイトなので "%.1s" では切れない)
+static string _first_char(const string &s)
+{
+    char32_t c;
+    const int len = utf8towc(&c, s.c_str());
+    return s.substr(0, len);
+}
+#endif
+
 static void _print_status_lights(int y)
 {
     vector<status_light> lights;
@@ -1402,9 +1455,9 @@ static void _print_status_lights(int y)
                     CPRINTF("%s",lights[i_light].text.c_str());
                 }
                 else if ((int)lights.size() > crawl_view.hudsz.x / 2)
-                    CPRINTF("%.1s",lights[i_light].text.c_str());
+                    CPRINTF("%s", _first_char(lights[i_light].text).c_str());
                 else
-                    CPRINTF("%.1s ",lights[i_light].text.c_str());
+                    CPRINTF("%s ", _first_char(lights[i_light].text).c_str());
                 ++i_light;
             }
         }
@@ -1429,29 +1482,28 @@ static void _draw_wizmode_flag(const char *word)
 static void _redraw_title()
 {
     const unsigned int WIDTH = crawl_view.hudsz.x;
-    string title = filtered_lang(player_title());
-    title = you.your_name + (title[0] == ',' ? "" : " ") + title;
+    // 日本語の形は「称号『名前』」(player_title() は冠詞なし)
+    const string jtitle = filtered_lang(player_title());
+    string title = make_stringf("%s『%s』", jtitle.c_str(),
+                                you.your_name.c_str());
     const bool small_layout = _is_using_small_layout();
 
     if (small_layout)
         title = you.your_name;
     else
     {
-        unsigned int in_len = strwidth(title);
-        if (in_len > WIDTH)
+        const int over = strwidth(title) - (int)WIDTH;
+        if (over > 0)
         {
-            in_len -= 3;  // strwidth(" the ") - strwidth(", ")
-
-            const unsigned int name_len = strwidth(you.your_name);
-            string trimmed_name = you.your_name;
+            const int name_len = strwidth(you.your_name);
             // Squeeze name if required, the "- 8" is to not squeeze too much.
-            if (in_len > WIDTH && (name_len - 8) > (in_len - WIDTH))
+            if (name_len - 8 > over)
             {
-                trimmed_name = chop_string(trimmed_name,
-                                           name_len - (in_len - WIDTH) - 1);
+                const string trimmed_name =
+                    chop_string(you.your_name, name_len - over - 1, false);
+                title = make_stringf("%s『%s』", jtitle.c_str(),
+                                     trimmed_name.c_str());
             }
-
-            title = trimmed_name + ", " + filtered_lang(player_title(false));
         }
     }
 
@@ -1473,7 +1525,8 @@ static void _redraw_title()
     // Minotaur [of God] [Piety]
     textcolour(YELLOW);
     CGOTOXY(1, 2, GOTO_STAT);
-    string species = player_species_name();
+    // 「丘オーク トログの信徒 ******」
+    string species = tagged_jtrans("[spec name]", player_species_name());
     NOWRAP_EOL_CPRINTF("%s", species.c_str());
     if (you_worship(GOD_NO_GOD))
     {
@@ -1504,9 +1557,18 @@ static void _redraw_title()
             god = "";
         }
         else
-            god = " of ";
-        god += you_worship(GOD_JIYVA) ? god_name_jiyva(true)
-                                      : god_name(you.religion);
+            god = " ";
+        // ジーヴァの 2 つ目の名前はランダムな英字のまま
+        string god_name_str = god_name_j(you.religion);
+        if (you_worship(GOD_JIYVA) && !you.jiyva_second_name.empty())
+            god_name_str += "・" + you.jiyva_second_name;
+        if (small_layout)
+            god += god_name_str;
+        else
+        {
+            god += make_stringf(tagged_jtransc("[hud]", "of %s"),
+                                god_name_str.c_str());
+        }
         NOWRAP_EOL_CPRINTF("%s", god.c_str());
         formatted_string piety = formatted_string::parse_string(_god_asterisks(true));
         textcolour(_god_status_colour(YELLOW));
@@ -1598,7 +1660,7 @@ void print_stats()
     {
         CGOTOXY(1, 8 - rows_hidden, GOTO_STAT);
         textcolour(Options.status_caption_colour);
-        CPRINTF("XL: ");
+        CPRINTF("%s", _hud_caption("XL: ").c_str());
         if (_is_using_small_layout())
             CGOTOXY(5, 8, GOTO_STAT);
         textcolour(HUD_VALUE_COLOUR);
@@ -1609,7 +1671,7 @@ void print_stats()
         {
             textcolour(Options.status_caption_colour);
             if (!_is_using_small_layout())
-                CPRINTF("Next: ");
+                CPRINTF("%s", _hud_caption("Next: ").c_str());
             else
                 CGOTOXY(14, 8, GOTO_STAT);
             textcolour(HUD_VALUE_COLOUR);
@@ -1650,7 +1712,7 @@ void print_stats_level()
 
     CGOTOXY(19, ypos, GOTO_STAT);
     textcolour(HUD_CAPTION_COLOUR);
-    CPRINTF("Place: ");
+    CPRINTF("%s", _hud_caption("Place: ").c_str());
 
     if (_is_using_small_layout())
         CGOTOXY(26, ypos, GOTO_STAT);
@@ -1658,7 +1720,16 @@ void print_stats_level()
 #ifdef DEBUG_DIAGNOSTICS
     CPRINTF("(%d) ", env.absdepth0 + 1);
 #endif
-    CPRINTF("%s", _level_description_string_hud().c_str());
+    string place = _level_description_string_hud();
+    // 日本語の場所名は長くなるので、欄の幅で切る(小さいレイアウトは
+    // _cprintf_touchui で切る)
+    if (!_is_using_small_layout())
+    {
+        const int place_width = crawl_view.hudsz.x
+                                - (wherex() - crawl_view.hudp.x);
+        place = chop_string(place, max(0, place_width), false);
+    }
+    CPRINTF("%s", place.c_str());
     clear_to_end_of_line();
 }
 
@@ -1686,18 +1757,20 @@ void draw_border()
     int dex_pos = sh_pos;
 
     // "Health:" and "Magic:" printed elsewhere
+    // 日本語の見出しは幅 5 まで(値は _ac_ev_sh_value_offset() と
+    // _print_stat() で 1 桁右にずらしてある)
     CGOTOXY(1, ac_pos, GOTO_STAT); CPRINTF("AC:");
-    CGOTOXY(1, ev_pos, GOTO_STAT); CPRINTF("EV:");
-    CGOTOXY(1, sh_pos, GOTO_STAT); CPRINTF("SH:");
+    CGOTOXY(1, ev_pos, GOTO_STAT); CPRINTF("%s", _hud_caption("EV:", 5).c_str());
+    CGOTOXY(1, sh_pos, GOTO_STAT); CPRINTF("%s", _hud_caption("SH:", 5).c_str());
 
-    CGOTOXY(19, str_pos, GOTO_STAT); CPRINTF("Str:");
-    CGOTOXY(19, int_pos, GOTO_STAT); CPRINTF("Int:");
-    CGOTOXY(19, dex_pos, GOTO_STAT); CPRINTF("Dex:");
+    CGOTOXY(19, str_pos, GOTO_STAT); CPRINTF("%s", _hud_caption("Str:", 5).c_str());
+    CGOTOXY(19, int_pos, GOTO_STAT); CPRINTF("%s", _hud_caption("Int:", 5).c_str());
+    CGOTOXY(19, dex_pos, GOTO_STAT); CPRINTF("%s", _hud_caption("Dex:", 5).c_str());
 
     // "XL:" and "Place:" printed elsewhere
     // "Noise:" printed elsewhere
     CGOTOXY(19, ac_pos + 4, GOTO_STAT);
-    CPRINTF(Options.show_game_time ? "Time:" : "Turn:");
+    CPRINTF("%s", _time_caption().c_str());
 }
 
 #ifndef USE_TILE_LOCAL
@@ -1705,7 +1778,7 @@ void smallterm_warning()
 {
     CGOTOXY(1,1, GOTO_CRT);
     clrscr();
-    CPRINTF("Your terminal window is too small; please resize to at least %d,%d", MIN_COLS, MIN_LINES);
+    CPRINTF(jtransc("Your terminal window is too small; please resize to at least %d,%d"), MIN_COLS, MIN_LINES);
 }
 #endif
 
@@ -1791,14 +1864,7 @@ static string _get_monster_name(const monster_info& mi, int count, bool fullname
     int col;
     mi.to_string(count, monpane_desc, col, fullname, adj);
 
-    if (count == 1)
-    {
-        if (!mi.is(MB_NAME_THE))
-            desc = (is_vowel(monpane_desc[0]) ? "an " : "a ") + desc;
-        else if (adj || !mi.is(MB_NAME_UNQUALIFIED))
-            desc = "the " + desc;
-    }
-
+    // 日本語では冠詞("a " / "the ")を付けない
     desc += monpane_desc;
     return desc;
 }
@@ -1814,11 +1880,8 @@ string mpr_monster_list(bool past)
     string msg = "";
     if (mons.empty())
     {
-        msg  = "There ";
-        msg += (past ? "were" : "are");
-        msg += " no monsters in sight!";
-
-        return msg;
+        return jtrans(past ? "There were no monsters in sight!"
+                           : "There are no monsters in sight!");
     }
 
     vector<string> describe;
@@ -1836,15 +1899,14 @@ string mpr_monster_list(bool past)
 
     describe.push_back(_get_monster_name(mons[mons.size()-1], count, true).c_str());
 
-    msg = "You ";
-    msg += (past ? "could" : "can");
-    msg += " see ";
-
+    string list;
     if (describe.size() == 1)
-        msg += describe[0];
+        list = describe[0];
     else
-        msg += comma_separated_line(describe.begin(), describe.end());
-    msg += ".";
+        list = comma_separated_line(describe.begin(), describe.end(), "、", "、");
+
+    msg = make_stringf(jtransc(past ? "You could see %s." : "You can see %s."),
+                       list.c_str());
 
     return msg;
 }
@@ -1914,14 +1976,15 @@ static void _print_next_monster_desc(const vector<monster_info>& mons,
             mons_to_string_pane(desc, desc_colour, zombified,
                                 mons, start, count);
             textcolour(desc_colour);
-            if (static_cast<int>(desc.length()) > crawl_view.mlistsz.x - printed)
+            // 日本語の名前があるので、バイト数ではなく表示幅で切る・埋める
+            if (strwidth(desc) > crawl_view.mlistsz.x - printed)
             {
                 ASSERT(crawl_view.mlistsz.x - 2 - printed >= 0);
-                desc.resize(crawl_view.mlistsz.x - 2 - printed, ' ');
+                desc = chop_string(desc, crawl_view.mlistsz.x - 2 - printed);
                 desc += "…)";
             }
             else
-                desc.resize(crawl_view.mlistsz.x - printed, ' ');
+                desc = chop_string(desc, crawl_view.mlistsz.x - printed);
             CPRINTF("%s", desc.c_str());
         }
     }
@@ -2075,7 +2138,7 @@ static string _stealth_bar(int label_length, int sw)
     string bar;
     //no colouring
     bar += _determine_colour_string(0, 5);
-    bar += chop_string("Stlth", label_length);
+    bar += chop_string(tagged_jtrans("[overview]", "Stlth"), label_length);
 
     const int unadjusted_pips = stealth_pips();
     const int bar_len = 10;
@@ -2100,7 +2163,9 @@ static void _append_overview_screen_item(column_composer& cols,
                                          bool melded)
 {
     const string prefix = item_prefix(item);
-    const int prefcol = menu_colour(item.name(DESC_INVENTORY), prefix, "resists", false);
+    // menu_colour のパターンは英語の名前と照合する
+    const int prefcol = menu_colour(item_name_en(item, DESC_INVENTORY), prefix,
+                                    "resists", false);
     const int col = prefcol == -1 ? LIGHTGREY : prefcol;
 
     // Colour melded equipment dark grey.
@@ -2109,13 +2174,15 @@ static void _append_overview_screen_item(column_composer& cols,
     const int item_idx = item.link;
     const char equip_char = index_to_letter(item_idx);
 
+    const string melded_str = melded
+        ? tagged_jtrans("[overview]", "melded") + " " : "";
     string str = make_stringf(
                     "<w>%c</w> - <%s>%s%s</%s>",
                     equip_char,
                     colname.c_str(),
-                    melded ? "melded " : "",
+                    melded_str.c_str(),
                     chop_string(item.name(DESC_PLAIN, true),
-                            melded ? sw - 32 : sw - 25, false).c_str(),
+                            sw - 25 - strwidth(melded_str), false).c_str(),
                     colname.c_str());
     equip_chars.push_back(equip_char);
 
@@ -2138,7 +2205,9 @@ static void _print_overview_screen_equip(column_composer& cols,
         if (num_slots == 0)
             continue;
 
-        const string slot_name_lwr = lowercase_string(equip_slot_name(slot));
+        // 訳は transform.txt の [equip slot]
+        const string slot_name_lwr =
+            tagged_jtrans("[equip slot]", equip_slot_name(slot));
         const bool slot_melded = slot_is_melded(slot);
         string str;
 
@@ -2151,16 +2220,24 @@ static void _print_overview_screen_equip(column_composer& cols,
                 if (slot == SLOT_WEAPON && i == 0)
                     str = "  - " + you.unarmed_attack_name();
                 else if (slot_melded)
-                    str = "<darkgrey>(" + slot_name_lwr + " unavailable)</darkgrey>";
+                {
+                    str = make_stringf(jtransc("<darkgrey>(%s unavailable)</darkgrey>"),
+                                       slot_name_lwr.c_str());
+                }
                 else
-                    str = "<darkgrey>(no " + slot_name_lwr + ")</darkgrey>";
+                {
+                    str = make_stringf(jtransc("<darkgrey>(no %s)</darkgrey>"),
+                                       slot_name_lwr.c_str());
+                }
 
                 cols.add_formatted(1, str, false);
                 continue;
             }
             else if (equipped[i].is_overflow)
             {
-                str = "  <darkgrey>[" + slot_name_lwr + " occupied]</darkgrey>";
+                str = "  " + make_stringf(
+                    jtransc("<darkgrey>[%s occupied]</darkgrey>"),
+                    slot_name_lwr.c_str());
                 cols.add_formatted(1, str, false);
                 continue;
             }
@@ -2180,21 +2257,22 @@ static void _print_overview_screen_equip(column_composer& cols,
 
 static string _overview_screen_title(int sw)
 {
+    // 日本語の形は「称号『名前』(種族の職業)」(player_title() は冠詞なし)
     string title = player_title();
-    title = (title[0] == ',' ? "" : " ") + title + " ";
 
-    string species_job = make_stringf("(%s %s)",
-                                      species::name(you.species).c_str(),
-                                      get_job_name(you.char_class));
+    string species_job = make_stringf(tagged_jtransc("[overview]", "(%s %s)"),
+                                      species_name_jc(you.species),
+                                      job_name_jc(you.char_class));
 
     handle_real_time();
-    string time_turns = make_stringf(" Turns: %d, Time: ", you.num_turns)
+    string time_turns = make_stringf(jtrans_notrimc(" Turns: %d, Time: "),
+                                     you.num_turns)
                       + make_time_string(you.real_time(), true);
 
     const int char_width = strwidth(species_job);
     const int title_width = strwidth(title);
 
-    int linelength = strwidth(you.your_name) + title_width
+    int linelength = strwidth(you.your_name) + strwidth("『』") + title_width
                    + char_width + strwidth(time_turns);
 
     if (linelength >= sw)
@@ -2208,14 +2286,14 @@ static string _overview_screen_title(int sw)
     // Still not enough?
     if (linelength >= sw)
     {
-        title = " ";
-        linelength -= (title_width - 1);
+        title = "";
+        linelength -= title_width;
     }
 
     string text;
     text = "<yellow>";
-    text += you.your_name;
     text += title;
+    text += "『" + you.your_name + "』";
     text += species_job;
 
     const int num_spaces = sw - linelength - 1;
@@ -2232,7 +2310,7 @@ static string _overview_screen_title(int sw)
 static string _wiz_god_powers()
 {
     string godpowers = god_name(you.religion);
-    return make_stringf("%s %d (%d)", god_name(you.religion).c_str(),
+    return make_stringf("%s %d (%d)", god_name_jc(you.religion),
                                       you.raw_piety,
                                       you.duration[DUR_PIETY_POOL]);
 }
@@ -2243,7 +2321,7 @@ static string _god_powers()
     if (you_worship(GOD_NO_GOD))
         return "";
 
-    const string name = god_name(you.religion);
+    const string name = god_name_j(you.religion);
     if (you_worship(GOD_GOZAG))
         return colour_string(name, _god_status_colour(god_colour(you.religion)));
 
@@ -2308,6 +2386,13 @@ static int _god_status_colour(int default_colour)
     return default_colour;
 }
 
+// 概要画面の見出しを日本語にして、表示幅 width(省略時は英語と同じ幅)に
+// 詰める。辞書のキーは前後の空白を除いたもの。
+static string _overview_caption(const char *en, int width = -1)
+{
+    return chop_string(jtrans(en), width < 0 ? strwidth(en) : width);
+}
+
 static vector<formatted_string> _get_overview_stats()
 {
     formatted_string entry;
@@ -2326,7 +2411,7 @@ static vector<formatted_string> _get_overview_stats()
     if (player_drained())
         entry.cprintf("HP:   ");
     else
-        entry.cprintf("Health: ");
+        entry.cprintf("%s", _overview_caption("Health: ").c_str());
 
     if (_boosted_hp())
         entry.textcolour(LIGHTBLUE);
@@ -2346,7 +2431,7 @@ static vector<formatted_string> _get_overview_stats()
         if (player_drained())
             entry.cprintf("MP:   ");
         else
-            entry.cprintf("Magic:  ");
+            entry.cprintf("%s", _overview_caption("Magic:  ").c_str());
 
         if (_boosted_mp())
             entry.textcolour(LIGHTBLUE);
@@ -2367,10 +2452,8 @@ static vector<formatted_string> _get_overview_stats()
     }
 
     entry.textcolour(HUD_CAPTION_COLOUR);
-    if (player_drained())
-        entry.cprintf("Gold: ");
-    else
-        entry.cprintf("Gold:   ");
+    // 「所持金:」は幅 7 なので、HP が減っているときも幅 8 にする
+    entry.cprintf("%s", _overview_caption("Gold:   ").c_str());
 
     entry.textcolour(HUD_VALUE_COLOUR);
 
@@ -2380,7 +2463,8 @@ static vector<formatted_string> _get_overview_stats()
     entry.clear();
 
     entry.textcolour(HUD_CAPTION_COLOUR);
-    entry.cprintf("AC: ");
+    // AC は英語のまま(EV・SH の日本語の見出しと幅をそろえる)
+    entry.cprintf("%s", chop_string("AC:", 6).c_str());
 
     entry.textcolour(_colour_from_stat_mod(you.temp_ac_mod()));
 
@@ -2390,7 +2474,7 @@ static vector<formatted_string> _get_overview_stats()
     entry.clear();
 
     entry.textcolour(HUD_CAPTION_COLOUR);
-    entry.cprintf("EV: ");
+    entry.cprintf("%s", _overview_caption("EV: ", 6).c_str());
 
     entry.textcolour(_colour_from_stat_mod(you.temp_ev_mod()));
 
@@ -2400,7 +2484,7 @@ static vector<formatted_string> _get_overview_stats()
     entry.clear();
 
     entry.textcolour(HUD_CAPTION_COLOUR);
-    entry.cprintf("SH: ");
+    entry.cprintf("%s", _overview_caption("SH: ", 6).c_str());
 
     entry.textcolour(_colour_from_stat_mod(you.temp_sh_mod()));
 
@@ -2410,7 +2494,7 @@ static vector<formatted_string> _get_overview_stats()
     entry.clear();
 
     entry.textcolour(HUD_CAPTION_COLOUR);
-    entry.cprintf("Str: ");
+    entry.cprintf("%s", _overview_caption("Str: ", 6).c_str());
 
     entry.textcolour(_get_stat_colour(STAT_STR));
 
@@ -2420,7 +2504,7 @@ static vector<formatted_string> _get_overview_stats()
     entry.clear();
 
     entry.textcolour(HUD_CAPTION_COLOUR);
-    entry.cprintf("Int: ");
+    entry.cprintf("%s", _overview_caption("Int: ", 6).c_str());
 
     entry.textcolour(_get_stat_colour(STAT_INT));
 
@@ -2430,7 +2514,7 @@ static vector<formatted_string> _get_overview_stats()
     entry.clear();
 
     entry.textcolour(HUD_CAPTION_COLOUR);
-    entry.cprintf("Dex: ");
+    entry.cprintf("%s", _overview_caption("Dex: ", 6).c_str());
 
     entry.textcolour(_get_stat_colour(STAT_DEX));
 
@@ -2440,7 +2524,8 @@ static vector<formatted_string> _get_overview_stats()
     entry.clear();
 
     entry.textcolour(HUD_CAPTION_COLOUR);
-    entry.cprintf("XL:     ");
+    entry.cprintf("%s",
+        chop_string(tagged_jtrans("[overview]", "XL:"), 8).c_str());
 
     entry.textcolour(HUD_VALUE_COLOUR);
     entry.cprintf("%d", you.experience_level);
@@ -2448,7 +2533,8 @@ static vector<formatted_string> _get_overview_stats()
     if (you.experience_level < you.get_max_xl())
     {
         entry.textcolour(HUD_CAPTION_COLOUR);
-        entry.cprintf("   Next: ");
+        entry.cprintf("   %s ",
+            tagged_jtrans("[overview]", "Next:").c_str());
 
         entry.textcolour(HUD_VALUE_COLOUR);
         entry.cprintf("%d%%", get_exp_progress());
@@ -2458,7 +2544,7 @@ static vector<formatted_string> _get_overview_stats()
     entry.clear();
 
     entry.textcolour(HUD_CAPTION_COLOUR);
-    entry.cprintf("God:    ");
+    entry.cprintf("%s", _overview_caption("God:    ").c_str());
 
     entry.textcolour(HUD_VALUE_COLOUR);
 
@@ -2475,10 +2561,10 @@ static vector<formatted_string> _get_overview_stats()
     if (!you.has_mutation(MUT_INNATE_CASTER))
     {
         entry.textcolour(HUD_CAPTION_COLOUR);
-        entry.cprintf("Spells: ");
+        entry.cprintf("%s", _overview_caption("Spells: ").c_str());
 
         entry.textcolour(HUD_VALUE_COLOUR);
-        entry.cprintf("%d/%d levels left",
+        entry.cprintf(jtransc("%d/%d levels left"),
                       player_spell_levels(), player_total_spell_levels());
 
         cols.add_formatted(3, entry.to_colour_string(), false);
@@ -2488,13 +2574,13 @@ static vector<formatted_string> _get_overview_stats()
     if (you.has_mutation(MUT_MULTILIVED))
     {
         entry.textcolour(HUD_CAPTION_COLOUR);
-        entry.cprintf("Lives:  ");
+        entry.cprintf("%s", _overview_caption("Lives:  ").c_str());
 
         entry.textcolour(HUD_VALUE_COLOUR);
         entry.cprintf("%d", you.lives);
 
         entry.textcolour(HUD_CAPTION_COLOUR);
-        entry.cprintf("   Deaths: ");
+        entry.cprintf("   %s ", jtrans("Deaths:").c_str());
 
         entry.textcolour(HUD_VALUE_COLOUR);
         entry.cprintf("%d", you.deaths);
@@ -2523,7 +2609,7 @@ static string _resist_composer(const char * name, int spacing, int value,
                          || type == MR_NO_FLAGS && value == WILL_INVULN);
 
     string colour = _determine_colour_string(value, max, immune);
-    out += chop_string(name, spacing);
+    out += chop_string(tagged_jtrans("[overview]", name), spacing);
     out += desc_resist(value, max, immune);
 
     if ((!Options.show_resist_percent) || type == MR_NO_FLAGS)
@@ -2568,7 +2654,8 @@ static string _resist_composer(const char * name, int spacing, int value,
         num_colour = "darkgrey";
 
     string num_str = make_stringf("(%d%%)", res_percent);
-    int padding = std::max(0, (int)(15 - strwidth(out)));
+    // 英語では見出し 8 桁 + 7 桁。日本語の見出しの幅(spacing)に合わせる
+    int padding = std::max(0, (int)(spacing + 7 - strwidth(out)));
 
     out = make_stringf("%s%s%s<%s>%s</%s>", colour.c_str(), out.c_str(),
                         string(padding, ' ').c_str(),
@@ -2586,7 +2673,8 @@ static vector<formatted_string> _get_overview_resistances(
     column_composer cols(2, Options.show_resist_percent ? 25 : 22);
 
     // First column, resist name is up to 8 chars
-    int cwidth = 8;
+    // 日本語の見出し(「火炎耐性」など)は幅 8 なので 2 桁あける
+    int cwidth = 10;
     string out;
 
     const int rfire = player_res_fire(false);
@@ -2613,24 +2701,28 @@ static vector<formatted_string> _get_overview_resistances(
     const int rmagi = player_willpower() / WL_PIP;
     out += _resist_composer("Will", cwidth, rmagi, MAX_WILL_PIPS) + "\n";
 
-    out += _stealth_bar(cwidth, 20) + "\n";
+    out += _stealth_bar(cwidth, cwidth + 12) + "\n";
 
     const int regen = player_regen(); // round up
-    out += chop_string("HPRegen", cwidth);
-    out += make_stringf("%d.%02d/turn\n", regen/100, regen%100);
+    out += chop_string(tagged_jtrans("[overview]", "HPRegen"), cwidth);
+    out += make_stringf(jtransc("%d.%02d/turn"), regen/100, regen%100);
+    out += "\n";
 
     if (!you.has_mutation(MUT_HP_CASTING))
     {
-        out += chop_string("MPRegen", cwidth);
+        out += chop_string(tagged_jtrans("[overview]", "MPRegen"), cwidth);
 #if TAG_MAJOR_VERSION == 34
         const bool etheric = you.unrand_equipped(UNRAND_ETHERIC_CAGE);
         const int mp_regen = player_mp_regen() //round up
                             + (etheric ? 50 : 0); // on average
-        out += make_stringf("%d.%02d/turn%s\n", mp_regen / 100, mp_regen % 100,
-                            etheric ? "*" : "");
+        out += make_stringf(jtransc("%d.%02d/turn"), mp_regen / 100,
+                            mp_regen % 100);
+        out += etheric ? "*\n" : "\n";
 #else
         const int mp_regen = player_mp_regen(); // round up
-        out += make_stringf("%d.%02d/turn\n", mp_regen / 100, mp_regen % 100);
+        out += make_stringf(jtransc("%d.%02d/turn"), mp_regen / 100,
+                            mp_regen % 100);
+        out += "\n";
 #endif
     }
 
@@ -2725,7 +2817,8 @@ static string _rampage_passive_string()
     const int rampage = you.rampaging();
     if (rampage)
     {
-        desc += you.has_mutation(MUT_ROLLPAGE) ? "roll" : "rampage";
+        desc += tagged_jtrans("[passive]", you.has_mutation(MUT_ROLLPAGE)
+                                           ? "roll" : "rampage");
 
         const bool infinite = you.unrand_equipped(UNRAND_SEVEN_LEAGUE_BOOTS);
         const char *inf = Options.char_set == CSET_ASCII ? "+inf"
@@ -2743,29 +2836,31 @@ static string _extra_passive_effects()
 
     // Fo don't need a reminder that they can't teleport
     if (!you.stasis() && you.no_tele(false, false))
-        passives.emplace_back("no teleportation");
+        passives.emplace_back(tagged_jtrans("[passive]", "no teleportation"));
 
     if (you.no_cast())
-        passives.emplace_back("no spellcasting");
+        passives.emplace_back(tagged_jtrans("[passive]", "no spellcasting"));
 
     if (you.inaccuracy())
     {
         passives.emplace_back(
-            make_stringf("inaccuracy (-%d)", you.inaccuracy_penalty()).c_str());
+            make_stringf(tagged_jtransc("[passive]", "inaccuracy (-%d)"),
+                         you.inaccuracy_penalty()).c_str());
     }
 
     const int anger = you.angry();
     if (anger && !you.stasis() && !you.clarity() && !you.is_lifeless_undead())
     {
         passives.emplace_back(
-            make_stringf("random rage (%d%%)", anger).c_str());
+            make_stringf(tagged_jtransc("[passive]", "random rage (%d%%)"),
+                         anger).c_str());
     }
 
     const int corrode = you.scan_artefacts(ARTP_CORRODE);
     if (corrode)
     {
         passives.emplace_back(
-            make_stringf("corrode self (%d%%)",
+            make_stringf(tagged_jtransc("[passive]", "corrode self (%d%%)"),
                          corrosion_chance(corrode)).c_str());
     }
 
@@ -2773,54 +2868,60 @@ static string _extra_passive_effects()
     if (you.scan_artefacts(ARTP_SLOW))
     {
         passives.emplace_back(
-            make_stringf("slow self (%d%%)", slow).c_str());
+            make_stringf(tagged_jtransc("[passive]", "slow self (%d%%)"),
+                         slow).c_str());
     }
 
     const int harm = you.extra_harm();
     if (harm)
     {
         passives.emplace_back(
-            make_stringf("harm (+%d%% outgoing, +%d%% incoming)",
+            make_stringf(tagged_jtransc("[passive]",
+                                        "harm (+%d%% outgoing, +%d%% incoming)"),
                          outgoing_harm_amount(harm),
                          incoming_harm_amount(harm)).c_str());
     }
 
     if (you.wearing_ego(OBJ_ARMOUR, SPARM_MAYHEM))
-        passives.emplace_back("mayhem");
+        passives.emplace_back(tagged_jtrans("[passive]", "mayhem"));
 
     if (you.missile_repulsion())
-        passives.emplace_back("repel missiles");
+        passives.emplace_back(tagged_jtrans("[passive]", "repel missiles"));
 
     if (you.reflection())
-        passives.emplace_back("reflection");
+        passives.emplace_back(tagged_jtrans("[passive]", "reflection"));
 
     if (player_acrobatic())
-        passives.emplace_back("acrobat");
+        passives.emplace_back(tagged_jtrans("[passive]", "acrobat"));
 
     if (you.clarity())
-        passives.emplace_back("clarity");
+        passives.emplace_back(tagged_jtrans("[passive]", "clarity"));
 
     if (you.rmut_from_item()
         || you.get_mutation_level(MUT_MUTATION_RESISTANCE) == 3)
     {
-        passives.emplace_back("resist mutation");
+        passives.emplace_back(tagged_jtrans("[passive]", "resist mutation"));
     }
 
     if (you.spirit_shield())
-        passives.emplace_back("guardian spirit");
+        passives.emplace_back(tagged_jtrans("[passive]", "guardian spirit"));
 
     if (you.rampaging())
         passives.emplace_back(_rampage_passive_string().c_str());
 
     if (you.faith())
-        passives.emplace_back("faith");
+        passives.emplace_back(tagged_jtrans("[passive]", "faith"));
 
     const int wizardry = player_wizardry();
     if (wizardry)
-        passives.emplace_back(make_stringf("wizardry (x%d)", wizardry));
+    {
+        passives.emplace_back(
+            make_stringf(tagged_jtransc("[passive]", "wizardry (x%d)"),
+                         wizardry));
+    }
 
     if (you.archmagi())
-        passives.emplace_back("archmagi");
+        passives.emplace_back(tagged_jtrans("[passive]", "archmagi"));
 
     if (you.wearing_ego(OBJ_ARMOUR, SPARM_ENERGY))
     {
@@ -2828,24 +2929,25 @@ static string _extra_passive_effects()
         if (channel)
         {
             passives.emplace_back(
-                make_stringf("channel magic (%d%%)", channel).c_str());
+                make_stringf(tagged_jtransc("[passive]", "channel magic (%d%%)"),
+                             channel).c_str());
         }
     }
 
     if (you.infusion_amount())
     {
         passives.emplace_back(
-            make_stringf("infuse magic (%d %s)",
+            make_stringf(tagged_jtransc("[passive]", "infuse magic (%d %s)"),
                          you.infusion_amount(),
                          you.has_mutation(MUT_HP_CASTING) ? "HP"
                                                           : "MP").c_str());
     }
 
     if (passives.empty())
-        return "no passive effects";
+        return jtrans("no passive effects");
     else
         return comma_separated_line(passives.begin(), passives.end(),
-                                    ", ", ", ");
+                                    "、", "、");
 
 }
 
@@ -2875,13 +2977,14 @@ static string _status_mut_rune_list(int sw)
                            (move_cost <  10) ? "quick" :
                            (move_cost <  13) ? "slow"
                                              : "very slow";
-        status.emplace_back(help);
+        status.emplace_back(tagged_jtrans("[status]", help));
     }
 
+    // inf.short_text は fill_status_info() で日本語になっている
     if (status.empty())
-        text += "no status effects";
+        text += jtrans("no status effects");
     else
-        text += comma_separated_line(status.begin(), status.end(), ", ", ", ");
+        text += comma_separated_line(status.begin(), status.end(), "、", "、");
     text += "\n";
 
     // print mutation information
@@ -2891,21 +2994,28 @@ static string _status_mut_rune_list(int sw)
 
     // print the Orb
     if (player_has_orb())
-        text += "\n<w>0:</w> Orb of Zot";
+        text += "\n<w>0:</w> " + jtrans("Orb of Zot");
 
     // print runes
     vector<string> runes;
     for (int i = 0; i < NUM_RUNE_TYPES; i++)
+    {
         if (you.runes[i])
-            runes.emplace_back(rune_type_name(i));
+        {
+            // 「鉄のルーン」(data-items.txt)から「のルーン」を外して「鉄」
+            const string rune_name =
+                jtrans(string(rune_type_name(i)) + " rune of Zot");
+            runes.emplace_back(replace_all(rune_name, "のルーン", ""));
+        }
+    }
     if (!runes.empty())
     {
-        text += make_stringf("\n<w>%s:</w> %d/%d rune%s: %s",
+        text += "\n";
+        text += make_stringf(jtransc("<w>%s:</w> %d/%d runes: %s"),
                     command_to_string(CMD_DISPLAY_RUNES).c_str(),
                     (int)runes.size(), you.obtainable_runes,
-                    you.obtainable_runes == 1 ? "" : "s",
                     comma_separated_line(runes.begin(), runes.end(),
-                                         ", ", ", ").c_str());
+                                         "、", "、").c_str());
     }
 
     linebreak_string(text, sw);

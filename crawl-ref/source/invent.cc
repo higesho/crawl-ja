@@ -17,12 +17,14 @@
 #include "artefact.h"
 #include "colour.h"
 #include "command.h"
+#include "database.h"
 #include "describe.h"
 #include "env.h"
 #include "evoke.h"
 #include "god-item.h"
 #include "god-passive.h"
 #include "initfile.h"
+#include "item-name.h"
 #include "item-prop.h"
 #include "items.h"
 #include "item-use.h"
@@ -98,9 +100,19 @@ InvEntry::InvEntry(const item_def &i)
     quantity = i.quantity;
 }
 
+// 英語のアイテム名(InvEntry の text の英語版)。item_def::name() は日本語を
+// 返すので、menu_colour などのオプションのパターン照合にはこちらを使う。
+static string _inv_entry_text_en(const item_def &i)
+{
+    if (in_inventory(i) && i.base_type != OBJ_GOLD)
+        return item_name_en(i, DESC_INVENTORY_EQUIP, false).substr(4);
+    return item_name_en(i, DESC_A, false);
+}
+
 int InvEntry::highlight_colour(bool temp) const
 {
-    return menu_colour(get_text(), item_prefix(*item, temp), tag, false);
+    return menu_colour(_inv_entry_text_en(*item), item_prefix(*item, temp), tag,
+                       false);
 }
 
 const string &InvEntry::get_basename() const
@@ -176,7 +188,10 @@ void InvEntry::select(int qty)
 
 string InvEntry::get_filter_text() const
 {
-    return item_prefix(*item, false) + " " + get_text();
+    // drop_filter などのオプションは英語の名前で照合する。メニューで入力する
+    // 検索語は日本語でも当たるように、日本語の名前も後ろに付ける。
+    return item_prefix(*item, false) + " " + _inv_entry_text_en(*item) + " "
+           + get_text();
 }
 
 string InvEntry::_get_text_preface() const
@@ -325,7 +340,8 @@ void InvMenu::set_preselect(const vector<SelItem> *pre)
 
 string slot_description()
 {
-    return make_stringf("%d/%d gear slots", inv_count(INVENT_GEAR), MAX_GEAR);
+    return make_stringf(jtransc("%d/%d gear slots"), inv_count(INVENT_GEAR),
+                        MAX_GEAR);
 }
 
 void InvMenu::set_title(const string &s)
@@ -335,17 +351,18 @@ void InvMenu::set_title(const string &s)
         string str;
         switch (cur_osel)
         {
-            case 0: str = "Gear: " + slot_description(); break;
-            case 1: str = "Potions: "; break;
-            case 2: str = "Scrolls: "; break;
-            case 3: str = "Evocable Items: "; break;
+            case 0: str = jtrans_notrim("Gear: ") + slot_description(); break;
+            case 1: str = jtrans_notrim("Potions: "); break;
+            case 2: str = jtrans_notrim("Scrolls: "); break;
+            case 3: str = jtrans_notrim("Evocable Items: "); break;
         }
-        str += "    (Left/Right/Tab to switch category)";
+        str += jtrans_notrim("    (Left/Right/Tab to switch category)");
         set_title(new InvTitle(this, str, title_annotate));
         return;
     }
 
-    set_title(new InvTitle(this, s.empty() ? "Inventory: " + slot_description()
+    set_title(new InvTitle(this, s.empty() ? jtrans_notrim("Inventory: ")
+                                             + slot_description()
                                            : s,
                            title_annotate));
 }
@@ -501,8 +518,8 @@ string InvMenu::get_select_count_string(int) const
         if (all_sel.empty())
             return "";
 
-        return make_stringf(" %d item%s", (int)all_sel.size(),
-                                          all_sel.size() > 1 ? "s" : "");
+        return make_stringf(jtrans_notrimc(" %d items"),
+                            (int)all_sel.size());
     }
 
     return Menu::get_select_count_string(0);
@@ -560,7 +577,15 @@ static bool _has_temp_unwearable_armour()
  * @return              A message such as "You aren't carrying any weapons."
  *                      "Your armour is currently melded into you.", etc.
  */
+static string _no_selectables_message_en(int item_selector);
+
+// 日本語を返す(英語の文は _no_selectables_message_en())
 string no_selectables_message(int item_selector)
+{
+    return jtrans(_no_selectables_message_en(item_selector));
+}
+
+static string _no_selectables_message_en(int item_selector)
 {
     switch (item_selector)
     {
@@ -986,16 +1011,17 @@ menu_letter InvMenu::load_items(const vector<const item_def*> &mitems,
     if (sort)
         cond = find_menu_sort_condition();
 
-    string select_all;
+    // 「(<w>)</w> キーで一括選択<blue>)」の形(%s はキー)
+    const char *select_all = nullptr;
     if (subkeys)
     {
         // Mention the class selection shortcuts.
         if (is_set(MF_SECONDARY_SCROLL))
-            select_all = "go to first";
+            select_all = "(go to first with <w>%s</w><blue>)";
         else if (is_set(MF_MULTISELECT))
-            select_all = "select all";
+            select_all = "(select all with <w>%s</w><blue>)";
         else
-            select_all = "select first";
+            select_all = "(select first with <w>%s</w><blue>)";
     }
 
     for (int obj = 0; obj < NUM_OBJECT_CLASSES; ++obj)
@@ -1005,7 +1031,8 @@ menu_letter InvMenu::load_items(const vector<const item_def*> &mitems,
         if (!inv_class[i])
             continue;
 
-        string subtitle = item_class_name(i);
+        // item_class_name() は英語のまま(オプションなどの照合用)
+        string subtitle = tagged_jtrans("[item class]", item_class_name(i));
 
         if (subkeys)
         {
@@ -1013,14 +1040,12 @@ menu_letter InvMenu::load_items(const vector<const item_def*> &mitems,
             get_class_hotkeys(i, glyphs);
             if (!glyphs.empty())
             {
-                // longest string
-                const string str = "Magical Staves ";
-                subtitle += string(strwidth(str) - strwidth(subtitle),
-                                   ' ');
-                subtitle += "("+select_all+" with <w>";
+                // longest string(日本語の分類名は幅 16 まで)
+                subtitle += string(max(1, 17 - strwidth(subtitle)), ' ');
+                string glys;
                 for (char gly : glyphs)
-                    subtitle += gly;
-                subtitle += "</w><blue>)";
+                    glys += gly;
+                subtitle += make_stringf(jtransc(select_all), glys.c_str());
             }
         }
         add_entry(new MenuEntry(subtitle, MEL_SUBTITLE));
@@ -1489,7 +1514,8 @@ void display_inventory()
 
 static string _drop_menu_titlefn(const Menu*, const string &)
 {
-    return "Drop what? (Left/Right/Tab to switch category) " + slot_description() + " (_ for help)";
+    return jtrans_notrim("Drop what? (Left/Right/Tab to switch category) ")
+           + slot_description() + jtrans_notrim(" (_ for help)");
 }
 
 /**
@@ -1616,20 +1642,27 @@ bool maybe_warn_about_removing(const item_def& item)
     if (!needs_handle_warning(item, OPER_UNEQUIP, penance))
         return true;
 
+    const char *fmt;
     if (item.base_type == OBJ_WEAPONS || item.base_type == OBJ_STAVES)
-        prompt += "Really unwield ";
+    {
+        fmt = item.cursed() ? "Really unwield and destroy %s?"
+                            : "Really unwield %s?";
+    }
     else if (item.base_type == OBJ_ARMOUR)
-        prompt += "Really take off ";
+    {
+        fmt = item.cursed() ? "Really take off and destroy %s?"
+                            : "Really take off %s?";
+    }
     else
-        prompt += "Really remove ";
+    {
+        fmt = item.cursed() ? "Really remove and destroy %s?"
+                            : "Really remove %s?";
+    }
 
     // now ask
-    if (item.cursed())
-        prompt += "and destroy ";
-    prompt += item.name(DESC_INVENTORY);
-    prompt += "?";
+    prompt = make_stringf(jtransc(fmt), item.name(DESC_INVENTORY).c_str());
     if (penance)
-        prompt += " This could place you under penance!";
+        prompt += jtrans_notrim(" This could place you under penance!");
     return yesno(prompt.c_str(), false, 'n');
 }
 
@@ -1747,16 +1780,20 @@ bool check_warning_inscriptions(const item_def& item,
         }
 
         // XXX: duplicates a check in delay.cc:_finish_delay()
-        string prompt = "Really " + _operation_verb(oper) + " ";
-        prompt += (in_inventory(item) ? item.name(DESC_INVENTORY)
-                                      : item.name(DESC_A));
-        if (needs_notele_warning(item, oper))
-            prompt += " while about to teleport";
-        prompt += "?";
+        // 動詞ごとに文全体を辞書で引く("Really wield %s?" など。
+        // 日本語は「本当に%sを手に持ちますか？」)
+        const string fmt = "Really " + _operation_verb(oper) + " %s"
+                           + (needs_notele_warning(item, oper)
+                              ? " while about to teleport" : "")
+                           + "?";
+        string prompt = make_stringf(jtransc(fmt),
+                                     (in_inventory(item)
+                                      ? item.name(DESC_INVENTORY)
+                                      : item.name(DESC_A)).c_str());
         if (god_despises_item(item, you.religion))
-            prompt += " You'd be excommunicated if you did!";
+            prompt += jtrans_notrim(" You'd be excommunicated if you did!");
         else if (penance)
-            prompt += " This could place you under penance!";
+            prompt += jtrans_notrim(" This could place you under penance!");
         return yesno(prompt.c_str(), false, 'n');
     }
 
@@ -1831,7 +1868,7 @@ int prompt_invent_item(const char *prompt,
         }
 
         if (need_prompt)
-            mprf(MSGCH_PROMPT, "%s (<w>?</w> for menu, <w>Esc</w> to quit)", prompt);
+            mprf(MSGCH_PROMPT, jtransc("%s (<w>?</w> for menu, <w>Esc</w> to quit)"), prompt);
         else
             flush_prev_message();
 
@@ -1945,9 +1982,9 @@ int prompt_invent_item(const char *prompt,
                 ret = letter_to_index(keyin);
 
             if (must_exist && !you.inv[ret].defined())
-                mpr("You don't have any such object.");
+                mpr(jtrans("You don't have any such object."));
             else if (must_exist && !item_is_selected(you.inv[ret], type_expect))
-                mpr("That's the wrong kind of item!");
+                mpr(jtrans("That's the wrong kind of item!"));
             else if (!do_warning || check_warning_inscriptions(you.inv[ret], oper))
                 break;
         }

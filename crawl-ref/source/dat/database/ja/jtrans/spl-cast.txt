@@ -1,0 +1,419 @@
+%%%%
+You feel %s %s
+
+あなたは%s%s
+%%%%
+numb sensation.
+
+無力感を感じた。
+%%%%
+surge of power!
+
+魔力の増幅を感じた！
+%%%%
+N/A
+
+－
+%%%%
+You are unable to access your magic!
+
+あなたは自分の魔力を使うことができない！
+%%%%
+Something interferes with your magic!
+
+何かがあなたの魔術を阻害している！
+%%%%
+You're too confused to cast spells.
+
+あなたは混乱しすぎており呪文を唱えられない。
+%%%%
+Magical energy flows into your mind!
+
+魔法のエネルギーがあなたの精神を駆け巡った！
+%%%%
+Cast which spell? (? or * to list)
+
+どの呪文を唱えますか？ (? または * で一覧) 
+%%%%
+Confirm with . or Enter, or press ? or * to list all spells.
+
+. またはEnterで前回と同じ呪文を唱えるか、? または * で一覧から選択してください。
+%%%%
+You don't know that spell.
+
+あなたはその呪文を知らない。
+%%%%
+You can't see any susceptible monsters within range! (Use <w>Z</w> to cast anyway.)
+
+射程距離内にはモンスターが見当たらない！
+(構わずに使いたい場合、<w>Z</w> コマンドを使ってください)
+%%%%
+Casting this spell will place you under penance. Really cast?
+
+この呪文を唱えると神に懺悔をする羽目になります。それでも唱えますか？
+%%%%
+Couldn't try casting monster spell because you're on top of a monster.
+
+モンスターの上にいるため、モンスター用の呪文を試せなかった。
+%%%%
+Couldn't try casting monster spell because there is no empty monster slot.
+
+モンスターの空き枠がないため、モンスター用の呪文を試せなかった。
+%%%%
+Invalid player spell, attempting to cast it as monster spell.
+
+プレイヤー用の呪文ではないので、モンスター用の呪文として唱えてみる。
+%%%%
+Really cast %s?
+
+本当に%sの呪文を唱えますか？
+%%%%
+Sorry, this spell works on others only.
+
+残念ながら、その呪文は他者にしか効果を及ぼしません。
+%%%%
+You feel a surge of divine spite.
+
+あなたは神の悪意が押し寄せるのを感じた。
+%%%%
+does not allow the disloyal to dabble in death!
+
+は不誠実な者が死に関わるのを許さない！
+%%%%
+does not allow the disloyal to dabble in destruction!
+
+は不誠実なものが破壊に関わるのを許さない！
+%%%%
+You miscast %s.
+
+あなたは%sの呪文を唱えるのに失敗した。
+%%%%
+Spell '%s' is not a player castable spell.
+
+'%s'はプレイヤーが唱えられない呪文です。
+%%%%
+Invalid spell!
+
+無効な呪文です！
+%%%%
+You feel a slight surge of power.
+
+あなたはわずかな魔力の増幅を感じた。
+%%%%
+You feel a surge of power!
+
+あなたは魔力の増幅を感じた！
+%%%%
+Your spells (%s)
+
+呪文一覧 (%s)
+%%%%
+           Type                      Failure  Level  
+
+系統                      失敗率   レベル
+%%%%
+           Power     Damage    Range   Noise         
+
+威力      ダメージ  射程    騒音
+%%%%
+<lightgrey>Select a spell to %s</lightgrey>
+
+<lightgrey>%sする呪文を選択</lightgrey>
+%%%%
+   [<w>?</w>] help    
+
+[<w>?</w>] ヘルプ
+%%%%
+ toggle spell headers
+
+呪文の見出しを切り替え
+%%%%
+[spell action]cast
+
+詠唱
+%%%%
+[spell action]describe
+
+説明
+%%%%
+[spell action]adjust
+
+割り当て変更
+%%%%
+[spell action]adjust it to
+
+入れ替え
+%%%%
+[spell action]quiver
+
+射撃準備
+%%%%
+# spl-selfench.cc は今は日本語の「忘却」を渡している(訳がなければそのまま表示)
+[spell action]forget
+
+忘却
+%%%%
+You cannot cast spells while %s!
+
+あなたは%s間は呪文を唱えられない！
+%%%%
+Magical energy flows from %s into your mind!
+
+魔法のエネルギーが%sからあなたの精神へと流れ込んだ！
+%%%%
+Casting: <w>%s</w> <lightgrey>(%s)</lightgrey>
+
+前回唱えた呪文: <w>%s</w> <lightgrey>(%s)</lightgrey>
+%%%%
+You lose access to your magic!
+
+あなたは自分の魔力を使えなくなった！
+%%%%
+It is impossible to cast this spell (100%% risk of failure)!
+
+この呪文を唱えることは不可能だ(失敗率100%%)！
+%%%%
+The spell is %s to miscast (%s risk of failure)%s
+
+この呪文は失敗すると%sだ(失敗率%s)%s
+%%%%
+%s Continue anyway?
+
+%sそれでも唱えますか？
+%%%%
+[adj]safe
+
+安全
+%%%%
+[adj]mildly dangerous
+
+少し危険
+%%%%
+[adj]dangerous
+
+危険
+%%%%
+[adj]quite dangerous
+
+かなり危険
+%%%%
+[adj]extremely dangerous
+
+極めて危険
+%%%%
+[adj]astonishingly dangerous
+
+途方もなく危険
+%%%%
+<%s>%s</%s>; <%s>%s</%s> risk of failure
+
+<%s>%s</%s>、失敗率<%s>%s</%s>
+%%%%
+chance to confuse: %d%%
+
+混乱させる確率: %d%%
+%%%%
+chance to slow: %d%%
+
+減速させる確率: %d%%
+%%%%
+chance to blind: %d%%
+
+盲目にする確率: %d%%
+%%%%
+empty space bonus: %d/8
+
+周囲の空間ボーナス: %d/8
+%%%%
+chance to weaken: %d%%
+
+衰弱させる確率: %d%%
+%%%%
+chance to blink: %d%%
+
+ブリンクさせる確率: %d%%
+%%%%
+chance to affect: %d%%
+
+効果がある確率: %d%%
+%%%%
+already infected
+
+感染済み
+%%%%
+[targeter]stationary
+
+移動しない
+%%%%
+will blink
+
+ブリンクする
+%%%%
+chance to teleport: %d%%
+
+テレポートさせる確率: %d%%
+%%%%
+inflict weakness
+
+衰弱
+%%%%
+diminish spells
+
+呪文の弱体化
+%%%%
+will %s
+
+%sを与える
+%%%%
+chance to daze and blind: %d%%
+
+幻惑し盲目にする確率: %d%%
+%%%%
+will change colour
+
+色が変わる
+%%%%
+will change shape
+
+姿が変わる
+%%%%
+will probably split
+
+おそらく分裂する
+%%%%
+will become %s
+
+%sに変わる
+%%%%
+immune to roots
+
+根に縛られない
+%%%%
+unstickable
+
+貼り付かない
+%%%%
+[spell verb]Aiming
+
+照準
+%%%%
+[spell verb]Casting
+
+詠唱
+%%%%
+<lightred>Restarting spell</lightred>
+
+<lightred>呪文を再開</lightred>
+%%%%
+<lightgrey> (%d/%d uses available)</lightgrey>
+
+<lightgrey> (使用可能回数 %d/%d)</lightgrey>
+%%%%
+Sorry, the spell '%s' is gone!
+
+残念ながら、'%s'の呪文は削除済みです！
+%%%%
+[noise]Silent
+
+無音
+%%%%
+[noise]Almost silent
+
+ほぼ無音
+%%%%
+[noise]Quiet
+
+静か
+%%%%
+[noise]A bit loud
+
+少しうるさい
+%%%%
+[noise]Loud
+
+うるさい
+%%%%
+[noise]Very loud
+
+とてもうるさい
+%%%%
+[noise]Extremely loud
+
+極めてうるさい
+%%%%
+[noise]Deafening
+
+耳をつんざく
+%%%%
+[spell damage]death
+
+即死
+%%%%
+You breathe a blast of explosive embers.
+
+あなたは爆発する燃えさしを吹き付けた。
+%%%%
+You exhale a wave of glacial cold.
+
+あなたは氷河のような冷気の波を吐き出した。
+%%%%
+You exhale a blast of scalding steam.
+
+あなたは灼熱の蒸気を吐き出した。
+%%%%
+You breathe a sphere of nullifying energy.
+
+あなたは無効化のエネルギーの球を吐き出した。
+%%%%
+You exhale a blast of noxious fumes.
+
+あなたは有毒な煙を吐き出した。
+%%%%
+You breathe a spray of caustic vapour.
+
+あなたは腐食性の蒸気を吹き付けた。
+%%%%
+You spew a torrent of mud.
+
+あなたは泥の奔流を吐き出した。
+%%%%
+You breathe wild lightning.
+
+あなたは荒れ狂う稲妻を吐き出した。
+%%%%
+Malevolent energies surge around you.
+
+悪意に満ちたエネルギーがあなたの周りに湧き上がった。
+%%%%
+(Press <w>%%</w> to %s.)
+
+(%sには<w>%%</w>を押す)
+%%%%
+Without enough magic to sustain it, your %s dissipates.
+
+維持する魔力が足りず、あなたの%sは消え去った。
+%%%%
+Attempting to channel buggy spell: %s
+
+不具合のある呪文を維持しようとしている: %s
+%%%%
+You stop channelling waves of flame.
+
+あなたは炎の波の維持をやめた。
+%%%%
+You stop channelling your searing ray.
+
+あなたは灼熱の光線の維持をやめた。
+%%%%
+The insufficient charge dissipates harmlessly.
+
+不十分な電荷は無害に散っていった。
+%%%%
+You stop assembling your clockwork bee.
+
+あなたは機械仕掛けの蜂の組み立てをやめた。
+%%%%
+Casting this now could dangerously contaminate you. Continue?
+
+今これを唱えると、危険なほど魔力に汚染されるかもしれません。続けますか？
+%%%%

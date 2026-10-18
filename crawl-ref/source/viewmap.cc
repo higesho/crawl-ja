@@ -14,6 +14,7 @@
 #include "command.h"
 #include "coord.h"
 #include "coordit.h"
+#include "database.h"
 #include "dgn-overview.h"
 #include "directn.h"
 #include "env.h"
@@ -436,10 +437,19 @@ public:
 };
 
 #ifndef USE_TILE_LOCAL
+// level_id::describe(true, true) の日本語版(表示用)
+static string _level_name_j(const level_id &id)
+{
+    const string br = branch_name_j(branches[id.branch].longname);
+    if (brdepth[id.branch] == 1)
+        return br;
+    return make_stringf(jtransc("%s, level %d"), br.c_str(), id.depth);
+}
+
 static void _draw_title(const coord_def& cpos, const feature_list& feats, const int columns)
 {
     const formatted_string help =
-        formatted_string::parse_string("(Press <w>?</w> for help)");
+        formatted_string::parse_string(jtrans("(Press <w>?</w> for help)"));
     const int helplen = help.width();
 
     if (columns < helplen)
@@ -464,7 +474,7 @@ static void _draw_title(const coord_def& cpos, const feature_list& feats, const 
     textcolour(WHITE);
 
     cprintf("%s", chop_string(
-                    uppercase_first(level_id::current().describe(true, true))
+                    _level_name_j(level_id::current())
                       + pstr, columns - helplen).c_str());
 
     cgotoxy(max(1, (columns - titlelen) / 2), 1);
@@ -1045,7 +1055,7 @@ map_control_state process_map_command(command_type cmd, const map_control_state&
             // completely wipe out map
             _forget_map(true);
             env.map_forgotten.reset(old);
-            mpr("Level map wiped.");
+            mpr(jtrans("Level map wiped."));
             break;
         }
 #endif
@@ -1058,7 +1068,7 @@ map_control_state process_map_command(command_type cmd, const map_control_state&
             MapKnowledge *old = new MapKnowledge(env.map_knowledge);
             _forget_map();
             env.map_forgotten.reset(old);
-            mpr("Level map cleared.");
+            mpr(jtrans("Level map cleared."));
         }
         break;
 
@@ -1067,10 +1077,10 @@ map_control_state process_map_command(command_type cmd, const map_control_state&
         {
             _unforget_map();
             env.map_forgotten.reset();
-            mpr("Remembered map restored.");
+            mpr(jtrans("Remembered map restored."));
         }
         else
-            mpr("No remembered map.");
+            mpr(jtrans("No remembered map."));
         break;
 
     case CMD_MAP_ADD_WAYPOINT:
@@ -1328,7 +1338,7 @@ map_control_state process_map_command(command_type cmd, const map_control_state&
         state.excursion->go_to(state.lpos.id);
 
         if (!is_map_persistent())
-            mpr("You can't annotate this level.");
+            mpr(jtrans("You can't annotate this level."));
         else
         {
 #ifdef USE_TILE_WEB

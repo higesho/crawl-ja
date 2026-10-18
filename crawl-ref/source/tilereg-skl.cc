@@ -5,7 +5,9 @@
 #include "tilereg-skl.h"
 
 #include "cio.h"
+#include "database.h"
 #include "describe.h"
+#include "japanese.h"
 #include "libutil.h"
 #include "options.h"
 #include "output.h"
@@ -15,6 +17,7 @@
 #include "rltiles/tiledef-icons.h"
 #include "tilepick.h"
 #include "tiles-build-specific.h"
+#include "unicode.h"
 #ifdef WIZARD
 #include "wiz-you.h"
 #endif
@@ -44,8 +47,9 @@ void SkillRegion::draw_tag()
 
     string progress = "";
 
-    string desc = make_stringf("%-14s Skill %4.1f Aptitude %c%d",
-                               skill_name(skill),
+    // 日本語の技能名は "%-14s"(バイト数)では揃わないので表示幅で詰める
+    string desc = make_stringf(jtransc("%s Skill %4.1f Aptitude %c%d"),
+                               chop_string(skill_name_j(skill), 14).c_str(),
                                you.skill(skill, 10) / 10.0,
                                apt > 0 ? '+' : ' ',
                                apt);
@@ -72,11 +76,11 @@ int SkillRegion::handle_mouse(wm_mouse_event &event)
 #endif
         m_last_clicked_item = item_idx;
         if (!you.can_currently_train[skill])
-            mpr("You cannot train this skill.");
+            mpr(jtrans("You cannot train this skill."));
         else if (you.has_mutation(MUT_DISTRIBUTED_TRAINING))
-            mpr("You can't change your training allocations!");
+            mpr(jtrans("You can't change your training allocations!"));
         else if (you.skills[skill] >= 27)
-            mpr("There's no point to toggling this skill anymore.");
+            mpr(jtrans("There's no point to toggling this skill anymore."));
         else
         {
             tiles.set_need_redraw();
@@ -103,9 +107,9 @@ int SkillRegion::handle_mouse(wm_mouse_event &event)
 
 bool SkillRegion::update_tab_tip_text(string &tip, bool active)
 {
-    const char *prefix = active ? "" : "[L-Click] ";
+    const string prefix = active ? "" : jtrans_notrim("[L-Click] ");
 
-    tip = make_stringf("%s%s", prefix, "Manage skills");
+    tip = make_stringf("%s%s", prefix.c_str(), jtransc("Manage skills"));
 
     return true;
 }
@@ -121,23 +125,23 @@ bool SkillRegion::update_tip_text(string& tip)
 
     const int flag = m_items[item_idx].flag;
     if (flag & TILEI_FLAG_INVALID)
-        tip = "You cannot train this skill now.";
+        tip = jtrans("You cannot train this skill now.");
     else if (!you.has_mutation(MUT_DISTRIBUTED_TRAINING))
     {
         const skill_type skill = (skill_type) m_items[item_idx].idx;
 
-        tip = "[L-Click] ";
+        tip = jtrans_notrim("[L-Click] ");
         if (you.train[skill])
-            tip += "Disable training";
+            tip += jtrans("Disable training");
         else
-            tip += "Enable training";
+            tip += jtrans("Enable training");
     }
 #ifdef WIZARD
     if (you.wizard)
         tip += "\n[Ctrl + L-Click] Change skill level (wizmode)";
 #endif
 
-    tip += "\n[R-Click] Describe";
+    tip += jtrans_notrim("\n[R-Click] Describe");
 
     return true;
 }

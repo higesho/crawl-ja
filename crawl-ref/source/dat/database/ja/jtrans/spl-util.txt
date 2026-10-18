@@ -1,0 +1,363 @@
+%%%%
+Spell assigned to '%c'.
+
+この呪文を'%c'キーに割り当てた。
+%%%%
+Your memory of %s unravels.
+
+あなたは%sの呪文を忘れた。
+%%%%
+you cannot use spells of this school.
+
+あなたはこの系統の呪文を使うことができない。
+%%%%
+you cannot coerce anything to obey you.
+
+あなたは誰も自分に従わせることはできない。
+%%%%
+this spell is already in effect.
+
+既にこの呪文は効果を発揮している。
+%%%%
+you can't move.
+
+あなたは動けない。
+%%%%
+this spell is useless without hands.
+
+この呪文は器用な手がないと意味がない。
+%%%%
+you cannot be healed further.
+
+あなたはこれ以上体力を回復できない。
+%%%%
+you lack the resilience to cast this spell.
+
+あなたはこの呪文を使うには体力が足りない。
+%%%%
+you're too dead.
+
+あなたの死せる体ではこの呪文は使えない。
+%%%%
+your ring of flames would instantly melt the ice.
+
+あなたの炎の円環はたちまち氷を溶かしてしまう。
+%%%%
+you have no blood to sublime.
+
+あなたには昇華するための血液が流れていない。
+%%%%
+you need to wait for the winds to calm down.
+
+あなたは風がおさまるまで一旦待つ必要がある。
+%%%%
+the dungeon can only cope with one malign gateway at a time.
+
+迷宮では一度に一つの門だけしか維持できない。
+%%%%
+you can only summon one forest at a time.
+
+森は一度に一つしか呼び出せない。
+%%%%
+you cannot issue another dragon's call so soon.
+
+あなたはそんなに早くドラゴンの呼び声の呪文を再び唱えることはできない。
+%%%%
+(You may use Imbue Servitor from the <w>%s</w>bility menu to change which spell your servitor casts.)
+
+(<w>%s</w>キーの能力メニューの『従者への呪文付与』で、従者が唱える呪文を変更できる)
+%%%%
+(You may use Imprint Weapon from the <w>%s</w>bility menu to change which weapon your Paragon wields.)
+
+(<w>%s</w>キーの能力メニューの『武器の刻印』で、模範者が振るう武器を変更できる)
+%%%%
+# spell_uselessness_reason() などの理由。日本語では完結した文として返す。
+you aren't experienced enough to cast this spell.
+
+あなたはこの呪文を唱えるにはまだ経験が足りない。
+%%%%
+you don't have enough health to cast this spell.
+
+あなたはこの呪文を唱えるには体力が足りない。
+%%%%
+you don't have enough magic to cast this spell.
+
+あなたはこの呪文を唱えるには魔力が足りない。
+%%%%
+your magic and health are inextricable.
+
+あなたの魔力と体力は切り離せない。
+%%%%
+you cannot cast such powerful magic in your current form.
+
+今の姿ではそれほど強力な魔法は唱えられない。
+%%%%
+you can't cast spells right now.
+
+今は呪文を唱えられない。
+%%%%
+you can't see any hostile targets that would be affected.
+
+効果の及ぶ敵が見当たらない。
+%%%%
+you are still too unstable to blink.
+
+あなたはまだ不安定すぎてブリンクできない。
+%%%%
+your stasis precludes magical swiftness.
+
+あなたの静止体質は魔法による俊足を受け付けない。
+%%%%
+you're already travelling as fast as you can.
+
+あなたは既に可能な限り素早く移動している。
+%%%%
+you need to wait for the ground to become solid again.
+
+地面が再び固まるまで待つ必要がある。
+%%%%
+you are already standing in death's doorway.
+
+あなたは既に死の扉の前に立っている。
+%%%%
+you are still too close to death's doorway.
+
+あなたはまだ死の扉に近すぎる。
+%%%%
+you need more open space to create a gateway.
+
+門を作るにはもっと開けた場所が必要だ。
+%%%%
+you need more open space to fit a forest.
+
+森を呼び出すにはもっと開けた場所が必要だ。
+%%%%
+you aren't next to any passable walls.
+
+あなたの隣には通り抜けられる壁がない。
+%%%%
+you're being held away from the wall.
+
+あなたは壁から引き離されている。
+%%%%
+necromancy does not work on golden corpses.
+
+死霊術は黄金の死体には効かない。
+%%%%
+you are already reaping souls!
+
+あなたは既に魂を刈り取っている！
+%%%%
+you are already channelling the dead.
+
+あなたは既に死者の力を導いている。
+%%%%
+a magic seal in the Gauntlet prevents this spell from working.
+
+試練の場の魔法の封印がこの呪文の働きを妨げている。
+%%%%
+you cannot sustain more frozen ramparts right now.
+
+今はこれ以上氷の城壁を維持できない。
+%%%%
+you cannot sustain more bogs right now.
+
+今はこれ以上沼を維持できない。
+%%%%
+you cannot wear body armour.
+
+あなたは鎧を着ることができない。
+%%%%
+you have no body armour to summon the spirit of.
+
+あなたは霊を呼び出す鎧を着ていない。
+%%%%
+you cannot redirect your momentum while unable to move.
+
+動けない間は勢いの向きを変えられない。
+%%%%
+your stasis prevents you from launching yourself.
+
+あなたの静止体質のため、自分を打ち出すことができない。
+%%%%
+you cannot launch yourself while unable to move.
+
+動けない間は自分を打ち出すことができない。
+%%%%
+you cannot see anything nearby that you can launch.
+
+近くに打ち出せるものが見当たらない。
+%%%%
+there is no room nearby to place a sigil.
+
+近くに印を置ける場所がない。
+%%%%
+your canine familiar is too injured to answer your call.
+
+あなたの使い魔の犬は傷が深く、呼びかけに応えられない。
+%%%%
+local gravity is still too unstable to reorient.
+
+この辺りの重力はまだ不安定すぎて向きを変えられない。
+%%%%
+you are already unleashing a barrage of alchemical concoctions!
+
+あなたは既に錬金術の調合薬を連射している！
+%%%%
+you must wait for your last cast of this to end!
+
+前回唱えたこの呪文が終わるまで待たなければならない！
+%%%%
+you cannot see far enough to hit anything with this spell.
+
+視界が狭すぎて、この呪文で何かに当てることはできない。
+%%%%
+you must harvest more living souls to recharge this spell.
+
+この呪文を再充填するには、もっと生ある魂を刈り取らなければならない。
+%%%%
+there are no nearby walls to construct a spike launcher in.
+
+近くにスパイク発射機を組み込める壁がない。
+%%%%
+there is no room to construct a sawblade.
+
+丸鋸を作り出す場所がない。
+%%%%
+you cannot be moved right now.
+
+あなたは今動かされることができない。
+%%%%
+your pet crocodile is still here.
+
+あなたのペットのワニはまだここにいる。
+%%%%
+you must imprint a weapon on your paragon first! (Use the Imprint Weapon ability)
+
+まず模範者に武器を刻印しなければならない！(『武器の刻印』の能力を使う)
+%%%%
+your paragon is already deployed, but not yet charged.
+
+模範者は既に展開されているが、まだ充填されていない。
+%%%%
+you are already charging a Fortress Blast.
+
+あなたは既に要塞の爆風を溜めている。
+%%%%
+[spell type]Conj
+
+妖術
+%%%%
+[spell type]Hex
+
+呪術
+%%%%
+[spell type]Fire
+
+炎
+%%%%
+[spell type]Ice
+
+氷
+%%%%
+[spell type]Necr
+
+死霊
+%%%%
+[spell type]Summ
+
+召喚
+%%%%
+[spell type]Frge
+
+鍛造
+%%%%
+[spell type]Tloc
+
+転位
+%%%%
+[spell type]Alch
+
+錬金
+%%%%
+[spell type]Erth
+
+地
+%%%%
+[spell type]Air
+
+風
+%%%%
+[spell type]Rndm
+
+ランダム
+%%%%
+[spell type]Bug
+
+バグ
+%%%%
+[spell type long]Conjuration
+
+妖術
+%%%%
+[spell type long]Hexes
+
+呪術
+%%%%
+[spell type long]Fire
+
+炎の魔術
+%%%%
+[spell type long]Ice
+
+氷の魔術
+%%%%
+[spell type long]Necromancy
+
+死霊術
+%%%%
+[spell type long]Summoning
+
+召喚術
+%%%%
+[spell type long]Forgecraft
+
+鍛造術
+%%%%
+[spell type long]Translocation
+
+転位術
+%%%%
+[spell type long]Alchemy
+
+錬金術
+%%%%
+[spell type long]Earth
+
+地の魔術
+%%%%
+[spell type long]Air
+
+風の魔術
+%%%%
+[spell type long]Random
+
+ランダム
+%%%%
+[spell type long]Bug
+
+バグ
+%%%%
+# spl-cast.cc で get_spell_target_prompt() の結果を引く
+[target prefix]Apport
+
+収拾
+%%%%
+[target prefix]Smite
+
+打擲
+%%%%
+[target prefix]Fragment what (e.g. wall or brittle monster)?
+
+どれを解体しますか？(例: 壁もしくは体の脆いモンスター)
+%%%%

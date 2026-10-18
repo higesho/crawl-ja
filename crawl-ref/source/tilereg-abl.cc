@@ -6,6 +6,7 @@
 
 #include "ability.h"
 #include "cio.h"
+#include "database.h"
 #include "describe.h"
 #include "libutil.h"
 #include "macro.h"
@@ -17,6 +18,7 @@
 #include "tilepick.h"
 #include "tiles-build-specific.h"
 #include "tilereg-cmd.h"
+#include "unicode.h"
 
 AbilityRegion::AbilityRegion(const TileRegionInit &init) : GridRegion(init)
 {
@@ -46,7 +48,7 @@ void AbilityRegion::draw_tag()
     const ability_type ability = (ability_type) idx;
     const string failure = failure_rate_to_string(get_talent(ability).fail);
     string desc = make_stringf("%s    (%s)",
-                               ability_name(ability).c_str(), failure.c_str());
+                               ability_name_j(ability).c_str(), failure.c_str());
     draw_desc(desc.c_str());
 }
 
@@ -81,12 +83,13 @@ int AbilityRegion::handle_mouse(wm_mouse_event &event)
 
 bool AbilityRegion::update_tab_tip_text(string &tip, bool active)
 {
-    const char *prefix1 = active ? "" : "[L-Click] ";
-    const char *prefix2 = active ? "" : "          ";
+    // 2 行目は 1 行目の「[左クリック] 」と同じ幅だけ字下げする
+    const string prefix1 = active ? "" : jtrans_notrim("[L-Click] ");
+    const string prefix2(strwidth(prefix1), ' ');
 
     tip = make_stringf("%s%s\n%s%s",
-                       prefix1, "Display abilities",
-                       prefix2, "Use abilities");
+                       prefix1.c_str(), jtransc("Display abilities"),
+                       prefix2.c_str(), jtransc("Use abilities"));
 
     return true;
 }
@@ -103,14 +106,14 @@ bool AbilityRegion::update_tip_text(string& tip)
     int flag = m_items[item_idx].flag;
     vector<command_type> cmd;
     if (flag & TILEI_FLAG_INVALID)
-        tip = "You cannot use this ability right now.";
+        tip = jtrans("You cannot use this ability right now.");
     else
     {
-        tip = "[L-Click] Use (%)";
+        tip = jtrans("[L-Click] Use (%)");
         cmd.push_back(CMD_USE_ABILITY);
     }
 
-    tip += "\n[R-Click] Describe";
+    tip += jtrans_notrim("\n[R-Click] Describe");
     insert_commands(tip, cmd);
 
     return true;

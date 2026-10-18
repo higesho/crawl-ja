@@ -8,18 +8,22 @@
 #include "place.h"
 
 #include "branch.h"
+#include "database.h"
 #include "libutil.h"
 #include "player.h"
+#include "stringutil.h"
 
 // Prepositional form of branch level name. For example, "in the
 // Vestibule of Hell" or "on level 3 of the Dungeon".
+// 日本語版では前置詞なしの表示用の場所名(「迷宮の3階」「地獄の門」)を返す。
+// 英語の場所名が必要なら level_id::describe() を使う。
 string prep_branch_level_name(level_id id)
 {
-    string place = id.describe(true, true);
-    if (!place.empty() && place != "Pandemonium")
-        place[0] = tolower_safe(place[0]);
-    return place.find("level") == 0 ? "on " + place
-                                    : "in " + place;
+    const string branch = branch_name_j(branches[id.branch].longname);
+    if (brdepth[id.branch] == 1)
+        return branch;
+    return make_stringf(jtransc("Level %s of %s"), branch.c_str(),
+                        to_string(id.depth).c_str());
 }
 
 bool single_level_branch(branch_type branch)

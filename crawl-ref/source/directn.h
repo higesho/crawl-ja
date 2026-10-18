@@ -350,7 +350,11 @@ string cell_monster_description(const coord_def& pos, bool include_areas = false
 string cell_items_description(const coord_def& pos);
 string cell_floor_description(const coord_def& pos, bool boring_too);
 
+// 表示用(日本語)
 vector<string> get_monster_status_descriptors(const monster_info& mi);
+// (英語, 日本語) の組。英語は説明文 DB("<状態> monstatus")の検索キー用。
+vector<pair<string, string>> get_monster_status_descriptor_pairs(
+                                                    const monster_info& mi);
 
 void describe_floor();
 void _walk_on_decor(dungeon_feature_type new_grid);
@@ -368,6 +372,19 @@ string feature_description(dungeon_feature_type grid,
                            const string & cover_desc = "",
                            description_level_type dtype = DESC_A,
                            level_id place = level_id::current());
+
+// 表示用の地形名(日本語)。上の feature_description*() は説明文の検索キーや
+// オプションの照合にも使うので英語のまま残し、表示にはこちらを使う。
+// 日本語には冠詞がないので dtype は使わない(引数は英語版と揃えてある)。
+// feature_description_j() の cover_desc は地形名の前に付ける日本語の修飾語。
+string feature_description_at_j(const coord_def& where, bool covering = false,
+                                description_level_type dtype = DESC_A);
+string raw_feature_description_j(const coord_def& where);
+string feature_description_j(dungeon_feature_type grid,
+                             trap_type trap = NUM_TRAPS,
+                             const string & cover_desc = "",
+                             description_level_type dtype = DESC_A,
+                             level_id place = level_id::current());
 
 vector<dungeon_feature_type> features_by_desc(const base_pattern &pattern);
 

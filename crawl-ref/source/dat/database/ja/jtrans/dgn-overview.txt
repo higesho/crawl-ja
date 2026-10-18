@@ -1,0 +1,97 @@
+%%%%
+corrupted
+
+崩壊
+%%%%
+Current level annotation: <lightgrey>%s</lightgrey>
+
+現在のこの階層の注釈: <lightgrey>%s</lightgrey>
+%%%%
+New annotation for %s (include '!' for warning):
+
+%sに注釈を付ける('!'を含めることで警告メッセージ):
+%%%%
+Cleared annotation.
+
+注釈を削除しました。
+%%%%
+Dungeon Overview and Level Annotations
+
+ダンジョンの概要と階層の注釈
+%%%%
+The Realm of Zot is guarded by %s.
+
+ゾットの領域は%sに守られている。
+%%%%
+Branches:
+
+分岐:
+%%%%
+(press <white>G</white> to reach them and <white>?/b</white> for more information)
+
+(<white>G</white>で移動、<white>?/b</white>で詳しい情報)
+%%%%
+(visited)
+
+(訪問済)
+%%%%
+Zot: <%s>%d</%s>
+
+ゾット: <%s>%d</%s>
+%%%%
+Altars:
+
+祭壇:
+%%%%
+(press <white>_</white> to reach them and <white>?/g</white> for information about gods)
+
+(<white>_</white>で移動、<white>?/g</white>で神の情報)
+%%%%
+Shops:
+
+店:
+%%%%
+(press <white>$</white> to reach them - yellow denotes antique shop)
+
+(<white>$</white>で移動 - 黄色は骨董品店)
+%%%%
+Portals:
+
+ポータル:
+%%%%
+Annotations:
+
+注釈:
+%%%%
+(press <white>!</white> to add a new annotation)
+
+(<white>!</white>で注釈を追加)
+%%%%
+Sorry, you haven't seen any altar yet.
+
+まだ祭壇を一つも見つけていない。
+%%%%
+Sorry, you haven't seen any shop yet.
+
+まだ店を一つも見つけていない。
+%%%%
+Annotate which branch? (. - %s, ? - help, ! - show branch list)
+
+どの分岐に注釈を付けますか？ (. - %s, ? - ヘルプ, ! - 分岐の一覧)
+%%%%
+There is no level above you.
+
+これより上の階はない。
+%%%%
+There is no level below you in this branch.
+
+この分岐にはこれより下の階はない。
+%%%%
+What level of %s?
+
+%sの何階ですか？
+%%%%
+That's not a valid depth.
+
+その階層は存在しない。
+%%%%

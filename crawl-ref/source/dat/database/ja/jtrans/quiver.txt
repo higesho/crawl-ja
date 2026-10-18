@@ -1,0 +1,287 @@
+%%%%
+You are too injured to fight recklessly!
+
+あなたは傷つきすぎており、むやみに攻撃できない！
+%%%%
+You nearly hit yourself!
+
+あなたは自分自身を打ちすえるところだった！
+%%%%
+You're too confused to attack without stumbling around!
+
+あなたは混乱していたので、攻撃しようとしてよろめいてしまった！
+%%%%
+You reach to attack!
+
+あなたは攻撃を届かせた！
+%%%%
+%s is in the way.
+
+%sが途中にいる。
+%%%%
+You swing at nothing.
+
+あなたは空振りした。
+%%%%
+You attack empty space.
+
+あなたは何もないところを攻撃した。
+%%%%
+You are out of magic!
+
+あなたの魔力は尽きている！
+%%%%
+You are too depleted to draw on your health recklessly!
+
+あなたは消耗しすぎており、むやみに体力を使えない！
+%%%%
+You are too depleted to draw on your magic recklessly!
+
+あなたは消耗しすぎており、むやみに魔力を使えない！
+%%%%
+# ステータス欄の射撃準備の行(quiver_description)
+<darkgrey>Empty</darkgrey>
+
+<darkgrey>なし</darkgrey>
+%%%%
+<darkgrey>Nothing quivered</darkgrey>
+
+<darkgrey>射撃準備なし</darkgrey>
+%%%%
+# 照準のキー案内(% は insert_commands がキーに置き換える)
+, <w>%</w> - select action
+
+, <w>%</w> - 行動を選択
+%%%%
+, <w>%</w> - select action, <w>%</w> or <w>%</w> - cycle
+
+, <w>%</w> - 行動を選択, <w>%</w>/<w>%</w> - 切り替え
+%%%%
+You deconstruct %s.
+
+あなたは%sを解体した。
+%%%%
+You're too confused to aim your attacks!
+
+あなたは混乱していて狙いを定められない！
+%%%%
+# %s は held_status()(連体形)
+You cannot attack while %s.
+
+あなたは%s間は攻撃できない。
+%%%%
+Your weapon can't reach that far!
+
+あなたの武器はそこまで届かない！
+%%%%
+You attack %s.
+
+あなたは%sを攻撃した。
+%%%%
+You fail to reach past %s.
+
+あなたの攻撃は%sに阻まれて届かなかった。
+%%%%
+# 射撃準備の行の見出し(後ろの空白は jtrans_notrim で残る)
+Continue:
+
+継続:
+%%%%
+Cast:
+
+詠唱:
+%%%%
+Abil:
+
+能力:
+%%%%
+[quiver spell]Capacitive Coupling
+
+容量結合
+%%%%
+# 射撃準備の行の動詞(quiver_verb()。変身の素手攻撃の動詞を含む)
+[quiver verb]confused %s
+
+%s(混乱中)
+%%%%
+[quiver verb]fire
+
+射撃
+%%%%
+[quiver verb]attack
+
+攻撃
+%%%%
+[quiver verb]punch
+
+殴打
+%%%%
+[quiver verb]reach
+
+遠間攻撃
+%%%%
+[quiver verb]cleave
+
+薙ぎ払い
+%%%%
+[quiver verb]hit
+
+攻撃
+%%%%
+[quiver verb]bite
+
+噛みつき
+%%%%
+[quiver verb]buffet
+
+打ち据え
+%%%%
+[quiver verb]claw
+
+引っかき
+%%%%
+[quiver verb]headbutt
+
+頭突き
+%%%%
+[quiver verb]lash
+
+鞭打ち
+%%%%
+[quiver verb]smack
+
+打撃
+%%%%
+[quiver verb]swat
+
+はたき
+%%%%
+[quiver verb]snap
+
+挟み
+%%%%
+[quiver verb]release spores at
+
+胞子放出
+%%%%
+[quiver verb]slap
+
+平手打ち
+%%%%
+[quiver verb]touch
+
+接触
+%%%%
+[quiver verb]Activate
+
+使用
+%%%%
+[quiver verb]Read
+
+読む
+%%%%
+[quiver verb]Drink
+
+飲む
+%%%%
+[quiver verb]Buggy
+
+バグ
+%%%%
+[quiver verb]Zap
+
+振る
+%%%%
+[quiver verb]Evoke
+
+発動
+%%%%
+[quiver verb]throw
+
+投擲
+%%%%
+[quiver verb]toss (no damage)
+
+放り投げ(ダメージなし)
+%%%%
+You can't see any hostile targets in range.
+
+射程内に敵が見当たらない。
+%%%%
+No targets found!
+
+目標が見つからない！
+%%%%
+# 行動選択メニュー
+[<w>*/%</w>] inventory
+
+[<w>*/%</w>] 持ち物
+%%%%
+[<w>&</w>] all spells
+
+[<w>&</w>] 全呪文
+%%%%
+[<w>^</w>] all abilities
+
+[<w>^</w>] 全能力
+%%%%
+%s focus mode: %s
+
+%s 種類ごとに選択: %s
+%%%%
+<w>off</w>|on
+
+<w>オフ</w>|オン
+%%%%
+off|<w>on</w>
+
+オフ|<w>オン</w>
+%%%%
+<lightgrey>(%s to cycle)</lightgrey>
+
+<lightgrey>(%sで切り替え)</lightgrey>
+%%%%
+<lightcyan>Items</lightcyan>
+
+<lightcyan>アイテム</lightcyan>
+%%%%
+<lightcyan>Spells</lightcyan>
+
+<lightcyan>呪文</lightcyan>
+%%%%
+<lightcyan>Abilities</lightcyan>
+
+<lightcyan>能力</lightcyan>
+%%%%
+<lightred>No regular actions available to quiver.</lightred>
+
+<lightred>射撃準備できる通常の行動がない。</lightred>
+%%%%
+Quiver which item? (- for none)
+
+どのアイテムを射撃準備しますか？ (- で準備解除)
+%%%%
+Quiver which item?
+
+どのアイテムを射撃準備しますか？
+%%%%
+Clearing quiver.
+
+射撃準備を解除した。
+%%%%
+Quiver which action?
+
+どの行動を射撃準備しますか？
+%%%%
+([<w>-</w>] to clear)
+
+([<w>-</w>] で解除)
+%%%%
+You have nothing to quiver.
+
+射撃準備できるものがない。
+%%%%
+Really quiver %s?
+
+本当に%sを射撃準備しますか？
+%%%%

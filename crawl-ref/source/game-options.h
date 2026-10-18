@@ -20,6 +20,10 @@ using std::vector;
 struct game_options;
 struct opt_parse_state;
 
+// 日本語訳辞書を引く(database.h と同じもの。このヘッダは広く読み込まれるので
+// database.h を include せずに宣言だけする)
+std::string jtrans(const std::string &key, const bool linefeed);
+
 template<class A, class B> void merge_lists(A &dest, const B &src, bool prepend)
 {
     dest.insert(prepend ? dest.begin() : dest.end(), src.begin(), src.end());
@@ -511,7 +515,8 @@ public:
         string normalized = field;
         if (!choices.size())
         {
-            return make_stringf("Option '%s' is disabled in this build.",
+            return make_stringf(
+                jtrans("Option '%s' is disabled in this build.", false).c_str(),
                 name().c_str());
         }
         if (normalize_bools)
@@ -528,8 +533,9 @@ public:
 
             string all_choices = comma_separated_fn(choices.begin(),
                 choices.end(), [] (const pair<string, T> &p) {return p.first;},
-                " or ");
-            return make_stringf("Bad %s value: %s (should be %s)",
+                ", ");
+            return make_stringf(
+                jtrans("Bad %s value: %s (should be %s)", false).c_str(),
                                 name().c_str(), field.c_str(),
                                 all_choices.c_str());
         }

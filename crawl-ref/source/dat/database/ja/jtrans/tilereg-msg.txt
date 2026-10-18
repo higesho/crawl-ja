@@ -1,0 +1,6 @@
+# tilereg-msg.txt: tilereg-msg.cc(Tiles のメッセージ欄)
+%%%%
+[L-Click] Browse message history
+
+[左クリック] メッセージ履歴を表示する
+%%%%

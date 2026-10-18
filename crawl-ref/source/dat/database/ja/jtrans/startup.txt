@@ -1,0 +1,115 @@
+# startup.cc: タイトル画面(メインメニュー)
+%%%%
+Loading spells and features...
+
+呪文と地形を読み込み中……
+%%%%
+Loading maps...
+
+マップを読み込み中……
+%%%%
+# ゲームモードの一覧(entries[] の label と description。表示時に jtrans で引く)
+Dungeon Crawl
+
+ダンジョンクロウル
+%%%%
+Dungeon Crawl: The main game: full of monsters, items, gods and danger!
+
+メインモード: 様々なモンスター、アイテム、神々、そして危険が待ち受けています！
+%%%%
+Choose Game Seed
+
+シード値を指定して開始
+%%%%
+Play with a chosen custom dungeon seed.
+
+ダンジョンのシード値を指定して遊びます。
+%%%%
+Tutorial for Dungeon Crawl
+
+ダンジョンクロウル チュートリアル
+%%%%
+Tutorial that covers the basics of Dungeon Crawl survival.
+
+ダンジョンクロウルで生き残るための基本を解説するチュートリアルです。
+%%%%
+Hints Mode for Dungeon Crawl
+
+ダンジョンクロウル 解説付きモード
+%%%%
+A mostly normal game that provides more advanced hints than the tutorial.
+
+ほぼ通常どおりのゲームで、チュートリアルより踏み込んだ解説が表示されます。
+%%%%
+Dungeon Descent
+
+ダンジョンディセント
+%%%%
+Mode with a branching, one-way path through the Dungeon.
+
+枝分かれする一方通行の道をたどってダンジョンを進むモードです。
+%%%%
+Dungeon Sprint
+
+ダンジョンスプリント
+%%%%
+Hard, fixed single level game mode.
+
+固定された単一の階層を探索する高難度のゲームモードです。
+%%%%
+Instructions
+
+ヘルプ
+%%%%
+Help menu.
+
+ヘルプメニューです。
+%%%%
+The Arena
+
+アリーナ
+%%%%
+Pit computer controlled teams versus each other!
+
+指定したモンスターを敵味方に分けて自動で戦わせるモードです！
+%%%%
+High Scores
+
+ハイスコア
+%%%%
+View the high score list.
+
+ハイスコアの一覧を表示します。
+%%%%
+New Game
+
+新しくゲームを始める
+%%%%
+Enter your name:
+
+名前を入力:
+%%%%
+Choices:
+
+ゲームモード:
+%%%%
+Saved games:
+
+セーブデータ:
+%%%%
+<white>[tab]</white> quick-load last game:
+
+<white>[tab]</white> 前回のゲームを再開:
+%%%%
+<white>[tab]</white> quick-start last combo:
+
+<white>[tab]</white> 前回の組み合わせで開始:
+%%%%
+<white>[ctrl-p]</white> view rc file information and log
+
+<white>[ctrl-p]</white> 設定ファイルの情報とログを見る
+%%%%
+(<red>Errors during initialization!</red>)
+
+(<red>初期化中にエラーがありました！</red>)
+%%%%

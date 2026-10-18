@@ -10,6 +10,7 @@
 #include "prompt.h"
 
 #include "clua.h"
+#include "database.h"
 #include "delay.h"
 #include "libutil.h"
 #include "macro.h"
@@ -24,6 +25,7 @@
 #endif
 #include "viewchar.h"
 #include "ui.h"
+#include "unicode.h"
 
 namespace ui
 {
@@ -115,7 +117,7 @@ bool confirm_prompt(const char* require, const char* fmt, ...)
     va_end(args);
     buf[sizeof(buf)-1] = 0;
 
-    mprf(MSGCH_PROMPT, "%s (Confirm with \"%s\".) ", buf, require);
+    mprf(MSGCH_PROMPT, jtrans_notrimc("%s (Confirm with \"%s\".) "), buf, require);
 
     if (cancellable_get_line(buf, sizeof buf))
         return false;
@@ -140,7 +142,7 @@ int yesno(const char *str, bool allow_lowercase, int default_answer, bool clear_
     if (res.is_bool())
         return bool(res);
 
-    string prompt = make_stringf("%s ", str ? str : "Buggy prompt?");
+    string prompt = make_stringf("%s ", str ? str : jtransc("Buggy prompt?"));
 
     bool use_popup = !crawl_state.need_save // not in game, no message pane
         || ui::has_layout() // already in a popup; no choice but to use another one
@@ -182,11 +184,11 @@ int yesno(const char *str, bool allow_lowercase, int default_answer, bool clear_
 
     if (use_popup)
     {
-        MenuEntry * const y_me = new MenuEntry("Yes", MEL_ITEM, 1, 'Y');
+        MenuEntry * const y_me = new MenuEntry(jtrans("Yes"), MEL_ITEM, 1, 'Y');
         y_me->add_hotkey('y');
-        MenuEntry * const n_me = new MenuEntry("No", MEL_ITEM, 1, 'N');
+        MenuEntry * const n_me = new MenuEntry(jtrans("No"), MEL_ITEM, 1, 'N');
         n_me->add_hotkey('n');
-        MenuEntry * const a_me = new MenuEntry("Always", MEL_ITEM, 1, 'A');
+        MenuEntry * const a_me = new MenuEntry(jtrans("Always"), MEL_ITEM, 1, 'A');
         a_me->add_hotkey('a');
         y_me->add_tile(tile_def(TILEG_PROMPT_YES));
         n_me->add_tile(tile_def(TILEG_PROMPT_NO));
@@ -210,10 +212,10 @@ int yesno(const char *str, bool allow_lowercase, int default_answer, bool clear_
         if (enter_defaults)
         {
             pop.set_more(make_stringf("<white>[enter]</white>: %s",
-                default_answer == 'Y' ? "Yes"
+                jtransc(default_answer == 'Y' ? "Yes"
                 : default_answer == 'N' ? "No"
                 : (ask_always && default_answer == 'A') ? "Always"
-                : "bugs"));
+                : "bugs")));
         }
     }
     mouse_control mc(MOUSE_MODE_YESNO);
@@ -289,11 +291,11 @@ int yesno(const char *str, bool allow_lowercase, int default_answer, bool clear_
                          && (tmp == 'n' || tmp == 'y'
                              || (ask_always && tmp == 'a')
                              || crawl_state.game_is_hints_tutorial());
-            const string pr = make_stringf("<lightred>%s%s only, please.</lightred>",
-                                           upper ? "Uppercase " : "",
-                                           ask_always ?
-                                               "[Y]es, [N]o, or [A]lways" :
-                                               "[Y]es or [N]o");
+            const string pr = make_stringf(
+                                jtransc("<lightred>%s%s only, please.</lightred>"),
+                                upper ? jtransc("Uppercase ") : "",
+                                jtransc(ask_always ? "[Y]es, [N]o, or [A]lways"
+                                                   : "[Y]es or [N]o"));
             if (use_popup)
                 pop.set_more(pr); // replaces keyhint if it's there
             else
@@ -442,7 +444,7 @@ void PromptMenu::update_columns()
     }
     int max_width = 0;
     for (MenuEntry *item : items)
-        max_width = max(max_width, static_cast<int>(_prompt_text(*item).size()));
+        max_width = max(max_width, strwidth(_prompt_text(*item)));
     // the + 2 here is to allow at least 2 spaces between cols.
     // currently no limit on columns, maybe it shouldn't be more than 6 or so?
     columns = max(1, max_line_width / (max_width + 2));
@@ -466,9 +468,10 @@ void PromptMenu::build_prompt_menu()
 
         line.textcolour(item_colour(item));
         // TODO: support MF_ALLOW_FORMATTING
-        line.cprintf("%-*s",
-            col_width,
-            _prompt_text(*item).c_str()); // _prompt_text handles the hotkey
+        // 日本語は %-*s(バイト数)では揃わないので表示幅で詰める
+        const string ptext = _prompt_text(*item); // _prompt_text handles the hotkey
+        line.cprintf("%s%s", ptext.c_str(),
+            string(max(0, col_width - strwidth(ptext)), ' ').c_str());
 
         c++;
         if (c >= columns || item->level != MEL_ITEM)

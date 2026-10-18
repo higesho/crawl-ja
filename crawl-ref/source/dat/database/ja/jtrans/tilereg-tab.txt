@@ -1,0 +1,39 @@
+# tilereg-tab.txt: tilereg-tab.cc(Tiles のタブ名。name() は英語のまま、表示で引く)
+%%%%
+[tilereg-tab]Commands
+
+コマンド
+%%%%
+[tilereg-tab]Inventory
+
+所持品
+%%%%
+[tilereg-tab]Spells
+
+呪文
+%%%%
+[tilereg-tab]Memorisation
+
+呪文の記憶
+%%%%
+[tilereg-tab]Abilities
+
+能力
+%%%%
+[tilereg-tab]Monsters
+
+モンスター
+%%%%
+[tilereg-tab]Skills
+
+スキル
+%%%%
+# tilesdl.cc
+[tilereg-tab]System Commands
+
+システムコマンド
+%%%%
+[tilereg-tab]Navigation
+
+マップ移動
+%%%%

@@ -46,6 +46,8 @@ public:
 #endif
 
     string describe(bool long_name = false, bool with_number = true) const;
+    // 表示用の日本語の場所名(実装は travel.cc)
+    string describe_j(bool long_name = false, bool with_number = true) const;
 
     void clear()
     {

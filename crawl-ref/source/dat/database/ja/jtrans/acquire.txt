@@ -1,0 +1,73 @@
+%%%%
+The demon of the infinite void smiles upon you.
+
+無限の虚空に棲まう悪魔があなたに微笑みかけた。
+%%%%
+ (you have %d gold)
+
+(所持金 %d)
+%%%%
+Choose a gizmo to assemble.
+
+組み立てるギズモを選択してください。
+%%%%
+Choose an item to acquire.
+
+獲得するアイテムを選択してください。
+%%%%
+You assemble %s and install it in your exoskeleton!
+
+あなたは%sを組み立て、外骨格に取り付けた！
+%%%%
+<%s>Assemble %s? (%s/N)</%s>
+
+<%s>%sを組み立てますか？ (%s/N)</%s>
+%%%%
+<%s>Acquire %s? (%s/N)</%s>
+
+<%s>%sを獲得しますか？ (%s/N)</%s>
+%%%%
+ <w>assemble</w>|examine gizmo
+
+<w>組み立て</w>|ギズモの解説
+%%%%
+ assemble|<w>examine</w> gizmo
+
+組み立て|<w>ギズモの解説</w>
+%%%%
+select gizmo to assemble
+
+組み立てるギズモを選択
+%%%%
+examine gizmo
+
+ギズモの解説を表示
+%%%%
+ <w>acquire</w>|examine items
+
+<w>獲得</w>|アイテムの解説
+%%%%
+ acquire|<w>examine</w> items
+
+獲得|<w>アイテムの解説</w>
+%%%%
+select item for acquirement
+
+獲得するアイテムを選択
+%%%%
+ offers you a choice of weapons!
+
+はあなたに武器を選ばせてくれた！
+%%%%
+ offers you a choice of armour!
+
+はあなたに防具を選ばせてくれた！
+%%%%
+You don't have room to hold a gizmo! Drop something first.
+
+ギズモを持つ余裕がない！ まず何かを置いてください。
+%%%%
+Your brain swirls with designs for %s. You just need some more time...
+
+あなたの頭の中で%sの設計図が渦巻いている。あと少し時間があれば……
+%%%%

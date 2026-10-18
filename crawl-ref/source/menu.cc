@@ -14,6 +14,7 @@
 #include "colour.h"
 #include "command.h"
 #include "coord.h"
+#include "database.h"
 #include "env.h"
 #include "tile-env.h"
 #include "hints.h"
@@ -707,8 +708,10 @@ public:
         string more_template = scrollable
                                 ? text_for_scrollable
                                 : text_for_unscrollable;
-        const string perc = scroll_percent <= 0 ? "top"
-                            : scroll_percent >= 100 ? "bot"
+        const string perc = scroll_percent <= 0
+                                ? tagged_jtrans("[menu scroll]", "top")
+                            : scroll_percent >= 100
+                                ? tagged_jtrans("[menu scroll]", "bot")
                             : make_stringf("%2d%%", scroll_percent);
 
         more_template = replace_all(more_template, "XXX", perc);
@@ -1302,8 +1305,8 @@ formatted_string pad_more_with(formatted_string s,
     // Needs to be done as a parsed formatted_string so that columns are
     // counted correctly.
     const auto lines = split_string("\n", s.tostring(), false, true);
-    const int last_len = static_cast<int>(lines.back().size());
-    const int pad_size = static_cast<int>(pad.tostring().size());
+    const int last_len = strwidth(lines.back());
+    const int pad_size = strwidth(pad.tostring());
     if (last_len < (min_width - pad_size))
     {
         s += string(min_width - (last_len + pad_size), ' ');
@@ -1360,7 +1363,8 @@ static string _command_to_string(command_type cmd)
 // standardized formatting for this
 string pad_more_with_esc(const string &s)
 {
-    return pad_more_with(s, menu_keyhelp_cmd(CMD_MENU_EXIT) + " exit");
+    return pad_more_with(s, menu_keyhelp_cmd(CMD_MENU_EXIT)
+                            + jtrans_notrim(" exit"));
 }
 
 string menu_keyhelp_cmd(command_type cmd)
@@ -1395,16 +1399,16 @@ string Menu::get_keyhelp(bool scrollable) const
 
     string navigation = "<lightgrey>";
     if (is_set(MF_ARROWS_SELECT))
-        navigation += menu_keyhelp_select_keys() + " select  ";
+        navigation += menu_keyhelp_select_keys() + jtrans_notrim(" select  ");
 
     if (scrollable)
     {
         navigation +=
-            menu_keyhelp_cmd(CMD_MENU_PAGE_DOWN) + " page down  "
-            + menu_keyhelp_cmd(CMD_MENU_PAGE_UP) + " page up  ";
+            menu_keyhelp_cmd(CMD_MENU_PAGE_DOWN) + jtrans_notrim(" page down  ")
+            + menu_keyhelp_cmd(CMD_MENU_PAGE_UP) + jtrans_notrim(" page up  ");
     }
     if (!is_set(MF_MULTISELECT))
-        navigation += menu_keyhelp_cmd(CMD_MENU_EXIT) + " exit";
+        navigation += menu_keyhelp_cmd(CMD_MENU_EXIT) + jtrans_notrim(" exit");
     navigation += "</lightgrey>";
     if (is_set(MF_MULTISELECT))
     {
@@ -1414,19 +1418,19 @@ string Menu::get_keyhelp(bool scrollable) const
         const auto chosen_count = selected_entries().size();
         navigation +=
                 "\n<lightgrey>"
-                "Letters toggle    ";
+                + jtrans_notrim("Letters toggle    ");
         if (is_set(MF_ARROWS_SELECT))
         {
             navigation += menu_keyhelp_cmd(CMD_MENU_TOGGLE_SELECTED)
-                + " toggle selected    ";
+                + jtrans_notrim(" toggle selected    ");
         }
         if (chosen_count)
         {
             navigation += menu_keyhelp_cmd(CMD_MENU_ACCEPT_SELECTION)
                 + make_stringf(
-                    " accept (%zu chosen)"
-                    "</lightgrey>",
-                chosen_count);
+                    jtrans_notrimc(" accept (%zu chosen)"),
+                chosen_count)
+                + "</lightgrey>";
         }
     }
     // XX this is present on non-scrolling multiselect keyhelps mostly for
@@ -1810,7 +1814,7 @@ bool Menu::process_command(command_type cmd)
             char linebuf[80] = "";
 
             const bool validline = title_prompt(linebuf, sizeof linebuf,
-                                                "Select what (regex)?");
+                                                jtransc("Select what (regex)?"));
 
             // XX what is the use case for this exiting, should this set lastch
             ret = (validline && linebuf[0]) ? filter_with_regex(linebuf) : true;
@@ -2108,7 +2112,7 @@ string Menu::get_select_count_string(int) const
         ret = f_selitem(&sel);
     // count is shown in footer now
 
-    return ret + string(max(12 - (int)ret.size(), 0), ' ');
+    return ret + string(max(12 - strwidth(ret), 0), ' ');
 }
 
 vector<MenuEntry*> Menu::selected_entries() const

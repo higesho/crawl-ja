@@ -1046,7 +1046,7 @@ static bool _do_book_acquirement(item_def &book, int agent)
 static int _failed_acquirement(bool quiet)
 {
     if (!quiet)
-        mpr("The demon of the infinite void smiles upon you.");
+        mpr(jtrans("The demon of the infinite void smiles upon you."));
     return NON_ITEM;
 }
 
@@ -1430,7 +1430,7 @@ int acquirement_create_item(object_class_type class_wanted,
         && agent < NUM_GODS)
     {
         if (!quiet && agent == GOD_XOM)
-            simple_god_message(" snickers.", false, GOD_XOM);
+            simple_god_message(jtransc(" snickers."), false, GOD_XOM);
         else
             return _failed_acquirement(quiet);
     }
@@ -1463,10 +1463,12 @@ class AcquireEntry : public InvEntry
     {
         const colour_t keycol = LIGHTCYAN;
         const string keystr = colour_to_str(keycol);
+        // menu_colour のパターンは英語のアイテム名で照合する
         const string itemstr =
-            colour_to_str(menu_colour(text, item_prefix(*item), tag, false));
+            colour_to_str(menu_colour(item_name_en(*item, DESC_A),
+                                      item_prefix(*item), tag, false));
         const string gold_text = item->base_type == OBJ_GOLD
-            ? make_stringf(" (you have %d gold)", you.gold) : "";
+            ? make_stringf(jtrans_notrimc(" (you have %d gold)"), you.gold) : "";
         return make_stringf(" <%s>%c %c </%s><%s>%s%s</%s>",
                             keystr.c_str(),
                             hotkeys[0],
@@ -1502,9 +1504,9 @@ AcquireMenu::AcquireMenu(CrawlVector &aitems, string ikey,
     init_entries();
 
     if (is_gizmo)
-        set_title("Choose a gizmo to assemble.");
+        set_title(jtrans("Choose a gizmo to assemble."));
     else
-        set_title("Choose an item to acquire.");
+        set_title(jtrans("Choose an item to acquire."));
 }
 
 static void _create_acquirement_item(item_def &item, string items_key,
@@ -1541,7 +1543,7 @@ static void _create_acquirement_item(item_def &item, string items_key,
         {
             if (you.inv[i].base_type == OBJ_GIZMOS)
             {
-                mprf("You assemble %s and install it in your exoskeleton!",
+                mprf(jtransc("You assemble %s and install it in your exoskeleton!"),
                      item.name(DESC_A).c_str());
                 equip_item(SLOT_GIZMO, i, false);
                 break;
@@ -1600,12 +1602,12 @@ string AcquireMenu::get_keyhelp(bool) const
         auto& entry = *selected[0];
         const string col = colour_to_str(channel_to_colour(MSGCH_PROMPT));
         help = make_stringf(
-               "<%s>%s %s? (%s/N)</%s>\n",
+               is_gizmo ? jtransc("<%s>Assemble %s? (%s/N)</%s>")
+                        : jtransc("<%s>Acquire %s? (%s/N)</%s>"),
                col.c_str(),
-               is_gizmo ? "Assemble" : "Acquire",
                entry.text.c_str(),
                Options.easy_confirm == easy_confirm_type::none ? "Y" : "y",
-               col.c_str());
+               col.c_str()) + "\n";
     }
     else
         help = "\n";
@@ -1619,11 +1621,11 @@ string AcquireMenu::get_keyhelp(bool) const
         //[Esc/R-Click] exit
         "<lightgrey>%s%s  %s %s</lightgrey>",
         menu_keyhelp_cmd(CMD_MENU_CYCLE_MODE).c_str(),
-        menu_action == ACT_EXECUTE ? " <w>assemble</w>|examine gizmo" :
-                                     " assemble|<w>examine</w> gizmo",
+        menu_action == ACT_EXECUTE ? jtrans_notrimc(" <w>assemble</w>|examine gizmo") :
+                                     jtrans_notrimc(" assemble|<w>examine</w> gizmo"),
         hyphenated_hotkey_letters(item_count(), 'a').c_str(),
-        menu_action == ACT_EXECUTE ? "select gizmo to assemble"
-                                   : "examine gizmo");
+        menu_action == ACT_EXECUTE ? jtransc("select gizmo to assemble")
+                                   : jtransc("examine gizmo"));
     }
     else
     {
@@ -1632,11 +1634,11 @@ string AcquireMenu::get_keyhelp(bool) const
             //[Esc/R-Click] exit
             "<lightgrey>%s%s  %s %s</lightgrey>",
             menu_keyhelp_cmd(CMD_MENU_CYCLE_MODE).c_str(),
-            menu_action == ACT_EXECUTE ? " <w>acquire</w>|examine items" :
-                                        " acquire|<w>examine</w> items",
+            menu_action == ACT_EXECUTE ? jtrans_notrimc(" <w>acquire</w>|examine items") :
+                                        jtrans_notrimc(" acquire|<w>examine</w> items"),
             hyphenated_hotkey_letters(item_count(), 'a').c_str(),
-            menu_action == ACT_EXECUTE ? "select item for acquirement"
-                                    : "examine item");
+            menu_action == ACT_EXECUTE ? jtransc("select item for acquirement")
+                                    : jtransc("examine item"));
     }
     return pad_more_with_esc(help);
 }
@@ -1773,7 +1775,7 @@ bool acquirement_menu()
     if (!clua.callfn("c_choose_acquirement", ">d", &index))
     {
         if (!clua.error.empty())
-            mprf(MSGCH_ERROR, "Lua error: %s", clua.error.c_str());
+            mprf(MSGCH_ERROR, jtransc("Lua error: %s"), clua.error.c_str());
     }
     else if (index >= 1 && index <= acq_items.size())
     {
@@ -1830,13 +1832,13 @@ bool okawaru_gift_weapon()
 
     auto &acq_items = you.props[OKAWARU_WEAPONS_KEY].get_vector();
 
-    simple_god_message(" offers you a choice of weapons!");
+    simple_god_message(jtransc(" offers you a choice of weapons!"));
 
     int index = 0;
     if (!clua.callfn("c_choose_okawaru_weapon", ">d", &index))
     {
         if (!clua.error.empty())
-            mprf(MSGCH_ERROR, "Lua error: %s", clua.error.c_str());
+            mprf(MSGCH_ERROR, jtransc("Lua error: %s"), clua.error.c_str());
     }
     else if (index >= 1 && index <= acq_items.size())
     {
@@ -1870,13 +1872,13 @@ bool okawaru_gift_armour()
 
     auto &acq_items = you.props[OKAWARU_ARMOUR_KEY].get_vector();
 
-    simple_god_message(" offers you a choice of armour!");
+    simple_god_message(jtransc(" offers you a choice of armour!"));
 
     int index = 0;
     if (!clua.callfn("c_choose_okawaru_armour", ">d", &index))
     {
         if (!clua.error.empty())
-            mprf(MSGCH_ERROR, "Lua error: %s", clua.error.c_str());
+            mprf(MSGCH_ERROR, jtransc("Lua error: %s"), clua.error.c_str());
     }
     else if (index >= 1 && index <= acq_items.size())
     {
@@ -2002,7 +2004,7 @@ bool coglin_invent_gizmo()
 {
     if (inv_count(INVENT_GEAR) >= MAX_GEAR)
     {
-        mpr("You don't have room to hold a gizmo! Drop something first.");
+        mpr(jtrans("You don't have room to hold a gizmo! Drop something first."));
         return false;
     }
 
@@ -2015,7 +2017,7 @@ bool coglin_invent_gizmo()
     if (!clua.callfn("c_choose_coglin_gizmo", ">d", &index))
     {
         if (!clua.error.empty())
-            mprf(MSGCH_ERROR, "Lua error: %s", clua.error.c_str());
+            mprf(MSGCH_ERROR, jtransc("Lua error: %s"), clua.error.c_str());
     }
     else if (index >= 1 && index <= acq_items.size())
     {
@@ -2044,6 +2046,7 @@ void coglin_announce_gizmo_name()
     string name = _generate_gizmo_name();
     names.push_back(name);
 
-    mprf("Your brain swirls with designs for %s. You just need some more time...",
-         article_a(name).c_str());
+    // ギズモ名は英語の合成名(artefact.cc / gizmo.txt の項)。冠詞は付けない
+    mprf(jtransc("Your brain swirls with designs for %s. You just need some more time..."),
+         name.c_str());
 }

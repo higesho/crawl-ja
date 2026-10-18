@@ -826,7 +826,7 @@ bool check_selected_skills()
 
     if (crawl_state.seen_hups)
     {
-        save_game(true, "Game saved, see you later!");
+        save_game(true, jtransc("Game saved, see you later!"));
         return false;
     }
 

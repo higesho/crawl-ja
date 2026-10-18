@@ -1,0 +1,53 @@
+%%%%
+As you die, Zot loses track of you.
+
+あなたが死ぬと、ゾットはあなたを見失った。
+%%%%
+As you enter the new level, Zot loses track of you.
+
+新しい階に入ると、ゾットはあなたを見失った。
+%%%%
+Zot's power touches on you...
+
+ゾットの力があなたに触れた…
+%%%%
+You have lingered too long. Zot senses you. Dive deeper or flee this branch before you suffer!
+
+あなたは長居しすぎた。ゾットがあなたに気づいた。苦しみを味わう前に、さらに深く潜るかこの分岐から逃げ出せ！
+%%%%
+Zot draws nearer. Dive deeper or flee this branch before you suffer!
+
+ゾットが迫ってきた。苦しみを味わう前に、さらに深く潜るかこの分岐から逃げ出せ！
+%%%%
+Zot has nearly found you. Suffering is imminent. Descend or flee this branch!
+
+ゾットはあなたを見つけかけている。苦しみは目前だ。さらに降りるか、この分岐から逃げ出せ！
+%%%%
+Glimpsed the power of Zot.
+
+ゾットの力を垣間見た
+%%%%
+The power of Zot manifests... and reveals the %s gem was a mimic! It cackles and vanishes.
+
+ゾットの力が顕現し…%sがミミックだったことが明らかになった！それはけたたましく笑って消え去った。
+%%%%
+With a frightful flash, the power of Zot shatters the %s gem into ten thousand fragments!
+
+恐ろしい閃光と共に、ゾットの力が%sを粉々に打ち砕いた！
+%%%%
+If you linger in this branch much longer, the power of Zot will shatter your %s gem.
+
+この分岐にこれ以上長居すると、ゾットの力があなたの%sを打ち砕くだろう。
+%%%%
+Zot senses the otherworldly energies of your %s gem, and will surely shatter it if you linger in this branch any longer!
+
+ゾットはあなたの%sの異界の力を感じ取った。これ以上この分岐に長居すれば、間違いなくそれは打ち砕かれるだろう！
+%%%%
+With a frightful flash, the power of Zot shatters your %s gem into ten thousand fragments!
+
+恐ろしい閃光と共に、ゾットの力があなたの%sを粉々に打ち砕いた！
+%%%%
+If you linger in this branch for another %d turns, the power of Zot will shatter your %s gem.
+
+この分岐にあと%dターン留まると、ゾットの力があなたの%sを打ち砕くだろう。
+%%%%

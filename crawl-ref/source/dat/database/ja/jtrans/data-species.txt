@@ -815,3 +815,188 @@ Your teeth grow more tusk-like, and your tympanum bulges.
 
 丸くなった
 %%%%
+# 第4陣で追加: ベオ信徒のときの種族名(species::orc_name)
+[spec name]Antique Orc
+
+古代オーク
+%%%%
+[spec name]Big Orc
+
+大オーク
+%%%%
+[spec name]Black Orconian
+
+黒色オーコニアン
+%%%%
+[spec name]Buggy Orc
+
+バグオーク
+%%%%
+[spec name]Centorc
+
+ケンタオーク
+%%%%
+[spec name]Deep Dworc
+
+ディープ・ドゥオーク
+%%%%
+[spec name]Deep Orc
+
+ディープオーク
+%%%%
+[spec name]Demon Orc
+
+デーモンオーク
+%%%%
+[spec name]Exo-Orc
+
+エクソオーク
+%%%%
+[spec name]Gargorcle
+
+ガーゴーク
+%%%%
+[spec name]Green Orconian
+
+緑色オーコニアン
+%%%%
+[spec name]Grey Orconian
+
+灰色オーコニアン
+%%%%
+[spec name]Halflorc
+
+ハーフリオーク
+%%%%
+[spec name]High Orc
+
+ハイオーク
+%%%%
+[spec name]Hyenorc
+
+ハイエノーク
+%%%%
+[spec name]Lava Orc Orc
+
+溶岩オーク
+%%%%
+[spec name]Mayflyorc
+
+カゲロウオーク
+%%%%
+[spec name]Merforc
+
+マーオーク
+%%%%
+[spec name]Meteorc
+
+メテオーク
+%%%%
+[spec name]Minotorc
+
+ミノタオーク
+%%%%
+[spec name]Mottled Orconian
+
+まだらオーコニアン
+%%%%
+[spec name]Mountain Orc
+
+山オーク
+%%%%
+[spec name]Nagorc
+
+ナーガオーク
+%%%%
+[spec name]Orcat
+
+オーキャット
+%%%%
+[spec name]Orcataur
+
+オーカタウル
+%%%%
+[spec name]Orcfreeti
+
+オークフリーティ
+%%%%
+[spec name]Orchid Stalker
+
+オーキッドストーカー
+%%%%
+[spec name]Orcish Mummy
+
+オークのマミー
+%%%%
+[spec name]Orcmicid
+
+オーミシッド
+%%%%
+[spec name]Orcobold
+
+オーコボルド
+%%%%
+[spec name]Orconian
+
+オーコニアン
+%%%%
+[spec name]Orcphibian
+
+オークフィビアン
+%%%%
+[spec name]Orctopode
+
+オークトポッド
+%%%%
+[spec name]Orcula
+
+オーキュラ
+%%%%
+[spec name]Pale Orconian
+
+青白色オーコニアン
+%%%%
+[spec name]Phantasmorc
+
+ファンタズモーク
+%%%%
+[spec name]Purple Orconian
+
+紫色オーコニアン
+%%%%
+[spec name]Red Orconian
+
+赤色オーコニアン
+%%%%
+[spec name]Rotting Orc
+
+腐敗オーク
+%%%%
+[spec name]Skeletorc
+
+スケルトーク
+%%%%
+[spec name]Sludge Orc
+
+汚泥オーク
+%%%%
+[spec name]Spriggorc
+
+スプリゴーク
+%%%%
+[spec name]Tengorc
+
+テンゴーク
+%%%%
+[spec name]Trorc
+
+トローク
+%%%%
+[spec name]White Orconian
+
+白色オーコニアン
+%%%%
+[spec name]Yellow Orconian
+
+黄色オーコニアン
+%%%%

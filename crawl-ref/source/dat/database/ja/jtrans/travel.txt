@@ -1,0 +1,201 @@
+%%%%
+Have to go through %s. Continue?
+
+%sを経由しなければなりません。続けますか？
+%%%%
+Done exploring.
+
+探索終了。
+%%%%
+Key pressed, stopping %s.
+
+キーが押されたため、%sを中止します。
+%%%%
+You're in a travel-excluded area, stopping %s.
+
+自動移動禁止区域の中にいるため、%sを中止します。
+%%%%
+* - list branches
+
+* - 分岐から選択
+%%%%
+* - list waypoints
+
+* - 中継地点リスト
+%%%%
+What level of %s? (default %s, ? - help)
+
+%sの何階ですか？ (初期値: %s, ? - ヘルプ)
+%%%%
+Sorry, you can't auto-travel out of here.
+
+残念ながら、自動操作でここから脱出することはできない。
+%%%%
+Sorry, I don't know how to get there.
+
+残念ながら、到達経路を割り出せません。
+%%%%
+Level memory is imperfect, aborting.
+
+階層の記憶が不完全なため、中止します。
+%%%%
+Calm down first, please.
+
+まずは怒りを鎮めてください。
+%%%%
+Level %s of %s
+
+%sの%s階
+%%%%
+Existing waypoints:
+
+現在設定済みの中継地点:
+%%%%
+Delete which waypoint? (* - delete all, Esc - exit)
+
+どの中継地点を削除しますか？ (* - 全部削除, Esc - キャンセル)
+%%%%
+All waypoints deleted. Have a nice day!
+
+すべての中継地点を削除しました。
+%%%%
+Assign waypoint to what number? (0-9%s)
+
+この地点を何番に登録しますか？ (0-9%s)
+%%%%
+, D - delete waypoint
+
+, D - 中継地点を削除
+%%%%
+Waypoint %d re-assigned from %s to %s.
+
+%d番の中継地点を%sから%sへ上書きしました。
+%%%%
+Waypoint %d assigned to %s.
+
+%d番の中継地点を%sに登録しました。
+%%%%
+Stopped running for exclusion.
+
+自動禁止エリアのため、移動を中止しました。
+%%%%
+(under bush)
+
+(藪の中)
+%%%%
+(under plant)
+
+(迷宮草の根元)
+%%%%
+Found %s %s.
+
+%sの%sを見つけた。
+%%%%
+Found %s.
+
+%sを見つけた。
+%%%%
+can't reach some %s
+
+一部の%sに到達できない
+%%%%
+Partly explored, %s.
+
+部分的に探索した(%s)。
+%%%%
+[explore reason]unopened runed door
+
+未開封のルーンの扉がある
+%%%%
+[explore reason]unopened door
+
+閉じた扉がある
+%%%%
+[explore reason]unvisited transporter
+
+未使用の転送装置がある
+%%%%
+[explore reason]items
+
+アイテム
+%%%%
+[explore reason]places
+
+場所
+%%%%
+Could not pick up %s here; Ignore them?
+
+ここでは%sを拾えなかった。無視しますか？
+%%%%
+Could not %s, %s.
+
+%sできない: %s。
+%%%%
+You appear to be waiting for the end of something which may never occur. Examine your explore_auto_rest_status option.
+
+終わることのない何かを待ち続けているようだ。explore_auto_rest_status オプションを確認してください。
+%%%%
+_ - list branches
+
+_ - 分岐から選択
+%%%%
+Where to?
+
+どこへ行きますか？
+%%%%
+You're already at the bottom of this branch!
+
+あなたはすでにこの分岐の最下層にいる！
+%%%%
+Sorry, I don't know how to traverse that place.
+
+残念ながら、そこを通り抜ける方法がわかりません。
+%%%%
+Really explore while Zot is near?
+
+ゾットが迫っているのに本当に探索しますか？
+%%%%
+Waypoints on this level may disappear at any time.
+
+この階の中継地点はいつ消えてもおかしくありません。
+%%%%
+Waypoints will disappear once you leave this level.
+
+この階を離れると中継地点は消えます。
+%%%%
+Waypoint %d re-assigned to %s.
+
+%d番の中継地点を%sに上書きしました。
+%%%%
+[explore found]item
+
+アイテム
+%%%%
+[explore found]shop
+
+店
+%%%%
+[explore found]altar
+
+祭壇
+%%%%
+[explore found]portal
+
+ポータル
+%%%%
+[explore found]stair
+
+階段
+%%%%
+[explore found]transporter
+
+転送装置
+%%%%
+[explore found]runed door
+
+ルーンの扉
+%%%%
+[explore found]runelights
+
+ルーンの灯
+%%%%

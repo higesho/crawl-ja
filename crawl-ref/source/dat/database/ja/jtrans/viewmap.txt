@@ -1,0 +1,31 @@
+# viewmap.txt: viewmap.cc(階層マップ画面)
+%%%%
+# 地図の見出しの階層名。引数: 支部名、階数
+%s, level %d
+
+%sの第%d階層
+%%%%
+(Press <w>?</w> for help)
+
+(<w>?</w> でヘルプ)
+%%%%
+Level map wiped.
+
+階層のマップを消去した。
+%%%%
+Level map cleared.
+
+階層のマップを消去した。
+%%%%
+Remembered map restored.
+
+記録済みのマップを復元した。
+%%%%
+No remembered map.
+
+記録されたマップはない。
+%%%%
+You can't annotate this level.
+
+この階層に注釈を付けることはできない。
+%%%%

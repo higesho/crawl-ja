@@ -13,6 +13,7 @@
 #include "cloud.h"
 #include "coord.h"
 #include "coordit.h"
+#include "database.h"
 #include "dgn-overview.h"
 #include "english.h"
 #include "env.h"
@@ -56,13 +57,16 @@ static bool _mon_needs_auto_exclude(const monster* mon, bool sleepy = false)
 static bool _need_auto_exclude(const monster* mon, bool sleepy = false)
 {
     // This only works if the name is lowercased.
+    // オプションのパターンは英語名で照合する(日本語名でも照合する)
     string name = mon->name(DESC_BASENAME, mon->is_stationary()
                                            && testbits(mon->flags, MF_SEEN));
-    lowercase(name);
+    string name_en = mon->name_en(DESC_BASENAME, mon->is_stationary()
+                                              && testbits(mon->flags, MF_SEEN));
+    lowercase(name_en);
 
     for (const text_pattern &pat : Options.auto_exclude)
     {
-        if (pat.matches(name)
+        if ((pat.matches(name_en) || pat.matches(name))
             && _mon_needs_auto_exclude(mon, sleepy)
             && (mon->attitude == ATT_HOSTILE))
         {
@@ -119,7 +123,7 @@ void add_auto_excludes()
     if (mons.empty())
         return;
 
-    mprf(MSGCH_WARN, "Marking area around %s as unsafe for travelling.",
+    mprf(MSGCH_WARN, jtransc("Marking area around %s as unsafe for travelling."),
             describe_monsters_condensed(mons).c_str());
     learned_something_new(HINT_AUTO_EXCLUSION);
 }
@@ -605,6 +609,18 @@ void maybe_remove_autoexclusion(const coord_def &p)
     }
 }
 
+// 除外の説明(英語で保存されているモンスター名・地形名)を表示用に訳す
+static string _exclusion_desc_j(const string &desc)
+{
+    const string detected = " (detected)";
+    if (ends_with(desc, detected))
+    {
+        return jtrans(desc.substr(0, desc.size() - detected.size()))
+               + jtrans("(detected)");
+    }
+    return tagged_jtrans("[feature]", desc);
+}
+
 // Lists all exclusions on the current level.
 string exclude_set::get_exclusion_desc()
 {
@@ -625,7 +641,7 @@ string exclude_set::get_exclusion_desc()
             continue;
 
         if (!ex.desc.empty())
-            desc.push_back(ex.desc);
+            desc.push_back(_exclusion_desc_j(ex.desc));
         else
             count_other++;
     }
@@ -653,8 +669,8 @@ string exclude_set::get_exclusion_desc()
                         desc.push_back(old_desc);
                     else
                     {
-                        desc.push_back(make_stringf("%d %s",
-                                       count, pluralise(old_desc).c_str()));
+                        desc.push_back(make_stringf("%s x%d",
+                                       old_desc.c_str(), count));
                         count = 1;
                     }
                     old_desc = tmp;
@@ -665,30 +681,25 @@ string exclude_set::get_exclusion_desc()
             desc.push_back(old_desc);
         else
         {
-            desc.push_back(make_stringf("%d %s",
-                           count, pluralise(old_desc).c_str()));
+            desc.push_back(make_stringf("%s x%d",
+                           old_desc.c_str(), count));
         }
     }
 
     if (count_other > 0)
     {
-        desc.push_back(make_stringf("%d %sexclusion%s",
-                                    count_other, desc.empty() ? "" : "more ",
-                                    count_other > 1 ? "s" : ""));
+        desc.push_back(make_stringf(desc.empty() ? jtransc("%d exclusion(s)")
+                                                 : jtransc("%d more exclusion(s)"),
+                                    count_other));
     }
     else if (desc.empty())
         return "";
 
     string desc_str = "";
     if (desc.size() > 1 || count_other == 0)
-    {
-        desc_str += "exclusion";
-        if (desc.size() > 1)
-            desc_str += "s";
-        desc_str += ": ";
-    }
+        desc_str = jtrans("exclusion") + ": ";
     return desc_str + comma_separated_line(desc.begin(), desc.end(),
-                                           " and ", ", ");
+                                           "、", "、");
 }
 
 void marshallExcludes(writer& outf, const exclude_set& excludes)

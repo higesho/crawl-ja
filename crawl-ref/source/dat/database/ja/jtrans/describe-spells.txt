@@ -1,0 +1,95 @@
+# describe-spells.cc: 魔法書・モンスターの呪文一覧
+%%%%
+# モンスターの呪文一覧の見出し(主語込み)。%s は下の [spell vuln] を入れた
+# ", which are affected by %s" の訳
+, which are affected by %s
+
+(%sの影響を受ける)
+%%%%
+[spell vuln]silence
+
+静寂
+%%%%
+[spell vuln]silence and antimagic
+
+静寂と反魔法
+%%%%
+[spell vuln]antimagic (but not silence)
+
+反魔法(静寂の影響は受けない)
+%%%%
+It possesses the following wand spells:
+
+このモンスターは以下のワンドの呪文を使える:
+%%%%
+It has mastered the following spells%s:
+
+このモンスターは以下の呪文を習得している%s:
+%%%%
+# 1 つ目の %s は下の [spell descriptor]
+It possesses the following %s abilities%s:
+
+このモンスターは以下の%s能力を持っている%s:
+%%%%
+[spell descriptor]natural
+
+生来の
+%%%%
+[spell descriptor]magical
+
+魔法の
+%%%%
+[spell descriptor]divine
+
+神聖な
+%%%%
+(immune)
+
+(無効)
+%%%%
+%dd%d+(2/space)
+
+%dd%d+(2/マス)
+%%%%
+%dd%d+(3/space)
+
+%dd%d+(3/マス)
+%%%%
+/turn
+
+/ターン
+%%%%
+# 魔法書の呪文一覧の見出し(表示幅で列を揃える)
+[spell list]Spells
+
+呪文
+%%%%
+[spell list]Type
+
+系統
+%%%%
+[spell list]Level
+
+レベル
+%%%%
+[spell list]Known
+
+ライブラリ
+%%%%
+[spell list known]yes
+
+あり
+%%%%
+[spell list known]no
+
+なし
+%%%%
+# 一覧の幅が足りないときのレフディブの水晶槍の短い名前
+[spell short]Crystal Spear
+
+水晶槍
+%%%%
+%s (L%d %s)
+
+%s(Lv%d %s)
+%%%%

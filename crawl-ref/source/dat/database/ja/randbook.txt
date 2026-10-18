@@ -1,3 +1,153 @@
+# randbook.txt(ランダム呪文書の名前)。0.19-ja の訳を移し、0.34 で増えたキーを追訳。
+# randbook.cc が日本語の語順(「<所有者>の」+<形容>+<題>+「の」+<書>)で組み立てる。
+
+%%%%
+book appearance
+
+# en:
+#   @_book_adjective_@
+@_book_adjective_@
+%%%%
+book_noun
+
+# en:
+#   Almanac
+#   
+#   Anthology
+#   
+#   Atlas
+#   
+#   Book
+#   
+#   Catalogue
+#   
+#   Codex
+#   
+#   Compendium
+#   
+#   Compilation
+#   
+#   Cyclopedia
+#   
+#   Directory
+#   
+#   Elucidation
+#   
+#   Encyclopedia
+#   
+#   Folio
+#   
+#   Grimoire
+#   
+#   Handbook
+#   
+#   Incunable
+#   
+#   Incunabulum
+#   
+#   Octavo
+#   
+#   Omnibus
+#   
+#   Papyrus
+#   
+#   Precepts
+#   
+#   Quarto
+#   
+#   Secrets
+#   
+#   Spellbook
+#   
+#   Tome
+#   
+#   Vellum
+#   
+#   Volume
+書
+
+魔導書
+
+年鑑
+
+全集
+
+概論
+
+手引書
+
+
+古文書
+
+カタログ
+%%%%
+_book_noun_on_
+
+# en:
+#   Annotations
+#   
+#   Collected Works
+#   
+#   Commentary
+#   
+#   Discourse
+#   
+#   Discursus
+#   
+#   Disquisition
+#   
+#   Dissertation
+#   
+#   Enchiridion
+#   
+#   Essays
+#   
+#   Excursus
+#   
+#   Exposition
+#   
+#   Guide
+#   
+#   Guidebook
+#   
+#   Information
+#   
+#   Lectures
+#   
+#   Lessons
+#   
+#   Meditations
+#   
+#   Monograph
+#   
+#   Notes
+#   
+#   Opusculum
+#   
+#   Reference Book
+#   
+#   Teachings
+#   
+#   Textbook
+#   
+#   Thoughts
+#   
+#   Tractate
+#   
+#   Treatise
+#   
+#   Vademecum
+#   
+#   Verses
+#   
+#   Writings
+ガイド
+
+論文集
+
+論文
+
+参考書
 %%%%
 book_name
 
@@ -13,6 +163,935 @@ w:9
 w:4
 の@_book_noun_on_@
 %%%%
+random_book_title
+
+# en:
+#   w:15
+#   the @_book_plant_animal_@
+#   
+#   w:20
+#   @_number_or_qualifier_@ @_thing_names_@
+#   
+#   w:4
+#   the @_profession_name_@
+#   
+#   w:13
+#   @_philosophy_or_science_@
+#   
+#   w:8
+#   @_wacky_armour_name_@
+#   
+#   w:2
+#   @_destiny_name_@
+#   
+#   w:6
+#   @_place_name_@
+#   
+#   w:1
+#   @_magic_name_@
+#   
+#   w:4
+#   @_substance_name_@
+#   
+#   w:2
+#   @_power_name_@
+w:15
+@_book_plant_animal_@
+
+w:20
+@_number_or_qualifier_@@_thing_names_@
+
+w:4
+@_profession_name_@
+
+w:13
+@_philosophy_or_science_@
+
+w:8
+@_wacky_armour_name_@
+
+w:2
+@_destiny_name_@
+
+w:6
+@_place_name_@
+
+w:1
+@_magic_name_@
+
+w:4
+@_substance_name_@
+
+w:2
+@_power_name_@
+
+w:2
+@_mental_illness_weapon_@
+%%%%
+_book_plant_animal_
+
+# en:
+#   w:1
+#   @_jewellery_animal_@
+#   
+#   w:1
+#   @_critter_name_@
+#   
+#   w:1
+#   @_plant_name_@
+#   
+#   w:6
+#   @_weapon_animal_@
+#   
+#   @_armour_animal_@
+w:1
+@_jewellery_animal_@
+
+w:1
+@_critter_name_@
+
+w:1
+@_plant_name_@
+
+w:6
+@_weapon_animal_@
+
+@_armour_animal_@
+%%%%
+Xom_book_title
+
+# en:
+#   w:30
+#   @random_book_title@
+#   
+#   @_chaos_name_@
+#   
+#   w:1
+#   @_game_name_@
+#   
+#   w:2
+#   @player_death@
+#   
+#   w:8
+#   @_wacky_armour_name_@
+#   
+#   w:1
+#   @_politics_name_armour_@
+#   
+#   w:5
+#   @_power_name_@
+#   
+#   w:3
+#   @_discomfort_and_inaction_@
+#   
+#   w:3
+#   @_discomfort_weapon_@
+w:30
+@random_book_title@
+
+@_chaos_name_@
+
+w:1
+@_game_name_@
+
+w:2
+@player_death@
+
+w:8
+@_wacky_armour_name_@
+
+w:1
+@_politics_name_armour_@
+
+w:5
+@_power_name_@
+
+w:3
+@_discomfort_and_inaction_@
+
+w:3
+@_discomfort_weapon_@
+
+w:3
+@_mental_illness_weapon_@
+%%%%
+_book_adjective_
+
+# en:
+#   ancient
+#   
+#   antique
+#   
+#   backwards
+#   
+#   black
+#   
+#   blackened
+#   
+#   clothbound
+#   
+#   colourful
+#   
+#   conspicuous
+#   
+#   curious
+#   
+#   curling
+#   
+#   decrepit
+#   
+#   disorganised
+#   
+#   dog-eared
+#   
+#   droning
+#   
+#   dusty
+#   
+#   embossed
+#   
+#   engraved
+#   
+#   exquisite
+#   
+#   faded
+#   
+#   foxed
+#   
+#   fuliginous
+#   
+#   fusty
+#   
+#   gaudy
+#   
+#   glistering
+#   
+#   glossy
+#   
+#   graven
+#   
+#   grimy
+#   
+#   humming
+#   
+#   illuminated
+#   
+#   inconspicuous
+#   
+#   innocuous
+#   
+#   leatherbound
+#   
+#   levitating
+#   
+#   lithographed
+#   
+#   loosely-bound
+#   
+#   moth-eaten
+#   
+#   mouldy
+#   
+#   mumbling
+#   
+#   murmuring
+#   
+#   musty
+#   
+#   odd
+#   
+#   peculiar
+#   
+#   plain
+#   
+#   quavering
+#   
+#   quivering
+#   
+#   ragged
+#   
+#   rare
+#   
+#   remarkable
+#   
+#   resplendent
+#   
+#   shimmering
+#   
+#   shiny
+#   
+#   simple
+#   
+#   sooty
+#   
+#   sparkling
+#   
+#   stained
+#   
+#   sticky
+#   
+#   strange
+#   
+#   suspect
+#   
+#   suspicious
+#   
+#   tattered
+#   
+#   thrumming
+#   
+#   timeworn
+#   
+#   torn
+#   
+#   trembling
+#   
+#   uncut
+#   
+#   unremarkable
+#   
+#   unusual
+#   
+#   upside-down
+#   
+#   vellum
+#   
+#   vibrant
+#   
+#   vibrating
+#   
+#   water-damaged
+#   
+#   weird
+#   
+#   well-preserved
+#   
+#   whispering
+#   
+#   worn
+#   
+#   wrinkled
+#   
+#   yellowed
+きらめく
+
+ぴかぴか光る
+
+宙に浮いている
+
+退屈そうな
+
+人目を引く
+
+地味な
+
+色彩豊かな
+
+重厚な
+
+彫版印刷の
+
+骨董品の
+
+黄ばんだ
+
+珍しい
+
+黒い
+
+黒塗りの
+
+引き裂かれた
+%%%%
+_the_book_magic_
+
+# en:
+#   the @_occult_adjective_@ Arts
+#   
+#   the @_occult_adjective_@ Practices
+#   
+#   the @_occult_adjective_@ Rites
+#   
+#   the @_occult_adjective_@ Traditions
+#   
+#   the @_occult_adjective_@ Truths
+#   
+#   the Hermit's Heritage
+#   
+#   the Histories of Mysteries
+#   
+#   the Magician's Craft
+#   
+#   the Mind of the Magus
+#   
+#   the Power of Words
+#   
+#   the Rites and Rhymes
+#   
+#   the Sigils and Symbols
+#   
+#   the Wisdom of the Ancients
+#   
+#   the Wizard's Wisdom
+#   
+#   the Words of Power
+#   
+#   w:300
+#   @_book_magic_@
+w:9
+秘技
+
+w:1
+隠遁者の遺産
+
+w:90
+@_book_magic_@
+%%%%
+_book_magic_
+
+# en:
+#   @_occult_adjective_@ Insight
+#   
+#   @_occult_adjective_@ Knowledge
+#   
+#   @_occult_adjective_@ Power
+#   
+#   @_occult_adjective_@ Understanding
+#   
+#   @_occult_adjective_@ Wisdom
+#   
+#   Casting
+#   
+#   Gnosis
+#   
+#   Hermeneutics
+#   
+#   Hermetics
+#   
+#   w:2
+#   Hocus-Pocus
+#   
+#   Incantation
+#   
+#   Magic
+#   
+#   Magical Power
+#   
+#   Mysticism
+#   
+#   Occultism
+#   
+#   Sorcery
+#   
+#   Sortilege
+#   
+#   Spellcasting
+#   
+#   Spellcraft
+#   
+#   Spellweaving
+#   
+#   Spellwork
+#   
+#   Thaumaturgy
+#   
+#   Theurgy
+#   
+#   Willworking
+#   
+#   Witchcraft
+#   
+#   Witchery
+#   
+#   Wizarding
+#   
+#   Wizardry
+魔術
+
+儀式魔術
+
+奇蹟
+
+w:5
+詠唱
+
+w:5
+呪文詠唱
+
+魔導
+
+魔法
+
+
+
+
+
+w:5
+秘められし知識
+
+
+w:5
+解釈学
+%%%%
+_occult_adjective_
+
+# en:
+#   Abstruse
+#   
+#   Acroamatic
+#   
+#   Arcane
+#   
+#   Awakened
+#   
+#   Concealed
+#   
+#   Cryptic
+#   
+#   Deep
+#   
+#   Esoteric
+#   
+#   Forbidden
+#   
+#   Gnostic
+#   
+#   Hermetic
+#   
+#   Hidden
+#   
+#   Lost
+#   
+#   Magical
+#   
+#   Mysterious
+#   
+#   Mystic
+#   
+#   Mystical
+#   
+#   Occult
+#   
+#   Orphic
+#   
+#   Recondite
+#   
+#   Revealed
+#   
+#   Ritual
+#   
+#   Sealed
+#   
+#   Secret
+#   
+#   Sibylline
+#   
+#   Transmundane
+#   
+#   Veiled
+難解な
+
+秘伝の
+
+神秘の
+
+目覚めた
+
+隠された
+
+謎めいた
+
+深遠な
+
+秘教の
+
+禁じられた
+
+グノーシスの
+
+ヘルメスの
+
+秘められた
+
+失われた
+
+魔法の
+
+不可思議な
+
+神秘的な
+
+幽玄の
+
+オカルトの
+
+オルフェウスの
+
+深奥の
+
+啓示された
+
+儀式の
+
+封印された
+
+秘密の
+
+巫女の
+
+超俗の
+
+ヴェールに包まれた
+%%%%
+_beginners_
+
+# en:
+#   Beginners
+#   
+#   Initiates
+#   
+#   Apprentices
+#   
+#   Learners
+#   
+#   Neophytes
+#   
+#   Novices
+#   
+#   w:5
+#   Amateurs
+#   
+#   w:5
+#   Rookies
+#   
+#   w:5
+#   Absolute Beginners
+#   
+#   w:1
+#   Ex-Berserkers
+#   
+#   w:1
+#   Dummies
+初心者
+
+
+
+
+w:2
+超初心者
+%%%%
+starting level book
+
+# en:
+#   w:2
+#   @_the_book_magic_@ 101
+#   
+#   @_the_book_magic_@ for @_beginners_@
+#   
+#   @_the_book_magic_@, Part @level@
+#   
+#   @_the_book_magic_@, Volume @level@
+#   
+#   A @book_name@ Starting Spells
+#   
+#   A Beginning Course on @_the_book_magic_@
+#   
+#   A Prolegomenon to @_the_book_magic_@
+#   
+#   A Tutorial on @_the_book_magic_@
+#   
+#   An Exordium to @_the_book_magic_@
+#   
+#   An Initiation into @_the_book_magic_@
+#   
+#   An Induction into @_the_book_magic_@
+#   
+#   An Introduction to @_the_book_magic_@
+#   
+#   w:2
+#   Anyone Can Learn @_the_book_magic_@
+#   
+#   Beginning @_the_book_magic_@
+#   
+#   Commencing @_the_book_magic_@
+#   
+#   Dabbling in @_the_book_magic_@
+#   
+#   Elementary @_book_magic_@
+#   
+#   w:2
+#   Even @_beginners_@ Can Learn @_the_book_magic_@!
+#   
+#   First Steps in @_the_book_magic_@
+#   
+#   Practicing @_the_book_magic_@
+#   
+#   Preliminaries of @_the_book_magic_@
+#   
+#   Simple @_book_magic_@
+#   
+#   w:2
+#   So You Want to Learn @_the_book_magic_@
+#   
+#   Starting @_the_book_magic_@
+#   
+#   The Basics of @_the_book_magic_@
+@_beginners_@にもわかる@_the_book_magic_@
+
+w:2
+@_the_book_magic_@について 入門編
+
+@_the_book_magic_@の初心者コース
+
+@_the_book_magic_@ 第1巻
+
+@_the_book_magic_@解説書
+
+
+@_the_book_magic_@はじめの一歩
+%%%%
+easy level book
+
+# en:
+#   @_book_magic_@ and How To Use It
+#   
+#   @_the_book_magic_@ and You
+#   
+#   @_the_book_magic_@ Continued
+#   
+#   @_the_book_magic_@ in Simple Steps
+#   
+#   @_the_book_magic_@, Part @level@
+#   
+#   @_the_book_magic_@, Volume @level@
+#   
+#   A @book_name@ Supplementary Spells
+#   
+#   A Primer on @_the_book_magic_@
+#   
+#   An Early Guide to @_the_book_magic_@
+#   
+#   Continuing @_the_book_magic_@
+#   
+#   Easy @_book_magic_@
+#   
+#   Everyday @_book_magic_@
+#   
+#   More @_book_magic_@
+#   
+#   More Studies in @_the_book_magic_@
+#   
+#   Performing Successful @_book_magic_@
+#   
+#   Quotidian @_book_magic_@
+#   
+#   w:2
+#   The Antepenultimate Guide to @_the_book_magic_@
+#   
+#   The Foundations of @_the_book_magic_@
+#   
+#   The Fundamentals of @_the_book_magic_@
+#   
+#   w:2
+#   The Joy of @_book_magic_@
+#   
+#   The Keys to @_the_book_magic_@
+@_the_book_magic_@読本
+
+@_the_book_magic_@簡単ガイド
+
+
+@_the_book_magic_@の基礎
+
+かんたん@_the_book_magic_@
+
+@_the_book_magic_@について 第@level@巻
+
+続・@_the_book_magic_@
+
+w:1
+@_the_book_magic_@とその使い方
+%%%%
+moderate level book
+
+# en:
+#   @_the_book_magic_@, Part @level@
+#   
+#   @_the_book_magic_@, Volume @level@
+#   
+#   A @book_name@ Spells
+#   
+#   Advanced @_book_magic_@
+#   
+#   Advanced Steps in @_the_book_magic_@
+#   
+#   Even More @_book_magic_@
+#   
+#   Experienced @_book_magic_@
+#   
+#   Further Progress in @_the_book_magic_@
+#   
+#   Further Steps in @_the_book_magic_@
+#   
+#   Improving Your @_book_magic_@
+#   
+#   Practical @_book_magic_@
+#   
+#   Progressing With @_book_magic_@
+#   
+#   Sophisticated @_book_magic_@
+#   
+#   The Advanced Guide to @_the_book_magic_@
+#   
+#   The Path to @_the_book_magic_@
+#   
+#   w:2
+#   The Penultimate Guide to @_the_book_magic_@
+#   
+#   The Second Course in @_book_magic_@
+#   
+#   Useful @_book_magic_@
+#   
+#   w:2
+#   Yet Another @book_noun@ About @_the_book_magic_@
+@_the_book_magic_@ 応用編
+
+@_the_book_magic_@上級ガイド
+
+
+@_the_book_magic_@について 第@level@巻
+
+上級@_the_book_magic_@
+
+
+
+
+w:1
+@_book_magic_@ 上達編
+%%%%
+_powerful_caster_
+
+# en:
+#   Archmage
+#   
+#   Archmaster
+#   
+#   Hierophant
+#   
+#   Luminary
+#   
+#   Mystagogue
+#   
+#   Prophet
+#   
+#   Sage
+#   
+#   Warlock
+#   
+#   w:5
+#   Deep Elf Lorekeeper
+#   
+#   w:5
+#   Genius of the Arcane
+#   
+#   w:5
+#   High Council
+#   
+#   w:5
+#   Lorekeeper
+#   
+#   w:5
+#   Loreminder
+#   
+#   w:1
+#   Blind Seer
+#   
+#   w:1
+#   Consilium Hierarch
+#   
+#   w:1
+#   Grand Magus
+#   
+#   w:1
+#   Greatest Mummy
+#   
+#   w:1
+#   Primeval Lich
+#   
+#   w:1
+#   Sorcerer Supreme
+#   
+#   w:1
+#   Ultimate Wizard
+#   
+#   w:1
+#   Weird Sisters
+#   
+#   w:1
+#   Wizard of Zot
+大魔道士
+
+
+w:3
+盲目の先見者
+
+w:3
+予言者
+
+w:1
+偉大なるミイラ
+%%%%
+_the_powerful_caster_
+
+# en:
+#   w:100
+#   the @_powerful_caster_@
+#   
+#   w:30
+#   Boris
+#   
+#   Sif Muna
+#   
+#   w:1
+#   Faust
+#   
+#   w:1
+#   Geber
+#   
+#   w:1
+#   Hermes Trismegistus
+#   
+#   w:1
+#   Jabir
+#   
+#   w:1
+#   Merlin
+#   
+#   w:1
+#   Morgana le Fay
+#   
+#   w:1
+#   Nicolae
+#   
+#   w:1
+#   Ostanes
+#   
+#   w:1
+#   Paracelsus
+#   
+#   w:1
+#   Prospero
+#   
+#   w:1
+#   Solomon
+@_powerful_caster_@
+
+w:3
+ボリス
+
+w:1
+シフ・ムーナ
+%%%%
 _last_or_lost_
 
 # en:
@@ -22,4 +1101,3709 @@ _last_or_lost_
 最後の
 
 失われし
+%%%%
+_testament_noun_
+
+# en:
+#   Archive
+#   
+#   Chronicle
+#   
+#   History
+#   
+#   Journal
+#   
+#   Memoir
+#   
+#   Record
+#   
+#   Testament
+#   
+#   Testimony
+#   
+#   Wisdom
+#   
+#   Writings
+記録集
+
+年代記
+
+歴史
+
+日誌
+
+回想録
+
+記録
+
+遺言
+
+証言
+
+叡智
+
+著作
+%%%%
+_difficult level book owner_
+
+# en:
+#   @_the_book_magic_@, Part @level@
+#   
+#   @_the_book_magic_@, Volume @level@
+#   
+#   A @book_name@ Superlative Spells
+#   
+#   A Thorough Guide to @_the_book_magic_@
+#   
+#   Mastering @_the_book_magic_@
+#   
+#   Mastery of @_the_book_magic_@
+#   
+#   The Final @book_noun@ of @_the_book_magic_@
+#   
+#   The Final @_book_noun_on_@ on @_the_book_magic_@
+#   
+#   The @_last_or_lost_@ Secrets of @_the_book_magic_@
+#   
+#   The @book_noun@ of Greatest Risks and Utility
+#   
+#   The Arcane Secrets of @_book_magic_@
+#   
+#   The Highest Levels of @_the_book_magic_@
+#   
+#   The Intricacies of @_the_book_magic_@
+#   
+#   The Ultimate Guide to @_the_book_magic_@
+#   
+#   Total Understanding of @_the_book_magic_@
+@_the_book_magic_@総覧
+
+@_the_book_magic_@の@_last_or_lost_@秘密
+%%%%
+difficult level book
+
+# en:
+#   w:50
+#   @_difficult level book owner_@
+#   
+#   The @_last_or_lost_@ @book_noun@ of @_the_powerful_caster_@
+#   
+#   w:5
+#   @_the_book_magic_@ of @_the_powerful_caster_@
+#   
+#   w:5
+#   The @_last_or_lost_@ @_testament_noun_@ of @_the_powerful_caster_@
+#   
+#   w:5
+#   The @_occult_adjective_@ @_testament_noun_@ of @_the_powerful_caster_@
+#   
+#   w:1
+#   A @book_noun@ from @_the_powerful_caster_@ to @player_name@
+w:50
+@_difficult level book owner_@
+
+@_the_powerful_caster_@の@_last_or_lost_@@book_noun@
+%%%%
+Air
+
+# en:
+#   Aeromancy
+#   
+#   Air
+#   
+#   Anemomancy
+#   
+#   Astrapomancy
+#   
+#   Austromancy
+#   
+#   Breath
+#   
+#   Ceraunoscopy
+#   
+#   Clouds
+#   
+#   Conduction
+#   
+#   Electricity
+#   
+#   Electrocution
+#   
+#   Exhalation
+#   
+#   Feathers
+#   
+#   Fog
+#   
+#   Fumes
+#   
+#   Gases
+#   
+#   Gusts
+#   
+#   Haze
+#   
+#   Inhalation
+#   
+#   Lightning
+#   
+#   Nephomancy
+#   
+#   Ouranomancy
+#   
+#   Ozone
+#   
+#   Thunder
+#   
+#   Turbulence
+#   
+#   Weather
+#   
+#   Vapour
+#   
+#   Voltage
+#   
+#   the Atmosphere
+#   
+#   the Birds
+#   
+#   the Brume
+#   
+#   the Cumulonimbus
+#   
+#   the Lungs
+#   
+#   the Nimbus
+#   
+#   the Sixfirhy
+#   
+#   the Sky
+#   
+#   the Squall
+#   
+#   the Storm
+#   
+#   the Tempest
+#   
+#   the Welkin
+#   
+#   the Wind
+#   
+#   the Zephyr
+大気
+
+
+
+飛行
+
+鳥類
+
+羽根
+%%%%
+Conjuration
+
+# en:
+#   Arcane Combat
+#   
+#   Arcane Weapons
+#   
+#   Assaults
+#   
+#   Attacks
+#   
+#   Battle Magic
+#   
+#   Battling
+#   
+#   Blasting
+#   
+#   Blasts
+#   
+#   Blows
+#   
+#   Bolts
+#   
+#   Bombardment
+#   
+#   Bruises
+#   
+#   Combat Magic
+#   
+#   Collision
+#   
+#   Conflict
+#   
+#   Confrontation
+#   
+#   Conjuration
+#   
+#   Conjuring
+#   
+#   Conjury
+#   
+#   Damage
+#   
+#   Destruction
+#   
+#   Energy
+#   
+#   Force
+#   
+#   Forces
+#   
+#   Fulmination
+#   
+#   Hurting
+#   
+#   Impulse
+#   
+#   Injury
+#   
+#   Kinetic Energy
+#   
+#   Momentum
+#   
+#   Outbursts
+#   
+#   Percussion
+#   
+#   Power
+#   
+#   Striking
+#   
+#   Trauma
+#   
+#   w:2
+#   Traumaturgy
+#   
+#   Violence
+#   
+#   Wounds
+#   
+#   the Barrage
+#   
+#   the Discharge
+#   
+#   the Fifth Circle
+#   
+#   the Impact
+#   
+#   the Missiles
+#   
+#   the Salvo
+#   
+#   the Shot
+#   
+#   the Volley
+妖術
+
+
+
+w:5
+戦闘魔術
+%%%%
+Earth
+
+# en:
+#   Amathomancy
+#   
+#   Bedrock
+#   
+#   Breccia
+#   
+#   Clay
+#   
+#   Cleavage
+#   
+#   Detritus
+#   
+#   Earth
+#   
+#   Erosion
+#   
+#   Excavation
+#   
+#   Geology
+#   
+#   Geomancy
+#   
+#   Grit
+#   
+#   Lithomancy
+#   
+#   Metal
+#   
+#   Minerals
+#   
+#   Mud
+#   
+#   Orogeny
+#   
+#   Oromancy
+#   
+#   Quicksand
+#   
+#   Scree
+#   
+#   Silt
+#   
+#   Spelunking
+#   
+#   Stones
+#   
+#   Talus
+#   
+#   Tephra
+#   
+#   Terra Firma
+#   
+#   Terrain
+#   
+#   Topography
+#   
+#   Topomancy
+#   
+#   the Anticline
+#   
+#   the Boulder
+#   
+#   the Caves
+#   
+#   the Crater
+#   
+#   the Cwm
+#   
+#   the Fault
+#   
+#   the Fjord
+#   
+#   the Gargoyle
+#   
+#   the Geologist
+#   
+#   the Ground
+#   
+#   the Lithosphere
+#   
+#   the Mantle
+#   
+#   the Mesa
+#   
+#   the Mountains
+#   
+#   the Plateau
+#   
+#   the Quake
+#   
+#   the Quarry
+#   
+#   the Rocks
+#   
+#   the Syncline
+#   
+#   the Tektite
+#   
+#   the Valley
+#   
+#   the Volcano
+#   
+#   the Xenolith
+大地
+
+岩石
+
+粘土
+
+山脈
+%%%%
+Fire
+
+# en:
+#   Accelerants
+#   
+#   Anthracomancy
+#   
+#   Arson
+#   
+#   Ashes
+#   
+#   Burning
+#   
+#   Calefaction
+#   
+#   Causimancy
+#   
+#   Cinders
+#   
+#   Combustion
+#   
+#   Conflagration
+#   
+#   Embers
+#   
+#   Fever
+#   
+#   Fire
+#   
+#   Flame
+#   
+#   Flames
+#   
+#   Heat
+#   
+#   Hyperthermia
+#   
+#   Ignition
+#   
+#   Immolation
+#   
+#   Incandescence
+#   
+#   Incineration
+#   
+#   Kindling
+#   
+#   Lava
+#   
+#   Oxidation
+#   
+#   Phlogiston
+#   
+#   Pyromancy
+#   
+#   Pyromania
+#   
+#   Soot
+#   
+#   Sparks
+#   
+#   w:2
+#   Thermatology
+#   
+#   Wildfire
+#   
+#   the Arsonist
+#   
+#   the Blaze
+#   
+#   the Bonfire
+#   
+#   the Burn
+#   
+#   the Coals
+#   
+#   the Dragon
+#   
+#   the Inferno
+#   
+#   the Pyre
+#   
+#   the Pyromaniac
+#   
+#   the Salamander
+#   
+#   the Summer
+#   
+#   the Sun
+#   
+#   the Torch
+#   
+#   the Tropics
+#   
+#   the Volcano
+猛火
+
+火炎
+
+熱
+
+火山
+
+火災
+
+点火
+
+放火魔
+%%%%
+Hexes
+
+# en:
+#   Ambsace
+#   
+#   Anathema
+#   
+#   Bad Luck
+#   
+#   Beguiling
+#   
+#   Bewitchment
+#   
+#   Charms
+#   
+#   Curses
+#   
+#   Destiny
+#   
+#   Doom
+#   
+#   Enchantment
+#   
+#   Ensorcelling
+#   
+#   Execration
+#   
+#   Fascination
+#   
+#   Fate
+#   
+#   Glamour
+#   
+#   Guile
+#   
+#   Hexes
+#   
+#   Hexing
+#   
+#   Ill Luck
+#   
+#   Imprecation
+#   
+#   Interference
+#   
+#   Jinxing
+#   
+#   Malediction
+#   
+#   Maleficia
+#   
+#   Malisons
+#   
+#   Mischance
+#   
+#   Misfortune
+#   
+#   Obstruction
+#   
+#   Omens
+#   
+#   Portents
+#   
+#   Signs
+#   
+#   Spellbinding
+#   
+#   the Curse
+#   
+#   the Evil Eye
+#   
+#   the Faeries
+#   
+#   the Fairies
+#   
+#   the Fair Folk
+#   
+#   the Jinx
+#   
+#   the Maleficium
+#   
+#   the Oath
+#   
+#   the Sphinx
+#   
+#   w:2
+#   the Whammy
+#   
+#   the Wyrd
+呪術
+
+呪い
+
+呪詛
+%%%%
+Ice
+
+# en:
+#   Algor
+#   
+#   Chilblains
+#   
+#   Cold
+#   
+#   Congelation
+#   
+#   Cryomancy
+#   
+#   Firn
+#   
+#   Freezing
+#   
+#   Frost
+#   
+#   Frostbite
+#   
+#   Glaciation
+#   
+#   Graupel
+#   
+#   Hail
+#   
+#   Hoarfrost
+#   
+#   Hypothermia
+#   
+#   Ice
+#   
+#   Refrigeration
+#   
+#   Rime
+#   
+#   Snow
+#   
+#   the Blizzard
+#   
+#   the Chill
+#   
+#   the Crevasse
+#   
+#   the Deep Freeze
+#   
+#   the Glacier
+#   
+#   the Iceberg
+#   
+#   the Icicle
+#   
+#   the Serac
+#   
+#   the Snowflakes
+#   
+#   the Tundra
+#   
+#   the Wendigo
+#   
+#   the Winter
+氷結
+
+氷雪
+
+冷気
+
+雪片
+
+
+凍傷
+%%%%
+Necromancy
+
+# en:
+#   Bodies
+#   
+#   Bones
+#   
+#   Cadavers
+#   
+#   Carcasses
+#   
+#   Carrion
+#   
+#   Caskets
+#   
+#   Coffins
+#   
+#   Corpses
+#   
+#   Darkness
+#   
+#   Death
+#   
+#   Desecration
+#   
+#   Despair
+#   
+#   Diablerie
+#   
+#   Ectoplasm
+#   
+#   Evil
+#   
+#   Exhumation
+#   
+#   Finality
+#   
+#   Gloom
+#   
+#   Lamentation
+#   
+#   Last Rites
+#   
+#   Misery
+#   
+#   Mortality
+#   
+#   Mortification
+#   
+#   Necromancy
+#   
+#   Nightshade
+#   
+#   Open Graves
+#   
+#   Remains
+#   
+#   Rot
+#   
+#   Resurrection
+#   
+#   Sciomancy
+#   
+#   Shades
+#   
+#   Shadows
+#   
+#   Skeletons
+#   
+#   Spectres
+#   
+#   Stolen Souls
+#   
+#   Zombies
+#   
+#   the Autopsy
+#   
+#   the Catacomb
+#   
+#   the Cemetery
+#   
+#   the Charnel House
+#   
+#   the Crypt
+#   
+#   the Damned
+#   
+#   the Dead
+#   
+#   the Departed
+#   
+#   the End
+#   
+#   the Grave
+#   
+#   the Graveyard
+#   
+#   the Mausoleum
+#   
+#   the Morgue
+#   
+#   the Mortuary
+#   
+#   the Necropsy
+#   
+#   the Ossuary
+#   
+#   the Sarcophagus
+#   
+#   the Tomb
+#   
+#   the Undead
+#   
+#   w:200
+#   @_Evil_adjective_@ @_Evil_noun_@
+死霊術
+
+邪悪
+
+暗黒
+
+奪われし魂
+
+w:60
+@_Evil_adjective_@@_Evil_noun_@
+%%%%
+_Evil_adjective_
+
+# en:
+#   Abhorrent
+#   
+#   Abominable
+#   
+#   Black
+#   
+#   Blasphemous
+#   
+#   Dark
+#   
+#   Debased
+#   
+#   Defiled
+#   
+#   Despicable
+#   
+#   Evil
+#   
+#   Iniquitous
+#   
+#   Left-handed
+#   
+#   Maleficent
+#   
+#   Malevolent
+#   
+#   Malignant
+#   
+#   Necromantic
+#   
+#   Profane
+#   
+#   Sinister
+#   
+#   w:2
+#   Spooky
+#   
+#   Unhallowed
+#   
+#   Unholy
+#   
+#   Unspeakable
+#   
+#   Vitiated
+#   
+#   Wicked
+邪悪なる
+
+暗黒の
+
+
+
+忌まわしき
+%%%%
+_Evil_noun_
+
+# en:
+#   Acts
+#   
+#   Arts
+#   
+#   Ceremonies
+#   
+#   Deeds
+#   
+#   Liturgies
+#   
+#   Magic
+#   
+#   Magicks
+#   
+#   Mysteries
+#   
+#   Rites
+#   
+#   Rituals
+#   
+#   Secrets
+#   
+#   Spells
+#   
+#   Words
+儀式
+
+技法
+
+秘密
+
+礼拝
+
+魔術
+%%%%
+Alchemy
+
+# en:
+#   Albedo
+#   
+#   Alchemy
+#   
+#   Alteration
+#   
+#   Argyropoeia
+#   
+#   Azoth
+#   
+#   Calcination
+#   
+#   Ceration
+#   
+#   Chemistry
+#   
+#   Chrysopoeia
+#   
+#   Citrinitas
+#   
+#   Cohobation
+#   
+#   Composition
+#   
+#   Compounds
+#   
+#   Concoctions
+#   
+#   Congelation
+#   
+#   Contamination
+#   
+#   Crysopoeia
+#   
+#   Decantation
+#   
+#   Decomposition
+#   
+#   Degeneration
+#   
+#   Distillation
+#   
+#   Effluvium
+#   
+#   Esoterica
+#   
+#   Essence
+#   
+#   Fermentation
+#   
+#   Flux
+#   
+#   Formulae
+#   
+#   Hermetica
+#   
+#   Impurities
+#   
+#   Intoxication
+#   
+#   Iosis
+#   
+#   Leucosis
+#   
+#   Litharge
+#   
+#   Melanosis
+#   
+#   Nigredo
+#   
+#   Pollution
+#   
+#   Prima Materia
+#   
+#   Projection
+#   
+#   Quintessence
+#   
+#   Reagents
+#   
+#   Reconfiguration
+#   
+#   Reformation
+#   
+#   Rubedo
+#   
+#   Solvents
+#   
+#   Spagyria
+#   
+#   Sublimation
+#   
+#   Substances
+#   
+#   Synthesis
+#   
+#   Takwin
+#   
+#   Tinctures
+#   
+#   Toxicants
+#   
+#   Toxicity
+#   
+#   Toxicology
+#   
+#   Toxins
+#   
+#   Transfiguration
+#   
+#   Transformation
+#   
+#   Transmogrification
+#   
+#   Transmutation
+#   
+#   Venin
+#   
+#   Venom
+#   
+#   Virulence
+#   
+#   Vitriol
+#   
+#   Xanthosis
+#   
+#   the Adder
+#   
+#   the Alembic
+#   
+#   the Alkahest
+#   
+#   the Athanor
+#   
+#   the Beaker
+#   
+#   the Catalyst
+#   
+#   the Crucible
+#   
+#   the Cucurbite
+#   
+#   the Decanter
+#   
+#   the Elixir
+#   
+#   the Gift
+#   
+#   the Great Work
+#   
+#   the Hornet
+#   
+#   the Iliaster
+#   
+#   the Magnum Opus
+#   
+#   the Mortar
+#   
+#   the Ouroboros
+#   
+#   the Panacea
+#   
+#   the Pestle
+#   
+#   the Prime Material
+#   
+#   the Queen Bee
+#   
+#   the Rebis
+#   
+#   the Scorpion
+#   
+#   the Snake
+#   
+#   the Solution
+#   
+#   the Tincture
+#   
+#   the Yliaster
+錬金術
+
+変成
+
+変化
+
+銀化
+
+アゾート
+
+煆焼
+
+蝋化
+
+化学
+
+金化
+
+黄化
+
+再蒸留
+
+合成
+
+化合物
+
+調合薬
+
+凝結
+
+汚染
+
+傾瀉
+
+分解
+
+退化
+
+蒸留
+
+瘴気
+
+秘儀
+
+精髄
+
+発酵
+
+流転
+
+処方
+
+ヘルメス文書
+
+不純物
+
+酩酊
+
+赤化
+
+白化
+
+黒化
+
+第一質料
+
+投射
+
+第五元素
+
+試薬
+
+再構成
+
+改造
+
+紅化
+
+溶剤
+
+スパギリア
+
+昇華
+
+物質
+
+人工生命
+
+チンキ
+
+毒物
+
+毒性
+
+毒物学
+
+毒素
+
+変貌
+
+変容
+
+変質
+
+核変換
+
+毒液
+
+猛毒
+
+病毒
+
+礬油
+
+黄色化
+
+毒蛇
+
+蒸留器
+
+万物融化液
+
+アタノール
+
+ビーカー
+
+触媒
+
+坩堝
+
+蒸留瓶
+
+デキャンタ
+
+エリクシル
+
+賜物
+
+大いなる業
+
+雀蜂
+
+イリアステル
+
+偉大なる作業
+
+乳鉢
+
+ウロボロス
+
+万能薬
+
+乳棒
+
+女王蜂
+
+レビス
+
+蠍
+
+蛇
+
+溶液
+%%%%
+Summoning
+
+# en:
+#   Accompaniment
+#   
+#   Accomplices
+#   
+#   Adjuration
+#   
+#   Allies
+#   
+#   Apparitions
+#   
+#   Arrival
+#   
+#   Assembling
+#   
+#   Attendants
+#   
+#   Beckoning
+#   
+#   Bringing Forth
+#   
+#   Calling
+#   
+#   Command
+#   
+#   Companions
+#   
+#   Company
+#   
+#   Convocation
+#   
+#   Creation
+#   
+#   Formation
+#   
+#   Generation
+#   
+#   Illusion
+#   
+#   Invitation
+#   
+#   Leadership
+#   
+#   Mustering
+#   
+#   Phantasms
+#   
+#   Production
+#   
+#   Rallying
+#   
+#   Sidekicks
+#   
+#   Summoning
+#   
+#   Support
+#   
+#   the Band
+#   
+#   the Boggart
+#   
+#   the Comitatus
+#   
+#   the Commander
+#   
+#   the Congregation
+#   
+#   the Entourage
+#   
+#   the Escort
+#   
+#   the Familiar
+#   
+#   the Flock
+#   
+#   the Gang
+#   
+#   the Gathering
+#   
+#   the Legion
+#   
+#   the Mirage
+#   
+#   the Mob
+#   
+#   the Retinue
+#   
+#   the Swarm
+#   
+#   the Throng
+#   
+#   the Union
+召喚
+
+
+創造
+
+
+
+護衛
+
+w:1
+幻影
+
+w:2
+奴隷
+%%%%
+Translocation
+
+# en:
+#   Angles
+#   
+#   Coordinates
+#   
+#   Correspondence
+#   
+#   Direction
+#   
+#   Dislocation
+#   
+#   Displacement
+#   
+#   Distance
+#   
+#   Elsewhere
+#   
+#   Geometries
+#   
+#   Geometry
+#   
+#   Locality
+#   
+#   Location
+#   
+#   Movement
+#   
+#   Nonlocality
+#   
+#   Orientation
+#   
+#   Peregrination
+#   
+#   Places
+#   
+#   Points
+#   
+#   Portals
+#   
+#   Position
+#   
+#   Relocation
+#   
+#   Shifting
+#   
+#   Space
+#   
+#   w:2
+#   Spooky Action
+#   
+#   Subspace
+#   
+#   Superposition
+#   
+#   Topology
+#   
+#   Translocation
+#   
+#   Transportation
+#   
+#   Transposition
+#   
+#   Wanderlust
+#   
+#   the Blink Frog
+#   
+#   the Compass
+#   
+#   the Door
+#   
+#   the Excursion
+#   
+#   the Geodesic
+#   
+#   the Jaunt
+#   
+#   the Manifold
+#   
+#   the Map
+#   
+#   the Singularity
+#   
+#   the Tesseract
+#   
+#   the Traveller
+#   
+#   the Vector
+#   
+#   the Vertex
+#   
+#   the Voyage
+#   
+#   the Wayfarer
+転位術
+
+
+
+
+旅行者
+
+羅針盤
+
+航行
+%%%%
+Forgecraft
+
+# en:
+#   Artifice
+#   
+#   Assemblage
+#   
+#   Assembly
+#   
+#   Automation
+#   
+#   Blueprints
+#   
+#   Clockwork
+#   
+#   Cogs
+#   
+#   Composition
+#   
+#   Construction
+#   
+#   Crafting
+#   
+#   Design
+#   
+#   Diagrams
+#   
+#   Drafting
+#   
+#   Fabrication
+#   
+#   Forgecraft
+#   
+#   Frameworks
+#   
+#   Gears
+#   
+#   Industry
+#   
+#   Infrastructure
+#   
+#   Instantiation
+#   
+#   Invention
+#   
+#   Levers
+#   
+#   Linkages
+#   
+#   Machinery
+#   
+#   Machining
+#   
+#   Mechanics
+#   
+#   Mechanisms
+#   
+#   Mechanomancy
+#   
+#   Metallurgy
+#   
+#   Metalwork
+#   
+#   Metalworking
+#   
+#   Overdrive
+#   
+#   Realisation
+#   
+#   Reification
+#   
+#   Schematics
+#   
+#   Spellforging
+#   
+#   Spellsmithing
+#   
+#   Springs
+#   
+#   Sprockets
+#   
+#   Steel
+#   
+#   Structure
+#   
+#   Technology
+#   
+#   Technomancy
+#   
+#   Tools
+#   
+#   Torque
+#   
+#   the Anvil
+#   
+#   the Architect
+#   
+#   the Artificer
+#   
+#   the Automaton
+#   
+#   the Blacksmith
+#   
+#   the Configuration
+#   
+#   the Construct
+#   
+#   the Contraption
+#   
+#   the Edifice
+#   
+#   the Engine
+#   
+#   the Engineer
+#   
+#   the Escapement
+#   
+#   the Factory
+#   
+#   the Flywheel
+#   
+#   the Forge
+#   
+#   the Forgewright
+#   
+#   the Foundry
+#   
+#   the Hammer
+#   
+#   the Inventor
+#   
+#   the Ironworks
+#   
+#   the Linchpin
+#   
+#   the Machine
+#   
+#   the Machinist
+#   
+#   the Mainspring
+#   
+#   the Maker
+#   
+#   the Mallet
+#   
+#   the Masterpiece
+#   
+#   the Masterwork
+#   
+#   the Mechanist
+#   
+#   the Pendulum
+#   
+#   the Pinion
+#   
+#   the Ratchet
+#   
+#   the Rivet
+#   
+#   the Servo
+#   
+#   the Sledgehammer
+#   
+#   the Smith
+#   
+#   the Smithy
+#   
+#   the Spellforge
+#   
+#   the Spellsmith
+#   
+#   the Tinker
+#   
+#   the Tinkerer
+#   
+#   the Watchmaker
+#   
+#   the Workbench
+工芸
+
+組立
+
+組み立て
+
+自動化
+
+設計図
+
+ぜんまい仕掛け
+
+歯車
+
+構成
+
+建造
+
+細工
+
+設計
+
+図解
+
+製図
+
+製作
+
+鍛造術
+
+骨組み
+
+工業
+
+基盤
+
+具現
+
+発明
+
+てこ
+
+連動機構
+
+機械
+
+機械加工
+
+力学
+
+機構
+
+機械魔術
+
+冶金
+
+金工
+
+金属加工
+
+過駆動
+
+実現
+
+具象化
+
+回路図
+
+呪文鍛造
+
+呪文鍛冶
+
+ばね
+
+鎖歯車
+
+鋼
+
+構造
+
+技術
+
+技術魔術
+
+道具
+
+トルク
+
+金床
+
+設計者
+
+工匠
+
+自動人形
+
+鍛冶師
+
+配置
+
+構築物
+
+からくり
+
+建築物
+
+機関
+
+技師
+
+脱進機
+
+工場
+
+はずみ車
+
+鍛冶場
+
+鍛造職人
+
+鋳造所
+
+金槌
+
+発明家
+
+製鉄所
+
+要の楔
+
+機械工
+
+機械技師
+
+作り手
+
+木槌
+
+傑作
+
+名品
+
+機械論者
+
+振り子
+
+小歯車
+
+爪車
+
+鋲
+
+サーボ
+
+大槌
+
+鍛冶屋
+
+鍛冶小屋
+
+呪文鍛冶場
+
+呪文鍛冶師
+
+鋳掛け屋
+
+いじり屋
+
+時計職人
+
+作業台
+%%%%
+Air adj
+
+# en:
+#   Aerial
+#   
+#   Airborne
+#   
+#   Airy
+#   
+#   Atmospheric
+#   
+#   Blustery
+#   
+#   Breezy
+#   
+#   Brumous
+#   
+#   Charged
+#   
+#   Cloudy
+#   
+#   Electric
+#   
+#   Feathery
+#   
+#   Floating
+#   
+#   Flying
+#   
+#   Foggy
+#   
+#   Fulgurant
+#   
+#   Fulgurous
+#   
+#   Fuming
+#   
+#   Galvanic
+#   
+#   Gaseous
+#   
+#   Gusty
+#   
+#   Hazy
+#   
+#   Inclement
+#   
+#   Lofty
+#   
+#   Meteoric
+#   
+#   Misty
+#   
+#   Nebulous
+#   
+#   Overcast
+#   
+#   Overhead
+#   
+#   Pneumatic
+#   
+#   Shocking
+#   
+#   Stormy
+#   
+#   Tempestuous
+#   
+#   Turbulent
+#   
+#   Vapourous
+#   
+#   Voltaic
+#   
+#   Weathered
+#   
+#   Windswept
+#   
+#   Windy
+#   
+#   Wispy
+空飛ぶ
+
+漂う
+%%%%
+Conjuration adj
+
+# en:
+#   Actinic
+#   
+#   Beaming
+#   
+#   Blasted
+#   
+#   Bright
+#   
+#   Brilliant
+#   
+#   Combative
+#   
+#   Conjured
+#   
+#   Coruscating
+#   
+#   Damaging
+#   
+#   Destructive
+#   
+#   Dynamic
+#   
+#   Effulgent
+#   
+#   Energetic
+#   
+#   Excruciating
+#   
+#   Flashy
+#   
+#   Forceful
+#   
+#   Fulgent
+#   
+#   Glowing
+#   
+#   Harmful
+#   
+#   Hurtful
+#   
+#   Injurious
+#   
+#   Intense
+#   
+#   Lethal
+#   
+#   Limned
+#   
+#   Lucent
+#   
+#   Luminous
+#   
+#   Kinetic
+#   
+#   Mighty
+#   
+#   Nocuous
+#   
+#   Potent
+#   
+#   Powerful
+#   
+#   Profulgent
+#   
+#   Puissant
+#   
+#   Radiant
+#   
+#   Refulgent
+#   
+#   Resplendent
+#   
+#   Ruinous
+#   
+#   Scintillating
+#   
+#   Shining
+#   
+#   Vehement
+#   
+#   Vibrant
+#   
+#   Violent
+#   
+#   Vivid
+#   
+#   Wild
+破壊的
+
+
+
+
+
+w:5
+致命的な
+%%%%
+Earth adj
+
+# en:
+#   Arenous
+#   
+#   Ashen
+#   
+#   Chthonic
+#   
+#   Coarse
+#   
+#   Crystalline
+#   
+#   Dense
+#   
+#   Dusty
+#   
+#   Earthen
+#   
+#   Felsic
+#   
+#   Flinty
+#   
+#   Geological
+#   
+#   Grey
+#   
+#   Gritty
+#   
+#   Grounded
+#   
+#   Heavy
+#   
+#   Indurated
+#   
+#   Iron
+#   
+#   Ironbound
+#   
+#   Lapidarian
+#   
+#   Lapidary
+#   
+#   Leaden
+#   
+#   Lithic
+#   
+#   Metallic
+#   
+#   Petrified
+#   
+#   Petrous
+#   
+#   Plutonic
+#   
+#   Rocky
+#   
+#   Rough
+#   
+#   Sandy
+#   
+#   Seismic
+#   
+#   Solid
+#   
+#   Subterranean
+#   
+#   Stony
+#   
+#   Tectonic
+#   
+#   Telluric
+#   
+#   Terrestrial
+#   
+#   Underground
+#   
+#   Volcanic
+大地の
+%%%%
+Fire adj
+
+# en:
+#   Blazing
+#   
+#   Blistering
+#   
+#   Burning
+#   
+#   Burnt
+#   
+#   Calescent
+#   
+#   Calid
+#   
+#   Calorific
+#   
+#   Charred
+#   
+#   Combustive
+#   
+#   Comburant
+#   
+#   Conflagrant
+#   
+#   Decalescent
+#   
+#   Exothermic
+#   
+#   Fiery
+#   
+#   Flaming
+#   
+#   Flammable
+#   
+#   Flamy
+#   
+#   Glowing
+#   
+#   Heated
+#   
+#   Hot
+#   
+#   Igneous
+#   
+#   Incandescent
+#   
+#   Incendiary
+#   
+#   Incinerated
+#   
+#   Inflammable
+#   
+#   Kindled
+#   
+#   Molten
+#   
+#   Red
+#   
+#   Red-hot
+#   
+#   Roasted
+#   
+#   Searing
+#   
+#   Scalding
+#   
+#   Scorched
+#   
+#   Scorching
+#   
+#   Singed
+#   
+#   Sizzling
+#   
+#   Smoking
+#   
+#   Smouldering
+#   
+#   w:2
+#   Spicy
+#   
+#   Sulphurous
+#   
+#   Sweltering
+#   
+#   Torrefying
+#   
+#   Torrid
+#   
+#   Tropical
+#   
+#   Volatile
+#   
+#   w:2
+#   Well-done
+燃えさかる
+%%%%
+Hexes adj
+
+# en:
+#   Alluring
+#   
+#   Baleful
+#   
+#   Becharmed
+#   
+#   Becharming
+#   
+#   Beguiled
+#   
+#   Beguiling
+#   
+#   Bewitched
+#   
+#   Bewitching
+#   
+#   Bound
+#   
+#   Captivating
+#   
+#   Charmed
+#   
+#   Charming
+#   
+#   Cunning
+#   
+#   Cursed
+#   
+#   Destined
+#   
+#   Dire
+#   
+#   Doomed
+#   
+#   Enchanted
+#   
+#   Enchanting
+#   
+#   Ensnaring
+#   
+#   Enthralled
+#   
+#   Enthralling
+#   
+#   Entranced
+#   
+#   Entrancing
+#   
+#   Fascinating
+#   
+#   Fateful
+#   
+#   Fetching
+#   
+#   Fettered
+#   
+#   Fey
+#   
+#   Glamourous
+#   
+#   Hapless
+#   
+#   Hexed
+#   
+#   Hexing
+#   
+#   Hindering
+#   
+#   Hopeless
+#   
+#   Ill-boding
+#   
+#   Ill-fated
+#   
+#   Ill-omened
+#   
+#   Ill-starred
+#   
+#   Inauspicious
+#   
+#   Jinxed
+#   
+#   Lost
+#   
+#   Maledictive
+#   
+#   Portentous
+#   
+#   Predestined
+#   
+#   Spellbinding
+#   
+#   Star-crossed
+#   
+#   Tragic
+#   
+#   Twinkling
+#   
+#   Unfortunate
+#   
+#   Unlucky
+#   
+#   Vexatious
+#   
+#   Vexing
+#   
+#   Weird
+魅惑の
+%%%%
+Ice adj
+
+# en:
+#   Algid
+#   
+#   Alpine
+#   
+#   Arctic
+#   
+#   Azure
+#   
+#   Bitter
+#   
+#   Bleak
+#   
+#   Boreal
+#   
+#   Brumal
+#   
+#   Chilled
+#   
+#   Chilling
+#   
+#   Chilly
+#   
+#   Cold
+#   
+#   Congealing
+#   
+#   Crystallised
+#   
+#   Freezing
+#   
+#   Frigid
+#   
+#   Frigorific
+#   
+#   Frore
+#   
+#   Frostbitten
+#   
+#   Frostbound
+#   
+#   Frosty
+#   
+#   Frozen
+#   
+#   Gelid
+#   
+#   Glacial
+#   
+#   Hiemal
+#   
+#   Hyperborean
+#   
+#   Hypothermic
+#   
+#   Icebound
+#   
+#   Iced
+#   
+#   Icy
+#   
+#   Nival
+#   
+#   Niveous
+#   
+#   Numb
+#   
+#   Polar
+#   
+#   Shivering
+#   
+#   Snowing
+#   
+#   Snowy
+#   
+#   Snow-white
+#   
+#   Subzero
+#   
+#   White
+#   
+#   Wintry
+凍てつく
+%%%%
+Necromancy adj
+
+# en:
+#   Bloodied
+#   
+#   Bloody
+#   
+#   Caliginous
+#   
+#   Charnel
+#   
+#   Creeping
+#   
+#   w:2
+#   Creepy
+#   
+#   Cruentate
+#   
+#   Dark
+#   
+#   Dead
+#   
+#   Deathly
+#   
+#   Decaying
+#   
+#   Dismal
+#   
+#   Doomed
+#   
+#   Evil
+#   
+#   Fatal
+#   
+#   Funereal
+#   
+#   Ghastly
+#   
+#   Ghoulish
+#   
+#   Gloomy
+#   
+#   Grave
+#   
+#   Grim
+#   
+#   Grisly
+#   
+#   Horrible
+#   
+#   Horrid
+#   
+#   Imbrued
+#   
+#   Lethal
+#   
+#   Lifeless
+#   
+#   Loathsome
+#   
+#   Macabre
+#   
+#   Malignant
+#   
+#   Morbid
+#   
+#   Mortal
+#   
+#   Mortuary
+#   
+#   Necrotic
+#   
+#   Posthumous
+#   
+#   Postmortem
+#   
+#   Rotting
+#   
+#   Quickened
+#   
+#   Sanguinary
+#   
+#   Sanguinolent
+#   
+#   Saturnine
+#   
+#   Sepulchral
+#   
+#   Shadowy
+#   
+#   Sinister
+#   
+#   Somber
+#   
+#   w:2
+#   Spooky
+#   
+#   Spectral
+#   
+#   Stygian
+#   
+#   Tenebrous
+#   
+#   Twisted
+#   
+#   Undead
+#   
+#   Unholy
+#   
+#   Vile
+#   
+#   Wicked
+暗黒の
+
+邪悪な
+
+w:5
+致命的な
+
+破滅的
+
+
+忌まわしき
+
+
+w:5
+ねじくれた
+%%%%
+Alchemy adj
+
+# en:
+#   Alchemical
+#   
+#   Altered
+#   
+#   Amorphous
+#   
+#   Arsenical
+#   
+#   Baneful
+#   
+#   Caustic
+#   
+#   Changed
+#   
+#   Changing
+#   
+#   Chemical
+#   
+#   Contaminated
+#   
+#   Differential
+#   
+#   Feculent
+#   
+#   Fetid
+#   
+#   Fluctuating
+#   
+#   Glowing
+#   
+#   Green
+#   
+#   Hyletic
+#   
+#   Hylic
+#   
+#   Impure
+#   
+#   Iotic
+#   
+#   Leucotic
+#   
+#   Magnum
+#   
+#   Melanotic
+#   
+#   Mercurial
+#   
+#   Metamorphic
+#   
+#   Mutable
+#   
+#   Mutagenic
+#   
+#   Mutated
+#   
+#   Nocuous
+#   
+#   Noxious
+#   
+#   Poisonous
+#   
+#   Polluted
+#   
+#   Prime
+#   
+#   Promethean
+#   
+#   Protean
+#   
+#   Reconfigured
+#   
+#   Refined
+#   
+#   Reshaped
+#   
+#   Septic
+#   
+#   Spagyric
+#   
+#   Synthesised
+#   
+#   Toxic
+#   
+#   Transformed
+#   
+#   Transforming
+#   
+#   Transmuted
+#   
+#   Unrefined
+#   
+#   Unstable
+#   
+#   Variable
+#   
+#   Venomous
+#   
+#   Viperous
+#   
+#   Viridian
+#   
+#   Virous
+#   
+#   Virulent
+#   
+#   Vitriolic
+#   
+#   Xanthotic
+錬金術の
+
+変質した
+
+不定形な
+
+砒素の
+
+有害な
+
+腐食性の
+
+変わり果てた
+
+変わりゆく
+
+化学の
+
+汚染された
+
+微分の
+
+不浄な
+
+悪臭を放つ
+
+揺らぐ
+
+輝く
+
+緑の
+
+質料の
+
+不純な
+
+水銀の
+
+変成の
+
+変異性の
+
+毒々しい
+
+有毒な
+
+汚された
+
+原初の
+
+プロメテウスの
+
+千変万化の
+
+再構成された
+
+精製された
+
+作り変えられた
+
+腐敗した
+
+合成された
+
+変容した
+
+変容する
+
+核変換された
+
+粗製の
+
+不安定な
+
+可変の
+
+毒を持つ
+
+蝮のごとき
+
+緑青色の
+
+病毒の
+
+猛毒の
+
+礬油の
+
+黄化の
+%%%%
+Summoning adj
+
+# en:
+#   Aggregated
+#   
+#   Allied
+#   
+#   Amalgamated
+#   
+#   Amassed
+#   
+#   Assembled
+#   
+#   Associated
+#   
+#   Assistive
+#   
+#   Called
+#   
+#   Collected
+#   
+#   Collective
+#   
+#   Combined
+#   
+#   Concerted
+#   
+#   Congregated
+#   
+#   Consolidated
+#   
+#   Cooperative
+#   
+#   Created
+#   
+#   Creative
+#   
+#   Familiar
+#   
+#   Friendly
+#   
+#   Gathered
+#   
+#   Generated
+#   
+#   Generative
+#   
+#   Helpful
+#   
+#   Illusory
+#   
+#   Marshalled
+#   
+#   Massed
+#   
+#   Mustered
+#   
+#   Mutual
+#   
+#   Phantasmal
+#   
+#   Productive
+#   
+#   Rallied
+#   
+#   Shared
+#   
+#   Spawned
+#   
+#   Summoned
+#   
+#   Supportive
+#   
+#   Sympathetic
+#   
+#   Syndicated
+#   
+#   Unified
+#   
+#   United
+創造的
+%%%%
+Translocation adj
+
+# en:
+#   Akashic
+#   
+#   Angular
+#   
+#   Blinking
+#   
+#   Corresponding
+#   
+#   Deviated
+#   
+#   Dimensional
+#   
+#   Discontinuous
+#   
+#   Disjunct
+#   
+#   Dislocated
+#   
+#   Displaced
+#   
+#   Distorted
+#   
+#   Elliptic
+#   
+#   Geometric
+#   
+#   Hyperbolic
+#   
+#   Isometric
+#   
+#   Liminal
+#   
+#   Linear
+#   
+#   Manifold
+#   
+#   Moving
+#   
+#   Non-Euclidean
+#   
+#   Non-linear
+#   
+#   Parabolic
+#   
+#   Parallel
+#   
+#   Planar
+#   
+#   Projective
+#   
+#   Quantum
+#   
+#   Relocated
+#   
+#   Shifting
+#   
+#   Spatial
+#   
+#   Topological
+#   
+#   Translocated
+#   
+#   Translocational
+#   
+#   Transposed
+#   
+#   Twisted
+#   
+#   Unstable
+#   
+#   Warped
+歪曲
+
+w:5
+不安定な
+
+
+量子
+%%%%
+forgecraft adj
+
+# en:
+#   Alloyed
+#   
+#   Artificial
+#   
+#   Artisanal
+#   
+#   Assembled
+#   
+#   Automatic
+#   
+#   Built
+#   
+#   Buzzing
+#   
+#   Calibrated
+#   
+#   Clacking
+#   
+#   Clanging
+#   
+#   Clanking
+#   
+#   Clattering
+#   
+#   Clicking
+#   
+#   Clinking
+#   
+#   Clockwork
+#   
+#   Completed
+#   
+#   Concrete
+#   
+#   Constructed
+#   
+#   Crafted
+#   
+#   Creaking
+#   
+#   Designed
+#   
+#   Engineered
+#   
+#   Fabricated
+#   
+#   Fashioned
+#   
+#   Fine-tuned
+#   
+#   Forgecrafted
+#   
+#   Forged
+#   
+#   Forgewrought
+#   
+#   Formed
+#   
+#   Hammered
+#   
+#   Hissing
+#   
+#   Industrial
+#   
+#   Ingenious
+#   
+#   Innovative
+#   
+#   Instantiated
+#   
+#   Invented
+#   
+#   Jangling
+#   
+#   Jingling
+#   
+#   Machined
+#   
+#   Manufactured
+#   
+#   Mechanical
+#   
+#   Mechanised
+#   
+#   Metallic
+#   
+#   Metallurgical
+#   
+#   Modelled
+#   
+#   Physical
+#   
+#   Rattling
+#   
+#   Realised
+#   
+#   Reified
+#   
+#   Schematic
+#   
+#   Shaped
+#   
+#   Spellcrafted
+#   
+#   Spellforged
+#   
+#   Spellsmithed
+#   
+#   Steel
+#   
+#   Structural
+#   
+#   Synthetic
+#   
+#   Technological
+#   
+#   Tempered
+#   
+#   Thrumming
+#   
+#   Ticking
+#   
+#   Tooled
+#   
+#   Vibrating
+#   
+#   Well-oiled
+#   
+#   Well-tempered
+#   
+#   Whirring
+#   
+#   Whizzing
+#   
+#   Wind-up
+#   
+#   Worked
+#   
+#   Wrought
+合金の
+
+人工の
+
+職人の
+
+組み立てられた
+
+自動の
+
+造られた
+
+唸る
+
+調整された
+
+カタカタ鳴る
+
+ガンガン鳴る
+
+ガチャガチャ鳴る
+
+ガタガタ鳴る
+
+カチカチ鳴る
+
+チリンと鳴る
+
+ぜんまい仕掛けの
+
+完成された
+
+確固たる
+
+建造された
+
+精巧な
+
+軋む
+
+設計された
+
+工学の
+
+製造された
+
+仕立てられた
+
+微調整された
+
+鍛造術の
+
+鍛えられた
+
+打ち鍛えられた
+
+形作られた
+
+槌で打たれた
+
+シュッと鳴る
+
+工業の
+
+独創的な
+
+革新的な
+
+具現化された
+
+発明された
+
+ジャラジャラ鳴る
+
+機械加工された
+
+量産された
+
+機械の
+
+機械化された
+
+金属の
+
+冶金の
+
+型取られた
+
+物理的な
+
+実現された
+
+具象化された
+
+図式の
+
+成形された
+
+呪文細工の
+
+呪文鍛造の
+
+鋼の
+
+構造的な
+
+合成の
+
+技術の
+
+焼き入れされた
+
+震える
+
+チクタク鳴る
+
+工具で仕上げた
+
+振動する
+
+よく油を差した
+
+よく鍛えられた
+
+ブーンと回る
+
+ヒュンと鳴る
+
+ねじ巻きの
+
+加工された
+%%%%
+highlevel Conjuration Earth owner
+
+# en:
+#   Dispater
+#   
+#   @Conjuration Earth owner@
+@Dispater@
+
+@Conjuration Earth owner@
+%%%%
+Conjuration Earth owner
+
+# en:
+#   Lehudib
+#   
+#   __NONE
+@Lee@
+
+@Lehudib@
+%%%%
+highlevel Conjuration Fire owner
+
+# en:
+#   Asmodeus
+#   
+#   Cerebov
+#   
+#   __NONE
+@Asmodeus@
+
+@Cerebov@
+
+w:5
+__NONE
+%%%%
+highlevel Conjuration Necromancy owner
+
+# en:
+#   Ereshkigal
+#   
+#   __NONE
+@Ereshkigal@
+
+__NONE
+%%%%
+highlevel Conjuration Summoning owner
+
+# en:
+#   Asmodeus
+#   
+#   Dispater
+#   
+#   __NONE
+@Asmodeus@
+
+@Dispater@
+
+w:5
+__NONE
+%%%%
+Alchemy Earth owner
+
+# en:
+#   Roxanne
+#   
+#   __NONE
+@Roxanne@
+
+__NONE
+%%%%
+highlevel Earth Summoning owner
+
+# en:
+#   Dispater
+#   
+#   __NONE
+@Dispater@
+
+__NONE
+%%%%
+highlevel Fire Summoning owner
+
+# en:
+#   Asmodeus
+#   
+#   __NONE
+@Asmodeus@
+
+__NONE
+%%%%
+Fire Ice owner
+
+# en:
+#   Vv
+#   
+#   __NONE
+Vv
+
+__NONE
+%%%%
+highlevel Alchemy Necromancy owner
+
+# en:
+#   Gloorx Vloq
+#   
+#   __NONE
+@Gloorx Vloq@
+
+__NONE
+%%%%
+Alchemy Necromancy owner
+
+# en:
+#   Cigotuvi
+#   
+#   __NONE
+@Cigotuvi@
+
+__NONE
+%%%%
+highlevel Conjuration owner
+
+# en:
+#   Asmodeus
+#   
+#   Ereshkigal
+#   
+#   Dispater
+#   
+#   Cerebov
+#   
+#   Lom Lobon
+#   
+#   w:5
+#   Vehumet
+#   
+#   w:20
+#   @Conjuration owner@
+@Asmodeus@
+
+@Ereshkigal@
+
+@Dispater@
+
+@Cerebov@
+
+@Lom Lobon@
+
+@Lehudib@
+
+w:30
+@Conjuration owner@
+%%%%
+Conjuration owner
+
+# en:
+#   Lehudib
+#   
+#   Iskenderun
+#   
+#   __NONE
+w:2
+@Lee@
+
+@Lehudib@
+
+@Iskenderun@
+%%%%
+highlevel Earth owner
+
+# en:
+#   Dispater
+#   
+#   w:50
+#   @Earth owner@
+@Dispater@
+
+w:30
+@Earth owner@
+%%%%
+Earth owner
+
+# en:
+#   Jorgrun
+#   
+#   Lehudib
+#   
+#   Lee
+#   
+#   Leda
+#   
+#   Roxanne
+#   
+#   __NONE
+@Lehudib@
+
+@Lee@
+
+@Roxanne@
+
+__NONE
+%%%%
+highlevel Fire owner
+
+# en:
+#   Asmodeus
+#   
+#   Cerebov
+#   
+#   __NONE
+@Asmodeus@
+
+@Cerebov@
+
+__NONE
+%%%%
+Ice owner
+
+# en:
+#   Ozocubu
+#   
+#   __NONE
+@Ozocubu
+
+__NONE
+%%%%
+Air owner
+
+# en:
+#   the Cloud Mage
+#   
+#   Maxwell
+#   
+#   Nikola
+#   
+#   __NONE
+雲の魔術師
+
+マクスウェル
+
+ニコラ
+
+__NONE
+%%%%
+highlevel Necromancy owner
+
+# en:
+#   Ereshkigal
+#   
+#   Gloorx Vloq
+#   
+#   w:5
+#   Kikubaaqudgha
+#   
+#   w:40
+#   @Necromancy owner@
+@Ereshkigal@
+
+@Gloorx Vloq@
+
+w:40
+@Necromancy owner@
+%%%%
+Necromancy owner
+
+# en:
+#   Borgnjor
+#   
+#   Cigotuvi
+#   
+#   Khufu
+#   
+#   Zonguldrok
+#   
+#   __NONE
+@Borgnjor@
+
+@Cigotuvi@
+
+@Khufu@
+%%%%
+highlevel Alchemy owner
+
+# en:
+#   Gloorx Vloq
+#   
+#   w:30
+#   @Alchemy owner@
+@Gloorx Vloq@
+
+w:30
+@Alchemy owner@
+%%%%
+Alchemy owner
+
+# en:
+#   Alistair
+#   
+#   Cigotuvi
+#   
+#   Olgreb
+#   
+#   Eringya
+#   
+#   __NONE
+@Alistair@
+
+@Cigotuvi@
+
+@Olgreb@
+
+エリンギャ
+
+__NONE
+%%%%
+highlevel Summoning owner
+
+# en:
+#   Asmodeus
+#   
+#   Dispater
+#   
+#   Mnoleg
+#   
+#   @Summoning owner@
+@Asmodeus@
+
+@Dispater@
+
+@Mnoleg@
+
+__NONE
+%%%%
+Summoning owner
+
+# en:
+#   Mara
+#   
+#   __NONE
+マーラ
+
+__NONE
+%%%%
+highlevel Translocation owner
+
+# en:
+#   Lom Lobon
+#   
+#   w:20
+#   @Translocation owner@
+@Lom Lobon@
+
+__NONE
+%%%%
+Translocation owner
+
+# en:
+#   Gell
+#   
+#   Golubria
+#   
+#   __NONE
+ゲル
+
+ゴルブリア
+
+__NONE
+%%%%
+Hexes owner
+
+# en:
+#   Yara
+#   
+#   w:5
+#   Terpsichore
+#   
+#   Tukima
+#   
+#   __NONE
+ヤラ
+
+w:5
+テルプシコラー
+
+トゥキマ
+
+__NONE
+%%%%
+Charms
+
+呪符
+
+
+守護
+
+w:3
+自己分析
+
+w:3
+自己成長
+
+
+増強
+
+
+増幅
+%%%%
+Transmutation
+
+変異
+
+変身
+
+
+変容
+%%%%
+Poison
+
+毒
+
+猛毒
+
+
+服毒
+
+酩酊
+
+
+汚染
+%%%%
+Charms adj
+
+役立つ
+%%%%
+Transmutation adj
+
+変異性の
+
+w:5
+不定形な
+%%%%
+Poison adj
+
+毒性の
+
+猛毒性の
+%%%%
+Earth Transmutation owner
+
+@Roxanne@
+
+__NONE
+%%%%
+highlevel Necromancy Poison owner
+
+@Gloorx Vloq@
+
+__NONE
+%%%%
+Necromancy Transmutation owner
+
+@Cigotuvi@
+
+__NONE
+%%%%
+highlevel Poison owner
+
+@Gloorx Vloq@
+
+@Poison owner@
+%%%%
+Poison owner
+
+@Olgreb@
+
+@Alistair@
+
+__NONE
+%%%%
+Transmutation owner
+
+@Cigotuvi@
+
+@Roxanne@
+
+__NONE
+%%%%
+Alistair
+
+アリステイア
+%%%%
+Asmodeus
+
+アスモデウス
+%%%%
+Borgnjor
+
+ボーグンジョル
+%%%%
+Cerebov
+
+セレボブ
+%%%%
+Cigotuvi
+
+シゴツヴィ
+%%%%
+Dispater
+
+ディスペータ
+%%%%
+Ereshkigal
+
+エレシュキガル
+%%%%
+Gloorx Vloq
+
+グロオルクス・ヴロック
+%%%%
+Iskenderun
+
+イスケンデルン
+%%%%
+Khufu
+
+クフ王
+%%%%
+Lee
+
+リー
+%%%%
+Lehudib
+
+レフディブ
+%%%%
+Lom Lobon
+
+ロム・ロボン
+%%%%
+Mnoleg
+
+ムノレグ
+%%%%
+Olgreb
+
+オルグレブ
+%%%%
+Ozocubu
+
+オゾクブ
+%%%%
+Roxanne
+
+ロクサーヌ
 %%%%

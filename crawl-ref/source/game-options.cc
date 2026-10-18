@@ -6,6 +6,8 @@
 #include "AppHdr.h"
 
 #include "game-options.h"
+
+#include "database.h"
 #include "options.h"
 #include "misc.h"
 #include "tiles-build-specific.h"
@@ -33,11 +35,11 @@ static unsigned _curses_attribute(const string &field, string &error)
         if (colour != -1)
             return CHATTR_HILITE | (colour << 8);
 
-        error = make_stringf("Bad highlight string -- %s",
+        error = make_stringf(jtransc("Bad highlight string -- %s"),
                              field.c_str());
     }
     else if (field != "none")
-        error = make_stringf("Bad colour -- %s", field.c_str());
+        error = make_stringf(jtransc("Bad colour -- %s"), field.c_str());
     return CHATTR_NORMAL;
 }
 
@@ -62,7 +64,7 @@ bool read_bool(const string &field, bool def_value)
     if (result.is_bool())
         return bool(result);
 
-    Options.report_error("Bad boolean: %s (should be true or false)", field.c_str());
+    Options.report_error(jtransc("Bad boolean: %s (should be true or false)"), field.c_str());
     return def_value;
 }
 
@@ -89,7 +91,7 @@ string DisabledGameOption::loadFromParseState(const opt_parse_state &state)
     // multiple unrelated options for convenience
     if (on_set)
         on_set();
-    return make_stringf("Option '%s' is disabled in this build.",
+    return make_stringf(jtransc("Option '%s' is disabled in this build."),
             state.key.c_str());
 }
 
@@ -99,7 +101,7 @@ string BoolGameOption::loadFromString(const string &field, rc_line_type ltyp)
     const maybe_bool result = read_maybe_bool(field);
     if (!result.is_bool())
     {
-        return make_stringf("Bad %s value: %s (should be true or false)",
+        return make_stringf(jtransc("Bad %s value: %s (should be true or false)"),
                             name().c_str(), field.c_str());
     }
 
@@ -111,7 +113,7 @@ string ColourGameOption::loadFromString(const string &field, rc_line_type ltyp)
 {
     const int col = str_to_colour(field, -1, true, elemental);
     if (col == -1)
-        return make_stringf("Bad %s -- %s\n", name().c_str(), field.c_str());
+        return make_stringf(jtransc("Bad %s -- %s\n"), name().c_str(), field.c_str());
 
     value = col;
     return GameOption::loadFromString(field, ltyp);
@@ -122,7 +124,7 @@ string CursesGameOption::loadFromString(const string &field, rc_line_type ltyp)
     string error;
     const unsigned result = _curses_attribute(field, error);
     if (!error.empty())
-        return make_stringf("%s (for %s)", error.c_str(), name().c_str());
+        return make_stringf(jtransc("%s (for %s)"), error.c_str(), name().c_str());
 
     value = result;
     return GameOption::loadFromString(field, ltyp);
@@ -145,11 +147,11 @@ string IntGameOption::loadFromString(const string &field, rc_line_type ltyp)
 {
     int val = default_value;
     if (!parse_int(field.c_str(), val))
-        return make_stringf("Couldn't parse integer option %s: \"%s\"", name().c_str(), field.c_str());
+        return make_stringf(jtransc("Couldn't parse integer option %s: \"%s\""), name().c_str(), field.c_str());
     if (val < min_value)
-        return make_stringf("Bad %s: %d should be >= %d", name().c_str(), val, min_value);
+        return make_stringf(jtransc("Bad %s: %d should be >= %d"), name().c_str(), val, min_value);
     if (val > max_value)
-        return make_stringf("Bad %s: %d should be <= %d", name().c_str(), val, max_value);
+        return make_stringf(jtransc("Bad %s: %d should be <= %d"), name().c_str(), val, max_value);
     value = val;
     return GameOption::loadFromString(field, ltyp);
 }
@@ -160,12 +162,12 @@ string FixedpGameOption::loadFromString(const string &field, rc_line_type ltyp)
     // strtod doesn't give good error checking, maybe std::stod?
     float tmp_float;
     if (!sscanf(field.c_str(), "%f", &tmp_float))
-        return make_stringf("Couldn't parse decimal option %s: \"%s\"", name().c_str(), field.c_str());
+        return make_stringf(jtransc("Couldn't parse decimal option %s: \"%s\""), name().c_str(), field.c_str());
     fixedp<> val = tmp_float; // implicit cast
     if (val < min_value)
-        return make_stringf("Bad %s: %g should be >= %g", name().c_str(), (float) val, (float) min_value);
+        return make_stringf(jtransc("Bad %s: %g should be >= %g"), name().c_str(), (float) val, (float) min_value);
     if (val > max_value)
-        return make_stringf("Bad %s: %g should be <= %g", name().c_str(), (float) val, (float) max_value);
+        return make_stringf(jtransc("Bad %s: %g should be <= %g"), name().c_str(), (float) val, (float) max_value);
 
     value = val;
     return GameOption::loadFromString(field, ltyp);
@@ -217,7 +219,7 @@ colour_thresholds
 
         if (insplit.size() != 2)
         {
-            const string failure = make_stringf("Bad %s pair: '%s'",
+            const string failure = make_stringf(jtransc("Bad %s pair: '%s'"),
                                                 name().c_str(),
                                                 pair_str.c_str());
             // XX should this really be a `die`? I *think* it can only be
@@ -234,7 +236,7 @@ colour_thresholds
         const int scolour = str_to_colour(colstr, -1, true, false);
         if (scolour <= 0)
         {
-            const string failure = make_stringf("Bad %s: '%s'",
+            const string failure = make_stringf(jtransc("Bad %s: '%s'"),
                                                 name().c_str(),
                                                 colstr.c_str());
             // see note above

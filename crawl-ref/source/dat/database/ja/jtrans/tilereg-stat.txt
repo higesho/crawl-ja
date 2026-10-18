@@ -1,0 +1,10 @@
+# tilereg-stat.txt: tilereg-stat.cc(Tiles のステータス欄)
+%%%%
+[L-Click] Show player information
+
+[左クリック] プレイヤー情報を見る
+%%%%
+[L-Click] Toggle tab icons
+
+[左クリック] タブのアイコン表示を切り替え
+%%%%

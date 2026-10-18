@@ -1,0 +1,398 @@
+%%%%
+It is normally not part of any deck.
+
+このカードは通常はどのカードのデッキにも含まれていない。
+%%%%
+The deck of cards %s
+
+カードのデッキは%s
+%%%%
+You %s a card...
+
+あなたはカードを%s……
+%%%%
+Are you done? (press y or Y to confirm)
+
+これに決めますか？ (よろしければ y または Y を押してください)
+%%%%
+There's only one card left!
+
+このデッキにはカードがもう一枚しかない！
+%%%%
+You draw... (choose one card, ? for their descriptions)
+
+あなたの引くカードは…… (カードを選択してください。? キーで解説を表示)
+%%%%
+# 引数はカード名・動詞の順(英文と逆。呼び出し側で入れ替えている)
+You have %s %s.
+
+あなたは%sのカードを%s。
+%%%%
+You radiate a wave of entropy!
+
+あなたはエントロピーの波動を発した！
+%%%%
+You somehow manage to escape divine attention...
+
+あなたはなんとか神の注意から逃れようとした……
+%%%%
+You sense the presence of something unfriendly.
+
+あなたはなにか敵対的なものの存在を感じ取った。
+%%%%
+is dazed by the mutagenic energy.
+
+は変異性のエネルギーを浴びてふらふらしている。
+%%%%
+You feel a surge of magic.
+
+あなたは魔力の高まりを感じた。
+%%%%
+You have %s a buggy card!
+
+あなたはバグったカードを%s！
+%%%%
+# カード名(card_name() の英語を表示側で引く。ability.cc の stack_top() も)
+[card]Velocity
+
+加速
+%%%%
+[card]Exile
+
+放浪
+%%%%
+[card]the Elixir
+
+霊薬
+%%%%
+[card]the Tomb
+
+玄室
+%%%%
+[card]Wild Magic
+
+暴走
+%%%%
+[card]the Elements
+
+元素
+%%%%
+[card]the Pentagram
+
+五芒星
+%%%%
+[card]the Dance
+
+舞踏
+%%%%
+[card]the Swarm
+
+群れ
+%%%%
+[card]the Rangers
+
+野伏
+%%%%
+[card]Vitriol
+
+硫酸
+%%%%
+[card]the Cloud
+
+雲烟
+%%%%
+[card]the Storm
+
+嵐
+%%%%
+[card]Pain
+
+苦痛
+%%%%
+[card]Torment
+
+拷問
+%%%%
+[card]Wrath
+
+憤怒
+%%%%
+[card]the Wraith
+
+亡霊
+%%%%
+[card]the Swine
+
+豚
+%%%%
+[card]the Orb
+
+球体
+%%%%
+[card]the Illusion
+
+幻影
+%%%%
+[card]Degeneration
+
+堕落
+%%%%
+[card]a buggy card
+
+バグったカード
+%%%%
+[card]a very buggy card
+
+ひどくバグったカード
+%%%%
+# deck_name() の英語を表示側で引く(ability.cc など)
+deck of escape
+
+脱出のデッキ
+%%%%
+deck of destruction
+
+破壊のデッキ
+%%%%
+deck of summoning
+
+召喚のデッキ
+%%%%
+deck of punishment
+
+懲罰のデッキ
+%%%%
+deck of bugginess
+
+バグのデッキ
+%%%%
+stacked deck
+
+積み札
+%%%%
+[deck]escape
+
+脱出
+%%%%
+[deck]destruction
+
+破壊
+%%%%
+[deck]summoning
+
+召喚
+%%%%
+[deck]punishment
+
+懲罰
+%%%%
+[deck]bugginess
+
+バグ
+%%%%
+[card verb]deal
+
+配った
+%%%%
+[card verb]draw
+
+引いた
+%%%%
+[card verb]dealt
+
+配った
+%%%%
+[card verb]drawn
+
+引いた
+%%%%
+[deck verb]Draw
+
+引く
+%%%%
+[deck verb]Deal
+
+配る
+%%%%
+Remaining cards: %s
+
+残りのカード: %s
+%%%%
+It may contain the following cards: %s.
+
+このデッキには%sのカードが入っていることがある。
+%%%%
+# deck_flavour()。「%s魔法のカードのデッキ。」に入る連体修飾
+which may bring the user to safety or impede their foes.
+
+使い手を安全な場所へ導いたり、敵を妨げたりする
+%%%%
+which hurl death and destruction with wild abandon.
+
+死と破壊を見境なく撒き散らす
+%%%%
+depicting a range of weird and wonderful creatures.
+
+奇妙で素晴らしい様々な生き物が描かれた
+%%%%
+which wreak havoc on the user.
+
+使い手に災いをもたらす
+%%%%
+set aside for later.
+
+後で使うために取り分けられた
+%%%%
+A deck of magical cards, %s
+
+%s魔法のカードのデッキ。
+%%%%
+%s goes to deal, but finds you have enough %s cards.
+
+%sはカードを配ろうとしたが、あなたは既に十分な数の%sのカードを持っていた。
+%%%%
+%s cards: %d
+
+%sのカード%d枚
+%%%%
+It is found in decks of %s, or in Nemelex Xobeh's deck of punishment.
+
+このカードは%sのデッキか、ネメレクス・ソベーの懲罰のデッキに入っている。
+%%%%
+It is found in decks of %s.
+
+このカードは%sのデッキに入っている。
+%%%%
+It is only found in Nemelex Xobeh's deck of punishment.
+
+このカードはネメレクス・ソベーの懲罰のデッキにのみ入っている。
+%%%%
+the card of %s
+
+%sのカード
+%%%%
+It currently has %d cards
+
+今は%d枚のカードが入っており、
+%%%%
+It is currently empty
+
+今は空で、
+%%%%
+and can contain up to %d cards.
+
+最大%d枚まで入れられる。
+%%%%
+%s which deck?
+
+どのデッキから%s？
+%%%%
+Cards available
+
+残り枚数
+%%%%
+Describe which deck?
+
+どのデッキの説明を見る？
+%%%%
+ toggle between deck selection and description.
+
+デッキの選択と説明を切り替え
+%%%%
+You can't repeat Stack Five.
+
+『五枚積み』は繰り返せない。
+%%%%
+Replace your current stack?
+
+今の積み札を置き換えますか？
+%%%%
+You are out of cards!
+
+あなたはカードを使い果たしている！
+%%%%
+You have fewer than five cards, stack them anyway?
+
+カードが5枚未満です。それでも積みますか？
+%%%%
+Drawn so far: %s
+
+これまでに引いたカード: %s
+%%%%
+<lightred>That deck is empty!</lightred>
+
+<lightred>そのデッキは空だ！</lightred>
+%%%%
+Press '<w>!</w>' or '<w>?</w>' to toggle between deck selection and description.
+
+'<w>!</w>' または '<w>?</w>' でデッキの選択と説明を切り替え
+%%%%
+Select two cards to swap them:
+
+入れ替える2枚のカードを選択:
+%%%%
+<lightgrey>Press <w>?</w> for the card descriptions or <w>Enter</w> to accept.
+
+<lightgrey><w>?</w> でカードの説明、<w>Enter</w> で決定
+%%%%
+You can't repeat Triple Draw.
+
+『三枚引き』は繰り返せない。
+%%%%
+There's fewer than three cards, still triple draw?
+
+カードが3枚未満です。それでも三枚引きをしますか？
+%%%%
+You reveal a symbol of torment!
+
+あなたは苦悶の印をあらわにした！
+%%%%
+Aiming: the card of %s
+
+照準: %sのカード
+%%%%
+Really abort (and waste the card)?
+
+本当に中止しますか？(カードは無駄になります)
+%%%%
+You begin rapidly regenerating health and magic.
+
+あなたの体力と魔力が急速に回復し始めた。
+%%%%
+Clouds appear around your foes!
+
+あなたの敵の周囲に雲が湧き出した！
+%%%%
+[adj]mighty
+
+力強い
+%%%%
+[adj]violent
+
+激しい
+%%%%
+[adj]cataclysmic
+
+天地を揺るがす
+%%%%
+You hear %s peals of thunder!
+
+あなたは%s雷鳴を聞いた！
+%%%%
+You feel %s peals of thunder!
+
+あなたは%s雷鳴を感じた！
+%%%%
+# _empty_deck_msg() の random_choose の文(「カードのデッキは%s」に入る)
+disappears without a trace.
+
+忽然と消え去った。
+%%%%
+glows slightly and disappears.
+
+しばらくの間輝き、そして消え去った。
+%%%%
+glows with a rainbow of weird colours and disappears.
+
+奇妙な虹色に輝き、そして消え去った。
+%%%%

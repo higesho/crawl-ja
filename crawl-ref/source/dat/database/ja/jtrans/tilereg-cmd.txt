@@ -1,0 +1,19 @@
+# tilereg-cmd.txt: tilereg-cmd.cc(Tiles のコマンドタブ)
+%%%%
+[L-Click] %s
+
+[左クリック] %s
+%%%%
+# m_help(tilesdl.cc / tilereg-cmd.h から渡る説明)
+Execute commands
+
+コマンドを実行
+%%%%
+Execute system commands
+
+システムコマンドを実行
+%%%%
+Navigate around map
+
+マップを移動
+%%%%

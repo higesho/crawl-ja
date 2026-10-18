@@ -35,6 +35,7 @@
 #include "items.h"
 #include "item-prop.h"
 #include "item-use.h"
+#include "japanese.h"
 #include "libutil.h"
 #include "macro.h"
 #include "menu.h"
@@ -93,16 +94,15 @@ void surge_power(const int enhanced)
 {
     if (enhanced)               // one way or the other {dlb}
     {
-        const string modifier = (enhanced  < -2) ? "extraordinarily" :
-                                (enhanced == -2) ? "extremely" :
-                                (enhanced ==  2) ? "strong" :
-                                (enhanced  >  2) ? "huge"
+        const string modifier = (enhanced  < -2) ? "並外れた" :
+                                (enhanced == -2) ? "きわめて強い" :
+                                (enhanced ==  2) ? "強い" :
+                                (enhanced  >  2) ? "大きな"
                                                  : "";
-        mprf("You feel %s %s",
-             !modifier.length() ? "a"
-                                : article_a(modifier).c_str(),
-             (enhanced < 0) ? "numb sensation."
-                            : "surge of power!");
+        mprf(jtransc("You feel %s %s"),
+             modifier.c_str(),
+             jtransc((enhanced < 0) ? "numb sensation."
+                                    : "surge of power!"));
     }
 }
 
@@ -111,9 +111,8 @@ void surge_power_wand(const int mp_cost)
     if (mp_cost)
     {
         const bool slight = mp_cost < 3;
-        mprf("You feel a %ssurge of power%s",
-             slight ? "slight " : "",
-             slight ? "."      : "!");
+        mpr(jtrans(slight ? "You feel a slight surge of power."
+                          : "You feel a surge of power!"));
     }
 }
 
@@ -131,7 +130,7 @@ static string _spell_base_description(spell_type spell, bool transient)
     desc << "<" << colour_to_str(highlight) << ">" << left;
 
     // spell name
-    desc << chop_string(spell_title(spell), 32);
+    desc << chop_string(spell_title_j(spell), 32);
 
     // spell schools
     desc << spell_schools_string(spell);
@@ -169,14 +168,14 @@ static string _spell_extra_description(spell_type spell, bool transient)
     desc << "<" << colour_to_str(highlight) << ">" << left;
 
     // spell name
-    desc << chop_string(spell_title(spell), 32);
+    desc << chop_string(spell_title_j(spell), 32);
 
     // spell power, spell range, noise
     const string rangestring = spell_range_string(spell);
     const string damagestring = spell_damage_string(spell, false, -1, true);
 
     desc << chop_string(spell_power_string(spell), 10)
-         << chop_string(damagestring.length() ? damagestring : "N/A", 10)
+         << chop_string(damagestring.length() ? damagestring : jtrans("N/A"), 10)
          << chop_string(rangestring, 8)
          << chop_string(spell_noise_string(spell, 10), 14);
 
@@ -270,17 +269,20 @@ int list_spells(bool toggle_with_I, bool transient, bool viewing,
     if (toggle_with_I && get_spell_by_letter('I') != SPELL_NO_SPELL)
         toggle_with_I = false;
 
-    const string real_action = viewing ? "describe" : action;
+    // action は英語("cast" など)か、日本語化済みの語(spl-selfench.cc の
+    // 「忘却」)を受け取る。tagged_jtrans は訳がなければそのまま返す。
+    const string real_action =
+        tagged_jtrans("[spell action]", viewing ? "describe" : action);
 
     SpellMenu spell_menu;
-    const string titlestring = make_stringf("%-25.25s",
-            make_stringf("Your spells (%s)", real_action.c_str()).c_str());
+    const string titlestring = chop_string(
+            make_stringf(jtransc("Your spells (%s)"), real_action.c_str()), 25);
 
     {
         ToggleableMenuEntry* me =
             new ToggleableMenuEntry(
-                titlestring + "           Type                      Failure  Level  ",
-                titlestring + "           Power     Damage    Range   Noise         ",
+                titlestring + jtrans_notrim("           Type                      Failure  Level  "),
+                titlestring + jtrans_notrim("           Power     Damage    Range   Noise         "),
                 MEL_TITLE);
         spell_menu.set_title(me, true, true);
     }
@@ -290,9 +292,9 @@ int list_spells(bool toggle_with_I, bool transient, bool viewing,
     spell_menu.add_toggle_from_command(CMD_MENU_CYCLE_MODE);
     spell_menu.add_toggle_from_command(CMD_MENU_CYCLE_MODE_REVERSE);
 
-    string more_str = make_stringf("<lightgrey>Select a spell to %s</lightgrey>",
+    string more_str = make_stringf(jtransc("<lightgrey>Select a spell to %s</lightgrey>"),
         real_action.c_str());
-    string help_desc = make_stringf("   [<w>?</w>] help    ");
+    string help_desc = jtrans_notrim("   [<w>?</w>] help    ");
     string toggle_desc = menu_keyhelp_cmd(CMD_MENU_CYCLE_MODE);
     if (toggle_with_I)
     {
@@ -300,7 +302,7 @@ int list_spells(bool toggle_with_I, bool transient, bool viewing,
         spell_menu.add_toggle_key('I');
         toggle_desc += "/[<w>I</w>]";
     }
-    toggle_desc += " toggle spell headers";
+    toggle_desc += jtrans_notrim(" toggle spell headers");
     more_str = pad_more_with_esc(more_str + help_desc + toggle_desc);
     spell_menu.set_more(formatted_string::parse_string(more_str));
     // TODO: should allow toggling between execute and examine
@@ -721,7 +723,7 @@ bool can_cast_spells(bool quiet)
     if (you.duration[DUR_NO_CAST])
     {
         if (!quiet)
-            mpr("You are unable to access your magic!");
+            mpr(jtrans("You are unable to access your magic!"));
         return false;
     }
 
@@ -729,7 +731,7 @@ bool can_cast_spells(bool quiet)
     if (you.no_cast())
     {
         if (!quiet)
-            mpr("Something interferes with your magic!");
+            mpr(jtrans("Something interferes with your magic!"));
         return false;
     }
 
@@ -743,7 +745,7 @@ bool can_cast_spells(bool quiet)
     if (you.confused())
     {
         if (!quiet)
-            mpr("You're too confused to cast spells.");
+            mpr(jtrans("You're too confused to cast spells."));
         return false;
     }
 
@@ -751,7 +753,8 @@ bool can_cast_spells(bool quiet)
     {
         if (!quiet)
         {
-            mprf("You cannot cast spells while %s!", player_silenced_reason());
+            mprf(jtransc("You cannot cast spells while %s!"),
+                 tagged_jtransc("[silenced reason]", player_silenced_reason()));
             // included in default force_more_message
         }
         return false;
@@ -795,15 +798,15 @@ static void _handle_energy_orb(int cost, spret cast_result)
         int drain = !targs.empty() ? random_range(1, 3) + targs.size() / 2 : 0;
 
         if (targs.empty())
-            mpr("Magical energy flows into your mind!");
+            mpr(jtrans("Magical energy flows into your mind!"));
         else
-            mprf("Magical energy flows from %s into your mind!",
+            mprf(jtransc("Magical energy flows from %s into your mind!"),
                  describe_monsters_condensed(targs).c_str());
         inc_mp(cost + drain);
     }
     else
     {
-        mpr("Magical energy flows into your mind!");
+        mpr(jtrans("Magical energy flows into your mind!"));
         inc_mp(cost, true);
     }
     did_god_conduct(DID_WIZARDLY_ITEM, 10);
@@ -823,7 +826,8 @@ static void _majin_speak(spell_type spell)
     const int level = spell_difficulty(spell);
     const bool weak = level <= 4;
     const string lookup = weak ? "majin-bo cast weak" : "majin-bo cast";
-    const string msg = "A voice whispers, \"" + getSpeakString(lookup) + "\"";
+    const string msg = make_stringf(jtransc("A voice whispers, \"%s\""),
+                                    getSpeakString(lookup).c_str());
     mprf(MSGCH_TALK, "%s", msg.c_str());
 }
 
@@ -892,7 +896,7 @@ spret cast_a_spell(bool check_range, spell_type spell, dist *_target,
         if (!clua.callfn("c_choose_spell", ">s", &luachoice))
         {
             if (!clua.error.empty())
-                mprf(MSGCH_ERROR, "Lua error: %s", clua.error.c_str());
+                mprf(MSGCH_ERROR, jtransc("Lua error: %s"), clua.error.c_str());
         }
         else if (!luachoice.empty() && isalpha(luachoice[0]))
         {
@@ -936,15 +940,15 @@ spret cast_a_spell(bool check_range, spell_type spell, dist *_target,
                 if (you.last_cast_spell == SPELL_NO_SPELL
                     || !Options.enable_recast_spell)
                 {
-                    mprf(MSGCH_PROMPT, "Cast which spell? (? or * to list) ");
+                    mprf(MSGCH_PROMPT, jtransc("Cast which spell? (? or * to list) "));
                 }
                 else
                 {
-                    mprf(MSGCH_PROMPT, "Casting: <w>%s</w> <lightgrey>(%s)</lightgrey>",
-                                       spell_title(you.last_cast_spell),
+                    mprf(MSGCH_PROMPT, jtransc("Casting: <w>%s</w> <lightgrey>(%s)</lightgrey>"),
+                                       spell_title_jc(you.last_cast_spell),
                                        _spell_failure_rate_description(you.last_cast_spell).c_str());
-                    mprf(MSGCH_PROMPT, "Confirm with . or Enter, or press "
-                                       "? or * to list all spells.");
+                    mprf(MSGCH_PROMPT, jtransc("Confirm with . or Enter, or press "
+                                       "? or * to list all spells."));
                 }
 
                 keyin = numpad_to_regular(get_ch());
@@ -986,7 +990,7 @@ spret cast_a_spell(bool check_range, spell_type spell, dist *_target,
         }
         else if (!isaalpha(keyin))
         {
-            mpr("You don't know that spell.");
+            mpr(jtrans("You don't know that spell."));
             crawl_state.zero_turns_taken();
             return spret::abort;
         }
@@ -996,7 +1000,7 @@ spret cast_a_spell(bool check_range, spell_type spell, dist *_target,
 
     if (spell == SPELL_NO_SPELL)
     {
-        mpr("You don't know that spell.");
+        mpr(jtrans("You don't know that spell."));
         crawl_state.zero_turns_taken();
         return spret::abort;
     }
@@ -1014,8 +1018,8 @@ spret cast_a_spell(bool check_range, spell_type spell, dist *_target,
     {
         // Abort if there are no hostiles within range, but flash the range
         // markers for a short while.
-        mpr("You can't see any susceptible monsters within range! "
-            "(Use <w>Z</w> to cast anyway.)");
+        mpr(jtrans("You can't see any susceptible monsters within range! "
+            "(Use <w>Z</w> to cast anyway.)"));
 
         if ((Options.use_animations & UA_RANGE) && Options.darken_beyond_range)
         {
@@ -1031,8 +1035,8 @@ spret cast_a_spell(bool check_range, spell_type spell, dist *_target,
         && !crawl_state.disables[DIS_CONFIRMATIONS])
     {
         // None currently dock just piety, right?
-        if (!yesno("Casting this spell will place you under penance. "
-                   "Really cast?", true, 'n'))
+        if (!yesno(jtransc("Casting this spell will place you under penance. "
+                   "Really cast?"), true, 'n'))
         {
             canned_msg(MSG_OK);
             crawl_state.zero_turns_taken();
@@ -1137,7 +1141,7 @@ static void _spellcasting_side_effects(spell_type spell, god_type god,
     {
         if (you.duration[DUR_SAP_MAGIC] && !fake_spell)
         {
-            mprf(MSGCH_WARN, "You lose access to your magic!");
+            mprf(MSGCH_WARN, jtransc("You lose access to your magic!"));
             you.increase_duration(DUR_NO_CAST, 3 + random2(3));
         }
 
@@ -1152,20 +1156,20 @@ static void _try_monster_cast(spell_type spell, int /*powc*/,
 {
     if (monster_at(you.pos()))
     {
-        mpr("Couldn't try casting monster spell because you're "
-            "on top of a monster.");
+        mpr(jtrans("Couldn't try casting monster spell because you're "
+            "on top of a monster."));
         return;
     }
 
     monster* mon = get_free_monster();
     if (!mon)
     {
-        mpr("Couldn't try casting monster spell because there is "
-            "no empty monster slot.");
+        mpr(jtrans("Couldn't try casting monster spell because there is "
+            "no empty monster slot."));
         return;
     }
 
-    mpr("Invalid player spell, attempting to cast it as monster spell.");
+    mpr(jtrans("Invalid player spell, attempting to cast it as monster spell."));
 
     mon->mname      = "Dummy Monster";
     mon->type       = MONS_HUMAN;
@@ -1235,7 +1239,8 @@ static bool _spellcasting_aborted(spell_type spell, bool fake_spell)
             if (!action.matches(name))
                 continue;
 
-            string prompt = "Really cast " + string(name) + "?";
+            string prompt = make_stringf(jtransc("Really cast %s?"),
+                                         spell_title_jc(spell));
             if (!yesno(prompt.c_str(), false, 'n'))
             {
                 canned_msg(MSG_OK);
@@ -1254,18 +1259,18 @@ static bool _spellcasting_aborted(spell_type spell, bool fake_spell)
     {
         if (failure_rate_to_int(raw_spell_fail(spell)) == 100)
         {
-            mprf(MSGCH_WARN, "It is impossible to cast this spell "
-                    "(100%% risk of failure)!");
+            mprf(MSGCH_WARN, jtransc("It is impossible to cast this spell "
+                    "(100%% risk of failure)!"));
             return true;
         }
 
-        string prompt = make_stringf("The spell is %s to miscast "
-                                     "(%s risk of failure)%s",
-                                     fail_severity_adjs[severity],
+        string prompt = make_stringf(jtransc("The spell is %s to miscast "
+                                     "(%s risk of failure)%s"),
+                                     adj_jc(fail_severity_adjs[severity]),
                                      failure_rate.c_str(),
-                                     severity > 1 ? "!" : ".");
+                                     severity > 1 ? "！" : "。");
 
-        prompt = make_stringf("%s Continue anyway?", prompt.c_str());
+        prompt = make_stringf(jtransc("%s Continue anyway?"), prompt.c_str());
         if (!yesno(prompt.c_str(), false, 'n'))
         {
             canned_msg(MSG_OK);
@@ -1726,21 +1731,21 @@ static vector<string> _desc_intoxicate_chance(const monster_info& mi,
                                               targeter* hitfunc, int pow)
 {
     if (hitfunc && !hitfunc->affects_monster(mi))
-        return vector<string>{"not susceptible"};
+        return vector<string>{jtrans("not susceptible")};
 
     int conf_pct = 40 + pow / 3;
 
     if (get_resist(mi.resists(), MR_RES_POISON) >= 1)
         conf_pct =  conf_pct / 3;
 
-    return vector<string>{make_stringf("chance to confuse: %d%%", conf_pct)};
+    return vector<string>{make_stringf(jtransc("chance to confuse: %d%%"), conf_pct)};
 }
 
 static vector<string> _desc_englaciate_chance(const monster_info& mi,
                                               targeter* hitfunc, int pow)
 {
     if (hitfunc && !hitfunc->affects_monster(mi))
-        return vector<string>{"not susceptible"};
+        return vector<string>{jtrans("not susceptible")};
 
     const int outcomes = pow * pow * pow;
     const int target   = 3 * mi.hd - 2;
@@ -1763,21 +1768,21 @@ static vector<string> _desc_englaciate_chance(const monster_info& mi,
     else
         fail_pct = 100;
 
-    return vector<string>{make_stringf("chance to slow: %d%%", 100 - fail_pct)};
+    return vector<string>{make_stringf(jtransc("chance to slow: %d%%"), 100 - fail_pct)};
 }
 
 static vector<string> _desc_gloom_chance(const monster_info& mi, int pow)
 {
     if (mons_res_blind(mi.type))
-        return vector<string>{"not susceptible"};
+        return vector<string>{jtrans("not susceptible")};
 
-    return vector<string>{make_stringf("chance to blind: %d%%", gloom_success_chance(pow, mi.hd))};
+    return vector<string>{make_stringf(jtransc("chance to blind: %d%%"), gloom_success_chance(pow, mi.hd))};
 }
 
 static vector<string> _desc_airstrike_bonus(const monster_info& mi)
 {
     const int empty_spaces = airstrike_space_around(mi.pos, false);
-    return vector<string>{make_stringf("empty space bonus: %d/8", empty_spaces)};
+    return vector<string>{make_stringf(jtransc("empty space bonus: %d/8"), empty_spaces)};
 }
 
 static vector<string> _desc_mercury_weak_chance(const monster_info& mi)
@@ -1785,25 +1790,25 @@ static vector<string> _desc_mercury_weak_chance(const monster_info& mi)
     if (mi.is(MB_NO_ATTACKS))
         return vector<string>{};
 
-    return vector<string>{make_stringf("chance to weaken: %d%%",
+    return vector<string>{make_stringf(jtransc("chance to weaken: %d%%"),
                             get_mercury_weaken_chance(mi.hd))};
 }
 
 static vector<string> _desc_warp_space_chance(int pow)
 {
-    return vector<string>{make_stringf("chance to blink: %d%%",
+    return vector<string>{make_stringf(jtransc("chance to blink: %d%%"),
                             get_warp_space_chance(pow))};
 }
 
 static vector<string> _desc_meph_chance(const monster_info& mi)
 {
     if (get_resist(mi.resists(), MR_RES_POISON) >= 1 || mi.is(MB_CLARITY))
-        return vector<string>{"not susceptible"};
+        return vector<string>{jtrans("not susceptible")};
 
     int pct_chance = 2;
     if (mi.hd < MEPH_HD_CAP)
         pct_chance = 100 - (100 * mi.hd / MEPH_HD_CAP);
-    return vector<string>{make_stringf("chance to affect: %d%%", pct_chance)};
+    return vector<string>{make_stringf(jtransc("chance to affect: %d%%"), pct_chance)};
 }
 
 static vector<string> _desc_hailstorm_hit_chance(const monster_info& mi, int pow)
@@ -1845,7 +1850,7 @@ static vector<string> _desc_insubstantial(const monster_info& mi, string desc)
 static vector<string> _desc_vampiric_draining_valid(const monster_info& mi)
 {
     if (mi.mb.get(MB_CANT_DRAIN))
-        return vector<string>{"not susceptible"};
+        return vector<string>{jtrans("not susceptible")};
 
     return vector<string>{};
 }
@@ -1853,9 +1858,9 @@ static vector<string> _desc_vampiric_draining_valid(const monster_info& mi)
 static vector<string> _desc_rimeblight_valid(const monster_info& mi)
 {
     if (mi.is(MB_RIMEBLIGHT))
-        return vector<string>{"already infected"};
+        return vector<string>{jtrans("already infected")};
     else if (mons_class_is_peripheral(mi.type))
-        return vector<string>{"not susceptible"};
+        return vector<string>{jtrans("not susceptible")};
 
     return vector<string>{};
 }
@@ -1864,13 +1869,13 @@ static vector<string> _desc_dispersal_chance(const monster_info& mi, int pow)
 {
     const int wl = mi.willpower();
     if (mons_class_is_stationary(mi.type))
-        return vector<string>{"stationary"};
+        return vector<string>{tagged_jtrans("[targeter]", "stationary")};
 
     if (wl == WILL_INVULN)
-        return vector<string>{"will blink"};
+        return vector<string>{jtrans("will blink")};
 
     const int success = hex_success_chance(wl, pow, 100);
-    return vector<string>{make_stringf("chance to teleport: %d%%", success)};
+    return vector<string>{make_stringf(jtransc("chance to teleport: %d%%"), success)};
 }
 
 static vector<string> _desc_enfeeble_chance(const monster_info& mi, int pow)
@@ -1880,22 +1885,23 @@ static vector<string> _desc_enfeeble_chance(const monster_info& mi, int pow)
     const int wl = mi.willpower();
 
     if (!mi.is(MB_NO_ATTACKS))
-        base_effects.push_back("inflict weakness");
+        base_effects.push_back(jtrans("inflict weakness"));
     if (mi.antimagic_susceptible())
-        base_effects.push_back("diminish spells");
+        base_effects.push_back(jtrans("diminish spells"));
     if (!base_effects.empty())
     {
-        all_effects.push_back("will " +
-            comma_separated_line(base_effects.begin(), base_effects.end()));
+        all_effects.push_back(make_stringf(jtransc("will %s"),
+            comma_separated_line(base_effects.begin(), base_effects.end(),
+                                 "と", "、").c_str()));
     }
     if (wl != WILL_INVULN)
     {
         const int success = hex_success_chance(wl, pow, 100);
-        all_effects.push_back(make_stringf("chance to daze and blind: %d%%", success));
+        all_effects.push_back(make_stringf(jtransc("chance to daze and blind: %d%%"), success));
     }
 
     if (all_effects.empty())
-        return vector<string>{"not susceptible"};
+        return vector<string>{jtrans("not susceptible")};
 
     return all_effects;
 }
@@ -1915,11 +1921,11 @@ static string _mon_threat_string(const CrawlStoreValue &mon_store)
     // dummy monster rolled, which may not match what the actual monster
     // rolls.
     if (mons_is_ghost_demon(dummy.type))
-        desc = get_monster_data(dummy.type)->name;
+        desc = mons_type_name_j(dummy.type, DESC_PLAIN);
 
     const string col_name = colour_to_str(col);
 
-    return "<" + col_name + ">" + article_a(desc) + "</" + col_name + ">";
+    return "<" + col_name + ">" + desc + "</" + col_name + ">";
 }
 
 // Include success chance in targeter for spells checking monster WL.
@@ -1929,9 +1935,9 @@ vector<string> desc_wl_success_chance(const monster_info& mi, int pow,
     targeter_beam* beam_hitf = dynamic_cast<targeter_beam*>(hitfunc);
     int wl = mi.willpower();
     if (wl == WILL_INVULN)
-        return vector<string>{"infinite will"};
+        return vector<string>{jtrans("infinite will")};
     if (hitfunc && !hitfunc->affects_monster(mi))
-        return vector<string>{"not susceptible"};
+        return vector<string>{jtrans("not susceptible")};
     wl = apply_willpower_bypass(you, wl);
     vector<string> descs;
     if (beam_hitf && beam_hitf->beam.flavour == BEAM_POLYMORPH)
@@ -1939,25 +1945,26 @@ vector<string> desc_wl_success_chance(const monster_info& mi, int pow,
         // Polymorph has a special effect on ugly things and shapeshifters that
         // does not require passing an WL check.
         if (mi.type == MONS_UGLY_THING || mi.type == MONS_VERY_UGLY_THING)
-            return vector<string>{"will change colour"};
+            return vector<string>{jtrans("will change colour")};
         if (mi.is(MB_SHAPESHIFTER))
-            return vector<string>{"will change shape"};
+            return vector<string>{jtrans("will change shape")};
         if (mi.type == MONS_SLIME_CREATURE && mi.slime_size > 1)
-            descs.push_back("will probably split");
+            descs.push_back(jtrans("will probably split"));
 
         // list out the normal poly set
         if (!mi.props.exists(POLY_SET_KEY))
-            return vector<string>{"not susceptible"};
+            return vector<string>{jtrans("not susceptible")};
         const CrawlVector &set = mi.props[POLY_SET_KEY].get_vector();
         if (set.size() <= 0)
-            return vector<string>{"not susceptible"};
-        descs.push_back("will become "
-                        + comma_separated_fn(set.begin(), set.end(),
-                                             _mon_threat_string, ", or "));
+            return vector<string>{jtrans("not susceptible")};
+        descs.push_back(make_stringf(jtransc("will become %s"),
+                        comma_separated_fn(set.begin(), set.end(),
+                                           _mon_threat_string, "、または",
+                                           "、").c_str()));
     }
 
     const int success = hex_success_chance(wl, pow, 100);
-    descs.push_back(make_stringf("chance to affect: %d%%", success));
+    descs.push_back(make_stringf(jtransc("chance to affect: %d%%"), success));
 
     return descs;
 }
@@ -1965,7 +1972,7 @@ vector<string> desc_wl_success_chance(const monster_info& mi, int pow,
 static vector<string> _desc_beckoning_valid(const monster_info& mi)
 {
     if (!can_beckon(mi))
-        return vector<string>{"not susceptible"};
+        return vector<string>{jtrans("not susceptible")};
 
     return vector<string>{};
 }
@@ -2059,9 +2066,9 @@ desc_filter targeter_addl_desc(spell_type spell, int powc, spell_flags flags,
         case SPELL_ELECTRIC_CHARGE:
             return bind(_desc_electric_charge_hit_chance, placeholders::_1);
         case SPELL_FASTROOT:
-            return bind(_desc_insubstantial, placeholders::_1, "immune to roots");
+            return bind(_desc_insubstantial, placeholders::_1, jtrans("immune to roots"));
         case SPELL_STICKY_FLAME:
-            return bind(_desc_insubstantial, placeholders::_1, "unstickable");
+            return bind(_desc_insubstantial, placeholders::_1, jtrans("unstickable"));
         case SPELL_PLASMA_BEAM:
             return bind(_desc_plasma_hit_chance, placeholders::_1, powc);
         case SPELL_MERCURY_ARROW:
@@ -2195,7 +2202,11 @@ spret your_spells(spell_type spell, int powc, bool actual_spell,
 
         // TODO: it's extremely inconsistent when this prompt shows up, not
         // sure why
-        const char *prompt = get_spell_target_prompt(spell);
+        const char *prompt_en = get_spell_target_prompt(spell);
+        // target_prefix は const char* なので、訳はこのブロックの中で保持する。
+        const string prompt_j = prompt_en
+            ? tagged_jtrans("[target prefix]", prompt_en) : "";
+        const char *prompt = prompt_en ? prompt_j.c_str() : nullptr;
 
         const bool needs_path = !testbits(flags, spflag::target)
                                 // Apportation must be spflag::target, since a
@@ -2211,10 +2222,10 @@ spret your_spells(spell_type spell, int powc, bool actual_spell,
         const bool useless = spell_is_useless(spell, true, false, true);
         const char *spell_title_color = useless ? "darkgrey" : "w";
         const string verb = channelled_spell_active(spell)
-            ? "<lightred>Restarting spell</lightred>"
-            : is_targeted ? "Aiming" : "Casting";
+            ? jtrans("<lightred>Restarting spell</lightred>")
+            : tagged_jtrans("[spell verb]", is_targeted ? "Aiming" : "Casting");
         string title = make_stringf("%s: <%s>%s</%s>", verb.c_str(),
-                    spell_title_color, spell_title(spell), spell_title_color);
+                    spell_title_color, spell_title_jc(spell), spell_title_color);
         if (actual_spell)
         {
             title += make_stringf(" <lightgrey>(%s)</lightgrey>",
@@ -2223,7 +2234,7 @@ spret your_spells(spell_type spell, int powc, bool actual_spell,
 
         if (spell == SPELL_GRAVE_CLAW)
         {
-            title += make_stringf("<lightgrey> (%d/%d uses available)</lightgrey>",
+            title += make_stringf(jtransc("<lightgrey> (%d/%d uses available)</lightgrey>"),
                                   you.props[GRAVE_CLAW_CHARGES_KEY].get_int(),
                                   GRAVE_CLAW_MAX_CHARGES);
         }
@@ -2270,7 +2281,7 @@ spret your_spells(spell_type spell, int powc, bool actual_spell,
         if (testbits(flags, spflag::not_self) && target->isMe())
         {
             if (spell == SPELL_TELEPORT_OTHER)
-                mpr("Sorry, this spell works on others only.");
+                mpr(jtrans("Sorry, this spell works on others only."));
             else
                 canned_msg(MSG_UNTHINKING_ACT);
 
@@ -2302,7 +2313,7 @@ spret your_spells(spell_type spell, int powc, bool actual_spell,
         if (!you_worship(GOD_SIF_MUNA)
             && you.penance[GOD_SIF_MUNA] && one_chance_in(20))
         {
-            god_speaks(GOD_SIF_MUNA, "You feel a surge of divine spite.");
+            god_speaks(GOD_SIF_MUNA, jtransc("You feel a surge of divine spite."));
 
             // This will cause failure and increase the miscast effect.
             spfl = -you.penance[GOD_SIF_MUNA];
@@ -2313,8 +2324,8 @@ spret your_spells(spell_type spell, int powc, bool actual_spell,
                  && one_chance_in(20))
         {
             // And you thought you'd Haunt your way out of penance...
-            simple_god_message(" does not allow the disloyal to dabble in "
-                               "death!", false, GOD_KIKUBAAQUDGHA);
+            simple_god_message(jtransc(" does not allow the disloyal to dabble in "
+                               "death!"), false, GOD_KIKUBAAQUDGHA);
 
             // The spell still goes through, but you get a miscast anyway.
             miscast_effect(you, nullptr,
@@ -2330,8 +2341,8 @@ spret your_spells(spell_type spell, int powc, bool actual_spell,
                  && one_chance_in(20))
         {
             // And you thought you'd Fire Storm your way out of penance...
-            simple_god_message(" does not allow the disloyal to dabble in "
-                               "destruction!", false, GOD_VEHUMET);
+            simple_god_message(jtransc(" does not allow the disloyal to dabble in "
+                               "destruction!"), false, GOD_VEHUMET);
 
             // The spell still goes through, but you get a miscast anyway.
             miscast_effect(you, nullptr, {miscast_source::god, GOD_VEHUMET},
@@ -2402,7 +2413,7 @@ spret your_spells(spell_type spell, int powc, bool actual_spell,
     {
         if (actual_spell)
         {
-            mprf("You miscast %s.", spell_title(spell));
+            mprf(jtransc("You miscast %s."), spell_title_jc(spell));
             flush_input_buffer(FLUSH_ON_FAILURE);
             learned_something_new(HINT_SPELL_MISCAST);
             miscast_effect(spell, fail);
@@ -2426,11 +2437,11 @@ spret your_spells(spell_type spell, int powc, bool actual_spell,
 
         if (is_valid_spell(spell))
         {
-            mprf(MSGCH_ERROR, "Spell '%s' is not a player castable spell.",
-                 spell_title(spell));
+            mprf(MSGCH_ERROR, jtransc("Spell '%s' is not a player castable spell."),
+                 spell_title_jc(spell));
         }
         else
-            mprf(MSGCH_ERROR, "Invalid spell!");
+            mprf(MSGCH_ERROR, jtransc("Invalid spell!"));
 
         return spret::abort;
     }
@@ -2823,7 +2834,7 @@ static spret _do_cast(spell_type spell, int powc, const dist& spd,
         };
 
         if (!fail)
-            mpr(breath_message[spell].c_str());
+            mpr(jtrans(breath_message[spell]));
     }
     break;
 
@@ -2848,7 +2859,7 @@ static spret _do_cast(spell_type spell, int powc, const dist& spd,
     default:
         if (spell_removed(spell))
         {
-            mprf("Sorry, the spell '%s' is gone!", spell_title(spell));
+            mprf(jtransc("Sorry, the spell '%s' is gone!"), spell_title_jc(spell));
             return spret::abort;
         }
         break;
@@ -3041,8 +3052,8 @@ static string _spell_failure_rate_description(spell_type spell)
     const string colour = colour_to_str(failure_rate_colour(spell));
     const char *col = colour.c_str();
 
-    return make_stringf("<%s>%s</%s>; <%s>%s</%s> risk of failure",
-            col, severity_adj, col, col, failure.c_str(), col);
+    return make_stringf(jtransc("<%s>%s</%s>; <%s>%s</%s> risk of failure"),
+            col, adj_jc(severity_adj), col, col, failure.c_str(), col);
 }
 
 string spell_noise_string(spell_type spell, int chop_wiz_display_width)
@@ -3074,16 +3085,17 @@ string spell_noise_string(spell_type spell, int chop_wiz_display_width)
         if (chop_wiz_display_width > 0)
         {
             ostringstream shortdesc;
-            shortdesc << chop_string(desc, chop_wiz_display_width)
+            shortdesc << chop_string(tagged_jtrans("[noise]", desc),
+                                     chop_wiz_display_width)
                       << "(" << to_string(noise) << ")";
             return shortdesc.str();
         }
         else
-            return make_stringf("%s (%d)", desc, noise);
+            return make_stringf("%s (%d)", tagged_jtransc("[noise]", desc), noise);
     }
     else
 #endif
-        return desc;
+        return tagged_jtrans("[noise]", desc);
 }
 
 int power_to_barcount(int power)
@@ -3100,7 +3112,7 @@ static string _wizard_spell_power_numeric_string(spell_type spell)
 {
     const int cap = spell_power_cap(spell);
     if (cap == 0)
-        return "N/A";
+        return jtrans("N/A");
     const int power = min(calc_spell_power(spell), cap);
     return make_stringf("%d (%d)", power, cap);
 }
@@ -3198,7 +3210,8 @@ string spell_damage_string(spell_type spell, bool evoked, int pow, bool terse)
     switch (spell)
     {
         case SPELL_MAXWELLS_COUPLING:
-            return Options.char_set == CSET_ASCII ? "death" : "\u221e"; //"∞"
+            return Options.char_set == CSET_ASCII
+                   ? tagged_jtrans("[spell damage]", "death") : "\u221e"; //"∞"
         case SPELL_FREEZING_CLOUD:
             return desc_cloud_damage(CLOUD_COLD, false);
         case SPELL_DISCHARGE:
@@ -3314,7 +3327,7 @@ string spell_power_string(spell_type spell)
 
     const int percent = spell_power_percent(spell);
     if (percent < 0)
-        return "N/A";
+        return jtrans("N/A");
     else
         return make_stringf("%d%%", percent);
 }
@@ -3353,7 +3366,7 @@ string spell_range_string(spell_type spell)
 string range_string(int range, int maxrange, int minrange)
 {
     if (range <= 0)
-        return "N/A";
+        return jtrans("N/A");
 
     string ret = to_string(range);
     if (maxrange > -1)
@@ -3375,7 +3388,7 @@ string spell_schools_string(spell_type spell)
         {
             if (already)
                 desc += "/";
-            desc += spelltype_long_name(bit);
+            desc += spelltype_long_name_j(bit);
             already = true;
         }
     }
@@ -3396,7 +3409,7 @@ void do_demonic_magic(int pow, int rank)
     if (rank < 1)
         return;
 
-    mpr("Malevolent energies surge around you.");
+    mpr(jtrans("Malevolent energies surge around you."));
 
     for (radius_iterator ri(you.pos(), rank, C_SQUARE, LOS_NO_TRANS, true); ri; ++ri)
     {
@@ -3427,7 +3440,10 @@ void start_channelling_spell(spell_type spell, string reminder_msg, bool do_effe
 
     if (!reminder_msg.empty())
     {
-        string msg = "(Press <w>%</w> to " + reminder_msg + ".)";
+        // reminder_msg は呼び出し側で日本語化済み(「光線を維持する」など)。
+        // '%' は insert_commands() がキー名に置き換える。
+        string msg = make_stringf(jtransc("(Press <w>%%</w> to %s.)"),
+                                  reminder_msg.c_str());
         insert_commands(msg, { CMD_WAIT });
         mpr(msg);
     }
@@ -3461,8 +3477,8 @@ void handle_channelled_spell()
     if ((spell == SPELL_FLAME_WAVE || spell == SPELL_SEARING_RAY)
         && turn > 1 && !enough_mp(1, true))
     {
-        mprf("Without enough magic to sustain it, your %s dissipates.",
-             spell_title(spell));
+        mprf(jtransc("Without enough magic to sustain it, your %s dissipates."),
+             spell_title_jc(spell));
         stop_channelling_spells(true);
         return;
     }
@@ -3486,7 +3502,7 @@ void handle_channelled_spell()
             return;
 
         default:
-            mprf(MSGCH_WARN, "Attempting to channel buggy spell: %s", spell_title(spell));
+            mprf(MSGCH_WARN, jtransc("Attempting to channel buggy spell: %s"), spell_title_jc(spell));
     }
 }
 
@@ -3503,19 +3519,19 @@ void stop_channelling_spells(bool quiet)
     switch (spell)
     {
         case SPELL_FLAME_WAVE:
-            mpr("You stop channelling waves of flame.");
+            mpr(jtrans("You stop channelling waves of flame."));
             break;
 
         case SPELL_SEARING_RAY:
-            mpr("You stop channelling your searing ray.");
+            mpr(jtrans("You stop channelling your searing ray."));
             break;
 
         case SPELL_MAXWELLS_COUPLING:
-            mpr("The insufficient charge dissipates harmlessly.");
+            mpr(jtrans("The insufficient charge dissipates harmlessly."));
             break;
 
         case SPELL_CLOCKWORK_BEE:
-            mpr("You stop assembling your clockwork bee.");
+            mpr(jtrans("You stop assembling your clockwork bee."));
             break;
 
         default:
@@ -3535,7 +3551,7 @@ bool warn_about_contam_cost(int max_contam)
     const int mul = you.has_mutation(MUT_CONTAMINATION_SUSCEPTIBLE) ? 2 : 1;
 
     if (you.magic_contamination + (max_contam * mul) >= 1000)
-        return !yesno("Casting this now could dangerously contaminate you. Continue?", true, 'n');
+        return !yesno(jtransc("Casting this now could dangerously contaminate you. Continue?"), true, 'n');
 
     return false;
 }

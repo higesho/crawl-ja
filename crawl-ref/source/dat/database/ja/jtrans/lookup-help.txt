@@ -1,0 +1,150 @@
+# lookup-help.cc: ?/ の検索画面。検索キー(DB のキー)は英語のまま、表示だけ訳す。
+%%%%
+Describe which?
+
+どの解説を見ますか？
+%%%%
+(CTRL-S to sort by monster toughness)
+
+(Ctrl+S でモンスターの手強さ順に並べ替え)
+%%%%
+(CTRL-S to sort by name)
+
+(Ctrl+S で名前順に並べ替え)
+%%%%
+This entry is an exact match for '%s'. To see non-exact matches, press space.
+
+この項目は'%s'に完全に一致したものです。部分一致の結果を見るにはSpaceを押してください。
+%%%%
+This branch can only be exited while carrying at least %d rune(s) of Zot.
+
+この支部は、ゾットのルーンを%d個以上持っていないと出られない。
+%%%%
+This branch can only be entered while carrying at least %d rune(s) of Zot.
+
+この支部は、ゾットのルーンを%d個以上持っていないと入れない。
+%%%%
+This portal is %d levels deep.
+
+このポータルの先は%d階層ある。
+%%%%
+This branch is %d levels deep.
+
+この支部は%d階層ある。
+%%%%
+The entrance to this branch can be found in %s.
+
+この支部の入口は%sにある。
+%%%%
+The entrance to this branch can be found in %s, on level %d.
+
+この支部の入口は%sの第%d階層にある。
+%%%%
+The entrance to this branch can be found in %s, between levels %d and %d.
+
+この支部の入口は%sの第%d～%d階層のどこかにある。
+%%%%
+This branch contains the entrances to %s.
+
+この支部には%sへの入口がある。
+%%%%
+This branch contains the entrance to %s.
+
+この支部には%sへの入口がある。
+%%%%
+# %s は下の [lookup type] の訳
+Enter a single letter to list %s displayed by that symbol.
+
+1文字だけ入力すると、その記号で表示される%sを一覧にします。
+%%%%
+Preface with '@' to search by school.
+
+先頭に'@'を付けると系統で検索します。
+%%%%
+# 1 つ目の %s は [lookup type] の訳、2 つ目は上の補足文
+Describe %s; partial names and regexps are fine.%s\nDescribe what?
+
+調べる%sを入力してください。名前の一部や正規表現でも構いません。%s
+何を調べますか？
+%%%%
+No %s with symbol '%s'.
+
+%sのうち、記号が'%s'のものは見つかりませんでした。
+%%%%
+No matching %s for search string '%s'.
+
+%sのうち、検索文字列'%s'に一致するものは見つかりませんでした。
+%%%%
+Description must contain at least one non-space.
+
+空白以外の文字を1文字以上入力してください。
+%%%%
+Lookup information about:
+
+調べる項目:
+%%%%
+Back to game menu
+
+ゲームメニューに戻る
+%%%%
+Exit help lookup
+
+ヘルプ検索を終わる
+%%%%
+# 検索の種類(lookup_types の type)。上の「No %s ...」などの %s にも入る
+[lookup type]monster
+
+モンスター
+%%%%
+[lookup type]spell
+
+呪文
+%%%%
+[lookup type]skill
+
+スキル
+%%%%
+[lookup type]ability
+
+能力
+%%%%
+[lookup type]card
+
+カード
+%%%%
+[lookup type]item
+
+アイテム
+%%%%
+[lookup type]feature
+
+地形
+%%%%
+[lookup type]god
+
+神
+%%%%
+[lookup type]branch
+
+支部
+%%%%
+[lookup type]cloud
+
+雲
+%%%%
+[lookup type]passive
+
+常時効果
+%%%%
+[lookup type]status
+
+状態
+%%%%
+[lookup type]mutation
+
+突然変異
+%%%%
+[lookup type]bane
+
+災厄
+%%%%

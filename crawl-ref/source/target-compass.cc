@@ -6,6 +6,7 @@
 #include "AppHdr.h"
 
 #include "coord.h"
+#include "database.h"
 #include "directn.h"
 #include "libutil.h"
 #include "macro.h"
@@ -57,7 +58,7 @@ static int targeting_behaviour_get_key()
 
 coord_def prompt_compass_direction()
 {
-    mprf(MSGCH_PROMPT, "Which direction?");
+    mprf(MSGCH_PROMPT, jtransc("Which direction?"));
 
     coord_def delta = {0, 0};
     bool cancel = false;
@@ -71,7 +72,7 @@ coord_def prompt_compass_direction()
 
         if (crawl_state.seen_hups)
         {
-            mprf(MSGCH_ERROR, "Targeting interrupted by HUP signal.");
+            mprf(MSGCH_ERROR, jtransc("Targeting interrupted by HUP signal."));
             return {0, 0};
         }
 

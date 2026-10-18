@@ -4,6 +4,7 @@
 
 #include <cwctype>
 
+#include "database.h"
 #include "end.h"
 #include "format.h"
 #include "item-name.h" // make_name
@@ -17,7 +18,9 @@
 formatted_string opening_screen()
 {
     string msg =
-    "<yellow>Hello, welcome to " CRAWL " " + string(Version::Long) + "!</yellow>\n"
+    "<yellow>" + make_stringf(jtransc("Hello, welcome to %s %s!"),
+                              CRAWL, Version::Long)
+    + "</yellow>\n"
     "<brown>" CRAWL_COPYRIGHT;
 
     return formatted_string::parse_string(msg);
@@ -30,28 +33,31 @@ formatted_string options_read_status()
 
     if (!f.error())
     {
-        msg += "<lightgrey>Options read from \"";
+        // 「設定ファイル "…" を読み込んだ。」の語順にする
+        msg += "<lightgrey>";
 #ifdef DGAMELAUNCH
         // For dgl installs, show only the last segment of the .crawlrc
         // file name so that we don't leak details of the directory
         // structure to (untrusted) users.
-        msg += Options.basefilename;
+        msg += make_stringf(jtransc("Options read from \"%s\"."),
+                            Options.basefilename.c_str());
 #else
-        msg += Options.filename;
+        msg += make_stringf(jtransc("Options read from \"%s\"."),
+                            Options.filename.c_str());
 #endif
-        msg += "\".</lightgrey>";
+        msg += "</lightgrey>";
     }
     else
     {
-        msg += "<lightred>Options file ";
+        msg += "<lightred>";
         if (!Options.filename.empty())
         {
-            msg += make_stringf("\"%s\" is not readable",
+            msg += make_stringf(jtransc("Options file \"%s\" is not readable; using defaults."),
                                 Options.filename.c_str());
         }
         else
-            msg += "not found";
-        msg += "; using defaults.</lightred>";
+            msg += jtrans("Options file not found; using defaults.");
+        msg += "</lightred>";
     }
 
     msg += "\n";

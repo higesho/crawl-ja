@@ -1,0 +1,26 @@
+# tilereg-spl.txt: tilereg-spl.cc(Tiles の呪文タブ)
+%%%%
+%d MP    %s    (%s)
+
+%d MP  %s  (失率%s)
+%%%%
+Display memorised spells
+
+習得済みの呪文を表示する
+%%%%
+Cast spells
+
+呪文を唱える
+%%%%
+You cannot cast this spell right now.
+
+現状ではこの呪文を唱えることはできない。
+%%%%
+[L-Click] Cast (%)
+
+[左クリック] 呪文を唱える (%)
+%%%%
+[R-Click] Describe (%)
+
+[右クリック] 解説を見る (%)
+%%%%

@@ -26,6 +26,7 @@
 #include "coordit.h"
 #include "daction-type.h"
 #include "dactions.h"
+#include "database.h"
 #include "directn.h"
 #include "delay.h"
 #include "dgn-overview.h"
@@ -40,6 +41,7 @@
 #include "item-prop.h"
 #include "item-status-flag-type.h"
 #include "items.h"
+#include "japanese.h"
 #include "libutil.h"
 #include "macro.h"
 #include "mapmark.h"
@@ -185,8 +187,8 @@ bool deviant_route_warning::warn_continue_travel(
         return true;
 
     target = dest;
-    const string prompt = make_stringf("Have to go through %s. Continue?",
-                                       deviant.describe().c_str());
+    const string prompt = make_stringf(jtransc("Have to go through %s. Continue?"),
+                                       deviant.describe_j().c_str());
     // If the user says "Yes, shut up and take me there", we won't ask
     // again for that destination. If the user says "No", we will
     // prompt again.
@@ -329,6 +331,12 @@ bool feat_is_traversable(dungeon_feature_type feat, bool try_fallback)
         return false;
 }
 
+// 表示用の動作名(「自動探索」など)。キーは delay.txt の [runmode]。
+static string _runmode_name_j()
+{
+    return tagged_jtrans("[runmode]", you.running.runmode_name());
+}
+
 static const char *_run_mode_name(int runmode)
 {
     return runmode == RMODE_TRAVEL         ? "travel" :
@@ -385,9 +393,9 @@ static pair<bool, string> _feat_is_blocking_door_strict(
     {
         string barrier;
         if (feat_is_runed(grid))
-            return {true, "unopened runed door"};
+            return {true, tagged_jtrans("[explore reason]", "unopened runed door")};
         else
-            return {true, "unopened door"};
+            return {true, tagged_jtrans("[explore reason]", "unopened door")};
     }
     return {true, ""};
 }
@@ -772,42 +780,44 @@ static void _explore_find_target_square()
         const bool unknown_trans = _level_has_unknown_transporters();
         if (!estatus && !unknown_trans)
         {
-            mpr("Done exploring.");
+            mpr(jtrans("Done exploring."));
             learned_something_new(HINT_DONE_EXPLORE);
         }
         else
         {
-            vector<const char *> reasons;
-            vector<const char *> inacc;
+            vector<string> reasons;
+            vector<string> inacc;
             string inacc_desc = "";
 
             if (runed_door_pause)
-                reasons.push_back("unopened runed door");
+                reasons.push_back(tagged_jtrans("[explore reason]", "unopened runed door"));
 
             if (unknown_trans)
-                reasons.push_back("unvisited transporter");
+                reasons.push_back(tagged_jtrans("[explore reason]", "unvisited transporter"));
 
             if (closed_door_pause)
-                reasons.push_back("unopened door");
+                reasons.push_back(tagged_jtrans("[explore reason]", "unopened door"));
 
             if (estatus & EST_GREED_UNFULFILLED)
-                inacc.push_back("items");
+                inacc.push_back(tagged_jtrans("[explore reason]", "items"));
             // A runed door already implies an unexplored place.
             if (!runed_door_pause && !closed_door_pause &&
                 estatus & EST_PARTLY_EXPLORED)
             {
-                inacc.push_back("places");
+                inacc.push_back(tagged_jtrans("[explore reason]", "places"));
             }
 
             if (!inacc.empty())
             {
-                inacc_desc = make_stringf("can't reach some %s",
+                inacc_desc = make_stringf(jtransc("can't reach some %s"),
                                  comma_separated_line(inacc.begin(),
-                                                      inacc.end()).c_str());
-                reasons.push_back(inacc_desc.c_str());
+                                                      inacc.end(),
+                                                      "や", "や").c_str());
+                reasons.push_back(inacc_desc);
             }
-            mprf("Partly explored, %s.",
-                 comma_separated_line(reasons.begin(), reasons.end()).c_str());
+            mprf(jtransc("Partly explored, %s."),
+                 comma_separated_line(reasons.begin(), reasons.end(),
+                                      "、", "、").c_str());
         }
         stop_running();
     }
@@ -846,14 +856,13 @@ void explore_pickup_event(int did_pickup, int tried_pickup)
 
             string wishlist = comma_separated_fn(to_pickup.begin(), to_pickup.end(),
                     [] (const item_def* item) { return item->name(DESC_A); },
-                    " and ", ", ");
+                    "と", "、");
 
             // XX [A] doesn't make sense for items being picked up only because
             // of an =g inscription
             const string prompt =
-                make_stringf("Could not pick up %s here; Ignore %s?",
-                             wishlist.c_str(),
-                             tried_pickup == 1 ? "it" : "them");
+                make_stringf(jtransc("Could not pick up %s here; Ignore them?"),
+                             wishlist.c_str());
 
             // Make Escape => 'n' and stop run.
             explicit_keymap map;
@@ -882,14 +891,15 @@ void explore_pickup_event(int did_pickup, int tried_pickup)
                         }
 
                         set_item_autopickup(*si, AP_FORCE_OFF);
-                        ap_disabled.push_back(pluralise(si->name(DESC_DBNAME)));
+                        ap_disabled.push_back(si->name(DESC_PLAIN));
                     }
 
                     if (!ap_disabled.empty())
                     {
-                        mprf("Autopickup disabled for %s.",
+                        mprf(jtransc("Autopickup disabled for %s."),
                              comma_separated_line(ap_disabled.begin(),
-                                                  ap_disabled.end()).c_str());
+                                                  ap_disabled.end(),
+                                                  "、", "、").c_str());
                     }
                 }
                 // intentional fallthrough
@@ -947,8 +957,8 @@ static void _find_travel_pos(const coord_def& youpos, int *move_x, int *move_y)
         *move_y = 0;
         if (!barrier.second.empty())
         {
-            mpr("Could not " + you.running.runmode_name() + ", "
-                + barrier.second + ".");
+            mprf(jtransc("Could not %s, %s."), _runmode_name_j().c_str(),
+                 barrier.second.c_str());
         }
         return;
     }
@@ -1061,7 +1071,7 @@ command_type travel()
 
     if (Options.travel_key_stop && kbhit())
     {
-        mprf("Key pressed, stopping %s.", you.running.runmode_name().c_str());
+        mprf(jtransc("Key pressed, stopping %s."), _runmode_name_j().c_str());
         stop_running();
         return CMD_NO_CMD;
     }
@@ -1069,8 +1079,8 @@ command_type travel()
     // Excluded squares are only safe if marking stairs, i.e. another level.
     if (is_excluded(you.pos()) && !is_stair_exclusion(you.pos()))
     {
-        mprf("You're in a travel-excluded area, stopping %s.",
-             you.running.runmode_name().c_str());
+        mprf(jtransc("You're in a travel-excluded area, stopping %s."),
+             _runmode_name_j().c_str());
         stop_running();
         return CMD_NO_CMD;
     }
@@ -1086,8 +1096,8 @@ command_type travel()
             && you.props[AUTO_REST_STATUS_POS].get_coord() == you.pos())
         {
             mprf(MSGCH_ERROR,
-                    "You appear to be waiting for the end of something which may "
-                    "never occur. Examine your explore_auto_rest_status option.");
+                    jtransc("You appear to be waiting for the end of something which may "
+                    "never occur. Examine your explore_auto_rest_status option."));
             stop_running();
             return CMD_NO_CMD;
         }
@@ -2150,7 +2160,7 @@ static string _get_trans_travel_dest(const level_pos &target,
     ostringstream dest;
 
     if (!skip_branch)
-        dest << branch;
+        dest << branch_name_j(branch);
     if (brdepth[branch_id] != 1)
     {
         if (!skip_branch)
@@ -2304,11 +2314,11 @@ public:
         // in the prompt itself
         // XX convert this to keyhints in a more?
         if (travel_mode == Mode::altars)
-            segs.emplace_back("_ - list branches");
+            segs.emplace_back(jtrans("_ - list branches"));
         else if (travel_mode == Mode::waypoints)
-            segs.emplace_back("* - list branches");
+            segs.emplace_back(jtrans("* - list branches"));
         else if (mode_allowed(Mode::waypoints))
-            segs.emplace_back("* - list waypoints");
+            segs.emplace_back(jtrans("* - list waypoints"));
 
         if (has_default_target())
         {
@@ -2319,7 +2329,7 @@ public:
         }
 
         if (!(prompt_flags & TPF_SHOW_ALL_BRANCHES))
-            segs.emplace_back("? - help");
+            segs.emplace_back(jtrans("? - help"));
 
         string shortcuts;
         if (!segs.empty())
@@ -2329,7 +2339,7 @@ public:
                                               ", ", ", ");
             shortcuts += ") ";
         }
-        set_title(make_stringf("Where to? %s", shortcuts.c_str()));
+        set_title(jtrans("Where to?") + " " + shortcuts);
     }
 
     bool seen_altars() const
@@ -2411,12 +2421,9 @@ public:
                 // this to keep 4 columns, which will push it into too many
                 // lines. XX: may be better to force menu for this case? (Or
                 // remove the mode?)
-                string altar_name;
-                if (in_prompt_mode && god == GOD_SHINING_ONE)
-                    altar_name = "TSO";
-                else
-                    altar_name  = god_name(god);
-                char god_initial = god == GOD_SHINING_ONE ? '1'   : altar_name.at(0);
+                const string altar_name = god_name_j(god);
+                const string altar_name_en = god_name(god);
+                char god_initial = god == GOD_SHINING_ONE ? '1'   : altar_name_en.at(0);
 
                 level_pos altar_target = nearest_altars[god];
 
@@ -2441,7 +2448,7 @@ public:
         {
             for (const branch_type &br : prompt_branches)
             {
-                MenuEntry *br_entry = new MenuEntry(branches[br].shortname,
+                MenuEntry *br_entry = new MenuEntry(branch_name_j(branches[br].shortname),
                     branches[br].travel_shortcut,
                     [this,&br](const MenuEntry&)
                     {
@@ -2819,10 +2826,10 @@ static level_pos _prompt_travel_depth(const level_id &id, bool remember_targ)
     while (true)
     {
         msgwin_clear_temporary();
-        mprf(MSGCH_PROMPT, "What level of %s? "
-             "(default %s, ? - help) ",
-             branches[target.id.branch].longname,
-             _get_trans_travel_dest(target, true).c_str());
+        mprf(MSGCH_PROMPT, "%s ",
+             make_stringf(jtransc("What level of %s? (default %s, ? - help)"),
+                          branch_name_jc(branches[target.id.branch].longname),
+                          _get_trans_travel_dest(target, true).c_str()).c_str());
 
         char buf[100];
         const int response =
@@ -2920,12 +2927,12 @@ static void _start_translevel_travel()
         if (level_target.pos.x == -1 &&
             level_target.id.depth == branches[level_target.id.branch].numlevels)
         {
-            mpr("You're already at the bottom of this branch!");
+            mpr(jtrans("You're already at the bottom of this branch!"));
             return;
         }
         else if (level_target.pos.x == -1 || level_target.pos == you.pos())
         {
-            mpr("You're already here!");
+            mpr(jtrans("You're already here!"));
             return;
         }
     }
@@ -2958,15 +2965,15 @@ void start_translevel_travel(const level_pos &pos)
     if (!can_travel_to(pos.id))
     {
         if (!can_travel_interlevel())
-            mpr("Sorry, you can't auto-travel out of here.");
+            mpr(jtrans("Sorry, you can't auto-travel out of here."));
         else
-            mpr("Sorry, I don't know how to get there.");
+            mpr(jtrans("Sorry, I don't know how to get there."));
         return;
     }
 
     if (pos.is_valid() && !in_bounds(pos.pos))
     {
-        mpr("Sorry, I don't know how to get there.");
+        mpr(jtrans("Sorry, I don't know how to get there."));
         return;
     }
 
@@ -2995,7 +3002,7 @@ void start_translevel_travel(const level_pos &pos)
         {
             if (!_loadlev_populate_stair_distances(pos))
             {
-                mpr("Level memory is imperfect, aborting.");
+                mpr(jtrans("Level memory is imperfect, aborting."));
                 return ;
             }
         }
@@ -3398,7 +3405,7 @@ static bool _find_transtravel_square(const level_pos &target, bool verbose)
         return false;
     if (maybe_traversable)
     {
-        mpr("Sorry, I don't know how to get there.");
+        mpr(jtrans("Sorry, I don't know how to get there."));
         return false;
     }
 
@@ -3406,7 +3413,7 @@ static bool _find_transtravel_square(const level_pos &target, bool verbose)
     coord_def closest_alt = _find_closest_adj(target.pos);
     if (closest_alt.origin())
     {
-        mpr("Sorry, I don't know how to traverse that place.");
+        mpr(jtrans("Sorry, I don't know how to traverse that place."));
         return false;
     }
 
@@ -3461,7 +3468,7 @@ void start_explore(bool grab_items, bool skip_autorest)
     if (!i_feel_safe(true, true))
         return;
 
-    if (should_fear_zot() && !yesno("Really explore while Zot is near?", false, 'n'))
+    if (should_fear_zot() && !yesno(jtransc("Really explore while Zot is near?"), false, 'n'))
     {
         canned_msg(MSG_OK);
         return;
@@ -3481,7 +3488,7 @@ void start_explore(bool grab_items, bool skip_autorest)
 void do_explore_cmd(bool skip_autorest)
 {
     if (you.berserk())
-        mpr("Calm down first, please.");
+        mpr(jtrans("Calm down first, please."));
     else                        // Start exploring
         start_explore(Options.explore_greedy, skip_autorest);
 }
@@ -3539,6 +3546,28 @@ level_id level_id::get_next_level_id(const coord_def &pos)
         break;
     }
     return id;
+}
+
+// 表示用の日本語の場所名。短い形は「迷宮:3」、長い形は「迷宮の3階」。
+// describe() はセーブのキーやマイルストーンに使われるので英語のまま。
+string level_id::describe_j(bool long_name, bool with_number) const
+{
+    string result = branch_name_j(long_name ? branches[branch].longname
+                                            : branches[branch].abbrevname);
+
+    if (with_number && brdepth[branch] != 1)
+    {
+        if (long_name)
+        {
+            result = make_stringf(jtransc("Level %s of %s"), result.c_str(),
+                                  to_string(depth).c_str());
+        }
+        else if (depth)
+            result = make_stringf("%s:%d", result.c_str(), depth);
+        else
+            result = make_stringf("%s:$", result.c_str());
+    }
+    return result;
 }
 
 string level_id::describe(bool long_name, bool with_number) const
@@ -4294,7 +4323,7 @@ void TravelCache::list_waypoints() const
     {
         if (wdescs[i].size() == 0)
             continue;
-        line += make_stringf("(%d) %-9s", i, wdescs[i].c_str());
+        line += make_stringf("(%d) %s", i, chop_stringc(wdescs[i], 12));
         if (!(++count % 5))
         {
             mpr(line);
@@ -4347,9 +4376,10 @@ void TravelCache::delete_waypoint()
     while (get_waypoint_count())
     {
         clear_messages();
-        mpr("Existing waypoints:");
+        mpr(jtrans("Existing waypoints:"));
         list_waypoints();
-        mprf(MSGCH_PROMPT, "Delete which waypoint? (* - delete all, Esc - exit) ");
+        mprf(MSGCH_PROMPT, "%s ",
+             jtransc("Delete which waypoint? (* - delete all, Esc - exit)"));
 
         int key = getchm();
         if (key >= '0' && key <= '9')
@@ -4375,7 +4405,7 @@ void TravelCache::delete_waypoint()
     }
 
     clear_messages();
-    mpr("All waypoints deleted. Have a nice day!");
+    mpr(jtrans("All waypoints deleted. Have a nice day!"));
 }
 
 void TravelCache::add_waypoint(int x, int y)
@@ -4385,16 +4415,18 @@ void TravelCache::add_waypoint(int x, int y)
     const bool waypoints_exist = get_waypoint_count();
     if (waypoints_exist)
     {
-        mpr("Existing waypoints:");
+        mpr(jtrans("Existing waypoints:"));
         list_waypoints();
     }
 
     if (you.where_are_you == BRANCH_ABYSS)
-        mprf(MSGCH_PROMPT, "Waypoints on this level may disappear at any time.");
+        mprf(MSGCH_PROMPT, jtransc("Waypoints on this level may disappear at any time."));
     else if (!is_connected_branch(you.where_are_you))
-        mprf(MSGCH_PROMPT, "Waypoints will disappear once you leave this level.");
-    mprf(MSGCH_PROMPT, "Assign waypoint to what number? (0-9%s) ",
-         waypoints_exist? ", D - delete waypoint" : "");
+        mprf(MSGCH_PROMPT, jtransc("Waypoints will disappear once you leave this level."));
+    mprf(MSGCH_PROMPT, "%s ",
+         make_stringf(jtransc("Assign waypoint to what number? (0-9%s)"),
+                      waypoints_exist ? jtransc(", D - delete waypoint")
+                                      : "").c_str());
 
     int keyin = toalower(get_ch());
 
@@ -4437,15 +4469,15 @@ void TravelCache::set_waypoint(int waynum, int x, int y)
     if (overwrite)
     {
         if (lid == old_lid) // same level
-            mprf("Waypoint %d re-assigned to %s.", waynum, new_dest.c_str());
+            mprf(jtransc("Waypoint %d re-assigned to %s."), waynum, new_dest.c_str());
         else
         {
-            mprf("Waypoint %d re-assigned from %s to %s.",
+            mprf(jtransc("Waypoint %d re-assigned from %s to %s."),
                  waynum, old_dest.c_str(), new_dest.c_str());
         }
     }
     else
-        mprf("Waypoint %d assigned to %s.", waynum, new_dest.c_str());
+        mprf(jtransc("Waypoint %d assigned to %s."), waynum, new_dest.c_str());
 
     update_waypoints();
 }
@@ -4716,7 +4748,7 @@ bool runrest::run_should_stop() const
     {
 #ifndef USE_TILE_LOCAL
         // XXX: Remove this once exclusions are visible.
-        mprf(MSGCH_WARN, "Stopped running for exclusion.");
+        mprf(MSGCH_WARN, jtransc("Stopped running for exclusion."));
 #endif
         return true;
     }
@@ -4990,8 +5022,9 @@ void explore_discoveries::found_feature(const coord_def &pos,
                                                          "stop_explore");
         if (!feat_stop.empty())
         {
-            string desc = lowercase_first(feature_description_at(pos));
-            marked_feats.push_back(desc + ".");
+            // 表示用の日本語名(句点は表示側で付ける)
+            string desc = feature_description_at_j(pos, false, DESC_PLAIN);
+            marked_feats.push_back(desc);
             return;
         }
     }
@@ -5039,9 +5072,9 @@ void explore_discoveries::add_item(const item_def &i)
     string itemname = menu_colour_item_name(i, DESC_A);
     monster* mon = monster_at(i.pos);
     if (mon && mons_species(mon->type) == MONS_BUSH)
-        itemname += " (under bush)";
+        itemname += jtrans("(under bush)");
     else if (mon && mon->type == MONS_PLANT)
-        itemname += " (under plant)";
+        itemname += jtrans("(under plant)");
 
     items.emplace_back(itemname, i);
 
@@ -5111,21 +5144,22 @@ template <class C> void explore_discoveries::say_any(
 
     const int size = coll.size();
 
-    string plural = pluralise(category);
-    if (size != 1)
-        category = plural.c_str();
+    // 「3つの祭壇」の形
+    const string count_j = make_stringf("%d%s", size, general_counter_suffix(size));
+    const string category_j = tagged_jtrans("[explore found]", category);
 
     if (has_duplicates(coll.begin(), coll.end()))
     {
-        mprf("Found %s %s.", number_in_words(size).c_str(), category);
+        mprf(jtransc("Found %s %s."), count_j.c_str(), category_j.c_str());
         return;
     }
 
-    const auto message = "Found " +
-                           comma_separated_line(coll.begin(), coll.end()) + ".";
+    const auto message = make_stringf(jtransc("Found %s."),
+                           comma_separated_line(coll.begin(), coll.end(),
+                                                "と", "、").c_str());
 
     if (formatted_string::parse_string(message).width() >= get_number_of_cols())
-        mprf("Found %s %s.", number_in_words(size).c_str(), category);
+        mprf(jtransc("Found %s %s."), count_j.c_str(), category_j.c_str());
     else
         mpr(message);
 }
@@ -5133,22 +5167,18 @@ template <class C> void explore_discoveries::say_any(
 vector<string> explore_discoveries::apply_quantities(
     const vector< named_thing<int> > &v) const
 {
-    static const char *feature_plural_qualifiers[] =
-    {
-        " leading ", " back to ", " to ", " of ", " in ", " out of",
-        " from ", " back into ", nullptr
-    };
-
     vector<string> things;
     for (const named_thing<int> &nt : v)
     {
+        // 地形名(英語)を訳す。vault の marker 由来の文はそのまま
+        const string name = tagged_jtrans("[feature]", nt.name);
         if (nt.thing == 1)
-            things.push_back(article_a(nt.name));
+            things.push_back(name);
         else
         {
-            things.push_back(number_in_words(nt.thing)
-                             + " "
-                             + pluralise(nt.name, feature_plural_qualifiers));
+            things.push_back(make_stringf("%d%sの%s", nt.thing,
+                                          general_counter_suffix(nt.thing),
+                                          name.c_str()));
         }
     }
     return things;
@@ -5159,10 +5189,10 @@ bool explore_discoveries::stop_explore() const
     const bool marker_stop = !marker_msgs.empty() || !marked_feats.empty();
 
     for (const string &msg : marker_msgs)
-        mpr(msg);
+        mpr(jtrans(msg));
 
     for (const string &marked : marked_feats)
-        mprf("Found %s", marked.c_str());
+        mprf(jtransc("Found %s."), marked.c_str());
 
     if (!es_flags)
         return marker_stop;
@@ -5188,12 +5218,12 @@ void do_interlevel_travel()
     {
         if (you.running.pos == you.pos())
         {
-            mpr("You're already here!");
+            mpr(jtrans("You're already here!"));
             return;
         }
         else if (!you.running.pos.x || !you.running.pos.y)
         {
-            mpr("Sorry, you can't auto-travel out of here.");
+            mpr(jtrans("Sorry, you can't auto-travel out of here."));
             return;
         }
 

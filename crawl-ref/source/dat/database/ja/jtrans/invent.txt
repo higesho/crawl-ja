@@ -1,0 +1,329 @@
+# invent.txt: invent.cc(持ち物メニュー・アイテム選択の確認)
+%%%%
+Inventory:
+
+所持品一覧:
+%%%%
+%d/%d gear slots
+
+装備品の枠: %d/%d
+%%%%
+# 持ち物メニュー(ページ表示)の見出し
+Gear:
+
+装備品:
+%%%%
+Potions:
+
+薬:
+%%%%
+Scrolls:
+
+巻物:
+%%%%
+Evocable Items:
+
+発動アイテム:
+%%%%
+(Left/Right/Tab to switch category)
+
+(左/右/Tab で分類を切り替え)
+%%%%
+%d items
+
+%d個
+%%%%
+Drop what? (Left/Right/Tab to switch category)
+
+何を置きますか？ (左/右/Tab で分類を切り替え)
+%%%%
+%s (<w>?</w> for menu, <w>Esc</w> to quit)
+
+%s (<w>?</w> で一覧, <w>Esc</w> でキャンセル)
+%%%%
+You don't have any such object.
+
+あなたはそのようなアイテムを持っていない。
+%%%%
+That's the wrong kind of item!
+
+それは違う種類のアイテムだ！
+%%%%
+# 分類の見出し。%s は分類のキー(")" など)
+(select all with <w>%s</w><blue>)
+
+(<w>%s</w> キーで一括選択<blue>)
+%%%%
+(go to first with <w>%s</w><blue>)
+
+(<w>%s</w> キーで先頭へ移動<blue>)
+%%%%
+(select first with <w>%s</w><blue>)
+
+(<w>%s</w> キーで先頭を選択<blue>)
+%%%%
+# 分類名(item_class_name() の terse でない形)。Armour, Jewellery,
+# Miscellaneous, Gizmo は describe.txt の [item class] を使う(大文字小文字は区別しない)
+[item class]Gold
+
+金貨
+%%%%
+[item class]Hand Weapons
+
+近接武器
+%%%%
+[item class]Missiles
+
+矢弾
+%%%%
+[item class]Wands
+
+ワンド
+%%%%
+[item class]Comestibles
+
+食料品
+%%%%
+[item class]Scrolls
+
+巻物
+%%%%
+[item class]Potions
+
+薬
+%%%%
+[item class]Books
+
+魔法書
+%%%%
+[item class]Magical Staves
+
+魔法の杖
+%%%%
+[item class]Rods
+
+ロッド
+%%%%
+[item class]Orbs of Power
+
+力のオーブ
+%%%%
+[item class]Carrion
+
+死体
+%%%%
+[item class]Runes of Zot
+
+ゾットのルーン
+%%%%
+[item class]Ancient Gems
+
+古代の宝石
+%%%%
+[item class]Talismans
+
+タリスマン
+%%%%
+[item class]Baubles
+
+ボーブル
+%%%%
+# no_selectables_message()
+You aren't carrying any weapons.
+
+あなたは武器を持っていない。
+%%%%
+You aren't carrying any weapons that can be blessed.
+
+あなたは祝福することのできる武器を持っていない。
+%%%%
+You aren't carrying any currently wearable armour.
+
+あなたは現状で装備できる防具を持っていない。
+%%%%
+You aren't carrying any wearable armour.
+
+あなたは装備できる防具を持っていない。
+%%%%
+You don't currently have any unidentified items.
+
+あなたは未鑑定のアイテムを持っていない。
+%%%%
+You aren't carrying any armour which can be enchanted further.
+
+あなたはこれ以上強化可能な防具を持っていない。
+%%%%
+You don't have any corpses.
+
+あなたは死体を持ち運んでいない。
+%%%%
+You aren't carrying any potions.
+
+あなたは薬を持っていない。
+%%%%
+You aren't carrying any scrolls.
+
+あなたは巻物を持っていない。
+%%%%
+You don't have any books.
+
+あなたは本を持っていない。
+%%%%
+You aren't carrying any wands.
+
+あなたはワンドを持っていない。
+%%%%
+You aren't carrying any pieces of jewellery.
+
+あなたは装身具を持っていない。
+%%%%
+You aren't carrying any amulets.
+
+あなたは護符を持っていない。
+%%%%
+You aren't carrying any jewellery or talismans.
+
+あなたは装身具もタリスマンも持っていない。
+%%%%
+You aren't carrying any items that might be thrown or fired.
+
+あなたは投擲したり射撃するためのものを持っていない。
+%%%%
+You aren't carrying any items that you can evoke.
+
+あなたは発動できるアイテムを持っていない。
+%%%%
+None of your equipped items are cursed.
+
+あなたが装備中のアイテムは呪われていないものばかりだ。
+%%%%
+You aren't wearing any pieces of armour.
+
+あなたは防具を身に着けていない。
+%%%%
+You aren't wearing any rings, amulets, or talismans.
+
+あなたは指輪も護符もタリスマンも身に着けていない。
+%%%%
+You aren't wearing anything.
+
+あなたは何も身に着けていない。
+%%%%
+You aren't carrying anything that can be equipped.
+
+あなたは装備できるものを持っていない。
+%%%%
+You aren't carrying any weapons that can be branded.
+
+あなたは魔力を込められる武器を持っていない。
+%%%%
+You aren't carrying any weapons that can be enchanted.
+
+あなたは強化可能な武器を持っていない。
+%%%%
+You aren't carrying any artefact melee weapons.
+
+あなたはアーティファクトの近接武器を持っていない。
+%%%%
+You aren't wearing any cursable items.
+
+あなたは呪縛できるアイテムを身に着けていない。
+%%%%
+You aren't wearing any uncursed rings.
+
+あなたは呪われていない指輪を身に着けていない。
+%%%%
+You don't have any quiverable items.
+
+あなたは射撃準備できるアイテムを持っていない。
+%%%%
+You aren't carrying any such object.
+
+あなたはそのようなアイテムを持っていない。
+%%%%
+# 装備を外す確認(maybe_warn_about_removing)
+Really unwield %s?
+
+本当に%sを手放しますか？
+%%%%
+Really take off %s?
+
+本当に%sを脱ぎますか？
+%%%%
+Really remove %s?
+
+本当に%sを外しますか？
+%%%%
+Really unwield and destroy %s?
+
+本当に%sを手放して破壊しますか？
+%%%%
+Really take off and destroy %s?
+
+本当に%sを脱いで破壊しますか？
+%%%%
+Really remove and destroy %s?
+
+本当に%sを外して破壊しますか？
+%%%%
+You'd be excommunicated if you did!
+
+そんなことをすれば破門されますよ！
+%%%%
+# 銘による確認(check_warning_inscriptions)。"Really " + 動詞 + " %s?" を引く
+Really wield %s?
+
+本当に%sを手に持ちますか？
+%%%%
+Really quaff %s?
+
+本当に%sを飲みますか？
+%%%%
+Really drop %s?
+
+本当に%sを置きますか？
+%%%%
+Really wear %s?
+
+本当に%sを装備しますか？
+%%%%
+Really put on %s?
+
+本当に%sを身に着けますか？
+%%%%
+Really read %s?
+
+本当に%sを読みますか？
+%%%%
+Really memorise from %s?
+
+本当に%sから呪文を記憶しますか？
+%%%%
+Really zap %s?
+
+本当に%sを振りますか？
+%%%%
+Really fire %s?
+
+本当に%sを射撃しますか？
+%%%%
+Really evoke %s?
+
+本当に%sを発動しますか？
+%%%%
+Really equip %s?
+
+本当に%sを装備しますか？
+%%%%
+Really equip %s while about to teleport?
+
+テレポート直前に、本当に%sを装備しますか？
+%%%%
+Really unequip %s?
+
+本当に%sの装備を外しますか？
+%%%%
+Really choose %s?
+
+本当に%sを選びますか？
+%%%%

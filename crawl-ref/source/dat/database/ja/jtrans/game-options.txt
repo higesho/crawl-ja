@@ -1,0 +1,66 @@
+# game-options.cc: 設定ファイル(rc)の読み込みエラー
+%%%%
+Bad highlight string -- %s
+
+ハイライトの指定が不正です -- %s
+%%%%
+Bad colour -- %s
+
+色の指定が不正です -- %s
+%%%%
+Bad boolean: %s (should be true or false)
+
+真偽値が不正です: %s (true か false を指定してください)
+%%%%
+Option '%s' is disabled in this build.
+
+オプション '%s' はこのビルドでは無効です。
+%%%%
+Bad %s value: %s (should be true or false)
+
+%s の値が不正です: %s (true か false を指定してください)
+%%%%
+Bad %s -- %s
+
+%s の値が不正です -- %s
+%%%%
+%s (for %s)
+
+%s (%s の設定)
+%%%%
+Couldn't parse integer option %s: "%s"
+
+整数オプション %s を解釈できません: "%s"
+%%%%
+Bad %s: %d should be >= %d
+
+%s の値が不正です: %d は %d 以上にしてください
+%%%%
+Bad %s: %d should be <= %d
+
+%s の値が不正です: %d は %d 以下にしてください
+%%%%
+Couldn't parse decimal option %s: "%s"
+
+小数オプション %s を解釈できません: "%s"
+%%%%
+Bad %s: %g should be >= %g
+
+%s の値が不正です: %g は %g 以上にしてください
+%%%%
+Bad %s: %g should be <= %g
+
+%s の値が不正です: %g は %g 以下にしてください
+%%%%
+Bad %s pair: '%s'
+
+%s の組の指定が不正です: '%s'
+%%%%
+Bad %s: '%s'
+
+%s の値が不正です: '%s'
+%%%%
+Bad %s value: %s (should be %s)
+
+%s の値が不正です: %s (%s のいずれかを指定してください)
+%%%%

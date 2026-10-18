@@ -96,6 +96,8 @@ string bane_long_description(bane_type bane, bool ignore_player = false);
 
 string short_ghost_description(const monster *mon, bool abbrev = false);
 string get_ghost_description(const monster_info &mi, bool concise = false);
+// 表示用(日本語)。英語版はマイルストーンなどに残る
+string get_ghost_description_j(const monster_info &mi, bool concise = false);
 
 string get_skill_description(skill_type skill, bool need_title = false);
 

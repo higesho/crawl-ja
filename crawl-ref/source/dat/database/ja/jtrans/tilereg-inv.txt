@@ -1,0 +1,94 @@
+# tilereg-inv.txt: tilereg-inv.cc(Tiles の持ち物タブ)
+%%%%
+Display inventory
+
+所有物一覧を表示
+%%%%
+Use items
+
+アイテムを使用
+%%%%
+Next page\n[L-Click] Show next page of items
+
+次のページ
+[左クリック] アイテム一覧の次のページを見る
+%%%%
+Previous page\n[L-Click] Show previous page of items
+
+前のページ
+[左クリック] アイテム一覧の前のページを見る
+%%%%
+[L-Click] Pick up (%)
+
+[左クリック] 拾う (%)
+%%%%
+[Ctrl + L-Click] Partial pick up (%)
+
+[Ctrl + 左クリック] 一部だけ拾う (%)
+%%%%
+[Shift + L-Click] Drop (%)
+
+[Shift + 左クリック] 床に置く (%)
+%%%%
+[Ctrl-Shift + L-Click] Drop quantity (%#)
+
+[Ctrl + Shift + 左クリック] 何個か置く (%#)
+%%%%
+Next page
+
+次のページ
+%%%%
+Previous page
+
+前のページ
+%%%%
+# 左クリックの操作(前に "[左クリック] " が付く)
+[tile action]Wield (%)
+
+武器を手にする (%)
+%%%%
+[tile action]Unwield (%-)
+
+武器を手放す (%-)
+%%%%
+[tile action]Evoke (%)
+
+発動する (%)
+%%%%
+[tile action]Wear (%)
+
+装備する (%)
+%%%%
+[tile action]Take off (%)
+
+脱ぐ (%)
+%%%%
+[tile action]Put on (%)
+
+身に着ける (%)
+%%%%
+[tile action]Remove (%)
+
+外す (%)
+%%%%
+[tile action]Fire (%)
+
+射撃する (%)
+%%%%
+[tile action]Read (%)
+
+読む (%)
+%%%%
+[tile action]Quaff (%)
+
+飲む (%)
+%%%%
+[tile action]Use
+
+使用する
+%%%%
+# jtrans_notrim が先頭の改行を残す
+[Ctrl + L-Click] Offhand
+
+[Ctrl + 左クリック] 副手に持つ
+%%%%

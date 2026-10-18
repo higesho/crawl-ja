@@ -1,0 +1,450 @@
+# directn.txt: directn.cc(照準・調べる(x)コマンドの説明、地形名の表示)
+#
+# 照準のキーのヒント
+%%%%
+Press: ? - help
+
+入力: ? - ヘルプ
+%%%%
+, v - describe
+
+, v - 解説表示
+%%%%
+, . - travel
+
+, . - 自動移動
+%%%%
+, g - get item
+
+, g - アイテムを拾う
+%%%%
+Dir - look around, f - activate
+
+方向 - 見回す, f - 発動
+%%%%
+Shift-Dir - straight line
+
+Shift+方向 - 方向のみ指定
+%%%%
+Dir - move target
+
+方向 - カーソル移動
+%%%%
+Location (%d, %d)
+
+位置 (%d, %d)
+%%%%
+(here)
+
+(足元)
+#
+# 視界内の一覧(_full_describe_menu)
+%%%%
+Monsters
+
+モンスター
+%%%%
+Items
+
+アイテム
+%%%%
+Features
+
+地形
+%%%%
+Visible %s
+
+視界内の%s
+%%%%
+<lightgray> (select to examine)</lightgray>
+
+<lightgray> (選択で調べる)</lightgray>
+%%%%
+# 引数: キー、[selectverb] の訳
+<lightgray> (select to examine, %s to %s)</lightgray>
+
+<lightgray> (選択で調べる、%sで%s)</lightgray>
+%%%%
+# 引数: [selectverb] の訳、キー
+<lightgray> (select to %s, %s to examine)</lightgray>
+
+<lightgray> (選択で%s、%sで調べる)</lightgray>
+%%%%
+[selectverb]target/travel
+
+照準/移動
+%%%%
+[selectverb]target
+
+照準
+%%%%
+(not visited)
+
+(未訪問)
+%%%%
+No monsters, items or features are visible.
+
+視界内にはモンスターやアイテム、および特別な地形は存在しない。
+%%%%
+What do you want to examine?
+
+何を調べますか？
+%%%%
+What do you want to remember?
+
+何を思い出しますか？
+%%%%
+There are no valid targets to list.
+
+一覧にできる有効な対象がない。
+#
+# 照準の確認・エラー
+%%%%
+That would be overly suicidal.
+
+それは自殺行為だ。
+%%%%
+That would be pointless.
+
+それは無意味だ。
+%%%%
+Really target yourself?
+
+本当に自分自身を狙いますか？
+%%%%
+Sorry, you can't target yourself.
+
+自分自身を狙うことはできない。
+%%%%
+Are you sure you want to fizzle?
+
+本当に何もない所に使って不発にしますか？
+%%%%
+You can't see any item there.
+
+そこにはアイテムが見えない。
+%%%%
+Marked for pickup.
+
+拾うように設定した。
+%%%%
+Targeting interrupted by HUP signal.
+
+HUPシグナルにより照準を中断した。
+%%%%
+Out of range.
+
+射程外だ。
+%%%%
+This spell doesn't need a beam path.
+
+この呪文には射線が必要ない。
+%%%%
+Brought monster down to 1 HP.
+
+モンスターのHPを1にした。
+%%%%
+You cannot set exclusions on this level.
+
+この階では立入禁止区域を設定できない。
+%%%%
+Placed new exclusion.
+
+新たな立入禁止区域を設定した。
+%%%%
+Removed exclusion.
+
+立入禁止区域を解除した。
+%%%%
+Reduced exclusion size to a single square.
+
+立入禁止区域をこのマスに限定した。
+#
+# 照準中の説明(「照準: <説明>」の前置き。target_prefix)
+%%%%
+Look
+
+見る
+%%%%
+Aim
+
+照準
+%%%%
+Here
+
+ここ
+%%%%
+Disturbance
+
+何かの気配
+%%%%
+<cyan>Items here:</cyan> %s.
+
+<cyan>ここにあるアイテム:</cyan> %s。
+%%%%
+<cyan>Item here:</cyan> %s.
+
+<cyan>ここにあるアイテム:</cyan> %s。
+%%%%
+<cyan>Here:</cyan>
+
+<cyan>ここ:</cyan>
+%%%%
+(Right-click to examine)
+
+(右クリックで調べる)
+%%%%
+[unseen terrain]
+
+[視界外の地形]
+#
+# 足元の地形(describe_floor)
+%%%%
+There is %s here.
+
+ここには%sがある。
+%%%%
+There is an entrance to %s here.
+
+ここには%sへの入口がある。
+%%%%
+Beware, the minotaur awaits!
+
+気をつけろ、ミノタウロスが待ち受けているぞ！
+#
+# マスの状態(_get_cloud_desc)。[square] は名詞で並べる。
+%%%%
+This square %s.
+
+このマスの状態: %s。
+%%%%
+[square]lies inside a sanctuary
+
+聖域
+%%%%
+[square]is shrouded in silence
+
+静寂
+%%%%
+[square]is lit by a halo
+
+光輪の光
+%%%%
+[square]is wreathed by an umbra
+
+影の帳
+%%%%
+[square]is liquefied
+
+液状化
+%%%%
+[square]is covered in magical glow
+
+魔法の輝き
+%%%%
+[square]is bathed in translocational energy
+
+転移のエネルギー
+%%%%
+[square]within Yredelemnul's grip
+
+イレデレンヌルの支配下
+%%%%
+[square]is covered in acidic slime
+
+酸性の粘液
+%%%%
+There is a cloud of %s here.
+
+ここには%sが漂っている。
+#
+# モンスター名の後ろの括弧内の説明(照準・一覧)
+%%%%
+[cell desc]sanctuary
+
+聖域
+%%%%
+[cell desc]silenced
+
+静寂
+%%%%
+[mon desc]sleepwalking
+
+夢遊中
+%%%%
+[mon desc]drifting
+
+漂流中
+%%%%
+[mon desc]hasn't noticed you
+
+あなたに気づいていない
+%%%%
+[mon desc]friendly
+
+友好的
+%%%%
+[mon desc]fellow slime
+
+同胞のスライム
+%%%%
+[mon desc]peaceful
+
+平和的
+%%%%
+[mon desc]neutral
+
+中立的
+%%%%
+[mon desc]indifferent
+
+無関心
+%%%%
+[mon desc]haloed
+
+光輪に照らされている
+%%%%
+[mon desc]umbra
+
+影の帳に包まれている
+%%%%
+chance to confuse on hit: %d%%
+
+命中時の混乱率: %d%%
+%%%%
+chance to call a sprite on attack: %d%%
+
+攻撃時に妖精を呼ぶ確率: %d%%
+%%%%
+becoming %s
+
+%sに変化中
+%%%%
+fire blocked by %s
+
+射線が%sに遮られている
+#
+# モンスターの装備(get_monster_equipment_desc)
+# [equip] の訳は連用形(「〜を装備し」)。「、」でつないで最後に「ている」を付ける。
+%%%%
+[equip]wielding %s
+
+%sを装備し
+%%%%
+[equip]armed with %s
+
+%sで武装し
+%%%%
+[equip]wearing %s
+
+%sを身に着け
+%%%%
+[equip]quivering %s
+
+%sを携え
+%%%%
+[equip]carrying %s
+
+%sを所持し
+%%%%
+[equip]%s and %s
+
+%sと%s
+%%%%
+(from an undying armoury)
+
+(不滅の武器庫より)
+#
+# 地形名(feature_description_at_j など)。feature-data.h の名前は data-features.txt。
+%%%%
+statue of %s
+
+%sの像
+%%%%
+[feature]a gleaming silver wall
+
+薄く光る白銀の壁
+%%%%
+[feature]wall of the weird stuff which makes up Pandemonium
+
+パンデモニウムを構成する不気味な素材の壁
+%%%%
+[feature]metal staircase leading down
+
+金属の下り階段
+%%%%
+[feature]slimy stone staircase leading down
+
+粘液まみれの石の下り階段
+%%%%
+[feature]slimy stone staircase leading up
+
+粘液まみれの石の上り階段
+%%%%
+[covering]awoken
+
+目覚めた
+%%%%
+[covering](hostile)
+
+(敵対的)
+%%%%
+[covering](friendly)
+
+(友好的)
+%%%%
+[covering]covered with ice
+
+氷に覆われた
+%%%%
+[covering]temporary
+
+一時的な
+%%%%
+[covering]spattered with blood
+
+血の飛び散った
+#
+# 扉: 状態、大きさ、名詞の順につなぐ(「閉ざされた大きな扉」)
+# 大きさ [door adj] と名詞 [door noun] は player.txt にある。
+%%%%
+[door state]open
+
+開かれた
+%%%%
+[door state]open translucent
+
+開かれた半透明の
+%%%%
+[door state]closed
+
+閉ざされた
+%%%%
+[door state]closed translucent
+
+閉ざされた半透明の
+%%%%
+[door state]runed
+
+ルーンで封印された
+%%%%
+[door state]runed translucent
+
+ルーンで封印された半透明の
+%%%%
+[door state]sealed
+
+魔法で封印された
+%%%%
+[door state]sealed translucent
+
+魔法で封印された半透明の
+%%%%
+[door state]broken
+
+壊れた
+%%%%
+[door state]broken translucent
+
+壊れた半透明の
+%%%%

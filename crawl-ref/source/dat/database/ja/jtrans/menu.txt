@@ -1,0 +1,42 @@
+# menu.cc: メニュー共通のキー案内
+%%%%
+exit
+
+戻る
+%%%%
+select
+
+選択
+%%%%
+page down
+
+次頁
+%%%%
+page up
+
+前頁
+%%%%
+Letters toggle
+
+英字で選択切替
+%%%%
+toggle selected
+
+選択切替
+%%%%
+accept (%zu chosen)
+
+決定(%zu 個選択中)
+%%%%
+Select what (regex)?
+
+何を選択しますか？(正規表現可)
+%%%%
+[menu scroll]top
+
+先頭
+%%%%
+[menu scroll]bot
+
+末尾
+%%%%

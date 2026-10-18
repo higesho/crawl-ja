@@ -1,0 +1,44 @@
+# prompt.txt: prompt.cc(yesno などの確認プロンプト)
+%%%%
+# 引数: 質問文、入力させる語("yes" など)
+%s (Confirm with "%s".)
+
+%s (確認のため"%s"と入力してください)
+%%%%
+Buggy prompt?
+
+バグったプロンプト？
+%%%%
+Yes
+
+はい
+%%%%
+No
+
+いいえ
+%%%%
+Always
+
+常に
+%%%%
+bugs
+
+バグ
+%%%%
+# 引数: "Uppercase " の訳(または空)、答え方の一覧
+<lightred>%s%s only, please.</lightred>
+
+<lightred>%s%s のみで答えてください。</lightred>
+%%%%
+Uppercase
+
+大文字の
+%%%%
+[Y]es, [N]o, or [A]lways
+
+[Y]はい、[N]いいえ、[A]常に
+%%%%
+[Y]es or [N]o
+
+[Y]はい か [N]いいえ
+%%%%

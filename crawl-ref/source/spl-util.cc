@@ -18,11 +18,13 @@
 #include "areas.h"
 #include "art-enum.h"
 #include "coordit.h"
+#include "database.h"
 #include "directn.h"
 #include "env.h"
 #include "god-passive.h"
 #include "god-abil.h"
 #include "item-prop.h"
+#include "japanese.h"
 #include "level-state-type.h"
 #include "libutil.h"
 #include "macro.h"
@@ -370,21 +372,21 @@ bool add_spell_to_memory(spell_type spell)
         }
 
     if (you.num_turns)
-        mprf("Spell assigned to '%c'.", index_to_letter(letter_j));
+        mprf(jtransc("Spell assigned to '%c'."), index_to_letter(letter_j));
 
     // A hint, for those who may not be aware.
     if (spell == SPELL_SPELLSPARK_SERVITOR)
     {
         mprf(MSGCH_TUTORIAL,
-             "(You may use Imbue Servitor from the <w>%s</w>bility menu to change "
-             "which spell your servitor casts.)",
+             jtransc("(You may use Imbue Servitor from the <w>%s</w>bility menu to change "
+             "which spell your servitor casts.)"),
                 command_to_string(CMD_USE_ABILITY).c_str());
     }
     else if (spell == SPELL_PLATINUM_PARAGON)
     {
         mprf(MSGCH_TUTORIAL,
-             "(You may use Imprint Weapon from the <w>%s</w>bility menu to change "
-             "which weapon your Paragon wields.)",
+             jtransc("(You may use Imprint Weapon from the <w>%s</w>bility menu to change "
+             "which weapon your Paragon wields.)"),
                 command_to_string(CMD_USE_ABILITY).c_str());
     }
     // Give a free charge upon learning this spell for the first time, so the
@@ -430,7 +432,7 @@ bool del_spell_from_memory_by_slot(int slot)
 
     spell_skills(you.spells[slot], you.skills_to_hide);
 
-    mprf("Your memory of %s unravels.", spell_title(you.spells[slot]));
+    mprf(jtransc("Your memory of %s unravels."), spell_title_jc(you.spells[slot]));
 
     you.spells[slot] = SPELL_NO_SPELL;
 
@@ -952,6 +954,19 @@ const char* spelltype_long_name(spschool which_spelltype)
     }
 }
 
+// 表示用の系統名(日本語)。spelltype_*_name() は検索キー(DB・ランダム呪文書の
+// 名前生成など)にも使われるので英語のまま残す。
+string spelltype_short_name_j(spschool which_spelltype)
+{
+    return tagged_jtrans("[spell type]", spelltype_short_name(which_spelltype));
+}
+
+string spelltype_long_name_j(spschool which_spelltype)
+{
+    return tagged_jtrans("[spell type long]",
+                         spelltype_long_name(which_spelltype));
+}
+
 skill_type spell_type2skill(spschool spelltype)
 {
     switch (spelltype)
@@ -1194,44 +1209,44 @@ string casting_uselessness_reason(spell_type spell, bool temp)
     if (temp)
     {
         if (you.duration[DUR_CONF] > 0)
-            return "you're too confused to cast spells.";
+            return jtrans("you're too confused to cast spells.");
 
         if (spell_difficulty(spell) > you.experience_level)
-            return "you aren't experienced enough to cast this spell.";
+            return jtrans("you aren't experienced enough to cast this spell.");
 
         if (you.has_mutation(MUT_HP_CASTING))
         {
             // TODO: deduplicate with enough_hp()
             if (you.duration[DUR_DEATHS_DOOR])
-                return "you cannot pay life while functionally dead.";
+                return jtrans("you cannot pay life while functionally dead.");
             if (!enough_hp(spell_mana(spell), true, false))
-                return "you don't have enough health to cast this spell.";
+                return jtrans("you don't have enough health to cast this spell.");
         }
         else if (!enough_mp(spell_mana(spell), true, false))
-            return "you don't have enough magic to cast this spell.";
+            return jtrans("you don't have enough magic to cast this spell.");
 
         if (spell == SPELL_SUBLIMATION_OF_BLOOD
             && you.magic_points == you.max_magic_points)
         {
             if (you.has_mutation(MUT_HP_CASTING))
-                return "your magic and health are inextricable.";
-            return "your reserves of magic are already full.";
+                return jtrans("your magic and health are inextricable.");
+            return jtrans("your reserves of magic are already full.");
         }
 
         if (you.form == transformation::walking_scroll && spell_difficulty(spell) > 4)
-            return "you cannot cast such powerful magic in your current form.";
+            return jtrans("you cannot cast such powerful magic in your current form.");
     }
 
     // Check for banned schools (Currently just Ru sacrifices)
     if (cannot_use_schools(get_spell_disciplines(spell)))
-        return "you cannot use spells of this school.";
+        return jtrans("you cannot use spells of this school.");
 
     // TODO: these checks were in separate places, but is this already covered
     // by cannot_use_schools?
     if (get_spell_disciplines(spell) & spschool::summoning
         && you.allies_forbidden())
     {
-        return "you cannot coerce anything to answer your summons.";
+        return jtrans("you cannot coerce anything to answer your summons.");
     }
 
     // other ally spells not affected by the school checks
@@ -1254,7 +1269,7 @@ string casting_uselessness_reason(spell_type spell, bool temp)
     case SPELL_FORGE_LIGHTNING_SPIRE:
     case SPELL_AWAKEN_ARMOUR:
         if (you.allies_forbidden())
-            return "you cannot coerce anything to obey you.";
+            return jtrans("you cannot coerce anything to obey you.");
         break;
     default:
         break;
@@ -1308,7 +1323,7 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
     // prevent all of this logic during excursions / levelgen. This function
     // does get called during character creation, so allow it to run for !temp.
     if (temp && (!in_bounds(you.pos()) || !you.on_current_level))
-        return "you can't cast spells right now.";
+        return jtrans("you can't cast spells right now.");
 
     if (!skip_casting_checks)
     {
@@ -1318,7 +1333,7 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
     }
 
     if (!prevent && temp && spell_no_hostile_in_range(spell))
-        return "you can't see any hostile targets that would be affected.";
+        return jtrans("you can't see any hostile targets that would be affected.");
 
     switch (spell)
     {
@@ -1326,11 +1341,11 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         // XXX: this is a little redundant with you_no_tele_reason()
         // but trying to sort out temp and so on is a mess
         if (you.stasis())
-            return "your stasis prevents you from teleporting.";
+            return jtrans("your stasis prevents you from teleporting.");
 
         // Distinct from no_tele - can still be forcibly blinked.
         if (temp && you.duration[DUR_BLINK_COOLDOWN])
-            return "you are still too unstable to blink.";
+            return jtrans("you are still too unstable to blink.");
 
         if (temp && you.no_tele(true))
             return lowercase_first(you.no_tele_reason(true));
@@ -1338,83 +1353,83 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
 
     case SPELL_SWIFTNESS:
         if (you.stasis())
-            return "your stasis precludes magical swiftness.";
+            return jtrans("your stasis precludes magical swiftness.");
 
         if (temp)
         {
             if (you.duration[DUR_SWIFTNESS])
-                return "this spell is already in effect.";
+                return jtrans("this spell is already in effect.");
             if (player_movement_speed(false) <= FASTEST_PLAYER_MOVE_SPEED)
-                return "you're already travelling as fast as you can.";
+                return jtrans("you're already travelling as fast as you can.");
             if (you.cannot_move())
-                return "you can't move.";
+                return jtrans("you can't move.");
         }
         break;
 
     case SPELL_DIMENSIONAL_BULLSEYE:
         if (you.has_mutation(MUT_NO_GRASPING))
-            return "this spell is useless without hands.";
+            return jtrans("this spell is useless without hands.");
         break;
     case SPELL_LEDAS_LIQUEFACTION:
         if (temp && you.duration[DUR_LIQUEFYING])
-            return "you need to wait for the ground to become solid again.";
+            return jtrans("you need to wait for the ground to become solid again.");
         break;
 
     case SPELL_BORGNJORS_REVIVIFICATION:
         if (temp && you.hp == you.hp_max)
-            return "you cannot be healed further.";
+            return jtrans("you cannot be healed further.");
         if (temp && you.hp_max < 21)
-            return "you lack the resilience to cast this spell.";
+            return jtrans("you lack the resilience to cast this spell.");
         // Prohibited to all undead.
         if (you.undead_state(temp))
-            return "you're too dead.";
+            return jtrans("you're too dead.");
         break;
     case SPELL_DEATHS_DOOR:
         if (temp && you.duration[DUR_DEATHS_DOOR])
-            return "you are already standing in death's doorway.";
+            return jtrans("you are already standing in death's doorway.");
         if (temp && you.duration[DUR_DEATHS_DOOR_COOLDOWN])
-            return "you are still too close to death's doorway.";
+            return jtrans("you are still too close to death's doorway.");
         // Prohibited to all undead.
         if (you.undead_state(temp))
-            return "you're too dead.";
+            return jtrans("you're too dead.");
         break;
 
     case SPELL_OZOCUBUS_ARMOUR:
         if (temp && you.unrand_equipped(UNRAND_SALAMANDER))
-            return "your ring of flames would instantly melt the ice.";
+            return jtrans("your ring of flames would instantly melt the ice.");
         break;
 
     case SPELL_SUBLIMATION_OF_BLOOD:
         if (!you.has_blood(temp))
-            return "you have no blood to sublime.";
+            return jtrans("you have no blood to sublime.");
         break;
 
     case SPELL_POLAR_VORTEX:
         if (temp && (you.duration[DUR_VORTEX]
                      || you.duration[DUR_VORTEX_COOLDOWN]))
         {
-            return "you need to wait for the winds to calm down.";
+            return jtrans("you need to wait for the winds to calm down.");
         }
         break;
 
     case SPELL_MALIGN_GATEWAY:
         if (temp && !can_cast_malign_gateway())
         {
-            return "the dungeon can only cope with one malign gateway"
-                    " at a time.";
+            return jtrans("the dungeon can only cope with one malign gateway"
+                    " at a time.");
         }
         if (temp && cast_malign_gateway(&you, 0, false, true)
                     == spret::abort)
         {
-            return "you need more open space to create a gateway.";
+            return jtrans("you need more open space to create a gateway.");
         }
         break;
 
     case SPELL_SUMMON_FOREST:
         if (temp && you.duration[DUR_FORESTED])
-            return "you can only summon one forest at a time.";
+            return jtrans("you can only summon one forest at a time.");
         if (temp && cast_summon_forest(&you, 0, false, true) == spret::abort)
-            return "you need more open space to fit a forest.";
+            return jtrans("you need more open space to fit a forest.");
         break;
 
     case SPELL_PASSWALL:
@@ -1423,25 +1438,25 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         if (!temp)
             break;
         if (you.cannot_move())
-            return "you can't move.";
+            return jtrans("you can't move.");
         if (!passwall_simplified_check(you))
-            return "you aren't next to any passable walls.";
+            return jtrans("you aren't next to any passable walls.");
         if (you.is_constricted())
-            return "you're being held away from the wall.";
+            return jtrans("you're being held away from the wall.");
         break;
 
     case SPELL_ANIMATE_DEAD:
         if (have_passive(passive_t::goldify_corpses))
-            return "necromancy does not work on golden corpses.";
+            return jtrans("necromancy does not work on golden corpses.");
         if (have_passive(passive_t::reaping))
-            return "you are already reaping souls!";
+            return jtrans("you are already reaping souls!");
         break;
 
     case SPELL_DEATH_CHANNEL:
         if (temp && you.duration[DUR_DEATH_CHANNEL])
-            return "you are already channelling the dead.";
+            return jtrans("you are already channelling the dead.");
         if (have_passive(passive_t::reaping))
-            return "you are already reaping souls!";
+            return jtrans("you are already reaping souls!");
         break;
 
     case SPELL_PUTREFACTION:
@@ -1450,14 +1465,14 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
     case SPELL_FREEZING_CLOUD:
     case SPELL_MEPHITIC_CLOUD:
         if (temp && env.level_state & LSTATE_STILL_WINDS)
-            return "the air is too still for clouds to form.";
+            return jtrans("the air is too still for clouds to form.");
         break;
 
     case SPELL_GOLUBRIAS_PASSAGE:
         if (temp && player_in_branch(BRANCH_GAUNTLET))
         {
-            return "a magic seal in the Gauntlet prevents this spell "
-                   "from working.";
+            return jtrans("a magic seal in the Gauntlet prevents this spell "
+                   "from working.");
         }
         break;
 
@@ -1465,43 +1480,43 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         if (temp && (you.duration[DUR_DRAGON_CALL]
                      || you.duration[DUR_DRAGON_CALL_COOLDOWN]))
         {
-            return "you cannot issue another dragon's call so soon.";
+            return jtrans("you cannot issue another dragon's call so soon.");
         }
         break;
 
     case SPELL_FROZEN_RAMPARTS:
         if (temp && you.duration[DUR_FROZEN_RAMPARTS])
-            return "you cannot sustain more frozen ramparts right now.";
+            return jtrans("you cannot sustain more frozen ramparts right now.");
         break;
 
     case SPELL_NOXIOUS_BOG:
         if (temp && you.duration[DUR_NOXIOUS_BOG])
-            return "you cannot sustain more bogs right now.";
+            return jtrans("you cannot sustain more bogs right now.");
         break;
 
     case SPELL_AWAKEN_ARMOUR:
         if (!you_can_wear(SLOT_BODY_ARMOUR, temp))
-            return "you cannot wear body armour.";
+            return jtrans("you cannot wear body armour.");
         if (temp && !you.body_armour())
-            return "you have no body armour to summon the spirit of.";
+            return jtrans("you have no body armour to summon the spirit of.");
         break;
 
     case SPELL_MOMENTUM_STRIKE:
         if (temp && you.cannot_move())
-            return "you cannot redirect your momentum while unable to move.";
+            return jtrans("you cannot redirect your momentum while unable to move.");
         break;
 
     case SPELL_PILEDRIVER:
         if (you.stasis())
-            return "your stasis prevents you from launching yourself.";
+            return jtrans("your stasis prevents you from launching yourself.");
         if (temp)
         {
             if (you.cannot_move())
-                return "you cannot launch yourself while unable to move.";
+                return jtrans("you cannot launch yourself while unable to move.");
             if (you.no_tele(true))
                 return lowercase_first(you.no_tele_reason(true));
             if (!piledriver_target_exists())
-                return "you cannot see anything nearby that you can launch.";
+                return jtrans("you cannot see anything nearby that you can launch.");
         }
         break;
 
@@ -1509,7 +1524,7 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         // XXX: this is a little redundant with you_no_tele_reason()
         // but trying to sort out temp and so on is a mess
         if (you.stasis())
-            return "your stasis prevents you from teleporting.";
+            return jtrans("your stasis prevents you from teleporting.");
         if (temp)
         {
             if (you.no_tele(true))
@@ -1522,37 +1537,37 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
 
     case SPELL_SIGIL_OF_BINDING:
         if (temp && cast_sigil_of_binding(0, false, true) == spret::abort)
-            return "there is no room nearby to place a sigil.";
+            return jtrans("there is no room nearby to place a sigil.");
         break;
 
     case SPELL_CALL_CANINE_FAMILIAR:
         if (temp && you.duration[DUR_CANINE_FAMILIAR_DEAD])
-            return "your canine familiar is too injured to answer your call.";
+            return jtrans("your canine familiar is too injured to answer your call.");
         break;
 
     case SPELL_GELLS_GAVOTTE:
         if (temp && you.duration[DUR_GAVOTTE_COOLDOWN])
-            return "local gravity is still too unstable to reorient.";
+            return jtrans("local gravity is still too unstable to reorient.");
         break;
 
     case SPELL_FULSOME_FUSILLADE:
         if (temp && you.duration[DUR_FUSILLADE])
-            return "you are already unleashing a barrage of alchemical concoctions!";
+            return jtrans("you are already unleashing a barrage of alchemical concoctions!");
         break;
 
     case SPELL_HELLFIRE_MORTAR:
         if (temp && you.duration[DUR_HELLFIRE_MORTAR_COOLDOWN])
-            return "you must wait for your last cast of this to end!";
+            return jtrans("you must wait for your last cast of this to end!");
         break;
 
     case SPELL_STARBURST:
         if (temp && you.current_vision == 0)
-            return "you cannot see far enough to hit anything with this spell.";
+            return jtrans("you cannot see far enough to hit anything with this spell.");
         break;
 
     case SPELL_GRAVE_CLAW:
         if (temp && you.props[GRAVE_CLAW_CHARGES_KEY].get_int() == 0)
-            return "you must harvest more living souls to recharge this spell.";
+            return jtrans("you must harvest more living souls to recharge this spell.");
         break;
 
     case SPELL_SPIKE_LAUNCHER:
@@ -1564,23 +1579,23 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
             if (feat_is_wall(env.grid(*ai)))
                 return "";
 
-        return "there are no nearby walls to construct a spike launcher in.";
+        return jtrans("there are no nearby walls to construct a spike launcher in.");
     }
 
     case SPELL_DIAMOND_SAWBLADES:
         if (temp && diamond_sawblade_spots(false).empty())
-            return "there is no room to construct a sawblade.";
+            return jtrans("there is no room to construct a sawblade.");
         break;
 
     case SPELL_SURPRISING_CROCODILE:
         if (temp)
         {
             if (you.is_stationary())
-                return "you cannot be moved right now.";
+                return jtrans("you cannot be moved right now.");
             else if (!monster_habitable_grid(MONS_CROCODILE, you.pos()))
-                return "a crocodile could not survive beneath you.";
+                return jtrans("a crocodile could not survive beneath you.");
             else if (count_summons(&you, SPELL_SURPRISING_CROCODILE))
-                return "your pet crocodile is still here.";
+                return jtrans("your pet crocodile is still here.");
         }
         break;
 
@@ -1589,19 +1604,19 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         {
             if (!you.props.exists(PARAGON_WEAPON_KEY))
             {
-                return "you must imprint a weapon on your paragon first! "
-                       "(Use the Imprint Weapon ability)";
+                return jtrans("you must imprint a weapon on your paragon first! "
+                       "(Use the Imprint Weapon ability)");
             }
 
             monster* paragon = find_player_paragon();
             if (paragon && paragon_charge_level(*paragon) == 0)
-                return "your paragon is already deployed, but not yet charged.";
+                return jtrans("your paragon is already deployed, but not yet charged.");
         }
         break;
 
     case SPELL_FORTRESS_BLAST:
         if (temp && you.duration[DUR_FORTRESS_BLAST_TIMER])
-            return "you are already charging a Fortress Blast.";
+            return jtrans("you are already charging a Fortress Blast.");
         break;
 
     default:

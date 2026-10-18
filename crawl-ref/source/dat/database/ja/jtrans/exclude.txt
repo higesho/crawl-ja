@@ -1,0 +1,21 @@
+%%%%
+Marking area around %s as unsafe for travelling.
+
+%sの周囲を自動移動の禁止範囲に指定した。
+%%%%
+(detected)
+
+(発見済)
+%%%%
+exclusion
+
+注意対象
+%%%%
+%d exclusion(s)
+
+%d箇所の注意対象
+%%%%
+%d more exclusion(s)
+
+ほか%d箇所の注意対象
+%%%%

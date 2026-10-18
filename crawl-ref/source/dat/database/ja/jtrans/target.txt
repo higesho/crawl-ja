@@ -1,0 +1,150 @@
+# target.txt: target.cc(照準の対象にできない理由。targeter::why_not)
+%%%%
+You cannot see that place.
+
+その場所は見えない。
+%%%%
+Please select a direction to dig.
+
+掘る方向を選んでください。
+%%%%
+Digging in that direction won't affect any walls.
+
+その方向に掘っても壁には何の影響もない。
+%%%%
+You cannot do harm to %s
+
+%sを傷つけることはできない。
+%%%%
+You cannot affect that.
+
+それには効果がない。
+%%%%
+You can't get through.
+
+通り抜けることができない。
+%%%%
+There's already a cloud there.
+
+そこには既に雲が漂っている。
+%%%%
+You can't place harmful clouds in a sanctuary.
+
+聖域に有害な雲を発生させることはできない。
+%%%%
+The effect is blocked.
+
+効果が遮られている。
+%%%%
+You cannot grow anything here.
+
+ここには何も生やすことができない。
+%%%%
+%s cannot be affected by poisonous vapours.
+
+%sには有毒の蒸気が効かない。
+%%%%
+There's a thick-headed creature in the way.
+
+そこには石頭の生き物がいて邪魔だ。
+%%%%
+You can only roll a boulder in a compass direction.
+
+大岩は縦横斜めの方向にしか転がせない。
+%%%%
+You cannot conjure a boulder there.
+
+そこに大岩を作り出すことはできない。
+%%%%
+You cannot conjure a boulder in an occupied space.
+
+何かがいる場所に大岩を作り出すことはできない。
+%%%%
+You cannot bind the soul of an ally.
+
+味方の魂を縛ることはできない。
+%%%%
+You are unable to grasp such an alien soul.
+
+あなたにはそのような異質な魂をつかむことができない。
+%%%%
+You cannot bind the soul of a summoned being.
+
+召喚された存在の魂を縛ることはできない。
+%%%%
+That does not possess a soul you can bind.
+
+それはあなたが縛れる魂を持っていない。
+%%%%
+Their soul is too badly injured.
+
+その魂はひどく傷つきすぎている。
+%%%%
+Gravity is already pointing downward.
+
+重力はすでに下を向いている。
+%%%%
+You can only reorient gravity in a cardinal direction.
+
+重力の向きは上下左右にしか変えられない。
+%%%%
+You don't see a valid target there.
+
+そこには有効な対象が見当たらない。
+%%%%
+Their shadow is too faded to take hold of.
+
+その影は薄すぎてつかめない。
+%%%%
+A summoned shadow is too ephemeral to take hold of.
+
+召喚されたものの影ははかなすぎてつかめない。
+%%%%
+They have no useful spells to cast right now.
+
+今は唱えさせて役に立つ呪文がない。
+%%%%
+You cannot putrefy a friendly monster.
+
+味方のモンスターを腐敗させることはできない。
+%%%%
+You can only putrefy natural creatures.
+
+腐敗させられるのは自然の生き物だけだ。
+%%%%
+This isn't wounded badly enough.
+
+それはまだ十分に傷ついていない。
+%%%%
+There's nothing to be tempered there.
+
+そこには鍛え直せるものがない。
+%%%%
+You cannot target a construct which is already augmented.
+
+すでに強化された構築物は対象にできない。
+%%%%
+You can only target your own Forgecraft constructs.
+
+対象にできるのはあなたが鍛造した構築物だけだ。
+%%%%
+You see nothing there you can launch.
+
+そこには打ち出せるものが見当たらない。
+%%%%
+That cannot be teleported.
+
+それはテレポートさせられない。
+%%%%
+You can see nowhere safe to land near that.
+
+その近くに安全に着地できる場所が見当たらない。
+%%%%
+You must target an enemy who is afraid.
+
+恐怖している敵を対象にしなければならない。
+%%%%
+Your paragon could not survive being deployed there.
+
+あなたの模範者はそこに配置されると生き延びられない。
+%%%%

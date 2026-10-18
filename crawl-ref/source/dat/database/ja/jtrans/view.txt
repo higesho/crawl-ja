@@ -1,0 +1,20 @@
+# view.txt: view.cc(表示レイヤーの切り替え)
+%%%%
+Select layers to display:\n<%s>(m)onsters</%s>|<%s>(p)layer</%s>|<%s>(i)tems</%s>|<%s>(c)louds</%s>
+
+表示する対象を選んでください:
+<%s>(m)モンスター</%s>|<%s>(p)プレイヤー</%s>|<%s>(i)アイテム</%s>|<%s>(c)雲</%s>
+%%%%
+Select layers to display:\n<%s>(m)onsters</%s>|<%s>(p)layer</%s>|<%s>(i)tems</%s>|<%s>(c)louds</%s>|<%s>monster (w)eapons</%s>|<%s>monster (h)ealth</%s>
+
+表示する対象を選んでください:
+<%s>(m)モンスター</%s>|<%s>(p)プレイヤー</%s>|<%s>(i)アイテム</%s>|<%s>(c)雲</%s>|<%s>(w)モンスターの武器</%s>|<%s>(h)モンスターの体力</%s>
+%%%%
+Press 'a' to toggle all layers. Press any other key to exit.
+
+'a' で全レイヤーを切り替え。他のキーで終了。
+%%%%
+Restoring view layers.
+
+通常表示に戻した。
+%%%%

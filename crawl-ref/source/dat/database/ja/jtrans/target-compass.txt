@@ -1,0 +1,7 @@
+# target-compass.txt: target-compass.cc(方向の選択)
+# "Targeting interrupted by HUP signal." は directn.txt にある。
+%%%%
+Which direction?
+
+どの方向ですか？
+%%%%

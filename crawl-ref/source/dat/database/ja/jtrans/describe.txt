@@ -1,0 +1,3226 @@
+# describe.cc の訳
+%%%%
+[<w>!</w>]: <w>Description</w>|Quote
+
+[<w>!</w>]: <w>説明</w>|引用
+%%%%
+[<w>!</w>]: Description|<w>Quote</w>
+
+[<w>!</w>]: 説明|<w>引用</w>
+%%%%
+It makes you extremely vulnerable to %s.
+
+あなたは%sに極めて弱くなる。
+%%%%
+It makes you very vulnerable to %s.
+
+あなたは%sにとても弱くなる。
+%%%%
+It makes you vulnerable to %s.
+
+あなたは%sに弱くなる。
+%%%%
+It protects you from %s.
+
+%sからあなたを守る。
+%%%%
+It greatly protects you from %s.
+
+%sからあなたを強く守る。
+%%%%
+It renders you almost immune to %s.
+
+%sをほぼ無効にする。
+%%%%
+[artp resist]fire
+
+火炎
+%%%%
+[artp resist]cold
+
+冷気
+%%%%
+[artp resist]negative energy
+
+負のエネルギー
+%%%%
+It greatly decreases your willpower.
+
+あなたの意志力を大きく下げる。
+%%%%
+It decreases your willpower.
+
+あなたの意志力を下げる。
+%%%%
+It greatly increases your willpower.
+
+あなたの意志力を大きく高める。
+%%%%
+It increases your willpower.
+
+あなたの意志力を高める。
+%%%%
+It makes you much less stealthy.
+
+あなたの隠密性を大きく下げる。
+%%%%
+It makes you less stealthy.
+
+あなたの隠密性を下げる。
+%%%%
+It makes you much more stealthy.
+
+あなたの隠密性を大きく高める。
+%%%%
+It makes you more stealthy.
+
+あなたの隠密性を高める。
+%%%%
+It affects your AC (%d).
+
+あなたのACに影響する(%d)。
+%%%%
+It affects your evasion (%d).
+
+あなたの回避力に影響する(%d)。
+%%%%
+It affects your strength (%d).
+
+あなたの腕力に影響する(%d)。
+%%%%
+It affects your intelligence (%d).
+
+あなたの知力に影響する(%d)。
+%%%%
+It affects your dexterity (%d).
+
+あなたの器用さに影響する(%d)。
+%%%%
+It affects your accuracy & damage with ranged weapons and melee (%d).
+
+あなたの射撃と近接攻撃の命中率とダメージに影響する(%d)。
+%%%%
+It insulates you from electricity.
+
+あなたを電気から絶縁する。
+%%%%
+It protects you from poison.
+
+あなたを毒から守る。
+%%%%
+It affects your health (%d).
+
+あなたの最大体力に影響する(%d)。
+%%%%
+It affects your magic capacity (%d).
+
+あなたの最大魔力に影響する(%d)。
+%%%%
+It lets you see invisible.
+
+透明なものが見えるようになる。
+%%%%
+It lets you turn invisible.
+
+発動して透明になることができる。
+%%%%
+It grants you flight.
+
+あなたに飛行能力を与える。
+%%%%
+It lets you blink.
+
+発動して瞬間移動(ブリンク)することができる。
+%%%%
+It may make a loud noise when swung.
+
+振るうと大きな音を立てることがある。
+%%%%
+It prevents spellcasting.
+
+呪文の詠唱を阻害する。
+%%%%
+It prevents most forms of teleportation.
+
+ほとんどの種類のテレポートを阻害する。
+%%%%
+It berserks you when you make melee attacks (%d% chance).
+
+近接攻撃をすると、あなたをバーサークさせることがある(確率%d%)。
+%%%%
+It protects you from confusion, rage, mesmerisation and fear.
+
+あなたを混乱、激怒、魅了、恐怖から守る。
+%%%%
+It causes magical contamination when unequipped.
+
+装備を外すと魔力汚染を引き起こす。
+%%%%
+It protects you from missiles.
+
+あなたを飛び道具から守る。
+%%%%
+It increases your rate of health regeneration.
+
+あなたの体力の回復速度を高める。
+%%%%
+It protects you from acid and corrosion.
+
+あなたを酸と腐食から守る。
+%%%%
+It protects you from mutation.
+
+あなたを突然変異から守る。
+%%%%
+It may corrode you when you take damage.
+
+ダメージを受けたとき、あなたを腐食させることがある。
+%%%%
+It drains your maximum health when unequipped.
+
+装備を外すと、あなたの最大体力を吸い取る。
+%%%%
+It may slow you when you take damage.
+
+ダメージを受けたとき、あなたを減速させることがある。
+%%%%
+It will be destroyed if unequipped.
+
+装備を外すと壊れてしまう。
+%%%%
+It affects your SH (%d).
+
+あなたのSHに影響する(%d)。
+%%%%
+It increases damage dealt and taken.
+
+与えるダメージと受けるダメージの双方を増やす。
+%%%%
+It causes one to take an extra step when moving towards enemies, briefly stunning them if this results in an attack.
+
+敵に向かって移動するとき余分に1歩進み、それで攻撃に至った場合は相手を短時間朦朧とさせる。
+%%%%
+It increases the power of your magical spells.
+
+あなたの呪文の威力を高める。
+%%%%
+It increases the power of your Conjurations spells.
+
+あなたの妖術の呪文の威力を高める。
+%%%%
+It increases the power of your Hexes spells.
+
+あなたの呪術の呪文の威力を高める。
+%%%%
+It increases the power of your Summonings spells.
+
+あなたの召喚術の呪文の威力を高める。
+%%%%
+It increases the power of your Necromancy spells.
+
+あなたの死霊術の呪文の威力を高める。
+%%%%
+It increases the power of your Translocations spells.
+
+あなたの転位術の呪文の威力を高める。
+%%%%
+It increases the power of your Fire spells.
+
+あなたの炎の魔術の呪文の威力を高める。
+%%%%
+It increases the power of your Ice spells.
+
+あなたの氷の魔術の呪文の威力を高める。
+%%%%
+It increases the power of your Air spells.
+
+あなたの風の魔術の呪文の威力を高める。
+%%%%
+It increases the power of your Earth spells.
+
+あなたの地の魔術の呪文の威力を高める。
+%%%%
+It increases the power of your Alchemy spells.
+
+あなたの錬金術の呪文の威力を高める。
+%%%%
+It increases the power of your Forgecraft spells.
+
+あなたの鍛造術の呪文の威力を高める。
+%%%%
+It increases your evasion after moving or waiting.
+
+移動または待機の後、あなたの回避力を高める。
+%%%%
+It increases your rate of magic regeneration.
+
+あなたの魔力の回復速度を高める。
+%%%%
+It increases the success rate of your magical spells.
+
+あなたの呪文の成功率を高める。
+%%%%
+It may silence you when you take damage.
+
+ダメージを受けたとき、あなたの周囲を静寂に包むことがある。
+%%%%
+It inflicts you with a random bane when you equip it.
+
+装備すると、あなたにランダムな災厄をもたらす。
+%%%%
+It sustains your strength, intelligence and dexterity.
+
+あなたの腕力・知力・器用さを維持する。
+%%%%
+It may teleport you next to monsters.
+
+あなたをモンスターの隣にテレポートさせることがある。
+%%%%
+It can be evoked for teleport control.
+
+発動してテレポートを制御することができる。
+%%%%
+It allows you to eat raw meat even when not hungry.
+
+空腹でないときにも生肉を食べられるようになる。
+%%%%
+It protects your inventory from destruction.
+
+あなたの持ち物を破損から守る。
+%%%%
+It allows you to control your flight when levitating.
+
+浮遊しているとき、飛行を制御できるようになる。
+%%%%
+It reduces the accuracy of all your attacks.
+
+あなたのすべての攻撃の命中率を下げる。
+%%%%
+It causes incoming damage to be divided between your reserves of health and magic.
+
+受けるダメージを体力と魔力に分散させる。
+%%%%
+It allows you to gain divine favour quickly.
+
+神の歓心を素早く得られるようになる。
+%%%%
+It reflects blocked missile attacks.
+
+防いだ飛び道具による攻撃を跳ね返す。
+%%%%
+It improves your skill with shapeshifting (+5).
+
+あなたの変身術の技能を高める(+5)。
+%%%%
+It restores some MP whenever you drink a potion and also enhances your alchemy spells.
+
+薬を飲むたびにMPを少し回復し、錬金術の呪文も強化する。
+%%%%
+It reduces the duration of hostile enchantments and decays magical contamination more quickly.
+
+敵対的な魔法効果の持続時間を短くし、魔力汚染をより早く減衰させる。
+%%%%
+One of the many lords of Pandemonium, %s.
+
+%sは、パンデモニウムに数多いる王の一柱である。
+%%%%
+It has a %s %s body.
+
+%sの%s体をしている。
+%%%%
+It has a %s body.
+
+%s体をしている。
+%%%%
+[colour]black
+
+黒色
+%%%%
+[colour]blue
+
+青色
+%%%%
+[colour]green
+
+緑色
+%%%%
+[colour]cyan
+
+水色
+%%%%
+[colour]red
+
+赤色
+%%%%
+[colour]magenta
+
+赤紫色
+%%%%
+[colour]brown
+
+茶色
+%%%%
+[colour]light grey
+
+薄灰色
+%%%%
+[colour]dark grey
+
+濃灰色
+%%%%
+[colour]light blue
+
+空色
+%%%%
+[colour]light green
+
+黄緑色
+%%%%
+[colour]light cyan
+
+淡い水色
+%%%%
+[colour]light red
+
+明るい赤色
+%%%%
+[colour]light magenta
+
+桃色
+%%%%
+[colour]yellow
+
+黄色
+%%%%
+[colour]white
+
+白色
+%%%%
+[demon body]armoured
+
+鎧をまとった
+%%%%
+[demon body]vast, spindly
+
+巨大でひょろ長い
+%%%%
+[demon body]fat
+
+太った
+%%%%
+[demon body]obese
+
+でっぷりと肥えた
+%%%%
+[demon body]muscular
+
+筋骨たくましい
+%%%%
+[demon body]spiked
+
+棘だらけの
+%%%%
+[demon body]splotchy
+
+まだら模様の
+%%%%
+[demon body]slender
+
+ほっそりとした
+%%%%
+[demon body]tentacled
+
+触手の生えた
+%%%%
+[demon body]emaciated
+
+やせ衰えた
+%%%%
+[demon body]bug-like
+
+虫のような
+%%%%
+[demon body]skeletal
+
+骨と皮ばかりの
+%%%%
+[demon body]mantis
+
+カマキリのような
+%%%%
+[demon body]slithering
+
+這いずる
+%%%%
+[demon wings]with small, bat-like wings
+
+蝙蝠のような小さな翼を持つ。
+%%%%
+[demon wings]with bony wings
+
+骨ばった翼を持つ。
+%%%%
+[demon wings]with sharp, metallic wings
+
+鋭い金属質の翼を持つ。
+%%%%
+[demon wings]with the wings of a moth
+
+蛾の翅を持つ。
+%%%%
+[demon wings]with thin, membranous wings
+
+薄い膜状の翼を持つ。
+%%%%
+[demon wings]with dragonfly wings
+
+トンボのような翅を持つ。
+%%%%
+[demon wings]with large, powerful wings
+
+大きく力強い翼を持つ。
+%%%%
+[demon wings]with fluttering wings
+
+はためく翼を持つ。
+%%%%
+[demon wings]with great, sinister wings
+
+不吉な大きい翼を持つ。
+%%%%
+[demon wings]with hideous, tattered wings
+
+おぞましいぼろぼろの翼を持つ。
+%%%%
+[demon wings]with sparrow-like wings
+
+スズメのような翼を持つ。
+%%%%
+[demon wings]with hooked wings
+
+鉤爪のついた翼を持つ。
+%%%%
+[demon wings]with strange knobs attached
+
+奇妙なこぶがいくつも付いている。
+%%%%
+[demon wings]which hovers in mid-air
+
+宙に浮かんでいる。
+%%%%
+[demon wings]with sacs of gas hanging from its back
+
+背中からガスの詰まった袋を垂らしている。
+%%%%
+[demon head]a cubic structure in place of a head
+
+頭のあるべき場所に立方体の構造物がある。
+%%%%
+[demon head]a brain for a head
+
+頭の代わりに脳がむき出しになっている。
+%%%%
+[demon head]a hideous tangle of tentacles for a mouth
+
+口の代わりにおぞましい触手の塊がある。
+%%%%
+[demon head]the head of an elephant
+
+象の頭を持つ。
+%%%%
+[demon head]an eyeball for a head
+
+頭の代わりに目玉がひとつある。
+%%%%
+[demon head]wears a helmet over its head
+
+頭に兜をかぶっている。
+%%%%
+[demon head]a horn in place of a head
+
+頭のあるべき場所に一本の角がある。
+%%%%
+[demon head]a thick, horned head
+
+角の生えた太い頭を持つ。
+%%%%
+[demon head]the head of a horse
+
+馬の頭を持つ。
+%%%%
+[demon head]a vicious glare
+
+悪意に満ちた眼差しをしている。
+%%%%
+[demon head]snakes for hair
+
+髪の代わりに蛇が生えている。
+%%%%
+[demon head]the face of a baboon
+
+ヒヒの顔をしている。
+%%%%
+[demon head]the head of a mouse
+
+ネズミの頭を持つ。
+%%%%
+[demon head]a ram's head
+
+雄羊の頭を持つ。
+%%%%
+[demon head]the head of a rhino
+
+サイの頭を持つ。
+%%%%
+[demon head]eerily human features
+
+不気味なほど人間に似た顔立ちをしている。
+%%%%
+[demon head]a gigantic mouth
+
+巨大な口を持つ。
+%%%%
+[demon head]a mass of tentacles growing from its neck
+
+首から触手の塊が生えている。
+%%%%
+[demon head]a thin, worm-like head
+
+蠕虫のような細い頭を持つ。
+%%%%
+[demon head]huge, compound eyes
+
+巨大な複眼を持つ。
+%%%%
+[demon head]the head of a frog
+
+カエルの頭を持つ。
+%%%%
+[demon head]an insectoid head
+
+昆虫のような頭を持つ。
+%%%%
+[demon head]a great mass of hair
+
+大量の毛が生えている。
+%%%%
+[demon head]a skull for a head
+
+頭の代わりに頭蓋骨がある。
+%%%%
+[demon head]a cow's skull for a head
+
+頭の代わりに牛の頭蓋骨がある。
+%%%%
+[demon head]the head of a bird
+
+鳥の頭を持つ。
+%%%%
+[demon head]a large fungus growing from its neck
+
+首から大きなキノコが生えている。
+%%%%
+[demon head]an ominous eye at the end of a thin stalk
+
+細い柄の先に不吉な目がひとつ付いている。
+%%%%
+[demon head]a face from nightmares
+
+悪夢から抜け出たような顔をしている。
+%%%%
+It seethes with hatred of the living.
+
+生ある者への憎悪に煮えたぎっている。
+%%%%
+Tiny orange flames dance around it.
+
+小さな橙色の炎がその周りで踊っている。
+%%%%
+Tiny purple flames dance around it.
+
+小さな紫色の炎がその周りで踊っている。
+%%%%
+It is surrounded by a weird haze.
+
+奇妙な靄に包まれている。
+%%%%
+It glows with a malevolent light.
+
+悪意に満ちた光を放っている。
+%%%%
+It looks incredibly angry.
+
+ひどく怒っているようだ。
+%%%%
+It oozes with slime.
+
+体から粘液がにじみ出ている。
+%%%%
+It dribbles constantly.
+
+絶えずよだれを垂らしている。
+%%%%
+Mould grows all over it.
+
+全身にカビが生えている。
+%%%%
+Its body is covered in fungus.
+
+体じゅうがキノコに覆われている。
+%%%%
+It is covered with lank hair.
+
+長く垂れた毛に覆われている。
+%%%%
+It looks diseased.
+
+病気にかかっているように見える。
+%%%%
+It looks as frightened of you as you are of it.
+
+あなたがそれを恐れているのと同じくらい、それもあなたを恐れているようだ。
+%%%%
+It moves in a series of hideous convulsions.
+
+おぞましい痙攣を繰り返しながら動く。
+%%%%
+It moves with an unearthly grace.
+
+この世のものとは思えない優雅さで動く。
+%%%%
+It leaves a glistening oily trail.
+
+てらてらと光る油のような跡を残していく。
+%%%%
+It shimmers before your eyes.
+
+あなたの目の前でゆらゆらと揺らめいている。
+%%%%
+It is surrounded by a brilliant glow.
+
+まばゆい輝きに包まれている。
+%%%%
+It radiates an aura of extreme power.
+
+凄まじい力のオーラを放っている。
+%%%%
+It seems utterly heartbroken.
+
+すっかり悲嘆に暮れているようだ。
+%%%%
+It seems filled with irrepressible glee.
+
+抑えきれない喜びに満ちているようだ。
+%%%%
+It constantly shivers and twitches.
+
+絶えず震え、ひきつっている。
+%%%%
+Blue sparks crawl across its body.
+
+青い火花が体の上を這い回っている。
+%%%%
+It seems uncertain.
+
+何やら迷っているようだ。
+%%%%
+A cloud of flies swarms around it.
+
+蠅の群れがその周りを飛び回っている。
+%%%%
+The air around it ripples with heat.
+
+その周りの空気が熱で揺らいでいる。
+%%%%
+Crystalline structures grow on everything near it.
+
+その近くのあらゆるものに結晶が生えている。
+%%%%
+It appears supremely confident.
+
+この上なく自信に満ちているように見える。
+%%%%
+Its skin is covered in a network of cracks.
+
+皮膚が網目状のひび割れに覆われている。
+%%%%
+Its skin has a disgusting oily sheen.
+
+皮膚に気味の悪い油のような光沢がある。
+%%%%
+It seems somehow familiar.
+
+なぜか見覚えがある気がする。
+%%%%
+It is somehow always in shadow.
+
+なぜかいつも影の中にいる。
+%%%%
+It is difficult to look away.
+
+目をそらすのが難しい。
+%%%%
+It is constantly speaking in tongues.
+
+絶えず意味不明の言葉を口走っている。
+%%%%
+It babbles unendingly.
+
+果てしなくしゃべり続けている。
+%%%%
+Its body is scourged by damnation.
+
+体が劫罰に苛まれている。
+%%%%
+Its body is extensively scarred.
+
+体じゅうが傷跡だらけだ。
+%%%%
+You find it difficult to look away.
+
+あなたはそれから目をそらすことができない。
+%%%%
+Oddly mechanical noises accompany its jarring movements.
+
+ぎくしゃくした動きに、妙に機械的な音が伴う。
+%%%%
+Its skin looks unnervingly wrinkled.
+
+皮膚は不気味なほどしわだらけだ。
+%%%%
+It smells of brimstone.
+
+硫黄の臭いがする。
+%%%%
+It is surrounded by a sickening stench.
+
+吐き気を催す悪臭に包まれている。
+%%%%
+It smells of rotting flesh.
+
+腐った肉の臭いがする。
+%%%%
+It stinks of death.
+
+死の臭いがする。
+%%%%
+It stinks of decay.
+
+腐敗臭がする。
+%%%%
+It smells delicious!
+
+おいしそうな匂いがする！
+%%%%
+It changes colour whenever you look at it.
+
+見るたびに色が変わる。
+%%%%
+It is of an unusually buggy age.
+
+異常にバグった年齢だ。
+%%%%
+It is larval and weak, freshly emerged from its mother's pouch.
+
+幼体で弱く、母親の袋から出てきたばかりだ。
+%%%%
+It is a juvenile, no longer larval but below its mature strength.
+
+若年体で、もう幼体ではないが成体の強さには及ばない。
+%%%%
+It is mature, stronger than a juvenile but weaker than its elders.
+
+成体で、若年体より強いが年長の個体よりは弱い。
+%%%%
+It is an elder, stronger than mature beasts.
+
+年長の個体で、成体の獣よりも強い。
+%%%%
+It is a primal beast, the most powerful of its kind.
+
+原初の獣で、同種の中で最も強力だ。
+%%%%
+[beast facet]seems unusually buggy.
+
+それは異常にバグっているようだ。
+%%%%
+[beast facet]sports a set of venomous tails
+
+それは毒のある尾を何本も持っている。
+%%%%
+[beast facet]flies swiftly and unpredictably
+
+それは予測のつかない動きで素早く飛び回る。
+%%%%
+[beast facet]s breath smoulders ominously
+
+その息は不気味にくすぶっている。
+%%%%
+[beast facet]is covered with eyes and tentacles
+
+その体は目玉と触手に覆われている。
+%%%%
+[beast facet]flickers and crackles with electricity
+
+その体は電気でちらつき、パチパチと音を立てている。
+%%%%
+[beast facet]is covered in dense fur and muscle
+
+その体は分厚い毛皮と筋肉に覆われている。
+%%%%
+; use <white>(s)</white> to set %d.%d as a target for %s.
+
+(<white>(s)</white>で%d.%dを%sの目標に設定できる)
+%%%%
+Your %sskill: %s%d.%d%s
+
+あなたの%s技能: %s%d.%d%s
+%%%%
+[skill desc](base)
+
+(基本)
+%%%%
+At 100% training
+
+訓練割合100%なら、
+%%%%
+At current training (%d%%)
+
+現在の訓練割合(%d%%)なら、
+%%%%
+At a training level of %d%%
+
+訓練割合%d%%なら、
+%%%%
+you would reach %d.%d in the equivalent of %d.%d XLs.
+
+%d.%dには経験レベル%d.%d分相当で到達するだろう。
+%%%%
+you would reach %d.%d in about %d.%d XLs.
+
+%d.%dには経験レベルおよそ%d.%d分で到達するだろう。
+%%%%
+you reach %d.%d in the equivalent of %d.%d XLs.
+
+%d.%dには経験レベル%d.%d分相当で到達する。
+%%%%
+you reach %d.%d in about %d.%d XLs.
+
+%d.%dには経験レベルおよそ%d.%d分で到達する。
+%%%%
+Current attack delay: %.1f.
+
+現在の攻撃の所要時間: %.1f。
+%%%%
+your enemies will bleed and die for Makhleb.
+
+あなたの敵はマクレブのために血を流して死ぬ。
+%%%%
+0.
+
+0。
+%%%%
+[%d + %d (Thrw)]
+
+[%d + %d (投擲)]
+%%%%
+[%d + %d (UC)]
+
+[%d + %d (素手)]
+%%%%
+[%d + %d (Hvy)]
+
+[%d + %d (重量)]
+%%%%
+[dmg rating]Ench + Slay
+
+強化+殺傷
+%%%%
+[dmg rating]Ench
+
+強化
+%%%%
+[dmg rating]Slay
+
+殺傷
+%%%%
+[dmg rating]Str
+
+腕力
+%%%%
+[dmg rating]Dex
+
+器用
+%%%%
+[dmg rating]Skill
+
+技能
+%%%%
+[dmg rating]Fight
+
+戦闘
+%%%%
+%d (Base %s x %d%% (%s) x %d%% (%s)%s)%s.
+
+%d (基本 %s x %d%% (%s) x %d%% (%s)%s)%s。
+%%%%
+Your inability to study %s prevents you from drawing on the full power of this staff in melee.
+
+あなたは%sを習得できないため、近接攻撃でこの杖の力を十分に引き出せない。
+%%%%
+Base accuracy: %s  Base damage: %s
+
+基本命中: %s  基本ダメージ: %s
+%%%%
+Base accuracy: %+d  Base damage: %d
+
+基本命中: %+d  基本ダメージ: %d
+%%%%
+Base attack delay: %.1f\nThis weapon's minimum attack delay (%.1f) is reached at skill level %d.
+
+基本所要時間: %.1f
+この武器の最小所要時間(%.1f)には技能レベル%dで到達する。
+%%%%
+Your heavy armour
+
+あなたの重い防具
+%%%%
+%s slows your attacks with this weapon by %.1f.
+
+%sのため、この武器での攻撃が%.1f遅くなる。
+%%%%
+%s slightly slows your attacks with this weapon.
+
+%sのため、この武器での攻撃がわずかに遅くなる。
+%%%%
+Wearing heavy armour would reduce your attack speed with this weapon.
+
+重い防具を着ると、この武器での攻撃速度が落ちる。
+%%%%
+Damage rating:
+
+ダメージ評価:
+%%%%
+You are unable to wield it.
+
+あなたはこれを装備できない。
+%%%%
+It is too large for you to wield.
+
+これはあなたが装備するには大きすぎる。
+%%%%
+It is a weapon for two hand-pairs.
+
+二対の手で扱う武器だ。
+%%%%
+It is a weapon for one hand-pair.
+
+一対の手で扱う武器だ。
+%%%%
+It is a two-handed weapon.
+
+両手持ちの武器だ。
+%%%%
+It is a one-handed weapon.
+
+片手持ちの武器だ。
+%%%%
+This %s falls into the '%s' category.
+
+この%sは「%s」に分類される。
+%%%%
+It has an extended reach (target with [<white>v</white>]).
+
+この武器は離れた敵にも届く([<white>v</white>]で対象を指定)。
+%%%%
+It has an extended reach.
+
+この武器は離れた敵にも届く。
+%%%%
+It hits all enemies adjacent to the wielder, dealing less damage to those not targeted.
+
+装備者に隣接するすべての敵を攻撃するが、狙った相手以外へのダメージは少なくなる。
+%%%%
+It hits all enemies adjacent to the wielder.
+
+装備者に隣接するすべての敵を攻撃する。
+%%%%
+It is extremely good for stabbing helpless or unaware enemies.
+
+無防備な敵や気付いていない敵への急所突きに極めて適している。
+%%%%
+It is good for stabbing helpless or unaware enemies.
+
+無防備な敵や気付いていない敵への急所突きに適している。
+%%%%
+The beam does %dd%d damage.
+
+この光線は%dd%dのダメージを与える。
+%%%%
+increase by %.1f
+
+%.1f上昇する
+%%%%
+decrease by %.1f
+
+%.1f低下する
+%%%%
+remain unchanged
+
+変化しない
+%%%%
+[item class]weapon
+
+武器
+%%%%
+[item class]armour
+
+防具
+%%%%
+[item class]talisman
+
+タリスマン
+%%%%
+[item class]gizmo
+
+ギズモ
+%%%%
+[item class]jewellery
+
+装身具
+%%%%
+If you unwield this %s:
+
+この%sを外すと:
+%%%%
+If you take off this %s:
+
+この%sを脱ぐと:
+%%%%
+If you remove this %s:
+
+この%sを外すと:
+%%%%
+If you transformed using this talisman:
+
+このタリスマンで変身すると:
+%%%%
+If you were wearing this ring:
+
+この指輪をはめると:
+%%%%
+If you switch to wielding this weapon in your main hand:
+
+この武器を利き手に持ち替えると:
+%%%%
+If you switch to wielding this %s:
+
+この%sに持ち替えると:
+%%%%
+If you switch to wearing this %s:
+
+この%sを装備すると:
+%%%%
+Your AC would %s.
+
+あなたのACは%s。
+%%%%
+Your EV would %s.
+
+あなたのEVは%s。
+%%%%
+Your SH would %s.
+
+あなたのSHは%s。
+%%%%
+Your spell failure would worsen trivially.
+
+あなたの呪文の失敗率はわずかに悪化する。
+%%%%
+Your spell failure would improve trivially.
+
+あなたの呪文の失敗率はわずかに改善する。
+%%%%
+Your spell failure would worsen by up to %d%% (press '!' for details).
+
+あなたの呪文の失敗率は最大%d%%悪化する('!'で詳細を表示)。
+%%%%
+Your spell failure would improve by up to %d%% (press '!' for details).
+
+あなたの呪文の失敗率は最大%d%%改善する('!'で詳細を表示)。
+%%%%
+If you removed this item, your spell failure would worsen:
+
+このアイテムを外すと、呪文の失敗率は悪化する:
+%%%%
+If you removed this item, your spell failure would improve:
+
+このアイテムを外すと、呪文の失敗率は改善する:
+%%%%
+If you equipped this item, your spell failure would worsen:
+
+このアイテムを装備すると、呪文の失敗率は悪化する:
+%%%%
+If you equipped this item, your spell failure would improve:
+
+このアイテムを装備すると、呪文の失敗率は改善する:
+%%%%
+It can be maximally enchanted to +%d.
+
+最大+%dまで強化できる。
+%%%%
+It cannot be enchanted further.
+
+これ以上強化することはできない。
+%%%%
+Base damage: %d  Base attack delay: %.1f\nThis projectile's minimum attack delay (%.1f) is reached at skill level %d.
+
+基本ダメージ: %d  基本所要時間: %.1f
+この投擲物の最小所要時間(%.1f)には技能レベル%dで到達する。
+%%%%
+It is always destroyed on impact.
+
+命中すると必ず壊れる。
+%%%%
+It has a 1/%d chance to be destroyed on impact.
+
+命中すると1/%dの確率で壊れる。
+%%%%
+With your current SH, it has a %d%% chance to reflect attacks against your willpower and other normally unblockable effects.
+
+現在のあなたのSHでは、意志力に対する攻撃や、通常は防げない効果を%d%%の確率で跳ね返す。
+%%%%
+Spell refund chance: %d%% (max %d%%)
+
+呪文の魔力還元率: %d%% (最大 %d%%)
+%%%%
+Enemy Willpower: -%d (max -%d)
+
+敵の意志力: -%d (最大 -%d)
+%%%%
+Vitrify chance: %d%% (max %d%%)
+
+ガラス化の確率: %d%% (最大 %d%%)
+%%%%
+Explosion chance: %d%% (max %d%%)\nExplosion damage: %dd%d (max %dd%d)
+
+爆発の確率: %d%% (最大 %d%%)
+爆発のダメージ: %dd%d (最大 %dd%d)
+%%%%
+Base shooting star damage: %dd%d (max %dd%d) + 25%% per MP spent\nShooting stars conjured: 1 + 1 per visible enemy, up to %d (%d at max skill)
+
+流れ星の基本ダメージ: %dd%d (最大 %dd%d) + 消費MP 1につき25%%
+生み出す流れ星の数: 1 + 見えている敵1体につき1、最大%d (技能が最大なら%d)
+%%%%
+Mesmerism radius: %d (max %d)
+
+魅惑の半径: %d (最大 %d)
+%%%%
+It is cumbersome to wear, and %simpedes the evasion, spellcasting ability, and attack speed of the wearer. These penalties are reduced by the wearer's Shields skill and Strength; mastering Shields eliminates penalties.
+
+装備すると動きにくく、装備者の回避、呪文の詠唱能力、攻撃速度を%s妨げる。これらのペナルティは装備者の盾技能と腕力によって軽減され、盾技能を極めればなくなる。
+%%%%
+[cumber]slightly
+
+わずかに
+%%%%
+[cumber]greatly
+
+大きく
+%%%%
+Base shield rating:
+
+基本防御値:
+%%%%
+Encumbrance rating:
+
+重さ:
+%%%%
+Max blocks/turn:
+
+1ターンの最大防御回数:
+%%%%
+Base armour rating:
+
+基本防御値:
+%%%%
+Evasion:
+
+回避:
+%%%%
+Your current strength and Armour skill slows attacks with missile weapons (like %s) by %.1f.
+
+現在のあなたの腕力と甲冑技能では、射撃武器(%sなど)での攻撃が%.1f遅くなる。
+%%%%
+Your current strength and Armour skill slows attacks with missile weapons (like %s) only slightly.
+
+現在のあなたの腕力と甲冑技能では、射撃武器(%sなど)での攻撃がわずかに遅くなるだけだ。
+%%%%
+If you quaff this potion your AC would be %d.
+
+この薬を飲むと、あなたのACは%dになる。
+%%%%
+[rarity]very rare
+
+非常に珍しい
+%%%%
+[rarity]rare
+
+珍しい
+%%%%
+[rarity]uncommon
+
+やや珍しい
+%%%%
+[rarity]common
+
+ありふれた
+%%%%
+[rarity]very common
+
+非常にありふれた
+%%%%
+It affects your shielding (%+d).
+
+あなたのSHに影響する(%+d)。
+%%%%
+It affects your AC (%+d).
+
+あなたのACに影響する(%+d)。
+%%%%
+It affects your evasion (%+d).
+
+あなたの回避力に影響する(%+d)。
+%%%%
+It affects your strength (%+d).
+
+あなたの腕力に影響する(%+d)。
+%%%%
+It affects your intelligence (%+d).
+
+あなたの知力に影響する(%+d)。
+%%%%
+It affects your dexterity (%+d).
+
+あなたの器用さに影響する(%+d)。
+%%%%
+It affects your accuracy and damage with ranged weapons and melee (%+d).
+
+あなたの射撃と近接攻撃の命中率とダメージに影響する(%+d)。
+%%%%
+It has a curse placed upon it.
+
+これには呪いがかけられている。
+%%%%
+It has a curse which improves the following skills:
+
+これには、以下の技能を向上させる呪いがかけられている:
+%%%%
+Your spells cost less MP as you Rev up. Whenever you cast a spell, you make a melee attack against a random enemy in range.
+
+回転数(Rev)が上がるにつれて呪文の消費MPが減る。呪文を唱えるたびに、届く範囲にいるランダムな敵に近接攻撃を行う。
+%%%%
+Your evocable items recharge 30% faster and wands have a 30% chance to not spend a charge.
+
+発動できるアイテムの再充填が30%速くなり、ワンドは30%の確率で残量を消費しない。
+%%%%
+Your AC increases as you Rev (up to +5) and while fully Revved, your attacks may disarm enemies.
+
+回転数(Rev)が上がるにつれてACが上昇し(最大+5)、回転数が最大のときは攻撃で敵の武器を落とさせることがある。
+%%%%
+It sometimes fires a blinding ray at enemies whose attacks you dodge.
+
+あなたが攻撃を回避した敵に、ときどき目くらましの光線を放つ。
+%%%%
+[item class]miscellaneous
+
+道具
+%%%%
+[item class]bauble
+
+ボーブル
+%%%%
+This %s is completely useless to you
+
+この%sはあなたにとってまったく役に立たない
+%%%%
+Reading this right now isn't possible
+
+今これを読むことはできない
+%%%%
+Reading this right now will have no effect
+
+今これを読んでも効果はない
+%%%%
+Drinking this right now isn't possible
+
+今これを飲むことはできない
+%%%%
+Drinking this right now will have no effect
+
+今これを飲んでも効果はない
+%%%%
+You can't evoke this right now
+
+今これを発動することはできない
+%%%%
+This %s is useless to you right now
+
+この%sは今のあなたには役に立たない
+%%%%
+It is an ancient artefact.
+
+これは古代のアーティファクトだ。
+%%%%
+It is a fabulous contraption, custom-made by your own hands.
+
+あなた自身の手で作り上げた、素晴らしい装置だ。
+%%%%
+This item has been removed.
+
+このアイテムは削除された。
+%%%%
+It falls into the 'Staves' category.
+
+これは「杖」に分類される。
+%%%%
+It is surrounded by a blinding glow.
+
+目もくらむような輝きに包まれている。
+%%%%
+It is surrounded by a dazzling glow.
+
+まばゆい輝きに包まれている。
+%%%%
+It is surrounded by a bright glow.
+
+明るい輝きに包まれている。
+%%%%
+It is surrounded by a gentle glow.
+
+やわらかな輝きに包まれている。
+%%%%
+Charges: %d. Once all charges have been used, this device is rendered temporarily inert. However, it recharges as you gain experience.
+
+使用回数: %d。すべて使い切ると、この道具は一時的に使えなくなる。ただし、経験値を得るにつれて再充填される。
+%%%%
+Once activated, this device is rendered temporarily inert. However, it recharges as you gain experience.
+
+一度発動すると、この道具は一時的に使えなくなる。ただし、経験値を得るにつれて再充填される。
+%%%%
+Additional devices of the same type can be combined with it to improve the rate at which it recharges.
+
+同じ種類の道具を合わせると、再充填の速さを高められる。
+%%%%
+Increasing your evocations skill will improve the rate at which it recharges.
+
+発動技能を上げると、再充填の速さが高まる。
+%%%%
+Damage:
+
+ダメージ:
+%%%%
+If you drink this now, you will no longer be %s.
+
+今これを飲むと、あなたの%sの状態は解除される。
+%%%%
+It is %s potion.
+
+これは%s薬だ。
+%%%%
+It is %s scroll.
+
+これは%s巻物だ。
+%%%%
+Enchanting this artefact any further is beyond even your skills.
+
+このアーティファクトをこれ以上強化することは、あなたの腕をもってしても不可能だ。
+%%%%
+This ancient artefact cannot be changed by magic or mundane means.
+
+この古代のアーティファクトは、魔法でも通常の手段でも変えることはできない。
+%%%%
+%s disapproves of the use of such an item.
+
+%sはこのようなアイテムの使用を快く思わない。
+%%%%
+Stash search prefixes:
+
+アイテム検索用の接頭辞:
+%%%%
+Menu/colouring prefixes:
+
+メニュー・色分け用の接頭辞:
+%%%%
+A cloud of %s.
+
+%sが漂っている。
+%%%%
+Awoken.
+
+目覚めている。
+%%%%
+A covering of ice.
+
+氷に覆われている。
+%%%%
+A halo.
+
+光輪。
+%%%%
+An umbra.
+
+暗影。
+%%%%
+Liquefied ground.
+
+液状化した地面。
+%%%%
+Translocational energy.
+
+転位のエネルギー。
+%%%%
+[feat action](<)go up
+
+(<)上る
+%%%%
+[feat action](>)go down
+
+(>)下りる
+%%%%
+[feat action]([)view destination
+
+([)行き先を見る
+%%%%
+[feat action](])view destination
+
+(])行き先を見る
+%%%%
+[feat action](O)pen
+
+(O)開ける
+%%%%
+[feat action](C)lose
+
+(C)閉める
+%%%%
+[feat action](>)pray
+
+(>)祈る
+%%%%
+[feat action](>)enter
+
+(>)入る
+%%%%
+[feat action](<)exit
+
+(<)出る
+%%%%
+While standing here, you can exit the dungeon with the <w>%s</w> key.
+
+ここに立っているとき、<w>%s</w>キーでダンジョンから出ることができる。
+%%%%
+While standing here, you can traverse %s with the <w>%s</w> key.
+
+ここに立っているとき、%sを<w>%s</w>キーで通ることができる。
+%%%%
+You have not yet explored it and cannot tell where it leads.
+
+まだ探索しておらず、どこへ続いているのか分からない。
+%%%%
+You can view the location it leads to by examining it with <w>%s</w> and pressing <w>%s</w>.
+
+<w>%s</w>で調べて<w>%s</w>を押すと、行き先を見ることができる。
+%%%%
+(If you entered the Abyss now, you could be pulled as deep as Abyss:%d.)
+
+(今アビスに入ると、アビス第%d階層まで引き込まれるかもしれない。)
+%%%%
+While standing here, you can try to enter %s with the <w>%s</w> key; it will vanish after you do so.
+
+ここに立っているとき、%sに<w>%s</w>キーで入ってみることができる。入ると、これは消えてしまう。
+%%%%
+While standing here, you can enter %s with the <w>%s</w> key; it will vanish after you do so.
+
+ここに立っているとき、%sに<w>%s</w>キーで入ることができる。入ると、これは消えてしまう。
+%%%%
+While standing here, you can enter Hell with the <w>%s</w> key.
+
+ここに立っているとき、<w>%s</w>キーで地獄に入ることができる。
+%%%%
+While standing here, you can exit to Hell with the <w>%s</w> key.
+
+ここに立っているとき、<w>%s</w>キーで地獄へ出ることができる。
+%%%%
+While standing here, you can enter through %s with the <w>%s</w> key if you have enough runes.
+
+ここに立っているとき、十分なルーンがあれば、%sを通って<w>%s</w>キーで中に入ることができる。
+%%%%
+While standing here, you can enter through %s with the <w>%s</w> key.
+
+ここに立っているとき、%sを通って<w>%s</w>キーで中に入ることができる。
+%%%%
+While standing here, you can exit through %s with the <w>%s</w> key if you have enough runes.
+
+ここに立っているとき、十分なルーンがあれば、%sを通って<w>%s</w>キーで外に出ることができる。
+%%%%
+While standing here, you can exit through %s with the <w>%s</w> key.
+
+ここに立っているとき、%sを通って<w>%s</w>キーで外に出ることができる。
+%%%%
+Pray here with <w>%s</w> to learn more.
+
+ここで<w>%s</w>を押して祈ると、詳しく知ることができる。
+%%%%
+While standing here, you can enter <w>%s</w> with the <w>%s</w> key.
+
+ここに立っているとき、<w>%s</w>に<w>%s</w>キーで入ることができる。
+%%%%
+While standing here, you can enter %s with with the <w>%s</w> key.
+
+ここに立っているとき、%sに<w>%s</w>キーで入ることができる。
+%%%%
+While adjacent to it, you can normally open it by pressing the <w>%s</w> key.
+
+隣にいるとき、通常は<w>%s</w>キーを押して開けることができる。
+%%%%
+While adjacent to it, you can normally close it by pressing the <w>%s</w> key.
+
+隣にいるとき、通常は<w>%s</w>キーを押して閉めることができる。
+%%%%
+While adjacent to it, you can open it by pressing the <w>%s</w> key.
+
+隣にいるとき、<w>%s</w>キーを押して開けることができる。
+%%%%
+While adjacent to it, you can close it by pressing the <w>%s</w> key.
+
+隣にいるとき、<w>%s</w>キーを押して閉めることができる。
+%%%%
+However, this will not work until the sealing runes wear off.
+
+ただし、封印のルーンが消えるまではそうできない。
+%%%%
+It can be dug through.
+
+掘り抜くことができる。
+%%%%
+A suitable weapon or spell can reach past it.
+
+適切な武器や呪文なら、これを越えて届かせることができる。
+%%%%
+Some spells can be cast through it.
+
+一部の呪文はこれ越しに唱えることができる。
+%%%%
+You are here.
+
+あなたはここにいる。
+%%%%
+[item action](w)ield
+
+(w)手に持つ
+%%%%
+[item action](u)nwield
+
+(u)手から外す
+%%%%
+[item action](q)uiver
+
+(q)矢筒に入れる
+%%%%
+[item action]qui(v)er
+
+(v)矢筒に入れる
+%%%%
+[item action](w)ear
+
+(w)身に着ける
+%%%%
+[item action](t)ake off
+
+(t)脱ぐ
+%%%%
+[item action]e(v)oke
+
+(v)発動する
+%%%%
+[item action](r)ead
+
+(r)読む
+%%%%
+[item action](p)ut on
+
+(p)身に着ける
+%%%%
+[item action](r)emove
+
+(r)外す
+%%%%
+[item action](q)uaff
+
+(q)飲む
+%%%%
+[item action](g)et
+
+(g)拾う
+%%%%
+[item action](d)rop
+
+(d)置く
+%%%%
+[item action](i)nscribe
+
+(i)銘を付ける
+%%%%
+[item action](=)adjust
+
+(=)並べ替える
+%%%%
+[item action](s)kill target
+
+(s)技能の目標を設定する
+%%%%
+[item action](g)o to location
+
+(g)その場所へ行く
+%%%%
+It can be found on %s.
+
+これは%sにある。
+%%%%
+Select a spell, or
+
+呪文を選ぶか、
+%%%%
+Replace inscription with what?
+
+銘を何に書き換える？
+%%%%
+Inscribe with what?
+
+何と銘を刻む？
+%%%%
+Level: %d
+
+レベル: %d
+%%%%
+Schools: %s
+
+系統: %s
+%%%%
+School: %s
+
+系統: %s
+%%%%
+Fail: %s
+
+失敗率: %s
+%%%%
+[spell stat]Power
+
+威力
+%%%%
+[spell stat]Damage
+
+ダメージ
+%%%%
+[spell stat]Accuracy
+
+命中
+%%%%
+[spell stat]Range
+
+射程
+%%%%
+[spell stat]Noise
+
+騒音
+%%%%
+(max %s)
+
+(最大 %s)
+%%%%
+[skill change]mastering
+
+極める
+%%%%
+[skill change]training 1 level of
+
+1レベル上げる
+%%%%
+With your current stats and equipment, %s this skill would increase your AC by %.1f and your EV by %.1f.
+
+現在の能力値と装備では、この技能を%sと、ACが%.1f、EVが%.1f上昇する。
+%%%%
+With your current stats and equipment, %s this skill would increase your EV by %.1f.
+
+現在の能力値と装備では、この技能を%sと、EVが%.1f上昇する。
+%%%%
+With your current stats and equipment, %s this skill would increase your SH by %.1f.
+
+現在の能力値と装備では、この技能を%sと、SHが%.1f上昇する。
+%%%%
+How on earth did you manage to pick this up?
+
+一体どうやってこれを身に付けたのだ？
+%%%%
+%s powers are not affected by the Invocations skill.
+
+%sの力は祈祷技能の影響を受けない。
+%%%%
+%s powers are based on %s instead of Invocations skill.
+
+%sの力は祈祷技能ではなく%s技能に基づく。
+%%%%
+%s strongly dislikes when you train this skill.
+
+%sはあなたがこの技能を訓練することをひどく嫌う。
+%%%%
+[miscast]summons a nameless horror
+
+名状しがたい恐怖を召喚する
+%%%%
+[miscast]anchors you in place
+
+あなたをその場に縛りつける
+%%%%
+[miscast]slows you
+
+あなたを減速させる
+%%%%
+[miscast]poisons you
+
+あなたを毒に冒す
+%%%%
+[miscast]corrodes you
+
+あなたを腐食させる
+%%%%
+[miscast dam]irresistible
+
+防御不能の
+%%%%
+[miscast dam]draining
+
+吸収の
+%%%%
+[miscast dam]fire
+
+火炎の
+%%%%
+[miscast dam]cold
+
+冷気の
+%%%%
+[miscast dam]electric
+
+電撃の
+%%%%
+[miscast dam]fragmentation
+
+破砕の
+%%%%
+deals up to %d %s damage
+
+最大%dの%sダメージを与える
+%%%%
+Miscasting this spell causes magic contamination and also %s.
+
+この呪文の詠唱に失敗すると魔力汚染を引き起こし、さらに%s。
+%%%%
+Miscasting this spell causes magic contamination.
+
+この呪文の詠唱に失敗すると魔力汚染を引き起こす。
+%%%%
+Your battlesphere is not activated by any of your spells.
+
+あなたの戦闘球は、あなたのどの呪文でも起動しない。
+%%%%
+Your battlesphere fires when you cast %s.
+
+あなたの戦闘球は、あなたが%sを唱えたときに発射する。
+%%%%
+Your servitor is unable to mimic any of your spells.
+
+あなたの従者は、あなたの呪文をどれも真似できない。
+%%%%
+Your servitor casts %s.
+
+あなたの従者は%sを唱える。
+%%%%
+Your paragon wields %s.
+
+あなたの傑作は%sを手にしている。
+%%%%
+Your servitor can be imbued with this spell.
+
+あなたの従者にこの呪文を込めることができる。
+%%%%
+Your servitor could be imbued with this spell if your spell success rate were higher.
+
+呪文の成功率がもっと高ければ、あなたの従者にこの呪文を込めることができる。
+%%%%
+This inflicts up to 40% magical contamination when cast by you.
+
+あなたが唱えると、最大40%の魔力汚染を受ける。
+%%%%
+You can sustain at most %d martyred shades summoned by this spell.
+
+この呪文で召喚した殉教者の影は、最大%d体まで維持できる。
+%%%%
+You can sustain at most %d creatures summoned by this spell.
+
+この呪文で召喚したクリーチャーは、最大%d体まで維持できる。
+%%%%
+%s frowns upon the use of this spell.
+
+%sはこの呪文の使用を快く思わない。
+%%%%
+%s supports the use of this spell.
+
+%sはこの呪文の使用を支持している。
+%%%%
+This spell is empowered while you are enkindled.
+
+この呪文は、あなたが燃え上がっている間は強化される。
+%%%%
+You cannot cast this spell because %s
+
+この呪文を唱えることはできない: %s
+%%%%
+You cannot memorise this spell because %s
+
+この呪文を覚えることはできない: %s
+%%%%
+This spell would have no effect right now because %s
+
+今この呪文を唱えても効果はない: %s
+%%%%
+You have harvested enough death to cast this spell %d times. (Maximum of %d.)
+
+あなたはこの呪文を%d回唱えられるだけの死を集めている(最大%d回)。
+%%%%
+This spell has no description. Casting it may therefore be unwise. Please file a bug report.
+
+この呪文には説明がない。したがって唱えるのは賢明ではないかもしれない。バグ報告をしてほしい。
+%%%%
+%s creates living %s spells.
+
+%sは生ける%sの呪文を生み出す。
+%%%%
+If you are struck by this, you will no longer be %s.
+
+これを受けると、あなたの%sの状態は解除される。
+%%%%
+You currently have no enchantments that could be removed by this.
+
+今のあなたには、これで解除される魔法効果はない。
+%%%%
+Range :
+
+射程:
+%%%%
+<magenta>This spell cannot be performed via Aphotic Marionette.</magenta>
+
+<magenta>この呪文は暗黒の操り人形で使わせることはできない。</magenta>
+%%%%
+<magenta>When cast via Aphotic Marionette, this spell will affect the player instead.
+
+<magenta>暗黒の操り人形で使わせると、この呪文は代わりにプレイヤーに作用する。
+%%%%
+%s can sustain at most %d creatures summoned by this spell.
+
+%sは、この呪文で召喚したクリーチャーを最大%d体まで維持できる。
+%%%%
+You cannot be affected by this spell right now. %s
+
+今のあなたはこの呪文の影響を受けない。%s
+%%%%
+Chance to defeat your Will: %d%%%s
+
+あなたの意志力を打ち破る確率: %d%%%s
+%%%%
+(level %d/%d)
+
+(レベル %d/%d)
+%%%%
+Your %s, %s, and %s are currently affected.
+
+現在、あなたの%s、%s、%sの技能が影響を受けている。
+%%%%
+This bane usually lasts a very long time.
+
+この災厄は通常、非常に長く続く。
+%%%%
+This bane usually lasts a long time.
+
+この災厄は通常、長く続く。
+%%%%
+This bane usually lasts a moderate length of time.
+
+この災厄は通常、中程度の期間続く。
+%%%%
+This bane usually lasts a short length of time.
+
+この災厄は通常、短い期間続く。
+%%%%
+<lightmagenta>This bane will be lifted from you when you gain another %.1f XLs worth of experience.</lightmagenta>
+
+<lightmagenta>あと経験レベル%.1f分の経験値を得ると、この災厄は解ける。</lightmagenta>
+%%%%
+It has %s scales.
+
+%s鱗を持っている。
+%%%%
+[draconian scales]black
+
+黒い
+%%%%
+[draconian scales]yellow
+
+黄色い
+%%%%
+[draconian scales]green
+
+緑色の
+%%%%
+[draconian scales]purple
+
+紫色の
+%%%%
+[draconian scales]red
+
+赤い
+%%%%
+[draconian scales]white
+
+白い
+%%%%
+[draconian scales]grey
+
+灰色の
+%%%%
+[draconian scales]pale
+
+青白い
+%%%%
+Sparks flare out of its mouth and nostrils.
+
+口と鼻孔から火花が散っている。
+%%%%
+Acidic fumes swirl around it.
+
+酸性の煙がその周りに渦巻いている。
+%%%%
+Venom drips from its jaws and stinger tail.
+
+顎と針のある尾から毒液が滴っている。
+%%%%
+Its outline shimmers with magical energy.
+
+その輪郭は魔力で揺らめいている。
+%%%%
+Smoke pours from its nostrils.
+
+鼻孔から煙が噴き出している。
+%%%%
+Frost pours from its nostrils.
+
+鼻孔から冷気が噴き出している。
+%%%%
+Its scales and tail are adapted to the water.
+
+その鱗と尾は水に適応している。
+%%%%
+It is cloaked in a pall of superheated steam.
+
+高温の蒸気の幕に包まれている。
+%%%%
+[attack flavour]acid damage
+
+酸のダメージ
+%%%%
+[attack flavour]blink self
+
+自身が瞬間移動する
+%%%%
+[attack flavour]blink together with the defender
+
+相手と一緒に瞬間移動する
+%%%%
+[attack flavour]cold damage
+
+冷気のダメージ
+%%%%
+[attack flavour]cause confusion
+
+混乱させる
+%%%%
+[attack flavour]drain life
+
+生命力を吸収する
+%%%%
+[attack flavour]drain health from the living
+
+生物から体力を吸い取る
+%%%%
+[attack flavour]drain speed
+
+速度を奪う
+%%%%
+[attack flavour]drain magic
+
+魔力を奪う
+%%%%
+[attack flavour]drain speed and health
+
+速度と体力を奪う
+%%%%
+[attack flavour]electric damage
+
+電撃のダメージ
+%%%%
+[attack flavour]fire damage
+
+火炎のダメージ
+%%%%
+[attack flavour]remove fire resistance
+
+火炎耐性を奪う
+%%%%
+[attack flavour]poison and momentary paralysis
+
+毒と一瞬の麻痺
+%%%%
+[attack flavour]poison and paralysis/slowing
+
+毒と麻痺/減速
+%%%%
+[attack flavour]poison
+
+毒
+%%%%
+[attack flavour]strong poison
+
+強い毒
+%%%%
+[attack flavour]distortion
+
+歪曲
+%%%%
+[attack flavour]drive defenders berserk
+
+相手を狂暴化させる
+%%%%
+[attack flavour]chaos
+
+混沌
+%%%%
+[attack flavour]steal items
+
+アイテムを盗む
+%%%%
+[attack flavour]begin ongoing constriction
+
+締めつけを始める
+%%%%
+[attack flavour]extra damage to undead/demons
+
+アンデッドと悪魔への追加ダメージ
+%%%%
+[attack flavour]extra pain damage to the living
+
+生物への追加の苦痛ダメージ
+%%%%
+[attack flavour]ensnare with webbing
+
+蜘蛛の糸で捕らえる
+%%%%
+[attack flavour]flood the defender's lungs
+
+相手の肺を水で満たす
+%%%%
+[attack flavour]reduce willpower
+
+意志力を下げる
+%%%%
+[attack flavour]increased damage when unseen
+
+見えていないときにダメージ増加
+%%%%
+[attack flavour]drowning damage
+
+溺れのダメージ
+%%%%
+[attack flavour]cause corrosion
+
+腐食させる
+%%%%
+[attack flavour]knock back the defender
+
+相手を押し戻す
+%%%%
+[attack flavour]cause weakness
+
+衰弱させる
+%%%%
+[attack flavour]embed barbs
+
+棘を刺し込む
+%%%%
+[attack flavour]summon a spider
+
+蜘蛛を召喚する
+%%%%
+[attack flavour]become enraged on drawing blood
+
+血を流させると激昂する
+%%%%
+[attack flavour]induce sleep
+
+眠らせる
+%%%%
+[attack flavour]swoops behind the defender beforehand
+
+先に相手の背後へ舞い降りる
+%%%%
+[attack flavour]slips behind the defender beforehand
+
+先に相手の背後へ回り込む
+%%%%
+[attack flavour]drag the defender backwards
+
+相手を後ろへ引きずる
+%%%%
+[attack flavour]extra damage, especially to the good
+
+追加ダメージ(善なる者には特に大きい)
+%%%%
+[attack flavour]summon demonic beasts
+
+悪魔の獣を召喚する
+%%%%
+[attack flavour]summon more of itself
+
+自身の仲間を呼び寄せる
+%%%%
+[attack flavour]vent poison clouds
+
+毒の雲を噴き出す
+%%%%
+[attack flavour]deploy bomblets
+
+小型爆弾をばらまく
+%%%%
+[attack flavour]open air damage
+
+開けた場所でのダメージ
+%%%%
+[attack flavour]drain, daze, or confuse
+
+吸収、眩惑、または混乱
+%%%%
+[attack flavour]random ugly thing damage
+
+ランダムな醜いものの属性ダメージ
+%%%%
+[attack flavour]inflict doom
+
+破滅を与える
+%%%%
+[attack flavour]slowly slimify the target
+
+相手を徐々にスライム化する
+%%%%
+[attack flavour]diminish the target's spells
+
+相手の呪文を弱める
+%%%%
+(max %d each)
+
+(各最大%d)
+%%%%
+(max %d)
+
+(最大%d)
+%%%%
+(max %d damage)
+
+(最大%dダメージ)
+%%%%
+(%d-%d dam)
+
+(%d-%dダメージ)
+%%%%
+(if damage dealt)
+
+(ダメージを与えた場合)
+%%%%
+Reaches very far
+
+非常に遠くまで届く
+%%%%
+Reaches from afar
+
+離れた所から届く
+%%%%
+; reaches very far
+
+; 非常に遠くまで届く
+%%%%
+; reaches from afar
+
+; 離れた所から届く
+%%%%
+; cleaves very far
+
+; なぎ払い、非常に遠くまで届く
+%%%%
+; cleaves from afar
+
+; なぎ払い、離れた所から届く
+%%%%
+[mon attack]hit
+
+打撃
+%%%%
+[mon attack]bite
+
+噛みつき
+%%%%
+[mon attack]sting
+
+針
+%%%%
+[mon attack]spore
+
+胞子
+%%%%
+[mon attack]touch
+
+接触
+%%%%
+[mon attack]engulf
+
+包み込み
+%%%%
+[mon attack]claw
+
+爪
+%%%%
+[mon attack]peck
+
+つつき
+%%%%
+[mon attack]headbutt
+
+頭突き
+%%%%
+[mon attack]punch
+
+拳
+%%%%
+[mon attack]kick
+
+蹴り
+%%%%
+[mon attack]tentacle
+
+触手
+%%%%
+[mon attack]tail
+
+尾
+%%%%
+[mon attack]gore
+
+角突き
+%%%%
+[mon attack]constrict
+
+締めつけ
+%%%%
+[mon attack]trample
+
+踏みつけ
+%%%%
+[mon attack]trunk
+
+鼻
+%%%%
+[mon attack]snap closed
+
+噛み閉じ
+%%%%
+[mon attack]splash
+
+浴びせ
+%%%%
+[mon attack]pounce
+
+飛びかかり
+%%%%
+[mon attack]Shoot
+
+射撃
+%%%%
+%d (base %d)
+
+%d (基本 %d)
+%%%%
+[mon dmg]fire
+
+火炎
+%%%%
+[mon dmg]each
+
+(各)
+%%%%
+[mon bonus]Poison
+
+毒
+%%%%
++ %d per 4 attacks
+
++ 4回の攻撃につき%d
+%%%%
+[staff dam]fire
+
+火炎
+%%%%
+[staff dam]cold
+
+冷気
+%%%%
+[staff dam]elec
+
+電撃
+%%%%
+[staff dam]earth
+
+地
+%%%%
+[staff dam]drain
+
+吸収
+%%%%
+[staff dam]poison
+
+毒
+%%%%
+[staff dam]conj
+
+妖術
+%%%%
+Throw:
+
+投擲:
+%%%%
+Ensnare in a net
+
+網で捕らえる
+%%%%
+Poison and slowing
+
+毒と減速
+%%%%
+Blinding and confusion
+
+盲目と混乱
+%%%%
+Drive defenders into a frenzy
+
+相手を狂乱させる
+%%%%
+Blink the defender away
+
+相手を遠くへ瞬間移動させる
+%%%%
+Blink the defender repeatedly
+
+相手を繰り返し瞬間移動させる
+%%%%
+Attacks
+
+攻撃
+%%%%
+Attack
+
+攻撃
+%%%%
+Max Damage
+
+最大ダメージ
+%%%%
+Bonus
+
+追加効果
+%%%%
+After Damaging Hits
+
+ダメージを与えたときの効果
+%%%%
+To read a description, press the key listed above. (AdB) indicates damage (the sum of A B-sided dice), (x%) indicates the chance to defeat your Will, and (y) indicates the spell range
+
+説明を読むには、上に示したキーを押す。(AdB)はダメージ(B面ダイスA個の合計)、(x%)はあなたの意志力を打ち破る確率、(y)は呪文の射程を示す
+%%%%
+; shown in red if you are in range.
+
+(射程内にいる場合は赤で表示)。
+%%%%
+It has a %d%% chance to notice you each turn.
+
+毎ターン%d%%の確率であなたに気付く。
+%%%%
+and to hit with your %s: %d%%
+
+、%sでの命中率は%d%%
+%%%%
+your %s
+
+あなたの%s
+%%%%
+To hit with %s: about %d%%
+
+%sでの命中率は約%d%%
+%%%%
+%d%% to hit
+
+命中率%d%%
+%%%%
+(while you are blinded and from distance %d)
+
+(盲目状態で距離%dから)
+%%%%
+at this distance
+
+(この距離で)
+%%%%
+It has about %d%% to hit you.
+
+あなたに対する命中率は約%d%%。
+%%%%
+none (normally
+
+なし (通常は
+%%%%
+[bar]none
+
+なし
+%%%%
+It can walk on water.
+
+水の上を歩くことができる。
+%%%%
+It can travel through water.
+
+水中を移動できる。
+%%%%
+It can travel through lava.
+
+溶岩の中を移動できる。
+%%%%
+It is currently targeted by %s.
+
+現在、%sに狙われている。
+%%%%
+It is currently targeted by:
+
+現在、以下に狙われている:
+%%%%
+It is currently targeting %s.
+
+現在、%sを狙っている。
+%%%%
+Explosion damage: %dd%d
+
+爆発のダメージ: %dd%d
+%%%%
+[mon stat]Max HP
+
+最大HP
+%%%%
+[mon stat]Will
+
+意志力
+%%%%
+[mon stat]Threat
+
+脅威
+%%%%
+[mon stat]Class
+
+分類
+%%%%
+[mon stat]Size
+
+体格
+%%%%
+[mon stat]Int
+
+知能
+%%%%
+[mon stat]Regen
+
+再生
+%%%%
+[mon stat]None
+
+なし
+%%%%
+%d/turn
+
+%d/ターン
+%%%%
+[size]V. Small
+
+とても小さい
+%%%%
+[size]tiny
+
+極小
+%%%%
+[size]very small
+
+とても小さい
+%%%%
+[size]small
+
+小さい
+%%%%
+[size]medium
+
+中くらい
+%%%%
+[size]large
+
+大きい
+%%%%
+[size]giant
+
+巨大
+%%%%
+[holiness]Nonliv.
+
+非生物
+%%%%
+[holiness]holy
+
+神聖
+%%%%
+[holiness]natural
+
+生物
+%%%%
+[holiness]undead
+
+アンデッド
+%%%%
+[holiness]demonic
+
+悪魔
+%%%%
+[holiness]nonliving
+
+非生物
+%%%%
+[holiness]plant
+
+植物
+%%%%
+[threat]Minor
+
+些細
+%%%%
+[threat]Low
+
+低い
+%%%%
+[threat]High
+
+高い
+%%%%
+[threat]Lethal
+
+致命的
+%%%%
+[threat]Eggstreme
+
+極限
+%%%%
+[intelligence]Mindless
+
+無知性
+%%%%
+[intelligence]Animal
+
+動物並み
+%%%%
+[intelligence]Human
+
+人間並み
+%%%%
+You have %s%s.
+
+%s%s。
+%%%%
+(while incapacitated)
+
+(行動不能の間)
+%%%%
+(at present)
+
+(現在)
+%%%%
+[mon resist]electricity
+
+電撃
+%%%%
+[mon resist]poison
+
+毒
+%%%%
+[mon resist]fire
+
+火炎
+%%%%
+[mon resist]steam
+
+蒸気
+%%%%
+[mon resist]cold
+
+冷気
+%%%%
+[mon resist]acid and corrosion
+
+酸と腐食
+%%%%
+[mon resist]miasma
+
+瘴気
+%%%%
+[mon resist]negative energy
+
+負のエネルギー
+%%%%
+[mon resist]damnation
+
+地獄の業火
+%%%%
+[mon resist]torment
+
+苦痛
+%%%%
+[mon resist]blinding
+
+盲目化
+%%%%
+[mon resist]drowning
+
+溺水
+%%%%
+[mon resist]clouds of all kinds
+
+あらゆる種類の雲
+%%%%
+It is immune to %s.
+
+%sに対して完全な耐性を持つ。
+%%%%
+It is very resistant to %s.
+
+%sに対して強い耐性を持つ。
+%%%%
+It is resistant to %s.
+
+%sに対して耐性を持つ。
+%%%%
+It has an unusual item: %s.
+
+珍しいアイテムを持っている: %s。
+%%%%
+It is an unusual item.
+
+これは珍しいアイテムだ。
+%%%%
+It is susceptible to %s.
+
+%sに弱い。
+%%%%
+It is vulnerable to silver and hated by Zin.
+
+銀に弱く、ジンに憎まれている。
+%%%%
+It cannot move.
+
+移動できない。
+%%%%
+It is cold-blooded and may be slowed by cold attacks.
+
+変温動物であり、冷気による攻撃で減速することがある。
+%%%%
+It can see invisible.
+
+透明なものを見ることができる。
+%%%%
+It can burrow through diggable terrain.
+
+掘ることのできる地形を掘り進むことができる。
+%%%%
+It inflicts 1d5 acid damage when struck in melee.
+
+近接攻撃を受けると、相手に1d5の酸のダメージを与える。
+%%%%
+It is insubstantial and immune to ensnarement.
+
+実体がなく、捕縛されない。
+%%%%
+It is amorphous and immune to ensnarement.
+
+不定形で、捕縛されない。
+%%%%
+It covers ground more quickly when invisible.
+
+透明なときは移動が速くなる。
+%%%%
+It will release varied jellies when damaged or killed, with the number of jellies proportional to the amount of damage.
+
+ダメージを受けたり倒されたりすると、受けたダメージに比例した数の様々なゼリーを放出する。
+%%%%
+It will release all of its jellies when polymorphed.
+
+変異させられると、すべてのゼリーを放出する。
+%%%%
+Shooting star damage: %dd%d (x3)
+
+流れ星のダメージ: %dd%d (x3)
+%%%%
+It can fly.
+
+飛行できる。
+%%%%
+It cannot be affected by reciting Zin's laws.
+
+ジンの法の朗唱の影響を受けない。
+%%%%
+It is too strong to be affected by reciting Zin's laws.
+
+強すぎて、ジンの法の朗唱の影響を受けない。
+%%%%
+It can be affected by reciting Zin's laws.
+
+ジンの法の朗唱の影響を受ける。
+%%%%
+Projectile damage: %dd%d
+
+射出物のダメージ: %dd%d
+%%%%
+It can open doors.
+
+扉を開けることができる。
+%%%%
+Despite its appearance, it can open doors.
+
+見た目に反して、扉を開けることができる。
+%%%%
+It can crash through doors.
+
+扉を突き破ることができる。
+%%%%
+It can eat doors.
+
+扉を食べることができる。
+%%%%
+The apparition of %s.
+
+%sの亡霊。
+%%%%
+It looks just like you...spooky!
+
+あなたにそっくりだ……不気味だ！
+%%%%
+An illusion of %s.
+
+%sの幻影。
+%%%%
+It is quickly melting away.
+
+急速に溶けつつある。
+%%%%
+It is quickly crumbling away.
+
+急速に崩れつつある。
+%%%%
+It deals %s fire damage.
+
+%sの火炎ダメージを与える。
+%%%%
+It deals %s damage.
+
+%sのダメージを与える。
+%%%%
+If this monster is a "program bug", then it's recommended that you save your game and reload. Please report monsters who masquerade as program bugs or run around the dungeon without a proper description to the authorities.
+
+このモンスターが「プログラムのバグ」なら、ゲームをセーブしてロードし直すことを勧める。プログラムのバグを装ったり、まともな説明もなしにダンジョンをうろついたりしているモンスターは、当局に報告してほしい。
+%%%%
+It is quickly withering away.
+
+急速に枯れつつある。
+%%%%
+If struck, it will crumble away soon after.
+
+攻撃を受けると、その後すぐに崩れ去る。
+%%%%
+If struck, it will die soon after.
+
+攻撃を受けると、その後すぐに死ぬ。
+%%%%
+It will inflict a powerful necromantic curse on its foe when destroyed.
+
+倒されると、相手に強力な死霊術の呪いをかける。
+%%%%
+It will inflict a necromantic curse on its foe when destroyed.
+
+倒されると、相手に死霊術の呪いをかける。
+%%%%
+It is incapable of using stairs.
+
+階段を使うことができない。
+%%%%
+This monster has been temporarily summoned to this location.
+
+このモンスターは一時的にこの場所に召喚されている。
+%%%%
+This monster has been created by magic and is temporary.
+
+このモンスターは魔法で作り出された一時的な存在だ。
+%%%%
+If angered it will immediately vanish, yielding no experience or items.
+
+怒らせるとすぐに消え去り、経験値もアイテムも得られない。
+%%%%
+Killing it yields no experience or items.
+
+倒しても経験値もアイテムも得られない。
+%%%%
+Killing this monster yields no experience or items.
+
+このモンスターを倒しても、経験値もアイテムも得られない。
+%%%%
+If it is slain, it may be possible to recover its hide, which can be used as armour.
+
+倒せば、防具として使える皮を手に入れられるかもしれない。
+%%%%
+[<w>!</w>]: <w>Description</w>
+
+[<w>!</w>]: <w>説明</w>
+%%%%
+[<w>!</w>]: Description
+
+[<w>!</w>]: 説明
+%%%%
+|<w>Statuses</w>
+
+|<w>状態</w>
+%%%%
+|Statuses
+
+|状態
+%%%%
+|<w>Quote</w>
+
+|<w>引用</w>
+%%%%
+|Quote
+
+|引用
+%%%%
+[xl rank]weakling
+
+ひよっこ
+%%%%
+[xl rank]amateur
+
+素人
+%%%%
+[xl rank]novice
+
+新米
+%%%%
+[xl rank]journeyman
+
+一人前
+%%%%
+[xl rank]adept
+
+熟練
+%%%%
+[xl rank]veteran
+
+古参
+%%%%
+[xl rank]master
+
+達人
+%%%%
+[xl rank]legendary
+
+伝説的
+%%%%
+%s-ranked %s %s
+
+%sの%sの%s
+%%%%
+(worshipper of %s)
+
+、%sの信徒
+%%%%
+%s the %s, %s
+
+『%s』と呼ばれる%s(%s)
+%%%%
+[form table]Body Armour AC
+
+胴防具のAC
+%%%%
+[form table]Airstrike Dmg
+
+空襲のダメージ
+%%%%
+[form table]Min
+
+最小
+%%%%
+[form table]Max
+
+最大
+%%%%
+[form table]Cur
+
+現在
+%%%%
+[form table]Skill
+
+技能
+%%%%
+[form table]HP
+
+HP
+%%%%
+[form table]UC Base Dmg
+
+素手の基本ダメージ
+%%%%
+[form table]AC
+
+AC
+%%%%
+[form table]EV
+
+EV
+%%%%
+[form table]MP
+
+MP
+%%%%
+[form table]Slay
+
+殺傷
+%%%%
+[form table]Regen
+
+体力再生
+%%%%
+[form table]MP Regen
+
+魔力再生
+%%%%
+[form table]Ensnare Chance
+
+捕縛の確率
+%%%%
+[form table]Bite Dmg
+
+噛みつきのダメージ
+%%%%
+[form table]Devour Regen
+
+捕食による再生
+%%%%
+[form table]Blade Dmg
+
+刃のダメージ
+%%%%
+[form table]Parry SH
+
+受け流しのSH
+%%%%
+[form table]# of Bees
+
+蜂の数
+%%%%
+[form table]+Slay/Kill
+
+撃破ごとの殺傷増加
+%%%%
+[form table]Takedown Dmg
+
+組み伏せのダメージ
+%%%%
+[form table]Howl Power
+
+遠吠えの威力
+%%%%
+[form table]Spell Skill Boost
+
+呪文技能の増加
+%%%%
+[form table]Rust Breath Size
+
+錆の息の範囲
+%%%%
+[form table]Tendril targets
+
+触手の対象数
+%%%%
+[form table]Petrify chance
+
+石化の確率
+%%%%
+[form table]Bat Swarm Recharge
+
+蝙蝠の群れの再充填
+%%%%
+[form table]Daze Power
+
+眩惑の威力
+%%%%
+[form table]Blinkbolt Dmg
+
+ブリンクボルトのダメージ
+%%%%
+[form table]Breath Dmg
+
+ブレスのダメージ
+%%%%
+[form table]Contam Dmg
+
+汚染のダメージ
+%%%%
+[form table]Flare Dmg
+
+閃光のダメージ
+%%%%
+[form table]Frigid Wall Dmg
+
+凍てつく壁のダメージ
+%%%%
+[form table]Quill Dmg
+
+針毛のダメージ
+%%%%
+[form table]Watery Grave Dmg
+
+水の墓場のダメージ
+%%%%
+Class:
+
+分類:
+%%%%
+[holiness]bug
+
+バグ
+%%%%
+[form table]Str
+
+腕力
+%%%%
+[form table]Dex
+
+器用
+%%%%
+[form table]Melee dmg
+
+近接ダメージ
+%%%%
+[form table]Bite speed
+
+噛みつきの速さ
+%%%%
+[form table]Elec chance
+
+電撃の確率
+%%%%
+[form table]Aux chance
+
+補助攻撃の確率
+%%%%
+[form table]Will
+
+意志力
+%%%%
+[form table]Stealth
+
+隠密
+%%%%
+[form table]Reach
+
+間合い
+%%%%
+[form table]Barding
+
+馬鎧
+%%%%
+[form table]Yes
+
+可
+%%%%
+[form table]Claws
+
+鉤爪
+%%%%
+[form table]Melee damage
+
+近接ダメージ
+%%%%
+[form table]Anatomy
+
+身体構造
+%%%%
+[form table]Substance
+
+肉体
+%%%%
+[form table]Blood
+
+血液
+%%%%
+[form table]Bones
+
+骨
+%%%%
+[form table]Hands
+
+手
+%%%%
+Melds:
+
+融合:
+%%%%
+Mutations Suppressed:
+
+抑制される変異:
+%%%%
+This cloud is opaque; one tile will not block vision, but multiple will.
+
+この雲は不透明だ。1マスなら視界を遮らないが、複数重なると遮る。
+%%%%
+Clouds of this kind an adventurer makes will vanish quickly once outside their sight.
+
+冒険者が作り出したこの種類の雲は、視界の外に出るとすぐに消える。
+%%%%
+Clouds of this kind an adventurer makes will vanish almost instantly once outside their sight.
+
+冒険者が作り出したこの種類の雲は、視界の外に出るとほぼ即座に消える。
+%%%%

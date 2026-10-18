@@ -36,6 +36,8 @@ void destroy_shop_at(coord_def p);
 
 string shop_name(const shop_struct& shop);
 string shop_type_name(shop_type type);
+// 日本語の店主名(make_name() の代わり。god-abil.cc のゴザーグの店でも使える)
+const char* rand_store_names(unsigned int seed);
 
 bool shoptype_identifies_stock(shop_type type);
 

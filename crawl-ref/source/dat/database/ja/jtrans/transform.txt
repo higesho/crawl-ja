@@ -80,7 +80,7 @@ All Weapons and Armour
 %%%%
 [equip slot]Gizmo
 
-ガジェット
+ギズモ
 %%%%
 # 変身の説明(%s は「〜の姿を」)
 [form desc]You are %s

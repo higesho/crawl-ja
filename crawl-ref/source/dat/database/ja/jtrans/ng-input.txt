@@ -1,0 +1,19 @@
+# ng-input.cc: タイトル画面の挨拶と設定ファイルの読み込み状況
+%%%%
+# 1 つ目の %s はゲーム名(Dungeon Crawl Stone Soup)、2 つ目はバージョン
+Hello, welcome to %s %s!
+
+%s %s へようこそ！
+%%%%
+Options read from "%s".
+
+設定ファイル "%s" を読み込みました。
+%%%%
+Options file "%s" is not readable; using defaults.
+
+設定ファイル "%s" を読み込めませんでした。既定の設定を使います。
+%%%%
+Options file not found; using defaults.
+
+設定ファイルが見つかりませんでした。既定の設定を使います。
+%%%%

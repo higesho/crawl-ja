@@ -1,0 +1,332 @@
+# output.txt: output.cc(ステータス欄・概要画面・モンスター一覧)
+# ステータス欄の見出しは output.cc の _hud_caption() で英語と同じ表示幅に
+# 詰める(全角は半角 2 文字分)。訳の幅は英語の見出しの幅以下にする。
+#   Health:/Magic: 8, Eq: 4, Equip: 7, Noise: 7, XL: 4, Next: 6, Place: 7,
+#   Doom: 6, Contam: 8。EV:/SH:/Str:/Int:/Dex: は 5 まで(値を 1 桁右に
+#   ずらしてある)。Time:/Turn: と Gold: は幅に合わせて値の位置を変える。
+%%%%
+(Hit _)
+
+('_' を押してください)
+%%%%
+Health:
+
+体力:
+%%%%
+Magic:
+
+魔力:
+%%%%
+Gold:
+
+所持金:
+%%%%
+EV:
+
+回避:
+%%%%
+SH:
+
+盾:
+%%%%
+Str:
+
+腕力:
+%%%%
+Int:
+
+知力:
+%%%%
+Dex:
+
+器用:
+%%%%
+XL:
+
+Lv:
+%%%%
+Next:
+
+次Lv:
+%%%%
+Place:
+
+場所:
+%%%%
+Noise:
+
+騒音:
+%%%%
+Time:
+
+時間:
+%%%%
+Turn:
+
+ターン:
+%%%%
+Eq:
+
+装備
+%%%%
+Equip:
+
+装備:
+%%%%
+Doom:
+
+破滅:
+%%%%
+Contam:
+
+汚染:
+%%%%
+[hud]Silenced
+
+静寂
+%%%%
+# ステータス欄 2 行目「丘オーク トログの信徒 ******」
+[hud]of %s
+
+%sの信徒
+%%%%
+Your terminal window is too small; please resize to at least %d,%d
+
+端末のウィンドウが小さすぎます。%d,%d 以上の大きさにしてください。
+%%%%
+# モンスター一覧(mpr_monster_list)
+There were no monsters in sight!
+
+見える場所にはモンスターがいなかった！
+%%%%
+There are no monsters in sight!
+
+見える場所にはモンスターがいない！
+%%%%
+You could see %s.
+
+あなたは%sを目にしていた。
+%%%%
+You can see %s.
+
+あなたは%sを目にしている。
+%%%%
+# 概要画面(% キー)。見出しの幅は Health:/Magic:/Gold:/God:/Spells:/Lives: 8、
+# EV:/SH:/Str:/Int:/Dex: 6、[overview]XL: 8
+[overview](%s %s)
+
+(%sの%s)
+%%%%
+Turns: %d, Time:
+
+ターン: %d, 時間:
+%%%%
+[overview]XL:
+
+レベル:
+%%%%
+[overview]Next:
+
+次のレベルまで:
+%%%%
+God:
+
+信仰:
+%%%%
+Spells:
+
+呪文:
+%%%%
+%d/%d levels left
+
+残り記憶力 %d/%d
+%%%%
+Lives:
+
+残り命:
+%%%%
+Deaths:
+
+死亡数:
+%%%%
+# 耐性欄の見出し(幅 10 に詰める)
+[overview]rFire
+
+火炎耐性
+%%%%
+[overview]rCold
+
+冷気耐性
+%%%%
+[overview]rNeg
+
+衰弱耐性
+%%%%
+[overview]rPois
+
+毒素耐性
+%%%%
+[overview]rElec
+
+電撃耐性
+%%%%
+[overview]rCorr
+
+腐蝕阻止
+%%%%
+[overview]SInv
+
+霊視
+%%%%
+[overview]Will
+
+意志力
+%%%%
+[overview]Stlth
+
+隠密
+%%%%
+[overview]HPRegen
+
+体力再生
+%%%%
+[overview]MPRegen
+
+魔力再生
+%%%%
+%d.%02d/turn
+
+%d.%02d/ターン
+%%%%
+# 装備欄。%s は transform.txt の [equip slot]
+[overview]melded
+
+融合中
+%%%%
+<darkgrey>(%s unavailable)</darkgrey>
+
+<darkgrey>(%sは使用不可)</darkgrey>
+%%%%
+<darkgrey>(no %s)</darkgrey>
+
+<darkgrey>(%sなし)</darkgrey>
+%%%%
+<darkgrey>[%s occupied]</darkgrey>
+
+<darkgrey>[%sは使用中]</darkgrey>
+%%%%
+# 受動効果(% 画面の「%:」行)
+no passive effects
+
+特になし
+%%%%
+[passive]no teleportation
+
+転位不可
+%%%%
+[passive]no spellcasting
+
+呪文詠唱不可
+%%%%
+[passive]inaccuracy (-%d)
+
+命中低下 (-%d)
+%%%%
+[passive]random rage (%d%%)
+
+突発狂乱 (%d%%)
+%%%%
+[passive]corrode self (%d%%)
+
+自己腐食 (%d%%)
+%%%%
+[passive]slow self (%d%%)
+
+自己減速 (%d%%)
+%%%%
+[passive]harm (+%d%% outgoing, +%d%% incoming)
+
+痛撃 (与ダメージ+%d%%, 被ダメージ+%d%%)
+%%%%
+[passive]mayhem
+
+騒乱
+%%%%
+[passive]repel missiles
+
+飛び道具反発
+%%%%
+[passive]reflection
+
+反射
+%%%%
+[passive]acrobat
+
+軽業師
+%%%%
+[passive]clarity
+
+明晰
+%%%%
+[passive]resist mutation
+
+変異耐性
+%%%%
+[passive]guardian spirit
+
+守護霊
+%%%%
+[passive]rampage
+
+猛進
+%%%%
+[passive]roll
+
+転がり
+%%%%
+[passive]faith
+
+信仰
+%%%%
+[passive]wizardry (x%d)
+
+魔術 (x%d)
+%%%%
+[passive]archmagi
+
+大賢者
+%%%%
+[passive]channel magic (%d%%)
+
+魔力還元 (%d%%)
+%%%%
+[passive]infuse magic (%d %s)
+
+魔力注入 (%d %s)
+%%%%
+# 状態(「@:」行)。移動の速さ
+no status effects
+
+特になし
+%%%%
+[status]very quick
+
+非常に俊敏
+%%%%
+[status]quick
+
+俊敏
+%%%%
+[status]slow
+
+鈍足
+%%%%
+[status]very slow
+
+非常に鈍足
+%%%%
+# ルーン(%s は鉄、黒曜石…。data-items.txt の「〜のルーン」から「のルーン」を外したもの)
+<w>%s:</w> %d/%d runes: %s
+
+<w>%s:</w> ルーン %d/%d個: %s
+%%%%
