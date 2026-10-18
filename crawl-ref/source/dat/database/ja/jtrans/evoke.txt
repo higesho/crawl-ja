@@ -1,0 +1,189 @@
+%%%%
+You produce a hideous howling noise!
+
+あなたは忌まわしくも凄まじい騒音を吹き鳴らした！
+%%%%
+Nothing answers your call.
+
+あなたの呼びかけに応える者はいなかった。
+%%%%
+Zap which item?
+
+どのアイテムを振るいますか？
+%%%%
+You can't zap that!
+
+あなたはそれを振るうことができない！
+%%%%
+You open the lid...
+
+あなたは蓋を開いた……
+%%%%
+...but nothing happens.
+
+……しかし何事も起こらなかった。
+%%%%
+...and things crawl out!
+
+……すると何かが這い出てきた！
+%%%%
+You can't place a gateway to a ziggurat here.
+
+ここにはジグラットへの門を設置することはできない。
+%%%%
+Finish your current ziggurat first!
+
+今いるジグラットを脱出してからにしてください！
+%%%%
+You set the figurine down, and a mystic portal to a ziggurat forms.
+
+あなたが模型を下に置くと、ジグラットへの不思議なポータルが出現した。
+%%%%
+Aim the phial where?
+
+小瓶をどちらに向けますか？
+%%%%
+Aiming: <white>Phantom Mirror</white>
+
+照準: <white>幻影の鏡</white>
+%%%%
+You can't use the mirror on yourself.
+
+自分自身に鏡を使うことはできない。
+%%%%
+You can't see anything there to clone.
+
+分身を作り出す対象が見当たらない。
+%%%%
+The mirror can't reflect that.
+
+鏡はそれを映すことができない。
+%%%%
+You cannot evoke magical items.
+
+あなたは魔道具を発動することができない。
+%%%%
+This wand has no charges.
+
+このワンドには魔力が残っていない。
+%%%%
+The air is too still for clouds to form.
+
+大気の流れが静止しており、煙幕を形成することができない。
+%%%%
+You can't produce a sound!
+
+あなたは音を立てることができない！
+%%%%
+QUAD DAMAGE!
+
+ダメージが4倍になった！
+%%%%
+You conserve a charge of your wand.
+
+あなたはワンドの魔力を節約した。
+%%%%
+The now-empty wand crumbles to dust.
+
+空になったワンドは崩れて塵になった。
+%%%%
+%d skills
+
+%d個のスキル
+%%%%
+...and %s flies out!
+
+……すると%sが飛び出してきた！
+%%%%
+...and %s leaps out!
+
+……すると%sが跳び出してきた！
+%%%%
+You reach into the sack...
+
+あなたは袋の中に手を入れた……
+%%%%
+...but only cobwebs fall out.
+
+……しかし蜘蛛の巣しか出てこなかった。
+%%%%
+A mighty gale blasts forth from the card!
+
+カードから強烈な突風が吹き出した！
+%%%%
+A fierce wind blows from the card.
+
+カードから激しい風が吹き出した。
+%%%%
+You reflect %s with the mirror!
+
+あなたは鏡に%sを映し出した！
+%%%%
+You can't see anything, release a tremorstone anyway?
+
+何も見えません。それでも震石を放ちますか？
+%%%%
+The tremorstone explodes into fragments!
+
+震石が炸裂し、破片が飛び散った！
+%%%%
+You can't see anything. Try to condense clouds anyway?
+
+何も見えません。それでも雲を凝結させますか？
+%%%%
+Clouds condense from the air!
+
+大気から雲が凝結した！
+%%%%
+you are already filled with unstable energy.
+
+あなたは既に不安定なエネルギーで満たされている。
+%%%%
+Sorry, this item was removed!
+
+申し訳ありませんが、このアイテムは削除されました！
+%%%%
+You can't evoke that!
+
+あなたはそれを発動することができない！
+%%%%
+That item cannot be used by those who cannot gain allies!
+
+そのアイテムは仲間を得られない者には使えない！
+%%%%
+The %s is presently inert.
+
+%sは今のところ使用不能だ。
+%%%%
+You crush the flux bauble in your %s and feel its energy flooding your body.
+
+あなたは%sで流転の珠を握りつぶし、そのエネルギーが体中にあふれるのを感じた。
+%%%%
+The box is emptied!
+
+匣は空になった！
+%%%%
+The sack is emptied!
+
+袋は空になった！
+%%%%
+The lightning rod overheats!
+
+稲妻のロッドが過熱した！
+%%%%
+The mirror clouds!
+
+鏡が曇った！
+%%%%
+The tin is emptied!
+
+缶は空になった！
+%%%%
+The condenser dries out!
+
+凝結器は乾ききった！
+%%%%
+release a tremorstone
+
+震石を放つ
+%%%%

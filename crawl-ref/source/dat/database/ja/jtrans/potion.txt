@@ -1,0 +1,293 @@
+%%%%
+You have no ailments to cure.
+
+あなたは病気に冒されていない。
+%%%%
+You feel queasy.
+
+あなたは吐き気がした。
+%%%%
+That felt strangely inert.
+
+どうも効かないようだ。
+%%%%
+That seemed strangely inert.
+
+どうも効かないようだ。
+%%%%
+You feel much better.
+
+あなたはかなり体調が良くなった。
+%%%%
+You feel magically purged.
+
+あなたは魔力と切り離されたような気がした。
+%%%%
+You feel slightly less contaminated with magical energies.
+
+あなたは魔法のエネルギーによる汚染が軽くなったのを感じた。
+%%%%
+You feel briefly invigorated.
+
+あなたは一瞬活力が湧いた気がした。
+%%%%
+appreciates the memories.
+
+は経験を高く評価した。
+%%%%
+You feel more experienced!
+
+あなたはより経験を積んだように感じる！
+%%%%
+A flood of memories washes over you.
+
+記憶の洪水があなたを洗い流した。
+%%%%
+Your magic is already full.
+
+あなたの魔力は既にいっぱいだ。
+%%%%
+Magic courses through your body.
+
+あなたは魔力に満たされた。
+%%%%
+You feel slightly irritated.
+
+あなたは少しいらいらした。
+%%%%
+You feel protected.
+
+あなたは護りの力を感じた。
+%%%%
+You feel woody for a moment.
+
+あなたは一瞬樹木化したようだ。
+%%%%
+You feel extremely strange.
+
+あなたは極めて奇妙な気分になった。
+%%%%
+is healed!
+
+の傷が治った！
+%%%%
+You feel mightier all of a sudden.
+
+あなたは突然、さらに力強くなった。
+%%%%
+You feel very mighty all of a sudden.
+
+あなたは突然、非常に力強くなった。
+%%%%
+You feel more clever all of a sudden.
+
+あなたは突然、さらに賢くなった。
+%%%%
+You feel clever all of a sudden.
+
+あなたは突然賢くなった。
+%%%%
+You feel more invigorated.
+
+あなたはさらに活力が増したようだ。
+%%%%
+You feel invigorated.
+
+あなたは活力が湧いてきたようだ。
+%%%%
+You fade into invisibility!
+
+あなたは透明になっていった！
+%%%%
+You fade further into invisibility.
+
+あなたはさらに透明になっていった。
+%%%%
+You cannot mutate at present.
+
+あなたは今のところ突然変異できない。
+%%%%
+You cannot mutate.
+
+あなたは突然変異できない。
+%%%%
+Really become a tree while standing in a cloud of %s?
+
+本当に%sの中に立っている状態で樹木化しますか？
+%%%%
+Really drink that potion of mutation while resistant to mutation?
+
+突然変異への耐性を持っていますが、本当に突然変異の薬を飲みますか？
+%%%%
+Really drink that potion of mutation?
+
+本当に突然変異の薬を飲みますか？
+%%%%
+[glow]halo
+
+光輪
+%%%%
+[glow]magical contamination
+
+魔術的汚染
+%%%%
+[glow]corona
+
+照明の魔力
+%%%%
+[glow]liquid flames
+
+燃えたぎる液体
+%%%%
+[glow]!!!QUAD DAMAGE!!!
+
+四倍ダメージボーナス
+%%%%
+You cannot heal while in death's door.
+
+死のとば口に立っている間は回復することができない。
+%%%%
+You cannot be healed by potions.
+
+あなたは薬で回復することができない。
+%%%%
+You cannot currently be healed by potions.
+
+あなたは今は薬で回復することができない。
+%%%%
+Your stasis prevents you from being hasted.
+
+あなたの停滞した体質は加速を受け付けない。
+%%%%
+You are protected from being hasted by Cheibriados.
+
+あなたはケイブリアドスの加護により加速しない。
+%%%%
+Trog doesn't allow you to cast spells!
+
+トログは呪文の詠唱を許さない！
+%%%%
+Your robe already provides the effects of brilliance.
+
+あなたのローブが既に知性の薬と同じ効果をもたらしている。
+%%%%
+You feel more attractive to monsters.
+
+あなたはさらにモンスターを惹きつけるようになった。
+%%%%
+You feel attractive to monsters.
+
+あなたはモンスターを惹きつけるようになった。
+%%%%
+There is nothing to cancel.
+
+解除すべき効果が何もない。
+%%%%
+You become more transparent, but the glow from %s prevents you from becoming completely invisible.
+
+あなたはさらに透明さを増したが、%sの輝きのせいで完全には透明になれない。
+%%%%
+You become transparent, but the glow from %s prevents you from becoming completely invisible.
+
+あなたは透明さを増したが、%sの輝きのせいで完全には透明になれない。
+%%%%
+[glow]form
+
+変身した体
+%%%%
+%s Use anyway?
+
+%s それでも使いますか？
+%%%%
+You have no magic to restore.
+
+あなたには回復すべき魔力がない。
+%%%%
+Magic washes over you without effect.
+
+魔力があなたを包んだが、何の効果もなかった。
+%%%%
+%s enhances the restoration.
+
+%sが回復の効果を高めた。
+%%%%
+You savour every drop.
+
+あなたは一滴残らず味わった。
+%%%%
+You're too dead to put down roots!
+
+あなたは死にすぎていて根を下ろせない！
+%%%%
+cleanses your potion of mutation!
+
+はあなたの突然変異の薬を清めた！
+%%%%
+Zin will disapprove.
+
+ジンはそれを快く思わないだろう。
+%%%%
+You feel tipsy.
+
+あなたはほろ酔い気分になった。
+%%%%
+Your fungus emits %s spores!
+
+あなたの体のキノコが%s胞子を放出した！
+%%%%
+[spore]curing
+
+治癒の
+%%%%
+[spore]healing
+
+回復の
+%%%%
+[spore]quickening
+
+加速の
+%%%%
+[spore]strenghtening
+
+増強の
+%%%%
+[spore]amplifying
+
+増幅の
+%%%%
+[spore]enlightening
+
+啓蒙の
+%%%%
+[spore]invisible
+
+透明化の
+%%%%
+[spore]magical
+
+魔力の
+%%%%
+[spore]infuriating
+
+激昂の
+%%%%
+[spore]bolstering
+
+抵抗の
+%%%%
+It was %s.
+
+それは%sだった。
+%%%%
+You extract magical energy from the potion.
+
+あなたは薬から魔力を抽出した。
+%%%%
+magic is enhanced!
+
+魔力が高まった！
+%%%%
+is enlightened!
+
+は啓蒙された！
+%%%%

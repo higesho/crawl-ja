@@ -1,0 +1,799 @@
+%%%%
+################################################################
+#   monster.cc
+#   simple_monster_message() に渡すもの(先頭が空白)は名前のあとに
+#   つながるので、訳は助詞から始める。
+################################################################
+%%%%
+wields %s.
+
+は%sを手に持った。
+%%%%
+It bursts into flame!
+
+それは吹きあがる炎に包まれた！
+%%%%
+It is covered in frost.
+
+それは霜に覆われた。
+%%%%
+It glows with a cold blue light!
+
+それは冷たい蒼色に輝いた！
+%%%%
+It softly glows with a divine radiance!
+
+それは神聖な光に柔らかく輝いた！
+%%%%
+It glows horrifically with a foul blackness!
+
+それはおぞましい漆黒の光を放った！
+%%%%
+You hear the crackle of electricity.
+
+あなたは電気の爆ぜる音を耳にした。
+%%%%
+It begins to drip with poison!
+
+それは毒を滴らせはじめた！
+%%%%
+You sense an unholy aura.
+
+あなたは邪悪な霊気を感じ取った。
+%%%%
+Its appearance distorts for a moment.
+
+その武器の形状が一瞬歪んだように見えた。
+%%%%
+It is briefly surrounded by a scintillating aura of random colours.
+
+それはしばらくの間様々な色がきらめくオーラに包まれた。
+%%%%
+# %s: 「オークの」(名前の所有格) / 手の名前
+%s %s briefly pass through it before it manages to get a firm grip on it.
+
+%s%sは一瞬それをすり抜けたが、やがてしっかりと握りしめた。
+%%%%
+It is briefly surrounded by shifting shadows.
+
+それはしばらくの間ちらつく影に覆われた。
+%%%%
+It begins to drip corrosive slime!
+
+それは腐食性の粘液を滴らせはじめた！
+%%%%
+wears %s.
+
+は%sを装備した。
+%%%%
+puts on %s.
+
+は%sを身につけた。
+%%%%
+unwields %s.
+
+は%sを手放した。
+%%%%
+It stops flaming.
+
+その武器は燃えるのをやめた。
+%%%%
+It stops glowing.
+
+その武器の輝きが消えた。
+%%%%
+It stops crackling.
+
+その武器は爆ぜるのをやめた。
+%%%%
+It stops dripping with poison.
+
+その武器は毒を滴らせるのをやめた。
+%%%%
+takes off %s.
+
+は%sを外した。
+%%%%
+%s picks up %s.
+
+%sは%sを拾い上げた。
+%%%%
+some gold
+
+金貨
+%%%%
+%s drops %s.
+
+%sは%sを足下に落とした。
+%%%%
+becomes momentarily stuck in the liquid earth.
+
+は液状化した地面に一瞬足をとられた。
+%%%%
+becomes momentarily stuck in the toxic bog.
+
+は毒の沼に一瞬足をとられた。
+%%%%
+splashes around in the water.
+
+はあたりに水をはねかけた。
+%%%%
+You hear a splashing noise.
+
+あなたは水のはねる音を耳にした。
+%%%%
+shakes off its lethargy.
+
+は無気力感を振りはらった。
+%%%%
+flies into a frenzy!
+
+は狂乱した！
+%%%%
+goes berserk!
+
+はバーサークした！
+%%%%
+# %s: 名前の所有格(「オークの」)
+prevents %s banishment from the Arena!
+
+は闘技場から%s追放を妨げた！
+%%%%
+wobbles for a moment.
+
+は一瞬よろめいた。
+%%%%
+wobbles defiantly for a moment.
+
+は一瞬よろめいたが、持ちこたえた。
+%%%%
+is devoured by a tear in reality.
+
+は次元の裂け目に飲み込まれた。
+%%%%
+%s is drained!
+
+%sは衰弱した！
+%%%%
+# %s: 腐蝕させたもの([corrode]...) / モンスター名
+%s corrodes %s!
+
+%sは%sを腐蝕させた！
+%%%%
+%s seems to be corroded for longer.
+
+%sの腐蝕はさらに長引きそうだ。
+%%%%
+# 2 つ目の %s は攻撃の強さを表す句読点(「。」「！」など)
+%s is splashed with acid%s
+
+%sは酸を浴びた%s
+%%%%
+is warded from harm.
+
+は危害から守られた。
+%%%%
+%s begins to crumble.
+
+%sは崩れはじめた。
+%%%%
+%s begins to collapse.
+
+%sは崩壊しはじめた。
+%%%%
+%s begins to die.
+
+%sは死にかけている。
+%%%%
+turns to stone!
+
+は石化した！
+%%%%
+stops moving altogether!
+
+は完全に動きを止めた！
+%%%%
+is overwhelmed by frustration!
+
+は苛立ちに打ちのめされた！
+%%%%
+%s looks sick.
+
+%sは具合が悪そうだ。
+%%%%
+twists and deforms.
+
+の体はねじくれて奇形になった。
+%%%%
+Doom befalls %s.
+
+%sに破滅が訪れた。
+%%%%
+flops around on dry land!
+
+は乾いた地面をじたばたとはね回った！
+%%%%
+%s dives back into the %s!
+
+%sは飛び跳ねて%sに戻った！
+%%%%
+The bloodstain on %s disappears!
+
+%sの血痕は消え去った！
+%%%%
+shakes off the sticky flame as it moves.
+
+は動いて焼夷の炎を振り払った。
+%%%%
+is sucked into a shaft!
+
+は縦穴に吸い込まれた！
+%%%%
+falls through a shaft!
+
+は縦穴に落ちていった！
+%%%%
+looks weaker.
+
+は弱くなったようだ。
+%%%%
+looks even weaker.
+
+はさらに弱くなったようだ。
+%%%%
+# %s: 名前の所有格(「オークの」)
+%s spells grow weaker.
+
+%s呪文が弱まった。
+%%%%
+%s spells grow weaker yet longer.
+
+%s呪文はさらに長く弱まることになった。
+%%%%
+%s willpower is stripped away!
+
+%s意志力は剥ぎ取られた！
+%%%%
+%s magic leaks into the air.
+
+%s魔力が空中に漏れ出していく。
+%%%%
+%s looks even more glass-like.
+
+%sはますますガラスのようになった。
+%%%%
+%s becomes as fragile as glass!
+
+%sはガラスのように脆くなった！
+%%%%
+# %s: 流れ込むもの / 名前の所有格 / 「肺」「気道」
+%s floods into %s %s!
+
+%sが%s%sに流れ込んだ！
+%%%%
+is staggered.
+
+はよろめいた。
+%%%%
+Your spectral weapon shares its damage with you!
+
+あなたは幽体の武器とダメージを共有した！
+%%%%
+shares its spectral weapon's damage!
+
+は幽体の武器とダメージを共有した！
+%%%%
+Flame seeps out of %s.
+
+%sから炎が漏れ出した。
+%%%%
+# 腐蝕させたもの(%corrode の対象)。%s: 名前の所有格
+%s corrosive artefact
+
+%s腐蝕のアーティファクト
+%%%%
+As its mount dies, %s plunges down into lava and is incinerated!
+
+乗騎が死に、%sは溶岩に落ちて燃え尽きた！
+%%%%
+As its mount dies, %s plunges down into deep water and drowns!
+
+乗騎が死に、%sは深い水に落ちて溺れた！
+%%%%
+%s falls from its now dead mount.
+
+%sは死んだ乗騎から落ちた。
+%%%%
+%s roars in fury and transforms into a fierce dragon!
+
+%sは激怒の咆哮を上げ、恐ろしいドラゴンへと姿を変えた！
+%%%%
+# simple_monster_message() の所有格つき(「〜の」のあと)
+blaze of memory is extinguished!
+
+記憶の炎が消えた！
+%%%%
+%s steals %d gold!
+
+%sは金貨を%d枚盗み取った！
+%%%%
+# ノート
+%s stole %d gold
+
+%sが金貨を%d枚盗んだ
+%%%%
+You now have %d gold.
+
+あなたの所持金は%d枚になった。
+%%%%
+%s steals some of %s (%d)!
+
+%sは%sのうち%d個を盗み取った！
+%%%%
+%s steals %s!
+
+%sは%sを盗み取った！
+%%%%
+# ノート
+%s stole %s
+
+%sが%sを盗んだ
+%%%%
+################################################################
+#   見えないモンスター
+################################################################
+%%%%
+[mon name]something
+
+何か
+%%%%
+################################################################
+#   体液(blood_name)
+################################################################
+%%%%
+[blood]blood
+
+血
+%%%%
+[blood]ichor
+
+霊液
+%%%%
+[blood]sap
+
+樹液
+%%%%
+[blood]haemolymph
+
+体液
+%%%%
+[blood]vitreous fluid
+
+硝子体液
+%%%%
+[blood]vital fluids
+
+体液
+%%%%
+################################################################
+#   腐蝕させたもの(monster::corrode() の corrosion_msg)
+################################################################
+%%%%
+[corrode]the acid
+
+酸
+%%%%
+[corrode]the rust
+
+錆
+%%%%
+[corrode]a flying bit
+
+飛び散った破片
+%%%%
+[corrode]Your corrupting presence
+
+あなたの腐敗の存在
+%%%%
+[corrode]the entropic weave
+
+エントロピーの織り布
+%%%%
+################################################################
+#   流れ込むもの(monster::floodify() の substance)
+################################################################
+%%%%
+[substance]water
+
+水
+%%%%
+[substance]mud
+
+泥
+%%%%
+################################################################
+#   手足などの名前(monster::hand_name() など、
+#   random_body_part_name())。英語の複数形もキーにする。
+################################################################
+%%%%
+[body part]hand
+
+手
+%%%%
+[body part]hands
+
+両手
+%%%%
+[body part]claw
+
+爪
+%%%%
+[body part]claws
+
+爪
+%%%%
+[body part]pincer
+
+鋏
+%%%%
+[body part]pincers
+
+両の鋏
+%%%%
+[body part]wing
+
+翼
+%%%%
+[body part]wings
+
+両翼
+%%%%
+[body part]antenna
+
+触角
+%%%%
+[body part]antennae
+
+触角
+%%%%
+[body part]eye-stalk
+
+眼柄
+%%%%
+[body part]eye-stalks
+
+眼柄
+%%%%
+[body part]leaf
+
+葉
+%%%%
+[body part]leaves
+
+葉
+%%%%
+[body part]tentacle
+
+触手
+%%%%
+[body part]tentacles
+
+触手
+%%%%
+[body part]stratum
+
+層
+%%%%
+[body part]strata
+
+層
+%%%%
+[body part]body
+
+体
+%%%%
+[body part]rhizome
+
+地下茎
+%%%%
+[body part]rhizomes
+
+地下茎
+%%%%
+[body part]pupil
+
+瞳
+%%%%
+[body part]pupils
+
+瞳
+%%%%
+[body part]leg
+
+脚
+%%%%
+[body part]legs
+
+脚
+%%%%
+[body part]hoof
+
+蹄
+%%%%
+[body part]hooves
+
+蹄
+%%%%
+[body part]tail
+
+尾
+%%%%
+[body part]paw
+
+足
+%%%%
+[body part]paws
+
+両足
+%%%%
+[body part]talon
+
+鉤爪
+%%%%
+[body part]talons
+
+鉤爪
+%%%%
+[body part]trotter
+
+蹄
+%%%%
+[body part]trotters
+
+蹄
+%%%%
+[body part]root
+
+根
+%%%%
+[body part]roots
+
+根
+%%%%
+[body part]stem
+
+茎
+%%%%
+[body part]pseudopod
+
+仮足
+%%%%
+[body part]pseudopods
+
+仮足
+%%%%
+[body part]underside
+
+腹
+%%%%
+[body part]foot
+
+足
+%%%%
+[body part]feet
+
+両足
+%%%%
+[body part]front leg
+
+前脚
+%%%%
+[body part]front legs
+
+前脚
+%%%%
+[body part]front hoof
+
+前足の蹄
+%%%%
+[body part]front hooves
+
+前足の蹄
+%%%%
+[body part]front paw
+
+前足
+%%%%
+[body part]front paws
+
+両前足
+%%%%
+[body part]front talon
+
+前足の鉤爪
+%%%%
+[body part]front talons
+
+前足の鉤爪
+%%%%
+[body part]front trotter
+
+前足の蹄
+%%%%
+[body part]front trotters
+
+前足の蹄
+%%%%
+[body part]front claw
+
+前足の爪
+%%%%
+[body part]front claws
+
+前足の爪
+%%%%
+[body part]front foot
+
+前足
+%%%%
+[body part]front feet
+
+両前足
+%%%%
+[body part]arm
+
+腕
+%%%%
+[body part]arms
+
+両腕
+%%%%
+[body part]scaled arm
+
+鱗に覆われた腕
+%%%%
+[body part]scaled arms
+
+鱗に覆われた両腕
+%%%%
+[body part]feathered arm
+
+羽毛に覆われた腕
+%%%%
+[body part]feathered arms
+
+羽毛に覆われた両腕
+%%%%
+[body part]bandage-wrapped arm
+
+包帯を巻いた腕
+%%%%
+[body part]bandage-wrapped arms
+
+包帯を巻いた両腕
+%%%%
+[body part]bony arm
+
+骨ばった腕
+%%%%
+[body part]bony arms
+
+骨ばった両腕
+%%%%
+[body part]lungs
+
+肺
+%%%%
+[body part]airways
+
+気道
+%%%%
+# 以下は random_body_part_name()(プレイヤーの体の部位)
+[body part]soul
+
+魂
+%%%%
+[body part]sinews
+
+筋
+%%%%
+[body part]bones
+
+骨
+%%%%
+[body part]head
+
+頭
+%%%%
+[body part]ears
+
+耳
+%%%%
+[body part]eye
+
+目
+%%%%
+[body part]eyes
+
+両目
+%%%%
+[body part]mouth
+
+口
+%%%%
+[body part]hair
+
+髪
+%%%%
+[body part]stone
+
+石の体
+%%%%
+[body part]skin
+
+肌
+%%%%
+[body part]scales
+
+鱗
+%%%%
+[body part]feathers
+
+羽毛
+%%%%
+[body part]fur
+
+毛皮
+%%%%
+[body part]bandages
+
+包帯
+%%%%
+[body part]ectoplasm
+
+心霊体
+%%%%
+[body part]flesh
+
+肉体
+%%%%
+[body part]fossilised flesh
+
+化石化した肉体
+%%%%
+[body part]icy fur
+
+氷の毛皮
+%%%%
+[body part]jelly
+
+ゼリー状の体
+%%%%
+[body part]parchment
+
+羊皮紙
+%%%%
+[body part]shadow
+
+影
+%%%%
+[body part]shell
+
+殻
+%%%%
+[body part]carapace
+
+甲殻
+%%%%
+[body part]vapour
+
+蒸気
+%%%%
+[body part]wood
+
+木の体
+%%%%
+[body part]air
+
+空気
+%%%%

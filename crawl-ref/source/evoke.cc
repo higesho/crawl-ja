@@ -5,6 +5,7 @@
 
 #include "AppHdr.h"
 
+#include "database.h"
 #include "evoke.h"
 
 #include <algorithm>
@@ -85,7 +86,7 @@ static bool _evoke_horn_of_geryon()
 
     bool created = false;
 
-    mprf(MSGCH_SOUND, "You produce a hideous howling noise!");
+    mprf(MSGCH_SOUND, jtransc("You produce a hideous howling noise!"));
     noisy(15, you.pos()); // same as hell effect noise
     did_god_conduct(DID_EVIL, 3);
     int num = 1;
@@ -111,7 +112,7 @@ static bool _evoke_horn_of_geryon()
             created = true;
     }
     if (!created)
-        mpr("Nothing answers your call.");
+        mpr(jtrans("Nothing answers your call."));
     return true;
 }
 
@@ -174,7 +175,7 @@ void zap_wand(int slot, dist *_target)
     {
         // TODO: move to UseItemMenu? This code path is currently unbound and
         // it's unclear to me if anyone ever uses it
-        item_slot = prompt_invent_item("Zap which item?",
+        item_slot = prompt_invent_item(jtransc("Zap which item?"),
                                        menu_type::invlist,
                                        OBJ_WANDS,
                                        OPER_ZAP);
@@ -186,7 +187,7 @@ void zap_wand(int slot, dist *_target)
     item_def& wand = you.inv[item_slot];
     if (wand.base_type != OBJ_WANDS)
     {
-        mpr("You can't zap that!");
+        mpr(jtrans("You can't zap that!"));
         return;
     }
 
@@ -229,7 +230,7 @@ void zap_wand(int slot, dist *_target)
         || you.unrand_equipped(UNRAND_GADGETEER))
         && x_chance_in_y(3, 10))
     {
-        mpr("You conserve a charge of your wand.");
+        mpr(jtrans("You conserve a charge of your wand."));
     }
     else
         wand.charges--;
@@ -238,7 +239,7 @@ void zap_wand(int slot, dist *_target)
     {
         ASSERT(in_inventory(wand));
 
-        mpr("The now-empty wand crumbles to dust.");
+        mpr(jtrans("The now-empty wand crumbles to dust."));
         dec_inv_item_quantity(wand.link, 1);
     }
 
@@ -256,7 +257,7 @@ string manual_skill_names(bool short_text)
             skills.insert(sk);
 
     if (short_text && skills.size() > 1)
-        return make_stringf("%d skills", static_cast<int>(skills.size()));
+        return make_stringf(jtransc("%d skills"), static_cast<int>(skills.size()));
     else
         return skill_names(skills);
 }
@@ -268,7 +269,7 @@ static bool _box_of_beasts()
     if (!player_summon_check(MONS_MUTANT_BEAST))
         return false;
 
-    mpr("You open the lid...");
+    mpr(jtrans("You open the lid..."));
 
     // two rolls to reduce std deviation - +-6 so can get < max even at 27 sk
     int rnd_factor = random2(7);
@@ -288,12 +289,13 @@ static bool _box_of_beasts()
     if (!mons)
     {
         // Failed to create monster for some reason
-        mpr("...but nothing happens.");
+        mpr(jtrans("...but nothing happens."));
         return true;
     }
 
-    mprf("...and %s %s out!",
-         mons->name(DESC_A).c_str(), mons->airborne() ? "flies" : "leaps");
+    mprf(mons->airborne() ? jtransc("...and %s flies out!")
+                          : jtransc("...and %s leaps out!"),
+         mons->name(DESC_A).c_str());
     did_god_conduct(DID_CHAOS, random_range(5,10));
 
     return true;
@@ -392,21 +394,21 @@ static bool _sack_of_spiders()
     if (!player_summon_check(MONS_REDBACK))
         return false;
 
-    mpr("You reach into the sack...");
+    mpr(jtrans("You reach into the sack..."));
 
     const bool made_mons = _spill_out_spiders();
     if (made_mons)
-        mpr("...and things crawl out!");
+        mpr(jtrans("...and things crawl out!"));
 
     const bool webbed = _place_webs();
     if (!made_mons && !webbed)
     {
-        mpr("...but nothing happens.");
+        mpr(jtrans("...but nothing happens."));
         return true;
     }
 
     if (!made_mons)
-        mpr("...but only cobwebs fall out.");
+        mpr(jtrans("...but only cobwebs fall out."));
     return true;
 }
 
@@ -417,7 +419,7 @@ static bool _make_zig(item_def &zig)
         || player_in_branch(BRANCH_ARENA)
         || is_temp_terrain(you.pos()))
     {
-        mpr("You can't place a gateway to a ziggurat here.");
+        mpr(jtrans("You can't place a gateway to a ziggurat here."));
         return false;
     }
     for (int lev = 1; lev <= brdepth[BRANCH_ZIGGURAT]; lev++)
@@ -425,7 +427,7 @@ static bool _make_zig(item_def &zig)
         if (is_level_on_stack(level_id(BRANCH_ZIGGURAT, lev))
             || you.where_are_you == BRANCH_ZIGGURAT)
         {
-            mpr("Finish your current ziggurat first!");
+            mpr(jtrans("Finish your current ziggurat first!"));
             return false;
         }
     }
@@ -433,7 +435,7 @@ static bool _make_zig(item_def &zig)
     ASSERT(in_inventory(zig));
     dec_inv_item_quantity(zig.link, 1);
     dungeon_terrain_changed(you.pos(), DNGN_ENTER_ZIGGURAT);
-    mpr("You set the figurine down, and a mystic portal to a ziggurat forms.");
+    mpr(jtrans("You set the figurine down, and a mystic portal to a ziggurat forms."));
     return true;
 }
 
@@ -501,9 +503,9 @@ void wind_blast(actor* agent, int pow, coord_def target)
     {
         // Nemelex card only.
         if (pow > 120)
-            mpr("A mighty gale blasts forth from the card!");
+            mpr(jtrans("A mighty gale blasts forth from the card!"));
         else
-            mpr("A fierce wind blows from the card.");
+            mpr(jtrans("A fierce wind blows from the card."));
     }
 
     noisy(8, agent->pos());
@@ -604,7 +606,7 @@ static bool _phial_of_floods(dist *target)
     // TODO: this needs a custom targeter
     direction_chooser_args args;
     args.mode = TARG_HOSTILE;
-    args.top_prompt = "Aim the phial where?";
+    args.top_prompt = jtrans("Aim the phial where?");
 
     unique_ptr<targeter> hitfunc = find_spell_targeter(SPELL_PRIMAL_WAVE,
             power, beam.range);
@@ -640,7 +642,7 @@ static spret _phantom_mirror(dist *target)
     args.restricts = DIR_TARGET;
     args.needs_path = false;
     args.self = confirm_prompt_type::cancel;
-    args.top_prompt = "Aiming: <white>Phantom Mirror</white>";
+    args.top_prompt = jtrans("Aiming: <white>Phantom Mirror</white>");
     args.hitfunc = &tgt;
     if (!spell_direction(*target, beam, &args))
         return spret::abort;
@@ -648,9 +650,9 @@ static spret _phantom_mirror(dist *target)
     if (!victim || !you.can_see(*victim))
     {
         if (beam.target == you.pos())
-            mpr("You can't use the mirror on yourself.");
+            mpr(jtrans("You can't use the mirror on yourself."));
         else
-            mpr("You can't see anything there to clone.");
+            mpr(jtrans("You can't see anything there to clone."));
         return spret::abort;
     }
 
@@ -659,7 +661,7 @@ static spret _phantom_mirror(dist *target)
     if (!actor_is_illusion_cloneable(victim)
         && !victim->has_ench(ENCH_PHANTOM_MIRROR))
     {
-        mpr("The mirror can't reflect that.");
+        mpr(jtrans("The mirror can't reflect that."));
         return spret::abort;
     }
 
@@ -705,7 +707,7 @@ static spret _phantom_mirror(dist *target)
     // mirrored copy will not properly count as summoned for some purposes.
     mon->flags &= ~(MF_HARD_RESET | MF_NO_REWARD);
 
-    mprf("You reflect %s with the mirror!",
+    mprf(jtransc("You reflect %s with the mirror!"),
          victim->name(DESC_THE).c_str());
 
     return spret::success;
@@ -843,9 +845,9 @@ static spret _tremorstone()
         return act && _valid_tremorstone_target(*act->as_monster());
     };
     if ((!see_target
-        && !yesno("You can't see anything, release a tremorstone anyway?",
+        && !yesno(jtransc("You can't see anything, release a tremorstone anyway?"),
                  true, 'n'))
-        || stop_attack_prompt(hitfunc, "release a tremorstone", vulnerable))
+        || stop_attack_prompt(hitfunc, jtransc("release a tremorstone"), vulnerable))
     {
         return spret::abort;
     }
@@ -860,7 +862,7 @@ static spret _tremorstone()
     beam.ex_size = 2;
     beam.target = center;
 
-    mpr("The tremorstone explodes into fragments!");
+    mpr(jtrans("The tremorstone explodes into fragments!"));
 
     const int num_explosions = tremorstone_count(power);
     for (int i = 0; i < num_explosions; i++)
@@ -914,7 +916,7 @@ static spret _condenser()
     }
 
     if (!see_targets
-        && !yesno("You can't see anything. Try to condense clouds anyway?",
+        && !yesno(jtransc("You can't see anything. Try to condense clouds anyway?"),
                   true, 'n'))
     {
         canned_msg(MSG_OK);
@@ -952,7 +954,7 @@ static spret _condenser()
     }
 
     if (did_something)
-        mpr("Clouds condense from the air!");
+        mpr(jtrans("Clouds condense from the air!"));
 
     return spret::success;
 }
@@ -998,10 +1000,10 @@ string cannot_evoke_item_reason(const item_def *item, bool temp, bool ident)
 {
     // id is not at issue here
     if (temp && you.berserk())
-        return "You are too berserk!";
+        return jtrans("You are too berserk!");
 
     if (temp && you.confused())
-        return "You are too confused!";
+        return jtrans("You are too confused!");
 
     // all generic checks passed
     if (!item)
@@ -1019,7 +1021,7 @@ string cannot_evoke_item_reason(const item_def *item, bool temp, bool ident)
     if (item->is_type(OBJ_BAUBLES, BAUBLE_FLUX))
     {
         if (you.form == transformation::flux && temp)
-            return "you are already filled with unstable energy.";
+            return jtrans("you are already filled with unstable energy.");
 
         const string form_unreason = cant_transform_reason(transformation::flux, false, temp);
         if (!form_unreason.empty())
@@ -1028,28 +1030,28 @@ string cannot_evoke_item_reason(const item_def *item, bool temp, bool ident)
     }
 
     if (you.get_mutation_level(MUT_NO_ARTIFICE))
-        return "You cannot evoke magical items.";
+        return jtrans("You cannot evoke magical items.");
 
     // is this really necessary?
     if (item_type_removed(item->base_type, item->sub_type))
-        return "Sorry, this item was removed!";
+        return jtrans("Sorry, this item was removed!");
     if (item->base_type != OBJ_WANDS && item->base_type != OBJ_MISCELLANY)
-        return "You can't evoke that!";
+        return jtrans("You can't evoke that!");
 
 #if TAG_MAJOR_VERSION == 34
     if (is_known_empty_wand(*item))
-        return "This wand has no charges.";
+        return jtrans("This wand has no charges.");
 #endif
 
     if (_evoke_ally_only(*item, ident) && you.allies_forbidden())
-        return "That item cannot be used by those who cannot gain allies!";
+        return jtrans("That item cannot be used by those who cannot gain allies!");
 
     if (temp
         && item->base_type == OBJ_MISCELLANY
         && item->sub_type == MISC_CONDENSER_VANE
         && (env.level_state & LSTATE_STILL_WINDS))
     {
-        return "The air is too still for clouds to form.";
+        return jtrans("The air is too still for clouds to form.");
     }
 
     if (temp
@@ -1057,14 +1059,14 @@ string cannot_evoke_item_reason(const item_def *item, bool temp, bool ident)
         && item->sub_type == MISC_HORN_OF_GERYON
         && you.is_silenced())
     {
-        return "You can't produce a sound!";
+        return jtrans("You can't produce a sound!");
     }
 
     if (temp && is_xp_evoker(*item) && evoker_charges(item->sub_type) <= 0)
     {
         // DESC_THE prints "The tin of tremorstones (inert) is presently inert."
-        return make_stringf("The %s is presently inert.",
-                                            item->name(DESC_DBNAME).c_str());
+        return make_stringf(jtransc("The %s is presently inert."),
+                            jtransc(item->name(DESC_DBNAME)));
     }
 
     return "";
@@ -1102,8 +1104,8 @@ bool evoke_item(item_def& item, dist *preselect)
         if (!check_transform_into(transformation::flux, false))
             return false;
 
-        mprf("You crush the flux bauble in your %s and feel its energy "
-            "flooding your body.", you.hand_name(false).c_str());
+        mprf(jtransc("You crush the flux bauble in your %s and feel its energy "
+            "flooding your body."), jtransc(you.hand_name(false)));
         ASSERT(in_inventory(item));
         dec_inv_item_quantity(item.link, 1);
         transform(0, transformation::flux, true);
@@ -1158,7 +1160,7 @@ bool evoke_item(item_def& item, dist *preselect)
                 return false;
             expend_xp_evoker(item.sub_type);
             if (!evoker_charges(item.sub_type))
-                mpr("The box is emptied!");
+                mpr(jtrans("The box is emptied!"));
             practise_evoking(1);
             break;
 
@@ -1167,7 +1169,7 @@ bool evoke_item(item_def& item, dist *preselect)
                 return false;
             expend_xp_evoker(item.sub_type);
             if (!evoker_charges(item.sub_type))
-                mpr("The sack is emptied!");
+                mpr(jtrans("The sack is emptied!"));
             practise_evoking(1);
             break;
 
@@ -1177,14 +1179,14 @@ bool evoke_item(item_def& item, dist *preselect)
                 practise_evoking(1);
                 expend_xp_evoker(item.sub_type);
                 if (!evoker_charges(item.sub_type))
-                    mpr("The lightning rod overheats!");
+                    mpr(jtrans("The lightning rod overheats!"));
             }
             else
                 return false;
             break;
 
         case MISC_QUAD_DAMAGE:
-            mpr("QUAD DAMAGE!");
+            mpr(jtrans("QUAD DAMAGE!"));
             you.duration[DUR_QUAD_DAMAGE] = 30 * BASELINE_DELAY;
             ASSERT(in_inventory(item));
             dec_inv_item_quantity(item.link, 1);
@@ -1201,7 +1203,7 @@ bool evoke_item(item_def& item, dist *preselect)
                 case spret::success:
                     expend_xp_evoker(item.sub_type);
                     if (!evoker_charges(item.sub_type))
-                        mpr("The mirror clouds!");
+                        mpr(jtrans("The mirror clouds!"));
                     // deliberate fall-through
                 case spret::fail:
                     practise_evoking(1);
@@ -1224,7 +1226,7 @@ bool evoke_item(item_def& item, dist *preselect)
                 case spret::success:
                     expend_xp_evoker(item.sub_type);
                     if (!evoker_charges(item.sub_type))
-                        mpr("The tin is emptied!");
+                        mpr(jtrans("The tin is emptied!"));
                 case spret::fail:
                     practise_evoking(1);
                     break;
@@ -1241,7 +1243,7 @@ bool evoke_item(item_def& item, dist *preselect)
                 case spret::success:
                     expend_xp_evoker(item.sub_type);
                     if (!evoker_charges(item.sub_type))
-                        mpr("The condenser dries out!");
+                        mpr(jtrans("The condenser dries out!"));
                 case spret::fail:
                     practise_evoking(1);
                     break;
@@ -1312,7 +1314,7 @@ string target_evoke_desc(const monster_info& mi, const item_def& item)
         return "";
 
     vector<string> d = addl_desc(mi);
-    return comma_separated_line(d.begin(), d.end());
+    return comma_separated_line(d.begin(), d.end(), "、", "、");
 }
 
 string evoke_damage_string(const item_def& item)

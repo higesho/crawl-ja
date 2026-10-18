@@ -1,0 +1,29 @@
+%%%%
+Careful! You are now flying above %s.
+
+[注意！] あなたは今%sの上を飛んでいる。
+%%%%
+A great freezing vortex appears around you.
+
+凍てつく大渦があなたの周囲に現れた。
+%%%%
+A great freezing vortex appears and lifts you up.
+
+凍てつく大渦が現れ、あなたを吹き上げた。
+%%%%
+A tree falls to the furious winds!
+
+木が猛烈な風になぎ倒された！
+%%%%
+The freezing vortex lifts you up.
+
+凍てつく渦があなたを吹き上げた。
+%%%%
+being moved by the vortex
+
+渦に動かされること
+%%%%
+[stop attack prompt]make a polar vortex
+
+を極渦に巻き込み
+%%%%

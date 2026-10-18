@@ -1,0 +1,337 @@
+%%%%
+Your memorisation is interrupted.
+
+呪文の習得は中断された。
+%%%%
+You stop dropping stuff.
+
+あなたはアイテムを置くのを中止した。
+%%%%
+Keep equipping yourself?
+
+このまま装備を続けますか？
+%%%%
+Keep disrobing?
+
+装備を外すのを続けますか？
+%%%%
+You stop ascending the stairs.
+
+あなたは階段を昇るのを中断した。
+%%%%
+You stop descending the stairs.
+
+あなたは階段を降りるのを中断した。
+%%%%
+Your meditation is interrupted.
+
+あなたの瞑想は中断させられた。
+%%%%
+You stop digging.
+
+あなたは床を掘るのを中断した。
+%%%%
+Done waiting.
+
+待機終了。
+%%%%
+grants you knowledge of %s.
+
+はあなたに%sの呪文の知識を授けた。
+%%%%
+You start memorising the spell.
+
+あなたは呪文の習得を始めた。
+%%%%
+You begin to meditate on the wall.
+
+あなたは壁に向かって瞑想を始めた。
+%%%%
+You begin to dig a shaft.
+
+あなたは床に穴を掘りはじめた。
+%%%%
+You're confused, stopping %s.
+
+混乱しているため、%sを中止します。
+%%%%
+You finish memorising.
+
+あなたは呪文の習得を終えた。
+%%%%
+You finish merging with the rock.
+
+あなたは壁へと溶け込んだ。
+%%%%
+...yet there is something new on the other side. You quickly turn back.
+
+……しかし向こう側によく分からないものがある。あなたはさっと引き返した。
+%%%%
+...and sense your way blocked. You quickly turn back.
+
+……しかし行く手がふさがれていることに気づき、さっと引き返した。
+%%%%
+Deactivating autopickup; reactivate with <w>%s</w>.
+
+アイテム自動拾いを停止しました: <w>%s</w> キーで再開できます。
+%%%%
+Reactivating autopickup.
+
+アイテム自動拾いを再開しました。
+%%%%
+You sense a monster nearby.
+
+あなたは近くにモンスターがいるのを感知した。
+%%%%
+%s comes into view.
+
+%sに遭遇した。
+%%%%
+HP restored.
+
+体力が全快した。
+%%%%
+Magic restored.
+
+魔力がいっぱいになった。
+%%%%
+Keep removing your equipment?
+
+このまま装備を外し続けますか？
+%%%%
+Keep transforming yourself?
+
+このまま変身を続けますか？
+%%%%
+You stop transforming.
+
+あなたは変身を中断した。
+%%%%
+Keep imbuing your servitor?
+
+このまま従者への付与を続けますか？
+%%%%
+You stop imbuing your servitor.
+
+あなたは従者への付与を中断した。
+%%%%
+Your concentration is interrupted.
+
+あなたの集中は途切れた。
+%%%%
+You begin to imbue your servitor with knowledge of %s.
+
+あなたは従者に%sの知識を付与し始めた。
+%%%%
+You begin to imprint %s upon your paragon.
+
+あなたは%sの姿をパラゴンに刻み込み始めた。
+%%%%
+You begin untransforming.
+
+あなたは変身の解除を始めた。
+%%%%
+You begin transforming.
+
+あなたは変身を始めた。
+%%%%
+You continue untransforming.
+
+あなたは変身の解除を続けている。
+%%%%
+You continue transforming.
+
+あなたは変身を続けている。
+%%%%
+You finish imbuing your servitor.
+
+あなたは従者への付与を終えた。
+%%%%
+You finish imprinting the physical structure of %s upon your paragon.
+
+あなたは%sの物理的構造をパラゴンに刻み込み終えた。
+%%%%
+Lua not initialised
+
+Lua が初期化されていません
+%%%%
+Lua error: %s
+
+Lua エラー: %s
+%%%%
+CLua bindings not available on this build!
+
+このビルドでは CLua バインディングが使えません！
+%%%%
+%s is now too close for your liking.
+
+%sに近づきすぎている。
+%%%%
+Ancestor HP restored.
+
+祖霊の体力が全快した。
+%%%%
+[delay]You stop %s.
+
+あなたは%sを中断した。
+%%%%
+[delay]You start %s.
+
+あなたは%sを始めた。
+%%%%
+# 装備動作の名詞句(_eq_action_j)。動詞と装備の種類の組み合わせ
+[eq action]attuning to your weapon
+
+武器との同調
+%%%%
+[eq action]wielding your weapon
+
+武器の装備
+%%%%
+[eq action]haunting your amulet
+
+護符への憑依
+%%%%
+[eq action]haunting your armour
+
+防具への憑依
+%%%%
+[eq action]fusing with your armour
+
+防具との融合
+%%%%
+[eq action]putting on your amulet
+
+護符の着用
+%%%%
+[eq action]putting on your armour
+
+防具の着用
+%%%%
+[eq action]parting from your weapon
+
+武器との別離
+%%%%
+[eq action]unwielding your weapon
+
+武器の取り外し
+%%%%
+[eq action]removing yourself from your amulet
+
+護符からの離脱
+%%%%
+[eq action]removing yourself from your armour
+
+防具からの離脱
+%%%%
+[eq action]unfusing your armour
+
+防具との分離
+%%%%
+[eq action]removing your amulet
+
+護符の取り外し
+%%%%
+[eq action]removing your armour
+
+防具の取り外し
+%%%%
+# 装備動作の完了(EquipOnDelay/EquipOffDelay::finish)。%s はアイテム名
+[eq finish]attuning to
+
+あなたは%sとの同調を終えた。
+%%%%
+[eq finish]wielding
+
+あなたは%sを装備し終えた。
+%%%%
+[eq finish]haunting
+
+あなたは%sへの憑依を終えた。
+%%%%
+[eq finish]fusing with
+
+あなたは%sとの融合を終えた。
+%%%%
+[eq finish]putting on
+
+あなたは%sを身に着け終えた。
+%%%%
+[eq finish]parting from
+
+あなたは%sとの別離を終えた。
+%%%%
+[eq finish]unwielding
+
+あなたは%sを外し終えた。
+%%%%
+[eq finish]removing yourself from
+
+あなたは%sからの離脱を終えた。
+%%%%
+[eq finish]unfusing
+
+あなたは%sとの分離を終えた。
+%%%%
+[eq finish]removing
+
+あなたは%sを外し終えた。
+%%%%
+# 装備動作の継続(delay.h の EquipOnDelay/EquipOffDelay::tick 用。delay.h 側の対応待ち)
+[eq continue]attuning to
+
+あなたは%sとの同調を続けている。
+%%%%
+[eq continue]wielding
+
+あなたは%sの装備を続けている。
+%%%%
+[eq continue]haunting
+
+あなたは%sへの憑依を続けている。
+%%%%
+[eq continue]fusing with
+
+あなたは%sとの融合を続けている。
+%%%%
+[eq continue]putting on
+
+あなたは%sの着用を続けている。
+%%%%
+[eq continue]parting from
+
+あなたは%sとの別離を続けている。
+%%%%
+[eq continue]unwielding
+
+あなたは%sの取り外しを続けている。
+%%%%
+[eq continue]removing yourself from
+
+あなたは%sからの離脱を続けている。
+%%%%
+[eq continue]unfusing
+
+あなたは%sとの分離を続けている。
+%%%%
+[eq continue]removing
+
+あなたは%sの取り外しを続けている。
+%%%%
+# 移動モード名(runrest::runmode_name())。travel.cc でも使える
+[runmode]explore
+
+自動探索
+%%%%
+[runmode]travel
+
+自動移動
+%%%%
+[runmode]rest
+
+休憩
+%%%%
+[runmode]run
+
+走行
+%%%%

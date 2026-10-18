@@ -1,0 +1,792 @@
+%%%%
+That is beyond the maximum range.
+
+それは最大射程を超えている。
+%%%%
+You can't place the storm on %s.
+
+あなたは%sの上に炎の嵐を放つことはできない。
+%%%%
+You call forth a pillar of damnation!
+
+あなたは天罰の火柱を呼び起こした！
+%%%%
+The %s grounds out.
+
+%sが大地を這った。
+%%%%
+A swirling arc of seething chaos appears!
+
+煮え立ち渦巻く混沌が顕現した！
+%%%%
+The %s arcs out of your line of sight!
+
+%sはあなたの視界の外へと飛んでいった！
+%%%%
+The %s suddenly appears!
+
+突然%sが現れた！
+%%%%
+The heat is drained from your surroundings.
+
+あなたの周囲から熱が吸い取られた。
+%%%%
+Something drains the heat from around you.
+
+何かがあなたの周囲から熱を吸い取った。
+%%%%
+drains the heat from the surrounding environment!
+
+は周囲から熱を吸い取った！
+%%%%
+The ambient heat is drained!
+
+周囲の熱が吸い取られた！
+%%%%
+You draw life from your surroundings.
+
+あなたは周囲から生命力を吸い取った。
+%%%%
+Something draws the life force from your surroundings.
+
+何かがあなたの周囲から生命力を吸い取った。
+%%%%
+draws from the surrounding life force!
+
+は周囲から生命力を吸い取った！
+%%%%
+The surrounding life force dissipates!
+
+周囲の生命力が吸い取られた！
+%%%%
+You can't deconstruct that!
+
+それを解体することはできない！
+%%%%
+The %s shatters!
+
+%sは粉砕された！
+%%%%
+A door shatters!
+
+扉が粉砕された！
+%%%%
+An iron grate is ripped into pieces!
+
+鉄格子が粉々に砕けた！
+%%%%
+The dungeon shakes!
+
+迷宮が揺れ動いた！
+%%%%
+The dungeon rumbles!
+
+迷宮が鳴動した！
+%%%%
+Ka-crash!
+
+ドッカーン！
+%%%%
+The dungeon shakes around %s!
+
+迷宮内の%sの周囲が揺れ動いた！
+%%%%
+The dungeon rumbles around %s!
+
+迷宮内の%sの周囲が鳴動した！
+%%%%
+There is a shattering impact!
+
+粉砕の衝撃が走った！
+%%%%
+You erupt in a fountain of uncontrolled magic!
+
+あなたは暴走した魔力を放射した！
+%%%%
+erupts in a fountain of uncontrolled magic!
+
+は暴走した魔力を放射した！
+%%%%
+You feel like your blood is boiling!
+
+あなたの血液が煮えたぎっているようだ！
+%%%%
+The poison in your system burns terribly!
+
+あなたの体内の毒が激しく燃えさかった！
+%%%%
+The poison in your system burns!
+
+あなたの体内の毒に火が付いた！
+%%%%
+You are no longer poisoned.
+
+あなたはもう毒に冒されていない。
+%%%%
+You are standing in a cloud of %s! Ignite poison anyway?
+
+あなたは%sの中に立っている！ それでも毒の燃焼の呪文を唱えますか？
+%%%%
+You might harm nearby allies! Ignite poison anyway?
+
+周囲の仲間を傷つけてしまいそうだ！ それでも毒の燃焼の呪文を唱えますか？
+%%%%
+The lightning grounds out.
+
+稲妻が地を這った。
+%%%%
+The trees move their gnarly branches around.
+
+樹木がその節くれ立った枝をあたりに這わせた。
+%%%%
+You feel roots moving beneath the ground.
+
+あなたは地中で木の根がうごめくのを感じた。
+%%%%
+Branches wave dangerously above you.
+
+あなたの頭上で枝が危なげに揺れている。
+%%%%
+Trunks creak and shift.
+
+木の幹がきしむ音を立てながら動いた。
+%%%%
+Tree limbs sway around you.
+
+木の枝があなたの周囲で揺らめいている。
+%%%%
+You begin to radiate toxic energy.
+
+あなたは毒気を放射しはじめた。
+%%%%
+Your toxic radiance grows in intensity.
+
+あなたの放つ毒気が強さを増した。
+%%%%
+begins to radiate toxic energy.
+
+は毒気を放射しはじめた。
+%%%%
+Lightning arcs from %s %s!
+
+%s%sから稲妻がほとばしった！
+%%%%
+You send a blast of sound all around you.
+
+あなたは周囲に音の衝撃波を放った。
+%%%%
+Something sends a blast of sound all around you.
+
+何かがあなたの周囲に音の衝撃波を放った。
+%%%%
+sends a blast of sound all around you!
+
+は周囲に音の衝撃波を放った！
+%%%%
+Sound blasts the surrounding area!
+
+音の衝撃波が周囲に響き渡った！
+%%%%
+You freeze %s%s
+
+あなたは%sを凍りつかせた%s
+%%%%
+You freeze %s but do no damage%s
+
+あなたは%sを凍りつかせようとしたが、ダメージを与えられなかった%s
+%%%%
+The confined air twists around weakly
+
+閉ざされた大気が弱々しく渦を巻き
+%%%%
+The air twists around
+
+周囲の大気が渦を巻き
+%%%%
+The open air twists around violently
+
+開けた大気が激しく渦を巻き
+%%%%
+%s and strikes %s%s
+
+%s、%sを打ちすえた%s
+%%%%
+%s and strikes %s but does no damage%s
+
+%s、%sを打ちすえたが、ダメージを与えられなかった%s
+%%%%
+The momentum dissipates harmlessly.
+
+勢いは何も傷つけることなく消え去った。
+%%%%
+You are unable to move.
+
+あなたは身動きが取れなくなった。
+%%%%
+Bitter cold erupts, blasting rock from the ceiling!
+
+身を切るような冷気が噴き出し、天井の岩を吹き飛ばした！
+%%%%
+You shatter%s
+
+あなたの体は粉々に砕けた%s
+%%%%
+%s shatters%s
+
+%sは粉々に砕けた%s
+%%%%
+You shudder from the earth-shattering force%s
+
+あなたは大地をも砕く力に打ち震えた%s
+%%%%
+You shudder%s
+
+あなたは身を震わせた%s
+%%%%
+%s shudder.
+
+%sは身を震わせた。
+%%%%
+Flames lash %s.
+
+炎が%sを打ちすえた。
+%%%%
+Flames lash %s but do no damage.
+
+炎が%sを打ちすえたが、ダメージを与えられなかった。
+%%%%
+%s fire resistance burns away.
+
+%s火炎への耐性が焼き払われた。
+%%%%
+Your fire resistance burns away!
+
+あなたの火炎への耐性が焼き払われた！
+%%%%
+%s is blasted with magical radiation%s
+
+%sは魔力の放射を浴びた%s
+%%%%
+%s seems to burn from within%s
+
+%sは体の内側から燃え上がったようだ%s
+%%%%
+%s ignites the poison in the surroundings!
+
+%sは周囲の毒に火を付けた！
+%%%%
+The air bursts into flame!
+
+大気が燃え上がった！
+%%%%
+You are struck by an arc of lightning%s
+
+あなたは電弧に打たれた%s
+%%%%
+%s is struck by an arc of lightning%s
+
+%sは電弧に打たれた%s
+%%%%
+The arc blade's discharge
+
+電弧の刃の放電
+%%%%
+Attack anyway?
+
+それでも攻撃しますか？
+%%%%
+Cast it anyway?
+
+それでも呪文を唱えますか？
+%%%%
+The air crackles with electrical energy.
+
+大気が電気を帯びてパチパチと音を立てた。
+%%%%
+Some blue arcs ground themselves harmlessly.
+
+幾本もの青白い電弧が、何も傷つけずに大地へと流れ去った。
+%%%%
+A blue arc grounds itself harmlessly.
+
+青白い電弧が、何も傷つけずに大地へと流れ去った。
+%%%%
+You are struck by an electric surge%s
+
+あなたは電撃に打たれた%s
+%%%%
+%s is struck by an electric surge%s
+
+%sは電撃に打たれた%s
+%%%%
+Electricity surges outward!
+
+電撃が周囲へとほとばしった！
+%%%%
+emits a burst of electricity!
+
+は電撃を放った！
+%%%%
+Your %s violently discharge electricity!
+
+あなたの%sから激しい電撃がほとばしった！
+%%%%
+You reach out to the water around you and turn it against your foes!
+
+あなたは周囲の水に手を伸ばし、敵へと差し向けた！
+%%%%
+Breathe anyway?
+
+それでも息を吐きますか？
+%%%%
+You exhale a blast of multi-hued devastation!
+
+あなたは破壊をもたらす七色の息を吐き出した！
+%%%%
+@foe@ @is@ waved at by a branch
+
+@foe@の目の前で枝が空を切った
+%%%%
+A tree reaches out but misses @foe@
+
+木が枝を伸ばしたが、@foe@には当たらなかった
+%%%%
+A root lunges up near @foe@
+
+@foe@のそばで根が突き上がった
+%%%%
+@foe@ @is@ scraped by a branch
+
+@foe@は枝にひっかかれた
+%%%%
+A tree reaches out and scrapes @foe@
+
+木が枝を伸ばし、@foe@をひっかいた
+%%%%
+A root barely touches @foe@ from below
+
+根が下から@foe@にかすかに触れた
+%%%%
+@foe@ @is@ hit by a branch
+
+@foe@は枝に打たれた
+%%%%
+A tree reaches out and hits @foe@
+
+木が枝を伸ばし、@foe@を打ちすえた
+%%%%
+A root smacks @foe@ from below
+
+根が下から@foe@を打ちすえた
+%%%%
+You can't see anything there. Cast anyway?
+
+そこには何も見えない。それでも呪文を唱えますか？
+%%%%
+%s has no magical effects to unravel.
+
+%sには解きほぐせる魔法の効果がかかっていない。
+%%%%
+The unravelling is likely to hit you. Continue anyway?
+
+解きほぐしの力はあなたにも及びそうだ。それでも続けますか？
+%%%%
+%s is already burning with an inner flame!
+
+%sはすでに内なる炎に燃えている！
+%%%%
+%s has infinite will and cannot be affected.
+
+%sは無限の意志力を持っており、影響を受けない。
+%%%%
+Poisonous fumes billow around %s!
+
+%sの周囲に毒の煙が立ちこめた！
+%%%%
+Poisonous fumes billow in the air!
+
+毒の煙が辺りに立ちこめた！
+%%%%
+intensify the flame waves
+
+炎の波を強める
+%%%%
+Your wave of flame reaches its maximum intensity and dissipates.
+
+炎の波は最大の強さに達し、消え去った。
+%%%%
+You focus your ray upon %s.
+
+あなたは光線の狙いを%sに定めた。
+%%%%
+maintain the ray
+
+光線を維持する
+%%%%
+stops channelling.
+
+は集中を解いた。
+%%%%
+You finish channelling your searing ray.
+
+あなたは焼灼の光線の照射を終えた。
+%%%%
+finishes channelling their searing ray.
+
+は焼灼の光線の照射を終えた。
+%%%%
+%s conjures a mighty blast of ice!
+
+%sは強大な氷の嵐を生み出した！
+%%%%
+ties %s tail in a knot.
+
+%s尻尾を固結びにしてしまった。
+%%%%
+bonks %s with their own %s.
+
+%sを本人の%sでぽかりと叩いた。
+%%%%
+insults %s ancestors.
+
+%sご先祖様を侮辱した。
+%%%%
+doodles on %s face.
+
+%s顔に落書きをした。
+%%%%
+makes %s trip over their own %s.
+
+%sを自分の%sにつまずかせた。
+%%%%
+smacks %s with their own %s.
+
+%sに自分の%sで自分をぴしゃりと叩かせた。
+%%%%
+does a pirouette on top of %s.
+
+%sの頭の上でピルエットを踊った。
+%%%%
+A giggling sprite leaps out and %s
+
+クスクス笑う妖精が飛び出し、%s
+%%%%
+A cannonade of hail descends around you!
+
+あなたの周囲に雹が砲撃のように降り注いだ！
+%%%%
+You erupt in a blast of force!
+
+あなたは力の奔流を炸裂させた！
+%%%%
+You fester in the toxic bog%s
+
+あなたは毒の沼に蝕まれた%s
+%%%%
+%s festers in the toxic bog%s
+
+%sは毒の沼に蝕まれた%s
+%%%%
+There are no walls around you to affect.
+
+周囲には効果を及ぼせる壁がない。
+%%%%
+The walls around you are covered in ice.
+
+あなたの周囲の壁が氷に覆われた。
+%%%%
+You can't see anything to vaporise!
+
+蒸発させられる対象が見えない！
+%%%%
+You begin accumulating electric charge.
+
+あなたは電荷を蓄えはじめた。
+%%%%
+continue charging
+
+電荷を蓄え続ける
+%%%%
+Your charge dissipates without a target.
+
+対象がいないため、電荷は散ってしまった。
+%%%%
+A cloud of jellies burst out of %s as the current ripples through it%s
+
+電流が%sの体を駆け巡り、ゼリーの群れが飛び散った%s
+%%%%
+The electricity discharges through %s%s
+
+電気が%sの体を貫いて放電した%s
+%%%%
+vaporises and condenses as gold!
+
+は蒸発し、金となって凝結した！
+%%%%
+vaporises in an electric haze!
+
+は電気の靄となって蒸発した！
+%%%%
+You feel charge building up...
+
+電荷が溜まっていくのを感じる……
+%%%%
+There are no places for you to create a bog.
+
+沼を作り出せる場所がない。
+%%%%
+You spew toxic sludge!
+
+あなたは毒の汚泥を吐き出した！
+%%%%
+%s barrels into %s%s
+
+%sは%sに激突した%s
+%%%%
+Magnetic shrapnel attaches itself to %s.
+
+磁性を帯びた破片が%sに貼り付いた。
+%%%%
+Electricity arcs towards the magnetite!
+
+電撃が磁鉄鉱へと弧を描いて走った！
+%%%%
+You conjure up an array of volatile reagents!
+
+あなたは揮発性の試薬を次々と生み出した！
+%%%%
+Your magical reserves are too exhausted to conjure more reagents.
+
+魔力が尽きかけており、これ以上試薬を生み出せない。
+%%%%
+Flasks of reagents rain from above!
+
+試薬の入ったフラスコが頭上から降り注いだ！
+%%%%
+Your rain of reagents ends.
+
+試薬の雨が止んだ。
+%%%%
+You unleash the spiteful dead!
+
+あなたは恨み深き死者を解き放った！
+%%%%
+The last of your harvested death is exhausted.
+
+刈り集めた死を使い果たした。
+%%%%
+You have harvested as much death for %s as you can hold at once.
+
+あなたは%sのための死を、一度に保持できる限界まで刈り集めた。
+%%%%
+You have harvested enough death to cast %s an additional time.
+
+あなたは%sをもう一度唱えられるだけの死を刈り集めた。
+%%%%
+You steady yourself in place and focus your resilience into a mighty blast.
+
+あなたはその場で身構え、自らの頑強さを強大な衝撃波へと集中させた。
+%%%%
+You unleash %s concussive blast!
+
+あなたは%s衝撃波を解き放った！
+%%%%
+[fortress blast]a
+
+__NONE
+%%%%
+[fortress blast]a weak
+
+弱々しい
+%%%%
+[fortress blast]an overpowering
+
+圧倒的な
+%%%%
+[fortress blast]a very strong
+
+非常に強力な
+%%%%
+[fortress blast]a strong
+
+強力な
+%%%%
+# [frag terrain]: LRD で砕けた地形の名前(cast_fragmentation の "The %s shatters!")
+[frag terrain]wall
+
+壁
+%%%%
+[frag terrain]stone idol
+
+石の偶像
+%%%%
+[frag terrain]statue
+
+彫像
+%%%%
+[frag terrain]petrified wood
+
+石化した木
+%%%%
+[frag terrain]spike launcher
+
+棘の射出装置
+%%%%
+[frag terrain]stone door frame
+
+石の扉枠
+%%%%
+[frag terrain]stone arch
+
+石のアーチ
+%%%%
+[frag terrain]metal statue
+
+金属の像
+%%%%
+[frag terrain]metal wall
+
+金属の壁
+%%%%
+[frag terrain]iron grate
+
+鉄格子
+%%%%
+[frag terrain]crystal wall
+
+水晶の壁
+%%%%
+# [zap]: このファイルで beam.name に設定する、zap-data.h にないビーム名
+[zap]arc of chaos
+
+連鎖する混沌
+%%%%
+[zap]blast of fire
+
+炎の息
+%%%%
+[zap]thunderbolt
+
+雷撃
+%%%%
+[zap]great icy blast
+
+雹の嵐
+%%%%
+[zap]icy blast
+
+氷の破片
+%%%%
+[zap]blast of petrified fragments
+
+石化した破片
+%%%%
+[zap]blast of bone shards
+
+骨片
+%%%%
+[zap]blast of toenail fragments
+
+足爪の破片
+%%%%
+[zap]blast of salt crystal fragments
+
+塩の結晶の破片
+%%%%
+[zap]blast of stone fragments
+
+石の破片
+%%%%
+[zap]blast of rock fragments
+
+岩石の破片
+%%%%
+[zap]blast of metal fragments
+
+金属の破片
+%%%%
+[zap]blast of platinum fragments
+
+白金の破片
+%%%%
+[zap]blast of glass shards
+
+ガラスの破片
+%%%%
+[zap]blast of crystal shards
+
+水晶の破片
+%%%%
+[zap]blast of orange crystal shards
+
+橙水晶の破片
+%%%%
+[zap]blast of obsidian shards
+
+黒曜石の破片
+%%%%
+[zap]blast of diamond shards
+
+ダイヤモンドの破片
+%%%%
+[zap]blast of sapphire shards
+
+サファイアの破片
+%%%%
+[zap]fiery phlogiston
+
+燃えさかる燃素
+%%%%
+[zap]frigid brine
+
+凍てつく塩水
+%%%%
+[zap]noxious sulphur
+
+有毒な硫黄
+%%%%
+[zap]flickering plasma
+
+揺らめくプラズマ
+%%%%
+[zap]unstable reaction
+
+不安定な反応
+%%%%
+# [stop attack prompt]: stop_attack_prompt() に渡す動詞(fight.cc 側で tagged_jtrans する前提)
+[stop attack prompt]refrigerate
+
+を凍えさせ
+%%%%
+[stop attack prompt]drain life
+
+から生命力を吸い取り
+%%%%
+[stop attack prompt]irradiate
+
+に魔力の放射を浴びせ
+%%%%
+[stop attack prompt]zap
+
+を撃ち
+%%%%
+[stop attack prompt]poison
+
+を毒に冒し
+%%%%
+[stop attack prompt]unravel
+
+の魔法を解きほぐし
+%%%%
+[stop attack prompt]hailstorm
+
+に雹を降らせ
+%%%%
+[stop attack prompt]blast
+
+を吹き飛ばし
+%%%%
+[stop attack prompt]hurl reagents
+
+に試薬を投げつけ
+%%%%

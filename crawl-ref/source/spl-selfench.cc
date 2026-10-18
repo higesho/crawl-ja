@@ -13,10 +13,12 @@
 #include "areas.h"
 #include "art-enum.h"
 #include "coordit.h" // radius_iterator
+#include "database.h"
 #include "env.h"
 #include "god-passive.h"
 #include "hints.h"
 #include "items.h" // stack_iterator
+#include "japanese.h"
 #include "libutil.h"
 #include "message.h"
 #include "output.h"
@@ -34,8 +36,8 @@
 spret cast_deaths_door(int pow, bool fail)
 {
     fail_check();
-    mpr("You stand defiantly in death's doorway!");
-    mprf(MSGCH_SOUND, "You seem to hear sand running through an hourglass...");
+    mpr(jtrans("You stand defiantly in death's doorway!"));
+    mprf(MSGCH_SOUND, jtransc("You seem to hear sand running through an hourglass..."));
 
     you.set_duration(DUR_DEATHS_DOOR, 10 + random2avg(13, 3)
                                        + div_rand_round(random2(pow), 10));
@@ -51,7 +53,7 @@ spret cast_deaths_door(int pow, bool fail)
 
 void remove_ice_armour()
 {
-    mprf(MSGCH_DURATION, "Your icy armour melts away.");
+    mprf(MSGCH_DURATION, jtransc("Your icy armour melts away."));
     you.redraw_armour_class = true;
     you.duration[DUR_ICY_ARMOUR] = 0;
 }
@@ -61,9 +63,9 @@ spret ice_armour(int pow, bool fail)
     fail_check();
 
     if (you.duration[DUR_ICY_ARMOUR])
-        mpr("Your icy armour thickens.");
+        mpr(jtrans("Your icy armour thickens."));
     else
-        mpr("A film of ice covers your body!");
+        mpr(jtrans("A film of ice covers your body!"));
 
     you.increase_duration(DUR_ICY_ARMOUR, random_range(40, 50), 50);
     you.props[ICY_ARMOUR_KEY] = pow;
@@ -75,15 +77,15 @@ spret ice_armour(int pow, bool fail)
 void fiery_armour()
 {
     if (you.duration[DUR_FIERY_ARMOUR])
-        mpr("Your cloak of flame flares fiercely!");
+        mpr(jtrans("Your cloak of flame flares fiercely!"));
     else if (you.duration[DUR_ICY_ARMOUR] || player_icemail_armour_class())
     {
-        mpr("A sizzling cloak of flame settles atop your icy armour.");
+        mpr(jtrans("A sizzling cloak of flame settles atop your icy armour."));
         // TODO: add corresponding inverse message for casting ozo's etc
         // while DUR_FIERY_ARMOUR is active (maybe..?)
     }
     else
-        mpr("A protective cloak of flame settles atop you.");
+        mpr(jtrans("A protective cloak of flame settles atop you."));
 
     you.increase_duration(DUR_FIERY_ARMOUR, random_range(110, 140), 1500);
     you.redraw_armour_class = true;
@@ -92,7 +94,7 @@ void fiery_armour()
 spret cast_revivification(int pow, bool fail)
 {
     fail_check();
-    mpr("Your body is healed in an amazingly painful way.");
+    mpr(jtrans("Your body is healed in an amazingly painful way."));
 
     const int loss = 6 + binomial(9, 8, pow);
     dec_max_hp(loss * you.hp_max / 100);
@@ -100,7 +102,7 @@ spret cast_revivification(int pow, bool fail)
 
     if (you.duration[DUR_DEATHS_DOOR])
     {
-        mprf(MSGCH_DURATION, "Your life is in your own hands once again.");
+        mprf(MSGCH_DURATION, jtransc("Your life is in your own hands once again."));
         // XXX: better cause name?
         you.paralyse(&you, random_range(2, 5), "breaking free from death's doorway");
         you.duration[DUR_DEATHS_DOOR] = 0;
@@ -113,7 +115,7 @@ spret cast_swiftness(int power, bool fail)
     fail_check();
 
     you.set_duration(DUR_SWIFTNESS, 12 + random2(power)/2, 30,
-                     "You feel quick.");
+                     jtransc("You feel quick."));
     you.attribute[ATTR_SWIFTNESS] = you.duration[DUR_SWIFTNESS];
 
     return spret::success;
@@ -132,7 +134,7 @@ int cast_selective_amnesia(const string &pre_msg)
     int slot;
 
     // Pick a spell to forget.
-    keyin = list_spells(false, false, false, false, "forget");
+    keyin = list_spells(false, false, false, false, jtrans("forget"));
     redraw_screen();
     update_screen();
 
@@ -145,11 +147,11 @@ int cast_selective_amnesia(const string &pre_msg)
         if (spell != SPELL_NO_SPELL)
         {
             const string prompt = make_stringf(
-                    "Forget %s, freeing %d spell level%s for a total of %d?%s",
-                    spell_title(spell), spell_levels_required(spell),
-                    spell_levels_required(spell) != 1 ? "s" : "",
-                    player_spell_levels(false) + spell_levels_required(spell),
-                    in_library ? "" : " This spell is not in your library!");
+                    jtransc("Forget %s, freeing %d spell levels for a total of %d?"),
+                    spell_title_jc(spell), spell_levels_required(spell),
+                    player_spell_levels(false) + spell_levels_required(spell))
+                + (in_library ? string()
+                              : jtrans_notrim(" This spell is not in your library!"));
 
             if (yesno(prompt.c_str(), in_library, 'n', false))
             {
@@ -169,9 +171,9 @@ spret cast_fugue_of_the_fallen(int pow, bool fail)
     fail_check();
 
     if (you.duration[DUR_FUGUE])
-        mpr("You release your grip on the fallen and begin the cycle anew!");
+        mpr(jtrans("You release your grip on the fallen and begin the cycle anew!"));
     else
-        mpr("You call out to the remnants of the fallen!");
+        mpr(jtrans("You call out to the remnants of the fallen!"));
 
     you.set_duration(DUR_FUGUE, 25 + random2avg(pow, 2));
 
@@ -198,7 +200,7 @@ void do_fugue_wail(const coord_def pos)
     int pow = calc_spell_power(SPELL_FUGUE_OF_THE_FALLEN);
 
     if (!affected.empty())
-        mpr("The fallen lash out in pain!");
+        mpr(jtrans("The fallen lash out in pain!"));
     for (monster *m : affected)
     {
         if (m->alive())
@@ -222,7 +224,7 @@ int silence_max_range(int pow)
 spret cast_silence(int pow, bool fail)
 {
     fail_check();
-    mpr("A profound silence engulfs you.");
+    mpr(jtrans("A profound silence engulfs you."));
 
     you.increase_duration(DUR_SILENCE, 20 + div_rand_round(pow,5)
                             + random2avg(div_rand_round(pow,2), 2), 100);
@@ -244,7 +246,7 @@ spret cast_liquefaction(int pow, bool fail)
     flash_view_delay(UA_PLAYER, YELLOW, 80);
     flash_view_delay(UA_PLAYER, BROWN, 140);
 
-    mpr("The ground around you becomes liquefied!");
+    mpr(jtrans("The ground around you becomes liquefied!"));
 
     you.increase_duration(DUR_LIQUEFYING, 15 + random2avg(pow, 2), 100);
     invalidate_agrid(true);
@@ -270,14 +272,16 @@ spret cast_jinxbite(int pow, bool fail)
 {
     if (!jinxbite_targets_available())
     {
-        mpr("There is nobody nearby that the sprites are interested in.");
+        mpr(jtrans("There is nobody nearby that the sprites are interested in."));
         return spret::abort;
     }
 
     fail_check();
 
-    mprf("You beckon %s vexing sprites to accompany your attacks.",
-         you.duration[DUR_JINXBITE] ? "more" : "some");
+    if (you.duration[DUR_JINXBITE])
+        mpr(jtrans("You beckon more vexing sprites to accompany your attacks."));
+    else
+        mpr(jtrans("You beckon some vexing sprites to accompany your attacks."));
 
     const int base_dur = random_range(9, 15);
     const int will_dur = random_range(base_dur, 15) +
@@ -285,7 +289,7 @@ spret cast_jinxbite(int pow, bool fail)
 
     you.increase_duration(DUR_JINXBITE, base_dur + div_rand_round(pow, 4), 28);
     you.increase_duration(DUR_LOWERED_WL, will_dur, 28,
-                          "You feel your willpower being sapped.");
+                          jtransc("You feel your willpower being sapped."));
 
     return spret::success;
 }
@@ -293,9 +297,11 @@ spret cast_jinxbite(int pow, bool fail)
 spret cast_confusing_touch(int power, bool fail)
 {
     fail_check();
-    msg::stream << you.hands_act("begin", "to glow ")
-                << (you.duration[DUR_CONFUSING_TOUCH] ? "brighter" : "red")
-                << "." << endl;
+    // hands_act() は "[hands act]your hands begin to glow ..." を辞書で引く
+    if (you.duration[DUR_CONFUSING_TOUCH])
+        mpr(you.hands_act("begin", "to glow brighter."));
+    else
+        mpr(you.hands_act("begin", "to glow red."));
 
     you.set_duration(DUR_CONFUSING_TOUCH,
                      max(10 + div_rand_round(random2(1 + power), 5),
@@ -310,7 +316,7 @@ spret cast_detonation_catalyst(bool fail)
 {
     fail_check();
 
-    mpr("You ready an explosive catalyst.");
+    mpr(jtrans("You ready an explosive catalyst."));
 
     // base duration is very low to minimize precasting
     you.set_duration(DUR_DETONATION_CATALYST, random_range(3,5));

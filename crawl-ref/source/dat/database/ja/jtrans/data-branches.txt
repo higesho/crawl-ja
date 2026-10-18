@@ -1,0 +1,620 @@
+# data-branches.txt: 支部名 [branch]<短い名前/長い名前/略称>、入口表記用の [branch abbrj]<略称>、入場メッセージ
+# 出典: branch-data.h (0.34)。旧 jtrans_branch_data.txt の形式に合わせた。
+# [branch abbrj] は全角 1 文字にする。
+
+%%%%
+[branch]Dungeon
+
+迷宮
+%%%%
+[branch]the Dungeon
+
+迷宮
+%%%%
+[branch]D
+
+迷宮
+%%%%
+[branch abbrj]D
+
+迷
+%%%%
+[branch]Temple
+
+寺院
+%%%%
+[branch]the Ecumenical Temple
+
+諸宗派の寺院
+%%%%
+[branch abbrj]Temple
+
+寺
+%%%%
+[branch]Orcish Mines
+
+オークの坑道
+%%%%
+[branch]the Orcish Mines
+
+オークの坑道
+%%%%
+[branch]Orc
+
+オーク
+%%%%
+[branch abbrj]Orc
+
+オ
+%%%%
+[branch]Elven Halls
+
+エルフの大広間
+%%%%
+[branch]the Elven Halls
+
+エルフの大広間
+%%%%
+[branch]Elf
+
+エルフ
+%%%%
+[branch abbrj]Elf
+
+エ
+%%%%
+[branch]Dwarven Hall
+
+ドワーフの大広間
+%%%%
+[branch]the Dwarven Hall
+
+ドワーフの大広間
+%%%%
+[branch]Dwarf
+
+ドワーフ
+%%%%
+[branch abbrj]Dwarf
+
+ド
+%%%%
+[branch]Lair
+
+獣
+%%%%
+[branch]the Lair of Beasts
+
+獣の棲み処
+%%%%
+[branch abbrj]Lair
+
+獣
+%%%%
+[branch]Swamp
+
+沼
+%%%%
+[branch]the Swamp
+
+沼
+%%%%
+[branch abbrj]Swamp
+
+沼
+%%%%
+[branch]Shoals
+
+浅瀬
+%%%%
+[branch]the Shoals
+
+浅瀬
+%%%%
+[branch abbrj]Shoals
+
+浅
+%%%%
+[branch]Snake Pit
+
+蛇穴
+%%%%
+[branch]the Snake Pit
+
+蛇穴
+%%%%
+[branch]Snake
+
+蛇
+%%%%
+[branch abbrj]Snake
+
+蛇
+%%%%
+[branch]Spider Nest
+
+蜘蛛の穴ぐら
+%%%%
+[branch]the Spider Nest
+
+蜘蛛の穴ぐら
+%%%%
+[branch]Spider
+
+蜘蛛
+%%%%
+[branch abbrj]Spider
+
+蜘
+%%%%
+[branch]Slime Pits
+
+スライムの穴ぐら
+%%%%
+[branch]the Pits of Slime
+
+スライムの穴ぐら
+%%%%
+[branch]Slime
+
+スライム
+%%%%
+[branch abbrj]Slime
+
+ス
+%%%%
+[branch]Vaults
+
+宝物庫
+%%%%
+[branch]the Vaults
+
+宝物庫
+%%%%
+[branch abbrj]Vaults
+
+宝
+%%%%
+[branch]Hall of Blades
+
+刃の広間
+%%%%
+[branch]the Hall of Blades
+
+刃の広間
+%%%%
+[branch]Blade
+
+刃の広間
+%%%%
+[branch abbrj]Blade
+
+刃
+%%%%
+[branch]Crypt
+
+地下墓地
+%%%%
+[branch]the Crypt
+
+地下墓地
+%%%%
+[branch abbrj]Crypt
+
+墓
+%%%%
+[branch]Tomb
+
+霊廟
+%%%%
+[branch]the Tomb of the Ancients
+
+太古の霊廟
+%%%%
+[branch abbrj]Tomb
+
+廟
+%%%%
+[branch]Depths
+
+深層
+%%%%
+[branch]the Depths
+
+深層
+%%%%
+[branch abbrj]Depths
+
+深
+%%%%
+[branch]Hell
+
+地獄
+%%%%
+[branch]the Vestibule of Hell
+
+地獄の入り口
+%%%%
+[branch abbrj]Hell
+
+獄
+%%%%
+Welcome to Hell!\nPlease enjoy your stay.
+
+地獄へようこそ！
+どうぞお楽しみください。
+%%%%
+[branch]Dis
+
+ディース
+%%%%
+[branch]the Iron City of Dis
+
+鉄の都ディース
+%%%%
+[branch abbrj]Dis
+
+鉄
+%%%%
+An ancient malice corrodes your equipment.
+
+太古の悪意があなたの装備を腐食させた。
+%%%%
+[branch]Gehenna
+
+ゲヘナ
+%%%%
+[branch]Geh
+
+ゲヘナ
+%%%%
+[branch abbrj]Geh
+
+谷
+%%%%
+Your scrolls appear blurry in the acrid smoke.
+
+刺激臭のある煙の中で、あなたの巻物の文字がかすんで見える。
+%%%%
+[branch]Cocytus
+
+コキュートス
+%%%%
+[branch]Coc
+
+コキュートス
+%%%%
+[branch abbrj]Coc
+
+寒
+%%%%
+Your potions freeze solid in the terrible cold.
+
+凄まじい冷気であなたの水薬はかちかちに凍りついた。
+%%%%
+[branch]Tartarus
+
+タルタロス
+%%%%
+[branch]Tar
+
+タルタロス
+%%%%
+[branch abbrj]Tar
+
+腐
+%%%%
+This decaying realm drains your will.
+
+この朽ちゆく領域はあなたの意志を奪っていく。
+%%%%
+[branch]Zot
+
+ゾットの領域
+%%%%
+[branch]the Realm of Zot
+
+ゾットの領域
+%%%%
+[branch abbrj]Zot
+
+ゾ
+%%%%
+Welcome to the Realm of Zot!\nYou feel the power of the Orb interfering with translocations here.
+
+ゾットの領域へよくぞ到達した！
+あなたはオーブの力がここでの空間転移を阻害しているのを感じ取った。
+%%%%
+[branch]Forest
+
+森
+%%%%
+[branch]the Enchanted Forest
+
+魔法の森
+%%%%
+[branch abbrj]Forest
+
+森
+%%%%
+[branch]Abyss
+
+アビス
+%%%%
+[branch]the Abyss
+
+アビス
+%%%%
+[branch abbrj]Abyss
+
+淵
+%%%%
+[branch]Pandemonium
+
+パンデモニウム
+%%%%
+[branch]Pan
+
+万魔殿
+%%%%
+[branch abbrj]Pan
+
+万
+%%%%
+You enter the halls of Pandemonium!\nTo return, you must find a gate leading back.
+
+あなたはパンデモニウムの大広間に突入した！
+迷宮へと戻るには、ここから脱出する門を探さねばならない。
+%%%%
+[branch]Ziggurat
+
+ジグラット
+%%%%
+[branch]a ziggurat
+
+ジグラット
+%%%%
+[branch]Zig
+
+ジグラット
+%%%%
+[branch abbrj]Zig
+
+ジ
+%%%%
+You land on top of a ziggurat so tall you cannot make out the ground.
+
+あなたはジグラットのはるか頂上へと舞い降りた。地面がよく見えないほどの高さだ。
+%%%%
+[branch]Labyrinth
+
+ラビリンス
+%%%%
+[branch]a Labyrinth
+
+ラビリンス
+%%%%
+[branch]Lab
+
+ラビリンス
+%%%%
+[branch abbrj]Lab
+
+ラ
+%%%%
+You enter a labyrinth!
+
+あなたはラビリンスに足を踏み入れた！
+%%%%
+[branch]Bazaar
+
+バザール
+%%%%
+[branch]a bazaar
+
+バザール
+%%%%
+[branch abbrj]Bazaar
+
+バ
+%%%%
+You enter an inter-dimensional bazaar!
+
+あなたは次元を旅する商隊のバザールに遭遇した！
+%%%%
+[branch]Trove
+
+埋蔵庫
+%%%%
+[branch]a treasure trove
+
+宝の埋蔵庫
+%%%%
+[branch abbrj]Trove
+
+埋
+%%%%
+You enter a treasure trove!
+
+あなたは宝の埋蔵庫に足を踏み入れた！
+%%%%
+[branch]Sewer
+
+下水道
+%%%%
+[branch]a sewer
+
+下水道
+%%%%
+[branch abbrj]Sewer
+
+下
+%%%%
+You enter a sewer!
+
+あなたは下水道に立ち入った！
+%%%%
+[branch]Ossuary
+
+納骨堂
+%%%%
+[branch]an ossuary
+
+納骨堂
+%%%%
+[branch abbrj]Ossuary
+
+納
+%%%%
+You enter an ossuary!
+
+あなたは納骨堂に足を踏み入れた！
+%%%%
+[branch]Bailey
+
+濠城
+%%%%
+[branch]a bailey
+
+濠城
+%%%%
+[branch abbrj]Bailey
+
+濠
+%%%%
+You enter a bailey!
+
+あなたは濠城へと向かった！
+%%%%
+[branch]Gauntlet
+
+試練場
+%%%%
+[branch]a Gauntlet
+
+試練場
+%%%%
+[branch abbrj]Gauntlet
+
+試
+%%%%
+You enter a gauntlet!
+
+あなたは試練場に足を踏み入れた！
+%%%%
+[branch]Ice Cave
+
+氷の洞穴
+%%%%
+[branch]an ice cave
+
+氷の洞穴
+%%%%
+[branch]IceCv
+
+氷の洞穴
+%%%%
+[branch abbrj]IceCv
+
+氷
+%%%%
+You enter an ice cave!
+
+あなたは氷の洞穴にもぐり込んだ！
+%%%%
+[branch]Volcano
+
+火山
+%%%%
+[branch]a volcano
+
+火山
+%%%%
+[branch abbrj]Volcano
+
+火
+%%%%
+You enter a volcano!
+
+あなたは火山の中に入った！
+%%%%
+[branch]Wizlab
+
+魔術研究所
+%%%%
+[branch]a wizard's laboratory
+
+魔術師の研究所
+%%%%
+[branch abbrj]WizLab
+
+魔
+%%%%
+You enter a wizard's laboratory!
+
+あなたは魔術師の研究所へと足を踏み入れた！
+%%%%
+[branch]Desolation
+
+荒野
+%%%%
+[branch]the Desolation of Salt
+
+塩の荒野
+%%%%
+[branch abbrj]Desolation
+
+荒
+%%%%
+You enter a great desolation of salt!
+
+あなたは広大な塩の荒野に足を踏み入れた！
+%%%%
+[branch]Arena
+
+闘技場
+%%%%
+[branch]the Arena
+
+闘技場
+%%%%
+[branch abbrj]Arena
+
+闘
+%%%%
+You enter Okawaru's Arena!
+
+あなたはオカワルの闘技場に足を踏み入れた！
+%%%%
+[branch]Crucible
+
+坩堝
+%%%%
+[branch]the Crucible of Flesh
+
+肉の坩堝
+%%%%
+[branch abbrj]Crucible
+
+坩
+%%%%
+You are dragged down into the Crucible of Flesh!
+
+あなたは肉の坩堝へと引きずり込まれた！
+%%%%
+[branch]Necropolis
+
+死者の都
+%%%%
+[branch]the Necropolis
+
+死者の都
+%%%%
+[branch abbrj]Necropolis
+
+死
+%%%%
+You enter an ornate necropolis!
+
+あなたは華麗に飾られた死者の都に足を踏み入れた！
+%%%%

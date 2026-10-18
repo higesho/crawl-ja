@@ -73,6 +73,26 @@ tile_font_lbl_file = C:/Windows/Fonts/BIZ-UDGothicR.ttc
 画面確認は computer-use で、アプリ名にパス
 `L:\project4\DCSS\crawl\crawl-ref\source\crawl.exe` を指定して許可を取る。
 
+## 第 1 陣の報告から出た、後続の担当への申し送り
+
+- skills.cc / describe-god.cc: 称号の置換(`@Walker@`, `@Child@`, `@Weight@`,
+  種族名など)が英語のまま入る。data-species.txt の `[spec genus]`,
+  `[walker]`, `[walking]`, `[child]`、data-skills.txt の `[title]Heavy` 等を
+  使って訳した値を入れる。`player_title()` の冠詞("La " や ", ")は不要。
+- god_name_j(): ジーヴァの長い名前は data-gods.txt の
+  `%s the Shapeless`(形なき『%s』)で組み立てる処理が必要。
+- descript/ja/backgrounds.txt の Artificer「熟練工」・Warper「転移術師」が
+  職業名(data-jobs.txt の発動術師・転位術師)と不一致。説明文の全訳時に揃える。
+- dat/database/ja/godname.txt は神の長い名前を一部しか訳していない。
+- DUR_CONFUSING_TOUCH の終了メッセージは `you.hands_act("stop", "glowing.")` で
+  組み立てられるので、C++ 側で `[hands act]...` キーを引く対応が必要。
+- 0.34 で新しく決めた訳語(他の担当も揃える): Will=意志力(括弧内の (Will+) は
+  英語のまま)、Slay=殺傷、Apt=適性、XL=レベル、Speed=速度。
+  新種族: 鬼、ジンニー、バラチ、アルマタウル、メテオラン、コグリン、山ドワーフ、
+  汚泥エルフ、ポルターガイスト。支部: Gauntlet=試練場、Crucible=肉の坩堝、
+  Necropolis=死者の都。
+- 辞書の重複キーは最後に一括チェックする(特に `[verb]hit` などの攻撃動詞)。
+
 ## 既知の問題・未対応
 
 - `crawl-ref/source/nul` はビルドの前処理が作るゴミ。コミットしない。

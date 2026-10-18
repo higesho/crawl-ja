@@ -307,8 +307,12 @@ struct monster_info_base
     int mbase_speed;
     mon_energy_usage menergy;
     CrawlHashTable props;
+    // 英語(Lua の判定に使われる)
     string constrictor_name;
     vector<string> constricting_name;
+    // 表示用(日本語)
+    string constrictor_name_j;
+    vector<string> constricting_name_j;
     monster_spells spells;
     mon_attack_def attack[MAX_NUM_ATTACKS];
     bool can_go_frenzy;
@@ -387,10 +391,8 @@ struct monster_info : public monster_info_base
         return mb[mbflag];
     }
 
-    inline string damage_desc() const
-    {
-        return get_damage_level_string(holi, dam);
-    }
+    // 表示用(日本語)
+    string damage_desc() const;
     string get_max_hp_desc() const;
     int get_known_max_hp() const;
     int regen_rate(int scale) const;
@@ -403,11 +405,18 @@ struct monster_info : public monster_info_base
     string db_name() const;
     bool has_proper_name() const;
     string pluralised_name(bool fullname = true) const;
+    // 表示用の名前(日本語)。冠詞・複数形は付かない。
+    // DESC_DBNAME を渡したときは英語の名前を返す。
     string common_name(description_level_type desc = DESC_PLAIN) const;
     string proper_name(description_level_type desc = DESC_PLAIN) const;
     string full_name(description_level_type desc = DESC_PLAIN) const;
+    // 英語の名前(比較・検索キー・ログ用)。
+    string common_name_en(description_level_type desc = DESC_PLAIN) const;
+    string proper_name_en(description_level_type desc = DESC_PLAIN) const;
+    string full_name_en(description_level_type desc = DESC_PLAIN) const;
 
-    vector<string> attributes() const;
+    vector<string> attributes() const;    // 表示用(日本語)
+    vector<string> attributes_en() const; // 英語(Lua の比較用)
 
     const char *pronoun(pronoun_type variant) const;
     bool pronoun_plurality() const;
@@ -506,8 +515,12 @@ struct monster_info : public monster_info_base
 
 protected:
     string _core_name() const;
+    string _core_name_en() const;
+    string _mname_j() const;
     string _base_name() const;
     string _apply_adjusted_description(description_level_type desc, const string& s) const;
+    string _apply_adjusted_description_j(description_level_type desc, const string& s) const;
+    vector<string> _attributes(bool ja) const;
 };
 
 // Colour should be between -1 and 15 inclusive!

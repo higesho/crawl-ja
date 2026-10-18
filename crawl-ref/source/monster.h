@@ -323,23 +323,35 @@ public:
     bool      can_use_missile(const item_def &item) const;
     bool      likes_wand(const item_def &item) const;
 
+    // name() / base_name() / full_name() は表示用の日本語の名前を返す
+    // (DESC_DBNAME は英語)。英語の名前が必要なとき(比較・検索キー・
+    // Lua・ログ)は *_en() を使う。
     string name(description_level_type type, bool force_visible = false,
                 bool force_article = false) const override;
+    string name_en(description_level_type type, bool force_visible = false,
+                   bool force_article = false) const;
 
     // Base name of the monster, bypassing any mname setting. For an orc priest
     // named Arbolt, name() will return "Arbolt", but base_name() will return
     // "orc priest".
     string base_name(description_level_type type,
                      bool force_visible = false) const;
+    string base_name_en(description_level_type type,
+                        bool force_visible = false) const;
     // Full name of the monster. For an orc priest named Arbolt, full_name()
     // will return "Arbolt the orc priest".
     string full_name(description_level_type type) const;
+    string full_name_en(description_level_type type) const;
     string pronoun(pronoun_type pro, bool force_visible = false) const override;
     bool pronoun_plurality(bool force_visible = false) const;
     string conj_verb(const string &verb) const override;
     string hand_name(bool plural, bool *can_plural = nullptr) const override;
     string foot_name(bool plural, bool *can_plural = nullptr) const override;
     string arm_name(bool plural, bool *can_plural = nullptr) const override;
+    // 英語の手足の名前(上の 3 つは日本語)
+    string hand_name_en(bool plural, bool *can_plural = nullptr) const;
+    string foot_name_en(bool plural, bool *can_plural = nullptr) const;
+    string arm_name_en(bool plural, bool *can_plural = nullptr) const;
     string blood_name() const;
 
     bool fumbles_attack() override;

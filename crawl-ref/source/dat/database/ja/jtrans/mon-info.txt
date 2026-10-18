@@ -1,0 +1,1338 @@
+%%%%
+################################################################
+#   mon-info.cc
+#   モンスター名の部品(前後に付く語)。キーが他の名前とぶつからないよう
+#   タグを付けている。
+################################################################
+%%%%
+[mon name]your
+
+あなたの
+%%%%
+[mon prefix]helpless
+
+無防備な
+%%%%
+[mon prefix]spectral
+
+幽体の
+%%%%
+[mon prefix]bound
+
+呪縛された
+%%%%
+[mon prefix]ghostly
+
+霊体の
+%%%%
+[mon prefix]vampire
+
+吸血鬼化した
+%%%%
+[mon prefix]sensed
+
+感知済みの
+%%%%
+[mon prefix]active
+
+活発な
+%%%%
+# 九首ヒドラ
+[mon prefix]-headed
+
+首
+%%%%
+# 九の首を持つ『レルネーのヒドラ』
+[mon prefix]-headed (proper name)
+
+の首を持つ
+%%%%
+# 棘だらけの蝙蝠のような年若い獣
+[mon suffix]beast
+
+獣
+%%%%
+# オークのゾンビ / 『シグムンド』のゾンビ
+[mon suffix]zombie
+
+ゾンビ
+%%%%
+[mon suffix]draugr
+
+ドラウグル
+%%%%
+[mon suffix]simulacrum
+
+幻像
+%%%%
+[mon suffix]spectre
+
+亡霊
+%%%%
+[mon suffix]bound soul
+
+呪縛された魂
+%%%%
+# オークの形をした塩の柱
+[mon suffix]shaped
+
+の形をした
+%%%%
+[mon suffix]pillar of salt
+
+塩の柱
+%%%%
+[mon suffix]block of ice
+
+氷塊
+%%%%
+[mon suffix]shaped shifter
+
+に化けた変身能力者
+%%%%
+dancing %s
+
+踊る%s
+%%%%
+echoed %s
+
+%sの残響
+%%%%
+haunted %s
+
+取り憑かれた%s
+%%%%
+# %s はプレイヤーの名前
+%s's ghost
+
+%sの幽霊
+%%%%
+%s's illusion
+
+%sの幻影
+%%%%
+# パンデモニウムの君主(名前はランダム生成の英字)
+[panlord]%s
+
+『%s』
+%%%%
+living banishment spell
+
+生ける追放の呪文
+%%%%
+living crystal spell
+
+生ける水晶の呪文
+%%%%
+living smiting commandment
+
+生ける懲罰の戒律
+%%%%
+living paralysis spell
+
+生ける麻痺の呪文
+%%%%
+################################################################
+#   締め付け
+################################################################
+%%%%
+constricted by %s
+
+%sに締め付けられている
+%%%%
+constricting %s
+
+%sを締め付けている
+%%%%
+################################################################
+#   モンスター一覧
+################################################################
+%%%%
+# 3体のオーク
+[mon list]%d
+
+%d体の
+%%%%
+[mon list adj]friendly
+
+友好的な
+%%%%
+[mon list adj]neutral
+
+中立の
+%%%%
+(fellow slime)
+
+(仲間のスライム)
+%%%%
+# 一覧の状態表示で、同じ種類のうち一部だけがその状態のとき
+[mon cond]%d %s
+
+%d体が%s
+%%%%
+################################################################
+#   傷の程度(mon-util.cc の get_damage_level_string() の英語を引く)
+################################################################
+%%%%
+[wounds]almost dead
+
+死にかけている
+%%%%
+[wounds]almost destroyed
+
+ほとんど壊れかけている
+%%%%
+[wounds]severely wounded
+
+ひどく傷ついている
+%%%%
+[wounds]severely damaged
+
+ひどく損傷している
+%%%%
+[wounds]heavily wounded
+
+かなり傷ついている
+%%%%
+[wounds]heavily damaged
+
+かなり損傷している
+%%%%
+[wounds]moderately wounded
+
+それなりに傷ついている
+%%%%
+[wounds]moderately damaged
+
+それなりに損傷している
+%%%%
+[wounds]lightly wounded
+
+軽く傷ついている
+%%%%
+[wounds]lightly damaged
+
+軽く損傷している
+%%%%
+[wounds]not wounded
+
+傷ついていない
+%%%%
+[wounds]not damaged
+
+損傷していない
+%%%%
+# 代名詞(It is ...)は省く
+[wounds sentence]%s
+
+%s。
+%%%%
+################################################################
+#   速度
+################################################################
+%%%%
+Speed: %d%%
+
+速度: %d%%
+%%%%
+[speed]attack
+
+攻撃
+%%%%
+[speed]shoot
+
+射撃
+%%%%
+[speed]travel
+
+移動
+%%%%
+[speed]swim
+
+水泳
+%%%%
+[speed]magic
+
+魔法
+%%%%
+[speed]pray
+
+祈祷
+%%%%
+(but often pauses)
+
+(ただし頻繁に立ち止まる)
+%%%%
+(normally travels %s than you)
+
+(通常はあなたより%s移動する)
+%%%%
+[speed]slower
+
+遅く
+%%%%
+[speed]faster
+
+速く
+%%%%
+################################################################
+#   状態(短い表示): monster_info_flag_names の short_singular
+#   モンスター一覧の右に (睡眠中、毒) のように並ぶ
+################################################################
+%%%%
+[info]charmed
+
+魅了
+%%%%
+[info]hexed
+
+支配離脱
+%%%%
+[info]summoned
+
+召喚
+%%%%
+[info]minion
+
+従僕
+%%%%
+[info]wandering
+
+放浪
+%%%%
+[info]mesmerising
+
+魅惑
+%%%%
+[info]berserk
+
+バーサーク
+%%%%
+[info]fast
+
+加速
+%%%%
+[info]rolling
+
+転がり
+%%%%
+[info]inner flame
+
+内炎
+%%%%
+[info]reflects damage
+
+ダメージ反射
+%%%%
+[info]soul bound
+
+魂呪縛
+%%%%
+[info]strong
+
+強化
+%%%%
+[info]empowered
+
+呪文強化
+%%%%
+[info]charged
+
+充填済
+%%%%
+[info]charging
+
+充填中
+%%%%
+[info]agile
+
+機敏
+%%%%
+[info]swift
+
+俊足
+%%%%
+[info]pursuing
+
+追跡
+%%%%
+[info]stilling wind
+
+凪
+%%%%
+[info]silencing
+
+沈黙化
+%%%%
+[info]can howl
+
+遠吠え可
+%%%%
+[info]vortex
+
+渦
+%%%%
+[info]gusty
+
+突風
+%%%%
+[info]frenzied
+
+狂乱
+%%%%
+[info]scary
+
+恐怖
+%%%%
+[info]chanting recall
+
+招来詠唱
+%%%%
+[info]deflects missiles
+
+飛来物逸らし
+%%%%
+[info]toxic aura
+
+毒オーラ
+%%%%
+[info]curare
+
+クラーレ
+%%%%
+[info]sign of ruin
+
+破滅の印
+%%%%
+[info]resistant
+
+耐性強化
+%%%%
+[info]invisible
+
+透明
+%%%%
+[info]regenerating
+
+再生
+%%%%
+[info]strong-willed
+
+意志強化
+%%%%
+[info]sheltered
+
+庇護
+%%%%
+[info]incited
+
+扇動
+%%%%
+[info]clouds
+
+雲
+%%%%
+[info]flame-wreathed
+
+炎纏い
+%%%%
+[info]unsilenced
+
+沈黙無効
+%%%%
+[info]doubled vigour
+
+活力倍増
+%%%%
+[info]soul-gripped
+
+魂掌握
+%%%%
+[info]caught
+
+捕縛
+%%%%
+[info]webbed
+
+蜘蛛の巣
+%%%%
+[info]paralysed
+
+麻痺
+%%%%
+[info]petrified
+
+石化
+%%%%
+[info]confused
+
+混乱
+%%%%
+[info]dormant
+
+休眠
+%%%%
+[info]asleep
+
+睡眠中
+%%%%
+[info]unaware
+
+未発見
+%%%%
+[info]blind
+
+盲目
+%%%%
+[info]distracted
+
+注意散漫
+%%%%
+[info]unable to see you
+
+あなたが見えない
+%%%%
+[info]infested
+
+寄生
+%%%%
+[info]stupefied
+
+茫然自失
+%%%%
+[info]pinned
+
+釘付け
+%%%%
+[info]withering
+
+枯死
+%%%%
+[info]crumbling
+
+崩壊
+%%%%
+[info]petrifying
+
+石化中
+%%%%
+[info]mad
+
+狂気
+%%%%
+[info]fleeing
+
+逃走中
+%%%%
+[info]dazed
+
+眩暈
+%%%%
+[info]mute
+
+沈黙
+%%%%
+[info]frozen
+
+凍結
+%%%%
+[info]burning
+
+炎上
+%%%%
+[info]poisoned
+
+毒
+%%%%
+[info]very poisoned
+
+猛毒
+%%%%
+[info]extremely poisoned
+
+劇毒
+%%%%
+[info]contam
+
+汚染
+%%%%
+[info]heavy contam
+
+重汚染
+%%%%
+[info]slow
+
+減速
+%%%%
+[info]catching breath
+
+息切れ
+%%%%
+[info]weak-willed
+
+意志低下
+%%%%
+[info]combustible
+
+可燃
+%%%%
+[info]easily poisoned
+
+毒耐性低下
+%%%%
+[info]misshapen
+
+奇形
+%%%%
+[info]corroded
+
+腐蝕
+%%%%
+[info]flayed
+
+裂傷
+%%%%
+[info]rooted
+
+根縛り
+%%%%
+[info]clutched
+
+掴まれ
+%%%%
+[info]skewered
+
+逆棘
+%%%%
+[info]sick
+
+病気
+%%%%
+[info]weak
+
+虚弱
+%%%%
+[info]drained
+
+衰弱
+%%%%
+[info]very drained
+
+重衰弱
+%%%%
+[info]magic-sapped
+
+魔力阻害
+%%%%
+[info]corona
+
+光輪
+%%%%
+[info]flooded
+
+溺れ
+%%%%
+[info]anchored
+
+次元固定
+%%%%
+[info]struggling
+
+足止め
+%%%%
+[info]pain bonded
+
+痛み分け
+%%%%
+[info]idealised
+
+理想化
+%%%%
+[info]ally target
+
+仲間の標的
+%%%%
+[info]magic disrupted
+
+魔法妨害
+%%%%
+[info]anguished
+
+苦悶
+%%%%
+[info]reflecting
+
+反射
+%%%%
+[info]teleporting
+
+テレポート中
+%%%%
+[info]bound
+
+束縛
+%%%%
+[info]bullseye target
+
+照準
+%%%%
+[info]vitrified
+
+硝子化
+%%%%
+[info]agonized
+
+苦悶の呪い
+%%%%
+[info]retreating
+
+退却
+%%%%
+[info]divinely empowered
+
+神の加護
+%%%%
+[info]anointable
+
+使徒候補
+%%%%
+[info]target of vengeance
+
+復讐の標的
+%%%%
+[info]magnetised
+
+磁化
+%%%%
+[info]rimeblight
+
+霜枯れ
+%%%%
+[info]shadowless
+
+影なし
+%%%%
+[info]paralysed with fear
+
+恐怖で麻痺
+%%%%
+[info]soul-splintered
+
+魂断片化
+%%%%
+[info]grapneled
+
+鉤縄
+%%%%
+[info]tempered
+
+鍛錬
+%%%%
+[info]untethered
+
+空間不安定
+%%%%
+[info]chaos-laced
+
+混沌
+%%%%
+[info]vexed
+
+苛立ち
+%%%%
+[info]ablaze
+
+記憶の炎
+%%%%
+[info]bee
+
+時計仕掛けの蜂
+%%%%
+[info]figment
+
+幻影
+%%%%
+[info]paradox
+
+逆説
+%%%%
+[info]warded
+
+守護
+%%%%
+[info]dim
+
+呪文弱化
+%%%%
+# 装備・攻撃(モンスター一覧)
+[info]wand
+
+ワンド
+%%%%
+[info]polearm
+
+長柄武器
+%%%%
+[info]launcher
+
+射出武器
+%%%%
+[info]missile
+
+投擲物
+%%%%
+[info]reaching
+
+間合い
+%%%%
+[info]constriction
+
+締め付け
+%%%%
+[info]trample
+
+踏みつけ
+%%%%
+[info]drag
+
+引きずり
+%%%%
+################################################################
+#   状態(長い表示): monster_info_flag_names の long_singular
+#   x で調べたときなどに (毒に冒されている、混乱している) のように並ぶ。
+#   代名詞(@possessive@)は訳では省く。
+################################################################
+%%%%
+[attr]charmed
+
+魅了されている
+%%%%
+[attr]control wrested from you
+
+あなたの支配を離れている
+%%%%
+[attr]summoned
+
+召喚されている
+%%%%
+[attr]minion
+
+従僕
+%%%%
+[attr]unrewarding
+
+倒しても経験値が得られない
+%%%%
+[attr]wandering
+
+放浪している
+%%%%
+[attr]mesmerising
+
+魅惑している
+%%%%
+[attr]berserk
+
+バーサークしている
+%%%%
+[attr]fast
+
+加速している
+%%%%
+[attr]rolling
+
+転がっている
+%%%%
+[attr]inner flame
+
+内炎を宿している
+%%%%
+[attr]reflecting injuries
+
+傷を反射している
+%%%%
+[attr]soul bound
+
+魂を呪縛されている
+%%%%
+[attr]strong
+
+強化されている
+%%%%
+[attr]spells empowered
+
+呪文が強化されている
+%%%%
+[attr]fully charged
+
+魔力を充填し終えている
+%%%%
+[attr]partially charged
+
+魔力を充填している
+%%%%
+[attr]unusually agile
+
+非常に機敏になっている
+%%%%
+[attr]covering ground quickly
+
+素早く移動している
+%%%%
+[attr]pursuing quickly
+
+素早く追跡している
+%%%%
+[attr]stilling the winds
+
+風を止ませている
+%%%%
+[attr]radiating silence
+
+沈黙を振りまいている
+%%%%
+[attr]ready to howl
+
+今にも遠吠えしようとしている
+%%%%
+[attr]surrounded by a freezing vortex
+
+凍てつく渦に包まれている
+%%%%
+[attr]surrounded by restless winds
+
+止むことのない風に包まれている
+%%%%
+[attr]frenzied and wild
+
+狂乱して荒れ狂っている
+%%%%
+[attr]inspiring fear
+
+恐怖を与えている
+%%%%
+[attr]chanting recall
+
+招来の呪文を詠唱している
+%%%%
+[attr]deflecting missiles
+
+飛来物を弾いている
+%%%%
+[attr]radiating toxic energy
+
+毒の波動を放っている
+%%%%
+[attr]concentrated venom
+
+濃縮された毒を宿している
+%%%%
+[attr]marked with the sign of ruin
+
+破滅の印を刻まれている
+%%%%
+[attr]unusually resistant
+
+非常に耐性が強くなっている
+%%%%
+[attr]slightly transparent
+
+わずかに透き通っている
+%%%%
+[attr]regenerating
+
+再生している
+%%%%
+[attr]strong-willed
+
+意志が強化されている
+%%%%
+[attr]sheltered from injuries
+
+傷から守られている
+%%%%
+[attr]incited by Gozag
+
+ゴザーグにけしかけられている
+%%%%
+[attr]surrounded by thunder
+
+雷雲に包まれている
+%%%%
+[attr]surrounded by flames
+
+炎に包まれている
+%%%%
+[attr]surrounded by chaotic energy
+
+混沌のエネルギーに包まれている
+%%%%
+[attr]surrounded by mutagenic energy
+
+変異のエネルギーに包まれている
+%%%%
+[attr]surrounded by fog
+
+霧に包まれている
+%%%%
+[attr]surrounded by freezing clouds
+
+凍てつく雲に包まれている
+%%%%
+[attr]surrounded by negative energy
+
+負のエネルギーに包まれている
+%%%%
+[attr]surrounded by acidic fog
+
+酸の霧に包まれている
+%%%%
+[attr]surrounded by foul miasma
+
+汚れた瘴気に包まれている
+%%%%
+[attr]flame-wreathed
+
+炎を纏っている
+%%%%
+[attr]unaffected by silence
+
+沈黙の影響を受けない
+%%%%
+[attr]doubled in vigour
+
+活力が倍増している
+%%%%
+[attr]soul-gripped
+
+魂を掴まれている
+%%%%
+[attr]entangled in a net
+
+網に絡めとられている
+%%%%
+[attr]entangled in a web
+
+蜘蛛の巣に引っかかっている
+%%%%
+[attr]paralysed
+
+麻痺している
+%%%%
+[attr]petrified
+
+石化している
+%%%%
+[attr]confused
+
+混乱している
+%%%%
+[attr]dormant
+
+休眠している
+%%%%
+[attr]asleep
+
+眠っている
+%%%%
+[attr]unaware
+
+あなたに気づいていない
+%%%%
+[attr]blind
+
+目が見えない
+%%%%
+[attr]not watching you
+
+あなたを見ていない
+%%%%
+[attr]unable to see you
+
+あなたが見えない
+%%%%
+[attr]infested
+
+太陽虫に寄生されている
+%%%%
+[attr]stupefied
+
+呆然としている
+%%%%
+[attr]pinned
+
+釘付けにされている
+%%%%
+[attr]withering away
+
+枯れつつある
+%%%%
+[attr]crumbling away
+
+崩れつつある
+%%%%
+[attr]petrifying slowly
+
+ゆっくりと石化しつつある
+%%%%
+[attr]lost in madness
+
+狂気に我を忘れている
+%%%%
+[attr]fleeing
+
+逃走している
+%%%%
+[attr]dazed
+
+目が回っている
+%%%%
+[attr]mute
+
+沈黙している
+%%%%
+[attr]encased in ice
+
+氷に閉じ込められている
+%%%%
+[attr]covered in liquid flames
+
+焼夷の炎を浴びている
+%%%%
+[attr]poisoned
+
+毒に冒されている
+%%%%
+[attr]very poisoned
+
+重い毒に冒されている
+%%%%
+[attr]extremely poisoned
+
+極めて重い毒に冒されている
+%%%%
+[attr]contaminated
+
+魔力に汚染されている
+%%%%
+[attr]heavily contaminated
+
+魔力にひどく汚染されている
+%%%%
+[attr]slow
+
+減速している
+%%%%
+[attr]catching @possessive@ breath
+
+息を整えている
+%%%%
+[attr]weak-willed
+
+意志が弱まっている
+%%%%
+[attr]more vulnerable to fire
+
+さらに火に弱くなっている
+%%%%
+[attr]more vulnerable to poison
+
+さらに毒に弱くなっている
+%%%%
+[attr]misshapen and mutated
+
+奇形に変異している
+%%%%
+[attr]corroded
+
+腐蝕している
+%%%%
+[attr]covered in terrible wounds
+
+ひどい傷で覆われている
+%%%%
+[attr]constricted by roots
+
+木の根に締め付けられている
+%%%%
+[attr]constricted by zombie hands
+
+ゾンビの手に締め付けられている
+%%%%
+[attr]skewered by barbs
+
+逆棘が刺さっている
+%%%%
+[attr]sick
+
+病気にかかっている
+%%%%
+[attr]weak
+
+弱体化している
+%%%%
+[attr]lightly drained
+
+少し衰弱している
+%%%%
+[attr]heavily drained
+
+ひどく衰弱している
+%%%%
+[attr]magic-sapped
+
+魔法が阻害されている
+%%%%
+[attr]softly glowing
+
+柔らかく輝いている
+%%%%
+[attr]unable to breathe
+
+呼吸できない
+%%%%
+[attr]unable to translocate
+
+転移できない
+%%%%
+[attr]covering ground slowly
+
+ゆっくりと移動している
+%%%%
+[attr]sharing @possessive@ pain
+
+痛みを分かち合っている
+%%%%
+[attr]idealised
+
+理想化されている
+%%%%
+[attr]ally target
+
+仲間の標的
+%%%%
+[attr]magic disrupted
+
+魔法を妨害されている
+%%%%
+[attr]anguished
+
+苦悶している
+%%%%
+[attr]reflecting blocked projectiles
+
+防いだ飛び道具を反射する
+%%%%
+[attr]about to teleport
+
+今にもテレポートしようとしている
+%%%%
+[attr]bound in place
+
+その場に縛り付けられている
+%%%%
+[attr]targeted by your dimensional bullseye
+
+あなたの次元照準の標的になっている
+%%%%
+[attr]fragile as glass
+
+ガラスのように脆くなっている
+%%%%
+[attr]cursed with the promise of agony
+
+苦悶の呪いをかけられている
+%%%%
+[attr]retreating
+
+退却している
+%%%%
+[attr]empowered by the touch of Beogh
+
+ベオの御手で力を与えられている
+%%%%
+[attr]ready to become your apostle
+
+あなたの使徒となる準備ができている
+%%%%
+[attr]target of orcish vengeance
+
+オークの復讐の標的
+%%%%
+[attr]covered in magnetic dust
+
+磁性の塵に覆われている
+%%%%
+[attr]afflicted by rimeblight
+
+霜枯れに冒されている
+%%%%
+[attr]missing a shadow
+
+影を失っている
+%%%%
+[attr]paralysed with fear
+
+恐怖で麻痺している
+%%%%
+[attr]soul-splintered
+
+魂が砕かれている
+%%%%
+[attr]grapneled
+
+鉤縄を打ち込まれている
+%%%%
+[attr]tempered
+
+鍛え上げられている
+%%%%
+[attr]untethered in space
+
+空間に繋ぎ留められていない
+%%%%
+[attr]interlaced with chaos
+
+混沌が織り込まれている
+%%%%
+[attr]lashing out in frustration
+
+苛立って暴れている
+%%%%
+[attr]ablaze with memories
+
+記憶の炎に燃え上がっている
+%%%%
+[attr]winding a clockwork bee
+
+時計仕掛けの蜂を巻いている
+%%%%
+[attr]feeble figment
+
+か弱い幻影
+%%%%
+[attr]touched by paradox
+
+逆説に触れられている
+%%%%
+[attr]damage-immune at range
+
+離れた場所からのダメージを受けない
+%%%%
+[attr]diminished spells
+
+呪文が弱化している
+%%%%
+[attr]called by a tesseract
+
+テッセラクトに呼び出された
+%%%%
+[attr]ready to sunder
+
+今にも断ち割ろうとしている
+%%%%
+# 名もなき亡者(Nobody)の残りの記憶
+[attr]%d memories left
+
+残りの記憶: %d
+%%%%

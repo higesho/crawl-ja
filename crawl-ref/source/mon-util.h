@@ -209,7 +209,10 @@ void init_monster_symbols();
 monster *monster_at(const coord_def &pos);
 
 // this is the old moname()
+// 英語の名前(検索キー・Lua・比較用)。表示には mons_type_name_j() を使う。
 string mons_type_name(monster_type type, description_level_type desc);
+// 表示用の名前(日本語)。冠詞は付かない。
+string mons_type_name_j(monster_type type, description_level_type desc);
 
 bool give_monster_proper_name(monster& mon);
 

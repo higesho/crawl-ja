@@ -1,0 +1,1603 @@
+%%%%
+# ============================================================
+#  form-data.h の表示文字列(自動抽出 + 0.19-ja/0.16-ja 旧訳の流用)
+#  short_name は [form]、long_name・description・uc_attack はタグなし。
+#  description は旧訳にならい「〜の姿を」で終える(「あなたは%sとっている」等に入る)。
+#  attack verb と prayer_action は [verb](過去形)、shout_verb・hand_name・foot_name・
+#  flesh_equivalent は [form]。fakemuts/badmuts の短い名前と説明文はタグなし。
+#  wiz_name は訳さない。
+# ============================================================
+# transformation::spider
+[form]Spider
+
+蜘蛛
+%%%%
+spider-form
+
+蜘蛛の形態
+%%%%
+an agile web-spinner.
+
+敏捷な巣張り蜘蛛の姿を
+%%%%
+Fangs
+
+牙
+%%%%
+[verb]hit
+
+攻撃した
+%%%%
+[verb]bite
+
+嚙んだ
+%%%%
+[verb]pounce on
+
+飛びかかった
+%%%%
+[verb]eviscerate
+
+内臓をくりぬいた
+%%%%
+[form]hiss
+
+キーキー鳴く
+%%%%
+[form]front pincers
+
+前の鋏
+%%%%
+[verb]crawl onto
+
+這い回った
+%%%%
+[form]flesh
+
+元の姿
+%%%%
+ensnaring attack
+
+絡めとる攻撃
+%%%%
+You sometimes web enemies you hit.
+
+あなたは攻撃した敵を時々蜘蛛の巣で絡めとる。
+%%%%
+rampage
+
+猛進
+%%%%
+You can move swiftly towards enemies.
+
+あなたは敵に向かって素早く移動できる。
+%%%%
+jumping
+
+跳躍
+%%%%
+You can leap distances in the blink of an eye.
+
+あなたは瞬く間に遠くまで跳躍できる。
+%%%%
+stealth
+
+隠密
+%%%%
+You are stealthy and inflict bonus damage to unaware enemies.
+
+あなたは隠密性が高く、気付いていない敵に追加ダメージを与える。
+%%%%
+You are tiny and dextrous.
+
+あなたは小さく、器用だ。
+%%%%
+poison vulnerability
+
+毒への脆弱性
+%%%%
+You are susceptible to poisons. (rPois-)
+
+あなたは毒に弱い。(rPois-)
+%%%%
+# transformation::blade
+[form]Blade
+
+刃の手
+%%%%
+blade-form
+
+刃の手の形態
+%%%%
+blade aux
+
+刃の補助攻撃
+%%%%
+You can perform multiple auxiliary attacks with your blades.
+
+あなたは刃で複数回の補助攻撃を行える。
+%%%%
+blade parry
+
+刃の受け流し
+%%%%
+You gain SH while attacking, based on your slaying.
+
+あなたは攻撃中、殺傷力に応じて盾値を得る。
+%%%%
+# transformation::statue
+[form]Statue
+
+石像
+%%%%
+statue-form
+
+石像の形態
+%%%%
+a stone statue.
+
+石像化
+%%%%
+[verb]place yourself before
+
+腰を据えた
+%%%%
+[form]stone
+
+石の体
+%%%%
+powerful
+
+強力な攻撃
+%%%%
+Your melee attacks are powerful.
+
+あなたの近接攻撃は強力だ。
+%%%%
+torment resistance 1
+
+苦痛への耐性1
+%%%%
+You are resistant to unholy torment.
+
+あなたは邪悪な苦痛に耐性がある。
+%%%%
+slow
+
+鈍重
+%%%%
+All of your actions are slow.
+
+あなたのあらゆる行動は遅い。
+%%%%
+reduced EV
+
+回避低下
+%%%%
+Your evasion is reduced.
+
+あなたの回避は低下している。
+%%%%
+# transformation::serpent
+[form]Serpent
+
+大蛇
+%%%%
+amphisbaena-form
+
+アンフィスバエナの形態
+%%%%
+an enormous two-headed serpent.
+
+巨大な双頭の大蛇の姿を
+%%%%
+[verb]lash
+
+打ち据えた
+%%%%
+[verb]body-slam
+
+体当たりした
+%%%%
+[verb]crush
+
+打ち砕いた
+%%%%
+[form]coils
+
+とぐろ
+%%%%
+[verb]coil in front of
+
+とぐろを巻いた
+%%%%
+constrict
+
+締めつけ
+%%%%
+You have a powerful constriction melee attack.
+
+あなたは強力な締めつけの近接攻撃を持っている。
+%%%%
+two hats
+
+二つの帽子
+%%%%
+You can wear a hat or helmet on each head.
+
+あなたはそれぞれの頭に帽子や兜を被ることができる。
+%%%%
+# transformation::dragon
+[form]Dragon
+
+竜化
+%%%%
+dragon-form
+
+ドラゴンの形態
+%%%%
+a fearsome dragon!
+
+恐ろしいドラゴンの姿を
+%%%%
+Teeth and claws
+
+牙と爪
+%%%%
+[verb]claw
+
+引っ掻いた
+%%%%
+[verb]maul
+
+めちゃめちゃにした
+%%%%
+[form]roar
+
+吠える
+%%%%
+[form]foreclaw
+
+前脚の爪
+%%%%
+[verb]bow your head before
+
+おじぎをした
+%%%%
+Breath Dmg
+
+ブレスダメージ
+%%%%
+dragon claw
+
+竜の爪
+%%%%
+You have a powerful clawing attack.
+
+あなたは強力な爪の攻撃を持っている。
+%%%%
+dragon scales
+
+竜の鱗
+%%%%
+Your giant scaled body is strong and resilient, but less evasive.
+
+あなたの鱗に覆われた巨体は強靭で打たれ強いが、回避しにくい。
+%%%%
+# transformation::death
+[form]Death
+
+死霊化
+%%%%
+death-form
+
+死の形態
+%%%%
+an undying horror.
+
+不死の恐怖の姿を
+%%%%
+[form]fossilised flesh
+
+化石化した肉体
+%%%%
+vile attack
+
+邪悪な攻撃
+%%%%
+Your melee attacks drain, slow and weaken victims.
+
+あなたの近接攻撃は相手を吸収し、減速させ、弱体化させる。
+%%%%
+siphon essence
+
+精気吸収
+%%%%
+You can torment nearby foes to heal from their wounds.
+
+あなたは周囲の敵に苦痛を与え、その傷から体力を回復できる。
+%%%%
+torment immunity
+
+苦痛への免疫
+%%%%
+You are immune to unholy pain and torment.
+
+あなたは邪悪な苦痛に免疫がある。
+%%%%
+no potions
+
+薬の飲用不可
+%%%%
+You cannot drink.
+
+あなたは薬を飲むことができない。
+%%%%
+accursed
+
+呪われた身
+%%%%
+You recover more slowly from Doom and Banes.
+
+あなたは破滅と災厄からの回復が遅い。
+%%%%
+# transformation::bat
+[form]Bat
+
+蝙蝠
+%%%%
+bat-form
+
+蝙蝠の形態
+%%%%
+a bat.
+
+蝙蝠の姿を
+%%%%
+Teeth
+
+歯
+%%%%
+[form]squeak
+
+キーキー鳴く
+%%%%
+[verb]perch on
+
+止まった
+%%%%
+extremely fast
+
+極めて素早い
+%%%%
+You cover ground extremely quickly.
+
+あなたはきわめて素早く地面を動く。
+%%%%
+You are tiny, dextrous, and very evasive.
+
+あなたは小さく、器用で、非常に回避能力が高い。
+%%%%
+weak attacks
+
+弱い攻撃
+%%%%
+Your unarmed attacks are very weak.
+
+あなたの素手攻撃は非常に弱い。
+%%%%
+# transformation::pig
+[form]Pig
+
+豚化
+%%%%
+pig-form
+
+豚の形態
+%%%%
+a filthy swine.
+
+豚の姿を
+%%%%
+[form]squeal
+
+ブーブーと鳴く
+%%%%
+[form]front trotter
+
+前脚
+%%%%
+[form]trotter
+
+後ろ足
+%%%%
+very fast
+
+とても素早い
+%%%%
+You cover ground very quickly.
+
+あなたは非常に素早く地面を動く。
+%%%%
+# transformation::appendage
+[form]App
+
+半獣
+%%%%
+appendages
+
+付属肢
+%%%%
+# transformation::tree
+[form]Tree
+
+樹化
+%%%%
+tree-form
+
+樹木の形態
+%%%%
+a tree.
+
+樹木化
+%%%%
+Branches
+
+枝
+%%%%
+[verb]smack
+
+ぴしゃりと打った
+%%%%
+[verb]pummel
+
+続けざまに殴りつけた
+%%%%
+[verb]thrash
+
+強く鞭打った
+%%%%
+[form]creak
+
+きしむ音を立てる
+%%%%
+[form]branch
+
+枝
+%%%%
+[form]root
+
+根
+%%%%
+[verb]sway towards
+
+枝を揺らした
+%%%%
+[form]wood
+
+元の姿
+%%%%
+resilient
+
+頑丈
+%%%%
+Your bark is very hard, but your evasion is minimal.
+
+あなたの樹皮は非常に硬いが、回避は最小限だ。
+%%%%
+Your unarmed attacks smack enemies forcefully with your branches.
+
+あなたの素手攻撃は枝で敵を力強く打ちつける。
+%%%%
+You are immune to unholy torment.
+
+あなたは邪悪な苦痛に免疫がある。
+%%%%
+stationary
+
+定着
+%%%%
+Your roots penetrate the ground, keeping you stationary.
+
+あなたの根は地面に食い込み、あなたをその場に留めている。
+%%%%
+-Tele
+
+転位不可
+%%%%
+You cannot be teleported.
+
+あなたはテレポートできない。
+%%%%
+# transformation::porcupine
+[form]Porc
+
+豪猪
+%%%%
+porc-form
+
+豪猪の形態
+%%%%
+a spiny porcupine.
+
+ヤマアラシの姿を
+%%%%
+[form]front leg
+
+前脚
+%%%%
+[verb]curl into a sanctuary of spikes before
+
+棘だらけの体を丸めた
+%%%%
+# transformation::wisp
+[form]Wisp
+
+霧化
+%%%%
+wisp-form
+
+霧の形態
+%%%%
+an insubstantial wisp.
+
+稀薄な霧の姿を
+%%%%
+Misty tendrils
+
+霧の手先
+%%%%
+[verb]touch
+
+触れた
+%%%%
+[verb]engulf
+
+とりまいた
+%%%%
+[form]whoosh
+
+ヒューッと音を立てる
+%%%%
+[form]misty tendril
+
+霧の手先
+%%%%
+[form]strand
+
+下部
+%%%%
+[verb]swirl around
+
+渦を巻いた
+%%%%
+[form]vapour
+
+元の姿
+%%%%
+You are tiny and evasive.
+
+あなたは小さく、回避能力が高い。
+%%%%
+insubstantial
+
+実体なし
+%%%%
+You are insubstantial and cannot be petrified, ensnared, or set on fire.
+
+あなたは実体がなく、石化されず、絡めとられず、炎上もしない。
+%%%%
+highly resistant
+
+高い耐性
+%%%%
+You are highly resistant to most damage types. (rF++, rC++, rN+++, rElec, rCorr)
+
+あなたはほとんどの種類のダメージに高い耐性を持つ。(rF++, rC++, rN+++, rElec, rCorr)
+%%%%
+# transformation::jelly
+[form]Jelly
+
+ジェリー
+%%%%
+jelly-form
+
+ジェリーの形態
+%%%%
+a lump of jelly.
+
+ジェリーの姿を
+%%%%
+Pseudopod
+
+仮足
+%%%%
+[verb]slap
+
+打ちつけた
+%%%%
+[form]gurgle
+
+ゴボゴボと音を立てる
+%%%%
+[form]pseudopod
+
+仮足
+%%%%
+[verb]squish down before
+
+ぺしゃんこに身を伏せた
+%%%%
+acid body
+
+酸の体
+%%%%
+You are resistant to acid and immune to corrosive walls.
+
+あなたは酸に耐性があり、腐食性の壁を無効化する。
+%%%%
+amorphous state
+
+不定形
+%%%%
+Your amorphous body is immune to blinding, drowning, and ensnarement.
+
+あなたの不定形の体は盲目、溺水、絡めとりを無効化する。
+%%%%
+acidic touch
+
+酸の接触
+%%%%
+Your melee attacks splash acid on your foes.
+
+あなたの近接攻撃は敵に酸を浴びせる。
+%%%%
+heavily diminished spells
+
+呪文の大幅な弱体化
+%%%%
+You cast all spells with heavily decreased power.
+
+あなたが唱える呪文はすべて威力が大幅に低下する。
+%%%%
+# transformation::fungus
+[form]Fungus
+
+茸化
+%%%%
+fungus-form
+
+茸の形態
+%%%%
+a sentient fungus.
+
+知性あるキノコの姿を
+%%%%
+Spores
+
+胞子
+%%%%
+[verb]release spores at
+
+胞子を振りまいた
+%%%%
+[form]sporulate
+
+胞子を放つ
+%%%%
+[form]hypha
+
+菌糸
+%%%%
+[verb]release spores on
+
+胞子を放った
+%%%%
+Your melee attacks release spores that confuse breathing creatures.
+
+あなたの近接攻撃は呼吸する生き物を混乱させる胞子を放つ。
+%%%%
+terrified
+
+恐怖
+%%%%
+You become terrified and freeze when enemies are visible.
+
+あなたは敵が見えると恐怖ですくみあがる。
+%%%%
+# transformation::shadow
+[form]Shadow
+
+影化
+%%%%
+shadow-form
+
+影の形態
+%%%%
+a swirling mass of dark shadows.
+
+渦巻く漆黒の影の姿を
+%%%%
+half damage
+
+ダメージ半減
+%%%%
+Damage taken is halved, but you are drained when taking damage.
+
+受けるダメージは半減するが、ダメージを受けると生命力を吸収される。
+%%%%
+bleed smoke
+
+煙の血
+%%%%
+You bleed smoke when taking damage.
+
+あなたはダメージを受けると煙を流す。
+%%%%
+invisible
+
+透明
+%%%%
+You are invisible.
+
+あなたは透明化している。
+%%%%
+unshakeable will
+
+揺るがぬ意志
+%%%%
+Your willpower is unshakeable.
+
+あなたの意志力は揺るがない。
+%%%%
+Your attacks do half damage.
+
+あなたの攻撃のダメージは半減する。
+%%%%
+weak spells
+
+弱い呪文
+%%%%
+Your spells are much less powerful.
+
+あなたの呪文の威力はずっと弱い。
+%%%%
+# transformation::hydra
+[form]Hydra
+
+ヒドラ
+%%%%
+hydra-form
+
+ヒドラの形態
+%%%%
+[verb]nip at
+
+つねった
+%%%%
+[verb]gouge
+
+えぐった
+%%%%
+[verb]chomp
+
+むしゃむしゃ食べた
+%%%%
+[verb]bow your heads before
+
+頭を垂れた
+%%%%
+fast swimmer
+
+速い泳ぎ
+%%%%
+You swim very quickly.
+
+あなたは非常に速く泳ぐ。
+%%%%
+devour
+
+捕食
+%%%%
+You can devour living enemies to heal.
+
+あなたは生きている敵を捕食して体力を回復できる。
+%%%%
+# transformation::storm
+[form]Storm
+
+嵐化
+%%%%
+storm-form
+
+嵐の形態
+%%%%
+a lightning-filled tempest!
+
+稲妻に満ちた嵐の姿を
+%%%%
+[verb]buffet
+
+打ちつけた
+%%%%
+[verb]batter
+
+叩きのめした
+%%%%
+[verb]blast
+
+吹き飛ばした
+%%%%
+[form]bellow
+
+轟く声を上げる
+%%%%
+[form]air
+
+大気
+%%%%
+Blinkbolt Dmg
+
+雷化ダメージ
+%%%%
+electrical cleaving
+
+電撃の薙ぎ払い
+%%%%
+Your electrical attacks strike out in all directions at once.
+
+あなたの電撃の攻撃は全方向に同時に放たれる。
+%%%%
+evasive
+
+回避
+%%%%
+You are incredibly evasive.
+
+あなたは信じられないほど回避能力が高い。
+%%%%
+blinkbolt
+
+雷化
+%%%%
+You can turn into living lightning.
+
+あなたは生きた稲妻に変化できる。
+%%%%
+# transformation::quill
+[form]Quill
+
+針化
+%%%%
+quill-form
+
+針の形態
+%%%%
+covered in sharp quills.
+
+鋭い針に覆われた姿を
+%%%%
+Quill Dmg
+
+針ダメージ
+%%%%
+quills
+
+針
+%%%%
+Your quills sometimes injure those who attack you in melee.
+
+あなたの針は近接攻撃してきた相手を時々傷つける。
+%%%%
+# transformation::maw
+[form]Maw
+
+大口
+%%%%
+maw-form
+
+大口の形態
+%%%%
+a creature with a mouth for a stomach.
+
+腹に口を持つ生き物の姿を
+%%%%
+[form]shout twice
+
+二度叫ぶ
+%%%%
+maw attack
+
+大口の攻撃
+%%%%
+Your maw can bite with vicious strength.
+
+あなたの大口は凶暴な力で噛みつける。
+%%%%
+devouring maw
+
+貪る大口
+%%%%
+You can devour enemies to increase your regeneration.
+
+あなたは敵を貪って再生能力を高めることができる。
+%%%%
+growling stomach
+
+腹の虫
+%%%%
+Your maw sometimes becomes mesmerised by tasty morsels.
+
+あなたの大口はおいしそうな獲物に時々心を奪われる。
+%%%%
+low body AC
+
+胴鎧のAC低下
+%%%%
+Your maw has eaten a hole through body armour, reducing its AC.
+
+あなたの大口は胴鎧に穴を開けてしまい、そのACを低下させている。
+%%%%
+# transformation::flux
+[form]Flux
+
+流転
+%%%%
+flux-form
+
+流転の形態
+%%%%
+something dangerously unstable.
+
+危険なほど不安定な何かの姿を
+%%%%
+Contam Dmg
+
+汚染ダメージ
+%%%%
+contaminating
+
+汚染
+%%%%
+Foes you strike become dangerously contaminated with transmutational energy.
+
+あなたが攻撃した敵は変成のエネルギーで危険なほど汚染される。
+%%%%
+glow
+
+発光
+%%%%
+You glow with energy, making you easy to see.
+
+あなたはエネルギーで光を放っており、目に付きやすい。
+%%%%
+Your attacks are very weak.
+
+あなたの攻撃は非常に弱い。
+%%%%
+# transformation::slaughter
+[form]Slaughter
+
+殺戮
+%%%%
+slaughter-form
+
+殺戮の形態
+%%%%
+a vessel of demonic slaughter.
+
+悪魔的な殺戮の器の姿を
+%%%%
+damage resistance
+
+ダメージへの耐性
+%%%%
+Damage taken is decreased by 1/3.
+
+受けるダメージは1/3軽減される。
+%%%%
+doubled heal-on-kills
+
+撃破時の回復倍増
+%%%%
+Healing from kills is doubled.
+
+敵を倒した時の回復量が倍になる。
+%%%%
+demonic bargain
+
+悪魔の取引
+%%%%
+You will endure the Crucible once your slaughter is complete.
+
+殺戮を終えると、あなたは試練の坩堝に耐えることになる。
+%%%%
+# transformation::vampire
+[form]Vampire
+
+吸血鬼
+%%%%
+vampire-form
+
+吸血鬼の形態
+%%%%
+a living vampire.
+
+生ける吸血鬼の姿を
+%%%%
+vampire fangs
+
+吸血鬼の牙
+%%%%
+Your fangs allow you to drain the lifeblood from your enemies.
+
+あなたは牙で敵の生き血を吸い取ることができる。
+%%%%
+bloodcurse
+
+血の呪い
+%%%%
+When you kill a living creature with a stab, you may create a vampiric thrall.
+
+あなたが急所攻撃で生き物を殺すと、吸血鬼の下僕を生み出すことがある。
+%%%%
+bat form
+
+蝙蝠化
+%%%%
+You can occasionally transform into a swarm of bats.
+
+あなたは時々蝙蝠の群れに変身できる。
+%%%%
+hypnotic gaze
+
+催眠の眼差し
+%%%%
+You often daze monsters when they first notice you.
+
+あなたはモンスターが最初にあなたに気付いたとき、しばしばそれを眩惑する。
+%%%%
+very stealthy
+
+高い隠密性
+%%%%
+You are very stealthy.
+
+あなたは非常に隠密性が高い。
+%%%%
+inhibited regeneration
+
+再生阻害
+%%%%
+You do not regenerate when monsters are visible.
+
+あなたはモンスターが視界にいる間自然に回復しない。
+%%%%
+# transformation::bat_swarm
+[form]Bat Swarm
+
+蝙蝠群
+%%%%
+batswarm-form
+
+蝙蝠群の形態
+%%%%
+a swarm of vampire bats.
+
+吸血蝙蝠の群れの姿を
+%%%%
+# transformation::rime_yak
+[form]Yak
+
+ヤク
+%%%%
+yak-form
+
+ヤクの形態
+%%%%
+an ice-encrusted yak.
+
+氷に覆われたヤクの姿を
+%%%%
+Horns
+
+角
+%%%%
+[verb]headbutt
+
+頭突きした
+%%%%
+[verb]gore
+
+突き刺した
+%%%%
+[verb]skewer
+
+串刺しにした
+%%%%
+[form]front hooves
+
+前の蹄
+%%%%
+[form]hooves
+
+蹄
+%%%%
+[form]icy fur
+
+氷の毛皮
+%%%%
+Frigid Wall Dmg
+
+凍壁ダメージ
+%%%%
+frigid aura
+
+凍てつくオーラ
+%%%%
+You freeze nearby walls in an area that expands as you fight.
+
+あなたは戦うにつれて広がる範囲の壁を凍らせる。
+%%%%
+ice wizardry
+
+氷術の達人
+%%%%
+You can cast Ice magic more easily.
+
+あなたは氷術の呪文をより容易に唱えられる。
+%%%%
+# transformation::hive
+[form]Hive
+
+巣
+%%%%
+hive-form
+
+巣の形態
+%%%%
+a living hive.
+
+生ける巣の姿を
+%%%%
+hive swarm
+
+巣の群れ
+%%%%
+When at low health, angry bees swarm out to defend you.
+
+体力が低くなると、怒った蜂の群れがあなたを守るために飛び出す。
+%%%%
+hive regen
+
+巣の再生
+%%%%
+You regenerate HP and MP more quickly.
+
+あなたのHPとMPはより速く回復する。
+%%%%
+# transformation::aqua
+[form]Aqua
+
+水化
+%%%%
+aqua-form
+
+水の形態
+%%%%
+Watery Grave Dmg
+
+水葬ダメージ
+%%%%
+water reaching
+
+水の伸長
+%%%%
+Your aqueous body allows to you attack from a distance.
+
+あなたは水の体のおかげで離れた所から攻撃できる。
+%%%%
+water splatter
+
+水しぶき
+%%%%
+When injured, pools of shallow water form around you.
+
+あなたが傷つくと、周囲に浅い水たまりができる。
+%%%%
+watery grave
+
+水葬
+%%%%
+You can command nearby water to drown your enemies.
+
+あなたは周囲の水を操って敵を溺れさせることができる。
+%%%%
+steam response
+
+蒸気反応
+%%%%
+When hit by fire damage, your body sometimes produces steam.
+
+火のダメージを受けると、あなたの体は時々蒸気を発する。
+%%%%
+freeze response
+
+凍結反応
+%%%%
+When hit by cold damage, your body sometimes freezes.
+
+冷気のダメージを受けると、あなたの体は時々凍りつく。
+%%%%
+# transformation::sphinx
+[form]Sphinx
+
+スフィンクス
+%%%%
+sphinx-form
+
+スフィンクスの形態
+%%%%
+a cunning sphinx.
+
+狡猾なスフィンクスの姿を
+%%%%
+Paws
+
+前足
+%%%%
+[verb]swat
+
+はたいた
+%%%%
+[form]forepaw
+
+前足
+%%%%
+[verb]curl up before
+
+丸くなった
+%%%%
+airstrike attack
+
+風刃の攻撃
+%%%%
+You unleash cutting winds upon enemies you strike.
+
+あなたは攻撃した敵に切り裂く風を浴びせる。
+%%%%
+hex mastery
+
+妖術の達人
+%%%%
+Hexes are much easier for you to cast and harder to resist.
+
+あなたは妖術の呪文をずっと容易に唱えられ、その呪文は抵抗されにくい。
+%%%%
+riddle compulsion
+
+謎かけの衝動
+%%%%
+You often pose riddles to enemies when you first see then.
+
+あなたは敵を初めて見たとき、しばしば謎かけをしてしまう。
+%%%%
+# transformation::werewolf
+[form]Werewolf
+
+人狼
+%%%%
+werewolf-form
+
+人狼の形態
+%%%%
+a ferocious werewolf.
+
+獰猛な人狼の姿を
+%%%%
+werefury
+
+獣の激情
+%%%%
+You gain temporary slaying when you kill enemies in melee.
+
+あなたは近接攻撃で敵を倒すと、一時的に殺傷力を得る。
+%%%%
+werehowl
+
+獣の咆哮
+%%%%
+You sometimes unleash a terrifying howl when you kill enemies in melee.
+
+あなたは近接攻撃で敵を倒すと、時々恐ろしい咆哮を上げる。
+%%%%
+bestial takedown
+
+獣の仕留め
+%%%%
+You can leap to fearful enemies and eviscerate them.
+
+あなたは怯えた敵に飛びかかって、はらわたを引き裂くことができる。
+%%%%
+# transformation::walking_scroll
+[form]Scroll
+
+巻物
+%%%%
+scroll-form
+
+巻物の形態
+%%%%
+a walking scroll.
+
+歩く巻物の姿を
+%%%%
+Magic Parchment
+
+魔法の羊皮紙
+%%%%
+[verb]flutter at
+
+ひらひらと打った
+%%%%
+[verb]unfurl around
+
+巻きついた
+%%%%
+[verb]read the riot act to
+
+厳しく叱りつけた
+%%%%
+[form]flutter
+
+はためく音を立てる
+%%%%
+[form]parchment
+
+羊皮紙
+%%%%
+[verb]unroll yourself before
+
+身を広げた
+%%%%
+scribal knowledge
+
+書記の知識
+%%%%
+You have increased skill with all magical schools.
+
+あなたはすべての魔術系統の技能が上昇している。
+%%%%
+magic absorption
+
+魔力吸収
+%%%%
+Your melee attacks sometimes restore your MP.
+
+あなたの近接攻撃は時々MPを回復させる。
+%%%%
+novice magic
+
+初歩の魔術
+%%%%
+You cannot cast spells above level 4.
+
+あなたはレベル4を超える呪文を唱えることができない。
+%%%%
+Your melee attacks are very weak.
+
+あなたの近接攻撃は非常に弱い。
+%%%%
+# transformation::fortress_crab
+[form]Crab
+
+蟹
+%%%%
+crab-form
+
+蟹の形態
+%%%%
+a heavily-armoured crab.
+
+重装甲の蟹の姿を
+%%%%
+pincers
+
+鋏
+%%%%
+[verb]nip
+
+挟んだ
+%%%%
+[verb]snap
+
+ぱちんと挟んだ
+%%%%
+[verb]mangle
+
+ずたずたに切り裂いた
+%%%%
+[form]clack
+
+カチカチと鳴らす
+%%%%
+[form]pincers
+
+鋏
+%%%%
+[verb]scuttle before
+
+這い寄った
+%%%%
+[form]shell
+
+殻
+%%%%
+armoured shell
+
+装甲の殻
+%%%%
+Your body armour is fused into your shell, improving its AC and properties.
+
+あなたの胴鎧は殻と融合し、そのACと特性が向上している。
+%%%%
+rust breath
+
+錆の息
+%%%%
+You can exhale clouds of rust.
+
+あなたは錆の雲を吐き出すことができる。
+%%%%
+slow movement
+
+移動が遅い
+%%%%
+You cover ground slowly.
+
+あなたは地面をゆっくりと移動する。
+%%%%
+# transformation::sun_scarab
+[form]Scarab
+
+スカラベ
+%%%%
+scarab-form
+
+スカラベの形態
+%%%%
+a gleaming scarab beetle.
+
+輝くスカラベの姿を
+%%%%
+Mandibles
+
+大顎
+%%%%
+[form]mandibles
+
+大顎
+%%%%
+[form]carapace
+
+甲殻
+%%%%
+Flare Dmg
+
+閃光ダメージ
+%%%%
+sun companion
+
+太陽の伴侶
+%%%%
+You manifest a globe of solar heat that you carry with you.
+
+あなたは太陽の熱の球体を生み出し、連れて歩く。
+%%%%
+Your solar ember damages enemies next to it every second time you attack.
+
+あなたの太陽の残り火は、あなたが2回攻撃するごとに隣接する敵にダメージを与える。
+%%%%
+You heal your solar ember whenever you swap places with it.
+
+あなたは太陽の残り火と位置を入れ替えるたびに、それを回復させる。
+%%%%
+searing attack
+
+灼熱の攻撃
+%%%%
+Your melee attacks sometimes make enemies vulnerable to fire.
+
+あなたの近接攻撃は時々敵を火に弱くする。
+%%%%
+fire wizardry
+
+火術の達人
+%%%%
+You can cast Fire magic much more easily.
+
+あなたは火術の呪文をずっと容易に唱えられる。
+%%%%
+# transformation::medusa
+[form]Medusa
+
+メデューサ
+%%%%
+medusa-form
+
+メデューサの形態
+%%%%
+stinger hair
+
+毒針の髪
+%%%%
+Your tendrils poison nearby enemies when you attack.
+
+あなたが攻撃すると、あなたの触手が周囲の敵を毒に冒す。
+%%%%
+lithotoxin
+
+石化毒
+%%%%
+When significantly injured, you may petrify poisoned enemies.
+
+あなたは深手を負うと、毒に冒された敵を石化させることがある。
+%%%%
+# transformation::eel_hands
+[form]Eel
+
+鰻の手
+%%%%
+[verb]punch
+
+殴った
+%%%%
+Jolt damage
+
+電撃ダメージ
+%%%%
+eel punch
+
+鰻の拳
+%%%%
+Electricity sometimes discharges through enemies you attack.
+
+あなたが攻撃した敵に時々電気が流れる。
+%%%%
+eeljolt
+
+鰻の電撃
+%%%%
+When badly injured, your eels discharge electricity violently.
+
+あなたが重傷を負うと、あなたの鰻は激しく放電する。
+%%%%
+# transformation::spore
+[form]Spore
+
+胞子
+%%%%
+spore-form
+
+胞子の形態
+%%%%
+Burstshroom damage
+
+爆裂茸ダメージ
+%%%%
+weakening spores
+
+弱体化の胞子
+%%%%
+Your melee attacks may weaken breathing enemies.
+
+あなたの近接攻撃は呼吸する敵を弱体化させることがある。
+%%%%
+sporulate
+
+胞子散布
+%%%%
+Your melee attacks cause explosive burstshrooms to grow.
+
+あなたの近接攻撃は爆発する爆裂茸を生やす。
+%%%%

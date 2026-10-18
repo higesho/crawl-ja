@@ -1,0 +1,4567 @@
+%%%%
+# ============================================================
+#  mutation-data.h の表示文字列(自動抽出 + 0.19-ja/0.16-ja 旧訳の流用)
+#  short_desc・have・gain・lose・will_gain の文章そのもの(タグなし)。
+#  "(AC +" のように数値が後ろに連結されるものは同じ形で終える。
+# ============================================================
+# MUT_IRON_FUSED_SCALES
+iron-fused scales
+
+鉄と融合した鱗
+%%%%
+Your scales are fused with iron. (AC + 5)
+
+あなたの鱗は鉄と融合している。(AC + 5)
+%%%%
+Iron fuses itself to your scales.
+
+鉄があなたの鱗と融合した。
+%%%%
+The iron flakes away from your scales.
+
+鉄があなたの鱗から剥がれ落ちた。
+%%%%
+Iron will fuse itself to your scales. (AC + 5)
+
+鉄があなたの鱗と融合するだろう。(AC + 5)
+%%%%
+# MUT_INVIOLATE_MAGIC
+inviolate magic
+
+不可侵の魔力
+%%%%
+Your magical power and effects resist disruption.
+
+あなたの魔力とその効果は妨害を受け付けない。
+%%%%
+Your magical power grows resistant to disruption.
+
+あなたの魔力は妨害に耐性を持つようになった。
+%%%%
+Your magical power loses its resistance to disruption.
+
+あなたの魔力は妨害への耐性を失った。
+%%%%
+Your magical power will grow resistant to disruption.
+
+あなたの魔力は妨害に耐性を持つようになるだろう。
+%%%%
+# MUT_TOUGH_SKIN
+tough skin
+
+強靱な皮膚
+%%%%
+You have tough skin. (AC +1)
+
+あなたは強靭な皮膚を持っている。(AC +1)
+%%%%
+You have very tough skin. (AC +2)
+
+あなたは非常に強靭な皮膚を持っている。(AC +2)
+%%%%
+You have extremely tough skin. (AC +3)
+
+あなたは極めて強靭な皮膚を持っている。(AC +3)
+%%%%
+Your skin toughens.
+
+あなたの皮膚は強靭になった。
+%%%%
+Your skin feels delicate.
+
+あなたの皮膚は柔らかくなった。
+%%%%
+# MUT_STRONG
+strong
+
+怪力
+%%%%
+You are strong. (Str +4, Int/Dex -1)
+
+あなたは力が強い。(腕力 +4, 知力/器用 -1)
+%%%%
+You are very strong. (Str +8, Int/Dex -2)
+
+あなたは非常に力が強い。(腕力 +8, 知力/器用 -2)
+%%%%
+# MUT_CLEVER
+clever
+
+叡智
+%%%%
+Your mind is acute. (Int +4, Str/Dex -1)
+
+あなたの精神は鋭い。(知力 +4, 腕力/器用 -1)
+%%%%
+Your mind is very acute. (Int +8, Str/Dex -2)
+
+あなたの精神は非常に鋭い。(知力 +8, 腕力/器用 -2)
+%%%%
+# MUT_AGILE
+agile
+
+機敏
+%%%%
+You are agile. (Dex +4, Str/Int -1)
+
+あなたは機敏だ。(器用 +4, 腕力/知力 -1)
+%%%%
+You are very agile. (Dex +8, Str/Int -2)
+
+あなたは非常に機敏だ。(器用 +8, 腕力/知力 -2)
+%%%%
+# MUT_POISON_RESISTANCE
+poison resistance
+
+毒耐性
+%%%%
+You are resistant to poisons. (rPois)
+
+あなたは毒に対する耐性を持っている。(rPois)
+%%%%
+You feel resistant to poisons.
+
+あなたは毒に強くなったようだ。
+%%%%
+You feel less resistant to poisons.
+
+あなたは毒に弱くなったようだ。
+%%%%
+# MUT_HEAT_RESISTANCE
+fire resistance
+
+火炎耐性
+%%%%
+You are heat resistant. (rF+)
+
+あなたは熱に耐性がある。(rF+)
+%%%%
+You are very heat resistant. (rF++)
+
+あなたは熱にかなりの耐性がある。(rF++)
+%%%%
+You are almost immune to the effects of heat. (rF+++)
+
+あなたは熱の影響をほぼ無効化する。(rF+++)
+%%%%
+You feel resistant to heat.
+
+あなたは熱に強くなったようだ。
+%%%%
+You feel more resistant to heat.
+
+あなたはさらに熱に強くなったようだ。
+%%%%
+You no longer feel heat resistant.
+
+あなたはもはや熱に強くなくなったようだ。
+%%%%
+You feel less heat resistant.
+
+あなたは少し熱に強くなくなったようだ。
+%%%%
+# MUT_COLD_RESISTANCE
+cold resistance
+
+冷気耐性
+%%%%
+You are cold resistant. (rC+)
+
+あなたは冷気に耐性がある。(rC+)
+%%%%
+You are very cold resistant. (rC++)
+
+あなたは冷気にかなりの耐性がある。(rC++)
+%%%%
+You are almost immune to the effects of cold. (rC+++)
+
+あなたは冷気の影響をほぼ無効化する。(rC+++)
+%%%%
+You feel more resistant to cold.
+
+あなたは冷気へのさらなる耐性を得たようだ。
+%%%%
+You no longer feel cold resistant.
+
+あなたはもはや冷気に強くなくなったようだ。
+%%%%
+You feel less cold resistant.
+
+あなたは少し冷気に強くなくなったようだ。
+%%%%
+# MUT_HEAT_VULNERABILITY
+heat vulnerability
+
+熱に弱い
+%%%%
+You are vulnerable to heat. (rF-)
+
+あなたは熱に弱い。(rF-)
+%%%%
+You are very vulnerable to heat. (rF--)
+
+あなたはかなり熱に弱い。(rF--)
+%%%%
+You are extremely vulnerable to heat. (rF---)
+
+あなたはきわめて熱に弱い。(rF---)
+%%%%
+You feel vulnerable to heat.
+
+あなたは熱に弱くなったようだ。
+%%%%
+You no longer feel vulnerable to heat.
+
+あなたはもはや熱に弱くなくなったようだ。
+%%%%
+You feel less vulnerable to heat.
+
+あなたは少し熱に弱くなくなったようだ。
+%%%%
+# MUT_COLD_VULNERABILITY
+cold vulnerability
+
+冷気に弱い
+%%%%
+You are vulnerable to cold. (rC-)
+
+あなたは冷気に弱い。(rC-)
+%%%%
+You are very vulnerable to cold. (rC--)
+
+あなたはかなり冷気に弱い。(rC--)
+%%%%
+You are extremely vulnerable to cold. (rC---)
+
+あなたはきわめて冷気に弱い。(rC---)
+%%%%
+You feel vulnerable to cold.
+
+あなたは冷気に弱くなったようだ。
+%%%%
+You no longer feel vulnerable to cold.
+
+あなたはもはや冷気に弱くなくなったようだ。
+%%%%
+You feel less vulnerable to cold.
+
+あなたは少し熱に弱くなくなったようだ。
+%%%%
+# MUT_DEMONIC_GUARDIAN
+demonic guardian
+
+悪魔の従者
+%%%%
+A weak demonic guardian rushes to your aid.
+
+下級悪魔の守護者があなたを助けにやってくる。
+%%%%
+A demonic guardian rushes to your aid.
+
+悪魔の守護者があなたを助けにやってくる。
+%%%%
+A powerful demonic guardian rushes to your aid.
+
+強大な悪魔の守護者があなたを助けにやってくる。
+%%%%
+You feel the presence of a demonic guardian.
+
+あなたは悪魔の守護者の存在を感じた。
+%%%%
+Your guardian grows in power.
+
+あなたの守護者は力を増した。
+%%%%
+Your demonic guardian is gone.
+
+あなたの守護者はいなくなった。
+%%%%
+Your demonic guardian is weakened.
+
+あなたの守護者は弱くなった。
+%%%%
+# MUT_SHOCK_RESISTANCE
+electricity resistance
+
+電撃耐性
+%%%%
+You are resistant to electric shocks. (rElec)
+
+あなたは電撃への耐性を持っている。(rElec)
+%%%%
+You feel insulated.
+
+あなたは絶縁体になったようだ。
+%%%%
+You feel conductive.
+
+あなたは導電体に戻ったようだ。
+%%%%
+# MUT_SHOCK_VULNERABILITY
+electricity vulnerability
+
+電撃に弱い
+%%%%
+You are vulnerable to electric shocks. (rElec-)
+
+あなたは電撃に弱い。(rElec-)
+%%%%
+You feel vulnerable to electricity.
+
+あなたは電撃に弱くなったようだ。
+%%%%
+You feel less vulnerable to electricity.
+
+あなたは電撃に弱くなくなったようだ。
+%%%%
+# MUT_REGENERATION
+regeneration
+
+再生
+%%%%
+Your natural rate of healing is unusually fast.
+
+あなたの自然治癒の速度は著しく速い。
+%%%%
+You heal very quickly.
+
+あなたは非常に速く治癒する。
+%%%%
+You regenerate.
+
+あなたは再生能力がある。
+%%%%
+You begin to heal more quickly.
+
+あなたはより速く傷が癒えるようになった。
+%%%%
+You begin to regenerate.
+
+あなたは再生能力を身につけた。
+%%%%
+Your rate of healing slows.
+
+あなたの治癒速度は遅くなった。
+%%%%
+# MUT_INHIBITED_REGENERATION
+Your regeneration stops near monsters.
+
+あなたの傷の回復は敵の近くでは止まるようになった。
+%%%%
+You begin to regenerate regardless of the presence of monsters.
+
+あなたはモンスターがいても再生するようになった。
+%%%%
+# MUT_FEED_OFF_SUFFERING
+feed off suffering
+
+苦痛の糧
+%%%%
+You can sometimes gain power from killing poisoned or drained foes.
+
+あなたは毒に冒された敵や生命力を吸収された敵を倒すと、時々力を得る。
+%%%%
+You can regularly gain power from killing poisoned or drained foes.
+
+あなたは毒に冒された敵や生命力を吸収された敵を倒すと、しばしば力を得る。
+%%%%
+Vile energies swirl pleasantly through your soul.
+
+邪悪なエネルギーがあなたの魂の中を心地よく渦巻いた。
+%%%%
+The vile energy whirls more vigorously through your soul.
+
+邪悪なエネルギーがあなたの魂の中をより激しく渦巻いた。
+%%%%
+The vile energy swirling through your soul dissipates.
+
+あなたの魂の中を渦巻いていた邪悪なエネルギーは消え去った。
+%%%%
+The vile energy whirling through your soul weakens.
+
+あなたの魂の中を渦巻く邪悪なエネルギーは弱まった。
+%%%%
+# MUT_LUCKY
+lucky
+
+幸運
+%%%%
+You discover slightly more artefacts.
+
+あなたはアーティファクトをやや多く発見する。
+%%%%
+You discover more artefacts.
+
+あなたはアーティファクトを多く発見する。
+%%%%
+You feel fortune smile upon you.
+
+あなたは幸運の女神に微笑まれた気がした。
+%%%%
+You feel fortune smile more brightly upon you.
+
+あなたは幸運の女神により明るく微笑まれた気がした。
+%%%%
+You feel like your luck has run out.
+
+あなたは運が尽きたような気がした。
+%%%%
+You feel a little less lucky.
+
+あなたの運が少し落ちた気がした。
+%%%%
+# MUT_WEAK
+weak
+
+非力
+%%%%
+You are weak. (Str -3)
+
+あなたは力が弱い。(腕力 -3)
+%%%%
+You are very weak. (Str -6)
+
+あなたはとても力が弱い。(腕力 -6)
+%%%%
+# MUT_DOPEY
+dopey
+
+愚鈍
+%%%%
+You are dopey. (Int -3)
+
+あなたは愚かだ。(知力 -3)
+%%%%
+You are very dopey. (Int -6)
+
+あなたはとても愚かだ。(知力 -6)
+%%%%
+# MUT_CLUMSY
+clumsy
+
+不器用
+%%%%
+You are clumsy. (Dex -3)
+
+あなたは不器用だ。(器用 -3)
+%%%%
+You are very clumsy. (Dex -6)
+
+あなたはとても不器用だ。(器用 -6)
+%%%%
+# MUT_MEEK
+meek
+
+柔弱
+%%%%
+Your attacks are a little less effective. (Slay -3)
+
+あなたの攻撃はやや効果が低い。(殺傷 -3)
+%%%%
+Your attacks are less effective. (Slay -5)
+
+あなたの攻撃は効果が低い。(殺傷 -5)
+%%%%
+Your attacks are much less effective. (Slay -7)
+
+あなたの攻撃はかなり効果が低い。(殺傷 -7)
+%%%%
+You feel meek.
+
+あなたは気弱になった。
+%%%%
+You feel even more meek.
+
+あなたはさらに気弱になった。
+%%%%
+You feel meek as a lamb.
+
+あなたは子羊のように気弱になった。
+%%%%
+You feel aggression return to you.
+
+あなたに闘争心が戻ってきた。
+%%%%
+You feel a little less meek.
+
+あなたの気弱さが少し和らいだ。
+%%%%
+# MUT_TELEPORTITIS
+teleportitis
+
+不随意瞬間移動
+%%%%
+You are occasionally teleported next to monsters.
+
+あなたはまれにモンスターの隣にテレポートするようになった。
+%%%%
+You are often teleported next to monsters.
+
+あなたはしばしばモンスターの隣にテレポートするようになった。
+%%%%
+You feel weirdly uncertain.
+
+あなたは奇妙な不安定さを意識した。
+%%%%
+You feel even more weirdly uncertain.
+
+あなたはさらなる奇妙な不安定さを意識した。
+%%%%
+You feel stable.
+
+あなたは安定したような気分になった。
+%%%%
+# MUT_PERSISTENT_DRAIN
+persistent drain
+
+持続する吸収
+%%%%
+Your health recovers twice as slowly from being drained.
+
+あなたが生命力を吸収された状態からの回復は2倍遅い。
+%%%%
+You begin to recover more slowly from draining effects.
+
+あなたは生命力吸収からの回復が遅くなった。
+%%%%
+You recover from draining at a normal speed again.
+
+あなたは再び通常の速さで生命力吸収から回復するようになった。
+%%%%
+# MUT_CONTAMINATION_SUSCEPTIBLE
+contamination susceptible
+
+汚染されやすい体質
+%%%%
+You absorb twice as much mutagenic energy from being contaminated.
+
+あなたは汚染されたときに2倍の変異エネルギーを吸収する。
+%%%%
+You feel more susceptible to contamination.
+
+あなたは汚染されやすくなった気がした。
+%%%%
+You feel less susceptible to contamination.
+
+あなたは汚染されにくくなった気がした。
+%%%%
+# MUT_STRONG_WILLED
+strong-willed
+
+強い意志
+%%%%
+You are strong-willed. (Will+)
+
+あなたは強い意志を持っている。(Will+)
+%%%%
+You are highly strong-willed. (Will++)
+
+あなたは非常に強い意志を持っている。(Will++)
+%%%%
+You are extremely strong-willed. (Will+++)
+
+あなたはきわめて強い意志を持っている。(Will+++)
+%%%%
+You feel more strong-willed.
+
+あなたはさらに意志が強くなった気がした。
+%%%%
+You feel your will become almost unbreakable.
+
+あなたは自分の意志がほとんど揺るがないものになったと感じた。
+%%%%
+You no longer feel strong-willed.
+
+あなたの意志はもう強くない。
+%%%%
+# MUT_FAST
+speed
+
+俊足
+%%%%
+You move with supernatural speed. (Speed+)
+
+あなたは超自然的な速さで動く。(速度+)
+%%%%
+You move with supernatural speed. (Speed++)
+
+あなたは超自然的な速さで動く。(速度++)
+%%%%
+You move with supernatural speed. (Speed+++)
+
+あなたは超自然的な速さで動く。(速度+++)
+%%%%
+You feel sluggish.
+
+あなたは動きが緩慢になった。
+%%%%
+# MUT_SLOW
+slowness
+
+鈍足
+%%%%
+You cover ground very slowly.
+
+あなたは地面をとてもゆっくりと移動する。
+%%%%
+You cover ground extremely slowly.
+
+あなたは地面を極めてゆっくりと移動する。
+%%%%
+# MUT_ACUTE_VISION
+see invisible
+
+霊視
+%%%%
+You have supernaturally acute vision. (SInv)
+
+あなたは超自然的な鋭い視力を持っている。(SInv)
+%%%%
+Your vision sharpens.
+
+あなたの視力は鋭くなった。
+%%%%
+Your vision seems duller.
+
+あなたの視力は鈍くなった。
+%%%%
+# MUT_DEFORMED
+deformed body
+
+奇形の体
+%%%%
+Armour fits poorly on your strangely shaped body.
+
+あなたの奇形の体には鎧がうまく合わない。
+%%%%
+Your body twists and deforms.
+
+あなたの体は捩くれて奇形になった。
+%%%%
+Your body's shape seems more normal.
+
+あなたの肉体は奇形的でなくなった。
+%%%%
+# MUT_SPIT_POISON
+spit poison
+
+毒液
+%%%%
+You can spit poison.
+
+あなたは毒を吐き出すことができる。
+%%%%
+You can exhale a cloud of poison.
+
+あなたは毒の雲を吐き出すことができる。
+%%%%
+There is a nasty taste in your mouth for a moment.
+
+一瞬あなたの口の中で不快な味がした。
+%%%%
+You feel an ache in your throat.
+
+あなたは喉の奥が痛むのを感じた。
+%%%%
+# MUT_SCREAM
+screaming
+
+叫び声
+%%%%
+You occasionally shout uncontrollably at those who injure you.
+
+あなたは自分を傷つけた相手に向かって時々抑えきれずに叫ぶ。
+%%%%
+You frequently scream uncontrollably at those who injure you.
+
+あなたは自分を傷つけた相手に向かって頻繁に抑えきれずに絶叫する。
+%%%%
+You feel the urge to shout.
+
+あなたは叫びたい衝動に駆られた。
+%%%%
+You feel a strong urge to scream.
+
+あなたは叫びたいという強烈な衝動に駆られた。
+%%%%
+Your urge to shout disappears.
+
+叫びたいという衝動は消え去った。
+%%%%
+Your urge to scream lessens.
+
+叫びたいという衝動は薄れた。
+%%%%
+# MUT_CLARITY
+clarity
+
+明晰
+%%%%
+You possess an exceptional clarity of mind.
+
+あなたの意思は非常に明瞭だ。
+%%%%
+Your thoughts seem clearer.
+
+あなたは思考が明瞭になったようだ。
+%%%%
+Your thinking seems confused.
+
+あなたの思考は混濁した。
+%%%%
+# MUT_POOR_CONSTITUTION
+poor constitution
+
+虚弱体質
+%%%%
+Your body sometimes grows weak upon taking damage.
+
+あなたの体はダメージを受けると時々弱体化する。
+%%%%
+Your body sometimes grows weak and slow upon taking damage.
+
+あなたの体はダメージを受けると時々弱体化し、鈍くなる。
+%%%%
+You feel your constitution weaken.
+
+あなたは体質が弱まったのを感じた。
+%%%%
+You feel your constitution grow even weaker.
+
+あなたは体質がさらに弱まったのを感じた。
+%%%%
+You feel your constitution return to normal.
+
+あなたは体質が元に戻ったのを感じた。
+%%%%
+You feel your constitution improve a little.
+
+あなたは体質が少し改善したのを感じた。
+%%%%
+# MUT_MUTATION_RESISTANCE
+mutation resistance
+
+変異への耐性
+%%%%
+You are somewhat resistant to further mutation.
+
+あなたは突然変異の進行にいくらかの抵抗力がある。
+%%%%
+You are somewhat resistant to both further mutation and mutation removal.
+
+あなたは突然変異の進行と除去の両方にいくらかの抵抗力がある。
+%%%%
+You are almost entirely resistant to further mutation and mutation removal.
+
+あなたは突然変異の進行と除去の両方をほとんど無効化する。
+%%%%
+You feel genetically stable.
+
+あなたは遺伝子的に安定した。
+%%%%
+You feel genetically immutable.
+
+あなたは遺伝子的に変化しなくなった。
+%%%%
+You feel genetically unstable.
+
+あなたは遺伝子的に不安定になった。
+%%%%
+# MUT_EVOLUTION
+evolution
+
+進化
+%%%%
+You have hidden genetic potential.
+
+あなたは秘められた遺伝的可能性を持っている。
+%%%%
+You have great hidden genetic potential.
+
+あなたは大いなる秘められた遺伝的可能性を持っている。
+%%%%
+You feel a hidden potential growing inside you.
+
+あなたは秘められた可能性が自分の中で育っているのを感じた。
+%%%%
+Your hidden genetic potential grows.
+
+あなたの秘められた遺伝的可能性が高まった。
+%%%%
+You no longer feel a hidden potential within.
+
+あなたはもう内に秘めた可能性を感じない。
+%%%%
+Your hidden genetic potential wanes.
+
+あなたの秘められた遺伝的可能性は衰えた。
+%%%%
+# MUT_DEVOLUTION
+devolution
+
+退化
+%%%%
+You have hidden genetic defects.
+
+あなたは秘められた遺伝的欠陥を持っている。
+%%%%
+You have terrible hidden genetic defects.
+
+あなたは恐ろしい秘められた遺伝的欠陥を持っている。
+%%%%
+You feel a hidden malignance growing inside you.
+
+あなたは秘められた悪性のものが自分の中で育っているのを感じた。
+%%%%
+The malignance inside you grows.
+
+あなたの中の悪性のものが大きくなった。
+%%%%
+You no longer feel a malignance within.
+
+あなたはもう内なる悪性のものを感じない。
+%%%%
+Your genetic malignance weakens.
+
+あなたの遺伝的な悪性は弱まった。
+%%%%
+# MUT_PROTEAN_GRACE
+protean grace
+
+変幻の恩寵
+%%%%
+You are empowered by your non-innate mutations. (+
+
+あなたは生来のものでない突然変異によって力を得ている。(+
+%%%%
+Mutagenic power surges through your limbs.
+
+変異の力があなたの四肢にみなぎった。
+%%%%
+The mutagenic power surging through your limbs dissipates.
+
+あなたの四肢にみなぎっていた変異の力は消え去った。
+%%%%
+# MUT_FRAIL
+frail
+
+虚弱
+%%%%
+You are frail. (-10% HP)
+
+あなたは虚弱だ。(-10% HP)
+%%%%
+You are very frail. (-20% HP)
+
+あなたは非常に虚弱だ。(-20% HP)
+%%%%
+You are extremely frail. (-30% HP)
+
+あなたはきわめて虚弱だ。(-30% HP)
+%%%%
+You feel frail.
+
+あなたは虚弱になった。
+%%%%
+You feel robust.
+
+あなたは強健になった。
+%%%%
+# MUT_ROBUST
+robust
+
+強健
+%%%%
+You are robust. (+10% HP)
+
+あなたは強健だ。(+10% HP)
+%%%%
+You are very robust. (+20% HP)
+
+あなたは非常に強健だ。(+20% HP)
+%%%%
+You are extremely robust. (+30% HP)
+
+あなたはきわめて強健だ。(+30% HP)
+%%%%
+# MUT_TORMENT_RESISTANCE
+torment resistance
+
+苦痛への耐性
+%%%%
+You feel a strange anaesthesia.
+
+あなたは奇妙な無感覚状態になった。
+%%%%
+You feel a very strange anaesthesia.
+
+あなたは非常に奇妙な麻酔感を覚えた。
+%%%%
+# MUT_NEGATIVE_ENERGY_RESISTANCE
+negative energy resistance
+
+負のエネルギーへの耐性
+%%%%
+You resist negative energy. (rN+)
+
+あなたは負のエネルギーに耐性がある。(rN+)
+%%%%
+You are quite resistant to negative energy. (rN++)
+
+あなたは負のエネルギーに非常に耐性がある。(rN++)
+%%%%
+You are immune to negative energy. (rN+++)
+
+あなたは負のエネルギーの影響を無効化する。(rN+++)
+%%%%
+You feel resistant to negative energy.
+
+あなたは負のエネルギーに強くなったようだ。
+%%%%
+You feel more resistant to negative energy.
+
+あなたは負のエネルギーにさらに強くなったようだ。
+%%%%
+# MUT_NECRO_ENHANCER
+in touch with death
+
+死霊術強化
+%%%%
+You are in touch with the powers of death.
+
+あなたは死の力との接触を持っている。
+%%%%
+You are strongly in touch with the powers of death.
+
+あなたは死の力との強い接触を持っている。
+%%%%
+You feel more in touch with the powers of death.
+
+あなたは死の力との接触が強まったような気がした。
+%%%%
+# MUT_TENGU_FLIGHT
+evasive flight
+
+回避飛行
+%%%%
+Your magical flight helps you evade attacks. (EV +4)
+
+あなたの魔法の飛行は攻撃の回避に役立つ。(回避 +4)
+%%%%
+Your magical nature develops, letting you fly evasively.
+
+あなたの魔法的な性質が発達し、攻撃をかわしながら飛べるようになった。
+%%%%
+Your magical flight will help you evade attacks. (EV + 4)
+
+あなたの魔法の飛行は攻撃の回避に役立つようになるだろう。(回避 + 4)
+%%%%
+# MUT_ACROBATIC
+acrobatic
+
+軽業
+%%%%
+You can magically evade attacks while moving or waiting.
+
+あなたは移動中や待機中に魔法的に攻撃を回避できる。
+%%%%
+# MUT_WIELD_OFFHAND
+off-hand wielding
+
+副手装備
+%%%%
+You can wield a second weapon in your off-hand.
+
+あなたは副手に二本目の武器を装備できる。
+%%%%
+# MUT_SLOW_WIELD
+slow wielding
+
+遅い持ち替え
+%%%%
+It takes a long time for you to wield or remove held weapons.
+
+あなたは武器を装備したり外したりするのに長い時間がかかる。
+%%%%
+# MUT_INITIALLY_ATTRACTIVE
+initially attractive
+
+初見の誘引
+%%%%
+You sometimes pull newly seen creatures towards you.
+
+あなたは新たに視界に入った生き物を時々自分の方へ引き寄せる。
+%%%%
+You frequently pull newly seen creatures towards you.
+
+あなたは新たに視界に入った生き物を頻繁に自分の方へ引き寄せる。
+%%%%
+You feel strangely attractive.
+
+あなたは奇妙な魅力を帯びた気がした。
+%%%%
+You feel even more attractive.
+
+あなたはさらに魅力を帯びた気がした。
+%%%%
+You feel less attractive.
+
+あなたの魅力は薄れた気がした。
+%%%%
+You feel a little less attractive.
+
+あなたの魅力は少し薄れた気がした。
+%%%%
+# MUT_WARMUP_STRIKES
+warmup strikes
+
+準備運動
+%%%%
+Your first few attacks do less damage.
+
+あなたの最初の数回の攻撃は与えるダメージが少ない。
+%%%%
+# MUT_NO_JEWELLERY
+no jewellery
+
+装身具不可
+%%%%
+You cannot equip rings or amulets.
+
+あなたは指輪や護符を装備できない。
+%%%%
+# MUT_HURL_DAMNATION
+hurl damnation
+
+地獄の鉄槌
+%%%%
+You can hurl damnation.
+
+あなたは地獄の鉄槌を浴びせることができる。
+%%%%
+You smell a hint of brimstone.
+
+あなたはかすかな硫黄の匂いを嗅ぎとった。
+%%%%
+# MUT_HORNS
+You have a pair of small horns on your head.
+
+あなたの頭には一対の小さな角がある。
+%%%%
+You have a pair of horns on your head.
+
+あなたの頭には一対の角がある。
+%%%%
+You have a pair of large horns on your head.
+
+あなたの頭には一対の大きな角がある。
+%%%%
+A pair of horns grows on your head!
+
+あなたの頭に一対の角が生えてきた！
+%%%%
+The horns on your head grow some more.
+
+あなたの角がいくらか成長した。
+%%%%
+The horns on your head shrink away.
+
+あなたの頭にある角が収縮して消えた。
+%%%%
+The horns on your head shrink a bit.
+
+あなたの頭にある角が少し小さくなった。
+%%%%
+# MUT_BEAK
+beak
+
+嘴
+%%%%
+You have a beak for a mouth.
+
+あなたは嘴を持っている。
+%%%%
+Your mouth lengthens and hardens into a beak!
+
+あなたの口は伸び、堅い嘴になった！
+%%%%
+Your beak shortens and softens into a mouth.
+
+あなたの嘴は短くなり、柔らかい口になった。
+%%%%
+# MUT_CLAWS
+claws
+
+爪
+%%%%
+You have sharp fingernails.
+
+あなたの爪は鋭い。
+%%%%
+You have very sharp fingernails.
+
+あなたの爪は非常に鋭い。
+%%%%
+You have claws for hands.
+
+あなたは手に鉤爪が生えている。
+%%%%
+Your fingernails lengthen.
+
+あなたの爪は伸びていった。
+%%%%
+Your fingernails sharpen.
+
+あなたの爪は鋭くなった。
+%%%%
+Your hands twist into claws.
+
+あなたの手は鉤爪へと変化した。
+%%%%
+Your fingernails shrink to normal size.
+
+あなたの爪は普通の大きさに縮んでしまった。
+%%%%
+Your fingernails look duller.
+
+あなたの爪は鋭さを失った。
+%%%%
+Your hands feel fleshier.
+
+あなたの鉤爪は指へと変化した。
+%%%%
+# MUT_FANGS
+You have very sharp teeth.
+
+あなたはとても鋭い歯を持っている。
+%%%%
+You have extremely sharp teeth.
+
+あなたは極めて鋭い歯を持っている。
+%%%%
+You have razor-sharp teeth.
+
+あなたは剃刀のように鋭い歯を持っている。
+%%%%
+Your teeth lengthen and sharpen.
+
+あなたの歯は伸び、鋭くなった。
+%%%%
+Your teeth lengthen and sharpen some more.
+
+あなたの歯は伸び、さらに鋭くなった。
+%%%%
+Your teeth grow very long and razor-sharp.
+
+あなたの歯はとても長くなり、剃刀のように鋭くなった。
+%%%%
+Your teeth shrink to normal size.
+
+あなたの歯は普通の大きさに戻った。
+%%%%
+Your teeth shrink and become duller.
+
+あなたの歯は縮小し、鋭さを失った。
+%%%%
+# MUT_HOOVES
+hooves
+
+蹄
+%%%%
+You have large cloven feet.
+
+あなたは大きな割れた蹄を持っている。
+%%%%
+You have hoof-like feet.
+
+あなたは蹄のような足を持っている。
+%%%%
+You have hooves in place of feet.
+
+あなたは足のかわりに蹄が生えている。
+%%%%
+Your feet thicken and deform.
+
+あなたの足は分厚く変形した。
+%%%%
+Your feet have mutated into hooves.
+
+あなたの足は蹄の様に変化した。
+%%%%
+Your hooves expand and flesh out into feet!
+
+あなたの蹄は普通の足へと変化した！
+%%%%
+Your hooves look more like feet.
+
+あなたの蹄は足の様になった。
+%%%%
+# MUT_ANTENNAE
+antennae
+
+触角
+%%%%
+You have a pair of small antennae on your head.
+
+あなたは頭に小さな二本の触角を持っている。
+%%%%
+You have a pair of antennae on your head.
+
+あなたは頭に二本の触角を持っている。
+%%%%
+You have a pair of large antennae on your head. (SInv)
+
+あなたは頭に二本の大きな触角を持っている。(SInv)
+%%%%
+A pair of antennae grows on your head!
+
+二本の触角があなたの頭に生えた！
+%%%%
+The antennae on your head grow some more.
+
+あなたの頭の触角は少し成長した。
+%%%%
+The antennae on your head shrink away.
+
+あなたの頭の触角は収縮してなくなった。
+%%%%
+The antennae on your head shrink a bit.
+
+あなたの頭の触角は少し縮んだ。
+%%%%
+# MUT_TALONS
+talons
+
+足爪
+%%%%
+You have sharp toenails.
+
+あなたは鋭い足の爪を持っている。
+%%%%
+You have razor-sharp toenails.
+
+あなたは剃刀のように鋭い足の爪を持っている
+%%%%
+You have claws for feet.
+
+あなたは足に鉤爪を持っている。
+%%%%
+Your toenails lengthen and sharpen.
+
+あなたの足の爪は伸び、鋭くなった。
+%%%%
+Your feet stretch into talons.
+
+あなたの足は伸縮し、鉤爪になった。
+%%%%
+Your talons dull and shrink into feet.
+
+あなたの足の爪は鋭さを失い、縮んだ。
+%%%%
+Your talons look more like feet.
+
+あなたの爪は少し足のようになった。
+%%%%
+# MUT_TENTACLE_SPIKE
+tentacle spike
+
+棘付き触手
+%%%%
+One of your tentacles bears a spike.
+
+あなたの触手の一つから棘が生えている。
+%%%%
+One of your tentacles bears a nasty spike.
+
+あなたの触手の一つから恐ろしい棘が生えている。
+%%%%
+One of your tentacles bears a large vicious spike.
+
+あなたの触手の一つからおぞましい大きな棘が生えている。
+%%%%
+One of your lower tentacles grows a sharp spike.
+
+あなたの触手の一つに鋭利な棘が生えてきた。
+%%%%
+Your tentacle spike grows bigger.
+
+あなたの触手の棘は大きくなった。
+%%%%
+Your tentacle spike grows even bigger.
+
+あなたの触手の棘はさらに大きくなった。
+%%%%
+Your tentacle spike disappears.
+
+あなたの触手の棘は消え去った。
+%%%%
+Your tentacle spike becomes smaller.
+
+あなたの触手の棘は小さくなった。
+%%%%
+Your tentacle spike recedes somewhat.
+
+あなたの触手の棘は少し小さくなった。
+%%%%
+# MUT_CONSTRICTING_TAIL
+naga tail
+
+ナーガの尾
+%%%%
+Your snake-like lower body moves slowly.
+
+あなたの蛇のような下半身はゆっくりと動く。
+%%%%
+Your snake-like lower body moves slowly, but can constrict enemies.
+
+あなたの蛇のような下半身はゆっくりと動くが、敵を締めつけることができる。
+%%%%
+Your lower body turns into a snake tail.
+
+あなたの下半身は蛇の尾に変わった。
+%%%%
+Your tail grows strong enough to constrict your enemies.
+
+あなたの尻尾は敵を拘束するのに十分なほど成長した。
+%%%%
+Your lower body returns to normal.
+
+あなたの下半身は元に戻った。
+%%%%
+Your snake tail weakens and can no longer constrict your enemies.
+
+あなたの蛇の尾は弱まり、もう敵を締めつけることができない。
+%%%%
+Your tail will grow strong enough to constrict your foes.
+
+あなたの尾は敵を締めつけられるほど強くなるだろう。
+%%%%
+# MUT_STINGER
+stinger
+
+棘の尻尾
+%%%%
+Your tail ends in a venomous barb.
+
+あなたの尾の先には毒針がある。
+%%%%
+Your tail ends in a sharp venomous barb.
+
+あなたの尾の先には鋭い毒針がある。
+%%%%
+Your tail ends in a wickedly sharp and venomous barb.
+
+あなたの尾の先には恐ろしく鋭い毒針がある。
+%%%%
+A venomous barb forms on the end of your tail.
+
+あなたの尾の先に毒針ができた。
+%%%%
+The barb on your tail looks sharper.
+
+あなたの尻尾の棘は鋭くなった。
+%%%%
+The barb on your tail looks very sharp.
+
+あなたの尻尾の棘は非常に鋭くなった。
+%%%%
+The barb on your tail disappears.
+
+あなたの尻尾の棘は消え去った。
+%%%%
+The barb on your tail seems less sharp.
+
+あなたの尻尾の棘は少し鋭くなくなったようだ。
+%%%%
+# MUT_BIG_WINGS
+big wings
+
+力強い翼
+%%%%
+Your large and strong wings let you fly.
+
+あなたは大きく力強い翼で空を飛べる。
+%%%%
+Your wings grow larger and stronger.
+
+あなたの翼は大きく、力強く成長した。
+%%%%
+Your wings shrivel and weaken.
+
+あなたの翼は弱まり、縮まった。
+%%%%
+# MUT_FROG_LEGS
+frog-like legs
+
+蛙のような脚
+%%%%
+You can hop short distances, but move slowly.
+
+あなたは短い距離を跳躍できるが、移動は遅い。
+%%%%
+You can hop long distances, but move slowly.
+
+あなたは長い距離を跳躍できるが、移動は遅い。
+%%%%
+Your legs feel stronger.
+
+あなたの脚は強くなった気がした。
+%%%%
+# MUT_ARMOURED_TAIL
+armoured tail
+
+装甲の尾
+%%%%
+You have an armoured tail.
+
+あなたは装甲に覆われた尾を持っている。
+%%%%
+You have a heavy armoured tail.
+
+あなたは重装甲に覆われた尾を持っている。
+%%%%
+# MUT_ROLLPAGE
+rollpage
+
+転がり猛進
+%%%%
+You regenerate magic when rolling toward enemies. (Rampage MPRegen)
+
+あなたは敵に向かって転がると魔力を回復する。(猛進 MP再生)
+%%%%
+You regenerate magic and health when rolling toward enemies. (Rampage Regen)
+
+あなたは敵に向かって転がると魔力と体力を回復する。(猛進 再生)
+%%%%
+You begin to regenerate magic when rolling toward enemies.
+
+あなたは敵に向かって転がると魔力を回復するようになった。
+%%%%
+You begin to regenerate health when rolling toward enemies.
+
+あなたは敵に向かって転がると体力を回復するようになった。
+%%%%
+You can no longer roll toward enemies.
+
+あなたはもう敵に向かって転がることができない。
+%%%%
+You can no longer regenerate health when rolling toward enemies.
+
+あなたはもう敵に向かって転がっても体力を回復しない。
+%%%%
+# MUT_SHAGGY_FUR
+shaggy fur
+
+毛皮
+%%%%
+You are covered in fur. (AC +1)
+
+あなたは毛皮で覆われている。(AC +1)
+%%%%
+You are covered in thick fur. (AC +2)
+
+あなたは厚い毛皮で覆われている。(AC +2)
+%%%%
+Your thick and shaggy fur keeps you warm. (AC +3, rC+)
+
+あなたの厚く、毛むくじゃらの毛皮はあなたの温もりを保つ。(AC +3, rC+)
+%%%%
+Fur sprouts all over your body.
+
+毛皮があなたの全身を包んだ。
+%%%%
+Your fur grows into a thick mane.
+
+あなたの毛皮は厚いたてがみに成長した。
+%%%%
+Your thick fur grows shaggy and warm.
+
+あなたの毛皮は毛むくじゃらに暖かく成長した。
+%%%%
+You shed all your fur.
+
+あなたの毛皮は失われた。
+%%%%
+Your thick fur recedes somewhat.
+
+あなたの厚い毛皮は失われた。
+%%%%
+Your shaggy fur recedes somewhat.
+
+あなたの毛皮は失われた。
+%%%%
+Your shaggy fur will keep you warm. (AC + 3, rC+)
+
+あなたの毛むくじゃらの毛皮はあなたの温もりを保つだろう。(AC + 3, rC+)
+%%%%
+# MUT_HIGH_MAGIC
+high MP
+
+魔力容量大
+%%%%
+You have an increased reservoir of magic. (+10% MP)
+
+あなたの魔力の容量は増加している。(+10% MP)
+%%%%
+You have a considerably increased reservoir of magic. (+20% MP)
+
+あなたの魔力の容量はかなり増加している。(+20% MP)
+%%%%
+You have a greatly increased reservoir of magic. (+30% MP)
+
+あなたの魔力の容量は大いに増加している。(+30% MP)
+%%%%
+You feel more energetic.
+
+あなたは更なる魔力を感じた。
+%%%%
+You feel less energetic.
+
+あなたは魔力を失ったと感じた。
+%%%%
+# MUT_LOW_MAGIC
+low MP
+
+魔力容量小
+%%%%
+Your magical capacity is low. (-10% MP)
+
+あなたの魔力の容量は少ない。(-10% MP)
+%%%%
+Your magical capacity is very low. (-20% MP)
+
+あなたの魔力の容量はとても少ない。(-20% MP)
+%%%%
+Your magical capacity is extremely low. (-30% MP)
+
+あなたの魔力の容量はとてつもなく少ない。(-30% MP)
+%%%%
+# MUT_WILD_MAGIC
+wild magic
+
+暴走する魔力
+%%%%
+Your spells are a little harder to cast, but a little more powerful.
+
+あなたの呪文詠唱は少し難しいが、その分強力だ。
+%%%%
+Your spells are harder to cast, but more powerful.
+
+あなたの呪文詠唱は難しいが、その分強力だ。
+%%%%
+Your spells are much harder to cast, but much more powerful.
+
+あなたの呪文詠唱はとても難しいが、その分強力だ。
+%%%%
+You feel less in control of your magic.
+
+あなたは魔法をコントロールできなくなったと感じた。
+%%%%
+You feel your magical power running wild!
+
+あなたは魔力が暴走していると感じた！
+%%%%
+You regain control of your magic.
+
+あなたは魔法のコントロールを取り戻した。
+%%%%
+You feel more in control of your magic.
+
+あなたは少し魔法のコントロールを取り戻した。
+%%%%
+# MUT_SUBDUED_MAGIC
+subdued magic
+
+抑制された魔力
+%%%%
+Your spells are a little easier to cast, but a little less powerful.
+
+あなたの呪文詠唱は少し易しいが、少し威力が低い。
+%%%%
+Your spells are easier to cast, but less powerful.
+
+あなたの呪文詠唱は易しいが、威力が低い。
+%%%%
+Your spells are much easier to cast, but much less powerful.
+
+あなたの呪文詠唱はとても易しいが、とてつもなく威力が低い。
+%%%%
+Your connection to magic feels subdued.
+
+あなたは魔力が抑制されていると感じた。
+%%%%
+Your connection to magic feels more subdued.
+
+あなたは魔力がさらに抑制されていると感じた。
+%%%%
+Your connection to magic feels nearly dormant.
+
+あなたの魔力はほとんど休眠状態だ。
+%%%%
+Your magic regains its normal vibrancy.
+
+あなたは魔力の活発さを取り戻した。
+%%%%
+Your connection to magic feels less subdued.
+
+あなたは少し魔力の活発さを取り戻した。
+%%%%
+# MUT_EFFICIENT_MAGIC
+efficient magic
+
+効率的な魔術
+%%%%
+Spells you cast cost 1 less MP (to a minimum of 1).
+
+あなたが唱える呪文の消費MPは1少なくなる(最低1)。
+%%%%
+Spells you cast cost 2 less MP (to a minimum of 1).
+
+あなたが唱える呪文の消費MPは2少なくなる(最低1)。
+%%%%
+You gain a new grip on the flow of your magic.
+
+あなたは魔力の流れを新たに掌握した。
+%%%%
+Your grip strengthens on the flow of your magic.
+
+あなたの魔力の流れへの掌握が強まった。
+%%%%
+The flow of your magic slips from your grasp.
+
+あなたの魔力の流れは手からこぼれ落ちた。
+%%%%
+The flow of your magic starts slipping from your grasp.
+
+あなたの魔力の流れが手からこぼれ始めた。
+%%%%
+# MUT_EPHEMERAL_SHIELD
+ephemeral shield
+
+束の間の盾
+%%%%
+A shield forms around you when casting spells or using Invocations. (SH +7)
+
+呪文を唱えたり祈祷を使ったりすると、あなたの周囲に盾が形成される。(盾 +7)
+%%%%
+Ambient excess energy starts collecting around you.
+
+周囲の余剰エネルギーがあなたの周りに集まり始めた。
+%%%%
+The ambient excess energy around you dissipates.
+
+あなたの周りの余剰エネルギーは消え去った。
+%%%%
+# MUT_TIME_WARPED_BLOOD
+time-warped blood
+
+時を歪める血
+%%%%
+Your blood hastes a few of your allies when you are sufficiently damaged.
+
+あなたが十分なダメージを受けると、あなたの血が数体の味方を加速させる。
+%%%%
+Your blood hastes several of your allies when you are sufficiently damaged.
+
+あなたが十分なダメージを受けると、あなたの血が何体もの味方を加速させる。
+%%%%
+The flow of your blood desyncs from the flow of time itself.
+
+あなたの血流は時の流れそのものからずれ始めた。
+%%%%
+The flow of your blood has become unstuck from time.
+
+あなたの血流は時から解き放たれた。
+%%%%
+Your blood flow once more matches the normal passage of time.
+
+あなたの血流は再び通常の時の流れと一致した。
+%%%%
+Your blood flow starts aligning itself with the normal passage of time.
+
+あなたの血流は通常の時の流れに合わせ始めた。
+%%%%
+# MUT_DEMONIC_MAGIC
+demonic magic
+
+悪魔の魔術
+%%%%
+Spells you cast may paralyse adjacent enemies.
+
+あなたが唱える呪文は隣接する敵を麻痺させることがある。
+%%%%
+Spells you cast may paralyse nearby enemies.
+
+あなたが唱える呪文は周囲の敵を麻痺させることがある。
+%%%%
+Spells you cast and wands you use may paralyse nearby enemies.
+
+あなたが唱える呪文と使うワンドは周囲の敵を麻痺させることがある。
+%%%%
+A menacing aura infuses your magic.
+
+威圧的なオーラがあなたの魔力に染み込んだ。
+%%%%
+Your magic grows more menacing.
+
+あなたの魔力はさらに威圧的になった。
+%%%%
+Your wands become infused with your menacing aura.
+
+あなたのワンドにあなたの威圧的なオーラが染み込んだ。
+%%%%
+# MUT_FORLORN
+forlorn
+
+孤独
+%%%%
+You shall have no god before yourself.
+
+汝、己より先に神を持つことなかれ。
+%%%%
+You feel forlorn.
+
+あなたは孤独を感じた。
+%%%%
+You feel more spiritual.
+
+あなたはより神秘的な感じがした。
+%%%%
+# MUT_PASSIVE_MAPPING
+sense surroundings
+
+地形感知
+%%%%
+You passively map the area around you.
+
+あなたは受動的に周辺を感知する。
+%%%%
+You passively map a large area around you.
+
+あなたは受動的に周辺の広い範囲を感知する。
+%%%%
+You feel a strange attunement to the structure of the dungeons.
+
+あなたは迷宮の構造と奇妙な同調を感じた。
+%%%%
+Your attunement to dungeon structure grows further.
+
+迷宮の構造との同調がさらに強くなった。
+%%%%
+You feel slightly disoriented.
+
+あなたは少し見当識を失った。
+%%%%
+# MUT_ICEMAIL
+icemail
+
+氷の鎧
+%%%%
+A meltable icy envelope protects you from harm. (AC +
+
+氷の外套があなたを外敵から守っている。(AC +
+%%%%
+A thick, meltable icy envelope protects you from harm. (AC +
+
+溶けやすい分厚い氷の外套があなたを外敵から守っている。(AC +
+%%%%
+An icy envelope takes form around you.
+
+氷の外套があなたの周りを覆った。
+%%%%
+Your icy envelope grows thicker.
+
+あなたの氷の外套は分厚くなった。
+%%%%
+# MUT_CONDENSATION_SHIELD
+condensation shield
+
+凝結の盾
+%%%%
+A meltable shield of frost defends you. (SH +
+
+溶けやすい霜の盾があなたを守っている。(盾 +
+%%%%
+Frost condenses into a shield before you.
+
+霜があなたの前で凝結して盾になった。
+%%%%
+# MUT_PASSIVE_FREEZE
+passive freeze
+
+受動的氷結
+%%%%
+A frigid envelope surrounds you and freezes all who hurt you.
+
+極寒の外套があなたを包み、あなたを傷つける者全てを凍えさせる。
+%%%%
+Your skin feels very cold.
+
+あなたの皮膚はとても冷たくなったと感じた。
+%%%%
+Your skin warms up.
+
+あなたの皮膚は温かくなった。
+%%%%
+# MUT_NIGHTSTALKER
+nightstalker
+
+闇隠れ
+%%%%
+You are slightly more attuned to the shadows.
+
+あなたは少しだけ影に溶け込んだ。
+%%%%
+You are significantly more attuned to the shadows.
+
+あなたはさらに影に溶け込んだ。
+%%%%
+You are completely attuned to the shadows.
+
+あなたは完全に影に溶け込んだ。
+%%%%
+You slip into the darkness of the dungeon.
+
+あなたは迷宮の暗闇の中に転がり込んだ。
+%%%%
+You slip further into the darkness.
+
+あなたは闇の中に身を隠した。
+%%%%
+You are surrounded by darkness.
+
+あなたは闇に覆われている。
+%%%%
+Your affinity for the darkness vanishes.
+
+あなたの暗闇との親和性は消え去った。
+%%%%
+Your affinity for the darkness weakens.
+
+あなたの暗闇との親和性は弱くなった。
+%%%%
+# MUT_SPINY
+spiny
+
+棘
+%%%%
+You are partially covered in sharp spines.
+
+あなたは体の一部を鋭い棘に覆われている。
+%%%%
+You are mostly covered in sharp spines.
+
+あなたは体の大部分を鋭い棘に覆われている。
+%%%%
+You are completely covered in sharp spines.
+
+あなたは完全に鋭い棘に覆われている。
+%%%%
+Sharp spines emerge from parts of your body.
+
+あなたの体の一部から鋭い棘が現れた。
+%%%%
+Sharp spines emerge from more of your body.
+
+あなたの体のさらなる部分から鋭い棘が現れた。
+%%%%
+Sharp spines emerge from your entire body.
+
+あなたの全身から鋭い棘が現れた。
+%%%%
+Your sharp spines disappear entirely.
+
+あなたの鋭い棘は完全に消えた。
+%%%%
+Your sharp spines retract somewhat.
+
+あなたの鋭い棘は幾らか消え去った。
+%%%%
+# MUT_POWERED_BY_DEATH
+powered by death
+
+死よりの力
+%%%%
+You regenerate a little health from kills.
+
+あなたは敵を倒すことで少しばかり体力を回復するようになる。
+%%%%
+You regenerate health from kills.
+
+あなたは敵を倒すことで体力を回復するようになる。
+%%%%
+You regenerate a lot of health from kills.
+
+あなたは敵を倒すことで体力を多く回復するようになる。
+%%%%
+A wave of death washes over you.
+
+死の波があなたを覆い流した。
+%%%%
+The wave of death grows in power.
+
+死の波がさらに強くなった。
+%%%%
+Your control of surrounding life forces is gone.
+
+あなたは周囲の生命力を制御できなくなった。
+%%%%
+Your control of surrounding life forces weakens.
+
+あなたの周囲の生命力を制御しにくくなった。
+%%%%
+# MUT_POWERED_BY_PAIN
+powered by pain
+
+苦痛よりの力
+%%%%
+You sometimes gain a little power by taking damage.
+
+あなたは傷つくことによりわずかに強化されることがある。
+%%%%
+You sometimes gain power by taking damage.
+
+あなたは傷つくことにより強化されることがある。
+%%%%
+You are powered by pain.
+
+あなたは苦痛により強化される。
+%%%%
+You feel energised by your suffering.
+
+あなたは苦痛によって魔力が供給されるのを感じた。
+%%%%
+You feel even more energised by your suffering.
+
+あなたは苦痛によってさらに魔力が供給されるのを感じた。
+%%%%
+You feel completely energised by your suffering.
+
+あなたは苦痛によっていっそう魔力が供給されるのを感じた。
+%%%%
+# MUT_AUGMENTATION
+augmentation
+
+攻撃力の増大
+%%%%
+Your magical and physical power is slightly enhanced at high health.
+
+あなたの魔力と戦闘力はあなたの体力が高い場合においていくらか上昇する。
+%%%%
+Your magical and physical power is enhanced at high health.
+
+あなたの魔力と戦闘力はあなたの体力が高い場合において上昇する。
+%%%%
+Your magical and physical power is greatly enhanced at high health.
+
+あなたの魔力と戦闘力はあなたの体力が高い場合において大いに上昇する。
+%%%%
+You feel power flowing into your body.
+
+あなたは力が体に流れ込むのを感じた。
+%%%%
+You feel power rushing into your body.
+
+あなたは力が体に殺到するのを感じた。
+%%%%
+You feel saturated with power.
+
+あなたは戦闘力の飽和を感じた。
+%%%%
+# MUT_MANA_SHIELD
+magic shield
+
+魔力の盾
+%%%%
+When hurt, damage is shared between your health and your magic reserves.
+
+あなたが傷つくとき、ダメージが体力と魔力の双方に分配される。
+%%%%
+You feel your magical essence form a protective shroud around your flesh.
+
+あなたを包む防御のオーラが魔力を帯びているのを感じた。
+%%%%
+# MUT_MANA_REGENERATION
+magic regeneration
+
+魔力回復
+%%%%
+You regenerate magic rapidly.
+
+あなたは急速に魔力が回復する。
+%%%%
+Your magic begins to regenerate rapidly.
+
+あなたの魔力は急速に回復し始めた。
+%%%%
+# MUT_MANA_LINK
+magic link
+
+魔力との絆
+%%%%
+When low on magic, you restore magic in place of health.
+
+あなたは魔力が低下した際に、体力を魔力に変換する。
+%%%%
+You feel your life force and your magical essence meld.
+
+あなたは体力と魔力が一体化したように感じた。
+%%%%
+# MUT_GELATINOUS_BODY
+gelatinous body
+
+ゼラチン状の体
+%%%%
+Your rubbery body absorbs attacks. (AC +1, EV +1)
+
+あなたのゴムの体は攻撃を吸収する。(AC +1, 回避 +1)
+%%%%
+Your pliable body absorbs attacks. (AC +2, EV +2)
+
+あなたの柔軟な体は攻撃を吸収する。(AC +2, 回避 +2)
+%%%%
+Your gelatinous body deflects attacks. (AC +3, EV +3)
+
+あなたのゼラチン状の体は攻撃をはね返す。(AC +3, 回避 +3)
+%%%%
+Your body becomes stretchy.
+
+あなたの体は伸縮するようになった。
+%%%%
+Your body becomes more malleable.
+
+あなたの体はさらに柔軟さを増した。
+%%%%
+Your body becomes viscous.
+
+あなたの体は粘着性を帯びた。
+%%%%
+Your body returns to its normal consistency.
+
+あなたの体は通常の粘度に戻った。
+%%%%
+Your body becomes less malleable.
+
+あなたの体は柔軟性を失った。
+%%%%
+Your body becomes less viscous.
+
+あなたの体は粘着性を失った。
+%%%%
+# MUT_EYEBALLS
+eyeballs
+
+眼球
+%%%%
+Your body has grown eyes which may confuse attackers. (Acc +3)
+
+あなたの体には攻撃してくる者を混乱させる眼が付いている。(命中 +3)
+%%%%
+Your body has grown many eyes which may confuse attackers. (Acc +5)
+
+あなたの体には攻撃してくる者を混乱させるたくさんの眼が付いている。(命中 +5)
+%%%%
+Your body is covered in eyes which may confuse attackers. (Acc +7, SInv)
+
+あなたの体は攻撃してくる者を混乱させる眼でびっしりと覆われている。(命中 +7, SInv)
+%%%%
+Eyeballs grow over part of your body.
+
+眼球があなたの体の一部に生えてきた。
+%%%%
+Eyeballs cover a large portion of your body.
+
+眼球があなたの体の大部分を覆った。
+%%%%
+Eyeballs cover you completely.
+
+眼球があなたの全身を覆った。
+%%%%
+The eyeballs on your body disappear.
+
+あなたの身体の眼球は消え去った。
+%%%%
+The eyeballs on your body recede somewhat.
+
+あなたの身体の眼球がいくらか消え去った。
+%%%%
+# MUT_TRANSLUCENT_SKIN
+translucent skin
+
+半透明な体
+%%%%
+Your translucent skin slightly reduces your foes' accuracy. (Stealth+)
+
+あなたの半透明な体は相手の命中率をいくぶん低くする。(隠密+)
+%%%%
+Your translucent skin reduces your foes' accuracy. (Stealth+)
+
+あなたの半透明な体は相手の命中率を低くする。(隠密+)
+%%%%
+Your transparent skin significantly reduces your foes' accuracy. (Stealth+)
+
+あなたの透明な体は相手の命中率を著しく低くする。(隠密+)
+%%%%
+Your skin becomes partially translucent.
+
+あなたの体は部分的に透明になった。
+%%%%
+Your skin becomes more translucent.
+
+あなたの体はさらに透明になった。
+%%%%
+Your skin becomes completely transparent.
+
+あなたの体は完全に透明になった。
+%%%%
+Your skin returns to its normal opacity.
+
+あなたの体は通常の透明度に戻っていった。
+%%%%
+Your skin's translucency fades.
+
+あなたの肌の透明度が低くなった。
+%%%%
+Your skin's transparency fades.
+
+あなたの肌の透明度が低くなった。
+%%%%
+# MUT_PSEUDOPODS
+pseudopods
+
+仮足
+%%%%
+Armour fits poorly on your pseudopods.
+
+鎧はあなたの仮足に合っていない。
+%%%%
+Armour fits poorly on your large pseudopods.
+
+鎧はあなたの大きな仮足に合っていない。
+%%%%
+Armour fits poorly on your massive pseudopods.
+
+鎧はあなたの重厚な仮足に合っていない。
+%%%%
+Pseudopods emerge from your body.
+
+仮足があなたの体に現れた。
+%%%%
+Your pseudopods grow in size.
+
+あなたの仮足は大きさを増した。
+%%%%
+Your pseudopods retract into your body.
+
+あなたの仮足は体の中に引っ込んだ。
+%%%%
+Your pseudopods become smaller.
+
+あなたの仮足は小さくなった。
+%%%%
+# MUT_ACIDIC_BITE
+acidic bite
+
+酸の牙
+%%%%
+You have acidic saliva.
+
+あなたは酸性の唾液を出す。
+%%%%
+Acid begins to drip from your mouth.
+
+あなたの口から酸が零れ落ちた。
+%%%%
+Your mouth feels dry.
+
+あなたの口は乾燥したようだ。
+%%%%
+# MUT_SLIME_SHROUD
+slime shroud
+
+スライムの帷子
+%%%%
+A fragile, slimy shroud covers you, deflecting attacks.
+
+壊れやすいぬるぬるした帷子があなたを覆い、攻撃を逸らす。
+%%%%
+A thin film of slime covers your body.
+
+スライムの薄い膜があなたの体を覆った。
+%%%%
+Your film of slime dries up.
+
+あなたのスライムの膜は乾ききった。
+%%%%
+# MUT_ANTIMAGIC_BITE
+antimagic bite
+
+反魔法の牙
+%%%%
+Your bite disrupts and absorbs the magic of your enemies.
+
+あなたの牙は敵の魔法を阻害し、吸収する。
+%%%%
+You feel a sudden thirst for magic.
+
+あなたは突然魔力に対する飢えを感じた。
+%%%%
+Your magical appetite wanes.
+
+あなたの魔力に対する食欲は消えうせた。
+%%%%
+# MUT_EFFICIENT_METABOLISM
+efficient metabolism
+
+効率的な代謝
+%%%%
+Your metabolism doubles the duration of potion status effects.
+
+あなたの代謝は薬による状態効果の持続時間を2倍にする。
+%%%%
+Your body churns, leaving you strangely parched.
+
+あなたの体がかき回され、奇妙な喉の渇きを覚えた。
+%%%%
+Your body churns, leaving you strangely quenched.
+
+あなたの体がかき回され、奇妙に喉の渇きが癒えた。
+%%%%
+# MUT_NO_POTION_HEAL
+no potion heal
+
+薬での回復不可
+%%%%
+Potions are less effective at restoring your health.
+
+薬による体力回復の効果が低い。
+%%%%
+Potions cannot restore your health.
+
+薬で体力を回復することができない。
+%%%%
+Your system partially rejects the healing effects of potions.
+
+あなたの体は薬の回復効果を部分的に拒絶するようになった。
+%%%%
+Your system completely rejects the healing effects of potions.
+
+あなたの体は薬の回復効果を完全に拒絶するようになった。
+%%%%
+Your system completely accepts the healing effects of potions.
+
+あなたの体は薬の回復効果を完全に受け入れるようになった。
+%%%%
+Your system partly accepts the healing effects of potions.
+
+あなたの体は薬の回復効果を部分的に受け入れるようになった。
+%%%%
+# MUT_RECKLESS
+reckless
+
+無謀
+%%%%
+Your SH is halved, but you deal more damage with two-handed weapons.
+
+あなたの盾値は半減するが、両手武器で与えるダメージが増える。
+%%%%
+You feel a sudden disregard for your own safety.
+
+あなたは突然、自分の身の安全などどうでもよくなった。
+%%%%
+You feel a little less reckless.
+
+あなたの無謀さが少し和らいだ。
+%%%%
+# MUT_SPATIAL_ENTANGLEMENT
+spatial entanglement
+
+空間のもつれ
+%%%%
+When you translocate, a monster is sometimes pulled along with you.
+
+あなたが転位すると、時々モンスターが一緒に引き寄せられる。
+%%%%
+You feel space start to knot itself around you.
+
+あなたは周囲の空間がもつれ始めるのを感じた。
+%%%%
+You feel space untangle itself from you.
+
+あなたは周囲の空間のもつれがほどけるのを感じた。
+%%%%
+# MUT_DISTORTION_FIELD
+repulsion field
+
+斥力場
+%%%%
+You are surrounded by a mild repulsion field. (EV +2)
+
+あなたは緩やかな斥力場に覆われている。(回避 +2)
+%%%%
+You are surrounded by a moderate repulsion field. (EV +3)
+
+あなたは斥力場に覆われている。(回避 +3)
+%%%%
+You are surrounded by a strong repulsion field. (EV +4, RMsl)
+
+あなたは強力な斥力場に覆われている。(回避 +4, 飛来物防御)
+%%%%
+You begin to radiate repulsive energy.
+
+あなたは斥力を放射しはじめた。
+%%%%
+Your repulsive radiation grows stronger.
+
+あなたの斥力がさらに強くなった。
+%%%%
+You feel less repulsive.
+
+あなたの斥力が弱まったようだ。
+%%%%
+# MUT_ICY_BLUE_SCALES
+icy blue scales
+
+氷のように青い鱗
+%%%%
+You are partially covered in icy blue scales. (AC +2)
+
+あなたの体は氷のように青い鱗で部分的に覆われている。(AC +2)
+%%%%
+You are mostly covered in icy blue scales. (AC +3)
+
+あなたの体は氷のように青い鱗で大部分を覆われている。(AC +3)
+%%%%
+You are completely covered in icy blue scales. (AC +4, rC+)
+
+あなたの体は氷のように青い鱗で完全に覆われている。(AC +4, rC+)
+%%%%
+Icy blue scales grow over part of your body.
+
+氷のように青い鱗があなたの体の一部に生えてきた。
+%%%%
+Icy blue scales spread over more of your body.
+
+氷のように青い鱗があなたの体をさらに覆った。
+%%%%
+Icy blue scales cover your body completely.
+
+氷のように青い鱗があなたの体を完全に覆った。
+%%%%
+Your icy blue scales disappear.
+
+あなたの氷のように青い鱗が消えてしまった。
+%%%%
+Your icy blue scales recede somewhat.
+
+あなたの氷のように青い鱗がいくらか消え去った。
+%%%%
+# MUT_IRIDESCENT_SCALES
+iridescent scales
+
+玉虫色の鱗
+%%%%
+You are partially covered in iridescent scales. (AC +2)
+
+あなたの体は玉虫色の鱗で部分的に覆われている。(AC +2)
+%%%%
+You are mostly covered in iridescent scales. (AC +4)
+
+あなたの体は玉虫色の鱗で大部分を覆われている。(AC +4)
+%%%%
+You are completely covered in iridescent scales. (AC +6)
+
+あなたの体は玉虫色の鱗で完全に覆われている。(AC +6)
+%%%%
+Iridescent scales grow over part of your body.
+
+玉虫色の鱗があなたの体の一部に生えてきた。
+%%%%
+Iridescent scales spread over more of your body.
+
+玉虫色の鱗があなたの体をさらに覆った。
+%%%%
+Iridescent scales cover your body completely.
+
+玉虫色の鱗があなたの体を完全に覆った。
+%%%%
+Your iridescent scales disappear.
+
+あなたの玉虫色の鱗が消えてしまった。
+%%%%
+Your iridescent scales recede somewhat.
+
+あなたの玉虫色の鱗がいくらか消え去った。
+%%%%
+# MUT_LARGE_BONE_PLATES
+large bone plates
+
+大きな骨甲
+%%%%
+You are partially covered in large bone plates. (SH +4)
+
+あなたの体は大きな骨甲で部分的に覆われている。(盾 +4)
+%%%%
+You are mostly covered in large bone plates. (SH +6)
+
+あなたの体は大きな骨甲で大部分を覆われている。(盾 +6)
+%%%%
+You are completely covered in large bone plates. (SH +8)
+
+あなたの体は大きな骨甲で完全に覆われている。(盾 +8)
+%%%%
+Large bone plates grow over parts of your arms.
+
+大きな骨甲があなたの腕の一部に生えてきた。
+%%%%
+Large bone plates spread over more of your arms.
+
+大きな骨甲があなたの腕をさらに覆った。
+%%%%
+Large bone plates cover your arms completely.
+
+大きな骨甲があなたの腕を完全に覆った。
+%%%%
+Your large bone plates disappear.
+
+あなたの大きな骨甲が消えてしまった。
+%%%%
+Your large bone plates recede somewhat.
+
+あなたの大きな骨甲がいくらか消え去った。
+%%%%
+# MUT_MOLTEN_SCALES
+molten scales
+
+溶岩状の鱗
+%%%%
+You are partially covered in molten scales. (AC +2)
+
+あなたの体は溶岩状の鱗で部分的に覆われている。(AC +2)
+%%%%
+You are mostly covered in molten scales. (AC +3)
+
+あなたの体は溶岩状の鱗で大部分を覆われている。(AC +3)
+%%%%
+You are completely covered in molten scales. (AC +4, rF+)
+
+あなたの体は溶岩状の鱗で完全に覆われている。(AC +4, rF+)
+%%%%
+Molten scales grow over part of your body.
+
+溶岩状の鱗があなたの体の一部に生えてきた。
+%%%%
+Molten scales spread over more of your body.
+
+溶岩状の鱗があなたの体をさらに覆った。
+%%%%
+Molten scales cover your body completely.
+
+溶岩状の鱗があなたの体を完全に覆った。
+%%%%
+Your molten scales disappear.
+
+あなたの溶岩状の鱗が消えてしまった。
+%%%%
+Your molten scales recede somewhat.
+
+あなたの溶岩状の鱗がいくらか消え去った。
+%%%%
+# MUT_RUGGED_BROWN_SCALES
+rugged brown scales
+
+頑丈な茶色の鱗
+%%%%
+You are partially covered in rugged brown scales. (AC +1, +3% HP)
+
+あなたの体は頑丈な茶色の鱗で部分的に覆われている。(AC +1, +3% HP)
+%%%%
+You are mostly covered in rugged brown scales. (AC +2, +5% HP)
+
+あなたの体は頑丈な茶色の鱗で大部分を覆われている。(AC +2, +5% HP)
+%%%%
+You are completely covered in rugged brown scales. (AC +3, +7% HP)
+
+あなたの体は頑丈な茶色の鱗で完全に覆われている。(AC +3, +7% HP)
+%%%%
+Rugged brown scales grow over part of your body.
+
+頑丈な茶色の鱗があなたの体の一部に生えてきた。
+%%%%
+Rugged brown scales spread over more of your body.
+
+頑丈な茶色の鱗があなたの体をさらに覆った。
+%%%%
+Rugged brown scales cover your body completely.
+
+頑丈な茶色の鱗があなたの体を完全に覆った。
+%%%%
+Your rugged brown scales disappear.
+
+あなたの頑丈な茶色の鱗が消えてしまった。
+%%%%
+Your rugged brown scales recede somewhat.
+
+あなたの頑丈な茶色の鱗がいくらか消え去った。
+%%%%
+# MUT_SLIMY_GREEN_SCALES
+slimy green scales
+
+ねばねばした緑の鱗
+%%%%
+You are partially covered in slimy green scales. (AC +2)
+
+あなたの体はねばねばした緑色の鱗で部分的に覆われている。(AC +2)
+%%%%
+You are mostly covered in slimy green scales. (AC +3)
+
+あなたの体はねばねばした緑の鱗で大部分を覆われている。(AC +3)
+%%%%
+You are completely covered in slimy green scales. (AC +4, rPois)
+
+あなたの体はねばねばした緑の鱗で完全に覆われている。(AC +4, rPois)
+%%%%
+Slimy green scales grow over part of your body.
+
+ねばねばした緑の鱗があなたの体の一部に生えてきた。
+%%%%
+Slimy green scales spread over more of your body.
+
+ねばねばした緑の鱗があなたの体をさらに覆った。
+%%%%
+Slimy green scales cover your body completely.
+
+ねばねばした緑の鱗があなたの体を完全に覆った。
+%%%%
+Your slimy green scales disappear.
+
+あなたのねばねばした緑の鱗が消えてしまった。
+%%%%
+Your slimy green scales recede somewhat.
+
+あなたのねばねばした緑の鱗がいくらか消え去った。
+%%%%
+# MUT_THIN_METALLIC_SCALES
+thin metallic scales
+
+薄い金属性の鱗
+%%%%
+You are partially covered in thin metallic scales. (AC +2)
+
+あなたの体は薄い金属性の鱗で部分的に覆われている。(AC +2)
+%%%%
+You are mostly covered in thin metallic scales. (AC +3)
+
+あなたの体は薄い金属性の鱗で大部分を覆われている。(AC +3)
+%%%%
+You are completely covered in thin metallic scales. (AC +4, rElec)
+
+あなたの体は薄い金属性の鱗で完全に覆われている。(AC +4, rElec)
+%%%%
+Thin metallic scales grow over part of your body.
+
+薄い金属性の鱗があなたの体の一部に生えてきた。
+%%%%
+Thin metallic scales spread over more of your body.
+
+薄い金属性の鱗があなたの体をさらに覆った。
+%%%%
+Thin metallic scales cover your body completely.
+
+薄い金属性の鱗があなたの体を完全に覆った。
+%%%%
+Your thin metallic scales disappear.
+
+あなたの薄い金属性の鱗が消えてしまった。
+%%%%
+Your thin metallic scales recede somewhat.
+
+あなたの薄い金属性の鱗がいくらか消え去った。
+%%%%
+# MUT_THIN_SKELETAL_STRUCTURE
+thin skeletal structure
+
+薄い骨格構造
+%%%%
+You have a somewhat thin skeletal structure. (Dex +2, Stealth+)
+
+あなたはやや薄い骨格構造を持っている。(器用 +2, 隠密+)
+%%%%
+You have a moderately thin skeletal structure. (Dex +4, Stealth++)
+
+あなたは薄い骨格構造を持っている。(器用 +4, 隠密++)
+%%%%
+You have an unnaturally thin skeletal structure. (Dex +6, Stealth+++)
+
+あなたは不自然に薄い骨格構造を持っている。(器用 +6, 隠密+++)
+%%%%
+Your bones become slightly less dense.
+
+あなたの骨はわずかに密度が低くなった。
+%%%%
+Your bones become somewhat less dense.
+
+あなたの骨はやや密度が低くなった。
+%%%%
+Your bones become less dense.
+
+あなたの骨は密度が低くなった。
+%%%%
+Your skeletal structure returns to normal.
+
+あなたの骨格構造は通常に戻った。
+%%%%
+Your skeletal structure densifies.
+
+あなたの骨格構造は密度が高くなった。
+%%%%
+# MUT_YELLOW_SCALES
+yellow scales
+
+黄色の鱗
+%%%%
+You are partially covered in yellow scales. (AC +2)
+
+あなたの体は黄色の鱗で部分的に覆われている。(AC +2)
+%%%%
+You are mostly covered in yellow scales. (AC +3)
+
+あなたの体は黄色の鱗で大部分を覆われている。(AC +3)
+%%%%
+You are completely covered in yellow scales. (AC +4, rCorr)
+
+あなたの体は黄色の鱗で完全に覆われている。(AC +4, rCorr)
+%%%%
+Yellow scales grow over part of your body.
+
+黄色の鱗があなたの体の一部に生えてきた。
+%%%%
+Yellow scales spread over more of your body.
+
+黄色の鱗があなたの体をさらに覆った。
+%%%%
+Yellow scales cover your body completely.
+
+黄色の鱗があなたの体を完全に覆った。
+%%%%
+Your yellow scales disappear.
+
+あなたの黄色の鱗が消えてしまった。
+%%%%
+Your yellow scales recede somewhat.
+
+あなたの黄色の鱗がいくらか消え去った。
+%%%%
+# MUT_SHARP_SCALES
+sharp scales
+
+鋭い鱗
+%%%%
+You are partially covered in razor-sharp scales. (AC +1, Slay +1)
+
+あなたの体は剃刀のように鋭い鱗で部分的に覆われている。(AC +1, 殺傷 +1)
+%%%%
+You are mostly covered in razor-sharp scales. (AC +2, Slay +2)
+
+あなたの体は剃刀のように鋭い鱗で大部分を覆われている。(AC +2, 殺傷 +2)
+%%%%
+You are completely covered in razor-sharp scales. (AC +3, Slay +3)
+
+あなたの体は剃刀のように鋭い鱗で完全に覆われている。(AC +3, 殺傷 +3)
+%%%%
+Sharp scales grow over part of your body.
+
+鋭い鱗があなたの体の一部に生えた。
+%%%%
+Sharp scales spread over more of your body.
+
+鋭い鱗があなたの体のより広い範囲に広がった。
+%%%%
+Sharp scales cover your body completely.
+
+鋭い鱗があなたの体を完全に覆った。
+%%%%
+Your sharp scales disappear.
+
+あなたの鋭い鱗は消え去った。
+%%%%
+Your sharp scales recede somewhat.
+
+あなたの鋭い鱗はいくらか後退した。
+%%%%
+# MUT_STURDY_FRAME
+sturdy frame
+
+頑健な骨格
+%%%%
+Your movements are slightly less encumbered by armour. (ER -2)
+
+あなたの動きは鎧によってそれほど阻害されない。(ER -2)
+%%%%
+Your movements are less encumbered by armour. (ER -4)
+
+あなたの動きは鎧によってあまり阻害されない。(ER -4)
+%%%%
+Your movements are significantly less encumbered by armour. (ER -6)
+
+あなたの動きは鎧によってほとんど阻害されない。(ER -6)
+%%%%
+You feel less encumbered by your armour.
+
+鎧はあなたの動きを阻害しにくくなった。
+%%%%
+You feel more encumbered by your armour.
+
+鎧はあなたの動きをもっと阻害するようになった。
+%%%%
+# MUT_SANGUINE_ARMOUR
+sanguine armour
+
+血紅の鎧
+%%%%
+When seriously injured, your blood forms armour. (AC +
+
+あなたが重傷を負ったとき、血が鎧を形成する。(AC +
+%%%%
+When seriously injured, your blood forms thick armour. (AC +
+
+あなたが重傷を負ったとき、血が厚い鎧を形成する。(AC +
+%%%%
+When seriously injured, your blood forms very thick armour. (AC +
+
+あなたが重傷を負ったとき、血が重厚な鎧を形成する。(AC +
+%%%%
+You feel your blood ready itself to protect you.
+
+あなたは自らの血が自身を守ってくれるような感じがした。
+%%%%
+You feel your blood thicken.
+
+あなたは血が濃くなったような気がした。
+%%%%
+You feel your blood become entirely quiescent.
+
+あなたは自らの血が力を失ったような感じがした。
+%%%%
+You feel your blood thin.
+
+あなたは血が薄まったような気がした。
+%%%%
+# MUT_BIG_BRAIN
+big brain
+
+巨大な脳
+%%%%
+You have an unusually large brain. (Int +2)
+
+あなたは並外れて大きな脳を持っている。(知力 +2)
+%%%%
+You have an extremely huge brain. (Int +4)
+
+あなたはきわめて巨大な脳を持っている。(知力 +4)
+%%%%
+You have an absolutely massive brain. (Int +6, Wiz)
+
+あなたはとてつもなく巨大な脳を持っている。(知力 +6, Wiz)
+%%%%
+Your brain expands.
+
+あなたの脳は膨張した。
+%%%%
+Your brain expands to incredible size.
+
+あなたの脳は信じられない大きさまで膨張した。
+%%%%
+Your brain returns to normal size.
+
+あなたの脳は元の大きさに戻った。
+%%%%
+Your brain shrinks.
+
+あなたの脳は縮んだ。
+%%%%
+# MUT_CAMOUFLAGE
+camouflage
+
+迷彩
+%%%%
+Your skin changes colour to match your surroundings (Stealth+).
+
+あなたの肌は周囲に合わせて色を変化させる。(隠密+)
+%%%%
+Your skin blends seamlessly with your surroundings (Stealth++).
+
+あなたの肌は継ぎ目無く周囲に溶け込む。(隠密++)
+%%%%
+Your skin perfectly mimics your surroundings (Stealth+++).
+
+あなたの肌は周囲を完全に模倣する。(隠密+++)
+%%%%
+Your skin functions as natural camouflage.
+
+あなたの肌は迷彩の機能を得た。
+%%%%
+Your natural camouflage becomes more effective.
+
+あなたの迷彩はより効果的になった。
+%%%%
+Your skin no longer functions as natural camouflage.
+
+あなたの肌は迷彩の機能を持たなくなった。
+%%%%
+Your natural camouflage becomes less effective.
+
+あなたの迷彩の機能は薄れた。
+%%%%
+# MUT_IGNITE_BLOOD
+ignite blood
+
+血の発火
+%%%%
+Your demonic aura sometimes causes spilled blood to erupt in flames.
+
+あなたの悪魔のオーラは時々流れた血を炎上させる。
+%%%%
+Your demonic aura often causes spilled blood to erupt in flames.
+
+あなたの悪魔のオーラはしばしば流れた血を炎上させる。
+%%%%
+Your demonic aura causes all spilled blood to erupt in flames.
+
+あなたの悪魔のオーラは流れた血をすべて炎上させる。
+%%%%
+Your blood heats up.
+
+あなたの血は熱くなった。
+%%%%
+Your blood runs red-hot!
+
+あなたの血液は赤く熱く染まった！
+%%%%
+Your blood burns even hotter!
+
+あなたの血はさらに熱く燃えた！
+%%%%
+# MUT_FOUL_STENCH
+foul stench
+
+汚らわしい悪臭
+%%%%
+You may rarely emit foul miasma when damaged in melee.
+
+あなたは近接攻撃でダメージを受けると、まれに汚らわしい瘴気を放つ。
+%%%%
+You sometimes emit foul miasma when damaged in melee.
+
+あなたは近接攻撃でダメージを受けると、時々汚らわしい瘴気を放つ。
+%%%%
+You frequently emit foul miasma when damaged in melee.
+
+あなたは近接攻撃を受けた際にしばしば汚らわしい瘴気を発する。
+%%%%
+You begin to emit a foul stench of rot and decay.
+
+あなたは腐敗性の汚らしい悪臭を発し始めた。
+%%%%
+Your foul stench grows more powerful.
+
+あなたの汚らわしい悪臭は強くなった。
+%%%%
+You begin to radiate miasma.
+
+あなたは瘴気を発し始めた。
+%%%%
+# MUT_TENDRILS
+tendrils
+
+粘着状の蔦
+%%%%
+You are covered in slimy tendrils that may disarm your opponents.
+
+敵の持っている武器を取り落とさせるねばねばした蔦があなたを覆っている。
+%%%%
+Thin, slimy tendrils emerge from your body.
+
+細いねばねばした蔦があなたの体から生えてきた。
+%%%%
+Your tendrils retract into your body.
+
+細いねばねばした蔦はあなたの体の中に引っ込んだ。
+%%%%
+# MUT_JELLY_GROWTH
+jelly sensing items
+
+アイテムを感知するジェリー
+%%%%
+You have a small jelly attached to you that senses nearby items.
+
+近くのアイテムを感知する小さなジェリーがあなたの体に付いている。
+%%%%
+Your body partially splits into a small jelly.
+
+あなたの身体の一部は分割され、小さなジェリーになった。
+%%%%
+The jelly growth is reabsorbed into your body.
+
+ジェリーはあなたの身体に再吸収された。
+%%%%
+# MUT_JELLY_MISSILE
+jelly absorbing missiles
+
+飛び道具を吸収するジェリー
+%%%%
+You have a small jelly attached to you that may absorb projectiles.
+
+あなたの体には飛び道具を吸収する小さなジェリーがくっついている。
+%%%%
+# MUT_STONE_BODY
+stone body
+
+石の体
+%%%%
+Your stone body is resiliant and immune to petrification. (AC +
+
+あなたの石の体は頑丈で、石化を無効化する。(AC +
+%%%%
+Your body vibrates.
+
+あなたの体は振動した。
+%%%%
+You briefly stop moving.
+
+あなたの体の振動が止まった。
+%%%%
+# MUT_BLACK_MARK
+black mark
+
+黒の紋様
+%%%%
+Your melee attacks may debilitate your foes.
+
+あなたの近接攻撃は相手を衰弱させることがある。
+%%%%
+An ominous black mark forms on your body.
+
+不吉な黒の紋様があなたの体に刻まれた。
+%%%%
+# MUT_SILENCE_AURA
+aura of silence
+
+静寂のオーラ
+%%%%
+You are surrounded by an aura of silence.
+
+あなたは静寂のオーラに包まれている。
+%%%%
+An unnatural silence shrouds you.
+
+不自然な静寂があなたを包んだ。
+%%%%
+# MUT_HEX_ENHANCER
+bedevilling
+
+魔性
+%%%%
+Your hexes are more powerful.
+
+あなたの妖術はより強力だ。
+%%%%
+You feel devilish.
+
+あなたは悪魔的な気分になった。
+%%%%
+# MUT_CORRUPTING_PRESENCE
+corrupting presence
+
+堕落させる存在
+%%%%
+Your presence sometimes corrodes those you injure.
+
+あなたの存在は傷つけた相手を時々腐食させる。
+%%%%
+Your presence sometimes corrodes or deforms those you injure.
+
+あなたの存在は傷つけた相手を時々腐食させたり歪ませたりする。
+%%%%
+You feel corrupt.
+
+あなたは堕落した気がした。
+%%%%
+Your corrupting presence intensifies.
+
+あなたの堕落させる存在感は強まった。
+%%%%
+# MUT_WORD_OF_CHAOS
+word of chaos
+
+混沌の言葉
+%%%%
+You can speak a Word of Chaos.
+
+あなたは混沌の言葉を唱えることができる。
+%%%%
+Your tongue twists.
+
+あなたの舌がねじれた。
+%%%%
+# MUT_DEMONIC_WILL
+demonic willpower
+
+悪魔の意志
+%%%%
+You punish those that try to bend your will. (Will+)
+
+あなたは自分の意志を曲げようとする者を罰する。(Will+)
+%%%%
+You feel wilful.
+
+あなたは強情になった気がした。
+%%%%
+# MUT_WEAKNESS_STINGER
+weakness stinger
+
+弱体化の毒針
+%%%%
+You have a small tail.
+
+あなたは小さな尾を持っている。
+%%%%
+You have a tail ending in a sharp stinger.
+
+あなたは先端に鋭い毒針のある尾を持っている。
+%%%%
+You have a sharp stinger which inflicts weakening toxins.
+
+あなたは弱体化の毒を注入する鋭い毒針を持っている。
+%%%%
+You grow a small tail.
+
+あなたに小さな尾が生えた。
+%%%%
+Your tail grows a sharp stinger.
+
+あなたの尾に鋭い毒針が生えた。
+%%%%
+Your stinger grows larger and begins to produce weakening toxins.
+
+あなたの毒針は大きくなり、弱体化の毒を作り出し始めた。
+%%%%
+# MUT_DEMONIC_TOUCH
+demonic touch
+
+悪魔の接触
+%%%%
+Your touch may inflict minor irresistible damage on your foes.
+
+あなたの接触は敵に抵抗不能な小ダメージを与えることがある。
+%%%%
+Your touch may inflict irresistible damage on your foes.
+
+あなたの接触は敵に抵抗不能なダメージを与えることがある。
+%%%%
+Your touch may irresistibly damage your foes and sap their willpower.
+
+あなたの接触は敵に抵抗不能なダメージを与え、その意志力を奪うことがある。
+%%%%
+Your hands begin to faintly glow with unholy energy.
+
+あなたの手は邪悪なエネルギーでかすかに光り始めた。
+%%%%
+Your hands glow brighter with unholy energy.
+
+あなたの手は邪悪なエネルギーでより明るく光った。
+%%%%
+Your hands twist and begin to emit a powerful aura of unholy energy.
+
+あなたの手はねじれ、邪悪なエネルギーの強力なオーラを放ち始めた。
+%%%%
+# MUT_COLD_BLOODED
+cold-blooded
+
+冷血
+%%%%
+You are cold-blooded and may be slowed by cold attacks.
+
+あなたの血は冷たく、冷気による攻撃を受けると動きが鈍くなる。
+%%%%
+You feel cold-blooded.
+
+あなたは血液が冷たくなったようだ
+%%%%
+You feel warm-blooded.
+
+あなたは血液が暖かくなったようだ。
+%%%%
+# MUT_FLAME_CLOUD_IMMUNITY
+flame cloud immunity
+
+火炎の雲無効化
+%%%%
+You are immune to clouds of flame.
+
+あなたは火炎の雲に対して傷つかない。
+%%%%
+You feel less concerned about heat.
+
+あなたは熱気をあまり気にしなくなったようだ。
+%%%%
+# MUT_FREEZING_CLOUD_IMMUNITY
+freezing cloud immunity
+
+冷気の雲無効化
+%%%%
+You are immune to freezing clouds.
+
+あなたは冷気の雲に対して傷つかない。
+%%%%
+You feel less concerned about cold.
+
+あなたは冷気をあまり気にしなくなったようだ。
+%%%%
+# MUT_RENOUNCE_POTIONS
+renounce potions
+
+薬の放棄
+%%%%
+You refuse to drink potions in combat unless seriously injured.
+
+あなたは重傷を負っていない限り、戦闘中に薬を飲むことを拒む。
+%%%%
+You renounce the hedonism of uninhibited drinking.
+
+あなたは奔放に薬を飲む快楽主義を捨て去った。
+%%%%
+You feel willing to use your potions freely once again.
+
+あなたは再び薬を自由に使う気になった。
+%%%%
+# MUT_RENOUNCE_SCROLLS
+renounce scrolls
+
+巻物の放棄
+%%%%
+You refuse to read scrolls in combat unless seriously injured.
+
+あなたは重傷を負っていない限り、戦闘中に巻物を読むことを拒む。
+%%%%
+You renounce the frivolity of worldly writings.
+
+あなたは俗世の書物という軽薄なものを捨て去った。
+%%%%
+You feel willing to use your scrolls freely once again.
+
+あなたは再び巻物を自由に使う気になった。
+%%%%
+# MUT_MISSING_HAND
+missing a hand
+
+片腕欠損
+%%%%
+You are missing a hand.
+
+あなたは片腕が欠損している。
+%%%%
+One of your hands has vanished, leaving only a stump!
+
+あなたの片腕は消滅し、付け根だけが残った！
+%%%%
+Your stump has regrown into a hand!
+
+片腕が付け根から生えてきた！
+%%%%
+# MUT_BOOMING_VOICE
+booming voice
+
+轟く声
+%%%%
+You read scrolls incredibly loudly when enemies are in sight.
+
+あなたは敵が視界にいると、巻物を信じられないほどの大声で読み上げる。
+%%%%
+You feel your voice swell to a thunderous volume.
+
+あなたは自分の声が雷鳴のような大きさに膨れ上がるのを感じた。
+%%%%
+You voice quiets to a reasonable volume.
+
+あなたの声は常識的な大きさに戻った。
+%%%%
+# MUT_POTION_FUNGUS
+potion fungus
+
+薬の菌類
+%%%%
+You may spread the effect of potions you drink to nearby monsters.
+
+あなたは飲んだ薬の効果を周囲のモンスターに広めることがある。
+%%%%
+A symbiotic fungus spreads across your body.
+
+共生する菌類があなたの体中に広がった。
+%%%%
+The fungus across your body shrivels and falls away.
+
+あなたの体中に広がっていた菌類は萎びて剥がれ落ちた。
+%%%%
+# MUT_NO_STEALTH
+no stealth
+
+隠密不可
+%%%%
+You cannot be stealthy.
+
+あなたは人目を盗むことができない。
+%%%%
+You can no longer be stealthy.
+
+あなたはもはや人目を盗むことができない。
+%%%%
+You can once more be stealthy.
+
+あなたはふたたび人目を盗むことができるようになった。
+%%%%
+# MUT_NO_ARTIFICE
+inability to use devices
+
+魔道具の使用不可
+%%%%
+You cannot study or use magical devices.
+
+あなたは魔道具を使うことはできない。
+%%%%
+You can no longer study or use magical devices.
+
+あなたはもはや魔道具を使うことはできない。
+%%%%
+You can once more study and use magical devices.
+
+あなたはふたたび魔道具を使うことができるようになった。
+%%%%
+# MUT_NO_LOVE
+hated by all
+
+四面楚歌
+%%%%
+You are hated by all.
+
+あなたは全てに嫌われている。
+%%%%
+You are now hated by all.
+
+あなたは全てに嫌われてしまった。
+%%%%
+You are no longer hated by all.
+
+あなたはもう全てには嫌われていない。
+%%%%
+# MUT_COWARDICE
+cowardly
+
+臆病
+%%%%
+Your cowardice makes you less effective in combat with threatening foes.
+
+あなたは臆病なため、手強い敵との戦闘で力を発揮しにくい。
+%%%%
+You have lost your courage.
+
+あなたは勇気を失った。
+%%%%
+You have regained your courage.
+
+あなたは勇気を取り戻した。
+%%%%
+# MUT_NO_DODGING
+inability to train dodging
+
+回避の訓練不可
+%%%%
+You cannot train Dodging skill.
+
+あなたは回避スキルを鍛えることができない。
+%%%%
+You can no longer train Dodging skill.
+
+あなたはもはや回避スキルを鍛えることができない。
+%%%%
+You can once more train Dodging skill.
+
+あなたはふたたび回避スキルを鍛えることができるようになった。
+%%%%
+# MUT_NO_ARMOUR_SKILL
+inability to train armour
+
+鎧の訓練不可
+%%%%
+You cannot train Armour skill.
+
+あなたは鎧スキルを鍛えることができない。
+%%%%
+You can no longer train Armour skill.
+
+あなたはもはや鎧スキルを鍛えることができない。
+%%%%
+You can once more train Armour skill.
+
+あなたはふたたび鎧スキルを鍛えることができるようになった。
+%%%%
+# MUT_NO_AIR_MAGIC
+no air magic
+
+風の魔術不可
+%%%%
+You cannot study or cast Air magic.
+
+あなたは風の魔術を唱えることができない。
+%%%%
+You can no longer study or cast Air magic.
+
+あなたはもはや風の魔術を唱えることができない。
+%%%%
+You can once more study and cast Air magic.
+
+あなたはふたたび風の魔術を唱えることができるようになった。
+%%%%
+# MUT_NO_CONJURATION_MAGIC
+no conjurations magic
+
+妖術不可
+%%%%
+You cannot study or cast Conjurations magic.
+
+あなたは妖術を唱えることができない。
+%%%%
+You can no longer study or cast Conjurations magic.
+
+あなたはもはや妖術を唱えることができない。
+%%%%
+You can once more study and cast Conjurations magic.
+
+あなたはふたたび妖術を唱えることができるようになった。
+%%%%
+# MUT_NO_EARTH_MAGIC
+no earth magic
+
+大地の魔術不可
+%%%%
+You cannot study or cast Earth magic.
+
+あなたは大地の魔術を唱えることができない。
+%%%%
+You can no longer study or cast Earth magic.
+
+あなたはもはや大地の魔術を唱えることができない。
+%%%%
+You can once more study and cast Earth magic.
+
+あなたはふたたび大地の魔術を唱えることができるようになった。
+%%%%
+# MUT_NO_FIRE_MAGIC
+no fire magic
+
+火の魔術不可
+%%%%
+You cannot study or cast Fire magic.
+
+あなたは火の魔術を唱えることができない。
+%%%%
+You can no longer study or cast Fire magic.
+
+あなたはもはや火の魔術を唱えることができない。
+%%%%
+You can once more study and cast Fire magic.
+
+あなたはふたたび火の魔術を唱えることができるようになった。
+%%%%
+# MUT_NO_HEXES_MAGIC
+no hexes magic
+
+呪術不可
+%%%%
+You cannot study or cast Hexes magic.
+
+あなたは呪術を唱えることができない。
+%%%%
+You can no longer study or cast Hexes magic.
+
+あなたはもはや呪術を唱えることができない。
+%%%%
+You can once more study and cast Hexes magic.
+
+あなたはふたたび呪術を唱えることができるようになった。
+%%%%
+# MUT_NO_ICE_MAGIC
+no ice magic
+
+氷の魔術不可
+%%%%
+You cannot study or cast Ice magic.
+
+あなたは氷の魔術を唱えることができない。
+%%%%
+You can no longer study or cast Ice magic.
+
+あなたはもはや氷の魔術を唱えることができない。
+%%%%
+You can once more study and cast Ice magic.
+
+あなたはふたたび氷の魔術を唱えることができるようになった。
+%%%%
+# MUT_NO_NECROMANCY_MAGIC
+no necromancy magic
+
+死霊術不可
+%%%%
+You cannot study or cast Necromancy magic.
+
+あなたは死霊術を唱えることができない。
+%%%%
+You can no longer study or cast Necromancy magic.
+
+あなたはもはや死霊術を唱えることができない。
+%%%%
+You can once more study and cast Necromancy magic.
+
+あなたはふたたび死霊術を唱えることができるようにあった。
+%%%%
+# MUT_NO_ALCHEMY_MAGIC
+no alchemy magic
+
+錬金術不可
+%%%%
+You cannot study or cast Alchemy magic.
+
+あなたは錬金術の呪文を習得することも唱えることもできない。
+%%%%
+You can no longer study or cast Alchemy magic.
+
+あなたはもう錬金術の呪文を習得することも唱えることもできない。
+%%%%
+You can once more study and cast Alchemy magic.
+
+あなたは再び錬金術の呪文を習得し、唱えることができるようになった。
+%%%%
+# MUT_NO_FORGECRAFT_MAGIC
+no forgecraft magic
+
+鍛冶術不可
+%%%%
+You cannot study or cast Forgecraft magic.
+
+あなたは鍛冶術の呪文を習得することも唱えることもできない。
+%%%%
+You can no longer study or cast Forgecraft magic.
+
+あなたはもう鍛冶術の呪文を習得することも唱えることもできない。
+%%%%
+You can once more study and cast Forgecraft magic.
+
+あなたは再び鍛冶術の呪文を習得し、唱えることができるようになった。
+%%%%
+# MUT_NO_SUMMONING_MAGIC
+no summoning magic
+
+召喚術不可
+%%%%
+You cannot study or cast Summoning magic.
+
+あなたは召喚術を唱えることができない。
+%%%%
+You can no longer study or cast Summoning magic.
+
+あなたはもはや召喚術を唱えることができない。
+%%%%
+You can once more study and cast Summoning magic.
+
+あなたはふたたび召喚術を唱えることができるようになった。
+%%%%
+# MUT_NO_TRANSLOCATION_MAGIC
+no translocations magic
+
+転位術不可
+%%%%
+You cannot study or cast Translocations magic.
+
+あなたは転位術を唱えることができない。
+%%%%
+You can no longer study or cast Translocations magic.
+
+あなたはもはや転位術を唱えることができない。
+%%%%
+You can once more study and cast Translocations magic.
+
+あなたはふたたび転位術を唱えることができるようになった。
+%%%%
+# MUT_PHYSICAL_VULNERABILITY
+reduced AC
+
+傷つきやすさ
+%%%%
+You take slightly more damage. (AC -5)
+
+あなたはやや傷つきやすい。(AC -5)
+%%%%
+You take more damage. (AC -10)
+
+あなたは傷つきやすい。(AC -10)
+%%%%
+You take considerably more damage. (AC -15)
+
+あなたはかなり傷つきやすい。(AC -15)
+%%%%
+You feel more vulnerable to harm.
+
+あなたはさらに傷つきやすくなったようだ。
+%%%%
+You no longer feel extra vulnerable to harm.
+
+あなたはもはや通常より傷つきやすくなくなったようだ。
+%%%%
+You feel less vulnerable to harm.
+
+あなたは傷つきにくくなったようだ。
+%%%%
+# MUT_SLOW_REFLEXES
+You have somewhat slow reflexes. (EV -5)
+
+あなたは反射神経がいくらか遅い。(回避 -5)
+%%%%
+You have slow reflexes. (EV -10)
+
+あなたは反射神経が遅い。(回避 -10)
+%%%%
+You have very slow reflexes. (EV -15)
+
+あなたは反射神経がとても遅い。(回避 -15)
+%%%%
+Your reflexes slow.
+
+あなたの反射神経は遅くなった。
+%%%%
+Your reflexes slow further.
+
+あなたの反射神経はさらに遅くなった。
+%%%%
+You reflexes return to normal.
+
+あなたの反射神経は普通に戻った。
+%%%%
+You reflexes speed back up.
+
+あなたの反射神経が少し回復した。
+%%%%
+# MUT_WEAK_WILLED
+weak-willed
+
+弱い意志
+%%%%
+You are slightly weak-willed. (Will-)
+
+あなたはやや意志が弱い。(Will-)
+%%%%
+You are weak-willed. (Will--)
+
+あなたは意志が弱い。(Will--)
+%%%%
+You are extremely weak-willed. (Will---)
+
+あなたはきわめて意志が弱い。(Will---)
+%%%%
+You feel weak-willed.
+
+あなたは意志が弱くなった気がした。
+%%%%
+You feel more weak-willed.
+
+あなたはさらに意志が弱くなった気がした。
+%%%%
+You no longer feel weak-willed.
+
+あなたの意志はもう弱くない。
+%%%%
+You feel less weak-willed.
+
+あなたの意志の弱さは和らいだ気がした。
+%%%%
+# MUT_ANTI_WIZARDRY
+disrupted magic
+
+魔法阻害
+%%%%
+Your casting is slightly disrupted.
+
+あなたの魔法は少し阻害されている。
+%%%%
+Your casting is disrupted.
+
+あなたの魔法は阻害されている。
+%%%%
+Your casting is seriously disrupted.
+
+あなたの魔法はひどく阻害されている。
+%%%%
+Your ability to control magic is disrupted.
+
+あなたの魔法制御能力は阻害されている。
+%%%%
+Your ability to control magic is more disrupted.
+
+あなたの魔法制御能力への阻害は強まった。
+%%%%
+Your ability to control magic is no longer disrupted.
+
+あなたの魔法制御能力はもはや阻害されていない。
+%%%%
+Your ability to control magic is less disrupted.
+
+あなたの魔法制御能力への阻害は弱まった。
+%%%%
+# MUT_MP_WANDS
+MP-powered wands
+
+魔力を消費する杖
+%%%%
+You expend magic power (3 MP) to strengthen your wands.
+
+あなたは3MPを消費してワンドの効果を強くすることができる。
+%%%%
+You feel your magical essence link to the dungeon's wands.
+
+あなたは自分の魔力の本質がダンジョンのワンドと結びつくのを感じた。
+%%%%
+Your magical essence no longer links to wands of the dungeon.
+
+あなたの魔力の本質はもうダンジョンのワンドと結びついていない。
+%%%%
+# MUT_UNSKILLED
+unskilled
+
+スキル低下
+%%%%
+You are somewhat unskilled. (-1 Apt)
+
+あなたはいくらか未熟だ。(適性 -1)
+%%%%
+You are unskilled. (-2 Apt)
+
+あなたは未熟だ。(適性 -2)
+%%%%
+You are extremely unskilled. (-3 Apt)
+
+あなたはきわめて未熟だ。(適性 -3)
+%%%%
+You feel less skilled.
+
+あなたは腕が落ちた気がした。
+%%%%
+You regain all your skill.
+
+あなたは腕を取り戻した気がした。
+%%%%
+You regain some skill.
+
+あなたはいくらか腕を取り戻した。
+%%%%
+# MUT_INEXPERIENCED
+inexperienced
+
+レベル低下
+%%%%
+You are somewhat inexperienced. (-1 XL)
+
+あなたはいくらか経験不足だ。(レベル -1)
+%%%%
+You are inexperienced. (-2 XL)
+
+あなたは経験不足だ。(レベル -2)
+%%%%
+You are extremely inexperienced. (-3 XL)
+
+あなたはきわめて経験不足だ。(レベル -3)
+%%%%
+You feel less experienced.
+
+あなたは経験を失ったようだ。
+%%%%
+You regain all your potential.
+
+あなたは経験を取り戻した。
+%%%%
+You regain some potential.
+
+あなたは少し経験を取り戻した。
+%%%%
+# MUT_PAWS
+stealthy paws
+
+忍び足
+%%%%
+Your paws help you pounce on unaware monsters.
+
+あなたの肉球は気付いていないモンスターに飛びかかるのに役立つ。
+%%%%
+# MUT_MISSING_EYE
+missing an eye
+
+片目喪失
+%%%%
+You are missing an eye, making it more difficult to aim.
+
+あなたは片目を失っており、狙いをつけるのがより難しくなっている。
+%%%%
+Your right eye vanishes! The world loses its depth.
+
+あなたの右目が消え失せた！ 遠近感が分からなくなった。
+%%%%
+Your right eye suddenly reappears! The world regains its depth.
+
+あなたの右目が突然再生した！ 遠近感が元に戻った。
+%%%%
+# MUT_TEMPERATURE_SENSITIVITY
+temperature sensitive
+
+温度に敏感
+%%%%
+You are sensitive to extremes of temperature. (rF-, rC-)
+
+あなたは極端な温度環境に弱い。(rF-, rC-)
+%%%%
+You feel sensitive to extremes of temperature.
+
+あなたは極端な温度環境に弱くなった気がした。
+%%%%
+You no longer feel sensitive to extremes of temperature
+
+あなたは極端な温度環境に対し元通りの強さになった。
+%%%%
+# MUT_NO_FORMS
+no forms
+
+変身不可
+%%%%
+You cannot voluntarily change form.
+
+あなたは自分の意思で姿を変えることができない。
+%%%%
+You can no longer voluntarily change form.
+
+あなたはもう自分の意思で姿を変えることができない。
+%%%%
+You can once more change form.
+
+あなたは再び姿を変えられるようになった。
+%%%%
+# MUT_NO_REGENERATION
+no regeneration
+
+再生不可
+%%%%
+You do not regenerate.
+
+あなたは自然回復しない。
+%%%%
+You stop regenerating.
+
+あなたの体は再生しなくなった。
+%%%%
+You start regenerating.
+
+あなたの体は再生し始めた。
+%%%%
+# MUT_TREASURE_SENSE
+treasure sense
+
+宝の感知
+%%%%
+You have an uncanny knack for detecting items.
+
+あなたにはアイテムを見つけ出す不思議な才能がある。
+%%%%
+You suddenly feel aware of treasure.
+
+あなたは突然、宝の存在を感じ取れるようになった。
+%%%%
+You no longer feel aware of treasure.
+
+あなたはもう宝の存在を感じ取れない。
+%%%%
+# MUT_ACID_RESISTANCE
+acid resistance
+
+酸耐性
+%%%%
+You are resistant to acid. (rCorr)
+
+あなたは酸に耐性がある。(rCorr)
+%%%%
+You feel resistant to acid.
+
+あなたは酸に耐性ができた気がした。
+%%%%
+You feel less resistant to acid.
+
+あなたは酸への耐性が弱まった気がした。
+%%%%
+# MUT_QUADRUMANOUS
+four strong arms
+
+四本の腕
+%%%%
+Your four strong arms can wield two-handed weapons with a shield.
+
+あなたの四本の腕は両手武器と盾を一緒に装備することができる。
+%%%%
+Two of your arms shrink away.
+
+あなたの腕のうち二本が縮んで消えた。
+%%%%
+You grow two extra arms.
+
+あなたに二本の腕が新たに生えた。
+%%%%
+# MUT_NO_DRINK
+Your mouth dries to ashes.
+
+あなたの口は灰のように干からびた。
+%%%%
+You gain the ability to drink.
+
+あなたは飲む能力を得た。
+%%%%
+# MUT_FAITH
+faith
+
+信仰
+%%%%
+You have a special connection with the divine. (Faith)
+
+あなたは神と特別な繋がりを持っている。(信仰)
+%%%%
+You feel connected to something greater than you.
+
+あなたは自分より偉大な何かと繋がっているのを感じた。
+%%%%
+You feel rebellious.
+
+あなたは反抗的な気分になった。
+%%%%
+# MUT_REFLEXIVE_HEADBUTT
+retaliatory headbutt
+
+反撃の頭突き
+%%%%
+You reflexively headbutt those who attack you in melee.
+
+あなたは近接戦闘において攻撃してきた相手に頭突きで反撃する。
+%%%%
+Your retaliatory reflexes feel sharp.
+
+あなたの反撃の反射神経は鋭くなった。
+%%%%
+Your retaliatory reflexes feel dull.
+
+あなたの反撃の反射神経は鈍くなった。
+%%%%
+# MUT_STEAM_RESISTANCE
+steam resistance
+
+蒸気耐性
+%%%%
+You are immune to the effects of steam.
+
+あなたは蒸気の影響を無効化する。
+%%%%
+You are now immune to the effects of steam.
+
+あなたは蒸気の影響を無効化するようになった。
+%%%%
+You are no longer immune to the effects of steam.
+
+あなたはもう蒸気の影響を無効化しない。
+%%%%
+# MUT_NO_GRASPING
+no weapons or thrown items
+
+武器および飛び道具不可
+%%%%
+You are incapable of wielding weapons or throwing items.
+
+あなたは武器を手に持ったりアイテムを投擲したりすることができない。
+%%%%
+You can no longer grasp objects.
+
+あなたはもう物を掴むことができない。
+%%%%
+You can now grasp objects.
+
+あなたは物を掴めるようになった。
+%%%%
+# MUT_NO_ARMOUR
+no armour
+
+鎧不可
+%%%%
+You cannot wear armour.
+
+あなたは防具を装備できない。
+%%%%
+You can no longer wear armour.
+
+あなたはもう防具を装備できない。
+%%%%
+You can now wear armour.
+
+あなたは防具を装備できるようになった。
+%%%%
+# MUT_MULTILIVED
+multi-lived
+
+複数の命
+%%%%
+You gain extra lives every three experience levels.
+
+あなたは経験レベルが3上がるごとに予備の命を得る。
+%%%%
+You are no longer multi-lived.
+
+あなたはもう複数の命を持たない。
+%%%%
+You can now gain extra lives.
+
+あなたは予備の命を得られるようになった。
+%%%%
+# MUT_DISTRIBUTED_TRAINING
+distributed training
+
+均等な訓練
+%%%%
+Your experience applies equally to all skills.
+
+あなたの経験はすべてのスキルに均等に振り分けられる。
+%%%%
+Your experience now applies equally to all skills.
+
+あなたの経験はすべてのスキルに均等に振り分けられるようになった。
+%%%%
+Your experience no longer applies equally to all skills.
+
+あなたの経験はもうすべてのスキルに均等には振り分けられない。
+%%%%
+# MUT_NIMBLE_SWIMMER
+nimble swimmer
+
+俊敏な泳ぎ手
+%%%%
+You are camouflaged when in or above water. (Stealth+)
+
+あなたは水中や水上では周囲に溶け込む。(隠密+)
+%%%%
+You are very nimble when in or above water. (Stealth+, EV+, Speed+++)
+
+あなたは水中や水上では非常に俊敏だ。(隠密+, 回避+, 速度+++)
+%%%%
+You feel comfortable near water.
+
+あなたは水辺で心地よさを感じた。
+%%%%
+You feel very comfortable near water.
+
+あなたは水辺でとても心地よさを感じた。
+%%%%
+You feel less comfortable near water.
+
+あなたは水辺であまり心地よさを感じなくなった。
+%%%%
+# MUT_TENTACLE_ARMS
+tentacles
+
+触手
+%%%%
+You have tentacles for arms and can constrict enemies.
+
+あなたの腕は触手になっており、敵を締めつけることができる。
+%%%%
+Your arms feel tentacular.
+
+あなたの腕は触手のようになった。
+%%%%
+Your arms no longer feel tentacular.
+
+あなたの腕はもう触手のようではない。
+%%%%
+# MUT_MERTAIL
+mertail
+
+人魚の尾
+%%%%
+Your lower body shifts to a powerful aquatic tail in water.
+
+あなたの下半身は水中では力強い水棲の尾に変わる。
+%%%%
+Your legs feel aquatic.
+
+あなたの脚は水棲のもののようになった。
+%%%%
+Your legs no longer feel aquatic.
+
+あなたの脚はもう水棲のもののようではない。
+%%%%
+# MUT_FLOAT
+float
+
+浮遊
+%%%%
+You float through the air rather than walking.
+
+あなたは歩くのではなく宙に浮いて移動する。
+%%%%
+You feel both weightless and legless.
+
+あなたは重さも脚も失ったように感じた。
+%%%%
+You feel dragged down by the weight of the world.
+
+あなたは世界の重さに引きずり下ろされるのを感じた。
+%%%%
+# MUT_INNATE_CASTER
+innate caster
+
+生来の術者
+%%%%
+You learn spells naturally, not from books.
+
+あなたは本からではなく、自然に呪文を習得する。
+%%%%
+You feel mystic power welling inside you.
+
+あなたは神秘の力が内から湧き上がるのを感じた。
+%%%%
+You feel a greater respect for book-learning.
+
+あなたは書物による学問をより尊重するようになった。
+%%%%
+# MUT_HP_CASTING
+HP casting
+
+HPでの詠唱
+%%%%
+Your magical power is your life essence.
+
+あなたの魔力はあなたの生命そのものだ。
+%%%%
+Your magical power and health merge together.
+
+あなたの魔力と体力は一つに融合した。
+%%%%
+Your life and magic unlink.
+
+あなたの生命と魔力の結びつきは解けた。
+%%%%
+# MUT_FLAT_HP
+extra vitality
+
+高い生命力
+%%%%
+You have superior vitality. (+4 MHP)
+
+あなたは優れた生命力を持っている。(最大HP +4)
+%%%%
+You have much superior vitality. (+8 MHP)
+
+あなたは非常に優れた生命力を持っている。(最大HP +8)
+%%%%
+You have exceptionally superior vitality. (+12 MHP)
+
+あなたは並外れて優れた生命力を持っている。(最大HP +12)
+%%%%
+You feel more vital.
+
+あなたは生命力が増した気がした。
+%%%%
+You feel less vital.
+
+あなたは生命力が衰えた気がした。
+%%%%
+# MUT_OOZE_FLOOD
+ooze flood
+
+軟泥の奔流
+%%%%
+Your melee attacks may flood your foes with ooze.
+
+あなたの近接攻撃は敵を軟泥で押し流すことがある。
+%%%%
+You begin exuding ooze.
+
+あなたは軟泥をにじみ出させ始めた。
+%%%%
+You stop exuding ooze.
+
+あなたは軟泥をにじみ出させるのをやめた。
+%%%%
+# MUT_DAYSTALKER
++LOS
+
++視界
+%%%%
+You have an extended range of vision and can be seen from far away.
+
+あなたの視界は広がっているが、遠くからも見つかりやすい。
+%%%%
+The darkness flees at your approach.
+
+あなたが近づくと闇が逃げ去った。
+%%%%
+The shadows grow bolder once more.
+
+影が再び大胆さを取り戻した。
+%%%%
+# MUT_DIVINE_ATTRS
+divine attributes
+
+神性の能力値
+%%%%
+Your divine heritage dramatically boosts your attributes as you level up.
+
+あなたの神の血筋は、レベルが上がるにつれて能力値を大幅に高める。
+%%%%
+You feel more divine.
+
+あなたはより神聖になった気がした。
+%%%%
+You feel more mortal.
+
+あなたはより定命の者らしくなった気がした。
+%%%%
+# MUT_DEVOUR_ON_KILL
+devour on kill
+
+殺して貪る
+%%%%
+You thrive by killing the living.
+
+あなたは生者を殺すことで力を得る。
+%%%%
+You feel hungry for flesh.
+
+あなたは肉に飢えた。
+%%%%
+You feel less hungry for flesh.
+
+あなたの肉への飢えは和らいだ。
+%%%%
+# MUT_SHORT_LIFESPAN
+otherworldly
+
+異界の者
+%%%%
+You are easily found by Zot.
+
+あなたはゾットに見つかりやすい。
+%%%%
+You feel your time running out.
+
+あなたは自分の時間が尽きつつあるのを感じた。
+%%%%
+You feel long-lived.
+
+あなたは長生きできそうな気がした。
+%%%%
+# MUT_FOUL_SHADOW
+foul shadow
+
+穢れた影
+%%%%
+You are faintly shadowed, very rarely releasing foul flame when damaged in melee.
+
+あなたはかすかな影に包まれており、近接攻撃でダメージを受けるとごくまれに穢れた炎を放つ。
+%%%%
+You are shadowed, sometimes releasing foul flame when damaged in melee.
+
+あなたは影に包まれており、近接攻撃でダメージを受けると時々穢れた炎を放つ。
+%%%%
+You are darkly shadowed, frequently releasing foul flame when damaged in melee.
+
+あなたは暗い影に包まれており、近接攻撃でダメージを受けると頻繁に穢れた炎を放つ。
+%%%%
+Your body darkens with foul flame.
+
+あなたの体は穢れた炎で黒ずんだ。
+%%%%
+Your body becomes darker with foul flame.
+
+あなたの体は穢れた炎でさらに黒ずんだ。
+%%%%
+Your body's darkness fades completely.
+
+あなたの体の黒ずみは完全に消え去った。
+%%%%
+Your body's darkness fades.
+
+あなたの体の黒ずみは薄れた。
+%%%%
+# MUT_EXPLORE_REGEN
+explore regen
+
+探索での回復
+%%%%
+You regain HP and MP as you explore.
+
+あなたは探索するにつれてHPとMPを回復する。
+%%%%
+You feel a fierce wanderlust.
+
+あなたは激しい放浪癖に駆られた。
+%%%%
+You feel like a homebody.
+
+あなたは出不精になった気がした。
+%%%%
+# MUT_DOUBLE_POTION_HEAL
+double potion healing
+
+薬の回復倍増
+%%%%
+You gain doubled healing and magic from potions.
+
+あなたは薬から得る体力と魔力の回復量が2倍になる。
+%%%%
+You heal twice as much from potions.
+
+あなたは薬から2倍の回復を得るようになった。
+%%%%
+You no longer heal twice as much from potions.
+
+あなたはもう薬から2倍の回復を得られない。
+%%%%
+# MUT_DRUNKEN_BRAWLING
+drunken brawling
+
+酔拳
+%%%%
+Whenever you drink a healing potion, you attack all around you.
+
+あなたは回復の薬を飲むたびに、周囲全体を攻撃する。
+%%%%
+You brawl whenever you drink a healing potion.
+
+あなたは回復の薬を飲むたびに暴れるようになった。
+%%%%
+You no longer brawl whenever you drink a healing potion.
+
+あなたはもう回復の薬を飲んでも暴れない。
+%%%%
+# MUT_ARTEFACT_ENCHANTING
+artefact enchanting
+
+アーティファクト強化
+%%%%
+You can use scrolls of enchantment on lesser artefacts.
+
+あなたは下級のアーティファクトに強化の巻物を使うことができる。
+%%%%
+You can now use scrolls of enchantment on lesser artefacts.
+
+あなたは下級のアーティファクトに強化の巻物を使えるようになった。
+%%%%
+You can no longer use scrolls of enchantment on lesser artefacts.
+
+あなたはもう下級のアーティファクトに強化の巻物を使えない。
+%%%%
+# MUT_RUNIC_MAGIC
+runic magic
+
+ルーン魔術
+%%%%
+Your spellcasting is much less encumbered by armour.
+
+あなたの呪文詠唱は防具にほとんど妨げられない。
+%%%%
+Your spellcasting becomes less encumbered by armour.
+
+あなたの呪文詠唱は防具に妨げられにくくなった。
+%%%%
+Your spellcasting no longer less encumbered by armour.
+
+あなたの呪文詠唱はもう防具に妨げられにくくはない。
+%%%%
+# MUT_FORMLESS
+formless
+
+無形
+%%%%
+You can equip up to 6 pieces of aux armour in any combination.
+
+あなたは補助防具を任意の組み合わせで6つまで装備できる。
+%%%%
+You can equip up to 6 pieces of aux armour in any combination and unleash them.
+
+あなたは補助防具を任意の組み合わせで6つまで装備でき、それらを解き放つことができる。
+%%%%
+You feel ready to unleash a true cacophony.
+
+あなたは真の騒音を解き放つ準備が整った気がした。
+%%%%
+You will be able to unleash your equipped armour.
+
+あなたは装備した防具を解き放てるようになるだろう。
+%%%%
+# MUT_TRICKSTER
+trickster
+
+トリックスター
+%%%%
+You gain AC when you inflict magical misfortune on nearby enemies.
+
+あなたは周囲の敵に魔法の災いをもたらすとACを得る。
+%%%%
+# MUT_MNEMOPHAGE
+mnemnophage
+
+記憶喰らい
+%%%%
+You can enhance your damage-dealing spells by burning harvested memories.
+
+あなたは集めた記憶を燃やして攻撃呪文を強化できる。
+%%%%
+Your flames flicker hungrily.
+
+あなたの炎は飢えたように揺らめいた。
+%%%%
+Your flames grow less ravenous.
+
+あなたの炎の貪欲さは和らいだ。
+%%%%
+You will be able to burn memories to enhance your damage-dealing spells.
+
+あなたは記憶を燃やして攻撃呪文を強化できるようになるだろう。
+%%%%
+# MUT_SPELLCLAWS
+spellclaws
+
+呪文の爪
+%%%%
+You perform a melee attack whenever you cast damage-dealing spells.
+
+あなたは攻撃呪文を唱えるたびに近接攻撃を行う。
+%%%%
+You feel destructive magic coursing through your claws.
+
+あなたは破壊の魔力が爪を駆け巡るのを感じた。
+%%%%
+You no longer feel destructive magic coursing through your claws.
+
+あなたはもう破壊の魔力が爪を駆け巡るのを感じない。
+%%%%
+# MUT_ACCURSED
+You feel accursed.
+
+あなたは呪われた気がした。
+%%%%
+You feel less accursed.
+
+あなたの呪いが弱まった気がした。
+%%%%
+# MUT_SPITEFUL_BLOOD
+spiteful blood
+
+悪意ある血
+%%%%
+Your shed blood may rise up to attack you.
+
+あなたが流した血は起き上がってあなたを襲うことがある。
+%%%%
+Your shed blood may rise up to attack you as a group.
+
+あなたが流した血は群れをなして起き上がり、あなたを襲うことがある。
+%%%%
+You feel a willful anger gathering in your blood.
+
+あなたは強情な怒りが血の中に集まるのを感じた。
+%%%%
+You feel your blood grow even more spiteful.
+
+あなたは自分の血がさらに悪意を増すのを感じた。
+%%%%
+Your blood calms down again.
+
+あなたの血は再び落ち着いた。
+%%%%
+Your blood feels a little less spiteful.
+
+あなたの血の悪意は少し和らいだ。
+%%%%
+# MUT_MAKHLEB_DESTRUCTION_GEH
+Gehenna destruction
+
+ゲヘナの破壊
+%%%%
+You draw destruction from the endless fires of Gehenna.
+
+あなたはゲヘナの尽きぬ炎から破壊の力を引き出す。
+%%%%
+You feel your soul grow hot with the fiery destruction of Gehenna.
+
+あなたは自分の魂がゲヘナの炎の破壊で熱くなるのを感じた。
+%%%%
+# MUT_MAKHLEB_DESTRUCTION_COC
+Cocytus destruction
+
+コキュートスの破壊
+%%%%
+You draw destruction from the frigid wastes of Cocytus.
+
+あなたはコキュートスの凍てつく荒野から破壊の力を引き出す。
+%%%%
+You feel your soul grow cold with the frigid destruction of Cocytus.
+
+あなたは自分の魂がコキュートスの凍てつく破壊で冷たくなるのを感じた。
+%%%%
+# MUT_MAKHLEB_DESTRUCTION_TAR
+Tartarus destruction
+
+タルタロスの破壊
+%%%%
+You draw destruction from the wailing grief of Tartarus.
+
+あなたはタルタロスの嘆きの悲しみから破壊の力を引き出す。
+%%%%
+You feel your soul grow tainted with the deathly destruction of Tartarus.
+
+あなたは自分の魂がタルタロスの死の破壊で穢れるのを感じた。
+%%%%
+# MUT_MAKHLEB_DESTRUCTION_DIS
+Dis destruction
+
+ディースの破壊
+%%%%
+You draw destruction from the ruthless spite of Dis.
+
+あなたはディースの無慈悲な悪意から破壊の力を引き出す。
+%%%%
+You feel your soul grow bitter with the corrosive destruction of Dis.
+
+あなたは自分の魂がディースの腐食の破壊で苦々しくなるのを感じた。
+%%%%
+# MUT_MAKHLEB_MARK_HAEMOCLASM
+Mark of Haemoclasm
+
+血砕の印
+%%%%
+You bear the Mark of Haemoclasm.
+
+あなたは血砕の印を帯びている。
+%%%%
+Gore shall rain upon your enemies.
+
+汝の敵に血の雨が降り注ぐであろう。
+%%%%
+# MUT_MAKHLEB_MARK_LEGION
+Mark of the Legion
+
+軍勢の印
+%%%%
+You bear the Mark of the Legion.
+
+あなたは軍勢の印を帯びている。
+%%%%
+The armies of chaos are now yours to lead.
+
+混沌の軍勢は今やあなたが率いるものとなった。
+%%%%
+# MUT_MAKHLEB_MARK_CARNAGE
+Mark of Carnage
+
+殺戮の印
+%%%%
+You bear the Mark of Carnage.
+
+あなたは殺戮の印を帯びている。
+%%%%
+Your servants grow eager to unleash destruction.
+
+あなたの僕たちは破壊を解き放つことを切望している。
+%%%%
+# MUT_MAKHLEB_MARK_ANNIHILATION
+Mark of Annihilation
+
+殲滅の印
+%%%%
+You bear the Mark of Annihilation.
+
+あなたは殲滅の印を帯びている。
+%%%%
+You feel the destructive energies within you surge violently.
+
+あなたは内なる破壊のエネルギーが激しく高まるのを感じた。
+%%%%
+# MUT_MAKHLEB_MARK_TYRANT
+Mark of the Tyrant
+
+暴君の印
+%%%%
+You bear the Mark of the Tyrant.
+
+あなたは暴君の印を帯びている。
+%%%%
+Even fiends shall kneel before you now.
+
+今や悪鬼どもさえ汝の前にひざまずくであろう。
+%%%%
+# MUT_MAKHLEB_MARK_CELEBRANT
+Mark of the Celebrant
+
+司祭の印
+%%%%
+You bear the Mark of the Celebrant.
+
+あなたは司祭の印を帯びている。
+%%%%
+Your suffering will be repaid in blood.
+
+汝の苦しみは血によって報われるであろう。
+%%%%
+# MUT_MAKHLEB_MARK_EXECUTION
+Mark of Execution
+
+処刑の印
+%%%%
+You bear the Mark of Execution.
+
+あなたは処刑の印を帯びている。
+%%%%
+Murder takes root in your soul.
+
+殺意があなたの魂に根を下ろした。
+%%%%
+# MUT_MAKHLEB_MARK_ATROCITY
+Mark of Atrocity
+
+残虐の印
+%%%%
+You bear the Mark of Atrocity.
+
+あなたは残虐の印を帯びている。
+%%%%
+You will scour this world clean.
+
+汝はこの世界を一掃するであろう。
+%%%%
+# MUT_MAKHLEB_MARK_FANATIC
+Mark of the Fanatic
+
+狂信者の印
+%%%%
+You bear the Mark of the Fanatic.
+
+あなたは狂信者の印を帯びている。
+%%%%
+You will become an instrument of Makhleb's will.
+
+汝はマクレブの意志の道具となるであろう。
+%%%%
+# MUT_REMOVED_MUTATION
+Removed Mutation
+
+削除された突然変異
+%%%%

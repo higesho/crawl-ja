@@ -1,0 +1,106 @@
+%%%%
+You stand defiantly in death's doorway!
+
+あなたは死のとば口に踏ん張っている！
+%%%%
+You seem to hear sand running through an hourglass...
+
+あなたは砂時計の砂が流れ落ちる音を耳にしたような気がした……
+%%%%
+Your icy armour melts away.
+
+あなたの氷の鎧は溶け去った。
+%%%%
+Your icy armour thickens.
+
+あなたの氷の鎧は厚さを増した。
+%%%%
+A film of ice covers your body!
+
+あなたの体に氷の鎧がはりついた！
+%%%%
+Your body is healed in an amazingly painful way.
+
+あなたの肉体は恐るべき苦痛に満ちた方法で治療された。
+%%%%
+Your life is in your own hands once again.
+
+あなたは自分の命を自らの手に取り戻した。
+%%%%
+You feel quick.
+
+あなたは素早くなった。
+%%%%
+A profound silence engulfs you.
+
+深い静寂があなたを包んだ。
+%%%%
+The ground around you becomes liquefied!
+
+あなたの周囲の地面がぬかるんだ！
+%%%%
+Your cloak of flame flares fiercely!
+
+あなたの炎の外套が激しく燃え上がった！
+%%%%
+A sizzling cloak of flame settles atop your icy armour.
+
+じゅうじゅうと音を立てる炎の外套が、あなたの氷の鎧の上を覆った。
+%%%%
+A protective cloak of flame settles atop you.
+
+身を守る炎の外套があなたを覆った。
+%%%%
+forget
+
+忘却
+%%%%
+Forget %s, freeing %d spell levels for a total of %d?
+
+%sを忘れて記憶力を%d回復しますか？ (空き記憶力: %d)
+%%%%
+This spell is not in your library!
+
+この呪文はあなたの呪文ライブラリにない！
+%%%%
+You release your grip on the fallen and begin the cycle anew!
+
+あなたは死者たちを解き放ち、新たな循環を始めた！
+%%%%
+You call out to the remnants of the fallen!
+
+あなたは倒れた者たちの残滓に呼びかけた！
+%%%%
+The fallen lash out in pain!
+
+倒れた者たちが苦痛のあまり暴れ出した！
+%%%%
+There is nobody nearby that the sprites are interested in.
+
+近くに妖精たちの興味を引く者がいない。
+%%%%
+You beckon more vexing sprites to accompany your attacks.
+
+あなたは厄介な妖精たちをさらに招き寄せ、攻撃に同行させた。
+%%%%
+You beckon some vexing sprites to accompany your attacks.
+
+あなたは厄介な妖精たちを招き寄せ、攻撃に同行させた。
+%%%%
+You feel your willpower being sapped.
+
+あなたは意志力が吸い取られていくのを感じた。
+%%%%
+You ready an explosive catalyst.
+
+あなたは爆発性の触媒を用意した。
+%%%%
+# hands_act()(player.cc)が内部で引くキー
+[hands act]your hands begin to glow brighter.
+
+あなたの%sは赤い輝きを増した。
+%%%%
+[hands act]your hands begin to glow red.
+
+あなたの%sは赤く輝きはじめた。
+%%%%

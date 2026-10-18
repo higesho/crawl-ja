@@ -11,6 +11,7 @@
 #include "actor.h"
 #include "beam.h"
 #include "coordit.h"
+#include "database.h"
 #include "directn.h"
 #include "english.h" // apostrophise
 #include "env.h"
@@ -48,7 +49,7 @@ int englaciate(coord_def where, int pow, actor *agent)
         if (!mons)
             canned_msg(MSG_YOU_UNAFFECTED);
         else
-            simple_monster_message(*mons, " is unaffected.");
+            simple_monster_message(*mons, jtransc(" is unaffected."));
         return 0;
     }
 
@@ -60,7 +61,7 @@ int englaciate(coord_def where, int pow, actor *agent)
         if (!mons)
             canned_msg(MSG_YOU_RESIST);
         else
-            simple_monster_message(*mons, " resists.");
+            simple_monster_message(*mons, jtransc(" resists."));
         return 0;
     }
 
@@ -82,7 +83,7 @@ int englaciate(coord_def where, int pow, actor *agent)
 spret cast_englaciation(int pow, bool fail)
 {
     fail_check();
-    mpr("You radiate an aura of cold.");
+    mpr(jtrans("You radiate an aura of cold."));
     apply_area_visible([pow] (coord_def where) {
         return englaciate(where, pow, &you);
     }, you.pos());
@@ -102,9 +103,9 @@ bool corona_monster(monster* mons, const actor* source)
     mons->add_ench(mon_enchant(ENCH_CORONA, source));
 
     if (!was_glowing)
-        simple_monster_message(*mons, " is outlined in light.");
+        simple_monster_message(*mons, jtransc(" is outlined in light."));
     else
-        simple_monster_message(*mons, " glows brighter for a moment.");
+        simple_monster_message(*mons, jtransc(" glows brighter for a moment."));
 
     return true;
 }
@@ -117,7 +118,7 @@ bool do_slow_monster(monster& mon, const actor* agent, int dur)
     if (mon.add_ench(mon_enchant(ENCH_SLOW, agent, dur)))
     {
         if (!mon.paralysed() && !mon.petrified()
-            && simple_monster_message(mon, " seems to slow down."))
+            && simple_monster_message(mon, jtransc(" seems to slow down.")))
         {
             return true;
         }
@@ -130,7 +131,7 @@ bool silence_monster(monster& mon, const actor* agent, int dur)
 {
     if (mon.add_ench(mon_enchant(ENCH_MUTE, agent, dur)))
     {
-        simple_monster_message(mon, " loses the ability to speak.");
+        simple_monster_message(mon, jtransc(" loses the ability to speak."));
         return true;
     }
 
@@ -171,9 +172,9 @@ bool enfeeble_monster(monster &mon, int pow)
     }
 
     if (res_margin > 0)
-        simple_monster_message(mon, " partially resists.");
+        simple_monster_message(mon, jtransc(" partially resists."));
 
-    return simple_monster_message(mon, " is enfeebled!");
+    return simple_monster_message(mon, jtransc(" is enfeebled!"));
 }
 
 bool enfeeble_player(actor *source, int pow)
@@ -214,7 +215,7 @@ bool enfeeble_player(actor *source, int pow)
     if (res_margin > 0)
         canned_msg(MSG_YOU_PARTIALLY_RESIST);
 
-    mpr("You are enfeebled!");
+    mpr(jtrans("You are enfeebled!"));
     return true;
 }
 
@@ -238,9 +239,9 @@ bool start_ranged_constriction(actor& caster, actor& target, int duration,
     {
         string msg;
         if (type == CONSTRICT_ROOTS)
-            msg = make_stringf("The roots grab %s!", target.name(DESC_THE).c_str());
+            msg = make_stringf(jtransc("The roots grab %s!"), target.name(DESC_THE).c_str());
         else if (type == CONSTRICT_BVC)
-            msg = make_stringf("Zombie hands grab %s from below!", target.name(DESC_THE).c_str());
+            msg = make_stringf(jtransc("Zombie hands grab %s from below!"), target.name(DESC_THE).c_str());
 
         mprf(target.is_player() ? MSGCH_WARN : MSGCH_PLAIN, "%s", msg.c_str());
     }
@@ -269,7 +270,7 @@ string describe_rimeblight_damage(int pow, bool terse)
                                            shards_damage.num, shards_damage.size);
     }
 
-    return make_stringf("%dd%d (primary target), %dd%d (explosion)",
+    return make_stringf(jtransc("%dd%d (primary target), %dd%d (explosion)"),
                         dot_damage.num, dot_damage.size,
                         shards_damage.num, shards_damage.size);
 }
@@ -300,7 +301,7 @@ bool apply_rimeblight(monster& victim, int power, bool quiet)
     victim.props[RIMEBLIGHT_TICKS_KEY] = random_range(0, 2);
 
     if (!quiet)
-        simple_monster_message(victim, " is afflicted with rimeblight.");
+        simple_monster_message(victim, jtransc(" is afflicted with rimeblight."));
 
     return true;
 }
@@ -330,7 +331,7 @@ void tick_rimeblight(monster& victim)
     if ((ticks == 4 || ticks > 4 && x_chance_in_y(ticks, ticks + 16))
         && you.see_cell_no_trans(victim.pos()))
     {
-        mprf("Shards of ice erupt from %s body!", apostrophise(victim.name(DESC_THE)).c_str());
+        mprf(jtransc("Shards of ice erupt from %s body!"), apostrophise(victim.name(DESC_THE)).c_str());
         do_rimeblight_explosion(victim.pos(), pow, 1);
     }
 
@@ -384,13 +385,13 @@ spret cast_sign_of_ruin(actor& caster, coord_def target, int duration, bool chec
     {
         if (act->is_player())
         {
-            mprf(MSGCH_WARN, "The sign of ruin forms upon you!");
+            mprf(MSGCH_WARN, jtransc("The sign of ruin forms upon you!"));
             you.duration[DUR_SIGN_OF_RUIN] = random_range(duration, duration * 3 / 2);
         }
         else
         {
             if (you.can_see(*act))
-                mprf("The sign of ruin forms upon %s!", act->name(DESC_THE).c_str());
+                mprf(jtransc("The sign of ruin forms upon %s!"), act->name(DESC_THE).c_str());
 
             act->as_monster()->add_ench(mon_enchant(ENCH_SIGN_OF_RUIN, &caster,
                                                     random_range(duration, duration * 3 / 2)));
@@ -407,7 +408,7 @@ spret cast_percussive_tempering(const actor& caster, monster& target, int power,
 
     if (you.can_see(target))
     {
-        mprf("A magical hammer augments %s in a flurry of sparks and slag.",
+        mprf(jtransc("A magical hammer augments %s in a flurry of sparks and slag."),
              target.name(DESC_THE).c_str());
     }
 
@@ -499,15 +500,23 @@ void do_vexed_attack(actor& attacker, bool always_hit_ally)
     {
         coord_def pos = empty_space[random2(empty_space.size())];
         string targ_desc = (attacker.airborne() && feat_has_solid_floor(env.grid(pos))
-                            && coinflip()) ? "the ceiling"
-                            : feature_description_at(pos, false, DESC_THE);
+                            && coinflip()) ? jtrans("the ceiling")
+                            : tagged_jtrans("[feature]",
+                                  feature_description_at(pos, false, DESC_PLAIN));
         if (you.can_see(attacker))
         {
-            mprf("%s %s %s!",
-                    attacker.name(DESC_THE).c_str(),
-                    has_attacks ? attacker.is_monster() ? "attacks" : "attack"
-                                : "glares at",
-                    targ_desc.c_str());
+            if (has_attacks)
+            {
+                mprf(jtransc("%s attacks %s!"),
+                        attacker.name(DESC_THE).c_str(),
+                        targ_desc.c_str());
+            }
+            else
+            {
+                mprf(jtransc("%s glares at %s!"),
+                        attacker.name(DESC_THE).c_str(),
+                        targ_desc.c_str());
+            }
         }
 
         if (attacker.is_monster())
@@ -528,7 +537,7 @@ void do_vexed_attack(actor& attacker, bool always_hit_ally)
         {
             if (you.can_see(attacker))
             {
-                mprf("%s glares at %s!",
+                mprf(jtransc("%s glares at %s!"),
                         attacker.name(DESC_THE).c_str(),
                         victim->name(DESC_THE).c_str());
             }
@@ -637,7 +646,9 @@ spret cast_gloom(const actor *caster, int pow, bool fail, bool tracer)
     if (caster->is_player())
     {
         auto hitfunc = find_spell_targeter(SPELL_GLOOM, pow, range);
-        if (stop_attack_prompt(*hitfunc, "blind", vulnerable))
+        if (stop_attack_prompt(*hitfunc,
+                               tagged_jtransc("[stop attack prompt]", "blind"),
+                               vulnerable))
             return spret::abort;
     }
 
@@ -667,7 +678,7 @@ spret cast_gloom(const actor *caster, int pow, bool fail, bool tracer)
         if (victim && vulnerable(victim) && _gloom_affect_target(victim, caster, pow))
         {
             if (victim->is_monster())
-                simple_monster_message(*victim->as_monster(), " is enveloped in gloom.");
+                simple_monster_message(*victim->as_monster(), jtransc(" is enveloped in gloom."));
             // Player already got a message from blind_player
             // XX: Should it be a slightly different message? Show something if resisted?
         }

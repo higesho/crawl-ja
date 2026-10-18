@@ -114,6 +114,15 @@ void display_runes();
 string quant_name(const item_def &item, int quant,
                   description_level_type des, bool terse = false);
 
+// 英語のアイテム名(引数は item_def::name() と同じ)。
+// item_def::name() は表示用に日本語の名前を返す(DESC_DBNAME を除く)ので、
+// オプションのパターン照合・検索キー・文字列比較など、英語の名前が必要な
+// 所ではこちらを使う。
+string item_name_en(const item_def &item, description_level_type descrip,
+                    bool terse = false, bool ident = false,
+                    bool with_inscription = true,
+                    bool quantity_in_words = false);
+
 bool item_type_known(const item_def &item);
 bool item_type_known(const object_class_type base_type, const int sub_type);
 

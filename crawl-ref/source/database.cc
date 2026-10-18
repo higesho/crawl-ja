@@ -1013,7 +1013,7 @@ string jtrans(const string &key, const bool linefeed)
     string tmp_key(key);
 
     trim_string(tmp_key);
-    tmp_key = replace_all(tmp_key, "\n", "\n");
+    tmp_key = replace_all(tmp_key, "\n", "\\n");
 
     string text = _query_database(JtransDB, tmp_key, true, true);
 

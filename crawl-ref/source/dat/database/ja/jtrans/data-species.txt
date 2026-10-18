@@ -1,0 +1,648 @@
+# data-species.txt: 種族名 [spec name]<名前>、形容詞形 [spec adj]<形容詞>、属名 [spec genus]<属名>
+# 出典: species-data.h (0.34)。species::name() の SPNAME_ADJ / SPNAME_GENUS の文字列。
+# [spec adj] は旧訳どおり「～の」を付けない名詞形で訳す(称号の「@Adj@の剣豪」などで使う)。
+# 属名(genus)は [spec genus] と [spec adj] の両方に置く。
+# [walker]/[walking] は species::walking_title() + "er"/"ing"(称号の @Walker@ / @Walking@)、
+# [child] は species::child_name()(称号の @Child@)用。
+
+%%%%
+[spec name]Human
+
+人間
+%%%%
+[spec name]High Elf
+
+ハイエルフ
+%%%%
+[spec name]Deep Elf
+
+闇エルフ
+%%%%
+[spec name]Sludge Elf
+
+汚泥エルフ
+%%%%
+[spec name]Halfling
+
+ハーフリング
+%%%%
+[spec name]Hill Orc
+
+丘オーク
+%%%%
+[spec name]Kobold
+
+コボルド
+%%%%
+[spec name]Mummy
+
+ミイラ
+%%%%
+[spec name]Naga
+
+ナーガ
+%%%%
+[spec name]Oni
+
+鬼
+%%%%
+[spec name]Troll
+
+トロル
+%%%%
+[spec name]Red Draconian
+
+赤色ドラコニアン
+%%%%
+[spec name]White Draconian
+
+白色ドラコニアン
+%%%%
+[spec name]Green Draconian
+
+緑色ドラコニアン
+%%%%
+[spec name]Yellow Draconian
+
+黄色ドラコニアン
+%%%%
+[spec name]Grey Draconian
+
+灰色ドラコニアン
+%%%%
+[spec name]Black Draconian
+
+黒色ドラコニアン
+%%%%
+[spec name]Purple Draconian
+
+紫ドラコニアン
+%%%%
+[spec name]Mottled Draconian
+
+斑紋ドラコニアン
+%%%%
+[spec name]Pale Draconian
+
+蒼白ドラコニアン
+%%%%
+[spec name]Draconian
+
+ドラコニアン
+%%%%
+[spec name]Centaur
+
+セントール
+%%%%
+[spec name]Demigod
+
+神々の末裔
+%%%%
+[spec name]Spriggan
+
+スプリガン
+%%%%
+[spec name]Minotaur
+
+ミノタウロス
+%%%%
+[spec name]Demonspawn
+
+悪魔の血族
+%%%%
+[spec name]Ghoul
+
+グール
+%%%%
+[spec name]Tengu
+
+天狗
+%%%%
+[spec name]Merfolk
+
+水棲の民
+%%%%
+[spec name]Vampire
+
+吸血鬼
+%%%%
+[spec name]Deep Dwarf
+
+闇ドワーフ
+%%%%
+[spec name]Felid
+
+フェリッド
+%%%%
+[spec name]Octopode
+
+オクトポード
+%%%%
+[spec name]Djinni
+
+ジンニー
+%%%%
+[spec name]Lava Orc
+
+溶岩オーク
+%%%%
+[spec name]Gargoyle
+
+ガーゴイル
+%%%%
+[spec name]Formicid
+
+フォーミシッド
+%%%%
+[spec name]Vine Stalker
+
+歩き蔓
+%%%%
+[spec name]Barachi
+
+バラチ
+%%%%
+[spec name]Gnoll
+
+ノール
+%%%%
+[spec name]Armataur
+
+アルマタウル
+%%%%
+[spec name]Mayflytaur
+
+メイフライタウル
+%%%%
+[spec name]Meteoran
+
+メテオラン
+%%%%
+[spec name]Mountain Dwarf
+
+山ドワーフ
+%%%%
+[spec name]Coglin
+
+コグリン
+%%%%
+[spec name]Poltergeist
+
+ポルターガイスト
+%%%%
+[spec name]Revenant
+
+レヴナント
+%%%%
+[spec adj]Human
+
+人間
+%%%%
+[spec adj]Elven
+
+エルフ
+%%%%
+[spec adj]Halfling
+
+ハーフリング
+%%%%
+[spec adj]Hill Orc
+
+丘オーク
+%%%%
+[spec adj]Kobold
+
+コボルド
+%%%%
+[spec adj]Mummy
+
+ミイラ
+%%%%
+[spec adj]Naga
+
+ナーガ
+%%%%
+[spec adj]Oni
+
+鬼
+%%%%
+[spec adj]Trollish
+
+トロル
+%%%%
+[spec adj]Draconian
+
+ドラコニアン
+%%%%
+[spec adj]Centaur
+
+セントール
+%%%%
+[spec adj]Divine
+
+神々
+%%%%
+[spec adj]Spriggan
+
+スプリガン
+%%%%
+[spec adj]Minotaur
+
+ミノタウロス
+%%%%
+[spec adj]Demonic
+
+悪魔
+%%%%
+[spec adj]Ghoulish
+
+屍鬼
+%%%%
+[spec adj]Tengu
+
+天狗
+%%%%
+[spec adj]Merfolkian
+
+水棲の民
+%%%%
+[spec adj]Vampiric
+
+吸血鬼
+%%%%
+[spec adj]Dwarven
+
+ドワーフ
+%%%%
+[spec adj]Feline
+
+猫
+%%%%
+[spec adj]Octopoid
+
+蛸
+%%%%
+[spec adj]Djinni
+
+ジンニー
+%%%%
+[spec adj]Lava Orc
+
+溶岩オーク
+%%%%
+[spec adj]Gargoyle
+
+ガーゴイル
+%%%%
+[spec adj]Formicid
+
+フォーミシッド
+%%%%
+[spec adj]Vine Stalker
+
+歩き蔓
+%%%%
+[spec adj]Barachian
+
+バラチ
+%%%%
+[spec adj]Gnoll
+
+ノール
+%%%%
+[spec adj]Armataur
+
+アルマタウル
+%%%%
+[spec adj]Mayflytaur
+
+メイフライタウル
+%%%%
+[spec adj]Meteoric
+
+メテオラン
+%%%%
+[spec adj]Coglin
+
+コグリン
+%%%%
+[spec adj]Ghostly
+
+幽霊
+%%%%
+[spec adj]Revenant
+
+レヴナント
+%%%%
+[spec adj]Elf
+
+エルフ
+%%%%
+[spec adj]Troll
+
+トロル
+%%%%
+[spec adj]Demigod
+
+神々の末裔
+%%%%
+[spec adj]Demonspawn
+
+悪魔の血族
+%%%%
+[spec adj]Ghoul
+
+グール
+%%%%
+[spec adj]Merfolk
+
+水棲の民
+%%%%
+[spec adj]Vampire
+
+吸血鬼
+%%%%
+[spec adj]Dwarf
+
+ドワーフ
+%%%%
+[spec adj]Cat
+
+猫
+%%%%
+[spec adj]Octopus
+
+蛸
+%%%%
+[spec adj]Ant
+
+蟻
+%%%%
+[spec adj]Frog
+
+蛙
+%%%%
+[spec adj]Meteoran
+
+メテオラン
+%%%%
+[spec adj]Goblin
+
+ゴブリン
+%%%%
+[spec adj]Geist
+
+幽霊
+%%%%
+[spec genus]Human
+
+人間
+%%%%
+[spec genus]Elf
+
+エルフ
+%%%%
+[spec genus]Halfling
+
+ハーフリング
+%%%%
+[spec genus]Hill Orc
+
+丘オーク
+%%%%
+[spec genus]Kobold
+
+コボルド
+%%%%
+[spec genus]Mummy
+
+ミイラ
+%%%%
+[spec genus]Naga
+
+ナーガ
+%%%%
+[spec genus]Oni
+
+鬼
+%%%%
+[spec genus]Troll
+
+トロル
+%%%%
+[spec genus]Draconian
+
+ドラコニアン
+%%%%
+[spec genus]Centaur
+
+セントール
+%%%%
+[spec genus]Demigod
+
+神々の末裔
+%%%%
+[spec genus]Spriggan
+
+スプリガン
+%%%%
+[spec genus]Minotaur
+
+ミノタウロス
+%%%%
+[spec genus]Demonspawn
+
+悪魔の血族
+%%%%
+[spec genus]Ghoul
+
+グール
+%%%%
+[spec genus]Tengu
+
+天狗
+%%%%
+[spec genus]Merfolk
+
+水棲の民
+%%%%
+[spec genus]Vampire
+
+吸血鬼
+%%%%
+[spec genus]Dwarf
+
+ドワーフ
+%%%%
+[spec genus]Cat
+
+猫
+%%%%
+[spec genus]Octopus
+
+蛸
+%%%%
+[spec genus]Djinni
+
+ジンニー
+%%%%
+[spec genus]Lava Orc
+
+溶岩オーク
+%%%%
+[spec genus]Gargoyle
+
+ガーゴイル
+%%%%
+[spec genus]Ant
+
+蟻
+%%%%
+[spec genus]Vine Stalker
+
+歩き蔓
+%%%%
+[spec genus]Frog
+
+蛙
+%%%%
+[spec genus]Gnoll
+
+ノール
+%%%%
+[spec genus]Armataur
+
+アルマタウル
+%%%%
+[spec genus]Mayflytaur
+
+メイフライタウル
+%%%%
+[spec genus]Meteoran
+
+メテオラン
+%%%%
+[spec genus]Goblin
+
+ゴブリン
+%%%%
+[spec genus]Geist
+
+幽霊
+%%%%
+[spec genus]Revenant
+
+レヴナント
+%%%%
+[walker]Walk
+
+歩く者
+%%%%
+[walker]Slither
+
+這う者
+%%%%
+[walker]Sprint
+
+駆ける者
+%%%%
+[walker]Glid
+
+滑空する者
+%%%%
+[walker]Wriggl
+
+うごめく者
+%%%%
+[walker]Float
+
+漂う者
+%%%%
+[walker]Stalk
+
+忍び歩く者
+%%%%
+[walker]Hop
+
+跳ねる者
+%%%%
+[walker]Roll
+
+転がる者
+%%%%
+[walker]Hopp
+
+跳ねる者
+%%%%
+[walking]Walk
+
+歩く
+%%%%
+[walking]Slither
+
+這う
+%%%%
+[walking]Sprint
+
+駆ける
+%%%%
+[walking]Glid
+
+滑空する
+%%%%
+[walking]Wriggl
+
+うごめく
+%%%%
+[walking]Float
+
+漂う
+%%%%
+[walking]Stalk
+
+忍び歩く
+%%%%
+[walking]Hop
+
+跳ねる
+%%%%
+[walking]Roll
+
+転がる
+%%%%
+[walking]Hopp
+
+跳ねる
+%%%%
+[child]Child
+
+子
+%%%%
+[child]Calf
+
+仔牛
+%%%%
+[child]Chick
+
+雛
+%%%%
+[child]Kitten
+
+仔猫
+%%%%
+[child]Fry
+
+稚魚
+%%%%
+[child]Larva
+
+幼虫
+%%%%
+[child]Tadpole
+
+おたまじゃくし
+%%%%
+[child]Pup
+
+仔犬
+%%%%

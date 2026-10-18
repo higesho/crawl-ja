@@ -18,6 +18,7 @@
 #include "branch.h"
 #include "cio.h"
 #include "colour.h"
+#include "database.h"
 #include "decks.h"
 #include "describe.h"
 #include "dgn-overview.h"
@@ -32,6 +33,7 @@
 #include "item-status-flag-type.h"
 #include "items.h"
 #include "item-use.h"
+#include "japanese.h"
 #include "level-state-type.h"
 #include "libutil.h"
 #include "makeitem.h"
@@ -99,8 +101,10 @@ static const char* _interesting_origin(const item_def &item)
 
 /**
  * What inscription should be appended to the given item's name?
+ *
+ * @param ja  日本語の名前用なら true(由来の表示を訳す)。
  */
-static string _item_inscription(const item_def &item)
+static string _item_inscription(const item_def &item, bool ja = false)
 {
     vector<string> insparts;
 
@@ -110,7 +114,8 @@ static string _item_inscription(const item_def &item)
             || Options.show_god_gift == maybe_bool::maybe
                 && !item.is_identified())
         {
-            insparts.push_back(orig);
+            insparts.push_back(ja ? tagged_jtrans("[item origin]", orig)
+                                  : string(orig));
         }
     }
 
@@ -133,11 +138,39 @@ static string _item_inscription(const item_def &item)
                                              ", ").c_str());
 }
 
+// item_name_en() の間だけ true。item_def::name() に英語の名前を返させる。
+static bool _force_english_item_names = false;
+
+static string _name_j(const item_def &item, description_level_type descrip,
+                      bool terse, bool ident, bool with_inscription);
+
+/**
+ * 英語のアイテム名。item_def::name() は表示用の日本語を返すので、
+ * オプションのパターンとの照合や検索キーなど、英語の名前が必要な所では
+ * こちらを使う(引数は item_def::name() と同じ)。
+ */
+string item_name_en(const item_def &item, description_level_type descrip,
+                    bool terse, bool ident, bool with_inscription,
+                    bool quantity_in_words)
+{
+    unwind_bool english(_force_english_item_names, true);
+    return item.name(descrip, terse, ident, with_inscription,
+                     quantity_in_words);
+}
+
 string item_def::name(description_level_type descrip, bool terse, bool ident,
                       bool with_inscription, bool quantity_in_words) const
 {
     if (descrip == DESC_NONE)
         return "";
+
+    // 表示用の名前は日本語で組み立てる。DESC_DBNAME は説明文 DB の
+    // 検索キーなので、以下の英語版(0.34 の元のコード)を使う。
+    if (descrip != DESC_DBNAME && !_force_english_item_names
+        && jtrans_enabled())
+    {
+        return _name_j(*this, descrip, terse, ident, with_inscription);
+    }
 
     ostringstream buff;
 
@@ -1336,6 +1369,15 @@ string ghost_brand_name(brand_type brand, monster_type mtype)
     if (brand == SPWPN_NORMAL)
         return "";
     const bool weapon = mtype != MONS_PANDEMONIUM_LORD;
+    // 表示専用なので日本語で返す(例:「火炎の武器」「吸血の接触」)。
+    if (jtrans_enabled())
+    {
+        const string ego = tagged_jtrans("[item adj]",
+                                         string("of ")
+                                         + brand_type_name(brand, false));
+        return make_stringf(jtransc(weapon ? "%s weapon" : "%s touch"),
+                            ego.c_str());
+    }
     if (weapon)
     {
         // n.b. heavy only works if it is adjectival
@@ -1530,6 +1572,44 @@ static string _name_weapon(const item_def &weap, description_level_type desc,
            + name_with_ego + curse_suffix;
 }
 
+/// 未鑑定の薬の外見(修飾語)。末尾に空白を含む。
+static const char* _potion_qualifier(uint32_t subtype_rnd)
+{
+    const int pqual = PQUAL(subtype_rnd);
+
+    static const char *potion_qualifiers[] =
+    {
+        "",  "bubbling ", "fuming ", "fizzy ", "viscous ", "lumpy ",
+        "smoky ", "glowing ", "sedimented ", "metallic ", "murky ",
+        "gluggy ", "oily ", "slimy ", "emulsified ",
+    };
+    COMPILE_CHECK(ARRAYSZ(potion_qualifiers) == PDQ_NQUALS);
+
+    return (pqual < 0 || pqual >= PDQ_NQUALS) ? "bug-filled "
+                                              : potion_qualifiers[pqual];
+}
+
+/// 未鑑定の薬の外見(色)。
+static const char* _potion_colour(uint32_t subtype_rnd)
+{
+    const int pcolour = PCOLOUR(subtype_rnd);
+
+    static const char *potion_colours[] =
+    {
+#if TAG_MAJOR_VERSION == 34
+        "clear",
+#endif
+        "blue", "black", "silvery", "cyan", "purple", "orange",
+        "inky", "red", "yellow", "green", "brown", "ruby", "white",
+        "emerald", "grey", "pink", "coppery", "golden", "dark", "puce",
+        "amethyst", "sapphire",
+    };
+    COMPILE_CHECK(ARRAYSZ(potion_colours) == PDC_NCOLOURS);
+
+    return (pcolour < 0 || pcolour >= PDC_NCOLOURS) ? "bogus"
+                                                    : potion_colours[pcolour];
+}
+
 // Note that "terse" is only currently used for the "in hand" listing on
 // the game screen.
 string item_def::name_aux(description_level_type desc, bool terse, bool ident,
@@ -1691,37 +1771,8 @@ string item_def::name_aux(description_level_type desc, bool terse, bool ident,
             buff << "potion of " << potion_type_name(item_typ);
         else
         {
-            const int pqual   = PQUAL(subtype_rnd);
-            const int pcolour = PCOLOUR(subtype_rnd);
-
-            static const char *potion_qualifiers[] =
-            {
-                "",  "bubbling ", "fuming ", "fizzy ", "viscous ", "lumpy ",
-                "smoky ", "glowing ", "sedimented ", "metallic ", "murky ",
-                "gluggy ", "oily ", "slimy ", "emulsified ",
-            };
-            COMPILE_CHECK(ARRAYSZ(potion_qualifiers) == PDQ_NQUALS);
-
-            static const char *potion_colours[] =
-            {
-#if TAG_MAJOR_VERSION == 34
-                "clear",
-#endif
-                "blue", "black", "silvery", "cyan", "purple", "orange",
-                "inky", "red", "yellow", "green", "brown", "ruby", "white",
-                "emerald", "grey", "pink", "coppery", "golden", "dark", "puce",
-                "amethyst", "sapphire",
-            };
-            COMPILE_CHECK(ARRAYSZ(potion_colours) == PDC_NCOLOURS);
-
-            const char *qualifier =
-                (pqual < 0 || pqual >= PDQ_NQUALS) ? "bug-filled "
-                                    : potion_qualifiers[pqual];
-
-            const char *clr =  (pcolour < 0 || pcolour >= PDC_NCOLOURS) ?
-                                   "bogus" : potion_colours[pcolour];
-
-            buff << qualifier << clr << " potion";
+            buff << _potion_qualifier(subtype_rnd)
+                 << _potion_colour(subtype_rnd) << " potion";
         }
         break;
 
@@ -1964,6 +2015,727 @@ string item_def::name_aux(description_level_type desc, bool terse, bool ident,
     return buff.str();
 }
 
+/////////////////////////////////////////////////////////////////////////////
+// 日本語のアイテム名
+//
+// item_def::name() / name_aux() の英語版(0.34 の元のコード)はそのまま残し、
+// DESC_DBNAME と item_name_en() で使う。表示用の日本語の名前は以下で
+// 別に組み立てる。語順は
+//   [所有者][数量+助数詞+の][★/☆][呪われた][外見][エゴ]基本名[ (+2)][ (状態)]
+// 名前の部品(英語)は辞書 jtrans/data-items.txt で訳す。
+
+/// 英語の修飾語("runed " など。末尾の空白可)を [item adj] で訳す。
+static string _item_adj_j(const string &adj)
+{
+    return tagged_jtrans("[item adj]", adj);
+}
+
+/// 強化値。日本語では名前の後ろに " (+2)" の形で付ける。
+static string _plus_suffix_j(int plus)
+{
+    return make_stringf(" (%+d)", plus);
+}
+
+static string _weapon_plus_suffix_j(const item_def &weap)
+{
+    if (is_unrandom_artefact(weap, UNRAND_WOE))
+        return Options.char_set == CSET_ASCII ? " (+inf)" : " (+∞)"; // ∞
+    return _plus_suffix_j(weap.plus);
+}
+
+/// 武器のブランド名。terse なら「火炎」、そうでなければ「火炎の」。
+static string _weapon_brand_j(brand_type brand, bool terse)
+{
+    if (terse)
+        return tagged_jtrans("[item adj terse]", brand_type_name(brand, true));
+    return tagged_jtrans("[item adj]",
+                         string("of ") + brand_type_name(brand, false));
+}
+
+/// weapon_brand_desc() の日本語版。body は訳済みの名前。
+static string _weapon_brand_desc_j(const string &body, const item_def &weap,
+                                   bool terse)
+{
+    const brand_type brand = get_weapon_brand(weap);
+    if (!*brand_type_name(brand, terse))
+        return body;
+
+    if (terse)
+    {
+        return make_stringf("%s (%s)", body.c_str(),
+                            _weapon_brand_j(brand, true).c_str());
+    }
+    return _weapon_brand_j(brand, false) + body;
+}
+
+/// _name_weapon() の日本語版。
+static string _name_weapon_j(const item_def &weap, description_level_type desc,
+                             bool terse, bool ident, bool inscr)
+{
+    const bool dbname   = (desc == DESC_DBNAME);
+    const bool basename = _use_basename(weap, desc, ident);
+    const bool qualname = (desc == DESC_QUALNAME);
+
+    const bool identified = ident || weap.is_identified();
+
+    const string curse_prefix
+        = !dbname && !terse && weap.cursed() ? jtrans("cursed ") : "";
+    const string plus_text
+        = identified && !dbname && !qualname ? _weapon_plus_suffix_j(weap) : "";
+    const string chaotic
+        = testbits(weap.flags, ISFLAG_CHAOTIC) ? jtrans("chaotic ") : "";
+    const string replica
+        = testbits(weap.flags, ISFLAG_REPLICA) ? jtrans("replica ") : "";
+
+    if (is_artefact(weap) && !dbname)
+    {
+        const string long_name = curse_prefix + chaotic + replica
+                                 + jtrans(get_artefact_name(weap, ident))
+                                 + plus_text;
+
+        // crop long artefact names when not controlled by webtiles -
+        // webtiles displays weapon names across multiple lines
+#ifdef USE_TILE_WEB
+        if (!tiles.is_controlled_from_web())
+#endif
+        {
+            const bool has_inscript = desc != DESC_BASENAME
+                                   && desc != DESC_DBNAME
+                                   && inscr;
+            const string inscription = _item_inscription(weap, true);
+
+            // 日本語は 1 文字が 2 桁なので、バイト数ではなく表示幅で測る。
+            const int total_length = strwidth(long_name)
+                                     + (has_inscript ? strwidth(inscription)
+                                                     : 0);
+            const string inv_slot_text = "x) ";
+            const int max_length = crawl_view.hudsz.x - inv_slot_text.size();
+            if (!terse || total_length <= max_length)
+                return long_name;
+        }
+#ifdef USE_TILE_WEB
+        else
+            return long_name;
+#endif
+
+        // special case: these two shouldn't ever have their base name revealed
+        if (is_unrandom_artefact(weap, UNRAND_ZEALOT_SWORD)
+            || is_unrandom_artefact(weap, UNRAND_DEMON_AXE))
+        {
+            return long_name;
+        }
+
+        return curse_prefix + chaotic + replica
+               + jtrans(get_artefact_base_name(weap, true)) + plus_text;
+    }
+
+    const bool show_cosmetic = !basename && !qualname && !dbname
+                               && !identified
+                               && !terse;
+
+    const string cosmetic_text
+        = show_cosmetic ? _item_adj_j(_cosmetic_text(weap)) : "";
+    // 強化値は基本名の直後に付け、terse のブランド表示 "(火炎)" はその後ろ。
+    const string base_name = jtrans(item_base_name(weap)) + plus_text;
+    const string name_with_ego
+        = identified && !dbname ? _weapon_brand_desc_j(base_name, weap, terse)
+                                : base_name;
+    const string curse_suffix
+        = weap.cursed() && terse && !dbname && !qualname
+          ? jtrans_notrim(" (curse)") : "";
+    return curse_prefix + cosmetic_text + name_with_ego + curse_suffix;
+}
+
+/// 魔法書・虎の巻・羊皮紙の名前(sub_type_string() の日本語版)。
+static string _book_name_j(const item_def &item, bool known)
+{
+    switch (item.sub_type)
+    {
+    case BOOK_MANUAL:
+        if (!known)
+            return jtrans("manual");
+        return make_stringf(jtransc("manual of %s"),
+                   skill_name_jc(static_cast<skill_type>(item.plus)));
+    case BOOK_PARCHMENT:
+        if (item.plus == 0 || !known)
+            return jtrans("parchment");
+        return make_stringf(jtransc("parchment of %s"),
+                   spell_title_jc(static_cast<spell_type>(item.plus)));
+    default:
+        return jtrans(sub_type_string(item, known));
+    }
+}
+
+/// item_def::name_aux() の日本語版。
+static string _name_aux_j(const item_def &item, description_level_type desc,
+                          bool terse, bool ident, bool with_inscription)
+{
+    // Shortcuts
+    const int item_typ   = item.sub_type;
+
+    const bool dbname   = (desc == DESC_DBNAME);
+    const bool basename = _use_basename(item, desc, ident);
+    const bool qualname = (desc == DESC_QUALNAME);
+
+    const bool identified = ident || item.is_identified();
+
+    // Display runed/glowing/embroidered etc?
+    // Only display this if brand is unknown.
+    const bool show_cosmetic = !identified
+                               && !basename && !qualname && !dbname
+                               && !terse;
+
+    const string curse_suffix = jtrans_notrim(" (curse)");
+
+    ostringstream buff;
+
+    switch (item.base_type)
+    {
+    case OBJ_WEAPONS:
+        buff << _name_weapon_j(item, desc, terse, ident, with_inscription);
+        break;
+
+    case OBJ_MISSILES:
+    {
+        const special_missile_type msl_brand = get_ammo_brand(item);
+        const bool show_brand = msl_brand != SPMSL_NORMAL
+                                && !basename && !dbname;
+        // ブランドは前に「毒の」の形で付ける(terse なら後ろに "(毒)")。
+        const string brand_j = show_brand
+            ? tagged_jtrans("[missile brand]",
+                            missile_brand_name(item, MBN_BRAND))
+            : "";
+
+        if (show_brand && !terse)
+            buff << brand_j << "の";
+
+        buff << jtrans(missile_name(static_cast<missile_type>(item_typ)));
+
+        if (show_brand && terse)
+            buff << " (" << brand_j << ")";
+        break;
+    }
+
+    case OBJ_ARMOUR:
+    {
+        if (!terse && item.cursed())
+            buff << jtrans("cursed ");
+
+        // Don't list unenchantable armor as +0.
+        const string plus_text
+            = identified && !dbname && !qualname
+              && armour_is_enchantable(item) ? _plus_suffix_j(item.plus) : "";
+
+        // "pair of " は日本語では付けない(助数詞の「組」「足」で表す)。
+
+        if (is_artefact(item) && !dbname)
+        {
+            buff << jtrans(get_artefact_name(item, ident)) << plus_text;
+            break;
+        }
+
+        if (show_cosmetic)
+        {
+            switch (get_equip_desc(item))
+            {
+            case ISFLAG_EMBROIDERED_SHINY:
+                if (item_typ == ARM_ROBE || item_typ == ARM_CLOAK
+                    || item_typ == ARM_GLOVES || item_typ == ARM_BOOTS
+                    || item_typ == ARM_SCARF || item_typ == ARM_HAT)
+                {
+                    buff << _item_adj_j("embroidered ");
+                }
+                else if (item_typ != ARM_LEATHER_ARMOUR
+                         && item_typ != ARM_ANIMAL_SKIN)
+                {
+                    buff << _item_adj_j("shiny ");
+                }
+                else
+                    buff << _item_adj_j("dyed ");
+                break;
+
+            case ISFLAG_RUNED:
+                buff << _item_adj_j("runed ");
+                break;
+
+            case ISFLAG_GLOWING:
+                buff << _item_adj_j("glowing ");
+                break;
+            }
+        }
+
+        string ego_terse;
+        if (identified && !dbname && !qualname && !is_artefact(item))
+        {
+            const special_armour_type sparm = get_armour_ego_type(item);
+
+            if (sparm != SPARM_NORMAL)
+            {
+                if (!terse)
+                {
+                    buff << _item_adj_j(string("of ")
+                                        + armour_ego_name(item, false));
+                }
+                else
+                {
+                    // 略称(rF+ など)は英語のまま。
+                    ego_terse = make_stringf(" {%s}",
+                                             armour_ego_name(item, true));
+                }
+            }
+        }
+
+        buff << jtrans(item_base_name(item)) << plus_text << ego_terse;
+
+        if (item.cursed() && terse && !dbname && !qualname)
+            buff << curse_suffix;
+        break;
+    }
+
+    case OBJ_WANDS:
+        if (basename)
+        {
+            buff << jtrans("wand");
+            break;
+        }
+
+        if (identified)
+            buff << jtrans(string("wand of ") + _wand_type_name(item_typ));
+        else
+        {
+            buff << tagged_jtrans("[wand adj]",
+                        wand_secondary_string(item.subtype_rnd / NDSC_WAND_PRI))
+                 << tagged_jtrans("[wand adj]",
+                        wand_primary_string(item.subtype_rnd % NDSC_WAND_PRI))
+                 << jtrans("wand");
+        }
+
+        if (dbname)
+            break;
+
+        if (identified && item.charges > 0)
+            buff << " (" << item.charges << ")";
+
+        break;
+
+    case OBJ_POTIONS:
+        if (basename)
+        {
+            buff << jtrans("potion");
+            break;
+        }
+
+        if (identified)
+            buff << jtrans(string("potion of ") + potion_type_name(item_typ));
+        else
+        {
+            buff << tagged_jtrans("[potion adj]",
+                                  _potion_qualifier(item.subtype_rnd))
+                 << tagged_jtrans("[potion adj]",
+                                  _potion_colour(item.subtype_rnd))
+                 << jtrans("potion");
+        }
+        break;
+
+#if TAG_MAJOR_VERSION == 34
+    case OBJ_FOOD:
+        buff << jtrans("removed food");
+        break;
+#endif
+
+    case OBJ_SCROLLS:
+        if (basename)
+            buff << jtrans("scroll");
+        else if (identified)
+            buff << jtrans(string("scroll of ") + scroll_type_name(item_typ));
+        else
+        {
+            buff << make_stringf(jtransc("scroll labelled %s"),
+                        make_name(item.subtype_rnd, MNAME_SCROLL).c_str());
+        }
+        break;
+
+    case OBJ_JEWELLERY:
+    {
+        if (basename)
+        {
+            buff << jtrans(jewellery_is_amulet(item) ? "amulet" : "ring");
+            break;
+        }
+
+        const bool is_randart = is_artefact(item);
+
+        if (!terse && item.cursed())
+            buff << jtrans("cursed ");
+
+        if (is_randart && !dbname)
+        {
+            buff << jtrans(get_artefact_name(item, ident));
+            break;
+        }
+
+        if (identified)
+        {
+            buff << jtrans(jewellery_type_name(item_typ));
+
+            if (!dbname && jewellery_has_pluses(item))
+                buff << _plus_suffix_j(item.plus);
+        }
+        else
+        {
+            const uint32_t rnd = item.subtype_rnd;
+            if (jewellery_is_amulet(item))
+            {
+                buff << tagged_jtrans("[amulet adj]",
+                            amulet_secondary_string(rnd / NDSC_JEWEL_PRI))
+                     << tagged_jtrans("[amulet adj]",
+                            amulet_primary_string(rnd % NDSC_JEWEL_PRI))
+                     << jtrans("amulet");
+            }
+            else  // i.e., a ring
+            {
+                buff << tagged_jtrans("[ring adj]",
+                            ring_secondary_string(rnd / NDSC_JEWEL_PRI))
+                     << tagged_jtrans("[ring adj]",
+                            ring_primary_string(rnd % NDSC_JEWEL_PRI))
+                     << jtrans("ring");
+            }
+        }
+        if (item.cursed() && terse && !dbname && !qualname)
+            buff << curse_suffix;
+        break;
+    }
+
+    case OBJ_MISCELLANY:
+    {
+        buff << jtrans(misc_type_name(item_typ));
+
+        // 強化値(ジッグラットの踏破数、発動アイテムの強化)は後ろに付ける。
+        if (!dbname && item_typ == MISC_ZIGGURAT && you.zigs_completed > 0)
+            buff << _plus_suffix_j(you.zigs_completed);
+        else if (!dbname && is_xp_evoker(item) && in_inventory(item))
+            buff << _plus_suffix_j(evoker_plus(item_typ));
+
+        if (is_xp_evoker(item) && !dbname && !evoker_charges(item_typ))
+            buff << jtrans_notrim(" (inert)");
+        else if (is_xp_evoker(item) &&
+                 !dbname && evoker_max_charges(item_typ) > 1)
+        {
+            buff << " (" << evoker_charges(item_typ) << "/"
+                 << evoker_max_charges(item_typ) << ")";
+        }
+
+        break;
+    }
+
+    case OBJ_TALISMANS:
+        if (is_random_artefact(item) && !dbname && !basename)
+            buff << jtrans(get_artefact_name(item, ident));
+        else
+            buff << jtrans(talisman_type_name(item_typ));
+        break;
+
+    case OBJ_BOOKS:
+        if (is_random_artefact(item) && !dbname && !basename)
+        {
+            buff << jtrans(get_artefact_name(item, true));
+            break;
+        }
+        if (basename)
+            buff << jtrans(item_typ == BOOK_MANUAL ? "manual" : "book");
+        else
+            buff << _book_name_j(item, !dbname);
+        break;
+
+#if TAG_MAJOR_VERSION == 34
+    case OBJ_RODS:
+        buff << jtrans("removed rod");
+        break;
+#endif
+
+    case OBJ_STAVES:
+        if (!terse && item.cursed())
+            buff << jtrans("cursed ");
+
+        if (is_artefact(item) && !dbname)
+        {
+            // 杖のランダムアーティファクト名は基本名を含まない
+            // (" of Foo" や " \"Foo\"" の形、未鑑定なら外見の形容詞)。
+            const string artname
+                = trimmed_string(get_artefact_name(item, ident));
+            if (identified)
+            {
+                buff << jtrans(string("staff of ")
+                          + staff_type_name(static_cast<stave_type>(item_typ)))
+                     << jtrans(artname);
+            }
+            else
+                buff << tagged_jtrans("[staff adj]", artname) << jtrans("staff");
+        }
+        else if (!identified)
+        {
+            if (!basename)
+            {
+                buff << tagged_jtrans("[staff adj]",
+                          staff_secondary_string(item.subtype_rnd
+                                                 / NDSC_STAVE_PRI))
+                     << tagged_jtrans("[staff adj]",
+                          staff_primary_string(item.subtype_rnd
+                                               % NDSC_STAVE_PRI));
+            }
+
+            buff << jtrans("staff");
+        }
+        else
+        {
+            buff << jtrans(string("staff of ")
+                      + staff_type_name(static_cast<stave_type>(item_typ)));
+        }
+
+        if (item.cursed() && terse && !dbname && !qualname)
+            buff << curse_suffix;
+        break;
+
+    case OBJ_ORBS:
+        buff << jtrans("Orb of Zot");
+        break;
+
+    case OBJ_RUNES:
+        if (dbname)
+            buff << "rune of Zot";
+        else
+        {
+            buff << jtrans(string(rune_type_name(item.sub_type))
+                           + " rune of Zot");
+        }
+        break;
+
+    case OBJ_GEMS:
+        if (item.sub_type == NUM_GEM_TYPES)
+            buff << jtrans("gem");
+        else
+            buff << jtrans(gem_type_name(static_cast<gem_type>(item.sub_type)));
+        break;
+
+    case OBJ_GOLD:
+        buff << jtrans("gold piece");
+        break;
+
+    case OBJ_CORPSES:
+    {
+        if (dbname && item_typ == CORPSE_SKELETON)
+            return "decaying skeleton";
+
+        monster_flags_t name_flags;
+        const string _name = get_corpse_name(item, &name_flags);
+        const monster_flags_t name_type = name_flags & MF_NAME_MASK;
+        const string jname = jtrans(_name);
+
+        // 例: 「オークの死体」「オークの『ブロルク』の死体」
+        if (!_name.empty() && name_type == MF_NAME_ADJECTIVE)
+            buff << jname;
+
+        if ((name_flags & MF_NAME_SPECIES) && name_type == MF_NAME_REPLACE)
+            buff << jname << "の";
+        else if (!dbname && !starts_with(_name, "the "))
+        {
+            const monster_type mc = item.mon_type;
+            if (!(mons_is_unique(mc) && mons_species(mc) == mc))
+                buff << jtrans(mons_type_name(mc, DESC_PLAIN)) << "の";
+        }
+
+        if (!_name.empty() && name_type == MF_NAME_SUFFIX)
+            buff << jname << "の";
+
+        if (!_name.empty() && name_type != MF_NAME_ADJECTIVE
+            && !(name_flags & MF_NAME_SPECIES) && name_type != MF_NAME_SUFFIX
+            && !dbname)
+        {
+            buff << jname << "の";
+        }
+
+        if (item_typ == CORPSE_BODY)
+            buff << jtrans("corpse");
+        else if (item_typ == CORPSE_SKELETON)
+            buff << jtrans("skeleton");
+        else
+            buff << "corpse bug";
+        break;
+    }
+
+    case OBJ_GIZMOS:
+        if (item.props.exists(ARTEFACT_NAME_KEY))
+            buff << jtrans(item.props[ARTEFACT_NAME_KEY].get_string());
+        else
+            buff << jtrans("Unnamed gizmo");
+        break;
+
+    case OBJ_BAUBLES:
+        buff << jtrans("flux bauble");
+        break;
+
+    default:
+        buff << "!";
+    }
+
+    // 日本語では複数形にしない(数量は item_def::name() で助数詞を付ける)。
+
+    // debugging output -- oops, I probably block it above ... dang! {dlb}
+    if (buff.str().length() < 3)
+    {
+        buff << "bad item (cl:" << static_cast<int>(item.base_type)
+             << ",ty:" << item_typ << ",pl:" << item.plus
+             << ",pl2:" << item.plus2 << ",sp:" << item.special
+             << ",qu:" << item.quantity << ")";
+    }
+
+    return buff.str();
+}
+
+/// item_def::name() の日本語版。
+static string _name_j(const item_def &item, description_level_type descrip,
+                      bool terse, bool ident, bool with_inscription)
+{
+    ostringstream buff;
+
+    const string auxname = _name_aux_j(item, descrip, terse, ident,
+                                       with_inscription);
+
+    const bool qualname = (descrip == DESC_QUALNAME);
+
+    if (descrip == DESC_INVENTORY_EQUIP || descrip == DESC_INVENTORY)
+    {
+        if (in_inventory(item)) // actually in inventory
+        {
+            buff << static_cast<char>(item.slot);
+            if (terse)
+                buff << ") ";
+            else
+                buff << " - ";
+        }
+        else
+            descrip = DESC_A;
+    }
+
+    if (item.base_type == OBJ_BOOKS && book_has_title(item)
+        && descrip != DESC_DBNAME)
+    {
+        descrip = DESC_PLAIN;
+    }
+
+    if (terse && descrip != DESC_DBNAME)
+        descrip = DESC_PLAIN;
+
+    // 名前の前に何も付けない記述レベル
+    const bool bare = descrip == DESC_BASENAME || descrip == DESC_QUALNAME
+                      || descrip == DESC_DBNAME;
+
+    // no "a dragon scales"
+    const bool always_plural = armour_is_hide(item)
+                               && item.sub_type != ARM_TROLL_LEATHER_ARMOUR;
+
+    const bool fixed = is_unrandom_artefact(item) || item_is_orb(item)
+                       || item_is_horn_of_geryon(item);
+
+    if (item_is_orb(item)
+        || item_is_horn_of_geryon(item)
+        || (ident || item.is_identified())
+           && is_artefact(item) && item.base_type != OBJ_GIZMOS)
+    {
+        // 英語版で "the" が付くもの(アーティファクト等)には、
+        // 旧日本語版に合わせて記号を付ける(固定アーティファクトは★、
+        // ランダムアーティファクトは☆)。所有者や数量は付けない。
+        if (!bare && item.base_type != OBJ_BOOKS)
+            buff << (fixed ? "★" : "☆");
+    }
+    else
+    {
+        switch (descrip)
+        {
+        case DESC_YOUR: buff << tagged_jtrans("[item desc]", "your"); break;
+        case DESC_ITS:  buff << tagged_jtrans("[item desc]", "its"); break;
+        default:
+            break;
+        }
+
+        // 「3本の」のように数量と助数詞を前に付ける。
+        if (item.quantity > 1 && !always_plural && !bare)
+            buff << item.quantity << counter_suffix(item) << "の";
+    }
+
+    buff << auxname;
+
+    if (descrip == DESC_INVENTORY_EQUIP)
+    {
+        equipment_slot eq = item_equip_slot(item);
+        if (eq != SLOT_UNUSED)
+        {
+            if (item_is_melded(item))
+                buff << jtrans_notrim(" (melded)");
+            else
+            {
+                switch (eq)
+                {
+                case SLOT_WEAPON:
+                    if (is_weapon(item))
+                        buff << jtrans_notrim(" (weapon)");
+                    break;
+                case SLOT_WEAPON_OR_OFFHAND:
+                    if (is_weapon(item))
+                    {
+                        buff << jtrans_notrim(" (offhand)");
+                        break;
+                    }
+                    // fallthrough for non-weapons in that slot
+                case SLOT_OFFHAND:
+                case SLOT_CLOAK:
+                case SLOT_HELMET:
+                case SLOT_GLOVES:
+                case SLOT_BOOTS:
+                case SLOT_BARDING:
+                case SLOT_BODY_ARMOUR:
+                case SLOT_RING:
+                case SLOT_AMULET:
+                    buff << jtrans_notrim(" (worn)");
+                    break;
+                case SLOT_GIZMO:
+                    buff << jtrans_notrim(" (installed)");
+                    break;
+                case SLOT_HAUNTED_AUX:
+                    buff << jtrans_notrim(" (haunted)");
+                    break;
+                default:
+                    die("Item in an invalid slot (%d)", eq);
+                }
+            }
+        }
+        else if (item.base_type == OBJ_TALISMANS
+                 && you.active_talisman() == &item)
+        {
+            buff << jtrans_notrim(" (worn)");
+        }
+        else if (you.quiver_action.item_is_quivered(item))
+            buff << jtrans_notrim(" (quivered)");
+    }
+
+    if (descrip != DESC_BASENAME && descrip != DESC_DBNAME
+        && descrip != DESC_QUALNAME && with_inscription)
+    {
+        buff << _item_inscription(item, true);
+    }
+
+    // These didn't have "cursed " prepended; add them here so that
+    // it comes after the inscription.
+    if (terse && descrip != DESC_DBNAME && descrip != DESC_BASENAME
+        && !qualname
+        && is_artefact(item) && item.cursed())
+    {
+        buff << jtrans_notrim(" (curse)");
+    }
+
+    return buff.str();
+}
+
 // WARNING: You can break save compatibility if you edit this without
 // amending tags.cc to properly marshall the change.
 bool item_type_has_ids(object_class_type base_type)
@@ -2108,7 +2880,7 @@ static colour_t _gem_colour(const item_def *gem)
 static string _gem_parenthetical(gem_type gem)
 {
     string text = " (";
-    text += branches[branch_for_gem(gem)].longname;
+    text += branch_name_j(branches[branch_for_gem(gem)].longname);
 
     const int lim = gem_time_limit(gem);
     const int left = lim - you.gem_time_spent[gem];
@@ -2119,7 +2891,7 @@ static string _gem_parenthetical(gem_type gem)
     if (left <= 0)
     {
         if (Options.more_gem_info || !you.gems_found[gem])
-            return text + ", shattered)";
+            return text + jtrans(", shattered)");
         return text + ")";
     }
 
@@ -2130,12 +2902,15 @@ static string _gem_parenthetical(gem_type gem)
     }
 
     // Rescale from aut to dAut. Round up.
-    text += make_stringf(", %d", (left + 9) / 10);
+    string remain = make_stringf("%d", (left + 9) / 10);
     if (left < lim)
-        text += make_stringf("/%d", (lim + 9) / 10);
-    else
-        text += " turns"; // XXX: ?
-    return text + " until shattered)";
+    {
+        remain += make_stringf("/%d", (lim + 9) / 10);
+        return text + make_stringf(jtransc(", %s until shattered)"),
+                                   remain.c_str());
+    }
+    return text + make_stringf(jtransc(", %s turns until shattered)"),
+                               remain.c_str());
 }
 
 static string _gem_text(const item_def *gem_it)
@@ -2174,12 +2949,11 @@ static MenuEntry* _fixup_runeorb_entry(MenuEntry* me)
         string text = "<";
         text += colour_to_str(colour);
         text += ">";
-        text += rune_type_name(rune);
-        text += " rune of Zot";
+        text += jtrans(string(rune_type_name(rune)) + " rune of Zot");
         if (!you.runes[rune])
         {
             text += " (";
-            text += branches[rune_location(rune)].longname;
+            text += branch_name_j(branches[rune_location(rune)].longname);
             text += ")";
         }
         text += "</";
@@ -2193,11 +2967,11 @@ static MenuEntry* _fixup_runeorb_entry(MenuEntry* me)
         break;
     case OBJ_ORBS:
         if (player_has_orb())
-            entry->text = "<magenta>The Orb of Zot</magenta>";
+            entry->text = jtrans("<magenta>The Orb of Zot</magenta>");
         else
         {
-            entry->text = "<darkgrey>The Orb of Zot"
-            " (the Realm of Zot)</darkgrey>";
+            entry->text = jtrans("<darkgrey>The Orb of Zot"
+                                 " (the Realm of Zot)</darkgrey>");
         }
         break;
     default:
@@ -2269,8 +3043,8 @@ string RuneMenu::get_title()
                runes_in_pack() < you.obtainable_runes ? "green" :
                                                    "lightgreen";
 
-    return make_stringf("<white>Runes of Zot (</white>"
-                        "<%s>%d</%s><white> collected) & Orbs of Power</white>",
+    return make_stringf(jtransc("<white>Runes of Zot (</white>"
+                        "<%s>%d</%s><white> collected) & Orbs of Power</white>"),
                         col, runes_in_pack(), col);
 }
 
@@ -2278,9 +3052,10 @@ string RuneMenu::gem_title()
 {
     const int found = gems_found();
     const int lost = gems_lost();
-    string gem_title = make_stringf("<white>Gems (%d collected", found);
+    string gem_title = make_stringf(jtransc("<white>Gems (%d collected"),
+                                    found);
     if (Options.more_gem_info && lost < found)
-        gem_title += make_stringf(", %d intact", found - lost);
+        gem_title += make_stringf(jtransc(", %d intact"), found - lost);
     // don't explicitly mention that your gems are all broken otherwise - sad!
 
     return gem_title + ")</white>";
@@ -2291,13 +3066,17 @@ void RuneMenu::set_footer()
     if (!can_show_gems())
         return;
 
-    string more_text = make_stringf("[<w>!</w>/<w>^</w>"
+    string more_text = "[<w>!</w>/<w>^</w>"
 #ifdef USE_TILE_LOCAL
-            "|<w>Right-click</w>"
+            "|<w>" + jtrans("Right-click") + "</w>"
 #endif
-            "]: %s", show_gems ? "Show Runes" : "Show Gems");
+            "]: " + (show_gems ? jtrans("Show Runes") : jtrans("Show Gems"));
     if (!Options.more_gem_info && can_show_more_gems())
-        more_text += make_stringf("\n[<w>-</w>]: %s", more_gems ? "Less" : "More");
+    {
+        more_text += "\n[<w>-</w>]: "
+                     + (more_gems ? tagged_jtrans("[gem menu]", "Less")
+                                  : tagged_jtrans("[gem menu]", "More"));
+    }
     set_more(more_text);
 }
 
@@ -2816,7 +3595,9 @@ bool is_interesting_item(const item_def& item)
     if (item.is_identified() && is_artefact(item))
         return true;
 
-    const string iname = item_prefix(item, false) + " " + item.name(DESC_PLAIN);
+    // note_items のパターンは英語で書かれるので英語の名前と照合する。
+    const string iname = item_prefix(item, false) + " "
+                         + item_name_en(item, DESC_PLAIN);
     for (const text_pattern &pat : Options.note_items)
         if (pat.matches(iname))
             return true;
@@ -3063,22 +3844,24 @@ static string _general_cannot_read_reason()
 {
     // general checks
     if (player_in_branch(BRANCH_GEHENNA))
-        return "You cannot see clearly; the smoke and ash is too thick!";
+        return jtrans("You cannot see clearly; the smoke and ash is too thick!");
 
     if (you.berserk())
-        return "You are too berserk!";
+        return jtrans("You are too berserk!");
 
     if (you.confused())
-        return "You are too confused!";
+        return jtrans("You are too confused!");
 
     if (you.duration[DUR_NO_SCROLLS])
-        return "You cannot read scrolls in your current state!";
+        return jtrans("You cannot read scrolls in your current state!");
 
     if (you.is_silenced())
-        return make_stringf("You cannot read scrolls while %s!", player_silenced_reason());
+        return make_stringf(jtransc("You cannot read scrolls while %s!"),
+                            tagged_jtransc("[silenced reason]",
+                                           player_silenced_reason()));
 
     if (you.has_mutation(MUT_RENOUNCE_SCROLLS) && you.props.exists(RENOUNCE_SCROLLS_TIMER_KEY))
-        return "You refuse to depend on such disposable conveniences.";
+        return jtrans("You refuse to depend on such disposable conveniences.");
 
     return "";
 }
@@ -3101,33 +3884,33 @@ string cannot_read_item_reason(const item_def *item, bool temp, bool ident)
         {
         case SCR_AMNESIA:
             if (you.has_mutation(MUT_INNATE_CASTER))
-                return "You don't have control over your spell memory.";
+                return jtrans("You don't have control over your spell memory.");
             // XX possibly amnesia should be allowed to work under Trog, despite
             // being marked useless..
             if (you_worship(GOD_TROG))
-                return "Trog doesn't allow you to memorise spells!";
+                return jtrans("Trog doesn't allow you to memorise spells!");
             break;
         case SCR_ENCHANT_WEAPON:
         case SCR_BRAND_WEAPON:
             if (you.has_mutation(MUT_NO_GRASPING))
-                return "There's no point in enhancing weapons you can't use!";
+                return jtrans("There's no point in enhancing weapons you can't use!");
             break;
         case SCR_ENCHANT_ARMOUR:
             if (you.has_mutation(MUT_NO_GRASPING))
-                return "There's no point in enchanting armour you can't use!";
+                return jtrans("There's no point in enchanting armour you can't use!");
             break;
 
         case SCR_IDENTIFY:
             if (you.props.exists(IDENTIFIED_ALL_KEY))
-                return "There is nothing left to identify.";
+                return jtrans("There is nothing left to identify.");
             if (have_passive(passive_t::identify_items))
-                return "You have no need of identification.";
+                return jtrans("You have no need of identification.");
             break;
 
         case SCR_SUMMONING:
         case SCR_BUTTERFLIES:
             if (you.allies_forbidden())
-                return "You cannot coerce anything to answer your summons.";
+                return jtrans("You cannot coerce anything to answer your summons.");
             break;
         case SCR_BLINKING:
         case SCR_TELEPORTATION:
@@ -3154,7 +3937,7 @@ string cannot_read_item_reason(const item_def *item, bool temp, bool ident)
 
     // still possible to use * at the `r` prompt. (Why do we allow this now?)
     if (item->base_type != OBJ_SCROLLS)
-        return "You can't read that!";
+        return jtrans("You can't read that!");
 
     // temp uselessness only below this check
     if (!temp || (!ident && !item_type_known(*item)))
@@ -3171,7 +3954,7 @@ string cannot_read_item_reason(const item_def *item, bool temp, bool ident)
 
         case SCR_AMNESIA:
             if (you.spell_no == 0)
-                return "You have no spells to forget.";
+                return jtrans("You have no spells to forget.");
             return "";
 
         case SCR_ENCHANT_ARMOUR:
@@ -3189,12 +3972,12 @@ string cannot_read_item_reason(const item_def *item, bool temp, bool ident)
         case SCR_FOG:
         case SCR_POISON:
             if (env.level_state & LSTATE_STILL_WINDS)
-                return "The air is too still for clouds to form.";
+                return jtrans("The air is too still for clouds to form.");
             return "";
 
         case SCR_REVELATION:
             if (!is_map_persistent())
-                return "This place cannot be mapped!";
+                return jtrans("This place cannot be mapped!");
             return "";
 
         default:
@@ -3207,7 +3990,7 @@ string cannot_drink_item_reason(const item_def *item, bool temp,
 {
     // general permanent reasons
     if (!you.can_drink(false))
-        return "You can't drink.";
+        return jtrans("You can't drink.");
 
     const bool valid = item && item->base_type == OBJ_POTIONS
                             && (item->is_identified() || ident);
@@ -3228,20 +4011,20 @@ string cannot_drink_item_reason(const item_def *item, bool temp,
     if (temp)
     {
         if (!you.can_drink(true))
-            return "You cannot drink potions in your current state!";
+            return jtrans("You cannot drink potions in your current state!");
 
         if (you.berserk())
-            return "You are too berserk!";
+            return jtrans("You are too berserk!");
 
         if (you.has_mutation(MUT_RENOUNCE_POTIONS) && you.props.exists(RENOUNCE_POTIONS_TIMER_KEY))
-            return "You refuse to indulge in frivolous drinking.";
+            return jtrans("You refuse to indulge in frivolous drinking.");
 
         if (player_in_branch(BRANCH_COCYTUS))
-            return "It's too cold; everything's frozen solid!";
+            return jtrans("It's too cold; everything's frozen solid!");
     }
 
     if (item && item->base_type != OBJ_POTIONS)
-        return "You can't drink that!";
+        return jtrans("You can't drink that!");
 
     // !valid now means either no item, or unid'd item.
     if (!temp || !valid)
@@ -3628,7 +4411,9 @@ string menu_colour_item_name(const item_def &item, description_level_type desc)
     const string cprf      = item_prefix(item, false);
     const string item_name = item.name(desc);
 
-    const int col = menu_colour(item_name, cprf, "pickup", false);
+    // menu_colour のパターンは英語で書かれるので、色は英語の名前で決める。
+    const int col = menu_colour(item_name_en(item, desc), cprf, "pickup",
+                                false);
     if (col == -1)
         return item_name;
 
@@ -3679,8 +4464,11 @@ void init_item_name_cache()
                 // and "Manual of fighting" in the cache for item.plus == 0
                 if (plus > 0)
                     item.plus = max(0, plus - 1);
-                string name = item.name(plus || item.base_type == OBJ_RUNES ? DESC_PLAIN : DESC_DBNAME,
-                                        true, true);
+                // 検索キーなので英語の名前を使う。
+                string name = item_name_en(item,
+                                           plus || item.base_type == OBJ_RUNES
+                                           ? DESC_PLAIN : DESC_DBNAME,
+                                           true, true);
                 lowercase(name);
                 cglyph_t g = get_item_glyph(item);
 

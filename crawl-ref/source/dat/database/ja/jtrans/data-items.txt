@@ -1,0 +1,3017 @@
+# data-items.txt: アイテム名と、その部品(外見語・エゴ・助数詞)
+# 出典: item-name.cc, item-prop.cc (Weapon_prop, Armour_prop, Missile_prop,
+# Staff_prop, Gem_prop, talisman_type_name), art-data.txt (TYPE:) (0.34)
+# 使い方: item-name.cc の item_def::name() の日本語版が、基本名は
+# jtrans(item_base_name()) / jtrans("potion of curing") のようにタグなしで、
+# 部品は [item adj] [wand adj] などのタグ付きで引く。
+# 助数詞: japanese.cc の counter_suffix() が [counter]<sub_type_string> を、
+# なければ [counter class]<base_type_string> を引く(どちらもなければ「個」)。
+# 分類名など(単独で使う名前)
+%%%%
+wand
+
+ワンド
+%%%%
+potion
+
+薬
+%%%%
+scroll
+
+巻物
+%%%%
+ring
+
+指輪
+%%%%
+amulet
+
+護符
+%%%%
+book
+
+魔法書
+%%%%
+manual
+
+虎の巻
+%%%%
+manual of %s
+
+%sの虎の巻
+%%%%
+parchment
+
+羊皮紙
+%%%%
+parchment of %s
+
+%sの羊皮紙
+%%%%
+staff
+
+杖
+%%%%
+gem
+
+宝石
+%%%%
+gold piece
+
+金貨
+%%%%
+Orb of Zot
+
+ゾットのオーブ
+%%%%
+corpse
+
+死体
+%%%%
+skeleton
+
+骸骨
+%%%%
+Unnamed gizmo
+
+名無しのギズモ
+%%%%
+flux bauble
+
+フラックス・ボーブル
+%%%%
+removed food
+
+削除された食料
+%%%%
+removed rod
+
+削除されたロッド
+%%%%
+scroll labelled %s
+
+『%s』と書かれた巻物
+# 名前の前に付ける語
+%%%%
+cursed
+
+呪われた
+%%%%
+chaotic
+
+混沌の
+%%%%
+replica
+
+レプリカの
+%%%%
+[item desc]your
+
+あなたの
+%%%%
+[item desc]its
+
+その
+# ゴースト・パンデモニウムの王の攻撃(ghost_brand_name)。%s はエゴ(「火炎の」)
+%%%%
+%s weapon
+
+%s武器
+%%%%
+%s touch
+
+%s接触
+# 名前の後ろに付ける状態表示(先頭の空白は jtrans_notrim で残る)
+%%%%
+(curse)
+
+(呪)
+%%%%
+(inert)
+
+(充填中)
+%%%%
+(melded)
+
+(肉体と融合している)
+%%%%
+(weapon)
+
+(武器)
+%%%%
+(offhand)
+
+(副武器)
+%%%%
+(worn)
+
+(装備中)
+%%%%
+(installed)
+
+(取付済)
+%%%%
+(haunted)
+
+(憑依中)
+%%%%
+(quivered)
+
+(準備中)
+# 由来の刻印 {…}
+%%%%
+[item origin]god gift
+
+神の贈り物
+%%%%
+[item origin]Donald
+
+ドナルド
+# 武器
+%%%%
+club
+
+棍棒
+%%%%
+whip
+
+鞭
+%%%%
+mace
+
+メイス
+%%%%
+flail
+
+フレイル
+%%%%
+morningstar
+
+モーニングスター
+%%%%
+demon whip
+
+悪魔の鞭
+%%%%
+sacred scourge
+
+聖なる鞭
+%%%%
+dire flail
+
+大型フレイル
+%%%%
+eveningstar
+
+イブニングスター
+%%%%
+great mace
+
+大型メイス
+%%%%
+giant club
+
+巨大棍棒
+%%%%
+giant spiked club
+
+釘つき巨大棍棒
+%%%%
+dagger
+
+ダガー
+%%%%
+quick blade
+
+クイックブレード
+%%%%
+short sword
+
+ショートソード
+%%%%
+rapier
+
+レイピア
+%%%%
+falchion
+
+ファルシオン
+%%%%
+long sword
+
+ロングソード
+%%%%
+scimitar
+
+シミター
+%%%%
+demon blade
+
+悪魔の刃
+%%%%
+eudemon blade
+
+悪魔祓いの刃
+%%%%
+double sword
+
+ダブルソード
+%%%%
+great sword
+
+グレートソード
+%%%%
+triple sword
+
+トリプルソード
+%%%%
+hand axe
+
+ハンドアックス
+%%%%
+war axe
+
+ウォーアックス
+%%%%
+broad axe
+
+ブロードアックス
+%%%%
+battleaxe
+
+バトルアックス
+%%%%
+executioner's axe
+
+処刑人の斧
+%%%%
+spear
+
+スピア
+%%%%
+trident
+
+トライデント
+%%%%
+halberd
+
+ハルバード
+%%%%
+partisan
+
+パルチザン
+%%%%
+demon trident
+
+悪魔の三叉戟
+%%%%
+trishula
+
+トリシューラ
+%%%%
+glaive
+
+グレイブ
+%%%%
+bardiche
+
+バルディッシュ
+%%%%
+quarterstaff
+
+六尺棒
+%%%%
+lajatang
+
+ラジャタン
+%%%%
+sling
+
+スリング
+%%%%
+hand cannon
+
+ハンドキャノン
+%%%%
+shortbow
+
+ショートボウ
+%%%%
+orcbow
+
+オークの弓
+%%%%
+arbalest
+
+アーバレスト
+%%%%
+longbow
+
+ロングボウ
+%%%%
+triple crossbow
+
+トリプルクロスボウ
+# 削除済み(TAG_MAJOR_VERSION == 34)
+%%%%
+old spiked flail
+
+旧式の釘つきフレイル
+%%%%
+old hammer
+
+旧式のハンマー
+%%%%
+old cutlass
+
+旧式のカトラス
+%%%%
+old falchion
+
+旧式のファルシオン
+%%%%
+old long sword
+
+旧式のロングソード
+%%%%
+old scimitar
+
+旧式のシミター
+%%%%
+old double sword
+
+旧式のダブルソード
+%%%%
+old great sword
+
+旧式のグレートソード
+%%%%
+old triple sword
+
+旧式のトリプルソード
+%%%%
+old scythe
+
+旧式の大鎌
+%%%%
+old blowgun
+
+旧式の吹き矢筒
+%%%%
+old fustibalus
+
+旧式の竿付きスリング
+# 固定アーティファクトの基本名(art-data.txt の TYPE:。get_artefact_base_name())と、
+# HUD 用の短縮名(artefact.cc の get_artefact_base_name(item, true))
+%%%%
+Lochaber axe
+
+ロッホアバーアックス
+%%%%
+bo
+
+棒
+%%%%
+cutlass
+
+カトラス
+%%%%
+flamberge
+
+フランベルジュ
+%%%%
+greatsling
+
+大型スリング
+%%%%
+heavy crossbow
+
+大型クロスボウ
+%%%%
+katana
+
+カタナ
+%%%%
+knife
+
+ナイフ
+%%%%
+labrys
+
+ラブリュス
+%%%%
+lance
+
+ランス
+%%%%
+maul
+
+大金鎚
+%%%%
+pair of quick blades
+
+一対のクイックブレード
+%%%%
+scythe
+
+大鎌
+%%%%
+shillelagh
+
+棍棒
+%%%%
+exec axe
+
+処刑人の斧
+%%%%
+g.spiked club
+
+釘つき巨大棍棒
+%%%%
+triple xbow
+
+トリプルクロスボウ
+# 飛び道具
+%%%%
+dart
+
+ダーツ
+%%%%
+stone
+
+石
+%%%%
+large rock
+
+大岩
+%%%%
+javelin
+
+ジャベリン
+%%%%
+throwing net
+
+投げ網
+%%%%
+boomerang
+
+ブーメラン
+%%%%
+needle
+
+吹き矢針
+%%%%
+arrow
+
+矢
+%%%%
+bolt
+
+クロスボウの矢
+%%%%
+slug
+
+弾丸
+%%%%
+sling bullet
+
+スリングの弾
+# 防具
+%%%%
+animal skin
+
+獣の皮
+%%%%
+robe
+
+ローブ
+%%%%
+leather armour
+
+レザーアーマー
+%%%%
+ring mail
+
+リングメイル
+%%%%
+scale mail
+
+スケイルメイル
+%%%%
+chain mail
+
+鎖かたびら
+%%%%
+plate armour
+
+プレートアーマー
+%%%%
+crystal plate armour
+
+水晶の鎧
+%%%%
+troll leather armour
+
+トロル革の鎧
+%%%%
+cloak
+
+クローク
+%%%%
+scarf
+
+スカーフ
+%%%%
+gloves
+
+手袋
+%%%%
+helmet
+
+兜
+%%%%
+cap
+
+キャップ
+%%%%
+hat
+
+帽子
+%%%%
+boots
+
+ブーツ
+%%%%
+centaur barding
+
+セントールの馬甲
+%%%%
+barding
+
+馬甲
+%%%%
+orb
+
+オーブ
+%%%%
+buckler
+
+バックラー
+%%%%
+kite shield
+
+カイトシールド
+%%%%
+tower shield
+
+タワーシールド
+%%%%
+steam dragon scales
+
+スチームドラゴンの鱗一式
+%%%%
+acid dragon scales
+
+アシッドドラゴンの鱗一式
+%%%%
+quicksilver dragon scales
+
+水銀ドラゴンの鱗一式
+%%%%
+swamp dragon scales
+
+沼ドラゴンの鱗一式
+%%%%
+fire dragon scales
+
+ファイアドラゴンの鱗一式
+%%%%
+ice dragon scales
+
+アイスドラゴンの鱗一式
+%%%%
+pearl dragon scales
+
+パールドラゴンの鱗一式
+%%%%
+storm dragon scales
+
+ストームドラゴンの鱗一式
+%%%%
+shadow dragon scales
+
+シャドウドラゴンの鱗一式
+%%%%
+golden dragon scales
+
+ゴールドドラゴンの鱗一式
+# ワンド
+%%%%
+wand of flame
+
+火炎のワンド
+%%%%
+wand of paralysis
+
+金縛りのワンド
+%%%%
+wand of digging
+
+掘削のワンド
+%%%%
+wand of iceblast
+
+吹雪のワンド
+%%%%
+wand of polymorph
+
+変化のワンド
+%%%%
+wand of charming
+
+魅了のワンド
+%%%%
+wand of acid
+
+強酸のワンド
+%%%%
+wand of mindburst
+
+精神破壊のワンド
+%%%%
+wand of light
+
+光のワンド
+%%%%
+wand of quicksilver
+
+水銀のワンド
+%%%%
+wand of roots
+
+根縛りのワンド
+%%%%
+wand of warping
+
+歪曲のワンド
+# 薬
+%%%%
+potion of curing
+
+治療の薬
+%%%%
+potion of heal wounds
+
+怪我の治療の薬
+%%%%
+potion of haste
+
+スピードの薬
+%%%%
+potion of might
+
+怪力の薬
+%%%%
+potion of attraction
+
+誘引の薬
+%%%%
+potion of brilliance
+
+知性の薬
+%%%%
+potion of enlightenment
+
+悟りの薬
+%%%%
+potion of cancellation
+
+無力化の薬
+%%%%
+potion of ambrosia
+
+アンブロシアの薬
+%%%%
+potion of invisibility
+
+透明化の薬
+%%%%
+potion of moonshine
+
+密造酒の薬
+%%%%
+potion of experience
+
+経験の薬
+%%%%
+potion of magic
+
+魔力の薬
+%%%%
+potion of berserk rage
+
+狂戦士の薬
+%%%%
+potion of mutation
+
+突然変異の薬
+%%%%
+potion of resistance
+
+耐性の薬
+%%%%
+potion of lignification
+
+樹木化の薬
+# 巻物
+%%%%
+scroll of identify
+
+鑑定の巻物
+%%%%
+scroll of teleportation
+
+テレポートの巻物
+%%%%
+scroll of fear
+
+恐慌の巻物
+%%%%
+scroll of noise
+
+騒音の巻物
+%%%%
+scroll of summoning
+
+召喚の巻物
+%%%%
+scroll of enchant weapon
+
+武器強化の巻物
+%%%%
+scroll of enchant armour
+
+防具強化の巻物
+%%%%
+scroll of torment
+
+拷問の巻物
+%%%%
+scroll of immolation
+
+焼き討ちの巻物
+%%%%
+scroll of poison
+
+毒の巻物
+%%%%
+scroll of butterflies
+
+蝶の巻物
+%%%%
+scroll of blinking
+
+瞬間移動の巻物
+%%%%
+scroll of revelation
+
+啓示の巻物
+%%%%
+scroll of fog
+
+煙幕の巻物
+%%%%
+scroll of acquirement
+
+獲得の巻物
+%%%%
+scroll of brand weapon
+
+魔力の武器の巻物
+%%%%
+scroll of vulnerability
+
+脆弱の巻物
+%%%%
+scroll of silence
+
+静寂の巻物
+%%%%
+scroll of amnesia
+
+忘却の巻物
+# 削除済み(TAG_MAJOR_VERSION == 34)
+%%%%
+scroll of holy word
+
+聖なる御言葉の巻物
+%%%%
+scroll of curse weapon
+
+武器呪いの巻物
+%%%%
+scroll of curse armour
+
+防具呪いの巻物
+%%%%
+scroll of curse jewellery
+
+装身具呪いの巻物
+# 装身具
+%%%%
+ring of protection
+
+護りの指輪
+%%%%
+ring of protection from fire
+
+耐火の指輪
+%%%%
+ring of poison resistance
+
+耐毒の指輪
+%%%%
+ring of protection from cold
+
+耐冷の指輪
+%%%%
+ring of slaying
+
+殺戮の指輪
+%%%%
+ring of see invisible
+
+霊視の指輪
+%%%%
+ring of resist corrosion
+
+腐蝕阻止の指輪
+%%%%
+ring of evasion
+
+躱し身の指輪
+%%%%
+ring of stealth
+
+隠密の指輪
+%%%%
+ring of strength
+
+腕力の指輪
+%%%%
+ring of dexterity
+
+器用さの指輪
+%%%%
+ring of intelligence
+
+知性の指輪
+%%%%
+ring of wizardry
+
+魔術の指輪
+%%%%
+ring of magical power
+
+魔力の指輪
+%%%%
+ring of flight
+
+飛行の指輪
+%%%%
+ring of positive energy
+
+生命力保護の指輪
+%%%%
+ring of willpower
+
+意志力の指輪
+%%%%
+amulet of magic regeneration
+
+魔力再生の護符
+%%%%
+amulet of the acrobat
+
+軽業師の護符
+%%%%
+amulet of guardian spirit
+
+守護霊の護符
+%%%%
+amulet of faith
+
+信仰の護符
+%%%%
+amulet of reflection
+
+反射の護符
+%%%%
+amulet of regeneration
+
+再生の護符
+%%%%
+amulet of wildshape
+
+野生化の護符
+%%%%
+amulet of chemistry
+
+化学の護符
+%%%%
+amulet of dissipation
+
+散逸の護符
+%%%%
+amulet of nothing
+
+普通の護符
+# 削除済み
+%%%%
+ring of obsoleteness
+
+廃れた指輪
+%%%%
+amulet of obsoleteness
+
+廃れた護符
+# 発動用のアイテム
+%%%%
+box of beasts
+
+獣の匣
+%%%%
+horn of Geryon
+
+ゲリュオンの角笛
+%%%%
+lightning rod
+
+稲妻のロッド
+%%%%
+quad damage
+
+四重ダメージ
+%%%%
+phial of floods
+
+大水の小瓶
+%%%%
+sack of spiders
+
+蜘蛛の袋
+%%%%
+phantom mirror
+
+幻影の鏡
+%%%%
+figurine of a ziggurat
+
+ジグラットの模型
+%%%%
+tin of tremorstones
+
+震動石の缶
+%%%%
+condenser vane
+
+凝結の風見
+%%%%
+Gell's gravitambourine
+
+ゲルの重力タンバリン
+%%%%
+shop voucher
+
+商品券
+# 魔法書
+%%%%
+book of Minor Magic
+
+下級魔術の魔法書
+%%%%
+book of Conjurations
+
+妖術の魔法書
+%%%%
+book of Flames
+
+炎の魔法書
+%%%%
+book of Frost
+
+冷気の魔法書
+%%%%
+book of the Wilderness
+
+荒野の魔法書
+%%%%
+book of Fire
+
+猛火の魔法書
+%%%%
+book of Ice
+
+氷結の魔法書
+%%%%
+book of Spatial Translocations
+
+空間転位の魔法書
+%%%%
+book of Hexes
+
+呪術の魔法書
+%%%%
+book of Lightning
+
+稲妻の魔法書
+%%%%
+book of Death
+
+死の魔法書
+%%%%
+book of Misfortune
+
+災難の魔法書
+%%%%
+book of Spontaneous Combustion
+
+自然発火の魔法書
+%%%%
+book of Battle
+
+戦いの魔法書
+%%%%
+book of Necromancy
+
+死霊術の魔法書
+%%%%
+book of Callings
+
+招集の魔法書
+%%%%
+book of Air
+
+大気の魔法書
+%%%%
+book of the Warp
+
+次元歪曲の魔法書
+%%%%
+book of Annihilations
+
+殲滅の魔法書
+%%%%
+book of Unlife
+
+反生命の魔法書
+%%%%
+book of Geomancy
+
+地占術の魔法書
+%%%%
+book of the Earth
+
+大地の魔法書
+%%%%
+book of Power
+
+力の魔法書
+%%%%
+book of Cantrips
+
+悪戯の魔法書
+%%%%
+book of Party Tricks
+
+パーティートリックの魔法書
+%%%%
+book of Debilitation
+
+衰弱の魔法書
+%%%%
+book of the Dragon
+
+ドラゴンの魔法書
+%%%%
+book of Burglary
+
+夜盗の魔法書
+%%%%
+book of Dreams
+
+夢幻の魔法書
+%%%%
+book of Transmutation
+
+変成の魔法書
+%%%%
+book of Beasts
+
+獣の魔法書
+%%%%
+book of Spectacle
+
+見世物の魔法書
+%%%%
+book of Winter
+
+冬の魔法書
+%%%%
+book of the Spheres
+
+天球の魔法書
+%%%%
+book of Armaments
+
+武装の魔法書
+%%%%
+book of Decay
+
+腐朽の魔法書
+%%%%
+book of Displacement
+
+置換の魔法書
+%%%%
+book of the Senses
+
+感覚の魔法書
+%%%%
+book of Blasting
+
+爆破の魔法書
+%%%%
+book of Iron
+
+鉄の魔法書
+%%%%
+book of the Tundra
+
+凍土の魔法書
+%%%%
+book of the Moon
+
+月の魔法書
+%%%%
+book of Storms
+
+嵐の魔法書
+%%%%
+book of Weapons
+
+武器の魔法書
+%%%%
+book of Sloth
+
+怠惰の魔法書
+%%%%
+book of Blood
+
+血の魔法書
+%%%%
+book of Dangerous Friends
+
+危険な友の魔法書
+%%%%
+book of Touch
+
+接触の魔法書
+%%%%
+book of Chaos
+
+混沌の魔法書
+%%%%
+book of the Hunter
+
+狩人の魔法書
+%%%%
+book of Scorching
+
+灼熱の魔法書
+%%%%
+book of Movement
+
+移動の魔法書
+%%%%
+book of Wicked Creation
+
+邪悪な創造の魔法書
+%%%%
+book of Maladies
+
+疾病の魔法書
+%%%%
+book of the Fortress
+
+城塞の魔法書
+%%%%
+book of Cryoformation
+
+氷造形の魔法書
+%%%%
+book of the Grave
+
+墓所の魔法書
+%%%%
+book of Metalworking
+
+金属細工の魔法書
+%%%%
+book of Duality
+
+二元の魔法書
+%%%%
+book of Contraptions
+
+からくりの魔法書
+%%%%
+Necronomicon
+
+ネクロノミコン
+%%%%
+Grand Grimoire
+
+グラン・グリモア
+%%%%
+Everburning Encyclopedia
+
+燃え尽きぬ百科事典
+%%%%
+Maxwell's Memoranda
+
+マクスウェルの覚書
+%%%%
+Young Poisoner's Handbook
+
+初級毒殺者の手引書
+%%%%
+Fen Folio
+
+沼沢の書
+%%%%
+There-And-Back Book
+
+行きて帰りし書
+%%%%
+Great Wizards, Vol. II
+
+大魔術師列伝 第二巻
+%%%%
+Great Wizards, Vol. VII
+
+大魔術師列伝 第七巻
+%%%%
+Trismegistus Codex
+
+トリスメギストス写本
+%%%%
+the Unrestrained Analects
+
+奔放なる論集
+%%%%
+Compendium of Siegecraft
+
+攻城術大全
+%%%%
+Codex of Conductivity
+
+伝導の写本
+%%%%
+Handbook of Applied Construction
+
+応用建築の手引書
+%%%%
+Treatise on Traps
+
+罠の論考
+%%%%
+My Sojourn through Swampland
+
+我が沼地滞在記
+# 削除済み(TAG_MAJOR_VERSION == 34)
+%%%%
+book of Transfigurations
+
+変容の魔法書
+%%%%
+book of Maledictions
+
+呪詛の魔法書
+%%%%
+book of the Sky
+
+蒼穹の魔法書
+%%%%
+book of Envenomations
+
+毒害の魔法書
+%%%%
+book of Control
+
+支配の魔法書
+%%%%
+book of Wizardry
+
+魔術の魔法書
+%%%%
+book of Pain
+
+苦痛の魔法書
+%%%%
+book of Rime
+
+霧氷の魔法書
+%%%%
+book of Stone
+
+石の魔法書
+%%%%
+tome of obsoleteness
+
+廃れた大冊
+%%%%
+Ozocubu's Autobiography
+
+オゾクブの自伝
+%%%%
+Inescapable Atlas
+
+逃れえぬ地図帳
+%%%%
+Akashic Record
+
+アカシック・レコード
+# 魔法の杖
+%%%%
+staff of wizardry
+
+魔術の杖
+%%%%
+staff of power
+
+魔力の杖
+%%%%
+staff of fire
+
+火炎の杖
+%%%%
+staff of cold
+
+冷気の杖
+%%%%
+staff of alchemy
+
+錬金術の杖
+%%%%
+staff of energy
+
+活力の杖
+%%%%
+staff of necromancy
+
+死霊術の杖
+%%%%
+staff of conjuration
+
+妖術の杖
+%%%%
+staff of enchantment
+
+呪術の杖
+%%%%
+staff of summoning
+
+召喚の杖
+%%%%
+staff of air
+
+大気の杖
+%%%%
+staff of earth
+
+大地の杖
+%%%%
+staff of channelling
+
+魔力吸収の杖
+# タリスマン
+%%%%
+quill talisman
+
+羽根ペンのタリスマン
+%%%%
+inkwell talisman
+
+インク壺のタリスマン
+%%%%
+protean talisman
+
+変幻のタリスマン
+%%%%
+rimehorn talisman
+
+霜角のタリスマン
+%%%%
+spider talisman
+
+蜘蛛のタリスマン
+%%%%
+wellspring talisman
+
+湧泉のタリスマン
+%%%%
+scarab talisman
+
+スカラベのタリスマン
+%%%%
+medusa talisman
+
+メドゥーサのタリスマン
+%%%%
+spore talisman
+
+胞子のタリスマン
+%%%%
+maw talisman
+
+大顎のタリスマン
+%%%%
+serpent talisman
+
+大蛇のタリスマン
+%%%%
+eel talisman
+
+鰻のタリスマン
+%%%%
+blade talisman
+
+刃のタリスマン
+%%%%
+lupine talisman
+
+人狼のタリスマン
+%%%%
+fortress talisman
+
+城塞のタリスマン
+%%%%
+granite talisman
+
+花崗岩のタリスマン
+%%%%
+hive talisman
+
+蜂の巣のタリスマン
+%%%%
+dragon-coil talisman
+
+竜のとぐろのタリスマン
+%%%%
+riddle talisman
+
+謎掛けのタリスマン
+%%%%
+sanguine talisman
+
+血のタリスマン
+%%%%
+talisman of death
+
+死のタリスマン
+%%%%
+death talisman
+
+死のタリスマン
+%%%%
+storm talisman
+
+嵐のタリスマン
+# ルーン・宝石
+%%%%
+rune of Zot
+
+ゾットのルーン
+%%%%
+iron rune of Zot
+
+鉄のルーン
+%%%%
+obsidian rune of Zot
+
+黒曜石のルーン
+%%%%
+icy rune of Zot
+
+氷のルーン
+%%%%
+bone rune of Zot
+
+骨のルーン
+%%%%
+slimy rune of Zot
+
+ぬめりのルーン
+%%%%
+silver rune of Zot
+
+銀のルーン
+%%%%
+serpentine rune of Zot
+
+蛇行のルーン
+%%%%
+elven rune of Zot
+
+エルフのルーン
+%%%%
+golden rune of Zot
+
+黄金のルーン
+%%%%
+decaying rune of Zot
+
+腐敗のルーン
+%%%%
+barnacled rune of Zot
+
+フジツボのルーン
+%%%%
+gossamer rune of Zot
+
+遊糸のルーン
+%%%%
+mossy rune of Zot
+
+苔のルーン
+%%%%
+demonic rune of Zot
+
+悪魔のルーン
+%%%%
+abyssal rune of Zot
+
+深淵のルーン
+%%%%
+glowing rune of Zot
+
+輝きのルーン
+%%%%
+magical rune of Zot
+
+魔法のルーン
+%%%%
+fiery rune of Zot
+
+火のルーン
+%%%%
+dark rune of Zot
+
+暗黒のルーン
+%%%%
+smoky gem
+
+煙った宝石
+%%%%
+glittering gem
+
+きらめく宝石
+%%%%
+shimmering gem
+
+揺らめく宝石
+%%%%
+earthy gem
+
+土色の宝石
+%%%%
+mossy gem
+
+苔むした宝石
+%%%%
+azure gem
+
+紺碧の宝石
+%%%%
+jade gem
+
+翡翠色の宝石
+%%%%
+milky-white gem
+
+乳白色の宝石
+%%%%
+starry gem
+
+星をちりばめた宝石
+%%%%
+shining gem
+
+輝く宝石
+%%%%
+ivory gem
+
+象牙色の宝石
+%%%%
+sanguine gem
+
+血の色の宝石
+%%%%
+midnight gem
+
+真夜中色の宝石
+%%%%
+prismatic gem
+
+虹色の宝石
+# 未鑑定品などの外見語(武器・防具)
+%%%%
+[item adj]runed
+
+ルーンが刻まれた
+%%%%
+[item adj]glowing
+
+輝く
+%%%%
+[item adj]embroidered
+
+刺繍された
+%%%%
+[item adj]shiny
+
+光る
+%%%%
+[item adj]dyed
+
+色で染められた
+# 武器のエゴ(ブランド)。[item adj]of <名前> は名前の前に付ける形、
+# [item adj terse]<略称> は HUD などの短い表示 "(火炎)"
+%%%%
+[item adj]of flaming
+
+火炎の
+%%%%
+[item adj]of freezing
+
+冷気の
+%%%%
+[item adj]of holy wrath
+
+神罰の
+%%%%
+[item adj]of electrocution
+
+電撃の
+%%%%
+[item adj]of venom
+
+毒液の
+%%%%
+[item adj]of protection
+
+護りの
+%%%%
+[item adj]of draining
+
+掠奪の
+%%%%
+[item adj]of speed
+
+早業の
+%%%%
+[item adj]of heavy
+
+重撃の
+%%%%
+[item adj]of vampirism
+
+吸血の
+%%%%
+[item adj]of pain
+
+苦痛の
+%%%%
+[item adj]of antimagic
+
+反魔法の
+%%%%
+[item adj]of distortion
+
+歪曲の
+%%%%
+[item adj]of chaos
+
+混沌の
+%%%%
+[item adj]of penetration
+
+貫通の
+%%%%
+[item adj]of reaping
+
+刈り取りの
+%%%%
+[item adj]of spectralising
+
+霊体化の
+%%%%
+[item adj]of rebuke
+
+叱責の
+%%%%
+[item adj]of valour
+
+武勇の
+%%%%
+[item adj]of entangling
+
+絡みつきの
+%%%%
+[item adj]of sundering
+
+断裂の
+%%%%
+[item adj]of concussion
+
+衝撃の
+%%%%
+[item adj]of devious
+
+狡猾な
+%%%%
+[item adj]of acid
+
+強酸の
+%%%%
+[item adj]of confusion
+
+混乱の
+%%%%
+[item adj]of weakness
+
+衰弱の
+%%%%
+[item adj]of vulnerability
+
+脆弱の
+%%%%
+[item adj]of foul flame
+
+穢れた炎の
+%%%%
+[item adj terse]flame
+
+火炎
+%%%%
+[item adj terse]freeze
+
+冷気
+%%%%
+[item adj terse]holy
+
+神罰
+%%%%
+[item adj terse]elec
+
+電撃
+%%%%
+[item adj terse]venom
+
+毒液
+%%%%
+[item adj terse]protect
+
+護り
+%%%%
+[item adj terse]drain
+
+掠奪
+%%%%
+[item adj terse]speed
+
+早業
+%%%%
+[item adj terse]heavy
+
+重撃
+%%%%
+[item adj terse]vamp
+
+吸血
+%%%%
+[item adj terse]pain
+
+苦痛
+%%%%
+[item adj terse]antimagic
+
+反魔法
+%%%%
+[item adj terse]distort
+
+歪曲
+%%%%
+[item adj terse]chaos
+
+混沌
+%%%%
+[item adj terse]penet
+
+貫通
+%%%%
+[item adj terse]reap
+
+刈り取り
+%%%%
+[item adj terse]spect
+
+霊体化
+%%%%
+[item adj terse]rebuke
+
+叱責
+%%%%
+[item adj terse]valour
+
+武勇
+%%%%
+[item adj terse]entangle
+
+絡みつき
+%%%%
+[item adj terse]sunder
+
+断裂
+%%%%
+[item adj terse]concuss
+
+衝撃
+%%%%
+[item adj terse]devious
+
+狡猾
+%%%%
+[item adj terse]acid
+
+強酸
+%%%%
+[item adj terse]confuse
+
+混乱
+%%%%
+[item adj terse]weak
+
+衰弱
+%%%%
+[item adj terse]vuln
+
+脆弱
+%%%%
+[item adj terse]foul flame
+
+穢れた炎
+# 防具のエゴ(名前の前に付ける。略称 rF+ などは英語のまま)
+%%%%
+[item adj]of fire resistance
+
+耐火の
+%%%%
+[item adj]of cold resistance
+
+耐冷の
+%%%%
+[item adj]of poison resistance
+
+耐毒の
+%%%%
+[item adj]of see invisible
+
+霊視の
+%%%%
+[item adj]of invisibility
+
+透明化の
+%%%%
+[item adj]of strength
+
+腕力の
+%%%%
+[item adj]of dexterity
+
+器用さの
+%%%%
+[item adj]of intelligence
+
+知性の
+%%%%
+[item adj]of ponderousness
+
+鈍重の
+%%%%
+[item adj]of flying
+
+飛行の
+%%%%
+[item adj]of willpower
+
+意志力の
+%%%%
+[item adj]of stealth
+
+隠密の
+%%%%
+[item adj]of resistance
+
+耐性の
+%%%%
+[item adj]of positive energy
+
+正の力の
+%%%%
+[item adj]of the Archmagi
+
+大賢者の
+%%%%
+[item adj]of corrosion resistance
+
+耐腐食の
+%%%%
+[item adj]of reflection
+
+反射の
+%%%%
+[item adj]of spirit shield
+
+精霊の盾の
+%%%%
+[item adj]of hurling
+
+投擲の
+%%%%
+[item adj]of repulsion
+
+反発の
+%%%%
+[item adj]of harm
+
+痛撃の
+%%%%
+[item adj]of shadows
+
+影の
+%%%%
+[item adj]of rampaging
+
+猛進の
+%%%%
+[item adj]of infusion
+
+魔力注入の
+%%%%
+[item adj]of light
+
+光の
+%%%%
+[item adj]of wrath
+
+激怒の
+%%%%
+[item adj]of mayhem
+
+騒乱の
+%%%%
+[item adj]of guile
+
+狡知の
+%%%%
+[item adj]of energy
+
+活力の
+%%%%
+[item adj]of sniping
+
+狙撃の
+%%%%
+[item adj]of ice
+
+氷の
+%%%%
+[item adj]of fire
+
+炎の
+%%%%
+[item adj]of air
+
+大気の
+%%%%
+[item adj]of earth
+
+大地の
+%%%%
+[item adj]of archery
+
+射手の
+%%%%
+[item adj]of command
+
+統率の
+%%%%
+[item adj]of death
+
+死の
+%%%%
+[item adj]of resonance
+
+共鳴の
+%%%%
+[item adj]of parrying
+
+受け流しの
+%%%%
+[item adj]of glass
+
+ガラスの
+%%%%
+[item adj]of pyromania
+
+放火魔の
+%%%%
+[item adj]of stardust
+
+星屑の
+%%%%
+[item adj]of mesmerism
+
+魅惑の
+%%%%
+[item adj]of attunement
+
+調律の
+# 飛び道具のブランド(missile_brand_name(item, MBN_BRAND) の訳。
+# 名前では「毒の矢」、terse では「矢 (毒)」)
+%%%%
+[missile brand]poison
+
+毒
+%%%%
+[missile brand]curare
+
+クラーレ毒
+%%%%
+[missile brand]datura
+
+ダチュラ毒
+%%%%
+[missile brand]atropa
+
+アトロパ毒
+%%%%
+[missile brand]silver
+
+銀
+%%%%
+[missile brand]chaos
+
+混沌
+%%%%
+[missile brand]dispersal
+
+離散
+%%%%
+[missile brand]disjunction
+
+分解
+%%%%
+[missile brand]obsolescence
+
+廃止
+# ワンドの外見
+%%%%
+[wand adj]jewelled
+
+宝飾された
+%%%%
+[wand adj]curved
+
+曲がった
+%%%%
+[wand adj]long
+
+長い
+%%%%
+[wand adj]short
+
+短い
+%%%%
+[wand adj]twisted
+
+捻れた
+%%%%
+[wand adj]crooked
+
+歪んだ
+%%%%
+[wand adj]forked
+
+二叉の
+%%%%
+[wand adj]shiny
+
+光る
+%%%%
+[wand adj]blackened
+
+黒光りする
+%%%%
+[wand adj]tapered
+
+先細りの
+%%%%
+[wand adj]glowing
+
+輝く
+%%%%
+[wand adj]worn
+
+使い古された
+%%%%
+[wand adj]encrusted
+
+飾りのついた
+%%%%
+[wand adj]runed
+
+ルーンが刻まれた
+%%%%
+[wand adj]sharpened
+
+先が尖った
+%%%%
+[wand adj]iron
+
+鉄の
+%%%%
+[wand adj]brass
+
+真鍮の
+%%%%
+[wand adj]bone
+
+骨の
+%%%%
+[wand adj]wooden
+
+木の
+%%%%
+[wand adj]copper
+
+銅の
+%%%%
+[wand adj]gold
+
+金の
+%%%%
+[wand adj]silver
+
+銀の
+%%%%
+[wand adj]bronze
+
+青銅の
+%%%%
+[wand adj]ivory
+
+象牙の
+%%%%
+[wand adj]glass
+
+ガラスの
+%%%%
+[wand adj]lead
+
+鉛の
+%%%%
+[wand adj]fluorescent
+
+蛍光を放つ
+# 薬の外見
+%%%%
+[potion adj]bubbling
+
+沸き立つ
+%%%%
+[potion adj]fuming
+
+刺激臭を放つ
+%%%%
+[potion adj]fizzy
+
+泡立つ
+%%%%
+[potion adj]viscous
+
+粘ついた
+%%%%
+[potion adj]lumpy
+
+波立つ
+%%%%
+[potion adj]smoky
+
+煙を立てる
+%%%%
+[potion adj]glowing
+
+輝く
+%%%%
+[potion adj]sedimented
+
+沈殿のできた
+%%%%
+[potion adj]metallic
+
+金属的な
+%%%%
+[potion adj]murky
+
+濁った
+%%%%
+[potion adj]gluggy
+
+ゴボゴボいう
+%%%%
+[potion adj]oily
+
+油っぽい
+%%%%
+[potion adj]slimy
+
+ドロドロした
+%%%%
+[potion adj]emulsified
+
+乳化した
+%%%%
+[potion adj]bug-filled
+
+虫入りの
+%%%%
+[potion adj]clear
+
+透明色の
+%%%%
+[potion adj]blue
+
+青い
+%%%%
+[potion adj]black
+
+黒い
+%%%%
+[potion adj]silvery
+
+銀色の
+%%%%
+[potion adj]cyan
+
+青緑の
+%%%%
+[potion adj]purple
+
+紫の
+%%%%
+[potion adj]orange
+
+オレンジ色の
+%%%%
+[potion adj]inky
+
+漆黒の
+%%%%
+[potion adj]red
+
+赤い
+%%%%
+[potion adj]yellow
+
+黄色い
+%%%%
+[potion adj]green
+
+緑色の
+%%%%
+[potion adj]brown
+
+茶色の
+%%%%
+[potion adj]ruby
+
+ルビー色の
+%%%%
+[potion adj]white
+
+白い
+%%%%
+[potion adj]emerald
+
+エメラルド色の
+%%%%
+[potion adj]grey
+
+灰色の
+%%%%
+[potion adj]pink
+
+ピンクの
+%%%%
+[potion adj]coppery
+
+赤褐色の
+%%%%
+[potion adj]golden
+
+金色の
+%%%%
+[potion adj]dark
+
+黒ずんだ
+%%%%
+[potion adj]puce
+
+暗赤色の
+%%%%
+[potion adj]amethyst
+
+アメジスト色の
+%%%%
+[potion adj]sapphire
+
+サファイア色の
+# 指輪の外見
+%%%%
+[ring adj]encrusted
+
+飾られた
+%%%%
+[ring adj]glowing
+
+輝く
+%%%%
+[ring adj]tubular
+
+管になった
+%%%%
+[ring adj]runed
+
+ルーンが刻まれた
+%%%%
+[ring adj]blackened
+
+真っ黒な
+%%%%
+[ring adj]scratched
+
+傷のある
+%%%%
+[ring adj]small
+
+小さな
+%%%%
+[ring adj]large
+
+大きな
+%%%%
+[ring adj]twisted
+
+曲がった
+%%%%
+[ring adj]shiny
+
+光る
+%%%%
+[ring adj]notched
+
+刻み目のついた
+%%%%
+[ring adj]knobbly
+
+でこぼこした
+%%%%
+[ring adj]wooden
+
+木の
+%%%%
+[ring adj]silver
+
+銀の
+%%%%
+[ring adj]golden
+
+金の
+%%%%
+[ring adj]iron
+
+鉄の
+%%%%
+[ring adj]steel
+
+鋼の
+%%%%
+[ring adj]tourmaline
+
+トルマリンの
+%%%%
+[ring adj]brass
+
+真鍮の
+%%%%
+[ring adj]copper
+
+銅の
+%%%%
+[ring adj]granite
+
+御影石の
+%%%%
+[ring adj]ivory
+
+象牙の
+%%%%
+[ring adj]ruby
+
+ルビーの
+%%%%
+[ring adj]marble
+
+大理石の
+%%%%
+[ring adj]jade
+
+翡翠の
+%%%%
+[ring adj]glass
+
+ガラスの
+%%%%
+[ring adj]agate
+
+めのうの
+%%%%
+[ring adj]bone
+
+骨の
+%%%%
+[ring adj]diamond
+
+ダイヤの
+%%%%
+[ring adj]emerald
+
+エメラルドの
+%%%%
+[ring adj]peridot
+
+ペリドットの
+%%%%
+[ring adj]garnet
+
+ガーネットの
+%%%%
+[ring adj]opal
+
+オパールの
+%%%%
+[ring adj]pearl
+
+真珠の
+%%%%
+[ring adj]coral
+
+サンゴの
+%%%%
+[ring adj]sapphire
+
+サファイアの
+%%%%
+[ring adj]cabochon
+
+トルコ石の
+%%%%
+[ring adj]gilded
+
+金メッキの
+%%%%
+[ring adj]onyx
+
+オニキスの
+%%%%
+[ring adj]bronze
+
+青銅の
+%%%%
+[ring adj]moonstone
+
+ムーンストーンの
+# 護符の外見
+%%%%
+[amulet adj]dented
+
+くぼんだ
+%%%%
+[amulet adj]square
+
+四角形の
+%%%%
+[amulet adj]thick
+
+厚い
+%%%%
+[amulet adj]thin
+
+薄い
+%%%%
+[amulet adj]runed
+
+ルーンが刻まれた
+%%%%
+[amulet adj]blackened
+
+黒ずんだ
+%%%%
+[amulet adj]glowing
+
+輝く
+%%%%
+[amulet adj]small
+
+小さな
+%%%%
+[amulet adj]large
+
+大きな
+%%%%
+[amulet adj]twisted
+
+捻れた
+%%%%
+[amulet adj]tiny
+
+ちっぽけな
+%%%%
+[amulet adj]triangular
+
+三角形の
+%%%%
+[amulet adj]lumpy
+
+でこぼこの
+%%%%
+[amulet adj]sapphire
+
+サファイアの
+%%%%
+[amulet adj]zirconium
+
+ジルコニウムの
+%%%%
+[amulet adj]golden
+
+金の
+%%%%
+[amulet adj]emerald
+
+エメラルドの
+%%%%
+[amulet adj]garnet
+
+ガーネットの
+%%%%
+[amulet adj]bronze
+
+青銅の
+%%%%
+[amulet adj]brass
+
+真鍮の
+%%%%
+[amulet adj]copper
+
+銅の
+%%%%
+[amulet adj]ruby
+
+ルビーの
+%%%%
+[amulet adj]citrine
+
+シトリンの
+%%%%
+[amulet adj]bone
+
+骨の
+%%%%
+[amulet adj]platinum
+
+プラチナの
+%%%%
+[amulet adj]jade
+
+翡翠の
+%%%%
+[amulet adj]fluorescent
+
+蛍光を放つ
+%%%%
+[amulet adj]amethyst
+
+アメジストの
+%%%%
+[amulet adj]cameo
+
+カメオ細工の
+%%%%
+[amulet adj]pearl
+
+真珠の
+%%%%
+[amulet adj]blue
+
+青い
+%%%%
+[amulet adj]peridot
+
+ペリドットの
+%%%%
+[amulet adj]jasper
+
+ジャスパーの
+%%%%
+[amulet adj]diamond
+
+ダイヤの
+%%%%
+[amulet adj]malachite
+
+孔雀石の
+%%%%
+[amulet adj]steel
+
+鋼の
+%%%%
+[amulet adj]cabochon
+
+トルコ石の
+%%%%
+[amulet adj]silver
+
+銀の
+%%%%
+[amulet adj]soapstone
+
+石鹸石の
+%%%%
+[amulet adj]lapis lazuli
+
+ラピスラズリの
+%%%%
+[amulet adj]filigree
+
+線条細工の
+%%%%
+[amulet adj]beryl
+
+緑柱石の
+# 魔法の杖の外見
+%%%%
+[staff adj]crooked
+
+歪んだ
+%%%%
+[staff adj]knobbly
+
+節くれだった
+%%%%
+[staff adj]weird
+
+奇妙な
+%%%%
+[staff adj]gnarled
+
+ごつごつした
+%%%%
+[staff adj]thin
+
+細い
+%%%%
+[staff adj]curved
+
+曲がった
+%%%%
+[staff adj]twisted
+
+ねじれた
+%%%%
+[staff adj]thick
+
+太い
+%%%%
+[staff adj]long
+
+長い
+%%%%
+[staff adj]short
+
+短い
+%%%%
+[staff adj]glowing
+
+輝く
+%%%%
+[staff adj]jewelled
+
+宝飾の
+%%%%
+[staff adj]runed
+
+ルーンが刻まれた
+%%%%
+[staff adj]smoking
+
+煙を上げる
+# 助数詞: 分類ごと([counter class]<base_type_string>)
+%%%%
+[counter class]weapon
+
+本
+%%%%
+[counter class]missile
+
+本
+%%%%
+[counter class]armour
+
+着
+%%%%
+[counter class]wand
+
+本
+%%%%
+[counter class]scroll
+
+巻
+%%%%
+[counter class]jewellery
+
+個
+%%%%
+[counter class]potion
+
+本
+%%%%
+[counter class]book
+
+冊
+%%%%
+[counter class]staff
+
+本
+%%%%
+[counter class]orb
+
+個
+%%%%
+[counter class]miscellaneous
+
+個
+%%%%
+[counter class]corpse
+
+体
+%%%%
+[counter class]gold
+
+枚
+%%%%
+[counter class]rune
+
+個
+%%%%
+[counter class]gem
+
+個
+%%%%
+[counter class]talisman
+
+個
+%%%%
+[counter class]gizmo
+
+個
+%%%%
+[counter class]bauble
+
+個
+# 助数詞: 種類ごと([counter]<sub_type_string>。分類の既定と違うもの)
+%%%%
+[counter]dagger
+
+振
+%%%%
+[counter]quick blade
+
+振
+%%%%
+[counter]short sword
+
+振
+%%%%
+[counter]rapier
+
+振
+%%%%
+[counter]falchion
+
+振
+%%%%
+[counter]long sword
+
+振
+%%%%
+[counter]scimitar
+
+振
+%%%%
+[counter]demon blade
+
+振
+%%%%
+[counter]eudemon blade
+
+振
+%%%%
+[counter]double sword
+
+振
+%%%%
+[counter]great sword
+
+振
+%%%%
+[counter]triple sword
+
+振
+%%%%
+[counter]hand axe
+
+挺
+%%%%
+[counter]war axe
+
+挺
+%%%%
+[counter]broad axe
+
+挺
+%%%%
+[counter]battleaxe
+
+挺
+%%%%
+[counter]executioner's axe
+
+挺
+%%%%
+[counter]shortbow
+
+張
+%%%%
+[counter]orcbow
+
+張
+%%%%
+[counter]longbow
+
+張
+%%%%
+[counter]arbalest
+
+張
+%%%%
+[counter]triple crossbow
+
+張
+%%%%
+[counter]hand cannon
+
+挺
+%%%%
+[counter]stone
+
+個
+%%%%
+[counter]large rock
+
+個
+%%%%
+[counter]sling bullet
+
+発
+%%%%
+[counter]slug
+
+発
+%%%%
+[counter]throwing net
+
+枚
+%%%%
+[counter]boomerang
+
+個
+%%%%
+[counter]animal skin
+
+枚
+%%%%
+[counter]scarf
+
+枚
+%%%%
+[counter]gloves
+
+組
+%%%%
+[counter]boots
+
+足
+%%%%
+[counter]helmet
+
+個
+%%%%
+[counter]cap
+
+個
+%%%%
+[counter]hat
+
+個
+%%%%
+[counter]orb
+
+個
+%%%%
+[counter]buckler
+
+枚
+%%%%
+[counter]kite shield
+
+枚
+%%%%
+[counter]tower shield
+
+枚
+%%%%

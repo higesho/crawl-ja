@@ -12,6 +12,7 @@
                      (FILE 省略時は全ソース)
   harvest FILE...    FILE の未訳キーのうち、旧辞書に同じキーがあるものを
                      dat/database/ja/jtrans/<FILE の拡張子なし>.txt に追記
+  dups               辞書ファイル間で重複しているキーを表示
   wrap FILE...       mpr("...") などの定型パターンの英文を機械的に
                      jtrans/jtransc で包む(残りは手で包む)
 
@@ -437,18 +438,21 @@ def cmd_wrap(args):
             code = fp.read()
         new, n = wrap_text(code)
         if n and '#include "database.h"' not in new:
-            new = _add_include(new, 'database.h')
+            own = os.path.splitext(os.path.basename(path))[0] + '.h'
+            new = _add_include(new, 'database.h', own)
         if new != code:
             with open(path, 'w', encoding='utf-8', newline='') as fp:
                 fp.write(new)
         print(f'{path}: {n} 箇所を包んだ')
 
 
-def _add_include(code, header):
-    """#include 群のアルファベット順の位置に header を足す。"""
+def _add_include(code, header, own=None):
+    """#include 群のアルファベット順の位置に header を足す。
+    ファイル自身のヘッダ(own)は先頭に置かれる慣習なので比較対象から外す。"""
     lines = code.split('\n')
     incs = [i for i, l in enumerate(lines)
-            if re.match(r'#include "(?!AppHdr)', l)]
+            if re.match(r'#include "(?!AppHdr)', l)
+            and not (own and l.startswith(f'#include "{own}"'))]
     if not incs:
         return code
     nl = '\r' if lines[0].endswith('\r') else ''
@@ -462,6 +466,26 @@ def _add_include(code, header):
     return '\n'.join(lines)
 
 
+def cmd_dups(args):
+    """辞書ファイル間・ファイル内で重複しているキーを表示する。"""
+    seen = {}
+    for f in sorted(os.listdir(DICT_DIR)):
+        if not f.endswith('.txt'):
+            continue
+        with open(os.path.join(DICT_DIR, f), encoding='utf-8') as fp:
+            for k, v in parse_db(fp.read()):
+                seen.setdefault(k.lower(), []).append((f, v))
+    n = 0
+    for k, vals in sorted(seen.items()):
+        if len(vals) < 2:
+            continue
+        n += 1
+        same = len({v for _, v in vals}) == 1
+        print(f'{k!r}: ' + ', '.join(f for f, _ in vals)
+              + ('(訳は同じ)' if same else '(訳が異なる)'))
+    print(f'重複キー: {n}')
+
+
 def main():
     if not os.path.isdir(SRC):
         sys.exit('リポジトリのルートで実行してください')
@@ -470,7 +494,8 @@ def main():
     cmd, args = sys.argv[1], sys.argv[2:]
     sys.stdout.reconfigure(encoding='utf-8')
     {'old': cmd_old, 'olddict': cmd_olddict, 'find': cmd_find,
-     'check': cmd_check, 'harvest': cmd_harvest, 'wrap': cmd_wrap}[cmd](args)
+     'check': cmd_check, 'harvest': cmd_harvest, 'wrap': cmd_wrap,
+     'dups': cmd_dups}[cmd](args)
 
 
 if __name__ == '__main__':

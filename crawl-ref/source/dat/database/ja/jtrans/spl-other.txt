@@ -1,0 +1,130 @@
+%%%%
+You can't draw power from your own body while in death's door.
+
+あなたは死のとば口に立っている間は自身の力を引き出すことができない。
+%%%%
+Your body is bloodless.
+
+あなたの体には血が通っていない。
+%%%%
+Your attempt to draw power from your own body fails.
+
+あなたは自身の力を引き出そうとしたが失敗した。
+%%%%
+You draw magical energy from your own body!
+
+あなたは魔力を自らの体から引き出した！
+%%%%
+Malign forces permeate your being, awaiting release.
+
+邪悪な力があなたの体に満ち、解き放たれるのを待っている。
+%%%%
+Nothing appears to have answered your call.
+
+あなたの呼びかけに応えるものはいなかった。
+%%%%
+is recalled.
+
+が呼び出された。
+%%%%
+This rock feels extremely deep.
+
+この岩は非常に厚く感じられる。
+%%%%
+You sense an overwhelming volume of rock.
+
+あなたは岩の量に圧倒された。
+%%%%
+Something is blocking your path through the rock.
+
+何かが岩を通り抜けるのを邪魔している。
+%%%%
+You sense an intense heat on the other side of the rock.
+
+あなたは壁の向こう側にある高熱の物体を感じ取った。
+%%%%
+looks rather confused.
+
+は混乱したようだ。
+%%%%
+You attempt to intoxicate your foes!
+
+あなたは敵を酔っ払わせようとした！
+%%%%
+The world spins around you!
+
+世界があなたを中心に回転した！
+%%%%
+You dismiss your zombies and call upon the dead to rise afresh.
+
+あなたはゾンビたちを退去させ、改めて死者たちに蘇るよう呼びかけた。
+%%%%
+You call upon the dead to rise.
+
+あなたは死者たちに蘇るよう呼びかけた。
+%%%%
+Please select a wall.
+
+壁を選択してください。
+%%%%
+There is no adjacent passable wall in that direction.
+
+その方向には隣接する通り抜け可能な壁がない。
+%%%%
+You sense a deep body of water on the other side of the rock.
+
+あなたは壁の向こう側に深い水があるのを感じた。
+%%%%
+There was nowhere nearby to inscribe sigils!
+
+近くに印を刻める場所がなかった！
+%%%%
+You inscribe a pair of binding sigils.
+
+あなたは束縛の印を2つ刻んだ。
+%%%%
+You inscribe a binding sigil.
+
+あなたは束縛の印を刻んだ。
+%%%%
+You slip past the binding sigil.
+
+あなたは束縛の印の上をすり抜けた。
+%%%%
+%s cannot be bound by the sigil due to its high momentum!
+
+%sは勢いがつきすぎていて、印に束縛されなかった！
+%%%%
+You move over the binding sigil and are bound in place!
+
+あなたは束縛の印の上に乗り、その場に縛りつけられた！
+%%%%
+moves over the binding sigil and is bound in place!
+
+は束縛の印の上に乗り、その場に縛りつけられた！
+%%%%
+You shape a spike launcher from a nearby wall.
+
+あなたは近くの壁から棘射出機を形作った。
+%%%%
+Your spike launcher falls apart as you grow too distant to maintain it.
+
+離れすぎて維持できなくなり、あなたの棘射出機は崩れ去った。
+%%%%
+Your spike launcher falls apart.
+
+あなたの棘射出機は崩れ去った。
+%%%%
+# _fire_spike_launcher() で beam.name に入れるビーム名(beam.cc で zap_name_j で引く前提)
+[zap]stone spike
+
+石の棘
+%%%%
+[zap]metal spike
+
+金属の棘
+%%%%
+[zap]crystalline spike
+
+水晶の棘
+%%%%

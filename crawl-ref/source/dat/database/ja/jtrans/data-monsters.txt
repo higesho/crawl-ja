@@ -1,0 +1,3108 @@
+%%%%
+################################################################
+#   mon-data.h のモンスター名(キーはタグなしの英語名)
+#   ユニークの名前は『』で囲む。旧訳(0.19-ja)に合わせる。
+################################################################
+%%%%
+acid blob
+
+酸のブロブ
+%%%%
+acid dragon
+
+アシッドドラゴン
+%%%%
+adder
+
+マムシ
+%%%%
+Agnes
+
+『アグネス』
+%%%%
+air elemental
+
+大気の精霊
+%%%%
+Aizul
+
+『アイズル』
+%%%%
+alderking
+
+ハンノキの王
+%%%%
+alligator
+
+アリゲーター
+%%%%
+alligator snapping turtle
+
+ワニガメ
+%%%%
+Amaemon
+
+『アマイモン』
+%%%%
+anaconda
+
+アナコンダ
+%%%%
+ancestor
+
+祖霊
+%%%%
+ancient champion
+
+太古の王者
+%%%%
+ancient lich
+
+太古のリッチ
+%%%%
+ancient zyme
+
+太古の疫病
+%%%%
+angel
+
+天使
+%%%%
+animated tree
+
+活性化された木
+%%%%
+Antaeus
+
+『アンテウス』
+%%%%
+antique champion
+
+古代の王者
+%%%%
+apis
+
+アピス
+%%%%
+apocalypse crab
+
+黙示録の蟹
+%%%%
+Arachne
+
+『アラクネ』
+%%%%
+arcanist
+
+秘術師
+%%%%
+armataur
+
+アーマトール
+%%%%
+armour echo
+
+鎧の残響
+%%%%
+Asmodeus
+
+『アスモデウス』
+%%%%
+aspiring flesh
+
+渇望する肉塊
+%%%%
+Asterion
+
+『アステリオン』
+%%%%
+Azrael
+
+『アズラエル』
+%%%%
+azure jelly
+
+紺碧ジェリー
+%%%%
+Bai Suzhen
+
+『白娘子』
+%%%%
+ball lightning
+
+球雷
+%%%%
+ball python
+
+ニシキヘビ
+%%%%
+ballistomycete
+
+放出菌糸
+%%%%
+ballistomycete spore
+
+放出菌糸の胞子
+%%%%
+balrug
+
+バルログ
+%%%%
+barachi
+
+バラキ
+%%%%
+basilisk
+
+バジリスク
+%%%%
+bat
+
+コウモリ
+%%%%
+battlemage
+
+魔法使い
+%%%%
+battlesphere
+
+戦闘球
+%%%%
+bear
+
+熊
+%%%%
+bennu
+
+ベンヌ
+%%%%
+bes kemwar
+
+ベス・ケムワル
+%%%%
+black bear
+
+黒熊
+%%%%
+black draconian
+
+黒色ドラコニアン
+%%%%
+black mamba
+
+ブラックマンバ
+%%%%
+blazeheart core
+
+灼熱の核
+%%%%
+blazeheart golem
+
+灼心のゴーレム
+%%%%
+blink frog
+
+またたきガエル
+%%%%
+blizzard demon
+
+氷河の悪魔
+%%%%
+bloated husk
+
+膨れた抜け殻
+%%%%
+block of ice
+
+氷の塊
+%%%%
+Blorkula the orcula
+
+『吸血オークのブロークラ』
+%%%%
+bog body
+
+湿地の屍骸
+%%%%
+boggart
+
+ボガート
+%%%%
+bombardier beetle
+
+ミイデラゴミムシ
+%%%%
+bomblet
+
+小型爆弾
+%%%%
+bone dragon
+
+骸骨ドラゴン
+%%%%
+Boris
+
+『ボリス』
+%%%%
+boulder
+
+大岩
+%%%%
+boulder beetle
+
+岩石の甲虫
+%%%%
+bound soul
+
+呪縛された魂
+%%%%
+boundless tesseract
+
+果てなきテッセラクト
+%%%%
+brain worm
+
+脳髄ワーム
+%%%%
+briar patch
+
+荊棘
+%%%%
+Brimstone Fiend
+
+硫黄の魔神
+%%%%
+broodmother
+
+母蜘蛛
+%%%%
+bullfrog
+
+巨大ウシガエル
+%%%%
+bunyip
+
+バニップ
+%%%%
+burial acolyte
+
+葬儀の侍祭
+%%%%
+burstshroom
+
+破裂キノコ
+%%%%
+bush
+
+藪
+%%%%
+butterfly
+
+蝶
+%%%%
+cacodemon
+
+混沌の悪鬼
+%%%%
+cactus giant
+
+サボテンの巨人
+%%%%
+cane toad
+
+オオヒキガエル
+%%%%
+Cassandra
+
+『カサンドラ』
+%%%%
+catoblepas
+
+カトブレパス
+%%%%
+caustic shrike
+
+焼酸の百舌
+%%%%
+caustic sporangium
+
+焼酸の胞子嚢
+%%%%
+centaur
+
+セントール
+%%%%
+centaur warrior
+
+セントールの戦士
+%%%%
+Cerebov
+
+『セレボブ』
+%%%%
+cerulean imp
+
+空色インプ
+%%%%
+chaos spawn
+
+混沌の落とし子
+%%%%
+cherub
+
+ケルビム
+%%%%
+chonchon
+
+チョンチョン
+%%%%
+Chuck
+
+『チャック』
+%%%%
+clockroach
+
+時計仕掛けのゴキブリ
+%%%%
+clockwork bee
+
+時計仕掛けの蜂
+%%%%
+Cloud Mage
+
+雲烟の魔術師
+%%%%
+cognitogaunt
+
+コグニトゴーント
+%%%%
+colossal amoeba
+
+巨大アメーバ
+%%%%
+crab
+
+カニ
+%%%%
+crawling flesh cage
+
+這い回る肉の檻
+%%%%
+Crazy Yiuf
+
+『狂人ヰゥフ』
+%%%%
+creeping inferno
+
+這い寄る業火
+%%%%
+creeping plasmodium
+
+這い寄る変形体
+%%%%
+crimson imp
+
+赤インプ
+%%%%
+crocodile
+
+クロコダイル
+%%%%
+crystal echidna
+
+水晶ハリモグラ
+%%%%
+crystal guardian
+
+水晶の守護者
+%%%%
+culicivora
+
+クリシボラ
+%%%%
+curse skull
+
+呪いの頭蓋骨
+%%%%
+curse toe
+
+呪いの足指
+%%%%
+cyclops
+
+サイクロプス
+%%%%
+daeva
+
+デーヴァ
+%%%%
+dancing weapon
+
+宙を舞う武器
+%%%%
+dart slug
+
+矢投げナメクジ
+%%%%
+death cob
+
+殺人トウモロコシ
+%%%%
+death drake
+
+デスドレイク
+%%%%
+death knight
+
+死の騎士
+%%%%
+death scarab
+
+死の太陽虫
+%%%%
+death yak
+
+人食いヤク
+%%%%
+deathcap
+
+殺人キノコ
+%%%%
+deep elf annihilator
+
+闇エルフの破壊者
+%%%%
+deep elf archer
+
+闇エルフの射手
+%%%%
+deep elf blademaster
+
+闇エルフの剣豪
+%%%%
+deep elf death mage
+
+闇エルフの死の魔術師
+%%%%
+deep elf demonologist
+
+闇エルフの悪魔術師
+%%%%
+deep elf elementalist
+
+闇エルフの精霊使い
+%%%%
+deep elf high priest
+
+闇エルフの大司祭
+%%%%
+deep elf knight
+
+闇エルフの騎士
+%%%%
+deep elf master archer
+
+闇エルフの達人射手
+%%%%
+deep elf pyromancer
+
+闇エルフの炎術師
+%%%%
+deep elf sorcerer
+
+闇エルフの魔道士
+%%%%
+deep elf zephyrmancer
+
+闇エルフの風術師
+%%%%
+deep troll
+
+洞窟トロル
+%%%%
+deep troll earth mage
+
+洞窟トロルの地術師
+%%%%
+deep troll shaman
+
+洞窟トロルの祈祷師
+%%%%
+demigod
+
+神々の末裔
+%%%%
+demonic crawler
+
+ムカデの悪魔
+%%%%
+demonic plant
+
+禍々しい形の迷宮草
+%%%%
+demonspawn
+
+悪魔の血族
+%%%%
+demonspawn blood saint
+
+悪魔の血族の血の聖者
+%%%%
+demonspawn corrupter
+
+悪魔の血族の堕落者
+%%%%
+demonspawn soul scholar
+
+悪魔の血族の魂学者
+%%%%
+demonspawn warmonger
+
+悪魔の血族の戦争屋
+%%%%
+diamond obelisk
+
+金剛石の方尖塔
+%%%%
+diamond sawblade
+
+金剛石の回転刃
+%%%%
+dire elephant
+
+凶暴化した象
+%%%%
+Dispater
+
+『ディスペータ』
+%%%%
+Dissolution
+
+『溶解者』
+%%%%
+djinni
+
+ジン
+%%%%
+Donald
+
+『ドナルド』
+%%%%
+dormant clockwork bee
+
+休止中の時計仕掛けの蜂
+%%%%
+Dowan
+
+『ドウェン』
+%%%%
+draconian
+
+ドラコニアン
+%%%%
+draconian annihilator
+
+ドラコニアンの破壊者
+%%%%
+draconian knight
+
+ドラコニアンの騎士
+%%%%
+draconian monk
+
+ドラコニアンの修行僧
+%%%%
+draconian scorcher
+
+ドラコニアンの焼却者
+%%%%
+draconian shifter
+
+ドラコニアンの移相者
+%%%%
+draconian stormcaller
+
+ドラコニアンの嵐招き
+%%%%
+dragon
+
+ドラゴン
+%%%%
+drake
+
+ドレイク
+%%%%
+draugr
+
+ドラウグル
+%%%%
+dread lich
+
+恐怖のリッチ
+%%%%
+dream sheep
+
+眠りの羊
+%%%%
+drowned soul
+
+水死者の魂
+%%%%
+drude
+
+ドルーデ
+%%%%
+dryad
+
+ドライアド
+%%%%
+Duvessa
+
+『デュヴェッサ』
+%%%%
+dwarf
+
+ドワーフ
+%%%%
+earth elemental
+
+大地の精霊
+%%%%
+easy sensed monster
+
+感知済みの弱いモンスター
+%%%%
+Edmund
+
+『エドマンド』
+%%%%
+efreet
+
+イフリート
+%%%%
+eidolon
+
+アイドロン
+%%%%
+eldritch tentacle
+
+別次元の触手
+%%%%
+eldritch tentacle segment
+
+触手の一部
+%%%%
+electric eel
+
+電気ウナギ
+%%%%
+electric golem
+
+電気のゴーレム
+%%%%
+eleionoma
+
+エレイオノマ
+%%%%
+elemental
+
+精霊
+%%%%
+elemental wellspring
+
+精霊の源泉
+%%%%
+elephant
+
+象
+%%%%
+elephant slug
+
+象ナメクジ
+%%%%
+elf
+
+エルフ
+%%%%
+emperor scorpion
+
+皇帝サソリ
+%%%%
+Enchantress
+
+『女呪術師』
+%%%%
+endoplasm
+
+内質
+%%%%
+entropy weaver
+
+エントロピーの編み手
+%%%%
+Ereshkigal
+
+『エレシュキガル』
+%%%%
+Erica
+
+『エリカ』
+%%%%
+Erolcha
+
+『エロルカ』
+%%%%
+erythrospite
+
+エリスロスパイト
+%%%%
+ettin
+
+エティン
+%%%%
+Eustachio
+
+『エウスタキオ』
+%%%%
+Executioner
+
+処刑の悪魔
+%%%%
+eye of devastation
+
+破滅の眼球
+%%%%
+eye of draining
+
+掠奪の巨大眼球
+%%%%
+Fannar
+
+『ファンナール』
+%%%%
+faun
+
+ファウヌス
+%%%%
+felid
+
+フェリッド
+%%%%
+fenstrider witch
+
+沼渡りの魔女
+%%%%
+fire bat
+
+火炎コウモリ
+%%%%
+fire crab
+
+火吹き蟹
+%%%%
+fire dragon
+
+ファイアドラゴン
+%%%%
+fire elemental
+
+火の精霊
+%%%%
+fire giant
+
+炎の巨人
+%%%%
+fire vortex
+
+炎の渦
+%%%%
+flayed ghost
+
+皮剥げ幽霊
+%%%%
+floating eye
+
+浮遊する巨大眼球
+%%%%
+formicid
+
+フォーミシッド
+%%%%
+formless jellyfish
+
+形なきクラゲ
+%%%%
+foxfire
+
+狐火
+%%%%
+Frances
+
+『フランセス』
+%%%%
+fravashi
+
+フラワシ
+%%%%
+Frederick
+
+『フレデリック』
+%%%%
+freezing wraith
+
+凍気のレイス
+%%%%
+friendly sensed monster
+
+感知済みの友好的なモンスター
+%%%%
+frilled lizard
+
+巨大エリマキトカゲ
+%%%%
+frost giant
+
+霜の巨人
+%%%%
+fulminant prism
+
+爆発性の晶柱
+%%%%
+fungus
+
+お化けキノコ
+%%%%
+gargoyle
+
+ガーゴイル
+%%%%
+Gastronok
+
+『ガストロノク』
+%%%%
+Geryon
+
+『ゲリュオン』
+%%%%
+ghost
+
+幽霊
+%%%%
+ghost crab
+
+幽霊蟹
+%%%%
+ghost moth
+
+幽体蛾
+%%%%
+ghoul
+
+グール
+%%%%
+giant
+
+巨人
+%%%%
+giant frog
+
+巨大ガエル
+%%%%
+giant lizard
+
+巨大トカゲ
+%%%%
+glass eye
+
+ガラスの眼球
+%%%%
+globe of annihilation
+
+消滅の球体
+%%%%
+Gloorx Vloq
+
+『グロオルクス・ヴロック』
+%%%%
+glowing orange brain
+
+輝くオレンジ色の脳髄
+%%%%
+glowing shapeshifter
+
+暴走した変身能力者
+%%%%
+gnoll
+
+ノール
+%%%%
+gnoll bouda
+
+ノールのブーダ
+%%%%
+gnoll sergeant
+
+ノールの軍曹
+%%%%
+goblin
+
+ゴブリン
+%%%%
+goblin rider
+
+ゴブリンの騎手
+%%%%
+god wrath avatar
+
+神の怒りの化身
+%%%%
+golden dragon
+
+ゴールドドラゴン
+%%%%
+golden eye
+
+黄金の眼球
+%%%%
+golem
+
+ゴーレム
+%%%%
+goliath frog
+
+ゴライアスガエル
+%%%%
+great orb of eyes
+
+あまたの目の球体
+%%%%
+green death
+
+緑の殲滅者
+%%%%
+green draconian
+
+緑色ドラコニアン
+%%%%
+grey draconian
+
+灰色ドラコニアン
+%%%%
+Grinder
+
+『グラインダー』
+%%%%
+Grum
+
+『グルム』
+%%%%
+Grunn
+
+『グルン』
+%%%%
+guardian mummy
+
+衛兵のミイラ
+%%%%
+guardian serpent
+
+守護の大蛇
+%%%%
+guardian sphinx
+
+守護のスフィンクス
+%%%%
+halazid warlock
+
+ハラジッドの魔法使い
+%%%%
+halfling
+
+ハーフリング
+%%%%
+Harold
+
+『ハロルド』
+%%%%
+harpy
+
+ハーピー
+%%%%
+haunted armour
+
+取り憑かれた鎧
+%%%%
+Head Instructor
+
+『主任教官』
+%%%%
+hell hog
+
+地獄の豚
+%%%%
+hell hound
+
+ヘルハウンド
+%%%%
+hell knight
+
+地獄の騎士
+%%%%
+hell lord
+
+地獄の君主
+%%%%
+hell rat
+
+ヘルラット
+%%%%
+Hell Sentinel
+
+地獄の番人
+%%%%
+Hellbinder
+
+地獄を束ねしもの
+%%%%
+hellephant
+
+地獄の象
+%%%%
+hellfire mortar
+
+業火の迫撃砲
+%%%%
+hellion
+
+ヘリオン
+%%%%
+hellwing
+
+ヘルウィング
+%%%%
+hexer
+
+呪術師
+%%%%
+hippogriff
+
+ヒポグリフ
+%%%%
+hoarfrost cannon
+
+霜の大砲
+%%%%
+hobgoblin
+
+ホブゴブリン
+%%%%
+hog
+
+豚
+%%%%
+holy swine
+
+聖なる光豚
+%%%%
+hornet
+
+巨大赤色蜂
+%%%%
+hound
+
+ハウンド
+%%%%
+howler monkey
+
+ホエザル
+%%%%
+human
+
+人間
+%%%%
+hydra
+
+ヒドラ
+%%%%
+ice beast
+
+氷の獣
+%%%%
+ice devil
+
+氷の悪魔
+%%%%
+ice dragon
+
+アイスドラゴン
+%%%%
+Ice Fiend
+
+氷の魔神
+%%%%
+ice statue
+
+氷の像
+%%%%
+Ignacio
+
+『イグナシオ』
+%%%%
+iguana
+
+イグアナ
+%%%%
+Ijyb
+
+『イジェィブ』
+%%%%
+Ilsuiw
+
+『イルスィウ』
+%%%%
+imperial myrmidon
+
+帝国の護衛兵
+%%%%
+inugami
+
+犬神
+%%%%
+iron dragon
+
+鉄ドラゴン
+%%%%
+iron elemental
+
+鉄の精霊
+%%%%
+iron giant
+
+鉄の巨人
+%%%%
+iron golem
+
+鉄のゴーレム
+%%%%
+iron imp
+
+鉄インプ
+%%%%
+iron troll
+
+鉄トロル
+%%%%
+ironbound beastmaster
+
+鉄縛の猛獣使い
+%%%%
+ironbound convoker
+
+鉄縛の招集者
+%%%%
+ironbound frostheart
+
+鉄縛の凍心者
+%%%%
+ironbound mechanist
+
+鉄縛の機械技師
+%%%%
+ironbound preserver
+
+鉄縛の保護者
+%%%%
+ironbound thunderhulk
+
+鉄縛の雷巨人
+%%%%
+jackal
+
+ジャッカル
+%%%%
+jelly
+
+ジェリー
+%%%%
+Jeremiah
+
+『ジェレマイア』
+%%%%
+Jessica
+
+『ジェシカ』
+%%%%
+jiangshi
+
+僵尸
+%%%%
+Jorgrun
+
+『ジョーグルン』
+%%%%
+jorogumo
+
+女郎蜘蛛
+%%%%
+Jory
+
+『ジョリー』
+%%%%
+Joseph
+
+『ジョセフ』
+%%%%
+Josephina
+
+『ジョセフィーナ』
+%%%%
+Josephine
+
+『ジョセフィーヌ』
+%%%%
+juggernaut
+
+ジャガーノート
+%%%%
+jumping spider
+
+飛びつき蜘蛛
+%%%%
+Khufu
+
+『クフ王』
+%%%%
+killer bee
+
+殺人蜂
+%%%%
+Killer Klown
+
+殺人ピエロ
+%%%%
+Kirke
+
+『キルケー』
+%%%%
+knight
+
+騎士
+%%%%
+kobold
+
+コボルド
+%%%%
+kobold blastminer
+
+コボルドの発破工
+%%%%
+kobold brigand
+
+コボルドの山賊
+%%%%
+kobold demonologist
+
+コボルドの悪魔術師
+%%%%
+kobold fleshcrafter
+
+コボルドの肉細工師
+%%%%
+kobold geomancer
+
+コボルドの地術師
+%%%%
+komodo dragon
+
+コモドドラゴン
+%%%%
+kraken
+
+クラーケン
+%%%%
+large abomination
+
+大型の忌まわしきもの
+%%%%
+laughing skull
+
+笑う頭蓋骨
+%%%%
+lava snake
+
+溶岩蛇
+%%%%
+lemure
+
+レムレース
+%%%%
+Lernaean hydra
+
+『レルネーのヒドラ』
+%%%%
+lich
+
+リッチ
+%%%%
+lightning spire
+
+稲妻の渦巻
+%%%%
+lindwurm
+
+リンドヴルム
+%%%%
+living spell
+
+生ける呪文
+%%%%
+Lodul
+
+『ロドゥル』
+%%%%
+Lom Lobon
+
+『ロム・ロボン』
+%%%%
+lost soul
+
+滅亡せる霊魂
+%%%%
+Louise
+
+『ルイーズ』
+%%%%
+lurking horror
+
+潜伏する恐怖
+%%%%
+Maggie
+
+『マギー』
+%%%%
+malarious merfolk avatar
+
+病んだ水棲の民の生き神
+%%%%
+mana viper
+
+マナバイパー
+%%%%
+manticore
+
+マンティコア
+%%%%
+Mara
+
+『マーラ』
+%%%%
+Margery
+
+『マージェリー』
+%%%%
+marrowcuda
+
+マロウクーダ
+%%%%
+martyred shade
+
+殉教者の影
+%%%%
+Maurice
+
+『モーリス』
+%%%%
+meliai
+
+メリアイ
+%%%%
+Menkaure
+
+『メンカウラー王』
+%%%%
+Mennas
+
+『メナス』
+%%%%
+merfolk
+
+水棲の民
+%%%%
+merfolk aquamancer
+
+水棲の民の水占術師
+%%%%
+merfolk avatar
+
+水棲の民の生き神
+%%%%
+merfolk impaler
+
+水棲の民の刺殺者
+%%%%
+merfolk javelineer
+
+水棲の民の投槍兵
+%%%%
+merfolk siren
+
+水棲の民のセイレーン
+%%%%
+meteoran
+
+メテオラン
+%%%%
+minotaur
+
+ミノタウロス
+%%%%
+Mlioglotl
+
+『ムリオグロトル』
+%%%%
+Mnoleg
+
+『ムノレグ』
+%%%%
+molten gargoyle
+
+溶岩ガーゴイル
+%%%%
+monarch bomb
+
+親玉爆弾
+%%%%
+moon troll
+
+月世界のトロル
+%%%%
+morphogenic ooze
+
+形態形成ウーズ
+%%%%
+moth
+
+蛾
+%%%%
+moth of wrath
+
+憤怒せる蛾
+%%%%
+mountainshell
+
+山甲羅
+%%%%
+mummy
+
+ミイラ
+%%%%
+mummy priest
+
+司祭のミイラ
+%%%%
+Murray
+
+『マーリー』
+%%%%
+mutant beast
+
+異形の怪物
+%%%%
+naga
+
+ナーガ
+%%%%
+naga mage
+
+ナーガの魔術師
+%%%%
+naga ritualist
+
+ナーガの儀式者
+%%%%
+naga sharpshooter
+
+ナーガの達人射手
+%%%%
+naga warrior
+
+ナーガの戦士
+%%%%
+nagaraja
+
+ナーガの豪族
+%%%%
+nameless horror
+
+名状しがたき恐怖
+%%%%
+nargun
+
+ナーガン
+%%%%
+nascent plasmodium
+
+生まれたての変形体
+%%%%
+nasty sensed monster
+
+感知済みの凶悪なモンスター
+%%%%
+Natasha
+
+『ナターシャ』
+%%%%
+necromancer
+
+死人使い
+%%%%
+necrophage
+
+屍肉喰らい
+%%%%
+nekomata
+
+猫又
+%%%%
+Nellie
+
+『ネリー』
+%%%%
+neqoxec
+
+ネクオゼク
+%%%%
+Nergalle
+
+『ネルガレ』
+%%%%
+Nessos
+
+『ネッソス』
+%%%%
+Nikola
+
+『ニコラ』
+%%%%
+Nobody
+
+『名無し』
+%%%%
+Norris
+
+『ノリス』
+%%%%
+oblivion hound
+
+忘却の猟犬
+%%%%
+obsidian bat
+
+黒曜石のコウモリ
+%%%%
+obsidian statue
+
+黒曜石の像
+%%%%
+occultist
+
+オカルティスト
+%%%%
+octopode
+
+オクトポード
+%%%%
+ogre
+
+オーガ
+%%%%
+ogre mage
+
+オーガの魔術師
+%%%%
+oklob plant
+
+オクロブ草
+%%%%
+oklob sapling
+
+オクロブの若木
+%%%%
+oni
+
+鬼
+%%%%
+oni incarcerator
+
+鬼の看守
+%%%%
+ophan
+
+オファニム
+%%%%
+orange crystal statue
+
+橙水晶の像
+%%%%
+orange demon
+
+オレンジデーモン
+%%%%
+Orb Guardian
+
+オーブの守護者
+%%%%
+orb of destruction
+
+破壊の球体
+%%%%
+orb of entropy
+
+エントロピーの球体
+%%%%
+orb of fire
+
+炎の球体
+%%%%
+orb of winter
+
+冬の球体
+%%%%
+orb spider
+
+球体の蜘蛛
+%%%%
+orc
+
+オーク
+%%%%
+orc apostle
+
+オークの使徒
+%%%%
+orc high priest
+
+オークの大司祭
+%%%%
+orc knight
+
+オークの騎士
+%%%%
+orc priest
+
+オークの司祭
+%%%%
+orc sorcerer
+
+オークの魔道士
+%%%%
+orc warlord
+
+オークの族長
+%%%%
+orc warrior
+
+オークの戦士
+%%%%
+orc wizard
+
+オークの魔術師
+%%%%
+pale draconian
+
+蒼白ドラコニアン
+%%%%
+pandemonium lord
+
+パンデモニウムの君主
+%%%%
+Parghit
+
+『パーギット』
+%%%%
+Pargi
+
+『パルギ』
+%%%%
+peacekeeper
+
+平和の護り手
+%%%%
+pearl dragon
+
+パールドラゴン
+%%%%
+petrified flower
+
+石化した花
+%%%%
+phalanx beetle
+
+ファランクス甲虫
+%%%%
+phantasmal warrior
+
+幻想の戦士
+%%%%
+phantom
+
+ファントム
+%%%%
+pharaoh ant
+
+ファラオアリ
+%%%%
+Pikel
+
+『ピケル』
+%%%%
+pile of debris
+
+瓦礫の山
+%%%%
+pile of flesh
+
+肉の山
+%%%%
+pillar of rime
+
+霜の柱
+%%%%
+pillar of salt
+
+塩の柱
+%%%%
+plant
+
+迷宮草
+%%%%
+platinum paragon
+
+白金の傑作
+%%%%
+player
+
+プレイヤー
+%%%%
+player ghost
+
+プレイヤーの幽霊
+%%%%
+player illusion
+
+プレイヤーの幻影
+%%%%
+polar bear
+
+北極熊
+%%%%
+poltergeist
+
+ポルターガイスト
+%%%%
+polterguardian
+
+ポルターガーディアン
+%%%%
+Polyphemus
+
+『ポリュペモス』
+%%%%
+Prince Ribbit
+
+『リビット王子』
+%%%%
+profane servitor
+
+涜神の従者
+%%%%
+program bug
+
+プログラムのバグ
+%%%%
+protean progenitor
+
+変幻の始祖
+%%%%
+purple draconian
+
+紫ドラコニアン
+%%%%
+putrid mouth
+
+腐敗した口
+%%%%
+queen bee
+
+女王蜂
+%%%%
+quicksilver dragon
+
+水銀ドラゴン
+%%%%
+quicksilver elemental
+
+水銀の精霊
+%%%%
+quokka
+
+クワッカ
+%%%%
+radroach
+
+放射能ゴキブリ
+%%%%
+ragged hierophant
+
+堕ちた教皇
+%%%%
+raiju
+
+雷獣
+%%%%
+rakshasa
+
+ラクシャーサ
+%%%%
+rat
+
+ネズミ
+%%%%
+raven
+
+ワタリガラス
+%%%%
+reaper
+
+切り裂きの悪魔
+%%%%
+red devil
+
+紅の悪魔
+%%%%
+red draconian
+
+赤色ドラコニアン
+%%%%
+redback
+
+背赤蜘蛛
+%%%%
+rending blade
+
+引き裂く刃
+%%%%
+revenant
+
+レヴナント
+%%%%
+revenant soulmonger
+
+レヴナントの魂商人
+%%%%
+ribbon worm
+
+ヒモムシ
+%%%%
+rime drake
+
+霜ドレイク
+%%%%
+river rat
+
+河ネズミ
+%%%%
+Robin
+
+『ロビン』
+%%%%
+rock fish
+
+ロックフィッシュ
+%%%%
+rockslime
+
+岩スライム
+%%%%
+Roxanne
+
+『ロクサーヌ』
+%%%%
+Royal Jelly
+
+『ロイヤルジェリー』
+%%%%
+royal mummy
+
+王族のミイラ
+%%%%
+Rupert
+
+『ルパート』
+%%%%
+rust devil
+
+錆の悪魔
+%%%%
+sacred lotus
+
+聖なる蓮
+%%%%
+Saint Roka
+
+『聖者ロカ』
+%%%%
+salamander
+
+サラマンダー
+%%%%
+salamander mystic
+
+サラマンダーの秘伝者
+%%%%
+salamander tyrant
+
+サラマンダーの暴君
+%%%%
+saltling
+
+塩人形
+%%%%
+satyr
+
+サテュロス
+%%%%
+scorpion
+
+巨大サソリ
+%%%%
+screaming refraction
+
+叫ぶ屈折
+%%%%
+scrub nettle
+
+低木のイラクサ
+%%%%
+sea snake
+
+ウミヘビ
+%%%%
+searing wretch
+
+灼熱の哀れなるもの
+%%%%
+seismosaurus
+
+セイスモサウルス
+%%%%
+seismosaurus egg
+
+セイスモサウルスの卵
+%%%%
+sensed monster
+
+感知済みのモンスター
+%%%%
+seraph
+
+セラフ
+%%%%
+Serpent of Hell
+
+『地獄のサーペント』
+%%%%
+servant of whispers
+
+囁くものの従者
+%%%%
+shadow
+
+シャドウ
+%%%%
+shadow demon
+
+シャドウデーモン
+%%%%
+shadow dragon
+
+シャドウドラゴン
+%%%%
+shadow imp
+
+影のインプ
+%%%%
+shadow prism
+
+影の晶柱
+%%%%
+shadow puppet
+
+影絵人形
+%%%%
+shadow turret
+
+影の砲塔
+%%%%
+shadow wraith
+
+シャドウレイス
+%%%%
+shadowghast
+
+シャドウガースト
+%%%%
+shambling mangrove
+
+よろめき歩くマングローブ
+%%%%
+shapeshifter
+
+変身能力者
+%%%%
+shard shrike
+
+破片の百舌
+%%%%
+shining eye
+
+輝く眼球
+%%%%
+shock serpent
+
+電撃の大蛇
+%%%%
+shooting star
+
+流れ星
+%%%%
+sickly merfolk siren
+
+病弱な水棲の民のセイレーン
+%%%%
+Sigmund
+
+『シグムンド』
+%%%%
+silent spectre
+
+静寂の亡霊
+%%%%
+simulacrum
+
+幻像
+%%%%
+sin beast
+
+罪の獣
+%%%%
+sixfirhy
+
+シクスファルハイ
+%%%%
+skeletal warrior
+
+骸骨の戦士
+%%%%
+sky beast
+
+雷雲の獣
+%%%%
+skyshark
+
+スカイシャーク
+%%%%
+sleepcap
+
+眠りキノコ
+%%%%
+slime creature
+
+スライム
+%%%%
+slymdra
+
+スライムドラ
+%%%%
+small abomination
+
+小型の忌まわしきもの
+%%%%
+smoke demon
+
+噴煙のデーモン
+%%%%
+snake
+
+ヘビ
+%%%%
+snaplasher vine
+
+鞭打蔦
+%%%%
+snaplasher vine segment
+
+鞭打蔦の一部
+%%%%
+snapping turtle
+
+カミツキガメ
+%%%%
+Snorg
+
+『スノーグ』
+%%%%
+Sojobo
+
+『僧正坊』
+%%%%
+solar ember
+
+太陽の残り火
+%%%%
+Sonja
+
+『ソーニャ』
+%%%%
+soul eater
+
+魂を貪るもの
+%%%%
+soul wisp
+
+魂の鬼火
+%%%%
+spark wasp
+
+電光蜂
+%%%%
+spatial maelstrom
+
+時空の大渦
+%%%%
+spatial vortex
+
+時空の渦
+%%%%
+spectator
+
+観察者
+%%%%
+spectral thing
+
+幽体
+%%%%
+spectral weapon
+
+幽体の武器
+%%%%
+spellspark servitor
+
+呪文の火花の従者
+%%%%
+sphinx
+
+スフィンクス
+%%%%
+sphinx marauder
+
+スフィンクスの略奪者
+%%%%
+spider
+
+巨大蜘蛛
+%%%%
+splinterfrost barricade
+
+氷片のバリケード
+%%%%
+spriggan
+
+スプリガン
+%%%%
+spriggan air mage
+
+スプリガンの風術師
+%%%%
+spriggan berserker
+
+スプリガンの狂戦士
+%%%%
+spriggan defender
+
+スプリガンの守り手
+%%%%
+spriggan druid
+
+スプリガンのドルイド
+%%%%
+spriggan rider
+
+スプリガンの騎手
+%%%%
+Sprozz
+
+『スプロッズ』
+%%%%
+star jelly
+
+星のジェリー
+%%%%
+starcursed mass
+
+呪われし群れ
+%%%%
+starflower
+
+星の花
+%%%%
+starspawn tentacle
+
+触手
+%%%%
+starspawn tentacle segment
+
+触手の一部
+%%%%
+statue
+
+彫像
+%%%%
+steam dragon
+
+スチームドラゴン
+%%%%
+steelbarb worm
+
+鋼棘ワーム
+%%%%
+stoker
+
+火夫
+%%%%
+stone giant
+
+岩の巨人
+%%%%
+storm dragon
+
+ストームドラゴン
+%%%%
+strange machine
+
+奇妙な機械
+%%%%
+sun demon
+
+サンデーモン
+%%%%
+sun moth
+
+太陽の蛾
+%%%%
+swamp dragon
+
+沼ドラゴン
+%%%%
+swamp drake
+
+沼ドレイク
+%%%%
+swamp worm
+
+沼ワーム
+%%%%
+tainted leviathan
+
+穢れたリヴァイアサン
+%%%%
+tarantella
+
+巨大タランチュラ
+%%%%
+tengu
+
+天狗
+%%%%
+tengu conjurer
+
+天狗の妖術師
+%%%%
+tengu reaver
+
+天狗の掠奪者
+%%%%
+tengu warrior
+
+天狗の戦士
+%%%%
+tentacle
+
+触手
+%%%%
+tentacle segment
+
+触手の一部
+%%%%
+tentacled monstrosity
+
+触手の怪物
+%%%%
+tentacled starspawn
+
+触手の落とし子
+%%%%
+Terence
+
+『テレンス』
+%%%%
+test blob
+
+テスト用ブロブ
+%%%%
+test spawner
+
+テスト用スポナー
+%%%%
+test statue
+
+テスト用彫像
+%%%%
+thermic dynamo
+
+熱の発電機
+%%%%
+thorn hunter
+
+棘の狩人
+%%%%
+thrashing horror
+
+のたうつ恐怖
+%%%%
+Tiamat
+
+『ティアマト』
+%%%%
+titan
+
+タイタン
+%%%%
+toadstool
+
+からかさキノコ
+%%%%
+toenail golem
+
+爪のゴーレム
+%%%%
+tormentor
+
+拷問の悪魔
+%%%%
+torpor snail
+
+無気力の蝸牛
+%%%%
+tough sensed monster
+
+感知済みの強いモンスター
+%%%%
+training dummy
+
+訓練用ダミー
+%%%%
+trivial sensed monster
+
+感知済みの取るに足らないモンスター
+%%%%
+troll
+
+トロル
+%%%%
+twister
+
+竜巻
+%%%%
+two-headed ogre
+
+双頭のオーガ
+%%%%
+tyrant leech
+
+巨大ヒル
+%%%%
+Tzitzimitl
+
+ツィツィミトル
+%%%%
+ufetubus
+
+ウフェツバス
+%%%%
+ugly thing
+
+醜きもの
+%%%%
+undertaker
+
+葬儀屋
+%%%%
+undying armoury
+
+不滅の武具庫
+%%%%
+unseen horror
+
+見えざる恐怖
+%%%%
+Urug
+
+『ウルグ』
+%%%%
+ushabti
+
+ウシャブティ
+%%%%
+vampire
+
+吸血鬼
+%%%%
+vampire bat
+
+吸血コウモリ
+%%%%
+vampire bloodprince
+
+吸血鬼の血の王子
+%%%%
+vampire knight
+
+吸血鬼の騎士
+%%%%
+vampire mage
+
+吸血鬼の魔術師
+%%%%
+vampire mosquito
+
+吸血蚊
+%%%%
+Vashnia
+
+『ヴァシュニア』
+%%%%
+vault guard
+
+宝物庫の番人
+%%%%
+vault sentinel
+
+宝物庫の警告者
+%%%%
+vault warden
+
+宝物庫の監視者
+%%%%
+very ugly thing
+
+甚だしく醜きもの
+%%%%
+vine stalker
+
+歩き蔓
+%%%%
+void ooze
+
+虚無のウーズ
+%%%%
+Vv
+
+『Vv』
+%%%%
+walking alembic
+
+歩く蒸留器
+%%%%
+walking crystal tome
+
+歩く水晶の魔導書
+%%%%
+walking divine tome
+
+歩く神聖な魔導書
+%%%%
+walking earthen tome
+
+歩く大地の魔導書
+%%%%
+walking frostbound tome
+
+歩く氷結の魔導書
+%%%%
+walking tome
+
+歩く魔導書
+%%%%
+wandering mushroom
+
+這いずりキノコ
+%%%%
+war gargoyle
+
+凶暴なガーゴイル
+%%%%
+warg
+
+ワーグ
+%%%%
+water elemental
+
+水の精霊
+%%%%
+water moccasin
+
+沼マムシ
+%%%%
+water nymph
+
+水のニンフ
+%%%%
+weeping skull
+
+泣く頭蓋骨
+%%%%
+wendigo
+
+ウェンディゴ
+%%%%
+white draconian
+
+白色ドラコニアン
+%%%%
+white imp
+
+白インプ
+%%%%
+wight
+
+ワイト
+%%%%
+Wiglaf
+
+『ウィーグラフ』
+%%%%
+will-o-the-wisp
+
+ウィル・オ・ウィスプ
+%%%%
+wind drake
+
+風ドレイク
+%%%%
+withered plant
+
+枯れ果てた迷宮草
+%%%%
+wolf
+
+狼
+%%%%
+wolf spider
+
+大喰い蜘蛛
+%%%%
+worldbinder
+
+ワールドバインダー
+%%%%
+wraith
+
+レイス
+%%%%
+wretched star
+
+哀れなる星
+%%%%
+wyrmhole
+
+竜穴
+%%%%
+wyvern
+
+ワイバーン
+%%%%
+Xak'krixis
+
+『ザックリクシス』
+%%%%
+Xtahua
+
+『ザッハ』
+%%%%
+yak
+
+ヤク
+%%%%
+yaktaur
+
+ヤクトール
+%%%%
+yaktaur captain
+
+ヤクトールの族長
+%%%%
+yellow draconian
+
+黄色ドラコニアン
+%%%%
+ynoxinul
+
+ヱノクシヌル
+%%%%
+Zenata
+
+『ゼナータ』
+%%%%
+zombie
+
+ゾンビ
+%%%%
+zykzyl
+
+ジクジル
+%%%%
+################################################################
+#   名前の部品(mon-info.cc の _core_name())
+################################################################
+%%%%
+# スライムの大きさ
+large slime creature
+
+大きなスライム
+%%%%
+very large slime creature
+
+とても大きなスライム
+%%%%
+enormous slime creature
+
+巨大なスライム
+%%%%
+titanic slime creature
+
+超巨大なスライム
+%%%%
+# ドラコニアンの色(「赤色ドラコニアンの騎士」)
+[drac colour]black
+
+黒色
+%%%%
+[drac colour]yellow
+
+黄色
+%%%%
+[drac colour]green
+
+緑色
+%%%%
+[drac colour]purple
+
+紫
+%%%%
+[drac colour]red
+
+赤色
+%%%%
+[drac colour]white
+
+白色
+%%%%
+[drac colour]grey
+
+灰色
+%%%%
+[drac colour]pale
+
+蒼白
+%%%%
+# 醜きものの色
+[ugly things colour]red
+
+赤い
+%%%%
+[ugly things colour]brown
+
+茶色の
+%%%%
+[ugly things colour]green
+
+緑色の
+%%%%
+[ugly things colour]cyan
+
+水色の
+%%%%
+[ugly things colour]purple
+
+紫色の
+%%%%
+[ugly things colour]white
+
+白い
+%%%%
+# 異形の怪物(「棘だらけの蝙蝠のような年若い獣」)
+[mutant facet]sting
+
+棘だらけの
+%%%%
+[mutant facet]bat
+
+蝙蝠のような
+%%%%
+[mutant facet]fire
+
+火を纏う
+%%%%
+[mutant facet]weird
+
+奇妙な
+%%%%
+[mutant facet]shock
+
+稲妻を放つ
+%%%%
+[mutant facet]ox
+
+雄牛のような
+%%%%
+[mutant tier]larval
+
+幼い
+%%%%
+[mutant tier]juvenile
+
+年若い
+%%%%
+[mutant tier]mature
+
+成熟した
+%%%%
+[mutant tier]elder
+
+年経た
+%%%%
+[mutant tier]primal
+
+原初の
+%%%%
+################################################################
+#   名前の接尾辞(vault の name:X n_suf)。「コボルドの司祭」の「の司祭」
+################################################################
+%%%%
+[name suffix]sharper
+
+の詐欺師
+%%%%
+[name suffix]annihilator
+
+の破壊者
+%%%%
+[name suffix]baker
+
+のパン職人
+%%%%
+[name suffix]captain
+
+の隊長
+%%%%
+[name suffix]conjurer
+
+の妖術師
+%%%%
+[name suffix]demonologist
+
+の悪魔術師
+%%%%
+[name suffix]meteorologist
+
+の気象学者
+%%%%
+[name suffix]priest
+
+の司祭
+%%%%
+[name suffix]shifter
+
+の移相者
+%%%%
+[name suffix]summoner
+
+の召喚者
+%%%%
+[name suffix]wizard
+
+の魔術師
+%%%%
+################################################################
+#   名前の形容詞(vault の name:X n_adj、ゾンビ化したユニーク)
+################################################################
+%%%%
+# ゾンビ化した『レルネーのヒドラ』
+[name adj]Lernaean
+
+レルネーの
+%%%%
+# ゾンビ化した『女呪術師』
+[name adj]Enchantress
+
+『女呪術師』の
+%%%%
+[name adj]charred
+
+黒焦げの
+%%%%
+[name adj]frost-covered
+
+霜に覆われた
+%%%%
+[name adj]pristine
+
+無垢の
+%%%%
+[name adj]air elementalist
+
+大気の精霊使いの
+%%%%
+[name adj]fire elementalist
+
+炎の精霊使いの
+%%%%
+[name adj]water elementalist
+
+水の精霊使いの
+%%%%
+[name adj]earth elementalist
+
+大地の精霊使いの
+%%%%
+[name adj]archer
+
+射手の
+%%%%
+[name adj]bog
+
+湿地の
+%%%%
+[name adj]conjurer
+
+妖術師の
+%%%%
+[name adj]deformed humanoid
+
+奇形の人型の
+%%%%
+[name adj]drunken
+
+酔っ払った
+%%%%
+[name adj]greater
+
+上位の
+%%%%
+[name adj]giant
+
+巨大
+%%%%
+[name adj]dire
+
+凶暴な
+%%%%
+[name adj]sulphuric
+
+硫黄の
+%%%%
+[name adj]giga
+
+ギガ
+%%%%
+[name adj]phase
+
+位相
+%%%%
+[name adj]baked
+
+焼けた
+%%%%
+[name adj]zot
+
+ゾットの
+%%%%
+################################################################
+#   vault で置き換えた名前(name:X n_rpl)・固有名
+################################################################
+%%%%
+Master Blaster
+
+『マスター・ブラスター』
+%%%%
+Statue of Wucad Mu
+
+ワカド・ムーの像
+%%%%
+The Captor
+
+捕縛者
+%%%%
+The Defiler
+
+冒涜者
+%%%%
+The Meatlord
+
+肉の王
+%%%%
+The Servant
+
+従僕
+%%%%
+bag of meat
+
+肉袋
+%%%%
+large bag of meat
+
+大きな肉袋
+%%%%
+destroyer
+
+破壊者
+%%%%
+dread
+
+恐怖
+%%%%
+fleshlord
+
+肉の君主
+%%%%
+ghost-faced bat
+
+幽霊顔のコウモリ
+%%%%
+greater orb of eyes
+
+大いなる目の球体
+%%%%
+ice bat
+
+氷のコウモリ
+%%%%
+lunar statue
+
+月の像
+%%%%
+mad acolyte of Lugonu
+
+ルゴヌの狂った侍祭
+%%%%
+meat beast
+
+肉の獣
+%%%%
+meat berserker
+
+肉の狂戦士
+%%%%
+meat hydra
+
+肉のヒドラ
+%%%%
+megabat
+
+大コウモリ
+%%%%
+microbat
+
+小コウモリ
+%%%%
+naga warlord
+
+ナーガの族長
+%%%%
+observer
+
+観測者
+%%%%
+phase spider
+
+位相蜘蛛
+%%%%
+rotten bat
+
+腐ったコウモリ
+%%%%
+scourge
+
+災厄
+%%%%
+sculptor of flesh
+
+肉の彫刻家
+%%%%
+skeletal bat
+
+骸骨コウモリ
+%%%%
+tyrant
+
+暴君
+%%%%
+vile
+
+邪悪なるもの
+%%%%
+worm
+
+ワーム
+%%%%
+wizard
+
+魔術師
+%%%%
+wretched soul
+
+哀れな魂
+%%%%
+Cigotuvi's Monster
+
+『シゴトゥヴィの怪物』
+%%%%
+flesh golem
+
+肉のゴーレム
+%%%%
+centipede
+
+ムカデ
+%%%%
+Granny Wiglaf
+
+『ウィーグラフお婆ちゃん』
+%%%%
+Grand Marshal
+
+『大元帥』
+%%%%
+Grim One
+
+『冷酷なる者』
+%%%%
+The Oracle
+
+『神託者』
+%%%%
+The Unspeakable
+
+『名状しがたきもの』
+%%%%

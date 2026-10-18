@@ -1,0 +1,302 @@
+%%%%
+Too many items on level, removing some.
+
+階層にあるアイテムが多すぎるため、いくつかを削除しました。
+%%%%
+Item %s claims to be held by monster %s, but it isn't in the monster's inventory.
+
+
+%%%%
+BUG WARNING: Problems unlinking item '%s', (%d, %d)!!!
+
+
+%%%%
+BUG WARNING: Item didn't seem to be linked at all.
+
+
+%%%%
+You see here %s.
+
+ここには%sがある。
+%%%%
+Things that are here:
+
+ここにはアイテムがある:
+%%%%
+There are many items here.
+
+ここにはたくさんのアイテムがある。
+%%%%
+Pick up what?
+
+何を拾いますか？
+%%%%
+(_ for help)
+
+(_ でヘルプ表示)
+%%%%
+Select pick up quantity by entering a number, then select the item
+
+個数を指定して拾うには、数字を押した後に選択してください。
+%%%%
+Original Equipment
+
+初期装備
+%%%%
+Are you sure you want to pick up this pile of gold now?
+
+本当にこの金貨の山を拾いますか？
+%%%%
+Pick up how many of %s (; or enter for all)?
+
+%sのうちいくつを拾いますか？(; か ENTER で全選択)
+%%%%
+There are no items here.
+
+ここには何もない。
+%%%%
+There are no objects that can be picked up here.
+
+ここには拾える物がない。
+%%%%
+There are several objects here.
+
+ここにはいくつかの物がある。
+%%%%
+Pick up %s? ((y)es/(n)o/(a)ll/(m)enu/*?g,/q)
+
+%sを拾いますか？ ((y)はい/(n)いいえ/(a)全部/(m)一覧/*?g,/q)
+%%%%
+(gained %d)
+
+(新たに%d枚入手)
+%%%%
+You have collected all the runes! Now go and win!
+
+あなたは全てのルーンを集めた！ 今すぐオーブを回収して脱出せよ！
+%%%%
+%d runes! That's enough to enter the realm of Zot.
+
+%d個めのルーンを手にした！ ゾットの領域に足を進めるには十分だ。
+%%%%
+You now have %d runes.
+
+あなたは今%d個のルーンを持っている。
+%%%%
+Press } to see all the runes you have collected.
+
+} を押すことであなたが集めたルーンを一覧できる。
+%%%%
+You feel the abyssal rune guiding you out of this place.
+
+あなたは深淵のルーンがあなたをアビスの外へと導こうとしているような気がした。
+%%%%
+You pick up the Orb of Zot!
+
+あなたはゾットのオーブを手にした！
+%%%%
+Now all you have to do is get back out of the dungeon!
+
+これで後はダンジョンから脱出するだけだ！
+%%%%
+You will have to take that off first.
+
+まず装備を外してからにしてください。
+%%%%
+Too many items on this level, not dropping the item.
+
+この階層にはアイテムが多すぎるため、そのアイテムを置かなかった。
+%%%%
+You drop %s.
+
+あなたは%sを置いた。
+%%%%
+No item to drop.
+
+置くアイテムがない。
+%%%%
+Your pack is full.
+
+あなたの荷袋は満杯だ。
+%%%%
+Which rune (ESC to exit)?
+
+ルーンの種類を選択してください (ESCでキャンセル)
+%%%%
+Sorry, no books on that skill today.
+
+申し訳ありませんが、そのスキルの虎の巻はありません。
+%%%%
+You have identified the last %s.
+
+あなたは%sを全部識別した。
+%%%%
+Items here: %s.
+
+ここにあるアイテム: %s
+%%%%
+# 入手元(origin_desc)。%s は場所(prep_branch_level_name の結果)。末尾の句点は付けない
+You bought it in a shop %s
+
+あなたは%sの店でこれを買った
+%%%%
+Buggy Original Equipment: %s
+
+バグのある初期装備: %s
+%%%%
+You acquired it %s
+
+あなたは%sでこれを獲得した
+%%%%
+You invented it yourself %s
+
+あなたは%sでこれを自ら発明した
+%%%%
+You drew the Genie %s
+
+あなたは%sでジーニーのカードを引いた
+%%%%
+Your wizardly powers created it %s
+
+あなたはウィザードコマンドにより%sでこれを生成した
+%%%%
+%s gifted it to you %s
+
+%sは%sでこれをあなたに授けた
+%%%%
+You stumbled upon it %s
+
+あなたは%sでこれに出くわした
+%%%%
+You subdued it %s
+
+あなたは%sでこれを倒した
+%%%%
+%s, you took it off %s
+
+あなたは%sで%sからこれを奪った
+%%%%
+You found it %s
+
+あなたは%sでこれを見つけた
+%%%%
+You now have %d gold pieces%s.
+
+あなたの所持金は%d枚の金貨になった%s。
+%%%%
+%s burns to shimmering ash in your grasp.
+
+%sはあなたの手の中で燃え、きらめく灰になった。
+%%%%
+You pick up %s and begin reading...
+
+あなたは%sを拾い上げ、読み始めた……
+%%%%
+Unfortunately, you learned nothing new or useful.
+
+残念ながら、新しいことや役に立つことは何も学べなかった。
+%%%%
+You pick up %s. Unfortunately, it's quite useless to you.
+
+あなたは%sを拾い上げた。残念ながら、あなたにはまったく役に立たない。
+%%%%
+You pick up %s, but it has nothing more to teach you.
+
+あなたは%sを拾い上げたが、もう学ぶことは何もない。
+%%%%
+You pick up another %s and continue studying.
+
+あなたはもう一冊の%sを拾い上げ、学習を続けた。
+%%%%
+You pick up %s and begin studying.
+
+あなたは%sを拾い上げ、学習を始めた。
+%%%%
+You pick up %s and feel its power.
+
+あなたは%sを拾い上げ、その力を感じた。
+%%%%
+You've emptied out Pandemonium! Nothing left here but demons.
+
+あなたはパンデモニウムを空にした！ここにはもう悪魔しか残っていない。
+%%%%
+You pick up %s and feel its impossibly delicate weight in your %s.
+
+あなたは%sを拾い上げ、%sにありえないほど繊細な重みを感じた。
+%%%%
+You've found all the gems! Together, they sparkle an otherworldly %s!
+
+あなたはすべての宝石を見つけた！宝石たちは共に、この世のものならぬ%sに輝いた！
+%%%%
+Press } and ! to see all the gems you have collected.
+
+} と ! を押すと、集めた宝石を一覧できる。
+%%%%
+Zot can harm you no longer.
+
+ゾットはもはやあなたを傷つけられない。
+%%%%
+%s%s (gained %d)
+
+%s%s (%d個入手)
+%%%%
+%s cannot be improved any further.
+
+%sはこれ以上強化できない。
+%%%%
+%s (improved by +1).
+
+%s (+1 強化された)。
+%%%%
+%s (gained %d charges)
+
+%s (魔力が%d回分増えた)
+%%%%
+Are you sure you want to drop %s into %s? You won't be able to retrieve it.
+
+本当に%sを%sに落としますか？二度と取り戻せなくなります。
+%%%%
+That is permanently installed in your exoskeleton.
+
+それはあなたの外骨格に恒久的に取り付けられている。
+%%%%
+Autopickup disabled for %s.
+
+%sの自動拾いを無効にした。
+%%%%
+Autopickup disabled for %d items.
+
+%d個のアイテムの自動拾いを無効にした。
+%%%%
+ch_force_autopickup failed: %s
+
+ch_force_autopickup が失敗しました: %s
+%%%%
+That parchment doesn't seem to exist.
+
+そのような羊皮紙は存在しないようだ。
+%%%%
+%s "%s"
+
+%s『%s』
+%%%%
+You welcome %s into your grasp.
+
+あなたは%sを手に迎え入れた。
+%%%%
+You welcome %s back into your grasp.
+
+あなたは%sを再び手に迎え入れた。
+%%%%
+You whisper farewell to %s.
+
+あなたは%sに別れをささやいた。
+%%%%
+a player ghost
+
+プレイヤーの幽霊
+%%%%
+a pandemonium lord
+
+パンデモニウムの君主
+%%%%

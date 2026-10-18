@@ -1,0 +1,584 @@
+# data-zaps.txt: ビーム名 [zap]<名前>
+# 出典: zap-data.h (0.34)。表示側は zap_name_j() を使う。
+
+%%%%
+[zap]noxious fumes
+
+悪臭の霧
+%%%%
+[zap]blast of poison
+
+猛毒の雲
+%%%%
+[zap]bolt of devastation
+
+壊滅の矢
+%%%%
+[zap]doom bolt
+
+破滅の矢
+%%%%
+[zap]bolt of flesh
+
+肉塊の矢
+%%%%
+[zap]surge of chaos
+
+混沌の奔流
+%%%%
+[zap]spray of metal splinters
+
+飛散する金属片
+%%%%
+[zap]crystallising shot
+
+結晶化の射撃
+%%%%
+[zap]spray of wooden splinters
+
+飛散する木片
+%%%%
+[zap]volley of thorns
+
+茨の斉射
+%%%%
+[zap]volley of spikes
+
+射出された逆棘
+%%%%
+[zap]toxic sludge
+
+有毒な汚泥
+%%%%
+[zap]damnation
+
+天罰
+%%%%
+[zap]foul vapour
+
+腐敗した靄
+%%%%
+[zap]blast of cleansing flame
+
+浄化の炎の息
+%%%%
+[zap]blast of calcifying dust
+
+石化する雲
+%%%%
+[zap]ghostly fireball
+
+鬼火の火球
+%%%%
+[zap]icy flash freeze
+
+氷の瞬間凍結
+%%%%
+[zap]flash freeze
+
+瞬間凍結
+%%%%
+[zap]piercing cold
+
+刺すような冷気
+%%%%
+[zap]mass of rock
+
+岩塊
+%%%%
+[zap]glob of lava
+
+溶岩の塊
+%%%%
+[zap]seething chaos
+
+渦巻く混沌
+%%%%
+[zap]blast of cold
+
+冷気の息
+%%%%
+[zap]blast of flame
+
+猛火の息
+%%%%
+[zap]searing blast
+
+灼熱の息
+%%%%
+[zap]bolt of electricity
+
+電光の矢
+%%%%
+[zap]blazing flames
+
+燃え盛る炎
+%%%%
+[zap]puff of flame
+
+炎の塊
+%%%%
+[zap]puff of frost
+
+冷気の塊
+%%%%
+[zap]glob of acid
+
+酸の塊
+%%%%
+[zap]stinking cloud
+
+悪臭を放つ雲
+%%%%
+[zap]magic dart
+
+魔法の矢
+%%%%
+[zap]bolt of fire
+
+猛火の矢
+%%%%
+[zap]bolt of cold
+
+凍結の矢
+%%%%
+[zap]torrent of water
+
+水の奔流
+%%%%
+[zap]fireball
+
+ファイアボール
+%%%%
+[zap]concussive blast
+
+衝撃の爆風
+%%%%
+[zap]flame wave
+
+炎の波
+%%%%
+[zap]bolt of lightning
+
+稲妻の矢
+%%%%
+[zap]bolt of poison
+
+猛毒の矢
+%%%%
+[zap]bolt of negative energy
+
+負のエネルギーの矢
+%%%%
+[zap]fragment of death
+
+死の欠片
+%%%%
+[zap]crystal spear
+
+水晶の槍
+%%%%
+[zap]sticky flame
+
+焼夷の炎
+%%%%
+[zap]pyre arrow
+
+火葬の矢
+%%%%
+[zap]sting
+
+毒針
+%%%%
+[zap]iron shot
+
+鉄塊の矢
+%%%%
+[zap]stone arrow
+
+石錐の矢
+%%%%
+[zap]zap
+
+稲妻の光線
+%%%%
+[zap]stunning burst
+
+気絶の炸裂
+%%%%
+[zap]orb of electricity
+
+電撃の爆裂球
+%%%%
+[zap]splash of poison
+
+毒の飛沫
+%%%%
+[zap]debugging ray
+
+デバッグ光線
+%%%%
+[zap]fiery breath
+
+炎のブレス
+%%%%
+[zap]glacial breath
+
+氷河のブレス
+%%%%
+[zap]explosive embers
+
+爆発する残り火
+%%%%
+[zap]poison gas
+
+猛毒のガス
+%%%%
+[zap]splash of acid
+
+酸のしぶき
+%%%%
+[zap]agony
+
+苦悶の光線
+%%%%
+[zap]curse of agony
+
+苦悶の呪い
+%%%%
+[zap]ball of steam
+
+蒸気の爆裂球
+%%%%
+[zap]shard of ice
+
+氷の破片
+%%%%
+[zap]blast of sand
+
+砂の突風
+%%%%
+[zap]bolt of magma
+
+溶岩の矢
+%%%%
+[zap]concentrated momentum
+
+凝縮された勢い
+%%%%
+[zap]poison arrow
+
+毒素の矢
+%%%%
+[zap]blast of choking fumes
+
+窒息の噴煙
+%%%%
+[zap]lance of force
+
+力場の槍
+%%%%
+[zap]searing ray
+
+焼灼の光線
+%%%%
+[zap]rebounding bolt of fire
+
+跳ね返る猛火の矢
+%%%%
+[zap]rebounding bolt of cold
+
+跳ね返る凍結の矢
+%%%%
+[zap]bolt of dispelling energy
+
+魔法解除の矢
+%%%%
+[zap]bolt of acid
+
+腐蝕の矢
+%%%%
+[zap]bolt of light
+
+光の矢
+%%%%
+[zap]unravelling
+
+魔法解除術
+%%%%
+[zap]iceblast
+
+凍てつく吹雪
+%%%%
+[zap]slug dart
+
+蛞蝓の矢
+%%%%
+[zap]living lightning
+
+生ける稲妻
+%%%%
+[zap]freezing gust
+
+凍える突風
+%%%%
+[zap]beckoning whirlwind
+
+引き寄せの旋風
+%%%%
+[zap]harpoon shot
+
+銛の射撃
+%%%%
+[zap]whirling bolas
+
+回転するボーラ
+%%%%
+[zap]beckoning
+
+引き寄せの呪文
+%%%%
+[zap]great blast of fire
+
+燃えさかる爆炎
+%%%%
+[zap]malmutate
+
+悪性変異
+%%%%
+[zap]refrigeration
+
+凍結
+%%%%
+[zap]drain life
+
+生命の簒奪
+%%%%
+[zap]sonic wave
+
+音波
+%%%%
+[zap]klown pie
+
+ピエロのパイ
+%%%%
+[zap]foxfire
+
+狐火
+%%%%
+[zap]burst of rock shards
+
+岩片の炸裂
+%%%%
+[zap]hail
+
+雹
+%%%%
+[zap]mystic blast
+
+爆破の秘術
+%%%%
+[zap]bolt of energy
+
+エネルギーの矢
+%%%%
+[zap]fiery plasma
+
+灼熱のプラズマ
+%%%%
+[zap]malign ofering
+
+悪意の供物
+%%%%
+[zap]umbral torchlight
+
+陰影の松明
+%%%%
+[zap]rupture
+
+破裂
+%%%%
+[zap]destabilizing rupture
+
+不安定な破裂
+%%%%
+[zap]acid spray
+
+酸の噴射
+%%%%
+[zap]nullifying energy
+
+無効化のエネルギー
+%%%%
+[zap]ball of mud
+
+泥の球
+%%%%
+[zap]arc of electricity
+
+電撃の弧
+%%%%
+[zap]blinding ray
+
+目眩ましの光線
+%%%%
+[zap]crushing gravity
+
+押し潰す重力
+%%%%
+[zap]volatile concoction
+
+揮発性の調合薬
+%%%%
+[zap]shards of blighted ice
+
+枯死の氷の破片
+%%%%
+[zap]shard of frigid ice
+
+極寒の氷の破片
+%%%%
+[zap]salvo of frigid ice
+
+極寒の氷の斉射
+%%%%
+[zap]flashing steel
+
+閃く鋼
+%%%%
+[zap]phantom echo
+
+幻影の残響
+%%%%
+[zap]shard of hardened shadow
+
+硬化した影の破片
+%%%%
+[zap]ray of shadow
+
+影の光線
+%%%%
+[zap]shadowball
+
+影の球
+%%%%
+[zap]creeping shadow
+
+這い寄る影
+%%%%
+[zap]shadowy lightning
+
+影の稲妻
+%%%%
+[zap]wave of devouring shadow
+
+喰らう影の波
+%%%%
+[zap]shadow bullet
+
+影の弾丸
+%%%%
+[zap]jagged bones
+
+ぎざぎざの骨
+%%%%
+[zap]gout of destruction
+
+破壊の噴出
+%%%%
+[zap]blood arrow
+
+血の矢
+%%%%
+[zap]rocky spike
+
+岩の棘
+%%%%
+[zap]kinetic grapnel
+
+動力式鉤縄
+%%%%
+[zap]shred
+
+切り刻み
+%%%%
+[zap]shockwave
+
+衝撃波
+%%%%
+[zap]detonation
+
+爆発
+%%%%
+[zap]bomblet
+
+小型爆弾
+%%%%
+[zap]salvo of icicles
+
+氷柱の斉射
+%%%%
+[zap]blast
+
+爆風
+%%%%
+[zap]fortress blast
+
+要塞の爆風
+%%%%
+[zap]seismic shockwave
+
+地震の衝撃波
+%%%%
+[zap]condensed magic
+
+凝縮された魔力
+%%%%
+[zap]glob of mercury
+
+水銀の塊
+%%%%
+[zap]freeze
+
+氷結
+%%%%
+[zap]swarm of vampire bats
+
+吸血コウモリの群れ
+%%%%
+[zap]grasping water
+
+絡みつく水
+%%%%
+[zap]billowing rust
+
+舞い上がる錆
+%%%%
+[zap]buggy blast
+
+バグった爆風
+%%%%
+[zap]magical storm
+
+魔力の嵐
+%%%%
+[zap]ball of acid
+
+酸の爆裂球
+%%%%
+[zap]shooting star
+
+流れ星
+%%%%
+[zap]beam of energy
+
+エネルギーの光線
+%%%%
+[zap]falling rubble
+
+落下する瓦礫
+%%%%
+[zap]dizzying spores
+
+目眩の胞子
+%%%%

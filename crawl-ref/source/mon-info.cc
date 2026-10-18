@@ -17,6 +17,7 @@
 #include "attack.h"
 #include "colour.h"
 #include "coordit.h"
+#include "database.h"
 #include "english.h"
 #include "env.h"
 #include "fight.h"
@@ -26,6 +27,7 @@
 #include "item-prop.h"
 #include "item-status-flag-type.h"
 #include "items.h" // item_is_unusual
+#include "japanese.h"
 #include "libutil.h"
 #include "los.h"
 #include "message.h"
@@ -52,6 +54,7 @@
 #include "tilepick.h"
 #endif
 #include "traps.h"
+#include "unicode.h"
 
 #define SPELL_HD_KEY "spell_hd"
 #define NIGHTVISION_KEY "nightvision"
@@ -419,6 +422,14 @@ static description_level_type _article_for(const actor* a)
     // Player gets DESC_A, but that doesn't really matter.
     const monster * const m = a->as_monster();
     return m && m->friendly() ? DESC_YOUR : DESC_A;
+}
+
+// 英語の名前(Lua 用の constrictor_name などに使う)
+static string _actor_name_en(const actor* a, description_level_type desc)
+{
+    if (const monster * const m = a->as_monster())
+        return m->name_en(desc, true);
+    return "you";
 }
 
 monster_info::monster_info(const monster* m, int milev)
@@ -803,6 +814,8 @@ monster_info::monster_info(const monster* m, int milev)
     // init names of constrictor and constrictees
     constrictor_name = "";
     constricting_name.clear();
+    constrictor_name_j = "";
+    constricting_name_j.clear();
 
     // Name of what this monster is directly constricted by, if any
     if (m->constricted_type == CONSTRICT_MELEE || m->constricted_type == CONSTRICT_ENTANGLE)
@@ -810,8 +823,12 @@ monster_info::monster_info(const monster* m, int milev)
         const actor * const constrictor = actor_by_mid(m->constricted_by);
         ASSERT(constrictor);
         constrictor_name = "constricted by "
-                           + constrictor->name(_article_for(constrictor),
-                                               true);
+                           + _actor_name_en(constrictor,
+                                            _article_for(constrictor));
+        constrictor_name_j = make_stringf(jtransc("constricted by %s"),
+                                          constrictor->name(
+                                              _article_for(constrictor),
+                                              true).c_str());
     }
 
     // Names of what this monster is directly constricting, if any
@@ -824,9 +841,13 @@ monster_info::monster_info(const monster* m, int milev)
             if (constrictee && constrictee->constricted_type == CONSTRICT_MELEE)
             {
                 constricting_name.push_back("constricting "
-                                            + constrictee->name(
-                                                  _article_for(constrictee),
-                                                  true));
+                                            + _actor_name_en(
+                                                  constrictee,
+                                                  _article_for(constrictee)));
+                constricting_name_j.push_back(make_stringf(
+                    jtransc("constricting %s"),
+                    constrictee->name(_article_for(constrictee),
+                                      true).c_str()));
             }
         }
     }
@@ -1007,7 +1028,7 @@ string monster_info::db_name() const
     return get_monster_data(type)->name;
 }
 
-string monster_info::_core_name() const
+string monster_info::_core_name_en() const
 {
     monster_type nametype = type;
 
@@ -1132,9 +1153,9 @@ string monster_info::_apply_adjusted_description(description_level_type desc,
     return apply_description(desc, s);
 }
 
-string monster_info::common_name(description_level_type desc) const
+string monster_info::common_name_en(description_level_type desc) const
 {
-    const string core = _core_name();
+    const string core = _core_name_en();
     const bool nocore = mons_class_is_zombified(type)
                           && mons_is_unique(base_type)
                           // XXX: Hack to keep zombified Gehenna SoH's name.
@@ -1258,7 +1279,7 @@ bool monster_info::has_proper_name() const
             && !is(MB_NAME_REPLACE) && !is(MB_NAME_ADJECTIVE) && !is(MB_NAME_SUFFIX);
 }
 
-string monster_info::proper_name(description_level_type desc) const
+string monster_info::proper_name_en(description_level_type desc) const
 {
     if (has_proper_name())
     {
@@ -1268,19 +1289,375 @@ string monster_info::proper_name(description_level_type desc) const
             return mname;
     }
     else
-        return common_name(desc);
+        return common_name_en(desc);
 }
 
-string monster_info::full_name(description_level_type desc) const
+string monster_info::full_name_en(description_level_type desc) const
 {
     if (desc == DESC_NONE)
         return "";
 
     if (has_proper_name())
     {
-        string s = mname + " the " + common_name();
+        string s = mname + " the " + common_name_en();
         if (desc == DESC_ITS)
             s = apostrophise(s);
+        return s;
+    }
+    else
+        return common_name_en(desc);
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// 日本語の名前
+//
+// common_name() / proper_name() / full_name() は表示用の日本語の名前を返す。
+// 英語の冠詞・複数形は付けない(友好的なモンスターの DESC_THE/DESC_YOUR には
+// 「あなたの」を付ける)。DESC_DBNAME は説明文の検索キーなので英語のまま。
+// 英語の名前が必要なときは *_en() を使う。
+// 訳は jtrans/data-monsters.txt(モンスター名・名前の部品)と
+// jtrans/mon-info.txt にある。
+
+// ゾンビ化したユニークなどで、元の名前(core)を使わない場合。
+static bool _name_has_no_core(const monster_info& mi)
+{
+    return mons_class_is_zombified(mi.type)
+             && mons_is_unique(mi.base_type)
+             // XXX: Hack to keep zombified Gehenna SoH's name.
+             && (mi.base_type == mons_species(mi.base_type)
+                 && mi.base_type != MONS_SERPENT_OF_HELL)
+           || mi.type == MONS_MUTANT_BEAST && !mi.is(MB_NAME_REPLACE);
+}
+
+static string _hydra_heads_j(int heads)
+{
+    if (heads > 0 && heads <= 27)
+        return jnumber_for_hydra_heads(heads);
+    return std::to_string(heads);
+}
+
+/**
+ * 固有名(mname)の表示用の文字列。mname はセーブに英語で残る。
+ * 辞書にあればその訳(ユニークの名前は『』付きで登録してある)、
+ * なければ『』で囲んでそのまま使う。
+ */
+string monster_info::_mname_j() const
+{
+    if (mname.empty())
+        return "";
+
+    const string j = jtrans(mname);
+    if (j != mname || has_wide_char(mname))
+        return j;
+    return "『" + mname + "』";
+}
+
+string monster_info::_core_name() const
+{
+    monster_type nametype = type;
+
+    if (mons_class_is_zombified(type))
+    {
+        if (mons_is_unique(base_type))
+            nametype = mons_species(base_type);
+        else
+            nametype = base_type;
+    }
+    else if (mons_class_is_remnant(type) || type == MONS_SENSED)
+        nametype = base_type;
+
+    string s;
+
+    if (is(MB_NAME_REPLACE))
+        s = jtrans(mname);
+    else if (invalid_monster_type(nametype) && nametype != MONS_PROGRAM_BUG)
+        s = "INVALID MONSTER";
+    else
+    {
+        const char* slime_sizes[] = {"buggy ", "", "large ", "very large ",
+                                               "enormous ", "titanic "};
+        const string en = get_monster_data(nametype)->name;
+        s = jtrans(en);
+
+        // 赤色ドラコニアンの騎士
+        if (mons_is_draconian_job(type) && base_type != MONS_NO_MONSTER)
+        {
+            s = tagged_jtrans("[drac colour]", draconian_colour_name(base_type))
+                + s;
+        }
+
+        switch (type)
+        {
+        case MONS_SLIME_CREATURE:
+            ASSERT((size_t) slime_size < ARRAYSZ(slime_sizes));
+            s = jtrans(slime_sizes[slime_size] + en);
+            break;
+        case MONS_UGLY_THING:
+        case MONS_VERY_UGLY_THING:
+            s = tagged_jtrans("[ugly things colour]",
+                              ugly_thing_colour_name(_colour)) + s;
+            break;
+
+        case MONS_DANCING_WEAPON:
+        case MONS_SPECTRAL_WEAPON:
+            if (inv[MSLOT_WEAPON])
+            {
+                const item_def& item = *inv[MSLOT_WEAPON];
+                s = make_stringf(jtransc("dancing %s"),
+                                 item.name(DESC_PLAIN).c_str());
+            }
+            break;
+
+        case MONS_ARMOUR_ECHO:
+            if (inv[MSLOT_ARMOUR])
+            {
+                const item_def& item = *inv[MSLOT_ARMOUR];
+                s = make_stringf(jtransc("echoed %s"),
+                                 item.name(DESC_PLAIN).c_str());
+            }
+            break;
+
+        case MONS_HAUNTED_ARMOUR:
+            if (inv[MSLOT_ARMOUR])
+            {
+                const item_def& item = *inv[MSLOT_ARMOUR];
+                s = make_stringf(jtransc("haunted %s"),
+                                 item.name(DESC_QUALNAME).c_str());
+            }
+            break;
+
+        // プレイヤーの名前・パンデモニウムの君主の名前は訳さない
+        case MONS_PLAYER_GHOST:
+            s = make_stringf(jtransc("%s's ghost"), mname.c_str());
+            break;
+        case MONS_PLAYER_ILLUSION:
+            s = make_stringf(jtransc("%s's illusion"), mname.c_str());
+            break;
+        case MONS_PANDEMONIUM_LORD:
+            s = make_stringf(jtransc("[panlord]%s"), mname.c_str());
+            break;
+        case MONS_LIVING_SPELL:
+            if (has_spells())
+            {
+                switch (spells[0].spell)
+                {
+                case SPELL_BANISHMENT:
+                    s = jtrans("living banishment spell");
+                    break;
+                case SPELL_LEHUDIBS_CRYSTAL_SPEAR:
+                    s = jtrans("living crystal spell");
+                    break;
+                case SPELL_SMITING:
+                    s = jtrans("living smiting commandment");
+                    break;
+                case SPELL_PARALYSE:
+                    s = jtrans("living paralysis spell");
+                    break;
+                default:
+                    break;
+                }
+            }
+            break;
+        default:
+            break;
+        }
+    }
+
+    // vault などで付けた名前の接尾辞・形容詞
+    // (例: "kobold" + "priest" → 「コボルドの司祭」)
+    //XXX: Hack to get poly'd TLH's name on death to look right.
+    if (is(MB_NAME_SUFFIX) && type != MONS_LERNAEAN_HYDRA)
+        s += tagged_jtrans("[name suffix]", mname);
+    else if (is(MB_NAME_ADJECTIVE))
+        s = tagged_jtrans("[name adj]", mname) + s;
+
+    return s;
+}
+
+string monster_info::_apply_adjusted_description_j(description_level_type desc,
+                                                   const string& s) const
+{
+    if (desc == DESC_ITS)
+        desc = DESC_THE;
+
+    if (is(MB_NAME_THE) && desc == DESC_A)
+        desc = DESC_THE;
+
+    if (attitude == ATT_FRIENDLY && desc == DESC_THE)
+        desc = DESC_YOUR;
+
+    switch (desc)
+    {
+    case DESC_NONE:
+        return "";
+    case DESC_YOUR:
+        return tagged_jtrans("[mon name]", "your") + s;
+    default:
+        return s;
+    }
+}
+
+string monster_info::common_name(description_level_type desc) const
+{
+    if (desc == DESC_DBNAME)
+        return common_name_en(desc);
+
+    const string core = _core_name();
+    const bool nocore = _name_has_no_core(*this);
+
+    ostringstream ss;
+
+    // 前に付く修飾語(キーが他の名前とぶつからないようタグを付ける)
+    if (props.exists(HELPLESS_KEY))
+        ss << tagged_jtrans("[mon prefix]", "helpless");
+
+    if (type == MONS_SPECTRAL_THING && !is(MB_NAME_ZOMBIE) && !nocore)
+        ss << tagged_jtrans("[mon prefix]", "spectral");
+
+    if (type == MONS_BOUND_SOUL && !is(MB_NAME_ZOMBIE) && !nocore)
+        ss << tagged_jtrans("[mon prefix]", "bound");
+
+    if (is(MB_SPECTRALISED))
+        ss << tagged_jtrans("[mon prefix]", "ghostly");
+
+    if (is(MB_VAMPIRE_THRALL))
+        ss << tagged_jtrans("[mon prefix]", "vampire");
+
+    if (type == MONS_SENSED && !mons_is_sensed(base_type))
+        ss << tagged_jtrans("[mon prefix]", "sensed");
+
+    if (type == MONS_BALLISTOMYCETE && is_active)
+        ss << tagged_jtrans("[mon prefix]", "active");
+
+    if (has_hydra_multi_attack()
+        && type != MONS_SENSED
+        && !mons_class_is_remnant(type))
+    {
+        ASSERT(num_heads > 0);
+        // 九首ヒドラ / 九の首を持つ『レルネーのヒドラ』
+        ss << _hydra_heads_j(num_heads);
+        if (!nocore && starts_with(core, "『"))
+            ss << tagged_jtrans("[mon prefix]", "-headed (proper name)");
+        else
+            ss << tagged_jtrans("[mon prefix]", "-headed");
+    }
+
+    // 棘だらけの蝙蝠のような年若い獣
+    if (type == MONS_MUTANT_BEAST && !is(MB_NAME_REPLACE))
+    {
+        const int xl = props[MUTANT_BEAST_TIER].get_short();
+        const int tier = mutant_beast_tier(xl);
+        for (auto facet : props[MUTANT_BEAST_FACETS].get_vector())
+        {
+            ss << tagged_jtrans("[mutant facet]",
+                                _mutant_beast_facet(facet.get_int()));
+        }
+        ss << tagged_jtrans("[mutant tier]", _mutant_beast_tier_name(tier));
+        ss << tagged_jtrans("[mon suffix]", "beast");
+    }
+
+    if (!nocore)
+        ss << core;
+
+    // 後ろに付くもの: 「オークのゾンビ」「オークの形をした塩の柱」
+    const string no = nocore ? "" : "の";
+    switch (type)
+    {
+    case MONS_ZOMBIE:
+        if (!is(MB_NAME_ZOMBIE))
+            ss << no << tagged_jtrans("[mon suffix]", "zombie");
+        break;
+    case MONS_DRAUGR:
+        if (!is(MB_NAME_ZOMBIE))
+            ss << no << tagged_jtrans("[mon suffix]", "draugr");
+        break;
+    case MONS_SIMULACRUM:
+        if (!is(MB_NAME_ZOMBIE))
+            ss << no << tagged_jtrans("[mon suffix]", "simulacrum");
+        break;
+    case MONS_SPECTRAL_THING:
+        if (nocore)
+            ss << tagged_jtrans("[mon suffix]", "spectre");
+        break;
+    case MONS_BOUND_SOUL:
+        if (nocore)
+            ss << tagged_jtrans("[mon suffix]", "bound soul");
+        break;
+    case MONS_PILLAR_OF_SALT:
+        if (base_type != type)
+        {
+            if (!nocore)
+                ss << tagged_jtrans("[mon suffix]", "shaped");
+            ss << tagged_jtrans("[mon suffix]", "pillar of salt");
+        }
+        break;
+    case MONS_BLOCK_OF_ICE:
+        if (base_type != type)
+        {
+            if (!nocore)
+                ss << tagged_jtrans("[mon suffix]", "shaped");
+            ss << tagged_jtrans("[mon suffix]", "block of ice");
+        }
+        break;
+    default:
+        break;
+    }
+
+    if (is(MB_SHAPESHIFTER))
+    {
+        // If momentarily in original form, don't display "shaped
+        // shifter".
+        if (mons_genus(type) != MONS_SHAPESHIFTER)
+            ss << tagged_jtrans("[mon suffix]", "shaped shifter");
+    }
+
+    string s;
+    // only respect unqualified if nothing was added ("Sigmund" or "The spectral Sigmund")
+    if (!is(MB_NAME_UNQUALIFIED) || has_proper_name() || ss.str() != core)
+        s = _apply_adjusted_description_j(desc, ss.str());
+    else
+        s = ss.str();
+
+    if (desc == DESC_ITS)
+        s += "の";
+
+    return s;
+}
+
+string monster_info::proper_name(description_level_type desc) const
+{
+    if (desc == DESC_DBNAME)
+        return proper_name_en(desc);
+
+    if (has_proper_name())
+    {
+        if (desc == DESC_ITS)
+            return _mname_j() + "の";
+        else
+            return _mname_j();
+    }
+    else
+        return common_name(desc);
+}
+
+string monster_info::full_name(description_level_type desc) const
+{
+    if (desc == DESC_DBNAME)
+        return full_name_en(desc);
+
+    if (desc == DESC_NONE)
+        return "";
+
+    if (has_proper_name())
+    {
+        string s;
+        // 『シグムンド』のゾンビ / オークの司祭『アルボルト』
+        if (_name_has_no_core(*this))
+            s = _mname_j() + "の" + common_name();
+        else
+            s = common_name() + _mname_j();
+        if (desc == DESC_ITS)
+            s += "の";
         return s;
     }
     else
@@ -1400,10 +1777,11 @@ string monster_info::pluralised_name(bool fullname) const
     // are unlikely in the dungeon currently, but quite common in the
     // arena. This prevents "4 Gra", etc. {due}
     // Unless it's Mara, who summons illusions of himself.
+    // 日本語では複数形にしない
     if (mons_is_unique(type) && type != MONS_MARA)
         return common_name();
     else if (mons_genus(type) == MONS_DRACONIAN && !is(MB_NAME_REPLACE))
-        return pluralise_monster(mons_type_name(MONS_DRACONIAN, DESC_PLAIN));
+        return mons_type_name_j(MONS_DRACONIAN, DESC_PLAIN);
     else if ((type == MONS_UGLY_THING || type == MONS_VERY_UGLY_THING
                 || type == MONS_DANCING_WEAPON || type == MONS_SPECTRAL_WEAPON
                 || type == MONS_ARMOUR_ECHO || type == MONS_MUTANT_BEAST
@@ -1412,10 +1790,10 @@ string monster_info::pluralised_name(bool fullname) const
             && !is(MB_NAME_REPLACE))
 
     {
-        return pluralise_monster(mons_type_name(type, DESC_PLAIN));
+        return mons_type_name_j(type, DESC_PLAIN);
     }
     else
-        return pluralise_monster(common_name());
+        return common_name();
 }
 
 void monster_info::to_string(int count, string& desc, int& desc_colour,
@@ -1432,10 +1810,11 @@ void monster_info::to_string(int count, string& desc, int& desc_colour,
 
     // TODO: this should be done in a much cleaner way, with code to
     // merge multiple monster_infos into a single common structure
+    // 「3体のオーク」「友好的なオーク」
     if (count != 1)
-        out << count << " ";
+        out << make_stringf(jtransc("[mon list]%d "), count);
     if (adj)
-        out << adj << " ";
+        out << tagged_jtrans("[mon list adj]", adj);
     out << full;
 
 #ifdef DEBUG_DIAGNOSTICS
@@ -1457,7 +1836,7 @@ void monster_info::to_string(int count, string& desc, int& desc_colour,
     case ATT_OLD_STRICT_NEUTRAL:
 #endif
         if (fellow_slime())
-            out << " (fellow slime)";
+            out << jtrans_notrim(" (fellow slime)");
         colour_type = MLC_GOOD_NEUTRAL;
         break;
     case ATT_NEUTRAL:
@@ -1501,7 +1880,19 @@ static bool _hide_moninfo_flag(monster_info_flags f)
     return false;
 }
 
+/// 表示用の状態一覧(日本語)。
 vector<string> monster_info::attributes() const
+{
+    return _attributes(true);
+}
+
+/// 英語の状態一覧(Lua の moninf:status() などの比較用)。
+vector<string> monster_info::attributes_en() const
+{
+    return _attributes(false);
+}
+
+vector<string> monster_info::_attributes(bool ja) const
 {
     vector<string> v;
     for (auto& name : monster_info_flag_names)
@@ -1513,8 +1904,10 @@ vector<string> monster_info::attributes() const
                 continue;
 
             // TODO: just use `do_mon_str_replacements`?
-            v.push_back(replace_all(name.long_singular,
-                                    "@possessive@",
+            // 訳では代名詞を省く(未訳のときのために置換は残す)
+            const string attr = ja ? tagged_jtrans("[attr]", name.long_singular)
+                                   : name.long_singular;
+            v.push_back(replace_all(attr, "@possessive@",
                                     pronoun(PRONOUN_POSSESSIVE)));
         }
     }
@@ -1524,8 +1917,17 @@ vector<string> monster_info::attributes() const
         const int num_memories = props.exists(NOBODY_MEMORIES_KEY)
                                     ? props[NOBODY_MEMORIES_KEY].get_vector().size()
                                     : NOBODY_MAX_MEMORIES;
-        v.push_back(make_stringf("%d %s left", num_memories,
-                                               num_memories == 1 ? "memory" : "memories"));
+        if (ja)
+        {
+            v.push_back(make_stringf(jtransc("[attr]%d memories left"),
+                                     num_memories));
+        }
+        else
+        {
+            v.push_back(make_stringf("%d %s left", num_memories,
+                                     num_memories == 1 ? "memory"
+                                                       : "memories"));
+        }
     }
 
     return v;
@@ -1538,9 +1940,8 @@ string monster_info::wounds_description_sentence() const
         return "";
     else
     {
-        return string(pronoun(PRONOUN_SUBJECTIVE)) + " "
-               + conjugate_verb("are", pronoun_plurality())
-               + " " + wounds + ".";
+        // 代名詞は省く
+        return make_stringf(jtransc("[wounds sentence]%s"), wounds.c_str());
     }
 }
 
@@ -1549,7 +1950,7 @@ string monster_info::wounds_description(bool use_colour) const
     if (dam == MDAM_OKAY)
         return "";
 
-    string desc = get_damage_level_string(holi, dam);
+    string desc = damage_desc();
     if (use_colour)
     {
         const int col = channel_to_colour(MSGCH_MONSTER_DAMAGE, dam);
@@ -1558,24 +1959,30 @@ string monster_info::wounds_description(bool use_colour) const
     return desc;
 }
 
+/// 傷の程度(日本語)。「軽く傷ついている」など。
+string monster_info::damage_desc() const
+{
+    return tagged_jtrans("[wounds]", get_damage_level_string(holi, dam));
+}
+
 string monster_info::constriction_description() const
 {
     string cinfo = "";
     bool bymsg = false;
 
-    if (!constrictor_name.empty())
+    if (!constrictor_name_j.empty())
     {
-        cinfo += constrictor_name;
+        cinfo += constrictor_name_j;
         bymsg = true;
     }
 
-    string constricting = comma_separated_line(constricting_name.begin(),
-                                               constricting_name.end());
+    string constricting = join_strings(constricting_name_j.begin(),
+                                       constricting_name_j.end(), "、");
 
     if (!constricting.empty())
     {
         if (bymsg)
-            cinfo += ", ";
+            cinfo += "、";
         cinfo += constricting;
     }
     return cinfo;
@@ -1668,30 +2075,39 @@ string monster_info::speed_description() const
         return "";
 
     ostringstream result;
-    result << "Speed: " << speed * 10 << "%";
+    result << make_stringf(jtransc("Speed: %d%%"), speed * 10);
 
     vector<string> unusuals;
 
-    _add_energy_desc(menergy.attack, "attack", speed, unusuals);
-    _add_energy_desc(menergy.missile, "shoot", speed, unusuals);
-    _add_energy_desc(menergy.move, "travel", speed, unusuals);
+    _add_energy_desc(menergy.attack, tagged_jtrans("[speed]", "attack"),
+                     speed, unusuals);
+    _add_energy_desc(menergy.missile, tagged_jtrans("[speed]", "shoot"),
+                     speed, unusuals);
+    _add_energy_desc(menergy.move, tagged_jtrans("[speed]", "travel"),
+                     speed, unusuals);
     if (menergy.swim != menergy.move)
-        _add_energy_desc(menergy.swim, "swim", speed, unusuals);
+    {
+        _add_energy_desc(menergy.swim, tagged_jtrans("[speed]", "swim"),
+                         speed, unusuals);
+    }
     // If we ever add a non-magical monster with fast/slow abilities,
     // we'll need to update this.
-    _add_energy_desc(menergy.spell, is_priest() ? "pray" : "magic",
+    _add_energy_desc(menergy.spell,
+                     tagged_jtrans("[speed]", is_priest() ? "pray" : "magic"),
                      speed, unusuals);
 
     if (!unusuals.empty())
-        result << " (" << join_strings(unusuals.begin(), unusuals.end(), ", ") << ")";
+        result << " (" << join_strings(unusuals.begin(), unusuals.end(), "、") << ")";
 
     if (type == MONS_SIXFIRHY || type == MONS_JIANGSHI)
-        result << " (but often pauses)";
+        result << jtrans_notrim(" (but often pauses)");
     else if (travel_delay_diff)
     {
         const bool slow = travel_delay_diff > 0;
-        const string diff_desc = slow ? "slower" : "faster";
-        result << " (normally travels " << diff_desc << " than you)";
+        const string diff_desc = tagged_jtrans("[speed]",
+                                               slow ? "slower" : "faster");
+        result << " " << make_stringf(jtransc("(normally travels %s than you)"),
+                                      diff_desc.c_str());
         // It would be interesting to qualify this with 'on land',
         // if appropriate, but sort of annoying to get player swim speed.
     }
@@ -2040,12 +2456,13 @@ static bool _has_attack_flavour(const monster_info& mi, attack_flavour af)
 static string _condition_string(int num, int count,
                                 const monster_info_flag_name& name)
 {
-    const string& word = (1 == num) ? name.short_singular : name.plural;
+    // 日本語では単数形・複数形を分けない
+    const string word = tagged_jtrans("[info]", name.short_singular);
 
     if (count == num)
         return word;
     else
-        return make_stringf("%d %s", num, word.c_str());
+        return make_stringf(jtransc("[mon cond]%d %s"), num, word.c_str());
 }
 
 void mons_conditions_string(string& desc, const vector<monster_info>& mi,
@@ -2161,7 +2578,7 @@ void mons_conditions_string(string& desc, const vector<monster_info>& mi,
         return;
 
     desc += " ("
-         + join_strings(conditions.begin(), conditions.end(), ", ") + ")";
+         + join_strings(conditions.begin(), conditions.end(), "、") + ")";
 }
 
 monster_type monster_info::draconian_subspecies() const
@@ -2197,7 +2614,7 @@ string description_for_ench(enchant_type type)
 
     for (auto& name : monster_info_flag_names)
         if (name.flag == *flag)
-            return name.long_singular;
+            return tagged_jtrans("[attr]", name.long_singular);
 
     return "";
 }

@@ -1,0 +1,238 @@
+%%%%
+################################################################
+#   mon-util.cc
+################################################################
+%%%%
+in a puff of smoke
+
+煙とともに
+%%%%
+[mimic]cackles and
+
+甲高く笑いながら
+%%%%
+# %s: アイテム名・地形名 / 笑い声 / 煙
+The %s mimic %svanishes%s!
+
+%sのミミックは%s%s消え去った！
+%%%%
+%s is a mimic!
+
+%sはミミックだった！
+%%%%
+random monster
+
+ランダムなモンスター
+%%%%
+random draconian
+
+ランダムなドラコニアン
+%%%%
+random base draconian
+
+ランダムな基本種ドラコニアン
+%%%%
+random nonbase draconian
+
+ランダムな職業持ちドラコニアン
+%%%%
+wandering monster
+
+徘徊するモンスター
+%%%%
+discards its horn.
+
+は角笛を投げ捨てた。
+%%%%
+# print_wounds(): %s は「軽く傷ついている」など
+is %s.
+
+は%s。
+%%%%
+%s is hit by a flying piece of %s!
+
+%sは飛び散った%sの破片を浴びた！
+%%%%
+%s regains its memory of %s.
+
+%sは%sの記憶を取り戻した。
+%%%%
+%s avoids your attack.
+
+%sはあなたの攻撃をかわした。
+%%%%
+Your demonic guardian avoids your attack.
+
+あなたの悪魔の守護者はあなたの攻撃をかわした。
+%%%%
+The Sanctuary denies your attempt to harm %s.
+
+聖域はあなたが%sを傷つけることを許さなかった。
+%%%%
+The Sanctuary protects %s from harm.
+
+聖域は%sを危害から守った。
+%%%%
+protects your slime from harm.
+
+はあなたのスライムを危害から守った。
+%%%%
+################################################################
+#   台詞の置換(do_mon_str_replacements)
+################################################################
+%%%%
+# 「オークたち」
+[speech]%s (plural)
+
+%sたち
+%%%%
+[speech]you
+
+あなた
+%%%%
+[speech]your god
+
+あなたの神
+%%%%
+# @god_is@: 「トログは」
+[speech]god is
+
+は
+%%%%
+[speech]reflexive
+
+自分
+%%%%
+[speech]a god
+
+ある神
+%%%%
+[speech]its god
+
+自らの神
+%%%%
+[speech]my God
+
+我が神
+%%%%
+[surface]lava
+
+溶岩
+%%%%
+[surface]water
+
+水
+%%%%
+[surface]altar
+
+祭壇
+%%%%
+[surface]ground
+
+地面
+%%%%
+# @says@: 「〜と言った」の動詞部分
+[says]says
+
+言った
+%%%%
+[says]shouts
+
+叫んだ
+%%%%
+[says]barks
+
+吠えた
+%%%%
+[says]howls
+
+遠吠えした
+%%%%
+[says]roars
+
+咆哮した
+%%%%
+[says]screams
+
+絶叫した
+%%%%
+[says]bellows
+
+大声で鳴いた
+%%%%
+[says]bleats
+
+メーと鳴いた
+%%%%
+[says]trumpets
+
+パオーンと鳴いた
+%%%%
+[says]screeches
+
+キーキーと鳴いた
+%%%%
+[says]buzzes
+
+ブンブンとうなった
+%%%%
+[says]moans
+
+うめいた
+%%%%
+[says]gurgles
+
+ゴボゴボと音を立てた
+%%%%
+[says]croaks
+
+ゲコゲコと鳴いた
+%%%%
+[says]growls
+
+うなった
+%%%%
+[says]hisses
+
+シューッと音を立てた
+%%%%
+[says]skitters
+
+カサカサと音を立てた
+%%%%
+[says]skitters faintly
+
+かすかにカサカサと音を立てた
+%%%%
+[says]sneers
+
+嘲笑った
+%%%%
+[says]squeals
+
+悲鳴を上げた
+%%%%
+[says]rustles
+
+ざわめいた
+%%%%
+[says]squeaks
+
+チューチューと鳴いた
+%%%%
+[says]breathes
+
+静かに言った
+%%%%
+[says]whispers
+
+囁いた
+%%%%
+[says]caws
+
+カーカーと鳴いた
+%%%%
+[says]laughs
+
+笑った
+%%%%

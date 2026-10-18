@@ -1,0 +1,191 @@
+%%%%
+The light of Elyvilon fails to reach %s.
+
+エリヴィロンの光は%sに届かなかった。
+%%%%
+The light of Elyvilon almost touches upon %s.
+
+エリヴィロンの光はもう少しで%sに届くところだった。
+%%%%
+turns neutral.
+
+は中立化した。
+%%%%
+You heal %s.
+
+あなたは%sを癒した。
+%%%%
+is completely healed.
+
+は完全に回復した。
+%%%%
+Heal
+
+治療対象
+%%%%
+You feel limber!
+
+あなたは体が柔らかくなった！
+%%%%
+Your magical effects are unravelling.
+
+あなたにかかっていた魔法の効果が解除された。
+%%%%
+You briefly glimpse something next to %s.
+
+あなたは%sの隣に何かを垣間見た。
+%%%%
+You need more space to imprison %s.
+
+%sを収監するにはもっと開けた場所が必要だ。
+%%%%
+Zin imprisons %s with walls of pure silver!
+
+ジンは%sを純銀の壁で閉じ込めた！
+%%%%
+Walls emerge from the floor!
+
+石の壁が床からせり出した！
+%%%%
+You are blasted by holy energy!
+
+あなたは神聖なエネルギーで焼き焦がされた！
+%%%%
+is blasted by Zin's holy word!
+
+はジンの聖なる御言葉の威光をその身に受けた！
+%%%%
+convulses!
+
+は身もだえした！
+%%%%
+shields you from torment!
+
+はあなたを邪悪な苦痛から守った！
+%%%%
+partially shields you from torment!
+
+はあなたを邪悪な苦痛からある程度守った！
+%%%%
+You feel a surge of unholy energy.
+
+あなたは不浄なエネルギーの奔流を感じた。
+%%%%
+Your body is wracked with pain!
+
+あなたの体は苦痛で痙攣した！
+%%%%
+You cannot pacify mindless monsters!
+
+心を持たないモンスターを中立化することはできない！
+%%%%
+You cannot pacify nonliving monsters!
+
+生命を持たないモンスターを中立化することはできない！
+%%%%
+You cannot pacify immobile monsters!
+
+動けないモンスターを中立化することはできない！
+%%%%
+You cannot pacify this monster while it is asleep!
+
+眠っているモンスターを中立化することはできない！
+%%%%
+You cannot pacify this monster while it is dormant!
+
+休眠しているモンスターを中立化することはできない！
+%%%%
+%s would be completely unfazed by your meagre offer of peace.
+
+%sはあなたのささやかな和平の申し出など全く意に介さないだろう。
+%%%%
+mindless
+
+心を持たない
+%%%%
+uninterested
+
+興味を示さない
+%%%%
+chance to pacify: <<1%%
+
+中立化の確率: <<1%%
+%%%%
+chance to pacify: %d%%
+
+中立化の確率: %d%%
+%%%%
+Your magical effects refuse to unravel!
+
+あなたにかかっている魔法の効果は解除されなかった！
+%%%%
+You are no longer on fire.
+
+あなたの体の火は消えた。
+%%%%
+Your fortress blast dissipates harmlessly.
+
+あなたの城塞の爆風は害なく消散した。
+%%%%
+magical effects unravel!
+
+魔法の効果が解除された！
+%%%%
+Beogh will not strike down an ally of the cause.
+
+ベオは大義の同志を打ち倒しはしない。
+%%%%
+booms: This is a trial of mortal prowess. Fight with your own strength!
+
+は轟くような声で告げた: 『これは定命の者の武勇を試す試練である。己の力で戦え！』
+%%%%
+You smite %s%s
+
+あなたは%sを打ち据えた%s
+%%%%
+%s speaks a Word of immense power!
+
+%sは絶大な力を持つ御言葉を唱えた！
+%%%%
+Something is bathed in an unholy light!
+
+何かが不浄な光を浴びた！
+%%%%
+Your necklace shatters, unleashing a wave of protective dreams!
+
+あなたの首飾りが砕け散り、守護の夢の波が解き放たれた！
+%%%%
+You dream of %s.
+
+あなたは%sの夢を見た。
+%%%%
+[cancellation]as magically contaminated
+
+魔力汚染
+%%%%
+[cancellation]transformed
+
+変身
+%%%%
+[cancellation]flying
+
+飛行
+%%%%
+# dreamshard_shatter() で to_separated_fn から引くキー
+[dream]life
+
+生命
+%%%%
+[dream]friendship
+
+友情
+%%%%
+[dream]clouds
+
+雲
+%%%%
+# setup_cleansing_flame_beam() の beam.name(beam.cc で zap_name_j で引く前提)
+[zap]golden flame
+
+黄金の炎
+%%%%

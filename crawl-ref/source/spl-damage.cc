@@ -7,6 +7,7 @@
 #include "AppHdr.h"
 
 
+#include "database.h"
 #include "spl-damage.h"
 
 #include <cmath>
@@ -30,6 +31,7 @@
 #include "god-passive.h"
 #include "invent.h"
 #include "items.h"
+#include "japanese.h"
 #include "level-state-type.h"
 #include "los.h"
 #include "losglobal.h"
@@ -118,14 +120,15 @@ spret cast_fire_storm(int pow, bolt &beam, bool fail)
 {
     if (grid_distance(beam.target, beam.source) > beam.range)
     {
-        mpr("That is beyond the maximum range.");
+        mpr(jtrans("That is beyond the maximum range."));
         return spret::abort;
     }
 
     if (cell_is_solid(beam.target))
     {
         const char *feat = feat_type_name(env.grid(beam.target));
-        mprf("You can't place the storm on %s.", article_a(feat).c_str());
+        mprf(jtransc("You can't place the storm on %s."),
+             tagged_jtrans("[feature]", feat).c_str());
         return spret::abort;
     }
 
@@ -175,7 +178,7 @@ bool cast_smitey_damnation(int pow, bolt &beam)
     if (cancel_beam_prompt(beam, tracer))
         return false;
 
-    mpr("You call forth a pillar of damnation!");
+    mpr(jtrans("You call forth a pillar of damnation!"));
 
     beam.in_explosion_phase = false;
     beam.explode(true);
@@ -308,7 +311,7 @@ spret cast_chain_lightning(int pow, const actor &caster, bool fail)
 
     if (you.can_see(caster))
     {
-        mprf("Lightning arcs from %s %s!",
+        mprf(jtransc("Lightning arcs from %s %s!"),
              apostrophise(caster.name(DESC_PLAIN)).c_str(),
              caster.hand_name(true).c_str());
     }
@@ -448,7 +451,7 @@ spret cast_chain_spell(spell_type spell_cast, int pow,
         if (target.x == -1)
         {
             if (see_source)
-                mprf("The %s grounds out.", beam.name.c_str());
+                mprf(jtransc("The %s grounds out."), zap_name_jc(beam.name));
 
             break;
         }
@@ -456,13 +459,13 @@ spret cast_chain_spell(spell_type spell_cast, int pow,
         // Trying to limit message spamming here so we'll only mention
         // the chaos at the start or when it's out of LoS.
         if (first && see_source)
-            mpr("A swirling arc of seething chaos appears!");
+            mpr(jtrans("A swirling arc of seething chaos appears!"));
         first = false;
 
         if (see_source && !see_targ)
-            mprf("The %s arcs out of your line of sight!", beam.name.c_str());
+            mprf(jtransc("The %s arcs out of your line of sight!"), zap_name_jc(beam.name));
         else if (!see_source && see_targ)
-            mprf("The %s suddenly appears!", beam.name.c_str());
+            mprf(jtransc("The %s suddenly appears!"), zap_name_jc(beam.name));
 
         beam.source = source;
         beam.target = target;
@@ -699,19 +702,18 @@ static spret _cast_los_attack_spell(spell_type spell, int pow,
     targeting_tracer tracer;
     beam.foe_ratio = 80;
 
-    const char *player_msg = nullptr, *global_msg = nullptr,
-               *mons_vis_msg = nullptr, *mons_invis_msg = nullptr,
-               *prompt_verb = nullptr;
+    string player_msg, global_msg, mons_vis_msg, mons_invis_msg;
+    const char *prompt_verb = nullptr;
     bool (*vulnerable)(const actor *, const actor *) = nullptr;
 
     switch (spell)
     {
         case SPELL_OZOCUBUS_REFRIGERATION:
-            player_msg = "The heat is drained from your surroundings.";
-            global_msg = "Something drains the heat from around you.";
-            mons_vis_msg = " drains the heat from the surrounding"
-                           " environment!";
-            mons_invis_msg = "The ambient heat is drained!";
+            player_msg = jtrans("The heat is drained from your surroundings.");
+            global_msg = jtrans("Something drains the heat from around you.");
+            mons_vis_msg = jtrans(" drains the heat from the surrounding"
+                                 " environment!");
+            mons_invis_msg = jtrans("The ambient heat is drained!");
             prompt_verb = "refrigerate";
             vulnerable = [](const actor *caster, const actor *act) {
                 return act != caster
@@ -723,20 +725,20 @@ static spret _cast_los_attack_spell(spell_type spell, int pow,
             break;
 
         case SPELL_DRAIN_LIFE:
-            player_msg = "You draw life from your surroundings.";
-            global_msg = "Something draws the life force from your"
-                         " surroundings.";
-            mons_vis_msg = " draws from the surrounding life force!";
-            mons_invis_msg = "The surrounding life force dissipates!";
+            player_msg = jtrans("You draw life from your surroundings.");
+            global_msg = jtrans("Something draws the life force from your"
+                                " surroundings.");
+            mons_vis_msg = jtrans(" draws from the surrounding life force!");
+            mons_invis_msg = jtrans("The surrounding life force dissipates!");
             prompt_verb = "drain life";
             vulnerable = &_drain_lifeable;
             break;
 
         case SPELL_SONIC_WAVE:
-            player_msg = "You send a blast of sound all around you.";
-            global_msg = "Something sends a blast of sound all around you.";
-            mons_vis_msg = " sends a blast of sound all around you!";
-            mons_invis_msg = "Sound blasts the surrounding area!";
+            player_msg = jtrans("You send a blast of sound all around you.");
+            global_msg = jtrans("Something sends a blast of sound all around you.");
+            mons_vis_msg = jtrans(" sends a blast of sound all around you!");
+            mons_invis_msg = jtrans("Sound blasts the surrounding area!");
             // prompt_verb = "sing" The singing sword prompts in melee-attack
             vulnerable = [](const actor *caster, const actor *act) {
                 return act != caster && could_harm(caster, act);
@@ -774,7 +776,7 @@ static spret _cast_los_attack_spell(spell_type spell, int pow,
             if (!agent)
                 mpr(global_msg);
             else if (you.can_see(*agent))
-                simple_monster_message(*mons, mons_vis_msg);
+                simple_monster_message(*mons, mons_vis_msg.c_str());
             else if (you.see_cell(agent->pos()))
                 mpr(mons_invis_msg);
 
@@ -895,9 +897,9 @@ spret cast_freeze(int pow, monster* mons, bool fail)
     const int orig_hurted = beam.damage.roll();
     // calculate the resist adjustment to punctuate
     int hurted = mons_adjust_flavoured(mons, beam, orig_hurted, false);
-    mprf("You freeze %s%s%s",
+    mprf(hurted ? jtransc("You freeze %s%s")
+                : jtransc("You freeze %s but do no damage%s"),
          mons->name(DESC_THE).c_str(),
-         hurted ? "" : " but do no damage",
          attack_strength_punctuation(hurted).c_str());
 
     // print the resist message and expose to the cold
@@ -946,17 +948,17 @@ string airstrike_intensity_display(int empty_space, tileidx_t& tile)
     if (empty_space < 3)
     {
         tile = TILE_BOLT_WEAK_AIR;
-        return "The confined air twists around weakly";
+        return jtrans("The confined air twists around weakly");
     }
     else if (empty_space < 6)
     {
         tile = TILE_BOLT_MEDIUM_AIR;
-        return "The air twists around";
+        return jtrans("The air twists around");
     }
     else
     {
         tile = TILE_BOLT_STRONG_AIR;
-        return "The open air twists around violently";
+        return jtrans("The open air twists around violently");
     }
 }
 
@@ -997,10 +999,10 @@ spret cast_airstrike(int pow, coord_def target, bool fail)
 #endif
     hurted = mons->apply_ac(mons->beam_resists(pbeam, hurted, false));
     dprf("preac: %d, postac: %d", preac, hurted);
-    mprf("%s and strikes %s%s%s",
+    mprf(hurted ? jtransc("%s and strikes %s%s")
+                : jtransc("%s and strikes %s but does no damage%s"),
          airstrike_intensity_display(empty_space, tile).c_str(),
          mons->name(DESC_THE).c_str(),
-         hurted ? "" : " but does no damage",
          attack_strength_punctuation(hurted).c_str());
 
     flash_tile(mons->pos(), WHITE, 60, tile);
@@ -1058,7 +1060,7 @@ spret cast_momentum_strike(int pow, coord_def target, bool fail)
     if (!beam.foes_hurt && !beam.friends_hurt) // miss!
     {
         if (!mons || !you.can_see(*mons))
-            mpr("The momentum dissipates harmlessly.");
+            mpr(jtrans("The momentum dissipates harmlessly."));
         return spret::success;
     }
 
@@ -1066,7 +1068,7 @@ spret cast_momentum_strike(int pow, coord_def target, bool fail)
     if (you.duration[DUR_NO_MOMENTUM] < dur)
     {
         you.set_duration(DUR_NO_MOMENTUM, dur, dur,
-                         "You are unable to move.");
+                         jtransc("You are unable to move."));
     }
 
     return spret::success;
@@ -1183,7 +1185,7 @@ spret cast_permafrost_eruption(actor &caster, int pow, bool fail)
 
 
     const coord_def targ = *random_iterator(maybe_targets);
-    mpr("Bitter cold erupts, blasting rock from the ceiling!");
+    mpr(jtrans("Bitter cold erupts, blasting rock from the ceiling!"));
 
     _fire_permafrost_at(caster, pow, targ, false);
 
@@ -1464,7 +1466,7 @@ bool setup_fragmentation_beam(bolt &beam, int pow, const actor *caster,
     {
         // Couldn't find a monster or wall to shatter - abort casting!
         if (caster->is_player() && !quiet)
-            mpr("You can't deconstruct that!");
+            mpr(jtrans("You can't deconstruct that!"));
         return false;
     }
 
@@ -1538,12 +1540,12 @@ spret cast_fragmentation(int pow, const actor *caster,
     if (what != nullptr) // Terrain explodes.
     {
         if (you.see_cell(target))
-            mprf("The %s shatters!", what);
+            mprf(jtransc("The %s shatters!"), tagged_jtrans("[frag terrain]", what).c_str());
     }
     else if (target == you.pos()) // You explode.
     {
         const int dam = beam.damage.roll();
-        mprf("You shatter%s", attack_strength_punctuation(dam).c_str());
+        mprf(jtransc("You shatter%s"), attack_strength_punctuation(dam).c_str());
 
         ouch(dam, KILLED_BY_BEAM, caster->mid,
              "by Lee's Rapid Deconstruction", true,
@@ -1560,7 +1562,7 @@ spret cast_fragmentation(int pow, const actor *caster,
         const int dam = beam.damage.roll();
         if (you.see_cell(target))
         {
-            mprf("%s shatters%s", mon->name(DESC_THE).c_str(),
+            mprf(jtransc("%s shatters%s"), mon->name(DESC_THE).c_str(),
                  attack_strength_punctuation(dam).c_str());
         }
 
@@ -1680,9 +1682,9 @@ static int _shatter_walls(coord_def where, actor *agent)
     {
         const dungeon_feature_type feat = env.grid(where);
         if (feat_is_door(feat))
-            mpr("A door shatters!");
+            mpr(jtrans("A door shatters!"));
         else if (feat == DNGN_GRATE)
-            mpr("An iron grate is ripped into pieces!");
+            mpr(jtrans("An iron grate is ripped into pieces!"));
     }
 
     noisy(spell_effect_noise(SPELL_SHATTER), where);
@@ -1718,11 +1720,11 @@ spret cast_shatter(int pow, bool fail)
     const bool silence = silenced(you.pos());
 
     if (silence)
-        mpr("The dungeon shakes!");
+        mpr(jtrans("The dungeon shakes!"));
     else
     {
         noisy(spell_effect_noise(SPELL_SHATTER), you.pos());
-        mprf(MSGCH_SOUND, "The dungeon rumbles!");
+        mprf(MSGCH_SOUND, jtransc("The dungeon rumbles!"));
     }
 
     run_animation(ANIMATION_SHAKE_VIEWPORT, UA_PLAYER);
@@ -1739,7 +1741,7 @@ spret cast_shatter(int pow, bool fail)
     }
 
     if (dest && !silence)
-        mprf(MSGCH_SOUND, "Ka-crash!");
+        mprf(MSGCH_SOUND, jtransc("Ka-crash!"));
 
     return spret::success;
 }
@@ -1755,8 +1757,8 @@ static int _shatter_player(int pow, actor *wielder, bool devastator = false)
 
     if (damage > 0)
     {
-        mprf(damage > 15 ? "You shudder from the earth-shattering force%s"
-                        : "You shudder%s",
+        mprf(damage > 15 ? jtransc("You shudder from the earth-shattering force%s")
+                         : jtransc("You shudder%s"),
              attack_strength_punctuation(damage).c_str());
         if (devastator)
             ouch(damage, KILLED_BY_MONSTER, wielder->mid);
@@ -1776,13 +1778,13 @@ bool mons_shatter(monster* caster, bool actual)
     {
         if (silence)
         {
-            mprf("The dungeon shakes around %s!",
+            mprf(jtransc("The dungeon shakes around %s!"),
                  caster->name(DESC_THE).c_str());
         }
         else
         {
             noisy(spell_effect_noise(SPELL_SHATTER), caster->pos(), caster->mid);
-            mprf(MSGCH_SOUND, "The dungeon rumbles around %s!",
+            mprf(MSGCH_SOUND, jtransc("The dungeon rumbles around %s!"),
                  caster->name(DESC_THE).c_str());
         }
     }
@@ -1817,7 +1819,7 @@ bool mons_shatter(monster* caster, bool actual)
     }
 
     if (dest && !silence)
-        mprf(MSGCH_SOUND, "Ka-crash!");
+        mprf(MSGCH_SOUND, jtransc("Ka-crash!"));
 
     if (actual)
         run_animation(ANIMATION_SHAKE_VIEWPORT, UA_MONSTER);
@@ -1866,13 +1868,12 @@ void shillelagh(actor *wielder, coord_def where, int pow)
     if (!affected_monsters.empty())
     {
         const string message =
-            make_stringf("%s shudder%s.",
-                         affected_monsters.describe().c_str(),
-                         affected_monsters.count() == 1? "s" : "");
+            make_stringf(jtransc("%s shudder."),
+                         affected_monsters.describe().c_str());
         if (strwidth(message) < get_number_of_cols() - 2)
             mpr(message);
         else
-            mpr("There is a shattering impact!");
+            mpr(jtrans("There is a shattering impact!"));
     }
 
     // need to do this again to do the actual damage
@@ -1914,8 +1915,9 @@ spret cast_scorch(const actor& agent, int pow, bool fail)
     const int base_dam = scorch_damage(pow, true).roll();
     const int post_ac_dam = max(0, targ->apply_ac(base_dam));
 
-    mprf("Flames lash %s%s.", targ->name(DESC_THE).c_str(),
-         post_ac_dam ? "" : " but do no damage");
+    mprf(post_ac_dam ? jtransc("Flames lash %s.")
+                     : jtransc("Flames lash %s but do no damage."),
+         targ->name(DESC_THE).c_str());
     const coord_def p = targ->pos();
     noisy(spell_effect_noise(SPELL_SCORCH), p);
 
@@ -1953,14 +1955,14 @@ spret cast_scorch(const actor& agent, int pow, bool fail)
             monster* mon = targ->as_monster();
             if (you.can_see(*mon) && !mon->has_ench(ENCH_FIRE_VULN))
             {
-                mprf("%s fire resistance burns away.",
+                mprf(jtransc("%s fire resistance burns away."),
                     mon->name(DESC_ITS).c_str());
             }
             mon->add_ench(mon_enchant(ENCH_FIRE_VULN, &agent, dur * BASELINE_DELAY));
         }
         else
         {
-            mprf(MSGCH_DANGER, "Your fire resistance burns away!");
+            mprf(MSGCH_DANGER, jtransc("Your fire resistance burns away!"));
             you.duration[DUR_FIRE_VULN] += dur * 3 / 2;
         }
     }
@@ -2015,9 +2017,8 @@ static int _irradiate_cell(coord_def where, int pow, const actor &agent)
 
     if (you.see_cell(act->pos()))
     {
-        mprf("%s %s blasted with magical radiation%s",
+        mprf(jtransc("%s is blasted with magical radiation%s"),
              act->name(DESC_THE).c_str(),
-             conjugate_verb("are", hitting_player).c_str(),
              attack_strength_punctuation(dam).c_str());
     }
 
@@ -2061,11 +2062,11 @@ spret cast_irradiate(int powc, actor &caster, bool fail)
     fail_check();
 
     if (caster.is_player())
-        mpr("You erupt in a fountain of uncontrolled magic!");
+        mpr(jtrans("You erupt in a fountain of uncontrolled magic!"));
     else
     {
         simple_monster_message(*caster.as_monster(),
-                               " erupts in a fountain of uncontrolled magic!");
+                               jtransc(" erupts in a fountain of uncontrolled magic!"));
     }
 
     bolt beam;
@@ -2253,7 +2254,7 @@ static int _ignite_poison_monsters(coord_def where, int pow, actor *agent)
     flash_tile(where, RED, 0, TILE_BOLT_IGNITE_POISON_TARGET);
     if (you.see_cell(mon->pos()))
     {
-        mprf("%s seems to burn from within%s",
+        mprf(jtransc("%s seems to burn from within%s"),
              mon->name(DESC_THE).c_str(),
              attack_strength_punctuation(damage).c_str());
     }
@@ -2313,11 +2314,11 @@ static int _ignite_poison_player(coord_def where, int pow, actor *agent)
     flash_tile(where, RED, 0, TILE_BOLT_IGNITE_POISON_TARGET);
     const int resist = player_res_fire();
     if (resist > 0)
-        mpr("You feel like your blood is boiling!");
+        mpr(jtrans("You feel like your blood is boiling!"));
     else if (resist < 0)
-        mpr("The poison in your system burns terribly!");
+        mpr(jtrans("The poison in your system burns terribly!"));
     else
-        mpr("The poison in your system burns!");
+        mpr(jtrans("The poison in your system burns!"));
 
     ouch(damage, KILLED_BY_BEAM, agent->mid,
          "by burning poison", you.can_see(*agent),
@@ -2325,7 +2326,7 @@ static int _ignite_poison_player(coord_def where, int pow, actor *agent)
     if (damage > 0)
         you.expose_to_element(BEAM_FIRE, 2);
 
-    mprf(MSGCH_RECOVERY, "You are no longer poisoned.");
+    mprf(MSGCH_RECOVERY, jtransc("You are no longer poisoned."));
     you.duration[DUR_POISONING] = 0;
 
     return damage ? 1 : 0;
@@ -2375,17 +2376,15 @@ static int _ignite_enemy_harm(const coord_def &where, actor* agent)
  */
 static bool maybe_abort_ignite()
 {
-    string prompt = "You are standing ";
-
     // XXX XXX XXX major code duplication (ChrisOelmueller)
     if (const cloud_struct* cloud = cloud_at(you.pos()))
     {
         if ((cloud->type == CLOUD_MEPHITIC || cloud->type == CLOUD_POISON)
             && !actor_cloud_immune(you, CLOUD_FIRE))
         {
-            prompt += "in a cloud of ";
-            prompt += cloud->cloud_name(true);
-            prompt += "! Ignite poison anyway?";
+            const string prompt = make_stringf(
+                jtransc("You are standing in a cloud of %s! Ignite poison anyway?"),
+                tagged_jtrans("[cloud]", cloud->cloud_name(true)).c_str());
             if (!yesno(prompt.c_str(), false, 'n'))
                 return true;
         }
@@ -2393,7 +2392,7 @@ static bool maybe_abort_ignite()
 
     if (apply_area_visible(_ignite_ally_harm, you.pos()) > 0)
     {
-        return !yesno("You might harm nearby allies! Ignite poison anyway?",
+        return !yesno(jtransc("You might harm nearby allies! Ignite poison anyway?"),
                       false, 'n');
     }
 
@@ -2474,9 +2473,8 @@ spret cast_ignite_poison(actor* agent, int pow, bool fail, bool tracer)
 
     targeter_radius hitfunc(agent, LOS_NO_TRANS);
 
-    mprf("%s %s the poison in %s surroundings!", agent->name(DESC_THE).c_str(),
-         agent->conj_verb("ignite").c_str(),
-         agent->pronoun(PRONOUN_POSSESSIVE).c_str());
+    mprf(jtransc("%s ignites the poison in the surroundings!"),
+         agent->name(DESC_THE).c_str());
 
     // this could conceivably cause crashes if the player dies midway through
     // maybe split it up...?
@@ -2561,7 +2559,7 @@ spret cast_ignition(const actor *agent, int pow, bool fail)
         return spret::success;
     }
 
-        mpr("The air bursts into flame!");
+        mpr(jtrans("The air bursts into flame!"));
 
     vector<coord_def> blast_adjacents;
 
@@ -2667,7 +2665,7 @@ static int _discharge_monsters(const coord_def &where, int pow,
             dprf("You: static discharge damage: %d", damage);
             damage = check_your_resists(damage, BEAM_ELECTRICITY,
                                         "static discharge");
-            mprf("You are struck by an arc of lightning%s",
+            mprf(jtransc("You are struck by an arc of lightning%s"),
                 attack_strength_punctuation(damage).c_str());
             ouch(damage, KILLED_BY_BEAM, agent.mid, "by static electricity", true,
                 agent.is_player() ? "you" : agent.name(DESC_A).c_str());
@@ -2685,7 +2683,7 @@ static int _discharge_monsters(const coord_def &where, int pow,
 
             dprf("%s: static discharge damage: %d",
                 mons->name(DESC_PLAIN, true).c_str(), damage);
-            mprf("%s is struck by an arc of lightning%s",
+            mprf(jtransc("%s is struck by an arc of lightning%s"),
                     mons->name(DESC_THE).c_str(),
                     attack_strength_punctuation(damage).c_str());
             damage = mons_adjust_flavoured(mons, beam, damage);
@@ -2709,7 +2707,7 @@ static int _discharge_monsters(const coord_def &where, int pow,
     {
         // Only printed if we did damage, so that the messages in
         // cast_discharge() are clean. -- bwr
-        mpr("The lightning grounds out.");
+        mpr(jtrans("The lightning grounds out."));
     }
 
     return damage;
@@ -2764,9 +2762,13 @@ bool safe_discharge(coord_def where, bool check_only, bool exclude_center,
         for (const actor* act : exclude)
             targs.push_back(act->pos());
 
-        return !warn_about_bad_targets(arc_blade ? "The arc blade's discharge" : "Static Discharge",
+        const string source_name = arc_blade
+                                   ? jtrans("The arc blade's discharge")
+                                   : spell_title_j(SPELL_DISCHARGE);
+        return !warn_about_bad_targets(source_name.c_str(),
                                        targs, nullptr,
-                                       arc_blade ? "Attack anyway?" : "Cast it anyway?");
+                                       jtransc(arc_blade ? "Attack anyway?"
+                                                         : "Cast it anyway?"));
     }
 }
 
@@ -2780,14 +2782,12 @@ static void _discharge_message(int dam)
     else
     {
         if (coinflip())
-            mpr("The air crackles with electrical energy.");
+            mpr(jtrans("The air crackles with electrical energy."));
         else
         {
             const bool plural = coinflip();
-            mprf("%s blue arc%s ground%s harmlessly.",
-                plural ? "Some" : "A",
-                plural ? "s" : "",
-                plural ? " themselves" : "s itself");
+            mpr(jtrans(plural ? "Some blue arcs ground themselves harmlessly."
+                              : "A blue arc grounds itself harmlessly."));
         }
     }
 }
@@ -2910,12 +2910,12 @@ static void _do_chain_jolt(const actor& agent, vector<coord_def>& targets, dice_
 
         if (act->is_player())
         {
-            mprf("You are struck by an electric surge%s",
+            mprf(jtransc("You are struck by an electric surge%s"),
                 attack_strength_punctuation(post_resist_dam).c_str());
         }
         else
         {
-            mprf("%s is struck by an electric surge%s",
+            mprf(jtransc("%s is struck by an electric surge%s"),
                     mon->name(DESC_THE).c_str(),
                     attack_strength_punctuation(post_resist_dam).c_str());
         }
@@ -2968,11 +2968,11 @@ spret cast_arcjolt(int pow, const actor &agent, bool fail)
     fail_check();
 
     if (agent.is_player())
-        mpr("Electricity surges outward!");
+        mpr(jtrans("Electricity surges outward!"));
     else
     {
         simple_monster_message(*agent.as_monster(),
-                               " emits a burst of electricity!");
+                               jtransc(" emits a burst of electricity!"));
     }
 
     auto targets = arcjolt_targets(agent, true);
@@ -3000,7 +3000,7 @@ void do_eel_melee_jolt(coord_def pos)
 
 void do_eel_arcjolt()
 {
-    mprf("Your %s violently discharge electricity!", you.hand_name(true).c_str());
+    mprf(jtransc("Your %s violently discharge electricity!"), you.hand_name(true).c_str());
 
     vector<coord_def> to_check;
     to_check.push_back(you.pos());
@@ -3188,7 +3188,7 @@ spret cast_plasma_beam(int pow, const actor &agent, bool fail)
 
 spret cast_watery_grave()
 {
-    mpr("You reach out to the water around you and turn it against your foes!");
+    mpr(jtrans("You reach out to the water around you and turn it against your foes!"));
 
     bolt strike;
     zappy(ZAP_WATERY_GRAVE, get_form()->get_level(8), false, strike);
@@ -3231,14 +3231,15 @@ spret cast_golden_breath(bolt& beam, int power, bool fail)
 
     if (warn_about_bad_targets(SPELL_GOLDEN_BREATH, tracer.path_taken,
         [](const monster& m) { return m.res_fire() == 3 && m.res_cold() == 3
-                                      && m.res_poison() > 1;}, "Breathe anyway?"))
+                                      && m.res_poison() > 1;},
+        jtransc("Breathe anyway?")))
     {
         return spret::abort;
     }
 
     fail_check();
 
-    mpr("You exhale a blast of multi-hued devastation!");
+    mpr(jtrans("You exhale a blast of multi-hued devastation!"));
 
     bolt fire_beam = beam;
     fire_beam.set_agent(&you);
@@ -3421,11 +3422,11 @@ void forest_damage(const actor *mon)
     if (one_chance_in(4))
     {
         forest_message(pos, random_choose(
-            "The trees move their gnarly branches around.",
-            "You feel roots moving beneath the ground.",
-            "Branches wave dangerously above you.",
-            "Trunks creak and shift.",
-            "Tree limbs sway around you."), MSGCH_TALK_VISUAL);
+            jtrans("The trees move their gnarly branches around."),
+            jtrans("You feel roots moving beneath the ground."),
+            jtrans("Branches wave dangerously above you."),
+            jtrans("Trunks creak and shift."),
+            jtrans("Tree limbs sway around you.")), MSGCH_TALK_VISUAL);
     }
 
     for (radius_iterator ri(pos, LOS_NO_TRANS); ri; ++ri)
@@ -3443,26 +3444,26 @@ void forest_damage(const actor *mon)
                 if (!apply_chunked_AC(1, foe->evasion(false, mon)))
                 {
                     msg = random_choose(
-                            "@foe@ @is@ waved at by a branch",
-                            "A tree reaches out but misses @foe@",
-                            "A root lunges up near @foe@");
+                            jtrans("@foe@ @is@ waved at by a branch"),
+                            jtrans("A tree reaches out but misses @foe@"),
+                            jtrans("A root lunges up near @foe@"));
                 }
                 else if (!(dmg = foe->apply_ac(hd + random2(hd), hd * 2 - 1,
                                                ac_type::proportional)))
                 {
                     msg = random_choose(
-                            "@foe@ @is@ scraped by a branch",
-                            "A tree reaches out and scrapes @foe@",
-                            "A root barely touches @foe@ from below");
+                            jtrans("@foe@ @is@ scraped by a branch"),
+                            jtrans("A tree reaches out and scrapes @foe@"),
+                            jtrans("A root barely touches @foe@ from below"));
                     if (foe->is_monster())
                         behaviour_event(foe->as_monster(), ME_WHACK);
                 }
                 else
                 {
                     msg = random_choose(
-                        "@foe@ @is@ hit by a branch",
-                        "A tree reaches out and hits @foe@",
-                        "A root smacks @foe@ from below");
+                        jtrans("@foe@ @is@ hit by a branch"),
+                        jtrans("A tree reaches out and hits @foe@"),
+                        jtrans("A root smacks @foe@ from below"));
                     if (foe->is_monster())
                         behaviour_event(foe->as_monster(), ME_WHACK);
                 }
@@ -3518,9 +3519,9 @@ spret cast_toxic_radiance(actor *agent, int pow, bool fail, bool tracer)
         fail_check();
 
         if (!you.duration[DUR_TOXIC_RADIANCE])
-            mpr("You begin to radiate toxic energy.");
+            mpr(jtrans("You begin to radiate toxic energy."));
         else
-            mpr("Your toxic radiance grows in intensity.");
+            mpr(jtrans("Your toxic radiance grows in intensity."));
 
         you.increase_duration(DUR_TOXIC_RADIANCE,
                               2 + random2(1 + div_rand_round(pow, 25)), 15);
@@ -3535,7 +3536,7 @@ spret cast_toxic_radiance(actor *agent, int pow, bool fail, bool tracer)
     {
         monster* mon_agent = agent->as_monster();
         simple_monster_message(*mon_agent,
-                               " begins to radiate toxic energy.");
+                               jtransc(" begins to radiate toxic energy."));
 
         mon_agent->add_ench(mon_enchant(ENCH_TOXIC_RADIANCE, mon_agent,
                                         (4 + random2avg(pow/15, 2)) * BASELINE_DELAY));
@@ -3652,7 +3653,7 @@ spret cast_unravelling(coord_def target, int pow, bool fail)
 
     const actor* victim = actor_at(target);
     if ((!victim || !you.can_see(*victim))
-        && !yesno("You can't see anything there. Cast anyway?", false, 'n'))
+        && !yesno(jtransc("You can't see anything there. Cast anyway?"), false, 'n'))
     {
         canned_msg(MSG_OK);
         return spret::abort;
@@ -3662,9 +3663,8 @@ spret cast_unravelling(coord_def target, int pow, bool fail)
                    || victim->is_monster() && you.can_see(*victim)
                       && !monster_can_be_unravelled(*victim->as_monster())))
     {
-        mprf("%s %s no magical effects to unravel.",
-             victim->name(DESC_THE).c_str(),
-             victim->conj_verb("have").c_str());
+        mprf(jtransc("%s has no magical effects to unravel."),
+             victim->name(DESC_THE).c_str());
         return spret::abort;
     }
 
@@ -3672,7 +3672,7 @@ spret cast_unravelling(coord_def target, int pow, bool fail)
     hitfunc.set_aim(target);
 
     if (hitfunc.is_affected(you.pos()) >= AFF_MAYBE
-        && !yesno("The unravelling is likely to hit you. Continue anyway?",
+        && !yesno(jtransc("The unravelling is likely to hit you. Continue anyway?"),
                   false, 'n'))
     {
         canned_msg(MSG_OK);
@@ -3701,17 +3701,17 @@ spret cast_unravelling(coord_def target, int pow, bool fail)
 string mons_inner_flame_immune_reason(const monster *mons)
 {
     if (!mons || !you.can_see(*mons))
-        return "You can't see anything there.";
+        return jtrans("You can't see anything there.");
 
     if (mons->has_ench(ENCH_INNER_FLAME))
     {
-        return make_stringf("%s is already burning with an inner flame!",
+        return make_stringf(jtransc("%s is already burning with an inner flame!"),
                             mons->name(DESC_THE).c_str());
     }
 
     if (mons->willpower() == WILL_INVULN)
     {
-        return make_stringf("%s has infinite will and cannot be affected.",
+        return make_stringf(jtransc("%s has infinite will and cannot be affected."),
                             mons->name(DESC_THE).c_str());
     }
 
@@ -3767,9 +3767,9 @@ spret cast_poisonous_vapours(const actor& agent, int pow, const coord_def target
     fail_check();
 
     if (act && you.can_see(*act))
-        mprf("Poisonous fumes billow around %s!", act->name(DESC_THE).c_str());
+        mprf(jtransc("Poisonous fumes billow around %s!"), act->name(DESC_THE).c_str());
     else
-        mpr("Poisonous fumes billow in the air!");
+        mpr(jtrans("Poisonous fumes billow in the air!"));
 
     if (!act || act->res_poison() > 0 || !could_harm(&agent, act, true, true))
         return spret::success;
@@ -3821,7 +3821,8 @@ spret cast_flame_wave(int pow, bool fail)
     fail_check();
 
     you.props[FLAME_WAVE_POWER_KEY].get_int() = pow;
-    start_channelling_spell(SPELL_FLAME_WAVE, "intensify the flame waves");
+    start_channelling_spell(SPELL_FLAME_WAVE,
+                            jtrans("intensify the flame waves"));
 
     return spret::success;
 }
@@ -3849,7 +3850,7 @@ void handle_flame_wave(int lvl)
 
     if (lvl >= spell_range(SPELL_FLAME_WAVE, &you))
     {
-        mpr("Your wave of flame reaches its maximum intensity and dissipates.");
+        mpr(jtrans("Your wave of flame reaches its maximum intensity and dissipates."));
         stop_channelling_spells(true);
     }
 }
@@ -3882,10 +3883,10 @@ spret cast_searing_ray(actor& agent, int pow, bolt &beam, bool fail)
 
     // Announce lock-on, if this causes one.
     if (targ && !beam.aimed_at_spot && agent.is_player())
-        mprf("You focus your ray upon %s.", targ->name(DESC_THE).c_str());
+        mprf(jtransc("You focus your ray upon %s."), targ->name(DESC_THE).c_str());
 
     if (agent.is_player())
-        start_channelling_spell(SPELL_SEARING_RAY, "maintain the ray");
+        start_channelling_spell(SPELL_SEARING_RAY, jtrans("maintain the ray"));
     else
     {
         int dur = min(3 + pow / 60, 5);
@@ -3936,7 +3937,7 @@ bool handle_searing_ray(actor& agent, int turn)
         fire_tracer(agent.as_monster(), tracer, beam);
         if (!mons_should_fire(beam, tracer))
         {
-            simple_monster_message(*agent.as_monster(), " stops channelling.");
+            simple_monster_message(*agent.as_monster(), jtransc(" stops channelling."));
             agent.as_monster()->del_ench(ENCH_CHANNEL_SEARING_RAY);
             return false;
         }
@@ -3955,7 +3956,7 @@ bool handle_searing_ray(actor& agent, int turn)
 
         if (turn > 3)
         {
-            mpr("You finish channelling your searing ray.");
+            mpr(jtrans("You finish channelling your searing ray."));
             stop_channelling_spells(true);
         }
     }
@@ -3966,7 +3967,7 @@ bool handle_searing_ray(actor& agent, int turn)
         mon_enchant me = mons->get_ench(ENCH_CHANNEL_SEARING_RAY);
         mons->lose_ench_duration(me, 1);
         if (!mons->has_ench(ENCH_CHANNEL_SEARING_RAY))
-            simple_monster_message(*mons, " finishes channelling their searing ray.");
+            simple_monster_message(*mons, jtransc(" finishes channelling their searing ray."));
     }
 
     return true;
@@ -4022,9 +4023,8 @@ spret cast_glaciate(actor *caster, int pow, coord_def aim)
 
     if (you.can_see(*caster) || caster->is_player())
     {
-        mprf("%s %s a mighty blast of ice!",
-             caster->name(DESC_THE).c_str(),
-             caster->conj_verb("conjure").c_str());
+        mprf(jtransc("%s conjures a mighty blast of ice!"),
+             caster->name(DESC_THE).c_str());
     }
 
     beam.glyph = 0;
@@ -4132,26 +4132,25 @@ static string _get_jinxsprite_message(const monster& victim)
 
     if (get_mon_shape(victim.type) == MON_SHAPE_SNAKE && coinflip())
     {
-        msg = make_stringf("ties %s tail in a knot.",
+        msg = make_stringf(jtransc("ties %s tail in a knot."),
                         victim.name(DESC_ITS).c_str());
     }
     else if (mon_shape_is_humanoid(get_mon_shape(victim.type)) && coinflip())
     {
         if (victim.inv[MSLOT_WEAPON] != NON_ITEM && coinflip())
         {
-            return make_stringf("bonks %s with %s %s.",
+            return make_stringf(jtransc("bonks %s with their own %s."),
                                 victim.name(DESC_THE).c_str(),
-                                victim.pronoun(PRONOUN_POSSESSIVE).c_str(),
                                 env.item[victim.inv[MSLOT_WEAPON]].name(DESC_PLAIN).c_str());
         }
         else if (one_chance_in(3))
         {
-            return make_stringf("insults %s ancestors.",
+            return make_stringf(jtransc("insults %s ancestors."),
                                 victim.name(DESC_ITS).c_str());
         }
         else
         {
-            return make_stringf("doodles on %s face.",
+            return make_stringf(jtransc("doodles on %s face."),
                                 victim.name(DESC_ITS).c_str());
         }
     }
@@ -4160,19 +4159,17 @@ static string _get_jinxsprite_message(const monster& victim)
         switch (random2(2))
         {
             case 0:
-            return make_stringf("makes %s trip over %s own %s.",
+            return make_stringf(jtransc("makes %s trip over their own %s."),
                                 victim.name(DESC_THE).c_str(),
-                                victim.pronoun(PRONOUN_POSSESSIVE).c_str(),
                                 victim.foot_name(true).c_str());
 
             case 1:
-            return make_stringf("smacks %s with %s own %s.",
+            return make_stringf(jtransc("smacks %s with their own %s."),
                                 victim.name(DESC_THE).c_str(),
-                                victim.pronoun(PRONOUN_POSSESSIVE).c_str(),
                                 victim.hand_name(false).c_str());
 
             case 2:
-            return make_stringf("does a pirouette on top of %s.",
+            return make_stringf(jtransc("does a pirouette on top of %s."),
                                 victim.name(DESC_THE).c_str());
         }
     }
@@ -4203,7 +4200,7 @@ void attempt_jinxbite_hit(actor& victim)
 
     if (you.can_see(victim))
     {
-        mprf("A giggling sprite leaps out and %s",
+        mprf(jtransc("A giggling sprite leaps out and %s"),
                 _get_jinxsprite_message(*mons).c_str());
     }
 
@@ -4324,7 +4321,7 @@ spret cast_hailstorm(int pow, bool fail, bool tracer)
 
     fail_check();
 
-    mpr("A cannonade of hail descends around you!");
+    mpr(jtrans("A cannonade of hail descends around you!"));
 
     for (radius_iterator ri(you.pos(), range, C_SQUARE, LOS_NO_TRANS, true);
          ri; ++ri)
@@ -4373,7 +4370,7 @@ spret cast_imb(int pow, bool fail)
 
     fail_check();
 
-    mpr("You erupt in a blast of force!");
+    mpr(jtrans("You erupt in a blast of force!"));
 
     vector<actor *> act_list;
     // knock back into dispersal could move the player, so save the current pos
@@ -4448,13 +4445,13 @@ void actor_apply_toxic_bog(actor * act)
 
     if (player && final_damage > 0)
     {
-        mprf("You fester in the toxic bog%s",
+        mprf(jtransc("You fester in the toxic bog%s"),
                 attack_strength_punctuation(final_damage).c_str());
     }
     else if (final_damage > 0)
     {
         behaviour_event(mons, ME_DISTURB, 0, act->pos());
-        mprf("%s festers in the toxic bog%s",
+        mprf(jtransc("%s festers in the toxic bog%s"),
                 mons->name(DESC_THE).c_str(),
                 attack_strength_punctuation(final_damage).c_str());
     }
@@ -4516,7 +4513,7 @@ spret cast_frozen_ramparts(int pow, bool fail)
 
     if (wall_locs.empty())
     {
-        mpr("There are no walls around you to affect.");
+        mpr(jtrans("There are no walls around you to affect."));
         return spret::abort;
     }
 
@@ -4533,7 +4530,7 @@ spret cast_frozen_ramparts(int pow, bool fail)
     you.props[FROZEN_RAMPARTS_KEY] = you.pos();
     you.props[FROZEN_RAMPARTS_POWER_KEY].get_int() = pow;
 
-    mpr("The walls around you are covered in ice.");
+    mpr(jtrans("The walls around you are covered in ice."));
     you.duration[DUR_FROZEN_RAMPARTS] = random_range(40 + pow,
                                                      80 + pow * 3 / 2);
     return spret::success;
@@ -4615,7 +4612,7 @@ spret cast_maxwells_coupling(int pow, bool fail, bool tracer)
     if (!mon || !you.can_see(*mon))
     {
         if (!tracer)
-            mpr("You can't see anything to vaporise!");
+            mpr(jtrans("You can't see anything to vaporise!"));
         return spret::abort;
     }
 
@@ -4625,12 +4622,13 @@ spret cast_maxwells_coupling(int pow, bool fail, bool tracer)
 
     fail_check();
 
-    mpr("You begin accumulating electric charge.");
+    mpr(jtrans("You begin accumulating electric charge."));
 
     you.props[COUPLING_TIME_KEY] =
        you.elapsed_time + (30 + div_rand_round(random2((200 - pow) * 40), 200));
 
-    start_channelling_spell(SPELL_MAXWELLS_COUPLING, "continue charging", false);
+    start_channelling_spell(SPELL_MAXWELLS_COUPLING,
+                            jtrans("continue charging"), false);
 
     return spret::success;
 }
@@ -4641,7 +4639,7 @@ static void _discharge_maxwells_coupling()
 
     if (!mon)
     {
-        mpr("Your charge dissipates without a target.");
+        mpr(jtrans("Your charge dissipates without a target."));
         return;
     }
 
@@ -4656,12 +4654,12 @@ static void _discharge_maxwells_coupling()
     if (mon->type == MONS_ROYAL_JELLY && !mon->is_summoned())
     {
         // need to do this here, because react_to_damage is never called
-        mprf("A cloud of jellies burst out of %s as the current"
-             " ripples through it%s", mon->name(DESC_THE).c_str(), attack_punctuation.c_str());
+        mprf(jtransc("A cloud of jellies burst out of %s as the current"
+             " ripples through it%s"), mon->name(DESC_THE).c_str(), attack_punctuation.c_str());
         schedule_trj_spawn_fineff(&you, mon, mon->pos(), mon->hit_points);
     }
     else
-        mprf("The electricity discharges through %s%s", mon->name(DESC_THE).c_str(), attack_punctuation.c_str());
+        mprf(jtransc("The electricity discharges through %s%s"), mon->name(DESC_THE).c_str(), attack_punctuation.c_str());
 
     // XX the messaging and corpse logic here would be better handled in
     // monster_die, so that various special cases (e.g. dancing weapons in
@@ -4669,10 +4667,10 @@ static void _discharge_maxwells_coupling()
     const coord_def pos = mon->pos();
     const bool goldify = mons_will_goldify(*mon);
     if (goldify)
-        simple_monster_message(*mon, " vaporises and condenses as gold!");
+        simple_monster_message(*mon, jtransc(" vaporises and condenses as gold!"));
     else
     {
-        simple_monster_message(*mon, " vaporises in an electric haze!");
+        simple_monster_message(*mon, jtransc(" vaporises in an electric haze!"));
         big_cloud(CLOUD_ELECTRICITY, &you, pos, random_range(4, 8), random_range(8, 12));
     }
 
@@ -4697,7 +4695,7 @@ void handle_maxwells_coupling()
         return;
     }
 
-    mpr("You feel charge building up...");
+    mpr(jtrans("You feel charge building up..."));
 }
 
 vector<coord_def> find_bog_locations(const coord_def &center)
@@ -4731,7 +4729,7 @@ spret cast_noxious_bog(int pow, bool fail)
     vector <coord_def> bog_locs = find_bog_locations(you.pos());
     if (bog_locs.empty())
     {
-        mpr("There are no places for you to create a bog.");
+        mpr(jtrans("There are no places for you to create a bog."));
         return spret::abort;
     }
 
@@ -4747,7 +4745,7 @@ spret cast_noxious_bog(int pow, bool fail)
     }
 
     flash_view_delay(UA_PLAYER, LIGHTGREEN, 100);
-    mpr("You spew toxic sludge!");
+    mpr(jtrans("You spew toxic sludge!"));
 
     return spret::success;
 }
@@ -4778,7 +4776,7 @@ void do_boulder_impact(monster& boulder, actor& victim, bool quiet)
     {
         if (!quiet)
         {
-            mprf("%s barrels into %s%s",
+            mprf(jtransc("%s barrels into %s%s"),
                     boulder.name(DESC_THE).c_str(),
                     victim.name(DESC_THE).c_str(),
                     attack_strength_punctuation(dam).c_str());
@@ -4871,12 +4869,12 @@ spret cast_magnavolt(coord_def target, int pow, bool fail)
     monster* mon = monster_at(target);
 
     if (!mon->has_ench(ENCH_MAGNETISED))
-        mprf("Magnetic shrapnel attaches itself to %s.", mon->name(DESC_THE).c_str());
+        mprf(jtransc("Magnetic shrapnel attaches itself to %s."), mon->name(DESC_THE).c_str());
 
     mon->add_ench(mon_enchant(ENCH_MAGNETISED, &you, random_range(5, 8) * BASELINE_DELAY));
 
     // Then zap all magnetized enemies.
-    mpr("Electricity arcs towards the magnetite!");
+    mpr(jtrans("Electricity arcs towards the magnetite!"));
     for (unsigned int i = 0; i < targets.size(); ++i)
     {
         bolt volt;
@@ -4900,7 +4898,7 @@ spret cast_fulsome_fusillade(int pow, bool fail)
 
     fail_check();
 
-    mpr("You conjure up an array of volatile reagents!");
+    mpr(jtrans("You conjure up an array of volatile reagents!"));
 
     you.duration[DUR_FUSILLADE] = 5;
     you.props[FUSILLADE_POWER_KEY] = pow;
@@ -5056,7 +5054,7 @@ void fire_fusillade()
     {
         if (!enough_mp(2, true))
         {
-            mpr("Your magical reserves are too exhausted to conjure more reagents.");
+            mpr(jtrans("Your magical reserves are too exhausted to conjure more reagents."));
             you.duration[DUR_FUSILLADE] = 0;
             return;
         }
@@ -5064,7 +5062,7 @@ void fire_fusillade()
         finalize_mp_cost();
     }
 
-    mpr("Flasks of reagents rain from above!");
+    mpr(jtrans("Flasks of reagents rain from above!"));
 
     int pow = you.props[FUSILLADE_POWER_KEY].get_int();
 
@@ -5137,7 +5135,7 @@ void fire_fusillade()
     you.duration[DUR_FUSILLADE] -= 1;
 
     if (!you.duration[DUR_FUSILLADE])
-        mprf(MSGCH_DURATION, "Your rain of reagents ends.");
+        mprf(MSGCH_DURATION, jtransc("Your rain of reagents ends."));
 }
 
 spret cast_grave_claw(actor& caster, coord_def targ, int pow, bool fail)
@@ -5154,7 +5152,7 @@ spret cast_grave_claw(actor& caster, coord_def targ, int pow, bool fail)
 
     if (caster.is_player())
     {
-        mpr("You unleash the spiteful dead!");
+        mpr(jtrans("You unleash the spiteful dead!"));
         you.props[GRAVE_CLAW_CHARGES_KEY].get_int()--;
     }
 
@@ -5173,7 +5171,7 @@ spret cast_grave_claw(actor& caster, coord_def targ, int pow, bool fail)
     if (caster.is_player())
     {
         if (you.props[GRAVE_CLAW_CHARGES_KEY].get_int() == 0)
-            mprf(MSGCH_DURATION, "The last of your harvested death is exhausted.");
+            mprf(MSGCH_DURATION, jtransc("The last of your harvested death is exhausted."));
     }
 
     return spret::success;
@@ -5198,13 +5196,15 @@ void gain_grave_claw_soul(bool silent, bool wizard)
 
         if (charges == GRAVE_CLAW_MAX_CHARGES)
         {
-            mprf(MSGCH_DURATION, "You have harvested as much death for "
-                                 "Grave Claw as you can hold at once.");
+            mprf(MSGCH_DURATION, jtransc("You have harvested as much death for "
+                                         "%s as you can hold at once."),
+                 spell_title_jc(SPELL_GRAVE_CLAW));
         }
         else
         {
-            mprf(MSGCH_DURATION, "You have harvested enough death to cast "
-                                 "Grave Claw an additional time.");
+            mprf(MSGCH_DURATION, jtransc("You have harvested enough death to cast "
+                                         "%s an additional time."),
+                 spell_title_jc(SPELL_GRAVE_CLAW));
         }
     }
 }
@@ -5217,7 +5217,7 @@ spret cast_fortress_blast(actor& caster, int pow, bool fail)
     {
         const int delay = 70 - div_rand_round(pow * 10, 25);
         you.duration[DUR_FORTRESS_BLAST_TIMER] = delay;
-        mprf("You steady yourself in place and focus your resilience into a mighty blast.");
+        mprf(jtransc("You steady yourself in place and focus your resilience into a mighty blast."));
     }
     // Todo: Add monster implementation here
 
@@ -5233,16 +5233,16 @@ void unleash_fortress_blast(actor& caster)
 
     if (caster.is_player())
     {
-        string desc = "a";
+        string desc = tagged_jtrans("[fortress blast]", "a");
         if (power < 30)
-            desc = "a weak";
+            desc = tagged_jtrans("[fortress blast]", "a weak");
         else if (power > 180)
-            desc = "an overpowering";
+            desc = tagged_jtrans("[fortress blast]", "an overpowering");
         else if (power > 135)
-            desc = "a very strong";
+            desc = tagged_jtrans("[fortress blast]", "a very strong");
         else if (power > 80)
-            desc = "a strong";
-        mprf(MSGCH_DURATION, "You unleash %s concussive blast!", desc.c_str());
+            desc = tagged_jtrans("[fortress blast]", "a strong");
+        mprf(MSGCH_DURATION, jtransc("You unleash %s concussive blast!"), desc.c_str());
     }
 
     bolt blast;

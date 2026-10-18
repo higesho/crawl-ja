@@ -1,0 +1,143 @@
+# item-name.txt: item-name.cc 固有のメッセージ・メニュー文字列
+# (アイテム名とその部品は data-items.txt)
+# ルーン・宝石の一覧(display_runes)
+%%%%
+, shattered)
+
+、砕けた)
+%%%%
+, %s until shattered)
+
+、砕けるまで%s)
+%%%%
+, %s turns until shattered)
+
+、砕けるまで%sターン)
+%%%%
+<magenta>The Orb of Zot</magenta>
+
+<magenta>ゾットのオーブ</magenta>
+%%%%
+<darkgrey>The Orb of Zot (the Realm of Zot)</darkgrey>
+
+<darkgrey>ゾットのオーブ (ゾットの領域)</darkgrey>
+%%%%
+<white>Runes of Zot (</white><%s>%d</%s><white> collected) & Orbs of Power</white>
+
+<white>ゾットのルーン(</white><%s>%d</%s><white>個獲得)と力のオーブ</white>
+%%%%
+<white>Gems (%d collected
+
+<white>宝石(%d個獲得
+%%%%
+, %d intact
+
+、%d個無傷
+%%%%
+Right-click
+
+右クリック
+%%%%
+Show Runes
+
+ルーンを表示
+%%%%
+Show Gems
+
+宝石を表示
+%%%%
+[gem menu]More
+
+砕けた宝石も表示
+%%%%
+[gem menu]Less
+
+砕けた宝石を隠す
+# 巻物を読めない理由
+%%%%
+You cannot see clearly; the smoke and ash is too thick!
+
+煙と灰が濃すぎて、よく見えない！
+%%%%
+You cannot read scrolls in your current state!
+
+現状では巻物を読むことができない！
+# %s は [silenced reason] の訳(player_silenced_reason())
+%%%%
+You cannot read scrolls while %s!
+
+%s間は巻物を読むことができない！
+%%%%
+[silenced reason]silenced
+
+静寂に包まれている
+%%%%
+[silenced reason]unable to breathe
+
+呼吸できない
+%%%%
+You refuse to depend on such disposable conveniences.
+
+あなたはそんな使い捨ての便利な品に頼るつもりはない。
+%%%%
+You don't have control over your spell memory.
+
+あなたは呪文の記憶を制御できない。
+%%%%
+Trog doesn't allow you to memorise spells!
+
+トログは呪文を覚えることを許さない！
+%%%%
+There's no point in enhancing weapons you can't use!
+
+使えない武器を強化しても意味がない！
+%%%%
+There's no point in enchanting armour you can't use!
+
+使えない防具を強化しても意味がない！
+%%%%
+There is nothing left to identify.
+
+鑑定すべきものはもう何も残っていない。
+%%%%
+You have no need of identification.
+
+あなたには鑑定の必要がない。
+%%%%
+You cannot coerce anything to answer your summons.
+
+あなたの召喚に応じさせられるものは何もいない。
+%%%%
+You can't read that!
+
+あなたはそれを読めない！
+%%%%
+You have no spells to forget.
+
+あなたには忘れる呪文がない。
+%%%%
+This place cannot be mapped!
+
+この場所の地図は作れない！
+# 薬を飲めない理由
+%%%%
+You can't drink.
+
+あなたは飲むことができない。
+%%%%
+You cannot drink potions in your current state!
+
+現状あなたは薬を飲むことができない！
+%%%%
+You refuse to indulge in frivolous drinking.
+
+あなたは軽薄な飲酒にふけるつもりはない。
+%%%%
+It's too cold; everything's frozen solid!
+
+寒すぎて、何もかも凍りついている！
+%%%%
+You can't drink that!
+
+そのアイテムは飲めない！
+%%%%

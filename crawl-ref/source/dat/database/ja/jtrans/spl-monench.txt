@@ -1,0 +1,98 @@
+%%%%
+is unaffected.
+
+は影響を受けていない。
+%%%%
+resists.
+
+は抵抗した。
+%%%%
+You radiate an aura of cold.
+
+あなたは冷気のオーラを放った。
+%%%%
+is outlined in light.
+
+の体表は光を放っている。
+%%%%
+glows brighter for a moment.
+
+は一瞬さらに輝いた。
+%%%%
+seems to slow down.
+
+の動きが鈍くなったようだ。
+%%%%
+partially resists.
+
+はいくらか耐性を示した。
+%%%%
+[stop attack prompt]blind
+
+を盲目にし
+%%%%
+is enfeebled!
+
+は弱体化した！
+%%%%
+loses the ability to speak.
+
+は話す能力を失った。
+%%%%
+You are enfeebled!
+
+あなたは弱体化した！
+%%%%
+The roots grab %s!
+
+根が%sをつかんだ！
+%%%%
+Zombie hands grab %s from below!
+
+ゾンビの手が地面の下から%sをつかんだ！
+%%%%
+%dd%d (primary target), %dd%d (explosion)
+
+%dd%d (主目標), %dd%d (爆発)
+%%%%
+is afflicted with rimeblight.
+
+は霜枯れに冒された。
+%%%%
+Shards of ice erupt from %s body!
+
+%s体から氷の破片が噴き出した！
+%%%%
+The sign of ruin forms upon you!
+
+あなたの身に破滅の印が刻まれた！
+%%%%
+The sign of ruin forms upon %s!
+
+%sの身に破滅の印が刻まれた！
+%%%%
+A magical hammer augments %s in a flurry of sparks and slag.
+
+魔法の槌が火花と鉱滓を撒き散らしながら%sを鍛え上げた。
+%%%%
+the ceiling
+
+天井
+%%%%
+%s attacks %s!
+
+%sは%sを攻撃した！
+%%%%
+%s glares at %s!
+
+%sは%sをにらみつけた！
+%%%%
+is enveloped in gloom.
+
+は薄闇に包まれた。
+%%%%
+# cast_gloom() の beam.name(beam.cc で zap_name_j で引く前提)
+[zap]gloom
+
+薄闇
+%%%%

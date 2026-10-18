@@ -13,6 +13,7 @@
 #include "coord.h"
 #include "coordit.h"
 #include "corpse.h"
+#include "database.h"
 #include "directn.h"
 #include "english.h"
 #include "env.h"
@@ -48,7 +49,7 @@ spret cast_putrefaction(monster* target, int pow, bool fail)
     env.markers.add(marker);
     env.markers.clear_need_activate();
 
-    mprf("Rot billows forth from %s wounds!", target->name(DESC_ITS).c_str());
+    mprf(jtransc("Rot billows forth from %s wounds!"), target->name(DESC_ITS).c_str());
 
     drain_player(75 - div_rand_round(pow * 4, 10), true, true);
 
@@ -59,7 +60,7 @@ spret kindle_blastmotes(int pow, bool fail)
 {
     if (cloud_at(you.pos()))
     {
-        mpr("There's already a cloud here!");
+        mpr(jtrans("There's already a cloud here!"));
         return spret::abort;
     }
 
@@ -71,7 +72,7 @@ spret kindle_blastmotes(int pow, bool fail)
     // Longish duration to support setting up silly traps.
     you.props[BLASTMOTE_IMMUNE_KEY] = true;
     place_cloud(CLOUD_BLASTMOTES, you.pos(), random_range(20, 30), &you);
-    mpr("A cloud of volatile blastmotes flares up around you! Run!");
+    mpr(jtrans("A cloud of volatile blastmotes flares up around you! Run!"));
 
     return spret::success;
 }
@@ -94,8 +95,8 @@ void explode_blastmotes_at(coord_def p)
     beam.is_explosion  = true;
     beam.ex_size       = 1;
 
-    const string boom  = "The cloud of blastmotes explodes!";
-    const string sanct = "By Zin's power, the fiery explosion is contained.";
+    const string boom  = jtrans("The cloud of blastmotes explodes!");
+    const string sanct = jtrans("By Zin's power, the fiery explosion is contained.");
     schedule_explosion_fineff(beam, boom, sanct, EXPLOSION_FINEFF_CONCUSSION,
                               nullptr, "");
 }
@@ -105,7 +106,9 @@ spret cast_freezing_cloud(int pow, const coord_def& target, bool fail)
     targeter_cloud hitfunc(&you, CLOUD_COLD, LOS_RADIUS);
     hitfunc.set_aim(target);
 
-    if (stop_attack_prompt(hitfunc, "conjure a freezing cloud",
+    if (stop_attack_prompt(hitfunc,
+                            tagged_jtransc("[stop attack prompt]",
+                                           "conjure a freezing cloud"),
                             [](const actor *act) { return act->is_player() || act->res_cold() < 3;},
                             nullptr, nullptr, false, true))
     {
@@ -186,10 +189,10 @@ void holy_flames(monster* caster, actor* defender)
     if (cloud_count)
     {
         if (defender->is_player())
-            mpr("Blessed fire suddenly surrounds you!");
+            mpr(jtrans("Blessed fire suddenly surrounds you!"));
         else
             simple_monster_message(*defender->as_monster(),
-                                   " is surrounded by blessed fire!");
+                                   jtransc(" is surrounded by blessed fire!"));
     }
 }
 
@@ -211,12 +214,12 @@ spret scroll_of_poison(bool scroll_unknown)
 
     if (created > 0)
     {
-        mpr("The air fills with toxic fumes!");
+        mpr(jtrans("The air fills with toxic fumes!"));
         return spret::success;
     }
     if (!scroll_unknown && !unknown_unseen)
     {
-        mpr("There's no open space to fill with poison.");
+        mpr(jtrans("There's no open space to fill with poison."));
         return spret::abort;
     }
     canned_msg(MSG_NOTHING_HAPPENS);

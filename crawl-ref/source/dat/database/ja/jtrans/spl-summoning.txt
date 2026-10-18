@@ -1,0 +1,625 @@
+%%%%
+A chill wind blows around you.
+
+冷たい風があなたの周囲に巻き起こった。
+%%%%
+%s appears.
+
+%sが現れた。
+%%%%
+You call out to the draconic realm, and the dragon horde roars back!
+
+あなたがドラゴンの棲み処に呼びかけると、ドラゴンの群れの咆哮が返ってきた！
+%%%%
+A dragon tries to answer your call, but you don't have enough magical power!
+
+ドラゴンがあなたの呼びかけに応えようとしたが、あなたは十分な魔力を持っていなかった！
+%%%%
+A dragon arrives to answer your call!
+
+ドラゴンがあなたの呼びかけに応えて出現した！
+%%%%
+A dragon appears.
+
+ドラゴンが現れた。
+%%%%
+A mana viper appears with a sibilant hiss.
+
+マナバイパーがシューッという鳴き声とともに現れた。
+%%%%
+You are momentarily dazzled by a brilliant light.
+
+あなたは眩しい光で一瞬眩惑された。
+%%%%
+You can't see a target there!
+
+そこには対象物が見えない！
+%%%%
+is already dancing.
+
+はすでに宙を舞っている。
+%%%%
+%s twitches for a moment.
+
+%sは一瞬ぴくぴく動いた。
+%%%%
+%s dances into the air!
+
+%sは宙に浮かび上がった！
+%%%%
+booms: How dare you animate that foul thing!
+
+の声が響き渡った: 『よくもそんな汚らわしい物に命を吹き込んだな！』
+%%%%
+You create some ball lightning!
+
+あなたは球雷を生み出した！
+%%%%
+An electric hum fills the air.
+
+何かが唸る電気的な音があたりに満ちた。
+%%%%
+Wisps of shadow whirl around you...
+
+ゆらめく影があなたの周りで渦巻いている……
+%%%%
+The shadows disperse without effect.
+
+影は何も起こすことなく霧散した。
+%%%%
+The dungeon shakes, a horrible noise fills the air, and a portal to some otherworldly place is opened!
+
+迷宮は揺れ、恐るべき轟音が大気を満たし、そして異世界への門が開かれた！
+%%%%
+A forested plane collides here with a resounding crunch!
+
+森林が激しい音を立てて侵食した！
+%%%%
+An evil force gathers, but it quickly dissipates.
+
+邪悪な力が集まったが、急速に消え去っていった。
+%%%%
+You cannot haunt those who bear you no hostility.
+
+あなたに敵意を抱いていない相手に対して招霊の呪文を唱えることはできない。
+%%%%
+Insubstantial figures form in the air.
+
+とらえどころのない影の群れが空中に現れた。
+%%%%
+You sense hostile presences.
+
+あなたは敵意を振りまく存在に気付いた。
+%%%%
+An insubstantial figure forms in the air.
+
+とらえどころのない影が空中に現れた。
+%%%%
+You sense a hostile presence.
+
+あなたは敵意を振りまく存在に気付いた。
+%%%%
+appears!
+
+が現れた！
+%%%%
+You recall your battlesphere and imbue it with additional charge.
+
+あなたは戦闘球を呼び出し、更なる力を吹き込んだ。
+%%%%
+You imbue your battlesphere with additional charge.
+
+あなたは戦闘球に更なる力を吹き込んだ。
+%%%%
+You conjure a globe of magical energy.
+
+あなたは魔力の球体を幻出させた。
+%%%%
+conjures a globe of magical energy!
+
+は魔力の球体を幻出させた！
+%%%%
+Your battlesphere expends the last of its energy and dissipates.
+
+戦闘球は最後の力を絞り出し、消滅した。
+%%%%
+Your battlesphere wavers and loses cohesion.
+
+戦闘球は揺らめき、霧消した。
+%%%%
+You feel your bond with your battlesphere wane.
+
+あなたは戦闘球との繋がりがなくなったように感じた。
+%%%%
+dissipates.
+
+は四散した。
+%%%%
+That's too far away.
+
+そこは遠すぎる。
+%%%%
+You can't conjure that within a solid object!
+
+あなたは晶柱をその固体物に重ねられない！
+%%%%
+You can't place the prism on a creature.
+
+あなたは晶柱をモンスターと同じ場所に置けない。
+%%%%
+A prism of explosive energy appears from nowhere!
+
+爆発性のエネルギーをはらんだ晶柱がどこからともなく現れた！
+%%%%
+You call forth a plague of scarabs!
+
+あなたはスカラベの災厄を解き放った！
+%%%%
+That space is already occupied.
+
+そこには先客がいる。
+%%%%
+There's no room!
+
+場所がない！
+%%%%
+Someone's
+
+何者かの
+%%%%
+%s appears in a puff of smoke.
+
+%sが煙とともに現れた。
+%%%%
+Your familiar is too far away to imbue with magic.
+
+使い魔が遠すぎて、魔力を注ぎ込めない。
+%%%%
+You call for your canine familiar and it appears with a howl!
+
+あなたが犬の使い魔を呼ぶと、使い魔は遠吠えとともに現れた！
+%%%%
+You imbue your familiar with magical energy and its fangs glint viciously.
+
+あなたが使い魔に魔力を注ぎ込むと、その牙が凶暴に光った。
+%%%%
+A prickly colossus appears in a rush of desert wind.
+
+砂漠の風が吹きすさぶ中、棘だらけの巨人が現れた。
+%%%%
+You aren't wearing any armour!
+
+あなたは鎧を着ていない！
+%%%%
+You draw out an echo of %s.
+
+あなたは%sの残響を引き出した。
+%%%%
+%s summons %s!
+
+%sは%sを召喚した！
+%%%%
+A pair of sphinxes answers %s call!
+
+二体のスフィンクスが%s呼びかけに応えた！
+%%%%
+%s answers %s call!
+
+%sが%s呼びかけに応えた！
+%%%%
+%s %s twitches.
+
+%s%sがぴくりと動いた。
+%%%%
+%s vibrates crazily for a second.
+
+%sは一瞬激しく震えた。
+%%%%
+You bind the heart of a blast furnace in slag iron.
+
+あなたは溶鉱炉の心臓を鉱滓の鉄に封じ込めた。
+%%%%
+A tiny devil pulls itself out of the air.
+
+小さな悪魔が虚空から這い出してきた。
+%%%%
+sudden gust
+
+突風
+%%%%
+Somewhere, a butterfly flaps its wings.
+
+どこかで、蝶が羽ばたいた。
+%%%%
+You hear the flapping of tiny wings.
+
+小さな羽ばたきの音が聞こえた。
+%%%%
+You open a gateway and unleash terrible monstrosities upon the world.
+
+あなたは門を開き、恐るべき異形の者どもを世界に解き放った。
+%%%%
+You call forth a shade to shield your allies.
+
+あなたは仲間を守る亡霊を呼び出した。
+%%%%
+%s calls forth a shade to shield themselves.
+
+%sは自らを守る亡霊を呼び出した。
+%%%%
+%s forges a servant imbued with destructive magic!
+
+%sは破壊の魔力を宿した従者を作り出した！
+%%%%
+%s fires at %s!
+
+%sは%sを撃った！
+%%%%
+%s twitches.
+
+%sは身をよじった。
+%%%%
+%s conjures a prism of shadowy energy!
+
+%sは影のエネルギーをはらんだ晶柱を幻出させた！
+%%%%
+%s conjures a prism of explosive energy!
+
+%sは爆発性のエネルギーをはらんだ晶柱を幻出させた！
+%%%%
+A prism of shadowy energy appears from nowhere!
+
+影のエネルギーをはらんだ晶柱がどこからともなく現れた！
+%%%%
+disappears.
+
+は消え去った。
+%%%%
+A briar patch grows up from the ground.
+
+地面から荊棘が生えてきた。
+%%%%
+Something you can't see blocks your briars from growing!
+
+見えない何かが荊棘の成長を妨げた！
+%%%%
+Something unseen blocks growth in %s.
+
+見えない何かが%sでの成長を妨げた。
+%%%%
+%s is torn apart as %s grows in its place.
+
+%sが引き裂かれ、その場所に%sが生えた。
+%%%%
+%s falls apart, but nothing grows.
+
+%sは崩れ落ちたが、何も生えなかった。
+%%%%
+Aiming: <white>Overgrow</white>
+
+照準: <white>繁茂</white>
+%%%%
+You can't grow a ballistomycete there.
+
+そこには放出菌糸を生やせない。
+%%%%
+Something you can't see occupies that space!
+
+見えない何かがその場所を占めている！
+%%%%
+A ballistomycete grows from the ground.
+
+地面から放出菌糸が生えてきた。
+%%%%
+You can't grow an oklob plant there.
+
+そこにはオクロブ草を生やせない。
+%%%%
+Something you can't see is occupying that space!
+
+見えない何かがその場所を占めている！
+%%%%
+An oklob plant grows from the ground.
+
+地面からオクロブ草が生えてきた。
+%%%%
+has no space to call forth the wretched!
+
+は哀れな者どもを呼び出す場所を見つけられなかった！
+%%%%
+calls piteous wretches from the earth!
+
+は大地から哀れな者どもを呼び起こした！
+%%%%
+There is not enough space to conjure foxfire!
+
+狐火を幻出させるのに十分な空間がない！
+%%%%
+%s conjures some marshlight!
+
+%sは鬼火を幻出させた！
+%%%%
+%s conjures some foxfire!
+
+%sは狐火を幻出させた！
+%%%%
+Flames leap up around you!
+
+あなたの周囲に炎が噴き上がった！
+%%%%
+There's no space to create foxfire here.
+
+ここには狐火を生み出す空間がない。
+%%%%
+Another %s is drawn to the feast!
+
+別の%sが宴に引き寄せられてきた！
+%%%%
+%s summons spiders!
+
+%sは蜘蛛の群れを召喚した！
+%%%%
+%s summons a spider!
+
+%sは蜘蛛を召喚した！
+%%%%
+Something unseen is already there!
+
+見えない何かがすでにそこにいる！
+%%%%
+%s sends a boulder barrelling forward!
+
+%sは大岩を勢いよく前方へ転がした！
+%%%%
+You can't see anything there.
+
+そこには何も見えない。
+%%%%
+You can't make a simulacrum of that!
+
+それの幻像は作れない！
+%%%%
+That would be terribly rude!
+
+それはひどく失礼だ！
+%%%%
+You can't make simulacra of that!
+
+それの幻像は作れない！
+%%%%
+You sublimate a sliver of %s essence and reconstitute it in ice.
+
+あなたは%s精髄のひとかけらを昇華させ、氷の中に再構成した。
+%%%%
+%s sculpts a pair of cannons out of ice!
+
+%sは氷から一対の大砲を削り出した！
+%%%%
+%s sculpts a cannon out of ice!
+
+%sは氷から大砲を削り出した！
+%%%%
+%s is in the way!
+
+%sが邪魔をしている！
+%%%%
+Something prevents your mortar from forming!
+
+何かが臼砲の形成を妨げた！
+%%%%
+With a deafening crack, the ground splits apart in the path of %s chthonic artillery!
+
+耳をつんざく音とともに、%s地底の砲台の進路に沿って大地が裂けた！
+%%%%
+A fragment of %s is already outside their body!
+
+%sの魂の欠片はすでに体の外に出ている！
+%%%%
+A fragment of %s soul is dislodged from their body.
+
+%s魂の欠片が肉体から引き剥がされた。
+%%%%
+There's no room for the soul wisp to form!
+
+魂の欠片が形をとる場所がない！
+%%%%
+You continue winding your clockwork bee...
+
+あなたは機械仕掛けの蜂のぜんまいを巻き続けた……
+%%%%
+Without a target, your clockwork bee falls to the ground.
+
+標的がいないため、機械仕掛けの蜂は地面に落ちた。
+%%%%
+Without a target and with nowhere to land, your clockwork bee falls apart in a shower of cogs and coils.
+
+標的も降りる場所もなく、機械仕掛けの蜂は歯車とばねを撒き散らしてばらばらになった。
+%%%%
+With a metallic buzz, %s clockwork bee launches itself at %s.
+
+金属的な羽音を立てて、%s機械仕掛けの蜂が%sに向かって飛び出した。
+%%%%
+Your bee fails to deploy!
+
+蜂を放てなかった！
+%%%%
+You see nothing there to target.
+
+そこには狙えるものが見えない。
+%%%%
+Your bee can only target hostiles.
+
+蜂は敵対的な相手しか狙えない。
+%%%%
+You lock target on %s and prepare to deploy your bee.
+
+あなたは%sに狙いを定め、蜂を放つ準備を始めた。
+%%%%
+continue winding your bee
+
+蜂のぜんまいを巻き続ける
+%%%%
+Your existing bee falls apart.
+
+既存の蜂はばらばらに崩れた。
+%%%%
+Your clockwork bee winds down and falls to the ground.
+
+あなたの機械仕掛けの蜂はぜんまいが切れ、地面に落ちた。
+%%%%
+The clockwork bee winds down and falls to the ground.
+
+機械仕掛けの蜂はぜんまいが切れ、地面に落ちた。
+%%%%
+If you tried to rewind gears in your present state, you'd only break them.
+
+今の状態で歯車を巻き直そうとしても、壊してしまうだけだ。
+%%%%
+You need a visible target to rewind your bee! (Use ctrl+direction or * direction to deconstruct it instead.)
+
+蜂を巻き直すには見える標的が必要だ！(代わりに分解するには ctrl+方向 か * 方向 を使うこと。)
+%%%%
+You lack sufficient magical power to recharge your bee.
+
+蜂を巻き直すのに十分な魔力がない。
+%%%%
+%s winds their clockwork bee back up and it locks its sights upon %s!
+
+%sが機械仕掛けの蜂のぜんまいを巻き直すと、蜂は%sに狙いを定めた！
+%%%%
+%s clockwork bee locks its sights upon %s.
+
+%s機械仕掛けの蜂は%sに狙いを定めた。
+%%%%
+You try to forge sawblades, but something it already there!
+
+あなたは回転鋸を鍛え上げようとしたが、すでに何かがそこにいる！
+%%%%
+You forge a whirling saw of razor-sharp crystal.
+
+あなたは剃刀のように鋭い水晶の回転鋸を鍛え上げた。
+%%%%
+You forge whirling saws of razor-sharp crystal.
+
+あなたは剃刀のように鋭い水晶の回転鋸をいくつも鍛え上げた。
+%%%%
+A crocodile could not survive beneath you.
+
+あなたの足元ではクロコダイルは生きていけない。
+%%%%
+You can't see a valid target there.
+
+そこには有効な標的が見えない。
+%%%%
+There's not enough room behind you.
+
+あなたの背後に十分な空間がない。
+%%%%
+It isn't safe to move backwards.
+
+後ろに下がるのは危険だ。
+%%%%
+Something unseen prevents your spell from working!
+
+見えない何かが呪文の発動を妨げた！
+%%%%
+A crocodile bursts forth beneath %s and grabs %s in its jaws!
+
+%sの足元からクロコダイルが飛び出し、%sに食らいついた！
+%%%%
+%s dismounts their crocodile.
+
+%sはクロコダイルから降りた。
+%%%%
+Your paragon expends all of its energy in an overwhelming flurry of blows!
+
+あなたの勇士は全エネルギーを費やし、圧倒的な連撃を繰り出した！
+%%%%
+You craft a gleaming metal champion and it leaps into the fray!
+
+あなたが輝く金属の勇士を作り上げると、勇士は戦いの渦中へ飛び込んだ！
+%%%%
+Your paragon attacks with you!
+
+あなたの勇士があなたと共に攻撃した！
+%%%%
+Your paragon has reached its maximum power!
+
+あなたの勇士は最大の力に達した！
+%%%%
+Your paragon is now ready to unleash a masterful attack.
+
+あなたの勇士は会心の一撃を放つ準備が整った。
+%%%%
+A lumbering aparatus takes shape within a cloud of fumes.
+
+立ち込める煙の中で、のっそりとした装置が形をなした。
+%%%%
+The potion freezes solid before it can reach you!
+
+薬はあなたに届く前に凍りついてしまった！
+%%%%
+You sigh wistfully at the memory of the taste.
+
+あなたはその味を思い出し、物欲しげにため息をついた。
+%%%%
+Mmmm... tastes like %s.
+
+うーん……%sの味がする。
+%%%%
+You extract even more magical energy from the potion.
+
+あなたは薬からさらに多くの魔力を引き出した。
+%%%%
+finishes brewing potions and dispenses them!
+
+は薬の醸造を終え、それを振りまいた！
+%%%%
+But you're too far away!
+
+しかし、あなたは遠すぎた！
+%%%%
+collapses with a clattering noise.
+
+はガラガラと音を立てて崩れ落ちた。
+%%%%
+%s constructs an explosive harbinger and sets it loose.
+
+%sは爆発する先触れを組み上げ、解き放った。
+%%%%
+%s deploys a bomblet.
+
+%sは小型爆弾を放った。
+%%%%
+Detonate Monarch Bomb
+
+君主爆弾の起爆
+%%%%
+%s commands their explosives to detonate!
+
+%sは爆弾に起爆を命じた！
+%%%%
+You construct a shell of ice in front of yourself.
+
+あなたは目の前に氷の殻を築いた。
+%%%%
+%s fragments into a salvo of icicles!
+
+%sは砕け散り、氷柱の一斉射撃となった！
+%%%%
+A rock-encrusted egg appears nearby and begins to stir.
+
+岩に覆われた卵が近くに現れ、動き始めた。
+%%%%
+You forge a skittering defender to stand by your side.
+
+あなたはそばに立つ素早い守り手を鍛え上げた。
+%%%%
+%s forges a skittering defender to stand by their side.
+
+%sは自らのそばに立つ素早い守り手を鍛え上げた。
+%%%%
+You condense your magic into a crackling blade!
+
+あなたは魔力を凝縮し、パチパチと音を立てる刃を作り出した！
+%%%%

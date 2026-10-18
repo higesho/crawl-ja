@@ -9,6 +9,7 @@
 #include "cloud.h"
 #include "coord.h"
 #include "coordit.h"
+#include "database.h"
 #include "delay.h"
 #include "directn.h"
 #include "env.h"
@@ -119,7 +120,8 @@ static void _set_vortex_durations()
 spret cast_polar_vortex(int powc, bool fail, bool no_prompt)
 {
     targeter_radius hitfunc(&you, LOS_NO_TRANS, POLAR_VORTEX_RADIUS);
-    if (!no_prompt && stop_attack_prompt(hitfunc, "make a polar vortex",
+    if (!no_prompt && stop_attack_prompt(hitfunc,
+                tagged_jtransc("[stop attack prompt]", "make a polar vortex"),
                 [](const actor *act) -> bool {
                     return !act->res_polar_vortex();
                 }))
@@ -129,9 +131,10 @@ spret cast_polar_vortex(int powc, bool fail, bool no_prompt)
 
     fail_check();
 
-    mprf("A great freezing vortex %s.",
-         (you.airborne() || get_form()->forbids_flight()) ?
-         "appears around you" : "appears and lifts you up");
+    if (you.airborne() || get_form()->forbids_flight())
+        mpr(jtrans("A great freezing vortex appears around you."));
+    else
+        mpr(jtrans("A great freezing vortex appears and lifts you up."));
 
     if (you.fishtail)
         merfolk_stop_swimming();
@@ -315,7 +318,7 @@ void polar_vortex_damage(actor *caster, int dur)
             {
                 destroy_wall(*dam_i);
                 if (you.see_cell(*dam_i))
-                    mpr("A tree falls to the furious winds!");
+                    mpr(jtrans("A tree falls to the furious winds!"));
             }
 
             if (!winds.has_wind(*dam_i))
@@ -363,7 +366,7 @@ void polar_vortex_damage(actor *caster, int dur)
                     {
                         bool standing = !you.airborne();
                         if (standing)
-                            mpr("The freezing vortex lifts you up.");
+                            mpr(jtrans("The freezing vortex lifts you up."));
                         you.duration[DUR_FLIGHT]
                             = max(you.duration[DUR_FLIGHT], 20);
                         if (standing)
@@ -390,7 +393,7 @@ void polar_vortex_damage(actor *caster, int dur)
                 if (victim->alive()
                     && !leda
                     && dur > 0
-                    && !victim->resists_dislodge("being moved by the vortex"))
+                    && !victim->resists_dislodge(jtrans("being moved by the vortex")))
                 {
                     move_dest[victim->mid] = victim->pos();
                 }
@@ -468,7 +471,7 @@ void polar_vortex_damage(actor *caster, int dur)
             && !need_expiration_warning(old_player_pos)
             && need_expiration_warning(new_player_pos))
         {
-            mprf(MSGCH_DANGER, "Careful! You are now flying above %s.",
+            mprf(MSGCH_DANGER, jtransc("Careful! You are now flying above %s."),
                  feature_description_at(new_player_pos, false, DESC_PLAIN)
                      .c_str());
         }

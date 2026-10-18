@@ -1,0 +1,1091 @@
+%%%%
+# ============================================================
+#  art-data.h の表示文字列(自動抽出 + 0.19-ja/0.16-ja 旧訳の流用)
+#  name・unid_name・type_name(タグなし)と、dbrand・descrip(追加の効果説明)。
+#  dbrand/descrip の先頭の "Label:" は銘(inscrip)と対応するので英語のまま残す。
+#  inscrip(自動銘)は略語の組み合わせなので訳していない。
+# ============================================================
+# UNRAND_SINGING_SWORD
+Singing Sword
+
+謳う剣
+%%%%
+Sonic Wave: It radiates damaging sonic waves as it strikes, especially in combat involving dangerous or numerous foes.
+
+Sonic Wave: 攻撃するたびに破壊的な音波を放つ。危険な敵や多数の敵との戦闘では特に強力になる。
+%%%%
+# UNRAND_TROG
+Wrath of Trog
+
+トログの怒り
+%%%%
+It causes slowness and exhaustion when equipped.\nIt extends the wielder's berserk rage when killing foes.
+
+装備すると、減速と疲労を引き起こす。
+敵を倒すと、所持者のバーサーク状態を延長する。
+%%%%
+# UNRAND_VARIABILITY
+mace of Variability
+
+変幻のメイス
+%%%%
+Chaos Arc: It occasionally unleashes arcs of chaos on nearby creatures upon striking a foe.
+
+Chaos Arc: 敵を攻撃した際、時々周囲の生き物に混沌の弧を放つ。
+%%%%
+# UNRAND_PRUNE
+glaive of Prune
+
+プルーンのグレイブ
+%%%%
+Prune:     It halves damage taken while paralysed, petrified or unconscious.
+
+Prune:     麻痺、石化、意識不明の間に受けるダメージを半減する。
+%%%%
+# UNRAND_POWER
+sword of Power
+
+力の剣
+%%%%
+# UNRAND_OLGREB
+staff of Olgreb
+
+オルグレブの杖
+%%%%
+Envenom: If the wielder is skilled in Evocations, they can envenom those struck by it, dealing poison damage which bypasses armour.
+
+Envenom: 所持者が発動技能に長けていれば、攻撃した相手に毒を注入し、防具を無視する毒ダメージを与えることができる。
+%%%%
+Radiate: It can be activated via the 'a'bility menu to radiate toxic energy, with effectiveness depending on Evocations skill.\nAlch: It enhances your alchemy magic.\nrPois∞: It grants immunity to poison.
+
+Radiate: 'a'(能力)メニューから発動して毒のエネルギーを放射できる。効果は発動技能に依存する。
+Alch: 錬金術の魔法を強化する。
+rPois∞: 毒を無効化する。
+%%%%
+# UNRAND_WUCAD_MU
+crystal ball of Wucad Mu
+
+ウカド・ムーの水晶球
+%%%%
+Mindtap:  Whenever a successful spell causes magic to be channelled from it, it may also drain additional magic from other enemies in sight, with a chance increasing with spell level.
+
+Mindtap:  呪文の成功によってこれから魔力が引き出されるたびに、視界内の他の敵からも追加で魔力を吸い取ることがある。確率は呪文レベルが高いほど上がる。
+%%%%
+# UNRAND_VAMPIRES_TOOTH
+Vampire's Tooth
+
+吸血鬼の牙
+%%%%
+Megavamp:  It occasionally heals its wielder for the full amount of damage dealt when it wounds a living foe.
+
+Megavamp:  生きている敵を傷つけたとき、時々与えたダメージの全量だけ所持者の体力を回復する。
+%%%%
+# UNRAND_CURSES
+scythe of Curses
+
+呪いの大鎌
+%%%%
+Curses:    It inflicts powerful necromantic curses on any living foe it strikes.
+
+Curses:    攻撃したあらゆる生きている敵に、強力な死霊術の呪いをかける。
+%%%%
+# UNRAND_TORMENT
+sceptre of Torment
+
+苦悩の王笏
+%%%%
+Torment:   It occasionally torments all nearby living foes when it strikes in combat.
+
+Torment:   戦闘で攻撃したとき、時々周囲の生きている敵すべてに苦痛を与える。
+%%%%
+# UNRAND_ZONGULDROK
+sword of Zonguldrok
+
+ゾングルドルックの剣
+%%%%
+# UNRAND_CEREBOV
+sword of Cerebov
+
+セレボブの剣
+%%%%
+great serpentine sword
+
+凄まじく曲がりくねった剣
+%%%%
+Hellfire:  It temporarily reduces the fire resistance of those it strikes.
+
+Hellfire:  攻撃した相手の火炎耐性を一時的に低下させる。
+%%%%
+# UNRAND_DISPATER
+orb of Dispater
+
+ディスペータのオーブ
+%%%%
++Damnation: It grants the ability to hurl damnation at the cost of health and magic, with strength depending on Evocations skill.
+
++Damnation: 体力と魔力を代償に、地獄の業火を投げつける能力を与える。威力は発動技能に依存する。
+%%%%
+# UNRAND_ASMODEUS
+sceptre of Asmodeus
+
+アスモデウスの王笏
+%%%%
+ruby sceptre
+
+ルビーの王笏
+%%%%
+Hellfire Court: It may summon demons of flame and damnation when striking foes.
+
+Hellfire Court: 敵を攻撃したとき、炎と地獄の悪魔を召喚することがある。
+%%%%
+# UNRAND_FAERIE
+faerie dragon scales
+
+フェアリードラゴンの鱗一式
+%%%%
+# UNRAND_BLOODBANE
+demon blade "Bloodbane"
+
+悪魔の刃『ブラッドベイン』
+%%%%
+# UNRAND_FLAMING_DEATH
+scimitar of Flaming Death
+
+燃えさかる死のシミター
+%%%%
+# UNRAND_BRILLIANCE
+eveningstar "Brilliance"
+
+輝きのイブニングスター
+%%%%
+Umbra:     It surrounds you with an aura of shadow, increasing your stealth and reducing the accuracy of all others within it.
+
+Umbra:     あなたの周囲を影のオーラで包み、あなたの隠密性を高め、オーラ内の他の者すべての命中率を下げる。
+%%%%
+# UNRAND_LEECH
+demon blade "Leech"
+
+悪魔の刃『蛭』
+%%%%
+Evervamp:  It heals its wielder for a portion of the damage dealt every time it strikes a living foe.
+
+Evervamp:  生きている敵を攻撃するたびに、与えたダメージの一部だけ所持者の体力を回復する。
+%%%%
+# UNRAND_CHILLY_DEATH
+dagger of Chilly Death
+
+冷たき死の短刀
+%%%%
+# UNRAND_MORG
+dagger "Morg"
+
+ダガー『モーグ』
+%%%%
+# UNRAND_FINISHER
+scythe "Finisher"
+
+大鎌『とどめの一撃』
+%%%%
+Execute:   It may instantly slay those it strikes, especially weaker foes.
+
+Execute:   攻撃した相手を即死させることがある。弱い敵ほど効果が高い。
+%%%%
+# UNRAND_PUNK
+greatsling "Punk"
+
+大型スリング『パンク』
+%%%%
+# UNRAND_ZEPHYR
+longbow "Zephyr"
+
+ロングボウ『ゼファー』
+%%%%
+# UNRAND_SKULLCRUSHER
+giant club "Skullcrusher"
+
+巨大棍棒『頭蓋砕き』
+%%%%
+# UNRAND_GUARD
+glaive of the Guard
+
+番人のグレイブ
+%%%%
+Spectral:  When it strikes, its spirit leaps out and fights alongside the wielder.
+
+Spectral:  攻撃したとき、その霊が飛び出して所持者とともに戦う。
+%%%%
+# UNRAND_ZEALOT_SWORD
+zealot's sword
+
+狂信者の剣
+%%%%
+Zealotry:  Whenever the wielder enters a berserk rage, their allies are berserked alongside them.
+
+Zealotry:  所持者がバーサーク状態になるたびに、その仲間たちもともにバーサーク状態になる。
+%%%%
+# UNRAND_DAMNATION
+arbalest "Damnation"
+
+アーバレスト『地獄の鉄槌』
+%%%%
+Damnation: Any ammunition fired from it explodes in a burst of damnation on striking a foe, dealing damage which bypasses armour.
+
+Damnation: これから放たれたあらゆる矢弾は、敵に命中すると地獄の業火となって炸裂し、防具を無視するダメージを与える。
+%%%%
+# UNRAND_DREAD_KNIGHT
+sword of the Dread Knight
+
+恐怖の騎士の剣
+%%%%
+Decimate: It inflicts additional damage proportional to its victim's maximum health.
+
+Decimate: 相手の最大体力に比例した追加ダメージを与える。
+%%%%
+# UNRAND_EOS
+morningstar "Eos"
+
+モーニングスター『エオス』
+%%%%
+Halo:      It grants its wielder a halo, revealing invisible creatures and increasing accuracy against all within it other than the wielder.
+
+Halo:      所持者に光輪を与え、透明な生き物を見えるようにし、光輪内にいる所持者以外のすべての者への命中率を高める。
+%%%%
+# UNRAND_BOTONO
+spear of the Botono
+
+ボトノの槍
+%%%%
+# UNRAND_OCTOPUS_KING
+trident of the Octopus King
+
+蛸の王のトライデント
+%%%%
+# UNRAND_ARGA
+mithril axe "Arga"
+
+ミスリルの斧『アルガ』
+%%%%
+# UNRAND_ELEMENTAL_STAFF
+Elemental Staff
+
+元素の杖
+%%%%
+Ele:       It enhances your fire, ice, earth and air magic. If skilled in Evocations, you can discharge powerful blasts of elemental energy when striking with it.
+
+Ele:       火術、氷術、地術、風術の魔法を強化する。発動技能に長けていれば、これで攻撃したときに強力な元素のエネルギーを放出できる。
+%%%%
+# UNRAND_SNIPER
+heavy crossbow "Sniper"
+
+大型クロスボウ『狙撃手』
+%%%%
+Acc+∞:     It never misses its target.
+
+Acc+∞:     決して標的を外さない。
+%%%%
+# UNRAND_PIERCER
+longbow "Piercer"
+
+ロングボウ『貫くもの』
+%%%%
+# UNRAND_BLOWGUN_ASSASSIN
+blowgun of the Assassin
+
+暗殺者の吹き矢筒
+%%%%
+# UNRAND_WYRMBANE
+lance "Wyrmbane"
+
+ランス『ドラゴン殺し』
+%%%%
+Slay Drac: It inflicts extra damage against dragons and draconians.
+
+Slay Drac: ドラゴンとドラコニアンに追加ダメージを与える。
+%%%%
+# UNRAND_SPRIGGANS_KNIFE
+Spriggan's Knife
+
+スプリガンのナイフ
+%%%%
+Stab:      It is more effective when stabbing unaware enemies, sometimes treating them as though they were completely helpless.
+
+Stab:      気付いていない敵への急所攻撃がより効果的になり、時々相手を完全に無防備であるかのように扱う。
+%%%%
+# UNRAND_PLUTONIUM_SWORD
+plutonium sword
+
+プルトニウムの剣
+%%%%
+Mutate:    It occasionally inflicts wild transmutation effects on those it strikes, inflicting malmutation or extra damage, or polymorphing them into a new form.
+
+Mutate:    攻撃した相手に時々激しい変成の効果を及ぼし、有害な突然変異や追加ダメージを与えたり、新たな姿に変身させたりする。
+%%%%
+# UNRAND_UNDEADHUNTER
+great mace "Undeadhunter"
+
+大型メイス『死者を狩るもの』
+%%%%
+Deathbane: It inflicts significantly more damage against the undead.
+
+Deathbane: アンデッドに対して大幅に多くのダメージを与える。
+%%%%
+# UNRAND_SNAKEBITE
+whip "Snakebite"
+
+鞭『蛇の一咬み』
+%%%%
+Curare:    It occasionally inflicts asphyxiating poison on those it strikes, dealing poison damage and causing slowness.
+
+Curare:    攻撃した相手に時々窒息性の毒を与え、毒ダメージを与えて減速させる。
+%%%%
+# UNRAND_ACCURACY
+knife of Accuracy
+
+必中のナイフ
+%%%%
+# UNRAND_CRYSTAL_SPEAR
+Lehudib's crystal spear
+
+レフディブの水晶槍
+%%%%
+# UNRAND_CAPTAIN
+captain's cutlass
+
+船長のカトラス
+%%%%
+Disarm:    It may disarm weapon-wielding foes when striking them, dealing extra damage in the process.
+
+Disarm:    武器を持った敵を攻撃したとき、その武器を叩き落とすことがあり、その際に追加ダメージを与える。
+%%%%
+# UNRAND_STORM_BOW
+storm bow
+
+嵐の弓
+%%%%
+Penet:     Any ammunition fired by it passes through the targets it hits, potentially hitting all targets in its path until it reaches maximum range.
+
+Penet:     これから放たれたあらゆる矢弾は命中した標的を貫通し、最大射程に達するまで経路上のすべての標的に命中しうる。
+%%%%
+# UNRAND_IGNORANCE
+tower shield of Ignorance
+
+無知のタワーシールド
+%%%%
+# UNRAND_AUGMENTATION
+robe of Augmentation
+
+増強のローブ
+%%%%
+# UNRAND_THIEF
+cloak of the Thief
+
+盗賊の外套
+%%%%
+Quiet:      All noise in your surroundings is dampened.
+
+Quiet:      あなたの周囲のあらゆる物音を弱める。
+%%%%
+# UNRAND_BULLSEYE
+tower shield "Bullseye"
+
+タワーシールド『ブルズアイ』
+%%%%
+# UNRAND_DYROVEPREVA
+crown of Dyrovepreva
+
+ダイロヴェプレヴァの王冠
+%%%%
+# UNRAND_BEAR_SPIRIT
+hat of the Bear Spirit
+
+熊の霊魂の帽子
+%%%%
+Bear:      Going berserk makes the wearer exceptionally tough, and they are slowed for a shorter time afterward.
+
+Bear:      バーサーク状態になると装備者は非常に頑健になり、その後の減速時間も短くなる。
+%%%%
+# UNRAND_MISFORTUNE
+robe of Misfortune
+
+不運のローブ
+%%%%
+# UNRAND_FLASH
+cloak of Flash
+
+閃光のクローク
+%%%%
+# UNRAND_HOOD_ASSASSIN
+hood of the Assassin
+
+暗殺者の頭巾
+%%%%
+Detect:    It allows the wearer to sense nearby creatures.\nStab+:     It allows the wearer to make particularly effective stabbing attacks against helpless or unaware enemies with any melee weapon.
+
+Detect:    装備者は周囲の生き物を感知できる。
+Stab+:     装備者はどの近接武器でも、無防備な敵や気付いていない敵に対して特に効果的な急所攻撃を行える。
+%%%%
+# UNRAND_LEAR
+Lear's hauberk
+
+リア王の鎖かたびら
+%%%%
+# UNRAND_ZHOR
+skin of Zhor
+
+ズホルの皮
+%%%%
+*Englaciate: It radiates cold, occasionally slowing all nearby creatures who are not resistant to cold.
+
+*Englaciate: 冷気を放ち、冷気に耐性のない周囲の生き物すべてを時々減速させる。
+%%%%
+# UNRAND_SALAMANDER
+salamander hide armour
+
+火蜥蜴の皮鎧
+%%%%
+Flames:    It surrounds you with flame clouds.\nrFlCloud:  It grants immunity to flame clouds.
+
+Flames:    あなたの周囲を炎の雲で包む。
+rFlCloud:  炎の雲を無効化する。
+%%%%
+# UNRAND_WAR
+gauntlets of War
+
+戦の手甲
+%%%%
+# UNRAND_RESISTANCE
+shield of Resistance
+
+耐性の盾
+%%%%
+# UNRAND_FOLLY
+robe of Folly
+
+愚劣のローブ
+%%%%
+Brill:     It increases the power of your magical spells and halves their MP cost (rounding up).\nWill-∞:    It reduces your willpower to zero.
+
+Brill:     あなたの魔法の威力を高め、消費MPを半分にする(端数切り上げ)。
+Will-∞:    あなたの意志力をゼロにする。
+%%%%
+# UNRAND_MAXWELL
+Maxwell's patent armour
+
+マクスウェルの特許甲冑
+%%%%
+# UNRAND_DRAGONMASK
+mask of the Dragon
+
+竜の仮面
+%%%%
+Dragonpray: It occasionally summons a dragon when using Invocations with hostile monsters in sight. Chance is 10% + twice the piety cost of the ability used.
+
+Dragonpray: 敵対的なモンスターが視界にいるときに祈祷を使うと、時々ドラゴンを召喚する。確率は10% + 使用した能力の信仰コストの2倍。
+%%%%
+# UNRAND_NIGHT
+robe of Night
+
+闇夜のローブ
+%%%%
+Dark:      It shrouds the wearer in darkness, reducing the range at which they can see and be seen by others.
+
+Dark:      装備者を闇で包み、装備者が見通せる範囲と他者から見られる範囲を狭める。
+%%%%
+# UNRAND_DRAGON_KING
+scales of the Dragon King
+
+竜王の鱗
+%%%%
+# UNRAND_ALCHEMIST
+hat of the Alchemist
+
+錬金術師の帽子
+%%%%
+# UNRAND_FENCERS
+fencer's gloves
+
+剣士の手袋
+%%%%
+Riposte:   It allows the wearer to riposte with melee weapons, swiftly retaliating against missed or blocked melee attacks.
+
+Riposte:   装備者は近接武器で反撃できるようになり、外れたり防いだりした近接攻撃に素早く反撃する。
+%%%%
+# UNRAND_STARLIGHT
+cloak of Starlight
+
+星明かりのクローク
+%%%%
+*Dazzle:   It may blind adjacent enemies who miss an attack against the wearer in melee combat.
+
+*Dazzle:   近接戦闘で装備者への攻撃を外した隣接する敵を盲目にすることがある。
+%%%%
+# UNRAND_RATSKIN_CLOAK
+ratskin cloak
+
+鼠の毛皮のクローク
+%%%%
+*Rats:     When the wearer is hurt, rats may emerge from it to assist them.
+
+*Rats:     装備者が傷つくと、そこから鼠が現れて装備者を手助けすることがある。
+%%%%
+# UNRAND_GONG
+shield of the Gong
+
+銅鑼の盾
+%%%%
+Loud:      It is deafeningly noisy when blocking attacks.
+
+Loud:      攻撃を防ぐと耳をつんざくほどの騒音を立てる。
+%%%%
+# UNRAND_AIR
+amulet of the Air
+
+大気の護符
+%%%%
+Inacc:     It reduces the accuracy of your attacks and spells.
+
+Inacc:     あなたの攻撃と呪文の命中率を下げる。
+%%%%
+# UNRAND_SHADOWS
+ring of Shadows
+
+影の指輪
+%%%%
+# UNRAND_CEKUGOB
+amulet of Cekugob
+
+セクゴブの護符
+%%%%
+# UNRAND_FOUR_WINDS
+amulet of the Four Winds
+
+四方位の風の護符
+%%%%
+# UNRAND_BLOODLUST
+necklace of Bloodlust
+
+血に飢えた首飾り
+%%%%
+Fury:      It extends the wearer's berserk rage when killing foes.
+
+Fury:      敵を倒すと、装備者のバーサーク状態を延長する。
+%%%%
+# UNRAND_HARE
+ring of the Hare
+
+野兎の指輪
+%%%%
+# UNRAND_TORTOISE
+ring of the Tortoise
+
+陸亀の指輪
+%%%%
+# UNRAND_MAGE
+ring of the Mage
+
+賢者の指輪
+%%%%
+# UNRAND_SHIELDING
+brooch of Shielding
+
+防護のブローチ
+%%%%
+# UNRAND_RCLOUDS
+robe of Clouds
+
+雲のローブ
+%%%%
+*Thunder:  It occasionally creates storm clouds above nearby enemies.\nrCloud:    It grants its wearer immunity to clouds.
+
+*Thunder:  時々周囲の敵の頭上に嵐の雲を生み出す。
+rCloud:    装備者にあらゆる雲を無効化させる。
+%%%%
+# UNRAND_PONDERING
+hat of Pondering
+
+熟考の帽子
+%%%%
+# UNRAND_DEMON_AXE
+obsidian axe
+
+黒曜石の斧
+%%%%
+Demonic:   It occasionally summons demons to assist the wielder when it strikes in combat.
+
+Demonic:   戦闘で攻撃したとき、時々悪魔を召喚して所持者を手助けさせる。
+%%%%
+Mesm:      Its wielder is mesmerised by any visible foes, and it cannot be unequipped while any foes are visible.
+
+Mesm:      所持者は見えている敵に魅了され、敵が見えている間はこれを外すことができない。
+%%%%
+# UNRAND_LIGHTNING_SCALES
+lightning scales
+
+稲妻の鱗の具装
+%%%%
+Swift:     It allows the wearer to cover ground more swiftly.
+
+Swift:     装備者はより素早く地面を移動できる。
+%%%%
+# UNRAND_BLACK_KNIGHT_HORSE
+Black Knight's barding
+
+黒騎士の馬甲
+%%%%
+# UNRAND_VITALITY
+amulet of Vitality
+
+生命力の護符
+%%%%
+# UNRAND_AUTUMN_KATANA
+autumn katana
+
+秋日のカタナ
+%%%%
+Manifold Assault: It sometimes launches melee attacks against multiple visible enemies.
+
+Manifold Assault: 時々、見えている複数の敵に近接攻撃を行う。
+%%%%
+# UNRAND_DEVASTATOR
+shillelagh "Devastator"
+
+棍棒『デヴァステイター』
+%%%%
+Shatter:   It releases a powerful concussive burst when it strikes, dealing extra damage to the target and all other creatures adjacent to them.
+
+Shatter:   攻撃したとき強力な衝撃波を放ち、標的とそれに隣接する他のすべての生き物に追加ダメージを与える。
+%%%%
+# UNRAND_DRAGONSKIN
+dragonskin cloak
+
+竜の皮のクローク
+%%%%
+opalescent scaly cloak
+
+乳白色の鱗のクローク
+%%%%
+Avatar's Aegis: It grants the wearer a chance to resist fire, cold, poison, electricity, acid, and negative energy.
+
+Avatar's Aegis: 装備者に火炎、冷気、毒、電撃、酸、負のエネルギーに抵抗する確率を与える。
+%%%%
+# UNRAND_OCTOPUS_KING_RING
+ring of the Octopus King
+
+蛸の王の指輪
+%%%%
+# UNRAND_WOE
+Axe of Woe
+
+悲痛の斧
+%%%%
+# UNRAND_MOON_TROLL_LEATHER_ARMOUR
+moon troll leather armour
+
+月世界のトロルの革鎧
+%%%%
+# UNRAND_FINGER_AMULET
+macabre finger necklace
+
+不気味な指のネックレス
+%%%%
+Ring+:   It enables you to equip an extra ring.
+
+Ring+:   追加の指輪を1つ装備できるようになる。
+%%%%
+# UNRAND_SPIDER
+boots of the spider
+
+蜘蛛のブーツ
+%%%%
+# UNRAND_DARK_MAUL
+dark maul
+
+ダークモール
+%%%%
+# UNRAND_HIGH_COUNCIL
+hat of the High Council
+
+最高会議の帽子
+%%%%
+# UNRAND_ARC_BLADE
+arc blade
+
+電弧の刃
+%%%%
+Discharge: It occasionally unleashes powerful arcs of lightning upon striking a foe. These may arc to other adjacent creatures (including the wielder, but dealing reduced damage to them) before grounding out.
+
+Discharge: 敵を攻撃した際、時々強力な稲妻の弧を放つ。稲妻は放電しきる前に、隣接する他の生き物(所持者も含むが、所持者へのダメージは軽減される)へと飛び移ることがある。
+%%%%
+# UNRAND_SPELLBINDER
+demon whip "Spellbinder"
+
+悪魔の鞭『スペルバインダー』
+%%%%
+Disrupt:   It unleashes wild and unpredictable magical effects upon striking a wizard or a creature with magical abilities.
+
+Disrupt:   魔法使いや魔法の能力を持つ生き物を攻撃したとき、荒々しく予測不能な魔法の効果を解き放つ。
+%%%%
+# UNRAND_ORDER
+lajatang of Order
+
+秩序のラジャタン
+%%%%
+Silver:    It inflicts extra damage upon those it strikes, and deals substantially increased damage to chaotic, mutated and magically transformed beings.
+
+Silver:    攻撃した相手に追加ダメージを与え、混沌の存在、突然変異した存在、魔法で変身した存在には大幅に増加したダメージを与える。
+%%%%
+# UNRAND_FIRESTARTER
+great mace "Firestarter"
+
+大型メイス『ファイアスターター』
+%%%%
+Immolate:  It fills those it strikes with an explosive inner flame.
+
+Immolate:  攻撃した相手を爆発性の内なる炎で満たす。
+%%%%
+rFlCloud:  It grants immunity to clouds of flame.
+
+rFlCloud:  炎の雲を無効化する。
+%%%%
+# UNRAND_ORANGE_CRYSTAL_PLATE_ARMOUR
+orange crystal plate armour
+
+橙水晶の鎧
+%%%%
+# UNRAND_MAJIN
+Majin-Bo
+
+魔神棒
+%%%%
+Spellvamp: It heals its wielder for a portion of the damage dealt when they wound a living foe with it or with a spell, but its wielder's spells cost health as well as magical power.
+
+Spellvamp: これや呪文で生きている敵を傷つけたとき、与えたダメージの一部だけ所持者の体力を回復するが、所持者の呪文は魔力に加えて体力も消費するようになる。
+%%%%
+# UNRAND_GYRE
+pair of quick blades "Gyre" and "Gimble"
+
+一対のクイックブレード『ジャイル』と『ギンブル』
+%%%%
+# UNRAND_ETHERIC_CAGE
+Maxwell's etheric cage
+
+マクスウェルのエーテル檻
+%%%%
+# UNRAND_ETERNAL_TORMENT
+crown of Eternal Torment
+
+永劫なる苦痛の王冠
+%%%%
+# UNRAND_VINES
+robe of Vines
+
+蔓のローブ
+%%%%
+NoPotionHeal: Its wearer cannot be healed by potions.
+
+NoPotionHeal: 装備者は薬で体力を回復できない。
+%%%%
+# UNRAND_KRYIAS
+Kryia's mail coat
+
+クライア女王の帷子鎧
+%%%%
+PotionHeal*2: Potions heal its wearer twice as much.
+
+PotionHeal*2: 薬による装備者の回復量が2倍になる。
+%%%%
+# UNRAND_FROSTBITE
+frozen axe "Frostbite"
+
+凍れる斧『フロストバイト』
+%%%%
+Freezing Cloud: It occasionally leaves clouds of freezing vapour upon striking a foe, and grants immunity to clouds of freezing vapour.
+
+Freezing Cloud: 敵を攻撃した際、時々凍てつく霧の雲を残す。また、凍てつく霧の雲を無効化する。
+%%%%
+# UNRAND_TALOS
+armour of Talos
+
+タロスの鎧
+%%%%
+# UNRAND_WARLOCK_MIRROR
+warlock's mirror
+
+魔法使いの鏡
+%%%%
+Omnireflect: It can block and reflect piercing ranged attacks and magical attacks against the wielder's willpower.
+
+Omnireflect: 貫通する遠隔攻撃と、所持者の意志力に対する魔法攻撃を防ぎ、反射できる。
+%%%%
+# UNRAND_AMULET_INVISIBILITY
+amulet of invisibility
+
+透明化の護符
+%%%%
+# UNRAND_THERMIC_ENGINE
+Maxwell's thermic engine
+
+マクスウェルの熱機関
+%%%%
+Freeze:    It freezes victims, dealing an additional one-quarter of any damage that pierces defenders' armour. It may also slow down cold-blooded creatures.\nRev:       It becomes more effective when it hits something. This effect fades over time.
+
+Freeze:    相手を凍らせ、防御側の防具を貫いたダメージの4分の1を追加で与える。冷血の生き物を減速させることもある。
+Rev:       何かに命中するほど効果が高まる。この効果は時間とともに薄れる。
+%%%%
+# UNRAND_RIFT
+demon trident "Rift"
+
+悪魔のトライデント『リフト』
+%%%%
+Reach+:    It can reach especially far, and its reaching attacks ignore other creatures in the way.
+
+Reach+:    特に遠くまで届き、その届く攻撃は途中にいる他の生き物を無視する。
+%%%%
+# UNRAND_BATTLE
+sphere of Battle
+
+戦いの球
+%%%%
+Battle: It summons a battlesphere in combat, with strength depending on Conjurations skill.\nDestructive: It enhances your destructive magic, and weakens non-destructive magic.
+
+Battle: 戦闘中にバトルスフィアを召喚する。強さは攻撃術の技能に依存する。
+Destructive: あなたの破壊の魔法を強化し、破壊以外の魔法を弱める。
+%%%%
+# UNRAND_EMBRACE
+Cigotuvi's embrace
+
+シゴツヴィの抱擁
+%%%%
+Corpsefed: It gathers nearby corpses to temporarily increase the armour it provides.\nrMiasma:   It protects you from foul pestilence.
+
+Corpsefed: 周囲の死体を集めて、与える防御力を一時的に高める。
+rMiasma:   汚らわしい疫病からあなたを守る。
+%%%%
+# UNRAND_SEVEN_LEAGUE_BOOTS
+seven-league boots
+
+七里靴
+%%%%
+Rampage+∞: When moving toward enemies, its wearer moves as far as possible, alerting their target en route.
+
+Rampage+∞: 敵に向かって移動するとき、装備者は可能な限り遠くまで移動し、途中で標的に気付かれる。
+%%%%
+# UNRAND_POWER_GLOVES
+Mad Mage's Maulers
+
+狂魔術師の拳鎚
+%%%%
+Infuse+∞:  It empowers its wearer's blows with all of their magic.\nVampMP:    Blows struck in melee replenish the wearer's magic.
+
+Infuse+∞:  装備者の攻撃に全魔力を込めて強化する。
+VampMP:    近接攻撃で与えた打撃が装備者の魔力を回復する。
+%%%%
+# UNRAND_DREAMSHARD_NECKLACE
+dreamshard necklace
+
+夢の欠片の首飾り
+%%%%
+*Dream:    It absorbs a single lethal wound into itself, holding its wearer just short of death and releasing dream-creatures to guard them.
+
+*Dream:    致命傷を一度だけ肩代わりし、装備者を死の寸前で留め、夢の生き物を放って装備者を守らせる。
+%%%%
+# UNRAND_DELATRAS_GLOVES
+Delatra's gloves
+
+デラトラの手袋
+%%%%
+ID++:      It heals its wearer when they drink unknown potions, and restores their MP when they read unknown scrolls.
+
+ID++:      装備者が未識別の薬を飲むと体力を回復し、未識別の巻物を読むとMPを回復する。
+%%%%
+# UNRAND_WOODCUTTERS_AXE
+woodcutter's axe
+
+木こりの斧
+%%%%
+# UNRAND_THROATCUTTER
+Throatcutter
+
+喉裂き
+%%%%
+Coup de Grace: It may instantly kill foes which have little health.
+
+Coup de Grace: 体力の少ない敵を即死させることがある。
+%%%%
+# UNRAND_MEEK
+staff of the Meek
+
+柔弱者の杖
+%%%%
+Meekguard: It provides extra protection to wielders with little health.
+
+Meekguard: 体力の少ない所持者に追加の防護を与える。
+%%%%
+# UNRAND_CONDEMNATION
+trishula "Condemnation"
+
+トリシューラ『断罪』
+%%%%
+Anguish:   It makes its victims' attacks reflect back on them.
+
+Anguish:   攻撃した相手の攻撃がその相手自身に跳ね返るようにする。
+%%%%
+# UNRAND_ELEMENTAL_VULNERABILITY
+amulet of Elemental Vulnerability
+
+元素脆弱の護符
+%%%%
+# UNRAND_MOUNTAIN_BOOTS
+mountain boots
+
+山岳のブーツ
+%%%%
+Steadfast: It prevents involuntary movement, except for blinking, teleportation, or banishment.
+
+Steadfast: ブリンク、テレポート、追放以外の不本意な移動を防ぐ。
+%%%%
+# UNRAND_LOCHABER_AXE
+Reach-Cleave: It can be evoked to extend its reach, and strikes at all foes within reach, dealing less damage to those not targeted.
+
+Reach-Cleave: 発動すると届く距離を延ばすことができ、届く範囲のすべての敵を攻撃する。狙った相手以外へのダメージは少ない。
+%%%%
+Poleaxe:   It uses either Axes or Polearms skill, whichever is higher.
+
+Poleaxe:   斧と長柄武器の技能のうち、高い方を使用する。
+%%%%
+# UNRAND_HERMITS_PENDANT
+Hermit's Pendant
+
+隠者のペンダント
+%%%%
+Invo=14:   It sets your Invocations skill to 14.\nEvo=0:    It sets your Evocations skill to 0.
+
+Invo=14:   あなたの祈祷技能を14にする。
+Evo=0:    あなたの発動技能を0にする。
+%%%%
+# UNRAND_SLICK_SLIPPERS
+slick slippers
+
+つるつるのスリッパ
+%%%%
+Slick:     Its wearer cannot be constricted, netted, webbed, or stopped by binding sigils.\nSlippery:  Its wearer slips away from damaging melee attacks, pulling the attacker onward.
+
+Slick:     装備者は締めつけられず、網や蜘蛛の巣にかからず、束縛の印にも止められない。
+Slippery:  装備者はダメージを与える近接攻撃からするりと逃れ、攻撃者を前方へ引き込む。
+%%%%
+# UNRAND_FORCE_LANCE
+Force Lance
+
+フォースランス
+%%%%
+Knockback: It sometimes drives back enemies it hits.
+
+Knockback: 攻撃した敵を時々押し戻す。
+%%%%
+# UNRAND_HOLY_AXE
+consecrated labrys
+
+聖別されたラブリュス
+%%%%
+Valiant:   It becomes more powerful as more dangerous foes come into view.
+
+Valiant:   より危険な敵が視界に入るほど強力になる。
+%%%%
+# UNRAND_VICTORY
+toga "Victory"
+
+トーガ『勝利』
+%%%%
+*Victory:  When the wearer kills a threatening monster, it has a chance to gain +1 AC, +1 Slay, and +1 Int, capping at +7. When the wearer uses a scroll or a potion with a hostile monster in sight, its bonuses reset to +0. Unequipping it also resets its bonuses to +0.
+
+*Victory:  装備者が手強いモンスターを倒すと、確率でAC +1、殺傷 +1、知力 +1を得る(上限+7)。敵対的なモンスターが視界にいるときに巻物や薬を使うと、ボーナスは+0に戻る。外した場合もボーナスは+0に戻る。
+%%%%
+# UNRAND_STORM_QUEEN
+Storm Queen's Shield
+
+嵐の女王の盾
+%%%%
+Shock:     When it blocks an attack, it may electrocute the attacker. This works even against foes who are a short distance away.
+
+Shock:     攻撃を防いだとき、攻撃者を感電させることがある。少し離れた敵に対しても有効だ。
+%%%%
+# UNRAND_DREAMDUST_NECKLACE
+dreamdust necklace
+
+夢塵の首飾り
+%%%%
+# UNRAND_MULE
+hand cannon "Mule"
+
+ハンドキャノン『ラバ』
+%%%%
+Backblast: When fired, it often launches its wielder backwards.
+
+Backblast: 発射すると、しばしば所持者を後方へ吹き飛ばす。
+%%%%
+# UNRAND_GADGETEER
+gloves of the gadgeteer
+
+発明家の手袋
+%%%%
+Gadgeteer:   Your evocable items recharge 30% faster and wands have a 30% chance to not spend a charge.\nWandboost:   Your wands are more powerful.
+
+Gadgeteer:   あなたの発動アイテムの再充填が30%速くなり、ワンドは30%の確率でチャージを消費しない。
+Wandboost:   あなたのワンドの威力が高まる。
+%%%%
+# UNRAND_CHARLATANS_ORB
+Charlatan's Orb
+
+ペテン師のオーブ
+%%%%
+It massively reduces your stealth.\nIt interferes with translocations, delaying teleports.\nCharlatan: It boosts your other skills by 20% of your base Evocations skill.
+
+あなたの隠密性を大幅に下げる。
+転位を妨げ、テレポートを遅らせる。
+Charlatan: あなたの他の技能を、発動技能の基本値の20%だけ上昇させる。
+%%%%
+# UNRAND_JUSTICARS_REGALIA
+justicar's regalia
+
+審問官の礼装
+%%%%
+Inspire:   When you summon or create an ally, it gains Regeneration.\nAmulet+:   You can equip an additional amulet.
+
+Inspire:   あなたが味方を召喚または作成すると、その味方は再生能力を得る。
+Amulet+:   追加の護符を1つ装備できる。
+%%%%
+# UNRAND_SKULL_OF_ZONGULDROK
+skull of Zonguldrok
+
+ゾングルドルックの頭蓋骨
+%%%%
+Reaping:   When you kill an enemy with your weapon, its spirit may be forced to fight for you.\nHat+:   You can equip an additional hat (on the skull).
+
+Reaping:   あなたが武器で敵を倒すと、その霊を強制的にあなたのために戦わせることがある。
+Hat+:   追加の帽子を1つ(頭蓋骨の上に)装備できる。
+%%%%
+# UNRAND_FISTICLOAK
+fungal fisticloak
+
+菌糸の拳外套
+%%%%
+Shroompunch:   The cloak sometimes lashes out at its wearer's enemies, inflicting confusion with its spores.\nGloves+:   Your cloak can equip an additional pair of gloves.
+
+Shroompunch:   この外套は時々装備者の敵に打ちかかり、その胞子で混乱させる。
+Gloves+:   あなたの外套に追加の手袋を1組装備できる。
+%%%%
+# UNRAND_VAINGLORY
+crown of vainglory
+
+虚栄の王冠
+%%%%
+Majesty:   You are bathed in light that prevents you from turning invisible. Whenever you enter a new floor, you announce yourself to nearby enemies and refuse to leave the floor again for some time.\nRing++:   You can equip two additional rings.
+
+Majesty:   あなたは光に包まれ、透明になれない。新しい階に入るたびに、周囲の敵に名乗りを上げ、しばらくの間その階を立ち去ることを拒む。
+Ring++:   追加の指輪を2つ装備できる。
+%%%%
+# UNRAND_SCARF_INVISIBILITY
+scarf of invisibility
+
+透明化のスカーフ
+%%%%

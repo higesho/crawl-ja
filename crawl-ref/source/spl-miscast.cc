@@ -235,7 +235,7 @@ static const map<spschool, miscast_datum> miscast_effects = {
                     const int dur = div_rand_round(dam, 2);
                     you.set_duration(DUR_DIMENSION_ANCHOR, dur, dur);
                     you.set_duration(DUR_NO_MOMENTUM, dur, dur,
-                                     "You are magically locked in place.");
+                                     jtransc("You are magically locked in place."));
                 }
                 else
                 {
@@ -297,7 +297,8 @@ static const map<spschool, miscast_datum> miscast_effects = {
             BEAM_NONE,
             [] (actor& target, actor* source, miscast_source_info /*mc_info*/,
                 int dam, string /*cause*/) {
-                target.corrode(source, "wild magic", 4 + div_rand_round(dam, 4));
+                target.corrode(source, tagged_jtransc("[corrode]", "wild magic"),
+                               4 + div_rand_round(dam, 4));
             }
         },
     },
@@ -346,8 +347,8 @@ void miscast_effect(spell_type spell, int fail)
     {
         if (x_chance_in_y(you.piety(), piety_breakpoint(5)))
         {
-            simple_god_message(" protects you from your miscast "
-                               "necromantic spell!");
+            simple_god_message(jtransc(" protects you from your miscast "
+                                       "necromantic spell!"));
             return;
         }
     }

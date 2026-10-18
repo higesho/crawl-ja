@@ -1,0 +1,41 @@
+%%%%
+By Zin's power, the fiery explosion is contained.
+
+ジンの御業により、燃えさかる爆発の威力は抑えられた。
+%%%%
+Blessed fire suddenly surrounds you!
+
+突然聖なる炎があなたを包んだ！
+%%%%
+is surrounded by blessed fire!
+
+は聖なる炎に包まれた！
+%%%%
+Rot billows forth from %s wounds!
+
+%s傷口から腐敗がもくもくと噴き出した！
+%%%%
+There's already a cloud here!
+
+ここには既に雲が漂っている！
+%%%%
+A cloud of volatile blastmotes flares up around you! Run!
+
+あなたの周りに不安定な爆発塵の雲が燃え上がった！逃げろ！
+%%%%
+The cloud of blastmotes explodes!
+
+爆発塵の雲が爆発した！
+%%%%
+The air fills with toxic fumes!
+
+あたりに有毒な煙が充満した！
+%%%%
+There's no open space to fill with poison.
+
+毒で満たせる空間がない。
+%%%%
+[stop attack prompt]conjure a freezing cloud
+
+を凍気の雲で包み
+%%%%

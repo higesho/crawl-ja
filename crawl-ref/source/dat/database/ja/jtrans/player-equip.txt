@@ -1,0 +1,697 @@
+%%%%
+You need the rest of your tentacles for walking.
+
+残りの触手は歩行するのに必要だ。
+%%%%
+You'd need another %s to do that!
+
+それを装備するにはもう一本腕が必要だ！
+%%%%
+Your wings won't fit in that.
+
+あなたはその大きな翼が邪魔でその防具を装備できない。
+%%%%
+Your wings, even vestigial as they are, won't fit in that.
+
+あなたはその翼が邪魔でその防具を装備できない。
+%%%%
+You can't wear any headgear with your large horns!
+
+あなたのその巨大な角ではいかなる兜も装備できない！
+%%%%
+You can't wear any headgear with your large antennae!
+
+あなたのその巨大な触角ではいかなる兜も装備できない！
+%%%%
+You can't wear that.
+
+それを装備することはできない。
+%%%%
+You can't wear that with your reptilian head.
+
+あなたの爬虫類のような頭ではそれを装備できない。
+%%%%
+That's too large for you to wield.
+
+それは大きすぎて武器として振るうことができない。
+%%%%
+%s is stuck to your body!
+
+%sはあなたの体から離れない！
+%%%%
+You feel rather light.
+
+あなたは体が軽くなったようだ。
+%%%%
+You feel a build-up of mutagenic energy.
+
+あなたは変異性のエネルギーが強まるのを感じた。
+%%%%
+You feel strangely lacking in power.
+
+あなたは異様に力が不足しているのを感じた。
+%%%%
+You feel powerful.
+
+あなたは強大な力を感じた。
+%%%%
+Mutagenic energies flood into your body!
+
+変異性のエネルギーがあなたに浴びせられた！
+%%%%
+You feel strangely numb.
+
+あなたは奇妙な喪失感を覚えた。
+%%%%
+%s crumbles to dust!
+
+%sは塵となって崩れ去った！
+%%%%
+You really shouldn't be using a holy item like this.
+
+あなたはこのような聖なるアイテムを用いるべきではない。
+%%%%
+You really shouldn't be using an evil item like this.
+
+あなたはこのような邪悪なアイテムを用いるべきではない。
+%%%%
+You really shouldn't be using an unclean item like this.
+
+あなたはこのような不浄なアイテムを用いるべきではない。
+%%%%
+You really shouldn't be using a chaotic item like this.
+
+あなたはこのような混沌なるアイテムを用いるべきではない。
+%%%%
+You really shouldn't be using a hasty item like this.
+
+あなたはこのような素早いアイテムを用いるべきではない。
+%%%%
+%s bursts into flame!
+
+%sは吹きあがる炎に包まれた！
+%%%%
+%s softly glows with a divine radiance!
+
+%sは神聖な光に柔らかく輝いた！
+%%%%
+You see sparks fly.
+
+あなたは火花が飛ぶのを目にした。
+%%%%
+%s begins to drip with poison!
+
+%sは毒を滴らせはじめた！
+%%%%
+%s hums with potential!
+
+%sは秘められた力を発揮した！
+%%%%
+You have a feeling of ineptitude.
+
+あなたは愚かな行為をしたような気がした。
+%%%%
+Pain shudders through your %s!
+
+苦痛があなたの%sを通じ、身震いをした！
+%%%%
+A searing pain shoots up your %s!
+
+焼けつく痛みがあなたの%sを駆け上った！
+%%%%
+%s is briefly surrounded by a scintillating aura of random colours.
+
+%sはしばらくの間様々な色がきらめくオーラに包まれた。
+%%%%
+%s is briefly surrounded by shifting shadows.
+
+%sはしばらくの間ちらつく影に覆われた。
+%%%%
+You feel magic leave you.
+
+あなたは魔力が失われたような気がした。
+%%%%
+Space warps around you for a moment!
+
+一瞬あなたの周りの空間が歪んだ！
+%%%%
+%s begins to ooze corrosive slime!
+
+%sは腐食性の粘液を滴らせはじめた！
+%%%%
+%s stops flaming.
+
+%sは燃えるのをやめた。
+%%%%
+%s stops glowing.
+
+%sは輝きが消えた。
+%%%%
+%s stops crackling.
+
+%sは爆ぜるのをやめた。
+%%%%
+%s stops dripping with poison.
+
+%sは毒を滲ませるのをやめた。
+%%%%
+%s goes still.
+
+%sは静まった。
+%%%%
+You feel the dreadful sensation subside.
+
+あなたの恐ろしい感覚はおさまったようだ。
+%%%%
+You feel magic returning to you.
+
+あなたは魔力が戻ってきたような気がした。
+%%%%
+%s stops oozing corrosive slime.
+
+%sは腐食性の粘液を滲ませるのをやめた。
+%%%%
+You feel your power drawn to a protective spirit.
+
+あなたの魔力が守護霊に吸われたような気がした。
+%%%%
+Now linked to your health, your magic stops regenerating.
+
+体力と結びついたため、あなたの魔力は再生しなくなった。
+%%%%
+You feel the presence of a powerless spirit.
+
+あなたは無力な精霊の存在を感じた。
+%%%%
+You feel spirits watching over you.
+
+守護霊があなたを見守っているような気がした。
+%%%%
+A voice whispers, "%s"
+
+『%s』という囁き声が聞こえた。
+%%%%
+You feel resistant to fire.
+
+あなたは火への耐性を得たようだ。
+%%%%
+You feel resistant to cold.
+
+あなたは冷気への耐性を得たようだ。
+%%%%
+You feel resistant to poison.
+
+あなたは毒への耐性を得たようだ。
+%%%%
+You feel perceptive.
+
+あなたの視覚は鋭敏になったようだ。
+%%%%
+You become transparent for a moment.
+
+あなたは一瞬透明になった。
+%%%%
+You feel rather ponderous.
+
+あなたは鈍重になったようだ。
+%%%%
+You feel stealthy.
+
+あなたは動きが静かになったようだ。
+%%%%
+You feel resistant to extremes of temperature.
+
+あなたは極端な温度への耐性を帯びた。
+%%%%
+You feel more protected from negative energy.
+
+あなたは負のエネルギーへの耐性が強まった気がした。
+%%%%
+You feel that your aim is more steady.
+
+あなたは狙いがより確かになった気がした。
+%%%%
+It gets dark.
+
+あたりが暗くなった。
+%%%%
+You feel less resistant to fire.
+
+あなたの火への耐性が薄れたようだ。
+%%%%
+You feel less resistant to cold.
+
+あなたの冷気への耐性が薄れたようだ。
+%%%%
+You no longer feel resistant to poison.
+
+あなたの毒への耐性が薄れたようだ。
+%%%%
+You feel less perceptive.
+
+あなたは霊視能力を失った。
+%%%%
+That put a bit of spring back into your step.
+
+あなたの足取りが軽やかになった。
+%%%%
+You feel less protected.
+
+あなたの護りは薄くなったようだ。
+%%%%
+You feel less stealthy.
+
+あなたの隠密性は低下したようだ。
+%%%%
+You feel hot and cold all over.
+
+あなたの極端な温度への耐性が薄れたようだ。
+%%%%
+You feel less protected from negative energy.
+
+あなたの負のエネルギーへの耐性が薄れたようだ。
+%%%%
+You feel strangely alone.
+
+あなたは奇妙な孤独感を覚えた。
+%%%%
+Your magic begins regenerating once more.
+
+あなたの魔力は再び回復するようになった。
+%%%%
+Your aim is not that steady anymore.
+
+あなたの狙いは先程より不確かになったようだ。
+%%%%
+seems less interested in you.
+
+はあなたへの興味が薄れたようだ。
+%%%%
+You feel less pious.
+
+あなたは信心深くなくなった気がする。
+%%%%
+You feel a surge of self-confidence.
+
+あなたは自尊心が高まった気がした。
+%%%%
+You feel a strange surge of divine interest.
+
+あなたは神の歓心が奇妙に高まるのを感じた。
+%%%%
+You feel a surge of divine interest.
+
+あなたは神の歓心の高まりを感じた。
+%%%%
+absorbs the residual spatial distortion as you unwield your weapon.
+
+はあなたが武器を手放した際に起こった空間歪曲を吸い取った。
+%%%%
+Space warps around you!
+
+あなたの周囲の空間が歪んだ！
+%%%%
+[regen slot]amulet
+
+護符
+%%%%
+You can't wield any weapon.
+
+あなたは武器を装備することができない。
+%%%%
+You can't hold anything in your paws.
+
+あなたの前足では何も持つことができない。
+%%%%
+You can't haunt something so large.
+
+あなたはそんなに大きなものに憑依することはできない。
+%%%%
+You can't wear armour!
+
+あなたは鎧を着ることができない！
+%%%%
+You don't have a head.
+
+あなたには頭がない。
+%%%%
+That is much too large for your head.
+
+それはあなたの頭には大きすぎる。
+%%%%
+You don't have hands.
+
+あなたには手がない。
+%%%%
+Those are too big for your %s.
+
+それはあなたの%sには大きすぎる。
+%%%%
+Those are too small for your %s.
+
+それはあなたの%sには小さすぎる。
+%%%%
+Those can't fit on your %s.
+
+それはあなたの%sに合わない。
+%%%%
+Those can't fit over your huge %s.
+
+それはあなたの巨大な%sの上からはめられない。
+%%%%
+Your demonic touch would destroy those.
+
+あなたの悪魔の手はそれを破壊してしまうだろう。
+%%%%
+You don't have any feet!
+
+あなたには足がない！
+%%%%
+You can't wear boots.
+
+あなたはブーツを履くことができない。
+%%%%
+Your hooves can't fit into boots.
+
+あなたの蹄はブーツに収まらない。
+%%%%
+Your talons can't fit into boots.
+
+あなたの鉤爪はブーツに収まらない。
+%%%%
+You have no feet!
+
+あなたには足がない！
+%%%%
+You can't fit into that!
+
+あなたはそれに体を収めることができない！
+%%%%
+You don't have any shoulders.
+
+あなたには肩がない。
+%%%%
+You can't wear that with your sharp stinger!
+
+あなたの鋭い毒針があってはそれを着られない！
+%%%%
+You can't wear any rings.
+
+あなたは指輪を着けることができない。
+%%%%
+You can't wear amulets.
+
+あなたは護符を着けることができない。
+%%%%
+You lack an exoframe to install that in.
+
+あなたにはそれを取り付ける外骨格がない。
+%%%%
+That isn't an equippable item.
+
+それは装備できるアイテムではない。
+%%%%
+You can't equip that in your current form.
+
+今の姿ではそれを装備することができない。
+%%%%
+That is too large for you to equip!
+
+それはあなたが装備するには大きすぎる！
+%%%%
+That is too small for you to equip!
+
+それはあなたが装備するには小さすぎる！
+%%%%
+This helmet is too small for your head.
+
+この兜はあなたの頭には小さすぎる。
+%%%%
+This helmet is too large for your head.
+
+この兜はあなたの頭には大きすぎる。
+%%%%
+Your can't wear that!
+
+あなたはそれを装備することができない！
+%%%%
+You can't fit that over your horns.
+
+あなたの角が邪魔でそれをかぶることができない。
+%%%%
+You can't fit that over your antennae.
+
+あなたの触角が邪魔でそれをかぶることができない。
+%%%%
+You can't fit that over your beak.
+
+あなたのくちばしが邪魔でそれをかぶることができない。
+%%%%
+Your %s melds into your body.
+
+あなたの%sは体に溶け込んだ。
+%%%%
+Your %s unmelds from your body.
+
+あなたの%sが体から分離した。
+%%%%
+You feel a malign power afflict you.
+
+あなたは悪意ある力に蝕まれるのを感じた。
+%%%%
+You feel ready to rampage towards enemies.
+
+あなたは敵に向かって突進する準備が整った気がした。
+%%%%
+You no longer feel able to rampage towards enemies.
+
+あなたはもう敵に向かって突進できない気がした。
+%%%%
+You really shouldn't be using a wizardly item like this.
+
+あなたはこのような魔術師じみたアイテムを用いるべきではない。
+%%%%
+%s is covered in frost.
+
+%sは霜に覆われた。
+%%%%
+%s glows with a cold blue light!
+
+%sは冷たい青い光で輝いた！
+%%%%
+%s sits dull and lifeless in your grasp.
+
+%sはあなたの手の中で鈍く、生気を失ったままだ。
+%%%%
+%s glows horrifically with a foul blackness!
+
+%sはおぞましい漆黒の光を放った！
+%%%%
+You feel a sense of dread.
+
+あなたは恐怖を感じた。
+%%%%
+Trog suppresses %s necromantic effect.
+
+トログは%s死霊術の効果を抑え込んだ。
+%%%%
+Your %s briefly pass through it before you manage to get a firm grip on it.
+
+あなたの%sは一瞬それをすり抜けたが、なんとかしっかりと握りしめた。
+%%%%
+You feel a force failing to suppress your magic.
+
+あなたは何かの力が魔力を抑え込もうとして失敗したのを感じた。
+%%%%
+You feel a bond with %s.
+
+あなたは%sとの絆を感じた。
+%%%%
+%s quivers in your %s.
+
+%sはあなたの%sの中で震えた。
+%%%%
+Your weapon gleams with eagerness.
+
+あなたの武器は意欲に満ちて輝いた。
+%%%%
+%s feels dull in your %s.
+
+%sはあなたの%sの中で鈍く感じられた。
+%%%%
+Vines begin sprouting from %s.
+
+%sから蔓が伸び始めた。
+%%%%
+%s gleams with a vicious edge.
+
+%sは凶悪な刃の輝きを放った。
+%%%%
+%s radiates an overwhelming force.
+
+%sは圧倒的な力を放った。
+%%%%
+You feel a baleful cunning.
+
+あなたは邪悪な狡猾さを感じた。
+%%%%
+%s stops quivering.
+
+%sは震えるのをやめた。
+%%%%
+You feel very meek.
+
+あなたはとても弱気になった。
+%%%%
+The vines retreat back into %s.
+
+蔓は%sの中へと引っ込んだ。
+%%%%
+%s goes dull.
+
+%sは鈍くなった。
+%%%%
+%s stops radiating force.
+
+%sは力を放つのをやめた。
+%%%%
+You feel guileless.
+
+あなたは狡猾さを失った。
+%%%%
+You feel strong-willed.
+
+あなたは意志が強くなったように感じた。
+%%%%
+You are surrounded by a repulsion field.
+
+あなたは斥力場に包まれた。
+%%%%
+You feel magic pooling in your %s.
+
+あなたは%sに魔力が溜まるのを感じた。
+%%%%
+Your %s feel oddly empty.
+
+あなたの%sは奇妙な空虚さを感じた。
+%%%%
+That put a bit of spring back into your slither.
+
+あなたの這う動きが軽やかになった。
+%%%%
+You feel less strong-willed.
+
+あなたの意志は弱くなったようだ。
+%%%%
+The haze of the repulsion field disappears.
+
+斥力場のもやが消えた。
+%%%%
+The dungeon's light returns to normal.
+
+ダンジョンの明るさが元に戻った。
+%%%%
+You feel magic leave your %s.
+
+あなたは%sから魔力が去っていくのを感じた。
+%%%%
+The %s feels cold and inert.
+
+%sは冷たく、何の反応もない。
+%%%%
+The %s throbs as it attunes itself to your uninjured body.
+
+%sはあなたの無傷の体に同調し、脈打った。
+%%%%
+The %s throbs as it attunes itself to your body.
+
+%sはあなたの体に同調し、脈打った。
+%%%%
+The %s cannot attune itself to your injured body.
+
+%sは傷ついたあなたの体に同調できないようだ。
+%%%%
+The %s cannot attune itself to your exhausted body.
+
+%sは消耗したあなたの体に同調できないようだ。
+%%%%
+You feel a shielding aura gather around you.
+
+あなたは身を守るオーラが周囲に集まるのを感じた。
+%%%%
+You repel a surge of foreign magic.
+
+あなたは流れ込む異質な魔力をはねのけた。
+%%%%
+You already have all the faith you need.
+
+あなたは既に必要な信仰心をすべて持っている。
+%%%%
+You feel no more acrobatic than usual.
+
+あなたはいつも以上に身軽になったとは感じなかった。
+%%%%
+You feel ready to tumble and roll out of harm's way.
+
+あなたは転がって危険を避ける準備が整った気がした。
+%%%%
+You feel a wild power.
+
+あなたは野性の力を感じた。
+%%%%
+You feel a deeper understanding of alchemy.
+
+あなたは錬金術への理解が深まったのを感じた。
+%%%%
+You feel as though your troubles will go away faster.
+
+あなたは厄介事がより早く消え去るような気がした。
+%%%%
+absorbs the residual spatial distortion as you rebrand your weapon.
+
+はあなたが武器の属性を付け替えた際に起こった空間の歪みを吸収した。
+%%%%
+Space warps into you!
+
+空間があなたの中へと歪み込んだ！
+%%%%
+[regen slot]boots
+
+ブーツ
+%%%%
+[regen slot]gloves
+
+手袋
+%%%%
+[regen slot]helmet
+
+兜
+%%%%
+[regen slot]cloak
+
+クローク
+%%%%
+[regen slot]armour
+
+鎧
+%%%%
+[regen slot]barding
+
+馬甲
+%%%%
+[regen slot]offhand
+
+盾
+%%%%
+[regen slot]ring
+
+指輪
+%%%%
+[regen slot]weapon
+
+武器
+%%%%
+[regen slot]gizmo
+
+ガジェット
+%%%%

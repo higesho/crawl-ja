@@ -5,6 +5,7 @@
 
 #include "AppHdr.h"
 
+#include "database.h"
 #include "potion.h"
 
 #include <cstdio>
@@ -104,7 +105,7 @@ public:
         if (you.duration[DUR_DEATHS_DOOR])
         {
             if (reason)
-                *reason = "You cannot heal while in death's door.";
+                *reason = jtrans("You cannot heal while in death's door.");
             return false;
         }
         if (!you.can_potion_heal(true) || temp && you.hp == you.hp_max)
@@ -114,7 +115,7 @@ public:
                 return true;
 
             if (reason)
-                *reason = "You have no ailments to cure.";
+                *reason = jtrans("You have no ailments to cure.");
             return false;
         }
         return true;
@@ -134,7 +135,7 @@ public:
         }
 
         if (ddoor)
-            mpr("You feel queasy.");
+            mpr(jtrans("You feel queasy."));
         else if (you.can_potion_heal()
                  || !is_potion
                  || you.duration[DUR_POISONING]
@@ -145,7 +146,7 @@ public:
             canned_msg(MSG_GAIN_HEALTH);
         }
         else
-            mpr("That felt strangely inert.");
+            mpr(jtrans("That felt strangely inert."));
         // need to redraw from yellow to green even if no hp was gained
         if (you.duration[DUR_POISONING])
             you.redraw_hit_points = true;
@@ -175,16 +176,16 @@ public:
             if (reason)
             {
                 if (!temp || !you.can_potion_heal(false))
-                    *reason = "You cannot be healed by potions.";
+                    *reason = jtrans("You cannot be healed by potions.");
                 else
-                    *reason = "You cannot currently be healed by potions.";
+                    *reason = jtrans("You cannot currently be healed by potions.");
             }
             return false;
         }
         if (temp && you.duration[DUR_DEATHS_DOOR])
         {
             if (reason)
-                *reason = "You cannot heal while in death's door.";
+                *reason = jtrans("You cannot heal while in death's door.");
             return false;
         }
         if (temp && you.hp == you.hp_max)
@@ -194,7 +195,7 @@ public:
                 return true;
 
             if (reason)
-                *reason = "Your health is already full.";
+                *reason = jtrans("Your health is already full.");
             return false;
         }
         return true;
@@ -204,12 +205,12 @@ public:
     {
         if (you.duration[DUR_DEATHS_DOOR])
         {
-            mpr("You feel queasy.");
+            mpr(jtrans("You feel queasy."));
             return false;
         }
         if (!you.can_potion_heal() && is_potion)
         {
-            mpr("That seemed strangely inert.");
+            mpr(jtrans("That seemed strangely inert."));
             return false;
         }
 
@@ -220,7 +221,7 @@ public:
         inc_hp(amount);
         if (is_potion)
             print_potion_heal_message();
-        mpr("You feel much better.");
+        mpr(jtrans("You feel much better."));
         return true;
     }
 };
@@ -241,13 +242,13 @@ public:
         if (you.stasis())
         {
             if (reason)
-                *reason = "Your stasis prevents you from being hasted.";
+                *reason = jtrans("Your stasis prevents you from being hasted.");
             return false;
         }
         else if (have_passive(passive_t::no_haste))
         {
             if (reason)
-                *reason = "You are protected from being hasted by Cheibriados.";
+                *reason = jtrans("You are protected from being hasted by Cheibriados.");
             return false;
         }
         return true;
@@ -284,8 +285,9 @@ public:
     {
         const bool were_mighty = you.duration[DUR_MIGHT] > 0;
 
-        mprf(MSGCH_DURATION, "You feel %s all of a sudden.",
-             were_mighty ? "mightier" : "very mighty");
+        mprf(MSGCH_DURATION, "%s",
+             jtransc(were_mighty ? "You feel mightier all of a sudden."
+                                 : "You feel very mighty all of a sudden."));
         const int dur = _scale_pot_duration(35 + random2(pow), is_potion);
         you.increase_duration(DUR_MIGHT, dur);
         return true;
@@ -310,13 +312,13 @@ public:
             // technically can work under Trog, but it does nothing; so give
             // an informative message instead.
             if (reason)
-                *reason = "Trog doesn't allow you to cast spells!";
+                *reason = jtrans("Trog doesn't allow you to cast spells!");
             return false;
         }
         if (temp && you.unrand_equipped(UNRAND_FOLLY))
         {
             if (reason)
-                *reason = "Your robe already provides the effects of brilliance.";
+                *reason = jtrans("Your robe already provides the effects of brilliance.");
             return false;
         }
         return true;
@@ -326,8 +328,9 @@ public:
     {
         const bool were_brilliant = you.duration[DUR_BRILLIANCE] > 0;
 
-        mprf(MSGCH_DURATION, "You feel %sclever all of a sudden.",
-             were_brilliant ? "more " : "");
+        mprf(MSGCH_DURATION, "%s",
+             jtransc(were_brilliant ? "You feel more clever all of a sudden."
+                                    : "You feel clever all of a sudden."));
         const int dur = _scale_pot_duration(35 + random2(pow), is_potion);
         you.increase_duration(DUR_BRILLIANCE, dur);
         return true;
@@ -353,8 +356,9 @@ public:
     {
         const bool was_attractive = you.duration[DUR_ATTRACTIVE] > 0;
 
-        mprf(MSGCH_DURATION, "You feel %sattractive to monsters.",
-             was_attractive ? "more " : "");
+        mprf(MSGCH_DURATION, "%s",
+             jtransc(was_attractive ? "You feel more attractive to monsters."
+                                    : "You feel attractive to monsters."));
 
         const int dur = _scale_pot_duration((20 + random2(pow)/2), is_potion);
         you.increase_duration(DUR_ATTRACTIVE, dur);
@@ -404,7 +408,7 @@ public:
         if (temp && !player_is_cancellable())
         {
             if (reason)
-                *reason = "There is nothing to cancel.";
+                *reason = jtrans("There is nothing to cancel.");
             return false;
         }
 
@@ -414,12 +418,12 @@ public:
     bool effect(bool=true, int=40, bool=true) const override
     {
         debuff_player(true);
-        mpr("You feel magically purged.");
+        mpr(jtrans("You feel magically purged."));
         if (you.magic_contamination > 0)
         {
             contaminate_player(-1 * random_range(250, 1000));
             if (you.magic_contamination > 0)
-                mpr("You feel slightly less contaminated with magical energies.");
+                mpr(jtrans("You feel slightly less contaminated with magical energies."));
         }
         return true;
     }
@@ -442,15 +446,15 @@ public:
         if (confuse_player(ambrosia_turns, false, true))
         {
             print_potion_heal_message();
-            mprf("You feel%s invigorated.",
-                 you.duration[DUR_AMBROSIA] ? " more" : "");
+            mpr(jtrans(you.duration[DUR_AMBROSIA] ? "You feel more invigorated."
+                                                  : "You feel invigorated."));
             you.increase_duration(DUR_AMBROSIA, ambrosia_turns);
             return true;
         }
 
         // should be unreachable: nothing blocks intentional confusion. (If
         // this ever changes, consider adding a `can_quaff`)
-        mpr("You feel briefly invigorated.");
+        mpr(jtrans("You feel briefly invigorated."));
         return false;
     }
 };
@@ -470,32 +474,37 @@ public:
     {
         if (you.backlit())
         {
-            vector<const char *> afflictions;
+            // 日本語では the/your の区別は不要なので省く
+            vector<string> afflictions;
             if (you.haloed() && !you.umbraed())
-                afflictions.push_back("halo");
+                afflictions.push_back(tagged_jtrans("[glow]", "halo"));
             if (player_harmful_contamination())
-                afflictions.push_back("magical contamination");
+                afflictions.push_back(tagged_jtrans("[glow]", "magical contamination"));
             if (you.duration[DUR_CORONA])
-                afflictions.push_back("corona");
+                afflictions.push_back(tagged_jtrans("[glow]", "corona"));
             if (you.duration[DUR_STICKY_FLAME])
-                afflictions.push_back("liquid flames");
+                afflictions.push_back(tagged_jtrans("[glow]", "liquid flames"));
             if (you.duration[DUR_QUAD_DAMAGE])
-                afflictions.push_back("!!!QUAD DAMAGE!!!");
+                afflictions.push_back(tagged_jtrans("[glow]", "!!!QUAD DAMAGE!!!"));
             if (you.form == transformation::flux)
-                afflictions.push_back("form");
+                afflictions.push_back(tagged_jtrans("[glow]", "form"));
+            const string glow = to_separated_fn(afflictions.begin(),
+                                                afflictions.end(),
+                                                [] (const string &a)
+                                                { return a; });
             mprf(MSGCH_DURATION,
-                 "You become %stransparent, but the glow from %s "
-                 "%s prevents you from becoming completely invisible.",
-                 you.duration[DUR_INVIS] ? "more " : "",
-                 you.haloed() && you.halo_radius() == -1 ? "the" : "your",
-                 comma_separated_line(afflictions.begin(),
-                                      afflictions.end()).c_str());
+                 you.duration[DUR_INVIS]
+                 ? jtransc("You become more transparent, but the glow from %s "
+                           "prevents you from becoming completely invisible.")
+                 : jtransc("You become transparent, but the glow from %s "
+                           "prevents you from becoming completely invisible."),
+                 glow.c_str());
         }
         else
         {
-            mprf(MSGCH_DURATION, !you.duration[DUR_INVIS]
+            mprf(MSGCH_DURATION, "%s", jtransc(!you.duration[DUR_INVIS]
                  ? "You fade into invisibility!"
-                 : "You fade further into invisibility.");
+                 : "You fade further into invisibility."));
         }
 
         const int dur = _scale_pot_duration(15 + random2(pow), is_potion);
@@ -514,7 +523,8 @@ public:
             return false;
         }
         if (!can_quaff(&reason, true)
-             && !yesno((reason + " Use anyway?").c_str(), false, 'n'))
+             && !yesno(make_stringf(jtransc("%s Use anyway?"),
+                                    reason.c_str()).c_str(), false, 'n'))
         {
             canned_msg(MSG_OK);
             return false;
@@ -550,7 +560,7 @@ public:
     {
         if (player_under_penance(GOD_HEPLIAKLQANA))
         {
-            simple_god_message(" appreciates the memories.", false,
+            simple_god_message(jtransc(" appreciates the memories."), false,
                                GOD_HEPLIAKLQANA);
             reduce_xp_penance(GOD_HEPLIAKLQANA,
                               750 * you.experience_level * pow / 40);
@@ -560,13 +570,13 @@ public:
         if (you.experience_level < you.get_max_xl())
         {
             const int levels = min(you.get_max_xl(), pow / 40);
-            mpr("You feel more experienced!");
+            mpr(jtrans("You feel more experienced!"));
             // Defer calling level_change() until later in drink() to prevent
             // SIGHUP abuse.
             adjust_level(levels, true);
         }
         else
-            mpr("A flood of memories washes over you.");
+            mpr(jtrans("A flood of memories washes over you."));
 
         // these are included in default force_more_message
         const int exp = 7500 * you.experience_level * pow / 40;
@@ -602,7 +612,7 @@ public:
         if (you.has_mutation(MUT_HP_CASTING) || temp && !you.max_magic_points)
         {
             if (reason)
-                *reason = "You have no magic to restore.";
+                *reason = jtrans("You have no magic to restore.");
             return false;
         }
         else if (temp && you.magic_points == you.max_magic_points)
@@ -612,7 +622,7 @@ public:
                 return true;
 
             if (reason)
-                *reason = "Your magic is already full.";
+                *reason = jtrans("Your magic is already full.");
             return false;
         }
         return true;
@@ -624,18 +634,18 @@ public:
                                : POT_MAGIC_MP;
         inc_mp(amount);
         if (you.has_mutation(MUT_HP_CASTING))
-            mpr("Magic washes over you without effect.");
+            mpr(jtrans("Magic washes over you without effect."));
         else
         {
             if (is_potion && you.unrand_equipped(UNRAND_KRYIAS))
             {
-                mprf("%s enhances the restoration.",
+                mprf(jtransc("%s enhances the restoration."),
                      you.body_armour()->name(DESC_THE, false, false, false).c_str());
             }
             else if (is_potion && you.has_mutation(MUT_DOUBLE_POTION_HEAL))
-                mpr("You savour every drop.");
+                mpr(jtrans("You savour every drop."));
 
-            mpr("Magic courses through your body.");
+            mpr(jtrans("Magic courses through your body."));
         }
         return true;
     }
@@ -661,7 +671,7 @@ public:
     {
         if (you.is_lifeless_undead())
         {
-            mpr("You feel slightly irritated.");
+            mpr(jtrans("You feel slightly irritated."));
             return false;
         }
 
@@ -699,8 +709,9 @@ static bool _can_mutate(string *reason, bool temp)
 
     if (reason)
     {
-        *reason = make_stringf("You cannot mutate%s.",
-                               you.can_safely_mutate(false) ? " at present" : "");
+        *reason = jtrans(you.can_safely_mutate(false)
+                         ? "You cannot mutate at present."
+                         : "You cannot mutate.");
     }
     return false;
 }
@@ -718,7 +729,7 @@ public:
 
     bool effect(bool=true, int pow = 40, bool is_potion = true) const override
     {
-        mprf(MSGCH_DURATION, "You feel protected.");
+        mprf(MSGCH_DURATION, jtransc("You feel protected."));
         const int add = _scale_pot_duration(35 + random2(pow), is_potion);;
         you.increase_duration(DUR_RESISTANCE, add);
         return true;
@@ -752,7 +763,7 @@ public:
     {
         if (you.form == transformation::death) // Gozag potion petition
         {
-            mpr("You're too dead to put down roots!");
+            mpr(jtrans("You're too dead to put down roots!"));
             return false;
         }
         const int dur = _scale_pot_duration(15 + random2(30) + random2(15), is_potion);
@@ -770,9 +781,10 @@ public:
             if (cloud_damages_over_time(cloud, false)
                 // Tree form is immune to these two.
                 && cloud != CLOUD_MEPHITIC && cloud != CLOUD_POISON
-                && !yesno(make_stringf("Really become a tree while standing in "
-                                       "a cloud of %s?",
-                                       cloud_type_name(cloud).c_str()).c_str(),
+                && !yesno(make_stringf(jtransc("Really become a tree while standing in "
+                                               "a cloud of %s?"),
+                                       tagged_jtrans("[cloud]",
+                                           cloud_type_name(cloud)).c_str()).c_str(),
                           false, 'n'))
             {
                 canned_msg(MSG_OK);
@@ -786,7 +798,7 @@ public:
             did_god_conduct(DID_CHAOS, 10, was_known);
         }
         else
-            mpr("You feel woody for a moment.");
+            mpr(jtrans("You feel woody for a moment."));
         return true;
     }
 };
@@ -815,9 +827,9 @@ public:
     bool effect(bool = true, int = 40, bool = true) const override
     {
         if (have_passive(passive_t::cleanse_mut_potions))
-            simple_god_message(" cleanses your potion of mutation!");
+            simple_god_message(jtransc(" cleanses your potion of mutation!"));
         else
-            mpr("You feel extremely strange.");
+            mpr(jtrans("You feel extremely strange."));
         bool mutated = false;
         int remove_mutations = random_range(MIN_REMOVED, MAX_REMOVED);
         int add_mutations = random_range(MIN_ADDED, MAX_ADDED);
@@ -847,12 +859,14 @@ public:
         if (was_known && !check_known_quaff())
             return false;
 
-        string msg = "Really drink that potion of mutation";
-        msg += you.rmut_from_item() ? " while resistant to mutation?" : "?";
+        string msg = jtrans(you.rmut_from_item()
+            ? "Really drink that potion of mutation while resistant to mutation?"
+            : "Really drink that potion of mutation?");
         const bool zin_check = you_worship(GOD_ZIN)
                             && !have_passive(passive_t::cleanse_mut_potions);
+        // 日本語では確認の問いを最後に置く
         if (zin_check)
-            msg += " Zin will disapprove.";
+            msg = jtrans("Zin will disapprove.") + msg;
         if (was_known && (zin_check || you.rmut_from_item())
                       && !yesno(msg.c_str(), false, 'n'))
         {
@@ -880,7 +894,7 @@ public:
 
     bool effect(bool=true, int=40, bool is_potion = true) const override
     {
-        mpr("You feel tipsy.");
+        mpr(jtrans("You feel tipsy."));
         const int dur = _scale_pot_duration(random_range(10, 25), is_potion);
         you.increase_duration(DUR_VERTIGO, dur, 50);
         return true;
@@ -963,7 +977,9 @@ static void _handle_potion_fungus(potion_type potion)
                                                            targs.size() * 9 / 10 + 1));
 
 
-    mprf("Your fungus emits %s spores!", _spore_msg.at(potion).c_str());
+    // 胞子の形容詞は [spore] タグ付きで訳す(「治癒の」など)
+    mprf(jtransc("Your fungus emits %s spores!"),
+         tagged_jtrans("[spore]", _spore_msg.at(potion)).c_str());
 
 
     for (int i = 0; i < num_affected; ++i)
@@ -985,7 +1001,7 @@ bool quaff_potion(item_def &potion, bool force)
     if (!was_known)
     {
         identify_item(potion);
-        mprf("It was %s.", article_a(potion.name(DESC_QUALNAME)).c_str());
+        mprf(jtransc("It was %s."), potion.name(DESC_QUALNAME).c_str());
     }
 
     const potion_type ptyp = static_cast<potion_type>(potion.sub_type);
@@ -994,7 +1010,7 @@ bool quaff_potion(item_def &potion, bool force)
         if (you.wearing(OBJ_JEWELLERY, AMU_CHEMISTRY, false, true)
             && you.magic_points < you.max_magic_points)
         {
-            mpr("You extract magical energy from the potion.");
+            mpr(jtrans("You extract magical energy from the potion."));
             inc_mp(random_range(5, 9));
         }
 
@@ -1088,17 +1104,17 @@ void mons_potion_effect(monster& mon, potion_type potion, const actor& source)
             break;
 
         case POT_BRILLIANCE:
-            simple_monster_message(mon, " magic is enhanced!", true);
+            simple_monster_message(mon, jtransc(" magic is enhanced!"), true);
             mon.add_ench(mon_enchant(ENCH_EMPOWERED_SPELLS, &source));
             break;
 
         case POT_HEAL_WOUNDS:
-            simple_monster_message(mon, " is healed!");
+            simple_monster_message(mon, jtransc(" is healed!"));
             mon.heal(random_range(30, 50));
             break;
 
         case POT_CURING:
-            simple_monster_message(mon, " is healed!");
+            simple_monster_message(mon, jtransc(" is healed!"));
             mon.heal(random_range(10, 20));
             mon.del_ench(ENCH_POISON);
             mon.del_ench(ENCH_CONFUSION);
@@ -1106,7 +1122,7 @@ void mons_potion_effect(monster& mon, potion_type potion, const actor& source)
 
         case POT_ENLIGHTENMENT:
         {
-            simple_monster_message(mon, " is enlightened!");
+            simple_monster_message(mon, jtransc(" is enlightened!"));
             const int dur = random_range(300, 450);
             mon.add_ench(mon_enchant(ENCH_FLIGHT, &source, dur));
             mon.add_ench(mon_enchant(ENCH_STRONG_WILLED, &source, dur));

@@ -39,6 +39,7 @@
 #include "item-name.h"
 #include "item-prop.h"
 #include "items.h"
+#include "japanese.h"
 #include "libutil.h"
 #include "mapmark.h"
 #include "message.h"
@@ -967,13 +968,15 @@ static void _mimic_vanish(const coord_def& pos, const string& name)
     if (!you.see_cell(pos))
         return;
 
-    const char* const smoke_str = can_place_smoke ? " in a puff of smoke" : "";
+    // 日本語の台詞 DB に _laughs_ がないので、笑い声は固定の訳にする
+    const string smoke_str = can_place_smoke ? jtrans("in a puff of smoke")
+                                             : "";
 
     const bool can_cackle = !silenced(pos) && !silenced(you.pos());
-    const string cackle = can_cackle ? getSpeakString("_laughs_") + " and " : "";
+    const string cackle = can_cackle ? jtrans("[mimic]cackles and") : "";
 
-    mprf("The %s mimic %svanishes%s!",
-         name.c_str(), cackle.c_str(), smoke_str);
+    mprf(jtransc("The %s mimic %svanishes%s!"),
+         name.c_str(), cackle.c_str(), smoke_str.c_str());
     interrupt_activity(activity_interrupt::mimic);
 }
 
@@ -1017,16 +1020,16 @@ void discover_mimic(const coord_def& pos)
         return;
     }
 
-    const string name = feature_mimic ? "the " + string(feat_type_name(feat))
-                                      : item->name(DESC_THE, false, false,
-                                                             false, true);
-    const bool plural = feature_mimic ? false : item->quantity > 1;
+    const string name = feature_mimic
+                            ? tagged_jtrans("[feature]", feat_type_name(feat))
+                            : item->name(DESC_THE, false, false, false, true);
 
     if (you.see_cell(pos))
-        mprf("%s %s a mimic!", name.c_str(), plural ? "are" : "is");
+        mprf(jtransc("%s is a mimic!"), name.c_str());
 
-    const string shortname = feature_mimic ? feat_type_name(feat)
-                                           : item->name(DESC_BASENAME);
+    const string shortname = feature_mimic
+                                ? tagged_jtrans("[feature]", feat_type_name(feat))
+                                : item->name(DESC_BASENAME);
     if (item)
         destroy_item(item->index(), true);
     else
@@ -3087,6 +3090,37 @@ string mons_type_name(monster_type mc, description_level_type desc)
     return result;
 }
 
+/**
+ * mons_type_name() の表示用(日本語)版。冠詞は付けない。
+ * mons_type_name() は検索キーや Lua などにも使われるので英語のまま。
+ */
+string mons_type_name_j(monster_type mc, description_level_type desc)
+{
+    if (desc == DESC_DBNAME)
+        return mons_type_name(mc, desc);
+
+    switch (mc)
+    {
+    case RANDOM_MONSTER:
+        return jtrans("random monster");
+    case RANDOM_DRACONIAN:
+        return jtrans("random draconian");
+    case RANDOM_BASE_DRACONIAN:
+        return jtrans("random base draconian");
+    case RANDOM_NONBASE_DRACONIAN:
+        return jtrans("random nonbase draconian");
+    case WANDERING_MONSTER:
+        return jtrans("wandering monster");
+    default: ;
+    }
+
+    const monsterentry *me = get_monster_data(mc);
+    if (me == nullptr)
+        return make_stringf("invalid monster_type %d", mc);
+
+    return jtrans(me->name);
+}
+
 static string _get_proper_monster_name(const monster& mon)
 {
     const monsterentry *me = mon.find_monsterentry();
@@ -3469,9 +3503,7 @@ void mons_pacify(monster& mon, mon_attitude_type att, bool no_xp)
 
     if (mon.type == MONS_GERYON)
     {
-        simple_monster_message(mon,
-            make_stringf(" discards %s horn.",
-                         mon.pronoun(PRONOUN_POSSESSIVE).c_str()).c_str());
+        simple_monster_message(mon, jtransc(" discards its horn."));
         monster_drop_things(&mon, false, item_is_horn_of_geryon);
     }
 
@@ -3979,23 +4011,19 @@ monster_type royal_jelly_ejectable_monster()
 static string _replace_god_name(god_type god, bool need_verb = false,
                                 bool capital = false)
 {
+    UNUSED(capital);
     string result;
 
     if (god == GOD_NO_GOD)
-        result = capital ? "You" : "you";
+        result = tagged_jtrans("[speech]", "you");
     else if (god == GOD_NAMELESS)
-        result = capital ? "Your god" : "your god";
+        result = tagged_jtrans("[speech]", "your god");
     else
-    {
-        const string godname = god_name(god, false);
-        result = capital ? uppercase_first(godname) : godname;
-    }
+        result = god_name_j(god, false);
 
+    // 「〜は」
     if (need_verb)
-    {
-        result += ' ';
-        result += conjugate_verb("be", god == GOD_NO_GOD);
-    }
+        result += tagged_jtrans("[speech]", "god is");
 
     return result;
 }
@@ -4006,7 +4034,9 @@ static bool _is_any_god(god_type god)
     return true;
 }
 
-static string _random_class_of_god_name(bool (*class_of_god)(god_type god))
+// ja: true なら表示用の日本語の名前(台詞用)。false なら英語(名前の生成用)。
+static string _random_class_of_god_name(bool (*class_of_god)(god_type god),
+                                       bool ja = false)
 {
     string result;
     god_type some_god;
@@ -4017,7 +4047,8 @@ static string _random_class_of_god_name(bool (*class_of_god)(god_type god))
     }
     while (!class_of_god(some_god));
 
-    const string godname = god_name(some_god, false);
+    const string godname = ja ? god_name_j(some_god, false)
+                              : god_name(some_god, false);
     result = godname;
 
     return result;
@@ -4029,7 +4060,8 @@ static bool _is_any_skill(skill_type skill)
     return true;
 }
 
-static string _random_class_of_skill_name(bool (*class_of_skill)(skill_type skill))
+static string _random_class_of_skill_name(bool (*class_of_skill)(skill_type skill),
+                                          bool ja = false)
 {
     string result;
     skill_type some_skill;
@@ -4040,7 +4072,8 @@ static string _random_class_of_skill_name(bool (*class_of_skill)(skill_type skil
     }
     while (!class_of_skill(some_skill));
 
-    const string skillname = skill_name(some_skill);
+    const string skillname = ja ? skill_name_j(some_skill)
+                                : string(skill_name(some_skill));
     result = skillname;
 
     return result;
@@ -4168,7 +4201,8 @@ string random_body_part_name(bool plural, int part_class)
     }
     while (plural_parts[which_part] != plural);
 
-    return body_parts[which_part];
+    // 表示用(日本語)。手足の名前などはすでに日本語のこともある。
+    return tagged_jtrans("[body part]", body_parts[which_part]);
 }
 
 static string _get_species_insult(const string &species, const string &type)
@@ -4258,27 +4292,41 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
 
     msg = maybe_pick_random_substring(msg);
 
+    // 日本語の台詞(dat/database/ja/)に合わせた置換。
+    // 代名詞は省くか名前に置き換え、大文字化はしない。
+    const string player_genus_en =
+        species::name(you.species, species::SPNAME_GENUS);
+    const string player_genus = tagged_jtrans("[spec name]", player_genus_en);
+
     // FIXME: Handle player_genus in case it was not generalised to foe_genus.
-    msg = replace_all(msg, "@a_player_genus@",
-                article_a(species::name(you.species, species::SPNAME_GENUS)));
-    msg = replace_all(msg, "@player_genus@",
-                species::name(you.species, species::SPNAME_GENUS));
+    msg = replace_all(msg, "@a_player_genus@", player_genus);
+    msg = replace_all(msg, "@player_genus@", player_genus);
     msg = replace_all(msg, "@player_genus_plural@",
-                pluralise(species::name(you.species, species::SPNAME_GENUS)));
+                      make_stringf(jtransc("[speech]%s (plural)"),
+                                   player_genus.c_str()));
 
     string foe_genus;
+    // 種族ごとの悪口(_get_species_insult)の検索キーは英語
+    string foe_genus_en;
 
     if (foe == nullptr)
         ;
     else if (foe->is_player())
     {
-        foe_genus = species::name(you.species, species::SPNAME_GENUS);
+        foe_genus = player_genus;
+        foe_genus_en = player_genus_en;
 
+        // 「@to_foe@に」などの助詞ごと消す
+        for (const char *tag : { "@to_foe@", "@at_foe@" })
+        {
+            for (const char *particle : { "に向かって", "に", "を" })
+                msg = replace_all(msg, string(tag) + particle, "");
+        }
         msg = _replace_speech_tag(msg, " @to_foe@", "");
         msg = _replace_speech_tag(msg, " @at_foe@", "");
 
-        msg = _replace_speech_tag(msg, " @to_foe@", "");
-        msg = _replace_speech_tag(msg, " @at_foe@", "");
+        msg = _replace_speech_tag(msg, "@to_foe@", "");
+        msg = _replace_speech_tag(msg, "@at_foe@", "");
 
         msg = replace_all(msg, "@player_only@", "");
         msg = replace_all(msg, " @foe,@", ",");
@@ -4286,16 +4334,18 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
         msg = replace_all(msg, "@player", "@foe");
         msg = replace_all(msg, "@Player", "@Foe");
 
-        msg = replace_all(msg, "@foe_possessive@", "your");
-        msg = replace_all(msg, "@foe@", "you");
-        msg = replace_all(msg, "@Foe@", "You");
+        const string you_j = tagged_jtrans("[speech]", "you");
+        msg = replace_all(msg, "@foe_possessive@", you_j + "の");
+        msg = replace_all(msg, "@foe@", you_j);
+        msg = replace_all(msg, "@Foe@", you_j);
 
         msg = replace_all(msg, "@foe_name@", you.your_name);
-        msg = replace_all(msg, "@foe_species@", species::name(you.species));
+        msg = replace_all(msg, "@foe_species@", species_name_j(you.species));
         msg = replace_all(msg, "@foe_genus@", foe_genus);
-        msg = replace_all(msg, "@Foe_genus@", uppercase_first(foe_genus));
+        msg = replace_all(msg, "@Foe_genus@", foe_genus);
         msg = replace_all(msg, "@foe_genus_plural@",
-                          pluralise(foe_genus));
+                          make_stringf(jtransc("[speech]%s (plural)"),
+                                       foe_genus.c_str()));
     }
     else
     {
@@ -4306,39 +4356,38 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
             && !crawl_state.game_is_arena())
         {
             foe_name = foe->name(DESC_YOUR);
-            const string::size_type pos = foe_name.find("'");
-            if (pos != string::npos)
-                foe_name = foe_name.substr(0, pos);
         }
         else
             foe_name = foe->name(DESC_THE);
 
-        string prep = "at";
-        if (s_type == S_SILENT || s_type == S_SHOUT || s_type == S_NORMAL_VOLUME)
-            prep = "to";
-        msg = replace_all(msg, "@says@ @to_foe@", "@says@ " + prep + " @foe@");
-
-        msg = _replace_speech_tag(msg, " @to_foe@", " to @foe@");
-        msg = _replace_speech_tag(msg, " @at_foe@", " at @foe@");
+        // 日本語の台詞は「@to_foe@に」のように助詞を含む
+        msg = _replace_speech_tag(msg, " @to_foe@", " @foe@");
+        msg = _replace_speech_tag(msg, " @at_foe@", " @foe@");
+        msg = _replace_speech_tag(msg, "@to_foe@", "@foe@");
+        msg = _replace_speech_tag(msg, "@at_foe@", "@foe@");
 
         msg = replace_all(msg, "@foe,@", "@foe@,");
-        msg = replace_all(msg, "@foe_possessive@", "@foe@'s");
+        msg = replace_all(msg, "@foe_possessive@", "@foe@の");
         msg = replace_all(msg, "@foe@", foe_name);
-        msg = replace_all(msg, "@Foe@", uppercase_first(foe_name));
+        msg = replace_all(msg, "@Foe@", foe_name);
 
         if (m_foe->is_named())
             msg = replace_all(msg, "@foe_name@", foe->name(DESC_PLAIN, true));
 
-        string species = mons_type_name(mons_species(m_foe->type), DESC_PLAIN);
+        string species = mons_type_name_j(mons_species(m_foe->type), DESC_PLAIN);
 
         msg = replace_all(msg, "@foe_species@", species);
 
-        foe_genus = mons_type_name(mons_genus(m_foe->type), DESC_PLAIN);
+        foe_genus_en = mons_type_name(mons_genus(m_foe->type), DESC_PLAIN);
+        foe_genus = mons_type_name_j(mons_genus(m_foe->type), DESC_PLAIN);
 
         msg = replace_all(msg, "@foe_genus@", foe_genus);
-        msg = replace_all(msg, "@Foe_genus@", uppercase_first(foe_genus));
-        msg = replace_all(msg, "@foe_genus_plural@", pluralise(foe_genus));
+        msg = replace_all(msg, "@Foe_genus@", foe_genus);
+        msg = replace_all(msg, "@foe_genus_plural@",
+                          make_stringf(jtransc("[speech]%s (plural)"),
+                                       foe_genus.c_str()));
     }
+    msg = replace_all(msg, "@null@", ""); // erase spacer
 
     description_level_type nocap = DESC_THE, cap = DESC_THE;
 
@@ -4351,36 +4400,19 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
         msg = replace_all(msg, "@the_monster@",   name);
         msg = replace_all(msg, "@The_monster@",   name);
 
-        msg = replace_all(msg, "@the_something_possessive@",
-                          apostrophise(name));
-        msg = replace_all(msg, "@The_something_possessive@",
-                          apostrophise(name));
-        msg = replace_all(msg, "@the_monster_possessive@",
-                          apostrophise(name));
-        msg = replace_all(msg, "@The_monster_possessive@",
-                          apostrophise(name));
+        msg = replace_all(msg, "@the_something_possessive@", name + "の");
+        msg = replace_all(msg, "@The_something_possessive@", name + "の");
+        msg = replace_all(msg, "@the_monster_possessive@", name + "の");
+        msg = replace_all(msg, "@The_monster_possessive@", name + "の");
     }
     else if (mons.attitude == ATT_FRIENDLY
              && !mons_is_unique(mons.type)
              && !crawl_state.game_is_arena()
              && you.can_see(mons))
     {
-        nocap = DESC_PLAIN;
-        cap   = DESC_PLAIN;
-
-        msg = replace_all(msg, "@the_something@", "your @the_something@");
-        msg = replace_all(msg, "@The_something@", "Your @the_something@");
-        msg = replace_all(msg, "@the_monster@",   "your @the_monster@");
-        msg = replace_all(msg, "@The_monster@",   "Your @the_monster@");
-
-        msg = replace_all(msg, "@the_something_possessive@",
-                          "your @the_something_possessive@");
-        msg = replace_all(msg, "@The_something_possessive@",
-                          "Your @the_something_possessive@");
-        msg = replace_all(msg, "@the_monster_possessive@",
-                          "your @the_monster_possessive@");
-        msg = replace_all(msg, "@The_monster_possessive@",
-                          "Your @the_monster_possessive@");
+        // 友好的なモンスターの名前(DESC_THE)には「あなたの」が付く
+        nocap = DESC_THE;
+        cap   = DESC_THE;
     }
 
     // XXX: Shouldn't be able to see 'fake' monsters
@@ -4390,13 +4422,13 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
         if (feat_is_solid(feat) || feat >= NUM_FEATURES)
             msg = replace_all(msg, "@surface@", "buggy surface");
         else if (feat == DNGN_LAVA)
-            msg = replace_all(msg, "@surface@", "lava");
+            msg = replace_all(msg, "@surface@", tagged_jtrans("[surface]", "lava"));
         else if (feat_is_water(feat))
-            msg = replace_all(msg, "@surface@", "water");
+            msg = replace_all(msg, "@surface@", tagged_jtrans("[surface]", "water"));
         else if (feat_is_altar(feat))
-            msg = replace_all(msg, "@surface@", "altar");
+            msg = replace_all(msg, "@surface@", tagged_jtrans("[surface]", "altar"));
         else
-            msg = replace_all(msg, "@surface@", "ground");
+            msg = replace_all(msg, "@surface@", tagged_jtrans("[surface]", "ground"));
 
         msg = replace_all(msg, "@feature@", raw_feature_description(mons.pos()));
     }
@@ -4406,62 +4438,54 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
         msg = replace_all(msg, "@feature@", "buggy unseen feature");
     }
 
-    string something = mons.name(DESC_PLAIN);
+    // 日本語の名前は大文字化しない(toupper にマルチバイト文字を渡さない)
+    const string something = mons.name(DESC_PLAIN);
     msg = replace_all(msg, "@something@",   something);
     msg = replace_all(msg, "@a_something@", mons.name(DESC_A));
     msg = replace_all(msg, "@the_something@", mons.name(nocap));
     msg = replace_all(msg, "@the_something_possessive@",
-                      apostrophise(mons.name(nocap)));
+                      mons.name(nocap) + "の");
 
-    something[0] = toupper_safe(something[0]);
     msg = replace_all(msg, "@Something@",   something);
     msg = replace_all(msg, "@A_something@", mons.name(DESC_A));
     msg = replace_all(msg, "@The_something@", mons.name(cap));
     msg = replace_all(msg, "@The_something_possessive@",
-                      apostrophise(mons.name(cap)));
+                      mons.name(cap) + "の");
 
     // Player name.
     msg = replace_all(msg, "@player_name@", you.your_name);
     msg = replace_all(msg, "@player_name_possessive@",
-                      apostrophise(you.your_name));
+                      you.your_name + "の");
 
-    string plain = mons.name(DESC_PLAIN);
+    const string plain = mons.name(DESC_PLAIN);
     msg = replace_all(msg, "@monster@",     plain);
     msg = replace_all(msg, "@a_monster@",   mons.name(DESC_A));
     msg = replace_all(msg, "@the_monster@", mons.name(nocap));
     msg = replace_all(msg, "@the_monster_possessive@",
-                      apostrophise(mons.name(nocap)));
+                      mons.name(nocap) + "の");
 
-    plain[0] = toupper_safe(plain[0]);
     msg = replace_all(msg, "@Monster@",     plain);
     msg = replace_all(msg, "@A_monster@",   mons.name(DESC_A));
     msg = replace_all(msg, "@The_monster@", mons.name(cap));
     msg = replace_all(msg, "@The_monster_possessive@",
-                      apostrophise(mons.name(cap)));
+                      mons.name(cap) + "の");
 
-    string subj_or_poss;
-
-    subj_or_poss = mons.pronoun(PRONOUN_SUBJECTIVE);
-    msg = replace_all(msg, "@subjective@", subj_or_poss);
-    subj_or_poss[0] = toupper_safe(subj_or_poss[0]);
-    msg = replace_all(msg, "@Subjective@", subj_or_poss);
-
-    subj_or_poss = mons.pronoun(PRONOUN_POSSESSIVE);
-    msg = replace_all(msg, "@possessive@", subj_or_poss);
-    subj_or_poss[0] = toupper_safe(subj_or_poss[0]);
-    msg = replace_all(msg, "@Possessive@", subj_or_poss);
-
+    // 代名詞: 日本語では所有格は省き、主格・目的格は名前で言い換える
+    const string pron_name = mons.name(nocap);
+    msg = replace_all(msg, "@subjective@", pron_name);
+    msg = replace_all(msg, "@Subjective@", pron_name);
+    msg = replace_all(msg, "@possessive@", "");
+    msg = replace_all(msg, "@Possessive@", "");
     msg = replace_all(msg, "@reflexive@",
-                      mons.pronoun(PRONOUN_REFLEXIVE));
-    msg = replace_all(msg, "@objective@",
-                      mons.pronoun(PRONOUN_OBJECTIVE));
+                      tagged_jtrans("[speech]", "reflexive"));
+    msg = replace_all(msg, "@objective@", pron_name);
 
     // Body parts.
     bool   can_plural = false;
     string part_str   = mons.hand_name(false, &can_plural);
 
     msg = replace_all(msg, "@hand@", part_str);
-    msg = replace_all(msg, "@Hand@", uppercase_first(part_str));
+    msg = replace_all(msg, "@Hand@", part_str);
 
     if (!can_plural)
         part_str = "NO PLURAL HANDS";
@@ -4469,13 +4493,13 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
         part_str = mons.hand_name(true);
 
     msg = replace_all(msg, "@hands@", part_str);
-    msg = replace_all(msg, "@Hands@", uppercase_first(part_str));
+    msg = replace_all(msg, "@Hands@", part_str);
 
     can_plural = false;
     part_str   = mons.arm_name(false, &can_plural);
 
     msg = replace_all(msg, "@arm@", part_str);
-    msg = replace_all(msg, "@Arm@", uppercase_first(part_str));
+    msg = replace_all(msg, "@Arm@", part_str);
 
     if (!can_plural)
         part_str = "NO PLURAL ARMS";
@@ -4483,13 +4507,13 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
         part_str = mons.arm_name(true);
 
     msg = replace_all(msg, "@arms@", part_str);
-    msg = replace_all(msg, "@Arms@", uppercase_first(part_str));
+    msg = replace_all(msg, "@Arms@", part_str);
 
     can_plural = false;
     part_str   = mons.foot_name(false, &can_plural);
 
     msg = replace_all(msg, "@foot@", part_str);
-    msg = replace_all(msg, "@Foot@", uppercase_first(part_str));
+    msg = replace_all(msg, "@Foot@", part_str);
 
     if (!can_plural)
         part_str = "NO PLURAL FEET";
@@ -4497,7 +4521,7 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
         part_str = mons.foot_name(true);
 
     msg = replace_all(msg, "@feet@", part_str);
-    msg = replace_all(msg, "@Feet@", uppercase_first(part_str));
+    msg = replace_all(msg, "@Feet@", part_str);
 
     if (foe != nullptr)
     {
@@ -4533,26 +4557,27 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
     }
     else if (mons.god == GOD_NAMELESS)
     {
-        msg = replace_all(msg, "@a_God@", "a god");
-        msg = replace_all(msg, "@A_God@", "A god");
-        const string possessive = mons.pronoun(PRONOUN_POSSESSIVE) + " god";
+        const string a_god = tagged_jtrans("[speech]", "a god");
+        msg = replace_all(msg, "@a_God@", a_god);
+        msg = replace_all(msg, "@A_God@", a_god);
+        const string possessive = tagged_jtrans("[speech]", "its god");
         msg = replace_all(msg, "@possessive_God@", possessive);
-        msg = replace_all(msg, "@Possessive_God@", uppercase_first(possessive));
+        msg = replace_all(msg, "@Possessive_God@", possessive);
 
-        msg = replace_all(msg, "@my_God@", "my God");
-        msg = replace_all(msg, "@My_God@", "My God");
+        const string my_god = tagged_jtrans("[speech]", "my God");
+        msg = replace_all(msg, "@my_God@", my_god);
+        msg = replace_all(msg, "@My_God@", my_god);
     }
     else
     {
-        const string godname = god_name(mons.god);
-        const string godcap = uppercase_first(godname);
+        const string godname = god_name_j(mons.god);
         msg = replace_all(msg, "@a_God@", godname);
-        msg = replace_all(msg, "@A_God@", godcap);
+        msg = replace_all(msg, "@A_God@", godname);
         msg = replace_all(msg, "@possessive_God@", godname);
-        msg = replace_all(msg, "@Possessive_God@", godcap);
+        msg = replace_all(msg, "@Possessive_God@", godname);
 
         msg = replace_all(msg, "@my_God@", godname);
-        msg = replace_all(msg, "@My_God@", godcap);
+        msg = replace_all(msg, "@My_God@", godname);
     }
 
     // For randomly generated names.
@@ -4561,23 +4586,23 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
     if (msg.find("@random_god") != string::npos)
     {
         msg = replace_all(msg, "@random_god@",
-                          _random_class_of_god_name(_is_any_god));
+                          _random_class_of_god_name(_is_any_god, true));
         msg = replace_all(msg, "@random_god_chaotic@",
-                          _random_class_of_god_name(is_chaotic_god));
+                          _random_class_of_god_name(is_chaotic_god, true));
         msg = replace_all(msg, "@random_god_evil@",
-                          _random_class_of_god_name(is_evil_god));
+                          _random_class_of_god_name(is_evil_god, true));
         msg = replace_all(msg, "@random_god_good@",
-                          _random_class_of_god_name(is_good_god));
+                          _random_class_of_god_name(is_good_god, true));
     }
 
     if (msg.find("@random_skill") != string::npos)
     {
         msg = replace_all(msg, "@random_skill@",
-                          _random_class_of_skill_name(_is_any_skill));
+                          _random_class_of_skill_name(_is_any_skill, true));
         msg = replace_all(msg, "@random_skill_magic@",
-                          _random_class_of_skill_name(is_magic_skill));
+                          _random_class_of_skill_name(is_magic_skill, true));
         msg = replace_all(msg, "@random_skill_mundane@",
-                          _random_class_of_skill_name(is_mundane_skill));
+                          _random_class_of_skill_name(is_mundane_skill, true));
     }
 
     if (msg.find("@random_body_part") != string::npos)
@@ -4600,11 +4625,11 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
     if (msg.find("@species_insult_") != string::npos)
     {
         msg = replace_all(msg, "@species_insult_adj1@",
-                               _get_species_insult(foe_genus, "adj1"));
+                               _get_species_insult(foe_genus_en, "adj1"));
         msg = replace_all(msg, "@species_insult_adj2@",
-                               _get_species_insult(foe_genus, "adj2"));
+                               _get_species_insult(foe_genus_en, "adj2"));
         msg = replace_all(msg, "@species_insult_noun@",
-                               _get_species_insult(foe_genus, "noun"));
+                               _get_species_insult(foe_genus_en, "noun"));
     }
 
     static const char * sound_list[] =
@@ -4651,7 +4676,11 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
         msg = replace_all(msg, "@says@", "buggily says");
     }
     else
-        msg = replace_all(msg, "@says@", sound_list[s_type]);
+    {
+        // 「〜と言った」の「言った」
+        msg = replace_all(msg, "@says@",
+                          tagged_jtrans("[says]", sound_list[s_type]));
+    }
 
     msg = maybe_capitalise_substring(msg);
 
@@ -5383,10 +5412,11 @@ void print_wounds(const monster& mons)
         return;
 
     mon_dam_level_type dam_level = mons_get_damage_level(mons);
-    string desc = get_damage_level_string(mons.holiness(), dam_level);
+    const string desc = make_stringf(jtransc(" is %s."),
+        tagged_jtrans("[wounds]",
+                      get_damage_level_string(mons.holiness(),
+                                              dam_level)).c_str());
 
-    desc.insert(0, " is ");
-    desc += ".";
     simple_monster_message(mons, desc.c_str(), false, MSGCH_MONSTER_DAMAGE,
                            dam_level);
 }
@@ -5575,7 +5605,7 @@ void throw_monster_bits(const monster& mon)
 
         int damage = 1 + random2(mon.get_hit_dice());
 
-        mprf("%s is hit by a flying piece of %s!",
+        mprf(jtransc("%s is hit by a flying piece of %s!"),
                 target->name(DESC_THE, false).c_str(),
                 mon.name(DESC_THE, false).c_str());
 
@@ -5645,10 +5675,9 @@ void set_ancestor_spells(monster &ancestor, bool notify)
         if (find(old_spells.begin(), old_spells.end(), spellslot.spell)
             == old_spells.end())
         {
-            mprf("%s regains %s memory of %s.",
+            mprf(jtransc("%s regains its memory of %s."),
                  ancestor.name(DESC_YOUR, true).c_str(),
-                 ancestor.pronoun(PRONOUN_POSSESSIVE, true).c_str(),
-                 spell_title(spellslot.spell));
+                 spell_title_jc(spellslot.spell));
         }
     }
 }
@@ -5748,7 +5777,7 @@ bool shoot_through_actor(const actor* agent, const actor* target, bool announce)
             // TODO: this message does not work very well for all sorts of attacks
             // should this be a god message?
             if (announce && you.can_see(*target))
-                mprf("%s avoids your attack.", target->name(DESC_THE).c_str());
+                mprf(jtransc("%s avoids your attack."), target->name(DESC_THE).c_str());
             return true;
         }
 
@@ -5762,7 +5791,7 @@ bool shoot_through_actor(const actor* agent, const actor* target, bool announce)
         if (agent->is_player() && testbits(mon->flags, MF_DEMONIC_GUARDIAN))
         {
             if (announce && you.can_see(*mon))
-                mpr("Your demonic guardian avoids your attack.");
+                mpr(jtrans("Your demonic guardian avoids your attack."));
             return true;
         }
 
@@ -5814,7 +5843,7 @@ bool could_harm(const actor* agent, const actor* target, bool announce_important
     {
         if (announce_important)
         {
-            string msg = make_stringf("The Sanctuary denies your attempt to harm %s.",
+            string msg = make_stringf(jtransc("The Sanctuary denies your attempt to harm %s."),
                                         target->name(DESC_THE).c_str());
             god_speaks(GOD_ZIN, msg.c_str());
         }
@@ -5826,7 +5855,7 @@ bool could_harm(const actor* agent, const actor* target, bool announce_important
     {
         if (announce_important && you.see_cell(target->pos()))
         {
-            string msg = make_stringf("The Sanctuary protects %s from harm.",
+            string msg = make_stringf(jtransc("The Sanctuary protects %s from harm."),
                                         target->name(DESC_THE).c_str());
             god_speaks(GOD_ZIN, msg.c_str());
         }
@@ -5839,7 +5868,7 @@ bool could_harm(const actor* agent, const actor* target, bool announce_important
         && target->wont_attack())
     {
         if (announce_mundane && you.can_see(*target))
-            simple_god_message(" protects your slime from harm.", false, GOD_JIYVA);
+            simple_god_message(jtransc(" protects your slime from harm."), false, GOD_JIYVA);
         return false;
     }
 

@@ -1,0 +1,13 @@
+%%%%
+protects you from your miscast necromantic spell!
+
+はあなたを死霊術の失敗効果から守った！
+%%%%
+[corrode]wild magic
+
+暴走する魔力
+%%%%
+You are magically locked in place.
+
+あなたは魔法の力でその場に固定された。
+%%%%

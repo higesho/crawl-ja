@@ -1,0 +1,332 @@
+# data-gods.txt: 神の名前(タグなし)
+# 出典: religion.cc の god_name() と dat/database/godname.txt の "<神> lastname"(0.34)。
+# ゾムの長い名前は godname.txt の候補をすべて入れた。
+# ジーヴァは god_name_jiyva() が "Jiyva " + ランダム名(you.jiyva_second_name)を返すので、
+# 長い名前は "%s the Shapeless"(%s にジーヴァ+ランダム名)を使う想定。
+# "random" "nameless" "Buggy" は内部用なので入れていない。
+
+%%%%
+No God
+
+無信仰
+%%%%
+Zin
+
+ジン
+%%%%
+the Shining One
+
+輝けるもの
+%%%%
+Kikubaaqudgha
+
+キクバークッグァ
+%%%%
+Yredelemnul
+
+イレデレンヌル
+%%%%
+Vehumet
+
+ヴェフメット
+%%%%
+Okawaru
+
+オカワル
+%%%%
+Makhleb
+
+マクレブ
+%%%%
+Sif Muna
+
+シフ・ムーナ
+%%%%
+Trog
+
+トログ
+%%%%
+Nemelex Xobeh
+
+ネメレクス・ソベー
+%%%%
+Elyvilon
+
+エリヴィロン
+%%%%
+Lugonu
+
+ルゴヌ
+%%%%
+Beogh
+
+ベオ
+%%%%
+Fedhas
+
+フェダス
+%%%%
+Cheibriados
+
+ケイブリアドス
+%%%%
+Xom
+
+ゾム
+%%%%
+Ashenzari
+
+アシェンザリ
+%%%%
+Dithmenos
+
+ディスメノス
+%%%%
+Gozag
+
+ゴザーグ
+%%%%
+Qazlal
+
+クァズラル
+%%%%
+Ru
+
+ルー
+%%%%
+Pakellas
+
+パケラス
+%%%%
+Uskayaw
+
+ウスカヤー
+%%%%
+Hepliaklqana
+
+ヘプリアクルカナ
+%%%%
+Wu Jian
+
+ウー・ジアン
+%%%%
+Ignis
+
+イグニス
+%%%%
+an unknown god
+
+未知の神
+%%%%
+Jiyva
+
+ジーヴァ
+%%%%
+Zin the Law-Giver
+
+法の制定者『ジン』
+%%%%
+Yredelemnul the Fallen
+
+堕ちたる『イレデレンヌル』
+%%%%
+Warmaster Okawaru
+
+戦上手の『オカワル』
+%%%%
+Makhleb the Destroyer
+
+破壊者『マクレブ』
+%%%%
+Sif Muna the Loreminder
+
+知識の守護者『シフ・ムーナ』
+%%%%
+Trog the Wrathful
+
+激怒せる『トログ』
+%%%%
+Elyvilon the Healer
+
+癒し手『エリヴィロン』
+%%%%
+Lugonu the Unformed
+
+無形の『ルゴヌ』
+%%%%
+Beogh the Shepherd
+
+牧者『ベオ』
+%%%%
+Fedhas Madash
+
+『フェダス・マダシュ』
+%%%%
+Cheibriados the Contemplative
+
+瞑想者『ケイブリアドス』
+%%%%
+Ashenzari the Shackled
+
+束縛されしもの『アシェンザリ』
+%%%%
+Dithmenos the Shrouded
+
+覆い隠されし『ディスメノス』
+%%%%
+Nemelex Xobeh the Trickster
+
+トリックスター『ネメレクス・ソベー』
+%%%%
+Gozag Ym Sagoz the Greedy
+
+強欲なる『ゴザーグ・イム・サゴーズ』
+%%%%
+Qazlal Stormbringer
+
+嵐を呼ぶ者『クァズラル』
+%%%%
+Ru the Awakened
+
+覚者『ルー』
+%%%%
+Pakellas the Inventive
+
+発明家『パケラス』
+%%%%
+Uskayaw the Reveller
+
+酔客『ウスカヤー』
+%%%%
+Hepliaklqana the Forgotten
+
+忘れられし『ヘプリアクルカナ』
+%%%%
+Ignis, the Dying Flame
+
+消えゆく炎『イグニス』
+%%%%
+the Wu Jian Council
+
+『ウー・ジアン評議会』
+%%%%
+Xom of Chaos
+
+混沌の『ゾム』
+%%%%
+Xom the Chaotic
+
+混沌たる『ゾム』
+%%%%
+Xom the Random
+
+無秩序の『ゾム』
+%%%%
+Xom the Random Number God
+
+乱数の神『ゾム』
+%%%%
+Xom the Elder Chaos God
+
+太古の混沌神『ゾム』
+%%%%
+Xom the Tricky
+
+トリックの『ゾム』
+%%%%
+Xom the Less-Predictable
+
+予測不能の『ゾム』
+%%%%
+Xom the Unpredictable
+
+予測不可能の『ゾム』
+%%%%
+Xom of Many Doors
+
+数多の扉の『ゾム』
+%%%%
+Xom the Capricious
+
+気紛れの『ゾム』
+%%%%
+Xom of Bloodstained Whimsey
+
+血塗られし奇想の『ゾム』
+%%%%
+Xom of Enforced Whimsey
+
+奇想の執行者『ゾム』
+%%%%
+Xom of Bone-Dry Humour
+
+残忍なる機知の『ゾム』
+%%%%
+Xom of Malevolent Giggling
+
+邪悪なる戯れの『ゾム』
+%%%%
+Xom of Malicious Giggling
+
+悪意ある冗談の『ゾム』
+%%%%
+Xom of Gnomic Intent
+
+戯れの『ゾム』
+%%%%
+Xom of Ineffable Intent
+
+恐るべき『ゾム』
+%%%%
+Xom of Fickle Intent
+
+移り気の『ゾム』
+%%%%
+Xom of Swiftly Tilting Intent
+
+前言撤回の『ゾム』
+%%%%
+Xom of Unknown Intent
+
+知られざる意図の『ゾム』
+%%%%
+Xom the Fickle
+
+移り気の『ゾム』
+%%%%
+Xom of Unknown Intention
+
+知られざる意図の『ゾム』
+%%%%
+The Xom-Meister
+
+『ゾム・マイスター』
+%%%%
+The Xom-Meister, Xom-a-lom-a-ding-dong
+
+『ゾム・マイスター ゾム-ア-ロム-ア-ディン-ドン』
+%%%%
+The Xom-Meister, Xom-o-Rama
+
+『ゾム・マイスター ゾム-オ-ラマ』
+%%%%
+The Xom-Meister, Xom-Xom-bo-Bom, Banana-Fana-fo-Fom
+
+『ゾム・マイスター ゾム-ゾム-ボ-ボン バナナ-ファナ-フォ-フォム』
+%%%%
+Xom the Begetter of Turbulence
+
+争乱をもたらすもの『ゾム』
+%%%%
+Xom the Begetter of Discontinuities
+
+無秩序をもたらすもの『ゾム』
+%%%%
+Jiyva the Shapeless
+
+形なき『ジーヴァ』
+%%%%
+%s the Shapeless
+
+形なき『%s』
+%%%%

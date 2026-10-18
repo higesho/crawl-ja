@@ -94,24 +94,23 @@ string unpacifiable_reason(const monster_info& mi)
     if (mi.intel() <= I_BRAINLESS // no self-awareness
         || mons_is_tentacle_or_tentacle_segment(mi.type)) // body part
     {
-        return "You cannot pacify mindless monsters!";
+        return jtrans("You cannot pacify mindless monsters!");
     }
 
     const mon_holy_type holiness = mi.holi;
 
     if (holiness & MH_NONLIVING)
-        return "You cannot pacify nonliving monsters!";
+        return jtrans("You cannot pacify nonliving monsters!");
 
     if (mons_class_is_stationary(mi.type)) // not able to leave the level
-        return "You cannot pacify immobile monsters!";
+        return jtrans("You cannot pacify immobile monsters!");
 
     if (mi.is(MB_SLEEPING) || mi.is(MB_DORMANT)) // unaware of what's happening
     {
-        return make_stringf("You cannot pacify this monster while %s %s %s!",
-                            mi.pronoun(PRONOUN_SUBJECTIVE),
-                            conjugate_verb("are",
-                                           mi.pronoun_plurality()).c_str(),
-                            mi.is(MB_SLEEPING) ? "asleep" : "dormant");
+        if (mi.is(MB_SLEEPING))
+            return jtrans("You cannot pacify this monster while it is asleep!");
+        else
+            return jtrans("You cannot pacify this monster while it is dormant!");
     }
 
     // pacifiable, maybe!
@@ -204,7 +203,7 @@ static spret _try_to_pacify(monster &mon, int healed, int pow,
     if (_pacification_sides(mon.type, pow) < mon_hp)
     {
         // monster avg hp too high to ever be pacified with your invo skill.
-        mprf("%s would be completely unfazed by your meagre offer of peace.",
+        mprf(jtransc("%s would be completely unfazed by your meagre offer of peace."),
              mon.name(DESC_THE).c_str());
         return spret::abort;
     }
@@ -215,7 +214,7 @@ static spret _try_to_pacify(monster &mon, int healed, int pow,
     if (pacified_roll * 23 / 20 < mon_hp)
     {
         // not even close.
-        mprf("The light of Elyvilon fails to reach %s.",
+        mprf(jtransc("The light of Elyvilon fails to reach %s."),
              mon.name(DESC_THE).c_str());
         return spret::success;
     }
@@ -223,7 +222,7 @@ static spret _try_to_pacify(monster &mon, int healed, int pow,
     if (pacified_roll < mon_hp)
     {
         // closer! ...but not quite.
-        mprf("The light of Elyvilon almost touches upon %s.",
+        mprf(jtransc("The light of Elyvilon almost touches upon %s."),
              mon.name(DESC_THE).c_str());
         return spret::success;
     }
@@ -249,7 +248,7 @@ static spret _try_to_pacify(monster &mon, int healed, int pow,
         }
     }
     else
-        simple_monster_message(mon, " turns neutral.");
+        simple_monster_message(mon, jtransc(" turns neutral."));
 
     record_monster_defeat(&mon, KILL_PACIFIED);
     mons_pacify(mon, ATT_NEUTRAL);
@@ -271,10 +270,10 @@ bool heal_monster(monster& patient, int amount)
     if (!patient.heal(amount))
         return false;
 
-    mprf("You heal %s.", patient.name(DESC_THE).c_str());
+    mprf(jtransc("You heal %s."), patient.name(DESC_THE).c_str());
 
     if (patient.hit_points == patient.max_hit_points)
-        simple_monster_message(patient, " is completely healed.");
+        simple_monster_message(patient, jtransc(" is completely healed."));
     else
         print_wounds(patient);
 
@@ -316,18 +315,18 @@ static vector<string> _desc_pacify_chance(const monster_info& mi, const int pow)
     vector<string> descs;
 
     if (mi.intel() <= I_BRAINLESS)
-        descs.push_back("mindless");
+        descs.push_back(jtrans("mindless"));
     else if (!unpacifiable_reason(mi).empty()
              || _pacification_sides(mi.type, pow)
                 <= _pacification_hp(mi.type) + 1)
-        descs.push_back("uninterested");
+        descs.push_back(jtrans("uninterested"));
     else
     {
         const int success = _pacify_chance(mi, pow, 100);
         if (success == 0)
-            descs.push_back(make_stringf("chance to pacify: <<1%%"));
+            descs.push_back(make_stringf(jtransc("chance to pacify: <<1%%")));
         else
-            descs.push_back(make_stringf("chance to pacify: %d%%", success));
+            descs.push_back(make_stringf(jtransc("chance to pacify: %d%%"), success));
     }
     return descs;
 }
@@ -346,7 +345,8 @@ spret cast_healing(int pow, bool fail)
     args.mode = TARG_INJURED_FRIEND;
     args.needs_path = false;
     args.self = confirm_prompt_type::cancel;
-    args.target_prefix = "Heal";
+    const string heal_prefix = jtrans("Heal");
+    args.target_prefix = heal_prefix.c_str();
     args.get_desc_func = bind(_desc_pacify_chance, placeholders::_1, pow);
     direction(spd, args);
 
@@ -446,14 +446,14 @@ string describe_player_cancellation(bool debuffs_only)
 
     // Try to clarify it doesn't remove all contam?
     if (!debuffs_only && you.magic_contamination > 0)
-        effects.push_back("as magically contaminated");
+        effects.push_back(tagged_jtrans("[cancellation]", "as magically contaminated"));
 
     vector<duration_type> buffs = _dispellable_player_buffs();
     for (auto duration : buffs)
     {
         if (duration == DUR_TRANSFORMATION)
         {
-            effects.push_back("transformed");
+            effects.push_back(tagged_jtrans("[cancellation]", "transformed"));
             continue;
         }
 
@@ -461,7 +461,7 @@ string describe_player_cancellation(bool debuffs_only)
         if (fill_status_info(duration, inf) && !inf.short_text.empty())
         {
             strip_suffix(inf.short_text, " (expiring)");
-            effects.push_back(inf.short_text);
+            effects.push_back(jtrans(inf.short_text));
         }
     }
 
@@ -481,15 +481,16 @@ string describe_player_cancellation(bool debuffs_only)
         if (status != STATUS_AIRBORNE)
         {
             strip_suffix(inf.short_text, " (expiring)");
-            effects.push_back(inf.short_text);
+            effects.push_back(jtrans(inf.short_text));
             continue;
         }
         if (you.attribute[ATTR_PERM_FLIGHT] || you.racial_permanent_flight())
             continue;
-        effects.push_back("flying");
+        effects.push_back(tagged_jtrans("[cancellation]", "flying"));
     }
 
-    return comma_separated_line(begin(effects), end(effects), " or ");
+    return comma_separated_line(begin(effects), end(effects),
+                                "や", "、");
 }
 
 /**
@@ -507,7 +508,7 @@ void debuff_player(bool ignore_resistance)
 
     if (!buffs.empty() & !ignore_resistance && you.has_mutation(MUT_INVIOLATE_MAGIC))
     {
-        mpr("Your magical effects refuse to unravel!");
+        mpr(jtrans("Your magical effects refuse to unravel!"));
         return;
     }
 
@@ -517,13 +518,13 @@ void debuff_player(bool ignore_resistance)
         if (duration == DUR_TELEPORT)
         {
             len = 0;
-            mprf(MSGCH_DURATION, "You feel strangely stable.");
+            mprf(MSGCH_DURATION, jtransc("You feel strangely stable."));
             you.props.erase(TELEPORTITIS_SOURCE);
         }
         else if (duration == DUR_PETRIFYING)
         {
             len = 0;
-            mprf(MSGCH_DURATION, "You feel limber!");
+            mprf(MSGCH_DURATION, jtransc("You feel limber!"));
             you.redraw_evasion = true;
         }
         else if (duration == DUR_FLAYED)
@@ -533,13 +534,13 @@ void debuff_player(bool ignore_resistance)
         }
         else if (duration == DUR_STICKY_FLAME)
         {
-            mprf(MSGCH_DURATION, "You are no longer on fire.");
+            mprf(MSGCH_DURATION, jtransc("You are no longer on fire."));
             end_sticky_flame_player();
         }
         else if (duration == DUR_FORTRESS_BLAST_TIMER)
         {
             len = 0;
-            mprf(MSGCH_DURATION, "Your fortress blast dissipates harmlessly.");
+            mprf(MSGCH_DURATION, jtransc("Your fortress blast dissipates harmlessly."));
         }
         else if (len > 1)
         {
@@ -549,7 +550,7 @@ void debuff_player(bool ignore_resistance)
     }
 
     if (need_msg)
-        mprf(MSGCH_WARN, "Your magical effects are unravelling.");
+        mprf(MSGCH_WARN, jtransc("Your magical effects are unravelling."));
 }
 
 /**
@@ -618,7 +619,7 @@ void debuff_monster(monster &mon)
     // effect = true does for PETRIFYING is cause it to turn into
     // ENCH_PETRIFIED. So... let's not do that. (Hacky, sorry!)
 
-    simple_monster_message(mon, " magical effects unravel!", true);
+    simple_monster_message(mon, jtransc(" magical effects unravel!"), true);
 }
 
 // pow -1 for passive
@@ -811,12 +812,12 @@ spret cast_tomb(int pow, actor* victim, int source, bool fail)
             if (none_vis)
             {
                 fail_check();
-                mprf("You briefly glimpse something next to %s.",
+                mprf(jtransc("You briefly glimpse something next to %s."),
                      targname.c_str());
                 return spret::success;
             }
 
-            mprf("You need more space to imprison %s.", targname.c_str());
+            mprf(jtransc("You need more space to imprison %s."), targname.c_str());
             return spret::abort;
         }
     }
@@ -911,11 +912,11 @@ spret cast_tomb(int pow, actor* victim, int source, bool fail)
     {
         if (zin)
         {
-            mprf("Zin imprisons %s with walls of pure silver!",
+            mprf(jtransc("Zin imprisons %s with walls of pure silver!"),
                  targname.c_str());
         }
         else
-            mpr("Walls emerge from the floor!");
+            mpr(jtrans("Walls emerge from the floor!"));
 
         const int tomb_duration = BASELINE_DELAY * pow;
         env.markers.add(new map_tomb_marker(where,
@@ -952,7 +953,7 @@ spret cast_smiting(int pow, monster* mons, bool fail)
 
     if (mons->friendly())
     {
-        mpr("Beogh will not strike down an ally of the cause.");
+        mpr(jtrans("Beogh will not strike down an ally of the cause."));
         return spret::abort;
     }
 
@@ -963,8 +964,8 @@ spret cast_smiting(int pow, monster* mons, bool fail)
     // No direct divine intervention during apostle challenges
     if (mons->has_ench(ENCH_TOUCH_OF_BEOGH))
     {
-        simple_god_message(" booms: This is a trial of mortal prowess."
-                           " Fight with your own strength!");
+        simple_god_message(jtransc(" booms: This is a trial of mortal prowess."
+                           " Fight with your own strength!"));
         return spret::abort;
     }
 
@@ -976,7 +977,7 @@ spret cast_smiting(int pow, monster* mons, bool fail)
     // damage at 0 Invo ranges from 9-12 (avg 10), to 9-72 (avg 40) at 27.
     int damage = 6 + beogh_smiting_dice(pow).roll();
 
-    mprf("You smite %s%s",
+    mprf(jtransc("You smite %s%s"),
          mons->name(DESC_THE).c_str(),
          attack_strength_punctuation(damage).c_str());
 
@@ -1002,7 +1003,7 @@ void holy_word_player(holy_word_source_type source)
     if (!hploss)
         return;
 
-    mpr("You are blasted by holy energy!");
+    mpr(jtrans("You are blasted by holy energy!"));
 
     const char *aux = "holy word";
 
@@ -1049,9 +1050,9 @@ void holy_word_monsters(coord_def where, int pow, holy_word_source_type source,
     if (hploss)
     {
         if (source == HOLY_WORD_ZIN)
-            simple_monster_message(*mons, " is blasted by Zin's holy word!");
+            simple_monster_message(*mons, jtransc(" is blasted by Zin's holy word!"));
         else
-            simple_monster_message(*mons, " convulses!");
+            simple_monster_message(*mons, jtransc(" convulses!"));
     }
     mons->hurt(attacker, hploss, BEAM_MISSILE);
 
@@ -1072,9 +1073,8 @@ void holy_word(int pow, holy_word_source_type source, const coord_def& where,
 {
     if (!silent && attacker)
     {
-        mprf("%s %s a Word of immense power!",
-             attacker->name(DESC_THE).c_str(),
-             attacker->conj_verb("speak").c_str());
+        mprf(jtransc("%s speaks a Word of immense power!"),
+             attacker->name(DESC_THE).c_str());
     }
 
     for (radius_iterator ri(where, LOS_SOLID, true); ri; ++ri)
@@ -1119,25 +1119,25 @@ int torment_player(const actor *attacker, torment_source_type taux)
             if (random2(480) < kiku_piety) // 20.83% to 33.33% chance
             {
                 hploss = 0;
-                simple_god_message(" shields you from torment!");
+                simple_god_message(jtransc(" shields you from torment!"));
             }
             // Always give at least partial protection for invoked torment.
             // 50% to 80% chance for other sources.
             else if (random2(200) < kiku_piety || taux == TORMENT_KIKUBAAQUDGHA)
             {
                 hploss -= (1 + random2(hploss - 1));
-                simple_god_message(" partially shields you from torment!");
+                simple_god_message(jtransc(" partially shields you from torment!"));
             }
         }
     }
 
     if (!hploss)
     {
-        mpr("You feel a surge of unholy energy.");
+        mpr(jtrans("You feel a surge of unholy energy."));
         return 0;
     }
 
-    mpr("Your body is wracked with pain!");
+    mpr(jtrans("Your body is wracked with pain!"));
 
     kill_method_type type = KILLED_BY_BEAM;
     if (crawl_state.is_god_acting())
@@ -1219,9 +1219,9 @@ int torment_actor(actor* victim, actor *attacker, torment_source_type taux)
     if (hploss)
     {
         if (mons->observable())
-            simple_monster_message(*mons, " convulses!");
+            simple_monster_message(*mons, jtransc(" convulses!"));
         else if (you.see_cell(mons->pos()))
-            mpr("Something is bathed in an unholy light!");
+            mpr(jtrans("Something is bathed in an unholy light!"));
 
         // Currently, torment doesn't annoy the monsters it affects
         // because it can't kill them, and because hostile monsters use
@@ -1356,7 +1356,7 @@ void dreamshard_shatter()
             break;
         }
     }
-    mpr("Your necklace shatters, unleashing a wave of protective dreams!");
+    mpr(jtrans("Your necklace shatters, unleashing a wave of protective dreams!"));
     mark_milestone("dreamshard", "was saved by the dreamshard necklace!");
     take_note(NOTE_DREAMSHARD);
 
@@ -1395,7 +1395,11 @@ void dreamshard_shatter()
         big_cloud(CLOUD_FLUFFY, &you, you.pos(), 50, 8 + random2(8));
     }
 
-    mpr_comma_separated_list("You dream of ", dreams);
+    mprf(jtransc("You dream of %s."),
+         to_separated_fn(dreams.begin(), dreams.end(),
+                         [] (const string &d) {
+                             return tagged_jtrans("[dream]", d);
+                         }).c_str());
 
     // when dreams spill out into reality it wakes you up
     // put it here after the dream message so that a sleeping player who
