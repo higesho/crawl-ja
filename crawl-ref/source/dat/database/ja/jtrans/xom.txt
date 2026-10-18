@@ -1,0 +1,806 @@
+%%%%
+Xom makes something happen.
+
+ゾムが何かした。
+%%%%
+is getting BORED.
+
+は飽きてしまった。
+%%%%
+is interested.
+
+は興味を示している。
+%%%%
+is intrigued.
+
+は夢中になっている。
+%%%%
+cast spell '%s'
+
+%sの呪文を唱えた
+%%%%
+"No, never mind."
+
+『いや、気にするな』
+%%%%
+god gift: %s
+
+神の下賜: %s
+%%%%
+snickers.
+
+はくすくす笑った。
+%%%%
+looks rather more confused.
+
+はさらに混乱したようだ。
+%%%%
+confuse monster(s)
+
+モンスターの混乱
+%%%%
+summons friendly %s
+
+友好的な%sを召喚
+%%%%
+Some monsters swap places.
+
+モンスターどうしの位置が入れ替わった。
+%%%%
+swap monsters
+
+モンスターの交換
+%%%%
+snakes to sticks
+
+蛇の棒切れ
+%%%%
+%s reforms as %s.
+
+%sは%sへと変化した。
+%%%%
+# 1 つ目の %s は apostrophise() で「〜の」が付いている
+%s %s dances into the air!
+
+%s%sが空中で踊りだした！
+%%%%
+Your body is suffused with distortional energy.
+
+あなたの体は歪曲のエネルギーに覆われている。
+%%%%
+a fountain starts gushing blood
+
+噴水から血が湧きだした
+%%%%
+some fountains start gushing blood
+
+いくつかの噴水から血が湧きだした
+%%%%
+%d fountains blood
+
+%dつの血の噴水
+%%%%
+A door bursts open
+
+扉が開いた
+%%%%
+Two doors burst open
+
+2つの扉が開いた
+%%%%
+Several doors burst open
+
+いくつかの扉が開いた
+%%%%
+%d doors open
+
+%dつの扉が開いた
+%%%%
+another door slams shut
+
+別の扉がバタンと閉じた
+%%%%
+two other doors slam shut
+
+別の2つの扉がバタンと閉じた
+%%%%
+several other doors slam shut
+
+別のいくつかの扉がバタンと閉じた
+%%%%
+a door slams shut
+
+扉がバタンと閉じた
+%%%%
+two doors slam shut
+
+2つの扉がバタンと閉じた
+%%%%
+several doors slam shut
+
+いくつかの扉がバタンと閉じた
+%%%%
+%d doors close
+
+%dつの扉が閉じた
+%%%%
+destruction
+
+破壊
+%%%%
+fake destruction
+
+偽りの破壊
+%%%%
+is charmed.
+
+は魅了された。
+%%%%
+fog
+
+霧
+%%%%
+silly message
+
+お馬鹿なメッセージ
+%%%%
+Nothing appears to happen... Ominous!
+
+何も起きなかった……不気味だ！
+%%%%
+chaos upgrade
+
+混沌の力の付与
+%%%%
+confusion
+
+混乱
+%%%%
+%s slides away from you!
+
+%sは滑るように動いてあなたから遠ざかった！
+%%%%
+%s slides towards you!
+
+%sは滑るように動いてあなたの近くに寄ってきた！
+%%%%
+repel stairs
+
+逃げる階段
+%%%%
+cloud trail
+
+後を引く煙
+%%%%
+draining
+
+衰弱
+%%%%
+torment (%d/%d hp)
+
+苦痛(%d/%d HP)
+%%%%
+revert banishment
+
+現世への追放
+%%%%
+noise
+
+騒音
+%%%%
+blink monster(s)
+
+モンスターの瞬間移動
+%%%%
+cleaving
+
+薙ぎ払い
+%%%%
+XOM is BORED!
+
+ゾムは退屈している！
+%%%%
+Xom revives you!
+
+ゾムはあなたを蘇らせた！
+%%%%
+stealth player
+
+プレイヤーの隠匿
+%%%%
+%d-stop teleportation journey
+
+%d連続のテレポート
+%%%%
+chaos cloud
+
+混沌の雲
+%%%%
+# ---- ゾムの興味(_xom_message_arrays。_xom_is_stimulated() で訳す) ----
+Xom is interested.
+
+ゾムは興味を示している。
+%%%%
+Xom is mildly amused.
+
+ゾムはいくらか楽しんでいる。
+%%%%
+Xom is amused.
+
+ゾムは楽しんでいる。
+%%%%
+Xom is highly amused!
+
+ゾムはとても楽しんでいる！
+%%%%
+Xom thinks this is hilarious!
+
+ゾムは非常に楽しんでいる！
+%%%%
+Xom roars with laughter!
+
+ゾムは高々と笑い声を上げた！
+%%%%
+Xom is very interested.
+
+ゾムはとても興味を示している。
+%%%%
+Xom is extremely interested.
+
+ゾムは非常に興味を示している。
+%%%%
+Xom is intrigued!
+
+ゾムは夢中になっている！
+%%%%
+Xom is very intrigued!
+
+ゾムはとても夢中になっている！
+%%%%
+Xom is fascinated!
+
+ゾムは大興奮している！
+%%%%
+# xom_is_stimulated() に渡される文(xom.cc と abyss.cc)
+Xom snickers.
+
+ゾムはくすくす笑った。
+%%%%
+Xom snickers loudly.
+
+ゾムは大声でくすくす笑った。
+%%%%
+# ---- ゾムの機嫌("You are now " + describe_xom_favour()) ----
+You are now a very special plaything of Xom.
+
+あなたはゾムにとって格好の慰みものだ。
+%%%%
+You are now a special plaything of Xom.
+
+あなたはゾムの特別な慰みものだ。
+%%%%
+You are now a plaything of Xom.
+
+あなたはゾムの慰みものだ。
+%%%%
+You are now a toy of Xom.
+
+あなたはゾムの玩具だ。
+%%%%
+You are now a favourite toy of Xom.
+
+あなたはゾムのお気に入りの玩具だ。
+%%%%
+You are now a beloved toy of Xom.
+
+あなたはゾムの大切な玩具だ。
+%%%%
+You are now Xom's teddy bear.
+
+あなたはゾムのテディベアだ。
+%%%%
+You are now a very buggy toy of Xom.
+
+あなたはゾムのとてもバグった玩具だ。
+%%%%
+You are now a BORING thing.
+
+あなたはゾムに飽きられてしまった。
+%%%%
+# ---- メッセージ ----
+You detect items, but no nearby creatures.
+
+あなたはアイテムを探知したが、近くにモンスターはいなかった。
+%%%%
+You detect items and creatures!
+
+あなたはアイテムとモンスターを探知した！
+%%%%
+You detect creatures, but no further items.
+
+あなたはモンスターを探知したが、それ以上のアイテムは見つからなかった。
+%%%%
+# 1 つ目の %s は apostrophise() で「〜の」が付いている
+%s %s erupts in a glittering mayhem of colour.
+
+%s%sはめまぐるしく色が変わる輝きを放った。
+%%%%
+Not even Xom can make wizards leave Sprint. Aborting Xom's Bazaar banishment.
+
+ゾムでさえウィザードをスプリントから出すことはできない。ゾムのバザーへの追放を中止した。
+%%%%
+%d web bursts into flame!
+
+%d個の蜘蛛の巣が燃え上がった！
+%%%%
+%d webs burst into flame!
+
+%d個の蜘蛛の巣が燃え上がった！
+%%%%
+Demonic plants sprout up around you!
+
+あなたの周りに悪魔の植物が生えてきた！
+%%%%
+Toadstools sprout up around you!
+
+あなたの周りに毒キノコが生えてきた！
+%%%%
+is shoved forward by the hand of Xom!
+
+はゾムの手で前に押し出された！
+%%%%
+The dungeon churns and warps with monstrous intensity.
+
+ダンジョンが凄まじい勢いでうねり、歪んだ。
+%%%%
+The dungeon churns and warps violently around you.
+
+あなたの周りでダンジョンが激しくうねり、歪んだ。
+%%%%
+The dungeon churns and shimmers intensely around you.
+
+あなたの周りでダンジョンが激しくうねり、揺らめいた。
+%%%%
+The dungeon shakes... harmlessly?
+
+ダンジョンが揺れた……害はない？
+%%%%
+The dungeon rumbles... harmlessly?
+
+ダンジョンが轟いた……害はない？
+%%%%
+Some rocks are dislodged from the ceiling.
+
+天井からいくつかの岩が落ちてきた。
+%%%%
+some nearby snacks are swapped around
+
+近くの食べ物が入れ替わった
+%%%%
+some trees are warped by chaos
+
+いくつかの木が混沌によって歪められた
+%%%%
+# ench_name は description_for_ench() の訳(「〜している」の形)
+%s suddenly starts %s!
+
+%sは突然%s状態になった！
+%%%%
+%s suddenly looks %s!
+
+%sは突然%s状態になった！
+%%%%
+%s pulls itself out of thin air.
+
+%sが何もないところから這い出してきた。
+%%%%
+# 効果名(「〜している」の形)を「、」で並べたもの
+[xom hyper enchant]%s,
+
+%s状態になり、
+%%%%
+[xom hyper enchant]is healed,
+
+傷が癒え、
+%%%%
+%s suddenly %sand looks braver for a moment!
+
+%sは突然%s一瞬勇ましくなったように見えた！
+%%%%
+Skeletons, inanimate yet cursed, drop down from the ceiling.
+
+動かぬまま呪われた骸骨が、天井から落ちてきた。
+%%%%
+A draining tide of despair and horror washes over you and your surroundings!
+
+絶望と恐怖の奔流があなたと周囲を呑み込み、力を奪った！
+%%%%
+Your stasis prevents you from being hasted, but everything else in sight speeds up!
+
+あなたは停滞のため加速しなかったが、視界内の他のすべてが加速した！
+%%%%
+You and everything else in sight speed up!
+
+あなたと視界内の他のすべてが加速した！
+%%%%
+Your stasis prevents you from being slowed, but everything else in sight slows down!
+
+あなたは停滞のため減速しなかったが、視界内の他のすべてが減速した！
+%%%%
+You and everything else in sight slow down!
+
+あなたと視界内の他のすべてが減速した！
+%%%%
+Your stasis prevents you from being paralysed, but everything else in sight stops moving!
+
+あなたは停滞のため麻痺しなかったが、視界内の他のすべてが動きを止めた！
+%%%%
+You and everything else in sight suddenly stop moving!
+
+あなたと視界内の他のすべてが突然動きを止めた！
+%%%%
+You feel mightier and more confused.
+
+あなたはさらに力強くなり、さらに混乱した。
+%%%%
+You feel mightier and confused.
+
+あなたはさらに力強くなり、混乱した。
+%%%%
+You feel very mighty and more confused.
+
+あなたはとても力強くなり、さらに混乱した。
+%%%%
+You feel very mighty and confused.
+
+あなたはとても力強くなり、混乱した。
+%%%%
+purifies the foul vapours!
+
+は汚れた蒸気を浄化した！
+%%%%
+Your doom draws closer.
+
+あなたの破滅が近づいた。
+%%%%
+You feel nearly all of your power leaking away!
+
+あなたは魔力のほとんどが吸い取られていくような気がした！
+%%%%
+# 2 つ目の %s は [xom recall] の訳(「〜ように」など)
+%s is forced to slowly start %s a word of recall!
+
+%sは%s招集の宣言をゆっくりと唱え始めさせられた！
+%%%%
+%s looks sharp (like it always does).
+
+%sは(いつものように)鋭く見えた。
+%%%%
+%s looks sharp.
+
+%sは鋭く見えた。
+%%%%
+You feel more stealthy.
+
+あなたはさらに隠密性が増した。
+%%%%
+# ---- DB の台詞に入れる語 ----
+[xom]your %s
+
+あなたの%s
+%%%%
+[xom]form
+
+体
+%%%%
+[xom repel stairs]escape hatch
+
+脱出用ハッチ
+%%%%
+[xom repel stairs]gate
+
+門
+%%%%
+[xom repel stairs]staircase
+
+階段
+%%%%
+# 招集の宣言を唱えさせるときの口調(speaking_keys の値)
+[xom recall]dramatically intoning
+
+芝居がかった口調で
+%%%%
+[xom recall]shouting
+
+叫ぶように
+%%%%
+[xom recall]barking
+
+吠えるように
+%%%%
+[xom recall]howling
+
+遠吠えのように
+%%%%
+[xom recall]shouting twice-over
+
+二重に叫ぶように
+%%%%
+[xom recall]roaring
+
+咆哮するように
+%%%%
+[xom recall]screaming
+
+金切り声で
+%%%%
+[xom recall]bellowing
+
+怒鳴るように
+%%%%
+[xom recall]bleating
+
+メエメエと
+%%%%
+[xom recall]trumpeting
+
+高らかに鼻を鳴らして
+%%%%
+[xom recall]screeching
+
+甲高い声で
+%%%%
+[xom recall]buzzing
+
+ブンブンと羽音を立てて
+%%%%
+[xom recall]chillingly moaning
+
+ぞっとするようなうめき声で
+%%%%
+[xom recall]gurgling
+
+ゴボゴボと
+%%%%
+[xom recall]croaking
+
+ゲロゲロと
+%%%%
+[xom recall]growling
+
+唸るように
+%%%%
+[xom recall]hissing
+
+シューッと
+%%%%
+[xom recall]weaving
+
+糸を紡ぐように
+%%%%
+[xom recall]faintly weaving
+
+かすかに糸を紡ぐように
+%%%%
+[xom recall]sneering
+
+嘲笑うように
+%%%%
+[xom recall]speaking
+
+語りかけるように
+%%%%
+[xom recall]squealing
+
+キーキーと
+%%%%
+[xom recall]scribing
+
+書き記すように
+%%%%
+[xom recall]squeaking
+
+チューチューと
+%%%%
+# ---- ノート ----
+divination: all
+
+予見術: すべて
+%%%%
+banished to a bazaar
+
+バザーへの追放
+%%%%
+potion effect (%s)
+
+薬の投与(%s)
+%%%%
+summons %d friend(s)
+
+%d体の味方を召喚
+%%%%
+good polymorph %s -> %s
+
+有利な変異: %sから%sに変化
+%%%%
+bad polymorph %s -> %s
+
+不利な変異: %sから%sに変化
+%%%%
+lit up %d webs
+
+%d個の蜘蛛の巣に着火
+%%%%
+made a garden
+
+庭園の造成
+%%%%
+made a ring of doors, pushed %d other(s) out
+
+扉の輪の造成(%d体を外へ押し出し)
+%%%%
+made a ring of doors, pulled %d other(s) in
+
+扉の輪の造成(%d体を内へ引き込み)
+%%%%
+fake shatter
+
+偽りの粉砕
+%%%%
+give mutations
+
+突然変異の付与
+%%%%
+give mutation
+
+突然変異の付与
+%%%%
+divine lightning + %d bolts
+
+神の雷 + %d本の稲妻
+%%%%
+scenery: changed the scenery
+
+地形: 景観の変更
+%%%%
+scenery: summon butterflies
+
+地形: 蝶の召喚
+%%%%
+%d snacks swapped
+
+%d個の食べ物の入れ替え
+%%%%
+%d trees warped
+
+%d本の木の歪曲
+%%%%
+scenery: %s
+
+地形: %s
+%%%%
+summons %d living force lance(s)
+
+%d体の生ける力の槍を召喚
+%%%%
+enchant monster(s) (good, %s)
+
+モンスターへの魔法(有利、%s)
+%%%%
+enchant monster(s) (bad, %s)
+
+モンスターへの魔法(不利、%s)
+%%%%
+buffed friendly %s %d time(s)
+
+友好的な%sを%d回強化
+%%%%
+charmed %d monster(s)
+
+%d体のモンスターを魅了
+%%%%
+spooky wave of despair
+
+不気味な絶望の波
+%%%%
+hasted everything in sight
+
+視界内のすべてを加速
+%%%%
+hasted player and everything else in sight
+
+プレイヤーと視界内のすべてを加速
+%%%%
+slowed everything in sight
+
+視界内のすべてを減速
+%%%%
+slowed player and everything else
+
+プレイヤーと視界内のすべてを減速
+%%%%
+paralysed everything in sight
+
+視界内のすべてを麻痺
+%%%%
+paralysed player and everything else
+
+プレイヤーと視界内のすべてを麻痺
+%%%%
+(+ monsters)
+
+(モンスター含む)
+%%%%
+(+ might)
+
+(剛力付き)
+%%%%
+inflicting Doom
+
+破滅の付与
+%%%%
+torment all (player %d/%d hp)
+
+全体への苦痛(プレイヤー %d/%d HP)
+%%%%
+summons %d hostile shadow creature(s)
+
+%d体の敵対的な影の怪物を召喚
+%%%%
+summons %d hostile chaos creature(s)
+
+%d体の敵対的な混沌の怪物を召喚
+%%%%
+summoned %d hostile illusion(s) + %d friendly illusion(s)
+
+敵対的な幻影%d体と友好的な幻影%d体を召喚
+%%%%
+drained mp, created monsters
+
+MPの吸収とモンスターの生成
+%%%%
+drained mp
+
+MPの吸収
+%%%%
+made %s speak a word of recall
+
+%sに招集の宣言を唱えさせた
+%%%%
+# ---- describe_xom_favour() の文(神の説明画面の歓心で jtrans() する) ----
+a very special plaything of Xom.
+
+あなたはゾムにとって格好の慰みものだ。
+%%%%
+a special plaything of Xom.
+
+あなたはゾムの特別な慰みものだ。
+%%%%
+a plaything of Xom.
+
+あなたはゾムの慰みものだ。
+%%%%
+a toy of Xom.
+
+あなたはゾムの玩具だ。
+%%%%
+a favourite toy of Xom.
+
+あなたはゾムのお気に入りの玩具だ。
+%%%%
+a beloved toy of Xom.
+
+あなたはゾムの大切な玩具だ。
+%%%%
+Xom's teddy bear.
+
+あなたはゾムのテディベアだ。
+%%%%
+a very buggy toy of Xom.
+
+あなたはゾムのとてもバグった玩具だ。
+%%%%
+a BORING thing.
+
+あなたはゾムに飽きられてしまった。
+%%%%

@@ -19,6 +19,7 @@
 #include "chardump.h"
 #include "coord.h"
 #include "coordit.h"
+#include "database.h"
 #include "delay.h"
 #include "english.h"
 #include "env.h"
@@ -29,6 +30,7 @@
 #include "invent.h"
 #include "item-prop.h"
 #include "item-use.h"
+#include "japanese.h"
 #include "losglobal.h"
 #include "melee-attack.h"
 #include "message.h"
@@ -57,6 +59,7 @@
 #include "transform.h"
 #include "traps.h"
 #include "travel.h"
+#include "unicode.h"
 
 /**
  * What are the odds of an HD-checking confusion effect (e.g. Confusing Touch,
@@ -943,7 +946,7 @@ static string _describe_weapons(const item_def *weapon,
         return offhand->name(DESC_YOUR).c_str();
     if (!offhand)
         return weapon->name(DESC_YOUR).c_str();
-    return make_stringf("%s and %s",
+    return make_stringf(jtransc("%s and %s"),
                         weapon->name(DESC_YOUR).c_str(),
                         offhand->name(DESC_YOUR).c_str());
 }
@@ -983,12 +986,26 @@ bool wielded_weapon_check(string attack_verb)
 
     string wpn_desc = _describe_weapons(weapon, offhand);
 
+    // 動詞は連用形(「攻撃し」「突撃し」)。日本語で渡されたらそのまま使う
+    const string verb = attack_verb.empty()
+                        ? tagged_jtrans("[weapon check]", "attack")
+                        : has_wide_char(attack_verb)
+                          ? attack_verb
+                          : tagged_jtrans("[weapon check]", attack_verb);
+
     string prompt;
-    prompt = make_stringf("Really %s while wielding %s?",
-        attack_verb.size() ? attack_verb.c_str() : "attack",
-        wpn_desc.c_str());
+    if (!weapon && !offhand)
+    {
+        prompt = make_stringf(jtransc("Really %s while wielding nothing?"),
+                              verb.c_str());
+    }
+    else
+    {
+        prompt = make_stringf(jtransc("Really %s while wielding %s?"),
+                              wpn_desc.c_str(), verb.c_str());
+    }
     if (penance)
-        prompt += " This could place you under penance!";
+        prompt += jtrans(" This could place you under penance!");
 
     const bool result = yesno(prompt.c_str(), true, 'n');
 
@@ -1344,21 +1361,16 @@ bool bad_attack(const monster *mon, string& adj, string& suffix,
             return false;
         }
 
+        // adj は日本語の連体修飾(名前の前に付ける)。冠詞は付けない
         if (would_cause_penance)
-        {
-            adj = "your ally ";
-
-            monster_info mi(mon, MILEV_NAME);
-            if (!mi.is(MB_NAME_UNQUALIFIED))
-                adj += "the ";
-        }
+            adj = jtrans("your ally ");
         else
         {
-            adj = "your ";
+            adj = jtrans("your ");
 
             monster_info mi(mon, MILEV_NAME);
             if (mi.is(MB_NAME_UNQUALIFIED))
-                adj += "ally ";
+                adj += jtrans("ally ");
         }
 
         return true;
@@ -1369,7 +1381,7 @@ bool bad_attack(const monster *mon, string& adj, string& suffix,
             || you_worship(GOD_BEOGH) && mons_genus(mon->type) == MONS_ORC)
         && !mon->has_ench(ENCH_FRENZIED))
     {
-        adj += "neutral ";
+        adj += adj_j("neutral");
         if (you_worship(GOD_SHINING_ONE) || you_worship(GOD_ELYVILON)
             || you_worship(GOD_BEOGH))
         {
@@ -1378,7 +1390,7 @@ bool bad_attack(const monster *mon, string& adj, string& suffix,
     }
     else if (mon->wont_attack())
     {
-        adj += "non-hostile ";
+        adj += adj_j("non-hostile");
         if (you_worship(GOD_SHINING_ONE) || you_worship(GOD_ELYVILON))
             would_cause_penance = true;
     }
@@ -1413,30 +1425,27 @@ bool stop_attack_prompt(const monster* mon, bool beam_attack,
     if (check_only)
         return true;
 
-    // Listed in the form: "your rat", "Blorkula the orcula".
-    // No "your the Royal Jelly" nor "the the Royal Jelly".
-    string mon_name = remove_prepended_the(mon->name(DESC_PLAIN));
-    if (!starts_with(adj, "your"))
-        adj = "the " + adj;
-    mon_name = adj + mon_name;
+    // 「あなたの従者であるラット」の形(日本語の名前には冠詞が付かない)
+    const string mon_name = adj + mon->name(DESC_PLAIN);
+    // 「〜を攻撃し」の形
     string verb;
     if (beam_attack)
     {
-        verb = "fire ";
         if (beam_target == mon->pos())
-            verb += "at ";
+            verb = make_stringf(jtransc("fire at %s"), mon_name.c_str());
         else
         {
-            verb += "in " + apostrophise(mon_name) + " direction";
-            mon_name = "";
+            verb = make_stringf(jtransc("fire in %s direction"),
+                                mon_name.c_str());
         }
     }
     else
-        verb = "attack ";
+        verb = make_stringf(jtransc("attack %s"), mon_name.c_str());
 
-    const string prompt = make_stringf("Really %s%s%s?%s",
-             verb.c_str(), mon_name.c_str(), suffix.c_str(),
-             penance ? " This attack would place you under penance!" : "");
+    const string prompt = make_stringf(jtransc("Really %s%s?%s"),
+             verb.c_str(), suffix.c_str(),
+             penance ? jtransc(" This attack would place you under penance!")
+                     : "");
 
     if (prompted)
         *prompted = true;
@@ -1508,15 +1517,35 @@ bool stop_attack_prompt(targeter &hitfunc, const char* verb,
     if (hits_player)
     {
         if (mon_name.empty())
-            mon_name = "yourself";
+            mon_name = jtrans("yourself");
         else
-            mon_name = "yourself and " + mon_name;
+            mon_name = make_stringf(jtransc("yourself and %s"),
+                                    mon_name.c_str());
     }
 
-    const string prompt = make_stringf("Really %s%s %s%s?%s",
-             verb, defender_ok ? " near" : "", mon_name.c_str(),
-             victims.suffix(),
-             penance ? " This attack would place you under penance!" : "");
+    const string penance_msg =
+        penance ? jtrans(" This attack would place you under penance!") : "";
+    string prompt;
+    if (has_wide_char(verb))
+    {
+        // 日本語の終止形の動詞句(「震石を放つ」「〜の巻物を読む」)が
+        // 渡されたとき。巻き込む相手を先に示す
+        prompt = make_stringf(jtransc("Affecting %s%s, really %s?%s"),
+                              mon_name.c_str(), victims.suffix(), verb,
+                              penance_msg.c_str());
+    }
+    else
+    {
+        // 英語の動詞は "[stop attack prompt]" 付きで「を〜し」の形に訳す
+        // ("attack" → 「を攻撃し」)。" near" は「の近く」を名前の後ろに足す
+        const string verb_en = verb;
+        const bool near = defender_ok && !ends_with(verb_en, " near");
+        prompt = make_stringf(jtransc("Really %s%s %s%s?%s"),
+                              mon_name.c_str(),
+                              near ? jtransc("[stop attack prompt]near") : "",
+                              tagged_jtransc("[stop attack prompt]", verb_en),
+                              victims.suffix(), penance_msg.c_str());
+    }
 
     if (prompted)
         *prompted = true;
@@ -1535,14 +1564,15 @@ string stop_summoning_reason(resists_t resists, monclass_flags_t flags)
     if (get_resist(resists, MR_RES_POISON) <= 0
         && you.duration[DUR_TOXIC_RADIANCE])
     {
-        return "emitting a toxic aura";
+        return jtrans("emitting a toxic aura");
     }
+    // 日本語の「〜している」の形(「〜状態で」の前に入る)
     if (you.duration[DUR_NOXIOUS_BOG] && !(flags & M_FLIES))
-        return "spewing a noxious bog";
+        return jtrans("spewing a noxious bog");
     if (you.duration[DUR_VORTEX])
-        return "in the middle of a polar vortex";
+        return jtrans("in the middle of a polar vortex");
     if (you.duration[DUR_FUSILLADE])
-        return "raining down reagents";
+        return jtrans("raining down reagents");
     return "";
 }
 
@@ -1550,7 +1580,8 @@ bool warn_about_bad_targets(spell_type spell, vector<coord_def> targets,
                             function<bool(const monster&)> should_ignore,
                             const char* msg)
 {
-    return warn_about_bad_targets(spell_title(spell), targets, should_ignore, msg);
+    return warn_about_bad_targets(spell_title_jc(spell), targets, should_ignore,
+                                  msg);
 }
 
 bool warn_about_bad_targets(const char* source_name, vector<coord_def> targets,
@@ -1586,13 +1617,14 @@ bool warn_about_bad_targets(const char* source_name, vector<coord_def> targets,
     bool penance;
     bad_attack(ex_mon, adj, suffix, penance, you.pos());
     const string and_more = bad_targets.size() > 1 ?
-            make_stringf(" (and %zu other bad targets)",
+            make_stringf(jtransc(" (and %zu other bad targets)"),
                          bad_targets.size() - 1) : "";
-    const string prompt = make_stringf("%s might hit %s%s. %s",
+    // msg は訳済みのことも英語のこともある(訳済みなら jtrans はそのまま返す)
+    const string prompt = make_stringf(jtransc("%s might hit %s%s. %s"),
                                        source_name,
                                        ex_mon->name(DESC_THE).c_str(),
                                        and_more.c_str(),
-                                       msg);
+                                       jtransc(msg));
     if (!yesno(prompt.c_str(), false, 'n'))
     {
         canned_msg(MSG_OK);
@@ -1626,8 +1658,11 @@ bool stop_summoning_prompt(resists_t resists, monclass_flags_t flags,
     if (noun.empty())
         return false;
 
-    string prompt = make_stringf("Really %s while %s?",
-                                 verb.c_str(), noun.c_str());
+    // verb は連用形(「そうし」「〜を魅了し」)。日本語で渡されたらそのまま
+    const string verb_ja = has_wide_char(verb)
+                          ? verb : tagged_jtrans("[stop summoning]", verb);
+    string prompt = make_stringf(jtransc("Really %s while %s?"),
+                                 noun.c_str(), verb_ja.c_str());
 
     if (yesno(prompt.c_str(), false, 'n'))
         return false;

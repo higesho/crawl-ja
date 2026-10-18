@@ -15,6 +15,7 @@
 #include "chardump.h"
 #include "command.h"
 #include "coordit.h"
+#include "database.h"
 #include "describe.h"
 #include "directn.h"
 #include "english.h"
@@ -88,7 +89,7 @@ public:
     string get_error() override
     {
         if (you.confused())
-            return "You are confused and cannot control your aim.";
+            return jtrans("You are confused and cannot control your aim.");
         else
             return targeting_behaviour::get_error();
     }
@@ -158,7 +159,7 @@ void fire_target_behaviour::set_prompt()
 
 
     if (action == quiver::action())
-        internal_prompt = "No action selected";
+        internal_prompt = jtrans("No action selected");
     else
     {
         // TODO: might be nice to use colors here, but there's a wonky interaction
@@ -167,8 +168,8 @@ void fire_target_behaviour::set_prompt()
 
         if (!targeted())
         {
-            internal_prompt = make_stringf("Non-targeted %s",
-                lowercase_first(internal_prompt).c_str());
+            internal_prompt = make_stringf(jtransc("Non-targeted %s"),
+                internal_prompt.c_str());
         }
     }
 
@@ -204,13 +205,13 @@ vector<string> fire_target_behaviour::get_monster_desc(const monster_info& mi)
     descs.emplace_back(result.str());
 
     if (get_ammo_brand(*item) == SPMSL_SILVER && mi.is(MB_CHAOTIC))
-        descs.emplace_back("chaotic");
+        descs.emplace_back(jtrans("chaotic"));
     if (item->is_type(OBJ_MISSILES, MI_THROWING_NET))
     {
         if (mi.net_immune())
-            descs.emplace_back("immune to nets");
+            descs.emplace_back(jtrans("immune to nets"));
         else if (mi.net_escape_capable())
-            descs.emplace_back("can blink free");
+            descs.emplace_back(jtrans("can blink free"));
     }
 
     // Display the chance for a dart of para/confuse/sleep/frenzy
@@ -225,11 +226,12 @@ vector<string> fire_target_behaviour::get_monster_desc(const monster_info& mi)
             if (mi.holi & (MH_UNDEAD | MH_NONLIVING))
                 immune = true;
 
-            string verb = brand == SPMSL_FRENZY ? "frenzy" : "blind";
+            const char* fmt = brand == SPMSL_FRENZY
+                              ? "chance to frenzy on hit: %d%%"
+                              : "chance to blind on hit: %d%%";
 
-            string chance_string = immune ? "immune" :
-                                   make_stringf("chance to %s on hit: %d%%",
-                                                verb.c_str(), chance);
+            string chance_string = immune ? jtrans("immune") :
+                                   make_stringf(jtransc(fmt), chance);
             descs.emplace_back(chance_string);
         }
     }
@@ -287,7 +289,7 @@ static shared_ptr<quiver::action> _fire_prompt_for_item()
         // possibly they should get a similar message? They all do print a
         // more specific message if you try to use them, and some have a
         // prompt or the like (e.g. scroll of fear).
-        mpr("You have nothing you can fire or use right now.");
+        mpr(jtrans("You have nothing you can fire or use right now."));
         return make_shared<quiver::action>(); // hack: prevent "Ok, then."
     }
 
@@ -296,9 +298,9 @@ static shared_ptr<quiver::action> _fire_prompt_for_item()
         && !fire_warn_if_impossible(true, you.weapon()); // forms
 
     int slot = -1;
-    const string title = make_stringf(
-        "<lightgray>Fire%s/use which item?</lightgray>",
-        (can_throw ? "/throw" : ""));
+    const string title = jtrans(can_throw
+        ? "<lightgray>Fire/throw/use which item?</lightgray>"
+        : "<lightgray>Fire/use which item?</lightgray>");
     // TODO: the output api here is awkward
     // TODO: it would be nice if items with disabled actions got grayed out
     slot = prompt_invent_item(
@@ -329,7 +331,7 @@ bool fire_warn_if_impossible(bool silent, item_def *weapon)
         if (!weapon || !is_range_weapon(*weapon))
         {
             if (!silent)
-                mprf("You cannot throw/fire anything while %s.", held_status());
+                mprf(jtransc("You cannot throw/fire anything while %s."), held_status());
             return true;
         }
         else
@@ -339,8 +341,9 @@ bool fire_warn_if_impossible(bool silent, item_def *weapon)
         {
             if (!silent)
             {
-                mprf("You cannot shoot with your %s while %s.",
-                     weapon->name(DESC_BASENAME).c_str(), held_status());
+                // 日本語の語順に合わせて引数を入れ替えている
+                mprf(jtransc("You cannot shoot with your %s while %s."),
+                     held_status(), weapon->name(DESC_BASENAME).c_str());
             }
             return true;
         }
@@ -506,7 +509,7 @@ static void _handle_cannon_fx(actor &act, const item_def &weapon, coord_def targ
 
     // knock back
     if (coinflip())
-        act.stumble_away_from(targ, "Mule's kick");
+        act.stumble_away_from(targ, jtrans("Mule's kick"));
 }
 
 static void _throw_noise(actor* act, const item_def &ammo)
@@ -555,7 +558,7 @@ static void _throw_noise(actor* act, const item_def &ammo)
         msg = nullptr;
 
 
-    noisy(noise, act->pos(), msg, act->mid);
+    noisy(noise, act->pos(), msg ? jtransc(msg) : nullptr, act->mid);
 }
 
 static vector<ranged_attack_beam> _construct_player_ranged_beams(item_def* throwing_weapon = nullptr)
@@ -743,10 +746,10 @@ static void _player_shoot(ranged_attack_beam &pbolt)
     }
 
     // Create message.
-    mprf("You %s %s%s.",
-          is_thrown ? "throw" : "shoot" ,
-          article_a(pbolt.atk.projectile_name()).c_str(),
-          you.current_vision == 0 ? " into the darkness" : "");
+    // 日本語の語順に合わせて引数を入れ替えている(暗闇へ、投射物)
+    mprf(jtransc(is_thrown ? "You throw %s%s." : "You shoot %s%s."),
+          you.current_vision == 0 ? jtransc(" into the darkness") : "",
+          zap_name_jc(pbolt.atk.projectile_name()));
 
     pbolt.beam.set_is_tracer(false);
 
@@ -833,11 +836,10 @@ bool mons_throw(monster* mons, ranged_attack_beam& ratk, bool teleport, bool was
     const bool thrown = is_throwable(mons, weapon);
     if (mons->observable())
     {
-        mpr(make_stringf("%s%s %s %s.",
-                         mons->name(DESC_THE).c_str(),
-                         teleport ? " magically" : "",
-                         thrown ? "throws" : "shoots",
-                         article_a(ratk.atk.projectile_name()).c_str()).c_str());
+        mprf(jtransc(thrown ? "%s%s throws %s." : "%s%s shoots %s."),
+             mons->name(DESC_THE).c_str(),
+             teleport ? jtransc(" magically") : "",
+             zap_name_jc(ratk.atk.projectile_name()));
     }
 
     _throw_noise(mons, weapon);

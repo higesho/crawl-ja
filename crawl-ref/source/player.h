@@ -758,6 +758,10 @@ public:
     string hands_act(const string &plural_verb, const string &object) const;
     string foot_name(bool plural, bool *can_plural = nullptr) const override;
     string arm_name(bool plural, bool *can_plural = nullptr) const override;
+    // 英語の名前(hand_name() などは表示用の日本語を返す)
+    string hand_name_en(bool plural, bool *can_plural = nullptr) const;
+    string foot_name_en(bool plural, bool *can_plural = nullptr) const;
+    string arm_name_en(bool plural, bool *can_plural = nullptr) const;
     int arm_count() const;
     string unarmed_attack_name(string default_name="Nothing wielded") const;
 

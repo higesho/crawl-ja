@@ -30,6 +30,7 @@
 #include "item-prop.h"
 #include "item-status-flag-type.h"
 #include "items.h"
+#include "japanese.h"
 #include "losglobal.h"
 #include "makeitem.h"
 #include "message.h"
@@ -112,6 +113,8 @@ COMPILE_CHECK(ARRAYSZ(_god_wrath_adjectives) == NUM_GODS);
  * @param god   The god in question.
  * @return      A string name for the god's wrath.
  */
+// 死因・召喚者名・モンスター名(mname)に使うので英語のまま返す。
+// 表示する側が jtrans() で引く(訳は jtrans/god-wrath.txt)。
 static string _god_wrath_name(god_type god)
 {
     const bool use_full_name = god == GOD_FEDHAS      // fedhas is very formal.
@@ -219,12 +222,12 @@ static void _tso_summon_warriors()
 
     if (success)
     {
-        simple_god_message(" sends the divine host to punish you for your evil "
-                           "ways!", false, GOD_SHINING_ONE);
+        simple_god_message(jtransc(" sends the divine host to punish you for your evil "
+                           "ways!"), false, GOD_SHINING_ONE);
     }
     else
     {
-        simple_god_message(" divine host fails to appear.",
+        simple_god_message(jtransc(" divine host fails to appear."),
                            true, GOD_SHINING_ONE);
     }
 }
@@ -234,7 +237,7 @@ static void _tso_summon_warriors()
  */
 static void _tso_shouts()
 {
-    simple_god_message(" booms out: Take the path of righteousness! REPENT!",
+    simple_god_message(jtransc(" booms out: Take the path of righteousness! REPENT!"),
                        false, GOD_SHINING_ONE);
     noisy(25, you.pos()); // same as scroll of noise
 }
@@ -245,7 +248,7 @@ static void _tso_shouts()
 static void _tso_squelches()
 {
     god_speaks(GOD_SHINING_ONE,
-               "You feel the Shining One's silent rage upon you!");
+               jtransc("You feel the Shining One's silent rage upon you!"));
     cast_silence(25);
 }
 
@@ -287,7 +290,7 @@ static bool _zin_remove_good_mutations()
     const god_type god = GOD_ZIN;
     bool success = false;
 
-    simple_god_message(" draws some chaos from your body!", false, god);
+    simple_god_message(jtransc(" draws some chaos from your body!"), false, god);
 
     bool failMsg = true;
 
@@ -305,7 +308,7 @@ static bool _zin_remove_good_mutations()
     }
 
     if (success && !you.how_mutated())
-        simple_god_message(" rids your body of chaos!", false, god);
+        simple_god_message(jtransc(" rids your body of chaos!"), false, god);
     return success;
 }
 
@@ -326,7 +329,7 @@ static bool _zin_retribution()
     case 2:
     case 3:
     case 4: // recital
-        simple_god_message(" recites the Axioms of Law to you!", false, god);
+        simple_god_message(jtransc(" recites the Axioms of Law to you!"), false, god);
         switch (random2(4))
         {
         case 0:
@@ -352,7 +355,7 @@ static bool _zin_retribution()
         }
         break;
     case 5: // noisiness
-        simple_god_message(" booms out: Turn to the light! REPENT!", false, god);
+        simple_god_message(jtransc(" booms out: Turn to the light! REPENT!"), false, god);
         noisy(25, you.pos()); // same as scroll of noise
         break;
     }
@@ -380,20 +383,20 @@ static bool _cheibriados_retribution()
     {
         if (you.hp >= (you.hp_max * 3 / 4))
         {
-            mprf(MSGCH_DANGER, "You lose track of time!");
+            mprf(MSGCH_DANGER, jtransc("You lose track of time!"));
             you.put_to_sleep(nullptr, random_range(5, 10) * BASELINE_DELAY);
             dec_penance(god, 1);
         }
         else
         {
-            mprf(MSGCH_DANGER, "The world leaves you behind!");
+            mprf(MSGCH_DANGER, jtransc("The world leaves you behind!"));
             dec_haste_player(10000);
             slow_player(81 + random2(10));
         }
     }
     else
     {
-        simple_god_message(" strikes the hour, and time shudders.", false, god);
+        simple_god_message(jtransc(" strikes the hour, and time shudders."), false, god);
         noisy(40, you.pos());
     }
 
@@ -429,7 +432,7 @@ void lucy_check_meddling()
         {
             if (!banished)
             {
-                simple_god_message(" does not welcome meddling.");
+                simple_god_message(jtransc(" does not welcome meddling."));
                 banished = true;
             }
             mon->banish(&you);
@@ -440,7 +443,8 @@ void lucy_check_meddling()
 static void _spell_retribution(monster* avatar, spell_type spell, god_type god,
                                const char* message = nullptr)
 {
-    simple_god_message(message ? message : " rains destruction down upon you!",
+    simple_god_message(message ? message
+                               : jtransc(" rains destruction down upon you!"),
                        false, god);
     bolt beam;
     beam.source = you.pos();
@@ -542,7 +546,7 @@ static bool _makhleb_call_down_destruction()
 
     if (avatar == nullptr)
     {
-        simple_god_message(" has no time to deal with you just now.", false,
+        simple_god_message(jtransc(" has no time to deal with you just now."), false,
                            god);
         return false; // not a very dazzling divine experience...
     }
@@ -622,12 +626,12 @@ static bool _makhleb_summon_servants()
 
     if (summoned > 0)
     {
-        simple_god_message(summoned > 1 ? " sends minions to punish you." :
-                                          " sends a minion to punish you.",
+        simple_god_message(jtransc(summoned > 1 ? " sends minions to punish you." :
+                                                  " sends a minion to punish you."),
                            false, GOD_MAKHLEB);
     }
     else
-        simple_god_message(" minions fail to arrive.", true, GOD_MAKHLEB);
+        simple_god_message(jtransc(" minions fail to arrive."), true, GOD_MAKHLEB);
 
     return true;
 
@@ -652,8 +656,8 @@ static bool _kikubaaqudgha_retribution()
 {
     // death/necromancy theme
     const god_type god = GOD_KIKUBAAQUDGHA;
-    god_speaks(god, coinflip() ? "You hear Kikubaaqudgha cackling."
-                               : "Kikubaaqudgha's malice focuses upon you.");
+    god_speaks(god, jtransc(coinflip() ? "You hear Kikubaaqudgha cackling."
+                                       : "Kikubaaqudgha's malice focuses upon you."));
 
     if (wrath_tension_check(true))
     {
@@ -673,7 +677,7 @@ static bool _kikubaaqudgha_retribution()
         int doom_pow = random_range(35, 50);
 
         if (!(you.attribute[ATTR_DOOM] + doom_pow >= 100))
-            mprf(MSGCH_DANGER, "Your doom draws closer.");
+            mprf(MSGCH_DANGER, jtransc("Your doom draws closer."));
 
         you.doom(doom_pow);
     }
@@ -695,16 +699,16 @@ static bool _yredelemnul_retribution()
 
     if (count > 0)
     {
-        simple_god_message(count > 1 ? " sends servants to punish you." :
-                                       " sends a servant to punish you.",
+        simple_god_message(jtransc(count > 1 ? " sends servants to punish you." :
+                                               " sends a servant to punish you."),
                            false, god);
     }
     else
-        simple_god_message(" servants fail to arrive.", true, god);
+        simple_god_message(jtransc(" servants fail to arrive."), true, god);
 
     if (coinflip())
     {
-        simple_god_message(" binds you in chains!", false, god);
+        simple_god_message(jtransc(" binds you in chains!"), false, god);
         you.increase_duration(DUR_NO_MOMENTUM, random_range(3, 8));
     }
 
@@ -720,7 +724,7 @@ static bool _trog_retribution()
         // If the player is healthy and in a reasonable tension range,
         // make the player do a cruel mockery of berserk:
         // weakly thrashing in place, regularly hitting walls and floors.
-        simple_god_message(" tears away your strength and self-control!", false, god);
+        simple_god_message(jtransc(" tears away your strength and self-control!"), false, god);
         int vex_max = max(4, you.experience_level / 4);
         you.weaken(nullptr, 25);
         you.vex(nullptr, random_range(3, vex_max), "Trog's wrath");
@@ -757,9 +761,9 @@ static bool _trog_retribution()
             }
         }
 
-        simple_god_message(count > 1 ? " sends monsters to punish you." :
-                           count > 0 ? " sends a monster to punish you."
-                                     : " has no time to punish you... now.",
+        simple_god_message(jtransc(count > 1 ? " sends monsters to punish you." :
+                                   count > 0 ? " sends a monster to punish you."
+                                             : " has no time to punish you... now."),
                            false, god);
     }
     return true;
@@ -820,11 +824,10 @@ static bool _beogh_retribution()
 
         if (num_created > 0)
         {
-            ostringstream msg;
-            msg << " throws "
-                << (num_created == 1 ? "an implement" : "implements")
-                << " of electrocution at you.";
-            simple_god_message(msg.str().c_str(), false, god);
+            simple_god_message(jtransc(num_created == 1
+                    ? " throws an implement of electrocution at you."
+                    : " throws implements of electrocution at you."),
+                               false, god);
             break;
         } // else fall through
     }
@@ -856,8 +859,8 @@ static bool _beogh_retribution()
             give_monster_proper_name(*mons);
 
         simple_god_message(
-            mons ? " sends forth an army of orcs."
-                 : " is still gathering forces against you.", false, god);
+            jtransc(mons ? " sends forth an army of orcs."
+                         : " is still gathering forces against you."), false, god);
     }
     }
 
@@ -876,9 +879,9 @@ static bool _okawaru_retribution()
         count += _okawaru_random_servant();
 
     if (count > 0)
-        simple_god_message(" sends forces against you!", false, god);
+        simple_god_message(jtransc(" sends forces against you!"), false, god);
     else
-        simple_god_message(" forces are busy with other wars.", true, god);
+        simple_god_message(jtransc(" forces are busy with other wars."), true, god);
 
     return true;
 }
@@ -888,7 +891,7 @@ static bool _sif_muna_retribution()
     // magic/intelligence theme
     const god_type god = GOD_SIF_MUNA;
 
-    simple_god_message(" wrath finds you.", true, god);
+    simple_god_message(jtransc(" wrath finds you."), true, god);
 
     switch (random2(10))
     {
@@ -934,13 +937,13 @@ static void _lugonu_transloc_retribution()
     if (coinflip())
     {
         // Give extra opportunities for embarrassing teleports.
-        simple_god_message(" wrath scatters you!", true, god);
+        simple_god_message(jtransc(" wrath scatters you!"), true, god);
         you.props[TELEPORTITIS_SOURCE].get_int() = MID_NOBODY;
-        you_teleport_now(false, "Space warps around you!");
+        you_teleport_now(false, jtrans("Space warps around you!"));
     }
     else if (coinflip())
     {
-        simple_god_message(" draws you home!", false, god);
+        simple_god_message(jtransc(" draws you home!"), false, god);
         you.banish(nullptr, "Lugonu's touch", true);
     }
 }
@@ -1000,9 +1003,9 @@ static void _lugonu_minion_retribution()
     }
 
     if (success)
-        simple_god_message(" sends minions to punish you.", false, god);
+        simple_god_message(jtransc(" sends minions to punish you."), false, god);
     else
-        simple_god_message(" minions fail to arrive.", true, god);
+        simple_god_message(jtransc(" minions fail to arrive."), true, god);
 }
 
 /**
@@ -1089,7 +1092,7 @@ static bool _vehumet_retribution()
     monster* avatar = _get_wrath_avatar(god);
     if (!avatar)
     {
-        simple_god_message(" has no time to deal with you just now.", false,
+        simple_god_message(jtransc(" has no time to deal with you just now."), false,
                            god);
         return false;
     }
@@ -1097,7 +1100,7 @@ static bool _vehumet_retribution()
     const spell_type spell = _vehumet_wrath_type();
     if (spell == SPELL_NO_SPELL)
     {
-        simple_god_message(" has no time to deal with you just now.", false,
+        simple_god_message(jtransc(" has no time to deal with you just now."), false,
                            god);
         _reset_avatar(*avatar);
         return false;
@@ -1113,7 +1116,7 @@ static bool _nemelex_retribution()
     // card theme
     const god_type god = GOD_NEMELEX_XOBEH;
 
-    simple_god_message(" makes you draw from the deck of Punishment.", false,
+    simple_god_message(jtransc(" makes you draw from the deck of Punishment."), false,
                        god);
     draw_from_deck_of_punishment();
     return true;
@@ -1125,7 +1128,7 @@ static bool _nemelex_retribution()
 static void _jiyva_mutate_player()
 {
     const god_type god = GOD_JIYVA;
-    god_speaks(god, "You feel Jiyva alter your body.");
+    god_speaks(god, jtransc("You feel Jiyva alter your body."));
 
     const int mutations = 1 + random2(3);
     for (int i = 0; i < mutations; ++i)
@@ -1138,7 +1141,7 @@ static void _jiyva_mutate_player()
 static void _jiyva_contaminate()
 {
     const god_type god = GOD_JIYVA;
-    god_speaks(god, "Mutagenic energy floods into your body!");
+    god_speaks(god, jtransc("Mutagenic energy floods into your body!"));
     contaminate_player(random2(you.penance[god] * 100));
 }
 
@@ -1173,8 +1176,8 @@ static void _jiyva_summon_slimes()
             success = true;
     }
 
-    god_speaks(god, success ? "Some slimes ooze up out of the ground!"
-                            : "The ground quivers slightly.");
+    god_speaks(god, jtransc(success ? "Some slimes ooze up out of the ground!"
+                                    : "The ground quivers slightly."));
 }
 
 /**
@@ -1203,7 +1206,7 @@ static bool _jiyva_retribution()
  */
 static void _fedhas_transform()
 {
-    god_speaks(GOD_FEDHAS, "Fedhas booms out: Become one with the cycle of life!");
+    god_speaks(GOD_FEDHAS, jtransc("Fedhas booms out: Become one with the cycle of life!"));
 
     const transformation form = random_choose(transformation::fungus,
                                               transformation::tree);
@@ -1275,7 +1278,7 @@ static bool _fedhas_summon_plants()
 
     if (oklob_count > 1)
     {
-        god_speaks(god, "Plants grow around you in an ominous manner.");
+        god_speaks(god, jtransc("Plants grow around you in an ominous manner."));
         return false;
     }
 
@@ -1347,13 +1350,13 @@ static bool _dithmenos_retribution()
             if (create_monster(mg, false))
                 count++;
         }
-        simple_god_message(count ? " weaves the shadows around you into monsters."
-                                 : " fails to incite the shadows against you.",
+        simple_god_message(jtransc(count ? " weaves the shadows around you into monsters."
+                                         : " fails to incite the shadows against you."),
                            false, god);
 
         if (coinflip())
         {
-            mpr("You feel lethargic.");
+            mpr(jtrans("You feel lethargic."));
             you.increase_duration(DUR_SLOW, random_range(10, 20), 100);
         }
 
@@ -1366,8 +1369,8 @@ static bool _dithmenos_retribution()
         if (!pos.origin())
         {
             monster* shadow = create_player_shadow(pos, false, spell);
-            simple_god_message(shadow ? " turns your shadow against you."
-                                      : " fails to turn your shadows against you.",
+            simple_god_message(jtransc(shadow ? " turns your shadow against you."
+                                              : " fails to turn your shadows against you."),
                                false, god);
         }
 
@@ -1376,12 +1379,12 @@ static bool _dithmenos_retribution()
     case 2:
     {
         // This is possibly kind of underwhelming?
-        god_speaks(god, "You feel overwhelmed by the shadows around you.");
+        god_speaks(god, jtransc("You feel overwhelmed by the shadows around you."));
         you.put_to_sleep(nullptr, random_range(5, 10) * BASELINE_DELAY);
         break;
     }
     case 3:
-        simple_god_message(" tears the darkness away from you.", false, god);
+        simple_god_message(jtransc(" tears the darkness away from you."), false, god);
         you.sentinel_mark();
         break;
     }
@@ -1432,12 +1435,12 @@ static void _qazlal_summon_elementals()
 
     if (success)
     {
-        simple_god_message(" incites the elements against you!", false,
+        simple_god_message(jtransc(" incites the elements against you!"), false,
                            god);
     }
     else
     {
-        simple_god_message(" fails to incite the elements against you.", false,
+        simple_god_message(jtransc(" fails to incite the elements against you."), false,
                            god);
     }
 }
@@ -1447,7 +1450,7 @@ static void _qazlal_summon_elementals()
  */
 static void _qazlal_elemental_vulnerability()
 {
-    simple_god_message(" strips away your elemental protection.", false, GOD_QAZLAL);
+    simple_god_message(jtransc(" strips away your elemental protection."), false, GOD_QAZLAL);
 
     // Pick a random elemental bane the player doesn't aready have.
     vector<bane_type> banes;
@@ -1463,7 +1466,8 @@ static void _qazlal_elemental_vulnerability()
     if (banes.empty())
     {
         bane_type bane = random_choose(BANE_HEATSTROKE, BANE_SNOW_BLINDNESS, BANE_ELECTROSPASM);
-        mprf(MSGCH_WARN, "Your %s grows more durable.", bane_name(bane).c_str());
+        mprf(MSGCH_WARN, jtransc("Your %s grows more durable."),
+             jtransc(bane_name(bane)));
         you.banes[bane] += 1000;
     }
     else
@@ -1481,7 +1485,7 @@ static bool _qazlal_retribution()
 {
     if (coinflip())
     {
-        simple_god_message(" causes a mighty clap of thunder!", false,
+        simple_god_message(jtransc(" causes a mighty clap of thunder!"), false,
                            GOD_QAZLAL);
         noisy(25, you.pos());
     }
@@ -1551,26 +1555,26 @@ static bool _wu_jian_retribution()
         switch (random2(4))
         {
         case 0:
-            wu_jian_sifu_message(" says: Die by a thousand cuts!");
+            wu_jian_sifu_message(jtransc(" says: Die by a thousand cuts!"));
             barb_player(random_range(5, 10), 5);
             break;
         case 1:
-            wu_jian_sifu_message(" whispers: Nowhere to run...");
+            wu_jian_sifu_message(jtransc(" whispers: Nowhere to run..."));
             slow_player(random_range(5, 10));
             break;
         case 2:
-            wu_jian_sifu_message(" whispers: These will loosen your tongue!");
+            wu_jian_sifu_message(jtransc(" whispers: These will loosen your tongue!"));
             you.increase_duration(DUR_SILENCE, 5 + random2(11), 50);
             invalidate_agrid(true);
             break;
         case 3:
-            wu_jian_sifu_message(" says: Suffer, mortal!");
+            wu_jian_sifu_message(jtransc(" says: Suffer, mortal!"));
             you.corrode(nullptr, _god_wrath_name(god).c_str(), 8);
             break;
         }
     }
     else
-        simple_god_message(" divine weapons fail to arrive.", true, god);
+        simple_god_message(jtransc(" divine weapons fail to arrive."), true, god);
 
     return true;
 }
@@ -1590,7 +1594,7 @@ static void _summon_ignis_elementals()
         god_speaks(god, msg.c_str());
     }
     else
-        simple_god_message(" divine wrath fails to arrive.", true, god);
+        simple_god_message(jtransc(" divine wrath fails to arrive."), true, god);
 }
 
 static bool _ignis_shaft()
@@ -1600,12 +1604,12 @@ static bool _ignis_shaft()
     if (!you.shaftable())
         return false;
 
-    simple_god_message(" burns the ground from beneath your feet!", false,
+    simple_god_message(jtransc(" burns the ground from beneath your feet!"), false,
                        GOD_IGNIS);
 
     // player::do_shaft() already checks resist_dislodge, but the message is a
     // bit worse.
-    if (!you.resists_dislodge("falling"))
+    if (!you.resists_dislodge(jtrans("falling")))
         you.do_shaft();
     return true;
 }
@@ -1670,15 +1674,20 @@ static bool _ignis_champion()
 
     // Message ordering is a bit touchy here.
     // First, we say what we're doing. TODO: more fun messages
-    simple_god_message(make_stringf(" anoints %s as %s of "
-                                    "vengeance!", multimonster_name_string(mons).c_str(),
-                                    mons.size() > 1 ? "instruments" : "an instrument").c_str(),
+    simple_god_message(make_stringf(jtransc(mons.size() > 1
+                                    ? " anoints %s as instruments of vengeance!"
+                                    : " anoints %s as an instrument of vengeance!"),
+                                    multimonster_name_string(mons).c_str()).c_str(),
                                     false, GOD_IGNIS);
 
     // Describe the effect on the monsters.
-    mprf("%s %s shrouded in protective flame, covering ground quickly, and attacking fiercely!",
-         mons.size() == 1 ? mons[0]->name(DESC_THE).c_str() : "The monsters",
-         mons.size() == 1 ? "is" : "are");
+    if (mons.size() == 1)
+    {
+        mprf(jtransc("%s is shrouded in protective flame, covering ground quickly, and attacking fiercely!"),
+             mons[0]->name(DESC_THE).c_str());
+    }
+    else
+        mpr(jtrans("The monsters are shrouded in protective flame, covering ground quickly, and attacking fiercely!"));
 
     for (monster* mon : mons)
     {
@@ -1718,7 +1727,7 @@ static bool _uskayaw_retribution()
     case 1:
         if (mon && mon->can_go_berserk())
         {
-            simple_god_message(make_stringf(" drives %s into a dance frenzy!",
+            simple_god_message(make_stringf(jtransc(" drives %s into a dance frenzy!"),
                                      mon->name(DESC_THE).c_str()).c_str(),
                                      false, god);
             mon->go_berserk(true);
@@ -1730,8 +1739,8 @@ static bool _uskayaw_retribution()
     case 3:
         if (mon && you.can_be_paralysed())
         {
-            simple_god_message(" booms out: Time for someone else to take a "
-                               "solo!", false, god);
+            simple_god_message(jtransc(" booms out: Time for someone else to take a "
+                               "solo!"), false, god);
             you.paralyse(nullptr, random_range(2, 5), _god_wrath_name(god));
             dec_penance(god, 1);
             return false;
@@ -1739,7 +1748,7 @@ static bool _uskayaw_retribution()
         // else we intentionally fall through
 
     case 4:
-        simple_god_message(" booms out: Revellers, it's time to dance!",
+        simple_god_message(jtransc(" booms out: Revellers, it's time to dance!"),
                            false, god);
         noisy(35, you.pos());
         break;
@@ -1821,13 +1830,13 @@ bool divine_retribution(god_type god, bool no_bonus, bool force)
         {
             if (!you.confused())
             {
-                mprf(MSGCH_WARN, "The divine experience confuses you!");
+                mprf(MSGCH_WARN, jtransc("The divine experience confuses you!"));
                 confuse_player(5 + random2(3));
             }
         }
         else
         {
-            mprf(MSGCH_WARN, "The divine experience drains your vigour!");
+            mprf(MSGCH_WARN, jtransc("The divine experience drains your vigour!"));
             slow_player(10 + random2(5));
         }
     }
@@ -1847,7 +1856,7 @@ static void _tso_blasts_cleansing_flame(const char *message)
     if (message)
         god_speaks(GOD_SHINING_ONE, message);
 
-    simple_god_message(" blasts you with cleansing flame!", false,
+    simple_god_message(jtransc(" blasts you with cleansing flame!"), false,
                        GOD_SHINING_ONE);
 
     // damage is 2d(pow), *3/2 for undead and demonspawn
@@ -1887,7 +1896,7 @@ static void _god_smites_you(god_type god, const char *message,
     for (int i = 0; i < 5; ++i)
         divine_hurt += random2(you.experience_level);
 
-    simple_god_message(" smites you!", false, god);
+    simple_god_message(jtransc(" smites you!"), false, god);
     ouch(divine_hurt, death_type, MID_NOBODY, aux.c_str());
 }
 

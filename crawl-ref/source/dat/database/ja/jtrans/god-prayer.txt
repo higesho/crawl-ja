@@ -1,0 +1,65 @@
+%%%%
+exalted by your worship
+
+あなたの崇拝を誇りにしている
+%%%%
+extremely pleased with you
+
+あなたに極めて満足している
+%%%%
+greatly pleased with you
+
+あなたに大いに満足している
+%%%%
+most pleased with you
+
+あなたにかなり満足している
+%%%%
+pleased with you
+
+あなたに満足している
+%%%%
+aware of your devotion
+
+あなたの献身に気付いている
+%%%%
+noncommittal
+
+あなたに特別な関心を持っていない
+%%%%
+%s accepts your prayer!
+
+%sはあなたの祈りを聞き届けた！
+%%%%
+A being of your status worships no god.
+
+あなたのような地位にある存在が他の神を崇めることはない。
+%%%%
+You offer a %sprayer to %s.
+
+あなたは%s%sに祈りを捧げた。
+%%%%
+You pay a tithe of %d gold.
+
+あなたは十分の一税として%dゴールドを支払った。
+%%%%
+ignores your late donation.
+
+はあなたの支払いの悪さを大目に見た。
+%%%%
+[prayer]silent
+
+無言で
+%%%%
+This altar belongs to %s, but you can't tell which.\nPress the corresponding letter to learn more about a god, or press enter to convert or escape to cancel.
+
+この祭壇は%sのいずれかのものだが、どれなのかは分からない。\n対応する文字キーで神について詳しく調べ、Enterで入信、Escで中止する。
+%%%%
+Really abandon %s for an unknown god?
+
+本当に%sを捨てて、未知の神に入信しますか？
+%%%%
+Prayed at the altar of an unknown god.
+
+未知の神の祭壇で祈った。
+%%%%

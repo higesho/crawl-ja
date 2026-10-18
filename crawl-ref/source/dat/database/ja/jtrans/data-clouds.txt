@@ -1,0 +1,201 @@
+# data-clouds.txt: 雲の名前 [cloud]<名前>
+# 出典: cloud.cc の clouds[](0.34)。terse / verbose の両方。
+# 表示側は tagged_jtrans("[cloud]", cloud_type_name(...)) で引く。
+
+%%%%
+[cloud]flame
+
+炎
+%%%%
+[cloud]blazing flames
+
+燃え盛る炎
+%%%%
+[cloud]noxious fumes
+
+悪臭
+%%%%
+[cloud]freezing vapour
+
+凍てつく大気
+%%%%
+[cloud]freezing vapours
+
+凍てつく大気
+%%%%
+[cloud]poison gas
+
+毒ガス
+%%%%
+[cloud]black smoke
+
+黒い煙
+%%%%
+[cloud]grey smoke
+
+灰色の煙
+%%%%
+[cloud]blue smoke
+
+青い煙
+%%%%
+[cloud]purple smoke
+
+紫の煙
+%%%%
+[cloud]translocational energy
+
+転位のエネルギー
+%%%%
+[cloud]steam
+
+蒸気
+%%%%
+[cloud]a cloud of scalding steam
+
+高熱の蒸気
+%%%%
+[cloud]gloom
+
+暗闇
+%%%%
+[cloud]thick gloom
+
+深い暗闇
+%%%%
+[cloud]ink
+
+墨
+%%%%
+[cloud]blessed fire
+
+聖なる炎
+%%%%
+[cloud]foul pestilence
+
+疫病の瘴気
+%%%%
+[cloud]dark miasma
+
+薄黒い疫病の瘴気
+%%%%
+[cloud]thin mist
+
+薄霧
+%%%%
+[cloud]rain
+
+雨
+%%%%
+[cloud]the rain
+
+雨
+%%%%
+[cloud]mutagenic fog
+
+変異性の霧
+%%%%
+[cloud]magical condensation
+
+凝縮された魔力
+%%%%
+[cloud]white fluffiness
+
+ふわふわの綿雲
+%%%%
+[cloud]seething chaos
+
+渦巻く混沌
+%%%%
+[cloud]thunder
+
+雷
+%%%%
+[cloud]a thunderstorm
+
+雷雨
+%%%%
+[cloud]spectral mist
+
+霊体の霧
+%%%%
+[cloud]acidic fog
+
+酸性の霧
+%%%%
+[cloud]salt
+
+塩
+%%%%
+[cloud]calcifying dust
+
+石化する雲
+%%%%
+[cloud]sparse dust
+
+まばらな塵
+%%%%
+[cloud]embers
+
+燃えさし
+%%%%
+[cloud]smouldering embers
+
+くすぶる燃えさし
+%%%%
+[cloud]spreading flames
+
+燃え広がる炎
+%%%%
+[cloud]a forest fire
+
+森林火災
+%%%%
+[cloud]excruciating misery
+
+耐えがたい苦悶
+%%%%
+[cloud]faint pestilence
+
+微かな疫病の瘴気
+%%%%
+[cloud]alcoholic mist
+
+酒気の霧
+%%%%
+[cloud]bats
+
+蝙蝠の群れ
+%%%%
+[cloud]blastmotes
+
+爆発塵
+%%%%
+[cloud]golden dust
+
+金色の塵
+%%%%
+[cloud]magnetised fragments
+
+磁化した破片
+%%%%
+[cloud]rust
+
+錆
+%%%%
+[cloud]sparks
+
+火花
+%%%%
+[cloud]volatile sparks
+
+不安定な火花
+%%%%
+[cloud]whirling frost
+
+渦巻く霜
+%%%%
+[cloud]wisps of flame
+
+炎の筋
+%%%%

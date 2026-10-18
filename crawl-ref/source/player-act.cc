@@ -14,6 +14,7 @@
 #include "art-enum.h"
 #include "artefact.h" // is_unrandom_artefact (woodcutter)
 #include "coordit.h"
+#include "database.h"
 #include "dgn-event.h"
 #include "english.h"
 #include "env.h"
@@ -26,6 +27,7 @@
 #include "item-name.h"
 #include "item-prop.h"
 #include "item-use.h"
+#include "japanese.h"
 #include "message.h"
 #include "movement.h"
 #include "player-stats.h"
@@ -386,10 +388,10 @@ string player::name(description_level_type dt, bool, bool) const
         return "";
     case DESC_A: case DESC_THE:
     default:
-        return "you";
+        return jtrans("you");
     case DESC_YOUR:
     case DESC_ITS:
-        return "your";
+        return jtrans("your");
     }
 }
 
@@ -400,7 +402,31 @@ string player::pronoun(pronoun_type pro, bool /*force_visible*/) const
 
 string player::conj_verb(const string &verb) const
 {
-    return conjugate_verb(verb, true);
+    // 表示用(日本語の動詞)。辞書の "[verb]hit" などを引く。
+    return conjugate_verb_j(verb, true);
+}
+
+// 手足などの英語名(複数形・修飾語付きを含む)を表示用の日本語にする。
+// "[body part]" タグ付きのキー(monster.txt など)を優先し、なければ
+// 先頭の修飾語("eel", "scaled" など)と残りに分けて訳す。
+static string _body_part_name_j(const string &en)
+{
+    if (en.empty())
+        return en;
+
+    const string key = "[body part]" + en;
+    if (jtrans_has_key(key))
+        return jtrans(key);
+
+    const size_t sp = en.find(' ');
+    if (sp != string::npos)
+    {
+        const string mod_key = "[body part mod]" + en.substr(0, sp);
+        if (jtrans_has_key(mod_key))
+            return jtrans(mod_key) + _body_part_name_j(en.substr(sp + 1));
+    }
+
+    return tagged_jtrans("[form]", en);
 }
 
 /**
@@ -485,6 +511,12 @@ string player::base_hand_name(bool plural, bool temp, bool *can_plural) const
  */
 string player::hand_name(bool plural, bool *can_plural) const
 {
+    return _body_part_name_j(hand_name_en(plural, can_plural));
+}
+
+// 英語の名前(比較などに使う)
+string player::hand_name_en(bool plural, bool *can_plural) const
+{
     return base_hand_name(plural, true, can_plural);
 }
 
@@ -539,6 +571,11 @@ static string _foot_name_singular(bool *can_plural)
  */
 string player::foot_name(bool plural, bool *can_plural) const
 {
+    return _body_part_name_j(foot_name_en(plural, can_plural));
+}
+
+string player::foot_name_en(bool plural, bool *can_plural) const
+{
     bool _can_plural;
     if (can_plural == nullptr)
         can_plural = &_can_plural;
@@ -553,8 +590,13 @@ string player::foot_name(bool plural, bool *can_plural) const
 
 string player::arm_name(bool plural, bool *can_plural) const
 {
+    return _body_part_name_j(arm_name_en(plural, can_plural));
+}
+
+string player::arm_name_en(bool plural, bool *can_plural) const
+{
     if (form_changes_anatomy())
-        return hand_name(plural, can_plural);
+        return hand_name_en(plural, can_plural);
 
     if (can_plural != nullptr)
         *can_plural = true;
@@ -608,7 +650,7 @@ bool player::fumbles_attack()
     {
         if (x_chance_in_y(3, 8))
         {
-            mpr("Your unstable footing causes you to fumble your attack.");
+            mpr(jtrans("Your unstable footing causes you to fumble your attack."));
             did_fumble = true;
         }
         if (floundering())
@@ -644,9 +686,9 @@ static bool _god_prevents_berserk_haste(bool intentional)
         return false;
 
     if (intentional)
-        simple_god_message(" forces you to slow down.");
+        simple_god_message(jtransc(" forces you to slow down."));
     else
-        simple_god_message(" protects you from inadvertent hurry.");
+        simple_god_message(jtransc(" protects you from inadvertent hurry."));
 
     return true;
 }
@@ -670,25 +712,25 @@ bool player::go_berserk(bool intentional, bool potion)
     if (crawl_state.game_is_hints())
         Hints.hints_berserk_counter++;
 
-    mpr("A red film seems to cover your vision as you go berserk!");
+    mpr(jtrans("A red film seems to cover your vision as you go berserk!"));
 
     if (you.duration[DUR_FINESSE] > 0)
     {
         you.duration[DUR_FINESSE] = 0; // Totally incompatible.
-        mpr("Your finesse ends abruptly.");
+        mpr(jtrans("Your finesse ends abruptly."));
     }
 
     if (you.duration[DUR_AFRAID] > 0)
     {
         you.clear_fearmongers();
         you.duration[DUR_AFRAID] = 0; // Too angry to be scared.
-        mpr("Your anger overwhelms your terror!");
+        mpr(jtrans("Your anger overwhelms your terror!"));
     }
 
     if (!_god_prevents_berserk_haste(intentional))
-        mpr("You feel yourself moving faster!");
+        mpr(jtrans("You feel yourself moving faster!"));
 
-    mpr("You feel mighty!");
+    mpr(jtrans("You feel mighty!"));
 
     int dur = (20 + random2avg(19,2)) / 2;
     if (potion && you.has_mutation(MUT_EFFICIENT_METABOLISM))
@@ -724,19 +766,19 @@ bool player::can_go_berserk(bool intentional, bool potion, bool quiet,
     bool success = false;
 
     if (berserk() && temp)
-        msg = "You're already berserk!";
+        msg = jtrans("You're already berserk!");
     else if (duration[DUR_BERSERK_COOLDOWN] && temp)
-        msg = "You're still recovering from your berserk rage.";
+        msg = jtrans("You're still recovering from your berserk rage.");
     else if (duration[DUR_DEATHS_DOOR] && temp)
-        msg = "You can't enter a blood rage from death's door.";
+        msg = jtrans("You can't enter a blood rage from death's door.");
     else if (beheld() && !you.unrand_equipped(UNRAND_DEMON_AXE) && temp)
-        msg = "You are too mesmerised to rage.";
+        msg = jtrans("You are too mesmerised to rage.");
     else if (!intentional && !potion && clarity() && temp)
-        msg = "You're too calm and focused to rage.";
+        msg = jtrans("You're too calm and focused to rage.");
     else if (is_lifeless_undead(temp))
-        msg = "You cannot raise a blood rage in your lifeless body.";
+        msg = jtrans("You cannot raise a blood rage in your lifeless body.");
     else if (stasis())
-        msg = "Your stasis prevents you from going berserk.";
+        msg = jtrans("Your stasis prevents you from going berserk.");
     else
         success = true;
 

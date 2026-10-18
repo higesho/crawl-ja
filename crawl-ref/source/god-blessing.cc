@@ -7,6 +7,7 @@
 
 #include "god-blessing.h"
 
+#include "database.h"
 #include "env.h"
 #include "message.h"
 #include "mon-place.h"
@@ -114,7 +115,7 @@ static string _bless_with_healing(monster* follower)
     {
         balms = _blessing_balms(follower);
         if (balms)
-            blessing = "divine balms";
+            blessing = tagged_jtrans("[blessing]", "divine balms");
         else
             dprf("Couldn't apply balms.");
     }
@@ -129,8 +130,9 @@ static string _bless_with_healing(monster* follower)
     if (healing)
     {
         if (balms)
-            blessing += " and ";
-        blessing += "healing";
+            blessing = tagged_jtrans("[blessing]", "divine balms and healing");
+        else
+            blessing = tagged_jtrans("[blessing]", "healing");
     }
     else
         dprf("Couldn't heal monster.");
@@ -154,9 +156,9 @@ static void _display_god_blessing(monster* follower, god_type god,
     ASSERT(follower); // XXX: change to monster &follower
 
     string whom = you.can_see(*follower) ? follower->name(DESC_THE)
-    : "a follower";
+    : jtrans("a follower");
 
-    simple_god_message(make_stringf(" blesses %s with %s.",
+    simple_god_message(make_stringf(jtransc(" blesses %s with %s."),
                                     whom.c_str(), blessing.c_str()).c_str(),
                        god);
 }
@@ -183,15 +185,15 @@ static string _tso_bless_duration(monster* follower)
     }
 
     string blessing = "";
-    if (friendliness)
+    if (friendliness && more_time)
     {
-        blessing += "friendliness";
-        if (more_time)
-            blessing += " and ";
+        blessing = tagged_jtrans("[blessing]",
+                                 "friendliness and more time in this world");
     }
-
-    if (more_time)
-        blessing += "more time in this world";
+    else if (friendliness)
+        blessing = tagged_jtrans("[blessing]", "friendliness");
+    else
+        blessing = tagged_jtrans("[blessing]", "more time in this world");
 
     return blessing;
 }

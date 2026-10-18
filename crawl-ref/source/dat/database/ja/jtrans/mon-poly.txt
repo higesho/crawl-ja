@@ -1,0 +1,49 @@
+%%%%
+shudders.
+
+は身震いした。
+%%%%
+looks momentarily different.
+
+の姿は一瞬違って見えた。
+%%%%
+something you cannot see
+
+何か目に見えないもの
+%%%%
+%s appears out of thin air!
+
+%sがいきなり現れた！
+%%%%
+something unseen
+
+何か目に見えないもの
+%%%%
+quivers momentarily.
+
+は一瞬震えた。
+%%%%
+ form twists and warps, and jellies spill out!
+
+体はねじれて歪み、ジェリーがあふれ出した！
+%%%%
+ appearance momentarily alters.
+
+姿は一瞬変化した。
+%%%%
+%s grows a second head!
+
+%sは二つ目の頭を生やした！
+%%%%
+%s changes into %s!
+
+%sは%sに変化した！
+%%%%
+%s quivers uncontrollably and liquefies into %s!
+
+%sはなすすべもなく震え、溶けて%sに変化した！
+%%%%
+%s evaporates and reforms as %s!
+
+%sは一瞬消え、%sに変化した！
+%%%%

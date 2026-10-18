@@ -18,6 +18,7 @@
 
 #include "art-enum.h"
 #include "chardump.h"
+#include "database.h"
 #include "delay.h"
 #include "english.h"
 #include "env.h"
@@ -326,6 +327,9 @@ string attack::actor_name(const actor *a, description_level_type desc,
 string attack::actor_pronoun(const actor *a, pronoun_type pron,
                              bool actor_visible)
 {
+    // 日本語では性別で訳し分けない。再帰代名詞は「自分自身」
+    if (pron == PRONOUN_REFLEXIVE)
+        return jtrans("[reflexive]itself");
     return actor_visible ? a->pronoun(pron) : anon_pronoun(pron);
 }
 
@@ -342,12 +346,12 @@ string attack::anon_name(description_level_type desc)
         return "";
     case DESC_YOUR:
     case DESC_ITS:
-        return "something's";
+        return tagged_jtrans("[mon name]", "something") + "の";
     case DESC_THE:
     case DESC_A:
     case DESC_PLAIN:
     default:
-        return "something";
+        return tagged_jtrans("[mon name]", "something");
     }
 }
 
@@ -483,14 +487,14 @@ bool attack::distortion_affects_defender()
     {
     case SMALL_DMG:
         special_damage += 1 + random2avg(7, 2);
-        special_damage_message = make_stringf("Space warps around %s%s",
+        special_damage_message = make_stringf(jtransc("Space warps around %s%s"),
                                               defender_name(false).c_str(),
                                               attack_strength_punctuation(special_damage).c_str());
         break;
     case BIG_DMG:
         special_damage += 3 + random2avg(24, 2);
         special_damage_message =
-            make_stringf("Space warps horribly around %s%s",
+            make_stringf(jtransc("Space warps horribly around %s%s"),
                          defender_name(false).c_str(),
                          attack_strength_punctuation(special_damage).c_str());
         break;
@@ -529,9 +533,9 @@ void attack::pain_affects_defender()
         if (special_damage && defender_visible)
         {
             special_damage_message =
-                make_stringf("%s %s in agony%s",
+                make_stringf(jtransc("%s %s in agony%s"),
                              defender->name(DESC_THE).c_str(),
-                             defender->conj_verb("writhe").c_str(),
+                             verb_jc("writhe"),
                            attack_strength_punctuation(special_damage).c_str());
         }
     }
@@ -655,10 +659,10 @@ void attack::drain_defender()
         {
             special_damage_message =
                 make_stringf(
-                    "%s %s %s%s",
+                    jtransc("{attacker} {verb} {defender}{!}"),
                     atk_name(DESC_THE).c_str(),
-                    attacker->conj_verb("drain").c_str(),
                     defender_name(true).c_str(),
+                    verb_jc("drain"),
                     attack_strength_punctuation(special_damage).c_str());
         }
     }
@@ -668,10 +672,10 @@ void attack::drain_defender_speed()
 {
     if (needs_message)
     {
-        mprf("%s %s %s vigour!",
+        mprf(jtransc("{attacker} {verb} {defender's} vigour!"),
              atk_name(DESC_THE).c_str(),
-             attacker->conj_verb("drain").c_str(),
-             def_name(DESC_ITS).c_str());
+             def_name(DESC_ITS).c_str(),
+             verb_jc("drain"));
     }
     defender->slow_down(attacker, 5 + random2(7));
 }
@@ -717,25 +721,32 @@ string attack::debug_damage_number()
  */
 string attack_strength_punctuation(int dmg)
 {
+    // 日本語版は全角の「。」「！」
     if (dmg < HIT_WEAK)
-        return ".";
+        return "。";
     else if (dmg < HIT_MED)
-        return "!";
+        return "！";
     else if (dmg < HIT_STRONG)
-        return "!!";
+        return "！！";
     else
-        return string(3 + (int) log2(dmg / HIT_STRONG), '!');
+    {
+        string s;
+        for (int i = 3 + (int) log2(dmg / HIT_STRONG); i > 0; --i)
+            s += "！";
+        return s;
+    }
 }
 
 /* Returns evasion adverb
  *
+ * 日本語の副詞(「完全に」など)を返す。空文字列のこともある。
  */
 string attack::evasion_margin_adverb()
 {
-    return (ev_margin <= -20) ? " completely" :
+    return (ev_margin <= -20) ? adv_j("completely") :
            (ev_margin <= -12) ? "" :
-           (ev_margin <= -6)  ? " closely"
-                              : " barely";
+           (ev_margin <= -6)  ? adv_j("closely")
+                              : adv_j("barely");
 }
 
 void attack::stab_message()
@@ -747,26 +758,28 @@ void attack::stab_message()
     case 4:     // confused/fleeing/distracted
         if (!one_chance_in(3))
         {
-            mprf("You catch %s completely off-guard!",
+            mprf(jtransc("You catch %s completely off-guard!"),
                   defender->name(DESC_THE).c_str());
         }
         else
         {
-            mprf("You %s %s from behind!",
-                  you.has_mutation(MUT_PAWS) ? "pounce on" : "strike",
-                  defender->name(DESC_THE).c_str());
+            mprf(jtransc("You %s %s from behind!"),
+                 defender->name(DESC_THE).c_str(),
+                 tagged_jtransc("[stab verb]",
+                                you.has_mutation(MUT_PAWS) ? "pounce on"
+                                                           : "strike"));
         }
         break;
     case 1:
         if (you.has_mutation(MUT_PAWS) && coinflip())
         {
-            mprf("You pounce on the unaware %s!",
+            mprf(jtransc("You pounce on the unaware %s!"),
                  defender->name(DESC_PLAIN).c_str());
             break;
         }
-        mprf("%s fails to defend %s.",
-              defender->name(DESC_THE).c_str(),
-              defender->pronoun(PRONOUN_REFLEXIVE).c_str());
+        // 訳文では再帰代名詞を使わない
+        mprf(jtransc("%s fails to defend %s."),
+              defender->name(DESC_THE).c_str());
         break;
     }
 
@@ -1159,9 +1172,9 @@ bool attack::apply_damage_brand(const char *what)
         {
             special_damage_message =
                 make_stringf(
-                    "%s %s%s",
+                    jtransc("{defender} {verb}{!}"),
                     defender_name(false).c_str(),
-                    defender->conj_verb("convulse").c_str(),
+                    verb_jc("convulse"),
                     attack_strength_punctuation(special_damage).c_str());
         }
         break;
@@ -1181,9 +1194,9 @@ bool attack::apply_damage_brand(const char *what)
         {
             special_damage_message =
                 make_stringf(
-                    "%s %s%s",
+                    jtransc("{defender} {verb}{!}"),
                     defender_name(false).c_str(),
-                    defender->conj_verb("convulse").c_str(),
+                    verb_jc("convulse"),
                     attack_strength_punctuation(special_damage).c_str());
         }
         break;
@@ -1199,8 +1212,8 @@ bool attack::apply_damage_brand(const char *what)
                     attack_strength_punctuation(special_damage);
             special_damage_message =
                 defender->is_player()
-                ? make_stringf("You are electrocuted%s", punctuation.c_str())
-                : make_stringf("Lightning courses through %s%s",
+                ? make_stringf(jtransc("You are electrocuted%s"), punctuation.c_str())
+                : make_stringf(jtransc("Lightning courses through %s%s"),
                                defender->name(DESC_THE).c_str(),
                                punctuation.c_str());
             special_damage_flavour = BEAM_ELECTRICITY;
@@ -1244,12 +1257,12 @@ bool attack::apply_damage_brand(const char *what)
             {
                 if (defender->is_player())
                 {
-                    mprf("%s draws strength from your wounds!",
+                    mprf(jtransc("%s draws strength from your wounds!"),
                          attacker->name(DESC_THE).c_str());
                 }
                 else
                 {
-                    mprf("%s is healed.",
+                    mprf(jtransc("%s is healed."),
                          attacker->name(DESC_THE).c_str());
                 }
             }
@@ -1317,7 +1330,7 @@ bool attack::apply_damage_brand(const char *what)
             else if (!ench_flavour_affects_monster(attacker, beam_temp.flavour, mon)
                      || mons_invuln_will(*mon))
             {
-                mprf("%s is completely immune to your confusing touch!",
+                mprf(jtransc("%s is completely immune to your confusing touch!"),
                      mon->name(DESC_THE).c_str());
                 you.duration[DUR_CONFUSING_TOUCH] = 1;
             }
@@ -1350,7 +1363,7 @@ bool attack::apply_damage_brand(const char *what)
         if (coinflip() && attacker->can_constrict(*defender, CONSTRICT_ENTANGLE))
         {
             if (you.can_see(*defender))
-                mprf("%s becomes entangled by vines.", defender->name(DESC_THE).c_str());
+                mprf(jtransc("%s becomes entangled by vines."), defender->name(DESC_THE).c_str());
             attacker->start_constricting(*defender, CONSTRICT_ENTANGLE);
         }
         break;
@@ -1409,16 +1422,16 @@ void attack::calc_elemental_brand_damage(beam_type flavour,
     if (needs_message && special_damage > 0 && verb)
     {
         // XXX: assumes "what" is singular
+        // 日本語の語順: 主語、相手、副詞、動詞、句読点
         special_damage_message = make_stringf(
-            "%s %s %s%s%s",
+            jtransc("{attacker} {verb} {defender}{terribly}{!}"),
             what ? what : atk_name(DESC_THE).c_str(),
-            what ? conjugate_verb(verb, false).c_str()
-                 : attacker->conj_verb(verb).c_str(),
             // Don't allow reflexive if the subject wasn't the attacker.
             defender_name(!what).c_str(),
             flavour == BEAM_FIRE && defender->res_fire() < 0
-             || flavour == BEAM_COLD && defender->res_cold() < 0 ? " terribly"
-                : "",
+             || flavour == BEAM_COLD && defender->res_cold() < 0
+                ? adv_jc("terribly") : "",
+            verb_jc(verb),
             attack_strength_punctuation(special_damage).c_str());
     }
 }
@@ -1468,7 +1481,7 @@ int attack::player_stab(int damage)
         {
             if (!you.duration[DUR_DEVIOUS])
             {
-                mprf(MSGCH_DURATION, "You feel devious.");
+                mprf(MSGCH_DURATION, jtransc("You feel devious."));
                 you.props.erase(DEVIOUS_KEY);
             }
 
@@ -1615,7 +1628,7 @@ void attack::maybe_trigger_autodazzler()
         proj.fire(tracer);
         if (tracer.friend_info.count == 0)
         {
-            mpr("Your autodazzler retaliates!");
+            mpr(jtrans("Your autodazzler retaliates!"));
 
             proj.fire();
         }
@@ -1627,7 +1640,7 @@ bool attack::paragon_defends_player()
     if (defender->is_player() && paragon_defense_bonus_active()
         && one_chance_in(3))
     {
-        mprf("Your paragon deflects %s attack away from you.",
+        mprf(jtransc("Your paragon deflects %s attack away from you."),
                     attacker->name(DESC_ITS).c_str());
         return true;
     }

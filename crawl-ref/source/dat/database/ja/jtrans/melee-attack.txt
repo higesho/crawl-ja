@@ -1,0 +1,1000 @@
+%%%%
+%s strikes at %s from the darkness!
+
+%sは%sを闇討ちした！
+%%%%
+{defender} {verb} {itself} attack.
+
+%sは%s攻撃を%s。
+%%%%
+its own
+
+自分自身の
+%%%%
+You furiously retaliate!
+
+あなたは怒って反撃した！
+%%%%
+# 引数: 攻撃者、相手、助詞、動詞(過去形)
+%s %s %s but %s no damage.
+
+%sは%s%s%sが、ダメージを与えられなかった。
+%%%%
+It tastes like %s.
+
+%sのような味がする。
+%%%%
+Spicy!
+
+ぴりっとした味だ！
+%%%%
+You attempt to attack %s, but flinch away in fear!
+
+あなたは%sを攻撃しようとしたが尻込みした！
+%%%%
+# 引数: 相手、補助攻撃の名前
+Your %s misses %s.
+
+%sはあなたの%sを躱した。
+%%%%
+# 引数: 相手、助詞、動詞(過去形)、", but do no damage" または空
+You %s %s%s.
+
+あなたは%s%s%s%s。
+%%%%
+, but do no damage
+
+が、ダメージを与えられなかった
+%%%%
+# 引数: 相手の所有格(「〜の」)、[drained]magic / power
+You drain %s %s.
+
+あなたは%s%sを吸い取った。
+%%%%
+[drained]magic
+
+魔力
+%%%%
+[drained]power
+
+力
+%%%%
+The flame cauterises the wound!
+
+炎が傷口を焼灼する！
+%%%%
+grows two more!
+
+の首が2本生えてきた！
+%%%%
+# 引数: 攻撃者、相手、動詞([claw verb] / [slice verb])
+%s %s %s last head off!
+
+%sは%sの最後の首を%s！
+%%%%
+%s %s one of %s heads off!
+
+%sは%sの首の一つを%s！
+%%%%
+is burned by acid!
+
+は酸で焼かれた！
+%%%%
+from afar
+
+遠くから
+%%%%
+with %s
+
+%sで
+%%%%
+%s poisons %s!
+
+%sは%sを毒に冒した！
+%%%%
+Your divine stamina protects you from poison!
+
+あなたの活性化された生命力が毒をはねのけた！
+%%%%
+{attacker} {verb} {defender}!
+
+%sは%sを%s！
+%%%%
+# 引数: 攻撃者、相手の所有格(「〜の」)、[drained]magic / power
+%s drains %s %s.
+
+%sは%s%sを吸い取った。
+%%%%
+looks very invigorated.
+
+はとても元気になったようだ。
+%%%%
+looks invigorated.
+
+は元気になったようだ。
+%%%%
+{attacker} {verb} {defender}.
+
+%sは%sを%s。
+%%%%
+protects your body from unnatural transformation!
+
+はあなたの体を不自然な変異から守った！
+%%%%
+is very cold.
+
+は非常に寒そうだ。
+%%%%
+The eyeballs on your body gaze at %s.
+
+あなたの体を覆う眼球は%sをにらみつけた。
+%%%%
+# 引数: 相手、武器
+Your tendrils lash around %s %s and pull it to the ground!
+
+あなたの蔦が%sの%sに絡みつき、地面に叩き落とした！
+%%%%
+is struck by your spines.
+
+はあなたの棘で傷ついた。
+%%%%
+spines
+
+棘
+%%%%
+thorns
+
+茨
+%%%%
+You emit a cloud of foul miasma!
+
+あなたは瘴気の雲を生み出した！
+%%%%
+[verb]block
+
+防いだ
+%%%%
+[verb]freeze
+
+凍りつかせた
+%%%%
+[verb]shock
+
+電撃を加えた
+%%%%
+[verb]infuriate
+
+激怒させた
+%%%%
+# 助詞「の体を」は呼び出し側で付ける
+[verb]sear
+
+灼いた
+%%%%
+[verb]grab
+
+掴んだ
+%%%%
+[verb]burn
+
+燃やした
+%%%%
+[verb]drown
+
+溺れさせた
+%%%%
+# ---- 以下は 0.34 で手で追加(melee-attack.cc) ----
+The grapnel guides your strike.
+
+鉤縄があなたの一撃を導いた。
+%%%%
+%s turns aside %s attack!
+
+%sは%s攻撃を受け流した！
+%%%%
+%s is struck blind by the light of your shield.
+
+%sはあなたの盾の光に目が眩んだ。
+%%%%
+# 引数: 攻撃者、相手、副詞(「完全に」など、空のこともある)
+%s%s misses %s.
+
+%sの%sへの攻撃は%s外れた。
+%%%%
+is struck blind.
+
+は目が見えなくなった。
+%%%%
+# 引数: 相手の所有格(「〜の」)、武器
+You knock %s out of %s grip!
+
+あなたは%s手から%sを叩き落とした！
+%%%%
+# 引数: 相手、血の名前
+You sink your fangs into %s and drink %s %s.
+
+あなたは%sに牙を突き立て、%sを飲んだ。
+%%%%
+You sink your fangs into %s and drain %s dry!
+
+あなたは%sに牙を突き立て、血を吸い尽くした！
+%%%%
+concussive force
+
+衝撃
+%%%%
+# 引数: 攻撃者、相手、壁などの地形名、句読点
+%s crushes %s against the %s%s
+
+%sは%sを%sに叩きつけた%s
+%%%%
+shudders as magic cascades through %s%s
+
+は流れ込む魔力に身を震わせた%s
+%%%%
+begins to glow.
+
+は光り始めた。
+%%%%
+glows dangerously bright.
+
+は危険なほど明るく輝いた。
+%%%%
+The last of your unstable energy dissipates and you return to your previous form.
+
+不安定なエネルギーが尽き、あなたは元の姿に戻った。
+%%%%
+You feel the transmutational energy in your body is nearly expended.
+
+体内の変成のエネルギーが尽きかけているのを感じる。
+%%%%
+%s orb emits a pulse of dizzying energy.
+
+%s宝珠がめまいを誘うエネルギーの波動を放った。
+%%%%
+Mushrooms sprout behind %s.
+
+%sの背後にキノコが生えてきた。
+%%%%
+%s is engulfed in spores.
+
+%sは胞子に包まれた。
+%%%%
+decays.
+
+は朽ちていった。
+%%%%
+your slimy shroud breaks as it bends %s attack away%s
+
+あなたの粘液の帷子は%s攻撃を逸らして破れた%s
+%%%%
+# 引数: 相手、「の半分」「の一部」または空
+You devour %s%s!
+
+あなたは%s%sをむさぼり食った！
+%%%%
+half of
+
+の半分
+%%%%
+a chunk of
+
+の一部
+%%%%
+You spit out %s as it twists & changes in your maw!
+
+あなたは口の中で捻れ変化する%sを吐き出した！
+%%%%
+You revel in your kill!
+
+あなたは獲物を仕留めた喜びに浸った！
+%%%%
+You raise your head to howl, but no sound comes out.
+
+あなたは頭をもたげて吠えようとしたが、声が出なかった。
+%%%%
+You let out a blood-chilling howl!
+
+あなたは血も凍るような咆哮をあげた！
+%%%%
+%s freezes in fear!
+
+%sは恐怖で凍りついた！
+%%%%
+prevents your attack.
+
+はあなたの攻撃を妨げた。
+%%%%
+# 引数: 攻撃者の所有格(「〜の」)、武器
+%s %s flashes viciously!
+
+%s%sが凶悪に閃いた！
+%%%%
+You sap %s willpower!
+
+あなたは%s意志力を削いだ！
+%%%%
+# 引数: 主語(「あなた」「あなたの触手」)、相手、助詞、動詞(過去形)、句読点、デバッグ用
+{you} {verb} {defender}{!}{debug}
+
+%sは%s%s%s%s%s
+%%%%
+[aux subject]You
+
+あなた
+%%%%
+Your tendrils
+
+あなたの触手
+%%%%
+# 引数: 「〜で」(二刀流の武器)、相手、副詞(空のこともある)
+You%s miss %s%s.
+
+あなたは%s%sへの攻撃を%s外した。
+%%%%
+%s fire resistance is stripped away!
+
+%s火炎への耐性が剥ぎ取られた！
+%%%%
+%s is electrocuted%s
+
+%sは感電した%s
+%%%%
+%s freezes %s%s
+
+%sは%sを凍えさせた%s
+%%%%
+The ground beneath %s fractures%s
+
+%sの足元の地面が砕けた%s
+%%%%
+%s burns %s%s
+
+%sは%sを焼いた%s
+%%%%
+%s envenoms %s%s
+
+%sは%sを毒に冒した%s
+%%%%
+%s shrivels as negative energy consumes it%s
+
+%sは負のエネルギーに蝕まれて萎びた%s
+%%%%
+Something buggy happens! Please report this.
+
+何かおかしなことが起きた！ バグとして報告してください。
+%%%%
+You draw in some of the released energy.
+
+あなたは放たれたエネルギーの一部を吸収した。
+%%%%
+# 攻撃の動詞(過去形)の後ろに付ける
+and electrocutes it
+
+うえ、感電させた
+%%%%
+# 引数: 攻撃者、「遠くから」「〜で」、「こっそりと」、相手、助詞、動詞(過去形)、
+#       感電、句読点、デバッグ用
+{attacker} {stealthily}{verb} {defender}{charge}{debug}{desc}{!}
+
+%sは%s%s%s%s%s%s%s%s
+%%%%
+stealthily
+
+こっそりと
+%%%%
+# 引数: 「〜で」、相手、「の急所」、助詞、様子、動詞(過去形)、感電、句読点、デバッグ用
+{you} {weapon}{verb} {defender}{degree}{charge}{!}{debug}
+
+あなたは%s%s%s%s%s%s%s%s%s
+%%%%
+%s is engulfed in flames%s
+
+%sは炎に包まれた%s
+%%%%
+# 「に」を取る動詞用
+{attacker} {verb} {defender} (to){!}
+
+%sは%sに%s%s
+%%%%
+%s draws vitality from %s injuries!
+
+%sは%s傷口から生命力を吸い取った！
+%%%%
+%s is engulfed in a cloud of dizzying spores!
+
+%sはめまいを誘う胞子の雲に包まれた！
+%%%%
+%s is afflicted by dizzying energies!
+
+%sはめまいを誘うエネルギーに襲われた！
+%%%%
+%s is skewered by barbed spikes.
+
+%sは返しのついた棘に刺し貫かれた。
+%%%%
+{attacker} {verb} {defender}'s body{!}
+
+%sは%sの体を%s%s
+%%%%
+A spider bursts forth from the wound!
+
+傷口から蜘蛛が飛び出してきた！
+%%%%
+Faint brimstone surges around %s!
+
+%sの周りにかすかな硫黄の臭いが立ちこめた！
+%%%%
+enters a blood-rage!
+
+は血に狂った！
+%%%%
+tastes blood and grows stronger!
+
+は血の味を覚えて力を増した！
+%%%%
+%s is engulfed in a cloud of soporific spores!
+
+%sは眠りを誘う胞子の雲に包まれた！
+%%%%
+You start to liquefy!
+
+あなたの体は溶け始めた！
+%%%%
+You liquefy further!
+
+あなたの体はさらに溶けていく！
+%%%%
+%s vents fumes.
+
+%sは煙を噴き出した。
+%%%%
+is burned by your cloak of flames.
+
+はあなたの炎の外套に焼かれた。
+%%%%
+is struck by your quills.
+
+はあなたの針に刺された。
+%%%%
+# 引数: 攻撃者、相手の所有格(「〜の」)、spines / thorns
+%s is struck by %s %s.
+
+%sは%s%sで傷ついた。
+%%%%
+%s is seared by the foul flame within you%s
+
+%sはあなたの内なる穢れた炎に焼かれた%s
+%%%%
+%s ripostes.
+
+%sは反撃した。
+%%%%
+# resists_dislodge() に渡す(「〜こと」の形)
+being knocked back
+
+吹き飛ばされること
+%%%%
+%s is held in place!
+
+%sはその場に押さえつけられている！
+%%%%
+%s holds its ground!
+
+%sは一歩も退かなかった！
+%%%%
+%s slips backwards!
+
+%sは後ろに滑った！
+%%%%
+%s stumbles backwards!
+
+%sは後ろによろめいた！
+%%%%
+%s is shoved backwards!
+
+%sは後ろに突き飛ばされた！
+%%%%
+%s drags %s backwards!
+
+%sは%sを引きずり寄せた！
+%%%%
+# 前後の改行は jtrans_notrim で残す
+Trigger chance:  %d%%\nBase damage:     %d
+
+発動確率:     %d%%
+基本ダメージ: %d
+%%%%
+Your spellmotor activates!
+
+あなたの呪文機関が作動した！
+%%%%
+You rip the existence from %s to re-knit yourself!
+
+あなたは%sの存在を引き裂き、自らの体を編み直した！
+%%%%
+# do_starlight()(@The_monster@ などは後で置き換えられる)
+@The_monster@ is blinded by the light from your cloak!
+
+@The_monster@はあなたのクロークの光に目が眩んだ！
+%%%%
+@The_monster@ is temporarily struck blind!
+
+@The_monster@は一時的に目が見えなくなった！
+%%%%
+@The_monster_possessive@ sight is seared by the starlight!
+
+@The_monster_possessive@目は星の光に焼かれた！
+%%%%
+@The_monster_possessive@ vision is obscured by starry radiance!
+
+@The_monster_possessive@視界は星の輝きに覆われた！
+%%%%
+# ---- 攻撃の動詞(過去形)。_melee_attack_particle() が助詞を付ける ----
+# プレイヤーの攻撃(set_attack_verb)
+[verb]clumsily bash
+
+不器用に殴打した
+%%%%
+[verb]puncture
+
+突き刺した
+%%%%
+[verb]impale
+
+貫いた
+%%%%
+[verb]spit
+
+串刺しにした
+%%%%
+[verb]attack
+
+攻撃した
+%%%%
+[verb]stick
+
+突き刺した
+%%%%
+[verb]perforate
+
+穴だらけにした
+%%%%
+[verb]slash
+
+切り払った
+%%%%
+[verb]slice
+
+切り裂いた
+%%%%
+[verb]dice
+
+細切れにした
+%%%%
+[verb]fracture
+
+打ち砕いた
+%%%%
+[verb]carve
+
+切り分けた
+%%%%
+[verb]shave
+
+毛皮を刈り取った
+%%%%
+[verb]thump
+
+殴打した
+%%%%
+[verb]sock
+
+打ちすえた
+%%%%
+[verb]bludgeon
+
+打ちのめした
+%%%%
+[verb]shatter
+
+粉砕した
+%%%%
+[verb]splatter
+
+変えた
+%%%%
+[verb]flog
+
+鞭打った
+%%%%
+[verb]flagellate
+
+激しく鞭打った
+%%%%
+[verb]scratch
+
+引っかいた
+%%%%
+[verb]tentacle-slap
+
+触手で打ちすえた
+%%%%
+[verb]squash
+
+ぺしゃんこにした
+%%%%
+[verb]beat
+
+叩きのめした
+%%%%
+[verb]pound
+
+叩きつけた
+%%%%
+[verb]pulverise
+
+粉々にした
+%%%%
+# 動詞と程度をまとめた訳
+[verb]open like a pillowcase
+
+枕カバーのようにやすやすと切り開いた
+%%%%
+[verb]slice like a ripe choko
+
+熟したハヤトウリのように切り裂いた
+%%%%
+[verb]cut into ribbons
+
+ずたずたに切り裂いた
+%%%%
+[verb]carve like a ham
+
+ハムのように切り分けた
+%%%%
+[verb]chop into pieces
+
+バラバラにぶった切った
+%%%%
+[verb]crush like a grape
+
+ぶどうのように押し潰した
+%%%%
+[verb]beat like a drum
+
+太鼓のように打ち鳴らした
+%%%%
+[verb]hammer like a gong
+
+銅鑼のように打ち鳴らした
+%%%%
+[verb]pound like an anvil
+
+金床のように叩きつけた
+%%%%
+[verb]flatten like a pancake
+
+パンケーキのようにぺしゃんこにした
+%%%%
+[verb]pound into fine dust
+
+塵になるまで叩きつけた
+%%%%
+[verb]pummel like a punching bag
+
+サンドバッグのように殴り倒した
+%%%%
+[verb]squash like an ant
+
+蟻のようにぺしゃんこにした
+%%%%
+[verb]beat into a bloody pulp
+
+血まみれの肉塊になるまで叩きのめした
+%%%%
+# 程度(動詞の前に置く。's weak point は相手の名前の直後)
+[verb degree]like the proverbial pig
+
+__NONE
+%%%%
+[verb degree]'s weak point
+
+の急所
+%%%%
+[verb degree]like a pig
+
+豚のように
+%%%%
+[verb degree]like a kebab
+
+ケバブの肉のように
+%%%%
+[verb degree]like a pincushion
+
+針山のように
+%%%%
+[verb degree]like a sieve
+
+ふるいのように
+%%%%
+[verb degree]like an onion
+
+玉ねぎのように
+%%%%
+[verb degree]into splinters
+
+木っ端微塵に
+%%%%
+[verb degree]like the proverbial ham
+
+ハムのように
+%%%%
+[verb degree]like a turkey
+
+七面鳥のように
+%%%%
+[verb degree]into a gooey mess
+
+べたべたした肉塊に
+%%%%
+[verb degree]mercilessly
+
+容赦なく
+%%%%
+[verb degree]like the proverbial ant
+
+蟻のように
+%%%%
+# モンスターの攻撃(mon_attack_name、mons_attack_verb)
+[verb]sting
+
+刺した
+%%%%
+[verb]peck
+
+ついばんだ
+%%%%
+[verb]kick
+
+蹴った
+%%%%
+[verb]tail-slap
+
+尻尾で打ちつけた
+%%%%
+[verb]constrict
+
+締めつけた
+%%%%
+[verb]trample
+
+突き飛ばした
+%%%%
+[verb]trunk-slap
+
+鼻で打ちつけた
+%%%%
+[verb]snap closed at
+
+噛みついた
+%%%%
+[verb]splash
+
+水を浴びせた
+%%%%
+[verb]poke
+
+小突いた
+%%%%
+[verb]prod
+
+つついた
+%%%%
+[verb]tickle
+
+くすぐった
+%%%%
+[verb]defenestrate
+
+放り投げた
+%%%%
+[verb]sucker-punch
+
+不意打ちの殴打を加えた
+%%%%
+[verb]elbow
+
+肘で打った
+%%%%
+[verb]pinch
+
+つねった
+%%%%
+[verb]strangle-hug
+
+締め上げた
+%%%%
+[verb]squeeze
+
+締めつけた
+%%%%
+[verb]tease
+
+からかった
+%%%%
+[verb]eye-gouge
+
+眼を抉った
+%%%%
+[verb]karate-kick
+
+空手の蹴りを放った
+%%%%
+[verb]headlock
+
+ヘッドロックをかけた
+%%%%
+[verb]wrestle
+
+取っ組み合いをした
+%%%%
+[verb]trip-wire
+
+罠にかけた
+%%%%
+[verb]kneecap
+
+膝を狙って攻撃した
+%%%%
+[verb]bonk
+
+ゴツンと打った
+%%%%
+[verb]clobber
+
+ぶん殴った
+%%%%
+[verb]punt
+
+蹴飛ばした
+%%%%
+[verb]strangle
+
+締め上げた
+%%%%
+# プレイヤーの補助攻撃の動詞(AuxAttackType::get_verb)
+[verb]pierce
+
+刺し貫いた
+%%%%
+[verb]eel-slap
+
+鰻のような手で打ちすえた
+%%%%
+[verb]shred
+
+ずたずたに切り刻んだ
+%%%%
+[verb]shroompunch
+
+キノコの拳で殴った
+%%%%
+# 補助攻撃の名前(AuxAttackType::get_name)
+[aux verb]grab
+
+掴み
+%%%%
+[aux verb]kick
+
+蹴り
+%%%%
+[aux verb]tentacle spike
+
+棘の生えた触手
+%%%%
+[aux verb]headbutt
+
+頭突き
+%%%%
+[aux verb]peck
+
+ついばみ
+%%%%
+[aux verb]tail-slap
+
+尻尾の一撃
+%%%%
+[aux verb]sting
+
+針
+%%%%
+[aux verb]punch
+
+拳
+%%%%
+[aux verb]off-hand punch
+
+もう一方の手の拳
+%%%%
+[aux verb]off-hand claw
+
+もう一方の手の爪
+%%%%
+[aux verb]off-hand eel-slap
+
+もう一方の鰻のような手
+%%%%
+[aux verb]claw
+
+爪
+%%%%
+[aux verb]tentacle-slap
+
+触手の一撃
+%%%%
+[aux verb]eel-slap
+
+鰻のような手の一撃
+%%%%
+[aux verb]bite
+
+噛みつき
+%%%%
+[aux verb]pseudopods
+
+偽足
+%%%%
+[aux verb]squeeze
+
+締めつけ
+%%%%
+[aux verb]touch
+
+接触
+%%%%
+[aux verb]chomp
+
+大口
+%%%%
+[aux verb]whirl of blades
+
+刃の旋風
+%%%%
+[aux verb]shroompunch
+
+キノコの拳
+%%%%
+[aux verb]slice
+
+刃
+%%%%
+# 首を切り落とす動詞(decapitate)
+[claw verb]rip
+
+切り裂いた
+%%%%
+[claw verb]tear
+
+引きちぎった
+%%%%
+[claw verb]claw
+
+かき切った
+%%%%
+[slice verb]slice
+
+斬り落とした
+%%%%
+[slice verb]lop
+
+刈り取った
+%%%%
+[slice verb]chop
+
+叩き切った
+%%%%
+[slice verb]hack
+
+ぶった切った
+%%%%

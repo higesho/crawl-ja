@@ -1,0 +1,638 @@
+%%%%
+Godly wrath is upon you!
+
+神はあなたに激怒している！
+%%%%
+You've transgressed heavily! Be penitent!
+
+あなたは著しく道を踏み外している！ 懺悔せよ！
+%%%%
+You are under penance.
+
+あなたは贖罪の途上にある。
+%%%%
+You should show more discipline.
+
+あなたは更なる自制を示すべきだ。
+%%%%
+You can bribe the following branches of the dungeon:
+
+あなたは下に記された迷宮の分岐を買収できる:
+%%%%
+not bribed
+
+未買収
+%%%%
+%s is ambivalent towards you.
+
+%sはあなたに曖昧な感情を抱いている。
+%%%%
+%s is almost ready to forgive your sins.
+
+%sはあなたの罪を赦そうとしている。
+%%%%
+%s's wrath is upon you!
+
+%sはあなたに激怒している！
+%%%%
+%s well remembers your sins.
+
+%sはあなたの罪をはっきりと覚えている。
+%%%%
+%s is neutral towards you.
+
+%sはあなたに対して中立である。
+%%%%
+Granted powers:
+
+与えられた能力:
+%%%%
+(Cost)
+
+(コスト)
+%%%%
+%s %s shields you from chaos.
+
+%sは混沌からあなたを%s見守る。
+%%%%
+%s %s shields you from negative energy.
+
+%sは負のエネルギーからあなたを%s守る。
+%%%%
+%s supports your attributes. (+%d)
+
+%sはあなたの能力値を強化する。(+%d)
+%%%%
+some of Vehumet's most lethal spells
+
+ヴェフメットの最も危険な呪文のいくつか
+%%%%
+You can memorise %s.
+
+あなたは%sを覚えることができる。
+%%%%
+You can memorise some of Vehumet's spells.
+
+あなたはヴェフメットから呪文をいくつか教わることができる。
+%%%%
+Your life essence is reduced. (-10% HP)
+
+あなたの生命力は弱められる。(-10% HP)
+%%%%
+Title  -
+
+称号 -
+%%%%
+Favour -
+
+歓心 -
+%%%%
+You are not religious.
+
+あなたは神を信仰していない。
+%%%%
+Are you sure you want to abandon %s?
+
+本当に%sへの信仰を捨て去りますか？
+%%%%
+# ---- 歓心(Favour) ----
+A prized avatar of %s.
+
+あなたは%sの第一の化身だ。
+%%%%
+A favoured servant of %s.
+
+あなたは%sの寵臣だ。
+%%%%
+A glorious shadow in the eyes of %s.
+
+あなたは%sの目に映る栄えある影だ。
+%%%%
+A shining star in the eyes of %s.
+
+あなたは%sの期待の星だ。
+%%%%
+A rising shadow in the eyes of %s.
+
+あなたは%sの目に映る新たな影だ。
+%%%%
+A rising star in the eyes of %s.
+
+あなたは%sのお気に入りだ。
+%%%%
+%s is pleased with you.
+
+%sはあなたに喜んでいる。
+%%%%
+%s is aware of your devotion.
+
+%sはあなたの献身に気付いている。
+%%%%
+%s is noncommittal.
+
+%sはあなたに何も明言しない。
+%%%%
+%s's wrath is beginning to fade.
+
+%sの怒りは薄れ始めている。
+%%%%
+%s' wrath will not burn much longer.
+
+%sの怒りの炎はもう長くは燃えないだろう。
+%%%%
+# ---- アシェンザリの呪縛の表 ----
+Bound item
+
+呪縛された装備
+%%%%
+Curse bonuses
+
+呪いによる補強
+%%%%
+[curse]None
+
+なし
+%%%%
+[ash bound]melded
+
+融合中
+%%%%
+Ashenzari supports the following skill groups because of your curses:
+
+アシェンザリはあなたの呪いに応じて、以下のスキル群を補強する:
+%%%%
+# ---- ヘプリアクルカナの先祖の強化表 ----
+# "XL" とその後ろの空白は表の桁揃えのため半角のまま
+Ancestor Upgrades:
+
+先祖の強化:
+%%%%
+XL              Upgrade
+
+XL              強化内容
+%%%%
+[ancestor upgrade]Flail
+
+フレイル
+%%%%
+[ancestor upgrade]Shield
+
+盾
+%%%%
+[ancestor upgrade]Chain mail (+AC)
+
+鎖かたびら (+AC)
+%%%%
+[ancestor upgrade]Broad axe (flame)
+
+火炎のブロードアックス
+%%%%
+[ancestor upgrade]Tower shield (reflect)
+
+反射のタワーシールド
+%%%%
+[ancestor upgrade]Haste
+
+加速
+%%%%
+[ancestor upgrade]Broad axe (speed)
+
+早業のブロードアックス
+%%%%
+[ancestor upgrade]Quarterstaff
+
+六尺棒
+%%%%
+[ancestor upgrade]Throw Frost
+
+冷気の投射
+%%%%
+[ancestor upgrade]Stone Arrow
+
+石錐の矢
+%%%%
+[ancestor upgrade]Increased melee damage
+
+近接攻撃のダメージ増加
+%%%%
+[ancestor upgrade]Bolt of Magma
+
+溶岩の矢
+%%%%
+[ancestor upgrade]Lajatang (freeze)
+
+冷気のラジャタン
+%%%%
+[ancestor upgrade]Lehudib's Crystal Spear
+
+レフディブの水晶槍
+%%%%
+[ancestor upgrade]Dagger (drain)
+
+吸収のダガー
+%%%%
+[ancestor upgrade]Slow
+
+減速
+%%%%
+[ancestor upgrade]Confuse
+
+混乱
+%%%%
+[ancestor upgrade]Paralyse
+
+麻痺
+%%%%
+[ancestor upgrade]Mass Confusion
+
+集団の混乱
+%%%%
+[ancestor upgrade]Quick blade (antimagic)
+
+反魔法のクイックブレード
+%%%%
+# ---- ゴザーグの買収 ----
+[bribe]$%d
+
+%dゴールド
+%%%%
+# ---- 神罰(Wrath)の画面 ----
+%s forgives followers for abandonment; however, those who later take up the worship of an evil god will be punished. (%s are evil gods.)
+
+%sは自らの元を去る者を赦す。ただし、後に邪悪な神へと改宗した者には懲罰が加えられる。(%sは邪悪な神々である)
+%%%%
+%s forgives followers for abandonment; however, those who later take up the worship of an evil or chaotic god will be scourged. (%s are evil, and %s are chaotic.)
+
+%sは自らの元を去る者を赦す。ただし、後に邪悪な神、もしくは混沌なる神へと改宗した者には懲罰が加えられる。(%sは邪悪な神々、%sは混沌なる神々である)
+%%%%
+%s does not appreciate abandonment, and will call down fearful punishments on disloyal followers!
+
+%sは棄教を喜ばず、不忠義な信徒に恐るべき懲罰をもたらす！
+%%%%
+%s's wrath lasts for a relatively long duration.
+
+%sの怒りは比較的長く続く。
+%%%%
+%s's wrath lasts for a relatively short duration.
+
+%sの怒りは比較的短い間で収まる。
+%%%%
+# ---- その他(Extra)・能力(Powers)の画面 ----
+Decks of power:
+
+力のデッキ:
+%%%%
+stacked deck:
+
+積み札:
+%%%%
+Martial attacks:
+
+武術による攻撃:
+%%%%
+%s's powers are not affected by the Invocations skill.
+
+%sの与える能力は祈祷スキルの影響を受けない。
+%%%%
+%s's powers are based on %s instead of Invocations skill.
+
+%sの与える能力は祈祷スキルではなく%sスキルに左右される。
+%%%%
+# ---- 与えられた能力の一覧 ----
+# [god how] は「〜に」の副詞
+[god how]carefully
+
+注意深く
+%%%%
+[god how]often
+
+しばしば
+%%%%
+[god how]sometimes
+
+時々
+%%%%
+[god how]occasionally
+
+たまに
+%%%%
+[god how]always
+
+常に
+%%%%
+[god how]rarely
+
+まれに
+%%%%
+[god how]completely
+
+完全に
+%%%%
+[god how]mostly
+
+ほぼ
+%%%%
+[god how]partially
+
+部分的に
+%%%%
+%s %sguards your life.
+
+%sは%sあなたの命を守る。
+%%%%
+Orcs frequently recognise you as Beogh's chosen one.
+
+オークたちはしばしばあなたをベオに選ばれし者と認める。
+%%%%
+Orcs sometimes recognise you as one of their own.
+
+オークたちは時々あなたを仲間の一人と認める。
+%%%%
+%s %s shields you from Hell.
+
+%sは地獄からあなたを%s守る。
+%%%%
+%s prevents you from stabbing unaware foes.
+
+%sはあなたが油断している敵を不意打ちすることを禁じる。
+%%%%
+You radiate a large righteous aura, and foes within it are easier to hit.
+
+あなたは強烈に光り輝くオーラを発しており、範囲内の敵に攻撃を当てやすい。
+%%%%
+You radiate a righteous aura, and foes within it are easier to hit.
+
+あなたは光り輝くオーラを発しており、範囲内の敵に攻撃を当てやすい。
+%%%%
+You radiate a small righteous aura, and foes within it are easier to hit.
+
+あなたはほのかに光り輝くオーラを発しており、範囲内の敵に攻撃を当てやすい。
+%%%%
+Jellies are peaceful and will consume items off the floor.
+
+ゼリーたちは友好的で、床のアイテムを消化する。
+%%%%
+Jiyva prevents you from harming jellies.
+
+ジーヴァはあなたがゼリーを傷つけることを禁じる。
+%%%%
+Your health and magic regeneration is very greatly accelerated.
+
+あなたの体力と魔力の回復は非常に大きく促進される。
+%%%%
+Your health and magic regeneration is greatly accelerated.
+
+あなたの体力と魔力の回復は大きく促進される。
+%%%%
+Your health and magic regeneration is accelerated.
+
+あなたの体力と魔力の回復は促進される。
+%%%%
+%s greatly slows your movement.
+
+%sはあなたの動作を非常に遅くする。
+%%%%
+%s slows your movement.
+
+%sはあなたの動作を遅くする。
+%%%%
+%s slightly slows your movement.
+
+%sはあなたの動作をいくらか遅くする。
+%%%%
+You are surrounded by an umbra.\nFoes that die within your umbra may be raised as undead servants.
+
+あなたは影の領域に包まれている。
+影の領域の中で死んだ敵は、不死の従僕として蘇ることがある。
+%%%%
+Your Destruction is augmented by the power of Gehenna.
+
+あなたの破壊はゲヘナの力で強化されている。
+%%%%
+Your Destruction is augmented by the power of Cocytus.
+
+あなたの破壊はコキュートスの力で強化されている。
+%%%%
+Your Destruction is augmented by the power of Tartarus.
+
+あなたの破壊はタルタロスの力で強化されている。
+%%%%
+Your Destruction is augmented by the power of Dis.
+
+あなたの破壊はディスの力で強化されている。
+%%%%
+Your Destruction will be augmented by one of the Four Hells.
+
+あなたの破壊はいずれ四つの地獄のどれかの力で強化される。
+%%%%
+# %s は makhleb_mark_name()(変異名)の訳
+You have been branded with the %s.
+
+あなたは%sを刻まれている。
+%%%%
+# %s は god_powers の文の断片の訳(「〜こと」の形)
+You can %s.
+
+あなたは%sができる。
+%%%%
+# make_cost_description() のコストなし(ability.cc 側の訳に合わせて比較する)
+[ability cost]None
+
+なし
+%%%%
+[god powers]None.
+
+なし
+%%%%
+Jiyva will unlock the Slime Pits vaults.
+
+ジーヴァはスライムの穴の宝物庫を開く。
+%%%%
+# ---- 画面下の切り替え表示 ----
+[god desc tab]Overview
+
+概要
+%%%%
+[god desc tab]Powers
+
+能力
+%%%%
+[god desc tab]Wrath
+
+神の怒り
+%%%%
+[god desc tab]Extra
+
+その他
+%%%%
+# ---- 祭壇での入信 ----
+(no fee if you act now)
+
+(今なら手数料なし)
+%%%%
+(no fee if you join today)
+
+(本日入信なら手数料なし)
+%%%%
+(%d gold; you have %d)
+
+(%dゴールド。所持金 %d)
+%%%%
+[<w>J</w>/<w>Enter</w>]: join
+
+[<w>J</w>/<w>Enter</w>]: 入信する
+%%%%
+[god join]religion
+
+__NONE
+%%%%
+[Y]es or [n]o only, please.
+
+[Y]es か [n]o で答えてください。
+%%%%
+# ---- 神の能力(religion.cc の god_powers)のうち、能力一覧の画面だけで使う
+# 3 つ目の文(general)。gain / loss の文の訳は religion.cc 側の辞書。----
+Zin will cleanse your potions of mutation.
+
+ジンはあなたの変異の薬を浄化する。
+%%%%
+You and your allies can gain power from killing the unholy and evil.
+
+あなたとあなたの仲間は、不浄なものや邪悪なものを倒すことで力を得る。
+%%%%
+Kikubaaqudgha protects you from necromantic miscasts and death curses.
+
+キクバークッグァはあなたを死霊術の呪文失敗と死の呪いから守る。
+%%%%
+Kikubaaqudgha protects you from unholy torment.
+
+キクバークッグァはあなたを不浄な苦痛から守る。
+%%%%
+Yredelemnul will gift you temporary undead servants when you light the torch.
+
+イレデレンヌルはあなたが松明を灯したとき、一時的な不死の従僕を授ける。
+%%%%
+Vehumet aids your destructive spells.
+
+ヴェフメットはあなたの破壊の呪文を助ける。
+%%%%
+Vehumet extends the range of your destructive spells.
+
+ヴェフメットはあなたの破壊の呪文の射程を延ばす。
+%%%%
+Okawaru requires that you fight alone, and prevents you from gaining allies.
+
+オカワルはあなたが単独で戦うことを求め、仲間を得ることを禁じる。
+%%%%
+Okawaru will gift you throwing weapons as you gain piety.
+
+オカワルは信仰心の高まりに応じて投擲武器を授ける。
+%%%%
+Sif Muna will gift you books as you gain piety.
+
+シフ・ムーナは信仰心の高まりに応じて書物を授ける。
+%%%%
+Trog will gift you melee weapons as you gain piety.
+
+トログは信仰心の高まりに応じて近接武器を授ける。
+%%%%
+Nemelex will gift you decks of power as you gain piety.
+
+ネメレクスは信仰心の高まりに応じて力のデッキを授ける。
+%%%%
+Lugonu protects you from the effects of unwielding distortion weapons.
+
+ルゴヌは歪曲の武器を手放したときの影響からあなたを守る。
+%%%%
+Lugonu may banish nearby foes when other gods try to punish you.
+
+ルゴヌは他の神があなたを罰しようとしたとき、近くの敵を追放することがある。
+%%%%
+Beogh will send orc apostles to challenge you in battle as you gain piety.
+
+ベオは信仰心の高まりに応じて、あなたに戦いを挑むオークの使徒を送り込む。
+%%%%
+You can recruit apostles that you defeat into your service.
+
+あなたは打ち負かした使徒を配下に加えることができる。
+%%%%
+Your apostles are sometimes healed when you deal damage.
+
+あなたが敵にダメージを与えると、あなたの使徒は時々回復する。
+%%%%
+Jiyva protects you from corrosive effects.
+
+ジーヴァはあなたを腐蝕効果から守る。
+%%%%
+Jiyva will mutate your body as you gain piety.
+
+ジーヴァは信仰心の高まりに応じてあなたの体を変異させる。
+%%%%
+You may expel jellies when seriously injured.
+
+あなたは深手を負ったときにゼリーを放出することがある。
+%%%%
+You can walk through plants and fire through allied plants.
+
+あなたは植物の間を通り抜けることができ、仲間の植物ごしに射撃することができる。
+%%%%
+Cheibriados slows the effects of poison on you.
+
+ケイブリアドスはあなたが受ける毒の効果を遅くする。
+%%%%
+Ashenzari identifies your possessions.
+
+アシェンザリはあなたの所持品を識別する。
+%%%%
+Ashenzari reveals the unseen.
+
+アシェンザリは見えざるものを明らかにする。
+%%%%
+Ashenzari keeps your mind clear.
+
+アシェンザリはあなたの精神を明晰に保つ。
+%%%%
+Ashenzari protects you from the dungeon's malevolent forces.
+
+アシェンザリはダンジョンの悪意ある力からあなたを守る。
+%%%%
+Your shadow sometimes tangibly mimics your actions.
+
+あなたの影は時々実体を持ってあなたの行動を真似る。
+%%%%
+Gozag turns your defeated foes' bodies to gold.
+
+ゴザーグは倒した敵の体を金貨に変える。
+%%%%
+Your enemies may become distracted by gold.
+
+あなたの敵は輝く金貨の山に惑わされる。
+%%%%
+You are surrounded by a storm.
+
+あなたは嵐に包まれている。
+%%%%
+The storm surrounding you is powerful enough to repel missiles.
+
+あなたを包む嵐は飛び道具を逸らすほど強力だ。
+%%%%
+You adapt resistances upon receiving elemental damage.
+
+あなたは属性ダメージを受けると、それに対する耐性を得る。
+%%%%
+Your aura of power can strike those that harm you.
+
+あなたの力のオーラは、あなたを傷つけた者を打ち据えることがある。
+%%%%
+Your ancestor manifests to aid you.
+
+あなたの先祖があなたを助けるために姿を現す。
+%%%%
+You drain nearby creatures when transferring your ancestor.
+
+あなたは先祖を転移させるとき、周囲のモンスターから生命力を吸い取る。
+%%%%
+You are resistant to fire.
+
+あなたは火炎に耐性がある。
+%%%%

@@ -1,0 +1,537 @@
+%%%%
+You feel a bit more experienced.
+
+あなたは少し経験を積んだ気がした。
+%%%%
+# simple_god_message()(神の名前の後ろに続く)
+protects %s from harm!
+
+は%sを危害から護った！
+%%%%
+# 引数: 神の名前、相手、「。」または「！」
+%s heals %s%s
+
+%sは%sを癒した%s
+%%%%
+With an infernal shudder, the power ruling this place vanishes!
+
+恐ろしい振動とともに、この場を支配する力が消滅した！
+%%%%
+With an infernal noise, the power ruling this place vanishes!
+
+恐ろしい轟音とともに、この場を支配する力が消滅した！
+%%%%
+# 召喚されたものが消えるとき。引数は [poof] の訳
+{poof_msg}!
+
+は%s！
+%%%%
+# 「<名前>の」の後ろに続く
+corpse {poof_msg}!
+
+死体は%s！
+%%%%
+With its final breath, %s offers up its power to the beasts of the wild!
+
+息を引き取る寸前、%sは野生の獣たちに自らの力を分け与えた！
+%%%%
+seems to grow more fierce.
+
+はさらに荒れ狂った。
+%%%%
+# 引数: 相手、[siphon]poison など
+You siphon power from %s's fading %s.
+
+あなたは%sの消えゆく%sから力を吸い取った。
+%%%%
+[siphon]poison and negative energy
+
+毒と負のエネルギー
+%%%%
+[siphon]poison
+
+毒
+%%%%
+[siphon]negative energy
+
+負のエネルギー
+%%%%
+You feel the power of %s in you as your rage grows.
+
+あなたは怒りの増大とともに、内なる%sの力を意識した。
+%%%%
+The necklace of Bloodlust glows a violent red.
+
+血に飢えた首飾りが真っ赤に輝いた。
+%%%%
+detonates feebly.
+
+は弱々しく爆散した。
+%%%%
+falls from the air.
+
+は地面に落下した。
+%%%%
+The tentacle is hauled back through the portal!
+
+触手はポータルの向こうに引き戻された！
+%%%%
+With a roar, the tentacle is hauled back through the portal!
+
+轟音と共に、触手はポータルの向こうに引き戻された！
+%%%%
+%s is blown up!
+
+%sは爆破された！
+%%%%
+%s is destroyed!
+
+%sは破壊された！
+%%%%
+%s is killed!
+
+%sは殺された！
+%%%%
+# 引数: 相手、動詞(過去形)
+You %s %s!
+
+あなたは%sを%s！
+%%%%
+[verb]blow up
+
+爆破した
+%%%%
+[verb]destroy
+
+破壊した
+%%%%
+[verb]kill
+
+殺した
+%%%%
+That felt strangely unrewarding.
+
+あなたは奇妙な徒労感に襲われた。
+%%%%
+is blown up!
+
+は爆破された！
+%%%%
+is destroyed!
+
+は破壊された！
+%%%%
+dies!
+
+は死んだ！
+%%%%
+fades into mist!
+
+は霧の中に消えていった！
+%%%%
+crumbles into dust!
+
+の体は塵となって崩れ去った！
+%%%%
+crumbles away.
+
+は崩れ落ちた。
+%%%%
+falls limply to the ground.
+
+はだらりと地面に垂れ下がった。
+%%%%
+falls apart.
+
+はバラバラになった。
+%%%%
+A nearby %s withers and dies.
+
+近くにいる%sは枯れ果てて死んだ。
+%%%%
+fades away.
+
+は消え去った。
+%%%%
+The starspawn's tentacles wither and die.
+
+落とし子の触手は枯れ果てて、崩れ落ちた。
+%%%%
+%s has departed this plane of existence.
+
+祖霊『%s』はこの次元からいなくなった。
+%%%%
+The terrible wounds on %s body vanish.
+
+%s体の裂傷は消え去った。
+%%%%
+The forest abruptly stops moving.
+
+不意に森のざわめきが止んだ。
+%%%%
+is incinerated.
+
+は燃え尽きた。
+%%%%
+drowns.
+
+は溺れた。
+%%%%
+seems to find hidden reserves of power!
+
+の秘められた力が覚醒したようだ！
+%%%%
+likewise turns neutral.
+
+もまた中立化した。
+%%%%
+# ---- 以下は 0.34 で手で追加(mon-death.cc) ----
+%s is intact enough to wear.
+
+%sはそのまま装着できるほど無傷だ。
+%%%%
+# 引数: モンスターの種類名、杖
+%s bone magically twists into %s.
+
+%sの骨が魔法のようにねじれて%sになった。
+%%%%
+%s rises to serve you!
+
+%sはあなたに仕えるべく起き上がった！
+%%%%
+%s attempts to avoid another deathblow, but is too exhausted to transform.
+
+%sは再びとどめの一撃を避けようとしたが、疲れ果てていて変身できなかった。
+%%%%
+attempts to avoid the deathblow, but fails!
+
+はとどめの一撃を避けようとしたが、失敗した！
+%%%%
+%s avoids the killing blow by scattering into a rainbow of bats!
+
+%sは虹色の蝙蝠の群れに散って、とどめの一撃を避けた！
+%%%%
+The bat shimmers and %s reappears in a puff of iridescent mist.
+
+蝙蝠が揺らめき、虹色の霧とともに%sが再び姿を現した。
+%%%%
+The bats swarm back together and %s reappears in a puff of iridescent mist.
+
+蝙蝠の群れが寄り集まり、虹色の霧とともに%sが再び姿を現した。
+%%%%
+pulls their child back from the Abyss.
+
+は我が子を深淵から引き戻した。
+%%%%
+A buggy dead thing appears!
+
+バグった死体が現れた！
+%%%%
+The dead are swimming!
+
+死者が泳ぎだした！
+%%%%
+The dead are flying!
+
+死者が飛びはじめた！
+%%%%
+The dead are slithering!
+
+死者が這いずりだした！
+%%%%
+The dead are crawling!
+
+死者が這い回りだした！
+%%%%
+The dead are hopping!
+
+死者が跳ねまわりだした！
+%%%%
+The dead are walking!
+
+死者が歩きだした！
+%%%%
+# _make_derived_undead() の mist は freezing / black / glowing
+A freezing mist starts to gather...
+
+氷混じりの霧が寄り集まってきた……
+%%%%
+A black mist starts to gather...
+
+黒い霧が寄り集まってきた……
+%%%%
+A glowing mist starts to gather...
+
+輝く霧が寄り集まってきた……
+%%%%
+A freezing mist gathers momentarily, then fades.
+
+氷混じりの霧が一瞬集まったが、すぐ消え去った。
+%%%%
+A black mist gathers momentarily, then fades.
+
+黒い霧が一瞬集まったが、すぐ消え去った。
+%%%%
+A glowing mist gathers momentarily, then fades.
+
+輝く霧が一瞬集まったが、すぐ消え去った。
+%%%%
+Kikubaaqudgha cackles.
+
+キクバークッグァがけたたましく笑った。
+%%%%
+# 引数: モンスター、変身先の種類名
+For just a moment, %s begins to look like %s, then it explodes!
+
+ほんの一瞬、%sは%sのような姿になりかけ、そして爆発した！
+%%%%
+%s wails in agony as it relives its own death.
+
+%sは自らの死を再び味わい、苦悶の叫びをあげた。
+%%%%
+You feel as though you may have cheated fate.
+
+あなたは運命を出し抜いたような気がした。
+%%%%
+You feel an ambush drawing close....
+
+あなたは待ち伏せが迫りつつあるのを感じた……。
+%%%%
+# 引数: 相手の所有格(「〜の」)
+%s spirit is torn from its body!
+
+%s魂が肉体から引き剥がされた！
+%%%%
+%s spirit is momentarily torn from its body, then fades!
+
+%s魂は一瞬肉体から引き剥がされたが、消えてしまった！
+%%%%
+# 「<名前>の」の後ろに続く
+shape twists and changes as it dies.
+
+姿は死とともに捻れ、変化した。
+%%%%
+returns to its original shape as it dies.
+
+は死とともに本来の姿へと戻った。
+%%%%
+You feel the ancient rage of your axe.
+
+あなたは斧に宿る太古の怒りを感じた。
+%%%%
+The wailing of the fallen reaches a fever pitch!
+
+倒れし者たちの嘆きが最高潮に達した！
+%%%%
+%s allies are healed!
+
+%s仲間たちの傷が癒えた！
+%%%%
+returns to where it belongs.
+
+は本来いるべき場所へと還っていった。
+%%%%
+You feel your strength returning.
+
+あなたは力が戻ってくるのを感じた。
+%%%%
+# 引数: モンスターの種類名
+Your %s simulacrum begins to move.
+
+あなたの%sの幻像が動き始めた。
+%%%%
+%s falls apart, revealing its core!
+
+%sは崩れ落ち、その核があらわになった！
+%%%%
+falls apart and the last of its fire goes out.
+
+は崩れ落ち、最後の炎が消えた。
+%%%%
+You feel your sun fade away.
+
+あなたは自分の太陽が消え去るのを感じた。
+%%%%
+Your magic returns to you!
+
+あなたの魔力が戻ってきた！
+%%%%
+%s broadcasts a psychic alarm as it disappears.
+
+%sは消える間際に念波の警報を発した。
+%%%%
+%s broadcasts a psychic alarm as it dies.
+
+%sは死の間際に念波の警報を発した。
+%%%%
+You feel something broadcast a psychic alarm.
+
+あなたは何かが念波の警報を発したのを感じた。
+%%%%
+Tendrils of ice devour %s body!
+
+氷の蔓が%s体を喰らい尽くした！
+%%%%
+vaporises!
+
+は蒸発した！
+%%%%
+is driven back to you.
+
+はあなたのもとへ追い返された。
+%%%%
+returns to the armoury!
+
+は武器庫へ戻っていった！
+%%%%
+turns to gold and falls from the air.
+
+は黄金に変わり、地面に落ちた。
+%%%%
+briefly glints gold and then vanishes.
+
+は一瞬金色に輝いて消え去った。
+%%%%
+# 時間切れで消えるとき(simple_monster_message、名前の後ろに続く)
+turns to dust.
+
+は塵と化した。
+%%%%
+returns to its hive.
+
+は巣へと帰っていった。
+%%%%
+returns to the shadows of the Dungeon.
+
+はダンジョンの闇の中へと帰っていった。
+%%%%
+collapses into dust.
+
+は崩れて塵になった。
+%%%%
+melts away.
+
+は溶けて消えた。
+%%%%
+runs out of power.
+
+は動力が尽きた。
+%%%%
+expends the last of its power.
+
+は最後の力を使い果たした。
+%%%%
+implodes with a snap.
+
+はパチンと音を立てて潰れた。
+%%%%
+expends the last of its anger.
+
+は最後の怒りを使い果たした。
+%%%%
+shrivels and dies.
+
+は萎びて死んだ。
+%%%%
+A nearby %s perishes wretchedly.
+
+近くにいる%sは惨めに息絶えた。
+%%%%
+A wave of disorienting energy ripples outward as you feel the reach of Zot diminish.
+
+方向感覚を狂わせるエネルギーの波が広がり、ゾットの力が弱まったのを感じた。
+%%%%
+%s is cast back into its original reality.
+
+%sは本来の現実へと送り返された。
+%%%%
+The kraken's tentacles disappear.
+
+クラーケンの触手は消え去った。
+%%%%
+Plague seeps from the dead %s.
+
+死んだ%sから疫病が滲み出した。
+%%%%
+%s falls into the lava!
+
+%sは溶岩の中に転げ落ちた！
+%%%%
+%s falls into the water!
+
+%sは水の中に転げ落ちた！
+%%%%
+sinks to the bottom.
+
+は底へと沈んでいった。
+%%%%
+gets angry again!
+
+は再び怒り出した！
+%%%%
+# hogs_to_humans()
+No longer under Kirke's spell, the hog returns to its human form!
+
+『キルケー』の魔法が解け、豚は人間の姿に戻った！
+%%%%
+No longer under Kirke's spell, the hog returns to its original form!
+
+『キルケー』の魔法が解け、豚は元の姿に戻った！
+%%%%
+No longer under Kirke's spell, the hogs return to their human forms!
+
+『キルケー』の魔法が解け、豚の群れは人間の姿に戻った！
+%%%%
+No longer under Kirke's spell, the hogs return to their original forms!
+
+『キルケー』の魔法が解け、豚の群れは元の姿に戻った！
+%%%%
+# summoned_poof_msg() の訳({poof_msg}! の %s に入る)
+[poof]disappears in a puff of smoke
+
+煙とともに消え去った
+%%%%
+[poof]dissolves into shadows
+
+影の中に溶けこんでいった
+%%%%
+[poof]disappears in a burst of colours
+
+色とりどりの光とともに消え去った
+%%%%
+[poof]degenerates into a cloud of primal chaos
+
+原初の混沌の渦へと溶けこんでいった
+%%%%
+[poof]shimmers and vanishes
+
+揺らめいて消え去った
+%%%%
+[poof]dissolves into sparkling lights
+
+きらめく光となって消え去った
+%%%%
+[poof]returns to the grave
+
+墓へと還っていった
+%%%%
+[poof]fades away
+
+薄れて消えていった
+%%%%
+[poof]turns back into a lifeless stick
+
+生命のない棒切れに戻った
+%%%%
+[poof]dissolves into a puddle of slime
+
+溶けてねばねばした水たまりになった
+%%%%
+[poof]returns to the deep
+
+深淵へと還っていった
+%%%%
+[poof]disperses
+
+散り散りになって消えた
+%%%%

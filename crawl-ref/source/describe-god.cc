@@ -25,6 +25,7 @@
 #include "god-type.h"
 #include "items.h"
 #include "item-name.h"
+#include "japanese.h"
 #include "libutil.h"
 #include "menu.h"
 #include "message.h"
@@ -89,38 +90,39 @@ static string _describe_favour(god_type which_god)
     if (player_under_penance())
     {
         const int penance = you.penance[which_god];
-        return (penance >= 50) ? "Godly wrath is upon you!" :
-               (penance >= 20) ? "You've transgressed heavily! Be penitent!" :
-               (penance >=  5) ? "You are under penance."
-                               : "You should show more discipline.";
+        return jtrans((penance >= 50) ? "Godly wrath is upon you!" :
+                      (penance >= 20) ? "You've transgressed heavily! Be penitent!" :
+                      (penance >=  5) ? "You are under penance."
+                                      : "You should show more discipline.");
     }
 
+    // 訳は jtrans/xom.txt("a plaything of Xom." など)
     if (which_god == GOD_XOM)
-        return uppercase_first(describe_xom_favour());
+        return jtrans(describe_xom_favour());
 
 
-    const string godname = god_name(which_god);
+    const string godname = god_name_j(which_god);
     switch (god_favour_rank(which_god))
     {
-        case 7:  return "A prized avatar of " + godname + ".";
-        case 6:  return "A favoured servant of " + godname + ".";
+        case 7:  return make_stringf(jtransc("A prized avatar of %s."), godname.c_str());
+        case 6:  return make_stringf(jtransc("A favoured servant of %s."), godname.c_str());
         case 5:
 
             if (you_worship(GOD_DITHMENOS))
-                return "A glorious shadow in the eyes of " + godname + ".";
+                return make_stringf(jtransc("A glorious shadow in the eyes of %s."), godname.c_str());
             else
-                return "A shining star in the eyes of " + godname + ".";
+                return make_stringf(jtransc("A shining star in the eyes of %s."), godname.c_str());
 
         case 4:
 
             if (you_worship(GOD_DITHMENOS))
-                return "A rising shadow in the eyes of " + godname + ".";
+                return make_stringf(jtransc("A rising shadow in the eyes of %s."), godname.c_str());
             else
-                return "A rising star in the eyes of " + godname + ".";
+                return make_stringf(jtransc("A rising star in the eyes of %s."), godname.c_str());
 
-        case 3:  return uppercase_first(godname) + " is pleased with you.";
-        case 2:  return uppercase_first(godname) + " is aware of your devotion.";
-        default: return uppercase_first(godname) + " is noncommittal.";
+        case 3:  return make_stringf(jtransc("%s is pleased with you."), godname.c_str());
+        case 2:  return make_stringf(jtransc("%s is aware of your devotion."), godname.c_str());
+        default: return make_stringf(jtransc("%s is noncommittal."), godname.c_str());
     }
 }
 
@@ -257,31 +259,45 @@ string god_title(god_type which_god, species_type which_species, int piety)
     else
         title = divine_title[which_god][_piety_level(piety)];
 
+    // 日本語: 称号を [title] で訳し(data-skills.txt)、置換する語も日本語にする
+    // (data-species.txt の [spec adj] [spec genus] [walking] [walker] [child])。
+    // skills.cc の skill_title() はこの結果をそのまま使う。
+    const string walk = species::walking_title(which_species);
     const map<string, string> replacements =
     {
-        { "Adj", species::name(which_species, species::SPNAME_ADJ) },
-        { "Genus", species::name(which_species, species::SPNAME_GENUS) },
-        { "Walking", species::walking_title(which_species) + "ing" },
-        { "Walker", species::walking_title(which_species) + "er" },
-        { "Child", species::child_name(which_species) },
-        { "Orc", species::orc_name(which_species) },
+        { "Adj", tagged_jtrans("[spec adj]",
+                     species::name(which_species, species::SPNAME_ADJ)) },
+        { "Genus", tagged_jtrans("[spec genus]",
+                       species::name(which_species, species::SPNAME_GENUS)) },
+        { "Walking", tagged_jtrans("[walking]", walk) },
+        { "Walker", tagged_jtrans("[walker]", walk) },
+        { "Child", tagged_jtrans("[child]", species::child_name(which_species)) },
+        { "Orc", jtrans(species::orc_name(which_species)) },
     };
 
-    return replace_keys(title, replacements);
+    return replace_keys(tagged_jtrans("[title]", title), replacements);
+}
+
+// 表示幅で揃える(setw はバイト数で数えるので日本語では崩れる)
+static string _pad_to_width(const string &s, int width)
+{
+    const int w = strwidth(s);
+    return w >= width ? s + " " : s + string(width - w, ' ');
 }
 
 static string _describe_item_curse(const item_def& item)
 {
     if (!item.props.exists(CURSE_KNOWLEDGE_KEY))
-        return "None";
+        return jtrans("[curse]None");
 
     const CrawlVector &curses = item.props[CURSE_KNOWLEDGE_KEY].get_vector();
 
     if (curses.empty())
-        return "None";
+        return jtrans("[curse]None");
 
+    // curse_name() は日本語を返す
     return comma_separated_fn(curses.begin(), curses.end(),
-            curse_name, ", ", ", ");
+            curse_name, "、", "、");
 }
 
 static string _describe_ash_skill_boost()
@@ -289,8 +305,8 @@ static string _describe_ash_skill_boost()
     ostringstream desc;
     desc.setf(ios::left);
     desc << "<white>";
-    desc << setw(40) << "Bound item";
-    desc << setw(30) << "Curse bonuses";
+    desc << _pad_to_width(jtrans("Bound item"), 40);
+    desc << _pad_to_width(jtrans("Curse bonuses"), 30);
     desc << "</white>\n";
 
     vector<item_def*> eq = you.equipment.get_slot_items(SLOT_ALL_EQUIPMENT, true);
@@ -300,8 +316,9 @@ static string _describe_ash_skill_boost()
         {
             const bool meld = item_is_melded(*item);
             desc << (meld ? "<darkgrey>" : "<lightred>");
-            desc << setw(40) << item->name(DESC_QUALNAME, true, false, false);
-            desc << setw(30) << (meld ? "melded" : _describe_item_curse(*item));
+            desc << _pad_to_width(item->name(DESC_QUALNAME, true, false, false), 40);
+            desc << _pad_to_width(meld ? jtrans("[ash bound]melded")
+                                       : _describe_item_curse(*item), 30);
             desc << (meld ? "</darkgrey>" : "</lightred>");
             desc << "\n";
         }
@@ -361,14 +378,18 @@ static string _describe_ancestor_upgrades()
 
     if (upgrades)
     {
-        desc = "Ancestor Upgrades:\n\n<white>XL              Upgrade\n</white>";
+        desc = jtrans_notrim("Ancestor Upgrades:\n\n")
+               + "<white>" + jtrans_notrim("XL              Upgrade\n")
+               + "</white>";
         for (auto &entry : *upgrades)
         {
+            // 強化内容の訳は jtrans/describe-god.txt の [ancestor upgrade]
             desc += make_stringf("%s%2d              %s%s\n",
                                  you.experience_level < entry.first
                                      ? "<darkgrey>" : "",
                                  entry.first,
-                                 entry.second.c_str(),
+                                 tagged_jtransc("[ancestor upgrade]",
+                                                entry.second),
                                  you.experience_level < entry.first
                                      ? "</darkgrey>" : "");
         }
@@ -415,24 +436,24 @@ static void _list_bribable_branches(vector<branch_type> &targets)
  */
 static string _describe_branch_bribability()
 {
-    string ret = "You can bribe the following branches of the dungeon:\n";
+    string ret = jtrans_notrim("You can bribe the following branches of the dungeon:\n");
     vector<branch_type> targets;
     _list_bribable_branches(targets);
 
-    size_t width = 0;
+    int width = 0;
     for (branch_type br : targets)
-        width = max(width, strlen(branches[br].shortname));
+        width = max(width, strwidth(branch_name_j(branches[br].shortname)));
 
     for (branch_type br : targets)
     {
         string line = " ";
-        line += branches[br].shortname;
-        line += string(width + 3 - strwidth(line), ' ');
+        line += branch_name_j(branches[br].shortname);
+        line += string(max(1, width + 3 - strwidth(line)), ' ');
 
         if (!branch_bribe[br])
-            line += "not bribed";
+            line += jtrans("not bribed");
         else
-            line += make_stringf("$%d", branch_bribe[br]);
+            line += make_stringf(jtransc("[bribe]$%d"), branch_bribe[br]);
 
         ret += line + "\n";
     }
@@ -469,33 +490,37 @@ static string _describe_god_wrath_causes(god_type which_god)
         // XXX: refactor this if any god hates chaotic but not evil gods
     }
 
+    auto god_name_ja = [](god_type god) { return god_name_j(god); };
+
     switch (which_god)
     {
         case GOD_SHINING_ONE:
         case GOD_ELYVILON:
-            return uppercase_first(god_name(which_god)) +
-                   " forgives followers for abandonment; however, those who"
-                   " later take up the worship of an evil god will be"
-                   " punished. (" +
-                   comma_separated_fn(begin(evil_gods), end(evil_gods),
-                                      bind(god_name, placeholders::_1, false)) +
-                   " are evil gods.)";
+            return make_stringf(jtransc("%s forgives followers for abandonment; "
+                                        "however, those who later take up the "
+                                        "worship of an evil god will be "
+                                        "punished. (%s are evil gods.)"),
+                                god_name_jc(which_god),
+                                comma_separated_fn(begin(evil_gods), end(evil_gods),
+                                                   god_name_ja, "、", "、").c_str());
 
         case GOD_ZIN:
-            return uppercase_first(god_name(which_god)) +
-                   " forgives followers for abandonment; however, those who"
-                   " later take up the worship of an evil or chaotic god will"
-                   " be scourged. (" +
-                   comma_separated_fn(begin(evil_gods), end(evil_gods),
-                                      bind(god_name, placeholders::_1, false)) +
-                   " are evil, and " +
-                   comma_separated_fn(begin(chaotic_gods), end(chaotic_gods),
-                                      bind(god_name, placeholders::_1, false)) +
-                   " are chaotic.)";
+            return make_stringf(jtransc("%s forgives followers for abandonment; "
+                                        "however, those who later take up the "
+                                        "worship of an evil or chaotic god will "
+                                        "be scourged. (%s are evil, and %s are "
+                                        "chaotic.)"),
+                                god_name_jc(which_god),
+                                comma_separated_fn(begin(evil_gods), end(evil_gods),
+                                                   god_name_ja, "、", "、").c_str(),
+                                comma_separated_fn(begin(chaotic_gods),
+                                                   end(chaotic_gods),
+                                                   god_name_ja, "、", "、").c_str());
         default:
-            return uppercase_first(god_name(which_god)) +
-                   " does not appreciate abandonment, and will call down"
-                   " fearful punishments on disloyal followers!";
+            return make_stringf(jtransc("%s does not appreciate abandonment, "
+                                        "and will call down fearful punishments "
+                                        "on disloyal followers!"),
+                                god_name_jc(which_god));
     }
 }
 
@@ -515,9 +540,10 @@ static formatted_string _god_wrath_description(god_type which_god)
     if (which_god != GOD_RU) // Permanent wrath.
     {
         const bool long_wrath = initial_wrath_penance_for(which_god) > 30;
-        _add_par(desc, apostrophise(uppercase_first(god_name(which_god)))
-                              + " wrath lasts for a relatively " +
-                              (long_wrath ? "long" : "short") + " duration.");
+        _add_par(desc, make_stringf(jtransc(long_wrath
+                        ? "%s's wrath lasts for a relatively long duration."
+                        : "%s's wrath lasts for a relatively short duration."),
+                                    god_name_jc(which_god)));
     }
 
     return desc;
@@ -542,13 +568,13 @@ static formatted_string _beogh_extra_description()
 static string _describe_deck_summary()
 {
     ostringstream desc;
-    desc << "Decks of power:\n";
+    desc << jtrans_notrim("Decks of power:\n");
     for (int i = FIRST_PLAYER_DECK; i <= LAST_PLAYER_DECK; i++)
         desc << " " << deck_status((deck_type) i) << "\n";
 
     string stack = stack_contents();
     if (!stack.empty())
-        desc << "\n stacked deck: " << stack << "\n";
+        desc << "\n " << jtrans_notrim("stacked deck: ") << stack << "\n";
 
     return desc.str();
 }
@@ -565,7 +591,7 @@ static formatted_string _god_extra_description(god_type which_god)
             if (have_passive(passive_t::bondage_skill_boost))
             {
                 desc.cprintf("\n");
-                _add_par(desc, "Ashenzari supports the following skill groups because of your curses:");
+                _add_par(desc, jtrans("Ashenzari supports the following skill groups because of your curses:"));
                 _add_par(desc,  _describe_ash_skill_boost());
             }
             break;
@@ -586,7 +612,7 @@ static formatted_string _god_extra_description(god_type which_god)
                 _add_par(desc, _describe_deck_summary());
             break;
         case GOD_WU_JIAN:
-            _add_par(desc, "Martial attacks:");
+            _add_par(desc, jtrans("Martial attacks:"));
             desc += formatted_string::parse_string(
                         getLongDescription(god_name(which_god) + " extra"));
             break;
@@ -614,13 +640,14 @@ static string _get_god_misc_info(god_type which_god)
         case SK_INVOCATIONS:
             break;
         case SK_NONE:
-            info += uppercase_first(apostrophise(god_name(which_god))) +
-                " powers are not affected by the Invocations skill.";
+            info += make_stringf(jtransc("%s's powers are not affected by the "
+                                         "Invocations skill."),
+                                 god_name_jc(which_god));
             break;
         default:
-            info += uppercase_first(apostrophise(god_name(which_god))) +
-                    " powers are based on " + skill_name(skill) + " instead"
-                    " of Invocations skill.";
+            info += make_stringf(jtransc("%s's powers are based on %s instead "
+                                         "of Invocations skill."),
+                                 god_name_jc(which_god), skill_name_jc(skill));
             break;
     }
 
@@ -660,10 +687,10 @@ static string _raw_penance_message(god_type which_god)
     if (penance > 0 && is_good_god(which_god))
     {
         if (is_good_god(you.religion))
-            return "%s is ambivalent towards you.";
+            return jtrans("%s is ambivalent towards you.");
         if (!god_hates_your_god(which_god))
         {
-            return "%s is almost ready to forgive your sins.";
+            return jtrans("%s is almost ready to forgive your sins.");
                  // == "Come back to the one true church!"
         }
     }
@@ -671,18 +698,18 @@ static string _raw_penance_message(god_type which_god)
     const int initial_penance = initial_wrath_penance_for(which_god);
     // could do some math tricks to turn this into a table, but it seems fiddly
     if (penance > initial_penance * 3 / 4)
-        return "%s's wrath is upon you!";
+        return jtrans("%s's wrath is upon you!");
     if (penance > initial_penance / 2)
-        return "%s well remembers your sins.";
+        return jtrans("%s well remembers your sins.");
     if (penance > initial_penance / 4)
-        return "%s's wrath is beginning to fade.";
+        return jtrans("%s's wrath is beginning to fade.");
     if (penance > 0)
     {
         if (which_god == GOD_IGNIS)
-            return "%s' wrath will not burn much longer.";
-        return "%s is almost ready to forgive your sins.";
+            return jtrans("%s' wrath will not burn much longer.");
+        return jtrans("%s is almost ready to forgive your sins.");
     }
-    return "%s is neutral towards you.";
+    return jtrans("%s is neutral towards you.");
 }
 
 /**
@@ -695,9 +722,9 @@ static string _raw_penance_message(god_type which_god)
  */
 static string _god_penance_message(god_type which_god)
 {
+    // message は訳済みの書式(%s 1 つ)
     const string message = _raw_penance_message(which_god);
-    return make_stringf(message.c_str(),
-                        uppercase_first(god_name(which_god)).c_str());
+    return make_stringf(message.c_str(), god_name_jc(which_god));
 }
 
 /**
@@ -714,11 +741,11 @@ static formatted_string _describe_god_powers(god_type which_god)
     int piety = you_worship(which_god) ? you.piety() : 0;
 
     desc.textcolour(LIGHTGREY);
-    const char *header = "Granted powers:";
-    const char *cost   = "(Cost)";
-    desc.cprintf("\n\n%s%*s%s\n", header,
-            80 - strwidth(header) - strwidth(cost),
-            "", cost);
+    const string header = jtrans("Granted powers:");
+    const string cost   = jtrans("(Cost)");
+    desc.cprintf("\n\n%s%*s%s\n", header.c_str(),
+            max(1, 80 - strwidth(header) - strwidth(cost)),
+            "", cost.c_str());
 
     bool have_any = false;
 
@@ -737,22 +764,22 @@ static formatted_string _describe_god_powers(god_type which_god)
     {
         have_any = true;
 
-        const char *how = "";
+        string how;
 
         if (god_gives_passive(which_god, passive_t::lifesaving))
         {
-            how = (piety >= piety_breakpoint(5)) ? "carefully " :
-                  (piety >= piety_breakpoint(3)) ? "often " :
-                  (piety >= piety_breakpoint(1)) ? "sometimes "
-                                                 : "occasionally ";
+            how = jtrans((piety >= piety_breakpoint(5)) ? "[god how]carefully" :
+                         (piety >= piety_breakpoint(3)) ? "[god how]often" :
+                         (piety >= piety_breakpoint(1)) ? "[god how]sometimes"
+                                                        : "[god how]occasionally");
         }
         else
-            how = (piety >= piety_breakpoint(5)) ? "sometimes "
-                                                 : "occasionally ";
+            how = jtrans((piety >= piety_breakpoint(5)) ? "[god how]sometimes"
+                                                        : "[god how]occasionally");
 
-        desc.cprintf("%s %sguards your life.\n",
-                uppercase_first(god_name(which_god)).c_str(),
-                how);
+        desc.cprintf(jtrans_notrimc("%s %sguards your life.\n"),
+                god_name_jc(which_god),
+                how.c_str());
     }
 
     switch (which_god)
@@ -766,77 +793,81 @@ static formatted_string _describe_god_powers(god_type which_god)
             desc.textcolour(DARKGREY);
 
         if (piety >= piety_breakpoint(5))
-            desc.cprintf("Orcs frequently recognise you as Beogh's chosen one.\n");
+            desc.cprintf("%s", jtrans_notrimc("Orcs frequently recognise you as Beogh's chosen one.\n"));
         else
-            desc.cprintf("Orcs sometimes recognise you as one of their own.\n");
+            desc.cprintf("%s", jtrans_notrimc("Orcs sometimes recognise you as one of their own.\n"));
     }
     break;
 
     case GOD_ZIN:
     {
         have_any = true;
-        const char *how =
-            (piety >= piety_breakpoint(5)) ? "always" :
-            (piety >= piety_breakpoint(3)) ? "often" :
-            (piety >= piety_breakpoint(1)) ? "sometimes" :
-                                             "occasionally";
+        string how = jtrans(
+            (piety >= piety_breakpoint(5)) ? "[god how]always" :
+            (piety >= piety_breakpoint(3)) ? "[god how]often" :
+            (piety >= piety_breakpoint(1)) ? "[god how]sometimes" :
+                                             "[god how]occasionally");
 
-        desc.cprintf("%s %s shields you from chaos.\n",
-                uppercase_first(god_name(which_god)).c_str(), how);
+        desc.cprintf(jtrans_notrimc("%s %s shields you from chaos.\n"),
+                god_name_jc(which_god), how.c_str());
 
-        how =
-            (piety >= piety_breakpoint(5)) ? "often" :
-            (piety >= piety_breakpoint(3)) ? "sometimes" :
-            (piety >= piety_breakpoint(1)) ? "occasionally" :
-                                             "rarely";
-        desc.cprintf("%s %s shields you from Hell.\n",
-                uppercase_first(god_name(which_god)).c_str(), how);
+        how = jtrans(
+            (piety >= piety_breakpoint(5)) ? "[god how]often" :
+            (piety >= piety_breakpoint(3)) ? "[god how]sometimes" :
+            (piety >= piety_breakpoint(1)) ? "[god how]occasionally" :
+                                             "[god how]rarely");
+        desc.cprintf(jtrans_notrimc("%s %s shields you from Hell.\n"),
+                god_name_jc(which_god), how.c_str());
         break;
     }
 
     case GOD_SHINING_ONE:
     {
         have_any = true;
-        desc.cprintf("%s prevents you from stabbing unaware foes.\n",
-                uppercase_first(god_name(which_god)).c_str());
+        desc.cprintf(jtrans_notrimc("%s prevents you from stabbing unaware foes.\n"),
+                god_name_jc(which_god));
 
         const int halo_size = you_worship(which_god) ? you.halo_radius() : -1;
         if (halo_size < 0)
             desc.textcolour(DARKGREY);
         else
             desc.textcolour(god_colour(which_god));
-        desc.cprintf("You radiate a%s righteous aura, and foes within it are "
-                "easier to hit.\n",
-                halo_size > 5 ? " large" :
-                halo_size > 3 ? "" :
-                                " small");
+        desc.cprintf("%s", jtrans_notrimc(
+                halo_size > 5 ? "You radiate a large righteous aura, and foes "
+                                "within it are easier to hit.\n" :
+                halo_size > 3 ? "You radiate a righteous aura, and foes "
+                                "within it are easier to hit.\n"
+                              : "You radiate a small righteous aura, and foes "
+                                "within it are easier to hit.\n"));
 
         if (piety >= piety_breakpoint(1))
             desc.textcolour(god_colour(which_god));
         else
             desc.textcolour(DARKGREY);
-        const char *how =
-            (piety >= piety_breakpoint(5)) ? "completely" :
-            (piety >= piety_breakpoint(3)) ? "mostly" :
-                                             "partially";
-        desc.cprintf("%s %s shields you from negative energy.\n",
-                uppercase_first(god_name(which_god)).c_str(), how);
+        const string how = jtrans(
+            (piety >= piety_breakpoint(5)) ? "[god how]completely" :
+            (piety >= piety_breakpoint(3)) ? "[god how]mostly" :
+                                             "[god how]partially");
+        desc.cprintf(jtrans_notrimc("%s %s shields you from negative energy.\n"),
+                god_name_jc(which_god), how.c_str());
         break;
     }
 
     case GOD_JIYVA:
         have_any = true;
-        desc.cprintf("Jellies are peaceful and will consume items off the floor.\n");
-        desc.cprintf("Jiyva prevents you from harming jellies.\n");
+        desc.cprintf("%s", jtrans_notrimc("Jellies are peaceful and will consume items off the floor.\n"));
+        desc.cprintf("%s", jtrans_notrimc("Jiyva prevents you from harming jellies.\n"));
 
         if (have_passive(passive_t::jelly_regen))
             desc.textcolour(god_colour(which_god));
         else
             desc.textcolour(DARKGREY);
-        desc.cprintf("Your health and magic regeneration is %saccelerated.\n",
-                     piety >= piety_breakpoint(5) ? "very greatly " :
-                     piety >= piety_breakpoint(3) ? "greatly " :
-                                                    "");
+        desc.cprintf("%s", jtrans_notrimc(
+                     piety >= piety_breakpoint(5)
+                     ? "Your health and magic regeneration is very greatly accelerated.\n" :
+                     piety >= piety_breakpoint(3)
+                     ? "Your health and magic regeneration is greatly accelerated.\n"
+                     : "Your health and magic regeneration is accelerated.\n"));
         break;
 
     case GOD_CHEIBRIADOS:
@@ -845,13 +876,13 @@ static formatted_string _describe_god_powers(god_type which_god)
             desc.textcolour(god_colour(which_god));
         else
             desc.textcolour(DARKGREY);
-        desc.cprintf("%s %sslows your movement.\n",
-                uppercase_first(god_name(which_god)).c_str(),
-                piety >= piety_breakpoint(5) ? "greatly " :
-                piety >= piety_breakpoint(2) ? "" :
-                                               "slightly ");
-        desc.cprintf("%s supports your attributes. (+%d)\n",
-                uppercase_first(god_name(which_god)).c_str(),
+        desc.cprintf(jtrans_notrimc(
+                piety >= piety_breakpoint(5) ? "%s greatly slows your movement.\n" :
+                piety >= piety_breakpoint(2) ? "%s slows your movement.\n"
+                                             : "%s slightly slows your movement.\n"),
+                god_name_jc(which_god));
+        desc.cprintf(jtrans_notrimc("%s supports your attributes. (+%d)\n"),
+                god_name_jc(which_god),
                 chei_stat_boost(piety));
         break;
 
@@ -859,22 +890,22 @@ static formatted_string _describe_god_powers(god_type which_god)
         have_any = true;
         if (const int numoffers = you.vehumet_gifts.size())
         {
-            const char* offer = numoffers == 1
-                               ? spell_title(*you.vehumet_gifts.begin())
-                               : "some of Vehumet's most lethal spells";
-            desc.cprintf("You can memorise %s.\n", offer);
+            const string offer = numoffers == 1
+                               ? spell_title_j(*you.vehumet_gifts.begin())
+                               : jtrans("some of Vehumet's most lethal spells");
+            desc.cprintf(jtrans_notrimc("You can memorise %s.\n"), offer.c_str());
         }
         else if (!you.has_mutation(MUT_INNATE_CASTER))
         {
             desc.textcolour(DARKGREY);
-            desc.cprintf("You can memorise some of Vehumet's spells.\n");
+            desc.cprintf("%s", jtrans_notrimc("You can memorise some of Vehumet's spells.\n"));
         }
         break;
 
     case GOD_YREDELEMNUL:
         // TODO: Vary the text depending on the size of the umbra.
-        desc.cprintf("You are surrounded by an umbra.\n"
-                     "Foes that die within your umbra may be raised as undead servants.\n");
+        desc.cprintf("%s", jtrans_notrimc("You are surrounded by an umbra.\n"
+                     "Foes that die within your umbra may be raised as undead servants.\n"));
         break;
 
     case GOD_HEPLIAKLQANA:
@@ -887,7 +918,7 @@ static formatted_string _describe_god_powers(god_type which_god)
         // correctly in webtiles. (It works fine locally regardless.)
         // Feature request: not this.
         desc.textcolour(textcol);
-        desc.cprintf("Your life essence is reduced. (-10%% HP)\n");
+        desc.cprintf("%s", jtrans_notrimc("Your life essence is reduced. (-10% HP)\n"));
     }
         break;
 
@@ -932,17 +963,17 @@ static formatted_string _describe_god_powers(god_type which_god)
         {
             desc.textcolour(god_colour(which_god));
             if (you.has_mutation(MUT_MAKHLEB_DESTRUCTION_GEH))
-                desc.cprintf("Your Destruction is augmented by the power of Gehenna.\n");
+                desc.cprintf("%s", jtrans_notrimc("Your Destruction is augmented by the power of Gehenna.\n"));
             else if (you.has_mutation(MUT_MAKHLEB_DESTRUCTION_COC))
-                desc.cprintf("Your Destruction is augmented by the power of Cocytus.\n");
+                desc.cprintf("%s", jtrans_notrimc("Your Destruction is augmented by the power of Cocytus.\n"));
             else if (you.has_mutation(MUT_MAKHLEB_DESTRUCTION_TAR))
-                desc.cprintf("Your Destruction is augmented by the power of Tartarus.\n");
+                desc.cprintf("%s", jtrans_notrimc("Your Destruction is augmented by the power of Tartarus.\n"));
             else if (you.has_mutation(MUT_MAKHLEB_DESTRUCTION_DIS))
-                desc.cprintf("Your Destruction is augmented by the power of Dis.\n");
+                desc.cprintf("%s", jtrans_notrimc("Your Destruction is augmented by the power of Dis.\n"));
             else
             {
                 desc.textcolour(DARKGREY);
-                desc.cprintf("Your Destruction will be augmented by one of the Four Hells.\n");
+                desc.cprintf("%s", jtrans_notrimc("Your Destruction will be augmented by one of the Four Hells.\n"));
             }
 
             continue;
@@ -952,7 +983,9 @@ static formatted_string _describe_god_powers(god_type which_god)
             && !makhleb_mark_name().empty())
         {
                 desc.textcolour(god_colour(which_god));
-                desc.cprintf("You have been branded with the %s.\n", makhleb_mark_name().c_str());
+                // makhleb_mark_name() は変異名(英語)。訳は data-mutations.txt 側
+                desc.cprintf(jtrans_notrimc("You have been branded with the %s.\n"),
+                             jtransc(makhleb_mark_name()));
                 continue;
         }
 
@@ -965,20 +998,32 @@ static formatted_string _describe_god_powers(god_type which_god)
             continue;
         }
 
+        // power.general は religion.cc の god_powers の英文。
+        // 文の断片(小文字始まり)の訳は「〜こと」の形(religion.cc の
+        // "You can now %s." と同じ)。
         if (!isupper(buf[0])) // Complete sentence given?
-            buf = "You can " + buf + ".";
-        const int desc_len = buf.size();
+            buf = make_stringf(jtransc("You can %s."), jtransc(buf));
+        else
+            buf = jtrans(buf);
 
-        string abil_cost = "(" + make_cost_description(power.abil) + ")";
-        if (abil_cost == "(None)")
+        // 複数行の文は最後の行の幅で揃える
+        const string::size_type nl = buf.rfind('\n');
+        const int desc_len = strwidth(nl == string::npos ? buf
+                                                         : buf.substr(nl + 1));
+
+        // make_cost_description() が訳済みでもそうでなくても "なし" を省く
+        const string cost_desc = make_cost_description(power.abil);
+        string abil_cost = "(" + cost_desc + ")";
+        if (cost_desc == "None" || cost_desc == jtrans("[ability cost]None"))
             abil_cost = "";
 
-        desc.cprintf("%s%*s%s\n", buf.c_str(), 80 - desc_len - (int)abil_cost.size(),
+        desc.cprintf("%s%*s%s\n", buf.c_str(),
+                max(1, 80 - desc_len - strwidth(abil_cost)),
                 "", abil_cost.c_str());
     }
 
     if (!have_any)
-        desc.cprintf("None.\n");
+        desc.cprintf("%s", jtrans_notrimc("[god powers]None.\n"));
 
     // Show Jiyva's opening of the Slime Pits at the bottom of the list
     // We want this to stay green permanently once the player hits 6*
@@ -988,7 +1033,7 @@ static formatted_string _describe_god_powers(god_type which_god)
             desc.textcolour(god_colour(which_god));
         else
             desc.textcolour(DARKGREY);
-        desc.cprintf("Jiyva will unlock the Slime Pits vaults.\n");
+        desc.cprintf("%s", jtrans_notrimc("Jiyva will unlock the Slime Pits vaults.\n"));
     }
 
     return desc;
@@ -1006,7 +1051,7 @@ static formatted_string _god_overview_description(god_type which_god)
     if (you_worship(which_god))
     {
         // Print title based on piety.
-        desc.cprintf("\nTitle  - ");
+        desc.cprintf("%s", jtrans_notrimc("\nTitle  - "));
         desc.textcolour(god_colour(which_god));
 
         string title = god_title(which_god, you.species, you.raw_piety);
@@ -1018,7 +1063,7 @@ static formatted_string _god_overview_description(god_type which_god)
     // something better, do it.
 
     desc.textcolour(LIGHTGREY);
-    desc.cprintf("\nFavour - ");
+    desc.cprintf("%s", jtrans_notrimc("\nFavour - "));
     desc.textcolour(god_colour(which_god));
 
     if (!you_worship(which_god))
@@ -1035,7 +1080,7 @@ static void build_partial_god_ui(god_type which_god, shared_ptr<ui::Popup>& popu
 {
     formatted_string topline;
     topline.textcolour(god_colour(which_god));
-    topline += formatted_string(uppercase_first(god_name(which_god, true)));
+    topline += formatted_string(god_name_j(which_god, true));
 
     auto vbox = make_shared<Box>(Widget::VERT);
     vbox->set_cross_alignment(Widget::STRETCH);
@@ -1068,21 +1113,26 @@ static void build_partial_god_ui(god_type which_god, shared_ptr<ui::Popup>& popu
         _god_extra_description(which_god)
     };
 
-    int mores_index = descs[3].empty() ? 0 : 1;
-    const char* mores[2][4] =
+    // 画面下の切り替え表示: "[!]: 概要|能力|神罰(|その他)"。
+    // 今のページを <w> で強調する。
+    const int num_tabs = descs[3].empty() ? 3 : 4;
+    const string tab_names[4] =
     {
+        jtrans("[god desc tab]Overview"),
+        jtrans("[god desc tab]Powers"),
+        jtrans("[god desc tab]Wrath"),
+        jtrans("[god desc tab]Extra"),
+    };
+    auto more_line = [&](int cur)
+    {
+        string line = "[<w>!</w>]: ";
+        for (int j = 0; j < num_tabs; j++)
         {
-            "[<w>!</w>]: <w>Overview</w>|Powers|Wrath",
-            "[<w>!</w>]: Overview|<w>Powers</w>|Wrath",
-            "[<w>!</w>]: Overview|Powers|<w>Wrath</w>",
-            "[<w>!</w>]: Overview|Powers|Wrath"
-        },
-        {
-            "[<w>!</w>]: <w>Overview</w>|Powers|Wrath|Extra",
-            "[<w>!</w>]: Overview|<w>Powers</w>|Wrath|Extra",
-            "[<w>!</w>]: Overview|Powers|<w>Wrath</w>|Extra",
-            "[<w>!</w>]: Overview|Powers|Wrath|<w>Extra</w>"
+            if (j)
+                line += "|";
+            line += j == cur ? "<w>" + tab_names[j] + "</w>" : tab_names[j];
         }
+        return line;
     };
 
     for (int i = 0; i < 4; i++)
@@ -1098,7 +1148,7 @@ static void build_partial_god_ui(god_type which_god, shared_ptr<ui::Popup>& popu
         desc_sw->add_child(std::move(scroller));
 
         more_sw->add_child(make_shared<Text>(
-                formatted_string::parse_string(mores[mores_index][i])));
+                formatted_string::parse_string(more_line(i))));
     }
 
     desc_sw->set_margin_for_sdl(20, 0);
@@ -1122,11 +1172,12 @@ static const string _god_service_fee_description(god_type which_god)
     {
         if (fee == 0)
         {
-            return string(" (no fee if you ")
-                          + random_choose("act now", "join today") + ")";
+            return coinflip() ? jtrans_notrim(" (no fee if you act now)")
+                              : jtrans_notrim(" (no fee if you join today)");
         }
         else
-            return make_stringf(" (%d gold; you have %d)", fee, you.gold);
+            return make_stringf(jtrans_notrimc(" (%d gold; you have %d)"),
+                                fee, you.gold);
     }
 
     return "";
@@ -1144,7 +1195,7 @@ static void _send_god_ui(god_type god, bool is_altar)
     tiles.json_close_object();
 
     tiles.json_write_int("colour", god_colour(god));
-    tiles.json_write_string("name", god_name(god, true));
+    tiles.json_write_string("name", god_name_j(god, true));
     tiles.json_write_bool("is_altar", is_altar);
 
     tiles.json_write_string("description", getLongDescription(god_name(god)));
@@ -1172,7 +1223,7 @@ void describe_god(god_type which_god)
 {
     if (which_god == GOD_NO_GOD) //mv: No god -> say it and go away.
     {
-        mpr("You are not religious.");
+        mpr(jtrans("You are not religious."));
         return;
     }
 
@@ -1221,14 +1272,16 @@ bool describe_god_with_join(god_type which_god)
     {
         Text* label = static_cast<Text*>(child.get());
         formatted_string text = label->get_text();
-        text += formatted_string::parse_string("  [<w>J</w>/<w>Enter</w>]: "
-                                               "join");
+        text += formatted_string::parse_string(
+                    jtrans_notrim("  [<w>J</w>/<w>Enter</w>]: join"));
 
         // We assume that a player who has enough gold such that
         // the join fee plus accumulated gold overflows knows what this menu
         // does.
-        if (text.width() + service_fee.length() + 9 <= MIN_COLS)
-            text += " religion";
+        // 日本語では "join" の訳(「入信する」)だけで足りるので空にしている
+        const string religion = jtrans_notrim(" [god join]religion");
+        if (text.width() + strwidth(service_fee) + strwidth(religion) <= MIN_COLS)
+            text += religion;
         if (!service_fee.empty())
             text += service_fee;
         label->set_text(text);
@@ -1245,13 +1298,14 @@ bool describe_god_with_join(god_type which_god)
     // This is somewhat brittle, but ensures that the UI doesn't resize when
     // switching between prompts.
     const string abandon_prompt =
-        make_stringf("Are you sure you want to abandon %s?",
-                god_name(you.religion).c_str());
+        make_stringf(jtransc("Are you sure you want to abandon %s?"),
+                god_name_jc(you.religion));
+    const string yesno_only_msg = jtrans_notrim(" [Y]es or [n]o only, please.");
     formatted_string prompt_fs(abandon_prompt, channel_to_colour(MSGCH_PROMPT));
 
     more_sw->add_child(make_shared<Text>(prompt_fs));
 
-    prompt_fs.cprintf(" [Y]es or [n]o only, please.");
+    prompt_fs.cprintf("%s", yesno_only_msg.c_str());
     more_sw->add_child(make_shared<Text>(prompt_fs));
 
     join_step_type step = SHOW;
@@ -1317,7 +1371,7 @@ bool describe_god_with_join(god_type which_god)
 
 #ifdef USE_TILE_WEB
         tiles.json_open_object();
-        string prompt = abandon_prompt + (yesno_only ? " [Y]es or [n]o only, please." : "");
+        string prompt = abandon_prompt + (yesno_only ? yesno_only_msg : "");
         tiles.json_write_string("prompt", prompt);
         tiles.json_write_int("pane", desc_sw->current());
         tiles.ui_state_change("describe-god", 0);

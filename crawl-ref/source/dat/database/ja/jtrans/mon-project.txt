@@ -1,0 +1,99 @@
+%%%%
+Failed to spawn projectile.
+
+射出物の生成に失敗しました。
+%%%%
+The orb fizzles.
+
+球体はシューッという音を立てた。
+%%%%
+The orbs collide in a blinding explosion!
+
+球体は眩い爆発を放ちながら衝突した！
+%%%%
+You hear a loud magical explosion!
+
+あなたは魔法の爆発する轟音を耳にした！
+%%%%
+You block %s.
+
+あなたは%sを防いだ。
+%%%%
+blocks %s.
+
+は%sを防いだ。
+%%%%
+%s reflects off an invisible shield around %s!
+
+%sは%sの周囲の目に見えない壁にはね返された！
+%%%%
+ detonates violently!
+
+は激しく爆発した！
+%%%%
+%s hits %s.
+
+%sは%sに衝突した。
+%%%%
+Your %s blocks %s... and reflects it back!
+
+あなたの%sは%sを防ぎ、はね返した！
+%%%%
+You block %s... and reflect it back!
+
+あなたは%sを防ぎ、はね返した！
+%%%%
+# 引数: 防いだ者、球体、盾
+%s blocks %s with %s... and reflects it back!
+
+%sは%sを%sで防ぎ、はね返した！
+%%%%
+%s bounces off of thin air!
+
+%sは何もない空間ではね返された！
+%%%%
+# ビーム名(表示は beam.cc の zap_name_j)
+[zap]wavering orb of destruction
+
+揺らめく破壊の球体
+%%%%
+[zap]annihilating fire
+
+殲滅の炎
+%%%%
+[zap]annihilating magma
+
+殲滅の溶岩
+%%%%
+[zap]annihilating electricity
+
+殲滅の電撃
+%%%%
+[zap]annihilating lightning
+
+殲滅の稲妻
+%%%%
+[zap]annihilating negative energy
+
+殲滅の負のエネルギー
+%%%%
+[zap]annihilating ice
+
+殲滅の氷
+%%%%
+[zap]annihilating cold
+
+殲滅の冷気
+%%%%
+[zap]annihilating devastation
+
+殲滅の破壊光線
+%%%%
+[zap]annihilating acid
+
+殲滅の酸
+%%%%
+[zap]annihilating fragments
+
+殲滅の破片
+%%%%

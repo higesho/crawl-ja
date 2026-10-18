@@ -3015,3 +3015,8 @@ prismatic gem
 
 枚
 %%%%
+# 第2陣で追加: 投射物名(launched_projectile_name)
+damnation bolt
+
+天罰の矢
+%%%%

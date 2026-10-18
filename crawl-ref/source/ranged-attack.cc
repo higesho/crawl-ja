@@ -10,6 +10,7 @@
 #include "areas.h"
 #include "chardump.h"
 #include "coord.h"
+#include "database.h"
 #include "english.h"
 #include "env.h"
 #include "fight.h"
@@ -27,6 +28,21 @@
 #include "traps.h"
 #include "unwind.h"
 #include "xom.h"
+
+// 死因などに残す英語の名前
+static string _attacker_name_en(const actor *act, bool force_visible = false)
+{
+    if (act->is_monster())
+        return act->as_monster()->name_en(DESC_A, force_visible);
+    return "you";
+}
+
+// 投射物の名前(表示用)
+static string _proj_name_j(const string &proj_name)
+{
+    return zap_name_j(proj_name);
+}
+#define _proj_name_jc(n) (_proj_name_j(n).c_str())
 
 ranged_attack::ranged_attack(actor *attk, actor *defn,
                              const item_def *wpn,
@@ -51,17 +67,18 @@ ranged_attack::ranged_attack(actor *attk, actor *defn,
         kill_type = KILLED_BY_SELF_AIMED;
         aux_source = proj_name;
     }
+    // 死因(スコアファイル)に残るので英語の名前を使う
     else if (throwing())
     {
         aux_source = make_stringf("Hit by a%s %s thrown by %s",
                  (is_vowel(proj_name[0]) ? "n" : ""), proj_name.c_str(),
-                 attacker->name(DESC_A).c_str());
+                 _attacker_name_en(attacker).c_str());
     }
     else
     {
         aux_source = make_stringf("Shot with a%s %s by %s",
                  (is_vowel(proj_name[0]) ? "n" : ""), proj_name.c_str(),
-                 attacker->name(DESC_A).c_str());
+                 _attacker_name_en(attacker).c_str());
     }
 
     needs_message = defender_visible;
@@ -161,35 +178,35 @@ bool ranged_attack::handle_phase_attempted()
 void ranged_attack::handle_phase_blocked()
 {
     ASSERT(!ignores_shield());
-    string punctuation = ".";
+    // 日本語化: 英語の句を組み立てずに、文ごとに訳す
+    // (引数: 防いだ者、投射物、盾)
+    const char* fmt = "%s blocks the %s.";
+    string shield_name;
 
     if (defender->reflection())
     {
         reflected = true;
+        fmt = "%s blocks the %s... and reflects it back!";
         if (defender->observable())
         {
             if (defender_shield && shield_reflects(*defender_shield))
             {
-                punctuation = " with " + defender->pronoun(PRONOUN_POSSESSIVE)
-                              + " " + defender_shield->name(DESC_PLAIN).c_str();
+                shield_name = defender_shield->name(DESC_PLAIN);
+                fmt = "%s blocks the %s with %s... and reflects it back!";
             }
             else
-                punctuation = " with an invisible shield";
+                fmt = "%s blocks the %s with an invisible shield... and reflects it back!";
         }
-
-        punctuation += make_stringf("... and %s it back!",
-                                    defender->conj_verb("reflect").c_str());
     }
     else
         range_used = BEAM_STOP;
 
     if (needs_message)
     {
-        mprf("%s %s the %s%s",
+        mprf(jtransc(fmt),
              defender_name(false).c_str(),
-             defender->conj_verb("block").c_str(),
-             proj_name.c_str(),
-             punctuation.c_str());
+             _proj_name_jc(proj_name),
+             shield_name.c_str());
     }
 
     if (!weapon->is_type(OBJ_MISSILES, MI_DART)
@@ -208,7 +225,7 @@ void ranged_attack::handle_phase_dodged()
     if (ev_margin > -defender->missile_repulsion())
     {
         if (needs_message && defender_visible)
-            mprf("The %s is repelled.", proj_name.c_str());
+            mprf(jtransc("The %s is repelled."), _proj_name_jc(proj_name));
 
         if (defender->is_player())
             count_action(CACT_DODGE, DODGE_REPEL);
@@ -221,10 +238,11 @@ void ranged_attack::handle_phase_dodged()
 
     if (needs_message)
     {
-        mprf("The %s%s misses %s.",
-             proj_name.c_str(),
-             evasion_margin_adverb().c_str(),
-             defender_name(false).c_str());
+        // 日本語の語順に合わせて引数を入れ替えている(投射物、相手、副詞)
+        mprf(jtransc("The %s%s misses %s."),
+             _proj_name_jc(proj_name),
+             defender_name(false).c_str(),
+             evasion_margin_adverb().c_str());
     }
 
     if (!weapon->is_type(OBJ_MISSILES, MI_DART)
@@ -243,7 +261,7 @@ static bool _jelly_eat_missile(const string& proj_name, int damage_done)
         && !you.duration[DUR_DEATHS_DOOR]
         && !one_chance_in(3))
     {
-        mprf("Your attached jelly eats the %s!", proj_name.c_str());
+        mprf(jtransc("Your attached jelly eats the %s!"), _proj_name_jc(proj_name));
         inc_hp(1 + random2(damage_done));
         canned_msg(MSG_GAIN_HEALTH);
         return true;
@@ -299,11 +317,13 @@ bool ranged_attack::handle_phase_hit()
         {
             if (needs_message)
             {
-                mprf("The %s %s %s%s but does no damage.",
-                    proj_name.c_str(),
-                    attack_verb.c_str(),
+                // 日本語の語順に合わせて引数を入れ替えている
+                // (投射物、相手、動詞、砕け散る)
+                mprf(jtransc("The %s %s %s%s but does no damage."),
+                    _proj_name_jc(proj_name),
                     defender->name(DESC_THE).c_str(),
-                    mulch_bonus() ? " and shatters," : "");
+                    tagged_jtransc("[beam verb]", attack_verb),
+                    mulch_bonus() ? jtransc(" and shatters,") : "");
             }
         }
 
@@ -312,14 +332,14 @@ bool ranged_attack::handle_phase_hit()
 
     if (!defender->is_player() || !you.pending_revival)
     {
-        if (apply_damage_brand(make_stringf("the %s", proj_name.c_str()).c_str()))
+        if (apply_damage_brand(_proj_name_jc(proj_name)))
             return false;
 
         if (testbits(weapon->flags, ISFLAG_CHAOTIC) && defender->alive())
         {
             unwind_var<brand_type> save_brand(damage_brand);
             damage_brand = SPWPN_CHAOS;
-            if (apply_damage_brand(make_stringf("the %s", proj_name.c_str()).c_str()))
+            if (apply_damage_brand(_proj_name_jc(proj_name)))
                 return false;
         }
 
@@ -527,7 +547,7 @@ bool ranged_attack::dart_check(special_missile_type type)
             if (defender->is_monster())
             {
                 simple_monster_message(*defender->as_monster(),
-                                       " is unaffected.");
+                                       jtransc(" is unaffected."));
             }
             else
                 canned_msg(MSG_YOU_UNAFFECTED);
@@ -564,7 +584,7 @@ bool ranged_attack::dart_check(special_missile_type type)
         if (needs_message)
         {
             if (defender->is_monster())
-                simple_monster_message(*defender->as_monster(), " resists.");
+                simple_monster_message(*defender->as_monster(), jtransc(" resists."));
             else
                 canned_msg(MSG_YOU_RESIST);
         }
@@ -616,7 +636,7 @@ bool ranged_attack::apply_missile_brand()
     case SPMSL_FLAME:
         calc_elemental_brand_damage(BEAM_FIRE,
                                     defender->is_icy() ? "melt" : "burn",
-                                    make_stringf("the %s", proj_name.c_str()).c_str());
+                                    _proj_name_jc(proj_name));
 
         defender->expose_to_element(BEAM_FIRE, 2);
         if (defender->is_player())
@@ -624,7 +644,7 @@ bool ranged_attack::apply_missile_brand()
         break;
     case SPMSL_FROST:
         calc_elemental_brand_damage(BEAM_COLD, "freeze",
-                                    make_stringf("the %s", proj_name.c_str()).c_str());
+                                    _proj_name_jc(proj_name));
         defender->expose_to_element(BEAM_COLD, 2, attacker);
         break;
     case SPMSL_POISONED:
@@ -656,9 +676,12 @@ bool ranged_attack::apply_missile_brand()
         }
         break;
     case SPMSL_CURARE:
+        // 死因に残るので英語の名前を使う
         obvious_effect = curare_actor(attacker, defender,
                                       proj_name,
-                                      atk_name(DESC_A));
+                                      attacker_visible
+                                          ? _attacker_name_en(attacker)
+                                          : string("something"));
         break;
     case SPMSL_CHAOS:
         obvious_effect = chaos_affects_actor(defender, attacker);
@@ -691,15 +714,16 @@ bool ranged_attack::apply_missile_brand()
             if (defender->is_player())
                 canned_msg(MSG_STRANGE_STASIS);
             else
-                simple_monster_message(*defender->as_monster(), " is unaffected.");
+                simple_monster_message(*defender->as_monster(), jtransc(" is unaffected."));
             break;
         }
 
         if (defender->is_player())
         {
-            mprf(MSGCH_WARN, "You become untethered in space!");
+            mprf(MSGCH_WARN, jtransc("You become untethered in space!"));
             you.duration[DUR_BLINKITIS] = random_range(30, 40);
-            you.props[BLINKITIS_SOURCE_KEY] = attacker->name(DESC_A, true);
+            // 死因に残るので英語の名前を使う
+            you.props[BLINKITIS_SOURCE_KEY] = _attacker_name_en(attacker, true);
             you.props[BLINKITIS_AUX_KEY] = proj_name;
         }
         else
@@ -707,7 +731,7 @@ bool ranged_attack::apply_missile_brand()
             monster* dmon = defender->as_monster();
             if (!dmon->has_ench(ENCH_BLINKITIS))
             {
-                simple_monster_message(*dmon, " becomes untethered in space!");
+                simple_monster_message(*dmon, jtransc(" becomes untethered in space!"));
                 dmon->add_ench(mon_enchant(ENCH_BLINKITIS, attacker,
                                            random_range(3, 4) * BASELINE_DELAY));
                 // Trigger immediately once so that monster can't make an attack
@@ -799,12 +823,14 @@ void ranged_attack::announce_hit()
     if (!needs_message)
         return;
 
-    mprf("The %s %s %s%s%s%s",
-         proj_name.c_str(),
-         attack_verb.c_str(),
-         defender_name(false).c_str(),
-         mulch_bonus() ? " and shatters for extra damage" : "",
+    // beam.cc と同じキー。日本語の語順: 投射物、(デバッグ用の数値)、相手、
+    // 動詞、砕け散る、句読点
+    mprf(jtransc("The %s %s %s%s%s%s"),
+         _proj_name_jc(proj_name),
          debug_damage_number().c_str(),
+         defender_name(false).c_str(),
+         tagged_jtransc("[beam verb]", attack_verb),
+         mulch_bonus() ? jtransc(" and shatters for extra damage") : "",
          attack_strength_punctuation(damage_done).c_str());
 }
 

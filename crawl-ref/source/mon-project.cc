@@ -15,6 +15,7 @@
 #include "act-iter.h"
 #include "areas.h"
 #include "cloud.h"
+#include "database.h"
 #include "directn.h"
 #include "env.h"
 #include "god-abil.h"
@@ -27,6 +28,7 @@
 #include "output.h"
 #include "shout.h"
 #include "stepdown.h"
+#include "stringutil.h"
 #include "terrain.h"
 #ifdef USE_TILE
     #include "tilepick.h"
@@ -60,7 +62,7 @@ spret cast_iood(actor *caster, int pow, bolt *beam, float vx, float vy,
                 mtarg).set_summoned(caster, SPELL_IOOD, 0, false, false), true, true);
     if (!mon)
     {
-        mprf(MSGCH_ERROR, "Failed to spawn projectile.");
+        mprf(MSGCH_ERROR, jtransc("Failed to spawn projectile."));
         return spret::abort;
     }
 
@@ -109,8 +111,9 @@ spret cast_iood(actor *caster, int pow, bolt *beam, float vx, float vy,
         ((monster*)caster)->friendly() ? KC_FRIENDLY : KC_OTHER;
     mon->props[IOOD_POW].get_short() = pow;
     mon->flags &= ~MF_JUST_SUMMONED;
+    // 死因(スコアファイル)に残るので英語の名前を使う
     mon->props[IOOD_CASTER].get_string() = caster->as_monster()
-        ? caster->name(DESC_A, true)
+        ? caster->as_monster()->name_en(DESC_A, true)
         : (caster->is_player()) ? "you" : "";
     mon->summoner = caster->mid;
 
@@ -248,7 +251,7 @@ static void _iood_stop(monster& mon, bool msg = true)
         return;
 
     if (msg)
-        simple_monster_message(mon, " dissipates.");
+        simple_monster_message(mon, jtransc(" dissipates."));
     dprf("iood: dissipating");
     monster_die(mon, KILL_RESET, NON_MONSTER);
 }
@@ -417,7 +420,7 @@ static bool _iood_hit(monster& mon, const coord_def &pos, bool big_boom = false)
         _iood_hit_setup(mon, beam);
 
     if (mon.type == MONS_GLOBE_OF_ANNIHILATION && you.can_see(mon) && big_boom)
-        simple_monster_message(mon, " detonates violently!");
+        simple_monster_message(mon, jtransc(" detonates violently!"));
 
     monster_die(mon, KILL_RESET, NON_MONSTER);
 
@@ -577,7 +580,7 @@ move_again:
             && you.see_cell(pos)
             && you.see_cell(starting_pos))
         {
-            mprf("%s hits %s.", mon.name(DESC_THE, true).c_str(),
+            mprf(jtransc("%s hits %s."), mon.name(DESC_THE, true).c_str(),
                  feature_description_at(pos, false, DESC_A).c_str());
         }
 
@@ -595,7 +598,7 @@ move_again:
                 if (mons->props[IOOD_DIST].get_int() < 2)
                 {
                     if (you.see_cell(pos))
-                        mpr("The orb fizzles.");
+                        mpr(jtrans("The orb fizzles."));
                     monster_die(*mons, KILL_RESET, NON_MONSTER);
                 }
 
@@ -603,7 +606,7 @@ move_again:
                 if (mon.props[IOOD_DIST].get_int() < 2)
                 {
                     if (you.see_cell(pos))
-                        mpr("The orb fizzles.");
+                        mpr(jtrans("The orb fizzles."));
                     monster_die(mon, KILL_RESET, NON_MONSTER);
                     return true;
                 }
@@ -611,9 +614,9 @@ move_again:
             else
             {
                 if (mon.observable())
-                    mpr("The orbs collide in a blinding explosion!");
+                    mpr(jtrans("The orbs collide in a blinding explosion!"));
                 else
-                    mpr("You hear a loud magical explosion!");
+                    mpr(jtrans("You hear a loud magical explosion!"));
                 noisy(25, pos);
                 monster_die(*mons, KILL_RESET, NON_MONSTER);
                 _iood_hit(mon, pos, true);
@@ -626,11 +629,12 @@ move_again:
             if (!victim->reflection())
             {
                 if (victim->is_player())
-                    mprf("You block %s.", mon.name(DESC_THE, true).c_str());
+                    mprf(jtransc("You block %s."), mon.name(DESC_THE, true).c_str());
                 else
                 {
-                    simple_monster_message(*mons, (" blocks "
-                        + mon.name(DESC_THE, true) + ".").c_str());
+                    simple_monster_message(*mons,
+                        make_stringf(jtransc(" blocks %s."),
+                                     mon.name(DESC_THE, true).c_str()).c_str());
                 }
                 victim->shield_block_succeeded(&mon);
                 _iood_stop(mon);
@@ -642,13 +646,13 @@ move_again:
             {
                 if (shield && shield_reflects(*shield))
                 {
-                    mprf("Your %s blocks %s... and reflects it back!",
+                    mprf(jtransc("Your %s blocks %s... and reflects it back!"),
                          shield->name(DESC_PLAIN).c_str(),
                          mon.name(DESC_THE, true).c_str());
                 }
                 else // has reflection property not from shield
                 {
-                    mprf("You block %s... and reflect it back!",
+                    mprf(jtransc("You block %s... and reflect it back!"),
                          mon.name(DESC_THE, true).c_str());
                 }
             }
@@ -658,22 +662,21 @@ move_again:
                 {
                     if (shield && shield_reflects(*shield))
                     {
-                        mprf("%s blocks %s with %s %s... and reflects it back!",
+                        mprf(jtransc("%s blocks %s with %s... and reflects it back!"),
                              victim->name(DESC_THE, true).c_str(),
                              mon.name(DESC_THE, true).c_str(),
-                             victim->pronoun(PRONOUN_POSSESSIVE).c_str(),
                              shield->name(DESC_PLAIN).c_str());
                     }
                     else
                     {
-                        mprf("%s reflects off an invisible shield around %s!",
+                        mprf(jtransc("%s reflects off an invisible shield around %s!"),
                              mon.name(DESC_THE, true).c_str(),
                              victim->name(DESC_THE, true).c_str());
                     }
                 }
                 else
                 {
-                    mprf("%s bounces off of thin air!",
+                    mprf(jtransc("%s bounces off of thin air!"),
                          mon.name(DESC_THE, true).c_str());
                 }
             }

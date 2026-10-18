@@ -1,0 +1,123 @@
+%%%%
+{attacker} {verb} {defender}{!}
+
+%sは%sを%s%s
+%%%%
+{attacker} {verb} {defender's} vigour!
+
+%sは%s活力を%s！
+%%%%
+You catch %s completely off-guard!
+
+あなたの一撃は%sが完全に無防備な瞬間をとらえた。
+%%%%
+You %s %s from behind!
+
+あなたは背後から%sに%s！
+%%%%
+You pounce on the unaware %s!
+
+あなたはこちらに気付いていない%sに飛びかかった！
+%%%%
+%s fails to defend %s.
+
+%sは身を守ることもできずに攻撃を受けた。
+%%%%
+{defender} {verb}{!}
+
+%sは%s%s
+%%%%
+%s draws strength from your wounds!
+
+%sはあなたの傷から生命力を吸い取った！
+%%%%
+[verb]writhe
+
+悶えた
+%%%%
+[verb]drain
+
+衰弱させた
+%%%%
+[adv]completely
+
+完全に
+%%%%
+[adv]closely
+
+きわどく
+%%%%
+[adv]barely
+
+ぎりぎり
+%%%%
+[verb]convulse
+
+身もだえした
+%%%%
+# ---- 以下は 0.34 で手で追加(attack.cc) ----
+[reflexive]itself
+
+自分自身
+%%%%
+Space warps around %s%s
+
+%sの周りの空間が歪んだ%s
+%%%%
+Space warps horribly around %s%s
+
+%sの周りの空間が激しく歪んだ%s
+%%%%
+%s %s in agony%s
+
+%sは苦痛に%s%s
+%%%%
+You are electrocuted%s
+
+あなたは感電した%s
+%%%%
+Lightning courses through %s%s
+
+稲妻が%sの体を駆け巡った%s
+%%%%
+%s is completely immune to your confusing touch!
+
+%sにはあなたの混乱の一撃がまったく効かない！
+%%%%
+%s becomes entangled by vines.
+
+%sは蔦に絡めとられた。
+%%%%
+# 引数: 攻撃者、相手、副詞(「ひどく」または空)、動詞(過去形)、句読点
+{attacker} {verb} {defender}{terribly}{!}
+
+%sは%sを%s%s%s
+%%%%
+[adv]terribly
+
+ひどく
+%%%%
+You feel devious.
+
+あなたは狡猾な気分になった。
+%%%%
+Your autodazzler retaliates!
+
+あなたの自動眩惑装置が反撃した！
+%%%%
+Your paragon deflects %s attack away from you.
+
+あなたの白金の傑作が%s攻撃をそらした。
+%%%%
+[stab verb]pounce on
+
+飛びかかった
+%%%%
+[stab verb]strike
+
+一撃を加えた
+%%%%
+[verb]melt
+
+溶かした
+%%%%

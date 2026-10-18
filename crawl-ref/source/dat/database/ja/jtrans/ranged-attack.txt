@@ -1,0 +1,34 @@
+# ranged-attack.cc
+# 防御・反射・命中の文の多くは beam.txt のキーを共用している
+%%%%
+# 引数: 投射物、相手、回避の副詞(evasion_margin_adverb)
+The %s%s misses %s.
+
+%sは%sから%s外れた。
+%%%%
+Your attached jelly eats the %s!
+
+あなたにひっついているジェリーが%sを捕食した！
+%%%%
+# 引数: 投射物、相手、[beam verb] の訳、「〜うえに砕け散った」(または空)
+The %s %s %s%s but does no damage.
+
+%sは%s%s%sが、ダメージを与えられなかった。
+%%%%
+ and shatters,
+
+うえに砕け散った
+%%%%
+You become untethered in space!
+
+あなたは空間に繋ぎ止められなくなった！
+%%%%
+ becomes untethered in space!
+
+は空間に繋ぎ止められなくなった！
+%%%%
+# beam.txt の "The %s %s %s%s%s%s" の 5 番目の引数
+ and shatters for extra damage
+
+うえに砕け散り、さらに傷を負わせた
+%%%%

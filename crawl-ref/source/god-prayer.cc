@@ -15,6 +15,7 @@
 #include "hiscores.h"
 #include "invent.h"
 #include "item-use.h"
+#include "japanese.h"
 #include "makeitem.h"
 #include "message.h"
 #include "notes.h"
@@ -30,21 +31,23 @@
 
 string god_prayer_reaction()
 {
-    string result = uppercase_first(god_name(you.religion));
+    string result = god_name_j(you.religion) + "は";
     const int rank = god_favour_rank(you.religion);
-    if (crawl_state.player_is_dead())
-        result += " was ";
-    else
-        result += " is ";
-    result +=
+    result += jtrans(
         (rank == 7) ? "exalted by your worship" :
         (rank == 6) ? "extremely pleased with you" :
         (rank == 5) ? "greatly pleased with you" :
         (rank == 4) ? "most pleased with you" :
         (rank == 3) ? "pleased with you" :
         (rank == 2) ? "aware of your devotion"
-                    : "noncommittal";
-    result += ".";
+                    : "noncommittal");
+    // 死亡後(ダンプ)は過去形にする
+    if (crawl_state.player_is_dead())
+    {
+        result = replace_all(result, "ていない", "ていなかった");
+        result = replace_all(result, "ている", "ていた");
+    }
+    result += "。";
 
     return result;
 }
@@ -55,15 +58,16 @@ static bool _prompt_ecu_worship(const vector<god_type> &gods)
     for (size_t i = 0; i < gods.size(); ++i)
     {
         god_name_list.push_back(make_stringf("(%c) %s", char('a' + i),
-                                             god_name(gods[i]).c_str()));
+                                             god_name_jc(gods[i])));
     }
     const string god_names = comma_separated_line(god_name_list.begin(),
-                                                  god_name_list.end(), " or ");
+                                                  god_name_list.end(),
+                                                  "、または", "、");
     // This should be a proper menu, but I absolutely cannot be bothered with
     // webtiles menu code.
-    mprf(MSGCH_PROMPT, "This altar belongs to %s, but you can't tell which.\n"
+    mprf(MSGCH_PROMPT, jtransc("This altar belongs to %s, but you can't tell which.\n"
          "Press the corresponding letter to learn more about a god, "
-         "or press enter to convert or escape to cancel.", god_names.c_str());
+         "or press enter to convert or escape to cancel."), god_names.c_str());
     while (true) {
         flush_prev_message();
         int ch = getch_ck();
@@ -96,8 +100,8 @@ static bool _pray_ecumenical_altar()
         return false;
     }
     if (!you_worship(GOD_NO_GOD)
-        && !yesno(make_stringf("Really abandon %s for an unknown god?",
-                               god_name(you.religion).c_str()).c_str(),
+        && !yesno(make_stringf(jtransc("Really abandon %s for an unknown god?"),
+                               god_name_jc(you.religion)).c_str(),
                                false, 'n'))
     {
         canned_msg(MSG_OK);
@@ -107,7 +111,7 @@ static bool _pray_ecumenical_altar()
     const god_type altar_god = *random_iterator(gods);
     dungeon_terrain_changed(you.pos(), altar_for_god(altar_god));
     take_note(Note(NOTE_MESSAGE, 0, 0,
-                   "Prayed at the altar of an unknown god."));
+                   jtrans("Prayed at the altar of an unknown god.")));
     you.turn_is_over = true;
     {
         // Don't check for or charge a Gozag service fee.
@@ -118,8 +122,8 @@ static bool _pray_ecumenical_altar()
             return true;
         }
 
-        mprf(MSGCH_GOD, "%s accepts your prayer!",
-                        god_name(altar_god).c_str());
+        mprf(MSGCH_GOD, jtransc("%s accepts your prayer!"),
+                        god_name_jc(altar_god));
         if (you_worship(altar_god))
             return true;
         join_religion(altar_god);
@@ -149,7 +153,7 @@ void try_god_conversion(god_type god)
 
     if (you.has_mutation(MUT_FORLORN))
     {
-        mpr("A being of your status worships no god.");
+        mpr(jtrans("A being of your status worships no god."));
         return;
     }
 
@@ -170,9 +174,9 @@ void try_god_conversion(god_type god)
     else
     {
         // Already worshipping this god - just print a message.
-        mprf(MSGCH_GOD, "You offer a %sprayer to %s.",
-             you.cannot_speak() ? "silent " : "",
-             god_name(god).c_str());
+        mprf(MSGCH_GOD, jtransc("You offer a %sprayer to %s."),
+             you.cannot_speak() ? tagged_jtransc("[prayer]", "silent") : "",
+             god_name_jc(god));
     }
 }
 
@@ -200,12 +204,12 @@ int zin_tithe(const item_def& item, int quant, bool converting)
         }
         taken = tithe;
         you.attribute[ATTR_DONATIONS] += tithe;
-        mprf("You pay a tithe of %d gold.", tithe);
+        mprf(jtransc("You pay a tithe of %d gold."), tithe);
 
         if (item.tithe_state == TS_NO_PIETY) // seen before worshipping Zin
         {
             tithe = 0;
-            simple_god_message(" ignores your late donation.");
+            simple_god_message(jtransc(" ignores your late donation."));
         }
         // A single scroll can give you more than D:1-18, Lair and Orc
         // together, limit the gains. You're still required to pay from

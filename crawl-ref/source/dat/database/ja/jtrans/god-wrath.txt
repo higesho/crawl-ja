@@ -1,0 +1,414 @@
+%%%%
+sends the divine host to punish you for your evil ways!
+
+は邪悪な行いをしたあなたに神の軍勢を差し向けた！
+%%%%
+You feel the Shining One's silent rage upon you!
+
+あなたは輝けるものの声なき怒りをその身に感じた！
+%%%%
+draws some chaos from your body!
+
+はあなたの体から混沌を抜き取ろうとしている！
+%%%%
+rids your body of chaos!
+
+はあなたの体の混沌を除去した！
+%%%%
+recites the Axioms of Law to you!
+
+はあなたに法理を説いた！
+%%%%
+rains destruction down upon you!
+
+は破壊の雨をあなたに降らせた！
+%%%%
+has no time to deal with you just now.
+
+は今のところあなたに構っている暇はないようだ。
+%%%%
+sends minions to punish you.
+
+はあなたを懲罰するため使徒たちを遣わした。
+%%%%
+sends a minion to punish you.
+
+はあなたを懲罰するため使徒を遣わした。
+%%%%
+You hear Kikubaaqudgha cackling.
+
+あなたはキクバークッグァの笑い声を耳にした。
+%%%%
+Kikubaaqudgha's malice focuses upon you.
+
+キクバークッグァはあなたに悪意を向けた。
+%%%%
+sends servants to punish you.
+
+はあなたを懲罰するため従僕たちを遣わした。
+%%%%
+sends a servant to punish you.
+
+はあなたを懲罰するため従僕を遣わした。
+%%%%
+sends monsters to punish you.
+
+はあなたを懲罰するためモンスターの群れを遣わした。
+%%%%
+sends a monster to punish you.
+
+はあなたを懲罰するためモンスターを遣わした。
+%%%%
+has no time to punish you... now.
+
+は今のところあなたを懲罰している暇はないようだ。
+%%%%
+throws an implement of electrocution at you.
+
+はあなたに電撃の武器を投げつけた。
+%%%%
+throws implements of electrocution at you.
+
+はあなたに電撃の武器をいくつか投げつけた。
+%%%%
+sends forth an army of orcs.
+
+はオークの軍勢を差し向けた。
+%%%%
+is still gathering forces against you.
+
+はあなたに差し向ける軍勢を手配中だ。
+%%%%
+sends forces against you!
+
+はあなたに手勢を差し向けた！
+%%%%
+makes you draw from the deck of Punishment.
+
+はあなたに懲罰のデッキからカードを引かせた。
+%%%%
+You feel Jiyva alter your body.
+
+ジーヴァがあなたの体を変容させたような気がした。
+%%%%
+Mutagenic energy floods into your body!
+
+変異性のエネルギーがあなたの体を満たしている！
+%%%%
+Some slimes ooze up out of the ground!
+
+スライムの群れが地面からにじみ出した！
+%%%%
+The ground quivers slightly.
+
+地面が少し振動した。
+%%%%
+Plants grow around you in an ominous manner.
+
+あなたの周囲の植物が不気味に成長した。
+%%%%
+fails to incite the shadows against you.
+
+はあなたに影の群れを差し向けるのに失敗した。
+%%%%
+You feel overwhelmed by the shadows around you.
+
+あなたは周囲を取りまく影の群れに圧倒された。
+%%%%
+incites the elements against you!
+
+はあなたに自然の精霊たちをけしかけた！
+%%%%
+fails to incite the elements against you.
+
+はあなたに自然の精霊たちをけしかけるのに失敗した。
+%%%%
+strips away your elemental protection.
+
+はあなたが受けていた精霊の加護を剥ぎとった。
+%%%%
+causes a mighty clap of thunder!
+
+は轟く雷鳴を引き起こした！
+%%%%
+drives %s into a dance frenzy!
+
+は%sに狂乱のダンスを踊らせた！
+%%%%
+The divine experience confuses you!
+
+神の手によりあなたは混乱した！
+%%%%
+The divine experience drains your vigour!
+
+神の手によりあなたは活力を吸い取られた！
+%%%%
+blasts you with cleansing flame!
+
+は浄化の炎をあなたに浴びせた！
+%%%%
+smites you!
+
+はあなたに打擲の一撃を浴びせた！
+%%%%
+# ---- simple_god_message() で神の名前の後ろにつなぐ文 ----
+# need_possessive が true のものは名前に「の」が付いている
+divine host fails to appear.
+
+軍勢は現れなかった。
+%%%%
+booms out: Take the path of righteousness! REPENT!
+
+の声が轟き渡った: 『正しき道を歩むのだ！ 悔やむがいい！』
+%%%%
+booms out: Turn to the light! REPENT!
+
+の声が轟き渡った: 『光へと回帰せよ！ 悔やむがいい！』
+%%%%
+strikes the hour, and time shudders.
+
+が時を告げると、時間が震えた。
+%%%%
+does not welcome meddling.
+
+は干渉を歓迎しない。
+%%%%
+minions fail to arrive.
+
+使徒は来なかった。
+%%%%
+servants fail to arrive.
+
+従僕は来なかった。
+%%%%
+binds you in chains!
+
+はあなたを鎖で縛り上げた！
+%%%%
+tears away your strength and self-control!
+
+はあなたの力と自制心を奪い去った！
+%%%%
+forces are busy with other wars.
+
+軍勢は別の戦いで忙しい。
+%%%%
+wrath finds you.
+
+怒りがあなたに向けられた。
+%%%%
+wrath scatters you!
+
+怒りがあなたを吹き飛ばした！
+%%%%
+draws you home!
+
+はあなたを故郷へと引き寄せた！
+%%%%
+weaves the shadows around you into monsters.
+
+はあなたの周りの影を編み上げてモンスターにした。
+%%%%
+turns your shadow against you.
+
+はあなたの影をあなたに差し向けた。
+%%%%
+fails to turn your shadows against you.
+
+はあなたの影をあなたに差し向けるのに失敗した。
+%%%%
+tears the darkness away from you.
+
+はあなたから闇を引き剥がした。
+%%%%
+divine weapons fail to arrive.
+
+神の武器は来なかった。
+%%%%
+divine wrath fails to arrive.
+
+神の怒りは届かなかった。
+%%%%
+burns the ground from beneath your feet!
+
+はあなたの足元の地面を焼き払った！
+%%%%
+anoints %s as instruments of vengeance!
+
+は%sを報復の道具として聖別した！
+%%%%
+anoints %s as an instrument of vengeance!
+
+は%sを報復の道具として聖別した！
+%%%%
+booms out: Time for someone else to take a solo!
+
+の声が轟き渡った: 『他の誰かに独演してもらう時間だ！』
+%%%%
+booms out: Revellers, it's time to dance!
+
+の声が轟き渡った: 『酔客どもよ、ダンスの時間だ！』
+%%%%
+# wu_jian_sifu_message(): 「師父(名前)」の後ろにつなぐ
+says: Die by a thousand cuts!
+
+は言った: 『千の刃に刻まれて死ぬがいい！』
+%%%%
+whispers: Nowhere to run...
+
+は囁いた: 『逃げ場はないぞ……』
+%%%%
+whispers: These will loosen your tongue!
+
+は囁いた: 『これで口も軽くなるだろう！』
+%%%%
+says: Suffer, mortal!
+
+は言った: 『苦しめ、定命の者よ！』
+%%%%
+# ---- メッセージ ----
+You lose track of time!
+
+あなたは時間がどれくらい経ったか分からなくなった！
+%%%%
+The world leaves you behind!
+
+あなたは周りのすべてに置いていかれた！
+%%%%
+Fedhas booms out: Become one with the cycle of life!
+
+フェダスの声が轟き渡った: 『生命の循環と一つになるがいい！』
+%%%%
+You feel lethargic.
+
+あなたは体がだるくなった。
+%%%%
+# %s は bane_name() の訳("Bane of ..."。data-mutations.txt 側)
+Your %s grows more durable.
+
+あなたの%sはさらに長引くようになった。
+%%%%
+%s is shrouded in protective flame, covering ground quickly, and attacking fiercely!
+
+%sは守護の炎に包まれ、素早く動き回り、猛然と攻撃し始めた！
+%%%%
+The monsters are shrouded in protective flame, covering ground quickly, and attacking fiercely!
+
+モンスターたちは守護の炎に包まれ、素早く動き回り、猛然と攻撃し始めた！
+%%%%
+# resists_dislodge() の引数(「〜こと」の形)
+falling
+
+落下すること
+%%%%
+# ---- 神罰の名前(_god_wrath_name())----
+# 死因・召喚者名・神罰の化身のモンスター名(mname)として英語のまま使われ、
+# 表示する側(mon-info.cc の _mname_j() や hiscores.cc など)が jtrans() で引く。
+the wrath of Zin
+
+ジンの怒り
+%%%%
+the wrath of the Shining One
+
+輝けるものの怒り
+%%%%
+the malice of Kikubaaqudgha
+
+キクバークッグァの悪意
+%%%%
+the anger of Yredelemnul
+
+イレデレンヌルの憤り
+%%%%
+the capriciousness of Xom
+
+ゾムの気紛れ
+%%%%
+the wrath of Vehumet
+
+ヴェフメットの怒り
+%%%%
+the fury of Okawaru
+
+オカワルの激怒
+%%%%
+the fury of Makhleb
+
+マクレブの激怒
+%%%%
+the will of Sif Muna
+
+シフ・ムーナの意志
+%%%%
+the fiery rage of Trog
+
+トログの赫怒
+%%%%
+the wrath of Nemelex Xobeh
+
+ネメレクス・ソベーの怒り
+%%%%
+the displeasure of Elyvilon
+
+エリヴィロンの不興
+%%%%
+the touch of Lugonu
+
+ルゴヌの御手
+%%%%
+the wrath of Beogh
+
+ベオの怒り
+%%%%
+the all-consuming vengeance of Jiyva
+
+ジーヴァの全てを呑み込む報復
+%%%%
+the enmity of Fedhas Madash
+
+フェダス・マダシュの恨み
+%%%%
+the meddling of Cheibriados
+
+ケイブリアドスの干渉
+%%%%
+the doom of Ashenzari
+
+アシェンザリの破滅
+%%%%
+the darkness of Dithmenos
+
+ディスメノスの闇
+%%%%
+the greed of Gozag
+
+ゴザーグの強欲
+%%%%
+the adversity of Qazlal
+
+クァズラルの災厄
+%%%%
+the disappointment of Ru
+
+ルーの失望
+%%%%
+the progress of Pakellas
+
+パケラスの進歩
+%%%%
+the fury of Uskayaw
+
+ウスカヤーの激怒
+%%%%
+the memory of Hepliaklqana
+
+ヘプリアクルカナの記憶
+%%%%
+the rancor of the Wu Jian Council
+
+ウー・ジアン評議会の遺恨
+%%%%
+the fiery vengeance of Ignis
+
+イグニスの炎の報復
+%%%%

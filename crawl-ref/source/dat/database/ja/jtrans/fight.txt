@@ -1,0 +1,129 @@
+%%%%
+# bad_attack() の adj(名前の前に付ける。"your" は japanese.txt)
+your ally
+
+あなたの従者である
+%%%%
+ally
+
+従者である
+%%%%
+[adj]neutral
+
+中立的な
+%%%%
+[adj]non-hostile
+
+敵対的でない
+%%%%
+# stop_attack_prompt()(モンスター版)。引数: 「〜を攻撃し」、suffix、懲罰の警告
+Really %s%s?%s
+
+本当に%s%sますか？%s
+%%%%
+This attack would place you under penance!
+
+この攻撃により神の懲罰を受けることになります！
+%%%%
+# 「〜を攻撃し」の形(本当に〜ますか)
+fire at %s
+
+%sを撃ち
+%%%%
+fire in %s direction
+
+%sの方向に撃ち
+%%%%
+attack %s
+
+%sを攻撃し
+%%%%
+# stop_attack_prompt()(範囲版)。英語の動詞は "[stop attack prompt]" 付きで
+# 「を〜し」の形に訳す。引数: 巻き込む相手、「の近く」、動詞、suffix、懲罰の警告
+Really %s%s %s%s?%s
+
+本当に%s%s%s%sますか？%s
+%%%%
+[stop attack prompt]near
+
+の近く
+%%%%
+[stop attack prompt]attack
+
+を攻撃し
+%%%%
+[stop attack prompt]attack near
+
+の近くを攻撃し
+%%%%
+# 日本語の終止形の動詞句(「震石を放つ」)が渡されたとき。
+# 引数: 巻き込む相手、suffix、動詞句、懲罰の警告
+Affecting %s%s, really %s?%s
+
+%s%sを巻き込みますが、本当に%sつもりですか？%s
+%%%%
+yourself
+
+あなた自身
+%%%%
+yourself and %s
+
+あなた自身と%s
+%%%%
+# wielded_weapon_check()。動詞は連用形
+[weapon check]attack
+
+攻撃し
+%%%%
+[weapon check]charge
+
+突撃し
+%%%%
+Really %s while wielding nothing?
+
+本当に素手で%sますか？
+%%%%
+# 引数: 武器、動詞(連用形)
+Really %s while wielding %s?
+
+本当に%sを手にしたまま%sますか？
+%%%%
+%s and %s
+
+%sと%s
+%%%%
+# stop_summoning_reason()(「〜状態で」の前に入る)
+emitting a toxic aura
+
+毒のオーラを放っている
+%%%%
+spewing a noxious bog
+
+有毒な沼を吐き出している
+%%%%
+in the middle of a polar vortex
+
+極渦の中にいる
+%%%%
+raining down reagents
+
+試薬を降らせている
+%%%%
+# stop_summoning_prompt()。引数: 理由、動詞(連用形)
+Really %s while %s?
+
+%s状態で、本当に%sますか？
+%%%%
+[stop summoning]do that
+
+そうし
+%%%%
+# warn_about_bad_targets()。引数: 呪文などの名前、相手、「ほか〜体」、続けるかの確認
+%s might hit %s%s. %s
+
+%sは%s%sに当たるかもしれません。%s
+%%%%
+(and %zu other bad targets)
+
+(ほか%zu体)
+%%%%

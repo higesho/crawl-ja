@@ -1,0 +1,195 @@
+%%%%
+you
+
+あなた
+%%%%
+Your unstable footing causes you to fumble your attack.
+
+足場が悪いために、あなたは攻撃を失敗した。
+%%%%
+forces you to slow down.
+
+はあなたを強制的に減速させた。
+%%%%
+protects you from inadvertent hurry.
+
+は意図しない加速からあなたを保護した。
+%%%%
+A red film seems to cover your vision as you go berserk!
+
+あなたがバーサークするとともに視界が真っ赤に染まった！
+%%%%
+Your finesse ends abruptly.
+
+あなたの早業の技巧は不意に終わった。
+%%%%
+You feel yourself moving faster!
+
+あなたの動きが速くなった！
+%%%%
+You feel mighty!
+
+あなたは力強くなった！
+%%%%
+You're already berserk!
+
+あなたはすでにバーサークしている！
+%%%%
+You can't enter a blood rage from death's door.
+
+死のとば口に立っている間はバーサークすることができない。
+%%%%
+You are too mesmerised to rage.
+
+あなたは魅了されておりバーサークすることができない。
+%%%%
+You're too calm and focused to rage.
+
+あなたは激怒に身を任せるほど我を忘れていない。
+%%%%
+You cannot raise a blood rage in your lifeless body.
+
+命持たぬ身ではバーサークすることができない。
+%%%%
+Your anger overwhelms your terror!
+
+あなたの怒りは恐怖を圧倒した！
+%%%%
+You're still recovering from your berserk rage.
+
+あなたはまだバーサークの疲労から回復していない。
+%%%%
+Your stasis prevents you from going berserk.
+
+停滞状態ではバーサークすることができない。
+%%%%
+# player::hand_name() / foot_name() / arm_name() が引く手足の名前。
+# monster.txt にない [body part] キーと、先頭の修飾語の訳 [body part mod]。
+[body part mod]eel
+
+鰻の
+%%%%
+[body part mod]scaled
+
+鱗に覆われた
+%%%%
+[body part mod]feathered
+
+羽毛に覆われた
+%%%%
+[body part mod]furry
+
+毛皮に覆われた
+%%%%
+[body part mod]bandage-wrapped
+
+包帯を巻いた
+%%%%
+[body part mod]stony
+
+石の
+%%%%
+[body part mod]ectoplasmic
+
+心霊体の
+%%%%
+[body part mod]bony
+
+骨ばった
+%%%%
+[body part mod]fossilised
+
+化石化した
+%%%%
+[body part]fist
+
+拳
+%%%%
+[body part]fists
+
+両の拳
+%%%%
+[body part]grasper
+
+把握肢
+%%%%
+[body part]graspers
+
+把握肢
+%%%%
+[body part]tendril
+
+触肢
+%%%%
+[body part]tendrils
+
+触肢
+%%%%
+[body part]underbelly
+
+下半身
+%%%%
+[body part]front pincers
+
+前の鋏
+%%%%
+[body part]coils
+
+とぐろ
+%%%%
+[body part]foreclaw
+
+前脚の爪
+%%%%
+[body part]foreclaws
+
+前脚の爪
+%%%%
+[body part]branch
+
+枝
+%%%%
+[body part]branches
+
+枝
+%%%%
+[body part]misty tendril
+
+霧の手先
+%%%%
+[body part]misty tendrils
+
+霧の手先
+%%%%
+[body part]strand
+
+下部
+%%%%
+[body part]strands
+
+下部
+%%%%
+[body part]hypha
+
+菌糸
+%%%%
+[body part]hyphae
+
+菌糸
+%%%%
+[body part]forepaw
+
+前足
+%%%%
+[body part]forepaws
+
+両前足
+%%%%
+[body part]parchments
+
+羊皮紙
+%%%%
+[body part]mandibles
+
+大顎
+%%%%

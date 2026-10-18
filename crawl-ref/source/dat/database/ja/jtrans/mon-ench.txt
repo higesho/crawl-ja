@@ -1,0 +1,417 @@
+%%%%
+You detect the %s %s.
+
+あなたは%sた%sの姿を探知した。
+%%%%
+You can no longer detect the %s %s.
+
+あなたは%sた%sの姿を探知できない。
+%%%%
+is no longer berserk.
+
+はもうバーサークしていない。
+%%%%
+looks more energetic.
+
+は元気になったように見える。
+%%%%
+is no longer moving quickly.
+
+はもはや高速に動いてはいない。
+%%%%
+slows down.
+
+は動きが遅くなった。
+%%%%
+becomes audible again.
+
+は再び音が聞こえるようになった。
+%%%%
+As %s dies, the sound returns.
+
+%sが倒れると、再び音が戻ってきた。
+%%%%
+no longer looks unusually strong.
+
+はもう力が強化されていない。
+%%%%
+is no longer moving slowly.
+
+の動きはもう遅くない。
+%%%%
+is no longer paralysed.
+
+はもう麻痺していない。
+%%%%
+is no longer petrified.
+
+はもう石化していない。
+%%%%
+stops retreating.
+
+は逃げるのを止めた。
+%%%%
+seems less confused.
+
+は混乱が収まったようだ。
+%%%%
+%s appears from thin air!
+
+%sはどこからともなく現れた！
+%%%%
+%s is no longer %s.
+
+%sはもう%sていない。
+%%%%
+is no longer charmed.
+
+はもう魅了されていない。
+%%%%
+is no longer hexed.
+
+はもう呪縛されていない。
+%%%%
+is no longer bribed.
+
+はもう買収されていない。
+%%%%
+stops glowing.
+
+は輝きを失った。
+%%%%
+%s stops glowing and disappears.
+
+%sは輝きを失い、同時に姿を消した。
+%%%%
+stops burning.
+
+を燃やしていた炎が消えた。
+%%%%
+looks more healthy.
+
+は体調が持ち直したようだ。
+%%%%
+The forest calms down.
+
+森は静けさを取り戻した。
+%%%%
+is no longer liquefying the ground.
+
+はもう地面を液状化させていない。
+%%%%
+is no longer dazed.
+
+の眩暈がおさまった。
+%%%%
+is no longer mute.
+
+は声が出るようになった。
+%%%%
+is no longer blind.
+
+は目が見えるようになった。
+%%%%
+is no longer stupefied.
+
+はもうぼうっとしていない。
+%%%%
+is no longer mad.
+
+はもう狂乱していない。
+%%%%
+is no longer regenerating.
+
+はもう急速再生しなくなった。
+%%%%
+is no longer weakened.
+
+はもう弱体化していない。
+%%%%
+%s toxic aura wanes.
+
+%s放つ毒のオーラは弱まった。
+%%%%
+is no longer more vulnerable to fire.
+
+はもう火に弱くなくなった。
+%%%%
+is no longer more vulnerable to poison.
+
+はもう毒に弱くなくなった。
+%%%%
+is no longer unusually agile.
+
+はもう動きが機敏でなくなった。
+%%%%
+is no longer encased in ice.
+
+はもう凍結していない。
+%%%%
+is no longer being sapped.
+
+はもう魔法の制御力が弱体化されていない。
+%%%%
+seems less drained.
+
+は衰弱から回復したようだ。
+%%%%
+is no longer deflecting missiles.
+
+はもう飛来物を弾く能力がなくなった。
+%%%%
+is no longer unusually resistant.
+
+の耐性はもう強化されていない。
+%%%%
+seems less brilliant.
+
+の叡智はなりをひそめたようだ。
+%%%%
+loses the glow of perfection.
+
+は無欠の輝きを失った。
+%%%%
+%s soul is no longer bound.
+
+%s魂はもう呪縛されてない。
+%%%%
+is no longer infested.
+
+はもう虫に寄生されていない。
+%%%%
+The shadowy forms in the deep grow still as others approach.
+
+他の者たちが近づくと、深淵の影はおとなしくなった。
+%%%%
+Shadowy forms rise from the deep at %s song!
+
+%s歌に呼ばれ、霊魂が深淵より蘇った！
+%%%%
+The flames covering %s go out.
+
+%sにまとわりついていた炎は消えた。
+%%%%
+burns!
+
+の体は燃えた！
+%%%%
+The portal closes; %s is severed.
+
+ポータルが閉じたため、%sは切断された。
+%%%%
+suddenly becomes enraged!
+
+は突如激怒した！
+%%%%
+You hear a distant and violent thrashing sound.
+
+あなたは暴力的な切り裂く音を遠くに聞いた。
+%%%%
+writhes!
+
+は身もだえした！
+%%%%
+The winds around %s start to calm down.
+
+%sの周囲の風はおさまりつつある。
+%%%%
+is seared!
+
+は灼かれた！
+%%%%
+%s chant is interrupted.
+
+%s招集の詠唱は中断された。
+%%%%
+The winds around %s calm down.
+
+%sの周囲の風はおさまった。
+%%%%
+%s song is interrupted.
+
+%s歌は中断された。
+%%%%
+[adj]charmed
+
+魅了され
+%%%%
+[adj]hexed
+
+呪縛され
+%%%%
+[adj]dominated
+
+支配され
+%%%%
+[adj]bribed
+
+買収され
+%%%%
+ is no longer in a wild frenzy.
+
+はもう狂乱していない。
+%%%%
+ excess health fades away.
+
+余分な体力は消え去った。
+%%%%
+As %s is destroyed, the sound returns.
+
+%sが破壊されると、再び音が戻ってきた。
+%%%%
+ is no longer overcome with frustration.
+
+はもう苛立ちに囚われていない。
+%%%%
+ seems to regain its courage.
+
+は勇気を取り戻したようだ。
+%%%%
+You can once again detect %s.
+
+あなたは再び%sの姿を探知した。
+%%%%
+You can no longer detect %s.
+
+あなたは%sの姿を探知できなくなった。
+%%%%
+You lose your grip on %s soul.
+
+あなたは%s魂を掴み損ねた。
+%%%%
+ inner flame fades away.
+
+内なる炎は消え去った。
+%%%%
+ is no longer strong-willed.
+
+の意志の強さは元に戻った。
+%%%%
+ seems to return to its normal shape.
+
+は元通りの姿に戻ったようだ。
+%%%%
+ sign of ruin fades away.
+
+破滅の印は消え去った。
+%%%%
+ is no longer corroded.
+
+はもう腐食していない。
+%%%%
+The zombie hands holding %s return to the earth.
+
+%sを掴んでいたゾンビの手は土に還った。
+%%%%
+The roots around %s sink back into the ground.
+
+%sに絡みついていた根は地中に沈んでいった。
+%%%%
+%s finishes expelling the %s from its %s.
+
+%sは%sを%sから吐き出し終えた。
+%%%%
+ stops rolling and uncurls.
+
+は転がるのをやめ、丸めていた体を伸ばした。
+%%%%
+ no longer looks unusually toxic.
+
+はもう毒性が強化されていないようだ。
+%%%%
+ lost momentum returns!
+
+失われた勢いが戻ってきた！
+%%%%
+%s shapes itself into a furious %s!
+
+%sは猛り狂う%sへと姿を変えた！
+%%%%
+%s is freed from its curse.
+
+%sは呪いから解放された。
+%%%%
+%s turns its attention back to you.
+
+%sは再びあなたに注意を向けた。
+%%%%
+The grapnel comes loose from %s.
+
+鉤縄は%sから外れた。
+%%%%
+ looks more stable.
+
+は安定したように見える。
+%%%%
+ is no longer laced with chaos.
+
+はもう混沌に染まっていない。
+%%%%
+ wakes up again.
+
+は再び目を覚ました。
+%%%%
+ memory burns away to nothing.
+
+記憶は燃え尽きて無に帰した。
+%%%%
+is no longer touched by paradox.
+
+はもう逆説に触れられていない。
+%%%%
+The ward upon %s fades away.
+
+%sにかけられた護りは消え去った。
+%%%%
+ spells are no longer diminished.
+
+呪文はもう弱められていない。
+%%%%
+ magic is no longer disrupted.
+
+魔法はもう妨害されていない。
+%%%%
+ dark mirror aura disappears.
+
+闇の鏡のオーラは消え去った。
+%%%%
+being lured by song
+
+歌に誘い寄せられること
+%%%%
+The pull of %s song draws you forwards.
+
+%s歌に引き寄せられ、あなたは前へ進んだ。
+%%%%
+%s stops winding its clockwork bee.
+
+%sは時計仕掛けの蜂のぜんまいを巻くのをやめた。
+%%%%
+%s continues winding its clockwork bee....
+
+%sは時計仕掛けの蜂のぜんまいを巻き続けている……
+%%%%
+ gasps for air!
+
+は息を求めてあえいだ！
+%%%%
+ is no longer sharing its pain.
+
+はもう痛みを共有してはいない。
+%%%%
+ is no longer haunted by guilt.
+
+はもう罪悪感に苛まれていない。
+%%%%
+%s searing ray is interrupted.
+
+%s焼灼の光線は中断された。
+%%%%
+Your grip on %s soul is slipping...
+
+%s魂を掴むあなたの手が緩みつつある……
+%%%%
+ recovers from rimeblight.
+
+は霜枯れから回復した。
+%%%%

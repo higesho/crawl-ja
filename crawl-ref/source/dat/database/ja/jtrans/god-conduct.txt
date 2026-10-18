@@ -1,0 +1,277 @@
+%%%%
+is not enthusiastic about the mutagenic glow surrounding you.
+
+はあなたを取り巻く変異性の輝きをよく思っていない。
+%%%%
+does not appreciate the extra mutagenic glow surrounding you!
+
+はあなたを取り巻く強変異性の輝きを喜んでいない！
+%%%%
+dislikes it when %s.
+
+は%sを嫌う。
+%%%%
+strongly dislikes it when %s.
+
+は%sを特に嫌う。
+%%%%
+<white>%s is honoured by your kill.</white>
+
+<white>%sはあなたの殺しを誇りに思った。</white>
+%%%%
+accepts your kill.
+
+はあなたの殺しを善しとした。
+%%%%
+appreciates your contribution to the ecosystem.
+
+は生態系へのあなたの貢献を喜んだ。
+%%%%
+thoroughly appreciates the change of pace.
+
+はあなたの減速ぶりを大いに喜んだ。
+%%%%
+appreciates the change of pace.
+
+はあなたの減速ぶりを喜んだ。
+%%%%
+doesn't like anything? This is a bug; please report it.
+
+は何も好まない？これはバグなので報告してください。
+%%%%
+likes it when %s.
+
+は%sを好む。
+%%%%
+especially likes it when %s.
+
+は%sを特に好む。
+%%%%
+you use evil magic or items
+
+邪悪な魔法やアイテムを使うこと
+%%%%
+forgives your inadvertent evil act, just this once.
+
+はあなたの不注意な邪悪なる振る舞いを今回だけ見逃した。
+%%%%
+you attack non-hostile holy beings
+
+敵対的でない聖なる存在を攻撃すること
+%%%%
+you kill non-hostile holy beings
+
+敵対的でない聖なる存在を殺すこと
+%%%%
+you attack neutral beings
+
+中立なるものを攻撃すること
+%%%%
+forgives your inadvertent attack on a neutral, just this once.
+
+はあなたの敵対していない者への不注意な攻撃を今回だけ見逃した。
+%%%%
+forgives your inadvertent attack on an ally, just this once.
+
+はあなたの仲間への不注意な攻撃を今回だけ見逃した。
+%%%%
+you attack allies
+
+従者を攻撃すること
+%%%%
+you use unclean or chaotic magic or items
+
+不浄な、もしくは混沌なる魔術やアイテムを使うこと
+%%%%
+forgives your inadvertent unclean act, just this once.
+
+はあなたの不注意な不浄なる振る舞いを今回だけ見逃した。
+%%%%
+you polymorph monsters
+
+モンスターを変化させること
+%%%%
+forgives your inadvertent chaotic act, just this once.
+
+はあなたの不注意な混沌なる振る舞いを今回だけ見逃した。
+%%%%
+you deliberately mutate or transform yourself
+
+わざと変化したり変異すること
+%%%%
+you use holy magic or items
+
+神聖なる魔法やアイテムを使うこと
+%%%%
+forgives your inadvertent holy act, just this once.
+
+はあなたの不注意な神聖なる振る舞いを今回だけ見逃した。
+%%%%
+you memorise spells
+
+魔法を習得すること
+%%%%
+you attempt to cast spells
+
+魔法を唱えようとすること
+%%%%
+you train magic skills
+
+魔術系のスキルを訓練すること
+%%%%
+you hasten yourself or others
+
+自分や他者を加速させること
+%%%%
+forgives your accidental hurry, just this once.
+
+はあなたがうっかり急いでしまったのを今回だけ見逃した。
+%%%%
+thinks you should slow down.
+
+はあなたはもっと減速すべきだと考えている。
+%%%%
+use unnaturally quick items
+
+不自然に素早いアイテムを使うこと
+%%%%
+you kill living beings
+
+あなたが生者を殺すこと
+%%%%
+you destroy the undead
+
+あなたが不死者を滅すること
+%%%%
+you kill demons
+
+あなたが悪魔を殺すこと
+%%%%
+you kill holy beings
+
+あなたが神聖な存在を殺すこと
+%%%%
+you destroy nonliving beings
+
+あなたが生命を持たぬものを破壊すること
+%%%%
+you explore the world
+
+あなたが世界を探索すること
+%%%%
+you kill unclean or chaotic beings
+
+あなたが不浄な者や混沌なる者を殺すこと
+%%%%
+you kill the undead
+
+あなたが不死者を殺すこと
+%%%%
+you kill evil beings
+
+あなたが邪悪な存在を殺すこと
+%%%%
+you kill wizards and other users of magic
+
+魔法使いおよび様々な魔力の使い手を殺すこと
+%%%%
+appreciates your killing of a magic user.
+
+はあなたが魔術の使い手を殺すのを喜んだ。
+%%%%
+you banish creatures to the Abyss
+
+モンスターをアビスに追放すること
+%%%%
+claims a new guest.
+
+は新たな訪問者を受け入れた。
+%%%%
+you kill the priests of other religions
+
+他宗教の司祭を殺すこと
+%%%%
+appreciates your killing of a heretic priest.
+
+はあなたが異端の司祭を殺すのを喜んだ。
+%%%%
+you hurt your foes; however, effects that cause damage over time do not interest Uskayaw
+
+あなたが敵を傷つけること(ただし、時間経過と共にダメージを与える効果はウスカヤーの興味を引かない)
+%%%%
+you collect gold
+
+金を貯めること
+%%%%
+you make personal sacrifices
+
+自らを代償に捧げること
+%%%%
+you donate money
+
+寄進すること
+%%%%
+does not appreciate your training of magic skills!
+
+はあなたが魔術系のスキルを訓練していることを喜んでいない！
+%%%%
+you use magical staves or other wizardly items
+
+魔法の杖などの魔術師らしいアイテムを使うこと
+%%%%
+does not appreciate your use of wizardly items!
+
+はあなたが魔術師らしいアイテムを使ったことを喜んでいない！
+%%%%
+you attack non-hostile orcs
+
+敵対的でないオークを攻撃すること
+%%%%
+you attack your followers
+
+信奉者を攻撃すること
+%%%%
+you encounter other hostile creatures
+
+あなたが敵対的なものに遭遇すること
+%%%%
+you explore the world outside of the Slime Pits
+
+あなたがスライムの穴ぐらの外の世界を探索すること
+%%%%
+you kill non-sluggish things
+
+あなたが鈍重でないものを殺すこと
+%%%%
+you bind yourself with curses
+
+あなたが呪いで自らを縛ること
+%%%%
+you kill challenging foes
+
+あなたが手強い敵を殺すこと
+%%%%
+you kill living or demonic beings while their torch is lit
+
+松明が灯っている間にあなたが生者や悪魔を殺すこと
+%%%%
+you kill holy or unique beings while their torch is lit
+
+松明が灯っている間にあなたが神聖な存在やユニークを殺すこと
+%%%%
+With your torch unlit, %s soul goes wasted...
+
+松明が灯っていないため、%s魂は無駄に失われた……
+%%%%
+%s %ssoul becomes fuel for the torch.
+
+%s%s魂は松明の燃料となった。
+%%%%
+[torch soul]potent
+
+強大な
+%%%%
+[torch soul]unsullied
+
+穢れなき
+%%%%

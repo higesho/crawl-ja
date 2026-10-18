@@ -49,6 +49,7 @@
 #include "item-status-flag-type.h"
 #include "items.h"
 #include "item-use.h"
+#include "japanese.h"
 #include "killer-type.h"
 #include "level-state-type.h"
 #include "libutil.h"
@@ -163,7 +164,7 @@ bool bless_weapon(god_type god, brand_type brand, colour_t colour)
 {
     ASSERT(can_do_capstone_ability(god));
 
-    int item_slot = prompt_invent_item("Brand which weapon?",
+    int item_slot = prompt_invent_item(jtransc("Brand which weapon?"),
                                        menu_type::invlist,
                                        OSEL_BLESSABLE_WEAPON, OPER_ANY,
                                        invprompt_flag::escape_only);
@@ -182,15 +183,11 @@ bool bless_weapon(god_type god, brand_type brand, colour_t colour)
         return false;
     }
 
-    string prompt = "Do you wish to have " + wpn.name(DESC_YOUR)
-                       + " ";
-    if (brand == SPWPN_PAIN)
-        prompt += "bloodied with pain";
-    else if (brand == SPWPN_DISTORTION)
-        prompt += "corrupted with distortion";
-    else
-        prompt += "blessed with holy wrath";
-    prompt += "?";
+    string prompt = make_stringf(jtransc("Do you wish to have {your weapon} {which flavour}?"),
+                                 wpn.name(DESC_YOUR).c_str(),
+                                 jtransc(brand == SPWPN_PAIN       ? "bloodied with pain" :
+                                         brand == SPWPN_DISTORTION ? "corrupted with distortion" :
+                                                                     "blessed with holy wrath"));
     if (!yesno(prompt.c_str(), true, 'n'))
     {
         canned_msg(MSG_OK);
@@ -218,14 +215,16 @@ bool bless_weapon(god_type god, brand_type brand, colour_t colour)
     calc_mp(); // in case the old brand was antimagic,
     you.redraw_armour_class = true; // protection,
     you.redraw_evasion = true;      // or evasion
-    const string desc = old_name + " " + _god_blessing_description(god);
+    const string desc = make_stringf(jtransc("{old name} {blessing description}"),
+                                     old_name.c_str(),
+                                     jtransc(_god_blessing_description(god)));
     take_note(Note(NOTE_ID_ITEM, 0, 0, wpn.name(DESC_A), desc));
     wpn.flags |= ISFLAG_NOTED_ID;
     wpn.props[FORCED_ITEM_COLOUR_KEY] = colour;
 
-    mprf(MSGCH_GOD, "Your %s shines brightly!", wpn.name(DESC_QUALNAME).c_str());
+    mprf(MSGCH_GOD, jtransc("Your %s shines brightly!"), wpn.name(DESC_QUALNAME).c_str());
     flash_view(UA_PLAYER, colour);
-    simple_god_message(" booms: Use this gift wisely!");
+    simple_god_message(jtransc(" booms: Use this gift wisely!"));
     you.one_time_ability_used.set(you.religion);
     take_note(Note(NOTE_GOD_GIFT, you.religion));
 
@@ -268,11 +267,11 @@ bool zin_donate_gold()
 {
     if (you.gold == 0)
     {
-        mpr("You have nothing to donate!");
+        mpr(jtrans("You have nothing to donate!"));
         return false;
     }
 
-    if (!yesno("Do you wish to donate half of your money?", true, 'n'))
+    if (!yesno(jtransc("Do you wish to donate half of your money?"), true, 'n'))
     {
         canned_msg(MSG_OK);
         return false;
@@ -282,8 +281,8 @@ bool zin_donate_gold()
     const int donation = _gold_to_donation(donation_cost);
 
 #if defined(DEBUG_DIAGNOSTICS) || defined(DEBUG_SACRIFICE) || defined(DEBUG_PIETY)
-    mprf(MSGCH_DIAGNOSTICS, "A donation of $%d amounts to an "
-         "increase of piety by %d.", donation_cost, donation);
+    mprf(MSGCH_DIAGNOSTICS, jtransc("A donation of $%d amounts to an "
+         "increase of piety by %d."), donation_cost, donation);
 #endif
     // Take a note of the donation.
     take_note(Note(NOTE_DONATE_MONEY, donation_cost));
@@ -294,7 +293,7 @@ bool zin_donate_gold()
 
     if (donation < 1)
     {
-        simple_god_message(" finds your generosity lacking.");
+        simple_god_message(jtransc(" finds your generosity lacking."));
         return true;
     }
 
@@ -308,22 +307,26 @@ bool zin_donate_gold()
     if (player_under_penance())
     {
         if (estimated_piety >= you.penance[GOD_ZIN])
-            mpr("You feel that you will soon be absolved of all your sins.");
+            mpr(jtrans("You feel that you will soon be absolved of all your sins."));
         else
-            mpr("You feel that your burden of sins will soon be lighter.");
+            mpr(jtrans("You feel that your burden of sins will soon be lighter."));
     }
     else
     {
-        string result = "You feel that " + god_name(GOD_ZIN) + " will soon be ";
-        result +=
+        string how_piety = jtrans(
             (estimated_piety >= piety_breakpoint(5)) ? "exalted by your worship" :
             (estimated_piety >= piety_breakpoint(4)) ? "extremely pleased with you" :
             (estimated_piety >= piety_breakpoint(3)) ? "greatly pleased with you" :
             (estimated_piety >= piety_breakpoint(2)) ? "most pleased with you" :
             (estimated_piety >= piety_breakpoint(1)) ? "pleased with you" :
             (estimated_piety >= piety_breakpoint(0)) ? "aware of your devotion"
-                                                     : "noncommittal";
-        result += (donation >= 30 && you.raw_piety < piety_breakpoint(5)) ? "!" : ".";
+                                                     : "noncommittal");
+
+        how_piety = replace_all(how_piety, "ている", "てくれる");
+
+        const string result = make_stringf(jtransc("You feel that %s will soon be %s%s"),
+            god_name_jc(GOD_ZIN), how_piety.c_str(),
+            (donation >= 30 && you.raw_piety < piety_breakpoint(5)) ? "！" : "。");
 
         mpr(result);
     }
@@ -594,9 +597,8 @@ string zin_recite_text(const int seed, const int prayertype, int step)
                                 (prayertype == RECITE_HERETIC)  ?  "Apostates"    :
                                 (prayertype == RECITE_UNHOLY)   ?  "Anathema"     :
                                                                    "Bugginess";
-        ostringstream out;
-        out << bookname << ' ' << (chapter + 1) << ':' << (verse + 1);
-        return out.str();
+        return make_stringf(jtransc("'bookname' chapter:verse"),
+                            jtransc(bookname), chapter + 1, verse + 1);
     }
 
     // These mad-libs are deterministically derived from the verse number
@@ -613,21 +615,23 @@ string zin_recite_text(const int seed, const int prayertype, int step)
     COMPILE_CHECK(ARRAYSZ(smite_text) == 9);
     const int smite_seed = (verse/3) % 9;
 
-    string recite = book_of_zin[chapter][step-1];
+    // 聖典の文と差し込む語は辞書(jtrans/god-abil.txt)で訳す。
+    // 語は [zin sinners] などのタグ付きキーで引く。
+    string recite = jtrans(book_of_zin[chapter][step-1]);
 
     const map<string, string> replacements =
     {
-        { "sinners", sinner_text[sinner_seed] },
+        { "sinners", tagged_jtrans("[zin sinners]", sinner_text[sinner_seed]) },
 
-        { "sin_adj",  sin_text[sin_seed][0] },
-        { "sin_noun", sin_text[sin_seed][1] },
+        { "sin_adj",  tagged_jtrans("[zin sin adj]", sin_text[sin_seed][0]) },
+        { "sin_noun", tagged_jtrans("[zin sin noun]", sin_text[sin_seed][1]) },
 
-        { "virtuous", virtue_text[virtue_seed][0] },
-        { "virtue",   virtue_text[virtue_seed][1] },
+        { "virtuous", tagged_jtrans("[zin virtuous]", virtue_text[virtue_seed][0]) },
+        { "virtue",   tagged_jtrans("[zin virtue]", virtue_text[virtue_seed][1]) },
 
-        { "smite",   smite_text[smite_seed][0] },
-        { "smitten", smite_text[smite_seed][1] },
-        { "Smitten", uppercase_first(smite_text[smite_seed][1]) },
+        { "smite",   tagged_jtrans("[zin smite]", smite_text[smite_seed][0]) },
+        { "smitten", tagged_jtrans("[zin smite]", smite_text[smite_seed][0]) },
+        { "Smitten", tagged_jtrans("[zin smite]", smite_text[smite_seed][0]) },
     };
 
     return replace_keys(recite, replacements);
@@ -767,14 +771,14 @@ bool zin_check_able_to_recite(bool quiet)
     if (you.duration[DUR_RECITE])
     {
         if (!quiet)
-            mpr("Finish your current sermon first, please.");
+            mpr(jtrans("Finish your current sermon first, please."));
         return false;
     }
 
     if (you.duration[DUR_RECITE_COOLDOWN])
     {
         if (!quiet)
-            mpr("You're not ready to recite again yet.");
+            mpr(jtrans("You're not ready to recite again yet."));
         return false;
     }
 
@@ -913,9 +917,9 @@ bool zin_recite_to_single_monster(const coord_def& where)
     if (mon->can_speak() && one_chance_in(5))
     {
         if (check < -10)
-            simple_monster_message(*mon, " guffaws at your puny god.");
+            simple_monster_message(*mon, jtransc(" guffaws at your puny god."));
         else if (check < -5)
-            simple_monster_message(*mon, " sneers at your recitation.");
+            simple_monster_message(*mon, jtransc(" sneers at your recitation."));
     }
 
     if (check <= 0)
@@ -1067,7 +1071,7 @@ bool zin_recite_to_single_monster(const coord_def& where)
 
     case zin_eff::daze:
         mon->daze(degree + random2avg(spellpower / 10, 2));
-        simple_monster_message(*mon, " is dazed by your recitation.");
+        simple_monster_message(*mon, jtransc(" is dazed by your recitation."));
         affected = true;
         break;
 
@@ -1077,9 +1081,9 @@ bool zin_recite_to_single_monster(const coord_def& where)
                              (degree + random2(spellpower)) * BASELINE_DELAY)))
         {
             if (prayertype == RECITE_HERETIC)
-                simple_monster_message(*mon, " is confused by your recitation.");
+                simple_monster_message(*mon, jtransc(" is confused by your recitation."));
             else
-                simple_monster_message(*mon, " stumbles about in disarray.");
+                simple_monster_message(*mon, jtransc(" stumbles about in disarray."));
             affected = true;
         }
         break;
@@ -1089,17 +1093,17 @@ bool zin_recite_to_single_monster(const coord_def& where)
                           (degree + random2(spellpower)) * BASELINE_DELAY)))
         {
             simple_monster_message(*mon,
-                minor ? " is awed by your recitation."
-                      : " is aghast at the heresy of your recitation.");
+                jtransc(minor ? " is awed by your recitation."
+                              : " is aghast at the heresy of your recitation."));
             affected = true;
         }
         break;
 
     case zin_eff::smite:
         if (minor)
-            simple_monster_message(*mon, " is smitten by the wrath of Zin.");
+            simple_monster_message(*mon, jtransc(" is smitten by the wrath of Zin."));
         else
-            simple_monster_message(*mon, " is blasted by the fury of Zin!");
+            simple_monster_message(*mon, jtransc(" is blasted by the fury of Zin!"));
         // XXX: This duplicates code in cast_smiting().
         mon->hurt(&you, 7 + (random2(spellpower) * 33 / 191));
         if (mon->alive())
@@ -1110,7 +1114,7 @@ bool zin_recite_to_single_monster(const coord_def& where)
     case zin_eff::blind:
         if (mon->add_ench(mon_enchant(ENCH_BLIND, &you, INFINITE_DURATION)))
         {
-            simple_monster_message(*mon, " is struck blind by the wrath of Zin!");
+            simple_monster_message(*mon, jtransc(" is struck blind by the wrath of Zin!"));
             affected = true;
         }
         break;
@@ -1119,7 +1123,7 @@ bool zin_recite_to_single_monster(const coord_def& where)
         if (mon->add_ench(mon_enchant(ENCH_SILVER_CORONA, &you,
                           (degree + random2(spellpower)) * BASELINE_DELAY)))
         {
-            simple_monster_message(*mon, " is limned with silver light.");
+            simple_monster_message(*mon, jtransc(" is limned with silver light."));
             affected = true;
         }
         break;
@@ -1130,8 +1134,8 @@ bool zin_recite_to_single_monster(const coord_def& where)
                           (degree + random2(spellpower)) * BASELINE_DELAY)))
         {
             simple_monster_message(*mon,
-                minor ? " quails at your recitation."
-                      : " looks feeble and powerless before your recitation.");
+                jtransc(minor ? " quails at your recitation."
+                              : " looks feeble and powerless before your recitation."));
             affected = true;
         }
         break;
@@ -1139,7 +1143,7 @@ bool zin_recite_to_single_monster(const coord_def& where)
     case zin_eff::mute:
         if (mon->add_ench(mon_enchant(ENCH_MUTE, &you, INFINITE_DURATION)))
         {
-            simple_monster_message(*mon, " is struck mute by the wrath of Zin!");
+            simple_monster_message(*mon, jtransc(" is struck mute by the wrath of Zin!"));
             affected = true;
         }
         break;
@@ -1147,7 +1151,7 @@ bool zin_recite_to_single_monster(const coord_def& where)
     case zin_eff::mad:
         if (mon->add_ench(mon_enchant(ENCH_MAD, &you, INFINITE_DURATION)))
         {
-            simple_monster_message(*mon, " is driven mad by the wrath of Zin!");
+            simple_monster_message(*mon, jtransc(" is driven mad by the wrath of Zin!"));
             affected = true;
         }
         break;
@@ -1155,7 +1159,7 @@ bool zin_recite_to_single_monster(const coord_def& where)
     case zin_eff::dumb:
         if (mon->add_ench(mon_enchant(ENCH_DUMB, &you, INFINITE_DURATION)))
         {
-            simple_monster_message(*mon, " is left stupefied by the wrath of Zin!");
+            simple_monster_message(*mon, jtransc(" is left stupefied by the wrath of Zin!"));
             affected = true;
         }
         break;
@@ -1176,9 +1180,9 @@ bool zin_recite_to_single_monster(const coord_def& where)
                 if (mon->alive())
                 {
                     simple_monster_message(*mon,
-                      (damage < 25) ? " chaotic flesh sizzles and spatters!" :
-                      (damage < 50) ? " chaotic flesh bubbles and boils."
-                                    : " chaotic flesh runs like molten wax.",
+                      jtransc((damage < 25) ? " chaotic flesh sizzles and spatters!" :
+                              (damage < 50) ? " chaotic flesh bubbles and boils."
+                                            : " chaotic flesh runs like molten wax."),
                       true);
 
                     print_wounds(*mon);
@@ -1188,7 +1192,7 @@ bool zin_recite_to_single_monster(const coord_def& where)
                 else
                 {
                     simple_monster_message(*mon,
-                        " melts away into a sizzling puddle of chaotic flesh.");
+                        jtransc(" melts away into a sizzling puddle of chaotic flesh."));
                     monster_die(*mon, KILL_YOU, NON_MONSTER);
                 }
             }
@@ -1228,7 +1232,7 @@ static void _zin_saltify(monster* mon)
     const monster_type pillar_type = mons_species(mons_base_type(*mon));
     const int hd = mon->get_hit_dice();
 
-    simple_monster_message(*mon, " is turned into a pillar of salt by the wrath of Zin!");
+    simple_monster_message(*mon, jtransc(" is turned into a pillar of salt by the wrath of Zin!"));
 
     // If the monster leaves a corpse when it dies, destroy the corpse.
     item_def* corpse = monster_die(*mon, KILL_YOU, NON_MONSTER);
@@ -1252,7 +1256,7 @@ static void _zin_saltify(monster* mon)
 
 bool zin_vitalisation()
 {
-    simple_god_message(" grants you divine stamina.");
+    simple_god_message(jtransc(" grants you divine stamina."));
 
     // Add divine stamina.
     const int stamina_amt =
@@ -1269,7 +1273,7 @@ bool zin_vitalisation()
 
 void zin_remove_divine_stamina()
 {
-    mprf(MSGCH_DURATION, "Your divine stamina fades away.");
+    mprf(MSGCH_DURATION, jtransc("Your divine stamina fades away."));
     notify_stat_change(STAT_STR, -you.attribute[ATTR_DIVINE_STAMINA], true);
     notify_stat_change(STAT_INT, -you.attribute[ATTR_DIVINE_STAMINA], true);
     notify_stat_change(STAT_DEX, -you.attribute[ATTR_DIVINE_STAMINA], true);
@@ -1282,19 +1286,19 @@ spret zin_imprison(const coord_def& target, bool fail)
     monster* mons = monster_at(target);
     if (mons == nullptr || !you.can_see(*mons))
     {
-        mpr("You can see no monster there to imprison!");
+        mpr(jtrans("You can see no monster there to imprison!"));
         return spret::abort;
     }
 
     if (mons->is_peripheral())
     {
-        mpr("You cannot imprison that!");
+        mpr(jtrans("You cannot imprison that!"));
         return spret::abort;
     }
 
     if (mons->friendly() || mons->good_neutral())
     {
-        mpr("You cannot imprison a law-abiding creature!");
+        mpr(jtrans("You cannot imprison a law-abiding creature!"));
         return spret::abort;
     }
 
@@ -1309,9 +1313,9 @@ void zin_sanctuary()
 
     // Yes, shamelessly stolen from NetHack...
     if (!silenced(you.pos())) // How did you manage that?
-        mprf(MSGCH_SOUND, "You hear a choir sing!");
+        mprf(MSGCH_SOUND, jtransc("You hear a choir sing!"));
     else
-        mpr("You are suddenly bathed in radiance!");
+        mpr(jtrans("You are suddenly bathed in radiance!"));
 
     flash_view(UA_PLAYER, WHITE);
     // Allow extra time for the flash to linger.
@@ -1325,9 +1329,9 @@ void zin_sanctuary()
 void tso_divine_shield()
 {
     if (!you.duration[DUR_DIVINE_SHIELD])
-        mpr("A divine shield manifests in front of you!");
+        mpr(jtrans("A divine shield manifests in front of you!"));
     else
-        mpr("Your divine shield is renewed.");
+        mpr(jtrans("Your divine shield is renewed."));
 
     const int charges = 3 + you.skill_rdiv(SK_INVOCATIONS, 2, 5);
     you.duration[DUR_DIVINE_SHIELD] = max(you.duration[DUR_DIVINE_SHIELD], charges);
@@ -1337,14 +1341,14 @@ void tso_expend_divine_shield_charge()
 {
     if (you.duration[DUR_DIVINE_SHIELD] && --you.duration[DUR_DIVINE_SHIELD] <= 0)
     {
-        mprf(MSGCH_DURATION, "Your divine shield fades away.");
+        mprf(MSGCH_DURATION, jtransc("Your divine shield fades away."));
         you.duration[DUR_DIVINE_SHIELD] = 0;
     }
 }
 
 void elyvilon_purification()
 {
-    mpr("You feel purified!");
+    mpr(jtrans("You feel purified!"));
 
     you.duration[DUR_SICKNESS] = 0;
     you.duration[DUR_POISONING] = 0;
@@ -1361,8 +1365,8 @@ void elyvilon_divine_vigour()
     if (you.duration[DUR_DIVINE_VIGOUR])
         return;
 
-    mprf("%s grants you divine vigour.",
-         god_name(GOD_ELYVILON).c_str());
+    mprf(jtransc("%s grants you divine vigour."),
+         god_name_jc(GOD_ELYVILON));
 
     const int vigour_amt = 1 + you.skill_rdiv(SK_INVOCATIONS, 1, 3);
     const int old_hp_max = you.hp_max;
@@ -1384,7 +1388,7 @@ void elyvilon_divine_vigour()
 
 void elyvilon_remove_divine_vigour()
 {
-    mprf(MSGCH_DURATION, "Your divine vigour fades away.");
+    mprf(MSGCH_DURATION, jtransc("Your divine vigour fades away."));
     you.duration[DUR_DIVINE_VIGOUR] = 0;
     you.attribute[ATTR_DIVINE_VIGOUR] = 0;
     calc_hp();
@@ -1405,14 +1409,14 @@ void trog_do_trogs_hand(int pow)
 {
     you.increase_duration(DUR_TROGS_HAND,
                           5 + roll_dice(2, pow / 3 + 1), 100,
-                          "Your skin crawls.");
-    mprf(MSGCH_DURATION, "You feel strong-willed.");
+                          jtransc("Your skin crawls."));
+    mprf(MSGCH_DURATION, jtransc("You feel strong-willed."));
 }
 
 void trog_remove_trogs_hand()
 {
-    mprf(MSGCH_DURATION, "Your skin stops crawling.");
-    mprf(MSGCH_DURATION, "You feel less strong-willed.");
+    mprf(MSGCH_DURATION, jtransc("Your skin stops crawling."));
+    mprf(MSGCH_DURATION, jtransc("You feel less strong-willed."));
     you.duration[DUR_TROGS_HAND] = 0;
 }
 
@@ -1423,13 +1427,13 @@ string yred_cannot_light_torch_reason()
     // First check invalid locations
     if (player_in_branch(BRANCH_TEMPLE))
     {
-        return "There are no souls to scour here; only the pathetic idols"
-               " of powerless gods.";
+        return jtrans("There are no souls to scour here; only the pathetic idols"
+                      " of powerless gods.");
     }
     else if (player_in_branch(BRANCH_BAZAAR) || player_in_branch(BRANCH_TROVE))
-        return "There are no souls worth scouring here.";
+        return jtrans("There are no souls worth scouring here.");
     else if (player_in_branch(BRANCH_ABYSS))
-        return "Not even a god could conquer a realm without end; waste no time trying.";
+        return jtrans("Not even a god could conquer a realm without end; waste no time trying.");
 
     if (!you.props.exists(YRED_TORCH_USED_KEY))
         return "";
@@ -1437,8 +1441,8 @@ string yred_cannot_light_torch_reason()
     CrawlHashTable &levels = you.props[YRED_TORCH_USED_KEY].get_table();
     if (levels.exists(level_id::current().describe()))
     {
-        return "You have raised the torch once already on this floor."
-               " Yredelemnul offers no second chances.";
+        return jtrans("You have raised the torch once already on this floor."
+                      " Yredelemnul offers no second chances.");
     }
 
     return "";
@@ -1446,9 +1450,10 @@ string yred_cannot_light_torch_reason()
 
 bool yred_light_the_torch()
 {
-    mprf("You lift the black torch aloft and begin your conquest of %s in "
-         "Yredelemnul's name!",
-            level_id::current().describe(true, true).c_str());
+    // 場所名は前置詞なしの日本語(place.cc の担当)
+    mprf(jtransc("You lift the black torch aloft and begin your conquest of %s in "
+         "Yredelemnul's name!"),
+            prep_branch_level_name(level_id::current()).c_str());
 
     // Determine number of torch charges based on piety stars.
     // Note: You are given 'hidden' internal torchlight charges even below the
@@ -1486,7 +1491,7 @@ bool yred_light_the_torch()
     }
 
     if (aid)
-        mpr("Yredelemnul sends servants to aid you!");
+        mpr(jtrans("Yredelemnul sends servants to aid you!"));
 
     return true;
 }
@@ -1516,16 +1521,16 @@ void yred_end_conquest()
     int ratio = kills * 100 / (kills + souls_remaining + 1);
 
     // Print a message about how happy Yred is about our performance this floor
-    string msg = "You offer up the Black Torch's flame,";
+    string msg = jtrans("You offer up the Black Torch's flame,");
 
     if (ratio > 90)
-        msg+= " and Yredelemnul is glorified by your conquest!";
+        msg += jtrans(" and Yredelemnul is glorified by your conquest!");
     else if (ratio > 65)
-        msg+= " and Yredelemnul is satisfied with your conquest.";
+        msg += jtrans(" and Yredelemnul is satisfied with your conquest.");
     else if (ratio > 30)
-        msg+= " and feel Yredelemnul's disappointment in your meagre crusade.";
+        msg += jtrans(" and feel Yredelemnul's disappointment in your meagre crusade.");
     else
-        msg+= " and feel Yredelemnul's disdain for your failure.";
+        msg += jtrans(" and feel Yredelemnul's disdain for your failure.");
 
     mprf(MSGCH_GOD, "%s", msg.c_str());
 
@@ -1571,7 +1576,7 @@ void yred_feed_torch(const monster* mons)
         return;
 
     // Gain one torchlight charge for each unique killed
-    mprf(MSGCH_GOD, "The black torch howls with new intensity!");
+    mprf(MSGCH_GOD, jtransc("The black torch howls with new intensity!"));
     you.props[YRED_TORCH_POWER_KEY].get_int() += 1;
 }
 
@@ -1704,7 +1709,7 @@ void yred_make_bound_soul(monster* mon, bool force_hostile)
     schedule_delayed_action_fineff(DACT_OLD_CHARMD_SOULS_POOF, "");
 
     const string whose = you.can_see(*mon) ? apostrophise(mon->name(DESC_THE))
-                                           : mon->pronoun(PRONOUN_POSSESSIVE);
+                                           : jtrans("[soul owner]its");
 
     // Heal the health we paid wrestling for this soul
     you.heal(mon->get_ench(ENCH_SOUL_RIPE).degree);
@@ -1787,8 +1792,8 @@ void yred_make_bound_soul(monster* mon, bool force_hostile)
     // schedule our actual revival for the end of this combat round
     schedule_avoided_death_fineff(mon);
 
-    mprf("%s soul %s.", whose.c_str(),
-         !force_hostile ? "is now yours" : "fights you");
+    mprf(jtransc("%s soul %s."), whose.c_str(),
+         jtransc(!force_hostile ? "is now yours" : "fights you"));
 }
 
 bool kiku_gift_capstone_spells()
@@ -1807,13 +1812,13 @@ bool kiku_gift_capstone_spells()
 
     if (spells.empty())
     {
-        simple_god_message(" has no more spells that you can make use of!");
+        simple_god_message(jtransc(" has no more spells that you can make use of!"));
         return false;
     }
 
-    string msg = "Do you wish to receive knowledge of "
-                 + comma_separated_fn(spells.begin(), spells.end(), spell_title)
-                 + "?";
+    string msg = make_stringf(jtransc("Do you wish to receive knowledge of %s?"),
+                              comma_separated_fn(spells.begin(), spells.end(),
+                                                 spell_title_j, "、", "、").c_str());
 
     if (!yesno(msg.c_str(), true, 'n'))
     {
@@ -1821,14 +1826,14 @@ bool kiku_gift_capstone_spells()
         return false;
     }
 
-    simple_god_message(" grants you forbidden knowledge!");
+    simple_god_message(jtransc(" grants you forbidden knowledge!"));
     library_add_spells(spells);
     flash_view(UA_PLAYER, RED);
     // Allow extra time for the flash to linger.
     scaled_delay(1000);
     more();
     you.one_time_ability_used.set(you.religion);
-    take_note(Note(NOTE_GOD_GIFT, you.religion, 0, "forbidden knowledge"));
+    take_note(Note(NOTE_GOD_GIFT, you.religion, 0, jtrans("forbidden knowledge")));
     return true;
 }
 
@@ -1861,7 +1866,7 @@ bool fedhas_passthrough(const monster_info* target)
 
 void cheibriados_time_bend(int pow)
 {
-    mpr("The flow of time bends around you.");
+    mpr(jtrans("The flow of time bends around you."));
 
     for (adjacent_iterator ai(you.pos()); ai; ++ai)
     {
@@ -1879,7 +1884,7 @@ void cheibriados_time_bend(int pow)
             }
 
             simple_god_message(
-                make_stringf(" rebukes %s.",
+                make_stringf(jtransc(" rebukes %s."),
                              mon->name(DESC_THE).c_str()).c_str(),
                              false, GOD_CHEIBRIADOS);
             do_slow_monster(*mon, &you);
@@ -1954,7 +1959,7 @@ spret cheibriados_slouch(bool fail)
 {
     int count = apply_area_visible(is_slouchable, you.pos());
     if (!count)
-        if (!yesno("There's no one hasty visible. Invoke Slouch anyway?",
+        if (!yesno(jtransc("There's no one hasty visible. Invoke Slouch anyway?"),
                    true, 'n'))
         {
             canned_msg(MSG_OK);
@@ -1962,12 +1967,12 @@ spret cheibriados_slouch(bool fail)
         }
 
     targeter_radius hitfunc(&you, LOS_DEFAULT);
-    if (stop_attack_prompt(hitfunc, "Slouch", _act_slouchable))
+    if (stop_attack_prompt(hitfunc, "slouch", _act_slouchable))
         return spret::abort;
 
     fail_check();
 
-    mpr("You can feel time thicken for a moment.");
+    mpr(jtrans("You can feel time thicken for a moment."));
     dprf("your speed is %d", player_movement_speed());
 
     apply_area_visible(_slouch_monsters, you.pos());
@@ -2016,7 +2021,7 @@ void cheibriados_temporal_distortion()
 
     _cleanup_time_steps();
 
-    mpr("You warp the flow of time around you!");
+    mpr(jtrans("You warp the flow of time around you!"));
 }
 
 static coord_def _find_displace_space(const monster* mon, coord_def start_pos)
@@ -2065,7 +2070,7 @@ static void _cheibriados_displace_monster(monster* mon)
 
 void cheibriados_time_step(int pow)
 {
-    mpr("You step out of the flow of time.");
+    mpr(jtrans("You step out of the flow of time."));
     flash_view(UA_PLAYER, LIGHTBLUE);
 
     // Simulate 100 turns of 'real' time passing (so poison and other timed
@@ -2130,7 +2135,7 @@ void cheibriados_time_step(int pow)
     }
 
     flash_view(UA_PLAYER, 0);
-    mpr("You return to the normal time flow.");
+    mpr(jtrans("You return to the normal time flow."));
 }
 
 struct curse_data
@@ -2194,9 +2199,11 @@ static bool _can_use_curse(const curse_data& c)
     return false;
 }
 
+// 表示専用なので日本語を返す
 string curse_name(const CrawlStoreValue& c)
 {
-    return _ashenzari_curses[static_cast<curse_type>(c.get_int())].name;
+    return tagged_jtrans("[curse]",
+                _ashenzari_curses[static_cast<curse_type>(c.get_int())].name);
 }
 
 string curse_abbr(const CrawlStoreValue& curse)
@@ -2204,7 +2211,7 @@ string curse_abbr(const CrawlStoreValue& curse)
     const curse_data& c =
         _ashenzari_curses[static_cast<curse_type>(curse.get_int())];
 
-    return c.abbr;
+    return tagged_jtrans("[curse abbr]", c.abbr);
 }
 
 const vector<skill_type>& curse_skills(const CrawlStoreValue& curse)
@@ -2222,8 +2229,8 @@ static string ashenzari_curse_knowledge_list()
 
     const CrawlVector& curses = you.props[CURSE_KNOWLEDGE_KEY].get_vector();
 
-    return lowercase_string(comma_separated_fn(curses.begin(), curses.end(),
-                              curse_name));
+    return comma_separated_fn(curses.begin(), curses.end(), curse_name,
+                              "と", "、");
 }
 
 string desc_curse_skills(const CrawlStoreValue& curse)
@@ -2237,8 +2244,9 @@ string desc_curse_skills(const CrawlStoreValue& curse)
         if (you.can_currently_train[sk])
             trainable.push_back(sk);
 
-    return c.name + ": "
-           + comma_separated_fn(trainable.begin(), trainable.end(), skill_name);
+    return tagged_jtrans("[curse]", c.name) + ": "
+           + comma_separated_fn(trainable.begin(), trainable.end(),
+                                skill_name_j, "、", "、");
 }
 
 /**
@@ -2304,15 +2312,16 @@ void ashenzari_offer_new_curse()
     you.props[ASHENZARI_CURSE_PROGRESS_KEY] = 0;
     const string curse_names = ashenzari_curse_knowledge_list();
     const string offer_string = curse_names.empty() ? "" :
-                                (" of " + curse_names);
+                                make_stringf(jtransc("[curse offer] of %s"),
+                                             curse_names.c_str());
 
-    mprf(MSGCH_GOD, "Ashenzari invites you to partake of a vision"
-                    " and a curse%s.", offer_string.c_str());
+    mprf(MSGCH_GOD, jtransc("Ashenzari invites you to partake of a vision"
+                    " and a curse%s."), offer_string.c_str());
 }
 
 static void _do_curse_item(item_def &item)
 {
-    mprf("Your %s glows black for a moment.", item.name(DESC_PLAIN).c_str());
+    mprf(jtransc("Your %s glows black for a moment."), item.name(DESC_PLAIN).c_str());
     item.flags |= ISFLAG_CURSED;
 
     if (item.base_type == OBJ_WEAPONS)
@@ -2340,7 +2349,7 @@ static void _do_curse_item(item_def &item)
  */
 bool ashenzari_curse_item()
 {
-    const string prompt_msg = make_stringf("Curse which item? (Esc to abort)");
+    const string prompt_msg = jtrans("Curse which item? (Esc to abort)");
     const int item_slot = prompt_invent_item(prompt_msg.c_str(),
                                              menu_type::invlist,
                                              OSEL_CURSABLE, OPER_ANY,
@@ -2352,7 +2361,7 @@ bool ashenzari_curse_item()
 
     if (!item_is_selected(item, OSEL_CURSABLE))
     {
-        mprf(MSGCH_PROMPT, "You cannot curse that!");
+        mprf(MSGCH_PROMPT, jtransc("You cannot curse that!"));
         return false;
     }
 
@@ -2375,7 +2384,7 @@ bool ashenzari_curse_item()
  */
 bool ashenzari_uncurse_item()
 {
-    int item_slot = prompt_invent_item("Uncurse and destroy which item?",
+    int item_slot = prompt_invent_item(jtransc("Uncurse and destroy which item?"),
                                        menu_type::invlist,
                                        OSEL_CURSED_WORN, OPER_ANY,
                                        invprompt_flag::escape_only);
@@ -2386,23 +2395,23 @@ bool ashenzari_uncurse_item()
 
     if (!item_is_selected(item, OSEL_CURSED_WORN))
     {
-        mprf(MSGCH_PROMPT, "You cannot uncurse and destroy that!");
+        mprf(MSGCH_PROMPT, jtransc("You cannot uncurse and destroy that!"));
         return false;
     }
 
     if (item_is_melded(item))
     {
-        mprf(MSGCH_PROMPT, "You cannot shatter the curse on %s while it is "
-                           "melded with your body!",
+        mprf(MSGCH_PROMPT, jtransc("You cannot shatter the curse on %s while it is "
+                           "melded with your body!"),
              item.name(DESC_THE).c_str());
         return false;
     }
 
-    if (!yesno(make_stringf("Really remove and destroy %s?%s",
+    if (!yesno(make_stringf(jtransc("Really remove and destroy %s?%s"),
                             item.name(DESC_THE).c_str(),
                             you.props.exists(AVAILABLE_CURSE_KEY) ?
-                                " Ashenzari will withdraw the offered vision "
-                                "and curse!"
+                                jtransc(" Ashenzari will withdraw the offered vision "
+                                        "and curse!")
                                 : "").c_str(),
                             false, 'n'))
     {
@@ -2414,13 +2423,13 @@ bool ashenzari_uncurse_item()
     if (!handle_chain_removal(to_remove, true))
         return false;
 
-    mprf("You shatter the curse binding %s!", item.name(DESC_THE).c_str());
+    mprf(jtransc("You shatter the curse binding %s!"), item.name(DESC_THE).c_str());
     item_skills(item, you.skills_to_hide);
 
     for (item_def* _item : to_remove)
     {
         if (_item-> link != item_slot)
-            mprf("%s falls away from you.", _item->name(DESC_YOUR).c_str());
+            mprf(jtransc("%s falls away from you."), _item->name(DESC_YOUR).c_str());
         unequip_item(*_item);
     }
 
@@ -2429,7 +2438,7 @@ bool ashenzari_uncurse_item()
     you.props[ASHENZARI_CURSE_PROGRESS_KEY] = 0;
     if (you.props.exists(AVAILABLE_CURSE_KEY))
     {
-        simple_god_message(" withdraws the vision and curse.");
+        simple_god_message(jtransc(" withdraws the vision and curse."));
         you.props.erase(AVAILABLE_CURSE_KEY);
     }
 
@@ -2471,7 +2480,7 @@ void announce_beogh_conversion_offer()
 
             ASSERT_RANGE(get_talent(ABIL_CONVERT_TO_BEOGH).hotkey,
                             'A', 'z' + 1);
-            mprf("(press <w>%c</w> on the <w>%s</w>bility menu to convert to Beogh)",
+            mprf(jtransc("(press <w>%c</w> on the <w>%s</w>bility menu to convert to Beogh)"),
                     get_talent(ABIL_CONVERT_TO_BEOGH).hotkey,
                     command_to_string(CMD_USE_ABILITY).c_str());
             you.attribute[ATTR_SEEN_BEOGH] = 1;
@@ -2528,9 +2537,9 @@ void spare_beogh_convert()
     you.heal(random_range(10, 20));
     you.duration[DUR_CONF] = 0;
 
-    mpr("The priest grants you succour and welcomes you into the fold.");
+    mpr(jtrans("The priest grants you succour and welcomes you into the fold."));
     if (witnesses.size() > 1)
-        mpr("The other orcs roar their approval!");
+        mpr(jtrans("The other orcs roar their approval!"));
 
     for (auto wit : witnesses)
     {
@@ -2582,7 +2591,7 @@ void beogh_blood_for_blood()
         }
     }
 
-    mprf("You place your %s atop %s's lifeless body and utter a vengeful prayer.",
+    mprf(jtransc("You place your %s atop %s's lifeless body and utter a vengeful prayer."),
          you.hand_name(false).c_str(), apostle_name.c_str());
 
     you.duration[DUR_BLOOD_FOR_BLOOD] = random_range(130, 180) * BASELINE_DELAY;
@@ -2713,7 +2722,7 @@ void beogh_blood_for_blood_tick(int delay)
 void beogh_end_blood_for_blood()
 {
     mprf(MSGCH_DURATION,
-         "You reach the end of your prayer and your brethren are recalled.");
+         jtransc("You reach the end of your prayer and your brethren are recalled."));
     for (monster_iterator mi; mi; ++mi)
     {
         if (mons_is_blood_for_blood_orc(**mi))
@@ -2762,11 +2771,11 @@ void beogh_ally_healing()
         mon->heal(value);
     }
 
-    mprf("%s %s%sinvigorated by your prowess.",
-          heal_list.size() == 1 ? heal_list[0]->name(DESC_THE).c_str()
-                                : "Your followers are",
-          heal_list.size() == 1 ? "is " : "",
-          healing_done > 25 ? " greatly " : "");
+    const string healed = heal_list.size() == 1 ? heal_list[0]->name(DESC_THE)
+                                                : jtrans("Your followers");
+    mprf(jtransc(healing_done > 25 ? "%s is greatly invigorated by your prowess."
+                                   : "%s is invigorated by your prowess."),
+          healed.c_str());
 }
 
 // Prompts the player for reasons they may not wish to leave a floor.
@@ -2778,18 +2787,18 @@ bool beogh_cancel_leaving_floor()
 
     if (you.duration[DUR_BEOGH_DIVINE_CHALLENGE])
     {
-        if (!yesno("Are you sure you wish to flee a divine trial? This will "
-                   "place you under penance!", false, 'n'))
+        if (!yesno(jtransc("Are you sure you wish to flee a divine trial? This will "
+                   "place you under penance!"), false, 'n'))
         {
-            mpr("Beogh appreciates your bravery.");
+            mpr(jtrans("Beogh appreciates your bravery."));
             return true;
         }
     }
 
     if (you.duration[DUR_BLOOD_FOR_BLOOD])
     {
-        if (!yesno("Your vengeful prayer will end if you leave here."
-                   " Continue?", false, 'n'))
+        if (!yesno(jtransc("Your vengeful prayer will end if you leave here."
+                   " Continue?"), false, 'n'))
         {
             canned_msg(MSG_OK);
             return true;
@@ -2806,14 +2815,14 @@ void beogh_increase_orcification()
     if (you.props.exists(ORCIFICATION_LEVEL_KEY))
     {
         you.props[ORCIFICATION_LEVEL_KEY] = 2;
-        mprf(MSGCH_MUTATION, "Your orcish features manifest fully.");
+        mprf(MSGCH_MUTATION, jtransc("Your orcish features manifest fully."));
         return;
     }
 
     // Adjust the message we give to the player's physiology.
     string msg = species::orcification_msg(you.species);
 
-    mprf(MSGCH_MUTATION, "%s", msg.c_str());
+    mprf(MSGCH_MUTATION, "%s", jtransc(msg));
     you.props[ORCIFICATION_LEVEL_KEY] = 1;
 }
 
@@ -2836,14 +2845,15 @@ string dithmenos_cannot_shadowslip_reason()
 {
     const monster* shadow = dithmenos_get_player_shadow();
     if (!shadow)
-        return "Your shadow is still firmly attached to your body.";
+        return jtrans("Your shadow is still firmly attached to your body.");
     else if (!you.can_see(*shadow))
-        return "Your shadow isn't in sight!";
+        return jtrans("Your shadow isn't in sight!");
     else if (is_feat_dangerous(env.grid(shadow->pos())))
     {
-        return make_stringf("It would be unwise to slip onto %s.",
-                             env.grid(shadow->pos()) == DNGN_DEEP_WATER
-                                ? "deep water" : "lava");
+        return make_stringf(jtransc("It would be unwise to slip onto %s."),
+                             tagged_jtransc("[feature]",
+                                 env.grid(shadow->pos()) == DNGN_DEEP_WATER
+                                    ? "some deep water" : "some lava"));
     }
 
     return "";
@@ -2860,7 +2870,7 @@ spret dithmenos_shadowslip(bool fail)
 
     const coord_def shadow_pos = shadow->pos();
 
-    mpr("You swap places with your shadow and weave the vestiges of your form into it.");
+    mpr(jtrans("You swap places with your shadow and weave the vestiges of your form into it."));
 
     shadow->move_to(you.pos(), MV_ALLOW_OVERLAP | MV_TRANSLOCATION, true);
     you.move_to(shadow_pos, MV_ALLOW_OVERLAP | MV_TRANSLOCATION, true);
@@ -2904,9 +2914,9 @@ spret dithmenos_shadowslip(bool fail)
                 mi->foe = shadow->mindex();
                 mi->behaviour = BEH_SEEK;
 
-                mprf("%s turns %s attention towards your shadow.",
-                        mi->name(DESC_THE).c_str(),
-                        mi->pronoun(PRONOUN_POSSESSIVE).c_str());
+                // 日本語では代名詞を省く
+                mprf(jtransc("%s turns its attention towards your shadow."),
+                        mi->name(DESC_THE).c_str());
             }
         }
     }
@@ -2929,7 +2939,7 @@ spret dithmenos_nightfall(bool fail)
 {
     fail_check();
 
-    mpr("The world around you is engulfed in lightless night!");
+    mpr(jtrans("The world around you is engulfed in lightless night!"));
 
     const int dur = (random_range(16, 24) + you.skill_rdiv(SK_INVOCATIONS, 2, 3))
                         * BASELINE_DELAY;
@@ -3102,7 +3112,7 @@ string dithmenos_cannot_marionette_reason()
         }
     }
 
-    return "There isn't a suitable marionette in sight.";
+    return jtrans("There isn't a suitable marionette in sight.");
 }
 
 spret dithmenos_marionette(monster& target, bool fail)
@@ -3120,7 +3130,7 @@ spret dithmenos_marionette(monster& target, bool fail)
 
     fail_check();
 
-    mprf("You grasp %s shadow with your own and put on a performance!",
+    mprf(jtransc("You grasp %s shadow with your own and put on a performance!"),
           target.name(DESC_ITS).c_str());
 
     behaviour_event(&target, ME_WHACK, &you);
@@ -3176,16 +3186,16 @@ spret dithmenos_marionette(monster& target, bool fail)
 
     if (!target.alive())
     {
-        mpr("Your performance comes to an abrupt end.");
+        mpr(jtrans("Your performance comes to an abrupt end."));
         return spret::success;
     }
 
     target.add_ench(ENCH_SHADOWLESS);
-    mprf("%s shadow slips away and your performance ends.",
+    mprf(jtransc("%s shadow slips away and your performance ends."),
             target.name(DESC_ITS).c_str());
 
     // Let the monster complain about what you did to them, in their own way.
-    string msg = getSpeakString(target.name(DESC_PLAIN) + " marionette");
+    string msg = getSpeakString(target.name_en(DESC_PLAIN) + " marionette");
     if (!msg.empty() && (mons_is_unique(target.type) || one_chance_in(4)))
         mons_speaks_msg(&target, msg, MSGCH_TALK);
 
@@ -3256,7 +3266,7 @@ bool gozag_setup_potion_petition(bool quiet)
     {
         if (!quiet)
         {
-            mprf("You need at least %d gold to purchase potions right now!",
+            mprf(jtransc("You need at least %d gold to purchase potions right now!"),
                  GOZAG_POTION_PETITION_AMOUNT);
         }
         return false;
@@ -3337,22 +3347,26 @@ bool gozag_potion_petition()
         clear_messages();
         for (int i = 0; i < GOZAG_MAX_POTIONS; i++)
         {
-            string line = make_stringf("  [%c] - %d gold - ", i + 'a',
-                                       prices[i]);
+            string line = make_stringf(jtrans_notrimc("  [%c] - %d gold - "),
+                                       i + 'a', prices[i]);
             vector<string> pot_names;
             for (const CrawlStoreValue& store : *pots[i])
-                pot_names.emplace_back(potion_type_name(store.get_int()));
-            line += comma_separated_line(pot_names.begin(), pot_names.end());
+            {
+                pot_names.emplace_back(jtrans(string("potion of ")
+                                       + potion_type_name(store.get_int())));
+            }
+            line += comma_separated_line(pot_names.begin(), pot_names.end(),
+                                         "、", "、");
             mpr_nojoin(MSGCH_PLAIN, line);
         }
-        mprf(MSGCH_PROMPT, "Purchase which effect?");
+        mprf(MSGCH_PROMPT, jtransc("Purchase which effect?"));
         keyin = toalower(get_ch()) - 'a';
         if (keyin < 0 || keyin > GOZAG_MAX_POTIONS - 1)
             continue;
 
         if (you.gold < prices[keyin])
         {
-            mpr("You don't have enough gold for that!");
+            mpr(jtrans("You don't have enough gold for that!"));
             more();
             continue;
         }
@@ -3406,21 +3420,21 @@ bool gozag_setup_call_merchant(bool quiet)
     {
         if (!quiet)
         {
-            mprf("You currently need %d gold to open negotiations with a "
-                 "merchant.", gold_min);
+            mprf(jtransc("You currently need %d gold to open negotiations with a "
+                 "merchant."), gold_min);
         }
         return false;
     }
     if (!is_connected_branch(level_id::current().branch))
     {
         if (!quiet)
-            mpr("No merchants are willing to come to this location.");
+            mpr(jtrans("No merchants are willing to come to this location."));
         return false;
     }
     if (env.grid(you.pos()) != DNGN_FLOOR)
     {
         if (!quiet)
-            mpr("You need to be standing on open floor to call a merchant.");
+            mpr(jtrans("You need to be standing on open floor to call a merchant."));
         return false;
     }
 
@@ -3505,15 +3519,18 @@ static string _describe_gozag_shop(int index)
     const int cost = _gozag_shop_price(index);
 
     const char offer_letter = 'a' + index;
+    // 店主の名前は英語の合成名なので、所有格は「の」を直接付ける
     const string shop_name =
-        apostrophise(you.props[make_stringf(GOZAG_SHOPKEEPER_NAME_KEY,
-                                            index)].get_string());
+        you.props[make_stringf(GOZAG_SHOPKEEPER_NAME_KEY,
+                               index)].get_string() + "の";
     const shop_type type = _gozag_shop_type(index);
-    const string type_name = shop_type_name(type);
-    const string suffix =
+    const string type_name = tagged_jtrans("[shop]", shop_type_name(type));
+    const string suffix_en =
         you.props[make_stringf(GOZAG_SHOP_SUFFIX_KEY, index)].get_string();
+    const string suffix = suffix_en.empty() ? ""
+                                            : tagged_jtrans("[shop]", suffix_en);
 
-    return make_stringf("  [%c] %5d gold - %s %s %s",
+    return make_stringf(jtrans_notrimc("  [%c] %5d gold - %s %s %s"),
                         offer_letter,
                         cost,
                         shop_name.c_str(),
@@ -3536,14 +3553,14 @@ static int _gozag_choose_shop()
     for (int i = 0; i < GOZAG_MAX_SHOPS; i++)
         mpr_nojoin(MSGCH_PLAIN, _describe_gozag_shop(i).c_str());
 
-    mprf(MSGCH_PROMPT, "Fund which merchant?");
+    mprf(MSGCH_PROMPT, jtransc("Fund which merchant?"));
     const int shop_index = toalower(get_ch()) - 'a';
     if (shop_index < 0 || shop_index > GOZAG_MAX_SHOPS - 1)
         return _gozag_choose_shop(); // tail recurse
 
     if (you.gold < _gozag_shop_price(shop_index))
     {
-        mpr("You don't have enough gold to fund that merchant!");
+        mpr(jtrans("You don't have enough gold to fund that merchant!"));
         more();
         return _gozag_choose_shop(); // tail recurse
     }
@@ -3602,12 +3619,14 @@ static void _gozag_place_shop(int index)
     const gender_type gender = random_choose(GENDER_FEMALE, GENDER_MALE,
                                              GENDER_NEUTRAL);
 
-    mprf(MSGCH_GOD, "%s invites you to visit %s %s%s%s.",
+    // 日本語では代名詞を省く
+    UNUSED(gender);
+    const string shop_label = tagged_jtrans("[shop]", shop_type_name(shop->type))
+        + (shop->shop_suffix_name.empty()
+           ? "" : tagged_jtrans("[shop]", shop->shop_suffix_name));
+    mprf(MSGCH_GOD, jtransc("%s invites you to visit their %s."),
                     shop->shop_name.c_str(),
-                    decline_pronoun(gender, PRONOUN_POSSESSIVE),
-                    shop_type_name(shop->type).c_str(),
-                    !shop->shop_suffix_name.empty() ? " " : "",
-                    shop->shop_suffix_name.c_str());
+                    shop_label.c_str());
 }
 
 static bool _shop_type_valid(shop_type type)
@@ -3750,8 +3769,8 @@ void gozag_deduct_bribe(branch_type br, int amount)
     branch_bribe[br] = max(0, branch_bribe[br] - amount);
     if (branch_bribe[br] <= 0)
     {
-        mprf(MSGCH_DURATION, "Your bribe of %s has been exhausted.",
-             branches[br].longname);
+        mprf(MSGCH_DURATION, jtransc("Your bribe of %s has been exhausted."),
+             branch_name_jc(branches[br].longname));
         add_daction(DACT_BRIBE_TIMEOUT);
     }
 }
@@ -3762,7 +3781,7 @@ bool gozag_check_bribe_branch(bool quiet)
     if (you.gold < bribe_amount)
     {
         if (!quiet)
-            mprf("You need at least %d gold to offer a bribe.", bribe_amount);
+            mprf(jtransc("You need at least %d gold to offer a bribe."), bribe_amount);
         return false;
     }
     branch_type branch = you.where_are_you;
@@ -3777,11 +3796,11 @@ bool gozag_check_bribe_branch(bool quiet)
                 break;
             }
     }
-    const string who = make_stringf("the denizens of %s",
-                                   branches[branch].longname);
+    const string who = make_stringf(jtransc("the denizens of %s"),
+                                   branch_name_jc(branches[branch].longname));
     const string who2 = branch2 != NUM_BRANCHES
-                        ? make_stringf("the denizens of %s",
-                                       branches[branch2].longname)
+                        ? make_stringf(jtransc("the denizens of %s"),
+                                       branch_name_jc(branches[branch2].longname))
                         : "";
     if (!gozag_branch_bribable(branch)
         && (branch2 == NUM_BRANCHES
@@ -3790,9 +3809,9 @@ bool gozag_check_bribe_branch(bool quiet)
         if (!quiet)
         {
             if (branch2 != NUM_BRANCHES)
-                mprf("You can't bribe %s or %s.", who.c_str(), who2.c_str());
+                mprf(jtransc("You can't bribe %s or %s."), who.c_str(), who2.c_str());
             else
-                mprf("You can't bribe %s.", who.c_str());
+                mprf(jtransc("You can't bribe %s."), who.c_str());
         }
         return false;
     }
@@ -3813,9 +3832,10 @@ bool gozag_bribe_branch()
             {
                 branch_type stair_branch = gozag_fixup_branch(it->id);
                 string prompt =
-                    make_stringf("Do you want to bribe the denizens of %s?",
-                                 stair_branch == BRANCH_VESTIBULE ? "the Hells"
-                                 : branches[stair_branch].longname);
+                    make_stringf(jtransc("Do you want to bribe the denizens of %s?"),
+                                 branch_name_jc(stair_branch == BRANCH_VESTIBULE
+                                     ? "the Hells"
+                                     : branches[stair_branch].longname));
                 if (yesno(prompt.c_str(), true, 'n'))
                 {
                     branch = stair_branch;
@@ -3831,27 +3851,28 @@ bool gozag_bribe_branch()
                 break;
             }
     }
-    string who = make_stringf("the denizens of %s",
-                              branches[branch].longname);
+    string who = make_stringf(jtransc("the denizens of %s"),
+                              branch_name_jc(branches[branch].longname));
     if (!gozag_branch_bribable(branch))
     {
-        mprf("You can't bribe %s.", who.c_str());
+        mprf(jtransc("You can't bribe %s."), who.c_str());
         return false;
     }
 
     string prompt =
-        make_stringf("Do you want to bribe the denizens of %s?",
-                     branch == BRANCH_VESTIBULE ? "the Hells" :
-                     branches[branch].longname);
+        make_stringf(jtransc("Do you want to bribe the denizens of %s?"),
+                     branch_name_jc(branch == BRANCH_VESTIBULE ? "the Hells" :
+                                    branches[branch].longname));
 
     if (prompted || yesno(prompt.c_str(), true, 'n'))
     {
         you.del_gold(bribe_amount);
         you.attribute[ATTR_GOZAG_GOLD_USED] += bribe_amount;
         branch_bribe[branch] += bribe_amount;
-        string msg = make_stringf(" spreads your bribe to %s!",
-                                  branch == BRANCH_VESTIBULE ? "the Hells" :
-                                  branches[branch].longname);
+        string msg = make_stringf(jtransc(" spreads your bribe to %s!"),
+                                  branch_name_jc(branch == BRANCH_VESTIBULE
+                                      ? "the Hells" :
+                                      branches[branch].longname));
         simple_god_message(msg.c_str());
         add_daction(DACT_SET_BRIBES);
         return true;
@@ -3928,7 +3949,7 @@ spret qazlal_upheaval(coord_def target, bool quiet, bool fail, dist *player_targ
         args.restricts = DIR_TARGET;
         args.mode = TARG_HOSTILE;
         args.needs_path = false;
-        args.top_prompt = "Aiming: <white>Upheaval</white>";
+        args.top_prompt = jtrans("Aiming: <white>Upheaval</white>");
         args.self = confirm_prompt_type::none;
         args.hitfunc = &tgt;
         if (!spell_direction(*player_target, beam, &args))
@@ -3936,8 +3957,9 @@ spret qazlal_upheaval(coord_def target, bool quiet, bool fail, dist *player_targ
 
         if (cell_is_invalid_target(beam.target))
         {
-            mprf("There is %s there.",
-                 article_a(feat_type_name(env.grid(beam.target))).c_str());
+            mprf(jtransc("There is %s there."),
+                 tagged_jtransc("[feature]",
+                                feat_type_name(env.grid(beam.target))));
             return spret::abort;
         }
 
@@ -3969,27 +3991,27 @@ spret qazlal_upheaval(coord_def target, bool quiet, bool fail, dist *player_targ
             beam.colour    = RED;
             beam.hit_verb  = "engulfs";
             beam.tile_beam = TILE_BOLT_MAGMA;
-            message        = "Magma suddenly erupts from the ground!";
+            message        = jtrans("Magma suddenly erupts from the ground!");
             break;
         case 1:
             beam.name      = "blast of ice";
             beam.flavour   = BEAM_ICE;
             beam.colour    = WHITE;
             beam.tile_beam = TILE_BOLT_ICEBLAST;
-            message        = "A blizzard blasts the area with ice!";
+            message        = jtrans("A blizzard blasts the area with ice!");
             break;
         case 2:
             beam.name      = "cutting wind";
             beam.flavour   = BEAM_AIR;
             beam.colour    = LIGHTGRAY;
             beam.tile_beam = TILE_BOLT_STRONG_AIR;
-            message        = "A storm cloud blasts the area with cutting wind!";
+            message        = jtrans("A storm cloud blasts the area with cutting wind!");
             break;
         case 3:
             beam.name    = "blast of rubble";
             beam.flavour = BEAM_FRAG;
             beam.colour  = BROWN;
-            message      = "The ground shakes violently, spewing rubble!";
+            message      = jtrans("The ground shakes violently, spewing rubble!");
             break;
         default:
             break;
@@ -4110,7 +4132,7 @@ spret qazlal_elemental_force(bool fail)
     vector<coord_def> targets = find_elemental_targets();
     if (targets.empty())
     {
-        mpr("You can't see any clouds you can empower.");
+        mpr(jtrans("You can't see any clouds you can empower."));
         return spret::abort;
     }
 
@@ -4146,7 +4168,7 @@ spret qazlal_elemental_force(bool fail)
     }
 
     if (placed)
-        mprf(MSGCH_GOD, "Clouds arounds you coalesce and take form!");
+        mprf(MSGCH_GOD, jtransc("Clouds arounds you coalesce and take form!"));
     else
         canned_msg(MSG_NOTHING_HAPPENS); // can this ever happen?
 
@@ -4193,13 +4215,13 @@ spret qazlal_disaster_area(bool fail)
 
     if (targets.empty())
     {
-        mpr("There isn't enough space here!");
+        mpr(jtrans("There isn't enough space here!"));
         return spret::abort;
     }
 
     if (friendlies
-        && !yesno("There are friendlies around; are you sure you want to hurt "
-                  "them?", true, 'n'))
+        && !yesno(jtransc("There are friendlies around; are you sure you want to hurt "
+                  "them?"), true, 'n'))
     {
         canned_msg(MSG_OK);
         return spret::abort;
@@ -4207,7 +4229,7 @@ spret qazlal_disaster_area(bool fail)
 
     fail_check();
 
-    mprf(MSGCH_GOD, "Nature churns violently around you!");
+    mprf(MSGCH_GOD, jtransc("Nature churns violently around you!"));
 
     // TODO: should count get a cap proportional to targets.size()?
     int count = max(1, min((int)targets.size(),
@@ -4917,7 +4939,7 @@ void ru_offer_new_sacrifices()
                                   possible_sacrifices.end());
     }
 
-    simple_god_message(" believes you are ready to make a new sacrifice.");
+    simple_god_message(jtransc(" believes you are ready to make a new sacrifice."));
     // included in default force_more_message
 }
 
@@ -4956,9 +4978,9 @@ static void _apply_ru_sacrifice(mutation_type sacrifice)
 
 static bool _execute_sacrifice(ability_type sac, const char* message)
 {
-    mprf("Ru asks you to %s.", message);
+    mprf(jtransc("Ru asks you to %s."), message);
     mpr(ru_sacrifice_description(sac));
-    if (!yesno("Do you really want to make this sacrifice?",
+    if (!yesno(jtransc("Do you really want to make this sacrifice?"),
                false, 'n'))
     {
         canned_msg(MSG_OK);
@@ -5041,14 +5063,16 @@ string ru_sac_text(ability_type sac)
     {
         ASSERT(sacrifice_muts.size() == 1);
         const mutation_type mut = AS_MUT(sacrifice_muts[0]);
-        return make_stringf(" (%s)", mutation_name(mut));
+        return make_stringf(" (%s)", jtransc(mutation_name(mut)));
     }
 
     // "Tloc/Fire/Ice"
+    // 技能の略称は [skill abbr] で引く(data-skills.txt)
     const string school_names
         = comma_separated_fn(sacrifice_muts.begin(), sacrifice_muts.end(),
                 [](CrawlStoreValue mut) {
-                    return _arcane_mutation_to_school_abbr(AS_MUT(mut));
+                    return tagged_jtrans("[skill abbr]",
+                               _arcane_mutation_to_school_abbr(AS_MUT(mut)));
                 }, "/", "/");
 
     return make_stringf(" (%s)", school_names.c_str());
@@ -5078,8 +5102,8 @@ string ru_sacrifice_description(ability_type sac)
         return "";
 
     const int piety_gain = _ru_get_sac_piety_gain(sac);
-    return make_stringf("This is %s sacrifice. Piety after sacrifice: %s",
-                        _describe_sacrifice_piety_gain(piety_gain),
+    return make_stringf(jtransc("This is %s sacrifice. Piety after sacrifice: %s"),
+                        jtransc(_describe_sacrifice_piety_gain(piety_gain)),
                         _piety_asterisks(you.raw_piety + piety_gain).c_str());
 }
 
@@ -5093,6 +5117,7 @@ bool ru_do_sacrifice(ability_type sac)
     string offer_text;
     string mile_text;
     string sac_text;
+    string sac_text_j; // 確認で表示する日本語(マイルストーンは英語のまま)
     const bool is_sac_arcana = sac == ABIL_RU_SACRIFICE_ARCANA;
 
     // For variable sacrifices, we need to compose the text that will be
@@ -5123,12 +5148,18 @@ bool ru_do_sacrifice(ability_type sac)
                     sac_text = make_stringf("%s%s, ", sac_text.c_str(),
                         _arcane_mutation_to_school_name(mut));
                 }
+                if (!sac_text_j.empty())
+                    sac_text_j += "、";
+                sac_text_j += skill_name_j(arcane_mutation_to_skill(mut));
             }
             else
+            {
                 sac_text = mut_upgrade_summary(mut);
+                sac_text_j = sac_text;
+            }
         }
-        offer_text = make_stringf("%s: %s", sac_def.sacrifice_text,
-            sac_text.c_str());
+        offer_text = make_stringf("%s: %s", jtransc(sac_def.sacrifice_text),
+            sac_text_j.c_str());
         mile_text = make_stringf("%s: %s.", sac_def.milestone_text,
             sac_text.c_str());
     }
@@ -5137,11 +5168,13 @@ bool ru_do_sacrifice(ability_type sac)
         variable_sac = false;
         mut = sac_def.mutation;
         num_sacrifices = 1;
-        string handtxt = "";
         if (sac == ABIL_RU_SACRIFICE_HAND)
-            handtxt = you.hand_name(true);
-
-        offer_text = sac_def.sacrifice_text + handtxt;
+        {
+            offer_text = make_stringf(jtransc("sacrifice one of your %s"),
+                                      you.hand_name(false).c_str());
+        }
+        else
+            offer_text = jtrans(sac_def.sacrifice_text);
         mile_text = make_stringf("%s.", sac_def.milestone_text);
     }
 
@@ -5200,7 +5233,7 @@ bool ru_do_sacrifice(ability_type sac)
     set_piety(min(piety_breakpoint(5), you.raw_piety + piety_gain));
 
     if (you.raw_piety == piety_breakpoint(5))
-        simple_god_message(" indicates that your awakening is complete.");
+        simple_god_message(jtransc(" indicates that your awakening is complete."));
 
     // Clean up.
     _ru_expire_sacrifices();
@@ -5224,7 +5257,7 @@ bool ru_do_sacrifice(ability_type sac)
 bool ru_reject_sacrifices(bool forced_rejection)
 {
     if (!forced_rejection &&
-        !yesno("Do you really want to reject the sacrifices Ru is offering?",
+        !yesno(jtransc("Do you really want to reject the sacrifices Ru is offering?"),
                false, 'n'))
     {
         canned_msg(MSG_OK);
@@ -5233,7 +5266,7 @@ bool ru_reject_sacrifices(bool forced_rejection)
 
     ru_reset_sacrifice_timer(false, forced_rejection);
     _ru_expire_sacrifices();
-    simple_god_message(" will take longer to evaluate your readiness.");
+    simple_god_message(jtransc(" will take longer to evaluate your readiness."));
     return true;
 }
 
@@ -5316,31 +5349,31 @@ void ru_do_retribution(monster* mons, int damage)
 
     if (power > 50 && (mons->antimagic_susceptible()))
     {
-        mprf(MSGCH_GOD, "You focus your inner power and drain %s's magic in "
-                "retribution!", mons->name(DESC_THE).c_str());
+        mprf(MSGCH_GOD, jtransc("You focus your inner power and drain %s's magic in "
+                "retribution!"), mons->name(DESC_THE).c_str());
         mons->add_ench(mon_enchant(ENCH_ANTIMAGIC, act, power+random2(320)));
     }
     else if (power > 35)
     {
-        mprf(MSGCH_GOD, "You focus your inner power and paralyse %s in retribution!",
+        mprf(MSGCH_GOD, jtransc("You focus your inner power and paralyse %s in retribution!"),
                 mons->name(DESC_THE).c_str());
         mons->add_ench(mon_enchant(ENCH_PARALYSIS, act, power+random2(60)));
     }
     else if (power > 25)
     {
-        mprf(MSGCH_GOD, "You focus your inner power and slow %s in retribution!",
+        mprf(MSGCH_GOD, jtransc("You focus your inner power and slow %s in retribution!"),
                 mons->name(DESC_THE).c_str());
         mons->add_ench(mon_enchant(ENCH_SLOW, act, power+random2(100)));
     }
     else if (power > 10)
     {
-        mprf(MSGCH_GOD, "You focus your inner power and blind %s in retribution!",
+        mprf(MSGCH_GOD, jtransc("You focus your inner power and blind %s in retribution!"),
                 mons->name(DESC_THE).c_str());
         mons->add_ench(mon_enchant(ENCH_BLIND, act, power+random2(100)));
     }
     else if (power > 0)
     {
-        mprf(MSGCH_GOD, "You focus your inner power and illuminate %s in retribution!",
+        mprf(MSGCH_GOD, jtransc("You focus your inner power and illuminate %s in retribution!"),
                 mons->name(DESC_THE).c_str());
         mons->add_ench(mon_enchant(ENCH_CORONA, act, power+random2(150)));
     }
@@ -5348,15 +5381,15 @@ void ru_do_retribution(monster* mons, int damage)
 
 void ru_draw_out_power()
 {
-    mpr("You are restored by drawing out deep reserves of power within.");
+    mpr(jtrans("You are restored by drawing out deep reserves of power within."));
 
     //Escape nets and webs
     if (you.caught())
     {
         if (you.caught_by() == CAUGHT_WEB)
-            mpr("You burst free from the webs!");
+            mpr(jtrans("You burst free from the webs!"));
         else
-            mpr("You burst free from the net!");
+            mpr(jtrans("You burst free from the net!"));
         you.stop_being_caught();
     }
 
@@ -5399,12 +5432,12 @@ bool ru_power_leap()
 
     if (crawl_state.is_replaying_keys())
     {
-        crawl_state.cancel_cmd_all("You can't repeat Power Leap.");
+        crawl_state.cancel_cmd_all(jtrans("You can't repeat Power Leap."));
         return false;
     }
     if (you.is_nervous())
     {
-        mpr("You are too terrified to leap around!");
+        mpr(jtrans("You are too terrified to leap around!"));
         return false;
     }
 
@@ -5418,7 +5451,7 @@ bool ru_power_leap()
         args.mode = TARG_HOSTILE;
         args.range = 3;
         args.needs_path = false;
-        args.top_prompt = "Aiming: <white>Power Leap</white>";
+        args.top_prompt = jtrans("Aiming: <white>Power Leap</white>");
         args.self = confirm_prompt_type::cancel;
         const int explosion_size = 1;
         targeter_smite tgt(&you, args.range, explosion_size, explosion_size);
@@ -5428,7 +5461,7 @@ bool ru_power_leap()
         if (crawl_state.seen_hups)
         {
             clear_messages();
-            mpr("Cancelling leap due to HUP.");
+            mpr(jtrans("Cancelling leap due to HUP."));
             return false;
         }
 
@@ -5442,7 +5475,7 @@ bool ru_power_leap()
         if (beholder)
         {
             clear_messages();
-            mprf("You cannot leap away from %s!",
+            mprf(jtransc("You cannot leap away from %s!"),
                  beholder->name(DESC_THE, true).c_str());
             continue;
         }
@@ -5451,7 +5484,7 @@ bool ru_power_leap()
         if (fearmonger)
         {
             clear_messages();
-            mprf("You cannot leap closer to %s!",
+            mprf(jtransc("You cannot leap closer to %s!"),
                  fearmonger->name(DESC_THE, true).c_str());
             continue;
         }
@@ -5460,20 +5493,20 @@ bool ru_power_leap()
         if (mons && you.can_see(*mons))
         {
             clear_messages();
-            mpr("You can't leap on top of the monster!");
+            mpr(jtrans("You can't leap on top of the monster!"));
             continue;
         }
 
         if (env.grid(beam.target) == DNGN_OPEN_SEA)
         {
             clear_messages();
-            mpr("You can't leap into the sea!");
+            mpr(jtrans("You can't leap into the sea!"));
             continue;
         }
         else if (env.grid(beam.target) == DNGN_LAVA_SEA)
         {
             clear_messages();
-            mpr("You can't leap into the sea of lava!");
+            mpr(jtrans("You can't leap into the sea of lava!"));
             continue;
         }
         else if (!check_moveto(beam.target, "leap", false))
@@ -5502,7 +5535,7 @@ bool ru_power_leap()
     if (cell_is_solid(beam.target) || monster_at(beam.target))
     {
         // XXX: try to jump somewhere nearby?
-        mpr("Something unexpectedly blocks you, preventing you from leaping!");
+        mpr(jtrans("Something unexpectedly blocks you, preventing you from leaping!"));
         return true;
     }
 
@@ -5582,22 +5615,22 @@ static int _apply_apocalypse(coord_def where)
         case 0:
             if (mons->antimagic_susceptible())
             {
-                message = " doubts " + mons->pronoun(PRONOUN_POSSESSIVE)
-                          + " magic when faced with ultimate truth!";
+                // 日本語では代名詞を省く
+                message = jtrans(" doubts its magic when faced with ultimate truth!");
                 enchantment = ENCH_ANTIMAGIC;
                 duration = 500 + random2(200);
                 num_dice = 4;
                 break;
             } // if not antimagicable, fall through to paralysis.
         case 1:
-            message = " is paralysed by terrible understanding!";
+            message = jtrans(" is paralysed by terrible understanding!");
             enchantment = ENCH_PARALYSIS;
             duration = 80 + random2(60);
             num_dice = 4;
             break;
 
         case 2:
-            message = " slows down under the weight of truth!";
+            message = jtrans(" slows down under the weight of truth!");
             enchantment = ENCH_SLOW;
             duration = 300 + random2(100);
             num_dice = 6;
@@ -5627,14 +5660,14 @@ bool ru_apocalypse()
     int count = apply_area_visible(cell_has_valid_target, you.pos());
     if (!count)
     {
-        if (!yesno("There are no visible enemies. Unleash your apocalypse anyway?",
+        if (!yesno(jtransc("There are no visible enemies. Unleash your apocalypse anyway?"),
             true, 'n'))
         {
             canned_msg(MSG_OK);
             return false;
         }
     }
-    mpr("You reveal the great annihilating truth to your foes!");
+    mpr(jtrans("You reveal the great annihilating truth to your foes!"));
     noisy(30, you.pos());
     apply_area_visible(_apply_apocalypse, you.pos());
     drain_player(100, false, true);
@@ -5680,16 +5713,16 @@ bool uskayaw_stomp()
     // XXX: this 'friendlies' wording feels a little odd, but we do use it in a
     // a few places already; see spl-vortex.cc, disaster area, etc.
     if (friendlies
-        && !yesno("There are friendlies around, "
-                  "are you sure you want to hurt them?",
+        && !yesno(jtransc("There are friendlies around, "
+                  "are you sure you want to hurt them?"),
                   true, 'n'))
     {
         canned_msg(MSG_OK);
         return false;
     }
 
-    mpr("You stomp with the beat, sending a shockwave through the revellers "
-            "around you!");
+    mpr(jtrans("You stomp with the beat, sending a shockwave through the revellers "
+            "around you!"));
     apply_monsters_around_square(_get_stomped, you.pos());
     return true;
 }
@@ -5700,7 +5733,7 @@ bool uskayaw_line_pass()
 
     if (crawl_state.is_replaying_keys())
     {
-        crawl_state.cancel_cmd_all("You can't repeat Line Pass.");
+        crawl_state.cancel_cmd_all(jtrans("You can't repeat Line Pass."));
         return false;
     }
 
@@ -5732,7 +5765,7 @@ bool uskayaw_line_pass()
         args.restricts = DIR_ENFORCE_RANGE;
         args.mode = TARG_ANY;
         args.needs_path = false;
-        args.top_prompt = "Aiming: <white>Line Pass</white>";
+        args.top_prompt = jtrans("Aiming: <white>Line Pass</white>");
         args.range = 8;
 
         if (!spell_direction(beam, line_pass, &args))
@@ -5741,7 +5774,7 @@ bool uskayaw_line_pass()
         if (crawl_state.seen_hups)
         {
             clear_messages();
-            mpr("Cancelling line pass due to HUP.");
+            mpr(jtrans("Cancelling line pass due to HUP."));
             return false;
         }
 
@@ -5752,7 +5785,7 @@ bool uskayaw_line_pass()
         if (beholder)
         {
             clear_messages();
-            mprf("You cannot move away from %s!",
+            mprf(jtransc("You cannot move away from %s!"),
                  beholder->name(DESC_THE, true).c_str());
             continue;
         }
@@ -5761,7 +5794,7 @@ bool uskayaw_line_pass()
         if (fearmonger)
         {
             clear_messages();
-            mprf("You cannot move closer to %s!",
+            mprf(jtransc("You cannot move closer to %s!"),
                  fearmonger->name(DESC_THE, true).c_str());
             continue;
         }
@@ -5770,26 +5803,26 @@ bool uskayaw_line_pass()
         if (mons && you.can_see(*mons))
         {
             clear_messages();
-            mpr("You can't stand on top of the monster!");
+            mpr(jtrans("You can't stand on top of the monster!"));
             continue;
         }
 
         if (env.grid(beam.target) == DNGN_OPEN_SEA)
         {
             clear_messages();
-            mpr("You can't line pass into the sea!");
+            mpr(jtrans("You can't line pass into the sea!"));
             continue;
         }
         else if (env.grid(beam.target) == DNGN_LAVA_SEA)
         {
             clear_messages();
-            mpr("You can't line pass into the sea of lava!");
+            mpr(jtrans("You can't line pass into the sea of lava!"));
             continue;
         }
         else if (cell_is_solid(beam.target))
         {
             clear_messages();
-            mpr("You can't walk through walls!");
+            mpr(jtrans("You can't walk through walls!"));
             continue;
         }
         else if (!check_moveto(beam.target, "line pass", false))
@@ -5814,7 +5847,7 @@ bool uskayaw_line_pass()
     }
 
     if (monster_at(beam.target))
-        mpr("Something unexpectedly blocks you, preventing you from passing!");
+        mpr(jtrans("Something unexpectedly blocks you, preventing you from passing!"));
     else
     {
         you.stop_being_constricted(false, "dance");
@@ -5834,7 +5867,7 @@ spret uskayaw_grand_finale(bool fail)
 
     if (crawl_state.is_replaying_keys())
     {
-        crawl_state.cancel_cmd_all("No encores!");
+        crawl_state.cancel_cmd_all(jtrans("No encores!"));
         return spret::abort;
     }
 
@@ -5848,7 +5881,7 @@ spret uskayaw_grand_finale(bool fail)
         direction_chooser_args args;
         args.mode = TARG_HOSTILE;
         args.needs_path = false;
-        args.top_prompt = "Aiming: <white>Grand Finale</white>";
+        args.top_prompt = jtrans("Aiming: <white>Grand Finale</white>");
         args.self = confirm_prompt_type::cancel;
         targeter_smite tgt(&you);
         args.hitfunc = &tgt;
@@ -5856,7 +5889,7 @@ spret uskayaw_grand_finale(bool fail)
         if (crawl_state.seen_hups)
         {
             clear_messages();
-            mpr("Cancelling grand finale due to HUP.");
+            mpr(jtrans("Cancelling grand finale due to HUP."));
             return spret::abort;
         }
 
@@ -5870,7 +5903,7 @@ spret uskayaw_grand_finale(bool fail)
         if (!mons || !you.can_see(*mons))
         {
             clear_messages();
-            mpr("You can't perceive a target there!");
+            mpr(jtrans("You can't perceive a target there!"));
             continue;
         }
 
@@ -5881,7 +5914,8 @@ spret uskayaw_grand_finale(bool fail)
         else if (cell_is_solid(beam.target))
         {
             clear_messages();
-            mprf("You cannot occupy %s.", article_a(feat_type_name(env.grid(beam.target))).c_str());
+            mprf(jtransc("You cannot occupy %s."),
+                 tagged_jtransc("[feature]", feat_type_name(env.grid(beam.target))));
         }
         else if (you.see_cell_no_trans(beam.target))
         {
@@ -5910,12 +5944,12 @@ spret uskayaw_grand_finale(bool fail)
     if (mons->type == MONS_ROYAL_JELLY && !mons->is_summoned())
     {
         // need to do this here, because react_to_damage is never called
-        mprf("%s explodes violently into a cloud of jellies%s",
+        mprf(jtransc("%s explodes violently into a cloud of jellies%s"),
                                         mons->name(DESC_THE, false).c_str(), attack_punctuation.c_str());
         schedule_trj_spawn_fineff(&you, mons, mons->pos(), mons->hit_points);
     }
     else
-        mprf("%s explodes violently%s", mons->name(DESC_THE, false).c_str(), attack_punctuation.c_str());
+        mprf(jtransc("%s explodes violently%s"), mons->name(DESC_THE, false).c_str(), attack_punctuation.c_str());
     mons->flags |= MF_EXPLODE_KILL;
     if (!mons->is_insubstantial())
     {
@@ -5932,7 +5966,7 @@ spret uskayaw_grand_finale(bool fail)
     if (!mons->alive() && !monster_at(beam.target))
         you.move_to(beam.target, MV_TRANSLOCATION | MV_DELIBERATE);
     else
-        mpr("You spring back to your original position.");
+        mpr(jtrans("You spring back to your original position."));
 
     crawl_state.cancel_cmd_again();
     crawl_state.cancel_cmd_repeat();
@@ -5955,7 +5989,7 @@ bool hepliaklqana_choose_ancestor_type(int ancestor_choice)
         && companion_is_elsewhere(hepliaklqana_ancestor()))
     {
         // ugly hack to avoid dealing with upgrading offlevel ancestors
-        mpr("You can't make this choice while your ancestor is elsewhere.");
+        mpr(jtrans("You can't make this choice while your ancestor is elsewhere."));
         return false;
     }
 
@@ -5968,10 +6002,12 @@ bool hepliaklqana_choose_ancestor_type(int ancestor_choice)
     auto ancestor_mapped = map_find(ancestor_types, ancestor_choice);
     ASSERT(ancestor_mapped);
     const auto ancestor_type = *ancestor_mapped;
+    // マイルストーン用は英語、表示用は日本語
     const string ancestor_type_name = mons_type_name(ancestor_type, DESC_A);
+    const string ancestor_type_name_j = mons_type_name_j(ancestor_type, DESC_PLAIN);
 
-    if (!yesno(make_stringf("Are you sure you want to remember your ancestor "
-                            "as %s?", ancestor_type_name.c_str()).c_str(),
+    if (!yesno(make_stringf(jtransc("Are you sure you want to remember your ancestor "
+                            "as %s?"), ancestor_type_name_j.c_str()).c_str(),
                false, 'n'))
     {
         canned_msg(MSG_OK);
@@ -5989,8 +6025,8 @@ bool hepliaklqana_choose_ancestor_type(int ancestor_choice)
         set_ancestor_spells(*ancestor);
     }
 
-    god_speaks(you.religion, "It is so.");
-    take_note(Note(NOTE_ANCESTOR_TYPE, 0, 0, ancestor_type_name));
+    god_speaks(you.religion, jtransc("It is so."));
+    take_note(Note(NOTE_ANCESTOR_TYPE, 0, 0, ancestor_type_name_j));
     const string mile_text
         = make_stringf("remembered their ancestor %s as %s.",
                        hepliaklqana_ally_name().c_str(),
@@ -6012,20 +6048,20 @@ spret hepliaklqana_idealise(bool fail)
     const mid_t ancestor_mid = hepliaklqana_ancestor();
     if (ancestor_mid == MID_NOBODY)
     {
-        mpr("You have no ancestor to preserve!");
+        mpr(jtrans("You have no ancestor to preserve!"));
         return spret::abort;
     }
 
     monster *ancestor = monster_by_mid(ancestor_mid);
     if (!ancestor || !you.can_see(*ancestor))
     {
-        mprf("%s is not nearby!", hepliaklqana_ally_name().c_str());
+        mprf(jtransc("%s is not nearby!"), hepliaklqana_ally_name().c_str());
         return spret::abort;
     }
 
     fail_check();
 
-    simple_god_message(make_stringf(" grants %s healing and protection!",
+    simple_god_message(make_stringf(jtransc(" grants %s healing and protection!"),
                                     ancestor->name(DESC_YOUR).c_str()).c_str());
 
     // 1/3 mhp healed at 0 skill, full at 27 invo
@@ -6035,9 +6071,9 @@ spret hepliaklqana_idealise(bool fail)
     if (ancestor->heal(healing))
     {
         if (ancestor->hit_points == ancestor->max_hit_points)
-            simple_monster_message(*ancestor, " is fully restored!");
+            simple_monster_message(*ancestor, jtransc(" is fully restored!"));
         else
-            simple_monster_message(*ancestor, " is healed somewhat.");
+            simple_monster_message(*ancestor, jtransc(" is healed somewhat."));
     }
 
     const int dur = random_range(50, 80)
@@ -6065,7 +6101,7 @@ static coord_def _get_transference_target()
     args.needs_path = false;
     args.self = confirm_prompt_type::none;
     args.show_floor_desc = true;
-    args.top_prompt = "Select a target.";
+    args.top_prompt = jtrans("Select a target.");
 
     direction(spd, args);
 
@@ -6089,7 +6125,7 @@ static void _transfer_drain_nearby(coord_def destination)
             = random_range(1 + you.skill_rdiv(SK_INVOCATIONS, 1, 27),
                            2 + you.skill_rdiv(SK_INVOCATIONS, 4, 27));
         if (mon->add_ench(mon_enchant(ENCH_DRAINED, &you, dur, degree)))
-            simple_monster_message(*mon, " is drained by nostalgia.");
+            simple_monster_message(*mon, jtransc(" is drained by nostalgia."));
     }
 }
 
@@ -6106,7 +6142,7 @@ spret hepliaklqana_transference(bool fail)
     monster *ancestor = hepliaklqana_ancestor_mon();
     if (!ancestor || !you.can_see(*ancestor))
     {
-        mprf("%s is not nearby!", hepliaklqana_ally_name().c_str());
+        mprf(jtransc("%s is not nearby!"), hepliaklqana_ally_name().c_str());
         return spret::abort;
     }
 
@@ -6120,7 +6156,7 @@ spret hepliaklqana_transference(bool fail)
     actor* victim = actor_at(target);
     const bool victim_visible = victim && you.can_see(*victim);
     if ((!victim || !victim_visible)
-        && !yesno("You can't see anything there. Try transferring anyway?",
+        && !yesno(jtransc("You can't see anything there. Try transferring anyway?"),
                   true, 'n'))
     {
         canned_msg(MSG_OK);
@@ -6129,8 +6165,7 @@ spret hepliaklqana_transference(bool fail)
 
     if (victim == ancestor)
     {
-        mprf("You can't transfer your ancestor with %s.",
-             ancestor->pronoun(PRONOUN_REFLEXIVE).c_str());
+        mpr(jtrans("You can't transfer your ancestor with itself."));
         return spret::abort;
     }
 
@@ -6140,7 +6175,7 @@ spret hepliaklqana_transference(bool fail)
                      || mons_is_projectile(victim->type));
     if (victim_visible && victim_immovable)
     {
-        mpr("You can't transfer that.");
+        mpr(jtrans("You can't transfer that."));
         return spret::abort;
     }
 
@@ -6151,7 +6186,7 @@ spret hepliaklqana_transference(bool fail)
     const bool uninhabitable = victim && !victim->is_habitable(destination);
     if (uninhabitable && victim_visible)
     {
-        mprf("%s can't be transferred there.", victim->name(DESC_THE).c_str());
+        mprf(jtransc("%s can't be transferred there."), victim->name(DESC_THE).c_str());
         return spret::abort;
     }
 
@@ -6175,9 +6210,8 @@ spret hepliaklqana_transference(bool fail)
     else
         ancestor->swap_with(victim->as_monster(), MV_TRANSLOCATION, true);
 
-    mprf("%s swap%s with %s!",
+    mprf(jtransc("%s swaps with %s!"),
          victim->name(DESC_THE).c_str(),
-         victim->is_player() ? "" : "s",
          ancestor->name(DESC_YOUR).c_str());
 
     place_cloud(CLOUD_MIST, target, random_range(10,20), ancestor);
@@ -6198,8 +6232,8 @@ spret hepliaklqana_transference(bool fail)
 static void _hepliaklqana_choose_name()
 {
     const string old_name = hepliaklqana_ally_name();
-    string prompt  = make_stringf("Remember %s name as what? ",
-                                  apostrophise(old_name).c_str());
+    string prompt  = make_stringf(jtransc("Remember %s's name as what?"),
+                                  old_name.c_str()) + " ";
 
     char buf[18];
     int ret = msgwin_get_line(prompt, buf, sizeof buf, nullptr, old_name);
@@ -6219,7 +6253,7 @@ static void _hepliaklqana_choose_name()
     }
 
     you.props[HEPLIAKLQANA_ALLY_NAME_KEY] = new_name;
-    mprf("Yes, %s is definitely a better name.", new_name.c_str());
+    mprf(jtransc("Yes, %s is definitely a better name."), new_name.c_str());
     upgrade_hepliaklqana_ancestor(true);
 }
 
@@ -6238,9 +6272,9 @@ static void _hepliaklqana_choose_gender()
     ASSERT(desc);
 
     mprf(MSGCH_PROMPT,
-         "Was %s a) male, b) female, or c) neither? (Currently %s.)",
+         jtransc("Was %s a) male, b) female, or c) neither? (Currently %s.)"),
          hepliaklqana_ally_name().c_str(),
-         desc->c_str());
+         tagged_jtransc("[ancestor gender]", *desc));
 
     int keyin = toalower(get_ch());
     if (!isaalpha(keyin))
@@ -6269,9 +6303,9 @@ static void _hepliaklqana_choose_gender()
     }
 
     you.props[HEPLIAKLQANA_ALLY_GENDER_KEY] = new_gender;
-    mprf("%s was always %s, you're pretty sure.",
+    mprf(jtransc("%s was always %s, you're pretty sure."),
          hepliaklqana_ally_name().c_str(),
-         map_find(gender_map, new_gender)->c_str());
+         tagged_jtransc("[ancestor gender]", *map_find(gender_map, new_gender)));
     upgrade_hepliaklqana_ancestor(true);
 }
 
@@ -6297,7 +6331,7 @@ bool wu_jian_can_wall_jump(const coord_def& target, string &error_ret)
 {
     if (target.distance_from(you.pos()) != 1)
     {
-        error_ret = "Please select an adjacent position to wall jump against.";
+        error_ret = jtrans("Please select an adjacent position to wall jump against.");
         return false;
     }
 
@@ -6305,8 +6339,8 @@ bool wu_jian_can_wall_jump(const coord_def& target, string &error_ret)
     {
         if (!feat_can_wall_jump_against(env.grid(target)))
         {
-            error_ret = string("You cannot wall jump against ") +
-                feature_description_at(target, false, DESC_THE) + ".";
+            error_ret = make_stringf(jtransc("You cannot wall jump against %s."),
+                feature_description_at(target, false, DESC_THE).c_str());
         }
         else
             error_ret = "";
@@ -6320,7 +6354,7 @@ bool wu_jian_can_wall_jump(const coord_def& target, string &error_ret)
     monster* beholder = you.get_beholder(wall_jump_landing_spot);
     if (beholder)
     {
-        error_ret = make_stringf("You cannot wall jump away from %s!",
+        error_ret = make_stringf(jtransc("You cannot wall jump away from %s!"),
              beholder->name(DESC_THE, true).c_str());
         return false;
     }
@@ -6328,7 +6362,7 @@ bool wu_jian_can_wall_jump(const coord_def& target, string &error_ret)
     monster* fearmonger = you.get_fearmonger(wall_jump_landing_spot);
     if (fearmonger)
     {
-        error_ret = make_stringf("You cannot wall jump closer to %s!",
+        error_ret = make_stringf(jtransc("You cannot wall jump closer to %s!"),
              fearmonger->name(DESC_THE, true).c_str());
         return false;
     }
@@ -6342,13 +6376,13 @@ bool wu_jian_can_wall_jump(const coord_def& target, string &error_ret)
         if (landing_actor)
         {
             error_ret = make_stringf(
-                "You have no room to wall jump there; %s is in the way.",
+                jtransc("You have no room to wall jump there; %s is in the way."),
                 landing_actor->observable()
                             ? landing_actor->name(DESC_THE).c_str()
-                            : "something you can't see");
+                            : jtransc("something you can't see"));
         }
         else
-            error_ret = "You have no room to wall jump there.";
+            error_ret = jtrans("You have no room to wall jump there.");
         return false;
     }
     error_ret = "";
@@ -6408,7 +6442,7 @@ spret wu_jian_wall_jump_ability()
 
     if (crawl_state.is_replaying_keys())
     {
-        crawl_state.cancel_cmd_all("You can't repeat a wall jump.");
+        crawl_state.cancel_cmd_all(jtrans("You can't repeat a wall jump."));
         return spret::abort;
     }
 
@@ -6424,20 +6458,21 @@ spret wu_jian_wall_jump_ability()
 
     if (!has_targets)
     {
-        mpr("There is nothing to wall jump against here.");
+        mpr(jtrans("There is nothing to wall jump against here."));
         return spret::abort;
     }
 
     if (you.is_nervous())
     {
-        mpr("You are too terrified to wall jump!");
+        mpr(jtrans("You are too terrified to wall jump!"));
         return spret::abort;
     }
 
     if (you.attribute[ATTR_HELD])
     {
-        mprf("You cannot wall jump while caught in a %s.",
-             you.caught_by() == CAUGHT_WEB ? "web" : "net");
+        mpr(jtrans(you.caught_by() == CAUGHT_WEB
+                   ? "You cannot wall jump while caught in a web."
+                   : "You cannot wall jump while caught in a net."));
         return spret::abort;
     }
 
@@ -6451,7 +6486,7 @@ spret wu_jian_wall_jump_ability()
         args.mode = TARG_NON_ACTOR;
         args.range = 1;
         args.needs_path = false; // TODO: overridden by hitfunc?
-        args.top_prompt = "Aiming: <white>Wall Jump</white>";
+        args.top_prompt = jtrans("Aiming: <white>Wall Jump</white>");
         args.self = confirm_prompt_type::cancel;
         targeter_walljump tgt;
         tgt.obeys_mesmerise = true;
@@ -6465,7 +6500,7 @@ spret wu_jian_wall_jump_ability()
         if (crawl_state.seen_hups)
         {
             clear_messages();
-            mpr("Cancelling wall jump due to HUP.");
+            mpr(jtrans("Cancelling wall jump due to HUP."));
             return spret::abort;
         }
 
@@ -6490,9 +6525,9 @@ spret wu_jian_wall_jump_ability()
 
 void wu_jian_heavenly_storm()
 {
-    mprf(MSGCH_GOD, "The air is filled with shimmering golden clouds!");
-    wu_jian_sifu_message(" says: The storm will not cease as long as you "
-                         "keep fighting, disciple!");
+    mprf(MSGCH_GOD, jtransc("The air is filled with shimmering golden clouds!"));
+    wu_jian_sifu_message(jtransc(" says: The storm will not cease as long as you "
+                                 "keep fighting, disciple!"));
 
     for (radius_iterator ai(you.pos(), 2, C_SQUARE, LOS_SOLID); ai; ++ai)
         place_cloud(CLOUD_GOLD_DUST, *ai, 5 + random2(5), &you);
@@ -6518,7 +6553,7 @@ spret okawaru_duel(const coord_def& target, bool fail)
     monster* mons = monster_at(target);
     if (!mons || !you.can_see(*mons))
     {
-        mpr("You can see no monster there to duel!");
+        mpr(jtrans("You can see no monster there to duel!"));
         return spret::abort;
     }
 
@@ -6527,22 +6562,22 @@ spret okawaru_duel(const coord_def& target, bool fail)
         || mons->wont_attack()
         || mons->type == MONS_BOUNDLESS_TESSERACT)
     {
-        mpr("You cannot duel that!");
+        mpr(jtrans("You cannot duel that!"));
         return spret::abort;
     }
 
     if (mons_threat_level(*mons) < MTHRT_TOUGH)
     {
-        simple_monster_message(*mons, " is not worthy to be dueled!");
+        simple_monster_message(*mons, jtransc(" is not worthy to be dueled!"));
         return spret::abort;
     }
 
     if (mons->is_illusion())
     {
         fail_check();
-        mprf("You challenge %s to single combat, but %s is merely a clone!",
-             mons->name(DESC_THE).c_str(),
-             mons->pronoun(PRONOUN_SUBJECTIVE).c_str());
+        // 日本語では代名詞を省く
+        mprf(jtransc("You challenge %s to single combat, but it is merely a clone!"),
+             mons->name(DESC_THE).c_str());
         // Still costs a turn to gain the information.
         return spret::success;
     }
@@ -6550,13 +6585,13 @@ spret okawaru_duel(const coord_def& target, bool fail)
     // to duel a clone that's already invalid to be dueled for other reasons.
     else if (mons->is_summoned())
     {
-        mpr("You cannot duel that!");
+        mpr(jtrans("You cannot duel that!"));
         return spret::abort;
     }
 
     fail_check();
 
-    mprf("You enter into single combat with %s!",
+    mprf(jtransc("You enter into single combat with %s!"),
          mons->name(DESC_THE).c_str());
 
     behaviour_event(mons, ME_ALERT, &you);
@@ -6581,12 +6616,12 @@ spret okawaru_duel(const coord_def& target, bool fail)
 void okawaru_duel_healing()
 {
     if (you.heal((you.hp_max - you.hp) / 2))
-        mpr("You feel invigorated by the roar of the crowd!");
+        mpr(jtrans("You feel invigorated by the roar of the crowd!"));
 }
 
 void okawaru_remove_heroism()
 {
-    mprf(MSGCH_DURATION, "You feel like a meek peon again.");
+    mprf(MSGCH_DURATION, jtransc("You feel like a meek peon again."));
     you.duration[DUR_HEROISM] = 0;
     you.redraw_evasion      = true;
     you.redraw_armour_class = true;
@@ -6641,8 +6676,8 @@ void okawaru_end_duel(bool kicked_out)
     if (you.props.exists(OKAWARU_DUEL_ORIG_MP_KEY))
         set_mp(you.props[OKAWARU_DUEL_ORIG_MP_KEY].get_int());
 
-    simple_god_message(kicked_out ? " casts you out from the arena!"
-                                  : " crowns you victorious!",
+    simple_god_message(jtransc(kicked_out ? " casts you out from the arena!"
+                                          : " crowns you victorious!"),
                        false, GOD_OKAWARU);
 
     stop_delay(true);
@@ -6672,7 +6707,7 @@ spret jiyva_oozemancy(bool fail)
 
     if (walls.empty())
     {
-        mpr("There are no walls around you to affect.");
+        mpr(jtrans("There are no walls around you to affect."));
         return spret::abort;
     }
 
@@ -6687,7 +6722,7 @@ spret jiyva_oozemancy(bool fail)
     }
 
     you.increase_duration(DUR_OOZEMANCY, dur);
-    mpr("Slime begins to ooze from the nearby walls!");
+    mpr(jtrans("Slime begins to ooze from the nearby walls!"));
 
     return spret::success;
 }
@@ -6811,11 +6846,11 @@ static void _makhleb_atrocity_trigger(int power)
 
     if (targs.empty())
     {
-        mprf("Your accumulated destruction dissipates without a target.");
+        mprf(jtransc("Your accumulated destruction dissipates without a target."));
         return;
     }
 
-    mpr("Your destruction surges wildly!");
+    mpr(jtrans("Your destruction surges wildly!"));
 
     bolt beam;
     beam.range = you.current_vision;
@@ -7009,21 +7044,22 @@ void makhleb_infernal_servant()
             beam.is_explosion = true;
             beam.ex_size = 2;
 
-            mprf("%s appears in a burst of %s!", demon->name(DESC_A).c_str(),
+            mprf(jtransc("%s appears in a burst of %s!"), demon->name(DESC_A).c_str(),
                                         beam.get_short_name().c_str());
 
             beam.explode();
         }
         else if (tyrant)
         {
-            mprf("%s answers its master's command!",
+            mprf(jtransc("%s answers its master's command!"),
                     demon->name(DESC_A).c_str());
         }
         else
         {
-            mprf("%s answers the call of your %s!",
+            mprf(jtransc("%s answers the call of your %s!"),
                     demon->name(DESC_A).c_str(),
-                    you.has_blood() ? "blood" : "suffering");
+                    tagged_jtransc("[makhleb call]",
+                                   you.has_blood() ? "blood" : "suffering"));
         }
 
         // Top-tier demons are more costly to summon.
@@ -7047,17 +7083,17 @@ void makhleb_infernal_servant()
             {
                 if (tyrant)
                 {
-                    mprf(MSGCH_WARN, "A traitorous %s dares provoke your wrath!",
+                    mprf(MSGCH_WARN, jtransc("A traitorous %s dares provoke your wrath!"),
                         bad_demon->name(DESC_PLAIN).c_str());
                 }
                 else if (coinflip())
                 {
-                    mprf(MSGCH_WARN, "A jealous %s pursues it!",
+                    mprf(MSGCH_WARN, jtransc("A jealous %s pursues it!"),
                         bad_demon->name(DESC_PLAIN).c_str());
                 }
                 else
                 {
-                    mprf(MSGCH_WARN, "A rebellious %s escapes with it!",
+                    mprf(MSGCH_WARN, jtransc("A rebellious %s escapes with it!"),
                         bad_demon->name(DESC_PLAIN).c_str());
                 }
             }
@@ -7067,16 +7103,16 @@ void makhleb_infernal_servant()
 
 void makhleb_inscribe_mark(mutation_type mark)
 {
-    string prompt = make_stringf("Really brand yourself with the %s?",
-                                    mutation_name(mark));
+    string prompt = make_stringf(jtransc("Really brand yourself with the %s?"),
+                                    jtransc(mutation_name(mark)));
     if (!yesno(prompt.c_str(), true, 'n'))
     {
         canned_msg(MSG_OK);
         return;
     }
 
-    mprf("You utter a prayer to Makhleb and carve the %s into yourself.",
-         mutation_name(mark));
+    mprf(jtransc("You utter a prayer to Makhleb and carve the %s into yourself."),
+         jtransc(mutation_name(mark)));
 
     const int hploss = min(you.hp - 1, you.hp * 2 / 3);
     blood_spray(you.pos(), MONS_PLAYER, 50);
@@ -7087,7 +7123,7 @@ void makhleb_inscribe_mark(mutation_type mark)
     you.one_time_ability_used.set(GOD_MAKHLEB);
 
     const string mile_text = make_stringf("accepted the %s", mutation_name(mark));
-    take_note(Note(NOTE_INFERNAL_MARK, 0, 0, mutation_name(mark)));
+    take_note(Note(NOTE_INFERNAL_MARK, 0, 0, jtrans(mutation_name(mark))));
     mark_milestone("mark", mile_text);
 }
 
@@ -7108,7 +7144,7 @@ spret makhleb_infernal_legion(bool fail)
 {
     if (you.duration[DUR_INFERNAL_LEGION])
     {
-        mpr("You are already unleashing the legions of chaos!");
+        mpr(jtrans("You are already unleashing the legions of chaos!"));
         return spret::abort;
     }
 
@@ -7116,7 +7152,7 @@ spret makhleb_infernal_legion(bool fail)
         return spret::abort;
 
     fail_check();
-    mpr("You carve a gateway into yourself and beckon forth the legions of chaos!");
+    mpr(jtrans("You carve a gateway into yourself and beckon forth the legions of chaos!"));
     bleed_for_makhleb(you);
     you.duration[DUR_INFERNAL_LEGION] = (you.skill_rdiv(SK_INVOCATIONS, 5, 4)
                                             + random_range(10, 20)) * BASELINE_DELAY;
@@ -7155,8 +7191,8 @@ void makhleb_vessel_of_slaughter()
     const int boost = div_rand_round((100 - (you.hp * 100 / you.hp_max)) * 2, 3);
     you.props[MAKHLEB_SLAUGHTER_BOOST_KEY] = boost;
 
-    mpr("You offer yourself as an instrument of Makhleb's will and feel "
-        "overwhelming power flowing through you!");
+    mpr(jtrans("You offer yourself as an instrument of Makhleb's will and feel "
+        "overwhelming power flowing through you!"));
 
     transform(random_range(70, 110), transformation::slaughter);
     you.transform_uncancellable = true;
@@ -7306,12 +7342,12 @@ void makhleb_enter_crucible_of_flesh(int debt)
     for (int i = 0; i < num_victims; ++i)
         _spawn_crucible_victim(true);
 
-    simple_god_message(" says: Flay and bleed and purify yourself, if you wish"
-                       " to be found worthy of leaving this place!", false,
+    simple_god_message(jtransc(" says: Flay and bleed and purify yourself, if you wish"
+                       " to be found worthy of leaving this place!"), false,
                        GOD_MAKHLEB);
 
-    mpr("(Slaughtering mortal victims (and sometimes even demons) will "
-        "eventually satisfy Makhleb and create an exit.)");
+    mpr(jtrans("(Slaughtering mortal victims (and sometimes even demons) will "
+        "eventually satisfy Makhleb and create an exit.)"));
 
     you.props[MAKHLEB_CRUCIBLE_DEBT_KEY].get_int() = debt;
 }
@@ -7363,8 +7399,8 @@ void makhleb_crucible_kill(monster& victim)
         }
 
         dungeon_terrain_changed(pos, DNGN_EXIT_CRUCIBLE);
-        simple_god_message(" acknowledges your contrition and permits you to"
-                           " depart the Crucible.", false, GOD_MAKHLEB);
+        simple_god_message(jtransc(" acknowledges your contrition and permits you to"
+                           " depart the Crucible."), false, GOD_MAKHLEB);
 
         env.map_knowledge(pos).set_feature(DNGN_EXIT_CRUCIBLE);
 #ifdef USE_TILE

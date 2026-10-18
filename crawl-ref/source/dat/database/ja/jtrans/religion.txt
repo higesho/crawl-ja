@@ -1,0 +1,1145 @@
+%%%%
+seems mollified, and vanishes.
+
+は機嫌を直して消え去った。
+%%%%
+seems mollified.
+
+は機嫌を直した。
+%%%%
+Your divine halo returns!
+
+あなたは再び光輪を放つようになった！
+%%%%
+Your aura of darkness returns!
+
+あなたは闇のオーラを再び纏った！
+%%%%
+Your vision regains its divine sight.
+
+あなたは神の視野を取り戻した。
+%%%%
+restores the support of your attributes.
+
+はあなたの能力値を元通り強化した。
+%%%%
+A storm instantly forms around you!
+
+あなたの周りにたちまち嵐が巻き起こった！
+%%%%
+Your full life essence returns.
+
+あなたは生命力が戻ってきたような気がした。
+%%%%
+Your water-walking will last only until you reach solid ground.
+
+あなたの水上歩行能力は次に固い地面に足を触れる時まで続く。
+%%%%
+cares for nothing but gold!
+
+は金貨以外のものには興味がない！
+%%%%
+says: An ascetic of your devotion has no use for such trinkets.
+
+は『そんなつまらない物は献身の足しにはならんぞ』と言った。
+%%%%
+Your divine halo fades away.
+
+あなたの光輪は薄れていった。
+%%%%
+Your aura of darkness fades away.
+
+あなたの周囲の闇のオーラは薄れていった。
+%%%%
+The storm surrounding you dissipates.
+
+あなたを取り巻く嵐が消滅した。
+%%%%
+alters your body.
+
+はあなたの体を変容させた。
+%%%%
+You feel as though nothing has changed.
+
+何も起こらなかったようだ。
+%%%%
+grants you a gift!
+
+はあなたに贈り物を授けた！
+%%%%
+These spells will remain available as long as you worship Vehumet.
+
+これらの魔法はヴェフメットを信仰している限りいつでも習得できる。
+%%%%
+%s regains the memory of %s %s.
+
+%sは%sの記憶を取り戻した。
+%%%%
+%s remembers more of %s old skill.
+
+%sは元の力を取り戻した。
+%%%%
+%s remembers %s %s %s.
+
+%sの持つ%sは%s力を取り戻した。
+%%%%
+"You will pay for your transgression, mortal!"
+
+『汝の罪を贖え、定命の者よ！』
+%%%%
+forms a fragment of your life essence into the memory of your ancestor, %s!
+
+はあなたの生命力の一部を使って祖霊『%s』を呼び覚ました！
+%%%%
+A divine halo surrounds you!
+
+神聖な光輪があなたの周りに現れた！
+%%%%
+You are shrouded in an aura of darkness!
+
+あなたは暗黒のオーラに包まれた！
+%%%%
+will now unseal the treasures of the Slime Pits.
+
+はスライムの穴ぐらに収められた宝物の封印を解いた。
+%%%%
+You may now remember your ancestor's life.
+
+あなたは祖霊の生き様を思い出すことができるようになった。
+%%%%
+You have lost your religion!
+
+あなたは信仰を捨て去った！
+%%%%
+You sense decay.
+
+あなたは死体が腐敗していくのを感じた。
+%%%%
+All of your followers decide to abandon you.
+
+従者たちは皆あなたを見捨てることを決意した。
+%%%%
+All of your fellow slimes turn on you.
+
+仲間のスライムたちは皆あなたに敵対した。
+%%%%
+The plants of the dungeon turn on you.
+
+ダンジョン内の植物はあなたに敵対した。
+%%%%
+Your funded stores close, unable to pay their debts without your funds.
+
+あなたが投資していた店舗は閉鎖され、その負債はあなたの資本なしには返すことができない。
+%%%%
+Your storm instantly dissipates.
+
+あなたの周囲の嵐はたちまち消え去った。
+%%%%
+continues to slow your movements.
+
+はあなたの動きを遅くし続けている。
+%%%%
+Your amulet flashes!
+
+あなたの身につけている護符が光った！
+%%%%
+%s warns you to remove %s.
+
+%sはあなたに%sを外すように警告した。
+%%%%
+says: Farewell. Go and %s with %s.
+
+は『さらばだ。%sと共に%sがいい』と言った。
+%%%%
+Your evil deeds will not go unpunished
+
+汝の悪行が罪を免れることはない
+%%%%
+You will pay for your evil ways, mortal
+
+定命の者よ！ 悪の道に走った償いはしてもらうぞ
+%%%%
+You will suffer for embracing such chaos
+
+混沌を受け入れれば苦しむことになるぞ
+%%%%
+You will suffer for embracing such evil
+
+邪悪を受け入れれば苦しむことになるぞ
+%%%%
+You will be buggily punished for this
+
+汝はこのことでバグのように罰せられるであろう
+%%%%
+says: %s!
+
+は『%s！』と言った。
+%%%%
+You pay a service fee of %d gold.
+
+あなたは入会金として%dゴールドを支払った。
+%%%%
+waives the service fee.
+
+は入会金を免除してくれた。
+%%%%
+begins to support your attributes as your movement slows.
+
+はあなたの動きが遅くなるのに合わせて能力値を向上させるようになった。
+%%%%
+The plants of the dungeon cease their hostilities.
+
+ダンジョン内の植物は攻撃性を納めた。
+%%%%
+welcomes you back!
+
+はあなたの再入信を歓迎した！
+%%%%
+welcomes you!
+
+はあなたの入信を歓迎した！
+%%%%
+You bow before the missionary of Beogh.
+
+あなたはベオの宣教師の前にひざまずいた。
+%%%%
+You %s the altar of %s.
+
+あなたは%sの祭壇%s%s。
+%%%%
+refuses to forgive you so easily!
+
+はあなたをそう簡単に許しはしない！
+%%%%
+does not accept service from beggars like you!
+
+はあなたのような貧民の入会はお断りだ！
+%%%%
+The service fee for joining is currently %d gold; you have none.
+
+入会金は現在%dゴールドだ。あなたは一文たりとも持っていない。
+%%%%
+The service fee for joining is currently %d gold; you only have %d.
+
+入会金は現在%dゴールドだ。あなたは%dゴールドしか持っていない。
+%%%%
+does not accept worship from the loveless!
+
+は親愛無きものの入信を拒否した！
+%%%%
+does not accept worship from those such as you!
+
+はあなたのような者の入信を拒否した！
+%%%%
+by name
+
+名前を指定してください
+%%%%
+Which god (%s)?
+
+どの神を指定しますか？ (%s)
+%%%%
+recite Zin's Axioms of Law
+
+ジンの法の公理を説くこと
+%%%%
+call upon Zin for vitalisation
+
+ジンに生命の活性を願うこと
+%%%%
+call upon Zin to imprison the lawless
+
+ジンに無法者の収監を願うこと
+%%%%
+call upon Zin to create a sanctuary
+
+ジンに聖域の作成を願うこと
+%%%%
+donate money to Zin
+
+ジンに寄進すること
+%%%%
+You and your allies can no longer gain power from killing the unholy and evil.
+
+あなたと仲間たちはもう不浄な者や邪悪な者を倒すことで力を得ることはできない。
+%%%%
+call upon the Shining One for a divine shield
+
+輝けるものに神気の盾を願うこと
+%%%%
+channel blasts of cleansing flame
+
+浄化の炎を解き放つこと
+%%%%
+summon a divine warrior
+
+神聖な従者を召喚すること
+%%%%
+The Shining One will bless your weapon with holy wrath... once.
+
+輝けるものは一度だけあなたの武器を祝福してくれる。
+%%%%
+The Shining One is no longer ready to bless your weapon.
+
+輝けるものはもうあなたの武器を祝福してはくれない。
+%%%%
+Kikubaaqudgha will no longer protect you from unholy torment.
+
+キクバークッグァはもうあなたを不浄なる苦痛から守ってはくれない。
+%%%%
+Kikubaaqudgha is no longer ready to enhance your necromancy.
+
+キクバークッグァはもうあなたの死霊術の助けをしてはくれない。
+%%%%
+gain magical power from killing
+
+殺害によって魔力を得ること
+%%%%
+gain great but temporary skills
+
+一時的に戦闘系のスキルを強化すること
+%%%%
+speed up your combat
+
+一時的に攻撃速度を上昇させること
+%%%%
+gain health from killing
+
+殺害によって体力を回復すること
+%%%%
+call upon Sif Muna for magical energy
+
+シフ・ムーナに魔力の供給を願うこと
+%%%%
+freely open your mind to new spells
+
+新しい魔法のために記憶を消去すること
+%%%%
+forget spells at will
+
+自分の意志で呪文を忘れること
+%%%%
+go berserk at will
+
+自分がしたいときにバーサークすること
+%%%%
+call in reinforcements
+
+援軍を呼び出すこと
+%%%%
+choose one out of three cards
+
+カードを3枚引いてそのうちの1枚を選ぶこと
+%%%%
+deal four cards at a time
+
+一度に4枚のカードを使うこと
+%%%%
+purify yourself
+
+自らを浄化すること
+%%%%
+heal and attempt to pacify others
+
+他者を癒やし友好化を試みること
+%%%%
+call upon Elyvilon for divine vigour
+
+エリヴィロンに神秘の活力を願うこと
+%%%%
+depart the Abyss
+
+アビスから離脱すること
+%%%%
+depart the Abyss at will
+
+自分がしたいときにアビスから離脱すること
+%%%%
+banish your foes
+
+敵をアビスに追放すること
+%%%%
+corrupt the fabric of space
+
+空間の構造を崩壊させること
+%%%%
+gate yourself to the Abyss
+
+アビスへと退避すること
+%%%%
+Lugonu will corrupt your weapon with distortion... once.
+
+ルゴヌは一度だけあなたの武器に崩壊の力を与えてくれる。
+%%%%
+Lugonu is no longer ready to corrupt your weapon.
+
+ルゴヌはもうあなたの武器に崩壊の力を与えてはくれない。
+%%%%
+smite your foes
+
+敵に打擲の一撃を与えること
+%%%%
+walk on water
+
+水の上を歩くこと
+%%%%
+turn your foes to slime
+
+敵をスライムへと変化させること
+%%%%
+bend time to slow others
+
+時間を歪曲させ、他者の動きを遅くすること
+%%%%
+warp the flow of time around you
+
+周囲の時間の流れを歪曲させること
+%%%%
+inflict damage on those overly hasty
+
+過度に加速している者に損傷を与えること
+%%%%
+Your shadow now sometimes tangibly mimics your actions.
+
+あなたの影は時々あなたの動きをまねて行動するようになった。
+%%%%
+Your shadow no longer tangibly mimics your actions.
+
+あなたの影はもうあなたの動きをまねて行動しなくなった。
+%%%%
+petition Gozag for potion effects
+
+ゴザーグに薬の効果を嘆願すること
+%%%%
+fund merchants seeking to open stores in the dungeon
+
+ダンジョンに店を開こうとする商人に出資すること
+%%%%
+bribe branches to halt enemies' attacks and recruit allies
+
+支部を買収して敵の攻撃を止めさせ、仲間を集めること
+%%%%
+Your storm dissipates completely.
+
+あなたの周囲の嵐は完全に消え去った。
+%%%%
+call upon nature to destroy your foes
+
+自然に働きかけて敵を討つこと
+%%%%
+give life to nearby clouds
+
+近くの雲烟に生命を与えること
+%%%%
+The storm surrounding you is now too weak to repel missiles.
+
+あなたの周囲の嵐はもう飛来物を逸らすことはできなくなった。
+%%%%
+call upon nature's wrath in a wide area around you
+
+周囲の広範囲に自然の怒りを解き放つこと
+%%%%
+You no longer exude an aura of power that intimidates your foes.
+
+あなたはもう敵を戸惑わせるオーラを発散しなくなった。
+%%%%
+Your aura of power no longer strikes those that harm you.
+
+あなたが纏うオーラはもう自らに危害を加えるものに反撃しなくなった。
+%%%%
+heal your body and restore your magic
+
+自らの傷を癒し魔力を回復させること
+%%%%
+gather your power into a mighty leap
+
+力を溜めて力強い跳躍を行うこと
+%%%%
+wreak a terrible wrath on your foes
+
+敵に対し激怒の力を浴びせること
+%%%%
+stomp with the beat
+
+足踏みしてビートを刻むこと
+%%%%
+pass through a line of other dancers
+
+他の踊り手たちの並びを横切ること
+%%%%
+Uskayaw will force your foes to helplessly watch your dance.
+
+ウスカヤーは敵にあなたの舞踏を無防備に見るよう強制する。
+%%%%
+Uskayaw will no longer force your foes to helplessly watch your dance.
+
+ウスカヤーはもう敵にあなたの舞踏を無防備に見るよう強制しなくなった。
+%%%%
+Uskayaw will force your foes to share their pain.
+
+ウスカヤーは敵が受ける外傷を敵全体で共有させる。
+%%%%
+Uskayaw will no longer force your foes to share their pain.
+
+ウスカヤーはもう敵が受ける外傷を敵全体で共有させなくなった。
+%%%%
+merge with and destroy a victim
+
+標的と一体化したのち破壊すること
+%%%%
+recall your ancestor
+
+祖霊を呼び出すこと
+%%%%
+remember your ancestor's identity
+
+祖霊の人となりを思い出すこと
+%%%%
+swap creatures with your ancestor
+
+モンスターと祖霊の位置を交換すること
+%%%%
+heal and protect your ancestor
+
+祖霊の傷を癒し、強化すること
+%%%%
+You can now %s.
+
+あなたは%sができるようになった。
+%%%%
+You can no longer %s.
+
+あなたはもう%sができない。
+%%%%
+You have enough gold to %s.
+
+あなたは十分な所持金があるので、%sができる。
+%%%%
+You feel a little guilty.
+
+あなたは少し罪を感じた。
+%%%%
+You feel guilty.
+
+あなたは罪を感じた。
+%%%%
+You feel very guilty.
+
+あなたはかなり罪を感じた。
+%%%%
+You feel extremely guilty.
+
+あなたは重大な罪を感じた。
+%%%%
+raises the support of your attributes.
+
+はあなたの能力値をさらに向上させた。
+%%%%
+raises the support of your attributes as your movement slows.
+
+はあなたの動きが遅くなるのに合わせて能力値をさらに向上させた。
+%%%%
+lowers the support of your attributes.
+
+はあなたの能力値の強化を弱めた。
+%%%%
+lowers the support of your attributes as your movement quickens.
+
+はあなたの動きが速くなるのに合わせて能力値の強化を弱めた。
+%%%%
+does not appreciate desertion!
+
+は棄教する行為を喜ばない！
+%%%%
+does not appreciate desertion for chaos!
+
+は混沌に身を委ねて棄教する行為を喜ばない！
+%%%%
+does not appreciate desertion for evil!
+
+は邪悪に身を委ねて棄教する行為を喜ばない！
+%%%%
+<lightgrey>Your body disappears without a glow.</lightgrey>
+
+<lightgrey>あなたの死体は光を放たずに消え去った。</lightgrey>
+%%%%
+Your body glows slightly and disappears.
+
+あなたの死体は一瞬ほのかに輝き、そして消え去った。
+%%%%
+<white>Your body glows with a rainbow of weird colours and disappears.</white>
+
+<white>あなたの死体は奇妙な虹色の光に輝き、そして消え去った。</white>
+%%%%
+<lightgrey>Your body disappears without additional glow.</lightgrey>
+
+<lightgrey>あなたの死体は輝きを強めることなく消え去った。</lightgrey>
+%%%%
+Your body glows slightly brighter and disappears.
+
+あなたの死体は一瞬ほのかに輝きを増し、そして消え去った。
+%%%%
+aid the meek
+
+弱き者を助ける
+%%%%
+vanquish evil
+
+悪を打ち負かす
+%%%%
+enforce order
+
+秩序を執行する
+%%%%
+Zin will now cleanse your potions of mutation.
+
+ジンはあなたの変異の薬を浄化してくれるようになった。
+%%%%
+Zin will no longer cleanse your potions of mutation.
+
+ジンはもうあなたの変異の薬を浄化してはくれない。
+%%%%
+You and your allies can now gain power from killing the unholy and evil.
+
+あなたと仲間たちは不浄な者や邪悪な者を倒すことで力を得られるようになった。
+%%%%
+bring forth the wretched and dying
+
+惨めな死に損ないたちを呼び出すこと
+%%%%
+Kikubaaqudgha is now protecting you from necromantic miscasts and death curses.
+
+キクバークッグァはあなたを死霊術の失敗効果や死の呪いから守ってくれるようになった。
+%%%%
+Kikubaaqudgha will no longer protect you from necromantic miscasts or death curses.
+
+キクバークッグァはもうあなたを死霊術の失敗効果や死の呪いから守ってはくれない。
+%%%%
+Kikubaaqudgha is now protecting you from unholy torment.
+
+キクバークッグァはあなたを不浄なる苦痛から守ってくれるようになった。
+%%%%
+invoke the sign of ruin
+
+破滅の印を呼び起こすこと
+%%%%
+Kikubaaqudgha will grant you forbidden knowledge or bloody your weapon with pain... once.
+
+キクバークッグァは一度だけ、あなたに禁断の知識を授けるか、あなたの武器を苦痛で血塗らせてくれる。
+%%%%
+Kikubaaqudgha will grant you forbidden knowledge.
+
+キクバークッグァはあなたに禁断の知識を授けてくれる。
+%%%%
+light the black torch and reap souls in Yredelemnul's name
+
+黒き松明を灯し、イレデレンヌルの名の下に魂を刈り取ること
+%%%%
+recall your undead harvest
+
+刈り取ったアンデッドを呼び戻すこと
+%%%%
+Yredelemnul will now gift you temporary undead servants when you light the torch.
+
+イレデレンヌルは松明を灯したときに一時的なアンデッドの従者を授けてくれるようになった。
+%%%%
+Yredelemnul will no longer gift you temporary undead servants when you light the torch.
+
+イレデレンヌルはもう松明を灯してもアンデッドの従者を授けてはくれない。
+%%%%
+hurl gouts of umbral torchlight
+
+陰りの松明の炎を投げつけること
+%%%%
+bind living souls
+
+生者の魂を縛ること
+%%%%
+engulf your surroundings in Yredelemnul's grip
+
+周囲をイレデレンヌルの掌握で包み込むこと
+%%%%
+Vehumet is now aiding your destructive spells.
+
+ヴェフメットはあなたの破壊の呪文を手助けしてくれるようになった。
+%%%%
+Vehumet will no longer aid your destructive spells.
+
+ヴェフメットはもうあなたの破壊の呪文を手助けしてはくれない。
+%%%%
+Vehumet is now extending the range of your destructive spells.
+
+ヴェフメットはあなたの破壊の呪文の射程を伸ばしてくれるようになった。
+%%%%
+Vehumet will no longer extend the range of your destructive spells.
+
+ヴェフメットはもうあなたの破壊の呪文の射程を伸ばしてはくれない。
+%%%%
+enter into single combat with a foe
+
+敵と一騎討ちをすること
+%%%%
+Okawaru will now gift you throwing weapons as you gain piety.
+
+オカワルは信仰が深まるにつれて投擲武器を授けてくれるようになった。
+%%%%
+Okawaru will no longer gift you throwing weapons.
+
+オカワルはもう投擲武器を授けてはくれない。
+%%%%
+Okawaru will grant you a choice of weapons... once.
+
+オカワルは一度だけ、選んだ武器を授けてくれる。
+%%%%
+Okawaru is no longer ready to gift you weaponry.
+
+オカワルはもう武器を授けてはくれない。
+%%%%
+Okawaru will grant you a choice of armour... once.
+
+オカワルは一度だけ、選んだ防具を授けてくれる。
+%%%%
+Okawaru is no longer ready to gift you armour.
+
+オカワルはもう防具を授けてはくれない。
+%%%%
+unleash Makhleb's destructive might
+
+マクレブの破壊の力を解き放つこと
+%%%%
+summon an infernal servant of Makhleb
+
+マクレブの地獄の従者を召喚すること
+%%%%
+Makhleb will allow you to brand your body with an infernal mark... once.
+
+マクレブは一度だけ、あなたの体に地獄の刻印を焼き付けることを許してくれる。
+%%%%
+Makhleb will no longer allow you to brand your body with an infernal mark.
+
+マクレブはもうあなたの体に地獄の刻印を焼き付けることを許してはくれない。
+%%%%
+call upon Sif Muna to cast any spell from your library
+
+シフ・ムーナに頼んで蔵書の呪文をどれでも唱えること
+%%%%
+Sif Muna will now gift you books as you gain piety.
+
+シフ・ムーナは信仰が深まるにつれて魔法書を授けてくれるようになった。
+%%%%
+Sif Muna will no longer gift you books.
+
+シフ・ムーナはもう魔法書を授けてはくれない。
+%%%%
+call upon Trog for regeneration and willpower
+
+トログに再生力と意志力を願うこと
+%%%%
+Trog will now gift you melee weapons as you gain piety.
+
+トログは信仰が深まるにつれて近接武器を授けてくれるようになった。
+%%%%
+Trog will no longer gift you weapons.
+
+トログはもう武器を授けてはくれない。
+%%%%
+draw from decks of power
+
+力のデッキからカードを引くこと
+%%%%
+Nemelex will now gift you decks of power as you gain piety.
+
+ネメレクスは信仰が深まるにつれて力のデッキを授けてくれるようになった。
+%%%%
+Nemelex will no longer gift you decks.
+
+ネメレクスはもうデッキを授けてはくれない。
+%%%%
+stack five cards from your decks
+
+デッキから5枚のカードを積み込むこと
+%%%%
+stack cards
+
+カードを積み込むこと
+%%%%
+provide healing for yourself
+
+自らを癒やすこと
+%%%%
+recall your apostles
+
+使徒たちを呼び戻すこと
+%%%%
+Beogh will now send orc apostles to challenge you in battle as you gain piety.
+
+ベオは信仰が深まるにつれて、あなたに戦いを挑むオークの使徒を送ってくるようになった。
+%%%%
+Beogh will no longer send orc apostles to challenge you in battle.
+
+ベオはもうあなたに戦いを挑むオークの使徒を送ってこない。
+%%%%
+rally a vengeful horde
+
+復讐に燃える軍勢を奮い立たせること
+%%%%
+Jiyva is now protecting you from corrosive effects.
+
+ジーヴァはあなたを腐蝕効果から守ってくれるようになった。
+%%%%
+Jiyva will no longer protect you from corrosive effects.
+
+ジーヴァはもうあなたを腐蝕効果から守ってはくれない。
+%%%%
+Jiyva will now mutate your body as you gain piety.
+
+ジーヴァは信仰が深まるにつれてあなたの体を変異させるようになった。
+%%%%
+Jiyva will no longer mutate your body.
+
+ジーヴァはもうあなたの体を変異させない。
+%%%%
+call acidic ooze from nearby walls
+
+近くの壁から酸性の軟泥を呼び出すこと
+%%%%
+You may now expel jellies when seriously injured.
+
+あなたは重傷を負ったときにゼリーを放出するようになった。
+%%%%
+You will no longer expel jellies when injured.
+
+あなたはもう負傷してもゼリーを放出しない。
+%%%%
+encircle yourself with summoned briar patches
+
+召喚した荊棘で自らを囲むこと
+%%%%
+grow a ballistomycete
+
+放出菌糸を生やすこと
+%%%%
+transform dungeon walls and trees into plant allies
+
+ダンジョンの壁や木を味方の植物に変えること
+%%%%
+grow an oklob plant
+
+オクロブ草を生やすこと
+%%%%
+Cheibriados is now slowing the effects of poison on you.
+
+ケイブリアドスはあなたが受ける毒の効果を遅らせてくれるようになった。
+%%%%
+Cheibriados will no longer slow the effects of poison on you.
+
+ケイブリアドスはもうあなたが受ける毒の効果を遅らせてはくれない。
+%%%%
+step out of the flow of time
+
+時間の流れから抜け出すこと
+%%%%
+Ashenzari warns you of distant threats and treasures.\nAshenzari shows you where magical portals lie.
+
+アシェンザリは遠くの脅威や財宝をあなたに知らせる。\nアシェンザリは魔法のポータルの場所を示す。
+%%%%
+Ashenzari will now identify your possessions.
+
+アシェンザリはあなたの所持品を識別してくれるようになった。
+%%%%
+Ashenzari will no longer identify your possesions.
+
+アシェンザリはもうあなたの所持品を識別してはくれない。
+%%%%
+Ashenzari will now reveal the unseen.
+
+アシェンザリは目に見えぬものを看破してくれるようになった。
+%%%%
+Ashenzari will no longer reveal the unseen.
+
+アシェンザリはもう目に見えぬものを看破してはくれない。
+%%%%
+Ashenzari will now keep your mind clear.
+
+アシェンザリはあなたの思考を明瞭に保ってくれるようになった。
+%%%%
+Ashenzari will no longer keep your mind clear.
+
+アシェンザリはもうあなたの思考を明瞭に保ってはくれない。
+%%%%
+Ashenzari will now protect you from the dungeon's malevolent forces.
+
+アシェンザリはダンジョンの悪意ある力からあなたを守ってくれるようになった。
+%%%%
+Ashenzari no longer protects you from the dungeon's malevolent forces.
+
+アシェンザリはもうダンジョンの悪意ある力からあなたを守ってはくれない。
+%%%%
+Ashenzari reveals the structure of the nearby dungeon.
+
+アシェンザリは近くのダンジョンの構造を明らかにする。
+%%%%
+Ashenzari no longer reveals the structure of the nearby dungeon.
+
+アシェンザリはもう近くのダンジョンの構造を明らかにしない。
+%%%%
+Dithmenos quiets all noise in your surroundings.
+
+ディスメノスはあなたの周囲のあらゆる物音を静める。
+%%%%
+Dithmenos no longer quiets all noise in your surroundings.
+
+ディスメノスはもうあなたの周囲の物音を静めない。
+%%%%
+mislead enemies by swapping places with your shadow
+
+影と位置を入れ替えて敵を欺くこと
+%%%%
+unleash an enemy's spells as if they were a marionette
+
+敵を操り人形のように扱い、その呪文を解き放つこと
+%%%%
+surround yourself with impenetrable night
+
+見通せぬ夜で自らを包むこと
+%%%%
+Qazlal grants you and your divine allies immunity to clouds.
+
+クァズラルはあなたと神の仲間たちを雲烟から保護する。
+%%%%
+You are now surrounded by a storm.
+
+あなたは嵐に取り巻かれるようになった。
+%%%%
+The storm surrounding you is now powerful enough to repel missiles.
+
+あなたの周囲の嵐は飛来物を逸らすほどに強力になった。
+%%%%
+You will now adapt resistances upon receiving elemental damage.
+
+あなたは元素属性のダメージを受けるとその耐性に適応するようになった。
+%%%%
+You will no longer adapt resistances upon receiving elemental damage.
+
+あなたはもう元素属性のダメージを受けても耐性に適応しない。
+%%%%
+You now exude an aura of power that intimidates your foes.
+
+あなたは敵を威圧する力のオーラを発散するようになった。
+%%%%
+Your aura of power can now strike those that harm you.
+
+あなたが纏うオーラは自らに危害を加えるものに反撃するようになった。
+%%%%
+You now drain nearby creatures when transferring your ancestor.
+
+あなたは祖霊を転移させるときに近くの生物の生命力を吸い取るようになった。
+%%%%
+You no longer drain nearby creatures when transferring your ancestor.
+
+あなたはもう祖霊を転移させても近くの生物の生命力を吸い取らない。
+%%%%
+perform damaging attacks by moving towards foes
+
+敵に向かって移動することで攻撃を繰り出すこと
+%%%%
+perform lunging strikes
+
+突進攻撃を行うこと
+%%%%
+lightly attack monsters by moving around them
+
+モンスターの周りを移動することで軽い攻撃を加えること
+%%%%
+perform spinning attacks
+
+回転攻撃を行うこと
+%%%%
+perform airborne attacks
+
+空中攻撃を行うこと
+%%%%
+briefly move at supernatural speeds
+
+短い間、超自然的な速さで動くこと
+%%%%
+move at supernatural speeds
+
+超自然的な速さで動くこと
+%%%%
+summon a storm of heavenly clouds to empower your attacks
+
+天の雲の嵐を呼び出して攻撃を強化すること
+%%%%
+summon a storm of heavenly clouds
+
+天の雲の嵐を呼び出すこと
+%%%%
+armour yourself in flame
+
+炎を身に纏うこと
+%%%%
+call a swarm of foxfires against your foes
+
+狐火の群れを呼び出して敵にけしかけること
+%%%%
+rocket upward and away, once
+
+一度だけ、上空へと飛び去ること
+%%%%
+become a bug
+
+バグになる
+%%%%
+, with one final cry of rage, burns out of existence.
+
+は最後に怒りの叫びを上げ、燃え尽きて消滅した。
+%%%%
+cares nothing for such trivial demonstrations of your faith.
+
+はそのようなつまらない信仰の証には関心がない。
+%%%%
+already offers you all the fire that remains!
+
+は残された炎のすべてをすでにあなたに授けている！
+%%%%
+deals you some cards!
+
+はあなたにカードを配った！
+%%%%
+You now have %s.
+
+あなたは今%sを持っている。
+%%%%
+grants you throwing weapons!
+
+はあなたに投擲武器を授けた！
+%%%%
+grants you a weapon!
+
+はあなたに武器を授けた！
+%%%%
+grants you bugs!
+
+はあなたにバグを授けた！
+%%%%
+...but nothing appears.
+
+……しかし何も現れなかった。
+%%%%
+has no new spells for you at this time.
+
+は今のところあなたに授ける新しい呪文を持っていない。
+%%%%
+offers you knowledge of %s.
+
+はあなたに%sの知識を授ける提案をした。
+%%%%
+Furious gurgling surrounds you!
+
+怒り狂ったようなゴボゴボという音があなたを取り囲んだ！
+%%%%
+begins accelerating your health and magic regeneration.
+
+はあなたの体力と魔力の回復を早めるようになった。
+%%%%
+Your curses shatter.
+
+あなたの呪いは砕け散った。
+%%%%
+gift of slime is revoked.
+
+粘体の贈り物は取り消された。
+%%%%
+blazes with a vengeful fury!
+
+は復讐の怒りに燃え上がった！
+%%%%
+voice booms out: Traitor to your kin!
+
+声が響き渡った。『同族の裏切り者め！』
+%%%%
+Your access to %s's decks is revoked.
+
+あなたは%sのデッキを使えなくなった。
+%%%%
+burns away your resistance to fire.
+
+はあなたの火炎への耐性を焼き払った。
+%%%%
+Your cloak of flame burns out.
+
+あなたの炎の外套は燃え尽きた。
+%%%%
+Your rising flame fizzles out.
+
+あなたの昇り立つ炎は立ち消えた。
+%%%%
+%s removes the imprint of %s from your paragon.
+
+%sはあなたの模範者から%sの刻印を取り除いた。
+%%%%
+Your summoned allies are dismissed!
+
+あなたが召喚した仲間たちは退去させられた！
+%%%%
+Zin cleanses your body of Beogh's taint.
+
+ジンはあなたの体からベオの穢れを浄めた。
+%%%%
+Your %s burns with power once more.
+
+あなたの%sは再び力を帯びて燃え上がった。
+%%%%
+%s goes dull and lifeless in your grasp.
+
+%sはあなたの手の中で輝きを失い、生気をなくした。
+%%%%
+says: You must forswear the aid of any and all before you are fit to worship.
+
+は『我を崇めるに相応しくなりたくば、あらゆる者の助けを断たねばならぬ』と言った。
+%%%%
+says: How dare you approach in such a loathsome form!
+
+は『そのような忌まわしい姿で近づくとは何事か！』と言った。
+%%%%
+default %s
+
+デフォルト: %s
+%%%%
+This will place you under penance!
+
+これを行うと神の怒りを買うことになる！
+%%%%
+Your god hates spellcasting!
+
+あなたの神は呪文を唱えることを嫌っている！
+%%%%
+Your god hates this spell!
+
+あなたの神はこの呪文を嫌っている！
+%%%%
+You feel a momentary loss of self-confidence.
+
+あなたは一瞬、自信を失ったような気がした。
+%%%%
+...but the rich have no need for faith.
+
+……しかし富める者に信仰は必要ない。
+%%%%
+...but you know Xom will still be watching.
+
+……しかしゾムはまだ見ているに違いない。
+%%%%
+...but the divine are already as distant as possible.
+
+……しかし神々はすでにこれ以上ないほど遠ざかっている。
+%%%%
+You feel the divine grow more distant.
+
+あなたは神々がさらに遠ざかったように感じた。
+%%%%
+You feel the divine notice you fully once more.
+
+あなたは神々が再びあなたに十分な注意を向けたように感じた。
+%%%%

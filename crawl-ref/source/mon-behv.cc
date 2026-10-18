@@ -1118,10 +1118,9 @@ void behaviour_event(monster* mon, mon_event_type event, const actor *src,
 
             if (you.can_see(*mon))
             {
-                mprf("%s attack snaps %s out of %s fear.",
-                        src ? src->name(DESC_ITS).c_str() : "the",
-                        mon->name(DESC_THE).c_str(),
-                        mon->pronoun(PRONOUN_POSSESSIVE).c_str());
+                mprf(jtransc("%s attack snaps %s out of fear."),
+                        src ? src->name(DESC_ITS).c_str() : "",
+                        mon->name(DESC_THE).c_str());
             }
             mon->del_ench(ENCH_FEAR, true);
         }
@@ -1181,9 +1180,8 @@ void behaviour_event(monster* mon, mon_event_type event, const actor *src,
             {
                 if (you.can_see(*mon))
                 {
-                    mprf("%s snaps out of %s daze.",
-                            mon->name(DESC_THE).c_str(),
-                            mon->pronoun(PRONOUN_POSSESSIVE).c_str());
+                    mprf(jtransc("%s snaps out of the daze."),
+                            mon->name(DESC_THE).c_str());
                 }
                 mon->del_ench(ENCH_DAZED, true);
             }
@@ -1283,7 +1281,7 @@ void behaviour_event(monster* mon, mon_event_type event, const actor *src,
             break;
         }
 
-        msg = getSpeakString(mon->name(DESC_PLAIN) + " flee");
+        msg = getSpeakString(mon->name_en(DESC_PLAIN) + " flee");
 
         // Assume monsters know where to run from, even if player is
         // invisible.
@@ -1314,13 +1312,13 @@ void behaviour_event(monster* mon, mon_event_type event, const actor *src,
             if (mon->friendly() && !crawl_state.game_is_arena())
             {
                 mon->foe = MHITYOU;
-                msg = "PLAIN:@The_monster@ returns to your side!";
+                msg = jtrans("PLAIN:@The_monster@ returns to your side!");
             }
             else if (!mon->is_child_tentacle())
             {
-                msg = getSpeakString(mon->name(DESC_PLAIN) + " cornered");
+                msg = getSpeakString(mon->name_en(DESC_PLAIN) + " cornered");
                 if (msg.empty())
-                    msg = "PLAIN:Cornered, @the_monster@ turns to fight!";
+                    msg = jtrans("PLAIN:Cornered, @the_monster@ turns to fight!");
             }
             mon->del_ench(ENCH_FEAR, true);
             mon->behaviour = BEH_SEEK;
@@ -1459,27 +1457,27 @@ static void _mons_indicate_level_exit(const monster* mon)
     const bool is_shaft = (get_trap_type(mon->pos()) == TRAP_SHAFT);
 
     if (feat_is_gate(feat))
-        simple_monster_message(*mon, " passes through the gate.");
+        simple_monster_message(*mon, jtransc(" passes through the gate."));
     else if (feat_is_travelable_stair(feat))
     {
         command_type dir = feat_stair_direction(feat);
-        simple_monster_message(*mon,
+        simple_monster_message(*mon, jtransc(
             make_stringf(" %s the %s.",
                 dir == CMD_GO_UPSTAIRS     ? "goes up" :
                 dir == CMD_GO_DOWNSTAIRS   ? "goes down"
                                            : "takes",
                 feat_is_escape_hatch(feat) ? "escape hatch"
-                                           : "stairs").c_str());
+                                           : "stairs")));
     }
     else if (is_shaft)
     {
-        simple_monster_message(*mon,
+        simple_monster_message(*mon, jtransc(
             make_stringf(" %s the shaft.",
                 mon->airborne() ? "goes down"
-                                : "jumps into").c_str());
+                                : "jumps into")));
 
         // Shafts are one-time-use.
-        mpr("The shaft crumbles and collapses.");
+        mpr(jtrans("The shaft crumbles and collapses."));
         maybe_destroy_shaft(mon->pos());
     }
 }
@@ -1497,8 +1495,7 @@ void make_mons_leave_level(monster* mon)
             if (you.can_see(*mon))
             {
                 simple_monster_message(*mon,
-                    make_stringf(" donates %s equipment to the cause.",
-                        mon->pronoun(PRONOUN_POSSESSIVE).c_str()).c_str());
+                    jtransc(" donates its equipment to the cause."));
             }
             monster_drop_things(mon);
         }

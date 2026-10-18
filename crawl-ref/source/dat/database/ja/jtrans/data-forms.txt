@@ -1601,3 +1601,8 @@ Your melee attacks cause explosive burstshrooms to grow.
 
 あなたの近接攻撃は爆発する爆裂茸を生やす。
 %%%%
+# 第2陣で追加: 変身中の祈りの動作
+[verb]hover solemnly before
+
+浮かびながら姿勢を正した
+%%%%

@@ -1,0 +1,1809 @@
+%%%%
+Do you wish to have {your weapon} {which flavour}?
+
+%s%sことを望みますか？
+%%%%
+bloodied with pain
+
+を苦痛と血に染める
+%%%%
+corrupted with distortion
+
+に崩壊と歪曲の力を授かる
+%%%%
+blessed with holy wrath
+
+を神に祝福してもらう
+%%%%
+{old name} {blessing description}
+
+%sは%s
+%%%%
+Your %s shines brightly!
+
+あなたの%sはまばゆく輝いた！
+%%%%
+booms: Use this gift wisely!
+
+の声が轟いた：『我が与えしもの賢く使うべし！』
+%%%%
+You have nothing to donate!
+
+寄付する金がない！
+%%%%
+Do you wish to donate half of your money?
+
+所持金の半分を寄付しますか？
+%%%%
+A donation of $%d amounts to an increase of piety by %d.
+
+$%dの寄付により信仰値が%d上昇した。
+%%%%
+finds your generosity lacking.
+
+はあなたには気前のよさが足りないと感じた。
+%%%%
+You feel that you will soon be absolved of all your sins.
+
+あなたはもうすぐ全ての罪が赦されるような気がした。
+%%%%
+You feel that your burden of sins will soon be lighter.
+
+あなたはもうすぐ罪の重荷が軽くなるような気がした。
+%%%%
+You feel that %s will soon be %s%s
+
+%sは遠からず%sようだ%s
+%%%%
+'bookname' chapter:verse
+
+『%s』%d章%d節
+%%%%
+Finish your current sermon first, please.
+
+まずは今朗読している説法を終えてからにしてください。
+%%%%
+guffaws at your puny god.
+
+はあなたの信仰する神を取るに足らぬと笑い飛ばした。
+%%%%
+sneers at your recitation.
+
+はあなたの説法を嘲笑っている。
+%%%%
+is dazed by your recitation.
+
+はあなたの説法で眩暈をおこしている。
+%%%%
+is confused by your recitation.
+
+はあなたの説法で混乱している。
+%%%%
+stumbles about in disarray.
+
+は混乱してよろめいている。
+%%%%
+is awed by your recitation.
+
+はあなたの説法に畏れを抱いている。
+%%%%
+is aghast at the heresy of your recitation.
+
+はあなたが朗読する異教の説法に仰天している。
+%%%%
+is smitten by the wrath of Zin.
+
+はジンの怒りの打擲を受けた。
+%%%%
+is blasted by the fury of Zin!
+
+はジンの怒りをその身に受けた！
+%%%%
+is struck blind by the wrath of Zin!
+
+はジンの怒りにより失明した！
+%%%%
+is limned with silver light.
+
+は銀色の光によって照らされた。
+%%%%
+quails at your recitation.
+
+はあなたの説法に怖じ気づいた。
+%%%%
+looks feeble and powerless before your recitation.
+
+はあなたの説法の前で弱々しくなり、力を失っている。
+%%%%
+is struck mute by the wrath of Zin!
+
+はジンの怒りにより声が出なくなった！
+%%%%
+is driven mad by the wrath of Zin!
+
+はジンの怒りにより気が狂った！
+%%%%
+is left stupefied by the wrath of Zin!
+
+はジンの怒りを受けてぼうっとしている！
+%%%%
+melts away into a sizzling puddle of chaotic flesh.
+
+の混沌の肉体は溶けて煮えたぎる血だまりと化した。
+%%%%
+is turned into a pillar of salt by the wrath of Zin!
+
+はジンの怒りを受けて塩の柱へと変化した！
+%%%%
+grants you divine stamina.
+
+はあなたの生命力を活性化させた。
+%%%%
+Your divine stamina fades away.
+
+あなたの生命力は通常に戻った。
+%%%%
+You cannot imprison that!
+
+それを収監することはできない！
+%%%%
+You cannot imprison a law-abiding creature!
+
+あなたは法を守っているモンスターを収監することはできない！
+%%%%
+You hear a choir sing!
+
+あなたは聖歌隊の歌を耳にした！
+%%%%
+You are suddenly bathed in radiance!
+
+あなたは突然光に包まれた！
+%%%%
+Your divine shield is renewed.
+
+あなたの周囲の神気の盾が張り直された。
+%%%%
+Your divine shield fades away.
+
+神気の盾は薄れて消え去った。
+%%%%
+You feel purified!
+
+あなたは浄化されたような気がした！
+%%%%
+%s grants you divine vigour.
+
+%sはあなたに神秘の活力を授けた。
+%%%%
+Your divine vigour fades away.
+
+あなたに与えられた神秘の活力は消え去った。
+%%%%
+Your skin crawls.
+
+あなたの皮膚はむずむずしてきた。
+%%%%
+Your skin stops crawling.
+
+皮膚のむずむずは完全に消えた。
+%%%%
+%s soul %s.
+
+%s魂は%s。
+%%%%
+is now yours
+
+今やあなたのものだ
+%%%%
+fights you
+
+あなたに反抗した
+%%%%
+The flow of time bends around you.
+
+あなたの周りの時間の流れが歪んだ。
+%%%%
+rebukes %s.
+
+は%sを咎めた。
+%%%%
+There's no one hasty visible. Invoke Slouch anyway?
+
+見える範囲に素早い敵がいませんが、それでも屈服を発動させますか？
+%%%%
+You can feel time thicken for a moment.
+
+あなたは時間の流れが濃密になるのを感じ取ることができた。
+%%%%
+You warp the flow of time around you!
+
+あなたは周囲の時間の流れを歪めた！
+%%%%
+You step out of the flow of time.
+
+あなたは時の流れから抜け出した。
+%%%%
+You return to the normal time flow.
+
+あなたは通常の時間の流れに戻った。
+%%%%
+Your %s glows black for a moment.
+
+あなたの%sは一瞬黒く輝いた。
+%%%%
+(press <w>%c</w> on the <w>%s</w>bility menu to convert to Beogh)
+
+(<w>%c</w>を<w>%s</w>(能力)メニューで押すとベオに改宗できる)
+%%%%
+You need at least %d gold to purchase potions right now!
+
+薬を今すぐ買うには最低でも%dゴールド必要だ！
+%%%%
+[%c] - %d gold -
+
+[%c] - %dゴールド -
+%%%%
+Purchase which effect?
+
+どの効果の薬を購入しますか？
+%%%%
+You don't have enough gold for that!
+
+それをするのに十分な金を持っていない！
+%%%%
+You currently need %d gold to open negotiations with a merchant.
+
+商人との交渉を始めるにはまず%dゴールドが必要だ。
+%%%%
+No merchants are willing to come to this location.
+
+このような場所に来ようとする商人はいなかった。
+%%%%
+You need to be standing on open floor to call a merchant.
+
+あなたが店を招致するにはある程度開けた場所に立っている必要がある。
+%%%%
+[%c] %5d gold - %s %s %s
+
+[%c] %5dゴールド - %s%s%s
+%%%%
+Fund which merchant?
+
+どの商人に投資しますか？
+%%%%
+You don't have enough gold to fund that merchant!
+
+あなたはその商人に投資するのに十分な金を持っていない！
+%%%%
+Your bribe of %s has been exhausted.
+
+%sの買収契約は終了した。
+%%%%
+You need at least %d gold to offer a bribe.
+
+買収を持ちかけるには少なくとも%dゴールドが必要だ。
+%%%%
+the denizens of %s
+
+%sの住人
+%%%%
+You can't bribe %s or %s.
+
+あなたは%sや%sを買収できない。
+%%%%
+You can't bribe %s.
+
+あなたは%sを買収できない。
+%%%%
+Do you want to bribe the denizens of %s?
+
+%sの住人を買収しますか？
+%%%%
+spreads your bribe to %s!
+
+はあなたの買収契約を%sに広めた！
+%%%%
+Aiming: <white>Upheaval</white>
+
+照準: <white>自然の怒り</white>
+%%%%
+There is %s there.
+
+そこには%sがある。
+%%%%
+Magma suddenly erupts from the ground!
+
+突然地面からマグマが湧きあがった！
+%%%%
+A blizzard blasts the area with ice!
+
+周囲の空間を猛吹雪が襲った！
+%%%%
+A storm cloud blasts the area with cutting wind!
+
+雷雲が巻き起こり、周囲をカマイタチが切り裂いた！
+%%%%
+The ground shakes violently, spewing rubble!
+
+地面が激しく揺れ、瓦礫が吹き出した！
+%%%%
+You can't see any clouds you can empower.
+
+見える所には生命を吹き込むことができる雲がない。
+%%%%
+Clouds arounds you coalesce and take form!
+
+あなたの周囲の雲が凝集し、具現化した！
+%%%%
+There isn't enough space here!
+
+ここには十分な広さがない！
+%%%%
+There are friendlies around; are you sure you want to hurt them?
+
+ここには友好的な存在がいますが、本当にそれらに危害を加えますか？
+%%%%
+Nature churns violently around you!
+
+自然の猛威があなたの周囲をめちゃめちゃにかき回した！
+%%%%
+believes you are ready to make a new sacrifice.
+
+はあなたが新たな代償を捧げる準備ができたと確信した。
+%%%%
+Ru asks you to %s.
+
+ルーはあなたに代償を求めた: %s
+%%%%
+Do you really want to make this sacrifice?
+
+本当にそれを代償として捧げますか？
+%%%%
+This is %s sacrifice. Piety after sacrifice: %s
+
+それは%s犠牲だ。捧げた後の信仰値: [%s]
+%%%%
+indicates that your awakening is complete.
+
+はあなたの信仰が完全に高まったことを示した。
+%%%%
+Do you really want to reject the sacrifices Ru is offering?
+
+本当にルーが提案した代償を捧げるのを拒否しますか？
+%%%%
+will take longer to evaluate your readiness.
+
+はあなたの準備を評価するのを先送りにした。
+%%%%
+You are restored by drawing out deep reserves of power within.
+
+あなたは奥底に秘められた力を発揮し、自らの体を回復させた。
+%%%%
+You burst free from the webs!
+
+あなたは蜘蛛の巣から爆発的に飛び出した！
+%%%%
+You burst free from the net!
+
+あなたは網の中から爆発的に飛び出した！
+%%%%
+You can't repeat Power Leap.
+
+あなたは力強き跳躍を連続して行うことはできない。
+%%%%
+Aiming: <white>Power Leap</white>
+
+照準: <white>力強き跳躍</white>
+%%%%
+Cancelling leap due to HUP.
+
+HUPシグナルを受信したため、跳躍を中断します。
+%%%%
+You cannot leap away from %s!
+
+あなたは跳躍して%sから遠ざかることができない！
+%%%%
+You cannot leap closer to %s!
+
+あなたは跳躍して%sに近づくことができない！
+%%%%
+You can't leap on top of the monster!
+
+あなたはモンスターの真上に跳ぶことはできない！
+%%%%
+You can't leap into the sea!
+
+あなたは海中に飛び込むことはできない！
+%%%%
+You can't leap into the sea of lava!
+
+あなたは溶岩の海に飛び込むことはできない！
+%%%%
+is paralysed by terrible understanding!
+
+は恐るべき事実に直面して体の自由を失った！
+%%%%
+slows down under the weight of truth!
+
+は真実の重みの前に動きが遅くなった！
+%%%%
+There are no visible enemies. Unleash your apocalypse anyway?
+
+目に見える所に敵がいませんが、黙示録の惨劇を解き放ちますか？
+%%%%
+You reveal the great annihilating truth to your foes!
+
+あなたは絶大なる惨劇という現実を敵に突きつけた！
+%%%%
+There are friendlies around, are you sure you want to hurt them?
+
+周囲に友好的な存在がいますが、本当に巻き込みますか？
+%%%%
+You can't repeat Line Pass.
+
+あなたは連続して横切るのを繰り返すことはできない。
+%%%%
+Aiming: <white>Line Pass</white>
+
+照準: <white>横切り</white>
+%%%%
+Cancelling line pass due to HUP.
+
+HUPシグナルを受信したため、横切るのを中断します。
+%%%%
+You cannot move away from %s!
+
+あなたは%sから遠ざかることができない！
+%%%%
+You cannot move closer to %s!
+
+あなたは%sに近づくことができない！
+%%%%
+You can't stand on top of the monster!
+
+あなたはモンスターの真上に立つことはできない！
+%%%%
+You can't line pass into the sea!
+
+あなたは海の中へ横切ることはできない！
+%%%%
+You can't line pass into the sea of lava!
+
+あなたは溶岩の海の中へ横切ることはできない！
+%%%%
+You can't walk through walls!
+
+あなたは壁を通り抜けることはできない！
+%%%%
+No encores!
+
+アンコールはもうない！
+%%%%
+Aiming: <white>Grand Finale</white>
+
+照準: <white>グランド・フィナーレ</white>
+%%%%
+Cancelling grand finale due to HUP.
+
+HUPシグナルを受信したため、グランド・フィナーレを中断します。
+%%%%
+You can't perceive a target there!
+
+その場所の目標は選択できない！
+%%%%
+You spring back to your original position.
+
+あなたはぴょんと跳んで元の場所へと戻った。
+%%%%
+You can't make this choice while your ancestor is elsewhere.
+
+祖霊がどこかに存在している間はそれを選択できない。
+%%%%
+Are you sure you want to remember your ancestor as %s?
+
+本当に祖霊を%sとして記憶しますか？
+%%%%
+It is so.
+
+そうしよう。
+%%%%
+You have no ancestor to preserve!
+
+祖霊を呼び出していない！
+%%%%
+%s is not nearby!
+
+祖霊『%s』は近くにいない！
+%%%%
+grants %s healing and protection!
+
+は%sに癒しと防護の力を授けた！
+%%%%
+is fully restored!
+
+は完全に回復した！
+%%%%
+Select a target.
+
+対象を選択してください。
+%%%%
+is drained by nostalgia.
+
+は懐旧の念にとらわれた。
+%%%%
+You can't see anything there. Try transferring anyway?
+
+そこには何も見えませんが、それでも位置交換を行いますか？
+%%%%
+You can't transfer that.
+
+それは位置を動かすことはできない。
+%%%%
+Yes, %s is definitely a better name.
+
+ええ、『%s』はより良い名前に違いありません。
+%%%%
+Was %s a) male, b) female, or c) neither? (Currently %s.)
+
+祖霊『%s』の性別は？ a) 男性 b) 女性 c) どちらでもない (現在: %s)
+%%%%
+%s was always %s, you're pretty sure.
+
+祖霊『%s』はもとから%sだったような気がしてきた。
+%%%%
+something you can't see
+
+なにか目に見えないもの
+%%%%
+You feel like a meek peon again.
+
+あなたは再び常人のようになった。
+%%%%
+[soul owner]its
+
+その
+%%%%
+You're not ready to recite again yet.
+
+あなたはまだ再び朗唱する準備ができていない。
+%%%%
+chaotic flesh sizzles and spatters!
+
+混沌の肉体はジュウジュウと音を立てて飛び散った！
+%%%%
+chaotic flesh bubbles and boils.
+
+混沌の肉体は泡立ち、煮えたぎった。
+%%%%
+chaotic flesh runs like molten wax.
+
+混沌の肉体は溶けた蝋のように流れ落ちた。
+%%%%
+You can see no monster there to imprison!
+
+そこには収監できるモンスターが見当たらない！
+%%%%
+A divine shield manifests in front of you!
+
+あなたの前に神気の盾が現れた！
+%%%%
+There are no souls to scour here; only the pathetic idols of powerless gods.
+
+ここには刈り取るべき魂はない。あるのは無力な神々の哀れな偶像だけだ。
+%%%%
+There are no souls worth scouring here.
+
+ここには刈り取る価値のある魂はない。
+%%%%
+Not even a god could conquer a realm without end; waste no time trying.
+
+果てなき領域は神でさえ征服できない。試みて時を無駄にするな。
+%%%%
+You have raised the torch once already on this floor. Yredelemnul offers no second chances.
+
+あなたはこの階で既に松明を掲げている。イレデレンヌルは二度目の機会を与えない。
+%%%%
+You lift the black torch aloft and begin your conquest of %s in Yredelemnul's name!
+
+あなたは黒き松明を高く掲げ、イレデレンヌルの名のもとに%sの征服を開始した！
+%%%%
+Yredelemnul sends servants to aid you!
+
+イレデレンヌルはあなたを助けるために僕を遣わした！
+%%%%
+You offer up the Black Torch's flame,
+
+あなたは黒き松明の炎を捧げた。
+%%%%
+and Yredelemnul is glorified by your conquest!
+
+イレデレンヌルはあなたの征服によって栄光に輝いた！
+%%%%
+and Yredelemnul is satisfied with your conquest.
+
+イレデレンヌルはあなたの征服に満足した。
+%%%%
+and feel Yredelemnul's disappointment in your meagre crusade.
+
+あなたはイレデレンヌルがあなたの貧弱な聖戦に失望しているのを感じた。
+%%%%
+and feel Yredelemnul's disdain for your failure.
+
+あなたはイレデレンヌルがあなたの失敗を蔑んでいるのを感じた。
+%%%%
+The black torch howls with new intensity!
+
+黒き松明は新たな激しさで唸りを上げた！
+%%%%
+has no more spells that you can make use of!
+
+にはもう、あなたが使える呪文がない！
+%%%%
+Do you wish to receive knowledge of %s?
+
+%sの知識を授かりますか？
+%%%%
+grants you forbidden knowledge!
+
+はあなたに禁断の知識を授けた！
+%%%%
+forbidden knowledge
+
+禁断の知識
+%%%%
+[stop attack prompt]slouch
+
+に屈服を発動し
+%%%%
+[curse]Melee Combat
+
+近接戦闘
+%%%%
+[curse]Ranged Combat
+
+遠隔戦闘
+%%%%
+[curse]Elements
+
+元素
+%%%%
+[curse]Sorcery
+
+魔道
+%%%%
+[curse]Companions
+
+仲間
+%%%%
+[curse]Beguiling
+
+幻惑
+%%%%
+[curse]Introspection
+
+内省
+%%%%
+[curse]Fortitude
+
+不屈
+%%%%
+[curse]Cunning
+
+狡知
+%%%%
+[curse]Devices
+
+道具
+%%%%
+[curse abbr]Melee
+
+近接
+%%%%
+[curse abbr]Range
+
+遠隔
+%%%%
+[curse abbr]Elem
+
+元素
+%%%%
+[curse abbr]Sorc
+
+魔道
+%%%%
+[curse abbr]Comp
+
+仲間
+%%%%
+[curse abbr]Bglg
+
+幻惑
+%%%%
+[curse abbr]Self
+
+内省
+%%%%
+[curse abbr]Fort
+
+不屈
+%%%%
+[curse abbr]Cun
+
+狡知
+%%%%
+[curse abbr]Dev
+
+道具
+%%%%
+[curse offer] of %s
+
+%sの
+%%%%
+Ashenzari invites you to partake of a vision and a curse%s.
+
+アシェンザリはあなたを幻視へと誘い、%s呪いを授けようとしている。
+%%%%
+Curse which item? (Esc to abort)
+
+どのアイテムを呪いますか？ (Escで中止)
+%%%%
+You cannot curse that!
+
+それを呪うことはできない！
+%%%%
+Uncurse and destroy which item?
+
+どのアイテムの呪いを解いて破壊しますか？
+%%%%
+You cannot uncurse and destroy that!
+
+それの呪いを解いて破壊することはできない！
+%%%%
+You cannot shatter the curse on %s while it is melded with your body!
+
+%sがあなたの体と融合している間は、その呪いを打ち砕くことはできない！
+%%%%
+Really remove and destroy %s?%s
+
+本当に%sを外して破壊しますか？%s
+%%%%
+Ashenzari will withdraw the offered vision and curse!
+
+アシェンザリは授けようとしていた幻視と呪いを取り下げるだろう！
+%%%%
+You shatter the curse binding %s!
+
+あなたは%sを縛る呪いを打ち砕いた！
+%%%%
+%s falls away from you.
+
+%sはあなたから外れ落ちた。
+%%%%
+withdraws the vision and curse.
+
+は幻視と呪いを取り下げた。
+%%%%
+The priest grants you succour and welcomes you into the fold.
+
+司祭はあなたを助け、信徒の群れへと迎え入れた。
+%%%%
+The other orcs roar their approval!
+
+他のオークたちは賛同の雄叫びを上げた！
+%%%%
+You place your %s atop %s's lifeless body and utter a vengeful prayer.
+
+あなたは%sを%sの亡骸の上に置き、復讐の祈りを唱えた。
+%%%%
+You reach the end of your prayer and your brethren are recalled.
+
+あなたが祈りを唱え終えると、同胞たちは呼び戻された。
+%%%%
+Your followers
+
+あなたの信徒たち
+%%%%
+%s is greatly invigorated by your prowess.
+
+%sはあなたの武勇によって大いに活気づいた。
+%%%%
+%s is invigorated by your prowess.
+
+%sはあなたの武勇によって活気づいた。
+%%%%
+Are you sure you wish to flee a divine trial? This will place you under penance!
+
+本当に神の試練から逃げ出しますか？ 罰を受けることになります！
+%%%%
+Beogh appreciates your bravery.
+
+ベオはあなたの勇気を称えた。
+%%%%
+Your vengeful prayer will end if you leave here. Continue?
+
+ここを離れると復讐の祈りは終わります。続けますか？
+%%%%
+Your orcish features manifest fully.
+
+あなたのオークらしい特徴が完全に現れた。
+%%%%
+Your shadow is still firmly attached to your body.
+
+あなたの影はまだあなたの体にしっかりと結び付いている。
+%%%%
+Your shadow isn't in sight!
+
+あなたの影が見えない！
+%%%%
+It would be unwise to slip onto %s.
+
+%sの上に滑り込むのは賢明ではない。
+%%%%
+You swap places with your shadow and weave the vestiges of your form into it.
+
+あなたは影と入れ替わり、あなたの姿の名残りを影に織り込んだ。
+%%%%
+%s turns its attention towards your shadow.
+
+%sはあなたの影へと注意を向けた。
+%%%%
+The world around you is engulfed in lightless night!
+
+あなたの周囲の世界は光なき夜に呑み込まれた！
+%%%%
+There isn't a suitable marionette in sight.
+
+見える範囲に操るのにふさわしい相手がいない。
+%%%%
+You grasp %s shadow with your own and put on a performance!
+
+あなたは自らの影で%s影を掴み、演技を始めた！
+%%%%
+Your performance comes to an abrupt end.
+
+あなたの演技は唐突に終わった。
+%%%%
+%s shadow slips away and your performance ends.
+
+%s影は逃れ去り、あなたの演技は終わった。
+%%%%
+[ancestor gender]male
+
+男性
+%%%%
+[ancestor gender]female
+
+女性
+%%%%
+[ancestor gender]neither
+
+性別のない存在
+%%%%
+%s invites you to visit their %s.
+
+%sはあなたを自分の%sへと招いた。
+%%%%
+the Hells
+
+地獄
+%%%%
+an incredible
+
+絶大なる
+%%%%
+a major
+
+多大なる
+%%%%
+a medium
+
+中程度の
+%%%%
+a modest
+
+そこそこの
+%%%%
+a trivial
+
+取るに足らぬ
+%%%%
+corrupt yourself such that
+
+以下のように自らの肉体を崩壊させる
+%%%%
+sacrifice your ability to read unless badly injured
+
+重傷時を除いて巻物を読む能力を捧げる
+%%%%
+sacrifice your ability to drink unless badly injured
+
+重傷時を除いて薬を飲む能力を捧げる
+%%%%
+sacrifice your ability to go unnoticed
+
+身を隠して行動する能力を捧げる
+%%%%
+sacrifice all use of magical tools
+
+あらゆる魔法仕掛けの道具を使う能力を捧げる
+%%%%
+sacrifice your ability to be loved
+
+他者から愛される能力を捧げる
+%%%%
+sacrifice your courage
+
+自らの勇気を捧げる
+%%%%
+sacrifice all use of
+
+以下の魔法を使う能力を全て捧げる
+%%%%
+sacrifice your Dodging skill
+
+自らの躱し身の技能を捧げる
+%%%%
+sacrifice your Armour skill
+
+自らの甲冑の技能を捧げる
+%%%%
+sacrifice one of your %s
+
+自らの%sの片方を捧げる
+%%%%
+sacrifice your experiences
+
+自らの経験を捧げる
+%%%%
+sacrifice your skill
+
+自らの熟練度を捧げる
+%%%%
+sacrifice an eye
+
+片目を捧げる
+%%%%
+sacrifice your resistance to extreme temperatures
+
+極端な温度環境への耐性を捧げる
+%%%%
+sacrifice your ability to change forms
+
+姿を変える能力を捧げる
+%%%%
+You focus your inner power and drain %s's magic in retribution!
+
+あなたは内なる力を集中させ、報復として%sの魔力を吸い取った！
+%%%%
+You focus your inner power and paralyse %s in retribution!
+
+あなたは内なる力を集中させ、報復として%sを麻痺させた！
+%%%%
+You focus your inner power and slow %s in retribution!
+
+あなたは内なる力を集中させ、報復として%sを減速させた！
+%%%%
+You focus your inner power and blind %s in retribution!
+
+あなたは内なる力を集中させ、報復として%sの目を眩ませた！
+%%%%
+You focus your inner power and illuminate %s in retribution!
+
+あなたは内なる力を集中させ、報復として%sを光で照らし出した！
+%%%%
+You are too terrified to leap around!
+
+あなたは恐怖のあまり跳び回ることができない！
+%%%%
+Something unexpectedly blocks you, preventing you from leaping!
+
+何かが思いがけずあなたを遮り、跳躍を阻んだ！
+%%%%
+doubts its magic when faced with ultimate truth!
+
+は究極の真理を前にして自らの魔力を疑った！
+%%%%
+You stomp with the beat, sending a shockwave through the revellers around you!
+
+あなたはビートに合わせて足を踏み鳴らし、周囲の踊り手たちに衝撃波を送った！
+%%%%
+Something unexpectedly blocks you, preventing you from passing!
+
+何かが思いがけずあなたを遮り、通り抜けるのを阻んだ！
+%%%%
+You cannot occupy %s.
+
+%sの中に入ることはできない。
+%%%%
+%s explodes violently into a cloud of jellies%s
+
+%sは激しく爆発し、ゼリーの雲となった%s
+%%%%
+%s explodes violently%s
+
+%sは激しく爆発した%s
+%%%%
+You can't transfer your ancestor with itself.
+
+祖霊を祖霊自身と入れ替えることはできない。
+%%%%
+%s can't be transferred there.
+
+%sをそこへ移すことはできない。
+%%%%
+%s swaps with %s!
+
+%sは%sと入れ替わった！
+%%%%
+Remember %s's name as what?
+
+%sの名前を何として記憶しますか？
+%%%%
+Please select an adjacent position to wall jump against.
+
+壁蹴りする隣接した位置を選んでください。
+%%%%
+You cannot wall jump against %s.
+
+%sを蹴って壁蹴りすることはできない。
+%%%%
+You cannot wall jump away from %s!
+
+あなたは壁蹴りで%sから遠ざかることができない！
+%%%%
+You cannot wall jump closer to %s!
+
+あなたは壁蹴りで%sに近づくことができない！
+%%%%
+You have no room to wall jump there; %s is in the way.
+
+そこには壁蹴りする余地がない。%sが邪魔をしている。
+%%%%
+You have no room to wall jump there.
+
+そこには壁蹴りする余地がない。
+%%%%
+You can't repeat a wall jump.
+
+壁蹴りを繰り返すことはできない。
+%%%%
+There is nothing to wall jump against here.
+
+ここには壁蹴りできるものがない。
+%%%%
+You are too terrified to wall jump!
+
+あなたは恐怖のあまり壁蹴りできない！
+%%%%
+You cannot wall jump while caught in a web.
+
+蜘蛛の巣に捕らわれている間は壁蹴りできない。
+%%%%
+You cannot wall jump while caught in a net.
+
+網に捕らわれている間は壁蹴りできない。
+%%%%
+Aiming: <white>Wall Jump</white>
+
+照準: <white>壁蹴り</white>
+%%%%
+Cancelling wall jump due to HUP.
+
+HUPシグナルを受信したため、壁蹴りを中断します。
+%%%%
+The air is filled with shimmering golden clouds!
+
+辺りはきらめく黄金の雲に満たされた！
+%%%%
+says: The storm will not cease as long as you keep fighting, disciple!
+
+は言った: 『弟子よ、そなたが戦い続ける限り嵐は止まぬ！』
+%%%%
+You can see no monster there to duel!
+
+そこには決闘できるモンスターが見当たらない！
+%%%%
+You cannot duel that!
+
+それと決闘することはできない！
+%%%%
+is not worthy to be dueled!
+
+は決闘するに値しない！
+%%%%
+You challenge %s to single combat, but it is merely a clone!
+
+あなたは%sに一騎打ちを挑んだが、それはただの複製だった！
+%%%%
+You enter into single combat with %s!
+
+あなたは%sとの一騎打ちに臨んだ！
+%%%%
+You feel invigorated by the roar of the crowd!
+
+あなたは観衆の歓声に活力を得た！
+%%%%
+casts you out from the arena!
+
+はあなたを闘技場から追い出した！
+%%%%
+crowns you victorious!
+
+はあなたに勝利の冠を授けた！
+%%%%
+Slime begins to ooze from the nearby walls!
+
+周囲の壁から粘液がにじみ出し始めた！
+%%%%
+Your accumulated destruction dissipates without a target.
+
+蓄積された破壊の力は標的を得られずに霧散した。
+%%%%
+Your destruction surges wildly!
+
+あなたの破壊の力が荒々しく迸った！
+%%%%
+%s appears in a burst of %s!
+
+%sが%sの炸裂とともに現れた！
+%%%%
+%s answers its master's command!
+
+%sは主の命令に応えた！
+%%%%
+%s answers the call of your %s!
+
+%sはあなたの%sの呼び声に応えた！
+%%%%
+[makhleb call]blood
+
+血
+%%%%
+[makhleb call]suffering
+
+苦しみ
+%%%%
+A traitorous %s dares provoke your wrath!
+
+裏切り者の%sが不遜にもあなたの怒りを招いた！
+%%%%
+A jealous %s pursues it!
+
+嫉妬に駆られた%sがそれを追ってきた！
+%%%%
+A rebellious %s escapes with it!
+
+反抗的な%sがそれと共に逃げ出してきた！
+%%%%
+Really brand yourself with the %s?
+
+本当に自らの体に%sを刻みますか？
+%%%%
+You utter a prayer to Makhleb and carve the %s into yourself.
+
+あなたはマクレブに祈りを捧げ、自らの体に%sを刻み込んだ。
+%%%%
+You are already unleashing the legions of chaos!
+
+あなたは既に混沌の軍勢を解き放っている！
+%%%%
+You carve a gateway into yourself and beckon forth the legions of chaos!
+
+あなたは自らの体に門を刻み、混沌の軍勢を招き寄せた！
+%%%%
+You offer yourself as an instrument of Makhleb's will and feel overwhelming power flowing through you!
+
+あなたはマクレブの意志の道具として自らを捧げ、圧倒的な力が体を巡るのを感じた！
+%%%%
+says: Flay and bleed and purify yourself, if you wish to be found worthy of leaving this place!
+
+は言った: 『この場を去るに値すると認められたくば、皮を剥ぎ、血を流し、己を浄めよ！』
+%%%%
+(Slaughtering mortal victims (and sometimes even demons) will eventually satisfy Makhleb and create an exit.)
+
+(定命の犠牲者(や、時には悪魔)を虐殺していけば、いずれマクレブが満足し、出口が現れる。)
+%%%%
+acknowledges your contrition and permits you to depart the Crucible.
+
+はあなたの悔悟を認め、るつぼから去ることを許した。
+%%%%
+It was the word of Zin that there would not be @sin_noun@...
+
+ジンの言葉によれば、@sin_noun@はあってはならぬものであった……
+%%%%
+...and did the people not suffer until they had @smitten@...
+
+……それゆえ民は苦しみ続けたではないか……
+%%%%
+...the @sinners@, after which all was well?
+
+……@sinners@を@smite@するまで。そしてその後、全ては良くなったではないか？
+%%%%
+The voice of Zin, pure and clear, did say that the @sinners@...
+
+清く澄んだジンの声は語った、@sinners@は……
+%%%%
+...were not @virtuous@! And hearing this, the people rose up...
+
+……@virtuous@者ではないと！ これを聞き、民は立ち上がり……
+%%%%
+...and embraced @virtue@, for they feared Zin's wrath.
+
+……@virtue@を胸に抱いた。ジンの怒りを恐れたがゆえに。
+%%%%
+Zin spoke of the doctrine of @virtue@, and...
+
+ジンは@virtue@の教えを説き、そして……
+%%%%
+...saw the @sinners@ filled with fear, for they were...
+
+……@sinners@が恐怖に満たされるのを見た。彼らは……
+%%%%
+...@sin_adj@ and knew Zin's wrath would come for them.
+
+……@sin_adj@者であり、ジンの怒りが己に下ることを知っていたがゆえに。
+%%%%
+And so Zin bade the @sinners@ to come before...
+
+かくしてジンは@sinners@に命じた……
+%%%%
+...the altar, that judgement might be passed...
+
+……祭壇の前に進み出よと。裁きが下されんがために……
+%%%%
+...upon those who were not @virtuous@.
+
+……@virtuous@者ならざる者たちの上に。
+%%%%
+To the devout, Zin provideth. From the rest...
+
+信心ある者に、ジンは与えたもう。その他の者……
+%%%%
+...ye @sinners@, ye guilty...
+
+……すなわち汝ら@sinners@、@sin_noun@の……
+%%%%
+...of @sin_noun@, Zin taketh.
+
+……罪を負う者たちからは、ジンは奪いたもう。
+%%%%
+Zin saw the @sin_noun@ of the @sinners@, and...
+
+ジンは@sinners@の@sin_noun@を見て……
+%%%%
+...was displeased, for did the law not say that...
+
+……不興を覚えた。律法は言っているではないか……
+%%%%
+...those who did not become @virtuous@ would be @smitten@?
+
+……@virtuous@者とならぬ者は@smitten@されると？
+%%%%
+Zin said that @virtue@ shall be the law of the land, and...
+
+ジンは言った、@virtue@こそがこの地の律法であり……
+%%%%
+...those who turn to @sin_noun@ will be @smitten@. This was fair...
+
+……@sin_noun@に走る者は@smitten@されるであろうと。これは公正にして……
+%%%%
+...and just, and not a voice dissented.
+
+……正当であり、異を唱える声は一つとしてなかった。
+%%%%
+Damned, damned be the @sinners@ and...
+
+呪われよ、呪われよ、@sinners@よ、そして……
+%%%%
+...all else who abandon @virtue@! Let them...
+
+……@virtue@を捨てし全ての者よ！ 彼らを……
+%%%%
+...be @smitten@ by the jurisprudence of Zin!
+
+……ジンの法理によって@smitten@せしめよ！
+%%%%
+And Zin said to all in attendance, 'Which of ye...
+
+そしてジンは居並ぶ全ての者に言った。『汝らのうち誰が……
+%%%%
+...number among the @sinners@? Come before me, that...
+
+……@sinners@に数えられるのか？ 我が前に進み出よ……
+%%%%
+...I may @smite@ you now for your @sin_noun@!'
+
+……汝の@sin_noun@ゆえに、今ここで汝を@smite@せん！』
+%%%%
+Yea, I say unto thee, bring forth...
+
+然り、我は汝に告げる。連れて参れ……
+%%%%
+...the @sinners@ that they may know...
+
+……@sinners@を。彼らが知るように……
+%%%%
+...the wrath of Zin, and thus be @smitten@!
+
+……ジンの怒りを。そして@smitten@されるように！
+%%%%
+In a great set of silver scales are weighed the...
+
+大いなる銀の天秤にて量られるは……
+%%%%
+...souls of the @sinners@, and with their @sin_adj@...
+
+……@sinners@の魂。その@sin_adj@……
+%%%%
+...ways, the balance hath tipped against them!
+
+……振る舞いゆえに、天秤は彼らに不利に傾いた！
+%%%%
+It is just that the @sinners@ shall be @smitten@...
+
+@sinners@が@smitten@されるのは正しきこと……
+%%%%
+...in due time, for @virtue@ is what Zin has declared...
+
+……時至れば。@virtue@こそ、ジンが宣言したもうた……
+%%%%
+...the law of the land, and Zin's word is law!
+
+……この地の律法であり、ジンの言葉こそ律法なのだから！
+%%%%
+Thus the people made the covenant of @virtue@ with...
+
+かくして民は@virtue@の契約を結んだ……
+%%%%
+...Zin, and all was good, for they knew that the...
+
+……ジンと。そして全ては良かった。彼らは知っていたのだ……
+%%%%
+...@sinners@ would trouble them no longer.
+
+……@sinners@がもはや彼らを煩わせることはないと。
+%%%%
+What of the @sinners@? @Smitten@ for their...
+
+@sinners@はどうなるのか？ 彼らは……
+%%%%
+...@sin_noun@ they shall be! Zin will @smite@ them again...
+
+……その@sin_noun@ゆえに@smitten@されるであろう！ ジンは彼らを@smite@したもう、幾度も……
+%%%%
+...and again, and again!
+
+……幾度も、幾度も！
+%%%%
+And lo, the wrath of Zin did find...
+
+見よ、ジンの怒りは見出した……
+%%%%
+...them wherever they hid, and the @sinners@...
+
+……彼らがどこに隠れようとも。そして@sinners@は……
+%%%%
+...were @smitten@ for their @sin_noun@!
+
+……その@sin_noun@ゆえに@smitten@されたのだ！
+%%%%
+Zin looked out upon the remains of the @sinners@...
+
+ジンは@sinners@の亡骸を見渡し……
+%%%%
+...and declared it good that they had been...
+
+……良きことと宣言した、彼らが……
+%%%%
+...@smitten@. And thus justice was done.
+
+……@smitten@されたことを。かくして正義はなされた。
+%%%%
+The law of Zin demands thee...
+
+ジンの律法は汝に求める……
+%%%%
+...be @virtuous@, and that the punishment for @sin_noun@...
+
+……@virtuous@者たれと。そして@sin_noun@への罰は……
+%%%%
+...shall be swift and harsh!
+
+……速やかにして苛烈なるべしと！
+%%%%
+It was then that Zin bade them...
+
+その時ジンは彼らに命じた……
+%%%%
+...not to stray from @virtue@, lest...
+
+……@virtue@の道を外れるなと。さもなくば……
+%%%%
+...they become as damned as the @sinners@.
+
+……@sinners@と同じく呪われることになろうと。
+%%%%
+Only the @virtuous@ shall be judged worthy, and...
+
+@virtuous@者のみが値すると判ぜられ……
+%%%%
+...all the @sinners@ will be found wanting. Such is...
+
+……全ての@sinners@は足らぬとされよう。それこそが……
+%%%%
+...the word of Zin, and such is the law!
+
+……ジンの言葉であり、それこそが律法なのだ！
+%%%%
+To those who would swear an oath of @virtue@ on my altar...
+
+我が祭壇にて@virtue@の誓いを立てる者には……
+%%%%
+...I bring ye salvation. To the rest, ye @sinners@...
+
+……救いをもたらそう。その他の者、汝ら@sinners@……
+%%%%
+...and the @sin_adj@, the name of Zin shall be thy damnation.
+
+……そして@sin_adj@者どもにとって、ジンの名は汝らの破滅となろう。
+%%%%
+And Zin decreed that the people would be...
+
+そしてジンは定めたもうた、民は……
+%%%%
+...protected from @sin_noun@ in all its forms, and...
+
+……あらゆる形の@sin_noun@から守られ……
+%%%%
+...preserved in their @virtue@ for all the days to come.
+
+……来るべき全ての日々において@virtue@のうちに保たれるであろうと。
+%%%%
+For those who would enter Zin's holy bosom...
+
+ジンの聖なる懐に入り……
+%%%%
+...and live in @virtue@, Zin provideth. Such is...
+
+……@virtue@のうちに生きる者に、ジンは与えたもう。それこそが……
+%%%%
+...the covenant, and such is the way of things.
+
+……契約であり、それこそが世の理なのだ。
+%%%%
+Zin hath not damned the @sinners@, but it is they...
+
+ジンが@sinners@を呪ったのではない。彼らこそが……
+%%%%
+...that have damned themselves for their @sin_noun@, for...
+
+……己の@sin_noun@によって己を呪ったのだ。なぜなら……
+%%%%
+...did Zin not decree that to be @sin_adj@ was wrong?
+
+……@sin_adj@者であることは誤りだとジンは定めたもうたではないか？
+%%%%
+And Zin, furious at their @sin_noun@, held...
+
+そしてジンは彼らの@sin_noun@に激怒し……
+%%%%
+...aloft a silver sceptre! The @sinners@...
+
+……銀の王笏を高く掲げた！ @sinners@は……
+%%%%
+...were @smitten@, and thus the way of things was maintained.
+
+……@smitten@され、かくして世の理は保たれた。
+%%%%
+When the law of the land faltered, Zin rose...
+
+この地の律法が揺らいだ時、ジンは……
+%%%%
+...from the silver throne, and the @sinners@ were...
+
+……銀の玉座より立ち上がり、そして@sinners@は……
+%%%%
+...@smitten@. And it was thus that the law was made good.
+
+……@smitten@された。かくして律法は正されたのだ。
+%%%%
+Zin descended from on high in a silver chariot...
+
+ジンは銀の戦車に乗りて天より降り……
+%%%%
+...to @smite@ the @sinners@ for their...
+
+……@sinners@をその……
+%%%%
+...@sin_noun@, and thus judgement was rendered.
+
+……@sin_noun@ゆえに@smite@し、かくして裁きは下された。
+%%%%
+The @sinners@ stood before Zin, and in that instant...
+
+@sinners@はジンの前に立ち、その刹那……
+%%%%
+...they knew they would be found guilty of @sin_noun@...
+
+……己が@sin_noun@の罪ありとされることを悟った……
+%%%%
+...for that is the word of Zin, and Zin's word is law.
+
+……それこそがジンの言葉であり、ジンの言葉こそ律法なのだから。
+%%%%
+[zin sinners]unbelievers
+
+不信心者ども
+%%%%
+[zin sinners]heretics
+
+異端者ども
+%%%%
+[zin sinners]guilty
+
+罪人ども
+%%%%
+[zin sinners]hordes of the Abyss
+
+アビスの軍勢
+%%%%
+[zin sinners]bastard children of Xom
+
+ゾムの落とし子ども
+%%%%
+[zin sinners]amorphous wretches
+
+不定形の卑しき者ども
+%%%%
+[zin sinners]fetid masses
+
+悪臭を放つ有象無象
+%%%%
+[zin sinners]agents of filth
+
+汚穢の手先ども
+%%%%
+[zin sinners]squalid dregs
+
+薄汚い屑ども
+%%%%
+[zin sinners]legions of the damned
+
+呪われし者の軍団
+%%%%
+[zin sinners]servants of Hell
+
+地獄の僕ども
+%%%%
+[zin sinners]forces of darkness
+
+闇の勢力
+%%%%
+[zin sin adj]unfaithful
+
+不実なる
+%%%%
+[zin sin adj]disloyal
+
+不忠なる
+%%%%
+[zin sin adj]doubting
+
+疑い深き
+%%%%
+[zin sin adj]chaotic
+
+混沌たる
+%%%%
+[zin sin adj]discordant
+
+不和を招く
+%%%%
+[zin sin adj]anarchic
+
+無秩序なる
+%%%%
+[zin sin adj]unclean
+
+不浄なる
+%%%%
+[zin sin adj]impure
+
+不純なる
+%%%%
+[zin sin adj]contaminated
+
+汚染されし
+%%%%
+[zin sin adj]profane
+
+冒涜的なる
+%%%%
+[zin sin adj]blasphemous
+
+神を汚す
+%%%%
+[zin sin adj]sacrilegious
+
+罰当たりなる
+%%%%
+[zin sin noun]unfaithfulness
+
+不実
+%%%%
+[zin sin noun]disloyalty
+
+不忠
+%%%%
+[zin sin noun]doubt
+
+疑念
+%%%%
+[zin sin noun]chaos
+
+混沌
+%%%%
+[zin sin noun]discord
+
+不和
+%%%%
+[zin sin noun]anarchy
+
+無秩序
+%%%%
+[zin sin noun]uncleanliness
+
+不浄
+%%%%
+[zin sin noun]impurity
+
+不純
+%%%%
+[zin sin noun]contamination
+
+汚染
+%%%%
+[zin sin noun]profanity
+
+冒涜
+%%%%
+[zin sin noun]blasphemy
+
+瀆神
+%%%%
+[zin sin noun]sacrilege
+
+神聖冒涜
+%%%%
+[zin virtuous]faithful
+
+忠実なる
+%%%%
+[zin virtuous]loyal
+
+忠誠を尽くす
+%%%%
+[zin virtuous]believing
+
+信心深き
+%%%%
+[zin virtuous]ordered
+
+秩序正しき
+%%%%
+[zin virtuous]harmonic
+
+調和せし
+%%%%
+[zin virtuous]lawful
+
+法に従う
+%%%%
+[zin virtuous]clean
+
+清らかなる
+%%%%
+[zin virtuous]pure
+
+純潔なる
+%%%%
+[zin virtuous]hygienic
+
+身を清く保つ
+%%%%
+[zin virtuous]reverent
+
+畏敬の念篤き
+%%%%
+[zin virtuous]pious
+
+敬虔なる
+%%%%
+[zin virtuous]obedient
+
+従順なる
+%%%%
+[zin virtue]faithfulness
+
+忠実
+%%%%
+[zin virtue]loyalty
+
+忠誠
+%%%%
+[zin virtue]belief
+
+信仰
+%%%%
+[zin virtue]order
+
+秩序
+%%%%
+[zin virtue]harmony
+
+調和
+%%%%
+[zin virtue]lawfulness
+
+遵法
+%%%%
+[zin virtue]cleanliness
+
+清潔
+%%%%
+[zin virtue]purity
+
+純潔
+%%%%
+[zin virtue]hygiene
+
+衛生
+%%%%
+[zin virtue]reverence
+
+畏敬
+%%%%
+[zin virtue]piety
+
+敬虔
+%%%%
+[zin virtue]obedience
+
+従順
+%%%%
+[zin smite]purify
+
+浄化
+%%%%
+[zin smite]censure
+
+譴責
+%%%%
+[zin smite]condemn
+
+断罪
+%%%%
+[zin smite]strike down
+
+打倒
+%%%%
+[zin smite]expel
+
+追放
+%%%%
+[zin smite]oust
+
+放逐
+%%%%
+[zin smite]smite
+
+懲罰
+%%%%
+[zin smite]castigate
+
+懲戒
+%%%%
+[zin smite]rebuke
+
+叱責
+%%%%

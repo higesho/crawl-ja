@@ -14,6 +14,7 @@
 #include "item-name.h"
 #include "jobs.h"
 #include "options.h"
+#include "player.h"
 #include "religion.h"
 #include "skills.h"
 #include "species.h"
@@ -233,5 +234,15 @@ string job_name_j(job_type job)
 
 string god_name_j(god_type god, bool long_name)
 {
+    // ジーヴァの長い名前は "Jiyva <ランダムな名前> the Shapeless" なので、
+    // data-gods.txt の "%s the Shapeless" に「ジーヴァ・<ランダムな名前>」を
+    // 入れて組み立てる(ランダムな名前は英字のまま)
+    if (god == GOD_JIYVA && long_name)
+    {
+        string name = jtrans(god_name_jiyva(false));
+        if (!you.jiyva_second_name.empty())
+            name += "・" + you.jiyva_second_name;
+        return make_stringf(jtransc("%s the Shapeless"), name.c_str());
+    }
     return jtrans(god_name(god, long_name));
 }

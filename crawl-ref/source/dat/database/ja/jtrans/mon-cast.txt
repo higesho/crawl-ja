@@ -1,0 +1,553 @@
+%%%%
+is healed.
+
+の体力が回復した。
+%%%%
+invokes %s protection!
+
+は%sの加護を受けた！
+%%%%
+%s smites you!
+
+%sはあなたに打擲の一撃を浴びせた！
+%%%%
+is smitten.
+
+は打擲の一撃を浴びせられた。
+%%%%
+You feel your power leaking away.
+
+あなたは魔力が吸い取られていくような気がした。
+%%%%
+%s goes into a battle-frenzy!
+
+%sは戦いに熱狂した！
+%%%%
+%s activates a sealing rune.
+
+%sは封印のルーンを発動させた。
+%%%%
+Someone
+
+何者か
+%%%%
+The doors slam shut!
+
+扉がピシャッと閉まった！
+%%%%
+A door slams shut!
+
+扉がピシャッと閉まった！
+%%%%
+You are pushed out of the doorway!
+
+あなたは戸口から閉め出された！
+%%%%
+%s goads %s on!
+
+%sは%sを煽動した！
+%%%%
+Sorry, this spell isn't supported for dummies!
+
+すまないが、この呪文はダミーでは使えない！
+%%%%
+Vines fly forth from the trees!
+
+蔦が急に木から伸びてきた！
+%%%%
+Thorny briars emerge from the ground!
+
+茨の茂みが地面に発生した！
+%%%%
+%s animating energy erupts into ghostly fire!
+
+%sの生命エネルギーが鬼火となってほとばしった！
+%%%%
+You redirect %s's attack!
+
+あなたは%sの攻撃を逸らした！
+%%%%
+falters for a moment.
+
+は一瞬よろめいた。
+%%%%
+protects your fellow warrior from evil magic!
+
+はあなたの下僕を邪悪な魔術から守った！
+%%%%
+shields your ally from puny magic!
+
+はあなたの仲間をつまらぬ魔術から守った！
+%%%%
+Zin's power protects your fellow warrior from evil magic!
+
+ジンの御業があなたの下僕を邪悪な魔術から守った！
+%%%%
+Send 'em back where they came from!
+
+かの者をもと居た所に押し返すべし！
+%%%%
+radiates an aura of fear!
+
+は恐怖のオーラを放射した！
+%%%%
+An aura of fear fills the air!
+
+恐怖のオーラがあたりを満たした！
+%%%%
+looks frightened!
+
+は震え上がったようだ！
+%%%%
+blinks into view!
+
+が突然視界に現れた！
+%%%%
+Terrible wounds spread across more of %s body!
+
+傷口がさらに%s体に開いた！
+%%%%
+Terrible wounds open up all over %s body!
+
+ひどい傷が%s全身に刻まれた！
+%%%%
+and %s
+
+と%s
+%%%%
+and the adjacent constructs
+
+とそれに隣接する構造物
+%%%%
+A blast of power from the earth%s strikes %s!
+
+大地%sからの力の奔流が%sに打撃を与えた！
+%%%%
+You are overwhelmed by glittering dream dust!
+
+あなたは眠りを誘う霧に打ち負かされた！
+%%%%
+The dream sheep are wreathed in dream dust.
+
+その羊は眠りを誘う霧を身に纏っている。
+%%%%
+You feel drowsy...
+
+あなたは眠くなってきた……
+%%%%
+%s is unaffected.
+
+%sは影響を受けていない。
+%%%%
+You feel haunted.
+
+あなたは幽霊が出現したのを感じた。
+%%%%
+You sense an evil presence.
+
+あなたは邪悪なるものの存在を感じた。
+%%%%
+sings a water chant to call the tide!
+
+は潮の流れを呼ぶべく水の聖歌を歌った！
+%%%%
+squirts a massive cloud of ink into the water!
+
+は大量の墨を水中に噴き出した！
+%%%%
+%s commands the forest to attack, but nothing happens.
+
+%sは攻撃するよう樹木に命じたが、何も起こらなかった。
+%%%%
+The forest starts to sway and rumble!
+
+樹木がざわめきだした！
+%%%%
+radiates an aura of cold.
+
+は冷気のオーラを放射している。
+%%%%
+A wave of cold passes over you.
+
+冷気の波動があなたのそばを通り抜けた。
+%%%%
+shimmers and seems to become two!
+
+の姿は揺らめいて二体に分裂した！
+%%%%
+begins deflecting missiles!
+
+は飛来物を弾く呪文を唱えた！
+%%%%
+channels a blast of cleansing flame!
+
+は浄化の炎を炸裂させた！
+%%%%
+binds the souls of nearby monsters.
+
+は周囲のモンスターの魂を呪縛した。
+%%%%
+at %s
+
+%sに向かって
+%%%%
+out of sight
+
+視界の外へと
+%%%%
+%s throws %s %s!
+
+%sは%sを%s投げ飛ばした！
+%%%%
+Something
+
+何か
+%%%%
+%s liquefies the ground around itself!
+
+%sは周囲の地面を液状化させた！
+%%%%
+Mutagenic energy flows into you.
+
+変異のエネルギーがあなたの中に流れ込んだ。
+%%%%
+Failed to place prism at (%d, %d)
+
+(%d, %d)にプリズムを置けなかった
+%%%%
+%s is pinned to its own shadow.
+
+%sは自らの影に縫い留められた。
+%%%%
+%s draws nearby shadows into itself.
+
+%sは周囲の影を自らに引き寄せた。
+%%%%
+%s shreds %s%s
+
+%sは%sを切り裂いた%s
+%%%%
+, but does no damage.
+
+が、傷を負わせられなかった。
+%%%%
+ begins winding a clockwork bee!
+
+は時計仕掛けの蜂のぜんまいを巻き始めた！
+%%%%
+You feel a dangerous fate closing in on you...
+
+あなたは危険な運命が迫りつつあるのを感じた……
+%%%%
+ is filled with unearthly specular energy.
+
+はこの世ならぬ鏡の力に満たされた。
+%%%%
+Something gnaws heavily on your mind!
+
+何かがあなたの精神をひどく齧った！
+%%%%
+Something gnaws on your mind!
+
+何かがあなたの精神を齧った！
+%%%%
+ mind is heavily gnawed upon.
+
+精神はひどく齧られた。
+%%%%
+ mind is gnawed upon.
+
+精神は齧られた。
+%%%%
+ is drained!
+
+は生命力を吸い取られた！
+%%%%
+being dragged
+
+引きずられること
+%%%%
+A beckoning whirlwind drags %s forward!
+
+招き寄せる旋風が%sを前へと引きずった！
+%%%%
+A beckoning whirlwind swirls around %s.
+
+招き寄せる旋風が%sの周りで渦巻いた。
+%%%%
+ wounds begin to rapidly close.
+
+傷が急速に塞がり始めた。
+%%%%
+ allies begin to heal rapidly.
+
+仲間たちが急速に回復し始めた。
+%%%%
+ stumbles on the uneven ground.
+
+は凸凹の地面でよろめいた。
+%%%%
+Stolen life floods into %s!
+
+奪われた生命力が%sに流れ込んだ！
+%%%%
+Stolen life floods into an unseen void!
+
+奪われた生命力が見えない虚空へと流れ込んだ！
+%%%%
+%s picks up the pace!
+
+%sは足を速めた！
+%%%%
+Your %s go into a battle-frenzy!
+
+あなたの仲間の%sたちは戦いに熱狂した！
+%%%%
+The %s go into a battle-frenzy!
+
+%sたちは戦いに熱狂した！
+%%%%
+Your %s pick up the pace!
+
+あなたの仲間の%sたちは足を速めた！
+%%%%
+The %s pick up the pace!
+
+%sたちは足を速めた！
+%%%%
+Chaos surges forth from the pile of flesh, awakening new unlife!
+
+肉塊から混沌がほとばしり、新たな偽りの命を目覚めさせた！
+%%%%
+Chaos surges forth from piles of flesh, awakening new unlife!
+
+いくつもの肉塊から混沌がほとばしり、新たな偽りの命を目覚めさせた！
+%%%%
+%s corrupts the dungeon around itself!
+
+%sは周囲のダンジョンを腐敗させた！
+%%%%
+%s calls on %s to defend it!
+
+%sは%sに自分を守るよう呼びかけた！
+%%%%
+%s is recalled away.
+
+%sは呼び戻されていった。
+%%%%
+%s spells are empowered by the prayer of brilliance!
+
+%s呪文は叡智の祈りによって強化された！
+%%%%
+%s collapses into a mass of ice!
+
+%sは崩れて氷の塊と化した！
+%%%%
+%s is frozen%s
+
+%sは凍りついた%s
+%%%%
+%s trance deepens.
+
+%s忘我はさらに深まった。
+%%%%
+%s is mesmerised by %s!
+
+%sは%sに魅惑された！
+%%%%
+%s attempts to bespell you!
+
+%sはあなたを魅惑しようとした！
+%%%%
+%s attempts to bespell its enemies!
+
+%sは敵を魅惑しようとした！
+%%%%
+%s draws you further into its thrall.
+
+%sはあなたをさらに深く虜にした。
+%%%%
+The dream sheep shakes its wool and sparkles.
+
+眠りの羊は毛皮を揺すり、きらめいた。
+%%%%
+The dream sheep shake their wool and sparkle.
+
+眠りの羊たちは毛皮を揺すり、きらめいた。
+%%%%
+The dream sheep ruffles its wool and motes of dream dust sparkle, to no effect.
+
+眠りの羊は毛皮を逆立たせて霧を輝かせたが、何も起こらなかった。
+%%%%
+The dream sheep ruffle their wool and motes of dream dust sparkle, to no effect.
+
+眠りの羊たちは毛皮を逆立たせて霧を輝かせたが、何も起こらなかった。
+%%%%
+Motes of dream dust float from an unseen source.%s
+
+見えない何かから眠りの霧が漂ってきた。%s
+%%%%
+Motes of dream dust float from an unseen source.
+
+見えない何かから眠りの霧が漂ってきた。
+%%%%
+As motes of dream dust float from an unseen source, %s falls asleep.
+
+見えない何かから眠りの霧が漂い、%sは眠りに落ちた。
+%%%%
+As the sheep sparkle and sway, %s falls asleep.
+
+羊がきらめき揺れると、%sは眠りに落ちた。
+%%%%
+The dream sheep attempt to lull %s to sleep.
+
+眠りの羊は%sを眠りに誘おうとした。
+%%%%
+A freezing vortex appears around %s!
+
+凍てつく渦が%sの周囲に現れた！
+%%%%
+A freezing vortex appears and lifts %s up!
+
+凍てつく渦が現れ、%sを持ち上げた！
+%%%%
+A freezing vortex appears out of thin air!
+
+凍てつく渦が何もない空中から現れた！
+%%%%
+ is empowered.
+
+は力を得た。
+%%%%
+%s arms its allies with %s.
+
+%sは仲間たちを%sで武装させた。
+%%%%
+ is compelled to serve!
+
+は服従を強いられた！
+%%%%
+lash out against %s attempt to control you!
+
+%s支配の企てに激しく反発した！
+%%%%
+The water rises up and strikes %s%s
+
+水が立ち上がり、%sを打ちすえた%s
+%%%%
+The water swirls and strikes %s%s
+
+水が渦巻き、%sを打ちすえた%s
+%%%%
+%s and strikes %s with frigid sleet%s
+
+%s、凍てつく霙で%sを打ちすえた%s
+%%%%
+The long-dead rise up around you.
+
+遠い昔の死者たちがあなたの周囲に起き上がった。
+%%%%
+The long-dead rise up around %s.
+
+遠い昔の死者たちが%sの周囲に起き上がった。
+%%%%
+ movement is quickened by the wind!
+
+動きは風によって速められた！
+%%%%
+ surroundings become eerily quiet.
+
+周囲は不気味なほど静かになった。
+%%%%
+%s shimmers and seems to become %d!
+
+%sは揺らめき、%d体に増えたように見えた！
+%%%%
+ begins to accept its allies' injuries.
+
+は仲間の傷を引き受け始めた。
+%%%%
+ launches a sporangium.
+
+は胞子嚢を打ち出した。
+%%%%
+ curls into a ball and begins rolling!
+
+は体を丸めて転がり始めた！
+%%%%
+the blast
+
+爆風
+%%%%
+but you%s
+
+しかしあなた%s
+%%%%
+and it begins to echo in your mind!
+
+その声はあなたの心の中で響き始めた！
+%%%%
+%s unleashes a silent howl, %s
+
+%sは無音の遠吠えを上げた。%s
+%%%%
+%s unleashes a terrible howl, %s
+
+%sは恐ろしい遠吠えを上げた。%s
+%%%%
+ chants its luring song.
+
+は誘惑の歌を歌い続けている。
+%%%%
+ chants a haunting song.
+
+は妖しい歌を歌った。
+%%%%
+You hear a luring song.
+
+あなたは誘うような歌声を聞いた。
+%%%%
+You hear a haunting song.
+
+あなたは妖しい歌声を聞いた。
+%%%%
+You hear an eerie melody.
+
+あなたは不気味な旋律を聞いた。
+%%%%
+ begins to cast a spell, but is stunned by your conviction!
+
+は呪文を唱えようとしたが、あなたの信念に打たれて動けなくなった！
+%%%%
+ begins to pray, but is stunned by your conviction!
+
+は祈りを捧げようとしたが、あなたの信念に打たれて動けなくなった！
+%%%%
+ begins to attack, but is stunned by your conviction!
+
+は攻撃しようとしたが、あなたの信念に打たれて動けなくなった！
+%%%%
+[spell target]you
+
+あなた
+%%%%
+[spell target]itself
+
+自分自身
+%%%%
+[spell target]something
+
+何か
+%%%%
+[spell target]thin air
+
+虚空
+%%%%
+[plural] and %s
+
+と%sたち
+%%%%
+[branch summon suffix]!
+
+！
+%%%%

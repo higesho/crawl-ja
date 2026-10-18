@@ -646,3 +646,172 @@
 
 仔犬
 %%%%
+# 第2陣で追加: 疑似変異(species-data.h)、オーク化の文、祈りの動作
+You are immune to sickness and miasma.
+
+あなたは病気と瘴気に完全な耐性がある。
+%%%%
+You are resistant to damage.
+
+あなたはあらゆるダメージに耐性がある。
+%%%%
+You are unimpeded by mud.
+
+あなたは泥に足を取られない。
+%%%%
+You can breathe arcing electricity.
+
+あなたは弧を描く電撃を吐くことができる。
+%%%%
+You can breathe blasts of antimagic.
+
+あなたは反魔法の息を吐くことができる。
+%%%%
+You can breathe blasts of explosive embers.
+
+あなたは爆発する燃えさしを吐くことができる。
+%%%%
+You can breathe blasts of noxious fumes.
+
+あなたは悪臭雲のブレスを吐くことができる。
+%%%%
+You can breathe blasts of scalding, opaque steam.
+
+あなたは視界を遮る高熱の蒸気を吐くことができる。
+%%%%
+You can breathe corrosive fumes.
+
+あなたは腐食性の煙を吐くことができる。
+%%%%
+You can breathe torrents of mud.
+
+あなたは泥の奔流を吐くことができる。
+%%%%
+You can breathe waves of cold which freeze foes solid.
+
+あなたは敵を凍りつかせる冷気の波を吐くことができる。
+%%%%
+You can dig through walls and to a lower floor.
+
+あなたは壁を掘り進んだり、下の階へ掘り抜けたりできる。
+%%%%
+You can heal yourself by infusing magical energy.
+
+あなたは魔力を注ぎ込んで自分の傷を癒すことができる。
+%%%%
+You can ignite nearby creatures when you spit burning liquid.
+
+あなたは燃えたぎる粘液を吐いて近くのモンスターに着火することができる。
+%%%%
+You can spit globs of burning liquid.
+
+あなたは燃えたぎる粘液の塊を吐くことができる。
+%%%%
+You cannot be hasted, slowed, berserked, paralysed or teleported.
+
+あなたは加速・減速・狂暴化・麻痺・テレポートの影響を受けない。
+%%%%
+You cannot wear most types of armour.
+
+あなたはほとんどの防具を装備できない。
+%%%%
+almost no armour
+
+ほとんどの防具不可
+%%%%
+breathe sticky flame splash
+
+粘着炎の吐きかけ
+%%%%
+caustic breath
+
+腐食のブレス
+%%%%
+combustion breath
+
+燃焼のブレス
+%%%%
+dig shafts and tunnels
+
+穴掘り
+%%%%
+galvanic breath
+
+電撃のブレス
+%%%%
+glacial breath
+
+氷河のブレス
+%%%%
+heal wounds
+
+傷の治癒
+%%%%
+mud breath
+
+泥のブレス
+%%%%
+mud-swimmer
+
+泥泳ぎ
+%%%%
+noxious breath
+
+悪臭のブレス
+%%%%
+nullifying breath
+
+無効化のブレス
+%%%%
+permanent stasis
+
+恒久的停滞
+%%%%
+sickness immunity
+
+病気への完全耐性
+%%%%
+steam breath
+
+蒸気のブレス
+%%%%
+Your teeth grow more tusk-like, and your ears lengthen.
+
+あなたの歯は牙のように伸び、耳は長くとがった。
+%%%%
+Your teeth buggily grow more tusk-like, and your ears buggily lengthen.
+
+あなたの歯はバグったように牙のように伸び、耳はバグったように長くとがった。
+%%%%
+Your beak becomes more hooked, and the plumage around your ears grows tufted.
+
+あなたのくちばしはより鉤状に曲がり、耳のまわりの羽毛は房のように伸びた。
+%%%%
+Your beak grows more hooked, and small fins emerge from the sides of your head.
+
+あなたのくちばしはより鉤状に曲がり、頭の両脇から小さなひれが生えた。
+%%%%
+You feel a divine power chisel tusks from your teeth and sculpt your ears to a sharp point.
+
+あなたは神の力が歯を牙に削り出し、耳を鋭くとがらせるのを感じた。
+%%%%
+Your mandibles take on a glossy white sheen, and your antennae grow pointier.
+
+あなたの大顎は白く艶めき、触角はより鋭くとがった。
+%%%%
+Your teeth grow more tusk-like, and your tympanum bulges.
+
+あなたの歯は牙のように伸び、鼓膜が膨らんだ。
+%%%%
+[verb]kneel at
+
+ひざまずいた
+%%%%
+[verb]sit before
+
+座った
+%%%%
+[verb]curl up in front of
+
+丸くなった
+%%%%

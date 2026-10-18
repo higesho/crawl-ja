@@ -3,9 +3,11 @@
 #include "god-conduct.h"
 
 #include "areas.h"
+#include "database.h"
 #include "fprop.h"
 #include "god-abil.h" // ru sac key
 #include "god-item.h" // is_*_spell
+#include "japanese.h"
 #include "libutil.h"
 #include "message.h"
 #include "monster.h"
@@ -180,7 +182,7 @@ struct dislike_response
         // the conduct, and the god cares, print a message & bail.
         if (!known && forgiveness_message)
         {
-            simple_god_message(forgiveness_message);
+            simple_god_message(jtransc(forgiveness_message));
             return;
         }
 
@@ -192,21 +194,21 @@ struct dislike_response
             static int last_glowing_lecture = -1;
             if (!level)
             {
-                simple_god_message(" is not enthusiastic about the "
-                                   "mutagenic glow surrounding you.");
+                simple_god_message(jtransc(" is not enthusiastic about the "
+                                   "mutagenic glow surrounding you."));
             }
             else if (last_glowing_lecture != you.num_turns)
             {
                 last_glowing_lecture = you.num_turns;
                 // Increase contamination within yellow glow.
-                simple_god_message(" does not appreciate the extra "
-                                   "mutagenic glow surrounding you!");
+                simple_god_message(jtransc(" does not appreciate the extra "
+                                   "mutagenic glow surrounding you!"));
             }
         }
 
         // a message, if we have one...
         if (message)
-            simple_god_message(message);
+            simple_god_message(jtransc(message));
 
         // ...and piety/penance.
         const int piety_loss = max(0, piety_factor * level);
@@ -436,24 +438,18 @@ string get_god_dislikes(god_type which_god)
 
     if (!dislikes.empty())
     {
-        text += uppercase_first(god_name(which_god));
-        text += " dislikes it when ";
-        text += comma_separated_line(dislikes.begin(), dislikes.end(),
-                                     " or ", ", ");
-        text += ".";
-
-        if (!really_dislikes.empty())
-            text += " ";
+        text += god_name_j(which_god);
+        text += make_stringf(jtransc(" dislikes it when %s."),
+                             to_separated_line(dislikes.begin(),
+                                               dislikes.end()).c_str());
     }
 
     if (!really_dislikes.empty())
     {
-        text += uppercase_first(god_name(which_god));
-        text += " strongly dislikes it when ";
-        text += comma_separated_line(really_dislikes.begin(),
-                                     really_dislikes.end(),
-                                     " or ", ", ");
-        text += ".";
+        text += god_name_j(which_god);
+        text += make_stringf(jtransc(" strongly dislikes it when %s."),
+                             to_separated_line(really_dislikes.begin(),
+                                               really_dislikes.end()).c_str());
     }
 
     return text;
@@ -498,7 +494,7 @@ struct like_response
         god_acting gdact;
 
         if (message)
-            simple_god_message(message);
+            simple_god_message(jtransc(message));
 
         // this is all very strange, but replicates legacy behaviour.
         // See the comment on piety_bonus above.
@@ -601,11 +597,11 @@ static like_response okawaru_kill(const char* desc)
             if (piety > 3200)
             {
                 mprf(MSGCH_GOD, you.religion,
-                     "<white>%s is honoured by your kill.</white>",
-                     uppercase_first(god_name(you.religion)).c_str());
+                     jtransc("<white>%s is honoured by your kill.</white>"),
+                     god_name_jc(you.religion));
             }
             else if (piety > 9) // might still be miniscule
-                simple_god_message(" accepts your kill.");
+                simple_god_message(jtransc(" accepts your kill."));
         }
     };
 }
@@ -619,9 +615,9 @@ static const like_response _fedhas_kill_living_response()
         nullptr, [] (int &, int &, const monster* victim)
         {
             if (victim && mons_class_can_leave_corpse(mons_species(victim->type)))
-                simple_god_message(" appreciates your contribution to the ecosystem.");
+                simple_god_message(jtransc(" appreciates your contribution to the ecosystem."));
             else
-                simple_god_message(" accepts your kill.");
+                simple_god_message(jtransc(" accepts your kill."));
         }
     };
 }
@@ -642,16 +638,23 @@ static const like_response _yred_kill_response()
                     //Print a reminder if the torch isn't lit, but *could* be
                     if (yred_cannot_light_torch_reason().empty())
                     {
-                        mprf(MSGCH_GOD, "With your torch unlit, %s soul goes wasted...",
-                             you.can_see(*victim) ? victim->pronoun(PRONOUN_POSSESSIVE).c_str() : "a");
+                        // %s には「(名前)の」か空文字列を渡す
+                        mprf(MSGCH_GOD, jtransc("With your torch unlit, %s soul goes wasted..."),
+                             you.can_see(*victim)
+                                 ? (victim->name(DESC_THE) + "の").c_str() : "");
                     }
                 }
                 else
                 {
-                    mprf(MSGCH_GOD, "%s %ssoul becomes fuel for the torch.",
-                         you.can_see(*victim) ? victim->pronoun(PRONOUN_POSSESSIVE).c_str() : "A",
-                         mons_is_unique(victim->type) ? "potent "
-                             : victim->holiness() & MH_HOLY ? "unsullied " : "");
+                    // 1 つ目の %s には「(名前)の」か空文字列を渡す
+                    mprf(MSGCH_GOD, jtransc("%s %ssoul becomes fuel for the torch."),
+                         you.can_see(*victim)
+                             ? (victim->name(DESC_THE) + "の").c_str() : "",
+                         mons_is_unique(victim->type)
+                             ? tagged_jtransc("[torch soul]", "potent")
+                             : victim->holiness() & MH_HOLY
+                               ? tagged_jtransc("[torch soul]", "unsullied")
+                               : "");
 
                     if (mons_is_unique(victim->type))
                         piety *= 3;
@@ -844,11 +847,11 @@ static like_map divine_likes[] =
                 // Double piety for speedy monsters sometimes
                 if (mons_speed > 10 && x_chance_in_y(mons_speed - 10, 10))
                 {
-                    simple_god_message(" thoroughly appreciates the change of pace.");
+                    simple_god_message(jtransc(" thoroughly appreciates the change of pace."));
                     piety *= 2;
                 }
                 else
-                    simple_god_message(" appreciates the change of pace.");
+                    simple_god_message(jtransc(" appreciates the change of pace."));
             }
         } }
     },
@@ -1062,7 +1065,7 @@ string get_god_likes(god_type which_god)
         break;
     }
 
-    string text = uppercase_first(god_name(which_god));
+    string text = god_name_j(which_god);
     vector<string> likes;
     vector<string> really_likes;
 
@@ -1105,27 +1108,23 @@ string get_god_likes(god_type which_god)
     }
 
     if (likes.empty() && really_likes.empty())
-        text += " doesn't like anything? This is a bug; please report it.";
+        text += jtrans(" doesn't like anything? This is a bug; please report it.");
     else
     {
         if (!likes.empty())
         {
-            text += " likes it when ";
-            text += comma_separated_line(likes.begin(), likes.end());
-            text += ".";
+            text += make_stringf(jtransc(" likes it when %s."),
+                                 to_separated_line(likes.begin(),
+                                                   likes.end()).c_str());
             if (!really_likes.empty())
-            {
-                text += " ";
-                text += uppercase_first(god_name(which_god));
-            }
+                text += god_name_j(which_god);
         }
 
         if (!really_likes.empty())
         {
-            text += " especially likes it when ";
-            text += comma_separated_line(really_likes.begin(),
-                                         really_likes.end());
-            text += ".";
+            text += make_stringf(jtransc(" especially likes it when %s."),
+                                 to_separated_line(really_likes.begin(),
+                                                   really_likes.end()).c_str());
         }
     }
 

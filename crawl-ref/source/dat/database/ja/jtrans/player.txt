@@ -1,0 +1,1411 @@
+%%%%
+The curse of the Prune overcomes you.
+
+プルーンの呪いがあなたを襲った。
+%%%%
+%s slides away as you move %s it!
+
+あなたが%sの%sに進むとそれは滑るように移動した！
+%%%%
+# _moveto_maybe_repel_stairs(): feat_preposition() の能動の前置詞
+[stair slide prep]onto
+
+上
+%%%%
+[stair slide prep]over
+
+上
+%%%%
+[stair slide prep]under
+
+下
+%%%%
+[stair slide prep]beside
+
+横
+%%%%
+# check_moveto 系の確認文。動作名は [move verb] で引き「〜しますか？」の前に置く。
+# 引数は日本語の語順に入れ替えて渡している(雲の名前、動作名)
+Really %s into that cloud of %s?
+
+本当に%sの雲の中へ%sしますか？
+%%%%
+Do you really want to %s into the Zot trap?
+
+本当にゾットの罠へ%sしますか？
+%%%%
+# 引数は(罠の名前、[moveto prep]、動作名)
+Really %s %s that %s?
+
+本当に%s%s%sしますか？
+%%%%
+[moveto prep]onto
+
+の上に
+%%%%
+[moveto prep]into
+
+に
+%%%%
+[moveto prep]over
+
+の上を
+%%%%
+[moveto grid]deep water
+
+深い水
+%%%%
+[moveto grid]lava
+
+溶岩
+%%%%
+# 引数は(警告、地形、[moveto prep]、動作名)
+%sAre you sure you want to %s %s %s?
+
+%s本当に%s%s%sしますか？
+%%%%
+while you are losing your buoyancy?
+
+もうすぐ飛行能力が失われようとしていますが、
+%%%%
+while your transformation is expiring?
+
+もうすぐ変身が解けようとしていますが、
+%%%%
+Are you sure you want to %s onto a binding sigil?
+
+本当に束縛の印の上に%sしますか？
+%%%%
+Are you sure you want to %s into a toxic bog?
+
+本当に毒沼に%sしますか？
+%%%%
+Really %s into a travel-excluded area?
+
+本当に自動移動禁止エリアに%sしますか？
+%%%%
+You might %s into a travel-excluded area, are you sure?
+
+自動移動禁止エリアに%sすることになるかもしれません。よろしいですか？
+%%%%
+# check_moveto 系に渡される英語の動作名(movement.cc, spl-transloc.cc,
+# spl-other.cc, god-abil.cc, throw.cc, spl-cast.cc)
+[move verb]move
+
+移動
+%%%%
+[move verb]walk
+
+歩いて移動
+%%%%
+[move verb]fly
+
+飛行
+%%%%
+[move verb]swim
+
+泳いで移動
+%%%%
+[move verb]slither
+
+這って移動
+%%%%
+[move verb]float
+
+浮遊して移動
+%%%%
+[move verb]hop
+
+跳躍
+%%%%
+[move verb]stalk
+
+忍び足で移動
+%%%%
+[move verb]wriggle
+
+身をくねらせて移動
+%%%%
+[move verb]stride
+
+大股で移動
+%%%%
+[move verb]roll
+
+転がって移動
+%%%%
+[move verb]rampage
+
+猛進
+%%%%
+[move verb]blink
+
+瞬間移動
+%%%%
+[move verb]leap
+
+跳躍
+%%%%
+[move verb]line pass
+
+直線移動
+%%%%
+[move verb]transfer
+
+転移
+%%%%
+[move verb]wall jump
+
+壁蹴り跳躍
+%%%%
+[move verb]potentially stumble back
+
+後退
+%%%%
+[move verb]passwall
+
+壁抜け
+%%%%
+[move verb]charge
+
+突進
+%%%%
+You cannot enter water in your current form.
+
+現在の姿では深い水の中に立ち入ることはできない。
+%%%%
+It's unwise to walk into this.
+
+そこに踏み入るのは得策ではない。
+%%%%
+is %s!
+
+は%s！
+%%%%
+is being constricted!
+
+は拘束されている！
+%%%%
+cannot move out of your way! (Use ctrl+direction or * direction to deconstruct it instead.)
+
+はあなたの行く手から離れることができない！(代わりに Ctrl+方向キー か * 方向キー で解体できる)
+%%%%
+cannot move out of your way!
+
+はあなたの行く手から離れることができない！
+%%%%
+Do you really want to swap %s into the Zot trap?
+
+本当に%sと位置を交換してゾットの罠を踏ませますか？
+%%%%
+There is no room for %s to move out of your way! (Try telling them to retreat with <w>%sr</w> instead.)
+
+%sがあなたの行く手から離れる余地がない！(代わりに <w>%sr</w> で退却を命じてみよう)
+%%%%
+Floosh!
+
+ポチャン！
+%%%%
+Splash!
+
+ザッパーン！
+%%%%
+You enter the toxic bog.
+
+あなたは毒沼に足を踏み入れた。
+%%%%
+You fall into the toxic bog.
+
+あなたは毒沼に転がり落ちた。
+%%%%
+You enter the shallow water.
+
+あなたは浅い水脈に足を踏み入れた。
+%%%%
+You enter the deep water.
+
+あなたは深い水脈に足を踏み入れた。
+%%%%
+You fall into the shallow water.
+
+あなたは浅い水脈に転がり落ちた。
+%%%%
+You fall into the deep water.
+
+あなたは深い水脈に転がり落ちた。
+%%%%
+Moving in this stuff is going to be slow.
+
+水場では足を取られて歩みが遅くなる。
+%%%%
+...and don't expect to remain undetected.
+
+……そして、敵に気付かれないままでいることは期待できない。
+%%%%
+Don't expect to remain undetected while in the water.
+
+水場にいる間は、敵に気付かれないままでいることは期待できない。
+%%%%
+%s is dragged along with you!
+
+%sはあなたと一緒に引きずられていった！
+%%%%
+Acid dripping from the walls corrodes you.
+
+壁から滴る酸があなたを腐食させた。
+%%%%
+Do you really want to go berserk while wielding %s?
+
+本当に%sを装備したままバーサークしますか？
+%%%%
+Your life force feels restored.
+
+あなたの生命力は回復したようだ。
+%%%%
+You feel power welling in your lungs.
+
+あなたは肺に力が湧き上がるのを感じた。
+%%%%
+You feel ready to make another cacophony.
+
+あなたは再び不協和音を奏でる準備が整ったと感じた。
+%%%%
+You feel ready to scatter into bats once more.
+
+あなたは再びコウモリの群れに散る準備が整ったと感じた。
+%%%%
+You feel ready to drown your foes once more.
+
+あなたは再び敵を溺れさせる準備が整ったと感じた。
+%%%%
+You feel the doom around you dissipate.
+
+あなたの周りの破滅の気配が消え去った。
+%%%%
+Extra life!
+
+新たな命が備わった！
+%%%%
+# ノート
+HP: %d/%d MP: %d/%d
+
+HP: %d/%d MP: %d/%d
+%%%%
+Your capacity for spells is full, and you lose access to an earlier spell.
+
+呪文の記憶容量がいっぱいになり、あなたは以前の呪文を使えなくなった。
+%%%%
+The power to cast %s wells up from within.
+
+《%s》を唱える力があなたの内から湧き上がった。
+%%%%
+You remember only oblivion.
+
+あなたは忘却だけを思い出した。
+%%%%
+You remember %s.
+
+あなたは%sを思い出した。
+%%%%
+# _revenant_spell_gift() の "You remember %s." に入る句
+wisps of flame dancing upon you
+
+あなたの上で舞い踊る炎の揺らめき
+%%%%
+the chill of winter seizing you
+
+あなたを捕らえる冬の冷気
+%%%%
+electricity coursing through you
+
+あなたの体を駆け巡る電流
+%%%%
+the impact of arcane energy battering you
+
+あなたを打ちのめす魔力の衝撃
+%%%%
+the bite of steel piercing you
+
+あなたを貫く鋼の牙
+%%%%
+the sting of sand against your skin
+
+肌を刺す砂の痛み
+%%%%
+the taste of poison filling your lungs
+
+肺を満たす毒の味
+%%%%
+(You can now cast %s.)
+
+(《%s》を唱えられるようになった)
+%%%%
+Welcome back to level %d!
+
+再びレベル%dになった！
+%%%%
+You have reached level 27, the final one!
+
+あなたは限界のレベル27になった！
+%%%%
+You have reached level %d, the highest you will ever reach!
+
+あなたが現状到達できる限界のレベル%dになった！
+%%%%
+You have reached level %d!
+
+あなたはレベル%dになった！
+%%%%
+Your skin feels tougher.
+
+あなたの皮膚はより硬くなった。
+%%%%
+Your scales start taking on %s colour.
+
+あなたの鱗は成熟して%sになった。
+%%%%
+# species::scale_type()
+[scale colour]fiery red
+
+燃えさかるような赤色
+%%%%
+[scale colour]icy white
+
+氷のような白色
+%%%%
+[scale colour]mossy green
+
+苔のような緑色
+%%%%
+[scale colour]lurid yellow
+
+けばけばしい黄色
+%%%%
+[scale colour]dull grey
+
+くすんだ灰色
+%%%%
+[scale colour]glossy black
+
+光沢のある黒色
+%%%%
+[scale colour]rich purple
+
+深い紫色
+%%%%
+[scale colour]pale cyan-grey
+
+青緑がかった淡い灰色
+%%%%
+[scale colour]plain brown
+
+ありふれた茶色
+%%%%
+You learn %s %s%s.
+
+あなたは%sスキルの習得が%s%sなった。
+%%%%
+[learn]much
+
+ずっと
+%%%%
+[learn]slower
+
+遅く
+%%%%
+[learn]quicker
+
+早く
+%%%%
+You feel monstrous as your demonic heritage exerts itself.
+
+受け継がれし悪魔の力があなた自身に働き、強大になったと感じた。
+%%%%
+Discovered your monstrous ancestry.
+
+自らの悪魔の血脈を感じ取った。
+%%%%
+Your demonic ancestry asserts itself...
+
+あなたに受け継がれた悪魔の血脈が顕在化した……
+%%%%
+# perma_mutate() の理由(ノートに残る)
+demonic ancestry
+
+血族変異
+%%%%
+You feel a burst of inspiration! You are finally ready to make a one-of-a-kind gizmo!
+
+あなたはひらめきを得た！ ついに唯一無二の仕掛けを作る準備が整った！
+%%%%
+(press <w>%c</w> on the <w>%s</w>bility menu to create your gizmo)
+
+(<w>%c</w>キーを能力メニュー(<w>%s</w>)で押すと仕掛けを作れる)
+%%%%
+Your scales feel tougher.
+
+あなたの鱗はより強固になったようだ。
+%%%%
+# display_char_status()
+%s (%d).
+
+%s (%d)。
+%%%%
+%s.
+
+%s。
+%%%%
+# 「あなたの(移動速度)は(風の助けを受けて)(いるが、/おり、)(遅い)」
+Your %s speed is %s%s%s
+
+あなたの%sは%s%s%s
+%%%%
+[move speed]swimming
+
+泳ぐ速さ
+%%%%
+[move speed]wading
+
+水の中を歩く速さ
+%%%%
+[move speed]flying
+
+飛ぶ速さ
+%%%%
+[move speed]movement
+
+移動速度
+%%%%
+[move speed]aided by the wind
+
+風の助けを受けて
+%%%%
+[move speed]hindered by the wind
+
+風に邪魔されて
+%%%%
+[move speed], but still
+
+いるが、
+%%%%
+[move speed]and
+
+おり、
+%%%%
+[move speed]very quick
+
+とても速い
+%%%%
+[move speed]quick
+
+速い
+%%%%
+[move speed]average
+
+平均的だ
+%%%%
+[move speed]slow
+
+遅い
+%%%%
+[move speed]very slow
+
+とても遅い
+%%%%
+Your attack delay is about %.1f%s%s.
+
+あなたの攻撃の所要時間はおよそ%.1f%s%s。
+%%%%
+(and cannot be improved with additional weapon skill)
+
+(これ以上武器スキルを上げても短くならない)
+%%%%
+(and is slowed by your %s)
+
+(%sによって遅くなっている)
+%%%%
+[attack delay penalty]shield and armour
+
+盾と防具
+%%%%
+[attack delay penalty]shield
+
+盾
+%%%%
+[attack delay penalty]armour
+
+防具
+%%%%
+Your damage rating with %s is about %s
+
+%sでのあなたのダメージ評価はおよそ%s
+%%%%
+[damage rating]unarmed combat
+
+素手格闘
+%%%%
+You are illuminated by a large divine halo.
+
+あなたは神聖な光輪に広く包まれている。
+%%%%
+You are illuminated by a divine halo.
+
+あなたは神聖な光輪に包まれている。
+%%%%
+You are illuminated by a small divine halo.
+
+あなたは神聖な光輪にかすかに包まれている。
+%%%%
+An external divine halo illuminates you.
+
+あなたは他者の放つ神聖な光輪に照らされている。
+%%%%
+* * * LOW MAGIC WARNING * * *
+
+* * * MP低下警告 * * *
+%%%%
+* * * LOW HITPOINT WARNING * * *
+
+* * * HP低下警告 * * *
+%%%%
+You cannot pay life while functionally dead.
+
+死のとば口に立っている間は命を手放すことができない。
+%%%%
+You don't have enough health at the moment.
+
+あなたには現在十分な体力が残っていない。
+%%%%
+You don't have enough magic capacity.
+
+あなたには十分な魔力の容量がない。
+%%%%
+You don't have enough magic at the moment.
+
+あなたには現在十分な魔力が残っていない。
+%%%%
+# describe_contamination()(status.cc の状態表示にも使われる)
+You are lightly contaminated with residual magic.
+
+あなたは残留した魔力で軽度に汚染されている。
+%%%%
+You are dangerously contaminated with residual magic.
+
+あなたは残留した魔力で危険なほど汚染されている。
+%%%%
+You are extremely contaminated with residual magic.
+
+あなたは残留した魔力で極度に汚染されている。
+%%%%
+You are completely saturated with residual magic!
+
+あなたは残留した魔力で完全に飽和している！
+%%%%
+lightly contaminated
+
+軽度の魔力汚染
+%%%%
+dangerously contaminated
+
+危険な魔力汚染
+%%%%
+extremely contaminated
+
+極度の魔力汚染
+%%%%
+completely saturated
+
+魔力で飽和
+%%%%
+%s (up to %d damage)
+
+%s(最大%dダメージ)
+%%%%
+Your magical contamination has faded to a safe level.
+
+あなたの魔力汚染は安全な程度まで弱まった。
+%%%%
+You fade completely from view now that you are no longer glowing from magical contamination.
+
+あなたはもう魔力汚染による光を放っていないため、再びあたりの風景に溶け込んだ。
+%%%%
+Your magical contamination has completely faded away.
+
+あなたは魔力汚染から完全に脱した。
+%%%%
+You feel momentarily confused.
+
+あなたは一瞬だけ混乱を覚えた。
+%%%%
+Your divine stamina protects you from confusion!
+
+あなたの活性化された生命力が混乱をはねのけた！
+%%%%
+You are lethally poisoned!
+
+あなたは致命的なほどに毒を受けた！
+%%%%
+You are poisoned.
+
+あなたは毒を受けた。
+%%%%
+You are more poisoned.
+
+あなたはさらに毒を受けた。
+%%%%
+You feel sick.
+
+あなたは気分が悪くなった。
+%%%%
+You feel very sick.
+
+あなたはとても気分が悪くなった。
+%%%%
+You feel extremely sick.
+
+あなたは極めて気分が悪くなった。
+%%%%
+Your divine stamina protects you from the miasma!
+
+あなたの活性化された生命力が瘴気をはねのけた！
+%%%%
+You are even more covered in %sliquid fire!
+
+あなたはさらに%s液体の炎に包まれた！
+%%%%
+You are covered in %sliquid fire! Move or burn!
+
+あなたは%s液体の炎に包まれた！ 動かなければ焼かれ続ける！
+%%%%
+[sticky flame]intense
+
+激しい
+%%%%
+You dip into the water, and the flames go out!
+
+あなたは水に浸かり、炎を消し去った！
+%%%%
+The liquid fire burns you%s!
+
+液体の炎があなたを%s焼いた！
+%%%%
+[sticky flame]terribly
+
+ひどく
+%%%%
+The liquid fire finally exhausts itself.
+
+液体の炎はようやく燃え尽きた。
+%%%%
+You shake off the liquid fire.
+
+あなたは液体の炎を振り払った。
+%%%%
+You shake off some of the fire as you move.
+
+あなたは動いて炎の一部を振り払った。
+%%%%
+Your stasis prevents you from being slowed.
+
+あなたは停滞状態のため減速しない。
+%%%%
+You already are as slow as you could be.
+
+あなたはすでに限界まで遅くなっている。
+%%%%
+You feel yourself slow down.
+
+あなたは動きが遅くなった。
+%%%%
+You feel as though you will be slow longer.
+
+あなたはより長い時間を遅いままでいることになった。
+%%%%
+You feel yourself speed up.
+
+あなたは動きが速くなった。
+%%%%
+Barbed spikes become lodged in your body.
+
+返しの付いた棘があなたの体に刺さった。
+%%%%
+More barbed spikes become lodged in your body.
+
+さらに返しの付いた棘があなたの体に刺さった。
+%%%%
+You are blinded for an even longer time.
+
+あなたの目が見えない時間はさらに長くなった。
+%%%%
+You are blinded!
+
+あなたは目が見えなくなった！
+%%%%
+You recover from your berserk rage.
+
+あなたはバーサークの疲労から回復した。
+%%%%
+You already have as much speed as you can handle.
+
+あなたはすでに限界まで速くなっている。
+%%%%
+You feel as though your hastened speed will last longer.
+
+あなたはより長い時間を加速されたままでいることになった。
+%%%%
+Your extra speed is starting to run out.
+
+あなたの加速はなくなりつつある。
+%%%%
+You feel less invigorated.
+
+あなたは活力がなくなったようだ。
+%%%%
+The frozen ramparts melt away.
+
+凍てつく城壁は溶け去った。
+%%%%
+# invis_allowed()(理由文字列は表示用の日本語)
+Your body glows too brightly to become invisible.
+
+あなたの体は眩しく輝きすぎていて透明になれない。
+%%%%
+Your %s glow too brightly for you to become invisible.
+
+あなたの%sが眩しく輝きすぎていて透明になれない。
+%%%%
+[glow source]weapon
+
+武器
+%%%%
+[glow source]crown
+
+王冠
+%%%%
+[glow source]armour
+
+防具
+%%%%
+[glow source]divine halo
+
+神聖な光輪
+%%%%
+You are backlit; invisibility will do you no good right now.
+
+あなたは光に照らされている。今は透明になっても意味がない。
+%%%%
+You are backlit; invisibility will do you no good right now; use anyway?
+
+あなたは光に照らされていて、今は透明になっても意味がありません。それでも使いますか？
+%%%%
+Your roots keep you in place.
+
+あなたの根っこは大地にしっかりと埋まっている。
+%%%%
+You can't fly in this form.
+
+あなたはこの姿では空を飛べない。
+%%%%
+Your tail turns into legs as you fly out of the water.
+
+あなたが水から飛び上がると尾ひれは足に変化した。
+%%%%
+You swoop lightly up into the air.
+
+あなたは空へと軽やかに舞い上がった。
+%%%%
+You fly up into the air.
+
+あなたは空中へと飛びあがった。
+%%%%
+You feel very buoyant.
+
+あなたはとても体が軽くなった。
+%%%%
+You feel more buoyant.
+
+あなたは更に体が軽くなった。
+%%%%
+You can't survive in this terrain! You fly above the %s, but the process is draining.
+
+この地形では生き延びられない！ あなたは%sの上を飛び続けるが、それは消耗を伴う。
+%%%%
+[emergency flight]lava
+
+溶岩
+%%%%
+[emergency flight]water
+
+水
+%%%%
+[emergency flight]buggy terrain
+
+バグった地形
+%%%%
+You float gracefully downwards.
+
+あなたは優雅に下へと舞い降りていった。
+%%%%
+# player_save_info(セーブデータ選択画面)
+%s the %s %s
+
+%s (%s%s)
+%%%%
+%s, a level %d %s %s
+
+%s、レベル%dの%s%s
+%%%%
+of %s
+
+(%sの信徒)
+%%%%
+[game type]Seeded
+
+シード指定
+%%%%
+[game type]Tutorial
+
+チュートリアル
+%%%%
+[game type]Arena
+
+アリーナ
+%%%%
+[game type]Dungeon Sprint
+
+ダンジョン・スプリント
+%%%%
+[game type]Dungeon Descent
+
+ダンジョン・ディセント
+%%%%
+[game type]Unknown
+
+不明
+%%%%
+prevents your banishment from the Arena!
+
+はあなたが闘技場から追放されるのを阻んだ！
+%%%%
+refuses to let the Abyss claim you during a challenge!
+
+は試練の最中にあなたがアビスに連れ去られるのを許さなかった！
+%%%%
+You resist the pull of the Abyss.
+
+あなたはアビスへの追放に抵抗した。
+%%%%
+You wobble for a moment.
+
+あなたは一瞬よろめいた。
+%%%%
+# player::no_tele_reason()(理由文字列は表示用の日本語)
+Your stasis prevents you from teleporting.
+
+あなたは停滞状態のためテレポートできない。
+%%%%
+Long-range teleportation is disallowed in Dungeon Sprint.
+
+スプリントモードでは長距離テレポートはできない。
+%%%%
+A magic seal in the Gauntlet prevents long-range teleports.
+
+ガントレットの魔法の封印が長距離テレポートを妨げている。
+%%%%
+# 「あなたは(理由)ため、(動作)できない。」の理由。「〜ている」で終える
+locked down by a dimension anchor
+
+次元の錨で固定されている
+%%%%
+held in place by your roots
+
+自らの根でその場に縛り付けられている
+%%%%
+wielding %s
+
+%sを装備している
+%%%%
+# 引数は("3つ" などの個数、[no tele]items/artefacts)
+wearing %s %s preventing teleportation
+
+テレポートを妨げる%sの%sを装備している
+%%%%
+wearing %s
+
+%sを装備している
+%%%%
+[no tele]items
+
+アイテム
+%%%%
+[no tele]artefacts
+
+アーティファクト
+%%%%
+# 引数は日本語の語順に入れ替えて渡している(理由、[no tele]blink/teleport)
+You cannot %s because you are %s.
+
+あなたは%sため、%sできない。
+%%%%
+[no tele]blink
+
+瞬間移動
+%%%%
+[no tele]teleport
+
+テレポート
+%%%%
+# resists_dislodge(): 引数は呼び出し側で「〜こと」の形で渡される
+Your boots keep you from %s.
+
+あなたのブーツは、あなたが%sを防いだ。
+%%%%
+falling into an unexpected shaft
+
+思わぬ縦穴に落ちること
+%%%%
+# player::corrode(): 腐食の原因は [corrode] で引く(monster.txt などにもある)
+%s corrodes you!
+
+%sがあなたを腐食させた！
+%%%%
+[corrode]The trap's stomach acid
+
+罠の胃酸
+%%%%
+[corrode]Your corrosive artefact
+
+あなたの腐食性のアーティファクト
+%%%%
+You are splashed with acid%s%s
+
+あなたは酸を浴びた%s%s
+%%%%
+[acid splash]but take no damage
+
+が、ダメージは受けなかった
+%%%%
+Your stasis prevents you from being paralysed.
+
+あなたは停滞状態のため麻痺しない。
+%%%%
+You shrug off the repeated attempt to disable you.
+
+あなたは繰り返される行動不能の試みをはねのけた。
+%%%%
+You suddenly lose the ability to move!
+
+あなたは突然身動きができなくなった！
+%%%%
+Your divine stamina protects you from petrification!
+
+あなたの活性化された生命力が石化をはねのけた！
+%%%%
+You are slowing down.
+
+あなたの動きは鈍くなっている。
+%%%%
+You have turned to stone.
+
+あなたは石化してしまった。
+%%%%
+Your clarity of mind shields you.
+
+あなたの明晰な精神があなたを守った。
+%%%%
+# vex(): 呼び出し側から日本語の述語が渡される(mon-cast.cc)
+You %s
+
+あなたは%s
+%%%%
+You feel overwhelmed by frustration!
+
+あなたは苛立ちに圧倒された！
+%%%%
+Your divine stamina protects you from disease!
+
+あなたの活性化された生命力が病魔をはねのけた！
+%%%%
+You feel ill.
+
+あなたは病気に冒されている。
+%%%%
+You glow brighter.
+
+あなたはより明るく輝いた。
+%%%%
+You are outlined in light.
+
+あなたは光で照らし出された。
+%%%%
+You feel strangely conspicuous.
+
+あなたは妙に目立っているような気がした。
+%%%%
+Doom befalls you....
+
+破滅があなたに降りかかった……。
+%%%%
+You shrug off repeated attempt to disable you.
+
+あなたは繰り返される行動不能の試みをはねのけた。
+%%%%
+You can't fall asleep in your current state!
+
+あなたは今の状態では眠りに落ちることができない！
+%%%%
+You fall asleep.
+
+あなたは眠りに落ちた。
+%%%%
+You wake up.
+
+あなたは目を覚ました。
+%%%%
+You snap out of your daze.
+
+あなたは朦朧とした状態から我に返った。
+%%%%
+Your tunneler's instincts keep you from falling into a shaft!
+
+あなたは穴掘りの本能によって縦穴に落ちずに済んだ！
+%%%%
+Yredelemnul refuses to let your conquest be stopped by a trick of the earth!
+
+イェレデルムヌルは大地の悪戯ごときであなたの征服が阻まれることを許さなかった！
+%%%%
+You can't shaft yourself in your current form.
+
+今の姿では縦穴を掘ることができない。
+%%%%
+You can't shaft yourself while %s.
+
+%s間は縦穴を掘ることができない。
+%%%%
+You can't shaft yourself while unable to move.
+
+動けない間は縦穴を掘ることができない。
+%%%%
+You can't shaft yourself on this level.
+
+この階では縦穴を掘ることができない。
+%%%%
+You can't shaft yourself on this terrain.
+
+この場所では縦穴を掘ることができない。
+%%%%
+A shaft appears beneath you!
+
+縦穴があなたの足下に空いた！
+%%%%
+# ゴザーグの能力(god_power::display() が書式を辞書で引く)
+You now have enough gold to %s.
+
+あなたは%sのに十分な金を手に入れた。
+%%%%
+You no longer have enough gold to %s.
+
+あなたは%sのに十分な金を失った。
+%%%%
+# attempt_escape(): 引数は「〜の」で終わる
+You escape %s grasp.
+
+あなたは%s束縛から逃れた。
+%%%%
+%s grasp on you weakens, but your attempt to escape fails.
+
+%s束縛は緩んだものの、そこから逃れるまでには至らなかった。
+%%%%
+[grasp]the roots'
+
+根の
+%%%%
+[grasp]the zombie hands'
+
+ゾンビの手の
+%%%%
+[grasp]the vines'
+
+蔓の
+%%%%
+The mark upon you grows brighter.
+
+あなたに付けられた印が明るく輝いた。
+%%%%
+A sentinel's mark forms upon you.
+
+あなたは番兵の標的に指定された。
+%%%%
+You feel your attacks grow feeble.
+
+あなたは自分の攻撃が弱くなったように感じた。
+%%%%
+You feel as though you will be weak longer.
+
+あなたはより長い時間を弱体化されたままでいることになった。
+%%%%
+You feel your spells grow feeble.
+
+あなたは自分の呪文が弱くなったように感じた。
+%%%%
+You feel as though your spells will be weakened for longer.
+
+あなたはより長い時間を呪文が弱体化されたままでいることになった。
+%%%%
+Your willpower is stripped away!
+
+あなたの意志力は剥ぎ取られた！
+%%%%
+Your body becomes as fragile as glass!
+
+あなたの体はガラスのように脆くなった！
+%%%%
+You feel your fragility will last longer.
+
+あなたの脆さはより長く続くことになった。
+%%%%
+%s floods into your lungs!
+
+%sがあなたの肺に流れ込んだ！
+%%%%
+[substance]ooze
+
+粘液
+%%%%
+# _constriction_description()
+You have %d tentacles available for constriction.
+
+あなたは締め付けに使える触手を%d本持っている。
+%%%%
+You are being constricted by %s.
+
+あなたは%sに締め付けられている。
+%%%%
+You are constricting %s.
+
+あなたは%sを締め付けている。
+%%%%
+%s enhances the healing.
+
+%sはあなたの回復力を促進している。
+%%%%
+The healing is enhanced.
+
+回復の効果が高まった。
+%%%%
+Your system rejects the healing.
+
+あなたの体は回復を受け付けなかった。
+%%%%
+Your system partially rejects the healing.
+
+あなたの体は回復をあまり受け付けなかった。
+%%%%
+# 扉。形容詞・名前は [door adj], [door noun], [door way] で引く
+[door adj]miniscule
+
+ごく小さな
+%%%%
+[door adj]large
+
+大きな
+%%%%
+[door adj]huge
+
+巨大な
+%%%%
+[door noun]door
+
+扉
+%%%%
+[door noun]buggy door
+
+バグった扉
+%%%%
+[door noun]gate
+
+門
+%%%%
+[door noun]gateway
+
+門
+%%%%
+[door noun]fleshy orifice
+
+肉の穴
+%%%%
+[door way]doorway
+
+戸口
+%%%%
+[door way]buggy doorway
+
+バグった戸口
+%%%%
+[door way]gateway
+
+門
+%%%%
+Put travel exclusion on door? (Y/n)
+
+扉を禁止エリアに指定しますか？ (Y/n)
+%%%%
+This %s%s is marked as excluded! Open it anyway?
+
+この%s%sは禁止エリアに指定されています！ それでも開けますか？
+%%%%
+The %s%s flies open!
+
+%s%sは勢いよく開いた！
+%%%%
+The %s%s flies open with a bang!
+
+%s%sはバタンと音を立てて開いた！
+%%%%
+As you open the %s%s, it creaks loudly!
+
+%s%sはやかましく軋みながら開いた！
+%%%%
+You reach down and open the %s%s.
+
+あなたは身をかがめて%s%sを開けた。
+%%%%
+You open the %s%s.
+
+あなたは%s%sを開けた。
+%%%%
+Something is blocking the %s!
+
+何かが%sを塞いでしまっている！
+%%%%
+There's a creature in the %s!
+
+%sにはモンスターがいる！
+%%%%
+There's something jamming the %s.
+
+何かが%sに挟まっている。
+%%%%
+There's a thick-headed creature in the %s!
+
+なんだか頭の鈍い生き物が%sにいる！
+%%%%
+, pushing everything out of the way
+
+(中の物を押しのけて)
+%%%%
+You slam the %s%s shut%s!
+
+あなたは%s%sを叩きつけるように閉めた%s！
+%%%%
+You slam the %s%s shut with a bang%s!
+
+あなたは%s%sをバタンと閉めた%s！
+%%%%
+As you close the %s%s%s, it creaks loudly!
+
+%s%sはやかましく軋みながら閉まった%s！
+%%%%
+You reach down and close the %s%s%s.
+
+あなたは身をかがめて%s%sを閉めた%s。
+%%%%
+You close the %s%s%s.
+
+あなたは%s%sを閉めた%s。
+%%%%
+# 扉のマーカー(dat/des/portals/wizlab.des, altar/okawaru_arena.des)
+You part the %s%s.
+
+あなたは%s%sを押し広げた。
+%%%%
+You part the %s%s with a squelch!
+
+あなたは%s%sをぐちゃりと押し広げた！
+%%%%
+You squeeze the %s%s closed.
+
+あなたは%s%sを締めつけて閉じた。
+%%%%
+You squeeze the %s%s closed with a squelch!
+
+あなたは%s%sをぐちゃりと締めつけて閉じた！
+%%%%
+You reach down and part the %s%s.
+
+あなたは身をかがめて%s%sを押し広げた。
+%%%%
+You reach down and squeeze the %s%s closed.
+
+あなたは身をかがめて%s%sを締めつけて閉じた。
+%%%%
+You squeeze the %s%s shut.
+
+あなたは%s%sを締めつけて閉じた。
+%%%%
+It reads,\n"Warrior's weapon\n gracefully paints petals red.\n Honourable art."\nProceed?
+
+こう書かれている:\n『戦士の刃\n 優雅に花弁を赤く染める\n 誉れの業』\n進みますか？
+%%%%
+# player::hands_act(): "[hands act]your hands <動詞> <目的語>" の訳。%s に手の名前が入る。
+# begin to glow brighter / begin to glow red は spl-selfench.txt にある
+[hands act]your hands get new energy.
+
+あなたの%sに新たな力がみなぎった。
+%%%%
+[hands act]your hands stop glowing.
+
+あなたの%sから輝きが失せた。
+%%%%
+[hands act]your hands burn!
+
+あなたの%sは焼かれた！
+%%%%
+[hands act]your hands tingle!
+
+あなたの%sはうずうずしている！
+%%%%
+[hands act]your hands are glowing red.
+
+あなたの%sは赤く輝いている。
+%%%%
+[hands act]your hands are covered in slime.
+
+あなたの%sは粘液に覆われている。
+%%%%
+[hands act]your hands look sharp.
+
+あなたの%sが鋭く見えた。
+%%%%
+Your blood congeals into armour.
+
+あなたの流した血は固まって鎧へと変化した。
+%%%%
+Your weapon exudes an aura of protection.
+
+あなたの武器は護りのオーラを放った。
+%%%%
+You feel bolstered by spreading misfortune.
+
+あなたは広がる不幸に勇気づけられた。
+%%%%
+You devour the vestiges of %s's existence in your flames.
+
+あなたは%sの存在の残滓を炎の中で貪った。
+%%%%
+You feel more agile all of a sudden.
+
+あなたは突然、さらに機敏になった。
+%%%%
+You feel agile all of a sudden.
+
+あなたは突然機敏になった。
+%%%%
+This could place you under penance!
+
+神の怒りを買うかもしれません！
+%%%%
+You are more confused.
+
+あなたはさらに混乱した。
+%%%%

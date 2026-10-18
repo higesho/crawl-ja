@@ -1,0 +1,106 @@
+%%%%
+immune to nets
+
+網で拘束できない
+%%%%
+You cannot shoot with your %s while %s.
+
+あなたは%s間%sを射撃できない。
+%%%%
+magically
+
+魔法の力で
+%%%%
+You are confused and cannot control your aim.
+
+あなたは混乱していて狙いを定められない。
+%%%%
+No action selected
+
+行動が選ばれていない
+%%%%
+Non-targeted %s
+
+%s(目標指定なし)
+%%%%
+can blink free
+
+瞬間移動で脱出できる
+%%%%
+immune
+
+効かない
+%%%%
+chance to frenzy on hit: %d%%
+
+命中時に狂乱させる確率: %d%%
+%%%%
+chance to blind on hit: %d%%
+
+命中時に盲目にする確率: %d%%
+%%%%
+You have nothing you can fire or use right now.
+
+あなたは今、発射したり使ったりできるものを持っていない。
+%%%%
+<lightgray>Fire/throw/use which item?</lightgray>
+
+<lightgray>どのアイテムを発射/投擲/使用しますか？</lightgray>
+%%%%
+<lightgray>Fire/use which item?</lightgray>
+
+<lightgray>どのアイテムを発射/使用しますか？</lightgray>
+%%%%
+# 引数は held_status()(「網に捕らわれている」のような連体形を想定)
+You cannot throw/fire anything while %s.
+
+あなたは%s間、何も投げたり発射したりできない。
+%%%%
+# actor::stumble_away_from() の src(「〜が/は」が後に続く)
+Mule's kick
+
+『ラバ』の反動
+%%%%
+# 引数: 「暗闇へ向けて」、投射物
+You throw %s%s.
+
+あなたは%s%sを投げた。
+%%%%
+You shoot %s%s.
+
+あなたは%s%sを放った。
+%%%%
+ into the darkness
+
+暗闇へ向けて
+%%%%
+# 引数: モンスター、「魔法の力で」、投射物
+%s%s throws %s.
+
+%sは%s%sを投げた。
+%%%%
+%s%s shoots %s.
+
+%sは%s%sを放った。
+%%%%
+# _throw_noise() の音(noisy() に渡す)
+You hear a sling whirr.
+
+あなたはスリングの風を切る音を耳にした。
+%%%%
+You hear a bow twang.
+
+あなたは弓の弦が鳴る音を耳にした。
+%%%%
+You hear a crossbow thunk.
+
+あなたはクロスボウのドスッという音を耳にした。
+%%%%
+You hear a triple crossbow go thunk-thunk-thunk.
+
+あなたはトリプルクロスボウのドスッ、ドスッ、ドスッという音を耳にした。
+%%%%
+You hear a hand cannon's boom.
+
+あなたはハンドキャノンの轟音を耳にした。
+%%%%

@@ -1,0 +1,33 @@
+%%%%
+a follower
+
+従者
+%%%%
+blesses %s with %s.
+
+は%sを祝福し、%s。
+%%%%
+[blessing]divine balms
+
+聖なる香油を注いだ
+%%%%
+[blessing]healing
+
+その傷を癒した
+%%%%
+[blessing]friendliness
+
+あなたとの親睦を深めた
+%%%%
+[blessing]more time in this world
+
+さらに長い間現世にいられるようにした
+%%%%
+[blessing]divine balms and healing
+
+聖なる香油を注ぎ、その傷を癒した
+%%%%
+[blessing]friendliness and more time in this world
+
+あなたとの親睦を深め、さらに長い間現世にいられるようにした
+%%%%

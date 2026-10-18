@@ -1,0 +1,101 @@
+%%%%
+You hear a distant slurping noise.
+
+あなたは遠くで物を食べるような音を耳にした。
+%%%%
+Your resistance to fire fades away.
+
+あなたの火への耐性は薄れていった。
+%%%%
+Your resistance to cold fades away.
+
+あなたの冷気への耐性は薄れていった。
+%%%%
+Your resistance to electricity fades away.
+
+あなたの電撃への耐性は薄れていった。
+%%%%
+Your resistance to physical damage fades away.
+
+あなたの物理ダメージへの耐性は薄れていった。
+%%%%
+prepares the audience for your solo!
+
+はあなたの独演に対し観衆の手配をしている！
+%%%%
+links your audience in an emotional bond!
+
+は観衆に一体感を与えた！
+%%%%
+You feel %sprotected from %s.
+
+あなたは%s%sへの耐性が強まったようだ。
+%%%%
+[protected from]more
+
+さらに
+%%%%
+[protected from]fire
+
+火炎
+%%%%
+[protected from]cold
+
+冷気
+%%%%
+[protected from]electricity
+
+電気
+%%%%
+[protected from]physical attacks
+
+物理ダメージ
+%%%%
+Your supernatural speed expires.
+
+あなたの超自然的な速さは失われた。
+%%%%
+The heavenly storm settles.
+
+天の嵐は静まった。
+%%%%
+You lunge%s at %s%s.
+
+あなたは%s%sに突進%s。
+%%%%
+with incredible momentum
+
+凄まじい勢いで
+%%%%
+, with incredible momentum
+
+凄まじい勢いで
+%%%%
+[wu jian lunge]flurry
+
+し、連撃を浴びせた
+%%%%
+[wu jian lunge]single
+
+した
+%%%%
+You spin and attack %s%s%s.
+
+あなたは回転し、%sを%s%s攻撃した。
+%%%%
+repeatedly
+
+繰り返し
+%%%%
+You %sattack %s from above%s.
+
+あなたは%sを上から%s%s攻撃した。
+%%%%
+is spurred on by your onslaught.
+
+はあなたの猛攻に駆り立てられた。
+%%%%
+A whirlwind of blades manifests around you!
+
+刃の旋風があなたの周りに現れた！
+%%%%

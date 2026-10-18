@@ -3106,3 +3106,20 @@ The Unspeakable
 
 『名状しがたきもの』
 %%%%
+# 第2陣で追加: 変化したユニークの接尾辞
+[name suffix]shaped Royal Jelly
+
+に変化した『ロイヤルジェリー』
+%%%%
+[name suffix]shaped Lernaean hydra
+
+に変化した『レルネーのヒドラ』
+%%%%
+[name suffix]shaped Enchantress
+
+に変化した『女呪術師』
+%%%%
+[name suffix]shaped Serpent of Hell
+
+に変化した『地獄のサーペント』
+%%%%

@@ -582,3 +582,168 @@
 
 目眩の胞子
 %%%%
+# 第2陣で追加(モンスター・神の能力などのビーム名)
+[zap]STAIR BEAM
+
+階段ビーム
+%%%%
+[zap]blast of energy
+
+炸裂するエネルギー
+%%%%
+[zap]blast of ice
+
+猛吹雪
+%%%%
+[zap]blast of lightning
+
+稲妻の一撃
+%%%%
+[zap]blast of magma
+
+溶岩の奔流
+%%%%
+[zap]blast of putrescent gases
+
+腐敗ガスの爆発
+%%%%
+[zap]blast of rubble
+
+石つぶて
+%%%%
+[zap]blast of shadow
+
+影の炸裂
+%%%%
+[zap]burning spray
+
+燃える飛沫
+%%%%
+[zap]caustic explosion
+
+腐食性の爆発
+%%%%
+[zap]creeping shadows
+
+忍び寄る影
+%%%%
+[zap]cutting wind
+
+カマイタチ
+%%%%
+[zap]electrical discharge
+
+放電
+%%%%
+[zap]explosion of spores
+
+胞子の爆発
+%%%%
+[zap]flame surge
+
+炎の奔流
+%%%%
+[zap]flurry of cold
+
+冷気の嵐
+%%%%
+[zap]flurry of ice
+
+氷の嵐
+%%%%
+[zap]flurry of pyrophoric scales
+
+発火する鱗の嵐
+%%%%
+[zap]flurry of shrapnel
+
+破片の嵐
+%%%%
+[zap]frost
+
+冷気
+%%%%
+[zap]flames
+
+火炎
+%%%%
+[zap]gout of fire
+
+噴き出す炎
+%%%%
+[zap]gout of magma
+
+噴き出す溶岩
+%%%%
+[zap]howling sorrow
+
+慟哭
+%%%%
+[zap]orb of destruction
+
+破壊の発露
+%%%%
+[zap]porkalator
+
+豚化の魔法
+%%%%
+[zap]power leap
+
+強力な跳躍
+%%%%
+[zap]pyre of ghostly fire
+
+鬼火
+%%%%
+[zap]rain of gore
+
+血の雨
+%%%%
+[zap]seracfall
+
+氷塔崩し
+%%%%
+[zap]spectral mist
+
+霊体の霧
+%%%%
+[zap]spray of acid
+
+酸の飛沫
+%%%%
+[zap]sticky fireball
+
+粘着性の火球
+%%%%
+[zap]stream of webbing
+
+吐き出された蜘蛛の糸
+%%%%
+[zap]torrent of electricity
+
+電撃の奔流
+%%%%
+[zap]vile air
+
+不快な空気
+%%%%
+[zap]wail of negative energy
+
+負のエネルギーの慟哭
+%%%%
+[zap]wave of grief
+
+悲嘆の波
+%%%%
+[zap]metal splinters
+
+金属片
+%%%%
+[zap]splinters
+
+木片
+%%%%
+[zap]damnation bolt
+
+天罰の矢
+%%%%

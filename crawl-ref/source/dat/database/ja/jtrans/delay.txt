@@ -277,7 +277,7 @@ Ancestor HP restored.
 
 あなたは%sを外し終えた。
 %%%%
-# 装備動作の継続(delay.h の EquipOnDelay/EquipOffDelay::tick 用。delay.h 側の対応待ち)
+# 装備動作の継続(delay.h の EquipOnDelay/EquipOffDelay::tick 用)
 [eq continue]attuning to
 
 あなたは%sとの同調を続けている。

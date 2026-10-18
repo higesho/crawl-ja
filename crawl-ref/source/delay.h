@@ -9,6 +9,7 @@
 
 #include "activity-interrupt-type.h"
 #include "command-type.h"
+#include "database.h"
 #include "enum.h"
 #include "equipment-slot.h"
 #include "item-prop-enum.h"
@@ -239,8 +240,8 @@ class EquipOnDelay : public Delay
 
     void tick() override
     {
-        mprf(MSGCH_MULTITURN_ACTION, "You continue %s %s.",
-             get_verb(), equip.name(DESC_YOUR).c_str());
+        mprf(MSGCH_MULTITURN_ACTION, tagged_jtransc("[eq continue]", get_verb()),
+             equip.name(DESC_YOUR).c_str());
     }
 
     bool invalidated() override;
@@ -275,8 +276,8 @@ class EquipOffDelay : public Delay
 
     void tick() override
     {
-        mprf(MSGCH_MULTITURN_ACTION, "You continue %s %s.",
-             get_verb(), equip.name(DESC_YOUR).c_str());
+        mprf(MSGCH_MULTITURN_ACTION, tagged_jtransc("[eq continue]", get_verb()),
+             equip.name(DESC_YOUR).c_str());
     }
 
     bool invalidated() override;

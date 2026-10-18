@@ -1,0 +1,117 @@
+%%%%
+You have no companions.
+
+あなたには神に遣わされた仲間がいない。
+%%%%
+%s is freed.
+
+%sは自由になった。
+%%%%
+Removing corrupted ex-follower from level: %s.
+
+この階から壊れた元仲間のデータを取り除いた: %s
+%%%%
+Beogh sends your followers elsewhere.
+
+ベオはあなたの仲間をどこかへ送り去った。
+%%%%
+speaks to you:
+
+はあなたに語りかけた。
+%%%%
+Beogh is disappointed with your cowardice.
+
+ベオはあなたの臆病さに失望した。
+%%%%
+"Reflect upon your actions, mortal!"
+
+『己の行いを省みよ、定命の者よ！』
+%%%%
+Beogh will allow you to induct %s into your service.
+
+ベオは%sをあなたの配下に迎え入れることを許した。
+%%%%
+(press <w>%c</w> on the <w>%s</w>bility menu to recruit an apostle)
+
+(<w>%c</w>を<w>%s</w>(能力)メニューで押すと使徒を勧誘できる)
+%%%%
+[apostle type]warrior
+
+戦士
+%%%%
+[apostle type]wizard
+
+魔術師
+%%%%
+[apostle type]priest
+
+司祭
+%%%%
+is recalled by Beogh.
+
+はベオに呼び戻された。
+%%%%
+is recalled by the power of Beogh.
+
+はベオの力で呼び戻された。
+%%%%
+Beogh recalls %s to your side and
+
+ベオは%sをあなたの側へ呼び戻し、
+%%%%
+Beogh breathes life back into %s and
+
+ベオは%sに再び生命を吹き込み、
+%%%%
+you anoint them with ash and charcoal and welcome them as a companion.
+
+あなたは灰と木炭で聖別を施し、仲間として迎え入れた。
+%%%%
+You anoint %s with ash and charcoal and welcome them as a companion.
+
+あなたは%sに灰と木炭で聖別を施し、仲間として迎え入れた。
+%%%%
+Really dismiss %s?
+
+本当に%sを解任しますか？
+%%%%
+You release %s from your service.
+
+あなたは%sを配下から解放した。
+%%%%
+You swear to avenge %s death!
+
+あなたは%s死の復讐を誓った！
+%%%%
+You feel as though your fallen companions have been avenged.
+
+あなたは倒れた仲間たちの仇を討ったように感じた。
+%%%%
+has fought their way back out of the Abyss!
+
+はアビスから戦い抜いて帰還した！
+%%%%
+Your apostles return to your side.
+
+あなたの使徒たちがあなたの側に戻ってきた。
+%%%%
+Beogh breathes life back into %s.
+
+ベオは%sに再び生命を吹き込んだ。
+%%%%
+<green>**Available to recruit**</green>
+
+<green>**勧誘可能**</green>
+%%%%
+<lightred>**DEAD**</lightred>
+
+<lightred>**死亡**</lightred>
+%%%%
+<magenta>**BANISHED**</magenta>
+
+<magenta>**追放中**</magenta>
+%%%%
+HP: %d    AC: %d    Damage:%d (w/weapon)
+
+HP: %d    AC: %d    ダメージ:%d (武器込み)
+%%%%

@@ -2024,3 +2024,48 @@
 
 業火
 %%%%
+# 第2陣で追加: 技能の略称(ルーの魔術の犠牲など)
+[skill abbr]Conj
+
+妖術
+%%%%
+[skill abbr]Hex
+
+呪術
+%%%%
+[skill abbr]Summ
+
+召喚
+%%%%
+[skill abbr]Necr
+
+死霊
+%%%%
+[skill abbr]Tloc
+
+転位
+%%%%
+[skill abbr]Frge
+
+鍛造
+%%%%
+[skill abbr]Fire
+
+炎
+%%%%
+[skill abbr]Ice
+
+氷
+%%%%
+[skill abbr]Air
+
+風
+%%%%
+[skill abbr]Erth
+
+地
+%%%%
+[skill abbr]Alch
+
+錬金
+%%%%

@@ -12,6 +12,7 @@
 #include "art-enum.h"
 #include "attitude-change.h"
 #include "colour.h"
+#include "database.h"
 #include "delay.h"
 #include "describe.h"
 #include "dgn-overview.h"
@@ -247,8 +248,8 @@ void change_monster_type(monster* mons, monster_type targetc, bool do_seen)
     // trj spills out jellies when polied, as if he'd been hit for mhp.
     if (mons->type == MONS_ROYAL_JELLY)
     {
-        simple_monster_message(*mons, " form twists and warps, and jellies "
-                               "spill out!", true);
+        simple_monster_message(*mons, jtransc(" form twists and warps, and jellies "
+                               "spill out!"), true);
         schedule_trj_spawn_fineff(nullptr, mons, mons->pos(),
                                   mons->hit_points);
     }
@@ -295,7 +296,7 @@ void change_monster_type(monster* mons, monster_type targetc, bool do_seen)
     }
     else if (mons_is_unique(mons->type))
     {
-        name = mons->name(DESC_PLAIN, true);
+        name = mons->name_en(DESC_PLAIN, true);
 
         // "Blorkula the orcula" and similar.
         const size_t the_pos = name.find(" the ");
@@ -610,12 +611,12 @@ bool monster_polymorph(monster* mons, monster_type targetc,
     if (mons_demon_tier(mons->type) == -1)
     {
         return simple_monster_message(*mons,
-            " appearance momentarily alters.", true);
+            jtransc(" appearance momentarily alters."), true);
     }
 
     targetc = _concretize_target(*mons, targetc, power);
     if (targetc == MONS_NO_MONSTER)
-        return simple_monster_message(*mons, " shudders.");
+        return simple_monster_message(*mons, jtransc(" shudders."));
 
     const bool was_invisible = mons->has_ench(ENCH_INVIS) && !mons->friendly();
     bool could_see = you.can_see(*mons);
@@ -625,7 +626,7 @@ bool monster_polymorph(monster* mons, monster_type targetc,
     monster_type oldc = mons->type;
 
     if (power != PPT_SLIME && !_valid_morph(mons, targetc))
-        return simple_monster_message(*mons, " looks momentarily different.");
+        return simple_monster_message(*mons, jtransc(" looks momentarily different."));
 
     change_monster_type(mons, targetc, false);
 
@@ -635,33 +636,36 @@ bool monster_polymorph(monster* mons, monster_type targetc,
     bool player_messaged = true;
     if (could_see)
     {
-        string verb = "";
-        string obj = can_see ? mons_type_name(targetc, DESC_A)
-                             : "something you cannot see";
+        const string obj = can_see ? mons_type_name_j(targetc, DESC_A)
+                                   : jtrans("something you cannot see");
 
         if (oldc == MONS_OGRE && targetc == MONS_TWO_HEADED_OGRE)
-        {
-            verb = "grows a second head";
-            obj = "";
-        }
+            mprf(jtransc("%s grows a second head!"), old_name_the.c_str());
         else if (mons->is_shapeshifter())
-            verb = "changes into ";
+        {
+            mprf(jtransc("%s changes into %s!"), old_name_the.c_str(),
+                 obj.c_str());
+        }
         else if (_jiyva_slime_target(targetc))
-            verb = "quivers uncontrollably and liquefies into ";
+        {
+            mprf(jtransc("%s quivers uncontrollably and liquefies into %s!"),
+                 old_name_the.c_str(), obj.c_str());
+        }
         else
-            verb = "evaporates and reforms as ";
-
-        mprf("%s %s%s!", old_name_the.c_str(), verb.c_str(), obj.c_str());
+        {
+            mprf(jtransc("%s evaporates and reforms as %s!"),
+                 old_name_the.c_str(), obj.c_str());
+        }
     }
     else if (can_see)
-        mprf("%s appears out of thin air!", mons->name(DESC_A).c_str());
+        mprf(jtransc("%s appears out of thin air!"), mons->name(DESC_A).c_str());
     else
         player_messaged = false;
 
     if (need_note || could_see && can_see && mons_is_notable(*mons))
     {
         string new_name = can_see ? mons->full_name(DESC_A)
-                                  : "something unseen";
+                                  : jtrans("something unseen");
 
         take_note(Note(NOTE_POLY_MONSTER, 0, 0, old_name_a, new_name));
     }
@@ -741,7 +745,7 @@ void slimify_monster(monster* mon)
     // Bail out if jellies can't live here.
     if (!monster_habitable_grid(target, mon->pos()))
     {
-        simple_monster_message(*mon, " quivers momentarily.");
+        simple_monster_message(*mon, jtransc(" quivers momentarily."));
         return;
     }
 

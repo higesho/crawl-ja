@@ -1,0 +1,1408 @@
+%%%%
+Animating this weapon would place you under penance. Really cast this spell?
+
+その武器を動かすと神に懺悔をする羽目になります。本当にその呪文を唱えますか？
+%%%%
+%s appears from out of thin air!
+
+%sがどこからともなく現れた！
+%%%%
+You hear a grinding noise.
+
+あなたは壁を削るような音を耳にした。
+%%%%
+The damaged grate falls apart.
+
+ぼろぼろになった鉄格子が崩れ落ちた。
+%%%%
+the targeted %s
+
+%s
+%%%%
+%s appears from out of your range of vision.
+
+%sがあなたの視界の外から飛んできた。
+%%%%
+completely resists.
+
+は完全に抵抗した。
+%%%%
+melts!
+
+の体は溶けだした！
+%%%%
+is on fire!
+
+は燃えている！
+%%%%
+is burned terribly!
+
+は激しく燃えあがった！
+%%%%
+is scalded terribly!
+
+はひどく火傷をしている！
+%%%%
+is doused terribly!
+
+は凄まじい波に打たれている！
+%%%%
+is electrocuted!
+
+は感電した！
+%%%%
+is drained terribly!
+
+はひどく衰弱した！
+%%%%
+writhes in agony!
+
+は苦痛に悶えた！
+%%%%
+seems to be slow for longer.
+
+はより長い時間を遅いままでいることになったようだ。
+%%%%
+You have difficulty breathing.
+
+あなたは呼吸困難に陥っている。
+%%%%
+%s life force is offered up.
+
+%s生命力が抜き取られた。
+%%%%
+%s is healed.
+
+%sは回復した。
+%%%%
+The wave splashes down.
+
+波がぶつかってきた。
+%%%%
+You hear a splash.
+
+あなたは水しぶきの音を耳にした。
+%%%%
+You hear a sizzling sound!
+
+あなたはジュージューという音を耳にした！
+%%%%
+You block the %s.
+
+あなたは%sを防いだ。
+%%%%
+The %s is repelled.
+
+%sは逸らされた。
+%%%%
+The %s misses you.
+
+%sはあなたに当たらなかった。
+%%%%
+Something tries to affect you, but you are unaffected.
+
+何かがあなたに魔法をかけようとしたが、何も影響はなかった。
+%%%%
+Something tries to affect you, but you resist.
+
+何かがあなたに魔法をかけようとしたが、あなたは抵抗した。
+%%%%
+You%s
+
+あなた%s
+%%%%
+Strange energies course through your body.
+
+奇妙なエネルギーがあなたの体内を激しく流れた。
+%%%%
+Your will is overpowered!
+
+あなたの意志は打ちのめされた！
+%%%%
+This spell isn't strong enough to banish yourself.
+
+この呪文はあなた自身を追放するほどの効果はない。
+%%%%
+Pain shoots through your body!
+
+苦痛があなたの全身を貫いた！
+%%%%
+You convulse!
+
+あなたは激しく痙攣した！
+%%%%
+You feel a momentary urge to oink.
+
+あなたは一瞬ブーブーと鳴きたいような衝動に駆られた。
+%%%%
+You feel more firmly anchored in space.
+
+あなたは空間にさらにしっかりと根付いているような気がした。
+%%%%
+You feel firmly anchored in space.
+
+あなたは空間にしっかりと根付いているような気がした。
+%%%%
+Your teleport is interrupted.
+
+あなたが行おうとしているテレポートは阻害された。
+%%%%
+You feel yourself grow more vulnerable to poison.
+
+あなたは毒に対する耐性が弱まったような気がした。
+%%%%
+Your magic feels more tainted.
+
+あなたの魔法はさらに弱まったような気がした。
+%%%%
+Your magic feels tainted.
+
+あなたの魔法は弱まったような気がした。
+%%%%
+Software bugs nibble your toes!
+
+
+%%%%
+An unnatural silence engulfs you.
+
+不自然なまでの静寂があなたを包んだ。
+%%%%
+You are encased in ice.
+
+あなたは凍結している。
+%%%%
+is frozen into a solid block of ice!
+
+は氷塊に閉じ込められ凍りついた！
+%%%%
+is flash-frozen.
+
+は一瞬のうちに凍結された。
+%%%%
+The %s bounces off of thin air!
+
+%sがはね返された！
+%%%%
+%s blocks the %s.
+
+%sは%sを防いだ。
+%%%%
+The %s passes through %s.
+
+%sは%sを通り抜けた。
+%%%%
+The %s %s %s.
+
+%sは%s%s。
+%%%%
+# 引数: モンスター、[invisible how] の訳
+%s %s for a moment.
+
+%sは一瞬%s。
+%%%%
+%s %s!
+
+%sは%s！
+%%%%
+looks drowsy...
+
+はまどろんでいる……
+%%%%
+seems to speed up.
+
+は動きが速くなったようだ。
+%%%%
+seems to grow stronger.
+
+は力強くなったようだ。
+%%%%
+is healed somewhat.
+
+の負傷はいくらか癒された。
+%%%%
+appears confused.
+
+は混乱したようだ。
+%%%%
+falls asleep!
+
+は眠りに落ちた！
+%%%%
+is filled with an intense inner flame!
+
+は強烈な内なる炎に満たされている！
+%%%%
+is filled with an inner flame.
+
+は内なる炎に満たされている。
+%%%%
+is firmly anchored in space.
+
+は空間にしっかりと根付いている。
+%%%%
+grows more vulnerable to poison.
+
+の毒に対する耐性が弱まった。
+%%%%
+suddenly seems more agile.
+
+は突然機敏になったようだ。
+%%%%
+suddenly seems more resistant.
+
+は突然耐性を強めたように見える。
+%%%%
+is infested!
+
+はスカラベに寄生された！
+%%%%
+You hear %s!
+
+あなたは%sを耳にした！
+%%%%
+By Zin's power, the %s is contained.
+
+ジンの御業により、%sの威力は抑えられた。
+%%%%
+That %s is likely to hit you. Continue anyway?
+
+この%sはあなたに命中しそうだ。それでも続けますか？
+%%%%
+[zap]beam
+
+魔法
+%%%%
+# ---- ここから 0.34 で追加 ----
+# 掘削。引数は [wall material] の訳
+%s shatters into small pieces.
+
+%sが粉々に砕け散った。
+%%%%
+[wall material]rock
+
+岩
+%%%%
+[wall material]slime
+
+粘液に覆われた壁
+%%%%
+[wall material]weird stuff
+
+奇妙な物質
+%%%%
+# bolt::emit_message() に渡す文
+Fedhas protects the tree from harm.
+
+フェダスはその木を傷つけさせなかった。
+%%%%
+The tree burns like a torch!
+
+木は松明のように燃え上がった！
+%%%%
+The mangrove smoulders and burns.
+
+マングローブはくすぶって燃えだした。
+%%%%
+The demonic tree burns, releasing chaotic energy.
+
+魔性の木が燃え、混沌のエネルギーを放った。
+%%%%
+You smell burning wood.
+
+あなたは木の燃える臭いを嗅いだ。
+%%%%
+# zapping() の msg(ability.cc から渡される)
+You exhale a blast of poison gas.
+
+あなたは毒ガスを吐き出した。
+%%%%
+ begins to grow on the wall!
+
+が壁に生え始めた！
+%%%%
+Your line of fire to %s is blocked by %s.
+
+%sへの射線は%sに遮られている。
+%%%%
+ is chilled terribly!
+
+はひどく凍えた！
+%%%%
+The mercury splashes!
+
+水銀が飛び散った！
+%%%%
+The bolas passes through %s!
+
+ボーラは%sをすり抜けた！
+%%%%
+The bolas warps around %s and binds it in place!
+
+ボーラが%sに巻きつき、その場に縛りつけた！
+%%%%
+# mass_enchantment()
+ is haunted by guilt!
+
+は罪悪感に苛まれている！
+%%%%
+ becomes paralysed!
+
+は麻痺した！
+%%%%
+ begins to petrify.
+
+は石化し始めた。
+%%%%
+ struggles to breathe.
+
+は呼吸に苦しんでいる。
+%%%%
+# poison_monster()
+ looks as sick as possible!
+
+はこの上ないほどに毒に冒されたようだ！
+%%%%
+ looks even sicker.
+
+はさらに重く毒に冒されたようだ。
+%%%%
+ is poisoned.
+
+は毒に冒された。
+%%%%
+ is covered in liquid fire!
+
+は液状の炎に覆われた！
+%%%%
+The silver sears %s!
+
+銀が%sの体を灼いた！
+%%%%
+# 引数: 吸い取る者、吸い取られる者、句読点
+%s draws life force from %s%s
+
+%sは%sから生命力を吸い取った%s
+%%%%
+ is healed by the life force!
+
+は生命力によって回復した！
+%%%%
+You feel life coursing into your body%s
+
+あなたは体に生命力が流れ込むのを感じた%s
+%%%%
+The %s explodes!
+
+%sが爆発した！
+%%%%
+Your projectile teleports!
+
+あなたの投射物は瞬間移動した！
+%%%%
+The mud splashes down.
+
+泥が降り注いだ。
+%%%%
+Your %s blocks the %s... and reflects it back!
+
+あなたの%sは%sを防ぎ、はね返した！
+%%%%
+You block the %s... and reflect it back!
+
+あなたは%sを防ぎ、はね返した！
+%%%%
+# actor::resist_margin_phrase() の戻り値(actor.cc が英語を返すため、表示側で引く)
+ are unaffected.
+
+は影響を受けなかった。
+%%%%
+ barely resist.
+
+はかろうじて抵抗した。
+%%%%
+ barely resists.
+
+はかろうじて抵抗した。
+%%%%
+ struggle to resist.
+
+はやっとのことで抵抗した。
+%%%%
+ struggles to resist.
+
+はやっとのことで抵抗した。
+%%%%
+ resist with significant effort.
+
+はそれをなんとか耐えた。
+%%%%
+ resists with significant effort.
+
+はそれをなんとか耐えた。
+%%%%
+ resist with some effort.
+
+はそれに抵抗した。
+%%%%
+ resists with some effort.
+
+はそれに抵抗した。
+%%%%
+ easily resist.
+
+はそれをたやすく退けた。
+%%%%
+ easily resists.
+
+はそれをたやすく退けた。
+%%%%
+ resist with almost no effort.
+
+はそれを気にも留めなかった。
+%%%%
+ resists with almost no effort.
+
+はそれを気にも留めなかった。
+%%%%
+Your will lashes out at %s%s
+
+あなたの意志が%sに襲いかかった%s
+%%%%
+Your mind is blasted!
+
+あなたの精神は打ち砕かれた！
+%%%%
+You feel an ill-omen....
+
+あなたは不吉な予感がした……
+%%%%
+Your body is warped painfully!
+
+あなたの体は苦痛とともに歪められた！
+%%%%
+# パイ投げ(SPELL_THROW_PIE)の味
+[pie]plum!
+
+プラム味だ！
+%%%%
+[pie]lemon!
+
+レモン味だ！
+%%%%
+[pie]blueberry!
+
+ブルーベリー味だ！
+%%%%
+[pie]cherry!
+
+チェリー味だ！
+%%%%
+[pie]peanut brittle!
+
+ピーナッツ・ブリトル味だ！
+%%%%
+[pie]glitter!
+
+ラメ入りだ！
+%%%%
+You feel your light-headedness will last longer.
+
+あなたはめまいが長引きそうな気がした。
+%%%%
+You feel light-headed.
+
+あなたはめまいがした。
+%%%%
+You feel your inability to drink will last longer.
+
+あなたは薬を飲めない状態が長引きそうな気がした。
+%%%%
+You feel unable to drink.
+
+あなたは薬を飲めなくなった気がした。
+%%%%
+You feel your silence will last longer.
+
+あなたは静寂が長引きそうな気がした。
+%%%%
+ looks more vulnerable to fire.
+
+は炎に弱くなったようだ。
+%%%%
+You feel your vulnerability to fire will last longer.
+
+あなたは炎への脆弱さが長引きそうな気がした。
+%%%%
+Cherry-coloured flames burn away your fire resistance!
+
+チェリー色の炎があなたの火炎耐性を焼き払った！
+%%%%
+# 命中の文。引数: ビーム名、対象、[beam verb] の訳
+The %s %s %s!
+
+%sは%s%s！
+%%%%
+# 命中の文(beam.cc と ranged-attack.cc で共通)。
+# 引数: ビーム名、「〜の力で」(または空)、対象、[beam verb] の訳、
+#       「が、傷を負わせなかった」など(または空)、句読点
+The %s %s %s%s%s%s
+
+%sは%s%s%s%s%s
+%%%%
+[chaos beam] with %s
+
+%sの力で
+%%%%
+ but does no damage
+
+が、傷を負わせなかった
+%%%%
+[beam target]you
+
+あなた
+%%%%
+[beam target]your lifeless body
+
+あなたの亡骸
+%%%%
+# ビームが当たったときの動詞(助詞から始める)。hit_verb の値
+[beam verb]hits
+
+に命中した
+%%%%
+[beam verb]engulfs
+
+をとりまいた
+%%%%
+[beam verb]engulf
+
+をとりまいた
+%%%%
+[beam verb]envelops
+
+を包み込んだ
+%%%%
+[beam verb]skewers
+
+を串刺しにした
+%%%%
+[beam verb]skewer
+
+を串刺しにした
+%%%%
+[beam verb]passes through
+
+を通り抜けた
+%%%%
+[beam verb]pierces through
+
+を貫いた
+%%%%
+[beam verb]grips
+
+をつかんだ
+%%%%
+[beam verb]grasp
+
+をつかんだ
+%%%%
+[beam verb]batters
+
+を打ちのめした
+%%%%
+[beam verb]weakly hits
+
+に弱々しく命中した
+%%%%
+[beam verb]blasts
+
+に炸裂した
+%%%%
+[beam verb]feebly blasts
+
+に弱々しく炸裂した
+%%%%
+[beam verb]drowns
+
+を溺れさせた
+%%%%
+[beam verb]burns
+
+を焼いた
+%%%%
+[beam verb]pelts
+
+に降り注いだ
+%%%%
+[beam verb]slices through
+
+を切り裂いた
+%%%%
+You are skewered in place!
+
+あなたは串刺しにされ、その場に縫い留められた！
+%%%%
+A part of your body evaporates into steam!
+
+あなたの体の一部が蒸発して湯気になった！
+%%%%
+ shatters and turns to gold!
+
+は砕け散り、金に変わった！
+%%%%
+ is paralysed.
+
+は麻痺した。
+%%%%
+ is blinded.
+
+は目が見えなくなった。
+%%%%
+ is pinned in place!
+
+はその場に縫い留められた！
+%%%%
+# actor::resists_dislodge() の引数(「〜こと」の形)
+being pulled
+
+引き寄せられること
+%%%%
+# 引数: 引き寄せられた者、ビーム名
+%s is yanked forward by the %s.
+
+%sは%sに引き寄せられた。
+%%%%
+# 引数: 防いだ者、ビーム名、盾
+%s blocks the %s with %s... and reflects it back!
+
+%sは%sを%sで防ぎ、はね返した！
+%%%%
+%s blocks the %s... and reflects it back!
+
+%sは%sを防ぎ、はね返した！
+%%%%
+%s blocks the %s with an invisible shield... and reflects it back!
+
+%sは%sを目に見えない盾で防ぎ、はね返した！
+%%%%
+The %s reflects off an invisible shield around %s!
+
+%sは%sの周囲の目に見えない盾ではね返された！
+%%%%
+%s absorbs the %s as it strikes your slime.
+
+%sはあなたのスライムに当たった%sを吸収した。
+%%%%
+%s repels the %s!
+
+%sは%sを逸らした！
+%%%%
+The %s misses %s.
+
+%sは%sに当たらなかった。
+%%%%
+%s is dispelled%s
+
+%sは祓われた%s
+%%%%
+%s writhes in agony%s
+
+%sは苦痛に悶えた%s
+%%%%
+ is cursed with the promise of agony.
+
+は苦悶の呪いをかけられた。
+%%%%
+%s is blasted smooth%s
+
+%sは打ち砕かれてつるつるになった%s
+%%%%
+# 引数は DESC_ITS の名前(「〜の」まで)
+%s mind is blasted%s
+
+%s精神は打ち砕かれた%s
+%%%%
+ surges with doubled vitality!
+
+は二倍の活力に満ちあふれた！
+%%%%
+ wounds heal themselves!
+
+負傷が完治した！
+%%%%
+ is charmed!
+
+は魅了された！
+%%%%
+%s seems less certain of its magic.
+
+%sは魔法の扱いがおぼつかなくなったようだ。
+%%%%
+The magic binding %s to this plane unravels!
+
+%sをこの次元に繋ぎ止めていた魔力がほどけた！
+%%%%
+ venom grows more potent.
+
+毒がより強力になった。
+%%%%
+# 引数は apostrophise() 済みの名前(「〜の」まで)
+A stygian plague fills %s body.
+
+冥府の疫病が%s体を満たした。
+%%%%
+ body is warped painfully!
+
+体が苦痛とともに歪められた！
+%%%%
+# enchant_monster_invisible() の how
+[invisible how]flickers and vanishes
+
+点滅して消えた
+%%%%
+# 爆発の表示(spell_explosions)
+The sphere of damnation explodes!
+
+天罰の球が炸裂した！
+%%%%
+the wailing of the damned
+
+亡者たちの嘆き
+%%%%
+The fireball explodes!
+
+火球が爆発した！
+%%%%
+an explosion
+
+爆発音
+%%%%
+The orb of electricity explodes!
+
+電撃の球体が爆発した！
+%%%%
+a clap of thunder
+
+雷鳴
+%%%%
+A raging storm of fire appears!
+
+猛烈な火焔の嵐が巻き起こった！
+%%%%
+a raging storm
+
+激しい嵐の音
+%%%%
+The flask of dizzying concoctions shatters into a vile cloud!
+
+めまいを誘う調合薬のフラスコが砕け、悪臭の雲が広がった！
+%%%%
+a loud shattering of glass
+
+ガラスが激しく割れる音
+%%%%
+The ghostly flame explodes!
+
+鬼火の火球が爆発した！
+%%%%
+the shriek of haunting fire
+
+鬼火の発する悲鳴
+%%%%
+The enchantments explode!
+
+掛かっていた魔力が爆発を起こした！
+%%%%
+a sharp crackling
+
+鋭い炸裂音
+%%%%
+The mass of ice explodes!
+
+大量の氷が炸裂した！
+%%%%
+Piercing cold boils outward!
+
+刺すような冷気が外へと噴き出した！
+%%%%
+A wave of flame ripples out!
+
+炎の波が広がった！
+%%%%
+the roar of flame
+
+炎の轟き
+%%%%
+The roots erupt in riotous growth!
+
+根が猛烈な勢いで生え広がった！
+%%%%
+creaking and crackling
+
+きしむような、はぜるような音
+%%%%
+a concussive explosion
+
+衝撃を伴う爆発音
+%%%%
+The gout of umbral fire explodes!
+
+冥い炎の噴流が爆発した！
+%%%%
+the shriek of umbral fire
+
+冥い炎の発する悲鳴
+%%%%
+Space twists violently!
+
+空間が激しくねじれた！
+%%%%
+shrill echo
+
+甲高い反響
+%%%%
+The embers explode!
+
+燃えさしが爆発した！
+%%%%
+a fiery explosion
+
+燃えさかる爆発音
+%%%%
+The antimagic surges outward!
+
+反魔法の力が外へと押し寄せた！
+%%%%
+a quiet echo
+
+かすかな反響
+%%%%
+The shards fragment into shrapnel!
+
+破片が砕けて散弾となった！
+%%%%
+The flickering shadows explode!
+
+揺らめく影が爆発した！
+%%%%
+a quiet whistle
+
+かすかな笛のような音
+%%%%
+The ball of acid explodes!
+
+酸の球が爆発した！
+%%%%
+a violent squelch
+
+激しくぐしゃっという音
+%%%%
+You hear an explosion!
+
+あなたは爆発音を耳にした！
+%%%%
+The beam explodes into a cloud of software bugs!
+
+ビームは爆発してソフトウェアのバグの雲になった！
+%%%%
+You hear the sound of one hand!
+
+あなたは隻手の声を耳にした！
+%%%%
+# explode_noise_msg(mon-explode.cc, decks.cc で設定、beam.cc で表示)
+You hear a clap of thunder!
+
+あなたは雷鳴を耳にした！
+%%%%
+You hear an otherworldly crackling!
+
+あなたは鬼火のパチパチと爆ぜる音を聞いた！
+%%%%
+You hear an high-pitched explosion!
+
+あなたは甲高い爆発音を耳にした！
+%%%%
+You hear an extremely violent squelch.
+
+あなたは凄まじくぐしゃっという音を耳にした。
+%%%%
+# 確認プロンプト
+charm %s
+
+%sを魅了
+%%%%
+That %s could hit you up to %d times. Continue anyway?
+
+この%sはあなたに最大%d回命中する可能性がある。それでも続けますか？
+%%%%
+# cancel_beam_prompt()。引数: 対象の名前、suffix、懲罰の警告
+Really fire at %s%s?%s
+
+本当に%s%sに向けて撃ちますか？%s
+%%%%
+Really fire in %s direction%s?%s
+
+本当に%s%sの方向へ撃ちますか？%s
+%%%%
+Really fire towards %s%s?%s
+
+本当に%s%sの方へ撃ちますか？%s
+%%%%
+ This would place you under penance!
+
+神に懺悔をする羽目になりますよ！
+%%%%
+# ビームの属性名(混沌のビーム、ジーヴァの吸収などの表示)
+[beam name]none
+
+なし
+%%%%
+[beam name]missile
+
+飛び道具
+%%%%
+[beam name]magic missile
+
+魔法の射撃
+%%%%
+[beam name]fire
+
+炎
+%%%%
+[beam name]cold
+
+冷気
+%%%%
+[beam name]water
+
+水しぶき
+%%%%
+[beam name]magic
+
+魔法
+%%%%
+[beam name]electricity
+
+電撃
+%%%%
+[beam name]noxious fumes
+
+悪臭
+%%%%
+[beam name]poison
+
+毒
+%%%%
+[beam name]negative energy
+
+負のエネルギー
+%%%%
+[beam name]acid
+
+酸
+%%%%
+[beam name]light
+
+光
+%%%%
+[beam name]miasma
+
+瘴気
+%%%%
+[beam name]spores
+
+胞子
+%%%%
+[beam name]poison sting
+
+毒針
+%%%%
+[beam name]damnation
+
+天罰
+%%%%
+[beam name]sticky fire
+
+焼夷の炎
+%%%%
+[beam name]steam
+
+蒸気
+%%%%
+[beam name]energy
+
+エネルギーの奔流
+%%%%
+[beam name]cleansing flame
+
+浄化の炎
+%%%%
+[beam name]foul flame
+
+穢れの炎
+%%%%
+[beam name]fragments
+
+破片
+%%%%
+[beam name]magma
+
+溶岩
+%%%%
+[beam name]ice
+
+氷
+%%%%
+[beam name]thunder
+
+雷
+%%%%
+[beam name]stunning bolt
+
+気絶の矢
+%%%%
+[beam name]destruction
+
+破壊
+%%%%
+[beam name]random
+
+ランダムな光線
+%%%%
+[beam name]chaos
+
+混沌
+%%%%
+[beam name]slow
+
+減速の光線
+%%%%
+[beam name]haste
+
+加速の光線
+%%%%
+[beam name]might
+
+強化の光線
+%%%%
+[beam name]healing
+
+治癒の光線
+%%%%
+[beam name]paralysis
+
+麻痺の光線
+%%%%
+[beam name]confusion
+
+混乱の光線
+%%%%
+[beam name]invisibility
+
+透明化の光線
+%%%%
+[beam name]digging
+
+掘削の光線
+%%%%
+[beam name]teleportation
+
+テレポートの光線
+%%%%
+[beam name]polymorph
+
+変化の光線
+%%%%
+[beam name]malmutation
+
+悪性変異の光線
+%%%%
+[beam name]charming
+
+魅了の光線
+%%%%
+[beam name]banishment
+
+追放の光線
+%%%%
+[beam name]pain
+
+苦痛の光線
+%%%%
+[beam name]agony
+
+苦悶の光線
+%%%%
+[beam name]curse of agony
+
+苦悶の呪い
+%%%%
+[beam name]dispel undead
+
+アンデッドの解呪の光線
+%%%%
+[beam name]mindburst
+
+精神爆破
+%%%%
+[beam name]blink
+
+瞬間移動の光線
+%%%%
+[beam name]blink close
+
+瞬間引き寄せの光線
+%%%%
+[beam name]beckoning
+
+招き寄せの光線
+%%%%
+[beam name]petrify
+
+石化の光線
+%%%%
+[beam name]backlight
+
+照身の光線
+%%%%
+[beam name]porkalator
+
+豚化の光線
+%%%%
+[beam name]hibernation
+
+眠りの光線
+%%%%
+[beam name]sleep
+
+眠りの光線
+%%%%
+[beam name]berserk
+
+バーサークの光線
+%%%%
+[beam name]visual effects
+
+視覚効果
+%%%%
+[beam name]torment damage
+
+邪悪なる苦痛の光線
+%%%%
+[beam name]air
+
+疾風
+%%%%
+[beam name]inner flame
+
+内なる炎
+%%%%
+[beam name]calcifying dust
+
+石化の粉塵
+%%%%
+[beam name]magic web
+
+魔法の網
+%%%%
+[beam name]sentinel's mark
+
+番兵の標的
+%%%%
+[beam name]dimension anchor
+
+次元の碇
+%%%%
+[beam name]vulnerability
+
+脆弱化の光線
+%%%%
+[beam name]malign offering
+
+悪意の供物の光線
+%%%%
+[beam name]virulence
+
+病毒の光線
+%%%%
+[beam name]agility
+
+敏捷化の光線
+%%%%
+[beam name]sap magic
+
+魔法阻害の光線
+%%%%
+[beam name]drain magic
+
+衰弱の光線
+%%%%
+[beam name]diminish spells
+
+呪文減衰の光線
+%%%%
+[beam name]tukima's dance
+
+ツキマーの舞踏
+%%%%
+[beam name]breath of the dead
+
+死の息吹
+%%%%
+[beam name]resistance
+
+耐性強化の光線
+%%%%
+[beam name]unravelling
+
+魔法解除術
+%%%%
+[beam name]unravelled magic
+
+破損された魔力
+%%%%
+[beam name]shared pain
+
+痛み分け
+%%%%
+[beam name]infestation
+
+寄生
+%%%%
+[beam name]vile clutch
+
+邪悪なる把握
+%%%%
+[beam name]vampiric draining
+
+吸血
+%%%%
+[beam name]concentrate venom
+
+毒の濃縮
+%%%%
+[beam name]enfeeble
+
+衰弱
+%%%%
+[beam name]soul splinter
+
+魂の欠片
+%%%%
+[beam name]roots
+
+根
+%%%%
+[beam name]vitrification
+
+ガラス化
+%%%%
+[beam name]weakness
+
+弱体化の光線
+%%%%
+[beam name]devastation
+
+破滅の光線
+%%%%
+[beam name]umbral torchlight
+
+冥い松明の光
+%%%%
+[beam name]crystallising
+
+結晶化
+%%%%
+[beam name]spatial disruption
+
+空間の乱れ
+%%%%
+[beam name]upheaval targetter
+
+激変の照準
+%%%%
+[beam name]rimeblight
+
+霜枯れ
+%%%%
+[beam name]shadow torpor
+
+影の倦怠
+%%%%
+[beam name]gore
+
+血しぶき
+%%%%
+[beam name]blood
+
+血
+%%%%
+[beam name]vigour-doubling
+
+活力倍増
+%%%%
+[beam name]vexing
+
+苛立ちの光線
+%%%%
+[beam name]seismic shockwave
+
+地震の衝撃波
+%%%%
+[beam name]entwining bolas
+
+絡みつくボーラ
+%%%%
+[beam name]mercury
+
+水銀
+%%%%
+[beam name]cloud of bats
+
+蝙蝠の群れ
+%%%%
+[beam name]omen
+
+凶兆
+%%%%
+[beam name]warp body
+
+肉体の歪曲
+%%%%
+[beam name]lightning
+
+稲妻
+%%%%
+[beam name]dispelling energy
+
+魔法解除のエネルギー
+%%%%
+# ビーム名(zap-data.h 以外で設定され、beam.cc の zap_name_j で表示するもの)
+[zap]fiery explosion
+
+燃えさかる爆発
+%%%%
+[zap]shock of your passage
+
+あなたの通過の衝撃
+%%%%
+[zap]barrage of energy
+
+エネルギーの集中砲火
+%%%%
+[zap]irradiate
+
+放射の光
+%%%%
+[zap]plasma beam
+
+プラズマ光線
+%%%%
+[zap]shillelagh
+
+棍棒の一撃
+%%%%
+[zap]infestation
+
+寄生
+%%%%
