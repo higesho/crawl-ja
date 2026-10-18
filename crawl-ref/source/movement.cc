@@ -18,6 +18,7 @@
 #include "cloud.h"
 #include "coord.h"
 #include "coordit.h"
+#include "database.h"
 #include "delay.h"
 #include "directn.h"
 #include "dungeon.h"
@@ -74,16 +75,16 @@ void player_displace_monster(monster* mons, const coord_def &loc)
 
     // Friendly seekers dissipate when the player swaps into them.
     if (loc != you.pos())
-        mprf("You push %s out of the way.", mons->name(DESC_THE).c_str());
+        mprf(jtransc("You push %s out of the way."), mons->name(DESC_THE).c_str());
     else if (mons_is_seeker(*mons))
     {
-        simple_monster_message(*mons, " dissipates!", false,
+        simple_monster_message(*mons, jtransc(" dissipates!"), false,
                                MSGCH_MONSTER_DAMAGE, MDAM_DEAD);
         monster_die(*mons, KILL_RESET, NON_MONSTER, true);
         return;
     }
     else
-        mprf("You swap places with %s.", mons->name(DESC_THE).c_str());
+        mprf(jtransc("You swap places with %s."), mons->name(DESC_THE).c_str());
 
     mons->move_to(loc, MV_ALLOW_OVERLAP, true);
 }
@@ -125,8 +126,7 @@ static bool _cancel_barbed_move()
     if (you.duration[DUR_BARBS] && !you.props.exists(BARBS_MOVE_KEY)
         && !crawl_state.disables[DIS_CONFIRMATIONS])
     {
-        std::string prompt = "The barbs in your skin will harm you if you move.";
-        prompt += " Continue?";
+        std::string prompt = jtrans("The barbs in your skin will harm you if you move. Continue?");
         if (!yesno(prompt.c_str(), false, 'n'))
         {
             canned_msg(MSG_OK);
@@ -143,14 +143,14 @@ static void _apply_barbs_damage()
 {
     if (you.duration[DUR_BARBS])
     {
-        mprf(MSGCH_WARN, "The barbed spikes dig painfully into your body "
-                         "as you move.");
+        mprf(MSGCH_WARN, jtransc("The barbed spikes dig painfully into your body "
+                         "as you move."));
         ouch(roll_dice(2, you.attribute[ATTR_BARBS_POW]), KILLED_BY_BARBS);
         bleed_onto_floor(you.pos(), MONS_PLAYER, 2, false);
 
         // Sometimes decrease duration even when we move.
         if (one_chance_in(3))
-            extract_barbs("The barbed spikes snap loose.");
+            extract_barbs(jtransc("The barbed spikes snap loose."));
         // But if that failed to end the effect, duration stays the same.
         if (you.duration[DUR_BARBS])
             you.duration[DUR_BARBS] += (you.time_taken);
@@ -172,16 +172,16 @@ static bool _cancel_ice_move()
         return false;
 
     if (you.duration[DUR_ICY_ARMOUR])
-        effects.push_back("icy armour");
+        effects.push_back(jtrans("icy armour"));
 
     if (you.duration[DUR_FROZEN_RAMPARTS])
-        effects.push_back("frozen ramparts");
+        effects.push_back(jtrans("frozen ramparts"));
 
     if (!effects.empty())
     {
-        string prompt = "Your "
-                        + comma_separated_line(effects.begin(), effects.end())
-                        + " will break if you move. Continue?";
+        string prompt = make_stringf(jtransc("Your %s will break if you move. Continue?"),
+                            comma_separated_line(effects.begin(), effects.end(),
+                                                 "と", "、").c_str());
 
         if (!yesno(prompt.c_str(), false, 'n'))
         {
@@ -203,8 +203,8 @@ void remove_ice_movement()
 {
     if (you.duration[DUR_ICY_ARMOUR])
     {
-        mprf(MSGCH_DURATION, "Your icy armour cracks and falls away as "
-                             "you move.");
+        mprf(MSGCH_DURATION, jtransc("Your icy armour cracks and falls away as "
+                             "you move."));
         you.duration[DUR_ICY_ARMOUR] = 0;
         you.redraw_armour_class = true;
     }
@@ -213,7 +213,7 @@ void remove_ice_movement()
     {
         you.duration[DUR_FROZEN_RAMPARTS] = 0;
         end_frozen_ramparts();
-        mprf(MSGCH_DURATION, "The frozen ramparts melt away as you move.");
+        mprf(MSGCH_DURATION, jtransc("The frozen ramparts melt away as you move."));
     }
 }
 
@@ -298,28 +298,34 @@ bool cancel_confused_move(bool stationary)
 
     if (dangerous != DNGN_FLOOR || bad_mons)
     {
-        string prompt = "";
-        prompt += "Are you sure you want to ";
-        prompt += !stationary ? "stumble around" : "swing wildly";
-        prompt += " while confused and next to ";
-
+        // 日本語の語順に合わせて、動作・状況ごとに文を分けている
+        string prompt;
         if (dangerous != DNGN_FLOOR)
         {
-            prompt += (dangerous == DNGN_LAVA ? "lava" : "deep water");
-            prompt += flight ? " while you are losing your buoyancy"
-                             : " while your transformation is expiring";
+            // 危険な地形は !stationary のときだけ
+            const string feat = tagged_jtrans("[moveto grid]",
+                dangerous == DNGN_LAVA ? "lava" : "deep water");
+            prompt = make_stringf(flight
+                ? jtransc("Are you sure you want to stumble around while confused "
+                          "and next to %s while you are losing your buoyancy?")
+                : jtransc("Are you sure you want to stumble around while confused "
+                          "and next to %s while your transformation is expiring?"),
+                feat.c_str());
         }
         else
         {
-            string name = remove_prepended_the(bad_mons->name(DESC_PLAIN));
-            if (!starts_with(bad_adj, "your"))
-               bad_adj = "the " + bad_adj;
-            prompt += bad_adj + name + bad_suff;
+            // bad_adj は日本語の連体修飾(「あなたの従者である」など)
+            const string name = bad_adj + bad_mons->name(DESC_PLAIN) + bad_suff;
+            prompt = make_stringf(!stationary
+                ? jtransc("Are you sure you want to stumble around while confused "
+                          "and next to %s?")
+                : jtransc("Are you sure you want to swing wildly while confused "
+                          "and next to %s?"),
+                name.c_str());
         }
-        prompt += "?";
 
         if (penance)
-            prompt += " This could place you under penance!";
+            prompt += jtrans("This could place you under penance!");
 
         if (!crawl_state.disables[DIS_CONFIRMATIONS]
             && !yesno(prompt.c_str(), false, 'n'))
@@ -365,7 +371,7 @@ void open_door_action(coord_def move)
 
         if (num == 0)
         {
-            mpr("There's nothing to open nearby.");
+            mpr(jtrans("There's nothing to open nearby."));
             return;
         }
 
@@ -392,7 +398,7 @@ void open_door_action(coord_def move)
                                                                  MAT_ANY,
                                                                  "veto_reason");
         if (door_veto_message.empty())
-            mpr("The door is shut tight!");
+            mpr(jtrans("The door is shut tight!"));
         else
             mpr(door_veto_message);
         if (you.confused())
@@ -424,15 +430,15 @@ void open_door_action(coord_def move)
         if (!door_already_open.empty())
             mpr(door_already_open);
         else
-            mpr("It's already open!");
+            mpr(jtrans("It's already open!"));
         break;
     }
     case DNGN_SEALED_DOOR:
     case DNGN_SEALED_CLEAR_DOOR:
-        mpr("That door is sealed shut!"); // should use door noun?
+        mpr(jtrans("That door is sealed shut!")); // should use door noun?
         break;
     default:
-        mpr("There isn't anything that you can open there!");
+        mpr(jtrans("There isn't anything that you can open there!"));
         break;
     }
 }
@@ -441,7 +447,7 @@ void close_door_action(coord_def move)
 {
     if (you.attribute[ATTR_HELD])
     {
-        mprf("You can't close doors while %s.", held_status());
+        mprf(jtransc("You can't close doors while %s."), jtransc(held_status()));
         return;
     }
 
@@ -463,10 +469,10 @@ void close_door_action(coord_def move)
             if (_check_adjacent(DNGN_BROKEN_DOOR, move)
                 || _check_adjacent(DNGN_BROKEN_CLEAR_DOOR, move))
             {
-                mpr("It's broken and can't be closed.");
+                mpr(jtrans("It's broken and can't be closed."));
             }
             else
-                mpr("There's nothing to close nearby.");
+                mpr(jtrans("There's nothing to close nearby."));
             return;
         }
         // move got set in _check_adjacent
@@ -498,14 +504,14 @@ void close_door_action(coord_def move)
     case DNGN_RUNED_CLEAR_DOOR:
     case DNGN_SEALED_DOOR:
     case DNGN_SEALED_CLEAR_DOOR:
-        mpr("It's already closed!");
+        mpr(jtrans("It's already closed!"));
         break;
     case DNGN_BROKEN_DOOR:
     case DNGN_BROKEN_CLEAR_DOOR:
-        mpr("It's broken and can't be closed!");
+        mpr(jtrans("It's broken and can't be closed!"));
         break;
     default:
-        mpr("There isn't anything that you can close there!");
+        mpr(jtrans("There isn't anything that you can close there!"));
         break;
     }
 }
@@ -518,13 +524,13 @@ bool prompt_dangerous_portal(dungeon_feature_type ftype)
     {
     case DNGN_ENTER_PANDEMONIUM:
     case DNGN_ENTER_ZIGGURAT:
-        return yesno("If you enter this portal you might not be able to return "
-                     "immediately. Continue?", false, 'n');
+        return yesno(jtransc("If you enter this portal you might not be able to return "
+                     "immediately. Continue?"), false, 'n');
     case DNGN_ENTER_ABYSS:
     {
-        return yesno(make_stringf("If you enter this portal you could be pulled as "
+        return yesno(make_stringf(jtransc("If you enter this portal you could be pulled as "
                      "deep as Abyss:%d and might not be able to return immediately. "
-                     "Continue?", abyss_default_depth(true)).c_str(), false, 'n');
+                     "Continue?"), abyss_default_depth(true)).c_str(), false, 'n');
     }
     default:
         return true;
@@ -536,8 +542,8 @@ bool prompt_descent_shortcut(dungeon_feature_type ftype)
     if (ftype == DNGN_ENTER_DEPTHS && !player_in_branch(BRANCH_SLIME)
         || ftype == DNGN_ENTER_SLIME && !player_in_branch(BRANCH_VAULTS))
     {
-        return yesno("This entrance appears to skip some branches and may be "
-                     "quite dangerous. Continue anyway?", false, 'n');
+        return yesno(jtransc("This entrance appears to skip some branches and may be "
+                     "quite dangerous. Continue anyway?"), false, 'n');
     }
     return true;
 }
@@ -623,27 +629,27 @@ monster* get_rampage_target(coord_def move)
 static void _handle_trying_to_move_into_unpassable_terrain(coord_def targ)
 {
     if (env.grid(targ) == DNGN_OPEN_SEA)
-        mpr("The ferocious winds and tides of the open sea thwart your progress.");
+        mpr(jtrans("The ferocious winds and tides of the open sea thwart your progress."));
     else if (env.grid(targ) == DNGN_LAVA_SEA)
-        mpr("The endless sea of lava is not a nice place.");
+        mpr(jtrans("The endless sea of lava is not a nice place."));
     else if (feat_is_tree(env.grid(targ)) && you_worship(GOD_FEDHAS))
     {
         if (you.digging)
-            mpr("You cannot dig through the dense trees.");
+            mpr(jtrans("You cannot dig through the dense trees."));
         else
-            mpr("You cannot walk through the dense trees.");
+            mpr(jtrans("You cannot walk through the dense trees."));
     }
     else if (env.grid(targ) == DNGN_MALIGN_GATEWAY)
-        mpr("The malign portal rejects you as you step towards it.");
+        mpr(jtrans("The malign portal rejects you as you step towards it."));
     // Why isn't the border permarock?
     else if (you.digging && !in_bounds(targ))
-        mpr("This wall is too hard to dig through.");
+        mpr(jtrans("This wall is too hard to dig through."));
     else if (you.digging && env.grid(targ) == DNGN_SLIMY_WALL)
-        mpr("Trying to dig through that would dissolve your mandibles.");
+        mpr(jtrans("Trying to dig through that would dissolve your mandibles."));
     else if (you.digging)
-        mpr("You can't dig through that.");
+        mpr(jtrans("You can't dig through that."));
     else if (you.current_vision == 0)
-        mpr("You feel something solid in that direction.");
+        mpr(jtrans("You feel something solid in that direction."));
 
     // Show the player the wall they've just bumped into, if they can't see it.
     if (you.current_vision == 0)
@@ -669,8 +675,8 @@ static bool _adjust_confused_movement(coord_def& move)
         // Don't choose a random location to try to attack into - allows
         // abuse, since trying to move (not attack) takes no time, and
         // shouldn't. Just force confused trees to use ctrl.
-        mpr("You cannot move. (Use ctrl+direction or * direction to "
-            "attack while stationary and confused.)");
+        mpr(jtrans("You cannot move. (Use ctrl+direction or * direction to "
+            "attack while stationary and confused.)"));
         return false;
     }
 
@@ -686,7 +692,7 @@ static bool _adjust_confused_movement(coord_def& move)
         move.y = random2(3) - 1;
         if (move.origin())
         {
-            mpr("You're too confused to move!");
+            mpr(jtrans("You're too confused to move!"));
             you.turn_is_over = true;
             crawl_state.cancel_cmd_repeat();
             return false;
@@ -698,17 +704,19 @@ static bool _adjust_confused_movement(coord_def& move)
     // Test if our new location is somewhere we cannot move, and abort early if so.
     if (!in_bounds(new_targ) || !you.can_pass_through(new_targ))
     {
-        mprf("You bump into %s.",
-                    feature_description_at(new_targ, false,
-                                        DESC_THE).c_str());
+        mprf(jtransc("You bump into %s."),
+                    tagged_jtrans("[feature]",
+                        feature_description_at(new_targ, false,
+                                               DESC_PLAIN)).c_str());
         you.turn_is_over = true;
         crawl_state.cancel_cmd_repeat();
         return false;
     }
     else if (is_feat_dangerous(env.grid(new_targ)))
     {
-        mprf("You nearly stumble into %s!",
-                feature_description_at(new_targ, false, DESC_THE).c_str());
+        mprf(jtransc("You nearly stumble into %s!"),
+                tagged_jtrans("[feature]",
+                    feature_description_at(new_targ, false, DESC_PLAIN)).c_str());
         you.turn_is_over = true;
         crawl_state.cancel_cmd_repeat();
         return false;
@@ -764,8 +772,8 @@ static bool _handle_player_step(const coord_def& targ, int& delay, bool rampagin
             && !you.confused()
             && mon->visible_to(&you))
         {
-            simple_monster_message(*mon, " refuses to make way for you. "
-                            "(Use ctrl+direction or * direction to attack.)");
+            simple_monster_message(*mon, jtransc(" refuses to make way for you. "
+                            "(Use ctrl+direction or * direction to attack.)"));
             return false;
         }
 
@@ -840,7 +848,7 @@ static bool _handle_player_step(const coord_def& targ, int& delay, bool rampagin
     {
         if (you.is_nervous())
         {
-            mpr("You're too terrified to move while being watched!");
+            mpr(jtrans("You're too terrified to move while being watched!"));
             return false;
         }
         // If we're rampaging, we've already determined that the endpoint is at
@@ -849,13 +857,13 @@ static bool _handle_player_step(const coord_def& targ, int& delay, bool rampagin
         {
             if (monster* beholder = you.get_beholder(targ))
             {
-                mprf("You cannot move away from %s!",
+                mprf(jtransc("You cannot move away from %s!"),
                      beholder->name(DESC_THE).c_str());
                 return false;
             }
             else if (monster* fearmonger = you.get_fearmonger(targ))
             {
-                mprf("You cannot move closer to %s!",
+                mprf(jtransc("You cannot move closer to %s!"),
                     fearmonger->name(DESC_THE).c_str());
                 return false;
             }
@@ -871,8 +879,8 @@ static bool _handle_player_step(const coord_def& targ, int& delay, bool rampagin
             you.digging = false;
         else
         {
-            mprf("You dig through %s.", feature_description_at(targ, false,
-                    DESC_THE).c_str());
+            mprf(jtransc("You dig through %s."), tagged_jtrans("[feature]",
+                    feature_description_at(targ, false, DESC_PLAIN)).c_str());
             destroy_wall(targ);
             noisy(6, you.pos());
             drain_player(15, false, true);
@@ -891,10 +899,13 @@ static bool _handle_player_step(const coord_def& targ, int& delay, bool rampagin
             const monster* current = monster_at(you.pos());
             if (!current || !fedhas_passthrough(current))
             {
-                mprf("You %s carefully through the %s.",
-                        _get_move_verb(rampaging).c_str(),
-                    mons_genus(mon->type) == MONS_FUNGUS ? "fungus"
-                                                         : "plants");
+                // 移動の動詞は「歩いて移動」などの名詞形([move verb]、player.txt)
+                const string verb = tagged_jtrans("[move verb]",
+                                                  _get_move_verb(rampaging));
+                if (mons_genus(mon->type) == MONS_FUNGUS)
+                    mprf(jtransc("You %s carefully through the fungus."), verb.c_str());
+                else
+                    mprf(jtransc("You %s carefully through the plants."), verb.c_str());
             }
         }
         else
@@ -925,7 +936,7 @@ static bool _handle_player_step(const coord_def& targ, int& delay, bool rampagin
             && mon->hit_points < mon->max_hit_points)
         {
             mon->heal(mon->max_hit_points * 3 / 4);
-            mprf("You weave more energy into your solar ember.");
+            mprf(jtransc("You weave more energy into your solar ember."));
         }
 
         mon->finalise_movement();
@@ -1021,7 +1032,11 @@ void move_player_action(coord_def move)
     // Print a message, if rampaging.
     if (num_steps > 1)
     {
-        mprf("You %s towards %s!", move_verb.c_str(), mon_target->name(DESC_THE, true).c_str());
+        // 日本語の語順に合わせて引数を入れ替えている(相手、移動の動詞)。
+        // move_verb は check_moveto() に渡すので英語のまま
+        mprf(jtransc("You %s towards %s!"),
+             mon_target->name(DESC_THE, true).c_str(),
+             tagged_jtrans("[move verb]", move_verb).c_str());
 
         // Prevent full-LoS stabbing with Seven League Boots.
         if (you.unrand_equipped(UNRAND_SEVEN_LEAGUE_BOOTS))

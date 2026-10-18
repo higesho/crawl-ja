@@ -1,0 +1,403 @@
+%%%%
+# ============================================================
+#  transform.cc
+#  変身の説明(form-data.h の description)の訳は data-forms.txt にあり、
+#  「〜の姿を」で終わる。下の "You turn into %s" などはそれを受ける形にする。
+# ============================================================
+# 融合した装備(% 画面・A 画面)
+Your equipment is entirely melded.
+
+あなたの装備はすべて肉体と融合している。
+%%%%
+Your weapons and armour are melded.
+
+あなたの武器と防具は肉体と融合している。
+%%%%
+Your auxiliary armour is melded.
+
+あなたの補助防具は肉体と融合している。
+%%%%
+Your equipment is almost entirely melded
+
+あなたの装備はほぼすべて肉体と融合している。
+%%%%
+Your %s is melded.
+
+あなたの%sは肉体と融合している。
+%%%%
+All Equipment
+
+全装備
+%%%%
+All Weapons and Armour
+
+全武器・防具
+%%%%
+# 装備スロット名(equip_slot_name() の表示用)
+[equip slot]Weapon
+
+武器
+%%%%
+[equip slot]Cloak
+
+クローク
+%%%%
+[equip slot]Helmet
+
+兜
+%%%%
+[equip slot]Gloves
+
+手袋
+%%%%
+[equip slot]Boots
+
+ブーツ
+%%%%
+[equip slot]Offhand
+
+副手
+%%%%
+[equip slot]Body Armour
+
+胴鎧
+%%%%
+[equip slot]Armour
+
+鎧
+%%%%
+[equip slot]Barding
+
+馬甲
+%%%%
+[equip slot]Ring
+
+指輪
+%%%%
+[equip slot]Amulet
+
+護符
+%%%%
+[equip slot]Gizmo
+
+ガジェット
+%%%%
+# 変身の説明(%s は「〜の姿を」)
+[form desc]You are %s
+
+あなたは%sとっている。
+%%%%
+[form desc]You were %s
+
+あなたは%sとっていた。
+%%%%
+You turn into %s
+
+あなたは%sとった。
+%%%%
+Your transformation has ended.
+
+あなたの変身は解けた。
+%%%%
+your old self.
+
+元の姿を
+%%%%
+a living statue of rough stone.
+
+荒削りの生ける石像の姿を
+%%%%
+a fearsome %s!
+
+恐ろしい%sの姿を
+%%%%
+# 素手攻撃の名前
+[uc attack]Nothing wielded
+
+何も装備していない
+%%%%
+Stone %s
+
+石の%s
+%%%%
+Storm %s
+
+嵐の%s
+%%%%
+Eel %s
+
+鰻の%s
+%%%%
+[hand parts]main
+
+主要な
+%%%%
+# 各変身
+You are overflowing with transmutational energy.
+
+あなたは変成のエネルギーで満ちあふれている。
+%%%%
+You were overflowing with transmutational energy.
+
+あなたは変成のエネルギーで満ちあふれていた。
+%%%%
+Your body destabilises.
+
+あなたの体は不安定になった。
+%%%%
+Your body stabilises again.
+
+あなたの体は再び安定した。
+%%%%
+You have blades growing out of your body.
+
+あなたの体からは刃が生えている。
+%%%%
+You had blades growing out of your body.
+
+あなたの体からは刃が生えていた。
+%%%%
+Blades grow out of your body!
+
+あなたの体から刃が生えてきた！
+%%%%
+Your blades shrink back into your body and disappear.
+
+あなたの刃は体の中へ縮んで消えた。
+%%%%
+You inwardly fear your resemblance to a lawn ornament.
+
+あなたは自分が庭の置物に似ていることを内心恐れた。
+%%%%
+You revert to your normal fleshy form.
+
+あなたは元の肉体の姿に戻った。
+%%%%
+Your flesh twists and warps into a mockery of life!
+
+あなたの肉体はねじれ歪み、生命を嘲るものと化した！
+%%%%
+You feel yourself come back to life.
+
+あなたは生命を取り戻した気がした。
+%%%%
+You feel less batty.
+
+あなたは蝙蝠らしさが抜けた。
+%%%%
+You feel less porcine.
+
+あなたは豚らしさが抜けた。
+%%%%
+You feel less wooden.
+
+あなたは木らしさが抜けた。
+%%%%
+You condense into your normal self.
+
+あなたは凝縮して元の姿に戻った。
+%%%%
+You stop sporulating.
+
+あなたは胞子を振りまくのを止めた。
+%%%%
+You feel less shadowy.
+
+あなたは影の雰囲気が薄れた気がした。
+%%%%
+You emerge from the shadows.
+
+あなたは影の中から姿を現した。
+%%%%
+Sharp quills grow all over your body.
+
+あなたの全身から鋭い針が生えてきた。
+%%%%
+Your quills recede back into your body.
+
+あなたの針は体の中へ引っ込んだ。
+%%%%
+Makhleb calls their payment due...
+
+マクレブが代償の支払いを求めてきた……
+%%%%
+vessel of slaughter (+%d%% damage done)
+
+殺戮の器(与ダメージ +%d%%)
+%%%%
+Your body is made of elemental water.
+
+あなたの体は元素の水でできている。
+%%%%
+Your body was made of elemental water.
+
+あなたの体は元素の水でできていた。
+%%%%
+Your body transforms into elemental water.
+
+あなたの体は元素の水へと変化した。
+%%%%
+Your body returns to its normal shape and substance.
+
+あなたの体は元の形と物質に戻った。
+%%%%
+A mane of stinging tendrils grows from your head.
+
+あなたの頭から毒の触手がたてがみのように生えてきた。
+%%%%
+Your tendrils shrivel away.
+
+あなたの触手はしなびて消えた。
+%%%%
+You have a mane of long, stinging tendrils on your head.
+
+あなたの頭には長い毒の触手がたてがみのように生えている。
+%%%%
+You had a mane of long, stinging tendrils on your head.
+
+あなたの頭には長い毒の触手がたてがみのように生えていた。
+%%%%
+You have electric eels for %s.
+
+あなたの%sは電気鰻になっている。
+%%%%
+You had electric eels for %s.
+
+あなたの%sは電気鰻になっていた。
+%%%%
+Your %s turn into wriggling electric eels!
+
+あなたの%sはのたうつ電気鰻に変わった！
+%%%%
+Your %s revert to their normal form.
+
+あなたの%sは元の形に戻った。
+%%%%
+Dense mycelia sprout from your %s and %s.
+
+あなたの%sと%sから菌糸がびっしりと生えてきた。
+%%%%
+Your mycelia shrivel away.
+
+あなたの菌糸はしなびて消えた。
+%%%%
+Your %s is a mass of colorful fungus.
+
+あなたの%sは色とりどりの菌の塊になっている。
+%%%%
+Your %s was a mass of colorful fungus.
+
+あなたの%sは色とりどりの菌の塊になっていた。
+%%%%
+# 変身できるかの確認
+%s right now would cause you to %s!
+
+今%sと、あなたは%sしまう！
+%%%%
+%s right now would shatter %s!
+
+今%sと、%sが砕けてしまう！
+%%%%
+Transforming right now would cause you to %s!
+
+今変身すると、あなたは%sしまう！
+%%%%
+[unsafe form]Transforming
+
+変身する
+%%%%
+[unsafe form]Untransforming
+
+変身を解く
+%%%%
+[unsafe form]burn
+
+焼け死んで
+%%%%
+[unsafe form]drown
+
+溺れて
+%%%%
+This transformation would significantly lower your maximum hit points. Transform anyway?
+
+この変身はあなたの最大HPを大幅に低下させる。それでも変身しますか？
+%%%%
+# cant_transform_reason()
+You have sacrificed the ability to change form!
+
+あなたは姿を変える能力を捧げてしまった！
+%%%%
+Your unliving flesh cannot be transformed in this way.
+
+あなたの死せる肉体はこの方法では変身することはできない。
+%%%%
+You're already a statue.
+
+あなたは既に石像だ。
+%%%%
+You are stuck in your current form!
+
+あなたは今の姿から変わることができない！
+%%%%
+You cannot mock death while in death's door.
+
+死のとば口に立っている間は死を嘲ることはできない。
+%%%%
+# 変身時・解除時の効果
+%%%%
+Your roots penetrate the ground.
+
+あなたの根っこは大地に食い込んだ。
+%%%%
+Gozag's golden gift will leave your new mouth with nothing to eat.
+
+ゴザーグの黄金の恵みのせいで、あなたの新しい口は何も食べられないだろう。
+%%%%
+Your mandibles meld away.
+
+あなたの大顎は一時的に消え去った。
+%%%%
+Your tiny sun winks out.
+
+あなたの小さな太陽は消え去った。
+%%%%
+%s falls away!
+
+%sは外れ落ちた！
+%%%%
+%s falls away, shattering the curse!
+
+%sは外れ落ち、呪いは砕け散った！
+%%%%
+Your legs become a tail as you dive into the water.
+
+水中に飛び込むと、あなたの脚は尾鰭へと変わった。
+%%%%
+...but don't expect to remain undetected.
+
+……しかし、敵に気付かれないままでいることは期待できない。
+%%%%
+A tiny sun coalesces beside you.
+
+あなたのそばに小さな太陽が凝集した。
+%%%%
+You reconstitute your solar ember.
+
+あなたは太陽の残り火を再び形作った。
+%%%%
+Your maw growls hungrily at the sight of %s.
+
+あなたの大口は%sを見て空腹にうなった。
+%%%%
+Your maw growls hungrily at the sight of %s, but you resist your urges.
+
+あなたの大口は%sを見て空腹にうなったが、あなたは衝動に抗った。
+%%%%
+%s loses itself in your eyes.
+
+%sはあなたの瞳に我を忘れた。
+%%%%
+%s is briefly mesmerised by your gaze.
+
+%sはあなたの眼差しに一瞬魅入られた。
+%%%%

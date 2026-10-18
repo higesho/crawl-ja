@@ -1,0 +1,10 @@
+%%%%
+Being near %s leaves you feeling lethargic.
+
+あなたは%sの近くにいるため無気力感が湧いてきた。
+%%%%
+# %s は DESC_ITS(「〜の」で終わる)
+%s gaze reveals you to all!
+
+%s視線によって、あなたの居場所が皆に知れ渡った！
+%%%%

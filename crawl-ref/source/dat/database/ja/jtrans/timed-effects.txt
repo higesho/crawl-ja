@@ -1,0 +1,81 @@
+%%%%
+Your body shudders with the violent release of wild energies!
+
+あなたの体は荒々しいエネルギーの解放で震えた！
+%%%%
+Your body momentarily shudders from a surge of wild energies until Zin's power calms it.
+
+エネルギーの奔流によってあなたの体が一瞬震えたが、ジンの御業により収まった。
+%%%%
+gurgles merrily.
+
+は陽気にぶくぶくと音を立てた。
+%%%%
+says: Divide and consume!
+
+は『分裂して貪るのだ！』と言った。
+%%%%
+You feel a genetic drift.
+
+あなたは体が変異していくのを感じた。
+%%%%
+Zin dismisses the silver walls, but there is nothing inside them.
+
+ジンは白銀の壁を解除したが、中には何もいなかった。
+%%%%
+You hear a deep rumble.
+
+あなたは何かが崩れる轟音を耳にした。
+%%%%
+You feel the ground shudder.
+
+あなたは大地が震えるのを感じた。
+%%%%
+The runic seals fade away.
+
+ルーンによる扉の封印が解けた。
+%%%%
+The runic seal fades away.
+
+ルーンによる扉の封印が解けた。
+%%%%
+You hear a series of splatters.
+
+あなたは何かが立て続けに飛び散る音を聞いた。
+%%%%
+You hear a splatter.
+
+あなたは何かが飛び散る音を聞いた。
+%%%%
+Death has come for you....
+
+死神があなたを迎えにきた……。
+%%%%
+%s shimmers and splits apart.
+
+%sはゆらめき、分裂した。
+%%%%
+The walls disappear prematurely!
+
+壁は予定より早く消え去った！
+%%%%
+The walls disappear!
+
+壁は消え去った！
+%%%%
+Zin releases %s from prison.
+
+ジンは%sを牢獄から解き放った。
+%%%%
+Your binding sigils disappear.
+
+あなたの束縛の印は消え去った。
+%%%%
+Your binding sigil disappears.
+
+あなたの束縛の印は消え去った。
+%%%%
+Your flames quiet as the last of your memories are burnt away.
+
+最後の記憶が燃え尽きると共に、あなたの炎は静まった。
+%%%%

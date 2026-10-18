@@ -136,7 +136,7 @@ statue-form
 %%%%
 a stone statue.
 
-石像化
+石像の姿を
 %%%%
 [verb]place yourself before
 
@@ -1605,4 +1605,53 @@ Your melee attacks cause explosive burstshrooms to grow.
 [verb]hover solemnly before
 
 浮かびながら姿勢を正した
+%%%%
+# 第3陣で追加: 変身中の肉体に相当するもの(form-data.h の flesh_equivalent)
+[form flesh equivalent]flesh
+
+肉体
+%%%%
+[form flesh equivalent]stone
+
+石
+%%%%
+[form flesh equivalent]wood
+
+木
+%%%%
+[form flesh equivalent]jelly
+
+ゼリー
+%%%%
+[form flesh equivalent]shadow
+
+影
+%%%%
+[form flesh equivalent]fossilised flesh
+
+化石化した肉体
+%%%%
+[form flesh equivalent]icy fur
+
+氷の毛皮
+%%%%
+[form flesh equivalent]air
+
+空気
+%%%%
+[form flesh equivalent]carapace
+
+甲殻
+%%%%
+[form flesh equivalent]parchment
+
+羊皮紙
+%%%%
+[form flesh equivalent]shell
+
+殻
+%%%%
+[form flesh equivalent]vapour
+
+蒸気
 %%%%

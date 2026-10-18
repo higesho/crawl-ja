@@ -10,6 +10,7 @@
 #include "beam.h"
 #include "cloud.h"
 #include "coordit.h"
+#include "database.h"
 #include "dungeon-char-type.h"
 #include "english.h"
 #include "env.h"
@@ -40,7 +41,7 @@ static void _setup_base_explosion(bolt & beam, const monster& origin)
     beam.source_id    = origin.mid;
     beam.glyph        = dchar_glyph(DCHAR_FIRED_BURST);
     beam.source       = origin.pos();
-    beam.source_name  = origin.base_name(DESC_BASENAME, true);
+    beam.source_name  = origin.base_name_en(DESC_BASENAME, true);
     beam.target       = origin.pos();
     beam.explode_noise_msg = "You hear an explosion!";
 
@@ -97,7 +98,7 @@ static void _setup_blazeheart_core_explosion(bolt & beam, const monster& origin)
     beam.name         = "fiery explosion";
     beam.colour       = RED;
     beam.ex_size      = 1;
-    beam.source_name  = origin.name(DESC_PLAIN, true);
+    beam.source_name  = origin.name_en(DESC_PLAIN, true);
     beam.thrower      = KILL_MON;
 
     // This is so it places flame clouds under the explosion
@@ -197,7 +198,7 @@ static void _setup_inner_flame_explosion(bolt & beam, const monster& origin,
     beam.name        = "fiery explosion";
     beam.colour      = RED;
     beam.ex_size     = (size > SIZE_LARGE) ? 2 : 1;
-    beam.source_name = origin.name(DESC_PLAIN, true);
+    beam.source_name = origin.name_en(DESC_PLAIN, true);
     beam.origin_spell = SPELL_INNER_FLAME;
     beam.thrower     = (agent && agent->is_player()) ? KILL_YOU_MISSILE
                                                      : KILL_MON_MISSILE;
@@ -215,7 +216,7 @@ static void _setup_haemoclasm_explosion(bolt& beam, const monster& origin)
     beam.colour      = RED;
     beam.tile_explode= TILE_BOLT_HAEMOCLASM;
     beam.ex_size     = 1;
-    beam.source_name = origin.name(DESC_PLAIN, true);
+    beam.source_name = origin.name_en(DESC_PLAIN, true);
     beam.thrower     = KILL_YOU_MISSILE;
     beam.source_id   = MID_PLAYER;
 }
@@ -345,13 +346,19 @@ bool explode_monster(monster* mons, killer_type killer, bool pet_kill)
     bolt beam;
     const monster_type type = mons->type;
     string sanct_msg = "";
-    string boom_msg = make_stringf("%s explodes!", mons->full_name(DESC_THE).c_str());
+    string boom_msg = make_stringf(jtransc("%s explodes!"), mons->full_name(DESC_THE).c_str());
     actor* agent = nullptr;
     bool inner_flame = false;
 
     string poof_msg = "";
     if (mons->is_abjurable())
-        poof_msg = "The " + mons->name(DESC_PLAIN) + " residue " + summoned_poof_msg(*mons) + ".";
+    {
+        // summoned_poof_msg() は英語なので "[poof]" 付きで訳す(キーは mon-death.txt)
+        poof_msg = make_stringf(jtransc("The %s residue %s."),
+                                mons->name(DESC_PLAIN).c_str(),
+                                tagged_jtrans("[poof]",
+                                              summoned_poof_msg(*mons)).c_str());
+    }
 
     auto it = explosions.find(type);
     if (it != explosions.end())
@@ -362,11 +369,11 @@ bool explode_monster(monster* mons, killer_type killer, bool pet_kill)
         string effect = "explosion is contained";
         if (explosion.sanct_effect != "")
             effect = explosion.sanct_effect;
-        sanct_msg = string("By Zin's power, ") +
-                    apostrophise(mons->name(DESC_THE)) + " " +
-                    effect + ".";
+        sanct_msg = make_stringf(jtransc("By Zin's power, %s %s."),
+                                 apostrophise(mons->name(DESC_THE)).c_str(),
+                                 jtransc(effect));
         if (type == MONS_BENNU)
-            boom_msg = make_stringf("%s blazes out!", mons->full_name(DESC_THE).c_str());
+            boom_msg = make_stringf(jtransc("%s blazes out!"), mons->full_name(DESC_THE).c_str());
     }
     else if (mons->has_ench(ENCH_INNER_FLAME))
     {
@@ -384,9 +391,11 @@ bool explode_monster(monster* mons, killer_type killer, bool pet_kill)
         if (agent && agent->is_player())
             mons_add_blame(mons, "hexed by the player character");
         else if (agent)
-            mons_add_blame(mons, "hexed by " + agent->name(DESC_A, true));
+            mons_add_blame(mons, "hexed by " + (agent->as_monster()
+                                    ? agent->as_monster()->name_en(DESC_A, true)
+                                    : agent->name(DESC_A, true)));
         mons->flags    |= MF_EXPLODE_KILL;
-        sanct_msg       = "By Zin's power, the fiery explosion is contained.";
+        sanct_msg       = jtrans("By Zin's power, the fiery explosion is contained.");
         beam.aux_source = "ignited by their inner flame";
         inner_flame = true;
     }
@@ -394,7 +403,7 @@ bool explode_monster(monster* mons, killer_type killer, bool pet_kill)
     {
         _setup_haemoclasm_explosion(beam, *mons);
         mons->flags |= MF_EXPLODE_KILL;
-        boom_msg = make_stringf("%s shudders for a moment, then explodes violently!",
+        boom_msg = make_stringf(jtransc("%s shudders for a moment, then explodes violently!"),
                                 mons->name(DESC_THE).c_str());
     }
 

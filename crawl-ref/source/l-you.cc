@@ -1355,7 +1355,8 @@ LUAFN(you_status)
     status_info inf;
     for (unsigned i = 0; i <= STATUS_LAST_STATUS; ++i)
     {
-        if (fill_status_info(i, inf) && !inf.short_text.empty())
+        // Lua(autofight.lua など)は英語の状態名で比べる
+        if (fill_status_info_en(i, inf) && !inf.short_text.empty())
         {
             if (which)
             {

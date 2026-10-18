@@ -958,7 +958,7 @@ You cannot %s because you are %s.
 # resists_dislodge(): 引数は呼び出し側で「〜こと」の形で渡される
 Your boots keep you from %s.
 
-あなたのブーツは、あなたが%sを防いだ。
+あなたはブーツのおかげで%sを免れた。
 %%%%
 falling into an unexpected shaft
 

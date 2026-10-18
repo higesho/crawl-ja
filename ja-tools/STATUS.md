@@ -4,14 +4,15 @@
 `CONVENTIONS.md`、`FOLLOWUPS.md`(ファイル別の申し送り)、`README.md`、
 リポジトリの 1 つ上の `../CLAUDE.md`(日本語で話すルール)を読む。
 
-## 次にやること(2026-10-18 時点)
+## 次にやること(2026-10-19 時点)
 
-C++ 張り直しの第 3 陣から。下の「第 3 陣の案」の 7 グループを
-サブエージェントに並行で割り当てる(指示文の型は第 1・2 陣と同じ: CONVENTIONS.md と
+C++ 張り直しの第 4 陣から。下の「第 4 陣の案」の 7 グループを
+サブエージェントに並行で割り当てる(指示文の型は第 1〜3 陣と同じ: CONVENTIONS.md と
 FOLLOWUPS.md を読ませ、担当ファイルを列挙し、FOLLOWUPS.md の該当項目も対応させる。
 担当ファイルとその辞書以外、japanese.cc/h、data-*.txt は編集させない。
-data-*.txt に足す訳は報告させ、取りまとめ役が書く。ビルド・コミットはさせない)。
-全員の完了後にまとめて dups/check → ビルド → 起動確認 → FOLLOWUPS.md 更新 → コミット。
+data-*.txt に足す訳は報告させ、取りまとめ役が書く。ビルド・コミットはさせない。
+一時ファイルは scratchpad の自分専用サブフォルダに置かせる)。
+全員の完了後にまとめて dups/check/fmt → ビルド → 起動確認 → FOLLOWUPS.md 更新 → コミット。
 
 ## 目標
 
@@ -21,7 +22,7 @@ data-*.txt に足す訳は報告させ、取りまとめ役が書く。ビルド
 3. 説明文・台詞の未訳(`ja-work/stale`, `ja-work/missing`)の全訳
 4. 実機で確認しながら表示の不具合を直す
 
-ユーザーの方針: 判断が必要なときは聞いてよいが、基本は完訳まで自走する。
+ユーザーの方針: 区切りごとに確認を求めず、コミットしながら完訳まで自走する(2026-10-18 の指示)。
 
 ## 完了
 
@@ -38,6 +39,12 @@ data-*.txt に足す訳は報告させ、取りまとめ役が書く。ビルド
   一発でビルドが通り(警告は本家由来の 1 件のみ)、実機で神の画面(概要・能力・神罰)、
   近接戦闘の文(「ネズミはあなたを噛んだ。」「あなたはネズミへの攻撃をきわどく外した。」)、
   神の反応(「トログはあなたの殺しを善しとした。」)を確認済み。辞書の未訳 0・重複 0。
+
+- 第 3 陣: 下記の第 3 陣の全ファイル(辞書キー約 1,100)。データ辞書の追加
+  (地形の総称、変身中の肉体名)、マイルストーン・スコア・Lua 用の英語版の使い分け
+  (`mut_upgrade_summary_en`, `fill_status_info_en`)。ビルドエラー 1 件(mon-speak.cc の
+  波括弧)を直して通し、実機で能力メニュー(「バーサーク」「信仰心-」)、神の画面、
+  ステータス欄の称号(「切りつける者」)を確認済み。辞書の未訳 0・重複 0。
 
 ## C++ 張り直しの分担計画
 
@@ -63,21 +70,32 @@ data-*.txt に足す訳は報告させ、取りまとめ役が書く。ビルド
 - xom.cc, god-wrath.cc, describe-god.cc
 - player.cc/.h, player-act.cc, player-stats.cc
 
-第 3 陣の案(7 グループ。英文の量はおおよそ均してある):
-1. ability.cc, skill-menu.cc
-2. transform.cc, mutation.cc
-3. player-reacts.cc, player-notices.cc, ouch.cc, timed-effects.cc
-4. status.cc, movement.cc, skills.cc, death-curse.cc, behold.cc, fearmonger.cc
-5. mon-act.cc, mon-abil.cc, mon-explode.cc, mon-place.cc, mon-speak.cc
-6. mon-clone.cc, mon-transit.cc, mon-tentacle.cc, mon-aura.cc, mon-gear.cc,
-   mon-movetarget.cc, mon-pathfind.cc, god-item.cc, god-menu.cc,
-   attitude-change.cc, piety-info.cc
-7. actor.cc, misc.cc, traps.cc, cloud.cc(FOLLOWUPS で多くの担当から参照される共通部品)
+第 3 陣(完了):
+- ability.cc/.h, skill-menu.cc
+- transform.cc/.h, mutation.cc/.h
+- player-reacts.cc, player-notices.cc, ouch.cc, timed-effects.cc
+- status.cc/.h, movement.cc, skills.cc, death-curse.cc, behold.cc, fearmonger.cc
+- mon-act.cc, mon-abil.cc, mon-explode.cc, mon-place.cc, mon-speak.cc
+- mon-clone.cc, mon-transit.cc, mon-tentacle.cc, mon-aura.cc, god-menu.cc/.h,
+  attitude-change.cc(mon-gear, mon-movetarget, mon-pathfind, god-item, piety-info は
+  表示する英文なしを確認)
+- actor.cc, misc.cc, traps.cc, cloud.cc(+ 呼び出し側の resist_margin_phrase / held_status の整理)
 
-第 4 陣以降の候補:
-- 説明・UI: describe.cc, describe-spells.cc, lookup-help.cc, output.cc, invent.cc, menu.cc, command.cc, hints.cc, tutorial.cc, newgame.cc, ng-*.cc, startup.cc, main.cc, directn.cc, target.cc, target-compass.cc, prompt.cc, quiver.cc, macro.cc, outer-menu.cc, scroller.cc, ui.cc, viewmap.cc, view.cc, show.cc, viewchar.cc, tilereg-*.cc, game-options.cc
-- 世界: stairs.cc, travel.cc, terrain.cc, abyss.cc, zot.cc, orb.cc, areas.cc, exclude.cc, branch.cc, feature.cc, dgn-overview.cc, shopping.cc, stash.cc, acquire.cc, artefact.cc, decks.cc, spl-cast.cc, spl-book.cc, spl-util.cc, spl-zap.cc, randbook.cc, item-prop.cc, known-items.cc, makeitem.cc, corpse.cc, shout.cc, teleport.cc, place.cc
+第 4 陣の案(7 グループ):
+1. describe.cc(7,700 行。単独)
+2. output.cc, quiver.cc, invent.cc, adjust.cc, tilereg-*.cc(画面の表示部品)
+3. directn.cc, target.cc, target-compass.cc, prompt.cc, terrain.cc, viewmap.cc, view.cc, show.cc
+4. main.cc, command.cc, macro.cc, menu.cc, outer-menu.cc, game-options.cc
+5. newgame.cc, ng-*.cc, startup.cc, hints.cc, tutorial.cc, lookup-help.cc, describe-spells.cc
+6. spl-cast.cc, spl-book.cc, spl-util.cc, spl-zap.cc, randbook.cc, decks.cc, shopping.cc, acquire.cc
+7. stairs.cc, travel.cc, abyss.cc, zot.cc, orb.cc, areas.cc, exclude.cc, branch.cc,
+   dgn-overview.cc, shout.cc, teleport.cc, place.cc
+
+第 5 陣の候補:
 - 記録: hiscores.cc, chardump.cc, notes.cc, kills.cc, end.cc, files.cc, dactions.cc, fineff.cc, arena.cc, wizard.cc
+- アイテム: stash.cc, item-prop.cc, known-items.cc, makeitem.cc, artefact.cc, feature.cc, corpse.cc
+- 残り: ghost.cc, spl-wpnench.cc, spl-tornado.cc など、`jtools.py check` 以外に英文が残るファイル
+  (各陣の後に、jtrans を含まないファイルの mpr/mprf を grep して洗い出す)
 - 対象外・後回し: wiz-*.cc, dbg-*.cc, l-*.cc(Lua バインディング)、tile*.cc の内部処理、
   mapdef.cc / dungeon.cc / dgn-*.cc(迷宮生成)、initfile.cc(オプション解析。
   ヘルプ文など表示部分だけ後で)、tags.cc、lang-fake.cc、tileweb.cc(Web 版)
@@ -85,7 +103,7 @@ data-*.txt に足す訳は報告させ、取りまとめ役が書く。ビルド
 実機で見えた未訳(第 2 陣の確認時): タイトル・キャラ作成画面(startup.cc, newgame.cc,
 ng-*.cc)、ステータス欄(output.cc)、"You encounter ..."(player-notices.cc)、
 "... is nearby!" と "No target in view!"(Lua の自動戦闘)、"Found ..."(travel.cc)、
-"squeaks loudly."(shout.cc)、神の画面のコスト "Piety-"(ability.cc)。
+"squeaks loudly."(shout.cc)。(神の画面のコストは第 3 陣で解消)
 
 ## ビルドと確認
 
@@ -115,7 +133,9 @@ name = jatest2
 ```
 
 画面確認は computer-use で、crawl.exe を起動してから `request_access` に
-`crawl.exe` を指定して許可を取る(表示名は "Crawl")。日本語配列なので `^` などの
+`crawl.exe` を指定して許可を取る(表示名は "Crawl")。前面に出すときは `open_application` を
+使わず、ウィンドウをクリックする(`open_application` は rc なしの crawl.exe を別に起動してしまい、
+英語のままの画面を操作することになる)。rc が読まれたかはタイトル画面の Ctrl-P で確認できる。日本語配列なので `^` などの
 記号は `key` ではなく `type` で送る(`shift+6` は `&` になりウィザードモードの確認が出る)。
 
 ## 用語・説明文の申し送り

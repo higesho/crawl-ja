@@ -1,0 +1,669 @@
+%%%%
+# status.cc の状態表示のうち duration-data.h にないもの
+# (duration-data.h の分は data-durations.txt)。
+# light_text(ステータス欄)と short_text(@ 行)は [dur] 付き、long_text はタグなし。
+#
+# _mark_expiring(): short_text の後ろと long_text の前に付ける。
+# spl-goditem.cc などで取り除くときは jtrans_notrim(" (expiring)") と比べる。
+ (expiring)
+
+(時間切れ間近)
+%%%%
+Expiring:
+
+時間切れ間近:
+%%%%
+# 能力値ゼロ。%s は「腕力と器用さ」の形
+[dur]Crippled
+
+能力喪失
+%%%%
+[dur]lost %s
+
+%sの喪失
+%%%%
+You have no %s!
+
+あなたは%sを失った！
+%%%%
+# ドラコニアンのブレス
+[dur]Breath
+
+ブレス
+%%%%
+# ヨレデレムヌルの黒き松明
+[dur]Torch
+
+松明
+%%%%
+[dur]Torch (%d)
+
+松明(%d)
+%%%%
+[dur]lit torch
+
+松明点火中
+%%%%
+[dur]Shield (%d)
+
+盾(%d)
+%%%%
+[dur]Corr (%d)
+
+腐蝕(%d)
+%%%%
+[dur]corroded (%d)
+
+装備の腐蝕(%d)
+%%%%
+[dur]Flay (%d)
+
+皮剥(%d)
+%%%%
+# 熊の霊のアミュレットでのバーサーク
+[dur]Bearserk
+
+熊狂い
+%%%%
+[dur]-Potion
+
+薬×
+%%%%
+[dur]unable to drink
+
+薬不可
+%%%%
+You cannot drink potions.
+
+あなたは薬を飲めない。
+%%%%
+[dur]-Swift
+
+鈍足
+%%%%
+[dur]unswift
+
+鈍足
+%%%%
+You are covering ground slowly.
+
+あなたの移動は遅くなっている。
+%%%%
+[dur]Mesm
+
+魅了
+%%%%
+[dur]mesmerised
+
+魅了されている
+%%%%
+You are mesmerised.
+
+あなたは魅了されている。
+%%%%
+[dur]Peek
+
+偵察
+%%%%
+[dur]peeking
+
+階下を偵察中
+%%%%
+You are peeking down the stairs.
+
+あなたは階段の下を覗いている。
+%%%%
+[dur]glowing
+
+発光
+%%%%
+You are glowing.
+
+あなたは輝いている。
+%%%%
+[dur]wreathed by umbra
+
+影の帳
+%%%%
+You are wreathed by an umbra.
+
+あなたは影の帳に包まれている。
+%%%%
+[dur]Held
+
+拘束中
+%%%%
+# %s は held_status() の訳(「網で拘束されている」など)。毒の状態でも使う
+You are %s.
+
+あなたは%s。
+%%%%
+[dur]SlowM
+
+ぬかるみ
+%%%%
+[dur]slowed movement
+
+ぬかるみ
+%%%%
+Your movement is slowed on this liquid ground.
+
+あなたの動きはぬかるみによって遅くなっている。
+%%%%
+[dur]Aug
+
+増強
+%%%%
+[dur]Regen (%d)
+
+再生(%d)
+%%%%
+[dur]MPRegen (%d)
+
+MP再生(%d)
+%%%%
+# %s は日本語の技能名(manual_skill_names())
+[dur]studying %s
+
+%s習得中
+%%%%
+You are studying %s.
+
+あなたは%sスキルを習得中だ。
+%%%%
+[dur]Constr
+
+拘束中
+%%%%
+[dur]constricted
+
+拘束中
+%%%%
+[dur]constricted (roots)
+
+拘束中(根)
+%%%%
+[dur]constricted (zombie hands)
+
+拘束中(ゾンビの手)
+%%%%
+[dur]Sil
+
+静寂
+%%%%
+You are silenced.
+
+あなたは静寂に包まれている。
+%%%%
+[dur]Lash (%u)
+
+蛇の鞭打ち(%u)
+%%%%
+[dur]serpent's lash
+
+蛇の鞭打ち
+%%%%
+You are moving at supernatural speed.
+
+あなたは超常的な速さで動いている。
+%%%%
+[dur]Heavenly (%d)
+
+天の嵐(%d)
+%%%%
+# %s は最大のときの「*」
+[dur]Fugue (%s%u%s)
+
+遁走(%s%u%s)
+%%%%
+[dur]Slay +%d
+
+殺戮+%d
+%%%%
+# 災厄「閉所恐怖」
+[dur]Phobia (-%d)
+
+恐怖症(-%d)
+%%%%
+[dur]Fire++
+
+炎上＋＋
+%%%%
+[dur]Fire+
+
+炎上＋
+%%%%
+[dur]flooded lungs
+
+肺の浸水
+%%%%
+# %s は物質名([substance]water など)
+Your lungs are flooded with %s and you cannot breathe.
+
+あなたの肺は%sで満たされ、呼吸ができない。
+%%%%
+[dur]Drain
+
+衰弱
+%%%%
+[dur]extremely drained
+
+極度に衰弱中
+%%%%
+Your life force is extremely drained.
+
+あなたの生命力は極度に衰弱している。
+%%%%
+[dur]very heavily drained
+
+ひどく衰弱中
+%%%%
+Your life force is very heavily drained.
+
+あなたの生命力はひどく衰弱している。
+%%%%
+[dur]heavily drained
+
+かなり衰弱中
+%%%%
+Your life force is heavily drained.
+
+あなたの生命力はかなり衰弱している。
+%%%%
+[dur]drained
+
+衰弱中
+%%%%
+Your life force is drained.
+
+あなたの生命力は衰弱している。
+%%%%
+[dur]lightly drained
+
+少し衰弱中
+%%%%
+Your life force is lightly drained.
+
+あなたの生命力は少し衰弱している。
+%%%%
+[dur]Dig
+
+掘削
+%%%%
+[dur]Bribe
+
+買収中
+%%%%
+# %s は支部名を「、」でつないだもの
+[dur]bribing [%s]
+
+買収中 [%s]
+%%%%
+# %s は支部名を「と」「、」でつないだもの
+You are bribing %s.
+
+あなたは%sを買収している。
+%%%%
+[dur]Horr (%d)
+
+恐怖(%d)
+%%%%
+[dur]overwhelmed with horror
+
+恐怖に打ちのめされている
+%%%%
+Horror overwhelms you!
+
+あなたは恐怖に打ちのめされている！
+%%%%
+[dur]extremely horrified
+
+極めて怯えている
+%%%%
+You are extremely horrified!
+
+あなたは極めて怯えている！
+%%%%
+You are horrified!
+
+あなたは恐怖に怯えている！
+%%%%
+[dur]Cloud
+
+雲烟
+%%%%
+[dur]Orb?
+
+オーブ？
+%%%%
+[dur]-Clouds
+
+雲×
+%%%%
+[dur]Duel
+
+決闘
+%%%%
+[dur]duelling
+
+決闘中
+%%%%
+You are engaged in single combat.
+
+あなたは一騎打ちの最中だ。
+%%%%
+[dur]Dog
+
+犬神
+%%%%
+[dur]inugami summoned
+
+犬神召喚中
+%%%%
+Your inugami has been summoned.
+
+あなたの犬神が召喚されている。
+%%%%
+[dur]-Scroll
+
+巻物×
+%%%%
+[dur]unable to read
+
+巻物不可
+%%%%
+You cannot read scrolls.
+
+あなたは巻物を読めない。
+%%%%
+[dur]rF0
+
+rF0
+%%%%
+[dur]fire susceptible
+
+火炎耐性なし
+%%%%
+You cannot resist fire.
+
+あなたは火炎に抵抗できない。
+%%%%
+[dur]-GClaw
+
+墓爪×
+%%%%
+# マクレブの坩堝での契約
+[dur]Pact
+
+契約
+%%%%
+[dur]Escape!
+
+脱出せよ！
+%%%%
+[dur]Protected
+
+守護中
+%%%%
+# 後ろに残り時間の「.」が付く
+[dur]Blast
+
+砲撃
+%%%%
+[dur]fortress blast
+
+要塞砲撃
+%%%%
+Preparing a Fortress Blast.
+
+要塞砲撃を準備している。
+%%%%
+[dur]!Tele!
+
+！転移！
+%%%%
+[dur]teleporting to hostiles
+
+敵の元へ転移
+%%%%
+You are about to teleport to other enemies.
+
+あなたはもうすぐ他の敵の元へ転移する。
+%%%%
+[dur]trickster (+%d AC)
+
+トリックスター(AC+%d)
+%%%%
+You are bolstered by spread misfortune (+%d AC)
+
+あなたは振りまいた不運に支えられている(AC+%d)
+%%%%
+[dur]Memories (%d)
+
+記憶(%d)
+%%%%
+[dur]Enkindled (%d)
+
+再燃(%d)
+%%%%
+# 粘体の帷子が使えるとき(使えないときは data-durations.txt の [dur]Shroud)
+[status]Shroud
+
+帷子
+%%%%
+[dur]slimy shroud
+
+粘体の帷子
+%%%%
+[dur]Ostracised
+
+追放
+%%%%
+[dur]Tesseract
+
+テッセラクト
+%%%%
+[dur]Sunder
+
+破砕
+%%%%
+[dur]Missing
+
+不明
+%%%%
+[dur]missing status
+
+不明な状態
+%%%%
+Missing status description.
+
+状態の説明がない。
+%%%%
+# 宝石の残り時間。「 Gem (*)」の先頭の空白は呼び出し側で付ける
+[dur]Gem (*)
+
+宝石(*)
+%%%%
+[dur]Gem (%d)
+
+宝石(%d)
+%%%%
+[dur]bezotted
+
+ゾットの接近
+%%%%
+Zot is approaching!
+
+ゾットが迫っている！
+%%%%
+[dur]Zot (%d)
+
+ゾット(%d)
+%%%%
+[dur]Contam
+
+魔力汚染
+%%%%
+[dur]Rev
+
+助走
+%%%%
+[dur]Rev+
+
+助走＋
+%%%%
+[dur]Rev*
+
+助走＊
+%%%%
+[dur]revving
+
+助走中
+%%%%
+[dur]revved
+
+助走完了
+%%%%
+You're starting to limber up.
+
+あなたの体はほぐれはじめている。
+%%%%
+You're limbering up.
+
+あなたの体はほぐれてきた。
+%%%%
+You're fully limbered up.
+
+あなたの体は完全にほぐれている。
+%%%%
+[dur]Regen Will++
+
+再生 意志＋＋
+%%%%
+[dur]regenerating
+
+再生中
+%%%%
+You are regenerating.
+
+あなたは再生している。
+%%%%
+[dur]-Regen
+
+再生×
+%%%%
+[dur]inhibited regen
+
+再生阻害
+%%%%
+Your regeneration is inhibited by nearby monsters.
+
+周囲のモンスターによってあなたの再生は妨げられている。
+%%%%
+[dur]Pois
+
+毒
+%%%%
+# 後ろに「 (HP -> 毒が抜けたときの HP)」が付く
+[dur]lethally poisoned
+
+致死毒に冒されている
+%%%%
+[dur]seriously poisoned
+
+猛毒に冒されている
+%%%%
+[dur]quite poisoned
+
+重い毒に冒されている
+%%%%
+[dur]mildly poisoned
+
+毒に冒されている
+%%%%
+[dur]Fast+Slow
+
+加減速中
+%%%%
+[dur]hasted and slowed
+
+加減速中
+%%%%
+You are under both slowing and hasting effects.
+
+あなたは減速と加速両方の効果を受けている。
+%%%%
+[dur]Slow
+
+減速
+%%%%
+[dur]slowed
+
+減速中
+%%%%
+You are slowed.
+
+あなたは減速している。
+%%%%
+[dur]Fast
+
+加速中
+%%%%
+[dur]hasted
+
+加速中
+%%%%
+Your actions are hasted.
+
+あなたの行動は加速されている。
+%%%%
+[dur]Fly
+
+飛行中
+%%%%
+[dur]flying
+
+飛行中
+%%%%
+[dur]Water
+
+水場
+%%%%
+[dur]Lava
+
+溶岩
+%%%%
+[dur]Invis
+
+透明化中
+%%%%
+[dur]invisible
+
+透明化中
+%%%%
+ (but backlit and visible)
+
+(ただし輪郭が光って見えている)
+%%%%
+You are invisible (but backlit and visible).
+
+あなたは透明化している(ただし輪郭が光って見えている)。
+%%%%
+# 以下 3 つは後ろにチャネリングの進み具合の「+」「.」が付く
+[dur]Wave
+
+波動
+%%%%
+[dur]Ray
+
+光線
+%%%%
+[dur]Winding
+
+巻き上げ
+%%%%
+# マクスウェルの連結。後ろに回転する記号(- / | \)が付く
+[dur]Charge
+
+充電
+%%%%

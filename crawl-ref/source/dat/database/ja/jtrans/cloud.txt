@@ -1,0 +1,50 @@
+%%%%
+The forest fire spreads!
+
+森林火災が燃え広がった！
+%%%%
+The rain has left you waist-deep in water!
+
+雨によってできた水たまりはあなたの腰の深さまで残っている！
+%%%%
+You choke on the stench!
+
+あなたは悪臭で窒息しそうだ！
+%%%%
+The mutagenic energy flows into you.
+
+変異性のエネルギーがあなたに流れ込んだ。
+%%%%
+The air becomes perfectly still.
+
+大気の動きは完全に停止している。
+%%%%
+The air resumes its normal movements.
+
+大気は通常の流れを取り戻した。
+%%%%
+You feel dizzy.
+
+あなたはめまいを感じた。
+%%%%
+%s steams in the rain.
+
+%sは雨に打たれて湯気を立てた。
+%%%%
+%s sizzles in the rain.
+
+%sは雨に打たれてジュウジュウと音を立てた。
+%%%%
+# 引数: 名前、雲の名前([cloud])
+%s is swarmed by %s.
+
+%sに%sが群がった。
+%%%%
+%s basks in %s.
+
+%sは%sを浴びている。
+%%%%
+%s is engulfed in %s.
+
+%sは%sに包まれた。
+%%%%

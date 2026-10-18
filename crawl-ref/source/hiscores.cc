@@ -1743,7 +1743,8 @@ void scorefile_entry::init(time_t dt)
     status_info inf;
     for (unsigned i = 0; i <= STATUS_LAST_STATUS; ++i)
     {
-        if (fill_status_info(i, inf) && !inf.short_text.empty())
+        // スコアファイルには英語を残す
+        if (fill_status_info_en(i, inf) && !inf.short_text.empty())
         {
             if (!status_effects.empty())
                 status_effects += ",";

@@ -92,7 +92,7 @@ public:
      *
      * @return The 'long name' of the form.
      */
-    virtual string get_long_name() const { return long_name; }
+    virtual string get_long_name() const; // 日本語を返す(transform.cc)
 
     /**
      * A description of this form.

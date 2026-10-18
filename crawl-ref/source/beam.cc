@@ -1929,7 +1929,7 @@ static bool _monster_resists_mass_enchantment(monster* mons,
     {
         behaviour_event(mons, ME_ALERT, &you);
         if (simple_monster_message(*mons,
-                jtransc(mons->resist_margin_phrase(res_margin))))
+                mons->resist_margin_phrase(res_margin).c_str()))
         {
             *did_msg = true;
         }
@@ -3666,7 +3666,7 @@ void bolt::affect_player_enchantment(bool resistible)
                 // the message reflects the level of difficulty resisting.
                 const int margin = you.willpower() - ench_power;
                 mprf(jtransc("You%s"),
-                     jtransc(you.resist_margin_phrase(margin)));
+                     you.resist_margin_phrase(margin).c_str());
             }
         }
 
@@ -4974,7 +4974,7 @@ void bolt::enchantment_affect_monster(monster* mon)
         {
         case MON_RESIST:
             if (simple_monster_message(*mon,
-                                   jtransc(mon->resist_margin_phrase(res_margin))))
+                                   mon->resist_margin_phrase(res_margin).c_str()))
             {
                 msg_generated = true;
                 // Hack: assume that BEAM_BANISH comes from Lugonu's Banishment

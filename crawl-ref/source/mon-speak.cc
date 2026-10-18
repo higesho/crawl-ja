@@ -135,8 +135,13 @@ static bool _invalid_msg(const string &msg, bool no_player, bool no_foe,
     if (no_player)
     {
         for (const string &line : split_string("\n", msg))
+        {
             if (starts_with(line, "You") || ends_with(line, "you."))
                 return true;
+            // 日本語の台詞(ja/monspeak.txt)はプレイヤーを「あなた」で表す。
+            if (line.find("あなた") != string::npos)
+                return true;
+        }
     }
 
     if (no_foe && (msg.find("@foe") != string::npos
@@ -654,14 +659,14 @@ bool mons_speaks(monster* mons)
         // old speech?
         if (!mons->mname.empty() && mons->can_speak() && msg.empty())
         {
-            msg = _get_speak_string(prefixes, mons->name(DESC_PLAIN),
+            msg = _get_speak_string(prefixes, mons->name_en(DESC_PLAIN),
                                     mons, no_player, no_foe, no_foe_name,
                                     no_god, unseen);
         }
 
         if (msg.empty())
         {
-            msg = _get_speak_string(prefixes, mons->base_name(DESC_PLAIN),
+            msg = _get_speak_string(prefixes, mons->base_name_en(DESC_PLAIN),
                                     mons, no_player, no_foe, no_foe_name,
                                     no_god, unseen);
         }
@@ -796,7 +801,7 @@ bool mons_speaks(monster* mons)
     {
         msg::streams(MSGCH_DIAGNOSTICS)
             << "__NEXT used by shape-based speech string for monster '"
-            << mons->name(DESC_PLAIN) << "'" << endl;
+            << mons->name_en(DESC_PLAIN) << "'" << endl;
         return false;
     }
 

@@ -1,0 +1,9 @@
+%%%%
+%s stares at you suspiciously for a moment, then relaxes.
+
+一瞬%sの疑い深い眼差しがあなたに向けられたが、ふと緩んだ。
+%%%%
+%s trembles before you.
+
+%sはあなたの前で揺れだした。
+%%%%

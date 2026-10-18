@@ -411,59 +411,6 @@ You block the %s... and reflect it back!
 
 あなたは%sを防ぎ、はね返した！
 %%%%
-# actor::resist_margin_phrase() の戻り値(actor.cc が英語を返すため、表示側で引く)
- are unaffected.
-
-は影響を受けなかった。
-%%%%
- barely resist.
-
-はかろうじて抵抗した。
-%%%%
- barely resists.
-
-はかろうじて抵抗した。
-%%%%
- struggle to resist.
-
-はやっとのことで抵抗した。
-%%%%
- struggles to resist.
-
-はやっとのことで抵抗した。
-%%%%
- resist with significant effort.
-
-はそれをなんとか耐えた。
-%%%%
- resists with significant effort.
-
-はそれをなんとか耐えた。
-%%%%
- resist with some effort.
-
-はそれに抵抗した。
-%%%%
- resists with some effort.
-
-はそれに抵抗した。
-%%%%
- easily resist.
-
-はそれをたやすく退けた。
-%%%%
- easily resists.
-
-はそれをたやすく退けた。
-%%%%
- resist with almost no effort.
-
-はそれを気にも留めなかった。
-%%%%
- resists with almost no effort.
-
-はそれを気にも留めなかった。
-%%%%
 Your will lashes out at %s%s
 
 あなたの意志が%sに襲いかかった%s

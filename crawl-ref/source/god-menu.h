@@ -20,4 +20,5 @@ public:
 
 private:
     string colour_text;
+    string name_en; // 英語の名前(lookup-help の検索キー)
 };

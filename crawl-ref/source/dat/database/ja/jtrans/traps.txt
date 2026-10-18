@@ -1,0 +1,314 @@
+%%%%
+held in a net
+
+網で拘束されている
+%%%%
+caught in a web
+
+蜘蛛の巣に巻きつかれている
+%%%%
+A huge vortex of air appears!
+
+竜巻が発生した！
+%%%%
+You enter the passage of Golubria.
+
+あなたはゴルブリアの通り道へと踏み込んだ。
+%%%%
+enters the passage of Golubria.
+
+はゴルブリアの通り道へと入っていった。
+%%%%
+This passage doesn't lead anywhere!
+
+この通り道はどこにも通じていない！
+%%%%
+You enter %s!
+
+あなたは%sに踏み込んだ！
+%%%%
+%s disappears.
+
+%sは消えた。
+%%%%
+%s vibrates slightly, failing to make a sound.
+
+%sはしばらく振動したが、音を立てることはなかった。
+%%%%
+%s emits a blaring wail!
+
+%sは警報音を鳴り響かせた！
+%%%%
+fails to trigger a net trap.
+
+は網の罠を動作させなかった。
+%%%%
+passes through a web.
+
+は蜘蛛の巣をすり抜けた。
+%%%%
+oozes through a web.
+
+は蜘蛛の巣をすり抜けた。
+%%%%
+You pick your way through the web.
+
+あなたは蜘蛛の巣を避けながら歩を進めた。
+%%%%
+evades a web.
+
+は蜘蛛の巣を避けた。
+%%%%
+A web moves frantically as something is caught in it!
+
+中に何かがいるかのように蜘蛛の巣が激しく動いている！
+%%%%
+You enter the Zot trap.
+
+あなたはゾットの罠に踏み込んだ。
+%%%%
+You hear a loud "Zot"!
+
+あなたは『ゾット』の怒声を耳にした！
+%%%%
+You are caught in a web!
+
+あなたは蜘蛛の巣に巻きつかれている！
+%%%%
+is caught in a web!
+
+は蜘蛛の巣に巻きつかれている！
+%%%%
+You become entangled in the net!
+
+あなたは網に絡めとられた！
+%%%%
+The net passes right through %s!
+
+網は%sをすり抜けた！
+%%%%
+Something gets caught in the net!
+
+何者かが網の中に捕まっている！
+%%%%
+is caught in the net!
+
+は網の中に捕まっている！
+%%%%
+You struggle to detach yourself from the web.
+
+あなたはなんとか自分自身を蜘蛛の巣から引きはがそうとしている。
+%%%%
+You disentangle yourself.
+
+あなたは自由の身になった。
+%%%%
+You shred the net and break free!
+
+あなたは網を引き裂いて自由を取り戻した！
+%%%%
+You rip the net and break free!
+
+あなたは網をちぎって自由を取り戻した！
+%%%%
+You tear a large gash into the net.
+
+あなたは網をバラバラに切り裂いた。
+%%%%
+You struggle against the net.
+
+あなたは網を振りほどこうともがいている。
+%%%%
+# _net_immune_reason()
+You slip through the net.
+
+あなたは網をするりとすり抜けた。
+%%%%
+The net passes straight through you.
+
+網はあなたの体をすり抜けた。
+%%%%
+The power of Zot is invoked against you!
+
+ゾットの力があなたに向けて発動した！
+%%%%
+This passage seems to be blocked by something!
+
+この通り道は何かに塞がれているようだ！
+%%%%
+# 引数: モンスター名、罠の名前
+%s enters %s!
+
+%sは%sに踏み込んだ！
+%%%%
+You enter a tyrant's trap.
+
+あなたは暴君の罠に踏み込んだ。
+%%%%
+%s invokes a tyrant's trap upon you!
+
+%sはあなたに暴君の罠を発動させた！
+%%%%
+%s sets off a tyrant's trap!
+
+%sは暴君の罠を作動させた！
+%%%%
+Your strength is siphoned away, and you feel your attacks grow feeble!
+
+あなたの力は吸い取られ、攻撃が弱々しくなったように感じた！
+%%%%
+# 引数: describe_monsters_condensed() の日本語のモンスター一覧
+Your strength is siphoned away as %s grow stronger!
+
+あなたの力は吸い取られ、%sが力を増した！
+%%%%
+You enter an archmage's trap.
+
+あなたは大魔術師の罠に踏み込んだ。
+%%%%
+%s invokes an archmage's trap upon you!
+
+%sはあなたに大魔術師の罠を発動させた！
+%%%%
+%s sets off an archmage's trap!
+
+%sは大魔術師の罠を作動させた！
+%%%%
+Your power is siphoned away!
+
+あなたの魔力は吸い取られた！
+%%%%
+The spells of %s are empowered!
+
+%sの呪文が強化された！
+%%%%
+Your power is siphoned away as the spells of %s are empowered!
+
+あなたの魔力は吸い取られ、%sの呪文が強化された！
+%%%%
+You enter a harlequin's trap.
+
+あなたは道化の罠に踏み込んだ。
+%%%%
+%s invokes a harlequin's trap!
+
+%sは道化の罠を発動させた！
+%%%%
+%s sets off a harlequin's trap!
+
+%sは道化の罠を作動させた！
+%%%%
+# 引数: harlequin_trap_lines(下の 4 行のどれか)、モンスター一覧
+%s the attacks of %s are laced with chaos!
+
+%s%sの攻撃に混沌が宿った！
+%%%%
+# getMiscString("harlequin_trap_lines") の英文(miscname.txt。ja の DB がないので
+# traps.cc の表示側で jtrans する)
+Strange impish giggling echoes through your mind as
+
+奇妙な小鬼のくすくす笑いが頭の中に響き渡り、
+%%%%
+The roar of a mocking crowd runs through your mind as
+
+嘲る群衆のどよめきが頭の中を駆け巡り、
+%%%%
+A round of applause drowns out your thoughts as
+
+鳴り響く拍手喝采があなたの思考をかき消し、
+%%%%
+A cruel sense of mischief rushes through your surroundings as
+
+残酷ないたずら心があたり一面に押し寄せ、
+%%%%
+You feel a twinge of divine disapproval.
+
+あなたは神の不興をかすかに感じた。
+%%%%
+%s enters a harlequin's trap.
+
+%sは道化の罠に踏み込んだ。
+%%%%
+You enter a devourer's trap.
+
+あなたは貪食者の罠に踏み込んだ。
+%%%%
+%s invokes a devourer's trap upon you!
+
+%sはあなたに貪食者の罠を発動させた！
+%%%%
+%s sets off a devourer's trap!
+
+%sは貪食者の罠を作動させた！
+%%%%
+%s enters a devourer's trap.
+
+%sは貪食者の罠に踏み込んだ。
+%%%%
+You set off the alarm!
+
+あなたは警報を作動させた！
+%%%%
+%s pulls the alarm!
+
+%sは警報を鳴らした！
+%%%%
+%s sets off the alarm!
+
+%sは警報を作動させた！
+%%%%
+drops a net on you.
+
+はあなたに網を落とした。
+%%%%
+Something launches a net on you.
+
+何者かがあなたに網を放った。
+%%%%
+You trigger a net trap.
+
+あなたは網の罠を作動させた。
+%%%%
+You avoid being caught in a net.
+
+あなたは網に捕らわれるのを避けた。
+%%%%
+A shaft crumbles and collapses.
+
+縦穴が崩れて埋まった。
+%%%%
+The trap seems to be inoperative.
+
+この罠は作動しないようだ。
+%%%%
+# 引数: 支部の長い名前([branch])
+A malevolent force fills %s...
+
+悪意ある力が%sに満ちた……
+%%%%
+# simple_god_message(): 神の名前の後ろにつなぐ
+reveals a hidden shaft just before you would have fallen in.
+
+は、あなたが落ちる直前に隠された縦穴を暴いた。
+%%%%
+reveals an alarm trap just before you would have tripped it.
+
+は、あなたが作動させる直前に警報の罠を暴いた。
+%%%%
+With a horrendous wail, an alarm goes off!
+
+恐ろしい警報音が鳴り響いた！
+%%%%
+# 引数: "A malevolent force fills %s..." の訳
+%s and a teleportation trap spontaneously manifests!
+
+%s そして、テレポートの罠がひとりでに現れた！
+%%%%
+warns you in time for you to avoid it.
+
+は間に合うように警告し、あなたはそれを避けた。
+%%%%
+%s effortlessly oozes through the net!
+
+%sはやすやすと網をすり抜けた！
+%%%%

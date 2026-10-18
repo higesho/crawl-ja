@@ -1,0 +1,201 @@
+%%%%
+dissipates!
+
+は四散した！
+%%%%
+You swap places with %s.
+
+あなたは%sと場所を交代した。
+%%%%
+The barbs in your skin will harm you if you move. Continue?
+
+あなたの体に食い込んだ逆棘は動くと傷を広げてしまう。それでも移動しますか？
+%%%%
+The barbed spikes dig painfully into your body as you move.
+
+あなたが動くと逆棘はさらに食い込んだ。
+%%%%
+The barbed spikes snap loose.
+
+逆棘が緩んで抜け落ちた。
+%%%%
+icy armour
+
+氷の鎧
+%%%%
+There's nothing to open nearby.
+
+周囲には開けられるようなものがない。
+%%%%
+The door is shut tight!
+
+扉は固く閉ざされている！
+%%%%
+It's already open!
+
+扉は既に開いている！
+%%%%
+That door is sealed shut!
+
+扉が封印されている！
+%%%%
+There isn't anything that you can open there!
+
+ここにはあなたが開けられるものはない！
+%%%%
+You can't close doors while %s.
+
+あなたは%s間はドアを閉めることができない。
+%%%%
+There's nothing to close nearby.
+
+周囲には閉められるようなものがない。
+%%%%
+It's already closed!
+
+扉は既に閉まっている！
+%%%%
+There isn't anything that you can close there!
+
+ここにはあなたが閉められるものはない！
+%%%%
+If you enter this portal you might not be able to return immediately. Continue?
+
+一旦このポータルに突入するとすぐには出られないかもしれません。それでも入りますか？
+%%%%
+The ferocious winds and tides of the open sea thwart your progress.
+
+荒れ狂う潮風と高波があなたの行く手を妨げている。
+%%%%
+The endless sea of lava is not a nice place.
+
+溶岩の海はあなたにとってよい場所ではない。
+%%%%
+You cannot walk through the dense trees.
+
+あなたは密集した森林を通り抜けることができない。
+%%%%
+This wall is too hard to dig through.
+
+この壁は固すぎて掘り抜くことができない。
+%%%%
+You can't dig through that.
+
+あなたはその場所を掘り抜けない。
+%%%%
+You're too confused to move!
+
+あなたは混乱しすぎていて動けない！
+%%%%
+You nearly stumble into %s!
+
+あなたはもう少しで%sに踏み込むところだった！
+%%%%
+You're too terrified to move while being watched!
+
+あなたは怯えすぎており、見つめられている間動くことができない！
+%%%%
+You dig through %s.
+
+あなたは%sを掘り抜いた。
+%%%%
+You push %s out of the way.
+
+あなたは%sを押しのけた。
+%%%%
+frozen ramparts
+
+凍てつく城壁
+%%%%
+# %s は「氷の鎧と凍てつく城壁」の形
+Your %s will break if you move. Continue?
+
+移動するとあなたの%sが壊れてしまう。続けますか？
+%%%%
+Your icy armour cracks and falls away as you move.
+
+あなたが動くと、氷の鎧はひび割れて剥がれ落ちた。
+%%%%
+The frozen ramparts melt away as you move.
+
+あなたが動くと、凍てつく城壁は溶け去った。
+%%%%
+Are you sure you want to stumble around while confused and next to %s while you are losing your buoyancy?
+
+浮力が失われつつあるのに、混乱したまま%sのそばをよろめき歩きますか？
+%%%%
+Are you sure you want to stumble around while confused and next to %s while your transformation is expiring?
+
+変身が解けかけているのに、混乱したまま%sのそばをよろめき歩きますか？
+%%%%
+# %s は「あなたの従者であるラット」などの形
+Are you sure you want to stumble around while confused and next to %s?
+
+本当に混乱したまま%sのそばをよろめき歩きますか？
+%%%%
+Are you sure you want to swing wildly while confused and next to %s?
+
+本当に混乱したまま%sのそばで武器を振り回しますか？
+%%%%
+It's broken and can't be closed.
+
+扉は壊れていて閉められない。
+%%%%
+It's broken and can't be closed!
+
+扉は壊れていて閉められない！
+%%%%
+If you enter this portal you could be pulled as deep as Abyss:%d and might not be able to return immediately. Continue?
+
+このポータルに入るとアビスの第%d階層まで引きずり込まれ、すぐには戻れないかもしれません。それでも入りますか？
+%%%%
+This entrance appears to skip some branches and may be quite dangerous. Continue anyway?
+
+この入口はいくつかのダンジョンを飛ばして先へ進むもので、かなり危険かもしれません。それでも入りますか？
+%%%%
+You cannot dig through the dense trees.
+
+あなたは密集した森林を掘り抜くことができない。
+%%%%
+The malign portal rejects you as you step towards it.
+
+あなたが近づくと、邪悪なポータルはあなたを拒絶した。
+%%%%
+Trying to dig through that would dissolve your mandibles.
+
+それを掘ろうとすれば、あなたの大顎が溶けてしまう。
+%%%%
+You feel something solid in that direction.
+
+その方向に何か硬いものがあるのを感じた。
+%%%%
+You cannot move. (Use ctrl+direction or * direction to attack while stationary and confused.)
+
+あなたは動けない。(混乱中にその場で攻撃するには Ctrl+(方向)か *(方向)を使う)
+%%%%
+You bump into %s.
+
+あなたは%sにぶつかった。
+%%%%
+ refuses to make way for you. (Use ctrl+direction or * direction to attack.)
+
+は道を譲ろうとしない。(攻撃するには Ctrl+(方向)か *(方向)を使う)
+%%%%
+# %s は「歩いて移動」などの名詞形([move verb]、player.txt)
+You %s carefully through the fungus.
+
+あなたはキノコの間を慎重に%sした。
+%%%%
+You %s carefully through the plants.
+
+あなたは植物の間を慎重に%sした。
+%%%%
+You weave more energy into your solar ember.
+
+あなたは太陽の残り火にさらなるエネルギーを織り込んだ。
+%%%%
+# 呼び出し側で引数を入れ替えている(相手、移動の動詞の名詞形)
+You %s towards %s!
+
+あなたは%sに向かって%sした！
+%%%%

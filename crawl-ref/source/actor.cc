@@ -10,6 +10,7 @@
 #include "art-enum.h"
 #include "attack.h"
 #include "chardump.h"
+#include "database.h"
 #include "delay.h"
 #include "directn.h"
 #include "env.h"
@@ -447,37 +448,33 @@ void actor::end_constriction(mid_t whom, bool intentional, bool quiet,
         && (you.see_cell(pos()) || you.see_cell(constrictee->pos())))
     {
         string attacker_desc;
-        const string verb = intentional ? "release" : "lose";
-        bool force_plural = true;
 
         if (ctype == CONSTRICT_BVC)
-            attacker_desc = "The zombie hands";
+            attacker_desc = tagged_jtrans("[constrictor]", "zombie hands");
         else if (ctype == CONSTRICT_ROOTS)
-            attacker_desc = "The roots";
+            attacker_desc = tagged_jtrans("[constrictor]", "roots");
         else if (ctype == CONSTRICT_ENTANGLE)
-            attacker_desc = "The vines";
+            attacker_desc = tagged_jtrans("[constrictor]", "vines");
         else
-        {
-            force_plural = false;
             attacker_desc = name(DESC_THE);
-        }
 
         // Print a different message when breaking free of constriction via
         // blinking or similar
+        // 日本語版: escape_verb は英語("slip", "blinks" など)で渡ってくるので
+        // "[escape verb]" で連用の副詞句(「するりと」など)に訳す。
         if (!escape_verb.empty())
         {
-            mprf("%s %s free of %s!",
-                 constrictee->name(DESC_THE).c_str(), escape_verb.c_str(),
-                 lowercase(attacker_desc).c_str());
+            mprf(jtransc("%s %s free of %s!"),
+                 constrictee->name(DESC_THE).c_str(),
+                 tagged_jtrans("[escape verb]", escape_verb).c_str(),
+                 attacker_desc.c_str());
         }
         else
         {
-            mprf("%s %s %s grip on %s.",
-                attacker_desc.c_str(),
-                force_plural ? verb.c_str()
-                            : conj_verb(verb).c_str(),
-                force_plural ? "their" : pronoun(PRONOUN_POSSESSIVE).c_str(),
-                constrictee->name(DESC_THE).c_str());
+            mprf(intentional ? jtransc("%s releases its grip on %s.")
+                             : jtransc("%s loses its grip on %s."),
+                 attacker_desc.c_str(),
+                 constrictee->name(DESC_THE).c_str());
         }
     }
 }
@@ -747,7 +744,7 @@ void actor::constriction_damage_defender(actor &defender)
     if (damage <= 0 && is_player()
         && you.can_see(defender))
     {
-        exclamations = ", but do no damage.";
+        exclamations = jtrans(", but do no damage.");
     }
     else
         exclamations = attack_strength_punctuation(damage);
@@ -755,30 +752,25 @@ void actor::constriction_damage_defender(actor &defender)
     if (is_player() || you.can_see(*this))
     {
         string attacker_desc;
-        bool force_plural = true;
         switch (typ)
         {
         case CONSTRICT_BVC:
-            attacker_desc = "The zombie hands";
+            attacker_desc = tagged_jtrans("[constrictor]", "zombie hands");
             break;
         case CONSTRICT_ROOTS:
-            attacker_desc = "The grasping roots";
+            attacker_desc = tagged_jtrans("[constrictor]", "grasping roots");
             break;
         case CONSTRICT_ENTANGLE:
-            attacker_desc = "The vines";
+            attacker_desc = tagged_jtrans("[constrictor]", "vines");
             break;
         default:
-            force_plural = false;
-            if (is_player())
-                attacker_desc = "You";
-            else
-                attacker_desc = name(DESC_THE);
+            // 日本語版: プレイヤーの name() は「あなた」を返す
+            attacker_desc = name(DESC_THE);
             break;
         }
 
-        mprf("%s %s %s%s%s", attacker_desc.c_str(),
-             force_plural ? "constrict"
-                          : conj_verb("constrict").c_str(),
+        // 日本語版: 動詞は訳文に含めるので引数から外している
+        mprf(jtransc("%s constricts %s%s%s"), attacker_desc.c_str(),
              defender.name(DESC_THE).c_str(),
 #ifdef DEBUG_DIAGNOSTICS
              make_stringf(" for %d", damage).c_str(),
@@ -789,9 +781,8 @@ void actor::constriction_damage_defender(actor &defender)
     }
     else if (you.can_see(defender) || defender.is_player())
     {
-        mprf("%s %s constricted%s%s",
+        mprf(jtransc("%s is constricted%s%s"),
              defender.name(DESC_THE).c_str(),
-             defender.conj_verb("are").c_str(),
 #ifdef DEBUG_DIAGNOSTICS
              make_stringf(" for %d", damage).c_str(),
 #else
@@ -903,26 +894,27 @@ string actor::describe_props() const
     return oss.str();
 }
 
+// 日本語版: 名前の後ろにそのままつなぐ、助詞から始まる日本語
+// (「はかろうじて抵抗した。」)を返す。呼び出し側では jtrans しない。
 string actor::resist_margin_phrase(int margin) const
 {
     if (willpower() == WILL_INVULN)
-        return " " + conj_verb("are") + " unaffected.";
+        return jtrans("[resist margin]are unaffected.");
 
-    static const string resist_messages[][2] =
+    static const char * const resist_messages[] =
     {
-      { " barely %s.",                  "resist" },
-      { " %s to resist.",               "struggle" },
-      { " %s with significant effort.", "resist" },
-      { " %s with some effort.",        "resist" },
-      { " easily %s.",                  "resist" },
-      { " %s with almost no effort.",   "resist" },
+        "[resist margin]barely resist.",
+        "[resist margin]struggle to resist.",
+        "[resist margin]resist with significant effort.",
+        "[resist margin]resist with some effort.",
+        "[resist margin]easily resist.",
+        "[resist margin]resist with almost no effort.",
     };
 
     const int index = max(0, min((int)ARRAYSZ(resist_messages) - 1,
                                  ((margin + 45) / 15)));
 
-    return make_stringf(resist_messages[index][0].c_str(),
-                        conj_verb(resist_messages[index][1]).c_str());
+    return jtrans(resist_messages[index]);
 }
 
 void actor::collide(coord_def newpos, const actor *agent, int damage)
@@ -952,9 +944,8 @@ void actor::collide(coord_def newpos, const actor *agent, int damage)
         const int damother = other->apply_ac(damage);
         if (you.can_see(*this) || you.can_see(*other))
         {
-            mprf("%s %s with %s%s",
+            mprf(jtransc("%s collides with %s%s"),
                  name(DESC_THE).c_str(),
-                 conj_verb("collide").c_str(),
                  other->name(DESC_THE).c_str(),
                  attack_strength_punctuation((dam + damother) / 2).c_str());
             // OK, now do the messaging for protected monsters.
@@ -990,18 +981,19 @@ void actor::collide(coord_def newpos, const actor *agent, int damage)
     {
         if (!can_pass_through_feat(env.grid(newpos)))
         {
-            mprf("%s %s into %s%s",
-                 name(DESC_THE).c_str(), conj_verb("slam").c_str(),
+            mprf(jtransc("%s slams into %s%s"),
+                 name(DESC_THE).c_str(),
                  env.map_knowledge(newpos).known()
-                 ? feature_description_at(newpos, false, DESC_THE)
+                 ? tagged_jtrans("[feature]",
+                       feature_description_at(newpos, false, DESC_PLAIN))
                        .c_str()
-                 : "something",
+                 : jtransc("something"),
                  attack_strength_punctuation(dam).c_str());
         }
         else
         {
-            mprf("%s violently %s moving%s",
-                 name(DESC_THE).c_str(), conj_verb("stop").c_str(),
+            mprf(jtransc("%s violently stops moving%s"),
+                 name(DESC_THE).c_str(),
                  attack_strength_punctuation(dam).c_str());
         }
 
@@ -1033,7 +1025,7 @@ void actor::collide(coord_def newpos, const actor *agent, int damage)
 
 bool actor::knockback(const actor &cause, int dist, int dmg, string source_name, coord_def source_pos)
 {
-    if (is_stationary() || resists_dislodge("being knocked back"))
+    if (is_stationary() || resists_dislodge(jtrans("being knocked back")))
         return false;
 
     const coord_def source = source_pos.origin() ? cause.pos() : source_pos;
@@ -1070,11 +1062,16 @@ bool actor::knockback(const actor &cause, int dist, int dmg, string source_name,
 
     if (you.can_see(*this))
     {
-        mprf("%s %s knocked back%s%s.",
-             name(DESC_THE).c_str(),
-             conj_verb("are").c_str(),
-             !source_name.empty() ? " by the " : "",
-             source_name.c_str());
+        // 日本語版: source_name は英語のビーム名("force bolt" など)でも
+        // 日本語でもよい。表示時に "[zap]" で引く(日本語ならそのまま)。
+        if (source_name.empty())
+            mprf(jtransc("%s is knocked back."), name(DESC_THE).c_str());
+        else
+        {
+            mprf(jtransc("%s is knocked back by the %s."),
+                 name(DESC_THE).c_str(),
+                 zap_name_jc(source_name));
+        }
     }
 
     if (dmg > 0 && pos() != newpos)
@@ -1123,15 +1120,16 @@ bool actor::stumble_away_from(coord_def targ, string src)
 
     if (newpos.origin()
         || actor_at(newpos)
-        || resists_dislodge("being knocked back"))
+        || resists_dislodge(jtrans("being knocked back")))
     {
         return false;
     }
 
+    // 日本語版: src は日本語(「衝撃」「爆風」など)で渡す
     if (is_player() && !src.empty())
-        mprf("%s sends you backwards.", uppercase_first(src).c_str());
+        mprf(jtransc("%s sends you backwards."), src.c_str());
     else if (you.can_see(*this) && !src.empty())
-        mprf("%s is knocked back by %s.", name(DESC_THE).c_str(), src.c_str());
+        mprf(jtransc("%s is knocked back by %s."), name(DESC_THE).c_str(), src.c_str());
 
     move_to(newpos);
 

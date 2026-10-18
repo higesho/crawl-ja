@@ -460,8 +460,9 @@ string describe_player_cancellation(bool debuffs_only)
         status_info inf;
         if (fill_status_info(duration, inf) && !inf.short_text.empty())
         {
-            strip_suffix(inf.short_text, " (expiring)");
-            effects.push_back(jtrans(inf.short_text));
+            // short_text は status.cc で訳済み
+            strip_suffix(inf.short_text, jtrans_notrim(" (expiring)"));
+            effects.push_back(inf.short_text);
         }
     }
 
@@ -480,8 +481,9 @@ string describe_player_cancellation(bool debuffs_only)
             continue;
         if (status != STATUS_AIRBORNE)
         {
-            strip_suffix(inf.short_text, " (expiring)");
-            effects.push_back(jtrans(inf.short_text));
+            // short_text は status.cc で訳済み
+            strip_suffix(inf.short_text, jtrans_notrim(" (expiring)"));
+            effects.push_back(inf.short_text);
             continue;
         }
         if (you.attribute[ATTR_PERM_FLIGHT] || you.racial_permanent_flight())

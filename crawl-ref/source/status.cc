@@ -6,12 +6,14 @@
 #include "art-enum.h" // bearserk
 #include "artefact.h"
 #include "branch.h"
+#include "database.h"
 #include "dungeon.h" // DESCENT_STAIRS_KEY
 #include "duration-type.h"
 #include "env.h"
 #include "evoke.h"
 #include "fight.h" // weapon_cleaves
 #include "item-prop.h"
+#include "japanese.h"
 #include "level-state-type.h"
 #include "mon-abil.h"
 #include "mutation.h"
@@ -25,6 +27,7 @@
 #include "throw.h"
 #include "transform.h"
 #include "traps.h"
+#include "unwind.h"
 #include "zot.h" // bezotting_level
 
 #include "duration-data.h"
@@ -122,6 +125,17 @@ bool duration_extended_by_attacks(duration_type dur)
     return _lookup_duration(dur)->duration_has_flag(D_ATTACK_EXTENDED);
 }
 
+// 日本語の並べ方(「AとB」「A、BとC」)。fill_status_info_en() のときは英語
+static string _list_and()
+{
+    return jtrans_enabled() ? "と" : " and ";
+}
+
+static string _list_comma()
+{
+    return jtrans_enabled() ? "、" : ", ";
+}
+
 static int _bad_ench_colour(int lvl, int orange, int red)
 {
     if (lvl >= red)
@@ -158,10 +172,12 @@ static void _mark_expiring(status_info& inf, bool expiring)
 {
     if (expiring)
     {
+        // 日本語の接尾辞・接頭辞(spl-goditem.cc は jtrans_notrim(" (expiring)")
+        // を取り除いている)
         if (!inf.short_text.empty())
-            inf.short_text += " (expiring)";
+            inf.short_text += jtrans_notrim(" (expiring)");
         if (!inf.long_text.empty())
-            inf.long_text = "Expiring: " + inf.long_text;
+            inf.long_text = jtrans_notrim("Expiring: ") + inf.long_text;
     }
 }
 
@@ -180,9 +196,10 @@ static bool _fill_inf_from_ddef(duration_type dur, status_info& inf)
         return false;
 
     inf.light_colour = ddef->light_colour;
-    inf.light_text   = ddef->light_text;
-    inf.short_text   = ddef->short_text;
-    inf.long_text    = ddef->long_text;
+    // 訳は data-durations.txt(light_text と short_text は [dur] 付き)
+    inf.light_text   = tagged_jtrans("[dur]", ddef->light_text);
+    inf.short_text   = tagged_jtrans("[dur]", ddef->short_text);
+    inf.long_text    = jtrans(ddef->long_text);
     if (ddef->duration_has_flag(D_EXPIRES))
     {
         inf.light_colour = _dur_colour(inf.light_colour, dur_expiring(dur));
@@ -237,15 +254,16 @@ bool fill_status_info(int status, status_info& inf)
         {
             stat_type stat = static_cast<stat_type>(i);
             if (you.stat(stat, false) <= 0)
-                stat_str.emplace_back(stat_desc(stat, SD_NAME));
+                stat_str.emplace_back(jtrans(stat_desc(stat, SD_NAME)));
         }
 
-        string msg = comma_separated_line(stat_str.begin(), stat_str.end());
+        string msg = comma_separated_line(stat_str.begin(), stat_str.end(),
+                                          _list_and(), _list_comma());
 
-        inf.light_text   = "Crippled";
+        inf.light_text   = tagged_jtrans("[dur]", "Crippled");
         inf.light_colour = LIGHTRED;
-        inf.short_text   = make_stringf("lost %s", msg.c_str());
-        inf.long_text    = make_stringf("You have no %s!", msg.c_str());
+        inf.short_text   = make_stringf(tagged_jtransc("[dur]", "lost %s"), msg.c_str());
+        inf.long_text    = make_stringf(jtransc("You have no %s!"), msg.c_str());
     }
     break;
 
@@ -257,7 +275,7 @@ bool fill_status_info(int status, status_info& inf)
             break;
         }
 
-        inf.light_text = "Breath";
+        inf.light_text = tagged_jtrans("[dur]", "Breath");
 
         const int num = draconian_breath_uses_available();
         if (num == 0)
@@ -282,7 +300,7 @@ bool fill_status_info(int status, status_info& inf)
             if (yred_cannot_light_torch_reason().empty())
             {
                 inf.light_colour = DARKGRAY;
-                inf.light_text = "Torch";
+                inf.light_text = tagged_jtrans("[dur]", "Torch");
             }
         }
         else
@@ -291,19 +309,19 @@ bool fill_status_info(int status, status_info& inf)
 
             if (player_has_ability(ABIL_YRED_HURL_TORCHLIGHT))
             {
-                inf.light_text = make_stringf("Torch (%d)",
+                inf.light_text = make_stringf(tagged_jtransc("[dur]", "Torch (%d)"),
                                     yred_get_torch_power());
             }
             else
-                inf.light_text = "Torch";
+                inf.light_text = tagged_jtrans("[dur]", "Torch");
 
-            inf.short_text = "lit torch";
+            inf.short_text = tagged_jtrans("[dur]", "lit torch");
         }
     break;
 
     case DUR_DIVINE_SHIELD:
     {
-        inf.light_text = make_stringf("Shield (%d)",
+        inf.light_text = make_stringf(tagged_jtransc("[dur]", "Shield (%d)"),
                                         you.duration[DUR_DIVINE_SHIELD]);
     }
     break;
@@ -315,19 +333,19 @@ bool fill_status_info(int status, status_info& inf)
         _fill_inf_from_ddef(DUR_CORROSION, inf);
         // Intentional fallthrough
     case DUR_CORROSION:
-        inf.light_text = make_stringf("Corr (%d)",
+        inf.light_text = make_stringf(tagged_jtransc("[dur]", "Corr (%d)"),
                           (-1 * you.corrosion_amount()));
-        inf.short_text = make_stringf("corroded (%d)", (-1 * you.corrosion_amount()));
+        inf.short_text = make_stringf(tagged_jtransc("[dur]", "corroded (%d)"), (-1 * you.corrosion_amount()));
         break;
 
     case DUR_FLAYED:
-        inf.light_text = make_stringf("Flay (%d)",
+        inf.light_text = make_stringf(tagged_jtransc("[dur]", "Flay (%d)"),
                           (-1 * you.props[FLAY_DAMAGE_KEY].get_int()));
         break;
 
     case DUR_BERSERK:
         if (you.unrand_equipped(UNRAND_BEAR_SPIRIT))
-            inf.light_text = "Bearserk";
+            inf.light_text = tagged_jtrans("[dur]", "Bearserk");
         break;
 
     case STATUS_NO_POTIONS:
@@ -336,19 +354,19 @@ bool fill_status_info(int status, status_info& inf)
                 && you.props.exists(RENOUNCE_POTIONS_TIMER_KEY)))
         {
             inf.light_colour = !you.can_drink(false) ? DARKGREY : RED;
-            inf.light_text   = "-Potion";
-            inf.short_text   = "unable to drink";
-            inf.long_text    = "You cannot drink potions.";
+            inf.light_text   = tagged_jtrans("[dur]", "-Potion");
+            inf.short_text   = tagged_jtrans("[dur]", "unable to drink");
+            inf.long_text    = jtrans("You cannot drink potions.");
         }
         break;
 
     case DUR_SWIFTNESS:
         if (you.attribute[ATTR_SWIFTNESS] < 0)
         {
-            inf.light_text   = "-Swift";
+            inf.light_text   = tagged_jtrans("[dur]", "-Swift");
             inf.light_colour = RED;
-            inf.short_text   = "unswift";
-            inf.long_text    = "You are covering ground slowly.";
+            inf.short_text   = tagged_jtrans("[dur]", "unswift");
+            inf.long_text    = jtrans("You are covering ground slowly.");
         }
         break;
 
@@ -372,9 +390,9 @@ bool fill_status_info(int status, status_info& inf)
         if (you.beheld())
         {
             inf.light_colour = RED;
-            inf.light_text   = "Mesm";
-            inf.short_text   = "mesmerised";
-            inf.long_text    = "You are mesmerised.";
+            inf.light_text   = tagged_jtrans("[dur]", "Mesm");
+            inf.short_text   = tagged_jtrans("[dur]", "mesmerised");
+            inf.long_text    = jtrans("You are mesmerised.");
         }
         break;
 
@@ -383,9 +401,9 @@ bool fill_status_info(int status, status_info& inf)
             && you.elapsed_time > 0)
         {
             inf.light_colour = WHITE;
-            inf.light_text   = "Peek";
-            inf.short_text   = "peeking";
-            inf.long_text    = "You are peeking down the stairs.";
+            inf.light_text   = tagged_jtrans("[dur]", "Peek");
+            inf.short_text   = tagged_jtrans("[dur]", "peeking");
+            inf.long_text    = jtrans("You are peeking down the stairs.");
         }
         break;
 
@@ -396,16 +414,16 @@ bool fill_status_info(int status, status_info& inf)
     case STATUS_BACKLIT:
         if (you.backlit())
         {
-            inf.short_text = "glowing";
-            inf.long_text  = "You are glowing.";
+            inf.short_text = tagged_jtrans("[dur]", "glowing");
+            inf.long_text  = jtrans("You are glowing.");
         }
         break;
 
     case STATUS_UMBRA:
         if (you.umbra())
         {
-            inf.short_text   = "wreathed by umbra";
-            inf.long_text    = "You are wreathed by an umbra.";
+            inf.short_text   = tagged_jtrans("[dur]", "wreathed by umbra");
+            inf.long_text    = jtrans("You are wreathed by an umbra.");
         }
         break;
 
@@ -413,9 +431,10 @@ bool fill_status_info(int status, status_info& inf)
         if (you.attribute[ATTR_HELD])
         {
             inf.light_colour = RED;
-            inf.light_text   = "Held";
-            inf.short_text   = "held";
-            inf.long_text    = make_stringf("You are %s.", held_status());
+            inf.light_text   = tagged_jtrans("[dur]", "Held");
+            inf.short_text   = tagged_jtrans("[dur]", "held");
+            inf.long_text    = make_stringf(jtransc("You are %s."),
+                                            jtransc(held_status()));
         }
         break;
 
@@ -433,9 +452,9 @@ bool fill_status_info(int status, status_info& inf)
         if (you.liquefied_ground() || you.duration[DUR_LIQUEFYING])
         {
             inf.light_colour = BROWN;
-            inf.light_text   = "SlowM";
-            inf.short_text   = "slowed movement";
-            inf.long_text    = "Your movement is slowed on this liquid ground.";
+            inf.light_text   = tagged_jtrans("[dur]", "SlowM");
+            inf.short_text   = tagged_jtrans("[dur]", "slowed movement");
+            inf.long_text    = jtrans("Your movement is slowed on this liquid ground.");
         }
         break;
     }
@@ -450,7 +469,7 @@ bool fill_status_info(int status, status_info& inf)
                                (level == 2) ? LIGHTBLUE
                                             : BLUE;
 
-            inf.light_text = "Aug";
+            inf.light_text = tagged_jtrans("[dur]", "Aug");
         }
         break;
     }
@@ -477,7 +496,7 @@ bool fill_status_info(int status, status_info& inf)
         if (pbd_str > 0)
         {
             inf.light_colour = LIGHTMAGENTA;
-            inf.light_text   = make_stringf("Regen (%d)", pbd_str);
+            inf.light_text   = make_stringf(tagged_jtransc("[dur]", "Regen (%d)"), pbd_str);
         }
         break;
     }
@@ -489,8 +508,10 @@ bool fill_status_info(int status, status_info& inf)
         {
             const int rh_lvl = you.get_mutation_level(MUT_ROLLPAGE);
             inf.light_colour = rh_lvl < 2 ? LIGHTBLUE : LIGHTMAGENTA;
-            inf.light_text   = make_stringf(rh_lvl < 2 ? "MPRegen (%d)"
-                                                       : "Regen (%d)", rh_pwr);
+            inf.light_text   = make_stringf(rh_lvl < 2
+                                    ? tagged_jtransc("[dur]", "MPRegen (%d)")
+                                    : tagged_jtransc("[dur]", "Regen (%d)"),
+                                    rh_pwr);
         }
         break;
     }
@@ -504,8 +525,11 @@ bool fill_status_info(int status, status_info& inf)
         string skills = manual_skill_names();
         if (!skills.empty())
         {
-            inf.short_text = "studying " + manual_skill_names(true);
-            inf.long_text = "You are studying " + skills + ".";
+            // manual_skill_names() は日本語の技能名を返す
+            inf.short_text = make_stringf(tagged_jtransc("[dur]", "studying %s"),
+                                          manual_skill_names(true).c_str());
+            inf.long_text = make_stringf(jtransc("You are studying %s."),
+                                         skills.c_str());
         }
         break;
     }
@@ -525,14 +549,14 @@ bool fill_status_info(int status, status_info& inf)
             ASSERT(cstr);
 
             inf.light_colour = YELLOW;
-            inf.light_text   = "Constr";
+            inf.light_text   = tagged_jtrans("[dur]", "Constr");
 
             if (you.constricted_type == CONSTRICT_ROOTS)
-                inf.short_text   = "constricted (roots)";
+                inf.short_text   = tagged_jtrans("[dur]", "constricted (roots)");
             else if (you.constricted_type == CONSTRICT_BVC)
-                inf.short_text   = "constricted (zombie hands)";
+                inf.short_text   = tagged_jtrans("[dur]", "constricted (zombie hands)");
             else
-                inf.short_text   = "constricted";
+                inf.short_text   = tagged_jtrans("[dur]", "constricted");
         }
         break;
 
@@ -548,15 +572,15 @@ bool fill_status_info(int status, status_info& inf)
             if (Options.equip_bar)
             {
                 inf.light_colour = LIGHTRED;
-                inf.light_text   = "Sil";
+                inf.light_text   = tagged_jtrans("[dur]", "Sil");
             }
-            inf.short_text   = "silenced";
-            inf.long_text    = "You are silenced.";
+            inf.short_text   = tagged_jtrans("[dur]", "silenced");
+            inf.long_text    = jtrans("You are silenced.");
         }
         if (Options.equip_bar && you.duration[DUR_SILENCE])
         {
             inf.light_colour = LIGHTMAGENTA;
-            inf.light_text = "Sil";
+            inf.light_text = tagged_jtrans("[dur]", "Sil");
         }
         break;
 
@@ -565,10 +589,10 @@ bool fill_status_info(int status, status_info& inf)
         {
             inf.light_colour = WHITE;
             inf.light_text
-               = make_stringf("Lash (%u)",
+               = make_stringf(tagged_jtransc("[dur]", "Lash (%u)"),
                               you.attribute[ATTR_SERPENTS_LASH]);
-            inf.short_text = "serpent's lash";
-            inf.long_text = "You are moving at supernatural speed.";
+            inf.short_text = tagged_jtrans("[dur]", "serpent's lash");
+            inf.long_text = jtrans("You are moving at supernatural speed.");
         }
         break;
 
@@ -577,7 +601,7 @@ bool fill_status_info(int status, status_info& inf)
         {
             inf.light_colour = WHITE;
             inf.light_text
-                = make_stringf("Heavenly (%d)",
+                = make_stringf(tagged_jtransc("[dur]", "Heavenly (%d)"),
                                you.props[WU_JIAN_HEAVENLY_STORM_KEY].get_int());
         }
         break;
@@ -587,13 +611,13 @@ bool fill_status_info(int status, status_info& inf)
         int fugue_pow = you.props[FUGUE_KEY].get_int();
         // Hey now / you're a damned star / get your fugue on / go slay
         const char* fugue_star = fugue_pow == FUGUE_MAX_STACKS ? "*" : "";
-        inf.light_text = make_stringf("Fugue (%s%u%s)",
+        inf.light_text = make_stringf(tagged_jtransc("[dur]", "Fugue (%s%u%s)"),
                                       fugue_star, fugue_pow, fugue_star);
     }
     break;
 
     case DUR_WEREFURY:
-        inf.light_text = make_stringf("Slay +%d", you.props[WEREFURY_KEY].get_int());
+        inf.light_text = make_stringf(tagged_jtransc("[dur]", "Slay +%d"), you.props[WEREFURY_KEY].get_int());
     break;
 
     case DUR_DEVIOUS:
@@ -615,7 +639,7 @@ bool fill_status_info(int status, status_info& inf)
             if (stacks > 0)
             {
                 inf.light_colour = LIGHTRED;
-                inf.light_text = make_stringf("Phobia (-%d)", stacks);
+                inf.light_text = make_stringf(tagged_jtransc("[dur]", "Phobia (-%d)"), stacks);
             }
         }
     break;
@@ -628,28 +652,29 @@ bool fill_status_info(int status, status_info& inf)
         if (intensity >= 13)
         {
             inf.light_colour = LIGHTRED;
-            inf.light_text = "Fire++";
+            inf.light_text = tagged_jtrans("[dur]", "Fire++");
         }
         else if (intensity > 7)
-            inf.light_text = "Fire+";
+            inf.light_text = tagged_jtrans("[dur]", "Fire+");
         else
-            inf.light_text = "Fire";
+            inf.light_text = tagged_jtrans("[dur]", "Fire");
     }
 
     case STATUS_BEOGH:
         if (env.level_state & LSTATE_BEOGH && can_convert_to_beogh())
         {
             inf.light_colour = WHITE;
-            inf.light_text = "Beogh";
+            inf.light_text = tagged_jtrans("[dur]", "Beogh");
         }
         break;
 
     case DUR_FLOODED:
-        inf.light_text  = "Flooded";
-        inf.short_text  = "flooded lungs";
-        inf.long_text   = make_stringf("Your lungs are flooded with %s and you "
-                                       "cannot breathe.",
-                                       you.props[WATER_HOLD_SUBSTANCE_KEY].get_string().c_str());
+        inf.light_text  = tagged_jtrans("[dur]", "Flooded");
+        inf.short_text  = tagged_jtrans("[dur]", "flooded lungs");
+        inf.long_text   = make_stringf(jtransc("Your lungs are flooded with %s and you "
+                                               "cannot breathe."),
+                                       tagged_jtrans("[substance]",
+                                           you.props[WATER_HOLD_SUBSTANCE_KEY].get_string()).c_str());
         break;
 
     case STATUS_DRAINED:
@@ -659,37 +684,37 @@ bool fill_status_info(int status, status_info& inf)
         if (drain_perc >= 50)
         {
             inf.light_colour = MAGENTA;
-            inf.light_text   = "Drain";
-            inf.short_text   = "extremely drained";
-            inf.long_text    = "Your life force is extremely drained.";
+            inf.light_text   = tagged_jtrans("[dur]", "Drain");
+            inf.short_text   = tagged_jtrans("[dur]", "extremely drained");
+            inf.long_text    = jtrans("Your life force is extremely drained.");
         }
         else if (drain_perc >= 30)
         {
             inf.light_colour = RED;
-            inf.light_text   = "Drain";
-            inf.short_text   = "very heavily drained";
-            inf.long_text    = "Your life force is very heavily drained.";
+            inf.light_text   = tagged_jtrans("[dur]", "Drain");
+            inf.short_text   = tagged_jtrans("[dur]", "very heavily drained");
+            inf.long_text    = jtrans("Your life force is very heavily drained.");
         }
         else if (drain_perc >= 20)
         {
             inf.light_colour = LIGHTRED;
-            inf.light_text   = "Drain";
-            inf.short_text   = "heavily drained";
-            inf.long_text    = "Your life force is heavily drained.";
+            inf.light_text   = tagged_jtrans("[dur]", "Drain");
+            inf.short_text   = tagged_jtrans("[dur]", "heavily drained");
+            inf.long_text    = jtrans("Your life force is heavily drained.");
         }
         else if (drain_perc >= 10)
         {
             inf.light_colour = YELLOW;
-            inf.light_text   = "Drain";
-            inf.short_text   = "drained";
-            inf.long_text    = "Your life force is drained.";
+            inf.light_text   = tagged_jtrans("[dur]", "Drain");
+            inf.short_text   = tagged_jtrans("[dur]", "drained");
+            inf.long_text    = jtrans("Your life force is drained.");
         }
         else if (you.hp_max_adj_temp)
         {
             inf.light_colour = LIGHTGREY;
-            inf.light_text   = "Drain";
-            inf.short_text   = "lightly drained";
-            inf.long_text    = "Your life force is lightly drained.";
+            inf.light_text   = tagged_jtrans("[dur]", "Drain");
+            inf.short_text   = tagged_jtrans("[dur]", "lightly drained");
+            inf.long_text    = jtrans("Your life force is lightly drained.");
         }
         break;
 
@@ -702,14 +727,14 @@ bool fill_status_info(int status, status_info& inf)
         if (you.digging)
         {
             inf.light_colour = WHITE;
-            inf.light_text   = "Dig";
+            inf.light_text   = tagged_jtrans("[dur]", "Dig");
         }
         break;
 
     case STATUS_BRIBE:
     {
         int bribe = 0;
-        vector<const char *> places;
+        vector<string> places;
         for (int i = 0; i < NUM_BRANCHES; i++)
         {
             branch_type br = gozag_fixup_branch(static_cast<branch_type>(i));
@@ -719,8 +744,8 @@ bool fill_status_info(int status, status_info& inf)
                 if (player_in_branch(static_cast<branch_type>(i)))
                     bribe = branch_bribe[br];
 
-                places.push_back(branches[static_cast<branch_type>(i)]
-                                 .longname);
+                places.push_back(branch_name_j(branches[static_cast<branch_type>(i)]
+                                               .longname));
             }
         }
 
@@ -730,16 +755,19 @@ bool fill_status_info(int status, status_info& inf)
                                 (bribe >= 1000) ? LIGHTBLUE
                                                 : BLUE;
 
-            inf.light_text = "Bribe";
-            inf.short_text = make_stringf("bribing [%s]",
+            inf.light_text = tagged_jtrans("[dur]", "Bribe");
+            inf.short_text = make_stringf(tagged_jtransc("[dur]", "bribing [%s]"),
                                            comma_separated_line(places.begin(),
                                                                 places.end(),
-                                                                ", ", ", ")
+                                                                _list_comma(),
+                                                                _list_comma())
                                                                 .c_str());
-            inf.long_text = "You are bribing "
-                             + comma_separated_line(places.begin(),
-                                                    places.end())
-                             + ".";
+            inf.long_text = make_stringf(jtransc("You are bribing %s."),
+                                         comma_separated_line(places.begin(),
+                                                              places.end(),
+                                                              _list_and(),
+                                                              _list_comma())
+                                                              .c_str());
         }
         break;
     }
@@ -747,24 +775,24 @@ bool fill_status_info(int status, status_info& inf)
     case DUR_HORROR:
     {
         const int horror = you.props[HORROR_PENALTY_KEY].get_int();
-        inf.light_text = make_stringf("Horr (%d)", -1 * horror);
+        inf.light_text = make_stringf(tagged_jtransc("[dur]", "Horr (%d)"), -1 * horror);
         if (horror >= HORROR_LVL_OVERWHELMING)
         {
             inf.light_colour = RED;
-            inf.short_text   = "overwhelmed with horror";
-            inf.long_text    = "Horror overwhelms you!";
+            inf.short_text   = tagged_jtrans("[dur]", "overwhelmed with horror");
+            inf.long_text    = jtrans("Horror overwhelms you!");
         }
         else if (horror >= HORROR_LVL_EXTREME)
         {
             inf.light_colour = LIGHTRED;
-            inf.short_text   = "extremely horrified";
-            inf.long_text    = "You are extremely horrified!";
+            inf.short_text   = tagged_jtrans("[dur]", "extremely horrified");
+            inf.long_text    = jtrans("You are extremely horrified!");
         }
         else if (horror)
         {
             inf.light_colour = YELLOW;
-            inf.short_text   = "horrified";
-            inf.long_text    = "You are horrified!";
+            inf.short_text   = tagged_jtrans("[dur]", "horrified");
+            inf.long_text    = jtrans("You are horrified!");
         }
         break;
     }
@@ -774,7 +802,7 @@ bool fill_status_info(int status, status_info& inf)
         cloud_type cloud = cloud_type_at(you.pos());
         if (Options.cloud_status && cloud != CLOUD_NONE)
         {
-            inf.light_text = "Cloud";
+            inf.light_text = tagged_jtrans("[dur]", "Cloud");
             // TODO: make the colour based on the cloud's color; requires elemental
             // status lights, though.
             const bool yours = cloud_is_yours_at(you.pos());
@@ -797,17 +825,17 @@ bool fill_status_info(int status, status_info& inf)
         if (player_has_orb())
         {
             inf.light_colour = LIGHTMAGENTA;
-            inf.light_text = "Orb";
+            inf.light_text = tagged_jtrans("[dur]", "Orb");
         }
         else if (you.unrand_equipped(UNRAND_CHARLATANS_ORB))
         {
             inf.light_colour = LIGHTMAGENTA;
-            inf.light_text = "Orb?";
+            inf.light_text = tagged_jtrans("[dur]", "Orb?");
         }
         else if (orb_limits_translocation())
         {
             inf.light_colour = MAGENTA;
-            inf.light_text = "Orb";
+            inf.light_text = tagged_jtrans("[dur]", "Orb");
         }
 
         break;
@@ -817,7 +845,7 @@ bool fill_status_info(int status, status_info& inf)
         if (env.level_state & LSTATE_STILL_WINDS)
         {
             inf.light_colour = BROWN;
-            inf.light_text = "-Clouds";
+            inf.light_text = tagged_jtrans("[dur]", "-Clouds");
         }
         break;
 
@@ -825,9 +853,9 @@ bool fill_status_info(int status, status_info& inf)
         if (okawaru_duel_active())
         {
             inf.light_colour = WHITE;
-            inf.light_text   = "Duel";
-            inf.short_text   = "duelling";
-            inf.long_text    = "You are engaged in single combat.";
+            inf.light_text   = tagged_jtrans("[dur]", "Duel");
+            inf.short_text   = tagged_jtrans("[dur]", "duelling");
+            inf.long_text    = jtrans("You are engaged in single combat.");
         }
         break;
 
@@ -835,9 +863,9 @@ bool fill_status_info(int status, status_info& inf)
         if (canine_familiar_is_alive())
         {
             inf.light_colour = WHITE;
-            inf.light_text   = "Dog";
-            inf.short_text   = "inugami summoned";
-            inf.long_text    = "Your inugami has been summoned.";
+            inf.light_text   = tagged_jtrans("[dur]", "Dog");
+            inf.short_text   = tagged_jtrans("[dur]", "inugami summoned");
+            inf.long_text    = jtrans("Your inugami has been summoned.");
         }
         break;
 
@@ -847,9 +875,9 @@ bool fill_status_info(int status, status_info& inf)
                 && you.props.exists(RENOUNCE_SCROLLS_TIMER_KEY)))
         {
             inf.light_colour = RED;
-            inf.light_text   = "-Scroll";
-            inf.short_text   = "unable to read";
-            inf.long_text    = "You cannot read scrolls.";
+            inf.light_text   = tagged_jtrans("[dur]", "-Scroll");
+            inf.short_text   = tagged_jtrans("[dur]", "unable to read");
+            inf.long_text    = jtrans("You cannot read scrolls.");
         }
         break;
 
@@ -863,9 +891,9 @@ bool fill_status_info(int status, status_info& inf)
             break;
         }
         inf.light_colour = RED;
-        inf.light_text   = "rF0";
-        inf.short_text   = "fire susceptible";
-        inf.long_text    = "You cannot resist fire.";
+        inf.light_text   = tagged_jtrans("[dur]", "rF0");
+        inf.short_text   = tagged_jtrans("[dur]", "fire susceptible");
+        inf.long_text    = jtrans("You cannot resist fire.");
         break;
 
     case STATUS_LOWERED_WL:
@@ -886,13 +914,13 @@ bool fill_status_info(int status, status_info& inf)
             && you.props[GRAVE_CLAW_CHARGES_KEY].get_int() == 0)
         {
             inf.light_colour = DARKGREY;
-            inf.light_text = "-GClaw";
+            inf.light_text = tagged_jtrans("[dur]", "-GClaw");
         }
         break;
 
     case DUR_GROWING_DESTRUCTION:
     {
-        inf.light_text = "Destr";
+        inf.light_text = tagged_jtrans("[dur]", "Destr");
         const int stacks = you.props[MAKHLEB_ATROCITY_STACKS_KEY].get_int();
         for (int i = 0; i < stacks - 1; ++i)
             inf.light_text += "+";
@@ -905,7 +933,7 @@ bool fill_status_info(int status, status_info& inf)
     {
         if (player_in_branch(BRANCH_CRUCIBLE))
         {
-            inf.light_text = "Pact";
+            inf.light_text = tagged_jtrans("[dur]", "Pact");
             const int debt = you.props[MAKHLEB_CRUCIBLE_DEBT_KEY].get_int();
             if (debt > 20)
                 inf.light_colour = MAGENTA;
@@ -917,7 +945,7 @@ bool fill_status_info(int status, status_info& inf)
                 inf.light_colour = YELLOW;
             else
             {
-                inf.light_text = "Escape!";
+                inf.light_text = tagged_jtrans("[dur]", "Escape!");
                 inf.light_colour = WHITE;
             }
         }
@@ -929,25 +957,25 @@ bool fill_status_info(int status, status_info& inf)
         if (paragon_defense_bonus_active())
         {
             inf.light_colour = WHITE;
-            inf.light_text = "Protected";
+            inf.light_text = tagged_jtrans("[dur]", "Protected");
         }
         break;
     }
 
     case DUR_FORTRESS_BLAST_TIMER:
         inf.light_colour = WHITE;
-        inf.light_text = "Blast" + string(max(0, (40 - you.duration[DUR_FORTRESS_BLAST_TIMER]) / 10), '.');
-        inf.short_text = "fortress blast";
-        inf.long_text = "Preparing a Fortress Blast.";
+        inf.light_text = tagged_jtrans("[dur]", "Blast") + string(max(0, (40 - you.duration[DUR_FORTRESS_BLAST_TIMER]) / 10), '.');
+        inf.short_text = tagged_jtrans("[dur]", "fortress blast");
+        inf.long_text = jtrans("Preparing a Fortress Blast.");
         break;
 
     case DUR_TELEPORT:
         if (you.props.exists(TELEPORTITIS_SOURCE))
         {
-            inf.light_text   = "!Tele!";
+            inf.light_text   = tagged_jtrans("[dur]", "!Tele!");
             inf.light_colour = RED;
-            inf.short_text   = "teleporting to hostiles";
-            inf.long_text    = "You are about to teleport to other enemies.";
+            inf.short_text   = tagged_jtrans("[dur]", "teleporting to hostiles");
+            inf.long_text    = jtrans("You are about to teleport to other enemies.");
         }
         break;
 
@@ -957,8 +985,8 @@ bool fill_status_info(int status, status_info& inf)
             const int bonus = trickster_bonus();
             if (bonus > 0)
             {
-                inf.short_text = make_stringf("trickster (+%d AC)", bonus);
-                inf.long_text = make_stringf("You are bolstered by spread misfortune (+%d AC)", bonus);
+                inf.short_text = make_stringf(tagged_jtransc("[dur]", "trickster (+%d AC)"), bonus);
+                inf.long_text = make_stringf(jtransc("You are bolstered by spread misfortune (+%d AC)"), bonus);
             }
         }
         break;
@@ -985,12 +1013,12 @@ bool fill_status_info(int status, status_info& inf)
         if (!you.duration[DUR_ENKINDLED] && you.has_mutation(MUT_MNEMOPHAGE))
         {
             inf.light_colour = CYAN;
-            inf.light_text = make_stringf("Memories (%d)", you.props[ENKINDLE_CHARGES_KEY].get_int());
+            inf.light_text = make_stringf(tagged_jtransc("[dur]", "Memories (%d)"), you.props[ENKINDLE_CHARGES_KEY].get_int());
         }
         break;
 
     case DUR_ENKINDLED:
-        inf.light_text = make_stringf("Enkindled (%d)", you.props[ENKINDLE_CHARGES_KEY].get_int());
+        inf.light_text = make_stringf(tagged_jtransc("[dur]", "Enkindled (%d)"), you.props[ENKINDLE_CHARGES_KEY].get_int());
         break;
 
     case STATUS_SHROUD:
@@ -998,15 +1026,16 @@ bool fill_status_info(int status, status_info& inf)
                 && !you.duration[DUR_SHROUD_TIMEOUT])
         {
             inf.light_colour = GREEN;
-            inf.light_text   = "Shroud";
-            inf.short_text   = "slimy shroud";
+            // DUR_SHROUD_TIMEOUT の "Shroud"(data-durations.txt)と訳し分ける
+            inf.light_text   = tagged_jtrans("[status]", "Shroud");
+            inf.short_text   = tagged_jtrans("[dur]", "slimy shroud");
         }
         break;
 
     case STATUS_OSTRACISM:
         if (you.attribute[ATTR_OSTRACISM] > 0)
         {
-            inf.light_text = "Ostracised";
+            inf.light_text = tagged_jtrans("[dur]", "Ostracised");
             if (!god_cares_about_ostracism())
                 inf.light_colour = DARKGREY;
             else if (you.attribute[ATTR_OSTRACISM] > 120)
@@ -1028,7 +1057,7 @@ bool fill_status_info(int status, status_info& inf)
             else
                 inf.light_colour = RED;
 
-            inf.light_text = "Tesseract";
+            inf.light_text = tagged_jtrans("[dur]", "Tesseract");
         }
         break;
 
@@ -1036,7 +1065,7 @@ bool fill_status_info(int status, status_info& inf)
         if (you.sunder_is_ready())
         {
             inf.light_colour = WHITE;
-            inf.light_text = "Sunder";
+            inf.light_text = tagged_jtrans("[dur]", "Sunder");
         }
         break;
 
@@ -1044,15 +1073,23 @@ bool fill_status_info(int status, status_info& inf)
         if (!found)
         {
             inf.light_colour = RED;
-            inf.light_text   = "Missing";
-            inf.short_text   = "missing status";
-            inf.long_text    = "Missing status description.";
+            inf.light_text   = tagged_jtrans("[dur]", "Missing");
+            inf.short_text   = tagged_jtrans("[dur]", "missing status");
+            inf.long_text    = jtrans("Missing status description.");
             return false;
         }
         else
             break;
     }
     return true;
+}
+
+bool fill_status_info_en(int status, status_info& inf)
+{
+    // jtrans() は language = ja 以外では英文をそのまま返すので、
+    // 一時的に英語に切り替えて同じ処理で埋める
+    unwind_var<lang_t> en(Options.language, lang_t::EN);
+    return fill_status_info(status, inf);
 }
 
 static colour_t _gem_light_colour(int d_aut_left)
@@ -1086,12 +1123,12 @@ static void _describe_gem(status_info& inf)
     if (!gem_clock_active() && !you.gems_found[gem])
     {
         // player has picked up the orb, but the gem has not yet shattered
-        inf.light_text = " Gem (*)";
+        inf.light_text = " " + tagged_jtrans("[dur]", "Gem (*)");
         inf.light_colour = CYAN;
         return;
     }
     const int d_aut_left = (limit - time_taken + 9) / 10;
-    inf.light_text = make_stringf("Gem (%d)", d_aut_left);
+    inf.light_text = make_stringf(tagged_jtransc("[dur]", "Gem (%d)"), d_aut_left);
     inf.light_colour = _gem_light_colour(d_aut_left);
 }
 
@@ -1100,8 +1137,8 @@ static void _describe_zot(status_info& inf)
     const int lvl = bezotting_level();
     if (lvl > 0)
     {
-        inf.short_text = "bezotted";
-        inf.long_text = "Zot is approaching!";
+        inf.short_text = tagged_jtrans("[dur]", "bezotted");
+        inf.long_text = jtrans("Zot is approaching!");
     }
     else if (!Options.always_show_zot && !you.has_mutation(MUT_SHORT_LIFESPAN)
              || !zot_clock_active())
@@ -1110,7 +1147,7 @@ static void _describe_zot(status_info& inf)
     }
 
     // XX code dup with overview screen
-    inf.light_text = make_stringf("Zot (%d)", turns_until_zot());
+    inf.light_text = make_stringf(tagged_jtransc("[dur]", "Zot (%d)"), turns_until_zot());
     switch (lvl)
     {
         case 0:
@@ -1139,7 +1176,7 @@ static void _describe_glow(status_info& inf)
         inf.light_colour = RED;
     else
         inf.light_colour = YELLOW;
-    inf.light_text = "Contam";
+    inf.light_text = tagged_jtrans("[dur]", "Contam");
 
     inf.short_text = describe_contamination(false);
     inf.long_text = describe_contamination();
@@ -1155,23 +1192,23 @@ static void _describe_rev(status_info& inf)
     {
         case 1:
             inf.light_colour = BLUE;
-            inf.light_text   = "Rev";
-            inf.short_text   = "revving";
-            inf.long_text    = "You're starting to limber up.";
+            inf.light_text   = tagged_jtrans("[dur]", "Rev");
+            inf.short_text   = tagged_jtrans("[dur]", "revving");
+            inf.long_text    = jtrans("You're starting to limber up.");
             return;
 
         case 2:
             inf.light_colour = LIGHTBLUE;
-            inf.light_text   = "Rev+";
-            inf.short_text   = "revving";
-            inf.long_text    = "You're limbering up.";
+            inf.light_text   = tagged_jtrans("[dur]", "Rev+");
+            inf.short_text   = tagged_jtrans("[dur]", "revving");
+            inf.long_text    = jtrans("You're limbering up.");
             return;
 
         case 3:
             inf.light_colour = WHITE;
-            inf.light_text   = "Rev*";
-            inf.short_text   = "revved";
-            inf.long_text    = "You're fully limbered up.";
+            inf.light_text   = tagged_jtrans("[dur]", "Rev*");
+            inf.short_text   = tagged_jtrans("[dur]", "revved");
+            inf.long_text    = jtrans("You're fully limbered up.");
             return;
     }
 }
@@ -1181,17 +1218,17 @@ static void _describe_regen(status_info& inf)
     if (you.duration[DUR_TROGS_HAND])
     {
         inf.light_colour = _dur_colour(BLUE, dur_expiring(DUR_TROGS_HAND));
-        inf.light_text = "Regen Will++";
-        inf.short_text = "regenerating";
-        inf.long_text  = "You are regenerating.";
+        inf.light_text = tagged_jtrans("[dur]", "Regen Will++");
+        inf.short_text = tagged_jtrans("[dur]", "regenerating");
+        inf.long_text  = jtrans("You are regenerating.");
         _mark_expiring(inf, dur_expiring(DUR_TROGS_HAND));
     }
     else if (regeneration_is_inhibited())
     {
         inf.light_colour = RED;
-        inf.light_text = "-Regen";
-        inf.short_text = "inhibited regen";
-        inf.long_text = "Your regeneration is inhibited by nearby monsters.";
+        inf.light_text = tagged_jtrans("[dur]", "-Regen");
+        inf.short_text = tagged_jtrans("[dur]", "inhibited regen");
+        inf.long_text = jtrans("Your regeneration is inhibited by nearby monsters.");
     }
 }
 
@@ -1201,15 +1238,16 @@ static void _describe_poison(status_info& inf)
                                   : ((you.hp - max(0, poison_survival())) * 100 / you.hp);
     inf.light_colour = (player_res_poison(false) >= 3
                         ? DARKGREY : _bad_ench_colour(pois_perc, 35, 100));
-    inf.light_text   = "Pois";
-    const string adj =
-         (pois_perc >= 100) ? "lethally" :
-         (pois_perc > 65)   ? "seriously" :
-         (pois_perc > 35)   ? "quite"
-                            : "mildly";
-    inf.short_text   = adj + " poisoned"
+    inf.light_text   = tagged_jtrans("[dur]", "Pois");
+    const string poisoned =
+         (pois_perc >= 100) ? tagged_jtrans("[dur]", "lethally poisoned") :
+         (pois_perc > 65)   ? tagged_jtrans("[dur]", "seriously poisoned") :
+         (pois_perc > 35)   ? tagged_jtrans("[dur]", "quite poisoned")
+                            : tagged_jtrans("[dur]", "mildly poisoned");
+    inf.short_text   = poisoned
         + make_stringf(" (%d -> %d)", you.hp, poison_survival());
-    inf.long_text    = "You are " + inf.short_text + ".";
+    inf.long_text    = make_stringf(jtransc("You are %s."),
+                                    inf.short_text.c_str());
 }
 
 static void _describe_speed(status_info& inf)
@@ -1220,23 +1258,23 @@ static void _describe_speed(status_info& inf)
     if (slow && fast)
     {
         inf.light_colour = MAGENTA;
-        inf.light_text   = "Fast+Slow";
-        inf.short_text   = "hasted and slowed";
-        inf.long_text = "You are under both slowing and hasting effects.";
+        inf.light_text   = tagged_jtrans("[dur]", "Fast+Slow");
+        inf.short_text   = tagged_jtrans("[dur]", "hasted and slowed");
+        inf.long_text = jtrans("You are under both slowing and hasting effects.");
     }
     else if (slow)
     {
         inf.light_colour = RED;
-        inf.light_text   = "Slow";
-        inf.short_text   = "slowed";
-        inf.long_text    = "You are slowed.";
+        inf.light_text   = tagged_jtrans("[dur]", "Slow");
+        inf.short_text   = tagged_jtrans("[dur]", "slowed");
+        inf.long_text    = jtrans("You are slowed.");
     }
     else if (fast)
     {
         inf.light_colour = _dur_colour(BLUE, dur_expiring(DUR_HASTE));
-        inf.light_text   = "Fast";
-        inf.short_text = "hasted";
-        inf.long_text = "Your actions are hasted.";
+        inf.light_text   = tagged_jtrans("[dur]", "Fast");
+        inf.short_text = tagged_jtrans("[dur]", "hasted");
+        inf.long_text = jtrans("Your actions are hasted.");
         _mark_expiring(inf, dur_expiring(DUR_HASTE));
     }
 }
@@ -1251,9 +1289,9 @@ static void _describe_airborne(status_info& inf)
     const bool emergency = you.props[EMERGENCY_FLIGHT_KEY].get_bool();
 
     inf.light_colour = perm ? WHITE : emergency ? LIGHTRED : BLUE;
-    inf.light_text   = "Fly";
-    inf.short_text   = "flying";
-    inf.long_text    = "You are flying.";
+    inf.light_text   = tagged_jtrans("[dur]", "Fly");
+    inf.short_text   = tagged_jtrans("[dur]", "flying");
+    inf.long_text    = jtrans("You are flying.");
     inf.light_colour = _dur_colour(inf.light_colour, expiring);
     _mark_expiring(inf, expiring);
 }
@@ -1270,7 +1308,8 @@ static void _describe_transform(status_info& inf)
         return;
 
     const Form * const form = get_form();
-    inf.light_text = form->short_name;
+    // get_long_name() と get_description() は日本語を返す
+    inf.light_text = tagged_jtrans("[form]", form->short_name);
     inf.short_text = form->get_long_name();
     inf.long_text = form->get_description();
 
@@ -1285,15 +1324,15 @@ static void _describe_terrain(status_info& inf)
     {
     case DNGN_SHALLOW_WATER:
         inf.light_colour = LIGHTBLUE;
-        inf.light_text = "Water";
+        inf.light_text = tagged_jtrans("[dur]", "Water");
         break;
     case DNGN_DEEP_WATER:
         inf.light_colour = BLUE;
-        inf.light_text = "Water";
+        inf.light_text = tagged_jtrans("[dur]", "Water");
         break;
     case DNGN_LAVA:
         inf.light_colour = RED;
-        inf.light_text = "Lava";
+        inf.light_text = tagged_jtrans("[dur]", "Lava");
         break;
     default:
         ;
@@ -1306,19 +1345,21 @@ static void _describe_invisible(status_info& inf)
         return;
 
     inf.light_colour = _dur_colour(BLUE, dur_expiring(DUR_INVIS));
-    inf.light_text   = "Invis";
-    inf.short_text   = "invisible";
+    inf.light_text   = tagged_jtrans("[dur]", "Invis");
+    inf.short_text   = tagged_jtrans("[dur]", "invisible");
     if (you.backlit())
     {
         inf.light_colour = DARKGREY;
-        inf.short_text += " (but backlit and visible)";
+        inf.short_text += jtrans_notrim(" (but backlit and visible)");
     }
-    inf.long_text = "You are " + inf.short_text + ".";
+    inf.long_text = you.backlit()
+                    ? jtrans("You are invisible (but backlit and visible).")
+                    : jtrans("You are invisible.");
     _mark_expiring(inf, dur_expiring(DUR_INVIS));
 }
 
-static vector<string> _charge_strings = { "Charge-", "Charge/",
-                                          "Charge|", "Charge\\"};
+// 日本語: 「Charge」の部分を訳し、回転する記号だけを後ろに付ける
+static vector<string> _charge_strings = { "-", "/", "|", "\\"};
 
 static string _charge_text()
 {
@@ -1342,22 +1383,22 @@ static void _describe_channelled_spell(status_info& inf)
         // player's turn, which mostly happens in webtiles. Great!
         case SPELL_FLAME_WAVE:
             inf.light_colour = WHITE;
-            inf.light_text   = "Wave" + string(max(turns - 1, 0), '+');
+            inf.light_text   = tagged_jtrans("[dur]", "Wave") + string(max(turns - 1, 0), '+');
             break;
 
         case SPELL_SEARING_RAY:
             inf.light_colour = WHITE;
-            inf.light_text   = "Ray" + string(max(turns - 1, 0), '+');
+            inf.light_text   = tagged_jtrans("[dur]", "Ray") + string(max(turns - 1, 0), '+');
             break;
 
         case SPELL_MAXWELLS_COUPLING:
             inf.light_colour = LIGHTCYAN;
-            inf.light_text   = _charge_text().c_str();
+            inf.light_text   = tagged_jtrans("[dur]", "Charge") + _charge_text();
             break;
 
         case SPELL_CLOCKWORK_BEE:
             inf.light_colour = CYAN;
-            inf.light_text = "Winding" + string(max(turns - 1, 0), '.');
+            inf.light_text = tagged_jtrans("[dur]", "Winding") + string(max(turns - 1, 0), '.');
             break;
 
         default:
@@ -1382,9 +1423,22 @@ bool duration_decrements_normally(duration_type dur)
  * @param dur   The duration in question (e.g. DUR_PETRIFIED).
  * @return      A message to print for the duration when it ends.
  */
+// 日本語訳(data-durations.txt)を引いて、呼び出し側に const char* で返すために
+// 訳を保持しておく(map の要素は消さないのでポインタは無効にならない)
+static const char *_duration_msg_j(const char *msg)
+{
+    if (!msg || !*msg)
+        return msg;
+    static map<string, string> cache;
+    auto it = cache.find(msg);
+    if (it == cache.end())
+        it = cache.emplace(msg, jtrans(msg)).first;
+    return it->second.c_str();
+}
+
 const char *duration_end_message(duration_type dur)
 {
-    return _lookup_duration(dur)->decr.end.msg;
+    return _duration_msg_j(_lookup_duration(dur)->decr.end.msg);
 }
 
 /**
@@ -1396,7 +1450,7 @@ const char *duration_end_message(duration_type dur)
  */
 const char *duration_expire_message(duration_type dur)
 {
-    return _lookup_duration(dur)->decr.expire_msg.msg;
+    return _duration_msg_j(_lookup_duration(dur)->decr.expire_msg.msg);
 }
 
 /**

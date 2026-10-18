@@ -20,6 +20,7 @@
 #include "attack.h"
 #include "beam.h"
 #include "beam-type.h"
+#include "database.h"
 #include "description-level-type.h"
 #include "externs.h"
 #include "god-passive.h"
@@ -110,33 +111,33 @@ static void _curse_message(actor& target, actor* /*source*/,
         return;
 
     vector<string> messages = {
-        "You feel homesick.",
-        "The world around you seems to dim momentarily.",
-        "You feel numb.",
-        "Strange energies run through your body.",
-        "You shiver with cold.",
-        "You sense a malignant aura.",
-        "You feel very uncomfortable.",
-        "Something just walked over your grave. No, really!",
+        jtrans("You feel homesick."),
+        jtrans("The world around you seems to dim momentarily."),
+        jtrans("You feel numb."),
+        jtrans("Strange energies run through your body."),
+        jtrans("You shiver with cold."),
+        jtrans("You sense a malignant aura."),
+        jtrans("You feel very uncomfortable."),
+        jtrans("Something just walked over your grave. No, really!"),
     };
 
     if (you.can_smell())
-        messages.push_back("You smell decay.");
+        messages.push_back(jtrans("You smell decay."));
 
     const string skin = species::skin_name(you.species).c_str();
     if (starts_with(skin, "bandage"))
-        messages.push_back("Your bandages flutter.");
+        messages.push_back(jtrans("Your bandages flutter."));
     else
     {
-        messages.push_back(make_stringf("Your %s prickle%s.",
-                        skin.c_str(), ends_with(skin, "s") ? "" : "s"));
+        messages.push_back(make_stringf(jtransc("Your %s prickle."),
+                        tagged_jtransc("[body part]", skin)));
     }
 
     if (!silenced(you.pos()))
-        messages.push_back("You hear strange and distant voices.");
+        messages.push_back(jtrans("You hear strange and distant voices."));
 
     if (you.has_bones())
-        messages.push_back("Your bones ache.");
+        messages.push_back(jtrans("Your bones ache."));
 
     mpr(*random_iterator(messages));
 }
@@ -172,9 +173,10 @@ static const vector<curse_effect> curse_effects = {
         [](actor& target, actor* source, string cause, int severity) {
             int dmg = 5 + random2avg(2*severity,2);
             string punct = attack_strength_punctuation(dmg);
-            _do_msg(target, "A forgotten god smites you" + punct,
-                    "A forgotten god smites @The_monster@" + punct,
-                    "A forgotten god smites something" + punct);
+            // 句読点は訳を引いてから足す
+            _do_msg(target, jtrans("A forgotten god smites you") + punct,
+                    jtrans("A forgotten god smites @The_monster@") + punct,
+                    jtrans("A forgotten god smites something") + punct);
             _ouch(target, source, dmg, cause);
         },
         10, 25,
@@ -182,8 +184,8 @@ static const vector<curse_effect> curse_effects = {
     {
         "doom",
         [](actor& target, actor* /*source*/, string /*cause*/, int severity) {
-            _do_msg(target, "You feel doom gather around you.",
-                            "Doom gathers around @the_monster@.",
+            _do_msg(target, jtrans("You feel doom gather around you."),
+                            jtrans("Doom gathers around @the_monster@."),
                             "");
             target.doom(random_range(10, 15 + severity * 2 / 3));
         },
@@ -193,8 +195,8 @@ static const vector<curse_effect> curse_effects = {
         "slow",
         [](actor& target, actor* source, string /*cause*/, int severity) {
             _do_msg(target,
-                    "You feel horribly lethargic.",
-                    "@The_monster@ looks incredibly listless.",
+                    jtrans("You feel horribly lethargic."),
+                    jtrans("@The_monster@ looks incredibly listless."),
                     "");
             target.slow_down(source, severity);
         },
@@ -204,9 +206,9 @@ static const vector<curse_effect> curse_effects = {
         "drain",
         [](actor& target, actor* source, string /*cause*/, int severity) {
             _do_msg(target,
-                    "You are engulfed in negative energy!",
-                    "@The_monster@ is engulfed in negative energy!",
-                    "Something is engulfed in negative energy!");
+                    jtrans("You are engulfed in negative energy!"),
+                    jtrans("@The_monster@ is engulfed in negative energy!"),
+                    jtrans("Something is engulfed in negative energy!"));
             target.drain(source, false, ( severity * 100 ) / 27);
         },
         10, 20,
@@ -234,12 +236,12 @@ void death_curse(actor& target, actor* source, string cause, int severity)
     {
         if (coinflip())
         {
-            simple_god_message(" averts the curse.");
+            simple_god_message(jtransc(" averts the curse."));
             return;
         }
         else
         {
-            simple_god_message(" partially averts the curse.");
+            simple_god_message(jtransc(" partially averts the curse."));
             severity = severity / 2;
         }
     }

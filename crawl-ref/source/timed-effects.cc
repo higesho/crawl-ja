@@ -84,8 +84,8 @@ static void _apply_contam_over_time()
 // Bad effects from magic contamination.
 static void _magic_contamination_effects()
 {
-    mprf(MSGCH_WARN, "Your body shudders with the violent release "
-                     "of wild energies!");
+    mprf(MSGCH_WARN, jtransc("Your body shudders with the violent release "
+                     "of wild energies!"));
 
     const bool severe = you.magic_contamination >= 2000;
 
@@ -137,8 +137,8 @@ static void _check_contamination_effects(int /*time_delta*/)
     {
         if (is_sanctuary(you.pos()))
         {
-            mprf(MSGCH_GOD, "Your body momentarily shudders from a surge of wild "
-                            "energies until Zin's power calms it.");
+            mprf(MSGCH_GOD, jtransc("Your body momentarily shudders from a surge of wild "
+                            "energies until Zin's power calms it."));
         }
         else
             _magic_contamination_effects();
@@ -199,15 +199,16 @@ static void _jiyva_effects(int /*time_delta*/)
             switch (random2(3))
             {
                 case 0:
-                    simple_god_message(" gurgles merrily.");
+                    simple_god_message(jtransc(" gurgles merrily."));
                     break;
                 case 1:
-                    mprf(MSGCH_SOUND, "You hear %s splatter%s.",
-                         total_jellies > 1 ? "a series of" : "a",
-                         total_jellies > 1 ? "s" : "");
+                    mprf(MSGCH_SOUND, "%s",
+                         jtransc(total_jellies > 1
+                                 ? "You hear a series of splatters."
+                                 : "You hear a splatter."));
                     break;
                 case 2:
-                    simple_god_message(" says: Divide and consume!");
+                    simple_god_message(jtransc(" says: Divide and consume!"));
                     break;
             }
         }
@@ -230,7 +231,7 @@ static void _evolve(int /*time_delta*/)
         return;
     set_evolution_mut_xp(malignant);
 
-    mpr("You feel a genetic drift.");
+    mpr(jtrans("You feel a genetic drift."));
     const mutation_type typ = malignant ? RANDOM_BAD_MUTATION : RANDOM_GOOD_MUTATION;
     const char* const reason = malignant ? "hidden defects" : "hidden potential";
     if (!mutate(typ, reason, false, false, false, false, MUTCLASS_NORMAL))
@@ -312,7 +313,7 @@ static void _maybe_mortality_summon()
 
     if (created)
     {
-        mprf("Death has come for you....");
+        mprf(jtransc("Death has come for you...."));
         you.props[MORTALITY_TIME_KEY] = you.elapsed_time + random_range(2250, 4500);
     }
 }
@@ -362,7 +363,7 @@ static void _bane_triggers(int /*time_delta*/)
         if (seen)
         {
             flash_tile(mon->pos(), LIGHTBLUE, 150);
-            mprf("%s shimmers and splits apart.", mon->name(DESC_THE).c_str());
+            mprf(jtransc("%s shimmers and splits apart."), mon->name(DESC_THE).c_str());
         }
     }
 
@@ -711,24 +712,28 @@ static void _drop_tomb(const coord_def& pos, bool premature, bool zin)
     if (count)
     {
         if (seen_change && !zin)
-            mprf("The walls disappear%s!", premature ? " prematurely" : "");
+            mpr(jtrans(premature ? "The walls disappear prematurely!"
+                                 : "The walls disappear!"));
         else if (seen_change && zin)
         {
-            mprf("Zin %s %s %s.",
-                 (mon) ? "releases"
-                       : "dismisses",
-                 (mon) ? mon->name(DESC_THE).c_str()
-                       : "the silver walls,",
-                 (mon) ? make_stringf("from %s prison",
-                             mon->pronoun(PRONOUN_POSSESSIVE).c_str()).c_str()
-                       : "but there is nothing inside them");
+            // 日本語では文ごとに訳す(代名詞は省く)。
+            if (mon)
+            {
+                mprf(jtransc("Zin releases %s from prison."),
+                     mon->name(DESC_THE).c_str());
+            }
+            else
+            {
+                mpr(jtrans("Zin dismisses the silver walls, but there is "
+                           "nothing inside them."));
+            }
         }
         else
         {
             if (!silenced(you.pos()))
-                mprf(MSGCH_SOUND, "You hear a deep rumble.");
+                mprf(MSGCH_SOUND, jtransc("You hear a deep rumble."));
             else
-                mpr("You feel the ground shudder.");
+                mpr(jtrans("You feel the ground shudder."));
         }
     }
 }
@@ -872,9 +877,9 @@ void timeout_binding_sigils()
     }
 
     if (num_seen > 1)
-        mprf(MSGCH_DURATION, "Your binding sigils disappear.");
+        mprf(MSGCH_DURATION, jtransc("Your binding sigils disappear."));
     else if (num_seen > 0)
-        mprf(MSGCH_DURATION, "Your binding sigil disappears.");
+        mprf(MSGCH_DURATION, jtransc("Your binding sigil disappears."));
 }
 
 void end_terrain_change(terrain_change_type type)
@@ -891,7 +896,7 @@ void end_terrain_change(terrain_change_type type)
 
 void end_enkindled_status()
 {
-    mprf(MSGCH_DURATION, "Your flames quiet as the last of your memories are burnt away.");
+    mprf(MSGCH_DURATION, jtransc("Your flames quiet as the last of your memories are burnt away."));
     you.duration[DUR_ENKINDLED] = 0;
     you.props.erase(ENKINDLE_CHARGES_KEY);
 }
@@ -976,14 +981,14 @@ void timeout_terrain_changes(int duration, bool force)
     }
 
     if (num_seen[TERRAIN_CHANGE_DOOR_SEAL] > 1)
-        mpr("The runic seals fade away.");
+        mpr(jtrans("The runic seals fade away."));
     else if (num_seen[TERRAIN_CHANGE_DOOR_SEAL] > 0)
-        mpr("The runic seal fades away.");
+        mpr(jtrans("The runic seal fades away."));
 
     if (num_seen[TERRAIN_CHANGE_BINDING_SIGIL] > 1)
-        mprf(MSGCH_DURATION, "Your binding sigils disappear.");
+        mprf(MSGCH_DURATION, jtransc("Your binding sigils disappear."));
     else if (num_seen[TERRAIN_CHANGE_BINDING_SIGIL] > 0)
-        mprf(MSGCH_DURATION, "Your binding sigil disappears.");
+        mprf(MSGCH_DURATION, jtransc("Your binding sigil disappears."));
 }
 
 ////////////////////////////////////////////////////////////////////////////

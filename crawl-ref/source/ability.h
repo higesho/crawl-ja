@@ -62,6 +62,8 @@ int ability_range(ability_type abil);
 ability_flags get_ability_flags(ability_type ability);
 talent get_talent(ability_type ability);
 string ability_name(ability_type ability, bool dbname = false);
+// 表示用の能力名(日本語)
+string ability_name_j(ability_type ability);
 vector<string> get_ability_names();
 string get_ability_desc(const ability_type ability, bool need_title = true);
 int choose_ability_menu(const vector<talent>& talents);

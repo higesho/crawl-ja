@@ -472,7 +472,7 @@ bool swap_check(monster* mons, coord_def &loc, bool quiet)
         {
             simple_monster_message(*mons,
                 make_stringf(jtransc(" is %s!"),
-                             jtransc(held_status(mons))).c_str());
+                             held_status(mons)).c_str());
         }
         return false;
     }
@@ -8291,7 +8291,7 @@ bool player::can_do_shaft_ability(bool quiet) const
     {
         if (!quiet)
             mprf(jtransc("You can't shaft yourself while %s."),
-                 jtransc(held_status()));
+                 held_status());
         return false;
     }
 

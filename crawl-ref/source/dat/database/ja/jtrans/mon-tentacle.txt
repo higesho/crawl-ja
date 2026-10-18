@@ -1,0 +1,29 @@
+%%%%
+The vine drags %s backwards!
+
+蔓は%sを奥の方へと引きずった！
+%%%%
+The tentacle pulls %s backwards!
+
+触手は%sを奥の方へと引っ張った！
+%%%%
+A tentacle flies out from the starspawn's body!
+
+落とし子がその体から触手を伸ばした！
+%%%%
+Tentacles burst from the starspawn's body!
+
+落とし子がその体から何本もの触手を伸ばした！
+%%%%
+being pulled by %s
+
+%sに引っ張られること
+%%%%
+A tentacle reaches out from the kraken!
+
+クラーケンが触手を伸ばした！
+%%%%
+Tentacles reach out from the kraken!
+
+クラーケンが何本もの触手を伸ばした！
+%%%%

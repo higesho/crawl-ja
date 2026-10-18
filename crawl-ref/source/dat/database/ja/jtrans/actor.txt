@@ -1,0 +1,157 @@
+%%%%
+, but do no damage.
+
+が、ダメージを与えられなかった。
+%%%%
+# 拘束から抜ける: 拘束された者、[escape verb] の副詞句、拘束しているもの
+%s %s free of %s!
+
+%sは%s%sから逃れた！
+%%%%
+# end_constriction() の escape_verb(stop_being_constricted() の呼び出し元が
+# 英語で渡す。god-abil.cc, spl-transloc.cc, teleport.cc)
+[escape verb]slip
+
+するりと
+%%%%
+[escape verb]burst
+
+力ずくで
+%%%%
+[escape verb]leap
+
+跳躍して
+%%%%
+[escape verb]leaps
+
+跳躍して
+%%%%
+[escape verb]dance
+
+舞うように
+%%%%
+[escape verb]jump
+
+跳んで
+%%%%
+[escape verb]blink
+
+瞬間移動して
+%%%%
+[escape verb]blinks
+
+瞬間移動して
+%%%%
+[escape verb]hop
+
+跳ねて
+%%%%
+[escape verb]hops
+
+跳ねて
+%%%%
+[escape verb]bolt
+
+稲妻となって
+%%%%
+%s releases its grip on %s.
+
+%sは%sを締めつけるのをやめた。
+%%%%
+%s loses its grip on %s.
+
+%sは%sを締めつけていられなくなった。
+%%%%
+[constrictor]zombie hands
+
+ゾンビの手
+%%%%
+[constrictor]roots
+
+木の根
+%%%%
+[constrictor]grasping roots
+
+絡みつく木の根
+%%%%
+[constrictor]vines
+
+蔓
+%%%%
+# 締めつける者、締めつけられる者、(デバッグ用のダメージ表示)、句読点
+%s constricts %s%s%s
+
+%sは%sを締めつけた%s%s
+%%%%
+%s is constricted%s%s
+
+%sは締めつけられた%s%s
+%%%%
+# actor::resist_margin_phrase() の戻り値(名前の後ろにつなぐ)
+[resist margin]are unaffected.
+
+は影響を受けなかった。
+%%%%
+[resist margin]barely resist.
+
+はかろうじて抵抗した。
+%%%%
+[resist margin]struggle to resist.
+
+はやっとのことで抵抗した。
+%%%%
+[resist margin]resist with significant effort.
+
+はそれをなんとか耐えた。
+%%%%
+[resist margin]resist with some effort.
+
+はそれに抵抗した。
+%%%%
+[resist margin]easily resist.
+
+はそれをたやすく退けた。
+%%%%
+[resist margin]resist with almost no effort.
+
+はそれを気にも留めなかった。
+%%%%
+%s collides with %s%s
+
+%sは%sと衝突した%s
+%%%%
+%s slams into %s%s
+
+%sは%sに激突した%s
+%%%%
+%s violently stops moving%s
+
+%sは激しい勢いで止められた%s
+%%%%
+%s is knocked back.
+
+%sは吹き飛ばされた。
+%%%%
+%s is knocked back by the %s.
+
+%sは%sで吹き飛ばされた。
+%%%%
+# knockback() の source_name で、ビーム名([zap])以外に英語で渡ってくるもの
+# (evoke.cc の風のワンド等、xom.cc)
+gust of wind
+
+突風
+%%%%
+hand of Xom
+
+ゾムの手
+%%%%
+# stumble_away_from() の src は日本語(「衝撃」「爆風」など)
+%s sends you backwards.
+
+%sであなたは後ろへよろめいた。
+%%%%
+%s is knocked back by %s.
+
+%sは%sで後ろへ押しやられた。
+%%%%

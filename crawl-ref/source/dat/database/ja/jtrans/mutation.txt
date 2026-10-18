@@ -1,0 +1,443 @@
+%%%%
+# ============================================================
+#  mutation.cc
+#  変異そのものの文章(mutation-data.h)は data-mutations.txt、
+#  変身の疑似変異は data-forms.txt、種族の疑似変異は data-species.txt。
+#  bane-data.h(災厄)の名前と説明はここに置く。
+# ============================================================
+# A 画面・変異の一覧
+Innate Abilities, Weirdness & Mutations
+
+先天的/超自然的/もしくは突然変異の能力
+%%%%
+You are rather mundane.
+
+あなたにはこれといった特徴がない。
+%%%%
+no striking features
+
+特になし
+%%%%
+Suppressed.
+
+抑制されている。
+%%%%
+Transient mutations.
+
+一時的な変異。
+%%%%
+Gained at a future XL.
+
+将来のレベルで得る。
+%%%%
+Category:
+
+分類:
+%%%%
+[mut tag]Anatomy
+
+体の構造
+%%%%
+[mut tag]Substance
+
+体の物質
+%%%%
+[mut tag]Blood
+
+血液
+%%%%
+[mut tag]Bones
+
+骨
+%%%%
+[mut tag]Hands
+
+手
+%%%%
+# 疑似変異の簡潔な名前(英語名は説明文の検索キーなので表示する所で引く)
+[fakemut]golden breath
+
+黄金のブレス
+%%%%
+[fakemut]flying
+
+飛行
+%%%%
+[fakemut]amphibious
+
+水陸両生
+%%%%
+[fakemut]boosted hp
+
+HP増加
+%%%%
+[fakemut]reduced hp
+
+HP減少
+%%%%
+[fakemut]no casting
+
+呪文詠唱不可
+%%%%
+[fakemut]blade armour
+
+鎧の効果低下
+%%%%
+[fakemut]walk on water
+
+水上歩行
+%%%%
+[fakemut]reduced essence
+
+生命力減少
+%%%%
+[fakemut]unfitting armour
+
+防具不適合
+%%%%
+[fakemut]no large weapons
+
+大型武器不可
+%%%%
+[fakemut]tiny
+
+極小
+%%%%
+[fakemut]very small
+
+とても小柄
+%%%%
+[fakemut]small
+
+小柄
+%%%%
+[fakemut]large
+
+大柄
+%%%%
+[fakemut]giant
+
+巨体
+%%%%
+# 変身中の疑似変異
+You can breathe a blast of fire, cold, and poison.
+
+あなたは炎、冷気、毒の息を吐くことができる。
+%%%%
+Your breath weapon is enhanced in this form.
+
+あなたのブレスはこの姿で強化されている。
+%%%%
+You are flying.
+
+あなたは空を飛んでいる。
+%%%%
+You are amphibious.
+
+あなたは水中と陸上どちらでも活動できる。
+%%%%
+Your maximum health is increased.
+
+あなたの最大HPは増加している。
+%%%%
+Your maximum health is greatly increased.
+
+あなたの最大HPは大幅に増加している。
+%%%%
+Your maximum health is decreased.
+
+あなたの最大HPは減少している。
+%%%%
+Your maximum health is decreased, since you lack skill for your form.
+
+あなたはこの姿に必要な技能が足りないため、最大HPが減少している。
+%%%%
+You cannot cast spells.
+
+あなたは呪文を唱えることができない。
+%%%%
+Your body armour is %s at protecting you.
+
+あなたの胴鎧は防御の効果が%s。
+%%%%
+[blade armour]much less effective
+
+大幅に低下している
+%%%%
+[blade armour]less effective
+
+低下している
+%%%%
+[blade armour]slightly less effective
+
+わずかに低下している
+%%%%
+# 神・種族などの疑似変異
+You can walk on water.
+
+あなたは水の上を歩くことができる。
+%%%%
+You can walk on water until reaching land.
+
+あなたは陸地に着くまで水の上を歩くことができる。
+%%%%
+Your facial features look somewhat orcish.
+
+あなたの顔立ちはどことなくオークのようだ。
+%%%%
+Your facial features are unmistakably orcish.
+
+あなたの顔立ちは紛れもなくオークのそれだ。
+%%%%
+Your life essence is reduced to manifest your ancestor. (-10% HP)
+
+あなたの生命力は祖霊を顕現させるために減少している。(-10% HP)
+%%%%
+Your serpentine skin is tough. (AC +%d)
+
+あなたの蛇のような皮膚は頑丈だ。(AC +%d)
+%%%%
+Your %s scales are hard. (AC +%d)
+
+あなたの%sの鱗は硬い。(AC +%d)
+%%%%
+%d rings
+
+指輪%d個
+%%%%
+You can wear up to %d rings at the same time.
+
+あなたは同時に%d個までの指輪をはめることができる。
+%%%%
+You are too small for most types of armour.
+
+あなたの体は小さすぎてほとんどの防具を装備できない。
+%%%%
+You are very small and have problems with some larger weapons.
+
+あなたの体は非常に小さく、大きな武器を持つのに支障がある。
+%%%%
+You are small and have problems with some larger weapons.
+
+あなたの体は小さく、大きな武器を持つのに支障がある。
+%%%%
+You are too large for most types of armour.
+
+あなたの体は大きすぎてほとんどの防具を装備できない。
+%%%%
+You cannot fit into any form of body armour or wear helmets.
+
+あなたはどんな胴鎧も着られず、兜もかぶれない。
+%%%%
+You are immune to poison.
+
+あなたには毒の効果がない。
+%%%%
+# 変異の説明(mutation_desc)の特別な場合
+ EV, Slay +
+
+ 回避、殺傷 +
+%%%%
+You expend health (3 HP) to strengthen your wands.
+
+あなたは体力(3 HP)を消費してワンドを強化する。
+%%%%
+You have tentacles for arms and can constrict up to %d enemies at once.
+
+あなたの腕は触手になっており、同時に%d体までの敵を締めつけられる。
+%%%%
+You have sharp claws.
+
+あなたは鋭い爪を持っている。
+%%%%
+# 装備が外れる
+You can no longer wear %s!
+
+あなたはもう%sを身に着けていられない！
+%%%%
+You can no longer hold %s!
+
+あなたはもう%sを持っていられない！
+%%%%
+%s is forced from your body!
+
+%sはあなたの体から押し出された！
+%%%%
+%s is forced from your body, shattering the curse!
+
+%sはあなたの体から押し出され、呪いは砕け散った！
+%%%%
+# 変異の獲得・喪失
+ prevents a mutation which would have shattered %s.
+
+は%sを砕いてしまう変異を防いだ。
+%%%%
+You feel odd for a moment.
+
+あなたは一瞬だけ奇妙な感覚になった。
+%%%%
+ protects your body from mutation!
+
+はあなたの体が変異するのを防いだ！
+%%%%
+Your body decomposes!
+
+あなたの肉体は腐敗した！
+%%%%
+Your %s mutation feels more permanent.
+
+あなたの%sの変異はより永続的になったようだ。
+%%%%
+You feel rather odd for a moment.
+
+あなたは一瞬、どうにも奇妙な感覚を覚えた。
+%%%%
+You feel the corruption within you wane completely.
+
+あなたは体の崩壊が完全に収まったような気がした。
+%%%%
+You feel the corruption within you wane somewhat.
+
+あなたは体の崩壊がいくぶん収まったような気がした。
+%%%%
+A demonic guardian appears!
+
+悪魔の守護者が現れた！
+%%%%
+# 災厄(bane-data.h)
+Bane of %s
+
+%sの災厄
+%%%%
+[bane]Lethargy
+
+倦怠
+%%%%
+[bane]Heatstroke
+
+熱中症
+%%%%
+[bane]Snow-blindness
+
+雪盲
+%%%%
+[bane]Electrospasm
+
+電撃痙攣
+%%%%
+[bane]Claustrophobia
+
+閉所恐怖
+%%%%
+[bane]Stumbling
+
+よろめき
+%%%%
+[bane]the Removed
+
+削除されたもの
+%%%%
+[bane]Succour
+
+救援
+%%%%
+[bane]Multiplicity
+
+増殖
+%%%%
+[bane]the Dilettante
+
+生半可
+%%%%
+[bane]Paradox
+
+逆説
+%%%%
+[bane]Warding
+
+守護
+%%%%
+[bane]the Hunted
+
+狩られる者
+%%%%
+[bane]Mortality
+
+死すべき定め
+%%%%
+You often become slowed when damaged by fire.
+
+あなたは火のダメージを受けると、しばしば減速する。
+%%%%
+You often become weak and blind when damaged by cold.
+
+あなたは冷気のダメージを受けると、しばしば衰弱して目が見えなくなる。
+%%%%
+You often become unable to move when damaged by electricity.
+
+あなたは電撃のダメージを受けると、しばしば動けなくなる。
+%%%%
+Your slaying and spellpower are decreased in confined spaces.
+
+あなたの殺傷力と呪文威力は狭い場所で低下する。
+%%%%
+Your evasion is greatly reduced on turns you move or wait in place.
+
+あなたは移動したりその場で待機したりしたターンには回避が大きく低下する。
+%%%%
+You feel a strange sense of nostalgia.
+
+あなたは奇妙な懐かしさを覚えた。
+%%%%
+You heal other nearby enemies whenever you kill a monster.
+
+あなたがモンスターを倒すたびに、近くにいる他の敵が回復する。
+%%%%
+Enemies in your sight sometimes split into clones of themselves.
+
+あなたの視界内の敵は時々分裂して自身の複製を生み出す。
+%%%%
+You are less proficient with several skills.
+
+あなたはいくつかの技能の熟練度が低下している。
+%%%%
+Your skill with %s, %s, and %s is reduced.
+
+あなたの%s、%s、%sの技能は低下している。
+%%%%
+Enemies you spot sometimes become touched by paradox.
+
+あなたが見つけた敵は時々逆説に触れられる。
+%%%%
+Enemies you encounter may be immune to damage from range.
+
+あなたが遭遇した敵は離れた所からのダメージを受けつけないことがある。
+%%%%
+When enemies are summoned, they will appear beside you instead.
+
+敵が召喚されると、代わりにあなたのそばに現れる。
+%%%%
+When alone and injured, reapers sometimes come to claim you.
+
+あなたが孤立して傷ついていると、時々死神があなたを迎えに来る。
+%%%%
+You are already as afflicted as possible.
+
+あなたはこれ以上災厄を受けようがない。
+%%%%
+You are stricken with the %s.
+
+あなたは%sに見舞われた。
+%%%%
+Your %s grows stronger.
+
+あなたの%sはより強まった。
+%%%%
+The %s upon you is lifted.
+
+あなたにかかっていた%sが解けた。
+%%%%
+ is touched by paradox!
+
+は逆説に触れられた！
+%%%%

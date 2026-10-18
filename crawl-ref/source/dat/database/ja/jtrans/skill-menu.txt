@@ -1,0 +1,286 @@
+#####################################################################
+# スキル画面の見出し。列の幅(半角): 名前 20、レベル 5、進行 6、適性 5
+#####################################################################
+%%%%
+Skill
+
+スキル
+%%%%
+[skill menu title]Level
+
+Lv
+%%%%
+<blue>Apt </blue>
+
+<blue>適性</blue>
+%%%%
+[skill menu title]Train
+
+割振
+%%%%
+[skill menu title]Target
+
+目標
+%%%%
+[skill menu title]Progr
+
+進行
+%%%%
+[skill menu title]Points
+
+点数
+%%%%
+[skill menu title]Cost
+
+コスト
+%%%%
+[skill menu title]> New
+
+> 新Lv
+%%%%
+#####################################################################
+# 切り替えの表示("[/] auto|manual mode" など)。状態名と後ろの語
+#####################################################################
+[skill menu state]auto
+
+自動
+%%%%
+[skill menu state]manual
+
+手動
+%%%%
+[skill menu state]train
+
+訓練
+%%%%
+[skill menu state]focus
+
+集中
+%%%%
+[skill menu state]useful
+
+有用
+%%%%
+[skill menu state]all
+
+全て
+%%%%
+[skill menu state]modified
+
+変更後
+%%%%
+[skill menu state]enhanced
+
+強化後
+%%%%
+[skill menu state]reduced
+
+弱体化後
+%%%%
+[skill menu state]base
+
+通常
+%%%%
+[skill menu state]training
+
+割り振り
+%%%%
+[skill menu state]targets
+
+目標
+%%%%
+[skill menu state]progress
+
+進行度
+%%%%
+[skill menu state]points
+
+ポイント
+%%%%
+[skill menu state]new level
+
+新レベル
+%%%%
+[skill menu state]cost
+
+コスト
+%%%%
+[skill menu suffix]mode
+
+モード
+%%%%
+[skill menu suffix]skill
+
+スキル
+%%%%
+[skill menu suffix]skills
+
+スキル
+%%%%
+[skill menu suffix]level
+
+レベル
+%%%%
+#####################################################################
+# 説明(SkillMenuSwitch::get_help など)
+#####################################################################
+In automatic mode, skills are trained as you use them.
+
+自動選択モードでは、あなたが使用したスキルが訓練されます。
+%%%%
+In manual mode, experience is spread evenly across all activated skills.
+
+手動選択モードではあなたが選択したスキルに経験値が均等に振り分けられます。
+%%%%
+Press the letter of a skill to choose whether you want to practise it. Skills marked with '<darkgrey>-</darkgrey>' will not be trained.
+
+訓練したいスキルを選択してください。'<darkgrey>-</darkgrey>'の付いたスキルは訓練されません。
+%%%%
+Press the letter of a skill to cycle between <darkgrey>disabled</darkgrey> (<darkgrey>-</darkgrey>), enabled (+) and <white>focused</white> (<white>*</white>). Focused skills train twice as fast relative to others.
+
+スキルのキーを押すと<darkgrey>無効</darkgrey>(<darkgrey>-</darkgrey>)、有効(+)、<white>集中</white>(<white>*</white>)が切り替わります。集中したスキルは他のスキルの2倍の速さで訓練されます。
+%%%%
+# %s は原因("[skill menu cause]" の訳)を「、」でつないだもの
+Skills enhanced by %s are in <green>green</green>.
+
+%sによって強化されたスキルは<green>緑色</green>で表示されます。
+%%%%
+Skills reduced by %s are in <magenta>magenta</magenta>.
+
+%sによって弱体化されたスキルは<magenta>マゼンタ</magenta>で表示されます。
+%%%%
+[skill menu cause]Heroism
+
+英雄化
+%%%%
+# %s は神の名前
+[skill menu cause]%s's power
+
+%sの加護
+%%%%
+[skill menu cause]cross-training
+
+相互訓練
+%%%%
+[skill menu cause]the Hermit's pendant
+
+隠者のペンダント
+%%%%
+[skill menu cause]wildshape
+
+野生化
+%%%%
+[skill menu cause]the Charlatan's Orb
+
+ペテン師のオーブ
+%%%%
+[skill menu cause]scribal knowledge
+
+書記の知識
+%%%%
+[skill menu cause]Ashenzari's anger
+
+アシェンザリの憤り
+%%%%
+[skill menu cause]the Bane of the Dilettante
+
+生半可の災厄
+%%%%
+The percentage of incoming experience used to train each skill is in <brown>brown</brown>.
+
+振り分けられる経験値の割合は<brown>茶色</brown>で表示されます。
+%%%%
+The current training targets, if any.
+
+現在の訓練目標(あれば)。
+%%%%
+The percentage of the progress done before reaching next level is in <cyan>cyan</cyan>.
+
+次のレベルまでの進行度は<cyan>シアン</cyan>で表示されます。
+%%%%
+The relative cost of raising each skill is in <cyan>cyan</cyan>.
+
+各スキルを上昇させるために必要な相対的なコストは<cyan>シアン</cyan>で表示されます。
+%%%%
+The relative cost of raising each skill is in <cyan>cyan</cyan> (or <lightred>red</lightred> if enhanced by a manual).
+
+各スキルを上昇させるために必要な相対的なコストは<cyan>シアン</cyan>(虎の巻で強化されている場合は<lightred>赤</lightred>)で表示されます。
+%%%%
+Select the skills you want to be trained. The chosen skills will be raised to the level shown in <cyan>cyan</cyan>.
+
+強化するスキルを選択してください。
+選択されたスキルの増加後の数字は<cyan>シアン</cyan>で表示されます。
+%%%%
+The species aptitude is in <white>white</white>.
+
+種族ごとの適性値は<white>明るい白</white>で表示されます。
+%%%%
+Bonus from skill manuals is in <lightred>red</lightred>.
+
+虎の巻によって得られた補正は<lightred>赤</lightred>で表示されます。
+%%%%
+Press the letter of a skill to read its description.\nPress <w>?</w> for a general explanation of skilling and the various toggles.
+
+スキルごとの解説を読むには対応するキーを押してください。
+<w>?</w>キーを押すことで、スキル管理全体や表示モード変更についての解説を読むことができます。
+%%%%
+You have gained great experience. Select the skills to train.
+
+あなたは大いなる経験を得た。訓練するスキルを選んでください。
+%%%%
+#####################################################################
+# 下のボタン
+#####################################################################
+Help
+
+ヘルプ
+%%%%
+<w>Help</w>
+
+<w>ヘルプ</w>
+%%%%
+Skill descriptions
+
+スキル解説
+%%%%
+Return to skill selection
+
+スキル選択画面に戻る
+%%%%
+# "skill descriptions"(小文字)も同じキー(大文字小文字は区別しない)
+set skill target
+
+スキル目標を設定
+%%%%
+[<yellow>-</yellow>] clear selected target
+
+[<yellow>-</yellow>] 選択した目標を解除
+%%%%
+[<yellow>=</yellow>] set a skill target
+
+[<yellow>=</yellow>] スキル目標を設定
+%%%%
+[<yellow>-</yellow>] clear all targets
+
+[<yellow>-</yellow>] 全ての目標を解除
+%%%%
+#####################################################################
+# 訓練目標の入力
+#####################################################################
+# %s は技能名
+Enter a skill target for %s:
+
+%sの訓練目標を入力:
+%%%%
+<lightred>Your training target must be 27 or below!</lightred>
+
+<lightred>訓練目標は27以下でなければならない！</lightred>
+%%%%
+<lightred>You need to enable at least one skill.</lightred>
+
+<lightred>あなたは少なくとも一つのスキルを選択しないといけません。</lightred>
+%%%%
+You feel omnipotent.
+
+あなたは全能になったように思えた。
+%%%%

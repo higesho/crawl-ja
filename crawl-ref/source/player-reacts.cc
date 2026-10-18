@@ -165,10 +165,11 @@ static bool _decrement_a_duration(duration_type dur, int delay,
             // message.
             if (you.duration[dur] <= 0)
                 you.duration[dur] = 1;
+            // メッセージは呼び出し側から英文で渡される(duration-data.h など)。
             if (need_expiration_warning(dur))
-                mprf(MSGCH_DANGER, "Careful! %s", expmsg);
+                mprf(MSGCH_DANGER, jtransc("Careful! %s"), jtransc(expmsg));
             else
-                mprf(chan, "%s", expmsg);
+                mprf(chan, "%s", jtransc(expmsg));
         }
     }
 
@@ -176,7 +177,7 @@ static bool _decrement_a_duration(duration_type dur, int delay,
     {
         you.duration[dur] = 0;
         if (endmsg && *endmsg != '\0')
-            mprf(chan, "%s", endmsg);
+            mprf(chan, "%s", jtransc(endmsg));
         return true;
     }
 
@@ -197,9 +198,10 @@ static void _decrement_petrification(int delay)
                                             "flesh" :
                                             get_form()->flesh_equivalent;
 
-        mprf(MSGCH_DURATION, "You turn to %s%s.",
-             flesh_equiv.c_str(),
-             you.paralysed() ? "" : " and can act again");
+        mprf(MSGCH_DURATION, jtransc(you.paralysed()
+                                     ? "You turn to %s."
+                                     : "You turn to %s and can act again."),
+             tagged_jtransc("[form flesh equivalent]", flesh_equiv));
     }
 
     if (you.duration[DUR_PETRIFYING])
@@ -212,7 +214,7 @@ static void _decrement_petrification(int delay)
             you.fully_petrify();
         }
         else if (dur < 15 && old_dur >= 15)
-            mpr("Your limbs are stiffening.");
+            mpr(jtrans("Your limbs are stiffening."));
     }
 }
 
@@ -238,7 +240,7 @@ static void _decrement_attraction(int delay)
 
     attract_monsters(delay);
     if (_decrement_a_duration(DUR_ATTRACTIVE, delay))
-        mpr("You feel less attractive to monsters.");
+        mpr(jtrans("You feel less attractive to monsters."));
 }
 
 static void _decrement_paralysis(int delay)
@@ -253,7 +255,7 @@ static void _decrement_paralysis(int delay)
 
     you.give_stun_immunity(random_range(1, 3));
 
-    mprf(MSGCH_DURATION, "You can act again.");
+    mprf(MSGCH_DURATION, jtransc("You can act again."));
     you.redraw_armour_class = true;
     you.redraw_evasion = true;
 }
@@ -270,7 +272,7 @@ static void _maybe_melt_armour()
     if (you.props.exists(MELT_ARMOUR_KEY))
     {
         you.props.erase(MELT_ARMOUR_KEY);
-        mprf(MSGCH_DURATION, "The heat melts your icy armour.");
+        mprf(MSGCH_DURATION, jtransc("The heat melts your icy armour."));
     }
 }
 
@@ -381,11 +383,11 @@ static void _update_cowardice()
         return;
 
     if (horror_level >= HORROR_LVL_OVERWHELMING)
-        mpr("Monsters! Monsters everywhere! You have to get out of here!");
+        mpr(jtrans("Monsters! Monsters everywhere! You have to get out of here!"));
     else if (horror_level >= HORROR_LVL_EXTREME)
-        mpr("You reel with horror at the sight of these foes!");
+        mpr(jtrans("You reel with horror at the sight of these foes!"));
     else
-        mpr("You feel a twist of horror at the sight of this foe.");
+        mpr(jtrans("You feel a twist of horror at the sight of this foe."));
 }
 
 static void _update_claustrophobia()
@@ -521,9 +523,9 @@ void player_reacts_to_monsters()
         && you.is_constricted())
     {
         if (you.constricted_type == CONSTRICT_ROOTS)
-            mprf("The roots around you sink back into the ground.");
+            mprf(jtransc("The roots around you sink back into the ground."));
         else if (you.constricted_type == CONSTRICT_BVC)
-            mprf("The zombie hands holding you return to the earth.");
+            mprf(jtransc("The zombie hands holding you return to the earth."));
 
         you.stop_being_constricted(true);
     }
@@ -564,7 +566,7 @@ void player_reacts_to_monsters()
         && !there_are_monsters_nearby(true, true, false))
     {
         if (_decrement_a_duration(DUR_STARDUST_COOLDOWN, you.time_taken))
-            mprf(MSGCH_DURATION, "Your orb has finished recharging its magic.");
+            mprf(MSGCH_DURATION, jtransc("Your orb has finished recharging its magic."));
     }
 
 
@@ -610,7 +612,7 @@ static bool _check_recite()
         || you.petrified()
         || you.berserk())
     {
-        mprf(MSGCH_DURATION, "Your recitation is interrupted.");
+        mprf(MSGCH_DURATION, jtransc("Your recitation is interrupted."));
         you.duration[DUR_RECITE] = 0;
         you.set_duration(DUR_RECITE_COOLDOWN, 1 + random2(10) + random2(30));
         return false;
@@ -621,7 +623,7 @@ static bool _check_recite()
 
 static void _handle_recitation(int step)
 {
-    mprf("\"%s\"",
+    mprf("『%s』",
          zin_recite_text(you.attribute[ATTR_RECITE_SEED],
                          you.attribute[ATTR_RECITE_TYPE], step).c_str());
 
@@ -640,17 +642,17 @@ static void _handle_recitation(int step)
 
     if (step == 0)
     {
-        ostringstream speech;
-        speech << zin_recite_text(you.attribute[ATTR_RECITE_SEED],
-                                  you.attribute[ATTR_RECITE_TYPE], -1);
-        speech << '.';
+        string speech = make_stringf(jtransc("You finish reciting %s."),
+                            zin_recite_text(you.attribute[ATTR_RECITE_SEED],
+                                            you.attribute[ATTR_RECITE_TYPE],
+                                            -1).c_str());
         if (one_chance_in(27))
         {
             const string closure = getSpeakString("recite_closure");
             if (!closure.empty())
-                speech << ' ' << closure;
+                speech += " " + closure;
         }
-        mprf(MSGCH_DURATION, "You finish reciting %s", speech.str().c_str());
+        mprf(MSGCH_DURATION, "%s", speech.c_str());
         you.set_duration(DUR_RECITE_COOLDOWN, 1 + random2(10) + random2(30));
     }
 }
@@ -664,7 +666,7 @@ static void _try_to_respawn_ancestor()
     if (!ancestor)
         return;
 
-    mprf("%s emerges from the mists of memory!",
+    mprf(jtransc("%s emerges from the mists of memory!"),
          ancestor->name(DESC_YOUR).c_str());
     add_companion(ancestor);
     place_cloud(CLOUD_MIST, ancestor->pos(), random_range(1,2), ancestor); // ;)
@@ -721,7 +723,7 @@ static void _handle_trickster_decay(int delay)
     if (stacks <= 0)
     {
         you.props.erase(TRICKSTER_POW_KEY);
-        mprf(MSGCH_DURATION, "You feel your existence waver again.");
+        mprf(MSGCH_DURATION, jtransc("You feel your existence waver again."));
     }
 
     if (reduction > 0)
@@ -852,7 +854,7 @@ static void _decrement_durations()
     {
         if (you.pos() != you.props[FORTRESS_BLAST_POS_KEY].get_coord())
         {
-            mprf(MSGCH_DURATION, "Your fortress blast dissipates harmlessly.");
+            mprf(MSGCH_DURATION, jtransc("Your fortress blast dissipates harmlessly."));
             you.duration[DUR_FORTRESS_BLAST_TIMER] = 0;
         }
         else
@@ -918,13 +920,14 @@ static void _decrement_durations()
             you.duration[DUR_FLOODED] = 0;
         else if (_decrement_a_duration(DUR_FLOODED, delay))
         {
-            mprf(MSGCH_RECOVERY, "You finish coughing all the %s out of your lungs.",
-                 you.props[WATER_HOLD_SUBSTANCE_KEY].get_string().c_str());
+            mprf(MSGCH_RECOVERY, jtransc("You finish coughing all the %s out of your lungs."),
+                 tagged_jtransc("[substance]",
+                     you.props[WATER_HOLD_SUBSTANCE_KEY].get_string()));
             you.duration[DUR_FLOODED_IMMUNITY] = you.time_taken + 1;
         }
         else
         {
-            mprf(MSGCH_WARN, "Your lungs strain for air.");
+            mprf(MSGCH_WARN, jtransc("Your lungs strain for air."));
             const int dmg = roll_dice(2, 5);
             ouch(div_rand_round(dmg * delay, BASELINE_DELAY), KILLED_BY_WATER,
                                                 you.props[WATER_HOLDER_KEY].get_int());
@@ -984,9 +987,10 @@ static void _decrement_durations()
     if (!you.cannot_act()
         && !you.confused())
     {
-        extract_barbs(
-            make_stringf("You %s the barbed spikes from your body.",
-                you.berserk() ? "rip and tear" : "carefully extract").c_str());
+        // 英文のまま渡し、_decrement_a_duration() の中で訳す。
+        extract_barbs(you.berserk()
+            ? "You rip and tear the barbed spikes from your body."
+            : "You carefully extract the barbed spikes from your body.");
     }
 
     if (you.wearing_jewellery(AMU_WILDSHAPE))
@@ -1043,8 +1047,8 @@ static void _decrement_durations()
         }
         if (!found)
         {
-            mprf(MSGCH_DURATION, "As the last of your armour is driven back to "
-                  "you, your cacophony ends.");
+            mprf(MSGCH_DURATION, jtransc("As the last of your armour is driven back to "
+                  "you, your cacophony ends."));
             you.duration[DUR_CACOPHONY] = 0;
         }
         else if (_decrement_a_duration(DUR_CACOPHONY, delay,
@@ -1063,7 +1067,7 @@ static void _decrement_durations()
 
     if (you.duration[DUR_CELEBRANT_COOLDOWN] && you.hp == you.hp_max)
     {
-        mprf(MSGCH_DURATION, "You are ready to perform a blood rite again.");
+        mprf(MSGCH_DURATION, jtransc("You are ready to perform a blood rite again."));
         you.duration[DUR_CELEBRANT_COOLDOWN] = 0;
     }
 
@@ -1072,20 +1076,20 @@ static void _decrement_durations()
         // Don't print it the message if the mutation is lost
         // before the cooldown wears off.
         if (you.get_mutation_level(MUT_TIME_WARPED_BLOOD))
-            mprf(MSGCH_DURATION, "Your time-warped blood is ready to ripple again.");
+            mprf(MSGCH_DURATION, jtransc("Your time-warped blood is ready to ripple again."));
 
         you.duration[DUR_TIME_WARPED_BLOOD_COOLDOWN] = 0;
     }
 
     if (you.duration[DUR_HIVE_COOLDOWN] && you.hp == you.hp_max)
     {
-        mprf(MSGCH_DURATION, "The buzzing within you returns to its normal rhythm.");
+        mprf(MSGCH_DURATION, jtransc("The buzzing within you returns to its normal rhythm."));
         you.duration[DUR_HIVE_COOLDOWN] = 0;
     }
 
     if (you.duration[DUR_MEDUSA_COOLDOWN] && you.hp == you.hp_max)
     {
-        mprf(MSGCH_DURATION, "You feel your defenses recover.");
+        mprf(MSGCH_DURATION, jtransc("You feel your defenses recover."));
         you.duration[DUR_MEDUSA_COOLDOWN] = 0;
     }
 
@@ -1094,7 +1098,7 @@ static void _decrement_durations()
 
     if (you.duration[DUR_EELJOLT_COOLDOWN] && you.hp == you.hp_max)
     {
-        mprf(MSGCH_DURATION, "Your %s have fully recharged.", you.hand_name(true).c_str());
+        mprf(MSGCH_DURATION, jtransc("Your %s have fully recharged."), you.hand_name(true).c_str());
         you.duration[DUR_EELJOLT_COOLDOWN] = 0;
     }
 
@@ -1137,7 +1141,6 @@ static void _maybe_attune_regen_items()
         return;
 
     vector<string> eq_list;
-    bool plural = false;
 
     bool gained_regen = false;
     bool gained_mana_regen = false;
@@ -1162,12 +1165,11 @@ static void _maybe_attune_regen_items()
             else if (!gained_mana_regen && is_mana_regen_item(arm))
                 gained_mana_regen = true;
 
+            // 部位名は player-equip.cc と同じ [regen slot] タグ付きで訳す。
             eq_list.push_back(is_artefact(arm) ? get_artefact_name(arm) :
-                entry.slot == SLOT_AMULET ? "amulet" :
-                    lowercase_string(equip_slot_name(entry.slot, true)));
-
-            if (entry.slot == SLOT_BOOTS || entry.slot == SLOT_GLOVES)
-                plural = true;
+                entry.slot == SLOT_AMULET ? tagged_jtrans("[regen slot]", "amulet") :
+                    tagged_jtrans("[regen slot]",
+                        lowercase_string(equip_slot_name(entry.slot, true))));
             entry.attuned = true;
         }
     }
@@ -1175,23 +1177,23 @@ static void _maybe_attune_regen_items()
     if (eq_list.empty())
         return;
 
-    vector<string> msgs;
+    // 日本語では装備品の一文と効果の文を分けて並べる。
+    string eq_str = comma_separated_line(eq_list.begin(), eq_list.end(),
+                                         "と", "、");
+    string msg = make_stringf(jtransc("Your %s attune to your body."),
+                              eq_str.c_str());
 
     if (gained_regen || gained_mana_regen)
     {
-        msgs.emplace_back(make_stringf("regenerate%s more quickly",
-                gained_regen && gained_mana_regen ? " health and magic"
-                : (gained_regen ? "" : " magic")));
+        msg += jtrans(gained_regen && gained_mana_regen
+                      ? "You begin to regenerate health and magic more quickly."
+                      : gained_regen ? "You begin to regenerate more quickly."
+                                     : "You begin to regenerate magic more quickly.");
     }
     if (gained_chemistry)
-        msgs.emplace_back("extract magic from the potions you drink");
+        msg += jtrans("You begin to extract magic from the potions you drink.");
 
-    plural = plural || eq_list.size() > 1;
-    string eq_str = comma_separated_line(eq_list.begin(), eq_list.end());
-    string msg_str = comma_separated_line(msgs.begin(), msgs.end());
-    mprf("Your %s attune%s to your body, and you begin to %s.",
-         eq_str.c_str(), plural ? " themselves" : "s itself",
-         msg_str.c_str());
+    mpr(msg);
 }
 
 // cjo: Handles player hp and mp regeneration. If the counter
@@ -1260,7 +1262,7 @@ static void _handle_fugue(int delay)
     {
         // Keep the spam down
         if (you.props[FUGUE_KEY].get_int() < 3 || one_chance_in(5))
-            mpr("The wailing of tortured souls fills the air!");
+            mpr(jtrans("The wailing of tortured souls fills the air!"));
         noisy(spell_effect_noise(SPELL_FUGUE_OF_THE_FALLEN), you.pos());
     }
 }

@@ -17,6 +17,7 @@
 #include "ability.h"
 #include "clua.h"
 #include "chardump.h"
+#include "database.h"
 #include "describe-god.h"
 #include "evoke.h"
 #include "files.h"
@@ -26,6 +27,7 @@
 #include "hints.h"
 #include "item-prop.h"
 #include "items.h"
+#include "japanese.h"
 #include "libutil.h"
 #include "message.h"
 #include "notes.h"
@@ -329,21 +331,25 @@ static void _change_skill_level(skill_type exsk, int n)
     // are you drained/crosstrained/ash'd in the relevant skill?
     const bool specify_base = you.skill(exsk, 1) != you.skill(exsk, 1, true);
     if (you.skills[exsk] == MAX_SKILL_LEVEL)
-        mprf(MSGCH_INTRINSIC_GAIN, "You have mastered %s!", skill_name(exsk));
+        mprf(MSGCH_INTRINSIC_GAIN, jtransc("You have mastered %s!"), skill_name_jc(exsk));
+    // 日本語では増減で文を分けている
     else if (abs(n) == 1 && you.num_turns)
     {
-        mprf(MSGCH_INTRINSIC_GAIN, "Your %s%s skill %s to level %d!",
-             specify_base ? "base " : "",
-             skill_name(exsk), (n > 0) ? "increases" : "decreases",
-             you.skills[exsk]);
+        mprf(MSGCH_INTRINSIC_GAIN,
+             n > 0 ? jtransc("Your %s%s skill increases to level %d!")
+                   : jtransc("Your %s%s skill decreases to level %d!"),
+             specify_base ? jtransc("[skill level]base ") : "",
+             skill_name_jc(exsk), you.skills[exsk]);
     }
     else if (you.num_turns)
     {
-        mprf(MSGCH_INTRINSIC_GAIN, "Your %s%s skill %s %d levels and is now "
-             "at level %d!",
-             specify_base ? "base " : "",
-             skill_name(exsk),
-             (n > 0) ? "gained" : "lost",
+        mprf(MSGCH_INTRINSIC_GAIN,
+             n > 0 ? jtransc("Your %s%s skill gained %d levels and is now "
+                             "at level %d!")
+                   : jtransc("Your %s%s skill lost %d levels and is now "
+                             "at level %d!"),
+             specify_base ? jtransc("[skill level]base ") : "",
+             skill_name_jc(exsk),
              abs(n), you.skills[exsk]);
     }
 
@@ -553,7 +559,10 @@ static void _check_innate_magic_skills()
 
 string skill_names(const skill_set &skills)
 {
-    return comma_separated_fn(begin(skills), end(skills), skill_name);
+    // 日本語の技能名を「戦闘と短剣」「戦闘、短剣と斧」の形で並べる
+    return comma_separated_fn(begin(skills), end(skills),
+                              [] (skill_type sk) { return skill_name_j(sk); },
+                              "と", "、");
 }
 
 static void _check_skills_to_show()
@@ -798,7 +807,7 @@ bool check_selected_skills()
         if (!you.received_noskill_warning)
         {
             you.received_noskill_warning = true;
-            mpr("You cannot train any new skills!");
+            mpr(jtrans("You cannot train any new skills!"));
         }
         // It's possible to have no selectable skills, if they are all
         // untrainable or level 27, so we don't assert.
@@ -821,7 +830,7 @@ bool check_selected_skills()
         return false;
     }
 
-    mpr("You need to enable at least one skill for training.");
+    mpr(jtrans("You need to enable at least one skill for training."));
     // Training will be fixed up on load if this ASSERT triggers.
     ASSERT(!you.has_mutation(MUT_DISTRIBUTED_TRAINING));
     more();
@@ -1392,8 +1401,10 @@ bool check_training_target(skill_type sk)
             set_magic_training(TRAINING_DISABLED);
         else
             you.train_alt[sk] = you.train[sk] = TRAINING_DISABLED;
-        mprf("%sraining target %d.%d for %s reached!",
-            base ? "Base t" : "T", targ / 10, targ % 10, skill_name(sk));
+        // 日本語の語順に合わせて引数を入れ替えている(技能名、目標値)
+        mprf(base ? jtransc("Base training target %d.%d for %s reached!")
+                  : jtransc("Training target %d.%d for %s reached!"),
+             skill_name_jc(sk), targ / 10, targ % 10);
         return true;
     }
     return false;
@@ -1573,9 +1584,11 @@ static int _train(skill_type exsk, int &max_exp, bool simu, bool check_targets)
         you.skill_manual_points[exsk] -= bonus;
         if (!you.skill_manual_points[exsk] && !simu && !crawl_state.simulating_xp_gain)
         {
-            mprf("You have finished your manual of %s and %stoss it away.",
-                 skill_name(exsk),
-                 exsk == SK_THROWING ? "skilfully " : "");
+            mprf(exsk == SK_THROWING
+                 ? jtransc("You have finished your manual of %s and skilfully "
+                           "toss it away.")
+                 : jtransc("You have finished your manual of %s and toss it away."),
+                 skill_name_jc(exsk));
         }
     }
 
@@ -1836,19 +1849,19 @@ bool player::set_training_target(const skill_type sk, const int target, bool ann
 {
     if (target > 270) // if target is above 270, reject with an error
     {
-        mpr("Your training target must be 27 or below!");
+        mpr(jtrans("Your training target must be 27 or below!"));
         return false;
     }
     const int ranged_target = min(max((int) target, 0), 270);
     if (announce && ranged_target != (int) training_targets[sk])
     {
         if (you.has_mutation(MUT_DISTRIBUTED_TRAINING))
-            mpr("You can't set training targets!");
+            mpr(jtrans("You can't set training targets!"));
         else if (ranged_target == 0)
-            mprf("Clearing the skill training target for %s.", skill_name(sk));
+            mprf(jtransc("Clearing the skill training target for %s."), skill_name_jc(sk));
         else
         {
-            mprf("Setting a skill training target for %s at %d.%d.", skill_name(sk),
+            mprf(jtransc("Setting a skill training target for %s at %d.%d."), skill_name_jc(sk),
                                     ranged_target / 10, ranged_target % 10);
         }
     }
@@ -2021,12 +2034,14 @@ string skill_title_by_rank(skill_type best_skill, uint8_t skill_rank,
 
     // paranoia
     if (is_invalid_skill(best_skill))
-        return "Adventurer";
+        return tagged_jtrans("[title]", "Adventurer");
 
     // Increment rank by one to "skip" skill name in array {dlb}:
     ++skill_rank;
 
     string result;
+    // god_title()(describe-god.cc)は訳と置換を済ませた日本語を返す
+    bool god_titled = false;
 
     if (best_skill < NUM_SKILLS)
     {
@@ -2138,7 +2153,10 @@ string skill_title_by_rank(skill_type best_skill, uint8_t skill_rank,
             else if (species == SP_VINE_STALKER && skill_rank == 5)
                 result = "Corpseflower";
             else if (god == GOD_KIKUBAAQUDGHA)
+            {
                 result = god_title(god, species, piety);
+                god_titled = true;
+            }
             break;
 
         case SK_FORGECRAFT:
@@ -2247,7 +2265,10 @@ string skill_title_by_rank(skill_type best_skill, uint8_t skill_rank,
             else if (species == SP_OCTOPODE && skill_rank == 5 && is_evil_god(god))
                 result = "Leviathan";
             else if (god != GOD_NO_GOD)
+            {
                 result = god_title(god, species, piety);
+                god_titled = true;
+            }
             else if (species == SP_BARACHI)
             {
                 // C.f. the barachi species lore, true believers!
@@ -2258,7 +2279,10 @@ string skill_title_by_rank(skill_type best_skill, uint8_t skill_rank,
 #if TAG_MAJOR_VERSION == 34
         case SK_EVOCATIONS:
             if (god == GOD_PAKELLAS)
+            {
                 result = god_title(god, species, piety);
+                god_titled = true;
+            }
             break;
 #endif
 
@@ -2271,31 +2295,43 @@ string skill_title_by_rank(skill_type best_skill, uint8_t skill_rank,
             god_type betrayed_god = static_cast<god_type>(
                 you.attribute[ATTR_TRAITOR]);
             result = god_title(betrayed_god, species, 0);
+            god_titled = true;
         }
 
         if (conducts)
         {
             string conduct = special_conduct_title(best_skill, skill_rank);
             if (!conduct.empty())
+            {
                 result = conduct;
+                god_titled = false;
+            }
         }
 
         if (result.empty())
             result = skill_titles[best_skill][skill_rank];
     }
 
+    if (god_titled)
+        return result;
+
+    // 日本語: 称号を [title] で訳し(data-skills.txt)、置換する語も日本語にする
+    // (data-species.txt の [spec adj] [spec genus] [walker]、体重級は [title])
+    const string genus = tagged_jtrans("[spec genus]",
+                             species::name(species, species::SPNAME_GENUS));
     const map<string, string> replacements =
     {
-        { "Adj", species::name(species, species::SPNAME_ADJ) },
-        { "Genus", species::name(species, species::SPNAME_GENUS) },
-        { "genus", lowercase_string(species::name(species, species::SPNAME_GENUS)) },
-        { "Genus_Short", species == SP_DEMIGOD ? "God" :
-                           species::name(species, species::SPNAME_GENUS) },
-        { "Walker", species::walking_title(species) + "er" },
-        { "Weight", _stk_weight(species) },
+        { "Adj", tagged_jtrans("[spec adj]",
+                     species::name(species, species::SPNAME_ADJ)) },
+        { "Genus", genus },
+        { "genus", genus },
+        { "Genus_Short", species == SP_DEMIGOD
+                             ? tagged_jtrans("[title genus]", "God") : genus },
+        { "Walker", tagged_jtrans("[walker]", species::walking_title(species)) },
+        { "Weight", tagged_jtrans("[title]", _stk_weight(species)) },
     };
 
-    return replace_keys(result, replacements);
+    return replace_keys(tagged_jtrans("[title]", result), replacements);
 }
 
 /** What is the player's current title.
@@ -2303,16 +2339,12 @@ string skill_title_by_rank(skill_type best_skill, uint8_t skill_rank,
  *  @param the whether to prepend a definite article.
  *  @returns the title.
  */
-string player_title(bool the)
+string player_title(bool /*the*/)
 {
+    // 日本語の称号には冠詞("the ", "La ", ", ")を付けない。
+    // 名前との組み立ては表示する側(output.cc など)で行う。
     const skill_type best = best_skill(SK_FIRST_SKILL, SK_LAST_SKILL);
-    const string title =
-            skill_title_by_rank(best, get_skill_rank(you.skills[best]));
-    const string article = !the ? ""
-                                : title == "Petite Mort" ? "La "
-                                : title == "Who Hides the Stars" ? ", "
-                                : "the ";
-    return article + title;
+    return skill_title_by_rank(best, get_skill_rank(you.skills[best]));
 }
 
 skill_type best_skill(skill_type min_skill, skill_type max_skill,
@@ -2621,7 +2653,8 @@ void dump_skills(string &text)
         int cur  = you.skill((skill_type)i, 10);
         if (real > 0 || (!you.auto_training && you.train[i] > 0))
         {
-            text += make_stringf(" %c Level %.*f%s %s\n",
+            text += " ";
+            text += make_stringf(jtransc("%c Level %.*f%s %s"),
                                  real == 270       ? 'O' :
                                  !you.can_currently_train[i] ? ' ' :
                                  you.train[i] == 2 ? '*' :
@@ -2634,7 +2667,8 @@ void dump_skills(string &text)
                                            cur == 270 ? 0 : 1,
                                            cur * 0.1).c_str()
                                      : "",
-                                 skill_name(static_cast<skill_type>(i)));
+                                 skill_name_jc(static_cast<skill_type>(i)));
+            text += "\n";
         }
     }
 }

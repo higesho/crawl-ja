@@ -13,6 +13,10 @@
   harvest FILE...    FILE の未訳キーのうち、旧辞書に同じキーがあるものを
                      dat/database/ja/jtrans/<FILE の拡張子なし>.txt に追記
   dups               辞書ファイル間で重複しているキーを表示
+  fmt [NAME...]      訳の書式指定子(%s, %d など)がキーの英文と食い違う項目を
+                     表示(NAME は辞書の拡張子なし名。省略時は全辞書)。
+                     MORE(訳の方が多い)/TYPE(型が違う)は呼び出し側の
+                     引数を必ず確認する。less(訳の方が少ない)は多くが意図的
   wrap FILE...       mpr("...") などの定型パターンの英文を機械的に
                      jtrans/jtransc で包む(残りは手で包む)
 
@@ -486,6 +490,39 @@ def cmd_dups(args):
     print(f'重複キー: {n}')
 
 
+_FMT_SPEC = re.compile(
+    r'%(?:%|[-+ #0]*\d*(?:\.\d+)?(?:hh|h|ll|l|z|j|t|L)?([diouxXeEfgGcsp]))')
+
+
+def _fmt_specs(s):
+    out = []
+    for m in _FMT_SPEC.finditer(s):
+        t = m.group(1)
+        if t:
+            out.append('d' if t in 'diouxXc' else 'f' if t in 'eEfgG' else t)
+    return out
+
+
+def cmd_fmt(args):
+    """訳の書式指定子がキーの英文と食い違う項目を表示する。"""
+    n = 0
+    for f in sorted(os.listdir(DICT_DIR)):
+        if not f.endswith('.txt') or (args and f[:-4] not in args):
+            continue
+        with open(os.path.join(DICT_DIR, f), encoding='utf-8') as fp:
+            for k, v in parse_db(fp.read()):
+                if v.strip() == '__NONE':
+                    continue
+                ks, vs = _fmt_specs(k), _fmt_specs(v)
+                if ks == vs:
+                    continue
+                kind = ('MORE' if len(vs) > len(ks)
+                        else 'TYPE' if vs != ks[:len(vs)] else 'less')
+                n += 1
+                print(f'{kind}	{f}	{k!r}	{v!r}')
+    print(f'食い違い: {n}')
+
+
 def main():
     if not os.path.isdir(SRC):
         sys.exit('リポジトリのルートで実行してください')
@@ -495,7 +532,7 @@ def main():
     sys.stdout.reconfigure(encoding='utf-8')
     {'old': cmd_old, 'olddict': cmd_olddict, 'find': cmd_find,
      'check': cmd_check, 'harvest': cmd_harvest, 'wrap': cmd_wrap,
-     'dups': cmd_dups}[cmd](args)
+     'dups': cmd_dups, 'fmt': cmd_fmt}[cmd](args)
 
 
 if __name__ == '__main__':

@@ -9,6 +9,7 @@
 #include "god-menu.h"
 
 #include "colour.h"
+#include "japanese.h"
 #include "libutil.h"
 #include "religion.h"
 #include "terrain.h"
@@ -28,7 +29,10 @@ GodMenuEntry::GodMenuEntry(god_type god_, bool long_name) :
     }
     int c = god_message_altar_colour(god);
     colour_text = colour_to_str(c);
-    data = &text;
+    // 表示は日本語の名前、data(説明の検索キー)は英語の名前のままにする。
+    name_en = text;
+    data = &name_en;
+    text = god_name_j(god_, long_name);
 
     const dungeon_feature_type feat = altar_for_god(god_);
     if (feat)

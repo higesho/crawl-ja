@@ -1,0 +1,102 @@
+%%%%
+You feel homesick.
+
+あなたは故郷が恋しくなった。
+%%%%
+The world around you seems to dim momentarily.
+
+あなたの周囲の明かりが一瞬薄暗くなったようだ。
+%%%%
+You feel numb.
+
+あなたは無感覚になった。
+%%%%
+Strange energies run through your body.
+
+奇妙なエネルギーがあなたの体を通り抜けた。
+%%%%
+You shiver with cold.
+
+あなたは寒さに震えた。
+%%%%
+You sense a malignant aura.
+
+あなたは悪意のオーラを感じた。
+%%%%
+You feel very uncomfortable.
+
+あなたは非常に居心地が悪くなった。
+%%%%
+Something just walked over your grave. No, really!
+
+何かが今、あなたの墓の上を歩いて行った。本当だって！
+%%%%
+You smell decay.
+
+あなたは腐敗臭を嗅いだ。
+%%%%
+Your bandages flutter.
+
+あなたの包帯がひらひらとはためいた。
+%%%%
+You hear strange and distant voices.
+
+あなたは遠くからの奇妙な声を耳にした。
+%%%%
+Your bones ache.
+
+あなたの骨が痛んだ。
+%%%%
+You feel horribly lethargic.
+
+あなたはひどい倦怠感に襲われた。
+%%%%
+@The_monster@ looks incredibly listless.
+
+@The_monster@は非常に無気力になっているように見える。
+%%%%
+You are engulfed in negative energy!
+
+あなたは負のエネルギーに包まれた！
+%%%%
+@The_monster@ is engulfed in negative energy!
+
+@The_monster@は負のエネルギーに包まれた！
+%%%%
+averts the curse.
+
+は呪いを防いだ。
+%%%%
+partially averts the curse.
+
+は呪いをいくらか防いだ。
+%%%%
+Your %s prickle.
+
+あなたの%sがちくちくと疼いた。
+%%%%
+# 以下 3 つは後ろに attack_strength_punctuation() の「。」「！」が付く
+A forgotten god smites you
+
+忘れられた神があなたに天罰を下した
+%%%%
+A forgotten god smites @The_monster@
+
+忘れられた神が@The_monster@に天罰を下した
+%%%%
+A forgotten god smites something
+
+忘れられた神が何かに天罰を下した
+%%%%
+You feel doom gather around you.
+
+あなたは周囲に破滅の気配が集まるのを感じた。
+%%%%
+Doom gathers around @the_monster@.
+
+@the_monster@の周囲に破滅の気配が集まった。
+%%%%
+Something is engulfed in negative energy!
+
+何かが負のエネルギーに包まれた！
+%%%%

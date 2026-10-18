@@ -31,6 +31,7 @@
 #include "mon-death.h"
 #include "mon-place.h"
 #include "mon-speak.h"
+#include "mon-util.h" // mons_type_name_j
 #include "mutation.h"
 #include "nearby-danger.h"
 #include "output.h"
@@ -93,11 +94,11 @@ string Form::melding_description(bool itemized) const
     {
         // this is a bit rough and ready...
         if (blocked_slots == EQF_ALL)
-            return "Your equipment is entirely melded.";
+            return jtrans("Your equipment is entirely melded.");
         else if (blocked_slots == EQF_PHYSICAL
                  && !(you.has_mutation(MUT_NO_ARMOUR) && you.has_mutation(MUT_NO_GRASPING)))
         {
-            return "Your weapons and armour are melded.";
+            return jtrans("Your weapons and armour are melded.");
         }
         else
         {
@@ -107,20 +108,22 @@ string Form::melding_description(bool itemized) const
                 if (testbits(blocked_slots, SLOTF(slot))
                     && you.equipment.num_slots[slot] > 0)
                 {
-                    tags.emplace_back(lowercase_string(equip_slot_name(slot)));
+                    tags.emplace_back(tagged_jtrans("[equip slot]",
+                                                    equip_slot_name(slot)));
                 }
             }
             if (!tags.empty())
             {
                 if (testbits(blocked_slots, EQF_AUXES))
-                    return "Your auxiliary armour is melded.";
+                    return jtrans("Your auxiliary armour is melded.");
                 else if (tags.size() > 5)
-                    return "Your equipment is almost entirely melded";
+                    return jtrans("Your equipment is almost entirely melded");
                 else
                 {
-                    return make_stringf("Your %s %s melded.",
-                                        comma_separated_line(tags.begin(), tags.end()).c_str(),
-                                        tags.size() > 1 ? "are" : "is");
+                    // 日本語では単複の区別をしない
+                    return make_stringf(jtransc("Your %s is melded."),
+                                        comma_separated_line(tags.begin(), tags.end(),
+                                                             "、", "、").c_str());
                 }
             }
         }
@@ -129,20 +132,20 @@ string Form::melding_description(bool itemized) const
     }
 
     if (blocked_slots == EQF_ALL)
-        tags.emplace_back("All Equipment");
+        tags.emplace_back(jtrans("All Equipment"));
     else if (blocked_slots == EQF_PHYSICAL)
-        tags.emplace_back("All Weapons and Armour");
+        tags.emplace_back(jtrans("All Weapons and Armour"));
     else
     {
         for (int i = SLOT_WEAPON; i < SLOT_GIZMO; ++i)
         {
             equipment_slot slot = static_cast<equipment_slot>(i);
             if (testbits(blocked_slots, SLOTF(slot)))
-                tags.emplace_back(equip_slot_name(slot));
+                tags.emplace_back(tagged_jtrans("[equip slot]", equip_slot_name(slot)));
         }
     }
 
-    return comma_separated_line(tags.begin(), tags.end(), ", ");
+    return comma_separated_line(tags.begin(), tags.end(), "、", "、");
 }
 
 static const FormAttackVerbs DEFAULT_VERBS = FormAttackVerbs(nullptr, nullptr,
@@ -226,9 +229,10 @@ int Form::get_level(int scale) const
  */
 string Form::get_description(bool past_tense) const
 {
-    return make_stringf("You %s %s",
-                        past_tense ? "were" : "are",
-                        get_transform_description().c_str());
+    // 変身の説明(description)の訳は「〜の姿を」で終わる
+    return make_stringf(past_tense ? jtransc("[form desc]You were %s")
+                                   : jtransc("[form desc]You are %s"),
+                        jtransc(get_transform_description()));
 }
 
 /**
@@ -239,7 +243,8 @@ string Form::get_description(bool past_tense) const
  */
 string Form::transform_message() const
 {
-    return make_stringf("You turn into %s", get_transform_description().c_str());
+    return make_stringf(jtransc("You turn into %s"),
+                        jtransc(get_transform_description()));
 }
 
 /**
@@ -249,7 +254,16 @@ string Form::transform_message() const
  */
 string Form::get_untransform_message() const
 {
-    return "Your transformation has ended.";
+    return jtrans("Your transformation has ended.");
+}
+
+/**
+ * A name for the form longer than that used by the status light.
+ * (日本語の表示用。データの英語名は long_name)
+ */
+string Form::get_long_name() const
+{
+    return jtrans(long_name);
 }
 
 int Form::raw_scaling_value(const FormScaling &sc, int level) const
@@ -394,7 +408,8 @@ static string _brand_suffix(brand_type brand)
 {
     if (brand == SPWPN_NORMAL)
         return "";
-    return make_stringf(" (%s)", brand_type_name(brand, true));
+    return make_stringf(" (%s)",
+                        tagged_jtransc("[item adj terse]", brand_type_name(brand, true)));
 }
 
 /**
@@ -408,10 +423,11 @@ static string _brand_suffix(brand_type brand)
  */
 string Form::get_uc_attack_name(string default_name) const
 {
+    // 日本語を返す(表示側で [uc attack] を引いても日本語のまま返る)
     const string brand_suffix = _brand_suffix(get_uc_brand());
     if (uc_attack.empty())
-        return default_name + brand_suffix;
-    return uc_attack + brand_suffix;
+        return tagged_jtrans("[uc attack]", default_name) + brand_suffix;
+    return tagged_jtrans("[uc attack]", uc_attack) + brand_suffix;
 }
 
 /**
@@ -567,6 +583,23 @@ vector<pair<string, string>> Form::get_bad_fakemuts() const
     return badmuts;
 }
 
+// hand_transform_parts() の日本語版(表示用)。
+// 日本語では "a " は付けず、単複の区別もしない。
+static string _hand_transform_parts_j(bool terse = false)
+{
+    const string str = you.base_hand_name(true, false);
+
+    // creatures with paws (aka felids) have four paws, but only two of them transform.
+    if (!terse && you.has_mutation(MUT_PAWS, false))
+        return tagged_jtrans("[body part]", "front " + str);
+
+    const string name = tagged_jtrans("[body part]", str);
+    if (!terse && you.arm_count() > 2)
+        return jtrans("[hand parts]main") + name; // Op have four main tentacles
+
+    return name;
+}
+
 
 class FormNone : public Form
 {
@@ -607,18 +640,19 @@ public:
 
     string get_description(bool past_tense) const override
     {
-        return make_stringf("You %s overflowing with transmutational energy.",
-                            past_tense ? "were" : "are");
+        return past_tense
+            ? jtrans("You were overflowing with transmutational energy.")
+            : jtrans("You are overflowing with transmutational energy.");
     }
 
     string transform_message() const override
     {
-        return "Your body destabilises.";
+        return jtrans("Your body destabilises.");
     }
 
     string get_untransform_message() const override
     {
-        return "Your body stabilises again.";
+        return jtrans("Your body stabilises again.");
     }
 };
 
@@ -635,8 +669,8 @@ public:
      */
     string get_description(bool past_tense) const override
     {
-        return make_stringf("You %s blades growing out of your body.",
-                            past_tense ? "had" : "have");
+        return past_tense ? jtrans("You had blades growing out of your body.")
+                          : jtrans("You have blades growing out of your body.");
     }
 
     /**
@@ -644,7 +678,7 @@ public:
      */
     string transform_message() const override
     {
-        return "Blades grow out of your body!";
+        return jtrans("Blades grow out of your body!");
     }
 
     /**
@@ -652,7 +686,7 @@ public:
      */
     string get_untransform_message() const override
     {
-        return "Your blades shrink back into your body and disappear.";
+        return jtrans("Your blades shrink back into your body and disappear.");
     }
 
     int get_aux_damage(bool random, int skill) const override
@@ -682,7 +716,7 @@ public:
     {
 #if TAG_MAJOR_VERSION == 34
         if (you.species == SP_DEEP_DWARF && one_chance_in(10))
-            return "You inwardly fear your resemblance to a lawn ornament.";
+            return jtrans("You inwardly fear your resemblance to a lawn ornament.");
 #endif
         return Form::transform_message();
     }
@@ -701,7 +735,7 @@ public:
      */
     string get_untransform_message() const override
     {
-        return "You revert to your normal fleshy form.";
+        return jtrans("You revert to your normal fleshy form.");
     }
 
     /**
@@ -710,8 +744,9 @@ public:
     string get_uc_attack_name(string /*default_name*/) const override
     {
         // there's special casing in base_hand_name to get "fists"
-        string hand = you.base_hand_name(true, true);
-        return make_stringf("Stone %s", hand.c_str());
+        // (hand_name() は base_hand_name(true, true) の日本語名)
+        string hand = you.hand_name(true);
+        return make_stringf(jtransc("Stone %s"), hand.c_str());
     }
 };
 
@@ -757,8 +792,9 @@ public:
     {
         if (species::is_draconian(you.species))
         {
-            return make_stringf("a fearsome %s!",
-                          mons_class_name(get_equivalent_mons()));
+            // 日本語を返す(訳は「〜の姿を」で終える)
+            return make_stringf(jtransc("a fearsome %s!"),
+                          mons_type_name_j(get_equivalent_mons(), DESC_PLAIN).c_str());
         }
         else
             return description;
@@ -836,7 +872,7 @@ public:
      */
     string transform_message() const override
     {
-        return "Your flesh twists and warps into a mockery of life!";
+        return jtrans("Your flesh twists and warps into a mockery of life!");
     }
 
     /**
@@ -844,7 +880,7 @@ public:
      */
     string get_untransform_message() const override
     {
-        return "You feel yourself come back to life.";
+        return jtrans("You feel yourself come back to life.");
     }
 
     int will_bonus() const override { return WL_PIP; }
@@ -858,7 +894,7 @@ private:
 public:
     static const FormBat &instance() { static FormBat inst; return inst; }
 
-    string get_untransform_message() const override { return "You feel less batty."; }
+    string get_untransform_message() const override { return jtrans("You feel less batty."); }
 };
 
 class FormPig : public Form
@@ -868,7 +904,7 @@ private:
     DISALLOW_COPY_AND_ASSIGN(FormPig);
 public:
     static const FormPig &instance() { static FormPig inst; return inst; }
-    string get_untransform_message() const override { return "You feel less porcine."; }
+    string get_untransform_message() const override { return jtrans("You feel less porcine."); }
 };
 
 #if TAG_MAJOR_VERSION == 34
@@ -897,7 +933,7 @@ public:
     /**
      * Get a message for untransforming from this form.
      */
-    string get_untransform_message() const override { return "You feel less wooden."; }
+    string get_untransform_message() const override { return jtrans("You feel less wooden."); }
 };
 
 #if TAG_MAJOR_VERSION == 34
@@ -922,7 +958,7 @@ private:
     DISALLOW_COPY_AND_ASSIGN(FormWisp);
 public:
     static const FormWisp &instance() { static FormWisp inst; return inst; }
-    string get_untransform_message() const override { return "You condense into your normal self."; }
+    string get_untransform_message() const override { return jtrans("You condense into your normal self."); }
 };
 
 class FormJelly : public Form
@@ -945,7 +981,7 @@ public:
     /**
      * Get a message for untransforming from this form.
      */
-    string get_untransform_message() const override { return "You stop sporulating."; }
+    string get_untransform_message() const override { return jtrans("You stop sporulating."); }
 };
 
 #if TAG_MAJOR_VERSION == 34
@@ -963,8 +999,8 @@ public:
     string get_untransform_message() const override
     {
         if (you.invisible())
-            return "You feel less shadowy.";
-        return "You emerge from the shadows.";
+            return jtrans("You feel less shadowy.");
+        return jtrans("You emerge from the shadows.");
     }
 };
 #endif
@@ -983,8 +1019,8 @@ public:
     string get_uc_attack_name(string /*default_name*/) const override
     {
         // there's special casing in base_hand_name to get "fists"
-        string hand = you.base_hand_name(true, true);
-        return make_stringf("Storm %s", hand.c_str());
+        string hand = you.hand_name(true);
+        return make_stringf(jtransc("Storm %s"), hand.c_str());
     }
 };
 
@@ -998,12 +1034,12 @@ public:
 
     string transform_message() const override
     {
-        return "Sharp quills grow all over your body.";
+        return jtrans("Sharp quills grow all over your body.");
     }
 
     string get_untransform_message() const override
     {
-        return "Your quills recede back into your body.";
+        return jtrans("Your quills recede back into your body.");
     }
 };
 
@@ -1054,7 +1090,7 @@ public:
      */
     string get_untransform_message() const override
     {
-        return "Makhleb calls their payment due...";
+        return jtrans("Makhleb calls their payment due...");
     }
 
     /**
@@ -1063,7 +1099,7 @@ public:
     string get_long_name() const override
     {
         const int boost = you.props[MAKHLEB_SLAUGHTER_BOOST_KEY].get_int();
-        return make_stringf("vessel of slaughter (+%d%% damage done)", boost);
+        return make_stringf(jtransc("vessel of slaughter (+%d%% damage done)"), boost);
     }
 };
 
@@ -1141,18 +1177,18 @@ public:
 
     string get_description(bool past_tense) const override
     {
-        return make_stringf("Your body %s made of elemental water.",
-                            past_tense ? "was" : "is");
+        return past_tense ? jtrans("Your body was made of elemental water.")
+                          : jtrans("Your body is made of elemental water.");
     }
 
     string transform_message() const override
     {
-        return "Your body transforms into elemental water.";
+        return jtrans("Your body transforms into elemental water.");
     }
 
     string get_untransform_message() const override
     {
-        return "Your body returns to its normal shape and substance.";
+        return jtrans("Your body returns to its normal shape and substance.");
     }
 };
 
@@ -1258,18 +1294,19 @@ public:
 
     string transform_message() const override
     {
-        return "A mane of stinging tendrils grows from your head.";
+        return jtrans("A mane of stinging tendrils grows from your head.");
     }
 
     string get_untransform_message() const override
     {
-        return "Your tendrils shrivel away.";
+        return jtrans("Your tendrils shrivel away.");
     }
 
     string get_description(bool past_tense) const override
     {
-        return make_stringf("You %s a mane of long, stinging tendrils on your head.",
-                            past_tense ? "had" : "have");
+        return past_tense
+            ? jtrans("You had a mane of long, stinging tendrils on your head.")
+            : jtrans("You have a mane of long, stinging tendrils on your head.");
     }
 
     // Number of monsters affected by tendrils per attack (multiplied by 10,
@@ -1299,7 +1336,7 @@ public:
      */
     string get_long_name() const override
     {
-        return you.base_hand_name(true, true);
+        return you.hand_name(true);
     }
 
     /**
@@ -1307,10 +1344,10 @@ public:
      */
     string get_description(bool past_tense) const override
     {
-        return make_stringf("You %s %s for %s.",
-                            past_tense ? "had" : "have",
-                            you.arm_count() == 1 ? "an electric eel" : "electric eels",
-                            hand_transform_parts().c_str());
+        // 日本語では単複の区別をしない
+        return make_stringf(past_tense ? jtransc("You had electric eels for %s.")
+                                       : jtransc("You have electric eels for %s."),
+                            _hand_transform_parts_j().c_str());
     }
 
     /**
@@ -1318,12 +1355,8 @@ public:
      */
     string transform_message() const override
     {
-        const bool singular = you.arm_count() == 1;
-
-        // XXX: a little ugly
-        return make_stringf("Your %s turn%s into%s wriggling electric eel%s!",
-                            hand_transform_parts().c_str(), singular ? "s" : "",
-                            singular ? " a" : " a pair of", singular ? "" : "s");
+        return make_stringf(jtransc("Your %s turn into wriggling electric eels!"),
+                            _hand_transform_parts_j().c_str());
     }
 
     /**
@@ -1331,12 +1364,8 @@ public:
      */
     string get_untransform_message() const override
     {
-        const bool singular = you.arm_count() == 1;
-
-        // XXX: a little ugly
-        return make_stringf("Your %s revert%s to %s normal form.",
-                            hand_transform_parts().c_str(), singular ? "s" : "",
-                            singular ? "its" : "their");
+        return make_stringf(jtransc("Your %s revert to their normal form."),
+                            _hand_transform_parts_j().c_str());
     }
 
     /**
@@ -1344,7 +1373,7 @@ public:
      */
     string get_uc_attack_name(string /*default_name*/) const override
     {
-        return "Eel " + hand_transform_parts(true);
+        return make_stringf(jtransc("Eel %s"), _hand_transform_parts_j(true).c_str());
     }
 };
 
@@ -1361,7 +1390,7 @@ public:
      */
     string transform_message() const override
     {
-        return make_stringf("Dense mycelia sprout from your %s and %s.",
+        return make_stringf(jtransc("Dense mycelia sprout from your %s and %s."),
                             you.arm_name(false).c_str(),
                             you.foot_name(true).c_str());
     }
@@ -1371,14 +1400,14 @@ public:
      */
     string get_untransform_message() const override
     {
-        return make_stringf("Your mycelia shrivel away.");
+        return jtrans("Your mycelia shrivel away.");
     }
 
     string get_description(bool past_tense) const override
     {
-        return make_stringf("Your %s %s a mass of colorful fungus.",
-                            you.arm_name(false).c_str(),
-                            past_tense ? "was" : "is");
+        return make_stringf(past_tense ? jtransc("Your %s was a mass of colorful fungus.")
+                                       : jtransc("Your %s is a mass of colorful fungus."),
+                            you.arm_name(false).c_str());
     }
 };
 
@@ -1765,9 +1794,11 @@ bool transforming_is_unsafe(transformation which_trans)
 {
     if (feat_dangerous_for_form(which_trans, env.grid(you.pos())))
     {
-        mprf(MSGCH_PROMPT, "%s right now would cause you to %s!",
-                which_trans == transformation::none ? "Untransforming" : "Transforming",
-                env.grid(you.pos()) == DNGN_LAVA ? "burn" : "drown");
+        mprf(MSGCH_PROMPT, jtransc("%s right now would cause you to %s!"),
+                tagged_jtransc("[unsafe form]",
+                    which_trans == transformation::none ? "Untransforming" : "Transforming"),
+                tagged_jtransc("[unsafe form]",
+                    env.grid(you.pos()) == DNGN_LAVA ? "burn" : "drown"));
         return true;
     }
 
@@ -1791,8 +1822,9 @@ bool transforming_is_unsafe(transformation which_trans)
         if (item->cursed()
             || (is_artefact(*item) && artefact_property(*item, ARTP_FRAGILE)))
         {
-            mprf(MSGCH_PROMPT, "%s right now would shatter %s!",
-                 which_trans == transformation::none ? "Untransforming" : "Transforming",
+            mprf(MSGCH_PROMPT, jtransc("%s right now would shatter %s!"),
+                 tagged_jtransc("[unsafe form]",
+                     which_trans == transformation::none ? "Untransforming" : "Transforming"),
                  item->name(DESC_YOUR).c_str());
             return true;
         }
@@ -1833,23 +1865,23 @@ string cant_transform_reason(transformation which_trans,
                              bool involuntary, bool temp)
 {
     if (!involuntary && you.has_mutation(MUT_NO_FORMS))
-        return "You have sacrificed the ability to change form!";
+        return jtrans("You have sacrificed the ability to change form!");
 
     // the undead cannot enter most forms.
     if (lifeless_prevents_form(which_trans))
-        return "Your unliving flesh cannot be transformed in this way.";
+        return jtrans("Your unliving flesh cannot be transformed in this way.");
 
     if (SP_GARGOYLE == you.species && which_trans == transformation::statue)
-        return "You're already a statue.";
+        return jtrans("You're already a statue.");
 
     if (!temp)
         return "";
 
     if (you.transform_uncancellable && which_trans != transformation::slaughter)
-        return "You are stuck in your current form!";
+        return jtrans("You are stuck in your current form!");
 
     if (which_trans == transformation::death && you.duration[DUR_DEATHS_DOOR])
-        return "You cannot mock death while in death's door.";
+        return jtrans("You cannot mock death while in death's door.");
 
     return "";
 }
@@ -1885,15 +1917,15 @@ bool check_transform_into(transformation which_trans, bool involuntary,
     const auto feat = env.grid(you.pos());
     if (!involuntary && feat_dangerous_for_form(which_trans, feat, talisman))
     {
-        mprf("Transforming right now would cause you to %s!",
-             feat == DNGN_DEEP_WATER ? "drown" : "burn");
+        mprf(jtransc("Transforming right now would cause you to %s!"),
+             tagged_jtransc("[unsafe form]", feat == DNGN_DEEP_WATER ? "drown" : "burn"));
         return false;
     }
 
     if (!involuntary && get_form(which_trans)->mult_hp(100) < 90)
     {
-        if (!yesno("This transformation would significantly lower your maximum hit points. "
-                  "Transform anyway?", true, 'n'))
+        if (!yesno(jtransc("This transformation would significantly lower your maximum hit points. "
+                  "Transform anyway?"), true, 'n'))
         {
             return false;
         }
@@ -1912,12 +1944,12 @@ static void _print_death_brand_changes(item_def *weapon, bool entering_death)
     }
     if (entering_death)
     {
-        mprf("%s goes dull and lifeless in your grasp.",
+        mprf(jtransc("%s goes dull and lifeless in your grasp."),
              weapon->name(DESC_YOUR).c_str());
     }
     else
     {
-        mprf("%s softly glows with a divine radiance!",
+        mprf(jtransc("%s softly glows with a divine radiance!"),
              uppercase_first(weapon->name(DESC_YOUR)).c_str());
     }
 }
@@ -1929,11 +1961,11 @@ static void _on_enter_form(transformation which_trans)
     switch (which_trans)
     {
     case transformation::tree:
-        mpr("Your roots penetrate the ground.");
+        mpr(jtrans("Your roots penetrate the ground."));
         if (you.duration[DUR_TELEPORT])
         {
             you.duration[DUR_TELEPORT] = 0;
-            mpr("You feel strangely stable.");
+            mpr(jtrans("You feel strangely stable."));
         }
         you.duration[DUR_FLIGHT] = 0;
         break;
@@ -1958,8 +1990,8 @@ static void _on_enter_form(transformation which_trans)
     case transformation::maw:
         if (have_passive(passive_t::goldify_corpses))
         {
-            mprf(MSGCH_WARN, "Gozag's golden gift will leave your new mouth "
-                             "with nothing to eat.");
+            mprf(MSGCH_WARN, jtransc("Gozag's golden gift will leave your new mouth "
+                             "with nothing to eat."));
         }
         break;
 
@@ -2028,7 +2060,7 @@ static void _enter_form(int dur, transformation which_trans, bool using_talisman
 
     if (you.digging && form_changes_anatomy(which_trans))
     {
-        mpr("Your mandibles meld away.");
+        mpr(jtrans("Your mandibles meld away."));
         you.digging = false;
     }
 
@@ -2137,7 +2169,7 @@ bool transform(int dur, transformation which_trans, bool involuntary,
         && x_chance_in_y(you.piety(), piety_breakpoint(5))
         && which_trans != transformation::none)
     {
-        simple_god_message(" protects your body from unnatural transformation!");
+        simple_god_message(jtransc(" protects your body from unnatural transformation!"));
         return false;
     }
 
@@ -2238,7 +2270,7 @@ void untransform(bool skip_move, bool scale_hp, bool preserve_equipment,
         if (monster* ember = get_solar_ember())
         {
             monster_die(*ember, KILL_RESET, NON_MONSTER);
-            mprf(MSGCH_DURATION, "Your tiny sun winks out.");
+            mprf(MSGCH_DURATION, jtransc("Your tiny sun winks out."));
         }
     }
     else if (old_form == transformation::rime_yak)
@@ -2273,8 +2305,9 @@ void untransform(bool skip_move, bool scale_hp, bool preserve_equipment,
     {
         for (item_def* item : forced_remove)
         {
-            mprf("%s falls away%s!", item->name(DESC_YOUR).c_str(),
-                    item->cursed() ? ", shattering the curse!" : "");
+            mprf(item->cursed() ? jtransc("%s falls away, shattering the curse!")
+                                : jtransc("%s falls away!"),
+                 item->name(DESC_YOUR).c_str());
 
             unequip_item(*item, false);
         }
@@ -2381,10 +2414,10 @@ void merfolk_start_swimming()
     if (you.fishtail)
         return;
 
-    mpr("Your legs become a tail as you dive into the water.");
+    mpr(jtrans("Your legs become a tail as you dive into the water."));
 
     if (you.invisible())
-        mpr("...but don't expect to remain undetected.");
+        mpr(jtrans("...but don't expect to remain undetected."));
 
     you.fishtail = true;
     you.redraw_evasion = true;
@@ -2529,7 +2562,7 @@ void sphinx_check_riddle()
     {
         // Check if a monster would have a specific reaction first, to skip
         // messages about them ignoring you.
-        string mon_msg = getSpeakString(best_mon->name(DESC_PLAIN) + " riddle");
+        string mon_msg = getSpeakString(best_mon->name_en(DESC_PLAIN) + " riddle");
 
         string msg = getShoutString(mon_msg.empty() ? "Sphinx riddle failure"
                                                     : "Sphinx riddle failure acknowledged");
@@ -2557,8 +2590,8 @@ void sun_scarab_spawn_ember(bool first_time)
     if (monster* mon = create_monster(mg))
     {
         you.props[SOLAR_EMBER_MID_KEY].get_int() = mon->mid;
-        mprf(MSGCH_DURATION, first_time ? "A tiny sun coalesces beside you."
-                                        : "You reconstitute your solar ember.");
+        mprf(MSGCH_DURATION, first_time ? jtransc("A tiny sun coalesces beside you.")
+                                        : jtransc("You reconstitute your solar ember."));
         you.props.erase(SOLAR_EMBER_REVIVAL_KEY);
     }
 }
@@ -2591,12 +2624,12 @@ bool maw_hunger_check(monster* mon)
     {
         if (!you.clarity())
         {
-            mprf("Your maw growls hungrily at the sight of %s.", mon->name(DESC_THE).c_str());
+            mprf(jtransc("Your maw growls hungrily at the sight of %s."), mon->name(DESC_THE).c_str());
             you.add_beholder(*mon, true, random_range(6, 10));
         }
         else
         {
-            mprf("Your maw growls hungrily at the sight of %s, but you resist your urges.",
+            mprf(jtransc("Your maw growls hungrily at the sight of %s, but you resist your urges."),
                  mon->name(DESC_THE).c_str());
         }
 
@@ -2615,15 +2648,14 @@ bool vampire_mesmerism_check(monster& mon)
     {
         if (mon.check_willpower(&you, get_form()->get_effect_chance()) <= 0)
         {
-            mprf("%s loses %s in your eye%s.",
-                    mon.name(DESC_THE).c_str(),
-                    mon.pronoun(PRONOUN_REFLEXIVE).c_str(),
-                    you.has_mutation(MUT_MISSING_EYE) ? "" : "s");
+            // 日本語では再帰代名詞と目の単複を省く
+            mprf(jtransc("%s loses itself in your eyes."),
+                    mon.name(DESC_THE).c_str());
             mon.daze(random_range(3, 5));
         }
         else
         {
-            mprf("%s is briefly mesmerised by your gaze.", mon.name(DESC_THE).c_str());
+            mprf(jtransc("%s is briefly mesmerised by your gaze."), mon.name(DESC_THE).c_str());
             // This works even if called during the stealth check, whereas a 1-turn daze
             // would wear off with no effect and produce extra messages on top of that.
             mon.speed_increment -= 10;

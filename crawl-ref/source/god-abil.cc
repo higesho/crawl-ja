@@ -5154,8 +5154,9 @@ bool ru_do_sacrifice(ability_type sac)
             }
             else
             {
-                sac_text = mut_upgrade_summary(mut);
-                sac_text_j = sac_text;
+                // マイルストーンは英語、表示は日本語
+                sac_text = mut_upgrade_summary_en(mut);
+                sac_text_j = mut_upgrade_summary(mut);
             }
         }
         offer_text = make_stringf("%s: %s", jtransc(sac_def.sacrifice_text),

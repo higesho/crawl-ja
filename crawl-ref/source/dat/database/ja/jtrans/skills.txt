@@ -1,0 +1,78 @@
+%%%%
+You have mastered %s!
+
+あなたは%sスキルをマスターした！
+%%%%
+# 「補正なしの」は能力吸収・クロストレーニング・アシェンザリで実際の値と違うとき
+[skill level]base
+
+補正なしの
+%%%%
+Your %s%s skill increases to level %d!
+
+あなたの%s%sスキルはレベル%dに上がった！
+%%%%
+Your %s%s skill decreases to level %d!
+
+あなたの%s%sスキルはレベル%dに下がった！
+%%%%
+Your %s%s skill gained %d levels and is now at level %d!
+
+あなたの%s%sスキルは%dレベル上がり、レベル%dになった！
+%%%%
+Your %s%s skill lost %d levels and is now at level %d!
+
+あなたの%s%sスキルは%dレベル下がり、レベル%dになった！
+%%%%
+You cannot train any new skills!
+
+あなたはこれ以上新たなスキルを訓練することはできない！
+%%%%
+You need to enable at least one skill for training.
+
+あなたは少なくとも一つのスキルを訓練しないといけない。
+%%%%
+# 呼び出し側で引数を入れ替えている(技能名、目標値の整数部、小数部)
+Base training target %d.%d for %s reached!
+
+%sスキルの補正なしの値が訓練目標の%d.%dに到達した！
+%%%%
+# 呼び出し側で引数を入れ替えている(技能名、目標値の整数部、小数部)
+Training target %d.%d for %s reached!
+
+%sスキルが訓練目標の%d.%dに到達した！
+%%%%
+You have finished your manual of %s and toss it away.
+
+あなたは%sの虎の巻を読破し、それを放り投げた。
+%%%%
+You have finished your manual of %s and skilfully toss it away.
+
+あなたは%sの虎の巻を読破し、それを巧みに放り投げた。
+%%%%
+Your training target must be 27 or below!
+
+訓練目標は27以下でなければならない！
+%%%%
+You can't set training targets!
+
+あなたは訓練目標を設定できない！
+%%%%
+Clearing the skill training target for %s.
+
+%sスキルの訓練目標を解除した。
+%%%%
+Setting a skill training target for %s at %d.%d.
+
+%sスキルの訓練目標を%d.%dに設定した。
+%%%%
+# ダンプのスキル一覧の 1 行(「O レベル 27 戦闘」の形)
+%c Level %.*f%s %s
+
+%c レベル %.*f%s %s
+%%%%
+# 称号の @Genus_Short@(神々の末裔のとき)
+[title genus]God
+
+神
+%%%%

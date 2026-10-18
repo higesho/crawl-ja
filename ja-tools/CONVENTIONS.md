@@ -17,6 +17,8 @@
    ものを `jtrans/<ファイル名>.txt` に自動で取り込む。
 4. 残った未訳キーを訳して同じ辞書ファイルに書く。
 5. `python -I ja-tools/jtools.py check <file.cc>` で未訳 0 件を確認。
+6. `python -I ja-tools/jtools.py fmt <辞書名>` で、訳の書式指定子が英文と
+   食い違う項目を確認する(MORE / TYPE は呼び出し側の引数と合っているか必ず見る)。
 
 ## 包むもの・包まないもの
 

@@ -1,0 +1,30 @@
+%%%%
+You are mesmerised by %s!
+
+あなたは%sに魅了されている！
+%%%%
+The silence clears your mind.
+
+静寂があなたの心を澄み渡らせた。
+%%%%
+%s stops singing.
+
+%sは歌うのをやめた。
+%%%%
+The Sanctuary denies %s grip on your mind.
+
+聖域は%s精神への支配を退けた。
+%%%%
+You can no longer hear %s singing!
+
+もう%s歌声は聞こえない！
+%%%%
+# 2 つ目の %s(代名詞の所有格)は訳では使わない
+%s loses %s grip on your mind.
+
+%sはあなたの精神への支配を失った。
+%%%%
+You are no longer mesmerised.
+
+あなたはもう魅了されていない。
+%%%%

@@ -88,9 +88,9 @@ void maybe_melt_player_enchantments(beam_type flavour, int damage)
             if (!you.duration[DUR_ICEMAIL_DEPLETED])
             {
                 if (you.has_mutation(MUT_ICEMAIL))
-                    mprf(MSGCH_DURATION, "Your icy defences dissipate!");
+                    mprf(MSGCH_DURATION, jtransc("Your icy defences dissipate!"));
                 else
-                    mprf(MSGCH_DURATION, "Your condensation shield dissipates!");
+                    mprf(MSGCH_DURATION, jtransc("Your condensation shield dissipates!"));
             }
             you.duration[DUR_ICEMAIL_DEPLETED] = ICEMAIL_TIME;
             you.redraw_armour_class = true;
@@ -129,7 +129,7 @@ int check_your_resists(int hurted, beam_type flavour, string source,
     case BEAM_WATER:
         hurted = resist_adjust_damage(&you, flavour, hurted);
         if (!hurted && doEffects)
-            mpr("You shrug off the wave.");
+            mpr(jtrans("You shrug off the wave."));
         break;
 
     case BEAM_STEAM:
@@ -138,7 +138,7 @@ int check_your_resists(int hurted, beam_type flavour, string source,
             canned_msg(MSG_YOU_RESIST);
         else if (hurted > original && doEffects)
         {
-            mpr("The steam scalds you terribly!");
+            mpr(jtrans("The steam scalds you terribly!"));
             xom_is_stimulated(200);
         }
         break;
@@ -149,7 +149,7 @@ int check_your_resists(int hurted, beam_type flavour, string source,
             canned_msg(MSG_YOU_RESIST);
         else if (hurted > original && doEffects)
         {
-            mpr("The fire burns you terribly!");
+            mpr(jtrans("The fire burns you terribly!"));
             xom_is_stimulated(200);
         }
         break;
@@ -163,7 +163,7 @@ int check_your_resists(int hurted, beam_type flavour, string source,
             canned_msg(MSG_YOU_RESIST);
         else if (hurted > original && doEffects)
         {
-            mpr("The cold chills you terribly!");
+            mpr(jtrans("The cold chills you terribly!"));
             xom_is_stimulated(200);
         }
         break;
@@ -248,7 +248,7 @@ int check_your_resists(int hurted, beam_type flavour, string source,
             canned_msg(MSG_YOU_PARTIALLY_RESIST);
         else if (hurted > original && doEffects)
         {
-            mpr("The ice freezes you terribly!");
+            mpr(jtrans("The ice freezes you terribly!"));
             xom_is_stimulated(200);
         }
         break;
@@ -260,7 +260,7 @@ int check_your_resists(int hurted, beam_type flavour, string source,
             canned_msg(MSG_YOU_PARTIALLY_RESIST);
         else if (hurted > original && doEffects)
         {
-            mpr("The lava burns you terribly!");
+            mpr(jtrans("The lava burns you terribly!"));
             xom_is_stimulated(200);
         }
         break;
@@ -288,7 +288,7 @@ int check_your_resists(int hurted, beam_type flavour, string source,
             canned_msg(MSG_YOU_RESIST);
         else if (hurted > original && doEffects)
         {
-            mpr("You writhe in agony!");
+            mpr(jtrans("You writhe in agony!"));
             xom_is_stimulated(200);
         }
         break;
@@ -324,13 +324,13 @@ int check_your_resists(int hurted, beam_type flavour, string source,
         if (doEffects)
         {
             if (you.is_insubstantial() || you.is_amorphous())
-                mpr("The bolas passes through you!");
+                mpr(jtrans("The bolas passes through you!"));
             else if (you.unrand_equipped(UNRAND_SLICK_SLIPPERS))
-                mpr("You slip free of the bolas.");
+                mpr(jtrans("You slip free of the bolas."));
             else
             {
                 you.set_duration(DUR_NO_MOMENTUM, random_range(4, 8), 0,
-                "The bolas wraps around you and binds you in place!");
+                jtransc("The bolas wraps around you and binds you in place!"));
             }
         }
         break;
@@ -387,7 +387,7 @@ void expose_player_to_element(beam_type flavour, int strength, bool slow_cold_bl
 
         if (x_chance_in_y(chance, 100))
         {
-            mprf(MSGCH_WARN, "The heat overwhelms you.");
+            mprf(MSGCH_WARN, jtransc("The heat overwhelms you."));
             you.slow_down(0, random_range(4, 8));
         }
     }
@@ -404,7 +404,7 @@ void expose_player_to_element(beam_type flavour, int strength, bool slow_cold_bl
 
         if (x_chance_in_y(chance, 100))
         {
-            mprf(MSGCH_WARN, "The cold chills your senses.");
+            mprf(MSGCH_WARN, jtransc("The cold chills your senses."));
             const int dur = random_range(5, 10);
             blind_player(dur, LIGHTBLUE);
             you.increase_duration(DUR_WEAK, dur, 50);
@@ -424,14 +424,14 @@ void expose_player_to_element(beam_type flavour, int strength, bool slow_cold_bl
 
         if (x_chance_in_y(chance, 100))
         {
-            mprf(MSGCH_WARN, "The electricity makes your body seize.");
+            mprf(MSGCH_WARN, jtransc("The electricity makes your body seize."));
             you.increase_duration(DUR_NO_MOMENTUM, random_range(3, 7), 10);
         }
     }
 
     if (flavour == BEAM_WATER && you.duration[DUR_STICKY_FLAME])
     {
-        mprf(MSGCH_WARN, "The flames go out!");
+        mprf(MSGCH_WARN, jtransc("The flames go out!"));
         end_sticky_flame_player();
     }
 
@@ -439,7 +439,7 @@ void expose_player_to_element(beam_type flavour, int strength, bool slow_cold_bl
         && get_beam_resist_type(flavour) == BEAM_COLD && coinflip())
     {
         if (!you.duration[DUR_FROZEN])
-            mpr("Your body starts to freeze solid!");
+            mpr(jtrans("Your body starts to freeze solid!"));
         you.increase_duration(DUR_FROZEN, random_range(5, 10), 50);
     }
 }
@@ -458,7 +458,7 @@ void lose_level()
     you.experience_level--;
 
     mprf(MSGCH_WARN,
-         "You are now level %d!", you.experience_level);
+         jtransc("You are now level %d!"), you.experience_level);
 
     calc_hp();
     calc_mp();
@@ -527,17 +527,18 @@ bool drain_player(int power, bool announce_full, bool ignore_protection, bool qu
         dprf("Drained by %d max hp (%d total)", mhp, you.hp_max_adj_temp);
         calc_hp();
 
-        string intensifier = "";
+        // 日本語では程度ごとに文全体を訳す。
+        const char* drained_msg = "You feel drained.";
         int perc = 100 * -you.hp_max_adj_temp / get_real_hp(false, false);
         if (perc >= 50)
-            intensifier = "extremely ";
+            drained_msg = "You feel extremely drained.";
         else if (perc >= 30)
-            intensifier = "very heavily ";
+            drained_msg = "You feel very heavily drained.";
         else if (perc >= 20)
-            intensifier = "heavily ";
+            drained_msg = "You feel heavily drained.";
 
         if (!quiet)
-            mprf("You feel %sdrained.", intensifier.c_str());
+            mpr(jtrans(drained_msg));
         xom_is_stimulated(15);
         return true;
     }
@@ -682,7 +683,7 @@ static void _maybe_spawn_rats(int dam, kill_method_type death_type)
     mg.flags |= MG_FORCE_BEH; // don't mention how much it hates you before it appears
     if (monster *m = create_monster(mg))
     {
-        mprf("%s scurries out from under your cloak.", m->name(DESC_A).c_str());
+        mprf(jtransc("%s scurries out from under your cloak."), m->name(DESC_A).c_str());
         // We should return early in the case of no_love or no_allies,
         // so this is more a sanity check.
         check_lovelessness(*m);
@@ -737,7 +738,7 @@ void _maybe_blood_hastes_allies()
 
     if (targetable.empty())
     {
-       mpr("Your atemporal blood churns to no real effect.");
+       mpr(jtrans("Your atemporal blood churns to no real effect."));
        return;
     }
 
@@ -759,7 +760,7 @@ void _maybe_blood_hastes_allies()
     }
 
     if (affected > 0)
-        mpr("The spilling of your atemporal blood hastes your allies!");
+        mpr(jtrans("The spilling of your atemporal blood hastes your allies!"));
 }
 
 static void _maybe_spawn_monsters(int dam, kill_method_type death_type,
@@ -809,15 +810,24 @@ static void _maybe_spawn_monsters(int dam, kill_method_type death_type,
         {
             if (mon == MONS_BUTTERFLY)
             {
-                mprf(MSGCH_GOD, "A shower of butterflies erupts from you!");
+                mprf(MSGCH_GOD, jtransc("A shower of butterflies erupts from you!"));
                 take_note(Note(NOTE_XOM_EFFECT, you.raw_piety, -1, "butterfly on damage"), true);
             }
             else
             {
-                mprf("You shudder from the %s and a %s!",
-                     death_type == KILLED_BY_MONSTER ? "blow" : "blast",
-                     count_created > 1 ? "flood of jellies pours out from you"
-                                       : "jelly pops out");
+                // 日本語では組み合わせごとに文全体を訳す。
+                if (death_type == KILLED_BY_MONSTER)
+                {
+                    mpr(jtrans(count_created > 1
+                        ? "You shudder from the blow and a flood of jellies pours out from you!"
+                        : "You shudder from the blow and a jelly pops out!"));
+                }
+                else
+                {
+                    mpr(jtrans(count_created > 1
+                        ? "You shudder from the blast and a flood of jellies pours out from you!"
+                        : "You shudder from the blast and a jelly pops out!"));
+                }
             }
         }
     }
@@ -838,7 +848,7 @@ static void _powered_by_pain(int dam)
         {
             if (you.magic_points < you.max_magic_points)
             {
-                mpr("You focus on the pain.");
+                mpr(jtrans("You focus on the pain."));
                 int mp = roll_dice(3, 2 + 3 * level);
                 canned_msg(MSG_GAIN_MAGIC);
                 inc_mp(mp);
@@ -847,11 +857,11 @@ static void _powered_by_pain(int dam)
             break;
         }
         case 2:
-            mpr("You focus on the pain.");
+            mpr(jtrans("You focus on the pain."));
             potionlike_effect(POT_MIGHT, level * 20);
             break;
         case 3:
-            mpr("You focus on the pain.");
+            mpr(jtrans("You focus on the pain."));
             you.be_agile(level * 20);
             break;
         }
@@ -863,7 +873,7 @@ static void _maybe_fog(int dam)
     const int upper_threshold = you.hp_max / 2;
     if (you_worship(GOD_XOM) && x_chance_in_y(dam, 30 * upper_threshold))
     {
-        mprf(MSGCH_GOD, "You emit a cloud of colourful smoke!");
+        mprf(MSGCH_GOD, jtransc("You emit a cloud of colourful smoke!"));
         big_cloud(CLOUD_XOM_TRAIL, &you, you.pos(), 50, 4 + random2(5), -1);
         take_note(Note(NOTE_XOM_EFFECT, you.raw_piety, -1, "smoke on damage"), true);
     }
@@ -908,7 +918,7 @@ static void _maybe_splash_water(int dam)
     if (water == 0)
         return;
 
-    mpr("You splash onto the ground.");
+    mpr(jtrans("You splash onto the ground."));
     for (int i = 0; i < water; ++i)
     {
         const coord_def pos = one_chance_in(3) ? random_spots[i] : spots[i];
@@ -945,7 +955,7 @@ static void _maybe_hive_swarm()
 
     if (made_mon)
     {
-        mpr("Angry insects swarm out of your body to defend their hive!");
+        mpr(jtrans("Angry insects swarm out of your body to defend their hive!"));
         you.duration[DUR_HIVE_COOLDOWN] = 1;
     }
 }
@@ -969,13 +979,13 @@ static void _maybe_medusa_lithotoxin()
         return;
 
     draw_ring_animation(you.pos(), 3, LIGHTGREY, 0U, true, 25);
-    mprf("Your pain echoes through the poison around you!");
+    mprf(jtransc("Your pain echoes through the poison around you!"));
     for (monster* targ : targs)
     {
         if (x_chance_in_y(get_form()->get_effect_chance(), 100))
             targ->petrify(&you);
         else
-            simple_monster_message(*targ, " resists.");
+            simple_monster_message(*targ, jtransc(" resists."));
     }
 
     you.duration[DUR_MEDUSA_COOLDOWN] = 1;
@@ -1038,7 +1048,7 @@ static void _maybe_trigger_spiteful_blood()
             made_mon = true;
 
     if (made_mon)
-        mpr("Your spilled blood starts moving with violent intent!");
+        mpr(jtrans("Your spilled blood starts moving with violent intent!"));
 }
 
 int corrosion_chance(int sources)
@@ -1115,7 +1125,7 @@ static void _place_player_corpse(bool explode)
         dummy.flags &= MF_EXPLODE_KILL;
 
     if (you.form != transformation::none)
-        mpr("Your shape twists and changes as you die.");
+        mpr(jtrans("Your shape twists and changes as you die."));
 
     place_monster_corpse(dummy, false);
 }
@@ -1227,7 +1237,7 @@ static void _god_death_messages(kill_method_type death_type,
     if (left_corpse)
     {
         if (will_have_passive(passive_t::goldify_corpses))
-            mprf(MSGCH_GOD, "Your body crumbles into a pile of gold.");
+            mprf(MSGCH_GOD, jtransc("Your body crumbles into a pile of gold."));
 
         if (you.religion == GOD_NEMELEX_XOBEH)
             nemelex_death_message();
@@ -1240,17 +1250,10 @@ static void _god_death_messages(kill_method_type death_type,
         if (you.worshipped[GOD_BEOGH] && killer->is_monster()
             && killer->deity() == GOD_BEOGH)
         {
-            string msg;
-            if (you.religion == GOD_BEOGH)
-            {
-                msg = " appreciates " + killer->name(DESC_ITS)
-                        + " killing of a heretic priest.";
-            }
-            else
-            {
-                msg = " appreciates " + killer->name(DESC_ITS)
-                        + " killing of an apostate.";
-            }
+            const string msg = make_stringf(jtransc(you.religion == GOD_BEOGH
+                    ? " appreciates %s killing of a heretic priest."
+                    : " appreciates %s killing of an apostate."),
+                killer->name(DESC_THE).c_str());
             simple_god_message(msg.c_str(), false, GOD_BEOGH);
         }
 
@@ -1258,8 +1261,8 @@ static void _god_death_messages(kill_method_type death_type,
         // after abandoning.
         if (killer->props.exists(OKAWARU_DUEL_TARGET_KEY))
         {
-            const string msg = " crowns " + killer->name(DESC_THE, true)
-                                + " victorious!";
+            const string msg = make_stringf(jtransc(" crowns %s victorious!"),
+                                            killer->name(DESC_THE, true).c_str());
             simple_god_message(msg.c_str(), false, GOD_OKAWARU);
         }
     }
@@ -1411,7 +1414,7 @@ void ouch(int dam, kill_method_type death_type, mid_t source, const char *aux,
 
         if (dam >= you.hp && you.hp_max > 0 && god_protects_from_harm())
         {
-            simple_god_message(" protects you from harm!");
+            simple_god_message(jtransc(" protects you from harm!"));
             // Ensure divine intervention wakes sleeping players. Necessary
             // because we otherwise don't wake players who take fatal damage.
             you.wake_up();
@@ -1431,7 +1434,7 @@ void ouch(int dam, kill_method_type death_type, mid_t source, const char *aux,
         // Even if we have low HP messages off, we'll still give a
         // big hit warning (in this case, a hit for half our HPs) -- bwr
         if (dam > 0 && you.hp_max <= dam * 2)
-            mprf(MSGCH_DANGER, "Ouch! That really hurt!");
+            mprf(MSGCH_DANGER, jtransc("Ouch! That really hurt!"));
 
         if (you.hp > 0 && dam > 0)
         {
@@ -1554,9 +1557,9 @@ void ouch(int dam, kill_method_type death_type, mid_t source, const char *aux,
 
             dprf("Damage: %d; Hit points: %d", dam, you.hp);
 
-            if (crawl_state.test || !yesno("Die?", false, 'n'))
+            if (crawl_state.test || !yesno(jtransc("Die?"), false, 'n'))
             {
-                mpr("Thought so.");
+                mpr(jtrans("Thought so."));
                 take_note(Note(NOTE_DEATH, you.hp, you.hp_max,
                                 death_desc.c_str()), true);
                 _wizard_restore_life();

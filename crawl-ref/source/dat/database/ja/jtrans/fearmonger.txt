@@ -1,0 +1,9 @@
+%%%%
+You are terrified of %s!
+
+あなたは%sを恐れている！
+%%%%
+You are no longer terrified.
+
+あなたはもう恐怖に怯えていない。
+%%%%

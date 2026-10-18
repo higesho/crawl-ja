@@ -38,21 +38,21 @@ void transpose_with_monster(monster* mon_to_swap)
 
     if (you.stasis())
     {
-        mpr("Your stasis prevents you from teleporting.");
+        mpr(jtrans("Your stasis prevents you from teleporting."));
         return;
     }
 
     // Be nice: no swapping into uninhabitable environments.
     if (!you.is_habitable(newpos) || !mon.is_habitable(you.pos()))
     {
-        mpr("You spin around.");
+        mpr(jtrans("You spin around."));
         return;
     }
 
     const caught_type mon_caught = mon.caught_by();
     const caught_type you_caught = you.caught_by();
 
-    mprf("You swap places with %s.", mon.name(DESC_THE).c_str());
+    mprf(jtransc("You swap places with %s."), mon.name(DESC_THE).c_str());
 
     // Must remove nets first (with no drop) so that we don't clone nets during
     // this swap.
@@ -129,26 +129,18 @@ int counted_monster_list::count() const
     return nmons;
 }
 
+// 日本語版: 「オークと2体のゴブリン、そしてネズミ」の形に並べる
+// (名前は日本語。複数形の代わりに数を付ける)。
 string counted_monster_list::describe(description_level_type desc) const
 {
-    string out;
-
-    for (auto i = list.begin(); i != list.end();)
-    {
-        const counted_monster &cm(*i);
-        if (i != list.begin())
+    return to_separated_fn(list.begin(), list.end(),
+        [desc] (const counted_monster &cm)
         {
-            ++i;
-            out += (i == list.end() ? " and " : ", ");
-        }
-        else
-            ++i;
-
-        out += cm.second > 1
-               ? pluralise_monster(cm.first->name(desc, false, true))
-               : cm.first->name(desc);
-    }
-    return out;
+            return cm.second > 1
+                   ? make_stringf(tagged_jtransc("[monster count]", "%d %s"),
+                                  cm.second, cm.first->name(desc).c_str())
+                   : cm.first->name(desc);
+        });
 }
 
 void attacked_monster_list::add(const monster& mons, string adj, string suffix,
@@ -167,12 +159,9 @@ void attacked_monster_list::add(const monster& mons, string adj, string suffix,
 
 string attacked_monster_list::describe() const
 {
-    // No "your the Royal Jelly" nor "the the Royal Jelly".
-    string mon_name = remove_prepended_the(m_victims.describe(DESC_PLAIN));
-    const char* prefix = "";
-    if (!starts_with(m_adj, "your"))
-        prefix = "the ";
-    return prefix + m_adj + mon_name;
+    // 日本語版: 形容語(m_adj)は日本語の連体修飾(「あなたの従者である」など)。
+    // 冠詞は付けず、名前の前にそのままつなぐ。
+    return m_adj + m_victims.describe(DESC_PLAIN);
 }
 
 /**

@@ -1,0 +1,109 @@
+%%%%
+There is %s.
+
+そこには%sがある。
+%%%%
+appears in a burst of microwaves!
+
+はマイクロ波バーストとともに出現した！
+%%%%
+pops from nullspace!
+
+は虚無から湧きだした！
+%%%%
+Gozag incites %s against you.
+
+ゴザーグは%sをあなたにけしかけた。
+%%%%
+# 遭遇したモンスターの数(_describe_monsters_from_species)
+[monster count]%d %s
+
+%d体の%s
+%%%%
+%s appear in pursuit of the Orb!
+
+%sがオーブを追って現れた！
+%%%%
+You encounter %s.
+
+%sに遭遇した。
+%%%%
+<green>Wyrmbane glows as a worthy foe approaches.</green>
+
+<green>強敵の接近に、『ドラゴン殺し』が輝いた。</green>
+%%%%
+warns you: %s is a foul %s.
+
+はあなたに警告した: %sは不浄なる%sだ。
+%%%%
+# 遭遇時の装備の説明。2 番目の %s は get_monster_equipment_desc() の
+# 結果(「〜を装備している」などの述語の形を前提にしている)
+[encounter equipment]%s is %s.
+
+%sは%s。
+%%%%
+# 深淵での出現メッセージ(_abyss_monster_creation_message、名前の後ろにつなぐ)
+appears in a shower of translocational energy.
+
+はほとばしる転位のエネルギーと共に出現した。
+%%%%
+appears in a shower of sparks.
+
+はほとばしる火花と共に出現した。
+%%%%
+materialises.
+
+は実体化した。
+%%%%
+emerges from chaos.
+
+は混沌から湧きだした。
+%%%%
+emerges from the beyond.
+
+が彼岸から這いだした。
+%%%%
+assembles itself!
+
+は自らの体を組み上げた！
+%%%%
+erupts from nowhere.
+
+はどこからともなく噴き出してきた。
+%%%%
+bursts from nowhere.
+
+はどこからともなく出現した。
+%%%%
+is cast out of space.
+
+は外宇宙から現れた。
+%%%%
+is cast out of reality.
+
+は現実の外から現れた。
+%%%%
+coalesces out of pure chaos.
+
+は純粋なる混沌から産まれ落ちた。
+%%%%
+coalesces out of seething chaos.
+
+は煮えたぎる混沌から産まれ落ちた。
+%%%%
+punctures the fabric of time!
+
+は時間の構造を打ち破った！
+%%%%
+punctures the fabric of the universe.
+
+は宇宙の構造を打ち破った。
+%%%%
+manifests!
+
+が現れた！
+%%%%
+manifests with a bang!
+
+が爆発とともに現れた！
+%%%%

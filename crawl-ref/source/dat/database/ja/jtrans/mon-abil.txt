@@ -1,0 +1,153 @@
+%%%%
+%s splits.
+
+%sは分裂した。
+%%%%
+Two slime creatures merge to form %s.
+
+2体のスライムは合体して%sになった。
+%%%%
+%s writhes in pain as voices assail %s mind.
+
+その声に精神を苛まれ、%sは苦痛に身もだえした。
+%%%%
+%s sacrifices itself to reknit %s!
+
+%sは自らを生贄に捧げ、%sを復活させた！
+%%%%
+Angry insects surge out from beneath %s foliage!
+
+怒り狂った虫の群れが%s葉陰から湧き出した！
+%%%%
+flows with the water.
+
+は流れる水とともに動き出した。
+%%%%
+glows brighter.
+
+はさらに輝いた。
+%%%%
+ basks in your mutagenic energy and changes!
+
+はあなたの変異性のエネルギーを浴びて変化した！
+%%%%
+ basks in the mutagenic energy from its kin and changes!
+
+は同族の変異性のエネルギーを浴びて変化した！
+%%%%
+ basks in the mutagenic energy and changes!
+
+は変異性のエネルギーを浴びて変化した！
+%%%%
+ is empowered by the presence of the orb!
+
+はオーブの存在によって力を得た！
+%%%%
+%s separates from %s.
+
+%sが%sから分離した。
+%%%%
+Something merges into %s, and it vanishes!
+
+何かが%sと合体し、見えなくなった！
+%%%%
+%s merges with something you can't see.
+
+%sは目に見えない何かと合体した。
+%%%%
+A slime creature is ejected from %s body as it begins to warp and change.
+
+%s体が歪んで変化し始め、スライムが1体吐き出された。
+%%%%
+%d slime creatures are ejected from %s body as it begins to warp and change.
+
+%d体のスライムが、歪んで変化し始めた%s体から吐き出された。
+%%%%
+A cacophony of accursed wailing tears at your sanity!
+
+呪われた嘆きの不協和音があなたの正気を引き裂いた！
+%%%%
+A deafening chorus of shrieks assaults your mind!
+
+耳をつんざく金切り声の合唱があなたの精神を襲った！
+%%%%
+A chorus of shrieks assaults your mind.
+
+金切り声の合唱があなたの精神を襲った。
+%%%%
+The starcursed mass shrieks in your mind.
+
+呪われし群れの金切り声があなたの心に響いた。
+%%%%
+%s assumes the form of %s and becomes anchored to this world!
+
+%sは%sの姿となり、この世界につなぎ留められた！
+%%%%
+%s assumes the form of %s!
+
+%sは%sの姿となった！
+%%%%
+Jet-black ravens fly out from beneath %s foliage!
+
+漆黒のワタリガラスが%s葉陰から飛び出した！
+%%%%
+ cracks slightly.
+
+はわずかにひび割れた。
+%%%%
+ shakes eagerly.
+
+は待ちきれないように揺れている。
+%%%%
+ hatches with a roar like a landslide!
+
+は地滑りのような咆哮とともに孵化した！
+%%%%
+sprouts a new head
+
+新たな頭を生やした
+%%%%
+sprouts %d new heads
+
+新たな頭を%d本生やした
+%%%%
+%s absorbs %d nearby slime creatures and %s.
+
+%sは近くのスライム%d体を吸収し、%s。
+%%%%
+%s absorbs a nearby slime creature and %s.
+
+%sは近くのスライムを1体吸収し、%s。
+%%%%
+ flows through the trees.
+
+は木々の間を流れるように移動した。
+%%%%
+%s ignites a memory of %s to re-knit themselves.
+
+%sは%sの記憶に火を灯し、自らを再生させた。
+%%%%
+%s ignites a memory of %s.
+
+%sは%sの記憶に火を灯した。
+%%%%
+"We remember... %s..."
+
+『我らは覚えている……%s……』
+%%%%
+ blazes with a fierce heat.
+
+は猛烈な熱を放って燃え上がった。
+%%%%
+The solar flare engulfs %s.
+
+太陽フレアが%sを包み込んだ。
+%%%%
+The solar flare engulfs %s but does no damage.
+
+太陽フレアが%sを包み込んだが、傷を負わせなかった。
+%%%%
+You feel the power of Zot begin to gather its forces!
+
+あなたはゾットの力がその軍勢を集め始めたのを感じた！
+%%%%

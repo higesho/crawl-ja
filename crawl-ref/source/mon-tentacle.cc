@@ -11,6 +11,7 @@
 
 #include "act-iter.h"
 #include "coordit.h"
+#include "database.h"
 #include "delay.h"
 #include "env.h"
 #include "fprop.h"
@@ -20,6 +21,7 @@
 #include "mon-death.h"
 #include "mon-place.h"
 #include "nearby-danger.h"
+#include "stringutil.h"
 #include "terrain.h"
 
 const int MAX_KRAKEN_TENTACLE_DIST = 12;
@@ -768,7 +770,8 @@ void move_solo_tentacle(monster* tentacle)
 
         // Don't drag things that cannot move
         if (!constrictee->is_stationary()
-            && !constrictee->resists_dislodge("being pulled by " + tentacle->name(DESC_THE)))
+            && !constrictee->resists_dislodge(make_stringf(jtransc("being pulled by %s"),
+                                                 tentacle->name(DESC_THE).c_str())))
         {
             if (retract_found)
             {
@@ -876,7 +879,7 @@ void move_solo_tentacle(monster* tentacle)
     {
         if (you.can_see(*tentacle))
         {
-            mprf("The vine drags %s backwards!",
+            mprf(jtransc("The vine drags %s backwards!"),
                     constrictee->name(DESC_THE).c_str());
         }
         constrictee->move_to(shift_pos);
@@ -1016,7 +1019,8 @@ void move_child_tentacles(monster* mons)
             constrictee = actor_by_mid((*tentacle->constricting)[0]);
             if (feat_has_solid_floor(env.grid(old_pos))
                 && constrictee->is_habitable(old_pos)
-                && !constrictee->resists_dislodge("being pulled by " + tentacle->name(DESC_THE)))
+                && !constrictee->resists_dislodge(make_stringf(jtransc("being pulled by %s"),
+                                                     tentacle->name(DESC_THE).c_str())))
             {
                 pull_constrictee = true;
             }
@@ -1061,7 +1065,7 @@ void move_child_tentacles(monster* mons)
         {
             if (you.can_see(*tentacle))
             {
-                mprf("The tentacle pulls %s backwards!",
+                mprf(jtransc("The tentacle pulls %s backwards!"),
                      constrictee->name(DESC_THE).c_str());
             }
             constrictee->move_to(old_pos);
@@ -1223,16 +1227,16 @@ void mons_create_tentacles(monster* head)
     if (mons_base_type(*head) == MONS_KRAKEN)
     {
         if (visible_count == 1)
-            mpr("A tentacle reaches out from the kraken!");
+            mpr(jtrans("A tentacle reaches out from the kraken!"));
         else if (visible_count > 1)
-            mpr("Tentacles reach out from the kraken!");
+            mpr(jtrans("Tentacles reach out from the kraken!"));
     }
     else if (head->type == MONS_TENTACLED_STARSPAWN)
     {
         if (visible_count == 1)
-            mpr("A tentacle flies out from the starspawn's body!");
+            mpr(jtrans("A tentacle flies out from the starspawn's body!"));
         else if (visible_count > 1)
-            mpr("Tentacles burst from the starspawn's body!");
+            mpr(jtrans("Tentacles burst from the starspawn's body!"));
     }
     return;
 }

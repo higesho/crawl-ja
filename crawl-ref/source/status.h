@@ -79,6 +79,9 @@ struct status_info
 // character state
 // returns true if the status has a description
 bool fill_status_info(int status, status_info& info);
+// 日本語化する前と同じ英語の文字列で埋める。Lua の you.status()、
+// スコアファイル、webtiles の説明 DB の検索など、英語で比較・保存する所で使う
+bool fill_status_info_en(int status, status_info& info);
 
 const char *duration_name(duration_type dur);
 duration_type duration_by_name(const string &name);

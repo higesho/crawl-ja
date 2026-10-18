@@ -17,11 +17,13 @@
 #include "cio.h"
 #include "clua.h"
 #include "command.h"
+#include "database.h"
 #include "describe.h"
 #include "english.h" // apostrophise
 #include "evoke.h"
 #include "god-passive.h" // passive_t::bondage_skill_boost
 #include "hints.h"
+#include "japanese.h"
 #include "options.h"
 #include "output.h"
 #include "religion.h"
@@ -33,6 +35,7 @@
  #include "tilereg-crt.h"
 #endif
 #include "ui.h"
+#include "unicode.h"
 #include "unwind.h"
 
 using namespace ui;
@@ -222,8 +225,9 @@ void SkillMenuEntry::set_name(bool keep_hotkey)
         m_name->allow_highlight(false);
     }
 
-    m_name->set_text(make_stringf("%s %-15s", get_prefix().c_str(),
-                                skill_name(m_sk)));
+    // %-15s はバイト数で揃えるので、表示幅で揃える
+    m_name->set_text(make_stringf("%s %s", get_prefix().c_str(),
+                                chop_string(skill_name_j(m_sk), 15).c_str()));
     m_name->set_fg_colour(get_colour());
 #ifdef USE_TILE_LOCAL
     if (is_set(SKMF_SKILL_ICONS))
@@ -422,24 +426,24 @@ void SkillMenuEntry::set_targets()
 void SkillMenuEntry::set_title()
 {
     m_name->allow_highlight(false);
-    m_name->set_text("     Skill");
-    m_level->set_text("Level");
+    m_name->set_text(jtrans_notrim("     Skill"));
+    m_level->set_text(tagged_jtrans("[skill menu title]", "Level"));
 
     m_name->set_fg_colour(BLUE);
     m_level->set_fg_colour(BLUE);
     m_progress->set_fg_colour(BLUE);
 
     if (is_set(SKMF_APTITUDE))
-        m_aptitude->set_text("<blue>Apt </blue>");
+        m_aptitude->set_text(jtrans("<blue>Apt </blue>"));
 
     switch (skm.get_state(SKM_VIEW))
     {
-    case SKM_VIEW_TRAINING:  m_progress->set_text("Train"); break;
-    case SKM_VIEW_TARGETS:   m_progress->set_text("Target"); break;
-    case SKM_VIEW_PROGRESS:  m_progress->set_text("Progr"); break;
-    case SKM_VIEW_POINTS:    m_progress->set_text("Points");break;
-    case SKM_VIEW_COST:      m_progress->set_text("Cost");  break;
-    case SKM_VIEW_NEW_LEVEL: m_progress->set_text("> New"); break;
+    case SKM_VIEW_TRAINING:  m_progress->set_text(tagged_jtrans("[skill menu title]", "Train")); break;
+    case SKM_VIEW_TARGETS:   m_progress->set_text(tagged_jtrans("[skill menu title]", "Target")); break;
+    case SKM_VIEW_PROGRESS:  m_progress->set_text(tagged_jtrans("[skill menu title]", "Progr")); break;
+    case SKM_VIEW_POINTS:    m_progress->set_text(tagged_jtrans("[skill menu title]", "Points"));break;
+    case SKM_VIEW_COST:      m_progress->set_text(tagged_jtrans("[skill menu title]", "Cost"));  break;
+    case SKM_VIEW_NEW_LEVEL: m_progress->set_text(tagged_jtrans("[skill menu title]", "> New")); break;
     default: die("Invalid view state.");
     }
 }
@@ -553,66 +557,67 @@ string SkillMenuSwitch::get_help()
     switch (m_state)
     {
     case SKM_MODE_AUTO:
-        return "In automatic mode, skills are trained as you use them.";
+        return jtrans("In automatic mode, skills are trained as you use them.");
     case SKM_MODE_MANUAL:
-        return "In manual mode, experience is spread evenly across all "
-                "activated skills.";
+        return jtrans("In manual mode, experience is spread evenly across all "
+                      "activated skills.");
     case SKM_DO_PRACTISE:
         if (skm.is_set(SKMF_SIMPLE))
             return hints_skills_info();
         else
-            return "Press the letter of a skill to choose whether you want to "
-                   "practise it. Skills marked with '<darkgrey>-</darkgrey>' "
-                   "will not be trained.";
+            return jtrans("Press the letter of a skill to choose whether you want to "
+                          "practise it. Skills marked with '<darkgrey>-</darkgrey>' "
+                          "will not be trained.");
     case SKM_DO_FOCUS:
-        return "Press the letter of a skill to cycle between "
-               "<darkgrey>disabled</darkgrey> (<darkgrey>-</darkgrey>), "
-               "enabled (+) and <white>focused</white> (<white>*</white>). "
-               "Focused skills train twice as fast relative to others.";
+        return jtrans("Press the letter of a skill to cycle between "
+                      "<darkgrey>disabled</darkgrey> (<darkgrey>-</darkgrey>), "
+                      "enabled (+) and <white>focused</white> (<white>*</white>). "
+                      "Focused skills train twice as fast relative to others.");
     case SKM_LEVEL_ENHANCED:
     {
         string result;
         if (skm.is_set(SKMF_ENHANCED))
         {
+            // 原因は訳して「、」でつなぐ
             vector<string> causes;
             if (you.duration[DUR_HEROISM])
-                causes.push_back("Heroism");
+                causes.push_back(tagged_jtrans("[skill menu cause]", "Heroism"));
 
             if (!you.skill_boost.empty()
                 && have_passive(passive_t::bondage_skill_boost))
             {
-                causes.push_back(apostrophise(god_name(you.religion))
-                                 + " power");
+                causes.push_back(make_stringf(jtransc("[skill menu cause]%s's power"),
+                                              god_name_jc(you.religion)));
             }
             if (_any_crosstrained())
-                causes.push_back("cross-training");
+                causes.push_back(tagged_jtrans("[skill menu cause]", "cross-training"));
             if (_hermit_bonus())
-                causes.push_back("the Hermit's pendant");
+                causes.push_back(tagged_jtrans("[skill menu cause]", "the Hermit's pendant"));
             if (_wildshape_bonus())
-                causes.push_back("wildshape");
+                causes.push_back(tagged_jtrans("[skill menu cause]", "wildshape"));
             if (_charlatan_bonus())
-                causes.push_back("the Charlatan's Orb");
+                causes.push_back(tagged_jtrans("[skill menu cause]", "the Charlatan's Orb"));
             if (you.form == transformation::walking_scroll)
-                causes.push_back("scribal knowledge");
-            result = "Skills enhanced by "
-                     + comma_separated_line(causes.begin(), causes.end())
-                     + " are in <green>green</green>.";
+                causes.push_back(tagged_jtrans("[skill menu cause]", "scribal knowledge"));
+            result = make_stringf(jtransc("Skills enhanced by %s are in <green>green</green>."),
+                                  comma_separated_line(causes.begin(), causes.end(),
+                                                       "、", "、").c_str());
         }
 
         if (skm.is_set(SKMF_REDUCED))
         {
-            vector<const char *> causes;
+            vector<string> causes;
             if (player_under_penance(GOD_ASHENZARI))
-                causes.push_back("Ashenzari's anger");
+                causes.push_back(tagged_jtrans("[skill menu cause]", "Ashenzari's anger"));
             if (_hermit_penalty())
-                causes.push_back("the Hermit's pendant");
+                causes.push_back(tagged_jtrans("[skill menu cause]", "the Hermit's pendant"));
             if (you.has_bane(BANE_DILETTANTE))
-                causes.push_back("the Bane of the Dilettante");
+                causes.push_back(tagged_jtrans("[skill menu cause]", "the Bane of the Dilettante"));
             if (!result.empty())
                 result += " ";
-            result += "Skills reduced by "
-                      + comma_separated_line(causes.begin(), causes.end())
-                      + " are in <magenta>magenta</magenta>.";
+            result += make_stringf(jtransc("Skills reduced by %s are in <magenta>magenta</magenta>."),
+                                   comma_separated_line(causes.begin(), causes.end(),
+                                                        "、", "、").c_str());
         }
 
         if (!result.empty())
@@ -622,31 +627,29 @@ string SkillMenuSwitch::get_help()
         if (skm.is_set(SKMF_SIMPLE))
             return hints_skill_training_info();
         else
-            return "The percentage of incoming experience used"
-                   " to train each skill is in <brown>brown</brown>.\n";
+            return jtrans_notrim("The percentage of incoming experience used"
+                                 " to train each skill is in <brown>brown</brown>.\n");
     case SKM_VIEW_TARGETS:
         if (skm.is_set(SKMF_SIMPLE))
             return hints_skill_targets_info();
         else
-            return "The current training targets, if any.\n";
+            return jtrans_notrim("The current training targets, if any.\n");
     case SKM_VIEW_PROGRESS:
-        return "The percentage of the progress done before reaching next "
-               "level is in <cyan>cyan</cyan>.\n";
+        return jtrans_notrim("The percentage of the progress done before reaching next "
+                             "level is in <cyan>cyan</cyan>.\n");
     case SKM_VIEW_COST:
     {
         if (skm.is_set(SKMF_SIMPLE))
             return hints_skill_costs_info();
 
-        string result =
-               "The relative cost of raising each skill is in "
-               "<cyan>cyan</cyan>";
         if (skm.is_set(SKMF_MANUAL))
         {
-            result += " (or <lightred>red</lightred> if enhanced by a "
-                      "manual)";
+            return jtrans_notrim("The relative cost of raising each skill is in "
+                                 "<cyan>cyan</cyan> (or <lightred>red</lightred> "
+                                 "if enhanced by a manual).\n");
         }
-        result += ".\n";
-        return result;
+        return jtrans_notrim("The relative cost of raising each skill is in "
+                             "<cyan>cyan</cyan>.\n");
     }
     default: return "";
     }
@@ -732,13 +735,18 @@ void SkillMenuSwitch::update()
             text += '|';
 
         const string col = (*it == m_state) ? "white" : "darkgrey";
-        text += make_stringf("<%s>%s</%s>", col.c_str(), get_name(*it).c_str(),
+        // get_name() は英語のまま(表示する所で訳す)
+        text += make_stringf("<%s>%s</%s>", col.c_str(),
+                             tagged_jtransc("[skill menu state]", get_name(*it)),
                              col.c_str());
     }
     if (m_name.empty())
         text += "  ";
     else
-        text += make_stringf(" %s  ", m_name.c_str());
+    {
+        text += make_stringf(" %s  ",
+                             tagged_jtransc("[skill menu suffix]", m_name));
+    }
     set_text(text);
 }
 
@@ -934,8 +942,8 @@ int SkillMenu::read_skill_target(skill_type sk)
     progress->set_highlight_colour(RED);
 
     // for webtiles dialog input
-    progress->set_prompt(make_stringf("Enter a skill target for %s: ",
-                                            skill_name(sk)));
+    progress->set_prompt(make_stringf(jtrans_notrimc("Enter a skill target for %s: "),
+                                            skill_name_jc(sk)));
     progress->set_tag("skill_target");
 
     edit_result r = progress->edit(&prefill, _keyfun_target_input);
@@ -957,7 +965,7 @@ int SkillMenu::read_skill_target(skill_type sk)
         if (input > 270)
         {
             // 27.0 is the maximum target
-            set_help("<lightred>Your training target must be 27 or below!</lightred>");
+            set_help(jtrans("<lightred>Your training target must be 27 or below!</lightred>"));
             return -1;
         }
         else
@@ -1040,7 +1048,7 @@ bool SkillMenu::do_skill_enabled_check()
         // Shouldn't happen, but crash rather than locking the player in the
         // menu. Training will be fixed up on load.
         ASSERT(!you.has_mutation(MUT_DISTRIBUTED_TRAINING));
-        set_help("<lightred>You need to enable at least one skill.</lightred>");
+        set_help(jtrans("<lightred>You need to enable at least one skill.</lightred>"));
         // It can be confusing if the only trainable skills are hidden. Turn on
         // SKM_SHOW_ALL if so.
         if (get_state(SKM_SHOW) == SKM_SHOW_DEFAULT)
@@ -1170,9 +1178,9 @@ void SkillMenu::help()
         if (is_set(SKMF_SIMPLE))
             text = hints_skills_description_info();
         else
-            text = "Press the letter of a skill to read its description.\n"
-                   "Press <w>?</w> for a general explanation"
-                   " of skilling and the various toggles.";
+            text = jtrans("Press the letter of a skill to read its description.\n"
+                          "Press <w>?</w> for a general explanation"
+                          " of skilling and the various toggles.");
         set_help(text);
     }
     else
@@ -1446,30 +1454,30 @@ void SkillMenu::refresh_button_row()
     const string helpstring = "[<yellow>?</yellow>] ";
     const string azstring = "[<yellow>a</yellow>-<yellow>z</yellow>] ";
 
-    string legend = is_set(SKMF_SIMPLE) ? "Skill descriptions" : "Help";
+    string legend = jtrans(is_set(SKMF_SIMPLE) ? "Skill descriptions" : "Help");
     string midlegend = "";
     string clearlegend = "";
     if (is_set(SKMF_HELP))
     {
-        legend = is_set(SKMF_SIMPLE) ? "Return to skill selection"
-                 : "<w>Help</w>";
-        midlegend = azstring + "skill descriptions";
+        legend = jtrans(is_set(SKMF_SIMPLE) ? "Return to skill selection"
+                        : "<w>Help</w>");
+        midlegend = azstring + jtrans("skill descriptions");
     }
     else if (!is_set(SKMF_SIMPLE) && get_state(SKM_VIEW) == SKM_VIEW_TARGETS)
     {
         if (is_set(SKMF_SET_TARGET))
         {
-            midlegend = azstring + "set skill target";
-            clearlegend = "[<yellow>-</yellow>] clear selected target";
+            midlegend = azstring + jtrans("set skill target");
+            clearlegend = jtrans("[<yellow>-</yellow>] clear selected target");
         }
         else
         {
-            midlegend = "[<yellow>=</yellow>] set a skill target";
-            clearlegend = "[<yellow>-</yellow>] clear all targets";
+            midlegend = jtrans("[<yellow>=</yellow>] set a skill target");
+            clearlegend = jtrans("[<yellow>-</yellow>] clear all targets");
         }
     }
     else if (!you.has_mutation(MUT_DISTRIBUTED_TRAINING)) // SKM_VIEW_TARGETS unavailable for Gn
-        midlegend = "[<yellow>=</yellow>] set a skill target";
+        midlegend = jtrans("[<yellow>=</yellow>] set a skill target");
 
     m_help_button->set_text(helpstring + legend);
     m_middle_button->set_text(midlegend);
@@ -1505,9 +1513,9 @@ void SkillMenu::set_default_help()
     string text;
     if (is_set(SKMF_EXPERIENCE))
     {
-        text = "Select the skills you want to be trained. "
-               "The chosen skills will be raised to the level shown in "
-               "<cyan>cyan</cyan>.";
+        text = jtrans("Select the skills you want to be trained. "
+                      "The chosen skills will be raised to the level shown in "
+                      "<cyan>cyan</cyan>.");
     }
     else if (is_set(SKMF_SIMPLE))
         text = hints_skills_info();
@@ -1519,10 +1527,10 @@ void SkillMenu::set_default_help()
         if (get_state(SKM_LEVEL) == SKM_LEVEL_ENHANCED)
             text += m_switches[SKM_LEVEL]->get_help() + " ";
         else
-            text += "The species aptitude is in <white>white</white>. ";
+            text += jtrans_notrim("The species aptitude is in <white>white</white>. ");
 
         if (is_set(SKMF_MANUAL))
-            text += "Bonus from skill manuals is in <lightred>red</lightred>. ";
+            text += jtrans_notrim("Bonus from skill manuals is in <lightred>red</lightred>. ");
     }
 
     m_help->set_text(text);
@@ -1635,8 +1643,8 @@ void SkillMenu::set_title()
     string t;
     if (is_set(SKMF_EXPERIENCE))
     {
-        t = "You have gained great experience. "
-            "Select the skills to train.";
+        t = jtrans("You have gained great experience. "
+                   "Select the skills to train.");
     }
 
     m_title->set_text(t);
@@ -1819,7 +1827,7 @@ void skill_menu(int flag, int exp)
     // case where we abort is if all in-principle trainable skills are maxed.
     if (flag & SKMF_EXPERIENCE && !trainable_skills(true))
     {
-        mpr("You feel omnipotent.");
+        mpr(jtrans("You feel omnipotent."));
         return;
     }
 

@@ -1,0 +1,183 @@
+%%%%
+Careful! %s
+
+[注意！] %s
+%%%%
+Your limbs are stiffening.
+
+あなたの四肢が硬直しつつある。
+%%%%
+The heat melts your icy armour.
+
+熱気が氷の鎧を溶かした。
+%%%%
+Monsters! Monsters everywhere! You have to get out of here!
+
+モンスターがそこらじゅうにいる！ 早くここから離れないと！
+%%%%
+You reel with horror at the sight of these foes!
+
+あなたは敵を目の当たりにして恐怖に怯えた！
+%%%%
+You feel a twist of horror at the sight of this foe.
+
+あなたは敵を目の当たりにして怖気を感じた。
+%%%%
+Your recitation is interrupted.
+
+あなたの朗読は中断させられた。
+%%%%
+%s emerges from the mists of memory!
+
+%sが記憶の霧の中から浮かび上がってきた！
+%%%%
+# 石化が解けたとき。%s は [form flesh equivalent] で引いた肉体名
+You turn to %s.
+
+あなたの体は%sに戻った。
+%%%%
+You turn to %s and can act again.
+
+あなたの体は%sに戻り、再び動けるようになった。
+%%%%
+You feel less attractive to monsters.
+
+あなたはモンスターを惹きつけなくなった。
+%%%%
+You can act again.
+
+あなたは再び動けるようになった。
+%%%%
+The roots around you sink back into the ground.
+
+あなたに絡みついていた根は地中に戻っていった。
+%%%%
+The zombie hands holding you return to the earth.
+
+あなたを掴んでいたゾンビの手は地中に戻っていった。
+%%%%
+Your orb has finished recharging its magic.
+
+あなたのオーブは魔力の再充填を終えた。
+%%%%
+# %s は zin_recite_text(-1) の「『忌まわしきもの』3章5節」の形
+You finish reciting %s.
+
+あなたは%sの朗読を終えた。
+%%%%
+You feel your existence waver again.
+
+あなたは自らの存在が再び揺らぐのを感じた。
+%%%%
+# %s は [substance] で引いた物質名(水、泥、粘液など)
+You finish coughing all the %s out of your lungs.
+
+あなたは肺に入った%sをすべて吐き出した。
+%%%%
+Your lungs strain for air.
+
+あなたの肺は空気を求めてあえいでいる。
+%%%%
+As the last of your armour is driven back to you, your cacophony ends.
+
+最後の防具があなたのもとに戻り、不協和音は終わった。
+%%%%
+You are ready to perform a blood rite again.
+
+あなたは再び血の儀式を行えるようになった。
+%%%%
+Your time-warped blood is ready to ripple again.
+
+あなたの時を歪める血は再び波打つ準備ができた。
+%%%%
+The buzzing within you returns to its normal rhythm.
+
+あなたの体内の羽音は普段の調子に戻った。
+%%%%
+You feel your defenses recover.
+
+あなたは自らの守りが回復したのを感じた。
+%%%%
+# %s は you.hand_name(true)(日本語)
+Your %s have fully recharged.
+
+あなたの%sは完全に充電された。
+%%%%
+# %s は装備品の名前を「と」「、」で並べたもの
+Your %s attune to your body.
+
+あなたの%sが体になじんだ。
+%%%%
+You begin to regenerate health and magic more quickly.
+
+あなたの体力と魔力の回復が速くなった。
+%%%%
+You begin to regenerate more quickly.
+
+あなたの体力の回復が速くなった。
+%%%%
+You begin to regenerate magic more quickly.
+
+あなたの魔力の回復が速くなった。
+%%%%
+You begin to extract magic from the potions you drink.
+
+あなたは飲んだ水薬から魔力を引き出せるようになった。
+%%%%
+The wailing of tortured souls fills the air!
+
+責め苦にあえぐ魂たちの泣き叫ぶ声があたりに満ちた！
+%%%%
+# ここから下は _decrement_a_duration() に英文で渡し、中で訳すもの
+Your transformation is almost over.
+
+あなたの変身はもうすぐ時間切れだ。
+%%%%
+Your icy armour evaporates.
+
+あなたの氷の鎧は蒸発した。
+%%%%
+Your icy armour starts to melt.
+
+あなたの氷の鎧は溶けはじめている。
+%%%%
+You start to feel a little slower.
+
+あなたの速度は少しずつ低下し始めた。
+%%%%
+You no longer feel sluggish.
+
+あなたはもう動きが緩慢ではない。
+%%%%
+You start to feel a little faster.
+
+あなたの動きが元の速度を取り戻しつつある。
+%%%%
+The winds around you start to calm down.
+
+あなたの周囲の風はおさまりつつある。
+%%%%
+You are starting to lose your buoyancy.
+
+あなたは飛行能力を失いつつある。
+%%%%
+Your trail of clouds dissipates.
+
+あなたの動く跡に湧き出す雲は消え去った。
+%%%%
+Your catalyst becomes inert.
+
+あなたの触媒は反応しなくなった。
+%%%%
+Your cacophony subsides and your armour settles down once more.
+
+不協和音は静まり、あなたの防具は再び落ち着いた。
+%%%%
+You rip and tear the barbed spikes from your body.
+
+あなたは体に刺さった逆棘を引きちぎって抜いた。
+%%%%
+You carefully extract the barbed spikes from your body.
+
+あなたは体に刺さった逆棘を慎重に引き抜いた。
+%%%%

@@ -13,6 +13,7 @@
 #include "branch.h" // is_connected_branch
 #include "coordit.h"
 #include "dactions.h"
+#include "database.h"
 #include "dungeon.h"
 #include "god-abil.h"
 #include "god-companions.h"
@@ -119,7 +120,7 @@ static void _handle_monster_leashing(monster& mon, bool using_stairs)
     {
         if (using_stairs && you.can_see(mon))
         {
-            mprf("%s abandons %s pursuit.",
+            mprf(jtransc("%s abandons %s pursuit."),
             mon.name(DESC_THE).c_str(),
             mon.pronoun(PRONOUN_POSSESSIVE).c_str());
         }

@@ -723,3 +723,52 @@
 
 扉
 %%%%
+# 第3陣で追加: feat_type_name() の総称
+[feature]grate
+
+格子
+%%%%
+[feature]statue
+
+彫像
+%%%%
+[feature]water
+
+水
+%%%%
+[feature]lava
+
+溶岩
+%%%%
+[feature]altar
+
+祭壇
+%%%%
+[feature]trap
+
+罠
+%%%%
+[feature]escape hatch
+
+脱出用のハッチ
+%%%%
+[feature]portal
+
+ポータル
+%%%%
+[feature]staircase
+
+階段
+%%%%
+[feature]fountain
+
+泉
+%%%%
+[feature]dais
+
+台座
+%%%%
+[feature]unknown terrain
+
+未知の地形
+%%%%

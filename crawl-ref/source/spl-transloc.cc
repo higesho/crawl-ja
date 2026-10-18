@@ -527,7 +527,7 @@ string electric_charge_impossible_reason(bool allow_safe_monsters)
 string movement_impossible_reason()
 {
     if (you.attribute[ATTR_HELD])
-        return make_stringf(jtransc("You cannot do that while %s."), jtransc(held_status()));
+        return make_stringf(jtransc("You cannot do that while %s."), held_status());
     if (you.cannot_move())
         return jtrans("You cannot move."); // MSG_CANNOT_MOVE
     return "";

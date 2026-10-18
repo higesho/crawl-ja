@@ -19,6 +19,7 @@
 #include "cloud.h"
 #include "colour.h"
 #include "coordit.h"
+#include "database.h"
 #include "directn.h"
 #include "dungeon.h"
 #include "env.h"
@@ -1453,7 +1454,7 @@ static monster* _place_monster_aux(const mgen_data &mg, const monster *leader,
         {
             const monster* sum = mg.summoner->as_monster();
             mons_add_blame(mon, (blame_prefix
-                                 + sum->full_name(DESC_A)));
+                                 + sum->full_name_en(DESC_A)));
             if (sum->props.exists(BLAME_KEY))
             {
                 const CrawlVector& oldblame = sum->props[BLAME_KEY].get_vector();
@@ -3120,7 +3121,7 @@ void check_lovelessness(monster &mons)
     mons.attitude = ATT_HOSTILE;
     mons.del_ench(ENCH_CHARM);
     behaviour_event(&mons, ME_ALERT, &you);
-    mprf("%s feels only hate for you!", mons.name(DESC_THE).c_str());
+    mprf(jtransc("%s feels only hate for you!"), mons.name(DESC_THE).c_str());
 }
 
 /**
@@ -3202,7 +3203,7 @@ monster* create_monster(mgen_data mg, bool fail_msg)
             fail_msg = false;
 
         if (!summd && fail_msg && you.see_cell(mg.pos))
-            mpr("You see a puff of smoke.");
+            mpr(jtrans("You see a puff of smoke."));
     }
 
     return summd;

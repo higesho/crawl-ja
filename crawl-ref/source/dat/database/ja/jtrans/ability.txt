@@ -1,0 +1,1377 @@
+#####################################################################
+# 能力名(ability.cc の Ability_List)。表示は ability_name_j() で
+# "[ability]" を付けて引く。ability_name() は検索キーなので英語のまま。
+#####################################################################
+%%%%
+[ability]No ability
+
+特殊能力なし
+%%%%
+[ability]Spit Poison
+
+毒の唾液
+%%%%
+[ability]Golden Breath
+
+黄金のブレス
+%%%%
+[ability]Combustion Breath
+
+燃焼のブレス
+%%%%
+[ability]Glacial Breath
+
+氷河のブレス
+%%%%
+[ability]Breathe Poison Gas
+
+毒ガスのブレス
+%%%%
+[ability]Noxious Breath
+
+悪臭のブレス
+%%%%
+[ability]Galvanic Breath
+
+電流のブレス
+%%%%
+[ability]Nullifying Breath
+
+無効化のブレス
+%%%%
+[ability]Steam Breath
+
+蒸気のブレス
+%%%%
+[ability]Caustic Breath
+
+腐蝕のブレス
+%%%%
+[ability]Mud Breath
+
+泥のブレス
+%%%%
+[ability]Hurl Damnation
+
+地獄の鉄槌
+%%%%
+[ability]Word of Chaos
+
+混沌の言葉
+%%%%
+[ability]Dig
+
+掘削
+%%%%
+[ability]Shaft Self
+
+縦穴掘り
+%%%%
+[ability]Hop
+
+蛙跳び
+%%%%
+[ability]Blinkbolt
+
+雷化
+%%%%
+[ability]Siphon Essence
+
+精髄の吸収
+%%%%
+[ability]Heal Wounds
+
+傷の治癒
+%%%%
+[ability]Imbue Servitor
+
+従者への呪文付与
+%%%%
+[ability]Imprint Weapon
+
+武器の刻印
+%%%%
+[ability]End Transformation
+
+変身の停止
+%%%%
+[ability]Invent Gizmo
+
+ガジェットの発明
+%%%%
+[ability]Cacophony
+
+騒音
+%%%%
+[ability]Bat Swarm
+
+蝙蝠群
+%%%%
+[ability]Enkindle
+
+再燃
+%%%%
+[ability]Jump
+
+跳躍
+%%%%
+[ability]Watery Grave
+
+水葬
+%%%%
+[ability]Bestial Takedown
+
+獣の仕留め
+%%%%
+[ability]Breathe Rust
+
+錆のブレス
+%%%%
+[ability]Evoke Blink
+
+瞬間移動の喚起
+%%%%
+[ability]Evoke Invisibility
+
+透明化の喚起
+%%%%
+[ability]Evoke Damnation
+
+地獄の鉄槌の喚起
+%%%%
+[ability]Evoke the Staff of Olgreb
+
+オルグレブの杖の喚起
+%%%%
+# Zin
+[ability]Recite
+
+説法の朗読
+%%%%
+[ability]Vitalisation
+
+生命の活性化
+%%%%
+[ability]Imprison
+
+収監
+%%%%
+[ability]Sanctuary
+
+聖域
+%%%%
+[ability]Donate Gold
+
+喜捨
+%%%%
+# TSO
+[ability]Divine Shield
+
+神気の盾
+%%%%
+[ability]Cleansing Flame
+
+浄化の炎
+%%%%
+[ability]Summon Divine Warrior
+
+聖なる戦士の召喚
+%%%%
+[ability]Brand Weapon With Holy Wrath
+
+祝福された武器を授かる
+%%%%
+# Kiku
+[ability]Unearth Wretches
+
+亡者の掘り起こし
+%%%%
+[ability]Sign of Ruin
+
+破滅の印
+%%%%
+[ability]Receive Forbidden Knowledge
+
+禁断の知識を授かる
+%%%%
+[ability]Brand Weapon With Pain
+
+苦痛の武器を授かる
+%%%%
+# Yred
+[ability]Light the Black Torch
+
+黒き松明の点火
+%%%%
+[ability]Recall Undead Harvest
+
+刈り取った死者の招集
+%%%%
+[ability]Hurl Torchlight
+
+松明の投擲
+%%%%
+[ability]Bind Soul
+
+魂の呪縛
+%%%%
+[ability]Fathomless Shackles
+
+底知れぬ枷
+%%%%
+# Okawaru
+[ability]Heroism
+
+英雄化
+%%%%
+[ability]Finesse
+
+早業の技巧
+%%%%
+[ability]Duel
+
+決闘
+%%%%
+[ability]Receive Weapon
+
+武器を授かる
+%%%%
+[ability]Receive Armour
+
+防具を授かる
+%%%%
+# Makhleb
+[ability]Unleash Destruction
+
+破壊の解放
+%%%%
+[ability]Globe of Annihilation
+
+消滅の球体
+%%%%
+[ability]Infernal Servant
+
+地獄の従者
+%%%%
+[ability]Infernal Legion
+
+地獄の軍勢
+%%%%
+# 印の能力の表示名は "Accept %s"。説明画面の見出しは "Brand Self"
+[ability]Brand Self
+
+印の刻印
+%%%%
+[ability]Vessel of Slaughter
+
+殺戮の器
+%%%%
+# Sif
+[ability]Channel Magic
+
+魔力回復強化
+%%%%
+[ability]Forget Spell
+
+呪文の忘却
+%%%%
+[ability]Divine Exegesis
+
+神聖なる釈義
+%%%%
+# Trog
+[ability]Berserk
+
+バーサーク
+%%%%
+[ability]Trog's Hand
+
+トログの御手
+%%%%
+[ability]Brothers in Arms
+
+戦友の召喚
+%%%%
+# Elyvilon
+[ability]Purification
+
+聖杯の清め
+%%%%
+[ability]Heal Other
+
+他者への癒し
+%%%%
+[ability]Heal Self
+
+自己治癒
+%%%%
+[ability]Divine Vigour
+
+神秘の活力
+%%%%
+# Lugonu
+[ability]Depart the Abyss
+
+アビスからの離脱
+%%%%
+[ability]Banish
+
+アビスへの追放
+%%%%
+[ability]Corrupt
+
+階層の崩壊
+%%%%
+[ability]Enter the Abyss
+
+アビスへの退避
+%%%%
+[ability]Brand Weapon With Distortion
+
+歪曲の武器を授かる
+%%%%
+# Nemelex
+[ability]Draw Destruction
+
+破壊のドロー
+%%%%
+[ability]Draw Escape
+
+脱出のドロー
+%%%%
+[ability]Draw Summoning
+
+召喚のドロー
+%%%%
+[ability]Draw Stack
+
+積み札のドロー
+%%%%
+[ability]Triple Draw
+
+トリプル・ドロー
+%%%%
+[ability]Deal Four
+
+ディール・フォー
+%%%%
+[ability]Stack Five
+
+スタック・ファイブ
+%%%%
+# Beogh。使徒の解任・勧誘の表示名は "Dismiss %s" / "Recruit %s"。
+# 説明画面の見出しは "Dismiss Apostle" / "Recruit Apostle"
+[ability]Dismiss Apostle
+
+使徒の解任
+%%%%
+[ability]Smiting
+
+打擲の一撃
+%%%%
+[ability]Recall Apostles
+
+使徒の招集
+%%%%
+[ability]Recruit Apostle
+
+使徒の勧誘
+%%%%
+[ability]Blood for Blood
+
+血には血を
+%%%%
+# Jiyva
+[ability]Oozemancy
+
+粘液術
+%%%%
+[ability]Slimify
+
+スライム化
+%%%%
+# Fedhas
+[ability]Wall of Briars
+
+茨の壁
+%%%%
+[ability]Grow Ballistomycete
+
+放出菌糸の生育
+%%%%
+[ability]Overgrow
+
+繁茂
+%%%%
+[ability]Grow Oklob
+
+オクロブ草の生育
+%%%%
+# Cheibriados
+[ability]Bend Time
+
+時間の歪曲
+%%%%
+[ability]Temporal Distortion
+
+現世の歪曲
+%%%%
+[ability]Slouch
+
+素早きものの屈服
+%%%%
+[ability]Step From Time
+
+時間からの離脱
+%%%%
+# Ashenzari
+[ability]Curse Item
+
+アイテムの呪縛
+%%%%
+[ability]Shatter the Chains
+
+鎖の破砕
+%%%%
+# Dithmenos
+[ability]Shadowslip
+
+影抜け
+%%%%
+[ability]Aphotic Marionette
+
+暗黒の操り人形
+%%%%
+[ability]Primordial Nightfall
+
+原初の夜の帳
+%%%%
+# Ru
+[ability]Draw Out Power
+
+力の解放
+%%%%
+[ability]Power Leap
+
+力強き跳躍
+%%%%
+[ability]Apocalypse
+
+黙示録
+%%%%
+[ability]Sacrifice Purity
+
+清浄の犠牲
+%%%%
+[ability]Sacrifice Words
+
+言語の犠牲
+%%%%
+[ability]Sacrifice Drink
+
+飲用の犠牲
+%%%%
+[ability]Sacrifice Essence
+
+魔力の犠牲
+%%%%
+[ability]Sacrifice Health
+
+健常の犠牲
+%%%%
+[ability]Sacrifice Stealth
+
+隠密の犠牲
+%%%%
+[ability]Sacrifice Artifice
+
+発動の犠牲
+%%%%
+[ability]Sacrifice Love
+
+親愛の犠牲
+%%%%
+[ability]Sacrifice Courage
+
+勇敢の犠牲
+%%%%
+[ability]Sacrifice Arcana
+
+秘術の犠牲
+%%%%
+[ability]Sacrifice Nimbleness
+
+敏捷の犠牲
+%%%%
+[ability]Sacrifice Durability
+
+頑強の犠牲
+%%%%
+[ability]Sacrifice a Hand
+
+片腕の犠牲
+%%%%
+[ability]Sacrifice Experience
+
+経験の犠牲
+%%%%
+[ability]Sacrifice Skill
+
+鍛錬の犠牲
+%%%%
+[ability]Sacrifice an Eye
+
+片目の犠牲
+%%%%
+[ability]Sacrifice Resistance
+
+耐性の犠牲
+%%%%
+[ability]Sacrifice Forms
+
+変身の犠牲
+%%%%
+[ability]Reject Sacrifices
+
+犠牲の拒否
+%%%%
+# Gozag
+[ability]Potion Petition
+
+水薬の陳情
+%%%%
+[ability]Call Merchant
+
+商人の誘致
+%%%%
+[ability]Bribe Branch
+
+分岐の買収
+%%%%
+# Qazlal
+[ability]Upheaval
+
+自然の怒り
+%%%%
+[ability]Elemental Force
+
+精霊召喚
+%%%%
+[ability]Disaster Area
+
+天よりの災禍
+%%%%
+# Uskayaw
+[ability]Stomp
+
+踏み鳴らし
+%%%%
+[ability]Line Pass
+
+横切り
+%%%%
+[ability]Grand Finale
+
+グランド・フィナーレ
+%%%%
+# Hepliaklqana
+[ability]Recall Ancestor
+
+祖霊の招集
+%%%%
+[ability]Transference
+
+位置交換
+%%%%
+[ability]Idealise
+
+祖霊強化
+%%%%
+[ability]Ancestor Life: Knight
+
+祖霊を騎士へと昇格
+%%%%
+[ability]Ancestor Life: Battlemage
+
+祖霊を魔術師へと昇格
+%%%%
+[ability]Ancestor Life: Hexer
+
+祖霊を呪術師へと昇格
+%%%%
+[ability]Ancestor Identity
+
+祖霊への命名
+%%%%
+# Wu Jian
+[ability]Serpent's Lash
+
+蛇の鞭打ち
+%%%%
+[ability]Heavenly Storm
+
+天の嵐
+%%%%
+[ability]Wall Jump
+
+壁蹴り
+%%%%
+# Ignis
+[ability]Fiery Armour
+
+炎の鎧
+%%%%
+[ability]Foxfire Swarm
+
+狐火の群れ
+%%%%
+[ability]Rising Flame
+
+昇炎
+%%%%
+# General
+[ability]Renounce Religion
+
+信仰の放棄
+%%%%
+[ability]Convert to Beogh
+
+ベオへの改宗
+%%%%
+# Wizard
+[ability]Build terrain
+
+地形の作成
+%%%%
+[ability]Set terrain to build
+
+作成する地形の設定
+%%%%
+[ability]Clear terrain to floor
+
+地形を床に戻す
+%%%%
+# 動的な能力名。%s は使徒の名前(解任は「名前、戦士」の形)
+Recruit %s
+
+%sの勧誘
+%%%%
+Dismiss %s
+
+%sの解任
+%%%%
+# %s はマクレブの印の名前(訳済み)
+Accept %s
+
+%sの受け入れ
+%%%%
+#####################################################################
+# 能力の一覧(ダンプなど)
+#####################################################################
+no special abilities
+
+特になし
+%%%%
+#####################################################################
+# コストの表示(make_cost_description)。区切りは ", " のまま
+# (先頭の 2 バイトを消している)
+#####################################################################
+, %d MP
+
+, MP%d
+%%%%
+, Permanent MP (%d left)
+
+, 最大MP(残り%d)
+%%%%
+, Noise
+
+, 騒音
+%%%%
+, %d HP
+
+, HP%d
+%%%%
+# %s は信仰心のコストの目安("-" の並び)
+, Piety%s
+
+, 信仰心%s
+%%%%
+, Breath
+
+, 息
+%%%%
+, %d/%d uses available
+
+, 使用可能回数%d/%d
+%%%%
+, Delay
+
+, 遅延
+%%%%
+, Torment
+
+, 苦痛
+%%%%
+, Injury
+
+, 負傷
+%%%%
+, Exhaustion
+
+, 疲労
+%%%%
+, Instant
+
+, 即時
+%%%%
+, Drain
+
+, 生命力吸収
+%%%%
+, Cursed item
+
+, 呪われたアイテム
+%%%%
+, %d Gold
+
+, %dゴールド
+%%%%
+, Free
+
+, 無料
+%%%%
+, Gold
+
+, 金貨
+%%%%
+# カードの能力のコスト。後ろに "(残り%d枚)" などが続く
+A Card
+
+カード1枚
+%%%%
+, Torchlight
+
+, 松明の光
+%%%%
+(next: %s)
+
+(次: %s)
+%%%%
+# stack_top() が "none" を返したとき
+[stack top]none
+
+なし
+%%%%
+(%d in deck)
+
+(残り%d枚)
+%%%%
+# %s は呪いの略称を "/" でつないだもの
+(Boost: %s)
+
+(強化: %s)
+%%%%
+#####################################################################
+# コストの詳細(_detailed_cost_description)
+#####################################################################
+This ability costs:
+
+能力の使用に要するコスト:
+%%%%
+MP     :
+
+MP :
+%%%%
+HP     :
+
+HP :
+%%%%
+Piety  :
+
+信仰心 :
+%%%%
+ (less than 1% of your maximum possible piety)
+
+(最大信仰心の1%未満)
+%%%%
+ (about %d%% of your maximum possible piety)
+
+(最大信仰心の約%d%%)
+%%%%
+Gold   :
+
+料金 :
+%%%%
+[ability cost]%d gold
+
+%dゴールド
+%%%%
+free
+
+無料
+%%%%
+variable
+
+時価
+%%%%
+One cursed item
+
+呪われたアイテム1つ
+%%%%
+Torchlight
+
+松明の光
+%%%%
+nothing.
+
+なし
+%%%%
+You must catch your breath between uses of this ability.
+
+この能力を使うときには満足に呼吸ができる状態でないといけない。
+%%%%
+This ability takes some time before being effective.
+
+この能力は効力を発揮するまでにいくらか時間がかかる。
+%%%%
+Using this ability will hurt you for a large fraction of your current HP.
+
+この能力を使うと現在のHPの大部分を失う。
+%%%%
+Using this ability invokes torment.
+
+この能力を使うと冥界の苦痛を呼び起こす。
+%%%%
+This ability causes exhaustion, and cannot be used when exhausted.
+
+この能力を使うと疲労してしまい、疲労から回復するまで使うことができない。
+%%%%
+This ability is instantaneous.
+
+この能力は即座に効果を発揮する。
+%%%%
+You can use this ability even if confused.
+
+この能力は混乱している最中でも使用できる。
+%%%%
+This ability will temporarily drain your maximum health when used, even unsuccessfully.
+
+この能力を使うと、失敗したときでも一時的に最大HPが減少する。
+%%%%
+This ability will temporarily drain your maximum health when used.
+
+この能力を使うと一時的に最大HPが減少する。
+%%%%
+Gaining experience will replenish charges of this ability.
+
+経験を積むとこの能力の使用回数が回復する。
+%%%%
+This ability has a chance of reducing your maximum magic capacity when used.
+
+この能力を使うと最大MPが減少することがある。
+%%%%
+#####################################################################
+# 説明画面(get_ability_desc)
+#####################################################################
+If you bind an item with this curse Ashenzari will enhance the following skills:
+
+この呪いをアイテムにかけると、アシェンザリは次のスキルを強化する:
+%%%%
+If you make this sacrifice, your powers granted by Ru will become stronger in proportion to the value of the sacrifice, and you may gain new powers as well.\n\nSacrifices cannot be taken back.
+
+この犠牲を捧げると、ルーの恩恵として得た力の威力はその価値に比例して上昇し、さらに新たな能力を得ることもある。
+
+一度捧げた犠牲は、あとで取り戻すことはできない。
+%%%%
+# 後ろに変異の説明が 1 行ずつ並ぶ
+After this sacrifice, you will find that:
+
+この犠牲を捧げると、次のようになる:
+%%%%
+# %s はデッキの名前(deck_name() の英語を訳したもの)。後ろにデッキの説明が続く
+Draw a card from the %s;
+
+%sからカードを1枚引く。
+%%%%
+No description found.
+
+解説文は見つからなかった。
+%%%%
+%dd3 / 2 (against normal-speed enemies)
+
+%dd3 / 2 (通常速度の敵に対して)
+%%%%
+1d8/foxfire
+
+1d8/狐火1体
+%%%%
+%dd%d/upheaval
+
+%dd%d/1回の自然の怒り
+%%%%
+%dd%d + 1/6 of current HP
+
+%dd%d + 現在HPの1/6
+%%%%
+# 文字セットが ASCII のとき("∞" の代わり)
+[damage]death
+
+即死
+%%%%
+Damage: %s
+
+ダメージ: %s
+%%%%
+Range: %s
+
+射程: %s
+%%%%
+#####################################################################
+# 能力を使うとき
+#####################################################################
+Sorry, you're not good enough to have a special ability.
+
+残念ながら、あなたはまだ特殊能力を獲得していない。
+%%%%
+Use which ability? (? or * to list)
+
+どの能力を使いますか？ (?もしくは *で一覧を表示)
+%%%%
+You can't do that.
+
+あなたはそのようなことはできない。
+%%%%
+Your legs are too worn out to hop.
+
+あなたの脚は疲れきっていて跳ねることができない。
+%%%%
+You're already rising!
+
+あなたはすでに上昇している！
+%%%%
+You can't rise from this level without the Orb!
+
+オーブを持たずにこの階層から昇ることはできない！
+%%%%
+You can't rise from this level!
+
+この階層から昇ることはできない！
+%%%%
+# 引数は呼び出し側で入れ替えている: [silenced reason] の訳(「静寂に包まれている」など)、神の名前
+You cannot call out to %s while %s.
+
+%s間は%sに祈ることができない。
+%%%%
+# %s は [silenced reason] の訳
+You cannot speak a word of chaos while %s.
+
+%s間は混沌の言葉を唱えることができない。
+%%%%
+That deck is empty!
+
+そのデッキは空だ！
+%%%%
+# %s は能力名(訳)。オプション confirm_action に一致したとき
+Really use %s?
+
+本当に%sを使いますか？
+%%%%
+There's no appreciative audience!
+
+耳の肥えた聴衆が一人もいない！
+%%%%
+You are not zealous enough to affect this audience!
+
+あなたはこの聴衆に影響を及ぼすほどには信仰が篤くないようだ！
+%%%%
+There's already a sanctuary in place on this level.
+
+この階層にはすでに別の聖域が存在している。
+%%%%
+You are already engaged in single combat!
+
+あなたはすでに一騎討ちの最中だ！
+%%%%
+Any gift you received here would fall and be lost!
+
+ここで贈り物を受け取っても、落ちて失われてしまう！
+%%%%
+You can't heal while in death's door.
+
+死のとば口に立っている間は回復することができない。
+%%%%
+Nothing ails you!
+
+あなたはすでに正常だ！
+%%%%
+You have already been granted divine vigour!
+
+あなたはすでに神秘の活力を授かっている！
+%%%%
+You are already calling forth ooze!
+
+あなたはすでに粘液を呼び出している！
+%%%%
+You aren't in the Abyss!
+
+あなたはアビスの中にいない！
+%%%%
+You're already here!
+
+あなたはすでに目的地にいる！
+%%%%
+There isn't enough space to grow briars here.
+
+ここには茨を生やすのに十分な空間がない。
+%%%%
+You're too exhausted to draw out your power.
+
+あなたは疲労しすぎており力を解放できない。
+%%%%
+You have no need to draw out power.
+
+あなたは力を解放する必要がない。
+%%%%
+You're too exhausted to power leap.
+
+あなたは疲労しすぎており跳躍できない。
+%%%%
+You're too exhausted to unleash your apocalyptic power.
+
+あなたは疲労しすぎており黙示録の力を解放できない。
+%%%%
+You have exhausted your breath weapon. Slay more foes!
+
+あなたはブレスを使い果たした。さらに敵を倒せ！
+%%%%
+You don't have enough innate magic capacity.
+
+あなたの生来の魔力の容量が足りない。
+%%%%
+In %d experience levels, you will have learned enough to assemble a masterpiece.
+
+あと%dレベル経験を積めば、傑作を組み立てるのに十分な知識が身につく。
+%%%%
+You are already making a cacophony!
+
+あなたはすでに騒音を立てている！
+%%%%
+You must recover your energy before unleashing another cacophony.
+
+再び騒音を立てる前に、力を回復しなければならない。
+%%%%
+You aren't haunting any armour at the moment!
+
+あなたは今、どの防具にも憑依していない！
+%%%%
+You must recover your energy before scattering into bats again.
+
+再び蝙蝠の群れに散る前に、力を回復しなければならない。
+%%%%
+You are already burning your memories away!
+
+あなたはすでに記憶を燃やしている！
+%%%%
+You don't have any memories left to burn.
+
+あなたには燃やす記憶が残っていない。
+%%%%
+You must recover your energy before doing this again.
+
+再びこれを行う前に、力を回復しなければならない。
+%%%%
+There is no water in range!
+
+範囲内に水がない！
+%%%%
+You are already invisible!
+
+あなたはすでに透明だ！
+%%%%
+You don't have enough experience to sacrifice.
+
+あなたは捧げるべき経験値を十分に持っていない。
+%%%%
+%s is still trapped in memory!
+
+祖霊『%s』はまだ記憶の中に囚われている！
+%%%%
+You are already lashing out.
+
+あなたはすでに身構えている。
+%%%%
+You are too exhausted to lash out.
+
+あなたは疲労しすぎており蛇の鞭打ちを使えない。
+%%%%
+You are already engulfed in a heavenly storm!
+
+あなたはすでに天の嵐に包まれている！
+%%%%
+The black torch is already ablaze!
+
+黒き松明はすでに燃え上がっている！
+%%%%
+The black torch is unlit!
+
+黒き松明に火が灯っていない！
+%%%%
+You must stoke the torch's fire more first.
+
+まず松明の火をもっと燃え立たせなければならない。
+%%%%
+You are already invoking Yredulemnul's grip!
+
+あなたはすでにイレデレンヌルの握力を呼び起こしている！
+%%%%
+You already have the maximum number of followers. Dismiss one first.
+
+あなたの従者はすでに上限に達している。先に誰かを解任すること。
+%%%%
+You have already called for blood!
+
+あなたはすでに血を求めている！
+%%%%
+Your apostles are all alive!
+
+あなたの使徒は全員生きている！
+%%%%
+You must be standing atop the corpse of a fallen apostle!
+
+倒れた使徒の死体の上に立っていなければならない！
+%%%%
+Night has already fallen.
+
+すでに夜の帳は下りている。
+%%%%
+Makhleb denies you. Endure the Crucible first!
+
+マクレブはあなたを拒んだ。まずは試練の坩堝に耐えよ！
+%%%%
+You are already a vessel of slaughter!
+
+あなたはすでに殺戮の器だ！
+%%%%
+# のろまの照準: 対象が効果を受けないとき
+[slouch]not susceptible
+
+効果なし
+%%%%
+damage: %dd3 / 2
+
+ダメージ: %dd3 / 2
+%%%%
+hp as a bound soul: ~%d
+
+呪縛された魂としてのHP: 約%d
+%%%%
+%d/%d spells usable
+
+使用可能な呪文: %d/%d
+%%%%
+Aiming: <w>%s</w>
+
+照準: <w>%s</w>
+%%%%
+Activating: <w>%s</w>
+
+発動: <w>%s</w>
+%%%%
+# 失敗率("%d%%")
+ <lightgrey>(%s risk of failure)</lightgrey>
+
+<lightgrey>(失敗率%s)</lightgrey>
+%%%%
+A dragon answers your prayer!
+
+竜があなたの祈りに応えた！
+%%%%
+You fail to use your ability.
+
+あなたは特殊能力の発動に失敗した。
+%%%%
+#####################################################################
+# 能力の効果(_do_ability など)
+#####################################################################
+You feel the orb feeding on your energy!
+
+あなたはオーブが自分の力を貪っているのを感じた！
+%%%%
+There are no victims visible. Siphon anyway?
+
+見える範囲に犠牲者がいない。それでも吸収しますか？
+%%%%
+You feel stolen life flooding into you!
+
+あなたは奪った生命力が流れ込んでくるのを感じた！
+%%%%
+You feel stolen life flooding into you from an unseen source!
+
+あなたは見えない何かから奪った生命力が流れ込んでくるのを感じた！
+%%%%
+You send your armour flying and begin to make an unholy cacophony!
+
+あなたは防具を飛び立たせ、不浄な騒音を立て始めた！
+%%%%
+Your magical essence is drained by the effort!
+
+その負担であなたの魔力の源が吸い取られた！
+%%%%
+You extend your mandibles.
+
+あなたは大顎を広げた。
+%%%%
+You retract your mandibles.
+
+あなたは大顎をひっこめた。
+%%%%
+Are you sure you want to shaft yourself?
+
+本当に縦穴を掘りますか？
+%%%%
+Select an artefact weapon to imprint upon your Paragon.
+
+模範者に刻印するアーティファクトの武器を選んでください。
+%%%%
+%s forbids using such a weapon!
+
+%sはそのような武器を使うことを禁じている！
+%%%%
+You scatter into a swarm of vampire bats!
+
+あなたは吸血蝙蝠の群れとなって散った！
+%%%%
+Your flames flare with remembrance!
+
+あなたの炎は追憶とともに燃え上がった！
+%%%%
+You clear your throat and prepare to recite.
+
+あなたは咳払いし、説法の準備をした。
+%%%%
+# fight.cc の stop_attack_prompt に渡す日本語の終止形の動詞句
+invoke Cleansing Flame
+
+浄化の炎を呼び起こす
+%%%%
+will bless one of your weapons.
+
+はあなたの武器をどれか一つ祝福してくれる。
+%%%%
+You invoke the name of Kikubaaqudgha!
+
+あなたはキクバークドゥグハの名を唱えた！
+%%%%
+will bloody one of your weapons with pain.
+
+はあなたの武器をどれか一つ血に染め苦痛の力によって強化してくれる。
+%%%%
+You call down Yredelemnul's inexorable grip.
+
+あなたはイレデレンヌルの容赦ない握力を呼び下ろした。
+%%%%
+# %s は「〜の」付きの名前、名前(代名詞の代わり)
+You attempt to bind %s soul, but %s is merely a clone!
+
+あなたは%s魂を呪縛しようとしたが、%sはただの複製にすぎない！
+%%%%
+# %s は「〜の」付きの名前
+You wrap your dark will around %s soul!
+
+あなたは%s魂に暗黒の意志を絡みつかせた！
+%%%%
+You feel more confident with your borrowed prowess.
+
+あなたは借り物の武勇をより確かに感じた。
+%%%%
+You gain the combat prowess of a mighty hero.
+
+あなたは英雄のような戦闘の才覚を得た。
+%%%%
+You can now deal lightning-fast blows.
+
+あなたは神速のごとき一撃を振るうことができる。
+%%%%
+You can't see any nearby targets.
+
+近くに標的が見当たらない。
+%%%%
+You channel some magical energy.
+
+あなたはいくらか魔力を補充した。
+%%%%
+You are healed.
+
+あなたは回復した。
+%%%%
+You cannot banish yourself!
+
+自分自身を追放することはできない！
+%%%%
+will brand one of your weapons with the corruption of the Abyss.
+
+はあなたの武器をアビスの崩壊を司る力によってどれか一つ強化してくれる。
+%%%%
+# %s は手の名前(素手のとき。武器のときは武器の名前を使う)
+[slimify]your %s
+
+あなたの%s
+%%%%
+A thick mucus forms on %s.
+
+%sの上に厚い粘液が形成された。
+%%%%
+Your muscles tense, ready for explosive movement...
+
+あなたの筋肉は張りつめ、爆発的な動きに備えた……
+%%%%
+You begin to rise into the air.
+
+あなたは宙へと昇り始めた。
+%%%%
+Really renounce your faith, foregoing its fabulous benefits?
+
+本当に信仰を放棄し、素晴らしい恩恵を手放しますか？
+%%%%
+Are you sure?
+
+本当によろしいですか？
+%%%%
+# ウィザードモード
+Now building '%s'
+
+'%s'を作成する
+%%%%
+Sorry, you can't do that.
+
+残念ながら、あなたはそのようなことはできない。
+%%%%
+#####################################################################
+# 能力メニュー
+#####################################################################
+Cost
+
+コスト
+%%%%
+Failure
+
+失敗率
+%%%%
+Ability - do what?
+
+能力 - どれを使用しますか？
+%%%%
+Ability - describe what?
+
+能力 - どの説明を見ますか？
+%%%%
+# %s はキーの表示(menu_keyhelp_cmd)
+%s toggle between ability selection and description.
+
+%s 能力の選択画面と説明画面の切り替え
+%%%%
+Invocations -
+
+祈祷関連能力 -
+%%%%

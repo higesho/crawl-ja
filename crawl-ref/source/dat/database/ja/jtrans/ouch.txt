@@ -1,0 +1,182 @@
+%%%%
+You shrug off the wave.
+
+あなたは波を物ともしなかった。
+%%%%
+The steam scalds you terribly!
+
+あなたは高熱の蒸気で大やけどを負った！
+%%%%
+The fire burns you terribly!
+
+あなたは激しく燃えあがった！
+%%%%
+The lava burns you terribly!
+
+あなたは溶岩で大やけどを負った！
+%%%%
+The flames go out!
+
+燃えていた炎が消えた！
+%%%%
+You are now level %d!
+
+あなたはレベル%dに下がった！
+%%%%
+A shower of butterflies erupts from you!
+
+蝶の大群があなたの体から湧きだした！
+%%%%
+You focus on the pain.
+
+あなたは傷の痛みに集中した。
+%%%%
+You emit a cloud of colourful smoke!
+
+あなたは色とりどりの煙幕を放った！
+%%%%
+Your shape twists and changes as you die.
+
+あなたが死ぬと同時に、あなたの姿はねじれて変化した。
+%%%%
+Your body crumbles into a pile of gold.
+
+あなたの死体は金貨の山となって崩れ落ちた。
+%%%%
+# 名前の後ろにつなぐ(神の名前)。%s は殺した者の名前(DESC_THE)
+appreciates %s killing of a heretic priest.
+
+は%sが異端の司祭を討ち取ったことを喜んだ。
+%%%%
+appreciates %s killing of an apostate.
+
+は%sが背教者を討ち取ったことを喜んだ。
+%%%%
+crowns %s victorious!
+
+は%sを勝者として讃えた！
+%%%%
+protects you from harm!
+
+はあなたを損傷から護った！
+%%%%
+Ouch! That really hurt!
+
+痛っ！ これは本当に痛い！
+%%%%
+Die?
+
+死んでみる？
+%%%%
+Thought so.
+
+そうこなくっちゃ。
+%%%%
+Your icy defences dissipate!
+
+あなたの氷の守りは消え去った！
+%%%%
+Your condensation shield dissipates!
+
+あなたの大気の盾は消え去った！
+%%%%
+The cold chills you terribly!
+
+あなたは凄まじい冷気で凍えた！
+%%%%
+The ice freezes you terribly!
+
+あなたは氷で激しく凍りついた！
+%%%%
+You writhe in agony!
+
+あなたは苦痛にのたうち回った！
+%%%%
+The bolas passes through you!
+
+ボーラはあなたの体を素通りした！
+%%%%
+You slip free of the bolas.
+
+あなたはボーラからするりと抜け出した。
+%%%%
+The bolas wraps around you and binds you in place!
+
+ボーラがあなたに絡みつき、身動きを封じた！
+%%%%
+The heat overwhelms you.
+
+あなたは熱気に圧倒された。
+%%%%
+The cold chills your senses.
+
+冷気があなたの感覚を麻痺させた。
+%%%%
+The electricity makes your body seize.
+
+電撃であなたの体はこわばった。
+%%%%
+Your body starts to freeze solid!
+
+あなたの体は凍りつき始めた！
+%%%%
+You feel drained.
+
+あなたは生命力を吸い取られたように感じた。
+%%%%
+You feel heavily drained.
+
+あなたは生命力をひどく吸い取られたように感じた。
+%%%%
+You feel very heavily drained.
+
+あなたは生命力を非常にひどく吸い取られたように感じた。
+%%%%
+You feel extremely drained.
+
+あなたは生命力を極度に吸い取られたように感じた。
+%%%%
+%s scurries out from under your cloak.
+
+%sがあなたのクロークの下から這い出してきた。
+%%%%
+Your atemporal blood churns to no real effect.
+
+あなたの時を超えた血は渦巻いたが、何の効果もなかった。
+%%%%
+The spilling of your atemporal blood hastes your allies!
+
+あなたの時を超えた血が飛び散り、仲間たちを加速させた！
+%%%%
+You shudder from the blow and a flood of jellies pours out from you!
+
+あなたは打撃に身を震わせ、体からゼリーがどっと溢れ出した！
+%%%%
+You shudder from the blow and a jelly pops out!
+
+あなたは打撃に身を震わせ、体からゼリーが飛び出した！
+%%%%
+You shudder from the blast and a flood of jellies pours out from you!
+
+あなたは衝撃に身を震わせ、体からゼリーがどっと溢れ出した！
+%%%%
+You shudder from the blast and a jelly pops out!
+
+あなたは衝撃に身を震わせ、体からゼリーが飛び出した！
+%%%%
+You splash onto the ground.
+
+あなたの体は地面に飛び散った。
+%%%%
+Angry insects swarm out of your body to defend their hive!
+
+怒れる虫たちが巣を守ろうとあなたの体から群がり出てきた！
+%%%%
+Your pain echoes through the poison around you!
+
+あなたの苦痛が周囲の毒に響き渡った！
+%%%%
+Your spilled blood starts moving with violent intent!
+
+あなたの流した血が凶暴な意思を持って動き始めた！
+%%%%

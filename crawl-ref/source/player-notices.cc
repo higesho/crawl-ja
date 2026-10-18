@@ -75,7 +75,7 @@ static bool _check_monster_alert(const monster& mon)
         // And if it wasn't a monster that would get an encounter warning due to
         // being a summon, make sure to say something.
         if (mon.is_summoned())
-            mprf(MSGCH_MONSTER_WARNING, "%s comes into view.", mon.name(DESC_A).c_str());
+            mprf(MSGCH_MONSTER_WARNING, jtransc("%s comes into view."), mon.name(DESC_A).c_str());
 
         more(true);
         return true;
@@ -183,7 +183,7 @@ static void _genus_factoring(map<const string, details> &types,
     } while (it != types.end());
     ASSERT(mon); // There is a match as genera contains the monsters in types.
 
-    const auto name = mons_type_name(genus, DESC_PLAIN);
+    const auto name = mons_type_name_j(genus, DESC_PLAIN);
     types[name] = {mon, name, num, true};
 }
 
@@ -239,29 +239,26 @@ static void _monster_headsup(const vector<monster*> &monsters,
 
         ++listed;
 
+        // 日本語では代名詞を使わず名前で言う。
         string monname;
-        if (monsters.size() == 1)
-            monname = mon->pronoun(PRONOUN_SUBJECTIVE);
-        else if (mon->type == MONS_DANCING_WEAPON)
-            monname = "There";
-        else if (single.count(mon))
+        if (monsters.size() == 1 || single.count(mon))
             monname = mon->full_name(DESC_THE);
         else
             monname = mon->full_name(DESC_A);
-        out << uppercase_first(monname) << " ";
-
-        if (monsters.size() == 1)
-            out << conjugate_verb("are", mon->pronoun_plurality());
-        else
-            out << "is";
-
-        if (mon->type != MONS_DANCING_WEAPON)
-            out << " ";
 
         mons_equip_desc_level_type level = mon->type == MONS_DANCING_WEAPON ? DESC_WEAPON
                                                 : monsters.size() > 1 ? DESC_NOTEWORTHY
                                                                       : DESC_NOTEWORTHY_AND_WEAPON;
-        out << get_monster_equipment_desc(mi, level, DESC_NONE) << ".";
+        const string equip = trimmed_string(
+            get_monster_equipment_desc(mi, level, DESC_NONE));
+        if (mon->type == MONS_DANCING_WEAPON && monsters.size() > 1)
+            out << make_stringf(jtransc("There is %s."), equip.c_str());
+        else
+        {
+            out << make_stringf(tagged_jtransc("[encounter equipment]",
+                                               "%s is %s."),
+                                monname.c_str(), equip.c_str());
+        }
     }
 }
 
@@ -337,12 +334,16 @@ static string _describe_monsters_from_species(const vector<details> &species)
             else if (det.count > 1 && det.genus)
             {
                 auto genus = mons_genus(det.mon->type);
-                name = " "+pluralise(mons_type_name(genus, DESC_PLAIN));
+                name = mons_type_name_j(genus, DESC_PLAIN);
             }
-            else if (det.count > 1)
-                name = " "+pluralise(det.name);
-            return apply_description(DESC_A, name, det.count);
-        });
+            // 名前は日本語なので冠詞・複数形は付けない。
+            if (det.count > 1)
+            {
+                return make_stringf(tagged_jtransc("[monster count]", "%d %s"),
+                                    det.count, name.c_str());
+            }
+            return name;
+        }, "と", "、");
 }
 
 /**
@@ -364,8 +365,8 @@ static string _abyss_monster_creation_message(const monster* mon)
 {
     if (mon->type == MONS_DEATH_COB)
     {
-        return coinflip() ? " appears in a burst of microwaves!"
-                          : " pops from nullspace!";
+        return coinflip() ? jtrans(" appears in a burst of microwaves!")
+                          : jtrans(" pops from nullspace!");
     }
 
     // You may ask: "Why these weights?" So would I!
@@ -375,8 +376,7 @@ static string _abyss_monster_creation_message(const monster* mon)
         { " materialises.", 45 },
         { " emerges from chaos.", 13 },
         { " emerges from the beyond.", 26 },
-        { make_stringf(" assembles %s!",
-                       mon->pronoun(PRONOUN_REFLEXIVE).c_str()), 33 },
+        { " assembles itself!", 33 },
         { " erupts from nowhere.", 9 },
         { " bursts from nowhere.", 18 },
         { " is cast out of space.", 7 },
@@ -385,13 +385,12 @@ static string _abyss_monster_creation_message(const monster* mon)
         { " coalesces out of seething chaos.", 10 },
         { " punctures the fabric of time!", 2 },
         { " punctures the fabric of the universe.", 7 },
-        { make_stringf(" manifests%s!",
-                       silenced(you.pos()) ? "" : " with a bang"), 3 },
+        { silenced(you.pos()) ? " manifests!" : " manifests with a bang!", 3 },
 
 
     };
 
-    return *random_choose_weighted(messages);
+    return jtrans(*random_choose_weighted(messages));
 }
 
 /**
@@ -434,13 +433,14 @@ static void _handle_encounter_messages(const vector<monster*> monsters,
     }
     else if (sc == SC_ORBRUN)
     {
-        out << _describe_monsters_from_species(species).c_str() << " appear";
-        if (monsters.size() == 1)
-            out << "s";
-        out << " in pursuit of the Orb! ";
+        out << make_stringf(jtransc("%s appear in pursuit of the Orb!"),
+                            _describe_monsters_from_species(species).c_str());
     }
     else
-        out << "You encounter " << _describe_monsters_from_species(species) << ".";
+    {
+        out << make_stringf(jtransc("You encounter %s."),
+                            _describe_monsters_from_species(species).c_str());
+    }
 
     _monster_headsup(monsters, single, out);
 
@@ -619,8 +619,9 @@ void seen_monster(monster* mons, bool do_encounter_message)
         }
         else if (mons->flags & MF_KNOWN_SHIFTER)
         {
-            name += make_stringf(" (%sshapeshifter)",
-                mons->has_ench(ENCH_GLOWING_SHAPESHIFTER) ? "glowing " : "");
+            name += make_stringf(" (%s)",
+                jtransc(mons->has_ench(ENCH_GLOWING_SHAPESHIFTER)
+                        ? "glowing shapeshifter" : "shapeshifter"));
         }
         take_note(Note(NOTE_SEEN_MONSTER, mons->type, 0, name));
     }
@@ -637,7 +638,7 @@ void seen_monster(monster* mons, bool do_encounter_message)
             wyrmbane = offhand_wpn;
 
         if (wyrmbane && mons->dragon_level() > wyrmbane->plus)
-            mpr("<green>Wyrmbane glows as a worthy foe approaches.</green>");
+            mpr(jtrans("<green>Wyrmbane glows as a worthy foe approaches.</green>"));
     }
 
     // attempt any god conversions on first sight
@@ -679,7 +680,7 @@ void seen_monster(monster* mons, bool do_encounter_message)
         && coinflip()
         && mons->get_experience_level() >= random2(you.experience_level))
     {
-        mprf(MSGCH_GOD, GOD_GOZAG, "Gozag incites %s against you.",
+        mprf(MSGCH_GOD, GOD_GOZAG, jtransc("Gozag incites %s against you."),
                 mons->name(DESC_THE).c_str());
         gozag_incite(mons);
     }
@@ -688,9 +689,10 @@ void seen_monster(monster* mons, bool do_encounter_message)
         && !(mons->flags & MF_KNOWN_SHIFTER)
         && have_passive(passive_t::warn_shapeshifter))
     {
-        string msg = make_stringf(" warns you: %s is a foul%s shapeshifter.",
-                                    uppercase_first(mons->name(DESC_THE)).c_str(),
-                                    mons->has_ench(ENCH_GLOWING_SHAPESHIFTER) ? " glowing" : "");
+        string msg = make_stringf(jtransc(" warns you: %s is a foul %s."),
+                                    mons->name(DESC_THE).c_str(),
+                                    jtransc(mons->has_ench(ENCH_GLOWING_SHAPESHIFTER)
+                                            ? "glowing shapeshifter" : "shapeshifter"));
         simple_god_message(msg.c_str());
         discover_shifter(*mons);
 #ifndef USE_TILE_LOCAL

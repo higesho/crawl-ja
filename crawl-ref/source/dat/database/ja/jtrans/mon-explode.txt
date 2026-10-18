@@ -1,0 +1,33 @@
+%%%%
+%s explodes!
+
+%sは爆発した！
+%%%%
+%s blazes out!
+
+%sは燃え上がった！
+%%%%
+The %s residue %s.
+
+%sの残滓は%s。
+%%%%
+By Zin's power, %s %s.
+
+ジンの御業により、%s%s。
+%%%%
+explosion is contained
+
+爆発の威力は抑えられた
+%%%%
+torment is averted
+
+苦痛の放出は防がれた
+%%%%
+fires are quelled
+
+炎は鎮められた
+%%%%
+%s shudders for a moment, then explodes violently!
+
+%sは一瞬身震いし、激しく爆発した！
+%%%%

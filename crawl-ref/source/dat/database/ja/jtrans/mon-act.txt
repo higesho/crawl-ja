@@ -1,0 +1,197 @@
+%%%%
+%s swoops through the air toward %s!
+
+%sは舞い降りて%sに飛びかかった！
+%%%%
+zaps a wand.
+
+はワンドを振った。
+%%%%
+You hear a zap.
+
+あなたは何かを振る音を耳にした。
+%%%%
+crackles loudly.
+
+はバチバチと大きな音を立てている。
+%%%%
+You hear a loud crackle.
+
+あなたは何かが爆ぜる大きな音を耳にした。
+%%%%
+Something you can't see is thrashing in a web.
+
+何か目に見えないものが蜘蛛の巣の中でのたうっている。
+%%%%
+struggles to get unstuck from the web.
+
+は蜘蛛の巣から抜けだそうともがいている。
+%%%%
+Something wriggles in the net.
+
+何かが網の中でうごめいている。
+%%%%
+struggles against the net.
+
+は網と格闘している。
+%%%%
+The net rips apart, and %s comes free!
+
+網がびりびりに破け、%sは自由を取り戻した！
+%%%%
+All of a sudden the net rips apart!
+
+突然網がびりびりに破けた！
+%%%%
+You feel yourself growing ill in the presence of %s.
+
+あなたは%sの存在により体の調子がますます悪くなるのを感じた。
+%%%%
+splits in two!
+
+は二つに分裂した！
+%%%%
+You hear a squelching noise.
+
+あなたはガボガボという音を耳にした。
+%%%%
+You hear a slurping noise.
+
+あなたは物を食べる音を耳にした。
+%%%%
+opens the %s%s.
+
+%s%sを開けた。
+%%%%
+Something unseen %s
+
+何かが%s
+%%%%
+escapes!
+
+は自由になった！
+%%%%
+struggles to escape constriction.
+
+は拘束から逃れようともがいている。
+%%%%
+The door bursts into shrapnel!
+
+扉は木っ端微塵に四散した！
+%%%%
+bursts through the door, destroying it!
+
+は扉を木っ端微塵に壊しつつ通り抜けた！
+%%%%
+The door mysteriously vanishes.
+
+扉は不思議なことに消滅した。
+%%%%
+eats the door!
+
+は扉を食らった！
+%%%%
+%s rages.
+
+%sは怒り狂った。
+%%%%
+%s knocks down a tree!
+
+%sは木をなぎ倒した！
+%%%%
+You hear a crashing sound.
+
+あなたは何かが壊れる音を耳にした。
+%%%%
+You hear a sizzling sound.
+
+あなたはジュージューという音を耳にした。
+%%%%
+ is stunned by your conviction and fails to attack.
+
+はあなたの信念に気圧され、攻撃できなかった。
+%%%%
+%s slips past %s!
+
+%sは%sの脇をすり抜けた！
+%%%%
+ crumbles as it rolls away.
+
+は転がりながら崩れ去った。
+%%%%
+%s slams into %s and falls apart!
+
+%sは%sに激突して砕け散った！
+%%%%
+%s crushes %s against %s and falls apart!
+
+%sは%sを%sに叩きつけて砕け散った！
+%%%%
+%s crumbles against %s.
+
+%sは%sにぶつかって崩れた。
+%%%%
+%s is abraded by the %s and falls apart.
+
+%sは%sに削られて砕け散った。
+%%%%
+ sinks back into the magma.
+
+は溶岩の中へ沈んでいった。
+%%%%
+%s collides with %s and sinks back into the magma.
+
+%sは%sに衝突し、溶岩の中へ沈んでいった。
+%%%%
+ core grows cold and it stops moving.
+
+核が冷え、動きを止めた。
+%%%%
+ core flares to life once more.
+
+核が再び燃え上がった。
+%%%%
+ flashes!
+
+は閃いた！
+%%%%
+ violently releases its spores.
+
+は激しく胞子を撒き散らした。
+%%%%
+ is dazed by the spores.
+
+は胞子を浴びて朦朧とした。
+%%%%
+ returns to your side.
+
+はあなたのそばに戻ってきた。
+%%%%
+ is distracted by your dazzling golden aura.
+
+はあなたのまばゆい黄金のオーラに気を取られた。
+%%%%
+ tears free of the web.
+
+は蜘蛛の巣を引きちぎって抜け出した。
+%%%%
+%s watery aura covers %s.
+
+%s水のオーラが%sを覆った。
+%%%%
+%s leaves your sight.
+
+%sはあなたの視界から消えた。
+%%%%
+breaks down the %s%s.
+
+%s%sを打ち壊した。
+%%%%
+[door opener]%s %s
+
+%sは%s
+%%%%
+ attacks as it pursues you!
+
+はあなたを追いかけながら攻撃した！
+%%%%
