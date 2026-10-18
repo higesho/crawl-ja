@@ -1,0 +1,525 @@
+%%%%
+[  Up/Down or PgUp/PgDn to scroll.         Esc or R-click exits.  ]
+
+[↑/↓もしくはPgUp/PgDnでスクロール    Escもしくは右クリックで終了]
+%%%%
+their own shadow
+
+自らの影
+%%%%
+themself
+
+自分自身
+%%%%
+(shapeshifter)
+
+(変身能力者)
+%%%%
+(glowing shapeshifter)
+
+(暴走した変身能力者)
+%%%%
+(illusionary)
+
+(幻影)
+%%%%
+unknown source
+
+よく分からない原因
+%%%%
+The game lasted %s (%d turns).
+
+ゲームの所要時間: %s (%dターン)
+%%%%
+damage
+
+ダメージ
+%%%%
+By
+
+によって
+%%%%
+%8d %s the %s (level %d
+
+%8d %s『%s』(レベル%d
+%%%%
+%8d %s the %s %s (level %d
+
+%8d %sの%s『%s』(レベル%d
+%%%%
+, %d/%d
+
+, HP %d/%d
+%%%%
+Was a Favourite Plaything of Xom.
+
+ゾムのお気に入りの慰みものであった。
+%%%%
+Was a Plaything of Xom.
+
+ゾムの慰みものであった。
+%%%%
+the Champion of
+
+の敬虔なる大司祭
+%%%%
+a High Priest of
+
+の大司祭
+%%%%
+an Elder of
+
+の高位の司祭
+%%%%
+a Priest of
+
+の司祭
+%%%%
+a Believer of
+
+の熱心な信者
+%%%%
+a Follower of
+
+の信者
+%%%%
+an Initiate of
+
+の入会者
+%%%%
+Was %s%s%s
+
+%s%sであった%s
+%%%%
+(penitent).
+
+(贖罪中)。
+%%%%
+killed by %s
+
+%sに殺された
+%%%%
+%s's headbutt
+
+%sの頭突き
+%%%%
+Headbutted by
+
+%sの頭突きで殺された
+%%%%
+squashed by %s
+
+%sに轢かれた
+%%%%
+Rolled over by
+
+%sに轢かれて死んだ
+%%%%
+%s's spines
+
+%sの棘
+%%%%
+Impaled on %s's spines
+
+%sの棘に串刺しにされて死んだ
+%%%%
+Succumbed to poison
+
+毒に冒されて死んだ
+%%%%
+poisoned by %s
+
+%sによる毒を受けた
+%%%%
+Succumbed to %s
+
+%sに冒されて死んだ
+%%%%
+Succumbed to %s %s
+
+%sの%sに冒されて死んだ
+%%%%
+cloud of %s
+
+%sの雲
+%%%%
+Engulfed by %s%s %s
+
+%s%sに包まれて死んだ
+%%%%
+their own
+
+自ら
+%%%%
+Killed by their own %s
+
+自らの%sで死んだ
+%%%%
+Killed %s
+
+%sで死んだ
+%%%%
+Killed by themself
+
+自分自身を殺した
+%%%%
+Killed by
+
+で死んだ
+%%%%
+Killed from afar by themself
+
+自分自身を%s撃って死んだ
+%%%%
+Killed from afar by
+
+撃たれて死んだ
+%%%%
+Turned to ash by lava
+
+溶岩で灰になって死んだ
+%%%%
+Took a swim in molten lava
+
+溶岩にダイブして死んだ
+%%%%
+fell apart
+
+バラバラになった
+%%%%
+Soaked and fell apart
+
+水に浸かってバラバラになった
+%%%%
+Sank and fell apart
+
+水に沈んでバラバラになった
+%%%%
+drowned by %s
+
+%sに溺れさせられた
+%%%%
+drowned
+
+溺死
+%%%%
+stupidity
+
+知力低下
+%%%%
+Forgot to exist
+
+存在することを忘れて消滅した
+%%%%
+Forgot to breathe
+
+呼吸することを忘れて死んだ
+%%%%
+collapsed
+
+身体崩壊
+%%%%
+Collapsed under their own weight
+
+自重に耐えきれず体が崩壊した
+%%%%
+clumsiness
+
+致命的不器用
+%%%%
+Slipped on a banana peel
+
+バナナの皮で滑って死んだ
+%%%%
+Killed by triggering %s
+
+%sを発動させて死んだ
+%%%%
+left
+
+脱出
+%%%%
+Got out of the dungeon
+
+ダンジョンを脱出した
+%%%%
+Safely got out of the dungeon
+
+安全にダンジョンを脱出した
+%%%%
+Got out of the dungeon alive
+
+ダンジョンから生還した
+%%%%
+escaped
+
+脱出した
+%%%%
+Escaped with the Orb
+
+オーブを手にして脱出した
+%%%%
+quit
+
+放棄
+%%%%
+Quit the game
+
+ゲームを放棄した
+%%%%
+wizmode
+
+ウィザードモード
+%%%%
+Entered wizard mode
+
+ウィザードモードに入った
+%%%%
+drained
+
+衰弱
+%%%%
+Drained of all life
+
+すべての生命力を吸われた
+%%%%
+by %s
+
+%sに
+%%%%
+starvation
+
+餓死
+%%%%
+Starved to death
+
+餓死した
+%%%%
+frozen
+
+凍結
+%%%%
+Froze to death
+
+凍死した
+%%%%
+burnt
+
+焼死
+%%%%
+Incinerated by
+
+焼き殺された
+%%%%
+Burnt to a crisp
+
+黒焦げになって死んだ
+%%%%
+wild magic
+
+暴走する魔力
+%%%%
+Killed by wild magic
+
+魔力の暴走によって死んだ
+%%%%
+Killed %s%s
+
+%s%s死んだ
+%%%%
+Killed for Xom's enjoyment
+
+ゾムにもてあそばれて死んだ
+%%%%
+# rotting
+
+# jtrans_describe.txtと重複
+%%%%
+Rotted away
+
+体が腐敗して死んだ
+%%%%
+shot self
+
+自分を射撃
+%%%%
+Killed themself with
+
+自らに当てて死んだ
+%%%%
+bad targeting
+
+狙いを外し
+%%%%
+a badly aimed %s
+
+%sの狙いを外し
+%%%%
+reflected bolt
+
+跳弾
+%%%%
+Killed by a reflected
+
+跳ね返った
+%%%%
+bounced beam
+
+跳弾
+%%%%
+Killed themself with a bounced
+
+跳ね返った自らの
+%%%%
+beam
+
+光線
+%%%%
+suicidal targeting
+
+自殺的照準
+%%%%
+Shot themself with
+
+自らに
+%%%%
+a beam
+
+<beam>
+%%%%
+Killed by an exploding
+
+の巻き起こした爆発を受けて死んだ
+%%%%
+smitten by Shining One
+
+輝けるものの打擲
+%%%%
+Smitten by the Shining One
+
+輝けるものの打擲によって死んだ
+%%%%
+Smitten by Beogh
+
+ベオの打擲によって死んだ
+%%%%
+petrified
+
+石化
+%%%%
+Turned to stone
+
+体が石になって死んだ
+%%%%
+died
+
+死亡
+%%%%
+fell downstairs
+
+階段からの落下死
+%%%%
+Fell down a flight of stairs
+
+階段から落下した
+%%%%
+fell through a gate
+
+ゲートをくぐり抜けて死亡
+%%%%
+Fell down through a gate
+
+ゲートをくぐり抜けて死んだ
+%%%%
+Splashed by %s's acid
+
+%sの酸を浴びて死んだ
+%%%%
+Splashed with acid
+
+酸を浴びて死んだ
+%%%%
+asphyx
+
+窒息死
+%%%%
+Asphyxiated
+
+窒息して死んだ
+%%%%
+divine wrath
+
+神の怒り
+%%%%
+disintegration
+
+分解
+%%%%
+Blew themself up
+
+自らを分解して死んだ
+%%%%
+Blown up by %s
+
+%sに分解させられて死んだ
+%%%%
+mirror damage
+
+はね返されたダメージ
+%%%%
+Killed by mirror damage
+
+はね返されたダメージで殺された
+%%%%
+frailty
+
+虚弱体質
+%%%%
+Became unviable by %s
+
+%sでHPが底をついて死んだ
+%%%%
+barbs
+
+逆棘
+%%%%
+Succumbed to barbed spike wounds
+
+マンティコアの逆棘で傷ついて死んだ
+%%%%
+%s's throw
+
+%sの投擲
+%%%%
+Thrown by %s
+
+%sに投げ飛ばされて死んだ
+%%%%
+%s collision
+
+%sとの衝突
+%%%%
+Collided with %s
+
+%sと衝突して死んだ
+%%%%
+... %s %d rune%s
+
+%dつのルーンを手にして
+%%%%
+... wielding %s
+
+... %sを手にした
+%%%%
+... while paralysed
+
+麻痺している間に
+%%%%
+awakened
+
+呼び覚まされた
+%%%%
+invoked
+
+引き起こされた
+%%%%

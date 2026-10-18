@@ -1,0 +1,3470 @@
+%%%%
+_armour_animal_
+
+# old en (ja19):
+#   microorganisms
+#   Amoeba
+#   insects
+#   Butterfly
+#   Cicada
+#   Cricket
+#   Ladybird
+#   Ant
+#   Cockroach
+#   Locust
+#   Louse
+#   Mantidfly
+#   正確にはカマキリモドキだがなぜこのようなマイナー昆虫を……
+#   Tick
+#   invertebrates
+#   Slug
+#   Snail
+#   Gastropod
+#   Trilobite
+#   Centipede
+#   Cuttlefish
+#   Worm
+#   arachnids and clams
+#   Tarantula
+#   Clam
+#   Barnacle
+#   Lobster
+#   Quahog
+#   amphibians and reptiles
+#   Tortoise
+#   Turtle
+#   Frog
+#   Komodo Dragon
+#   Lizard
+#   Salamander
+#   Serpent
+#   fish
+#   Barracuda
+#   Catfish
+#   Mackerel
+#   Marlin
+#   Salmon
+#   Sturgeon
+#   Sunfish
+#   Trout
+#   Tuna
+#   birds
+#   Albatross
+#   Turtledove
+#   Nightingale
+#   Meadowlark
+#   Eagle
+#   Falcon
+#   Heron
+#   Raven
+#   Sparrow
+#   Swan
+#   mammals
+#   Hare
+#   Kangaroo
+#   Elephant
+#   Zebra
+#   Hippo
+#   Monkey
+#   Bull
+#   Camelopard
+#   Catamount
+#   Dolphin
+#   Echidna
+#   Hart
+#   Lion
+#   Stallion
+#   Stag
+#   Okapi
+#   not strictly an animal... :)
+#   Monkey's Uncle
+#   Circus Animal
+#   classical mythical animals
+#   Cockatrice
+#   Dragon
+#   Griffon
+#   Kraken
+#   modern mythical animals
+#   Dropbear
+#   Jackalope
+#   Wild Haggis
+#   Chupacabra
+#   Yeti
+# old ja (ja19):
+#   アメーバ
+#   
+#   胡蝶
+#   
+#   蝉
+#   
+#   蟋蟀
+#   
+#   天道虫
+#   
+#   蟻
+#   
+#   ゴキブリ
+#   
+#   蝗
+#   
+#   シラミ
+#   
+#   蟷螂
+#   
+#   ダニ
+#   
+#   蛞蝓
+#   
+#   蝸牛
+#   
+#   
+#   三葉虫
+#   
+#   百足
+#   
+#   烏賊
+#   
+#   芋虫
+#   
+#   タランチュラ
+#   
+#   アサリ
+#   
+#   フジツボ
+#   
+#   海老
+#   
+#   ハマグリ
+#   
+#   陸亀
+#   
+#   海亀
+#   
+#   蛙
+#   
+#   コモドドラゴン
+#   
+#   トカゲ
+#   
+#   山椒魚
+#   
+#   大蛇
+#   
+#   バラクーダ
+#   
+#   ナマズ
+#   
+#   鯖
+#   
+#   マカジキ
+#   
+#   鮭
+#   
+#   チョウザメ
+#   
+#   マンボウ
+#   
+#   鱒
+#   
+#   マグロ
+#   
+#   アホウドリ
+#   
+#   キジバト
+#   
+#   ナイチンゲール
+#   
+#   マキバドリ
+#   
+#   鷲
+#   
+#   ハヤブサ
+#   
+#   サギ
+#   
+#   鴉
+#   
+#   雀
+#   
+#   白鳥
+#   
+#   兎
+#   
+#   カンガルー
+#   
+#   象
+#   
+#   シマウマ
+#   
+#   カバ
+#   
+#   猿
+#   
+#   雄牛
+#   
+#   麒麟
+#   
+#   山猫
+#   
+#   イルカ
+#   
+#   ハリモグラ
+#   
+#   雄鹿
+#   
+#   獅子
+#   
+#   種馬
+#   
+#   雄鹿
+#   
+#   オカピ
+#   
+#   驚き桃の木
+#   
+#   サーカスの動物
+#   
+#   コカトリス
+#   
+#   ドラゴン
+#   
+#   グリフォン
+#   
+#   クラーケン
+#   
+#   殺人コアラ
+#   
+#   鹿角兎
+#   
+#   野生のハギス
+#   
+#   チュパカブラ
+#   
+#   雪男
+# old en (ja16):
+#   microorganisms
+#   Amoeba
+#   insects
+#   Butterfly
+#   Cicada
+#   Cricket
+#   Ladybird
+#   Ant
+#   Cockroach
+#   Locust
+#   Louse
+#   Mantidfly
+#   正確にはカマキリモドキだがなぜこのようなマイナー昆虫を……
+#   Tick
+#   invertebrates
+#   Slug
+#   Snail
+#   Gastropod
+#   Trilobite
+#   Centipede
+#   Cuttlefish
+#   Worm
+#   arachnids and clams
+#   Tarantula
+#   Clam
+#   Barnacle
+#   Lobster
+#   Quahog
+#   amphibians and reptiles
+#   Tortoise
+#   Turtle
+#   Frog
+#   Komodo Dragon
+#   Lizard
+#   Salamander
+#   Serpent
+#   fish
+#   Barracuda
+#   Catfish
+#   Mackerel
+#   Marlin
+#   Salmon
+#   Sturgeon
+#   Sunfish
+#   Trout
+#   Tuna
+#   birds
+#   Albatross
+#   Turtledove
+#   Nightingale
+#   Meadowlark
+#   Eagle
+#   Falcon
+#   Heron
+#   Raven
+#   Sparrow
+#   Swan
+#   mammals
+#   Hare
+#   Kangaroo
+#   Elephant
+#   Zebra
+#   Hippo
+#   Monkey
+#   Bull
+#   Camelopard
+#   Catamount
+#   Dolphin
+#   Echidna
+#   Hart
+#   Lion
+#   Stallion
+#   Stag
+#   Okapi
+#   not strictly an animal... :)
+#   Monkey's Uncle
+#   classical mythical animals
+#   Cockatrice
+#   Dragon
+#   Griffon
+#   Kraken
+#   modern mythical animals
+#   Dropbear
+#   Jackalope
+#   Wild Haggis
+#   Chupacabra
+#   Yeti
+# old ja (ja16):
+#   アメーバ
+#   
+#   胡蝶
+#   
+#   蝉
+#   
+#   蟋蟀
+#   
+#   天道虫
+#   
+#   蟻
+#   
+#   ゴキブリ
+#   
+#   蝗
+#   
+#   シラミ
+#   
+#   蟷螂
+#   
+#   ダニ
+#   
+#   蛞蝓
+#   
+#   蝸牛
+#   
+#   
+#   三葉虫
+#   
+#   百足
+#   
+#   烏賊
+#   
+#   芋虫
+#   
+#   タランチュラ
+#   
+#   アサリ
+#   
+#   フジツボ
+#   
+#   海老
+#   
+#   ハマグリ
+#   
+#   陸亀
+#   
+#   海亀
+#   
+#   蛙
+#   
+#   コモドドラゴン
+#   
+#   トカゲ
+#   
+#   山椒魚
+#   
+#   大蛇
+#   
+#   バラクーダ
+#   
+#   ナマズ
+#   
+#   鯖
+#   
+#   マカジキ
+#   
+#   鮭
+#   
+#   チョウザメ
+#   
+#   マンボウ
+#   
+#   鱒
+#   
+#   マグロ
+#   
+#   アホウドリ
+#   
+#   キジバト
+#   
+#   ナイチンゲール
+#   
+#   マキバドリ
+#   
+#   鷲
+#   
+#   ハヤブサ
+#   
+#   サギ
+#   
+#   鴉
+#   
+#   雀
+#   
+#   白鳥
+#   
+#   兎
+#   
+#   カンガルー
+#   
+#   象
+#   
+#   シマウマ
+#   
+#   カバ
+#   
+#   猿
+#   
+#   雄牛
+#   
+#   麒麟
+#   
+#   山猫
+#   
+#   イルカ
+#   
+#   ハリモグラ
+#   
+#   雄鹿
+#   
+#   獅子
+#   
+#   種馬
+#   
+#   雄鹿
+#   
+#   オカピ
+#   
+#   驚き桃の木
+#   
+#   コカトリス
+#   
+#   ドラゴン
+#   
+#   グリフォン
+#   
+#   クラーケン
+#   
+#   殺人コアラ
+#   
+#   鹿角兎
+#   
+#   野生のハギス
+#   
+#   チュパカブラ
+#   
+#   雪男
+
+Amoeba
+
+Tardigrade
+
+Ant
+
+Butterfly
+
+Cicada
+
+Cockroach
+
+Cricket
+
+Ladybird
+
+Locust
+
+Louse
+
+Mantidfly
+
+Tick
+
+Centipede
+
+Cuttlefish
+
+Gastropod
+
+Slug
+
+Snail
+
+Trilobite
+
+Worm
+
+Barnacle
+
+Clam
+
+Lobster
+
+Quahog
+
+Tarantula
+
+Frog
+
+Komodo Dragon
+
+Lizard
+
+Salamander
+
+Serpent
+
+Turtle
+
+Barracuda
+
+Catfish
+
+Cichlid
+
+Mackerel
+
+Marlin
+
+Salmon
+
+Sturgeon
+
+Sunfish
+
+Trout
+
+Tuna
+
+Albatross
+
+Eagle
+
+Falcon
+
+Heron
+
+Meadowlark
+
+Nightingale
+
+Raven
+
+Robin
+
+Shrike
+
+Sparrow
+
+Swan
+
+Turtledove
+
+Bull
+
+Camelopard
+
+Catamount
+
+Dolphin
+
+Echidna
+
+Elephant
+
+Hart
+
+Hippo
+
+Kangaroo
+
+Lion
+
+Monkey
+
+Okapi
+
+Stag
+
+Stallion
+
+Zebra
+
+Circus Animal
+
+Monkey's Uncle
+
+Centaur
+
+Cockatrice
+
+Chimera
+
+Dragon
+
+Griffon
+
+Hecatoncheires
+
+Hippogriff
+
+Kraken
+
+Leogriff
+
+Nuckelavee
+
+Pooka
+
+Quinotaur
+
+Sea Goat
+
+Skiapode
+
+Unicorn
+
+
+Akabeko
+
+Baku
+
+Byakko
+
+Ikuchi
+
+Kappa
+
+Kitsune
+
+Kodama
+
+Oni
+
+Shishi
+
+Tsukumogami
+
+
+Carbunclo
+
+Cherruve
+
+Cuero
+
+Curupira
+
+Ebigane
+
+Gasogonaga
+
+Mpinguari
+
+Tapire-iauara
+
+
+Biloko
+
+Guiamala
+
+Impundulu
+
+Isitwalangcengce
+
+Nkala
+
+Zankallala
+
+
+Bakunawa
+
+Minokawa
+
+
+Giraffataur
+
+Elephantaur
+
+Mertaur
+
+Merwolf
+
+Platytaur
+
+Rhinotaur
+
+Taurataur
+
+Treeataur
+
+Wereyak
+
+Zebrataur
+
+Chupacabra
+
+Dropbear
+
+Jackalope
+
+Jersey Devil
+
+Skvader
+
+Snallygaster
+
+Tatzelwurm
+
+Wild Haggis
+
+Yeti
+%%%%
+_flower_name_
+
+# old en (ja19):
+#   Lilacs
+#   Daffodils
+#   the Rose
+#   the Garden
+#   Daisies
+#   the Thistle
+#   Tulips
+#   the Lily
+#   the Lotus Blossom
+# old ja (ja19):
+#   ライラック
+#   
+#   喇叭水仙
+#   
+#   薔薇
+#   
+#   庭草
+#   
+#   デイジー
+#   
+#   アザミ
+#   
+#   チューリップ
+#   
+#   百合
+#   
+#   睡蓮
+# old en (ja16):
+#   Lilacs
+#   Daffodils
+#   the Rose
+#   the Garden
+#   Daisies
+#   the Thistle
+#   Tulips
+#   the Lily
+#   the Lotus Blossom
+# old ja (ja16):
+#   ライラック
+#   
+#   喇叭水仙
+#   
+#   薔薇
+#   
+#   庭草
+#   
+#   デイジー
+#   
+#   アザミ
+#   
+#   チューリップ
+#   
+#   百合
+#   
+#   睡蓮
+
+Daffodils
+
+Daisies
+
+Lilacs
+
+Periwinkles
+
+Purple Dead-Nettles
+
+Tulips
+
+Violets
+
+the Garden
+
+the Horehound
+
+the Lily
+
+the Lotus Blossom
+
+the Rose
+
+the Thistle
+%%%%
+_critter_name_
+
+# old en (ja19):
+#   Slorg
+#   Alphagorgon
+#   from the crawl.akrasiac.org patch.
+#   Hot Ocelot
+#   Eight Boll Weevils
+#   Grue
+#   Jabberwock
+#   w:1
+#   Were-rabbit
+#   Wumpus
+# old ja (ja19):
+#   マダラナメクジ
+#   
+#   アルファ・ゴーゴン
+#   
+#   
+#   
+#   グルー
+#   
+#   ジャバウォック
+#   
+#   w:1
+#   兎人間
+#   
+#   ワンパス
+# old en (ja16):
+#   Slorg
+#   Alphagorgon
+#   from the crawl.akrasiac.org patch.
+#   Hot Ocelot
+#   Eight Boll Weevils
+#   Grue
+#   Jabberwock
+#   w:1
+#   Were-rabbit
+#   Wumpus
+# old ja (ja16):
+#   マダラナメクジ
+#   
+#   アルファ・ゴーゴン
+#   
+#   
+#   
+#   グルー
+#   
+#   ジャバウォック
+#   
+#   w:1
+#   兎人間
+#   
+#   ワンパス
+
+Alphagorgon
+
+Slorg
+
+Eight Boll Weevils
+
+Grue
+
+Hot Ocelot
+
+Jabberwock
+
+w:1
+Were-rabbit
+
+Wumpus
+%%%%
+_discomfort_and_inaction_
+
+# old en (ja19):
+#   discomfort
+#   Minor Irritation
+#   Bitterness
+#   Negation
+#   Failure
+#   Servitude
+#   Submission
+#   Insecurity
+#   Vexation
+#   Disappointment
+#   Entitlement
+#   inaction
+#   Lifelessness
+#   Boredom
+#   Ennui
+#   Restlessness
+#   Omission
+#   Negligence
+#   Inaction
+#   Oblivion
+#   the Doldrums
+#   Listlessness
+#   Apathy
+#   Lethargy
+# old ja (ja19):
+#   いらつき
+#   
+#   苦み
+#   
+#   否定
+#   
+#   失敗
+#   
+#   隷属
+#   
+#   服従
+#   
+#   不安
+#   
+#   心痛
+#   
+#   失望
+#   
+#   権利
+#   
+#   無生命
+#   
+#   退屈
+#   
+#   憂鬱
+#   
+#   焦燥
+#   
+#   怠慢
+#   
+#   過失
+#   
+#   不活
+#   
+#   忘却
+#   
+#   抑鬱
+#   
+#   気力低下
+#   
+#   無感情
+#   
+#   無気力
+# old en (ja16):
+#   discomfort
+#   Minor Irritation
+#   Bitterness
+#   Negation
+#   Failure
+#   Servitude
+#   Submission
+#   Insecurity
+#   Vexation
+#   inaction
+#   Lifelessness
+#   Boredom
+#   Ennui
+#   Restlessness
+#   Omission
+#   Negligence
+#   Inaction
+#   Oblivion
+#   the Doldrums
+#   Listlessness
+# old ja (ja16):
+#   いらつき
+#   
+#   苦み
+#   
+#   否定
+#   
+#   失敗
+#   
+#   隷属
+#   
+#   服従
+#   
+#   不安
+#   
+#   心痛
+#   
+#   無生命
+#   
+#   退屈
+#   
+#   憂鬱
+#   
+#   焦燥
+#   
+#   怠慢
+#   
+#   過失
+#   
+#   不活
+#   
+#   忘却
+#   
+#   抑鬱
+#   
+#   気力低下
+
+Bad Feelings
+
+Bitterness
+
+Disappointment
+
+Entitlement
+
+Failure
+
+Insecurity
+
+Minor Irritation
+
+Negation
+
+Servitude
+
+Submission
+
+Vexation
+
+Apathy
+
+Boredom
+
+Ennui
+
+Inaction
+
+Lethargy
+
+Lifelessness
+
+Negligence
+
+Oblivion
+
+Omission
+
+Restlessness
+
+the Doldrums
+%%%%
+_good_or_divine_
+
+# old en (ja19):
+#   good things
+#   the Good
+#   the Leaf
+#   Leaves
+#   Music
+#   Birdsong
+#   Brilliance
+#   Satisfaction
+#   Fun
+#   Joy
+#   Happiness
+#   Wonder
+#   Surprise
+#   Curiosity
+#   Creativity
+#   Beauty
+#   Life
+#   Liberty
+#   Freedom
+#   Amelioration
+#   Awe
+#   Contentment
+#   Mirth
+#   Tender Moments
+#   Lucidity
+#   Knowledge
+#   New Discoveries
+#   divine events
+#   Divine Compulsion
+#   the Invisible Hand
+#   Divine Intervention
+#   Intercession
+#   Miracles
+#   Salvation
+#   the Will of the Gods
+# old ja (ja19):
+#   優良
+#   
+#   
+#   葉
+#   
+#   音楽
+#   
+#   囀り
+#   
+#   輝き
+#   
+#   満足
+#   
+#   楽しみ
+#   
+#   喜び
+#   
+#   幸福
+#   
+#   不思議
+#   
+#   驚き
+#   
+#   好奇心
+#   
+#   独創性
+#   
+#   美
+#   
+#   生命
+#   
+#   解放
+#   
+#   自由
+#   
+#   改善
+#   
+#   畏怖
+#   
+#   満足
+#   
+#   歓喜
+#   
+#   優しき日々
+#   
+#   明快
+#   
+#   知識
+#   
+#   新発見
+#   
+#   天啓
+#   
+#   見えざる手
+#   
+#   神の介在
+#   
+#   調停
+#   
+#   奇跡
+#   
+#   救済
+#   
+#   神の意志
+# old en (ja16):
+#   good things
+#   the Good
+#   the Leaf
+#   Leaves
+#   Music
+#   Birdsong
+#   Brilliance
+#   Satisfaction
+#   Fun
+#   Joy
+#   Happiness
+#   Wonder
+#   Surprise
+#   Curiosity
+#   Creativity
+#   Beauty
+#   Life
+#   Liberty
+#   Freedom
+#   Amelioration
+#   Awe
+#   Contentment
+#   Mirth
+#   divine events
+#   Divine Compulsion
+#   the Invisible Hand
+#   Divine Intervention
+#   Intercession
+#   Miracles
+#   Salvation
+#   the Will of the Gods
+# old ja (ja16):
+#   優良
+#   
+#   
+#   葉
+#   
+#   音楽
+#   
+#   囀り
+#   
+#   輝き
+#   
+#   満足
+#   
+#   楽しみ
+#   
+#   喜び
+#   
+#   幸福
+#   
+#   不思議
+#   
+#   驚き
+#   
+#   好奇心
+#   
+#   独創性
+#   
+#   美
+#   
+#   生命
+#   
+#   解放
+#   
+#   自由
+#   
+#   改善
+#   
+#   畏怖
+#   
+#   満足
+#   
+#   歓喜
+#   
+#   聖なる衝動
+#   
+#   見えざる手
+#   
+#   神の介在
+#   
+#   調停
+#   
+#   奇跡
+#   
+#   救済
+#   
+#   神の意志
+
+Amelioration
+
+Awe
+
+Beauty
+
+Birdsong
+
+Cleverness
+
+Contentment
+
+Creativity
+
+Curiosity
+
+Freedom
+
+Fun
+
+Happiness
+
+Joy
+
+Knowledge
+
+Leaves
+
+Liberty
+
+Life
+
+Lucidity
+
+Mirth
+
+Music
+
+New Discoveries
+
+Satisfaction
+
+Surprise
+
+Tender Moments
+
+Wonder
+
+the Good
+
+the Leaf
+
+Divine Compulsion
+
+Divine Intervention
+
+Intercession
+
+Miracles
+
+Salvation
+
+the Invisible Hand
+
+the Will of the Gods
+%%%%
+_armour_name_shielding_
+
+# old en (ja19):
+#   Shielding
+#   Impermeability
+#   Defence
+#   Death's Door
+#   the Gate
+#   the Saviour
+#   the Untouchables
+#   the Armoured One
+#   Exclusion
+#   Repulsion
+#   Inviolability
+#   Refuge
+#   the Bulwark
+#   the Ward
+#   Fortification
+#   Complete Protection
+# old ja (ja19):
+#   盾
+#   
+#   不透過
+#   
+#   防御
+#   
+#   死のとば口
+#   
+#   門扉
+#   
+#   救世主
+#   
+#   禁断
+#   
+#   鎧いしもの
+#   
+#   排除
+#   
+#   斥力
+#   
+#   不可侵
+#   
+#   拒絶
+#   
+#   砦
+#   
+#   監房
+#   
+#   要塞
+#   
+#   完全防御
+# old en (ja16):
+#   Shielding
+#   Impermeability
+#   Defence
+#   Death's Door
+#   the Gate
+#   the Saviour
+#   the Untouchables
+#   the Armoured One
+#   Exclusion
+#   Repulsion
+#   Inviolability
+#   Refuge
+#   the Bulwark
+#   the Ward
+#   Fortification
+#   Complete Protection
+# old ja (ja16):
+#   盾
+#   
+#   不透過
+#   
+#   防御
+#   
+#   死のとば口
+#   
+#   門扉
+#   
+#   救世主
+#   
+#   禁断
+#   
+#   鎧いしもの
+#   
+#   排除
+#   
+#   斥力
+#   
+#   不可侵
+#   
+#   拒絶
+#   
+#   砦
+#   
+#   監房
+#   
+#   要塞
+#   
+#   完全防御
+
+Complete Protection
+
+Death's Door
+
+Defence
+
+Exclusion
+
+Fortification
+
+Impermeability
+
+Inviolability
+
+Refuge
+
+Repulsion
+
+Shielding
+
+the Armoured One
+
+the Bulwark
+
+the Gate
+
+the Saviour
+
+the Stone Wall
+
+the Unbroken
+
+the Untouchables
+
+the Ward
+%%%%
+_armour_property_name_
+
+# old en (ja19):
+#   Supple Strength
+#   Death Resistance
+#   Grace
+#   Weightlessness
+#   Shadows and Fog
+#   Disguise
+#   Least Resistance
+#   Protective Custody
+#   Resilience
+#   Fashionability
+#   Impressiveness
+#   Gravitas
+#   Resonance
+# old ja (ja19):
+#   柔軟
+#   
+#   死なず
+#   
+#   優美
+#   
+#   軽業
+#   
+#   煙霧
+#   
+#   霧隠れ
+#   
+#   最小作用
+#   
+#   保護拘置
+#   
+#   弾力
+#   
+#   ファッション性
+#   
+#   印象深さ
+#   
+#   実直さ
+#   
+#   共鳴
+# old en (ja16):
+#   Supple Strength
+#   Death Resistance
+#   Grace
+#   Weightlessness
+#   Shadows and Fog
+#   Disguise
+#   Least Resistance
+#   Protective Custody
+#   Resilience
+#   Fashionability
+#   ファッション性
+#   Impressiveness
+#   印象深さ
+# old ja (ja16):
+#   柔軟
+#   
+#   死なず
+#   
+#   優美
+#   
+#   軽業
+#   
+#   煙霧
+#   
+#   霧隠れ
+#   
+#   最小作用
+#   
+#   保護拘置
+#   
+#   弾力
+
+Death Resistance
+
+Disguise
+
+Fashionability
+
+Fullness
+
+Grace
+
+Gravitas
+
+Impressiveness
+
+Least Resistance
+
+Polish
+
+Privacy
+
+Protective Custody
+
+Resilience
+
+Shadows and Fog
+
+Supple Strength
+
+Weightlessness
+%%%%
+_wacky_armour_name_
+
+# old en (ja19):
+#   the Onion
+#   Vlad
+#   the Eternal Fruit
+#   Plasticity
+#   Baldness
+#   Terror
+#   Good Intentions
+#   Absence
+#   the Arcane
+#   Anaesthesia
+#   the Armadillo
+#   Weirdness
+#   Pathos
+#   Loss
+#   Hedging
+#   Indemnity
+#   Untold Secrets
+#   the Earth
+#   Limited Liability
+#   Incorporation
+#   Mezcal
+#   Hadjma
+#   Hairiness
+#   Space
+#   the Vacuum
+#   Compression
+#   Decompression
+#   the Loofah
+#   Love and Death
+#   Indecent Exposure
+#   the Road Less Travelled
+#   the Blind Marksman
+#   Too Many Cooks
+#   Thrice Damned Blessings
+#   Duck's Teeth
+#   Forking Paths
+#   the Pink Corner
+#   Philately
+#   Synchronized Stabbing
+#   This Worked Last Time
+#   Goodbye, My Love
+#   Precision Catastrophes
+#   Poor Excuses
+#   Dramatic Exits
+#   Thank Me Later
+# old ja (ja19):
+#   タマネギ
+#   
+#   ヴラド候
+#   
+#   永遠の果実
+#   
+#   可塑性
+#   
+#   禿頭
+#   
+#   恐怖
+#   
+#   善意
+#   
+#   不在
+#   
+#   秘蹟
+#   
+#   麻酔
+#   
+#   アルマジロ
+#   
+#   不気味
+#   
+#   哀愁
+#   
+#   喪失
+#   
+#   回避
+#   
+#   賠償
+#   
+#   語られざりし秘密
+#   
+#   地球
+#   
+#   有限責任
+#   
+#   結社
+#   
+#   覇王樹
+#   
+#   ハジャム
+#   
+#   多毛
+#   
+#   空間
+#   
+#   真空
+#   
+#   圧縮
+#   
+#   減圧
+#   
+#   ヘチマ
+#   
+#   愛と死
+#   
+#   公然猥褻
+#   
+#   獣道
+#   
+#   盲目の射手
+#   
+#   多すぎる料理人
+#   
+#   
+#   
+#   分かれ道
+#   
+#   
+#   切手収集
+#   
+#   
+#   
+#   
+#   
+#   苦しい言い訳
+#   
+#   劇的な退場
+# old en (ja16):
+#   the Onion
+#   Vlad
+#   the Eternal Fruit
+#   Plasticity
+#   Baldness
+#   Terror
+#   Good Intentions
+#   Absence
+#   the Arcane
+#   Anaesthesia
+#   the Armadillo
+#   Weirdness
+#   Pathos
+#   Loss
+#   Hedging
+#   Indemnity
+#   Untold Secrets
+#   the Earth
+#   Limited Liability
+#   Incorporation
+#   Mezcal
+#   Hadjma
+#   Hairiness
+#   Space
+#   the Vacuum
+#   Compression
+#   Decompression
+#   the Loofah
+#   Love and Death
+#   Indecent Exposure
+#   the Road Less Travelled
+#   the Blind Marksman
+#   Too Many Cooks
+#   Thrice Damned Blessings
+#   Duck's Teeth
+#   Forking Paths
+#   the Pink Corner
+#   Philately
+# old ja (ja16):
+#   タマネギ
+#   
+#   ヴラド候
+#   
+#   永遠の果実
+#   
+#   可塑性
+#   
+#   禿頭
+#   
+#   恐怖
+#   
+#   善意
+#   
+#   不在
+#   
+#   秘蹟
+#   
+#   麻酔
+#   
+#   アルマジロ
+#   
+#   不気味
+#   
+#   哀愁
+#   
+#   喪失
+#   
+#   回避
+#   
+#   賠償
+#   
+#   語られざりし秘密
+#   
+#   地球
+#   
+#   有限責任
+#   
+#   結社
+#   
+#   覇王樹
+#   
+#   
+#   多毛
+#   
+#   空間
+#   
+#   真空
+#   
+#   圧縮
+#   
+#   減圧
+#   
+#   ヘチマ
+#   
+#   愛と死
+#   
+#   公然猥褻
+#   
+#   
+#   盲目の射手
+#   
+#   
+#   
+#   
+#   
+#   
+#   切手収集
+
+Absence
+
+Anaesthesia
+
+Baldness
+
+Compression
+
+Decompression
+
+Dramatic Exits
+
+Duck's Teeth
+
+Forking Paths
+
+Good Intentions
+
+Hadjma
+
+Hairiness
+
+Hedging
+
+Hubris
+
+Incorporation
+
+Indecent Exposure
+
+Indemnity
+
+Limited Liability
+
+Loss
+
+Love and Death
+
+Mezcal
+
+Pathos
+
+Philately
+
+Plasticity
+
+Poor Excuses
+
+Precision Catastrophes
+
+Space
+
+Terror
+
+Thrice Damned Blessings
+
+Too Many Cooks
+
+Untold Secrets
+
+Vlad
+
+Weirdness
+
+the Arcane
+
+the Armadillo
+
+the Blind Marksman
+
+the Earth
+
+the Eternal Fruit
+
+the Loofah
+
+the Old and Reckless
+
+the Onion
+
+the Pink Corner
+
+the Plethaurus
+
+the Road Less Travelled
+
+the True Pharaoh
+
+the Unemployed Unperson
+
+the Vacuum
+%%%%
+_celestial_bodies_
+
+# old en (ja19):
+#   Sun
+#   Moon
+#   Stars
+#   Planets
+#   Pleiades
+#   Morning Star
+#   Evening Star
+#   Comet
+#   w:5
+#   Midnight Sun
+#   w:5
+#   Blue Moon
+#   w:5
+#   Harvest Moon
+#   astrological
+#   Black Moon
+# old ja (ja19):
+#   太陽
+#   
+#   月
+#   
+#   星
+#   
+#   惑星
+#   
+#   昴星
+#   
+#   明けの明星
+#   
+#   宵の明星
+#   
+#   彗星
+#   
+#   w:5
+#   真夜中の太陽
+#   
+#   w:5
+#   青冷めた月
+#   
+#   w:5
+#   中秋の満月
+#   
+#   黒き月
+# old en (ja16):
+#   Sun
+#   Moon
+#   Stars
+#   Planets
+#   Pleiades
+#   Morning Star
+#   Evening Star
+#   Comet
+#   w:5
+#   Midnight Sun
+#   w:5
+#   Blue Moon
+#   w:5
+#   Harvest Moon
+#   astrological
+#   Black Moon
+# old ja (ja16):
+#   太陽
+#   
+#   月
+#   
+#   星
+#   
+#   惑星
+#   
+#   昴星
+#   
+#   明けの明星
+#   
+#   宵の明星
+#   
+#   彗星
+#   
+#   w:5
+#   真夜中の太陽
+#   
+#   w:5
+#   青冷めた月
+#   
+#   w:5
+#   中秋の満月
+#   
+#   黒き月
+
+w:5
+Blue Moon
+
+Comet
+
+Constellations
+
+Evening Star
+
+w:5
+Harvest Moon
+
+w:5
+Midnight Sun
+
+Moon
+
+Morning Star
+
+Northern Lights
+
+Planets
+
+Pleiades
+
+Stars
+
+Sun
+
+Black Moon
+%%%%
+_instrument_name_
+
+# old en (ja19):
+#   the Fiddle
+#   the Fife
+#   Pan-Flutes
+#   Trumpets
+#   the Kettle-Drum
+#   the Accordion
+#   the Bagpipe
+#   the Lute
+#   the Bells
+#   Chimes
+#   the Flute
+#   the Harp
+#   the Gusle
+# old ja (ja19):
+#   ヴァイオリン
+#   
+#   横笛
+#   
+#   角笛
+#   
+#   トランペット
+#   
+#   ドラム
+#   
+#   アコーディオン
+#   
+#   バグパイプ
+#   
+#   リュート
+#   
+#   ベル
+#   
+#   チャイム
+#   
+#   フルート
+#   
+#   ハープ
+# old en (ja16):
+#   Trumpets
+#   the Kettle-Drum
+#   the Accordion
+#   the Bagpipe
+#   the Lute
+#   the Bells
+#   Chimes
+#   the Flute
+#   the Harp
+#   the Gusle
+# old ja (ja16):
+#   トランペット
+#   
+#   ドラム
+#   
+#   アコーディオン
+#   
+#   バグパイプ
+#   
+#   リュート
+#   
+#   ベル
+#   
+#   チャイム
+#   
+#   フルート
+#   
+#   ハープ
+
+Chimes
+
+Pan-Flutes
+
+Trumpets
+
+the Accordion
+
+the Bagpipe
+
+the Bells
+
+the Fiddle
+
+the Fife
+
+the Flute
+
+the Gusle
+
+the Harp
+
+the Kazoo
+
+the Kettle-Drum
+
+the Lute
+
+the Trombone
+%%%%
+_evil_being_
+
+# old en (ja19):
+#   Tempters
+#   the Tormentor
+#   Vampiric Thralls
+#   the Lich-sworn
+#   the Devil
+#   Demons
+#   Lesser Demons
+#   Greater Demons
+#   the Iron Devil
+#   the Devil's Advocate
+#   the Demon Prince
+#   the Evil One
+#   the Furies
+#   the Prince of Darkness
+#   the Fiend
+#   w:5
+#   the Archfiend
+#   the Little Devil
+#   the Imp
+#   the Villain
+# old ja (ja19):
+#   誘惑者
+#   
+#   
+#   
+#   
+#   
+#   
+#   下位の悪魔
+#   
+#   上位の悪魔
+#   
+#   鉄の悪魔
+#   
+#   悪魔の代弁者
+#   
+#   悪魔の貴公子
+#   
+#   邪悪なるもの
+#   
+#   フューリー
+#   
+#   暗黒の貴公子
+#   
+#   魔神
+#   
+#   w:5
+#   大魔神
+#   
+#   小悪魔
+#   
+#   インプ
+#   
+#   悪党
+# old en (ja16):
+#   the Devil
+#   Demons
+#   Lesser Demons
+#   Greater Demons
+#   the Iron Devil
+#   the Devil's Advocate
+#   the Demon Prince
+#   the Evil One
+#   the Furies
+#   the Prince of Darkness
+#   the Fiend
+#   w:5
+#   the Archfiend
+#   the Little Devil
+#   the Imp
+#   the Villain
+# old ja (ja16):
+#   悪魔
+#   
+#   
+#   下位の悪魔
+#   
+#   上位の悪魔
+#   
+#   鉄の悪魔
+#   
+#   悪魔の代弁者
+#   
+#   悪魔の貴公子
+#   
+#   邪悪なるもの
+#   
+#   フューリー
+#   
+#   暗黒の貴公子
+#   
+#   魔神
+#   
+#   大魔神
+#   
+#   小悪魔
+#   
+#   インプ
+#   
+#   悪党
+
+Demons
+
+Greater Demons
+
+Lesser Demons
+
+Tempters
+
+Vampiric Thralls
+
+w:5
+the Archfiend
+
+the Demon Prince
+
+the Devil
+
+the Devil's Advocate
+
+the Devil's Team
+
+the Evil One
+
+the Fiend
+
+the Furies
+
+the Imp
+
+the Iron Devil
+
+the Lich-sworn
+
+the Little Devil
+
+the Prince of Darkness
+
+the Tormentor
+
+the Villain
+%%%%
+_weather_name_
+
+# old en (ja19):
+#   the First Snow
+#   Boiling Hail
+#   Perpetual Drought
+#   the Thunderstorm
+#   the Hurricane
+#   Blue Skies
+#   Pleasant Breezes
+#   the Blizzard
+#   Chill Winds
+# old ja (ja19):
+#   初雪
+#   
+#   煮えたぎる雹
+#   
+#   永遠の日照り
+#   
+#   雷雲
+#   
+#   ハリケーン
+#   
+#   青空
+#   
+#   そよ風
+#   
+#   猛吹雪
+#   
+#   木枯らし
+# old en (ja16):
+#   the First Snow
+#   Boiling Hail
+#   Perpetual Drought
+#   the Thunderstorm
+#   the Hurricane
+#   Blue Skies
+#   Pleasant Breezes
+#   the Blizzard
+#   Chill Winds
+# old ja (ja16):
+#   初雪
+#   
+#   煮えたぎる雹
+#   
+#   永遠の日照り
+#   
+#   雷雲
+#   
+#   ハリケーン
+#   
+#   青空
+#   
+#   そよ風
+#   
+#   猛吹雪
+#   
+#   木枯らし
+
+Blue Skies
+
+Boiling Hail
+
+Chill Winds
+
+Cloud Cover
+
+Dust Devils
+
+Howling Wind
+
+Lightning Storm
+
+Perpetual Drought
+
+Pleasant Breezes
+
+Quiet Fog
+
+Soft Rains
+
+Spring Thaw
+
+the Blizzard
+
+the First Snow
+
+the Hurricane
+
+the Thunderstorm
+%%%%
+_profession_name_
+
+# old en (ja19):
+#   Guilds
+#   Guild-Master
+#   Apprentice
+#   Blacksmith
+#   Carpenter
+#   Wheelwright
+#   Cooper
+#   Fisher
+#   Hunter
+#   Ditch-Digger
+#   Guardian
+#   Beekeeper
+#   Gardener
+#   Soldier
+#   Farrier
+#   Engineer
+#   Barber Surgeon
+#   Journeyman
+#   Scribe
+#   Bard
+#   Undertaker
+#   Beggar
+#   Merchant
+#   Sailor
+#   Gravedigger
+#   Pirate
+#   Buccaneer
+#   Moneychanger
+#   Thinker
+#   Learner
+#   Teacher
+# old ja (ja19):
+#   ガイド
+#   
+#   ギルドマスター
+#   
+#   見習い
+#   
+#   鍛冶屋
+#   
+#   大工
+#   
+#   車大工
+#   
+#   桶屋
+#   
+#   漁師
+#   
+#   狩人
+#   
+#   ドブさらい
+#   
+#   番人
+#   
+#   養蜂家
+#   
+#   庭師
+#   
+#   軍人
+#   
+#   蹄鉄工
+#   
+#   技師
+#   
+#   理容師
+#   
+#   職人
+#   
+#   筆写者
+#   
+#   吟遊詩人
+#   
+#   葬儀屋
+#   
+#   乞食
+#   
+#   商人
+#   
+#   水夫
+#   
+#   墓掘り人
+#   
+#   海賊
+#   
+#   
+#   両替商
+#   
+#   思想家
+#   
+#   初学者
+#   
+#   教師
+# old en (ja16):
+#   Guilds
+#   Guild-Master
+#   Apprentice
+#   Blacksmith
+#   Carpenter
+#   Wheelwright
+#   Cooper
+#   Fisher
+#   Hunter
+#   Ditch-Digger
+#   Guardian
+#   Beekeeper
+#   Gardener
+#   Soldier
+#   Farrier
+#   Engineer
+#   Barber Surgeon
+#   Journeyman
+#   Scribe
+#   Bard
+#   Undertaker
+#   Beggar
+#   Merchant
+#   Sailor
+#   Gravedigger
+#   Pirate
+#   Buccaneer
+# old ja (ja16):
+#   ガイド
+#   
+#   ギルドマスター
+#   
+#   見習い
+#   
+#   鍛冶屋
+#   
+#   大工
+#   
+#   車大工
+#   
+#   桶屋
+#   
+#   漁師
+#   
+#   狩人
+#   
+#   ドブさらい
+#   
+#   番人
+#   
+#   養蜂家
+#   
+#   庭師
+#   
+#   軍人
+#   
+#   蹄鉄工
+#   
+#   技師
+#   
+#   理容師
+#   
+#   職人
+#   
+#   筆写者
+#   
+#   吟遊詩人
+#   
+#   葬儀屋
+#   
+#   乞食
+#   
+#   商人
+#   
+#   水夫
+#   
+#   墓掘り人
+#   
+#   海賊
+
+Apprentice
+
+Apothecary
+
+Baker
+
+Barber Surgeon
+
+Bard
+
+Beekeeper
+
+Beggar
+
+Blacksmith
+
+Buccaneer
+
+Butcher
+
+Candlemaker
+
+Carpenter
+
+Cartwright
+
+Cobbler
+
+Cooper
+
+Ditch-Digger
+
+Engineer
+
+Farmer
+
+Farrier
+
+Fisher
+
+Fletcher
+
+Furrier
+
+Gardener
+
+Goldsmith
+
+Gravedigger
+
+Guardian
+
+Guild-Master
+
+Guilds
+
+Hunter
+
+Journeyman
+
+Learner
+
+Merchant
+
+Miller
+
+Minstrel
+
+Moneychanger
+
+Monk
+
+Pirate
+
+Playwright
+
+Sailor
+
+Scribe
+
+Silversmith
+
+Soldier
+
+Stonemason
+
+Tanner
+
+Teacher
+
+Thinker
+
+Undertaker
+
+Watchman
+
+Weaver
+
+Wheelwright
+%%%%
+_game_name_
+
+# old en (ja19):
+#   general games
+#   Fun and Games
+#   the Great Game
+#   the Game Afoot
+#   Parlour Games
+#   the Game of Kings
+#   Dice, Bag, and Bottle
+#   Spin the Turtle
+#   You Go First
+#   It's Over Quickly
+#   children's games
+#   Never Talk to Strangers
+#   Peek-a-Boo
+#   Hide-and-Seek
+#   Leapfrog
+#   Hopscotch
+#   Follow the Leader
+#   the King of the Hill
+#   Mumblety Peg
+#   board games etc.
+#   the Game of Life
+#   Card Tricks
+#   Hangman
+#   the Dice
+#   Jigsaw
+#   Whack-A-Mole
+#   Ladders and Snakes
+#   Marbles
+#   Noughts and Crosses
+# old ja (ja19):
+#   楽しいゲーム
+#   
+#   グレート・ゲーム
+#   
+#   進行中のゲーム
+#   
+#   室内ゲーム
+#   
+#   王様ゲーム
+#   
+#   
+#   
+#   
+#   
+#   
+#   いないいないばあ
+#   
+#   かくれんぼ
+#   
+#   馬跳び
+#   
+#   石蹴り遊び
+#   
+#   
+#   
+#   
+#   はないちもんめ
+#   
+#   けいどろ
+#   
+#   ポコペン
+#   
+#   人生ゲーム
+#   
+#   トランプ手品
+#   
+#   ハングマン
+#   
+#   サイコロ遊び
+#   
+#   ジグソーパズル
+#   
+#   モグラ叩き
+#   
+#   
+#   ビー玉遊び
+#   
+#   三目並べ
+# old en (ja16):
+#   general games
+#   Fun and Games
+#   the Great Game
+#   the Game Afoot
+#   Parlour Games
+#   the Game of Kings
+#   children's games
+#   Peek-a-Boo
+#   Hide-and-Seek
+#   Leapfrog
+#   Hopscotch
+#   Follow the Leader
+#   the King of the Hill
+#   Mumblety Peg
+#   board games etc.
+#   the Game of Life
+#   Card Tricks
+#   Hangman
+#   the Dice
+#   Jigsaw
+#   Whack-A-Mole
+#   Ladders and Snakes
+#   Marbles
+#   Noughts and Crosses
+# old ja (ja16):
+#   楽しいゲーム
+#   
+#   グレート・ゲーム
+#   
+#   
+#   室内ゲーム
+#   
+#   王様ゲーム
+#   
+#   いないいないばあ
+#   
+#   かくれんぼ
+#   
+#   馬跳び
+#   
+#   石蹴り遊び
+#   
+#   
+#   
+#   
+#   はないちもんめ
+#   
+#   けいどろ
+#   
+#   ポコペン
+#   
+#   人生ゲーム
+#   
+#   トランプ手品
+#   
+#   ハングマン
+#   
+#   サイコロ遊び
+#   
+#   ジグソーパズル
+#   
+#   モグラ叩き
+#   
+#   
+#   
+#   三目並べ
+
+Dice, Bag, and Bottle
+
+Fun and Games
+
+Parlour Games
+
+the Game Afoot
+
+the Game of Kings
+
+the Great Game
+
+Follow the Leader
+
+Hide-and-Seek
+
+Hopscotch
+
+Leapfrog
+
+Mumblety Peg
+
+Peek-a-Boo
+
+the King of the Hill
+
+Card Tricks
+
+Hangman
+
+Jigsaw
+
+Marbles
+
+Noughts and Crosses
+
+Snakes and Ladders
+
+Whack-A-Mole
+
+the Dice
+
+the Game of Life
+%%%%
+_politics_name_armour_
+
+# old en (ja19):
+#   the King
+#   the Queen
+#   Royalty
+#   Nobility
+#   the Republic
+#   the Empire
+#   Coronation
+#   the Commoners
+#   the Peasants
+#   the Townfolk
+#   the City
+#   the Country
+#   the Suburbs
+#   the Mutiny
+#   the Crown
+#   the Duke
+#   the Duchess
+#   the Doge
+#   the Ban
+#   the Castellan
+#   the Komtur
+#   the Voivode
+#   the Rabble
+#   the Prince
+#   the Princeling
+#   the Princess
+#   the Oligarchy
+#   the Cast Vote
+#   the Burgomaster
+#   the Failed Coup
+#   Sovereignty
+#   the Greedy
+# old ja (ja19):
+#   王
+#   
+#   女王
+#   
+#   王権
+#   
+#   貴族
+#   
+#   共和国
+#   
+#   帝国
+#   
+#   戴冠
+#   
+#   平民
+#   
+#   小作人
+#   
+#   町の住民
+#   
+#   都市
+#   
+#   国
+#   
+#   郊外
+#   
+#   暴動
+#   
+#   王冠
+#   
+#   公爵
+#   
+#   公爵夫人
+#   
+#   総督
+#   
+#   禁令
+#   
+#   城主
+#   
+#   騎士
+#   
+#   
+#   庶民
+#   
+#   貴公子
+#   
+#   小公子
+#   
+#   姫
+#   
+#   寡頭政治
+#   
+#   投票
+#   
+#   市長
+#   
+#   政変
+#   
+#   主権
+# old en (ja16):
+#   the King
+#   the Queen
+#   Royalty
+#   Nobility
+#   the Republic
+#   the Empire
+#   Coronation
+#   the Commoners
+#   the Peasants
+#   the Townfolk
+#   the City
+#   the Country
+#   the Suburbs
+#   the Mutiny
+#   the Crown
+#   the Duke
+#   the Duchess
+#   the Doge
+#   the Ban
+#   the Castellan
+#   the Komtur
+#   the Voivode
+#   the Rabble
+#   the Prince
+#   the Princeling
+#   the Princess
+#   the Oligarchy
+#   the Cast Vote
+#   the Burgomaster
+#   the Failed Coup
+# old ja (ja16):
+#   王
+#   
+#   女王
+#   
+#   王権
+#   
+#   貴族
+#   
+#   共和国
+#   
+#   帝国
+#   
+#   戴冠
+#   
+#   平民
+#   
+#   小作人
+#   
+#   町の住民
+#   
+#   都市
+#   
+#   国
+#   
+#   郊外
+#   
+#   暴動
+#   
+#   王冠
+#   
+#   公爵
+#   
+#   公爵夫人
+#   
+#   総督
+#   
+#   破門
+#   
+#   城主
+#   
+#   騎士
+#   
+#   
+#   庶民
+#   
+#   貴公子
+#   
+#   小公子
+#   
+#   姫
+#   
+#   寡頭政治
+#   
+#   投票
+#   
+#   市長
+#   
+#   政変
+
+Coronation
+
+Democracy
+
+Nobility
+
+Royalty
+
+Sovereignty
+
+the Ban
+
+the Burgomaster
+
+the Cast Vote
+
+the Castellan
+
+the City
+
+the Commoners
+
+the Country
+
+the Crown
+
+the Doge
+
+the Duchess
+
+the Duke
+
+the Empire
+
+the Failed Coup
+
+the Greedy
+
+the King
+
+the Komtur
+
+the Mutiny
+
+the Oligarchy
+
+the Peasants
+
+the Prince
+
+the Princeling
+
+the Princess
+
+the Queen
+
+the Rabble
+
+the Republic
+
+the Suburbs
+
+the Townfolk
+
+the Voivode
+%%%%
+_other_armour_name_
+
+# old en (ja19):
+#   unpleasantness
+#   w:5
+#   Grot
+#   w:5
+#   Grottiness
+#   Filth
+#   Slovenliness
+#   magic
+#   Magic
+#   Sorcery
+#   Broken Taboos
+#   Bedevilment
+#   Muttered Phrases
+#   the Arcane
+#   Words of Power
+#   Gestures
+#   other
+#   Crawling
+#   the Orb
+#   the Orb Guardian
+#   the Storm King
+#   the @_card_@ of @_suit_@
+#   the Hanged Man
+#   Hedge Wizardry
+#   Feasting
+#   Insatiable Hunger
+#   Imperfection
+#   Trial and Error
+#   Disaster
+#   Wrong Decisions
+#   Unambiguity
+#   the Lost Path
+#   Misanthropy
+#   Wasted Space
+#   the Other World
+#   Inevitability
+#   Perfidy
+#   Dogmatism
+#   Happy Babbling
+#   the Slightly Bent
+#   the Moon Troll
+#   God Told Me To
+#   Time Monsters
+#   the Sacrificial Victim
+#   Undesirable Species
+# old ja (ja19):
+#   w:5
+#   がらくた
+#   
+#   w:5
+#   ゴミクズ
+#   
+#   汚物
+#   
+#   不潔
+#   
+#   魔術
+#   
+#   魔法
+#   
+#   掟破り
+#   
+#   
+#   呟き声
+#   
+#   秘術
+#   
+#   力ある言葉
+#   
+#   身振り手振り
+#   
+#   探索行
+#   
+#   ゾットのオーブ
+#   
+#   オーブの守護者
+#   
+#   雷の王
+#   
+#   @_suit_@の@_card_@
+#   
+#   吊られた男
+#   
+#   
+#   饗宴
+#   
+#   飽くなき飢え
+#   
+#   欠点
+#   
+#   試行錯誤
+#   
+#   災害
+#   
+#   誤判断
+#   
+#   一意性
+#   
+#   
+#   厭世
+#   
+#   空き地
+#   
+#   異世界
+#   
+#   不可避
+#   
+#   裏切り
+#   
+#   独断主義
+#   
+#   赤ちゃん言葉
+#   
+#   
+#   月世界のトロル
+#   
+#   
+#   
+#   生贄の供物
+# old en (ja16):
+#   unpleasantness
+#   w:5
+#   Grot
+#   w:5
+#   Grottiness
+#   Filth
+#   Slovenliness
+#   magic
+#   Magic
+#   Sorcery
+#   Broken Taboos
+#   Bedevilment
+#   other
+#   Crawling
+#   the Orb
+#   the Orb Guardian
+#   the Storm King
+#   the @_card_@ of @_suit_@
+#   the Hanged Man
+#   Hedge Wizardry
+#   Feasting
+#   Insatiable Hunger
+#   Imperfection
+#   Trial and Error
+#   Disaster
+#   Wrong Decisions
+#   Unambiguity
+#   the Lost Path
+#   Misanthropy
+#   Wasted Space
+#   the Other World
+#   Inevitability
+# old ja (ja16):
+#   w:5
+#   がらくた
+#   
+#   w:5
+#   ゴミクズ
+#   
+#   汚物
+#   
+#   不潔
+#   
+#   魔術
+#   
+#   魔法
+#   
+#   掟破り
+#   
+#   
+#   
+#   ゾットのオーブ
+#   
+#   オーブの守護者
+#   
+#   雷の王
+#   
+#   @_suit_@の@_card_@
+#   
+#   吊られた男
+#   
+#   
+#   饗宴
+#   
+#   飽くなき飢え
+#   
+#   欠点
+#   
+#   試行錯誤
+#   
+#   災害
+#   
+#   誤判断
+#   
+#   一意性
+#   
+#   
+#   厭世
+#   
+#   空き地
+#   
+#   異世界
+#   
+#   不可避
+
+Filth
+
+w:5
+Grot
+
+w:5
+Grottiness
+
+Slovenliness
+
+Bedevilment
+
+Broken Taboos
+
+Gestures
+
+Magic
+
+Muttered Phrases
+
+Sorcery
+
+Words of Power
+
+the Arcane
+
+Crawling
+
+Disaster
+
+Dogmatism
+
+Feasting
+
+Going Fast
+
+Happy Babbling
+
+Hedge Wizardry
+
+Imperfection
+
+Inevitability
+
+Insatiable Hunger
+
+Insurance
+
+Misanthropy
+
+Perfidy
+
+Time Monsters
+
+Trial and Error
+
+Unambiguity
+
+Undesirable Species
+
+Wasted Space
+
+Wrong Decisions
+
+the @_card_@ of @_suit_@
+
+the Hanged Man
+
+the Lost Path
+
+the Moon Troll
+
+the Orb
+
+the Orb Guardian
+
+the Other World
+
+the Sacrificial Victim
+
+the Slightly Bent
+
+the Storm King
+
+Ravioli
+
+Spaghetti
+
+Tortelloni
+
+Farfalle
+
+Rotini
+
+Vermicelli
+
+Macaroni
+
+Strozzapreti
+
+w:1
+the Pastamancer
+
+Meatballs
+%%%%
+_suit_
+
+# old en (ja19):
+#   Cups
+#   Pentacles
+#   Wands
+#   Swords
+# old ja (ja19):
+#   ハート
+#   
+#   ダイヤ
+#   
+#   クラブ
+#   
+#   スペード
+# old en (ja16):
+#   Cups
+#   Pentacles
+#   Wands
+#   Swords
+# old ja (ja16):
+#   ハート
+#   
+#   ダイヤ
+#   
+#   クラブ
+#   
+#   スペード
+
+Cups
+
+Pentacles
+
+Swords
+
+Wands
+%%%%
+_plain_armour_name_
+
+# old en (ja19):
+#   Forget-Me-Not
+#   Hero's Friend
+#   Trusted Companion
+# old ja (ja19):
+#   私を忘れないで
+#   
+#   英雄の盟友
+#   
+#   刎頸之交
+# old en (ja16):
+#   Forget-Me-Not
+#   Hero's Friend
+#   Trusted Companion
+# old ja (ja16):
+#   私を忘れないで
+#   
+#   英雄の盟友
+#   
+#   刎頸之交
+
+Damnable Contraption
+
+Earthly Heaven
+
+Forget-Me-Not
+
+Hero's Friend
+
+Put-Me-On
+
+Trusted Companion
+%%%%

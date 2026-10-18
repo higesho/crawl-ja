@@ -1,0 +1,21 @@
+%%%%
+Round %d of %d
+
+ラウンド%s (全%d回)
+%%%%
+Canceled contest at user request
+
+ユーザの要望により試合を中断しました。
+%%%%
+Tie
+
+引き分け
+%%%%
+Winner: %s!
+
+勝者: %s！
+%%%%
+Last arena monster was dismissed.
+
+闘技場の最後のモンスターを倒した。
+%%%%

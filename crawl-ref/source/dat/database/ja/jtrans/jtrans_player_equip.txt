@@ -1,0 +1,453 @@
+%%%%
+ring on invalid slot %d
+
+# for die()
+%%%%
+You feel a build-up of mutagenic energy.
+
+あなたは変異性のエネルギーが強まるのを感じた。
+%%%%
+Mutagenic energies flood into your body!
+
+変異性のエネルギーがあなたに浴びせられた！
+%%%%
+%s crumbles to dust!
+
+%sは塵となって崩れ去った！
+%%%%
+You really shouldn't be using a holy item like this.
+
+あなたはこのような聖なるアイテムを用いるべきではない。
+%%%%
+You really shouldn't be using a corpse-violating item like this.
+
+あなたはこのような死体を損壊するアイテムを用いるべきではない。
+%%%%
+You really shouldn't be using an evil item like this.
+
+あなたはこのような邪悪なアイテムを用いるべきではない。
+%%%%
+You really shouldn't be using an unclean item like this.
+
+あなたはこのような不浄なアイテムを用いるべきではない。
+%%%%
+You really shouldn't be using a chaotic item like this.
+
+あなたはこのような混沌なるアイテムを用いるべきではない。
+%%%%
+You really shouldn't be using a hasty item like this.
+
+あなたはこのような素早いアイテムを用いるべきではない。
+%%%%
+You really shouldn't be using a poisoned item like this.
+
+あなたはこのような毒にまみれたアイテムを用いるべきではない。
+%%%%
+You really shouldn't be using a fiery item like this.
+
+あなたはこのような火に関係するアイテムを用いるべきではない。
+%%%%
+You really shouldn't be trying to channel magic like this.
+
+# obsolete: Pakellas
+%%%%
+It sticks to your %s!
+
+それはあなたの%sから離れない！
+%%%%
+%s bursts into flame!
+
+%sは吹きあがる炎に包まれた！
+%%%%
+is covered in frost.
+
+は霜に覆われている。
+%%%%
+glows with a cold blue light!
+
+は冷たい蒼に輝いた！
+%%%%
+%s softly glows with a divine radiance!
+
+%sは神聖な光に柔らかく輝いた！
+%%%%
+# You hear the crackle of electricity.
+
+# jtrans_art_func.txtと重複
+%%%%
+You see sparks fly.
+
+あなたは火花が飛ぶのを目にした。
+%%%%
+%s begins to drip with poison!
+
+%sは毒を滴らせはじめた！
+%%%%
+%s hums with potential!
+
+%sは秘められた力を発揮した！
+%%%%
+# You sense an unholy aura.
+
+# jtrans_monster.txtと重複
+%%%%
+[hands act]your hands tingle!
+
+あなたの%sはうずうずしている！
+%%%%
+You feel a bloodthirsty glee!
+
+あなたは血に飢えた喜びを感じた！
+%%%%
+You feel a dreadful hunger.
+
+あなたはひどく腹が空いた。
+%%%%
+You feel an empty sense of dread.
+
+あなたはひどく空っぽな感覚を得た。
+%%%%
+You have a feeling of ineptitude.
+
+あなたは愚かな行為をしたような気がした。
+%%%%
+Pain shudders through your %s!
+
+苦痛があなたの%sを通じ、身震いをした！
+%%%%
+A searing pain shoots up your %s!
+
+焼けつく痛みがあなたの%sを駆け上った！
+%%%%
+%s is briefly surrounded by a scintillating aura of random colours.
+
+%sはしばらくの間様々な色がきらめくオーラに包まれた。
+%%%%
+Your %s briefly %s through it before you manage to get a firm grip on it.
+
+あなたはそれをしっかり掴もうとする前にしばらくの間%sでしごいた。
+%%%%
+%s is briefly surrounded by shifting shadows.
+
+%sはしばらくの間ちらつく影に覆われた。
+%%%%
+You feel magic leave you.
+
+あなたは魔力が失われたような気がした。
+%%%%
+Space warps around you for a moment!
+
+一瞬あなたの周りの空間が歪んだ！
+%%%%
+%s begins to ooze corrosive slime!
+
+%sは腐食性の粘液を滴らせはじめた！
+%%%%
+%s stops flaming.
+
+%sは燃えるのをやめた。
+%%%%
+%s stops glowing.
+
+%sは輝きが消えた。
+%%%%
+%s stops crackling.
+
+%sは爆ぜるのをやめた。
+%%%%
+%s stops dripping with poison.
+
+%sは毒を滲ませるのをやめた。
+%%%%
+%s goes still.
+
+%sは静まった。
+%%%%
+You feel your glee subside.
+
+あなたの喜びはおさまったようだ。
+%%%%
+You feel the dreadful sensation subside.
+
+あなたの恐ろしい感覚はおさまったようだ。
+%%%%
+absorbs the residual spatial distortion as you unwield your weapon.
+
+はあなたが武器を手放した際に起こった空間歪曲を吸い取った。
+%%%%
+# a distortion unwield
+
+# jtrans_abyss.txtと重複
+%%%%
+You feel magic returning to you.
+
+あなたは魔力が戻ってきたような気がした。
+%%%%
+%s stops oozing corrosive slime.
+
+%sは腐食性の粘液を滲ませるのをやめた。
+%%%%
+Your spectral weapon disappears as %s.
+
+幽体の武器は%sとともに消え去った。
+%%%%
+your weapon melds
+
+あなたが武器と融合する
+%%%%
+you unwield
+
+あなたが武器を手放す
+%%%%
+You feel your power drawn to a protective spirit.
+
+あなたの魔力が守護霊に吸われたような気がした。
+%%%%
+Now linked to your health, your magic stops regenerating.
+
+体力と結びついたため、あなたの魔力は再生しなくなった。
+%%%%
+You feel the presence of a powerless spirit.
+
+あなたは無力な精霊の存在を感じた。
+%%%%
+You feel spirits watching over you.
+
+守護霊があなたを見守っているような気がした。
+%%%%
+# You feel quick.
+
+# jtrans_mutation_data.txtと重複
+%%%%
+You feel resistant to fire.
+
+あなたは火への耐性を得たようだ。
+%%%%
+# You feel resistant to cold.
+
+# jtrans_mutation_data.txtと重複
+%%%%
+You feel resistant to poison.
+
+あなたは毒への耐性を得たようだ。
+%%%%
+You feel perceptive.
+
+あなたの視覚は鋭敏になったようだ。
+%%%%
+You become transparent for a moment.
+
+あなたは一瞬透明になった。
+%%%%
+You feel rather ponderous.
+
+あなたは鈍重になったようだ。
+%%%%
+You feel rather light.
+
+あなたは体が軽くなったようだ。
+%%%%
+Take it off to stop flying.
+
+飛行を中止するにはそれを脱いでください。
+%%%%
+(use the <w>%s</w>bility menu to %s flying)
+
+(飛行を%sには <w>%s</w>bility メニュー画面に移動してください)
+%%%%
+stop or start
+
+やめる、または開始する
+%%%%
+start or stop
+
+開始する、またはやめる
+%%%%
+# You feel resistant to hostile enchantments.
+
+# jtrans_godabil.txtと重複
+%%%%
+You feel protected.
+
+あなたは護りの力を感じた。
+%%%%
+You feel stealthy.
+
+あなたは動きが静かになったようだ。
+%%%%
+You feel resistant to extremes of temperature.
+
+あなたは極端な温度への耐性を帯びた。
+%%%%
+You feel more protected from negative energy.
+
+あなたは負のエネルギーへの耐性が強まった気がした。
+%%%%
+You feel strangely lacking in power.
+
+あなたは異様に力が不足しているのを感じた。
+%%%%
+You feel powerful.
+
+あなたは強大な力を感じた。
+%%%%
+You feel that your aim is more steady.
+
+あなたは狙いがより確かになった気がした。
+%%%%
+Oops, that feels deathly cold.
+
+うわ！ 凄まじく冷たい！
+%%%%
+You feel rather sluggish.
+
+あなたの走りはもう速くない。
+%%%%
+You feel less resistant to fire.
+
+あなたの火への耐性が薄れたようだ。
+%%%%
+You feel less resistant to cold.
+
+あなたの冷気への耐性が薄れたようだ。
+%%%%
+You no longer feel resistant to poison.
+
+あなたの毒への耐性が薄れたようだ。
+%%%%
+You feel less perceptive.
+
+あなたは霊視能力を失った。
+%%%%
+That put a bit of spring back into your step.
+
+あなたの足取りが軽やかになった。
+%%%%
+# You feel less resistant to hostile enchantments.
+
+# jtrans_godabil.txtと重複
+%%%%
+You feel less protected.
+
+あなたの護りは薄くなったようだ。
+%%%%
+# You feel less stealthy.
+
+# jtrans_duration_data.txtと重複
+%%%%
+You feel hot and cold all over.
+
+あなたの極端な温度への耐性が薄れたようだ。
+%%%%
+You feel less protected from negative energy.
+
+あなたの負のエネルギーへの耐性が薄れたようだ。
+%%%%
+You feel strangely numb.
+
+あなたは奇妙な喪失感を覚えた。
+%%%%
+You feel strangely alone.
+
+あなたは奇妙な孤独感を覚えた。
+%%%%
+Your magic begins regenerating once more.
+
+あなたの魔力は再び回復するようになった。
+%%%%
+Your aim is not that steady anymore.
+
+あなたの狙いは先程より不確かになったようだ。
+%%%%
+prev delay %d, new delay %d
+
+# for debug
+%%%%
+seems less interested in you.
+
+はあなたへの興味が薄れたようだ。
+%%%%
+You feel less pious.
+
+あなたは信心深くなくなった気がする。
+%%%%
+%s: piety drain: %d
+
+# for debug
+%%%%
+The amulet drains your life force as you remove it!
+
+護符を外すと同時に、あなたの生命力は奪い取られた！
+%%%%
+The amulet drains your animating force as you remove it!
+
+護符を外すと同時に、あなたの体を動かす原動力は奪い取られた！
+%%%%
+The amulet feels cold and inert.
+
+護符は冷たく感じ、何も効果がないようだ。
+%%%%
+The amulet throbs as it attunes itself to your uninjured body.
+
+護符はあなたの傷ついていない体に順応して脈動した。
+%%%%
+You sense that the amulet cannot attune itself to your injured body.
+
+護符はあなたの傷ついた体に順応できていないように感じた。
+%%%%
+The amulet hums as it attunes itself to your energized body.
+
+護符はあなたの魔力に満ちた体に順応して唸るような音を立てた。
+%%%%
+You sense that the amulet cannot attune itself to your exhausted body.
+
+護符は魔力を失ったあなたの体に順応できていないように感じた。
+%%%%
+You feel more attuned to fire.
+
+あなたはさらに火炎に順応した気がした。
+%%%%
+You feel more attuned to ice.
+
+あなたはさらに冷気に順応した気がした。
+%%%%
+You feel a slight, muted jump rush through you.
+
+あなたは無効化された跳躍力を感じた。
+%%%%
+You feel slightly more jumpy.
+
+あなたはさらに少し跳躍力を感じた。
+%%%%
+You feel slightly jumpy.
+
+あなたは少し跳躍力を感じた。
+%%%%
+You feel a surge of self-confidence.
+
+あなたは自尊心が高まった気がした。
+%%%%
+says: An ascetic of your devotion has no use for such trinkets.
+
+は『そんなつまらない物は献身の足しにはならんぞ』と言った。
+%%%%
+cares for nothing but gold!
+
+は金貨以外のものには興味がない！
+%%%%
+You feel a strange surge of divine interest.
+
+あなたは神の歓心が奇妙に高まるのを感じた。
+%%%%
+You feel a surge of divine interest.
+
+あなたは神の歓心の高まりを感じた。
+%%%%
+You feel a craving for the dungeon's cuisine.
+
+あなたはダンジョンの珍味に対する食欲が高まった。
+%%%%
+Oops, that %s feels deathly cold.
+
+うわ！ この%sは凄まじく冷たい！
+%%%%

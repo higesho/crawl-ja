@@ -1,0 +1,58 @@
+%%%%
+opening screen
+
+#     "<yellow>Hello, welcome to " CRAWL " " + string(Version::Long) + "!</yellow>\n"
+#     "<brown>(c) Copyright 1997-2002 Linley Henzell, 2002-2018 Crawl DevTeam\n"
+#     "Read the instructions for legal details.</brown> ";
+<yellow>%s %sにようこそ！</yellow>
+<brown>(c) Copyright 1997-2002 Linley Henzell, 2002-2018 Crawl DevTeam
+詳細なライセンスについては説明書をお読みください。</brown>
+%%%%
+<lightgrey>(Options read from
+
+<lightgrey>(設定ファイルの場所は
+%%%%
+.)</lightgrey>
+
+です。)</lightgrey>
+%%%%
+<lightred>(Options file
+
+<lightgrey>(設定ファイル
+%%%%
+"%s" is not readable
+
+"%s"が読み取れませんでした
+%%%%
+not found
+
+が見つかりませんでした
+%%%%
+; using defaults.)</lightred>
+
+。デフォルト設定を使用します。)</lightred>
+%%%%
+<lightgreen>Take part in the player survey at http://crawl.develz.org</lightgreen>
+
+# 訳不要
+%%%%
+What is your name today? (Leave blank for a random name, or use Escape to go back.)
+
+プレイヤー名を何にしますか？ (空白のままだとランダムな名前を使用します。Escで戻ります)
+%%%%
+That's a silly name!
+
+その名前は馬鹿げています！
+%%%%
+Sorry, that name gives your OS a headache.
+
+申し訳ありませんが、その名前はこのOSでは許可されていません。
+%%%%
+That name is too long.
+
+名前が長すぎます。
+%%%%
+Alpha-numerics, spaces, hyphens, periods and underscores only, please.
+
+名前に使用する文字は半角英数、' '、'-'、'.'、'_'だけにしてください。
+%%%%

@@ -1,0 +1,49 @@
+%%%%
+-Cast status
+
+# en:
+#   You are unable to cast spells.
+あなたは呪文を唱えることができない。
+%%%%
+Quad status
+
+# en:
+#   QUAD DAMAGE!
+ダメージが4倍になった！
+%%%%
+rF- status
+
+# en:
+#   You are more vulnerable to fire.
+あなたはさらに火に燃えやすくなった。
+%%%%
+rP- status
+
+# en:
+#   You are more vulnerable to poison.
+あなたはさらに毒に弱くなったようだ。
+%%%%
+SlowM status
+
+# en:
+#   Your movement is slowed on this liquid ground.
+あなたの動きはぬかるみによって遅くなっている。
+%%%%
+-Clouds status
+
+# en:
+#   The air is too still for clouds to form.
+大気の流れが静止しており、煙幕を形成することができない。
+%%%%
+Fast+Slow status
+
+# en:
+#   You are under both slowing and hasting effects.
+あなたは減速と加速両方の効果を受けている。
+%%%%
+Recall status
+
+# en:
+#   You are recalling your allies.
+あなたは仲間を呼び出している。
+%%%%

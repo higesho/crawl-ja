@@ -1,0 +1,57 @@
+%%%%
+initializing perishable stack
+
+# for debug
+%%%%
+#ifdef DEBUG_BLOOD_POTIONS
+newly created stack of size %d will time out at aut %d
+
+%%%%
+ERROR: stack quantity (%d) doesn't match timer (%d)
+
+# 訳不要
+%%%%
+%d items rotted away (timer size %d)
+
+# for debug
+%%%%
+All of the chunks of flesh in your inventory have rotted away.
+
+所持している生肉が全て腐ってしまった。
+%%%%
+Some of the chunks of flesh in your inventory have rotted away.
+
+所持している生肉の一部が腐ってしまった。
+%%%%
+%s %s rot%s away.
+
+%s本の%sが腐ってしまった。
+%%%%
+Malformed stack; trying to pop from an empty timer list!
+
+# for debug
+%%%%
+Removed oldest item: %d timers, stack size %d
+
+# for debug
+%%%%
+Removed newest item: %d timers, stack size %d
+
+# for debug
+%%%%
+origin qt: %d, taking %d, putting into stack of size %d with initial timer count %d
+
+# for debug
+%%%%
+Source stack has truncated timer; using first elem
+
+# for debug
+%%%%
+Source stack has empty timer; using 'fresh' age
+
+# for debug
+%%%%
+Eventual timer size: %d
+
+# for debug
+%%%%

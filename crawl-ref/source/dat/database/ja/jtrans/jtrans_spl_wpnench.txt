@@ -1,0 +1,41 @@
+%%%%
+%s seems less pained.
+
+%sは苦痛の力が弱まったようだ。
+%%%%
+You cannot brand ranged weapons with this spell.
+
+射撃用の武器はこの呪文では強化できない。
+%%%%
+This weapon is already branded with pain.
+
+この武器は既に苦痛の力を備えているようだ。
+%%%%
+Really brand %s?
+
+本当に %s に魔力を付与しますか？
+%%%%
+rebranding a weapon of distortion
+
+歪曲の武器の魔力を上書きしたこと
+%%%%
+# %s %s in agony.
+
+# jtrans_attack.txtと重複
+%%%%
+[verb]writhes
+
+<[verb]writhe>
+%%%%
+[verb]shrieks
+
+悲鳴を上げた
+%%%%
+[hands act]your hands begin to glow brighter.
+
+あなたの%sは赤い輝きを増した。
+%%%%
+[hands act]your hands begin to glow red.
+
+あなたの%sは赤く輝きはじめた。
+%%%%

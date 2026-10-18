@@ -1,0 +1,193 @@
+%%%%
+Necronomicon
+
+ネクロノミコン
+%%%%
+Grand Grimoire
+
+グラン・グリモア
+%%%%
+# TAG_MAJOR_VERSION == 34
+tome of obsoleteness
+
+%%%%
+Young Poisoner's Handbook
+
+初級毒殺者の手引書
+%%%%
+Fen Folio
+
+沼沢の書
+%%%%
+# TAG_MAJOR_VERSION == 34
+Akashic Record
+
+アカシック・レコード
+%%%%
+book of Minor Magic
+
+下級魔術の魔法書
+%%%%
+book of Conjurations
+
+妖術の魔法書
+%%%%
+book of Flames
+
+炎の魔法書
+%%%%
+book of Frost
+
+冷気の魔法書
+%%%%
+book of Summonings
+
+召喚の魔法書
+%%%%
+book of Fire
+
+猛火の魔法書
+%%%%
+book of Ice
+
+氷結の魔法書
+%%%%
+book of Spatial Translocations
+
+空間転位の魔法書
+%%%%
+book of Enchantments
+
+呪術の魔法書
+%%%%
+book of the Tempests
+
+天災の魔法書
+%%%%
+book of Death
+
+死の魔法書
+%%%%
+book of Misfortune
+
+災難の魔法書
+%%%%
+book of Changes
+
+小変異の魔法書
+%%%%
+book of Transfigurations
+
+変容の魔法書
+%%%%
+book of Battle
+
+戦いの魔法書
+%%%%
+book of Clouds
+
+雲烟の魔法書
+%%%%
+book of Necromancy
+
+死霊術の魔法書
+%%%%
+book of Callings
+
+招集の魔法書
+%%%%
+book of Maledictions
+
+呪詛の魔法書
+%%%%
+book of Air
+
+大気の魔法書
+%%%%
+book of the Sky
+
+蒼穹の魔法書
+%%%%
+book of the Warp
+
+次元歪曲の魔法書
+%%%%
+# TAG_MAJOR_VERSION == 34
+book of Envenomations
+
+毒害の魔法書
+%%%%
+book of Annihilations
+
+殲滅の魔法書
+%%%%
+book of Unlife
+
+反生命の魔法書
+%%%%
+#if TAG_MAJOR_VERSION == 34
+book of Control
+
+支配の魔法書
+%%%%
+book of Geomancy
+
+地占術の魔法書
+%%%%
+book of the Earth
+
+大地の魔法書
+%%%%
+#if TAG_MAJOR_VERSION == 34
+book of Wizardry
+
+魔術の魔法書
+%%%%
+book of Power
+
+力の魔法書
+%%%%
+book of Cantrips
+
+悪戯の魔法書
+%%%%
+book of Party Tricks
+
+パーティートリックの魔法書
+%%%%
+book of Debilitation
+
+衰弱の魔法書
+%%%%
+book of the Dragon
+
+ドラゴンの魔法書
+%%%%
+book of Burglary
+
+夜盗の魔法書
+%%%%
+book of Dreams
+
+夢幻の魔法書
+%%%%
+book of Alchemy
+
+錬金術の魔法書
+%%%%
+book of Beasts
+
+獣の魔法書
+%%%%
+book of Fixed Level
+
+# 訳不要
+%%%%
+book of Fixed Theme
+
+# 訳不要
+%%%%
+book of Bugginess
+
+# 訳不要
+%%%%

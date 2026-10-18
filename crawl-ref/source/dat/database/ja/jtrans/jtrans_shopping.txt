@@ -1,0 +1,271 @@
+%%%%
+[order]default
+
+通常
+%%%%
+[order]price
+
+価格順
+%%%%
+[order]name
+
+名前順
+%%%%
+[order]type
+
+種類別
+%%%%
+<%s>%c%c%c%c</%s><%s>%4d gold   %s%s</%s>
+
+<%s>%c%c%c%c</%s><%s>%4dゴールド   %s%s</%s>
+%%%%
+(unknown)
+
+(未鑑定)
+%%%%
+Welcome to {shop name}! What would you like to do?
+
+%sにようこそ！ 何をお探しですか？
+%%%%
+<yellow>You have %d gold piece%s.
+
+<yellow>あなたは金貨を%d枚持っている。
+%%%%
+<yellow>You have no gold pieces.
+
+<yellow>あなたは一枚も金貨を持っていない。
+%%%%
+You are short %d gold piece%s for the purchase.
+
+それを買うにはあと%d枚必要だ。
+%%%%
+After the purchase, you will have %d gold piece%s.
+
+それを購入したら残りは%d枚だ。
+%%%%
+[<w>Esc</w>/<w>R-Click</w>] exit  %s  [%s] %s\n[<w>/</w>] sort (%s)%s  %s  [%s] put item on shopping list
+
+[<w>Esc</w>/<w>右クリック</w>] 店を出る %s [%s] %s
+[<w>/</w>] 並び換え %11s%s  %31s  [%s] 購入リストに入れる
+%%%%
+[<w>Esc</w>] exit          %s  [%s] %s\n[<w>/</w>] sort (%s)%s  %s  [%s] put item on shopping list
+
+[<w>Esc</w>] 店を出る            %s [%s] %s
+[<w>/</w>] 並び換え %11s%s  %31s  [%s] 購入リストに入れる
+%%%%
+[<w>/</w>] sort (%s)%s  %s  [%s] put item on shopping list
+
+[<w>/</w>] 並び換え %11s%s  %31s  [%s] 購入リストに入れる
+%%%%
+[<w>!</w>] buy|<w>examine</w> items
+
+[<w>!</w>] 購入モード|<w>解説モード</w>
+%%%%
+[<w>!</w>] <w>buy</w>|examine items
+
+[<w>!</w>] <w>購入モード</w>|解説モード
+%%%%
+examine item
+
+キー選択で解説文表示
+%%%%
+select item for purchase
+
+キー選択で品物を選択
+%%%%
+[<w>Enter</w>] make purchase
+
+[<w>Enter</w>] 購入
+%%%%
+<%s>You don't have enough money.</%s>
+
+<%s>あなたは十分な所持金を持っていない。</%s>
+%%%%
+<%s>Purchase items%s for %d gold? (y/N)</%s>
+
+<%s>%sアイテムを金貨%d枚で購入しますか？ (y/N)</%s>
+%%%%
+in shopping list
+
+購入リストにある
+%%%%
+<%s>I'll put %s outside for you.</%s>
+
+<%s>店主『持ちきれないようだから、店の外に運んでおくよ。』</%s>
+%%%%
+invalid ordering
+
+# for die()
+%%%%
+Help! Non-existent shop.
+
+お助け！ あり得べからざる店だ。
+%%%%
+%s appears to be closed.
+
+%sは閉店しているようだ。
+%%%%
+Thank you for shopping at %s!
+
+店主『%sにまたお越しを！』
+%%%%
+You can access your shopping list by pressing '$'.
+
+'$'を押して購入リストを管理できます。
+%%%%
+[shop]Antique Weapon
+
+骨董武器
+%%%%
+[shop]Antique Armour
+
+骨董防具
+%%%%
+[shop]Weapon
+
+<weapon>
+%%%%
+[shop]Armour
+
+<armour>
+%%%%
+[shop]Jewellery
+
+宝石
+%%%%
+[shop]Gadget
+
+魔道具
+%%%%
+[shop]Book
+
+書物
+%%%%
+[shop]Food
+
+食料品
+%%%%
+[shop]Magic Scroll
+
+魔法の巻物
+%%%%
+[shop]Assorted Antiques
+
+骨董屋
+%%%%
+[shop]Distillery
+
+醸造所
+%%%%
+[shop]General Store
+
+よろず屋
+%%%%
+[shop]Bug
+
+# 訳不要
+%%%%
+[shop]Shoppe
+
+専門店
+%%%%
+[shop]Boutique
+
+特選店
+%%%%
+[shop]Emporium
+
+百貨店
+%%%%
+[shop]Shop
+
+店
+%%%%
+Available shop types:
+
+指定可能な店の種別:
+%%%%
+%s is already on the shopping list.
+
+%sは既に購入リストに載っているようだ。
+%%%%
+%s isn't on shopping list, can't delete it.
+
+%sは購入リストに載っておらず、削除できない。
+%%%%
+Shopping list: replace %dgp %s with cheaper one? (Y/n)
+
+購入リスト管理: %dゴールドで売られている%sを別の安く売られている物と交換しますか？ (Y/n)
+%%%%
+Shopping list: remove %s? (Y/n)
+
+購入リスト管理: %sを削除しますか？ (Y/n)
+%%%%
+Shopping list: removing %s
+
+購入リスト管理: %sを削除しました。
+%%%%
+You now have enough gold to {item list}.
+
+あなたは%sのどれかを購入するのに足る金貨を手にした。
+%%%%
+You now have enough gold to {item}.
+
+あなたは%sを購入するのに足る金貨を手にした。
+%%%%
+%d %s%s, total %d gold
+
+%d%s, 合計%dゴールド
+%%%%
+<w>travel</w>|examine|delete
+
+<w>移動</w>|解説|削除
+%%%%
+travel|<w>examine</w>|delete
+
+移動|<w>解説</w>|削除
+%%%%
+travel|examine|<w>delete</w>
+
+移動|解説|<w>削除</w>
+%%%%
+[<w>?</w>/<w>!</w>] change action</lightgrey>
+
+モード切替 [<w>?</w>/<w>!</w>]</lightgrey>
+%%%%
+%*s%5d gold  %s%s
+
+%*s%5dゴールド  %s%s
+%%%%
+thing
+
+品目
+%%%%
+<yellow>You have %d gp</yellow>
+
+<yellow>あなたは%d枚の金貨を持っている。</yellow>
+%%%%
+You cannot afford %s; travel there anyway? (y/N)
+
+現在%sを買う金がありませんが、それでも移動しますか？ (y/N)
+%%%%
+%s with an entry fee of %d gold pieces.
+
+%sへの入場料は%dゴールドです。
+%%%%
+ERROR: Unable to delete thing from shopping list!
+
+# 訳不要
+%%%%
+Your shopping list is now empty.
+
+購入リストにはもう何も載っていない。
+%%%%
+Invalid menu action type
+
+# for die()
+%%%%
+this level
+
+この階
+%%%%

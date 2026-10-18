@@ -1,21 +1,258 @@
 %%%%
-the Shining One
+Ashenzari
 
-『輝けるもの』は悪との戦いに於いて力ある聖戦の神である。
-信徒やその味方は悪や不浄な生き物を無慈悲にも滅するための様々な祝福が授けられる。
-信徒は決して悪しき性質や不浄な魔術を使ってはならず、
-名誉ある戦いを通して彼らの道徳的卓越性を示すことが求められる。
-この神は撲滅すべき悪の痕跡を人々に試すことで世界の汚れを落とすを信徒に要求する。
-『輝けるもの』の信徒は信心深さを保ったままエリヴィロンかジンに改宗することができる。
+# en:
+#   While it seems inconceivable that the divine could be shackled, Ashenzari is
+#   just that: bound to the sky for eternity, the unbudging god is all-knowing,
+#   all-seeing. Devoted worshippers are allowed to grasp shreds of this knowledge
+#   and foresight, but be warned: to Ashenzari, power and blessing and curse are
+#   all the same thing.
+束縛されているというのは理解し難く思われるが、
+かの神が全知にして全視であるのも天へ自らを永劫に縛り付けているからである。
+敬虔な信徒はこの知識と洞察力をわずかながら得ることができるが、
+アシェンザリにとって力と祝福と呪いは全て同一であることに気をつけなければならない。
+%%%%
+Cheibriados
+
+# en:
+#   Cheibriados is a god of deliberation. Those following Cheibriados travel more
+#   slowly the further they progress in their faith, and are forbidden from using
+#   any means to hasten themselves. In the process of so imitating their god, they
+#   attain perfection of mind and body, and the mysteries of time unfold before
+#   them. Especially devout followers may even momentarily abandon the flow of
+#   time and its needless disturbances.
+ケイブリアドスは緩慢と熟慮の神である。
+ケイブリアドスを崇める者の信仰が高まるにつれて移動は遅くなり、
+そしてどんな手段であっても加速することは禁じられている。
+神の動きを真似ることによって完成された心身を手に入れ、加えて時空の秘蹟が目の前に開かれる。
+中でも特別に敬虔な信徒は一時的に時の流れと不要な干渉から解脱することができる。
+%%%%
+Elyvilon
+
+# en:
+#   Elyvilon the Healer welcomes all kind souls prepared to help others. Those
+#   individuals can expect to gain powerful healing abilities, by which they can
+#   avoid bloodshed. Elyvilon appreciates exploration of the dungeon. Elyvilon's
+#   followers can convert to the Shining One or Zin while keeping some piety.
+癒し手エリヴィロンは他者を助けようとするすべての良き魂を喜んで迎える。
+それぞれの信徒は、流血沙汰を避けるための強力な癒しの力の授与を期待できる。
+エリヴィロンはダンジョンの探索を喜ぶ。
+エリヴィロンの信徒は信心深さをいくらか保ったまま輝けるものやジンに改宗することができる。
+%%%%
+Fedhas
+
+# en:
+#   Fedhas is the god of plant and fungal life. Followers are prevented from
+#   harming any species under Fedhas' protection. In return, Fedhas grants a number
+#   of abilities that promote the growth of plants and fungi. These abilities may
+#   incidentally prove useful to adventurers.
+フェダス・マダシュは植物と菌類の神である。
+フェダスは信者に死体を腐敗させるよう要求をする。
+信者はフェダスの保護下にあるいかなる類を傷つけること、
+そして死体へ影響を与える死霊術の使用を禁止されている。
+その引き換えにフェダスは植物と菌類を成長させる幾つかの能力をもたらす。
+これらの能力は冒険者にとっても有用になるであろう。
+%%%%
+Gozag
+
+# en:
+#   Gozag Ym Sagoz the Greedy teaches that the world belongs to the rich. Those
+#   accepting this principle may exchange their gold for divine assistance.
+#   Followers of Gozag do not earn piety; the only way to impress this god is by
+#   amassing a fortune, and worshippers may request as much assistance as they can
+#   afford. Fortunately, Gozag's worshippers are said to have the touch of gold.
+強欲なるゴザーグ・イム・サゴーズは世界は金持ちのものだと教えている。
+その原則を受け入れる者は金と引き替えに神の助力を得る。
+ゴザーグの信徒は信仰を高めることはない。
+この神の気を引く唯一の手段は財産を蓄積することであり、
+信徒の支払い能力が高ければ高いほど多くの助力を請うことができる。
+幸運なことに、ゴザーグを崇拝する者は金回りがいいと言われている。
+%%%%
+Hepliaklqana
+
+# en:
+#   Hepliaklqana the Forgotten accepts the worship of those who would remember
+#   their forebears, and fight alongside the greatest of them all. Acolytes of
+#   Hepliaklqana sacrifice a small part of their life essence to manifest their
+#   ancestor into the world; as they explore and form new experiences, they will
+#   find themselves able to shape and control their ancestor's memory, eventually
+#   bringing them into the ranks of the mythical heroes.
+忘れられしヘプリアクルカナは先祖たちを心に留めている者の信仰を受け入れ、
+先祖の中でも最も偉大なるものと共に戦う。
+ヘプリアクルカナの信徒は自らの祖霊をこの世に具現化するためにその生命力をわずかに捧げる。
+探索を続けて新たな経験を積んでいくにしたがって信徒は自らが祖霊の記憶を形作り、
+制御し、ついには神話の英雄と肩を並べるまでにできるようになったことを見いだすだろう。
+%%%%
+Jiyva
+
+# en:
+#   Jiyva is the ancient deity of the slimes. Followers are expected to
+#   support the spread and satiation of their fellow slimes by allowing them to
+#   consume items, and are prevented from harming any slimes. Especially favoured
+#   followers will become as shapeless as their god, mutating wildly.
+ジーヴァはスライムの混沌の古代神である。
+信者は同行するスライム達にアイテムを消化させ彼らの拡散と飽食を手助けすることが要求され、
+いかなるスライムを傷つけることを禁止されている。
+ジーヴァはいずれ信者がダンジョンのいかなる場所に残したアイテムまでも消化するようになる。
+敬虔な信者達は彼らの神と同じく不定形になり、
+ジーヴァの影響下では彼らの特性は変化し続けるようになる。
 %%%%
 Kikubaaqudgha
 
+# en:
+#   Kikubaaqudgha is a terrible Demon-God, served by those who wish to indulge in
+#   the powers of death. An evil god, Kikubaaqudgha requires worshippers to cause
+#   the death and destruction of as many creatures as possible. In exchange,
+#   Kikubaaqudgha offers great assistance to the aspiring necromancer: a supply of
+#   useful bodies, knowledge of dark magic, and protection against necromantic
+#   backlash.
 キクバークッグァは恐るべき悪魔の神であり、
 死の力についての知識を探求する者たちが仕えている。キクバークッグァは悪であり、
 キクバークッグァは出来る限り生ける存在の殺戮を要求している。
 %%%%
+Lugonu
+
+# en:
+#   Banished to the chaotic realm of the Abyss, Lugonu the Unformed seeks followers
+#   to spread bloodshed and corruption in the overworld. Those who gain Lugonu's
+#   favour will be granted some of the power of the Abyss itself, allowing them to
+#   call forth eldritch horrors, and even to travel between the overworld and the
+#   Abyss at will.
+アビスの混沌の領域に追放された無形のルゴヌは殺戮と崩壊を地上に広げるための信徒を探している。
+ルゴヌの歓心を得たものはアビスそのものの力を手にし、
+太古のおぞましき恐怖の力を喚起することや地上とアビスとの間を自由に行き来することさえ可能にする。
+%%%%
+Makhleb
+
+# en:
+#   Makhleb the Destroyer is a fearsome deity of bloodshed and mortification of the
+#   flesh. Followers are expected to cleanse others by inflicting suffering and
+#   death on them in Makhleb's name. Dedicated followers may also access the raw
+#   energies and hell-spawned servants of chaos, so that they may better break the
+#   impure world and its false laws for their evil god's glory.
+破壊者マクレブは殺戮と苦行を司る恐るべき神である。
+信徒にはマクレブの名において死と苦しみを与えることで他者を浄化することが求められる。
+献身的な信徒は未加工のエネルギーや地獄から生じた混沌の下僕をも操り、
+雑穢の世界や悪神の栄光のための偽法をより良く切り開くことができるようになるだろう。
+%%%%
+Okawaru
+
+# en:
+#   Okawaru is a dangerous and powerful god of battle. Followers are expected to
+#   constantly prove themselves in combat, and may channel Okawaru's might to
+#   enhance their prowess. Okawaru demands that followers prove themselves by their
+#   own strength alone, and so worshippers are forbidden from gaining allies by any
+#   means. Okawaru pays little heed to easy victories, but will reward worshippers
+#   for heroic feats against mighty foes.
+オカワルは好戦的で強力な戦いの神である。信徒は戦いにおいて有用な数々の力と、
+褒美の品を得る。しかし信者は戦いと死体との献上をもって、
+常に信仰を証明しなくてはならない。オカワルはより強い敵に対する勇敢な偉業を好み、
+楽な勝利には小さな留意となる。その上、公正な戦いは求められず、
+手下に危害を与えることはオカワルの懲罰を受けることになる。
+%%%%
+Qazlal
+
+# en:
+#   Qazlal Stormbringer is a violent god of tempests, who delights in unleashing
+#   the forces of nature against the unsuspecting. Those who invite Qazlal's gaze
+#   will find themselves the eye in a storm of elemental destruction, from which
+#   only their God can protect them. Pious worshippers of Qazlal will gain the
+#   ability to direct and control the destructive might of the storm.
+嵐を呼ぶ者クァズラルは凶暴な嵐の神であり、疑いを知らぬ者に自然の力を解き放つことを好む。
+クァズラルに目を付けられた者は元素の破壊の力のまっただなかにいることに気付くが、
+それはただ神があなたを護ろうとしているだけなのだ。
+クァズラルの敬虔な信徒は嵐の破壊力の制御と指向の能力を得る。
+%%%%
+Ru
+
+# en:
+#   Of all the gods, only Ru opposed creation. Not as folly, but as distraction.
+#   Initiates of Ru can open channels to the powers underlying the visible world by
+#   renouncing the fetters that bind them here. These sacrifices are not made to
+#   Ru, but rather given up freely and permanently. Having made such sacrifices,
+#   initiates will become able to draw upon this immense power to aid themselves,
+#   eventually gaining the ability to unleash its destructive might against their
+#   foes.
+全ての神々の中でルーのみが天地創造に反対した。愚かさゆえではなく、乱心ゆえに。
+ルーの洗礼によって目に見える世界の裏に潜む力の束縛を打ち砕き、それとの接点を開くことが可能となる。
+それらの捧げ物はルーに強制されたものではなく、いつでも行うことができる。
+そのような捧げ物をすることで、洗礼を受けた者はその莫大な力を引き出して自らを癒やしたり、
+さらには敵に向かって破壊的な力を解き放つことをも可能にする。
+%%%%
+Sif Muna
+
+# en:
+#   Sif Muna the Loreminder is a contemplative but powerful deity, served by those
+#   who seek magical knowledge. Followers who triumph over their foes can call upon
+#   the Loreminder for magical power and the ability to cast spells beyond their
+#   magical training. The devout are rewarded with a supply of spellbooks taken
+#   directly from Sif Muna's legendary library.
+知識の守護者シフ・ムーナは瞑想的ではあるが強力な神であり、
+魔法の知識を探求する者たちが仕えている。
+知識の守護者は呪文の詠唱スキルを伸ばすことを評価する。
+%%%%
+the Shining One
+
+# en:
+#   Followers of the Shining One are bound to the code of the honourable warrior,
+#   soldiers in their god's eternal crusade against evil. For forsaking dark magic
+#   and underhanded tactics, the Shining One rewards them and their allies with the
+#   power they need to slay demons and the undead. Especially devout warriors can
+#   even call upon angels in times of need. The Shining One's followers can convert
+#   to Elyvilon or Zin while keeping some piety.
+輝けるものの信徒は神の行う悪に対する永劫の聖戦に臨む名誉ある戦士の掟により束縛されている。
+暗黒の魔術と卑劣な戦術を捨てることに対して輝けるものは報い、
+信徒とその従者に対して悪魔や不死者を討滅するのに必要な力をもたらす。
+とりわけ信仰の篤い戦士は必要に応じて神の御使いを呼ぶことさえできる。
+輝けるものの信徒は信心深さをいくらか保ったままエリヴィロンかジンに改宗することができる。
+%%%%
+Trog
+
+# en:
+#   Trog is an ancient god of anger and violence. Followers are expected to kill in
+#   Trog's name, and especially to slay wizards. In return, worshippers of Trog
+#   gain the ability to go berserk at will in combat, and will be granted
+#   assistance in the form of powerful weapons and mighty allies. Followers are
+#   absolutely forbidden the use of spell magic.
+トログは怒りと暴力を司る古代の神である。信徒はトログの名に於いて殺すことと、
+死体を奉納することを期待される。そして見返りとして戦闘における能力と、
+時には褒美の品を得る。トログは魔術師を憎んでおり、燃える呪文書を見ることを好む。
+信者は魔法の使用が禁じられている。
+%%%%
+Vehumet
+
+# en:
+#   Vehumet is a god of the destructive powers of magic. Followers will gain divine
+#   assistance in commanding the hermetic arts, and the most favoured stand to gain
+#   access to some of the fearsome spells in Vehumet's library. One's devotion to
+#   Vehumet can be proven by the causing of as much carnage and destruction as
+#   possible.
+ヴェフメットは破壊的な魔法の力を司る神である。
+信徒は秘伝の術を駆使するにあたっての神の助けを手にし、
+そして最も寵愛を受けた者は、ヴェフメットの蔵書に記された恐るべき呪文を利用する資格を与えられる。
+ヴェフメットへの献身はあたう限りの虐殺と破壊とを引き起こすことをもって証明することができる。
+%%%%
+Xom
+
+# en:
+#   Xom is a wild and unpredictable god of chaos, who seeks not worshippers but
+#   playthings with which to toy. Many choose to follow Xom in the hope of
+#   receiving fabulous rewards and mighty powers, but Xom is nothing if not
+#   capricious. There is nothing a follower can do to influence Xom's mood.
+ゾムは荒々しく予想の付かない混沌神であり、
+信徒ではなく玩具にするための慰みものを求めている。
+多くの者が強大な力と素晴らしい贈り物を得ることを求めてゾムを信仰するが、
+ゾムは気まぐれそのものである。
+ゾムの機嫌に影響を及ぼすことができた信徒は存在しない。
+%%%%
 Yredelemnul
 
+# en:
+#   Cast down by the good gods eons ago, Yredelemnul seeks to despoil their
+#   creations and chain all living souls within their inexorable grip. Followers who
+#   would conquer in Yredelemnul's name are granted the power to reap an army of the
+#   dead and bind powerful souls into eternal service - provided they can sweep
+#   across the land in a tide as inexorable as their god.
 暗黒のイレデレンヌルは邪悪な神でり、
 死とアンデッドへの支配力を探求している者たちによって崇拝されている。
 信徒は聖なる物と敵対しなければならない。
@@ -25,116 +262,31 @@ Yredelemnul
 人工物は真に生きてはいないが、死や不死に服従してもいないため、
 イレデレンヌルは人工物の破壊もまた善しとする。
 %%%%
-Vehumet
+Cheibriados powers
 
-ヴェフメットは破壊的な魔法の力を司る神である。
-信徒は秘術を駆使する能力を強化する様々な力を得る。そして最も寵愛を受けた者は、
-ヴェフメットの蔵書に記された恐るべき呪文を利用する資格を与えられる。
-ヴェフメットへの献身はあたう限りの虐殺と破壊とを引き起こすことをもって証明することができる。
-%%%%
-Okawaru
-
-オカワルは好戦的で強力な戦いの神である。信徒は戦いにおいて有用な数々の力と、
-褒美の品を得る。しかし信者は戦いと死体との献上をもって、
-常に信仰を証明しなくてはならない。オカワルはより強い敵に対する勇敢な偉業を好み、
-楽な勝利には小さな留意となる。その上、公正な戦いは求められず、
-手下に危害を与えることはオカワルの懲罰を受けることになる。
-%%%%
-Makhleb
-
-破壊者マクレブは混沌と暴力による死とを司る恐るべき神である。
-信者にはマクレブの名において死と苦しみを与えることで他者を洗浄することが求められ、
-新鮮な死体を破壊することでより恩恵を受けられる。
-献身的な信者は未開のエネルギーや地獄から生じた混沌の家来にも接近できるだろう。
-そして彼らは不純な世界や悪神の名誉による偽法を切り開くことをより良くできるようになるだろう。
-%%%%
-Sif Muna
-
-知識の守護者シフ・ムーナは瞑想的ではあるが強力な神であり、
-魔法の知識を探求する者たちが仕えている。
-知識の守護者は呪文の詠唱スキルを伸ばすことを評価する。
-%%%%
-Trog
-
-トログは怒りと暴力を司る古代の神である。信徒はトログの名に於いて殺すことと、
-死体を奉納することを期待される。そして見返りとして戦闘における能力と、
-時には褒美の品を得る。トログは魔術師を憎んでおり、燃える呪文書を見ることを好む。
-信者は魔法の使用が禁じられている。
-%%%%
-Elyvilon
-
-癒し手エリヴィロンは他者を助けようとするすべての良き魂を喜んで迎える。
-個々の信徒は強力な癒しの力の授与を期待できる。癒し手は平和主義の教義を掲げ、
-殺戮を避ける信徒を手助けする。エリヴィロンは武器の破壊を評価し、
-より敬虔な信徒は不浄や悪の武器を見つけて破壊することで信仰値を得る。
-エリヴィロンの信徒は信心深さを保ったまま輝けるものやジンに改宗することができる。
-%%%%
-Lugonu
-
-形なきルゴヌはアビスの混沌を享受している。
-信者は虐殺と破壊を引き起こすために異世界へと送り出され、
-この邪神の歓心を得るためにはこれらを弛まなく続けなければならない。
-%%%%
-Fedhas
-
-フェダス・マダシュは植物と菌類の神である。
-フェダスは信者に死体を腐敗させるよう要求をする。
-信者はフェダスの保護下にあるいかなる類を傷つけること、
-そして死体へ影響を与える死霊術の使用を禁止されている。
-その引き換えにフェダスは植物と菌類を成長させる幾つかの能力をもたらす。
-これらの能力は冒険者にとっても有用になるであろう。
-%%%%
-Cheibriados
-
-ケイブリアドスは時の神秘について静思をする神である。
-この神を信仰することを選んだものは不要に急ぐことを避ける術を学び、
-彼ら自身と他者を緩徐化させ、緩徐することを拒否するものには損害を与える。
-中でも特別に敬虔な信者は一時的に時の流れと不要な干渉から解脱することができる。
-%%%%
-Ashenzari
-
-束縛されているというのは理解し難く思われるが、
-かの神が全知にして全視であるのも天へ自らを永劫に縛り付けているからである。
-敬虔な信徒はこの知識と洞察力をわずかながら得ることが出来るが、
-アシェンザリにとって力と祝福と呪いは全て同一であることを気をつけなければならない。
-%%%%
-Jiyva
-
-ジーヴァはスライムの混沌の古代神である。
-信者は同行するスライム達にアイテムを消化させ彼らの拡散と飽食を手助けすることが要求され、
-いかなるスライムを傷つけることを禁止されている。
-ジーヴァはいずれ信者がダンジョンのいかなる場所に残したアイテムまでも消化するようになる。
-敬虔な信者達は彼らの神と同じく不定形になり、
-ジーヴァの影響下では彼らの特性は変化し続けるようになる。
-%%%%
-Zin powers
-
-ジンは信徒に無知なる集団に説法する能力、
-身体を活性化さえ天恵の力を得る能力を与える。
-活性化の力は様々な苦痛から彼らを守り、さらに飢えをしのぐ栄養を与える。
-その後に信徒は敵対者を一時的に閉じ込める能力を得る。最終的に信徒は聖域を作り、
-一時的な安全を得ることが可能となる。
-信仰心が増すにつれ信徒は変異からの保護を得る。時々、
-ジンは信徒の生命を守るために直接介在するかもしれない。
-%%%%
-Xom powers
-
-ゾムを信仰することは危険な生き方である。
-良い気分のゾムは贈り物をあなたに浴びせるだろうが、また別の場合には、
-この気まぐれの神は”少しスパイスを加えよう”と決めて、
-あなたを悲運に送り込むかもしれない。
-もしあなたが力量を示すことができるならそれで良い。そうでなければ、ああ、
-次のおもちゃが見えるだろう...
-%%%%
-Vehumet powers
-
-ヴェフメットの信徒は殺害を行うことで魔法の力を素早く回復する。信仰するにつれ、
-攻撃呪文への強化を得る。最初に攻撃呪文の詠唱を助け、
-その次に妖術の射程範囲を伸長する。ヴェフメットは信仰が深まるにつれ、
-信徒にさらに強力な破壊の呪文の知識を下賜する。
+# en:
+#   Followers of Cheibriados move more slowly as they gain favour. As they move
+#   slower, worshippers of Cheibriados are granted increased attributes.
+#   Cheibriados rewards the faithful with the power to slow other creatures and the
+#   power to briefly distort the flow of time. Devout worshippers will gain the
+#   ability to inflict great harm on all those who move more quickly than they do,
+#   and finally the ability to step out of the flow of time entirely.
+ケイブリアドスの信徒は歓心を得るにつれよりゆっくりと移動するようになる。そして、
+彼らよりも素早い生物を殺すことで歓心を得る。あまり素早く動いたり、
+加速の魔術のかかった武器の使用は不興を買う。
+ケイブリアドスは信仰の報酬として新陳代謝を遅くし、他者を遅くする力、
+時の流れを歪める力、より素早く動く者を痛めつける力、
+そしてついには完全に時間の流れから抜け出す能力を授ける。
 %%%%
 Elyvilon powers
 
+# en:
+#   The Healer offers followers a number of means to heal themselves from damage
+#   and other ill effects. Followers may also attempt to pacify hostile monsters
+#   and turn them neutral. Elyvilon may directly intervene to save a follower's
+#   life, and if there has been no such intervention recently, is sure to prevent
+#   a killing blow against especially pious followers. Elyvilon may also
+#   occasionally protect the follower's allies from death.
 癒し手は信徒に自身の損傷やその他の悪い効果を癒す方法を提示する。
 エリヴィロンは敵対する怪物を中立に変えるために癒すことを許可する。
 エリヴィロンは信徒の生命を守るために直接介在するかもしれない。
@@ -142,6 +294,15 @@ Elyvilon powers
 %%%%
 Fedhas powers
 
+# en:
+#   Plants and fungi will not attack Fedhas' worshippers without provocation.
+#   Worshippers may walk through plants or fungi, and even fire missiles or spells
+#   through them without causing harm. Fedhas grants powers to temporarily grow a
+#   menagerie of plant allies whose strength and duration increase with Invocations
+#   skill. Worshippers may grow a protective wall of briar patches as well as
+#   ballistomycetes that fire damaging spores whose explosions confuse living
+#   creatures. Devout followers can overgrow a stretch of solid terrain with a
+#   cluster of plant allies or even summon a mighty oklob plant.
 植物や菌類は憤慨させなければフェダスの信徒に攻撃することはない。
 フェダスの信徒は植物や菌類を通り抜けることができ、飛び道具や呪文でさえ、
 それらに危害を加えずに発射することができる。
@@ -150,12 +311,213 @@ Fedhas powers
 死体から破裂する胞子を生成することができるようになる。
 さらに彼らは陽光や豪雨さえも引き起こす、天候の制御能力が与えられる。
 %%%%
-Cheibriados powers
+Hepliaklqana powers
 
-ケイブリアドスの信徒は歓心を得るにつれよりゆっくりと移動するようになる。そして、
-彼らよりも素早い生物を殺すことで歓心を得る。あまり素早く動いたり、
-加速の魔術のかかった武器の使用は不興を買う。
-ケイブリアドスは信仰の報酬として新陳代謝を遅くし、他者を遅くする力、
-時の流れを歪める力、より素早く動く者を痛めつける力、
-そしてついには完全に時間の流れから抜け出す能力を授ける。
+# en:
+#   Hepliaklqana's worshippers are served by a guardian formed from a part of their
+#   life essence, in the shape of their greatest ancestor. This ancestor is at
+#   first remembered as they were at the start of their fabled adventures, but will
+#   advance in skill as their descendant does. Hepliaklqana always allows followers
+#   to recall their ancestor to their side, and, even if the ancestor is destroyed,
+#   Hepliaklqana will call it forth again not long after. Further advancement in
+#   Hepliaklqana's service allows worshippers to restore and strengthen their
+#   ancestor, to swap them with other creatures, and to choose how to remember
+#   their life's talents.
+ヘプリアクルカナの信徒にはその生命力の一部から形成された、偉大なる祖霊の姿をした守護者が付き従う。
+この祖霊はまず最初にその素晴らしい冒険の始まりの時の姿のように思い起こされるが、
+子孫が強くなるにつれて祖霊の持つスキルも強くなっていく。
+ヘプリアクルカナは常に信徒に対しそのそばに祖霊を招来し、
+たとえ祖霊が倒されようとも、そう長くない時間が過ぎれば再び祖霊を呼び起こす。
+ヘプリアクルカナの恩寵がいよいよ高まると、信徒は祖霊を回復するとともに強化することができたり、
+他のモンスターとの位置を交換させたり、祖霊の持っていた能力をどのように思い起こすかを選ぶことができるようになる。
+%%%%
+the Shining One powers
+
+# en:
+#   Followers of the Shining One are surrounded by a halo that reveals their
+#   enemies to them. Followers will gain power by killing evil beings, and with
+#   growing piety their life force will be protected. The Shining One will keep
+#   summoned and charmed allies on their side longer, should the allies prove
+#   worthy of the crusade. Followers will gain use of a divine shield to protect
+#   them in battle. Later, they can channel blasts of cleansing flame that are
+#   particularly damaging to unholy beings, and can call upon powerful divine
+#   beings as temporary allies. Highly pious followers may request the Shining
+#   One's blessing upon a weapon. The Shining One may occasionally directly
+#   intervene to save a follower's life.
+輝けるものの信徒は敵の存在を見破る光輪に包まれている。
+信徒は邪悪なる存在を殺すことにより力を手にし、信仰が高まるにつれてその生命力が守られるようになる。
+召喚され魅了された仲間が聖戦の価値を証明したならば、輝けるものはその存在を長く保てるようにする。
+信徒は戦闘中に自身を守る神聖なる盾を使うことができる。
+そして、信徒は不浄なる存在に特に害を与える浄化の炎を繰り出すことや、強力な神聖なる存在を一時的な味方として呼び出す事ができる。
+非常に敬虔な信徒は輝けるものの祝福をその武器に受けることができる。
+輝けるものは信徒の生命を守るために直接介入することがある。
+%%%%
+Uskayaw powers
+
+# en:
+#   Worshippers of Uskayaw can stomp to damage foes around them, and rapidly move
+#   through a line of creatures while confusing them. When a worshipper's dance
+#   reaches a certain point, Uskayaw will immediately stop all foes so that the
+#   dancer may take a solo. As the dance continues, Uskayaw will link the emotions
+#   of foes, forcing them to share their pain. The duration of these effects will
+#   increase with Invocations skill, and as long as the intensity of the dance is
+#   sufficient they may be repeated after a short time. If the dance continues
+#   further, Uskayaw allows worshippers to end it by melding with and then
+#   violently exploding from a foe, killing it instantly.
+ウスカヤーの信徒は足踏みして周囲の敵にダメージを与えたり、敵の群れの間を素早く動いて混乱させたりできる。
+信徒の踊りが佳境に達すると、ウスカヤーは踊り手を独演させるべく敵の動きをただちに止めさせる。
+踊りが続くにつれて、ウスカヤーは敵の感情を同化させ、痛みを分け合うことを強いる。
+これらの効果の持続時間は祈祷スキルが高まるにつれて増加し、踊りの威力が十分であれば短時間のうちに繰り返すことができる。
+踊りがさらに長く続くと、ウスカヤーは信徒に敵と一体化して猛烈に爆発させ、即死させる能力を与える。
+%%%%
+Vehumet powers
+
+# en:
+#   Worshippers of Vehumet will quickly be able to recover their magical energy
+#   upon killing beings. As they gain favour, they will also gain enhancements to
+#   their destructive spells — first assistance in casting such spells and then
+#   increased range for conjurations. Vehumet will offer followers the knowledge of
+#   increasingly powerful destructive spells as they gain piety.
+ヴェフメットの信徒は殺害を行うことで魔法の力を急速に回復する。
+信仰が高まるにつれて攻撃呪文はさらなる強化を得る。まず攻撃呪文の詠唱を助け、そして妖術の射程範囲を伸ばす。
+ヴェフメットは信仰が深まるにつれ、信徒にさらに強力な破壊の呪文の知識を下賜する提案を行う。
+%%%%
+Xom powers
+
+# en:
+#   To worship Xom is to live riskily. In a good mood Xom may shower worshippers
+#   with gifts, while at other times this capricious god could decide to “spice
+#   things up a little” and send worshippers to their doom. If such toys of Xom
+#   prove to be interesting, so much the better; if not, well, there'll be other
+#   playthings...
+ゾムを信仰することは危険な生き方である。
+良い気分の時のゾムは贈り物を信徒に浴びせるだろうが、また別の場合には、この気まぐれの神は“少しスパイスを加えよう”と決めて、信徒を悲運に送り込むかもしれない。
+もしそのようなゾムのおもちゃが関心をつなぎ止めていられるならそれでよい。そうでなければ、ああ、次のおもちゃが用意されることだろう……
+%%%%
+Zin powers
+
+# en:
+#   Zin grants followers the ability to preach to the unenlightened masses, and
+#   powers to vitalise their bodies, protecting them from various afflictions.
+#   Later, followers gain the ability to imprison their foes temporarily. Followers
+#   can eventually find temporary safety in a divine refuge. As piety grows,
+#   followers will be protected from mutation and the Hells, and Zin may even
+#   occasionally directly intervene to save a follower's life.
+ジンは信徒に無知なる集団に説法する能力、
+身体を活性化さえ天恵の力を得る能力を与える。
+活性化の力は様々な苦痛から彼らを守り、さらに飢えをしのぐ栄養を与える。
+その後に信徒は敵対者を一時的に閉じ込める能力を得る。最終的に信徒は聖域を作り、
+一時的な安全を得ることが可能となる。
+信仰心が増すにつれ信徒は変異からの保護を得る。時々、
+ジンは信徒の生命を守るために直接介在するかもしれない。
+%%%%
+Beogh wrath
+
+# en:
+#   Blasphemers against the word of Beogh find themselves assaulted by waves of
+#   orcish warriors, or by dancing electric weapons. Beogh may also simply smite
+#   such blasphemers – and when smiting true sinners, Beogh has a heavy hand
+#   indeed! Those who still worship Beogh will also find their followers regularly
+#   deserting them.
+ベオの御言葉を冒涜する者にはオークの戦士の軍勢や電気を帯びた宙を舞う武器によって襲われる。
+ベオはさらに冒涜者に対し打擲の一撃を振るう。真に罪の重い罪人の場合、ベオの打撃は強烈なものとなるだろう！
+彼らがまだベオを信仰している場合、その従者たちは彼らを見捨てる。
+%%%%
+Hepliaklqana wrath
+
+# en:
+#   Hepliaklqana believes that the only reasonable punishment for turning one's
+#   back on the path of memory is to be denied its use. All new experience is
+#   denied to the unfortunate apostate, until Hepliaklqana decides they have
+#   been punished enough. The life essence sacrificed to manifest an ancestor will
+#   not be returned until Hepliaklqana is mollified, and this will not be quick:
+#   unlike some, Hepliaklqana has a long memory.
+ヘプリアクルカナは、記憶の流れに背を向けることに対する正当な罰はそれを用いることを拒否されることのみであると信じている。
+不運なる背教者は、ヘプリアクルカナがもう十分罰を受けたと考えるまでの間新たに経験値を得ることはなくなる。
+祖霊を具現化させるのに要した生命力はヘプリアクルカナの怒りが落ちつくまで戻ることはなく、その期間は短くはない。
+他の神と異なり、ヘプリアクルカナは物覚えがよい。
+%%%%
+Lugonu wrath
+
+# en:
+#   Lugonu's ire renders the barrier between reality and the Abyss weak and
+#   permeable. Space warps, hurling victims across the dungeon, or even directly
+#   into the Abyss. Lugonu also reaches out and sends the chaotic inhabitants of
+#   the Abyss against victims, with veteran adventurers facing the greatest horrors
+#   of the Abyss. Lugonu does not forgive easily, and will not allow ex-worshippers
+#   to rejoin the fold while Lugonu's wrath still lasts.
+ルゴヌの憤りは現実とアビスの間に弱く透過性のある膜を張る。
+時空は歪曲し、犠牲者は迷宮の至る所に投げ出され、さらには直接アビスに放り込まれることさえもある。
+さらにルゴヌは外に出でて混沌なるアビスの住人どもをその獲物に送り込む。
+熟練した冒険者はアビスのもっとも強大な恐怖の存在と対面することとなる。
+ルゴヌは簡単には許しはせず、ルゴヌの怒りが続いている間は元信徒が再び入信する事を許可しない。
+%%%%
+Makhleb wrath
+
+# en:
+#   Those who invite the fury of Makhleb are buried in demons and destruction.
+#   The greatest punishments are reserved for the strongest sinners; crystal spears
+#   and Executioners are hurled with abandon only at those Makhleb finds truly
+#   deserving!
+マクレブの怒りを招いた者は悪魔と破壊のまっただなかに身を置かれることとなる。
+最も重い懲罰が最も罪深い者のために取っておかれている:
+マクレブが真に認めた者に限り水晶の槍や処刑の悪魔が思うさま繰り出される！
+%%%%
+Okawaru wrath
+
+# en:
+#   Okawaru's most vicious warriors are sent against rebellious servants. Novices
+#   find themselves swarmed by packs of ogres and gnolls, while champions are
+#   surrounded by titans and elvish blademasters.
+オカワルの最も危険な戦士が裏切り者の信徒に送り込まれる。
+初級冒険者はオーガやノールの群れ、熟練者はタイタンやエルフの剣豪たちによって囲まれてしまうだろう。
+%%%%
+Qazlal wrath
+
+# en:
+#   Qazlal's wrath is swift and unmistakable. Sinners are stripped of their
+#   resistances and assaulted by furious elemental creatures, and Qazlal will
+#   create mighty thunderclaps to alert their foes.
+クァズラルの怒りは素早く、過つことがない。
+罪人はその耐性を除去され、怒れる精霊に襲いかかられ、クァズラルが発する激しい雷鳴により敵を引き寄せる。
+%%%%
+Ru wrath
+
+# en:
+#   Those who leave Ru's service will not receive any further punishment; however,
+#   their piety will be lost even upon rejoining, and their sacrifices remain
+#   forever.
+ルーの恩恵から離れたものは懲罰を受けることはない。
+しかし、再入信したとしても信仰値は失われてしまい、捧げたものも永遠に返ってこない。
+%%%%
+Sif Muna wrath
+
+# en:
+#   Those in Sif Muna's ill graces find the very forces of magic rebelling against
+#   them. They are confused and stupefied, their magical reserves drained, their
+#   enchantments unravelled. Casting spells, too, becomes unreliable – and even
+#   dangerous.
+シフ・ムーナの悪意に包まれたものはたちまち魔法の力に牙を剥かれることとなる。
+対象者は混乱したり知性が鈍ったりし、魔力は吸い取られ、魔法の効果は解かれる。
+魔法を唱えることに頼れなくなるばかりか、危険でさえある。
+%%%%
+Vehumet wrath
+
+# en:
+#   Those that anger Vehumet find destruction amply heaped upon them. Novices are
+#   struck by flame and frost; archmages by crystal spears and firestorms. Their
+#   own conjurations, too, are wont to misfire at the worst possible moments.
+ヴェフメットを怒らせた者にはたちまち破壊の力が殺到する。
+初級冒険者は火炎や冷気に打たれ、大魔道師は水晶槍や炎の嵐を浴びる。
+自身が放つ妖術もまた、最悪の状況で失敗するといったことが常となるだろう。
+%%%%
+Xom wrath
+
+# en:
+#   Unfaithful ex-followers will find themselves suffering through Xom's bad moods
+#   for so long as Xom can be bothered to remember about them. Still, Xom's caprice
+#   remains; the unfaithful are rewarded just as the faithful are punished.
+不忠義なる元信者はゾムがそれについて忘れてしまうまでゾムの不機嫌に苦しめ続けられる。
+しかしゾムの気まぐれは依然としてそのままであり、
+忠実なる者が罰せられるのと同じ程度に、不忠義者が褒美を授かることがある。
 %%%%

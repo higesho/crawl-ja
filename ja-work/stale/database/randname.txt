@@ -1,0 +1,2885 @@
+%%%%
+weapon
+
+# old en (ja19):
+#   weapon specific keywords (see rand_wpn.txt)
+#   general keywords (see rand_all.txt)
+#   hardcoded keywords
+# old ja (ja19):
+#   @_power_or_anger_@の
+#   
+#   @_battle_or_war_@の
+#   
+#   w:1
+#   @player_doom@の
+#   
+#   w:9
+#   @death_or_doom@の
+#   
+#   w:16
+#   @_strategy_or_justice_@の
+#   
+#   w:4
+#   @_people_name_@の
+#   
+#   w:8
+#   @_weapon_animal_@の
+#   
+#   w:2
+#   @_plant_name_@の
+#   
+#   w:7
+#   @_evil_stuff_@の
+#   
+#   w:5
+#   @_catastrophe_name_@の
+#   
+#   w:8
+#   @_chaos_name_@の
+#   
+#   w:8
+#   @_balance_or_order_@の
+#   
+#   @_economics_or_politics_@の
+#   
+#   w:8
+#   @branch_name@の
+#   
+#   w:7
+#   @_place_name_@の
+#   
+#   w:5
+#   @_discomfort_weapon_@の
+#   
+#   w:3
+#   @_mental_illness_weapon_@の
+#   
+#   w:4
+#   @_item_name_@の
+#   
+#   w:1
+#   @_magic_name_@の
+#   
+#   w:5
+#   @_substance_name_@の
+#   
+#   w:7
+#   @_science_name_@の
+#   
+#   w:5
+#   @other_weapon_name@の
+#   
+#   w:30
+#   『@_plain_weapon_name_@』
+#   
+#   w:5
+#   @_time_name_@の
+#   
+#   w:5
+#   @_sky_or_light_@の
+#   
+#   w:18
+#   @_virtue_or_vice_@の
+#   
+#   @_number_or_qualifier_@@_thing_names_@の
+#   
+#   w:5
+#   @_destiny_name_@の
+#   
+#   w:9
+#   @god_name@の@divine_esteem@の
+#   
+#   w:1
+#   @god_name@の
+# old en (ja16):
+#   weapon specific keywords (see rand_wpn.txt)
+#   general keywords (see rand_all.txt)
+#   hardcoded keywords
+# old ja (ja16):
+#   @_power_or_anger_@の
+#   
+#   @_battle_or_war_@の
+#   
+#   w:1
+#   @player_doom@の
+#   
+#   w:9
+#   @death_or_doom@の
+#   
+#   w:16
+#   @_strategy_or_justice_@の
+#   
+#   w:4
+#   @_people_name_@の
+#   
+#   w:8
+#   @_weapon_animal_@の
+#   
+#   w:2
+#   @_plant_name_@の
+#   
+#   w:7
+#   @_evil_stuff_@の
+#   
+#   w:5
+#   @_catastrophe_name_@の
+#   
+#   w:8
+#   @_chaos_name_@の
+#   
+#   w:8
+#   @_balance_or_order_@の
+#   
+#   @_economics_or_politics_@の
+#   
+#   w:8
+#   @branch_name@の
+#   
+#   w:7
+#   @_place_name_@の
+#   
+#   w:5
+#   @_discomfort_weapon_@の
+#   
+#   w:3
+#   @_mental_illness_weapon_@の
+#   
+#   w:4
+#   @_item_name_@の
+#   
+#   w:1
+#   @_magic_name_@の
+#   
+#   w:5
+#   @_substance_name_@の
+#   
+#   w:7
+#   @_science_name_@の
+#   
+#   w:5
+#   @other_weapon_name@の
+#   
+#   w:30
+#   『@_plain_weapon_name_@』
+#   
+#   w:5
+#   @_time_name_@の
+#   
+#   w:5
+#   @_sky_or_light_@の
+#   
+#   w:18
+#   @_virtue_or_vice_@の
+#   
+#   @_number_or_qualifier_@@_thing_names_@の
+#   
+#   w:5
+#   @_destiny_name_@の
+#   
+#   w:9
+#   @god_name@の@divine_esteem@の
+#   
+#   w:1
+#   @god_name@の
+
+of @_power_or_anger_@
+
+of @_battle_or_war_@
+
+w:1
+of @player_doom@
+
+w:8
+of @death_or_doom@
+
+w:1
+of @_verbing_@ @death_or_doom@
+
+w:6
+of @_adjective_@ @_strategy_or_justice_@
+
+of @_strategy_or_justice_@
+
+w:3
+of the @_verbing_@ @_people_name_@
+
+w:3
+of the @_people_name_@
+
+w:2
+of the @_verbing_@ @_diviner_name_@
+
+w:5
+of the @_verbing_@ @_weapon_animal_@
+
+w:5
+of the @_weapon_animal_@
+
+w:2
+of the @_plant_name_@
+
+w:7
+of @_evil_stuff_@
+
+w:5
+of @_catastrophe_name_@
+
+w:8
+of @_chaos_name_@
+
+w:8
+of @_balance_or_order_@
+
+of @_economics_or_politics_@
+
+w:8
+of @branch_name@
+
+w:7
+of @_place_name_@
+
+w:5
+of @_discomfort_weapon_@
+
+w:4
+of the @_item_name_@
+
+w:1
+of @_magic_name_@
+
+w:5
+of @_substance_name_@
+
+w:7
+of @_science_name_@
+
+w:5
+of @other_weapon_name@
+
+w:30
+"@_plain_weapon_name_@"
+
+w:5
+of @_time_name_@
+
+w:5
+of @_sky_or_light_@
+
+w:18
+of @_virtue_or_vice_@
+
+of @_number_or_qualifier_@ @_thing_names_@
+
+w:5
+of @_destiny_name_@
+
+w:9
+of @god_name_possessive@ @divine_esteem@
+
+w:4
+of the @_verbing_@ Gods
+
+w:4
+of the @_adjective_@ God
+
+w:2
+of @god_name@, @_verbing_@
+
+w:1
+of @god_name@
+%%%%
+armour
+
+# old en (ja19):
+#   armour specific keywords (see rand_arm.txt)
+#   weapon specific keywords (see rand_arm.txt)
+#   general keywords (see rand_all.txt)
+#   hardcoded keywords
+# old ja (ja19):
+#   @_armour_name_shielding_@の
+#   
+#   w:8
+#   @_armour_property_name_@の
+#   
+#   w:20
+#   @_wacky_armour_name_@の
+#   
+#   @_profession_name_@の
+#   
+#   @_politics_name_armour_@の
+#   
+#   w:3
+#   @_weather_name_@の
+#   
+#   w:17
+#   @_good_or_divine_@の
+#   
+#   w:5
+#   @_celestial_bodies_@の
+#   
+#   w:5
+#   @_instrument_name_@の
+#   
+#   w:20
+#   @_armour_animal_@の
+#   
+#   w:3
+#   @_flower_name_@の
+#   
+#   w:3
+#   @_critter_name_@の
+#   
+#   w:5
+#   @_evil_being_@の
+#   
+#   w:5
+#   @_mental_illness_armour_@の
+#   
+#   @_discomfort_and_inaction_@の
+#   
+#   @_game_name_@の
+#   
+#   w:15
+#   @_other_armour_name_@の
+#   
+#   w:1
+#   『@_plain_armour_name_@』
+#   
+#   w:25
+#   @_philosophy_or_science_@の
+#   
+#   w:15
+#   @_place_name_@の
+#   
+#   @_time_name_@の
+#   
+#   w:8
+#   @_sky_or_light_@の
+#   
+#   w:30
+#   @_virtue_or_vice_@の
+#   
+#   w:16
+#   @_number_or_qualifier_@@_thing_names_@の
+#   
+#   w:20
+#   @god_name@の@divine_esteem@の
+#   
+#   w:1
+#   @god_name@の
+#   
+#   w:15
+#   @branch_name@の
+# old en (ja16):
+#   armour specific keywords (see rand_arm.txt)
+#   weapon specific keywords (see rand_arm.txt)
+#   general keywords (see rand_all.txt)
+#   hardcoded keywords
+# old ja (ja16):
+#   @_armour_name_shielding_@の
+#   
+#   w:8
+#   @_armour_property_name_@の
+#   
+#   w:20
+#   @_wacky_armour_name_@の
+#   
+#   @_profession_name_@の
+#   
+#   @_politics_name_armour_@の
+#   
+#   w:3
+#   @_weather_name_@の
+#   
+#   w:17
+#   @_good_or_divine_@の
+#   
+#   w:5
+#   @_celestial_bodies_@の
+#   
+#   w:5
+#   @_instrument_name_@の
+#   
+#   w:20
+#   @_armour_animal_@の
+#   
+#   w:3
+#   @_flower_name_@の
+#   
+#   w:3
+#   @_critter_name_@の
+#   
+#   w:5
+#   @_evil_being_@の
+#   
+#   w:5
+#   @_mental_illness_armour_@の
+#   
+#   @_discomfort_and_inaction_@の
+#   
+#   @_game_name_@の
+#   
+#   w:15
+#   @_other_armour_name_@の
+#   
+#   w:1
+#   『@_plain_armour_name_@』
+#   
+#   w:25
+#   @_philosophy_or_science_@の
+#   
+#   w:15
+#   @_place_name_@の
+#   
+#   @_time_name_@の
+#   
+#   w:8
+#   @_sky_or_light_@の
+#   
+#   w:30
+#   @_virtue_or_vice_@の
+#   
+#   w:16
+#   @_number_or_qualifier_@@_thing_names_@の
+#   
+#   w:20
+#   @god_name@の@divine_esteem@の
+#   
+#   w:1
+#   @god_name@の
+#   
+#   w:15
+#   @branch_name@の
+
+of @_armour_name_shielding_@
+
+w:8
+of @_armour_property_name_@
+
+w:20
+of @_wacky_armour_name_@
+
+of the @_profession_name_@
+
+w:5
+of the @_adjective_@ @_profession_name_@
+of @_politics_name_armour_@
+
+w:3
+of @_weather_name_@
+
+w:9
+of @_good_or_divine_@
+
+w:9
+of @_adjective_@ @_good_or_divine_@
+
+w:5
+of the @_celestial_bodies_@
+
+w:5
+of @_instrument_name_@
+
+w:20
+of the @_armour_animal_@
+
+w:1
+of the @_adjective_@ @_armour_animal_@
+
+w:3
+of @_flower_name_@
+
+w:1
+of the @_fruit_name_@
+
+w:2
+of the @_critter_name_@
+
+w:1
+of the @_adjective_@ @_critter_name_@
+
+w:5
+of @_evil_being_@
+
+of @_discomfort_and_inaction_@
+
+of @_game_name_@
+
+w:15
+of @_other_armour_name_@
+
+w:2
+"@_plain_armour_name_@"
+
+w:25
+of @_philosophy_or_science_@
+
+w:15
+of @_place_name_@
+
+of @_time_name_@
+
+w:8
+of @_sky_or_light_@
+
+w:30
+of @_virtue_or_vice_@
+
+w:6
+of @_number_or_qualifier_@ @_verbing_@ @_thing_names_@
+
+of @_number_or_qualifier_@ @_thing_names_@
+
+w:20
+of @god_name_possessive@ @divine_esteem@
+
+w:4
+of the @_verbing_@ Gods
+
+w:4
+of the @_adjective_@ God
+
+w:2
+of @god_name@, @_verbing_@
+
+w:1
+of @god_name@
+
+w:15
+of @branch_name@
+%%%%
+jewellery
+
+# old en (ja19):
+#   jewellery specials (see rand_all.txt)
+#   as defined for weapons (see rand_wpn.txt)
+#   as defined for armour (see rand_arm.txt)
+#   same for all three types (see rand_all.txt)
+# old ja (ja19):
+#   w:3
+#   @_jewellery_animal_@の
+#   
+#   @_jewellery_special_name_@の
+#   
+#   @_suspicion_name_@の
+#   
+#   @_people_name_@の
+#   
+#   w:17
+#   @_balance_or_order_@の
+#   
+#   w:14
+#   @_philosophy_name_@の
+#   
+#   w:7
+#   @_mental_illness_weapon_@の
+#   
+#   @other_weapon_name@の
+#   
+#   w:20
+#   @_armour_animal_@の
+#   
+#   w:3
+#   @_flower_name_@の
+#   
+#   w:5
+#   @_evil_being_@の
+#   
+#   w:20
+#   @_good_or_divine_@の
+#   
+#   w:12
+#   @_politics_name_armour_@の
+#   
+#   w:1
+#   『@_plain_armour_name_@』
+#   
+#   w:13
+#   @_time_name_@の
+#   
+#   @_sky_or_light_@の
+#   
+#   w:20
+#   @god_name@の@divine_esteem@の
+#   
+#   ゾムの@_xom_esteem_@の
+#   
+#   w:7
+#   @_virtue_name_@の
+#   
+#   w:13
+#   @_vice_name_@の
+#   
+#   w:20
+#   @_number_or_qualifier_@@_thing_names_@の
+# old en (ja16):
+#   jewellery specials (see rand_all.txt)
+#   as defined for weapons (see rand_wpn.txt)
+#   as defined for armour (see rand_arm.txt)
+#   same for all three types (see rand_all.txt)
+# old ja (ja16):
+#   w:3
+#   @_jewellery_animal_@の
+#   
+#   @_jewellery_special_name_@の
+#   
+#   @_suspicion_name_@の
+#   
+#   @_people_name_@の
+#   
+#   w:17
+#   @_balance_or_order_@の
+#   
+#   w:14
+#   @_philosophy_name_@の
+#   
+#   w:7
+#   @_mental_illness_weapon_@の
+#   
+#   @other_weapon_name@の
+#   
+#   w:20
+#   @_armour_animal_@の
+#   
+#   w:3
+#   @_flower_name_@の
+#   
+#   w:5
+#   @_evil_being_@の
+#   
+#   w:20
+#   @_good_or_divine_@の
+#   
+#   w:12
+#   @_politics_name_armour_@の
+#   
+#   w:1
+#   『@_plain_armour_name_@』
+#   
+#   w:13
+#   @_time_name_@の
+#   
+#   @_sky_or_light_@の
+#   
+#   w:20
+#   @god_name@の@divine_esteem@の
+#   
+#   ゾムの@_xom_esteem_@の
+#   
+#   w:7
+#   @_virtue_name_@の
+#   
+#   w:13
+#   @_vice_name_@の
+#   
+#   w:20
+#   @_number_or_qualifier_@@_thing_names_@の
+
+w:3
+of the @_jewellery_animal_@
+
+of @_jewellery_special_name_@
+
+of @_suspicion_name_@
+
+of the @_people_name_@
+
+w:5
+of the @_verbing_@ @_people_name_@
+
+w:17
+of @_balance_or_order_@
+
+w:14
+of @_philosophy_name_@
+
+of @other_weapon_name@
+
+w:20
+of the @_armour_animal_@
+
+w:3
+of @_flower_name_@
+
+w:3
+of the @_adjective_@ @_fruit_name_@
+
+w:5
+of @_evil_being_@
+
+w:20
+of @_good_or_divine_@
+
+w:12
+of @_politics_name_armour_@
+
+w:2
+"@_plain_armour_name_@"
+
+w:13
+of @_time_name_@
+
+of @_sky_or_light_@
+
+w:20
+of @god_name_possessive@ @divine_esteem@
+
+w:4
+of the @_verbing_@ Gods
+
+w:4
+of the @_adjective_@ God
+
+w:2
+of @god_name@, @_verbing_@
+
+of Xom's @_xom_esteem_@
+
+w:7
+of @_virtue_name_@
+
+w:13
+of @_vice_name_@
+
+of @_number_or_qualifier_@ @_thing_names_@
+
+of @_number_or_qualifier_@ @_verbing_@ @_thing_names_@
+%%%%
+Trog weapon
+
+# old en (ja19):
+#   names containing battle and death are more likely
+# old ja (ja19):
+#   w:25
+#   @_power_or_anger_@の
+#   
+#   w:25
+#   @_battle_or_war_@の
+#   
+#   w:25
+#   @death_or_doom@の
+#   
+#   w:7
+#   @_strategy_name_@の
+#   
+#   w:15
+#   @_justice_name_@の
+#   
+#   w:30
+#   @_virtue_or_vice_@の
+#   
+#   w:1
+#   トログの
+#   
+#   w:20
+#   トログの@divine_esteem@の
+#   
+#   トログの@_anger_name_@の
+#   
+#   w:15
+#   @_weapon_animal_@の
+#   
+#   w:15
+#   @_evil_stuff_@の
+#   
+#   @_catastrophe_name_@の
+#   
+#   w:15
+#   @_chaos_name_@の
+#   
+#   w:20
+#   @_balance_or_order_@の
+#   
+#   w:20
+#   @_economics_or_politics_@の
+#   
+#   w:15
+#   @branch_name@の
+#   
+#   w:15
+#   @_place_name_@の
+#   
+#   w:15
+#   @_time_name_@の
+#   
+#   @_sky_or_light_@の
+#   
+#   w:20
+#   @_number_or_qualifier_@@_thing_names_@の
+#   
+#   @_discomfort_weapon_@の
+#   
+#   @_mental_illness_weapon_@の
+#   
+#   @_item_name_@の
+#   
+#   w:15
+#   @_philosophy_name_@の
+#   
+#   @_science_name_@の
+#   
+#   @other_weapon_name@の
+#   
+#   @_monster_name_@@killer_name@の
+#   
+#   w:30
+#   『@_plain_weapon_name_@』
+# old en (ja16):
+#   names containing battle and death are more likely
+# old ja (ja16):
+#   w:25
+#   @_power_or_anger_@の
+#   
+#   w:25
+#   @_battle_or_war_@の
+#   
+#   w:25
+#   @death_or_doom@の
+#   
+#   w:7
+#   @_strategy_name_@の
+#   
+#   w:15
+#   @_justice_name_@の
+#   
+#   w:30
+#   @_virtue_or_vice_@の
+#   
+#   w:1
+#   トログの
+#   
+#   w:20
+#   トログの@divine_esteem@の
+#   
+#   トログの@_anger_name_@の
+#   
+#   w:15
+#   @_weapon_animal_@の
+#   
+#   w:15
+#   @_evil_stuff_@の
+#   
+#   @_catastrophe_name_@の
+#   
+#   w:15
+#   @_chaos_name_@の
+#   
+#   w:20
+#   @_balance_or_order_@の
+#   
+#   w:20
+#   @_economics_or_politics_@の
+#   
+#   w:15
+#   @branch_name@の
+#   
+#   w:15
+#   @_place_name_@の
+#   
+#   w:15
+#   @_time_name_@の
+#   
+#   @_sky_or_light_@の
+#   
+#   w:20
+#   @_number_or_qualifier_@@_thing_names_@の
+#   
+#   @_discomfort_weapon_@の
+#   
+#   @_mental_illness_weapon_@の
+#   
+#   @_item_name_@の
+#   
+#   w:15
+#   @_philosophy_name_@の
+#   
+#   @_science_name_@の
+#   
+#   @other_weapon_name@の
+#   
+#   @_monster_name_@@killer_name@の
+#   
+#   w:30
+#   『@_plain_weapon_name_@』
+
+w:20
+of @_power_or_anger_@
+
+w:5
+of @_adjective_@ @_power_or_anger_@
+
+w:20
+of @_battle_or_war_@
+
+w:5
+of the @_verbing_@ @_battle_or_war_@
+
+w:20
+of @death_or_doom@
+
+w:5
+of @_adjective_@ @death_or_doom@
+
+w:7
+of @_strategy_name_@
+
+w:15
+of @_justice_name_@
+
+w:30
+of @_virtue_or_vice_@
+
+w:1
+of Trog
+
+w:20
+of Trog's @divine_esteem@
+
+of Trog's @_anger_quality_@
+
+w:15
+of the @_weapon_animal_@
+
+w:15
+of @_evil_stuff_@
+
+of @_catastrophe_name_@
+
+w:15
+of @_chaos_name_@
+
+w:20
+of @_balance_or_order_@
+
+w:20
+of @_economics_or_politics_@
+
+w:15
+of @branch_name@
+
+w:15
+of @_place_name_@
+
+w:15
+of @_time_name_@
+
+of @_sky_or_light_@
+
+w:20
+of @_number_or_qualifier_@ @_thing_names_@
+
+of @_discomfort_weapon_@
+
+of the @_item_name_@
+
+w:15
+of @_philosophy_name_@
+
+of @_science_name_@
+
+of @other_weapon_name@
+
+of @_monster_name_@@killer_name@
+
+w:30
+"@_plain_weapon_name_@"
+
+"@_adjective_@ @_plain_weapon_name_@"
+%%%%
+Okawaru weapon
+
+# old en (ja19):
+#   basically use normal set
+#   with a few special cases
+#   and bonus probability for some of the more harmless themes
+# old ja (ja19):
+#   w:400
+#   @weapon@
+#   
+#   w:2
+#   @player_name@の@_valour_name_@の
+#   
+#   w:3
+#   オカワルの@divine_esteem@の
+#   
+#   @_strategy_or_justice_@の
+#   
+#   w:5
+#   @_philosophy_name_@の
+#   
+#   w:3
+#   @_balance_or_order_@の
+#   
+#   w:5
+#   @_power_name_@の
+#   
+#   w:2
+#   @_virtue_name_@の
+#   
+#   w:1
+#   @_diviner_name_@の
+#   
+#   w:5
+#   @_weapon_animal_@の
+#   
+#   w:5
+#   @_place_name_@の
+#   
+#   w:2
+#   @_item_name_@の
+# old en (ja16):
+#   basically use normal set
+#   with a few special cases
+#   and bonus probability for some of the more harmless themes
+# old ja (ja16):
+#   w:400
+#   @weapon@
+#   
+#   w:2
+#   @player_name@の@_valour_name_@の
+#   
+#   w:3
+#   オカワルの@divine_esteem@の
+#   
+#   @_strategy_or_justice_@の
+#   
+#   w:5
+#   @_philosophy_name_@の
+#   
+#   w:3
+#   @_balance_or_order_@の
+#   
+#   w:5
+#   @_power_name_@の
+#   
+#   w:2
+#   @_virtue_name_@の
+#   
+#   w:1
+#   @_diviner_name_@の
+#   
+#   w:5
+#   @_weapon_animal_@の
+#   
+#   w:5
+#   @_place_name_@の
+#   
+#   w:2
+#   @_item_name_@の
+
+w:400
+@weapon@
+
+w:2
+of @player_name_possessive@ @_valour_name_@
+
+w:3
+of Okawaru's @divine_esteem@
+
+w:1
+of Okawaru, @_verbing_@
+
+of @_strategy_or_justice_@
+
+w:5
+of @_philosophy_name_@
+
+w:3
+of @_balance_or_order_@
+
+w:5
+of @_power_name_@
+
+w:2
+of @_virtue_name_@
+
+w:1
+of the @_diviner_name_@
+
+w:5
+of the @_weapon_animal_@
+
+w:5
+of @_place_name_@
+
+w:2
+of @_item_name_@
+%%%%
+Okawaru armour
+
+# old en (ja19):
+#   again use normal chances with a few exceptions
+# old ja (ja19):
+#   w:400
+#   @armour@
+#   
+#   w:2
+#   @player_name@の@_valour_name_@の
+#   
+#   w:2
+#   オカワルの@divine_esteem@の
+#   
+#   w:2
+#   @_armour_animal_@の
+#   
+#   w:1
+#   @_good_or_divine_@の
+#   
+#   w:2
+#   @_armour_name_shielding_@の
+#   
+#   w:1
+#   @_armour_property_name_@の
+#   
+#   w:1
+#   @_wacky_armour_name_@の
+#   
+#   w:2
+#   @_politics_name_armour_@の
+# old en (ja16):
+#   again use normal chances with a few exceptions
+# old ja (ja16):
+#   w:400
+#   @armour@
+#   
+#   w:2
+#   @player_name@の@_valour_name_@の
+#   
+#   w:2
+#   オカワルの@divine_esteem@の
+#   
+#   w:2
+#   @_armour_animal_@の
+#   
+#   w:1
+#   @_good_or_divine_@の
+#   
+#   w:2
+#   @_armour_name_shielding_@の
+#   
+#   w:1
+#   @_armour_property_name_@の
+#   
+#   w:1
+#   @_wacky_armour_name_@の
+#   
+#   w:2
+#   @_politics_name_armour_@の
+
+w:400
+@armour@
+
+w:2
+of @player_name_possessive@ @_valour_name_@
+
+w:2
+of Okawaru's @divine_esteem@
+
+w:2
+of the @_armour_animal_@
+
+w:1
+of @_good_or_divine_@
+
+w:2
+of @_armour_name_shielding_@
+
+w:1
+of @_armour_property_name_@
+
+w:1
+of @_wacky_armour_name_@
+
+w:2
+of @_politics_name_armour_@
+%%%%
+Xom weapon
+
+# old en (ja19):
+#   increased chances (obviously!)
+#   uses the long name
+#   and why not some of the other names?
+# old ja (ja19):
+#   w:5
+#   @_chaos_name_@の
+#   
+#   w:5
+#   ゾムの@_xom_esteem_@の
+#   
+#   w:2
+#   ゾムの@divine_esteem@の
+#   
+#   w:1
+#   @xom_name@の
+#   
+#   w:1
+#   @_game_name_@の
+#   
+#   w:400
+#   @weapon@
+#   
+#   @jewellery@
+#   
+#   @armour@
+# old en (ja16):
+#   increased chances (obviously!)
+#   uses the long name
+#   and why not some of the other names?
+# old ja (ja16):
+#   w:5
+#   @_chaos_name_@の
+#   
+#   w:5
+#   ゾムの@_xom_esteem_@の
+#   
+#   w:2
+#   ゾムの@divine_esteem@の
+#   
+#   w:1
+#   @xom_name@の
+#   
+#   w:1
+#   @_game_name_@の
+#   
+#   w:400
+#   @weapon@
+#   
+#   @jewellery@
+#   
+#   @armour@
+
+w:5
+of @_chaos_name_@
+
+w:5
+of Xom's @_xom_esteem_@
+
+w:2
+of Xom's @divine_esteem@
+
+w:2
+"Xom, @_verbing_@ and @_verbing_@"
+
+w:2
+of the @_verbing_@ @_fruit_name_@
+
+w:1
+of @xom_name@
+
+w:1
+of @_game_name_@
+
+w:400
+@weapon@
+
+@jewellery@
+
+@armour@
+%%%%
+Xom armour
+
+# old en (ja19):
+#   increased chances (obviously!)
+#   uses the long name
+#   why not some other names?
+#   (sadly, some weapon names don't make sense even for Xom)
+# old ja (ja19):
+#   w:5
+#   @_chaos_name_@の
+#   
+#   w:5
+#   ゾムの@_xom_esteem_@の
+#   
+#   w:2
+#   ゾムの@divine_esteem@の
+#   
+#   w:1
+#   @xom_name@の
+#   
+#   w:1
+#   @_game_name_@の
+#   
+#   w:1
+#   @player_death@の
+#   
+#   w:400
+#   @armour@
+#   
+#   @jewellery@
+# old en (ja16):
+#   increased chances (obviously!)
+#   uses the long name
+#   why not some other names?
+#   (sadly, some weapon names don't make sense even for Xom)
+# old ja (ja16):
+#   w:5
+#   @_chaos_name_@の
+#   
+#   w:5
+#   ゾムの@_xom_esteem_@の
+#   
+#   w:2
+#   ゾムの@divine_esteem@
+#   
+#   w:1
+#   ゾムの@xom_name@
+#   
+#   w:1
+#   @_game_name_@の
+#   
+#   w:1
+#   @player_death@の
+#   
+#   w:400
+#   @armour@
+#   
+#   @jewellery@
+
+w:5
+of @_chaos_name_@
+
+w:5
+of Xom's @_xom_esteem_@
+
+w:2
+of Xom's @divine_esteem@
+
+w:2
+"@_adjective_@ Xom"
+
+w:1
+of @xom_name@
+
+w:1
+of @_game_name_@
+
+w:1
+of @player_death@
+
+w:400
+@armour@
+
+@jewellery@
+%%%%
+Xom jewellery
+
+# old en (ja19):
+#   increased chances (obviously!)
+#   uses the long name
+#   why not some other names?
+#   (sadly, some weapon names don't make sense even for Xom)
+# old ja (ja19):
+#   w:5
+#   @_chaos_name_@の
+#   
+#   w:5
+#   ゾムの@_xom_esteem_@の
+#   
+#   w:2
+#   ゾムの@divine_esteem@の
+#   
+#   w:1
+#   @xom_name@の
+#   
+#   w:1
+#   @_game_name_@の
+#   
+#   w:1
+#   @player_death@の
+#   
+#   w:1
+#   @player_doom@の
+#   
+#   w:300
+#   @jewellery@
+#   
+#   @armour@
+# old en (ja16):
+#   increased chances (obviously!)
+#   uses the long name
+#   why not some other names?
+#   (sadly, some weapon names don't make sense even for Xom)
+# old ja (ja16):
+#   w:5
+#   @_chaos_name_@の
+#   
+#   w:5
+#   ゾムの@_xom_esteem_@の
+#   
+#   w:2
+#   ゾムの@divine_esteem@の
+#   
+#   w:1
+#   @xom_name@の
+#   
+#   w:1
+#   @_game_name_@の
+#   
+#   w:1
+#   @player_death@の
+#   
+#   w:1
+#   @player_doom@の
+#   
+#   w:300
+#   @jewellery@
+#   
+#   @armour@
+
+w:5
+of @_chaos_name_@
+
+w:5
+of Xom's @_xom_esteem_@
+
+w:2
+of Xom's @divine_esteem@
+
+w:2
+of @_verbing_@ Xom
+
+w:1
+of @xom_name@
+
+w:1
+of @_game_name_@
+
+w:1
+of @player_death@
+
+w:1
+of @player_doom@
+
+w:300
+@jewellery@
+
+@armour@
+%%%%
+general appearance
+
+# old en (ja19):
+#   brightly glowing
+#   smoking
+#   scorched
+#   twisted
+#   shimmering
+#   warped
+#   transparent
+#   translucent
+#   encrusted
+#   pitted
+#   slimy
+#   polished
+#   fine
+#   crude
+#   ancient
+#   faintly glowing
+#   steaming
+#   dazzling
+#   w:2
+#   blackened
+# old ja (ja19):
+#   明るく輝く
+#   
+#   煙を上げる
+#   
+#   焼け焦げた
+#   
+#   捻じ曲がった
+#   
+#   チカチカ光る
+#   
+#   歪んだ
+#   
+#   透明な
+#   
+#   半透明な
+#   
+#   装飾された
+#   
+#   穴だらけの
+#   
+#   ぬるぬるした
+#   
+#   磨き上げられた
+#   
+#   豪華な
+#   
+#   粗末な
+#   
+#   古ぼけた
+#   
+#   弱く輝く
+#   
+#   蒸気を上げる
+#   
+#   まばゆい
+#   
+#   w:2
+#   黒光りした
+# old en (ja16):
+#   brightly glowing
+#   smoking
+#   scorched
+#   twisted
+#   shimmering
+#   warped
+#   transparent
+#   translucent
+#   encrusted
+#   pitted
+#   slimy
+#   polished
+#   fine
+#   crude
+#   ancient
+#   faintly glowing
+#   steaming
+#   dazzling
+#   w:2
+#   blackened
+# old ja (ja16):
+#   まばゆく輝く
+#   
+#   煙を放つ
+#   
+#   焼け焦げた
+#   
+#   ねじれた
+#   
+#   ちかちか光る
+#   
+#   歪んだ
+#   
+#   透明な
+#   
+#   半透明の
+#   
+#   飾られた
+#   
+#   穴だらけの
+#   
+#   ねばねばした
+#   
+#   磨かれた
+#   
+#   きれいな
+#   
+#   粗末な
+#   
+#   古代の
+#   
+#   かすかに輝く
+#   
+#   湯気をたてる
+#   
+#   まばゆい
+#   
+#   w:2
+#   黒光りした
+
+brightly glowing
+
+smoking
+
+scorched
+
+twisted
+
+shimmering
+
+warped
+
+transparent
+
+translucent
+
+encrusted
+
+pitted
+
+slimy
+
+polished
+
+fine
+
+incandescent
+
+ancient
+
+faintly glowing
+
+steaming
+
+dazzling
+
+masterwork
+
+w:2
+smouldering
+
+w:5
+glimmering
+
+w:2
+buzzing
+
+w:5
+fading
+
+w:2
+blackened
+%%%%
+weapon appearance
+
+# old en (ja19):
+#   iridescent
+#   bloodstained
+#   crystal
+#   jewelled
+#   ichor-stained
+#   w:3
+#   ivory
+#   w:3
+#   bone
+#   w:1
+#   sapphire
+#   w:3
+#   ebony
+#   currently 16 entries, so their overall weight amounts 180
+# old ja (ja19):
+#   玉虫色の
+#   
+#   血に染まった
+#   
+#   水晶の
+#   
+#   宝石で飾られた
+#   
+#   膿のついた
+#   
+#   w:3
+#   象牙の
+#   
+#   w:3
+#   骨の
+#   
+#   w:1
+#   サファイアの
+#   
+#   w:3
+#   真っ黒な
+#   
+#   w:180
+#   @general appearance@
+# old en (ja16):
+#   iridescent
+#   bloodstained
+#   crystal
+#   jewelled
+#   ichor-stained
+#   w:3
+#   ivory
+#   w:3
+#   bone
+#   w:1
+#   sapphire
+#   w:3
+#   ebony
+#   currently 16 entries, so their overall weight amounts 180
+# old ja (ja16):
+#   玉虫色の
+#   
+#   血まみれの
+#   
+#   水晶の
+#   
+#   宝石で飾られた
+#   
+#   膿の染みついた
+#   
+#   w:3
+#   象牙の
+#   
+#   w:3
+#   骨の
+#   
+#   w:1
+#   サファイアの
+#   
+#   w:3
+#   真っ黒な
+#   
+#   w:180
+#   @general appearance@
+
+iridescent
+
+bloodstained
+
+crystal
+
+jewelled
+
+ichor-stained
+
+w:3
+ivory
+
+w:3
+bone
+
+w:1
+sapphire
+
+w:3
+ebony
+
+w:180
+@general appearance@
+%%%%
+robe appearance
+
+# old en (ja19):
+#   fabulously ornate
+#   dull
+#   sheer
+#   thick
+#   heavy
+#   wizard
+#   ominously black
+#   brightly glowing
+#   smoking
+#   twisted
+#   shimmering
+#   warped
+#   transparent
+#   slimy
+#   fine
+#   crude
+#   ripped
+#   colourful
+#   creamy pearl
+#   opalescent
+#   ancient
+#   faintly glowing
+#   steaming
+#   faintly humming
+#   bloodstained
+#   heavily jewelled
+#   ichor-stained
+#   distressingly furry
+#   tattered
+#   silken
+#   shadowed
+# old ja (ja19):
+#   素晴らしく飾り立てられた
+#   
+#   冴えない
+#   
+#   薄手の
+#   
+#   厚手の
+#   
+#   濃い色の
+#   
+#   魔法使いの
+#   
+#   不気味な黒い
+#   
+#   明るく輝く
+#   
+#   煙を上げる
+#   
+#   捻じ曲がった
+#   
+#   チカチカ光る
+#   
+#   歪んだ
+#   
+#   透明な
+#   
+#   ぬるぬるした
+#   
+#   豪華な
+#   
+#   粗末な
+#   
+#   切り裂かれた
+#   
+#   色とりどりの
+#   
+#   真珠色の
+#   
+#   オパール色の
+#   
+#   古代の
+#   
+#   弱く輝く
+#   
+#   蒸気を上げる
+#   
+#   かすかに唸る
+#   
+#   血に染まった
+#   
+#   宝石に埋め尽くされた
+#   
+#   膿のついた
+#   
+#   毛皮の
+#   
+#   着古した
+#   
+#   絹の
+#   
+#   真っ黒な
+# old en (ja16):
+#   fabulously ornate
+#   dull
+#   sheer
+#   thick
+#   heavy
+#   wizard
+#   ominously black
+#   brightly glowing
+#   smoking
+#   twisted
+#   shimmering
+#   warped
+#   transparent
+#   slimy
+#   fine
+#   crude
+#   ripped
+#   colourful
+#   creamy pearl
+#   opalescent
+#   ancient
+#   faintly glowing
+#   steaming
+#   faintly humming
+#   bloodstained
+#   heavily jewelled
+#   ichor-stained
+#   distressingly furry
+#   tattered
+#   silken
+#   shadowed
+# old ja (ja16):
+#   きらびやかな
+#   
+#   さえない色の
+#   
+#   薄手の
+#   
+#   厚手の
+#   
+#   濃い色の
+#   
+#   魔法使いの
+#   
+#   不気味な黒い
+#   
+#   まばゆく輝く
+#   
+#   煙を放つ
+#   
+#   ねじれた
+#   
+#   ちかちか光る
+#   
+#   歪んだ
+#   
+#   透明な
+#   
+#   ねばねばした
+#   
+#   きれいな
+#   
+#   粗末な
+#   
+#   切り裂かれた
+#   
+#   色とりどりの
+#   
+#   真珠色の
+#   
+#   オパール色の
+#   
+#   古代の
+#   
+#   かすかに輝く
+#   
+#   湯気をたてる
+#   
+#   かすかに唸る
+#   
+#   血まみれの
+#   
+#   宝石で埋め尽くされた
+#   
+#   膿の染みついた
+#   
+#   毛皮の
+#   
+#   ぼろぼろの
+#   
+#   絹の
+#   
+#   真っ黒な
+
+fabulously ornate
+
+dull
+
+sheer
+
+thick
+
+heavy
+
+wizard
+
+ominously black
+
+brightly glowing
+
+smoking
+
+twisted
+
+shimmering
+
+warped
+
+transparent
+
+slimy
+
+fine
+
+luminous
+
+ripped
+
+colourful
+
+creamy pearl
+
+opalescent
+
+ancient
+
+faintly glowing
+
+steaming
+
+faintly humming
+
+bloodstained
+
+heavily jewelled
+
+ichor-stained
+
+distressingly furry
+
+tattered
+
+silken
+
+shadowed
+%%%%
+body armour appearance
+
+# old en (ja19):
+#   w:3
+#   smelly
+#   w:3
+#   bronze
+#   w:2
+#   @_gemstone_@-studded
+#   @_gemstone_@-encrusted
+# old ja (ja19):
+#   w:3
+#   臭う
+#   
+#   w:3
+#   青銅の
+#   
+#   w:2
+#   @_gemstone_@の付いた
+#   
+#   @_gemstone_@で飾られた
+#   
+#   w:200
+#   @armour appearance@
+# old en (ja16):
+#   w:3
+#   smelly
+#   w:3
+#   bronze
+#   w:2
+#   @_gemstone_@-studded
+#   @_gemstone_@-encrusted
+# old ja (ja16):
+#   w:3
+#   臭う
+#   
+#   w:3
+#   青銅の
+#   
+#   w:2
+#   @_gemstone_@の付いた
+#   
+#   @_gemstone_@で飾られた
+#   
+#   w:200
+#   @armour appearance@
+
+w:3
+smelly
+
+w:3
+bronze
+
+w:2
+@_gemstone_@-studded
+
+@_gemstone_@-encrusted
+
+w:200
+@armour appearance@
+%%%%
+armour appearance
+
+# old en (ja19):
+#   faintly humming
+#   bloodstained
+#   heavily runed
+#   jewelled
+#   ichor-stained
+#   distressingly furry
+#   spiked
+# old ja (ja19):
+#   かすかに唸る
+#   
+#   血に染まった
+#   
+#   ルーンに埋め尽くされた
+#   
+#   宝石で飾られた
+#   
+#   膿のついた
+#   
+#   毛皮の
+#   
+#   棘の生えた
+#   
+#   w:160
+#   @general appearance@
+# old en (ja16):
+#   faintly humming
+#   bloodstained
+#   heavily runed
+#   jewelled
+#   ichor-stained
+#   distressingly furry
+#   spiked
+# old ja (ja16):
+#   かすかに唸る
+#   
+#   血まみれの
+#   
+#   ルーンで埋め尽くされた
+#   
+#   宝石で飾られた
+#   
+#   膿の染みついた
+#   
+#   
+#   棘の生えた
+#   
+#   w:160
+#   @general appearance@
+
+faintly humming
+
+bloodstained
+
+heavily runed
+
+jewelled
+
+ichor-stained
+
+distressingly furry
+
+spiked
+
+w:160
+@general appearance@
+%%%%
+_gemstone_
+
+# old en (ja19):
+#   diamond
+#   ruby
+#   jacinth
+#   sapphire
+#   black opal
+#   emerald
+#   turquoise
+#   citrine
+#   aquamarine
+#   amber
+#   topaz
+#   jet
+#   opal
+#   garnet
+#   amethyst
+#   jasper
+#   obsidian
+#   agate
+#   jade
+#   pearl
+#   tiger eye
+# old ja (ja19):
+#   ダイヤモンド
+#   
+#   ルビー
+#   
+#   青玉
+#   
+#   サファイア
+#   
+#   黒オパール
+#   
+#   エメラルド
+#   
+#   ターコイズ
+#   
+#   シトリン
+#   
+#   アクアマリン
+#   
+#   琥珀
+#   
+#   トパーズ
+#   
+#   黒玉
+#   
+#   オパール
+#   
+#   ガーネット
+#   
+#   アメジスト
+#   
+#   ジャスパー
+#   
+#   黒曜石
+#   
+#   瑪瑙
+#   
+#   翡翠
+#   
+#   真珠
+#   
+#   虎目石
+# old en (ja16):
+#   diamond
+#   ruby
+#   jacinth
+#   sapphire
+#   black opal
+#   emerald
+#   turquoise
+#   citrine
+#   aquamarine
+#   amber
+#   topaz
+#   jet
+#   opal
+#   garnet
+#   amethyst
+#   jasper
+#   obsidian
+#   agate
+#   jade
+#   pearl
+#   tiger eye
+# old ja (ja16):
+#   ダイヤモンド
+#   
+#   ルビー
+#   
+#   青玉
+#   
+#   サファイア
+#   
+#   黒オパール
+#   
+#   エメラルド
+#   
+#   ターコイズ
+#   
+#   シトリン
+#   
+#   アクアマリン
+#   
+#   琥珀
+#   
+#   トパーズ
+#   
+#   黒玉
+#   
+#   オパール
+#   
+#   ガーネット
+#   
+#   アメジスト
+#   
+#   ジャスパー
+#   
+#   黒曜石
+#   
+#   瑪瑙
+#   
+#   翡翠
+#   
+#   真珠
+#   
+#   虎目石
+
+diamond
+
+ruby
+
+jacinth
+
+sapphire
+
+black opal
+
+emerald
+
+turquoise
+
+citrine
+
+aquamarine
+
+amber
+
+topaz
+
+jet
+
+opal
+
+garnet
+
+amethyst
+
+jasper
+
+obsidian
+
+agate
+
+jade
+
+pearl
+
+tiger eye
+
+ametrine
+%%%%
+_jewellery appearance_
+
+# old en (ja19):
+#   scintillating
+#   sparkling
+#   flickering
+#   glittering
+#   smoking
+#   scorched
+#   shimmering
+#   wavering
+#   warped
+#   transparent
+#   translucent
+#   pitted
+#   slimy
+#   fine
+#   crude
+#   ancient
+#   brightly glowing
+#   faintly glowing
+#   steaming
+#   heavily runed
+#   vibrating
+#   twitching
+#   coiled
+#   bound
+#   clouded
+#   w:2
+#   serpentine
+# old ja (ja19):
+#   きらきら光る
+#   
+#   光彩を放つ
+#   
+#   明滅する
+#   
+#   光り輝く
+#   
+#   煙を上げる
+#   
+#   焼け焦げた
+#   
+#   チカチカ光る
+#   
+#   震える
+#   
+#   歪んだ
+#   
+#   透明な
+#   
+#   半透明な
+#   
+#   穴だらけの
+#   
+#   ぬるぬるした
+#   
+#   豪華な
+#   
+#   粗末な
+#   
+#   古ぼけた
+#   
+#   明るく輝く
+#   
+#   弱く輝く
+#   
+#   蒸気を上げる
+#   
+#   ルーンに埋め尽くされた
+#   
+#   振動する
+#   
+#   ぴくぴく動く
+#   
+#   ばねのような
+#   
+#   
+#   雲をまとった
+#   
+#   w:2
+#   曲がりくねった
+# old en (ja16):
+#   scintillating
+#   sparkling
+#   flickering
+#   glittering
+#   smoking
+#   scorched
+#   shimmering
+#   wavering
+#   warped
+#   transparent
+#   translucent
+#   pitted
+#   slimy
+#   fine
+#   crude
+#   ancient
+#   brightly glowing
+#   faintly glowing
+#   steaming
+#   heavily runed
+#   vibrating
+#   twitching
+#   coiled
+#   bound
+#   clouded
+#   w:2
+#   serpentine
+# old ja (ja16):
+#   きらきら光る
+#   
+#   光彩を放つ
+#   
+#   明滅する
+#   
+#   光り輝く
+#   
+#   煙を放つ
+#   
+#   焼け焦げた
+#   
+#   ちかちか光る
+#   
+#   波打った
+#   
+#   歪んだ
+#   
+#   透明な
+#   
+#   半透明の
+#   
+#   穴だらけの
+#   
+#   ねばねばした
+#   
+#   きれいな
+#   
+#   粗末な
+#   
+#   古代の
+#   
+#   まばゆく輝く
+#   
+#   かすかに輝く
+#   
+#   湯気をたてる
+#   
+#   ルーンで埋め尽くされた
+#   
+#   振動する
+#   
+#   ぴくぴく動く
+#   
+#   ばねのような
+#   
+#   
+#   雲をまとった
+
+scintillating
+
+sparkling
+
+flickering
+
+glittering
+
+smoking
+
+scorched
+
+shimmering
+
+wavering
+
+warped
+
+transparent
+
+translucent
+
+pitted
+
+slimy
+
+fine
+
+radiant
+
+ancient
+
+brightly glowing
+
+faintly glowing
+
+steaming
+
+heavily runed
+
+vibrating
+
+twitching
+
+coiled
+
+bound
+
+clouded
+
+w:2
+serpentine
+%%%%
+_ring material_
+
+# old en (ja19):
+#   wooden
+#   ivory
+#   bone
+#   amber
+#   silver
+#   golden
+#   platinum
+#   iron
+#   steel
+#   bronze
+#   brass
+#   copper
+#   tin
+#   lead
+#   pewter
+#   しろめ(ピューター)はいまいち馴染みがないので割愛
+#   granite
+#   marble
+#   jade
+#   turquoise
+#   lapis lazuli
+#   glass
+#   w:2
+#   gossamer
+# old ja (ja19):
+#   木の
+#   
+#   象牙の
+#   
+#   骨の
+#   
+#   琥珀の
+#   
+#   銀の
+#   
+#   黄金の
+#   
+#   白金の
+#   
+#   鉄の
+#   
+#   鋼鉄の
+#   
+#   青銅の
+#   
+#   真鍮の
+#   
+#   銅の
+#   
+#   スズの
+#   
+#   鉛の
+#   
+#   
+#   花崗岩の
+#   
+#   大理石の
+#   
+#   翡翠の
+#   
+#   ターコイズの
+#   
+#   ラピスラズリの
+#   
+#   ガラスの
+# old en (ja16):
+#   wooden
+#   ivory
+#   bone
+#   amber
+#   silver
+#   golden
+#   platinum
+#   iron
+#   steel
+#   bronze
+#   brass
+#   copper
+#   tin
+#   lead
+#   pewter
+#   しろめ(ピューター)はいまいち馴染みがないので割愛
+#   granite
+#   marble
+#   jade
+#   turquoise
+#   lapis lazuli
+#   glass
+#   w:2
+#   gossamer
+# old ja (ja16):
+#   木の
+#   
+#   象牙の
+#   
+#   骨の
+#   
+#   琥珀の
+#   
+#   銀の
+#   
+#   黄金の
+#   
+#   白金の
+#   
+#   鉄の
+#   
+#   鋼鉄の
+#   
+#   青銅の
+#   
+#   真鍮の
+#   
+#   銅の
+#   
+#   スズの
+#   
+#   鉛の
+#   
+#   
+#   花崗岩の
+#   
+#   大理石の
+#   
+#   翡翠の
+#   
+#   ターコイズの
+#   
+#   ラピスラズリの
+#   
+#   ガラスの
+
+wooden
+
+ivory
+
+bone
+
+amber
+
+silver
+
+golden
+
+platinum
+
+iron
+
+steel
+
+bronze
+
+brass
+
+copper
+
+tin
+
+lead
+
+pewter
+
+granite
+
+marble
+
+jade
+
+turquoise
+
+lapis lazuli
+
+glass
+
+carnelian
+
+w:2
+gossamer
+%%%%
+_amulet material_
+
+# old en (ja19):
+#   ivory
+#   bone
+#   graven
+#   silver
+#   golden
+#   platinum
+#   iron
+#   steel
+#   bronze
+#   brass
+#   copper
+#   tin
+#   lead
+#   pewter
+#   zirconium
+#   sapphire
+#   emerald
+#   garnet
+#   ruby
+#   jade
+#   ruby
+#   crystal
+#   diamond
+#   amethyst
+# old ja (ja19):
+#   象牙の
+#   
+#   骨の
+#   
+#   銘の彫られた
+#   
+#   銀の
+#   
+#   黄金の
+#   
+#   白金の
+#   
+#   鉄の
+#   
+#   鋼鉄の
+#   
+#   青銅の
+#   
+#   真鍮の
+#   
+#   銅の
+#   
+#   スズの
+#   
+#   鉛の
+#   
+#   
+#   ジルコンの
+#   
+#   サファイアの
+#   
+#   エメラルドの
+#   
+#   ガーネットの
+#   
+#   ルビーの
+#   
+#   翡翠の
+#   
+#   
+#   水晶の
+#   
+#   ダイヤモンドの
+#   
+#   アメジストの
+# old en (ja16):
+#   ivory
+#   bone
+#   graven
+#   silver
+#   golden
+#   platinum
+#   iron
+#   steel
+#   bronze
+#   brass
+#   copper
+#   tin
+#   lead
+#   pewter
+#   zirconium
+#   sapphire
+#   emerald
+#   garnet
+#   ruby
+#   jade
+#   ruby
+#   crystal
+#   diamond
+#   amethyst
+# old ja (ja16):
+#   象牙の
+#   
+#   骨の
+#   
+#   銘の彫られた
+#   
+#   銀の
+#   
+#   黄金の
+#   
+#   白金の
+#   
+#   鉄の
+#   
+#   鋼鉄の
+#   
+#   青銅の
+#   
+#   真鍮の
+#   
+#   銅の
+#   
+#   スズの
+#   
+#   鉛の
+#   
+#   
+#   ジルコンの
+#   
+#   サファイアの
+#   
+#   エメラルドの
+#   
+#   ガーネットの
+#   
+#   ルビーの
+#   
+#   翡翠の
+#   
+#   
+#   水晶の
+#   
+#   ダイヤモンドの
+#   
+#   アメジストの
+
+ivory
+
+bone
+
+graven
+
+silver
+
+golden
+
+platinum
+
+iron
+
+steel
+
+bronze
+
+brass
+
+copper
+
+tin
+
+lead
+
+pewter
+
+zirconium
+
+sapphire
+
+emerald
+
+garnet
+
+ruby
+
+jade
+
+crystal
+
+diamond
+
+amethyst
+%%%%

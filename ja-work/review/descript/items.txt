@@ -1,0 +1,542 @@
+%%%%
+book of annihilations
+
+# en (0.34):
+#   A tome of arcane fury, greatly sought after by sorcerers. It allows the gifted
+#   and resourceful to conjure destruction with ease.
+
+この本のぼろぼろのページの隙間から血が滴り落ちる。
+読み書きできない者ですら不可解な猛威による純然たる衝動を感じる。
+これは才能や力のある魔導師達が容易に破壊を操ることを可能にするために追い求められる。
+一方、虚弱な魔術師がこの作品を読もうとすると死ぬ運命になるだろう。
+%%%%
+book of cantrips
+
+# en (0.34):
+#   A book containing a small selection of very basic magic spells, intended for
+#   beginners who wish to learn the rudiments of one of the featured magical
+#   schools.
+
+この本には特定の魔法の領域の基礎を学ぼうとする初心者を対象とした、
+選りすぐりの極めて初歩の呪文を含んでいる。とはいえ、
+熟練の魔法使いでさえこの中に含まれる呪文の使い道を見出すことはできる。
+%%%%
+book of conjurations
+
+# en (0.34):
+#   A book containing an introduction to the destructive magical arts of
+#   Conjurations.
+
+これは破壊的な魔法である妖術の入門書だ。本を開くとわずかに含んだ力により震える。
+%%%%
+book of debilitation
+
+# en (0.34):
+#   A spellbook containing spells known for having a particularly unpleasant
+#   effect on their victims. It's considered something of a faux pas in the
+#   wizarding community to be seen with this book in one's collection.
+
+これは神秘の射手にとって有用な呪術が含まれた本だ。
+製本する前に彼らがアーチェリーのとして的で使用したかのように、
+ページにはたくさんの穴が空いている。
+この超自然的な手法により呪文と射撃武器の使用に相性の良さをもたらすだろう。実際、
+彼らはより文章に穴が空いていない版と違いがなく使えるようだ。
+%%%%
+book of dreams
+
+# en (0.34):
+#   The somniloquent utterings of a famed mystic, using uniquely bizarre imagery
+#   and cryptic digressions to describe spells drawn from the mystic's visions.
+
+これは恍惚な神秘主義者の寝言を記録したものだ。
+神秘的な夢の状態を再現する多くの呪文を述べている。この作品に対して批評家は、
+これらの呪文は機能的にはすでに知られているものと違いはないと主張する。しかし、
+この本はその比類なき奇妙な描写や謎めいた余談のため、依然として人気がある。
+%%%%
+book of necromancy
+
+# en (0.34):
+#   A macabre book containing basic Necromancy spells. Readers are recommended to
+#   wear a pair of gloves they don't mind disposing of afterward.
+
+これはぞっとするような魔法の呪文書だ。
+初級の死人使いが学ぶであろう最初の悪魔の手引書である。
+死霊の魔法に手を出すのは危険を伴うことを考慮すると、
+これは時おり初級の死人使いが学習する*最後*の悪魔の手引書にもなる。
+%%%%
+book of power
+
+# en (0.34):
+#   A book of powerful and destructive magic spells, rumbling and shuddering with
+#   barely-contained energies.
+
+これは強力な魔法の呪文書だ。
+競争相手に対して優位を得ようとする野心ある魔術師が切望する。
+これはわずかに含まれたエネルギーによりパチパチと音を立てて震える。
+%%%%
+book of spatial translocations
+
+# en (0.34):
+#   A basic spellbook on the magical field of Translocations. Many would-be mages
+#   have seen it disappear just as they needed it most.
+
+これは転移術の魔法領域を学ぶための古典的教科書だ。
+大魔術師で熟練の転移術士であるゴルブリアによって2世紀前に書かれた。
+この本は今もなお世界中の魔法の図書館で見つかるが、
+司書がこれを置いたところと同じ本棚にはないことが時々ある。
+%%%%
+book of the warp
+
+# en (0.34):
+#   A book of advanced Translocations spells, written by a particularly
+#   misanthropic mage. After its completion, they were never seen again, which may
+#   or may not have been the point.
+
+熟練の転移術師のための転移術の魔導書だ。
+揺らめくページは複数の次元に同時に存在しており、
+通常の配置の法則に従わないページも存在する。あるページは捲られたときに消滅し、
+他のものは何もないところから出現し、あるいは他のページを通過するページがあり、
+通過されるページがある。あるページには面が3つあり、あるいは面が1つしかない。
+角の数が分数のページもある。その効果には当惑させられるだろう。
+%%%%
+book of unlife
+
+# en (0.34):
+#   An unholy book describing a variety of magical methods for the creation and
+#   command of undead servants.
+
+この不浄な本はアンデッドの奴隷を生成して指揮するための様々な魔術の方法を記述している。
+この恐ろしい本は悪意に満ちたオーラを発し、
+時おり羊皮のページが勝手に収縮し激しく振動する。
+%%%%
+box of beasts
+
+# en (0.34):
+#   A box filled with the bizarre leftovers of a depraved wizard's magical
+#   experimentations. Opening it might set loose a friendly mutant beast: bizarre
+#   creatures, each with their own combination of traits. Increased skill with
+#   Evocations will allow stronger beasts to be released.
+#   
+#   There are six known traits:
+#    * Bat beasts fly and move very quickly, but erratically.
+#    * Fire beasts resist and breathe fire.
+#    * Ox beasts resist cold, are armoured with thick fur, and can knock back foes.
+#    * Shock beasts resist electricity and can transform into living lightning.
+#    * Sting beasts resist poison and have a reaching poison-tail attack.
+#    * Weird beasts can see invisible and attack with constricting tentacles.
+#   
+#   As far as anyone knows, all beasts have exactly two of these traits.
+
+堕落した魔術師が行なった魔術的実験の奇怪な残滓で満ちている箱だ。
+この箱を開くことで友好的なキメラを解放するかもしれない。
+キメラは3つの別々の獣を混ぜ合わせた神話的な混成体である。
+%%%%
+buckler
+
+# en (0.34):
+#   A small piece of wood and metal, to be strapped on one arm for defence.
+
+防御するために腕にくくりつけられた木や金属の小さな1片だ。
+これを装着するには少々厄介で、少しも訓練せずに攻撃すると、
+その速度をわずかに遅くする。
+%%%%
+chain mail
+
+# en (0.34):
+#   A suit of armour made entirely out of tiny metal rings.
+
+全てがとても小さな金属の輪で作られた鎧だ。鎖かたびらは武器、鈎爪、
+裂肉歯から強力に保護するが、動きと隠密行動を妨げる
+%%%%
+corpse
+
+# en (0.34):
+#   A corpse. Useless and dead.
+
+これは死体だ。あなたはこれを捌いて食用の肉片を作ることができる。
+%%%%
+eudemon blade
+
+# en (0.34):
+#   A sacred blade from the forges of Heaven, inhabited by a good spirit. It is a
+#   favoured weapon of the Shining One's servants.
+
+天国の鍛冶場から生み出された善良な魂の宿る聖なる刃だ。
+これは輝けるものの使徒に好まれており、悪の力で手にすることができない。
+%%%%
+eveningstar
+
+# en (0.34):
+#   The opposite of a morningstar. A balanced mace with a long shaft and a metal
+#   head covered in lethal spikes.
+
+モーニングスターの対極となる武器だ。
+%%%%
+fire dragon scales
+
+# en (0.34):
+#   The scales of a fire-breathing dragon. It provides great protection from fire,
+#   while rendering its wearer more susceptible to cold.
+
+火を吐くドラゴンの鱗で造られた鎧だ。これは火に対する強力な保護効果をもたらすが、
+着用者は冷気の影響によって傷つきやすくなってしまう。
+%%%%
+golden dragon scales
+
+# en (0.34):
+#   The scales of a golden dragon. It is much heavier than most dragon scale
+#   armours, and grants its wearer resistance to poison, fire and cold.
+
+ゴールドドラゴンの鱗で作られた鎧だ。
+これは多くのドラゴンの鱗鎧よりもはるかに重く、装着者に毒、火、
+冷気への耐性を授ける。
+%%%%
+sling
+
+# en (0.34):
+#   A piece of cloth and leather for launching stones, adequate for hunting small
+#   game like rabbits or goblins.
+
+布切れと皮紐でできた投石器だ。それほどのダメージは期待できない。 Unlike with
+other launchers, wearing a kite shield does not slow down its rate of fire.
+%%%%
+lajatang
+
+# en (0.34):
+#   A very rare and extremely effective weapon, featuring a pole with half-moon
+#   blades at both ends.
+
+非常に珍しく、また非常に切れ味鋭い異国の武器だ。
+両端に半月の刃がついた長柄を特徴とする。
+%%%%
+leather armour
+
+# en (0.34):
+#   A suit made from layers of tanned animal hide. It provides basic protection
+#   with almost no hindrance to spellcasting or stealthy movement.
+
+動物の皮をなめして重ねて作られた鎧だ。
+この軽量鎧は丹念な身ぶりや素早く人目を忍ぶ動作をほとんど妨害せずに、
+基本的な守りをもたらす。
+%%%%
+orb of zot
+
+# en (0.34):
+#   An invaluable artefact. Once you have escaped to the surface with it, your
+#   quest is complete.
+
+このかけがえのないアーティファクトを手に地上に脱出すれば、
+あなたの冒険の旅は達成される。
+%%%%
+pair of boots
+
+# en (0.34):
+#   A pair of boots. They are worn on the feet, and cover all but the largest
+#   hooves and talons.
+
+一対のブーツだ。
+%%%%
+pair of gloves
+
+# en (0.34):
+#   A pair of gloves. They are worn on the hands, and cover all but the largest
+#   claws.
+
+一対のグローブだ。
+%%%%
+pearl dragon scales
+
+# en (0.34):
+#   The nacreous scales of a pearl dragon. It grants its wearer resistance to
+#   negative energies.
+
+パールドラゴンの真珠の鱗で造られた鎧だ。
+これは装着者に負のエネルギーへの耐性を授ける。
+%%%%
+potion of berserk rage
+
+# en (0.34):
+#   A potion which can send one into an incoherent rage, granting them a great but
+#   temporary increase to their health, damage, and speed. In exchange, their mind
+#   is clouded by anger, only allowing them to move and attack in melee. The rage
+#   will wear off quickly if they do not attack monsters, and upon expiry, the
+#   imbiber will be fatigued, causing them to slow dramatically and rendering them
+#   unable to berserk again for a short duration.
+
+これは水薬だ。これは飲んだ者に突発性の激怒を発生させる。
+%%%%
+potion of brilliance
+
+# en (0.34):
+#   A potion which increases the power of the drinker's spells and halves their
+#   magic cost (rounding up).
+
+これは魔法の水薬だ。これは飲んだ者の知力と魔力を著しく増加させる。
+%%%%
+potion of enlightenment
+
+# en (0.34):
+#   A potion which uplifts both the body and mind of its drinkers, lifting them
+#   from the ground and increasing their Will to resist the world's temptations.
+
+これは水薬だ。これは飲んだ者に大きな浮力を与える。
+%%%%
+potion of experience
+
+# en (0.34):
+#   A truly wonderful and very rare drink, which grants experience when consumed.
+
+実に素晴らしく非常に貴重な飲み物だ。
+%%%%
+potion of invisibility
+
+# en (0.34):
+#   A potion which confers invisibility on one who consumes it.
+
+これは水薬だ。これは他の者の視覚からあなたを隠蔽する。
+%%%%
+potion of might
+
+# en (0.34):
+#   A potion which greatly increases the power of the drinker's melee attacks.
+
+これは水薬だ。これは飲んだ者の腕力と物理的な力を著しく増加させる。
+%%%%
+potion of mutation
+
+# en (0.34):
+#   A potion which mutates the drinker, removing several mutations then
+#   granting a few random mutations, which are likely (but not guaranteed) to be
+#   beneficial.
+
+これは水薬だ。これはあなたに非常に奇妙な作用を及ぼす。
+%%%%
+potion of resistance
+
+# en (0.34):
+#   A potion which grants temporary resistance to a variety of harmful effects:
+#   fire, cold, electricity, poison, and acid.
+
+これは水薬だ。これはあなたに一時的な四大元素と毒の耐性を与える。
+%%%%
+ring of dexterity
+
+# en (0.34):
+#   A ring that increases the dexterity of its wearer.
+
+この指輪は装着者の器用さを増加させるか、あるいは減退させる。
+効果がどちらであるかは指輪の数値に依存している。
+%%%%
+ring of evasion
+
+# en (0.34):
+#   A ring that makes its wearer more capable of avoiding attacks.
+
+この指輪は装着者の回避能力を上昇させるか、あるいは低下させる。
+効果がどちらであるかは指輪の数値に依存している。
+%%%%
+ring of intelligence
+
+# en (0.34):
+#   A ring that increases the intelligence of its wearer.
+
+この指輪は装着者の知力を増加させるか、あるいは減退させる。
+効果がどちらであるかは指輪の数値に依存している。
+%%%%
+ring of magical power
+
+# en (0.34):
+#   A ring that increases its wearer's reserves of magical power for so long as it
+#   is worn.
+
+この指輪は装着者に追加の魔力をもたらす。
+%%%%
+ring of poison resistance
+
+# en (0.34):
+#   A ring that protects its wearer from poison.
+
+この指輪は毒からの保護をもたらす。
+%%%%
+ring of protection
+
+# en (0.34):
+#   A ring that protects its wearer from most sources of damage.
+
+この指輪は装着者を負傷から保護するか、あるいは負傷を受けやすくする。
+効果がどちらであるかは指輪の数値に依存している。
+%%%%
+ring of protection from cold
+
+# en (0.34):
+#   A ring that protects its wearer from cold.
+
+この指輪は冷気からの保護をもたらす。
+%%%%
+ring of see invisible
+
+# en (0.34):
+#   A ring that allows its wearer to see invisible things.
+
+この指輪は装着者に、魔法によって視界から隠れているものを視ることを可能にする。
+%%%%
+ring of strength
+
+# en (0.34):
+#   A ring that increases the strength of its wearer.
+
+この指輪は装着者の腕力を増加させるか、あるいは減退させる。
+効果がどちらであるかは指輪の数値に依存している。
+%%%%
+ring of wizardry
+
+# en (0.34):
+#   A ring that increases the success rate of its wearer's magical spells.
+
+この指輪は装着者が魔法の呪文を使う能力を増強する。
+%%%%
+rune of zot
+
+# en (0.34):
+#   A charm which allows entry into the Realm of Zot.
+
+ゾットの領域に訪れることを可能にする御守りだ。
+%%%%
+scroll of acquirement
+
+# en (0.34):
+#   A wonderful scroll which causes the creation of a valuable item, with the
+#   reader choosing from a small selection. The items offered will often be a
+#   good match for the reader's skills; and if nothing recommends itself, the
+#   reader can always choose a heap of gold.
+
+この素晴らしい巻き物は読んだ者の目の前に価値あるアイテムを creation of a
+valuable item, with the reader choosing the type of item to be created. Items
+produced are heavily biased towards something fitting the reader's skills, and
+also towards gear that hasn't been seen yet, but, alas, nothing is guaranteed.
+%%%%
+scroll of amnesia
+
+# en (0.34):
+#   A scroll that allows its reader to selectively erase one spell from memory to
+#   recapture the magical energy bound up with it.
+
+この巻物は読んだ者の記憶から1つの呪文を選択的に除去して、
+その呪文に占有されていた分の魔力を取り戻すことを可能とする。
+%%%%
+scroll of blinking
+
+# en (0.34):
+#   A scroll that allows its reader to teleport a short distance, with precise
+#   control.
+
+この巻き物は読んだ者に、正確に制御可能な短距離のテレポートをもたらす。
+ただし制御されたテレポートは使用者を魔法のエネルギーで汚染することがあるので注意しなくてはならない。
+%%%%
+scroll of fear
+
+# en (0.34):
+#   A scroll that causes great fear in nearby foes, causing them to flee until
+#   attacked, cornered, or enough time has passed.
+#   
+#   Non-living, undead and plant monsters cannot be feared, and berserk or frenzied
+#   monsters are also immune.
+
+この巻き物は読み上げた者の視界内にいる相手全てに恐怖を抱かせる。
+%%%%
+scroll of fog
+
+# en (0.34):
+#   A scroll that surrounds the reader with a dense cloud of fog, which can block
+#   vision temporarily. The fog takes a short time to fully spill out.
+
+この巻物は読み上げた者の周囲を濃い霧の煙で覆う。
+%%%%
+scroll of identify
+
+# en (0.34):
+#   A useful magic scroll which identifies the properties of any unknown object.
+
+これはいかなる品物でも鑑定することを可能とする有用な魔法の巻き物だ。and will
+occasionally allow multiple identifications.
+
+If used on a deck of cards, this scroll will also give away the top card.
+%%%%
+scroll of immolation
+
+# en (0.34):
+#   A scroll that fills the creatures around the reader with an unstable and
+#   powerful inner flame. This fire is released any time the victims are hit, and
+#   explosively released upon their death. Giant creatures cause bigger explosions.
+
+この巻物は読み手の周囲にいる者を不規則で強力な内なる炎に包む。
+%%%%
+scroll of revelation
+
+# en (0.34):
+#   A scroll that reveals its reader's surroundings. The layout of the current
+#   floor is fully mapped, and everything within a moderate radius, including
+#   both visible and invisible monsters, is momentarily shown.
+
+この巻き物は読んだ者の周辺の地形を明らかにする。
+%%%%
+scroll of teleportation
+
+# en (0.34):
+#   A scroll that translocates the reader to a random position after a short delay.
+#   Reading this scroll while waiting for a teleportation will instead cancel it.
+
+この巻物を読み上げると、あなたは無作為な地点に転送される。
+%%%%
+scythe
+
+# en (0.34):
+#   A farm implement, usually only used by untrained mobs in combat. In practice,
+#   it's quite similar to a halberd.
+
+農具だ。たいてい訓練されていない群衆だけが戦闘で使用する。
+%%%%
+staff of conjuration
+
+# en (0.34):
+#   A staff that increases the power of conjurations cast by its wielder. If the
+#   wielder is skilled in Evocations and Conjurations, they can blast those they
+#   strike with pure energy.
+
+この杖は手にしている者が唱えた妖術の呪文の威力を強化する。
+%%%%
+stone
+
+# en (0.34):
+#   A small chunk of dense but otherwise unremarkable natural mineral. It can be
+#   thrown to cause minor damage.
+
+小さくかなりの量が密集している、ありふれた自然の鉱物だ。
+これは手で投げたりスリングで発射することができる。
+%%%%
+storm dragon scales
+
+# en (0.34):
+#   The scales of a lightning-breathing dragon. It is heavier than most dragon
+#   scale armours, and gives its wearer resistance to electrical discharges.
+
+稲妻を吐くドラゴンの鱗で造られた鎧だ。
+この鎧はドラゴンの鎧の中では最も重い部類に入るが、
+着用者に放電に対する強力な耐性を授ける。
+%%%%
+swamp dragon scales
+
+# en (0.34):
+#   The scales of a swamp dragon. It confers resistance to poison on its wearer.
+
+沼ドラゴンの鱗で造られた鎧だ。これは着用者に毒への耐性を授ける。
+%%%%
+troll leather armour
+
+# en (0.34):
+#   The stiff and knobbly skin of a troll. It magically regenerates its wearer's
+#   flesh, once attuned to the wearer's body at full health.
+
+よく見かけるトロルのゴワゴワでコブ状の皮から作られた鎧だ。
+これはかなり遅い速度だが不思議にも着用者の肉体を再生する（すでにトロルでなければ）。
+%%%%

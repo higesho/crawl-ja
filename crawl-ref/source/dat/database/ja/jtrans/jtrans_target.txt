@@ -1,0 +1,65 @@
+%%%%
+# There is %s there.
+
+# jtrans_godabil.txtと重複
+%%%%
+# There's something in the way.
+
+# jtrans_directn.txtと重複
+%%%%
+You cannot see that place.
+
+その場所はここから見えない。
+%%%%
+# Out of range.
+
+# jtrans_directn.txtと重複
+%%%%
+# You can't transfer your ancestor with themself.
+
+# jtrans_godabil.txtと重複
+%%%%
+# You can't transfer that.
+
+# jtrans_godabil.txtと重複
+%%%%
+You cannot affect that.
+
+その地形には効果がない。
+%%%%
+You can't get through.
+
+通り抜けることができない。
+%%%%
+You can't reach that far!
+
+そんなに遠くまで届かない！
+%%%%
+There's already a cloud there.
+
+そこには既に雲が漂っている。
+%%%%
+The effect is blocked.
+
+効果がなかったようだ。
+%%%%
+You cannot target yourself.
+
+自分自身を対象にはできない。
+%%%%
+There is no safe place near that location.
+
+その場所の近くには安全な箇所が存在しない。
+%%%%
+There isn't a shadow there.
+
+そこには影は存在しない。
+%%%%
+That shadow isn't sufficiently still.
+
+その影は同じ所にとどまっていない。
+%%%%
+buggy no_landing_reason
+
+# for die()
+%%%%

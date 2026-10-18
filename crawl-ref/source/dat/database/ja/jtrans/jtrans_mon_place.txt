@@ -1,0 +1,186 @@
+%%%%
+Monster level fuzz: %d (old: %s, new: %s)
+
+# for debug
+%%%%
+Super OOD roll: Old: %s, New: %s
+
+# for debug
+%%%%
+#ifdef DEBUG_MON_CREATION
+in spawn_random_monsters()
+
+%%%%
+#ifdef DEBUG_MON_CREATION
+random monster gen turned off
+
+%%%%
+random monster gen scaled off, %d turns on level
+
+# for debug
+%%%%
+Placing monster, rate: %d, turns here: %d
+
+# for debug
+%%%%
+foreign monster from %s
+
+# for debug
+%%%%
+#ifdef DEBUG_MON_CREATION
+in place_monster()
+
+%%%%
+Chose monster with OOD roll: %s, disabling band generation
+
+# for debug
+%%%%
+#ifdef DEBUG_MON_CREATION
+Choose band members...
+
+%%%%
+Unhandled band type %d
+
+# for die()
+%%%%
+#ifdef DEBUG_PATHFIND
+Monster %s is patrolling around (%d, %d).
+
+%%%%
+%s shoves you out of the %s!
+
+%sがあなたを%sの外に押し出した！
+%%%%
+gateway
+
+入り口
+%%%%
+stairwell
+
+階段
+%%%%
+invalid monster to place: %s (%d)
+
+# for die()
+%%%%
+led by
+
+に率いられた
+%%%%
+summoned by
+
+によって召喚された
+%%%%
+woven by
+
+が作り出した
+%%%%
+animated by
+
+に蘇らせられた
+%%%%
+called from beyond by
+
+にあの世から呼び出された
+%%%%
+transmuted by
+
+に変化させられた
+%%%%
+called by
+
+に呼び出されている
+%%%%
+attached to
+
+の
+# tentacle attached to kraken → クラーケンの触手
+%%%%
+created by
+
+に生み出された
+%%%%
+the player character
+
+<you>
+%%%%
+#ifndef DEBUG_DIAGNOSTICS
+Warning: monster '%s' is not yet fully coded.
+
+%%%%
+#ifdef DEBUG_MON_CREATION
+in _choose_band()
+
+%%%%
+Unhandled bands:
+
+# for debug_bands()
+%%%%
+mon-bands
+
+# for debug_bands()
+%%%%
+#ifdef DEBUG_MON_CREATION
+Create a pandemonium lord!
+
+%%%%
+#ifdef DEBUG_MON_CREATION
+in mons_place()
+
+%%%%
+#ifdef DEBUG_MON_CREATION
+Set class RANDOM_MONSTER
+
+%%%%
+#ifdef DEBUG_MON_CREATION
+Call _pick_zot_exit_defender()
+
+%%%%
+Created %s.
+
+# for debug
+%%%%
+# %s is enraged by your holy aura!
+
+# jtrans_evoke.txtと重複
+%%%%
+%s is revulsed by your support of nature!
+
+%sはあなたの自然への働きかけに嫌悪感を抱いた！
+%%%%
+%s is enraged by your evilness!
+
+%sはあなたの邪悪ぶりに激怒した！
+%%%%
+%s is enraged by your lawfulness!
+
+%sはあなたの秩序性に激怒した！
+%%%%
+%s is enraged by your magic-hating god!
+
+%sはあなたの信仰する魔術を嫌う神により激怒した！
+%%%%
+%s is enraged by your darkness!
+
+%sはあなたの放つ暗闇に激怒した！
+%%%%
+%s can only feel hate for you!
+
+%sはあなたを憎悪することしかできない！
+%%%%
+%s is enraged by a buggy thing about you!
+
+# 訳不要
+%%%%
+# You see a puff of smoke.
+
+# jtrans_decks.txtと重複
+%%%%
+invalid demon tier
+
+# for die()
+%%%%
+Level has a custom monster set.
+
+# for debug
+%%%%

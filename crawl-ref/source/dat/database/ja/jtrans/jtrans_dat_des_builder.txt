@@ -1,0 +1,191 @@
+%%%%
+#### dat/des/builder/alphashops.des ###########################
+%%%%
+Alliterative Accessories
+
+頭文字Aの店
+%%%%
+Bounteous Boutique
+
+頭文字Bの店
+%%%%
+Commerce Corner
+
+頭文字Cの店
+%%%%
+Desiderata Depot
+
+頭文字Dの店
+%%%%
+Eclectic Emporium
+
+頭文字Eの店
+%%%%
+Fabulous Fripperies
+
+頭文字Fの店
+%%%%
+Goods Gallery
+
+頭文字Gの店
+%%%%
+Humungous Hoard
+
+頭文字Hの店
+%%%%
+Incredible Inventory
+
+頭文字Iの店
+%%%%
+Jolly Junkyard
+
+頭文字Jの店
+%%%%
+Killer Kiosk
+
+頭文字Kの店
+%%%%
+Luxury Loot
+
+頭文字Lの店
+%%%%
+Merry Market
+
+頭文字Mの店
+%%%%
+Needful Niceties
+
+頭文字Nの店
+%%%%
+Offbeat Offerings
+
+頭文字Oの店
+%%%%
+Practical Paraphernalia
+
+頭文字Pの店
+%%%%
+Quotidian Quintessences
+
+頭文字Qの店
+%%%%
+Retail Resort
+
+頭文字Rの店
+%%%%
+Superlative Supplies
+
+頭文字Sの店
+%%%%
+Tempting Trifles
+
+頭文字Tの店
+%%%%
+Unparalleled Utilities
+
+頭文字Uの店
+%%%%
+Vending Venue
+
+頭文字Vの店
+%%%%
+Whimsical Warehouse
+
+頭文字Wの店
+%%%%
+Xenial Xenodochy
+
+頭文字Xの店
+%%%%
+Yearning Yield
+
+頭文字Yの店
+%%%%
+Zaibatsu Zone
+
+頭文字Zの店
+%%%%
+#### dat/des/builder/food.des #################################
+%%%%
+baked
+
+オーブンで焼かれた
+%%%%
+baker
+
+のパン屋
+%%%%
+#### dat/des/builder/shops.des ################################
+%%%%
+Serpentskin Sales
+
+蛇毒専門店
+%%%%
+Pet Rocks
+
+石ころ専門店
+%%%%
+Blood Bar
+
+血液バー
+%%%%
+Blasphemy Boutique
+
+冒涜的ブティック
+%%%%
+Evil Emporium
+
+邪悪百貨店
+%%%%
+Profane Products
+
+涜神雑貨店
+%%%%
+Sacrilege Store
+
+罰当たり商店
+%%%%
+Wicked Wares
+
+不道徳のお店
+%%%%
+Hallowed Reliquary
+
+神聖納骨堂
+%%%%
+Specialty Armours
+
+特別製装身具店
+%%%%
+Demolitions Depot
+
+危険物貯蔵庫
+%%%%
+Elemental Accessories
+
+精霊の装身具店
+%%%%
+Quality Used Wands
+
+使用済みワンド店
+%%%%
+One-of-a-Kind Books
+
+個性派書店
+%%%%
+Antique Artefacts
+
+中古アーティファクト店
+%%%%
+Island Escapes
+
+孤島の逃げ道亭
+%%%%
+Changing Room
+
+変身ルーム
+%%%%
+Hydra Hut
+
+ヒドラ狩りの店
+%%%%

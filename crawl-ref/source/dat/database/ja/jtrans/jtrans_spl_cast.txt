@@ -1,0 +1,265 @@
+%%%%
+# spl-cast.h
+Your Spells
+
+習得済みの呪文
+%%%%
+# spl-cast.cc
+You feel %s %s
+
+あなたは%s%s
+%%%%
+numb sensation.
+
+無力感を感じた。
+%%%%
+surge of power!
+
+魔力の増幅を感じた！
+%%%%
+Type                          Failure  Level
+
+系統                        失敗率     レベル
+%%%%
+Power        Range    Hunger  Noise
+
+威力         射程      腹減り  発生音
+%%%%
+Press '<w>!</w>' to toggle spell view.
+
+呪文一覧の表示を切り替えるには '<w>!</w>' を押してください。
+%%%%
+Press '<w>!</w>' or '<w>I</w>' to toggle spell view.
+
+呪文一覧の表示を切り替えるには '<w>!</w>' または '<w>I</w>' を押してください。
+%%%%
+Armour+Shield spell failure penalty: %d
+
+# for debug
+%%%%
+You cannot cast spells while unable to breathe!
+
+あなたは呼吸ができないため、呪文を唱えることができない！
+%%%%
+You lack the mental capacity to cast spells.
+
+あなたには呪文を唱える精神的余裕がない。
+%%%%
+Something interferes with your magic!
+
+何かがあなたの魔術を阻害している！
+%%%%
+You're too confused to cast spells.
+
+あなたは混乱しすぎており呪文を唱えられない。
+%%%%
+You cannot cast spells when silenced!
+
+あなたは静寂に包まれている間は呪文を唱えられない！
+%%%%
+You are unable to access your magic!
+
+あなたは自分の魔力を使うことができない！
+%%%%
+Cast which spell? (? or * to list)
+
+どの呪文を唱えますか？ (? または * で一覧)
+%%%%
+Casting: <w>%s</w>
+
+前回唱えた魔法: <w>%s</w>
+%%%%
+Confirm with . or Enter, or press ? or * to list all spells.
+
+. またはEnterで前回と同じ呪文を唱えるか、? または * で一覧から選択してください。
+%%%%
+# You don't know that spell.
+
+# jtrans_adjust.txtと重複
+%%%%
+You don't have enough magic to cast that spell.
+
+その呪文を唱えるには魔力が足りない。
+%%%%
+You can't see any susceptible monsters within range! (Use <w>Z</w> to cast anyway.)
+
+射程距離内にはモンスターが見当たらない！
+(構わずに使いたい場合、<w>Z</w> コマンドを使ってください)
+%%%%
+<lightred>Casting this spell will cause instant excommunication!</lightred> Really cast?
+
+<lightred>この呪文を唱えるとたちまち神に見放されます！</lightred> それでも唱えますか？
+%%%%
+Casting this spell will place you under penance. Really cast?
+
+この呪文を唱えると神に懺悔をする羽目になります。それでも唱えますか？
+%%%%
+grants you divine energy.
+
+はあなたに神気を授けた。
+%%%%
+You briefly lose access to your magic!
+
+あなたはしばらく自分の魔力を使えなくなった！
+%%%%
+A voice whispers, "%s"
+
+『%s』という囁き声が聞こえた。
+%%%%
+Your control over your magic is sapped.
+
+あなたの魔法の制御力が弱められた。
+%%%%
+# ifdef WIZARD
+Couldn't try casting monster spell because you're on top of a monster.
+
+%%%%
+# ifdef WIZARD
+Couldn't try casting monster spell because there is no empty monster slot.
+
+%%%%
+# ifdef WIZARD
+Invalid player spell, attempting to cast it as monster spell.
+
+%%%%
+Dummy Monster
+
+# 訳不要
+%%%%
+You can't repeat %s.
+
+%sの呪文を繰り返すことはできません。
+%%%%
+Really cast %s?
+
+本当に%sの呪文を唱えますか？
+%%%%
+The spell is %s to cast%s Continue anyway?
+
+この呪文を唱えるのは%sです%sそれでも続けますか？
+%%%%
+magic immune
+
+呪術無効
+%%%%
+not susceptible
+
+呪術耐性持ち
+%%%%
+chance to defeat MR: %d%%
+
+魔法防御突破率: %d%%
+%%%%
+# Which direction?
+
+# jtrans_main.txtと重複
+%%%%
+Aiming: <white>
+
+照準: <white>
+%%%%
+Sorry, this spell works on others only.
+
+残念ながら、その呪文は他者にしか効果を及ぼしません。
+%%%%
+You fail to access your magic.
+
+あなたは魔力を扱うのに失敗した。
+%%%%
+You feel a surge of divine spite.
+
+あなたは神の悪意が押し寄せるのを感じた。
+%%%%
+does not allow the disloyal to dabble in death!
+
+は不誠実な者が死に関わるのを許さない！
+%%%%
+# the malice of Kikubaaqudgha
+
+# jtrans_godwrath.txtと重複
+%%%%
+does not allow the disloyal to dabble in destruction!
+
+は不誠実なものが破壊に関わるのを許さない！
+%%%%
+the malice of Vehumet
+
+ヴェフメットの悪意
+%%%%
+Spell #%d, power=%d
+
+# for debug
+%%%%
+You miscast %s.
+
+あなたは%sの呪文を唱えるのに失敗した。
+%%%%
+protects you from the effects of your miscast!
+
+は呪文の失敗効果からあなたを守った！
+%%%%
+Spell '%s' is not a player castable spell.
+
+'%s'はプレイヤーが唱えられない呪文です。
+%%%%
+Invalid spell!
+
+無効な呪文です！
+%%%%
+#if TAG_MAJOR_VERSION == 34
+Sorry, this spell is gone!
+
+その呪文は削除済みです！
+%%%%
+[adj]safe
+
+安全
+%%%%
+[adj]slightly dangerous
+
+少し危険
+%%%%
+[adj]quite dangerous
+
+かなり危険
+%%%%
+[adj]very dangerous
+
+極めて危険
+%%%%
+[noise]Silent
+
+無音
+%%%%
+[noise]Almost silent
+
+ほぼ無音
+%%%%
+[noise]Quiet
+
+静か
+%%%%
+[noise]A bit loud
+
+少し音が大きい
+%%%%
+[noise]Loud
+
+音が大きい
+%%%%
+[noise]Very loud
+
+とても音が大きい
+%%%%
+[noise]Extremely loud
+
+極めて音が大きい
+%%%%
+[noise]Deafening
+
+耳が聞こえなくなるほど音が大きい
+%%%%
+# N/A
+
+# jtrans_food.txtと重複
+%%%%

@@ -1,0 +1,101 @@
+%%%%
+scroll of identify
+
+鑑定の巻物
+%%%%
+scroll of teleportation
+
+テレポートの巻物
+%%%%
+scroll of fear
+
+恐慌の巻物
+%%%%
+scroll of noise
+
+騒音の巻物
+%%%%
+scroll of remove curse
+
+解呪の巻物
+%%%%
+scroll of summoning
+
+召喚の巻物
+%%%%
+scroll of enchant weapon
+
+武器強化の巻物
+%%%%
+scroll of enchant armour
+
+防具強化の巻物
+%%%%
+scroll of torment
+
+拷問の巻物
+%%%%
+scroll of random uselessness
+
+無為無作為の巻物
+%%%%
+# TAG_MAJOR_VERSION == 34
+scroll of curse weapon
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+scroll of curse armour
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+scroll of curse jewellery
+
+%%%%
+scroll of immolation
+
+焼き討ちの巻物
+%%%%
+scroll of blinking
+
+瞬間移動の巻物
+%%%%
+scroll of magic mapping
+
+魔法の地図の巻物
+%%%%
+scroll of fog
+
+煙幕の巻物
+%%%%
+scroll of acquirement
+
+獲得の巻物
+%%%%
+scroll of brand weapon
+
+魔力の武器の巻物
+%%%%
+scroll of recharging
+
+魔力充填の巻物
+%%%%
+scroll of holy word
+
+聖なる御言葉の巻物
+%%%%
+scroll of vulnerability
+
+脆弱の巻物
+%%%%
+scroll of silence
+
+静寂の巻物
+%%%%
+scroll of amnesia
+
+忘却の巻物
+%%%%
+scroll of bugginess
+
+# 訳不要
+%%%%

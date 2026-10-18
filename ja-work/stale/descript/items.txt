@@ -1,0 +1,457 @@
+%%%%
+book of air
+
+# old en (ja16):
+#   A primer on the elemental magics of Air. The pages throw off brief sparks as
+#   they are separated.
+# old ja (ja16):
+#   風を司る魔法を学ぶための入門書だ。この本のページをめくるたび、
+#   わずかな静電気が放出されている。
+
+A primer on the elemental magics of Air. The great minotaur hero Vuxhurn, given
+a copy of this book while trapped atop the tower of a wizard with a particularly
+perverse sense of humour, used its pages to construct a rudimentary glider and
+soared to freedom.
+%%%%
+book of battle
+
+# old en (ja16):
+#   A book of spells used by skalds, whose battle songs grant them magical help.
+# old ja (ja16):
+#   吟遊詩人が使用する呪文書だ。その戦いの詩歌は彼らに魔法の助けを授ける。
+
+An astonishingly vain and self-aggrandising work. The author claims credit for a
+wide swathe of weapon-augmenting magics, but seems to have misunderstood or
+misrepresented most of them. Only a few of the spells described in the book
+actually work.
+%%%%
+book of beasts
+
+# old en (ja16):
+#   A book of spells focused on the magical production of beasts, with pages made
+#   from animal skins and covers lined with teeth.
+# old ja (ja16):
+#   この魔法書は魔法によって獣を生み出すことに着目している。
+#   ページは動物の皮でできており、表紙は動物の歯で縁取られている。
+
+A book of spells focused on the summoning of beasts. Its pages nip at careless
+readers' fingers.
+%%%%
+book of burglary
+
+# old en (ja16):
+#   A book containing many diverse spells useful for theft, breaking and entering,
+#   and other miscellaneous larceny.
+# old ja (ja16):
+#   窃盗や侵入、その他そういった行為に有用な様々な魔法を含む本だ。
+
+A book containing spells useful for theft, breaking and entering, and other
+miscellaneous larceny.
+%%%%
+book of death
+
+# old en (ja16):
+#   A ghoulishly illuminated manuscript containing dark spells of Necromancy,
+#   written with inks distilled from corpses. Each page is filled with grotesque
+#   art depicting scenes of disgusting decay and horrifying death.
+# old ja (ja16):
+#   死体から抽出されたインクが使われている、残忍さに彩られた死霊術の写本だ。
+#   それぞれのページには、数々のおぞましい死の光景が芸術的に描かれている。
+
+A manuscript containing dark spells of Necromancy. Each page is filled with
+grotesque art depicting scenes of disgusting decay.
+%%%%
+book of fire
+
+# old en (ja16):
+#   A book containing advanced spells in the elemental school of Fire.
+# old ja (ja16):
+#   この本には強力な火炎術の魔法が記されている。
+
+A book containing advanced spells in the elemental school of Fire, stolen from
+the secret college of the djinn.
+%%%%
+book of flames
+
+# old en (ja16):
+#   The standard text used in arcane academies by students of the elemental magic
+#   of Fire. The pages are inscribed with sigils of flame that glow with flickering
+#   light to read by.
+# old ja (ja16):
+#   魔法学院で火炎術を学ぶ学生のための標準教科書だ。
+#   ページには炎の紋章が記されており、ゆらめく光を放つことで読書するのを助ける。
+
+The standard text used in arcane academies by students of the elemental magic
+of Fire. Readers are recommended to wear a pair of insulated gloves.
+%%%%
+book of frost
+
+# old en (ja16):
+#   A book of magic spells, often used as an introduction to the elemental magics
+#   of Ice. The mystic runes are written in a flowing, jagged style, reminiscent of
+#   frost covering a window.
+# old ja (ja16):
+#   氷の術の入門書としてしばしば用いられる魔法書だ。
+#   神秘的なルーンが流暢かつギザギザな形で記されており、窓を覆う霜を連想させる。
+
+A book of magic spells, often used as an introduction to the elemental magics
+of Ice. Its pages feel unusually brittle, as if they'd crumble at a touch.
+%%%%
+book of geomancy
+
+# old en (ja16):
+#   A book containing basic spells involving the element of Earth. The pages appear
+#   to be made of thin sheets of mica.
+# old ja (ja16):
+#   大地の力にまつわる初級の魔法を収めた魔法書だ。
+#   各ページは薄く加工された雲母石のシートで作られているようだ。
+
+A book containing basic spells involving the element of Earth. Readers are
+recommended to wear a pair of gardening gloves.
+%%%%
+book of ice
+
+# old en (ja16):
+#   A book of advanced magical spells using the element of Ice. The pages are
+#   covered in flakes of frost.
+# old ja (ja16):
+#   高度な氷領域の魔法を記した本だ。
+#   冷気を帯びており、全てのページが霜で覆われている。
+
+A book of advanced magical spells using the element of Ice. Readers are
+recommended to wear a pair of warm gloves.
+%%%%
+book of party tricks
+
+# old en (ja16):
+#   This book contains a number of fun spells guaranteed to liven up any wizarding
+#   party, as well as a number of toasts, jokes, and party games.
+# old ja (ja16):
+#   この本には魔術師どうしでの宴会や乾杯、余興を盛り上げるための楽しげな魔法が
+#   収録されている。
+
+A book containing a variety of fun spells guaranteed to liven up any wizarding
+party, as well as a number of toasts, jokes, and party games.
+%%%%
+book of the dragon
+
+# old en (ja16):
+#   A magical book of spells which allow some command over dragons and their
+#   aspects. Every page has a lavish illustration of a different variety of dragon,
+#   both real and imaginary.
+# old ja (ja16):
+#   ドラゴンにまつわる呪文を集めた魔法書だ。
+#   どのページにも様々な種類のドラゴンが、実在非実在を問わず豊富に描かれている。
+
+A magical book of spells which allow some command over dragons and their
+aspects.
+%%%%
+book of the earth
+
+# old en (ja16):
+#   A textbook for experienced Earth Elementalists.
+# old ja (ja16):
+#   熟練した地の精霊使いのための魔法書だ。
+
+A guide to drawing immense power from the depths of the earth. The original was
+written as a collaboration between the hill dwarves and the mountain dwarves, but
+its compilation was cut short when a massive wave of earthquakes plunged the hill
+dwarves' civilisation into ruin.
+%%%%
+broad axe
+
+# old en (ja16):
+#   A war axe improved with langets, spikes, a lengthed haft and a single-bladed
+#   crescent head.
+# old ja (ja16):
+#   ウォーアックスの各部位を改良し、柄を長くして、三日月型の片刃を付けた斧だ。
+
+An axe with langets, spikes, a lengthed haft and a single-bladed crescent head.
+%%%%
+deck of summoning
+
+# old en (ja16):
+#   A deck of magical cards, depicting a range of weird and wondrous creatures.
+# old ja (ja16):
+#   奇怪で驚くべき生物が描かれた魔法のカードのデッキだ。
+
+A deck of magical cards, depicting a range of weird and wonderful creatures.
+%%%%
+dire flail
+
+# old en (ja16):
+#   A flail with long spikes and a heavier head.
+# old ja (ja16):
+#   打撃部をさらに重くして長い棘を付けたフレイルだ。
+
+A flail with long spikes and a heavy head.
+%%%%
+double sword
+
+# old en (ja16):
+#   A magical weapon with two razor-sharp blades.
+# old ja (ja16):
+#   二つの鋭い刃を持つ魔法の武器だ。
+
+A fearsome weapon with a forked, razor-sharp blade.
+%%%%
+fen folio
+
+# old en (ja16):
+#   A collection of spells once used by the great swamp civilizations. Their towers
+#   have crumbled and decayed, but this book remains, pages flecked with peat
+#   and moss.
+# old ja (ja16):
+#   かつて広大な沼を中心に栄えた文明において使われていた魔法書だ。
+#   彼らの文明は崩壊し衰退してしまったが、泥炭と苔の染みついたこの本はいまだ現存している。
+
+A collection of spells once used by the great swamp civilisations.
+%%%%
+grand grimoire
+
+# old en (ja16):
+#   The pages of this book describe how the mighty among summoners can bend to
+#   their will the terrible things from betwixt the planes. Many have been the
+#   unwary souls, however, who have toyed with this tome and been driven mad by
+#   unimaginable eldritch horrors.
+# old ja (ja16):
+#   この本には、強大な力を持つ召喚術師が、異次元の怪物たちをいかなる方法で自らの
+#   意志通りに操れるかが記されている。
+#   しかし、不注意にもこの書物をぞんざいに扱った多くの者たちが想像を絶する
+#   怪物たちのおぞましき姿に精神を蝕まれ狂ってしまった。
+
+A book describing how the mighty among summoners can bend to their will the
+terrible things from betwixt the planes. Many have been the unwary souls,
+however, who have toyed with this tome and been driven mad by unimaginable
+eldritch horrors.
+%%%%
+hammer
+
+# old en (ja16):
+#   A large hammer with a spiked head.
+# old ja (ja16):
+#   刺々しい巨大なハンマーだ。
+
+A blunt striking weapon, essentially equivalent to a mace.
+%%%%
+hat
+
+# old en (ja16):
+#   A cloth or leather hat.
+# old ja (ja16):
+#   布や革で作られた帽子だ。
+
+A cloth hat.
+%%%%
+horn of Geryon
+
+# old en (ja16):
+#   The horn belonging to Geryon, guardian of the Vestibule of Hell. Legends say
+#   this unholy item has the power to call forth the aid of demonic beasts. It is
+#   also said, however, that the alliances of these monsters are not certain.
+# old ja (ja16):
+#   地獄の番人ゲリュオンが所有する角笛だ。
+#   鳴らすことによって地獄からの援軍を呼び出せると言い伝えられているが、
+#   それらが全て友好的な者たちとは限らない。
+
+The horn belonging to Geryon, guardian of the Vestibule of Hell. It has the
+power to call forth demonic beasts. With high Evocations skill, it will call
+greater numbers of beasts, with lower chances of those beasts being hostile.
+%%%%
+javelin
+
+# old en (ja16):
+#   This lightweight spear is designed for throwing and can cause serious injury.
+# old ja (ja16):
+#   投げて使うように設計された軽量の槍だ。
+#   突き刺さった者に重傷を与えることができる。
+#   {{
+#       if you.race() == "Halfling"
+#           or you.race() == "Kobold"
+#           or you.race() == "Spriggan"
+#       then
+#       --  return "Unfortunately, it is too long and awkward for you to use."
+#           return "残念ながら、あなたには少々大きすぎて扱えないようだ。"
+#       else
+#           return ""
+#       end
+#   }}
+
+A lightweight spear, designed for throwing. It will pass through the targets it
+hits, potentially hitting all targets in its path until it reaches maximum
+range.
+{{
+    if you.race() == "Kobold" or you.race() == "Spriggan" then
+        return "Unfortunately, it is too long and awkward for you to use."
+    end
+}}
+%%%%
+large rock
+
+# old en (ja16):
+#   A very large and very heavy stone.
+# old ja (ja16):
+#   とても大きくとても重い岩だ。 {{
+#      if you.race() == "Ogre"
+#         or you.race() == "Troll"
+#      then
+#         return ""
+#      else
+#      -- return "Exceptional strength is needed even to carry one, and " ..
+#      --        "only large creatures are capable of throwing it."
+#         return "持ち運ぶことすら並外れた力を要する大岩だが、" ..
+#                "相応に巨大な体躯の持ち主ならば敵に投げつけることも可能だろう。"
+#      end
+#   }}
+
+A very large and very heavy stone. {{
+    if you.race() == "Ogre"
+       or you.race() == "Troll"
+   then
+       return ""
+   else
+       return "Only large creatures are capable of throwing it."
+   end
+}}
+%%%%
+lightning rod
+
+# old en (ja16):
+#   This rod allows its wielder to fire continuous lightning: the discharge is
+#   sustained, and can be redirected to new targets by evoking the rod in
+#   subsequent turns (failing to do so will release the trigger). The rod takes a
+#   moment to warm up, making short bursts rather ineffective.
+# old ja (ja16):
+#   このロッドで電撃を連続して浴びせることができる。
+#   具体的には、一度発動した直後のターンにロッドを再発動して別の方向を狙うことで、
+#   広範囲に放電することができる。
+#   (そうしなければ引き金を放して単発の電撃を撃ったのと同じになる)
+#   このロッドは威力が上がるのに時間がかかるため、単発の使用は効果的ではない。
+
+A rod that allows its wielder to fire unavoidable blasts of lightning.
+Consecutive evocations cause the discharge to be sustained, which increases the
+power level up to four times and allows the blast to be redirected to affect an
+area. The strength of the blast increases with Evocations skill and, for
+redirected blasts, decreases with the size of the affected area.
+%%%%
+manual
+
+# old en (ja16):
+#   A valuable book which allows one to practise a certain skill more efficiently
+#   when carried.
+# old ja (ja16):
+#   持ち歩くことで、特定のスキルの成長をさらに促進する貴重な本だ。
+
+A valuable book which allows one to learn a certain skill faster.
+%%%%
+phantom mirror
+
+# old en (ja16):
+#   A hand mirror which can create a reflection of a nearby creature, shattering
+#   in the process. The reflection's duration increases with Evocations skill and
+#   decreases with the magic resistance of the target. It is, invariably, slightly
+#   weaker than the creature it mirrors.
+# old ja (ja16):
+#   付近に居る者を写すことで対象の分身を作り上げることができる手鏡だ。なお、
+#   一度使用するとこの手鏡は壊れてしまう。分身が存在できる時間は使用者の発動スキル
+#   によって増加するが、対象の魔法耐性が高いと減少する。
+#   この手鏡によって映し出された分身は、対象よりもわずかに能力が劣っている。
+
+A hand mirror which can create a reflection of a nearby creature, clouding
+in the process. The reflection's duration increases with Evocations skill and
+decreases with the willpower of the target. It is, invariably, slightly weaker
+than the creature it mirrors.
+%%%%
+phial of floods
+
+# old en (ja16):
+#   An enchanted vessel brimming over with elemental water. Removing the stopper
+#   unleashes a torrent of water from the phial and sets free the water spirits
+#   that dwell within it.
+# old ja (ja16):
+#   友好的な水の精霊が宿る魔法の小瓶だ。
+#   栓を開けることで対象を押しのけるほどの激流が吹き出し、水の精霊たちを解き放つ。
+
+An enchanted vessel of elemental water. Removing the stopper unleashes a torrent
+of water, smashing the target and flooding the nearby area. If any creatures
+engulfed by the wave need air to breathe, they'll be unable to cast spells until
+they recover. The strength of the torrent and the duration of the flooding
+increase with Evocations skill.
+%%%%
+potion of ambrosia
+
+# old en (ja16):
+#   A strange substance, produced by ghost moths. Consuming it causes regeneration
+#   of health and magic, along with total befuddlement. The two effects are
+#   fundamentally linked - the regeneration ends the moment the confusion does.
+# old ja (ja16):
+#   幽体蛾によって作られた奇妙な物質だ。
+#   服用することにより、体力と魔力の再生、及び混乱状態を引き起こす。
+#   この再生と混乱は根本的に結びついているため、混乱状態が解けると再生も止まる。
+
+A strange substance, produced by ghost moths. Consuming it causes regeneration
+of health and magic, along with total befuddlement. The two effects are
+fundamentally linked – the regeneration ends the moment the confusion does.
+%%%%
+potion of blood
+
+# old en (ja16):
+#   A potion containing the essence of life. Vampires find it... vital.
+# old ja (ja16):
+#   生物が生きるために必要不可欠な液体だが、吸血鬼もある意味で必要としている。
+
+A potion containing the essence of life.
+%%%%
+potion of cancellation
+
+# old en (ja16):
+#   A potion which ends most magical effects, good or bad, affecting you.
+# old ja (ja16):
+#   あなたの体に影響を及ぼしているほとんどの魔法の効力を、良性、悪性を問わずに
+#   打ち消す水薬だ。
+
+A potion which ends most magical effects, good or bad, affecting one who drinks
+it. It also reduces magical contamination.
+%%%%
+potion of curing
+
+# old en (ja16):
+#   A potion which heals some wounds, clears the mind and cures diseases. If it is
+#   used when one is at or near full health, it can also slightly repair rotting.
+# old ja (ja16):
+#   これを飲んだ者の傷をわずかに癒し、病気や混乱状態を治療する水薬だ。
+#   また、十分な体力を確保して飲んだ場合には、体の腐敗を治療することもできる。
+
+A potion which restores a small amount of health, and cures poison and
+confusion.
+%%%%
+potion of heal wounds
+
+# old en (ja16):
+#   A magical healing elixir which causes wounds to close and heal almost
+#   instantly. If it is used when one is at or near full health, it can also repair
+#   rotting.
+# old ja (ja16):
+#   これを飲んだ者の傷をふさぎ、瞬く間に治癒する魔法の霊薬だ。
+#   また、十分な体力を確保して飲んだ場合には、体の腐敗を治療することもできる。
+
+A magical healing elixir which causes wounds to close and heal almost
+instantly.
+%%%%
+potion of lignification
+
+# old en (ja16):
+#   A potion which temporarily transforms the imbiber into an animated tree with
+#   branches capable of holding weapons. Such a tree is very resilient, although it
+#   is rooted in place for the duration and cannot teleport.
+# old ja (ja16):
+#   これを飲んだ者を、枝で武器を持つこともできるうごめく樹木と変えてしまう水薬だ。
+#   この樹の体はとても頑丈だが、変化している間は地面に根を張っているため
+#   テレポートや瞬間移動はできなくなる。
+
+A potion which transforms the imbiber into an animated tree with sap for blood and
+branches capable of holding weapons. Such a tree has minimal evasion but increased
+health and natural armour, and is resistant to poison, and immune to torment and
+drowning. However, it is rooted in place while the transformation lasts, and
+cannot teleport.
+%%%%

@@ -1,0 +1,418 @@
+%%%%
+bogus mc (no monster data): %s (%d)
+
+# for die()
+%%%%
+Un-handled duplicate monster name: %s
+
+# for die()
+%%%%
+invalid slot %d for monster::wearing()
+
+# for die()
+%%%%
+invalid slot %d for monster::wearing_ego()
+
+# for die()
+%%%%
+Your delay: %d, your speed: %d, mon speed: %d
+
+# for debug
+%%%%
+in a puff of smoke
+
+煙とともに
+%%%%
+The %s mimic %svanishes%s!
+
+%sのミミックは%s%s消え去った！
+%%%%
+%s %s a mimic!
+
+%s%sミミックだった！
+%%%%
+Invalid draconian subrace: %d
+
+# for die()
+%%%%
+%s: loading spellbook #%d
+
+# for debug
+%%%%
+# ugly_colour_names
+[ugly things colour]red
+
+赤い
+%%%%
+[ugly things colour]brown
+
+茶色の
+%%%%
+[ugly things colour]green
+
+緑色の
+%%%%
+[ugly things colour]cyan
+
+水色の
+%%%%
+[ugly things colour]purple
+
+紫色の
+%%%%
+[ugly things colour]white
+
+白い
+%%%%
+[drac colour]black
+
+黒色
+%%%%
+[drac colour]mottled
+
+斑紋
+%%%%
+[drac colour]yellow
+
+黄色
+%%%%
+[drac colour]green
+
+緑色
+%%%%
+[drac colour]purple
+
+紫
+%%%%
+[drac colour]red
+
+赤色
+%%%%
+[drac colour]white
+
+白色
+%%%%
+[drac colour]grey
+
+灰色
+%%%%
+[drac colour]pale
+
+蒼白
+%%%%
+# monstrous
+
+# jtrans_dat_des_portals.txtと重複
+%%%%
+gelid
+
+凍てつく
+%%%%
+infernal
+
+業火の
+%%%%
+putrid
+
+# obsolete
+%%%%
+torturous
+
+苦痛の
+%%%%
+invalid monster_type %d
+
+# 訳不要
+%%%%
+discards %s horn.
+
+は角笛を取り落とした。
+%%%%
+tracer: foes %d (pow: %d), friends %d (pow: %d), foe_ratio: %d
+
+# for debug
+%%%%
+Your god
+
+あなたの神
+%%%%
+@to_foe@
+
+@foe@に
+%%%%
+@at_foe@
+
+@foe@に
+%%%%
+@foe@'s
+
+@foe@の
+%%%%
+your @the_something@
+
+あなたの@the_something@
+%%%%
+your @the_monster@
+
+あなたの@the_monster@
+%%%%
+altar
+
+祭壇
+%%%%
+ground
+
+地面
+%%%%
+my God
+
+我が神
+%%%%
+says
+
+言った
+%%%%
+shouts
+
+叫んだ
+%%%%
+barks
+
+うなった
+%%%%
+howls
+
+遠吠えした
+%%%%
+roars
+
+吠えた
+%%%%
+screams
+
+絶叫した
+%%%%
+bellows
+
+大声で鳴いた
+%%%%
+bleats
+
+メーと鳴いた
+%%%%
+trumpets
+
+パオーンと鳴いた
+%%%%
+screeches
+
+キーキー鳴いた
+%%%%
+buzzes
+
+ブンブンうなった
+%%%%
+moans
+
+うめき声を上げた
+%%%%
+gurgles
+
+ぶくぶく音を立てた
+%%%%
+croaks
+
+ゲコゲコ鳴いた
+%%%%
+growls
+
+うなった
+%%%%
+hisses
+
+シューッと音を立てた
+%%%%
+sneers
+
+嘲笑った
+%%%%
+squeals
+
+悲鳴を上げた
+%%%%
+buggily says
+
+# 訳不要
+%%%%
+breathes
+
+静かに言った
+%%%%
+whispers
+
+囁いた
+%%%%
+Invalid @says@ type.
+
+# 訳不要
+%%%%
+invalid kill category
+
+# for die()
+%%%%
+Monster %d has no name
+
+# for debug_mondata()
+%%%%
+%s has MR %d > 200
+
+# for debug_mondata()
+%%%%
+%s has rPois++
+
+# for debug_mondata()
+%%%%
+%s has rElec++
+
+# for debug_mondata()
+%%%%
+%s has 0 HD: %d
+
+# for debug_mondata()
+%%%%
+%s has <= 0 HP: %d
+
+# for debug_mondata()
+%%%%
+%s has an empty glyph
+
+# for debug_mondata()
+%%%%
+%s has negative AC
+
+# for debug_mondata()
+%%%%
+%s has negative EV
+
+# for debug_mondata()
+%%%%
+%s has negative xp mod
+
+# for debug_mondata()
+%%%%
+%s has 0 speed
+
+# for debug_mondata()
+%%%%
+%s is both male and female
+
+# for debug_mondata()
+%%%%
+%s has no defined shape
+
+# for debug_mondata()
+%%%%
+%s isn't a species but has a corpse tile
+
+# for debug_mondata()
+%%%%
+%s has a corpse tile & no corpse
+
+# for debug_mondata()
+%%%%
+%s has a corpse but no corpse tile
+
+# for debug_mondata()
+%%%%
+no spells
+
+# for debug_monspells()
+%%%%
+Book #%d is unused (%s)\n
+
+# for debug_monspells()
+%%%%
+Empty book %s
+
+# for debug_monspells()
+%%%%
+Book %s contains invalid spell %d
+
+# for debug_monspells()
+%%%%
+Spellbook %s has spell %s at freq %d (greater than max freq %d)
+
+# for debug_monspells()
+%%%%
+Spellbook %s has spell %s in multiple categories (%d and %d)
+
+# for debug_monspells()
+%%%%
+Spellbook %s has spell %s marked MON_SPELL_NO_SILENT redundantly
+
+# for debug_monspells()
+%%%%
+Spellbook %s has spell %s marked MON_SPELL_NOISY redundantly
+
+# for debug_monspells()
+%%%%
+Spellbook %s has spell %s with no category
+
+# for debug_monspells()
+%%%%
+almost destroyed
+
+ほとんど倒されかけている
+%%%%
+almost dead
+
+ほとんど死にかけている
+%%%%
+severely damaged
+
+ひどく傷ついた
+%%%%
+severely wounded
+
+<severely damaged>
+%%%%
+heavily damaged
+
+すごく傷ついた
+%%%%
+heavily wounded
+
+<heavily damaged>
+%%%%
+moderately damaged
+
+傷ついた
+%%%%
+moderately wounded
+
+<moderately damaged>
+%%%%
+lightly damaged
+
+軽く傷ついた
+%%%%
+lightly wounded
+
+<lightly damaged>
+%%%%
+not damaged
+
+傷つかなかった
+%%%%
+not wounded
+
+<not damaged>
+%%%%
+%s is hit by a flying piece of %s!
+
+%sは%sの肉片を浴びた！
+%%%%
+%s regains %s memory of %s.
+
+%sは%sの呪文を思い出した。
+%%%%

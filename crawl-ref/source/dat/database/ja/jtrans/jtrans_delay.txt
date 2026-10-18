@@ -1,0 +1,367 @@
+%%%%
+# delay.h
+You finish doing something buggy.
+
+# 訳不要
+%%%%
+You continue eating.
+
+あなたは食事を続けている。
+%%%%
+You continue putting on %s.
+
+あなたは%sを装備しようとしている。
+%%%%
+You continue taking off %s.
+
+あなたは%sを外そうとしている。
+%%%%
+You continue memorising.
+
+あなたは呪文の習得を続けている。
+%%%%
+You continue meditating on the rock.
+
+あなたは壁に向かって瞑想を続けている。
+%%%%
+You continue digging a shaft.
+
+あなたは縦穴を掘り続けている。
+%%%%
+You continue reading the scroll.
+
+あなたは巻物を読み続けている。
+%%%%
+# delay.cc
+You stop %s the corpse%s.
+
+あなたは死体%s手を止めた。
+%%%%
+[action]bottling blood from
+
+から採血する
+%%%%
+[action]butchering
+
+を解体する
+%%%%
+Your memorisation is interrupted.
+
+呪文の習得は中断された。
+%%%%
+You stop dropping stuff.
+
+あなたはアイテムを置くのを中止した。
+%%%%
+You stop draining the corpse.
+
+あなたは死体から血を吸うのを中止した。
+%%%%
+All the blood oozes out of the corpse!
+
+死体から血が全て流れ出した！
+%%%%
+Keep eating?
+
+食事を続けますか？
+%%%%
+You stop eating.
+
+あなたは食事を中止した。
+%%%%
+Keep equipping yourself?
+
+このまま装備を続けますか？
+%%%%
+You stop putting on your armour.
+
+あなたは装備するのを中止した。
+%%%%
+Keep disrobing?
+
+装備を外すのを続けますか？
+%%%%
+You stop removing your armour.
+
+あなたは装備を外すのを中断した。
+%%%%
+Keep reading the scroll?
+
+巻物を読むのを続けますか？
+%%%%
+You stop reading the scroll.
+
+あなたは巻物を読むのを中断した。
+%%%%
+You stop ascending the stairs.
+
+あなたは階段を昇るのを中断した。
+%%%%
+You stop descending the stairs.
+
+あなたは階段を降りるのを中断した。
+%%%%
+Your meditation is interrupted.
+
+あなたの瞑想は中断させられた。
+%%%%
+You stop digging.
+
+あなたは床を掘るのを中断した。
+%%%%
+Done waiting.
+
+待機終了。
+%%%%
+You start putting on your armour.
+
+あなたは防具を装備しはじめた。
+%%%%
+You start removing your armour.
+
+あなたは防具を外しはじめた。
+%%%%
+grants you knowledge of %s.
+
+はあなたに%sの呪文の知識を授けた。
+%%%%
+You start memorising the spell.
+
+あなたは呪文の習得を始めた。
+%%%%
+You begin to meditate on the wall.
+
+あなたは壁に向かって瞑想を始めた。
+%%%%
+You begin to dig a shaft.
+
+あなたは床に穴を掘りはじめた。
+%%%%
+You begin reading the scroll.
+
+あなたは巻物を読みはじめた。
+%%%%
+The corpse has rotted away into a skeleton before you could finish drinking it!
+
+死体はあなたが血を飲み終える前に腐敗して骨へと変わった！
+%%%%
+The corpse has rotted away into a skeleton before you could butcher it!
+
+死体はあなたが解体する前に腐敗して骨へと変わった！
+%%%%
+The corpse has rotted away into a skeleton before you could bottle its blood!
+
+死体はあなたが採血する前に腐敗して骨へと変わった！
+%%%%
+You continue drinking.
+
+あなたは血を飲むのをそのまま続けた。
+%%%%
+Really put on {jewellery} while {duration}?
+
+%sですが、本当に%sを身につけますか？
+%%%%
+[action]about to teleport
+
+テレポート発動前
+%%%%
+[action]slowed
+
+減速中
+%%%%
+[action]hasted
+
+加速中
+%%%%
+You finish putting on %s.
+
+あなたは%sを身につけるのを終えた。
+%%%%
+You finish taking off %s.
+
+あなたは%sを脱ぎ終えた。
+%%%%
+You finish eating.
+
+あなたは食事を終えた。
+%%%%
+You finish drinking.
+
+あなたは血を飲むのを終えた。
+%%%%
+You finish memorising.
+
+あなたは呪文の習得を終えた。
+%%%%
+You finish merging with the rock.
+
+あなたは壁へと溶け込んだ。
+%%%%
+...yet there is something new on the other side. You quickly turn back.
+
+……しかし向こう側によく分からないものがある。あなたはさっと引き返した。
+%%%%
+...and sense your way blocked. You quickly turn back.
+
+……しかし行く手がふさがれていることに気づき、さっと引き返した。
+%%%%
+appears in a burst of microwaves!
+
+はマイクロ波バーストとともに出現した！
+%%%%
+pops from nullspace!
+
+は虚無から湧きだした！
+%%%%
+appears in a shower of translocational energy.
+
+はほとばしる転位のエネルギーと共に出現した。
+%%%%
+appears in a shower of sparks.
+
+はほとばしる火花と共に出現した。
+%%%%
+materialises.
+
+は実体化した。
+%%%%
+emerges from chaos.
+
+は混沌から湧きだした。
+%%%%
+emerges from the beyond.
+
+が彼岸から這いだした。
+%%%%
+assembles %s!
+
+が%sを召喚した！
+%%%%
+erupts from nowhere.
+
+はどこからともなく出現した。
+%%%%
+bursts from nowhere.
+
+はどこからともなく出現した。
+%%%%
+is cast out of space.
+
+は外宇宙から現れた。
+%%%%
+is cast out of reality.
+
+は現実の外から現れた。
+%%%%
+coalesces out of pure chaos.
+
+は純粋なる混沌から産まれ落ちた。
+%%%%
+coalesces out of seething chaos.
+
+は煮えたぎる混沌から産まれ落ちた。
+%%%%
+punctures the fabric of time!
+
+は時間の構造を打ち破った！
+%%%%
+punctures the fabric of the universe.
+
+は宇宙の構造を打ち破った。
+%%%%
+manifests!
+
+が現れた！
+%%%%
+manifests with a bang!
+
+が爆発とともに現れた！
+%%%%
+You sense a monster nearby.
+
+あなたは近くにモンスターがいるのを感知した。
+%%%%
+%s is too close now for your liking.
+
+%sに近づきすぎている。
+%%%%
+opens the door.
+
+は扉を開けた。
+%%%%
+opens the gate.
+
+は門を開けた。
+%%%%
+appears from thin air!
+
+はどこからともなく現れた！
+%%%%
+leaps into view!
+
+は視界に飛び込んできた！
+%%%%
+bursts forth from the {lava or water}.
+
+は%sの中から突如現れた。
+%%%%
+lava
+
+溶岩
+%%%%
+water
+
+水
+%%%%
+emerges from the water.
+
+は水の中から現れた。
+%%%%
+comes up the stairs.
+
+が階段を上がってきた。
+%%%%
+comes down the stairs.
+
+が階段を下りてきた。
+%%%%
+comes through the gate.
+
+が門を通ってきた。
+%%%%
+is thrown into view!
+
+が投げ込まれてきた！
+%%%%
+comes into view.
+
+に遭遇した。
+%%%%
+{god name} warns you: {subj} is a foul {(glowing) shapeshifter}.
+
+%sはあなたに警告した: %sは不浄なる%sだ。
+%%%%
+{god name} warns you:
+
+%sはあなたに警告した:
+%%%%
+Gozag incites %s against you.
+
+ゴザーグは%sをあなたにけしかけた。
+%%%%
+Deactivating autopickup; reactivate with <w>%s</w>.
+
+アイテム自動拾いを停止しました: <w>%s</w> キーで再開できます。
+%%%%
+Reactivating autopickup.
+
+アイテム自動拾いを再開しました。
+%%%%
+HP restored.
+
+体力が全快した。
+%%%%
+Magic restored.
+
+魔力がいっぱいになった。
+%%%%

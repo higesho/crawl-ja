@@ -1,0 +1,285 @@
+%%%%
+__SHOUT
+
+# en:
+#   SOUND:You hear a shout!
+SOUND:あなたは叫び声を耳にした！
+%%%%
+__SHOUT seen
+
+# en:
+#   SOUND:@The_monster@ shouts!
+SOUND:@The_monster@は叫んだ！
+%%%%
+__BARK unseen
+
+# en:
+#   SOUND:You hear a bark!
+SOUND:あなたは吠え声を耳にした！
+%%%%
+__BARK seen
+
+# en:
+#   SOUND:@The_monster@ barks!
+SOUND:@The_monster@は吠えた！
+%%%%
+__HOWL unseen
+
+# en:
+#   SOUND:You hear a howl!
+SOUND:あなたは遠吠えを耳にした！
+%%%%
+__HOWL seen
+
+# en:
+#   SOUND:@The_monster@ howls!
+SOUND:@The_monster@は遠吠えした！
+%%%%
+__TWO_SHOUTS unseen
+
+# en:
+#   SOUND:You hear two shouts!
+SOUND:あなたは二つの叫び声を耳にした！
+%%%%
+__TWO_SHOUTS seen
+
+# en:
+#   SOUND:@The_monster@ shouts in stereo!
+@The_monster@はステレオで叫んだ！
+%%%%
+__ROAR unseen
+
+# en:
+#   SOUND:You hear a roar!
+SOUND:あなたは咆哮を耳にした！
+%%%%
+__ROAR seen
+
+# en:
+#   SOUND:@The_monster@ roars!
+SOUND:@The_monster@は咆哮を上げた！
+%%%%
+__SCREAM unseen
+
+# en:
+#   SOUND:You hear a hideous shriek!
+SOUND:あなたはおぞましい金切り声を耳にした!
+%%%%
+__SCREAM seen
+
+# en:
+#   SOUND:@The_monster@ gives a hideous shriek!
+SOUND:@The_monster@はおぞましい金切り声を上げた！
+%%%%
+__BELLOW unseen
+
+# en:
+#   SOUND:You hear a bellow!
+SOUND:あなたは唸り声を耳にした！
+%%%%
+__BELLOW seen
+
+# en:
+#   SOUND:@The_monster@ bellows!
+SOUND:@The_monster@は唸り声を上げた！
+%%%%
+__BLEAT unseen
+
+# en:
+#   SOUND:You hear a bleat!
+SOUND:あなたはメーメーと鳴く声を耳にした！
+%%%%
+__BLEAT seen
+
+# en:
+#   SOUND:@The_monster@ bleats!
+SOUND:@The_monster@はメーメーと鳴いた！
+%%%%
+__TRUMPET unseen
+
+# en:
+#   SOUND:You hear a trumpeting!
+SOUND:あなたはトランペットのような音を聞いた！
+%%%%
+__TRUMPET seen
+
+# en:
+#   SOUND:@The_monster@ trumpets!
+SOUND:@The_monster@はパオーンと鳴いた！
+%%%%
+__SCREECH unseen
+
+# en:
+#   SOUND:You hear a screech!
+SOUND:あなたはギャーギャー鳴く声を耳にした！
+%%%%
+__SCREECH seen
+
+# en:
+#   SOUND:@The_monster@ screeches!
+SOUND:@The_monster@はギャーギャー鳴いた！
+%%%%
+__BUZZ unseen
+
+# en:
+#   SOUND:You hear an angry buzzing noise.
+SOUND:あなたは剣呑なブンブンいう音を耳にした。
+%%%%
+__BUZZ seen
+
+# en:
+#   SOUND:@The_monster@ buzzes angrily.
+SOUND:@The_monster@はブンブンと音を立てた。
+%%%%
+__MOAN unseen
+
+# en:
+#   SOUND:You hear a chilling moan.
+SOUND:あなたは身も凍るようなうめき声を耳にした。
+%%%%
+__MOAN seen
+
+# en:
+#   SOUND:@The_monster@ gives a chilling moan.
+SOUND:@The_monster@は身も凍るようなうめき声を上げた。
+%%%%
+__GURGLE unseen
+
+# en:
+#   SOUND:You hear a horrible gurgling sound!
+SOUND:あなたは恐ろしいゴボゴボという音を耳にした！
+%%%%
+__GURGLE seen
+
+# en:
+#   SOUND:@The_monster@ gurgles horribly!
+SOUND:@The_monster@は恐ろしくゴボゴボと音を立てた！
+%%%%
+__CROAK unseen
+
+# en:
+#   SOUND:You hear a loud, deep croak!
+#   
+#   SOUND:You hear a croak.
+SOUND:あなたはやかましくゲコゲコ鳴く声を耳にした！
+
+SOUND:あなたはゲコゲコ鳴く声を耳にした。
+%%%%
+__CROAK seen
+
+# en:
+#   SOUND:@The_monster@ gives a loud, deep croak!
+#   
+#   SOUND:@The_monster@ croaks.
+SOUND:@The_monster@はやかましくゲコゲコ鳴いた！
+
+SOUND:@The_monster@はゲコゲコ鳴いた。
+%%%%
+__GROWL unseen
+
+# en:
+#   SOUND:You hear an angry growl.
+SOUND:あなたは険悪な唸り声を耳にした。
+%%%%
+__GROWL seen
+
+# en:
+#   SOUND:@The_monster@ growls angrily.
+SOUND:@The_monster@は険悪な唸り声を上げた。
+%%%%
+__HISS unseen
+
+# en:
+#   SOUND:You hear an angry hiss.
+SOUND:あなたは険悪なシューッという音を耳にした。
+%%%%
+__HISS seen
+
+# en:
+#   SOUND:@The_monster@ hisses angrily.
+SOUND:@The_monster@は険悪なシューッという音を立てた。
+%%%%
+__SQUEAL unseen
+
+# en:
+#   SOUND:You hear an angry squeal.
+SOUND:あなたは険悪なブーブーと鳴く声を耳にした。
+%%%%
+__SQUEAL seen
+
+# en:
+#   SOUND:@The_monster@ squeals angrily.
+SOUND:@The_monster@は険悪にブーブーと鳴いた。
+%%%%
+__DEMON_TAUNT
+
+# en:
+#   @The_monster@ @says@, "@demon_taunt@"
+@The_monster@は『@demon_taunt@』と@says@。
+%%%%
+__CHERUB unseen
+
+# en:
+#   SOUND:You hear a shout.
+#   
+#   SOUND:You hear a screech.
+#   
+#   SOUND:You hear a roar.
+#   
+#   SOUND:You hear a low.
+SOUND:あなたは叫び声を耳にした。
+
+SOUND:あなたはギャーギャー鳴く声を耳にした。
+
+SOUND:あなたは咆哮を耳にした。
+
+SOUND:あなたは牛の鳴き声を耳にした。
+%%%%
+__LOUD_ROAR unseen
+
+# en:
+#   SOUND:You hear a deafening roar!
+SOUND:あなたは耳をつんざくような咆哮を耳にした！
+%%%%
+__LOUD_ROAR seen
+
+# en:
+#   SOUND:@The_monster@ roars deafeningly!
+SOUND:@The_monster@は耳をつんざくような咆哮を上げた！
+%%%%
+__CAW seen
+
+# en:
+#   SOUND:@The_monster@ caws.
+@The_monster@はカーカーと鳴いた。
+%%%%
+__CAW unseen
+
+# en:
+#   SOUND:You hear a loud caw.
+SOUND:あなたは大きくカーカーと鳴く声を耳にした。
+%%%%
+player ghost
+
+# en:
+#   VISUAL:@The_monster@ turns @possessive@ malevolent gaze towards you.
+VISUAL:@The_monster@は@possessive@悪意のある眼差しをあなたへ向けた。
+%%%%
+'cap-G'
+
+# en:
+#   VISUAL:@The_monster@ turns @possessive@ gaze towards you.
+VISUAL:@The_monster@は@possessive@眼差しをあなたへ向けた。
+%%%%
+ballistomycete spore
+
+# en:
+#   VISUAL:@The_monster@ waves @possessive@ rhizomes.
+VISUAL:@The_monster@は@possessive@根茎を波打たせた。
+%%%%
+glowing orange brain
+
+# en:
+#   VISUAL:@The_monster@ turns @possessive@ attention towards you.
+VISUAL:@The_monster@はあなたに注意を向けた。
+%%%%

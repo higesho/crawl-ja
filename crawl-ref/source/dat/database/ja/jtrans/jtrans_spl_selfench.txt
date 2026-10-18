@@ -1,0 +1,121 @@
+%%%%
+You stand defiantly in death's doorway!
+
+あなたは死のとば口に踏ん張っている！
+%%%%
+You seem to hear sand running through an hourglass...
+
+あなたは砂時計の砂が流れ落ちる音を耳にしたような気がした……
+%%%%
+Your icy armour melts away.
+
+あなたの氷の鎧は溶け去った。
+%%%%
+Your icy armour thickens.
+
+あなたの氷の鎧は厚さを増した。
+%%%%
+Your icy body feels more resilient.
+
+あなたの氷の体はより強固になった。
+%%%%
+A film of ice covers your body!
+
+あなたの体に氷の鎧がはりついた！
+%%%%
+Your corpse armour falls away.
+
+あなたの纏う屍肉の鎧は剥がれ落ちた。
+%%%%
+Harvested: %d
+
+# for debug
+%%%%
+The bodies of the dead rush to embrace you!
+
+死体があなたに集まり、鎧を形成した！
+%%%%
+Your shell of carrion and bone grows thicker.
+
+あなたの纏う屍肉と骨の鎧は厚みを増した。
+%%%%
+You feel protected from missiles.
+
+あなたは飛び道具から守られたようだ。
+%%%%
+You feel very safe from missiles.
+
+あなたは飛び道具が飛んできても安心だ。
+%%%%
+# Your skin crawls.
+
+# jtrans_godabil.txtと重複
+%%%%
+Your body is healed in an amazingly painful way.
+
+あなたの肉体は恐るべき苦痛に満ちた方法で治療された。
+%%%%
+Your life is in your own hands once again.
+
+あなたは自分の命を自らの手に取り戻した。
+%%%%
+Death's Door abortion
+
+死のとば口の呪文の中断
+%%%%
+The %s foams!
+
+%sは泡立った！
+%%%%
+liquid ground
+
+液状化した地面
+%%%%
+# You feel quick.
+
+# jtrans_mutation_data.txtと重複
+%%%%
+Forget which spell ([?*] list [ESC] exit)?
+
+どの呪文を忘れますか？ ([?*]で一覧、 [ESC]でキャンセル)
+%%%%
+Forget which spell?
+
+どの呪文を忘れますか？
+%%%%
+# You don't know that spell.
+
+# jtrans_adjust.txtと重複
+%%%%
+You begin infusing your attacks with magical energy.
+
+あなたは自らの攻撃に魔力を吹き込みはじめた。
+%%%%
+You extend your infusion's duration.
+
+あなたの攻撃に吹き込まれた魔力の持続時間が延びた。
+%%%%
+You start a new song!
+
+あなたは別の歌を歌いはじめた！
+%%%%
+You start singing a song of slaying.
+
+あなたは殺戮の歌を歌いはじめた。
+%%%%
+A profound silence engulfs you.
+
+深い静寂があなたを包んだ。
+%%%%
+The ground around you becomes liquefied!
+
+あなたの周囲の地面がぬかるんだ！
+%%%%
+You renew your shroud.
+
+あなたは新たな帷子を形成した。
+%%%%
+Space distorts slightly along a thin shroud covering your body.
+
+あなたを覆う帷子に沿って空間がわずかに歪んだ。
+%%%%

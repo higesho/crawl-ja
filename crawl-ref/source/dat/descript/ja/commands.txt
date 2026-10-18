@@ -1,325 +1,549 @@
 %%%%
 CMD_REST
 
+# en:
+#   Rest and heal
 休息して傷を癒す
 %%%%
 CMD_REST verbose
 
-HPかMPが完全に回復するまで最大100ターン休憩する。
-敵対的なモンスターを発見すると休憩は中止される。
+# en:
+#   Rests while your health and magic regenerate. Resting is interrupted as soon
+#   as a hostile monster comes into view. If health and magic are both already
+#   full, resting will wait for 100 turns.
+休息してHPとMPを回復する。
+敵対的なモンスターと遭遇すると休憩は中止される。
+もしHPとMPが両方とも既に全快していた場合、100ターン休憩する。
 %%%%
 CMD_EXPLORE
 
+# en:
+#   Autoexplore the current level
 現在の階層の自動探索
 %%%%
 CMD_EXPLORE verbose
 
-自動で現在の階層の未踏の領域を探索し、自動収集対象のアイテムを収集する。
-敵対的なモンスターや未発見の施設を発見すると探索は中止される。
+# en:
+#   Automatically explores the current level, collecting items on the way.
+#   Exploration stops as soon as a hostile monster comes into view, or when you
+#   encounter new items or features.
+自動で現在の階層の未踏の領域を探索し、経路上の自動収集対象のアイテムを収集する。
+敵対的なモンスターに遭遇したり、未発見のアイテムや施設等を発見すると探索は中止される。
 %%%%
 CMD_INTERLEVEL_TRAVEL
 
-離れた階層への移動
+# en:
+#   Travel to distant levels
+異なる階層への移動
 %%%%
 CMD_INTERLEVEL_TRAVEL verbose
 
-離れた階層に自動で移動する。敵対的なモンスターを発見すると移動は中止される。
+# en:
+#   Automatically travels to a chosen level or branch. Travel is interrupted by
+#   monsters coming into view.
+指定した階層もしくは分岐に自動で移動する。
+敵対的なモンスターと遭遇すると移動は中止される。
 %%%%
 CMD_USE_ABILITY
 
-神から授けられた能力、もしくは生得的な能力を使用する
-%%%%
-CMD_PRAY
-
-神に祈る
+# en:
+#   Use divine, innate or evokable abilities
+神から授けられた/生得的な/アイテム発動による能力を使用する
 %%%%
 CMD_SEARCH_STASHES
 
-アイテム、施設の検索
+# en:
+#   Search for items/features
+アイテムや施設等の検索
 %%%%
 CMD_SEARCH_STASHES verbose
 
-既に発見したアイテムや施設を検索し、その後それの存在する場所まで自動で移動する。
+# en:
+#   Searches for items or features seen elsewhere, and allows you to travel to
+#   their location.
+既に発見したアイテムや施設等を検索し、その後それの存在する場所まで自動で移動する。
 %%%%
 CMD_REPLAY_MESSAGES
 
-最近のメッセージの再読
+# en:
+#   Reread recent messages
+最近表示されたメッセージを再読する
 %%%%
 CMD_RESISTS_SCREEN
 
+# en:
+#   Display character overview
 キャラクターの情報を表示する
 %%%%
 CMD_RESISTS_SCREEN verbose
 
-キャラクターの判っている耐性、能力、装備の能力、その他を表示する。
+# en:
+#   Displays an overview of your current resistances, abilities, equipment and
+#   attributes.
+キャラクターの現在の耐性、能力、能力、装備、能力値等を表示する。
 %%%%
 CMD_DISPLAY_OVERMAP
 
+# en:
+#   Display dungeon overview
 ダンジョンの概観の表示
 %%%%
 CMD_DISPLAY_OVERMAP verbose
 
-あなたが発見した分岐の入口、店やその他の施設の場所を表示する。
+# en:
+#   Displays an overview of dungeon branch locations, discovered altars, shops and
+#   level annotations.
+ダンジョンの分岐の場所、発見済みの祭壇、店、階層の注意表示などの概観を表示する。
 %%%%
 CMD_DISPLAY_RELIGION
 
+# en:
+#   Display religious status
 信仰の状態の表示
 %%%%
 CMD_DISPLAY_RELIGION verbose
 
-あなたの進行する神の好き嫌い、振る舞い、あなたの現在の信仰状況、
+# en:
+#   Displays your god's likes and dislikes, conduct, and your current religious
+#   standing and divine abilities.
+あなたの信仰する神の好き嫌い、振る舞い、あなたの現在の信仰状況、
 神の能力について表示する。
 %%%%
 CMD_DISPLAY_MUTATIONS
 
+# en:
+#   Display mutations
 突然変異の表示
 %%%%
 CMD_DISPLAY_SKILLS
 
+# en:
+#   Manage skills
 スキルの管理
 %%%%
 CMD_DISPLAY_CHARACTER_STATUS
 
+# en:
+#   Display character status
 キャラクターのステータスの表示
 %%%%
 CMD_DISPLAY_CHARACTER_STATUS verbose
 
-あなたに作用している魔術などを表示する。
+# en:
+#   Displays details on your current movement speed, attack speed, stealth, magic
+#   resistance, and any currently active enchantments or status effects.
+あなたの現在の行動速度、攻撃速度、隠密度、魔法耐性、
+そして現在かかっている魔法効果やステータス効果について詳細に表示する。
 %%%%
 CMD_DISPLAY_KNOWN_OBJECTS
 
-発見済みのアイテムの表示
+# en:
+#   List discovered item types
+発見済みのアイテムを表示する
 %%%%
 CMD_SAVE_GAME_NOW
 
+# en:
+#   Save and exit
 ゲームを保存して終了
 %%%%
 CMD_SAVE_GAME_NOW verbose
 
-ゲームを保存した後に終了します。
-一度ゲームを再開すると保存ファイルは再び削除されます。
+# en:
+#   Saves the game for later and exits. Once you resume the game, the save file is
+#   deleted again.
+ゲームを中断するために保存して終了する。
+一度ゲームを再開すると保存ファイルは再び削除される。
 %%%%
 CMD_EDIT_PLAYER_TILE
 
-プレイヤータイルの改造
+# en:
+#   Modify the player tile
+プレイヤータイルを変更
 %%%%
 CMD_EDIT_PLAYER_TILE verbose
 
-プレイヤードールに表示される装備と種族のタイルを変更します。
+# en:
+#   Allows you to modify the equipment and species tile displayed in the player
+#   doll.
+プレイヤー自身の装備と種族のタイルの表示を変更する。
 %%%%
 CMD_DISPLAY_COMMANDS
 
+# en:
+#   Game help
 ゲームのヘルプ
 %%%%
 CMD_DISPLAY_COMMANDS verbose
 
-コマンド、オプション、その他の一覧表を表示する。
+# en:
+#   Displays a list of commands.
+コマンドの一覧表やその他のヘルプを表示する。
+%%%%
+CMD_CHARACTER_DUMP
+
+# en:
+#   Dump character's progress
+キャラクターの進捗情報を出力する
+%%%%
+CMD_CHARACTER_DUMP verbose
+
+# en:
+#   Dumps detailed information about your character into a file ‘playername.txt’ in
+#   the morgue directory, to peruse at your leisure. This includes main stats,
+#   equipment, spells, skills, notes, etc.
+熟読して楽しむ目的で'morgue'フォルダーの(プレイヤー名).txtというファイルに
+あなたのキャラクターについての詳細な情報を出力する。
+これには主要能力値、装備、習得呪文、スキル、行動履歴その他が記載されている。
 %%%%
 CMD_AUTOFIGHT
 
+# en:
+#   Hit the closest monster
 近くの敵モンスターとの自動戦闘
 %%%%
 CMD_AUTOFIGHT verbose
 
-最も近い敵に向かって移動し、装備した武器で攻撃する。
+# en:
+#   Moves towards the closest hostile monster, or attacks an adjacent monster with
+#   your current weapon.
+一番近くにいる敵対的なモンスターの方に移動する、
+あるいはあなたが現在装備してる武器で隣接したモンスターに攻撃する。
 %%%%
 CMD_AUTOFIGHT_NOMOVE
 
-隣接した敵モンスターとの自動戦闘
+# en:
+#   Hit an adjacent monster
+隣接する敵モンスターとの自動戦闘
 %%%%
 CMD_AUTOFIGHT_NOMOVE verbose
 
-あなたが装備した武器で隣接した敵モンスターと自動戦闘を行う。
+# en:
+#   Attacks an adjacent monster with your current weapon.
+あなたが現在装備してる武器で隣接したモンスターに攻撃する。
 %%%%
 CMD_WAIT
 
-1ターンの休憩
+# en:
+#   Wait a single turn
+1ターン休憩する
 %%%%
 CMD_WAIT verbose
 
+# en:
+#   Spends a single turn waiting and resting.
 1ターン待機し、休息する。
+%%%%
+CMD_SAFE_WAIT
+
+# en:
+#   Wait a single turn if safe
+もし安全なら1ターン待機する
+%%%%
+CMD_SAFE_WAIT verbose
+
+# en:
+#   Spends a single turn waiting and resting, but only if there are no hostile
+#   monsters in view.
+視界内に敵対的なモンスターがいない場合に限り1ターン待機し、休息する。
 %%%%
 CMD_DISPLAY_INVENTORY
 
-インベントリの表示
+# en:
+#   Display the contents of your inventory
+所有物一覧を表示
 %%%%
 CMD_DISPLAY_INVENTORY verbose
 
-あなたのインベントリの内容を表示する。
+# en:
+#   Displays the contents of your inventory.
+あなたの所有物の内容を表示する
 %%%%
 CMD_CAST_SPELL
 
+# en:
+#   Cast a spell
 呪文の詠唱
 %%%%
 CMD_CAST_SPELL verbose
 
+# en:
+#   Casts a spell.
 呪文を唱える。
 %%%%
 CMD_MEMORISE_SPELL
 
-呪文の記憶
+# en:
+#   Memorise spell
+呪文の習得
 %%%%
 CMD_MEMORISE_SPELL verbose
 
+# en:
+#   Memorises a chosen spell from your spell library.
 所持している本、もしくは足元にある本を読み、呪文を記憶に留める。
+%%%%
+CMD_LOOKUP_HELP
+
+# en:
+#   Lookup help
+解説文検索
+%%%%
+CMD_LOOKUP_HELP verbose
+
+# en:
+#   Looks up descriptions of monsters, spells, abilities, items and more.
+モンスター、呪文、能力、アイテムその他の解説文を読む。
 %%%%
 CMD_DROP
 
-アイテムを落とす
+# en:
+#   Drop items
+アイテムを床に置く
 %%%%
 CMD_DROP verbose
 
-あなたの現在所持している1つまたは複数のアイテムを落とす。
+# en:
+#   Drops one or more items that you are currently holding.
+あなたが現在所持している1つまたは複数のアイテムを床に置く。
 %%%%
 CMD_DISPLAY_MAP
 
-地図モードに移行
+# en:
+#   Enter map mode
+マップモードに移行
 %%%%
 CMD_DISPLAY_MAP verbose
 
-以前探索したマップを探訪する。
+# en:
+#   Displays a map of the current level.
+現在の階層のマップを表示する。
 %%%%
 CMD_MAP_GOTO_TARGET
 
+# en:
+#   Travel to cursor
 カーソル位置への移動
 %%%%
 CMD_MAP_GOTO_TARGET verbose
 
+# en:
+#   Starts travelling to the cursor's current location.
 現在のカーソル位置まで移動を開始する。
+%%%%
+CMD_MAP_EXPLORE
+
+# en:
+#   Find next autoexplore target
+次の自動探索の目標地点を検索する
+%%%%
+CMD_MAP_EXPLORE verbose
+
+# en:
+#   Moves the cursor to the next location that autoexplore will travel to.
+自動移動で次に移動する場所にカーソルを移す。
 %%%%
 CMD_MAP_ADD_WAYPOINT
 
+# en:
+#   Add waypoint
 中間地点の登録
 %%%%
 CMD_MAP_ADD_WAYPOINT verbose
 
-現在地点を中間地点に設定する。
+# en:
+#   Sets a waypoint at your current position.
+現在地点を中間地点として設定する。
 %%%%
 CMD_MAP_EXCLUDE_AREA
 
-探索禁域の設定
+# en:
+#   Create exclusion
+自動移動禁止エリアの設定
 %%%%
 CMD_MAP_EXCLUDE_AREA verbose
 
-探索禁域を設定、範囲の変更、領域の削除を行う。
+# en:
+#   Creates a travel exclusion, changes its radius, or removes it.
+自動移動禁止エリアの設定、範囲の変更、削除を行う。
 %%%%
 CMD_MAP_CLEAR_EXCLUDES
 
-探索禁域の削除
+# en:
+#   Clear travel exclusions
+自動移動禁止エリアの削除
 %%%%
 CMD_MAP_CLEAR_EXCLUDES verbose
 
-この階層の全ての探索禁域を削除する。
+# en:
+#   Erases all travel exclusions on the level.
+この階層の全ての自動移動禁止エリアを削除する。
 %%%%
 CMD_MAP_NEXT_LEVEL
 
-下の階層に降りる
+# en:
+#   Down one level
+1つ下の階層に移行
 %%%%
 CMD_MAP_NEXT_LEVEL verbose
 
-次の下層を調べる。
+# en:
+#   Displays the next deeper level.
+1つ下の階層を表示する。
 %%%%
 CMD_MAP_PREV_LEVEL
 
-上の階層に上る
+# en:
+#   Up one level
+1つ上の階層に移行
 %%%%
 CMD_MAP_PREV_LEVEL verbose
 
-次の上層を調べる。
+# en:
+#   Displays the next higher level.
+1つ上の階層を表示する。
 %%%%
 CMD_MAP_GOTO_LEVEL
 
+# en:
+#   Go to level
 階層の移動
 %%%%
 CMD_MAP_GOTO_LEVEL verbose
 
-分岐や階層を通って別の階層に行く。
+# en:
+#   Displays another chosen level by branch and depth.
+分岐やその階数を指定して別の階層を表示する。
 %%%%
 CMD_MAP_FIND_UPSTAIR
 
-登り階段の検索
+# en:
+#   Find stairs up
+上り階段を検索
 %%%%
 CMD_MAP_FIND_UPSTAIR verbose
 
-登り階段に移動する。
+# en:
+#   Cycles through stairs up.
+上り階段を順繰りに検索する。
 %%%%
 CMD_MAP_FIND_DOWNSTAIR
 
-下り階段の検索
+# en:
+#   Find stairs down
+下り階段を検索
 %%%%
 CMD_MAP_FIND_DOWNSTAIR verbose
 
-下り階段に移動する。
+# en:
+#   Cycles through stairs down.
+下り階段を順繰りに検索する。
 %%%%
 CMD_MAP_FIND_YOU
 
+# en:
+#   Find me
 自分自身の検索
 %%%%
 CMD_MAP_FIND_YOU verbose
 
-マップカーソルをあなたの現在の位置に戻す。
+# en:
+#   Moves the map cursor back to your current position.
+マップカーソルをあなたの現在位置に戻す。
 %%%%
 CMD_MAP_FIND_PORTAL
 
-店、ポータルの検索
+# en:
+#   Find shops and portals
+店・ポータルの検索
 %%%%
 CMD_MAP_FIND_PORTAL verbose
 
-現在の階層の店かポータルに移動する。
+# en:
+#   Cycles through shops and portals on the current level.
+今いる階層にある店やポータルを順繰りに検索する。
 %%%%
 CMD_MAP_FIND_TRAP
 
+# en:
+#   Find traps
 罠の検索
 %%%%
 CMD_MAP_FIND_TRAP verbose
 
-現在の階層の罠に移動する。
+# en:
+#   Cycles through traps on the current level.
+今いる階層にある罠を順繰りに検索する。
 %%%%
 CMD_MAP_FIND_ALTAR
 
+# en:
+#   Find altars
 祭壇の検索
 %%%%
 CMD_MAP_FIND_ALTAR verbose
 
-現在の階層の祭壇を移動する。
+# en:
+#   Cycles through altars on the current level.
+今いる階層にある祭壇を順繰りに検索する。
 %%%%
 CMD_MAP_FIND_EXCLUDED
 
-探索禁域の検索
+# en:
+#   Find travel exclusion
+自動移動禁止エリアの検索
 %%%%
 CMD_MAP_FIND_EXCLUDED verbose
 
-現在の階層の全ての探索禁域を移動する。
+# en:
+#   Cycles through travel exclusions on the current level.
+今いる階層にある自動移動禁止エリアを順繰りに検索する。
 %%%%
 CMD_MAP_FIND_WAYPOINT
 
+# en:
+#   Find waypoint
 中間地点の検索
 %%%%
 CMD_MAP_FIND_WAYPOINT verbose
 
-現在の階層の全ての中間地点を移動する。
+# en:
+#   Cycles through all waypoints on the current level.
+今いる階層にある中間地点を順繰りに検索する。
 %%%%
 CMD_MAP_FIND_STASH
 
-キャンプの検索
+# en:
+#   Find stash
+アイテム類の検索
 %%%%
 CMD_MAP_FIND_STASH verbose
 
-現在の階層の全てのキャンプを移動する。
+# en:
+#   Cycles through all stashes on the current level.
+今いる階層にあるアイテム類を順繰りに検索する。
 %%%%
 CMD_ZOOM_IN
 
-拡大
+# en:
+#   Zoom in
+拡大する
 %%%%
 CMD_ZOOM_IN verbose
 
-ダンジョン領域を拡大する。
+# en:
+#   Zooms in on dungeon area.
+ダンジョン領域を拡大表示する。
 %%%%
 CMD_ZOOM_OUT
 
+# en:
+#   Zoom out
 縮小
 %%%%
 CMD_ZOOM_OUT verbose
 
-ダンジョン領域を縮小する。
+# en:
+#   Zooms out on dungeon area.
+ダンジョン領域を縮小表示する。
 %%%%

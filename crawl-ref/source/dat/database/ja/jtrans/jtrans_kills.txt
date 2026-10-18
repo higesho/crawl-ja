@@ -1,0 +1,77 @@
+%%%%
+[kill category]you
+
+直接の殺害
+%%%%
+[kill category]collateral kills
+
+間接的な殺害
+%%%%
+[kill category]others
+
+その他
+%%%%
+Grand Total: %d creatures vanquished
+
+総計: %d体のモンスターを倒した。
+%%%%
+Vanquished Creatures
+
+倒したモンスター:
+%%%%
+%d creature%s vanquished.
+
+%d体のモンスターを倒した。
+%%%%
+%d {name}
+
+%d体の%s
+%%%%
+(once)
+
+(1回)
+%%%%
+(twice)
+
+(2回)
+%%%%
+(thrice)
+
+(3回)
+%%%%
+# (%d times)
+
+# jtrans_chardump.txtと重複
+%%%%
+{monster} zombie
+
+%sのゾンビ
+%%%%
+{monster} skeleton
+
+%sのスケルトン
+%%%%
+{monster} simulacrum
+
+%sの幻像
+%%%%
+spectral {monster}
+
+幽体の%s
+%%%%
+# (shapeshifter)
+
+# jtrans_hiscores.txtと重複
+%%%%
+The ghost of {monster}
+
+%sの幽霊
+%%%%
+Can't find kill string?
+
+# 訳不要
+%%%%
+%u creature%s vanquished.
+
+%u体のモンスターを倒した。
+%%%%

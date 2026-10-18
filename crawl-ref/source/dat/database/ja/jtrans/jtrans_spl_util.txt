@@ -1,0 +1,345 @@
+%%%%
+spell #%d has invalid id %d
+
+# for ASSERTM()
+%%%%
+spell #%d, id %d has no name
+
+# for ASSERTM()
+%%%%
+spell '%s' has invalid level %d
+
+# for ASSERTM()
+%%%%
+spell '%s' has min_range larger than max_range
+
+# for ASSERTM()
+%%%%
+targeted/directed spell '%s' has invalid range
+
+# for ASSERTM()
+%%%%
+spell '%s' is declared as a monster spell but is a player spell
+
+# for ASSERTM()
+%%%%
+Spell assigned to '%c'.
+
+この呪文を'%c'キーに割り当てた。
+%%%%
+# You feel less protected from missiles.
+
+# jtrans_player.txtと重複
+%%%%
+# You feel your spell is no longer protecting you from missiles.
+
+# jtrans_player.txtと重複
+%%%%
+# Your charged fireball dissipates.
+
+# jtrans_spl_goditem.txtと重複
+%%%%
+Your memory of %s unravels.
+
+あなたは%sの呪文を忘れた。
+%%%%
+Apport
+
+収拾
+%%%%
+Smite
+
+打擲
+%%%%
+Fragment what (e.g. wall or brittle monster)?
+
+どれを解体しますか？(例: 壁もしくは体の脆いモンスター)
+%%%%
+[spell type]Conj
+
+妖術
+%%%%
+[spell type]Hex
+
+呪術
+%%%%
+[spell type]Chrm
+
+加護
+%%%%
+[spell type]Fire
+
+炎
+%%%%
+[spell type]Ice
+
+氷
+%%%%
+[spell type]Tmut
+
+変異
+%%%%
+[spell type]Necr
+
+死霊
+%%%%
+[spell type]Summ
+
+召喚
+%%%%
+[spell type]Divn
+
+予見
+%%%%
+[spell type]Tloc
+
+転位
+%%%%
+[spell type]Pois
+
+毒
+%%%%
+[spell type]Erth
+
+地
+%%%%
+[spell type]Air
+
+風
+%%%%
+[spell type]Rndm
+
+ランダム
+%%%%
+[spell type]Bug
+
+# 訳不要
+%%%%
+[spell type long]Conjuration
+
+<[skill]Conjurations>
+%%%%
+[spell type long]Hexes
+
+<[skill]Hexes>
+%%%%
+[spell type long]Charms
+
+<[skill]Charms>
+%%%%
+[spell type long]Fire
+
+<[skill]Fire Magic>
+%%%%
+[spell type long]Ice
+
+<[skill]Ice Magic>
+%%%%
+[spell type long]Transmutation
+
+<[skill]Transmutations>
+%%%%
+[spell type long]Necromancy
+
+<[skill]Necromancy>
+%%%%
+[spell type long]Summoning
+
+<[skill]Summonings>
+%%%%
+[spell type long]Divination
+
+予見術
+%%%%
+[spell type long]Translocation
+
+<[skill]Translocations>
+%%%%
+[spell type long]Poison
+
+<[skill]Poison Magic>
+%%%%
+[spell type long]Earth
+
+<[skill]Earth Magic>
+%%%%
+[spell type long]Air
+
+<[skill]Air Magic>
+%%%%
+[spell type long]Random
+
+ランダム
+%%%%
+spell_type2skill: called with spelltype %u
+
+# for debug
+%%%%
+you're too confused.
+
+あなたは混乱しすぎている。
+%%%%
+you don't have enough magic.
+
+十分な魔力が残っていない。
+%%%%
+you can't see any valid targets.
+
+有効な標的が視界内にいない。
+%%%%
+you cannot use spells of this school.
+
+この種別の魔法を使うことができない。
+%%%%
+#if TAG_MAJOR_VERSION == 34
+you're too hot.
+
+%%%%
+#if TAG_MAJOR_VERSION == 34
+you can't cast this while perpetually flying.
+
+%%%%
+#if TAG_MAJOR_VERSION == 34
+your stony body would shatter the ice.
+
+%%%%
+# cannot teleport.
+
+# jtrans_player.txtと重複
+%%%%
+this spell is already in effect.
+
+既にこの呪文は効果を発揮している。
+%%%%
+you're already traveling as fast as you can.
+
+あなたは既に可能な限り素早くなっている。
+%%%%
+you can't move.
+
+あなたは動けない。
+%%%%
+invisibility won't help you when you glow in the dark.
+
+あなたが光を放っている限り透明化は意味がない。
+%%%%
+darkness is useless against divine light.
+
+神気の光輪に対して暗闇の呪文は意味がない。
+%%%%
+you're already repelling missiles.
+
+あなたは既に飛来物を逸らしている。
+%%%%
+you're already deflecting missiles.
+
+あなたは既に飛来物を弾いている。
+%%%%
+you're already a statue.
+
+あなたは既に石像化している。
+%%%%
+your undead flesh cannot be transformed.
+
+あなたの不死の躯は変異することを許さない。
+%%%%
+your current blood level is not sufficient.
+
+あなたは血の気がまだ十分でない。
+%%%%
+you can't regenerate without divine aid.
+
+あなたは神の助けなしでは再生できない。
+%%%%
+you're too dead to regenerate.
+
+あなたの死せる体は再生の呪文を受け付けない。
+%%%%
+you aren't wielding a brandable weapon.
+
+あなたは魔力を帯びさせるのに適した武器を持っていない。
+%%%%
+this spell is useless without hands.
+
+この呪文は器用な手がないと意味がない。
+%%%%
+you must stand on solid ground to cast this.
+
+これを唱えるには固い地面の上に立つ必要がある。
+%%%%
+you are already charged.
+
+あなたは既に遅延式ファイアボールを準備している。
+%%%%
+you cannot be healed further.
+
+あなたはこれ以上体力を回復できない。
+%%%%
+you lack the resilience to cast this spell.
+
+あなたはこの呪文を使うには体力が足りない。
+%%%%
+you're too dead.
+
+あなたの死せる体ではこの呪文は使えない。
+%%%%
+you are too exhausted to enter Death's door!
+
+あなたは疲労しすぎていて死のとば口に立つことができない！
+%%%%
+your appeal for an extension has been denied.
+
+あなたの効果時間を延長しようとする訴えは却下された。
+%%%%
+your body armour is too heavy.
+
+あなたの装備している鎧は重すぎる。
+%%%%
+the film of ice won't work on stone.
+
+石の肌の上には氷を張ることができない。
+%%%%
+your ring of flames would instantly melt the ice.
+
+あなたの炎の円環はたちまち氷を溶かしてしまう。
+%%%%
+the corpses won't embrace your stony flesh.
+
+石の体の上に屍肉の鎧を纏うことはできない。
+%%%%
+the corpses won't embrace your icy flesh.
+
+氷の体の上に屍肉の鎧を纏うことはできない。
+%%%%
+you have no blood to sublime.
+
+あなたには昇華するための血液が流れていない。
+%%%%
+your magic capacity is already full.
+
+あなたの魔力は既にいっぱいだ。
+%%%%
+you need to wait for the winds to calm down.
+
+あなたは風がおさまるまで一旦待つ必要がある。
+%%%%
+the dungeon can only cope with one malign gateway at a time.
+
+迷宮では一度に一つの門だけしか維持できない。
+%%%%
+you can only summon one forest at a time.
+
+ドライアドは一度に一体しか召喚できない。
+%%%%
+you cannot coerce anything to obey you.
+
+あなたは誰も自分に従わせることはできない。
+%%%%
+# the air is too still for clouds to form.
+
+# jtrans_ability.txtと重複
+%%%%
+you cannot coerce anything to answer your summons.
+
+あなたは誰も呼び出すことはできない。
+%%%%

@@ -1,14 +1,161 @@
 %%%%
 death
 
-お悔やみ申し上げます。あなたのキャラクターの早すぎる死は悲しいが、
-Crawlではよく起こることである。あなたのキャラクターがいかに長生きするかは、
-勤勉さとプレイ経験にかかっている。
+# en:
+#   Condolences! Your character's premature death is a sad, but common occurrence
+#   in Crawl. Rest assured that with diligence and playing experience your
+#   characters will last longer.
+#   
+#   Perhaps the following advice can improve your playing style:
+ご愁傷様！ あなたのキャラクターが早すぎる死を迎えることは悲しいことですが、
+このゲームではよくある出来事です。
+努力と経験によってあなたのキャラクターはより長生きするようになるので、ご安心ください。
 
-もしかすると、以下の助言はあなたのプレイスタイルを向上させるかもしれない：
+もしかしたら以下の助言があなたの遊び方を上達させてくれるかもしれません:
+%%%%
+death conjurer melee
+
+# en:
+#   As a Conjurer your main weapon should be offensive magic. Cast spells more
+#   often! Remember to rest when your Magic is low.
+あなたは妖術師ですので、攻撃魔法を主に武器として使うべきでしょう。
+もっと頻繁に呪文を唱えましょう！ 魔力が低下したときには休憩するのを覚えておいてください。
 %%%%
 death ranger melee
 
+# en:
+#   Your bow and arrows are extremely powerful against distant monsters.
 あなたの持つ弓と矢は、距離をとってモンスターを攻撃することに便利だ。
 ダンジョンの中でそれらを発見したら、必ず確保しておけ！
+%%%%
+death random 0
+
+# en:
+#   Always consider using projectiles, wands or spells before engaging monsters in
+#   close combat.
+近接戦闘に突入する前に、飛び道具、ワンド、そして呪文を使うことを常に考えましょう。
+%%%%
+death random 1
+
+# en:
+#   Learn when to run away from things you can't handle — this is important! It is
+#   often wise to skip a particularly dangerous level. But don't overdo this as
+#   monsters will only get harder the deeper you delve.
+あなたの手に負えない出来事からいつ逃げ出すかを学びましょう――それは重要です！
+特別危険な階層を飛ばすことはしばしば賢い判断です。
+しかしあなたが深く潜るにつれてモンスターたちは強くなっていく一方なので、やりすぎは禁物です。
+%%%%
+death random 2
+
+# en:
+#   Rest between encounters, if possible in an area already explored and cleared of
+#   monsters. Pressing <input>$cmd[CMD_REST]</input><localtiles>, or
+#   <input>clicking on the 'rest' button in the command bar'</input></localtiles>
+#   will rest for 100 turns, or until fully healed.
+敵との遭遇の合間に、もし可能なら探索済みかつモンスターも掃討した区域内で休息しましょう。
+<input>$cmd[CMD_REST]</input>を押<localtiles>すか、またはコマンドタブの'休息して傷を癒やす'ボタンを<input>クリック</input></localtiles>すと100ターン経過するか、あるいは全快するまで休息します。
+%%%%
+death random 4
+
+# en:
+#   If a particular encounter feels overwhelming, don't forget to use emergency
+#   items early on. A scroll of teleportation or a potion of haste can really save
+#   your bacon.
+特定の相手との遭遇が恐ろしく感じられたら、緊急用のアイテムを早くから使っておくことを忘れないでください。
+テレポートの巻物やスピードの薬はあなたを危機から守ってくれる可能性が高いです。
+%%%%
+death random 5
+
+# en:
+#   Never fight more than one monster, if you can help it. Always back into a
+#   corridor so that they are forced to fight you one on one.
+できうる限り複数の敵と戦わないようにしてください。
+あなたとの一対一の戦いを相手に強いるため、常に通路の奥に引っ込みましょう。
+%%%%
+finished explored
+
+# en:
+#   Walking around and exploring levels gets easier by using auto-explore
+#   (<input>$cmd[CMD_EXPLORE]</input>). Crawl will let you automatically move to
+#   and pick up interesting items.<localtiles>
+#   
+#   Autoexploration can also be started by <input>Ctrl-Leftclick</input> on the
+#   minimap.</localtiles>
+自動探索を使う(<input>$cmd[CMD_EXPLORE]</input>)ことで周辺を歩いて階層を探索することが簡単になります。
+自動的にプレイヤーが動き、めぼしいアイテムを拾い上げてくれるでしょう。<localtiles>
+
+自動探索はミニマップを<input>Ctrl+左クリック</input>することでも開始できます。</localtiles>
+%%%%
+finished travel
+
+# en:
+#   There is a convenient way to travel between distant dungeon levels: press
+#   <input>$cmd[CMD_INTERLEVEL_TRAVEL]</input> and enter the desired destination.
+#   If your travel gets interrupted, issuing <input>$cmd[CMD_INTERLEVEL_TRAVEL]
+#   Enter</input> will continue it.
+遠く離れたダンジョンの階層間を移動する便利な方法が存在します。
+<input>$cmd[CMD_INTERLEVEL_TRAVEL]</input>を押して目的の地点を入力しましょう。
+もし移動が途中で中断されてしまったら、<input>$cmd[CMD_INTERLEVEL_TRAVEL]→Enter</input>を押すと移動が再開されます。
+%%%%
+finished stashes
+
+# en:
+#   You can search among all items existing in the dungeon with the
+#   <input>$cmd[CMD_SEARCH_STASHES]</input> command. For example,
+#   <input>$cmd[CMD_SEARCH_STASHES]</input> <w>“dagger”</w> will list all daggers,
+#   and allow you to travel to them. You can even search for dungeon features, like
+#   <w>“shop”</w> or <w>“altar”</w>.
+<input>$cmd[CMD_SEARCH_STASHES]</input>コマンドを用いることでダンジョン内に存在するすべてのアイテムを検索できます。
+<input>$cmd[CMD_SEARCH_STASHES]</input> → <w>"ダガー"</w>と入力すると全てのダガーを列挙し、その場所まで移動することができます。
+<w>"店"</w>や<w>"祭壇"</w>のようにダンジョン内の施設を検索することもできます。
+%%%%
+finished random 0
+
+# en:
+#   The game keeps an automated log for your characters. Use
+#   <input>$cmd[CMD_DISPLAY_COMMANDS]:</input> to read it. Once your character
+#   perishes, two morgue files are left in the <w>morgue/</w> directory. The one
+#   ending in .txt contains a copy of your log. During play, you can create a dump
+#   file with <input>$cmd[CMD_CHARACTER_DUMP]</input>.
+あなたのキャラクターの行動は自動的に記録されます。
+それを読むには<input>$cmd[CMD_DISPLAY_COMMANDS]:</input>を押してください。
+キャラクターが死ぬたびに2つのファイルが<w>morgue</w>フォルダーに残されます。
+.txtで終わる片方のファイルにはあなたの行動記録の写しが含まれています。
+プレイしている最中、<input>$cmd[CMD_CHARACTER_DUMP]</input>を押すことでダンプファイルを生成できます。
+%%%%
+finished random 2
+
+# en:
+#   The interface can be greatly customised. All options are explained in the file
+#   <w>options_guide.txt</w> which can be found in the <w>docs</w> directory. The
+#   options themselves are set in <w>init.txt</w> or <w>.crawlrc</w>. Crawl will
+#   complain if it can't find either file.
+インターフェイスは非常に柔軟にカスタマイズできます。
+全てのオプションは<w>docs</w>フォルダー内の<w>options_guide.txt</w>で説明されています。
+各オプションは<w>init.txt</w>もしくは<w>.crawlrc</w>で設定されています。
+どちらのファイルも見つからなかった場合はエラー表示されます。
+%%%%
+HINT_CONVERT
+
+# en:
+#   You've just converted to worshipping <w>{{ return you.god() }}</w>. Your piety
+#   (divine favour) will increase as you do things to please your new god, and will
+#   gradually decrease over time.
+#   
+#   You can check your god's likes and dislikes, as well as your current standing
+#   and divine abilities, by typing
+#   <input>$cmd[CMD_DISPLAY_RELIGION]</input><localtiles>, or by pressing
+#   <input>Shift-right-click</input> on your avatar</localtiles>.
+あなたは今<w>{{ return crawl.jtrans(you.god()) }}</w>に入信しました。
+あなたの信仰値(と御利益)は神を喜ばせる行為をするにつれて高まっていき、
+時間が経つにつれて徐々に低下していくでしょう。
+
+あなたは<input>$cmd[CMD_DISPLAY_RELIGION]</input>を押す<localtiles>か、<input>Shift+右クリック</input>する</localtiles>ことであなたの現在の信仰の篤さや神から授けられた能力はもちろん、
+神の好む/嫌う行為を確認することができます。
+%%%%
+HINT_YOU_MISCAST
+
+# en:
+#   You just miscast a spell.
+あなたは今魔法を唱えるのを失敗しました。
 %%%%

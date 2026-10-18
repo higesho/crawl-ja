@@ -1,0 +1,449 @@
+%%%%
+monster %s has ench '%s' not in cache
+
+# for die()
+%%%%
+monster %s has no ench '%s' but cache says it does
+
+# for die()
+%%%%
+get_ench returned '%s' when asked for '%s'
+
+# for die()
+%%%%
+%s submerges.
+
+# for debug
+%%%%
+You %sdetect the %s %s.
+
+あなたは%sた%sの姿を探知した。
+%%%%
+You can no longer detect the %s %s.
+
+あなたは%sた%sの姿を探知できない。
+%%%%
+[adj]hexed
+
+呪縛され
+%%%%
+[adj]charmed
+
+魅了され
+%%%%
+[adj]bribed
+
+買収され
+%%%%
+mgrd(%d,%d) points to %s monster, even though it contains submerged monster %s (see bug 2293518)
+
+# for error
+%%%%
+%s tried to unsubmerge while on same square as %s (see bug 2293518)
+
+# for error
+%%%%
+is no longer moving quickly.
+
+はもはや高速に動いてはいない。
+%%%%
+slows down.
+
+は動きが遅くなった。
+%%%%
+is no longer moving somewhat quickly.
+
+の動きはもう速くない。
+%%%%
+becomes audible again.
+
+は再び音が聞こえるようになった。
+%%%%
+As %s %s, the sound returns.
+
+%sが%sと、再び音が戻ってきた。
+%%%%
+is destroyed
+
+倒れる
+%%%%
+dies
+
+死ぬ
+%%%%
+no longer looks unusually strong.
+
+はもう力が強化されていない。
+%%%%
+is no longer moving slowly.
+
+はもう動きが遅くなくなった。
+%%%%
+%s icy armour evaporates.
+
+%sの氷の鎧は蒸発した。
+%%%%
+is no longer paralysed.
+
+はもう麻痺していない。
+%%%%
+is no longer petrified.
+
+はもう石化していない。
+%%%%
+stops retreating.
+
+は逃げるのを止めた。
+%%%%
+seems to regain %s courage.
+
+は勇気を取り戻したようだ。
+%%%%
+seems less confused.
+
+は混乱が収まったようだ。
+%%%%
+%s appears from thin air!
+
+%sはどこからともなく現れた！
+%%%%
+%s breaks free of your control!
+
+%sはあなたの束縛から逃れた！
+%%%%
+%s is no longer %s.
+
+%sはもう%sていない。
+%%%%
+You can once again detect the %s.
+
+あなたは再び%sの姿を探知した。
+%%%%
+You can no longer detect the %s.
+
+あなたは%sの姿を探知できない。
+%%%%
+breaks free of your control!
+
+はあなたの支配下から逃れた！
+%%%%
+is no longer charmed.
+
+はもう魅了されていない。
+%%%%
+is no longer hexed.
+
+はもう呪縛されていない。
+%%%%
+is no longer bribed.
+
+はもう買収されていない。
+%%%%
+stops glowing.
+
+は輝きを失った。
+%%%%
+%s stops glowing and disappears.
+
+%sは輝きを失い、同時に姿を消した。
+%%%%
+stops burning.
+
+を燃やしていた炎が消えた。
+%%%%
+looks more healthy.
+
+は体調が持ち直したようだ。
+%%%%
+breaks free.
+
+は自由を取り戻した。
+%%%%
+is no longer berserk.
+
+はもうバーサークしていない。
+%%%%
+%s is on the same square as you!
+
+%sはあなたと同じ場所にいる！
+%%%%
+%s bursts forth from the water.
+
+%sが水の中から飛び出てきた。
+%%%%
+Something invisible bursts forth from the water.
+
+何か目に見えないものが水の中から飛び出てきた。
+%%%%
+'s soul is no longer ripe for the taking.
+
+の魂はもはや囚われていない。
+%%%%
+The forest calms down.
+
+森は静けさを取り戻した。
+%%%%
+is no longer liquefying the ground.
+
+はもう地面を液状化させていない。
+%%%%
+is no longer dazed.
+
+の眩暈がおさまった。
+%%%%
+'s inner flame fades away.
+
+の内なる炎は消え去った。
+%%%%
+is no longer mute.
+
+は声が出るようになった。
+%%%%
+is no longer blind.
+
+は目が見えるようになった。
+%%%%
+is no longer stupefied.
+
+はもうぼうっとしていない。
+%%%%
+is no longer mad.
+
+はもう狂乱していない。
+%%%%
+is no longer regenerating.
+
+はもう急速再生しなくなった。
+%%%%
+is no longer resistant to hostile enchantments.
+
+はもう敵対的な魔法への耐性はなくなった。
+%%%%
+seems to return to %s normal shape.
+
+は元通りの姿に戻ったようだ。
+%%%%
+is no longer weakened.
+
+はもう弱体化していない。
+%%%%
+%s toxic aura wanes.
+
+%s放つ毒のオーラは弱まった。
+%%%%
+The grasping roots settle back into the ground.
+
+動いていた木の根は地面へとしなだれ落ちた。
+%%%%
+is no longer more vulnerable to fire.
+
+はもう火に弱くなくなった。
+%%%%
+is no longer more vulnerable to poison.
+
+はもう毒に弱くなくなった。
+%%%%
+%s icy envelope dissipates!
+
+%sの氷の鎧は消滅した！
+%%%%
+is no longer unusually agile.
+
+はもう動きが機敏でなくなった。
+%%%%
+is no longer encased in ice.
+
+はもう凍結していない。
+%%%%
+is no longer absorbing vital energies.
+
+は生命力を吸収するのをやめた。
+%%%%
+is no longer being sapped.
+
+はもう魔法の制御力が弱体化されていない。
+%%%%
+is no longer covered in acid.
+
+はもう酸に覆われていない。
+%%%%
+is no longer distracted by gold.
+
+はもう金貨に目を奪われていない。
+%%%%
+seems less drained.
+
+は衰弱から回復したようだ。
+%%%%
+is no longer repelling missiles.
+
+はもう飛来物を逸らす能力がなくなった。
+%%%%
+is no longer deflecting missiles.
+
+はもう飛来物を弾く能力がなくなった。
+%%%%
+is no longer unusually resistant.
+
+の耐性は強くなくなった。
+%%%%
+is no longer giving off an aura.
+
+はもうオーラを放ってはいない。
+%%%%
+seems less brilliant.
+
+の叡智はなりをひそめたようだ。
+%%%%
+loses the glow of perfection.
+
+は無欠の輝きを失った。
+%%%%
+%s soul is no longer bound.
+
+%s魂はもう呪縛されてない。
+%%%%
+is no longer infested.
+
+はもう虫に寄生されていない。
+%%%%
+Tangled roots snake along the ground.
+
+木の根が蛇のように大地を這い回った。
+%%%%
+The ground creaks as gnarled roots bulge its surface.
+
+木の根が膨らむと共に大地が軋み声を上げた。
+%%%%
+A root reaches out and grasps at passing movement.
+
+逃げる動きに木の根が追いつき、その体を掴んだ。
+%%%%
+Roots rise up to grasp you, but you nimbly evade.
+
+木の根があなたを掴もうと持ち上がったが、身軽にかわした。
+%%%%
+Roots rise up from beneath %s and drag %s %sto the ground.
+
+木の根が%sの足下から持ち上がり、地面に引きずり倒した。
+%%%%
+Roots grasp at your %s, making movement difficult.
+
+木の根があなたの%sを掴んだため、動きが取りづらくなった。
+%%%%
+The pull of its song draws you forwards.
+
+歌声の魔力があなたを前に引き寄せた。
+%%%%
+Something prevents you from swapping places with %s.
+
+何かの力が%sと場所交換するのを邪魔している。
+%%%%
+# You swap places with %s.
+
+# jtrans_misc.txtと重複
+%%%%
+The shadowy forms in the deep grow still as others approach.
+
+深淵の霊魂は呼びかけに応え勢いを増した。
+%%%%
+Shadowy forms rise from the deep at %s song!
+
+%s歌に呼ばれ、霊魂が深淵より蘇った！
+%%%%
+is no longer in an insane frenzy.
+
+はもう狂気に身を任せていない。
+%%%%
+looks more energetic.
+
+は元気になったように見える。
+%%%%
+'s dark mirror aura disappears.
+
+の暗黒の鏡のオーラは消滅した。
+%%%%
+%s takes poison damage: %d (degree %d)
+
+# for debug
+%%%%
+The flames covering %s go out.
+
+%sにまとわりついていた炎は消えた。
+%%%%
+burns!
+
+の体は燃えた！
+%%%%
+sticky flame damage: %d
+
+# for debug
+%%%%
+%s catches fire!
+
+%sに火がついた！
+%%%%
+%s crumbles away.
+
+%sは崩れ落ちた。
+%%%%
+%s melts away.
+
+%sは溶け去った。
+%%%%
+A nearby %s withers and dies.
+
+近くにいる%sは枯れ果てて死んだ。
+%%%%
+A ballistomycete spawns a ballistomycete spore.
+
+放出菌糸は巨大胞子を放出した。
+%%%%
+The portal closes; %s is severed.
+
+ポータルが閉じたため、%sは切断された。
+%%%%
+suddenly becomes enraged!
+
+は突如激怒した！
+%%%%
+You hear a distant and violent thrashing sound.
+
+あなたは暴力的な切り裂く音を遠くに聞いた。
+%%%%
+writhes!
+
+は身もだえした！
+%%%%
+The winds around %s start to calm down.
+
+%sの周囲の風はおさまりつつある。
+%%%%
+is seared!
+
+は灼かれた！
+%%%%
+Zin's Corona damage: %d
+
+# for debug
+%%%%
+%s chant is interrupted.
+
+%sによる招集の宣言は中断された。
+%%%%
+The winds around %s calm down.
+
+%sの周囲の風はおさまった。
+%%%%
+%s song is interrupted.
+
+%s歌は中断された。
+%%%%
+is no longer sharing %s pain.
+
+はもう痛みを共有してはいない。
+%%%%
+cturn: %d, raw_duration: %d
+
+# for debug
+%%%%

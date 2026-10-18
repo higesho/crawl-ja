@@ -1,0 +1,466 @@
+%%%%
+GOD sometimes watches over you
+
+# 訳不要
+%%%%
+GOD can shield you from mutations
+
+# 訳不要
+%%%%
+GOD can protect you from unnatural transformations
+
+# 訳不要
+%%%%
+GOD can protect you from effects of Hell
+
+# 訳不要
+%%%%
+GOD will warn you about shapeshifters
+
+# 訳不要
+%%%%
+GOD protects your summons from abjuration
+
+# 訳不要
+%%%%
+GOD blesses your followers when they kill evil beings
+
+# 訳不要
+%%%%
+gain health and magic from killing evil beings
+
+# 訳不要
+%%%%
+are surrounded by divine halo
+
+# 訳不要
+%%%%
+GOD protects you from necromancy miscasts and mummy death curses
+
+# 訳不要
+%%%%
+GOD protects you from torment
+
+# 訳不要
+%%%%
+can see well in the dark
+
+# 訳不要
+%%%%
+have a chance to gain mana when you kill
+
+# 訳不要
+%%%%
+are less likely to miscast destructive spells
+
+# 訳不要
+%%%%
+can cast destructive spells farther
+
+# 訳不要
+%%%%
+gain health from killing
+
+殺害によって体力を回復すること
+%%%%
+GOD protects you from miscasts
+
+# 訳不要
+%%%%
+GOD protects your allies from abjuration
+
+# 訳不要
+%%%%
+can maintain berserk longer and you
+
+# 訳不要
+%%%%
+are less likely to pass out
+
+# 訳不要
+%%%%
+cards are more powerful
+
+# 訳不要
+%%%%
+can protect the life of your allies
+
+# 訳不要
+%%%%
+protected from distortion unwield effects
+
+# 訳不要
+%%%%
+remember the shape of the Abyss better
+
+# 訳不要
+%%%%
+GOD will help you find the Abyssal rune.
+
+# 訳不要
+%%%%
+GOD will no longer help you find the Abyssal rune.
+
+# 訳不要
+%%%%
+share experience with your followers
+
+# 訳不要
+%%%%
+inspire orcs to join your side
+
+# 訳不要
+%%%%
+GOD will bless your followers.
+
+# 訳不要
+%%%%
+GOD will no longer bless your followers.
+
+# 訳不要
+%%%%
+# walk on water
+
+# 訳不要
+# jtrans_mutation.txtと重複
+%%%%
+slimes and eye monsters are neutral towards you
+
+# 訳不要
+%%%%
+GOD summons jellies to protect you
+
+# 訳不要
+%%%%
+GOD allows jellies to devour items
+
+# 訳不要
+%%%%
+GOD adjusts your attributes periodically
+
+# 訳不要
+%%%%
+items consumed by your fellow slimes feed you
+
+# 訳不要
+%%%%
+GOD protects your from corrosion
+
+# 訳不要
+%%%%
+items consumed by your fellow slimes restores your mana reserve
+
+# 訳不要
+%%%%
+items consumed by your fellow slimes restores your health
+
+# 訳不要
+%%%%
+GOD grants you access to the hidden treasures of the Slime Pits
+
+# 訳不要
+%%%%
+can walk through plants
+
+# 訳不要
+%%%%
+can safely fire through allied plants
+
+# 訳不要
+%%%%
+Allied plants are friendly towards you
+
+# 訳不要
+%%%%
+are protected from inadvertent hurry
+
+# 訳不要
+%%%%
+move less quickly
+
+# 訳不要
+%%%%
+GOD will aid your escape with the Orb of Zot.
+
+# 訳不要
+%%%%
+GOD will no longer aid your escape with the Orb of Zot.
+
+# 訳不要
+%%%%
+GOD supports your attributes
+
+# 訳不要
+%%%%
+GOD no longer supports your attributes
+
+# 訳不要
+%%%%
+GOD will slow the abyss.
+
+# 訳不要
+%%%%
+GOD will no longer slow the abyss.
+
+# 訳不要
+%%%%
+have a slowed metabolism
+
+# 訳不要
+%%%%
+prefer cursed items
+
+# 訳不要
+%%%%
+sense portals
+
+# 訳不要
+%%%%
+sense the properties of items
+
+# 訳不要
+%%%%
+have improved mapping abilities
+
+# 訳不要
+%%%%
+sense threats
+
+# 訳不要
+%%%%
+sense items
+
+# 訳不要
+%%%%
+are better at searching for traps
+
+# 訳不要
+%%%%
+get a skill boost from cursed items
+
+# 訳不要
+%%%%
+are clear of vision
+
+# 訳不要
+%%%%
+are clear of mind
+
+# 訳不要
+%%%%
+are surrounded by an umbra
+
+# 訳不要
+%%%%
+emit smoke when hit
+
+# 訳不要
+%%%%
+Your attacks are mimicked by a shadow.
+
+# 訳不要
+%%%%
+Your attacks are no longer mimicked by a shadow.
+
+# 訳不要
+%%%%
+Your attack spells are mimicked by a shadow.
+
+# 訳不要
+%%%%
+Your attack spells are no longer mimicked by a shadow.
+
+# 訳不要
+%%%%
+detect gold
+
+# 訳不要
+%%%%
+GOD turns all corpses to gold.
+
+# 訳不要
+%%%%
+have a gold aura
+
+# 訳不要
+%%%%
+clouds can't harm you
+
+# 訳不要
+%%%%
+generate elemental clouds to protect you
+
+# 訳不要
+%%%%
+chances to be struck by projectiles are reduced
+
+# 訳不要
+%%%%
+elemental attacks leaves you somewhat more resistant to themxo
+
+# 訳不要
+%%%%
+your enemies will sometime fail their attack or even hit themselves
+
+# 訳不要
+%%%%
+enemies that inflict damage upon you will sometime receive a detrimental status effect
+
+# 訳不要
+%%%%
+GOD prevents you from regenerating your mana reserve
+
+# obsolete: Pakellas
+%%%%
+GOD identifies your wands and rods
+
+# obsolete: Pakellas
+%%%%
+GOD collects and distills excess magic from your kills
+
+# obsolete: Pakellas
+%%%%
+GOD siphons a part of your essence into your ancestor
+
+# 訳不要
+%%%%
+drain nearby creatures when transferring your ancestor
+
+周囲のモンスターを、祖霊と位置交換した際に衰弱させること
+%%%%
+You hear a distant slurping noise.
+
+あなたは遠くで物を食べるような音を耳にした。
+%%%%
+[hands act]your hands are bound.
+
+あなたの%sは呪縛されている。
+%%%%
+[hands act]your hands are not bound.
+
+あなたの%sは呪縛されていない。
+%%%%
+Your %s %s is bound but not your %s %s.
+
+あなたの%sを持つ方の%sは呪縛されているが、%sを持つ方の%sは呪縛されていない。
+%%%%
+Your weapon %s is %sbound.
+
+あなたの武器は呪縛されて%s。
+%%%%
+Your shield %s is %sbound.
+
+あなたの盾を持つ方の%sは呪縛されて%s。
+%%%%
+You are not bound in armour or jewellery.
+
+あなたは鎧も装身具も呪縛されていない。
+%%%%
+You are partially bound in armour and jewellery.
+
+あなたは鎧および装身具が部分的に呪縛されている。
+%%%%
+You are fully bound in armour and jewellery.
+
+あなたは鎧および装身具が完全に呪縛されている。
+%%%%
+You are not bound in armour.
+
+あなたの鎧は呪縛されていない。
+%%%%
+You are partially bound in armour.
+
+あなたの鎧は部分的に呪縛されている。
+%%%%
+You are fully bound in armour.
+
+あなたの鎧は完全に呪縛されている。
+%%%%
+You are not bound in jewellery.
+
+あなたの装身具は呪縛されていない。
+%%%%
+You are partially bound in jewellery.
+
+あなたの装身具は部分的に呪縛されている。
+%%%%
+You are fully bound in jewellery.
+
+あなたの装身具は完全に呪縛されている。
+%%%%
+You are not bound.
+
+あなたは呪縛されていない。
+%%%%
+You are slightly bound.
+
+あなたはいくらか呪縛されている。
+%%%%
+You are moderately bound.
+
+あなたはかなり呪縛されている。
+%%%%
+You are seriously bound.
+
+あなたは深刻に呪縛されている。
+%%%%
+You are fully bound.
+
+あなたは完全に呪縛されている。
+%%%%
+You are buggily bound.
+
+# 訳不要
+%%%%
+Your resistance to fire fades away.
+
+あなたの火への耐性は薄れていった。
+%%%%
+Your resistance to cold fades away.
+
+あなたの冷気への耐性は薄れていった。
+%%%%
+Your resistance to electricity fades away.
+
+あなたの電撃への耐性は薄れていった。
+%%%%
+Your resistance to physical damage fades away.
+
+あなたの物理ダメージへの耐性は薄れていった。
+%%%%
+You feel %sprotected from fire.
+
+あなたは%s火炎への耐性が強まったようだ。
+%%%%
+You feel %sprotected from cold.
+
+あなたは%s冷気への耐性が強まったようだ。
+%%%%
+You feel %sprotected from electricity.
+
+あなたは%s電気への耐性が強まったようだ。
+%%%%
+You feel %sprotected from physical attacks.
+
+あなたは%s物理ダメージへの耐性が強まったようだ。
+%%%%
+more
+
+さらに
+%%%%
+your shadow
+
+あなたの影
+%%%%
+%s mimicks your spell!
+
+%sがあなたの呪文を真似した！
+%%%%
+prepares the audience for your solo!
+
+はあなたの独演に対し観衆の手配をしている！
+%%%%
+links your audience in an emotional bond!
+
+は観衆に一体感を与えた！
+%%%%

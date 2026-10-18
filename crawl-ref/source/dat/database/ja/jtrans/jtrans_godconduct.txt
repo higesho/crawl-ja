@@ -1,0 +1,353 @@
+%%%%
+is not enthusiastic about the mutagenic glow surrounding you.
+
+はあなたを取り巻く変異性の輝きをよく思っていない。
+%%%%
+does not appreciate the extra mutagenic glow surrounding you!
+
+はあなたを取り巻く強変異性の輝きを喜んでいない！
+%%%%
+you perform cannibalism
+
+同種食らいをすること
+%%%%
+expects more respect for your departed relatives.
+
+は同胞の亡骸に対するさらなる尊崇を要求した。
+%%%%
+you desecrate holy remains
+
+聖なる遺骸を汚すこと
+%%%%
+expects more respect for holy creatures!
+
+は聖遺物へのさらなる尊崇を要求した！
+%%%%
+you use evil magic or items
+
+邪悪な魔法やアイテムを使うこと
+%%%%
+forgives your inadvertent evil act, just this once.
+
+はあなたの不注意な邪悪なる振る舞いを今回だけ見逃した。
+%%%%
+you attack non-hostile holy beings
+
+敵対的でない聖なる存在を攻撃すること
+%%%%
+you kill non-hostile holy beings
+
+敵対的でない聖なる存在を殺すこと
+%%%%
+you attack neutral beings
+
+中立なるものを攻撃すること
+%%%%
+forgives your inadvertent attack on a neutral, just this once.
+
+はあなたの敵対していない者への不注意な攻撃を今回だけ見逃した。
+%%%%
+forgives your inadvertent attack on an ally, just this once.
+
+はあなたの仲間への不注意な攻撃を今回だけ見逃した。
+%%%%
+you attack allies
+
+従者を攻撃すること
+%%%%
+you attack monters in a sanctuary
+
+あなたが聖域の中のモンスターを攻撃すること
+%%%%
+you use unclean or chaotic magic or items
+
+不浄な、もしくは混沌なる魔術やアイテムを使うこと
+%%%%
+forgives your inadvertent unclean act, just this once.
+
+はあなたの不注意な不浄なる振る舞いを今回だけ見逃した。
+%%%%
+you polymorph monsters
+
+モンスターに変化すること
+%%%%
+forgives your inadvertent chaotic act, just this once.
+
+はあなたの不注意な混沌なる振る舞いを今回だけ見逃した。
+%%%%
+you deliberately mutate or transform yourself
+
+わざと変化したり変異すること
+%%%%
+you butcher sentient beings
+
+意識のある存在の死体を切り刻むこと
+%%%%
+you attack intelligent monsters in an unchivalric manner
+
+モンスターを騎士道に反する行いで攻撃すること
+%%%%
+forgives your inadvertent dishonourable attack, just this once.
+
+はあなたの恥ずべき攻撃を今回だけ見逃した。
+%%%%
+you poison monsters
+
+モンスターを毒に冒すこと
+%%%%
+you use holy magic or items
+
+神聖なる魔法やアイテムを使うこと
+%%%%
+forgives your inadvertent holy act, just this once.
+
+はあなたの不注意な神聖なる振る舞いを今回だけ見逃した。
+%%%%
+you memorise spells
+
+魔法を習得すること
+%%%%
+you attempt to cast spells
+
+魔法を唱えようとすること
+%%%%
+you train magic skills
+
+魔術系のスキルを訓練すること
+%%%%
+doesn't appreciate your training magic!
+
+はあなたが魔法を訓練するのを喜ばない！
+%%%%
+you kill living things while asking for your life to be spared
+
+生命が保護されている間に生命ある者を殺すこと
+%%%%
+does not appreciate your shedding blood when asking for salvation!
+
+は救済を求めながら他者の血を流す行為を喜ばない！
+%%%%
+you desecrate orcish remains
+
+オークの遺骸を汚すこと
+%%%%
+you attack allied orcs
+
+従者のオークを攻撃すること
+%%%%
+you kill slimes
+
+スライムを殺すこと
+%%%%
+you attack fellow slimes
+
+仲間のスライムを攻撃すること
+%%%%
+you use necromancy on corpses, chunks or skeletons
+
+死霊術を死体や肉片および骸骨に用いること
+%%%%
+forgives your inadvertent necromancy, just this once.
+
+はあなたの不注意な死霊術を今回だけ見逃した。
+%%%%
+you destroy plants
+
+あなたが植物を傷つけること
+%%%%
+allied flora die
+
+従えた植物が死ぬこと
+%%%%
+you hasten yourself or others
+
+自分や他者を加速させること
+%%%%
+forgives your accidental hurry, just this once.
+
+はあなたがうっかり急いでしまったのを今回だけ見逃した。
+%%%%
+thinks you should slow down.
+
+はあなたはもっと減速すべきだと考えている。
+%%%%
+you use fiery magic or items
+
+火を伴う魔術やアイテムを使うこと
+%%%%
+forgives your accidental fire-starting, just this once.
+
+はあなたがうっかり火を灯してしまったのを今回だけ見逃した。
+%%%%
+does not appreciate your starting fires!
+
+はあなたが火を灯すのを喜ばない！
+%%%%
+# you channel magical energy
+
+# obsolete: Pakellas
+%%%%
+use unnaturally quick items
+
+不自然に素早いアイテムを使うこと
+%%%%
+dislikes it when %s.
+
+は%sを嫌う。
+%%%%
+strongly dislikes it when %s.
+
+は%sを特に嫌う。
+%%%%
+unknown holiness type; can't give a bonus
+
+# 訳不要
+%%%%
+accepts your kill.
+
+はあなたの殺しを善しとした。
+%%%%
+you kill living beings
+
+あなたが生者を殺すこと
+%%%%
+you destroy the undead
+
+あなたが不死者を滅すること
+%%%%
+you kill demons
+
+あなたが悪魔を殺すこと
+%%%%
+you kill holy beings
+
+あなたが神聖な存在を殺すこと
+%%%%
+you destroy nonliving beings
+
+あなたが生命を持たぬものを破壊すること
+%%%%
+<white>%s is honoured by your kill.</white>
+
+<white>%sはあなたの殺しを誇りに思った。</white>
+%%%%
+you explore the world
+
+あなたが世界を探索すること
+%%%%
+you kill unclean or chaotic beings
+
+あなたが不浄な者や混沌なる者を殺すこと
+%%%%
+you kill the undead
+
+あなたが不死者を殺すこと
+%%%%
+you kill evil beings
+
+あなたが邪悪な存在を殺すこと
+%%%%
+you meet creatures to determine whether they need to be eradicated
+
+根絶対象か判断するためにモンスターを光で照らすこと
+%%%%
+appreciates your killing of a holy being.
+
+はあなたが聖なる存在を殺すのを喜んだ。
+%%%%
+you train your various spell casting skills
+
+様々な呪文スキルの鍛錬
+%%%%
+you kill wizards and other users of magic
+
+魔法使いおよび様々な魔力の使い手を殺すこと
+%%%%
+appreciates your killing of a magic user.
+
+はあなたが魔術の使い手を殺すのを喜んだ。
+%%%%
+you banish creatures to the Abyss
+
+モンスターをアビスに追放すること
+%%%%
+claims a new guest.
+
+は新たな訪問者を受け入れた。
+%%%%
+you kill the priests of other religions
+
+他宗教の司祭を殺すこと
+%%%%
+appreciates your killing of a heretic priest.
+
+はあなたが異端の司祭を殺すのを喜んだ。
+%%%%
+corpses rot away
+
+死体を土に還すこと
+%%%%
+appreciates ongoing decay.
+
+は死体が土に還ることを喜んだ。
+%%%%
+you kill fast things, relative to your speed
+
+あなたより素早いものを殺すこと
+%%%%
+thoroughly appreciates the change of pace.
+
+はあなたの減速ぶりを大いに喜んだ。
+%%%%
+appreciates the change of pace.
+
+はあなたの減速ぶりを喜んだ。
+%%%%
+you explore the world (preferably while bound by curses)
+
+あなたが世界を探索すること(呪縛されている場合は特に)
+%%%%
+you kill beings that bring fire to the dungeon
+
+迷宮へ火をもたらすものを殺すこと
+%%%%
+appreciates your extinguishing a source of fire.
+
+はあなたが火の元を消すのを喜んだ。
+%%%%
+you hurt your foes; however, effects that cause damage over time do not interest Uskayaw
+
+あなたが敵を傷つけること(ただし、時間経過と共にダメージを与える効果はウスカヤーの興味を引かない)
+%%%%
+you destroy spellbooks via the <w>a</w> command
+
+<w>[a]</w>コマンドを用いて魔法書を焼くこと
+%%%%
+you sacrifice items by allowing slimes to consume them
+
+スライムに消化させることでアイテムを捧げること
+%%%%
+you collect gold
+
+金を貯めること
+%%%%
+you make personal sacrifices
+
+自らを代償に捧げること
+%%%%
+you donate money
+
+寄進すること
+%%%%
+doesn't like anything? This is a bug; please report it.
+
+# 訳不要
+%%%%
+likes it when %s.
+
+は%sを好む。
+%%%%
+especially likes it when %s.
+
+は%sを特に好む。
+%%%%

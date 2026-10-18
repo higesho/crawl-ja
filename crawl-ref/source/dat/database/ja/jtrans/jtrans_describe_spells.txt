@@ -1,0 +1,81 @@
+%%%%
+[descriptor]natural
+
+生得的な能力を持って
+%%%%
+[descriptor]magical
+
+魔法を習得して
+%%%%
+[descriptor]divine
+
+能力を神から授かって
+%%%%
+, which are affected by silence
+
+が、行使の際は静寂効果によって影響を受ける
+%%%%
+, which are affected by silence and antimagic
+
+が、行使の際は静寂および反魔法効果によって影響を受ける
+%%%%
+, which are affected by antimagic
+
+が、行使の際は反魔法効果によって影響を受ける
+%%%%
+(judging by the %s you have seen %s %s)
+
+(あなたが目にした%sから判断すると)
+%%%%
+spells
+
+魔法
+%%%%
+abilities
+
+能力
+%%%%
+has mastered %s%s%s:
+
+は%s%sを習得している%s:
+%%%%
+one of the following spellbooks
+
+下記の魔法書のうちひとつ
+%%%%
+the following spells
+
+下記の呪文
+%%%%
+possesses the following %s abilities%s%s:
+
+は%s下記の%sいる%s:
+%%%%
+Book
+
+魔法書
+%%%%
+Set
+
+組み合わせ
+%%%%
+%s %d:
+
+%s%d:
+%%%%
+You have seen %s using the following:
+
+あなたは%sが以下の魔法を使ったのを目にした:
+%%%%
+Spells                             Type                      Level
+
+呪文名                             系統                       レベル
+%%%%
+Select a spell to read its description { or ... }.
+
+%s解説文を読むにはそれぞれの呪文を選択してください。
+%%%%
+or to memorise it
+
+呪文を記憶したり、
+%%%%

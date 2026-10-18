@@ -1,0 +1,132 @@
+%%%%
+_writing_adj_
+
+# old en (ja16):
+#   %angular
+#   %blocky
+#   %bold
+#   %faded
+#   %flowing
+#   %glowing
+#   %shifting
+#   %sinuous
+#   %spidery
+#   %writhing
+# old ja (ja16):
+#   角ばった
+#   
+#   塊状の
+#   
+#   大胆な
+#   
+#   色あせた
+#   
+#   流れるような
+#   
+#   輝く
+#   
+#   偏移する
+#   
+#   しなやかな
+#   
+#   蜘蛛のような
+#   
+#   身もだえするような
+
+angular
+
+blocky
+
+bold
+
+curvy
+
+flowing
+
+jagged
+
+pulsating
+
+shifting
+
+sinuous
+
+sloping
+
+spidery
+
+swirling
+
+throbbing
+
+twitching
+
+writhing
+%%%%
+_writing_noun_
+
+# old en (ja16):
+#   %binary code
+#   %figures
+#   %glyphs
+#   %hieroglyphics
+#   %print-out
+#   %runes
+#   %scrawl
+#   %sigils
+#   %symbols
+#   %text
+#   %writing
+# old ja (ja16):
+#   バイナリコード
+#   
+#   統計
+#   
+#   グリフ
+#   
+#   象形
+#   
+#   プリントアウト
+#   
+#   ルーン
+#   
+#   走り書き
+#   
+#   印章
+#   
+#   紋章
+#   
+#   テキスト
+#   
+#   書き込み
+
+binary code
+
+characters
+
+cuneiform
+
+figures
+
+glyphs
+
+hieroglyphics
+
+ideograms
+
+letters
+
+print-out
+
+runes
+
+scrawl
+
+sigils
+
+symbols
+
+text
+
+writing
+%%%%

@@ -1,0 +1,25 @@
+%%%%
+fire (Fire) armour ego
+
+# en:
+#   It enhances your Fire magic.
+この%sはあなたの炎の魔術の力を強める。
+%%%%
+harm (Harm) armour ego
+
+# en:
+#   It increases damage dealt and taken.
+この%sは与えるダメージと受けるダメージの双方を増やす。
+%%%%
+ice (Ice) armour ego
+
+# en:
+#   It enhances your Ice magic.
+この%sはあなたの冷気の魔術の力を強める。
+%%%%
+poisoned (poison) missile ego
+
+# en:
+#   It is coated with poison.
+この%sは毒に浸されている。
+%%%%

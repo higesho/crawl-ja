@@ -1,0 +1,169 @@
+%%%%
+Velocity card
+
+# old en (ja19):
+#   The card depicts an empty, well-worn pair of boots. Sand, ashes, and turf
+#   coat the boots' soles.
+#   
+#   Drawing this card can grant great speed or terrible slowness to foes and allies
+#   alike. The beneficial aspects depend on card power.
+# old ja (ja19):
+#   このカードには履き古された一足のブーツが描かれている。
+#   砂、灰、そして草がブーツの裏にこびりついている。
+#   
+#   このカードを引くと、加速もしくは減速の効果を敵味方両方にもたらすことがある。
+#   どの程度役に立つかはカードの威力に依存する。
+
+The card depicts an empty, well-worn pair of boots. Sand, ashes, and turf
+coat the boots' soles.
+
+Drawing this card can grant great speed to allies or terrible slowness to foes.
+%%%%
+the Tomb card
+
+# old en (ja19):
+#   The card depicts a royal crypt, its entrance sealed by a heavy stone slab.
+#   
+#   Drawing this card entombs its user in protective, temporary walls of solid rock.
+#   At lower power levels or with adjacent creatures, the tomb may be imperfect.
+# old ja (ja19):
+#   このカードには、入口を重厚な石盤で封じられた王家の墳墓が描かれている。
+#   
+#   このカードを引くと、使用者を岩の壁で一時的に囲んで防御する。
+#   低威力の場合や既にモンスターが隣接している場合などは、完全には壁で囲まれることはない。
+
+The card depicts a royal crypt, its entrance sealed by a heavy stone slab.
+
+Drawing this card entombs its user in protective, temporary walls of solid rock.
+At lower power levels or with adjacent creatures, the tomb may be imperfect.
+
+The tomb is sustained by the presence of its creator within it, and moving from
+the centre of the tomb will cause its walls to crumble away.
+%%%%
+Exile card
+
+# old en (ja19):
+#   The card depicts ceaseless hands from a yawning portal overcoming a panicked
+#   figure.
+#   
+#   Drawing this card will banish one or more nearby creatures to the Abyss,
+#   possibly including the user.
+# old ja (ja19):
+#   このカードには、口を開けたポータルから絶え間なく伸びるいくつもの手が恐慌した人物を襲う様子が描かれている。
+#   
+#   このカードを引くと周囲のモンスターを1体かそれ以上アビスへと追放するが、使用者も巻き込まれることがある。
+
+The card depicts ceaseless hands from a yawning portal overcoming a panicked
+figure.
+
+Drawing this card can banish nearby creatures to the abyss, with more being banished
+at higher power levels. It will never banish the user.
+%%%%
+the Shaft card
+
+# old en (ja19):
+#   The card depicts a traveler plummeting into a chasm that has opened beneath
+#   them.
+#   
+#   Drawing this card will create a shaft beneath the user, and possibly beneath
+#   their enemies.
+# old ja (ja19):
+#   このカードには、旅行者がその足下に開いた割れ目に真っ逆さまに転がり落ちる様子が描かれている。
+#   
+#   このカードを引くと使用者の足下に縦穴を作り出す。また、使用者に敵対する者の足下にも作り出すことがある。
+
+The card depicts a traveller plummeting into a chasm that has opened beneath
+them.
+
+Drawing this card will create a shaft beneath the user, and possibly beneath
+their enemies.
+%%%%
+the Elixir card
+
+# old en (ja19):
+#   The card depicts a smug smile formed out of nine chalices.
+#   
+#   This card rapidly restores the user's health or magic, or both at high power
+#   levels. It will also heal their allies.
+# old ja (ja19):
+#   このカードには9つの杯で形作られた笑顔のマークが描かれている。
+#   
+#   このカードは使用者の体力もしくは魔力、高威力の場合はその両方を急速に回復させる。
+#   使用者の仲間に対しても回復の効果がある。
+
+The card depicts a smug smile formed out of nine chalices.
+
+Drawing this card rapidly restores the user's health and magic.
+%%%%
+the Cloud card
+
+# old en (ja19):
+#   The card depicts an iron gate enshrouded in mist.
+#   
+#   This card imprisons the user's foes in rings of clouds. The type of clouds
+#   produced will improve with card power.
+# old ja (ja19):
+#   このカードには霧に覆われた鉄の門が描かれている。
+#   
+#   このカードは使用者の敵を雲の輪に閉じ込める。
+#   生成される雲の種類はカードの威力に依存する。
+
+The card depicts an iron gate enshrouded in mist.
+
+Drawing this card enshrouds the user's foes in rings of detrimental clouds. The
+effects of such clouds will vary with card power.
+%%%%
+the Storm card
+
+# old en (ja19):
+#   The card depicts a ship at sea sinking in a thunderstorm.
+#   
+#   Drawing it unleashes a storm of wind and thunder clouds.
+# old ja (ja19):
+#   このカードには、激しい嵐の中海に沈んでいく船が描かれている。
+#   
+#   このカードを引くと、雷雲と烈風が放たれる。
+
+The card depicts a ship at sea sinking in a thunderstorm.
+
+Drawing this card unleashes a storm of wind and electrical discharges.
+Increasing card power will result in a stronger wind force and stronger, more
+numerous discharges.
+%%%%
+Wild Magic card
+
+# old en (ja19):
+#   The card depicts a pointy wizard's hat, scorched and resting on a pile of ashes.
+#   
+#   Drawing this card causes wild magic (as if from miscasting a spell) to act upon
+#   its user's enemies. Each creature affected will restore some of the user's
+#   magic.
+#   Summoning
+# old ja (ja19):
+#   このカードには先の尖っている焼け焦げた魔法使いの帽子が灰の山の上に置かれている様子が描かれている。
+#   
+#   このカードを引くと魔法の暴走(魔法失敗効果と同様)を引き起こし、使用者の敵に影響を及ぼす。
+#   効果を受けたモンスターごとに使用者の魔力がいくらか回復する。
+
+The card depicts a pointy wizard's hat, scorched and resting on a pile of ashes.
+
+Drawing this card causes wild magic (as if from miscasting a spell) to act upon
+its user's enemies. Each creature affected will restore some of the user's
+magic.
+%%%%
+the Pentagram card
+
+# old en (ja19):
+#   The card depicts cultists marking out a ritual pentagram on the floor.
+#   
+#   Drawing this card will summon a pair of demons to the user's aid.
+# old ja (ja19):
+#   このカードには、信仰者が儀式用の五芒星を地面に描いている様子が描かれている。
+#   
+#   このカードを引くと、一群の悪魔が使用者を手助けするべく召喚される。
+
+The card depicts cultists marking out a ritual pentagram on the floor.
+
+Drawing this card will summon a pair of demons to the user's aid. There is a
+small chance one of the demons will be hostile.
+%%%%

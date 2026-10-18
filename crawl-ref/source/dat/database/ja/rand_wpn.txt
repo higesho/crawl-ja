@@ -1,0 +1,11 @@
+%%%%
+_short_killer_name_
+
+# en:
+#   bane
+#   
+#   slayer
+狩り
+
+殺し
+%%%%

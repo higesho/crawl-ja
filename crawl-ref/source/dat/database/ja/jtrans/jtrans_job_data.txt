@@ -1,0 +1,97 @@
+%%%%
+[job]Abyssal Knight
+
+深淵の騎士
+%%%%
+[job]Air Elementalist
+
+風の精霊使い
+%%%%
+[job]Arcane Marksman
+
+神秘の射撃手
+%%%%
+[job]Artificer
+
+発動術師
+%%%%
+[job]Assassin
+
+暗殺者
+%%%%
+[job]Berserker
+
+狂戦士
+%%%%
+[job]Chaos Knight
+
+混沌の騎士
+%%%%
+[job]Conjurer
+
+妖術師
+%%%%
+[job]Earth Elementalist
+
+地の精霊使い
+%%%%
+[job]Enchanter
+
+呪術師
+%%%%
+[job]Fighter
+
+戦士
+%%%%
+[job]Fire Elementalist
+
+火の精霊使い
+%%%%
+[job]Gladiator
+
+闘士
+%%%%
+[job]Hunter
+
+狩人
+%%%%
+[job]Ice Elementalist
+
+氷の精霊使い
+%%%%
+[job]Monk
+
+修行僧
+%%%%
+[job]Necromancer
+
+死人使い
+%%%%
+[job]Skald
+
+吟遊詩人
+%%%%
+[job]Summoner
+
+召喚術師
+%%%%
+[job]Transmuter
+
+変異術師
+%%%%
+[job]Venom Mage
+
+毒素の魔術師
+%%%%
+[job]Wanderer
+
+放浪者
+%%%%
+[job]Warper
+
+転位術師
+%%%%
+[job]Wizard
+
+魔術師
+%%%%

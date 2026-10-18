@@ -1,0 +1,53 @@
+%%%%
+Error! failed to place monster in tentacle connect change
+
+# 訳不要
+%%%%
+connector placement failed at %d %d
+
+# 訳不要
+%%%%
+link information corruption!!! tentacle in chain doesn't match mindex
+
+# 訳不要
+%%%%
+pathing failed, target %d %d
+
+# for debug
+%%%%
+The vine drags %s backwards!
+
+蔓は%sを奥の方へと引きずった！
+%%%%
+tentacle connect failed! What the heck!  severed status %d
+
+# 訳不要
+%%%%
+pathed to %d %d from %d %d mid %d count %d
+
+# 訳不要
+%%%%
+Missing tentacle in path.
+
+# for debug
+%%%%
+The tentacle pulls %s backwards!
+
+触手は%sを奥の方へと引っ張った！
+%%%%
+A tentacle rises from the water!
+
+触手が水面から伸びてきた！
+%%%%
+Tentacles burst out of the water!
+
+何本もの触手が水面から伸びてきた！
+%%%%
+A tentacle flies out from the starspawn's body!
+
+落とし子がその体から触手を伸ばした！
+%%%%
+Tentacles burst from the starspawn's body!
+
+落とし子がその体から何本もの触手を伸ばした！
+%%%%

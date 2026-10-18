@@ -1,0 +1,17 @@
+%%%%
+Failed to create item '%s'
+
+'%s'というアイテムを生成するのに失敗しました。
+%%%%
+Invalid brand on item %s, annulling.
+
+# 訳不要
+%%%%
+Running generate_weapon_item tests.
+
+# 訳不要
+%%%%
+Running generate_armour_item tests.
+
+# 訳不要
+%%%%

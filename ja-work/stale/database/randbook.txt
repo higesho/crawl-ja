@@ -1,0 +1,3982 @@
+%%%%
+book_noun
+
+# old en (ja19):
+#   Tome
+#   Grimoire
+#   Almanac
+#   Volume
+#   Compendium
+#   Handbook
+#   Incunabulum
+#   Papyrus
+#   Catalogue
+# old ja (ja19):
+#   書
+#   
+#   魔導書
+#   
+#   年鑑
+#   
+#   全集
+#   
+#   概論
+#   
+#   手引書
+#   
+#   
+#   古文書
+#   
+#   カタログ
+# old en (ja16):
+#   Tome
+#   Grimoire
+#   Almanac
+#   Volume
+#   Compendium
+#   Handbook
+#   Incunabulum
+#   Papyrus
+#   Catalogue
+# old ja (ja16):
+#   書
+#   
+#   魔導書
+#   
+#   年鑑
+#   
+#   全集
+#   
+#   概論
+#   
+#   手引書
+#   
+#   
+#   古文書
+#   
+#   カタログ
+
+Almanac
+
+Anthology
+
+Atlas
+
+Book
+
+Catalogue
+
+Codex
+
+Compendium
+
+Compilation
+
+Cyclopedia
+
+Directory
+
+Elucidation
+
+Encyclopedia
+
+Folio
+
+Grimoire
+
+Handbook
+
+Incunable
+
+Incunabulum
+
+Octavo
+
+Omnibus
+
+Papyrus
+
+Precepts
+
+Quarto
+
+Secrets
+
+Spellbook
+
+Tome
+
+Vellum
+
+Volume
+%%%%
+_book_noun_on_
+
+# old en (ja19):
+#   Guide
+#   Collected Works
+#   Disquisition
+#   Reference Book
+# old ja (ja19):
+#   ガイド
+#   
+#   論文集
+#   
+#   論文
+#   
+#   参考書
+# old en (ja16):
+#   Guide
+#   Collected Works
+#   Disquisition
+#   Reference Book
+# old ja (ja16):
+#   ガイド
+#   
+#   論文集
+#   
+#   論文
+#   
+#   参考書
+
+Annotations
+
+Collected Works
+
+Commentary
+
+Discourse
+
+Discursus
+
+Disquisition
+
+Dissertation
+
+Enchiridion
+
+Essays
+
+Excursus
+
+Exposition
+
+Guide
+
+Guidebook
+
+Information
+
+Lectures
+
+Lessons
+
+Meditations
+
+Monograph
+
+Notes
+
+Opusculum
+
+Reference Book
+
+Teachings
+
+Textbook
+
+Thoughts
+
+Tractate
+
+Treatise
+
+Vademecum
+
+Verses
+
+Writings
+%%%%
+_book_adjective_
+
+# old en (ja19):
+#   glistering
+#   sparkling
+#   levitating
+#   droning
+#   conspicuous
+#   inconspicuous
+#   colourful
+#   graven
+#   engraved
+#   antique
+#   yellowed
+#   rare
+#   black
+#   blackened
+#   torn
+# old ja (ja19):
+#   きらめく
+#   
+#   ぴかぴか光る
+#   
+#   宙に浮いている
+#   
+#   退屈そうな
+#   
+#   人目を引く
+#   
+#   地味な
+#   
+#   色彩豊かな
+#   
+#   重厚な
+#   
+#   彫版印刷の
+#   
+#   骨董品の
+#   
+#   黄ばんだ
+#   
+#   珍しい
+#   
+#   黒い
+#   
+#   黒塗りの
+#   
+#   引き裂かれた
+# old en (ja16):
+#   glistering
+#   sparkling
+#   levitating
+#   droning
+#   conspicuous
+#   inconspicuous
+#   colourful
+#   graven
+#   engraved
+#   antique
+#   yellowed
+#   rare
+#   black
+#   blackened
+#   torn
+# old ja (ja16):
+#   きらめく
+#   
+#   ぴかぴか光る
+#   
+#   宙に浮いている
+#   
+#   うなり声を立てる
+#   
+#   人目を引く
+#   
+#   地味な
+#   
+#   色彩豊かな
+#   
+#   重厚な
+#   
+#   彫版印刷の
+#   
+#   骨董品の
+#   
+#   黄ばんだ
+#   
+#   珍しい
+#   
+#   黒い
+#   
+#   黒塗りの
+#   
+#   引き裂かれた
+
+ancient
+
+antique
+
+backwards
+
+black
+
+blackened
+
+clothbound
+
+colourful
+
+conspicuous
+
+curious
+
+curling
+
+decrepit
+
+disorganised
+
+dog-eared
+
+droning
+
+dusty
+
+embossed
+
+engraved
+
+exquisite
+
+faded
+
+foxed
+
+fuliginous
+
+fusty
+
+gaudy
+
+glistering
+
+glossy
+
+graven
+
+grimy
+
+humming
+
+illuminated
+
+inconspicuous
+
+innocuous
+
+leatherbound
+
+levitating
+
+lithographed
+
+loosely-bound
+
+moth-eaten
+
+mouldy
+
+mumbling
+
+murmuring
+
+musty
+
+odd
+
+peculiar
+
+plain
+
+quavering
+
+quivering
+
+ragged
+
+rare
+
+remarkable
+
+resplendent
+
+shimmering
+
+shiny
+
+simple
+
+sooty
+
+sparkling
+
+stained
+
+sticky
+
+strange
+
+suspect
+
+suspicious
+
+tattered
+
+thrumming
+
+timeworn
+
+torn
+
+trembling
+
+uncut
+
+unremarkable
+
+unusual
+
+upside-down
+
+vellum
+
+vibrant
+
+vibrating
+
+water-damaged
+
+weird
+
+well-preserved
+
+whispering
+
+worn
+
+wrinkled
+
+yellowed
+%%%%
+_the_book_magic_
+
+# old en (ja19):
+#   w:9
+#   capitalise later as needed
+#   the Arcane Arts
+#   w:1
+#   the Hermit's Heritage
+# old ja (ja19):
+#   w:9
+#   秘技
+#   
+#   w:1
+#   隠遁者の遺産
+#   
+#   w:90
+#   @_book_magic_@
+# old en (ja16):
+#   w:9
+#   capitalise later as needed
+#   the Arcane Arts
+#   w:1
+#   the Hermit's Heritage
+# old ja (ja16):
+#   w:9
+#   秘技
+#   
+#   w:1
+#   隠遁者の遺産
+#   
+#   w:90
+#   @_book_magic_@
+
+the @_occult_adjective_@ Arts
+
+the @_occult_adjective_@ Practices
+
+the @_occult_adjective_@ Rites
+
+the @_occult_adjective_@ Traditions
+
+the @_occult_adjective_@ Truths
+
+the Hermit's Heritage
+
+the Histories of Mysteries
+
+the Magician's Craft
+
+the Mind of the Magus
+
+the Power of Words
+
+the Rites and Rhymes
+
+the Sigils and Symbols
+
+the Wisdom of the Ancients
+
+the Wizard's Wisdom
+
+the Words of Power
+
+w:300
+@_book_magic_@
+%%%%
+_book_magic_
+
+# old en (ja19):
+#   Magic
+#   Theurgy
+#   Thaumaturgy
+#   w:5
+#   Casting
+#   w:5
+#   Spellcasting
+#   Wizardry
+#   Sorcery
+#   Witchcraft
+#   Witchery
+#   Spellcraft
+#   Spellweaving
+#   w:5
+#   Secret Knowledge
+#   w:5
+#   Rites and Rhymes
+#   w:5
+#   Hermeneutics
+# old ja (ja19):
+#   魔術
+#   
+#   儀式魔術
+#   
+#   奇蹟
+#   
+#   w:5
+#   詠唱
+#   
+#   w:5
+#   呪文詠唱
+#   
+#   魔導
+#   
+#   魔法
+#   
+#   
+#   
+#   
+#   
+#   w:5
+#   秘められし知識
+#   
+#   
+#   w:5
+#   解釈学
+# old en (ja16):
+#   Magic
+#   Theurgy
+#   Thaumaturgy
+#   w:5
+#   Casting
+#   w:5
+#   Spellcasting
+#   Wizardry
+#   Sorcery
+#   Witchcraft
+#   Witchery
+#   Spellcraft
+#   Spellweaving
+#   w:5
+#   Secret Knowledge
+#   w:5
+#   Rites and Rhymes
+#   w:5
+#   Hermeneutics
+# old ja (ja16):
+#   魔術
+#   
+#   儀式魔術
+#   
+#   奇蹟
+#   
+#   w:5
+#   詠唱
+#   
+#   w:5
+#   呪文詠唱
+#   
+#   魔導
+#   
+#   魔法
+#   
+#   
+#   
+#   
+#   
+#   w:5
+#   秘められし知識
+#   
+#   
+#   w:5
+#   解釈学
+
+@_occult_adjective_@ Insight
+
+@_occult_adjective_@ Knowledge
+
+@_occult_adjective_@ Power
+
+@_occult_adjective_@ Understanding
+
+@_occult_adjective_@ Wisdom
+
+Casting
+
+Gnosis
+
+Hermeneutics
+
+Hermetics
+
+w:2
+Hocus-Pocus
+
+Incantation
+
+Magic
+
+Magical Power
+
+Mysticism
+
+Occultism
+
+Sorcery
+
+Sortilege
+
+Spellcasting
+
+Spellcraft
+
+Spellweaving
+
+Spellwork
+
+Thaumaturgy
+
+Theurgy
+
+Willworking
+
+Witchcraft
+
+Witchery
+
+Wizarding
+
+Wizardry
+%%%%
+_beginners_
+
+# old en (ja19):
+#   Beginners
+#   w:5
+#   Neophytes
+#   w:5
+#   Novices
+#   w:3
+#   Rookies
+#   w:2
+#   Absolute Beginners
+#   w:1
+#   Dummies
+# old ja (ja19):
+#   初心者
+#   
+#   
+#   
+#   
+#   w:2
+#   超初心者
+# old en (ja16):
+#   Beginners
+#   w:5
+#   Neophytes
+#   w:5
+#   Novices
+#   w:3
+#   Rookies
+#   w:2
+#   Absolute Beginners
+# old ja (ja16):
+#   初心者
+#   
+#   
+#   
+#   
+#   超初心者
+#   
+#   w:1
+#   Dummies
+
+Beginners
+
+Initiates
+
+Apprentices
+
+Learners
+
+Neophytes
+
+Novices
+
+w:5
+Amateurs
+
+w:5
+Rookies
+
+w:5
+Absolute Beginners
+
+w:1
+Ex-Berserkers
+
+w:1
+Dummies
+%%%%
+starting level book
+
+# old en (ja19):
+#   @_the_book_magic_@ for @_beginners_@
+#   w:2
+#   @_the_book_magic_@ 101
+#   A Beginning Course on @_the_book_magic_@
+#   @_the_book_magic_@, Part One
+#   An Introduction to @_the_book_magic_@
+#   w:2
+#   An Initiation to @_the_book_magic_@
+#   First Steps in @_the_book_magic_@
+# old ja (ja19):
+#   @_beginners_@にもわかる@_the_book_magic_@
+#   
+#   w:2
+#   @_the_book_magic_@について 入門編
+#   
+#   @_the_book_magic_@の初心者コース
+#   
+#   @_the_book_magic_@ 第1巻
+#   
+#   @_the_book_magic_@解説書
+#   
+#   
+#   @_the_book_magic_@はじめの一歩
+# old en (ja16):
+#   w:2
+#   @_the_book_magic_@ 101
+#   A Beginning Course on @_the_book_magic_@
+#   @_the_book_magic_@, Part One
+#   An Introduction to @_the_book_magic_@
+#   w:2
+#   An Initiation to @_the_book_magic_@
+#   First Steps in @_the_book_magic_@
+# old ja (ja16):
+#   @_beginners_@にもわかる@_the_book_magic_@
+#   
+#   猫でもわかる@_the_book_magic_@
+#   
+#   @_the_book_magic_@について 入門編
+#   
+#   @_the_book_magic_@の初心者コース
+#   
+#   @_the_book_magic_@ 第1巻
+#   
+#   @_the_book_magic_@解説書
+#   
+#   
+#   @_the_book_magic_@はじめの一歩
+
+w:2
+@_the_book_magic_@ 101
+
+@_the_book_magic_@ for @_beginners_@
+
+@_the_book_magic_@, Part @level@
+
+@_the_book_magic_@, Volume @level@
+
+A @book_name@ Starting Spells
+
+A Beginning Course on @_the_book_magic_@
+
+A Prolegomenon to @_the_book_magic_@
+
+A Tutorial on @_the_book_magic_@
+
+An Exordium to @_the_book_magic_@
+
+An Initiation into @_the_book_magic_@
+
+An Induction into @_the_book_magic_@
+
+An Introduction to @_the_book_magic_@
+
+w:2
+Anyone Can Learn @_the_book_magic_@
+
+Beginning @_the_book_magic_@
+
+Commencing @_the_book_magic_@
+
+Dabbling in @_the_book_magic_@
+
+Elementary @_book_magic_@
+
+w:2
+Even @_beginners_@ Can Learn @_the_book_magic_@!
+
+First Steps in @_the_book_magic_@
+
+Practicing @_the_book_magic_@
+
+Preliminaries of @_the_book_magic_@
+
+Simple @_book_magic_@
+
+w:2
+So You Want to Learn @_the_book_magic_@
+
+Starting @_the_book_magic_@
+
+The Basics of @_the_book_magic_@
+%%%%
+easy level book
+
+# old en (ja19):
+#   A Primer on @_the_book_magic_@
+#   @_the_book_magic_@ in Simple Steps
+#   An Early Guide to @_the_book_magic_@
+#   The Foundations of @_book_magic_@
+#   Easy @_book_magic_@
+#   @_the_book_magic_@, Part @level@
+#   @_the_book_magic_@ Continued
+#   w:1
+#   @_book_magic_@, and How To Use It
+# old ja (ja19):
+#   @_the_book_magic_@読本
+#   
+#   @_the_book_magic_@簡単ガイド
+#   
+#   
+#   @_the_book_magic_@の基礎
+#   
+#   かんたん@_the_book_magic_@
+#   
+#   @_the_book_magic_@について 第@level@巻
+#   
+#   続・@_the_book_magic_@
+#   
+#   w:1
+#   @_the_book_magic_@とその使い方
+# old en (ja16):
+#   A Primer on @_the_book_magic_@
+#   @_the_book_magic_@ in Simple Steps
+#   An Early Guide to @_the_book_magic_@
+#   The Foundations of @_book_magic_@
+#   Easy @_book_magic_@
+#   @_the_book_magic_@, Part @level@
+#   @_the_book_magic_@ Continued
+#   w:1
+#   @_book_magic_@, and How To Use It
+# old ja (ja16):
+#   @_the_book_magic_@読本
+#   
+#   @_the_book_magic_@簡単ガイド
+#   
+#   
+#   @_the_book_magic_@の基礎
+#   
+#   かんたん@_the_book_magic_@
+#   
+#   @_the_book_magic_@について 第@level@巻
+#   
+#   続・@_the_book_magic_@
+#   
+#   w:1
+#   @_the_book_magic_@とその使い方
+
+@_book_magic_@ and How To Use It
+
+@_the_book_magic_@ and You
+
+@_the_book_magic_@ Continued
+
+@_the_book_magic_@ in Simple Steps
+
+@_the_book_magic_@, Part @level@
+
+@_the_book_magic_@, Volume @level@
+
+A @book_name@ Supplementary Spells
+
+A Primer on @_the_book_magic_@
+
+An Early Guide to @_the_book_magic_@
+
+Continuing @_the_book_magic_@
+
+Easy @_book_magic_@
+
+Everyday @_book_magic_@
+
+More @_book_magic_@
+
+More Studies in @_the_book_magic_@
+
+Performing Successful @_book_magic_@
+
+Quotidian @_book_magic_@
+
+w:2
+The Antepenultimate Guide to @_the_book_magic_@
+
+The Foundations of @_the_book_magic_@
+
+The Fundamentals of @_the_book_magic_@
+
+w:2
+The Joy of @_book_magic_@
+
+The Keys to @_the_book_magic_@
+%%%%
+moderate level book
+
+# old en (ja19):
+#   Advanced Steps in @_the_book_magic_@
+#   The Advanced Guide to @_the_book_magic_@
+#   Further Steps in @_the_book_magic_@
+#   @_the_book_magic_@, Part @level@
+#   Advanced @_book_magic_@
+#   Sophisticated @_book_magic_@
+#   Further Progress in @_book_magic_@
+#   The Second Course in @_book_magic_@
+#   w:1
+#   Improving Your @_book_magic_@
+# old ja (ja19):
+#   @_the_book_magic_@ 応用編
+#   
+#   @_the_book_magic_@上級ガイド
+#   
+#   
+#   @_the_book_magic_@について 第@level@巻
+#   
+#   上級@_the_book_magic_@
+#   
+#   
+#   
+#   
+#   w:1
+#   @_book_magic_@ 上達編
+# old en (ja16):
+#   Advanced Steps in @_the_book_magic_@
+#   The Advanced Guide to @_the_book_magic_@
+#   Further Steps in @_the_book_magic_@
+#   @_the_book_magic_@, Part @level@
+#   Advanced @_book_magic_@
+#   Sophisticated @_book_magic_@
+#   Further Progress in @_book_magic_@
+#   The Second Course in @_book_magic_@
+#   w:1
+#   Improving Your @_book_magic_@
+# old ja (ja16):
+#   @_the_book_magic_@応用編
+#   
+#   @_the_book_magic_@上級ガイド
+#   
+#   
+#   @_the_book_magic_@について 第@level巻
+#   
+#   上級@_the_book_magic_@
+
+@_the_book_magic_@, Part @level@
+
+@_the_book_magic_@, Volume @level@
+
+A @book_name@ Spells
+
+Advanced @_book_magic_@
+
+Advanced Steps in @_the_book_magic_@
+
+Even More @_book_magic_@
+
+Experienced @_book_magic_@
+
+Further Progress in @_the_book_magic_@
+
+Further Steps in @_the_book_magic_@
+
+Improving Your @_book_magic_@
+
+Practical @_book_magic_@
+
+Progressing With @_book_magic_@
+
+Sophisticated @_book_magic_@
+
+The Advanced Guide to @_the_book_magic_@
+
+The Path to @_the_book_magic_@
+
+w:2
+The Penultimate Guide to @_the_book_magic_@
+
+The Second Course in @_book_magic_@
+
+Useful @_book_magic_@
+
+w:2
+Yet Another @book_noun@ About @_the_book_magic_@
+%%%%
+_powerful_caster_
+
+# old en (ja19):
+#   Archmage
+#   w:3
+#   Deep Elf Lorekeeper
+#   w:3
+#   Blind Seer
+#   w:3
+#   Prophet
+#   w:1
+#   Greatest Mummy
+# old ja (ja19):
+#   大魔道士
+#   
+#   
+#   w:3
+#   盲目の先見者
+#   
+#   w:3
+#   予言者
+#   
+#   w:1
+#   偉大なるミイラ
+# old en (ja16):
+#   Archmage
+#   w:3
+#   Deep Elf Lorekeeper
+#   w:3
+#   Blind Seer
+#   w:3
+#   Prophet
+#   w:1
+#   Greatest Mummy
+# old ja (ja16):
+#   大魔道士
+#   
+#   
+#   w:3
+#   盲目の先見者
+#   
+#   予言者
+#   
+#   w:1
+#   偉大なるミイラ
+
+Archmage
+
+Archmaster
+
+Hierophant
+
+Luminary
+
+Mystagogue
+
+Prophet
+
+Sage
+
+Warlock
+
+w:5
+Deep Elf Lorekeeper
+
+w:5
+Genius of the Arcane
+
+w:5
+High Council
+
+w:5
+Lorekeeper
+
+w:5
+Loreminder
+
+w:1
+Blind Seer
+
+w:1
+Consilium Hierarch
+
+w:1
+Grand Magus
+
+w:1
+Greatest Mummy
+
+w:1
+Primeval Lich
+
+w:1
+Sorcerer Supreme
+
+w:1
+Ultimate Wizard
+
+w:1
+Weird Sisters
+
+w:1
+Wizard of Zot
+%%%%
+_the_powerful_caster_
+
+# old en (ja19):
+#   the @_powerful_caster_@
+#   w:3
+#   Boris
+#   w:1
+#   Sif Muna
+# old ja (ja19):
+#   @_powerful_caster_@
+#   
+#   w:3
+#   ボリス
+#   
+#   w:1
+#   シフ・ムーナ
+# old en (ja16):
+#   the @_powerful_caster_@
+#   w:3
+#   Boris
+#   w:1
+#   Sif Muna
+# old ja (ja16):
+#   @_powerful_caster_@
+#   
+#   w:3
+#   ボリス
+#   
+#   シフ・ムーナ
+
+w:100
+the @_powerful_caster_@
+
+w:30
+Boris
+
+Sif Muna
+
+w:1
+Faust
+
+w:1
+Geber
+
+w:1
+Hermes Trismegistus
+
+w:1
+Jabir
+
+w:1
+Merlin
+
+w:1
+Morgana le Fay
+
+w:1
+Nicolae
+
+w:1
+Ostanes
+
+w:1
+Paracelsus
+
+w:1
+Prospero
+
+w:1
+Solomon
+%%%%
+_difficult level book owner_
+
+# old en (ja19):
+#   A Thorough Guide to @_the_book_magic_@
+#   The @_last_or_lost_@ Secrets of @_the_book_magic_@
+#   The Arcane Secrets of @_book_magic_@
+#   The Intricacies of @_the_book_magic_@
+#   The @book_noun@ of Greatest Risks and Utility
+#   w:1
+#   Mastering @_book_magic_@
+# old ja (ja19):
+#   @_the_book_magic_@総覧
+#   
+#   @_the_book_magic_@の@_last_or_lost_@秘密
+# old en (ja16):
+#   A Thorough Guide to @_the_book_magic_@
+#   The @_last_or_lost_@ Secrets of @_the_book_magic_@
+#   The Arcane Secrets of @_book_magic_@
+#   The Intricacies of @_the_book_magic_@
+#   The @book_noun@ of Greatest Risks and Utility
+#   w:1
+#   Mastering @_book_magic_@
+# old ja (ja16):
+#   @_the_book_magic_@総覧
+#   
+#   @_the_book_magic_@の@_last_or_lost_@秘密
+
+@_the_book_magic_@, Part @level@
+
+@_the_book_magic_@, Volume @level@
+
+A @book_name@ Superlative Spells
+
+A Thorough Guide to @_the_book_magic_@
+
+Mastering @_the_book_magic_@
+
+Mastery of @_the_book_magic_@
+
+The Final @book_noun@ of @_the_book_magic_@
+
+The Final @_book_noun_on_@ on @_the_book_magic_@
+
+The @_last_or_lost_@ Secrets of @_the_book_magic_@
+
+The @book_noun@ of Greatest Risks and Utility
+
+The Arcane Secrets of @_book_magic_@
+
+The Highest Levels of @_the_book_magic_@
+
+The Intricacies of @_the_book_magic_@
+
+The Ultimate Guide to @_the_book_magic_@
+
+Total Understanding of @_the_book_magic_@
+%%%%
+difficult level book
+
+# old en (ja19):
+#   The @_last_or_lost_@ @book_noun@ of @_the_powerful_caster_@
+#   w:1
+#   The Testament of @_the_powerful_caster_@
+# old ja (ja19):
+#   w:50
+#   @_difficult level book owner_@
+#   
+#   @_the_powerful_caster_@の@_last_or_lost_@@book_noun@
+# old en (ja16):
+#   The @_last_or_lost_@ @book_noun@ of @_the_powerful_caster_@
+#   w:1
+#   The Testament of @_the_powerful_caster_@
+# old ja (ja16):
+#   w:50
+#   @_difficult level book owner_@
+#   
+#   @_the_powerful_caster_@の@_last_or_lost_@@book_noun@
+
+w:50
+@_difficult level book owner_@
+
+The @_last_or_lost_@ @book_noun@ of @_the_powerful_caster_@
+
+w:5
+@_the_book_magic_@ of @_the_powerful_caster_@
+
+w:5
+The @_last_or_lost_@ @_testament_noun_@ of @_the_powerful_caster_@
+
+w:5
+The @_occult_adjective_@ @_testament_noun_@ of @_the_powerful_caster_@
+
+w:1
+A @book_noun@ from @_the_powerful_caster_@ to @player_name@
+%%%%
+Air
+
+# old en (ja19):
+#   Air
+#   Lightness
+#   Weightlessness
+#   Flight
+#   the Birds
+#   Feathers
+# old ja (ja19):
+#   大気
+#   
+#   
+#   
+#   飛行
+#   
+#   鳥類
+#   
+#   羽根
+# old en (ja16):
+#   Air
+#   Lightness
+#   Weightlessness
+#   Flight
+#   the Birds
+#   Feathers
+# old ja (ja16):
+#   大気
+#   
+#   
+#   
+#   飛行
+#   
+#   鳥類
+#   
+#   羽根
+
+Aeromancy
+
+Air
+
+Anemomancy
+
+Astrapomancy
+
+Austromancy
+
+Breath
+
+Ceraunoscopy
+
+Clouds
+
+Conduction
+
+Electricity
+
+Electrocution
+
+Exhalation
+
+Feathers
+
+Fog
+
+Fumes
+
+Gases
+
+Gusts
+
+Haze
+
+Inhalation
+
+Lightning
+
+Nephomancy
+
+Ouranomancy
+
+Ozone
+
+Thunder
+
+Turbulence
+
+Weather
+
+Vapour
+
+Voltage
+
+the Atmosphere
+
+the Birds
+
+the Brume
+
+the Cumulonimbus
+
+the Lungs
+
+the Nimbus
+
+the Sixfirhy
+
+the Sky
+
+the Squall
+
+the Storm
+
+the Tempest
+
+the Welkin
+
+the Wind
+
+the Zephyr
+%%%%
+Conjuration
+
+# old en (ja19):
+#   Conjuration
+#   Confrontation
+#   Attacks
+#   w:5
+#   Battle Magic
+#   w:5
+#   Combat Magic
+#   w:5
+#   Arcane Weapons
+#   w:1
+#   Blows and Bruises
+#   w:1
+#   Damage Dealing
+# old ja (ja19):
+#   妖術
+#   
+#   
+#   
+#   w:5
+#   戦闘魔術
+# old en (ja16):
+#   Conjuration
+#   Confrontation
+#   Attacks
+#   w:5
+#   Battle Magic
+#   w:5
+#   Combat Magic
+#   w:5
+#   Arcane Weapons
+#   w:1
+#   Blows and Bruises
+#   w:1
+#   Damage Dealing
+# old ja (ja16):
+#   妖術
+#   
+#   
+#   
+#   w:5
+#   戦闘魔術
+
+Arcane Combat
+
+Arcane Weapons
+
+Assaults
+
+Attacks
+
+Battle Magic
+
+Battling
+
+Blasting
+
+Blasts
+
+Blows
+
+Bolts
+
+Bombardment
+
+Bruises
+
+Combat Magic
+
+Collision
+
+Conflict
+
+Confrontation
+
+Conjuration
+
+Conjuring
+
+Conjury
+
+Damage
+
+Destruction
+
+Energy
+
+Force
+
+Forces
+
+Fulmination
+
+Hurting
+
+Impulse
+
+Injury
+
+Kinetic Energy
+
+Momentum
+
+Outbursts
+
+Percussion
+
+Power
+
+Striking
+
+Trauma
+
+w:2
+Traumaturgy
+
+Violence
+
+Wounds
+
+the Barrage
+
+the Discharge
+
+the Fifth Circle
+
+the Impact
+
+the Missiles
+
+the Salvo
+
+the Shot
+
+the Volley
+%%%%
+Earth
+
+# old en (ja19):
+#   Earth
+#   Stones
+#   Clay
+#   the Mountains
+#   the Rocks
+# old ja (ja19):
+#   大地
+#   
+#   岩石
+#   
+#   粘土
+#   
+#   山脈
+# old en (ja16):
+#   Earth
+#   Stones
+#   Clay
+#   the Mountains
+#   the Rocks
+# old ja (ja16):
+#   大地
+#   
+#   岩石
+#   
+#   粘土
+#   
+#   山脈
+
+Amathomancy
+
+Bedrock
+
+Breccia
+
+Clay
+
+Cleavage
+
+Detritus
+
+Earth
+
+Erosion
+
+Excavation
+
+Geology
+
+Geomancy
+
+Grit
+
+Lithomancy
+
+Metal
+
+Minerals
+
+Mud
+
+Orogeny
+
+Oromancy
+
+Quicksand
+
+Scree
+
+Silt
+
+Spelunking
+
+Stones
+
+Talus
+
+Tephra
+
+Terra Firma
+
+Terrain
+
+Topography
+
+Topomancy
+
+the Anticline
+
+the Boulder
+
+the Caves
+
+the Crater
+
+the Cwm
+
+the Fault
+
+the Fjord
+
+the Gargoyle
+
+the Geologist
+
+the Ground
+
+the Lithosphere
+
+the Mantle
+
+the Mesa
+
+the Mountains
+
+the Plateau
+
+the Quake
+
+the Quarry
+
+the Rocks
+
+the Syncline
+
+the Tektite
+
+the Valley
+
+the Volcano
+
+the Xenolith
+%%%%
+Fire
+
+# old en (ja19):
+#   Fire
+#   Flames
+#   Heat
+#   the Volcanoes
+#   the Blaze
+#   Ignition
+#   the Arsonist
+# old ja (ja19):
+#   猛火
+#   
+#   火炎
+#   
+#   熱
+#   
+#   火山
+#   
+#   火災
+#   
+#   点火
+#   
+#   放火魔
+# old en (ja16):
+#   Fire
+#   Flames
+#   Heat
+#   the Volcanoes
+#   the Blaze
+#   Ignition
+#   the Arsonist
+# old ja (ja16):
+#   火炎
+#   
+#   猛火
+#   
+#   熱
+#   
+#   火山
+#   
+#   火災
+#   
+#   点火
+#   
+#   放火
+
+Accelerants
+
+Anthracomancy
+
+Arson
+
+Ashes
+
+Burning
+
+Calefaction
+
+Causimancy
+
+Cinders
+
+Combustion
+
+Conflagration
+
+Embers
+
+Fever
+
+Fire
+
+Flame
+
+Flames
+
+Heat
+
+Hyperthermia
+
+Ignition
+
+Immolation
+
+Incandescence
+
+Incineration
+
+Kindling
+
+Lava
+
+Oxidation
+
+Phlogiston
+
+Pyromancy
+
+Pyromania
+
+Soot
+
+Sparks
+
+w:2
+Thermatology
+
+Wildfire
+
+the Arsonist
+
+the Blaze
+
+the Bonfire
+
+the Burn
+
+the Coals
+
+the Dragon
+
+the Inferno
+
+the Pyre
+
+the Pyromaniac
+
+the Salamander
+
+the Summer
+
+the Sun
+
+the Torch
+
+the Tropics
+
+the Volcano
+%%%%
+Hexes
+
+# old en (ja19):
+#   Hexes
+#   Curses
+#   Malediction
+#   the Oath
+#   Execration
+#   Enchantment
+#   Bewitchment
+#   w:1
+#   Glamour
+#   w:1
+#   Fascination
+#   Beguiling
+# old ja (ja19):
+#   呪術
+#   
+#   呪い
+#   
+#   呪詛
+# old en (ja16):
+#   Hexes
+#   Curses
+#   Malediction
+#   the Oath
+#   Execration
+#   Enchantment
+#   Bewitchment
+#   w:1
+#   Glamour
+#   w:1
+#   Fascination
+#   Beguiling
+# old ja (ja16):
+#   呪術
+#   
+#   呪い
+
+Ambsace
+
+Anathema
+
+Bad Luck
+
+Beguiling
+
+Bewitchment
+
+Charms
+
+Curses
+
+Destiny
+
+Doom
+
+Enchantment
+
+Ensorcelling
+
+Execration
+
+Fascination
+
+Fate
+
+Glamour
+
+Guile
+
+Hexes
+
+Hexing
+
+Ill Luck
+
+Imprecation
+
+Interference
+
+Jinxing
+
+Malediction
+
+Maleficia
+
+Malisons
+
+Mischance
+
+Misfortune
+
+Obstruction
+
+Omens
+
+Portents
+
+Signs
+
+Spellbinding
+
+the Curse
+
+the Evil Eye
+
+the Faeries
+
+the Fairies
+
+the Fair Folk
+
+the Jinx
+
+the Maleficium
+
+the Oath
+
+the Sphinx
+
+w:2
+the Whammy
+
+the Wyrd
+%%%%
+Ice
+
+# old en (ja19):
+#   Ice
+#   Snow
+#   Cold
+#   the Snowflakes
+#   the Glacier
+#   the Frostbite
+# old ja (ja19):
+#   氷結
+#   
+#   氷雪
+#   
+#   冷気
+#   
+#   雪片
+#   
+#   
+#   凍傷
+# old en (ja16):
+#   Ice
+#   Snow
+#   Cold
+#   the Snowflakes
+#   the Glacier
+#   the Frostbite
+# old ja (ja16):
+#   氷結
+#   
+#   氷雪
+#   
+#   冷気
+#   
+#   雪片
+
+Algor
+
+Chilblains
+
+Cold
+
+Congelation
+
+Cryomancy
+
+Firn
+
+Freezing
+
+Frost
+
+Frostbite
+
+Glaciation
+
+Graupel
+
+Hail
+
+Hoarfrost
+
+Hypothermia
+
+Ice
+
+Refrigeration
+
+Rime
+
+Snow
+
+the Blizzard
+
+the Chill
+
+the Crevasse
+
+the Deep Freeze
+
+the Glacier
+
+the Iceberg
+
+the Icicle
+
+the Serac
+
+the Snowflakes
+
+the Tundra
+
+the Wendigo
+
+the Winter
+%%%%
+Necromancy
+
+# old en (ja19):
+#   Necromancy
+#   Evil
+#   Darkness
+#   Stolen Souls
+# old ja (ja19):
+#   死霊術
+#   
+#   邪悪
+#   
+#   暗黒
+#   
+#   奪われし魂
+#   
+#   w:60
+#   @_Evil_adjective_@@_Evil_noun_@
+# old en (ja16):
+#   Necromancy
+#   Evil
+#   Darkness
+#   Stolen Souls
+# old ja (ja16):
+#   死霊術
+#   
+#   邪悪
+#   
+#   暗黒
+#   
+#   
+#   w:60
+#   @_Evil_adjective_@@_Evil_noun_@
+
+Bodies
+
+Bones
+
+Cadavers
+
+Carcasses
+
+Carrion
+
+Caskets
+
+Coffins
+
+Corpses
+
+Darkness
+
+Death
+
+Desecration
+
+Despair
+
+Diablerie
+
+Ectoplasm
+
+Evil
+
+Exhumation
+
+Finality
+
+Gloom
+
+Lamentation
+
+Last Rites
+
+Misery
+
+Mortality
+
+Mortification
+
+Necromancy
+
+Nightshade
+
+Open Graves
+
+Remains
+
+Rot
+
+Resurrection
+
+Sciomancy
+
+Shades
+
+Shadows
+
+Skeletons
+
+Spectres
+
+Stolen Souls
+
+Zombies
+
+the Autopsy
+
+the Catacomb
+
+the Cemetery
+
+the Charnel House
+
+the Crypt
+
+the Damned
+
+the Dead
+
+the Departed
+
+the End
+
+the Grave
+
+the Graveyard
+
+the Mausoleum
+
+the Morgue
+
+the Mortuary
+
+the Necropsy
+
+the Ossuary
+
+the Sarcophagus
+
+the Tomb
+
+the Undead
+
+w:200
+@_Evil_adjective_@ @_Evil_noun_@
+%%%%
+_Evil_adjective_
+
+# old en (ja19):
+#   Evil
+#   Dark
+#   Black
+#   Sinister
+#   Unholy
+# old ja (ja19):
+#   邪悪なる
+#   
+#   暗黒の
+#   
+#   
+#   
+#   忌まわしき
+# old en (ja16):
+#   Evil
+#   Dark
+#   Black
+#   Sinister
+#   Unholy
+# old ja (ja16):
+#   邪悪なる
+#   
+#   暗黒の
+#   
+#   
+#   
+#   忌まわしき
+
+Abhorrent
+
+Abominable
+
+Black
+
+Blasphemous
+
+Dark
+
+Debased
+
+Defiled
+
+Despicable
+
+Evil
+
+Iniquitous
+
+Left-handed
+
+Maleficent
+
+Malevolent
+
+Malignant
+
+Necromantic
+
+Profane
+
+Sinister
+
+w:2
+Spooky
+
+Unhallowed
+
+Unholy
+
+Unspeakable
+
+Vitiated
+
+Wicked
+%%%%
+_Evil_noun_
+
+# old en (ja19):
+#   Rites
+#   Arts
+#   Secrets
+#   Rituals
+#   Magic
+# old ja (ja19):
+#   儀式
+#   
+#   技法
+#   
+#   秘密
+#   
+#   礼拝
+#   
+#   魔術
+# old en (ja16):
+#   Rites
+#   Arts
+#   Secrets
+#   Rituals
+#   Magic
+# old ja (ja16):
+#   儀式
+#   
+#   技法
+#   
+#   秘密
+#   
+#   礼拝
+#   
+#   魔術
+
+Acts
+
+Arts
+
+Ceremonies
+
+Deeds
+
+Liturgies
+
+Magic
+
+Magicks
+
+Mysteries
+
+Rites
+
+Rituals
+
+Secrets
+
+Spells
+
+Words
+%%%%
+Summoning
+
+# old en (ja19):
+#   Summoning
+#   Calling
+#   Creation
+#   the Entourage
+#   Companions
+#   the Escort
+#   w:1
+#   Illusion
+#   w:2
+#   Slavery
+# old ja (ja19):
+#   召喚
+#   
+#   
+#   創造
+#   
+#   
+#   
+#   護衛
+#   
+#   w:1
+#   幻影
+#   
+#   w:2
+#   奴隷
+# old en (ja16):
+#   Summoning
+#   Calling
+#   Creation
+#   the Entourage
+#   Companions
+#   the Escort
+#   w:1
+#   Illusion
+#   w:2
+#   Slavery
+# old ja (ja16):
+#   召喚
+#   
+#   
+#   創造
+#   
+#   
+#   
+#   護衛
+#   
+#   w:1
+#   幻影
+#   
+#   w:2
+#   奴隷
+
+Accompaniment
+
+Accomplices
+
+Adjuration
+
+Allies
+
+Apparitions
+
+Arrival
+
+Assembling
+
+Attendants
+
+Beckoning
+
+Bringing Forth
+
+Calling
+
+Command
+
+Companions
+
+Company
+
+Convocation
+
+Creation
+
+Formation
+
+Generation
+
+Illusion
+
+Invitation
+
+Leadership
+
+Mustering
+
+Phantasms
+
+Production
+
+Rallying
+
+Sidekicks
+
+Summoning
+
+Support
+
+the Band
+
+the Boggart
+
+the Comitatus
+
+the Commander
+
+the Congregation
+
+the Entourage
+
+the Escort
+
+the Familiar
+
+the Flock
+
+the Gang
+
+the Gathering
+
+the Legion
+
+the Mirage
+
+the Mob
+
+the Retinue
+
+the Swarm
+
+the Throng
+
+the Union
+%%%%
+Translocation
+
+# old en (ja19):
+#   Translocation
+#   Displacement
+#   Dislocation
+#   Orientation
+#   the Traveller
+#   the Compass
+#   the Voyage
+# old ja (ja19):
+#   転位術
+#   
+#   
+#   
+#   
+#   旅行者
+#   
+#   羅針盤
+#   
+#   航行
+# old en (ja16):
+#   Translocation
+#   Displacement
+#   Dislocation
+#   Orientation
+#   the Traveller
+#   the Compass
+#   the Voyage
+# old ja (ja16):
+#   転位術
+#   
+#   
+#   
+#   
+#   旅行者
+#   
+#   
+#   航行
+
+Angles
+
+Coordinates
+
+Correspondence
+
+Direction
+
+Dislocation
+
+Displacement
+
+Distance
+
+Elsewhere
+
+Geometries
+
+Geometry
+
+Locality
+
+Location
+
+Movement
+
+Nonlocality
+
+Orientation
+
+Peregrination
+
+Places
+
+Points
+
+Portals
+
+Position
+
+Relocation
+
+Shifting
+
+Space
+
+w:2
+Spooky Action
+
+Subspace
+
+Superposition
+
+Topology
+
+Translocation
+
+Transportation
+
+Transposition
+
+Wanderlust
+
+the Blink Frog
+
+the Compass
+
+the Door
+
+the Excursion
+
+the Geodesic
+
+the Jaunt
+
+the Manifold
+
+the Map
+
+the Singularity
+
+the Tesseract
+
+the Traveller
+
+the Vector
+
+the Vertex
+
+the Voyage
+
+the Wayfarer
+%%%%
+Air adj
+
+# old en (ja19):
+#   Aerial
+#   Flying
+#   Floating
+#   Feathery
+#   Cloudy
+#   Gliding
+# old ja (ja19):
+#   空飛ぶ
+#   
+#   漂う
+# old en (ja16):
+#   Aerial
+#   Flying
+#   Floating
+#   Feathery
+#   Cloudy
+#   Gliding
+# old ja (ja16):
+#   空飛ぶ
+#   
+#   漂う
+
+Aerial
+
+Airborne
+
+Airy
+
+Atmospheric
+
+Blustery
+
+Breezy
+
+Brumous
+
+Charged
+
+Cloudy
+
+Electric
+
+Feathery
+
+Floating
+
+Flying
+
+Foggy
+
+Fulgurant
+
+Fulgurous
+
+Fuming
+
+Galvanic
+
+Gaseous
+
+Gusty
+
+Hazy
+
+Inclement
+
+Lofty
+
+Meteoric
+
+Misty
+
+Nebulous
+
+Overcast
+
+Overhead
+
+Pneumatic
+
+Shocking
+
+Stormy
+
+Tempestuous
+
+Turbulent
+
+Vapourous
+
+Voltaic
+
+Weathered
+
+Windswept
+
+Windy
+
+Wispy
+%%%%
+Conjuration adj
+
+# old en (ja19):
+#   Destructive
+#   Harmful
+#   Damaging
+#   Hurtful
+#   Excruciating
+#   w:5
+#   Lethal
+# old ja (ja19):
+#   破壊的
+#   
+#   
+#   
+#   
+#   
+#   w:5
+#   致命的な
+# old en (ja16):
+#   Destructive
+#   Harmful
+#   Damaging
+#   Hurtful
+#   Excruciating
+#   w:5
+#   Lethal
+# old ja (ja16):
+#   破壊的
+#   
+#   
+#   
+#   
+#   
+#   w:5
+#   致命的
+
+Actinic
+
+Beaming
+
+Blasted
+
+Bright
+
+Brilliant
+
+Combative
+
+Conjured
+
+Coruscating
+
+Damaging
+
+Destructive
+
+Dynamic
+
+Effulgent
+
+Energetic
+
+Excruciating
+
+Flashy
+
+Forceful
+
+Fulgent
+
+Glowing
+
+Harmful
+
+Hurtful
+
+Injurious
+
+Intense
+
+Lethal
+
+Limned
+
+Lucent
+
+Luminous
+
+Kinetic
+
+Mighty
+
+Nocuous
+
+Potent
+
+Powerful
+
+Profulgent
+
+Puissant
+
+Radiant
+
+Refulgent
+
+Resplendent
+
+Ruinous
+
+Scintillating
+
+Shining
+
+Vehement
+
+Vibrant
+
+Violent
+
+Vivid
+
+Wild
+%%%%
+Earth adj
+
+# old en (ja19):
+#   Earthen
+#   Ashen
+#   Dusty
+# old ja (ja19):
+#   大地の
+# old en (ja16):
+#   Earthen
+#   Ashen
+#   Dusty
+# old ja (ja16):
+#   大地の
+
+Arenous
+
+Ashen
+
+Chthonic
+
+Coarse
+
+Crystalline
+
+Dense
+
+Dusty
+
+Earthen
+
+Felsic
+
+Flinty
+
+Geological
+
+Grey
+
+Gritty
+
+Grounded
+
+Heavy
+
+Indurated
+
+Iron
+
+Ironbound
+
+Lapidarian
+
+Lapidary
+
+Leaden
+
+Lithic
+
+Metallic
+
+Petrified
+
+Petrous
+
+Plutonic
+
+Rocky
+
+Rough
+
+Sandy
+
+Seismic
+
+Solid
+
+Subterranean
+
+Stony
+
+Tectonic
+
+Telluric
+
+Terrestrial
+
+Underground
+
+Volcanic
+%%%%
+Fire adj
+
+# old en (ja19):
+#   Fiery
+#   Scorching
+#   Burning
+#   Blistering
+#   Igneous
+#   Flamy
+#   Torrid
+# old ja (ja19):
+#   燃えさかる
+# old en (ja16):
+#   Fiery
+#   Scorching
+#   Burning
+#   Blistering
+#   Igneous
+#   Flamy
+#   Torrid
+# old ja (ja16):
+#   燃えさかる
+
+Blazing
+
+Blistering
+
+Burning
+
+Burnt
+
+Calescent
+
+Calid
+
+Calorific
+
+Charred
+
+Combustive
+
+Comburant
+
+Conflagrant
+
+Decalescent
+
+Exothermic
+
+Fiery
+
+Flaming
+
+Flammable
+
+Flamy
+
+Glowing
+
+Heated
+
+Hot
+
+Igneous
+
+Incandescent
+
+Incendiary
+
+Incinerated
+
+Inflammable
+
+Kindled
+
+Molten
+
+Red
+
+Red-hot
+
+Roasted
+
+Searing
+
+Scalding
+
+Scorched
+
+Scorching
+
+Singed
+
+Sizzling
+
+Smoking
+
+Smouldering
+
+w:2
+Spicy
+
+Sulphurous
+
+Sweltering
+
+Torrefying
+
+Torrid
+
+Tropical
+
+Volatile
+
+w:2
+Well-done
+%%%%
+Hexes adj
+
+# old en (ja19):
+#   Enchanting
+#   Bewitching
+#   Captivating
+#   Fetching
+#   Enthralling
+#   Ensnaring
+#   Entrancing
+# old ja (ja19):
+#   魅惑の
+# old en (ja16):
+#   Enchanting
+#   Bewitching
+#   Captivating
+#   Fetching
+#   Enthralling
+#   Ensnaring
+#   Entrancing
+# old ja (ja16):
+#   魅惑の
+
+Alluring
+
+Baleful
+
+Becharmed
+
+Becharming
+
+Beguiled
+
+Beguiling
+
+Bewitched
+
+Bewitching
+
+Bound
+
+Captivating
+
+Charmed
+
+Charming
+
+Cunning
+
+Cursed
+
+Destined
+
+Dire
+
+Doomed
+
+Enchanted
+
+Enchanting
+
+Ensnaring
+
+Enthralled
+
+Enthralling
+
+Entranced
+
+Entrancing
+
+Fascinating
+
+Fateful
+
+Fetching
+
+Fettered
+
+Fey
+
+Glamourous
+
+Hapless
+
+Hexed
+
+Hexing
+
+Hindering
+
+Hopeless
+
+Ill-boding
+
+Ill-fated
+
+Ill-omened
+
+Ill-starred
+
+Inauspicious
+
+Jinxed
+
+Lost
+
+Maledictive
+
+Portentous
+
+Predestined
+
+Spellbinding
+
+Star-crossed
+
+Tragic
+
+Twinkling
+
+Unfortunate
+
+Unlucky
+
+Vexatious
+
+Vexing
+
+Weird
+%%%%
+Ice adj
+
+# old en (ja19):
+#   Glacial
+#   Freezing
+#   Icy
+#   Congealing
+#   Frigorific
+# old ja (ja19):
+#   凍てつく
+# old en (ja16):
+#   Glacial
+#   Freezing
+#   Icy
+#   Congealing
+#   Frigorific
+# old ja (ja16):
+#   凍てつく
+
+Algid
+
+Alpine
+
+Arctic
+
+Azure
+
+Bitter
+
+Bleak
+
+Boreal
+
+Brumal
+
+Chilled
+
+Chilling
+
+Chilly
+
+Cold
+
+Congealing
+
+Crystallised
+
+Freezing
+
+Frigid
+
+Frigorific
+
+Frore
+
+Frostbitten
+
+Frostbound
+
+Frosty
+
+Frozen
+
+Gelid
+
+Glacial
+
+Hiemal
+
+Hyperborean
+
+Hypothermic
+
+Icebound
+
+Iced
+
+Icy
+
+Nival
+
+Niveous
+
+Numb
+
+Polar
+
+Shivering
+
+Snowing
+
+Snowy
+
+Snow-white
+
+Subzero
+
+White
+
+Wintry
+%%%%
+Necromancy adj
+
+# old en (ja19):
+#   Dark
+#   Evil
+#   w:5
+#   Lethal
+#   Doomed
+#   Sinister
+#   Unholy
+#   Ghastly
+#   w:5
+#   Twisted
+# old ja (ja19):
+#   暗黒の
+#   
+#   邪悪な
+#   
+#   w:5
+#   致命的な
+#   
+#   破滅的
+#   
+#   
+#   忌まわしき
+#   
+#   
+#   w:5
+#   ねじくれた
+# old en (ja16):
+#   Dark
+#   Evil
+#   w:5
+#   Lethal
+#   Doomed
+#   Sinister
+#   Unholy
+#   Ghastly
+#   w:5
+#   Twisted
+# old ja (ja16):
+#   暗黒の
+#   
+#   邪悪な
+#   
+#   w:5
+#   致命的
+#   
+#   破滅的
+#   
+#   
+#   忌まわしき
+#   
+#   
+#   ねじくれた
+
+Bloodied
+
+Bloody
+
+Caliginous
+
+Charnel
+
+Creeping
+
+w:2
+Creepy
+
+Cruentate
+
+Dark
+
+Dead
+
+Deathly
+
+Decaying
+
+Dismal
+
+Doomed
+
+Evil
+
+Fatal
+
+Funereal
+
+Ghastly
+
+Ghoulish
+
+Gloomy
+
+Grave
+
+Grim
+
+Grisly
+
+Horrible
+
+Horrid
+
+Imbrued
+
+Lethal
+
+Lifeless
+
+Loathsome
+
+Macabre
+
+Malignant
+
+Morbid
+
+Mortal
+
+Mortuary
+
+Necrotic
+
+Posthumous
+
+Postmortem
+
+Rotting
+
+Quickened
+
+Sanguinary
+
+Sanguinolent
+
+Saturnine
+
+Sepulchral
+
+Shadowy
+
+Sinister
+
+Somber
+
+w:2
+Spooky
+
+Spectral
+
+Stygian
+
+Tenebrous
+
+Twisted
+
+Undead
+
+Unholy
+
+Vile
+
+Wicked
+%%%%
+Summoning adj
+
+# old en (ja19):
+#   Creative
+#   Supportive
+# old ja (ja19):
+#   創造的
+# old en (ja16):
+#   Creative
+#   Supportive
+# old ja (ja16):
+#   創造的
+
+Aggregated
+
+Allied
+
+Amalgamated
+
+Amassed
+
+Assembled
+
+Associated
+
+Assistive
+
+Called
+
+Collected
+
+Collective
+
+Combined
+
+Concerted
+
+Congregated
+
+Consolidated
+
+Cooperative
+
+Created
+
+Creative
+
+Familiar
+
+Friendly
+
+Gathered
+
+Generated
+
+Generative
+
+Helpful
+
+Illusory
+
+Marshalled
+
+Massed
+
+Mustered
+
+Mutual
+
+Phantasmal
+
+Productive
+
+Rallied
+
+Shared
+
+Spawned
+
+Summoned
+
+Supportive
+
+Sympathetic
+
+Syndicated
+
+Unified
+
+United
+%%%%
+Translocation adj
+
+# old en (ja19):
+#   Spatial
+#   Displaced
+#   Dislocated
+#   Warped
+#   w:5
+#   Unstable
+#   w:5
+#   Twisted
+#   Quantum
+# old ja (ja19):
+#   歪曲
+#   
+#   w:5
+#   不安定な
+#   
+#   
+#   量子
+# old en (ja16):
+#   Spatial
+#   Displaced
+#   Dislocated
+#   Warped
+#   w:5
+#   Unstable
+#   w:5
+#   Twisted
+#   Quantum
+# old ja (ja16):
+#   歪曲
+#   
+#   w:5
+#   不安定な
+#   
+#   
+#   量子
+
+Akashic
+
+Angular
+
+Blinking
+
+Corresponding
+
+Deviated
+
+Dimensional
+
+Discontinuous
+
+Disjunct
+
+Dislocated
+
+Displaced
+
+Distorted
+
+Elliptic
+
+Geometric
+
+Hyperbolic
+
+Isometric
+
+Liminal
+
+Linear
+
+Manifold
+
+Moving
+
+Non-Euclidean
+
+Non-linear
+
+Parabolic
+
+Parallel
+
+Planar
+
+Projective
+
+Quantum
+
+Relocated
+
+Shifting
+
+Spatial
+
+Topological
+
+Translocated
+
+Translocational
+
+Transposed
+
+Twisted
+
+Unstable
+
+Warped
+%%%%
+highlevel Conjuration Earth owner
+
+# old en (ja16):
+#   Dispater
+# old ja (ja16):
+#   ディスペータ
+#   
+#   @Conjuration Earth owner@
+
+Dispater
+
+@Conjuration Earth owner@
+%%%%
+Conjuration Earth owner
+
+# old en (ja16):
+#   Lee
+#   Lehudib
+# old ja (ja16):
+#   リー
+#   
+#   レフディブ
+
+Lehudib
+
+__NONE
+%%%%
+highlevel Conjuration Fire owner
+
+# old en (ja16):
+#   Asmodeus
+#   Cerebov
+# old ja (ja16):
+#   アスモデウス
+#   
+#   セレボブ
+#   
+#   w:5
+#   __NONE
+
+Asmodeus
+
+Cerebov
+
+__NONE
+%%%%
+highlevel Conjuration Necromancy owner
+
+# old en (ja16):
+#   Ereshkigal
+# old ja (ja16):
+#   エレシュキガル
+#   
+#   __NONE
+
+Ereshkigal
+
+__NONE
+%%%%
+highlevel Conjuration Summoning owner
+
+# old en (ja16):
+#   Asmodeus
+#   Dispater
+# old ja (ja16):
+#   アスモデウス
+#   ディスペータ
+#   
+#   w:5
+#   __NONE
+
+Asmodeus
+
+Dispater
+
+__NONE
+%%%%
+highlevel Earth Summoning owner
+
+# old en (ja16):
+#   Dispater
+# old ja (ja16):
+#   ディスペータ
+#   
+#   __NONE
+
+Dispater
+
+__NONE
+%%%%
+highlevel Fire Summoning owner
+
+# old en (ja16):
+#   Asmodeus
+# old ja (ja16):
+#   アスモデウス
+#   
+#   __NONE
+
+Asmodeus
+
+__NONE
+%%%%
+highlevel Conjuration owner
+
+# old en (ja16):
+#   Asmodeus
+#   Ereshkigal
+#   Dispater
+#   Cerebov
+#   Lom Lobon
+#   Lehudib
+# old ja (ja16):
+#   アスモデウス
+#   
+#   エレシュキガル
+#   
+#   ディスペータ
+#   
+#   セレボブ
+#   
+#   ロム・ロボン
+#   
+#   レフディブ
+#   
+#   w:30
+#   @Conjuration owner@
+
+Asmodeus
+
+Ereshkigal
+
+Dispater
+
+Cerebov
+
+Lom Lobon
+
+w:5
+Vehumet
+
+w:20
+@Conjuration owner@
+%%%%
+Conjuration owner
+
+# old en (ja16):
+#   w:2
+#   Lee
+#   Lehudib
+#   Iskenderun
+# old ja (ja16):
+#   w:2
+#   リー
+#   
+#   レフディブ
+#   
+#   イスケンデルン
+
+Lehudib
+
+Iskenderun
+
+__NONE
+%%%%
+highlevel Earth owner
+
+# old en (ja16):
+#   Dispater
+# old ja (ja16):
+#   ディスペータ
+#   
+#   w:30
+#   @Earth owner@
+
+Dispater
+
+w:50
+@Earth owner@
+%%%%
+Earth owner
+
+# old en (ja16):
+#   Lehudib
+#   Lee
+#   Roxanne
+# old ja (ja16):
+#   レフディブ
+#   
+#   リー
+#   
+#   ロクサーヌ
+#   
+#   __NONE
+
+Jorgrun
+
+Lehudib
+
+Lee
+
+Leda
+
+Roxanne
+
+__NONE
+%%%%
+highlevel Fire owner
+
+# old en (ja16):
+#   Asmodeus
+#   Cerebov
+# old ja (ja16):
+#   アスモデウス
+#   
+#   セレボブ
+#   
+#   __NONE
+
+Asmodeus
+
+Cerebov
+
+__NONE
+%%%%
+Ice owner
+
+# old en (ja16):
+#   Ozocubu
+# old ja (ja16):
+#   オゾクブ
+#   
+#   __NONE
+
+Ozocubu
+
+__NONE
+%%%%
+highlevel Necromancy owner
+
+# old en (ja16):
+#   Ereshkigal
+#   Gloorx Vloq
+# old ja (ja16):
+#   エレシュキガル
+#   
+#   グルオルクス・ヴロック
+#   
+#   w:40
+#   @Necromancy owner@
+
+Ereshkigal
+
+Gloorx Vloq
+
+w:5
+Kikubaaqudgha
+
+w:40
+@Necromancy owner@
+%%%%
+Necromancy owner
+
+# old en (ja16):
+#   Borgnjor
+#   Cigotuvi
+#   Khufu
+# old ja (ja16):
+#   ボーグンジョル
+#   
+#   シゴツヴィ
+#   
+#   クフ王
+
+Borgnjor
+
+Cigotuvi
+
+Khufu
+
+Zonguldrok
+
+__NONE
+%%%%
+highlevel Summoning owner
+
+# old en (ja16):
+#   Asmodeus
+#   Dispater
+#   Mnoleg
+# old ja (ja16):
+#   アスモデウス
+#   
+#   ディスペータ
+#   
+#   ムノレグ
+#   
+#   __NONE
+
+Asmodeus
+
+Dispater
+
+Mnoleg
+
+@Summoning owner@
+%%%%
+highlevel Translocation owner
+
+# old en (ja16):
+#   Lom Lobon
+# old ja (ja16):
+#   ロム・ロボン
+#   
+#   __NONE
+
+Lom Lobon
+
+w:20
+@Translocation owner@
+%%%%

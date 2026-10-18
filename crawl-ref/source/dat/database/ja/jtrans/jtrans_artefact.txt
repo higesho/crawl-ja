@@ -1,0 +1,21 @@
+%%%%
+@player_name@'s
+
+@player_name@の
+%%%%
+of {god name}'s {divine esteem}
+
+%sの%sの
+%%%%
+exec axe
+
+<executioner's axe>
+%%%%
+g.spiked club
+
+<giant spiked club>
+%%%%
+triple xbow
+
+<triple crossbow>
+%%%%

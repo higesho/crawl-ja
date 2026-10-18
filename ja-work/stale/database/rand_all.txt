@@ -1,0 +1,2136 @@
+%%%%
+_jewellery_animal_
+
+# old en (ja19):
+#   Firefly
+#   Scarab
+#   w:5
+#   Magpie
+#   w:5
+#   Raven
+# old ja (ja19):
+#   蛍
+#   
+#   スカラベ
+#   
+#   w:5
+#   カササギ
+#   
+#   w:5
+#   鴉
+# old en (ja16):
+#   Firefly
+#   Scarab
+#   w:5
+#   Magpie
+#   w:5
+#   Raven
+# old ja (ja16):
+#   蛍
+#   
+#   スカラベ
+#   
+#   w:5
+#   カササギ
+#   
+#   w:5
+#   鴉
+
+Death Scarab
+
+Firefly
+
+Scarab
+
+w:5
+Magpie
+
+w:5
+Raven
+%%%%
+_jewellery_special_name_
+
+# old en (ja19):
+#   Disaster
+#   Ephemeral Luck
+#   Wishful Thinking
+#   Moodiness
+#   Reimbursement
+#   the Tempest
+#   Finality
+#   Attitude
+#   Lady Luck
+#   Temptation
+#   False Pretenses
+#   FIXME: should appear on amulets only
+#   Yendor
+# old ja (ja19):
+#   災い
+#   
+#   薄幸
+#   
+#   希望的観測
+#   
+#   不機嫌
+#   
+#   償還
+#   
+#   暴風
+#   
+#   最終決定
+#   
+#   心構え
+#   
+#   幸運の女神
+#   
+#   誘惑
+#   
+#   詐欺
+#   
+#   イェンダー
+# old en (ja16):
+#   Disaster
+#   Ephemeral Luck
+#   Wishful Thinking
+#   Moodiness
+#   Reimbursement
+#   the Tempest
+#   Finality
+#   Attitude
+#   Lady Luck
+#   Temptation
+#   False Pretenses
+#   FIXME: should appear on amulets only
+#   Yendor
+# old ja (ja16):
+#   災い
+#   
+#   薄幸
+#   
+#   希望的観測
+#   
+#   不機嫌
+#   
+#   償還
+#   
+#   暴風
+#   
+#   最終決定
+#   
+#   心構え
+#   
+#   幸運の女神
+#   
+#   誘惑
+#   
+#   詐欺
+#   
+#   イェンダー
+
+Attitude
+
+Disaster
+
+Ephemeral Luck
+
+False Pretenses
+
+Finality
+
+Lady Luck
+
+Moodiness
+
+Reimbursement
+
+the Tempest
+
+Temptation
+
+Velleity
+
+Wishful Thinking
+
+Yendor
+%%%%
+_suspicion_name_
+
+# old en (ja19):
+#   Secrets
+#   Suspicion
+#   Mistrust
+#   Jealousy
+#   Incredulity
+#   Doubts
+#   Suspected Treachery
+#   Scepticism
+#   Trepidation
+# old ja (ja19):
+#   秘密
+#   
+#   疑惑
+#   
+#   不信
+#   
+#   羨望
+#   
+#   懐疑
+#   
+#   疑惑
+#   
+#   邪推
+#   
+#   猜疑
+#   
+#   狼狽
+#   
+#   w:20
+#   @_conflict_name_@
+# old en (ja16):
+#   Secrets
+#   Suspicion
+#   Mistrust
+#   Jealousy
+#   Incredulity
+#   Doubts
+#   Suspected Treachery
+#   Scepticism
+#   Trepidation
+# old ja (ja16):
+#   秘密
+#   
+#   疑惑
+#   
+#   不信
+#   
+#   羨望
+#   
+#   懐疑
+#   
+#   疑惑
+#   
+#   邪推
+#   
+#   猜疑
+#   
+#   狼狽
+#   
+#   w:20
+#   @_conflict_name_@
+
+@_suspicion_no_conflict_name_@
+
+w:2
+@_conflict_name_@
+%%%%
+divine_esteem
+
+# old en (ja19):
+#   good
+#   Esteem
+#   Favour
+#   Hope
+#   Regard
+#   Approval
+#   Delight
+#   Pride
+#   Generosity
+#   Supremacy
+#   Benevolence
+#   Whim
+#   bad
+#   Displeasure
+#   Envy
+#   Castigation
+#   Condemnation
+#   Reproof
+# old ja (ja19):
+#   好意
+#   
+#   寵愛
+#   
+#   希望
+#   
+#   敬意
+#   
+#   お墨付き
+#   
+#   歓喜
+#   
+#   誇り
+#   
+#   寛容
+#   
+#   覇権
+#   
+#   慈悲
+#   
+#   気紛れ
+#   
+#   不興
+#   
+#   嫉妬
+#   
+#   折檻
+#   
+#   審判
+#   
+#   叱責
+#   
+#   w:70
+#   @_anger_name_@
+# old en (ja16):
+#   good
+#   Esteem
+#   Favour
+#   Hope
+#   Regard
+#   Approval
+#   Delight
+#   Pride
+#   Generosity
+#   Supremacy
+#   Benevolence
+#   Whim
+#   bad
+#   Displeasure
+#   Envy
+#   Castigation
+#   Condemnation
+#   Reproof
+# old ja (ja16):
+#   好意
+#   
+#   寵愛
+#   
+#   希望
+#   
+#   敬意
+#   
+#   お墨付き
+#   
+#   歓喜
+#   
+#   誇り
+#   
+#   寛容
+#   
+#   覇権
+#   
+#   慈悲
+#   
+#   気紛れ
+#   
+#   不興
+#   
+#   嫉妬
+#   
+#   折檻
+#   
+#   審判
+#   
+#   叱責
+#   
+#   w:70
+#   @_anger_name_@
+
+Approval
+
+Benevolence
+
+Delight
+
+Esteem
+
+Favour
+
+w:5
+Felicitations
+
+Generosity
+
+Grace
+
+Hope
+
+Inspiration
+
+Pride
+
+Regard
+
+w:5
+Respect
+
+Supremacy
+
+Whim
+
+Castigation
+
+Condemnation
+
+Displeasure
+
+Envy
+
+Reproof
+
+w:70
+@_anger_quality_@
+%%%%
+_xom_esteem_
+
+# old en (ja19):
+#   chosen 20% of the time
+#   Entertainment
+#   Best Wishes
+#   Amusement
+#   Ringing Laughter
+#   Bemusement
+#   Passing Interest
+#   Full Attention
+#   Whimsicality
+#   Capriciousness
+#   Sleight of Hands
+#   Flight of Fancy
+#   Absentmindedness
+#   Malicious Joy
+#   Fair Game
+#   Wantonness
+#   Recklessness
+# old ja (ja19):
+#   w:40
+#   @divine_esteem@
+#   
+#   娯楽
+#   
+#   敬具
+#   
+#   慰みもの
+#   
+#   爆笑
+#   
+#   困惑
+#   
+#   無関心
+#   
+#   傾注
+#   
+#   奇行
+#   
+#   酔狂
+#   
+#   手妻
+#   
+#   空想
+#   
+#   放心
+#   
+#   愉悦
+#   
+#   フェアプレー
+#   
+#   浮気
+#   
+#   蛮勇
+# old en (ja16):
+#   chosen 20% of the time
+#   Entertainment
+#   Best Wishes
+#   Amusement
+#   Ringing Laughter
+#   Bemusement
+#   Passing Interest
+#   Full Attention
+#   Whimsicality
+#   Capriciousness
+#   Sleight of Hands
+#   Flight of Fancy
+#   Absentmindedness
+#   Malicious Joy
+#   Fair Game
+#   Wantonness
+#   Recklessness
+# old ja (ja16):
+#   w:40
+#   @divine_esteem@
+#   
+#   娯楽
+#   
+#   敬具
+#   
+#   慰みもの
+#   
+#   爆笑
+#   
+#   困惑
+#   
+#   無関心
+#   
+#   傾注
+#   
+#   奇行
+#   
+#   酔狂
+#   
+#   手妻
+#   
+#   空想
+#   
+#   放心
+#   
+#   愉悦
+#   
+#   フェアプレー
+#   
+#   浮気
+#   
+#   蛮勇
+
+w:40
+@divine_esteem@
+
+Absentmindedness
+
+Amusement
+
+Attic
+
+Bemusement
+
+Best Wishes
+
+Capriciousness
+
+Entertainment
+
+Facetiousness
+
+Fair Game
+
+Flight of Fancy
+
+Full Attention
+
+Malicious Joy
+
+Passing Interest
+
+Recklessness
+
+Ringing Laughter
+
+Sleight of Hands
+
+Taradiddle
+
+Temerity
+
+Wantonness
+
+Whimsicality
+%%%%
+_time_name_
+
+# old en (ja19):
+#   Day
+#   Midnight
+#   Twilight
+#   Dawn
+#   w:5
+#   Spring
+#   w:5
+#   Springtime
+#   w:5
+#   Summer
+#   w:5
+#   Summertime
+#   Autumn
+#   Winter
+#   Midsummer
+#   Midwinter
+#   the Solstice
+#   the Harvest
+#   Eternal Night
+#   Eternity
+#   Noon
+#   the Present
+#   the Morning
+#   the Evening
+#   the Equinox
+#   the Everdark
+# old ja (ja19):
+#   昼
+#   
+#   真夜中
+#   
+#   黄昏
+#   
+#   暁
+#   
+#   w:5
+#   春
+#   
+#   
+#   w:5
+#   夏
+#   
+#   
+#   秋
+#   
+#   冬
+#   
+#   真夏
+#   
+#   真冬
+#   
+#   夏至
+#   
+#   冬至
+#   
+#   収穫
+#   
+#   明けざる夜
+#   
+#   永劫
+#   
+#   正午
+#   
+#   現在
+#   
+#   朝
+#   
+#   夕暮れ
+#   
+#   春分
+#   
+#   秋分
+#   
+#   常闇
+# old en (ja16):
+#   Day
+#   Midnight
+#   Twilight
+#   Dawn
+#   w:5
+#   Spring
+#   w:5
+#   Springtime
+#   w:5
+#   Summer
+#   w:5
+#   Summertime
+#   Autumn
+#   Winter
+#   Midsummer
+#   Midwinter
+#   the Solstice
+#   the Harvest
+#   Eternal Night
+#   Eternity
+#   Noon
+#   the Present
+#   the Morning
+#   the Evening
+# old ja (ja16):
+#   昼
+#   
+#   真夜中
+#   
+#   黄昏
+#   
+#   暁
+#   
+#   春
+#   
+#   
+#   w:5
+#   夏
+#   
+#   
+#   秋
+#   
+#   冬
+#   
+#   真夏
+#   
+#   真冬
+#   
+#   夏至
+#   
+#   冬至
+#   
+#   収穫
+#   
+#   永遠の夜
+#   
+#   永劫
+#   
+#   正午
+#   
+#   現在
+#   
+#   朝
+#   
+#   夕暮れ
+
+Autumn
+
+Dawn
+
+Day
+
+Dusk
+
+Eternal Night
+
+Eternal Winter
+
+Eternity
+
+Evenfall
+
+Midnight
+
+Midsummer
+
+Midwinter
+
+Noon
+
+w:5
+Spring
+
+w:5
+Springtime
+
+w:5
+Summer
+
+w:5
+Summertime
+
+Time Moved Backwards
+
+Tomorrow
+
+Twilight
+
+Winter
+
+Yesterday
+
+the Distant Future
+
+the Equinox
+
+the Evening
+
+the Everdark
+
+the Harvest
+
+the Morning
+
+the Past
+
+the Present
+
+the Solstice
+%%%%
+_sky_colour_name_
+
+# old en (ja19):
+#   Black
+#   Blue
+#   Grey
+#   Orange
+#   Purple
+#   Red
+# old ja (ja19):
+#   黒
+#   
+#   青
+#   
+#   灰
+#   
+#   橙
+#   
+#   紫
+#   
+#   赤
+# old en (ja16):
+#   Black
+#   Blue
+#   Grey
+#   Orange
+#   Purple
+#   Red
+# old ja (ja16):
+#   黒
+#   
+#   青
+#   
+#   灰
+#   
+#   橙
+#   
+#   紫
+#   
+#   赤
+
+Black
+
+Blue
+
+Grey
+
+Indigo
+
+Orange
+
+Purple
+
+Red
+%%%%
+_sky_or_light_
+
+# old en (ja19):
+#   the Sun
+#   the Moon
+#   Light
+#   Darkness
+#   Dim Light
+#   the Shining Light
+#   Sunlight
+#   Starshine
+#   the Sky
+#   the Gloaming
+#   the Heavens
+#   the Skies Above
+#   the Endless Expanse
+#   the @_sky_colour_name_@ Skies
+# old ja (ja19):
+#   太陽
+#   
+#   月
+#   
+#   光明
+#   
+#   暗黒
+#   
+#   薄明かり
+#   
+#   烈光
+#   
+#   陽光
+#   
+#   星影
+#   
+#   蒼穹
+#   
+#   薄暮
+#   
+#   天国
+#   
+#   天空
+#   
+#   果てなき空
+#   
+#   @_sky_colour_name_@色の空
+# old en (ja16):
+#   the Sun
+#   the Moon
+#   Light
+#   Darkness
+#   Dim Light
+#   the Shining Light
+#   Sunlight
+#   Starshine
+#   the Sky
+#   the Gloaming
+#   the Heavens
+#   the Skies Above
+#   the @_sky_colour_name_@ Skies
+# old ja (ja16):
+#   太陽
+#   
+#   月
+#   
+#   光明
+#   
+#   暗黒
+#   
+#   薄明かり
+#   
+#   烈光
+#   
+#   陽光
+#   
+#   星明かり
+#   
+#   蒼穹
+#   
+#   薄暮
+#   
+#   天国
+#   
+#   空
+#   
+#   @_sky_colour_name_@色の空
+
+Darkness
+
+Dim Light
+
+Light
+
+Starshine
+
+Sunlight
+
+the Endless Expanse
+
+the Gloaming
+
+the Heavens
+
+the Moon
+
+the Shining Light
+
+the Skies Above
+
+the Sky
+
+the Sun
+
+the @_sky_colour_name_@ Skies
+%%%%
+_virtue_name_
+
+# old en (ja19):
+#   Virtue
+#   Truth
+#   Honesty
+#   Benevolence
+#   Devotion
+#   Generosity
+#   Grace
+#   Temperance
+#   Hospitality
+#   Charity
+#   Patience
+#   Modesty
+#   Discretion
+#   Wisdom
+#   Wariness
+#   Thoughtfulness
+#   Kindness
+#   Generosity
+#   Compassion
+#   Understanding
+# old ja (ja19):
+#   美徳
+#   
+#   真実
+#   
+#   誠実
+#   
+#   慈悲
+#   
+#   献身
+#   
+#   寛容
+#   
+#   気品
+#   
+#   節制
+#   
+#   歓待
+#   
+#   慈善
+#   
+#   忍耐
+#   
+#   謙遜
+#   
+#   分別
+#   
+#   賢明
+#   
+#   慎重
+#   
+#   思いやり
+#   
+#   いたわり
+#   
+#   雅量
+#   
+#   哀れみ
+#   
+#   理解
+# old en (ja16):
+#   Virtue
+#   Truth
+#   Honesty
+#   Benevolence
+#   Devotion
+#   Generosity
+#   Grace
+#   Temperance
+#   Hospitality
+#   Charity
+#   Patience
+#   Modesty
+# old ja (ja16):
+#   美徳
+#   
+#   真実
+#   
+#   誠実
+#   
+#   慈悲
+#   
+#   献身
+#   
+#   寛容
+#   
+#   気品
+#   
+#   節制
+#   
+#   歓待
+#   
+#   慈善
+#   
+#   忍耐
+#   
+#   謙遜
+
+Benevolence
+
+Charity
+
+Compassion
+
+Devotion
+
+Discretion
+
+Generosity
+
+Grace
+
+Honesty
+
+Hospitality
+
+Kindness
+
+Largesse
+
+Modesty
+
+Patience
+
+Temperance
+
+Thoughtfulness
+
+Truth
+
+Understanding
+
+Virtue
+
+Wariness
+
+Wisdom
+%%%%
+_vice_name_
+
+# old en (ja19):
+#   some of the deadly sins
+#   Sloth
+#   Vanity
+#   Gluttony
+#   Pride
+#   Greed
+#   general immorality
+#   Sin
+#   the Original Sin
+#   Lies
+#   Dishonesty
+#   Cowardice
+#   Dishonour
+#   Impatience
+#   Immorality
+#   Amorality
+#   Untruth
+#   Spite
+#   Youthful Indiscretion
+#   Foolhardiness
+#   Recklessness
+# old ja (ja19):
+#   怠惰
+#   
+#   虚栄
+#   
+#   貪食
+#   
+#   傲慢
+#   
+#   強欲
+#   
+#   罪業
+#   
+#   原罪
+#   
+#   虚言
+#   
+#   不実
+#   
+#   臆病
+#   
+#   不名誉
+#   
+#   短気
+#   
+#   背徳
+#   
+#   非道
+#   
+#   虚偽
+#   
+#   悪意
+#   
+#   若気の至り
+#   
+#   無鉄砲
+#   
+#   蛮勇
+# old en (ja16):
+#   some of the deadly sins
+#   Sloth
+#   Vanity
+#   Gluttony
+#   Pride
+#   Greed
+#   general immorality
+#   Sin
+#   the Original Sin
+#   Lies
+#   Dishonesty
+#   Cowardice
+#   Dishonour
+#   Impatience
+#   Immorality
+#   Amorality
+#   Untruth
+#   Spite
+# old ja (ja16):
+#   怠惰
+#   
+#   虚栄
+#   
+#   貪食
+#   
+#   傲慢
+#   
+#   強欲
+#   
+#   罪業
+#   
+#   原罪
+#   
+#   虚言
+#   
+#   不実
+#   
+#   臆病
+#   
+#   不名誉
+#   
+#   短気
+#   
+#   背徳
+#   
+#   非道
+#   
+#   虚偽
+#   
+#   悪意
+
+Gluttony
+
+Greed
+
+Lust
+
+Pride
+
+Sloth
+
+Vanity
+
+Amorality
+
+Cowardice
+
+Dishonesty
+
+Dishonour
+
+Equivocation
+
+Foolhardiness
+
+Immorality
+
+Impatience
+
+Lies
+
+Misconduct
+
+Moral Flaws
+
+Past Mistakes
+
+Recklessness
+
+Sin
+
+Spite
+
+Tergiversation
+
+Untruth
+
+Vice
+
+Youthful Indiscretion
+
+the Original Sin
+%%%%
+_destiny_name_
+
+# old en (ja19):
+#   Causality
+#   Destiny
+#   Fate
+#   Karma
+#   Kismet
+#   Wyrd
+#   Doom
+# old ja (ja19):
+#   因果
+#   
+#   宿命
+#   
+#   運命
+#   
+#   因業
+#   
+#   天運
+#   
+#   命運
+#   
+#   破滅
+# old en (ja16):
+#   Causality
+#   Destiny
+#   Fate
+#   Karma
+#   Kismet
+#   Wyrd
+#   Doom
+# old ja (ja16):
+#   因果
+#   
+#   宿命
+#   
+#   運命
+#   
+#   因業
+#   
+#   天運
+#   
+#   命運
+#   
+#   破滅
+
+Causality
+
+Destiny
+
+Doom
+
+Fate
+
+Karma
+
+Kismet
+
+Wyrd
+%%%%
+_number_or_qualifier_
+
+# old en (ja19):
+#   exact numbers
+#   the Three
+#   the Four
+#   the Five
+#   the Six
+#   the Seven
+#   the Eight
+#   the Nine
+#   the Ten
+#   the Eleven
+#   w:5
+#   the Twelve
+#   w:5
+#   the Dozen
+#   the Thirteen
+#   the Fifty
+#   w:5
+#   a Hundred
+#   w:5
+#   the Hundredfold
+#   a Thousand
+#   vague numbers
+#   the
+#   the Many
+#   the Countless
+#   the Assorted
+#   the Manifold
+#   other qualifiers
+#   the Lost
+#   the Forgotten
+#   the Forsaken
+#   the Hidden
+#   the Last
+#   the Lonely
+#   the Jolly
+#   the Ancient
+#   the Exiled
+#   the Illusory
+#   the Pure
+#   the Peculiar
+#   the Special
+#   the First
+#   the Neverending
+#   the Endless
+#   the Lumpy
+#   the Disturbing
+#   the Secret
+#   the Wary
+#   the Crushed
+#   the Battered
+#   the Bruised
+#   the Unstoppable
+#   the Immovable
+#   the Foremost
+#   the Curious
+#   the Insatiable
+#   the Bouncing
+#   the Thirsty
+#   the Tired
+#   the Ageless
+#   the Aged
+#   the Inquisitive
+#   the Thoughtful
+# old ja (ja19):
+#   三つの
+#   
+#   四つの
+#   
+#   五つの
+#   
+#   六つの
+#   
+#   七つの
+#   
+#   八つの
+#   
+#   九つの
+#   
+#   十の
+#   
+#   十一の
+#   
+#   w:5
+#   十二の
+#   
+#   w:5
+#   一ダースの
+#   
+#   十三の
+#   
+#   五十の
+#   
+#   w:5
+#   百の
+#   
+#   w:5
+#   百倍の
+#   
+#   千の
+#   
+#   
+#   数多の
+#   
+#   無数の
+#   
+#   詰め合わせの
+#   
+#   多数の
+#   
+#   失われし
+#   
+#   忘れられし
+#   
+#   見捨てられた
+#   
+#   隠された
+#   
+#   最後の
+#   
+#   孤独な
+#   
+#   陽気な
+#   
+#   太古の
+#   
+#   追放された
+#   
+#   架空の
+#   
+#   純粋な
+#   
+#   奇妙な
+#   
+#   特別な
+#   
+#   始原の
+#   
+#   終わりなき
+#   
+#   果てなき
+#   
+#   瘤だらけの
+#   
+#   不穏な
+#   
+#   秘密の
+#   
+#   慎重な
+#   
+#   砕かれた
+#   
+#   壊れた
+#   
+#   傷ついた
+#   
+#   止められぬ
+#   
+#   不動の
+#   
+#   主たる
+#   
+#   珍しい
+#   
+#   飽くなき
+#   
+#   元気な
+#   
+#   渇いた
+#   
+#   疲れた
+#   
+#   不老の
+#   
+#   年経た
+#   
+#   知りたがりの
+#   
+#   思慮深き
+# old en (ja16):
+#   exact numbers
+#   the Three
+#   the Four
+#   the Five
+#   the Six
+#   the Seven
+#   the Eight
+#   the Nine
+#   the Ten
+#   the Eleven
+#   w:5
+#   the Twelve
+#   w:5
+#   the Dozen
+#   the Thirteen
+#   the Fifty
+#   w:5
+#   a Hundred
+#   w:5
+#   the Hundredfold
+#   a Thousand
+#   vague numbers
+#   the 
+#   the Many
+#   the Countless
+#   the Assorted
+#   the Manifold
+#   other qualifiers
+#   the Lost
+#   the Forgotten
+#   the Forsaken
+#   the Hidden
+#   the Last
+#   the Lonely
+#   the Jolly
+#   the Ancient
+#   the Exiled
+#   the Illusory
+#   the Pure
+#   the Peculiar
+#   the Special
+#   the First
+# old ja (ja16):
+#   三つの
+#   
+#   四つの
+#   
+#   五つの
+#   
+#   六つの
+#   
+#   七つの
+#   
+#   八つの
+#   
+#   九つの
+#   
+#   十の
+#   
+#   十一の
+#   
+#   w:5
+#   十二の
+#   
+#   w:5
+#   一ダースの
+#   
+#   十三の
+#   
+#   五十の
+#   
+#   w:5
+#   百の
+#   
+#   w:5
+#   百倍の
+#   
+#   千の
+#   
+#   
+#   数多の
+#   
+#   無数の
+#   
+#   詰め合わせの
+#   
+#   多数の
+#   
+#   失われし
+#   
+#   忘れられし
+#   
+#   見捨てられた
+#   
+#   隠された
+#   
+#   最後の
+#   
+#   孤独な
+#   
+#   陽気な
+#   
+#   古代の
+#   
+#   追放された
+#   
+#   架空の
+#   
+#   純粋な
+#   
+#   奇妙な
+#   
+#   特別な
+#   
+#   始原の
+
+the Three
+
+the Four
+
+the Five
+
+the Six
+
+the Seven
+
+the Eight
+
+the Nine
+
+the Ten
+
+the Eleven
+
+w:5
+the Twelve
+
+w:5
+the Dozen
+
+the Thirteen
+
+w:5
+the Twenty
+
+w:1
+the Twenty-Seven
+
+the Fifty
+
+w:5
+the Sixty-Six
+
+w:5
+the Seventy-Seven
+
+w:5
+the Ninety-Nine
+
+w:5
+a Hundred
+
+w:5
+the Hundredfold
+
+a Thousand
+
+a Million
+
+a Billion
+
+the
+
+the Assorted
+
+the Countless
+
+the Manifold
+
+the Many
+
+the Several
+
+the Aged
+
+the Ageless
+
+the Ancient
+
+the Battered
+
+the Bouncing
+
+the Bruised
+
+the Crushed
+
+the Curious
+
+the Disturbing
+
+the Endless
+
+the Exiled
+
+the Final
+
+the First
+
+the Foremost
+
+the Forgotten
+
+the Forsaken
+
+the Hidden
+
+the Illusory
+
+the Immovable
+
+the Inquisitive
+
+the Insatiable
+
+the Invisible
+
+the Jolly
+
+the Last
+
+the Lonely
+
+the Lost
+
+the Lumpy
+
+the Modern
+
+the Neverending
+
+the Peculiar
+
+the Postmodern
+
+the Pure
+
+the Secret
+
+the Sneaky
+
+the Special
+
+the Thirsty
+
+the Thoughtful
+
+the Tired
+
+the Unstoppable
+
+the Vanishing
+
+the Wary
+
+the Well-Known
+%%%%
+_thing_names_
+
+# old en (ja19):
+#   Suns
+#   Moons
+#   Stars
+#   Planets
+#   Hells
+#   Lives
+#   Deaths
+#   Curses
+#   Blessings
+#   Gods
+#   Spirits
+#   Ghosts
+#   Demons
+#   Wars
+#   Mice
+#   Eyes
+#   Nights
+#   Orbs
+#   Runes
+#   Seas
+#   Places
+#   Realms
+#   Wishes
+#   Wonders
+#   Beds
+#   Beggars
+#   Cities
+#   Dances
+#   Lies
+#   Ships
+#   Songs
+#   Souls
+#   Tales
+# old ja (ja19):
+#   太陽
+#   
+#   月
+#   
+#   星
+#   
+#   惑星
+#   
+#   地獄
+#   
+#   生命
+#   
+#   死
+#   
+#   呪い
+#   
+#   祝福
+#   
+#   神々
+#   
+#   精霊
+#   
+#   幽霊
+#   
+#   悪魔
+#   
+#   争い
+#   
+#   鼠
+#   
+#   目
+#   
+#   夜
+#   
+#   オーブ
+#   
+#   ルーン
+#   
+#   海
+#   
+#   場所
+#   
+#   領域
+#   
+#   願い
+#   
+#   不思議
+#   
+#   ベッド
+#   
+#   乞食
+#   
+#   都市
+#   
+#   踊り
+#   
+#   嘘
+#   
+#   船
+#   
+#   歌
+#   
+#   魂
+#   
+#   物語
+# old en (ja16):
+#   Suns
+#   Moons
+#   Stars
+#   Planets
+#   Hells
+#   Lives
+#   Deaths
+#   Curses
+#   Blessings
+#   Gods
+#   Spirits
+#   Ghosts
+#   Demons
+#   Wars
+#   Mice
+#   Eyes
+#   Nights
+#   Orbs
+#   Runes
+#   Seas
+#   Places
+#   Realms
+#   Wishes
+#   Wonders
+#   Beds
+#   Beggars
+#   Cities
+#   Dances
+#   Lies
+#   Ships
+#   Songs
+#   Souls
+#   Tales
+# old ja (ja16):
+#   太陽
+#   
+#   月
+#   
+#   星
+#   
+#   惑星
+#   
+#   地獄
+#   
+#   生命
+#   
+#   死
+#   
+#   呪い
+#   
+#   祝福
+#   
+#   神
+#   
+#   精霊
+#   
+#   幽霊
+#   
+#   悪魔
+#   
+#   争い
+#   
+#   鼠
+#   
+#   目
+#   
+#   夜
+#   
+#   オーブ
+#   
+#   ルーン
+#   
+#   海
+#   
+#   場所
+#   
+#   領域
+#   
+#   願い
+#   
+#   不思議
+#   
+#   ベッド
+#   
+#   乞食
+#   
+#   都市
+#   
+#   踊り
+#   
+#   嘘
+#   
+#   船
+#   
+#   歌
+#   
+#   魂
+#   
+#   物語
+
+Allies
+
+Artisans
+
+Artists
+
+Beasts
+
+Beds
+
+Beggars
+
+Blessings
+
+Bones
+
+Bounties
+
+Brambles
+
+w:5
+Cities
+
+Coins
+
+Continents
+
+Curses
+
+Dances
+
+Deaths
+
+Defenders
+
+Domains
+
+Demons
+
+Dreams
+
+Ears
+
+Emperors
+
+Eyes
+
+Friends
+
+Friars
+
+Geomancers
+
+Ghosts
+
+Gods
+
+Heavens
+
+Hells
+
+Hosts
+
+Interlopers
+
+Invaders
+
+Knaves
+
+w:25
+Knives
+
+Leylines
+
+Lies
+
+Lives
+
+Loafs
+
+Lovers
+
+Mice
+
+Moons
+
+Mouths
+
+Mystics
+
+w:5
+Nightcaps
+
+Nightingales
+
+Nightmares
+
+Nights
+
+Olives
+
+Orbs
+
+People
+
+Persimmons
+
+Places
+
+Planets
+
+Portals
+
+Priests
+
+Princes
+
+Prophets
+
+Queens
+
+Quests
+
+Realms
+
+Runes
+
+Scars
+
+Seas
+
+Seers
+
+Servitors
+
+Ships
+
+Shrikes
+
+Songs
+
+Souls
+
+Spines
+
+Spirits
+
+w:5
+Spreadsheets
+
+Stars
+
+Stories
+
+Suns
+
+Tables
+
+Tales
+
+Teeth
+
+Thickets
+
+w:5
+Things
+
+w:5
+Towns
+
+Tusks
+
+Ultimatums
+
+Underlurkers
+
+w:5
+Villages
+
+Violins
+
+Visionaries
+
+Visions
+
+Wars
+
+Wishes
+
+Wonders
+
+Xalams
+
+Xenops
+
+Xeniums
+
+w:5
+Xenophobes
+
+Yaks
+
+Youths
+
+Ziggurats
+%%%%

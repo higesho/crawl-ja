@@ -1,0 +1,58 @@
+%%%%
+tutorial3 trap
+
+# old en (ja19):
+#   Traps can have a variety of unpleasant effects, such as alerting monsters or
+#   teleporting you into danger. They will often be hidden until you discover them
+#   by stepping on them. If there's no way around, you'll have to trigger the trap
+#   and deal with the consequences.
+# old ja (ja19):
+#   罠は不愉快な効果を色々ともたらします。
+#   例えばモンスターへ向けて警報を鳴らしたり、 あなたを危機のまっただ中にテレポートさせたり。
+#   大抵はあなたが罠を踏んで存在に気づくまで隠れた状態になっています。
+#   もし罠を迂回する道がなければ、 あなたは罠を踏んで結果に備えなくてはならないでしょう。
+# old en (ja16):
+#   Traps can have a variety of unpleasant effects, and may be hidden until you
+#   discover them by stepping on them. If there's no way around, you'll have to
+#   trigger the trap and deal with its effects.
+# old ja (ja16):
+#   罠は不愉快な効果を色々ともたらすもので、
+#   大抵はあなたが罠を踏んで存在に気づくまで隠れた状態になっています。
+#   もし罠を迂回する道がなければ、 あなたは罠を踏んで結果に備えなくてはならないでしょう。
+
+Traps can have a variety of unpleasant effects, such as alerting monsters or
+teleporting you into danger. Some traps are permanent and will always be
+revealed as part of the map, but other traps can be triggered by exploring new
+tiles, and won't exist after being triggered. If there's no way around, you'll
+have to trigger the trap and deal with the consequences.
+%%%%
+tutorial4 spellbook
+
+# old en (ja19):
+#   You can memorise a spell from a carried spellbook with
+#   <input>$cmd[CMD_MEMORISE_SPELL]</input><localtiles> or by
+#   <input>clicking</input> on the memorisation tab and selecting the spell
+#   tile</localtiles>. At experience level 1, only level 1 spells are available to
+#   you. This will change as you gain experience.
+# old ja (ja19):
+#   <input>$cmd[CMD_MEMORISE_SPELL]</input>を押<localtiles>すか、
+#   呪文記憶タブの中の目的の呪文アイコンを<input>クリック</input></localtiles>して所持している魔法書から呪文を習得することができます。
+#   レベル1の状態では、 呪文レベル1の呪文しか利用できません。 経験を積むにしたがって覚えられる量が増えていきます。
+# old en (ja16):
+#   You can memorise a spell from a carried spellbook with
+#   <input>$cmd[CMD_MEMORISE_SPELL]</input><localtiles> or by
+#   <input>clicking</input> on the memorisation tab and selecting the spell
+#   tile</localtiles>. At experience level 1, only level 1 spells are available to
+#   you. This will change as you gain experience.
+# old ja (ja16):
+#   <input>$cmd[CMD_MEMORISE_SPELL]</input>を押<localtiles>すか、
+#   呪文記憶タブの中の目的の呪文アイコンを<input>クリック</input></localtiles>して所持している魔法書から呪文を習得することができます。
+#   レベル1の状態では、 呪文レベル1の呪文しか利用できません。 経験を積むにしたがって覚えられる量が増えていきます。
+
+You can memorise a spell from your spell library with
+<input>$cmd[CMD_MEMORISE_SPELL]</input><localtiles> or by
+<input>clicking</input> on the memorisation tab and selecting the spell
+tile</localtiles>. At experience level 1, only level 1 spells are available to
+you. This will change as you gain experience. To find new spells, find and pick
+up spellbooks, and the spells will be added to your library.
+%%%%

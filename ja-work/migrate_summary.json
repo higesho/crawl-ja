@@ -1,0 +1,261 @@
+{
+ "database": {
+  "FAQ.txt": {
+   "missing": 38,
+   "total": 38
+  },
+  "colourname.txt": {
+   "missing": 9,
+   "total": 9
+  },
+  "decorlines.txt": {
+   "missing": 133,
+   "total": 133
+  },
+  "gizmo.txt": {
+   "missing": 3,
+   "total": 3
+  },
+  "godname.txt": {
+   "jtrans": 15,
+   "missing": 8,
+   "total": 23
+  },
+  "godspeak.txt": {
+   "ja16": 2,
+   "ja19": 52,
+   "jtrans": 2,
+   "missing": 116,
+   "stale": 21,
+   "total": 193
+  },
+  "graffiti.txt": {
+   "missing": 56,
+   "stale": 2,
+   "total": 58
+  },
+  "help.txt": {
+   "ja19": 1,
+   "missing": 6,
+   "stale": 6,
+   "total": 13
+  },
+  "insult.txt": {
+   "missing": 33,
+   "total": 33
+  },
+  "miscast.txt": {
+   "missing": 33,
+   "total": 33
+  },
+  "miscname.txt": {
+   "missing": 6,
+   "stale": 4,
+   "total": 10
+  },
+  "monflee.txt": {
+   "ja19": 1,
+   "total": 1
+  },
+  "monname.txt": {
+   "missing": 52,
+   "total": 52
+  },
+  "monspeak.txt": {
+   "ja16": 62,
+   "ja19": 6,
+   "missing": 614,
+   "stale": 50,
+   "total": 732
+  },
+  "monspell.txt": {
+   "ja19": 118,
+   "missing": 117,
+   "stale": 27,
+   "total": 262
+  },
+  "montitle.txt": {
+   "ja16": 62,
+   "jtrans": 2,
+   "missing": 15,
+   "stale": 7,
+   "total": 86
+  },
+  "rand_all.txt": {
+   "missing": 5,
+   "stale": 13,
+   "total": 18
+  },
+  "rand_arm.txt": {
+   "ja19": 1,
+   "stale": 18,
+   "total": 19
+  },
+  "rand_wpn.txt": {
+   "ja19": 1,
+   "missing": 13,
+   "stale": 31,
+   "total": 45
+  },
+  "randbook.txt": {
+   "ja19": 2,
+   "missing": 20,
+   "stale": 50,
+   "total": 72
+  },
+  "randname.txt": {
+   "missing": 15,
+   "stale": 18,
+   "total": 33
+  },
+  "shout.txt": {
+   "ja16": 2,
+   "ja19": 42,
+   "missing": 43,
+   "stale": 6,
+   "total": 93
+  },
+  "wpnnoise.txt": {
+   "missing": 60,
+   "stale": 5,
+   "total": 65
+  }
+ },
+ "descript": {
+  "ability.txt": {
+   "ja19": 18,
+   "missing": 116,
+   "stale": 1,
+   "total": 154,
+   "upstream": 19
+  },
+  "backgrounds.txt": {
+   "ja19": 3,
+   "missing": 8,
+   "stale": 1,
+   "total": 26,
+   "upstream": 14
+  },
+  "branches.txt": {
+   "ja19": 4,
+   "missing": 32,
+   "total": 36
+  },
+  "cards.txt": {
+   "ja19": 14,
+   "missing": 1,
+   "stale": 9,
+   "total": 24
+  },
+  "clouds.txt": {
+   "missing": 39,
+   "total": 39
+  },
+  "commands.txt": {
+   "ja19": 86,
+   "missing": 9,
+   "total": 96,
+   "upstream": 1
+  },
+  "egos.txt": {
+   "jtrans": 4,
+   "missing": 76,
+   "total": 80
+  },
+  "features.txt": {
+   "missing": 290,
+   "total": 290
+  },
+  "gods.txt": {
+   "ja19": 27,
+   "missing": 10,
+   "stale": 34,
+   "total": 82,
+   "upstream": 11
+  },
+  "hints.txt": {
+   "ja19": 13,
+   "jtrans": 1,
+   "missing": 91,
+   "stale": 10,
+   "total": 116,
+   "upstream": 1
+  },
+  "items.txt": {
+   "ja16": 44,
+   "missing": 170,
+   "stale": 34,
+   "total": 307,
+   "upstream": 59
+  },
+  "monstatus.txt": {
+   "missing": 140,
+   "total": 140
+  },
+  "monsters.txt": {
+   "ja19": 94,
+   "missing": 599,
+   "stale": 14,
+   "total": 724,
+   "upstream": 17
+  },
+  "mutations.txt": {
+   "jtrans": 6,
+   "missing": 246,
+   "total": 252
+  },
+  "passives.txt": {
+   "missing": 20,
+   "total": 20
+  },
+  "quotes.txt": {
+   "missing": 465,
+   "total": 465
+  },
+  "skills.txt": {
+   "ja16": 9,
+   "missing": 4,
+   "stale": 10,
+   "total": 29,
+   "upstream": 6
+  },
+  "species.txt": {
+   "ja19": 6,
+   "missing": 9,
+   "stale": 2,
+   "total": 27,
+   "upstream": 10
+  },
+  "spells.txt": {
+   "missing": 291,
+   "stale": 1,
+   "total": 402,
+   "upstream": 110
+  },
+  "status.txt": {
+   "jtrans": 8,
+   "missing": 229,
+   "total": 237
+  },
+  "tutorial.txt": {
+   "ja19": 55,
+   "missing": 3,
+   "stale": 2,
+   "total": 88,
+   "upstream": 28
+  },
+  "unident.txt": {
+   "ja16": 4,
+   "missing": 1,
+   "total": 7,
+   "upstream": 2
+  },
+  "unrand.txt": {
+   "ja16": 19,
+   "missing": 50,
+   "stale": 21,
+   "total": 140,
+   "upstream": 50
+  }
+ }
+}

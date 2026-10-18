@@ -1,0 +1,185 @@
+%%%%
+Can't go down from the bottom of a branch.
+
+分岐の最下階から下には行けません。
+%%%%
+Bug in determining level exit.
+
+# 訳不要
+%%%%
+Creating downstairs.
+
+下り階段を生成しました。
+%%%%
+Creating upstairs.
+
+上り階段を生成しました。
+%%%%
+Create what kind of feature mimic?
+
+どの種類の地形のミミックを生成しますか？
+%%%%
+Create which feature?
+
+どの種類の地形を生成しますか？
+%%%%
+Set fprops "%s" at (%d,%d)
+
+# 訳不要
+%%%%
+No features matching '%s'
+
+'%s'という地形は見つかりませんでした。
+%%%%
+No exact match for feature '%s', possible matches are:
+
+'%s'に完全一致する名称の地形はありませんでした。ありそうな候補は以下の通り:
+%%%%
+This isn't a valid feature mimic. Create it anyway?
+
+この地形ではミミックとして生成できません。それでも生成しますか？
+%%%%
+Branch %d (%s) is on %s
+
+分岐#%d(%s)への入り口は%sに生成されました。
+%%%%
+Branch %d (%s) was not generated this game
+
+分岐#%d(%s)は今回のゲーム中では生成されていません。
+%%%%
+Overflow temples:
+
+寺院外に生成された祭壇:
+%%%%
+%u on D:%u (%s)
+
+%u箇所/迷宮:%u階 (%s)
+%%%%
+Revealed %d traps.
+
+罠を%d箇所発見しました。
+%%%%
+No traps revealed.
+
+罠はありませんでした。
+%%%%
+Force level to be mappable?
+
+強制的にマップを表示しますか？
+%%%%
+Mapping level.
+
+全体マップを表示しました。
+%%%%
+You need to be on a floor square to make a trap.
+
+罠を張るには通常の地面の上に立っている必要があります。
+%%%%
+What kind of trap?
+
+どの種類の罠を張りますか？
+%%%%
+I know no traps named "%s".
+
+"%s"という名前の罠は知りません。
+%%%%
+No exact match for trap '%s', possible matches are:
+
+'%s'に完全一致する名称の罠はありませんでした。ありそうな候補は以下の通り:
+%%%%
+Created %s, marked it undiscovered.
+
+%sを生成し、未発見の状態にしました。
+%%%%
+a random trap
+
+ランダムな種類の罠
+%%%%
+NOTE: Shaft traps aren't valid on this level.
+
+注意: 縦穴の罠がこの階にあると異常な結果を及ぼすことがあります。
+%%%%
+Insufficient floor-space for new Wal-Mart.
+
+このマスは店を開くのに適した立地ではありません。
+%%%%
+What kind of shop?
+
+どの種類の店を開きますか？
+%%%%
+Bad shop type: "%s"
+
+"%s"は店の種別として適当ではありません。
+%%%%
+Done.
+
+完了。
+%%%%
+Can't find map named '%s'.
+
+'%s'という名称のマップは見つかりませんでした。
+%%%%
+Only match is '%s', use that?
+
+見つかった候補は'%s'のみですが、これを選択しますか？
+%%%%
+No exact matches for '%s', possible matches are:
+
+'%s'に完全一致する名称のマップはありませんでした。ありそうな候補は以下の通り:
+%%%%
+Placing %s on top of you would put part of the map outside of the level, cancelling.
+
+'%s'マップをあなたのいる位置に置くと階層からはみ出してしまうため、中断します。
+%%%%
+%s decides where it goes, can't place where you are.
+
+'%s'マップはどこに配置されるか決められているため、あなたのいる位置に置くことはできません。
+%%%%
+Successfully placed %s.
+
+マップ'%s'の生成に成功しました。
+%%%%
+Failed to place %s.
+
+マップ'%s'の生成に失敗しました。
+%%%%
+Enter map name:
+
+マップ名を入力してください:
+%%%%
+Enter map name (prefix it with * for local placement):
+
+マップ名を入力してください(頭に*を付けることで今いる場所に生成できます):
+%%%%
+Explore took %d turns.
+
+探索には%dターンかかります。
+%%%%
+Level stack:
+
+階層スタック:
+%%%%
+Known levels:
+
+既知の階層:
+%%%%
+`- total
+
+`- 総合
+%%%%
+Regenerating level.
+
+階層を再構成しました。
+%%%%
+All vaults are now eligible for [re]use.
+
+全てのvaultが(再)使用可能になった。
+%%%%
+Set Abyss speed to what? (now %d, higher value = higher speed)
+
+アビスの変容速度を何に設定しますか？ (現在%d、値が大きいほど速くなる)
+%%%%
+Setting Abyss speed to %i.
+
+アビスの変容速度を%iに設定しました。
+%%%%

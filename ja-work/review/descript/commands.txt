@@ -1,0 +1,8 @@
+%%%%
+CMD_MEMORISE_SPELL verbose
+
+# en (0.34):
+#   Memorises a chosen spell from your spell library.
+
+所持している本、もしくは足元にある本を読み、呪文を記憶に留める。
+%%%%

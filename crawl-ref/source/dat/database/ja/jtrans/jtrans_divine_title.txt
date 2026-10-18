@@ -1,0 +1,845 @@
+%%%%
+# Zin.
+#     {"Blasphemer",         "Anchorite",             "Apologist",                "Pious",
+#        "Devout",             "Orthodox",              "Immaculate",               "Bringer of Law"},
+%%%%
+[title]Blasphemer
+
+冒涜者
+%%%%
+[title]Anchorite
+
+隠遁者
+%%%%
+[title]Apologist
+
+弁証者
+%%%%
+[title]Pious
+
+敬虔者
+%%%%
+[title]Devout
+
+導士
+%%%%
+[title]Orthodox
+
+正しき者
+%%%%
+[title]Immaculate
+
+無垢清浄の者
+%%%%
+[title]Bringer of Law
+
+秩序の代行者
+%%%%
+# The Shining One.
+#     {"Honourless",         "Acolyte",               "Righteous",                "Unflinching",
+#        "Holy Warrior",       "Exorcist",              "Demon Slayer",             "Bringer of Light"},
+%%%%
+[title]Honourless
+
+不名誉な存在
+%%%%
+[title]Acolyte
+
+侍祭
+%%%%
+[title]Righteous
+
+高潔な者
+%%%%
+[title]Unflinching
+
+揺るがぬ者
+%%%%
+[title]Holy Warrior
+
+聖戦者
+%%%%
+[title]Exorcist
+
+悪を祓う者
+%%%%
+[title]Demon Slayer
+
+悪を滅する者
+%%%%
+[title]Bringer of Light
+
+光の代行者
+%%%%
+# Kikubaaqudgha -- scholarly death.
+#     {"Tormented",          "Purveyor of Pain",      "Scholar of Death",         "Merchant of Misery",
+#        "Artisan of Death",   "Dealer of Despair",     "Black Sun",                "Lord of Darkness"},
+%%%%
+[title]Tormented
+
+苦痛を受けし者
+%%%%
+[title]Purveyor of Pain
+
+痛みを与える者
+%%%%
+[title]Scholar of Death
+
+死を探求する者
+%%%%
+[title]Merchant of Misery
+
+苦痛の商人
+%%%%
+[title]Artisan of Death
+
+死の芸術家
+%%%%
+[title]Dealer of Despair
+
+絶望を振り撒く者
+%%%%
+[title]Black Sun
+
+黒き太陽
+%%%%
+[title]Lord of Darkness
+
+暗黒の領主
+%%%%
+#  Yredelemnul -- zombie death.
+#     {"Traitor",            "Tainted",                "Torchbearer",             "Fey @Genus@",
+#         "Black Crusader",     "Sculptor of Flesh",     "Harbinger of Death",       "Grim Reaper"},
+%%%%
+[title]Traitor
+
+反逆者
+%%%%
+[title]Tainted
+
+堕落者
+%%%%
+[title]Torchbearer
+
+松明を携えし者
+%%%%
+[title]Fey @Genus@
+
+狂気の@Genus@
+%%%%
+[title]Black Crusader
+
+黒の十字軍
+%%%%
+[title]Sculptor of Flesh
+
+死体を彩る者
+%%%%
+[title]Harbinger of Death
+
+死の体現者
+%%%%
+[title]Grim Reaper
+
+永遠なる死の支配者
+%%%%
+#  Xom.
+#     {"Toy",                "Toy",                   "Toy",                      "Toy",
+#         "Toy",                "Toy",                   "Toy",                      "Toy"},
+%%%%
+[title]Toy
+
+ゾムの玩具
+%%%%
+#  Vehumet -- battle mage theme.
+#     {"Meek",               "Sorcerer's Apprentice", "Scholar of Destruction",   "Caster of Ruination",
+#         "Traumaturge",        "Battlemage",            "Warlock",                  "Luminary of Lethal Lore"},
+%%%%
+[title]Meek
+
+敗北者
+%%%%
+[title]Sorcerer's Apprentice
+
+魔術師見習い
+%%%%
+[title]Scholar of Destruction
+
+破壊を探求する者
+%%%%
+[title]Caster of Ruination
+
+破滅の詠唱者
+%%%%
+[title]Traumaturge
+
+魔術師
+%%%%
+[title]Battlemage
+
+戦闘魔術師
+%%%%
+[title]Warlock
+
+大魔術師
+%%%%
+[title]Luminary of Lethal Lore
+
+破壊魔術の指導者
+%%%%
+#  Okawaru -- battle theme.
+#     {"Coward",             "Struggler",             "Combatant",                "Warrior",
+#         "Knight",             "Warmonger",             "Commander",                "Victor of a Thousand Battles"}
+%%%%
+[title]Coward
+
+卑怯者
+%%%%
+[title]Struggler
+
+奮闘者
+%%%%
+[title]Combatant
+
+闘士
+%%%%
+[title]Warrior
+
+武人
+%%%%
+[title]Knight
+
+騎士
+%%%%
+[title]Warmonger
+
+戦争屋
+%%%%
+[title]Commander
+
+司令官
+%%%%
+[title]Victor of a Thousand Battles
+
+千の戦の支配者
+%%%%
+#  Makhleb -- chaos theme.
+#     {"Orderly",            "Spawn of Chaos",        "Disciple of Destruction",  "Fanfare of Bloodshed",
+#         "Fiendish",           "Demolition @Genus@",    "Pandemonic",               "Champion of Chaos"},
+%%%%
+[title]Orderly
+
+従卒
+%%%%
+[title]Spawn of Chaos
+
+混沌の申し子
+%%%%
+[title]Disciple of Destruction
+
+破壊者の門弟
+%%%%
+[title]Fanfare of Bloodshed
+
+虐殺の凱歌
+%%%%
+[title]Fiendish
+
+悪魔の化身
+%%%%
+[title]Demolition @Genus@
+
+@Genus@の破壊者
+%%%%
+[title]Pandemonic
+
+修羅
+%%%%
+[title]Champion of Chaos
+
+混沌の代行者
+%%%%
+#  Sif Muna -- scholarly theme.
+#     {"Ignorant",           "Disciple",              "Student",                  "Adept",
+#         "Scribe",             "Scholar",               "Sage",                     "Genius of the Arcane"},
+%%%%
+[title]Ignorant
+
+愚か者
+%%%%
+[title]Disciple
+
+門弟
+%%%%
+[title]Student
+
+研究者
+%%%%
+[title]Adept
+
+熟練者
+%%%%
+[title]Scribe
+
+知識を残す者
+%%%%
+[title]Scholar
+
+魔法学者
+%%%%
+[title]Sage
+
+賢者
+%%%%
+[title]Genius of the Arcane
+
+秘術の支配者
+%%%%
+#  Trog -- anger theme.
+#     {"Puny",               "Troglodyte",            "Angry Troglodyte",         "Frenzied",
+#         "@Genus@ of Prey",    "Rampant",               "Wild @Genus@",             "Bane of Scribes"},
+%%%%
+[title]Puny
+
+弱者
+%%%%
+[title]Troglodyte
+
+世捨て人
+%%%%
+[title]Angry Troglodyte
+
+怒れる奇人
+%%%%
+[title]Frenzied
+
+荒れ狂う者
+%%%%
+[title]@Genus@ of Prey
+
+猛襲の@Genus@
+%%%%
+[title]Rampant
+
+猛威をふるう者
+%%%%
+[title]Wild @Genus@
+
+激怒する@Genus@
+%%%%
+[title]Bane of Scribes
+
+文明の破壊者
+%%%%
+#  Nemelex Xobeh -- alluding to Tarot and cards.
+#     {"Unlucky @Genus@",    "Pannier",               "Jester",                   "Fortune-Teller",
+#         "Soothsayer",         "Magus",                 "Cardsharp",                "Hand of Fortune"},
+%%%%
+[title]Unlucky @Genus@
+
+不運な@Genus@
+%%%%
+[title]Pannier
+
+アイテム収拾人
+%%%%
+[title]Jester
+
+道化
+%%%%
+[title]Fortune-Teller
+
+占い師
+%%%%
+[title]Soothsayer
+
+予言者
+%%%%
+[title]Magus
+
+カードの魔術師
+%%%%
+[title]Cardsharp
+
+イカサマ師
+%%%%
+[title]Hand of Fortune
+
+運命を手にする者
+%%%%
+#  Elyvilon.
+#     {"Sinner",                "Practitioner",       "Comforter",             "Caregiver",
+#         "Mender",           "Pacifist",                "Purifying @Genus@",        "Bringer of Life"},
+%%%%
+[title]Sinner
+
+罪人
+%%%%
+[title]Practitioner
+
+開業医
+%%%%
+[title]Comforter
+
+慰める者
+%%%%
+[title]Caregiver
+
+癒す者
+%%%%
+[title]Mender
+
+修繕者
+%%%%
+[title]Pacifist
+
+平和主義者
+%%%%
+[title]Purifying @Genus@
+
+@Genus@の浄罪者
+%%%%
+[title]Bringer of Life
+
+生命を司る者
+%%%%
+#  Lugonu -- distortion theme.
+#     {"Pure",               "Abyss-Baptised",        "Unweaver",                 "Distorting @Genus@",
+#         "Agent of Entropy",   "Schismatic",            "Envoy of Void",            "Corrupter of Planes"},
+%%%%
+[title]Pure
+
+純粋な者
+%%%%
+[title]Abyss-Baptised
+
+深淵の洗礼を受けた者
+%%%%
+[title]Unweaver
+
+瓦解させる者
+%%%%
+[title]Distorting @Genus@
+
+歪んだ@Genus@
+%%%%
+[title]Agent of Entropy
+
+エントロピーの代行者
+%%%%
+[title]Schismatic
+
+乖離させる者
+%%%%
+[title]Envoy of Void
+
+虚空の使者
+%%%%
+[title]Corrupter of Planes
+
+次元の破壊者
+%%%%
+#  Beogh -- messiah theme.
+#     {"Apostate",           "Messenger",             "Proselytiser",             "Priest",
+#         "Missionary",         "Evangelist",            "Apostle",                  "Messiah"},
+%%%%
+[title]Apostate
+
+背信者
+%%%%
+[title]Messenger
+
+伝令
+%%%%
+[title]Proselytiser
+
+改宗者
+%%%%
+[title]Priest
+
+司祭
+%%%%
+[title]Missionary
+
+宣教師
+%%%%
+[title]Evangelist
+
+福音伝道者
+%%%%
+[title]Apostle
+
+使徒
+%%%%
+[title]Messiah
+
+救世主
+%%%%
+#  Jiyva -- slime and jelly theme.
+#     {"Scum",               "Squelcher",             "Ooze",                     "Jelly",
+#         "Slime Creature",     "Dissolving @Genus@",    "Blob",                     "Royal Jelly"},
+%%%%
+[title]Scum
+
+塵屑
+%%%%
+[title]Squelcher
+
+咀嚼する者
+%%%%
+[title]Ooze
+
+ウーズ
+%%%%
+[title]Jelly
+
+ジェリー
+%%%%
+[title]Slime Creature
+
+スライム
+%%%%
+[title]Dissolving @Genus@
+
+溶解せる@Genus@
+%%%%
+[title]Blob
+
+ブロブ
+%%%%
+[title]Royal Jelly
+
+ロイヤルジェリー
+%%%%
+#  Fedhas Madash -- nature theme.
+#     {"@Walking@ Fertiliser", "Fungal",              "Green @Genus@",            "Cultivator",
+#         "Fruitful",           "Photosynthesist",       "Green Death",              "Force of Nature"},
+%%%%
+[title]@Walking@ Fertiliser
+
+@Walking@肥料
+%%%%
+[title]Fungal
+
+真菌
+%%%%
+[title]Green @Genus@
+
+緑の@Genus@
+%%%%
+[title]Cultivator
+
+繁茂させる者
+%%%%
+[title]Fruitful
+
+実りをもたらす者
+%%%%
+[title]Photosynthesist
+
+光合成する者
+%%%%
+[title]Green Death
+
+緑の殲滅者
+%%%%
+[title]Force of Nature
+
+自然の化身
+%%%%
+#  Cheibriados -- slow theme
+#     {"Hasty",              "Sluggish @Genus@",      "Deliberate",               "Unhurried",
+#      "Contemplative",         "Epochal",               "Timeless",                 "@Adj@ Aeon"},
+%%%%
+[title]Hasty
+
+せっかち
+%%%%
+[title]Sluggish @Genus@
+
+のろまな@Genus@
+%%%%
+[title]Deliberate
+
+熟慮者
+%%%%
+[title]Unhurried
+
+ゆっくり
+%%%%
+[title]Contemplative
+
+瞑想者
+%%%%
+[title]Epochal
+
+時代を区切る者
+%%%%
+[title]Timeless
+
+時間超越者
+%%%%
+[title]@Adj@ Aeon
+
+永劫の@Adj@
+%%%%
+#  Ashenzari -- divination theme
+#     {"Star-crossed",       "Cursed",                "Initiated",                "Soothsayer",
+#         "Seer",               "Oracle",                "Illuminatus",              "Omniscient"},
+%%%%
+[title]Star-crossed
+
+薄幸の者
+%%%%
+[title]Cursed
+
+呪われし者
+%%%%
+[title]Initiated
+
+秘呪に通じる者
+%%%%
+# [title]Soothsayer
+
+# Nemelexと重複
+%%%%
+[title]Seer
+
+千里眼
+%%%%
+[title]Oracle
+
+託宣者
+%%%%
+[title]Illuminatus
+
+啓示を受けし者
+%%%%
+[title]Omniscient
+
+全知全能の賢者
+%%%%
+#  Dithmenos -- darkness theme
+#     {"Ember",              "Gloomy",                "Darkened",                 "Extinguished",
+#         "Caliginous",         "Umbral",                "Hand of Shadow",           "Eternal Night"},
+%%%%
+[title]Ember
+
+燃えさし
+%%%%
+[title]Gloomy
+
+薄暗がり
+%%%%
+[title]Darkened
+
+暗転者
+%%%%
+[title]Extinguished
+
+消火者
+%%%%
+[title]Caliginous
+
+暗黒
+%%%%
+[title]Umbral
+
+漆黒
+%%%%
+[title]Hand of Shadow
+
+影の手
+%%%%
+[title]Eternal Night
+
+永劫の夜
+%%%%
+#  Gozag -- entrepreneur theme
+#     {"Profligate",         "Pauper",                "Entrepreneur",             "Capitalist",
+#         "Rich",               "Opulent",               "Tycoon",                   "Plutocrat"},
+%%%%
+[title]Profligate
+
+放蕩者
+%%%%
+[title]Pauper
+
+貧乏人
+%%%%
+[title]Entrepreneur
+
+起業家
+%%%%
+[title]Capitalist
+
+資本家
+%%%%
+[title]Rich
+
+裕福者
+%%%%
+[title]Opulent
+
+富裕者
+%%%%
+[title]Tycoon
+
+大立者
+%%%%
+[title]Plutocrat
+
+大富豪
+%%%%
+#  Qazlal -- natural disaster theme
+#     {"Unspoiled",          "@Adj@ Mishap",          "Lightning Rod",            "@Adj@ Disaster",
+#         "Eye of the Storm",   "@Adj@ Catastrophe",     "@Adj@ Cataclysm",          "End of an Era"},
+%%%%
+[title]Unspoiled
+
+傷つかざる者
+%%%%
+[title]@Adj@ Mishap
+
+@Adj@の災難
+%%%%
+[title]Lightning Rod
+
+避雷針
+%%%%
+[title]@Adj@ Disaster
+
+@Adj@の大災害
+%%%%
+[title]Eye of the Storm
+
+台風の目
+%%%%
+[title]@Adj@ Catastrophe
+
+破局の@Adj@
+%%%%
+[title]@Adj@ Cataclysm
+
+大変動の@Adj@
+%%%%
+[title]End of an Era
+
+紀元の終末者
+%%%%
+#  Ru -- enlightenment theme
+#     {"Sleeper",           "Questioner",             "Initiate",                 "Seeker of Truth",
+#         "@Walker@ of the Path","Lifter of the Veil",     "Transcendent",     "Drop of Water"},
+    {"不覚者",             "質問者",                "秘術の伝授者",             "真実の探求者",
+        "真理の道の歩行者",   "ベールを上げる者",      "非現実を飲み干す者",       "卓越せる覚者"},
+%%%%
+[title]Sleeper
+
+不覚者
+%%%%
+[title]Questioner
+
+質問者
+%%%%
+[title]Initiate
+
+秘術の伝授者
+%%%%
+[title]Seeker of Truth
+
+真実の探求者
+%%%%
+[title]@Walker@ of the Path
+
+真理の道を@Walker@
+%%%%
+[title]Lifter of the Veil
+
+ベールを上げる者
+%%%%
+[title]Transcendent
+
+非現実を飲み干す者
+%%%%
+[title]Drop of Water
+
+卓越せる覚者
+%%%%
+#  Pakellas -- inventor theme
+#     {"Reactionary",       "Apprentice",             "Inquisitive",              "Experimenter",
+#         "Inventor",           "Pioneer",               "Brilliant",                "Grand Gadgeteer"},
+
+# 訳不要
+%%%%
+#  Uskayaw -- reveler theme
+#     {"Prude",             "Wallflower",             "Party-goer",              "Dancer",
+#         "Impassioned",        "Rapturous",             "Ecstatic",                "Rhythm of Life and Death"},
+%%%%
+[title]Prude
+
+すまし屋
+%%%%
+[title]Wallflower
+
+壁の花
+%%%%
+[title]Party-goer
+
+パーティ参加者
+%%%%
+[title]Dancer
+
+踊り手
+%%%%
+[title]Impassioned
+
+情熱者
+%%%%
+[title]Rapturous
+
+熱狂者
+%%%%
+[title]Ecstatic
+
+恍惚なる者
+%%%%
+[title]Rhythm of Life and Death
+
+生と死のリズム
+%%%%
+#  Hepliaklqana -- memory/ancestry theme
+#     {"Damnatio Memoriae",       "Hazy",             "@Adj@ Child",              "Storyteller",
+#         "Brooding",           "Anamnesiscian",               "Grand Scion",                "Unforgettable"},
+%%%%
+[title]Damnatio Memoriae
+
+抹消されし者
+%%%%
+[title]Hazy
+
+おぼろげな者
+%%%%
+[title]@Adj@ Child
+
+@Adj@の子
+%%%%
+[title]Storyteller
+
+語りべ
+%%%%
+[title]Brooding
+
+ひよっ子
+%%%%
+[title]Anamnesiscian
+
+記念されし者
+%%%%
+[title]Grand Scion
+
+御曹司
+%%%%
+[title]Unforgettable
+
+忘れがたき者
+%%%%

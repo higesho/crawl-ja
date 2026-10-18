@@ -1,0 +1,186 @@
+%%%%
+Something hellishly buggy happens.
+
+# 訳不要
+%%%%
+the effects of Hell
+
+地獄効果
+%%%%
+Attempting to call down a hell effect in a non-hellish branch.
+
+# for die()
+%%%%
+'s power protects you from the chaos of Hell!
+
+の御業によりあなたは地獄の混沌から守られた！
+%%%%
+No unexplored wall grids found!
+
+# 訳不要
+%%%%
+Changing labyrinth from (%d, %d) to (%d, %d)
+
+# 訳不要
+%%%%
+Here's the list of targets:
+
+# 訳不要
+%%%%
+-> #targets = %u
+
+# 訳不要
+%%%%
+Something went badly wrong - no path found!
+
+# 訳不要
+%%%%
+Switch %d (%d, %d) with %d (%d, %d).
+
+# 訳不要
+%%%%
+No adjacent walls at pos (%d, %d)?
+
+# 訳不要
+%%%%
+Need to move around some items at pos (%d, %d)...
+
+# 訳不要
+%%%%
+Moved items over to (%d, %d)
+
+# 訳不要
+%%%%
+You hear an odd grinding sound!
+
+あなたは奇妙な軋む音を聞いた！
+%%%%
+You hear the creaking of ancient gears!
+
+あなたはぼろぼろの歯車がキーキー言う音を聞いた！
+%%%%
+The floor suddenly vibrates beneath you!
+
+あなたの足下の床が突然振動した！
+%%%%
+You feel a sudden draft!
+
+あなたは突然すきま風を感じた！
+%%%%
+Your body shudders with the violent release of wild energies!
+
+あなたの体は荒々しいエネルギーの解放で震えた！
+%%%%
+[zap]magical storm
+
+魔力の嵐
+%%%%
+a magical explosion
+
+魔力の爆発
+%%%%
+mutagenic glow
+
+変異の輝き
+%%%%
+Your body momentarily shudders from a surge of wild energies until Zin's power calms it.
+
+エネルギーの奔流によってあなたの体が一瞬震えたが、ジンの御業により収まった。
+%%%%
+gurgles merrily.
+
+は陽気にぶくぶくと音を立てた。
+%%%%
+You hear %s splatter%s.
+
+あなたはバチャバチャという%s音を耳にした。
+%%%%
+a series of
+
+いくつもの
+%%%%
+says: Divide and consume!
+
+は『分裂して貪るのだ！』と言った。
+%%%%
+You feel a genetic drift.
+
+あなたは体が変異していくのを感じた。
+%%%%
+# evolution
+
+# jtrans_mutation_data.txtと重複
+%%%%
+end of evolution
+
+進化終了
+%%%%
+Invalid intelligence type!
+
+# for die()
+%%%%
+backing off...
+
+# for debug()
+%%%%
+mon #%d: range %d; pos (%d,%d); targ %d(%d,%d); flags %
+
+# for debug
+%%%%
+shifted to (%d, %d)
+
+# for debug
+%%%%
+moved to (%d, %d)
+
+# for debug
+%%%%
+turns: %d
+
+# for debug
+%%%%
+#ifdef DEBUG_DIAGNOSTICS
+total monsters on level = %d
+
+# for debug
+%%%%
+Your %s has recharged.
+
+あなたの%sは再び使えるようになった。
+%%%%
+The walls disappear%s!
+
+壁は%s消え去った！
+%%%%
+prematurely
+
+本来よりも早く
+%%%%
+Zin releases %s from %s prison.
+
+ジンは%sを牢獄から解き放った。
+%%%%
+Zin dismisses the silver walls, but there is nothing inside them.
+
+ジンは白銀の壁を解除したが、中には何もいなかった。
+%%%%
+You hear a deep rumble.
+
+あなたは何かが崩れる轟音を耳にした。
+%%%%
+You feel the ground shudder.
+
+あなたは大地が震えるのを感じた。
+%%%%
+The runic seals fade away.
+
+ルーンによる扉の封印が解けた。
+%%%%
+The runic seal fades away.
+
+<The runic seals fade away.>
+%%%%
+%u environment effect seeds
+
+# for debug
+%%%%

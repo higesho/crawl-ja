@@ -1,0 +1,697 @@
+%%%%
+(expiring)
+
+(時間切れ間近)
+%%%%
+# Expiring:
+
+# jtrans_player.txtと重複
+%%%%
+[dur]Ray+
+
+光線＋
+%%%%
+[dur]Ray++
+
+光線＋＋
+%%%%
+[dur]Ray
+
+光線
+%%%%
+[dur]-Cast
+
+魔法×
+%%%%
+[dur]no casting
+
+魔法不可
+%%%%
+You are unable to cast spells.
+
+あなたは呪文を唱えることができない。
+%%%%
+[dur]+Cast
+
+魔法＋
+%%%%
+[dur]divine energy
+
+神気の供給
+%%%%
+You are calling on Sif Muna for divine energy.
+
+あなたはシフ・ムーナによって神気の供給を受けている。
+%%%%
+Corr (%d)
+
+腐蝕(%d)
+%%%%
+[dur]-Swift
+
+鈍足
+%%%%
+[dur]sluggish
+
+鈍足
+%%%%
+You are moving sluggishly.
+
+あなたは動きが緩慢だ。
+%%%%
+[dur]Mesm
+
+魅了
+%%%%
+[dur]mesmerised
+
+魅了されている
+%%%%
+You are mesmerised.
+
+あなたは魅了されている。
+%%%%
+[dur]glowing
+
+発光
+%%%%
+You are glowing.
+
+あなたは輝いている。
+%%%%
+[dur]wreathed by umbra
+
+影の帳
+%%%%
+You are wreathed by an umbra.
+
+あなたは影の帳に包まれている。
+%%%%
+[dur]Held
+
+拘束中
+%%%%
+You are held in a net.
+
+あなたは網で拘束されている。
+%%%%
+You are caught in a web.
+
+あなたは蜘蛛の巣に巻きつかれている。
+%%%%
+[dur]SlowM
+
+ぬかるみ
+%%%%
+[dur]slowed movement
+
+ぬかるみ
+%%%%
+Your movement is slowed on this liquid ground.
+
+あなたの動きはぬかるみによって遅くなっている。
+%%%%
+[dur]Aug
+
+増強
+%%%%
+[hands act]your hands are glowing red.
+
+あなたの%sは赤く輝いている。
+%%%%
+Expiring: You are surrounded by a ring of flames.
+
+継続中: あなたは炎の円環に囲まれている。
+%%%%
+You are surrounded by a ring of flames.
+
+あなたは炎の円環に囲まれている。
+%%%%
+Expiring: You are immune to clouds of flame.
+
+継続中: あなたは火炎の雲に対して傷つかない。
+%%%%
+# You are immune to clouds of flame.
+
+# jtrans_mutation_data.txtと重複
+%%%%
+Regen (%d)
+
+再生(%d)
+%%%%
+studying %s.
+
+%sスキルを習得中
+%%%%
+You are studying %s.
+
+あなたは%sスキルを習得中だ。
+%%%%
+[dur]Fball
+
+遅火球
+%%%%
+[dur]delayed fireball
+
+遅延式ファイアボール
+%%%%
+You have a stored fireball ready to release.
+
+あなたはファイアボールを解き放つ用意ができている。
+%%%%
+[dur]corpse armour
+
+屍の鎧
+%%%%
+You are enveloped in carrion and bones.
+
+あなたは屍肉と骨に覆われている。
+%%%%
+[dur]Constr
+
+拘束中
+%%%%
+[dur]constricted
+
+拘束中
+%%%%
+# [dur]Sil
+
+# jtrans_duration_data.txtと重複
+%%%%
+[dur]silenced
+
+静寂状態
+%%%%
+You are silenced.
+
+あなたは静寂に包まれている。
+%%%%
+Slay (%u)
+
+戦歌(+%u)
+%%%%
+[dur]Beogh
+
+ベオに入信
+%%%%
+[dur]Recall
+
+招来
+%%%%
+[dur]recalling
+
+呼び出し中
+%%%%
+You are recalling your allies.
+
+あなたは仲間を呼び出している。
+%%%%
+[dur]Engulf
+
+水没中
+%%%%
+[dur]engulfed
+
+水没中
+%%%%
+You are engulfed in water.
+
+あなたは水中に呑み込まれている。
+%%%%
+[dur]engulfed (cannot breathe)
+
+水没中(呼吸できない)
+%%%%
+You are engulfed in water and unable to breathe.
+
+あなたは水中に呑み込まれており、呼吸ができない。
+%%%%
+[dur]Drain
+
+衰弱
+%%%%
+[dur]very heavily drained
+
+ひどく衰弱中
+%%%%
+Your life force is very heavily drained.
+
+あなたの生命力はひどく衰弱している。
+%%%%
+[dur]heavily drained
+
+かなり衰弱中
+%%%%
+Your life force is heavily drained.
+
+あなたの生命力はかなり衰弱している。
+%%%%
+[dur]drained
+
+衰弱中
+%%%%
+Your life force is drained.
+
+あなたの生命力は衰弱している。
+%%%%
+[dur]Dig
+
+掘削
+%%%%
+[dur]Elixir
+
+霊薬
+%%%%
+[dur]-Wiz
+
+魔法－
+%%%%
+[dur]extremely magic sapped
+
+極めて魔法が弱まる
+%%%%
+Your control over your magic has been greatly sapped.
+
+あなたの魔法の制御力は極めて弱まっている。
+%%%%
+[dur]very magic sapped
+
+かなり魔法が弱まる
+%%%%
+Your control over your magic has been significantly sapped.
+
+あなたの魔法の制御力はかなり弱まっている。
+%%%%
+[dur]magic sapped
+
+魔法が弱まる
+%%%%
+Your control over your magic has been sapped.
+
+あなたの魔法の制御力は弱まっている。
+%%%%
+[dur]Bribe
+
+買収中
+%%%%
+bribing [%s]
+
+買収中 [%s]
+%%%%
+You are bribing %s.
+
+あなたは%sを買収している。
+%%%%
+Horr(%d)
+
+恐怖(%d)
+%%%%
+[dur]overwhelmed with horror
+
+恐怖に打ちのめされている
+%%%%
+Horror overwhelms you!
+
+あなたは恐怖に打ちのめされている！
+%%%%
+[dur]extremely horrified
+
+極めて怯えている
+%%%%
+You are extremely horrified!
+
+あなたは極めて怯えている！
+%%%%
+# [dur]horrified
+
+# jtrans_duration_data.txtと重複
+%%%%
+You are horrified!
+
+あなたは恐怖に怯えている！
+%%%%
+[dur]Cloud
+
+雲烟
+%%%%
+[dur]Orb
+
+オーブ
+%%%%
+[dur]-Clouds
+
+雲×
+%%%%
+[dur]Missing
+
+# 訳不要
+%%%%
+[dur]missing status
+
+# 訳不要
+%%%%
+Missing status description.
+
+# 訳不要
+%%%%
+[dur]Alive
+
+生者
+%%%%
+[dur]Engorged
+
+腹一杯
+%%%%
+[dur]Very Full
+
+とても満腹
+%%%%
+[dur]Full
+
+満腹
+%%%%
+[dur]Thirsty
+
+渇いている
+%%%%
+[dur]Hungry
+
+空腹
+%%%%
+[dur]Very Thirsty
+
+とても渇いている
+%%%%
+[dur]Very Hungry
+
+とても空腹
+%%%%
+[dur]Near Bloodless
+
+ほとんど血液がない
+%%%%
+[dur]Near Starving
+
+餓死が近い
+%%%%
+[dur]Bloodless
+
+血液がない
+%%%%
+[dur]Starving
+
+餓死しかけ
+%%%%
+[dur]Fainting
+
+餓死間近
+%%%%
+[dur]Contam
+
+魔力汚染
+%%%%
+[dur]contaminated
+
+魔力汚染されている
+%%%%
+[dur]very slightly contaminated
+
+わずかに魔力汚染されている
+%%%%
+[dur]slightly contaminated
+
+少し魔力汚染されている
+%%%%
+[dur]heavily contaminated
+
+かなり魔力汚染されている
+%%%%
+[dur]very heavily contaminated
+
+極めて魔力汚染されている
+%%%%
+[dur]very very heavily contaminated
+
+# this is silly but no one will ever see it
+%%%%
+[dur]impossibly contaminated
+
+# (likewise)
+%%%%
+[dur]Regen
+
+再生
+%%%%
+[dur]Regen MR++
+
+再生 耐魔法＋＋
+%%%%
+[dur]non-regenerating
+
+再生無効
+%%%%
+[dur]recuperating
+
+快復中
+%%%%
+You are recuperating from your illness.
+
+あなたは病気から快復している。
+%%%%
+[dur]regenerating
+
+再生中
+%%%%
+You are regenerating.
+
+あなたは再生している。
+%%%%
+[dur]regenerating slowly
+
+緩やかに再生中
+%%%%
+[dur]regenerating quickly
+
+急速に再生中
+%%%%
+[dur]recuperating slowly
+
+緩やかに快復中
+%%%%
+[dur]recuperating quickly
+
+急速に快復中
+%%%%
+[dur]Pois
+
+毒
+%%%%
+[dur]lethally poisoned
+
+致死毒に冒されている
+%%%%
+[dur]seriously poisoned
+
+猛毒に冒されている
+%%%%
+[dur]quite poisoned
+
+重い毒に冒されている
+%%%%
+[dur]mildly poisoned
+
+毒に冒されている
+%%%%
+You are %s.
+
+あなたは%s。
+%%%%
+[dur]Fast+Slow
+
+加減速中
+%%%%
+[dur]hasted and slowed
+
+加減速中
+%%%%
+You are under both slowing and hasting effects.
+
+あなたは減速と加速両方の効果を受けている。
+%%%%
+[dur]Slow
+
+減速中
+%%%%
+[dur]slowed
+
+減速中
+%%%%
+You are slowed.
+
+あなたは減速している。
+%%%%
+[dur]Fast
+
+加速中
+%%%%
+[dur]hasted
+
+加速中
+%%%%
+Your actions are hasted.
+
+あなたの行動は加速されている。
+%%%%
+[dur]Fly
+
+飛行中
+%%%%
+[dur]flying
+
+飛行中
+%%%%
+[dur]flying quickly and evasively
+
+自由自在に飛行中
+%%%%
+You are flying.
+
+あなたは空を飛んでいる。
+%%%%
+You are flying quickly and evasively.
+
+あなたは自由自在に空を飛んでいる。
+%%%%
+[dur]rotting
+
+腐敗中
+%%%%
+Your flesh is rotting.
+
+あなたの体は腐敗している。
+%%%%
+Your flesh is rotting before your eyes.
+
+あなたの体は目に見えて腐敗している。
+%%%%
+Your flesh is rotting away quickly.
+
+あなたの体は急速に腐敗している。
+%%%%
+Your flesh is rotting badly.
+
+あなたの体はひどく腐敗している。
+%%%%
+Your flesh is rotting faster than usual.
+
+あなたの体はいつもより速く腐敗している。
+%%%%
+Your flesh is rotting at the usual pace.
+
+あなたの体はいつものように腐敗している。
+%%%%
+[dur]Sick
+
+病気
+%%%%
+[dur]badly diseased
+
+重い病気に冒されている
+%%%%
+[dur]diseased
+
+病気に冒されている
+%%%%
+[dur]mildly diseased
+
+軽い病気に冒されている
+%%%%
+You are badly diseased.
+
+あなたは重い病気に冒されている。
+%%%%
+You are diseased.
+
+あなたは病気に冒されている。
+%%%%
+You are mildly diseased.
+
+あなたは軽い病気に冒されている。
+%%%%
+[dur]Collapse
+
+筋萎縮
+%%%%
+[dur]Brainless
+
+脳無し
+%%%%
+[dur]Clumsy
+
+致命的不器用
+%%%%
+lost %s
+
+%sの喪失
+%%%%
+You are recovering from loss of %s.
+
+あなたは%sの喪失から回復しつつある。
+%%%%
+You have no %s!
+
+あなたは%sを失った！
+%%%%
+[dur]Water
+
+水場
+%%%%
+[dur]Lava
+
+溶岩
+%%%%
+[dur]DMsl
+
+偏向
+%%%%
+[dur]deflect missiles
+
+飛来物の阻止
+%%%%
+You deflect missiles.
+
+あなたは飛来物を阻止している。
+%%%%
+[dur]RMsl
+
+飛防
+%%%%
+[dur]repel missiles
+
+飛来物の防御
+%%%%
+You repel missiles.
+
+あなたは飛来物を防御している。
+%%%%
+[dur]Invis
+
+透明化中
+%%%%
+[dur]invisible
+
+透明化中
+%%%%
+[dur]invisible (but backlit and visible)
+
+透明化中(ただし光っている)
+%%%%
+You are invisible.
+
+あなたは透明化している。
+%%%%
+You are invisible (but backlit and visible).
+
+あなたは透明化している(ただし光っている)。
+%%%%

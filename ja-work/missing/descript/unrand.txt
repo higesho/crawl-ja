@@ -1,0 +1,317 @@
+%%%%
+Sulking Sword
+
+<Singing Sword>
+%%%%
+Screaming Sword
+
+<Singing Sword>
+%%%%
+crystal ball of Wucad Mu
+
+A sphere of flawless crystal, shaped by countless mantras. When one focuses upon
+it, the boundaries between 'self' and 'other' sometimes seem to blur.
+{{
+    if you.race() == "Djinni" then
+        return "It is utterly useless to Djinn."
+    end
+}}
+%%%%
+orb of Dispater
+
+An orb pulsing with unholy energies, granting the power to unleash damnation
+when held — although not without draining the wielder's vitality in the
+process. It carries with it some of the corrosive malice of the Iron City of
+Dis.
+%%%%
+longbow "Zephyr"
+
+This bow was woven from the air itself by Eiolaiphi the air mage as a gift for
+one of the children of Uskayaw. The bow can be pulled with incredible speed,
+and it launches swift and true. It is also nearly indestructible, which is
+fortunate given that the original owner was ripped to pieces by jealous
+celebrants.
+%%%%
+arbalest "Damnation"
+
+An unholy crossbow, forged in the fires of Gehenna. It imbues the bolts it
+fires with the raw power of its namesake. Thankfully, the blasts this weapon
+produces never harm the one firing.
+%%%%
+hood of the Assassin
+
+A soft hood, enchanted by members of the Assassin's Guild to allow the wearer
+to sense potential victims nearby, and to easily spot vulnerabilities after
+closing in on them.
+%%%%
+ring of the Hare
+
+An unadorned malachite ring, half of an ancient pair. Its wearer is
+exceptionally difficult to catch.
+%%%%
+ring of the Tortoise
+
+A rough-hewn aquamarine ring, half of an ancient pair. Its wearer is
+exceptionally difficult to harm.
+%%%%
+consecrated labrys
+
+An axe with a delicate blessing placed on it by one of the sacred Seraphim,
+so that worthy adventurers would rid this world of demons. Rejoice, for it has
+ways of bringing courage to its wielder in even the darkest places...
+%%%%
+Black Knight's barding
+
+A heavy barding made from pitch-black steel and inlaid with plates of black
+diamond. It once protected the steed of the Black Knight during their reign of
+terror. Those who wear it become partially undead, gaining some of the benefits
+without the unfortunate downsides, although the great weight of metal and stone
+slows the wearer somewhat.
+%%%%
+amulet of Vitality
+
+A jewelled amulet famed for its powers of resilience and recuperation. Its
+greatest notoriety came from its use by the dread necromancer Borgnjor, who
+relied upon it to maintain her slender hold on life. After her final demise,
+the amulet vanished from the pages of history.
+%%%%
+pair of quick blades "Gyre" and "Gimble"
+
+Two quick blades joined by a chain. Swinging one compels the wielder to swing
+the other, as if they have minds of their own.
+%%%%
+Maxwell's etheric cage
+
+A fine mesh cage designed to capture magical energy. Experimental notes suggest
+that research was abandoned when the cage began to capture magical
+contamination almost as effectively. Anyone reckless enough to place it on
+their head would find their magic regeneration dramatically increased, at the
+cost of multiplying any magical contamination received.
+%%%%
+crown of Eternal Torment
+
+A gold crown set with jet-black gems. It permanently afflicts its wearer with
+agonising pain, substantially reducing their resilience but rendering them
+immune to further torments.
+%%%%
+robe of Vines
+
+A robe woven of living vines. The vines form a symbiotic relationship with
+their wearer, greatly increasing their regeneration, but preventing them from
+being healed by potions.
+%%%%
+Kryia's mail coat
+
+A coat of armour said to have been forged for Queen Kryia in her old age. She
+continued to insist on leading her armies from the front even into her dotage,
+and as her aging body failed her, this coat helped to enhance the healing
+draughts that kept her alive.
+%%%%
+frozen axe "Frostbite"
+
+A massive axe that looks like it was carved from a glacier, or possibly calved
+from one. It leaves ice crystals in its wake as it swings through the air.
+%%%%
+armour of Talos
+
+A huge and weighty suit of bronze plate armour. Only one with a correspondingly
+huge body can wear it.
+%%%%
+warlock's mirror
+
+A handheld array of hexagonal mirrors, synthesised from a truly exotic
+substance and polished to a blinding sheen.
+%%%%
+amulet of invisibility
+
+An amulet that can be activated to render its wearer invisible.
+%%%%
+scarf of invisibility
+
+A scarf that can be activated to render its wearer invisible.
+%%%%
+Maxwell's thermic engine
+
+A strange sword, one blade blistering hot and the other icy cold. When it hits
+its target the thermal gradient increases. What causes this effect is unknown
+but it is rumoured that otherworldly forces are involved.
+%%%%
+demon trident "Rift"
+
+A small wrinkle in the very fabric of reality, magically bound to a shaft by
+some mad acolyte of Lugonu. Its attacks can warp through nearby space at the
+wielder's command.
+%%%%
+sphere of Battle
+
+An orb encased in vividly coloured scales, wrought by a long-forgotten wizard.
+It was the mage Iskenderun's favourite playtoy.
+%%%%
+Cigotuvi's embrace
+
+A suit of armour borne of rotten flesh and bone and gristle, held intact by the
+will of a long-dead sorcerer. The dreadful energies within it call to the bodies
+of the recently dead, protecting the wearer with a cocoon of carrion.
+%%%%
+seven-league boots
+
+An enchanted pair of boots which grant the ability to take strides of incredible
+length, as long as the wearer is advancing bravely towards their foes.
+%%%%
+Mad Mage's Maulers
+
+A pair of gloves designed to carefully control and channel the flow of magic,
+later misused and mangled by the lunatic murderer-mages of the Fifth Circle.
+Their influence leaves the wearer utterly unable to cast spells - the wearer's
+magic is redirected to far bloodier purposes.
+%%%%
+dreamdust necklace
+
+A dull dusty mixture trapped within a cracked crystal on a thin silver chain.
+%%%%
+dreamshard necklace
+
+A beautiful rainbow of colour and motion trapped within a delicate crystal on a
+thin silver chain. Listening carefully, one can hear the distant echo of a
+thousand dreams from all corners of reality, their melody giving a warm sense
+of safety.
+%%%%
+Delatra's gloves
+
+A pair of long ultramarine gloves, worn by a famed experimental alchemist in an
+age long past. They channel the energy of discovery, empowering their wearer with
+the force created by a blind step from ignorance to certainty.
+%%%%
+woodcutter's axe
+
+A weapon that chops foes down as steadily and methodically as a forester cutting
+wood. The unchanging rhythm of its work has settled on it with the force of
+natural law, and no amount of force or skill can make it swing faster or slower.
+%%%%
+Throatcutter
+
+Taken from a paladin of the Shining One by the common cutpurse who murdered her,
+Throatcutter was used for a long series of increasingly sordid deeds thereafter.
+Blood, murder and betrayal stain its history and blade both, and little trace now
+remains of the blade which once stood between danger and the innocent.
+%%%%
+staff of the Meek
+
+A sacred relic of the Monks of St. Lee, followers of the renunciate archmage. Just
+as St. Lee sought to atone for the destruction his spells wrought by protecting
+others, so his staff protects its wielder.
+%%%%
+trishula "Condemnation"
+
+A weapon to bring forth guilt from the guilty. It was first wielded by the archangel
+Lucriel, who, on seeing the suffering of the first mortals, led them as an army
+against the cruelty of the gods. The ragged survivors of Lucriel's army took this
+weapon with them into the wilderness, the sole remnant of an archangel's virtue.
+%%%%
+amulet of Elemental Vulnerability
+
+A blue-steel amulet. Its creator, an exceedingly practical woman, designed it to
+provide powerful protection against mundane jabs, stabs and bites. It's worse than
+useless against fire and frost, but how often does anyone really need to worry
+about that?
+%%%%
+mountain boots
+
+These sturdy boots were created by an artificer who lived high up on a remote
+mountain peak, as protection against the mountain's near-constant avalanches,
+rockslides, and snowstorms. No force short of translocations magic will budge
+the wearer from their position.
+%%%%
+Lochaber axe
+
+This brutal weapon, long thought lost to history, combines the extended reach
+of a polearm with the cleaving sharpness of an axe. Ghosts of ancient warriors
+linger about it, draining fickle users.
+%%%%
+Hermit's pendant
+
+An ascetic once took a sacred vow, forswearing use of magical tools and ownership
+of everything but this pendant. Which god they made this vow to remains a point of
+bitter contention among the devout, but their pendant's power - and limitations -
+are irrefutable.
+%%%%
+slick slippers
+
+Crafted from the tanned, smooth hide of a Western Skyshark, these slippers are
+astonishingly comfortable. They lack the protective benefits of a good pair of
+boots, but they can get their wearers out of almost any bind.
+%%%%
+Force Lance
+
+A plain iron lance, imbued with supernatural gravitas via the artifice of the
+mage Gell. It strikes with a force many times stronger than that imparted by
+the wielder.
+%%%%
+toga "Victory"
+
+An ancient artefact of Okawaru, these woolen robes were lost when a former
+champion failed a duel. Its enchantments increase in power when the wearer
+emerges victorious from threatening combat, but resorting to the use of scrolls
+or potions for assistance causes them to fade away again.
+%%%%
+Storm Queen's Shield
+
+A disc of crackling metal, created by a woman whose cunning artifice and
+crafty politics once united a continent. Most of her surviving inventions are
+closely guarded by various royals, ostensible proof of their claim to be her
+true successor, but this early prototype slipped through their fingers.
+%%%%
+hand cannon "Mule"
+
+Hand cannons use magical dust to launch projectiles. The alchemists who craft
+them boast of their potency, but omit the smoke and noise blasted out with each
+shot. Filled with powdered blastmotes, Mule packs an especially powerful kick.
+%%%%
+gloves of the gadgeteer
+
+A pair of suede gloves covered in a dizzying array of delicate sigils. While
+originally intended to aid in the crafting of magical devices, they are
+nonetheless useful for wringing every last drop of power out of someone else's
+work.
+%%%%
+Charlatan's Orb
+
+This orb is the work of a master artificer, contracted to retrieve the orb, who
+valued their life more than their professional integrity. While this fake
+faithfully recreates the eerie glow and space-warping properties of the true
+orb, the power it grants is artificial and only accessible to skilled evokers.
+%%%%
+justicar's regalia
+
+A gleaming breastplate with a slot in its centre for a holy symbol or bejewelled
+coat of arms. Those who hear commands given by its wearer feel filled with the
+power to carry them out, no matter the adversity.
+%%%%
+skull of Zonguldrok
+
+The skull of a legendary necromancer, seemingly parted from the rest of its
+body. When held, it seems disinclined to explain the precise circumstances of
+its ending up in this state, but offers no objection to others siphoning what
+considerable necromantic power still remains in its ancient bones.
+%%%%
+fungal fisticloak
+
+The handiwork of a mad mycologist who once attempted to overcome the genetic
+anxiety of wandering mushrooms by cultivating a species that could be easily
+transported without disturbing them. The result is as much a living organism as
+it is a piece of clothing, every linen fibre twined together with fungal mycelia
+that draw both nutrients and confidence from whoever wears it. And in exchange
+for such trifles as blood or peptides, the colony will instinctively lash out to
+defend its wearer from whatever they perceive as a threat.
+
+It's like wearing a thousand tiny friends at once! And the humming they fill
+your mind with in the dark is actually quite lulling....
+
+(This item also occupies your helmet slot.)
+%%%%
+crown of vainglory
+
+An extravagant crown of gold filigree and glittering jewels that even a king
+could feel immodest wearing. It grants its wearer a regal aura the match of any
+in heaven and also a great deal of unearned confidence.
+%%%%

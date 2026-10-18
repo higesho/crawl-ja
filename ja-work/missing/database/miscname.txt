@@ -1,0 +1,146 @@
+%%%%
+summon_horrible_things
+
+Your mind reels, touched by the horrors through the portal.
+
+You quiver within your mortal coil, caressed by the liquid insanity through the scintillating gateway.
+
+The summoning rite seems to take a not insignificant toll on your sanity.
+
+You have a brief vision of a great black cyclopean cityscape with towering stygian walls.
+
+Your vision is obscured by outlandish glyphs which seem to writhe squamously and alter their shape.
+
+You feel inexorably dogged by some nameless and implacable gloom.
+
+You reel in agony as your mind is raked by horrors beyond mortal ken.
+
+Your mind is seduced by sublime insanity as you glimpse through the portal into the nether beyond.
+
+You cackle madly at the sight of the eldritch monstrosity.
+
+You are seized by madness!
+
+Attempting to comprehend the unknowable depths of infinity takes a toll on your sanity.
+
+Your thoughts are inescapably tormented by a ceaseless, buzzing drone.
+
+Your mind collapses in madness at the sight of this blasphemy against creation!
+
+Your mind briefly shatters, though you barely manage to hold yourself together.
+
+You feel your tenuous grasp on sanity beginning to erode.
+
+Penetrating whispers of deepest heresy ceaselessly assail your thoughts.
+
+Your mind aches with revulsion at the sight of the undulating horrors you have wrought.
+
+For but a moment your mind is laid bare before the towering infinitude of the unimaginable.
+
+Your skull pulses and throbs as words spoken in an unspeakable tongue drift across your psyche.
+
+A thin, monotonous whinny from outside of time grows ever louder.
+
+Shapeless horrors persist on the edge of your vision, drawing ever closer.
+
+You are overcome with an inexorable feeling of implacable gloom.
+
+Coherent, reasonable thoughts seem alien to you.
+
+Tendrils of madness seep and wend into the darkest crevices of your mind.
+
+You struggle to grasp the nature of the incomprehensible forces at work.
+
+Nightmarish fiends assault your waking thoughts!
+
+Seething terrors besiege your sanity!
+
+Lucidity slithers from your feeble grasp.
+%%%%
+harlequin_trap_lines
+
+Strange impish giggling echoes through your mind as
+
+The roar of a mocking crowd runs through your mind as
+
+A round of applause drowns out your thoughts as
+
+A cruel sense of mischief rushes through your surroundings as
+%%%%
+_great_adj_
+
+astounding
+
+awesome
+
+breathtaking
+
+fabled
+
+fabulous
+
+w:5
+fantabulous
+
+glorious
+
+incredible
+
+legendary
+
+magnificent
+
+majestic
+
+marvelous
+
+splendid
+
+stupendous
+
+sublime
+
+terrific
+
+transcendent
+
+wondrous
+%%%%
+welcome_spam dungeon descent
+
+Will you descend where others failed? Will you find the Orb of Zot?
+
+Will you be the one to descend and find the @_great_adj_@ Orb of Zot?
+
+Are you destined to descend to the @_great_adj_@ Orb of Zot, or to die trying?
+
+You feel drawn to descend into the unfathomable depths for the Orb of Zot...
+
+The @_great_adj_@ Orb of Zot lies below, waiting for you to descend and find it.
+
+If you descend without finding the Orb of Zot, so far below, it's all over!
+%%%%
+_halloween_things_
+
+demonic hallucinations
+
+disembodied spirits
+
+ghosts and spectres
+
+grim spectres
+
+horrible apparitions
+
+phantasmagorical visions
+%%%%
+_lowly_
+
+newt
+
+slug
+
+toad
+
+worm
+%%%%

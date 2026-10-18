@@ -1,0 +1,529 @@
+%%%%
+# Ce
+[spec name]Centaur
+
+<centaur>
+%%%%
+# DD
+[spec name]Deep Dwarf
+
+<deep dwarf>
+%%%%
+# [spec adj]で"～の"に訳さない
+[spec adj]Dwarven
+
+ドワーフ
+%%%%
+[spec genus]Dwarf
+
+<[spec adj]Dwarven>
+%%%%
+You are resistant to damage.
+
+あなたはあらゆるダメージに耐性がある。
+%%%%
+You can recharge devices by infusing magical energy.
+
+あなたは最大MPを消費して魔道具を充填できる。
+%%%%
+damage resistance
+
+ダメージへの耐性
+%%%%
+recharge devices
+
+魔道具の充填
+%%%%
+# DE
+[spec name]Deep Elf
+
+闇エルフ
+%%%%
+[spec adj]Elven
+
+エルフ
+%%%%
+[spec genus]Elf
+
+<[spec adj]Elven>
+%%%%
+# Dg
+[spec name]Demigod
+
+<demigod>
+%%%%
+[spec adj]Divine
+
+神々
+%%%%
+# Dr
+[spec name]Draconian
+
+<draconian>
+%%%%
+[spec adj]Draconian
+
+<draconian>
+%%%%
+[spec genus] Draconian
+
+<daconian>
+%%%%
+[spec name]Red Draconian
+
+<red draconian>
+%%%%
+# You can breathe blasts of fire.
+
+# jtrans_mutations.txtに記載
+%%%%
+breathe fire
+
+火炎のブレス
+%%%%
+[spec name]White Draconian
+
+<white draconian>
+%%%%
+You can breathe waves of freezing cold.
+
+あなたは凍える冷気のブレスを吐くことができる。
+%%%%
+You can buffet flying creatures when you breathe cold.
+
+あなたは飛行中のモンスターを氷のブレスで打ちのめすことができる。
+%%%%
+breathe frost
+
+凍気のブレス
+%%%%
+[spec name]Green Draconian
+
+<green draconian>
+%%%%
+You can breathe blasts of noxious fumes.
+
+あなたは悪臭雲のブレスを吐くことができる。
+%%%%
+breathe noxious fumes
+
+悪臭雲のブレス
+%%%%
+[spec name]Yellow Draconian
+
+<yellow draconian>
+%%%%
+You can spit globs of acid.
+
+あなたは酸の塊を吐くことができる。
+%%%%
+You are resistant to acid.
+
+あなたは酸への耐性を持っている。
+%%%%
+spit acid
+
+酸の唾液
+%%%%
+acid resistance
+
+酸耐性
+%%%%
+[spec name]Grey Draconian
+
+<grey draconian>
+%%%%
+You can walk through water.
+
+あなたは水を渡ることができる。
+%%%%
+walk through water
+
+水上歩行
+%%%%
+[spec name]Black Draconian
+
+<black draconian>
+%%%%
+You can breathe wild blasts of lightning.
+
+あなたは強烈な電撃のブレスを吐くことができる。
+%%%%
+breathe lightning
+
+稲妻のブレス
+%%%%
+[spec name]Purple Draconian
+
+<purple draconian>
+%%%%
+You can breathe bolts of dispelling energy.
+
+あなたは魔力を消去するエネルギーの矢を吐くことができる。
+%%%%
+breathe power
+
+魔力消去のブレス
+# 効果変更に伴い(無印)破壊のブレスから変更
+%%%%
+[spec name]Mottled Draconian
+
+<mottled draconian>
+%%%%
+You can spit globs of burning liquid.
+
+あなたは燃えたぎる粘液の塊を吐くことができる。
+%%%%
+You can ignite nearby creatures when you spit burning liquid.
+
+あなたは燃えたぎる粘液を吐いて近くのモンスターに着火することができる。
+%%%%
+breathe sticky flame splash
+
+<[ability]breathe sticky flame>
+%%%%
+[spec name]Pale Draconian
+
+<pale draconian>
+%%%%
+You can breathe blasts of scalding, opaque steam.
+
+あなたは視界を遮る高熱の蒸気を吐くことができる。
+%%%%
+breathe steam
+
+蒸気のブレス
+%%%%
+[spec name]Demonspawn
+
+<demonspawn>
+%%%%
+[spec adj]Demonic
+
+悪魔
+%%%%
+# Fe
+[spec name]Felid
+
+<felid>
+%%%%
+[spec adj]Feline
+
+猫
+%%%%
+[spec genus]Cat
+
+<[spec adj]Feline>
+%%%%
+You cannot wear armour.
+
+あなたは防具を装備できない。
+%%%%
+You are incapable of wielding weapons or throwing items.
+
+あなたは武器を手に持ったりアイテムを投擲したりすることができない。
+%%%%
+Your paws allow you to move quietly. (Stealth)
+
+あなたは忍び足をすることができる。(隠密)
+%%%%
+no armour
+
+鎧不可
+%%%%
+no weapons or thrown items
+
+武器および飛び道具不可
+%%%%
+stealth
+
+隠密
+%%%%
+# Fo
+[spec name]Formicid
+
+<formicid>
+%%%%
+[spec genus]Ant
+
+蟻
+%%%%
+You are under a permanent stasis effect.
+
+あなたは恒久的な停滞状態に置かれている。
+%%%%
+You can dig through walls and to a lower floor.
+
+あなたは壁や床を掘り抜くことができる。
+%%%%
+Your four strong arms can wield two-handed weapons with a shield.
+
+あなたの四本の腕は両手武器と盾を一緒に装備することができる。
+%%%%
+permanent stasis
+
+恒久的停滞
+%%%%
+dig shafts and tunnels
+
+穴掘り
+%%%%
+four strong arms
+
+四本の腕
+%%%%
+# Gh
+[spec name]Ghoul
+
+<ghoul>
+%%%%
+[spec adj]Ghoulish
+
+屍鬼
+%%%%
+Your body is rotting away.
+
+あなたの体は腐り落ちていく。
+%%%%
+You thrive on raw meat.
+
+あなたは生肉を自らの糧にできる。
+%%%%
+rotting body
+
+腐りゆく体
+%%%%
+# Gr
+[spec name]Gargoyle
+
+<gargoyle>
+%%%%
+You are resistant to torment.
+
+あなたは邪悪なる苦痛に対する耐性を持つ。
+%%%%
+# Ha
+[spec name]Halfling
+
+<halfling>
+%%%%
+# HE
+[spec name]High Elf
+
+ハイエルフ
+%%%%
+# HO
+[spec name]Hill Orc
+
+丘オーク
+%%%%
+[spec adj]Orcish
+
+<orc>
+%%%%
+[spec genus]Orc
+
+<orc>
+%%%%
+# Hu
+[spec name]Human
+
+<human>
+%%%%
+# Ko
+[spec name]Kobold
+
+<kobold>
+%%%%
+# Mf
+[spec name]Merfolk
+
+<merfolk>
+%%%%
+[spec adj]Merfolkian
+
+<merfolk>
+%%%%
+You revert to your normal form in water.
+
+あなたは水中では本来の姿に戻る。
+%%%%
+You are very nimble and swift while swimming.
+
+あなたは泳いでいる間は非常に素早く軽快だ。
+%%%%
+You are very stealthy in the water. (Stealth+)
+
+あなたは水の中ではとても隠密性が高い。(隠密)
+%%%%
+change form in water
+
+水棲の体
+%%%%
+swift swim
+
+俊敏な泳ぎ
+%%%%
+stealthy swim
+
+隠密の泳ぎ
+%%%%
+# Mi
+[spec name]Minotaur
+
+<minotaur>
+%%%%
+You reflexively headbutt those who attack you in melee.
+
+あなたは近接戦闘において攻撃してきた相手に頭突きで反撃する。
+%%%%
+retaliatory headbutt
+
+反撃の頭突き
+%%%%
+# Mu
+[spec name]Mummy
+
+<mummy>
+%%%%
+You do not eat or drink.
+
+あなたは飲み食いすることができない。
+%%%%
+Your flesh is vulnerable to fire.
+
+あなたの体は炎に弱い。
+%%%%
+no food or potions
+
+食事・薬不可
+%%%%
+fire vulnerability
+
+燃えやすい
+%%%%
+# Na
+[spec name]Naga
+
+<naga>
+%%%%
+You cannot wear boots.
+
+あなたはブーツを履けない。
+%%%%
+# Og
+[spec name]Ogre
+
+<ogre>
+%%%%
+[spec adj]Ogreish
+
+<ogre>
+%%%%
+# Op
+[spec name]Octopode
+
+<octopode>
+%%%%
+[spec adj]Octopoid
+
+蛸
+%%%%
+[spec genus]Octopus
+
+<[spec adj]Octopoid>
+%%%%
+You cannot wear most types of armour.
+
+あなたはほとんどの防具を装備できない。
+%%%%
+almost no armour
+
+ほとんどの防具不可
+%%%%
+# Sp
+[spec name]Spriggan
+
+<spriggan>
+%%%%
+# Te
+[spec name]Tengu
+
+<tengu>
+%%%%
+# Tr
+[spec name]Troll
+
+<troll>
+%%%%
+[spec adj]Trollish
+
+<troll>
+%%%%
+# Vp
+[spec name]Vampire
+
+<vampire>
+%%%%
+[spec adj]Vampiric
+
+<vampire>
+%%%%
+# VS
+[spec name]Vine Stalker
+
+<vine stalker>
+%%%%
+[spec adj]Vine
+
+蔓
+%%%%
+[spec genus]Vine
+
+<[spec adj]Vine>
+%%%%
+# TAG_MAJOR_VERSION == 34
+# SE
+[spec name]Sludge Elf
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+# LO
+[spec name]Lava Orc
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+# Dj
+[spec name]Djinni
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+You are immune to all types of fire, even holy and hellish.
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+You are vulnerable to cold.
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+You need no food.
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+You have no legs.
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+fire immunity
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+# cold vulnerability
+
+# jtrans_mutations.txtに記載
+%%%%
+# ??
+[spec name]Yak
+
+<yak>
+%%%%

@@ -1,0 +1,197 @@
+%%%%
+x%d
+
+(x%d)
+%%%%
+--more-- Press Space to continue. You can later reread messages with Ctrl-P.
+
+--続く-- 続けるにはSpaceを押してください。 後でCtrl-Pを押すことで再度読むこともできます。
+%%%%
+--more-- Press Space or click to continue. You can later reread messages with Ctrl-P.
+
+--続く-- 続けるにはSpaceを押すか画面をクリックしてください。 後でCtrl-Pを押すことで再度読むこともできます。
+%%%%
+--more--
+
+--続く--
+%%%%
+Something appears %s!
+
+%sに何かが現れた！
+%%%%
+# at your feet
+
+# jtrans_godabil.txtと重複
+%%%%
+# before you
+
+# jtrans_godabil.txtと重複
+%%%%
+Nothing appears to happen.
+
+何も起こらなかったようだ。
+%%%%
+You are unaffected.
+
+あなたは影響を受けない。
+%%%%
+You resist.
+
+あなたは抵抗に成功した。
+%%%%
+You partially resist.
+
+あなたにはある程度耐性がある。
+%%%%
+You are too berserk!
+
+あなたは狂暴化しすぎている！
+%%%%
+You're too confused!
+
+あなたは混乱しすぎている！
+%%%%
+You can't do that in your present form.
+
+あなたは現在の姿ではそうすることはできない。
+%%%%
+# You aren't carrying anything.
+
+# jtrans_chardump.txtと重複
+%%%%
+You can't do that yet.
+
+あなたはまだそれをすることができない。
+%%%%
+# Okay, then.
+
+# jtrans_lookup_help.txtと重複
+%%%%
+Why would you want to do that?
+
+どうしてそのようなことをしたいのですか？
+%%%%
+There's nothing there!
+
+そこには何もない！
+%%%%
+There's nothing close enough!
+
+近くには何もいない！
+%%%%
+You don't have the energy to cast that spell.
+
+あなたには呪文を唱えるための活力が足りない。
+%%%%
+The spell fizzles.
+
+呪文は失敗した。
+%%%%
+Huh?
+
+なんだって？
+%%%%
+Your mouth is already empty.
+
+あなたの口は既に空っぽだ。
+%%%%
+Your mouth is now empty.
+
+あなたの口はもう空っぽだ。
+%%%%
+You are already empty-clawed.
+
+<You are already empty-handed.>
+%%%%
+You are now empty-clawed.
+
+<You are now empty-handed.>
+%%%%
+You are already empty-tentacled.
+
+<You are already empty-handed.>
+%%%%
+You are now empty-tentacled.
+
+<You are now empty-handed.>
+%%%%
+You are already empty-handed.
+
+あなたは既に何も持っていない。
+%%%%
+You are now empty-handed.
+
+あなたはもう何も持っていない。
+%%%%
+You blink.
+
+あなたは瞬間移動した。
+%%%%
+You feel a strange sense of stasis.
+
+あなたは奇妙な停滞感を覚えた。
+%%%%
+You don't know any spells.
+
+あなたは呪文を何一つ知らない。
+%%%%
+You feel your magic capacity increase.
+
+あなたは魔力の容量が増大するのを感じた。
+%%%%
+You feel your magic capacity decrease.
+
+あなたは魔力の容量が減少するのを感じた。
+%%%%
+You feel momentarily disoriented.
+
+あなたは一時的な見当識喪失に陥った。
+%%%%
+You're too hungry.
+
+あなたは腹が減りすぎている。
+%%%%
+You detect nothing.
+
+あなたは何も感知できなかった。
+%%%%
+You call on the dead to rise...
+
+あなたは死体に起き上がるよう命じた……
+%%%%
+You attempt to give life to the dead...
+
+あなたは死体に生命を与えようと試みた……
+%%%%
+You cannot move.
+
+あなたは動けない。
+%%%%
+You die...
+
+あなたは死にました……
+%%%%
+You see a ghostly outline there, and the spell fizzles.
+
+あなたはぼんやりとした輪郭を目にし、呪文は失敗した。
+%%%%
+You feel better.
+
+あなたは気分がよくなった。
+%%%%
+You feel your power returning.
+
+あなたは魔力が回復したようだ。
+%%%%
+You suddenly feel drained of magical energy!
+
+あなたは突然魔力を吸われたような気がした！
+%%%%
+# There's something in the way.
+
+# jtrans_directn.txtと重複
+%%%%
+# You can't see that place.
+
+# jtrans_directn.txtと重複
+%%%%

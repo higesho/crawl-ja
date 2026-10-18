@@ -1,0 +1,460 @@
+%%%%
+wields %s.
+
+は%sを手に持った。
+%%%%
+It bursts into flame!
+
+それは吹きあがる炎に包まれた！
+%%%%
+It is covered in frost.
+
+それは霜に覆われている。
+%%%%
+It glows with a cold blue light!
+
+それは冷たい蒼に輝いた！
+%%%%
+It softly glows with a divine radiance!
+
+それは神聖な光に柔らかく輝いた！
+%%%%
+# You hear the crackle of electricity.
+
+# jtrans_art_func.txtと重複
+%%%%
+It begins to drip with poison!
+
+それは毒を滴らせはじめた！
+%%%%
+You sense an unholy aura.
+
+あなたは邪悪な霊気を感じ取った。
+%%%%
+Its appearance distorts for a moment.
+
+その武器の形状が一瞬歪んだように見えた。
+%%%%
+It is briefly surrounded by a scintillating aura of random colours.
+
+それはしばらくの間様々な色がきらめくオーラに包まれた。
+%%%%
+%s %s briefly %s through it before %s manages to get a firm grip on it.
+
+%sはそれをしっかり掴もうとする前にしばらくの間%sでしごいた。
+%%%%
+[verb]pass
+
+%%%%
+It is briefly surrounded by shifting shadows.
+
+それはしばらくの間ちらつく影に覆われた。
+%%%%
+It begins to drip corrosive slime!
+
+それは腐食性の粘液を滴らせはじめた！
+%%%%
+wears %s.
+
+は%sを装備した。
+%%%%
+puts on %s.
+
+は%sを身につけた。
+%%%%
+unwields %s.
+
+は%sを手放した。
+%%%%
+It stops flaming.
+
+その武器は燃えるのをやめた。
+%%%%
+It stops glowing.
+
+その武器は輝きが消えた。
+%%%%
+It stops crackling.
+
+その武器は爆ぜるのをやめた。
+%%%%
+It stops dripping with poison.
+
+その武器は毒を滲ませるのをやめた。
+%%%%
+takes off %s.
+
+は%sを外した。
+%%%%
+%s picks up %s.
+
+%sは%sを拾い上げた。
+%%%%
+some gold
+
+金貨
+%%%%
+Monster %s already holding item %s.
+
+%sはすでに%sを手にしている。
+%%%%
+Item %s thinks it's already held by monster %s.
+
+%sはすでに%sの手の中にあるようだ。
+%%%%
+Item %s, held by dead monster, being picked up by monster %s.
+
+死んだモンスターが手にしていた%sは%sに拾われた。
+%%%%
+Item %s, held by monster %s, being picked up by monster %s.
+
+%sが手にしていた%sは%sに拾われた。
+%%%%
+%s %s as %s drops %s!
+
+%sは%sが%sを手放すと%s！
+%%%%
+them
+
+それら
+%%%%
+%s drops %s.
+
+%sは%sを足下に落とした。
+%%%%
+# something
+
+# jtrans_actor.txtと重複
+%%%%
+# something's
+
+# jtrans_attack.txtと重複
+%%%%
+it (buggy)
+
+# 訳不要
+%%%%
+[hand name]claw
+
+爪
+%%%%
+[hand name]pincer
+
+鋏
+%%%%
+front
+
+前
+%%%%
+[hand name]wing
+
+翼
+%%%%
+[hand name]antenna
+
+触角
+%%%%
+[hand name]eye-stalk
+
+目玉
+%%%%
+[hand name]leaf
+
+葉
+%%%%
+[hand name]rhizome
+
+地下茎
+%%%%
+[hand name]pupil
+
+瞳孔
+%%%%
+handbug
+
+# 訳不要
+%%%%
+[foot name]leg
+
+脚
+%%%%
+[foot name]hoof
+
+蹄
+%%%%
+[foot name]tail
+
+尾
+%%%%
+[foot name]paw
+
+脚
+%%%%
+[foot name]talon
+
+足爪
+%%%%
+[foot name]trotter
+
+脚
+%%%%
+[foot name]claw
+
+<[hand name]claw>
+%%%%
+[foot name]root
+
+根
+%%%%
+[foot name]stem
+
+茎
+%%%%
+[foot name]pseudopod
+
+仮足
+%%%%
+[foot name]underside
+
+下側
+%%%%
+footbug
+
+# 訳不要
+%%%%
+feet
+
+両足
+%%%%
+foot
+
+足
+%%%%
+[adj]scaled
+
+鱗の生えた
+%%%%
+[adj]feathered
+
+羽の生えた
+%%%%
+[adj]bandage-wrapped
+
+包帯を巻かれた
+%%%%
+[adj]bony
+
+骨ばった
+%%%%
+%s %s
+
+%s%s
+%%%%
+becomes momentarily stuck in the liquid earth.
+
+は液状化した地面に一瞬足をとられた。
+%%%%
+splashes around in the water.
+
+はあたりに水をはねかけた。
+%%%%
+You hear a splashing noise.
+
+あなたは水のはねる音を耳にした。
+%%%%
+shakes off %s lethargy.
+
+は無気力感を振りはらった。
+%%%%
+flies into a frenzy!
+
+は狂乱化した！
+%%%%
+goes berserk!
+
+はバーサークした！
+%%%%
+The heat melts %s icy armour.
+
+熱で%sの氷の鎧が溶けた。
+%%%%
+wobbles for a moment.
+
+は一瞬よろめいた。
+%%%%
+is devoured by a tear in reality.
+
+は次元の裂け目に飲み込まれた。
+%%%%
+'s corpse armour sloughs away.
+
+の屍肉の鎧は剥げ落ちた。
+%%%%
+invalid zombie type %d (%s)
+
+# for die()
+%%%%
+%s is drained!
+
+%sは衰弱した！
+%%%%
+# %s looks less resilient!
+
+# jtrans_melee_attack.txtと重複
+%%%%
+rCorr protects.
+
+# for debug
+%%%%
+%s corrodes %s!
+
+%sは%sを腐蝕させた！
+%%%%
+%s is splashed with acid.
+
+%sは酸をその身に浴びた。
+%%%%
+(mon) HP shaved: %d.
+
+# for debug
+%%%%
+turns to stone!
+
+は石化した！
+%%%%
+stops moving altogether!
+
+は完全に動きを止めた！
+%%%%
+Ghost spells:
+
+# for debug
+%%%%
+Spell #%d: %d (%s)
+
+# for debug
+%%%%
+%s looks sick.
+
+%sは具合が悪そうだ。
+%%%%
+Bad speed: %s, spd: %d, spi: %d, hd: %d, ench: %s
+
+# for debug
+%%%%
+Fixed speed for %s to %d
+
+# for debug
+%%%%
+Clamping speed increment on %s: %d
+
+# for debug
+%%%%
+twists and deforms.
+
+の体はねじくれて奇形になった。
+%%%%
+# flops around on dry land!
+
+# jtrans_mon_act.txtと重複
+%%%%
+%s dives back into the %s!
+
+%sは飛び跳ねて%sに戻った！
+%%%%
+The bloodstain on %s disappears!
+
+%sの血痕は消え去った！
+%%%%
+%s a shaft!
+
+は縦穴に%s！
+%%%%
+is sucked into
+
+吸い込まれた
+%%%%
+falls through
+
+転がり落ちた
+%%%%
+looks weaker.
+
+は弱くなったようだ。
+%%%%
+drinks a potion.
+
+は薬を飲んだ。
+%%%%
+is healed!
+
+の傷が治った！
+%%%%
+%s evokes %s %s.
+
+%sは%sの力を発動させた。
+%%%%
+Your spectral weapon shares its damage with you!
+
+あなたは幽体の武器とダメージを共有した！
+%%%%
+shares %s spectral weapon's damage!
+
+は幽体の武器とダメージを共有した！
+%%%%
+As %s mount dies, %s plunges down into %s!
+
+乗騎が死んでしまい、%sは%s！
+%%%%
+lava and is incinerated
+
+溶岩に落ちて燃え尽きた
+%%%%
+deep water and drowns
+
+深い水たまりに落ちて溺れた
+%%%%
+%s falls from %s now dead mount.
+
+%sは死んだ乗騎から飛び降りた。
+%%%%
+%s roars in fury and transforms into a fierce dragon!
+
+%sは激怒の咆哮を上げ、恐ろしいドラゴンへと姿を変えた！
+%%%%
+A violent storm begins to rage around %s.
+
+%sの周囲で猛烈な嵐が荒れ狂いはじめた。
+%%%%
+%s steals %s your gold!
+
+%sはあなたの金貨を%s盗み取った！
+%%%%
+all
+
+すべて
+%%%%
+some of
+
+いくらか
+%%%%
+%s steals %s!
+
+%sは%sを盗み取った！
+%%%%
+is pushed out of the %s.
+
+は%sの所に押しやられた。
+%%%%
+Moved to (%d, %d).
+
+# for debug
+%%%%
+looks uneasy for a moment.
+
+は一瞬気がかりなそぶりを見せた。
+%%%%
+tracking seen spell %s for %s
+
+# for debug
+%%%%

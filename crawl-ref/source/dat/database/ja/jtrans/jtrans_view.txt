@@ -1,0 +1,67 @@
+%%%%
+%s come into view.
+
+%sに遭遇した。
+%%%%
+There %s a foul %s.
+
+そこに%s忌まわしき%sがいる。
+%%%%
+There is %s.
+
+そこには%sがいる。
+%%%%
+a foul
+
+忌まわしき
+%%%%
+warns you: %s
+
+はあなたに警告を与えた。%s
+%%%%
+%s incites %s against you.
+
+%sはあなたに%sをけしかけた。
+%%%%
+%s incites your enemies against you.
+
+%sはあなたに敵対するものに手助けした。
+%%%%
+You feel aware of your surroundings.
+
+あなたは周囲の地形を感知した。
+%%%%
+%d altar%s
+
+%dつの祭壇
+%%%%
+%d shop%s/portal%s
+
+%dつの商店またはポータル
+%%%%
+You sensed %s.
+
+あなたは%sを見つけた。
+%%%%
+Select layers to display:\n<%s>(m)onsters</%s>|<%s>(p)layer</%s>|<%s>(i)tems</%s>|<%s>(c)louds</%s>
+
+選択表示する対象を選んでください:
+<%s>(m)モンスター</%s>|<%s>(p)プレイヤー</%s>|<%s>(i)アイテム</%s>|<%s>(c)雲類</%s>
+%%%%
+Select layers to display:\n<%s>(m)onsters</%s>|<%s>(p)layer</%s>|<%s>(i)tems</%s>|<%s>(c)louds</%s>|<%s>monster (w)eapons</%s>|<%s>monster (h)ealth</%s>
+
+選択表示する対象を選んでください:
+<%s>(m)モンスター</%s>|<%s>(p)プレイヤー</%s>|<%s>(i)アイテム</%s>|<%s>(c)雲類</%s>|<%s>(w)モンスターの武器</%s>|<%s>(h)モンスターの体力</%s>
+%%%%
+Press <w>%s</w> to return to normal view. Press any other key to exit.
+
+<w>%s</w>を押すと通常画面表示に戻ります。他のキーでゲーム画面に戻ります。
+%%%%
+Press <w>%s</w> or perform an action to restore all view layers.
+
+<w>%s</w>を押すか、何か一行動することで通常画面表示に戻ります。
+%%%%
+Restoring view layers.
+
+通常表示に戻りました。
+%%%%

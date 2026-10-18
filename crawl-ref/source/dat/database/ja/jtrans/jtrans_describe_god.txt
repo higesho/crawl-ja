@@ -1,0 +1,479 @@
+%%%%
+Godly wrath is upon you!
+
+神はあなたに激怒している！
+%%%%
+You've transgressed heavily! Be penitent!
+
+あなたは著しく道を踏み外している！ 懺悔せよ！
+%%%%
+You are under penance.
+
+あなたは贖罪の途上にある。
+%%%%
+You should show more discipline.
+
+あなたは更なる自制を示すべきだ。
+%%%%
+A prized avatar of {god name}
+
+あなたは%sの第一の化身だ。
+%%%%
+A favoured servant of {god name}.
+
+あなたは%sの寵臣だ。
+%%%%
+A glorious shadow in the eyes of {god name}.
+
+あなたは%sに期待されている。
+%%%%
+A shining star in the eyes of {god name}.
+
+あなたは%sの期待の星だ。
+%%%%
+A rising shadow in the eyes of {god name}.
+
+あなたは%sのお気に入りだ。
+%%%%
+A rising star in the eyes of {god name}.
+
+あなたは%sのお気に入りだ。
+%%%%
+is pleased with you.
+
+はあなたに喜んでいる。
+%%%%
+is aware of your devotion.
+
+はあなたの献身に気付いている。
+%%%%
+is noncommittal.
+
+はあなたに何も明言しない。
+%%%%
+# 称号関連はjtrans_divine_title.txtで記述
+%%%%
+er
+
+者
+%%%%
+Ashenzari won't support your skills until you bind yourself with cursed items.
+
+アシェンザリはあなたが自らの体を呪われた装備で呪縛しない限りスキルを補強しない。
+%%%%
+Weapon hand
+
+武器の方の手
+%%%%
+Shield hand
+
+盾の方の手
+%%%%
+# [eq slot]Armour
+
+# jtrans_command.txtと重複
+%%%%
+[eq slot]Jewellery
+
+<Jewellery>
+%%%%
+Low
+
+低
+%%%%
+Medium
+
+中
+%%%%
+High
+
+高
+%%%%
+Bound part
+
+呪縛部位
+%%%%
+Boosted skills
+
+補強されるスキル
+%%%%
+Bonus
+
+補正
+%%%%
+Hands
+
+両手
+%%%%
+Magic schools
+
+魔術
+%%%%
+ancestor knight misc info
+
+# XL                      Knight
+#                         Flail
+#                         Shield
+#                    Splint Mail (+AC)
+# 15                 Broad Axe (flame)
+# 19              Large Shield (reflect)
+# 19                      Haste
+# 24                Speed (weapon ego)
+レベル                   騎士
+                       フレイル
+                          盾
+                 スプリントメイル (+AC)
+15               火炎のブロードアックス
+19                    反射の大盾
+19                       加速
+24                    早業の武器
+%%%%
+ancestor battlemage misc info
+
+# XL                    Battlemage
+#                      Quarterstaff
+#                       Throw Frost
+#                       Stone Arrow
+#                      +Melee Damage
+# 15                    Magma Bolt
+# 19                  Lajatang (freeze)
+# 19                       Haste
+# 24                   Crystal Spear
+レベル                  魔術師
+                        六尺棒
+                      冷気の投射
+                       石錐の矢
+                    近接ダメージ増加
+15                     溶岩の矢
+19                  冷気のラジャタン
+19                       加速
+24                      水晶槍
+%%%%
+ancestor hexer misc info
+
+# XL                       Hexer
+#                      Dagger (drain)
+#                          Slow
+#                         Confuse
+# 15                     Paralyse
+# 19                   Mass Confusion
+# 19                       Haste
+# 24                Quickblade (antimagic)
+レベル                  呪術師
+                      掠奪のダガー
+                         減速
+                         混乱
+15                       麻痺
+19                    集団の混乱
+19                       加速
+24             反魔法のクイックブレード
+%%%%
+You can bribe the following branches of the dungeon:
+
+あなたは下に記された迷宮の分岐を買収できる:
+%%%%
+not bribed
+
+未買収
+%%%%
+$%d
+
+%dゴールド
+%%%%
+<w>Overview</w>|Powers|Wrath
+
+<w>概要</w>|能力|神の怒り
+%%%%
+Overview|<w>Powers</w>|Wrath
+
+概要|<w>能力</w>|神の怒り
+%%%%
+Overview|Powers|<w>Wrath</w>
+
+概要|能力|<w>神の怒り</w>
+%%%%
+|<w>Right-click</w>
+
+|<w>右クリック</w>
+%%%%
+TSO and Ely wrath cause
+
+# uppercase_first(god_name(which_god)) +
+# " forgives followers who leave " + god_name(which_god)+"'s"
+# " service; however, those who take up the worship of evil"
+# " gods will be punished. (" +
+# comma_separated_fn(begin(evil_gods), end(evil_gods),
+#                    bind(god_name, placeholders::_1, false)) +
+# " are evil gods.)";
+%sは自らの元から去る者を赦してくれる。ただし、邪悪な神々へと改宗しようとする者には懲罰が加えられる。
+(%sは邪悪な神々である)
+%%%%
+Zin wrath cause
+
+# uppercase_first(god_name(which_god)) +
+# "+god_name(which_god)+
+# "'s service; however, those who take up the worship of evil"
+# " or chaotic gods will be scourged. (" +
+# comma_separated_fn(begin(evil_gods), end(evil_gods),
+#                    bind(god_name, placeholders::_1, false)) +
+# " are evil, and " +
+# comma_separated_fn(begin(chaotic_gods), end(chaotic_gods),
+#                    bind(god_name, placeholders::_1, false)) +
+# " are chaotic.)";
+%sは自らの元から去る者を罰しない。ただし、邪悪な、もしくは混沌なる神々へと改宗しようとする者には懲罰が加えられる。
+(%sは邪悪な神々、%sは混沌なる神々である)
+%%%%
+default wrath cause
+
+%sは棄教することを喜ばず、不忠義な信徒に恐るべき懲罰をもたらす！
+%%%%
+misc info piety only
+
+# "Note that" + god_name(which_god) +
+# " does not demand training of the"
+# " Invocations skill. All abilities are"
+# " purely based on piety."
+%sは祈祷スキルの訓練を要求しない。全ての能力は純粋に信仰値に依存することに注意。
+%%%%
+kiku misc info
+
+# "The power of Kikubaaqudgha's abilities is governed by "
+# "Necromancy skill instead of Invocations."
+キクバークッグァの与える能力は祈祷スキルではなく死霊術スキルに左右される。
+%%%%
+ely misc info
+
+# "Healing hostile monsters may pacify them, turning them "
+# "neutral. Pacification works best on natural beasts,"
+# "worse on monsters of your species, worse on other "
+# "species, worst of all on demons and undead, and not at "
+# "all on sleeping or mindless monsters. If it succeeds, "
+# "you gain half of the monster's experience value. Pacified "
+# "monsters try to leave the level."
+敵対的なモンスターを癒すことで彼らをなだめ、友好化することができる。友好化は自然の獣に対して最も効果的に働き、次いで自分と同じ種族、他の種族となり、悪魔や不死者には最も効きづらく、眠っていたり精神構造を持たないモンスターには全く効かない。
+成功した場合、あなたはモンスターを倒した場合の経験値の半分を得る。
+中立化したモンスターはこの階層から移動しようとする。
+%%%%
+The power of Pakellas' abilities is governed by Evocations skill instead of Invocations.
+
+# obsolete: Pakellas
+%%%%
+%s won't play fair with you.
+
+%sはあなたと正々堂々勝負したりはしない。
+%%%%
+%s's wrath is upon you!
+
+%sはあなたに激怒している！
+%%%%
+%s is annoyed with you.
+
+%sはあなたに苛立っている。
+%%%%
+%s well remembers your sins.
+
+%sはあなたの罪をはっきりと覚えている。
+%%%%
+%s is almost ready to forgive your sins.
+
+%sはあなたの罪を赦そうとしている。
+%%%%
+%s is ambivalent towards you.
+
+%sはあなたに曖昧な感情を抱いている。
+%%%%
+%s is neutral towards you.
+
+%sはあなたに対して中立である。
+%%%%
+Granted powers:
+
+与えられた能力:
+%%%%
+(Cost)
+
+(コスト)
+%%%%
+, especially when called upon
+
+(あなたから呼びかけられた時は特に)
+%%%%
+, and always does so when called upon
+
+(あなたから呼びかけられた時はいつでも)
+%%%%
+carefully
+
+注意深く
+%%%%
+often
+
+しばしば
+%%%%
+sometimes
+
+時々
+%%%%
+occasionally
+
+たまに
+%%%%
+%s %s watches over you%s.
+
+%sは%sあなたを見守る。
+%%%%
+%s %s shields you from chaos.
+
+%sは混沌からあなたを%s見守る。
+%%%%
+completely
+
+完全に
+%%%%
+mostly
+
+ほとんど
+%%%%
+partially
+
+ある程度
+%%%%
+%s %s shields you from negative energy.
+
+%sは負のエネルギーからあなたを%s守る。
+%%%%
+You radiate a large righteous aura, and others within it are easier to hit.
+
+あなたは強烈に光り輝くオーラを発しており、範囲内のものに攻撃を当てやすい。
+%%%%
+You radiate a righteous aura, and others within it are easier to hit.
+
+あなたは光り輝くオーラを発しており、範囲内のものに攻撃を当てやすい。
+%%%%
+You radiate a small righteous aura, and others within it are easier to hit.
+
+あなたはほのかに光り輝くオーラを発しており、範囲内のものに攻撃を当てやすい。
+%%%%
+%s shields you from corrosive effects.
+
+%sはあなたを腐蝕効果から守る。
+%%%%
+You gain nutrition, power and health when your fellow slimes consume items.
+
+あなたは仲間のスライムがアイテムを消化する際に体力と魔力、および栄養を得る。
+%%%%
+You gain nutrition and power when your fellow slimes consume items.
+
+あなたは仲間のスライムがアイテムを消化する際に魔力および栄養を得る。
+%%%%
+You gain nutrition when your fellow slimes consume items.
+
+あなたは仲間のスライムがアイテムを消化する際に栄養を得る。
+%%%%
+You can walk through plants and fire through allied plants.
+
+あなたは植物の間を通り抜けることができ、仲間の植物ごしに射撃することができる。
+%%%%
+You are provided with a bounty of information.
+
+あなたは装備の情報を得ることができる。
+%%%%
+%s %sslows your movement.
+
+%sはあなたの動作を%s遅くする。
+%%%%
+greatly
+
+非常に
+%%%%
+slightly
+
+いくらか
+%%%%
+%s supports your attributes. (+%d)
+
+%sはあなたの能力値を強化する。(+%d)
+%%%%
+some of Vehumet's most lethal spells
+
+ヴェフメットの最も危険な呪文のいくつか
+%%%%
+You can memorise %s.
+
+あなたは%sを覚えることができる。
+%%%%
+You can memorise some of Vehumet's spells.
+
+あなたはヴェフメットから呪文をいくつか教わることができる。
+%%%%
+You radiate a large aura of darkness, enhancing your stealth and reducing the accuracy of your foes.
+
+あなたは広大な範囲を覆う影のオーラを放ち、自らの隠密性を高めるとともに
+敵の攻撃を当たりにくくする。
+%%%%
+You radiate an aura of darkness, enhancing your stealth and reducing the accuracy of your foes.
+
+あなたは影のオーラを放ち、自らの隠密性を高めるとともに敵の攻撃を
+当たりにくくする。
+%%%%
+You radiate a small aura of darkness, enhancing your stealth and reducing the accuracy of your foes.
+
+あなたは狭い範囲を覆う影のオーラを放ち、自らの隠密性を高めるとともに
+敵の攻撃を当たりにくくする。
+%%%%
+You passively detect gold.
+
+あなたは金貨のありかを感知することができる。
+%%%%
+%s turns your defeated foes' bodies to gold.
+
+%sは倒した敵の体を金貨に変える。
+%%%%
+Your enemies may become distracted by gold.
+
+あなたの敵は輝く金貨の山に惑わされる。
+%%%%
+Your life essence is reduced. (-10% HP)
+
+あなたの生命力は弱められる。(-10% HP)
+%%%%
+%s prevents your magic from regenerating.
+
+# obsolete: Pakellas
+%%%%
+%s identifies device charges for you.
+
+# obsolete: Pakellas
+%%%%
+%s will collect and distill excess magic from your kills.
+
+# obsolete: Pakellas
+%%%%
+You can {buf}.
+
+あなたは%sができる。
+%%%%
+(None)
+
+(なし)
+%%%%
+None.
+
+(なし)
+%%%%
+Religion
+
+信仰
+%%%%
+Title  -
+
+称号 -
+%%%%
+Favour -
+
+歓心 -
+%%%%
+You are not religious.
+
+あなたは神を信仰していない。
+%%%%

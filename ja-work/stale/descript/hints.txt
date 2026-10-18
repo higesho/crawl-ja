@@ -1,0 +1,271 @@
+%%%%
+welcome
+
+# old en (ja19):
+#   <white>Welcome to Dungeon Crawl!</white>
+#   
+#   Your objective is to lead a <w>{{ return you.race() }} {{ return you.class()
+#   }}</w> safely through the depths of the dungeon, retrieving the fabled Orb of
+#   Zot and returning it to the surface. In the beginning, however, let discovery
+#   be your main goal. Try to delve as deeply as possible but beware; death lurks
+#   around every corner.
+#   
+#   For the moment, just remember the following keys and their functions:
+#     <input>$cmd[CMD_DISPLAY_COMMANDS]?</input> — shows the items and the commands
+#     <input>$cmd[CMD_SAVE_GAME]</input>  — saves the game, to be resumed later
+#   (but note that death is permanent)
+#     <input>$cmd[CMD_LOOK_AROUND]</input>  — examines something in your vicinity
+#   
+#   The hint mode will help you play Crawl without reading any documentation. If
+#   you haven't yet, you might want to try out the tutorial. Also, if you feel
+#   intrigued, there is more information available in the following files from the
+#   docs/ directory (all of which can also be read in-game):
+#     <lightblue>quickstart.txt</lightblue>     — A very short guide to Crawl.
+#     <lightblue>crawl_manual.txt</lightblue>   — This contains all details on
+#   species, magic, skills, etc.
+#     <lightblue>options_guide.txt</lightblue>  — Crawl's interface is highly
+#   configurable. This document explains all the options.
+#   
+#   Happy Crawling!
+# old ja (ja19):
+#   <white>ダンジョンクロウルへようこそ！</white>
+#   
+#   あなたの目標は{{ return crawl.tagged_jtrans("[spec name]", you.race()) }}の{{ return crawl.tagged_jtrans("[job]", you.class()) }}を安全にダンジョンの深層へと導き、
+#   伝説の『ゾットのオーブ』を回収して地上へと帰還することです。
+#   とはいえ、最初のうちは発見することを主目的にしてください。
+#   可能な限り徹底的に探索しましょう――しかし、気をつけてください。
+#   死は至る所に潜んでいます。
+#   
+#   さしあたっては、以下のコマンドとその動作だけを覚えておいてください:
+#     <input>$cmd[CMD_DISPLAY_COMMANDS]?</input> — 各種項目やコマンド一覧を表示します
+#     <input>$cmd[CMD_SAVE_GAME]</input>  — 中断して後で再開するためにゲームを保存します
+#            (しかし、死んだら最初からとなることに注意してください)
+#     <input>$cmd[CMD_LOOK_AROUND]</input>  — あなたの周囲にあるものを調べます
+#   
+#   解説モードは説明書に目を通さずにクロウルを遊ぶのに役立ちます。
+#   まだやっていなかったら、チュートリアルモードも試してみたくなるかもしれません。
+#   また、もし興味が湧いたなら、"docs"フォルダー内の下記ファイルにあるさらなる情報が利用できます。
+#   (これらはすべてゲーム内でも読むことができます):
+#     <lightblue>quickstart.txt</lightblue>     — とても短いクロウルのガイド
+#     <lightblue>crawl_manual.txt</lightblue>   — 種族、魔法、スキル、その他についての詳細を含みます
+#     <lightblue>options_guide.txt</lightblue>  — クロウルのインターフェースは非常に細かく設定可能です。
+#                          この文書はオプションに関する全てを説明します
+#   
+#   それでは、ダンジョンクロウルをお楽しみください！
+
+<white>Welcome to Dungeon Crawl!</white>
+
+Your objective is to lead your <w>{{ return you.race() }} {{ return you.class()
+}}</w> safely through the depths of the dungeon, retrieving the fabled Orb of
+Zot and returning it to the surface. In the beginning, however, let discovery
+be your main goal. Try to delve as deeply as possible but beware; death lurks
+around every corner.
+
+For the moment, just remember the following keys and their functions:
+  <input>$cmd[CMD_DISPLAY_COMMANDS]?</input> — shows the items and the commands
+  <input>$cmd[CMD_SAVE_GAME]</input>  — saves the game, to be resumed later
+(but note that death is permanent)
+  <input>$cmd[CMD_LOOK_AROUND]</input>  — examines something in your vicinity
+
+The hint mode will help you play Crawl without reading any documentation. If
+you haven't yet, you might want to try out the tutorial. Also, if you feel
+intrigued, there is more information available in the following files from the
+docs/ directory (all of which can also be read in-game):
+  <lightblue>quickstart.txt</lightblue>     — A very short guide to Crawl.
+  <lightblue>crawl_manual.txt</lightblue>   — This contains all details on
+species, magic, skills, etc.
+  <lightblue>options_guide.txt</lightblue>  — Crawl's interface is highly
+configurable. This document explains all the options.
+
+Happy Crawling!
+%%%%
+death berserker unberserked
+
+# old en (ja19):
+#   Don't forget to go berserk when fighting particularly difficult foes. It's
+#   risky, but makes you faster and beefier.
+#   {{
+#       if you.hunger() < 3 then
+#           return "Berserking is impossible while very hungry or worse, so " ..
+#                  "make sure to stay fed at all times, just in case you need " ..
+#                  "to berserk."
+#       end
+#   }}
+# old ja (ja19):
+#   強敵と戦う際にバーサークすることを忘れないでください。
+#   危険はあるものの、あなたの動きを速く、力強くします。
+#   {{
+#       if you.hunger() < 3 then
+#           return "「とても空腹」かそれ以上に腹が減っている時はバーサークすることはできません。\n" ..
+#                  "そのため、バーサークするときに備えて必ず常時腹を満たしておきましょう。"
+#       end
+#   }}
+
+Don't forget to go berserk when fighting particularly difficult foes. It's
+risky, but makes you faster and beefier.
+%%%%
+death random 3
+
+# old en (ja19):
+#   Remember to use those scrolls, potions or wands you've found. Learn to
+#   improvise: identify your items by using them.
+# old ja (ja19):
+#   見つけた巻物・水薬・ワンドを使うのを覚えておいてください。
+#   即興的にやる方法を知りましょう: アイテムを使うことでそのアイテムを鑑定しましょう。
+
+Remember to use those scrolls, potions or wands you've found. Learn to
+improvise: you will need to identify potions and scrolls by using them.
+%%%%
+finished
+
+# old en (ja19):
+#   Congrats! You survived until the end of the hint mode — be sure to try the
+#   other ones as well. Note that the command help screen
+#   (<input>$cmd[CMD_DISPLAY_COMMANDS]?</input>) will look very different from now
+#   on. Here's a last playing hint:
+# old ja (ja19):
+#   おめでとう！ あなたはこの解説付きモードが終了するまで生き延びました。
+#   必ず別の組み合わせも同様に試しておいてください。
+#   コマンドヘルプ画面(<input>$cmd[CMD_DISPLAY_COMMANDS]?</input>)は今やだいぶ違って見えることでしょう。
+#   これが遊ぶにあたっての最後のヒントです:
+
+Congrats! You survived until the end of hints mode — be sure to try the
+other characters as well. Note that the command help screen
+(<input>$cmd[CMD_DISPLAY_COMMANDS]?</input>) will look very different from now
+on. Here's a last playing hint:
+%%%%
+finished random 1
+
+# old en (ja19):
+#   Crawl has a macro function built in: press <input>~m</input> to define a macro
+#   by first specifying a trigger key (say, <input>F1</input>) and a command
+#   sequence, for example <input>za.</input>. The latter will make the
+#   <input>F1</input> key always zap the spell in slot a at the nearest monster.
+#   For more information on macros, type
+#   <input>$cmd[CMD_DISPLAY_COMMANDS]~</input>.
+# old ja (ja19):
+#   クロウルはマクロ機能を備えています。
+#   <input>~m</input>を押してまず起点となるキー(例えば<input>F1</input>)を指定し、続けて一連のコマンドを入力(例えば<input>za.</input>)してマクロを定義します。
+#   そうすることで、<input>F1</input>キーを押すと常に最寄りの敵に対し(a)枠の呪文を撃ちます。
+#   マクロについてのより詳しい情報を調べるには、<input>$cmd[CMD_DISPLAY_COMMANDS]~</input>を押してください。
+
+Crawl has a macro function built in: press <input>$cmd[CMD_MACRO_MENU]</input>
+to define a macro by first specifying a trigger key (say, <input>F1</input>)
+and a command sequence, for example <input>za.</input>. The latter will make
+the <input>F1</input> key always zap the spell in slot a at the nearest
+monster. For more information on macros, type
+<input>$cmd[CMD_DISPLAY_COMMANDS]~</input>.
+%%%%
+finished random 3
+
+# old en (ja19):
+#   You can ask other Crawl players for advice and help on the <w>##crawl</w> IRC
+#   (Internet Relay Chat) channel on freenode (<w>irc.freenode.net</w>).
+# old ja (ja19):
+#   freenode (<w>irc.freenode.net</w>) IRCの<w>##crawl</w>チャンネルで他のクロウルプレイヤーに助言と助けを求めることができます。
+
+You can ask other Crawl players for advice and help using any of the community
+resources described at http://crawl.develz.org/
+%%%%
+HINT_CONVERT Gozag
+
+# old en (ja19):
+#   You've just converted to worshipping <w>Gozag</w>. Unlike other gods, Gozag only
+#   cares about gold; each divine power costs gold, and they grow more expensive
+#   with use. Still, that gold won't do you any good if you're dead, and Gozag's
+#   Potion Petition can be a huge help in combat! If you run short on food, you can
+#   use Call Merchant to buy a food shop.
+# old ja (ja19):
+#   あなたはたった今<w>ゴザーグ</w>に入信しました。
+#   他の神と異なり、ゴザーグは金以外のものを気にかけません。
+#   それぞれの神の御業は金貨を消費し、使うたびにどんどん高額になっていきます。
+#   とはいえ死んでしまったら元も子もないでしょうし、ゴザーグへの水薬の陳情は戦闘時に大変役に立つでしょう！
+#   もしあなたが食べ物に不自由したら、商人を誘致して食料品店を建てることができます。
+
+You've just converted to worshipping <w>Gozag</w>. Unlike other gods, Gozag only
+cares about gold; each divine power costs gold, and your foes turn to gold on
+death.
+%%%%
+HINT_CONVERT Ru
+
+# old en (ja19):
+#   You've just converted to worshipping <w>Ru</w>. Unlike other gods, Ru grants
+#   piety (divine favour) in exchange for personal sacrifices, like giving up your
+#   ability to drink potions while endangered; the more piety you have, the more
+#   abilities Ru will grant, and the more powerful those abilities will become.
+#   Ru will offer sacrifices as you explore the depths of the dungeon.
+# old ja (ja19):
+#   あなたはたった今<w>ルー</w>に入信しました。
+#   他の神と異なり、ルーは危機に瀕した際に水薬を飲む能力を失うなどの行為と引き換えに信仰値(と御利益)を授けます。
+#   信仰値を高めるにつれてルーはより多くの能力をあなたに授け、そして能力自体も強さを増していきます。
+#   ルーはあなたがダンジョンの奥深くを探索するたびに代償を捧げる提案を行います。
+
+You've just converted to worshipping <w>Ru</w>. Unlike other gods, Ru grants
+piety (divine favour) in exchange for permanent sacrifices, like losing the
+ability to train certain skills, or permanently losing a hand. The more piety
+you have, the more abilities Ru will grant, and the more powerful those
+abilities will become. Ru will offer more sacrifices as you explore the depths
+of the dungeon.
+%%%%
+HINT_CONVERT Xom
+
+# old en (ja19):
+#   You've just converted to worshipping <w>Xom</w>. You can keep Xom happy by
+#   keeping him amused; you do absolutely not want this god to grow bored with you!
+#   
+#   If you keep Xom amused he'll treat you like a plaything, randomly helping and
+#   harming you for his own amusement; otherwise he'll treat you like a disfavoured
+#   plaything.
+# old ja (ja19):
+#   あなたはたった今<w>ゾム</w>に入信しました。
+#   あなたはゾムの機嫌をとり続けることによりゾムを幸せな気分で居続けさせることができます。
+#   あなたは絶対にこの神があなたに飽きることを欲しません！
+#   
+#   もしあなたがゾムを楽しませ続けることができたなら、彼はあなたをお気に入りの玩具のように扱い、
+#   彼自身の楽しみのためにあなたをランダムに助けたり悩ませたりします。
+#   そうでなければ、彼は八つ当たり用の玩具のようにあなたを扱うことでしょう。
+
+You've just converted to worshipping <w>Xom</w>. As a follower of Xom, you'll
+be treated like a plaything, randomly helped or harmed for Xom's own amusement.
+
+There is no way to guarantee Xom remains in a good mood - the best any follower
+can hope for is to avoid letting Xom grow bored!
+%%%%
+HINT_SEEN_FIRST_OBJECT
+
+# old en (ja19):
+#   That <console>$1 </console>is an item. If you move there and press
+#   <input>$cmd[CMD_PICKUP]</input><tiles>, or <input>left-click</input> on it in
+#   your inventory</tiles>, you will pick it up.<console> Generally, items
+#   are shown by non-letter symbols like <w>%?!"=()[</w>.</console> Some
+#   objects<tiles>, marked with a green frame,</tiles> will be picked up
+#   automatically.
+#   
+#   Once it is in your inventory, you can drop it again with <tiles>a
+#   <input>Shift-left-click</input>. Whenever you <input>right-click</input> on an
+#   item</tiles><console><input>$cmd[CMD_DROP]</input>. Any time you look at an
+#   item in your inventory (<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)</console>,
+#   you can read about its properties and its description.
+# old ja (ja19):
+#   <console>あの$1</console><tiles>あれ</tiles>はアイテムです。
+#   そこに移動していって<input>$cmd[CMD_PICKUP]</input>を押す<tiles>か、所有物一覧タブ上で<input>左クリック</input>する</tiles>ことでそれを拾い上げます。
+#   <console>一般的に、アイテムは<w>?!"=()[</w>のような非アルファベットのシンボルで表示されます。
+#   </console>いくつかの<tiles>緑の四角で縁取られた</tiles>アイテムは自動的に拾い上げられます。
+#   
+#   <tiles>アイテムを<input>右クリック</input>すればいつでも</tiles><console>所有物一覧(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)に載ったアイテムはいつでも</console>アイテムの特性とその解説を読むことができます。 <console>
+#   <input>$cmd[CMD_DROP]</input>を押して</console><tiles><input>Shift+左クリック</input>で</tiles>一度所有物に含めたアイテムを再び床に置くことができます。<tiles>
+#   アイテムを<input>右クリック</input>すればいつでも</tiles><console>所有物一覧(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)に載ったアイテムはいつでも</console>アイテムの特性とその解説を読むことができます。
+
+That <console>$1 </console>is an item. If you move there and press
+<input>$cmd[CMD_PICKUP]</input><localtiles>, or <input>left-click</input> on it
+in your inventory</localtiles>, you will pick it up.<console> Generally, items
+are shown by non-letter symbols like <w>%?!"=()[</w>.</console> Some
+objects<tiles>, marked with a green frame,</tiles> will be picked up
+automatically.
+
+Once it is in your inventory, you can drop it again with <localtiles>a
+<input>Shift-left-click</input>. Whenever you <input>right-click</input> on an
+item</localtiles><console><input>$cmd[CMD_DROP]</input>. Any time you look at an
+item in your inventory (<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)</console>,
+you can read about its properties and its description.
+%%%%

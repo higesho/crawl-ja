@@ -1,0 +1,1211 @@
+%%%%
+[ability]No ability
+
+特殊能力なし
+%%%%
+[ability]Spit Poison
+
+毒の唾液
+%%%%
+[ability]Blink
+
+瞬間移動
+%%%%
+[ability]Breathe Fire
+
+火炎のブレス
+%%%%
+[ability]Breathe Frost
+
+凍気のブレス
+%%%%
+[ability]Breathe Poison Gas
+
+毒ガスのブレス
+%%%%
+[ability]Breathe Noxious Fumes
+
+悪臭雲のブレス
+%%%%
+[ability]Breathe Lightning
+
+稲妻のブレス
+%%%%
+[ability]Breathe Dispelling Energy
+
+解呪のブレス
+%%%%
+[ability]Breathe Sticky Flame
+
+焼夷のブレス
+%%%%
+[ability]Breathe Steam
+
+蒸気のブレス
+%%%%
+[ability]Bat Form
+
+蝙蝠に変身
+%%%%
+[ability]Spit Acid
+
+酸の唾液
+%%%%
+[ability]Fly
+
+飛行
+%%%%
+[ability]Stop Flying
+
+飛行の停止
+%%%%
+[ability]Hurl Damnation
+
+地獄の鉄槌
+%%%%
+[ability]Release Delayed Fireball
+
+遅延式ファイアボール
+%%%%
+[ability]Stop Singing
+
+歌うのをやめる
+%%%%
+[ability]Dig
+
+掘削
+%%%%
+[ability]Shaft Self
+
+縦穴掘り
+%%%%
+[ability]Evoke Blink
+
+瞬間移動の喚起
+%%%%
+[ability]Device Recharging
+
+魔道具の充填
+%%%%
+[ability]Evoke Berserk Rage
+
+バーサークの喚起
+%%%%
+[ability]Evoke Invisibility
+
+透明化の喚起
+%%%%
+[ability]Turn Visible
+
+可視の存在に戻る
+%%%%
+[ability]Evoke Flight
+
+飛行の喚起
+%%%%
+[ability]Evoke Fog
+
+煙幕の喚起
+%%%%
+[ability]End Transformation
+
+変身の停止
+%%%%
+# Zin
+[ability]Recite
+
+説法の朗読
+%%%%
+[ability]Vitalisation
+
+生命の活性化
+%%%%
+[ability]Imprison
+
+収監
+%%%%
+[ability]Sanctuary
+
+聖域
+%%%%
+[ability]Cure All Mutations
+
+全ての突然変異の治療
+%%%%
+[ability]Donate Gold
+
+喜捨
+%%%%
+# TSO
+[ability]Divine Shield
+
+神気の盾
+%%%%
+[ability]Cleansing Flame
+
+浄化の炎
+%%%%
+[ability]Summon Divine Warrior
+
+聖なる戦士の召喚
+%%%%
+[ability]Brand Weapon With Holy Wrath
+
+祝福された武器を授かる
+%%%%
+# Kiku
+[ability]Receive Corpses
+
+死体の受理
+%%%%
+[ability]Torment
+
+苦痛の紋章
+%%%%
+[ability]Receive Necronomicon
+
+ネクロノミコンを授かる
+%%%%
+[ability]Brand Weapon With Pain
+
+苦痛の武器を授かる
+%%%%
+# Yred
+[ability]Injury Mirror
+
+損傷の反射
+%%%%
+[ability]Animate Remains
+
+死骸の蘇生
+%%%%
+[ability]Recall Undead Slaves
+
+アンデッドの招集
+%%%%
+[ability]Animate Dead
+
+死骸の群れの蘇生
+%%%%
+[ability]Drain Life
+
+生命力の吸収
+%%%%
+[ability]Enslave Soul
+
+魂の隷属
+%%%%
+# Oka
+[ability]Heroism
+
+英雄化
+%%%%
+[ability]Finesse
+
+早業の技巧
+%%%%
+[ability]Minor Destruction
+
+小さき破壊
+%%%%
+[ability]Lesser Servant of Makhleb
+
+マクレブの小さきしもべ
+%%%%
+[ability]Major Destruction
+
+大いなる破壊
+%%%%
+[ability]Greater Servant of Makhleb
+
+マクレブの大いなるしもべ
+%%%%
+# Sif
+[ability]Divine Energy
+
+神気の供給
+%%%%
+[ability]Stop Divine Energy
+
+神気の供給の停止
+%%%%
+[ability]Forget Spell
+
+呪文の忘却
+%%%%
+[ability]Channel Magic
+
+魔力回復強化
+%%%%
+# Trog
+[ability]Burn Spellbooks
+
+魔法書の焼却
+%%%%
+[ability]Berserk
+
+バーサーク
+%%%%
+[ability]Trog's Hand
+
+トログの御手
+%%%%
+[ability]Brothers in Arms
+
+戦友の召喚
+%%%%
+# Ely
+[ability]Divine Protection
+
+崖っ縁の防護
+%%%%
+[ability]Lesser Healing
+
+小さき癒し
+%%%%
+[ability]Heal Other
+
+他者への癒し
+%%%%
+[ability]Purification
+
+聖杯の清め
+%%%%
+[ability]Greater Healing
+
+大いなる癒し
+%%%%
+[ability]Divine Vigour
+
+神秘の活力
+%%%%
+# Lugonu
+[ability]Depart the Abyss
+
+アビスからの離脱
+%%%%
+[ability]Bend Space
+
+空間の歪曲
+%%%%
+[ability]Banish
+
+アビスへの追放
+%%%%
+[ability]Corrupt
+
+階層の崩壊
+%%%%
+[ability]Enter the Abyss
+
+アビスへの退避
+%%%%
+[ability]Brand Weapon With Distortion
+
+歪曲の武器を授かる
+%%%%
+# Nemelex
+[ability]Triple Draw
+
+トリプル・ドロー
+%%%%
+[ability]Deal Four
+
+ディール・フォー
+%%%%
+[ability]Stack Five
+
+スタック・ファイブ
+%%%%
+# Beogh
+[ability]Smiting
+
+打擲の一撃
+%%%%
+[ability]Recall Orcish Followers
+
+オークの下僕の招集
+%%%%
+[ability]Give Item to Named Follower
+
+名のある仲間への下賜
+%%%%
+[ability]Resurrection
+
+蘇生
+%%%%
+# Jiyva
+[ability]Request Jelly
+
+ジェリーの要請
+%%%%
+[ability]Slimify
+
+スライム化
+%%%%
+[ability]Cure Bad Mutation
+
+悪性変異の治療
+%%%%
+# Fedhas
+[ability]Fungal Bloom
+
+キノコの生育
+%%%%
+[ability]Evolution
+
+植物の改良
+%%%%
+[ability]Sunlight
+
+陽光
+%%%%
+[ability]Growth
+
+迷宮草の生育
+%%%%
+[ability]Reproduction
+
+胞子の繁殖
+%%%%
+[ability]Rain
+
+降雨
+%%%%
+# Chei
+[ability]Bend Time
+
+時間の歪曲
+%%%%
+[ability]Temporal Distortion
+
+現世の歪曲
+%%%%
+[ability]Slouch
+
+素早きものの屈服
+%%%%
+[ability]Step From Time
+
+時間からの離脱
+%%%%
+# Ashenzari
+[ability]Curse Item
+
+アイテムの呪縛
+%%%%
+[ability]Scrying
+
+幻視
+%%%%
+[ability]Transfer Knowledge
+
+知識の移行
+%%%%
+[ability]End Transfer Knowledge
+
+知識の移行の停止
+%%%%
+# Dithmenos
+[ability]Shadow Step
+
+影渡り
+%%%%
+[ability]Shadow Form
+
+影変化
+%%%%
+# Ru
+[ability]Draw Out Power
+
+力の解放
+%%%%
+[ability]Power Leap
+
+力強き跳躍
+%%%%
+[ability]Apocalypse
+
+黙示録
+%%%%
+[ability]Sacrifice Purity
+
+清浄の犠牲
+%%%%
+[ability]Sacrifice Words
+
+言語の犠牲
+%%%%
+[ability]Sacrifice Drink
+
+飲用の犠牲
+%%%%
+[ability]Sacrifice Essence
+
+魔力の犠牲
+%%%%
+[ability]Sacrifice Health
+
+健常の犠牲
+%%%%
+[ability]Sacrifice Stealth
+
+隠密の犠牲
+%%%%
+[ability]Sacrifice Artifice
+
+発動の犠牲
+%%%%
+[ability]Sacrifice Love
+
+親愛の犠牲
+%%%%
+[ability]Sacrifice Courage
+
+勇敢の犠牲
+%%%%
+[ability]Sacrifice Arcana
+
+秘術の犠牲
+%%%%
+[ability]Sacrifice Nimbleness
+
+敏捷の犠牲
+%%%%
+[ability]Sacrifice Durability
+
+頑強の犠牲
+%%%%
+[ability]Sacrifice a Hand
+
+片腕の犠牲
+%%%%
+[ability]Sacrifice Experience
+
+経験の犠牲
+%%%%
+[ability]Sacrifice Skill
+
+鍛錬の犠牲
+%%%%
+[ability]Sacrifice an Eye
+
+片目の犠牲
+%%%%
+[ability]Sacrifice Resistance
+
+耐性の犠牲
+%%%%
+[ability]Reject Sacrifices
+
+犠牲の拒否
+%%%%
+# Gozag
+[ability]Potion Petition
+
+水薬の陳情
+%%%%
+[ability]Call Merchant
+
+商人の誘致
+%%%%
+[ability]Bribe Branch
+
+分岐の買収
+%%%%
+# Qaz
+[ability]Upheaval
+
+自然の怒り
+%%%%
+[ability]Elemental Force
+
+精霊召喚
+%%%%
+[ability]Disaster Area
+
+天よりの災禍
+%%%%
+# Pakellas
+[ability]Device Surge
+
+# obsolete: Pakellas
+%%%%
+[ability]Quick Charge
+
+# obsolete: Pakellas
+%%%%
+[ability]Supercharge
+
+# obsolete: Pakellas
+%%%%
+# Uskayaw
+[ability]Stomp
+
+踏み鳴らし
+%%%%
+[ability]Line Pass
+
+横切り
+%%%%
+[ability]Grand Finale
+
+グランド・フィナーレ
+%%%%
+# Hep
+[ability]Recall Ancestor
+
+祖霊の招集
+%%%%
+[ability]Transference
+
+位置交換
+%%%%
+[ability]Idealise
+
+祖霊強化
+%%%%
+[ability]Ancestor Life: Knight
+
+祖霊を騎士へと昇格
+%%%%
+[ability]Ancestor Life: Battlemage
+
+祖霊を魔術師へと昇格
+%%%%
+[ability]Ancestor Life: Hexer
+
+祖霊を呪術師へと昇格
+%%%%
+[ability]Ancestor Identity
+
+祖霊への命名
+%%%%
+[ability]Stop Recall
+
+招集の停止
+%%%%
+[ability]Renounce Religion
+
+信仰の放棄
+%%%%
+[ability]Convert to Beogh
+
+ベオへの改宗
+%%%%
+no special abilities
+
+特になし
+%%%%
+, %d %sMP
+
+, %sMP%d
+%%%%
+Permanent
+
+最大
+%%%%
+, %d MP
+
+# obsolete: Pakellas
+%%%%
+, %d %sHP
+
+, %sHP%d
+%%%%
+, Hunger
+
+, 空腹
+%%%%
+, Piety
+
+, 信仰値
+%%%%
+, Breath
+
+, 息
+%%%%
+, Delay
+
+, 時間
+%%%%
+, Pain
+
+, 苦痛
+%%%%
+, Exhaustion
+
+, 疲労
+%%%%
+, Instant
+
+, 即時
+%%%%
+, Fruit
+
+, 果物
+%%%%
+, Fruit or Piety
+
+, 果物または信仰値
+%%%%
+, Skill drain
+
+, スキル衰弱
+%%%%
+, Scroll of remove curse
+
+, 解呪の巻物
+%%%%
+, %d Gold
+
+, %dゴールド
+%%%%
+, Free
+
+, 無料
+%%%%
+, Gold
+
+, 金貨
+%%%%
+None
+
+なし
+%%%%
+This ability costs:
+
+能力の使用に要するコスト:
+%%%%
+Max MP :
+
+最大MP :
+%%%%
+MP     :
+
+MP :
+%%%%
+Max HP :
+
+最大HP :
+%%%%
+HP     :
+
+HP :
+%%%%
+Hunger :
+
+満腹値 :
+%%%%
+Piety  : variable
+
+信仰値 : 場合による
+%%%%
+Piety  : extremely large
+
+信仰値 : 莫大
+%%%%
+Piety  : large
+
+信仰値 : 大
+%%%%
+Piety  : moderate
+
+信仰値 : 中
+%%%%
+Piety  : small
+
+信仰値 : 小
+%%%%
+Gold   :
+
+料金 :
+%%%%
+free
+
+無料
+%%%%
+variable
+
+時価
+%%%%
+One scroll of remove curse
+
+解呪の巻物 : 1巻
+%%%%
+nothing.
+
+なし
+%%%%
+You must catch your breath between uses of this ability.
+
+この能力を使うときには満足に呼吸ができる状態でないといけない。
+%%%%
+It takes some time before being effective.
+
+この能力は効力を発揮するまでにいくらか時間がかかる。
+%%%%
+Using this ability will hurt you.
+
+この能力を用いると苦痛をその身に受ける。
+%%%%
+It causes exhaustion, and cannot be used when exhausted.
+
+この能力を使うと疲労してしまい、疲労から回復するまで使うことができない。
+%%%%
+It is instantaneous.
+
+この能力は即座に効果を発揮する。
+%%%%
+You can use it even if confused.
+
+この能力は混乱している最中でも使用できる。
+%%%%
+It will temporarily drain your skills when used.
+
+この能力を使用すると一時的にスキルが消耗する。
+%%%%
+If you make this sacrifice, your powers granted by Ru will become stronger in proportion to the value of the sacrifice, and you may gain new powers as well.\n\nSacrifices cannot be taken back.
+
+この代償を捧げると、ルーの恩恵として得た力の威力はその価値に比例して上昇し、
+さらに新たな能力を得ることもある。
+
+一度代償を捧げると、あとで取り戻すことはできない。
+%%%%
+After this sacrifice, you will find that {sac list}.
+
+この代償を捧げたあと、%s
+%%%%
+After this sacrifice, you will find that {mut desc}.
+
+この代償を捧げたあと、あなたは%sを得る。
+%%%%
+No description found.
+
+解説文は見つからなかった。
+%%%%
+frowns upon the use of this ability.
+
+はこの呪文を使うことにいい顔をしない。
+%%%%
+You can't untransform!
+
+あなたは変身を解くことができない！
+%%%%
+Sorry, you're too full to transform right now.
+
+残念ながら、今すぐ変身するには腹が満ちすぎている。
+%%%%
+You're already flying!
+
+あなたはすでに空を飛んでいる！
+%%%%
+Sorry, you're not good enough to have a special ability.
+
+残念ながら、あなたはまだ特殊能力を獲得していない。
+%%%%
+Use which ability? (? or * to list)
+
+どの能力を使いますか？ (?もしくは *で一覧を表示)
+%%%%
+You can't do that.
+
+あなたはそのようなことはできない。
+%%%%
+You cannot call out to %s while silenced.
+
+静寂状態では%sに祈ることができない。
+%%%%
+You don't have enough innate magic capacity to sacrifice.
+
+消費するべき最大MPがあなたには十分に残されていない。
+%%%%
+Really use {ability name}?
+
+本当に%sの能力を使いますか？
+%%%%
+There's no appreciative audience!
+
+耳の肥えた聴衆が一人もいない！
+%%%%
+You are not zealous enough to affect this audience!
+
+あなたはこの聴衆に影響を及ぼすほどには信仰が篤くないようだ！
+%%%%
+You have no mutations to be cured!
+
+あなたの体には治療すべき突然変異はない！
+%%%%
+There's already a sanctuary in place on this level.
+
+この階層にはすでに別の聖域が存在している。
+%%%%
+You have nothing to donate!
+
+寄付する金がない！
+%%%%
+Nothing ails you!
+
+あなたはすでに正常だ！
+%%%%
+You aren't in the Abyss!
+
+あなたはアビスの中にいない！
+%%%%
+You're already here!
+
+あなたはすでに目的地にいる！
+%%%%
+You have nothing more to learn.
+
+あなたはこれ以上学ぶことはない。
+%%%%
+No corpses are in range.
+
+あたりには死体はない。
+%%%%
+It's too cloudy to do that here.
+
+ここはすでに煙幕で満たされている。
+%%%%
+The air is too still for clouds to form.
+
+大気の流れが静止しており、煙幕を形成することができない。
+%%%%
+You don't have enough experience to sacrifice.
+
+あなたは捧げるべき経験値を十分に持っていない。
+%%%%
+You have no magic power.
+
+# obsolete: Pakellas
+%%%%
+%s is still trapped in memory!
+
+祖霊『%s』はまだ記憶の中に囚われている！
+%%%%
+Stopping flight right now would be fatal!
+
+今ここで飛行を止めるのは致命的だ！
+%%%%
+Turning back right now would cause you to %s!
+
+今ここで変身を解除すると%sしてしまう！
+%%%%
+[activate_talent()]burn
+
+焼死
+%%%%
+[activate_talent()]drown
+
+溺死
+%%%%
+You fail to use your ability.
+
+あなたは特殊能力の発動に失敗した。
+%%%%
+You extend your mandibles.
+
+あなたは大顎を広げた。
+%%%%
+You are already prepared to dig.
+
+あなたはすでに掘る準備ができている。
+%%%%
+Are you sure you want to shaft yourself?
+
+本当に縦穴を掘りますか？
+%%%%
+Aiming: <white>Delayed Fireball</white>
+
+照準: <white>遅延式ファイアボール</white>
+%%%%
+[stop attack prompt]spit at
+
+に向かって吐き出し
+%%%%
+You spit a glob of burning liquid.
+
+あなたは燃えたぎる粘液を吐き出した。
+%%%%
+You breathe a blast of fire.
+
+あなたは強烈な火炎を吐きだした。
+%%%%
+You breathe a blast of fire!
+
+あなたは強烈な火炎を吐きだした！
+%%%%
+You exhale a wave of freezing cold.
+
+あなたは身も凍る冷気を吐き出した。
+%%%%
+You exhale a blast of poison gas.
+
+あなたは毒ガスを吐き出した。
+%%%%
+You breathe a wild blast of lightning!
+
+あなたは荒れ狂う稲妻の奔流を吐き出した！
+%%%%
+You spit a glob of acid.
+
+あなたは酸の塊を吐き出した。
+%%%%
+You breathe a bolt of dispelling energy.
+
+あなたは魔力を解除する矢を吐き出した。
+%%%%
+You exhale a blast of scalding steam.
+
+あなたは高熱の蒸気を吐きかけた。
+%%%%
+You exhale a blast of noxious fumes.
+
+あなたは悪臭のする雲を吹きかけた。
+%%%%
+You feel very comfortable in the air.
+
+あなたは軽快に宙を舞っている。
+%%%%
+You feel less transparent.
+
+あなたは透明ではなくなった。
+%%%%
+You feel more buoyant.
+
+あなたは更に体が軽くなった。
+%%%%
+With a swish of your cloak, you release a cloud of fog.
+
+あなたがクロークを翻すと、そこから煙幕が放出された。
+%%%%
+You stop singing.
+
+あなたは歌うのをやめた。
+%%%%
+You clear your throat and prepare to recite.
+
+あなたは咳払いし、説法の準備をした。
+%%%%
+You cannot imprison yourself!
+
+自分自身を収監することはできない！
+%%%%
+There is no monster there to imprison!
+
+そこには収監すべきモンスターがいない！
+%%%%
+You cannot imprison that!
+
+それを収監することはできない！
+%%%%
+You cannot imprison a law-abiding creature!
+
+あなたは法を守っているモンスターを収監することはできない！
+%%%%
+will bless one of your weapons.
+
+はあなたの武器をどれか一つ祝福してくれる。
+%%%%
+There are no corpses to sacrifice!
+
+ここには生贄に捧げる死体がない！
+%%%%
+torments the living!
+
+は生ける者に苦痛を与えた！
+%%%%
+will bloody one of your weapons with pain.
+
+はあなたの武器をどれか一つ血に染め苦痛の力によって強化してくれる。
+%%%%
+Another wave of unholy energy enters you.
+
+不浄なエネルギーがあなたの中に入った。
+%%%%
+You offer yourself to %s, and are filled with unholy energy.
+
+あなたは%sに自らを差し出し、邪悪な力で満たされた。
+%%%%
+There are no remains here to animate!
+
+ここには蘇らせる死体がない！
+%%%%
+You feel life flooding into your body.
+
+あなたは自分の体に生命力が流れ込んでくるのを感じた。
+%%%%
+Your soul already belongs to Yredelemnul.
+
+あなたの魂はすでにイレデレンヌルのものだ。
+%%%%
+You see nothing there you can enslave the soul of!
+
+そこには魂を隷属できるものがいない！
+%%%%
+'s soul is too badly injured.
+
+の魂はひどく傷ついている。
+%%%%
+You feel more confident with your borrowed prowess.
+
+あなたは借り物の武勇をより確かに感じた。
+%%%%
+You gain the combat prowess of a mighty hero.
+
+あなたは英雄のような戦闘の才覚を得た。
+%%%%
+[hands act]your hands get new energy.
+
+あなたは更なる力を手にした。
+%%%%
+You can now deal lightning-fast blows.
+
+あなたは神速のごとき一撃を振るうことができる。
+%%%%
+will now grant you divine energy when your reserves of magic are depleted.
+
+はあなたが魔力を使い果たしてしまったときに神気を分け与えてくれる。
+%%%%
+You will briefly lose access to your magic after casting a spell in this manner.
+
+この際、その後しばらくの間魔法を使うことができなくなる。
+%%%%
+stops granting you divine energy.
+
+はあなたに神気を分け与えるのをとりやめた。
+%%%%
+You renew your call for help.
+
+あなたは生命保護の延長を求めた。
+%%%%
+You beseech %s to protect your life.
+
+あなたは%sに自らの命を保護してほしいと懇願した。
+%%%%
+You are healed.
+
+あなたは回復した。
+%%%%
+You cannot banish yourself!
+
+自分自身を追放することはできない！
+%%%%
+will brand one of your weapons with the corruption of the Abyss.
+
+はあなたの武器をアビスの崩壊を司る力によってどれか一つ強化してくれる。
+%%%%
+You stop recalling your allies.
+
+あなたは仲間の招集を停止した。
+%%%%
+your
+
+あなたの
+%%%%
+A thick mucus forms on %s.
+
+%sの上に厚い粘液が形成された。
+%%%%
+You need a scroll of remove curse to do this.
+
+この能力を使うには解呪の巻物が必要だ。
+%%%%
+You extend your astral sight.
+
+あなたが壁を透視できる時間が延びた。
+%%%%
+You gain astral sight.
+
+あなたは壁の向こうを透かして見えるようになった。
+%%%%
+You're too exhausted to draw out your power.
+
+あなたは疲労しすぎており力を解放できない。
+%%%%
+You have no need to draw out power.
+
+あなたは力を解放する必要がない。
+%%%%
+You're too exhausted to power leap.
+
+あなたは疲労しすぎており跳躍できない。
+%%%%
+You're too exhausted to unleash your apocalyptic power.
+
+あなたは疲労しすぎており黙示録の力を解放できない。
+%%%%
+You feel a buildup of energy.
+
+# obsolete: Pakellas
+%%%%
+will supercharge a wand or rod.
+
+# obsolete: Pakellas
+%%%%
+Supercharge what?
+
+# obsolete: Pakellas
+%%%%
+You cannot supercharge that!
+
+# obsolete: Pakellas
+%%%%
+Do you wish to have {wand name} supercharged?
+
+# obsolete: Pakellas
+%%%%
+supercharged by Pakellas
+
+# obsolete: Pakellas
+%%%%
+Your %s glows brightly!
+
+# obsolete: Pakellas
+%%%%
+booms: Use this gift wisely!
+
+の声が轟いた：『我が与えしもの賢く使うべし！』
+# godabil.ccでも使うのでこちらに記載
+%%%%
+Really renounce your faith, foregoing its fabulous benefits?
+
+本当に信仰を放棄し、素晴らしい恩恵を手放しますか？
+%%%%
+Are you sure you won't change your mind later?
+
+後になって後悔しませんか？
+%%%%
+Sorry, you can't do that.
+
+残念ながら、あなたはそのようなことはできない。
+%%%%
+Ability - do what?
+
+能力 - どれを使用しますか？
+%%%%
+Cost
+
+コスト
+%%%%
+Failure
+
+失敗率
+%%%%
+Ability - describe what?
+
+能力 - どの説明を見ますか？
+%%%%
+Press '<w>!</w>' or '<w>?</w>' to toggle between ability selection and description.
+
+能力の選択画面と説明画面を切り替えるには'<w>!</w>' か '<w>?</w>' を押してください。
+%%%%
+Invocations -
+
+祈祷関連能力 -
+%%%%
+hostile
+
+で敵対
+%%%%

@@ -1,0 +1,7 @@
+%%%%
+#### dat/des/serial/column_ruins.des ##########################
+%%%%
+[feature]broken pillar
+
+崩壊した柱
+%%%%

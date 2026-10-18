@@ -1,0 +1,53 @@
+%%%%
+staff of wizardry
+
+魔術の杖
+%%%%
+staff of power
+
+魔力の杖
+%%%%
+staff of fire
+
+火炎の杖
+%%%%
+staff of cold
+
+冷気の杖
+%%%%
+staff of poison
+
+毒素の杖
+%%%%
+staff of energy
+
+活力の杖
+%%%%
+staff of death
+
+死霊の杖
+%%%%
+staff of conjuration
+
+妖術の杖
+%%%%
+# TAG_MAJOR_VERSION == 34
+staff of enchantment
+
+%%%%
+staff of air
+
+大気の杖
+%%%%
+staff of earth
+
+大地の杖
+%%%%
+staff of summoning
+
+召喚の杖
+%%%%
+staff of bugginess
+
+# 訳不要
+%%%%

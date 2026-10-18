@@ -1,0 +1,33 @@
+%%%%
+Kobold
+
+# old en (ja19):
+#   Kobolds are small, mischievous and a little fragile, but multi-talented.
+# old ja (ja19):
+#   コボルドは小型であり、いたずら好きで体が貧弱だが、多様な才能を持っている。
+# old en (ja16):
+#   Kobolds are small, mischievous and a little fragile, but multi-talented.
+# old ja (ja16):
+#   コボルドは小型であり、いたずら好きで体が貧弱だが、多様な才能を持っている。
+
+Kobolds are attuned to the shadows and can only see or be seen at a close range.
+They are small and a little fragile, and are talented in most skills.
+%%%%
+Vine Stalker
+
+# old en (ja19):
+#   Frail symbionts, Vine Stalkers cannot regain health from devices or potions.
+#   Their magical reserves absorb damage, and they pack a magic-restoring bite.
+# old ja (ja19):
+#   虚弱な共生生物である歩き蔓は道具や薬によって回復することができない。
+#   魔力によってダメージを軽減し、同時に魔力を吸い取る噛みつきを行う。
+# old en (ja16):
+#   Frail symbionts, Vine Stalkers cannot regain health from devices or potions.
+#   Their magical reserves absorb damage, and they pack a magic-restoring bite.
+# old ja (ja16):
+#   虚弱な共生生物である歩き蔓は道具や薬によって回復することができない。
+#   魔力によってダメージを軽減し、同時に魔力を吸い取る噛みつきを行う。
+
+Frail symbionts, Vine Stalkers cannot regain health from potions. Their magical
+reserves absorb damage, and they pack a magic-restoring bite.
+%%%%

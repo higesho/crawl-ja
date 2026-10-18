@@ -1,0 +1,81 @@
+%%%%
+iron rune of Zot
+
+鉄のルーン
+%%%%
+obsidian rune of Zot
+
+黒曜石のルーン
+%%%%
+icy rune of Zot
+
+氷のルーン
+%%%%
+bone rune of Zot
+
+骨のルーン
+%%%%
+slimy rune of Zot
+
+ぬめりのルーン
+%%%%
+silver rune of Zot
+
+銀のルーン
+%%%%
+serpentine rune of Zot
+
+蛇行のルーン
+%%%%
+elven rune of Zot
+
+エルフのルーン
+%%%%
+golden rune of Zot
+
+黄金のルーン
+%%%%
+decaying rune of Zot
+
+腐敗のルーン
+%%%%
+barnacled rune of Zot
+
+フジツボのルーン
+%%%%
+gossamer rune of Zot
+
+遊糸のルーン
+%%%%
+mossy rune of Zot
+
+苔のルーン
+%%%%
+demonic rune of Zot
+
+悪魔のルーン
+%%%%
+abyssal rune of Zot
+
+深淵のルーン
+%%%%
+glowing rune of Zot
+
+輝きのルーン
+%%%%
+magical rune of Zot
+
+魔法のルーン
+%%%%
+fiery rune of Zot
+
+火のルーン
+%%%%
+dark rune of Zot
+
+暗黒のルーン
+%%%%
+buggy rune of Zot
+
+# 訳不要
+%%%%

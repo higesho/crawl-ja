@@ -1,0 +1,129 @@
+%%%%
+Failed to spawn projectile.
+
+射出物の生成に失敗しました。
+%%%%
+beam (%d,%d)+t*(%d,%d)  ray (%f,%f)+t*(%f,%f)
+
+# for debug
+%%%%
+can't target %s; angle diff %f
+
+# for debug
+%%%%
+preferred target %s is valid burst target (delta %f)
+
+# for debug
+%%%%
+skipping invalid burst target %s (%s)
+
+# for debug
+%%%%
+%s not closer to target than closest (%d vs %d)
+
+# for debug
+%%%%
+%s is valid burst target (delta %f, dist %d)
+
+# for debug
+%%%%
+targeting %d
+
+# for debug
+%%%%
+Bursting %d orbs.
+
+# for debug
+%%%%
+dissipates.
+
+は四散した。
+%%%%
+iood: dissipating
+
+# for debug
+%%%%
+iood shield: pro %d, con %d
+
+# for debug
+%%%%
+[zap]orb of destruction
+
+破壊の爆裂球
+%%%%
+wavering %s
+
+揺らめく%s
+%%%%
+[verb]weakly hits
+
+をかすめた
+%%%%
+iood_act: pos=(%d,%d) rpos=(%f,%f) v=(%f,%f) foe=%d
+
+# for debug
+%%%%
+iood: veering left
+
+# for debug
+%%%%
+iood: veering right
+
+# for debug
+%%%%
+iood: keeping course
+
+# for debug
+%%%%
+%s hits %s
+
+%sは%sにぶつかった。
+%%%%
+The orb fizzles.
+
+球体はシューッという音を立てた。
+%%%%
+The orbs collide in a blinding explosion!
+
+球体は眩い爆発を放ちながら衝突した！
+%%%%
+You hear a loud magical explosion!
+
+あなたは魔法の爆発する轟音を耳にした！
+%%%%
+iood: Swapping with a submerged monster.
+
+# for debug
+%%%%
+iood: Boosting above a submerged monster (can't swap).
+
+# for debug
+%%%%
+You block %s.
+
+あなたは%sを防いだ。
+%%%%
+blocks %s.
+
+は%sを防いだ。
+%%%%
+Your %s reflects %s!
+
+あなたの持つ%sは%sをはね返した！
+%%%%
+%s reflects off an invisible shield around you!
+
+%sはあなたの周囲の目に見えない壁にはね返された！
+%%%%
+%s reflects %s with %s %s!
+
+%sは手にした%sで%sをはね返した！
+%%%%
+%s reflects off an invisible shield around %s!
+
+%sは%sの周囲の目に見えない壁にはね返された！
+%%%%
+%s bounces off thin air!
+
+%sは何もない空中ではね返った！
+%%%%

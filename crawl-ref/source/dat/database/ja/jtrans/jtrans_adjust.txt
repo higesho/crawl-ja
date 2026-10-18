@@ -1,0 +1,33 @@
+%%%%
+Adjust (i)tems, (s)pells, or (a)bilities?
+
+(i)アイテム (s)呪文 (a)能力 のどれをキー割り当て変更しますか？
+%%%%
+Adjust which item?
+
+どのアイテムをキー割り当て変更しますか？
+%%%%
+Adjust to which letter?
+
+どのキーに割り当てなおしますか？
+%%%%
+Adjust which spell?
+
+どの呪文をキー割り当て変更しますか？
+%%%%
+You don't know that spell.
+
+あなたはその呪文を知らない。
+%%%%
+You don't currently have any abilities.
+
+あなたは今のところ発動できる能力を持っていない。
+%%%%
+Adjust which ability?
+
+どの能力をキー割り当て変更しますか？
+%%%%
+No such ability.
+
+そのキーには能力が割り当てされていません。
+%%%%

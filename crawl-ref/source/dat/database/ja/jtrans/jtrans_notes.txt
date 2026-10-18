@@ -1,0 +1,165 @@
+%%%%
+Buggy note passed: unknown note type
+
+# 訳不要
+%%%%
+Xom revived you
+
+ゾムがあなたを蘇らせた
+%%%%
+Magic: %d/%d
+
+MP: %d/%d
+%%%%
+Reached %d max health
+
+最大HPが%dに達した
+%%%%
+Reached %d max magic points
+
+最大MPが%dに達した
+%%%%
+Reached XP level %s. %s
+
+レベル%sに到達した (%s)
+%%%%
+Entered %s
+
+%sに進んだ
+%%%%
+Learned a level %s spell: %s
+
+レベル%sの呪文｢%s｣を覚えた
+%%%%
+Became a worshipper of %s
+
+%sの信徒になった
+%%%%
+Fell from the grace of %s
+
+%sへの信仰を失った
+%%%%
+Was placed under penance by %s
+
+%sへの償いをしなければならなくなった
+%%%%
+Was forgiven by %s
+
+%sの赦しを得た
+%%%%
+Received a gift from %s
+
+%sからの授かり物を得た
+%%%%
+Identified %s
+
+%sを識別した
+%%%%
+Got %s
+
+%sを手にした
+%%%%
+Bought %s for %s gold piece
+
+%sを金貨%s枚で購入した
+%%%%
+Donated %s gold piece%s to Zin
+
+ジンに金貨%s枚を寄進した
+%%%%
+Reached skill level %s in %s
+
+%sスキルがレベル%sに到達した
+%%%%
+Reduced skill %s to level %s
+
+%sスキルがレベル%sに減少した
+%%%%
+Noticed %s
+
+%sに遭遇した
+%%%%
+%s (ally) was %s
+
+仲間の%sが%s
+%%%%
+%s changed into %s
+
+%sが%sに変化した
+%%%%
+Reached %s piety under %s
+
+%sへの信仰値が%s段階めに達した
+%%%%
+Gained mutation: %s
+
+突然変異が発現した: %s
+%%%%
+Lost mutation: %s
+
+突然変異を失った: %s
+%%%%
+Mutation became permanent: %s
+
+突然変異が定着した: %s
+%%%%
+Found %s
+
+%sを見つけた
+%%%%
+%s was a mimic.
+
+%sはミミックだった
+%%%%
+XOM:
+
+[ゾム]
+%%%%
+Paralysed by you for %s turns
+
+%sターン麻痺した
+%%%%
+Paralysed by %s for %s turns
+
+%sに%sターン麻痺させられた
+%%%%
+Gained %s as an ally
+
+%sが仲間になった
+%%%%
+Your ally %s died
+
+仲間の%sが死んだ
+%%%%
+Offered knowledge of %s by Vehumet.
+
+ヴェフメットが%sの呪文の知識を授ける提案をした
+%%%%
+Remembered your ancestor %s as %s
+
+%sの祖霊『%s』を呼び覚ました
+%%%%
+#if TAG_MAJOR_VERSION == 34
+Remembered your ancestor %s %s
+
+%%%%
+#if TAG_MAJOR_VERSION == 34
+Remembered your ancestor %s %s death
+
+%%%%
+Buggy note description: unknown note type
+
+# 訳不要
+%%%%
+entered %s.
+
+%sに突入した
+%%%%
+reached %s.
+
+%sに到達した
+%%%%
+Enter note:
+
+行動履歴に記入する:
+%%%%

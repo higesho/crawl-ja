@@ -1,0 +1,127 @@
+%%%%
+# actor.h
+the acid
+
+酸
+%%%%
+# actor.cc
+%s %s off the %s.
+
+%sは%sから%s。
+%%%%
+[verb]fall
+
+落下した
+%%%%
+door
+
+扉
+%%%%
+wall
+
+壁
+%%%%
+%s %s %s grip on %s.
+
+%sは%sを締めつけから%s。
+%%%%
+[verb]release
+
+解放した
+%%%%
+[verb]lose
+
+逃した
+%%%%
+, but do no damage.
+
+が、ダメージを与えられなかった。
+%%%%
+{attacker} {verb} {defender}{!}{dmg}
+
+%sは%sを%s%s%s
+%%%%
+You
+
+あなた
+%%%%
+[verb]constrict
+
+締めつけた
+%%%%
+for %d
+
+(%d dmg)
+%%%%
+{defender} {verb} constricted{!}{dmg}
+
+%s%s締めつけられている%s%s
+%%%%
+[verb]are
+
+は
+%%%%
+unaffected.
+
+影響を受けない。
+%%%%
+barely %s.
+
+はそれをかろうじて%s。
+%%%%
+[verb]resist
+
+耐えた
+%%%%
+%s to resist.
+
+はそれを%s耐えた。
+%%%%
+[verb]struggle
+
+やっとのことで
+%%%%
+%s with significant effort.
+
+はそれをなんとか%s。
+%%%%
+%s with some effort.
+
+はそれを%s。
+%%%%
+easily %s.
+
+はそれを楽々とやり過ごした。
+%%%%
+%s with almost no effort.
+
+はそれを気にも留めなかった。
+%%%%
+%s %s with %s!
+
+%sは%sに%s！
+%%%%
+[verb]collide
+
+衝突した
+%%%%
+%s %s into %s!
+
+%sは%sに%s！
+%%%%
+[verb]slam
+
+ぶつかった
+%%%%
+something
+
+何か
+%%%%
+%s violently %s moving!
+
+%sは乱暴に%s！
+%%%%
+[verb]stop
+
+停止した
+%%%%

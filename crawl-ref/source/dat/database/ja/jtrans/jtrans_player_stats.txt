@@ -1,0 +1,85 @@
+%%%%
+Your experience leads to a dramatic increase in your attributes!
+
+経験によってあなたの能力は劇的に増加した！
+%%%%
+Your experience leads to an increase in your attributes!
+
+経験によってあなたの能力は増加した！
+%%%%
+#ifdef TOUCH_UI
+Increase Attributes
+
+ステータスの増加
+%%%%
+#ifdef TOUCH_UI
+Increase:
+
+増加:
+%%%%
+Strength
+
+腕力
+%%%%
+Intelligence
+
+知力
+%%%%
+Dexterity
+
+器用さ
+%%%%
+Your base attributes are Str %d, Int %d, Dex %d.
+
+あなたの本来の能力値は 腕力: %d 知力: %d 器用: %dです。
+%%%%
+Increase (S)trength, (I)ntelligence, or (D)exterity?
+
+どの能力を伸ばしますか？ (S)腕力 (I)知力 (D)器用さ
+%%%%
+#ifdef TOUCH_UI
+Please choose an option below
+
+%%%%
+'s power touches on your attributes.
+
+の御業があなたの能力値を変更した。
+%%%%
+You feel weakened.
+
+あなたは弱くなったような気がした。
+%%%%
+You feel dopey.
+
+あなたは間抜けになったような気がした。
+%%%%
+# その他の"You feel ****."はjtrans_mutation.txtに記述
+%%%%
+Bad stat: %d
+
+# 訳不要
+%%%%
+invalid stat
+
+# for die()
+%%%%
+Stat loss points: %d
+
+# for debug
+%%%%
+Your divine stamina protects you from %s loss.
+
+あなたの活性化された生命力が%sの喪失をはねのけた。
+%%%%
+You feel your %s returning.
+
+あなたは%sが戻ってきたような気がした。
+%%%%
+You have lost your %s.
+
+あなたは%sを失った。
+%%%%
+Lost %s.
+
+%sを失った
+%%%%

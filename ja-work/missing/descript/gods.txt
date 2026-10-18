@@ -1,0 +1,89 @@
+%%%%
+Ignis
+
+Ignis the Dying Flame offers followers power over fire in many forms. All of
+Ignis' power is offered unconditionally to any who would deign to worship, but
+once used, it can never be replenished. Ignis' other worshippers deserted long
+ago; the divine fire burns low, and soon it will go out.
+%%%%
+Pakellas
+
+Pakellas the Inventive believes in the supremacy of devices, magical or
+otherwise, over spells and other forms of magic. Followers, although cut off
+from ambient magical power, are provided with magical energy to empower their
+devices so long as they use them to assert Pakellas' supremacy. Pakellas will
+grant devout worshippers access to increasingly powerful devices.
+%%%%
+Wu Jian
+
+The Wu Jian Council is a congregation of martial monks, ascended to divinity
+after battling their way out of the afterlife. Disciples of the Council are
+able to execute acrobatic martial maneuvers, such as wall jumps, spinning
+attacks and punishing lunges. They will eventually become able to request
+help in the form of a storm of heavenly clouds.
+%%%%
+Ignis powers
+
+Followers can armour themselves in flame, call a swarm of foxfires against their
+foes, or let Ignis' heat lift them to another level of the dungeon. However, the
+guttering flames of Ignis' power will only sustain a limited number of
+invocations before only flickering embers remain. No matter how depleted, Ignis
+will always grant followers resistance to fire.
+%%%%
+Pakellas powers
+
+Followers of Pakellas do not regenerate their magic power naturally, and are
+forbidden from using external means to do so; instead, they are granted
+magical energy on killing beings. They may use increasing amounts of magical
+energy to strengthen their devices, temporarily granting them additional
+power, and can also use their magical energy to recharge their devices.
+Sufficiently devout followers will receive new devices from Pakellas, and may
+eventually petition Pakellas to personally charge one of their devices beyond
+its normal limits.
+%%%%
+Wu Jian powers
+
+Disciples of the Council learn to perform three martial techniques while moving
+around in combat. They will also be taught to move at unfathomable speeds for
+short distances, and become able to summon a storm of golden clouds to increase
+their precision and damage for as long as they keep using martial attacks.
+%%%%
+Ignis wrath
+
+The wrath of Ignis is now weaker than that of most other gods. Apostates will
+find their resistance to fire stripped away completely, and will be periodically
+assaulted by fire elementals, find their enemies strengthened by fire, or even
+have the floor burned out from beneath them. Experienced and cautious
+adventurers will likely overmaster these assaults.
+%%%%
+Pakellas wrath
+
+Those that offend Pakellas will find themselves completely unable to make use
+of their devices for the duration of Pakellas' displeasure. Those who abandon
+Pakellas altogether will also continue to be unable to regenerate their magical
+power so long as Pakellas' attention remains on them.
+%%%%
+Wu Jian wrath
+
+Those who turn against the Council must be prepared to endure death by a
+thousand cuts. No hiding place is secure, no disguise perfect enough to avoid
+the sudden spring of traps, the flying daggers and the armies of animated
+weapons that will ambush the betrayer.
+%%%%
+Wu Jian extra
+
+:nowrap
+  .......       .......  (.) <lightred>Lunge</lightred>: Move directly towards an enemy to deal
+  ..<lightred>@</lightred>.O..  -->  ...<lightred>@</lightred>O..  extra damage.
+  .......       .......
+
+  .......       ...<lightred>@</lightred>...  (*) <lightred>Whirlwind</lightred>: Move between two tiles adjacent to
+  ...<lightred>@</lightred>O..  -->  ....O..  an enemy to strike them lightly. Multiple adjacent
+  .......       .......  foes can be attacked simultaneously this way.
+
+  ..#....       ..#....  (**) <lightred>Wall Jump</lightred>: Vault off a nearby wall and strike
+  ..#<lightred>@</lightred>O..  -->  ..#.O<lightred>@</lightred>.  enemies adjacent to the landing spot. Vaulting takes
+  ..#....       ..#....  two turns. Activated via the (a)bility menu.
+
+These prevent enemies from getting free attacks on you while you move away.
+%%%%

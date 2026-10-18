@@ -1,23 +1,30 @@
 %%%%
 amulet
 
+# en:
+#   An amulet to be worn as jewellery around the neck, charged with arcane powers
+#   of unknown provenance.
 首飾りとして身につけるお守りだ。何かしらの魔力が込められている。
-%%%%
-deck of cards
-
-悪魔の脳漿で描かれた強力な魔術を秘めたカードのデッキだ。
-これらは引いた際に幾多の有用な、もしくは有害な効果をもたらす。
 %%%%
 potion
 
+# en:
+#   An unlabelled flask containing a single dose of unknown liquid.
 一服の未知の液体の入ったラベルのない薬瓶だ。
 %%%%
 ring
 
+# en:
+#   A ring charged with arcane forces of unknown provenance, to be worn as jewellery
+#   on a finger.
 指輪として身につけるお守りだ。何かしらの魔力が込められている。
 %%%%
 scroll
 
+# en:
+#   A disposable arcane formula inscribed on parchment by a professional scribe or
+#   sorcerer. Anyone can evoke the power of the arcane formula by reading it out
+#   loud, but the nature of that power is not a priori apparent.
 羊皮紙に記された使い捨ての魔法の文章だ。専門の筆記者か、
 魔道士の手によって書かれたものだろう。これは大声で読み上げることで、
 誰でも魔法の文章の力を発動することができる。しかし、
@@ -25,9 +32,13 @@ scroll
 %%%%
 staff
 
+# en:
+#   A staff improved with arcane powers of unknown nature.
 何かしらの魔力が込められた杖だ。
 %%%%
 wand
 
+# en:
+#   An unusually magical sort of stick.
 これは杖だ。魔法の力を秘めているかもしれない。
 %%%%

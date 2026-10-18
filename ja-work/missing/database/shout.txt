@@ -1,0 +1,212 @@
+%%%%
+__BUGGY
+
+SOUND:You hear doubly buggy behaviour!
+%%%%
+__SKITTER unseen
+
+SOUND:You hear a skittering sound.
+%%%%
+__SKITTER seen
+
+SOUND:@The_monster_possessive@ many legs skitter.
+%%%%
+__FAINT_SKITTER unseen
+
+SOUND:You hear a faint skittering sound.
+%%%%
+__FAINT_SKITTER seen
+
+SOUND:@The_monster_possessive@ many legs skitter faintly.
+%%%%
+__RUSTLE unseen
+
+SOUND:You hear a loud rustle.
+%%%%
+__RUSTLE seen
+
+SOUND:@The_monster_possessive@ pages rustle loudly.
+%%%%
+__SQUEAK unseen
+
+SOUND:You hear a loud squeak.
+%%%%
+__SQUEAK seen
+
+SOUND:@The_monster@ squeaks loudly.
+%%%%
+__LAUGH seen
+
+SOUND:@The_monster@ laughs maniacally.
+%%%%
+__LAUGH unseen
+
+SOUND:You hear maniacal laughter.
+%%%%
+Fighter player ghost
+
+@player ghost@
+%%%%
+Hedge Wizard player ghost
+
+@player ghost@
+%%%%
+Gladiator player ghost
+
+@player ghost@
+%%%%
+Necromancer player ghost
+
+@player ghost@
+%%%%
+Brigand player ghost
+
+@player ghost@
+%%%%
+Berserker player ghost
+
+@player ghost@
+%%%%
+Hunter player ghost
+
+@player ghost@
+%%%%
+Conjurer player ghost
+
+@player ghost@
+%%%%
+Enchanter player ghost
+
+@player ghost@
+%%%%
+Fire Elementalist player ghost
+
+@player ghost@
+%%%%
+Ice Elementalist player ghost
+
+@player ghost@
+%%%%
+Summoner player ghost
+
+@player ghost@
+%%%%
+Air Elementalist player ghost
+
+@player ghost@
+%%%%
+Earth Elementalist player ghost
+
+@player ghost@
+%%%%
+Alchemist player ghost
+
+@player ghost@
+%%%%
+Chaos Knight player ghost
+
+@player ghost@
+%%%%
+Shapeshifter player ghost
+
+@player ghost@
+%%%%
+Monk player ghost
+
+@player ghost@
+%%%%
+Warper player ghost
+
+@player ghost@
+%%%%
+Wanderer player ghost
+
+@player ghost@
+%%%%
+'&'
+
+@__DEMON_TAUNT@
+%%%%
+iron imp
+
+@imp@
+%%%%
+shadow imp
+
+@imp@
+%%%%
+white imp
+
+@imp@
+%%%%
+Player sphinx riddle lines
+
+
+%%%%
+_riddle_adj_
+
+a baffling
+
+a brilliant
+
+w:20
+a clever
+
+a confusing
+
+w:20
+a cunning
+
+an impossible
+
+an ingenious
+
+a masterful
+
+a mind-bending
+
+a perplexing
+
+a vexing
+%%%%
+_riddle_fail_acknowledged_
+
+, but @subjective@ doesn't care.
+
+, but @subjective@ is unimpressed.
+
+, but @subjective@ scoffs.
+%%%%
+_riddle_fail_general_
+
+, but @subjective@ ignores you.
+
+, but @subjective@ doesn't understand.
+
+, but @subjective@ pretends not to notice.
+
+, but @subjective@ ignores you.
+
+w:40
+@_riddle_fail_acknowledged_@
+%%%%
+_riddle_prefix_
+
+You pose @_riddle_adj_@ riddle to @the_monster@
+
+You ask @the_monster@ @_riddle_adj_@ riddle
+
+You challenge @the_monster@ with @_riddle_adj_@ riddle
+%%%%
+Sphinx riddle success
+
+@_riddle_prefix_@.
+%%%%
+Sphinx riddle failure
+
+@_riddle_prefix_@@_riddle_fail_general_@
+%%%%
+Sphinx riddle failure acknowledged
+
+@_riddle_prefix_@@_riddle_fail_acknowledged_@
+%%%%

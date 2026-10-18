@@ -1,0 +1,1232 @@
+%%%%
+pick-up
+
+# old en (ja19):
+#                      <h>Picking up and dropping items</h>
+#   <h>Item letters</h>
+#   Pressing an item's letter key will select the item.
+#   Entering a number before the letter will only select that quantity.
+#   
+#   <h>Regular expressions</h>
+#   You can press <w>Ctrl-F</w> to enter a word (or a regular expression).
+#   All matching items will be selected.
+#   
+#   <h>Cursor</h>
+#   There are shortcuts to quickly select several items in succession:
+#   <w>.</w>   selects the next item and moves the cursor down
+#   <w>'</w>   moves the cursor down without changing selection
+#   The cursor is usually hidden; pressing <w>.</w> or <w>'</w> makes it appear.
+#   
+#   <h>Category shortcuts</h>
+#   You can quickly select items by type by pressing:
+#   <w>!</w>   potions      <w>(</w>   weapons        <w>)</w>   ammunition      <w>[</w>   armour
+#   <w>/</w>   wands        <w>\</w>   rods           <w>|</w>   magical staves  <w>?</w>   scrolls
+#   <w>"</w>   amulets      <w>=</w>   rings          <w>}</w>   miscellaneous   <w>:</w>   books
+#   <w>%</w>   food
+#   Global selects:  <w>,</w>   select all     <w>*</w>   invert all      <w>-</w>   deselect all
+#   Note that for dropping, the <w>,</w> command uses the <w>drop_filter</w> option, which
+#   narrows the range of items to be (de)selected. The default are useless items.
+# old ja (ja19):
+#                                <h>アイテムの拾得と放棄</h>
+#   
+#   <h>アイテムの文字</h>
+#   アイテムに割り当てられた文字のキーを押すことで対応するアイテムを選択できる。
+#   アイテムの文字の前に数字を入力することで数量を指定できる。
+#   
+#   <h>正規表現</h>
+#   <w>Ctrl-F</w>を押すことで単語(もしくは正規表現)を入力できる。
+#   それに一致するアイテムが選択(既に選択されていた場合は選択解除)される。
+#   
+#   <h>カーソル</h>
+#   連続で入力することで素早く複数のアイテムを選択するショートカットがある。
+#   <w>.</w>   アイテムを選択し、カーソルを下に移動する。
+#   <w>'</w>   選択を変更せず、カーソルを下に移動する。
+#   このカーソルは普段表示されない。<w>.</w> か <w>'</w>を押すことで表示される。
+#   (訳注: Webtileでは現在表示されない)
+#   
+#   <h>アイテム種別ごとの選択</h>
+#   以下の文字を入力することで特定の種別を一度に選択できる。
+#   <w>!</w>   薬           <w>(</w>   武器           <w>)</w>   飛び道具の弾    <w>[</w>   防具
+#   <w>/</w>   ワンド       <w>\</w>   ロッド         <w>|</w>   魔法の杖        <w>?</w>   巻物
+#   <w>"</w>   護符         <w>=</w>   指輪           <w>}</w>   その他の道具    <w>:</w>   魔法書
+#   <w>%</w>   食料
+#   全体選択:  <w>,</w> 全てを選択       <w>*</w> 全てを反転        <w>-</w> 全てを選択解除
+#   
+#   <w>,</w>コマンドは<w>drop_filter</w>オプションを参照するため、
+#   アイテムの選択/非選択の幅を狭めることに注意すること。
+#   デフォルトでは価値の無いアイテムが<w>drop_filter</w>に指定されている。
+# old en (ja16):
+#                      <h>Picking up and dropping items</h>
+#   <h>Item letters</h>
+#   Pressing an item's letter key will select the item.
+#   Entering a number before the letter will only select that quantity.
+#   
+#   <h>Regular expressions</h>
+#   You can press <w>Ctrl-F</w> to enter a word (or a regular expression).
+#   All matching items will be selected.
+#   
+#   <h>Cursor</h>
+#   There are shortcuts to quickly select several items in succession:
+#   <w>.</w>   selects the next item and moves the cursor down
+#   <w>'</w>   moves the cursor down without changing selection
+#   The cursor is usually hidden; pressing <w>.</w> or <w>'</w> makes it appear.
+#   
+#   <h>Category shortcuts</h>
+#   You can quickly select items by type by pressing:
+#   <w>!</w>   potions      <w>(</w>   weapons        <w>)</w>   ammunition      <w>[</w>   armour
+#   <w>/</w>   wands        <w>\</w>   rods           <w>|</w>   magical staves  <w>?</w>   scrolls
+#   <w>"</w>   amulets      <w>=</w>   rings          <w>}</w>   miscellaneous   <w>:</w> or <w>+</w>   books
+#   <w>%</w>   food
+#   Global selects:  <w>,</w>   select all     <w>*</w>   invert all      <w>-</w>   deselect all
+#   Note that for dropping, the <w>,</w> command uses the <w>drop_filter</w> option, which
+#   narrows the range of items to be (de)selected. The default are useless items.
+# old ja (ja16):
+#                                <h>アイテムの拾得と放棄</h>
+#   
+#   <h>アイテムの文字</h>
+#   アイテムに割り当てられた文字のキーを押すことで対応するアイテムを選択できる。
+#   アイテムの文字の前に数字を入力することで数量を指定できる。
+#   
+#   <h>正規表現</h>
+#   <w>Ctrl-F</w>を押すことで単語(もしくは正規表現)を入力できる。
+#   それに一致するアイテムが選択(既に選択されていた場合は選択解除)される。
+#   
+#   <h>カーソル</h>
+#   連続で入力することで素早く複数のアイテムを選択するショートカットがある。
+#   <w>.</w>   アイテムを選択し、カーソルを下に移動する。
+#   <w>'</w>   選択を変更せず、カーソルを下に移動する。
+#   このカーソルは普段表示されない。<w>.</w> か <w>'</w>を押すことで表示される。
+#   (訳注: Webtileでは現在表示されない)
+#   
+#   <h>アイテム種別ごとの選択</h>
+#   以下の文字を入力することで特定の種別を一度に選択できる。
+#   <w>!</w>   薬           <w>(</w>   武器           <w>)</w>   飛び道具の弾    <w>[</w>   防具
+#   <w>/</w>   ワンド       <w>\</w>   ロッド         <w>|</w>   魔法の杖        <w>?</w>   巻物
+#   <w>"</w>   護符         <w>=</w>   指輪           <w>}</w>   その他の道具    <w>:</w> または <w>+</w>   魔法書
+#   <w>%</w>   食料
+#   全体選択:  <w>,</w> 全てを選択       <w>*</w> 全てを反転        <w>-</w> 全てを選択解除
+#   
+#   <w>,</w>コマンドは<w>drop_filter</w>オプションを参照するため、
+#   アイテムの選択/非選択の幅を狭めることに注意すること。
+#   デフォルトでは価値の無いアイテムが<w>drop_filter</w>に指定されている。
+
+                   <h>Picking up and dropping items</h>
+
+<h>Navigation and selecting items</h>
+Use the usual navigation keys (<w>arrow</w> keys, <w>pgdn</w>/<w>pgup</w>, <w>home</w>, <w>end</w>) to select
+items, and <w>Space</w>/<w>.</w> to toggle whether the selected item will be picked up or
+dropped. Pressing an item's letter key will also toggle its pickup/drop state.
+Gear, potions, scrolls, and evocable items are on separate pages which can be
+switched between by <w>left arrow</w> and <w>right arrow</w> or <w>Tab</w> and <w>Shift-Tab</w>.
+Press <w>Return</w> to accept the current set of items.
+
+Entering a number before selecting by letter will toggle just that quantity of
+a stack of items.
+
+<h>Regular expressions</h>
+You can press <w>Ctrl-F</w> to enter a word (or a regular expression). All matching
+items will be selected.
+
+<h>Category shortcuts</h>
+You can quickly select items by type by pressing:
+<w>!</w>   potions      <w>(</w>   weapons        <w>)</w>   ammunition      <w>[</w>   armour
+<w>/</w>   wands        <w>|</w>   magical staves <w>?</w>   scrolls         <w>:</w>   books
+<w>"</w>   amulets      <w>=</w>   rings          <w>}</w>   miscellaneous
+Global selects:  <w>,</w>   select all     <w>*</w>   invert all      <w>-</w>   deselect all
+                 <w>;</w>   select last unequipped
+Note that for dropping, the <w>,</w> command uses the <w>drop_filter</w> option, which
+narrows the range of items to be (de)selected. The default is all useless items.
+%%%%
+known-menu
+
+# old en (ja19):
+#                      <h>Known items menu</h>
+#   <h>Item letters</h>
+#   Pressing an item type's letter key selects that item.
+#   
+#   <h>Selecting item types</h>
+#   Items types displayed in grey use the default autopickup options set in your
+#   configuration file. Selecting a type of item overrides those options
+#   (indicated by <w>white</w> text), and toggles the item between the states:
+#    <w>+</w>  Items of this type will be picked up automatically.
+#    <w>-</w>  Items of this type will will not be picked up automatically.
+#   Autopickup can also be toggled for all unknown items of a given category.
+#   
+#   <h>Category shortcuts</h>
+#   You can quickly select all item types in a given category by pressing:
+#   <w>!</w>   potions      <w>?</w>   scrolls      <w>(</w>   ammunition        <w>"</w>   amulets
+#   <w>=</w>   rings        <w>/</w>   wands        <w>|</w>   magical staves
+#   Global selects:  <w>*</w>   invert all   <w>^</w>   reset all to default
+#   
+#   <h>Viewing unknown and known items</h>
+#   <w>\</w> and <w>-</w> toggle between the known and unknown items menus. Note
+#   that none of the above features are available from the unknown items menu.
+#   
+#   <h>Restoring autopickup defaults</h>
+#   Pressing <w>Ctrl-D</w> followed by an item letter or a category shortcut
+#   cancels the override and restores the selected item or items to their default
+#   settings.
+#   
+#   <h>Regular expressions</h>
+#   You can press <w>Ctrl-F</w> to enter a word (or a regular expression).
+#   All matching items will be selected.
+#   
+#   <h>Cursor</h>
+#   There are shortcuts to quickly select several items in succession:
+#   <w>.</w>   selects the next item and moves the cursor down
+#   <w>'</w>   moves the cursor down without changing selection
+#   The cursor is usually hidden; pressing <w>.</w> or <w>'</w> makes it appear.
+# old ja (ja19):
+#                                  <h>既知のアイテム一覧</h>
+#   
+#   <h>アイテムの文字</h>
+#   アイテム種別ごとに割り当てられた文字のキーを押すことでそのアイテムを選択できる。
+#   
+#   <h>アイテム種別の選択</h>
+#   薄い灰色の文字で表示されているアイテム種別は、あなたの設定ファイルに記載された
+#   自動拾いデフォルト設定が使われている。
+#   アイテム種別を選択するとその設定が上書きされ、(<w>白の文字</w>で表示される)
+#   アイテム種別の自動拾いの設定が切り替わる:
+#    <w>+</w>  この種別のアイテムは自動的に拾われる
+#    <w>-</w>  この種別のアイテムは自動的に拾われることはない
+#   自動拾い設定は未鑑定のアイテムについても拾う/拾わないを設定できる。
+#   
+#   <h>アイテム種別カテゴリごとの選択</h>
+#   以下の文字を入力することで特定の種別をまとめて選択できる。
+#   <w>!</w>   薬           <w>?</w>   巻物         <w>(</w>   矢弾・石弾等      <w>"</w>   護符
+#   <w>=</w>   指輪         <w>/</w>   ワンド       <w>|</w>   魔法の杖
+#   全体指定:  <w>*</w> 全部の選択を反転させる     <w>^</w> 全部を初期設定に戻す
+#   
+#   <h>鑑定済み/未鑑定のアイテム一覧画面</h>
+#   <w>\</w> または <w>-</w> を押すことで認識しているアイテム一覧と未鑑定のアイテム一覧を
+#   切り替えできる。
+#   未鑑定のアイテム一覧画面においては上記の操作は使用不可であることに注意すること。
+#   
+#   <h>デフォルトの自動拾い設定の復元</h>
+#   <w>Ctrl-D</w> に続いてアイテムもしくはアイテム種別カテゴリに応じたキーを押すことで、
+#   上書きされた自動拾い設定を取り消して初期の設定を復元することができる。
+#   
+#   <h>正規表現</h>
+#   <w>Ctrl-F</w> を押して単語(もしくは正規表現のパターン)を入力することで、一致する全ての
+#   アイテムを一度に選択切り替えできる。
+#   
+#   <h>カーソル</h>
+#   連続で入力することで素早く複数のアイテムを選択するショートカットがある。
+#   <w>.</w>   アイテムを選択し、カーソルを下に移動する。
+#   <w>'</w>   選択を変更せず、カーソルを下に移動する。
+#   このカーソルは普段表示されない。<w>.</w> か <w>'</w>を押すことで表示される。
+#   (訳注: Webtileでは現在表示されない)
+# old en (ja16):
+#                      <h>Known items menu</h>
+#   <h>Item letters</h>
+#   Pressing an item type's letter key selects that item.
+#   
+#   <h>Selecting item types</h>
+#   Items types displayed in grey use the default autopickup options set in your
+#   configuration file. Selecting a type of item overrides those options
+#   (indicated by <w>white</w> text), and toggles the item between the states:
+#    <w>+</w>  Items of this type will be picked up automatically.
+#    <w>-</w>  Items of this type will will not be picked up automatically.
+#   Autopickup can also be toggled for all unknown items of a given category.
+#   
+#   <h>Category shortcuts</h>
+#   You can quickly select all item types in a given category by pressing:
+#   <w>!</w>   potions      <w>?</w>   scrolls      <w>(</w>   ammunition        <w>"</w>   amulets
+#   <w>=</w>   rings        <w>/</w>   wands        <w>|</w>   magical staves
+#   Global selects:  <w>*</w>   invert all   <w>^</w>   reset all to default
+#   
+#   <h>Viewing unknown and known items</h>
+#   <w>\</w> and <w>-</w> toggle between the known and unknown items menus. Note
+#   that none of the above features are available from the unknown items menu.
+#   
+#   <h>Restoring autopickup defaults</h>
+#   Pressing <w>Ctrl-D</w> followed by an item letter or a category shortcut
+#   cancels the override and restores the selected item or items to their default
+#   settings.
+#   
+#   <h>Regular expressions</h>
+#   You can press <w>Ctrl-F</w> to enter a word (or a regular expression).
+#   All matching items will be selected.
+#   
+#   <h>Cursor</h>
+#   There are shortcuts to quickly select several items in succession:
+#   <w>.</w>   selects the next item and moves the cursor down
+#   <w>'</w>   moves the cursor down without changing selection
+#   The cursor is usually hidden; pressing <w>.</w> or <w>'</w> makes it appear.
+# old ja (ja16):
+#                                  <h>既知のアイテム一覧</h>
+#   
+#   <h>アイテムの文字</h>
+#   アイテム種別ごとに割り当てられた文字のキーを押すことでそのアイテムを選択できる。
+#   
+#   <h>アイテム種別の選択</h>
+#   薄い灰色の文字で表示されているアイテム種別は、あなたの設定ファイルに記載された
+#   自動拾いデフォルト設定が使われている。
+#   アイテム種別を選択するとその設定が上書きされ、(<w>白の文字</w>で表示される)
+#   アイテム種別の自動拾いの設定が切り替わる:
+#    <w>+</w>  この種別のアイテムは自動的に拾われる
+#    <w>-</w>  この種別のアイテムは自動的に拾われることはない
+#   自動拾い設定は未鑑定のアイテムについても拾う/拾わないを設定できる。
+#   
+#   <h>アイテム種別カテゴリごとの選択</h>
+#   以下の文字を入力することで特定の種別をまとめて選択できる。
+#   <w>!</w>   薬           <w>?</w>   巻物         <w>(</w>   矢弾・石弾等      <w>"</w>   護符
+#   <w>=</w>   指輪         <w>/</w>   ワンド       <w>|</w>   魔法の杖
+#   全体指定:  <w>*</w> 全部の選択を反転させる     <w>^</w> 全部を初期設定に戻す
+#   
+#   <h>鑑定済み/未鑑定のアイテム一覧画面</h>
+#   <w>\</w> または <w>-</w> を押すことで認識しているアイテム一覧と未鑑定のアイテム一覧を
+#   切り替えできる。
+#   未鑑定のアイテム一覧画面においては上記の操作は使用不可であることに注意すること。
+#   
+#   <h>デフォルトの自動拾い設定の復元</h>
+#   <w>Ctrl-D</w> に続いてアイテムもしくはアイテム種別カテゴリに応じたキーを押すことで、
+#   上書きされた自動拾い設定を取り消して初期の設定を復元することができる。
+#   
+#   <h>正規表現</h>
+#   <w>Ctrl-F</w> を押して単語(もしくは正規表現のパターン)を入力することで、一致する全ての
+#   アイテムを一度に選択切り替えできる。
+#   
+#   <h>カーソル</h>
+#   連続で入力することで素早く複数のアイテムを選択するショートカットがある。
+#   <w>.</w>   アイテムを選択し、カーソルを下に移動する。
+#   <w>'</w>   選択を変更せず、カーソルを下に移動する。
+#   このカーソルは普段表示されない。<w>.</w> か <w>'</w>を押すことで表示される。
+#   (訳注: Webtileでは現在表示されない)
+
+                   <h>Known items menu</h>
+
+<h>Navigation and selecting items</h>
+Use the usual navigation keys (<w>arrow</w> keys, <w>pgdn</w>/<w>pgup</w>, <w>home</w>, <w>end</w>) to select
+items, and <w>Space</w>/<w>.</w> to toggle the autopickup mode for the selected item type.
+Pressing an item type's letter key will also toggle its autopickup state.
+
+<h>Selecting item types</h>
+Item types displayed in grey use the default autopickup options set in your
+configuration file. (Items that are useless to your character are displayed
+in <darkgrey>dark grey</darkgrey>.) Selecting a type of item overrides those options
+(indicated by <w>white</w> text), and toggles the item between the states:
+ <w>+</w>  Items of this type will be picked up automatically.
+ <w>-</w>  Items of this type will not be picked up automatically.
+Autopickup can also be toggled for all unknown items of a given category.
+
+<h>Category shortcuts</h>
+You can quickly select all item types in a given category by pressing:
+<w>!</w>   potions      <w>?</w>   scrolls      <w>(</w>   ammunition        <w>"</w>   amulets
+<w>=</w>   rings        <w>/</w>   wands        <w>|</w>   magical staves
+Global selects:  <w>*</w>   invert all   <w>^</w>   reset all to default
+
+<h>Viewing unknown and known items</h>
+<w>\</w> and <w>-</w> toggle between the known and unknown items menus. Note
+that none of the above features are available from the unknown items menu.
+
+<h>Restoring autopickup defaults</h>
+Pressing <w>Ctrl-D</w> followed by an item letter or a category shortcut
+cancels the override and restores the selected item or items to their default
+settings.
+
+<h>Regular expressions</h>
+You can press <w>Ctrl-F</w> to enter a word (or a regular expression).
+All matching items will be selected.
+%%%%
+stash-search.prompt
+
+# old en (ja19):
+#   <h>Searching the stash-tracker</h>
+#   
+#   You can search for items and dungeon features by name (or a substring of the
+#   name). In the list of search results, you can select a search result by its
+#   hotkey to travel to its location.
+#   
+#   Some examples of search strings:
+#   <w>cure mutation</w> find all potions of cure mutation, including potions in shops.
+#   <w>royal</w>         finds every single royal jelly and heaps of royal jellies.
+#   <w>shop</w>          lists all shops. Press <w>?</w> and a shop's letter for the stock.
+#   <w>Lair:2</w>        find everything known to be on Lair:2.
+#   <w>/D:[2-4]</w>      finds everything on Dungeon levels 2-4. Regexes are allowed!
+#                 Note that /D:[3-10] will not work as intended, since [x-y] is a
+#                 regex character range.
+#   <w>rPois</w>         finds all items with an rPois resistance.
+#   <w>rC++</w>          finds all items with an rC++ resistance.
+#   <w>+3</w>            finds all items with a +3 enchantment.
+#   <w>/Lair.*axe</w> and <w>axe && Lair</w> both show all axes in the Lair.
+#   
+#   Some shortcuts:
+#   <w>.</w>             lists everything on your current level.
+#   <w>..</w>            lists all items you know.
+#   <w>0</w> to <w>9</w>        lists all items at the specified waypoint.
+#   <w>*</w>             lists all items at all waypoints.
+#   <w>@<<query></w>      lists everything matching <<query> on your current level.
+#   <w>/<<regex></w>      lists items matching <<regex> as a regular expression.
+#   <w>=<<string></w>     lists items containing <<string> as a substring.
+#   
+#   You can also examine shops and items in the search results by pressing <w>?</w> and
+#   then selecting the hotkey for the search result. This will give a description
+#   of the item or the contents of the shop.
+#   
+#   The stash search string is case-insensitive.
+#   
+#   <h>Searching by item properties:</h>
+#   
+#   You can search for spell names (such as <w>Ignite Poison</w>) to find spellbooks
+#   that contain the spell.
+#   
+#   You can search for artefact item properties (such as <w>/prevents.*teleport</w>)
+#   to find artefacts that have the property.
+#   
+#   You can search by some additional item properties: <w>artefact</w> or <w>artifact</w> will
+#   find identified artefacts, <w>ego</w> or <w>branded</w> will find non-artefacts with a
+#   brand and unidentified items which may be branded, <w>throwable</w> will find things
+#   you can throw, <w>stick</w> will find items that can be used with Sticks to Snakes,
+#   <w>dropped</w> will find items you have dropped, <w>in_shop</w> will find items in
+#   shops, and (if the autopickup_search option is enabled) <w>autopickup</w> will find
+#   items that would be automatically picked up.
+#   
+#   Skill names (such as <w>Polearms</w> or <w>Long Blades</w>) will find all weapons that
+#   train that skill. You can also look for <w>melee weapon</w> and <w>ranged weapon</w>.
+#   
+#   You can also search by item types such as <w>book</w> or <w>manual</w> or <w>jewellery</w>.
+#   For armour slots, use <w>helmet</w> (all headgear), <w>gloves</w>, <w>shield</w>, and <w>body</w>.
+#   Use <w>armour && !!body</w> to list all armour pieces except for body armour.
+#   
+#   <h>Finding Dungeon Features:</h>
+#   
+#   You can search for dungeon features by name: all shops will be found by a
+#   search for <w>shop</w> (including shops that do not have "shop" in their name);
+#   other dungeon features can also be found by name: <w>fountain</w>, <w>spear trap</w>,
+#   <w>altar</w>, etc. You can also search for altars by deity name: <w>Zin</w>.
+#   
+#   <h>Non-regex operators:</h>
+#   
+#   You can use !! to negate a search string, && for a boolean AND, || for
+#   boolean OR, and <<<< >> for grouping.
+#   
+#   For instance, to find rings (jewellery) but not ring mail you could use:
+#   <w>ring && !!mail</w>
+#   
+#   Note that <w>/</w> and <w>=</w> apply to individual patterns, not the entire query:
+#   you should search for <w>armour && /r(C|F|Pois|Elec)</w>, not
+#   <w>/armour && r(C|F|Pois|Elec)</w>.
+# old ja (ja19):
+#   <h>アイテムもしくは施設等の検索</h>
+#   
+#   名称(もしくは名称の一部)を指定してアイテムやダンジョンの地形・施設等を検索できる。
+#   検索結果一覧では、画面で対応づけられたキーを入力することでその場所に移動することができる。
+#   
+#   検索例:
+#   <w>突然変異治療</w>  店に並んでいるものも含め、全ての｢突然変異治療の薬｣を検索する
+#   <w>ロイヤル</w>      1個のロイヤルゼリー、もしくは複数個のロイヤルゼリーを検索する
+#   <w>店</w>            全ての店を一覧表示する。<w>?</w>→対応するキーで品揃えを見る
+#   <w>獣:2</w>          獣の棲み処の2階で発見した全てのアイテムを検索する
+#   <w>/迷宮:[2-4]</w>   迷宮の2-4階で発見した全てのアイテムを検索する(正規表現使用可)
+#                 /迷宮:[3-10]といった指定は意図した通りに動作しないことに注意
+#                 [x-y]という表記は正規表現の文字範囲指定表記に従う
+#   <w>rPois</w>         毒への耐性を持つ全てのアイテムを検索する
+#   <w>rC++</w>          冷気への二重耐性をもつ全てのアイテムを検索する
+#   <w>+3</w>            +3以上の強化値を持つ全てのアイテムを検索する
+#   <w>/獣.*axe</w> もしくは
+#   <w>axe && 獣</w>     の条件はどちらも獣の棲み処に存在する斧類を表示する
+#   
+#   簡易条件指定例:
+#   <w>.</w>             現在いる階層で発見した全てのアイテムを一覧表示する
+#   <w>..</w>            発見済みの全てのアイテムを一覧表示する
+#   <w>0</w>～<w>9</w>          指定された番号の中継地点に置いてある全てのアイテムを一覧表示する
+#   <w>*</w>             中継地点に置いてるアイテムを全て一覧表示する
+#   <w>@<<query></w>      現在いる階層で発見した、指定した条件に合う全てのアイテムを一覧表示する
+#   <w>/<<regex></w>      <<regex>で指定した正規表現に合うアイテムを一覧表示する
+#   <w>=<<string></w>     <<string>で指定した文字列を含むアイテムを一覧表示する
+#   
+#   検索結果一覧で<w>?</w>を押した後、対応するキーを押すことでアイテムの解説や
+#   店の品揃え情報を得ることができる。
+#   
+#   アイテム検索に関しては、(英語アルファベットの)大文字小文字は区別されない。
+#   
+#   <h>アイテム内容での検索:</h>
+#   
+#   呪文名(例: <w>毒の燃焼</w>)を指定することで、それが記載されている魔法書を探すことができる。
+#   
+#   アーティファクトのアイテム特性(例: <w>/テレポート.*阻害</w>)を指定することで、
+#   その特性を持つアーティファクトを検索することができる。
+#   
+#   他にもいくつかアイテム特性を検索する方法がある。
+#   <w>artefact</w>もしくは<w>artifact</w>で鑑定済みのアーティファクトが検索できる。
+#   <w>ego</w>もしくは<w>branded</w>でアーティファクトでない魔力を帯びたアイテム、
+#   もしくは魔力を帯びたアイテムと予測される未鑑定のアイテムが検索できる。
+#   <w>stick</w>で｢棒切れの蛇｣の呪文で利用可能なアイテムを検索できる。
+#   (訳注: DCSS0.19では、英語版においてもstick指定検索は動作しません)
+#   <w>dropped</w>であなたが床に置いたアイテムを検索できる。
+#   <w>in_shop</w>で店に並んでいるアイテムを検索できる。
+#   <w>autopickup</w>で(autopickup_searchオプションがオンの場合)自動拾いされるアイテムを検索できる。
+#   
+#   スキル名(例: <w>Polearms</w>もしくは<w>Long Blades</w>)を指定することで
+#   そのスキルを鍛えることができる武器を検索できる。
+#   <w>melee weapon</w>や<w>ranged weapon</w>で直接攻撃武器/遠隔攻撃武器を検索することもできる。
+#   
+#   アイテム種別指定として、<w>book</w>、<w>manual</w>、<w>jewellery</w>といった条件が指定できる。
+#   防具スロット指定では、<w>helmet</w>(頭用の全ての防具)/<w>gloves</w>/<w>shield</w>/<w>body</w>を用いる。
+#   鎧/服を除く全ての防具を検索するには、<w>armour && !!body</w>と指定する。
+#   
+#   <h>ダンジョンの施設・地形等の検索:</h>
+#   
+#   名前を指定してダンジョンの施設・地形等を検索できる。
+#   <w>店</w>と指定することで全ての店(店名に"店"を含まない場合であっても)を検索できる。
+#   その他の施設については、<w>噴水</w>、<w>槍の罠</w>、<w>祭壇</w>等と名称を指定することで検索できる。
+#   <w>ジン</w>等と神の名前を指定することで、その神の祭壇を検索することもできる。
+#   (訳注: DCSS0.19では、英語版においても噴水や罠は検索することはできません。祭壇はできます)
+#   
+#   <h>正規表現ではない検索オプション:</h>
+#   
+#   !!で検索条件の反転、&&でAND検索、||でOR検索、<<<< >>で囲むことによりグルーピングができる。
+#   
+#   例えば、スリングを検索したいがスリングの弾は検索したくない場合、以下のように検索するとよい。
+#   <w>スリング && !!missile</w>
+#   
+#   <w>/</w>と<w>=</w>はパターンごとに適用され、全体に適用されるわけではない。つまり、
+#   <w>armour && /r(C|F|Pois|Elec)</w> と検索すべきで、
+#   <w>/armour && r(C|F|Pois|Elec)</w> と検索すべきではない。
+# old en (ja16):
+#   <h>Searching the stash-tracker</h>
+#   
+#   You can search for items and dungeon features by name (or a substring of the
+#   name). In the list of search results, you can select a search result by its
+#   hotkey to travel to its location.
+#   
+#   Some examples of search strings:
+#   <w>cure mutation</w> find all potions of cure mutation, including potions in shops.
+#   <w>royal</w>         finds every single royal jelly and heaps of royal jellies.
+#   <w>shop</w>          lists all shops. Press <w>?</w> and a shop's letter for the stock.
+#   <w>Lair:2</w>        find everything known to be on Lair:2.
+#   <w>D:[2-4]</w>       finds everything on Dungeon levels 2-4. Regexes are allowed!
+#                 Note that D:[3-10] will not work as intended, since [x-y] is a
+#                 regex character range.
+#   <w>rPois</w>         finds all items with an rPois resistance.
+#   <w>rC\+\+</w>        finds all items with an rC++ resistance.
+#   <w>\+3</w>           finds all items with a +3 enchantment. Note with these that
+#                 the + symbol had to be escaped as \+ due to regex syntax.
+#   <w>Lair.*axe</w> and <w>axe && Lair</w> both show all axes in the Lair.
+#   
+#   Some shortcuts:
+#   <w>.</w>             lists everything on your current level.
+#   <w>..</w>            lists all items you know.
+#   <w>0</w> to <w>9</w>        lists all items at the specified waypoint.
+#   <w>*</w>             lists all items at all waypoints.
+#   <w>@(pattern)</w>    lists everything matching (pattern) on your current level.
+#   
+#   You can also examine shops and items in the search results by pressing <w>?</w> and
+#   then selecting the hotkey for the search result. This will give a description
+#   of the item or the contents of the shop.
+#   
+#   The stash search string is case-insensitive.
+#   
+#   <h>Searching by item properties:</h>
+#   
+#   You can search for spell names (such as <w>Ignite Poison</w>) to find spellbooks
+#   that contain the spell.
+#   
+#   You can search for artefact item properties (such as <w>prevents.*teleport</w>)
+#   to find artefacts that have the property.
+#   
+#   You can search by some additional item properties: <w>artefact</w> or <w>artifact</w> will
+#   find identified artefacts, <w>ego</w> or <w>branded</w> will find non-artefacts with a
+#   brand and unidentified items which may be branded, <w>throwable</w> will find things
+#   you can throw, <w>stick</w> will find items that can be used with Sticks to Snakes,
+#   and <w>dropped</w> will find items you have dropped.
+#   
+#   Skill names (such as <w>Polearms</w> or <w>Long Blades</w>) will find all weapons that
+#   train that skill. You can also look for <w>melee weapon</w> and <w>ranged weapon</w>.
+#   
+#   You can also search by item types such as <w>book</w> or <w>manual</w> or <w>jewellery</w>.
+#   For armour slots, use <w>helmet</w> (all headgear), <w>gloves</w>, <w>shield</w>, and <w>body</w>.
+#   Use <w>armour && !!body</w> to list all armour pieces except for body armour.
+#   
+#   <h>Finding Dungeon Features:</h>
+#   
+#   You can search for dungeon features by name: all shops will be found by a
+#   search for <w>shop</w> (including shops that do not have "shop" in their name);
+#   other dungeon features can also be found by name: <w>fountain</w>, <w>spear trap</w>,
+#   <w>altar</w>, etc. You can also search for altars by deity name: <w>Zin</w>.
+#   
+#   <h>Non-regex operators:</h>
+#   
+#   You can use !! to negate a search string, && for a boolean AND, || for
+#   boolean OR, and <<<< >> for grouping.
+#   
+#   For instance, to find rings (jewellery) but not ring mail you could use:
+#   <w>ring && !!mail</w>
+# old ja (ja16):
+#   <h>アイテムもしくは施設等の検索</h>
+#   
+#   名称(もしくは名称の一部)を指定してアイテムやダンジョンの地形・施設等を検索できる。
+#   検索結果一覧では、画面で対応づけられたキーを入力することでその場所に移動することができる。
+#   
+#   検索例:
+#   <w>突然変異治療</w>  店に並んでいるものも含め、全ての｢突然変異治療の薬｣を検索する
+#   <w>ロイヤル</w>      1個のロイヤルゼリー、もしくは複数個のロイヤルゼリーを検索する
+#   <w>店</w>            全ての店を一覧表示する。<w>?</w>→対応するキーで品揃えを見る
+#   <w>獣:2</w>          獣の棲み処の2階で発見した全てのアイテムを検索する
+#   <w>迷宮:[2-4]</w>    迷宮の2-4階で発見した全てのアイテムを検索する(正規表現使用可)
+#                 迷宮:[3-10]といった指定は意図した通りに動作しないことに注意
+#                 [x-y]という表記は正規表現の文字範囲指定表記に従う
+#   <w>rPois</w>         毒への耐性を持つ全てのアイテムを検索する
+#   <w>rC\+\+</w>        冷気への二重耐性をもつ全てのアイテムを検索する
+#   <w>\+3</w>           +3以上の強化値を持つ全てのアイテムを検索する
+#                 + のシンボルは正規表現の文法上の意味を持つため
+#                 \+ とエスケープしておくことに注意
+#   <w>獣.*axe</w> もしくは
+#   <w>axe && 獣</w>     の条件はどちらも獣の棲み処に存在する斧類を表示する
+#   
+#   簡易条件指定例:
+#   <w>.</w>             現在いる階層で発見した全てのアイテムを一覧表示する
+#   <w>..</w>            発見済みの全てのアイテムを一覧表示する
+#   <w>0</w>～<w>9</w>          指定された番号の中継地点に置いてある全てのアイテムを一覧表示する
+#   <w>*</w>             中継地点に置いてるアイテムを全て一覧表示する
+#   <w>@(pattern)</w>    現在いる階層で発見した、指定した条件に合う全てのアイテムを一覧表示する
+#   
+#   検索結果一覧で<w>?</w>を押した後、対応するキーを押すことでアイテムの解説や
+#   店の品揃え情報を得ることができる。
+#   
+#   アイテム検索に関しては、(英語アルファベットの)大文字小文字は区別されない。
+#   
+#   <h>アイテム内容での検索:</h>
+#   
+#   呪文名(例: <w>毒の燃焼</w>)を指定することで、それが記載されている魔法書を探すことができる。
+#   
+#   アーティファクトのアイテム特性(例: <w>テレポート.*阻害</w>)を指定することで、
+#   その特性を持つアーティファクトを検索することができる。
+#   
+#   他にもいくつかアイテム特性を検索する方法がある。
+#   <w>artefact</w>もしくは<w>artifact</w>で鑑定済みのアーティファクトが検索できる。
+#   <w>ego</w>もしくは<w>branded</w>でアーティファクトでない魔力を帯びたアイテム、
+#   もしくは魔力を帯びたアイテムと予測される未鑑定のアイテムが検索できる。
+#   <w>stick</w>で｢棒切れの蛇｣の呪文で利用可能なアイテムを検索できる。
+#   <w>dropped</w>であなたが床に置いたアイテムを検索できる。
+#   
+#   スキル名(例: <w>Polearms</w>もしくは<w>Long Blades</w>)を指定することで
+#   そのスキルを鍛えることができる武器を検索できる。
+#   <w>melee weapon</w>や<w>ranged weapon</w>で直接攻撃武器/遠隔攻撃武器を検索することもできる。
+#   
+#   アイテム種別指定として、<w>book</w>、<w>manual</w>、<w>jewellery</w>といった条件が指定できる。
+#   防具スロット指定では、<w>helmet</w>(頭用の全ての防具)/<w>gloves</w>/<w>shield</w>/<w>body</w>を用いる。
+#   鎧/服を除く全ての防具を検索するには、<w>armour && !!body</w>と指定する。
+#   
+#   <h>ダンジョンの施設・地形等の検索:</h>
+#   
+#   名前を指定してダンジョンの施設・地形等を検索できる。
+#   <w>店</w>と指定することで全ての店(店名に"店"を含まない場合であっても)を検索できる。
+#   その他の施設については、<w>噴水</w>、<w>槍の罠</w>、<w>祭壇</w>等と名称を指定することで検索できる。
+#   <w>ジン</w>等と神の名前を指定することで、その神の祭壇を検索することもできる。
+#   (訳注: DCSS0.16では、英語版においても噴水や罠は検索することはできません。祭壇はできます)
+#   
+#   <h>正規表現ではない検索オプション:</h>
+#   
+#   !!で検索条件の反転、&&でAND検索、||でOR検索、<<<< >>で囲むことによりグルーピングができる。
+#   
+#   例えば、スリングを検索したいがスリングの弾は検索したくない場合、以下のように検索するとよい。
+#   <w>スリング && !!missile</w>
+
+<h>Searching the stash-tracker</h>
+
+You can search for items and dungeon features by name (or a substring of the
+name). In the list of search results, you can select a search result by its
+hotkey to travel to its location.
+
+Some examples of search strings:
+<w>mutation</w>      find all potions of mutation, including potions in shops.
+<w>throwing net</w>  finds every single throwing net and piles of nets.
+<w>shop</w>          lists all shops. Press <w>!</w> and a shop's letter for the stock.
+<w>Lair:2</w>        find everything known to be on Lair:2.
+<w>/D:[2-4]</w>      finds everything on Dungeon levels 2-4. Regexes are allowed!
+              Note that /D:[3-10] will not work as intended, since [x-y] is a
+              regex character range.
+<w>rPois</w>         finds all items with an rPois resistance.
+<w>rC++</w>          finds all items with an rC++ resistance.
+<w>+3</w>            finds all items with a +3 enchantment.
+<w>/Lair.*axe</w> and <w>axe && Lair</w> both show all axes in the Lair.
+
+Some shortcuts:
+<w>.</w>             lists everything on your current level.
+<w>..</w>            lists all items you know.
+<w>0</w> to <w>9</w>        lists all items at the specified waypoint.
+<w>*</w>             lists all items at all waypoints.
+<w>@<<query></w>      lists everything matching <<query> on your current level.
+<w>/<<regex></w>      lists items matching <<regex> as a regular expression.
+<w>=<<string></w>     lists items containing <<string> as a substring.
+
+You can also examine shops and items in the search results by pressing <w>?</w> and
+then selecting the hotkey for the search result. This will give a description
+of the item or the contents of the shop.
+
+The stash search string is case-insensitive.
+
+<h>Searching by item properties:</h>
+
+You can search for spell names (such as <w>Ignite Poison</w>) to find spellbooks
+that contain the spell.
+
+You can search for artefact item properties (such as <w>/prevents.*teleport</w>)
+to find artefacts that have the property.
+
+You can search by some additional item properties: <w>artefact</w> or
+<w>artifact</w> will find identified artefacts, <w>ego</w> or <w>branded</w>
+will find non-artefacts with a brand and unidentified items which may be
+branded, <w>throwable</w> will find things you can throw, <w>dropped</w> will
+find items you have dropped, <w>in_shop</w> will find items in shops, and (if
+the autopickup_search option is enabled) <w>autopickup</w> will find items that
+would be automatically picked up.
+
+Skill names (such as <w>Polearms</w> or <w>Long Blades</w>) will find all weapons that
+train that skill. You can also look for <w>melee weapon</w> and <w>ranged weapon</w>.
+
+You can also search by item types such as <w>book</w> or <w>manual</w> or <w>jewellery</w>.
+For armour slots, use <w>helmet</w> (all headgear), <w>gloves</w>, <w>shield</w>, and <w>body</w>.
+Use <w>armour && !!body</w> to list all armour pieces except for body armour.
+
+<h>Finding Dungeon Features:</h>
+
+You can search for dungeon features by name: all shops will be found by a search
+for <w>shop</w> (including shops that do not have "shop" in their name); other
+dungeon features can also be found by name: <w>dispersal trap</w>, <w>altar</w>,
+etc. You can also search for altars by deity name: <w>Zin</w>.
+
+<h>Non-regex operators:</h>
+
+You can use !! to negate a search string, && for a boolean AND, || for
+boolean OR, and <<<< >> for grouping.
+
+For instance, to find rings (jewellery) but not ring mail you could use:
+<w>ring && !!mail</w>
+
+Note that <w>/</w> and <w>=</w> apply to individual patterns, not the entire query:
+you should search for <w>armour && /r(C|F|Pois|Elec)</w>, not
+<w>/armour && r(C|F|Pois|Elec)</w>.
+%%%%
+level-map
+
+# old en (ja19):
+#   <h>Level Map ('<w>X</w>' in the main screen):</h>
+#   <w>Esc</w>        : Leave level map (also <w>Space</w> or any unused key).
+#   <w>Dir.</w>       : Move the cursor.
+#   <w>Shift-Dir.</w> : Move the cursor in larger steps (7 by default).
+#   <w>-</w> or <w>+</w>     : Scroll level map 20 grids up or down.
+#   <w>.</w>          : Start travel (also <w>Enter</w> and <w>,</w> and <w>;</w>).
+#                (Moves cursor to the last travel destination if still on @.)
+#   <w>[</w> or <w>]</w>     : Examine the next higher or lower level
+#   <w>G</w>          : Go to another level by branch and depth
+#   <w>o</w>          : Move the cursor to the next autoexplore target.
+#   
+#   <h>Travel exclusions</h>
+#   <w>e</w>          : Create a travel exclusion, change its radius, or remove it.
+#   <w>E</w>          : Cycle through travel exclusions.
+#   <w>Ctrl-E</w>     : Erase all travel exclusions on the level.
+#   
+#   <h>Waypoints</h>
+#   <w>Ctrl-W</w>     : Set waypoint to current position.
+#   <w>W</w>          : Cycle through all waypoints on the level.
+#   
+#   <h>Cycle through features</h>
+#   <w><<</w> or <w>></w>     : Cycle through up or down stairs.
+#   <w>^</w>          : Cycle through traps.
+#   <w>\</w> or <w>Tab</w>   : Cycle through shops and portals.
+#   <w>I</w>          : Cycle forward through all items.
+#   <w>O</w>          : Cycle backward through all items.
+#   <w>_</w>          : Cycle through altars.
+#   
+#   <h>Other</h>
+#   <w>v</w>          : Examine the last remembered state of the indicated tile.
+#   <w>!</w>          : Annotate level.
+#   <w>Ctrl-C</w>     : Clear item and monster memory.
+#   <w>Ctrl-F</w>     : Forget level map.
+#   <w>Ctrl-U</w>     : Restore forgotten level map.{{
+#   if you.wizard() then
+#       return "\n\n"
+#             .. "<h>Wizard commands</h>\n"
+#             .. "<w>T</w>          : Teleport to cursor."
+#   end }}
+# old ja (ja19):
+#   <h>フロアマップ (メイン画面で'<w>X</w>'を押下):</h>
+#   <w>Esc</w>          : フロアマップを抜ける(<w>Space</w>やその他の未割り当て文字でも可)
+#   <w>(方向)</w>       : カーソルを移動させる
+#   <w>Shift+(方向)</w> : カーソルを大幅に移動させる(デフォルトで7マス)
+#   <w>-</w>または<w>+</w>     : フロアマップを20マス上/下にスクロールする
+#   <w>.</w>            : 移動開始する(<w>Enter</w>、<w>,</w>、<w>;</w>でも可)
+#                  (カーソルがプレイヤー直上にある場合、
+#                   最後に指定していた目的地にカーソルを合わせる)
+#   <w>[</w>または<w>]</w>     : 1階層上または下のフロアマップに移動する
+#   <w>G</w>            : 別の分岐と階層に移動する
+#   <w>o</w>            : 次の自動探索の目標にカーソルを合わせる
+#   
+#   <h>自動移動禁止指定コマンド:</h>
+#   <w>e</w>            : 自動移動禁止エリアを置く、範囲を変える、除去する
+#   <w>E</w>            : 自動移動禁止エリアを順繰りに選択する
+#   <w>Ctrl+E</w>       : この階層の自動移動禁止エリアを全て除去する
+#   
+#   <h>中継地点:</h>
+#   <w>Ctrl+W</w>       : 現在の場所に中継地点を設定する
+#   <w>W</w>            : この階層のすべての中継地点を順繰りに選択する
+#   
+#   <h>順繰りに選択するコマンド:</h>
+#   <w><<</w>または<w>></w>     : 上り/下り階段を順繰りに選択する
+#   <w>^</w>            : 罠を順繰りに選択する
+#   <w>\</w>または<w>Tab</w>   : 店またはポータルを順繰りに選択する
+#   <w>I</w>            : 全てのアイテムを順に選択する
+#   <w>O</w>            : 全てのアイテムを逆順に選択する
+#   <w>_</w>            : 祭壇を順繰りに選択する
+#   
+#   <h>その他:</h>
+#   <w>v</w>            : 指定したマスの最後に目にした状態を解説する
+#   <w>!</w>            : 階層に注釈を付ける
+#   <w>Ctrl+C</w>       : アイテムやモンスターの記録を消す
+#   <w>Ctrl+F</w>       : レベルマップを忘れる
+#   <w>Ctrl+U</w>       : 忘れたレベルマップを復帰させる{{
+#   if you.wizard() then
+#       return "\n　\n"
+#             .. "<h>ウィザードコマンド</h>\n"
+#             .. "<w>T</w>            : カーソル位置にテレポートする"
+#   end }}
+# old en (ja16):
+#   <h>Level Map ('<w>X</w>' in the main screen):</h>
+#   <w>Esc</w>        : Leave level map (also <w>Space</w> or any unused key).
+#   <w>Dir.</w>       : Move the cursor.
+#   <w>Shift-Dir.</w> : Move the cursor in larger steps (7 by default).
+#   <w>-</w> or <w>+</w>     : Scroll level map 20 grids up or down.
+#   <w>.</w>          : Start travel (also <w>Enter</w> and <w>,</w> and <w>;</w>).
+#                (Moves cursor to the last travel destination if still on @.)
+#   <w>[</w> or <w>]</w>     : Examine the next higher or lower level
+#   <w>G</w>          : Go to another level by branch and depth
+#   <w>o</w>          : Move the cursor to the next autoexplore target.
+#   
+#   <h>Travel exclusions</h>
+#   <w>e</w>          : Create a travel exclusion, change its radius, or remove it.
+#   <w>E</w>          : Cycle through travel exclusions.
+#   <w>Ctrl-E</w>     : Erase all travel exclusions on the level.
+#   
+#   <h>Waypoints</h>
+#   <w>Ctrl-W</w>     : Set waypoint to current position.
+#   <w>W</w>          : Cycle through all waypoints on the level.
+#   
+#   <h>Cycle through features</h>
+#   <w><<</w> or <w>></w>     : Cycle through up or down stairs.
+#   <w>^</w>          : Cycle through traps.
+#   <w>\</w> or <w>Tab</w>   : Cycle through shops and portals.
+#   <w>I</w>          : Cycle forward through all items.
+#   <w>O</w>          : Cycle backward through all items.
+#   <w>_</w>          : Cycle through altars.
+#   
+#   <h>Other</h>
+#   <w>!</w>          : Annotate level.
+#   <w>Ctrl-C</w>     : Clear item and monster memory.
+#   <w>Ctrl-F</w>     : Forget level map.
+#   <w>Ctrl-U</w>     : Restore forgotten level map.{{
+#   if you.wizard() then
+#       return "\n\n"
+#             .. "<h>Wizard commands</h>\n"
+#             .. "<w>T</w>          : Teleport to cursor."
+#   end }}
+# old ja (ja16):
+#   <h>フロアマップ (メイン画面で'<w>X</w>'を押下):</h>
+#   <w>Esc</w>          : フロアマップを抜ける(<w>Space</w>やその他の未割り当て文字でも可)
+#   <w>(方向)</w>       : カーソルを移動させる
+#   <w>Shift+(方向)</w> : カーソルを大幅に移動させる(デフォルトで7マス)
+#   <w>-</w>または<w>+</w>     : フロアマップを20マス上/下にスクロールする
+#   <w>.</w>            : 移動開始する(<w>Enter</w>、<w>,</w>、<w>;</w>でも可)
+#                  (カーソルがプレイヤー直上にある場合、
+#                   最後に指定していた目的地にカーソルを合わせる)
+#   <w>[</w>または<w>]</w>     : 1階層上または下のフロアマップに移動する
+#   <w>G</w>            : 別の分岐と階層に移動する
+#   <w>o</w>            : 次の自動探索の目標にカーソルを合わせる
+#   
+#   <h>自動移動禁止指定コマンド:</h>
+#   <w>e</w>            : 自動移動禁止エリアを置く、範囲を変える、除去する
+#   <w>E</w>            : 自動移動禁止エリアを順繰りに選択する
+#   <w>Ctrl+E</w>       : この階層の自動移動禁止エリアを全て除去する
+#   
+#   <h>中継地点:</h>
+#   <w>Ctrl+W</w>       : 現在の場所に中継地点を設定する
+#   <w>W</w>            : この階層のすべての中継地点を順繰りに選択する
+#   
+#   <h>順繰りに選択するコマンド:</h>
+#   <w><<</w>または<w>></w>     : 上り/下り階段を順繰りに選択する
+#   <w>^</w>            : 罠を順繰りに選択する
+#   <w>\</w>または<w>Tab</w>   : 店またはポータルを順繰りに選択する
+#   <w>I</w>            : 全てのアイテムを順に選択する
+#   <w>O</w>            : 全てのアイテムを逆順に選択する
+#   <w>_</w>            : 祭壇を順繰りに選択する
+#   
+#   <h>その他:</h>
+#   <w>!</w>            : 階層に注釈を付ける
+#   <w>Ctrl+C</w>       : アイテムやモンスターの記録を消す
+#   <w>Ctrl+F</w>       : レベルマップを忘れる
+#   <w>Ctrl+U</w>       : 忘れたレベルマップを復帰させる{{
+#   if you.wizard() then
+#       return "\n　\n"
+#             .. "<h>ウィザードコマンド</h>\n"
+#             .. "<w>T</w>            : カーソル位置にテレポートする"
+#   end }}
+
+<h>Level Map ('<w>X</w>' in the main screen):</h>
+<w>Esc</w>        : Leave level map (also <w>Space</w> or any unused key).
+<w>Dir.</w>       : Move the cursor.
+<w>Shift-Dir.</w> : Move the cursor in larger steps (7 by default).
+<w>-</w> or <w>+</w>     : Scroll level map 20 grids up or down.
+<w>.</w>          : Start travel (also <w>Enter</w> and <w>,</w> and <w>;</w>).
+             (Moves cursor to the last travel destination if still on @.)
+<w>[</w> or <w>]</w>     : Examine the next higher or lower level.
+             (Moves cursor to the staircase destination if a known staircase is
+             highlighted.)
+<w>G</w>          : View another level by choosing a branch and depth.
+<w>o</w>          : Move the cursor to the next autoexplore target.
+<w>{</w> or <w>}</w>     : Zoom out or in (tiles only).
+
+<h>Travel exclusions</h>
+<w>e</w>          : Create a travel exclusion, change its radius, or remove it.
+<w>R#</w>         : Create a travel exclusion with a specified radius or change
+             its radius to #, where # is a number from 1 to 8.
+<w>E</w>          : Cycle through travel exclusions.
+<w>Ctrl-E</w>     : Erase all travel exclusions on the level.
+
+<h>Waypoints</h>
+<w>w</w>          : Set waypoint to current position.
+<w>W</w>          : Cycle through all waypoints on the level.
+
+<h>Cycle through features</h>
+<w><<</w> or <w>></w>     : Cycle through up or down stairs.
+<w>^</w>          : Cycle through traps.
+<w>\</w> or <w>Tab</w>   : Cycle through shops and portals.
+<w>I</w>          : Cycle forward through all items.
+<w>O</w>          : Cycle backward through all items.
+<w>_</w>          : Cycle through altars.
+
+<h>Other</h>
+<w>v</w>          : Examine the last remembered state of the indicated tile.
+<w>!</w>          : Annotate level.
+<w>Ctrl-C</w>     : Clear monster memory.
+<w>Ctrl-F</w>     : Forget level map.
+<w>Ctrl-U</w>     : Restore forgotten level map.{{
+if you.wizard() then
+    return "\n\n"
+          .. "<h>Wizard commands</h>\n"
+          .. "<w>T</w>          : Teleport to cursor.\n"
+          .. "<w>Ctrl-X</w>     : Completely wipe out map."
+end }}
+%%%%
+interlevel-travel.branch.prompt
+
+# old en (ja19):
+#   <h>Interlevel Travel (choose a branch):
+#    Use the shortcut letter for a branch to select the branch for travel.
+#   
+#    Once you select a branch, you will be prompted for a depth in that
+#    branch (more help is available there).
+#   
+#    <w>Enter</w>  : Repeat last interlevel travel.
+#    <w>.</w>      : Travel to a level in the current branch.
+#    <w><<</w>      : Go up the nearest stairs.
+#    <w>></w>      : Go down the nearest stairs.
+#    <w>Ctrl-P</w> : Travel to a level in the branch above this one.
+#    <w>*</w>      : Show available waypoints (if any are set).
+#    <w>0</w>-<w>9</w>    : Go to the numbered waypoint.
+# old ja (ja19):
+#   <h>(分岐を選択しての)階層間自動移動:
+#    ショートカット文字を入力することで、対応する分岐まで移動できる。
+#   
+#    分岐を選択した後、その分岐で到達したい階層の入力が求められる。
+#    (? を押すことで追加のヘルプが表示される)
+#   
+#    <w>Enter</w>  : 最後に指定した階層移動を再び実行する
+#    <w>.</w>      : 現在の分岐の他の階層に移動する
+#    <w><<</w>      : 最も近い階段を上る
+#    <w>></w>      : 最も近い階段を下る
+#    <w>Ctrl-P</w> : ここから上に位置する分岐へと階層を指定して移動する
+#    <w>*</w>      : (指定済みのがあれば)中間地点の一覧を見る
+#    <w>0</w>-<w>9</w>    : 指定した番号の中間地点に移動する
+# old en (ja16):
+#   <h>Interlevel Travel (choose a branch):
+#    Use the shortcut letter for a branch to select the branch for travel.
+#   
+#    Once you select a branch, you will be prompted for a depth in that
+#    branch (more help is available there).
+#   
+#    <w>Enter</w>  : Repeat last interlevel travel.
+#    <w>.</w>      : Travel to a level in the current branch.
+#    <w><<</w>      : Go up the nearest stairs.
+#    <w>></w>      : Go down the nearest stairs.
+#    <w>Ctrl-P</w> : Travel to a level in the branch above this one.
+#    <w>*</w>      : Show available waypoints (if any are set).
+#    <w>0</w>-<w>9</w>    : Go to the numbered waypoint.
+# old ja (ja16):
+#   <h>(分岐を選択しての)階層間自動移動:
+#    ショートカット文字を入力することで、対応する分岐まで移動できる。
+#   
+#    分岐を選択した後、その分岐で到達したい階層の入力が求められる。
+#    (? を押すことで追加のヘルプが表示される)
+#   
+#    <w>Enter</w>  : 最後に指定した階層移動を再び実行する
+#    <w>.</w>      : 現在の分岐の他の階層に移動する
+#    <w><<</w>      : 最も近い階段を上る
+#    <w>></w>      : 最も近い階段を下る
+#    <w>Ctrl-P</w> : ここから上に位置する分岐へと階層を指定して移動する
+#    <w>*</w>      : (指定済みのがあれば)中間地点の一覧を見る
+#    <w>0</w>-<w>9</w>    : 指定した番号の中間地点に移動する
+
+<h>Interlevel Travel (choose a branch):
+ Use the shortcut letter for a branch to select the branch for travel.
+
+ Once you select a branch, you will be prompted for a depth in that
+ branch (more help is available there).
+
+ <w>Tab</w>    : Repeat last interlevel travel.
+ <w>.</w>      : Travel to a level in the current branch.
+ <w><<</w>      : Go up the nearest stairs.
+ <w>></w>      : Go down the nearest stairs.
+ <w>Ctrl-P</w> : Travel to a level in the branch above this one.
+ <w>*</w>      : Show available waypoints (if any are set).
+ <w>0</w>-<w>9</w>    : Go to the numbered waypoint.
+ <w>_</w>      : Show available altars (if any are discovered).
+%%%%
+skill-menu
+
+# old en (ja19):
+#                           <h>Skill management</h>
+#   You gain experience for killing monsters (and very few other activities).
+#   This experience is used to train skills. The skill screen allows you to
+#   select which skills to train.
+#   A skill can only be trained if there's some available means of exercising it;
+#   see "Training restrictions" below for details.
+#   
+#   By pressing its letter, you can cycle if and how a skill is trained:
+#   <darkgrey>- deselected</darkgrey>    Skill will not be trained.
+#   + selected      Skill will be trained.
+#   <w>* focused</w>       Skill will be weighted higher for training.
+#   
+#   Pressing a capital letter selects that skill and deselects all the others.
+#   This shortcut is useful when you want to train only one skill.
+#   
+#   Training can be done in two modes, which are toggled with the <w>/</w> key.
+#   - automatic:    Skills are weighted based on your use of them.
+#   - manual:       Experience is spread evenly across all activated skills.
+#   
+#   How fast you train a skill is governed by the following factors:
+#   - aptitude: Shown <white>white</white> in the Apt column. Higher numbers mean that less
+#               experience is needed to advance a skill. Depends on species.
+#   - skill manuals: Rare books giving an aptitude bonus of <lightgreen>+4</lightgreen> in one skill.
+#   
+#   On top of that, there are some effects which directly modify a skill, for
+#   example draining, having trained a related skill (crosstraining), or certain
+#   god powers. Reduced skills are shown in <magenta>magenta</magenta>, and enhanced skills in <blue>blue</blue>.
+#   The training percentage (in <brown>brown</brown>) shows the relative amount of experience
+#   which will be used to train this skill.
+#   
+#   Apart from (de)selecting skills, you also have the following toggles:
+#   <w>/</w> :  Switch between automatic and manual training modes.
+#   <w>*</w> :  Display all skills, even those you can't train yet.
+#   <w>?</w> :  Allows you to read the descriptions of skills.
+#   <w>_</w> :  Show or hide skill level modifications (drain, god powers, crosstraining).
+#   <w>!</w> :  Switch between displaying training percentage or skill cost.
+#   
+#                           <h>Training restrictions</h>
+#   Fighting, Throwing, Armour, Dodging, Stealth, Unarmed Combat, and Spellcasting
+#   can always be trained. For the rest:
+#   - Weapon skills require carrying a weapon of the appropriate type.
+#   - Shields requires that you either be carrying a shield, or worship a deity
+#         who can offer one through divine means (The Shining One).
+#   - Evocations requires carrying an evocable item.
+#   - Spell schools require knowing a spell of the school.
+#   - Necromancy can also be trained when worshipping Kikubaaqudgha.
+#   - Invocations requires worshipping a god whose abilities require it.
+# old ja (ja19):
+#                                       <h>スキル管理</h>
+#   
+#   あなたは敵を倒すことによりスキル経験値を得る。(他の行動によりわずかに得ることもある)
+#   このスキル経験値はスキルの訓練に使用される。あなたはこのスキル画面で訓練するスキルを
+#   選択できる。
+#   各スキルはそれを使用できる状況においてのみ訓練できる。
+#   詳しくは下記の｢訓練の制限｣の項を読むこと。
+#   
+#   各スキルの文字を押すことにより、スキル訓練の内容を切り替えることができる。
+#   <darkgrey>- 非選択</darkgrey>   スキルは訓練されない
+#   + 選択     スキルは訓練される
+#   <w>* 集中訓練</w> スキルは重点的に訓練される
+#   
+#   大文字を入力することで対応するスキルのみを選択し、他のスキルを全て非選択にする。
+#   この操作は1つのスキルだけを訓練したいときに便利である。
+#   
+#   スキル訓練には2つのモードがあり、<w>/</w> キーで切り替えできる。
+#   ・自動: あなたの行動によりスキルに振られる経験値が変化する。
+#   ・手動: スキル経験値は指定された全てのスキルに均等に割り振られる。
+#   
+#   以下の要因によりスキル訓練の成長速度が変化する:
+#   ・スキル適性:   ｢適性｣の列に<white>白</white>で表示される。数字が高ければスキルを
+#                   成長させるのに少ない経験値で済む。種族により異なる。
+#   ・○○の虎の巻: 特定の1つのスキルに<lightgreen>+4</lightgreen>の適性ボーナスを与える貴重な書物。
+#   
+#   また、衰弱状態、関連した武器のスキルによる補正(相互訓練)、神の力などによって
+#   スキルの数値を直接修正する効果もある。
+#   減少したスキルは<magenta>紫</magenta>で、補強されたスキルは<blue>青</blue>で表示される。
+#   スキル経験値の割り振り率(<brown>茶色</brown>で表示)はスキル訓練に費やされる量に
+#   対する相対値を示している。
+#   
+#   スキルの選択/選択解除以外にも、スキル画面で以下のようなモード切替ができる:
+#   <w>/</w> :  自動/手動訓練を切り替える
+#   <w>*</w> :  今選択できないスキルを含めて全てのスキルを表示する
+#   <w>?</w> :  スキルの説明を読む
+#   <w>_</w> :  スキルの修正(衰弱、神による補正、相互訓練)を表示/非表示する
+#   <w>!</w> :  訓練進捗割合の表示とスキルコストの表示を切り替える
+#   
+#                                      <h>訓練の制限</h>
+#   
+#   戦闘、投擲、甲冑、躱し身、隠密、徒手格闘、呪文詠唱スキルはいつでも訓練できる。
+#   他のスキルについては以下の通り:
+#   ・各武器スキルはそれに応じた種別の武器を持ち運ぶ必要がある。
+#   ・盾スキルは盾を持ち運ぶか、盾を張る能力をもたらす神(輝けるもの)を信仰する
+#     必要がある。
+#   ・発動スキルは発動可能なアイテムを持ち運ぶか、ネメレクス・ソベーを信仰する
+#     必要がある。
+#   ・魔術スキルは対応する魔術領域の呪文を学んでいる必要がある。
+#   ・死霊術スキルはキクバークッグァを信仰することによっても訓練できる。
+#   ・祈祷スキルは神を信仰し能力を得る必要がある。
+# old en (ja16):
+#                                  <h>Skill management</h>
+#   You gain experience for killing monsters (and very few other activities).
+#   This experience is used to train skills. The skill screen allows you to
+#   select which skills to train.
+#   A skill can only be trained if there's some available means of exercising it;
+#   see "Training restrictions" below for details.
+#   
+#   By pressing its letter, you can cycle if and how a skill is trained:
+#   <darkgrey>- deselected</darkgrey>    Skill will not be trained.
+#   + selected
+#   <w>* focused</w>       Skill will be weighted higher for training.
+#   
+#   Pressing a capital letter selects that skill and deselects all the others.
+#   This shortcut is useful when you want to train only one skill.
+#   
+#   Training can be done in two modes, which are toggled with the <w>/</w> key.
+#   * automatic:    Skills are weighted based on your use of them.
+#   * manual:       Experience is spread evenly across all activated skills.
+#   
+#   How fast you train a skill is governed by the following factors:
+#   * aptitude: Shown <white>white</white> in the Apt column. Higher numbers mean that
+#         less experience is needed to advance a skill. Depends on species.
+#   * cross-training: Proficiency in some skills carries over to related skills.
+#         The enhancer bonus for crosstraining is indicated in <blue>blue</blue>.
+#   * magic penalties: It is harder to learn an elemental skill if you are
+#         proficient in the opposing element (Air-Earth, Ice-Fire).
+#         The aptitude penalty is indicated in <red>red</red>.
+#   
+#   On top of that, there are some effects which directly modify a skill, for
+#   example draining or some god powers. Reduced skills are shown in <magenta>magenta</magenta>, and
+#   enhanced skills in <blue>blue</blue>.
+#   The training percentage (in <brown>brown</brown>) shows the relative
+#   amount of experience which will be used to train this skill.
+#   
+#   Apart from (de)selecting skills, you also have the following toggles:
+#   <w>/</w> :   Switch between automatic and manual training.
+#   <w>*</w> :   Shows all skills, even those you can't train yet.
+#   <w>?</w> :   Allows you to read the descriptions of skills.
+#   <w>_</w> :   Shows/hides skill modifiers, e.g. from god powers.
+#   
+#                                  <h>Training restrictions</h>
+#   Fighting, Throwing, Armour, Dodging, Stealth, Unarmed Combat, and Spellcasting
+#   can always be trained. For the rest:
+#   * Weapon skills require carrying a weapon of the appropriate type.
+#   * Shields requires that you either be carrying a shield, or worship a deity
+#         who can offer one through divine means (The Shining One).
+#   * Evocations requires carrying an evocable item, or worshipping Nemelex.
+#   * Spell schools require knowing a spell of the school.
+#   * Necromancy can also be trained when worshipping Kikubaaqudgha.
+#   * Invocations requires worshipping a god whose abilities require it.
+# old ja (ja16):
+#                                       <h>スキル管理</h>
+#   
+#   あなたは敵を倒すことによりスキル経験値を得る。(他の行動によりわずかに得ることもある)
+#   このスキル経験値はスキルの訓練に使用される。あなたはこのスキル画面で訓練するスキルを
+#   選択できる。
+#   各スキルはそれを使用できる状況においてのみ訓練できる。
+#   詳しくは下記の｢訓練の制限｣の項を読むこと。
+#   
+#   各スキルの文字を押すことにより、スキル訓練の内容を切り替えることができる。
+#   <darkgrey>- 非選択</darkgrey>   スキルは訓練されない
+#   + 選択
+#   <w>* 集中訓練</w> スキルは重点的に訓練される
+#   
+#   大文字を入力することで対応するスキルのみを選択し、他のスキルを全て非選択にする。
+#   この操作は1つのスキルだけを訓練したいときに便利である。
+#   
+#   スキル訓練には2つのモードがあり、<w>/</w> キーで切り替えできる。
+#   ・自動: あなたの行動によりスキルに振られる経験値が変化する。
+#   ・手動: スキル経験値は指定された全てのスキルに均等に割り振られる。
+#   
+#   以下の要因によりスキル訓練の成長速度が変化する:
+#   ・スキル適性:     ｢適性｣の列に<white>白</white>で表示される。数字が高ければスキルを
+#                     成長させるのに少ない経験値で済む。種族により異なる。
+#   ・相互訓練:       特定のスキルを鍛えることで、関連する別のスキルへの補正を得ることが
+#                     ある。(例えば小剣と長剣スキル、投擲とスリングスキルなど)
+#                     ボーナスを得ているスキルは<blue>青</blue>で表示される。
+#   ・魔法ペナルティ: 四元素の魔術スキルのどれかに熟達していると、それに対抗する
+#                     属性の魔術スキルを鍛えるのが難しくなる。(風⇔地、氷⇔炎)
+#                     適性ペナルティは<red>赤</red>で表示される。
+#   
+#   また、衰弱状態や神の力などによってスキルの数値を直接修正する効果もある。
+#   減少したスキルは<magenta>紫</magenta>で、補強されたスキルは<blue>青</blue>で表示される。
+#   スキル経験値の割り振り率(<brown>茶色</brown>で表示)はスキル訓練に費やされる量に
+#   対する相対値を示している。
+#   
+#   スキルの選択/選択解除以外にも、スキル画面で以下のようなモード切替ができる:
+#   <w>/</w> :   自動/手動訓練を切り替える
+#   <w>*</w> :   今選択できないスキルを含めて全てのスキルを表示する
+#   <w>?</w> :   スキルの説明を読む
+#   <w>_</w> :   スキル補正を表示/非表示する(神による補正など)
+#   
+#                                      <h>訓練の制限</h>
+#   
+#   戦闘、投擲、甲冑、躱し身、隠密、徒手格闘、呪文詠唱スキルはいつでも訓練できる。
+#   他のスキルについては以下の通り:
+#   ・各武器スキルはそれに応じた種別の武器を持ち運ぶ必要がある。
+#   ・盾スキルは盾を持ち運ぶか、盾を張る能力をもたらす神(輝けるもの)を信仰する
+#     必要がある。
+#   ・発動スキルは発動可能なアイテムを持ち運ぶか、ネメレクス・ソベーを信仰する
+#     必要がある。
+#   ・魔術スキルは対応する魔術領域の呪文を学んでいる必要がある。
+#   ・死霊術スキルはキクバークッグァを信仰することによっても訓練できる。
+#   ・祈祷スキルは神を信仰し能力を得る必要がある。
+
+                        <h>Skill management</h>
+
+You gain experience for killing monsters (and very few other activities). This
+experience is used to train skills. The skill screen allows you to select which
+skills to train.
+
+By pressing its letter, you can cycle if and how a skill is trained:
+  <darkgrey>- deselected</darkgrey>    Skill will not be trained.
+  + selected      Skill will be trained.
+  <w>* focused</w>       Skill will be weighted higher for training.
+
+Pressing a capital letter selects that skill and deselects all the others.
+This shortcut is useful when you want to train only one skill.
+
+Training can be done in two modes, which are toggled with the <w>/</w> key.
+  - automatic:    Skills are weighted based on your use of them.
+  - manual:       Experience is spread evenly across all activated skills.
+
+In training target mode you can set skill training targets: target skill levels
+at which training of the skill will be automatically disabled.
+
+How fast you train a skill is governed by the following factors:
+  - aptitude: Shown <white>white</white> in the Apt column. Higher numbers mean that less
+              experience is needed to advance a skill. Depends on species.
+  - skill manuals: Rare books giving an aptitude bonus of <lightred>+4</lightred> in one skill.
+
+On top of that, there are some effects which directly modify a skill, for
+example having trained a related skill (crosstraining), or certain god powers.
+Reduced skills are shown in <magenta>magenta</magenta>, and enhanced skills in <green>green</green>.
+The training percentage (in <brown>brown</brown>) shows the relative amount of experience
+which will be used to train this skill.
+
+Apart from (de)selecting skills, you also have the following toggles:
+  <w>/</w> :  Switch between automatic and manual training modes.
+  <w>*</w> :  Display all skills, even those which aren't currently useful.
+  <w>?</w> :  Allows you to read the descriptions of skills.
+  <w>_</w> :  Show or hide skill level modifications (god powers, crosstraining).
+  <w>!</w> :  Switch between displaying training percentage, skill cost, or training
+       targets.
+%%%%

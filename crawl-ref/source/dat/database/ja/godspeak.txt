@@ -1,0 +1,687 @@
+%%%%
+Xom general effect
+
+# en:
+#   Xom snickers.
+#   
+#   "How about this?"
+#   
+#   "Let's try an experiment, hmmm?"
+#   
+#   w:1
+#   "I wonder... What does this button do?"
+ゾムはくすくす笑った。
+
+『これはどうだ？』
+
+『実験してみようか？ ふーむ？』
+
+w:1
+『さて……このボタンで何が起こるんだろうな？』
+%%%%
+Xom general gift
+
+# en:
+#   Xom grants you a gift!
+#   
+#   "Here."
+#   
+#   Xom's generous nature manifests itself.
+#   
+#   Xom grants you an implement of some kind.
+#   
+#   "Take this instrument of something!"
+#   
+#   "Take this token of my esteem."
+#   
+#   Xom smiles on you.
+#   
+#   "Catch!"
+ゾムはあなたに贈り物を授けた！
+
+『ほれ』
+
+ゾムの気前のよさが示された。
+
+ゾムはあなたにいくつかの道具を与えた。
+
+『これを持っていくがいい！』
+
+『我が尊敬の証を受け取るがいい』
+
+ゾムはあなたに微笑んだ。
+
+『受け取れ！』
+%%%%
+Xom single summon
+
+# en:
+#   "Serve the mortal, my child!"
+#   
+#   "Serve the toy, my child!"
+#   
+#   Xom opens a gate.
+『我が子よ、この定命の者に仕えよ』
+
+『我が子よ、この玩具に仕えよ』
+
+ゾムは門を開いた。
+%%%%
+Xom multiple summons
+
+# en:
+#   "Serve the mortal, my children!"
+#   
+#   Xom grants you some temporary aid.
+#   
+#   Xom momentarily opens a gate.
+『我が子らよ、この定命の者に仕えよ』
+
+ゾムはあなたにいくらかの増援を一時的に与えた。
+
+ゾムは一時的に門を開いた。
+%%%%
+Xom zero miscast effect
+
+# en:
+#   Xom almost notices you.
+#   
+#   Xom's attention almost turns to you for a moment.
+#   
+#   Xom's power almost touches on you for a moment.
+#   
+#   You almost hear Xom's maniacal laughter.
+ゾムはもう少しであなたに目を向けるところだった。
+
+ゾムの注意が一瞬だけあなたに移るところだった。
+
+ゾムの力が一瞬だけあなたに触れるところだった。
+
+あなたはゾムの狂気の笑い声を聞いたような気がした。
+%%%%
+Xom bandages
+
+# en:
+#   You briefly get tangled in your bandages.
+あなたの包帯が一瞬もつれた。
+%%%%
+Xom rearrange the pieces
+
+# en:
+#   Xom decides to rearrange the pieces.
+#   
+#   "First here, now there."
+#   
+#   "This might be better!"
+#   
+#   "This is how I like it!"
+ゾムは物体を再配置することにした。
+
+『最初はそっち、今度はこっち』
+
+『この方がよさそうだ！』
+
+『これが私の好みのやり方だ！』
+%%%%
+Xom teleportation journey
+
+# en:
+#   "Whee!"
+#   
+#   "Let's go for a ride!"
+#   
+#   "Where it stops, nobody knows!"
+#   
+#   Xom twists space around you.
+『わーい！』
+
+『ドライブに出かけるとしよう！』
+
+『何処で止まるかって？ 知らないなぁ！』
+
+ゾムはあなたの周囲の空間を歪ませた。
+%%%%
+Xom confusion
+
+# en:
+#   "Heh heh heh..."
+#   
+#   Xom's power touches on your mind for a moment.
+#   
+#   Xom titters.
+『フハハハハハハハハハ……』
+
+ゾムの力が一瞬あなたの精神に触れた。
+
+ゾムはけらけら笑った。
+%%%%
+Xom hostile monster
+
+# en:
+#   "Time to have some fun!"
+#   
+#   "Fight to survive, mortal."
+#   
+#   "Let's see if it's strong enough to survive yet."
+#   
+#   You hear Xom's maniacal laughter.
+『楽しい時を！』
+
+『定命の者よ、生き残るため戦うのだ』
+
+『生き残るにふさわしい力を持っているか試してみよう』
+
+あなたはゾムの狂気の笑い声を聞いた。
+%%%%
+Xom revert own banishment
+
+# en:
+#   w:30
+#   "Kidding!"
+#   
+#   "On second thoughts, though..."
+#   
+#   "No, I've changed my mind."
+#   
+#   Xom pulls you back into the comparable quietude of the dungeon.
+w:30
+『冗談だ！』
+
+『……しかし考え直そう』
+
+『おっと、考え直したぞ』
+
+ゾムはダンジョンの静寂にあなたを連れ戻した。
+%%%%
+Xom revert other banishment
+
+# en:
+#   "Get back here!"
+#   
+#   "No you don't!"
+#   
+#   Xom pulls you back into the comparable quietude of the dungeon.
+『戻ってくるがいい！』
+
+『おっと、そうはいくか！』
+
+ゾムはダンジョンの静寂にあなたを連れ戻した。
+%%%%
+Xom chaos upgrade
+
+# en:
+#   Xom's power touches on a nearby weapon.
+#   
+#   "Have a taste of chaos, mortal."
+#   
+#   Xom chortles.
+ゾムの力がすぐそばの武器に触れた。
+
+『定命の者よ、混沌の味を味わうのだ』
+
+ゾムは高笑いをした。
+%%%%
+Xom noise
+
+# en:
+#   Xom makes a sudden noise! You hear @weapon_noise@
+#   
+#   w:1
+#   "Boo!"
+#   
+#   w:1
+#   Xom does a drum roll.
+ゾムは突然騒音を鳴らした！ あなたは@weapon_noise@
+
+w:1
+ゾムは野次り声を上げた。
+
+w:1
+ゾムはドラムを鳴らした。
+%%%%
+Xom blink monsters
+
+# en:
+#   "Over there now!"
+#   
+#   "Get over here!"
+#   
+#   Xom decides to shift things around a little.
+『あっち行け！』
+
+『こっちだ！』
+
+ゾムは少し周囲の物体を移動させることにした。
+%%%%
+Xom potion effect
+
+# en:
+#   "Go forth and destroy!"
+#   
+#   "Go forth and cause havoc, mortal!"
+#   
+#   Xom grants you a minor favour.
+#   
+#   Xom smiles on you.
+『行け！ 破壊するのだ！』
+
+『定命の者よ！ 行け！ 大混乱をもたらすのだ！』
+
+ゾムはあなたにほんの少し好意を与えた。
+
+ゾムはあなたに微笑んだ。
+%%%%
+Xom divination
+
+# en:
+#   "See what I see, my child!"
+#   
+#   Xom grants you insight.
+#   
+#   Xom smirks.
+『私の見ている物を見よ、我が子よ！』
+
+ゾムはあなたに洞察力を与えた。
+
+ゾムは薄笑いをした。
+%%%%
+Xom spell effect
+
+# en:
+#   Xom's power flows through you!
+#   
+#   Xom plays with reality for a moment.
+#   
+#   Xom guffaws.
+ゾムの力があなたに流れ込んだ！
+
+ゾムは一瞬の間現実をもてあそんだ。
+
+ゾムは馬鹿笑いをした。
+%%%%
+Xom fake destruction
+
+# en:
+#   "Feel my power!"
+#   
+#   Xom gives a demonstration of destructive might.
+#   
+#   w:1
+#   "Let it end in hellfire!"
+『我が力を思い知れ！』
+
+ゾムは破壊の力を見せつけた。
+
+w:1
+『地獄の業火で燃え尽きるがいい！』
+%%%%
+Xom accidental homicide
+
+# en:
+#   "Oops, I didn't mean to do that!"
+『おっと、そんなつもりじゃなかったのに！』
+%%%%
+Xom weird death
+
+# en:
+#   "How'd that happen? Weird."
+『どうしてこんなことになったのだ？ 不思議だ！』
+%%%%
+Xom cloud
+
+# en:
+#   "The weather's been a little too boring around here."
+#   
+#   Xom asks Qazlal to spice things up a little.
+#   
+#   "Forecast: mostly cloudy."
+『この辺の天気はちっとばかし退屈だ』
+
+ゾムはクァズラルに少々入れ知恵をした。
+
+『天気予報： ほとんど曇り』
+%%%%
+Xom life saving general
+
+# en:
+#   "What? Wait, NO!"
+#   
+#   "Hey, things were just getting interesting!"
+#   
+#   "NOOOOOOO, not my @_xom_plaything_@!"
+#   
+#   "Not here, not now."
+#   
+#   "Just one more try."
+#   
+#   Xom is feeling generous.
+『何？ 待て、だめだ！』
+
+『おい、今いい所だってのに！』
+
+『そんなあ、私の@_xom_plaything_@！』
+
+『まだ早すぎる』
+
+『もう一度だけ！』
+
+ゾムは寛大に見える。
+%%%%
+Xom boring death
+
+# en:
+#   Xom yawns loudly!
+#   
+#   "Boring in life, boring in death..."
+#   
+#   "What!? That's it?"
+#   
+#   "I guess I need a new plaything now."
+#   
+#   "Huh? Did I miss anything?"
+#   
+#   "It was about time."
+#   
+#   "This toy is broken."
+#   
+#   "It's all fun and games until someone loses an eye."
+#   
+#   w:1
+#   "It's not fun and games unless someone loses an eye."
+ゾムは大きな声であくびをした！
+
+『退屈だ、退屈で死にそうだ……』
+
+『何!? これはなんだ？』
+
+『私は新しい慰みものを必要としている』
+
+『はぁ？ 何か見逃したのだろうか？』
+
+『そろそろ時間だ』
+
+『おもちゃが壊れてしまった』
+
+『誰かが目を突くまでは、なにもかも楽しい』
+
+w:1
+『誰かが目を突かない限り、なにもかも楽しくない』
+%%%%
+Xom laughter
+
+# en:
+#   Xom guffaws!
+#   
+#   Xom roars with laughter!
+#   
+#   Xom thinks this is hilarious!
+#   
+#   Xom is highly amused!
+#   
+#   Xom cackles wildly!
+#   
+#   Xom snickers!
+#   
+#   Xom laughs nastily!
+#   
+#   Xom howls with laughter!
+#   
+#   Xom bursts into laughter!
+#   
+#   Xom giggles madly!
+#   
+#   Xom titters!
+#   
+#   Xom chuckles heartily!
+#   
+#   Xom chortles!
+ゾムは高笑いをした！
+
+ゾムは高々と笑い声を上げた！
+
+ゾムは陽気なようだ！
+
+ゾムは非常に楽しんでいるようだ！
+
+ゾムは激しく高笑いした！
+
+ゾムはくすくす笑った！
+
+ゾムは嫌らしく笑った！
+
+ゾムは吠えるように笑った！
+
+ゾムは急に笑い出した！
+
+ゾムは狂ったようにくすくす笑った！
+
+ゾムはけらけら笑った！
+
+ゾムは心からくすくす笑った！
+
+ゾムは高笑いをした！
+%%%%
+Ashenzari welcome
+
+# en:
+#   Ashenzari says: Partake of my vision. Partake of my curse.
+アシェンザリは言った:『私の視野を共にしよう。私の呪いを共にしよう』
+%%%%
+Beogh penance
+
+# en:
+#   Beogh says: Do not betray your orcish brethren!
+ベオは言った：『オークの同志を裏切るな！』
+%%%%
+Cheibriados penance
+
+# en:
+#   Cheibriados says: Don't be so hasty!
+ケイブリアドスは言った：『そんなに急ぐんじゃない！』
+%%%%
+Cheibriados welcome
+
+# en:
+#   Cheibriados says: Take it easy.
+ケイブリアドスは言った：『ゆっくりしていくがいい』
+%%%%
+Elyvilon penance
+
+# en:
+#   Elyvilon says: Be more diligent in your ministrations.
+エリヴィロンは言った：『もっと勤勉に奉仕なさい』
+%%%%
+Elyvilon welcome
+
+# en:
+#   Elyvilon says: Go forth and aid the weak!
+エリヴィロンは言った：『世界を旅し弱き者を助けよ！』
+%%%%
+Fedhas penance
+
+# en:
+#   Fedhas protests your encroaching upon nature.
+フェダスはあなたが自然の掟に侵入することに抗議した。
+%%%%
+Fedhas welcome
+
+# en:
+#   Fedhas says: Spread life and death.
+フェダスは言った：『生命と死を世に広めよ』
+%%%%
+Gozag welcome
+
+# en:
+#   Gozag says: Greed is good.
+ゴザーグは言った：『強欲こそ善なり』
+%%%%
+Lugonu welcome
+
+# en:
+#   Lugonu says: Spread carnage and corruption!
+ルゴヌは言った：『大虐殺と崩壊を拡散せよ！』
+%%%%
+Lugonu newgame
+
+# en:
+#   Lugonu says: Depart the Abyss and spread corruption, my servant!
+#   <lightgrey>(use the <w>a</w>bility menu to exit the Abyss)</lightgrey>
+ルゴヌは言った：『我がしもべよ、アビスを出でて崩壊を拡散するのだ！』
+<lightgrey> ※a)bility メニューからアビスを脱出できます。</lightgrey>
+%%%%
+Makhleb welcome
+
+# en:
+#   Blood and souls for Makhleb!
+血と魂をマクレブに捧げよ！
+%%%%
+Nemelex Xobeh welcome
+
+# en:
+#   Nemelex Xobeh says: It's all in the cards!
+ネメレクス・ソベーは言った：『カードには全てがある！』
+%%%%
+Okawaru penance
+
+# en:
+#   Okawaru says: Regain your honour in battle!
+オカワルは言った：『戦闘によって汝の名誉を取り戻すのだ！』
+%%%%
+Okawaru welcome
+
+# en:
+#   Okawaru says: Bring me glory in combat!
+オカワルは言った：『戦闘によって私に栄光をもたらすのだ！』
+%%%%
+Qazlal penance
+
+# en:
+#   Qazlal thunders: Do not interfere with the natural order!
+クァズラルの怒号が飛んだ：『自然の秩序を妨げるな！』
+%%%%
+Qazlal welcome
+
+# en:
+#   Qazlal says: Let the forces of nature tear it all down!
+クァズラルは言った：『自然の猛威で全てを破壊せよ！』
+%%%%
+Sif Muna penance
+
+# en:
+#   Sif Muna says: Seek out more knowledge and wisdom.
+シフ・ムーナは言った：『さらなる知識と叡智を求めなさい』
+%%%%
+Sif Muna welcome
+
+# en:
+#   Sif Muna whispers: I know many secrets...
+シフ・ムーナは囁いた：『わたしは数多の秘密を知っている……』
+%%%%
+the Shining One penance
+
+# en:
+#   The Shining One says: Being a martyr may wash away your sin!
+輝けるものは言った：『殉教者であることはあなたの罪を洗い流すだろう！』
+%%%%
+the Shining One welcome
+
+# en:
+#   The Shining One says: Lead the forces of light to victory!
+輝けるものは言った：『光の力を勝利に導くのだ！』
+%%%%
+Trog penance
+
+# en:
+#   Trog rages: Kill them all!
+トログは激怒した：『皆殺しだ！』
+%%%%
+Trog welcome
+
+# en:
+#   Trog says: Kill them all!
+トログは命じた：『皆殺しだ！』
+%%%%
+Vehumet welcome
+
+# en:
+#   Vehumet says: Let it end in hellfire!
+ヴェフメットは言った：『殺して地獄の火にくべよ！』
+%%%%
+Xom newgame
+
+# en:
+#   Xom says: A new plaything!
+ゾムは告げた：『お前が新しいオモチャだ！』
+%%%%
+_xom_child_
+
+# en:
+#   misbegotten
+#   
+#   bastard
+#   
+#   ugly
+#   
+#   red-headed step
+#   
+#   silly
+#   
+#   worthless
+#   
+#   prodigal
+#   
+#   insane
+#   
+#   naughty
+出来損ないの
+
+不肖の
+
+醜い
+
+撥ねた赤毛の
+
+愚かな
+
+価値の無い
+
+放蕩
+
+非常識な
+
+いたずら
+%%%%
+Yredelemnul penance
+
+# en:
+#   Yredelemnul says: All are equal in death! Holy martyrdom means nothing!
+イレデレンヌルは言った：『全ては死の前に平等なり！ 聖なる殉教は無意味だ！』
+%%%%
+Yredelemnul welcome
+
+# en:
+#   Yredelemnul says: Carry the black torch! Rouse the idle dead!
+イレデレンヌルは言った：『黒き松明を運べ！ 動かぬ死体を呼び起こせ！』
+%%%%
+Yredelemnul death corpse
+
+# en:
+#   Your body rises from the dead as a mindless zombie.
+あなたの死体は知性なきゾンビとなって起き上がった。
+%%%%
+Zin penance
+
+# en:
+#   Zin castigates you for your disobedience of the Law.
+#   
+#   Zin sternly explains the importance of @_important_subject_@
+ジンはあなたの戒律違反を非難した。
+
+ジンは@_important_subject_@の重要性を厳しく説いた。
+%%%%
+Zin welcome
+
+# en:
+#   Zin says: Spread the light, my child.
+ジンは言った：『わが信徒よ、光の版図を広めよ』
+%%%%

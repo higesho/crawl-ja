@@ -1,0 +1,57 @@
+%%%%
+({banisher})
+
+%sによって
+%%%%
+You are banished to a different region of the Abyss.
+
+あなたはアビスの別の領域へと追放された。
+%%%%
+Cast into level %d of the Abyss
+
+アビスの第%d層に追放された
+%%%%
+was cast into the Abyss!
+
+アビスに突き落とされた！
+%%%%
+a distortion unwield
+
+歪曲の武器を手放したこと
+%%%%
+Xom snickers loudly.
+
+ゾムは大声で笑った。
+%%%%
+is pulled into the Abyss.
+
+はアビスに引きずり込まれた。
+%%%%
+You are suddenly pulled into a different region of the Abyss!
+
+突然あなたはアビスの別の領域へと引き込まれた！
+%%%%
+Lugonu's corruption
+
+ルゴヌの崩壊
+%%%%
+This place is already infused with evil and corruption.
+
+この空間はすでに邪悪と崩壊に満たされている。
+%%%%
+'s Hand of Corruption reaches out!
+
+の崩壊の手が差しのべられた！
+%%%%
+Corrupted %s
+
+%sは崩壊した
+%%%%
+The substance of the Abyss twists violently, and a gateway leading down appears!
+
+アビスの構成物が猛烈に渦巻き、深層へと続く門が出現した！
+%%%%
+The substance of the Abyss twists violently, and a gateway leading out appears!
+
+アビスの構成物が猛烈に渦巻き、アビスの外へと続く門が出現した！
+%%%%

@@ -1,0 +1,39 @@
+%%%%
+#### dat/des/traps/grate.des ##################################
+%%%%
+You hear a faint grinding sound.
+
+あなたは何かが軋むかすかな音を耳にした。
+%%%%
+An iron grate slams shut!
+
+鉄格子がガラガラと音を立てて閉まった！
+%%%%
+You hear an iron grate slam shut!
+
+あなたは鉄格子がガラガラと閉まる音を耳にした！
+%%%%
+#### dat/des/traps/rats_trap.des ##############################
+%%%%
+You hear a faint click.
+
+あなたはカチッというかすかな音を耳にした。
+%%%%
+You hear a click.
+
+あなたはカチッという音を耳にした。
+%%%%
+You step on to a pressure plate.
+
+あなたは足踏みスイッチを踏んだ。
+%%%%
+Suddenly a wall slides open!
+
+突然壁が開いた！
+%%%%
+#### dat/des/traps/spider_basket.des ##########################
+%%%%
+# A basket of spiders falls from above!
+
+# jtrans_dat_des_branches.txtと重複
+%%%%

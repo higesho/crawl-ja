@@ -1,0 +1,7 @@
+%%%%
+#### dat/des/arrival/smoll.des ################################
+%%%%
+[feature]adventurer's gravestone
+
+冒険者の墓石
+%%%%

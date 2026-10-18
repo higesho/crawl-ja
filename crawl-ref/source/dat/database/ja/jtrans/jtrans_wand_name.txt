@@ -1,0 +1,69 @@
+%%%%
+wand of flame
+
+火炎のワンド
+%%%%
+wand of slowing
+
+減速のワンド
+%%%%
+wand of hasting
+
+加速のワンド
+%%%%
+wand of heal wounds
+
+癒しのワンド
+%%%%
+wand of paralysis
+
+金縛りのワンド
+%%%%
+wand of confusion
+
+混乱のワンド
+%%%%
+wand of digging
+
+掘削のワンド
+%%%%
+wand of iceblast
+
+吹雪のワンド
+%%%%
+wand of teleportation
+
+テレポートのワンド
+%%%%
+wand of lightning
+
+稲妻のワンド
+%%%%
+wand of polymorph
+
+変化のワンド
+%%%%
+wand of enslavement
+
+隷属のワンド
+%%%%
+wand of acid
+
+強酸のワンド
+%%%%
+wand of random effects
+
+でたらめのワンド
+%%%%
+wand of disintegration
+
+分解のワンド
+%%%%
+wand of removedness
+
+# 訳不要
+%%%%
+wand of bugginess
+
+# 訳不要
+%%%%

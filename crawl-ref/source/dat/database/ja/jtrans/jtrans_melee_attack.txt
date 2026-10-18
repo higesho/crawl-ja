@@ -1,0 +1,866 @@
+%%%%
+# [stop attack prompt]attack
+
+# jtrans_main.txtと重複
+%%%%
+[stop attack prompt]attack near
+
+の近くを攻撃し
+%%%%
+Attack delay %d, multiplier %1.1f
+
+# for debug
+%%%%
+You attempt to attack %s, but flinch away in fear!
+
+あなたは%sを攻撃しようとしたが尻込みした！
+%%%%
+%s strikes at %s from the darkness!
+
+%sは%sを闇討ちした！
+%%%%
+%s%s misses %s%s
+
+%sの%sへの攻撃は%s外れた%s
+%%%%
+Infusion: dmg = %d hurt = %d
+
+# for debug
+%%%%
+%s %s %s but %s no damage.
+
+%sは%s%s%sが、損傷を与えなかった。
+%%%%
+%s shroud bends %s attack away%s
+
+%s帷子は%s攻撃を逸らした%s
+%%%%
+%s shroud falls apart!
+
+%s帷子は霧消した！
+%%%%
+You %sdevour %s!
+
+あなたは%s%sをむさぼり食らった！
+%%%%
+hungrily
+
+ガツガツと
+%%%%
+It tastes like %s.
+
+%sのような味がする。
+%%%%
+Spicy!
+
+ぴりっとした味だ！
+%%%%
+healed for %d (%d hd)
+
+# for debug
+%%%%
+considering devouring
+
+# for debug
+%%%%
+chunk ok
+
+# for debug
+%%%%
+You spit out %s as %s twists & changes in your mouth!
+
+あなたは口の中で捻れて変化した%sを吐きだした！
+%%%%
+shifter ok
+
+# for debug
+%%%%
+god ok
+
+# for debug
+%%%%
+corpse ok
+
+# for debug
+%%%%
+blocks your attack.
+
+はあなたの攻撃を防いだ。
+%%%%
+grab
+
+掴んだ
+%%%%
+[aux verb]grab
+
+掴み
+%%%%
+kick
+
+蹴った
+%%%%
+[aux verb]kick
+
+蹴り
+%%%%
+claw
+
+爪でかきむしった
+%%%%
+[aux verb]claw
+
+爪
+%%%%
+pierce
+
+刺し貫いた
+%%%%
+[aux verb]tentacle spike
+
+棘の生えた触手
+%%%%
+headbutt
+
+頭突きをした
+%%%%
+[aux verb]headbutt
+
+頭突き
+%%%%
+peck
+
+ついばんだ
+%%%%
+[aux verb]peck
+
+ついばみ
+%%%%
+tail-slap
+
+尻尾で打ちつけた
+%%%%
+[aux verb]tail-slap
+
+尻尾の一撃
+%%%%
+punch
+
+殴りつけた
+%%%%
+[aux verb]punch
+
+殴打
+%%%%
+slash
+
+切り払った
+%%%%
+[aux verb]slash
+
+切り払い
+%%%%
+tentacle-slap
+
+触手で打ちすえた
+%%%%
+[aux verb]tentacle-slap
+
+触手の一撃
+%%%%
+bite
+
+噛みついた
+%%%%
+[aux verb]bite
+
+噛みつき
+%%%%
+bludgeon
+
+打ちのめした
+%%%%
+[aux verb]bludgeon
+
+殴打
+%%%%
+squeeze
+
+締めつけた
+%%%%
+[aux verb]squeeze
+
+締めつけ
+%%%%
+Your %s misses %s.
+
+%sはあなたの%sを躱した。
+%%%%
+You %s %s %s.
+
+あなたは%s%sを%s。
+%%%%
+[verb]disrupt
+
+阻害した
+%%%%
+# [verb]drain
+
+# jtrans_attack.txtと重複
+%%%%
+magic
+
+呪文
+%%%%
+power
+
+魔力
+%%%%
+You feel invigorated.
+
+あなたは活力が湧いてきたようだ。
+%%%%
+You %s %s%s.
+
+あなたは%s%s%s%s。
+%%%%
+, but do no damage
+
+が、ダメージを与えられなかった
+%%%%
+You %s %s%s%s
+
+あなたは%s%s%s%s%s
+%%%%
+Your {armour} prevents you from hitting
+
+あなたは自分の%sが邪魔で%sを攻撃できなかった。
+%%%%
+Your shield prevents you from hitting
+
+あなたは自分の盾が邪魔で%sを攻撃できなかった。
+%%%%
+Your shield and {armour} prevent you from hitting
+
+あなたは自分の盾と%sが邪魔で%sを攻撃できなかった。
+%%%%
+You {evasion margin} miss {name}
+
+あなたは%sへの攻撃を%s外した。
+%%%%
+[verb]hit
+
+攻撃した
+%%%%
+[verb]clumsily bash
+
+不器用に殴打した
+%%%%
+[verb]puncture
+
+突き刺した
+%%%%
+[verb]impale
+
+貫いた
+%%%%
+[verb]spit
+
+串刺しにした
+%%%%
+like the proverbial pig
+
+# 訳不要
+%%%%
+[verb]attack
+
+攻撃した
+%%%%
+'s weak point
+
+の急所
+%%%%
+like a pig
+
+豚のように
+%%%%
+[verb]skewer
+
+串刺しにした
+%%%%
+like a kebab
+
+ケバブの肉のように
+%%%%
+[verb]stick
+
+突き刺した
+%%%%
+like a pincushion
+
+針山のように
+%%%%
+[verb]perforate
+
+穴を開けた
+%%%%
+like a sieve
+
+ふるいのように
+%%%%
+[verb]slice
+
+切り裂いた
+%%%%
+[verb]dice
+
+細切れにした
+%%%%
+like an onion
+
+玉ねぎのように
+%%%%
+[verb]fracture
+
+打ち砕いた
+%%%%
+into splinters
+
+木っ端微塵に
+%%%%
+[verb]carve
+
+切り分けた
+%%%%
+like the proverbial ham
+
+ハムのように
+%%%%
+like a turkey
+
+七面鳥のように
+%%%%
+[verb]shave
+
+毛皮を刈り取った
+%%%%
+open like a pillowcase
+
+やすやすと切り裂いた
+%%%%
+slice like a ripe choko
+
+熟したハヤトウリのように切り裂いた
+%%%%
+cut into ribbons
+
+リボンのように切り裂いた
+%%%%
+carve like a ham
+
+ハムのように切り分けた
+%%%%
+chop into pieces
+
+バラバラにぶった切った
+%%%%
+[verb]thump
+
+殴打した
+%%%%
+[verb]sock
+
+打ちすえた
+%%%%
+[verb]shatter
+
+粉砕した
+%%%%
+[verb]splatter
+
+変えた
+%%%%
+into a gooey mess
+
+べたべたした肉塊に
+%%%%
+crush like a grape
+
+ぺしゃんこにした
+%%%%
+beat like a drum
+
+太鼓のように叩いた
+%%%%
+hammer like a gong
+
+銅鑼のように叩いた
+%%%%
+pound like an anvil
+
+金床のように叩きつけた
+%%%%
+flatten like a pancake
+
+パンケーキのようにぺしゃんこにした
+%%%%
+[verb]whack
+
+ビシッと打った
+%%%%
+[verb]thrash
+
+強く鞭打った
+%%%%
+[verb]punish
+
+懲罰した
+%%%%
+, causing immense pain
+
+激痛を与えて
+%%%%
+[verb]devastate
+
+打ちのめした
+%%%%
+[verb]scratch
+
+引っかいた
+%%%%
+[verb]mangle
+
+ずたずたに切り裂いた
+%%%%
+[verb]eviscerate
+
+内臓をくりぬいた
+%%%%
+[verb]batter
+
+叩きのめした
+%%%%
+[verb]pummel
+
+続けざまに殴りつけた
+%%%%
+[verb]squash
+
+ぺしゃんこにした
+%%%%
+like the proverbial ant
+
+蟻のように
+%%%%
+pound into fine dust
+
+塵になるまで叩きつけた
+%%%%
+pummel like a punching bag
+
+サンドバッグのように殴り倒した
+%%%%
+pulverise
+
+<[verb]pulverise>
+%%%%
+squash like an ant
+
+蟻のようにぺしゃんこにした
+%%%%
+beat into a bloody pulp
+
+血の塊になるまで叩いた
+%%%%
+Special damage to %s: %d, flavour: %d
+
+# for debug
+%%%%
+You feel your flesh rotting away!
+
+あなたの肉体が腐り落ちていった！
+%%%%
+%s looks less resilient!
+
+%sは元気を失ったようだ！
+%%%%
+The flame cauterises the wound!
+
+炎が傷口を焼灼する！
+%%%%
+grows two more!
+
+の首が2本生えてきた！
+%%%%
+[claw verb]rip
+
+切り裂いた
+%%%%
+[claw verb]tear
+
+切り裂いた
+%%%%
+[claw verb]claw
+
+切り裂いた
+%%%%
+[slice verb]slice
+
+斬った
+%%%%
+[slice verb]lop
+
+刈り取った
+%%%%
+[slice verb]chop
+
+叩き切った
+%%%%
+[slice verb]hack
+
+ぶった切った
+%%%%
+%s %s %s last head off!
+
+%sは%sの最後の首を%s！
+%%%%
+%s %s one of %s heads off!
+
+%sは%sの首の一つを%s！
+%%%%
+[hands act]your hands burn!
+
+あなたの%sは焼かれた！
+%%%%
+is burned by acid!
+
+は酸で焼かれた！
+%%%%
+%s %s electrocuted!
+
+%sは電撃を受けた！
+%%%%
+%s freeze%s %s!
+
+%sは%sを凍りつかせた！
+%%%%
+%s crush%s %s!
+
+%sは%sの体を粉砕した！
+%%%%
+%s burn%s %s!
+
+%sは%sを燃やした！
+%%%%
+%s %s in agony!
+
+%sは苦痛に%s！
+%%%%
+# [verb]writhe
+
+# jtrans_attack.txtと重複
+%%%%
+# klown_attack
+[verb]poke
+
+小突いた
+%%%%
+[verb]prod
+
+刺した
+%%%%
+[verb]flog
+
+鞭打った
+%%%%
+[verb]pound
+
+叩きつけた
+%%%%
+[verb]slap
+
+打ちつけた
+%%%%
+[verb]tickle
+
+軽く撫でた
+%%%%
+[verb]defenestrate
+
+放り投げた
+%%%%
+[verb]sucker-punch
+
+予想外の殴打を加えた
+%%%%
+[verb]elbow
+
+肘で打った
+%%%%
+[verb]pinch
+
+つまんだ
+%%%%
+[verb]strangle-hug
+
+締め上げた
+%%%%
+[verb]tease
+
+ぐしゃぐしゃにした
+%%%%
+[verb]eye-gouge
+
+眼を抉った
+%%%%
+[verb]karate-kick
+
+空手の蹴りを放った
+%%%%
+[verb]headlock
+
+ヘッドロックを放った
+%%%%
+[verb]wrestle
+
+取っ組み合いをした
+%%%%
+[verb]trip-wire
+
+罠にかけた
+%%%%
+[verb]kneecap
+
+膝を狙って攻撃した
+%%%%
+[verb]sting
+
+刺した
+%%%%
+[verb]release spores at
+
+胞子を振りまいた
+%%%%
+[verb]touch
+
+触れた
+%%%%
+[verb]engulf
+
+とりまいた
+%%%%
+[verb]gore
+
+突き刺した
+%%%%
+# [verb]constrict
+
+# jtrans_actor.txtと重複
+%%%%
+[verb]trample
+
+突き飛ばした
+%%%%
+[verb]trunk-slap
+
+鼻で打ちつけた
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[verb]snap closed at
+
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[verb]splash
+
+%%%%
+[verb]pounce on
+
+飛びかかった
+%%%%
+from afar
+
+遠くから
+%%%%
+with %s
+
+%sで
+%%%%
+You %s %s%s%s%s
+
+あなたは%s%s%s%s%s%s%s
+%%%%
+%s poisons %s!
+
+%sは%sを毒に冒した！
+%%%%
+%s %s covered in liquid flames%s
+
+%s%s燃えたぎる液体に包まれた%s
+%%%%
+{attacker}'s mutagenic touch
+
+%sによる変異の手
+%%%%
+mutagenic touch
+
+変異の手
+%%%%
+%s %s engulfed in flames%s
+
+%s%s炎に包まれた%s
+%%%%
+%s %s %s%s
+
+%sは%s%s%s%s
+%%%%
+[verb]shock
+
+電撃を加えた
+%%%%
+Shock damage: %d
+
+# for debug
+%%%%
+%s %s strength from %s injuries!
+
+%sは%s傷口から力を吸い取った！
+%%%%
+# [verb]draw
+
+# jtrans_decks.txtと重複
+%%%%
+%s %s engulfed in a cloud of spores!
+
+%s%s胞子の雲の中に包まれた！
+%%%%
+Your divine stamina protects you from poison!
+
+あなたの活性化された生命力が毒をはねのけた！
+%%%%
+[verb]infuriate
+
+激怒させた
+%%%%
+[verb]sear
+
+の体を灼いた
+%%%%
+%s drains %s %s.
+
+%sは%s%sを吸い取った。
+%%%%
+looks very invigorated.
+
+はとても元気になったようだ。
+%%%%
+looks invigorated.
+
+は元気になったようだ。
+%%%%
+%s %s %s in water!
+
+%sは%sを水で%s！
+%%%%
+%s magical defenses are stripped away!
+
+%s魔法的防御は破られた！
+%%%%
+[verb]drown
+
+溺れさせた
+%%%%
+is very cold.
+
+は非常に寒そうだ。
+%%%%
+#if TAG_MAJOR_VERSION == 34
+is singed by your heat.
+
+%%%%
+The eyeballs on your body gaze at %s.
+
+あなたの体を覆う眼球は%sをにらみつけた。
+%%%%
+Your tendrils lash around %s %s and pull it to the ground!
+
+あなたの蔦が%sの%sを地面にはたき落とした！
+%%%%
+Spiny: dmg = %d hurt = %d
+
+# for debug
+%%%%
+is struck by your spines.
+
+はあなたの棘で傷ついた。
+%%%%
+%s %s struck by %s %s.
+
+%sは%s棘で傷ついた。
+%%%%
+You emit a cloud of foul miasma!
+
+あなたは瘴気の雲を生み出した！
+%%%%
+%s furiously retaliates!
+
+%sは怒って反撃した！
+%%%%
+%s headbutts %s, but does no damage.
+
+%sは%sに頭突きをしたが、ダメージを与えられなかった。
+%%%%
+%s headbutts %s%s
+
+%sは%sに頭突きをした%s
+%%%%
+You furiously retaliate!
+
+あなたは怒って反撃した！
+%%%%
+Retaliation: dmg = %d hurt = %d
+
+# for debug
+%%%%
+You headbutt %s, but do no damage.
+
+あなたは%sに頭突きをしたが、ダメージを与えられなかった。
+%%%%
+You headbutt %s%s
+
+あなたは%sに頭突きをした%s
+%%%%
+%s riposte%s.
+
+%sは反撃した。
+%%%%
+%s %s %s ground!
+
+%sは一歩も退かなかった！
+%%%%
+[verb]hold
+
+# 訳不要
+%%%%
+[verb]stumble
+
+# 訳不要
+%%%%
+[verb]are shoved
+
+# 訳不要
+%%%%
+%s %s backwards!
+
+%sは後ろに突き飛ばされた！
+%%%%
+Stab damage vs %s: %d
+
+# for debug
+%%%%
+You bite %s, and draw %s blood!
+
+あなたは%sに噛みつき、血液を吸った！
+%%%%
+You draw %s blood!
+
+あなたは%sの血液を吸った！
+%%%%

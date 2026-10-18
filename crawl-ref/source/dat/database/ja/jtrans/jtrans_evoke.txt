@@ -1,0 +1,338 @@
+%%%%
+You cannot attack while held in a net.
+
+網で拘束されている間は攻撃できない。
+%%%%
+You cannot attack while caught in a web.
+
+蜘蛛の巣に巻きつかれている間は攻撃できない。
+%%%%
+Attack whom?
+
+どれを攻撃しますか？
+%%%%
+Your weapon cannot reach that far!
+
+あなたの武器はそこまで届かない！
+%%%%
+You could not reach far enough!
+
+そんなに遠くには届かない！
+%%%%
+You reach to attack!
+
+あなたは攻撃を届かせた！
+%%%%
+%s is in the way.
+
+%sが途中にいる。
+%%%%
+Something you can't see
+
+なにか目に見えないもの
+%%%%
+You attack empty space.
+
+あなたは何もないところを攻撃した。
+%%%%
+You can't produce a sound!
+
+あなたは音を立てることができない！
+%%%%
+You produce a hideous howling noise!
+
+あなたは忌まわしくも凄まじい騒音を吹き鳴らした！
+%%%%
+%s is enraged by your holy aura!
+
+%sはあなたの神聖なるオーラに激怒した！
+%%%%
+Nothing answers your call.
+
+あなたの呼びかけに応える者はいなかった。
+%%%%
+#if TAG_MAJOR_VERSION == 34
+These balls have not yet been approved for use by djinn. (OOC: they're supposed to work, but need a redesign.)
+
+%%%%
+You are unable to concentrate on the shapes in the crystal ball.
+
+あなたは水晶玉に浮かぶ像に集中することができなかった。
+%%%%
+Your reserves of magic are too empty for the crystal ball to function.
+
+あなたの魔力はすっかり空になっているため、水晶玉を使うことができない。
+%%%%
+Your reserves of magic are already full.
+
+あなたの魔力はすでにいっぱいだ。
+%%%%
+You lack the skill to use this item.
+
+あなたはそのアイテムを使うにはスキルが足らない。
+%%%%
+The disc glows for a moment, then fades.
+
+円盤は一瞬だけ輝いたが、すぐに光は消えた。
+%%%%
+Little bolts of electricity crackle over the disc.
+
+小さな電光が円盤の周りでバチバチと爆ぜた。
+%%%%
+The disc erupts in an explosion of electricity!
+
+円盤は電気の爆発を放射した！
+%%%%
+You have no means to grasp a wand firmly enough.
+
+あなたにはしっかりとワンドを握る手段がない。
+%%%%
+You cannot evoke magical items.
+
+あなたは魔道具を発動することができない。
+%%%%
+'s wrath prevents you from evoking devices!
+
+# obsolete: Pakellas
+%%%%
+Zap which item?
+
+どのアイテムを振るいますか？
+%%%%
+You can't zap that!
+
+あなたはそれを振るうことができない！
+%%%%
+Sorry, this wand was removed!
+
+残念ながらそのワンドは削除済みだ！
+%%%%
+This wand has no charges.
+
+このワンドには魔力が残っていない。
+%%%%
+Zapping:
+
+発動:
+%%%%
+<lightred>(will waste charges)</lightred>
+
+<lightred>(余分に残り回数を消耗します)</lightred>
+%%%%
+Evoking this partially-identified wand wasted a few charges.
+
+完全に鑑定されていないワンドを振ったため、余分に魔力を消耗した。
+%%%%
+Your skill with magical items lets you calculate the power of this device...
+
+魔道具に関する技能から、この道具の残り使用回数が判明した。
+%%%%
+This wand has %d charge%s left.
+
+このワンドの使用回数は残り%d回だ。
+%%%%
+Charge which item?
+
+どのアイテムに充填しますか？
+%%%%
+Really abort (and waste the scroll)?
+
+本当に中断しますか？ (巻物は消費されます)
+%%%%
+Choose an item to recharge, or Esc to abort.
+
+再充填するアイテムを選択するか、Escキーで中断してください。
+%%%%
+and now has %d charge%s
+
+。残りの使用回数は%d回だ
+%%%%
+%s %s for a moment%s.
+
+%sは一瞬%s%s。
+%%%%
+[verb]glows
+
+輝いた
+%%%%
+[verb]flickers
+
+明滅した
+%%%%
+It has %d charges and is fully charged.
+
+残り使用回数は最大の%d回まで充填された。
+%%%%
+%s glows for a moment.
+
+%sは一瞬輝いた。
+%%%%
+You have finished your manual of %s and toss it away.
+
+あなたは%sの虎の巻を読破し、それを放り投げた。
+%%%%
+%lu skills
+
+%lu種の
+%%%%
+You open the lid...
+
+あなたは蓋を開いた……
+%%%%
+...but nothing happens.
+
+……しかし何事も起こらなかった。
+%%%%
+...and %s %s out!
+
+……すると%sが飛び出してきた！
+%%%%
+The now-empty box falls apart.
+
+空になった箱はバラバラになった。
+%%%%
+You reach into the bag...
+
+あなたは袋の中を探った……
+%%%%
+...and things crawl out!
+
+……すると何かが這い出てきた！
+%%%%
+The now-empty bag unravels in your hand.
+
+空になった袋はあなたの手の中でぼろぼろになった。
+%%%%
+You can't place a gateway to a ziggurat here.
+
+ここにはジグラットへの門を設置することはできない。
+%%%%
+Finish your current ziggurat first!
+
+今いるジグラットを脱出してからにしてください！
+%%%%
+You set the figurine down, and a mystic portal to a ziggurat forms.
+
+あなたが模型を下に置くと、ジグラットへの不思議なポータルが出現した。
+%%%%
+You gaze into the crystal ball.
+
+あなたは水晶球にじっと見入った。
+%%%%
+You feel your power drain away!
+
+あなたは魔力が吸い取られていくのを感じた！
+%%%%
+You are suffused with power!
+
+あなたは魔力に満たされた！
+%%%%
+Aim the lamp in which direction?
+
+ランプをどの方向に向けますか？
+%%%%
+The flames dance!
+
+炎が舞い踊った！
+%%%%
+[zap]trail of fire
+
+尾を引く炎
+%%%%
+card
+
+カード
+%%%%
+fan
+
+扇
+%%%%
+A mighty gale blasts forth from the %s!
+
+%sから強烈な突風が吹き出した！
+%%%%
+A fierce wind blows from the %s.
+
+%sから激しい風が吹き出した。
+%%%%
+You are blown backwards!
+
+あなたは後方に吹き飛ばされた！
+%%%%
+%s %s blown away by the wind.
+
+%s%s風によって吹き飛ばされた。
+%%%%
+The monsters around you are blown away!
+
+あなたの周囲にいるモンスターは吹き飛ばされた！
+%%%%
+Aim the phial where?
+
+小瓶をどちらに向けますか？
+%%%%
+The water rises up and takes form.
+
+水が持ち上がって動き出した。
+%%%%
+Aiming: <white>Phantom Mirror</white>
+
+照準: <white>幻影の鏡</white>
+%%%%
+You can't use the mirror on yourself.
+
+自分自身に鏡を使うことはできない。
+%%%%
+You can't see anything there to clone.
+
+分身を作り出す対象が見当たらない。
+%%%%
+The mirror can't reflect that.
+
+鏡はそれを映すことができない。
+%%%%
+The reflection would only feel hate for you!
+
+鏡に映しても反感を買うだけだ！
+%%%%
+forbids your reflecting this monster.
+
+はモンスターを鏡に映すのを禁じた。
+%%%%
+mirrored by the player character
+
+あなたに鏡でコピーされた
+%%%%
+You reflect %s with the mirror, and the mirror shatters!
+
+あなたが%sの姿を映すと、鏡は粉々に砕けた！
+%%%%
+The rod doesn't have enough magic points.
+
+ロッドには十分な魔力が込められていない。
+%%%%
+You can't see any susceptible monsters within range! (Use <w>V</w> to cast anyway.)
+
+射程距離内にはモンスターが見当たらない！
+(構わずに使いたい場合、<w>V</w> コマンドを使ってください)
+%%%%
+You cannot evoke items in this form.
+
+現在の姿ではアイテムを発動できない。
+%%%%
+Evoke which item? (* to show all)
+
+どのアイテムを発動させますか？ (* で全アイテムから選択)
+%%%%
+You channel some magical energy.
+
+あなたはいくらか魔力を補充した。
+%%%%
+That is presently inert.
+
+それは今のところ使用不能だ。
+%%%%
+QUAD DAMAGE!
+
+ダメージが4倍になった！
+%%%%

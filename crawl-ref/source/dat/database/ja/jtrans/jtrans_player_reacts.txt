@@ -1,0 +1,133 @@
+%%%%
+midpoint delay loss %d not less than duration midpoint %d
+
+# for ASSERTM()
+%%%%
+Careful! %s
+
+[注意！] %s
+%%%%
+You turn to %s and can move again.
+
+あなたは元の姿に戻って動けるようになった。
+%%%%
+Your limbs are stiffening.
+
+あなたの四肢が硬直しつつある。
+%%%%
+You can move again.
+
+あなたはようやく動けるようになった。
+%%%%
+The heat melts your icy armour.
+
+熱気が氷の鎧を溶かした。
+%%%%
+Monsters! Monsters everywhere! You have to get out of here!
+
+モンスターがそこらじゅうにいる！ 早くここから離れないと！
+%%%%
+You reel with horror at the sight of these foes!
+
+あなたは敵を目の当たりにして恐怖に怯えた！
+%%%%
+You feel a twist of horror at the sight of this foe.
+
+あなたは敵を目の当たりにして怖気を感じた。
+%%%%
+Your recitation is interrupted.
+
+あなたの朗読は中断させられた。
+%%%%
+You finish reciting %s
+
+あなたは%sの朗読を終えた。
+%%%%
+%s emerges from the mists of memory!
+
+%sが記憶の霧の中から浮かび上がってきた！
+%%%%
+Your icy armour evaporates.
+
+あなたの氷の鎧は蒸発した。
+%%%%
+Your icy armour starts to melt.
+
+あなたの氷の鎧は溶けはじめている。
+%%%%
+Your divine shield starts to fade.
+
+神気の盾が薄れていった。
+%%%%
+Your divine shield fades away.
+
+神気の盾は薄れて消え去った。
+%%%%
+Your transformation is almost over.
+
+あなたの変身はもうすぐ時間切れだ。
+%%%%
+# You feel sluggish.
+
+# jtrans_mutation_data.txtと重複
+%%%%
+You start to feel a little slower.
+
+あなたの速度は少しずつ低下し始めた。
+%%%%
+You no longer feel sluggish.
+
+あなたはもう動きが緩慢ではない。
+%%%%
+You start to feel a little faster.
+
+あなたの動きが元の速度を取り戻しつつある。
+%%%%
+Your %s has recovered.
+
+あなたの%sは回復した。
+%%%%
+#if defined(DEBUG_DIAGNOSTICS) || defined(DEBUG_SACRIFICE) || defined(DEBUG_PIETY)
+Piety increases by 1 due to piety pool.
+
+%%%%
+#if defined(DEBUG_DIAGNOSTICS) || defined(DEBUG_SACRIFICE) || defined(DEBUG_PIETY)
+Piety pool is now empty.
+
+%%%%
+The winds around you start to calm down.
+
+あなたの周囲の風はおさまりつつある。
+%%%%
+You are starting to lose your buoyancy.
+
+あなたは飛行能力を失いつつある。
+%%%%
+Your trail of clouds dissipates.
+
+あなたの動く跡に湧き出す雲は消え去った。
+%%%%
+The divine light dispels your darkness!
+
+神気の光はあなたの生み出す闇を払った！
+%%%%
+rot rate: 1/%d
+
+# for debug
+%%%%
+You feel your flesh rotting away.
+
+あなたの肉体が腐り落ちていった。
+%%%%
+You float gracefully downwards.
+
+あなたは優雅に下へと舞い降りていった。
+%%%%
+#ifdef DEBUG_STEALTH
+stealth: %d
+
+%%%%
+The silence causes your song to end.
+
+静寂があなたの歌をかき消した。
+%%%%

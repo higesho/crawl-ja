@@ -1,0 +1,231 @@
+%%%%
+[cloud]flame
+
+炎
+%%%%
+[cloud]roaring flames
+
+燃えさかる炎
+%%%%
+[cloud]noxious fumes
+
+悪臭
+%%%%
+[cloud]freezing vapour
+
+凍てつく大気
+%%%%
+[cloud]freezing vapours
+
+<[cloud]freezing vapour>
+%%%%
+[cloud]poison gas
+
+毒ガス
+%%%%
+[cloud]black smoke
+
+黒い煙
+%%%%
+[cloud]grey smoke
+
+灰色の煙
+%%%%
+[cloud]blue smoke
+
+青い煙
+%%%%
+[cloud]purple smoke
+
+紫の煙
+%%%%
+[cloud]translocational energy
+
+転位のエネルギー
+%%%%
+[cloud]spreading flames
+
+燃え広がる炎
+%%%%
+[cloud]a forest fire
+
+森林火災
+%%%%
+[cloud]steam
+
+蒸気
+%%%%
+[cloud]a cloud of scalding steam
+
+高熱の蒸気
+%%%%
+# TAG_MAJOR_VERSION == 34
+[cloud]gloom
+
+暗闇
+%%%%
+# TAG_MAJOR_VERSION == 34
+[cloud]thick gloom
+
+暗闇
+%%%%
+[cloud]ink
+
+墨
+%%%%
+[cloud]calcifying dust
+
+石化する雲
+%%%%
+[cloud]blessed fire
+
+聖なる炎
+%%%%
+[cloud]foul pestilence
+
+疫病の瘴気
+%%%%
+[cloud]dark miasma
+
+薄黒い疫病の瘴気
+%%%%
+[cloud]thin mist
+
+薄霧
+%%%%
+[cloud]seething chaos
+
+渦巻く混沌
+%%%%
+[cloud]rain
+
+雨
+%%%%
+[cloud]the rain
+
+<[cloud]rain>
+%%%%
+[cloud]mutagenic fog
+
+変異性の霧
+%%%%
+[cloud]magical condensation
+
+凝縮された魔力
+%%%%
+[cloud]raging winds
+
+荒れ狂う風
+%%%%
+[cloud]sparse dust
+
+まばらな塵
+%%%%
+[cloud]spectral mist
+
+鬼火
+%%%%
+[cloud]acidic fog
+
+酸性の霧
+%%%%
+[cloud]thunder
+
+雷
+%%%%
+[cloud]a thunderstorm
+
+<[cloud]thunder>
+%%%%
+[cloud]negative energy
+
+負のエネルギー
+%%%%
+[cloud]white fluffiness
+
+ふわふわの綿雲
+%%%%
+[cloud]salt
+
+塩
+%%%%
+The forest fire spreads!
+
+森林火災が燃え広がった！
+%%%%
+Lightning arcs down from a storm cloud!
+
+雷雲から稲妻が落ちた！
+%%%%
+# You hear a mighty clap of thunder!
+
+# jtrans_beam.txtと重複
+%%%%
+The rain has left you waist-deep in water!
+
+雨によってできた水たまりはあなたの腰の深さまで残っている！
+%%%%
+%s %s in the rain.
+
+%sは雨の中で%s。
+%%%%
+[verb]steam
+
+蒸気を発している
+%%%%
+[verb]sizzle
+
+ジュージューと音を立てている
+%%%%
+You choke on the stench!
+
+あなたは悪臭で窒息しそうだ！
+%%%%
+The mutagenic energy flows into you.
+
+変異性のエネルギーがあなたに流れ込んだ。
+%%%%
+mutagenic cloud
+
+変異性の雲
+%%%%
+You are struck by lightning!
+
+あなたは雷に打たれた！
+%%%%
+is struck by lightning.
+
+は雷に打たれた。
+%%%%
+Lightning from the thunderstorm strikes something you cannot see.
+
+雷雲から降った稲妻があなたの目に見えない何かに直撃した。
+%%%%
+You hear a clap of thunder!
+
+あなたは雷鳴を耳にした！
+%%%%
+%s %s in %s.
+
+%sは%sの中に%s。
+%%%%
+[verb]bask
+
+浸っている
+%%%%
+engulfed
+
+包まれている
+%%%%
+%s %s standing in %s.
+
+%s%s%sの中に立っている。
+%%%%
+The air becomes perfectly still.
+
+大気の動きは完全に停止している。
+%%%%
+The air resumes its normal movements.
+
+大気は通常の流れを取り戻した。
+%%%%

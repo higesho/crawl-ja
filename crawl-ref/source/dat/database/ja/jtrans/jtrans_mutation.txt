@@ -1,0 +1,310 @@
+%%%%
+Innate Abilities, Weirdness & Mutations
+
+先天的/超自然的/もしくは突然変異の能力
+%%%%
+scales are
+
+の鱗は
+%%%%
+very hard
+
+とても硬い
+%%%%
+hard
+
+硬い
+%%%%
+Your %s. (AC +%d)
+
+あなたの%s。(AC +%d)
+%%%%
+serpentine skin is tough
+
+蛇のような鱗は丈夫だ
+%%%%
+stone body is resilient
+
+石の体はとても頑丈だ
+%%%%
+<green>You do not heal naturally.</green>
+
+<green>あなたは自然には回復しない。</green>
+%%%%
+<green>You heal slowly.</green>
+
+<green>あなたの自然回復は遅い。</green>
+%%%%
+<green>Your natural rate of healing is unusually fast.</green>
+
+<green>あなたの自然回復は通常より早い。</green>
+%%%%
+You are amphibious.
+
+あなたは水中と陸上どちらでも活動できる。
+%%%%
+You can wear up to %s rings at the same time.
+
+あなたはいちどきに%sつの指輪を装備することができる。
+%%%%
+You can use your tentacles to constrict %s enemies at once.
+
+あなたは触手を使って%s体までの敵をいちどきに拘束することができる。
+%%%%
+You are very small and have problems with some larger weapons.
+
+あなたの体は非常に小さく、大きな武器を持つのに支障がある。
+%%%%
+You are too small for most types of armour.
+
+あなたの体は小さすぎてほとんどの防具を装備できない。
+%%%%
+You are small and have problems with some larger weapons.
+
+あなたの体は小さく、大きな武器を持つのに支障がある。
+%%%%
+You are too large for most types of armour.
+
+あなたの体は大きすぎてほとんどの防具を装備できない。
+%%%%
+You cannot fit into any form of body armour.
+
+あなたの体はどんな胴鎧にもおさまらない。
+%%%%
+You are immune to poison.
+
+あなたには毒の効果がない。
+%%%%
+<green>You can walk on water.</green>
+
+<green>あなたは水の上を歩くことができる。</green>
+%%%%
+<lightgreen>You can walk on water until reaching land.</lightgreen>
+
+<lightgreen>あなたは地面にたどりつくまでの間は水の上を歩くことができる。<lightgreen>
+%%%%
+<lightred>Your life essence is reduced. (-10% HP)</lightred>
+
+<lightred>あなたの生命力は低下している。(-10% HP)</lightred>
+%%%%
+You are rather mundane.
+
+あなたにはこれといった特徴がない。
+%%%%
+<w>Right-click</w> or press '<w>!</w>' to toggle between mutations and properties depending on your blood level.
+
+変異一覧と腹具合によって変化する耐性一覧を切り替えるには<w>右クリック</w>するか、'<w>!</w>'を押してください。
+%%%%
+Press '<w>!</w>' to toggle between mutations and properties depending on your blood\nlevel.
+
+変異一覧と腹具合によって変化する耐性一覧を切り替えるには'<w>!</w>'を押してください。
+%%%%
+# TAG_MAJOR_VERSION == 34
+Press '<w>!</w>' to toggle between mutations and properties depending on your\n
+temperature.
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+<w>Right-click</w> to toggle between mutations and properties depending on your temperature.
+
+%%%%
+<green>Full</green>       Satiated   <yellow>Thirsty</yellow>    <lightred>Bloodless</lightred>
+
+<green>満腹</green>        通常        <yellow>渇いている</yellow>  <lightred>血の気がない</lightred>
+%%%%
+[vamp attr]Metabolism
+
+腹減り
+%%%%
+[vamp attr]fast
+
+速い
+%%%%
+[vamp attr]normal
+
+普通
+%%%%
+[vamp attr]slow
+
+遅い
+%%%%
+[vamp attr]none
+
+<none>
+%%%%
+[vamp attr]Regeneration
+
+回復速度
+%%%%
+[vamp attr]Stealth boost
+
+隠密補正
+%%%%
+[vamp attr]minor
+
+小
+%%%%
+[vamp attr]major
+
+大
+%%%%
+[vamp attr]Hunger costs
+
+魔法による腹減り
+%%%%
+[vamp attr]full
+
+普通
+%%%%
+[vamp attr]halved
+
+半分
+%%%%
+<w>Resistances</w>
+
+<w>耐性</w>
+%%%%
+[vamp attr]Poison resistance
+
+毒への耐性
+%%%%
+[vamp attr]immune
+
+∞
+%%%%
+[vamp attr]Cold resistance
+
+冷気への耐性
+%%%%
+[vamp attr]Negative resistance
+
+衰弱への耐性
+%%%%
+[vamp attr]Rotting resistance
+
+腐敗への耐性
+%%%%
+[vamp attr]Torment resistance
+
+苦痛への耐性
+%%%%
+<w>Transformations</w>
+
+<w>変異能力</w>
+%%%%
+[vamp attr]Bat form
+
+蝙蝠化
+%%%%
+Other forms and
+
+その他の変異能力・
+%%%%
+[vamp attr]berserk
+
+<berserk>
+%%%%
+[vamp attr]no
+
+不可
+%%%%
+[vamp attr]yes
+
+可
+%%%%
+# TAG_MAJOR_VERSION == 34
+Temperature Effects
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+You get hot in tense situations, when berserking, or when you enter lava. You \ncool down when your rage ends or when you enter water.
+
+%%%%
+<brown>()</brown>  : Partially suppressed.
+
+<brown>()</brown> : 一部抑制されている
+%%%%
+<darkgrey>(())</darkgrey>: Completely suppressed.
+
+<darkgrey>(())</darkgrey>: 完全に抑制されている
+%%%%
+<magenta>[]</magenta>   : Transient mutations.
+
+<magenta>[]</magenta> : 一時的な変異
+%%%%
+You feel odd for a moment.
+
+あなたは一瞬だけ奇妙な感覚になった。
+%%%%
+protects your body from mutation!
+
+はあなたの体が変異するのを防いだ！
+%%%%
+Your body decomposes!
+
+あなたの肉体は腐敗した！
+%%%%
+You feel weaker.
+
+あなたは力が弱くなった。
+%%%%
+You feel stronger.
+
+あなたは力強くなった。
+%%%%
+You feel stupid.
+
+あなたは愚かになった。
+%%%%
+You feel clever.
+
+あなたは賢くなった。
+%%%%
+You feel clumsy.
+
+あなたは不器用になった。
+%%%%
+You feel agile.
+
+あなたは機敏になった。
+%%%%
+gaining the %s mutation
+
+%sの変異を得て
+%%%%
+losing the %s mutation
+
+%sの変異を失って
+%%%%
+You feel rather odd for a moment.
+
+あなたは一瞬、どうにも奇妙な感覚を覚えた。
+%%%%
+# TAG_MAJOR_VERSION == 34
+Found no temp mutations, clearing.
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+Found no temp mutations, expected %d
+
+%%%%
+temp mutation expiry
+
+一時的変異の消滅
+%%%%
+You have sharp claws.
+
+あなたは鋭い爪を持っている。
+%%%%
+Your bite disrupts the magic of your enemies.
+
+あなたの牙は敵の魔法を阻害する。
+%%%%
+Your mutations feel more permanent.
+
+あなたの体の変異は永続的なものとなったようだ。
+%%%%
+{mname} {poof msg}!
+
+%sは%s！
+%%%%

@@ -1,0 +1,819 @@
+%%%%
+is healed.
+
+の体力が回復した。
+%%%%
+invokes %s protection!
+
+は%sの加護を受けた！
+%%%%
+Trog's Hand cast (dur: %d aut)
+
+# for debug
+%%%%
+%s liquefies the ground around %s!
+
+%sは%sの周囲の地面を液状化させた！
+%%%%
+casts a cantrip, but nothing happens.
+
+は悪戯の文言を唱えたが、何も起こらなかった。
+%%%%
+begins to cast a cantrip, but forgets the words!
+
+は悪戯の文言を唱えようとしたが、呪文を忘れてしまった！
+%%%%
+miscasts a cantrip.
+
+は悪戯の文言を唱えるのに失敗した。
+%%%%
+looks braver for a moment.
+
+は一瞬強くなったように見えた。
+%%%%
+looks encouraged for a moment.
+
+は一瞬勇気づいたように見えた。
+%%%%
+looks satisfied for a moment.
+
+は一瞬満足げなように見えた。
+%%%%
+offers %s to %s, and fills with unholy energy.
+
+は%sに請願し、不浄な力に満たされた。
+%%%%
+%s smites you!
+
+%sはあなたに打擲の一撃を浴びせた！
+%%%%
+is smitten.
+
+は打擲の一撃を浴びせられた。
+%%%%
+by divine providence
+
+神意によって
+%%%%
+[zap]damnation
+
+天罰
+# from SPELL_CALL_DOWN_DAMNATION/SPELL_HURL_DAMNATION
+%%%%
+[zap]noxious blast
+
+悪臭雲
+# from SPELL_NOXIOUS_CLOUD
+%%%%
+[zap]blast of poison
+
+猛毒の雲
+# from SPELL_POISONOUS_CLOUD
+%%%%
+[zap]bolt of energy
+
+エネルギーの矢
+# from SPELL_ENERGY_BOLT
+%%%%
+[zap]energy
+
+エネルギーの奔流
+# from SPELL_ENERGY_BOLT
+%%%%
+[zap]splash of poison
+
+毒の飛沫
+# from SPELL_SPIT_POISON
+%%%%
+[zap]splash of acid
+
+酸のしぶき
+# from SPELL_SPIT_ACID
+%%%%
+[zap]stinking cloud
+
+悪臭を放つ雲
+# from SPELL_MEPHITIC_CLOUD
+%%%%
+[zap]foul vapour
+
+腐敗した靄
+# SPELL_MIASMA_BREATH
+%%%%
+[zap]spray of metal splinters
+
+飛散する金属片
+# from SPELL_METAL_SPLINTERS
+%%%%
+[zap]metal splinters
+
+金属片
+# from SPELL_METAL_SPLINTERS
+%%%%
+[zap]blast of flame
+
+猛火の息
+# from SPELL_FIRE_BREATH/SPELL_SEARING_BREATH/SPELL_FLAMING_CLOUD
+%%%%
+[zap]blast of fiery breath
+
+燃えさかる火炎の息
+# from SPELL_FIRE_BREATH/SPELL_SEARING_BREATH/SPELL_FLAMING_CLOUD
+%%%%
+[zap]flames
+
+火炎
+# from SPELL_FIRE_BREATH/SPELL_SEARING_BREATH/SPELL_FLAMING_CLOUD
+%%%%
+[zap]searing blast
+
+灼熱の息
+# from SPELL_SEARING_BREATH
+%%%%
+[zap]blast of searing breath
+
+灼けつく息
+# from SPELL_SEARING_BREATH
+%%%%
+[zap]blast of chaos
+
+混沌の息
+# from SPELL_CHAOS_BREATH
+%%%%
+[zap]blast of chaotic breath
+
+<[zap]blast of chaos>
+# from SPELL_CHAOS_BREATH
+%%%%
+[zap]blast of cold
+
+冷気の息
+# from SPELL_CHILLING_BREATH/SPELL_COLD_BREATH
+%%%%
+[zap]blast of icy breath
+
+<[zap]blast of cold>
+# from SPELL_CHILLING_BREATH/SPELL_COLD_BREATH
+%%%%
+[zap]frost
+
+冷気
+# from SPELL_CHILLING_BREATH/SPELL_COLD_BREATH
+%%%%
+[zap]chilling blast
+
+極寒の息
+# from SPELL_CHILLING_BREATH/SPELL_COLD_BREATH
+%%%%
+[zap]blast of chilling breath
+
+<[zap]chilling blast>
+# from SPELL_CHILLING_BREATH/SPELL_COLD_BREATH
+%%%%
+[zap]blast of cleansing flame
+
+浄化の炎の息
+# from SPELL_HOLY_BREATH
+%%%%
+[zap]porkalator
+
+豚化の魔法
+# from SPELL_PORKALATOR
+%%%%
+[zap]blast of calcifying dust
+
+石化する雲
+# from SPELL_PETRIFYING_CLOUD
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[zap]beam of golden light
+
+%%%%
+[zap]stream of webbing
+
+吐き出された蜘蛛の糸
+# from SPELL_ENSNARE
+%%%%
+[zap]spectral mist
+
+霊体の霧
+%%%%
+[zap]volley of thorns
+
+茨の斉射
+# from SPELL_THORN_VOLLEY
+%%%%
+[zap]flash freeze
+
+瞬間凍結
+# from SPELL_FLASH_FREEZE
+%%%%
+[zap]shadow bolt
+
+影の矢
+# from SPELL_SHADOW_BOLT
+%%%%
+[zap]shadow shard
+
+影の欠片
+# from SPELL_SHADOW_SHARD
+%%%%
+[zap]crystal bolt
+
+水晶の矢
+# from SPELL_CRYSTAL_BOLT
+%%%%
+[zap]glob of lava
+
+溶岩の塊
+# from SPELL_SPIT_LAVA
+%%%%
+[zap]bolt of electricity
+
+電光の矢
+# from SPELL_ELECTRICAL_BOLT
+%%%%
+[zap]volley of spikes
+
+射出された逆棘
+# from SPELL_THROW_BARBS
+%%%%
+[verb]skewers
+
+に突き刺さった
+%%%%
+[zap]vile air
+
+不快な空気
+# from SPELL_DEATH_RATTLE
+%%%%
+%s goes into a battle-frenzy!
+
+%sは戦いに熱狂した！
+%%%%
+%s %s go into a battle-frenzy!
+
+%s%sは戦いに熱狂した！
+%%%%
+No push space from (%d,%d)
+
+# for ASSERT()
+%%%%
+%s activates a sealing rune.
+
+%sは封印のルーンを発動させた。
+%%%%
+Someone
+
+何者か
+%%%%
+The doors slam shut!
+
+扉がピシャッと閉まった！
+%%%%
+A door slams shut!
+
+<The doors slam shut!>
+%%%%
+You are pushed out of the doorway!
+
+あなたは戸口から閉め出された！
+%%%%
+angered by no foe
+
+# for die()
+%%%%
+%s calls on %s to defend %s!
+
+%sは%sを守るように%sに命令した！
+%%%%
+%s goads %s on!
+
+%sは%sを煽動した！
+%%%%
+# is recalled.
+
+# jtrans_godcompanions.txtと重複
+%%%%
+Sorry, this spell isn't supported for dummies!
+
+# for wizmode
+%%%%
+Vines fly forth from the trees!
+
+蔦が急に木から伸びてきた！
+%%%%
+Thorny briars emerge from the ground!
+
+茨の茂みが地面に発生した！
+%%%%
+begins absorbing vital energies!
+
+は生命力を吸収しはじめた！
+%%%%
+%s is empowered by %s aura!
+
+%sは%sのオーラに力を吹き込まれた！
+%%%%
+if sacrificing %s (at %d,%d): ratio %d/%d
+
+# for debug
+%%%%
+setting best target
+
+# for debug
+%%%%
+%s animating energy erupts into ghostly fire!
+
+%sの生命エネルギーが鬼火となってほとばしった！
+%%%%
+[zap]ghostly fireball
+
+鬼火の火球
+# from SPELL_GHOSTLY_SACRIFICE/SPELL_GHOSTLY_FIREBALL
+%%%%
+begins to cast a spell, but is stunned by your will!
+
+は呪文を唱えはじめたが、あなたの意志に従い中断した！
+%%%%
+begins to pray, but is stunned by your will!
+
+は祈祷しはじめたが、あなたの意志に従い中断した！
+%%%%
+begins to attack, but is stunned by your will!
+
+は攻撃しようとしたが、あなたの意志に従い中断した！
+%%%%
+# You redirect %s's attack!
+
+# jtrans_mon_act.txtと重複
+%%%%
+# falters for a moment.
+
+# jtrans_mon_act.txtと重複
+%%%%
+protects your fellow warrior from evil magic!
+
+はあなたの下僕を邪悪な魔術から守った！
+%%%%
+shields your ally from puny magic!
+
+はあなたの仲間をつまらぬ魔術から守った！
+%%%%
+Zin's power protects your fellow warrior from evil magic!
+
+ジンの御業があなたの下僕を邪悪な魔術から守った！
+%%%%
+Abj: dur: %d, pow: %d, ndur: %d
+
+# for debug
+%%%%
+shudders.
+
+は身震いした。
+%%%%
+Send 'em back where they came from!
+
+かの者をもと居た所に押し返すべし！
+%%%%
+is infused with unholy energy, but nothing happens.
+
+は不浄な力を吹き込まれたが、何も起きなかった。
+%%%%
+vamp draining: %d damage, %d healing
+
+# for debug
+%%%%
+is infused with unholy energy.
+
+は不浄な力を吹き込まれた。
+%%%%
+Unholy energy fills the air.
+
+不浄な力が大気に満ちた。
+%%%%
+by vampiric draining
+
+ヴァンパイアの吸血によって
+%%%%
+draws life force from you and is healed!
+
+はあなたから生命力を抜き出し、回復した！
+%%%%
+draws life force from %s!
+
+は%sから生命力を抜き出した！
+%%%%
+draws life force from %s and is healed!
+
+は%sから生命力を抜き出し、回復した！
+%%%%
+%s %s frozen.
+
+%s%s凍結した。
+%%%%
+by Freeze
+
+氷結の呪文によって
+%%%%
+breath timeout: %d
+
+# for debug
+%%%%
+attempts to bespell you!
+
+はあなたに魔法をかけようとした！
+%%%%
+%s draws you further into %s thrall.
+
+%sはあなたをますます魅了した。
+%%%%
+# You%s
+
+# jtrans_beam.txtと重複
+%%%%
+radiates an aura of fear!
+
+は恐怖のオーラを放射した！
+%%%%
+An aura of fear fills the air!
+
+恐怖のオーラがあたりを満たした！
+%%%%
+# looks frightened!
+
+# jtrans_beam.txtと重複
+%%%%
+%s submits to %s will!
+
+%sは%sの意志に従った！
+%%%%
+blinks into view!
+
+が突然視界に現れた！
+%%%%
+Unsupported branch summon spell %s!
+
+# for die()
+%%%%
+Terrible wounds spread across more of %s body!
+
+傷口がさらに%s体に開いた！
+%%%%
+Terrible wounds open up all over %s body!
+
+ひどい傷が%s全身に刻まれた！
+%%%%
+and %s
+
+と%s
+%%%%
+and the adjacent constructs
+
+とそれに隣接する構造物
+%%%%
+A blast of power from the earth%s strikes %s!
+
+大地%sからの力の奔流が%sに打撃を与えた！
+%%%%
+by a resonance strike
+
+共振の一撃の呪文によって
+%%%%
+You are overwhelmed by glittering dream dust!
+
+あなたは眠りを誘う霧に打ち負かされた！
+%%%%
+The dream sheep are wreathed in dream dust.
+
+その羊は眠りを誘う霧を身に纏っている。
+%%%%
+The dream sheep shake%s wool and sparkle%s.
+
+眠りの羊は毛皮を震わせ、そしてその身を輝かせた。
+%%%%
+The dream sheep ruffle%s wool and motes of dream dust sparkle, to no effect.
+
+眠りの羊は毛皮を逆立たせて霧を輝かせたが、何も起こらなかった。
+%%%%
+As the sheep sparkle%s and sway%s, %s falls asleep.
+
+眠りの羊がその身を輝かせて体を揺すぶると、%sは眠りに落ちてしまった。
+%%%%
+The dream sheep attempt%s to lull %s to sleep.
+
+眠りの羊は%sを眠らせようとしているようだ。
+%%%%
+%s is unaffected.
+
+%sは影響を受けていない。
+%%%%
+You feel drowsy...
+
+あなたは眠くなってきた……
+%%%%
+Mon #%d casts %s (#%d)
+
+for debug
+%%%%
+The water rises up and strikes %s!
+
+水流が駆け上り、%sを打ちすえた！
+%%%%
+The water swirls and strikes %s!
+
+水流が渦巻き、%sを打ちすえた！
+%%%%
+by the raging water
+
+荒れ狂う水流によって
+%%%%
+The air twists around and violently strikes you in flight!
+
+周囲の大気が渦を巻き、飛んでいるあなたを打ちすえた！
+%%%%
+The air twists around and strikes you!
+
+周囲の大気が渦を巻き、あなたを打ちすえた！
+%%%%
+is struck by the twisting air!
+
+は渦巻く烈風に打ちすえられた！
+%%%%
+by the air
+
+旋風の一撃の呪文によって
+%%%%
+Something feeds on your intellect!
+
+何かがあなたの知性を吸い取っている！
+%%%%
+Something tries to feed on your intellect!
+
+何かがあなたの知性を吸い取ろうとしている！
+%%%%
+Orcish apparitions take form around you.
+
+幽体のオークの群れがあなたの周囲に姿を現した。
+%%%%
+is surrounded by Orcish apparitions.
+
+は幽体のオークの群れに囲まれている。
+%%%%
+You feel haunted.
+
+あなたは幽霊が出現したのを感じた。
+%%%%
+You sense an evil presence.
+
+あなたは邪悪なるものの存在を感じた。
+%%%%
+puts on a burst of speed!
+
+は動きが素早くなった！
+%%%%
+'s surroundings become eerily quiet.
+
+の周囲は奇妙に静かになった。
+%%%%
+sings a water chant to call the tide!
+
+は潮の流れを呼ぶべく水の聖歌を歌った！
+%%%%
+squirts a massive cloud of ink into the water!
+
+は大量の墨を水中に噴き出した！
+%%%%
+%s shimmers and seems to become %s!
+
+%sの姿は揺らめいて%s体に分裂した！
+%%%%
+two
+
+二
+%%%%
+three
+
+三
+%%%%
+The bodies of the dead form a shell around %s.
+
+%sの周囲の死体が寄り集まって鎧となった。
+%%%%
+ERROR: %s can't cast malign gateway, but is casting anyway! Counted %d gateways.
+
+# for debug
+%%%%
+A great vortex of raging winds appears %s%s%s!
+
+荒れ狂う暴風の渦が%s
+%%%%
+around %s!
+
+%sの周りに出現した！
+%%%%
+and lifts %s up!!
+
+現れ、%sを巻き上げた!!
+%%%%
+A great vortex of raging winds appears out of thin air!
+
+荒れ狂う暴風の渦が出現した！
+%%%%
+Walls emerge from the floor!
+
+石の壁が床からせり出した！
+%%%%
+%s commands the forest to attack, but nothing happens.
+
+%sは攻撃するよう樹木に命じたが、何も起こらなかった。
+%%%%
+The forest starts to sway and rumble!
+
+樹木がざわめきだした！
+%%%%
+'s wounds begin to heal before your eyes!
+
+の傷口はみるみるうちに回復した！
+%%%%
+A film of ice covers %s body!
+
+%sの体が氷の鎧で覆われた！
+%%%%
+begins to accept %s allies' injuries.
+
+は仲間の負う傷を引き受けた。
+%%%%
+radiates an aura of cold.
+
+は冷気のオーラを放射している。
+%%%%
+A wave of cold passes over you.
+
+冷気の波動があなたのそばを通り抜けた。
+%%%%
+You hear crackling.
+
+あなたは電気のパチパチ言う音を聞いた。
+%%%%
+The air around %s crackles with electrical energy.
+
+%sの周りの空気が電気でパチパチ音を立てている。
+%%%%
+%s blue arc%s ground%s harmlessly %s %s.
+
+青白い電弧が%sの%sで大地に接している。
+%%%%
+Some blue arcs ground themselves harmlessly %s %s.
+
+青白い電弧が%sの%sで大地に接している。
+%%%%
+around
+
+周囲
+%%%%
+beside
+
+そば
+%%%%
+behind
+
+後ろ
+%%%%
+before
+
+前
+%%%%
+A blue arc grounds itself harmlessly %s %s.
+
+青白い電弧が%sの%sで大地に接している。
+%%%%
+Some monsters swap places.
+
+モンスターどうしの位置が入れ替わった。
+%%%%
+Space distorts along a thin shroud covering %s %s.
+
+%sを覆う帷子状の力場の上で空間が歪曲した。
+%%%%
+{name}'s form
+
+%s
+%%%%
+{name}'s body
+
+%sの体
+%%%%
+shimmers and seems to become two!
+
+の姿は揺らめいて二体に分裂した！
+%%%%
+begins repelling missiles!
+
+は飛来物を逸らす呪文を唱えた！
+%%%%
+begins deflecting missiles!
+
+は飛来物を弾く呪文を唱えた！
+%%%%
+channels a blast of cleansing flame!
+
+は浄化の炎を炸裂させた！
+%%%%
+the entropic weave
+
+エントロピーの紋様
+%%%%
+begins emitting a brilliant aura!
+
+はまばゆいオーラを放ちはじめた！
+%%%%
+binds the souls of nearby monsters.
+
+は周囲のモンスターの魂を呪縛した。
+%%%%
+#ifdef DEBUG_MONSPEAK
+monster casting lookup: %s%s
+
+# for debug
+%%%%
+thin air
+
+何もない空中
+%%%%
+at %s
+
+%sに向かって
+%%%%
+out of sight
+
+視界の外へと
+%%%%
+%s throws %s %s!
+
+%sは%s%sを投げた！
+%%%%
+# Something
+
+# jtrans_actor.txtと重複
+%%%%
+Hit by %s thrown by %s
+
+%sが投げた%sに当たった
+%%%%
+Taking stairs, don't mesmerise.
+
+# for debug
+%%%%
+%s unleashes a %s howl, and it begins to echo in your mind!
+
+%sはあなたの精神に反響する%s咆哮をくりだした！
+%%%%
+silent
+
+静かな
+%%%%
+terrible
+
+恐るべき
+%%%%
+Some walls begin to move on their own!
+
+壁だったものが動き出した！
+%%%%
+Some walls crumble away!
+
+壁が崩れた！
+%%%%
+You hear rumbling.
+
+あなたは何かが崩れる物音を耳にした。
+%%%%
+its luring
+
+魅惑的な
+%%%%
+a haunting
+
+意識に残る
+%%%%
+chants %s song.
+
+は%s歌を歌った。
+%%%%
+# You hear %s.
+
+# jtrans_item_use.txtと重複
+%%%%
+a luring song
+
+魅惑的な歌声
+%%%%
+a haunting song
+
+意識に残る歌声
+%%%%
+an eerie melody
+
+奇妙なメロディ
+%%%%

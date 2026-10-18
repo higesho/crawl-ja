@@ -1,0 +1,390 @@
+%%%%
+# TRAN_NONE
+[form]none
+
+元の姿
+%%%%
+# TRAN_SPIDER
+[form]Spider
+
+蜘蛛
+%%%%
+spider-form
+
+蜘蛛の形態
+%%%%
+a venomous arachnid creature.
+
+毒を持つ蜘蛛のような生き物の姿を
+%%%%
+Fangs
+
+牙
+%%%%
+[form]hiss
+
+キーキー鳴く
+%%%%
+[form]front leg
+
+前脚
+%%%%
+[verb]crawl onto
+
+這い回った
+%%%%
+[form]flesh
+
+元の姿
+%%%%
+# TRAN_BLADE_HANDS
+[form]Blade
+
+刃の手
+%%%%
+blade
+
+刃の手
+%%%%
+blade-form
+
+刃の手の形態
+%%%%
+[verb]shred
+
+細切れにした
+%%%%
+[form]scythe-like blade
+
+鎌のような刃
+%%%%
+# TRAN_STATUE
+[form]Statue
+
+石像
+%%%%
+statue-form
+
+石像の形態
+%%%%
+a stone statue.
+
+石像化
+%%%%
+[verb]place yourself before
+
+腰を据えた
+%%%%
+[form]stone
+
+石の体
+%%%%
+# TRAN_ICE_BEAST
+[form]Ice
+
+氷獣
+%%%%
+ice-form
+
+氷の獣の形態
+%%%%
+a creature of crystalline ice.
+
+水晶のように透き通った氷の生き物の姿を
+%%%%
+[form]front paw
+
+前脚
+%%%%
+[verb]bow your head before
+
+おじぎをした
+%%%%
+[form flesh equivalent]ice
+
+氷の獣の姿
+%%%%
+# TRAN_DRAGON
+[form]Dragon
+
+竜化
+%%%%
+dragon-form
+
+ドラゴンの形態
+%%%%
+a fearsome dragon!
+
+恐ろしいドラゴンの姿を
+%%%%
+[verb]maul
+
+めちゃめちゃにした
+%%%%
+[form]roar
+
+吠える
+%%%%
+[form]foreclaw
+
+前脚の爪
+%%%%
+# TRAN_LICH
+[form]Lich
+
+屍化
+%%%%
+lich-form
+
+リッチの形態
+%%%%
+a lich.
+
+リッチの姿を
+%%%%
+[form]bone
+
+元の姿
+%%%%
+# TRAN_BAT
+[form]Bat
+
+蝙蝠
+%%%%
+bat-form
+
+蝙蝠の形態
+%%%%
+[form]squeak
+
+キーキー鳴く
+%%%%
+perch on
+
+止まった
+%%%%
+# TRAN_PIG
+[form]Pig
+
+豚化
+%%%%
+pig-form
+
+豚の形態
+%%%%
+a filthy swine.
+
+豚の姿を
+%%%%
+[form]squeal
+
+ブーブーと鳴く
+%%%%
+[form]front trotter
+
+前脚
+%%%%
+# TRAN_APPENDAGE
+[form]App
+
+半獣
+%%%%
+[form]appendage
+
+半獣
+%%%%
+appendage
+
+半獣の躰
+%%%%
+appendage-form
+
+半獣の形態
+%%%%
+# TRAN_TREE
+[form]Tree
+
+樹化
+%%%%
+tree-form
+
+樹木の形態
+%%%%
+a tree.
+
+樹木化
+%%%%
+Branches
+
+枝
+%%%%
+[verb]smack
+
+ぴしゃりと打った
+%%%%
+[form]creak
+
+きしむ音を立てる
+%%%%
+[form]branch
+
+枝
+%%%%
+root
+
+根
+%%%%
+sway towards
+
+枝を揺らした
+%%%%
+[form]wood
+
+元の姿
+%%%%
+# TRAN_PORCUPINE
+[form]Porc
+
+豪猪
+%%%%
+[form]porcupine
+
+豪猪
+%%%%
+porcupine-form
+
+豪猪の形態
+%%%%
+a spiny porcupine.
+
+ヤマアラシの姿を
+%%%%
+Teeth
+
+歯
+%%%%
+curl into a sanctuary of spikes before
+
+棘だらけの体を丸めた
+%%%%
+# TRAN_WISP
+[form]Wisp
+
+霧化
+%%%%
+wisp-form
+
+霧の形態
+%%%%
+an insubstantial wisp.
+
+稀薄な霧の姿を
+%%%%
+[from]Misty tendrils
+
+霧の手先
+%%%%
+[form]whoosh
+
+ヒューッと音を立てる
+%%%%
+misty tendril
+
+霧の手先
+%%%%
+strand
+
+下部
+%%%%
+[verb]swirl around
+
+渦を巻いた
+%%%%
+[form]vapour
+
+元の姿
+%%%%
+# TRAN_JELLY
+[form]Jelly
+
+ジェリー
+%%%%
+jelly-form
+
+ジェリーの形態
+%%%%
+a lump of jelly.
+
+ジェリーの姿を
+%%%%
+# TRAN_FUNGUS
+[form]Fungus
+
+茸化
+%%%%
+fungus-form
+
+茸の形態
+%%%%
+a sentient fungus.
+
+知性あるキノコの姿を
+%%%%
+Spores
+
+胞子
+%%%%
+release spores at
+
+胞子を放った
+%%%%
+[form]sporulate
+
+胞子を放つ
+%%%%
+[form]hypha
+
+菌糸
+%%%%
+[verb]release spores on
+
+胞子を放った
+%%%%
+# TRAN_SHADOW
+[form]Shadow
+
+影化
+%%%%
+shadow-form
+
+影の形態
+%%%%
+a swirling mass of dark shadows.
+
+渦巻く漆黒の影の姿を
+%%%%
+[form flesh equivalent]shadow
+
+影の姿
+%%%%
+# TRAN_HYDRA
+[form]Hydra
+
+ヒドラ
+%%%%
+hydra-form
+
+ヒドラの形態
+%%%%
+[verb]nip at
+
+つねった
+%%%%
+[verb]gouge
+
+[verb]えぐった
+%%%%
+[verb]chomp
+
+むしゃむしゃ食べた
+%%%%

@@ -1,0 +1,13 @@
+%%%%
+This branch is very noisy, and so sound travels much less far.
+
+この分岐は物音に満ちあふれており、音がそんなに遠くまで届かない。
+%%%%
+This branch is unnaturally silent, and so sound travels much further.
+
+この分岐は不自然なまでに静かで、音が遠くまでよく届く。
+%%%%
+This branch contains the %s rune%s of Zot.
+
+この分岐の奥底には%sが隠されている。
+%%%%

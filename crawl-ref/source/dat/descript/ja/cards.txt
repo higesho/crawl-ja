@@ -1,13 +1,153 @@
 %%%%
-the Stairs card
+Vitriol card
 
-(まだこのカードが出たらバグである)
+# en:
+#   The card depicts an oklob plant, dripping with its distinctive corrosive sap.
+#   
+#   Drawing this card will unleash a corrosive attack spell.
+このカードには、腐食性の液体を分泌するオクロブ草が描かれている。
+
+このカードを引くと、腐食性の攻撃呪文を放つ。
+%%%%
+Pain card
+
+# en:
+#   The card depicts an iron wheel, menacing with spikes and rusted with blood.
+#   
+#   Drawing this card unleashes a necromantic attack spell.
+このカードには、生えた棘で他者を威嚇している血に錆びた鉄の車輪が描かれている。
+
+このカードを引くと、死霊術の攻撃呪文が放たれる。
+%%%%
+the Orb card
+
+# en:
+#   The card depicts a figure surrounded by floating, glowing orbs of energy.
+#   
+#   Drawing this card unleashes one or possibly more destructive orbs of pure magic.
+このカードには、宙に浮いた輝くエネルギーの球体に囲まれた人物が描かれている。
+
+このカードを引くと1つかそれ以上の純粋な魔力の破壊球が放たれる。
+%%%%
+Degeneration card
+
+# en:
+#   The card depicts a dragon whose scales are sloughing off, revealing a sheep
+#   underneath.
+#   
+#   Drawing this card will attempt to polymorph and malmutate nearby enemies into
+#   weaker forms, and will briefly daze those that cannot be polymorphed.
+このカードには、ドラゴンの鱗が剥がれ落ち、その下に羊がいたことが見破られる様子が描かれている。
+
+このカードを引くと、周囲の敵をより弱くなる形に変化および悪性変異させ、
+変化することのできないものに対してはしばらくの間眩暈を与える。
+%%%%
+the Elements card
+
+# en:
+#   The card depicts the figures of great beasts lurking in a sandstorm.
+#   
+#   Drawing this card will summon three beasts of the four elements.
+このカードには砂嵐に潜む巨獣の姿が描かれている。
+
+このカードを引くと、四元素の力を持つ3体のモンスターが召喚される。
+%%%%
+the Dance card
+
+# en:
+#   The card depicts an extravagantly-dressed, masked figure dancing alone in a
+#   vast room.
+#   
+#   Drawing this card will summon a dancing weapon. Its quality, brand, and
+#   friendliness are all affected by card power.
+このカードには、豪勢な衣装と仮面を身につけた人物が広間で独りで踊っている様子が描かれている。
+
+このカードを引くと宙を舞う武器が召喚される。
+その質、魔力、そして友好的か敵対的かはすべてカードの威力に依存する。
+%%%%
+the Rangers card
+
+# en:
+#   The card depicts an arrow in a bull's-eye, which has been split by a second
+#   arrow.
+#   
+#   Drawing this card will summon several archers.
+このカードには的の真ん中に命中した矢に第二の矢が命中して真っ二つになった様子が描かれている。
+
+このカードを引くと、何体かの弓兵が召喚される。
+%%%%
+the Illusion card
+
+# en:
+#   The card depicts someone standing in a hall of mirrors, surrounded by their own
+#   reflections.
+#   
+#   Drawing this card will summon an illusion of the user. Its power will depend
+#   upon one's own.
+このカードには鏡の広間に立っている何者かが自らの鏡像に囲まれている様子が描かれている。
+
+このカードを引くと使用者の幻影が生み出される。
+その強さは使用者自身のものに依存する。
+%%%%
+Wrath card
+
+# en:
+#   The card depicts the hand of the divine, reaching down from the heavens to hurl
+#   furious lightning.
+#   
+#   Drawing this card will draw a god's wrath against the user.
+このカードには、神の手が天から伸ばされ猛烈な稲妻を放っている様子が描かれている。
+
+このカードを引くと使用者に神の怒りが下される。
+%%%%
+the Wraith card
+
+# en:
+#   The card depicts absolutely nothing.
+#   
+#   Drawing this card will drain the user.
+このカードには一切何も描かれていない。
+
+このカードを引くと、使用者は衰弱してしまう。
+%%%%
+the Swine card
+
+# en:
+#   The card depicts several feral hogs wallowing in a mud pit.
+#   
+#   Drawing this card will make its user turn pink and root for truffles.
+このカードには泥沼の中でのたうつ野生化した豚の群れが描かれている。
+
+このカードを引くと、使用者をトリュフを掘り求めるピンク色の豚に変えてしまう。
+%%%%
+Torment card
+
+# en:
+#   The card depicts a screaming figure being tortured on the rack.
+#   
+#   Drawing this card will cause agonising injury to the user.
+このカードには、台の上で拷問にかけられた人物が叫んでいる様子が描かれている。
+
+このカードを引くと使用者に激しい痛みを伴う傷を負わせる。
 %%%%
 a buggy card
+
+# en:
+#   The card depicts a Crawl player filing a bug report on Mantis.
+#   
+#   Drawing this card is a bug, if one ever encounters it as such.
+このカードにはプレイヤーがバグレポートを行う様子が描かれている。
 
 (もしこの文章が見えたらバグである。)
 %%%%
 a very buggy card
+
+# en:
+#   The card depicts several Crawl players angrily filing several bug reports on
+#   Mantis.
+#   
+#   Drawing this card is a bug, if one ever encounters it as such.
+このカードには何人ものプレイヤーが怒り狂いながらバグレポートを行う様子が描かれている。
 
 (もしこの文章が見えたらバグである。)
 %%%%

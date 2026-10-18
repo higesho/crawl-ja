@@ -1,0 +1,200 @@
+%%%%
+Antaeus
+
+# old en (ja19):
+#   Once a mighty and renowned titan, his arrogance was his undoing. Now he is
+#   corrupt and tainted, a powerful demon who lords over the frozen wastes of
+#   Cocytus. His strength is legendary.
+# old ja (ja19):
+#   かつては強大で名の知れたタイタンであったが、自らの尊大さで身を滅ぼした。
+#   現在の彼は堕落して悪に染まった、
+#   コキュートスの凍った荒地を治める強大なデーモンである。
+#   彼の膂力は伝説的なほどだ。
+
+Once a hero among the titans, Antaeus grew jealous of the titan queen. In
+single combat he challenged and slew her, and for this crime he was exiled and
+descended into the Hells. Finding the inhabitants of that place no match for his
+might, Antaeus tore from its substance a fourth Hell, Cocytus, a realm born of
+frozen spite.
+%%%%
+Arachne
+
+# old en (ja19):
+#   Once a talented human weaver, Arachne was cursed by being transformed into her
+#   present form: half-human, half-spider. Her sympathies now lie with the inhuman
+#   residents of her new home, and she's eager to dispose of any who would threaten
+#   them.
+# old ja (ja19):
+#   アラクネはかつて機織りに秀でた人間であったが、呪いによって、半身は人、
+#   半身は蜘蛛という現在の姿に変えられてしまった。
+#   彼女は今や新たなる棲み処の人ならざる住民に共感しており、
+#   それらを脅かそうとする者を排除しようとしている。
+
+Once a talented human weaver, Arachne was transformed into a monstrous
+half-spider by a jealous rival's curse. Driven out of her village, she found
+sanctuary for a time among the jorogumo before a bitter feud forced her to
+flee once more.
+
+Now she wanders other corners of the dungeon with a small retinue of loyal
+students in tow, seeking a new domain in which they can spin their peerless
+tapestries in peace.
+%%%%
+Erica
+
+# old en (ja19):
+#   A wild-tempered adventuress.
+# old ja (ja19):
+#   荒々しい気性の女冒険者だ。
+
+A wild-tempered adventuress. She's quite prideful for an octopode, and brandishes
+their venomous capacity and camouflage talents with cruel force.
+%%%%
+Fannar
+
+# old en (ja19):
+#   A cold-hearted elven sorcerer, draped in robes of high office. He whispers
+#   grimly to himself as he stalks the dungeon, trailing ice crystals through the
+#   air behind him.
+# old ja (ja19):
+#   高い地位を示すローブに身を包んだ、冷酷なエルフの魔道士だ。
+#   彼はダンジョンを静かに歩きながら、不気味なことに自らに囁きかけており、
+#   彼の通った後には空気の中に氷の結晶がたなびいている。
+
+A cold-hearted elven sorcerer, draped in robes of high office. They whisper
+grimly to themself as they stalk the dungeon, trailing ice crystals through the
+air behind them.
+%%%%
+Ijyb
+
+# old en (ja19):
+#   A small and twisted goblin, wearing some ugly blue rags. She claims dominion
+#   over this level of the dungeon; the punishment for trespassing is death.
+# old ja (ja19):
+#   小さくて不細工なゴブリンだ。何やら青いぼろを着ている。
+#   彼女はダンジョンのこの階層における支配権を要求している――侵入者に対する処罰は死だ。
+
+A small and shrewd goblin inventor, wearing blue rags coated in soot.
+She claims dominion over this level of the dungeon; trespassers will find
+themselves on the business end of a homemade wand.
+%%%%
+black bear
+
+# old en (ja19):
+#   A small black bear. Like all ursines, it will become enraged if badly hurt or
+#   frightened.
+# old ja (ja19):
+#   小型の黒い熊だ。
+#   他の熊類のように、ひどく傷ついたり恐慌した際には凶暴化する。
+
+A small black bear. Like all ursines, it will become enraged if badly hurt.
+%%%%
+glowing orange brain
+
+# old en (ja19):
+#   A huge wrinkled brain, floating just off the floor and glowing with mutagenic
+#   energies. Every now and then it seems to pulsate.
+# old ja (ja19):
+#   地面から浮かんでいる、変異性のエネルギーで輝いた巨大で皺々の脳髄だ。
+#   その姿は常に脈動している。
+
+A huge pulsating brain, floating just off the floor and glowing with mutagenic
+energies. It radiates a constant psychic influence upon nearby allies, using its
+vast intellect to empower their spellcasting abilities.
+%%%%
+hippogriff
+
+# old en (ja19):
+#   A hybrid with the hindquarters of a horse and the wings, head and talons of a
+#   great eagle.
+# old ja (ja19):
+#   大鷲の頭と鉤爪と翼に、馬の後ろ足と臀部を組み合わせた生き物だ。
+
+A large creature with the hindquarters of a horse and the wings, head and
+talons of a great eagle. As popular heraldric creatures, some fortresses may
+keep them as symbols and defenders alike, where they in turn launch intruders
+into the waiting blades of their masters.
+%%%%
+hydra
+
+# old en (ja19):
+#   A great and nightmarish lacertilian beast. It has many heads, and the potential
+#   to grow many more!
+#   
+#   Hitting it with any bladed weapon bigger than a short blade risks lopping a
+#   head off and causing two more to grow in its place. Very large claws, such as
+#   trolls', are long enough to do the same. Only a weapon branded with flame will
+#   cauterize the wound and prevent more heads from growing.
+# old ja (ja19):
+#   巨大で非常に恐ろしい爬虫類めいた獣だ。
+#   これは複数の頭を持ち、さらに頭を増やす能力がある！
+#   
+#   短剣より大きいあらゆる刃の付いた武器で攻撃すると、
+#   首を刎ねたところからさらに二つの首が生えてくるといった危険がある。
+#   大きな鉤爪(例えばトロルのような)でも同様である。
+#   火炎の魔力を備えた武器だけが、傷口を焼いて首が生えてくるのを防ぐ。
+
+A great and nightmarish lacertilian beast. It has many heads, and the potential
+to grow many more!
+
+Hitting it with any bladed weapon bigger than a short blade risks lopping a
+head off and causing two more to grow in its place. Very large claws, such as
+trolls', are long enough to do the same. Only a weapon branded with flame will
+cauterise the wound and prevent more heads from growing.
+%%%%
+orb of fire
+
+# old en (ja19):
+#   A globe of raw primordial fire, capable of impressive pyrotechnics, and of
+#   twisting the very flesh of creatures who come into its ken.
+# old ja (ja19):
+#   高度な火炎術を操る、原初の炎そのものの球体だ。
+#   その視界に入った生物の肉体を捻じ曲げることも可能とする。
+
+A globe of raw primordial fire, capable of impressive pyrotechnics and of
+twisting the very flesh of creatures who come into its ken.
+%%%%
+orc
+
+# old en (ja19):
+#   An ugly subterranean creature combining the worst features of humans, pigs and
+#   several other unpleasant creatures. It tends to run in packs or mobs, and
+#   delights in outbursts of insane violence.
+# old ja (ja19):
+#   豚と人間、そしてその他不快な生物の容貌を併せ持った地底に住む醜い種族だ。
+#   群れをなす傾向があり、狂気めいた暴力を振るうことに喜びを感じている。
+
+A subterranean tribe whose forebearers were once scattered across every corner
+of the surface world. Eons of persecution have taught them the necessity of
+violence and the importance of having your brethren at your side.
+%%%%
+polar bear
+
+# old en (ja19):
+#   A bear covered in glistening white fur, habituated to cold conditions. Like all
+#   ursines, it will become enraged if badly hurt or frightened.
+# old ja (ja19):
+#   寒冷な環境に適応した、白く輝く毛皮に覆われた熊だ。
+#   他の熊類のように、ひどく傷ついたり恐慌した際には凶暴化する。
+
+A bear covered in glistening white fur, habituated to cold conditions. Like all
+ursines, it will become enraged if badly hurt.
+%%%%
+Royal Jelly
+
+# old en (ja16):
+#   A particularly rich and golden gelatinous thing.
+# old ja (ja16):
+#   とりわけ豪華な、金色をしたゼリー状の存在だ。
+
+A particularly rich and golden gelatinous thing. Smaller jellies swim and pulse
+just below its surface, ready to burst forth at the slightest touch.
+%%%%
+simulacrum
+
+# old en (ja19):
+#   An ice replica of a monster, animated by the powers of necromancy.
+# old ja (ja19):
+#   氷でできたモンスターの似姿だ。死霊術の力で動かされている。
+
+An icy replica of a monster, animated by heretical magics.
+%%%%

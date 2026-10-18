@@ -1,0 +1,475 @@
+%%%%
+character file.
+
+キャラクター情報
+%%%%
+You %svisited %d branch
+
+あなたは迷宮の分岐のうち%d
+%%%%
+of the dungeon, and %s %d of its levels.
+
+に行き、合計で%d階層を訪れている。
+%%%%
+You %svisited Pandemonium %d time
+
+あなたは%d回パンデモニウムに行き、
+%%%%
+, and %s %d of its levels.
+
+合計で%d階層を訪れている。
+%%%%
+You %svisited the Abyss %d time
+
+あなたは%d回アビスを訪れている
+%%%%
+You %svisited %d bazaar
+
+あなたは%d回バザールを訪れている
+%%%%
+You %s%s %d ziggurat
+
+あなたは%d回ジグラット%s
+%%%%
+(completing %d)
+
+(うち%d回踏破)
+%%%%
+, and %s %d of %s levels
+
+、合計で%d階層を訪れている。
+%%%%
+(deepest: %d)
+
+(最高到達階数: %d)
+%%%%
+(%d times)
+
+(%d回)
+%%%%
+You {have} also visited: {portals}.
+
+あなたは%sを訪れている。
+%%%%
+You %scollected %d gold pieces.
+
+あなたは%d枚の金貨をこれまでに集めている。
+%%%%
+You %sspent %d gold pieces at shops.
+
+あなたは%d枚の金貨を店で使っている。
+%%%%
+You %sdonated %d gold pieces to Zin.
+
+あなたはジンに%d枚の金貨を寄付している。
+%%%%
+You %spaid %d gold pieces to Gozag.
+
+あなたはゴザーグに%d枚の金貨を支払っている。
+%%%%
+You %sused %d gold pieces for miscellaneous purposes.
+
+あなたは%d枚の金貨をその他の用途に使っている。
+%%%%
+table legend turns by place
+
+# "Table legend:\n"
+# " A = Turns spent in this place as a percentage of turns spent in the\n"
+# "     entire game.\n"
+# " B = Non-inter-level travel turns spent in this place as a percentage of\n"
+# "     non-inter-level travel turns spent in the entire game.\n"
+# " C = Inter-level travel turns spent in this place as a percentage of\n"
+# "     turns spent in this place.\n"
+# " D = Turns resting spent in this place as a percentage of non-inter-level\n"
+# "     travel turns spent in this place.\n"
+# " E = Turns spent auto-exploring this place as a percentage of\n"
+# "     non-inter-level travel turns spent in this place.\n"
+# " F = Non-inter-level travel turns spent in this place divided by the\n"
+# "     number of levels of this place that you've seen.\n\n";
+場所別ターン消費統計:
+ A = ゲーム全体においてこの場所で費やしたターンのパーセンテージ
+ B = ゲーム全体においてこの場所で階層間でない自動移動を行って費やしたターンの
+     パーセンテージ
+ C = この場所で消費したターンに対する階層間自動移動を行って費やしたターンの
+     パーセンテージ
+ D = 休息に費やしたターンを階層間でない自動移動に費やしたターンで割った
+     パーセンテージ
+ E = 自動探索に費やしたターンを階層間でない自動移動に費やしたターンで割った
+     パーセンテージ
+ F = この場所で階層間でない自動移動を行って費やしたターンをあなたが訪れた
+     階層の数で割ったもの
+%%%%
+Total
+
+全体
+%%%%
+Message History
+
+メッセージ履歴:
+%%%%
+screenshot header
+
+周辺の様子
+%%%%
+Notes\nTurn   | Place    | Note
+
+行動履歴:
+ターン | 場所           | 履歴
+%%%%
+You escaped
+
+あなたはダンジョンから脱出した
+%%%%
+You were {in branch}
+
+あなたは%sにいた
+%%%%
+You are {in branch}
+
+あなたは%sにいる
+%%%%
+You worshipped {god name}.
+
+あなたは%sを信仰していた。
+%%%%
+You worship {god name}.
+
+あなたは%sを信仰している。
+%%%%
+{god name} demanding penance.
+
+%sは懺悔を求めている。
+%%%%
+You aren't carrying anything.
+
+あなたは何も所持していない。
+%%%%
+Inventory:
+
+所持品一覧:
+%%%%
+Skills:
+
+スキル一覧:
+%%%%
+You {have} one spell level left.
+
+あなたの記憶力は1つだけ残っている。
+%%%%
+You {can't} memorise any spells.
+
+あなたはこれ以上呪文を覚えられない。
+%%%%
+You {have} %d spell levels left.
+
+あなたの残りの記憶力は%dだ。
+%%%%
+You {don't} know any spells.
+
+あなたは呪文を何一つ覚えていない。
+%%%%
+You {know} the following spells:
+
+あなたは以下の呪文を覚えている:
+%%%%
+Your Spells              Type           Power        Failure   Level  Hunger
+
+呪文名                     種類         威力   失敗率   レベル 満腹度消費
+%%%%
+table legend kills by place
+
+# "Table legend:\n"
+# " A = Kills in this place as a percentage of kills in entire the game.\n"
+# " B = Kills by you in this place as a percentage of kills by you in\n"
+# "     the entire game.\n"
+# " C = Kills by friends in this place as a percentage of kills by\n"
+# "     friends in the entire game.\n"
+# " D = Other kills in this place as a percentage of other kills in the\n"
+# "     entire game.\n"
+# " E = Experience gained in this place as a percentage of experience\n"
+# "     gained in the entire game.\n"
+# " F = Experience gained in this place divided by the number of levels of\n"
+# "     this place that you have seen.\n\n";
+場所別殺害統計:
+ A = ゲーム全体においてこの場所で殺した数のパーセンテージ
+ B = ゲーム全体においてこの場所でプレイヤー自身が殺した数のパーセンテージ
+ C = ゲーム全体においてこの場所で仲間が殺した数のパーセンテージ
+ D = ゲーム全体においてこの場所でその他のモンスターが殺した数のパーセンテージ
+ E = ゲーム全体においてこの場所で得た経験値のパーセンテージ
+ F = この場所で得た経験値をあなたが訪れた階層の数で割ったもの
+%%%%
+Vault maps used:
+
+使用された特殊マップ名:
+%%%%
+[desc action]Melee
+
+近接攻撃
+%%%%
+[desc action]Fire
+
+射撃
+%%%%
+[desc action]Throw
+
+投擲
+%%%%
+[desc action]Armor
+
+鎧/服
+%%%%
+[desc action]Block
+
+防御
+%%%%
+[desc action]Dodge
+
+回避
+%%%%
+[desc action]Cast
+
+呪文
+%%%%
+[desc action]Invok
+
+祈祷
+%%%%
+[desc action]Abil
+
+能力
+%%%%
+[desc action]Evoke
+
+発動
+%%%%
+[desc action]Use
+
+使用
+%%%%
+[desc action]Stab
+
+急所攻撃
+%%%%
+[desc action]Eat
+
+食事
+%%%%
+[desc action]Rpst.
+
+反撃
+%%%%
+[desc action]Normal
+
+通常時
+%%%%
+[desc action]Distracted
+
+よそ見中
+%%%%
+[desc action]Confused
+
+混乱中
+%%%%
+[desc action]Fleeing
+
+逃亡中
+%%%%
+[desc action]Invisible
+
+透明化中
+%%%%
+[desc action]Held in net/web
+
+拘束中
+%%%%
+[desc action]Petrifying
+
+石化進行中
+%%%%
+[desc action]Petrified
+
+石化中
+%%%%
+[desc action]Paralysed
+
+麻痺中
+%%%%
+[desc action]Sleeping
+
+睡眠中
+%%%%
+[desc action]Betrayed ally
+
+仲間から
+%%%%
+[desc action]No attack
+
+攻撃しない
+%%%%
+[desc action]Constrict
+
+拘束
+%%%%
+[desc action]Kick
+
+蹴り
+%%%%
+[desc action]Headbutt
+
+頭突き
+%%%%
+[desc action]Peck
+
+嘴突き
+%%%%
+[desc action]Tailslap
+
+尻尾攻撃
+%%%%
+[desc action]Punch
+
+拳打
+%%%%
+[desc action]Bite
+
+噛みつき
+%%%%
+[desc action]Pseudopods
+
+仮足
+%%%%
+[desc action]Tentacles
+
+触手
+%%%%
+[desc action]Other
+
+その他
+%%%%
+[desc action]Unarmed
+
+<unarmed>
+%%%%
+[desc action]Skin
+
+皮膚
+%%%%
+[desc action]Reflection
+
+反射
+%%%%
+[desc action]Dodged
+
+<[desc action]Dodge>
+%%%%
+[desc action]Deflected
+
+飛来物防御/阻止
+%%%%
+[desc action]Wand
+
+<wand>
+%%%%
+[desc action]Rod
+
+<rod>
+%%%%
+[desc action]Deck
+
+<deck>
+%%%%
+# TAG_MAJOR_VERSION == 34
+[desc action]Miscellaneous
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[desc action]tome
+
+%%%%
+[desc action]Corpse
+
+<corpse>
+%%%%
+Action
+
+行動
+%%%%
+Skill      XL: |
+
+スキル Lv: |
+%%%%
+You are fainting.
+
+あなたは意識が途切れがちになる。
+%%%%
+You are starving.
+
+あなたは餓死しかけている。
+%%%%
+You are near starving.
+
+あなたは餓死が近い。
+%%%%
+You are very hungry.
+
+あなたはとても腹が減っている。
+%%%%
+You are hungry.
+
+あなたは腹が減っている。
+%%%%
+You are not hungry.
+
+あなたは特に腹が減っていない。
+%%%%
+You are full.
+
+あなたは満腹だ。
+%%%%
+You are very full.
+
+あなたはとても満腹だ。
+%%%%
+You are completely stuffed.
+
+あなたは腹一杯だ。
+%%%%
+You are bloodless.
+
+あなたは血の気がない。
+%%%%
+You are near bloodless.
+
+あなたはほとんど血の気がない。
+%%%%
+You are very thirsty.
+
+あなたはとても渇いている。
+%%%%
+You are thirsty.
+
+あなたは渇いている。
+%%%%
+You are not thirsty.
+
+あなたはあまり渇いていない。
+%%%%
+You are almost alive.
+
+あなたはほとんど生者のようだ。
+%%%%
+Vaults used:
+
+%%%%
+Char dumped successfully.
+
+キャラクター情報のファイル出力に成功しました。
+%%%%
+Char dumped to '%s'.
+
+キャラクター情報を'%s'に出力しました。
+%%%%
+Turn   | Place    | Note
+
+ターン | 場所           | 行動
+%%%%

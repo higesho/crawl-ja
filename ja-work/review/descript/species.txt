@@ -1,0 +1,86 @@
+%%%%
+Deep Elf
+
+# en (0.34):
+#   Deep Elves have a strong affinity for all kinds of magic, but are very fragile.
+#   They regenerate magical power rapidly.
+
+闇エルフは魔法の使用に熟達しているが、非常に軟弱である。
+%%%%
+Felid
+
+# en (0.34):
+#   Felids are many-lived sentient cats. They cannot use armour or weapons.
+
+フェリッドは優れた知覚を持ち、何度も生き返る。しかし高度な道具や武器、
+鎧を扱うことができない。
+%%%%
+Gargoyle
+
+# en (0.34):
+#   Made of living stone, Gargoyles have a preternatural affinity for earth magic.
+#   They have low health, but their stone bodies are incredibly tough.
+
+ガーゴイルは生ける石で作られており、大地と異常なまでの親和性を持つ。
+%%%%
+Human
+
+# en (0.34):
+#   Humans are natural explorers. Discovering new places refreshes and invigorates them.
+#   They are otherwise completely average.
+
+普通で平凡な人間だ。
+%%%%
+Tengu
+
+# en (0.34):
+#   Tengu are bird-people who love to fight, both with weapons and spells. They are
+#   fragile but agile, and eventually learn to fly.
+
+戦いを好む鳥人間で、武器も呪文も扱う。彼らはずいぶん軟弱だが、
+後に高速な飛行を習得する。
+%%%%
+Mummy
+
+# en (0.34):
+#   Compelled to walk by an ancient curse, Mummies have innate faith and are adept
+#   at Necromancy, but learn other skills very slowly. They cannot drink potions.
+
+包帯と防腐液に覆われたアンデッドの姿だ。それは古代の呪いで動いている。
+%%%%
+Naga
+
+# en (0.34):
+#   Nagas are hybrids: human from the waist up, with a snake-like tail instead of
+#   legs. They move very slowly but are naturally resilient.
+
+ナーガは胸から上が人間で、下半身は鱗のある蛇のような混血種だ。
+彼らの移動は遅いが、生まれつき頑強である。
+%%%%
+Octopode
+
+# en (0.34):
+#   Octopodes are a species of amphibious cephalopods. They can wear eight rings,
+#   but almost no armour fits them.
+
+オクトポードは水陸両生の頭足類である。彼らは8つの指輪を身に付けることができるが、
+ほとんどの鎧を装備することができない。
+%%%%
+Spriggan
+
+# en (0.34):
+#   Very small, very frail and very fast, Spriggans are highly competent stabbers
+#   and spellcasters.
+
+スプリガンはとても小さく、とても虚弱で、とてもすばしっこい。
+スプリガンは暗殺や呪文詠唱に優れている。
+%%%%
+Troll
+
+# en (0.34):
+#   Trolls are monstrous creatures with powerful claws. They regenerate health
+#   rapidly.
+
+トロルは巨大で凶暴で、躊躇うことなく全てを鉤爪で引き裂こうとしている。
+彼らはいつも空腹である。
+%%%%

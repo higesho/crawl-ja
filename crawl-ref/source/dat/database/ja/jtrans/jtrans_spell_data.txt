@@ -1,0 +1,1409 @@
+%%%%
+[spell]Teleport Self
+
+自己テレポート
+%%%%
+[spell]Cause Fear
+
+恐慌の喚起
+%%%%
+[spell]Magic Dart
+
+魔法の矢
+%%%%
+[spell]Fireball
+
+ファイアボール
+%%%%
+[spell]Apportation
+
+収拾
+%%%%
+[spell]Delayed Fireball
+
+遅延式ファイアボール
+%%%%
+[spell]Conjure Flame
+
+火柱の幻出
+%%%%
+[spell]Dig
+
+掘削
+%%%%
+[spell]Bolt of Fire
+
+猛火の矢
+%%%%
+[spell]Bolt of Cold
+
+凍結の矢
+%%%%
+[spell]Lightning Bolt
+
+稲妻の矢
+%%%%
+[spell]Blinkbolt
+
+雷霆の突進
+%%%%
+[spell]Bolt of Magma
+
+溶岩の矢
+%%%%
+[spell]Polymorph
+
+変化
+%%%%
+[spell]Slow
+
+減速
+%%%%
+[spell]Haste
+
+加速
+%%%%
+[spell]Petrify
+
+石化
+%%%%
+[spell]Confuse
+
+混乱
+%%%%
+[spell]Invisibility
+
+透明化
+%%%%
+[spell]Throw Flame
+
+火炎の投射
+%%%%
+[spell]Throw Frost
+
+冷気の投射
+%%%%
+[spell]Controlled Blink
+
+精密瞬間移動
+%%%%
+[spell]Disjunction
+
+空間分離
+%%%%
+[spell]Freezing Cloud
+
+凍気の雲
+%%%%
+[spell]Mephitic Cloud
+
+悪臭の雲
+%%%%
+[spell]Ring of Flames
+
+炎の円環
+%%%%
+[spell]Venom Bolt
+
+猛毒の矢
+%%%%
+[spell]Olgreb's Toxic Radiance
+
+オルグレブの毒気の光輪
+%%%%
+[spell]Teleport Other
+
+他者のテレポート
+%%%%
+[spell]Death's Door
+
+死のとば口
+%%%%
+[spell]Mass Confusion
+
+集団の混乱
+%%%%
+[spell]Smiting
+
+打擲の一撃
+%%%%
+[spell]Summon Small Mammal
+
+小動物の召喚
+%%%%
+[spell]Abjuration
+
+解放の宣誓
+%%%%
+[spell]Aura of Abjuration
+
+解放のオーラ
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Summon Scorpions
+
+蠍の召喚
+%%%%
+[spell]Bolt of Draining
+
+衰弱の矢
+%%%%
+[spell]Lehudib's Crystal Spear
+
+レフディブの水晶槍
+%%%%
+[spell]Bolt of Inaccuracy
+
+# rod of inaccuracy
+不正確の矢
+%%%%
+[spell]Tornado
+
+大竜巻
+%%%%
+[spell]Poisonous Cloud
+
+猛毒の雲
+%%%%
+[spell]Fire Storm
+
+炎の嵐
+%%%%
+[spell]Call Down Damnation
+
+天罰の招来
+%%%%
+[spell]Blink
+
+瞬間移動
+%%%%
+[spell]Blink Range
+
+瞬間退避
+%%%%
+[spell]Blink Away
+
+瞬間退避
+%%%%
+[spell]Blink Close
+
+瞬間接敵
+%%%%
+[spell]Iskenderun's Mystic Blast
+
+イスケンデルンの爆破の秘術
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Summon Swarm
+
+大群の召喚
+%%%%
+[spell]Summon Horrible Things
+
+おぞましきものの召喚
+%%%%
+[spell]Malign Gateway
+
+邪悪なる通り道
+%%%%
+[spell]Enslavement
+
+隷属
+%%%%
+[spell]Animate Dead
+
+死霊の蘇生
+%%%%
+[spell]Pain
+
+苦痛
+%%%%
+[spell]Control Undead
+
+アンデッドの指揮
+%%%%
+[spell]Animate Skeleton
+
+スケルトンの造成
+%%%%
+[spell]Vampiric Draining
+
+ヴァンパイアの吸血
+%%%%
+[spell]Haunt
+
+招霊
+%%%%
+[spell]Borgnjor's Revivification
+
+ボーグンジョルの究極治癒
+%%%%
+[spell]Freeze
+
+氷結
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Summon Elemental
+
+精霊の召喚
+%%%%
+[spell]Ozocubu's Refrigeration
+
+オゾクブの瞬間凍結
+%%%%
+[spell]Sticky Flame
+
+焼夷の炎
+%%%%
+[spell]Summon Ice Beast
+
+氷の獣の召喚
+%%%%
+[spell]Ozocubu's Armour
+
+オゾクブの鎧
+%%%%
+[spell]Call Imp
+
+インプの召喚
+%%%%
+[spell]Repel Missiles
+
+飛来物の防御
+%%%%
+[spell]Berserker Rage
+
+狂戦士の怒り
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Frenzy
+
+# 訳不要
+%%%%
+[spell]Dispel Undead
+
+アンデッドの解呪
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Fulsome Distillation
+
+# 訳不要
+%%%%
+[spell]Poison Arrow
+
+毒素の矢
+%%%%
+[spell]Twisted Resurrection
+
+捻れた蘇生
+%%%%
+[spell]Regeneration
+
+再生
+%%%%
+[spell]Banishment
+
+アビスへの追放
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Cigotuvi's Degeneration
+
+# 訳不要
+%%%%
+[spell]Sting
+
+毒針
+%%%%
+[spell]Sublimation of Blood
+
+血の昇華
+%%%%
+[spell]Tukima's Dance
+
+ツキマーの舞踏
+%%%%
+[spell]Summon Demon
+
+デーモンの召喚
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Demonic Horde
+
+# 訳不要
+%%%%
+[spell]Summon Greater Demon
+
+上位デーモンの召喚
+%%%%
+[spell]Corpse Rot
+
+死体の腐蝕
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Fire Brand
+
+火炎の武器
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Freezing Aura
+
+凍結の武器
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Lethal Infusion
+
+死の装填
+%%%%
+[spell]Iron Shot
+
+鉄塊の矢
+%%%%
+[spell]Stone Arrow
+
+石錐の矢
+%%%%
+[spell]Shock
+
+電撃
+%%%%
+[spell]Swiftness
+
+俊足
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Flight
+
+飛行
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Insulation
+
+絶縁化
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Cure Poison
+
+毒の治療
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Control Teleport
+
+精密テレポート
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Poison Weapon
+
+毒の武器
+%%%%
+[spell]Debugging Ray
+
+# 訳不要
+%%%%
+[spell]Recall
+
+招来
+%%%%
+[spell]Agony
+
+苦悶
+%%%%
+[spell]Spider Form
+
+蜘蛛の躯
+%%%%
+[spell]Disintegrate
+
+分解
+%%%%
+[spell]Blade Hands
+
+刃の手
+%%%%
+[spell]Statue Form
+
+石像の躯
+%%%%
+[spell]Ice Form
+
+氷の躯
+%%%%
+[spell]Dragon Form
+
+ドラゴンの躯
+%%%%
+[spell]Hydra Form
+
+ヒドラの躯
+%%%%
+[spell]Necromutation
+
+死者の躯
+%%%%
+[spell]Death Channel
+
+死の霊媒術
+%%%%
+[spell]Symbol of Torment
+
+苦痛の紋章
+%%%%
+[spell]Deflect Missiles
+
+飛来物の阻止
+%%%%
+[spell]Throw Icicle
+
+氷柱の投射
+%%%%
+[spell]Airstrike
+
+旋風の一撃
+%%%%
+[spell]Shadow Creatures
+
+影の怪物
+%%%%
+[spell]Confusing Touch
+
+混乱の一撃
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Sure Blade
+
+# 訳不要
+%%%%
+[spell]Flame Tongue
+
+炎の舌先
+%%%%
+[spell]Passwall
+
+壁の透過
+%%%%
+[spell]Ignite Poison
+
+毒の燃焼
+%%%%
+[spell]Sticks to Snakes
+
+棒切れの蛇
+%%%%
+[spell]Call Canine Familiar
+
+犬族のしもべの召喚
+%%%%
+[spell]Summon Dragon
+
+ドラゴンの召喚
+%%%%
+[spell]Ensorcelled Hibernation
+
+魔法の眠り
+%%%%
+[spell]Metabolic Englaciation
+
+代謝の凍結
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]See Invisible
+
+透明体の視認
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Phase Shift
+
+位相変移
+%%%%
+[spell]Summon Butterflies
+
+胡蝶の召喚
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Warp Weapon
+
+歪曲の武器
+%%%%
+[spell]Silence
+
+静寂
+%%%%
+[spell]Shatter
+
+粉砕
+%%%%
+[spell]Dispersal
+
+転送
+%%%%
+[spell]Static Discharge
+
+空電放射
+%%%%
+[spell]Corona
+
+照明
+%%%%
+[spell]Alistair's Intoxication
+
+アリステイアの酩酊
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Evaporate
+
+# 訳不要
+%%%%
+[spell]Lee's Rapid Deconstruction
+
+リーの瞬間解体術
+%%%%
+[spell]Sandblast
+
+砂の突風
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Condensation Shield
+
+# 訳不要
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Stoneskin
+
+# 訳不要
+%%%%
+[spell]Simulacrum
+
+幻像
+%%%%
+[spell]Conjure Ball Lightning
+
+魔術の球雷
+%%%%
+[spell]Chain Lightning
+
+連鎖する稲妻
+%%%%
+[spell]Excruciating Wounds
+
+苦痛の傷痕
+%%%%
+[spell]Portal Projectile
+
+射出物の転送
+%%%%
+[spell]Monstrous Menagerie
+
+怪物園の開場
+%%%%
+[spell]Passage of Golubria
+
+ゴルブリアの通り道
+%%%%
+[spell]Fulminant Prism
+
+爆発性の晶柱
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Singularity
+
+# 訳不要
+%%%%
+[spell]Paralyse
+
+麻痺
+%%%%
+[spell]Minor Healing
+
+小さな癒し
+%%%%
+[spell]Major Healing
+
+大いなる癒し
+%%%%
+[spell]Hurl Damnation
+
+天罰
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Vampire Summon
+
+# 訳不要
+%%%%
+[spell]Brain Feed
+
+脳食らい
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Rakshasa Summon
+
+# 訳不要
+%%%%
+[spell]Noxious Cloud
+
+悪臭の雲烟
+%%%%
+[spell]Steam Ball
+
+蒸気の爆裂球
+%%%%
+[spell]Summon Ufetubus
+
+ウフェツバスの召喚
+%%%%
+[spell]Summon Hell Beast
+
+地獄の獣人の召喚
+%%%%
+[spell]Energy Bolt
+
+電光の矢
+%%%%
+[spell]Spit Poison
+
+毒の唾
+%%%%
+[spell]Summon Undead
+
+不死者の召喚
+%%%%
+[spell]Cantrip
+
+悪戯の文言
+%%%%
+[spell]Quicksilver Bolt
+
+水銀の矢
+%%%%
+[spell]Metal Splinters
+
+鉄片の奔流
+%%%%
+[spell]Miasma Breath
+
+瘴気のブレス
+%%%%
+[spell]Summon Drakes
+
+ドレイクの召喚
+%%%%
+[spell]Blink Other
+
+他者の瞬間移動
+%%%%
+[spell]Blink Other Close
+
+他者の瞬間接敵
+%%%%
+[spell]Summon Mushrooms
+
+茸の怪物の召喚
+%%%%
+[spell]Spit Acid
+
+酸の唾
+%%%%
+[spell]Sticky Flame Range
+
+焼夷の炎(遠隔)
+%%%%
+[spell]Sticky Flame Splash
+
+焼夷の炎の飛沫
+%%%%
+[spell]Fire Breath
+
+火炎の息
+%%%%
+[spell]Searing Breath
+
+焼灼のブレス
+%%%%
+[spell]Chaos Breath
+
+混沌のブレス
+%%%%
+[spell]Cold Breath
+
+冷気のブレス
+%%%%
+[spell]Chilling Breath
+
+冷却のブレス
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Draconian Breath
+
+# 訳不要
+%%%%
+[spell]Summon Water Elementals
+
+水の精霊の召喚
+%%%%
+[spell]Porkalator
+
+豚化の光線
+%%%%
+[spell]Spawn Tentacles
+
+触手の発生
+%%%%
+[spell]Tomb of Doroklohe
+
+ドルオクロヒの玄室
+%%%%
+[spell]Summon Eyeballs
+
+眼球の怪物の召喚
+%%%%
+[spell]Haste Other
+
+他者の加速
+%%%%
+[spell]Summon Earth Elementals
+
+大地の精霊の召喚
+%%%%
+[spell]Summon Air Elementals
+
+風の精霊の召喚
+%%%%
+[spell]Summon Fire Elementals
+
+火の精霊の召喚
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Summon Iron Elementals
+
+# 訳不要
+%%%%
+[spell]Sleep
+
+睡眠
+%%%%
+[spell]Mara Summon
+
+分身
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Summon Rakshasa
+
+# 訳不要
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Mislead
+
+# 訳不要
+%%%%
+[spell]Summon Illusion
+
+幻影の召喚
+%%%%
+[spell]Primal Wave
+
+原初の大波
+%%%%
+[spell]Call Tide
+
+大波の喚起
+%%%%
+[spell]Orb of Destruction
+
+破壊の爆裂球
+%%%%
+[spell]Ink Cloud
+
+墨の雲
+%%%%
+[spell]Might
+
+怪力
+%%%%
+[spell]Might Other
+
+他者の強化
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Sunray
+
+# 訳不要
+%%%%
+[spell]Awaken Forest
+
+森林の喚起
+%%%%
+[spell]Druid's Call
+
+ドルイドの呼び声
+%%%%
+[spell]Brothers in Arms
+
+戦友の召喚
+%%%%
+[spell]Trog's Hand
+
+トログの御手
+%%%%
+[spell]Summon Spectral Orcs
+
+オークの霊魂の召喚
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Holy Light
+
+# 訳不要
+%%%%
+[spell]Summon Holies
+
+神聖なるものの召喚
+%%%%
+[spell]Heal Other
+
+他者の治癒
+%%%%
+[spell]Holy Flames
+
+神聖なる火炎
+%%%%
+[spell]Holy Breath
+
+聖なるブレス
+%%%%
+[spell]Injury Mirror
+
+創傷の鏡
+%%%%
+[spell]Drain Life
+
+生命の簒奪
+%%%%
+[spell]Leda's Liquefaction
+
+レダの流動術
+%%%%
+[spell]Summon Hydra
+
+ヒドラの召喚
+%%%%
+[spell]Darkness
+
+暗闇の喚起
+%%%%
+[spell]Mesmerise
+
+魅了
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Melee
+
+# 訳不要
+%%%%
+[spell]Fire Summon
+
+炎の眷属の召喚
+%%%%
+[spell]Petrifying Cloud
+
+石化の雲
+%%%%
+[spell]Shroud of Golubria
+
+ゴルブリアの帷子
+%%%%
+[spell]Inner Flame
+
+内なる炎
+%%%%
+[spell]Beastly Appendage
+
+半獣の躰
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Silver Blast
+
+# 訳不要
+%%%%
+[spell]Ensnare
+
+絡めとり
+%%%%
+[spell]Thunderbolt
+
+雷霆の矢
+%%%%
+[spell]Iskenderun's Battlesphere
+
+イスケンデルンの戦闘球
+%%%%
+[spell]Summon Minor Demon
+
+下位デーモンの召喚
+%%%%
+[spell]Malmutate
+
+悪性変異
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Summon Twister
+
+# 訳不要
+%%%%
+[spell]Dazzling Spray
+
+眩い光の放射
+%%%%
+[spell]Force Lance
+
+力場の槍
+%%%%
+[spell]Sentinel's Mark
+
+番兵の標的
+%%%%
+[spell]Word of Recall
+
+招集の宣言
+%%%%
+[spell]Injury Bond
+
+創傷の絆
+%%%%
+[spell]Spectral Cloud
+
+幽体の雲
+%%%%
+[spell]Ghostly Fireball
+
+鬼火の火球
+%%%%
+[spell]Call Lost Soul
+
+滅亡せる霊魂の召喚
+%%%%
+[spell]Dimension Anchor
+
+次元の碇
+%%%%
+[spell]Blink Allies Encircling
+
+盟友の招集
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Shaft Self
+
+# 訳不要
+%%%%
+[spell]Awaken Vines
+
+鞭打蔦の召喚
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Control Winds
+
+# 訳不要
+%%%%
+[spell]Volley of Thorns
+
+茨の斉射
+%%%%
+[spell]Wall of Brambles
+
+茨の壁
+%%%%
+[spell]Waterstrike
+
+水流の一撃
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Haste Plants
+
+# 訳不要
+%%%%
+[spell]Wind Blast
+
+突風
+%%%%
+[spell]Strip Resistance
+
+耐性の除去
+%%%%
+[spell]Infusion
+
+魔力の装填
+%%%%
+[spell]Song of Slaying
+
+殺戮の歌
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Song of Shielding
+
+# 訳不要
+%%%%
+[spell]Spectral Weapon
+
+幽体の武器
+%%%%
+[spell]Summon Vermin
+
+害虫の召喚
+%%%%
+[spell]Malign Offering
+
+悪意の供物
+%%%%
+[spell]Searing Ray
+
+焼灼の光線
+%%%%
+[spell]Discord
+
+精神不和
+%%%%
+[spell]Invisibility Other
+
+他者の透明化
+%%%%
+[spell]Virulence
+
+免疫の低下
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Localized Ignite Poison
+
+# 訳不要
+%%%%
+[spell]Orb of Electricity
+
+電撃の爆裂球
+%%%%
+[spell]Explosive Bolt
+
+爆裂の矢
+%%%%
+[spell]Flash Freeze
+
+瞬間凍結
+%%%%
+[spell]Legendary Destruction
+
+伝説的な破壊
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Ephemeral Infusion
+
+# 訳不要
+%%%%
+[spell]Forceful Invitation
+
+強力なる誘い
+%%%%
+[spell]Plane Rend
+
+空間断裂
+%%%%
+[spell]Chain of Chaos
+
+連鎖する混沌
+%%%%
+[spell]Call of Chaos
+
+混沌の呼び声
+%%%%
+[spell]Black Mark
+
+黒の紋様
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Grand Avatar
+
+# 訳不要
+%%%%
+[spell]Sap Magic
+
+魔法の阻害
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Corrupt Body
+
+# 訳不要
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Rearrange the Pieces
+
+# 訳不要
+%%%%
+[spell]Major Destruction
+
+大いなる破壊
+%%%%
+[spell]Blink Allies Away
+
+盟友の退避
+%%%%
+[spell]Summon Forest
+
+ドライアドの召喚
+%%%%
+[spell]Summon Lightning Spire
+
+稲妻の渦巻の召喚
+%%%%
+[spell]Summon Guardian Golem
+
+守護者のゴーレムの召喚
+%%%%
+[spell]Shadow Shard
+
+影の欠片
+%%%%
+[spell]Shadow Bolt
+
+影の矢
+%%%%
+[spell]Crystal Bolt
+
+水晶の矢
+%%%%
+[spell]Random Bolt
+
+無作為の矢
+%%%%
+[spell]Glaciate
+
+凍てつく嵐
+%%%%
+[spell]Cloud Cone
+
+雲烟の放射
+%%%%
+[spell]Weave Shadows
+
+影編み
+%%%%
+[spell]Dragon's Call
+
+ドラゴンの呼び声
+%%%%
+[spell]Spellforged Servitor
+
+魔法仕掛けの従者
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Forceful Dismissal
+ 
+# 訳不要
+%%%%
+[spell]Summon Mana Viper
+
+マナバイパーの召喚
+%%%%
+[spell]Phantom Mirror
+
+幻影の鏡
+%%%%
+[spell]Drain Magic
+
+魔力の簒奪
+%%%%
+[spell]Corrosive Bolt
+
+腐蝕の矢
+%%%%
+[spell]gehenna serpent of hell breath
+
+ゲヘナのサーペントのブレス
+%%%%
+[spell]cocytus serpent of hell breath
+
+コキュートスのサーペントのブレス
+%%%%
+[spell]dis serpent of hell breath
+
+ディースのサーペントのブレス
+%%%%
+[spell]tartarus serpent of hell breath
+
+タルタロスのサーペントのブレス
+%%%%
+[spell]Summon Emperor Scorpions
+
+皇帝サソリの召喚
+%%%%
+[spell]Irradiate
+
+放射の光
+%%%%
+[spell]Spit Lava
+
+溶岩の唾
+%%%%
+[spell]Electrical Bolt
+
+電光の矢
+%%%%
+[spell]Flaming Cloud
+
+炎熱の雲
+%%%%
+[spell]Throw Barbs
+
+逆棘の射出
+%%%%
+[spell]Battlecry
+
+闘争の喊声
+%%%%
+[spell]Warning Cry
+
+警告の喊声
+%%%%
+[spell]Seal Doors
+
+扉の封印
+%%%%
+[spell]Flay
+
+皮剥ぎ
+%%%%
+[spell]Berserk Other
+
+他者の狂戦士化
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Throw
+
+# 訳不要
+%%%%
+[spell]Corrupting Pulse
+
+崩壊の脈動
+%%%%
+[spell]Siren Song
+
+サイレンの唄
+%%%%
+[spell]Avatar Song
+
+生き神の唄
+%%%%
+[spell]Paralysis Gaze
+
+麻痺の眼光
+%%%%
+[spell]Confusion Gaze
+
+混乱の眼光
+%%%%
+[spell]Draining Gaze
+
+掠奪の眼光
+%%%%
+[spell]Death Rattle
+
+死の騒話
+%%%%
+[spell]Summon Scarabs
+
+スカラベの召喚
+%%%%
+[spell]Scattershot
+
+散弾
+%%%%
+[spell]Throw Ally
+
+戦友の投擲
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Hunting Cry
+
+# 訳不要
+%%%%
+[spell]Cleansing Flame
+
+浄化の炎
+%%%%
+[spell]Cigotuvi's Embrace
+
+シゴツヴィの抱擁
+%%%%
+[spell]Gell's Gravitas
+
+ゲルの引力
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[spell]Chant Fire Storm
+
+# 訳不要
+%%%%
+[spell]Yara's Violent Unravelling
+
+ヤーラの強制魔法解除術
+%%%%
+[spell]Entropic Weave
+
+エントロピーの紋様
+%%%%
+[spell]Summon Executioners
+
+処刑の悪魔の召喚
+%%%%
+[spell]Doom Howl
+
+破滅の咆哮
+%%%%
+[spell]Awaken Earth
+
+大地の喚起
+%%%%
+[spell]Aura of Brilliance
+
+叡智のオーラ
+%%%%
+[spell]Iceblast
+
+凍てつく吹雪
+%%%%
+[spell]Slug Dart
+
+蛞蝓の矢
+%%%%
+[spell]Sprint
+
+加速移動
+%%%%
+[spell]Greater Servant of Makhleb
+
+マクレブの大いなるしもべ
+%%%%
+[spell]Bind Souls
+
+魂の呪縛
+%%%%
+[spell]Infestation
+
+スカラベの寄生
+%%%%
+[spell]Still Winds
+
+無風の大気
+%%%%
+[spell]Resonance Strike
+
+共振の一撃
+%%%%
+[spell]Ghostly Sacrifice
+
+亡霊の生贄
+%%%%
+[spell]Dream Dust
+
+眠りの霧
+%%%%
+[spell]Lesser Beckoning
+
+引き寄せ
+%%%%
+[spell]nonexistent spell
+
+(bug)存在しない呪文
+%%%%

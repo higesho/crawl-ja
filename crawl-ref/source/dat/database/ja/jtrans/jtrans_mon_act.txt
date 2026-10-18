@@ -1,0 +1,273 @@
+%%%%
+pulls free of the water.
+
+は水の呪縛から逃れた。
+%%%%
+%s fails to swap with %s, constricted.
+
+# for debug
+%%%%
+%s and %s swap places.
+
+%sは%sと位置を入れ替えた。
+%%%%
+%s swoops through the air toward %s!
+
+%sは舞い降りて%sに飛びかかった！
+%%%%
+reads a scroll.
+
+は巻物を読んだ。
+%%%%
+Wisps of shadow swirl around %s.
+
+%sの周りを影が取り巻いた。
+%%%%
+zaps a wand.
+
+はワンドを振った。
+%%%%
+You hear a zap.
+
+あなたは何かを振る音を耳にした。
+%%%%
+It is %s.
+
+それは%sだ。
+%%%%
+zaps a rod.
+
+はロッドを振った。
+%%%%
+rod charge: %d, %d
+
+# for debug
+%%%%
+using rod with power %d
+
+# for debug
+%%%%
+is stunned by your will and fails to attack.
+
+はあなたの意志に従って目を回し、攻撃に失敗した。
+%%%%
+You redirect %s's attack!
+
+あなたは%sの攻撃を逸らした！
+%%%%
+#ifdef DEBUG
+for monster '%s' consumed no energy
+
+%%%%
+falls limply to the ground.
+
+はだらりと地面に垂れ下がった。
+%%%%
+#ifdef DEBUG_MONS_SCAN
+Monster %s became detached from mgrd in handle_monster_move() loop
+
+%%%%
+#ifdef DEBUG_MONS_SCAN
+[[[[[[[[[[[[[[[[[[
+
+%%%%
+#ifdef DEBUG_MONS_SCAN
+]]]]]]]]]]]]]]]]]]
+
+%%%%
+#ifdef DEBUG_MONS_SCAN
+Monster %s re-attached itself to mgrd in handle_monster_move() loop
+
+%%%%
+crackles loudly.
+
+はバチバチと大きな音を立てている。
+%%%%
+You hear a loud crackle.
+
+あなたは何かが爆ぜる大きな音を耳にした。
+%%%%
+is lost in a daze.
+
+はふらふらしている。
+%%%%
+is distracted by the nearby gold.
+
+は近くの金貨に目を奪われている。
+%%%%
+is distracted by your gold.
+
+はあなたの金貨に目を奪われている。
+%%%%
+is distracted by imaginary riches.
+
+はありもしない金貨に目を奪われている。
+%%%%
+Something you can't see is thrashing in a web.
+
+何か目に見えないものが蜘蛛の巣の中でのたうっている。
+%%%%
+struggles to get unstuck from the web.
+
+は蜘蛛の巣から抜けだそうともがいている。
+%%%%
+pulls away from the web.
+
+は蜘蛛の巣から抜け出した。
+%%%%
+Something wriggles in the net.
+
+何かが網の中でうごめいている。
+%%%%
+struggles against the net.
+
+は網と格闘している。
+%%%%
+The net rips apart, and %s comes free!
+
+網がびりびりに破け、%sは自由を取り戻した！
+%%%%
+All of a sudden the net rips apart!
+
+突然網がびりびりに破けた！
+%%%%
+You feel yourself growing ill in the presence of %s.
+
+あなたは%sの存在により体の調子がますます悪くなるのを感じた。
+%%%%
+Being near %s leaves you feeling lethargic.
+
+あなたは%sの近くにいるため無気力感が湧いてきた。
+%%%%
+%s watery aura covers %s
+
+%sの放つ水のオーラが%sを覆った。
+%%%%
+splits in two!
+
+は二つに分裂した！
+%%%%
+You hear a squelching noise.
+
+あなたはガボガボという音を耳にした。
+%%%%
+%s eating %s
+
+# for debug
+%%%%
+You hear a slurping noise.
+
+あなたは物を食べる音を耳にした。
+%%%%
+# You hear a distant slurping noise.
+
+# jtrans_godpassive.txtと重複
+%%%%
+opens the %s%s.
+
+%s%sを開けた。
+%%%%
+Something unseen {open the %s.}
+
+何かが%s
+%%%%
+{monster} {open the %s.}
+
+%sが%s
+%%%%
+%s grows in the wake of %s.
+
+%sは%sの活動と共に育ちはじめた。
+%%%%
+Alerting monster %s at (%d,%d)
+
+# for debug
+%%%%
+escapes!
+
+は自由になった！
+%%%%
+struggles to escape constriction.
+
+は拘束から逃れようともがいている。
+%%%%
+The door bursts into shrapnel!
+
+扉は木っ端微塵に四散した！
+%%%%
+bursts through the door, destroying it!
+
+は扉を木っ端微塵に壊しつつ通り抜けた！
+%%%%
+The door mysteriously vanishes.
+
+扉は不思議なことに消滅した。
+%%%%
+eats the door!
+
+は扉を食らった！
+%%%%
+moves out of view.
+
+は視界外に移動した。
+%%%%
+%s rages.
+
+%sは怒り狂った。
+%%%%
+flops around on dry land!
+
+は乾いた地面をじたばたとはね回った！
+%%%%
+falters for a moment.
+
+は一瞬よろめいた。
+%%%%
+%s knocks down a tree!
+
+%sが木をなぎ倒している！
+%%%%
+# Something
+
+# jtrans_actor.txtと重複
+%%%%
+You hear a crashing sound.
+
+あなたは何かが壊れる音を耳にした。
+%%%%
+You hear a sizzling sound.
+
+あなたはジュージューという音を耳にした。
+%%%%
+# You hear a grinding noise.
+
+# jtrans_beam.txtと重複
+%%%%
+BUG: %s was marked as follower when not following!
+
+# for debug
+%%%%
+%s is skipping movement in order to follow.
+
+# for debug
+%%%%
+#if TAG_MAJOR_VERSION == 34
+%s is %s by your radiant heat.
+
+%%%%
+#if TAG_MAJOR_VERSION == 34
+blasted
+
+%%%%
+#if TAG_MAJOR_VERSION == 34
+burned
+
+%%%%
+#ifdef DEBUG_DIAGNOSTICS
+%s %s %d damage from heat.
+
+%%%%
+#ifdef DEBUG_DIAGNOSTICS
+[verb]take
+
+%%%%

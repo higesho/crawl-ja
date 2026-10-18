@@ -1,0 +1,505 @@
+%%%%
+Press: ? - help
+
+入力: ? - ヘルプ
+%%%%
+, v - describe
+
+, v - 解説表示
+%%%%
+, . - travel
+
+, . - 自動移動
+%%%%
+, g - get item
+
+, g - アイテムを拾う
+%%%%
+, Shift-Dir - straight line
+
+, Shift+方向 - 方向のみ指定
+%%%%
+, Dir - move target cursor
+
+, 方向 - カーソル移動
+%%%%
+#ifdef DEBUG_DIAGNOSTICS
+No items found in stash, but top item is %s
+
+%%%%
+No monsters, items or features are visible.
+
+視界内にはモンスターやアイテム、および特別な地形は存在しない。
+%%%%
+Monsters
+
+モンスター
+%%%%
+Items
+
+<Item>
+%%%%
+Features
+
+地形
+%%%%
+Visible %s
+
+視界内の%s
+%%%%
+(select to target/travel, '!' to examine):
+
+(各キーで対象に照準を合わせるか、もしくは移動します。'!'で解説モードに切り替え)
+%%%%
+(select to examine, '!' to target/travel):
+
+(各キーで対象の解説文を表示します。'!'で照準/移動モードに切り替え)
+%%%%
+, keeping you mesmerised
+
+, あなたを魅了している
+%%%%
+(not visited)
+
+(まだ通過していない)
+%%%%
+Here
+
+選択目標
+%%%%
+There's something in the way.
+
+その方向には何かがある。
+%%%%
+You can't see that place.
+
+あなたからはその場所は見えない。
+%%%%
+That would be overly suicidal.
+
+それは自殺行為だ。
+%%%%
+Really target yourself?
+
+本当に自分自身を狙いますか？
+%%%%
+Sorry, you can't target yourself.
+
+残念ながら、自分自身を標的にはできない。
+%%%%
+Are you sure you want to fizzle?
+
+本当に取りやめますか？
+%%%%
+All monsters which could be auto-targeted are covered by a wall or statue which interrupts your line of fire, even though it doesn't interrupt your line of sight.
+
+自動照準指定可能なすべてのモンスターは、射線を遮る壁もしくは像に防護される。(それが視界を遮らない場合でも)
+%%%%
+To return to the main mode, press <w>Escape</w>.
+
+メインモードに戻るには、<w>Esc</w> キーを押してください。
+%%%%
+That is beyond the maximum range.
+
+それは最大射程を超えている。
+%%%%
+You can't see any item there.
+
+ここにはアイテムは見つからない。
+%%%%
+Marked for pickup.
+
+拾うように設定しました。
+%%%%
+Targeting interrupted by HUP signal.
+
+HUPシグナルにより照準作業を中断しました。
+%%%%
+Out of range.
+
+範囲外です。
+%%%%
+sanctuary
+
+聖域内にいる
+%%%%
+silenced
+
+静寂に包まれている
+%%%%
+Disturbance
+
+障害物
+%%%%
+Aim
+
+照準
+%%%%
+There is something else lying underneath.
+
+さらにその下に何かがある。
+%%%%
+This spell doesn't need a beam path.
+
+この呪文は光線状に射出されない。
+%%%%
+Your target is gone.
+
+対象物はどこかに行った。
+%%%%
+Trying to run portal debug at %d/%d...
+
+# for debug
+%%%%
+Got result: %s!
+
+# for debug
+%%%%
+nothing
+
+なし
+%%%%
+Brought monster down to 1 HP.
+
+モンスターのHPを1にしました。
+%%%%
+You cannot set exclusions on this level.
+
+この階では立入禁止区域を設定できません。
+%%%%
+Placed new exclusion.
+
+新たな立入禁止区域を設定しました。
+%%%%
+Removed exclusion.
+
+立入禁止区域を解除しました。
+%%%%
+Reduced exclusion size to a single square.
+
+立入禁止区域をこのマスに限定しました。
+%%%%
+[unseen terrain]
+
+[視界外の地形]
+%%%%
+{It} is %s.
+
+%sは%s。
+%%%%
+There is a cloud of %s here.
+
+ここには%sがある。
+%%%%
+There is %s here.
+
+ここには%sがある。
+%%%%
+There is an entrance to %s here.
+
+ここには%sの入り口がある。
+%%%%
+Beware, the minotaur awaits!
+
+気をつけろ、ミノタウロスが待ち受けているぞ！
+%%%%
+wall of the weird stuff which makes up Pandemonium
+
+パンデモニウムを構成する不気味な素材の壁
+%%%%
+, spattered with blood
+
+血の飛び散った
+%%%%
+, covered with glowing mould
+
+輝く苔に覆われた
+%%%%
+, covered with mould
+
+苔に覆われた
+%%%%
+[adj]open
+
+開かれた
+%%%%
+[adj]runed
+
+ルーンで封印された
+%%%%
+[adj]sealed
+
+魔法で封印された
+%%%%
+[adj]closed
+
+閉ざされた
+%%%%
+an abandoned shop
+
+打ち捨てられた店
+%%%%
+{shop name}.
+
+%sだ。
+%%%%
+awoken
+
+目覚めた
+%%%%
+wielding %s
+
+%sを装備している
+%%%%
+sleepwalking
+
+夢遊病
+%%%%
+resting
+
+休息中
+%%%%
+fleeing
+
+逃走中
+%%%%
+hasn't noticed you
+
+あなたに気づいていない
+%%%%
+clinging
+
+壁にくっついている
+%%%%
+mesmerising
+
+あなたを魅了中
+%%%%
+friendly
+
+友好的
+%%%%
+peaceful
+
+平和的
+%%%%
+indifferent
+
+冷淡
+%%%%
+summoned
+
+一時的に召喚中
+%%%%
+durably summoned
+
+永続的に召喚中
+%%%%
+expiring
+
+召喚の時間切れが近い
+%%%%
+haloed
+
+光輪に照らされている
+%%%%
+umbra
+
+影の帳に包まれている
+%%%%
+possessable
+
+魂の隷属準備中
+%%%%
+disembodied soul
+
+肉体から分離した魂
+%%%%
+reflecting injuries
+
+痛み分け状態
+%%%%
+inner flame
+
+内なる炎
+%%%%
+fire blocked by %s
+
+射線が%sに遮られている
+%%%%
+is clinging to the wall.
+
+は壁にくっついている。
+%%%%
+You are mesmerised by her song.
+
+あなたは彼女の歌に魅了されている。
+%%%%
+%s appears to be %s.
+
+%sは%sのようだ。
+%%%%
+is fleeing.
+
+は逃走している。
+%%%%
+doesn't appear to have noticed you.
+
+はあなたに気づいていないようだ。
+%%%%
+is friendly.
+
+は友好的だ。
+%%%%
+seems to be peaceful towards you.
+
+はあなたに対し平和的なようだ。
+%%%%
+is indifferent to you.
+
+はあなたに冷淡なようだ。
+%%%%
+%s has been summoned%s.
+
+%sは召喚されて%s。
+%%%%
+, and is expiring
+
+おり、もうすぐ時間切れになる
+%%%%
+but will not time out
+
+いるが、時間切れにならない
+%%%%
+is illuminated by a divine halo.
+
+は神気の光輪に照らされている。
+%%%%
+is wreathed by an umbra.
+
+は影の帳に包まれている。
+%%%%
+# is mindless.
+
+# jtrans_describe.txtと重複
+%%%%
+is chaotic.
+
+は混沌なる存在だ。
+%%%%
+soul is ripe for the taking.
+
+魂は隷属する準備ができている。
+%%%%
+is a disembodied soul.
+
+肉体から分離した魂だ。
+%%%%
+is reflecting injuries back at attackers.
+
+は自らが受けた傷を攻撃者に返す。
+%%%%
+# is filled with an inner flame.
+
+# jtrans_beam.txtと重複
+%%%%
+Your line of fire to %s is blocked by %s
+
+%sへの射線は%sで遮られている。
+%%%%
+charmed
+
+仲間
+%%%%
+insane
+
+狂気
+%%%%
+neutral
+
+中立的
+%%%%
+a wand
+
+<wand>
+%%%%
+lies inside a sanctuary
+
+聖域に指定されて
+%%%%
+is shrouded in silence
+
+静寂に包まれて
+%%%%
+is lit by a halo
+
+光輪に照らされて
+%%%%
+is wreathed by an umbra
+
+影の帳に包まれて
+%%%%
+is liquefied
+
+液状化して
+%%%%
+is covered in magical glow
+
+魔力により輝いて
+%%%%
+is bathed in translocational energy
+
+転位術のエネルギーにさらされて
+%%%%
+This square %s.
+
+この場所は%s。
+%%%%
+You see %s here.
+
+ここには%sがある。
+%%%%
+You.
+
+あなた自身
+%%%%
+There is a non-visible %smonster here.
+
+ここには目に見えない%sモンスターがいる。
+%%%%
+exposed by water
+
+が水によって居場所を察知された
+%%%%
+exposed by cloud
+
+が雲によって居場所を察知された
+%%%%
+There is a strange disturbance in the water here.
+
+ここでは奇妙な水の流れが渦巻いている。
+%%%%
+There is a strange disturbance in the cloud here.
+
+ここでは奇妙な雲の流れが渦巻いている。
+%%%%
+%s is out of range.
+
+%sは範囲外だ。
+%%%%
+(<w>Right-click</w> for more information.)
+
+(さらなる情報を得るには<w>右クリック</w>してください)
+%%%%
+(Press <w>v</w> for more information.)
+
+(さらなる情報を得るには <w>v</w> キーを押してください)
+%%%%
+(Right-click for more information.)
+
+(さらなる情報を得るには右クリックしてください)
+%%%%
+(Press 'v' for more information.)
+
+(さらなる情報を得るには 'v' キーを押してください)
+%%%%

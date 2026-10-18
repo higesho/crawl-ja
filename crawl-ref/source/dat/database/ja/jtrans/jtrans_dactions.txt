@@ -1,0 +1,33 @@
+%%%%
+crumbles into dust!
+
+の体は塵となって崩れてしまった！
+%%%%
+turns against you!
+
+は寝返った！
+%%%%
+returns to the mists of memory.
+
+は追憶の霧の中へと還っていった。
+%%%%
+is freed.
+
+は自由になった。
+%%%%
+turns on you!
+
+はあなたに敵対した！
+%%%%
+becomes indifferent.
+
+はそっけなくなった。
+%%%%
+The hog vanishes!
+
+豚の姿は消えた！
+%%%%
+# %s appears from out of thin air!
+
+# jtrans_beam.txtと重複
+%%%%

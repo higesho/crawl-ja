@@ -1,0 +1,81 @@
+%%%%
+Shot with a%s %s by %s
+
+%sに%sを撃たれた
+%%%%
+Hit by a%s %s thrown by %s
+
+%sが投げた%sに当たった
+%%%%
+[verb]reflect
+
+反射した
+%%%%
+off {its} {shield}
+
+%s%sで
+%%%%
+off an invisible shield around {itself}!
+
+自身の周囲に張られた目に見えぬ盾で
+%%%%
+{defender} {block|reflect} {off item} {projectile}{punct}
+
+%sは%s%sを%s%s
+%%%%
+{defender} {deflects} {projectile}!
+
+%sは%sを%s！
+%%%%
+[verb]deflect
+
+弾いた
+%%%%
+%s is repelled.
+
+%sは狙いを逸らされた。
+%%%%
+[ranged]%s%s misses %s%s
+
+%sは%sから%s外れた%s
+%%%%
+%s %s %s but does no damage.
+
+%sは%s%sが、ダメージを与えられなかった。
+%%%%
+%s pierces through %s %s!
+
+%sは%sの%sをかいくぐって命中した！
+%%%%
+shielding
+
+防御
+%%%%
+#ifdef NOTE_DEBUG_CHAOS_BRAND
+CHAOS missile:
+
+%%%%
+# is unaffected.
+
+# jtrans_beam.txtと重複
+%%%%
+Brand rolled %d against defender HD: %d.
+
+# for debug
+%%%%
+# resists.
+
+# jtrans_beam.txtと重複
+%%%%
+[verb]pierces through
+
+に命中し貫通した
+%%%%
+# [verb]hits
+
+# jtrans_beam.txtと重複
+%%%%
+%s %s %s%s%s
+
+%sは%s%s%s%s
+%%%%

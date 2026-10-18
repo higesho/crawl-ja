@@ -1,0 +1,506 @@
+%%%%
+Trying to scatter chunk to %d, %d...
+
+# for debug
+%%%%
+Cell is visible...
+
+# for debug
+%%%%
+Success
+
+# for debug
+%%%%
+Error, exp for monster with no damage: %s
+
+# 訳不要
+%%%%
+You feel a bit more experienced.
+
+あなたは少し経験を積んだ気がした。
+%%%%
+%s %s intact enough to wear.
+
+%s%sそのまま装着できるようだ。
+%%%%
+[verb]is
+
+<[verb]are>
+%%%%
+banished
+
+を追放した
+%%%%
+pacified
+
+を中立化した
+%%%%
+enslaved
+
+を隷属させた
+%%%%
+slimified
+
+をスライムに変えた
+%%%%
+killed
+
+を倒した
+%%%%
+%s the ghost of %s.
+
+%sの幽霊%s
+%%%%
+%s %s.
+
+%s%s
+%%%%
+protects %s from harm!
+
+は%sを損傷から護った！
+%%%%
+monster hp: %d, max hp: %d
+
+# for debug
+%%%%
+new hp: %d, ely penance: %d
+
+# for debug
+%%%%
+%s heals %s%s
+
+%sは%sを癒した%s
+%%%%
+#ifdef DEBUG_DIAGNOSTICS
+Death convert attempt on %s, HD: %d, your xl: %d
+
+%%%%
+With an infernal shudder, the power ruling this place vanishes!
+
+恐ろしい振動とともに、この場を支配する力が消滅した！
+%%%%
+With an infernal noise, the power ruling this place vanishes!
+
+恐ろしい轟音とともに、この場を支配する力が消滅した！
+%%%%
+You feel extremely nervous for a moment...
+
+あなたは一瞬きわめて神経質になった……
+%%%%
+A malignant aura surrounds %s.
+
+悪意のオーラが%sを包んだ。
+%%%%
+%s death curse
+
+%sの末期の呪い
+%%%%
+The fungal colony is destroyed.
+
+胞子は破壊された。
+%%%%
+# You hear an explosion!
+
+# jtrans_beam.txtと重複
+%%%%
+[zap]explosion of spores
+
+胞子の爆発
+%%%%
+[zap]blast of lightning
+
+雷霆の一撃
+%%%%
+# You hear a clap of thunder!
+
+# jtrans_cloud.txtと重複
+%%%%
+[zap]blast of energy
+
+炸裂するエネルギー
+%%%%
+[zap]pyre of ghostly fire
+
+鬼火
+%%%%
+You hear an otherworldly crackling!
+
+あなたは鬼火のパチパチと爆ぜる音を聞いた！
+%%%%
+# [zap]fiery explosion
+
+# jtrans_beam.txtと重複
+%%%%
+By Zin's power, the ballistomycete spore's explosion is contained.
+
+ジンの御業により、巨大胞子の爆発の威力は抑えられた。
+%%%%
+By Zin's power, the ball lightning's explosion is contained.
+
+ジンの御業により、球雷の爆発の威力は抑えられた。
+%%%%
+The lurking horror fades away harmlessly.
+
+潜伏する恐怖は消え去っていった。
+%%%%
+By Zin's power, the prism's explosion is contained.
+
+ジンの御業により、晶柱の爆発の威力は抑えられた。
+%%%%
+By Zin's power, the bennu's fires are quelled.
+
+ジンの御業により、ベンヌの炎の威力は抑えられた。
+%%%%
+hexed by the player character
+
+あなたに呪われた
+%%%%
+hexed by %s
+
+%sに呪われた
+%%%%
+# hiscores.ccでの処理用
+hexed by
+
+に呪われた
+%%%%
+By Zin's power, the fiery explosion is contained.
+
+ジンの御業により、燃えさかる爆発の威力は抑えられた。
+%%%%
+exploding inner flame
+
+内なる炎の爆発
+%%%%
+Unknown spore type:
+
+# 訳不要
+%%%%
+ignited by themself
+
+あなたが爆破した
+%%%%
+ignited by their pet
+
+仲間によって爆破された
+%%%%
+set off by themself
+
+あなたが爆破した
+%%%%
+set off by their pet
+
+仲間によって爆破された
+%%%%
+%s blazes out!
+
+%sは燃え上がった！
+%%%%
+%s explodes!
+
+%sは爆発した！
+%%%%
+'s corpse
+
+の死体
+%%%%
+{poof_msg}!
+
+は%s！
+%%%%
+A freezing mist gathers momentarily, then fades.
+
+氷混じりの霧が一瞬集まったが、すぐ消え去った。
+%%%%
+A glowing mist gathers momentarily, then fades.
+
+輝く霧が一瞬集まったが、すぐ消え去った。
+%%%%
+A freezing mist starts to gather...
+
+氷混じりの霧が寄り集まった……
+%%%%
+A glowing mist starts to gather...
+
+輝く霧が寄り集まった……
+%%%%
+With its final breath, %s offers up its power to the beasts of the wild!
+
+息を引き取る寸前、%sは野生の獣たちに自らの力を分け与えた！
+%%%%
+%s %s healed.
+
+%s%s回復した。
+%%%%
+seems to grow more fierce.
+
+はさらに荒れ狂った。
+%%%%
+%s turns into a zombie!
+
+%sはゾンビへと姿を変えた！
+%%%%
+%s appears out of thin air!
+
+%sがいきなり現れた！
+%%%%
+Reaping chance: %d/%d
+
+# for debug
+%%%%
+'s shape twists and changes as %s dies.
+
+が死ぬと共に、その体は捻れて本来の姿に変化した。
+%%%%
+returns to %s original shape as %s dies.
+
+が死ぬと共に、それは本来の姿へと戻った。
+%%%%
+Lua death function for monster '%s' didn't load: %s
+
+# for error
+%%%%
+You feel the power of %s in you as your rage grows.
+
+あなたは怒りの増大とともに、内なる%sの力を意識した。
+%%%%
+The necklace of Bloodlust glows a violent red.
+
+血に飢えた首飾りが真っ赤に輝いた。
+%%%%
+detonates feebly.
+
+は弱々しく爆散した。
+%%%%
+dissipates!
+
+は四散した！
+%%%%
+vapourises!
+
+は霧散した！
+%%%%
+falls from the air.
+
+は地面に落下した。
+%%%%
+The tentacle is hauled back through the portal!
+
+触手はポータルの向こうに引き戻された！
+%%%%
+With a roar, the tentacle is hauled back through the portal!
+
+轟音と共に、触手はポータルの向こうに引き戻された！
+%%%%
+crumbles away.
+
+は崩れ落ちた。
+%%%%
+exhausts itself and dries up.
+
+は消耗して涸れ果てた。
+%%%%
+%s is blown up!
+
+%sは爆破された！
+%%%%
+[mons_is_firewood]%s is destroyed!
+
+%sは薙ぎ倒された！
+%%%%
+[!mons_is_firewood]%s is destroyed!
+
+%sは倒された！
+%%%%
+%s is killed!
+
+%sは殺された！
+%%%%
+You %s %s!
+
+あなたは%sを%s！
+%%%%
+blow up
+
+破裂させた
+%%%%
+[mons_is_firewood]destroy
+
+薙ぎ倒した
+%%%%
+[!mons_is_firewood]destroy
+
+倒した
+%%%%
+kill
+
+殺した
+%%%%
+That felt strangely unrewarding.
+
+あなたは奇妙な徒労感に襲われた。
+%%%%
+collects the excess magic power.
+
+# obsolete: Pakellas
+%%%%
+# grants you a gift!
+
+# jtrans_godabil.txtと重複
+%%%%
+is blown up!
+
+は爆破された！
+%%%%
+is destroyed!
+
+は破壊された！
+%%%%
+dies!
+
+は死んだ！
+%%%%
+withers and dies!
+
+は枯れ果てて死んだ！
+%%%%
+fades into mist!
+
+は霧の中に消えていった！
+%%%%
+# crumbles into dust!
+
+# jtrans_dactions.txtと重複
+%%%%
+Granting xp for non-damage kill.
+
+# for debug
+%%%%
+The dead kraken's tentacles slide back into the water.
+
+倒れたクラーケンの触手は水の中に滑り落ちていった。
+%%%%
+The starspawn's tentacles wither and die.
+
+落とし子の触手は枯れ果てて、崩れ落ちた。
+%%%%
+Powered by Death strength +%d=%d
+
+# for debug
+%%%%
+%s has departed this plane of existence.
+
+祖霊『%s』はこの次元からいなくなった。
+%%%%
+The vine%s fall%s limply to the ground.
+
+蔦はだらりと地面に垂れ下がった。
+%%%%
+The terrible wounds on %s body vanish.
+
+%s体の裂傷は消え去った。
+%%%%
+The forest abruptly stops moving.
+
+不意に森のざわめきが止んだ。
+%%%%
+Mounted kill: marking the other monster as reaped as well.
+
+# for debug
+%%%%
+%s falls into the %s!
+
+%sは%sの中に転げ落ちた！
+%%%%
+# lava
+
+# jtrans_delay.txtと重複
+%%%%
+# water
+
+# jtrans_delay.txtと重複
+%%%%
+is incinerated.
+
+は燃え尽きた。
+%%%%
+drowns.
+
+は溺れた。
+%%%%
+falls apart.
+
+はバラバラになった。
+%%%%
+disappear%s in a puff of smoke
+
+煙とともに消え去った
+%%%%
+dissolve%s into shadows
+
+影の中に溶けこんでいった
+%%%%
+degenerate%s into a cloud of primal chaos
+
+原初の混沌の渦に溶けこんでいった
+%%%%
+dissolve%s into sparkling lights
+
+閃光とともに消え去った
+%%%%
+fade%s away
+
+薄れて消えていった
+%%%%
+dissolve%s into a puddle of slime
+
+溶解してねばねばした水たまりになった
+%%%%
+return%s to the deep
+
+深淵へと還った
+%%%%
+shimmer%s and vanish
+
+揺らめいて消え去った
+%%%%
+Pikel's spell is broken, but the former slaves can only feel hate for you!
+
+『ピケル』の呪縛は破れたものの、元奴隷たちはあなたに反感しか抱かなかった！
+%%%%
+Pikel's spell is broken, but the former slave can only feel hate for you!
+
+『ピケル』の呪縛は破れたものの、元奴隷はあなたに反感しか抱かなかった！
+%%%%
+With Pikel's spell broken, the former slaves thank you for their freedom.
+
+『ピケル』の呪縛が破れ、元奴隷たちは自由を与えてくれたあなたに感謝した。
+%%%%
+With Pikel's spell broken, the former slave thanks you for its freedom.
+
+『ピケル』の呪縛が破れ、元奴隷は自由を与えてくれたあなたに感謝した。
+%%%%
+No longer under Kirke's spell, the hog returns to its human form!
+
+『キルケー』の魔法が解け、豚は人間の姿に戻った！
+%%%%
+No longer under Kirke's spell, the hog returns to its original form!
+
+『キルケー』の魔法が解け、豚は元の姿に戻った！
+%%%%
+No longer under Kirke's spell, the hogs return to their human forms!
+
+『キルケー』の魔法が解け、豚の群れは人間の姿に戻った！
+%%%%
+No longer under Kirke's spell, the hogs return to their original forms!
+
+『キルケー』の魔法が解け、豚の群れは元の姿に戻った！
+%%%%
+seems to find hidden reserves of power!
+
+の秘められた力が覚醒したようだ！
+%%%%
+likewise turns neutral.
+
+もまた中立化した。
+%%%%

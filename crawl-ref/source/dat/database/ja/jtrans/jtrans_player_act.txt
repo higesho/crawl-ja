@@ -1,0 +1,182 @@
+%%%%
+That's too large and heavy for you to wield.
+
+それは大きく、重すぎて武器として振るうことができない。
+%%%%
+You can't wield %s.
+
+あなたは%sを武器として振るうことはできない。
+%%%%
+You can't use rods.
+
+あなたはロッドを扱えない。
+%%%%
+You can't use weapons.
+
+あなたは武器を扱えない。
+%%%%
+That's too large for you to wield.
+
+それは大きすぎて武器として振るうことができない。
+%%%%
+# This weapon is holy and will not allow you to wield it.
+
+# jtrans_item_use.txtと重複
+%%%%
+[hand name]paw
+
+<[foot name]paw>
+%%%%
+# [hand name]claw
+
+# jtrans_monster.txtと重複
+%%%%
+[hand name]tentacle
+
+<tentacle>
+%%%%
+[hand name]hand
+
+手
+%%%%
+# [foot name]hoof
+
+# jtrans_monster.txtと重複
+%%%%
+# [foot name]talon
+
+# jtrans_monster.txtと重複
+%%%%
+[foot name]tentacles
+
+<tentacle>
+%%%%
+[foot name]underbelly
+
+下半身
+%%%%
+# [foot name]tail
+
+# jtrans_monster.txtと重複
+%%%%
+# foot
+
+# jtrans_monster.txtと重複
+%%%%
+arm
+
+腕
+%%%%
+# [adj]scaled
+
+# jtrans_monster.txtと重複
+%%%%
+# [adj]feathered
+
+# jtrans_monster.txtと重複
+%%%%
+# [adj]bandage-wrapped
+
+# jtrans_monster.txtと重複
+%%%%
+# [adj]bony
+
+# jtrans_monster.txtと重複
+%%%%
+[adj]shadowy
+
+影のような
+%%%%
+Nothing wielded
+
+(何も手に持っていない)
+%%%%
+Teeth and claws
+
+牙と爪
+%%%%
+# Claws
+
+# jtrans_mutation_data.txtと重複
+%%%%
+Tentacles
+
+<tentacle>
+%%%%
+Your unstable footing causes you to fumble your attack.
+
+足場が悪いために、あなたは攻撃を失敗した。
+%%%%
+# protects you from inadvertent hurry.
+
+# jtrans_attack.txtと重複
+%%%%
+forces you to slow down.
+
+はあなたを強制的に減速させた。
+%%%%
+A red film seems to cover your vision as you go berserk!
+
+あなたがバーサークするとともに視界が真っ赤に染まった！
+%%%%
+Your finesse ends abruptly.
+
+あなたの早業の技巧は不意に終わった。
+%%%%
+You feel yourself moving faster!
+
+あなたの動きが速くなった！
+%%%%
+You feel mighty!
+
+あなたは力強くなった！
+%%%%
+#if TAG_MAJOR_VERSION == 34
+You burn with rage!
+
+%%%%
+You're already berserk!
+
+あなたはすでにバーサークしている！
+%%%%
+You're too exhausted to go berserk.
+
+あなたは疲労困憊しておりバーサークすることができない。
+%%%%
+You can't enter a blood rage from death's door.
+
+死のとば口に立っている間はバーサークすることができない。
+%%%%
+You are too mesmerised to rage.
+
+あなたは魅了されておりバーサークすることができない。
+%%%%
+You are too terrified to rage.
+
+あなたはあまりに怯えているためバーサークすることができない。
+%%%%
+#if TAG_MAJOR_VERSION == 34
+Only creatures of flesh and blood can berserk.
+
+%%%%
+You cannot raise a blood rage in your lifeless body.
+
+命持たぬ身ではバーサークすることができない。
+%%%%
+You cannot go berserk while under stasis.
+
+停滞状態ではバーサークすることができない。
+%%%%
+You're too calm and focused to rage.
+
+あなたは激怒に身を任せるほど我を忘れていない。
+%%%%
+You are pushed out of the %s.
+
+あなたは%sに押しやられた。
+%%%%
+# Moved to (%d, %d).
+
+# for debug
+# jtrans_monster.txtと重複
+%%%%

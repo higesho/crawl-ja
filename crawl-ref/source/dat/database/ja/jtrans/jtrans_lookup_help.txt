@@ -1,0 +1,189 @@
+%%%%
+Describe which?
+
+どの解説文を見ますか？
+%%%%
+(CTRL-S to sort by monster toughness)
+
+(Ctrl+Sでモンスターの耐久値を基準に並び替えします)
+%%%%
+(CTRL-S to sort by name)
+
+(Ctrl+Sでモンスターの名前で並び替えします)
+%%%%
+This spell is not found in any books or rods.
+
+この呪文はどのロッドや魔法書にも含まれていない。
+%%%%
+This spell can be found in the following book
+
+この呪文は以下の魔法書に記載されている
+%%%%
+This spell can be found in the following rod
+
+この呪文は以下のロッドによって用いることができる
+%%%%
+This entry is an exact match for '%s'. To see non-exact matches, press space.
+
+この記事は'%s'の完全一致によるものです。あいまい検索するにはSpaceを押してください。
+%%%%
+This %s can only be entered while carrying at least %d rune%s of Zot.
+
+この%sへは少なくとも%d個のルーンを所持していないと入ることはできない。
+%%%%
+# portal
+
+# jtrans_hints.txtと重複
+%%%%
+branch
+
+分岐
+%%%%
+This %s is %d levels deep.
+
+この%sは%d階構造になっている。
+%%%%
+The entrance to this branch can be found in %s.
+
+この分岐の入り口は%sに存在する。
+%%%%
+The entrance to this branch can be found on level %d of %s.
+
+この分岐の入り口は%sの%d階に存在する。
+%%%%
+The entrance to this branch can be found between levels %d and %d of %s.
+
+この分岐の入り口は%sの%d階から%d階の間に存在する。
+%%%%
+This branch contains the entrance%s to %s.
+
+この分岐の奥には%sの入り口が存在する。
+%%%%
+[help type]monster
+
+モンスター
+%%%%
+(M)onster
+
+(M)モンスター
+%%%%
+[help type]spell
+
+呪文
+%%%%
+(S)pell
+
+(S)呪文
+%%%%
+[help type]skill
+
+スキル
+%%%%
+s(K)ill
+
+(K)スキル
+%%%%
+[help type]ability
+
+特殊能力
+%%%%
+(A)bility
+
+(A)特殊能力
+%%%%
+[help type]card
+
+<card>
+%%%%
+(C)ard
+
+(C)カード
+%%%%
+[help type]item
+
+アイテム
+%%%%
+(I)tem
+
+(I)アイテム
+%%%%
+[help type]feature
+
+地形
+%%%%
+(F)eature
+
+(F)地形
+%%%%
+[help type]god
+
+<god>
+%%%%
+(G)od
+
+(G)神
+%%%%
+[help type]branch
+
+<branch>
+%%%%
+(B)ranch
+
+(B)分岐
+%%%%
+[help type]cloud
+
+雲類
+%%%%
+c(L)oud
+
+(L)雲類
+%%%%
+[help type]status
+
+ステータス
+%%%%
+s(T)atus
+
+(T)ステータス
+%%%%
+Enter a single letter to list %s displayed by that symbol.
+
+一文字のみ入力するとそのシンボルで示される%sを列挙します。
+%%%%
+Describe a %s; partial names and regexps are fine.%s
+
+%sの解説を表示します。部分一致または正規表現検索が可能です。%s
+%%%%
+Describe what?
+
+何の解説文を見ますか？
+%%%%
+Okay, then.
+
+了解。
+%%%%
+No %s with symbol '%s'.
+
+'%s'に該当する%sは見つかりませんでした。
+%%%%
+No matching %s.
+
+該当する%sはありません。
+%%%%
+Too many %s with symbol '%s' to display.
+
+'%s'に該当する%sが多すぎて表示できません。
+%%%%
+Too many matching %s (%d) to display.
+
+該当する%sが多すぎて(%d件)表示できません。
+%%%%
+Describe a %s?
+
+%sのどの解説を調べますか？
+%%%%
+Description must contain at least one non-space.
+
+解説文は少なくとも1文字の非空白文字を含まないといけません。
+%%%%

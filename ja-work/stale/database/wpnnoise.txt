@@ -1,0 +1,766 @@
+%%%%
+shield of the gong
+
+# old en (ja19):
+#   w:40
+#   GONNNNG!
+#   BOUMMMMG!
+#   PTOANNNG!
+#   PANG!
+#   BONNNG!
+#   scraping hit
+#   SHROANNG!
+#   ##############################################################################
+#   ##############################################################################
+#   
+#   The FROZEN AXE "FROSTBITE" imitates loud noises from cold environments.
+#   
+#   ##############################################################################
+#   ##############################################################################
+# old ja (ja19):
+#   w:40
+#   ゴーン！ と銅鑼が鳴り響いた。
+#   
+#   ガラーン！ と銅鑼が鳴り響いた。
+#   
+#   ボーン！ と銅鑼が鳴り響いた。
+# old en (ja16):
+#   w:40
+#   GONNNNG!
+#   BOUMMMMG!
+#   PTOANNNG!
+#   PANG!
+#   BONNNG!
+#   scraping hit
+#   SHROANNG!
+#   ##############################################################################
+#   ##############################################################################
+#   
+#   NOISY WEAPONS like to chatter and imitate dungeon noises.
+#   
+#   All speech below (apart from SOUND:You hear @weapon_noise@) is also used
+#   for the Singing Sword. Note that @Your_weapon@ will be resolved into
+#   "The Singing Sword" or "Your [weapon]", respectively (noisy_equipment() in
+#   shouts.cc).
+#   
+#   ##############################################################################
+#   ##############################################################################
+# old ja (ja16):
+#   w:40
+#   ゴーン！ と銅鑼が鳴り響いた。
+#   
+#   ガラーン！ と銅鑼が鳴り響いた。
+#   
+#   ボーン！ と銅鑼が鳴り響いた。
+
+w:40
+GONNNNG!
+
+BOUMMMMG!
+
+PTOANNNG!
+
+PANG!
+
+BONNNG!
+
+SHROANNG!
+%%%%
+frozen axe "frostbite"
+
+# old en (ja19):
+#   You hear the [roaring|howling|raging|gusting] winds of a [blizzard|squall|snowstorm].
+#   w:5
+#   You hear ice [creaking|groaning|grinding|cracking].
+#   w:1
+#   You hear shards of ice [tinkling|chiming].
+#   w:1
+#   You hear the [rumble|boom|crash] of [a glacier calving|icebergs colliding].
+#   ##############################################################################
+#   ##############################################################################
+#   
+#   NOISY WEAPONS like to chatter and imitate dungeon noises.
+#   
+#   All speech below (apart from SOUND:You hear @weapon_noise@) is also used
+#   for the Singing Sword. Note that @Your_weapon@ will be resolved into
+#   "The Singing Sword" or "Your [weapon]", respectively (noisy_equipment() in
+#   shouts.cc).
+#   
+#   ##############################################################################
+#   ##############################################################################
+# old ja (ja19):
+#   あなたは荒れ狂う[吹雪|突風|雪嵐]の音を耳にした。
+#   
+#   w:5
+#   あなたは氷のたてる音を耳にした。
+#   
+#   w:1
+#   あなたは氷の破片がシャラシャラと鳴る音を耳にした。
+#   
+#   w:1
+#   あなたは氷山が[ぶつかる|砕ける]音を耳にした。
+
+You hear the [roaring|howling|raging|gusting] winds of a [blizzard|squall|snowstorm].
+
+w:5
+You hear ice [creaking|groaning|grinding|cracking].
+
+w:1
+You hear shards of ice [tinkling|chiming].
+
+w:1
+You hear the [rumble|boom|crash] of [a glacier calving|icebergs colliding].
+%%%%
+noisy weapon
+
+# old en (ja19):
+#   w:20
+#   SOUND:You hear @weapon_noise@
+#   ##############################################################################
+#   Weapon chatter.
+#   ##############################################################################
+# old ja (ja19):
+#   w:30
+#   @_weapon_chatter_@
+#   
+#   w:28
+#   @weapon_noises@
+#   
+#   w:2
+#   @_instrumental_noises_@
+#   
+#   w:20
+#   SOUND:あなたは@weapon_noise@
+# old en (ja16):
+#   w:20
+#   SOUND:You hear @weapon_noise@
+#   ##############################################################################
+#   Weapon chatter.
+#   ##############################################################################
+# old ja (ja16):
+#   w:30
+#   @_weapon_chatter_@
+#   
+#   w:28
+#   @weapon_noises@
+#   
+#   w:2
+#   @_instrumental_noises_@
+#   
+#   w:20
+#   SOUND:あなたは@weapon_noise@
+
+w:30
+@_weapon_chatter_@
+
+w:28
+@weapon_noises@
+
+w:2
+@_instrumental_noises_@
+
+w:20
+SOUND:You hear @weapon_noise@
+%%%%
+weapon_noise
+
+# old en (ja19):
+#   ########### dungeon noises ############
+#   a shout.
+#   an angry hiss.
+#   a high-pitched scream!
+#   a roar!
+#   a hideous shriek!
+#   a piteous moan.
+#   a screech!
+#   a bellow!
+#   a loud, deep croak!
+#   an angry buzzing noise.
+#   a splashing noise.
+#   a sizzling sound.
+#   a loud clanging noise!
+#   a grinding noise.
+#   a mighty clap of thunder!
+#   a hideous screaming!
+#   a bark!
+#   a rumbling sound.
+#   a crunching sound.
+#   a distant "Zot"!
+#   the distant roaring of an enraged frog.
+#   ########### other noises, usually not found in the dungeon ############
+#   a knock.
+#   a voice calling your name.
+#   a very strange noise.
+#   someone snoring.
+#   someone calling for help!
+#   strange voices.
+#   maniacal laughter.
+#   snatches of song.
+#   a twanging sound.
+#   the chiming of a distant gong.
+#   the tinkle of an enormous bell.
+#   an echo.
+#   the wailing of sirens.
+#   a flourish of trumpets!
+#   a strangely pleasant explosion.
+#   distant weeping.
+#   a muffled joke.
+#   ##############################################################################
+#   ##############################################################################
+#   
+#   The SINGING SWORD
+#   
+#   ##############################################################################
+#   ##############################################################################
+#   
+#   The Sword operates in three modes: no tension, low tension, high tension.
+#   
+#   No tension:
+#   Speech is very rare, soft (does not wake up monsters), bored or witty,
+#   sometimes just chatty. The sword is rational, sometimes introspective.
+#   It is somewhat educated (mostly about music and war) and likes to show off.
+#   Typical speech verb: "says"
+#   
+#   Low tension:
+#   Speech is common, somewhat loud (do wake up nearby monsters) and slightly
+#   damages everyone in sight. The sword is calm and cool. It enjoys the
+#   bloodshed, but is sane. Of course, work is more fun with a little tune...
+#   Typical speech verbs: "says" or "shouts".
+#   
+#   High tension:
+#   Speech is very common, extremely loud (you may use CAPS) and does more
+#   damage. Messages are insane, the sword is out of control.
+#   At high tension, the sword may SCREAM, doing even more damage.
+#   Typical speech verb: "shouts" or @_screams_@
+#   
+#   
+#   Generally, the Sword is arrogant: it sees itself as the main hero, with the
+#   wielder just being a disposable tool/fool. Also, it does not like allies --
+#   all the fame belong to our steely hero!
+#   
+#   There are some (occasionally modified) lines from actual songs. Those are
+#   okay to use, but particularly rare.
+#   
+#   There are the following types of messages:
+#   * singing (including composing)
+#   * speaking
+#   * real songs (one liners from actual songs, sometimes modified)
+#   * instruments    -- also used for all noisy randarts
+#   * weapon noises  -- the no tension ones used for noisy randarts
+#   * chatter        -- also used for all noisy randarts
+#   
+#                   no tension      low tension       high tension     (old)
+#   
+#   none            1000             100               10
+#   some speech       7                7                7
+#   
+#   singing         50% (40/10)       40%               0%             360/700
+#   speaking        20%               20% (10/10)      40% (30/10)     138/700
+#   real songs       1%                1% (0.7/0.3)     1% (0.3/0.7)    12/700
+#   instruments     12%               16%              20%              90/700
+#   noises           7%               23% (7/16)       39% (3/36)       50/700
+#   chatter         10%                0%               0%              50/700
+#   
+#   ##############################################################################
+#   ##############################################################################
+#   Weights for different types of message, depending on tension.
+#   ######## silenced, any tension ############
+# old ja (ja19):
+#   叫び声を耳にした。
+#   
+#   険悪なシューッという音を耳にした。
+#   
+#   甲高い叫び声を耳にした！
+#   
+#   咆哮を耳にした！
+#   
+#   おぞましい金切り声を耳にした！
+#   
+#   痛ましいうめき声を耳にした。
+#   
+#   ギャーギャー鳴く声を耳にした！
+#   
+#   唸り声を耳にした！
+#   
+#   やかましくゲコゲコ鳴く声を耳にした！
+#   
+#   剣呑なブンブンいう音を耳にした。
+#   
+#   水のはねる音を耳にした。
+#   
+#   ジュージューという音を耳にした。
+#   
+#   重金属の触れ合うやかましい騒音を耳にした！
+#   
+#   壁を削るような音を耳にした。
+#   
+#   雷鳴が力強く轟くのを耳にした！
+#   
+#   耳障りな金切り声を耳にした！
+#   
+#   吠え声を耳にした！
+#   
+#   ゴロゴロという音を耳にした。
+#   
+#   何かをバリバリ噛み砕く音を耳にした。
+#   
+#   遠くに『ゾット』の声を聞いた！
+#   
+#   遠くでカエルが猛烈に鳴く声を耳にした。
+#   
+#   ノックする音を耳にした。
+#   
+#   自分の名前を呼ぶ声を耳にした。
+#   
+#   とても奇妙な物音を耳にした。
+#   
+#   誰かのいびきを耳にした。
+#   
+#   誰かが助けを呼ぶ声を耳にした！
+#   
+#   奇妙な声を耳にした。
+#   
+#   狂気の笑い声を聞いた。
+#   
+#   何かの歌の断片を耳にした。
+#   
+#   楽器がポロロンと鳴る音を耳にした。
+#   
+#   遠くで鐘の鳴る音を耳にした。
+#   
+#   巨大な鐘がガランガランと鳴る音を耳にした。
+#   
+#   反響する音を耳にした。
+#   
+#   セイレーンの泣き声を耳にした。
+#   
+#   ラッパの音を耳にした！
+#   
+#   奇妙で愉快な爆発音を耳にした。
+#   
+#   遠くですすり泣く声を耳にした。
+#   
+#   よく聞き取れない笑い話を耳にした。
+# old en (ja16):
+#   ########### dungeon noises ############
+#   a shout.
+#   an angry hiss.
+#   a high-pitched scream!
+#   a roar!
+#   a hideous shriek!
+#   a piteous moan.
+#   a screech!
+#   a bellow!
+#   a loud, deep croak!
+#   an angry buzzing noise.
+#   a splashing noise.
+#   a sizzling sound.
+#   a loud clanging noise!
+#   a grinding noise.
+#   a mighty clap of thunder!
+#   a hideous screaming!
+#   a bark!
+#   a rumbling sound.
+#   a crunching sound.
+#   a distant "Zot"!
+#   the distant roaring of an enraged frog.
+#   ########### other noises, usually not found in the dungeon ############
+#   a knock.
+#   a voice calling your name.
+#   a very strange noise.
+#   someone snoring.
+#   someone calling for help!
+#   strange voices.
+#   maniacal laughter.
+#   snatches of song.
+#   a twanging sound.
+#   the chiming of a distant gong.
+#   the tinkle of an enormous bell.
+#   an echo.
+#   the wailing of sirens.
+#   a flourish of trumpets!
+#   a strangely pleasant explosion.
+#   distant weeping.
+#   a muffled joke.
+#   ##############################################################################
+#   ##############################################################################
+#   
+#   The SINGING SWORD
+#   
+#   ##############################################################################
+#   ##############################################################################
+#   
+#   The Sword operates in three modes: no tension, low tension, high tension.
+#   
+#   No tension:
+#   Speech is very rare, soft (does not wake up monsters), bored or witty,
+#   sometimes just chatty. The sword is rational, sometimes introspective.
+#   It is somewhat educated (mostly about music and war) and likes to show off.
+#   Typical speech verb: "says"
+#   
+#   Low tension:
+#   Speech is common, somewhat loud (do wake up nearby monsters) and slightly
+#   damages everyone in sight. The sword is calm and cool. It enjoys the
+#   bloodshed, but is sane. Of course, work is more fun with a little tune...
+#   Typical speech verbs: "says" or "shouts".
+#   
+#   High tension:
+#   Speech is very common, extremely loud (you may use CAPS) and does more
+#   damage. Messages are insane, the sword is out of control.
+#   At high tension, the sword may SCREAM, doing even more damage.
+#   Typical speech verb: "shouts" or @_screams_@
+#   
+#   
+#   Generally, the Sword is arrogant: it sees itself as the main hero, with the
+#   wielder just being a disposable tool/fool. Also, it does not like allies --
+#   all the fame belong to our steely hero!
+#   
+#   There are some (occasionally modified) lines from actual songs. Those are
+#   okay to use, but particularly rare.
+#   
+#   There are the following types of messages:
+#   * singing (including composing)
+#   * speaking
+#   * real songs (one liners from actual songs, sometimes modified)
+#   * instruments    -- also used for all noisy randarts
+#   * weapon noises  -- the no tension ones used for noisy randarts
+#   * chatter        -- also used for all noisy randarts
+#   
+#                   no tension      low tension       high tension     (old)
+#   
+#   none            1000             100               10
+#   some speech       7                7                7
+#   
+#   singing         50% (40/10)       40%               0%             360/700
+#   speaking        20%               20% (10/10)      40% (30/10)     138/700
+#   real songs       1%                1% (0.7/0.3)     1% (0.3/0.7)    12/700
+#   instruments     12%               16%              20%              90/700
+#   noises           7%               23% (7/16)       39% (3/36)       50/700
+#   chatter         10%                0%               0%              50/700
+#   
+#   ##############################################################################
+#   ##############################################################################
+#   Weights for different types of message, depending on tension.
+#   ######## silenced, any tension ############
+# old ja (ja16):
+#   叫び声を耳にした。
+#   
+#   険悪なシューッという音を耳にした。
+#   
+#   甲高い叫び声を耳にした！
+#   
+#   咆哮を耳にした！
+#   
+#   おぞましい金切り声を耳にした!
+#   
+#   痛ましいうめき声を耳にした。
+#   
+#   ギャーギャー鳴く声を耳にした！
+#   
+#   唸り声を耳にした！
+#   
+#   やかましくゲコゲコ鳴く声を耳にした！
+#   
+#   剣呑なブンブンいう音を耳にした。
+#   
+#   水のはねる音を耳にした。
+#   
+#   ジュージューという音を耳にした。
+#   
+#   雑音が鳴り響くのを聞いた！
+#   
+#   軋むような音を耳にした。
+#   
+#   轟く雷鳴を耳にした！
+#   
+#   耳障りな金切り声を耳にした！
+#   
+#   吠え声を耳にした！
+#   
+#   ゴロゴロという音を耳にした。
+#   
+#   何かをバリバリ噛み砕く音を耳にした。
+#   
+#   遠くに『ゾット』の声を聞いた！
+#   
+#   遠くでカエルが猛烈に鳴く声を耳にした。
+#   
+#   ノックの音を耳にした。
+#   
+#   自分の名前を呼ぶ声を耳にした。
+#   
+#   とても奇妙な物音を耳にした。
+#   
+#   誰かのいびきを耳にした。
+#   
+#   誰かが助けを呼ぶ声を耳にした！
+#   
+#   奇妙な声を耳にした。
+#   
+#   狂気の笑い声を聞いた。
+#   
+#   何かの曲の断片を耳にした。
+#   
+#   楽器がポロロンと鳴る音を耳にした。
+#   
+#   遠くで銅鑼が鳴る音を耳にした。
+#   
+#   大きな鐘がガランガランと鳴る音を耳にした。
+#   
+#   反響する音が聞こえた。
+#   
+#   はセイレーンの泣き声を耳にした。
+#   
+#   ラッパの音を耳にした！
+#   
+#   奇妙で愉快な爆発音を耳にした。
+#   
+#   遠くですすり泣く声を耳にした。
+#   
+#   よく聞き取れない笑い話を耳にした。
+
+a shout.
+
+an angry hiss.
+
+a high-pitched scream!
+
+a roar!
+
+a hideous shriek!
+
+a piteous moan.
+
+a screech!
+
+a bellow!
+
+a loud, deep croak!
+
+an angry buzzing noise.
+
+a splashing noise.
+
+a sizzling sound.
+
+a loud clanging noise!
+
+a grinding noise.
+
+a mighty clap of thunder!
+
+a hideous screaming!
+
+a bark!
+
+a rumbling sound.
+
+a crunching sound.
+
+a distant "Zot"!
+
+the distant roaring of an enraged frog.
+
+a knock.
+
+a voice calling your name.
+
+a very strange noise.
+
+someone snoring.
+
+someone calling for help!
+
+strange voices.
+
+maniacal laughter.
+
+snatches of song.
+
+a twanging sound.
+
+the buzz of a distant kazoo.
+
+the chiming of a distant gong.
+
+the tinkle of an enormous bell.
+
+an echo.
+
+the wailing of sirens.
+
+a flourish of trumpets!
+
+a strangely pleasant explosion.
+
+distant weeping.
+
+a muffled joke.
+%%%%
+_rare_speaking_no_tension_
+
+# old en (ja16):
+#   @The_weapon@ says, "In my experience, @player_genus_plural@ are mediocre at best."
+#   @The_weapon@ groans, "Among all @player_genus_plural@, @player_name@ is the worst."
+#   Blue Oyster Cult "Black Blade"
+#   ########### speaking, low tension ############
+# old ja (ja16):
+#   @The_weapon@ says, "Hi! I'm the Singing Sword!"
+#   
+#   @The_weapon@ chants, "I am golden and pointed, and with blood well anointed."
+#   
+#   @The_weapon@ dictates a lengthy tome entitled 'The Well-Tempered Blade'.
+#   
+#   @The_weapon@ says, "Whips just don't cut it for me, don't you agree?"
+#   
+#   @The_weapon@ chants, "Rather stab than club, rather slice than rub!"
+#   
+#   @The_weapon@ states, "Music critics are all talk and no body armour."
+#   
+#   @The_weapon@ demands, "I must not be sheathed without first drawing blood!"
+#   
+#   @The_weapon@ [explains all about|gives a lengthy lecture on] @_musical_topic_@.
+#   
+#   @The_weapon@ curses its smith, "I was supposed to be the Stinging Sword!"
+#   
+#   @The_weapon@ yells, "Ploughshares to swords!"
+#   
+#   @The_weapon@ asks, "What song would you like to be played for your funeral?"
+#   
+#   @The_weapon@ announces, "I dedicate these songs to @player_name@!"
+#   
+#   @The_weapon@ declares, "I sing the tale of @player_name@, the warrior!"
+#   
+#   @The_weapon@ says, "Hey! Are you even listening?"
+#   
+#   @The_weapon@ longs back for the days in the arena.
+#   
+#   @The_weapon@ amuses itself with detailed descriptions of past executions.
+#   
+#   @The_weapon@ wishes everyone in the dungeon [an unpleasant|a sudden] [demise|death].
+#   
+#   @The_weapon@ fumes, "Being battered, bent and broken sure is better than this boredom!"
+#   
+#   @The_weapon@ shouts, "I love putting a song in people's hearts. And in their kidneys."
+#   
+#   @The_weapon@ grouses, "Could you please kill something? I'm itching all over."
+#   
+#   @The_weapon@ laments, "What are you waiting for? I am doing all the work."
+#   
+#   @The_weapon@ explains, "Killing is an art, not a pastime."
+#   
+#   @The_weapon@ goes, "Jessica and Sigmund, sitting in a tree..."
+#   
+#   @The_weapon@ says, "I want to meet the serpentine blade!"
+#   
+#   @The_weapon@ says, "Take me to Pandemonium! Now!!!"
+#   
+#   @The_weapon@ recounts funny stories of hydra head multiplication.
+#   
+#   @The_weapon@ says, "Sometimes people call me a magnificent bastard."
+#   
+#   w:1
+#   @The_weapon@ snarls, "Dear diary, yet another boring day with @player_name@..."
+#   
+#   @The_weapon@は『経験からすると、ひいき目に見ても@player_genus@は平凡だ』と言った。
+#   
+#   @The_weapon@『@player_genus_plural@の中でも、@player_name@が最低だ』とうめいた。
+#   
+#   @The_weapon@ says, "Unhand me, foul miscreant!"
+#   
+#   @The_weapon@ muses, "Whom do I have to kill to get some service around here?"
+#   
+#   @The_weapon@ sings out, "Sing loudly and carry a big sword!"
+#   
+#   w:1
+#   @The_weapon@ says, "All work and no play makes @player_name@ a dull boy!"
+#   
+#   @The_weapon@ says, "I wish I'd pick another to be my killing tool."
+#   
+#   @The_weapon@ hoarsely says, "Need a drink... quick! Stab something."
+#   
+#   w:1
+#   @The_weapon@ says, "You haven't happened to see my sheath laying around anywhere? I feel so exposed."
+
+@The_weapon@ says, "Hi! I'm the Singing Sword!"
+
+@The_weapon@ chants, "I am golden and pointed, and with blood well anointed."
+
+@The_weapon@ dictates a lengthy tome entitled 'The Well-Tempered Blade'.
+
+@The_weapon@ says, "Whips just don't cut it for me, don't you agree?"
+
+@The_weapon@ chants, "Rather stab than club, rather slice than rub!"
+
+@The_weapon@ states, "Music critics are all talk and no body armour."
+
+@The_weapon@ demands, "I must not be sheathed without first drawing blood!"
+
+@The_weapon@ [explains all about|gives a lengthy lecture on] @_musical_topic_@.
+
+@The_weapon@ curses its smith, "I was supposed to be the Stinging Sword!"
+
+@The_weapon@ yells, "Ploughshares to swords!"
+
+@The_weapon@ asks, "What song would you like to be played for your funeral?"
+
+@The_weapon@ announces, "I dedicate these songs to @player_name@!"
+
+@The_weapon@ declares, "I sing the tale of @player_name@, the warrior!"
+
+@The_weapon@ says, "Hey! Are you even listening?"
+
+@The_weapon@ longs back for the days in the arena.
+
+@The_weapon@ amuses itself with detailed descriptions of past executions.
+
+@The_weapon@ wishes everyone in the dungeon [an unpleasant|a sudden] [demise|death].
+
+@The_weapon@ fumes, "Being battered, bent and broken sure is better than this boredom!"
+
+@The_weapon@ shouts, "I love putting a song in people's hearts. And in their kidneys."
+
+@The_weapon@ grouses, "Could you please kill something? I'm itching all over."
+
+@The_weapon@ laments, "What are you waiting for? I am doing all the work."
+
+@The_weapon@ explains, "Killing is an art, not a pastime."
+
+@The_weapon@ goes, "Jessica and Sigmund, sitting in a tree..."
+
+@The_weapon@ says, "I want to meet the serpentine blade!"
+
+@The_weapon@ says, "Take me to Pandemonium! Now!!!"
+
+@The_weapon@ recounts funny stories of hydra head multiplication.
+
+@The_weapon@ says, "Sometimes people call me a magnificent bastard."
+
+w:1
+@The_weapon@ snarls, "Dear diary, yet another boring day with @player_name@..."
+
+@The_weapon@ says, "In my experience, @player_genus_plural@ are mediocre at best."
+
+@The_weapon@ groans, "Among all @player_genus_plural@, @player_name@ is the worst."
+
+@The_weapon@ says, "Unhand me, foul miscreant!"
+
+@The_weapon@ muses, "Whom do I have to kill to get some service around here?"
+
+@The_weapon@ sings out, "Sing loudly and carry a big sword!"
+
+@The_weapon@ ponders the difference in lifespan between man and sword.
+
+w:1
+@The_weapon@ says, "All work and no play makes @player_name@ a dull boy!"
+
+@The_weapon@ says, "I wish I'd pick another to be my killing [tool|fool]."
+
+@The_weapon@ hoarsely says, "Need a drink... quick! Stab something."
+
+w:1
+@The_weapon@ says, "You haven't happened to see my sheath laying around anywhere? I feel so exposed."
+
+w:1
+@The_weapon@ complains, "Oh, are your palms wet and greasy. But I allow you to wield me for a while."
+%%%%

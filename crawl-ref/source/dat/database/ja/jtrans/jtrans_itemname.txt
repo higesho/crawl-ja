@@ -1,0 +1,1551 @@
+%%%%
+its
+
+<[gender neuter poss]its>
+%%%%
+(melded)
+
+(肉体と融合している)
+%%%%
+(worn)
+
+(装備中)
+%%%%
+left {hand}
+
+左%s
+%%%%
+right {hand}
+
+右%s
+%%%%
+(quivered)
+
+(準備中)
+%%%%
+(curse)
+
+(呪われている)
+%%%%
+#if TAG_MAJOR_VERSION == 34
+# [missile brand]flame
+
+%%%%
+#if TAG_MAJOR_VERSION == 34
+# [missile brand]frost
+
+%%%%
+[missile brand]poison
+
+毒
+%%%%
+[missile brand]curare
+
+クラーレ毒
+%%%%
+[missile brand]explode
+
+爆発
+%%%%
+[missile brand]steel
+
+鋼鉄
+%%%%
+[missile brand]silver
+
+銀
+%%%%
+[missile brand]paralysis
+
+麻痺毒
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[missile brand]slow
+
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[missile brand]slowing
+
+%%%%
+[missile brand]sleep
+
+睡眠
+%%%%
+[missile brand]confusion
+
+混乱
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[missile brand]sick
+
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[missile brand]sickness
+
+%%%%
+[missile brand]frenzy
+
+凶暴化
+%%%%
+[missile brand]returning
+
+帰還
+%%%%
+[missile brand]chaos
+
+混沌
+%%%%
+[missile brand]penetration
+
+貫通
+%%%%
+[missile brand]dispersal
+
+離散
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[missile brand]blind
+
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[missile brand]blinding
+
+%%%%
+[item adj terse]flame
+
+火炎
+%%%%
+[item adj terse]freeze
+
+冷気
+%%%%
+[item adj terse]holy
+
+神罰
+%%%%
+[item adj terse]elec
+
+電撃
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[item adj terse]obsolete
+
+%%%%
+[item adj terse]venom
+
+毒液
+%%%%
+[item adj terse]protect
+
+護り
+%%%%
+[item adj terse]drain
+
+掠奪
+%%%%
+[item adj terse]speed
+
+早業
+%%%%
+[item adj terse]buggy-vorpal
+
+# 訳不要
+%%%%
+[item adj terse]vamp
+
+吸血
+%%%%
+[item adj terse]pain
+
+苦痛
+%%%%
+[item adj terse]antimagic
+
+反魔法
+%%%%
+[item adj terse]distort
+
+歪曲
+%%%%
+[item adj terse]chaos
+
+混沌
+%%%%
+[item adj terse]evade
+
+躱し身
+%%%%
+[item adj terse]confuse
+
+混乱
+%%%%
+[item adj terse]penet
+
+貫通
+%%%%
+[item adj terse]reap
+
+刈り取り
+%%%%
+[item adj terse]buggy-num
+
+# 訳不要
+%%%%
+[item adj terse]acid
+
+強酸
+%%%%
+[item adj verbose]flaming
+
+<[item adj terse]flame>
+%%%%
+of flaming
+
+火炎の
+%%%%
+[item adj verbose]freezing
+
+<[item adj terse]freeze>
+%%%%
+of freezing
+
+冷気の
+%%%%
+[item adj verbose]holy wrath
+
+<[item adj terse]holy>
+%%%%
+of holy wrath
+
+神罰の
+%%%%
+[item adj verbose]electrocution
+
+<[item adj terse]elec>
+%%%%
+of electrocution
+
+電撃の
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[item adj verbose]orc slaying
+
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[item adj verbose]dragon slaying
+
+%%%%
+[item adj verbose]venom
+
+<[item adj terse]venom>
+%%%%
+of venom
+
+毒液の
+%%%%
+[item adj verbose]protection
+
+<[item adj terse]protect>
+%%%%
+of protection
+
+護りの
+%%%%
+[item adj verbose]draining
+
+<[item adj terse]drain>
+%%%%
+of draining
+
+掠奪の
+%%%%
+[item adj verbose]speed
+
+<[item adj terse]speed>
+%%%%
+of speed
+
+早業の
+%%%%
+[item adj verbose]buggy-vorpal
+
+<[item adj terse]buggy-vorpal>
+%%%%
+of buggy-vorpal
+
+# 訳不要
+%%%%
+[item adj verbose]pain
+
+<[item adj terse]pain>
+%%%%
+of pain
+
+苦痛の
+%%%%
+[item adj verbose]distortion
+
+<[item adj terse]distort>
+%%%%
+of distortion
+
+歪曲の
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[item adj verbose]reaching
+
+%%%%
+#if TAG_MAJOR_VERSION == 34
+[item adj verbose]returning
+
+%%%%
+[item adj verbose]chaos
+
+<[item adj terse]chaos>
+%%%%
+of chaos
+
+混沌の
+%%%%
+[item adj verbose]evasion
+
+<[item adj terse]evade>
+%%%%
+of evasion
+
+躱し身の
+%%%%
+[item adj verbose]confusion
+
+<[item adj terse]confuse>
+%%%%
+of confusion
+
+混乱の
+%%%%
+[item adj verbose]penetration
+
+<[item adj terse]penet>
+%%%%
+of penetration
+
+貫通の
+%%%%
+[item adj verbose]reaping
+
+<[item adj terse]reap>
+%%%%
+of reaping
+
+刈り取りの
+%%%%
+[item adj verbose]buggy-num
+
+<[item adj terse]buggy-num>
+%%%%
+[item adj verbose]acid
+
+<[item adj terse]acid>
+%%%%
+of acid
+
+強酸の
+%%%%
+[item adj terse]vorpal
+
+# 訳不要
+%%%%
+[item adj verbose]vorpal
+
+<[item adj terse]vorpal>
+%%%%
+[item adj terse]velocity
+
+高速
+%%%%
+[item adj verbose]velocity
+
+<[item adj terse]velocity>
+%%%%
+of velocity
+
+高速の
+%%%%
+[item adj terse]crush
+
+粉砕
+%%%%
+[item adj verbose]crushing
+
+<[item adj terse]crush>
+%%%%
+of crushing
+
+粉砕の
+%%%%
+[item adj terse]slice
+
+切断
+%%%%
+[item adj verbose]slicing
+
+<[item adj terse]slice>
+%%%%
+of slicing
+
+切断の
+%%%%
+[item adj terse]pierce
+
+貫き
+%%%%
+[item adj verbose]piercing
+
+<[item adj terse]pierce>
+%%%%
+of piercing
+
+貫きの
+%%%%
+[item adj terse]chop
+
+分断
+%%%%
+[item adj verbose]chopping
+
+<[item adj terse]chop>
+%%%%
+of chopping
+
+分断の
+%%%%
+[item adj terse]slash
+
+切り裂き
+%%%%
+[item adj verbose]slashing
+
+<[item adj terse]slash>
+%%%%
+of slashing
+
+切り裂きの
+%%%%
+buggy vorpal
+
+# 訳不要
+%%%%
+buggy destruction
+
+# 訳不要
+%%%%
+of speedy slithering
+
+俊敏の
+%%%%
+of running
+
+俊足の
+%%%%
+of fire resistance
+
+耐火の
+%%%%
+of cold resistance
+
+耐冷の
+%%%%
+of poison resistance
+
+耐毒の
+%%%%
+of see invisible
+
+霊視の
+%%%%
+of invisibility
+
+透明化の
+%%%%
+of strength
+
+腕力の
+%%%%
+of dexterity
+
+器用さの
+%%%%
+of intelligence
+
+知性の
+%%%%
+of ponderousness
+
+鈍重の
+%%%%
+of flying
+
+飛行の
+%%%%
+of magic resistance
+
+耐魔法の
+%%%%
+# of protection
+
+# 武器エゴと重複
+%%%%
+of stealth
+
+隠密の
+%%%%
+of resistance
+
+耐性の
+%%%%
+of positive energy
+
+正の力の
+%%%%
+of the Archmagi
+
+大賢者の
+%%%%
+#if TAG_MAJOR_VERSION == 34
+of jumping
+
+%%%%
+#if TAG_MAJOR_VERSION == 34
+of preservation
+
+%%%%
+of reflection
+
+反射の
+%%%%
+of spirit shield
+
+精霊の盾の
+%%%%
+of archery
+
+射手の
+%%%%
+of bugginess
+
+# 訳不要
+%%%%
+# ワンド関連はjtrans_wand_name.txtに記述
+%%%%
+[wand adj]jewelled
+
+宝飾された
+%%%%
+[wand adj]curved
+
+曲がった
+%%%%
+[wand adj]long
+
+長い
+%%%%
+[wand adj]short
+
+短い
+%%%%
+[wand adj]twisted
+
+捻れた
+%%%%
+[wand adj]crooked
+
+歪んだ
+%%%%
+[wand adj]forked
+
+二叉の
+%%%%
+[wand adj]shiny
+
+光る
+%%%%
+[wand adj]blackened
+
+黒光りする
+%%%%
+[wand adj]tapered
+
+先細りの
+%%%%
+[wand adj]glowing
+
+輝く
+%%%%
+[wand adj]worn
+
+使い古された
+%%%%
+[wand adj]encrusted
+
+飾りのついた
+%%%%
+[wand adj]runed
+
+ルーンが刻まれた
+%%%%
+[wand adj]sharpened
+
+先が尖った
+%%%%
+[wand adj]iron
+
+鉄の
+%%%%
+[wand adj]brass
+
+真鍮の
+%%%%
+[wand adj]bone
+
+骨の
+%%%%
+[wand adj]wooden
+
+木の
+%%%%
+[wand adj]copper
+
+銅の
+%%%%
+[wand adj]gold
+
+金の
+%%%%
+[wand adj]silver
+
+銀の
+%%%%
+[wand adj]bronze
+
+青銅の
+%%%%
+[wand adj]ivory
+
+象牙の
+%%%%
+[wand adj]glass
+
+ガラスの
+%%%%
+[wand adj]lead
+
+鉛の
+%%%%
+[wand adj]fluorescent
+
+蛍光を放つ
+%%%%
+# 薬関連はjtrans_potion_name.txtに記述
+%%%%
+# 巻物関連はjtrans_scroll_name.txtに記述
+%%%%
+# 装身具関連はjtrans_jewellery_name.txtに記述
+%%%%
+[ring adj]encrusted
+
+飾られた
+%%%%
+[ring adj]glowing
+
+輝く
+%%%%
+[ring adj]tubular
+
+管になった
+%%%%
+[ring adj]runed
+
+ルーンが刻まれた
+%%%%
+[ring adj]blackened
+
+真っ黒な
+%%%%
+[ring adj]scratched
+
+傷のある
+%%%%
+[ring adj]small
+
+小さな
+%%%%
+[ring adj]large
+
+大きな
+%%%%
+[ring adj]twisted
+
+曲がった
+%%%%
+[ring adj]shiny
+
+光る
+%%%%
+[ring adj]notched
+
+刻み目のついた
+%%%%
+[ring adj]knobbly
+
+でこぼこした
+%%%%
+[ring adj]wooden
+
+木の
+%%%%
+[ring adj]silver
+
+銀の
+%%%%
+[ring adj]golden
+
+金の
+%%%%
+[ring adj]iron
+
+鉄の
+%%%%
+[ring adj]steel
+
+鋼の
+%%%%
+[ring adj]tourmaline
+
+トルマリンの
+%%%%
+[ring adj]brass
+
+真鍮の
+%%%%
+[ring adj]copper
+
+銅の
+%%%%
+[ring adj]granite
+
+御影石の
+%%%%
+[ring adj]ivory
+
+象牙の
+%%%%
+[ring adj]ruby
+
+ルビーの
+%%%%
+[ring adj]marble
+
+大理石の
+%%%%
+[ring adj]jade
+
+翡翠の
+%%%%
+[ring adj]glass
+
+ガラスの
+%%%%
+[ring adj]agate
+
+めのうの
+%%%%
+[ring adj]bone
+
+骨の
+%%%%
+[ring adj]diamond
+
+ダイヤの
+%%%%
+[ring adj]emerald
+
+エメラルドの
+%%%%
+[ring adj]peridot
+
+ペリドットの
+%%%%
+[ring adj]garnet
+
+ガーネットの
+%%%%
+[ring adj]opal
+
+オパールの
+%%%%
+[ring adj]pearl
+
+真珠の
+%%%%
+[ring adj]coral
+
+サンゴの
+%%%%
+[ring adj]sapphire
+
+サファイアの
+%%%%
+[ring adj]cabochon
+
+トルコ石の
+%%%%
+[ring adj]gilded
+
+金メッキの
+%%%%
+[ring adj]onyx
+
+オニキスの
+%%%%
+[ring adj]bronze
+
+青銅の
+%%%%
+[ring adj]moonstone
+
+ムーンストーンの
+%%%%
+[amulet adj]dented
+
+くぼんだ
+%%%%
+[amulet adj]square
+
+四角形の
+%%%%
+[amulet adj]thick
+
+厚い
+%%%%
+[amulet adj]thin
+
+薄い
+%%%%
+[amulet adj]runed
+
+ルーンが刻まれた
+%%%%
+[amulet adj]blackened
+
+黒ずんだ
+%%%%
+[amulet adj]glowing
+
+輝く
+%%%%
+[amulet adj]small
+
+小さな
+%%%%
+[amulet adj]large
+
+大きな
+%%%%
+[amulet adj]twisted
+
+捻れた
+%%%%
+[amulet adj]tiny
+
+ちっぽけな
+%%%%
+[amulet adj]triangular
+
+三角形の
+%%%%
+[amulet adj]lumpy
+
+でこぼこの
+%%%%
+[amulet adj]sapphire
+
+サファイアの
+%%%%
+[amulet adj]zirconium
+
+ジルコニウムの
+%%%%
+[amulet adj]golden
+
+金の
+%%%%
+[amulet adj]emerald
+
+エメラルドの
+%%%%
+[amulet adj]garnet
+
+ガーネットの
+%%%%
+[amulet adj]bronze
+
+青銅の
+%%%%
+[amulet adj]brass
+
+真鍮の
+%%%%
+[amulet adj]copper
+
+銅の
+%%%%
+[amulet adj]ruby
+
+ルビーの
+%%%%
+[amulet adj]citrine
+
+シトリンの
+%%%%
+[amulet adj]bone
+
+骨の
+%%%%
+[amulet adj]platinum
+
+プラチナの
+%%%%
+[amulet adj]jade
+
+翡翠の
+%%%%
+[amulet adj]fluorescent
+
+蛍光を放つ
+%%%%
+[amulet adj]amethyst
+
+アメジストの
+%%%%
+[amulet adj]cameo
+
+カメオ細工の
+%%%%
+[amulet adj]pearl
+
+真珠の
+%%%%
+[amulet adj]blue
+
+青い
+%%%%
+[amulet adj]peridot
+
+ペリドットの
+%%%%
+[amulet adj]jasper
+
+ジャスパーの
+%%%%
+[amulet adj]diamond
+
+ダイヤの
+%%%%
+[amulet adj]malachite
+
+孔雀石の
+%%%%
+[amulet adj]steel
+
+鋼の
+%%%%
+[amulet adj]cabochon
+
+トルコ石の
+%%%%
+[amulet adj]silver
+
+銀の
+%%%%
+[amulet adj]soapstone
+
+石鹸石の
+%%%%
+[amulet adj]lapis lazuli
+
+ラピスラズリの
+%%%%
+[amulet adj]filigree
+
+線条細工の
+%%%%
+[amulet adj]beryl
+
+緑柱石の
+%%%%
+# ルーン関連はjtrans_rune_name.txtに記述
+%%%%
+plain
+
+普通の
+%%%%
+ornate
+
+レアな
+%%%%
+# legendary
+
+# jtrans_describe.txtと重複
+%%%%
+deck of cards
+
+カードのデッキ
+%%%%
+# 発動アイテム関連はjtrans_misc_name.txtで記述
+%%%%
+[book adj]chunky
+
+分厚い
+%%%%
+[book adj]thick
+
+厚い
+%%%%
+[book adj]thin
+
+薄い
+%%%%
+[book adj]wide
+
+大判の
+%%%%
+[book adj]glowing
+
+輝く
+%%%%
+[book adj]dog-eared
+
+ページの折られた
+%%%%
+[book adj]oblong
+
+長方形の
+%%%%
+[book adj]runed
+
+ルーンが刻まれた
+%%%%
+[book adj]paperback
+
+紙表紙の
+%%%%
+[book adj]hardcover
+
+堅表紙の
+%%%%
+[book adj]leatherbound
+
+革装丁の
+%%%%
+[book adj]metal-bound
+
+金属装丁の
+%%%%
+[book adj]papyrus
+
+パピルス紙の
+%%%%
+# 魔法書関連はjtrans_book_name.txtに記述
+%%%%
+[staff adj]crooked
+
+歪んだ
+%%%%
+[staff adj]knobbly
+
+節くれだった
+%%%%
+[staff adj]weird
+
+奇妙な
+%%%%
+[staff adj]gnarled
+
+ごつごつした
+%%%%
+[staff adj]thin
+
+細い
+%%%%
+[staff adj]curved
+
+曲がった
+%%%%
+[staff adj]twisted
+
+ねじれた
+%%%%
+[staff adj]thick
+
+太い
+%%%%
+[staff adj]long
+
+長い
+%%%%
+[staff adj]short
+
+短い
+%%%%
+[staff adj]glowing
+
+輝く
+%%%%
+[staff adj]jewelled
+
+宝飾の
+%%%%
+[staff adj]runed
+
+ルーンが刻まれた
+%%%%
+[staff adj]smoking
+
+煙を上げる
+%%%%
+# 杖関連はjtrans_staff_name.txtに記述
+%%%%
+# ロッド関連はjtrans_rod_name.txtに記述
+%%%%
+# weapon
+
+# jtrans_describe.txtと重複
+%%%%
+missile
+
+飛び道具
+%%%%
+armour
+
+防具
+%%%%
+wand
+
+ワンド
+%%%%
+food
+
+食料
+%%%%
+scroll
+
+巻物
+%%%%
+# jewellery
+
+# jtrans_describe.txtと重複
+%%%%
+potion
+
+薬
+%%%%
+# book
+
+# jtrans_describe_spells.txtと重複
+%%%%
+# staff
+
+# jtrans_weapon_name.txtと重複
+%%%%
+rod
+
+ロッド
+%%%%
+orb
+
+<orb of Zot>
+%%%%
+miscellaneous
+
+その他のアイテム
+%%%%
+corpse
+
+死体
+%%%%
+gold
+
+金貨
+%%%%
+rune
+
+ルーン
+%%%%
+manual
+
+虎の巻
+%%%%
+manual of
+
+の虎の巻
+%%%%
+orb of Zot
+
+ゾットのオーブ
+%%%%
+rune of Zot
+
+ルーン
+%%%%
+a vampiric weapon
+
+吸血の武器
+%%%%
+an antimagic weapon
+
+反魔法の武器
+%%%%
+a vorpal weapon
+
+殺戮の武器
+%%%%
+a weapon of %s
+
+%s武器
+%%%%
+vampirism
+
+吸血
+%%%%
+antimagic
+
+反魔法
+%%%%
+# damnation
+
+# jtrans_art_func.txtと重複
+%%%%
+[item adj]damnation
+
+地獄の鉄槌の
+%%%%
+drawn: %d
+
+%d枚消費
+%%%%
+left: %d
+
+残り%d枚
+%%%%
+cursed
+
+呪われた
+%%%%
+uncursed
+
+呪われていない
+%%%%
+runed
+
+ルーンが刻まれた
+%%%%
+glowing
+
+輝く
+%%%%
+[ego prefix]vampiric
+
+吸血の
+%%%%
+[ego prefix]antimagic
+
+反魔法の
+%%%%
+[ego prefix]enchanted
+
+魔力を帯びた
+%%%%
+(damnation)
+
+(鉄槌)
+%%%%
+pair of
+
+一対の
+%%%%
+embroidered
+
+刺繍された
+%%%%
+shiny
+
+光る
+%%%%
+dyed
+
+色で染められた
+%%%%
+supercharged
+
+# obsolete: Pakellas
+%%%%
+{empty}
+
+{空}
+%%%%
+{recharged}
+
+{充填済み}
+%%%%
+{zapped: %d}
+
+{%d回消費}
+%%%%
+[potion adj]bubbling
+
+沸き立つ
+%%%%
+[potion adj]fuming
+
+刺激臭を放つ
+%%%%
+[potion adj]fizzy
+
+泡立つ
+%%%%
+[potion adj]viscous
+
+粘ついた
+%%%%
+[potion adj]lumpy
+
+波立つ
+%%%%
+[potion adj]smoky
+
+煙を立てる
+%%%%
+[potion adj]glowing
+
+輝く
+%%%%
+[potion adj]sedimented
+
+沈殿のできた
+%%%%
+[potion adj]metallic
+
+金属的な
+%%%%
+[potion adj]murky
+
+濁った
+%%%%
+[potion adj]gluggy
+
+ゴボゴボいう
+%%%%
+[potion adj]oily
+
+油っぽい
+%%%%
+[potion adj]slimy
+
+ドロドロした
+%%%%
+[potion adj]emulsified
+
+乳化した
+%%%%
+[potion adj]clear
+
+透明色の
+%%%%
+[potion adj]blue
+
+青い
+%%%%
+[potion adj]black
+
+黒い
+%%%%
+[potion adj]silvery
+
+銀色の
+%%%%
+[potion adj]cyan
+
+青緑の
+%%%%
+[potion adj]purple
+
+紫の
+%%%%
+[potion adj]orange
+
+オレンジ色の
+%%%%
+[potion adj]inky
+
+漆黒の
+%%%%
+[potion adj]red
+
+赤い
+%%%%
+[potion adj]yellow
+
+黄色い
+%%%%
+[potion adj]green
+
+緑色の
+%%%%
+[potion adj]brown
+
+茶色の
+%%%%
+[potion adj]ruby
+
+ルビー色の
+%%%%
+[potion adj]white
+
+白い
+%%%%
+[potion adj]emerald
+
+エメラルド色の
+%%%%
+[potion adj]grey
+
+灰色の
+%%%%
+[potion adj]pink
+
+ピンクの
+%%%%
+[potion adj]coppery
+
+赤褐色の
+%%%%
+[potion adj]golden
+
+金色の
+%%%%
+[potion adj]dark
+
+黒ずんだ
+%%%%
+[potion adj]puce
+
+暗赤色の
+%%%%
+[potion adj]amethyst
+
+アメジスト色の
+%%%%
+[potion adj]sapphire
+
+サファイア色の
+%%%%
+# 食料関連はjtrans_food_name.txtで記述
+%%%%
+mutagenic
+
+変異性の
+%%%%
+inedible
+
+食べられない
+%%%%
+scroll labeled %s
+
+『%s』と書かれた巻物
+%%%%
+# amulet
+
+# jtrans_describe.txtと重複
+%%%%
+# ring
+
+# jtrans_describe.txtと重複
+%%%%
+(inert)
+
+(充填中)
+%%%%
+rand artefact spellbook '%s'
+
+魔法書『%s』
+%%%%
+manual of %s
+
+%sの虎の巻
+%%%%
+# ロッド関連はjtrans_rod_name.txtで記述
+%%%%
+gold piece
+
+金貨
+%%%%
+decaying skeleton
+
+風化した骸骨
+%%%%
+# skeleton
+
+# jtrans_monster_data.txtと重複
+%%%%
+corpse bug
+
+# 訳不要
+%%%%
+Select to reset item to default:
+
+自動拾いをデフォルト設定に戻すアイテムを選んでください:
+%%%%
+manuals
+
+<manual>
+%%%%
+runes
+
+<rune>
+%%%%
+unknown %s
+
+未鑑定の%s
+%%%%
+Items not yet recognised: (toggle with -)
+
+未鑑定のアイテム一覧 (- で切替)
+%%%%
+Recognised items. (- for unrecognised, select to toggle autopickup)
+
+認識済アイテム一覧 (- で未鑑定分を表示、選択して自動拾いを切替)
+%%%%
+You recognise all items. (Select to toggle autopickup)
+
+あなたはすべてのアイテムを鑑定済だ。 (選択して自動拾いを切替)
+%%%%
+(_ for help)
+
+(_ でヘルプ表示)
+%%%%
+Other Items
+
+その他のアイテム
+%%%%
+<magenta>The Orb of Zot</magenta>
+
+<magenta>ゾットのオーブ</magenta>
+%%%%
+<darkgrey>The Orb of Zot (the Realm of Zot)</darkgrey>
+
+<darkgrey>ゾットのオーブ (ゾットの領域)</darkgrey>
+%%%%
+<white>Runes of Zot (</white><%s>%d</%s><white> collected) & Orbs of Power</white>
+
+<white>ゾットのオーブおよびルーン(</white><%s>%d</%s><white>個獲得)</white>
+%%%%

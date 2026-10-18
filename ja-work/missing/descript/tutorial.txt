@@ -1,0 +1,27 @@
+%%%%
+tutorial death
+
+You die...
+
+In Crawl, death is a sad but common occurrence. Note that there's usually
+something you could have done to survive, for example by using some kind of
+item, running away, resting between fights, or by avoiding combat entirely.
+Keep trying, eventually you'll prevail!
+%%%%
+tutorial2 boomerangs
+
+Now, for ranged combat! Pick up these boomerangs with
+<input>$cmd[CMD_PICKUP]</input> or <input>g</input><localtiles>, or by
+<input>mouseclick</input>,</localtiles> and continue.
+%%%%
+tutorial4 spellquivering
+
+Spells, like ammo, are shown in the quiver slot, so you can use
+<input>$cmd[CMD_QUIVER_ITEM]</input> to ready a spell in the quiver. Use
+<input>$cmd[CMD_FIRE]</input> or <input>shift-tab</input> to fire the currently
+quivered spell.
+
+Once you are out of magic points, retreat and rest to regain them with
+<input>$cmd[CMD_REST]</input><localtiles> or by <input>clicking</input> the
+rest icon in the command panel</localtiles>.
+%%%%

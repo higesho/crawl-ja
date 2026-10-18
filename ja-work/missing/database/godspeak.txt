@@ -1,0 +1,901 @@
+%%%%
+Xom orb gift
+
+"Is this the Orb you wanted?"
+
+"Many adventurers have sought this Orb."
+
+w:3
+"Ponder my incredible Orb!"
+%%%%
+Xom animate monster weapon
+
+"Time to have some fun!"
+
+You hear Xom's maniacal laughter.
+
+Xom grants you a minor favour.
+
+Xom smiles on you.
+%%%%
+Xom flora ring
+
+Xom shows off a fistful of green thumbs.
+
+Xom spreads life in this Dungeon full of death.
+
+Xom incites some dramatic evolution in the adjacent floor mould.
+
+"It's alive! It's alive!"
+
+w:5
+Xom adds fresh vegetables to this Dungeon dish.
+
+w:5
+Xom plants some magic beans in the ground.
+%%%%
+Xom scenery generic
+
+Xom briefly touches your surroundings.
+
+Xom complains about the scenery.
+
+Xom alters the dungeon around you.
+%%%%
+Xom scenery open_door
+
+@Xom scenery generic@
+%%%%
+Xom scenery closed_door
+
+@Xom scenery generic@
+%%%%
+Xom scenery altar_xom
+
+Xom adds some personal touches to your environment.
+
+"There, this looks better."
+
+"Just a minor improvement..."
+
+@Xom scenery generic@
+%%%%
+Xom scenery cache_of_fruit
+
+Xom accidentally drops some snacks.
+
+Xom prepares the finest cultivars of fruit found anywhere, then drops them.
+%%%%
+Xom scenery cache_of_meat
+
+Xom [offers|fetches] you some snacks.
+
+Xom prepares a banquet formed from your trail of carnage through the Dungeon.
+%%%%
+Xom scenery cache_of_baked_goods
+
+Xom offers some snacks, fresh out of the oven.
+%%%%
+Xom scenery enter_abyss
+
+Xom suggests a refreshing change of pace.
+
+Xom tears open a few small holes in reality.
+
+Xom bends space into knots.
+%%%%
+Xom scenery trap_teleport
+
+@Xom scenery enter_abyss@
+%%%%
+Xom kind door ring
+
+A short distance around you seems to assume a strange safe solidity.
+
+Xom creates a safe adventurer enclosure.
+
+"Would you like some space to yourself, mortal?"
+%%%%
+Xom mean door ring
+
+Xom raises up and pulls in a makeshift [warmonger|duelist]'s arena.
+
+Xom locks you up as an exhibit to study.
+
+w:5
+Xom constructs another @player_genus@ Petting Zoo.
+%%%%
+Xom bazaar trip
+
+Xom whisks you away into a realm of unfathomable savings!
+
+Xom casts you into... a shopping extravaganza?
+
+Xom offers you everything you could ever need (to amuse Xom).
+
+w:5
+Xom offers you everything you could ever need (in Xom's infallible divine judgment).
+
+The world spins wildly as Xom's jovial laughter rings.
+
+w:2
+"Your coin purse has grown too comfortable in its little world, mortal!"
+%%%%
+_xom_number_
+
+two
+
+three
+
+four
+
+five
+
+six
+%%%%
+Xom feature lava
+
+@The_feature@ spits out sparks!
+
+@The_feature@ briefly solidifies.
+%%%%
+Xom feature shallow water
+
+@The_feature@ briefly bubbles.
+
+@The_feature@ briefly swirls.
+
+@The_feature@ briefly glows.
+
+@The_feature@ briefly glows @any_glowing_colour@.
+
+@The_feature@ briefly flashes @any_colour@.
+
+@The_feature@ briefly boils.
+
+@The_feature@ briefly freezes.
+%%%%
+Xom feature deep water
+
+@Xom feature shallow water@
+
+Off to the side, you spot something lurking in @the_feature@.
+%%%%
+Xom feature blood
+
+@Xom feature shallow water@
+
+@The_feature@ briefly coagulates.
+%%%%
+Xom feature eyes
+
+@The_feature@ looks at you curiously.
+
+@The_feature@ looks right through you.
+%%%%
+Xom feature dry
+
+Water briefly sprays from @the_feature@.
+
+Sparkling water briefly sprays from @the_feature@.
+
+Blood briefly sprays from @the_feature@.
+
+Dust puffs up from @the_feature@.
+%%%%
+Xom feature statuelike
+
+@The_feature@ turns to glare at you.
+
+@The_feature@ turns to stare at you.
+
+@The_feature@ turns away from you.
+
+@The_feature@ spins in place.
+%%%%
+Xom feature tree
+
+@The_feature@ bends towards you.
+
+@The_feature@ bends away from you.
+
+@The_feature@ sways in place.
+%%%%
+Xom feature translucent wall
+
+Dim shapes swim through @the_feature@.
+
+Faint @any_colour@ flames crawl over @the_feature@.
+
+@The_feature@ is briefly covered in @any_colour_pattern@.
+
+@The_feature@ is briefly covered in @any_glowing_colour_pattern@.
+
+@The_feature@ is briefly covered in @any_graffiti@.
+%%%%
+Xom feature metal wall
+
+Tendrils of electricity crawl over @the_feature@.
+
+@The_feature@ briefly appears tarnished.
+%%%%
+Xom feature stone arch
+
+@The_feature@ briefly shows a sunny meadow on the other side.
+
+@The_feature@ briefly shows a lifeless wasteland on the other side.
+
+@The_feature@ briefly shows strange @glowing_adj@ figures on the other side.
+
+@The_feature@ briefly shows bizarre @glowing_adj@ buildings on the other side.
+
+@The_feature@ briefly shows a translucent wall covered in @any_colour_pattern@ on the other side.
+
+@The_feature@ briefly shows a translucent wall covered in @any_glowing_colour_pattern@ on the other side.
+
+@The_feature@ briefly shows a translucent wall covered in @any_graffiti@ on the other side.
+%%%%
+Xom underfoot general
+
+@The_feature@ briefly shifts under you.
+
+An imperceptible spirit brushes against @the_feature@ beside you.
+%%%%
+Xom underfoot water
+
+@The_feature@ briefly recedes away from you.
+
+An imperceptible spirit sends ripples through @the_feature@ beside you.
+%%%%
+Xom underfoot airborne general
+
+@The_feature@ seems to fall away from under you!
+
+@The_feature@ seems to rush up at you!
+%%%%
+Xom underfoot airborne water
+
+@Xom underfoot airborne general@
+
+An imperceptible spirit flows into @the_feature@ beneath you.
+%%%%
+Xom inventory singular
+
+@Your_item@ briefly glows.
+
+@Your_item@ briefly glows @any_glowing_colour@.
+
+@Your_item@ briefly vibrates.
+
+@Your_item@ briefly flashes @any_colour@.
+%%%%
+Xom inventory plural
+
+One of @your_item@ briefly glows.
+
+One of @your_item@ briefly glows @any_glowing_colour@.
+
+One of @your_item@ briefly vibrates.
+
+One of @your_item@ briefly flashes @any_colour@.
+
+@Your_item@ briefly glow.
+
+@Your_item@ briefly glow @any_glowing_colour@.
+
+@Your_item@ briefly vibrate.
+
+@Your_item@ briefly flash @any_colour@.
+%%%%
+Xom floor inventory singular
+
+@Xom inventory singular@
+
+@Your_item@ falls out of your pack, then immediately jumps back in!
+%%%%
+Xom floor inventory plural
+
+@Xom inventory plural@
+
+One of @your_item@ falls out of your pack, then immediately jumps back in!
+
+@Your_item@ fall out of your pack, then immediately jump back in!
+%%%%
+Xom floor bandages
+
+@Xom bandages@
+
+You trip over your bandages.
+%%%%
+Xom one eye
+
+A monocle briefly appears over your eye.
+
+An eyepatch briefly covers your eye.
+
+A burst of @any_colour@ light briefly shoots from your eye!
+%%%%
+Xom eyes
+
+A monocle briefly appears over one of your eyes.
+
+An eyepatch briefly covers one of your eyes.
+
+Bursts of @any_colour@ light briefly shoot from your eyes!
+%%%%
+Xom ears
+
+Your ears flap wildly.
+
+Your ears wiggle.
+
+[Smoke|Steam] briefly shoots from your ears!
+%%%%
+Xom mouth
+
+Your mouth briefly shrinks away entirely.
+
+Your mouth briefly widens across your entire face.
+
+You briefly grow another mouth.
+
+[Smoke|Steam] briefly pours from your mouth!
+%%%%
+Xom hair
+
+Your eyebrows briefly feel incredibly bushy.
+
+Your eyebrows wriggle.
+
+You briefly grow a large moustache and beard.
+%%%%
+Xom impromptu dance
+
+You perform an impromptu @dance_name@.
+
+You do an impromptu @acrobatic_move_name@.
+
+You compulsively click your heels together @_xom_number_@ times.
+
+You compulsively stomp your @feet@ @_xom_number_@ times.
+%%%%
+dance_name
+
+ballet
+
+cha-cha
+
+fandango
+
+jig
+
+line dance
+
+macarena
+
+tango
+
+tapdance
+
+waltz
+%%%%
+acrobatic_move_name
+
+@hand@stand
+
+cartwheel
+
+pirouette
+
+somersault
+%%%%
+Xom tail
+
+Your tail briefly retracts into your body.
+
+Your tail briefly grows to an incredible length.
+
+You briefly grow another tail.
+%%%%
+Xom random body part singular
+
+Your @random_body_part_internal_singular@ briefly wanders out of your body, then fuses itself back in!
+
+Your @random_body_part_external_singular@ briefly jumps off your body, then reattaches itself!
+%%%%
+Xom random body part plural
+
+Your @random_body_part_internal_plural@ briefly wander out of your body, then fuse themselves back in!
+
+Your @random_body_part_external_plural@ briefly jump off your body, then reattach themselves!
+%%%%
+Xom unarmed one hand
+
+A fancy cane briefly appears in your @hand@.
+
+You compulsively punch the air.
+%%%%
+Xom unarmed two hands
+
+@Xom unarmed one hand@
+
+Two fancy canes briefly appear in your @hands@.
+
+You compulsively clap your @hands@ @_xom_number_@ times.
+%%%%
+Xom cloak slot
+
+@Your_item@ billows in an unfelt wind.
+
+@Your_item@ briefly wraps itself around your @head@!
+
+@Your_item@ is briefly covered in @any_glowing_colour_pattern@!
+%%%%
+Xom helmet slot
+
+@Your_item@ leaps into the air, briefly spins, then lands back on your @head@!
+%%%%
+Xom offhand slot
+
+@Your_item@ spins!
+
+@Your_item@ briefly flashes @any_glowing_colour@!
+%%%%
+Xom gloves slot
+
+@Your_item@ briefly grows @_xom_number_@ extra fingers!
+%%%%
+Xom boots slot
+
+@Your_item@ grows to a huge size, then shrinks back down!
+%%%%
+Xom amulet slot
+
+@Your_item@ pulsates!
+
+@Your_item@ flares @any_glowing_colour@, then returns to normal.
+
+@Your_item@ briefly flies off and hovers over your @head@!
+%%%%
+Xom gizmo slot
+
+@Your_item@ jiggles!
+
+@Your_item@ leaks @rainbow_colour@ smoke!
+%%%%
+Xom ring slot
+
+@Your_item@ twitches!
+
+@Your_item@ briefly dulls, then brightens again!
+
+@Your_item@ briefly brightens, then dulls again!
+%%%%
+Xom dragon armour
+
+The scales on @your_item@ wiggle briefly.
+%%%%
+Xom animal skin
+
+The fur on @your_item@ grows longer at an alarming rate, then retracts back to normal.
+%%%%
+Xom leather armour
+
+@Your_item@ briefly grows fur, then returns to normal.
+%%%%
+Xom robe
+
+You briefly become tangled in @your_item@.
+%%%%
+Xom metal armour
+
+@Your_item@ briefly appears rusty.
+%%%%
+Xom drinkless confusion
+
+"Stumble well, my pet!"
+
+Xom's power touches upon your body and mind for a moment.
+%%%%
+Xom suffering
+
+"You have displeased me, mortal."
+
+"You have grown too confident for your meagre worth."
+
+Xom's power touches on you for a moment.
+
+You hear Xom's maniacal laughter.
+
+"Suffer!"
+
+Xom's malign attention turns to you for a moment.
+%%%%
+Xom torment all
+
+Xom torments the living!
+
+Xom spreads torment and darkness!
+
+Xom unleashes waves of agony!
+
+Xom's malign attention turns towards your situation for a moment.
+
+w:5
+The hand of Xom pokes all present souls.
+%%%%
+Xom send in the clones
+
+Xom feels like there should be more of you to share with the Dungeon.
+
+Xom gently smashes a mirror over your [@random_body_part_external_singular@|@random_body_part_external_plural@].
+
+"Multiply and go forth!"
+%%%%
+Xom brain drain
+
+w:20
+Xom displaces most of your magic for a moment.
+
+w:20
+Xom reveals to you one of the great and terrible secrets of magic.
+
+w:20
+Xom curiously channels energy out of your body.
+
+Xom picks up your mind and accidentally drops it.
+
+Xom gives you a terrible headache.
+
+"You don't need this, do you?"
+%%%%
+Xom drained brain
+
+w:20
+Your magic slithers out of your reeling mind!
+
+Your power and thoughts are overwhelmed by magic-eaters manifest!
+
+Your magic wrenches itself out of your [@random_body_part_internal_singular@|@random_body_part_internal_plural@]!
+
+Your magic flows out through your [@random_body_part_external_singular@|@random_body_part_external_plural@]!
+
+Your magic rips itself out through your [@random_body_part_any_singular@|@random_body_part_any_plural@]!
+%%%%
+Xom fake shatter
+
+w:30
+"Ka-crash!"
+
+"Let the forces of chaos tear it all down!"
+
+Xom reshapes the earth.
+
+w:1
+Xom reveals the great annihilating truth to the Dungeon's walls!
+%%%%
+Xom fast forward
+
+Xom speeds up the battle.
+
+Xom demands a faster pace.
+
+"Hurry it up!"
+%%%%
+Xom slow motion
+
+Xom feels like nobody present is taking it easy enough.
+
+Xom bends time into knots.
+
+"Don't be so hasty!"
+%%%%
+Xom pause
+
+Xom stops everything to savour the moment.
+
+Xom stomps on time for a few moments.
+
+w:1
+Xom prepares the audience for the floor's solo!
+%%%%
+Xom grant word of recall
+
+Xom feels like this meagre party needs more guests.
+
+Xom sends out highly concerning invitations.
+%%%%
+Xom grant voiceless word of recall
+
+Xom demands a dramatic dialogue!
+
+Xom grants a terrible voice to the voiceless.
+%%%%
+Xom cleaving
+
+@Xom potion effect@
+%%%%
+Xom cloud trail
+
+"Go forth and redecorate, my child!"
+
+"This place needs a little more atmosphere."
+%%%%
+Xom bad monster polymorph
+
+@Xom good monster polymorph@
+%%%%
+Xom wave of despair
+
+Xom recounts a horror story in an instant.
+
+w:2
+Xom joyfully recalls the collapse of multiple Dungeon civilisations.
+%%%%
+Xom divine lightning
+
+The area is suffused with divine lightning!
+
+Xom hurls blasts of lightning!
+
+"Ready, aim, fire!"
+%%%%
+Xom lights up webs
+
+Xom [gleefully|mirthfully] wrecks local arachnid artwork.
+
+The light of Xom [brushes upon|sweeps through] your surroundings.
+
+w:1
+@Xom fake destruction@
+%%%%
+Xom force lance fleet
+
+Xom drops down a force battalion!
+
+Xom calls in the force cavalry!
+
+Xom lights up the force fireworks!
+
+w:1
+Xom launches an entire fire-cart's barrage!
+
+w:1
+Xom manifests dramatic pipe organ chords!
+%%%%
+Xom good enchant monster
+
+@Xom good monster polymorph@
+%%%%
+Xom bad enchant monster
+
+@Xom good enchant monster@
+%%%%
+Xom good hyper enchant monster
+
+"Witness the rise of a true [hero|champion]!"
+
+Xom demands grand glory in combat!
+
+Xom's power very briefly touches upon your surroundings.
+
+You hear Xom's avuncular cackling.
+%%%%
+Xom mass charm
+
+Xom readies the chaos crusade!
+
+Xom seizes a variety of puppet strings.
+
+"Would you like more friends, my child?"
+
+w:5
+Xom bribes nearby enemies with the offer of @_trout_species_@ trout.
+
+w:5
+The hand of Xom pokes present minds.
+%%%%
+Ignis elemental wrath
+
+"Attack, my last stalwart servants!"
+
+Ignis wails with rage, and rains down burning fury!
+
+Ignis calls forth spirits of fire to unmake you!
+
+"Burn! Burn until nothing is left!"
+
+"These will know how to inflict the punishment due to you!"
+
+"Betrayer! Apostate! Perish!"
+
+w:5
+"With a thousand fires I burned cities, but these will suffice for you!"
+
+w:5
+"My hands, my teeth, my burning tears: these will never betray me!"
+%%%%
+Makhleb executioner chatter
+
+w:40
+"Kill. Kill. Kill!"
+
+"More. More. More!"
+
+"Another! And another! And another!"
+
+"Slaughter. Them. All!"
+
+w:5
+"Everything deserves to die!"
+%%%%
+Beogh apostle challenge
+
+Beware that a challenger has come seeking you in battle. Prove your devotion to me! Unite all my children beneath one banner!
+
+The time has come, seeker, to test your mettle in combat. Prove yourself an orc! Join your true people!
+
+Screw your courage to the sticking place, and face a challenge. Fight to survive! In the great war, all will be orcs!
+%%%%
+Cheibriados death
+
+Cheibriados appreciates the motionlessness of death.
+%%%%
+Fedhas death
+
+Fedhas appreciates your contribution to the ecosystem.
+%%%%
+Hepliaklqana welcome
+
+Hepliaklqana says: Your past becomes your present!
+%%%%
+Hepliaklqana death
+
+Hepliaklqana delivers you to your ancestors.
+%%%%
+Ignis welcome
+
+The flames of Ignis gently warm you.
+%%%%
+Ignis death
+
+Ignis goes out, and joins you in death.
+%%%%
+Jiyva death corpse
+
+Jiyva sends a jelly to digest your remains.
+%%%%
+Jiyva death corpse undead
+
+@Jiyva death corpse@
+%%%%
+Jiyva death corpse nonliving
+
+Jiyva sends a jelly to digest your equipment.
+%%%%
+Kikubaaqudgha death
+
+Kikubaaqudgha rasps: You have failed me! Welcome... death!
+%%%%
+Kikubaaqudgha death corpse undead
+
+Kikubaaqudgha rasps: You have failed me! Welcome... oblivion!
+%%%%
+Kikubaaqudgha death corpse nonliving
+
+@Kikubaaqudgha death corpse undead@
+%%%%
+Kikubaaqudgha death undead
+
+@Kikubaaqudgha death corpse undead@
+%%%%
+Kikubaaqudgha death nonliving
+
+@Kikubaaqudgha death corpse undead@
+%%%%
+Pakellas penance
+
+Pakellas says: That's one approach which won't work here.
+
+Pakellas says: Disappointing results so far.
+
+Pakellas says: We may have to discontinue the experiment at this rate.
+
+Pakellas says: Do not stand in the way of progress!
+%%%%
+Pakellas welcome
+
+Pakellas says: Time to continue the experiment.
+
+Pakellas says: Time to find some more test subjects.
+
+Pakellas says: Ready to try out some more devices?
+
+Pakellas says: This is producing some very interesting results.
+
+Pakellas says: What solutions will you come up with next?
+
+Pakellas says: Progress or perish!
+
+w:5
+Pakellas says: No one tells a god not to play god!
+
+w:1
+Pakellas says: They called me mad... well, we'll show them!
+%%%%
+Pakellas death
+
+Pakellas says: Back to the drawing board!
+
+Pakellas says: Good help is so hard to find these days!
+
+Pakellas says: Time to find a new assistant...
+
+Pakellas says: That's one more possible approach eliminated.
+
+Pakellas says: Time to start the next experiment...
+%%%%
+Ru death
+
+Ru respects your ultimate sacrifice.
+%%%%
+Uskayaw welcome
+
+Uskayaw says: Surrender yourself to the rhythm!
+%%%%
+Uskayaw death corpse
+
+Your body falls in perfect tune with the rhythm.
+%%%%
+Uskayaw death corpse undead
+
+@Uskayaw death corpse@
+%%%%
+Uskayaw death corpse nonliving
+
+@Uskayaw death corpse@
+%%%%
+Wu Jian welcome
+
+The Council says: Follow the path of wisdom and battle!
+%%%%
+_xom_welcome_rare_
+
+Xom says: I'm watching you, my @_xom_child_@ child.
+
+Xom slaps you with @_trout_species_@ trout!
+%%%%
+Yredelemnul death corpse undead
+
+You join the legions of the undead harvest.
+%%%%
+Yredelemnul death corpse nonliving
+
+Your body vanishes in a gout of umbral fire.
+%%%%
+Yredelemnul death undead
+
+@Yredelemnul death corpse undead@
+%%%%
+Zot death
+
+Zot has found you!
+
+Zot unmakes you!
+
+Zot excises you from existence.
+
+Zot touches you for a single instant, and you cease to be.
+
+w:5
+Zot's tendrils burst from within you!
+
+w:3
+Zot's will forges a new reality, without you in it.
+
+w:3
+Zot snuffs you out like a light.
+
+w:3
+Zot's power takes hold, and you dissolve into a dark mist.
+%%%%

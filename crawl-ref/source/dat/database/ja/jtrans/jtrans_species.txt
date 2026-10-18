@@ -1,0 +1,81 @@
+%%%%
+Slid
+
+這いずる
+%%%%
+Glid
+
+滑空する
+%%%%
+Wriggl
+
+うごめく
+%%%%
+Stalk
+
+忍び歩く
+%%%%
+Walk
+
+歩く
+%%%%
+coil in front of
+
+とぐろを巻いた
+%%%%
+curl up in front of
+
+体を丸めた
+%%%%
+sit before
+
+座った
+%%%%
+kneel at
+
+ひざまずいた
+%%%%
+fiery red
+
+燃えるような赤い色
+%%%%
+icy white
+
+氷のような白い色
+%%%%
+lurid green
+
+毒々しい緑色
+%%%%
+golden yellow
+
+黄金の色
+%%%%
+dull iron-grey
+
+鈍い鉄色
+%%%%
+glossy black
+
+光沢のある黒色
+%%%%
+rich purple
+
+鮮やかな紫色
+%%%%
+weird mottled
+
+奇妙なまだら模様
+%%%%
+pale cyan-grey
+
+青ざめた灰色
+%%%%
+plain brown
+
+茶色
+%%%%
+%s growth
+
+%sのレベルアップの際の変異
+%%%%

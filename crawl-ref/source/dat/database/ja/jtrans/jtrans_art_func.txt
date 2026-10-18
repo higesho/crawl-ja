@@ -1,0 +1,434 @@
+%%%%
+The sceptre summons one of its servants.
+
+王笏はしもべのひとつを召喚した。
+%%%%
+You don't feel so good about this...
+
+この存在にはあまり好感が持てない……
+%%%%
+The air shimmers briefly.
+
+一瞬大気が振動した。
+%%%%
+The sword of Cerebov burns away your fire resistance.
+
+セレボブの剣はあなたの火への耐性を焼きはらった。
+%%%%
+The sword of Cerebov burns away %s fire resistance.
+
+セレボブの剣は%s火への耐性を焼きはらった。
+%%%%
+A shiver runs down your spine.
+
+戦慄が脊髄まで走った。
+%%%%
+the scythe of Curses
+
+<scythe of Curses>
+%%%%
+You're too close to death to use this item.
+
+あなたは死に近づきすぎているためこのアイテムを使用できない。
+%%%%
+You feel the staff feeding on your energy!
+
+杖があなたのエネルギーを消費した！
+%%%%
+You smell chlorine.
+
+あなたは塩素の臭いを嗅いだ。
+%%%%
+The staff glows a sickly green.
+
+杖は毒々しい緑色に輝いた。
+%%%%
+The smell of chlorine vanishes.
+
+塩素の臭いが消えた。
+%%%%
+The staff's sickly green glow vanishes.
+
+杖は毒々しい緑色に輝くのをやめた。
+%%%%
+You sense an aura of extreme power.
+
+あなたは凄まじい力のオーラを感じた。
+%%%%
+The sword says, "Hi! I'm the Singing Sword!"
+
+その剣は『やあ！ わたしは謳う剣だよ！』と喋った。
+%%%%
+The Singing Sword hums in delight!
+
+『謳う剣』は歓喜の唸りを上げた！
+%%%%
+The Singing Sword sighs.
+
+『謳う剣』は溜息を漏らした。
+%%%%
+Sulking Sword
+
+憂う剣
+%%%%
+Screaming Sword
+
+叫ぶ剣
+%%%%
+You feel pruney.
+
+あなたはプルーンの気分になった。
+%%%%
+A terribly searing pain shoots up your arm!
+
+恐ろしい灼けるような痛みがあなたの腕を駆けのぼった！
+%%%%
+You feel bloodthirsty!
+
+あなたは残忍な衝動を覚えた！
+%%%%
+You feel less violent.
+
+あなたの凶暴さはいくぶん収まった。
+%%%%
+the staff of Wucad Mu
+
+<staff of Wucad Mu>
+%%%%
+# TAG_MAJOR_VERSION == 34
+The staff is unable to affect your essence.
+
+%%%%
+Your reserves of magic are full.
+
+あなたの魔力はいっぱいだ。
+%%%%
+Magical energy flows into your mind!
+
+魔法のエネルギーがあなたの精神を駆け巡った！
+%%%%
+You feel a strange hunger, and smell blood in the air...
+
+あなたは奇妙な飢えに苛まれ、空気から血の臭いを嗅ぎだした。
+%%%%
+You feel strangely empty.
+
+あなたは奇妙な空腹感を覚えた。
+%%%%
+You sense an extremely unholy aura.
+
+あなたは非常に邪悪なオーラを感じた。
+%%%%
+You hear a strange loud sound.
+
+あなたは奇妙な轟音を耳にした。
+%%%%
+A thin mist springs up around you!
+
+薄い霧があなたの周りに湧きだした！
+%%%%
+Visions of slaying %s flood into your mind.
+
+%sを抹殺する光景があなたの脳裏に浮かんだ。
+%%%%
+Your confusion fades away as the thirst for blood takes over your mind.
+
+血に飢えた感情があなたの精神を支配するとともに混乱が薄れていった。
+%%%%
+Your thirst for blood fades away.
+
+あなたの血に飢えた感情が薄れていった。
+%%%%
+You feel an overwhelming desire to commit suicide.
+
+あなたは突然自殺願望にとらわれた。
+%%%%
+You feel an overwhelming desire to slay dragons!
+
+あなたは突然ドラゴンを殺したい欲望にとらわれた！
+%%%%
+%s {convulse}!
+
+%sは%s！
+%%%%
+[verb]convulse
+
+身もだえした
+%%%%
+<white>The lance glows brightly as it skewers %s. You feel that it has reached its full power.</white>
+
+<white>ランスは%sを串刺しにしてまばゆく輝いた。どうやらランスの威力は最大になったようだ。</white>
+%%%%
+<green>The lance glows as it skewers %s.</green>
+
+<green>ランスは%sを串刺しにして輝いた。</green>
+%%%%
+%s %s blasted by disruptive energy!
+
+%s%s破壊の力をその身に浴びた！
+%%%%
+[verb]be
+
+<[verb]are>
+%%%%
+Time to lay down the shillelagh law.
+
+戦いのルールを定めるときが来た。
+%%%%
+You feel oddly protected from the elements.
+
+あなたは不思議と元素の力から守られたような気分がした。
+%%%%
+You no longer feel protected from the elements.
+
+あなたはもう元素の力から守られてはいない。
+%%%%
+The light fades from your surroundings.
+
+あなたの周囲から明かりが去っていった。
+%%%%
+The light returns to your surroundings.
+
+あなたの周囲に明かりが戻ってきた。
+%%%%
+Mutagenic energy flows through the plutonium sword!
+
+プルトニウムの剣を通じて変異性のエネルギーが流れ込んできた！
+%%%%
+the plutonium sword
+
+<plutonium sword>
+%%%%
+curare
+
+クラーレ毒
+%%%%
+[verb]cleave
+
+切り裂いた
+%%%%
+[adv]in twain
+
+真っ二つに
+%%%%
+[verb]pulverise
+
+粉々にした
+%%%%
+into a thin bloody mist
+
+血の霧に変えて
+%%%%
+[verb]hew
+
+叩き切った
+%%%%
+savagely
+
+荒っぽく
+%%%%
+[verb]fatally mangle
+
+徹底的に切り刻んだ
+%%%%
+[verb]dissect
+
+切り裂いた
+%%%%
+like a pig carcass
+
+豚のように
+%%%%
+[verb]chop
+
+ぶった切った
+%%%%
+into pieces
+
+バラバラに
+%%%%
+[verb]butcher
+
+解体した
+%%%%
+messily
+
+乱暴に
+%%%%
+[verb]slaughter
+
+虐殺した
+%%%%
+joyfully
+
+歓喜しながら
+%%%%
+{attacker} {verb} {defender} {adv}.
+
+%sは%sを%s%s。
+%%%%
+[hands act]your hands smoulder for a moment.
+
+あなたの%sは一瞬くすぶった。
+%%%%
+[zap]damnation bolt
+
+地獄の鉄槌の矢
+%%%%
+[ammo]a damnation bolt
+
+<[zap]damnation bolt>
+%%%%
+damnation
+
+地獄の鉄槌
+%%%%
+[verb]burn
+
+燃やした
+%%%%
+[verb]freeze
+
+凍りつかせた
+%%%%
+[verb]electrocute
+
+感電させた
+%%%%
+[verb]crush
+
+打ち砕いた
+%%%%
+{attacker} {verb} {defender}.
+
+%sは%sを%s。
+%%%%
+The arc blade crackles to life.
+
+電弧の刃は放電を始めた。
+%%%%
+The arc blade stops crackling.
+
+電弧の刃は放電をやめた。
+%%%%
+The arc blade crackles.
+
+電弧の刃は放電している。
+%%%%
+You hear the crackle of electricity.
+
+あなたは電光の爆ぜる音を耳にした。
+%%%%
+the demon whip "Spellbinder"
+
+<demon whip "Spellbinder">
+%%%%
+You are filled with an inner flame.
+
+あなたは内なる炎に満たされた。
+%%%%
+Your inner flame fades away.
+
+あなたの内なる炎は消え去った。
+%%%%
+%s is filled with an inner flame.
+
+%sは内なる炎に満たされた。
+%%%%
+# the dagger of Chilly Deathの無印訳が｢冷たき死の短刀｣なので"the dagger"の訳を合わせる
+The dagger glows with an icy blue light!
+
+短刀は氷を思わせる蒼い光に輝いた！
+%%%%
+The dagger stops glowing.
+
+短刀は輝きを止めた。
+%%%%
+%s is flash-frozen.
+
+%sは一瞬のうちに凍結された。
+%%%%
+You are encased in ice.
+
+あなたは凍結している。
+%%%%
+The scimitar bursts into red hot flame!
+
+シミターは赤熱の炎を吹き上げた！
+%%%%
+The scimitar stops flaming.
+
+シミターは燃えさかるのを止めた。
+%%%%
+You feel a darkness envelop your magic.
+
+あなたは闇の力が魔力を覆い隠すのを感じた。
+%%%%
+A voice whispers, "{majin-bo greeting}"
+
+『%s』と囁く声がした。
+%%%%
+The darkness slowly releases its grasp on your magic.
+
+闇の力が支配していたあなたの魔力がゆっくりと解放された。
+%%%%
+You feel like a king!
+
+あなたは王様になった気分だ！
+%%%%
+You feel regal.
+
+あなたは王様にふさわしくなったような気がした。
+%%%%
+You feel dishonourable wielding this.
+
+あなたはこれを手にしているのが不名誉なことに感じた。
+%%%%
+You feel a cutthroat vibe.
+
+あなたは誰かを殺したい衝動を感じた。
+%%%%
+The captain's cutlass flashes! You lacerate %s!!
+
+船長のカトラスが輝いた！ あなたは%sを切り裂いた!!
+%%%%
+%s %s falls to the floor!
+
+%sの%sは地面に落ちた！
+%%%%
+En garde!
+
+アンガルド(構え)！
+%%%%
+You sense a greater flux of ambient magical fields.
+
+あなたは周囲の魔力が流れ込んでくるのを感じた。
+%%%%
+The vines latch onto your body!
+
+蔓があなたの体を覆った！
+%%%%
+The vines fall away from your body!
+
+蔓はあなたの体からはがれ落ちた！
+%%%%
+You feel no connection to the armour.
+
+あなたはこの鎧とはなんの繋がりも感じなかった。
+%%%%
+Your attunement to healing devices increases!
+
+あなたと体を癒す道具との同調が強まった！
+%%%%
+Your attunement to healing devices decreases.
+
+あなたと体を癒す道具との同調は弱まった。
+%%%%
+You feel a powerful hunger.
+
+あなたは強烈な飢えを感じた。
+%%%%
+You feel very empty.
+
+あなたはカラカラだ。
+%%%%

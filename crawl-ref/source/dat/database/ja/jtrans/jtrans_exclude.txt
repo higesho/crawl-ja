@@ -1,0 +1,41 @@
+%%%%
+Marking area around %s as unsafe for travelling.
+
+この%sの周囲を自動移動の禁止範囲に指定した。
+%%%%
+exclusion not up-to-date: e (%d,%d) p (%d,%d)
+
+# 訳不要
+%%%%
+(detected)
+
+(発見済)
+%%%%
+# door
+
+# jtrans_actor.txtと重複
+%%%%
+upstairs
+
+上り階段
+%%%%
+downstairs
+
+下り階段
+%%%%
+%d %s
+
+%s x%d
+%%%%
+%d %sexclusion%s
+
+%dつの%s
+%%%%
+exclusions
+
+注意対象群
+%%%%
+exclusion
+
+注意対象
+%%%%

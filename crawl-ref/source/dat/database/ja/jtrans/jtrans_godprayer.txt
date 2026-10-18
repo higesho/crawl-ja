@@ -1,0 +1,33 @@
+%%%%
+You cannot tell which god this altar belongs to. Convert to them anyway?
+
+この祭壇はどの神のものだか分からなかった。それでも入信しますか？
+%%%%
+%s accepts your prayer!
+
+%sはあなたの祈りを聞き届けた！
+%%%%
+prayed at an ecumenical altar.
+
+は誰のとも知れぬ祭壇に祈りを捧げた
+%%%%
+A being of your status worships no god.
+
+あなたのような地位にある存在が他の神を崇めることはない。
+%%%%
+You pay a tithe of %d gold.
+
+あなたは十分の一税として%dゴールドを支払った。
+%%%%
+ignores your late donation.
+
+はあなたの支払いの悪さを大目に見た。
+%%%%
+appreciates your sacrifice.
+
+はあなたの捧げ物に喜んでいる。
+%%%%
+You feel a little less hungry.
+
+あなたは少し腹がふくれたような気がした。
+%%%%

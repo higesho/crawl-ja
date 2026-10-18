@@ -1,0 +1,61 @@
+%%%%
+Amaemon title
+
+Amaemon the Diabolical Poisoner
+%%%%
+Cassandra title
+
+Cassandra the Doomed Oracle
+%%%%
+Grunn title
+
+Grunn the Punished
+%%%%
+Jeremiah title
+
+Jeremiah, Barachi Dreamer
+%%%%
+Josephina title
+
+Josephina the Ice-Lich
+%%%%
+Lodul title
+
+Lodul the Thunderous
+%%%%
+Maggie title
+
+Maggie the Vainglorious
+%%%%
+Mlioglotl title
+
+Mlioglotl, the Unformed Horror
+%%%%
+Nobody title
+
+Nobody, Grudge of the Unmourned
+%%%%
+Parghit title
+
+Parghit the Mighty
+%%%%
+Pargi title
+
+Pargi the Meek
+%%%%
+Sprozz title
+
+Sprozz, Inventive Apiarist
+%%%%
+Vv title
+
+Vv the Exile
+%%%%
+Xak'krixis title
+
+Xak'krixis, Royal Expeditionary Alchemist
+%%%%
+Zenata title
+
+Zenata, Seeker of Sheza
+%%%%

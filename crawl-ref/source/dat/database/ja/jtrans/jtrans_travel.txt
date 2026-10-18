@@ -1,0 +1,229 @@
+%%%%
+Have to go through %s. Continue?
+
+%sを経由しなければなりません。続けますか？
+%%%%
+Partly explored, obstructed by runed door.
+
+部分的に探索したが、残りの部分はルーンで封印された扉でふさがれている。
+%%%%
+Done exploring.
+
+探索終了。
+%%%%
+Partly explored, can't reach some %s.
+
+部分的に探索したが、%sまで到達できない。
+%%%%
+Could not pick up %s here; shall I ignore %s?
+
+これ以上アイテムを拾えません。無視しますか？
+%%%%
+Key pressed, stopping %s.
+
+キーが押されたため、%sを中止します。
+%%%%
+You're confused, stopping %s.
+
+混乱しているため、%sを中止します。
+%%%%
+You're in a travel-excluded area, stopping %s.
+
+自動移動禁止区域の中にいるため、%sを中止します。
+%%%%
+Pathfind with mode %d without a game?
+
+# for ASSERTM()
+%%%%
+#ifdef DEBUG_SAFE_EXPLORE
+youpos: (%d, %d), dest: (%d, %d), unseen: (%d, %d), new_dest: (%d, %d)
+
+%%%%
+* - list branches
+
+* - 分岐から選択
+%%%%
+* - list waypoints
+
+* - 中継地点リスト
+%%%%
+Where to? %s
+
+どこへ向かう？ %s
+%%%%
+Branch not generated this game.
+
+その分岐は今回のゲームでは生成されていません。
+%%%%
+Branch has no entry stairs.
+
+その分岐の入口の階段は生成されていません。
+%%%%
+Go there anyway?
+
+それでも移動を行いますか？
+%%%%
+What level of %s? (default %s, ? - help)
+
+%sの何階ですか？ (初期値: %s, ? - ヘルプ)
+%%%%
+# You're already here!
+
+# jtrans_ability.txtと重複
+%%%%
+Sorry, you can't auto-travel out of here.
+
+残念ながら、自動操作でここから脱出することはできない。
+%%%%
+Sorry, I don't know how to get there.
+
+残念ながら、到達経路を割り出せません。
+%%%%
+Level memory is imperfect, aborting.
+
+# 訳不要
+%%%%
+You need to eat something NOW!
+
+あなたは<lightred>今すぐ</lightred>何かを食べる必要がある！
+%%%%
+Calm down first, please.
+
+まずは怒りを鎮めてください。
+%%%%
+No exploration algorithm can help you here.
+
+ラビリンスでは自動探索は助けにならない。
+%%%%
+# Level %s of %s
+
+# jtrans_place.txtと重複
+%%%%
+Invalid branch "%s" in spec "%s"
+
+# for exception
+%%%%
+Invalid depth for %s in spec "%s"
+
+# for exception
+%%%%
+Existing waypoints:
+
+現在設定済みの中継地点:
+%%%%
+Delete which waypoint? (* - delete all, Esc - exit)
+
+どの中継地点を削除しますか？ (* - 全部削除, Esc - キャンセル)
+%%%%
+All waypoints deleted. Have a nice day!
+
+すべての中継地点を削除しました。
+%%%%
+Sorry, you can't set a waypoint here.
+
+残念ながら、この地点を中継地点に登録できません。
+%%%%
+Assign waypoint to what number? (0-9%s)
+
+この地点を何番に登録しますか？ (0-9%s)
+%%%%
+, D - delete waypoint
+
+, D - 中継地点を削除
+%%%%
+Waypoint %d re-assigned to your current position.
+
+%d番の中継地点をこの地点に上書きしました。
+%%%%
+Waypoint %d re-assigned from %s to %s.
+
+%d番の中継地点を%sから%sへ上書きしました。
+%%%%
+Waypoint %s assigned to %s.
+
+%sを%s番の中継地点に登録しました。
+%%%%
+Stopped running for exclusion.
+
+自動禁止エリアのため、移動を中止しました。
+%%%%
+[runmode]explore
+
+探索
+%%%%
+[runmode]travel
+
+自動移動
+%%%%
+[runmode]rest
+
+休息
+%%%%
+[runmode]run
+
+移動
+%%%%
+(under bush)
+
+(藪の中)
+%%%%
+(under plant)
+
+(迷宮草の根元)
+%%%%
+Found %s %s.
+
+%s%sの%sを見つけた。
+%%%%
+Found {something}.
+
+%sを見つけた。
+%%%%
+item
+
+アイテム
+%%%%
+# items
+
+# jtrans_directn.txtと重複
+%%%%
+shop
+
+店
+%%%%
+shops
+
+<shop>
+%%%%
+# altar
+
+# jtrans_mon_util.txtと重複
+%%%%
+altars
+
+<altar>
+%%%%
+# portal
+
+# jtrans_lookup_help.txtと重複
+%%%%
+portals
+
+<portal>
+%%%%
+stair
+
+階段
+%%%%
+# stairs
+
+# jtrans_hints.txtと重複
+%%%%
+# runed door
+
+# jtrans_hints.txtと重複
+%%%%
+runed doors
+
+<runed door>
+%%%%

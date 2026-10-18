@@ -1,0 +1,23 @@
+%%%%
+interlevel-travel.depth.prompt
+
+# en:
+#   <h>Interlevel Travel (go to a specific level in the selected branch)
+#    Type in the level number you want to go to and press Enter, or use:
+#    <w>Enter</w>  : Go to the default level.
+#    <w>0</w>      : Go to the entrance to the current branch.
+#    <w><<</w>      : Change the default to one level above the current.
+#    <w>></w>      : Change default to one level below the current.
+#    <w>-</w> or <w>p</w> : Change default to the branch above this one.
+#    <w>$</w>      : Change default to deepest visited level in this branch.
+#    <w>^</w>      : Change default to the entrance to the current branch.
+<h>階層間自動移動 (選択した分岐の指定した階層に移動)
+ 行きたい階層を入力しEnterを押すか、もしくは以下のコマンドを入力する:
+ <w>Enter</w>      : 初期値の階層に移動する
+ <w>0</w>          : 指定した分岐の入口に移動する
+ <w><<</w>          : 初期値を現在から一つ上の階層に変更する
+ <w>></w>          : 初期値を現在から一つ下の階層に変更する
+ <w>-</w> または <w>p</w> : 初期値を上に位置する分岐に変更する
+ <w>$</w>          : 初期値をその分岐で到達した最も深い階層に変更する
+ <w>^</w>          : 初期値を今いる分岐の入口に変更する
+%%%%

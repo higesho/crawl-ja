@@ -1,0 +1,58 @@
+%%%%
+_card_
+
+# en:
+#   Two
+#   
+#   Three
+#   
+#   Four
+#   
+#   Five
+#   
+#   Six
+#   
+#   Seven
+#   
+#   Eight
+#   
+#   Nine
+#   
+#   Ten
+#   
+#   Page
+#   
+#   Knight
+#   
+#   Queen
+#   
+#   King
+#   
+#   Ace
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+
+ジャック
+
+クイーン
+
+キング
+
+エース
+%%%%

@@ -1,0 +1,25 @@
+%%%%
+dream sheep flee
+
+# en:
+#   w:30
+#   @The_monster@ bleats in terror.
+#   
+#   VISUAL:@The_monster@ is struck with panic!
+#   
+#   VISUAL:@The_monster@ panics and turns to flee.
+#   
+#   VISUAL:A frightened @monster@ leaps away.
+#   
+#   VISUAL:@The_monster@ stampedes away.
+w:30
+@The_monster@は恐怖してメーメーと鳴いた。
+
+VISUAL:@The_monster@はパニックに陥った！
+
+VISUAL:@The_monster@はパニックして逃げ去った。
+
+VISUAL:恐怖に怯えた@monster@は跳ね回りながら去っていった。
+
+VISUAL:@The_monster@は暴走して走り去った。
+%%%%

@@ -1,0 +1,833 @@
+%%%%
+Airstrike cast
+
+# en:
+#   @The_monster@ waves @possessive@ @arms@ in wide circles.
+@The_monster@はその@arms@を円を描いて振り回した。
+%%%%
+unseen Airstrike cast
+
+# en:
+#   You hear blowing wind.
+あなたは打ち付ける風の音を耳にした。
+%%%%
+Blinkbolt cast
+
+# en:
+#   @The_monster@ bursts into living lightning!
+@The_monster@は生ける稲妻と化した！
+%%%%
+unseen Blinkbolt cast
+
+# en:
+#   Living lightning bursts into view!
+生ける稲妻が視界を横切った！
+%%%%
+branch summon cast prefix
+
+# en:
+#   @The_monster@ calls forth creatures from
+@The_monster@はモンスターを@branch@から呼び出した
+%%%%
+Call of Chaos cast
+
+# en:
+#   @The_monster@ calls on the powers of chaos!
+@The_monster@は混沌の力を呼び覚ました！
+%%%%
+unseen Call of Chaos cast
+
+# en:
+#   @The_something@ calls on the powers of chaos!
+@The_something@は混沌の力を呼び覚ました！
+%%%%
+Druid's Call cast
+
+# en:
+#   @The_monster@ calls out to the beasts of the wild!
+@The_monster@は野生の獣を呼び放った！
+%%%%
+Holy Flames cast
+
+# en:
+#   @The_monster@ calls forth blessed flames!
+@The_monster@は聖なる炎を呼び出した！
+%%%%
+unseen Holy Flames cast
+
+# en:
+#   Blessed flames are called forth!
+聖なる炎が呼び出された！
+%%%%
+Major Destruction cast
+
+# en:
+#   @The_monster@ conjures a destructive force in the name of @possessive_God@!
+@The_monster@は@possessive_God@の名において大いなる破壊の力を解き放った！
+%%%%
+Mara Summon cast
+
+# en:
+#   @The_monster@ weaves an illusion.
+#   
+#   @The_monster@ shimmers.
+@The_monster@は幻影を作り出した。
+
+@The_monster@の姿は揺らめいた。
+%%%%
+unseen Mara summon cast
+
+# en:
+#   Something weaves an illusion!
+何かが幻影を作り出した！
+%%%%
+Orb of Destruction orb spider cast
+
+# en:
+#   @The_monster@ weaves a glowing orb of energy.
+@The_monster@は輝くエネルギーの球体を編み出した。
+%%%%
+Orb of Destruction cast
+
+# en:
+#   @The_monster@ conjures a glowing orb.
+#   
+#   @The_monster@ conjures an orb of pure magic.
+#   
+#   @The_monster@ launches a ball of destructive magic.
+@The_monster@は輝く球体を幻出させた。
+
+@The_monster@は純粋な魔力の球体を幻出させた。
+
+@The_monster@は破壊的な魔法の球体を放った。
+%%%%
+unseen Orb of Destruction cast
+
+# en:
+#   @The_something@ conjures a glowing orb.
+@The_something@は輝く球体を幻出させた。
+%%%%
+Phantom Mirror cast
+
+# en:
+#   @The_monster@ weaves an illusion.
+@The_monster@は幻影を作り出した。
+%%%%
+Symbol of Torment cast
+
+# en:
+#   @The_monster@ calls on the powers of darkness!
+@The_monster@は暗黒の力を呼び起こした！
+%%%%
+unseen Symbol of Torment cast
+
+# en:
+#   @The_something@ calls on the powers of darkness!
+@The_something@は暗黒の力を呼び起こした！
+%%%%
+Word of Recall cast
+
+# en:
+#   @The_monster@ begins to recite a word of recall!
+@The_monster@は招集の宣言を唱えはじめた！
+%%%%
+Spit Acid cast
+
+# en:
+#   @The_monster@ spits acid @at@ @target@.
+@The_monster@は@target@に向かって酸の唾を吐いた。
+%%%%
+Battlecry cast
+
+# en:
+#   @The_monster@ roars a battlecry!
+@The_monster@は鬨の声を上げた！
+%%%%
+Bolt of Draining natural cast
+
+# en:
+#   @The_monster@ breathes @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+Cold Breath cast
+
+# en:
+#   @The_monster@ breathes @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+Chilling Breath cast
+
+# en:
+#   @The_monster@ breathes @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+Electrical Bolt cast
+
+# en:
+#   @The_monster@ shoots out a bolt of @beam@ @at@ @target@!
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+Fire Breath cast
+
+# en:
+#   @The_monster@ breathes @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+Lightning Bolt natural cast
+
+# en:
+#   @The_monster@ breathes @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+Petrifying Cloud cast
+
+# en:
+#   @The_monster@ breathes a plume of calcifying dust @at@ @target@.
+@The_monster@は@target@に向かって石化の雲を放った。
+%%%%
+Poisonous Cloud natural cast
+
+# en:
+#   @The_monster@ breathes @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+Quicksilver Bolt natural cast
+
+# en:
+#   @The_monster@ breathes @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+Searing Breath cast
+
+# en:
+#   @The_monster@ breathes @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+Slug Dart cast
+
+# en:
+#   @The_monster@ launches a dart @at@ @target@.
+@The_monster@は@target@に向けて投げ矢を放った。
+%%%%
+Spit Lava cast
+
+# en:
+#   @The_monster@ spits lava @at@ @target@.
+@The_monster@は@target@に向かって溶岩の唾を放った。
+%%%%
+Spit Poison cast
+
+# en:
+#   @The_monster@ spits poison @at@ @target@.
+@The_monster@は@target@に向かって毒液を放った。
+%%%%
+Steam Ball natural cast
+
+# en:
+#   @The_monster@ breathes @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+Volley of Thorns cast
+
+# en:
+#   @The_monster@ fires a volley of thorns @at@ @target@.
+@The_monster@は@target@に向かって茨の棘を斉射した。
+%%%%
+Warning Cry cast
+
+# en:
+#   @The_monster@ howls a warning cry!
+@The_monster@は警戒をうながす遠吠えを上げた！
+%%%%
+unseen Warning Cry cast
+
+# en:
+#   You hear a loud warning cry!
+あなたはは警戒をうながすような大音量の遠吠えを耳にした！
+%%%%
+unseen Ensnare Arachne cast
+
+# en:
+#   A stream of webbing shoots out from thin air.
+ほとばしる蜘蛛の糸がどこかから放たれた。
+%%%%
+Summon Eyeballs Dissolution cast
+
+# en:
+#   @The_monster@ gurgles deeply, a call to fellow slimes.
+#   
+#   @The_monster@ says, "@My_God@ sees all!"
+@The_monster@はぶくぶくと音を立て、下僕のスライムたちを呼び寄せた。
+
+@The_monster@は『@My_God@は何もかもお見通しだ！』と言った。
+%%%%
+Dissolution cast
+
+# en:
+#   @The_monster@ gurgles deeply.
+@The_monster@はぶくぶくと音を立てている。
+%%%%
+Frances cast
+
+# en:
+#   @The_monster@ mutters in a terrible tongue.
+#   
+#   @The_monster@ whispers indecipherable words.
+#   
+#   @The_monster@ chants phrases taken from a devil's mouth.
+#   
+#   @The_monster@ screams a word of power!
+@The_monster@は早口でつぶやいた。
+
+@The_monster@は何やら分からない言葉を囁いた。
+
+@The_monster@は悪魔の口から生まれた呪文を唱えた。
+
+@The_monster@は力ある言葉を叫んだ！
+%%%%
+Gastronok cast targeted
+
+# en:
+#   @The_monster@ looks @at@ @target@ while chanting.
+#   
+#   @The_monster@ looks @at@ @target@ and mumbles some strange words.
+#   
+#   @The_monster@ casts a spell @at@ @target@.
+@The_monster@は呪文を唱えながら@target@を見据えた。
+
+@The_monster@は@target@を見据えて奇妙な言葉を呟いた。
+
+@The_monster@は@target@に向かって呪文を唱えた。
+%%%%
+Geryon cast
+
+# en:
+#   @The_monster@ winds a great silver horn.
+@The_monster@は大きな銀の角笛を吹いた。
+%%%%
+unseen Geryon cast
+
+# en:
+#   You hear a weird and mournful sound.
+あなたは奇妙で悲しげな音を耳にした。
+%%%%
+Mennas cast
+
+# en:
+#   VISUAL:@The_monster@ gestures frantically.
+VISUAL:@The_monster@は半狂乱の身振りをした。
+%%%%
+silent Berserker Rage Rupert cast
+
+# en:
+#   @The_monster@ flies into a rage!
+@The_monster@は烈火のごとく怒った！
+%%%%
+Berserker Rage Rupert cast
+
+# en:
+#   @The_monster@ roars madly and goes into a rage!
+@The_monster@は激怒の咆哮を上げた！
+%%%%
+Rupert cast targeted
+
+# en:
+#   @The_monster@ roars wildly @at@ @target@.
+#   
+#   @The_monster@ yells loudly @at@ @target@.
+@The_monster@は@target@に向かって荒々しい咆哮を上げた！
+
+@The_monster@は@target@に向かって大声を上げた！
+%%%%
+Paralyse Xtahua cast
+
+# en:
+#   @The_monster@ roars overwhelmingly @at@ @target@!
+#   
+#   @The_monster@ thunders ferociously @at@ @target@!
+@The_monster@は@target@に向かって威圧的な咆哮を放った！
+
+@The_monster@は@target@に向かって猛烈に怒号を飛ばした！
+%%%%
+Battlecry cherub cast
+
+# en:
+#   @The_monster@ sings a powerful hymn!
+@The_monster@は力強い聖歌を歌った！
+%%%%
+curse skull cast
+
+# en:
+#   @The_monster@ rattles @possessive@ jaw.
+@The_monster@は顎をガタガタ言わせている。
+%%%%
+silent curse skull cast
+
+# en:
+#   @The_monster@ rattles @possessive@ jaw silently.
+@The_monster@は顎を振動させている。
+%%%%
+unseen curse skull cast
+
+# en:
+#   You hear the clattering of teeth.
+あなたは歯がガタガタ言う音を耳にした。
+%%%%
+Minor Healing dryad cast
+
+# en:
+#   @The_monster@ draws upon the vitality of nature.
+@The_monster@は自然の生命力を吸収した。
+%%%%
+dryad cast
+
+# en:
+#   @The_monster@ calls out to the forest.
+@The_monster@は森林の力を呼び覚ました。
+%%%%
+eidolon cast targeted
+
+# en:
+#   @The_monster@ stares piercingly @at@ @target@.
+@The_monster@は@target@に突き刺すような視線を送っている。
+%%%%
+Lightning Bolt electric golem cast
+
+# en:
+#   @The_monster@ hurls @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+flayed ghost cast
+
+# en:
+#   @The_monster@ stares @at@ @foe@ with tortured malice.
+#   
+#   @The_monster@ cries, "Suffer as I suffered!"
+#   
+#   @The_monster@ cries, "Feel what I felt!"
+@The_monster@は@foe@を見て拷問の喜びに震えている。
+
+@The_monster@は『我が痛みを受けよ！』と叫んだ。
+
+@The_monster@は『我が苦しみを受けよ！』と叫んだ。
+%%%%
+silent flayed ghost cast
+
+# en:
+#   @The_monster@ moans in silent anguish.
+#   
+#   @The_monster@ stares @at@ @foe@ with tortured malice.
+@The_monster@は苦悶に震えている。
+
+@The_monster@は@foe@を見て拷問の喜びに震えている。
+%%%%
+Stone Arrow gargoyle cast
+
+# en:
+#   @The_monster@ hurls a @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+ghost moth cast
+
+# en:
+#   @The_monster@ looks around.
+@The_monster@は辺りを見回した。
+%%%%
+ghost moth cast targeted
+
+# en:
+#   @The_monster@ stares @at@ @target@.
+@The_monster@は@target@を睨んだ。
+%%%%
+unseen ghost moth cast targeted
+
+# en:
+#   You feel you are being watched by something. @player_only@
+あなたは何かに見られているような気がした。@player_only@
+%%%%
+glowing orange brain cast
+
+# en:
+#   @The_monster@ pulsates.
+@The_monster@は脈動している。
+%%%%
+golden eye cast targeted
+
+# en:
+#   @The_monster@ blinks @at@ @target@.
+@The_monster@は@target@を見ながらまたたいた。
+%%%%
+Fireball hell hog cast
+
+# en:
+#   @The_monster@ breathes @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を吐いた。
+%%%%
+unseen Warning Cry howler monkey cast
+
+# en:
+#   You hear a tremendous hooting and howling!
+あなたは凄まじい吠え声を耳にした！
+%%%%
+Warning Cry howler monkey cast
+
+# en:
+#   @The_monster@ hoots and howls with incredible vigour!
+@The_monster@は凄まじい勢いで吠え声を上げている！
+%%%%
+Bolt of Magma molten gargoyle cast
+
+# en:
+#   @The_monster@ blasts magma @at@ @target@!
+@The_monster@は@target@に向かって溶岩の矢を放った。
+%%%%
+orange crystal statue cast
+
+# en:
+#   @The_monster@ glitters.
+@The_monster@はピカピカ光っている。
+%%%%
+orb of fire cast
+
+# en:
+#   @The_monster@ glows yellow.
+#   
+#   @The_monster@ glows bright magenta.
+#   
+#   @The_monster@ glows deep purple.
+#   
+#   @The_monster@ glows red.
+#   
+#   @The_monster@ emits a lurid red light.
+@The_monster@は黄色く輝いている。
+
+@The_monster@は明るい紫色に輝いている。
+
+@The_monster@は暗い紫色に輝いている。
+
+@The_monster@は赤く輝いている。
+
+@The_monster@は毒々しい赤色の光を放っている。
+%%%%
+Bolt of Fire ophan cast
+
+# en:
+#   @The_monster@ harnesses the cleansing power of fire!
+@The_monster@は浄化の炎を操った！
+%%%%
+unseen Bolt of Fire ophan cast
+
+# en:
+#   Something harnesses the cleansing power of fire!
+何かが浄化の炎を操った！
+%%%%
+Ghostly Fireball revenant cast
+
+# en:
+#   @The_monster@ lashes out with ghostly flames.
+@The_monster@は鬼火を吐きだした。
+%%%%
+Spectral Cloud revenant cast
+
+# en:
+#   @The_monster@ conjures spectral mists around @target@.
+@The_monster@は@target@の周囲に幽体の霧を生み出した。
+%%%%
+Dispel Undead revenant cast
+
+# en:
+#   @The_monster@ gestures violently @at@ @target@.
+@The_monster@は@target@に向かって荒々しい身振りをした。
+%%%%
+Warning Cry seraph cast
+
+# en:
+#   @The_monster@ shouts a warning to @possessive@ allies!
+@The_monster@は仲間に叫んで警告した！
+%%%%
+unseen Warning Cry seraph cast
+
+# en:
+#   You hear a loud warning shout!
+あなたは警戒をうながす雄叫びを耳にした！
+%%%%
+Throw Icicle shard shrike cast
+
+# en:
+#   @The_monster@ spits a shard of ice @at@ @target@.
+@The_monster@は@target@に向かって氷の破片を放った。
+%%%%
+sphinx cast
+
+# en:
+#   @The_monster@ mumbles some strange words.
+#   
+#   @The_monster@ casts a spell.
+@The_monster@は奇妙な言葉をつぶやいた。
+
+@The_monster@は呪文を唱えた。
+%%%%
+thrashing horror cast
+
+# en:
+#   @The_monster@ churns violently!
+@The_monster@は激しい動きをしている！
+%%%%
+Death Rattle ushabti cast
+
+# en:
+#   @The_monster@ shakes and rattles.
+@The_monster@は振動しながらガタガタ音を立てている。
+%%%%
+Warning Cry ushabti cast
+
+# en:
+#   @The_monster@ shakes and rattles deafeningly!
+@The_monster@は振動しながら激しくガタガタ音を立てている！
+%%%%
+unseen Warning Cry ushabti cast
+
+# en:
+#   You hear a deafening rattling sound!
+あなたはガタガタと鳴る激しい物音を耳にした！
+%%%%
+unseen Warning Cry vault sentinel cast
+
+# en:
+#   You hear a note loudly blown on a horn!
+あなたは角笛が吹かれる大きな音を耳にした！
+%%%%
+Warning Cry vault sentinel cast
+
+# en:
+#   @The_monster@ blows a loud note on a signal horn!
+@The_monster@は大きく角笛を吹いた！
+%%%%
+Metal Splinters war gargoyle cast
+
+# en:
+#   @The_monster@ launches @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+Wind Blast wind drake cast
+
+# en:
+#   @The_monster@ exhales a fierce blast of wind!
+@The_monster@は猛烈な風を吐きだした！
+%%%%
+wretched star cast
+
+# en:
+#   @The_monster@ glows turbulently.
+@The_monster@はぎらぎらと輝いている。
+%%%%
+angel cast targeted
+
+# en:
+#   @The_monster@ calls down the wrath of @possessive_God@ upon @target@.
+@The_monster@は@possessive_God@の怒りを@target@にぶつけた。
+%%%%
+crab cast targeted
+
+# en:
+#   @The_monster@ breathes @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+dragon cast targeted
+
+# en:
+#   @The_monster@ breathes @beam@ @at@ @target@.
+@The_monster@は@target@に向かって@beam@を放った。
+%%%%
+dragon cast
+
+# en:
+#   @The_monster@ roars!
+@The_monster@は咆哮した！
+%%%%
+unseen dragon cast
+
+# en:
+#   You hear a roar.
+あなたは咆哮を耳にした。
+%%%%
+floating eye cast targeted
+
+# en:
+#   @The_monster@ gazes @at@ @target@.
+@The_monster@は@target@を睨んだ。
+%%%%
+floating eye cast
+
+# en:
+#   @The_monster@ looks around.
+@The_monster@は辺りを見回した。
+%%%%
+unseen floating eye cast targeted
+
+# en:
+#   You feel something staring at you. @player_only@
+あなたは何かがこちらを睨んでいるような気がした。@player_only@
+%%%%
+polymorphed wizard cast targeted
+
+# en:
+#   @The_monster@ casts a spell @at@ @target@.
+@The_monster@は@target@に向かって呪文を唱えた。
+%%%%
+polymorphed wizard cast
+
+# en:
+#   @The_monster@ casts a spell.
+@The_monster@は呪文を唱えた。
+%%%%
+Haste Other priest cast
+
+# en:
+#   @The_monster@ calls upon @possessive_God@ to speed up @target@.
+@The_monster@は@possessive_God@に願って@target@の動きを速くした。
+%%%%
+Heal Other priest cast
+
+# en:
+#   @The_monster@ calls upon @possessive_God@ to heal @target@.
+@The_monster@は@possessive_God@に願って@target@を癒した。
+%%%%
+Might Other priest cast
+
+# en:
+#   @The_monster@ calls upon @possessive_God@ to strengthen @target@.
+@The_monster@は@possessive_God@に願って@target@を強化した。
+%%%%
+Malign Offering priest cast
+
+# en:
+#   @The_monster@ utters a dark prayer and points @at@ @target@.
+@The_monster@は暗黒の祈りを捧げ、@target@を指さした。
+%%%%
+priest cast targeted
+
+# en:
+#   @The_monster@ calls down the wrath of @possessive_God@ upon @target@.
+#   
+#   @The_monster@ mumbles some strange prayers to @possessive_God@ against @target@.
+#   
+#   @The_monster@ invokes the aid of @possessive_God@ against @target@.
+@The_monster@は@possessive_God@の怒りを@target@にぶつけた。
+
+@The_monster@は@target@に対し奇妙な祈り声を@possessive_God@に捧げた。
+
+@The_monster@は@target@に対し@possessive_God@の助けを願った。
+%%%%
+priest cast
+
+# en:
+#   @The_monster@ prays to @possessive_God@.
+#   
+#   @The_monster@ mumbles some strange prayers to @possessive_God@.
+#   
+#   @The_monster@ utters an invocation to @possessive_God@.
+@The_monster@は@possessive_God@に祈った。
+
+@The_monster@は奇妙な祈り声を@possessive_God@に捧げた。
+
+@The_monster@は@possessive_God@の御業を放った。
+%%%%
+unseen priest cast targeted
+
+# en:
+#   You hear @something@ call down the wrath of @a_God@ upon @target@.
+#   
+#   You hear @something@ mumble some strange prayers to @a_God@ against @target@.
+#   
+#   You hear @something@ invoke the aid of @a_God@ against @target@.
+あなたは@something@が@a_God@の怒りを@target@にぶつける音を耳にした。
+
+あなたは@something@が@target@に対し奇妙な祈り声を@a_God@に捧げるのを耳にした。
+
+あなたは@something@が@target@に対し@a_God@の助けを願うのを耳にした。
+%%%%
+unseen priest cast
+
+# en:
+#   You hear some strange, mumbled prayers to @a_God@.
+あなたは@a_God@に祈る奇妙なつぶやき声を聞いた。
+%%%%
+non-humanoid wizard cast targeted
+
+# en:
+#   @The_monster@ stares @at@ @target@ and mumbles some strange words.
+#   
+#   @The_monster@ casts a spell @at@ @target@.
+@The_monster@は@target@をにらみつけ、奇妙な文句を呟いた。
+
+@The_monster@は@target@に向かって呪文を唱えた。
+%%%%
+non-humanoid wizard cast
+
+# en:
+#   @The_monster@ mumbles some strange words.
+#   
+#   @The_monster@ casts a spell.
+@The_monster@は奇妙なつぶやき声を上げた。
+
+@The_monster@は呪文を唱えた。
+%%%%
+unseen non-humanoid wizard cast
+
+# en:
+#   You hear some strange, mumbled words.
+あなたは奇妙なつぶやき声を聞いた。
+%%%%
+wizard cast targeted
+
+# en:
+#   @The_monster@ gestures @at@ @target@ while chanting.
+#   
+#   @The_monster@ points @at@ @target@ and mumbles some strange words.
+#   
+#   @The_monster@ casts a spell @at@ @target@.
+@The_monster@は呪文を唱えながら@target@に向かって身振りをした。
+
+@The_monster@は@target@を指さして奇妙なつぶやき声を上げた。
+
+@The_monster@は@target@に向かって呪文を唱えた。
+%%%%
+wizard cast
+
+# en:
+#   @The_monster@ gestures wildly while chanting.
+#   
+#   @The_monster@ mumbles some strange words.
+#   
+#   @The_monster@ casts a spell.
+@The_monster@は呪文を唱えながら荒々しい身振りをした。
+
+@The_monster@は奇妙なつぶやき声を上げた。
+
+@The_monster@は呪文を唱えた。
+%%%%
+unseen wizard cast
+
+# en:
+#   You hear some strange, mumbled words.
+あなたは奇妙なつぶやき声を聞いた。
+%%%%
+magical cast targeted
+
+# en:
+#   @The_monster@ gestures @at@ @target@.
+@The_monster@は@target@に向けて身振りをした。
+%%%%
+magical cast
+
+# en:
+#   @The_monster@ gestures.
+@The_monster@は身振りをした。
+%%%%
+beam catchall cast
+
+# en:
+#   @The_monster@ throws @beam@ @at@ @target@.
+@The_monster@は@target@へと@beam@を放った。
+%%%%

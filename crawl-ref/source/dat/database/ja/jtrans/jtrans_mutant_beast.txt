@@ -1,0 +1,45 @@
+%%%%
+[mutant facet]sting
+
+棘だらけの
+%%%%
+[mutant facet]bat
+
+蝙蝠のような
+%%%%
+[mutant facet]fire
+
+火を纏う
+%%%%
+[mutant facet]weird
+
+奇妙な
+%%%%
+[mutant facet]shock
+
+稲妻を放つ
+%%%%
+[mutant facet]ox
+
+雄牛のような
+%%%%
+[mutant tier]larval
+
+幼い
+%%%%
+[mutant tier]juvenile
+
+年若い
+%%%%
+[mutant tier]mature
+
+成熟した
+%%%%
+[mutant tier]elder
+
+年経た
+%%%%
+[mutant tier]primal
+
+原初の
+%%%%

@@ -1,0 +1,664 @@
+%%%%
+dungeon_sprint_1
+
+スプリントⅠ
+%%%%
+Sprint I: "Red Sonja"
+
+スプリントⅠ: "Red Sonja"
+%%%%
+the_violet_keep_of_menkaure
+
+スプリントⅡ
+%%%%
+Sprint II: "The Violet Keep of Menkaure"
+
+スプリントⅡ: "The Violet Keep of Menkaure"
+%%%%
+dungeon_sprint_mu
+
+スプリントⅢ
+%%%%
+Sprint III: "The Ten Rune Challenge"
+
+スプリントⅢ: "The Ten Rune Challenge"
+%%%%
+dungeon_sprint_fedhas
+
+スプリントⅣ
+%%%%
+Sprint IV: "Fedhas' Mad Dash"
+
+スプリントⅣ: "Fedhas' Mad Dash"
+%%%%
+sprint_v
+
+スプリントⅤ
+%%%%
+Sprint V: "Ziggurat Sprint"
+
+スプリントⅤ: "Ziggurat Sprint"
+%%%%
+arena_sprint
+
+スプリントⅥ
+%%%%
+Sprint VI: "Thunderdome"
+
+スプリントⅥ: "Thunderdome"
+%%%%
+pitsprint
+
+スプリントⅦ
+%%%%
+Sprint VII: "The Pits"
+
+スプリントⅦ: "The Pits"
+%%%%
+meatsprint
+
+スプリントⅧ
+%%%%
+Sprint VIII: "Arena of Blood"
+
+スプリントⅧ: "Arena of Blood"
+%%%%
+linesprint
+
+スプリントⅨ
+%%%%
+Sprint IX: "|||||||||||||||||||||||||||||"
+
+スプリントⅨ: "|||||||||||||||||||||||||||||"
+%%%%
+#### dat/des/sprint/arena_sprint.des ##########################
+%%%%
+A rune of Zot has appeared.
+
+ゾットのルーンが出現した。
+%%%%
+The exit has re-opened... for now.
+
+出口が再び開いた……たった今。
+%%%%
+The exit has re-opened.
+
+出口が再び開いた。
+%%%%
+The Orb of Zot has appeared in the centre of the arena!
+
+ゾットのオーブが闘技場の中央に出現した！
+%%%%
+<yellow>You have won a prize for killing the boss!</yellow>
+
+<yellow>あなたはボスを倒して賞品を手にした！</yellow>
+%%%%
+<yellow>Victory!</yellow>
+
+<yellow>勝利！</yellow>
+%%%%
+Score multiplier reset to 27x
+
+スコア倍率が27倍に戻った。
+%%%%
+You lost your score multiplier.
+
+スコア倍率がなくなった。
+%%%%
+You now have 1 arena point.
+
+あなたはアリーナポイントを1ポイント得た。
+%%%%
+<white>The arena falls silent. Everyone but you is dead.</white>
+
+<white>闘技場が静まりかえった。生き残っているのはあなただけだ。</white>
+%%%%
+<white>There is nothing to do now but take the Orb and leave.</white>
+
+<white>あとはオーブを手にしてここから立ち去るのみ。</white>
+%%%%
+<white>Congratulations, champion.</white>
+
+<white>おめでとう、あなたがチャンピオンだ。</white>
+%%%%
+Time's up!
+
+時間切れだ！
+%%%%
+The arena falls silent.
+
+闘技場が静まりかえった。
+%%%%
+<yellow>Get ready!</yellow>
+
+<yellow>準備はいいか！</yellow>
+%%%%
+kamikaze kobold
+
+カミカゼ・コボルド
+%%%%
+drunken
+
+飲んだくれの
+%%%%
+greater
+
+強大な
+%%%%
+orb golem
+
+オーブ・ゴーレム
+%%%%
+orb of ice
+
+氷の球体
+%%%%
+orb of electricity
+
+電気の球体
+%%%%
+naga warlord
+
+ナーガの族長
+%%%%
+giant anaconda
+
+巨大アナコンダ
+%%%%
+witch
+
+魔女
+%%%%
+dire
+
+凶暴化した
+%%%%
+phase spider
+
+多相グモ
+%%%%
+dimme
+
+『ディメ』
+%%%%
+sulfuric
+
+硫
+%%%%
+greater orb of eyes
+
+あまたの目の巨大球体
+%%%%
+captain
+
+の隊長
+%%%%
+Master Blaster
+
+魔法を極めしもの
+%%%%
+FINAL BOSS!
+
+最終ボスだ！
+%%%%
+BOSS ROUND!
+
+ボスラウンド開始！
+%%%%
+ZOT ROUND!
+
+ゾットラウンド開始！
+%%%%
+FIGHT!
+
+始め！
+%%%%
+LIGHTNING ROUND!
+
+ライトニングラウンド開始！
+%%%%
+The exit has been sealed! It will re-open when you get the next rune.
+
+出口が閉鎖された！ 次のルーンを手にすれば再び解放される。
+%%%%
+[feature]spawn point
+
+出発ポイント
+%%%%
+<cyan>You have entered the arena!\nYou will win if you kill everything that spawns (including allies).\nIf it is a boss round, you only need to kill the boss in order to win.\nIf it is a lightning round, you only need to survive!</cyan>
+
+<cyan>あなたは闘技場に入った！
+出現した敵をすべて倒せば勝利となる。(仲間も含む)
+ボスラウンドでは、勝利のためにはボスを倒すことのみが要求される。
+ライトニングラウンドでは、ただひたすら生き残ることが要求される！</cyan>
+%%%%
+Identification Station
+
+鑑定局
+%%%%
+Must-Have Magic
+
+おすすめ魔法の店
+%%%%
+Do-It-Yourself Clinic
+
+DIY病院
+%%%%
+Advanced Armour
+
+特別製防具店
+%%%%
+Basic Armour
+
+通常防具店
+%%%%
+Bee Food
+
+蜜蜂のおやつ店
+%%%%
+Staff Store
+
+杖専門店
+%%%%
+Weapon Rack
+
+武器倉庫
+%%%%
+Bottled Wisdom
+
+瓶詰めの知識店
+%%%%
+Premium Goods
+
+高級品店
+%%%%
+Miscellaneous Merchandise
+
+雑貨屋
+%%%%
+#### dat/des/sprint/fedhas.des ################################
+%%%%
+summoner
+
+召喚師
+%%%%
+shifter
+
+移相者
+%%%%
+#### dat/des/sprint/linesprint.des ############################
+%%%%
+to the Dungeon
+
+迷宮へと通じる
+%%%%
+to the Temple
+
+寺院へと通じる
+%%%%
+to the Lair
+
+獣の棲み処へと通じる
+%%%%
+to Lair:6
+
+獣の棲み処の6階へと通じる
+%%%%
+to the Orcish Mines
+
+オークの坑道へと通じる
+%%%%
+to Orc:2
+
+オークの坑道の2階へと通じる
+%%%%
+to the Swamp
+
+沼へと通じる
+%%%%
+to the Shoals
+
+浅瀬へと通じる
+%%%%
+to the Spider Nest
+
+蜘蛛の穴ぐらへと通じる
+%%%%
+to the Snake Pit
+
+蛇穴へと通じる
+%%%%
+to the Vaults
+
+宝物庫へと通じる
+%%%%
+to Swamp:4
+
+沼の4階へと通じる
+%%%%
+to Shoals:4
+
+浅瀬の4階へと通じる
+%%%%
+to Spider:4
+
+蜘蛛の穴ぐらの4階へと通じる
+%%%%
+to Snake:4
+
+蛇穴の4階へと通じる
+%%%%
+to Vaults:5
+
+宝物庫の5階へと通じる
+%%%%
+to D:27
+
+迷宮の27階へと通じる
+%%%%
+to the Realm of Zot
+
+ゾットの領域へと通じる
+%%%%
+to the ~*~Extended Endgame~*~
+
+追加ステージへと通じる
+%%%%
+to the Crypt
+
+地下墓地へと通じる
+%%%%
+to the Forest
+
+森へと通じる
+%%%%
+to the Elven Halls
+
+エルフの大広間へと通じる
+%%%%
+to the Slime Pits
+
+スライムの穴ぐらへと通じる
+%%%%
+to the Tomb
+
+霊廟へと通じる
+%%%%
+to the Abyss
+
+アビスへ通じる
+%%%%
+to Hell & Pan
+
+地獄とパンデモニウムへと通じる
+%%%%
+#### dat/des/sprint/meat.des ##################################
+%%%%
+bag of meat
+
+肉袋
+%%%%
+meat berserker
+
+肉の狂戦士
+%%%%
+tyrant
+
+暴君
+%%%%
+meat hydra
+
+肉のヒドラ
+%%%%
+dread
+
+恐ろしきもの
+%%%%
+large bag of meat
+
+巨大肉袋
+%%%%
+destroyer
+
+破壊者
+%%%%
+scourge
+
+鞭ヘビ
+%%%%
+sculptor of flesh
+
+肉の彫刻家
+%%%%
+observer
+
+監視者
+%%%%
+accursed
+
+呪われしもの
+%%%%
+meat beast
+
+肉獣
+%%%%
+wretched soul
+
+哀れなる魂
+%%%%
+fleshlord
+
+肉の君主
+%%%%
+vile
+
+卑劣漢
+%%%%
+The Servant
+
+従僕
+%%%%
+The Captor
+
+捕らえるもの
+%%%%
+The Defiler
+
+汚染するもの
+%%%%
+The Meatlord
+
+肉の王者
+%%%%
+The Unspeakable
+
+名状しがたきもの
+%%%%
+--                    </red><lightred>You have destroyed The Meatlord.</lightred><red>                      --
+
+--                       </red><lightred>あなたは肉の王者を倒した。</lightred><red>                         --
+%%%%
+--                        </red><lightred>You will die a champion.</lightred><red>                          --
+
+--                    </red><lightred>あなたが新たなるチャンピオンだ。</lightred><red>                      --
+%%%%
+The Orb of Zot has appeared underneath you.
+
+ゾットのオーブがあなたの足下に出現した。
+%%%%
+--                    </red><lightred>You have destroyed The Unspeakable.</lightred><red>                   --
+
+--                      </red><lightred>あなたは名状しがたきものを倒した。</lightred><red>                  --
+%%%%
+<lightgreen>The slimy rune of Zot has appeared underneath you.</lightgreen>
+
+<lightgreen>ぬめりのルーンがあなたの足下に出現した。</lightgreen>
+%%%%
+#### dat/des/sprint/menkaure.des ##############################
+%%%%
+Murray drops in to check on your progress.
+
+『マーリー』があなたの進捗を確認しに立ち寄った。
+%%%%
+#### dat/des/sprint/pitsprint.des #############################
+%%%%
+to the Metal Vault (Medium)
+
+(難易度:中) 金属の宝物庫へと通じる
+%%%%
+to the Steel Vault (Very Hard)
+
+(難易度:高難度) 鋼鉄の宝物庫へと通じる
+%%%%
+to the Silver Vault (Extremely Hard)
+
+(難易度:超高難度) 銀の宝物庫へと通じる
+%%%%
+to the Crystal Vault (Extremely Hard)
+
+(難易度:超高難度) 水晶の宝物庫へと通じる
+%%%%
+to the Iron Vault (Extremely Hard)
+
+(難易度:超高難度) 鉄の宝物庫へと通じる
+%%%%
+to the Main Hall (Safe)
+
+(難易度:安全) メインホールへと通じる
+%%%%
+to the Hallway of Sentries (Extremely Hard)
+
+(難易度:超高難度) 歩哨の待機所へと通じる
+%%%%
+to the Coven (Very Hard)
+
+(難易度:高難度) 魔女の集会所へと通じる
+%%%%
+to the Armoury (Hard)
+
+(難易度:大) 兵器庫へと通じる
+%%%%
+to the Temple (Safe)
+
+(難易度:安全) 寺院へと通じる
+%%%%
+to the Store rooms (Easy)
+
+(難易度:簡単) 商店街へと通じる
+%%%%
+to the Grid Vault (Hard)
+
+(難易度:大) 区分けされた宝物庫へと通じる
+%%%%
+to the Entrance Hall (Safe)
+
+(難易度:安全) 入口の大広間へと通じる
+%%%%
+leading to the Armoury (Hard)
+
+(難易度:大) 兵器庫へと通じる
+%%%%
+to the Vestibule (Extremely Hard)
+
+(難易度:超高難度) 玄関へと通じる
+%%%%
+to a Minivault (Hard)
+
+(難易度:大) 小さな宝物庫へと通じる
+%%%%
+to the Golden Pit (Nightmare!)
+
+(難易度:悪夢！) 黄金の宝物庫へと通じる
+%%%%
+to the Final Vault (Nightmare!)
+
+(難易度:悪夢！) 最後の宝物庫へと通じる
+%%%%
+#### dat/des/sprint/sprint_mu.des #############################
+%%%%
+You hear a whooshing noise from somewhere close by.
+
+あなたはどこか近くでシューッと言う音を聞いた。
+%%%%
+to the Ecumenical Temple
+
+諸宗派の寺院へと通じる
+%%%%
+to the Lair of Beasts
+
+獣の棲み処へと通じる
+%%%%
+to the Hive
+
+蜂の巣へと通じる
+%%%%
+to the Pits of Slime
+
+スライムの穴ぐらへと通じる
+%%%%
+open sea?
+
+外海？
+%%%%
+flickering
+
+きらきら光る
+%%%%
+to a bazaar
+
+バザールへと通じる
+%%%%
+to the Hall of Blades
+
+刃の広間へと通じる
+%%%%
+to the Tomb of the Ancients
+
+太古の霊廟へと通じる
+%%%%
+water elementalist
+
+水の精霊使い
+%%%%
+pristine
+
+汚れなき
+%%%%
+to Hell
+
+地獄へと通じる
+%%%%
+to the Iron City of Dis
+
+鉄の都ディースへと通じる
+%%%%
+to the ashen valley of Gehenna
+
+灰の谷ゲヘナへと通じる
+%%%%
+to the freezing wastes of Cocytus
+
+コキュートスの凍れる荒野へと通じる
+%%%%
+to the decaying netherworld of Tartarus
+
+タルタロスの腐朽地獄へと通じる
+%%%%
+You need three runes to open the Realm of Zot!
+
+ゾットの領域に進むにはルーンが3つ必要だ！
+%%%%
+magically reinforced
+
+魔法により強化された
+%%%%
+#### dat/des/sprint/zigsprint.des #############################
+%%%%
+Your surroundings seem different!
+
+周囲の風景が一変した！
+%%%%
+<magenta>An exit appears before you!</magenta>
+
+<magenta>あなたの目の前に出口が現れた！</magenta>
+%%%%

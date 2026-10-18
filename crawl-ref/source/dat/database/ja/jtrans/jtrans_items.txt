@@ -1,0 +1,274 @@
+%%%%
+Too many items on level, removing some.
+
+階層にあるアイテムが多すぎるため、いくつかを削除しました。
+%%%%
+Item %s claims to be held by monster %s, but it isn't in the monster's inventory.
+
+# 訳不要
+%%%%
+#ifdef DEBUG
+BUG WARNING: Problems unlinking item '%s', (%d, %d)!!!
+
+%%%%
+#ifdef DEBUG
+BUG WARNING: Item didn't seem to be linked at all.
+
+%%%%
+You see here %s.
+
+ここには%sがある。
+%%%%
+Items here:
+
+ここにはアイテムがある:
+%%%%
+Things that are here:
+
+ここにはアイテムがある:
+%%%%
+There are many items here.
+
+ここにはたくさんのアイテムがある。
+%%%%
+Pick up what?
+
+何を拾いますか？
+%%%%
+(<Enter> or tap header to pick up)
+
+(拾い上げるには <Enter> を押すか、または画面上部をタップしてください。
+%%%%
+Select pick up quantity by entering a number, then select the item
+
+個数を指定して拾うには、数字を押した後に選択してください。
+%%%%
+You can't carry that many items.
+
+あなたはこれ以上多くのアイテムを持つことはできない。
+%%%%
+found %s.
+
+%sを手に入れた
+%%%%
+found the Orb of Zot!
+
+ゾットのオーブを手に入れた！
+%%%%
+a player ghost
+
+<player ghost>
+%%%%
+a pandemonium lord
+
+<pandemonium lord>
+%%%%
+[base item type]centaur barding
+
+馬甲
+%%%%
+[base item type]naga barding
+
+具装
+%%%%
+hide
+
+皮
+%%%%
+deck
+
+デッキ
+%%%%
+Original Equipment
+
+初期装備
+%%%%
+You bought it in a shop
+
+あなたは%sの店でこの%sを買った
+%%%%
+Buggy Original Equipment:
+
+# 訳不要
+%%%%
+You acquired it
+
+あなたは%sでこの%sを獲得した
+%%%%
+#if TAG_MAJOR_VERSION == 34
+You drew the Genie
+
+%%%%
+Your wizardly powers created it
+
+あなたはウィザードコマンドにより%sでこの%sを生成した
+%%%%
+gifted it to you
+
+は%sでこの%sをあなたに授けた
+%%%%
+You stumbled upon it
+
+# 訳不要
+%%%%
+You subdued it
+
+あなたは%sでこの%sを倒した
+%%%%
+You took it off
+
+あなたは%%sでこの%%sを%sから奪った
+%%%%
+You found it
+
+あなたは%sでこの%sを見つけた
+%%%%
+# You can't pick that up.
+
+# jtrans_item_use.txtと重複
+%%%%
+Are you sure you want to pick up this pile of gold now?
+
+本当にこの金貨の山を拾いますか？
+%%%%
+Pick up how many of %s (; or enter for all)?
+
+%sのうちいくつを拾いますか？(; か ENTER で全選択)
+%%%%
+There are no items here.
+
+ここには何もない。
+%%%%
+You can't reach the bottom while floating on water.
+
+あなたは水に浮いている間水底に手を伸ばせない。
+%%%%
+There are no objects that can be picked up here.
+
+ここには拾える物がない。
+%%%%
+There are several objects here.
+
+ここにはいくつかの物がある。
+%%%%
+Pick up %s? ((y)es/(n)o/(a)ll/(m)enu/*?g,/q)
+
+%sを拾いますか？ ((y)はい/(n)いいえ/(a)全部/(m)一覧/*?g,/q)
+%%%%
+(gained %d)
+
+(新たに%d枚入手)
+%%%%
+You now have %d gold piece%s%s.
+
+あなたは今%d枚の金貨を持っている。%s
+%%%%
+You pick up the %s rune and feel its power.
+
+あなたは%sのルーンを手にし、その力を感じた。
+%%%%
+You have collected all the runes! Now go and win!
+
+あなたは全てのルーンを集めた！ 今すぐオーブを回収して脱出せよ！
+%%%%
+%d runes! That's enough to enter the realm of Zot.
+
+%d個めのルーンを手にした！ ゾットの領域に足を進めるには十分だ。
+%%%%
+You now have %d runes.
+
+あなたは今%d個のルーンを持っている。
+%%%%
+Press } to see all the runes you have collected.
+
+} を押すことであなたが集めたルーンを一覧できる。
+%%%%
+You feel the abyssal rune guiding you out of this place.
+
+あなたは深淵のルーンがあなたをアビスの外へと導こうとしているような気がした。
+%%%%
+You pick up the Orb of Zot!
+
+あなたはゾットのオーブを手にした！
+%%%%
+Now all you have to do is get back out of the dungeon!
+
+これで後はダンジョンから脱出するだけだ！
+%%%%
+%s (gained %d)
+
+%s (新たに%d%s入手)
+%%%%
+You will have to take that off first.
+
+まず装備を外してからにしてください。
+%%%%
+# %s is stuck to you!
+
+# jtrans_item_use.txtと重複
+%%%%
+Too many items on this level, not dropping the item.
+
+この階層にはアイテムが多すぎるため、そのアイテムを置かなかった。
+%%%%
+You drop %s.
+
+あなたは%sを置いた。
+%%%%
+No item to drop.
+
+置くアイテムがない。
+%%%%
+(%u%s turn%s)
+
+(%uターン%s消費)
+%%%%
+Drop what?
+
+何を置きますか？
+%%%%
+(<Enter> or tap header to drop)
+
+(床に置くには <Enter> を押すか、または画面上部をタップしてください。
+%%%%
+Your pack is full.
+
+あなたの荷袋は満杯だ。
+%%%%
+Which rune (ESC to exit)?
+
+ルーンの種類を選択してください (ESCでキャンセル)
+%%%%
+[a] escape [b] destruction [c] summoning? (ESC to exit)
+
+[a]脱出 [b]破壊 [c]召喚 (ESCでキャンセル)
+%%%%
+[a] plain [b] ornate [c] legendary? (ESC to exit)
+
+[a]普通 [b]レア [c]伝説的 (ESCでキャンセル)
+%%%%
+How many cards?
+
+カードの枚数を指定してください。
+%%%%
+What ego type?
+
+エゴ種別を選択してください。
+%%%%
+A manual for which skill?
+
+どのスキルの虎の巻にしますか？
+%%%%
+Sorry, no books on that skill today.
+
+申し訳ありませんが、そのスキルの虎の巻はありません。
+%%%%
+## turns away from rotting? [ENTER for fully fresh]
+wishing blood potion prompt
+
+腐敗するまで何ターンに指定しますか？ [Enterで最大ターンになります]
+%%%%
+You have identified the last %s.
+
+あなたは%sを全部識別した。
+%%%%

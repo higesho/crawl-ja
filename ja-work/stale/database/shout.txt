@@ -1,0 +1,125 @@
+%%%%
+__CHERUB seen
+
+# old en (ja19):
+#   SOUND:@The_monster@'s eagle head screeches!
+#   SOUND:@The_monster@'s lion head roars!
+#   SOUND:@The_monster@'s ox head lows!
+#   SOUND:@The_monster@'s human head shouts!
+# old ja (ja19):
+#   SOUND:@The_monster@の鷲の頭はギャーギャー鳴いた。
+#   
+#   SOUND:@The_monster@の獅子の頭は咆哮した。
+#   
+#   SOUND:@The_monster@の雄牛の頭は鳴き声を上げた！
+#   
+#   SOUND:@The_monster@の人間の頭は叫んだ！
+# old en (ja16):
+#   SOUND:@The_monster@'s eagle head screeches!
+#   SOUND:@The_monster@'s lion head roars!
+#   SOUND:@The_monster@'s ox head lows!
+#   SOUND:@The_monster@'s human head shouts!
+# old ja (ja16):
+#   SOUND:@The_monster@の鷲の頭はギャーギャー鳴いた。
+#   
+#   SOUND:@The_monster@の獅子の頭は咆哮した。
+#   
+#   SOUND:@The_monster@の雄牛の頭は鳴き声を上げた！
+#   
+#   SOUND:@The_monster@の人間の頭は叫んだ！
+
+SOUND:@The_monster_possessive@ eagle head screeches!
+
+SOUND:@The_monster_possessive@ lion head roars!
+
+SOUND:@The_monster_possessive@ ox head lows!
+
+SOUND:@The_monster_possessive@ human head shouts!
+%%%%
+'cap-J'
+
+# old en (ja19):
+#   VISUAL:@The_monster@ quivers.
+#   #######################################
+#   Shouts by monster genus
+#   #######################################
+# old ja (ja19):
+#   VISUAL:@The_monster@はぷるぷる震えた。
+# old en (ja16):
+#   VISUAL:@The_monster@ quivers.
+#   #######################################
+#   Shouts by monster genus
+#   #######################################
+# old ja (ja16):
+#   VISUAL:@The_monster@はぷるぷる震えた。
+
+VISUAL:@The_monster@ quivers.
+%%%%
+giant slug
+
+# old en (ja19):
+#   VISUAL:@The_monster@ swivels @possessive@ eye-stalks towards you.
+#   #######################################
+#   Shouts for specific monsters
+#   #######################################
+# old ja (ja19):
+#   VISUAL:@The_monster@は@possessive@目玉をあなたの方へ向けた。
+# old en (ja16):
+#   VISUAL:@The_monster@ swivels @possessive@ eye-stalks towards you.
+#   #######################################
+#   Shouts for specific monsters
+#   #######################################
+# old ja (ja16):
+#   VISUAL:@The_monster@は@possessive@目玉をあなたの方へ向けた。
+
+VISUAL:@The_monster@ swivels @possessive@ eye-stalks towards you.
+%%%%
+imp
+
+# old en (ja19):
+#   Shout one half the time, taunt the other half.
+#   SOUND:@The_monster@ @says@, "@imp_taunt@"
+# old ja (ja19):
+#   @__SHOUT@
+#   
+#   SOUND:@The_monster@は『@imp_taunt@』と@says@。
+# old en (ja16):
+#   Shout one half the time, taunt the other half.
+#   SOUND:@The_monster@ @says@, "@imp_taunt@"
+# old ja (ja16):
+#   @__SHOUT@
+#   
+#   SOUND:@The_monster@は『@imp_taunt@』と@says@。
+
+@__SHOUT@
+
+SOUND:@The_monster@ @says@, "@imp_taunt@"
+%%%%
+moth of wrath
+
+# old en (ja19):
+#   VISUAL:@The_monster@'s fur bristles in rage as it notices you.
+# old ja (ja19):
+#   VISUAL:@The_monster@はあなたを見つけてその毛を怒りで逆立たせた。
+# old en (ja16):
+#   VISUAL:@The_monster@'s fur bristles in rage as it notices you.
+# old ja (ja16):
+#   VISUAL:@The_monster@はあなたを見つけてその毛を怒りで逆立たせた。
+
+VISUAL:@The_monster_possessive@ fur bristles in rage as it notices you.
+%%%%
+Polyphemus
+
+# old en (ja19):
+#   This would also work for other monsters that are surrounded by allies.
+#   SOUND:@The_monster@ shouts, "Attack, my pets! Attack!"
+# old ja (ja19):
+#   SOUND:@The_monster@は『行け、お前ら！ 攻撃しろ！』と叫んだ。
+# old en (ja16):
+#   This would also work for other monsters that are surrounded by allies.
+#   SOUND:@The_monster@ shouts, "Attack, my pets! Attack!"
+# old ja (ja16):
+#   SOUND:@The_monster@は『行け、お前ら！ 攻撃しろ！』と叫んだ。
+
+SOUND:@The_monster@ shouts, "Attack, my pets! Attack!"
+%%%%

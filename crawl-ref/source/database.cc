@@ -38,6 +38,8 @@ public:
     void init();
     void shutdown(bool recursive = false);
     DBM* get() { return _db; }
+    void set_input_files(vector<string> files) { _input_files = files; }
+    bool has_input_files() const { return !_input_files.empty(); }
 
     // Make it easier to migrate from raw DBM* to TextDB
     operator bool() const { return _db != 0; }
@@ -152,6 +154,10 @@ static TextDB AllDBs[] =
     TextDB("egos", "descript/",
           { "egos.txt",     // weapon/armour/missile egos
             }),
+
+    // 日本語訳辞書。ファイル一覧は databaseSystemInit() で
+    // database/ja/jtrans/ 以下の *.txt から作る。
+    TextDB("jtrans", "database/ja/jtrans/", {}),
 };
 
 static TextDB& DescriptionDB = AllDBs[0];
@@ -165,6 +171,12 @@ static TextDB& HelpDB        = AllDBs[7];
 static TextDB& FAQDB         = AllDBs[8];
 static TextDB& HintsDB       = AllDBs[9];
 static TextDB& EgosDB        = AllDBs[10];
+static TextDB& JtransDB      = AllDBs[11];
+
+static bool _jtrans_enabled()
+{
+    return Options.language == lang_t::JA;
+}
 
 static string _db_cache_path(string db, const char *lang)
 {
@@ -340,10 +352,31 @@ void TextDB::_regenerate_db()
 
 #define NUM_DB ARRAYSZ(AllDBs)
 
+static void _init_jtrans_files()
+{
+    if (!_jtrans_enabled())
+        return;
+
+    const string dir = datafile_path("database/ja/jtrans/", false, false,
+                                     dir_exists);
+    if (dir.empty())
+        return;
+
+    vector<string> files;
+    for (const string &file : get_dir_files_ext(dir, ".txt"))
+        files.push_back(file);
+    JtransDB.set_input_files(files);
+}
+
 void databaseSystemInit()
 {
+    _init_jtrans_files();
     for (unsigned int i = 0; i < NUM_DB; i++)
+    {
+        if (&AllDBs[i] == &JtransDB && !JtransDB.has_input_files())
+            continue;
         AllDBs[i].init();
+    }
 }
 
 void databaseSystemShutdown()
@@ -941,4 +974,120 @@ string getHintString(const string &key)
 string getEgoString(const string &key)
 {
     return unwrap_desc(_query_database(EgosDB, key, true, true));
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// Jtrans DB specific functions.
+
+/**
+ * jtrans(nullptr)しても例外が飛ばないようにするためのワンクッション
+ *
+ * @param key JtransDBに問い合わせたいキー文字列
+ * @param linefeed trueなら語末に改行を付与する(デフォルトfalse)
+ * @returns JtransDBのキー文字列keyに対応する文字列を返す
+ */
+string jtrans(const char* key, const bool linefeed)
+{
+    // for string(nullptr) error
+    string str = (key == nullptr ? string() : string(key));
+
+    return jtrans(str, linefeed);
+}
+
+/**
+ * JtransDBオブジェクトからキー文字列keyに対応する文字列を引いて返す。
+ * 文頭文末の改行・半角空白・タブは無視され、大文字小文字も区別されない。
+ * key中の改行は"\n"に変換された上で辞書を引く。
+ * 空文字のkeyには空文字を返す。
+ * keyに対応する文字列が見つからなかった場合、keyを返す。
+ * 対応する文字列が"__NONE"なら、空文字を返す。
+ * language = ja 以外では常にkeyを返す。
+ *
+ * @param key JtransDBに問い合わせたいキー文字列
+ * @param linefeed trueなら語末に改行を付与する(デフォルトfalse)
+ * @returns JtransDBのキー文字列keyに対応する文字列を返す
+ */
+string jtrans(const string &key, const bool linefeed)
+{
+    if (key.empty())
+        return "";
+    if (!_jtrans_enabled() || !JtransDB)
+        return key;
+
+    string tmp_key(key);
+
+    trim_string(tmp_key);
+    tmp_key = replace_all(tmp_key, "\n", "\n");
+
+    string text = _query_database(JtransDB, tmp_key, true, true);
+
+    if (text.empty())
+        return key;
+    if (trimmed_string(text) == "__NONE")
+        return "";
+
+    if (!linefeed && text.back() == '\n')
+        text.pop_back();
+
+    return text;
+}
+
+/**
+ * ある文字列keyがJtransDB内にキー文字列として存在するか否かを返す。
+ * 空文字列が渡された場合はfalseとして扱う。
+ *
+ * @param key JtransDBに問い合わせたいキー文字列
+ * @returns keyがJtransDBに存在すればtrue
+ */
+bool jtrans_has_key(const string &key)
+{
+    if (key.empty())
+        return false;
+
+    return jtrans(key) != key;
+}
+
+/**
+ * prefix + key + suffix(デフォルトで空文字列)がJtransDBにキーとして存在した
+ * 場合、jtrans(prefix + key + suffix)を返す。
+ * 存在しなかった場合、jtrans(key)を返す。
+ *
+ * @param prefix keyの前に付加される文字列 (例: "[title]", "wand of ")
+ * @param key JtransDBに問い合わせたいキー文字列
+ * @param suffix keyの後に付加される文字列 (例: " rune of Zot")
+ * @returns JtransDBのキー文字列prefix + key + suffixに対応する文字列を返す
+ */
+string tagged_jtrans(const string &prefix, const string &key,
+                     const string &suffix)
+{
+    const string tagged = prefix + trimmed_string(key) + suffix;
+    if (jtrans_has_key(tagged))
+        return jtrans(tagged);
+    else
+        return jtrans(key);
+}
+
+/**
+ * JtransDBオブジェクトからキー文字列keyに対応する文字列を引いて返す。
+ * 文頭文末の改行・半角空白・タブは維持される。
+ * 例:
+ * jtrans("\nTest - ") -> "テスト -"
+ * jtrans_notrim("\nTest - ") -> "\nテスト - "
+ *
+ * @param key JtransDBに問い合わせたいキー文字列
+ * @returns JtransDBのキー文字列keyに対応する文字列を返す
+ */
+string jtrans_notrim(const string &key)
+{
+    const string val = jtrans(key);
+    if (val.empty())
+        return "";
+
+    const auto first = key.find_first_not_of(" \t\n\r");
+    if (first == string::npos)
+        return key;
+    const string lhs = key.substr(0, first);
+    const string rhs = key.substr(key.find_last_not_of(" \t\n\r") + 1);
+
+    return lhs + val + rhs;
 }

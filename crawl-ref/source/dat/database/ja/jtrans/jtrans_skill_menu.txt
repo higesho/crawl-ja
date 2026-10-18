@@ -1,0 +1,266 @@
+%%%%
+Invalid view state.
+
+# for die()
+%%%%
+Skill
+
+スキル
+%%%%
+Level
+
+レベル
+%%%%
+<blue>Apt </blue>
+
+<blue>適性</blue>
+%%%%
+Source
+
+選択後
+%%%%
+Target
+
+選択後
+%%%%
+Train
+
+経験
+%%%%
+Progr
+
+達成
+%%%%
+Trnsf
+
+移行
+%%%%
+Points
+
+得点
+%%%%
+# Cost
+
+# jtrans_ability.txtと重複
+%%%%
+> New
+
+> 訓練後
+%%%%
+In automatic mode, skills are trained as you use them.
+
+自動選択モードでは、あなたが使用したスキルが訓練されます。
+%%%%
+In manual mode, experience is spread evenly across all activated skills.
+
+手動選択モードではあなたが選択したスキルに経験値が振り分けられます。
+%%%%
+Press the letter of a skill to choose whether you want to practise it. Skills marked with '<darkgrey>-</darkgrey>' will not be trained.
+
+訓練したいスキルを選択してください。'-'の付いたスキルは訓練されません。
+%%%%
+Press the letter of a skill to cycle between <darkgrey>disabled</darkgrey> (<darkgrey>-</darkgrey>), enabled (+) and <white>focused</white> (<white>*</white>). Focused skills train twice as fast relative to others.
+
+スキルを何度か選択すると(<darkgrey>-<darkgrey>),(+),(<white>*</white>)と表示されます。(*)の状態では普段より多くの経験値が振り分けられます。
+%%%%
+Heroism
+
+<[ability]Heroism>
+%%%%
+{god name}'s power
+
+%sの加護
+%%%%
+cross-training
+
+相互訓練
+%%%%
+Skills enhanced by {causes} are in <blue>blue</blue>.
+
+%sによって強化されたスキルは<blue>青</blue>で表示されます。
+%%%%
+draining
+
+衰弱
+%%%%
+Ashenzari's anger
+
+アシェンザリの憤り
+%%%%
+Skills reduced by {causes} are in <magenta>magenta</magenta>.
+
+%sによって弱体化されたスキルは<magenta>マゼンタ</magenta>で表示されます。
+%%%%
+The percentage of incoming experience used to train each skill is in <brown>brown</brown>.
+
+振り分けられる経験値の割合は<brown>茶色</brown>で表示されます。
+%%%%
+The percentage of the progress done before reaching next level is in <cyan>cyan</cyan>.
+
+次のレベルまでの進行度は<cyan>シアン</cyan>で表示されます。
+%%%%
+The progress of the knowledge transfer is displayed in <cyan>cyan</cyan> in front of the skill receiving the knowledge. The donating skill is marked with <cyan>*</cyan>.
+
+知識の移行の進行度は移行先になるスキルの前に<cyan>シアン</cyan>で表示されます。移行元となるスキルには <cyan>*</cyan> が付きます。
+%%%%
+The relative cost of raising each skill is in <cyan>cyan</cyan>.
+
+各スキルを上昇させるために必要な相対的なコストは<cyan>シアン</cyan>で表示されます。
+%%%%
+The relative cost of raising each skill is in <cyan>cyan</cyan> (or <lightgreen>green</lightgreen> if enhanced by a manual).
+
+各スキルを上昇させるために必要な相対的なコストは<cyan>シアン</cyan>で表示されます。
+(虎の巻によって増強されている場合、<lightgreen>緑色</lightgreen>で表示されます)
+%%%%
+[skill menu state]auto
+
+自動
+%%%%
+[skill menu state]manual
+
+手動
+%%%%
+[skill menu state]train
+
+強化
+%%%%
+[skill menu state]focus
+
+集中強化
+%%%%
+[skill menu state]trainable
+
+選択可能のみ
+%%%%
+[skill menu state]all
+
+全て
+%%%%
+[skill menu state]modified
+
+変更後
+%%%%
+[skill menu state]enhanced
+
+強化後
+%%%%
+[skill menu state]reduced
+
+弱体化後
+%%%%
+[skill menu state]base
+
+通常
+%%%%
+[skill menu state]training
+
+割り振り表示
+%%%%
+[skill menu state]progress
+
+進行度表示
+%%%%
+[skill menu state]transfer
+
+スキル移行表示
+%%%%
+[skill menu state]points
+
+ポイント表示
+%%%%
+[skill menu state]new level
+
+変動前後を比較
+%%%%
+[skill menu state]cost
+
+コスト
+%%%%
+Invalid switch state.
+
+# for die()
+%%%%
+<lightred>You need to enable at least one skill.</lightred>
+
+<lightred>あなたは少なくとも一つのスキルを選択しないといけません。</lightred>
+%%%%
+Press the letter of a skill to read its description.\nPress <w>?</w> for a general explanation of skilling and the various toggles.
+
+スキルごとの解説を読むには対応するキーを押してください。
+<w>?</w>キーを押すことで、スキル管理全体や表示モード変更についての解説を読むことができます。
+%%%%
+[skill menu suffix]mode
+
+選択モード
+%%%%
+[skill menu suffix]skill
+
+のスキル
+%%%%
+[skill menu suffix]skills
+
+<[skill menu suffix]skill>
+%%%%
+[skill menu suffix]level
+
+のレベル
+%%%%
+Read skill descriptions
+
+スキルごとの解説を読む
+%%%%
+Help
+
+ヘルプ
+%%%%
+Return to skill selection
+
+スキル選択画面に戻る
+%%%%
+<w>Help</w>                [<yellow>a</yellow>-<yellow>z</yellow>] skill descriptions
+
+<w>ヘルプ</w>                    [<yellow>a</yellow>-<yellow>z</yellow>] 各スキル解説
+%%%%
+Select a skill as the source of the knowledge transfer. The chosen skill will be reduced to the level shown in <brown>brown</brown>.
+
+移行元となるスキルを選択してください。
+選択されたスキルの減少後の数字は<brown>茶色</brown>で表示されます。
+%%%%
+Select a skill as the destination of the knowledge transfer. The chosen skill will be raised to the level shown in <cyan>cyan</cyan>.
+
+移行先となるスキルを選択してください。
+選択されたスキルの増加後の数字は<cyan>シアン</cyan>で表示されます。
+%%%%
+Select the skills you want to be trained. The chosen skills will be raised to the level shown in <cyan>cyan</cyan>.
+
+強化するスキルを選択してください。
+選択されたスキルの増加後の数字は<cyan>シアン</cyan>で表示されます。
+%%%%
+The species aptitude is in <white>white</white>.
+
+種族ごとの適性値は<white>明るい白</white>で表示されます。
+%%%%
+Bonus from skill manuals is in <lightgreen>green</lightgreen>.
+
+虎の巻によって得られた補正は<lightgreen>緑色</lightgreen>で表示されます。
+%%%%
+Invalid state.
+
+# for die()
+%%%%
+Transfer Knowledge: select the source skill
+
+知識の移行: 移行元のスキルを選んでください。
+%%%%
+Transfer Knowledge: select the destination skill
+
+知識の移行: 移行先のスキルを選んでください。
+%%%%
+You have quaffed a potion of experience. Select the skills to train.
+
+あなたは経験の薬を飲んだ。強化するスキルを選んでください。
+%%%%
+You feel omnipotent.
+
+あなたは全能になったように思えた。
+%%%%

@@ -1,0 +1,33 @@
+%%%%
+You're standing in a cloud of %s!
+
+あなたは%sに包まれている！
+%%%%
+There is a lethal amount of poison in your body!
+
+あなたの体に致死量の毒が回った！
+%%%%
+You are on fire!
+
+あなたの体は炎上している！
+%%%%
+%s is nearby!
+
+%sが近くにいる！
+%%%%
+There are monsters nearby!
+
+モンスターの群れが近くにいる！
+%%%%
+There is a strange disturbance nearby!
+
+近くで奇妙な渦が巻き起こっている！
+%%%%
+You are too frail to live.
+
+あなたは虚弱すぎて死んでしまった。
+%%%%
+You rejoin the land of the living...
+
+あなたは現世にとどまった……
+%%%%

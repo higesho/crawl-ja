@@ -1,0 +1,36 @@
+%%%%
+Which monster by name?
+
+モンスターの名前を入力してください。
+%%%%
+Currently generating level.
+
+%%%%
+Vault being placed: %s
+
+%%%%
+Subvaults: %s
+
+%%%%
+Level build method = %s, level layout type  = %s, absdepth0 = %d
+
+%%%%
+Level vaults:
+
+%%%%
+Diagnostic messages are available only in debug builds.
+
+診断メッセージ表示機能はデバッグビルド時のみ有効です。
+%%%%
+Toggle which debug class (ESC to exit)?
+
+%%%%
+%s messages will be %s.
+
+%%%%
+suppressed
+
+%%%%
+printed
+
+%%%%

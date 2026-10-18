@@ -1,0 +1,1019 @@
+%%%%
+_shouts_
+
+# en:
+#   shouts
+#   
+#   yells
+#   
+#   roars
+叫んだ
+
+大声を上げた
+
+咆哮した
+%%%%
+_yells_
+
+# en:
+#   yells
+#   
+#   wails
+#   
+#   cries
+#   
+#   screams
+#   
+#   howls
+大声を上げた
+
+わめいた
+
+叫んだ
+
+悲鳴を上げた
+
+吠えた
+%%%%
+_wails_
+
+# en:
+#   wails
+#   
+#   shouts
+#   
+#   says
+#   
+#   screams
+#   
+#   shrieks
+わめいた
+
+叫んだ
+
+しゃべった
+
+悲鳴を上げた
+
+金切り声を上げた
+%%%%
+_begs_
+
+# en:
+#   begs
+#   
+#   pleads
+#   
+#   w:3
+#   supplicates
+#   
+#   w:1
+#   supplicates abjectly
+命乞いをした
+
+懇願した
+
+w:3
+嘆願した
+
+w:1
+惨めに嘆願した
+%%%%
+_mutters_
+
+# en:
+#   mutters
+#   
+#   mumbles
+#   
+#   w:2
+#   susurrates
+つぶやいた
+
+ぼそぼそ言った
+
+w:2
+ぶつぶつ言った
+%%%%
+_pointless_
+
+# en:
+#   pointless
+#   
+#   senseless
+#   
+#   useless
+無意味だ
+%%%%
+_high_priest_common_
+
+# en:
+#   @The_monster@ prays.
+#   
+#   @The_monster@ mumbles some strange prayers.
+#   
+#   @The_monster@ intones a terrible prayer.
+#   
+#   @The_monster@ starts to sing a prayer.
+@The_monster@は祈った。
+
+@The_monster@は奇妙な祈祷をつぶやいた。
+
+@The_monster@は恐ろしい祈祷を詠唱した。
+
+@The_monster@は祈祷の文句を歌い始めた。
+%%%%
+_high_priest_medium_
+
+# en:
+#   VISUAL:@The_monster@ performs a strange gesture.
+#   
+#   @The_monster@ shouts @at_foe@, "You are a heretic and must be destroyed!"
+#   
+#   @The_monster@ says @to_foe@, "You will make a fine sacrifice."
+#   
+#   @The_monster@ shouts @at_foe@, "You must be punished!"
+#   
+#   @The_monster@ says @to_foe@, "All sinners must die."
+#   
+#   @The_monster@ says @to_foe@, "Oblivion to the unbeliever."
+VISUAL:@The_monster@は奇妙な身振りをした。
+
+@The_monster@は@at_foe@に『汝のような背教者は滅ぶべし！』と叫んだ。
+
+@The_monster@は@to_foe@に『お前はよい捧げ物になるだろう』と言った。
+
+@The_monster@は@at_foe@に『罰を受けろ！』と叫んだ。
+
+@The_monster@は@to_foe@に『咎人死すべし』と言った。
+
+@The_monster@は@to_foe@に『不信心者を赦し給え』と言った。
+%%%%
+_mercenary_guard_common_
+
+# en:
+#   VISUAL:@The_monster@ looks very unfriendly.
+#   
+#   VISUAL:@The_monster@ grins evilly.
+#   
+#   @The_monster@ screams @at_foe@, "One false step and I'll kill you."
+#   
+#   @The_monster@ screams @at_foe@, "I'm going to kill you! Now!"
+#   
+#   @The_monster@ shouts, "You will never get the ORB!" @player_only@
+#   
+#   @The_monster@ says @to_foe@, "No trespassing is allowed here."
+#   
+#   @The_monster@ says @to_foe@, "Drop everything you've found here and return home."
+#   
+#   @The_monster@ says @to_foe@, "Return every stolen item!"
+#   
+#   @The_monster@ shouts @at_foe@, "Intruder!"
+#   
+#   @The_monster@ screams @at_foe@, "You must be punished!"
+VISUAL:@The_monster@は友好的ではなさそうだ。
+
+VISUAL:@The_monster@は邪悪な笑みを浮かべた。
+
+@The_monster@は@at_foe@に向かって『下手に動いたら殺しちまうぞ！』と叫んだ。
+
+@The_monster@は@at_foe@に向かって『貴様を今すぐ殺す！』と叫んだ。
+
+@The_monster@は『貴様がオーブを手にすることは無い！』と叫んだ。@player_only@
+
+@The_monster@は@to_foe@に『ここは立入禁止だ』と言った。
+
+@The_monster@は@to_foe@に『ここで拾った物を全て置いて帰るんだ』と言った。
+
+@The_monster@は@to_foe@に『盗んだ物を全て返却せよ！』と言った。
+
+@The_monster@は@at_foe@に『侵入者だ！』と叫んだ。
+
+@The_monster@は@at_foe@に向かって『罰を受けよ！』と叫んだ。
+%%%%
+_wizard_common_spell_
+
+# en:
+#   @The_monster@ wildly gestures.
+#   
+#   @The_monster@ mumbles some strange words.
+#   
+#   @The_monster@ howls an incantation.
+@The_monster@は荒々しい身振りをした。
+
+@The_monster@は奇妙な言葉をつぶやいた。
+
+@The_monster@は呪文を叫んだ。
+%%%%
+_friendly_imp_common_
+
+# en:
+#   VISUAL:@The_monster@ jumps up and down with excitement.
+#   
+#   VISUAL:@The_monster@ grins impishly at you.
+#   
+#   VISUAL:@The_monster@ picks up some beetles from the @surface@ and offers them to you.
+#   
+#   VISUAL:@The_monster@ blows smoke rings.
+#   
+#   @The_monster@ says, "OK, boss!"
+#   
+#   @The_monster@ says, "The Orb is all yours."
+#   
+#   @The_monster@ says, "Isn't this more fun with friends?"
+VISUAL:@The_monster@は興奮して飛び跳ねた。
+
+VISUAL:@The_monster@は悪魔のような笑みを浮かべた。
+
+VISUAL:@The_monster@は@surface@から虫を拾ってあなたに手渡した。
+
+VISUAL:@The_monster@は吐いた煙で輪を描いた。
+
+@The_monster@は『オーケィ、親分！』と言った
+
+@The_monster@は『オーブはあなたのもの！』と言った。
+
+@The_monster@は『友達と一緒の方がもっと楽しくない？』と言った。
+%%%%
+_mayhem_
+
+# en:
+#   mayhem
+#   
+#   destruction
+#   
+#   havoc
+#   
+#   disruption
+混乱
+
+破壊
+
+暴動
+
+崩壊
+%%%%
+_hostile_imp_common_
+
+# en:
+#   @The_monster@ laughs crazily.
+#   
+#   VISUAL:@The_monster@ grins evilly.
+#   
+#   VISUAL:@The_monster@ lashes @possessive@ tail.
+#   
+#   VISUAL:@The_monster@ grinds @possessive@ teeth.
+#   
+#   VISUAL:@The_monster@ puffs mist at @foe@.
+@The_monster@は狂ったように笑った。
+
+VISUAL:@The_monster@は邪悪な笑みを浮かべた。
+
+VISUAL:@The_monster@はその尻尾を振った。
+
+VISUAL:@The_monster@は歯ぎしりした。
+
+VISUAL:@The_monster@は@foe@に向かって霧を生み出した。
+%%%%
+_hell_lord_taunt_
+
+# en:
+#   @The_monster@ @says@ @to_foe@, "@demon_taunt@"
+@The_monster@は@to_foe@に『@demon_taunt@』と@says@。
+%%%%
+_demon_taunt_
+
+# en:
+#   @The_monster@ @says@ @to_foe@, "@demon_taunt@"
+@The_monster@は@to_foe@に『@demon_taunt@』と@says@。
+%%%%
+_fleeing_silenced_common_
+
+# en:
+#   VISUAL:@The_monster@ glances furtively about.
+#   
+#   VISUAL:@The_monster@ seems to say something.
+VISUAL:@The_monster@はこそこそと目を向けた。
+
+VISUAL:@The_monster@は何か言ったようだ。
+%%%%
+_friendly_silenced_common_
+
+# en:
+#   VISUAL:@The_monster@ gives you the thumbs up.
+#   
+#   VISUAL:@The_monster@ says something you can't hear.
+VISUAL:@The_monster@はあなたに向かって親指を立てた。
+
+VISUAL:@The_monster@はあなたに何かを言ったが聞こえなかった。
+%%%%
+_silenced_humanoid_common_
+
+# en:
+#   VISUAL:@The_monster@ says something but you don't hear anything.
+#   
+#   VISUAL:@The_monster@ gestures.
+VISUAL:@The_monster@は何やら言ったがよく聞こえなかった。
+
+VISUAL:@The_monster@は身振り手振りをした。
+%%%%
+_friendly_confused_common_
+
+# en:
+#   @The_monster@ screams, "Help!"
+#   
+#   @The_monster@ shouts, "What's happening?!"
+#   
+#   @The_monster@ mumbles something.
+#   
+#   @The_monster@ laughs crazily.
+#   
+#   VISUAL:@The_monster@ cries.
+#   
+#   VISUAL:@The_monster@ looks very confused.
+@The_monster@は『助けて！』と叫んだ。
+
+@The_monster@は『何が起きた?!』と叫んだ。
+
+@The_monster@は何事かつぶやいた。
+
+@The_monster@は狂ったように笑った。
+
+VISUAL:@The_monster@は泣き叫んだ。
+
+VISUAL:@The_monster@はひどく混乱したようだ。
+%%%%
+_friendly_confused_medium_
+
+# en:
+#   @The_monster@ giggles crazily.
+#   
+#   @The_monster@ screams, "@player_name@! What's going on?!"
+#   
+#   @The_monster@ prays for help.
+#   
+#   @The_monster@ smirks at the air and says, "Can't catch me!"
+#   
+#   VISUAL:@The_monster@ grins madly.
+#   
+#   VISUAL:@The_monster@ ponders the situation.
+#   
+#   VISUAL:@The_monster@ stomps to and fro.
+@The_monster@は狂ったようにくすくす笑った。
+
+@The_monster@は『よう@player_name@！ 元気かい?!』と叫んだ。
+
+@The_monster@は助けを求めて祈った。
+
+@The_monster@は宙に向かってにやにや笑い、『捕まえてみろ！』と言った。
+
+VISUAL:@The_monster@は狂気の笑みを浮かべた。
+
+VISUAL:@The_monster@は状況を把握しようとしているようだ。
+
+VISUAL:@The_monster@はあちこちで足踏みした。
+%%%%
+_confused_humanoid_common_
+
+# en:
+#   w:20
+#   VISUAL:@The_monster@ gestures wildly.
+#   
+#   @The_monster@ shouts, "What's happening?!"
+#   
+#   VISUAL:@The_monster@ cries.
+#   
+#   @The_monster@ laughs crazily.
+#   
+#   VISUAL:@The_monster@ grins madly.
+#   
+#   VISUAL:@The_monster@ laughs at nothing.
+#   
+#   VISUAL:@The_monster@ chortles and stares into space.
+#   
+#   VISUAL:@The_monster@ looks very confused.
+#   
+#   @The_monster@ mumbles something.
+w:20
+VISUAL:@The_monster@は荒々しい身振りをした。
+
+@The_monster@は『何が起きた?!』と叫んだ。
+
+VISUAL:@The_monster@は泣き叫んだ。
+
+@The_monster@は狂ったように笑った。
+
+VISUAL:@The_monster@は狂気の笑みを浮かべた。
+
+VISUAL:@The_monster@は宙に向かって笑い出した。
+
+VISUAL:@The_monster@ chortles and stares into space.
+
+VISUAL:@The_monster@はひどく混乱したようだ。
+
+@The_monster@は何事かつぶやいた。
+%%%%
+_friendly_fleeing_common_
+
+# en:
+#   w:20
+#   VISUAL:@The_monster@ tries to hide somewhere.
+#   
+#   @The_monster@ screams, "Help!"
+#   
+#   @The_monster@ shouts, "Cover me!"
+#   
+#   @The_monster@ screams, "@player_name@! Help me!"
+#   
+#   @The_monster@ prays for help.
+w:20
+VISUAL:@The_monster@はどこかに隠れようとした。
+
+@The_monster@は『助けて！』と叫んだ。
+
+@The_monster@は『援護しろ！』と叫んだ。
+
+@The_monster@は『@player_name@！ 助けて！』と叫んだ。
+
+@The_monster@は助けを求めて祈った。
+%%%%
+_friendly_family_
+
+# en:
+#   @The_monster@ says, "I like you, cousin!"
+#   
+#   @The_monster@ says, "Family always sticks together, @player_name@!"
+#   
+#   @The_monster@ says, "@player_genus@kind's got to stick together!"
+#   
+#   @The_monster@ shouts, "@player_genus_plural@ are the best!"
+#   
+#   @The_monster@ says happily, "You and me, we're family."
+@The_monster@は『いとこよ、あんたが好きだよ！』と言った。
+
+@The_monster@は『家族はいつも一緒だ、@player_name@！』と言った。
+
+@The_monster@は『@player_genus@はみんな一緒だ！』と言った。
+
+@The_monster@は『@player_genus@万歳！』と大声で言った。
+
+@The_monster@は『あなたも私も家族だ』と嬉しそうに言った。
+%%%%
+_friendly_humanoid_medium_
+
+# en:
+#   @The_monster@ says, "It's nice to have friends."
+#   
+#   @The_monster@ says, "@player_name@, you are my only friend."
+#   
+#   @The_monster@ shouts, "No mercy! Kill them all!"
+#   
+#   @The_monster@ says, "Don't worry. I'm here with you."
+#   
+#   VISUAL:@The_monster@ smiles happily.
+#   
+#   @The_monster@ shouts, "Beware of monsters!"
+@The_monster@は『友達を持つのはよいことだ』と言った。
+
+@The_monster@は『@player_name@、私の友達は君一人だ』と言った。
+
+@The_monster@は『情け無用！ 皆殺しだ！』と叫んだ。
+
+@The_monster@は『大丈夫、私はここにいるよ』と言った。
+
+VISUAL:@The_monster@はにっこり笑った。 smiles happily.
+
+@The_monster@は『怪物どもに気をつけろ！』と叫んだ。
+%%%%
+hound
+
+# en:
+#   VISUAL:@The_monster@ [pauses|stops] to sniff the @surface@.
+VISUAL:@The_monster@は立ち止まって@surface@の匂いをかぎ始めた。
+%%%%
+default insect
+
+# en:
+#   VISUAL:@The_monster@ waves @possessive@ antennae.
+VISUAL:@The_monster@は触角をゆらめかせた。
+%%%%
+default confused insect
+
+# en:
+#   VISUAL:@The_monster@ wildly waves @possessive@ antennae.
+#   
+#   VISUAL:@The_monster@ seems to be having trouble coordinating all six of @possessive@ legs.
+VISUAL:@The_monster@は触角を激しく動かした。
+
+VISUAL:@The_monster@は6本の足をじたばたさせた。
+%%%%
+default confused winged insect
+
+# en:
+#   VISUAL:@The_monster@ flutters around in erratic circles.
+#   
+#   VISUAL:@The_monster@ wildly waves @possessive@ antennae.
+#   
+#   VISUAL:@The_monster@ wobbles in @possessive@ flight.
+VISUAL:@The_monster@はよろよろと円を描いて羽ばたいている。
+
+VISUAL:@The_monster@は触角を激しく動かした。
+
+VISUAL:@The_monster@はよろよろと飛んでいる。
+%%%%
+default confused arachnid
+
+# en:
+#   VISUAL:@The_monster@ seems to be having trouble coordinating all eight of @possessive@ legs.
+VISUAL:@The_monster@は8本の足をじたばたさせた。
+%%%%
+centipede
+
+# en:
+#   VISUAL:@The_monster@ waves @possessive@ antennae.
+VISUAL:@The_monster@は触角を揺らめかせた。
+%%%%
+default confused centipede
+
+# en:
+#   VISUAL:@The_monster@ seems to be having trouble coordinating @possessive@ many legs.
+#   
+#   VISUAL:@The_monster@ wildly waves @possessive@ antennae.
+VISUAL:@The_monster@は無数にある足をじたばたさせた。
+
+VISUAL:@The_monster@は触角を激しく動かした。
+%%%%
+default confused 'b'
+
+# en:
+#   VISUAL:@The_monster@ flutters around in erratic circles.
+VISUAL:@The_monster@はよろよろと円を描いて羽ばたいている。
+%%%%
+default 'cap-G'
+
+# en:
+#   VISUAL:@The_monster@ pulsates ominously.
+VISUAL:@The_monster@は不気味に光ったり暗くなったりしている。
+%%%%
+default 'cap-J'
+
+# en:
+#   VISUAL:@The_monster@ jiggles.
+VISUAL:@The_monster@はぷるぷる揺れている。
+%%%%
+'l'
+
+# en:
+#   @The_monster@ hisses menacingly.
+@The_monster@は威嚇のシューッという音を立てている。
+%%%%
+'r'
+
+# en:
+#   VISUAL:@The_monster@ twitches @possessive@ whiskers.
+VISUAL:@The_monster@はヒゲをぴくぴく動かした。
+%%%%
+default confused 'r'
+
+# en:
+#   VISUAL:@The_monster@ runs around in a circle.
+VISUAL:@The_monster@は円を描いて走り回っている。
+%%%%
+default confused 'y'
+
+# en:
+#   SOUND:@The_monster@ buzzes around in tight circles.
+SOUND:@The_monster@は小さな円を描いてブンブン飛んでいる。
+%%%%
+default silenced confused 'y'
+
+# en:
+#   VISUAL:@The_monster@ flies around in tight circles.
+VISUAL:@The_monster@は小さな円を描いて飛んでいる。
+%%%%
+Short Blades player ghost
+
+# en:
+#   @The_monster@ says, "It's not the size of the blade that matters, it's how you use it."
+#   
+#   @The_monster@ says @to_foe@, "You sneer at my short blade, I will sneer at your cold corpse."
+#   
+#   VISUAL:@The_monster@ flicks @possessive@ blade from hand to hand, faster than the eye can follow.
+@The_monster@は『刃の長さは問題じゃない、要は使い方次第さ』と言った。
+
+@The_monster@は@to_foe@に『私の刃を笑ったな？ お前の屍を笑ってやる』と言った。
+
+VISUAL:@The_monster@はその刃を手から手へ目にもとまらぬ速さで渡している。
+%%%%
+Long Blades player ghost
+
+# en:
+#   VISUAL:@The_monster@ holds @possessive@ blade at the ready.
+#   
+#   @The_monster@ says, "Live by the sword, die by the sword."
+VISUAL:@The_monster@は剣をいつでも振れるように構えている。
+
+@The_monster@は『剣にて生きれば剣にて死す』と言った。
+%%%%
+Axes player ghost
+
+# en:
+#   @The_monster@ says, "I'll split you in two!"
+#   
+#   @The_monster@ mumbles, "They all look like pillowcases to me..."
+#   
+#   @The_monster@ says, "Try not to bleed too much."
+@The_monster@『真っ二つにしてやる！』と言った。
+
+@The_monster@は『何もかもが枕カバーのように見える……』とつぶやいた。
+
+@The_monster@は『あまり血を流させないでくれ』と言った。
+%%%%
+Polearms player ghost
+
+# en:
+#   @The_monster@ says, "One skewered @foe_genus@, coming right up."
+#   
+#   @The_monster@ says @to_foe@, "Your head on a pike would complement this floor nicely."
+#   
+#   @The_monster@ says @to_foe@, "Your head would complement my pike nicely."
+@The_monster@は『@foe_genus@の串刺し、一丁上がりだ！』と言った。
+
+@The_monster@は@to_foe@に『槍に刺さったお前の頭はこの部屋のいい飾りになる』と言った。
+
+@The_monster@は@to_foe@に『お前の頭は我が槍のいい飾りになるだろうな』と言った。
+%%%%
+Staves player ghost
+
+# en:
+#   @The_monster@ says, "I excel at staving off weak adventurers."
+#   
+#   VISUAL:@The_monster@ twirls @possessive@ quarterstaff.
+#   
+#   @The_monster@ threatens to break your skull. @player_only@
+@The_monster@は『私は雑魚冒険者をたたきのめすのが得意なんだ』と言った。
+
+VISUAL:@The_monster@は六尺棒をくるくる回している。
+
+@The_monster@はあなたの頭蓋を砕くぞと脅している。
+%%%%
+Armour player ghost
+
+# en:
+#   @The_monster@ says, "You cannot hurt me!"
+#   
+#   @The_monster@ says, "I am invincible!"
+#   
+#   @The_monster@ says, "I am made of steel!"
+@The_monster@は『お前の攻撃など効かん！』と言った。
+
+@The_monster@は『私は無敵だ！』と言った。
+
+@The_monster@は『私は鉄の塊だ！』と言った。
+%%%%
+Shields player ghost
+
+# en:
+#   @The_monster@ says, "You can hit me, but you can't hurt me."
+@The_monster@は『私に当てられても傷つけられはしないぞ』と言った。
+%%%%
+Unarmed Combat player ghost
+
+# en:
+#   @The_monster@ sneers, "Only the weak need weapons."
+#   
+#   VISUAL:@The_monster@ feints to the [left|right].
+#   
+#   VISUAL:@The_monster@ assumes a wrestling stance.
+#   
+#   @The_monster@ says, "I break bones and crack skulls... with my bare hands."
+#   
+#   VISUAL:@The_monster@ swings @possessive@ fists at you. @player_only@
+#   
+#   VISUAL:@The_monster@ flexes @possessive@ fingers.
+@The_monster@は『武器に頼るのは弱者だけだ』と嘲笑った。
+
+VISUAL:@The_monster@は[左|右]に行くと見せかけた。
+
+VISUAL:@The_monster@はレスリングの構えを取った。
+
+@The_monster@『私は骨を折り頭蓋を砕くことができる……それも素手で』と言った。
+
+VISUAL:@The_monster@はあなたに拳を向けている。
+
+VISUAL:@The_monster@は指の骨を鳴らしている。
+%%%%
+Conjurations player ghost
+
+# en:
+#   VISUAL:@The_monster@ takes aim.
+#   
+#   @The_monster@ says, "I will blast you to bits."
+#   
+#   @The_monster@ [adeptly chants|mispronounces] a nearly unspeakable incantation.
+#   
+#   VISUAL:@The_monster@ is bathed in the radiant lights of Iskenderun.
+#   
+#   VISUAL:Energy condenses in front of @the_monster@, but quickly dissipates.
+VISUAL:@The_monster@は狙いを定めた。
+
+@The_monster@は『粉々にしてやる』と言った。
+
+@The_monster@は呪文を[すらすらと|間違えて]唱えた。
+
+VISUAL:@The_monster@はイスケンデルンの輝く光に包まれた。
+
+VISUAL:@the_monster@の眼前にエネルギーが集中したが、すぐに消散した。
+%%%%
+Hexes player ghost
+
+# en:
+#   @The_monster@ says @to_foe@, "You will soon be helpless to avoid my power."
+#   
+#   @The_monster@ says @to_foe@, "When I snap my fingers, you will think you are a chicken."
+@The_monster@は@to_foe@に『じきに貴様は我が力の前に無力となるだろう』と言った。
+
+@The_monster@は@to_foe@に『私が指を鳴らすやいなや、貴様は自分が鶏だと思い込むだろう』と言った。
+%%%%
+Summonings player ghost
+
+# en:
+#   @The_monster@ says, "It's dangerous to adventure alone."
+#   
+#   VISUAL:@The_monster@ pulls a quokka out of @possessive@ cap.
+#   
+#   @The_monster@ points @at_foe@ and yells, "Attack!"
+#   
+#   @The_monster@ says, "It's nice to have friends."
+@The_monster@は『独りの冒険は危ないぞ』と言った。
+
+VISUAL:@The_monster@は帽子からクワッカを取り出した。
+
+@The_monster@は@at_foe@を指さし、『攻撃しろ！』と大声で言った。
+
+@The_monster@は『友達がいるのはいいことだ！』と言った。
+%%%%
+Translocations player ghost
+
+# en:
+#   VISUAL:@The_monster@ flickers in and out of reality.
+#   
+#   VISUAL:@The_monster@ is wreathed in a cloud of translocational energy.
+#   
+#   VISUAL:@The_monster@ blinks @at_foe@.
+VISUAL:@The_monster@は現実空間から出たり入ったりしている。
+
+VISUAL:@The_monster@は転位術のエネルギーに囲まれている。
+
+VISUAL:@The_monster@は瞬間移動した。
+%%%%
+Fire Magic player ghost
+
+# en:
+#   @The_monster@ says, "I love the smell of burning flesh."
+#   
+#   @The_monster@ says, "Would you like to be cremated?"
+#   
+#   @The_monster@ says, "Don't worry, you'll be warm in a moment."
+@The_monster@は『私は肉の焼ける臭いが大好きなんだ』と言った。
+
+@The_monster@は『火葬はお好みかな？』と言った。
+
+@The_monster@は『気にするな、熱いのは一瞬だけだよ』と言った。
+%%%%
+Air Magic player ghost
+
+# en:
+#   VISUAL:@The_monster@ is surrounded by a shower of sparks.
+#   
+#   @The_monster@ says, "I'm really charged up about this fight."
+#   
+#   @The_monster@ says, "Resistance is futile!"
+VISUAL:@The_monster@は電光のシャワーに包まれている。
+
+@The_monster@は『この時のために力を溜めてきたんだ』と言った。
+
+@The_monster@は『抵抗は無意味だ！』と言った。
+%%%%
+Invocations player ghost
+
+# en:
+#   @The_monster@ curses the gods.
+#   
+#   @The_monster@ says, "This is what relying on the gods got me."
+#   
+#   @The_monster@ sneers @at_foe@, "Where's your god now?"
+#   
+#   @The_monster@ says, "Bah, the gods are useless!"
+#   
+#   @The_monster@ mutters, "So much for the promised afterlife."
+#   
+#   VISUAL:@The_monster@ prays.
+@The_monster@は神を呪った。
+
+@The_monster@は『これが神に頼った者の末路だ』と言った。
+
+@The_monster@は@at_foe@に『貴様の神はいずこだ？』と嘲笑った。
+
+@The_monster@は『ふん、神は役に立たん！』と言った。
+
+@The_monster@は『来世もこれまで』とつぶやいた。
+
+VISUAL:@The_monster@は祈った。
+%%%%
+Beogh player ghost
+
+# en:
+#   @The_monster@ says, "Nobody wants to follow a dead messiah!"
+#   
+#   @The_monster@ says, "I used to walk on water. Now I just fly over it."
+#   
+#   @The_monster@ says @to_foe@, "I don't need an army to kill you!"
+@The_monster@は『死んだ救世主に仕えるなんてお断りだ！』と言った。
+
+@The_monster@は『私は以前水の上を歩いていた。今では空も飛べるようになった』と言った。
+
+@The_monster@は@to_foe@に『お前を殺すのに数に頼る必要はないぞ！』と言った。
+%%%%
+Cheibriados player ghost
+
+# en:
+#   @The_monster@ says @to_foe@, "What's the hurry? You'll die anyway."
+#   
+#   @The_monster@ says @to_foe@, "You can run, but you can't hide!"
+@The_monster@は@to_foe@に『なぜ急ぐ？ どのみち死ぬというのに』と言った。
+
+@The_monster@は@to_foe@に『走るがいい、隠れることはできないがな！』と言った。
+%%%%
+Dithmenos player ghost
+
+# en:
+#   @The_monster@ says @to_foe@, "I shall send you to the shadows!"
+#   
+#   @The_monster@ says @to_foe@, "Just let the darkness consume you."
+#   
+#   @The_monster@ says @to_foe@, "I walk in shadow, and soon so shall you."
+@The_monster@は@to_foe@に『貴様を影の中に送り込んでやる！』と言った。
+
+@The_monster@は@to_foe@に『暗黒が貴様を飲み込む』と言った。
+
+@The_monster@は@to_foe@に『私は影の中を歩む、貴様もすぐにそうなる』と言った。
+%%%%
+Elyvilon player ghost
+
+# en:
+#   @The_monster@ says @to_foe@, "In life, I might have healed you instead."
+#   
+#   @The_monster@ says, "I thought violence couldn't solve anything, but it solved me."
+#   
+#   @The_monster@ muses, "Killing is much more fun than I thought it would be."
+@The_monster@は@to_foe@に『死ぬ前だったら貴様を治してやれたんだがな』と言った。
+
+@The_monster@は『暴力では何も解決しないと思っていたが、私自身が*解決*されてしまった』と言った。
+
+@The_monster@は『思っていたよりも殺しってのは楽しいもんだな』と思った。
+%%%%
+Fedhas player ghost
+
+# en:
+#   @The_monster@ moans, "Why did I trust plants to save my life?"
+#   
+#   @The_monster@ says @to_foe@, "I can no longer spread life, but I can still bring your death!"
+#   
+#   @The_monster@ says, "You will make such fine fertiliser."
+#   
+#   @The_monster@ says, "Life goes in cycles. In a little while, you'll be reborn as a tapeworm."
+@The_monster@は『どうして植物が私の命を守ってくれると信じていたんだ？』とうめいた。
+
+@The_monster@は@to_foe@に『私はもう命を殖やすことはできないが、貴様を死に追いやることはできる！』と言った。
+
+@The_monster@は『貴様はいい肥料になるだろうな』と言った。
+
+@The_monster@は『生命は輪廻する。もうじき貴様は虫に転生するだろう』と言った。
+%%%%
+Gozag player ghost
+
+# en:
+#   VISUAL:@The_monster@ waves a bulging coin purse at you.
+#   
+#   @The_monster@ says, "You're as good as gold."
+#   
+#   @The_monster@ says, "I guess you can't buy your way into a good afterlife."
+VISUAL:@The_monster@は金貨の詰まった財布をあなたに見せびらかした。
+
+@The_monster@は『とってもいい子、金貨みたいに』と言った。
+
+@The_monster@は『地獄の沙汰も金次第、とはいかんぞ』と言った。
+%%%%
+_generic_ranged_
+
+# en:
+#   @The_monster@ takes aim @at_foe@.
+#   
+#   You feel something passing dangerously close to your head. @player_only@
+@The_monster@は@at_foe@に狙いをつけた。
+
+あなたは頭のすぐ横を何かが通り抜けるのを感じた。 @player_only@
+%%%%
+beogh_converted_orc_reaction_sight
+
+# en:
+#   @The_monster@ stares at you in amazement and kneels.
+#   
+#   @The_monster@ relaxes @possessive@ fighting stance and smiles at you.
+#   
+#   @The_monster@ falls on @possessive@ knees before you.
+@The_monster@は驚きの表情であなたを見つつひざまずいた。
+
+@The_monster@は戦闘態勢を解き、あなたに微笑みかけた。
+
+@The_monster@はあなたの前にひざまずいた。
+%%%%
+beogh_converted_orc_reaction_battle
+
+# en:
+#   @The_monster@ surrenders.
+#   
+#   @The_monster@ falls to @possessive@ knees.
+#   
+#   @The_monster@ raises @possessive@ hands in surrender.
+@The_monster@は降参した。
+
+@The_monster@はひざまずいた。
+
+@The_monster@はその手を上げて降参した。
+%%%%
+beogh_converted_orc_resurrection
+
+# en:
+#   @The_monster@ shouts, "You saved me!"
+#   
+#   @The_monster@ says, "You really are the Messiah."
+#   
+#   @The_monster@ thanks you for bringing @objective@ back to life.
+#   
+#   @The_monster@ says, "I knew I could rely on you."
+#   
+#   @The_monster@ says, "Now I can live to fight another day."
+@The_monster@は『あなたが救ってくれた！』と叫んだ。
+
+@The_monster@は『あなたこそが救世主だ』と言った。
+
+@The_monster@はあなたが蘇らせてくれたことに感謝した。
+
+@The_monster@は『やっぱりあなたは頼りになる』と言った。
+
+@The_monster@は『これでまた戦うことができる』と言った。
+%%%%
+orc_priest_apostate
+
+# en:
+#   The priest shouts, "Disloyal scoundrel, leave my sight!"
+#   
+#   The priest snarls, "I'll spare you only if you run away! Begone!"
+#   
+#   The priest curses, "Your faithless show of piety disgusts me!"
+#   
+#   The priest sneers, "Beogh may forgive you, but I don't!"
+#   
+#   The priest shouts, "You had your chance, apostate scum!"
+オークの司祭は『不忠義なならず者め、私の目の前から去れ！』と叫んだ。
+
+オークの司祭は『命ばかりは見逃してやる！ 立ち去れ！』と怒鳴った。
+
+オークの司祭は『貴様の無信心っぷりに反吐が出そうだ！』と罵った。
+
+オークの司祭は『ベオ様は許しても私はそうはいかんぞ！』と嘲った。
+
+オークの司祭は『二度はないぞ、この背教者め！』と叫んだ。
+%%%%
+_axioms_of_law_
+
+# en:
+#   Zin's Axioms of Law.
+#   
+#   the Axioms of Law.
+#   
+#   the books of the Law.
+#   
+#   the sacred Law of Zin.
+ジンの法理
+
+法理
+
+法理を説いた書物
+
+ジンの神聖なる法理
+%%%%
+Gozag bribe
+
+# en:
+#   @The_monster@ stares @at_foe@, then turns away, jangling a coin purse.
+@The_monster@は@at_foe@を睨んだが、目を背けて財布をチャラチャラと鳴らした。
+%%%%
+Gozag permabribe
+
+# en:
+#   @The_monster@ grins @at_foe@ greedily, jangling a coin purse.
+@The_monster@は財布をチャラチャラと鳴らしながら強欲そうな笑みを@at_foe@に向けた。
+%%%%

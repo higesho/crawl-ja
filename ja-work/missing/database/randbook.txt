@@ -1,0 +1,851 @@
+%%%%
+book appearance
+
+@_book_adjective_@
+%%%%
+random_book_title
+
+w:15
+the @_book_plant_animal_@
+
+w:20
+@_number_or_qualifier_@ @_thing_names_@
+
+w:4
+the @_profession_name_@
+
+w:13
+@_philosophy_or_science_@
+
+w:8
+@_wacky_armour_name_@
+
+w:2
+@_destiny_name_@
+
+w:6
+@_place_name_@
+
+w:1
+@_magic_name_@
+
+w:4
+@_substance_name_@
+
+w:2
+@_power_name_@
+%%%%
+_book_plant_animal_
+
+w:1
+@_jewellery_animal_@
+
+w:1
+@_critter_name_@
+
+w:1
+@_plant_name_@
+
+w:6
+@_weapon_animal_@
+
+@_armour_animal_@
+%%%%
+Xom_book_title
+
+w:30
+@random_book_title@
+
+@_chaos_name_@
+
+w:1
+@_game_name_@
+
+w:2
+@player_death@
+
+w:8
+@_wacky_armour_name_@
+
+w:1
+@_politics_name_armour_@
+
+w:5
+@_power_name_@
+
+w:3
+@_discomfort_and_inaction_@
+
+w:3
+@_discomfort_weapon_@
+%%%%
+_occult_adjective_
+
+Abstruse
+
+Acroamatic
+
+Arcane
+
+Awakened
+
+Concealed
+
+Cryptic
+
+Deep
+
+Esoteric
+
+Forbidden
+
+Gnostic
+
+Hermetic
+
+Hidden
+
+Lost
+
+Magical
+
+Mysterious
+
+Mystic
+
+Mystical
+
+Occult
+
+Orphic
+
+Recondite
+
+Revealed
+
+Ritual
+
+Sealed
+
+Secret
+
+Sibylline
+
+Transmundane
+
+Veiled
+%%%%
+_testament_noun_
+
+Archive
+
+Chronicle
+
+History
+
+Journal
+
+Memoir
+
+Record
+
+Testament
+
+Testimony
+
+Wisdom
+
+Writings
+%%%%
+Alchemy
+
+Albedo
+
+Alchemy
+
+Alteration
+
+Argyropoeia
+
+Azoth
+
+Calcination
+
+Ceration
+
+Chemistry
+
+Chrysopoeia
+
+Citrinitas
+
+Cohobation
+
+Composition
+
+Compounds
+
+Concoctions
+
+Congelation
+
+Contamination
+
+Crysopoeia
+
+Decantation
+
+Decomposition
+
+Degeneration
+
+Distillation
+
+Effluvium
+
+Esoterica
+
+Essence
+
+Fermentation
+
+Flux
+
+Formulae
+
+Hermetica
+
+Impurities
+
+Intoxication
+
+Iosis
+
+Leucosis
+
+Litharge
+
+Melanosis
+
+Nigredo
+
+Pollution
+
+Prima Materia
+
+Projection
+
+Quintessence
+
+Reagents
+
+Reconfiguration
+
+Reformation
+
+Rubedo
+
+Solvents
+
+Spagyria
+
+Sublimation
+
+Substances
+
+Synthesis
+
+Takwin
+
+Tinctures
+
+Toxicants
+
+Toxicity
+
+Toxicology
+
+Toxins
+
+Transfiguration
+
+Transformation
+
+Transmogrification
+
+Transmutation
+
+Venin
+
+Venom
+
+Virulence
+
+Vitriol
+
+Xanthosis
+
+the Adder
+
+the Alembic
+
+the Alkahest
+
+the Athanor
+
+the Beaker
+
+the Catalyst
+
+the Crucible
+
+the Cucurbite
+
+the Decanter
+
+the Elixir
+
+the Gift
+
+the Great Work
+
+the Hornet
+
+the Iliaster
+
+the Magnum Opus
+
+the Mortar
+
+the Ouroboros
+
+the Panacea
+
+the Pestle
+
+the Prime Material
+
+the Queen Bee
+
+the Rebis
+
+the Scorpion
+
+the Snake
+
+the Solution
+
+the Tincture
+
+the Yliaster
+%%%%
+Forgecraft
+
+Artifice
+
+Assemblage
+
+Assembly
+
+Automation
+
+Blueprints
+
+Clockwork
+
+Cogs
+
+Composition
+
+Construction
+
+Crafting
+
+Design
+
+Diagrams
+
+Drafting
+
+Fabrication
+
+Forgecraft
+
+Frameworks
+
+Gears
+
+Industry
+
+Infrastructure
+
+Instantiation
+
+Invention
+
+Levers
+
+Linkages
+
+Machinery
+
+Machining
+
+Mechanics
+
+Mechanisms
+
+Mechanomancy
+
+Metallurgy
+
+Metalwork
+
+Metalworking
+
+Overdrive
+
+Realisation
+
+Reification
+
+Schematics
+
+Spellforging
+
+Spellsmithing
+
+Springs
+
+Sprockets
+
+Steel
+
+Structure
+
+Technology
+
+Technomancy
+
+Tools
+
+Torque
+
+the Anvil
+
+the Architect
+
+the Artificer
+
+the Automaton
+
+the Blacksmith
+
+the Configuration
+
+the Construct
+
+the Contraption
+
+the Edifice
+
+the Engine
+
+the Engineer
+
+the Escapement
+
+the Factory
+
+the Flywheel
+
+the Forge
+
+the Forgewright
+
+the Foundry
+
+the Hammer
+
+the Inventor
+
+the Ironworks
+
+the Linchpin
+
+the Machine
+
+the Machinist
+
+the Mainspring
+
+the Maker
+
+the Mallet
+
+the Masterpiece
+
+the Masterwork
+
+the Mechanist
+
+the Pendulum
+
+the Pinion
+
+the Ratchet
+
+the Rivet
+
+the Servo
+
+the Sledgehammer
+
+the Smith
+
+the Smithy
+
+the Spellforge
+
+the Spellsmith
+
+the Tinker
+
+the Tinkerer
+
+the Watchmaker
+
+the Workbench
+%%%%
+Alchemy adj
+
+Alchemical
+
+Altered
+
+Amorphous
+
+Arsenical
+
+Baneful
+
+Caustic
+
+Changed
+
+Changing
+
+Chemical
+
+Contaminated
+
+Differential
+
+Feculent
+
+Fetid
+
+Fluctuating
+
+Glowing
+
+Green
+
+Hyletic
+
+Hylic
+
+Impure
+
+Iotic
+
+Leucotic
+
+Magnum
+
+Melanotic
+
+Mercurial
+
+Metamorphic
+
+Mutable
+
+Mutagenic
+
+Mutated
+
+Nocuous
+
+Noxious
+
+Poisonous
+
+Polluted
+
+Prime
+
+Promethean
+
+Protean
+
+Reconfigured
+
+Refined
+
+Reshaped
+
+Septic
+
+Spagyric
+
+Synthesised
+
+Toxic
+
+Transformed
+
+Transforming
+
+Transmuted
+
+Unrefined
+
+Unstable
+
+Variable
+
+Venomous
+
+Viperous
+
+Viridian
+
+Virous
+
+Virulent
+
+Vitriolic
+
+Xanthotic
+%%%%
+forgecraft adj
+
+Alloyed
+
+Artificial
+
+Artisanal
+
+Assembled
+
+Automatic
+
+Built
+
+Buzzing
+
+Calibrated
+
+Clacking
+
+Clanging
+
+Clanking
+
+Clattering
+
+Clicking
+
+Clinking
+
+Clockwork
+
+Completed
+
+Concrete
+
+Constructed
+
+Crafted
+
+Creaking
+
+Designed
+
+Engineered
+
+Fabricated
+
+Fashioned
+
+Fine-tuned
+
+Forgecrafted
+
+Forged
+
+Forgewrought
+
+Formed
+
+Hammered
+
+Hissing
+
+Industrial
+
+Ingenious
+
+Innovative
+
+Instantiated
+
+Invented
+
+Jangling
+
+Jingling
+
+Machined
+
+Manufactured
+
+Mechanical
+
+Mechanised
+
+Metallic
+
+Metallurgical
+
+Modelled
+
+Physical
+
+Rattling
+
+Realised
+
+Reified
+
+Schematic
+
+Shaped
+
+Spellcrafted
+
+Spellforged
+
+Spellsmithed
+
+Steel
+
+Structural
+
+Synthetic
+
+Technological
+
+Tempered
+
+Thrumming
+
+Ticking
+
+Tooled
+
+Vibrating
+
+Well-oiled
+
+Well-tempered
+
+Whirring
+
+Whizzing
+
+Wind-up
+
+Worked
+
+Wrought
+%%%%
+Alchemy Earth owner
+
+Roxanne
+
+__NONE
+%%%%
+Fire Ice owner
+
+Vv
+
+__NONE
+%%%%
+highlevel Alchemy Necromancy owner
+
+Gloorx Vloq
+
+__NONE
+%%%%
+Alchemy Necromancy owner
+
+Cigotuvi
+
+__NONE
+%%%%
+Air owner
+
+the Cloud Mage
+
+Maxwell
+
+Nikola
+
+__NONE
+%%%%
+highlevel Alchemy owner
+
+Gloorx Vloq
+
+w:30
+@Alchemy owner@
+%%%%
+Alchemy owner
+
+Alistair
+
+Cigotuvi
+
+Olgreb
+
+Eringya
+
+__NONE
+%%%%
+Summoning owner
+
+Mara
+
+__NONE
+%%%%
+Translocation owner
+
+Gell
+
+Golubria
+
+__NONE
+%%%%
+Hexes owner
+
+Yara
+
+w:5
+Terpsichore
+
+Tukima
+
+__NONE
+%%%%

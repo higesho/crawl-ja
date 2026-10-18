@@ -1,0 +1,17 @@
+%%%%
+Fighter
+
+# old en (ja19):
+#   Fighters are equipped with armour and shield, as well as a weapon of their
+#   choice and a potion of might.
+# old ja (ja19):
+#   戦士は鎧と盾を装備し、好みの武器と怪力の薬を携えている。
+# old en (ja16):
+#   Fighters are equipped with armour and shield, as well as a weapon of their
+#   choice and a potion of might.
+# old ja (ja16):
+#   戦士は鎧と盾を装備し、好みの武器と怪力の薬を携えている。
+
+Fighters are equipped with armour and shield, as well as a weapon of their
+choice and potions of might.
+%%%%

@@ -1,0 +1,633 @@
+%%%%
+#### dat/des/portals/bailey.des ###############################
+%%%%
+You hear the roar of battle.
+
+あなたは戦いの鬨の声を聞いた。
+%%%%
+There is an entrance to a bailey on this level. Hurry and find it before the portal closes forever!
+
+この階には濠城への入口がある。ポータルが閉ざされる前に急いで見つけ出すのだ！
+%%%%
+[verb]creaking
+
+キーキー言う
+%%%%
+[noisemaker]portcullis
+
+吊るし門
+%%%%
+$F{The} has been lowered almost to the ground.
+
+吊るし門が地面すれすれまで下げられた。
+%%%%
+The portal closes with a thud.
+
+ポータルは重い音と共に閉じられた。
+%%%%
+#### dat/des/portals/bazzar.des ###############################
+%%%%
+You hear coins being counted.
+
+あなたはコインを数える声を耳にした。
+%%%%
+An interdimensional caravan has stopped on this level and set up a bazaar. Hurry and find its entrance before they move on!
+
+次元を彷徨う隊商がこの階に留まって市場を開いている。彼らが移動する前に急いで見つけ出すのだ！
+%%%%
+You hear the last, dying notes of the bell.
+
+あなたは鐘の音が止まるのを聞いた。
+%%%%
+[verb]tolling
+
+ガラガラ鳴る
+%%%%
+[noisemaker]bell
+
+鐘
+%%%%
+The gate to the bazaar disappears!
+
+バザールへと続く門は消滅した！
+%%%%
+[feature]flickering gateway to a bazaar
+
+バザールへ続くきらきら光る門
+%%%%
+[feature]wall of crystal
+
+水晶の壁
+%%%%
+#### dat/des/portals/desolation.des ###########################
+%%%%
+You hear a distant wind.
+
+あなたは遠くの風の音を耳にした。
+%%%%
+There is a portal to the Desolation of Salt on this level. Hurry and find it before the gateway collapses!
+
+この階には塩の荒野に続くポータルがある。崩壊する前に急いで見つけ出すのだ！
+%%%%
+The wind is rapidly growing quiet.
+
+風の音は急に鳴り止んだ。
+%%%%
+[verb]whistling
+
+ヒュウヒュウと鳴く
+%%%%
+[noisemaker]wind
+
+風
+%%%%
+The gateway collapses.
+
+門は崩れ落ちた。
+%%%%
+[feature]ruined idol
+
+崩れ去った偶像
+%%%%
+#### dat/des/portals/icecave.des ##############################
+%%%%
+You feel a wave of frost pass over you.
+
+あなたは冷気の波を感じた。
+%%%%
+There is an entrance to an ice cave on this level. Hurry and find it before the portal melts!
+
+この階には氷の洞穴への入り口がある。ポータルが溶ける前に急いで見つけ出すのだ！
+%%%%
+The crackling of melting ice is subsiding rapidly.
+
+溶ける氷がピキピキ言う音が突然止まった。
+%%%%
+[verb]crackling
+
+ピキピキ言う
+%%%%
+[noisemaker]melting archway
+
+溶ける氷のアーチ
+%%%%
+The archway melts and disappears.
+
+アーチは溶けて消滅した。
+%%%%
+[feature]ice covered rock wall
+
+氷で覆われた岩壁
+%%%%
+[feature]ice choked empty arch of ancient stone
+
+氷に閉ざされている古代の石で造られたアーチ
+%%%%
+[feature]Some ice crusted shallow water
+
+氷の浮かんだ浅い水脈
+%%%%
+[feature]Some ice crusted deep water
+
+氷の浮かんだ深い水脈
+%%%%
+#### dat/des/portals/lab.des ##################################
+%%%%
+You hear a distant snort.
+
+遠くから牛の鼻息が聞こえてきた。
+%%%%
+Hark! There is an entrance to a minotaur's labyrinth on this level. Find the entrance quickly before the gate is sealed!
+
+この階にはミノタウロスの迷宮への入り口がある。門が閉ざされる前に急いで入り口を見つけるのだ！
+%%%%
+You hear the last, dying ticks of the clock.
+
+あなたは時計のカチカチ言う音が止まるのを聞いた。
+%%%%
+[verb]ticking
+
+カチカチ言う
+%%%%
+[noisemaker]clock
+
+時計
+%%%%
+#### dat/des/portals/ossuary.des ##############################
+%%%%
+You hear the hiss of flowing sand.
+
+あなたは砂がさらさら言う音を聞いた。
+%%%%
+There is an entrance to an ossuary on this level. Hurry and find it before the portal is buried!
+
+この階には納骨堂への入り口がある。ポータルが埋まってしまう前に急いで見つけ出すのだ！
+%%%%
+The hiss of flowing sand is almost imperceptible now.
+
+砂のさらさら言う音はほとんど聞こえなくなった。
+%%%%
+[verb]hiss
+
+さらさら言う
+%%%%
+[noisemaker]avalanche of sand
+
+なだれ落ちる砂
+%%%%
+The hiss of flowing sand is gone.
+
+砂のさらさら言う音は消え去った。
+%%%%
+There is a click, and some walls slide away!
+
+カチッという音がし、壁が開いて道ができた！
+%%%%
+bog
+
+湿った
+%%%%
+#### dat/des/portals/sewer.des ################################
+%%%%
+You hear the sound of rushing water.
+
+あなたは水がどぼどぼと流れる音を聞いた。
+%%%%
+There is an entrance to a sewer on this level. Hurry and find it before the portal rusts away!
+
+この階には下水道への入り口がある。ポータルが錆びてしまう前に急いで見つけ出すのだ！
+%%%%
+You hear the drain falling apart.
+
+あなたは排水口がばらばらに壊れる音を聞いた。
+%%%%
+[verb]rusting
+
+軋む
+%%%%
+[noisemaker]drain
+
+排水口
+%%%%
+The drain falls to bits.
+
+排水口は粉々に砕けた。
+%%%%
+[feature]large window
+
+大きな窓
+%%%%
+sickly
+
+病気にかかった
+%%%%
+malarious
+
+マラリアにかかった
+%%%%
+#### dat/des/portals/volcano.des ##############################
+%%%%
+You feel an oppressive heat about you.
+
+あなたはうだるような熱気を感じた。
+%%%%
+There is an entrance to a volcano on this level. Hurry and find it before the entrance collapses!
+
+この階には火山への入口がある。入口が崩れ落ちる前に急いで見つけ出すのだ！
+%%%%
+The sound of falling rocks suddenly begins to subside.
+
+岩が落ちる音が突然止んだ。
+%%%%
+[verb]rumble
+
+ゴロゴロ言う
+%%%%
+[noisemaker]avalanche of rocks
+
+なだれ落ちる岩石
+%%%%
+There is a deep roar from within the tunnel. Moments later, a river of lava pours forth, sealing it permanently.
+
+隧道の奥から轟音が鳴り響いた。一瞬ののち溶岩の河が流れだし、隧道を永久に塞いでしまった。
+%%%%
+[feature]rock-blocked tunnel
+
+岩でふさがれたトンネル
+%%%%
+The air gets thick with the scent of sulphur.
+
+大気は硫黄の臭いに満たされた。
+%%%%
+In the distance, the volcano erupts with a roar.
+
+遠くの方で火山が轟音と共に噴火した。
+%%%%
+The volcano comes to life with a roar!
+
+火山は轟音と共に活発化した！
+%%%%
+The volcano roars to life, belching forth lava!
+
+火山は轟音と共に活発化し、溶岩が噴出した！
+%%%%
+The volcano erupts! Nearby, a roof collapses.
+
+火山が噴火し、周囲で天井が崩れ落ちた！
+%%%%
+There is a rumble as the volcano erupts. The roof shakes.
+
+火山が噴火するとともに轟音が響き渡り、天井が震えた。
+%%%%
+The ground shudders ominously.
+
+大地が奇妙に振動した。
+%%%%
+In the distance, the volcano explodes with a roar! Lava spreads onto the path.
+
+遠く離れた場所で、火山が轟音と共に爆発した！ 溶岩が行く手に広がった。
+%%%%
+The air is thick with the scent of sulphur.
+
+大気が硫黄の臭いに満たされた。
+%%%%
+There is another distant roar. More lava overflows!
+
+遠くの別の場所でさらに轟音が鳴り響いた。溶岩がさらにあふれ出した！
+%%%%
+The ground moves violently!
+
+大地が鳴動した！
+%%%%
+The volcano erupts again! A thin layer of lava overflows to fill the cavern.
+
+再び火山が爆発した！ 溶岩があふれ出し、洞窟を埋め尽くそうとしている。
+%%%%
+The ground shudders. Some of the lava has hardened enough to walk over!
+
+大地が振動した。溶岩のある箇所では上を歩けるほど冷え固まっている！
+%%%%
+[feature]glass window
+
+ガラス張りの窓
+%%%%
+#### dat/des/portals/trove.des ################################
+%%%%
+to enter a treasure trove
+
+秘密の埋蔵庫に入る
+%%%%
+#### dat/des/portals/wizlab.des ###############################
+%%%%
+You hear the crackle of arcane power.
+
+あなたは秘術の力がパチパチ音を立てるのを聞いた。
+%%%%
+There is an entrance to a wizard's laboratory on this level! Hurry and find it before the portal closes forever!
+
+この階には魔術の研究所への入り口がある。ポータルが閉ざされる前に急いで見つけ出すのだ！
+%%%%
+The crackle of the magical portal is almost imperceptible now.
+
+魔法のポータルがパチパチ鳴る音はほとんど聞こえなくなった。
+%%%%
+[verb]crackle
+
+パチパチ鳴る
+%%%%
+[noisemaker]magical portal
+
+魔法のポータル
+%%%%
+The flow of magic halts.
+
+魔力の流れが停止した。
+%%%%
+The ground shakes.
+
+地面が揺れた。
+%%%%
+There is a faint hissing noise.
+
+かすかなシューッという音がした。
+%%%%
+There is a loud grinding noise.
+
+何かが崩れるような大きな音がした。
+%%%%
+The walls fall away. The entombed are set free!
+
+壁が崩れ、埋葬者が解き放たれた！
+%%%%
+A door appears!
+
+扉が現れた！
+%%%%
+The walls vibrate.
+
+壁が振動した。
+%%%%
+Strange, shadowy figures dance through the air in front of you.
+
+影のように黒い奇妙な人影があなたの目の前に現れ、踊り出した。
+%%%%
+This room is filled with shadowy figures, quietly meditating.
+
+この部屋は静かに瞑想する真っ黒な人影でいっぱいだ。
+%%%%
+Here, spectral monks perform complicated, martial routines; they fade quickly.
+
+幽体の修行僧が複雑な演武をしており、その姿は急速に薄れつつあった。
+%%%%
+Faint laughter comes from somewhere. Too faint to be real.
+
+かすかな笑い声がどこからか聞こえる。それとも幻聴かも？
+%%%%
+There is a faint scream of pain from a crouched figure. This too fades quickly.
+
+かすかな苦痛のうめき声がうずくまった人影から漏れた。その姿は急速に薄れつつある。
+%%%%
+Grey monks gather around the fountain. They do not speak, nor look at each other.
+
+灰色の修行僧が噴水の周りに集っている。彼らは黙し、互いに目を向けない。
+%%%%
+A figure sits in silent meditation. It spots you, gestures wildly, and disappears.
+
+人影が静かに座って瞑想している。それはあなたを見つけるやいなや激しい身振りをし、そして消え失せた。
+%%%%
+antique lich
+
+年季の入ったリッチ
+%%%%
+old memories
+
+太古の記憶
+%%%%
+One of the shadowy figures appears more solid!
+
+人影の一つが立体化した！
+%%%%
+Shadows coalesce into solid form.
+
+影の集まりが立体化した。
+%%%%
+The shadows inhabiting this place fade forever.
+
+ここに住まう人影は永久に消え失せた。
+%%%%
+# Your surroundings suddenly seem different!
+
+# jtrans_dat_des_branches.txtと重複
+%%%%
+# There is a strange hissing noise.
+
+# jtrans_dat_des_branches.txtと重複
+%%%%
+strange machine
+
+奇妙な機械
+%%%%
+Tukima's Studio
+
+ツキマーの工房
+%%%%
+vine covered
+
+蔓に覆われた
+%%%%
+Eringya's Formal Garden
+
+エリンギャの庭園
+%%%%
+[feature]strange rock wall
+
+風変わりな石壁
+%%%%
+[feature]highly decorated stone wall
+
+ごてごてに飾られた石壁
+%%%%
+[feature]rough-hewn floor
+
+荒削りの床
+%%%%
+Doroklohe's Tomb
+
+ドルオクロヒの墳墓
+%%%%
+monstrous
+
+怪物じみた
+%%%%
+deformed
+
+奇形の
+%%%%
+twisted
+
+体のねじれた
+%%%%
+grotesque
+
+グロテスクな
+%%%%
+hideous
+
+見るも恐ろしい姿の
+%%%%
+febrile
+
+熱に浮かされた
+%%%%
+flesh golem
+
+肉のゴーレム
+%%%%
+Cigotuvi's Monster
+
+シゴツヴィの怪物
+%%%%
+Cigotuvi
+
+シゴツヴィ
+%%%%
+[feature]Viscous fluid
+
+粘り気のある液体
+%%%%
+[feature]sinewy wall
+
+筋骨隆々たる肉の壁
+%%%%
+[feature]thin membrane
+
+薄い膜組織の壁
+%%%%
+[feature]pulsating floor
+
+脈打つ床
+%%%%
+fleshy orifice
+
+肉壁の開口部
+%%%%
+You part the %s%s
+
+あなたは%s%sを引き裂いて通り道を作った
+%%%%
+with a squelch!
+
+ガボガボと音を立てながら
+%%%%
+You squeeze the %s%s closed
+
+あなたは%s%sを両側から引っ張って閉じた
+%%%%
+You part the %s%s with a squelch!
+
+あなたはガボガボと音を立てながら%s%sを引き裂いて通り道を作った！
+%%%%
+You squeeze the %s%s closed with a squelch!
+
+あなたはガボガボと音を立てながら%s%sを両側から引っ張って閉じた！
+%%%%
+You reach down and part the %s%s.
+
+あなたは地上に舞い降り、%s%sを引き裂いて通り道を作った。
+%%%%
+You reach down and squeeze the %s%s closed.
+
+あなたは地上に舞い降り、%s%sを両側から引っ張って閉じた。
+%%%%
+You part the %s%s.
+
+あなたは%s%sを引き裂いて通り道を作った。
+%%%%
+You squeeze the %s%s shut.
+
+あなたは%s%sを両側から引っ張って閉じた。
+%%%%
+Cigotuvi's Fleshworks
+
+シゴツヴィの解体場
+%%%%
+conjurer
+
+妖術師
+%%%%
+Iskenderun
+
+イスケンデルン
+%%%%
+Iskenderun's Mystic Tower
+
+イスケンデルンの魔導の塔
+%%%%
+Zonguldrok's Shrine
+
+ゾングルドルックの神殿
+%%%%
+Statue of Wucad Mu
+
+ウカド・ムーの像
+%%%%
+[feature]autumnal tree
+
+紅葉の樹木
+%%%%
+[feature]crumbled stone wall
+
+崩れた石壁
+%%%%
+[feature]strange statue
+
+奇妙な石像
+%%%%
+Wucad Mu's Monastery
+
+ウカド・ムーの修道院
+%%%%
+Golubria
+
+ゴルブリア
+%%%%
+[feature]The dimension's edge
+
+次元の境界線
+%%%%
+The Roulette of Golubria
+
+ゴルブリアのルーレット
+%%%%
+[feature]damp floor
+
+湿っぽい床
+%%%%
+The Chambers of the Cloud Mage
+
+雲烟の魔術師の実験室
+%%%%
+[feature]black wall
+
+真っ黒な壁
+%%%%
+[feature]carved rock wall
+
+彫刻のある岩壁
+%%%%
+The Hall of the Hellbinder
+
+地獄を束ねしものの大広間
+%%%%
+Lunar statue
+
+月世界の像
+%%%%
+Lehudib
+
+レフディブ
+%%%%
+Lehudib's Moon Base
+
+レフディブの月面基地
+%%%%

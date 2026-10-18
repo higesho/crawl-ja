@@ -1,0 +1,125 @@
+%%%%
+potion of curing
+
+治療の薬
+%%%%
+potion of heal wounds
+
+怪我の治療の薬
+%%%%
+potion of haste
+
+スピードの薬
+%%%%
+potion of might
+
+怪力の薬
+%%%%
+potion of agility
+
+器用さの薬
+%%%%
+potion of brilliance
+
+知性の薬
+%%%%
+# TAG_MAJOR_VERSION == 34
+potion of gain strength
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+potion of gain dexterity
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+potion of gain intelligence
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+potion of strong poison
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+potion of porridge
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+potion of slowing
+
+%%%%
+potion of flight
+
+飛行の薬
+%%%%
+# TAG_MAJOR_VERSION == 34
+potion of poison
+
+%%%%
+potion of cancellation
+
+無力化の薬
+%%%%
+potion of ambrosia
+
+アンブロシアの薬
+%%%%
+potion of invisibility
+
+透明化の薬
+%%%%
+potion of degeneration
+
+能力低下の薬
+%%%%
+# TAG_MAJOR_VERSION == 34
+potion of decay
+
+%%%%
+potion of experience
+
+経験の薬
+%%%%
+potion of magic
+
+魔力の薬
+%%%%
+# TAG_MAJOR_VERSION == 34
+potion of restore abilities
+
+%%%%
+potion of berserk rage
+
+狂戦士の薬
+%%%%
+potion of cure mutation
+
+突然変異治療の薬
+%%%%
+potion of mutation
+
+突然変異の薬
+%%%%
+potion of blood
+
+血液の薬
+%%%%
+# TAG_MAJOR_VERSION == 34
+potion of coagulated blood
+
+%%%%
+potion of resistance
+
+耐性の薬
+%%%%
+potion of lignification
+
+樹木化の薬
+%%%%
+potion of beneficial mutation
+
+良性突然変異の薬
+%%%%
+potion of bugginess
+
+# 訳不要
+%%%%

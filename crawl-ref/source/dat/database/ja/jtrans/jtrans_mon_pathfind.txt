@@ -1,0 +1,53 @@
+%%%%
+The monster is already there!
+
+モンスターはすでにそこにいる！
+%%%%
+Couldn't find a path from (%d,%d) to (%d,%d).
+
+座標(%d, %d)から(%d, %d)への経路を探索できません。
+%%%%
+#ifdef DEBUG_PATHFIND
+Looking at neighbour (%d,%d)
+
+%%%%
+#ifdef DEBUG_PATHFIND
+old dist: %d, new dist: %d, infinite: %d
+
+%%%%
+#ifdef DEBUG_PATHFIND
+Adding (%d,%d) to hash (total dist = %d)
+
+%%%%
+#ifdef DEBUG_PATHFIND
+Improving (%d,%d) to total dist %d
+
+%%%%
+#ifdef DEBUG_PATHFIND
+Arrived at target.
+
+%%%%
+#ifdef DEBUG_PATHFIND
+Returning (%d, %d) as best pos with total dist %d.
+
+%%%%
+#ifdef DEBUG_PATHFIND
+No positions for path length %d.
+
+%%%%
+#ifdef DEBUG_PATHFIND
+Backtracking...
+
+%%%%
+#ifdef DEBUG_PATHFIND
+prev: (%d, %d), pos: (%d, %d)
+
+%%%%
+#ifdef DEBUG_PATHFIND
+Waypoints:
+
+%%%%
+#ifdef DEBUG_PATHFIND
+waypoint: (%d, %d)
+
+%%%%

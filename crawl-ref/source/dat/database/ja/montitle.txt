@@ -1,0 +1,385 @@
+%%%%
+Agnes title
+
+# en:
+#   Agnes the Wanderer
+放浪者『アグネス』
+%%%%
+Aizul title
+
+# en:
+#   Aizul the Neglectful Guardian
+怠慢なる番人『アイズル』
+%%%%
+Antaeus title
+
+# en:
+#   Antaeus, Guardian of Cocytus
+コキュートスの番人『アンテウス』
+%%%%
+Asmodeus title
+
+# en:
+#   Asmodeus, Prince of Gehenna
+ゲヘナの王子『アスモデウス』
+%%%%
+Asterion title
+
+# en:
+#   Asterion the Fallen King
+堕落せし王『アステリオン』
+%%%%
+Azrael title
+
+# en:
+#   Azrael the Boundless Flame
+永劫の炎の『アズラエル』
+%%%%
+Bai Suzhen title
+
+# en:
+#   Bai Suzhen, Madame White Snake
+白蛇の婦人『白娘子』
+%%%%
+Boris title
+
+# en:
+#   Boris, Master of Life and Death
+生と死の熟達者『ボリス』
+%%%%
+Cerebov title
+
+# en:
+#   Cerebov, Demon Lord of Fire and Steel
+炎と鉄の魔王『セレボブ』
+%%%%
+Chuck title
+
+# en:
+#   Chuck the Collector
+収集者『チャック』
+%%%%
+Crazy Yiuf title
+
+# en:
+#   Crazy Yiuf the Enlightened
+啓蒙されし『狂人ヰゥフ』
+%%%%
+Dispater title
+
+# en:
+#   Dispater, Lord of the Iron City
+鉄の都の王『ディスペータ』
+%%%%
+Dissolution title
+
+# en:
+#   Dissolution, High Priest of Jiyva
+ジーヴァの大司祭『溶解者』
+%%%%
+Donald title
+
+# en:
+#   Donald the Adventurer
+冒険者『ドナルド』
+%%%%
+Dowan title
+
+# en:
+#   Dowan, Brother of Duvessa
+デュヴェッサの双子の兄『ドウェン』
+%%%%
+Duvessa title
+
+# en:
+#   Duvessa, Sister of Dowan
+ドウェンの双子の妹『デュヴェッサ』
+%%%%
+Edmund title
+
+# en:
+#   Edmund the Younger
+シグムンドの弟『エドマンド』
+%%%%
+Ereshkigal title
+
+# en:
+#   Ereshkigal, Queen of Tartarus
+タルタロスの女王『エレシュキガル』
+%%%%
+Erica title
+
+# en:
+#   Erica the Fiery-Tempered
+燃えさかる気性の『エリカ』
+%%%%
+Erolcha title
+
+# en:
+#   Erolcha the Cunning
+狡猾なる『エロルカ』
+%%%%
+Eustachio title
+
+# en:
+#   Eustachio the Magnificent
+偉大なる『エウスタキオ』
+%%%%
+Fannar title
+
+# en:
+#   Fannar the Cold-Hearted
+冷血なる『ファンナール』
+%%%%
+Frances title
+
+# en:
+#   Frances, Duchess of Pandemonium
+パンデモニウムの女公爵『フランセス』
+%%%%
+Frederick title
+
+# en:
+#   Frederick the Flawless
+完全無欠の『フレデリック』
+%%%%
+Gastronok title
+
+# en:
+#   Gastronok the Ponderous
+重厚なる『ガストロノク』
+%%%%
+Geryon title
+
+# en:
+#   Geryon, Gatekeeper of Hell
+地獄の門番『ゲリュオン』
+%%%%
+Gloorx Vloq title
+
+# en:
+#   Gloorx Vloq, Demon Lord of Darkness
+暗闇の魔王『グルオルクス・ヴロック』
+%%%%
+Grum title
+
+# en:
+#   Grum the Hunter
+狩人『グルム』
+%%%%
+Harold title
+
+# en:
+#   Harold the Weathered
+年月を重ねしもの『ハロルド』
+%%%%
+Ignacio title
+
+# en:
+#   Ignacio, Master of Excruciating Pain
+処刑の達人『イグナシオ』
+%%%%
+Ilsuiw title
+
+# en:
+#   Ilsuiw, Witch of the Tides
+海流の魔女『イルスィウ』
+%%%%
+Jessica title
+
+# en:
+#   Jessica the Apprentice Sorceress
+見習い魔法使い『ジェシカ』
+%%%%
+Jorgrun title
+
+# en:
+#   Jorgrun Earthshaker
+大地を揺らす者『ジョーグルン』
+%%%%
+Jory title
+
+# en:
+#   Jory the Bloodstained Count
+血まみれ伯爵『ジョリー』
+%%%%
+Joseph title
+
+# en:
+#   Joseph, a Mercenary
+傭兵『ジョセフ』
+%%%%
+Josephine title
+
+# en:
+#   Josephine the Decaying Necromancer
+腐敗せる死人使い『ジョセフィーヌ』
+%%%%
+Khufu title
+
+# en:
+#   Khufu the Undying Pharaoh
+不滅のファラオ『クフ王』
+%%%%
+Kirke title
+
+# en:
+#   Kirke, Weaver of Myths
+秘蹟の編み手『キルケー』
+%%%%
+Lom Lobon title
+
+# en:
+#   Lom Lobon, Demon Lord of Forbidden Knowledge
+禁じられし知識の魔王『ロム・ロボン』
+%%%%
+Louise title
+
+# en:
+#   Louise the Corrupted
+崩壊せし者『ルイーズ』
+%%%%
+Mara title
+
+# en:
+#   Mara, Lord of Illusions
+幻影の王『マーラ』
+%%%%
+Margery title
+
+# en:
+#   Margery the Dragonslayer
+ドラゴン殺し『マージェリー』
+%%%%
+Maurice title
+
+# en:
+#   Maurice the Thief
+盗賊『モーリス』
+%%%%
+Menkaure title
+
+# en:
+#   Menkaure, Prince of Dust
+塵の貴公子『メンカウラー王』
+%%%%
+Mennas title
+
+# en:
+#   Mennas, the Voice of Zin
+ジンの代弁者『メナス』
+%%%%
+Mnoleg title
+
+# en:
+#   Mnoleg, Demon Lord of Chaos
+混沌の魔王『ムノレグ』
+%%%%
+Murray title
+
+# en:
+#   Murray the Demonic Talking Skull
+物言う髑髏『マーリー』
+%%%%
+Natasha title
+
+# en:
+#   Natasha, Servant of Life and Death
+生と死の下僕『ナターシャ』
+%%%%
+Nellie title
+
+# en:
+#   Nellie, Star of the Show
+興業の星『ネリー』
+%%%%
+Nessos title
+
+# en:
+#   Nessos the Markscentaur
+射撃の名手『ネッソス』
+%%%%
+Nikola title
+
+# en:
+#   Nikola the Mad Inventor
+狂気の発明者『ニコラ』
+%%%%
+Polyphemus title
+
+# en:
+#   Polyphemus the Watchful Shepherd
+目敏き羊飼い『ポリュペモス』
+%%%%
+Robin title
+
+# en:
+#   Robin of the Strong Arm
+剛腕の『ロビン』
+%%%%
+Roxanne title
+
+# en:
+#   Roxanne, Geomancer Emeritus
+名誉地霊術師『ロクサーヌ』
+%%%%
+Rupert title
+
+# en:
+#   Rupert the Wild
+野生児『ルパート』
+%%%%
+Saint Roka title
+
+# en:
+#   Saint Roka the Messiah
+救世主『聖者ロカ』
+%%%%
+Sigmund title
+
+# en:
+#   Sigmund the Dreaded
+恐怖の『シグムンド』
+%%%%
+Snorg title
+
+# en:
+#   Snorg the Insatiable
+強欲なる『スノーグ』
+%%%%
+Sojobo title
+
+# en:
+#   Sojobo, Queen of Tengu
+天狗の女王『僧正坊』
+%%%%
+Sonja title
+
+# en:
+#   Sonja, the Graceful Assassin
+優美なる暗殺者『ソーニャ』
+%%%%
+Tiamat title
+
+# en:
+#   Tiamat, Avatar of the Dragonlord
+竜王の化身『ティアマト』
+%%%%
+Urug title
+
+# en:
+#   Urug the Orcish Ballista
+オークの槍投手『ウルグ』
+%%%%
+Vashnia title
+
+# en:
+#   Vashnia the Elite Marksnaga
+ナーガの精鋭射手『ヴァシュニア』
+%%%%
+Xtahua title
+
+# en:
+#   Xtahua the Ancient
+古代竜『ザッハ』
+%%%%

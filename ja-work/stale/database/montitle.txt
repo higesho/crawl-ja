@@ -1,0 +1,64 @@
+%%%%
+Arachne title
+
+# old en (ja16):
+#   Arachne the Weaver
+# old ja (ja16):
+#   糸の編み手『アラクネ』
+
+Arachne the Outcast
+%%%%
+Ijyb title
+
+# old en (ja16):
+#   Ijyb the Twisted Goblin
+# old ja (ja16):
+#   捻じ曲がりしゴブリン『イジェィブ』
+
+Ijyb the Inquisitive
+%%%%
+Nergalle title
+
+# old en (ja16):
+#   Nergalle the Soulbinder
+# old ja (ja16):
+#   魂を縛る者『ネルガレ』
+
+Nergalle, Lorekeeper of the Fallen
+%%%%
+Norris title
+
+# old en (ja16):
+#   Norris the Nihilist
+# old ja (ja16):
+#   虚無主義者『ノリス』
+
+Norris the Philosopher
+%%%%
+Pikel title
+
+# old en (ja16):
+#   Pikel the Slaver
+# old ja (ja16):
+#   奴隷使い『ピケル』
+
+Pikel, Merchant of Souls
+%%%%
+Terence title
+
+# old en (ja16):
+#   Terence the Incautious
+# old ja (ja16):
+#   うっかり者『テレンス』
+
+Terence the Veteran
+%%%%
+Wiglaf title
+
+# old en (ja16):
+#   Wiglaf the Dwarf
+# old ja (ja16):
+#   ドワーフの『ウィーグラフ』
+
+Wiglaf the Gunnerdwarf
+%%%%

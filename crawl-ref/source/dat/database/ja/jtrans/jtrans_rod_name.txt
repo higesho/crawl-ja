@@ -1,0 +1,45 @@
+%%%%
+lightning rod
+
+稲妻のロッド
+%%%%
+iron rod
+
+鉄弾のロッド
+%%%%
+# TAG_MAJOR_VERSION == 34
+rod of the swarm
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+rod of warding
+
+%%%%
+rod of shadows
+
+影の怪物のロッド
+%%%%
+# TAG_MAJOR_VERSION == 34
+rod of venom
+
+%%%%
+rod of inaccuracy
+
+不正確の矢のロッド
+%%%%
+rod of ignition
+
+燃焼のロッド
+%%%%
+rod of clouds
+
+雲烟のロッド
+%%%%
+# TAG_MAJOR_VERSION == 34
+rod of destruction
+
+%%%%
+rod of bugginess
+
+# 訳不要
+%%%%

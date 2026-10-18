@@ -1,0 +1,203 @@
+%%%%
+The ghost fades into the shadows.
+
+幽霊が影の中から現れた。
+%%%%
+Your summoned allies are left behind.
+
+召喚されたあなたの従者たちは置き去りにされた。
+%%%%
+Your summoned ally is left behind.
+
+召喚されたあなたの従者は置き去りにされた。
+%%%%
+Your mindless thralls stay behind.
+
+あなたの知性なき奴隷たちは置き去りにされた。
+%%%%
+Your mindless thrall stays behind.
+
+あなたの知性なき奴隷は置き去りにされた。
+%%%%
+'s fungi set to work.
+
+の胞子が動き出した。
+%%%%
+#ifdef DEBUG_LEVEL_LOAD
+Loading... branch: %d, level: %d
+
+%%%%
+Level annotation: %s
+
+階層の特記事項: %s
+%%%%
+#ifdef DEBUG_LEVEL_LOAD
+global_info:: num_visits: %d, levels_seen: %d
+
+%%%%
+#ifdef DEBUG_LEVEL_LOAD
+curr_PlaceInfo:: num_visits: %d, levels_seen: %d
+
+%%%%
+%s slides away from you right after you %s it!
+
+あなたが%sを%sやいなや、それは滑るように移動して遠ざかった。
+%%%%
+%s settles down.
+
+%sはその場で動かなくなった。
+%%%%
+# Save macros?
+
+# jtrans_end.txtと重複
+%%%%
+# Char dump unsuccessful! Sorry about that.
+
+# jtrans_end.txtと重複
+%%%%
+See you soon, %s!
+
+また会いましょう、%s！
+%%%%
+No ghost files for this level.
+
+# for wizard
+%%%%
+Ghost file invalidated before read.
+
+# for wizard
+%%%%
+Broken bones file: %s
+
+# for wizard
+%%%%
+Refusing to load buggy ghost from file "%s"!
+
+# for wizard
+%%%%
+#ifdef BONES_DIAGNOSTICS
+Loaded ghost file with %u ghost(s)
+
+# for wizard
+%%%%
+#ifdef BONES_DIAGNOSTICS
+Placed ghost is not alive.
+
+# for wizard
+%%%%
+#ifdef BONES_DIAGNOSTICS
+Placed ghost is not MONS_PLAYER_GHOST, but %s
+
+# for wizard
+%%%%
+#ifdef BONES_DIAGNOSTICS
+Unable to place %u ghost(s)
+
+# for wizard
+%%%%
+This game comes from an incompatible version of Crawl (%s).
+
+このセーブデータは互換性のないバージョン(%s)のものです。
+%%%%
+Unless you reinstall that version, you can't load it.
+
+該当するバージョンをインストールしないと読み込みできません。
+%%%%
+Do you want to DELETE that game and start a new one?
+
+このセーブデータを放棄して新たにゲームを開始しますか？
+%%%%
+Cannot load an incompatible save from version %s
+
+# 訳不要
+%%%%
+This game comes from a previous release of Crawl. If you load it now, you won't be able to go back. Continue?
+
+このセーブデータは以前のバージョンのものです。今これを読み込んだ場合、元のバージョンでは動かせません。続行しますか？
+%%%%
+Please reinstall the stable version then.
+
+それでは、安定バージョンを再インストールしてください。
+%%%%
+Save data is invalid.
+
+不正なセーブデータです。
+%%%%
+There exists a save by that name but it appears to be invalid.\n(Error: %s). Do you want to delete it?
+
+その名前で作られたセーブデータが存在しますが、不正な形式のようです。
+(Error: %s) 削除しますか？
+%%%%
+Aborting; you may try to recover it somehow.
+
+# 訳不要
+%%%%
+Save file corrupted (info > 1KB)
+
+# 訳不要
+%%%%
+Incompatible character data
+
+# 訳不要
+%%%%
+Save file corrupted
+
+# 訳不要
+%%%%
+File is corrupt.
+
+ファイルが破損しています。
+%%%%
+is not compatible with save files from older versions. You can continue your game with the appropriate older version, or you can delete it and start a new game.
+
+は古いバージョンのセーブデータと互換性を持ちません。
+適したバージョンのゲームで開始するか、セーブデータを削除して新たにゲームを開始することもできます。
+%%%%
+Major version mismatch: %d (want %d).
+
+# 訳不要
+%%%%
+Minor version %d is negative!
+
+# 訳不要
+%%%%
+Minor version mismatch: %d (want <= %d).
+
+# 訳不要
+%%%%
+The save is from a newer version.
+
+新しいバージョンのセーブデータです。
+%%%%
+truncated save chunk (%s)
+
+# 訳不要
+%%%%
+Ghost file "%s" seems to be invalid (short read); deleting it.
+
+# 訳不要
+%%%%
+#ifdef BONES_DIAGNOSTICS
+Could not find any ghosts for this level.
+
+%%%%
+#ifdef BONES_DIAGNOSTICS
+Too many ghosts for this level already!
+
+%%%%
+#ifdef BONES_DIAGNOSTICS
+Could not open file to save ghosts.
+
+%%%%
+#ifdef BONES_DIAGNOSTICS
+Saved ghosts (%s).
+
+%%%%
+ERROR: Could not lock file %s
+
+# 訳不要
+%%%%
+Unable to open lock file "%s"
+
+# 訳不要
+%%%%

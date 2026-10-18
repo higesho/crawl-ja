@@ -1,0 +1,533 @@
+%%%%
+################################################################
+#   feature-data.h
+################################################################
+%%%%
+[feature]explore horizon
+
+# 訳不要
+%%%%
+[feature]closed door
+
+<closed door>
+%%%%
+[feature]runed door
+
+<Runed door>
+%%%%
+[feature]sealed door
+
+魔法で封印された扉
+%%%%
+[feature]tree
+
+樹木
+%%%%
+[feature]metal wall
+
+金属の壁
+%%%%
+[feature]crystal wall
+
+水晶の壁
+%%%%
+[feature]rock wall
+
+岩の壁
+%%%%
+[feature]slime covered rock wall
+
+スライムに覆われた岩の壁
+%%%%
+[feature]stone wall
+
+石の壁
+%%%%
+[feature]unnaturally hard rock wall
+
+異常に硬い岩の壁
+%%%%
+[feature]translucent rock wall
+
+半透明の岩の壁
+%%%%
+[feature]translucent stone wall
+
+半透明の石の壁
+%%%%
+[feature]translucent unnaturally hard rock wall
+
+異常に硬い半透明の岩の壁
+%%%%
+[feature]iron grate
+
+鉄格子
+%%%%
+[feature]the open sea
+
+広大な海
+%%%%
+[feature]the endless lava
+
+終わりなき溶岩沼
+%%%%
+[feature]endless expanse of salt
+
+終わりなき塩の平原
+%%%%
+[feature]orcish idol
+
+オークの像
+%%%%
+[feature]granite statue
+
+花崗岩の像
+%%%%
+[feature]portal to somewhere
+
+どこかに続くポータル
+%%%%
+[feature]some lava
+
+溶岩
+%%%%
+[feature]some deep water
+
+深い水脈
+%%%%
+[feature]some shallow water
+
+浅い水脈
+%%%%
+[feature]floor
+
+地面
+%%%%
+[feature]collapsed entrance
+
+崩壊した入口
+%%%%
+[feature]open door
+
+開かれた扉
+%%%%
+[feature]mechanical trap
+
+機械仕掛けの罠
+%%%%
+[feature]teleport trap
+
+<teleport trap>
+%%%%
+# TAG_MAJOR_VERSION == 34
+[feature]shadow trap
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[feature]dormant shadow trap
+
+%%%%
+[feature]alarm trap
+
+<alarm trap>
+%%%%
+[feature]Zot trap
+
+<Zot trap>
+%%%%
+[feature]passage of Golubria
+
+<passage of Golubria>
+%%%%
+[feature]shaft
+
+<shaft>
+%%%%
+[feature]web
+
+<web>
+%%%%
+[feature]shop
+
+店
+%%%%
+[feature]abandoned shop
+
+放棄された店
+%%%%
+[feature]empty arch of ancient stone
+
+古代の石で造られたアーチ
+%%%%
+[feature]detected shop or portal
+
+感知済みの店またはポータル
+%%%%
+[feature]stone staircase leading down
+
+石の下り階段
+%%%%
+[feature]stone staircase leading up
+
+石の上り階段
+%%%%
+[feature]escape hatch in the floor
+
+床の脱出ハッチ
+%%%%
+[feature]escape hatch in the ceiling
+
+天井の脱出ハッチ
+%%%%
+[feature]labyrinth entrance
+
+ラビリンスへの入口
+%%%%
+[feature]gateway to the Iron City of Dis
+
+鉄の都ディースへの門
+%%%%
+[feature]gateway to the ashen valley of Gehenna
+
+灰の谷ゲヘナへの門
+%%%%
+[feature]gateway to the freezing wastes of Cocytus
+
+コキュートスの凍れる荒野への門
+%%%%
+[feature]gateway to the decaying netherworld of Tartarus
+
+タルタロスの腐朽地獄への門
+%%%%
+[feature]gateway to Hell
+
+地獄への門
+%%%%
+[feature]gateway back into the Dungeon
+
+ダンジョンへ戻る門
+%%%%
+[feature]one-way gate to the infinite horrors of the Abyss
+
+アビスの無限地獄へと続く一方通行の門
+%%%%
+[feature]exit through the horrors of the Abyss
+
+アビスを通じた脱出の門
+%%%%
+[feature]gateway leading out of the Abyss
+
+アビスからの出口の門
+%%%%
+[feature]one-way gate leading to the halls of Pandemonium
+
+パンデモニウムの大広間へと続く一方通行の門
+%%%%
+[feature]gate leading to another region of Pandemonium
+
+パンデモニウムの別領域への門
+%%%%
+[feature]gate leading out of Pandemonium
+
+パンデモニウムからの出口の門
+%%%%
+[feature]gate to the Vaults
+
+宝物庫への門
+%%%%
+[feature]gate leading back out of this place
+
+ここから脱出する門
+%%%%
+[feature]gate to the Realm of Zot
+
+ゾットの領域への門
+%%%%
+# TAG_MAJOR_VERSION == 34
+[feature]gate leading to a distant place
+
+%%%%
+[feature]gateway to a ziggurat
+
+ジグラットへの門
+%%%%
+[feature]gateway to a bazaar
+
+バザールへと続く門
+%%%%
+[feature]portal to a secret trove of treasure
+
+秘密の埋蔵庫へのポータル
+%%%%
+[feature]glowing drain
+
+輝く排水口
+%%%%
+[feature]sand-covered staircase
+
+砂に覆われた階段
+%%%%
+[feature]flagged portal
+
+旗の立てられたポータル
+%%%%
+[feature]frozen archway
+
+凍てついたアーチ
+%%%%
+[feature]dark tunnel
+
+薄暗い隧道
+%%%%
+[feature]magical portal
+
+魔法のポータル
+%%%%
+[feature]ruined gateway
+
+荒れ果てた門
+%%%%
+[feature]ice covered gate leading back out of this place
+
+ここから脱出する氷に覆われた門
+%%%%
+[feature]rocky tunnel leading out of this place
+
+ここから脱出する岩のトンネル
+%%%%
+[feature]portal leading out of this place
+
+ここから脱出するポータル
+%%%%
+[feature]staircase leading out of the dungeon
+
+ダンジョンの出口の階段
+%%%%
+[feature]staircase to the Slime Pits
+
+スライムの穴ぐらへの階段
+%%%%
+[feature]staircase back to the Lair
+
+獣の棲み処へ戻る階段
+%%%%
+[feature]staircase to the Orcish Mines
+
+オークの坑道への階段
+%%%%
+[feature]staircase back to the Dungeon
+
+ダンジョンへ戻る出口の階段
+%%%%
+# TAG_MAJOR_VERSION == 34
+[feature]staircase to the Dwarven Hall
+
+ドワーフの大広間へ戻る出口の階段
+%%%%
+# TAG_MAJOR_VERSION == 34
+[feature]staircase to the Enchanted Forest
+
+魔法の森へ戻る出口の階段
+%%%%
+# TAG_MAJOR_VERSION == 34
+[feature]staircase to the Hall of Blades
+
+刃の広間へ戻る出口の階段
+%%%%
+# TAG_MAJOR_VERSION == 34
+[feature]staircase back to the Vaults
+
+宝物庫へ戻る出口の階段
+%%%%
+[feature]staircase to the Lair
+
+獣の棲み処への階段
+%%%%
+[feature]staircase to the Crypt
+
+地下墓地への階段
+%%%%
+[feature]staircase to the Ecumenical Temple
+
+諸宗派の寺院への階段
+%%%%
+[feature]staircase to the Snake Pit
+
+蛇穴への階段
+%%%%
+[feature]staircase to the Elven Halls
+
+エルフの大広間への階段
+%%%%
+[feature]staircase back to the Mines
+
+オークの坑道へ戻る出口の階段
+%%%%
+[feature]staircase to the Tomb
+
+霊廟への階段
+%%%%
+[feature]staircase back to the Crypt
+
+地下墓地へ戻る出口の階段
+%%%%
+[feature]staircase to the Swamp
+
+沼への階段
+%%%%
+[feature]staircase to the Shoals
+
+浅瀬への階段
+%%%%
+[feature]hole to the Spider Nest
+
+蜘蛛の穴ぐらの入口
+%%%%
+[feature]crawl-hole back to the Lair
+
+獣の棲み処へ戻る出口
+%%%%
+[feature]staircase to the Depths
+
+深層への階段
+%%%%
+[feature]detected altar
+
+感知済みのなんらかの祭壇
+%%%%
+[feature]glowing silver altar of Zin
+
+『ジン』の輝く銀の祭壇
+%%%%
+[feature]glowing golden altar of the Shining One
+
+『輝けるもの』の輝く黄金の祭壇
+%%%%
+[feature]ancient bone altar of Kikubaaqudgha
+
+『キクバークッグァ』の古代の骨で造られた祭壇
+%%%%
+[feature]basalt altar of Yredelemnul
+
+『イレデレンヌル』の玄武岩で造られた祭壇
+%%%%
+[feature]shimmering altar of Xom
+
+『ゾム』の微光が揺らめく祭壇
+%%%%
+[feature]radiant altar of Vehumet
+
+『ヴェフメット』の輝きを放つ祭壇
+%%%%
+[feature]iron altar of Okawaru
+
+『オカワル』の鉄の祭壇
+%%%%
+[feature]burning altar of Makhleb
+
+『マクレブ』の炎を上げる祭壇
+%%%%
+[feature]deep blue altar of Sif Muna
+
+『シフ・ムーナ』の紺碧の祭壇
+%%%%
+[feature]bloodstained altar of Trog
+
+『トログ』の血に染まった祭壇
+%%%%
+[feature]sparkling altar of Nemelex Xobeh
+
+『ネメレクス・ソベー』の煌く祭壇
+%%%%
+[feature]white marble altar of Elyvilon
+
+『エリヴィロン』の白い大理石の祭壇
+%%%%
+[feature]corrupted altar of Lugonu
+
+『ルゴヌ』の崩壊した祭壇
+%%%%
+[feature]roughly hewn altar of Beogh
+
+『ベオ』の乱暴に刻み造られた祭壇
+%%%%
+[feature]viscous altar of Jiyva
+
+『ジーヴァ』の粘着性の祭壇
+%%%%
+[feature]blossoming altar of Fedhas
+
+『フェダス』の芽吹きに覆われた祭壇
+%%%%
+[feature]snail-covered altar of Cheibriados
+
+『ケイブリアドス』の蝸牛にまみれた祭壇
+%%%%
+[feature]shattered altar of Ashenzari
+
+『アシェンザリ』の砕け落ちた祭壇
+%%%%
+[feature]shadowy altar of Dithmenos
+
+『ディスメノス』の影のように黒い祭壇
+%%%%
+[feature]opulent altar of Gozag
+
+『ゴザーグ』の絢爛たる祭壇
+%%%%
+[feature]stormy altar of Qazlal
+
+『クァズラル』の嵐を巻き起こす祭壇
+%%%%
+[feature]sacrificial altar of Ru
+
+『ルー』の生贄の祭壇
+%%%%
+[feature]faded altar of an unknown god
+
+どの神のものだか分からない寂れた祭壇
+%%%%
+[feature]oddly glowing altar of Pakellas
+
+『パケラス』の奇妙に輝く祭壇
+%%%%
+[feature]hide-covered altar of Uskayaw
+
+『ウスカヤー』の獣の皮に覆われた祭壇
+%%%%
+[feature]hazy altar of Hepliaklqana
+
+『ヘプリアクルカナ』の靄がかかった祭壇
+%%%%
+[feature]fountain of clear blue water
+
+澄んだ青い水の噴水
+%%%%
+[feature]fountain of sparkling water
+
+きらめく水の噴水
+%%%%
+[feature]fountain of blood
+
+血の噴き出す噴水
+%%%%
+[feature]dry fountain
+
+涸れた噴水
+%%%%
+[feature]short-range portal
+
+短距離のポータル
+%%%%
+[feature]sealed passage leading up
+
+魔法で封印された上り経路
+%%%%
+[feature]sealed passage leading down
+
+魔法で封印された下り経路
+%%%%
+[feature]gateway leading deeper into the Abyss
+
+アビスのさらなる深層へと続く門
+%%%%

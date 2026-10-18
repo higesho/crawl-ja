@@ -1,0 +1,49 @@
+%%%%
+struggles to leap free from constriction.
+
+は拘束から逃れようと跳躍した。
+%%%%
+struggles to blink free from constriction.
+
+は拘束から逃れようと瞬間移動した。
+%%%%
+leap free!
+
+は跳躍して自由になった！
+%%%%
+leap!
+
+は跳躍した！
+%%%%
+blink free!
+
+は瞬間移動して自由になった！
+%%%%
+blink!
+
+は瞬間移動した！
+%%%%
+seems more stable.
+
+の存在は安定したようだ。
+%%%%
+looks slightly unstable.
+
+は少し不確定になったようだ。
+%%%%
+flickers for a moment.
+
+の姿は一瞬ちらついた。
+%%%%
+disappears!
+
+は姿を消した！
+%%%%
+reappears nearby!
+
+はすぐそばに再び出現した！
+%%%%
+appears out of thin air!
+
+は何もない空中から現れた！
+%%%%

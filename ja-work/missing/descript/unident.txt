@@ -1,0 +1,5 @@
+%%%%
+book
+
+An arcane textbook containing magical spells of unknown origin.
+%%%%

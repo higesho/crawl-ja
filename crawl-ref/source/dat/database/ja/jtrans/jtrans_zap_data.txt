@@ -1,0 +1,213 @@
+%%%%
+[zap]puff of flame
+
+炎の塊
+%%%%
+[zap]puff of frost
+
+冷気の塊
+%%%%
+# [zap]stinking cloud
+
+# jtrans_mon_cast.txtと重複
+%%%%
+[zap]magic dart
+
+<[spell]magic dart>
+%%%%
+[zap]bolt of fire
+
+<[spell]bolt of fire>
+%%%%
+[zap]bolt of cold
+
+<[spell]bolt of cold>
+%%%%
+[zap]great wave of water
+
+大津波
+%%%%
+# [zap]fireball
+
+# jtrans_spl_miscast.txtと重複
+%%%%
+[zap]bolt of lightning
+
+稲妻の矢
+%%%%
+[zap]bolt of poison
+
+猛毒の矢
+%%%%
+[zap]bolt of negative energy
+
+負のエネルギーの矢
+%%%%
+[zap]crystal spear
+
+水晶の槍
+%%%%
+[zap]narrow beam of energy
+
+収束したエネルギーの光線
+%%%%
+# [zap]orb of energy
+
+# jtrans_beam.txtと重複
+%%%%
+[zap]sticky flame
+
+<[spell]sticky flame>
+%%%%
+[zap]sting
+
+<[spell]sting>
+%%%%
+# [zap]damnation
+
+# jtrans_mon_cast.txtと重複
+%%%%
+[zap]iron shot
+
+<[spell]iron shot>
+%%%%
+[zap]stone arrow
+
+<[spell]stone arrow>
+%%%%
+[zap]zap
+
+稲妻の光線
+%%%%
+[zap]orb of electricity
+
+<[spell]orb of electricity>
+%%%%
+# [zap]splash of poison
+
+# jtrans_mon_cast.txtと重複
+%%%%
+[zap]debugging ray
+
+# 訳不要
+%%%%
+[zap]fiery breath
+
+炎のブレス
+%%%%
+[zap]freezing breath
+
+凍結のブレス
+%%%%
+[zap]acid
+
+ほとばしる強酸
+%%%%
+[zap]poison gas
+
+猛毒のガス
+%%%%
+[zap]bolt of dispelling energy
+
+魔法解除の矢
+%%%%
+[zap]agony
+
+苦悶の光線
+%%%%
+[zap]ball of steam
+
+蒸気の爆裂球
+%%%%
+[zap]shard of ice
+
+氷の破片
+%%%%
+[zap]flame tongue
+
+<[spell]flame tongue>
+%%%%
+[zap]large rocky blast
+
+岩つぶて
+%%%%
+[zap]rocky blast
+
+石つぶて
+%%%%
+[zap]blast of sand
+
+砂の突風
+%%%%
+[zap]bolt of magma
+
+<[spell]bolt of magma>
+%%%%
+[zap]poison arrow
+
+<[spell]poison arrow>
+%%%%
+[zap]splash of liquid fire
+
+燃えたぎる液体の飛沫
+%%%%
+[zap]blast of choking fumes
+
+窒息の噴煙
+%%%%
+[zap]spray of energy
+
+エネルギーの飛沫
+%%%%
+[zap]lance of force
+
+<[spell]Force Lance>
+%%%%
+[zap]searing ray
+
+<[spell]searing ray>
+%%%%
+# [zap]explosive bolt
+
+# jtrans_beam.txtと重複
+%%%%
+# [zap]crystal bolt
+
+# jtrans_mon_cast.txtと重複
+%%%%
+[zap]bolt of acid
+
+<[spell]corrosive bolt>
+%%%%
+[zap]random bolt tracer
+
+# 訳不要
+%%%%
+[zap]burst of metal fragments
+
+鉄片の奔流
+%%%%
+[zap]unravelling
+
+魔法解除術
+%%%%
+[zap]iceblast
+
+<[spell]iceblast>
+%%%%
+[zap]slug dart
+
+<[spell]slug dart>
+%%%%
+[zap]living lightning
+
+生ける稲妻
+%%%%
+# [zap]freezing blast
+
+# jtrans_spl_clouds.txtと重複
+%%%%
+[zap]beckoning
+
+引き寄せの呪文
+%%%%

@@ -1,0 +1,73 @@
+%%%%
+# TAG_MAJOR_VERSION == 34
+dart trap
+
+%%%%
+arrow trap
+
+弓矢の罠
+%%%%
+spear trap
+
+槍の罠
+%%%%
+teleport trap
+
+テレポートの罠
+%%%%
+permanent teleport trap
+
+テレポートの永続罠
+%%%%
+alarm trap
+
+警報の罠
+%%%%
+blade trap
+
+刃の罠
+%%%%
+bolt trap
+
+クロスボウの罠
+%%%%
+net trap
+
+網の罠
+%%%%
+Zot trap
+
+ゾットの罠
+%%%%
+needle trap
+
+針の罠
+%%%%
+shaft
+
+縦穴
+%%%%
+passage of Golubria
+
+ゴルブリアの通り道
+%%%%
+pressure plate
+
+足踏みスイッチ
+%%%%
+web
+
+蜘蛛の巣
+%%%%
+# TAG_MAJOR_VERSION == 34
+gas trap
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+shadow trap
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+dormant shadow trap
+
+%%%%

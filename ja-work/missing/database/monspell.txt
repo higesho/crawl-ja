@@ -1,0 +1,586 @@
+%%%%
+Call Lost Souls cast
+
+@The_monster@ beckons forth restless souls!
+%%%%
+Call Down Lightning cast
+
+Electricity crackles from @the_monster_possessive@ apparatus.
+%%%%
+Cantrip cast
+
+@The_monster@ casts a cantrip, but nothing happens.
+
+@The_monster@ begins to cast a cantrip, but forgets the words!
+
+@The_monster@ miscasts a cantrip.
+
+@The_monster@ looks braver for a moment.
+
+@The_monster@ looks encouraged for a moment.
+
+@The_monster@ looks satisfied for a moment.
+%%%%
+Conjure Living Spells cast
+
+@The_monster@ erupts in a flurry of living spells!
+%%%%
+Creeping Frost cast
+
+@The_monster@ calls freezing cold from the walls.
+%%%%
+Divine Armament cast
+
+@The_monster@ beseeches @My_God@ to grant them a weapon.
+%%%%
+Eruption cast
+
+@The_monster@ rends the earth beneath @target@!
+%%%%
+Grasping Roots cast
+
+@The_monster@ reaches out to the roots within the earth.
+%%%%
+Grasping Roots natural cast
+
+@The_monster@ runs its roots beneath @target@!
+%%%%
+Harpoon Shot cast
+
+@The_monster@ fires a harpoon shot @at@ @target@.
+%%%%
+Hellfire Court cast
+
+@The_monster@ calls forth @possessive@ servants.
+%%%%
+Hellfire Mortar cast
+
+@The_monster@ blasts a torrent of magma @at@ @target@.
+%%%%
+Hoarfrost Bullet cast
+
+@The_monster@ fires a salvo of icy shards.
+%%%%
+Hoarfrost Bullet cast finale
+
+@The_monster@ launches the last of @reflexive@ @at@ @target@ with a shrill rumble.
+%%%%
+Launch Bomblet cast
+
+@The_monster@ launches a bomblet.
+%%%%
+Phantom Blitz cast
+
+@The_monster@ weaves a phantasmal image and fires it @at@ @target@.
+%%%%
+unseen Phantom Blitz cast
+
+@The_something@ weaves a phantasmal image and casts it forth!
+%%%%
+Pyroclastic Surge cast
+
+@The_monster@ calls gouts of flame from the lava!
+%%%%
+Shadow Shot cast
+
+@The_monster@ fires @at@ @target@.
+%%%%
+Siphon Essence cast
+
+@The_monster@ draws nearby souls into @reflexive@!
+%%%%
+Sheza's Dance cast
+
+@The_monster@ sends weapons flying into battle!
+
+@The_monster@ gestures, and weapons take to the air!
+%%%%
+Sojourning Bolt cast
+
+@The_monster@ breathes a rupture in space-time @at@ @target@.
+%%%%
+Sticks to Snakes cast
+
+@The_monster@ drops twin branches, and they both wriggle to life!
+%%%%
+Stunning Burst cast
+
+@The_monster@ fires a burst of electricity @at@ @target@.
+%%%%
+Throw Bolas cast
+
+@The_monster@ hurls a bolas @at@ @target@.
+%%%%
+Throw Klown Pie cast
+
+@The_monster@ pies @target@ viciously!
+%%%%
+Vhi's Electrolunge cast
+
+@The_monster@ charges forward with an electric crackle.
+%%%%
+Siren Song cast
+
+__NONE
+%%%%
+Avatar Song cast
+
+__NONE
+%%%%
+_unseen_breath_cast_
+
+You hear a roar.
+%%%%
+_unseen_spit_cast_
+
+You hear a spitting sound.
+%%%%
+Acid Splash cast
+
+@The_monster@ spits acid @at@ @target@.
+%%%%
+unseen Acid Splash cast
+
+@_unseen_spit_cast_@
+%%%%
+Ensnare natural cast
+
+@The_monster@ expels a string of sticky webbing.
+%%%%
+unseen Ensnare natural cast
+
+A string of sticky webbing shoots out from thin air.
+%%%%
+Freeze cast
+
+@The_monster@ freezes @target@.
+%%%%
+Splinterspray cast
+
+@The_monster@ hurls a spray of @beam@ @at@ @target@.
+%%%%
+Weakening Gaze cast
+
+@The_monster@ gazes fiercely through @target@!
+%%%%
+Woodweal cast
+
+@The_monster@ touches a tree and draws upon its vitality.
+%%%%
+Seismic Stomp cast
+
+@The_monster@ stomps @possessive@ heavy feet.
+%%%%
+Hurl Torchlight cast
+
+@The_monster@ raises the black torch.
+%%%%
+Landbreaker natural cast
+
+@The_monster@ fractures the ground with @possessive@ footsteps.
+%%%%
+March of Sorrows Boris cast
+
+@The_monster@ [casts|pitches] forth @possessive@ victims' sorrows.
+
+w:5
+@The_monster@ rolls out @possessive@ victims' [laments|suffering].
+%%%%
+Doomsaying Cassandra cast
+
+@The_monster@ says, "I have seen your future, @player_name@! Turn back before you are forced to see it for yourself!"
+%%%%
+Cantrip Dissolution cast
+
+@The_monster@ gurgles to an absent god.
+
+@The_monster@ jiggles mournfully.
+
+@The_monster@ wobbles aimlessly.
+
+@The_monster@ says, "Become one with my sorrow!"
+
+w:1
+@The_monster@ asks, "Why have you forsaken me @My_God@?"
+%%%%
+Cantrip Gastronok cast
+
+@The_monster@ bubbles merrily.
+
+VISUAL:@The_monster@ glows a brilliant shade of cerise.
+
+VISUAL:@The_monster@ wobbles crazily.
+
+VISUAL:@The_monster_possessive@ eyestalks stretch out, then return to normal size.
+
+You wobble.
+
+You take on a slight green cast.
+
+You feel briefly sluggish.
+
+You feel a sudden, passing aversion to salt.
+
+w:5
+You feel a sudden urge to swivel your nonexistent eyestalks around.
+%%%%
+Smiting Jeremiah cast
+
+@The_monster@ lets out a twisted cry.
+
+@The_monster@ mumbles a slurred invocation.
+
+VISUAL:@The_monster@ throws @possessive@ arms up pleadingly.
+
+@The_monster@ cries, "Fearful master, protect me!"
+
+@The_monster@ shouts, "O dreadful one, destroy my foe!"
+%%%%
+Vanquished Vanguard Nergalle cast
+
+@The_monster@ calls out: "@orc name@, @orc name@, @orc name@ - to me!"
+
+@The_monster@ cries out, "Spectres! Fight for the home you helped make!"
+%%%%
+Primal Wave Norris cast
+
+@The_monster@ invokes the aid of something beyond life against @target@.
+
+@The_monster@ calmly calls forth the wrath of something past death upon @target@.
+
+@The_monster@ prays to the universe for peace to reach @target@.
+%%%%
+Antimagic Gaze Norris cast
+
+Something numinous underneath @the_monster_possessive@ waves suddenly gazes at @target@.
+
+@The_monster_possessive@ eyes shimmer, overwhelming @target@ with visions from beyond.
+%%%%
+Roxanne cast
+
+@sphinx cast@
+%%%%
+Vv cast
+
+VISUAL:@The_monster@ gestures sharply.
+
+VISUAL:@The_monster@ stamps @possessive@ foot.
+
+VISUAL:@The_monster@ slams @possessive@ palms together.
+
+w:3
+VISUAL:@The_monster@ makes an elaborate arcing motion.
+%%%%
+unseen Vv cast
+
+You hear the sound of rock striking rock.
+%%%%
+Hellfire Mortar Wiglaf cast
+
+VISUAL:@The_monster@ slams @possessive@ weapon against the ground.
+
+@The_monster@ shouts @at@ @foe@, "Taste the blood o the mountain!"
+
+@The_monster@ roars @at@ @foe@, "Let me show ye whit a REAL cannon looks like!"
+%%%%
+basilisk cast targeted
+
+@floating eye cast targeted@
+%%%%
+basilisk cast
+
+@floating eye cast@
+%%%%
+bes kemwar cast
+
+@The_monster@ writhes about, and something writhes within @target@.
+%%%%
+Airstrike blizzard demon cast
+
+@The_monster@ lashes out with icy intensity.
+
+@The_monster@ gestures with frozen lightning.
+
+@The_monster@ waves @possessive@ @arms@ in writhing circles.
+%%%%
+silent blizzard demon cast
+
+@The_monster@ lashes out with icy intensity.
+
+@The_monster@ gestures with frozen lightning.
+%%%%
+blizzard demon cast
+
+@The_monster@ crackles with melancholic malice.
+
+@The_monster@ roars with sorrowful spite.
+%%%%
+bombardier beetle cast
+
+@The_monster@ sprays incendiary fluid @at@ @target@.
+%%%%
+March of Sorrows bone dragon cast
+
+@The_monster@ breathes [collective despair|endless sorrows] @at@ @target@.
+%%%%
+burial acolyte cast
+
+@The_monster@ [drones|recites] a funeral chant.
+%%%%
+Beckoning Gale chonchon cast
+
+@The_monster@ chants while flapping @possessive@ wings @at@ @target@.
+
+w:5
+@The_monster@ screeches @at@ @target@ while spinning and swirling.
+%%%%
+cognitogaunt cast
+
+@The_monster@ glimmers violently.
+%%%%
+clockroach cast
+
+@The_monster@ sprays sand from its hourglass @at@ @target@.
+%%%%
+crystal echidna cast targeted
+
+@The_monster@ flicks its quills @at@ @target@.
+%%%%
+Crystallising Shot crystal guardian cast
+
+@The_monster@ fires a shard of @reflexive@ @at@ @target@.
+%%%%
+culicivora cast targeted
+
+@The_monster@ chitters @at@ @target@.
+%%%%
+Summon Water Elementals elemental wellspring cast
+
+Water spirits pour forth from @the_monster@!
+%%%%
+eye of draining cast
+
+@The_monster@ smirks and gazes @at@ @target@.
+%%%%
+formless jellyfish cast
+
+@The_monster@ shimmers eerily.
+%%%%
+Summon Mortal Champion fravashi cast
+
+@The_monster@ beckons forth its champion.
+%%%%
+Beckoning Gale hippogriff cast
+
+@The_monster@ flaps @possessive@ wings @at@ @target@.
+%%%%
+Warning Cry hippogriff cast
+
+@The_monster@ screeches a warning cry!
+%%%%
+Blink Range ironbound thunderhulk cast
+
+Strange energies crackle from @the_monster_possessive@ apparatus.
+%%%%
+kobold blastminer cast targeted
+
+@The_monster@ blasts @possessive@ cannon @at@ @target@.
+%%%%
+Awaken Flesh kobold fleshcrafter cast
+
+@The_monster@ cackles and gestures.
+
+@The_monster@ chants and writhes.
+%%%%
+Bolt of Flesh kobold fleshcrafter cast
+
+@The_monster@ weaves a wave of flesh @at@ @target@.
+%%%%
+laughing skull cast
+
+@The_monster@ cackles spitefully.
+
+@The_monster@ gibbers with scorn.
+
+@The_monster@ lets out a vicious peal of laughter.
+%%%%
+silent laughing skull cast
+
+@The_monster@ mockingly cackles in silence.
+
+@The_monster@ violently rattles with glee.
+%%%%
+unseen laughing skull cast
+
+You hear spiteful cackling.
+
+You hear scornful gibbering.
+%%%%
+orb of entropy cast
+
+w:20
+@The_monster@ [pulses|vibrates].
+
+@The_monster@ gnaws at the world.
+
+@The_monster@ eats away at reality.
+
+Existence decays around @the_monster@.
+%%%%
+orb of winter cast
+
+@The_monster@ glitters with frost.
+
+@The_monster@ swirls like a blizzard.
+
+w:30
+@The_monster@ glows [icy blue|with a pale light|sapphire].
+%%%%
+Force Lance polterguardian cast
+
+@The_monster@ focuses its will @at@ @target@.
+%%%%
+Blink Away revenant cast
+
+__NONE
+%%%%
+Injury Mirror screaming refraction cast
+
+@The_monster@ shines with woeful anguish.
+
+@The_monster@ rattles its vertebrae in radiant agony.
+%%%%
+Lee's Rapid Deconstruction screaming refraction cast
+
+An echo of @the_monster@ flickers and hopelessly wails @at@ @target@.
+%%%%
+scrub nettle cast targeted
+
+@The_monster@ launches toxic spines @at@ @target@.
+%%%%
+Invisibility shadowghast cast
+
+@The_monster@ slips into darkness.
+%%%%
+Confuse sphinx marauder cast
+
+@The_monster@ roars a[n obscure| perplexing] riddle with a strange tongue.
+%%%%
+Vex sphinx marauder cast
+
+@The_monster@ screeches a[n impossible| nonsensical| cliché] riddle in a mystic tongue.
+%%%%
+Smiting guardian sphinx cast
+
+@The_monster@ mutters an ancient curse @at@ @target@.
+%%%%
+Paralysis guardian sphinx cast
+
+@The_monster@ whispers a [stupefying|staggering] mystic riddle.
+%%%%
+Electrical Bolt shock serpent cast
+
+@The_monster@ discharges a tendril of electricity.
+%%%%
+sun moth cast
+
+@The_monster_possessive@ wings beat fiercely.
+%%%%
+Rebounding Blaze thermic dynamo cast
+
+A wild whirl of fire shoots out from @the_monster@ @at@ @target@.
+
+@The_monster@ overcharges @reflexive@ and releases excess heat @at@ @target@.
+%%%%
+Rebounding Chill thermic dynamo cast
+
+A wild whirl of ice shoots out from @the_monster@ @at@ @target@.
+
+@The_monster@ overflows with ice and vents excess cold @at@ @target@.
+%%%%
+unseen thermic dynamo cast
+
+You hear a violent whirl.
+%%%%
+undertaker cast targeted
+
+@The_monster@ reaches out for @target@.
+%%%%
+Flashing Balestra undying armoury cast
+
+A weapon leaps out from @the_monster@ and lunges @at@ @target@!
+%%%%
+weeping skull cast
+
+@The_monster@ [unleashes|releases] gushing sobs.
+
+@The_monster_possessive@ misery [bubbles over|overflows].
+%%%%
+silent weeping skull cast
+
+@The_monster_possessive@ misery [bubbles over|overflows].
+%%%%
+unseen weeping skull cast
+
+You hear gushing sobs.
+%%%%
+Grave Claw vampire bloodprince cast
+
+@The_monster@ reaches out @possessive@ hand.
+
+@The_monster@ snaps @possessive@ fingers.
+%%%%
+Ravenous Swarm vampire bloodprince cast
+
+@The_monster@ unfurls @possessive@ wings.
+
+@The_monster@ spreads @possessive@ arms wide.
+%%%%
+Dominate Undead vampire bloodprince cast
+
+@The_monster@ exerts the full weight of @possessive@ authority.
+
+@The_monster@ compels the dead to obey.
+
+@The_monster@ whispers, "Kneel."
+%%%%
+Manifold Assault natural cast
+
+@The_monster@ seems to occupy many places at once.
+%%%%
+Acid Ball nascent plasmodium cast
+
+@The_monster@ squirts acid @at@ @target@.
+%%%%
+drake cast targeted
+
+@dragon cast targeted@
+%%%%
+living spell cast
+
+@The_monster@ casts @reflexive@ @at@ @target@.
+%%%%
+raven cast
+
+@The_monster@ stares into @foe_possessive@ soul.
+%%%%
+malmutate zykzyl cast
+
+@The_monster@ seethes with envy of @foe_possessive@ form.
+%%%%
+enfeeble zykzyl cast
+
+@The_monster@ overflows with resentment.
+%%%%
+bolt of flesh zykzyl cast
+
+@The_monster@ hurls a piece of @reflexive@ @at@ @target@.
+%%%%
+ostracise cast
+
+@The_monster@ freezes your soul cold.
+%%%%
+Blink magical cast
+
+__NONE
+%%%%

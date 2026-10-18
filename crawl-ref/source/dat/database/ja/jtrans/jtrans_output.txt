@@ -1,0 +1,333 @@
+%%%%
+(Hit _)
+
+('_' を押してください)
+%%%%
+# TAG_MAJOR_VERSION == 34
+Temperature:
+
+%%%%
+Quiver unavailable
+
+(射撃準備できない)
+%%%%
+Nothing quivered
+
+(射撃準備していない)
+%%%%
+# WIZARD
+
+# 訳不要
+%%%%
+# EXPLORE
+
+# 訳不要
+%%%%
+XL:
+
+Lv:
+%%%%
+Next:
+
+次Lv:
+%%%%
+Place:
+
+現在地:
+%%%%
+EV:
+
+回避:
+%%%%
+SH:
+
+盾:
+%%%%
+Str:
+
+腕力:
+%%%%
+Int:
+
+知力:
+%%%%
+Dex:
+
+器用:
+%%%%
+Gold:
+
+所持金:
+%%%%
+Time:
+
+時間:
+%%%%
+Turn:
+
+ターン:
+%%%%
+[adj]friendly
+
+友好的な
+%%%%
+# [adj]neutral
+
+# jtrans_fight.txtと重複
+%%%%
+There were no monsters in sight!
+
+見える場所にはモンスターがいなかった！
+%%%%
+There are no monsters in sight!
+
+見える場所にはモンスターがいない！
+%%%%
+You could see
+
+あなたは%sを目にしていた。
+%%%%
+You can see
+
+あなたは%sを目にしている。
+%%%%
+[eq slot]Weapon
+
+武器
+%%%%
+[eq slot]First Ring
+
+<[eq slot]1st ring>
+%%%%
+[eq slot]Second Ring
+
+<[eq slot]2nd ring>
+%%%%
+[eq slot]Third Ring
+
+<[eq slot]3rd ring>
+%%%%
+[eq slot]Fourth Ring
+
+<[eq slot]4th ring>
+%%%%
+[eq slot]Fifth Ring
+
+<[eq slot]5th ring>
+%%%%
+[eq slot]Sixth Ring
+
+<[eq slot]6th ring>
+%%%%
+[eq slot]Seventh Ring
+
+<[eq slot]7th ring>
+%%%%
+[eq slot]Eighth Ring
+
+<[eq slot]8th ring>
+%%%%
+[eq slot]Ring
+
+<ring>
+%%%%
+Stlth
+
+隠密
+%%%%
+melded
+
+肉体と融合した
+%%%%
+- Unarmed
+
+- 素手
+%%%%
+- Blade Hands
+
+- 刃の手
+%%%%
+- Blade Hand
+
+<- Blade Hands>
+%%%%
+<darkgrey>(no {barding})</darkgrey>
+
+<darkgrey>(%sに装備していない)</darkgrey>
+%%%%
+<darkgrey>(%s unavailable)</darkgrey>
+
+<darkgrey>(%sを装備できない)</darkgrey>
+%%%%
+<darkgrey>(%s currently unavailable)</darkgrey>
+
+<darkgrey>(今のところ%sを装備できない)</darkgrey>
+%%%%
+<darkgrey>(%s restricted)</darkgrey>
+
+<darkgrey>(%sは制限されている)</darkgrey>
+%%%%
+<darkgrey>(no %s)</darkgrey>
+
+<darkgrey>(%sを装備していない)</darkgrey>
+%%%%
+({species} {job})
+
+(%sの%s)
+%%%%
+Turns: %d, Time:
+
+経過ターン: %d プレイ時間
+%%%%
+God:
+
+信仰:
+%%%%
+Spells:
+
+魔法:
+%%%%
+%d memorised, %d level%s left
+
+%d個記憶中/残り記憶力%d
+%%%%
+Lives:
+
+残り命:
+%%%%
+Deaths:
+
+死亡数:
+%%%%
+rFire
+
+火炎耐性
+%%%%
+rCold
+
+冷気耐性
+%%%%
+rNeg
+
+衰弱耐性
+%%%%
+rPois
+
+毒素耐性
+%%%%
+rElec
+
+電撃耐性
+%%%%
+rCorr
+
+腐蝕阻止
+%%%%
+rMut
+
+耐変異
+%%%%
+MR
+
+魔法防御
+%%%%
+SeeInvis
+
+霊視
+%%%%
+Gourm
+
+悪食
+%%%%
+Faith
+
+信仰
+%%%%
+Spirit
+
+精霊盾
+%%%%
+Reflect
+
+反射
+%%%%
+Harm
+
+痛撃
+%%%%
+Rnd*Rage
+
+突発狂乱
+%%%%
+# Clarity
+
+# jtrans_mutations.txtに記載
+%%%%
+NoTele
+
+転位不可
+%%%%
+Rnd*Tele
+
+突発転位
+%%%%
+NoCast
+
+魔法不可
+%%%%
+[status]very quick
+
+非常に俊敏
+%%%%
+[status]quick
+
+俊敏
+%%%%
+[status]slow
+
+鈍足
+%%%%
+[status]very slow
+
+非常に鈍足
+%%%%
+no status effects
+
+特になし
+%%%%
+# unfitting armour
+
+# jtrans_mutations.txtに記載
+%%%%
+# amphibious
+
+# jtrans_mutations.txtに記載
+%%%%
+# %d rings
+
+# jtrans_mutations.txtに記載
+%%%%
+# constrict %d
+
+# jtrans_mutations.txtに記載
+%%%%
+# walk on water
+
+# jtrans_mutations.txtに記載
+%%%%
+# reduced essence
+
+# jtrans_mutations.txtに記載
+%%%%
+no striking features
+
+特になし
+%%%%
+<w>0:</w> Orb of Zot
+
+<w>0:</w> ゾットのオーブ
+%%%%
+<w>%s:</w> %d/%d rune%s: %s
+
+<w>%s:</w> %d/%d ルーン: %s
+%%%%

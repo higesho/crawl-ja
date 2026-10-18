@@ -1,0 +1,13 @@
+%%%%
+%s: HD: %d, maxhp: %d, boost: %d
+
+# for debug
+%%%%
+looks more experienced.
+
+はさらに経験を積んだように見える。
+%%%%
+looks stronger.
+
+は強くなったようだ。
+%%%%

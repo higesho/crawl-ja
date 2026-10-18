@@ -1,0 +1,123 @@
+%%%%
+################################################################
+#   decks.cc
+################################################################
+%%%%
+deck of escape
+
+脱出のデッキ
+%%%%
+deck of destruction
+
+破壊のデッキ
+%%%%
+# TAG_MAJOR_VERSION == 34
+deck of dungeons
+
+迷宮のデッキ
+%%%%
+deck of summoning
+
+召喚のデッキ
+%%%%
+# TAG_MAJOR_VERSION == 34
+deck of wonders
+
+不思議のデッキ
+%%%%
+# TAG_MAJOR_VERSION == 34
+deck of oddities
+
+奇妙なデッキ
+%%%%
+deck of punishment
+
+懲罰のデッキ
+%%%%
+# TAG_MAJOR_VERSION == 34
+deck of war
+
+戦争のデッキ
+%%%%
+# TAG_MAJOR_VERSION == 34
+deck of changes
+
+変幻のデッキ
+%%%%
+# TAG_MAJOR_VERSION == 34
+deck of defence
+
+守護のデッキ
+%%%%
+################################################################
+#   itemname.cc
+################################################################
+%%%%
+crystal ball of energy
+
+魔力の水晶球
+%%%%
+box of beasts
+
+獣の匣
+%%%%
+# TAG_MAJOR_VERSION == 34
+removed ebony casket
+
+%%%%
+fan of gales
+
+疾風の扇
+%%%%
+lamp of fire
+
+炎のランプ
+%%%%
+# TAG_MAJOR_VERSION == 34
+removed lantern of shadows
+
+%%%%
+horn of Geryon
+
+ゲリュオンの角笛
+%%%%
+disc of storms
+
+嵐の円盤
+%%%%
+# TAG_MAJOR_VERSION == 34
+empty flask
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+obsolete rune of zot
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+removed stone of tremors
+
+%%%%
+quad damage
+
+四重ダメージ
+%%%%
+phial of floods
+
+大水の小瓶
+%%%%
+sack of spiders
+
+蜘蛛の袋
+%%%%
+phantom mirror
+
+幻影の鏡
+%%%%
+figurine of a ziggurat
+
+ジグラットの模型
+%%%%
+# TAG_MAJOR_VERSION == 34
+removed chess piece
+
+%%%%

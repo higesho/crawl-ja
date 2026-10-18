@@ -1,0 +1,705 @@
+%%%%
+Xom banishment
+
+# old en (ja19):
+#   "You have grown too comfortable in your little world, mortal!"
+#   Xom casts you into the Abyss!
+#   The world seems to spin as Xom's maniacal laughter rings in your ears.
+# old ja (ja19):
+#   『定命の者よ、おまえはこのちっぽけな世界に安住しすぎている！』
+#   
+#   ゾムはあなたをアビスに放り込んだ！
+#   
+#   この世界はゾムの狂気の笑い声と共に回転しだしたようだ。
+# old en (ja16):
+#   "You have grown too comfortable in your little world, mortal!"
+#   Xom casts you into the Abyss!
+#   The world seems to spin as Xom's maniacal laughter rings in your ears.
+# old ja (ja16):
+#   『定命の者よ、おまえはこのちっぽけな世界に安住しすぎている！』
+#   
+#   ゾムはあなたをアビスに放り込んだ！
+#   
+#   この世界はゾムの狂気の笑い声と共に回転しだしたようだ。
+
+"You have grown too comfortable in your little world, mortal!"
+
+Xom casts you into the Abyss!
+
+The world seems to spin as Xom's maniacal laughter rings.
+%%%%
+Xom good monster polymorph
+
+# old en (ja19):
+#   "This might be better!"
+#   "Hum-dee-hum-dee-hum..."
+#   Xom's power touches on a nearby monster.
+#   You hear Xom's avuncular chuckle.
+# old ja (ja19):
+#   『前よりよくなっただろう！』
+#   
+#   『ほう、ほう、ほう……』
+#   
+#   ゾムの力が近くのモンスターに触れた。
+#   
+#   あなたはゾムのくすくす笑う声を聞いた。
+# old en (ja16):
+#   "This might be better!"
+#   "Hum-dee-hum-dee-hum..."
+#   Xom's power touches on a nearby monster.
+#   You hear Xom's avuncular chuckle.
+# old ja (ja16):
+#   『前よりよくなっただろう！』
+#   
+#   『ほう、ほう、ほう……』
+#   
+#   ゾムの力が近くのモンスターに触れた。
+#   
+#   あなたはゾムのくすくす笑う声を聞いた。
+
+"This might be better!"
+
+"Hum-dee-hum-dee-hum..."
+
+Xom's power touches your surroundings.
+
+You hear Xom's avuncular chuckle.
+%%%%
+Xom good mutations
+
+# old en (ja19):
+#   "You need some minor adjustments, mortal!"
+#   "Let me alter your pitiful body."
+#   Xom's power touches on you for a moment.
+#   You hear Xom's maniacal cackling.
+# old ja (ja19):
+#   『定命の者よ！ お前には少々調整が必要なようだ』
+#   
+#   『お前の哀れな体を変化させてやろう』
+#   
+#   ゾムの力が一瞬あなたに触れた。
+#   
+#   あなたはゾムの狂気の笑い声を聞いた。
+# old en (ja16):
+#   "You need some minor adjustments, mortal!"
+#   "Let me alter your pitiful body."
+#   Xom's power touches on you for a moment.
+#   You hear Xom's maniacal cackling.
+# old ja (ja16):
+#   『定命の者よ！ お前には少々調整が必要なようだ』
+#   
+#   『お前の哀れな体を変化させてやろう』
+#   
+#   ゾムの力が一瞬あなたに触れた。
+#   
+#   あなたはゾムの狂気の笑い声を聞いた。
+
+"You need some minor adjustments, mortal!"
+
+"Let me alter your pitiful body."
+
+Xom's power touches on you for a moment.
+
+You hear Xom's maniacal cackling.
+
+With a gout of [@rainbow_colour@|@misc_colour@] light, Xom rebuilds you.
+%%%%
+Xom random mutations
+
+# old en (ja19):
+#   "You need some minor improvements, mortal!"
+#   "Let me alter your body."
+#   Xom's power brushes against you for a moment.
+#   You hear Xom's avuncular chuckle.
+# old ja (ja19):
+#   『定命の者よ！ お前には少々改良が必要なようだ』
+#   
+#   『お前の体を変化させてやろう』
+#   
+#   ゾムの力が一瞬あなたを磨き上げた。
+#   
+#   あなたはゾムのくすくす笑う声を聞いた。
+# old en (ja16):
+#   "You need some minor improvements, mortal!"
+#   "Let me alter your body."
+#   Xom's power brushes against you for a moment.
+#   You hear Xom's avuncular chuckle.
+# old ja (ja16):
+#   『定命の者よ！ お前には少々改良が必要なようだ』
+#   
+#   『お前の体を変化させてやろう』
+#   
+#   ゾムの力が一瞬あなたを磨き上げた。
+#   
+#   あなたはゾムのくすくす笑う声を聞いた。
+
+"You need some minor improvements, mortal!"
+
+"Let me alter your body."
+
+Xom's power brushes against you for a moment.
+
+You hear Xom's avuncular chuckle.
+
+With a flash of [@rainbow_colour@|@misc_colour@] light, Xom rebuilds you.
+%%%%
+Xom snakes to sticks
+
+# old en (ja19):
+#   Xom transforms those around you.
+#   "I like them better like this."
+#   "Never liked these squiggly things."
+#   Xom touches your surroundings.
+# old ja (ja19):
+#   ゾムはあなたの周囲のものを変化させた。
+#   
+#   『私はこっちの方が好みだ』
+#   
+#   『くねくねしたものは嫌いだな』
+#   
+#   ゾムはあなたの周囲に触れた。
+#   
+#   @Xom good monster polymorph@
+# old en (ja16):
+#   Xom transforms those around you.
+#   "I like them better like this."
+#   "Never liked these squiggly things."
+#   Xom touches your surroundings.
+# old ja (ja16):
+#   ゾムはあなたの周囲のものを変化させた。
+#   
+#   『私はこっちの方が好みだ』
+#   
+#   『くねくねしたものは嫌いだな』
+#   
+#   ゾムはあなたの周囲に触れた。
+#   
+#   @Xom good monster polymorph@
+
+Xom transforms those around you.
+
+"I like them better like this."
+
+"Never liked these squiggly things."
+
+Xom touches your surroundings.
+
+@Xom good monster polymorph@
+%%%%
+Xom destruction
+
+# old en (ja19):
+#   "Burn, baby, burn!"
+#   "Ka-boom!"
+#   Xom calls forth mighty explosions.
+#   Xom rains down devastation!
+# old ja (ja19):
+#   『燃えろ！ ベイビー！ 燃えろ！』
+#   
+#   『ドカーン！』
+#   
+#   ゾムは大爆発を引き起こした。
+#   
+#   ゾムは破壊の雨を降らせた！
+#   
+#   @Xom fake destruction@
+# old en (ja16):
+#   "Burn, baby, burn!"
+#   "Ka-boom!"
+#   Xom calls forth mighty explosions.
+#   Xom rains down devastation!
+# old ja (ja16):
+#   『燃えろ！ ベイビー！ 燃えろ！』
+#   
+#   『ドカーン！』
+#   
+#   ゾムは大爆発を引き起こした。
+#   
+#   ゾムは破壊の雨を降らせた！
+#   
+#   @Xom fake destruction@
+
+"Burn, baby, burn!"
+
+"Ka-boom!"
+
+Xom calls forth mighty explosions.
+
+Xom rains down devastation!
+
+w:5
+Xom sneezes violently.
+
+@Xom fake destruction@
+%%%%
+Xom resurrection
+
+# old en (ja19):
+#   "Let me repair your body."
+#   Xom tricks Death into leaving you alone.
+#   Xom's maniacal laughter scares Death away.
+#   Xom's power revives you.
+#   Xom brings you back to life.
+#   Xom smiles on you.
+#   "Toy, don't you die on me yet!"
+#   w:1
+#   "One more [life|try|go]."
+# old ja (ja19):
+#   『お前の体を修復させてくれ』
+#   
+#   ゾムは死神を騙し、あなたを置いて行かせた。
+#   
+#   ゾムの狂気の笑い声が死神を追い払った。
+#   
+#   ゾムの力があなたを復活させた。
+#   
+#   ゾムはあなたを蘇らせた。
+#   
+#   ゾムはあなたに微笑んだ。
+#   
+#   『玩具よ、まだ死ぬんじゃないぞ！』
+#   
+#   w:1
+#   『もう一回だ』
+# old en (ja16):
+#   "Let me repair your body."
+#   Xom tricks Death into leaving you alone.
+#   Xom's maniacal laughter scares Death away.
+#   Xom's power revives you.
+#   Xom brings you back to life.
+#   Xom smiles on you.
+# old ja (ja16):
+#   『お前の体を修復させてくれ』
+#   
+#   ゾムは死神を騙し、あなたを置いて行かせた。
+#   
+#   ゾムの狂気の笑い声が死神を追い払った。
+#   
+#   ゾムの力があなたを復活させた。
+#   
+#   ゾムはあなたを蘇らせた。
+#   
+#   ゾムはあなたに微笑んだ。
+
+"Let me repair your body."
+
+Xom tricks Death into leaving you alone.
+
+Xom's maniacal laughter scares Death away.
+
+Xom's power revives you.
+
+Xom brings you back to life.
+
+Xom smiles on you.
+
+"Toy, don't you die on me yet!"
+
+Xom saves you before everything goes @mono_colour@.
+
+w:1
+"One more [life|try|go]."
+%%%%
+Xom repel stairs
+
+# old en (ja19):
+#   Xom changes the scenery.
+#   Xom pokes at a nearby @staircase@.
+#   "Tag, you're it!"
+#   Xom alters the dungeon around you.
+# old ja (ja19):
+#   ゾムは風景を変貌させた。
+#   
+#   ゾムは周囲の@staircase@を突き飛ばした。
+#   
+#   『おっと、お前はそっちだ！』
+#   
+#   ゾムはあなたの周囲を変化させた。
+# old en (ja16):
+#   Xom changes the scenery.
+#   Xom pokes at a nearby @staircase@.
+#   "Tag, you're it!"
+#   Xom alters the dungeon around you.
+# old ja (ja16):
+#   ゾムは風景を変貌させた。
+#   
+#   ゾムは周囲の@staircase@を突き飛ばした。
+#   
+#   『おっと、お前はそっちだ！』
+#   
+#   ゾムはあなたの周囲を変化させた。
+
+Xom changes the scenery.
+
+Xom pokes at a nearby @staircase@.
+
+Xom pushes on a nearby @staircase@.
+
+Xom pulls on a nearby @staircase@.
+
+"Tag, you're it!"
+
+Xom alters the dungeon around you.
+%%%%
+Xom stealth player
+
+# old en (ja19):
+#   Xom shushes you conspicuously.
+#   Xom whispers "Shhh!"
+# old ja (ja19):
+#   ゾムはあなたを黙らせた。
+#   
+#   ゾムは『シーッ！』と囁いた。
+# old en (ja16):
+#   Xom shushes you conspicuously.
+#   Xom whispers "Shhh!"
+# old ja (ja16):
+#   ゾムはあなたを黙らせた。
+#   
+#   ゾムは『シーッ！』と囁いた。
+
+Xom shushes you conspicuously.
+
+Xom whispers: Shhh!
+%%%%
+Xom life saving actor
+
+# old en (ja19):
+#   "Hey, that's my @_xom_plaything_@!"
+#   "Oh, no, you don't!"
+#   "That's my @_xom_plaything_@, go get your own!"
+#   "Leave my @_xom_plaything_@ alone!"
+# old ja (ja19):
+#   w:20
+#   @Xom life saving general@
+#   
+#   『おい、私の@_xom_plaything_@！』
+#   
+#   『おっと、だめ、だめだ！』
+#   
+#   『それは私の@_xom_plaything_@だ！ 別のを取りに行け！』
+#   
+#   『私の@_xom_plaything_@をほっといてくれ！』
+# old en (ja16):
+#   "Hey, that's my @_xom_plaything_@!"
+#   "Oh, no, you don't!"
+#   "That's my @_xom_plaything_@, go get your own!"
+#   "Leave my @_xom_plaything_@ alone!"
+# old ja (ja16):
+#   w:20
+#   @Xom life saving general@
+#   
+#   『おい、私の@_xom_plaything_@！』
+#   
+#   『おっと、だめ、だめだ！』
+#   
+#   『それは私の@_xom_plaything_@だ！ 別のを取りに行け！』
+#   
+#   『私の@_xom_plaything_@をほっといてくれ！』
+
+w:20
+@Xom life saving general@
+
+"Hey, that's my @_xom_plaything_@!"
+
+"Oh, no, you don't!"
+
+"That's my @_xom_plaything_@, go get your own!"
+
+"Leave my @_xom_plaything_@ alone!"
+%%%%
+_xom_plaything_
+
+# old en (ja19):
+#   piety > 180 and > 80, respectively
+# old ja (ja19):
+#   {{
+#   if you.piety_rank() > 4 then
+#       return "テディベア"
+#   elseif you.piety_rank() > 2 then
+#       return "玩具"
+#   else
+#       return "慰みもの"
+#   end
+#   }}
+# old en (ja16):
+#   piety > 180 and > 80, respectively
+# old ja (ja16):
+#   {{
+#   if you.piety_rank() > 4 then
+#       return "テディベア"
+#   elseif you.piety_rank() > 2 then
+#       return "おもちゃ"
+#   else
+#       return "慰みもの"
+#   end
+#   }}
+
+{{
+if you.piety_rank() > 4 then
+    return "teddy bear"
+elseif you.piety_rank() > 2 then
+    return "toy"
+else
+    return "plaything"
+end
+}}
+%%%%
+recite_closure
+
+# old en (ja16):
+#   "Amen!"
+#   "Glory to Zin!"
+#   "And thus was it written."
+#   "So sayeth Zin."
+#   "Purity be upon you all."
+# old ja (ja16):
+#   『アーメン！』
+#   
+#   『ジンに栄光あれ！』
+#   
+#   『……と書かれていた』
+#   
+#   『……とジンはおっしゃられた』
+#   
+#   『あなた方全てが浄化される』
+
+"Amen!"
+
+"Glory to Zin!"
+
+"And thus was it written."
+
+"So sayeth Zin."
+
+"Purity be upon you all."
+
+"Written in blood; sealed by your death."
+
+"From Zin's mouth, by Zin's hand."
+
+w:5
+"Thus shall it ever be."
+
+w:3
+"In fire! In pain!"
+%%%%
+Beogh welcome
+
+# old en (ja19):
+#   Beogh says: Drown the unbelievers in a sea of blood!
+# old ja (ja19):
+#   ベオは言った：『異教徒どもを血の海で溺死させるのだ！』
+# old en (ja16):
+#   Beogh says: Drown the unbelievers in a sea of blood!
+# old ja (ja16):
+#   ベオは言った：『異教徒どもを血の海で溺死させるのだ！』
+
+Beogh says: Show the world what it means to be an orc!
+%%%%
+Dithmenos welcome
+
+# old en (ja19):
+#   Dithmenos says: Spread the eternal night.
+# old ja (ja19):
+#   ディスメノスは言った：『永遠の夜を広めよ』
+# old en (ja16):
+#   Dithmenos says: Spread the eternal night.
+# old ja (ja16):
+#   ディスメノスは言った：『永遠の夜を広めよ』
+
+Dithmenos says: Walk in the dark places.
+%%%%
+Jiyva welcome
+
+# old en (ja19):
+#   Slime for the Slime God!
+# old ja (ja19):
+#   スライム神の名において全てをどろどろにせよ！
+# old en (ja16):
+#   Slime for the Slime God!
+# old ja (ja16):
+#   スライム神の名において全てをどろどろにせよ！
+
+Slime for the Slime God!
+
+w:1
+Long live the new flesh!
+%%%%
+Kikubaaqudgha welcome
+
+# old en (ja19):
+#   Kikubaaqudgha says: Spread unending torment and darkness!
+# old ja (ja19):
+#   キクバークッグァは言った：『終わりなき苦痛と暗闇を拡散するのだ！』
+# old en (ja16):
+#   Kikubaaqudgha says: Spread unending torment and darkness!
+# old ja (ja16):
+#   キクバークッグァは言った：『終わりなき苦痛と暗闇を拡散するのだ！』
+
+Kikubaaqudgha says: Spread unending ruin and despair!
+%%%%
+Ru welcome
+
+# old en (ja19):
+#   Ru says: Sacrifice that you might gain great power!
+# old ja (ja19):
+#   ルーは言った：『強大な力をもたらす生け贄を捧げるのだ！』
+# old en (ja16):
+#   Ru says: Sacrifice that you might gain great power!
+# old ja (ja16):
+#   ルーは言った：『強大な力をもたらす生け贄を捧げるのだ！』
+
+Ru says: Cut away your false body!
+%%%%
+Xom bored
+
+# old en (ja19):
+#   Xom yawns.
+#   "I wonder what else is on..."
+# old ja (ja19):
+#   ゾムはあくびをした。
+#   
+#   『他にすることはないのか……』
+#   
+#   @Xom welcome@
+# old en (ja16):
+#   Xom yawns.
+#   "I wonder what else is on..."
+# old ja (ja16):
+#   ゾムはあくびをした。
+#   
+#   『他にすることはないのか……』
+#   
+#   @Xom welcome@
+
+Xom yawns.
+
+"I wonder what else is on..."
+
+@Xom welcome@
+%%%%
+Xom welcome
+
+# old en (ja19):
+#   Xom snickers.
+#   Xom titters.
+# old ja (ja19):
+#   ゾムはくすくす笑った。
+#   
+#   ゾムはけらけら笑った。
+# old en (ja16):
+#   Xom snickers.
+#   Xom titters.
+# old ja (ja16):
+#   ゾムはくすくす笑った。
+#   
+#   ゾムはけらけら笑った。
+
+Xom snickers.
+
+Xom titters.
+
+w:3
+@_xom_welcome_rare_@
+%%%%
+_trout_species_
+
+# old en (ja16):
+#   a rainbow
+#   a flathead
+#   a cutthroat
+#   a bull
+#   a silver
+# old ja (ja16):
+#   虹
+#   
+#   平たい頭の
+#   
+#   喉の切られた
+#   
+#   雄の
+#   
+#   銀
+#   
+#   w:3
+#   @_trout_species_rare_@
+
+a rainbow
+
+a flathead
+
+a cutthroat
+
+a bull
+
+a silver
+
+w:3
+@_trout_species_rare_@
+%%%%
+_trout_species_rare_
+
+# old en (ja16):
+#   a complex
+#   a polygonal
+#   an imaginary
+#   an inverse
+#   an unlikely
+#   a used
+#   a second-hand
+#   a prohibited
+#   a challenging
+#   w:2
+#   a kilgore
+# old ja (ja16):
+#   複雑な
+#   
+#   多角形の
+#   
+#   虚数の
+#   
+#   逆数の
+#   
+#   ありそうもない
+#   
+#   使用済みの
+#   
+#   中古の
+#   
+#   禁じられた
+#   
+#   やりがいのある
+#   
+#   w:2
+#   キルゴアの
+
+a complex
+
+a polygonal
+
+an imaginary
+
+an inverse
+
+an unlikely
+
+a used
+
+a second-hand
+
+a prohibited
+
+a challenging
+
+a delicious
+
+a mouldy
+
+a fake
+
+a moist
+
+w:2
+a kilgore
+%%%%

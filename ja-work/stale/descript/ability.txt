@@ -1,0 +1,46 @@
+%%%%
+Heal Other ability
+
+# old en (ja19):
+#   Heals a creature other than yourself by a moderate amount, depending on
+#   Invocations skill. Using this ability on hostile monsters will try to turn them
+#   neutral. This works best on animals, and is less effective on humanoids and
+#   other intelligent creatures. Undead and demons are harder still to pacify.
+#   Mindless creatures cannot be pacified, and no monster can be pacified while it
+#   is asleep.
+#   
+#   Whether the pacification succeeds or not, the invested food, piety and magic
+#   points are lost. If it does succeed, the monster is healed and you gain half
+#   the monster's experience value. Otherwise, the monster is unaffected and you
+#   gain nothing.
+# old ja (ja19):
+#   あなたの祈祷スキルに応じて、あなた以外の存在をある程度回復させる。
+#   敵対的なモンスターにこの能力を使用することで彼らの中立化を試みられる。
+#   これは動物に最も有効に働き、あなたと同じ種族の人型生物、違う種族の人型生物、
+#   悪魔やアンデッドの順に効力が低くなっていく。知性の無い生物は中立化できず、
+#   全てのモンスターは眠っている間は中立化することができない。
+#   中立化の成功する可能性はあなたの癒しの力に依存するので、
+#   小さき癒しよりも確実に効果をもたらす。
+#   
+#   中立化が成功したか否かにかかわらず、消費した栄養と魔力は失われる。成功した場合、
+#   そのモンスターは体力を回復し、あなたはモンスターの経験値の半分と、
+#   もしかすると幾らかの信仰値を獲得する。
+#   失敗した場合はモンスターに効果をもたらさず、何も得ることはない。
+#   
+#   あなたは中立のモンスターや仲間を癒すこともできる。
+
+Heals a creature other than yourself by a moderate amount, depending on
+Invocations skill. Using this ability on hostile monsters will try to turn them
+neutral. This works best on living creatures, with the undead and demons being
+progressively harder to pacify. Intelligent creatures are also more difficult
+to pacify.
+
+Ghosts of dead adventurers and demon lords are too wrathful to be pacified,
+mindless creatures are too unintelligent to be pacified, and no monster can be
+pacified while it is asleep.
+
+Whether the pacification succeeds or not, the invested piety and magic points
+are lost. If it does succeed, the monster is healed and you gain the monster's
+full experience value. Otherwise, the monster is unaffected and you gain
+nothing.
+%%%%

@@ -1,0 +1,495 @@
+%%%%
+[card]Velocity
+
+加速
+%%%%
+[card]Exile
+
+放浪
+%%%%
+[card]the Elixir
+
+霊薬
+%%%%
+[card]the Stairs
+
+階段
+%%%%
+[card]the Tomb
+
+玄室
+%%%%
+[card]Wild Magic
+
+暴走
+%%%%
+[card]the Elements
+
+元素
+%%%%
+[card]the Pentagram
+
+五芒星
+%%%%
+[card]the Dance
+
+舞踏
+%%%%
+[card]Foxfire
+
+狐火
+%%%%
+[card]the Rangers
+
+野伏
+%%%%
+[card]the Shaft
+
+縦穴
+%%%%
+[card]Vitriol
+
+硫酸
+%%%%
+[card]the Cloud
+
+雲烟
+%%%%
+[card]the Storm
+
+嵐
+%%%%
+[card]Pain
+
+苦痛
+%%%%
+[card]Torment
+
+拷問
+%%%%
+[card]Wrath
+
+憤怒
+%%%%
+[card]the Wraith
+
+亡霊
+%%%%
+[card]the Swine
+
+豚
+%%%%
+[card]the Orb
+
+球体
+%%%%
+[card]the Illusion
+
+幻影
+%%%%
+[card]Degeneration
+
+堕落
+%%%%
+[card]Famine
+
+飢餓
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Mercenary
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Alchemist
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Curse
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Venom
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Fortitude
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Hammer
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Xom
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Feast
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Warpwright
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Repulsiveness
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Placid Magic
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Crusade
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Helm
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Blade
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Shadow
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Potion
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Focus
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Helix
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Dowsing
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Banshee
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Solitude
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Portal
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Warp
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Battlelust
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Metamorphosis
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Shuffle
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Experience
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Sage
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Trowel
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Minefield
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Genie
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Vitrification
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Bargain
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Herd
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]the Bones
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Water
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+[card]Swap
+
+%%%%
+It may contain the following cards: {card list}.
+
+このデッキには%sのカードが含まれている。
+%%%%
+[verb]deal
+
+使った
+%%%%
+[verb]draw
+
+引いた
+%%%%
+You {verb} a card... It is {card name}.
+
+あなたは%sのカードを%s。
+%%%%
+disappears without a trace.
+
+忽然と消え去った。
+%%%%
+glows slightly and disappears.
+
+しばらくの間輝き、そして消え去った。
+%%%%
+glows with a rainbow of weird colours and disappears.
+
+奇妙な虹色に輝き、そして消え去った。
+%%%%
+The deck of cards %s
+
+カードのデッキは%s
+%%%%
+That isn't a deck!
+
+それはカードのデッキじゃない！
+%%%%
+This is %s.
+
+これは%sだ。
+%%%%
+Deal from which deck?
+
+どのデッキを使用しますか？
+%%%%
+This deck seems insufficiently random for dealing.
+
+このデッキは十分に混ざっていないようだ。
+%%%%
+There's only one card left!
+
+このデッキにはカードがもう一枚しかない！
+%%%%
+The deck only has %d cards.
+
+このデッキにはカードが%d枚しか残っていない。
+%%%%
+Nemelex gives you another card to finish dealing.
+
+ネメレクス・ソベーはあなたが切りよくカードを使えるように追加のカードをよこした。
+%%%%
+It is usually found in decks of {deck list} { or ... }.
+
+このカードは通常%s%sに含まれている。
+%%%%
+, or in Nemelex Xobeh's deck of punishment
+
+、もしくはネメレクス・ソベーの懲罰のデッキ
+%%%%
+It is usually only found in Nemelex Xobeh's deck of punishment.
+
+このカードは通常ネメレクス・ソベーの懲罰のデッキにのみ含まれている。
+%%%%
+It is normally not part of any deck.
+
+このカードは通常はどのカードのデッキにも含まれていない。
+%%%%
+# No description found.
+
+# jtrans_ability.txtに記載
+%%%%
+Stack which deck?
+
+どのデッキを並べ替えますか？
+%%%%
+The deck has exactly five cards.
+
+このデッキにはちょうど5枚カードが残っている。
+%%%%
+You draw the first five cards out of %d and discard the rest.
+
+あなたは%d枚のカードのデッキのうち上から5枚を並べ替え、残りを捨てた。
+%%%%
+Press a digit to select a card, then another digit to swap it.
+
+数字キーを押してカードを選択し、次にそれと入れ替えるカードを選択してください。
+%%%%
+Press ? for the card descriptions, or Enter to accept.
+
+? キーを押すとカードの説明が読めます。Enterキーで決定します。
+%%%%
+Are you done? (press y or Y to confirm)
+
+これに決めますか？ (よろしければ y または Y を押してください)
+%%%%
+Triple draw from which deck?
+
+どのデッキから3枚抜き出しますか？
+%%%%
+You draw... (choose one card, ? for their descriptions)
+
+あなたの引くカードは…… (カードを選択してください。? キーで解説を表示)
+%%%%
+You %s a card...
+
+あなたはカードを%s……
+%%%%
+seems to have exchanged this card behind your back!
+
+があなたの背後からそのカードを取り替えたようだ！
+%%%%
+It's actually %s.
+
+それは実際は%sだった。
+%%%%
+[adj]evil
+
+邪悪な
+%%%%
+[adj]poisonous
+
+毒の
+%%%%
+[adj]chaotic
+
+混沌の
+%%%%
+[adj]hasty
+
+加速させる
+%%%%
+[adj]fiery
+
+燃えさかる
+%%%%
+By %s power, the %s magic on the card dissipates harmlessly.
+
+%sの御業により、%s魔術のカードはあなたを害することなく消え去った。
+%%%%
+# seems to speed up.
+
+# jtrans_beam.txtと重複
+%%%%
+is moving somewhat quickly.
+
+の動きがいくらか敏捷になった。
+%%%%
+drawing a card
+
+放浪のカードを引いたこと
+%%%%
+A shaft materialises beneath you!
+
+あなたの足下に縦穴が出現した！
+%%%%
+No stairs available to move.
+
+動かせるような階段がここにはない。
+%%%%
+[verb]dealt
+
+<[verb]deal>
+%%%%
+[verb]drawn
+
+<[verb]draw>
+%%%%
+You have %s %s.
+
+あなたは%sを%s。
+%%%%
+You radiate a wave of entropy!
+
+あなたはエントロピーの波動を発した！
+%%%%
+# is healed.
+
+# jtrans_attack.txtと重複
+%%%%
+You somehow manage to escape divine attention...
+
+あなたはなんとか神の注意から逃れようとした……
+%%%%
+You see a puff of smoke.
+
+あなたの目の前でぼわんと煙が上がった。
+%%%%
+You sense the presence of something unfriendly.
+
+あなたはなにか敵対的なものの存在を感じ取った。
+%%%%
+Pay %s fee of %d gold?
+
+%sを%dゴールドで雇いますか？
+%%%%
+Hired %s for %d gold.
+
+%sを金貨%d枚で雇った
+# take_note
+%%%%
+attacks!
+
+が攻撃してきた！
+%%%%
+joins your ranks!
+
+はあなたの仲間に加わった！
+%%%%
+Clouds appear around you!
+
+あなたの周囲に雲が湧きだした！
+%%%%
+is dazed by the mutagenic energy.
+
+は変異性のエネルギーを浴びてふらふらしている。
+%%%%
+a card of wild magic
+
+暴走のカード
+%%%%
+You feel a surge of magic.
+
+あなたは魔力の高まりを感じた。
+%%%%
+You feel rather smug.
+
+あなたはどうってことない顔をしている。
+%%%%
+# TAG_MAJOR_VERSION == 34
+This type of card no longer exists!
+
+そのカードはもう存在しない！
+%%%%
+You have %s a buggy card!
+
+# for bug
+%%%%
+You hear Nemelex Xobeh chuckle.
+
+あなたはネメレクス・ソベーがくすくす笑うのを耳にした。
+%%%%

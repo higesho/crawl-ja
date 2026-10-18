@@ -1,0 +1,509 @@
+%%%%
+held by %s
+
+%sに押さえつけられている
+%%%%
+constricted by %s
+
+%sに拘束されている
+%%%%
+constricting %s
+
+%sを拘束している
+%%%%
+holding %s
+
+%sを押さえつけている
+%%%%
+about %d
+
+およそ%d
+%%%%
+INVALID MONSTER
+
+# 訳不要
+%%%%
+spectral
+
+幽体の
+%%%%
+{mname}'s ghost
+
+%sの幽霊
+%%%%
+{mname}'s illusion
+
+%sの幻影
+%%%%
+panlord '{mname}'
+
+パンデモニウムの君主『%s』
+%%%%
+helpless
+
+哀れな
+%%%%
+submerged
+
+水中の
+%%%%
+ghostly
+
+霊体の
+%%%%
+sensed
+
+感知済みの
+%%%%
+active
+
+活発な
+%%%%
+{-headed for lernaean}
+
+の首を持つ
+%%%%
+-headed
+
+首
+%%%%
+beast
+
+獣
+%%%%
+spectre
+
+亡霊
+%%%%
+shaped pillar of salt
+
+塩の柱
+%%%%
+shaped block of ice
+
+氷塊
+%%%%
+shaped shifter
+
+に変身した変身能力者
+%%%%
+[info]berserk
+
+バーサーク
+%%%%
+[info]insane
+
+狂気
+%%%%
+[info]inner flame
+
+内炎
+%%%%
+[info]stupefied
+
+茫然自失
+%%%%
+[info]paralysed
+
+麻痺
+%%%%
+[info]caught
+
+捕縛
+%%%%
+[info]webbed
+
+蜘蛛の巣
+%%%%
+[info]petrified
+
+石化
+%%%%
+[info]petrifying
+
+石化中
+%%%%
+[info]mad
+
+憤怒
+%%%%
+[info]confused
+
+混乱
+%%%%
+[info]fleeing
+
+逃走中
+%%%%
+[info]dormant
+
+休息中
+%%%%
+[info]sleeping
+
+睡眠中
+%%%%
+[info]unaware
+
+未発見
+%%%%
+[info]dazed
+
+眩暈
+%%%%
+[info]mute
+
+沈黙
+%%%%
+[info]blind
+
+盲目
+%%%%
+[info]wandering
+
+放浪
+%%%%
+[info]burning
+
+炎上
+%%%%
+[info]invisible
+
+透明
+%%%%
+(fellow slime)
+
+(仲間のスライム)
+%%%%
+[attr]berserk
+
+バーサーク中だ
+%%%%
+[attr]fast
+
+加速中だ
+%%%%
+[attr]fast+slow
+
+加減速中だ
+%%%%
+[attr]slow
+
+減速中だ
+%%%%
+[attr]unusually strong
+
+強化中だ
+%%%%
+[attr]poisoned
+
+毒に冒されている
+%%%%
+[attr]sick
+
+病気に冒されている
+%%%%
+[attr]softly glowing
+
+柔らかく輝いている
+%%%%
+[attr]frenzied and insane
+
+正気を失っている
+%%%%
+[attr]confused
+
+混乱中だ
+%%%%
+[attr]slightly transparent
+
+透明化中だ
+%%%%
+[attr]in your thrall
+
+隷属中だ
+%%%%
+[attr]covered in liquid flames
+
+焼夷の炎を浴びている
+%%%%
+[attr]entangled in a net
+
+網に絡めとられている
+%%%%
+[attr]entangled in a web
+
+蜘蛛の巣に引っかかっている
+%%%%
+[attr]slowly petrifying
+
+石化進行中だ
+%%%%
+[attr]susceptible to hostile enchantments
+
+敵対的な魔法に弱い
+%%%%
+[attr]covering ground quickly
+
+敏捷化中だ
+%%%%
+[attr]radiating silence
+
+沈黙を振りまいている
+%%%%
+[attr]paralysed
+
+麻痺している
+%%%%
+[attr]repelling missiles
+
+飛来物を逸らしている
+%%%%
+[attr]deflecting missiles
+
+飛来物を弾いている
+%%%%
+[attr]inspiring fear
+
+恐ろしげに見える
+%%%%
+[attr]catching %s breath
+
+息が上がっている
+%%%%
+[attr]dazed
+
+目が回っている
+%%%%
+[attr]mute
+
+沈黙中だ
+%%%%
+[attr]blind
+
+目が見えない
+%%%%
+[attr]stupefied
+
+呆然としている
+%%%%
+[attr]lost in madness
+
+激怒で我を忘れている
+%%%%
+[attr]regenerating
+
+再生中だ
+%%%%
+[attr]resistant to hostile enchantments
+
+敵対的な魔法に強い
+%%%%
+[attr]covered in an icy film
+
+氷の鎧に覆われている
+%%%%
+[attr]misshapen and mutated
+
+奇形の体をしている
+%%%%
+[attr]chanting recall
+
+招来の呪文を詠唱中だ
+%%%%
+[attr]sheltered from injuries
+
+創傷から護られている
+%%%%
+[attr]engulfed in water
+
+水に包まれている
+%%%%
+[attr]unable to breathe
+
+呼吸することができない
+%%%%
+[attr]covered in terrible wounds
+
+体全体がひどい傷で覆われている
+%%%%
+[attr]weak
+
+弱体化中だ
+%%%%
+[attr]unable to translocate
+
+転位できない
+%%%%
+[attr]radiating toxic energy
+
+毒の波動を放っている
+%%%%
+[attr]movement impaired by roots
+
+木の根で動きが阻害されている
+%%%%
+[attr]more vulnerable to fire
+
+さらに火に弱くなっている
+%%%%
+[attr]surrounded by raging winds
+
+荒れ狂う風に包まれている
+%%%%
+[attr]surrounded by restless winds
+
+止むことのない風に包まれている
+%%%%
+[attr]skewered by barbs
+
+逆棘が刺さっている
+%%%%
+[attr]more vulnerable to poison
+
+さらに毒に弱くなっている
+%%%%
+[attr]surrounded by an icy envelope
+
+氷の鎧を身にまとっている
+%%%%
+[attr]unusually agile
+
+非常に機敏だ
+%%%%
+[attr]encased in ice
+
+凍結している
+%%%%
+[attr]absorbing vital energies
+
+生命力を吸い取っている
+%%%%
+[attr]magic-sapped
+
+魔法が阻害されている
+%%%%
+[attr]shrouded
+
+ゴルブリアの帷子を纏っている
+%%%%
+[attr]covered in acid
+
+酸を浴びている
+%%%%
+[attr]covering ground slowly
+
+大地をゆっくりと動いている
+%%%%
+[attr]lightly drained
+
+少し衰弱している
+%%%%
+[attr]heavily drained
+
+ひどく衰弱している
+%%%%
+[attr]unusually resistant
+
+非常に耐性が強い
+%%%%
+[attr]control wrested from you
+
+あなたに指揮権を奪われている
+%%%%
+[attr]corpse armoured
+
+屍肉の鎧を纏っている
+%%%%
+[attr]aura of brilliance
+
+叡智のオーラを放っている
+%%%%
+[attr]spells empowered
+
+魔法が強化されている
+%%%%
+[attr]ready to howl
+
+今にも叫ぼうとしている
+%%%%
+[attr]partially charged
+
+魔法を準備中だ
+%%%%
+[attr]fully charged
+
+魔法の準備を完了している
+%%%%
+[attr]incited by Gozag
+
+ゴザーグにけしかけられている
+%%%%
+[attr]sharing %s pain
+
+痛み分け状態だ
+%%%%
+[attr]idealised
+
+強化されている
+%%%%
+[attr]bound soul
+
+魂が呪縛されている
+%%%%
+[attr]infested
+
+太陽虫に寄生されている
+%%%%
+[attr]stilling the winds
+
+風を止ませている
+%%%%
+%s is {wounds}.
+
+%sは%s。
+%%%%
+very slow
+
+とても遅い
+%%%%
+[adj]very slow
+
+とても遅く
+%%%%
+slow
+
+遅い
+%%%%
+[adj]slow
+
+遅く
+%%%%
+extremely fast
+
+極めて素早い
+%%%%
+[adj]extremely fast
+
+極めて素早く
+%%%%
+very fast
+
+とても素早い
+%%%%
+[adj]very fast
+
+とても素早く
+%%%%
+fast
+
+素早い
+%%%%
+[adj]fast
+
+素早く
+%%%%
+normal
+
+普通だ
+%%%%

@@ -1,0 +1,13 @@
+%%%%
+Sticks to Snakes spell
+
+# old en (ja16):
+#   This spell uses wooden missiles (arrows or javelins) in the caster's grasp as
+#   raw material for a powerful transmutation.
+# old ja (ja16):
+#   この呪文は術者が握っている木製の矢弾 (矢または投げ槍) を原料とし、
+#   強力な変性を行う。
+
+Casts forth sticks and transforms them into snakes. Stronger casters will always
+create stronger snakes.
+%%%%

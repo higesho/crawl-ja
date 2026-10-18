@@ -1,0 +1,26 @@
+%%%%
+%s (Confirm with "yes".)
+
+%s
+(確認のため"yes"と入力してください)
+%%%%
+Buggy prompt?
+
+# 訳不要
+%%%%
+%s[Y]es or [N]o only, please.
+
+%s[Y]はい [N]いいえ のみで答えてください。
+%%%%
+Uppercase
+
+大文字の
+%%%%
+Choose %s[Y]es%s, [N]o, [Q]uit, or [A]ll!
+
+%s[Y]はい [N]いいえ [Q]キャンセル [A]全部 から選んでください！
+%%%%
+%s[Y]es%s, [N]o or [Q]uit only, please.
+
+%s[Y]はい [N]いいえ [Q]キャンセル のみで答えてください。
+%%%%

@@ -1,0 +1,91 @@
+%%%%
+Zin lastname
+
+# en:
+#   Zin the Law-Giver
+法の制定者『ジン』
+%%%%
+Okawaru lastname
+
+# en:
+#   Warmaster Okawaru
+戦上手の『オカワル』
+%%%%
+Makhleb lastname
+
+# en:
+#   Makhleb the Destroyer
+破壊者『マクレブ』
+%%%%
+Sif Muna lastname
+
+# en:
+#   Sif Muna the Loreminder
+知識の守護者『シフ・ムーナ』
+%%%%
+Trog lastname
+
+# en:
+#   Trog the Wrathful
+激怒せる『トログ』
+%%%%
+Elyvilon lastname
+
+# en:
+#   Elyvilon the Healer
+癒し手『エリヴィロン』
+%%%%
+Lugonu lastname
+
+# en:
+#   Lugonu the Unformed
+無形の『ルゴヌ』
+%%%%
+Fedhas lastname
+
+# en:
+#   Fedhas Madash
+『フェダス・マダシュ』
+%%%%
+Cheibriados lastname
+
+# en:
+#   Cheibriados the Contemplative
+瞑想者『ケイブリアドス』
+%%%%
+Ashenzari lastname
+
+# en:
+#   Ashenzari the Shackled
+束縛されしもの『アシェンザリ』
+%%%%
+Nemelex Xobeh lastname
+
+# en:
+#   Nemelex Xobeh the Trickster
+トリックスター『ネメレクス・ソベー』
+%%%%
+Gozag lastname
+
+# en:
+#   Gozag Ym Sagoz the Greedy
+強欲なる『ゴザーグ・イム・サゴーズ』
+%%%%
+Qazlal lastname
+
+# en:
+#   Qazlal Stormbringer
+嵐を呼ぶ者『クァズラル』
+%%%%
+Ru lastname
+
+# en:
+#   Ru the Awakened
+覚者『ルー』
+%%%%
+Hepliaklqana lastname
+
+# en:
+#   Hepliaklqana the Forgotten
+忘れられし『ヘプリアクルカナ』
+%%%%

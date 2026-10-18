@@ -1,0 +1,305 @@
+%%%%
+Vampire's Tooth
+
+# old en (ja16):
+#   This ivory-like dagger looks like it could have been crafted from the tooth of
+#   some enormous predatory creature. It is lethally vampiric, and restores a
+#   greater portion of life to its user than other vampiric weapons.
+# old ja (ja16):
+#   この牙のような形のダガーは何らかの巨大な肉食獣の歯から作られたようにも見える。
+#   強烈な吸血の力を帯びており、他の吸血の武器よりも多くの回復力をその使用者に
+#   もたらしてくれる。
+
+An ivory-like quick blade that looks like it could have been crafted from the
+tooth of some enormous predatory creature. It is lethally vampiric.
+%%%%
+sceptre of Asmodeus
+
+# old en (ja16):
+#   This sceptre carries some of the powers of the arch-fiend Asmodeus. Evoking it
+#   can summon fiery demons from their infernal home to do your bidding, although
+#   they will not remain enslaved for long.
+# old ja (ja16):
+#   この王笏には大悪魔『アスモデウス』の力が込められている。
+#   その力を発揮すると、あなたの命に従わせるべく火を操る悪魔を地獄から召喚することができる。
+#   とはいえ、その忠誠は長くは続かないだろう。
+
+A bright ruby sceptre, carrying some of the powers of the arch-fiend Asmodeus.
+It may call forth fiery demons from their infernal home to do the wielder's
+bidding.
+%%%%
+demon blade "Bloodbane"
+
+# old en (ja16):
+#   This blade carries the bloody taint of an inhuman madman.
+# old ja (ja16):
+#   これは残忍な狂戦士の血塗られた痕跡を幾らか孕んでいる。
+
+A blade forged in Hell by the sacrifice of countless tortured souls. It
+inflicts the rage and suffering of those souls upon its wielder.
+%%%%
+eveningstar "Brilliance"
+
+# old en (ja16):
+#   This eveningstar illuminates the dungeon's recesses, but its halo may alert
+#   enemies to your presence. Its light is hated by the undead, and reveals the
+#   machinations of those who would prefer to stay invisible.
+# old ja (ja16):
+#   このメイスはダンジョンを明るく照らすが、
+#   あなたの存在を敵に察知されやすくするだろう。
+#   放たれる輝きはアンデッドの天敵であり、姿を隠した者たちの策謀を打ち砕く。
+
+Soon after falling, Yredelemnul attempted to twist holy energy into a dark
+mockery of itself, turning it against its progenitors and weakening it against
+undead and demons. It was discovered too late that such a complete perversion
+was uncontrollable; the foul flame destabilised or destroyed everything it was
+infused into, except for several demonic test subjects and one stolen holy
+weapon. A lesser, and more stable, version of the dark energy proved more
+workable, and became Yredelemnul's umbra.
+
+This is that weapon: an eveningstar with its light long fled, despite its name,
+and a shadow that repulses those its light used to comfort...
+%%%%
+demon blade "Leech"
+
+# old en (ja16):
+#   This weapon drives its owner's mind into a narrow purpose: gorging on drained
+#   life force. It is unerringly vampiric, draining life every time it strikes.
+# old ja (ja16):
+#   この武器は所有者の精神を操り、生命力をたっぷりと吸い取るという目的に注力させる。
+#   その様はまさしく吸血鬼そのものであり、攻撃するごとに生命力を奪っていく。
+
+A blade forged in Hell by the sacrifice of countless tortured souls. It fills
+its wielder with the rage and suffering of those souls, and gorges itself
+further on drained life force every time it strikes, leaving behind a mess of
+blood and gore.
+%%%%
+greatsling "Punk"
+
+# old en (ja16):
+#   A sling made of weird blue leather. Originally the weapon of a notorious
+#   mischief-maker and general scamp, it's since fallen into less savoury hands.
+# old ja (ja16):
+#   奇妙な青い皮で作られたスリングだ。
+
+A sling made of weird green leather, oozing corrosive slime. Originally the
+weapon of a notorious mischief-maker and general scamp, it's since fallen into
+less savoury hands.
+%%%%
+trident of the Octopus King
+
+# old en (ja16):
+#   This trident was stolen many years ago from the Octopus King's garden. Luckily,
+#   he seems to be in no hurry to get it back.
+# old ja (ja16):
+#   これは何年もの昔、蛸の王の庭園から持ち去られたトライデントだ。
+#   幸運なことに、彼はすぐに取り戻そうとするつもりはないようだ。
+
+A trident stolen many years ago from the Octopus King's garden. Luckily, he
+seems to be in no hurry to get it back.
+%%%%
+Elemental Staff
+
+# old en (ja16):
+#   This powerful staff used to belong to the leader of the Guild of Five Elements.
+#   In addition to the protection it provides, those skilled in Evocations may
+#   use it to discharge powerful blasts of elemental energy with their strikes.
+# old ja (ja16):
+#   この強力な杖はかつて五元素のギルドの長が所有していたものだ。
+#   その杖がもたらす保護に加え、発動スキルに長けたものが振るうことで精霊のエネルギーの
+#   激しい奔流を解き放つこともできる。
+
+A powerful staff which used to belong to the leader of the Guild of Five
+Elements. It is imbued with protective and offensive enhancements from all
+the elemental schools of magic.
+%%%%
+heavy crossbow "Sniper"
+
+# old en (ja16):
+#   A huge crossbow made of some black material. It is highly damaging, but
+#   extremely cumbersome to load.
+# old ja (ja16):
+#   何か黒い材質で作られた巨大なクロスボウだ。
+#   威力こそ大きいものの、再装填するのに非常に扱いづらい。
+
+The sacred weapon of Toth-Mos, first apostle of the god Ashenzari. It grants
+the wielder a fraction of Ashenzari's own vision, ensuring that every shot will
+land true.
+%%%%
+Spriggan's Knife
+
+# old en (ja16):
+#   This dainty little knife was made by Spriggans, or for Spriggans, or possibly
+#   from Spriggans. Anyway, it's in some way associated with those fey folk.
+# old ja (ja16):
+#   このちっぽけなナイフはスプリガンが作ったものか、スプリガンのために作られたものか、
+#   はたまたスプリガンから作られたものか。
+#   いずれにせよ、何らかの形でかの気まぐれな種族と関わりのあるものだ。
+
+A dainty little knife which was made by Spriggans, or for Spriggans, or
+possibly from Spriggans. Anyway, it's in some way associated with those fey
+folk.
+%%%%
+robe of Night
+
+# old en (ja16):
+#   A long black robe made of strange glossy material. It seems to shroud its
+#   wearer in darkness. According to legend, it was the gift of Ratri the Goddess
+#   of the Night to one of her followers.
+# old ja (ja16):
+#   光沢を帯びる不思議な素材で作られた長くて黒いローブだ。
+#   その着用者を闇の中に覆い隠すだろう。
+#   伝説によれば、このローブは夜の女神ラートリーからある信徒への贈り物だ。
+
+A long black robe made of strange glossy material. It shrouds its wearer in
+darkness, reducing the range of vision. According to legend, it was the gift
+of Rutra, a renowned demigoddess of the night, to one of her followers.
+%%%%
+shield of the Gong
+
+# old en (ja16):
+#   This is a heavy bronze gong that can be worn as a shield. According to certain
+#   mystics, beating on such a gong can grant you spiritual protection.
+#   
+#   And this shield will surely be heard!
+# old ja (ja16):
+#   盾としても使える、重量のある青銅製の銅鑼だ。
+#   とある神秘術者によると、このような銅鑼を打ち鳴らすことで霊的な保護が得られるそうだ。
+#   
+#   もちろん、この盾の音はあたりの者の耳に入ることだろう！
+
+A heavy bronze gong that can be worn as a shield. Locked away in a temple for
+many years, its bearer is shielded by decades of accumulated prayer.
+%%%%
+ring of Shadows
+
+# old en (ja16):
+#   A black ring that can make its wearer one with the shadows. It creates a dark
+#   umbra that surrounds the wearer and increases stealth greatly, and it makes you
+#   and your enemies alike harder to hit.
+# old ja (ja16):
+#   着用者を影と一体化させることのできる黒い指輪だ。
+#   それは着用者を覆う暗い影の帳を生み出し、隠密性を著しく高め、あなたとあなたの敵の
+#   双方において攻撃が当たりにくくする。
+
+A black ring that can make its wearer one with the shadows.
+%%%%
+hat of Pondering
+
+# old en (ja16):
+#   The favorite hat of the slug wizard Gastronok, stained with reddish slime and
+#   enchanted to aid in his arcane pondering. It has been specially enchanted to
+#   protect against the effects of salt.
+# old ja (ja16):
+#   ナメクジの魔法使いガストロノクのお気に入りの帽子だ。
+#   赤みを帯びたどろどろが染みついており、秘術についての彼の思索を助ける魔法の効果がある。
+#   また、塩よけのための特別の魔法がかけられている。
+
+The favourite hat of the slug wizard Gastronok, stained with reddish slime and
+enchanted to aid in his arcane pondering. It has been specially enchanted to
+protect against the desiccating effects of salt.
+%%%%
+dark maul
+
+# old en (ja16):
+#   This large iron-shod maul is specialised for dealing massively powerful blows.
+#   Alas, such power comes at a price: the maul's head is so heavy it takes forever
+#   to lift it up for another swing.
+# old ja (ja16):
+#   この鉄をはめられた大槌は相手に強力な一撃を振るうことに特化したものである。
+#   残念ながらその威力にはそれだけの代償がある――この大槌の頭部分は非常に重いため、
+#   次の一撃を繰り出すべく持ち上げるのにはとても長い時間がかかるのだ。
+
+A large, iron-shod maul specialised for dealing massively powerful blows. Such
+power comes at a price: the maul's head is so heavy it takes a great length of
+time to lift it up for another swing.
+%%%%
+arc blade
+
+# old en (ja16):
+#   A blade somehow crafted from pure electricity. Striking an enemy with it
+#   occasionally unleashes a static discharge.
+# old ja (ja16):
+#   純粋な電気から何らかの方法で形成された刃だ。
+#   これで敵を攻撃すると、帯びていた電気を解き放つことがある。
+
+A blade somehow crafted from pure electricity. It arcs wildly between the
+wielder and their foes as it strikes.
+%%%%
+demon whip "Spellbinder"
+
+# old en (ja16):
+#   A weapon said to have once been used to keep unruly imprisoned wizards in line;
+#   it violently disrupts their ability to use magic, inflicting wild and
+#   unpredictable magical effects on those it strikes.
+# old ja (ja16):
+#   反抗的な魔法使いの囚人を一列に並べるために使われていたと言われている武器だ。
+#   それは魔法を操る能力を著しく乱し、鞭打った相手に予想も付かぬ暴走した魔法の
+#   効果をもたらす。
+
+A weapon said to have once been used to keep unruly imprisoned wizards in line;
+it violently disrupts the flow of magic around it.
+%%%%
+lajatang of Order
+
+# old en (ja16):
+#   Long ago Zin bestowed this gift upon a favoured worshipper. It became the
+#   most prized weapon of the many priests of Zin; after their order was destroyed,
+#   it fell into disuse and vanished from history.
+# old ja (ja16):
+#   遠い昔ジンが見目麗しき一人の信者にこの品物を授け、ジンの数多の司祭のうちで珍重
+#   される武器となった。
+#   彼らの体制が崩壊した後はこの武器は用いられなくなり、歴史から消え去ることとなった。
+
+A silver-bladed lajatang, once bestowed upon a favoured worshipper of Zin. It
+became the most prized weapon of the many priests of Zin. After their order was
+destroyed, it fell into disuse and vanished from history.
+%%%%
+great mace "Firestarter"
+
+# old en (ja16):
+#   This weapon is imbued with potent fire magic, and fills those it strikes with
+#   inner flame.
+# old ja (ja16):
+#   この武器は火の魔力が吹き込まれており、これで打撃した相手を内なる炎で満たす。
+
+A huge mace imbued with potent fire magic. It fills those it strikes with an
+inner flame, and offers some protection against the resulting devastation.
+%%%%
+orange crystal plate armour
+
+# old en (ja16):
+#   Carved from transparent orange crystal, this armour provides remarkable
+#   protection for both mind and body. A skilled user can even channel psychic
+#   energies through the crystal itself. However, it's rather heavy...
+# old ja (ja16):
+#   透明な橙水晶を削って作られたこの鎧は、精神と肉体の両方においてめざましい
+#   防護をもたらす。
+#   熟練した着用者は水晶そのものを通して肉体の活力を引き出すこともできる。
+#   とはいえ、この鎧は少々重すぎる……
+
+A suit of armour carved from transparent orange crystal. It provides remarkable
+protection for both mind and body. The wearer can even channel psychic energies
+through the crystal itself, enhancing their magical abilities. However, it's
+rather heavy...
+%%%%
+Majin-Bo
+
+# old en (ja16):
+#   The Majin-Bo is actually a mighty demon, tricked and trapped in this form long
+#   ago. To survive, she now offers tremendous arcane power at a small price: a
+#   tiny portion of the caster’s life essence, taken alongside the magic used every
+#   time its wielder casts a spell. Of course - the demon is more than happy to
+#   suck the life from others, as well.
+# old ja (ja16):
+#   魔神棒の実体は遠い昔に罠にかけられこの形に封じられてしまった強大な悪魔だ。
+#   生きる手段として、彼女は途方もない術力をささいな対価 ―持ち主が魔法を唱えるたびに
+#   吸い取るほんのわずかな生命力― で提供する。
+#   もちろん、悪魔は持ち主以外から生命力を吸い取ることに異存はない。
+
+A staff inhabited by a mighty demon, tricked and trapped in this form long ago.
+To survive, she now offers great arcane power in a terrible bargain: in
+exchange for a tiny portion of the caster's life essence, taken every time its
+wielder casts a spell, she will redirect the life essence of creatures damaged
+by the spell to the caster.
+%%%%

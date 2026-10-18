@@ -1,0 +1,281 @@
+%%%%
+Failed to load map, reloading all maps (%s).
+
+# 訳不要
+%%%%
+Unable to generate level for '%s'!
+
+# 訳不要
+%%%%
+<white>VETO</white>: %s: %s
+
+# for debug
+%%%%
+branch epilogue for %s failed: %s
+
+# for debug
+%%%%
+invalid map border at (%d,%d): %s
+
+# 訳不要
+%%%%
+Removing references to unused map #%d) '%s' (%d,%d) (%d,%d)
+
+# 訳不要
+%%%%
+Unregistering unseen vault: %s
+
+# for debug
+%%%%
+Extant vaults on level: %d
+
+# for debug
+%%%%
+%d) %s (%d,%d) size (%d,%d)
+
+# for debug
+%%%%
+Vault placement failure.
+
+# 訳不要
+%%%%
+absdepth0 = %d
+
+# for debug
+%%%%
+Item %s buggily placed in feature %s at (%d, %d).
+
+# 訳不要
+%%%%
+Item buggily placed out of bounds at (%d, %d).
+
+# 訳不要
+%%%%
+#ifdef DEBUG_DIAGNOSTICS
+Multiple branch exits on %s
+
+%%%%
+Too many stairs -- removing one of a connected pair.
+
+# for debug
+%%%%
+Too many stairs inside vaults!
+
+# for debug
+%%%%
+Too many stairs -- removing one blindly.
+
+# for debug
+%%%%
+Before culling: %d/%d %s stairs
+
+# for debug
+%%%%
+After culling: %d/%d %s stairs
+
+# for debug
+%%%%
+Adding stair %d at (%d,%d)
+
+# for debug
+%%%%
+Dungeon has %d zones after placing %s.
+
+# for debug
+%%%%
+Had %d zones, now has %d%s%s.
+
+# 訳不要
+%%%%
+Isolated areas with no stairs.
+
+# 訳不要
+%%%%
+Warning: failed to preserve vault stairs.
+
+# 訳不要
+%%%%
+Failed to fix stone stairs.
+
+# 訳不要
+%%%%
+A disconnected branch entrance.
+
+# 訳不要
+%%%%
+Failed to add connecting escape hatches.
+
+# 訳不要
+%%%%
+Failed to ensure interlevel connectivity.
+
+# 訳不要
+%%%%
+Couldn't find overflow temple map '%s'!
+
+# 訳不要
+%%%%
+#ifdef DEBUG_TEMPLES
+Already placed specialized single-altar temple for %s
+
+%%%%
+#ifdef DEBUG_TEMPLES
+Couldn't find overflow temple for combination of tags %s
+
+%%%%
+Couldn't find overflow temple tag '%s'!
+
+# 訳不要
+%%%%
+#ifdef DEBUG_TEMPLES
+Couldn't place overflow temple '%s', vetoing level.
+
+%%%%
+#ifdef DEBUG_TEMPLES
+Placed overflow temple %s
+
+%%%%
+Placed %s mimic at (%d,%d).
+
+# for debug
+%%%%
+Couldn't find a layout for %s
+
+# for debug
+%%%%
+Unable to find Temple vault '%s'
+
+# 訳不要
+%%%%
+Couldn't find selected map '%s'.
+
+# 訳不要
+%%%%
+Whoops, nicked a vault in slime connectivity fixup
+
+# 訳不要
+%%%%
+Placing CHANCE vault: %s (%s)
+
+# 訳不要
+%%%%
+Found fallback vault %s for chance tag %s
+
+# 訳不要
+%%%%
+Couldn't pick a layout.
+
+# 訳不要
+%%%%
+attempting to place %d traps
+
+# 訳不要
+%%%%
+tried %d times to place a trap & gave up
+
+# 訳不要
+%%%%
+failed to find a trap type to place
+
+# 訳不要
+%%%%
+placed a trap
+
+# 訳不要
+%%%%
+Cannot place feature at random floor square.
+
+# 訳不要
+%%%%
+Cannot place specific feature.
+
+# 訳不要
+%%%%
+Placing stair to %s
+
+# 訳不要
+%%%%
+_builder_monsters: Generating %d monsters
+
+# 訳不要
+%%%%
+Unable to find exit from %s
+
+# 訳不要
+%%%%
+Cannot generate encompass map '%s' with check_collision=true
+
+# 訳不要
+%%%%
+Placed map '%s', yet vault_placement is '%s'
+
+# 訳不要
+%%%%
+Failed to load map %s in dgn_safe_place_map, reloading all maps
+
+# 訳不要
+%%%%
+Pan map with disconnected zones
+
+# 訳不要
+%%%%
+Map: %s; placed: %s; place: (%d,%d), size: (%d,%d)
+
+# 訳不要
+%%%%
+Setting the custom random mons list.
+
+# 訳不要
+%%%%
+ERROR: %s already generated somewhere else; please file a bug report.
+
+# 訳不要
+%%%%
+Ran out of altars for temple!
+
+# 訳不要
+%%%%
+Shop type %d: original greed = %d, factor = %d, discount = %d%%.
+
+# 訳不要
+%%%%
+Shop spec overrides greed: %d becomes %d.
+
+# 訳不要
+%%%%
+Shop spec overrides number of items to %d.
+
+# 訳不要
+%%%%
+Shop spec wants all items placed: %u of them.
+
+# 訳不要
+%%%%
+unknown shop type %d
+
+# 訳不要
+%%%%
+Vault %s tried to place a shaft at a branch end
+
+# 訳不要
+%%%%
+Level entry point on %sstair: %d (%s)
+
+# 訳不要
+%%%%
+Oops, couldn't find labyrinth entry marker.
+
+# 訳不要
+%%%%
+Can't find any floor to put the player on.
+
+# 訳不要
+%%%%
+Warning: failed to connect vault exit (%d;%d).
+
+# 訳不要
+%%%%
+Level density: %d
+
+# 訳不要
+%%%%

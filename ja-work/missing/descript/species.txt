@@ -1,0 +1,46 @@
+%%%%
+Armataur
+
+Scaled mammals the size of horses, Armataurs are fast-rolling and tenacious when
+pursuing enemies, but lack dexterity.
+%%%%
+Barachi
+
+Barachim are slow-moving, amphibious humanoids who can hop long distances.
+Their extended range of vision also allows them to be seen from further away.
+%%%%
+Coglin
+
+Coglins ride enchanted exoskeletons able to wield weapons in both hands,
+wrapping slow-revving metal around their puny goblinoid frames.
+%%%%
+Djinni
+
+Djinn are ever-burning spirits. They learn spells automatically as they grow,
+and cast by drawing down their own fires.
+%%%%
+Gnoll
+
+Gnolls are canine-like humanoids. They are unable to specialise in any single
+skill, but instead gradually become proficient in all skills at once.
+%%%%
+Mountain Dwarf
+
+Mountain Dwarves are strong melee fighters and capable heavy-armoured casters.
+They can use scrolls to enchant even some artefacts.
+%%%%
+Oni
+
+Large, robust, and extremely fond of drinking, Oni make capable brawlers and
+spellcasters and gain extra benefits from healing potions.
+%%%%
+Poltergeist
+
+Formless ghosts who delight in hexing their enemies. They can equip many
+different hats, gloves, boots, or cloaks at once, but cannot wear body armour.
+%%%%
+Revenant
+
+Revenants are skeletal undead who are strong at melee combat and can empower
+damage-dealing spells by consuming memories they harvest from their victims.
+%%%%

@@ -1,0 +1,43 @@
+%%%%
+CMD_EXPLORE_NO_REST
+
+Autoexplore the current level without resting first
+%%%%
+CMD_EXPLORE_NO_REST
+
+Automatically explores the current level, collecting items on the way.
+Exploration stops as soon as a hostile monster comes into view, or when you
+encounter new items or features. Unlike CMD_EXPLORE, will treat
+explore_auto_rest as if it were false and explore_auto_rest_status as if it were
+empty.
+%%%%
+CMD_SHOW_CHARACTER_DUMP
+
+Dump and show character's progress
+%%%%
+CMD_SHOW_CHARACTER_DUMP verbose
+
+Dumps detailed information about your character into a file ‘playername.txt’ in
+the morgue directory, and shows the file in-game. This includes main stats,
+equipment, spells, skills, notes, etc.
+%%%%
+CMD_MAP_EXIT_MAP
+
+Exit map mode
+%%%%
+CMD_TOGGLE_KEYBOARD
+
+Toggle keyboard
+%%%%
+CMD_TOGGLE_KEYBOARD verbose
+
+Toggles the on-screen keyboard visibility.
+%%%%
+CMD_GAME_MENU
+
+Show game menu
+%%%%
+CMD_GAME_MENU verbose
+
+Show the game menu
+%%%%

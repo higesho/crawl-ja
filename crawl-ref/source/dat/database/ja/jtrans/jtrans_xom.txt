@@ -1,0 +1,866 @@
+%%%%
+Xom is interested.
+
+ゾムは興味を示している。
+%%%%
+Xom is mildly amused.
+
+ゾムはいくらか楽しんでいる。
+%%%%
+Xom is amused.
+
+ゾムは楽しんでいる。
+%%%%
+Xom is highly amused!
+
+ゾムはとても楽しんでいる！
+%%%%
+Xom thinks this is hilarious!
+
+ゾムは非常に楽しんでいる！
+%%%%
+Xom roars with laughter!
+
+ゾムは高々と笑い声を上げた！
+%%%%
+Xom is very interested.
+
+ゾムはとても興味を示している。
+%%%%
+Xom is extremely interested.
+
+ゾムは非常に興味を示している。
+%%%%
+Xom is intrigued!
+
+ゾムは夢中になっている！
+%%%%
+Xom is very intrigued!
+
+ゾムはとても夢中になっている！
+%%%%
+Xom is fascinated!
+
+ゾムは大興奮している！
+%%%%
+a very special plaything of Xom.
+
+<You are now a very special plaything of Xom.>
+%%%%
+a special plaything of Xom.
+
+<You are now a special plaything of Xom.>
+%%%%
+a plaything of Xom.
+
+<You are now a plaything of Xom.>
+%%%%
+a toy of Xom.
+
+<You are now a toy of Xom.>
+%%%%
+a favourite toy of Xom.
+
+<You are now a favourite toy of Xom.>
+%%%%
+a beloved toy of Xom.
+
+<You are now a beloved toy of Xom.>
+%%%%
+Xom's teddy bear.
+
+<You are now Xom's teddy bear.>
+%%%%
+a very buggy toy of Xom.
+
+<You are now a very buggy toy of Xom.>
+%%%%
+a BORING thing.
+
+<You are now a BORING thing.>
+%%%%
+Xom makes something happen.
+
+ゾムが何かした。
+%%%%
+#ifdef DEBUG_XOM
+Xom: tension: %d, piety: %d -> tension bonus = %d, eff. piety: %d
+
+%%%%
+#if defined(DEBUG_RELIGION) || defined(DEBUG_GIFTS) || defined(DEBUG_XOM)
+Xom: gift_timeout: %d, maxinterestingness = %d, interestingness = %d
+
+%%%%
+#ifdef DEBUG_XOM
+xom_tick(), delta: %d, piety: %d
+
+%%%%
+is getting BORED.
+
+は飽きてしまった。
+%%%%
+is interested.
+
+は興味を示している。
+%%%%
+is intrigued.
+
+は夢中になっている。
+%%%%
+#if defined(DEBUG_RELIGION) || defined(DEBUG_XOM)
+tension %d (chance: %d) -> increase interest to %d
+
+%%%%
+#if defined(DEBUG_DIAGNOSTICS) || defined(DEBUG_RELIGION) || defined(DEBUG_XOM)
+_xom_makes_you_cast_random_spell(); spell: %d
+
+%%%%
+cast spell '%s'
+
+%sの呪文を唱えた
+%%%%
+divination
+
+予見術
+%%%%
+divination: magic mapping
+
+予見術: 魔法の地図
+%%%%
+You detect items!
+
+あなたはアイテムを探知した！
+%%%%
+divination: detect items
+
+予見術: アイテムの探知
+%%%%
+You detect no further creatures.
+
+これ以上他にモンスターを探知できない。
+%%%%
+You detect creatures!
+
+あなたはモンスターを探知した！
+%%%%
+divination: detect creatures
+
+予見術: モンスターの探知
+%%%%
+"No, never mind."
+
+『いや、気にするな』
+%%%%
+god gift: %s
+
+神の下賜: %s
+%%%%
+# snickers.
+
+# jtrans_acquire.txtと重複
+%%%%
+{name}'s {item} is briefly surrounded by a scintillating aura of random colours.
+
+%sの%sはしばらくの間様々な色が煌くオーラに包まれた。
+%%%%
+#ifdef DEBUG_DIAGNOSTICS
+_xom_random_demon(); sever = %d, roll: %d
+
+%%%%
+potion effect
+
+薬の投与
+%%%%
+looks rather more confused.
+
+はさらに混乱したようだ。
+%%%%
+# looks rather confused.
+
+# jtrans_spl_other.txtと重複
+%%%%
+confuse monster(s)
+
+モンスターの混乱
+%%%%
+summons %d friendly demon%s
+
+%d体の友好的な悪魔を召喚
+%%%%
+summons friendly %s
+
+友好的な%sを召喚
+%%%%
+# something unseen
+
+# jtrans_mon_poly.txtと重複
+%%%%
+polymorph %s -> %s
+
+%sから%sに変化
+%%%%
+upgrade
+
+アップグレード
+%%%%
+downgrade
+
+ダウングレード
+%%%%
+# Some monsters swap places.
+
+# jtrans_mon_cast.txtと重複
+%%%%
+swap monsters
+
+モンスターの交換
+%%%%
+snakes to sticks
+
+蛇の棒切れ
+%%%%
+%s reforms as %s.
+
+%sは%sへと変化した。
+%%%%
+%s %s dances into the air!
+
+%sの%sが空中で踊りだした！
+%%%%
+give %smutation%s
+
+%s突然変異の付与
+%%%%
+Your body is suffused with distortional energy.
+
+あなたの体は歪曲のエネルギーに覆われている。
+%%%%
+Xom's grace
+
+ゾムの恩寵
+%%%%
+Xom's mischief
+
+ゾムの悪戯
+%%%%
+The area is suffused with divine lightning!
+
+あたり一面が神の雷を浴びた！
+%%%%
+# [zap]blast of lightning
+
+# jtrans_mon_death.txtと重複
+%%%%
+Xom's lightning strike
+
+ゾムの雷霆の一撃
+%%%%
+Your divine protection wanes.
+
+あなたへの神の保護がなくなった。
+%%%%
+divine lightning%s
+
+神の雷%s
+%%%%
+(protected)
+
+(保護状態)
+%%%%
+scenery: create altars
+
+地形: 祭壇の造成
+%%%%
+a fountain starts gushing blood
+
+噴水から血が湧きだした
+%%%%
+some fountains start gushing blood
+
+いくつかの噴水から血が湧きだした
+%%%%
+%d fountains blood
+
+%dつの血の噴水
+%%%%
+%s!
+
+%s！
+%%%%
+A door bursts open
+
+扉が開いた
+%%%%
+Two doors burst open
+
+2つの扉が開いた
+%%%%
+Several doors burst open
+
+いくつかの扉が開いた
+%%%%
+%d doors open
+
+%dつの扉が開いた
+%%%%
+another door slams shut
+
+別の扉がバタンと閉じた
+%%%%
+a door slams shut
+
+扉がバタンと閉じた
+%%%%
+two other doors slam shut
+
+別の2つの扉がバタンと閉じた
+%%%%
+two doors slam shut
+
+2つの扉がバタンと閉じた
+%%%%
+several other doors slam shut
+
+別のいくつかの扉がバタンと閉じた
+%%%%
+several doors slam shut
+
+いくつかの扉がバタンと閉じた
+%%%%
+%d doors close
+
+%dつの扉が閉じた
+%%%%
+scenery:
+
+地形:
+%%%%
+# [zap]fireball
+
+# jtrans_spell_miscast.txtと重複
+%%%%
+Xom's destruction
+
+ゾムの破壊
+%%%%
+destruction
+
+破壊
+%%%%
+fake destruction
+
+偽りの破壊
+%%%%
+enchant monster (good)
+
+モンスターへの魔法(有利)
+%%%%
+enchant monster (bad)
+
+モンスターへの魔法(不利)
+%%%%
+fog
+
+霧
+%%%%
+silly message
+
+お馬鹿なメッセージ
+%%%%
+Nothing appears to happen... Ominous!
+
+何も起きなかった……不気味だ！
+%%%%
+The lava spits out sparks!
+
+溶岩がほとばしった！
+%%%%
+The water briefly bubbles.
+
+水面がしばらくの間泡立った。
+%%%%
+The water briefly swirls.
+
+水面がしばらくの間渦巻いた。
+%%%%
+The water briefly glows.
+
+水面がしばらくの間輝いた。
+%%%%
+From the corner of your eye you spot something lurking in the deep water.
+
+あなたの視界の隅で何かが深い水底で待ち伏せているのが見えた。
+%%%%
+The idol of Beogh turns to glare at you.
+
+ベオの偶像がこちらを睨みつけた。
+%%%%
+The granite statue turns to stare at you.
+
+花崗岩の像がこちらを見つめた。
+%%%%
+Dim shapes swim through the translucent wall.
+
+半透明の壁から靄が湧きだした。
+%%%%
+Dim shapes swim through the crystal wall.
+
+水晶の壁から靄が湧きだした。
+%%%%
+Tendrils of electricity crawl over the metal wall!
+
+金属の壁から稲妻がほとばしった！
+%%%%
+The water in the fountain briefly bubbles.
+
+噴水の水がしばらくの間泡立った。
+%%%%
+The water in the fountain briefly swirls.
+
+噴水の水がしばらくの間渦巻いた。
+%%%%
+The water in the fountain briefly glows.
+
+噴水の水がしばらくの間輝いた。
+%%%%
+Water briefly sprays from the dry fountain.
+
+涸れた噴水からしばらくの間水が噴出した。
+%%%%
+Dust puffs up from the dry fountain.
+
+涸れた噴水から埃が巻き上がった。
+%%%%
+The stone arch briefly shows a sunny meadow on the other side.
+
+しばらくの間、石のアーチの向こうに日の当たる草原が見えた。
+%%%%
+{feat} seems to fall away from under you!
+
+%sがあなたの場所から遠ざかった！
+%%%%
+{feat} seems to rush up at you!
+
+%sがあなたの方に押し寄せた！
+%%%%
+Something invisible splashes into the water beneath you!
+
+何か目に見えないものがあなたの下の水面で跳ねた！
+%%%%
+The water briefly recedes away from you.
+
+しばらくの間あなたから周囲の水が退いた。
+%%%%
+Something invisible splashes into the water beside you!
+
+何か目に見えないものがあなたの足元の水面で跳ねた！
+%%%%
+# One of
+
+# jtrans_food.txtと重複
+%%%%
+{(one of) item} falls out of your pack, then immediately jumps back in!
+
+%s%sが袋から飛び出し、すぐに跳ね返って中に入った！
+%%%%
+You briefly get tangled in your bandages.
+
+あなたの包帯が一瞬もつれた。
+%%%%
+You trip over your bandages.
+
+あなたは一瞬包帯につまずいた。
+%%%%
+A monocle briefly appears over your {r/l} eye.
+
+片眼鏡がしばらくの間あなたの%s%s目に掛かった。
+%%%%
+Your eyebrows briefly feel incredibly bushy.
+
+一瞬あなたの眉毛が信じられないほどふさふさになった。
+%%%%
+Your eyebrows wriggle.
+
+あなたの眉毛がのたうった。
+%%%%
+You do an impromptu tapdance.
+
+あなたは即興でタップダンスを踊った。
+%%%%
+A fancy cane briefly appears in your {hand}.
+
+あなたの%sの中に一瞬ステッキが握られた。
+%%%%
+Your cloak billows in an unfelt wind.
+
+あなたのクロークは不意の風ではためいた。
+%%%%
+Your {item} leaps into the air, briefly spins, then lands back on your head!
+
+あなたの%sが空中に飛び上がり、一回転して再びあなたの頭に被さった！
+%%%%
+You compulsively click the heels of your {boots} together three times.
+
+あなたは衝動的に%sのかかとを3回打ち鳴らした。
+%%%%
+Your {item} spins!
+
+あなたの%sが回転した！
+%%%%
+Your {item} briefly flashes a lurid colour!
+
+あなたの%sが一瞬不気味な光を放った！
+%%%%
+# dragon
+
+# jtrans_monster_dataと重複
+%%%%
+The scales on your {armour} wiggle briefly.
+
+あなたの%sの鱗が一瞬ぴくぴくと動いた。
+%%%%
+The fur on your {animal skin} grows longer at an alarming rate, then retracts back to normal.
+
+あなたの%sの毛足が異様に伸びたが、すぐに元に戻った。
+%%%%
+Your {leather armour} briefly grows fur, then returns to normal.
+
+あなたの%sから急に毛が生えてきたが、すぐに元に戻った。
+%%%%
+You briefly become tangled in your {robes}.
+
+あなたは着ている%sに一瞬動きを取られた。
+%%%%
+Your {armour} briefly appears rusty.
+
+あなたの%sが一瞬錆びたように見えた。
+%%%%
+{Your item} briefly glow(s).
+
+%sがしばらくの間輝いた。
+%%%%
+{Your item} briefly vibrate(s).
+
+%sがしばらくの間振動した。
+%%%%
+mandible
+
+顎
+%%%%
+nose
+
+鼻
+%%%%
+ear
+
+耳
+%%%%
+elbow
+
+肘
+%%%%
+the mischief of Xom
+
+ゾムの悪戯
+%%%%
+# the capriciousness of Xom
+
+# jtrans_godwrath.txtと重複
+%%%%
+the severe capriciousness of Xom
+
+ゾムの残酷な気紛れ
+%%%%
+%s %s miscast
+
+%s%sの失敗効果
+%%%%
+#ifdef NOTE_DEBUG_XOM
+(Xom was nasty)
+
+(不機嫌)
+%%%%
+chaos upgrade
+
+混沌の力の付与
+%%%%
+# You are %sconfused.
+
+# jtrans_player.txtと重複
+%%%%
+confusion
+
+混乱
+%%%%
+confusion (+ monsters)
+
+混乱(モンスター含む)
+%%%%
+Couldn't find ray between player and stairs.
+
+# for error
+%%%%
+Ray didn't cross stairs.
+
+# for error
+%%%%
+%s slides away from you!
+
+%sは滑るように動いてあなたから遠ざかった！
+%%%%
+%s slides towards you!
+
+%sは滑るように動いてあなたの近くに寄ってきた！
+%%%%
+[zap]STAIR BEAM
+
+階段ビーム
+%%%%
+_move_stair(): failed to move %s
+
+# for error
+%%%%
+repel stairs
+
+逃げる階段
+%%%%
+cloud trail
+
+後を引く煙
+%%%%
+Str
+
+<Strength>
+%%%%
+Int
+
+<Intelligence>
+%%%%
+Dex
+
+器用
+%%%%
+stat loss: -%s %s (%d/%d)
+
+能力低下: %s -%s (%d/%d)
+%%%%
+# draining
+
+# jtrans_skill_menu.txtと重複
+%%%%
+torment (%d/%d hp)
+
+苦痛(%d/%d HP)
+%%%%
+summons %d hostile %s%s
+
+%d体の敵対的な%sを召喚
+%%%%
+shadow creature
+
+影の怪物
+%%%%
+demon
+
+悪魔
+%%%%
+revert banishment
+
+現世への追放
+%%%%
+noise
+
+騒音
+%%%%
+blink monster(s)
+
+モンスターの瞬間移動
+%%%%
+%s %s sharp%s.
+
+%sは%s鋭く%s。
+%%%%
+[verb]look
+
+見えた
+%%%%
+(like it always does)
+
+いつものように
+%%%%
+[hands act]your hands look sharp.
+
+あなたの%sが鋭く見えた。
+%%%%
+cleaving
+
+薙ぎ払い
+%%%%
+Xom's lifesaving
+
+ゾムの生命保護
+%%%%
+Trying emergency untransformation.
+
+# for debug
+%%%%
+Player is standing in deadly terrain, skipping Xom act.
+
+プレイヤーは致命的な場所に立っているため、ゾムの手から逃れた。
+%%%%
+Player is already dead, skipping Xom act.
+
+プレイヤーはすでに死んでいるため、ゾムの手から逃れた。
+%%%%
+#ifdef NOTE_DEBUG_XOM
+suppress good act because of zero tension
+
+%%%%
+#ifdef NOTE_DEBUG_XOM
+suppress bad act because of %d tension
+
+%%%%
+This should never happen.
+
+# for die()
+%%%%
+XOM is BORED!
+
+ゾムは退屈している！
+%%%%
+#if defined(DEBUG_RELIGION) || defined(DEBUG_XOM)
+badness: %d, new interest: %d
+
+%%%%
+#ifdef NOTE_DEBUG_XOM
+reroll piety: %d
+
+%%%%
+#if defined(DEBUG_RELIGION) || defined(DEBUG_XOM)
+xom_acts(%u, %d, %d); piety: %u, interest: %u
+
+%%%%
+#if defined(DEBUG_RELIGION) || defined(DEBUG_XOM)
+xom_acts(%s, %d, %d), mood: %d
+
+%%%%
+#if defined(DEBUG_RELIGION) || defined(DEBUG_XOM) || defined(DEBUG_TENSION)
+Xom tension: %d
+
+%%%%
+Xom snickers.
+
+ゾムはくすくす笑った。
+%%%%
+Xom revives you!
+
+ゾムはあなたを蘇らせた！
+%%%%
+You feel more catlike.
+
+あなたはさらに隠密性が増した。
+%%%%
+# You feel stealthy.
+
+# jtrans_player_equip.txtと重複
+%%%%
+stealth player
+
+プレイヤーの隠匿
+%%%%
+%d-stop teleportation journey
+
+%d連続のテレポート
+%%%%
+1-stop teleportation journey
+
+テレポート
+%%%%
+(dangerous)
+
+(危険)
+%%%%
+chaos cloud
+
+混沌の雲
+%%%%
+Xom event %d has no associated data!
+
+イベント#%dはデータと関連付けられていません！
+%%%%
+Duplicate name '%s'!
+
+名称'%s'が重複しています！
+%%%%
+'%s' badness %d outside 10-50 range.
+
+'%s'でのbadness値が10-50の範囲外です。
+%%%%
+'%s' is not bad, but has badness!
+
+'%s'にbadness値が設定されています。
+%%%%
+No action for '%s'!
+
+'%s'に対応する行動のための関数が指定されていません。
+%%%%
+mapping estimate: %d%%\nexploration estimate: %d%%
+
+
+%%%%
+How many iterations over the entire piety range?
+
+
+%%%%
+Can't write 'xom_debug.stat'. Aborting.
+
+'xom_debug.stat'に書き込めないため、中断しました。
+%%%%
+You are under Xom's penance!
+
+あなたは今ゾムへの贖罪中です！
+%%%%
+Xom is BORED.
+
+ゾムは退屈している。
+%%%%
+Running %d times through entire mood cycle.
+
+
+%%%%
+---- OUTPUT EFFECT PERCENTAGES ----
+
+
+%%%%
+# total
+
+# jtrans_chardump.txtと重複
+%%%%
+Total effects (all piety ranges)
+
+
+%%%%
+Mood: You are %s
+
+
+%%%%
+GOOD%7.2f%%
+
+
+%%%%
+BAD %7.2f%%
+
+
+%%%%
+%7.2f%%    %s
+
+
+%%%%
+---- FINISHED XOM DEBUG TESTING ----
+
+
+%%%%
+Results written into 'xom_debug.stat'.
+
+結果を'xom_debug.stat'に書き出しました。
+%%%%

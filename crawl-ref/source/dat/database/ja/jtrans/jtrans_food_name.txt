@@ -1,0 +1,59 @@
+%%%%
+meat ration
+
+肉の保存食
+%%%%
+# itemprop.cc
+meat rations
+
+<meat ration>
+%%%%
+chunk
+
+肉
+%%%%
+# itemprop.cc
+chunks
+
+<chunk>
+%%%%
+# itemprop.cc
+chunk of flesh
+
+肉の塊
+%%%%
+beef jerky
+
+ビーフジャーキー
+%%%%
+bread ration
+
+パンの保存食
+%%%%
+# itemprop.cc
+bread rations
+
+<bread ration>
+%%%%
+fruit
+
+果物
+%%%%
+royal jelly
+
+ロイヤルゼリー
+%%%%
+# itemprop.cc
+royal jellies
+
+<royal jelly>
+%%%%
+pizza
+
+ピザ
+%%%%
+# itemprop.cc
+slice of pizza
+
+一切れのピザ
+%%%%

@@ -1,0 +1,169 @@
+%%%%
+[adj]miniscule
+
+# 訳不要
+%%%%
+buggy door
+
+# 訳不要
+%%%%
+[adj]large
+
+大きな
+%%%%
+gate
+
+門
+%%%%
+[adj]huge
+
+巨大な
+%%%%
+The walls burn you!
+
+酸の壁があなたの体を焼いた！
+%%%%
+The wall burns you!
+
+酸の壁があなたの体を焼いた！
+%%%%
+The walls burn %s!
+
+酸の壁が%sの体を焼いた！
+%%%%
+The wall burns %s!
+
+酸の壁が%sの体を焼いた！
+%%%%
+# You hear a splash.
+
+# jtrans_beam.txtと重複
+%%%%
+You hear a sizzling splash.
+
+あなたはジューッという音を聞いた。
+%%%%
+suddenly disappears
+
+突然
+%%%%
+suddenly appears
+
+突然
+%%%%
+swap_features(): No boring squares on level?
+
+# for error
+%%%%
+You fall into the lava!
+
+あなたは溶岩の中に転がり落ちた！
+%%%%
+You fall into the water!
+
+あなたは水たまりの中に転がり落ちた！
+%%%%
+You burn to ash...
+
+あなたは燃え尽きて灰になった……
+%%%%
+The lava burns you to a cinder!
+
+あなたは溶岩に焼かれて消し炭になった！
+%%%%
+You sink like a stone!
+
+あなたは石のように沈んだ！
+%%%%
+You fall apart...
+
+あなたはバラバラになった……
+%%%%
+You drown...
+
+あなたは溺れた……
+%%%%
+[verb]climb
+
+昇る
+%%%%
+[attempt to verb]climb
+
+昇ろう
+%%%%
+[verb]use
+
+利用する
+%%%%
+[attempt to verb]use
+
+利用しよう
+%%%%
+[verb]pass through
+
+通り抜ける
+%%%%
+[attempt to verb]pass through
+
+通り抜けよう
+%%%%
+[feature]door
+
+<door>
+%%%%
+[feature]wall
+
+<wall>
+%%%%
+[feature]grate
+
+鉄格子
+%%%%
+# [feature]tree
+
+# jtrans_feature_data.txtと重複
+%%%%
+[feature]statue
+
+<statue>
+%%%%
+[feature]altar
+
+<altar>
+%%%%
+[feature]trap
+
+罠
+%%%%
+[feature]escape hatch
+
+脱出ハッチ
+%%%%
+[feature]portal
+
+<portal>
+%%%%
+[feature]staircase
+
+階段
+%%%%
+# [feature]shop
+
+# jtrans_feature_data.txtと重複
+%%%%
+[feature]fountain
+
+噴水
+%%%%
+[feature]unknown terrain
+
+# 訳不要
+%%%%
+# [feature]floor
+
+# jtrans_feature_data.txtと重複
+%%%%
+%s has incorrect class
+
+# for ASSERTM()
+%%%%

@@ -1,0 +1,325 @@
+%%%%
+(holding %s)
+
+(%sを持っている)
+%%%%
+%d/%d slots
+
+所持枠: %d/%d
+%%%%
+# Inventory:
+
+# jtrans_chardump.txtと重複
+%%%%
+# You aren't carrying anything.
+
+# jtrans_chardump.txtと重複
+%%%%
+You aren't carrying any weapons.
+
+あなたは武器を持っていない。
+%%%%
+You aren't carrying any weapons that can be blessed.
+
+あなたは祝福することのできる武器を持っていない。
+%%%%
+Your armour is currently melded into you.
+
+鎧はあなたの体と融合している。
+%%%%
+You aren't carrying any currently wearable armour.
+
+あなたは現状で装備できる防具を持っていない。
+%%%%
+You aren't carrying any wearable armour.
+
+あなたは装備できる防具を持っていない。
+%%%%
+You don't have any unidentified items.
+
+あなたは未鑑定のアイテムを持っていない。
+%%%%
+You aren't carrying any rechargeable items.
+
+あなたは再充填可能なアイテムを持っていない。
+%%%%
+You aren't carrying any armour which can be enchanted further.
+
+あなたはこれ以上強化可能な防具を持っていない。
+%%%%
+You don't have any corpses.
+
+あなたは死体を持ち運んでいない。
+%%%%
+You aren't carrying any decks from which to draw.
+
+あなたはカードを引くデッキを持っていない。
+%%%%
+You aren't carrying any food.
+
+あなたは食べるものを持っていない。
+%%%%
+You aren't carrying any potions.
+
+あなたは水薬を持っていない。
+%%%%
+You aren't carrying any spellbooks or scrolls.
+
+あなたは巻物や魔法書を持っていない。
+%%%%
+You aren't carrying any wands.
+
+あなたはワンドを持っていない。
+%%%%
+You aren't carrying any pieces of jewellery.
+
+あなたは装身具を持っていない。
+%%%%
+You aren't carrying any items that might be thrown or fired.
+
+あなたは投擲したり射撃するためのものを持っていない。
+%%%%
+You aren't carrying any items that you can evoke without wielding.
+
+あなたは手に持つことなく発動できるアイテムを持っていない。
+%%%%
+You aren't carrying any items that you can evoke.
+
+あなたは発動できるアイテムを持っていない。
+%%%%
+None of your equipped items are cursed.
+
+あなたが装備中のアイテムは呪われていないものばかりだった。
+%%%%
+You aren't wearing any piece of uncursed armour.
+
+あなたの装備している防具は全て呪われている。
+%%%%
+You aren't wearing any piece of uncursed jewellery.
+
+あなたの装備している装身具は全て呪われている。
+%%%%
+You aren't carrying any weapons that can be branded.
+
+あなたは魔力を込められる武器を持っていない。
+%%%%
+You aren't carrying any weapons that can be enchanted.
+
+あなたは強化可能な武器を持っていない。
+%%%%
+You aren't carrying anything you can give to a follower.
+
+あなたは従者に与えることのできるアイテムを持っていない。
+%%%%
+You don't have any cursable items.
+
+あなたは呪縛できるアイテムを持っていない。
+%%%%
+You aren't carrying any such object.
+
+あなたはそのようなアイテムを持っていない。
+%%%%
+(select all with <w>%s</w><blue>)
+
+(<w>%s</w> キーで一括選択/解除<blue>)
+%%%%
+[item class]magical staff
+
+魔法の杖
+%%%%
+[item class]misc
+
+発動用
+%%%%
+[item class]Gold
+
+金貨
+%%%%
+[item class]Hand Weapons
+
+近接武器
+%%%%
+[item class]Missiles
+
+矢弾・石弾その他
+%%%%
+[item class]Armour
+
+防具/服
+%%%%
+[item class]Wands
+
+<wand>
+%%%%
+[item class]Comestibles
+
+食料品
+%%%%
+[item class]Scrolls
+
+<scroll>
+%%%%
+[item class]Jewellery
+
+<jewellery>
+%%%%
+[item class]Potions
+
+<potion>
+%%%%
+[item class]Books
+
+魔法書/虎の巻
+%%%%
+[item class]Magical Staves
+
+<[item class]magical staff>
+%%%%
+[item class]Rods
+
+<rod>
+%%%%
+[item class]Orbs of Power
+
+<Orb of Zot>
+%%%%
+[item class]Miscellaneous
+
+発動用のアイテム
+%%%%
+[item class]Carrion
+
+<corpse>
+%%%%
+[item class]Runes of Zot
+
+ルーン
+%%%%
+%s (<w>?</w> for menu, <w>Esc</w> to quit)
+
+%s (<w>Esc</w> でキャンセル)
+%%%%
+You don't have any such object.
+
+<You aren't carrying any such object.>
+%%%%
+Really unwield %s?
+
+本当に %s を手放しますか？
+%%%%
+Really take off %s?
+
+本当に %s を脱ぎますか？
+%%%%
+Really remove %s?
+
+本当に %s を外しますか？
+%%%%
+# This could place you under penance!
+
+# jtrans_fight.txtと重複
+%%%%
+[oper verb]wield
+
+手に持ち
+%%%%
+[oper verb]quaff
+
+飲み
+%%%%
+[oper verb]drop
+
+置き
+%%%%
+[oper verb]drain
+
+血を飲み
+%%%%
+[oper verb]eat
+
+食べ
+%%%%
+[oper verb]take off
+
+装備を外し
+%%%%
+[oper verb]wear
+
+装備し
+%%%%
+[oper verb]put on
+
+身につけ
+%%%%
+[oper verb]remove
+
+外し
+%%%%
+[oper verb]read
+
+読み
+%%%%
+[oper verb]memorise from
+
+呪文を記憶し
+%%%%
+[oper verb]zap
+
+振り
+%%%%
+[oper verb]fire
+
+射撃し
+%%%%
+[oper verb]evoke
+
+発動し
+%%%%
+[oper verb]destroy
+
+破壊し
+%%%%
+[oper verb]quiver
+
+射撃準備し
+%%%%
+[oper verb]choose
+
+選択し
+%%%%
+Really
+
+本当に
+%%%%
+while about to teleport
+
+テレポート直前に
+%%%%
+while slowed
+
+減速中に
+%%%%
+while hasted
+
+加速中に
+%%%%
+Your %s is melded into your body.
+
+あなたの%sは自分の体と融合している。
+%%%%
+That item can only be evoked when wielded.
+
+このアイテムは手に持たないと発動できない。
+%%%%
+# You cannot evoke magical items.
+
+# jtrans_evoke.txtと重複
+%%%%
+# This wand has no charges.
+
+# jtrans_evoke.txtと重複
+%%%%
+That item cannot be evoked!
+
+このアイテムは発動できない！
+%%%%

@@ -1,0 +1,93 @@
+%%%%
+(carried)
+
+(持ち運び中)
+%%%%
+(gone by now)
+
+(腐敗中)
+%%%%
+(skeletalised by now)
+
+(白骨化中)
+%%%%
+(still there?)
+
+
+%%%%
+(unseen)
+
+
+%%%%
+%s%s (%d gold)
+
+%s%s (%dゴールド)
+%%%%
+(Shop contents are unknown)
+
+(品揃え不明)
+%%%%
+You have no stashes.
+
+
+%%%%
+Enter for "%s"
+
+Enterで"%s"を検索
+%%%%
+? for help
+
+? キーでヘルプ
+%%%%
+Search for what%s?
+
+何を検索しますか？ %s
+%%%%
+Your search expression is invalid.
+
+検索条件が無効です。
+%%%%
+Can't find anything matching that.
+
+一致するものを見つけられませんでした。
+%%%%
+Too many matches; use a more specific search.
+
+一致件数が多すぎます。もう少し条件を絞ってください。
+%%%%
+%d %s%s
+
+%d件%s
+%%%%
+<lightgrey>: <w>%s</w> [toggle: <w>!</w>], by <w>%s</w> [<w>/</w>], <w>%s</w> useless [<w>=</w>]</lightgrey>
+
+<lightgrey>: <w>%s</w> [切替: <w>!</w>], <w>%s</w>順 [<w>/</w>], 無益な物<w>%s</w> [<w>=</w>]</lightgrey>
+%%%%
+[stash menu]travel
+
+対象まで移動
+%%%%
+[stash menu]view
+
+解説文を見る
+%%%%
+[stash menu]dist
+
+距離
+%%%%
+[stash menu]name
+
+名前
+%%%%
+[stash menu]hide
+
+を隠す
+%%%%
+[stash menu]show
+
+も見る
+%%%%
+match
+
+一致
+%%%%

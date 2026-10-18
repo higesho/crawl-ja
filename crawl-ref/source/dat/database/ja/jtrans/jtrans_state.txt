@@ -1,0 +1,77 @@
+%%%%
+Non-UNIX Platform -> not running gdb.
+
+
+%%%%
+/usr/bin/gdb not executable.
+
+# 訳不要
+%%%%
+<cyan>[ + : Page down.   - : Page up.                    Esc or Enter to continue.]
+
+<cyan>[ + : 下にスクロール  - : 上にスクロール             EscもしくはEnterで続行]
+%%%%
+Warning: Crawl encountered errors during startup:
+
+# 訳不要
+%%%%
+Can't repeat that command.
+
+このコマンドを繰り返すことはできません。
+%%%%
+Can't redo that command.
+
+このコマンドを再使用することはできません。
+%%%%
+Command repetition interrupted.
+
+繰り返しコマンド実行は中断されました。
+%%%%
+%s comes into view.
+
+%sに遭遇した。
+%%%%
+# Magic restored.
+
+# jtrans_delay.txtと重複
+%%%%
+HP restored
+
+<HP restored.>
+%%%%
+Game state:
+
+
+%%%%
+God %s currently acting with depth %d
+
+
+%%%%
+Other gods acting:
+
+
+%%%%
+God %s with depth %d
+
+
+%%%%
+%s currently acting:
+
+
+%%%%
+Others monsters acting:
+
+
+%%%%
+Tutorial
+
+チュートリアル
+%%%%
+Arena
+
+アリーナ
+%%%%
+# Dungeon Sprint
+
+# jtrans_startup.txtと重複
+%%%%

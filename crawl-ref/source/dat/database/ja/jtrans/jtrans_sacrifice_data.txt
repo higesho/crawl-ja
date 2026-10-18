@@ -1,0 +1,146 @@
+%%%%
+# ABIL_RU_SACRIFICE_PURITY
+corrupt yourself such that
+
+自らの肉体を崩壊させる
+%%%%
+sacrificed purity
+
+自らの清浄さを犠牲にした
+%%%%
+# ABIL_RU_SACRIFICE_WORDS
+sacrifice your ability to read while threatened
+
+身を脅かされている間巻物を読む能力を捧げる
+%%%%
+sacrificed words
+
+危険時に巻物を読む能力を犠牲にした
+%%%%
+# ABIL_RU_SACRIFICE_DRINK
+sacrifice your ability to drink while threatened
+
+身を脅かされている間薬を飲む能力を捧げる
+%%%%
+sacrificed drink
+
+危険時に水薬を飲む能力を犠牲にした
+%%%%
+# ABIL_RU_SACRIFICE_ESSENCE
+sacrificed essence
+
+自らの魔力を犠牲にした
+%%%%
+# ABIL_RU_SACRIFICE_HEALTH
+sacrificed health
+
+自らの健康を犠牲にした
+%%%%
+# ABIL_RU_SACRIFICE_STEALTH
+sacrifice your ability to go unnoticed
+
+身を隠して行動する能力を捧げる
+%%%%
+sacrificed stealth
+
+隠密能力を犠牲にした
+%%%%
+# ABIL_RU_SACRIFICE_ARTIFICE
+sacrifice all use of magical tools
+
+あらゆる魔法仕掛けの道具を使う能力を捧げる
+%%%%
+sacrificed evocations
+
+発動能力を犠牲にした
+%%%%
+# ABIL_RU_SACRIFICE_LOVE
+sacrifice your ability to be loved
+
+他者から愛される能力を捧げる
+%%%%
+sacrificed love
+
+誰からも嫌われるようになった
+%%%%
+# ABIL_RU_SACRIFICE_COURAGE
+sacrifice your courage
+
+自らの勇気を捧げる
+%%%%
+sacrificed courage
+
+勇敢な心を犠牲にした
+%%%%
+# ABIL_RU_SACRIFICE_ARCANA
+sacrifice all use of
+
+を使用することを捧げる
+%%%%
+sacrificed arcana
+
+魔術を犠牲にした
+%%%%
+# ABIL_RU_SACRIFICE_NIMBLENESS
+sacrifice your Dodging skill
+
+自らの回避スキルを捧げる
+%%%%
+sacrificed dodging
+
+回避能力を犠牲にした
+%%%%
+# ABIL_RU_SACRIFICE_DURABILITY
+sacrifice your Armour skill
+
+自らの鎧スキルを捧げる
+%%%%
+sacrificed armour
+
+鎧を着る能力を犠牲にした
+%%%%
+# ABIL_RU_SACRIFICE_HAND
+sacrifice one of your
+
+自らの片
+%%%%
+sacrificed a hand
+
+自らの片腕を捧げた
+%%%%
+# ABIL_RU_SACRIFICE_EXPERIENCE
+sacrifice your experiences
+
+自らの経験を捧げる
+%%%%
+sacrificed experience
+
+自らの経験を捧げた
+%%%%
+# ABIL_RU_SACRIFICE_SKILL
+sacrifice your skill
+
+自らの熟練度を捧げる
+%%%%
+sacrificed skill
+
+自らの熟練度を捧げた
+%%%%
+# ABIL_RU_SACRIFICE_EYE
+sacrifice an eye
+
+自分の片目を捧げる
+%%%%
+sacrificed an eye
+
+自らの片目を捧げた
+%%%%
+# ABIL_RU_SACRIFICE_RESISTANCE
+sacrifice your resistance to extreme temperatures
+
+極端な温度環境への耐性を捧げる
+%%%%
+sacrificed resistance
+
+極端な温度環境への耐性を捧げた
+%%%%

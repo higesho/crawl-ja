@@ -1,0 +1,153 @@
+%%%%
+# TAG_MAJOR_VERSION == 34
+ring of obsoleteness
+
+%%%%
+ring of protection
+
+護りの指輪
+%%%%
+ring of protection from fire
+
+耐火の指輪
+%%%%
+ring of poison resistance
+
+耐毒の指輪
+%%%%
+ring of protection from cold
+
+耐冷の指輪
+%%%%
+ring of strength
+
+腕力の指輪
+%%%%
+ring of slaying
+
+殺戮の指輪
+%%%%
+ring of see invisible
+
+霊視の指輪
+%%%%
+ring of resist corrosion
+
+腐蝕阻止の指輪
+%%%%
+ring of loudness
+
+騒音の指輪
+%%%%
+ring of teleportation
+
+テレポートの指輪
+%%%%
+ring of evasion
+
+躱し身の指輪
+%%%%
+# TAG_MAJOR_VERSION == 34
+ring of sustain attributes
+
+%%%%
+ring of stealth
+
+隠密の指輪
+%%%%
+ring of dexterity
+
+器用さの指輪
+%%%%
+ring of intelligence
+
+知性の指輪
+%%%%
+ring of wizardry
+
+魔術の指輪
+%%%%
+ring of magical power
+
+魔力の指輪
+%%%%
+ring of flight
+
+飛行の指輪
+%%%%
+ring of positive energy
+
+生命力保護の指輪
+%%%%
+ring of protection from magic
+
+耐魔法の指輪
+%%%%
+ring of fire
+
+炎の指輪
+%%%%
+ring of ice
+
+氷の指輪
+%%%%
+# TAG_MAJOR_VERSION == 34
+ring of teleport control
+
+%%%%
+amulet of rage
+
+怒りの護符
+%%%%
+amulet of harm
+
+痛撃の護符
+%%%%
+amulet of magic regeneration
+
+魔力再生の護符
+%%%%
+amulet of the gourmand
+
+悪食の護符
+%%%%
+# TAG_MAJOR_VERSION == 34
+amulet of obsoleteness
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+amulet of conservation
+
+%%%%
+# TAG_MAJOR_VERSION == 34
+amulet of controlled flight
+
+%%%%
+amulet of inaccuracy
+
+不正確の護符
+%%%%
+amulet of nothing
+
+普通の護符
+%%%%
+amulet of guardian spirit
+
+守護霊の護符
+%%%%
+amulet of faith
+
+信仰の護符
+%%%%
+amulet of reflection
+
+反射の護符
+%%%%
+amulet of regeneration
+
+再生の護符
+%%%%
+buggy jewellery
+
+# 訳不要
+%%%%

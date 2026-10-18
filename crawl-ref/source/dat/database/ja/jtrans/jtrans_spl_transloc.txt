@@ -1,0 +1,213 @@
+%%%%
+You feel jittery for a moment.
+
+あなたはちょっと落ち着かない気分になった。
+%%%%
+Blink to where?
+
+どの方向に瞬間移動しますか？
+%%%%
+Cancelling blink due to HUP.
+
+シグナルにより瞬間移動はキャンセルされた。
+%%%%
+Are you sure you want to cancel this blink?
+
+本当に瞬間移動をキャンセルしますか？
+%%%%
+You cannot blink away from %s!
+
+あなたは瞬間移動して%sから遠ざかることができない！
+%%%%
+You cannot blink closer to %s!
+
+あなたは瞬間移動して%sに近づくことができない！
+%%%%
+You can't blink into that!
+
+あなたはその位置に瞬間移動できない！
+%%%%
+You can't blink onto %s!
+
+あなたは%sと同じ位置に瞬間移動できない！
+%%%%
+Please don't blink into the map border.
+
+マップの境界上に瞬間移動しないでください。
+%%%%
+Please don't try to blink into monsters.
+
+モンスターと重なるように瞬間移動しないでください。
+%%%%
+Oops! There was something there already!
+
+おっと！ そこにはもう先客がいる！
+%%%%
+You can't repeat controlled blinks.
+
+あなたは精密瞬間移動を繰り返すことができない。
+%%%%
+# Your blink will be uncontrolled - continue anyway?
+
+# jtrans_item_use.txtと重複
+%%%%
+# The Orb prevents control of your translocation!
+
+# jtrans_item_use.txtと重複
+%%%%
+# You feel strangely stable.
+
+# jtrans_spl_goditem.txtと重複
+%%%%
+You feel strangely unstable.
+
+あなたは奇妙な落ち着かない感じがした。
+%%%%
+You feel the power of the Abyss delaying your translocation!
+
+アビスの力によりテレポートの発動が遅延されたようだ。
+%%%%
+You feel the Orb delaying your translocation!
+
+あなたはゾットのオーブがテレポートの発動を遅延していると感じ取った！
+%%%%
+Controlled teleport interrupted by HUP signal, cancelling teleport.
+
+精密テレポートがHUPシグナルにより中止されました。
+%%%%
+Target square (%d,%d)
+
+# for debug
+%%%%
+Even you can't go there right now. Sorry!
+
+残念ながらそこに行くことはできない！
+%%%%
+teleportitis: no monster near target
+
+# for debug
+%%%%
+You are suddenly yanked towards some nearby monsters!
+
+あなたは突然近くのモンスターの所に引き寄せられた！
+%%%%
+You are suddenly yanked towards a nearby monster!
+
+あなたは突然近くのモンスターの所に引き寄せられた！
+%%%%
+Your surroundings flicker for a moment.
+
+周囲の風景が一瞬ちらついた。
+%%%%
+Your surroundings seem slightly different.
+
+周囲の風景がわずかに異なって見えた。
+%%%%
+Your surroundings suddenly seem different.
+
+突然周囲の風景が一変した。
+%%%%
+You begin teleporting projectiles to their destination.
+
+あなたは投射物を目標の場所にテレポートさせるのを開始した。
+%%%%
+You renew your portal.
+
+あなたは転送ポータルの持続時間を上乗せした。
+%%%%
+The density of the terrain blocks your spell.
+
+この地形ではその呪文は使えない。
+%%%%
+There are no items there.
+
+ここには特にアイテムはない。
+%%%%
+You cannot apport that!
+
+そのアイテムは引き寄せられない！
+%%%%
+The Orb shrieks and becomes a dead weight against your magic!
+
+ゾットのオーブは轟音を放ち、あなたの魔法に対して抵抗した！
+%%%%
+The Orb lets out a furious burst of light and becomes a dead weight against your magic!
+
+ゾットのオーブはまばゆい光を放ち、あなたの魔法に対して抵抗した！
+%%%%
+The Orb shrieks as your magic touches it!
+
+ゾットのオーブはあなたの魔法を拒絶し、轟音を放った！
+%%%%
+The Orb lets out a furious burst of light as your magic touches it!
+
+ゾットのオーブはあなたの魔法を拒絶し、まばゆい光を放った！
+%%%%
+Now pick up the Orb and get out of here!
+
+さあ、ゾットのオーブを拾ってここから脱出するのだ！
+%%%%
+Apport dist=%d, max_dist=%d
+
+# for debug
+%%%%
+Not with that terrain in the way!
+
+地形ではなく他の物を選んでください！
+%%%%
+Apport: new spot is %d/%d
+
+# for debug
+%%%%
+Yoink! You pull the item%s towards yourself.
+
+あなたはアイテムを自分の手元に引き寄せた。
+%%%%
+The Orb prevents you from opening a passage!
+
+ゾットのオーブは通り道を開こうとするのを邪魔した！
+%%%%
+You cannot create a passage on the other side of the transparent wall.
+
+ゴルブリアの通り道の出口を透明な壁の向こうに作ることはできない。
+%%%%
+Creating a passage of Golubria requires sufficient empty space.
+
+ゴルブリアの通り道の出口を作るにはある程度開けた空間が必要だ。
+%%%%
+Something buggy happened.
+
+# 訳不要
+%%%%
+The air shimmers briefly around you.
+
+あなたの周りの大気が一瞬揺らめいた。
+%%%%
+by gravitational forces
+
+魔法による重力によって
+%%%%
+# %s violently %s moving!
+
+# jtrans_actor.txtと重複
+%%%%
+# [verb]stop
+
+# jtrans_actor.txtと重複
+%%%%
+Gravity reorients around %s.
+
+%sの周囲の重力の方向が変わった。
+%%%%
+empty space
+
+何もない場所
+%%%%
+%s %s suddenly forward!
+
+%sは突然前へと%s！
+%%%%
+[verb]hurl
+
+引き寄せられた
+%%%%

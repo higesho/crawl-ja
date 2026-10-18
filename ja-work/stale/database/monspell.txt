@@ -1,0 +1,411 @@
+%%%%
+Legendary Destruction cast
+
+# old en (ja16):
+#   @The_monster@ offers @possessive@ life energy for powerful magic!
+# old ja (ja16):
+#   @The_monster@は自らの生命力を振り絞り強大な魔術を放った！
+
+@Major Destruction cast@
+%%%%
+Sticky Flame cast
+
+# old en (ja19):
+#   @The_monster@ sprays @target@ with burning goo.
+# old ja (ja19):
+#   @The_monster@は@target@に燃えさかる液体をまき散らした。
+# old en (ja16):
+#   @The_monster@ sprays @target@ with burning goo.
+# old ja (ja16):
+#   @The_monster@は@target@に燃えさかる液体をまき散らした。
+
+@The_monster@ sprays @target@ with liquid fire.
+%%%%
+Wind Blast cast
+
+# old en (ja19):
+#   @The_monster@ conjures a fierce blast of wind!
+#   ################################################
+#   These have special hard-coded messaging.
+#   ################################################
+# old ja (ja19):
+#   @The_monster@は激しい突風を生み出した！
+
+@The_monster@ conjures a fierce blast of wind!
+%%%%
+Seal Doors cast
+
+# old en (ja16):
+#   @The_monster@ activates a sealing rune.
+# old ja (ja16):
+#   @The_monster@は封印のルーンを発動させた。
+
+__NONE
+%%%%
+unseen Spit Acid cast
+
+# old en (ja19):
+#   You hear a spitting sound.
+# old ja (ja19):
+#   あなたは唾を吐くような音を耳にした。
+# old en (ja16):
+#   You hear a spitting sound.
+# old ja (ja16):
+#   あなたは唾を吐くような音を耳にした。
+
+@_unseen_spit_cast_@
+%%%%
+unseen Cold Breath cast
+
+# old en (ja19):
+#   You hear a roar.
+# old ja (ja19):
+#   あなたは咆哮を耳にした。
+# old en (ja16):
+#   You hear a roar.
+# old ja (ja16):
+#   あなたは咆哮を耳にした。
+
+@_unseen_breath_cast_@
+%%%%
+unseen Chilling Breath cast
+
+# old en (ja19):
+#   You hear a roar.
+# old ja (ja19):
+#   あなたは咆哮を耳にした。
+# old en (ja16):
+#   You hear a roar.
+# old ja (ja16):
+#   あなたは咆哮を耳にした。
+
+@_unseen_breath_cast_@
+%%%%
+unseen Fire Breath cast
+
+# old en (ja19):
+#   You hear a roar.
+# old ja (ja19):
+#   あなたは咆哮を耳にした。
+# old en (ja16):
+#   You hear a roar.
+# old ja (ja16):
+#   あなたは咆哮を耳にした。
+
+@_unseen_breath_cast_@
+%%%%
+unseen Searing Breath cast
+
+# old en (ja19):
+#   You hear a roar.
+# old ja (ja19):
+#   あなたは咆哮を耳にした。
+# old en (ja16):
+#   You hear a roar.
+# old ja (ja16):
+#   あなたは咆哮を耳にした。
+
+@_unseen_breath_cast_@
+%%%%
+unseen Spit Poison cast
+
+# old en (ja19):
+#   You hear a spitting sound.
+# old ja (ja19):
+#   あなたは唾を吐くような音を耳にした。
+# old en (ja16):
+#   You hear a spitting sound.
+# old ja (ja16):
+#   あなたは唾を吐くような音を耳にした。
+
+@_unseen_spit_cast_@
+%%%%
+Paralysis Gaze cast
+
+# old en (ja19):
+#   @The_monster@ gazes piercingly through @target@!
+#   #######################################################################
+#   Unique monsters
+#   #######################################################################
+# old ja (ja19):
+#   @The_monster@は@target@に突き刺すような視線を送った！
+
+@The_monster@ gazes piercingly through @target@!
+%%%%
+Ensnare Arachne cast
+
+# old en (ja19):
+#   @The_monster@ points her staff @at@ @target@, shooting a stream of webbing.
+#   @The_monster@'s staff shoots out a stream of webbing.
+# old ja (ja19):
+#   @The_monster@は杖を@target@に向け、蜘蛛の糸の奔流を放った。
+#   
+#   @The_monster@の杖からほとばしる蜘蛛の糸が放たれた。
+# old en (ja16):
+#   @The_monster@ points her staff @at@ @target@, shooting a stream of webbing.
+#   @The_monster@'s staff shoots out a stream of webbing.
+# old ja (ja16):
+#   @The_monster@は杖を@target@に向け、蜘蛛の糸の奔流を放った。
+#   
+#   @The_monster@の杖からほとばしる蜘蛛の糸が放たれた。
+
+@The_monster@ points @possessive@ staff @at@ @target@, shooting a stream of webbing.
+
+@The_monster_possessive@ staff shoots out a stream of webbing.
+%%%%
+Gastronok cast
+
+# old en (ja19):
+#   @The_monster@'s eyestalks quiver as @subjective@ mumbles some strange words.
+#   @The_monster@ chants a spell, wobbling all the while.
+#   @The_monster@ mumbles some strange words.
+#   @The_monster@ casts a spell.
+# old ja (ja19):
+#   @The_monster@の目玉は自身のつぶやく奇妙な言葉に合わせて震えた。
+#   
+#   @The_monster@はよろめきつつ呪文を唱えている。
+#   
+#   @The_monster@は奇妙な言葉をつぶやいた。
+#   
+#   @The_monster@は呪文を唱えた。
+# old en (ja16):
+#   @The_monster@'s eyestalks quiver as @subjective@ mumbles some strange words.
+#   @The_monster@ chants a spell, wobbling all the while.
+#   @The_monster@ mumbles some strange words.
+#   @The_monster@ casts a spell.
+# old ja (ja16):
+#   @The_monster@の目玉は自身のつぶやく奇妙な言葉に合わせて震えた。
+#   
+#   @The_monster@はよろめきつつ呪文を唱えている。
+#   
+#   @The_monster@は奇妙な言葉をつぶやいた。
+#   
+#   @The_monster@は呪文を唱えた。
+
+@The_monster_possessive@ eyestalks quiver as @subjective@ mumbles some strange words.
+
+@The_monster@ chants a spell, wobbling all the while.
+
+@The_monster@ mumbles some strange words.
+
+@The_monster@ casts a spell.
+%%%%
+brain worm cast
+
+# old en (ja16):
+#   @The_monster@'s bulging head throbs.
+# old ja (ja16):
+#   @The_monster@の膨れ上がった頭脳が脈打っている。
+
+@The_monster_possessive@ bulging head throbs.
+
+@The_monster_possessive@ throbbing head pulsates.
+%%%%
+Primal Wave elemental wellspring cast
+
+# old en (ja19):
+#   A great wave of water rises up through @the_monster@!
+# old ja (ja19):
+#   大津波が@the_monster@を洗い流した！
+# old en (ja16):
+#   A great wave of water rises up through @the_monster@!
+# old ja (ja16):
+#   大津波が@the_monster@を洗い流した！
+
+A torrent of water rises up through @the_monster@!
+%%%%
+guardian serpent cast targeted
+
+# old en (ja19):
+#   @The_monster@ coils @reflexive@ and waves @possessive@ upper body @at@ @target@.
+#   @The_monster@ casts a spell @at@ @target@.
+# old ja (ja19):
+#   @The_monster@はとぐろを巻いて@target@に向かって鎌首をもたげた。
+#   
+#   @The_monster@は@target@に向かって呪文を唱えた。
+# old en (ja16):
+#   @The_monster@ coils @reflexive@ and waves @possessive@ upper body @at@ @target@.
+#   @The_monster@ casts a spell @at@ @target@.
+# old ja (ja16):
+#   @The_monster@はとぐろを巻いて@target@に向かって鎌首をもたげた。
+#   
+#   @The_monster@は@target@に向かって呪文を唱えた。
+
+@The_monster@ coils @reflexive@ and waves @possessive@ upper body @at@ @target@.
+
+@The_monster@ gestures with @possessive@ tail @at@ @target@.
+
+w:3
+@The_monster@ weaves intricate patterns with the tip of @possessive@ tongue.
+%%%%
+guardian serpent cast
+
+# old en (ja19):
+#   @The_monster@ coils @reflexive@ and performs some mystic snake dance.
+#   @The_monster@ casts a spell.
+#   @The_monster@ gestures with @possessive@ tail.
+#   @The_monster@ weaves intricate patterns with the tip of @possessive@ tongue.
+# old ja (ja19):
+#   @The_monster@はとぐろを巻きつつ、神秘的な蛇のダンスを始めた。
+#   
+#   @The_monster@は呪文を唱えた。
+#   
+#   @The_monster@は尻尾で身振りをした。
+#   
+#   @The_monster@はその舌先で複雑な形を編んだ。
+# old en (ja16):
+#   @The_monster@ coils @reflexive@ and performs some mystic snake dance.
+#   @The_monster@ casts a spell.
+#   @The_monster@ gestures with @possessive@ tail.
+#   @The_monster@ weaves intricate patterns with the tip of @possessive@ tongue.
+# old ja (ja16):
+#   @The_monster@はとぐろを巻きつつ、神秘的な蛇のダンスを始めた。
+#   
+#   @The_monster@は呪文を唱えた。
+#   
+#   @The_monster@は尻尾で身振りをした。
+#   
+#   @The_monster@はその舌先で複雑な形を編んだ。
+
+@The_monster@ casts a spell.
+%%%%
+manticore cast
+
+# old en (ja19):
+#   @The_monster@ flicks its tail.
+# old ja (ja19):
+#   @The_monster@は尻尾を揺らしている。
+# old en (ja16):
+#   @The_monster@ flicks its tail.
+# old ja (ja16):
+#   @The_monster@は尻尾を揺らしている。
+
+@The_monster@ flicks @possessive@ tail.
+%%%%
+orange crystal statue cast targeted
+
+# old en (ja19):
+#   @The_monster@ fixes its piercing gaze on @target@.
+# old ja (ja19):
+#   @The_monster@はその突き刺すような視線を@target@に向けている。
+# old en (ja16):
+#   @The_monster@ fixes its piercing gaze on @target@.
+# old ja (ja16):
+#   @The_monster@はその突き刺すような視線を@target@に向けている。
+
+@The_monster@ fixes @possessive@ piercing gaze on @target@.
+%%%%
+obsidian statue cast
+
+# old en (ja19):
+#   @The_monster@'s eyes glow briefly.
+# old ja (ja19):
+#   @The_monster@の眼が一瞬輝いた。
+# old en (ja16):
+#   @The_monster@'s eyes glow briefly.
+# old ja (ja16):
+#   @The_monster@の眼が一瞬輝いた。
+
+@The_monster_possessive@ eyes glow briefly.
+%%%%
+Battlecry satyr cast
+
+# old en (ja19):
+#   @The_monster@ plays a rousing melody on his pipes!
+# old ja (ja19):
+#   @The_monster@はその笛で奮い立つようなメロディを奏でた！
+# old en (ja16):
+#   @The_monster@ plays a rousing melody on his pipes!
+# old ja (ja16):
+#   @The_monster@はその笛で奮い立つようなメロディを奏でた！
+
+@The_monster@ plays a rousing melody on @possessive@ pipes!
+%%%%
+Cause Fear satyr cast
+
+# old en (ja19):
+#   @The_monster@ plays a frightful melody on his pipes!
+# old ja (ja19):
+#   @The_monster@はその笛で怖気を震うメロディを奏でた！
+# old en (ja16):
+#   @The_monster@ plays a frightful melody on his pipes!
+# old ja (ja16):
+#   @The_monster@はその笛で怖気を震うメロディを奏でた！
+
+@The_monster@ plays a frightful melody on @possessive@ pipes!
+%%%%
+Sleep satyr cast
+
+# old en (ja19):
+#   @The_monster@ plays a lulling melody on his pipes!
+# old ja (ja19):
+#   @The_monster@はその笛で眠気を誘うメロディを奏でた！
+# old en (ja16):
+#   @The_monster@ plays a lulling melody on his pipes!
+# old ja (ja16):
+#   @The_monster@はその笛で眠気を誘うメロディを奏でた！
+
+@The_monster@ plays a lulling melody on @possessive@ pipes!
+%%%%
+ushabti cast targeted
+
+# old en (ja19):
+#   @The_monster@ gestures slowly @at@ @target@.
+# old ja (ja19):
+#   @The_monster@は@target@に向かってゆっくりと手を動かした。
+
+@The_monster@ gestures stiffly @at@ @target@.
+%%%%
+Airstrike wind drake cast
+
+# old en (ja19):
+#   @The_monster@ flaps its wings @at@ @target@.
+# old ja (ja19):
+#   @The_monster@は@target@に向かって羽ばたいた。
+# old en (ja16):
+#   @The_monster@ flaps its wings @at@ @target@.
+# old ja (ja16):
+#   @The_monster@は@target@に向かって羽ばたいた。
+
+@The_monster@ flaps @possessive@ wings @at@ @target@.
+%%%%
+Corrupting Pulse wretched star cast
+
+# old en (ja19):
+#   @The_monster@ pulses with an eldritch light!
+#   ##########################################################################
+#   Generic messages for priests and wizards which have been polymorphed into
+#   something without hands.
+#   ##########################################################################
+# old ja (ja19):
+#   @The_monster@はこの世のものとも思えぬ光を脈動させた！
+# old en (ja16):
+#   @The_monster@ pulses with an eldritch light!
+#   ##########################################################################
+#   Generic messages for priests and wizards which have been polymorphed into
+#   something without hands.
+#   ##########################################################################
+# old ja (ja16):
+#   @The_monster@はこの世のものとも思えぬ光を脈動させた！
+
+@The_monster@ pulses with an eldritch light!
+%%%%
+polymorphed unseen wizard cast
+
+# old en (ja19):
+#   You hear some strange, mumbled words.
+#   #####################################################
+#   Generic priest, wizard and magical casting messages.
+#   #####################################################
+# old ja (ja19):
+#   あなたは何事か奇妙なつぶやき声を耳にした。
+# old en (ja16):
+#   You hear some strange, mumbled words.
+#   #####################################################
+#   Generic priest, wizard and demonic casting messages.
+#   #####################################################
+# old ja (ja16):
+#   あなたは何事か奇妙なつぶやき声を耳にした。
+
+You hear some strange, mumbled words.
+%%%%

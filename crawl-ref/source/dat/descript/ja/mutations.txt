@@ -1,0 +1,37 @@
+%%%%
+magic link mutation
+
+# en:
+#   When low on magic, you restore magic in place of health.
+あなたは魔力が低下した際に、体力を魔力に変換する。
+%%%%
+freezing cloud immunity mutation
+
+# en:
+#   You are immune to freezing clouds.
+あなたは冷気の雲に対して傷つかない。
+%%%%
+flame cloud immunity mutation
+
+# en:
+#   You are immune to clouds of flame.
+あなたは火炎の雲に対して傷つかない。
+%%%%
+jelly sensing items mutation
+
+# en:
+#   You have a small jelly attached to you that senses nearby items.
+近くのアイテムを感知する小さなジェリーがあなたの体に付いている。
+%%%%
+no weapons or thrown items mutation
+
+# en:
+#   You are incapable of wielding weapons or throwing items.
+あなたは武器を手に持ったりアイテムを投擲したりすることができない。
+%%%%
+no armour mutation
+
+# en:
+#   You cannot wear armour.
+あなたは防具を装備できない。
+%%%%

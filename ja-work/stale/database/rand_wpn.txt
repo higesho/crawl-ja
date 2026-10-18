@@ -1,0 +1,5379 @@
+%%%%
+_power_name_
+
+# old en (ja19):
+#   Power
+#   Might
+#   Wondrous Power
+#   Invincibility
+#   Glory
+#   Success
+#   Triumph
+#   Domination
+#   Dominance
+#   Victory
+#   Intimidation
+#   Grandeur
+#   Mastery
+#   Superiority
+#   Magnificence
+#   Hubris
+# old ja (ja19):
+#   力
+#   
+#   剛力
+#   
+#   怪力
+#   
+#   無敵
+#   
+#   栄光
+#   
+#   成功
+#   
+#   征服
+#   
+#   制覇
+#   
+#   優越
+#   
+#   勝利
+#   
+#   威嚇
+#   
+#   威厳
+#   
+#   熟達
+#   
+#   卓越
+#   
+#   壮大
+#   
+#   傲慢
+# old en (ja16):
+#   Power
+#   Might
+#   Wondrous Power
+#   Invincibility
+#   Glory
+#   Success
+#   Triumph
+#   Domination
+#   Dominance
+#   Victory
+#   Intimidation
+#   Grandeur
+#   Mastery
+#   Superiority
+#   Magnificence
+# old ja (ja16):
+#   力
+#   
+#   剛力
+#   
+#   怪力
+#   
+#   無敵
+#   
+#   栄光
+#   
+#   成功
+#   
+#   征服
+#   
+#   制覇
+#   
+#   優越
+#   
+#   勝利
+#   
+#   威嚇
+#   
+#   威厳
+#   
+#   熟達
+#   
+#   卓越
+#   
+#   壮大
+
+Big Damage
+
+Dominance
+
+Domination
+
+Friendship
+
+Glory
+
+Grandeur
+
+Hubris
+
+Intimidation
+
+Invincibility
+
+Magnificence
+
+Mastery
+
+Might
+
+Success
+
+Superiority
+
+Triumph
+
+Victory
+
+Wondrous Power
+%%%%
+_conflict_name_
+
+# old en (ja19):
+#   Conflict
+#   Tension
+#   Discord
+#   Division
+#   Doubt
+#   Internal Strife
+#   Contention
+#   Dissent
+#   Quarrel
+#   Resumed Hostilities
+#   Fighting Over It
+#   a Spat
+# old ja (ja19):
+#   闘争
+#   
+#   緊張
+#   
+#   不和
+#   
+#   分裂
+#   
+#   猜疑
+#   
+#   内紛
+#   
+#   論争
+#   
+#   異議
+#   
+#   口論
+#   
+#   
+#   
+#   諍い
+# old en (ja16):
+#   Conflict
+#   Tension
+#   Dischord
+#   Division
+#   Doubt
+#   Internal Strife
+#   Contention
+#   Dissent
+#   Quarrel
+# old ja (ja16):
+#   闘争
+#   
+#   緊張
+#   
+#   不和
+#   
+#   分裂
+#   
+#   猜疑
+#   
+#   内紛
+#   
+#   論争
+#   
+#   異議
+#   
+#   口論
+
+Brawling
+
+Conflict
+
+Contention
+
+Discord
+
+Dissent
+
+Division
+
+Doubt
+
+Internal Strife
+
+Melee
+
+Resumed Hostilities
+
+Tension
+%%%%
+_anger_name_
+
+# old en (ja19):
+#   Anger
+#   Fury
+#   Righteous Anger
+#   Righteous Fury
+#   Wrath
+#   Brutal Revenge
+#   Vengeance
+#   Hatred
+#   Indignation
+#   Outrage
+#   Scorn
+#   Disproportionate Response
+#   No More Talking
+# old ja (ja19):
+#   怒り
+#   
+#   激怒
+#   
+#   義憤
+#   
+#   
+#   憤怒
+#   
+#   復讐
+#   
+#   報復
+#   
+#   嫌悪
+#   
+#   憤慨
+#   
+#   憤り
+#   
+#   軽蔑
+#   
+#   
+#   絶交
+# old en (ja16):
+#   Anger
+#   Fury
+#   Righteous Anger
+#   Righteous Fury
+#   Wrath
+#   Brutal Revenge
+#   Vengeance
+#   Hatred
+#   Indignation
+#   Outrage
+#   Scorn
+# old ja (ja16):
+#   怒り
+#   
+#   激怒
+#   
+#   義憤
+#   
+#   
+#   憤怒
+#   
+#   復讐
+#   
+#   報復
+#   
+#   嫌悪
+#   
+#   憤慨
+#   
+#   憤り
+#   
+#   軽蔑
+
+@_anger_quality_@
+
+w:3
+@_anger_possessive_@
+%%%%
+_battle_or_war_
+
+# old en (ja19):
+#   Battle
+#   Crusades
+#   War
+#   Eternal War
+#   the Eternal Warrior
+#   the Onslaught
+#   Skirmishing
+#   the Endless March
+#   Plunder
+#   Ravage
+#   Iconoclasm
+#   Regicide
+#   Lemuel's Suggestions
+#   the Warrior
+#   the Doomed Warrior
+#   akrasiac patch
+#   the Pyrrhic Victory
+#   killing
+#   Blood-Lust
+#   Callousness
+#   Joyful Slaughter
+#   Wounding
+#   Blood
+#   Fear
+#   Massacring
+#   was Pain, clashing with the brand
+#   Insufficient Pleasure
+#   Agony
+#   Trauma
+#   Lemuel's suggestion
+#   Hacking and Slashing
+#   related to cutting
+#   Truncation
+#   Severance
+#   Dullness
+#   Precise Incision
+#   Laceration
+#   collateral effects
+#   Mourning
+#   Death's Door
+#   the Grave
+# old ja (ja19):
+#   戦い
+#   
+#   聖戦
+#   
+#   戦争
+#   
+#   終わりなき戦争
+#   
+#   永遠の戦士
+#   
+#   猛攻
+#   
+#   小競り合い
+#   
+#   終わりなき進軍
+#   
+#   掠奪
+#   
+#   荒廃
+#   
+#   偶像破壊
+#   
+#   大逆
+#   
+#   戦士
+#   
+#   運命の戦士
+#   
+#   割に合わぬ勝利
+#   
+#   血に飢えた
+#   
+#   非人情
+#   
+#   快楽殺人者
+#   
+#   負傷
+#   
+#   流血
+#   
+#   不安
+#   
+#   皆殺し
+#   
+#   欲求不満
+#   
+#   苦悶
+#   
+#   トラウマ
+#   
+#   めった切り
+#   
+#   切断
+#   
+#   断絶
+#   
+#   単調
+#   
+#   精密切開
+#   
+#   裂傷
+#   
+#   悲嘆
+#   
+#   死のとば口
+#   
+#   墓石
+# old en (ja16):
+#   Battle
+#   Crusades
+#   War
+#   Eternal War
+#   the Eternal Warrior
+#   the Onslaught
+#   Skirmishing
+#   the Endless March
+#   Plunder
+#   Ravage
+#   Lemuel's Suggestions
+#   the Warrior
+#   the Doomed Warrior
+#   akrasiac patch
+#   the Pyrrhic Victory
+#   killing
+#   Blood-Lust
+#   Joyful Slaughter
+#   Wounding
+#   Blood
+#   Fear
+#   Massacring
+#   was Pain, clashing with the brand
+#   Insufficient Pleasure
+#   Agony
+#   Trauma
+#   Lemuel's suggestion
+#   Hacking and Slashing
+#   related to cutting
+#   Truncation
+#   Severance
+#   Dullness
+#   Precise Incision
+#   Laceration
+#   collateral effects
+#   Mourning
+#   Death's Door
+#   the Grave
+# old ja (ja16):
+#   戦い
+#   
+#   聖戦
+#   
+#   戦争
+#   
+#   永遠の戦争
+#   
+#   永遠の戦士
+#   
+#   猛攻
+#   
+#   小競り合い
+#   
+#   終わりなき進軍
+#   
+#   掠奪
+#   
+#   荒廃
+#   
+#   戦士
+#   
+#   運命の戦士
+#   
+#   割に合わぬ勝利
+#   
+#   血に飢えし
+#   
+#   快楽殺人者
+#   
+#   負傷
+#   
+#   流血
+#   
+#   不安
+#   
+#   皆殺し
+#   
+#   欲求不満
+#   
+#   苦悶
+#   
+#   トラウマ
+#   
+#   めった切り
+#   
+#   切断
+#   
+#   断絶
+#   
+#   単調
+#   
+#   精密切開
+#   
+#   裂傷
+#   
+#   悲嘆
+#   
+#   死のとば口
+#   
+#   墓石
+
+Crusades
+
+Eternal War
+
+Iconoclasm
+
+Plunder
+
+Ravage
+
+Regicide
+
+Skirmishing
+
+War
+
+the Doomed Warrior
+
+the Endless March
+
+the Eternal Warrior
+
+the Onslaught
+
+the Pyrrhic Victory
+
+the Warrior
+
+Blood
+
+Blood-Lust
+
+Callousness
+
+Diet Blood
+
+Fear
+
+Joyful Slaughter
+
+Massacring
+
+Wounding
+
+
+Agony
+
+Hacking and Slashing
+
+Insufficient Pleasure
+
+Trauma
+
+
+Dullness
+
+Precise Incision
+
+Laceration
+
+Severance
+
+Truncation
+
+Death's Door
+
+Mourning
+
+the Grave
+%%%%
+death_or_doom
+
+# old en (ja19):
+#   death
+#   Death
+#   Bloody Death
+#   Painful Death
+#   Quick Death
+#   Instant Death
+#   Imminent Death
+#   Sudden Death
+#   Slow Death
+#   Certain Death
+#   Uncertain Death
+#   Exquisite Death
+#   Pain and Death
+#   Untimely Demise
+#   doom
+#   Doom
+#   Premature Burial
+#   Peril
+#   Execution
+#   Destruction
+#   Disembowelment
+#   Evisceration
+#   Extermination
+#   Extinguishment
+#   pain and misery
+#   Infinite Pain
+#   Dismemberment
+#   Terror
+#   Misery
+#   Woe
+#   Excruciating Pain
+#   Exquisite Torment
+#   Anguish
+# old ja (ja19):
+#   死
+#   
+#   
+#   
+#   
+#   即死
+#   
+#   
+#   突然死
+#   
+#   
+#   確実なる死
+#   
+#   
+#   
+#   苦痛と死
+#   
+#   
+#   破滅
+#   
+#   早すぎた埋葬
+#   
+#   危機
+#   
+#   処刑
+#   
+#   破壊
+#   
+#   八つ裂き
+#   
+#   内臓摘出
+#   
+#   絶滅
+#   
+#   消滅
+#   
+#   無限の苦痛
+#   
+#   切断
+#   
+#   恐怖
+#   
+#   悲惨
+#   
+#   悲痛
+#   
+#   耐えがたき苦痛
+#   
+#   
+#   苦悩
+# old en (ja16):
+#   death
+#   Death
+#   Bloody Death
+#   Painful Death
+#   Quick Death
+#   Instant Death
+#   Imminent Death
+#   Sudden Death
+#   Slow Death
+#   Certain Death
+#   Uncertain Death
+#   Exquisite Death
+#   Pain and Death
+#   Untimely Demise
+#   doom
+#   Doom
+#   Premature Burial
+#   Peril
+#   Execution
+#   Destruction
+#   Disembowelment
+#   Evisceration
+#   Extermination
+#   Extinguishment
+#   pain and misery
+#   Infinite Pain
+#   Eternal Torment
+#   Dismemberment
+#   Terror
+#   Misery
+#   Woe
+#   Excruciating Pain
+#   Exquisite Torment
+#   Anguish
+# old ja (ja16):
+#   死
+#   
+#   
+#   
+#   
+#   即死
+#   
+#   
+#   突然死
+#   
+#   
+#   確実なる死
+#   
+#   
+#   
+#   苦痛と死
+#   
+#   
+#   破滅
+#   
+#   早すぎた埋葬
+#   
+#   危機
+#   
+#   処刑
+#   
+#   破壊
+#   
+#   八つ裂き
+#   
+#   内臓摘出
+#   
+#   絶滅
+#   
+#   消滅
+#   
+#   無限の苦痛
+#   
+#   無間地獄
+#   
+#   切断
+#   
+#   恐怖
+#   
+#   悲惨
+#   
+#   悲痛
+#   
+#   耐えがたき苦痛
+#   
+#   
+#   苦悩
+
+Bloody Death
+
+Certain Death
+
+Death
+
+Exquisite Death
+
+Imminent Death
+
+Instant Death
+
+Pain and Death
+
+Painful Death
+
+Quick Death
+
+Slow Death
+
+Sudden Death
+
+Uncertain Death
+
+Untimely Demise
+
+Destruction
+
+Disembowelment
+
+Doom
+
+Evisceration
+
+Execution
+
+Extermination
+
+Extinguishment
+
+Peril
+
+Premature Burial
+
+
+Anguish
+
+Dismemberment
+
+Excruciating Pain
+
+Exquisite Torment
+
+Infinite Pain
+
+Misery
+
+Terror
+
+Woe
+%%%%
+_strategy_name_
+
+# old en (ja19):
+#   strategy
+#   Defence
+#   Defence by Offence
+#   Offence
+#   Reinforcement
+#   Expedience
+#   Optimality
+#   Overwhelming Force
+#   Subterfuge
+#   Strategic Superiority
+#   Guile
+# old ja (ja19):
+#   防御
+#   
+#   攻防一体
+#   
+#   攻撃
+#   
+#   増援
+#   
+#   好都合
+#   
+#   最適
+#   
+#   猛威
+#   
+#   逃げ口上
+#   
+#   戦略的優越
+#   
+#   悪知恵
+# old en (ja16):
+#   strategy
+#   Defence
+#   Defence by Offence
+#   Offence
+#   Reinforcement
+#   Expedience
+#   Optimality
+#   Overwhelming Force
+#   Subterfuge
+#   Strategic Superiority
+#   Guile
+# old ja (ja16):
+#   防御
+#   
+#   攻防一体
+#   
+#   攻撃
+#   
+#   増援
+#   
+#   好都合
+#   
+#   最適
+#   
+#   猛威
+#   
+#   逃げ口上
+#   
+#   戦略的優越
+#   
+#   悪知恵
+
+Defence
+
+Defence by Offence
+
+Expedience
+
+Guile
+
+Offence
+
+Optimality
+
+Overwhelming Force
+
+Reinforcement
+
+Strategic Superiority
+
+Subterfuge
+%%%%
+_valour_name_
+
+# old en (ja19):
+#   Honour
+#   Integrity
+#   Responsibility
+#   Watchfulness
+#   Duty
+#   Prudence
+#   Valour
+#   Resourcefulness
+#   Action
+#   Purpose
+#   Fortitude
+#   Defiance
+#   Valiance
+#   Courage
+#   Eternal Vigilance
+#   Gallantry
+#   Tenacity
+#   True Grit
+#   Indomitability
+#   Conscience
+# old ja (ja19):
+#   名誉
+#   
+#   高潔
+#   
+#   責任
+#   
+#   気配り
+#   
+#   義務
+#   
+#   慎重
+#   
+#   武勇
+#   
+#   知略
+#   
+#   行動
+#   
+#   決意
+#   
+#   不屈
+#   
+#   反抗
+#   
+#   剛勇
+#   
+#   勇気
+#   
+#   絶えざる警戒
+#   
+#   勇猛
+#   
+#   頑強
+#   
+#   真なる闘志
+#   
+#   不撓不屈
+#   
+#   良心
+# old en (ja16):
+#   Honour
+#   Integrity
+#   Responsibility
+#   Watchfulness
+#   Duty
+#   Prudence
+#   Valour
+#   Resourcefulness
+#   Action
+#   Purpose
+#   Fortitude
+#   Defiance
+#   Valiance
+#   Courage
+#   Eternal Vigilance
+#   Gallantry
+#   Tenacity
+#   True Grit
+#   Indomitability
+#   Conscience
+# old ja (ja16):
+#   名誉
+#   
+#   高潔
+#   
+#   責任
+#   
+#   気配り
+#   
+#   義務
+#   
+#   慎重
+#   
+#   武勇
+#   
+#   知略
+#   
+#   行動
+#   
+#   決意
+#   
+#   不屈
+#   
+#   反抗
+#   
+#   剛勇
+#   
+#   勇気
+#   
+#   絶えざる警戒
+#   
+#   勇猛
+#   
+#   頑強
+#   
+#   真なる闘志
+#   
+#   不撓不屈
+#   
+#   良心
+
+Action
+
+Conatus
+
+Conscience
+
+Courage
+
+Daring
+
+Defiance
+
+Duty
+
+Eternal Vigilance
+
+Fortitude
+
+Gallantry
+
+Honour
+
+Indomitability
+
+Integrity
+
+Prudence
+
+Purpose
+
+Resourcefulness
+
+Responsibility
+
+Tenacity
+
+True Grit
+
+Valiance
+
+Watchfulness
+%%%%
+_justice_name_
+
+# old en (ja19):
+#   Tender Mercy
+#   Cruel Justice
+#   Punishment
+#   Innocence
+#   Guilt
+#   Tortfeasance
+#   Extenuating Circumstances
+#   Absolution
+#   Exoneration
+#   False Accusations
+#   Wrongful Imprisonment
+#   Corporal Punishment
+#   Capital Punishment
+#   Forgiveness
+#   Trial by Ordeal
+#   Blind Justice
+#   Judgement
+#   Accidental Termination
+# old ja (ja19):
+#   かよわき慈悲
+#   
+#   無慈悲なる正義
+#   
+#   懲罰
+#   
+#   無垢
+#   
+#   罪悪
+#   
+#   不法作為
+#   
+#   情状酌量
+#   
+#   赦罪
+#   
+#   赦免
+#   
+#   虚偽告訴
+#   
+#   冤罪
+#   
+#   体刑
+#   
+#   極刑
+#   
+#   容赦
+#   
+#   神明裁判
+#   
+#   盲目的正義
+#   
+#   審判
+#   
+#   予期せぬ終結
+# old en (ja16):
+#   Tender Mercy
+#   Cruel Justice
+#   Punishment
+#   Innocence
+#   Guilt
+#   Tortfeasance
+#   Extenuating Circumstances
+#   Absolution
+#   Exoneration
+#   False Accusations
+#   Wrongful Imprisonment
+#   Corporal Punishment
+#   Capital Punishment
+#   Forgiveness
+#   Trial by Ordeal
+#   Blind Justice
+# old ja (ja16):
+#   かよわき慈悲
+#   
+#   無慈悲なる正義
+#   
+#   打擲
+#   
+#   無垢
+#   
+#   罪悪
+#   
+#   不法作為
+#   
+#   情状酌量
+#   
+#   赦罪
+#   
+#   赦免
+#   
+#   虚偽告訴
+#   
+#   
+#   体刑
+#   
+#   極刑
+#   
+#   容赦
+#   
+#   神明裁判
+#   
+#   盲目的正義
+
+Absolution
+
+Accidental Termination
+
+Blind Justice
+
+Capital Punishment
+
+Corporal Punishment
+
+Cruel Justice
+
+Exoneration
+
+Extenuating Circumstances
+
+False Accusations
+
+Forgiveness
+
+Guilt
+
+Innocence
+
+Judgement
+
+Punishment
+
+Tender Mercy
+
+Tortfeasance
+
+Trial by Ordeal
+
+Wrongful Imprisonment
+%%%%
+_diviner_name_
+
+# old en (ja19):
+#   Augurer
+#   Water Diviner
+#   Soothsayer
+#   Seeker
+#   Visionary
+#   Oracle
+#   Fortune-Teller
+#   Sybil
+#   Seer
+# old ja (ja19):
+#   占い師
+#   
+#   風水師
+#   
+#   預言者
+#   
+#   探求者
+#   
+#   空想家
+#   
+#   神託所
+#   
+#   予見師
+#   
+#   
+#   予見師
+# old en (ja16):
+#   Augurer
+#   Water Diviner
+#   Soothsayer
+#   Seeker
+#   Visionary
+#   Oracle
+#   Fortune-Teller
+#   Sybil
+#   Seer
+# old ja (ja16):
+#   占い師
+#   
+#   風水師
+#   
+#   預言者
+#   
+#   探求者
+#   
+#   空想家
+#   
+#   神託所
+#   
+#   予見師
+#   
+#   
+#   先見者
+
+Augurer
+
+Fortune-Teller
+
+Oracle
+
+Seeker
+
+Seer
+
+Soothsayer
+
+Sybil
+
+Visionary
+
+Water Diviner
+%%%%
+_people_name_
+
+# old en (ja19):
+#   King
+#   Queen
+#   Jester
+#   Fool
+#   Ancients
+#   Saviour
+#   Messenger
+#   Genius
+#   Coward
+#   Philosopher
+#   Hero
+#   Traitor
+#   Enemy
+#   Priest
+#   Madman
+#   Scavenger
+#   Pariah
+# old ja (ja19):
+#   王
+#   
+#   女王
+#   
+#   道化師
+#   
+#   愚者
+#   
+#   太古
+#   
+#   救世主
+#   
+#   伝令
+#   
+#   天賦
+#   
+#   臆病者
+#   
+#   哲学者
+#   
+#   英雄
+#   
+#   反逆者
+#   
+#   怨敵
+#   
+#   司祭
+#   
+#   狂人
+#   
+#   屑拾い
+#   
+#   爪弾き者
+#   
+#   w:15
+#   @_diviner_name_@
+# old en (ja16):
+#   King
+#   Queen
+#   Jester
+#   Fool
+#   Ancients
+#   Saviour
+#   Messenger
+#   Genius
+#   Coward
+#   Philosopher
+#   Hero
+#   Traitor
+#   Enemy
+#   Priest
+#   Madman
+#   Scavenger
+# old ja (ja16):
+#   王
+#   
+#   女王
+#   
+#   道化師
+#   
+#   愚者
+#   
+#   古代
+#   
+#   救世主
+#   
+#   伝令
+#   
+#   天賦
+#   
+#   臆病者
+#   
+#   哲学者
+#   
+#   英雄
+#   
+#   反逆者
+#   
+#   怨敵
+#   
+#   司祭
+#   
+#   狂人
+#   
+#   屑拾い
+#   
+#   w:15
+#   @_diviner_name_@
+
+Ancients
+
+Coward
+
+Enemy
+
+Fool
+
+Genius
+
+Hero
+
+Jester
+
+King
+
+Madman
+
+Messenger
+
+Pariah
+
+Philosopher
+
+Priest
+
+Queen
+
+Saviour
+
+Scapegrace
+
+Scavenger
+
+Traitor
+
+w:15
+@_diviner_name_@
+%%%%
+_weapon_animal_
+
+# old en (ja19):
+#   insects
+#   Pill Bug
+#   Butterfly
+#   Wasp
+#   Moth
+#   Mosquito
+#   Gnat
+#   Blowfly
+#   Dragonfly
+#   Firefly
+#   arachnids
+#   Spider
+#   Scorpion
+#   amphibians and reptiles
+#   Rattle-Snake
+#   Viper
+#   Asp
+#   fish
+#   Shark
+#   Lamprey
+#   Eel
+#   Salmon
+#   birds
+#   Penguin
+#   Puffin
+#   Fulmar
+#   Dove
+#   Hawk
+#   Hummingbird
+#   Owl
+#   Stork
+#   Vulture
+#   mammals
+#   w:5
+#   Weasel
+#   Goat
+#   Whale
+#   Ass
+#   Badger
+#   Bear
+#   Boar
+#   Fox
+#   Rat
+#   w:5
+#   Stoat
+#   Tiger
+#   Wolf
+# old ja (ja19):
+#   ダンゴムシ
+#   
+#   胡蝶
+#   
+#   雀蜂
+#   
+#   蛾
+#   
+#   蚊
+#   
+#   ブヨ
+#   
+#   黒蠅
+#   
+#   蜻蛉
+#   
+#   蛍
+#   
+#   蜘蛛
+#   
+#   蠍
+#   
+#   ガラガラヘビ
+#   
+#   クサリヘビ
+#   
+#   コブラ
+#   
+#   サメ
+#   
+#   ヤツメウナギ
+#   
+#   ウナギ
+#   
+#   鮭
+#   
+#   ペンギン
+#   
+#   角目鳥
+#   
+#   カモメ
+#   
+#   鳩
+#   
+#   鷹
+#   
+#   ハチドリ
+#   
+#   フクロウ
+#   
+#   コウノトリ
+#   
+#   ハゲワシ
+#   
+#   w:5
+#   イタチ
+#   
+#   山羊
+#   
+#   鯨
+#   
+#   ロバ
+#   
+#   アナグマ
+#   
+#   熊
+#   
+#   イノシシ
+#   
+#   狐
+#   
+#   ネズミ
+#   
+#   w:5
+#   オコジョ
+#   
+#   虎
+#   
+#   狼
+# old en (ja16):
+#   insects
+#   Pill Bug
+#   Butterfly
+#   Wasp
+#   Moth
+#   Mosquito
+#   Gnat
+#   Blowfly
+#   Dragonfly
+#   Firefly
+#   arachnids
+#   Spider
+#   Scorpion
+#   amphibians and reptiles
+#   Rattle-Snake
+#   Viper
+#   Asp
+#   fish
+#   Shark
+#   Lamprey
+#   Eel
+#   Salmon
+#   birds
+#   Penguin
+#   Puffin
+#   Fulmar
+#   Dove
+#   Hawk
+#   Hummingbird
+#   Owl
+#   Stork
+#   Vulture
+#   mammals
+#   w:5
+#   Weasel
+#   Goat
+#   Whale
+#   Ass
+#   Badger
+#   Bear
+#   Boar
+#   Fox
+#   Rat
+#   w:5
+#   Stoat
+#   Tiger
+#   Wolf
+# old ja (ja16):
+#   ダンゴムシ
+#   
+#   胡蝶
+#   
+#   雀蜂
+#   
+#   蛾
+#   
+#   蚊
+#   
+#   ブヨ
+#   
+#   黒蠅
+#   
+#   蜻蛉
+#   
+#   蛍
+#   
+#   蜘蛛
+#   
+#   蠍
+#   
+#   ガラガラヘビ
+#   
+#   クサリヘビ
+#   
+#   コブラ
+#   
+#   サメ
+#   
+#   ヤツメウナギ
+#   
+#   ウナギ
+#   
+#   鮭
+#   
+#   ペンギン
+#   
+#   角目鳥
+#   
+#   カモメ
+#   
+#   鳩
+#   
+#   鷹
+#   
+#   ハチドリ
+#   
+#   フクロウ
+#   
+#   コウノトリ
+#   
+#   ハゲワシ
+#   
+#   w:5
+#   イタチ
+#   
+#   山羊
+#   
+#   鯨
+#   
+#   ロバ
+#   
+#   アマグマ
+#   
+#   熊
+#   
+#   イノシシ
+#   
+#   狐
+#   
+#   ネズミ
+#   
+#   w:5
+#   オコジョ
+#   
+#   虎
+#   
+#   狼
+
+@_arachnid_name_@
+
+@_crustacean_name_@
+
+@_fish_name_@
+
+@_amphibian_name_@
+
+@_reptile_name_@
+
+@_bird_name_@
+
+@_mammal_name_@
+%%%%
+_plant_name_
+
+# old en (ja19):
+#   plants
+#   Eggplant
+#   Turnip
+#   Chickpea
+#   Lettuce
+#   Radish
+#   Sugar Beet
+#   Shallot
+#   Tomato
+#   er...aren't whelks gastropods?
+#   Whelk
+#   fungus and similar
+#   Mushroom
+#   Toadstool
+#   Puffball
+#   Slime-mould
+# old ja (ja19):
+#   ナス
+#   
+#   蕪
+#   
+#   ひよこまめ
+#   
+#   レタス
+#   
+#   大根
+#   
+#   砂糖大根
+#   
+#   エシャロット
+#   
+#   トマト
+#   
+#   
+#   マッシュルーム
+#   
+#   からかさキノコ
+#   
+#   ホコリタケ
+#   
+#   ねばねばカビ
+# old en (ja16):
+#   plants
+#   Eggplant
+#   Turnip
+#   Chickpea
+#   Lettuce
+#   Radish
+#   Sugar Beet
+#   Shallot
+#   Tomato
+#   er...aren't whelks gastropods?
+#   Whelk
+#   fungus and similar
+#   Mushroom
+#   Toadstool
+#   Puffball
+#   Slime-mold
+# old ja (ja16):
+#   ナス
+#   
+#   蕪
+#   
+#   ひよこまめ
+#   
+#   レタス
+#   
+#   大根
+#   
+#   砂糖大根
+#   
+#   エシャロット
+#   
+#   トマト
+#   
+#   
+#   マッシュルーム
+#   
+#   からかさキノコ
+#   
+#   ホコリタケ
+#   
+#   ねばねばカビ
+
+Eggplant
+
+Chickpea
+
+Lettuce
+
+Radish
+
+Sugar Beet
+
+Shallot
+
+Tomato
+
+Turnip
+
+Whelk
+
+
+w:5
+Magic Mushroom
+
+Mushroom
+
+Puffball
+
+Slime-mould
+
+Toadstool
+%%%%
+_evil_stuff_
+
+# old en (ja19):
+#   Hell's Wrath
+#   the Undead
+#   Ancient Evil
+#   Evil
+#   the Beast
+#   Shrieking Terror
+#   the Lurker
+#   the Crawling Thing
+#   the Thing
+#   Abomination
+#   Mutilation
+#   Deformation
+#   Infection
+#   Corruption
+#   Demonkind
+#   Abuse
+#   the Dead
+#   Defilement
+#   the Evil Eye
+#   the Ghost
+#   the Living Dead
+#   Nightmares
+#   Perversion
+#   Putrescence
+#   the Reaper
+#   the Spectre
+#   the Unliving
+#   the Unspeakable One
+#   the Wraith
+# old ja (ja19):
+#   地獄の怒り
+#   
+#   不死者
+#   
+#   古代の悪魔
+#   
+#   邪悪
+#   
+#   獣
+#   
+#   叫喚地獄
+#   
+#   蠢くもの
+#   
+#   這いよるもの
+#   
+#   物体X
+#   
+#   おぞましきもの
+#   
+#   切除
+#   
+#   奇形
+#   
+#   感染
+#   
+#   崩壊
+#   
+#   魔族
+#   
+#   濫用
+#   
+#   死者
+#   
+#   汚染
+#   
+#   邪眼
+#   
+#   亡霊
+#   
+#   生ける死者
+#   
+#   悪夢
+#   
+#   曲解
+#   
+#   腐敗
+#   
+#   死神
+#   
+#   幽体
+#   
+#   命なきもの
+#   
+#   名状しがたきもの
+#   
+#   霊魂
+# old en (ja16):
+#   Curses
+#   Hell's Wrath
+#   the Undead
+#   Ancient Evil
+#   Evil
+#   the Beast
+#   Shrieking Terror
+#   the Lurker
+#   the Crawling Thing
+#   the Thing
+#   Abomination
+#   Mutilation
+#   Deformation
+#   Infection
+#   Corruption
+#   Demonkind
+#   Abuse
+#   the Dead
+#   Defilement
+#   the Evil Eye
+#   the Ghost
+#   the Living Dead
+#   Nightmares
+#   Perversion
+#   Putrescence
+#   the Reaper
+#   the Spectre
+#   the Unliving
+#   the Unspeakable One
+#   the Wraith
+# old ja (ja16):
+#   呪い
+#   
+#   地獄の怒り
+#   
+#   不死者
+#   
+#   古代の悪魔
+#   
+#   邪悪
+#   
+#   獣
+#   
+#   叫喚地獄の
+#   
+#   蠢くもの
+#   
+#   這いよるもの
+#   
+#   物体X
+#   
+#   おぞましきもの
+#   
+#   切除
+#   
+#   奇形
+#   
+#   感染
+#   
+#   崩壊
+#   
+#   魔族
+#   
+#   濫用
+#   
+#   死者
+#   
+#   汚染
+#   
+#   邪眼
+#   
+#   亡霊
+#   
+#   生ける死者
+#   
+#   悪夢
+#   
+#   曲解
+#   
+#   腐敗
+#   
+#   死神
+#   
+#   幽体
+#   
+#   命なきもの
+#   
+#   名状しがたきもの
+#   
+#   霊魂
+
+Abomination
+
+Abuse
+
+Ancient Evil
+
+Corruption
+
+Debasement
+
+Defilement
+
+Deformation
+
+Demonkind
+
+Evil
+
+Hell's Wrath
+
+Infection
+
+Mutilation
+
+Nightmares
+
+Perversion
+
+Putrescence
+
+Shrieking Terror
+
+Vitiation
+
+the Beast
+
+the Crawling Thing
+
+the Dead
+
+the Evil Eye
+
+the Ghost
+
+the Living Dead
+
+the Lurker
+
+the Reaper
+
+the Spectre
+
+the Thing
+
+the Undead
+
+the Unliving
+
+the Unspeakable One
+
+the Wraith
+%%%%
+_catastrophe_name_
+
+# old en (ja19):
+#   the Inferno
+#   Earthquakes
+#   Cataclysm
+#   Drought
+#   Floods
+#   Ruination
+#   the Apocalypse
+#   the Apocalypse
+#   Armageddon
+#   World's End
+#   Ragnarok
+#   Fimbulwinter
+#   Annihilation
+#   the End of Times
+#   World Downfall
+#   the Apocalyptic Riders (except Death)
+#   Pestilence
+#   Plague
+#   Famine
+#   War
+# old ja (ja19):
+#   地獄
+#   
+#   地震
+#   
+#   大変動
+#   
+#   干魃
+#   
+#   洪水
+#   
+#   零落
+#   
+#   黙示録
+#   
+#   ハルマゲドン
+#   
+#   世界の終末
+#   
+#   神々の黄昏
+#   
+#   フィンブルの冬
+#   
+#   殺戮
+#   
+#   末世
+#   
+#   世界滅亡
+#   
+#   疫病
+#   
+#   
+#   飢餓
+#   
+#   戦争
+# old en (ja16):
+#   the Inferno
+#   Earthquakes
+#   Cataclysm
+#   Drought
+#   Floods
+#   Ruination
+#   the Apocalypse
+#   the Apocalypse
+#   Armageddon
+#   World's End
+#   Ragnarok
+#   Fimbulwinter
+#   Annihilation
+#   the End of Times
+#   World Downfall
+#   the Apocalyptic Riders (except Death)
+#   Pestilence
+#   Plague
+#   Famine
+#   War
+# old ja (ja16):
+#   地獄
+#   
+#   地震
+#   
+#   大変動
+#   
+#   干魃
+#   
+#   洪水
+#   
+#   零落
+#   
+#   黙示録
+#   
+#   ハルマゲドン
+#   
+#   世界の終末
+#   
+#   神々の黄昏
+#   
+#   フィンブルの冬
+#   
+#   殺戮
+#   
+#   末世
+#   
+#   世界滅亡
+#   
+#   疫病
+#   
+#   
+#   飢餓
+#   
+#   戦争
+
+Earthquakes
+
+Cataclysm
+
+Drought
+
+Floods
+
+Ruination
+
+the Inferno
+
+
+Annihilation
+
+Armageddon
+
+Fimbulwinter
+
+Ragnarok
+
+World Downfall
+
+World's End
+
+the Apocalypse
+
+the End of Times
+
+Famine
+
+Pestilence
+
+Plague
+
+War
+%%%%
+_chaos_name_
+
+# old en (ja19):
+#   Chaos
+#   Chance
+#   Mayhem
+#   Havoc
+#   Turmoil
+#   Calamity
+#   Arbitration
+#   the Extremes
+#   Disorder
+#   Disaster
+#   Imbalance
+#   Disharmony
+#   Ambiguity
+#   Change
+#   Extremism
+#   Impermanence
+#   Constant Reorganisation
+#   Contradiction
+#   Disarray
+#   Disintegration
+#   Dissolution
+#   Distraction
+#   Forced Transition
+#   the Fray
+#   Revolt
+#   Tumult
+#   Upheaval
+#   Incongruity
+# old ja (ja19):
+#   混沌
+#   
+#   好機
+#   
+#   大騒ぎ
+#   
+#   大混乱
+#   
+#   騒動
+#   
+#   惨事
+#   
+#   仲裁
+#   
+#   極限状況
+#   
+#   障害
+#   
+#   災害
+#   
+#   不均衡
+#   
+#   不協和
+#   
+#   曖昧
+#   
+#   変容
+#   
+#   極端
+#   
+#   儚さ
+#   
+#   改廃
+#   
+#   矛盾
+#   
+#   乱雑
+#   
+#   分解
+#   
+#   溶解
+#   
+#   散漫
+#   
+#   強制変化
+#   
+#   論争
+#   
+#   反乱
+#   
+#   騒動
+#   
+#   激変
+#   
+#   不調和
+# old en (ja16):
+#   Chaos
+#   Chance
+#   Mayhem
+#   Havoc
+#   Turmoil
+#   Calamity
+#   Arbitration
+#   the Extremes
+#   Disorder
+#   Disaster
+#   Imbalance
+#   Disharmony
+#   Ambiguity
+#   Change
+#   Extremism
+#   Impermanence
+#   Constant Reorganisation
+#   Contradiction
+#   Disarray
+#   Disintegration
+#   Dissolution
+#   Distraction
+#   Forced Transition
+#   the Fray
+#   Revolt
+#   Tumult
+#   Upheaval
+# old ja (ja16):
+#   混沌
+#   
+#   好機
+#   
+#   大騒ぎ
+#   
+#   大混乱
+#   
+#   騒動
+#   
+#   惨事
+#   
+#   仲裁
+#   
+#   極限状況
+#   
+#   障害
+#   
+#   災害
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   分解
+#   
+#   溶解
+
+Ambiguity
+
+Arbitration
+
+Calamity
+
+Chance
+
+Change
+
+Confusion
+
+Constant Reorganisation
+
+Contradiction
+
+Disarray
+
+Disaster
+
+Disharmony
+
+Disintegration
+
+Disorder
+
+Dissolution
+
+Distraction
+
+Extremism
+
+Goblin Mode
+
+Havoc
+
+Imbalance
+
+Impermanence
+
+Incongruity
+
+Mayhem
+
+Revolt
+
+True Chaos
+
+Tumult
+
+Turmoil
+
+Upheaval
+
+the Extremes
+
+the Farrago
+
+the Fray
+
+the Hodge-Podge
+
+the Mish-Mash
+%%%%
+_balance_or_order_
+
+# old en (ja19):
+#   the Middle
+#   the Median
+#   Departure
+#   Arrival
+#   Ascent
+#   Descent
+#   Symmetry
+#   Bodily Harmony
+#   Moderation
+#   Eternal Harmony
+#   Peace
+#   Equivalence
+#   Balance
+#   Harmony
+#   Fragile Peace
+#   Circularity
+#   Linearity
+#   Law
+#   Accord
+#   Conformity
+#   Due Proportion
+#   Equilibrium
+#   the Establishment
+#   the Final Decision
+#   Propriety
+# old ja (ja19):
+#   中庸
+#   
+#   中央値
+#   
+#   出発
+#   
+#   到達
+#   
+#   上昇
+#   
+#   下降
+#   
+#   均整
+#   
+#   
+#   穏健
+#   
+#   永久調和
+#   
+#   平和
+#   
+#   等価
+#   
+#   均衡
+#   
+#   調和
+#   
+#   儚き平和
+#   
+#   循環性
+#   
+#   線形性
+#   
+#   秩序
+#   
+#   一致
+#   
+#   相似
+#   
+#   釣りあい
+#   
+#   平衡
+#   
+#   確立
+#   
+#   最終決定
+#   
+#   礼節
+# old en (ja16):
+#   the Middle
+#   the Median
+#   Departure
+#   Arrival
+#   Ascent
+#   Descent
+#   Symmetry
+#   Bodily Harmony
+#   Moderation
+#   Eternal Harmony
+#   Peace
+#   Equivalence
+#   Balance
+#   Harmony
+#   Fragile Peace
+#   Circularity
+#   Linearity
+#   Law
+#   Order
+#   Accord
+#   Conformity
+#   Due Proportion
+#   Equilibrium
+#   the Establishment
+#   the Final Decision
+#   Propriety
+# old ja (ja16):
+#   中庸
+#   
+#   
+#   出発
+#   
+#   到達
+#   
+#   上昇
+#   
+#   下降
+#   
+#   均整
+#   
+#   
+#   
+#   
+#   平和
+#   
+#   
+#   
+#   調和
+#   
+#   はかなき平和
+#   
+#   
+#   
+#   秩序
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   最終決定
+
+Accord
+
+Arrival
+
+Ascent
+
+Balance
+
+Bodily Harmony
+
+Circularity
+
+Conformity
+
+Departure
+
+Descent
+
+Due Proportion
+
+Equilibrium
+
+Equivalence
+
+Eternal Harmony
+
+Fragile Peace
+
+Harmony
+
+Law
+
+Linearity
+
+Moderation
+
+Peace
+
+Propriety
+
+Symmetry
+
+the Establishment
+
+the Final Decision
+
+the Median
+
+the Middle
+%%%%
+_economics_or_politics_
+
+# old en (ja19):
+#   economics
+#   Inflation
+#   Deflation
+#   Supply
+#   Demand
+#   Amortisation
+#   Animal Spirits
+#   Bankruptcy
+#   Collusion
+#   Compound Interest
+#   Currency
+#   Debt
+#   Dividends
+#   Exchange
+#   Growth
+#   Income
+#   Luxury
+#   Profit
+#   Risk Management
+#   Taxation
+#   Valuable Assets
+#   Welfare
+#   politics
+#   the Imperium
+#   Greatest Utility
+#   the Revolution
+#   Defenestration
+#   the People
+#   the Little People
+#   Wealth
+#   Poverty
+#   Reapportionment
+#   Checks and Balances
+#   the Common Good
+#   Conservatism
+#   the Dark Horse
+#   the Demagogue
+#   Governance
+#   the Lame Duck
+#   the Lesser Evil
+#   Popular Demand
+#   Radicalism
+#   Royalism
+#   the Silent Majority
+#   akrasiac patch
+#   Impeachment
+#   umm, quoi?
+#   Freehold
+#   Attainder
+#   Fee Simple
+#   Mandamus
+#   Breach
+#   Fundamental Breach
+#   Termination
+#   Sequestration
+# old ja (ja19):
+#   インフレ
+#   
+#   デフレ
+#   
+#   供給
+#   
+#   需要
+#   
+#   償還
+#   
+#   
+#   破産
+#   
+#   談合
+#   
+#   複利
+#   
+#   通貨
+#   
+#   借金
+#   
+#   配当
+#   
+#   両替
+#   
+#   増大
+#   
+#   所得
+#   
+#   贅沢
+#   
+#   利益
+#   
+#   危機管理
+#   
+#   徴税
+#   
+#   資産
+#   
+#   福祉
+#   
+#   最高権力
+#   
+#   
+#   革命
+#   
+#   窓外投擲
+#   
+#   人民
+#   
+#   小市民
+#   
+#   富
+#   
+#   貧困
+#   
+#   定数是正
+#   
+#   抑制と均衡
+#   
+#   公益
+#   
+#   保守主義
+#   
+#   ダークホース
+#   
+#   デマゴーグ
+#   
+#   統治
+#   
+#   レームダック
+#   
+#   
+#   
+#   過激派
+#   
+#   君主主義
+#   
+#   見えざる多数派
+#   
+#   弾劾
+#   
+#   
+#   公権喪失
+#   
+#   所有権
+#   
+#   執行令状
+#   
+#   不履行
+#   
+#   
+#   終結
+#   
+#   差し押さえ
+# old en (ja16):
+#   economics
+#   Inflation
+#   Deflation
+#   Supply
+#   Demand
+#   Amortisation
+#   Animal Spirits
+#   Bankruptcy
+#   Collusion
+#   Compound Interest
+#   Currency
+#   Debt
+#   Dividends
+#   Exchange
+#   Growth
+#   Income
+#   Luxury
+#   Profit
+#   Risk Management
+#   Taxation
+#   Valuable Assets
+#   Welfare
+#   politics
+#   the Imperium
+#   Greatest Utility
+#   the Revolution
+#   Defenestration
+#   the People
+#   the Little People
+#   Wealth
+#   Poverty
+#   Reapportionment
+#   Checks and Balances
+#   the Common Good
+#   Conservatism
+#   the Dark Horse
+#   the Demagogue
+#   Governance
+#   the Lame Duck
+#   the Lesser Evil
+#   Popular Demand
+#   Radicalism
+#   Royalism
+#   the Silent Majority
+#   akrasiac patch
+#   Impeachment
+#   umm, quoi?
+#   Freehold
+#   Attainder
+#   Fee Simple
+#   Mandamus
+#   Breach
+#   Fundamental Breach
+#   Termination
+#   Sequestration
+# old ja (ja16):
+#   インフレ
+#   
+#   デフレ
+#   
+#   供給
+#   
+#   需要
+#   
+#   
+#   
+#   
+#   
+#   
+#   通貨
+#   
+#   借金
+#   
+#   
+#   両替
+#   
+#   
+#   
+#   
+#   
+#   危機管理
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   革命
+#   
+#   窓外投擲
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   デマゴーグ
+#   
+#   
+#   レームダック
+#   
+#   
+#   
+#   過激派
+
+Amortisation
+
+Animal Spirits
+
+Bankruptcy
+
+Collusion
+
+Compound Interest
+
+Currency
+
+Debt
+
+Deflation
+
+Demand
+
+Dividends
+
+Exchange
+
+Growth
+
+Income
+
+Inflation
+
+Luxury
+
+Profit
+
+Risk Management
+
+Supply
+
+Taxation
+
+Valuable Assets
+
+Welfare
+
+Attainder
+
+Breach
+
+Checks and Balances
+
+Conservatism
+
+Defenestration
+
+Fee Simple
+
+Freehold
+
+Fundamental Breach
+
+Governance
+
+Greatest Utility
+
+Impeachment
+
+Mandamus
+
+Popular Demand
+
+Poverty
+
+Radicalism
+
+Reapportionment
+
+Royalism
+
+Sequestration
+
+Termination
+
+Wealth
+
+the Common Good
+
+the Dark Horse
+
+the Demagogue
+
+the Imperium
+
+the Lame Duck
+
+the Lesser Evil
+
+the Little People
+
+the People
+
+the Revolution
+
+the Silent Majority
+
+
+Actus Reus
+
+Ad Valorem
+
+Adverse Possession
+
+Corpus Delicti
+
+Eminent Domain
+
+In Flagrante Delicto
+
+Ipse Dixit
+
+Locus Delicti
+
+Malum In Se
+
+Malum Prohibitum
+
+Mens Rea
+
+Nolo Contendere
+
+Non Obstante Veredicto
+
+Obiter Dictum
+
+Res Ipsa Loquitur
+
+Res Judicata
+%%%%
+_place_name_
+
+# old en (ja19):
+#   the World
+#   the Sea
+#   the Forest
+#   the Trees
+#   the Volcano
+#   the Equator
+#   the Poles
+#   the Old World
+#   the New World
+#   Distant Worlds
+#   the Unseen Realm
+#   the Spheres
+#   Proximity
+#   the Wilderness
+#   the Maze
+#   the Pit
+#   the Eternal Void
+#   Beyond
+#   the Blessed Realm
+#   the Desert
+#   Distant Shores
+#   the Hidden Vale
+#   the Hills
+#   the Known World
+#   the Land of Plenty
+#   the Other Side
+#   Parts Unknown
+#   Somewhere Else
+#   the Shore
+#   the Tundras
+#   the Valley
+#   the Valley of Death
+#   the Wasteland
+# old ja (ja19):
+#   世界
+#   
+#   海洋
+#   
+#   森林
+#   
+#   樹木
+#   
+#   火山
+#   
+#   赤道
+#   
+#   極圏
+#   
+#   旧世界
+#   
+#   新世界
+#   
+#   
+#   知られざる領域
+#   
+#   
+#   
+#   荒れ地
+#   
+#   迷路
+#   
+#   穴ぐら
+#   
+#   永劫の虚無
+#   
+#   最果て
+#   
+#   祝福の地
+#   
+#   砂漠
+#   
+#   
+#   
+#   丘
+#   
+#   既知世界
+#   
+#   豊穣なる大地
+#   
+#   
+#   
+#   ここではないどこか
+#   
+#   海岸
+#   
+#   ツンドラ
+#   
+#   谷
+#   
+#   死の谷
+#   
+#   荒野
+# old en (ja16):
+#   the World
+#   the Sea
+#   the Forest
+#   the Trees
+#   the Volcano
+#   the Equator
+#   the Poles
+#   the Old World
+#   the New World
+#   Distant Worlds
+#   the Unseen Realm
+#   the Spheres
+#   Proximity
+#   the Wilderness
+#   the Maze
+#   the Pit
+#   the Eternal Void
+#   Beyond
+#   the Blessed Realm
+#   the Desert
+#   Distant Shores
+#   the Hidden Vale
+#   the Hills
+#   the Known World
+#   the Land of Plenty
+#   the Other Side
+#   Parts Unknown
+#   Somewhere Else
+#   the Shore
+#   the Tundras
+#   the Valley
+#   the Valley of Death
+#   the Wasteland
+# old ja (ja16):
+#   世界
+#   
+#   海洋
+#   
+#   森林
+#   
+#   樹木
+#   
+#   火山
+#   
+#   赤道
+#   
+#   極圏
+#   
+#   旧世界
+#   
+#   新世界
+#   
+#   
+#   知られざる領域
+#   
+#   
+#   
+#   荒れ地
+#   
+#   迷路
+#   
+#   
+#   永劫の虚無
+#   
+#   
+#   
+#   砂漠
+#   
+#   
+#   
+#   丘
+#   
+#   既知世界
+#   
+#   豊穣なる大地
+#   
+#   
+#   
+#   ここではないどこか
+#   
+#   海岸
+#   
+#   ツンドラ
+#   
+#   谷
+#   
+#   死の谷
+#   
+#   荒野
+
+Beyond
+
+Distant Shores
+
+Distant Worlds
+
+Parts Unknown
+
+Proximity
+
+Somewhere Else
+
+the Blessed Realm
+
+the Desert
+
+the Equator
+
+the Eternal Void
+
+the Forest
+
+the Hidden Vale
+
+the Hills
+
+the Known World
+
+the Land of Plenty
+
+the Maze
+
+the New World
+
+the Old World
+
+the Other Side
+
+the Pit
+
+the Poles
+
+the Sea
+
+the Shore
+
+the Spheres
+
+the Trees
+
+the Tundras
+
+the Unseen Realm
+
+the Valley
+
+the Valley of Death
+
+the Volcano
+
+the Wasteland
+
+the Wilderness
+
+the World
+%%%%
+_discomfort_weapon_
+
+# old en (ja19):
+#   Unpleasantness
+#   Discomfort
+#   Disgust
+#   Frustration
+#   Chagrin
+#   Dismay
+#   Desperation
+#   Shame
+#   Embarrassment
+#   Annoyance
+#   Anxiety
+#   Urgency
+#   Awkwardness
+#   Dissatisfaction
+#   Foul Odors
+#   Flawed Execution
+#   Gloom
+#   Inconvenience
+#   Irritation
+#   Malaise
+#   Stickiness
+#   Uncomfortable Rashes
+# old ja (ja19):
+#   不快
+#   
+#   
+#   
+#   欲求不満
+#   
+#   無念
+#   
+#   狼狽
+#   
+#   自暴自棄
+#   
+#   恥
+#   
+#   当惑
+#   
+#   苛立ち
+#   
+#   心配事
+#   
+#   切迫
+#   
+#   不自然さ
+#   
+#   不満
+#   
+#   悪臭
+#   
+#   
+#   陰鬱
+#   
+#   不便
+#   
+#   立腹
+#   
+#   沈滞
+#   
+#   べたつき
+# old en (ja16):
+#   Unpleasantness
+#   Discomfort
+#   Disgust
+#   Frustration
+#   Chagrin
+#   Dismay
+#   Desperation
+#   Shame
+#   Embarrassment
+#   Annoyance
+#   Anxiety
+#   Urgency
+#   Awkwardness
+#   Dissatisfaction
+#   Foul Odors
+#   Flawed Execution
+#   Gloom
+#   Inconvenience
+#   Irritation
+#   Malaise
+#   Stickiness
+#   Uncomfortable Rashes
+# old ja (ja16):
+#   不快
+#   
+#   
+#   
+#   欲求不満
+#   
+#   
+#   
+#   
+#   恥
+#   
+#   
+#   いらだち
+
+Annoyance
+
+Anxiety
+
+Awkwardness
+
+Chagrin
+
+Desperation
+
+Discomfort
+
+Disgust
+
+Dismay
+
+Dissatisfaction
+
+Embarrassment
+
+Flawed Execution
+
+Foul Odours
+
+Frustration
+
+Gloom
+
+Inconvenience
+
+Irritation
+
+Malaise
+
+Shame
+
+Stickiness
+
+Uncomfortable Rashes
+
+Unpleasantness
+
+Urgency
+%%%%
+_philosophy_name_
+
+# old en (ja19):
+#   Monotheism
+#   Henotheism
+#   Polytheism
+#   Atheism
+#   Autotheism
+#   Pantheism
+#   Panentheism
+#   Agnosticism
+#   Existentialism
+#   Relativism
+#   Absolutism
+#   Abstinence
+#   Hedonism
+#   Orthodoxy
+#   Heresy
+#   Free Expression
+#   the Ego
+#   Optimism
+#   Pessimism
+#   Serendipity
+#   Limitation
+#   Levity
+#   Nihilism
+#   Pragmatism
+#   Idealism
+#   Activism
+#   Altruism
+#   Anarchy
+#   Dogma
+#   Egalitarianism
+#   Elitism
+#   Ethics
+#   Fallacy
+#   Fanaticism
+#   Free Will
+#   Liberalism
+#   Morality
+#   Mysticism
+#   Rationality
+#   Mutualism
+#   Syndicalism
+# old ja (ja19):
+#   一神教
+#   
+#   
+#   多神教
+#   
+#   無神論
+#   
+#   
+#   
+#   
+#   不可知論
+#   
+#   実存主義
+#   
+#   相対主義
+#   
+#   絶対論
+#   
+#   禁欲
+#   
+#   快楽主義
+#   
+#   
+#   異端
+#   
+#   表現の自由
+#   
+#   自尊心
+#   
+#   楽観主義
+#   
+#   厭世主義
+#   
+#   
+#   
+#   不謹慎
+#   
+#   虚無主義
+#   
+#   実用主義
+#   
+#   理想主義
+#   
+#   行動主義
+#   
+#   利他主義
+#   
+#   無秩序
+#   
+#   教義
+#   
+#   平等主義
+#   
+#   選良意識
+#   
+#   倫理
+#   
+#   誤謬
+#   
+#   狂信
+#   
+#   自由意志
+#   
+#   自由主義
+#   
+#   道徳
+#   
+#   神秘主義
+#   
+#   合理性
+#   
+#   共生
+# old en (ja16):
+#   Monotheism
+#   Henotheism
+#   Polytheism
+#   Atheism
+#   Autotheism
+#   Pantheism
+#   Panentheism
+#   Agnosticism
+#   Existentialism
+#   Relativism
+#   Absolutism
+#   Abstinence
+#   Hedonism
+#   Orthodoxy
+#   Heresy
+#   Free Expression
+#   the Ego
+#   Optimism
+#   Pessimism
+#   Serendipity
+#   Limitation
+#   Levity
+#   Nihilism
+#   Pragmatism
+#   Idealism
+#   Activism
+#   Altruism
+#   Anarchy
+#   Dogma
+#   Egalitarianism
+#   Elitism
+#   Ethics
+#   Fallacy
+#   Fanaticism
+#   Free Will
+#   Liberalism
+#   Morality
+#   Mysticism
+#   Rationality
+# old ja (ja16):
+#   一神教
+#   
+#   
+#   多神教
+#   
+#   無神論
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   楽観主義
+#   
+#   厭世主義
+#   
+#   
+#   
+#   
+#   虚無主義
+#   
+#   
+#   
+#   
+#   
+#   無秩序
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   自由意志
+#   
+#   リベラリズム
+
+Absolutism
+
+Abstinence
+
+Activism
+
+Agnosticism
+
+Altruism
+
+Anarchy
+
+Asceticism
+
+Atheism
+
+Autotheism
+
+Cynicism
+
+Disestablishmentarianism
+
+Dogma
+
+Egalitarianism
+
+Elitism
+
+Ethics
+
+Existentialism
+
+Fallacy
+
+Fanaticism
+
+Free Expression
+
+Free Will
+
+Hedonism
+
+Henotheism
+
+Heresy
+
+Idealism
+
+Kathenotheism
+
+Levity
+
+Liberalism
+
+Limitation
+
+Maltheism
+
+Monotheism
+
+Morality
+
+Mutualism
+
+Mysticism
+
+Nihilism
+
+Optimism
+
+Orthodoxy
+
+Panentheism
+
+Pantheism
+
+Pessimism
+
+Polytheism
+
+Pragmatism
+
+Rationality
+
+Relativism
+
+Serendipity
+
+Skepticism
+
+Sophism
+
+Stoicism
+
+Syndicalism
+
+Theistic Finitism
+
+the Ego
+%%%%
+_science_name_
+
+# old en (ja19):
+#   Reason
+#   Unreason
+#   Calculation
+#   Instinct
+#   Intuition
+#   Circular Logic
+#   Context
+#   Articulation
+#   the Mind
+#   the Nexus
+#   the Beginning
+#   the End
+#   Analysis
+#   Infinity
+#   Quantum Leap
+#   Gravity
+#   Rotation
+#   the Big Bang
+#   the Boiling Point
+#   Classification
+#   Evolution
+#   Experimentation
+#   Focus
+#   Inference
+#   Inquiry
+#   Objectivity
+#   Subjectivity
+#   Patterns
+#   Theory
+# old ja (ja19):
+#   道理
+#   
+#   暴論
+#   
+#   打算
+#   
+#   直感
+#   
+#   
+#   循環論法
+#   
+#   文脈
+#   
+#   発音
+#   
+#   精神
+#   
+#   
+#   始まり
+#   
+#   終わり
+#   
+#   分析
+#   
+#   無限
+#   
+#   量子飛躍
+#   
+#   重力
+#   
+#   回転
+#   
+#   ビッグバン
+#   
+#   沸点
+#   
+#   分類
+#   
+#   進化
+#   
+#   実験
+#   
+#   焦点
+#   
+#   推論
+#   
+#   探求
+#   
+#   客観性
+#   
+#   主観性
+#   
+#   様式
+#   
+#   理論
+# old en (ja16):
+#   Reason
+#   Unreason
+#   Calculation
+#   Instinct
+#   Intuition
+#   Circular Logic
+#   Context
+#   Articulation
+#   the Mind
+#   the Nexus
+#   the Beginning
+#   the End
+#   Analysis
+#   Infinity
+#   Quantum Leap
+#   Gravity
+#   Rotation
+#   the Big Bang
+#   the Boiling Point
+#   Classification
+#   Evolution
+#   Experimentation
+#   Focus
+#   Inference
+#   Inquiry
+#   Objectivity
+#   Subjectivity
+#   Patterns
+#   Theory
+# old ja (ja16):
+#   理由
+#   
+#   
+#   計算
+#   
+#   
+#   
+#   回路論理
+#   
+#   文脈
+#   
+#   
+#   
+#   
+#   始まり
+#   
+#   終わり
+#   
+#   分析
+#   
+#   無限
+#   
+#   量子跳躍
+#   
+#   重力
+#   
+#   回転
+#   
+#   ビッグバン
+#   
+#   
+#   
+#   進化
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   理論
+
+Analysis
+
+Articulation
+
+Calculation
+
+Circular Logic
+
+Classification
+
+Context
+
+Evolution
+
+Experimentation
+
+Focus
+
+Gravity
+
+Inference
+
+Infinity
+
+Inquiry
+
+Instinct
+
+Intuition
+
+Objectivity
+
+Patterns
+
+Quantum Leap
+
+Reason
+
+Rotation
+
+Subjectivity
+
+Theory
+
+Unreason
+
+the Beginning
+
+the Big Bang
+
+the Boiling Point
+
+the End
+
+the Mind
+
+the Nexus
+%%%%
+_item_name_
+
+# old en (ja19):
+#   items
+#   Orb
+#   Egg
+#   Globe
+#   Candle
+#   Candelabrum
+#   Key
+#   Ring
+#   Chain
+#   Coin
+#   Cup
+#   Feather
+#   Girdle
+#   Horn
+#   Pillar
+#   Purse
+#   Scroll
+#   Ship
+#   Tent
+#   Vase
+#   Vine
+#   Walnut
+#   Wheel
+#   Yoke
+#   body parts
+#   Heart
+#   Brain
+#   Tooth
+#   Foot
+#   Hand
+#   Head
+#   Mouth
+#   Throat
+#   Kidney
+# old ja (ja19):
+#   オーブ
+#   
+#   卵
+#   
+#   天体
+#   
+#   蝋燭
+#   
+#   燭台
+#   
+#   鍵
+#   
+#   輪
+#   
+#   鎖
+#   
+#   コイン
+#   
+#   杯
+#   
+#   羽根
+#   
+#   帯
+#   
+#   角
+#   
+#   柱
+#   
+#   財布
+#   
+#   巻物
+#   
+#   船
+#   
+#   テント
+#   
+#   花瓶
+#   
+#   蔓
+#   
+#   胡桃
+#   
+#   車輪
+#   
+#   軛
+#   
+#   心臓
+#   
+#   脳髄
+#   
+#   歯
+#   
+#   脚
+#   
+#   手
+#   
+#   頭
+#   
+#   口
+#   
+#   喉
+#   
+#   腎臓
+# old en (ja16):
+#   items
+#   Orb
+#   Egg
+#   Globe
+#   Candle
+#   Candelabrum
+#   Key
+#   Ring
+#   Chain
+#   Coin
+#   Cup
+#   Feather
+#   Girdle
+#   Horn
+#   Pillar
+#   Purse
+#   Scroll
+#   Ship
+#   Tent
+#   Vase
+#   Vine
+#   Walnut
+#   Wheel
+#   Yoke
+#   body parts
+#   Heart
+#   Brain
+#   Tooth
+#   Foot
+#   Hand
+#   Head
+#   Mouth
+#   Throat
+#   Kidney
+# old ja (ja16):
+#   オーブ
+#   
+#   卵
+#   
+#   天体
+#   
+#   蝋燭
+#   
+#   燭台
+#   
+#   鍵
+#   
+#   輪
+#   
+#   鎖
+#   
+#   コイン
+#   
+#   杯
+#   
+#   羽根
+#   
+#   
+#   角
+#   
+#   柱
+#   
+#   財布
+#   
+#   巻物
+#   
+#   船
+#   
+#   テント
+#   
+#   
+#   蔓
+#   
+#   胡桃
+#   
+#   車輪
+#   
+#   
+#   心臓
+#   
+#   脳髄
+#   
+#   歯
+#   
+#   脚
+#   
+#   手
+#   
+#   頭
+#   
+#   口
+#   
+#   喉
+#   
+#   腎臓
+
+Candelabrum
+
+Candle
+
+Chain
+
+Coin
+
+Cup
+
+Egg
+
+Feather
+
+Girdle
+
+Globe
+
+Horn
+
+Key
+
+Orb
+
+Pillar
+
+Purse
+
+Ring
+
+Scroll
+
+Ship
+
+Tent
+
+Vase
+
+Vine
+
+Walnut
+
+Wheel
+
+Yoke
+
+Brain
+
+Foot
+
+Hand
+
+Head
+
+Heart
+
+Kidney
+
+Mouth
+
+Throat
+
+Tooth
+%%%%
+_magic_name_
+
+# old en (ja19):
+#   the Magi
+#   the Warrior-Mage
+#   the Hierophant
+#   the Sage
+# old ja (ja19):
+#   魔法使い
+#   
+#   魔法戦士
+#   
+#   教皇
+#   
+#   賢人
+# old en (ja16):
+#   the Magi
+#   the Warrior-Mage
+#   the Hierophant
+#   the Sage
+# old ja (ja16):
+#   魔法使い
+#   
+#   魔法戦士
+#   
+#   教皇
+#   
+#   賢人
+
+the Hierophant
+
+the Magi
+
+the Sage
+
+the Warrior-Mage
+%%%%
+_substance_name_
+
+# old en (ja19):
+#   Bread
+#   Sulphur
+#   Crystal
+#   Bloodstone
+#   Oozing Pus
+#   Ash
+#   Slime
+#   Bile
+#   Bodily Humours
+#   Cobwebs
+#   Cheese
+#   Dried Tears
+#   Dung
+#   Ointment
+#   Paper
+#   Rubbish
+#   Salt
+#   Saltpetre
+#   Sharkskin
+#   Terra Cotta
+#   these don't really fit
+#   Mana
+#   Yeast
+#   Spores
+#   Dust
+# old ja (ja19):
+#   パン
+#   
+#   硫黄
+#   
+#   水晶
+#   
+#   血玉髄
+#   
+#   うごめく膿
+#   
+#   灰
+#   
+#   スライム
+#   
+#   
+#   
+#   蜘蛛の巣
+#   
+#   チーズ
+#   
+#   乾いた涙
+#   
+#   肥やし
+#   
+#   軟膏
+#   
+#   紙
+#   
+#   がらくた
+#   
+#   塩
+#   
+#   
+#   鮫皮
+#   
+#   テラコッタ
+#   
+#   マナ
+#   
+#   酵母
+#   
+#   胞子
+#   
+#   塵
+# old en (ja16):
+#   Bread
+#   Sulphur
+#   Crystal
+#   Bloodstone
+#   Oozing Pus
+#   Ash
+#   Slime
+#   Bile
+#   Bodily Humours
+#   Cobwebs
+#   Cheese
+#   Dried Tears
+#   Dung
+#   Ointment
+#   Paper
+#   Rubbish
+#   Salt
+#   Saltpetre
+#   Sharkskin
+#   Terra Cotta
+#   these don't really fit
+#   Mana
+#   Yeast
+#   Spores
+#   Dust
+# old ja (ja16):
+#   パン
+#   
+#   硫黄
+#   
+#   水晶
+#   
+#   血玉髄
+#   
+#   
+#   灰
+#   
+#   スライム
+#   
+#   
+#   
+#   
+#   チーズ
+#   
+#   乾いた涙
+#   
+#   
+#   
+#   紙
+#   
+#   
+#   塩
+#   
+#   
+#   鮫皮
+#   
+#   
+#   マナ
+#   
+#   
+#   胞子
+#   
+#   塵
+
+Ash
+
+Bile
+
+Bloodstone
+
+Bodily Humours
+
+Bread
+
+Cheese
+
+Cobwebs
+
+Crystal
+
+Dried Tears
+
+Dung
+
+Ichor
+
+Ointment
+
+Oozing Pus
+
+Paper
+
+Rubbish
+
+Salt
+
+Saltpetre
+
+Sharkskin
+
+Slime
+
+Sulphur
+
+Terra Cotta
+
+Dust
+
+Mana
+
+Spores
+
+Yeast
+%%%%
+other_weapon_name
+
+# old en (ja19):
+#   the Omega Point
+#   Crawling
+#   Conversion
+#   Prescription
+#   the Open Hand
+#   Spontaneous Combustion
+#   Res Nullius
+#   Terra Nullius
+#   Desertification
+#   the Spinneret
+#   Grontol
+#   the Two Names
+#   No Interval
+#   Interdependent Arising
+#   the Blind Eye
+#   the Briny Deep
+#   Broken Luck
+#   Entrepreneurial Spirit
+#   the Vendetta
+#   the Empty Page
+#   the Final Chapter
+#   Hard Scrabble
+#   Red Wine
+#   Undoing
+#   the Unkillable
+#   akrasiac patch
+#   Irrepressible Laughter
+# old ja (ja19):
+#   徒手空拳
+#   
+#   
+#   
+#   
+#   砂漠化
+#   
+#   
+#   
+#   
+#   
+#   
+#   盲目
+#   
+#   
+#   
+#   
+#   復讐
+#   
+#   白紙
+#   
+#   最終局面
+#   
+#   
+#   赤ワイン
+# old en (ja16):
+#   the Omega Point
+#   Crawling
+#   Conversion
+#   Prescription
+#   the Open Hand
+#   Spontaneous Combustion
+#   Res Nullius
+#   Terra Nullius
+#   Desertification
+#   the Spinneret
+#   Grontol
+#   the Two Names
+#   No Interval
+#   Interdependent Arising
+#   the Blind Eye
+#   the Briny Deep
+#   Broken Luck
+#   Entrepreneurial Spirit
+#   the Vendetta
+#   the Empty Page
+#   the Final Chapter
+#   Hard Scrabble
+#   Red Wine
+#   Undoing
+#   the Unkillable
+#   akrasiac patch
+#   Irrepressible Laughter
+# old ja (ja16):
+#   空手
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   
+#   盲目
+#   
+#   
+#   
+#   
+#   復讐
+#   
+#   白紙
+#   
+#   最終局面
+#   
+#   
+#   赤ワイン
+
+Broken Luck
+
+Butchery
+
+Checkmate
+
+Conversion
+
+Crawling
+
+Desertification
+
+Doors
+
+Entrepreneurial Spirit
+
+False Hope
+
+Fulguration
+
+Gin and Tonic
+
+Grontol
+
+Hard Scrabble
+
+Interdependent Arising
+
+Irrepressible Laughter
+
+No Interval
+
+Prescription
+
+Red Wine
+
+Res Nullius
+
+Spontaneous Combustion
+
+Terra Nullius
+
+Traps
+
+Undoing
+
+Vodka
+
+the Blind Eye
+
+the Briny Deep
+
+the Empty Page
+
+the Final Chapter
+
+the Omega Point
+
+the Open Hand
+
+the Pharaoh's Fist
+
+the Real Monster
+
+the Spinneret
+
+the Two Names
+
+the Unkillable
+
+the Vendetta
+%%%%
+short_monster_name_
+
+# old en (ja19):
+#   Dragon
+#   Hydra
+#   Ogre
+#   Spider
+#   Newt
+#   Giant
+#   Beetle
+#   Jelly
+#   w:1
+#   Testudine
+#   w:1
+#   Lacertilian
+#   w:1
+#   Acarine
+#   Beast
+#   Demon
+#   Goblin
+#   Imp
+# old ja (ja19):
+#   ドラゴン
+#   
+#   ヒドラ
+#   
+#   オーガ
+#   
+#   蜘蛛
+#   
+#   イモリ
+#   
+#   巨人
+#   
+#   甲虫
+#   
+#   ジェリー
+#   
+#   w:1
+#   亀
+#   
+#   w:1
+#   トカゲ
+#   
+#   w:1
+#   ダニ
+#   
+#   獣
+#   
+#   悪魔
+#   
+#   ゴブリン
+#   
+#   インプ
+# old en (ja16):
+#   Dragon
+#   Hydra
+#   Ogre
+#   Spider
+#   Newt
+#   Giant
+#   Beetle
+#   Jelly
+#   w:1
+#   Testudine
+#   w:1
+#   Lacertilian
+#   w:1
+#   Acarine
+#   Beast
+#   Demon
+#   Goblin
+#   Imp
+# old ja (ja16):
+#   ドラゴン
+#   
+#   ヒドラ
+#   
+#   オーガ
+#   
+#   蜘蛛
+#   
+#   イモリ
+#   
+#   巨人
+#   
+#   昆虫
+#   
+#   ジェリー
+#   
+#   w:1
+#   亀
+#   
+#   w:1
+#   トカゲ
+#   
+#   w:1
+#   ダニ
+#   
+#   獣
+#   
+#   悪魔
+#   
+#   ゴブリン
+#   
+#   インプ
+
+w:1
+Acarine
+
+Beast
+
+Beetle
+
+Demon
+
+Dragon
+
+Giant
+
+Goblin
+
+Hydra
+
+Imp
+
+Jelly
+
+w:1
+Lacertilian
+
+Newt
+
+Ogre
+
+Spider
+
+w:1
+Testudine
+%%%%
+_monster_name_
+
+# old en (ja19):
+#   Killer Bee
+#   Killer Klown
+#   Orb Guardian
+# old ja (ja19):
+#   @short_monster_name_@
+#   
+#   @player_species@
+#   
+#   殺人蜂
+#   
+#   殺人ピエロ
+#   
+#   オーブの守護者
+# old en (ja16):
+#   Killer Bee
+#   Killer Klown
+#   Orb Guardian
+# old ja (ja16):
+#   @short_monster_name_@
+#   
+#   @player_species@
+#   
+#   殺人蜂
+#   
+#   殺人ピエロ
+#   
+#   オーブの守護者
+
+@short_monster_name_@
+
+@player_species@
+
+Killer Bee
+
+Killer Klown
+
+Orb Guardian
+%%%%
+killer_name
+
+# old en (ja19):
+#   's Bane
+#   's Death
+#   's Doom
+#   's Foe
+#   's Regret
+#   's Curse
+#   's Peril
+# old ja (ja19):
+#   の天敵
+# old en (ja16):
+#   's Bane
+#   's Death
+#   's Doom
+#   's Foe
+#   's Regret
+#   's Curse
+#   's Peril
+# old ja (ja16):
+#   の天敵
+
+'s Bane
+
+'s Curse
+
+'s Death
+
+'s Doom
+
+'s Foe
+
+'s Peril
+
+'s Regret
+%%%%
+_long_killer_name_
+
+# old en (ja19):
+#   's Death Toll
+#   's Funeral
+#   's Nightmare
+#   's Undoing
+#   's Demise
+#   w:1
+#   's Looming Annihilation
+# old ja (ja19):
+#   にとっての悪夢
+# old en (ja16):
+#   's Death Toll
+#   's Funeral
+#   's Nightmare
+#   's Undoing
+#   's Demise
+#   w:1
+#   's Looming Annihilation
+# old ja (ja16):
+#   にとっての悪夢
+
+'s Death Toll
+
+'s Demise
+
+'s Funeral
+
+'s Nightmare
+
+'s Undoing
+
+w:1
+'s Looming Annihilation
+%%%%
+_real_weapon_name_
+
+# old en (ja19):
+#   Grim Tooth
+#   w:5
+#   Widowmaker
+#   w:5
+#   Widowermaker
+#   Lifebane
+#   Conservator
+#   Banisher
+#   Tormentor
+#   Pendulum
+#   Murmur
+#   Sarcophage
+#   Concordance
+#   Dragon's Tongue
+#   Arbiter
+#   Death Rattle
+#   Arcanum
+#   Transmigrator
+#   Ultimatum
+#   Earthworm
+#   Worm
+#   Worm's Wrath
+#   Leviticus
+#   Grim
+#   Lemuel's suggestions
+#   Eviscerator
+#   Undertaker
+#   Embalmer
+#   Trog's @_anger_name_@
+#   Hellblazer
+#   Hell-Harrower
+#   Sigmund's sword
+#   Gram
+# old ja (ja19):
+#   グリムトゥース
+#   
+#   w:5
+#   ウィドウメイカー
+#   
+#   w:5
+#   ウィドワメイカー
+#   
+#   命の破滅
+#   
+#   介添人
+#   
+#   追放者
+#   
+#   拷問吏
+#   
+#   優柔不断
+#   
+#   不平不満
+#   
+#   石棺
+#   
+#   調和
+#   
+#   龍の舌
+#   
+#   調停者
+#   
+#   臨終喘鳴
+#   
+#   アルカナ
+#   
+#   魂の輪廻
+#   
+#   最後通牒
+#   
+#   蚯蚓
+#   
+#   虫けら
+#   
+#   虫けらの逆襲
+#   
+#   レビ記
+#   
+#   グリム
+#   
+#   殺し屋
+#   
+#   葬儀屋
+#   
+#   
+#   トログの@_anger_name_@
+#   
+#   
+#   
+#   グラム
+# old en (ja16):
+#   Grim Tooth
+#   w:5
+#   Widowmaker
+#   w:5
+#   Widowermaker
+#   Lifebane
+#   Conservator
+#   Banisher
+#   Tormentor
+#   Pendulum
+#   Murmur
+#   Sarcophage
+#   Concordance
+#   Dragon's Tongue
+#   Arbiter
+#   Death Rattle
+#   Arcanum
+#   Transmigrator
+#   Ultimatum
+#   Earthworm
+#   Worm
+#   Worm's Wrath
+#   Leviticus
+#   Grim
+#   Lemuel's suggestions
+#   Eviscerator
+#   Undertaker
+#   Embalmer
+#   Hellblazer
+#   Hell-Harrower
+#   Sigmund's sword
+#   Gram
+# old ja (ja16):
+#   グリムトゥース
+#   
+#   w:5
+#   ウィドウメイカー
+#   
+#   ウィドワメイカー
+#   
+#   命の破滅
+#   
+#   介添人
+#   
+#   追放者
+#   
+#   拷問吏
+#   
+#   優柔不断
+#   
+#   不平不満
+#   
+#   石棺
+#   
+#   調和
+#   
+#   龍の舌
+#   
+#   調停者
+#   
+#   臨終喘鳴
+#   
+#   アルカナ
+#   
+#   魂の輪廻
+#   
+#   最後通牒
+#   
+#   蚯蚓
+#   
+#   虫けら
+#   
+#   虫けらの逆襲
+#   
+#   レビ記
+#   
+#   グリム
+#   
+#   
+#   葬儀屋
+#   
+#   
+#   トログの@_anger_name_@
+#   
+#   
+#   
+#   グラム
+
+Arbiter
+
+Arcanum
+
+Concordance
+
+Conservator
+
+Death Rattle
+
+Dragon's Tongue
+
+Earthworm
+
+Embalmer
+
+Eviscerator
+
+Grim
+
+Grim Tooth
+
+Hell-Harrower
+
+Hellblazer
+
+Leviticus
+
+Lifebane
+
+Murmur
+
+Pendulum
+
+Sarcophage
+
+Tormentor
+
+Transmigrator
+
+Trog's @_anger_quality_@
+
+Ultimatum
+
+Undertaker
+
+w:5
+Widowermaker
+
+w:5
+Widowmaker
+
+Worm
+
+Worm's Wrath
+
+Gram
+%%%%
+_joke_weapon_name_
+
+# old en (ja19):
+#   Secret Weapon
+#   With Two Names
+#   Thing
+#   Mud Pie of Death
+#   Xom's @_xom_esteem_@
+#   String
+#   Stringbean
+#   Blob
+#   Globulus
+#   Hulk
+#   Raisin
+#   Starlight
+#   Giant's Toothpick
+#   Backscratcher
+#   Brush
+#   Grom
+#   Grum
+#   Rummage
+#   Omelette
+#   Egg
+#   Aubergine
+#   Tattletale
+#   Fish
+#   Bung
+#   Bingo
+#   from the crawl.akrasiac.org patch
+#   Cookie Cutter
+#   ETAOIN SHRDLU
+#   Lorem Ipsum
+#   These three are from old Crawl code.
+#   Plojy
+#   Glorpo
+#   Loopy
+# old ja (ja19):
+#   秘密兵器
+#   
+#   
+#   物体X
+#   
+#   死の泥饅頭
+#   
+#   ゾムの@_xom_esteem_@
+#   
+#   絞首刑
+#   
+#   八頭体
+#   
+#   ブロブ
+#   
+#   グロブルス
+#   
+#   ハルク
+#   
+#   皺くちゃ婆ア
+#   
+#   星月夜
+#   
+#   巨人の爪楊枝
+#   
+#   おべっか使い
+#   
+#   鎧袖一触
+#   
+#   グロム
+#   
+#   グルム
+#   
+#   虱潰し
+#   
+#   オムレット
+#   
+#   未熟者
+#   
+#   なすび
+#   
+#   Z
+#   
+#   X
+#   
+#   Q
+#   
+#   Ox
+#   
+#   告げ口屋
+#   
+#   淫売野郎
+#   
+#   袖の下
+#   
+#   大正解
+#   
+#   
+#   
+#   *ここに本文を入れてください*
+# old en (ja16):
+#   Secret Weapon
+#   With Two Names
+#   Thing
+#   Mud Pie of Death
+#   String
+#   Stringbean
+#   Blob
+#   Globulus
+#   Hulk
+#   Raisin
+#   Starlight
+#   Giant's Toothpick
+#   Backscratcher
+#   Brush
+#   Grom
+#   Grum
+#   Rummage
+#   Omelette
+#   Egg
+#   Aubergine
+#   Tattletale
+#   Fish
+#   Bung
+#   Bingo
+#   from the crawl.akrasiac.org patch
+#   Cookie Cutter
+#   ETAOIN SHRDLU
+#   Lorem Ipsum
+#   These three are from old Crawl code.
+#   Plojy
+#   Glorpo
+#   Loopy
+# old ja (ja16):
+#   秘密兵器
+#   
+#   
+#   物体X
+#   
+#   死の泥饅頭
+#   
+#   ゾムの@_xom_esteem_@
+#   
+#   絞首刑
+#   
+#   八頭体
+#   
+#   ブロブ
+#   
+#   グロブルス
+#   
+#   ハルク
+#   
+#   皺くちゃ婆ア
+#   
+#   星月夜
+#   
+#   巨人の爪楊枝
+#   
+#   おべっか使い
+#   
+#   鎧袖一触
+#   
+#   グロム
+#   
+#   グルム
+#   
+#   虱潰し
+#   
+#   オムレット
+#   
+#   未熟者
+#   
+#   なすび
+#   
+#   Z
+#   
+#   X
+#   
+#   Q
+#   
+#   Ox
+#   
+#   告げ口屋
+#   
+#   淫売野郎
+#   
+#   袖の下
+#   
+#   大正解
+#   
+#   
+#   
+#   *ここに本文を入れてください*
+
+Aubergine
+
+Backscratcher
+
+Bingo
+
+Blob
+
+Brush
+
+Bung
+
+Cookie Cutter
+
+ETAOIN SHRDLU
+
+Egg
+
+Fish
+
+Giant's Toothpick
+
+Globulus
+
+Grom
+
+Grum
+
+Hulk
+
+Lorem Ipsum
+
+Mud Pie of Death
+
+No More Talking
+
+Omelette
+
+Ox
+
+Q
+
+Raisin
+
+Rummage
+
+Secret Weapon
+
+Starlight
+
+String
+
+Stringbean
+
+Tattletale
+
+Thing
+
+With Two Names
+
+X
+
+Xom's @_xom_esteem_@
+
+Z
+
+Glorpo
+
+Loopy
+
+Plojy
+%%%%

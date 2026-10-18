@@ -1,0 +1,166 @@
+%%%%
+animal skin
+
+獣の皮
+%%%%
+robe
+
+ローブ
+%%%%
+leather armour
+
+レザーアーマー
+%%%%
+ring mail
+
+リングメイル
+%%%%
+scale mail
+
+スケイルメイル
+%%%%
+chain mail
+
+鎖かたびら
+%%%%
+plate armour
+
+プレートアーマー
+%%%%
+crystal plate armour
+
+水晶の鎧
+%%%%
+removed troll hide
+
+# 訳不要
+%%%%
+troll leather armour
+
+トロル革の鎧
+%%%%
+steam dragon scales
+
+スチームドラゴンの鱗一式
+%%%%
+removed steam dragon hide
+
+# 訳不要
+%%%%
+mottled dragon scales
+
+斑紋ドラゴンの鱗一式
+%%%%
+removed mottled dragon hide
+
+# 訳不要
+%%%%
+quicksilver dragon scales
+
+水銀ドラゴンの鱗一式
+%%%%
+removed quicksilver dragon hide
+
+# 訳不要
+%%%%
+swamp dragon scales
+
+沼ドラゴンの鱗一式
+%%%%
+removed swamp dragon hide
+
+# 訳不要
+%%%%
+fire dragon scales
+
+ファイアドラゴンの鱗一式
+%%%%
+removed fire dragon hide
+
+# 訳不要
+%%%%
+ice dragon scales
+
+アイスドラゴンの鱗一式
+%%%%
+removed ice dragon hide
+
+# 訳不要
+%%%%
+pearl dragon scales
+
+パールドラゴンの鱗一式
+%%%%
+removed pearl dragon hide
+
+# 訳不要
+%%%%
+storm dragon scales
+
+ストームドラゴンの鱗一式
+%%%%
+removed storm dragon hide
+
+# 訳不要
+%%%%
+shadow dragon scales
+
+シャドウドラゴンの鱗一式
+%%%%
+removed shadow dragon hide
+
+# 訳不要
+シャドウドラゴンの皮
+%%%%
+gold dragon scales
+
+ゴールドドラゴンの鱗一式
+%%%%
+removed gold dragon hide
+
+# 訳不要
+%%%%
+cloak
+
+クローク
+%%%%
+gloves
+
+手袋
+%%%%
+helmet
+
+兜
+%%%%
+# TAG_MAJOR_VERSION == 34
+# cap
+
+%%%%
+hat
+
+帽子
+%%%%
+boots
+
+ブーツ
+%%%%
+centaur barding
+
+セントールの馬甲
+%%%%
+naga barding
+
+ナーガの具装
+%%%%
+buckler
+
+バックラー
+%%%%
+shield
+
+盾
+%%%%
+large shield
+
+大盾
+%%%%

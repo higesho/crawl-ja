@@ -1,0 +1,14 @@
+%%%%
+tutorial death message
+
+# "In Crawl, death is a sad but common occurrence. "
+# "Note that there's usually something you could have done to "
+# "survive, for example by using some kind of item, running away, "
+# "resting between fights, or by avoiding combat entirely. "
+# "Keep trying, eventually you'll prevail!"
+このゲームにおいては、死は悲しいながらもよくある出来事です。
+多くの場合、あなたが生き残るために何かしらできることがあることを
+覚えておいてください。例えば特定のアイテムを用いる、逃げる、
+戦闘の合間に休息を取る、または戦闘そのものを避ける、などです。
+挑戦を続ければ、あなたは打ち勝てるでしょう！
+%%%%

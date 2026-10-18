@@ -1,0 +1,105 @@
+%%%%
+unknown rod type %d
+
+# for die()
+%%%%
+Spellbook '%s' has spells out of level order ('%s' is before '%s')
+
+# 訳不要
+%%%%
+Spellbook '%s' contains invalid spell '%s'
+
+# 訳不要
+%%%%
+Spellbook "%s" contains no spells! Please file a bug report.
+
+# 訳不要
+%%%%
+You already know all available spells.
+
+あなたは習得可能な呪文をすべて習得している。
+%%%%
+You cannot currently memorise any of the available spells because you cannot use those schools of magic.
+
+あなたはその種別の魔法を使えないため、現状これらの呪文を記憶することができない。
+%%%%
+You cannot memorise any of the available spells.
+
+あなたはこれらのどの呪文も記憶することができない。
+%%%%
+You can't memorise any new spells for an unknown reason; please file a bug report.
+
+# 訳不要
+%%%%
+None of the spellbooks you are carrying contain any spells.
+
+あなたが持っている魔法書には呪文が載っていない。
+%%%%
+You aren't carrying or standing over any spellbooks.
+
+あなたは魔法書を持っていないし、足下にも置いていない。
+%%%%
+Your Spells - Memorisation  (toggle to descriptions with '!')
+
+魔法一覧(魔法を習得する) ('!'で解説文表示モードに切り替える)
+%%%%
+Your Spells - Descriptions  (toggle to memorisation with '!')
+
+魔法一覧(解説を表示する) ('!'で魔法の習得モードに切り替える)
+%%%%
+Spells                        Type                          Failure  Level
+
+呪文                          系統                         失敗率    レベル
+%%%%
+Spells (Memorisation)         Type                          Failure  Level
+
+魔法一覧(魔法を習得する)      系統                         失敗率    レベル
+%%%%
+Spells (Description)          Type                          Failure  Level
+
+魔法一覧(解説文を見る)        系統                         失敗率    レベル
+%%%%
+<lightgreen>%d spell level%s left<lightgreen>
+
+<lightgreen>残り記憶力 %d</lightgreen>
+%%%%
+, <lightred>%u spell%s unmemorisable</lightred>
+
+, <lightred>%uつの習得不能な呪文</lightred>
+%%%%
+Toggle display with '<w>!</w>'
+
+'<w>!</w>' キーで表示切り替え
+%%%%
+Your brain is not functional enough to learn spells.
+
+あなたの脳みそでは魔法を覚えることができない。
+%%%%
+You already know that spell!
+
+あなたは既にその呪文を習得している！
+%%%%
+Your head is already too full of spells!
+
+あなたはこれ以上魔法を覚えられない！
+%%%%
+You're too inexperienced to learn that spell!
+
+あなたはこの呪文を覚えるにはまだ経験が足らない！
+%%%%
+You can't memorise that many levels of magic yet!
+
+あなたはこのレベルの魔法はまだ覚えられない！
+%%%%
+This spell is impossible to cast!
+
+この呪文を唱えることはできない！
+%%%%
+This spell is %s to cast%s
+
+この呪文を唱えるのは%sだ%s
+%%%%
+Memorise %s, consuming %d spell level%s and leaving %d?
+
+記憶力を%d消費して%sの呪文を記憶しますか？ (残り記憶力: %d)
+%%%%

@@ -1,0 +1,25 @@
+%%%%
+book_name
+
+# en:
+#   w:9
+#   @book_noun@ of
+#   
+#   w:4
+#   @_book_noun_on_@ on
+w:9
+の@book_noun@
+
+w:4
+の@_book_noun_on_@
+%%%%
+_last_or_lost_
+
+# en:
+#   Last
+#   
+#   Lost
+最後の
+
+失われし
+%%%%

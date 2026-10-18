@@ -1,0 +1,345 @@
+%%%%
+Trap position out of bounds!
+
+# for die()
+%%%%
+invalid actor type
+
+# for die()
+%%%%
+held in a net
+
+網で拘束されている
+%%%%
+caught in a web
+
+蜘蛛の巣に巻きつかれている
+%%%%
+The net bounces off something gigantic!
+
+網はなにか巨大なものに当たって跳ね返された！
+%%%%
+is too large for the net to hold!
+
+は巨大すぎてこの網では捕まえられない！
+%%%%
+The net is caught on %s!
+
+網は%sに絡みついた！
+%%%%
+The net is caught on something unseen!
+
+網はなにか目に見えないものに絡みついた！
+%%%%
+The net passes right through %s!
+
+網は%sをすり抜けた！
+%%%%
+Something gets caught in the net!
+
+何者かが網の中に捕まっている！
+%%%%
+is caught in the net!
+
+は網の中に捕まっている！
+%%%%
+# You become entangled in the net!
+
+# jtrans_misc.txtと重複
+%%%%
+# The net rips apart, and %s comes free!
+
+# jtrans_mon_act.txtと重複
+%%%%
+# All of a sudden the net rips apart!
+
+# jtrans_mon_act.txtと重複
+%%%%
+drifts right through the net!
+
+は網をすり抜けた！
+%%%%
+west
+
+西
+%%%%
+east
+
+東
+%%%%
+south
+
+南
+%%%%
+north
+
+北
+%%%%
+You enter the passage of Golubria.
+
+あなたはゴルブリアの通り道へと踏み込んだ。
+%%%%
+enters the passage of Golubria.
+
+はゴルブリアの通り道へと入っていった。
+%%%%
+But it is blocked!
+
+しかし出口は塞がれていた！
+%%%%
+You enter %s!
+
+あなたは%sに踏み込んだ！
+%%%%
+%s disappears.
+
+%sは消えた。
+%%%%
+%s vibrates slightly, failing to make a sound.
+
+%sはしばらく振動したが、音を立てることはなかった。
+%%%%
+%s emits a blaring wail!
+
+%sは警報音を鳴り響かせた！
+%%%%
+You hear a (distant) blaring wail {dir}
+
+あなたは%s%s鳴り響く警報音を耳にした。
+%%%%
+to the %s.
+
+%sの方向から
+%%%%
+distant
+
+遠く
+%%%%
+You avoid triggering a blade trap.
+
+あなたは刃の罠をやり過ごした。
+%%%%
+A huge blade swings just past you!
+
+巨大な刃があなたの通り過ぎた後を薙ぎ払った！
+%%%%
+A huge blade swings out and slices into you!
+
+巨大な刃が大きく振れて、あなたに突き刺さった！
+%%%%
+fails to trigger a blade trap.
+
+は刃の罠を動作させなかった。
+%%%%
+avoids a huge, swinging blade.
+
+は巨大な刃が大きく振れるのを避けた。
+%%%%
+A huge blade swings out!
+
+巨大な刃が大きく振れた！
+%%%%
+A huge blade swings out and slices into %s!
+
+巨大な刃が大きく振れて、%sに突き刺さった！
+%%%%
+A net swings high above you.
+
+網はあなたの頭上を飛び越えた。
+%%%%
+A net drops to the ground!
+
+網はそこらの地面に落ちた！
+%%%%
+A large net falls onto you!
+
+大網があなたの頭上から被さった！
+%%%%
+fails to trigger a net trap.
+
+は網の罠を動作させなかった。
+%%%%
+nimbly jumps out of the way of a falling net.
+
+は身軽にジャンプして落ちてくる網を避けた。
+%%%%
+A large net falls down!
+
+大網が上から降ってきた！
+%%%%
+A large net falls down onto %s!
+
+大網が%sの上から降ってきた！
+%%%%
+You tear through %s web.
+
+あなたは蜘蛛の巣を切り裂いた。
+%%%%
+tears through a web.
+
+は蜘蛛の巣を切り裂いた。
+%%%%
+passes through a web.
+
+は蜘蛛の巣をすり抜けた。
+%%%%
+oozes through a web.
+
+は蜘蛛の巣をすり抜けた。
+%%%%
+You pick your way through the web.
+
+あなたは蜘蛛の巣を避けながら歩を進めた。
+%%%%
+You are caught in the web!
+
+あなたは蜘蛛の巣に捕まった！
+%%%%
+evades a web.
+
+は蜘蛛の巣を避けた。
+%%%%
+is caught in a web!
+
+は蜘蛛の巣に巻きつかれている！
+%%%%
+A web moves frantically as something is caught in it!
+
+中に何かがいるかのように蜘蛛の巣が激しく動いている！
+%%%%
+You enter the Zot trap.
+
+あなたはゾットの罠に踏み込んだ。
+%%%%
+Oh no! You have blundered into a Zot trap!
+
+なんてこった！ あなたはゾットの罠に踏み込んでしまった！
+%%%%
+You hear a loud "Zot"!
+
+あなたは『ゾット』の怒声を耳にした！
+%%%%
+You hear a distant "Zot"!
+
+あなたは遠くに『ゾット』の声を聞いた！
+%%%%
+The power of Zot is invoked against %s!
+
+ゾットの力が%sに向けて発動した！
+%%%%
+the power of Zot
+
+ゾットの罠の効果
+%%%%
+# The shaft disappears in a puff of logic!
+
+# jtrans_stairs.txtと重複
+%%%%
+%s shaft crumbles and collapses.
+
+縦穴は崩れて埋まった。
+%%%%
+#if TAG_MAJOR_VERSION == 34
+The gas trap seems to be inoperative.
+
+%%%%
+You found %s!
+
+あなたは%sを発見した！
+%%%%
+You struggle to detach yourself from the web.
+
+あなたはなんとか自分自身を蜘蛛の巣から引きはがそうとしている。
+%%%%
+You disentangle yourself.
+
+あなたは自由の身になった。
+%%%%
+net.net_durability: %d
+
+# for debug
+%%%%
+You shred the net and break free!
+
+あなたは網を引き裂いて自由を取り戻した！
+%%%%
+You rip the net and break free!
+
+あなたは網をちぎって自由を取り戻した！
+%%%%
+You tear a large gash into the net.
+
+あなたは網をバラバラに切り裂いた。
+%%%%
+You struggle against the net.
+
+あなたは網を振りほどこうともがいている。
+%%%%
+The trap is out of ammunition!
+
+この罠はもう弾切れだ！
+%%%%
+You hear a soft click.
+
+あなたはカチッという音を耳にした。
+%%%%
+You avoid triggering %s.
+
+あなたは%sをやり過ごした。
+%%%%
+%s avoids triggering %s.
+
+%sは%sをやり過ごした。
+%%%%
+%s: hit %d EV %d, shield hit %d block %d
+
+# for debug
+%%%%
+%s shoots out and misses you.
+
+%sが射出されたが、あなたには当たらなかった。
+%%%%
+%s misses %s!
+
+%sは%sから外れた！
+%%%%
+{name}'s
+
+%sの
+%%%%
+someone's
+
+何者かの
+%%%%
+%s shoots out and hits %s shield.
+
+%sが射出され、%s盾に当たった。
+%%%%
+%s shoots out and hits you!
+
+%sが射出され、あなたに当たった！
+%%%%
+%s hits %s%s!
+
+%sは%sに当たった%s！
+%%%%
+, but does no damage
+
+が、ダメージを与えられなかった
+%%%%
+placeholder trap type %d used
+
+# for die()
+%%%%
+You are even more entangled.
+
+あなたはまだ蜘蛛の巣が絡みついたままだ。
+%%%%
+A web harmlessly splats on %s.
+
+蜘蛛の巣は%sの動きを阻害することなく貼りついた。
+%%%%
+# You are caught in a web!
+
+# jtrans_dat_clua.txtと重複
+%%%%

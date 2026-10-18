@@ -1,0 +1,157 @@
+%%%%
+Firing
+
+射撃する
+%%%%
+Tossing away
+
+投げ捨てる
+%%%%
+Throwing
+
+投擲する
+%%%%
+Bugging
+
+# 訳不要
+%%%%
+(i - inventory)
+
+(i - 一覧から選択)
+%%%%
+(i - inventory. (,) - cycle)
+
+(i - 一覧から選択 (,) - 切り替え)
+%%%%
+chaotic
+
+混沌
+%%%%
+immune to nets
+
+網で拘束できない
+%%%%
+# There is %s there.
+
+# jtrans_godabil.txtと重複
+%%%%
+Fire/throw which item? (* to show all)
+
+どれを射撃/投擲しますか？ (* で全アイテムから選択)
+%%%%
+That weapon is stuck to your %s!
+
+その武器はあなたの%sに貼り付いている！
+%%%%
+# You are wearing that object!
+
+# jtrans_item_use.txtと重複
+%%%%
+# You can't grasp things well enough to throw them.
+
+# jtrans_main.txtと重複
+%%%%
+You cannot throw anything while held in a net.
+
+あなたは網で拘束されている間何も投擲できない。
+%%%%
+You cannot throw anything while caught in a web.
+
+あなたは蜘蛛の巣に巻きつかれている間何も投擲できない。
+%%%%
+You cannot shoot with your %s while %s.
+
+あなたは%s間%sを射撃できない。
+%%%%
+fragments
+
+の破片
+%%%%
+explosion of %s
+
+%sの爆発
+%%%%
+You hear a whirring sound.
+
+あなたはかすかに風切り音を聞いた。
+%%%%
+You hear a loud whirring sound.
+
+あなたは大きな風切り音を聞いた。
+%%%%
+You hear a twanging sound.
+
+あなたは弓鳴りの音を聞いた。
+%%%%
+You hear a loud twanging sound.
+
+あなたは大きな弓鳴りの音を聞いた。
+%%%%
+You hear a quiet thunk.
+
+あなたはかすかにクロスボウの発射音を聞いた。
+%%%%
+You hear a thunk.
+
+あなたはクロスボウの発射音を聞いた。
+%%%%
+You hear a triplet of thunks.
+
+あなたは三条のクロスボウの発射音を聞いた。
+%%%%
+Invalid launcher '%s'
+
+# for die()
+%%%%
+Unknown launch type for weapon.
+
+# for debug
+%%%%
+You %s%s %s.
+
+あなたは%s%sを%s。
+%%%%
+magically
+
+魔法の力で
+%%%%
+[verb]toss away
+
+放り投げた
+%%%%
+[verb]shoot
+
+射撃した
+%%%%
+[verb]throw
+
+投擲した
+%%%%
+returns to your pack!
+
+はあなたの手元に戻ってきた！
+%%%%
+fails to return to your pack!
+
+はあなたの手元に戻ってきたが、うまく受け取れなかった！
+%%%%
+# [verb]shoots
+
+# jtrans_describe.txtと重複
+%%%%
+[verb]throws
+
+<[verb]throw>
+%%%%
+The weapon returns %s!
+
+それは%s戻っていった！
+%%%%
+from whence it came
+
+飛んできた方向へ
+%%%%
+mulch chance: %d in %d
+
+# for debug
+%%%%

@@ -1,0 +1,40 @@
+%%%%
+Brigand
+
+Brigands carry poisoned darts and a small number of nasty curare darts.
+%%%%
+Cinder Acolyte
+
+Cinder Acolytes worship Ignis, drawing upon the flame of a dying god until
+there is nothing left. They have both melee and fire magic capabilities.
+%%%%
+Delver
+
+Delvers start their quest five levels below the surface. A set of powerful magic
+items helps them survive the dangerous journey upward.
+%%%%
+Hexslinger
+
+Hexslingers carry a sling, and use hex magic to make their foes more vulnerable
+to attacks from afar.
+%%%%
+Reaver
+
+Reavers start with a weapon of their choice and deadly magic to supplement it
+when in need. They start with the Kiss of Death spell.
+%%%%
+Forgewright
+
+Forgewrights are mages who specialise in the creation of turrets and mechanical
+companions to fight alongside.
+%%%%
+Shapeshifter
+
+Shapeshifters use talismans to shift their form, making them powerful melee
+fighters (especially when unarmed) at the cost of armour.
+%%%%
+Alchemist
+
+Alchemists start with the Poisonous Vapours spell, and their magic is very
+effective against foes susceptible to poison.
+%%%%

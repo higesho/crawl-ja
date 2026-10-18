@@ -1,0 +1,25 @@
+%%%%
+You spin around.
+
+あなたはその場でクルクルと回転した。
+%%%%
+You swap places with %s.
+
+あなたは%sと場所を交代した。
+%%%%
+The web rips apart!
+
+蜘蛛の巣が破けた！
+%%%%
+The net rips apart!
+
+網が破けた！
+%%%%
+You become entangled in the net!
+
+あなたは網に絡めとられた！
+%%%%
+You get stuck in the web!
+
+あなたは蜘蛛の巣に絡めとられた！
+%%%%
