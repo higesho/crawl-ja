@@ -288,8 +288,10 @@ static void wrapcprint_skipping(int skiplines, int wrapcol, const string &buf)
                 if (skiplines == 0)
                     cprintf("%s", line.c_str());
 
-                linebreak = skiplines == 0
-                            && line.length() >= static_cast<unsigned int>(avail);
+                // 日本語: バイト数ではなく表示幅で比べる(全角は 3 バイトで幅 2。
+                // バイト数だと短い行でも次の行へ送ってしまい、行末の消去が次の行に
+                // かかって元の行の末尾が残る)
+                linebreak = skiplines == 0 && strwidth(line) >= avail;
             }
         }
         else

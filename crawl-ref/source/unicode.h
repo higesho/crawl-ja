@@ -77,6 +77,10 @@ char *next_glyph(char *s);
 bool wide_char_break_ok(char32_t prev, char32_t next);
 bool has_wide_char(const string &s);
 
+// 日本語: ローカル Tiles の文字マス(TextRegion)では全角文字が 2 マスを使い、
+// 2 マス目にこの詰め物を置く(描画しない)。マスと表示上の列をそろえるため
+const char32_t WIDE_CHAR_FILLER = 0xFFFF;
+
 #define OUTS(x) utf8_to_mb(x).c_str()
 #define OUTW(x) utf8_to_16(x).c_str()
 

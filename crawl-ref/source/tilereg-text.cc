@@ -83,7 +83,7 @@ void TextRegion::addstr(const char *buffer)
             newline = true;
         }
         // TODO: use wcwidth() to handle widths!=1:
-        // *  2 for CJK chars -- add a zero-width blank?
+        // *  2 for CJK chars -- handled in addstr_aux() (WIDE_CHAR_FILLER)
         // *  0 for combining characters -- would need extra support
         // * -1 for non-printable stuff -- assert or ignore
         buf2[j] = c;
@@ -116,12 +116,38 @@ void TextRegion::addstr_aux(const char32_t *buffer, int len)
 
     ASSERT(y < my);
 
-    for (int i = 0; i < len && x + i < mx; i++)
+    // 日本語: 全角文字は 2 マスを使い、2 マス目に詰め物を置く。こうすると
+    // マスが表示上の列と一致し、列で位置を決める cgotoxy() とずれない。
+    // 全角文字を半分だけ上書きするときは、残る半分を空白にする
+    if (x > 0 && x < mx && cbuf[adrs+x] == WIDE_CHAR_FILLER)
+        cbuf[adrs+x-1] = ' ';
+
+    int cells = 0;
+    for (int i = 0; i < len; i++)
     {
-        cbuf[adrs+x+i] = buffer[i];
-        abuf[adrs+x+i] = text_col;
+        const bool wide = wcwidth(buffer[i]) == 2;
+        const int cx = x + cells;
+        cells += wide ? 2 : 1;
+        if (cx >= mx)
+            continue;
+        if (wide && cx + 1 >= mx)
+        {
+            // no room for the second half
+            cbuf[adrs+cx] = ' ';
+            abuf[adrs+cx] = text_col;
+            continue;
+        }
+        cbuf[adrs+cx] = buffer[i];
+        abuf[adrs+cx] = text_col;
+        if (wide)
+        {
+            cbuf[adrs+cx+1] = WIDE_CHAR_FILLER;
+            abuf[adrs+cx+1] = text_col;
+        }
     }
-    print_x += len;
+    if (x + cells < mx && cbuf[adrs+x+cells] == WIDE_CHAR_FILLER)
+        cbuf[adrs+x+cells] = ' ';
+    print_x += cells;
 }
 
 void TextRegion::clear_to_end_of_line()
@@ -132,6 +158,9 @@ void TextRegion::clear_to_end_of_line()
     int adrs = cy * mx;
 
     ASSERT(adrs + mx - 1 < mx * my);
+    // 日本語: 全角文字の 2 マス目から消すときは 1 マス目も消す
+    if (cx > 0 && cx < mx && cbuf[adrs+cx] == WIDE_CHAR_FILLER)
+        cbuf[adrs+cx-1] = ' ';
     for (int i = cx; i < mx; i++)
     {
         cbuf[adrs+i] = ' ';

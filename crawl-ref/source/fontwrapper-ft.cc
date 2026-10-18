@@ -23,9 +23,11 @@
 #include "unwind.h"
 
 // maximum number of unique glyphs that can be rendered with this font at once; e.g. 4096, 256, 36
-#define MAX_GLYPHS 256
+// 日本語: 256 字だと日本語の画面(ヘルプなど)で字の種類が足りず、描画の途中で
+// 字形が使い回されて別の字に化けるので、32 x 32 = 1024 字にする
+#define MAX_GLYPHS 1024
 // dimensions of glyph grid; GLYPHS_PER_ROWCOL^2 <= MAX_GLYPHS; e.g. 64, 16, 6
-#define GLYPHS_PER_ROWCOL 16
+#define GLYPHS_PER_ROWCOL 32
 // char to use if we can't find it in the font (upside-down question mark)
 #define MISSING_CHAR 0xbf
 
@@ -148,6 +150,9 @@ bool FTFontWrapper::configure_font()
 
     for (int i = 0; i < MAX_GLYPHS; i++)
         m_atlas[i] = FontAtlasEntry();
+    m_atlas_index.clear();
+    m_atlas_tick.assign(MAX_GLYPHS, 0);
+    m_atlas_count = 0;
 
     // atlas[0] always contains a full-white block (never evicted)
     // this is currently used by colour_bar
@@ -213,8 +218,10 @@ bool FTFontWrapper::load_font(const char *font_name, unsigned int font_size)
     }
 
     m_atlas = new FontAtlasEntry[MAX_GLYPHS];
-    m_atlas_lru.clear();
-    m_atlas_lru.reserve(MAX_GLYPHS);
+    m_atlas_index.clear();
+    m_atlas_tick.assign(MAX_GLYPHS, 0);
+    m_atlas_count = 0;
+    m_tick = 0;
 
     return configure_font();
 }
@@ -341,28 +348,31 @@ unsigned int FTFontWrapper::map_unicode(char *ch)
 
 unsigned int FTFontWrapper::map_unicode(char32_t uchar)
 {
-    unsigned int c = MAX_GLYPHS;
-    for (unsigned int i = 1; i < MAX_GLYPHS; i++)
-        if (m_atlas[i].uchar == uchar)
-        {
-            c = i;
-            break;
-        }
-
-    if (c == MAX_GLYPHS) // not found: need to load into atlas
+    unsigned int c;
+    auto found = m_atlas_index.find(uchar);
+    if (found != m_atlas_index.end())
+        c = found->second;
+    else // not found: need to load into atlas
     {
-        bool atlas_full = m_atlas_lru.size() == MAX_GLYPHS-1;
-        c = atlas_full ? m_atlas_lru[0] : m_atlas_lru.size()+1;
+        // atlas[0] is the white block and is never evicted
+        if (m_atlas_count < MAX_GLYPHS - 1)
+            c = ++m_atlas_count;
+        else
+        {
+            // evict the least recently used glyph
+            c = 1;
+            for (unsigned int i = 2; i < MAX_GLYPHS; i++)
+                if (m_atlas_tick[i] < m_atlas_tick[c])
+                    c = i;
+            m_atlas_index.erase(m_atlas[c].uchar);
+        }
         m_atlas[c].uchar = uchar;
+        m_atlas_index[uchar] = c;
         load_glyph(c, uchar);
         n_subst++;
     }
 
-    auto it = find(m_atlas_lru.begin(), m_atlas_lru.end(), (uint8_t)c);
-    if (it != m_atlas_lru.end())
-        m_atlas_lru.erase(it);
-    m_atlas_lru.push_back(c);
-
+    m_atlas_tick[c] = ++m_tick;
     return c;
 }
 
@@ -387,14 +397,29 @@ void FTFontWrapper::render_textblock(unsigned int x_pos, unsigned int y_pos,
     {
         for (unsigned int x = 0; x < width; x++)
         {
-            GlyphInfo &glyph = get_glyph_info(chars[i]);
+            // 日本語: 全角文字の 2 マス目の詰め物は描かない(送り幅は
+            // 1 マス目の全角文字が 2 マス分持つ)。前が全角文字でない
+            // はぐれた詰め物(カーソルで上書きされたときなど)は空白として描く
+            char32_t ch = chars[i];
+            if (ch == WIDE_CHAR_FILLER)
+            {
+                if (x > 0 && wcwidth(chars[i - 1]) == 2)
+                {
+                    i++;
+                    continue;
+                }
+                ch = ' ';
+            }
+
+            GlyphInfo &glyph = get_glyph_info(ch);
             uint8_t col_bg = colours[i] >> 4;
             uint8_t col_fg = colours[i] & 0xF;
 
             if (col_bg != 0)
             {
+                const int bg_width = max<int>(m_max_advance.x, glyph.advance);
                 GLWPrim rect(adv.x, adv.y,
-                             adv.x + m_max_advance.x, adv.y + m_max_advance.y);
+                             adv.x + bg_width, adv.y + m_max_advance.y);
                 // Leave tex coords at their default 0.0f
                 VColour col(term_colours[col_bg].r,
                             term_colours[col_bg].g,
@@ -407,7 +432,7 @@ void FTFontWrapper::render_textblock(unsigned int x_pos, unsigned int y_pos,
 
             if (glyph.renderable)
             {
-                unsigned int c = map_unicode(chars[i]);
+                unsigned int c = map_unicode(ch);
                 int this_width = glyph.width;
 
                 float tex_x = (float)(c % GLYPHS_PER_ROWCOL) / (float)GLYPHS_PER_ROWCOL;

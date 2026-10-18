@@ -125,7 +125,12 @@ protected:
         char32_t uchar;
     };
     FontAtlasEntry *m_atlas;
-    vector<char32_t> m_atlas_lru;
+    // 日本語: 字の種類が多い画面に備えて atlas を広げたので、線形探索の代わりに
+    // 文字 -> 枠の表と、使った時刻(古いものから入れ替える)を持つ
+    map<char32_t, unsigned int> m_atlas_index;
+    vector<unsigned int> m_atlas_tick;
+    unsigned int m_atlas_count;
+    unsigned int m_tick;
 
     // count of glyph loads in the current text block
     int n_subst;
