@@ -5069,7 +5069,7 @@ string ru_sac_text(ability_type sac)
     }
 
     // "Tloc/Fire/Ice"
-    // 技能の略称は [skill abbr] で引く(data-skills.txt)
+    // スキルの略称は [skill abbr] で引く(data-skills.txt)
     const string school_names
         = comma_separated_fn(sacrifice_muts.begin(), sacrifice_muts.end(),
                 [](CrawlStoreValue mut) {

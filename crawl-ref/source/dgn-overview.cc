@@ -379,7 +379,7 @@ static string _get_seen_branches(bool display)
     return disp;
 }
 
-// 未発見の支部の一覧に出す名前(右寄せ)
+// 未発見の分岐の一覧に出す名前(右寄せ)
 static string _unseen_branch_name(const char *abbrevname)
 {
     return align_right(branch_name_j(abbrevname), 10);

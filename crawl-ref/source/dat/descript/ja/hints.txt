@@ -39,7 +39,7 @@ welcome
 
 解説モードは、説明書を読まなくても Crawl を遊べるよう手助けします。まだなら、チュートリアルも試してみるとよいでしょう。また、興味が湧いたら、docs/ ディレクトリにある以下のファイルにさらに詳しい情報があります(どれもゲーム内でも読めます):
   <lightblue>quickstart.txt</lightblue>     — Crawl のごく短い手引きです。
-  <lightblue>crawl_manual.txt</lightblue>   — 種族、魔法、技能などのすべての詳細が
+  <lightblue>crawl_manual.txt</lightblue>   — 種族、魔法、スキルなどのすべての詳細が
 載っています。
   <lightblue>options_guide.txt</lightblue>  — Crawl のインターフェイスは細かく設定
 できます。この文書はすべてのオプションを説明しています。
@@ -229,7 +229,7 @@ HINT_CONVERT Ashenzari
 #   Ashenzari only cares about curses. As you explore the dungeon, Ashenzari will
 #   offer curses, locking an item onto you. The more cursed items you wear, the more
 #   Ashenzari will enhance your skills and otherwise help you.
-あなたはたった今<w>アシェンザリ</w>に入信しました。ほかの神と違い、アシェンザリは呪いにしか関心がありません。ダンジョンを探索していくと、アシェンザリはアイテムをあなたから外せなくする呪いを申し出てきます。呪われたアイテムを多く身に着けるほど、アシェンザリはあなたの技能を高め、ほかにも様々な形であなたを助けてくれます。
+あなたはたった今<w>アシェンザリ</w>に入信しました。ほかの神と違い、アシェンザリは呪いにしか関心がありません。ダンジョンを探索していくと、アシェンザリはアイテムをあなたから外せなくする呪いを申し出てきます。呪われたアイテムを多く身に着けるほど、アシェンザリはあなたのスキルを高め、ほかにも様々な形であなたを助けてくれます。
 %%%%
 HINT_CONVERT Gozag
 
@@ -248,7 +248,7 @@ HINT_CONVERT Ru
 #   you have, the more abilities Ru will grant, and the more powerful those
 #   abilities will become. Ru will offer more sacrifices as you explore the depths
 #   of the dungeon.
-あなたはたった今<w>ルー</w>に入信しました。ほかの神と違い、ルーは、特定の技能を鍛えられなくなる、片手を永久に失うといった永続的な犠牲と引き換えに、信仰値(神の恩寵)を授けます。信仰値が高いほど、ルーはより多くの能力を授け、その能力も強力になっていきます。ダンジョンの深みを探索するにつれて、ルーはさらに犠牲を申し出てきます。
+あなたはたった今<w>ルー</w>に入信しました。ほかの神と違い、ルーは、特定のスキルを鍛えられなくなる、片手を永久に失うといった永続的な犠牲と引き換えに、信仰値(神の恩寵)を授けます。信仰値が高いほど、ルーはより多くの能力を授け、その能力も強力になっていきます。ダンジョンの深みを探索するにつれて、ルーはさらに犠牲を申し出てきます。
 %%%%
 HINT_CONVERT Uskayaw
 
@@ -395,7 +395,7 @@ HINT_SEEN_WEAPON
 #                  .. " enchantments can be worthwhile, though!"
 #       end
 #   }}
-これはあなたが最初に拾った武器<console>('<w>$item[weapon]</w>')</console>です。<input>$cmd[CMD_WIELD_WEAPON]</input><localtiles>か<w>[左クリック]</w></localtiles>で手に持てますが、この武器は今の武器とは別の技能を鍛えるかもしれないことに注意してください。武器の特性は所持品一覧(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)<localtiles>か、武器を<w>[右クリック]</w>すること</localtiles>で見られます。
+これはあなたが最初に拾った武器<console>('<w>$item[weapon]</w>')</console>です。<input>$cmd[CMD_WIELD_WEAPON]</input><localtiles>か<w>[左クリック]</w></localtiles>で手に持てますが、この武器は今の武器とは別のスキルを鍛えるかもしれないことに注意してください。武器の特性は所持品一覧(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)<localtiles>か、武器を<w>[右クリック]</w>すること</localtiles>で見られます。
 
 {{
     if crawl.hints_type() == "berserk" then
@@ -425,7 +425,7 @@ HINT_SEEN_MISSILES
 #           return ""
 #       end
 #   }}
-これはあなたが最初に拾った飛び道具の山<console>('<w>$item[missile]</w>')</console>です。ブーメランや投げ網のような飛び道具は手で投げることができ、投擲の技能を鍛えるほど効果が高まります。所持品一覧(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)でそのアイテムを<localtiles><w>[右クリック]</w></localtiles><nomouse>選ぶ</nomouse>と、詳しい情報が見られます。
+これはあなたが最初に拾った飛び道具の山<console>('<w>$item[missile]</w>')</console>です。ブーメランや投げ網のような飛び道具は手で投げることができ、投擲のスキルを鍛えるほど効果が高まります。所持品一覧(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)でそのアイテムを<localtiles><w>[右クリック]</w></localtiles><nomouse>選ぶ</nomouse>と、詳しい情報が見られます。
 
 {{
     if crawl.hints_type() == "ranger" then
@@ -688,7 +688,7 @@ HINT_KILLED_MONSTER
 #           return "Also, most kills will grant you favour in the eyes of Trog."
 #       end
 #   }}
-おめでとうございます。このモンスターを倒して、あなたのキャラクターは経験値を得ました！ これによりいくつかの技能が上がり、より手ごわくなります。
+おめでとうございます。このモンスターを倒して、あなたのキャラクターは経験値を得ました！ これによりいくつかのスキルが上がり、より手ごわくなります。
 {{
     if you.god() == "Trog" then
         return "また、たいていのモンスターを倒すと、トログの覚えがめでたくなります。"
@@ -728,7 +728,7 @@ HINT_SKILL_RAISE
 #   default, experience goes to skills you actively use. To view or manage your
 #   skills, type <w>$cmd[CMD_DISPLAY_SKILLS]</w><localtiles> or click on the skill
 #   tab in the bottom-right</localtiles>.
-技能の1つが節目に達しました。使っている技能は、モンスターを倒して経験値を得るたびに自動的に訓練されます。初期設定では、経験値は実際に使っている技能に配分されます。<input>$cmd[CMD_DISPLAY_SKILLS]</input>を押す<localtiles>か、右下の技能のタブをクリックする</localtiles>と、技能を見たり管理したりできます。
+スキルの1つが節目に達しました。使っているスキルは、モンスターを倒して経験値を得るたびに自動的に訓練されます。初期設定では、経験値は実際に使っているスキルに配分されます。<input>$cmd[CMD_DISPLAY_SKILLS]</input>を押す<localtiles>か、右下のスキルのタブをクリックする</localtiles>と、スキルを見たり管理したりできます。
 %%%%
 HINT_GAINED_MAGICAL_SKILL
 
@@ -737,7 +737,7 @@ HINT_GAINED_MAGICAL_SKILL
 #   that school. Many spells belong to a combination of several schools, in which
 #   case the average skill in these schools will determine spellcasting success and
 #   power.
-魔法の「系統」の技能が高いと、その系統の呪文を覚えたり唱えたりしやすくなります。多くの呪文は複数の系統の組み合わせに属しており、その場合はそれらの系統の技能の平均で、呪文の成功率と威力が決まります。
+魔法の「系統」のスキルが高いと、その系統の呪文を覚えたり唱えたりしやすくなります。多くの呪文は複数の系統の組み合わせに属しており、その場合はそれらの系統のスキルの平均で、呪文の成功率と威力が決まります。
 %%%%
 HINT_GAINED_MELEE_SKILL
 
@@ -746,7 +746,7 @@ HINT_GAINED_MELEE_SKILL
 #   damage and attack significantly faster with all weapons of that type. It's a
 #   good idea to focus on just one weapon type, usually one you start with, though
 #   finding a particularly good weapon may justify a switch.
-特定の種類の武器の技能が高いと、その種類のすべての武器で、与えるダメージがわずかに増え、攻撃がかなり速くなります。1つの種類の武器(たいていは最初に持っているもの)に絞るのがよい考えですが、特に良い武器を見つけたなら乗り換えるのもよいでしょう。
+特定の種類の武器のスキルが高いと、その種類のすべての武器で、与えるダメージがわずかに増え、攻撃がかなり速くなります。1つの種類の武器(たいていは最初に持っているもの)に絞るのがよい考えですが、特に良い武器を見つけたなら乗り換えるのもよいでしょう。
 %%%%
 HINT_GAINED_RANGED_SKILL
 
@@ -754,7 +754,7 @@ HINT_GAINED_RANGED_SKILL
 #   Being skilled with ranged weapons will let you deal slightly more damage and
 #   attack significantly faster with them. Remember that wearing heavy armour makes
 #   you attack more slowly with ranged weapons.
-射撃武器の技能が高いと、射撃武器で与えるダメージがわずかに増え、攻撃がかなり速くなります。重い鎧を着ていると、射撃武器での攻撃が遅くなることを覚えておいてください。
+射撃武器のスキルが高いと、射撃武器で与えるダメージがわずかに増え、攻撃がかなり速くなります。重い鎧を着ていると、射撃武器での攻撃が遅くなることを覚えておいてください。
 %%%%
 HINT_CHOOSE_STAT
 
@@ -1163,7 +1163,7 @@ HINT_SPELL_MISCAST_EFFECTS
 #   your magic skills, and can also be improved with the help of some items. Use
 #   the <w>$cmd[CMD_DISPLAY_SPELLS]</w> command<localtiles> or mouse over the spell
 #   tiles</localtiles> to check your current failure rates.
-呪文の失敗は、特に難しい呪文では厄介な結果を招くことがあります。呪文の成功率は魔法の技能とともに上がり、アイテムの助けでも上げられます。<input>$cmd[CMD_DISPLAY_SPELLS]</input>のコマンドを使う<localtiles>か、呪文のタイルにマウスを重ねる</localtiles>と、今の失敗率を確かめられます。
+呪文の失敗は、特に難しい呪文では厄介な結果を招くことがあります。呪文の成功率は魔法のスキルとともに上がり、アイテムの助けでも上げられます。<input>$cmd[CMD_DISPLAY_SPELLS]</input>のコマンドを使う<localtiles>か、呪文のタイルにマウスを重ねる</localtiles>と、今の失敗率を確かめられます。
 %%%%
 HINT_YOU_MISCAST
 
@@ -1291,9 +1291,9 @@ HINT_GAINED_SPELLCASTING
 #   Press <w>$cmd[CMD_DISPLAY_SKILLS]</w> <localtiles>(or click on the <w>skill
 #   button </w>in the command panel)</localtiles>to have a look at your skills and
 #   manage their training.
-呪文詠唱の技能が上がると、より多くの呪文を記憶でき、MPも少し増えます。また、あらゆる種類の呪文を唱えるのが少しうまくなります。
+呪文詠唱のスキルが上がると、より多くの呪文を記憶でき、MPも少し増えます。また、あらゆる種類の呪文を唱えるのが少しうまくなります。
 
-<input>$cmd[CMD_DISPLAY_SKILLS]</input>を押す<localtiles>(かコマンドパネルの<w>技能のボタン</w>をクリックする)</localtiles>と、技能を見て訓練を管理できます。
+<input>$cmd[CMD_DISPLAY_SKILLS]</input>を押す<localtiles>(かコマンドパネルの<w>スキルのボタン</w>をクリックする)</localtiles>と、スキルを見て訓練を管理できます。
 %%%%
 HINT_FUMBLING_SHALLOW_WATER
 

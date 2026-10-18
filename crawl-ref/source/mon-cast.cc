@@ -6547,7 +6547,7 @@ static void _branch_summon_helper(monster* mons, spell_type spell_cast)
         string msg = getSpeakString("branch summon cast prefix");
         if (!msg.empty())
         {
-            // 日本語の台詞 DB では支部名を @branch@ で埋め込む
+            // 日本語の台詞 DB では分岐名を @branch@ で埋め込む
             msg  = replace_all(msg, "@The_monster@", mons->name(DESC_THE));
             msg  = replace_all(msg, "@branch@", branch_name_j(
                        branches[summon_list[which_branch].origin].longname));

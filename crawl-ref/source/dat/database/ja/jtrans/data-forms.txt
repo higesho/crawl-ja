@@ -1366,7 +1366,7 @@ scribal knowledge
 %%%%
 You have increased skill with all magical schools.
 
-あなたはすべての魔術系統の技能が上昇している。
+あなたはすべての魔術系統のスキルが上昇している。
 %%%%
 magic absorption
 

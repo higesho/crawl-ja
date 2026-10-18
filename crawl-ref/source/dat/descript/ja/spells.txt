@@ -1573,7 +1573,7 @@ Forceful Invitation spell
 #   Summons some creatures from one of the Snake Pit, the Spider Nest, the Swamp,
 #   the Shoals, the Elven Halls, the Vaults, or the Crypt; the specific branch
 #   varies with the caster.
-蛇穴、蜘蛛の穴ぐら、沼、浅瀬、エルフの大広間、宝物庫、地下墓地のいずれかからモンスターを何体か召喚する。どの支部から呼ぶかは術者によって異なる。
+蛇穴、蜘蛛の穴ぐら、沼、浅瀬、エルフの大広間、宝物庫、地下墓地のいずれかからモンスターを何体か召喚する。どの分岐から呼ぶかは術者によって異なる。
 %%%%
 Forge Blazeheart Golem spell
 
@@ -2395,7 +2395,7 @@ Plane Rend spell
 #   Summons some of the greater threats from one of the Pits of Slime, the Elven
 #   Halls, the Vaults, the Crypt, the Tomb of Ancients, or the Realm of Zot; the
 #   specific branch varies with each cast of the spell.
-スライムの穴ぐら、エルフの大広間、宝物庫、地下墓地、太古の霊廟、ゾットの領域のいずれかから、より強大な脅威を何体か召喚する。どの支部から呼ぶかは唱えるたびに異なる。
+スライムの穴ぐら、エルフの大広間、宝物庫、地下墓地、太古の霊廟、ゾットの領域のいずれかから、より強大な脅威を何体か召喚する。どの分岐から呼ぶかは唱えるたびに異なる。
 %%%%
 Plasma Beam spell
 
@@ -3228,7 +3228,7 @@ Tukima's Dance spell
 #   require skill in evocations will not be active.
 指定した敵の武器に命を吹き込み、その手からもぎ取って、容赦なく持ち主を攻撃させる。対象が死ぬと、武器はほどなく地面に落ちる。
 
-一部の強力な名前つきのアーティファクトには命を吹き込めず、発動の技能を必要とする特性は働かない。
+一部の強力な名前つきのアーティファクトには命を吹き込めず、発動のスキルを必要とする特性は働かない。
 %%%%
 Upheaval spell
 

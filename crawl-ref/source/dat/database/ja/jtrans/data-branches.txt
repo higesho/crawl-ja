@@ -1,4 +1,4 @@
-# data-branches.txt: 支部名 [branch]<短い名前/長い名前/略称>、入口表記用の [branch abbrj]<略称>、入場メッセージ
+# data-branches.txt: 分岐名 [branch]<短い名前/長い名前/略称>、入口表記用の [branch abbrj]<略称>、入場メッセージ
 # 出典: branch-data.h (0.34)。旧 jtrans_branch_data.txt の形式に合わせた。
 # [branch abbrj] は全角 1 文字にする。
 

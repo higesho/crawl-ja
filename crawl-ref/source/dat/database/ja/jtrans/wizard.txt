@@ -217,7 +217,7 @@ mark all vaults as unused
 %%%%
 find branches and overflow temples in the dungeon
 
-支部と寺院外の祭壇の場所を表示する
+分岐と寺院外の祭壇の場所を表示する
 %%%%
 list known levels and counters
 

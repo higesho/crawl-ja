@@ -59,7 +59,7 @@ Vitalisation ability
 #   sickness, as well as the effects of clouds of foul pestilence. Your strength,
 #   intelligence and dexterity are also temporarily increased by a degree dependent
 #   on Invocations skill.
-一時的に、毒、混乱、石化、病気、および汚らわしい疫病の雲の効果から身を守る。また、あなたの腕力、知力、器用さも、祈祷の技能に応じた分だけ一時的に上昇する。
+一時的に、毒、混乱、石化、病気、および汚らわしい疫病の雲の効果から身を守る。また、あなたの腕力、知力、器用さも、祈祷のスキルに応じた分だけ一時的に上昇する。
 %%%%
 Imprison ability
 
@@ -101,7 +101,7 @@ Divine Shield ability
 #   Invocations skill increasing how many.
 使用者の前方に、目もくらむほどまばゆい盾を出現させる。輝けるものの力で宙に掲げられたこの盾は、普通の盾で防げる攻撃を、続く何回かにわたって必ず防ぐ。遠隔攻撃は跳ね返され、近接攻撃をした者は、そのとき放たれる閃光で短い間盲目になることがある。
 
-この盾は限られた回数の攻撃を防ぐと消える。防げる回数は祈祷の技能に応じて増える。
+この盾は限られた回数の攻撃を防ぐと消える。防げる回数は祈祷のスキルに応じて増える。
 %%%%
 Cleansing Flame ability
 
@@ -109,7 +109,7 @@ Cleansing Flame ability
 #   Invokes a huge blast of divine fury centered on the user, severely damaging
 #   undead and demons and dealing damage to all other hostile creatures. The power
 #   of the blast is increased by Invocations skill.
-使用者を中心に神の怒りの大爆発を起こし、アンデッドと悪魔に深刻なダメージを、その他のすべての敵対的なモンスターにもダメージを与える。爆発の威力は祈祷の技能に応じて高まる。
+使用者を中心に神の怒りの大爆発を起こし、アンデッドと悪魔に深刻なダメージを、その他のすべての敵対的なモンスターにもダメージを与える。爆発の威力は祈祷のスキルに応じて高まる。
 %%%%
 Summon Divine Warrior ability
 
@@ -148,7 +148,7 @@ Bind Soul ability
 
 比較的傷の浅い者しか対象にできず、魂が逃げ出さないよう集中を保つには、使用者の現在の体力の1/3を費やす必要がある。この体力は対象を倒したときに初めて戻ってくる。過程が完了する前に対象のモンスターがあなたの視界から外れると、試みは完全に失敗する。
 
-呪縛された魂の体力は、使用者の祈祷の技能に影響される。魂は階段を通って捕らえた者についていき、他の階層から呼び戻すこともできる。
+呪縛された魂の体力は、使用者の祈祷のスキルに影響される。魂は階段を通って捕らえた者についていき、他の階層から呼び戻すこともできる。
 
 一度に縛りつけておける魂は一つだけである。
 %%%%
@@ -211,7 +211,7 @@ Banish ability
 #   some piety and the creature's full experience value. Even creatures that resist
 #   are left malmutated and weakened by the brush with the Abyss. Invocations skill
 #   makes Banishment harder to resist.
-モンスターをアビスへ追放しようと試みる。試みが成功すると、あなたはいくらかの信仰心と、そのモンスターの経験値をすべて獲得する。抵抗したモンスターでさえ、アビスに触れたことで悪性の変異を受け、弱体化する。祈祷の技能が高いほど、追放に抵抗されにくくなる。
+モンスターをアビスへ追放しようと試みる。試みが成功すると、あなたはいくらかの信仰心と、そのモンスターの経験値をすべて獲得する。抵抗したモンスターでさえ、アビスに触れたことで悪性の変異を受け、弱体化する。祈祷のスキルが高いほど、追放に抵抗されにくくなる。
 %%%%
 Corrupt ability
 
@@ -221,7 +221,7 @@ Corrupt ability
 #   Abyss bent on causing destruction. This will not work on levels already
 #   corrupted or in the Abyss itself. The size of the effect is increased by
 #   Invocations skill.
-現在の階層にアビスのエネルギーを解き放ち、階層を崩壊させる。これにより周辺の一帯の外観が変わり、破壊をもくろむアビスのモンスターが門を通って現れる。すでに崩壊している階層やアビスの中では働かない。効果の大きさは祈祷の技能に応じて増す。
+現在の階層にアビスのエネルギーを解き放ち、階層を崩壊させる。これにより周辺の一帯の外観が変わり、破壊をもくろむアビスのモンスターが門を通って現れる。すでに崩壊している階層やアビスの中では働かない。効果の大きさは祈祷のスキルに応じて増す。
 %%%%
 Enter the Abyss ability
 
@@ -259,7 +259,7 @@ Smiting ability
 #
 #   Beogh will not allow you to use this directly against another apostle during a
 #   divine trial.
-[[Smiting spell]]打ち据える力は祈祷の技能に応じて高まる。
+[[Smiting spell]]打ち据える力は祈祷のスキルに応じて高まる。
 
 神の試練の間、ベオはあなたがこれを他の使徒に直接使うことを許さない。
 %%%%
@@ -290,7 +290,7 @@ Step From Time ability
 #   long that alert monsters have fallen asleep again.
 あなたを時の流れから完全に取り除く。時間はいつもどおりに過ぎ、モンスターはさまよい去り、ときには再び眠りにつくことさえある。しばらく時間が経つと、あなたは立ち去ったまさにその瞬間と同じ状態で戻ってくる。
 
-祈祷の技能が高いほど、あなたの不在が長くなり、警戒していたモンスターが再び眠りについている可能性が高まる。
+祈祷のスキルが高いほど、あなたの不在が長くなり、警戒していたモンスターが再び眠りについている可能性が高まる。
 %%%%
 Slimify ability
 
@@ -435,7 +435,7 @@ Evoke Blink ability
 #   Randomly translocates the user a short distance. After translocating in this
 #   way, the ability cannot be activated again for a short period of time depending
 #   on Evocations skill.
-使用者を無作為に短距離転移させる。この方法で転移したあとは、発動の技能に応じたしばらくの間、この能力を再び使うことができない。
+使用者を無作為に短距離転移させる。この方法で転移したあとは、発動のスキルに応じたしばらくの間、この能力を再び使うことができない。
 %%%%
 Begin Untransformation ability
 
@@ -500,7 +500,7 @@ Bat Swarm ability
 #   which this skill recharges.)
 肉体を吸血コウモリの群れへと散らす。装備は体に融合するが、素早く身をかわしながら移動できるようになる。体から飛び立つコウモリの数はあまりにも膨大で、息の詰まる雲のように近くのマスにまで満ち、敵に襲いかかってだんだんと眠らせていく。
 
-この能力を使ったあとは、再び使えるだけの力を取り戻すまでに経験値を得なければならない。(変身術の技能が高いほど、この能力の回復が速くなる。)
+この能力を使ったあとは、再び使えるだけの力を取り戻すまでに経験値を得なければならない。(変身術のスキルが高いほど、この能力の回復が速くなる。)
 %%%%
 Enkindle ability
 
@@ -556,7 +556,7 @@ Recite ability
 #   is increased by Invocations skill and piety.
 近くのモンスターに、短い間ジンの法を説く。朗読を終えると、しばらくの間は繰り返すことができない。
 
-朗読は対象によって異なる効果をもたらす。混沌の者や不浄な者には強力でダメージを伴う効果が、アンデッドや悪魔にはより弱い叱責が及び、その他の知性ある者たちの間には混乱がまき散らされる。異端者やジン以外の神々の司祭は、はるかに強く罰せられる。朗読の効果は祈祷の技能と信仰心に応じて高まる。
+朗読は対象によって異なる効果をもたらす。混沌の者や不浄な者には強力でダメージを伴う効果が、アンデッドや悪魔にはより弱い叱責が及び、その他の知性ある者たちの間には混乱がまき散らされる。異端者やジン以外の神々の司祭は、はるかに強く罰せられる。朗読の効果は祈祷のスキルと信仰心に応じて高まる。
 %%%%
 Brand Weapon With Holy Wrath ability
 
@@ -572,7 +572,7 @@ Unearth Wretches ability
 #   Bring forth those near death from Kikubaaqudgha's necropolis, providing ample
 #   fodder for all kinds of necromancy. Their number and quality is dependent on
 #   Necromancy skill.
-キクバークッグァの死者の都から死に瀕した者たちを引き出し、あらゆる死霊術のための豊富な材料をもたらす。その数と質は死霊術の技能に応じて決まる。
+キクバークッグァの死者の都から死に瀕した者たちを引き出し、あらゆる死霊術のための豊富な材料をもたらす。その数と質は死霊術のスキルに応じて決まる。
 %%%%
 Sign of Ruin ability
 
@@ -629,7 +629,7 @@ Hurl Torchlight ability
 #   of times on each floor. The number of uses available per floor increases with
 #   piety, and stoking the Black Torch's flames with a particularly remarkable soul
 #   by killing a unique named enemy will also provide an additional use.
-黒き松明から陰鬱な炎の塊を投げつけ、生き物、悪魔、神聖な存在に抵抗できないダメージを与える。また、松明の光は爆発に巻き込まれたあなたのアンデッドの従者を短い間強化し、イレデレンヌルを崇拝する者には無害である。ダメージは祈祷の技能に応じて増す。
+黒き松明から陰鬱な炎の塊を投げつけ、生き物、悪魔、神聖な存在に抵抗できないダメージを与える。また、松明の光は爆発に巻き込まれたあなたのアンデッドの従者を短い間強化し、イレデレンヌルを崇拝する者には無害である。ダメージは祈祷のスキルに応じて増す。
 
 この能力は松明が灯っている間しか使えず、各階で使える回数に限りがある。一つの階で使える回数は信仰心に応じて増える。また、名前を持つユニークの敵を倒して、とりわけ際立った魂で黒き松明の炎をかき立てると、使える回数が1回増える。
 %%%%
@@ -706,7 +706,7 @@ Unleash Destruction ability
     else
         return "炎、冷気、稲妻、負のエネルギー"
     end
-}}のいずれかの爆風を放つ。ダメージと命中率は祈祷の技能に応じて高まる。
+}}のいずれかの爆風を放つ。ダメージと命中率は祈祷のスキルに応じて高まる。
 %%%%
 Infernal Servant ability
 
@@ -718,7 +718,7 @@ Infernal Servant ability
 #
 #   Beware that the armies of chaos are prone to infighting, and sometimes a
 #   hostile demon may answer the ritual alongside your summoned servant.
-地獄の果てから悪魔を呼び寄せ、あなたの血によって従属させる。祈祷の技能が低いうちは下級の悪魔しか召喚できないが、祈祷の技能が高い者の呼びかけには、上位の悪魔や処刑の悪魔さえ応えることがある。
+地獄の果てから悪魔を呼び寄せ、あなたの血によって従属させる。祈祷のスキルが低いうちは下級の悪魔しか召喚できないが、祈祷のスキルが高い者の呼びかけには、上位の悪魔や処刑の悪魔さえ応えることがある。
 
 混沌の軍勢は内輪揉めを起こしがちで、ときには召喚した従者とともに敵対的な悪魔が儀式に応じて現れることもあるので注意すること。
 %%%%
@@ -835,7 +835,7 @@ Channel Magic ability
 # en:
 #   Dramatically increases the user's regeneration of magical power for a duration
 #   that increases with Invocations skill.
-使用者の魔力の回復速度を劇的に高める。効果の持続時間は祈祷の技能に応じて延びる。
+使用者の魔力の回復速度を劇的に高める。効果の持続時間は祈祷のスキルに応じて延びる。
 %%%%
 Divine Exegesis ability
 
@@ -843,7 +843,7 @@ Divine Exegesis ability
 #   Casts any spell from your spell library with guaranteed success. You receive a
 #   bonus to spell power based on your Invocations skill that is worth 50% more
 #   than equivalent levels of training in the relevant skills of the spell itself.
-あなたの呪文の蔵書にある呪文を、どれでも確実に成功させて唱える。祈祷の技能に応じて呪文の威力にボーナスを得る。このボーナスは、その呪文自体に関係する技能を同じだけ鍛えた場合より50%大きい。
+あなたの呪文の蔵書にある呪文を、どれでも確実に成功させて唱える。祈祷のスキルに応じて呪文の威力にボーナスを得る。このボーナスは、その呪文自体に関係するスキルを同じだけ鍛えた場合より50%大きい。
 %%%%
 Trog's Hand ability
 
@@ -870,7 +870,7 @@ Heal Other ability
 #   are lost. If it does succeed, the monster is healed and you gain the monster's
 #   full experience value. Otherwise, the monster is unaffected and you gain
 #   nothing.
-祈祷の技能に応じて、あなた以外の存在をある程度回復させる。敵対的なモンスターにこの能力を使うと、中立化を試みる。これは生き物に最も有効に働き、アンデッドや悪魔の順に中立化が難しくなっていく。知性のあるモンスターもまた中立化しにくい。
+祈祷のスキルに応じて、あなた以外の存在をある程度回復させる。敵対的なモンスターにこの能力を使うと、中立化を試みる。これは生き物に最も有効に働き、アンデッドや悪魔の順に中立化が難しくなっていく。知性のあるモンスターもまた中立化しにくい。
 
 死んだ冒険者の幽霊やデーモンの王は怒りが強すぎて中立化できず、精神を持たないモンスターは知性がなさすぎて中立化できない。また、眠っているモンスターは中立化できない。
 
@@ -880,7 +880,7 @@ Heal Self ability
 
 # en:
 #   Heals a moderate amount of health, depending on Invocations skill.
-祈祷の技能に応じて、体力をある程度回復する。
+祈祷のスキルに応じて、体力をある程度回復する。
 %%%%
 Divine Vigour ability
 
@@ -888,7 +888,7 @@ Divine Vigour ability
 #   Greatly increases your maximum health and magic points, depending on
 #   Invocations skill. Your current health and magic points will also be increased
 #   proportionally.
-祈祷の技能に応じて、あなたの最大体力と最大魔力を大きく増やす。現在の体力と魔力も、それに比例して増える。
+祈祷のスキルに応じて、あなたの最大体力と最大魔力を大きく増やす。現在の体力と魔力も、それに比例して増える。
 %%%%
 Brand Weapon With Distortion ability
 
@@ -957,7 +957,7 @@ Wall of Briars ability
 # en:
 #   Grows short-lived briar patches around you. Monsters attacking these briars will
 #   be damaged by sharp thorns. Invocations skill increases the briars' health.
-あなたの周りに短命の荊棘の茂みを生やす。この荊棘を攻撃したモンスターは、鋭い棘でダメージを受ける。祈祷の技能が高いほど荊棘の体力が増す。
+あなたの周りに短命の荊棘の茂みを生やす。この荊棘を攻撃したモンスターは、鋭い棘でダメージを受ける。祈祷のスキルが高いほど荊棘の体力が増す。
 %%%%
 Grow Ballistomycete ability
 
@@ -970,7 +970,7 @@ Grow Ballistomycete ability
 #   well as the damage of its exploding spores.
 あなたが選んだ場所に短命の放出菌糸を生やす。放出菌糸はときおり胞子を放ち、胞子は素早く敵を探し出して激しく爆発し、爆風に巻き込まれたすべての生き物にダメージを与えて混乱させる。
 
-祈祷の技能が高いほど、放出菌糸の体力と持続時間、そして爆発する胞子のダメージが増す。
+祈祷のスキルが高いほど、放出菌糸の体力と持続時間、そして爆発する胞子のダメージが増す。
 %%%%
 Overgrow ability
 
@@ -990,7 +990,7 @@ Grow Oklob ability
 #   frequency with which it sprays its acid.
 あなたが選んだ場所に短命のオクロブ草を生やす。この危険な植物は、あなたの敵に腐食性の硫酸を噴きつける。
 
-祈祷の技能が高いほど、オクロブ草の体力と持続時間、そして酸を噴きつける頻度が増す。
+祈祷のスキルが高いほど、オクロブ草の体力と持続時間、そして酸を噴きつける頻度が増す。
 %%%%
 Slouch ability
 
@@ -1033,7 +1033,7 @@ Shadowslip ability
 #   durability of your shadow immediately after using it.
 (あなたの影が活動している限り)ただちに影と位置を入れ替え、視界内のすべての敵に、二人のうちどちらがどちらかを見誤らせる。それまであなたを狙っていた敵は、数ターンの間、代わりにあなたの影だけに注意を向け、そのあとで誤りに気づく。ただし、影の破壊に成功すると、幻惑は早めに終わる。
 
-この効果の持続時間は祈祷の技能に応じて延び、使用直後のあなたの影の耐久力も同様に増す。
+この効果の持続時間は祈祷のスキルに応じて延び、使用直後のあなたの影の耐久力も同様に増す。
 %%%%
 Aphotic Marionette ability
 
@@ -1074,7 +1074,7 @@ Primordial Nightfall ability
 
 効果が完全に終わるまで再び祈祷することはできない。創造の最初の夜でさえ、いずれは昼に道を譲らねばならないのだから。
 
-祈祷の技能が高いほど効果の持続時間が延びる。
+祈祷のスキルが高いほど効果の持続時間が延びる。
 %%%%
 Potion Petition ability
 
@@ -1102,7 +1102,7 @@ Bribe Branch ability
 #   though they will not leave their home branch. Enemies accepting a bribe will
 #   lower the remaining bribe fund; upon its exhaustion, bribed enemies will become
 #   indifferent if they have not become your allies.
-3000ゴールドをゴザーグに渡し、現在の支部の住人たちにばらまいてもらう。知性ある住人がいる支部でしか行えない。これにより、そこのモンスターたちはあなたと戦うことに興味を失うことがあり(より手強い住人ほど買収される確率が高まる)、まれにはあなたの仲間に加わることもある。ただし、彼らは自分の住む支部を離れない。敵が賄賂を受け取ると残りの買収資金が減り、資金が尽きると、買収された敵のうちあなたの味方になっていない者は無関心な状態になる。
+3000ゴールドをゴザーグに渡し、現在の分岐の住人たちにばらまいてもらう。知性ある住人がいる分岐でしか行えない。これにより、そこのモンスターたちはあなたと戦うことに興味を失うことがあり(より手強い住人ほど買収される確率が高まる)、まれにはあなたの仲間に加わることもある。ただし、彼らは自分の住む分岐を離れない。敵が賄賂を受け取ると残りの買収資金が減り、資金が尽きると、買収された敵のうちあなたの味方になっていない者は無関心な状態になる。
 %%%%
 Upheaval ability
 
@@ -1110,7 +1110,7 @@ Upheaval ability
 #   Calls on the forces of nature to blast a small area with magma, ice, wind,
 #   or rubble. This blast will never harm you or any elementals manifested by you.
 #   Invocations skill increases both damage and area affected.
-自然の力を呼び起こし、狭い範囲に溶岩、氷、風、瓦礫のいずれかを浴びせる。この爆風があなたや、あなたが呼び出した精霊を傷つけることは決してない。祈祷の技能が高いほど、ダメージと効果範囲の両方が増す。
+自然の力を呼び起こし、狭い範囲に溶岩、氷、風、瓦礫のいずれかを浴びせる。この爆風があなたや、あなたが呼び出した精霊を傷つけることは決してない。祈祷のスキルが高いほど、ダメージと効果範囲の両方が増す。
 %%%%
 Elemental Force ability
 
@@ -1118,14 +1118,14 @@ Elemental Force ability
 #   Causes your elemental clouds to coalesce into friendly elementals. Your
 #   Invocations skill increases the maximum number of elementals that can be
 #   created with one use of the ability.
-あなたの元素の雲を凝集させ、友好的な精霊に変える。祈祷の技能が高いほど、一度の使用で作り出せる精霊の最大数が増える。
+あなたの元素の雲を凝集させ、友好的な精霊に変える。祈祷のスキルが高いほど、一度の使用で作り出せる精霊の最大数が増える。
 %%%%
 Disaster Area ability
 
 # en:
 #   Blasts the entire area around you with powerful natural forces. Invocations
 #   skill increases both damage and area affected.
-強力な自然の力で、あなたの周囲一帯に一斉に打撃を浴びせる。祈祷の技能が高いほど、ダメージと効果範囲の両方が増す。
+強力な自然の力で、あなたの周囲一帯に一斉に打撃を浴びせる。祈祷のスキルが高いほど、ダメージと効果範囲の両方が増す。
 %%%%
 Draw Out Power ability
 
@@ -1187,14 +1187,14 @@ Sacrifice Stealth ability
 # en:
 #   Sacrifices stealth, causing you to always be noticed by foes and preventing
 #   you from having any ranks in the Stealth skill.
-隠密性を犠牲にする。常に敵に気づかれるようになり、隠密の技能を一切持てなくなる。
+隠密性を犠牲にする。常に敵に気づかれるようになり、隠密のスキルを一切持てなくなる。
 %%%%
 Sacrifice Forms ability
 
 # en:
 #   Sacrifices forms, preventing you from voluntarily changing your form and from
 #   having any ranks in the Shapeshifting skill.
-変身を犠牲にする。自分の意志で姿を変えることができなくなり、変身術の技能を一切持てなくなる。
+変身を犠牲にする。自分の意志で姿を変えることができなくなり、変身術のスキルを一切持てなくなる。
 %%%%
 Sacrifice Artifice ability
 
@@ -1205,9 +1205,9 @@ Sacrifice Artifice ability
 #   This includes wands and other items which use Evocations skill - that is, it does
 #   *not* affect reaching weapons, talismans, and ziggurat figurines. This also renders
 #   magical staves much less effective in melee.
-魔法のアイテムを発動する能力を犠牲にし、発動の技能を一切持てなくなる。
+魔法のアイテムを発動する能力を犠牲にし、発動のスキルを一切持てなくなる。
 
-これには、ワンドなど発動の技能を使うアイテムが含まれる。つまり、長射程の武器、護符、ジグラットの小像には影響*しない*。また、魔法の杖の近接戦闘での効果も大きく下がる。
+これには、ワンドなど発動のスキルを使うアイテムが含まれる。つまり、長射程の武器、護符、ジグラットの小像には影響*しない*。また、魔法の杖の近接戦闘での効果も大きく下がる。
 %%%%
 Sacrifice Love ability
 
@@ -1231,21 +1231,21 @@ Sacrifice Arcana ability
 # en:
 #   Sacrifices arcana, causing you to lose the ability to use certain schools of
 #   magic and preventing you from having any ranks in those skills.
-秘術を犠牲にする。特定の系統の魔法を使う能力を失い、その技能を一切持てなくなる。
+秘術を犠牲にする。特定の系統の魔法を使う能力を失い、そのスキルを一切持てなくなる。
 %%%%
 Sacrifice Nimbleness ability
 
 # en:
 #   Sacrifices nimbleness, preventing you from having any ranks in the Dodging
 #   skill. This sacrifice is worth more if you cannot train Armour.
-敏捷さを犠牲にし、躱し身の技能を一切持てなくなる。甲冑の技能を鍛えられない場合、この犠牲の価値は高くなる。
+敏捷さを犠牲にし、躱し身のスキルを一切持てなくなる。甲冑のスキルを鍛えられない場合、この犠牲の価値は高くなる。
 %%%%
 Sacrifice Durability ability
 
 # en:
 #   Sacrifices durability, preventing you from having any ranks in the Armour
 #   skill. This sacrifice is worth more if you cannot train Dodging.
-頑強さを犠牲にし、甲冑の技能を一切持てなくなる。躱し身の技能を鍛えられない場合、この犠牲の価値は高くなる。
+頑強さを犠牲にし、甲冑のスキルを一切持てなくなる。躱し身のスキルを鍛えられない場合、この犠牲の価値は高くなる。
 %%%%
 Sacrifice a Hand ability
 
@@ -1273,7 +1273,7 @@ Sacrifice Skill ability
 # en:
 #   Sacrifices your skills, causing you to have all of your skill aptitudes
 #   decreased by one. This will likely cause you to lose ranks in trained skills.
-技能を犠牲にし、すべての技能の適性が1下がる。これにより、鍛えた技能のレベルが下がることが多い。
+スキルを犠牲にし、すべてのスキルの適性が1下がる。これにより、鍛えたスキルのレベルが下がることが多い。
 %%%%
 Sacrifice an Eye ability
 
@@ -1307,7 +1307,7 @@ Stomp ability
 #   Stomps down in time with the rhythm of the dance, sending a shockwave through
 #   all adjacent creatures. The shockwave damages each creature by a fraction of
 #   its current health, plus damage increasing with Invocations skill.
-踊りのリズムに合わせて足を踏み下ろし、隣接するすべてのモンスターに衝撃波を送る。衝撃波は各モンスターに、その現在の体力の一定割合に加えて、祈祷の技能に応じて増えるダメージを与える。
+踊りのリズムに合わせて足を踏み下ろし、隣接するすべてのモンスターに衝撃波を送る。衝撃波は各モンスターに、その現在の体力の一定割合に加えて、祈祷のスキルに応じて増えるダメージを与える。
 %%%%
 Line Pass ability
 
@@ -1315,7 +1315,7 @@ Line Pass ability
 #   Passes through a contiguous line of creatures at superhuman speed, ending up
 #   in a new location. Any creatures passed through in this way will be confused
 #   briefly, with the duration of confusion increasing with Invocations skill.
-一列に連なったモンスターの間を超人的な速さで通り抜け、新しい場所に出る。こうして通り抜けられたモンスターは短い間混乱し、混乱の持続時間は祈祷の技能に応じて延びる。
+一列に連なったモンスターの間を超人的な速さで通り抜け、新しい場所に出る。こうして通り抜けられたモンスターは短い間混乱し、混乱の持続時間は祈祷のスキルに応じて延びる。
 %%%%
 Grand Finale ability
 
@@ -1326,7 +1326,7 @@ Grand Finale ability
 #
 #   More violent Uskayaw sects consider their members not to be true worshippers
 #   until they have performed this rite.
-対象と感情的にも肉体的にも一体となり、その体から飛び出して、激しく引き裂いてたちまち殺す。この能力は、信者の信仰心と祈祷の技能が高まるにつれて使いやすくなる。
+対象と感情的にも肉体的にも一体となり、その体から飛び出して、激しく引き裂いてたちまち殺す。この能力は、信者の信仰心と祈祷のスキルが高まるにつれて使いやすくなる。
 
 ウスカヤーのより過激な宗派では、この儀式を行うまで信者を真の崇拝者とはみなさない。
 %%%%
@@ -1352,7 +1352,7 @@ Idealise ability
 #   but dramatic increase in strength, spellcasting, and armour. The quality of the
 #   healing and duration of the idealisation granted are both improved by the
 #   Invocations skill.
-祖霊を、最良の自分という牧歌的な姿へと戻す。その傷は忘れ去られ、完全さの輝きが満ちて、短い間だが筋力、呪文の詠唱、防御力が劇的に高まる。回復の度合いと理想化の持続時間は、どちらも祈祷の技能に応じて向上する。
+祖霊を、最良の自分という牧歌的な姿へと戻す。その傷は忘れ去られ、完全さの輝きが満ちて、短い間だが筋力、呪文の詠唱、防御力が劇的に高まる。回復の度合いと理想化の持続時間は、どちらも祈祷のスキルに応じて向上する。
 %%%%
 Transference ability
 
@@ -1364,7 +1364,7 @@ Transference ability
 #   on Invocations skill.
 指定したモンスターを記憶の領域に通り抜けさせ、あなたの祖霊と位置を入れ替えさせる。
 
-信仰心が高いと、対象の近くにいる者は祈祷の技能に応じた度合いで衰弱する。
+信仰心が高いと、対象の近くにいる者は祈祷のスキルに応じた度合いで衰弱する。
 %%%%
 Ancestor Life: Knight ability
 
@@ -1466,7 +1466,7 @@ Siphon Essence ability
 #   Torments nearby living foes, halving their health. The pain inflicted heals
 #   the user to an extent determined by Shapeshifting skill. After using this
 #   ability, you will be unable to use it again for a short time.
-近くにいる生きた敵を苦しめ、その体力を半分にする。与えた苦痛によって、変身術の技能に応じた分だけ使用者の傷を癒す。この能力を使ったあとは、しばらくの間再び使うことができない。
+近くにいる生きた敵を苦しめ、その体力を半分にする。与えた苦痛によって、変身術のスキルに応じた分だけ使用者の傷を癒す。この能力を使ったあとは、しばらくの間再び使うことができない。
 %%%%
 Evoke the Sceptre of Asmodeus ability
 
@@ -1476,7 +1476,7 @@ Evoke the Sceptre of Asmodeus ability
 #   hostile before vanishing. The success of the ability scales with the Evocations
 #   skill, and this ability is available only while wielding the Sceptre of
 #   Asmodeus.
-アスモデウスの力を呼び起こし、地獄の炎の悪魔たちを召喚する。召喚された悪魔は限られた時間しか友好的でいられず、やがて敵対的になったあとで消え去る。この能力の成功は発動の技能に応じて高まり、アスモデウスの王笏を装備している間しか使えない。
+アスモデウスの力を呼び起こし、地獄の炎の悪魔たちを召喚する。召喚された悪魔は限られた時間しか友好的でいられず、やがて敵対的になったあとで消え去る。この能力の成功は発動のスキルに応じて高まり、アスモデウスの王笏を装備している間しか使えない。
 %%%%
 Evoke Damnation ability
 
@@ -1486,7 +1486,7 @@ Evoke Damnation ability
 #   or resistances. However, certain creatures, usually those able to invoke
 #   damnation themselves, are entirely unscathed by damnation. The power of this
 #   ability scales with the Evocations skill.
-指定した敵に天罰を浴びせる。この不浄な力は対象とその隣にいる者すべてを傷つけ、鎧や耐性などのいかなる防御手段の影響も受けない。ただし、一部のモンスター、主に自らも天罰を呼び起こせる者たちは、天罰を受けてもまったく傷つかない。この能力の威力は発動の技能に応じて高まる。
+指定した敵に天罰を浴びせる。この不浄な力は対象とその隣にいる者すべてを傷つけ、鎧や耐性などのいかなる防御手段の影響も受けない。ただし、一部のモンスター、主に自らも天罰を呼び起こせる者たちは、天罰を受けてもまったく傷つかない。この能力の威力は発動のスキルに応じて高まる。
 %%%%
 Evoke the Staff of Olgreb ability
 
@@ -1495,7 +1495,7 @@ Evoke the Staff of Olgreb ability
 #   everything in line of sight for as long as the aura lasts. The power of this
 #   ability scales with the Evocations skill, and this ability is available only
 #   while wielding the Staff of Olgreb.
-使用者に毒の力を放射させ、オーラが続く限り、視界内のすべてのものに絶えず毒を与える。この能力の威力は発動の技能に応じて高まり、オルグレブの杖を装備している間しか使えない。
+使用者に毒の力を放射させ、オーラが続く限り、視界内のすべてのものに絶えず毒を与える。この能力の威力は発動のスキルに応じて高まり、オルグレブの杖を装備している間しか使えない。
 %%%%
 Jump ability
 
@@ -1534,7 +1534,7 @@ Bestial Takedown ability
 #
 #   Can only target an enemy who is afraid, and who has at least one occupiable tile
 #   adjacent to them.
-捕食者の本能の力をすべて解き放ち、恐慌状態の敵に向かって跳びかかって、獰猛な近接攻撃を加える。この攻撃は、変身術の技能に応じたダメージの倍率を得る。この攻撃で敵を倒すと、そのあとで必ず遠吠えを行う。
+捕食者の本能の力をすべて解き放ち、恐慌状態の敵に向かって跳びかかって、獰猛な近接攻撃を加える。この攻撃は、変身術のスキルに応じたダメージの倍率を得る。この攻撃で敵を倒すと、そのあとで必ず遠吠えを行う。
 
 恐慌状態にあり、隣に少なくとも1つ立ち入れるマスがある敵しか対象にできない。
 %%%%

@@ -1058,7 +1058,7 @@ low-tier stab monstatus
 #   <blue>Melee attacks you make against this creature have a chance (proportional to
 #   your stealth and weapon skill) of catching it off-guard and dealing
 #   increased damage, especially if made with a short blade.</blue>
-<blue>あなたがこの生き物に近接攻撃をすると、(隠密と武器の技能に比例した)一定の確率で不意を突き、増加したダメージを与えられる。短剣で攻撃した場合は特に効果が大きい。</blue>
+<blue>あなたがこの生き物に近接攻撃をすると、(隠密と武器のスキルに比例した)一定の確率で不意を突き、増加したダメージを与えられる。短剣で攻撃した場合は特に効果が大きい。</blue>
 %%%%
 high-tier stab monstatus
 

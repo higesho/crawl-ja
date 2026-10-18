@@ -98,7 +98,7 @@ Escape hatch
 %%%%
 Branch stairs
 
-支部へ通じる階段
+分岐へ通じる階段
 %%%%
 Portal
 
@@ -539,7 +539,7 @@ To see your current standing with %s press <w>^</w>.
 %%%%
 An entryway into one of the many dungeon side branches in Crawl.
 
-クロウルに数多くあるダンジョンの支部の一つへの入口だ。
+クロウルに数多くあるダンジョンの分岐の一つへの入口だ。
 %%%%
 Beware, sometimes these can be deadly!
 
@@ -567,7 +567,7 @@ It is opaque. If two or more opaque clouds are between you and a square, you won
 %%%%
 Did you think you were the only adventurer in the dungeon? Well, you thought wrong! These unique adversaries often possess skills that normal monsters wouldn't, so be careful.
 
-ダンジョンにいる冒険者は自分一人だと思っていただろうか？ それは間違いだ！ こうした唯一無二の敵は、普通のモンスターにはない技能を持っていることが多いので、気をつけること。
+ダンジョンにいる冒険者は自分一人だと思っていただろうか？ それは間違いだ！ こうした唯一無二の敵は、普通のモンスターにはないスキルを持っていることが多いので、気をつけること。
 %%%%
 The ghost of a deceased adventurer, it would like nothing better than to send you the same way.
 

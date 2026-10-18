@@ -525,7 +525,7 @@ bool fill_status_info(int status, status_info& inf)
         string skills = manual_skill_names();
         if (!skills.empty())
         {
-            // manual_skill_names() は日本語の技能名を返す
+            // manual_skill_names() は日本語のスキル名を返す
             inf.short_text = make_stringf(tagged_jtransc("[dur]", "studying %s"),
                                           manual_skill_names(true).c_str());
             inf.long_text = make_stringf(jtransc("You are studying %s."),

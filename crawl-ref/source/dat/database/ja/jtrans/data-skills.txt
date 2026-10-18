@@ -1,11 +1,11 @@
-# data-skills.txt: 技能名 [skill]<名前> と称号 [title]<称号>
+# data-skills.txt: スキル名 [skill]<名前> と称号 [title]<称号>
 # 出典: skills.cc (skill_titles, martial_arts_titles, claw_and_tooth_titles,
 #       _stk_weight, special_conduct_title, skill_title_by_rank) と
 #       describe-god.cc (divine_title。神ごとの称号) (0.34)
 # @Adj@ @Genus@ @genus@ @Genus_Short@ @Walker@ @Walking@ @Weight@ @Child@ は訳の中に残す。
 # 置換する値は data-species.txt の [spec adj] [spec genus] [walker] [walking] [child]
 # と、ここの [title]Heavy などの体重級を使う想定。
-# 同じ英語の称号が技能称号と神の称号の両方にある場合(Firebug, Apostate, Priest, Jester など)は 1 つの訳を共有する。
+# 同じ英語の称号がスキル称号と神の称号の両方にある場合(Firebug, Apostate, Priest, Jester など)は 1 つの訳を共有する。
 
 %%%%
 [skill]Fighting
@@ -2024,7 +2024,7 @@
 
 業火
 %%%%
-# 第2陣で追加: 技能の略称(ルーの魔術の犠牲など)
+# 第2陣で追加: スキルの略称(ルーの魔術の犠牲など)
 [skill abbr]Conj
 
 妖術

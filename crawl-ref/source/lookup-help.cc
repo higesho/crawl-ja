@@ -1377,8 +1377,8 @@ static string _branch_location(branch_type br)
     // Ziggurat locations are explained in the description.
     if (parent != NUM_BRANCHES && br != BRANCH_ZIGGURAT)
     {
-        // 日本語では「〜の第%d階層」と支部名が先に来るので、
-        // 支部名を先に渡す形の文を引く
+        // 日本語では「〜の第%d階層」と分岐名が先に来るので、
+        // 分岐名を先に渡す形の文を引く
         const string parent_name = branch_name_j(branches[parent].longname);
         desc = "\n\n";
         if (min == max)

@@ -125,7 +125,7 @@ pain (pain) weapon ego
 #           return " Your inability to study Necromancy prevents you from drawing on the full power of this weapon.";
 #       end
 #   }}
-生きている相手に、あなたの死霊術の技能に比例した追加のダメージを与える。{{
+生きている相手に、あなたの死霊術のスキルに比例した追加のダメージを与える。{{
     if you.god() == "Trog" then
         return "トログはあなたがこの効果を解き放つのを許さない。";
     end
@@ -235,7 +235,7 @@ command (Command) armour ego
 # en:
 #   It improves the power and success of your Summoning spells in proportion to your
 #   Armour skill.
-あなたの甲冑の技能に比例して、召喚術の呪文の威力と成功率を高める。
+あなたの甲冑のスキルに比例して、召喚術の呪文の威力と成功率を高める。
 %%%%
 corrosion resistance (rCorr) armour ego
 
@@ -268,7 +268,7 @@ energy (Energy) armour ego
 #   It may return the magic spent to cast spells, but lowers their success rate. It
 #   always returns the magic spent on miscasts. The spell refund chance is increased
 #   by your Evocations skill.
-呪文の詠唱に費やした魔力を戻すことがあるが、呪文の成功率を下げる。詠唱に失敗したときは、費やした魔力を必ず戻す。魔力が戻る確率は、あなたの発動の技能によって高まる。
+呪文の詠唱に費やした魔力を戻すことがあるが、呪文の成功率を下げる。詠唱に失敗したときは、費やした魔力を必ず戻す。魔力が戻る確率は、あなたの発動のスキルによって高まる。
 %%%%
 fire (Fire) armour ego
 
@@ -294,14 +294,14 @@ glass (Glass) armour ego
 #   It may vitrify enemies when you injure them, making them more vulnerable to
 #   further damage. Your Evocations skill increases the likelihood and duration of
 #   vitrification.
-敵を傷つけたとき、相手をガラス化させてさらなるダメージを受けやすくすることがある。ガラス化の確率と持続時間は、あなたの発動の技能によって高まる。
+敵を傷つけたとき、相手をガラス化させてさらなるダメージを受けやすくすることがある。ガラス化の確率と持続時間は、あなたの発動のスキルによって高まる。
 %%%%
 guile (Guile) armour ego
 
 # en:
 #   It weakens both your willpower and the willpower of everyone you hex, the latter
 #   of which is increased by your Evocations skill.
-あなた自身の意志力と、あなたが呪術をかける相手すべての意志力を弱める。後者の効果は、あなたの発動の技能によって高まる。
+あなた自身の意志力と、あなたが呪術をかける相手すべての意志力を弱める。後者の効果は、あなたの発動のスキルによって高まる。
 %%%%
 harm (Harm) armour ego
 
@@ -361,7 +361,7 @@ mesmerism (Mesmerism) armour ego
 #   When you are struck in melee, it briefly dazes all nearby enemies, then must
 #   recharge by standing still for a while. Its duration, radius, and recharge
 #   speed are improved by your Evocations skill.
-あなたが近接攻撃を受けると、周囲のすべての敵を短時間眩惑させる。その後は、しばらくじっとしていなければ再び使えない。効果の持続時間、範囲、再使用までの速さは、あなたの発動の技能によって向上する。
+あなたが近接攻撃を受けると、周囲のすべての敵を短時間眩惑させる。その後は、しばらくじっとしていなければ再び使えない。効果の持続時間、範囲、再使用までの速さは、あなたの発動のスキルによって向上する。
 %%%%
 parrying (Parrying) armour ego
 
@@ -401,7 +401,7 @@ pyromania (Pyromania) armour ego
 #   whenever you kill an enemy by any means other than an attack. The explosion
 #   chance and damage both scale with Evocations and it may trigger no more than
 #   once each turn.
-あなたの炎の魔術の力を強め、攻撃以外の手段で敵を倒すたびに、あなたの周囲に炎の爆発を起こすことがある。爆発の確率とダメージはどちらも発動の技能に応じて増え、爆発は1ターンに1回までしか起こらない。
+あなたの炎の魔術の力を強め、攻撃以外の手段で敵を倒すたびに、あなたの周囲に炎の爆発を起こすことがある。爆発の確率とダメージはどちらも発動のスキルに応じて増え、爆発は1ターンに1回までしか起こらない。
 %%%%
 rampaging (Rampage) armour ego
 
@@ -433,7 +433,7 @@ resonance (Resonance) armour ego
 # en:
 #   It improves the success rate of your Forgecraft spells and enhances your melee
 #   attacks proportionally to your Forgecraft skill.
-あなたの鍛造術の呪文の成功率を高め、鍛造術の技能に比例してあなたの近接攻撃を強化する。
+あなたの鍛造術の呪文の成功率を高め、鍛造術のスキルに比例してあなたの近接攻撃を強化する。
 %%%%
 see invisible (SInv) armour ego
 
@@ -469,7 +469,7 @@ stardust (Stardust) armour ego
 #   spell or ability each battle, recharging only when your MP is restored and no
 #   more enemies remain. Your Evocations skill increases the number and damage of
 #   the stars and MP spent further increases damage.
-戦闘ごとに、初めてMPを消費して呪文や能力を使ったとき、流れ星の弾幕を呼び出す。MPが回復し、敵が残っていない状態になって初めて再び使えるようになる。流れ星の数とダメージはあなたの発動の技能によって増え、消費したMPが多いほどダメージはさらに増える。
+戦闘ごとに、初めてMPを消費して呪文や能力を使ったとき、流れ星の弾幕を呼び出す。MPが回復し、敵が残っていない状態になって初めて再び使えるようになる。流れ星の数とダメージはあなたの発動のスキルによって増え、消費したMPが多いほどダメージはさらに増える。
 %%%%
 stealth (Stlth+) armour ego
 
@@ -510,7 +510,7 @@ atropa-tipped (atropa) missile ego
 #   Stealth skill.
 先端に、盲目と短時間の混乱を引き起こす物質が塗られている。
 
-効果を与えられる確率は、あなたの投擲と隠密の技能に応じて高まる。
+効果を与えられる確率は、あなたの投擲と隠密のスキルに応じて高まる。
 %%%%
 chaos (chaos) missile ego
 
@@ -539,7 +539,7 @@ datura-tipped (datura) missile ego
 #   Stealth skill.
 先端に、命中した相手を我を忘れた狂乱状態に陥らせ、敵味方の区別なく襲いかからせる物質が塗られている。
 
-効果を与えられる確率は、あなたの投擲と隠密の技能に応じて高まる。
+効果を与えられる確率は、あなたの投擲と隠密のスキルに応じて高まる。
 %%%%
 disjunction (disjunct) missile ego
 

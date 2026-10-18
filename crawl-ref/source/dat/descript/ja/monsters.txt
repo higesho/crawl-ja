@@ -112,7 +112,7 @@ Dowan
 #   A beautiful but vain deep elf with an aptitude for magic and little else. His
 #   skills are the perfect complement of his twin sister Duvessa's fighting prowess.
 #   In search of more powerful spells, he journeys to the surface with his sister.
-美しいが自惚れの強い闇エルフで、魔法の才能はあるが、それ以外にはほとんど取り柄がない。彼の技能は、双子の妹デュヴェッサの戦闘能力を完璧に補っている。より強力な呪文を求めて、彼は妹とともに地上へと旅をしている。
+美しいが自惚れの強い闇エルフで、魔法の才能はあるが、それ以外にはほとんど取り柄がない。彼のスキルは、双子の妹デュヴェッサの戦闘能力を完璧に補っている。より強力な呪文を求めて、彼は妹とともに地上へと旅をしている。
 %%%%
 Duvessa
 
@@ -121,7 +121,7 @@ Duvessa
 #   combat, but over-confident because of it. She is complemented by the magical
 #   skills of her twin brother, Dowan. She journeys to the surface to challenge
 #   its greatest champions.
-見た目は平凡な闇エルフの戦士で、多くの戦闘形式において技術的には卓越しているが、そのせいで自信過剰になっている。双子の兄ドウェンの魔法の技能が彼女を補っている。彼女は地上の最も偉大な勇者たちに挑むために旅をしている。
+見た目は平凡な闇エルフの戦士で、多くの戦闘形式において技術的には卓越しているが、そのせいで自信過剰になっている。双子の兄ドウェンの魔法のスキルが彼女を補っている。彼女は地上の最も偉大な勇者たちに挑むために旅をしている。
 %%%%
 Edmund
 
@@ -4011,7 +4011,7 @@ player ghost
 #   abilities the adventurer had in life. It is condemned to haunt this particular
 #   level of the dungeons, lashing out violently at the next adventurer to cross
 #   its path.
-不運な冒険者の亡霊で、その冒険者が生前に持っていた技能や能力の多くを保っている。ダンジョンのこの階に取り憑くよう呪われており、次に行く手を横切る冒険者に激しく襲いかかる。
+不運な冒険者の亡霊で、その冒険者が生前に持っていたスキルや能力の多くを保っている。ダンジョンのこの階に取り憑くよう呪われており、次に行く手を横切る冒険者に激しく襲いかかる。
 %%%%
 polar bear
 

@@ -215,7 +215,7 @@ No targets found!
 # 行動選択メニュー
 [<w>*/%</w>] inventory
 
-[<w>*/%</w>] 持ち物
+[<w>*/%</w>] 所持品
 %%%%
 [<w>&</w>] all spells
 

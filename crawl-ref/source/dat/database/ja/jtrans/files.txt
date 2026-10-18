@@ -45,11 +45,11 @@ Generating dungeon...
 %%%%
 building a lair branch
 
-獣の巣の支部を構築中
+獣の巣の分岐を構築中
 %%%%
 building another lair branch
 
-獣の巣のもう一つの支部を構築中
+獣の巣のもう一つの分岐を構築中
 %%%%
 building %s
 

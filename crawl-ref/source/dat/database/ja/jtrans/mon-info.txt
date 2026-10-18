@@ -775,7 +775,7 @@ Speed: %d%%
 %%%%
 [info]launcher
 
-射出武器
+射撃武器
 %%%%
 [info]missile
 

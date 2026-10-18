@@ -79,11 +79,11 @@ Donated %d gold pieces to Zin
 %%%%
 Skill %s reached level %d
 
-%sの技能レベルが%dに達した
+%sのスキルレベルが%dに達した
 %%%%
 Reduced skill %s to level %d
 
-%sの技能レベルを%dに下げた
+%sのスキルレベルを%dに下げた
 %%%%
 Encountered %s
 

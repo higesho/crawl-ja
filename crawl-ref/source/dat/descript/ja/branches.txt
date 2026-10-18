@@ -79,7 +79,7 @@ Swamp
 #   A dungeon features only one of the Swamp and Shoals branches.
 じめじめとした荒れ地である沼は、軟泥、ぬかるみ、蝿、そしてよだれを垂らした大型の肉食モンスターで満ちている。
 
-ひとつの迷宮には、沼と浅瀬のうちどちらか一方の支部しかない。
+ひとつの迷宮には、沼と浅瀬のうちどちらか一方の分岐しかない。
 %%%%
 Shoals
 
@@ -91,7 +91,7 @@ Shoals
 #   A dungeon features only one of the Shoals and Swamp branches.
 浅瀬の異国めいた地下の浜辺は、果てしなく続くかのような海に浮かぶいくつかの小島からなる。マーフォークがここを住処とし、多くの恐ろしい海の生き物とともに暮らしている。
 
-ひとつの迷宮には、浅瀬と沼のうちどちらか一方の支部しかない。
+ひとつの迷宮には、浅瀬と沼のうちどちらか一方の分岐しかない。
 %%%%
 Snake Pit
 
@@ -102,7 +102,7 @@ Snake Pit
 #   A dungeon features only one of the Snake Pit and Spider Nest branches.
 蛇穴の通路にはあらゆる種類の蛇が棲み、強力なナーガとサラマンダーの社会がある。
 
-ひとつの迷宮には、蛇穴と蜘蛛の穴ぐらのうちどちらか一方の支部しかない。
+ひとつの迷宮には、蛇穴と蜘蛛の穴ぐらのうちどちらか一方の分岐しかない。
 %%%%
 Spider Nest
 
@@ -113,7 +113,7 @@ Spider Nest
 #   A dungeon features only one of the Spider Nest and Snake Pit branches.
 崩れかけ、蜘蛛の巣に覆われた蜘蛛の穴ぐらの洞窟は、毒を持つ節足動物や、さまざまな気味の悪い這い回るものでぎっしりだ。
 
-ひとつの迷宮には、蜘蛛の穴ぐらと蛇穴のうちどちらか一方の支部しかない。
+ひとつの迷宮には、蜘蛛の穴ぐらと蛇穴のうちどちらか一方の分岐しかない。
 %%%%
 Slime Pits
 

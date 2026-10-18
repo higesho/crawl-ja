@@ -162,7 +162,7 @@ Your movement is slowed on this liquid ground.
 
 MP再生(%d)
 %%%%
-# %s は日本語の技能名(manual_skill_names())
+# %s は日本語のスキル名(manual_skill_names())
 [dur]studying %s
 
 %s習得中
@@ -294,12 +294,12 @@ Your life force is lightly drained.
 
 買収中
 %%%%
-# %s は支部名を「、」でつないだもの
+# %s は分岐名を「、」でつないだもの
 [dur]bribing [%s]
 
 買収中 [%s]
 %%%%
-# %s は支部名を「と」「、」でつないだもの
+# %s は分岐名を「と」「、」でつないだもの
 You are bribing %s.
 
 あなたは%sを買収している。

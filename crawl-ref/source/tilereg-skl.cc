@@ -47,7 +47,7 @@ void SkillRegion::draw_tag()
 
     string progress = "";
 
-    // 日本語の技能名は "%-14s"(バイト数)では揃わないので表示幅で詰める
+    // 日本語のスキル名は "%-14s"(バイト数)では揃わないので表示幅で詰める
     string desc = make_stringf(jtransc("%s Skill %4.1f Aptitude %c%d"),
                                chop_string(skill_name_j(skill), 14).c_str(),
                                you.skill(skill, 10) / 10.0,

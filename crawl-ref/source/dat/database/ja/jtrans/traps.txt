@@ -281,7 +281,7 @@ The trap seems to be inoperative.
 
 この罠は作動しないようだ。
 %%%%
-# 引数: 支部の長い名前([branch])
+# 引数: 分岐の長い名前([branch])
 A malevolent force fills %s...
 
 悪意ある力が%sに満ちた……

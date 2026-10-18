@@ -82,7 +82,7 @@ amulet of wildshape
 
 # en:
 #   An amulet which improves its wearer's skill with Shapeshifting.
-着用者の変身術の技能を高める護符だ。
+着用者の変身術のスキルを高める護符だ。
 %%%%
 animal skin
 
@@ -147,7 +147,7 @@ blade talisman
 #   fragments of metal inside one's body reduces the effectiveness of body armour,
 #   but Shapeshifting skill mitigates this effect as well as increases the damage
 #   dealt.
-ぎざぎざの刃が寄り集まったもので、怪我をせずに握るのはほとんど不可能だ。着用者の体から長く針のように細い刃を生やし、素早い補助の近接攻撃を繰り出したり、攻撃を受け流したりすることさえできるようにする。体の中にこれほど多くの金属片があると胴鎧の効果が下がるが、変身術の技能はこの影響を和らげるとともに、与えるダメージも増やす。
+ぎざぎざの刃が寄り集まったもので、怪我をせずに握るのはほとんど不可能だ。着用者の体から長く針のように細い刃を生やし、素早い補助の近接攻撃を繰り出したり、攻撃を受け流したりすることさえできるようにする。体の中にこれほど多くの金属片があると胴鎧の効果が下がるが、変身術のスキルはこの影響を和らげるとともに、与えるダメージも増やす。
 %%%%
 book of air
 
@@ -691,7 +691,7 @@ box of beasts
 #    * Weird beasts can see invisible and attack with constricting tentacles.
 #
 #   As far as anyone knows, all beasts have exactly two of these traits.
-堕落した魔法使いが行った魔法の実験の、奇怪な残り物が詰まった箱だ。開けると、友好的な変異獣を解き放つことがある。変異獣とは、それぞれが独自の特徴の組み合わせを持つ奇怪な生き物である。発動の技能が高まるほど、より強い獣を解き放てるようになる。
+堕落した魔法使いが行った魔法の実験の、奇怪な残り物が詰まった箱だ。開けると、友好的な変異獣を解き放つことがある。変異獣とは、それぞれが独自の特徴の組み合わせを持つ奇怪な生き物である。発動のスキルが高まるほど、より強い獣を解き放てるようになる。
 
 知られている特徴は6つある。
  * コウモリの獣は空を飛び、とても素早く動くが、その動きは不規則だ。
@@ -765,7 +765,7 @@ condenser vane
 #   roaring flames, freezing vapours, and poisonous gas. At the highest tiers of
 #   power storm clouds, acidic fog and clouds of excruciating misery become
 #   available.
-周囲のエネルギーを凝縮して、さまざまな破壊的な雲にする魔法の道具だ。発動すると、使用者の近くにいる敵対的なモンスターの周りにこれらの雲が発生する。雲の量と致死性は発動の技能に応じて増す。威力が低いと悪臭の雲が生じ、威力が上がるにつれて、燃えさかる炎、凍てつく大気、毒ガスへと変わっていく。最も高い威力の段階では、嵐雲、酸性の霧、耐えがたい苦悶の雲も生じるようになる。
+周囲のエネルギーを凝縮して、さまざまな破壊的な雲にする魔法の道具だ。発動すると、使用者の近くにいる敵対的なモンスターの周りにこれらの雲が発生する。雲の量と致死性は発動のスキルに応じて増す。威力が低いと悪臭の雲が生じ、威力が上がるにつれて、燃えさかる炎、凍てつく大気、毒ガスへと変わっていく。最も高い威力の段階では、嵐雲、酸性の霧、耐えがたい苦悶の雲も生じるようになる。
 %%%%
 corpse
 
@@ -1029,7 +1029,7 @@ gell's gravitambourine
 
 音楽が人々を結びつけるように、正しいリズムで振ると、多数のモンスターを狭い空間に引き寄せ、敵対的なものを逃れられない重力の波で押しつぶし、短い間その場に縫いとめる。
 
-効果範囲と持続時間は発動の技能に応じて増す。
+効果範囲と持続時間は発動のスキルに応じて増す。
 %%%%
 gem
 
@@ -1047,7 +1047,7 @@ gem
 #   Once the Orb of Zot is taken, Zot will be unable to smash any gems.
 この世のものとは思えないほど美しく、迷宮の外ではほとんど計り知れない価値を持つ石だ。迷宮の中では、まったく何の役にも立たない。
 
-ゾットはこれらの宝石を貪欲に溜め込んでおり、冒険者が宝石の眠る迷宮の支部に足を踏み入れると、間もなく意地悪くそれを打ち砕いてしまう。それでも、非常に素早く動く冒険者なら、先にひとつ手に入れて、その貴重なかけらを確保できるかもしれない。ゾットは本来の支部の外にある宝石を追跡できないので、本当に驚異的な速さがあれば、ひとつを無傷のまま持ち去ることもできるかもしれない……もっとも、そんな偉業は信じがたく、おまけにおそらく無意味だろう。
+ゾットはこれらの宝石を貪欲に溜め込んでおり、冒険者が宝石の眠る迷宮の分岐に足を踏み入れると、間もなく意地悪くそれを打ち砕いてしまう。それでも、非常に素早く動く冒険者なら、先にひとつ手に入れて、その貴重なかけらを確保できるかもしれない。ゾットは本来の分岐の外にある宝石を追跡できないので、本当に驚異的な速さがあれば、ひとつを無傷のまま持ち去ることもできるかもしれない……もっとも、そんな偉業は信じがたく、おまけにおそらく無意味だろう。
 
 ゾットのオーブが持ち去られると、ゾットはもう宝石を打ち砕くことができなくなる。
 %%%%
@@ -1089,7 +1089,7 @@ granite talisman
 #   Transforms the wearer into a slow, stone statue. The wearer's stone body is
 #   immune to poison and miasma, and gains resistance to electricity, negative
 #   energy, and torment. Shapeshifting skill increases armour granted.
-忘れ去られて久しいどこかの王か神の顔が刻まれた、重い石の像だ。着用者を動きの遅い石の像に変える。着用者の石の体は毒と瘴気を受けつけず、電撃、負のエネルギー、苦痛への耐性を得る。変身術の技能に応じて、得られる防御力が増す。
+忘れ去られて久しいどこかの王か神の顔が刻まれた、重い石の像だ。着用者を動きの遅い石の像に変える。着用者の石の体は毒と瘴気を受けつけず、電撃、負のエネルギー、苦痛への耐性を得る。変身術のスキルに応じて、得られる防御力が増す。
 %%%%
 grand grimoire
 
@@ -1191,7 +1191,7 @@ horn of Geryon
 #   The horn belonging to Geryon, guardian of the Vestibule of Hell. It has the
 #   power to call forth demonic beasts. With high Evocations skill, it will call
 #   greater numbers of beasts, with lower chances of those beasts being hostile.
-地獄の入り口の番人ゲリュオンの角笛だ。悪魔の獣を呼び出す力を持つ。発動の技能が高いほど、より多くの獣を呼び出し、その獣が敵対する確率も低くなる。
+地獄の入り口の番人ゲリュオンの角笛だ。悪魔の獣を呼び出す力を持つ。発動のスキルが高いほど、より多くの獣を呼び出し、その獣が敵対する確率も低くなる。
 %%%%
 sling
 
@@ -1218,7 +1218,7 @@ inkwell talisman
 #
 #   Its attacks are also very weak, but have a chance of restoring 1 MP when they
 #   hit.
-神秘のインクで満たされた小瓶だ。着用者を、体に百人の魔術師の知識が刺青された歩く巻物に変える。魔法の技法の集大成となることで、すべての呪文系統の技能が高まり、それは変身術の技能に応じてさらに向上する。しかし、この形態がそうした魔法を導く力には限りがあり、レベル4を超える呪文は唱えられない。
+神秘のインクで満たされた小瓶だ。着用者を、体に百人の魔術師の知識が刺青された歩く巻物に変える。魔法の技法の集大成となることで、すべての呪文系統のスキルが高まり、それは変身術のスキルに応じてさらに向上する。しかし、この形態がそうした魔法を導く力には限りがあり、レベル4を超える呪文は唱えられない。
 
 その攻撃もとても弱いが、命中すると1MPを回復することがある。
 %%%%
@@ -1313,7 +1313,7 @@ lightning rod
 #   power level up to four times and allows the blast to be redirected to affect an
 #   area. The strength of the blast increases with Evocations skill and, for
 #   redirected blasts, decreases with the size of the affected area.
-使い手が回避不能な稲妻の一撃を放てるようにするロッドだ。続けて発動すると放電が持続し、威力が最大4倍まで高まり、稲妻の向きを変えて範囲を攻撃できるようになる。稲妻の強さは発動の技能に応じて増し、向きを変えた場合は効果範囲が広いほど弱くなる。
+使い手が回避不能な稲妻の一撃を放てるようにするロッドだ。続けて発動すると放電が持続し、威力が最大4倍まで高まり、稲妻の向きを変えて範囲を攻撃できるようになる。稲妻の強さは発動のスキルに応じて増し、向きを変えた場合は効果範囲が広いほど弱くなる。
 %%%%
 long sword
 
@@ -1348,7 +1348,7 @@ manual
 
 # en:
 #   A valuable book which allows one to learn a certain skill faster.
-特定の技能をより早く習得できるようにする貴重な本だ。
+特定のスキルをより早く習得できるようにする貴重な本だ。
 %%%%
 maxwell's memoranda
 
@@ -1504,7 +1504,7 @@ phantom mirror
 #   in the process. The reflection's duration increases with Evocations skill and
 #   decreases with the willpower of the target. It is, invariably, slightly weaker
 #   than the creature it mirrors.
-近くにいる生き物の分身を作り出せる手鏡で、その際に鏡は曇ってしまう。分身の持続時間は発動の技能に応じて延び、対象の意志力が高いほど短くなる。分身は決まって、元の生き物よりもわずかに弱い。
+近くにいる生き物の分身を作り出せる手鏡で、その際に鏡は曇ってしまう。分身の持続時間は発動のスキルに応じて延び、対象の意志力が高いほど短くなる。分身は決まって、元の生き物よりもわずかに弱い。
 %%%%
 phial of floods
 
@@ -1514,7 +1514,7 @@ phial of floods
 #   engulfed by the wave need air to breathe, they'll be unable to cast spells until
 #   they recover. The strength of the torrent and the duration of the flooding
 #   increase with Evocations skill.
-元素の水が込められた魔法の器だ。栓を抜くと激流が解き放たれ、標的を打ちのめし、周囲を水浸しにする。波に飲み込まれた生き物が呼吸に空気を必要とするなら、回復するまで呪文を唱えられなくなる。激流の強さと浸水の持続時間は、発動の技能に応じて増す。
+元素の水が込められた魔法の器だ。栓を抜くと激流が解き放たれ、標的を打ちのめし、周囲を水浸しにする。波に飲み込まれた生き物が呼吸に空気を必要とするなら、回復するまで呪文を唱えられなくなる。激流の強さと浸水の持続時間は、発動のスキルに応じて増す。
 %%%%
 plate armour
 
@@ -1675,7 +1675,7 @@ protean talisman
 #   transform it into a random one of: Rimehorn, Scarab, Medusa, or Spore talismans.)
 何か原初のものの、絶えず変化し続けるかけらだ。その物質は肉と骨の間を、ひょっとすると金属までも行き来して揺らいでいるように見える。十分に熟練した変身術師なら、これを使用可能な(ただし予測できない)形に安定させることができる。
 
-(変身術の技能が6以上なら、これを身につけようとすると、霜角、スカラベ、メデューサ、胞子のタリスマンのいずれかにランダムに変化する。)
+(変身術のスキルが6以上なら、これを身につけようとすると、霜角、スカラベ、メデューサ、胞子のタリスマンのいずれかにランダムに変化する。)
 %%%%
 quad damage
 
@@ -1888,7 +1888,7 @@ sack of spiders
 # en:
 #   A woven silk bag. Opening it will cover the area with webs, spiders, and other
 #   skittering things. Evocations skill increases spider quality, quantity and webbing.
-絹で織られた袋だ。開けると、辺り一面を蜘蛛の巣と蜘蛛と、その他の這い回るもので覆い尽くす。発動の技能に応じて、蜘蛛の質と数、蜘蛛の巣の量が増す。
+絹で織られた袋だ。開けると、辺り一面を蜘蛛の巣と蜘蛛と、その他の這い回るもので覆い尽くす。発動のスキルに応じて、蜘蛛の質と数、蜘蛛の巣の量が増す。
 %%%%
 sacred scourge
 
@@ -1963,7 +1963,7 @@ scroll of acquirement
 #   reader choosing from a small selection. The items offered will often be a
 #   good match for the reader's skills; and if nothing recommends itself, the
 #   reader can always choose a heap of gold.
-価値あるアイテムを作り出す素晴らしい巻物で、読んだ者は少数の候補の中から選ぶことができる。示されるアイテムは読んだ者の技能によく合ったものであることが多い。そして、気に入るものがなければ、いつでも金貨の山を選ぶことができる。
+価値あるアイテムを作り出す素晴らしい巻物で、読んだ者は少数の候補の中から選ぶことができる。示されるアイテムは読んだ者のスキルによく合ったものであることが多い。そして、気に入るものがなければ、いつでも金貨の山を選ぶことができる。
 %%%%
 scroll of amnesia
 
@@ -2177,7 +2177,7 @@ shop voucher
 #   generous! No refunds. One coupon per purchase per customer. Offer limited by
 #   availability. Void if defaced or otherwise altered. Valid only within the
 #   dungeon of Zot and its subsidiary branches. Additional purchase not required.
-迷宮のどの店でも、どんな値段の品物でもひとつと引き換えられる引換券で、所持金を超える買い物をしようとすると自動的に使われる。なんと太っ腹！ 返品不可。お一人様一回のお買い物につき一枚限り。在庫限り。汚損・改変されたものは無効。ゾットの迷宮およびその支部においてのみ有効。追加のご購入は不要。
+迷宮のどの店でも、どんな値段の品物でもひとつと引き換えられる引換券で、所持金を超える買い物をしようとすると自動的に使われる。なんと太っ腹！ 返品不可。お一人様一回のお買い物につき一枚限り。在庫限り。汚損・改変されたものは無効。ゾットの迷宮およびその分岐においてのみ有効。追加のご購入は不要。
 %%%%
 shortbow
 
@@ -2229,7 +2229,7 @@ spore talisman
 #   as cause mushrooms to sprout on the ground behind them which will release their
 #   own bursts of dazing spores if allowed to grow. Shapeshifting skill increases
 #   the durability of these mushrooms as well as their damage.
-まだ生きているキノコで作られた小さなお守りだ。着用者の片腕と下半身の一部を、色とりどりの菌類の活き活きとした塊に変える。この姿での近接攻撃は相手を弱らせる胞子を放つことがあり、また背後の地面にキノコを生やすこともある。そのキノコは育つと、眩惑させる胞子をそれ自身でも噴き出す。変身術の技能に応じて、キノコの耐久力とダメージが増す。
+まだ生きているキノコで作られた小さなお守りだ。着用者の片腕と下半身の一部を、色とりどりの菌類の活き活きとした塊に変える。この姿での近接攻撃は相手を弱らせる胞子を放つことがあり、また背後の地面にキノコを生やすこともある。そのキノコは育つと、眩惑させる胞子をそれ自身でも噴き出す。変身術のスキルに応じて、キノコの耐久力とダメージが増す。
 %%%%
 staff of air
 
@@ -2363,7 +2363,7 @@ talisman of death
 #   They are vulnerable to holy damage and Dispel Undead, and cannot consume potions.
 おぞましい儀式によって闇の力を吹き込まれた、灰黒色の器だ。着用者を、生命そのものに対する不死の冒涜へと変える。
 
-着用者の近接武器や手で打たれた敵は、弱体化し、減速し、生命力を吸い取られる。着用者は近くの生きている敵に苦痛を与えて自らを癒すこともでき、変身術の技能に応じて回復量が増す。さらに、着用者は冷気への耐性を持ち、意志力が高まり、毒、瘴気、負のエネルギー、苦痛を受けつけない。
+着用者の近接武器や手で打たれた敵は、弱体化し、減速し、生命力を吸い取られる。着用者は近くの生きている敵に苦痛を与えて自らを癒すこともでき、変身術のスキルに応じて回復量が増す。さらに、着用者は冷気への耐性を持ち、意志力が高まり、毒、瘴気、負のエネルギー、苦痛を受けつけない。
 
 また、着用者はアンデッドの体を持つことによる、より疑わしい「恩恵」もいくつか受ける。聖なるダメージとアンデッドの解呪に弱くなり、薬を飲めなくなる。
 %%%%
@@ -2401,7 +2401,7 @@ tin of tremorstones
 #   repelling the lightweight fragments of rock from a tremorstone's explosion, so
 #   a well-armoured wielder has little to fear. Evocations skill increases the
 #   number of explosions.
-小さくてとても重い小石の姿をした、眠っている磁気を帯びた大地の精霊たちのひと揃いだ。解き放たれると、精霊たちは近くのモンスターたちの中心へと磁力で引き寄せられ、眠りを妨げられた怒りで文字どおり爆発する。震動石はたいてい狙いを少し外れて落ち、使用者は常に巻き込まれる危険がある。しかし、震動石の爆発で飛び散る軽い岩のかけらは鎧で非常によく防げるので、十分に鎧を着込んだ使い手ならほとんど恐れることはない。発動の技能に応じて、爆発の回数が増す。
+小さくてとても重い小石の姿をした、眠っている磁気を帯びた大地の精霊たちのひと揃いだ。解き放たれると、精霊たちは近くのモンスターたちの中心へと磁力で引き寄せられ、眠りを妨げられた怒りで文字どおり爆発する。震動石はたいてい狙いを少し外れて落ち、使用者は常に巻き込まれる危険がある。しかし、震動石の爆発で飛び散る軽い岩のかけらは鎧で非常によく防げるので、十分に鎧を着込んだ使い手ならほとんど恐れることはない。発動のスキルに応じて、爆発の回数が増す。
 %%%%
 treatise on traps
 

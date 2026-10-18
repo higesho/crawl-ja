@@ -79,10 +79,10 @@ tutorial1 levelmap
 いったい何事でしょうか？ あなたがどこにいるかを知るには、
 <tiles>画面右の<w>ミニマップ</w>を見てください。</tiles>
 <localtiles>あなたはマップを<input>右クリック</input>で詳細に見ることができ、
-<input>左クリック</input>で指定した地点までトラベルすることができます。
+<input>左クリック</input>で指定した地点まで自動移動することができます。
 </localtiles>
 <webtiles></webtiles>
-<nomouse><input>$cmd[CMD_DISPLAY_MAP]</input>で階層マップが閲覧でき、
+<nomouse><input>$cmd[CMD_DISPLAY_MAP]</input>で階のマップが閲覧でき、
 カーソルを動かしてマップを見渡すことができます。
 <input>.</input>、 または<input>Enter</input>を押すことで、
 カーソルのある地点まで自動的に移動することもできます。
@@ -228,14 +228,14 @@ tutorial1 exit
 <yellow>階段</yellow>
   <input>$cmd[CMD_GO_UPSTAIRS]</input>  前の階層へ戻る
   <input>$cmd[CMD_GO_DOWNSTAIRS]</input>  次の階層へ進む
-  <input>$cmd[CMD_DISPLAY_MAP]></input>/<input>$cmd[CMD_DISPLAY_MAP]<<</input> 最寄りの上り/下り階段へトラベル
+  <input>$cmd[CMD_DISPLAY_MAP]></input>/<input>$cmd[CMD_DISPLAY_MAP]<<</input> 最寄りの上り/下り階段へ自動移動
 
 <yellow>扉</yellow>は、その方向へ移動すると開く
   <input>$cmd[CMD_CLOSE_DOOR]</input>  開いた扉を閉める
 
-<yellow>トラベル</yellow><localtiles>
+<yellow>自動移動</yellow><localtiles>
   <w>ミニマップ</w>上をクリック</localtiles><nomouse>
-  <input>$cmd[CMD_DISPLAY_MAP]</input>  階層マップを開き、<input>Enter</input>でトラベル</nomouse>
+  <input>$cmd[CMD_DISPLAY_MAP]</input>  階のマップを開き、<input>Enter</input>で自動移動</nomouse>
   <input>$cmd[CMD_EXPLORE]</input>  自動探索
 %%%%
 tutorial2 start
@@ -253,7 +253,7 @@ tutorial2 pickup_weapon
 #   then wield it by clicking on it again. Alternatively, pick it up</localtiles>
 #   with <input>$cmd[CMD_PICKUP]</input> or <input>g</input> and then wield it with
 #   <input>$cmd[CMD_EQUIP]</input>.
-<localtiles>インベントリパネルのこの武器を<input>クリック</input>して拾い、もう一度クリックして装備してください。または、</localtiles><input>$cmd[CMD_PICKUP]</input>か<input>g</input>でこの武器を拾い、
+<localtiles>所持品パネルのこの武器を<input>クリック</input>して拾い、もう一度クリックして装備してください。または、</localtiles><input>$cmd[CMD_PICKUP]</input>か<input>g</input>でこの武器を拾い、
 <input>$cmd[CMD_EQUIP]</input>で装備してください。
 %%%%
 tutorial2 melee
@@ -333,7 +333,7 @@ tutorial2 throwing
 #   <input>$cmd[CMD_TARGET_SELECT]</input> or <input>Enter</input>. You can skip
 #   this and fire at the closest monster with <input>shift-tab</input> or <input>p</input>.
 <input>$cmd[CMD_FIRE]</input>を押<localtiles>すか、
-インベントリパネルのブーメランを<input>クリック</input></localtiles>して、モンスターにブーメランを投げることができます。
+所持品パネルのブーメランを<input>クリック</input></localtiles>して、モンスターにブーメランを投げることができます。
 自動で選択されたモンスターに決めるには、<input>$cmd[CMD_TARGET_SELECT]</input>か<input>Enter</input>を押してください。
 これを省いて、<input>shift-tab</input>か<input>p</input>で最も近いモンスターに投げることもできます。
 %%%%
@@ -414,7 +414,7 @@ tutorial2 exit
 <yellow>武器<console> <cyan>)</cyan></console></yellow>
   <input>$cmd[CMD_PICKUP]</input>  アイテムを拾う
   <input>$cmd[CMD_EQUIP]</input>  アイテムを装備する<localtiles>
-  インベントリの武器を<input>クリック</input>しても可能です。</localtiles>
+  所持品の武器を<input>クリック</input>しても可能です。</localtiles>
   <input>$cmd[CMD_QUIVER_ITEM]</input>  行動をセットする
 
 <yellow>モンスター</yellow><localtiles>
@@ -445,7 +445,7 @@ tutorial3 armour
 #   <input>$cmd[CMD_EQUIP]</input>.<localtiles> Or simply <input>mouseclick</input>
 #   on them in the inventory panel.</localtiles>
 <input>$cmd[CMD_PICKUP]</input>でこのブーツを拾い、
-<input>$cmd[CMD_EQUIP]</input>で装備してください。<localtiles>または、インベントリパネルのブーツを<input>マウスクリック</input>するだけでも装備できます。</localtiles>
+<input>$cmd[CMD_EQUIP]</input>で装備してください。<localtiles>または、所持品パネルのブーツを<input>マウスクリック</input>するだけでも装備できます。</localtiles>
 %%%%
 tutorial3 autopickup
 
@@ -464,7 +464,7 @@ tutorial3 scroll
 多くのアイテムは発見した時点では未鑑定状態です。
 それらの効果を鑑定する方法の一つはそれを使用することです。
 試しに<input>$cmd[CMD_READ]</input>を押<localtiles>すか、
-またはインベントリパネルで巻物のアイコンを<input>クリック</input></localtiles>して巻物を読んでみましょう。
+または所持品パネルで巻物のアイコンを<input>クリック</input></localtiles>して巻物を読んでみましょう。
 %%%%
 tutorial3 scroll_noautopickup
 
@@ -497,8 +497,8 @@ tutorial3 inventory
 #   also <input>mouseover</input> or <input>right click</input> it in the inventory
 #   panel. </localtiles>Notice that all the item commands also work from the item
 #   description screens.
-インベントリ内から選択して、 新しい武器の説明を見てみましょう(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)。
-<localtiles>インベントリパネルで<input>マウスオーバー</input>または<input>右クリック</input>でも可能です。</localtiles>
+所持品内から選択して、 新しい武器の説明を見てみましょう(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)。
+<localtiles>所持品パネルで<input>マウスオーバー</input>または<input>右クリック</input>でも可能です。</localtiles>
 全てのアイテムコマンドは説明文画面からでも実行できることを覚えておいてください。
 %%%%
 tutorial3 battle
@@ -557,7 +557,7 @@ tutorial3 artefact_armour
 <w>変わった名前</w>のアイテムはアーティファクトです。アーティファクトはさまざまな特別な能力を持つことがあります。
 (このクロークのような)一部のユニークなアーティファクトは、常に鑑定済みで、他では見られない特別な能力を持っていることがあります!
 それ以外のアーティファクトはランダムに選ばれた能力を持って生成され、その上に立つまでは未鑑定です。
-<input>$cmd[CMD_EQUIP]</input>を押<localtiles>すか、インベントリパネルで<input>マウスクリック</input></localtiles>して、このクロークを装備してみてください。
+<input>$cmd[CMD_EQUIP]</input>を押<localtiles>すか、所持品パネルで<input>マウスクリック</input></localtiles>して、このクロークを装備してみてください。
 %%%%
 tutorial3 wand_fire
 
@@ -565,7 +565,7 @@ tutorial3 wand_fire
 #   You can evoke a wand with <input>$cmd[CMD_EVOKE]</input><localtiles> or with
 #   <input>mouseclick</input> in the inventory panel</localtiles>.
 <input>$cmd[CMD_EVOKE]</input>を押<localtiles>すか、
-またはインベントリパネルでワンドのアイコンを<input>クリック</input></localtiles>してワンドを発動させることができます。
+または所持品パネルでワンドのアイコンを<input>クリック</input></localtiles>してワンドを発動させることができます。
 %%%%
 tutorial3 wand_digging
 
@@ -584,7 +584,7 @@ tutorial3 amulet
 #   Jewellery is put on with <input>$cmd[CMD_EQUIP]</input><localtiles>
 #   or with <input>mouseclick</input> in the inventory panel</localtiles>.
 装飾品は<input>$cmd[CMD_EQUIP]</input>を押<localtiles>すか、
-インベントリパネルで<input>マウスクリック</input></localtiles>して装備します。
+所持品パネルで<input>マウスクリック</input></localtiles>して装備します。
 %%%%
 tutorial3 drop
 
@@ -595,13 +595,13 @@ tutorial3 drop
 #   <input>Shift-leftclicking</input> it in the inventory panel</localtiles>.
 この護符は、あなたのキャラクターに崇拝する神がいればとても強力なのですが、今ここでは役に立ちません。
 <input>$cmd[CMD_DROP]</input>を押<localtiles>すか、
-インベントリパネルで<input>Shift+左クリック</input></localtiles>して捨てるとよいでしょう。
+所持品パネルで<input>Shift+左クリック</input></localtiles>して捨てるとよいでしょう。
 %%%%
 tutorial3 gold
 
 # en:
 #   Gold can be spent in shops. It takes no inventory space and cannot be dropped.
-金貨は店で使用することができます。 金貨はインベントリ枠を消費せず、 手放すこともできません。
+金貨は店で使用することができます。 金貨は所持品枠を消費せず、 手放すこともできません。
 %%%%
 tutorial3 shop
 
@@ -642,7 +642,7 @@ tutorial3 go_shopping
 #   use the minimap to return to the shop.</localtiles>
 本格的な買い物ができるだけのお金が貯まりました! 店に戻る最も速い方法は、検索することです。
 <input>$cmd[CMD_SEARCH_STASHES]</input>を押して、
-「<w>shop</w>」と入力してください。結果を選択するとトラベルを開始します。<localtiles>
+「<w>shop</w>」と入力してください。結果を選択すると自動移動を開始します。<localtiles>
 コマンドパネルの検索ボタンを<input>クリック</input>するか、
 ミニマップを使って店に戻ることもできます。</localtiles>
 %%%%
@@ -699,7 +699,7 @@ tutorial3 exit
   <input>$cmd[CMD_QUAFF]</input>  薬を飲む
   <input>$cmd[CMD_EVOKE]</input>  ワンドを発動する
 
-  使用や装備・解除のコマンドは、インベントリメニュー(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)のアイテム説明からも使えます。<localtiles>
+  使用や装備・解除のコマンドは、所持品メニュー(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)のアイテム説明からも使えます。<localtiles>
   そしてもちろん、<input>マウスクリック</input>でも可能です。</localtiles>
 
 <yellow>その他</yellow>
@@ -736,7 +736,7 @@ tutorial4 ring_power
 #   by <input>clicking</input> it in the inventory panel</localtiles>, and then
 #   rest up to your new full potential.
 <input>$cmd[CMD_EQUIP]</input>を押<localtiles>すか、
-インベントリパネルでこの指輪を<input>クリック</input></localtiles>して装備し、
+所持品パネルでこの指輪を<input>クリック</input></localtiles>して装備し、
 新たに増えた力が満ちるまで休息をとってください。
 %%%%
 tutorial4 undead

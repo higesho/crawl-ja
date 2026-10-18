@@ -453,11 +453,11 @@ You can't see any enemy this would conceal you from. Use anyway?
 %%%%
 you lack the shapeshifting skill to coax this talisman into a stable form.
 
-あなたにはこの護符を安定した形に導くほどの変身術の技能がない。
+あなたにはこの護符を安定した形に導くほどの変身術のスキルがない。
 %%%%
 you can never gain the skill to use this talisman.
 
-あなたはこの護符を使うための技能を決して習得できない。
+あなたはこの護符を使うためのスキルを決して習得できない。
 %%%%
 you need to leave your temporary form first.
 
@@ -473,7 +473,7 @@ you are loveless.
 %%%%
 %s responds to your shapeshifting skill and transforms into a %s!
 
-%sはあなたの変身術の技能に応え、%sへと姿を変えた！
+%sはあなたの変身術のスキルに応え、%sへと姿を変えた！
 %%%%
 Still begin transforming?
 

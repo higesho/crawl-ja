@@ -417,7 +417,7 @@ fund merchants seeking to open stores in the dungeon
 %%%%
 bribe branches to halt enemies' attacks and recruit allies
 
-支部を買収して敵の攻撃を止めさせ、仲間を集めること
+分岐を買収して敵の攻撃を止めさせ、仲間を集めること
 %%%%
 Your storm dissipates completely.
 

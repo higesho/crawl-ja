@@ -4688,7 +4688,7 @@ string do_mon_str_replacements(const string& in_msg, const monster& mons,
 }
 
 // This should take a small subset of what do_mon_str_replacements() does.
-// 名前の DB(ja/monname.txt など)は日本語なので、神名・技能名も日本語で入れる
+// 名前の DB(ja/monname.txt など)は日本語なので、神名・スキル名も日本語で入れる
 string do_mon_name_replacements(const string& in_name)
 {
     string name = in_name;

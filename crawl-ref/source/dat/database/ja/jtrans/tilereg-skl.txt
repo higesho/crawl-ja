@@ -24,7 +24,7 @@ Enable training
 
 訓練開始
 %%%%
-# %s は幅 14 に詰めた技能名
+# %s は幅 14 に詰めたスキル名
 %s Skill %4.1f Aptitude %c%d
 
 %s スキル %4.1f 適性 %c%d

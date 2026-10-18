@@ -150,7 +150,7 @@ Your maximum health is decreased.
 %%%%
 Your maximum health is decreased, since you lack skill for your form.
 
-あなたはこの姿に必要な技能が足りないため、最大HPが減少している。
+あなたはこの姿に必要なスキルが足りないため、最大HPが減少している。
 %%%%
 You cannot cast spells.
 
@@ -399,11 +399,11 @@ Enemies in your sight sometimes split into clones of themselves.
 %%%%
 You are less proficient with several skills.
 
-あなたはいくつかの技能の熟練度が低下している。
+あなたはいくつかのスキルの熟練度が低下している。
 %%%%
 Your skill with %s, %s, and %s is reduced.
 
-あなたの%s、%s、%sの技能は低下している。
+あなたの%s、%s、%sのスキルは低下している。
 %%%%
 Enemies you spot sometimes become touched by paradox.
 

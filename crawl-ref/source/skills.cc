@@ -559,7 +559,7 @@ static void _check_innate_magic_skills()
 
 string skill_names(const skill_set &skills)
 {
-    // 日本語の技能名を「戦闘と短剣」「戦闘、短剣と斧」の形で並べる
+    // 日本語のスキル名を「戦闘と短剣」「戦闘、短剣と斧」の形で並べる
     return comma_separated_fn(begin(skills), end(skills),
                               [] (skill_type sk) { return skill_name_j(sk); },
                               "と", "、");
@@ -1401,7 +1401,7 @@ bool check_training_target(skill_type sk)
             set_magic_training(TRAINING_DISABLED);
         else
             you.train_alt[sk] = you.train[sk] = TRAINING_DISABLED;
-        // 日本語の語順に合わせて引数を入れ替えている(技能名、目標値)
+        // 日本語の語順に合わせて引数を入れ替えている(スキル名、目標値)
         mprf(base ? jtransc("Base training target %d.%d for %s reached!")
                   : jtransc("Training target %d.%d for %s reached!"),
              skill_name_jc(sk), targ / 10, targ % 10);

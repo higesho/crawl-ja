@@ -54,11 +54,11 @@ staff of Olgreb
 %%%%
 Envenom: If the wielder is skilled in Evocations, they can envenom those struck by it, dealing poison damage which bypasses armour.
 
-Envenom: 所持者が発動技能に長けていれば、攻撃した相手に毒を注入し、防具を無視する毒ダメージを与えることができる。
+Envenom: 所持者が発動スキルに長けていれば、攻撃した相手に毒を注入し、防具を無視する毒ダメージを与えることができる。
 %%%%
 Radiate: It can be activated via the 'a'bility menu to radiate toxic energy, with effectiveness depending on Evocations skill.\nAlch: It enhances your alchemy magic.\nrPois∞: It grants immunity to poison.
 
-Radiate: 'a'(能力)メニューから発動して毒のエネルギーを放射できる。効果は発動技能に依存する。
+Radiate: 'a'(能力)メニューから発動して毒のエネルギーを放射できる。効果は発動スキルに依存する。
 Alch: 錬金術の魔法を強化する。
 rPois∞: 毒を無効化する。
 %%%%
@@ -123,7 +123,7 @@ orb of Dispater
 %%%%
 +Damnation: It grants the ability to hurl damnation at the cost of health and magic, with strength depending on Evocations skill.
 
-+Damnation: 体力と魔力を代償に、地獄の業火を投げつける能力を与える。威力は発動技能に依存する。
++Damnation: 体力と魔力を代償に、地獄の業火を投げつける能力を与える。威力は発動スキルに依存する。
 %%%%
 # UNRAND_ASMODEUS
 sceptre of Asmodeus
@@ -272,7 +272,7 @@ Elemental Staff
 %%%%
 Ele:       It enhances your fire, ice, earth and air magic. If skilled in Evocations, you can discharge powerful blasts of elemental energy when striking with it.
 
-Ele:       火術、氷術、地術、風術の魔法を強化する。発動技能に長けていれば、これで攻撃したときに強力な元素のエネルギーを放出できる。
+Ele:       火術、氷術、地術、風術の魔法を強化する。発動スキルに長けていれば、これで攻撃したときに強力な元素のエネルギーを放出できる。
 %%%%
 # UNRAND_SNIPER
 heavy crossbow "Sniper"
@@ -848,7 +848,7 @@ sphere of Battle
 %%%%
 Battle: It summons a battlesphere in combat, with strength depending on Conjurations skill.\nDestructive: It enhances your destructive magic, and weakens non-destructive magic.
 
-Battle: 戦闘中にバトルスフィアを召喚する。強さは攻撃術の技能に依存する。
+Battle: 戦闘中にバトルスフィアを召喚する。強さは攻撃術のスキルに依存する。
 Destructive: あなたの破壊の魔法を強化し、破壊以外の魔法を弱める。
 %%%%
 # UNRAND_EMBRACE
@@ -951,7 +951,7 @@ Reach-Cleave: 発動すると届く距離を延ばすことができ、届く範
 %%%%
 Poleaxe:   It uses either Axes or Polearms skill, whichever is higher.
 
-Poleaxe:   斧と長柄武器の技能のうち、高い方を使用する。
+Poleaxe:   斧と長柄武器のスキルのうち、高い方を使用する。
 %%%%
 # UNRAND_HERMITS_PENDANT
 Hermit's Pendant
@@ -960,8 +960,8 @@ Hermit's Pendant
 %%%%
 Invo=14:   It sets your Invocations skill to 14.\nEvo=0:    It sets your Evocations skill to 0.
 
-Invo=14:   あなたの祈祷技能を14にする。
-Evo=0:    あなたの発動技能を0にする。
+Invo=14:   あなたの祈祷スキルを14にする。
+Evo=0:    あなたの発動スキルを0にする。
 %%%%
 # UNRAND_SLICK_SLIPPERS
 slick slippers
@@ -1042,7 +1042,7 @@ It massively reduces your stealth.\nIt interferes with translocations, delaying 
 
 あなたの隠密性を大幅に下げる。
 転位を妨げ、テレポートを遅らせる。
-Charlatan: あなたの他の技能を、発動技能の基本値の20%だけ上昇させる。
+Charlatan: あなたの他のスキルを、発動スキルの基本値の20%だけ上昇させる。
 %%%%
 # UNRAND_JUSTICARS_REGALIA
 justicar's regalia

@@ -941,11 +941,11 @@ sacrifice all use of
 %%%%
 sacrifice your Dodging skill
 
-自らの躱し身の技能を捧げる
+自らの躱し身のスキルを捧げる
 %%%%
 sacrifice your Armour skill
 
-自らの甲冑の技能を捧げる
+自らの甲冑のスキルを捧げる
 %%%%
 sacrifice one of your %s
 

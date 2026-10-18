@@ -237,7 +237,7 @@ autoinscribe の文字列の解析に失敗した: %s
 %%%%
 Bad skill level to note -- %s
 
-ノートに記録する技能レベルが不正 -- %s
+ノートに記録するスキルレベルが不正 -- %s
 %%%%
 Bad item type '%*s' for action_panel.
 

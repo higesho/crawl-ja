@@ -310,7 +310,7 @@ It reflects blocked missile attacks.
 %%%%
 It improves your skill with shapeshifting (+5).
 
-あなたの変身術の技能を高める(+5)。
+あなたの変身術のスキルを高める(+5)。
 %%%%
 It restores some MP whenever you drink a potion and also enhances your alchemy spells.
 
@@ -874,7 +874,7 @@ It is a primal beast, the most powerful of its kind.
 %%%%
 Your %sskill: %s%d.%d%s
 
-あなたの%s技能: %s%d.%d%s
+あなたの%sスキル: %s%d.%d%s
 %%%%
 [skill desc](base)
 
@@ -954,7 +954,7 @@ your enemies will bleed and die for Makhleb.
 %%%%
 [dmg rating]Skill
 
-技能
+スキル
 %%%%
 [dmg rating]Fight
 
@@ -979,7 +979,7 @@ Base accuracy: %+d  Base damage: %d
 Base attack delay: %.1f\nThis weapon's minimum attack delay (%.1f) is reached at skill level %d.
 
 基本所要時間: %.1f
-この武器の最小所要時間(%.1f)には技能レベル%dで到達する。
+この武器の最小所要時間(%.1f)にはスキルレベル%dで到達する。
 %%%%
 Your heavy armour
 
@@ -1176,7 +1176,7 @@ It cannot be enchanted further.
 Base damage: %d  Base attack delay: %.1f\nThis projectile's minimum attack delay (%.1f) is reached at skill level %d.
 
 基本ダメージ: %d  基本所要時間: %.1f
-この投擲物の最小所要時間(%.1f)には技能レベル%dで到達する。
+この投擲物の最小所要時間(%.1f)にはスキルレベル%dで到達する。
 %%%%
 It is always destroyed on impact.
 
@@ -1210,7 +1210,7 @@ Explosion chance: %d%% (max %d%%)\nExplosion damage: %dd%d (max %dd%d)
 Base shooting star damage: %dd%d (max %dd%d) + 25%% per MP spent\nShooting stars conjured: 1 + 1 per visible enemy, up to %d (%d at max skill)
 
 流れ星の基本ダメージ: %dd%d (最大 %dd%d) + 消費MP 1につき25%%
-生み出す流れ星の数: 1 + 見えている敵1体につき1、最大%d (技能が最大なら%d)
+生み出す流れ星の数: 1 + 見えている敵1体につき1、最大%d (スキルが最大なら%d)
 %%%%
 Mesmerism radius: %d (max %d)
 
@@ -1218,7 +1218,7 @@ Mesmerism radius: %d (max %d)
 %%%%
 It is cumbersome to wear, and %simpedes the evasion, spellcasting ability, and attack speed of the wearer. These penalties are reduced by the wearer's Shields skill and Strength; mastering Shields eliminates penalties.
 
-装備すると動きにくく、装備者の回避、呪文の詠唱能力、攻撃速度を%s妨げる。これらのペナルティは装備者の盾技能と腕力によって軽減され、盾技能を極めればなくなる。
+装備すると動きにくく、装備者の回避、呪文の詠唱能力、攻撃速度を%s妨げる。これらのペナルティは装備者の盾スキルと腕力によって軽減され、盾スキルを極めればなくなる。
 %%%%
 [cumber]slightly
 
@@ -1250,11 +1250,11 @@ Evasion:
 %%%%
 Your current strength and Armour skill slows attacks with missile weapons (like %s) by %.1f.
 
-現在のあなたの腕力と甲冑技能では、射撃武器(%sなど)での攻撃が%.1f遅くなる。
+現在のあなたの腕力と甲冑スキルでは、射撃武器(%sなど)での攻撃が%.1f遅くなる。
 %%%%
 Your current strength and Armour skill slows attacks with missile weapons (like %s) only slightly.
 
-現在のあなたの腕力と甲冑技能では、射撃武器(%sなど)での攻撃がわずかに遅くなるだけだ。
+現在のあなたの腕力と甲冑スキルでは、射撃武器(%sなど)での攻撃がわずかに遅くなるだけだ。
 %%%%
 If you quaff this potion your AC would be %d.
 
@@ -1314,7 +1314,7 @@ It has a curse placed upon it.
 %%%%
 It has a curse which improves the following skills:
 
-これには、以下の技能を向上させる呪いがかけられている:
+これには、以下のスキルを向上させる呪いがかけられている:
 %%%%
 Your spells cost less MP as you Rev up. Whenever you cast a spell, you make a melee attack against a random enemy in range.
 
@@ -1414,7 +1414,7 @@ Additional devices of the same type can be combined with it to improve the rate 
 %%%%
 Increasing your evocations skill will improve the rate at which it recharges.
 
-発動技能を上げると、再充填の速さが高まる。
+発動スキルを上げると、再充填の速さが高まる。
 %%%%
 Damage:
 
@@ -1678,7 +1678,7 @@ You are here.
 %%%%
 [item action](s)kill target
 
-(s)技能の目標を設定する
+(s)スキルの目標を設定する
 %%%%
 [item action](g)o to location
 
@@ -1750,15 +1750,15 @@ Fail: %s
 %%%%
 With your current stats and equipment, %s this skill would increase your AC by %.1f and your EV by %.1f.
 
-現在の能力値と装備では、この技能を%sと、ACが%.1f、EVが%.1f上昇する。
+現在の能力値と装備では、このスキルを%sと、ACが%.1f、EVが%.1f上昇する。
 %%%%
 With your current stats and equipment, %s this skill would increase your EV by %.1f.
 
-現在の能力値と装備では、この技能を%sと、EVが%.1f上昇する。
+現在の能力値と装備では、このスキルを%sと、EVが%.1f上昇する。
 %%%%
 With your current stats and equipment, %s this skill would increase your SH by %.1f.
 
-現在の能力値と装備では、この技能を%sと、SHが%.1f上昇する。
+現在の能力値と装備では、このスキルを%sと、SHが%.1f上昇する。
 %%%%
 How on earth did you manage to pick this up?
 
@@ -1766,15 +1766,15 @@ How on earth did you manage to pick this up?
 %%%%
 %s powers are not affected by the Invocations skill.
 
-%sの力は祈祷技能の影響を受けない。
+%sの力は祈祷スキルの影響を受けない。
 %%%%
 %s powers are based on %s instead of Invocations skill.
 
-%sの力は祈祷技能ではなく%s技能に基づく。
+%sの力は祈祷スキルではなく%sスキルに基づく。
 %%%%
 %s strongly dislikes when you train this skill.
 
-%sはあなたがこの技能を訓練することをひどく嫌う。
+%sはあなたがこのスキルを訓練することをひどく嫌う。
 %%%%
 [miscast]summons a nameless horror
 
@@ -1946,7 +1946,7 @@ Chance to defeat your Will: %d%%%s
 %%%%
 Your %s, %s, and %s are currently affected.
 
-現在、あなたの%s、%s、%sの技能が影響を受けている。
+現在、あなたの%s、%s、%sのスキルが影響を受けている。
 %%%%
 This bane usually lasts a very long time.
 
@@ -3002,7 +3002,7 @@ If it is slain, it may be possible to recover its hide, which can be used as arm
 %%%%
 [form table]Skill
 
-技能
+スキル
 %%%%
 [form table]HP
 
@@ -3074,7 +3074,7 @@ MP
 %%%%
 [form table]Spell Skill Boost
 
-呪文技能の増加
+呪文スキルの増加
 %%%%
 [form table]Rust Breath Size
 

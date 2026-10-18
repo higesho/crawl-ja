@@ -42,8 +42,8 @@
   ヘルプ訳 `crawl-ref/source/dat/database/ja/help.txt` と同じ)。
   鉤括弧は「」。
 - 用語はゲーム内の訳に合わせる。辞書は `crawl-ref/source/dat/database/ja/jtrans/`
-  (種族 `data-species.txt`、職業 `data-jobs.txt`、技能 `data-skills.txt`、
-  神 `data-gods.txt`、支部 `data-branches.txt`、地形 `data-features.txt`、
+  (種族 `data-species.txt`、職業 `data-jobs.txt`、スキル `data-skills.txt`、
+  神 `data-gods.txt`、分岐 `data-branches.txt`、地形 `data-features.txt`、
   呪文 `data-spells.txt`、アイテム `data-items.txt`、変異 `data-mutations.txt`、
   コマンド `command.txt`、メニュー `menu.txt` など)。形式は英文の行の次に訳の行、
   項目の区切りは `%%%%`。`grep -n -i -A2 "^Deep Elf$" <辞書>` のように引く。

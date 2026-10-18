@@ -137,7 +137,7 @@ You start resting.
 %%%%
 Move the cursor to view the level map, or type <w>?</w> for a list of commands.
 
-階層マップを見るにはカーソルを動かすか、<w>?</w>キーを押してコマンド一覧を見てください。
+階のマップを見るにはカーソルを動かすか、<w>?</w>キーを押してコマンド一覧を見てください。
 %%%%
 Returning to the game...
 
@@ -386,11 +386,11 @@ You are forever immune to Zot's power.
 %%%%
 You have unlimited time to explore this branch.
 
-この支部では時間を気にせず探索できる。
+この分岐では時間を気にせず探索できる。
 %%%%
 Zot will find you in %d turns if you stay in this branch and explore no new floors.
 
-この支部に留まって新しい階層を探索しなければ、%d ターン後にゾットに見つかる。
+この分岐に留まって新しい階層を探索しなければ、%d ターン後にゾットに見つかる。
 %%%%
 Really rest while Zot is near?
 

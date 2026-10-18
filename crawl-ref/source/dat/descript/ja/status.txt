@@ -500,7 +500,7 @@ Hero status
 
 # en:
 #   Your combat skills are temporarily increased.
-あなたの戦闘技能は一時的に高まっている。
+あなたの戦闘スキルは一時的に高まっている。
 %%%%
 Finesse status
 
@@ -1011,7 +1011,7 @@ Bribe status
 
 # en:
 #   You are bribing the inhabitants of the current branch.
-あなたは現在の支部の住人を買収している。
+あなたは現在の分岐の住人を買収している。
 %%%%
 Cloud status
 
@@ -1101,28 +1101,28 @@ Zot status
 #   You have spent too much time in one branch, allowing the malevolent power of Zot
 #   to notice you. If you spend the indicated number of turns in the branch without
 #   descending to a new floor, Zot will find you, causing permanent health damage.
-あなたは一つの支部で長く過ごしすぎたため、ゾットの邪悪な力に気付かれてしまった。新しい階層に降りないまま、表示されたターン数をこの支部で過ごすと、ゾットに見つかり、永続的な体力のダメージを受ける。
+あなたは一つの分岐で長く過ごしすぎたため、ゾットの邪悪な力に気付かれてしまった。新しい階層に降りないまま、表示されたターン数をこの分岐で過ごすと、ゾットに見つかり、永続的な体力のダメージを受ける。
 %%%%
 Zot count status
 
 # en:
 #   If you spend the indicated number of turns in this branch without descending to
 #   a new floor, Zot will find you, causing permanent health damage.
-新しい階層に降りないまま、表示されたターン数をこの支部で過ごすと、ゾットに見つかり、永続的な体力のダメージを受ける。
+新しい階層に降りないまま、表示されたターン数をこの分岐で過ごすと、ゾットに見つかり、永続的な体力のダメージを受ける。
 %%%%
 Gem status
 
 # en:
 #   If you spend the indicated number of turns in this branch, its gem will be found
 #   and shattered by the power of Zot.
-表示されたターン数をこの支部で過ごすと、この支部の宝石はゾットの力によって見つけ出され、砕かれてしまう。
+表示されたターン数をこの分岐で過ごすと、この分岐の宝石はゾットの力によって見つけ出され、砕かれてしまう。
 %%%%
 Gem (*) status
 
 # en:
 #   The power of Zot no longer hunts you, but this branch's gem still remains
 #   intact.
-ゾットの力はもうあなたを追っていないが、この支部の宝石はまだ無傷のまま残っている。
+ゾットの力はもうあなたを追っていないが、この分岐の宝石はまだ無傷のまま残っている。
 %%%%
 rF0 status
 

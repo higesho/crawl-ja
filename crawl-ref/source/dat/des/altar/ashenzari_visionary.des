@@ -8,7 +8,7 @@ function callback.grunt_ashenzari_visionary_reveal(data,triggerable,triggerer,ma
     for replica in iter.replica_iterator("revealing_wall", 1) do
         dgn.terrain_changed(replica.x, replica.y, "clear_stone_wall", false)
     end
-    -- 日本語: 支部名を「と」でつなぐ
+    -- 日本語: 分岐名を「と」でつなぐ
     local names_j = {}
     for i, name in ipairs(data.branches) do
       table.insert(names_j, crawl.tagged_jtrans("[branch]", name))

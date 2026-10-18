@@ -18,19 +18,19 @@ Game seed:
 %%%%
 You visited %d branches of the dungeon, and saw %d of its levels.
 
-あなたはダンジョンの%d個の支部を訪れ、%d個の階層を目にした。
+あなたはダンジョンの%d個の分岐を訪れ、%d個の階層を目にした。
 %%%%
 You have visited %d branches of the dungeon, and seen %d of its levels.
 
-あなたはダンジョンの%d個の支部を訪れ、%d個の階層を目にしている。
+あなたはダンジョンの%d個の分岐を訪れ、%d個の階層を目にしている。
 %%%%
 You visited %d branch.
 
-あなたは%d個の支部を訪れた。
+あなたは%d個の分岐を訪れた。
 %%%%
 You have visited %d branch.
 
-あなたは%d個の支部を訪れている。
+あなたは%d個の分岐を訪れている。
 %%%%
 You visited Pandemonium %d times, and saw %d of its levels.
 
@@ -268,7 +268,7 @@ You worship %s.
 %%%%
 Skills:
 
-技能:
+スキル:
 %%%%
 You had one spell level left.
 
@@ -349,7 +349,7 @@ DLua のエラー:
 %%%%
 Skill      XL:
 
-技能       XL:
+スキル       XL:
 %%%%
 Apostles:
 

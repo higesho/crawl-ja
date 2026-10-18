@@ -222,7 +222,7 @@ IME の窓を閉じてもらうか、確認を次の機会に回す。
 - 0.34 で新しく決めた訳語(他の担当も揃える): Will=意志力(括弧内の (Will+) は
   英語のまま)、Slay=殺傷、Apt=適性、XL=レベル、Speed=速度。
   新種族: 鬼、ジンニー、バラチ、アルマタウル、メテオラン、コグリン、山ドワーフ、
-  汚泥エルフ、ポルターガイスト。支部: Gauntlet=試練場、Crucible=肉の坩堝、
+  汚泥エルフ、ポルターガイスト。分岐: Gauntlet=試練場、Crucible=肉の坩堝、
   Necropolis=死者の都。
 - descript/ja/backgrounds.txt の Artificer「熟練工」・Warper「転移術師」が
   職業名(data-jobs.txt の発動術師・転位術師)と不一致。説明文の全訳時に揃える。

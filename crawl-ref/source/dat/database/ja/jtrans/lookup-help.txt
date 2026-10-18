@@ -18,11 +18,11 @@ This entry is an exact match for '%s'. To see non-exact matches, press space.
 %%%%
 This branch can only be exited while carrying at least %d rune(s) of Zot.
 
-この支部は、ゾットのルーンを%d個以上持っていないと出られない。
+この分岐は、ゾットのルーンを%d個以上持っていないと出られない。
 %%%%
 This branch can only be entered while carrying at least %d rune(s) of Zot.
 
-この支部は、ゾットのルーンを%d個以上持っていないと入れない。
+この分岐は、ゾットのルーンを%d個以上持っていないと入れない。
 %%%%
 This portal is %d levels deep.
 
@@ -30,27 +30,27 @@ This portal is %d levels deep.
 %%%%
 This branch is %d levels deep.
 
-この支部は%d階層ある。
+この分岐は%d階層ある。
 %%%%
 The entrance to this branch can be found in %s.
 
-この支部の入口は%sにある。
+この分岐の入口は%sにある。
 %%%%
 The entrance to this branch can be found in %s, on level %d.
 
-この支部の入口は%sの第%d階層にある。
+この分岐の入口は%sの第%d階層にある。
 %%%%
 The entrance to this branch can be found in %s, between levels %d and %d.
 
-この支部の入口は%sの第%d～%d階層のどこかにある。
+この分岐の入口は%sの第%d～%d階層のどこかにある。
 %%%%
 This branch contains the entrances to %s.
 
-この支部には%sへの入口がある。
+この分岐には%sへの入口がある。
 %%%%
 This branch contains the entrance to %s.
 
-この支部には%sへの入口がある。
+この分岐には%sへの入口がある。
 %%%%
 # %s は下の [lookup type] の訳
 Enter a single letter to list %s displayed by that symbol.
@@ -126,7 +126,7 @@ Exit help lookup
 %%%%
 [lookup type]branch
 
-支部
+分岐
 %%%%
 [lookup type]cloud
 

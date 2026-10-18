@@ -1,6 +1,6 @@
-# viewmap.txt: viewmap.cc(階層マップ画面)
+# viewmap.txt: viewmap.cc(階のマップ画面)
 %%%%
-# 地図の見出しの階層名。引数: 支部名、階数
+# 地図の見出しの階層名。引数: 分岐名、階数
 %s, level %d
 
 %sの第%d階層

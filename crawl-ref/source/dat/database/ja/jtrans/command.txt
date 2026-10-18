@@ -133,7 +133,7 @@ Redraw screen
 %%%%
 Clear main and level maps
 
-レベルマップを消去する。
+階のマップを消去する。
 %%%%
 annotate the dungeon level
 
@@ -255,7 +255,7 @@ eXamine surroundings/targets
 %%%%
 eXamine level map (<w>%?</w> for help)
 
-フロアマップを見る。
+階のマップを見る。
          (<w>%?</w>でヘルプ表示)
 %%%%
 list monsters, items, features
@@ -280,7 +280,7 @@ toggle auto-pickup
 %%%%
 show Inventory list
 
-インベントリ一覧を見る。
+所持品一覧を見る。
 %%%%
 pick up items (also <w>g</w>)
 
@@ -726,7 +726,7 @@ Dungeon Crawl Help
 <w>B</w>.      開始画面
 <w>C</w>.      能力値とステータス
 <w>D</w>.      ダンジョンの探索
-<w>E</w>.      経験値と技能
+<w>E</w>.      経験値とスキル
 <w>F</w>.      モンスター
 <w>G</w>.      アイテム
 <w>H</w>.      呪文の詠唱
@@ -738,7 +738,7 @@ Dungeon Crawl Help
 <w>N</w>.      設計思想
 <w>1</w>.      種族の一覧
 <w>2</w>.      職業の一覧
-<w>3</w>.      技能の一覧
+<w>3</w>.      スキルの一覧
 <w>4</w>.      キーとコマンドの一覧
 <w>5</w>.      銘(インスクリプション)
 <w>6</w>.      ダンジョンスプリントのモード
