@@ -365,6 +365,7 @@ python.exe util/gen-all.py</Command>
     <ClCompile Include="..\format.cc" />
     <ClCompile Include="..\fprop.cc" />
     <ClCompile Include="..\game-options.cc" />
+    <ClCompile Include="..\gamepad.cc" />
     <ClCompile Include="..\geom2d.cc" />
     <ClCompile Include="..\ghost.cc" />
     <ClCompile Include="..\glwrapper-ogl.cc" />
@@ -1065,6 +1066,7 @@ python.exe util/gen-all.py</Command>
     <ClInclude Include="..\viewgeom.h" />
     <ClInclude Include="..\viewmap.h" />
     <ClInclude Include="..\windowmanager-sdl.h" />
+    <ClInclude Include="..\gamepad.h" />
     <ClInclude Include="..\windowmanager.h" />
     <ClInclude Include="..\wiz-dgn.h" />
     <ClInclude Include="..\wiz-dump.h" />
