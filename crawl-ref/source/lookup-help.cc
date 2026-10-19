@@ -30,23 +30,38 @@
 #include "item-name.h"
 #include "items.h"
 #include "japanese.h"
+#include "jobs.h"
+#include "json.h"
+#include "json-wrapper.h"
 #include "libutil.h" // map_find
 #include "macro.h"
 #include "makeitem.h" // item_colour
 #include "menu.h"
 #include "message.h"
 #include "mon-info.h"
+#include "mon-pick.h"
 #include "mon-tentacle.h"
 #include "mutation.h"
 #include "output.h"
 #include "prompt.h"
 #include "religion.h"
 #include "rltiles/tiledef-main.h"
+#ifdef USE_TILE
+// 日本語版: スポイラーの書き出しでタイルの切り出し位置を引くため
+#include "rltiles/tiledef-feat.h"
+#include "rltiles/tiledef-floor.h"
+#include "rltiles/tiledef-gui.h"
+#include "rltiles/tiledef-icons.h"
+#include "rltiles/tiledef-player.h"
+#include "rltiles/tiledef-wall.h"
+#endif
 #include "scroller.h"
 #include "skills.h"
+#include "species.h"
 #include "spl-book.h"
 #include "spl-util.h"
 #include "stringutil.h"
+#include "syscalls.h"
 #include "tag-version.h"
 #include "terrain.h"
 #include "tile-flags.h"
@@ -55,6 +70,7 @@
 #include "ui.h"
 #include "viewchar.h"
 #include "view.h"
+#include "version.h"
 
 
 typedef vector<string> (*keys_by_glyph)(char32_t showchar);
@@ -1798,4 +1814,464 @@ void keyhelp_query_descriptions(command_type where_from)
         LookupHelpMenu m(where_from);
         m.show();
     }
+}
+
+// =====================================================================
+// 日本語版: スポイラー用のデータの書き出し(-spoiler-json)
+//
+// ゲーム内検索(?/)の全項目の説明を、画面を開かずに受け取って JSON に書く。
+// 文はゲームの説明画面と同じ(言語の設定どおり)。ほかに、一覧の表に使う
+// 数値(モンスター・種族・職業・支部・出現表など)を構造のまま書く。
+// サイトを作る道具は ja-tools/spoiler/ にある。
+// =====================================================================
+
+static JsonNode *_sp_str(const string &s)
+{
+    return json_mkstring(s.c_str());
+}
+
+// タイルの番号を、画像シートの名前と切り出す位置にする
+static JsonNode *_sp_tile(tileidx_t idx)
+{
+#ifdef USE_TILE
+    idx &= TILE_FLAG_MASK;
+    if (!idx)
+        return json_mknull();
+
+    const char *sheet;
+    const tile_info *ti;
+    if (idx < TILE_FLOOR_MAX)
+        sheet = "floor", ti = &tile_floor_info(idx);
+    else if (idx < TILE_WALL_MAX)
+        sheet = "wall", ti = &tile_wall_info(idx);
+    else if (idx < TILE_FEAT_MAX)
+        sheet = "feat", ti = &tile_feat_info(idx);
+    else if (idx < TILE_MAIN_MAX)
+        sheet = "main", ti = &tile_main_info(idx);
+    else if (idx < TILEP_PLAYER_MAX)
+        sheet = "player", ti = &tile_player_info(idx);
+    else if (idx < TILEG_GUI_MAX)
+        sheet = "gui", ti = &tile_gui_info(idx);
+    else if (idx < TILEI_ICONS_MAX)
+        sheet = "icons", ti = &tile_icons_info(idx);
+    else
+        return json_mknull();
+
+    JsonNode *t = json_mkobject();
+    json_append_member(t, "sheet", json_mkstring(sheet));
+    json_append_member(t, "w", json_mknumber(ti->width));
+    json_append_member(t, "h", json_mknumber(ti->height));
+    json_append_member(t, "ox", json_mknumber(ti->offset_x));
+    json_append_member(t, "oy", json_mknumber(ti->offset_y));
+    json_append_member(t, "sx", json_mknumber(ti->sx));
+    json_append_member(t, "sy", json_mknumber(ti->sy));
+    json_append_member(t, "ex", json_mknumber(ti->ex));
+    json_append_member(t, "ey", json_mknumber(ti->ey));
+    return t;
+#else
+    UNUSED(idx);
+    return json_mknull();
+#endif
+}
+
+static JsonNode *_sp_entry(const string &key, const string &title,
+                           const string &body, const string &quote,
+                           tileidx_t tile)
+{
+    JsonNode *e = json_mkobject();
+    json_append_member(e, "key", _sp_str(key));
+    json_append_member(e, "title", _sp_str(title));
+    json_append_member(e, "body", _sp_str(body));
+    json_append_member(e, "quote", _sp_str(quote));
+    json_append_member(e, "tile", _sp_tile(tile));
+    return e;
+}
+
+// 説明の画面(show_description)を開く代わりに中身を受け取る
+static bool _sp_capture(const LookupType &lt, const string &key,
+                        spoiler_capture &cap)
+{
+    cap = spoiler_capture();
+    spoiler_desc_capture = &cap;
+    lt.describe(key);
+    spoiler_desc_capture = nullptr;
+    return cap.captured;
+}
+
+static JsonNode *_sp_monster_entry(const string &key)
+{
+    const monster_type mc = _mon_by_name(key);
+    // 色の決まっていない職業付きのドラコニアンは赤で代表させる
+    monster_type base_type = MONS_NO_MONSTER;
+    if (mons_is_draconian_job(mc))
+    {
+        const auto colour_it = draconian_job_to_colour.find(mc);
+        if (colour_it != draconian_job_to_colour.end())
+            base_type = colour_it->second;
+        else
+            base_type = MONS_RED_DRACONIAN;
+    }
+    monster_info mi(mc, base_type);
+    if (mi.type == MONS_SLIME_CREATURE)
+        mi.slime_size = 1;
+    mi.props[FAKE_MON_KEY] = true;
+
+    describe_info inf;
+    bool has_stat_desc = false;
+    get_monster_db_desc(mi, inf, has_stat_desc);
+
+    JsonNode *e = _sp_entry(key, inf.title, inf.body.str(), inf.quote,
+                            tileidx_monster(mi));
+
+    const monsterentry *me = get_monster_data(mc);
+    json_append_member(e, "name_ja", _sp_str(mons_type_name_j(mc, DESC_PLAIN)));
+    json_append_member(e, "name_en", _sp_str(mons_type_name(mc, DESC_PLAIN)));
+    string glyph;
+    glyph += me->basechar;
+    json_append_member(e, "glyph", _sp_str(glyph));
+    json_append_member(e, "colour", _sp_str(colour_to_str(me->colour)));
+    json_append_member(e, "hd", json_mknumber(me->HD));
+    json_append_member(e, "hp10", json_mknumber(me->avg_hp_10x));
+    json_append_member(e, "ac", json_mknumber(me->AC));
+    json_append_member(e, "ev", json_mknumber(me->ev));
+    json_append_member(e, "will", json_mknumber(mons_class_willpower(mc, mc)));
+    json_append_member(e, "speed", json_mknumber(me->speed));
+    json_append_member(e, "unique", json_mkbool(mons_is_unique(mc)));
+    json_append_member(e, "holiness", json_mknumber((int)me->holiness));
+    return e;
+}
+
+static JsonNode *_sp_spell_entry(const string &key, const string &suffix)
+{
+    const spell_type spell = spell_by_name(key.substr(0, key.size()
+                                                      - suffix.size()), true);
+    if (spell == SPELL_NO_SPELL)
+        return nullptr;
+    describe_info inf;
+    get_spell_desc(spell, inf);
+    JsonNode *e = _sp_entry(key, inf.title, inf.body.str(), inf.quote,
+                            tileidx_spell(spell));
+    json_append_member(e, "name_ja", _sp_str(spell_title_j(spell)));
+    json_append_member(e, "name_en", _sp_str(spell_title(spell)));
+    json_append_member(e, "level", json_mknumber(spell_difficulty(spell)));
+    JsonNode *schools = json_mkarray();
+    for (const auto bit : spschools_type::range())
+        if (spell_typematch(spell, bit))
+        {
+            json_append_element(schools,
+                                _sp_str(spelltype_long_name_j(bit)));
+        }
+    json_append_member(e, "schools", schools);
+    json_append_member(e, "player", json_mkbool(is_player_book_spell(spell)));
+    return e;
+}
+
+static JsonNode *_sp_item_entry(const string &key)
+{
+    item_def item;
+    bool unrand = false;
+    if (!get_item_by_exact_name(item, key.c_str()))
+    {
+        const int unrand_idx = extant_unrandart_by_exact_name(key);
+        if (!unrand_idx || !_make_item_fake_unrandart(item, unrand_idx))
+            return nullptr;
+        unrand = true;
+    }
+    JsonNode *e = _sp_entry(key, item.name(DESC_A, false, true),
+                            get_item_description(item), "",
+                            tileidx_item(item));
+    json_append_member(e, "name_ja", _sp_str(jtrans(key)));
+    json_append_member(e, "base", _sp_str(base_type_string(item.base_type)));
+    json_append_member(e, "sub", json_mknumber(item.sub_type));
+    json_append_member(e, "unrand", json_mkbool(unrand));
+    if (item.base_type == OBJ_WEAPONS)
+    {
+        json_append_member(e, "skill",
+                           _sp_str(skill_name_j(item_attack_skill(item))));
+        json_append_member(e, "dam", json_mknumber(property(item, PWPN_DAMAGE)));
+        json_append_member(e, "hit", json_mknumber(property(item, PWPN_HIT)));
+        json_append_member(e, "delay", json_mknumber(property(item, PWPN_SPEED)));
+    }
+    else if (item.base_type == OBJ_ARMOUR)
+    {
+        json_append_member(e, "ac", json_mknumber(property(item, PARM_AC)));
+        json_append_member(e, "evp", json_mknumber(property(item, PARM_EVASION)));
+    }
+    return e;
+}
+
+static JsonNode *_sp_lookup()
+{
+    JsonNode *all = json_mkobject();
+    for (const LookupType &lt : lookup_types)
+    {
+        JsonNode *arr = json_mkarray();
+        // 空の正規表現は何にも一致せず、1 文字だと記号での検索になるので ".*"
+        vector<string> keys = lt.matching_keys(".*");
+        sort(keys.begin(), keys.end());
+        keys.erase(unique(keys.begin(), keys.end()), keys.end());
+        for (const string &key : keys)
+        {
+            JsonNode *e = nullptr;
+            const monster_type mc = lt.type == "monster" ? _mon_by_name(key)
+                                                         : MONS_NO_MONSTER;
+            if (lt.type == "monster"
+                && !mons_is_ghost_demon(mc) && !mons_class_is_zombified(mc))
+            {
+                e = _sp_monster_entry(key);
+            }
+            else if (lt.type == "spell")
+                e = _sp_spell_entry(key, lt.suffix());
+            else if (lt.type == "item")
+                e = _sp_item_entry(key);
+            else if (lt.type == "god")
+            {
+                const god_type god = str_to_god(key);
+                e = _sp_entry(key, god_name_j(god, true), "", "",
+                              tileidx_feature_base(altar_for_god(god)));
+                json_append_member(e, "name_ja", _sp_str(god_name_j(god)));
+                JsonNode *tabs = json_mkarray();
+                for (const string &tab : god_spoiler_tabs(god))
+                    json_append_element(tabs, _sp_str(tab));
+                json_append_member(e, "tabs", tabs);
+            }
+            else
+            {
+                spoiler_capture cap;
+                if (_sp_capture(lt, key, cap))
+                    e = _sp_entry(key, cap.title, cap.body, cap.quote, cap.tile);
+            }
+            if (e)
+                json_append_element(arr, e);
+            else
+            {
+                fprintf(stderr, "spoiler: skipped %s '%s'\n", lt.type.c_str(),
+                        key.c_str());
+            }
+        }
+        json_append_member(all, lt.type.c_str(), arr);
+    }
+    return all;
+}
+
+static JsonNode *_sp_skills()
+{
+    JsonNode *arr = json_mkarray();
+    for (skill_type sk = SK_FIRST_SKILL; sk < NUM_SKILLS; ++sk)
+    {
+        if (is_removed_skill(sk))
+            continue;
+        JsonNode *e = json_mkobject();
+        json_append_member(e, "en", _sp_str(skill_name(sk)));
+        json_append_member(e, "ja", _sp_str(skill_name_j(sk)));
+        json_append_element(arr, e);
+    }
+    return arr;
+}
+
+static JsonNode *_sp_species()
+{
+    JsonNode *arr = json_mkarray();
+    for (species_type sp : species::get_all_species())
+    {
+        if (!species::is_starting_species(sp))
+            continue;
+        const species_def &sd = get_species_def(sp);
+        JsonNode *e = json_mkobject();
+        json_append_member(e, "abbrev", _sp_str(sd.abbrev));
+        json_append_member(e, "name_en", _sp_str(species::name(sp)));
+        json_append_member(e, "name_ja", _sp_str(species_name_j(sp)));
+        json_append_member(e, "tile",
+                           _sp_tile(tileidx_monster_base(sd.monster_species, 0)));
+        // desc はキャラクター作成の画面の説明、lore は検索で出る由来の文
+        json_append_member(e, "desc",
+                           _sp_str(getGameStartDescription(species::name(sp))));
+        json_append_member(e, "lore",
+                           _sp_str(getLongDescription(species::name(sp))));
+        json_append_member(e, "quote",
+                           _sp_str(getQuoteString(species::name(sp))));
+        json_append_member(e, "xp", json_mknumber(sd.xp_mod));
+        json_append_member(e, "hp", json_mknumber(sd.hp_mod));
+        json_append_member(e, "mp", json_mknumber(sd.mp_mod));
+        json_append_member(e, "wl", json_mknumber(sd.wl_mod));
+        json_append_member(e, "str", json_mknumber(sd.s));
+        json_append_member(e, "int", json_mknumber(sd.i));
+        json_append_member(e, "dex", json_mknumber(sd.d));
+        json_append_member(e, "how_often", json_mknumber(sd.how_often));
+        JsonNode *lstats = json_mkarray();
+        for (stat_type st : sd.level_stats)
+            json_append_element(lstats, json_mknumber(st));
+        json_append_member(e, "level_stats", lstats);
+        json_append_member(e, "size", _sp_str(tagged_jtrans("[size]",
+                                              get_size_adj(sd.size))));
+
+        JsonNode *apt = json_mkobject();
+        for (skill_type sk = SK_FIRST_SKILL; sk < NUM_SKILLS; ++sk)
+        {
+            if (is_removed_skill(sk))
+                continue;
+            const int a = species_apt(sk, sp);
+            json_append_member(apt, skill_name(sk),
+                               a == UNUSABLE_SKILL ? json_mknull()
+                                                   : json_mknumber(a));
+        }
+        json_append_member(e, "apt", apt);
+
+        JsonNode *muts = json_mkarray();
+        for (const level_up_mutation &lum : sd.level_up_mutations)
+        {
+            JsonNode *m = json_mkobject();
+            json_append_member(m, "xl", json_mknumber(lum.xp_level));
+            json_append_member(m, "name", _sp_str(mutation_name(lum.mut)));
+            json_append_member(m, "level", json_mknumber(lum.mut_level));
+            json_append_member(m, "desc",
+                               _sp_str(mutation_desc(lum.mut, lum.mut_level)));
+            json_append_element(muts, m);
+        }
+        json_append_member(e, "muts", muts);
+
+        JsonNode *fake = json_mkarray();
+        for (const string &s : sd.verbose_fake_mutations)
+            json_append_element(fake, _sp_str(jtrans(s)));
+        json_append_member(e, "fake_muts", fake);
+
+        JsonNode *jobs = json_mkarray();
+        for (job_type j : sd.recommended_jobs)
+            json_append_element(jobs, _sp_str(job_name_j(j)));
+        json_append_member(e, "jobs", jobs);
+        json_append_element(arr, e);
+    }
+    return arr;
+}
+
+static JsonNode *_sp_jobs()
+{
+    JsonNode *arr = json_mkarray();
+    for (int ji = 0; ji < NUM_JOBS; ++ji)
+    {
+        const job_type j = static_cast<job_type>(ji);
+        if (!is_starting_job(j))
+            continue;
+        const job_def &jd = get_job_def(j);
+        JsonNode *e = json_mkobject();
+        json_append_member(e, "abbrev", _sp_str(jd.abbrev));
+        json_append_member(e, "name_en", _sp_str(jd.name));
+        json_append_member(e, "name_ja", _sp_str(job_name_j(j)));
+        json_append_member(e, "desc", _sp_str(getGameStartDescription(jd.name)));
+        json_append_member(e, "quote", _sp_str(getQuoteString(jd.name)));
+        json_append_member(e, "str", json_mknumber(jd.s));
+        json_append_member(e, "int", json_mknumber(jd.i));
+        json_append_member(e, "dex", json_mknumber(jd.d));
+        json_append_member(e, "wchoice", json_mknumber(static_cast<int>(jd.wchoice)));
+        JsonNode *eq = json_mkarray();
+        for (const string &s : jd.equipment)
+            json_append_element(eq, _sp_str(s));
+        json_append_member(e, "equipment", eq);
+        JsonNode *sk = json_mkarray();
+        for (const auto &p : jd.skills)
+        {
+            JsonNode *s = json_mkobject();
+            // SK_WEAPON は「始めに選ぶ武器の技能」を表す仮の値で、名前は無い
+            if (p.first == SK_WEAPON)
+                json_append_member(s, "skill", _sp_str("(weapon)"));
+            else
+            {
+                json_append_member(s, "skill", _sp_str(skill_name(p.first)));
+                json_append_member(s, "ja", _sp_str(skill_name_j(p.first)));
+            }
+            json_append_member(s, "level", json_mknumber(p.second));
+            json_append_element(sk, s);
+        }
+        json_append_member(e, "skills", sk);
+        JsonNode *lib = json_mkarray();
+        for (spell_type s : jd.library)
+            json_append_element(lib, _sp_str(spell_title_j(s)));
+        json_append_member(e, "spells", lib);
+        JsonNode *spec = json_mkarray();
+        for (species_type s : jd.recommended_species)
+            json_append_element(spec, _sp_str(species_name_j(s)));
+        json_append_member(e, "species", spec);
+        json_append_element(arr, e);
+    }
+    return arr;
+}
+
+static JsonNode *_sp_books()
+{
+    JsonNode *arr = json_mkarray();
+    for (int b = 0; b < NUM_FIXED_BOOKS; ++b)
+    {
+        if (item_type_removed(OBJ_BOOKS, b))
+            continue;
+        item_def book;
+        book.base_type = OBJ_BOOKS;
+        book.sub_type = b;
+        book.quantity = 1;
+        JsonNode *e = json_mkobject();
+        json_append_member(e, "name_ja",
+                           _sp_str(book.name(DESC_PLAIN, false, true)));
+        JsonNode *sp = json_mkarray();
+        for (spell_type s : spellbook_template(static_cast<book_type>(b)))
+            json_append_element(sp, _sp_str(spell_title(s)));
+        json_append_member(e, "spells", sp);
+        json_append_element(arr, e);
+    }
+    return arr;
+}
+
+static JsonNode *_sp_branches()
+{
+    JsonNode *arr = json_mkarray();
+    for (branch_iterator it; it; ++it)
+    {
+        JsonNode *e = json_mkobject();
+        json_append_member(e, "id", json_mknumber(it->id));
+        json_append_member(e, "short_en", _sp_str(it->shortname));
+        json_append_member(e, "short_ja", _sp_str(branch_name_j(it->shortname)));
+        json_append_member(e, "long_ja", _sp_str(branch_name_j(it->longname)));
+        json_append_member(e, "abbrev", _sp_str(it->abbrevname));
+        json_append_member(e, "parent", json_mknumber(it->parent_branch));
+        json_append_member(e, "mindepth", json_mknumber(it->mindepth));
+        json_append_member(e, "maxdepth", json_mknumber(it->maxdepth));
+        json_append_member(e, "levels", json_mknumber(it->numlevels));
+        json_append_member(e, "absdepth", json_mknumber(it->absdepth));
+        json_append_member(e, "runes", json_mknumber(it->runes.size()));
+
+        JsonNode *pops = json_mkarray();
+        for (int kind = 0; kind < 3; ++kind)
+            for (const pop_entry &pe : branch_population(it->id, kind))
+            {
+                JsonNode *p = json_mkarray();
+                json_append_element(p, _sp_str(mons_type_name(pe.value,
+                                                              DESC_PLAIN)));
+                json_append_element(p, json_mknumber(pe.minr));
+                json_append_element(p, json_mknumber(pe.maxr));
+                json_append_element(p, json_mknumber(pe.rarity));
+                json_append_element(p, json_mknumber(pe.distrib));
+                json_append_element(p, json_mknumber(kind));
+                json_append_element(pops, p);
+            }
+        json_append_member(e, "population", pops);
+        json_append_element(arr, e);
+    }
+    return arr;
+}
+
+void write_spoiler_json(const string &filename)
+{
+    JsonWrapper json(json_mkobject());
+    json_append_member(json.node, "version", _sp_str(Version::Long));
+    json_append_member(json.node, "lookup", _sp_lookup());
+    json_append_member(json.node, "skills", _sp_skills());
+    json_append_member(json.node, "species", _sp_species());
+    json_append_member(json.node, "jobs", _sp_jobs());
+    json_append_member(json.node, "books", _sp_books());
+    json_append_member(json.node, "branches", _sp_branches());
+
+    FILE *f = fopen_u(filename.c_str(), "wb");
+    if (!f)
+        end(1, true, "Cannot write %s", filename.c_str());
+    const string s = json.to_string();
+    fwrite(s.data(), 1, s.size(), f);
+    fclose(f);
 }

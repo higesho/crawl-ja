@@ -87,6 +87,7 @@ struct game_state
     bool test_list;         // Show available tests and exit.
     bool script;            // Set if we want to run a Lua script and exit.
     bool build_db;          // Set if we want to rebuild the db and exit.
+    string spoiler_json;    // 日本語版: スポイラー用のデータの書き出し先
     bool use_des_cache;
     vector<string> tests_selected; // Tests to be run.
     vector<string> script_args;    // Arguments to scripts.

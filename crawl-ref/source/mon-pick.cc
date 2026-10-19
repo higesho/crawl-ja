@@ -211,6 +211,14 @@ const vector<pop_entry>& zombie_population(branch_type br)
     return population[br];
 }
 
+// 日本語版: スポイラーの書き出し用。支部の出現表(陸・水・溶岩)をそのまま返す。
+const vector<pop_entry>& branch_population(branch_type br, int kind)
+{
+    return kind == 1 ? population_water[br]
+         : kind == 2 ? population_lava[br]
+                     : population[br];
+}
+
 bool monster_in_population(branch_type branch, monster_type m, bool check_noncore)
 {
     for (const pop_entry& pop : population[branch])

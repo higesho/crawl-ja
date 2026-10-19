@@ -125,8 +125,22 @@ int show_description(const string &body, const tile_def *tile)
     return show_description(inf, tile);
 }
 
+// 日本語版: スポイラーの書き出し(-spoiler-json)の間は、説明の画面を開かずに
+// 中身をここへ写して戻る。ゲーム内検索(?/)の説明と同じ文を取るため。
+spoiler_capture *spoiler_desc_capture = nullptr;
+
 int show_description(const describe_info &inf, const tile_def *tile)
 {
+    if (spoiler_desc_capture)
+    {
+        spoiler_desc_capture->title = inf.title;
+        spoiler_desc_capture->body = inf.body.str();
+        spoiler_desc_capture->quote = inf.quote;
+        spoiler_desc_capture->tile = tile ? tile->tile : 0;
+        spoiler_desc_capture->captured = true;
+        return 0;
+    }
+
     auto vbox = make_shared<Box>(Widget::VERT);
 
     if (!inf.title.empty())

@@ -4815,6 +4815,7 @@ enum commandline_option_type
     CLO_PRINT_WEBTILES_OPTIONS,
 #endif
     CLO_RESET_CACHE,
+    CLO_SPOILER_JSON, // 日本語版: スポイラー用のデータを JSON で書き出す
 
     CLO_NOPS
 };
@@ -4825,6 +4826,7 @@ static set<commandline_option_type> clo_headless_ok = {
     CLO_SCORES,
     CLO_BUILDDB,
     CLO_RESET_CACHE,
+    CLO_SPOILER_JSON,
     CLO_HELP,
     CLO_VERSION,
     CLO_PLAYABLE_JSON, // JSON metadata for species, jobs, combos.
@@ -4866,7 +4868,7 @@ static const char *cmd_ops[] =
 #ifdef USE_TILE_WEB
     "webtiles-socket", "await-connection", "print-webtiles-options",
 #endif
-    "reset-cache",
+    "reset-cache", "spoiler-json",
 };
 
 
@@ -5967,6 +5969,15 @@ bool parse_args(int argc, char **argv, bool rc_only)
             if (next_is_param)
                 return false;
             crawl_state.build_db = true;
+            enter_headless_mode();
+            break;
+
+        case CLO_SPOILER_JSON:
+            // 日本語版: 初期化(辞書と説明文の読み込み)のあとで書き出して終わる
+            if (!next_is_param)
+                return false;
+            crawl_state.spoiler_json = next_arg;
+            nextUsed = true;
             enter_headless_mode();
             break;
 

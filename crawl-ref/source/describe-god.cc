@@ -1219,6 +1219,23 @@ static void _send_god_ui(god_type god, bool is_altar)
 }
 #endif
 
+// 日本語版: スポイラーの書き出し用。神の説明の画面の各タブ(概要・能力・神罰・
+// その他)の文を、色の印の付いた文字列で返す。概要は、信仰していない者に向けた
+// 「好意」の行を除き、説明と授かる力だけにする。
+vector<string> god_spoiler_tabs(god_type which_god)
+{
+    formatted_string overview;
+    overview += trimmed_string(getLongDescription(god_name(which_god))) + "\n";
+    overview += _describe_god_powers(which_god);
+
+    return {
+        overview.to_colour_string(),
+        _detailed_god_description(which_god).to_colour_string(),
+        _god_wrath_description(which_god).to_colour_string(),
+        _god_extra_description(which_god).to_colour_string(),
+    };
+}
+
 void describe_god(god_type which_god)
 {
     if (which_god == GOD_NO_GOD) //mv: No god -> say it and go away.

@@ -22,6 +22,12 @@ static const job_def& _job_def(job_type job)
     return job_data.at(job);
 }
 
+// 日本語版: スポイラーの書き出し用(初期技能・装備など)
+const job_def& get_job_def(job_type job)
+{
+    return _job_def(job);
+}
+
 const char *get_job_abbrev(job_type which_job)
 {
     if (which_job == JOB_UNKNOWN)

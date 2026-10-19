@@ -10,6 +10,8 @@
 
 using std::vector;
 
+// 日本語版: スポイラーの書き出し用
+const job_def& get_job_def(job_type job);
 const char *get_job_abbrev(job_type which_job);
 job_type get_job_by_abbrev(const char *abbrev);
 const char *get_job_name(job_type which_job);

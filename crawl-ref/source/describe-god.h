@@ -12,3 +12,5 @@ int god_favour_rank(god_type which_god);
 string god_title(god_type which_god, species_type which_species, int piety);
 void describe_god(god_type which_god);
 bool describe_god_with_join(god_type which_god);
+// 日本語版: スポイラーの書き出し用(各タブの文)
+vector<string> god_spoiler_tabs(god_type which_god);

@@ -29,6 +29,7 @@
 #include "items.h"
 #include "libutil.h"
 #include "loading-screen.h"
+#include "lookup-help.h"
 #include "macro.h"
 #include "maps.h"
 #include "menu.h"
@@ -151,6 +152,13 @@ static void _initialize()
     _loading_message(jtrans("Loading maps..."));
     read_maps();
     run_map_global_preludes();
+
+    // 日本語版: スポイラー用のデータを書き出して終わる(-spoiler-json)
+    if (!crawl_state.spoiler_json.empty())
+    {
+        write_spoiler_json(crawl_state.spoiler_json);
+        end(0);
+    }
 
     if (crawl_state.build_db)
         end(0);

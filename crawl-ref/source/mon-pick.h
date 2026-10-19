@@ -15,6 +15,8 @@ typedef bool (*mon_pick_vetoer)(monster_type);
 typedef bool (*mon_pick_pos_vetoer)(monster_type, coord_def);
 
 bool monster_in_population(branch_type branch, monster_type m, bool check_noncore=true);
+// 日本語版: スポイラーの書き出し用(kind: 0 陸、1 水、2 溶岩)
+const vector<pop_entry>& branch_population(branch_type br, int kind);
 int monster_probability(level_id place, monster_type m);
 int monster_pop_depth_avg(branch_type branch, monster_type m);
 int monster_how_ood(branch_type branch, int depth, monster_type m);
