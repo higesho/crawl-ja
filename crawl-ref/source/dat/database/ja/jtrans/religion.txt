@@ -841,7 +841,8 @@ step out of the flow of time
 %%%%
 Ashenzari warns you of distant threats and treasures.\nAshenzari shows you where magical portals lie.
 
-アシェンザリは遠くの脅威や財宝をあなたに知らせる。\nアシェンザリは魔法のポータルの場所を示す。
+アシェンザリは遠くの脅威や財宝をあなたに知らせる。
+アシェンザリは魔法のポータルの場所を示す。
 %%%%
 Ashenzari will now identify your possessions.
 

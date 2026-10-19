@@ -53,7 +53,8 @@ ignores your late donation.
 %%%%
 This altar belongs to %s, but you can't tell which.\nPress the corresponding letter to learn more about a god, or press enter to convert or escape to cancel.
 
-この祭壇は%sのいずれかのものだが、どれなのかは分からない。\n対応する文字キーで神について詳しく調べ、Enterで入信、Escで中止する。
+この祭壇は%sのいずれかのものだが、どれなのかは分からない。
+対応する文字キーで神について詳しく調べ、Enterで入信、Escで中止する。
 %%%%
 Really abandon %s for an unknown god?
 

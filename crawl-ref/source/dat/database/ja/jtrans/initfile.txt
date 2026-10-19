@@ -21,7 +21,8 @@ custom_text_colours が不正: %s
 %%%%
 No translations for language '%s'.\nLanguages with at least partial translation: %s
 
-言語 '%s' の翻訳がない。\n一部でも翻訳がある言語: %s
+言語 '%s' の翻訳がない。
+一部でも翻訳がある言語: %s
 %%%%
 Can't find crawl_dir: '%s'
 

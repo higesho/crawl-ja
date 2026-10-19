@@ -1346,7 +1346,11 @@ You squeeze the %s%s shut.
 %%%%
 It reads,\n"Warrior's weapon\n gracefully paints petals red.\n Honourable art."\nProceed?
 
-こう書かれている:\n『戦士の刃\n 優雅に花弁を赤く染める\n 誉れの業』\n進みますか？
+こう書かれている:
+『戦士の刃
+ 優雅に花弁を赤く染める
+ 誉れの業』
+進みますか？
 %%%%
 # player::hands_act(): "[hands act]your hands <動詞> <目的語>" の訳。%s に手の名前が入る。
 # begin to glow brighter / begin to glow red は spl-selfench.txt にある

@@ -179,7 +179,8 @@ Do you want to DELETE that game and start a new one?
 # %s はゲームの種類([game type])
 You already have %s game saved under the name '%s';\ndo you want to load that instead?
 
-%sのゲームが'%s'という名前で既に保存されています。\n代わりにそちらを読み込みますか？
+%sのゲームが'%s'という名前で既に保存されています。
+代わりにそちらを読み込みますか？
 %%%%
 [game type]regular
 
@@ -191,7 +192,9 @@ Please use a different name to start a new %s game, then.
 %%%%
 This game comes from a previous release of Crawl (%s).\n\nIf you load it now, you won't be able to go back. Continue?
 
-このゲームは以前のリリースの Crawl (%s) のものです。\n\n今読み込むと、元のバージョンには戻せなくなります。続けますか？
+このゲームは以前のリリースの Crawl (%s) のものです。
+
+今読み込むと、元のバージョンには戻せなくなります。続けますか？
 %%%%
 Please use version %s to load %s then.
 
@@ -199,11 +202,14 @@ Please use version %s to load %s then.
 %%%%
 There exists a save by that name but it appears to be invalid.\nDo you want to delete it?\nError: %s
 
-その名前のセーブデータがありますが、不正なデータのようです。\n削除しますか？\nエラー: %s
+その名前のセーブデータがありますが、不正なデータのようです。
+削除しますか？
+エラー: %s
 %%%%
 This Lava Orc save game cannot be loaded as-is. If you load it now,\nyour character will be converted to a Mountain Dwarf. Continue?
 
-この溶岩オークのセーブデータはそのままでは読み込めません。今読み込むと、\nキャラクターは山ドワーフに変換されます。続けますか？
+この溶岩オークのセーブデータはそのままでは読み込めません。今読み込むと、
+キャラクターは山ドワーフに変換されます。続けますか？
 %%%%
 Please load the save in an earlier version if you want to keep it as a Lava Orc.
 
@@ -211,7 +217,8 @@ Please load the save in an earlier version if you want to keep it as a Lava Orc.
 %%%%
 This Vampire save game cannot be loaded as-is. If you load it now,\nyour character will be converted to a Human. Continue?
 
-この吸血鬼のセーブデータはそのままでは読み込めません。今読み込むと、\nキャラクターは人間に変換されます。続けますか？
+この吸血鬼のセーブデータはそのままでは読み込めません。今読み込むと、
+キャラクターは人間に変換されます。続けますか？
 %%%%
 Please load the save in an earlier version if you want to remain a Vampire.
 

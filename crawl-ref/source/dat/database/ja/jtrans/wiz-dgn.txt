@@ -145,7 +145,8 @@ Enter map name (prefix it with * for local placement):
 %%%%
 Building '<w>%s</w>'.\n[<w>.</w>] place feature and continue, [<w>ret</w>] place and exit, [<w>esc</w>] exit.
 
-'<w>%s</w>'を建設中。\n[<w>.</w>] 置いて続ける、[<w>ret</w>] 置いて終了、[<w>esc</w>] 終了
+'<w>%s</w>'を建設中。
+[<w>.</w>] 置いて続ける、[<w>ret</w>] 置いて終了、[<w>esc</w>] 終了
 %%%%
 You can only make a trap on a floor square.
 
