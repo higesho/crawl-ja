@@ -48,11 +48,31 @@ enum pad_dpad
     NUM_PAD_DPAD
 };
 
-// 割り当ての枠の番号(Options.pad_binds の鍵)。
-inline int pad_slot(pad_button b)
+// 同時押しの修飾(GAMEPAD_DESIGN.md §4.1)。LB / RB を押しながら他のボタンを押す。
+enum
 {
-    return b;
+    PAD_MOD_LB = 1,
+    PAD_MOD_RB = 2,
+    NUM_PAD_LAYERS = 4, // 単独・LB+・RB+・LB+RB+
+};
+
+// 割り当ての枠の番号(Options.pad_binds の鍵。マクロのキーコードもこれから作る)。
+// 層ごとに 16 ずつ空けてある。
+static const int PAD_SLOTS_PER_LAYER = 16;
+static const int NUM_PAD_SLOTS = NUM_PAD_LAYERS * PAD_SLOTS_PER_LAYER;
+inline int pad_slot(pad_button b, int mods = 0)
+{
+    return mods * PAD_SLOTS_PER_LAYER + b;
 }
+
+// その層でそのボタンが枠になるか。修飾自身(LB+LB、LB+RB など)は押しようがないので枠にしない。
+bool pad_slot_valid(pad_button b, int mods);
+// 枠の綴り(X、LB+X、RB+X、LB+RB+X)。
+std::string pad_slot_name(pad_button b, int mods);
+// 枠の番号から綴りへ。枠でなければ空。
+std::string pad_slot_name(int slot);
+// 綴りから読む(LB+X、RB+LB+X も読む。大文字小文字は問わない)。
+bool parse_pad_slot(const std::string &name, pad_button &button, int &mods);
 
 // rc とログに出す綴り(A, LB, Back ...)。
 const char *pad_button_name(pad_button b);
@@ -69,6 +89,7 @@ struct pad_output
     bool is_direction = false;
     int dx = 0, dy = 0;          // 方向のとき -1..1
     pad_button button = PAD_A;   // 押しのとき
+    int mods = 0;                // 押しのとき、同時押しの修飾(PAD_MOD_*)
 };
 
 class gamepad_state
@@ -115,7 +136,8 @@ private:
     void current_direction(int &dx, int &dy) const;
     void emit_direction(int dx, int dy, uint32_t now, int repeat_delay);
     void queue_direction(int dx, int dy);
-    void queue_press(pad_button b);
+    void press(pad_button b);
+    void queue_press(pad_button b, int mods);
 
     bool m_dpad[NUM_PAD_DPAD] = {};
     int m_stick_x = 0, m_stick_y = 0;    // -1/0/1 に丸めたもの
@@ -128,6 +150,14 @@ private:
     uint32_t m_pending_since = 0;
     int m_pending_dx = 0, m_pending_dy = 0;
     bool m_rearm_pending = true;         // 一度中立を見るまで受け付けない(約束 2)
+
+    // 同時押し(変愚の PadChord と同じ約束)。添字 0 = LB、1 = RB。
+    //  1. 修飾を押した瞬間には何も起きない。離したときに、その間に他のボタンを
+    //     押していなければ単独押しとして出す。
+    //  2. 修飾を押している間の他のボタンは同時押しになり、修飾は「使われた」印が
+    //     付く(離しても単独押しにならない)。LB と RB を重ねたときも両方に付く。
+    bool m_mod_held[2] = {};
+    bool m_mod_used[2] = {};
 
     std::deque<pad_output> m_outputs;
 };

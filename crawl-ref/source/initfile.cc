@@ -3674,7 +3674,8 @@ static void _bindkey(string field)
 }
 
 #ifdef USE_TILE_LOCAL
-// pad_bind = X:CMD_EXPLORE, RT:none(ja-tools/GAMEPAD_DESIGN.md §3)
+// pad_bind = X:CMD_EXPLORE, RT:none, LB+X:CMD_CAST_SPELL
+// (ja-tools/GAMEPAD_DESIGN.md §3)
 void game_options::read_pad_bind(const string &field)
 {
     for (const string &entry : split_string(",", field))
@@ -3705,20 +3706,21 @@ void game_options::read_pad_bind(const string &field)
         const string command_name = trimmed_string(entry.substr(colon + 1));
 
         pad_button button;
-        if (!parse_pad_button(button_name, button))
+        int mods;
+        if (!parse_pad_slot(button_name, button, mods))
         {
             report_error(jtransc("Unknown gamepad button '%s' in pad_bind"),
                          button_name.c_str());
             continue;
         }
-        // A と B は決定・取消で固定。
-        if (button == PAD_A || button == PAD_B)
+        // 単独押しの A と B は決定・取消で固定(同時押しの層では割り当てられる)。
+        if (mods == 0 && (button == PAD_A || button == PAD_B))
         {
             report_error(jtransc("The gamepad's %s button can't be rebound"),
                          pad_button_name(button));
             continue;
         }
-        const int slot = pad_slot(button);
+        const int slot = pad_slot(button, mods);
 
         const string command_lower = lowercase_string(command_name);
         if (command_lower == "none")

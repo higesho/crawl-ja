@@ -2408,6 +2408,16 @@ pad_bind = X:CMD_EXPLORE
         Commands are only sent while the game is waiting for a command; in
         menus and prompts only the D-pad, A and B work. Holding a direction
         repeats after tile_key_repeat_delay.
+        Holding LB or RB while pressing another button makes a chord, such
+        as LB+X, RB+X or LB+RB+X; chords can be bound like single buttons
+        (for example "pad_bind = LB+X:CMD_QUAFF"). LB and RB on their own
+        act when they are released, if no other button was pressed in the
+        meantime. Inside chords, A and B can be bound too.
+        A button or chord without a command sends its own key code, named
+        Pad-X, Pad-LB+X and so on, which can be used as the trigger of a
+        macro or keymap: press it in the ~ macro editor, or write for
+        example "macros += M \{Pad-LB+X} i". Chords have no default
+        bindings, so they are all free for macros.
         The default bindings are:
           X      CMD_EXPLORE            Y      CMD_AUTOFIGHT
           LB     CMD_GO_DOWNSTAIRS      RB     CMD_GO_UPSTAIRS

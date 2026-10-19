@@ -115,6 +115,52 @@ bool parse_pad_button(const std::string &name, pad_button &out)
     return false;
 }
 
+bool pad_slot_valid(pad_button b, int mods)
+{
+    if (b < 0 || b >= NUM_PAD_BUTTONS || mods < 0 || mods >= NUM_PAD_LAYERS)
+        return false;
+    return mods == 0 || b != PAD_LB && b != PAD_RB;
+}
+
+std::string pad_slot_name(pad_button b, int mods)
+{
+    std::string name;
+    if (mods & PAD_MOD_LB)
+        name += "LB+";
+    if (mods & PAD_MOD_RB)
+        name += "RB+";
+    return name + pad_button_name(b);
+}
+
+std::string pad_slot_name(int slot)
+{
+    const int mods = slot / PAD_SLOTS_PER_LAYER;
+    const pad_button b = static_cast<pad_button>(slot % PAD_SLOTS_PER_LAYER);
+    if (slot < 0 || !pad_slot_valid(b, mods))
+        return "";
+    return pad_slot_name(b, mods);
+}
+
+bool parse_pad_slot(const std::string &name, pad_button &button, int &mods)
+{
+    mods = 0;
+    std::string rest = name;
+    size_t plus;
+    while ((plus = rest.find('+')) != std::string::npos)
+    {
+        pad_button modifier;
+        if (!parse_pad_button(rest.substr(0, plus), modifier))
+            return false;
+        const int bit = modifier == PAD_LB ? PAD_MOD_LB
+                      : modifier == PAD_RB ? PAD_MOD_RB : 0;
+        if (!bit || (mods & bit))
+            return false; // 修飾になれるのは LB と RB だけ(重ねて書くのも誤り)
+        mods |= bit;
+        rest = rest.substr(plus + 1);
+    }
+    return parse_pad_button(rest, button) && pad_slot_valid(button, mods);
+}
+
 const char *pad_default_command_name(pad_button b)
 {
     if (b < 0 || b >= NUM_PAD_BUTTONS)
@@ -124,8 +170,49 @@ const char *pad_default_command_name(pad_button b)
 
 void gamepad_state::set_button(pad_button b, bool down)
 {
+    if (b == PAD_LB || b == PAD_RB)
+    {
+        const int i = b == PAD_LB ? 0 : 1;
+        if (down)
+        {
+            if (m_mod_held[i])
+                return; // 押したままの知らせが重なった
+            m_mod_held[i] = true;
+            m_mod_used[i] = false;
+            // LB と RB を重ねたら、どちらも単独押しではなくなる(LB+RB+ の層を
+            // 作ったつもりで離した瞬間に階段を上り下りしないように)。
+            if (m_mod_held[1 - i])
+            {
+                m_mod_used[0] = true;
+                m_mod_used[1] = true;
+            }
+        }
+        else
+        {
+            // 離した。その間に他のボタンを押していなければ単独押し。
+            if (m_mod_held[i] && !m_mod_used[i])
+                queue_press(b, 0);
+            m_mod_held[i] = false;
+            m_mod_used[i] = false;
+        }
+        return;
+    }
     if (down)
-        queue_press(b);
+        press(b);
+}
+
+void gamepad_state::press(pad_button b)
+{
+    int mods = 0;
+    for (int i = 0; i < 2; ++i)
+    {
+        if (m_mod_held[i])
+        {
+            mods |= i == 0 ? PAD_MOD_LB : PAD_MOD_RB;
+            m_mod_used[i] = true; // 離しても単独押しにしない
+        }
+    }
+    queue_press(b, mods);
 }
 
 void gamepad_state::set_dpad(pad_dpad d, bool down)
@@ -150,7 +237,7 @@ void gamepad_state::set_trigger(int which, int value)
     if (!m_trigger_down[which] && value > TRIGGER_DOWN)
     {
         m_trigger_down[which] = true;
-        queue_press(which == 0 ? PAD_LT : PAD_RT);
+        press(which == 0 ? PAD_LT : PAD_RT);
     }
     else if (m_trigger_down[which] && value < TRIGGER_UP)
         m_trigger_down[which] = false;
@@ -196,10 +283,11 @@ void gamepad_state::queue_direction(int dx, int dy)
     m_outputs.push_back(out);
 }
 
-void gamepad_state::queue_press(pad_button b)
+void gamepad_state::queue_press(pad_button b, int mods)
 {
     pad_output out;
     out.button = b;
+    out.mods = mods;
     m_outputs.push_back(out);
 }
 
@@ -329,5 +417,11 @@ void gamepad_state::forget()
     m_held_dy = 0;
     m_pending = false;
     m_rearm_pending = true;
+    // 修飾を握ったままにしない(焦点が戻った瞬間に同時押しが成立しないように)。
+    for (int i = 0; i < 2; ++i)
+    {
+        m_mod_held[i] = false;
+        m_mod_used[i] = false;
+    }
     m_outputs.clear();
 }

@@ -316,6 +316,13 @@ enum KEYS
     // ugh
     CK_ALT_BASE = -3000,
     CK_CMD_BASE = -20000,
+
+    // ゲームパッド(ローカルのタイル版)の枠(gamepad.h の pad_slot)ごとのキー。
+    // 割り当ての無い枠が出し、マクロ・キーマップのトリガーになる
+    // (ja-tools/GAMEPAD_DESIGN.md §4.2)。Alt 付きのキー(CK_ALT_BASE の前後)・
+    // コマンドの符号(-2000 台)・マウス(-9999 から)と重ならない範囲。
+    CK_PAD_BASE = -5000,
+    CK_PAD_LAST = CK_PAD_BASE - 63,
 };
 
 class cursor_control

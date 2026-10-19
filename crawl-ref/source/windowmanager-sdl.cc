@@ -457,13 +457,13 @@ static bool _pad_in_command_context()
            && !ui::has_layout();
 }
 
-// ボタンに割り当てたコマンド。rc の pad_bind が優先し、無ければ既定。
-static command_type _pad_bound_command(pad_button button)
+// 枠に割り当てたコマンド。rc の pad_bind が優先し、無ければ既定(単独押しだけ)。
+static command_type _pad_bound_command(pad_button button, int mods)
 {
-    const auto it = Options.pad_binds.find(pad_slot(button));
+    const auto it = Options.pad_binds.find(pad_slot(button, mods));
     if (it != Options.pad_binds.end())
         return static_cast<command_type>(it->second);
-    if (!Options.pad_bind_defaults)
+    if (!Options.pad_bind_defaults || mods != 0)
         return CMD_NO_CMD;
     const char *name = pad_default_command_name(button);
     return name ? name_to_command(name) : CMD_NO_CMD;
@@ -500,20 +500,17 @@ static int _pad_output_to_key(const pad_output &out)
     if (out.is_direction)
         return _pad_direction_key(out.dx, out.dy);
 
-    switch (out.button)
+    // 単独押しの A と B は決定・取消で固定(同時押しの層の A・B は枠)。
+    if (out.mods == 0 && (out.button == PAD_A || out.button == PAD_B))
     {
-    case PAD_A: // 決定(固定)
-    case PAD_B: // 取消(固定)
         // コマンド待ちの画面で Enter/Esc を出すと「そのコマンドは存在しません」が
         // 出るだけなので何もしない(B で自動探索を止めたあとなど)。
         if (_pad_in_command_context())
             return CK_NO_KEY;
         return out.button == PAD_A ? CK_ENTER : CK_ESCAPE;
-    default:
-        break;
     }
 
-    const command_type cmd = _pad_bound_command(out.button);
+    const command_type cmd = _pad_bound_command(out.button, out.mods);
     if (cmd != CMD_NO_CMD)
     {
         // キーマップも bindkey も通らない、マウスのクリックと同じ道。
@@ -521,7 +518,9 @@ static int _pad_output_to_key(const pad_output &out)
         return _pad_in_command_context() ? encode_command_as_key(cmd)
                                          : CK_NO_KEY;
     }
-    return CK_NO_KEY;
+    // 割り当ての無い枠は、その枠のキーを出す。マクロ(~ のマクロ編集)や
+    // キーマップのトリガーになる。登録が無ければゲームが無視する。
+    return CK_PAD_BASE - pad_slot(out.button, out.mods);
 }
 
 static void _pad_log_key(const pad_output &out, int key)
@@ -530,7 +529,7 @@ static void _pad_log_key(const pad_output &out, int key)
         return;
     string what = out.is_direction
         ? make_stringf("dir %d,%d", out.dx, out.dy)
-        : string(pad_button_name(out.button));
+        : pad_slot_name(out.button, out.mods);
     string result;
     if (key == CK_NO_KEY)
         result = "(none)";

@@ -33,7 +33,8 @@ static std::vector<std::string> drain(gamepad_state &pad)
         if (o.is_direction)
             std::snprintf(buf, sizeof buf, "dir %d,%d", o.dx, o.dy);
         else
-            std::snprintf(buf, sizeof buf, "%s", pad_button_name(o.button));
+            std::snprintf(buf, sizeof buf, "%s",
+                          pad_slot_name(o.button, o.mods).c_str());
         out.push_back(buf);
     }
     return out;
@@ -320,6 +321,92 @@ static void test_trigger_and_buttons()
     CHECK(!pad2.has_output(), "取り出したら空");
 }
 
+static void test_slots()
+{
+    pad_button b;
+    int mods;
+    CHECK(parse_pad_slot("X", b, mods) && b == PAD_X && mods == 0, "単独の枠");
+    CHECK(parse_pad_slot("lb+x", b, mods) && b == PAD_X && mods == PAD_MOD_LB,
+          "LB+X");
+    CHECK(parse_pad_slot("RB+Start", b, mods) && b == PAD_START
+          && mods == PAD_MOD_RB, "RB+Start");
+    CHECK(parse_pad_slot("RB+LB+Y", b, mods) && b == PAD_Y
+          && mods == (PAD_MOD_LB | PAD_MOD_RB), "RB+LB+Y は LB+RB+Y");
+    CHECK(parse_pad_slot("LB+A", b, mods) && b == PAD_A, "層の中の A は枠");
+    CHECK(!parse_pad_slot("LB+LB", b, mods), "LB+LB は枠でない");
+    CHECK(!parse_pad_slot("LB+RB", b, mods), "LB+RB は枠でない");
+    CHECK(!parse_pad_slot("X+Y", b, mods), "修飾は LB と RB だけ");
+    CHECK(!parse_pad_slot("LB+LB+X", b, mods), "修飾を重ねて書くのは誤り");
+    CHECK(!parse_pad_slot("LB+", b, mods), "ボタンが無い");
+    CHECK(parse_pad_slot("LB", b, mods) && b == PAD_LB && mods == 0,
+          "単独の LB は枠");
+    CHECK(pad_slot_name(PAD_Y, PAD_MOD_LB | PAD_MOD_RB) == "LB+RB+Y", "綴り");
+    // 枠の番号と綴りの往復。番号は重ならない。
+    int valid = 0;
+    for (int slot = 0; slot < NUM_PAD_SLOTS; ++slot)
+    {
+        const std::string name = pad_slot_name(slot);
+        if (name.empty())
+            continue;
+        ++valid;
+        CHECK(parse_pad_slot(name, b, mods) && pad_slot(b, mods) == slot,
+              "枠の番号と綴りの往復");
+    }
+    CHECK(valid == NUM_PAD_BUTTONS + 3 * (NUM_PAD_BUTTONS - 2), "枠の数");
+}
+
+static void test_chords()
+{
+    // LB は押した瞬間には何も出さず、離したときに単独押しとして出す。
+    gamepad_state pad = armed();
+    pad.set_button(PAD_LB, true);
+    EXPECT_OUT(pad, "", "LB を押した瞬間は出さない");
+    pad.set_button(PAD_LB, false);
+    EXPECT_OUT(pad, "LB", "LB を離したら単独押し");
+
+    // LB を押しながら X → LB+X。LB を離しても単独押しにならない。
+    pad.set_button(PAD_LB, true);
+    pad.set_button(PAD_X, true);
+    pad.set_button(PAD_X, false);
+    pad.set_button(PAD_LB, false);
+    EXPECT_OUT(pad, "LB+X", "同時押し");
+
+    // 同じ層で 2 つ押せば 2 つとも同時押し。
+    pad.set_button(PAD_RB, true);
+    pad.set_button(PAD_Y, true);
+    pad.set_trigger(0, 30000);
+    pad.set_button(PAD_RB, false);
+    EXPECT_OUT(pad, "RB+Y | RB+LT", "RB の層で 2 つ");
+    pad.set_trigger(0, 0);
+
+    // LB と RB を重ねると LB+RB+ の層。どちらも単独押しにならない。
+    pad.set_button(PAD_LB, true);
+    pad.set_button(PAD_RB, true);
+    pad.set_button(PAD_START, true);
+    pad.set_button(PAD_RB, false);
+    pad.set_button(PAD_LB, false);
+    EXPECT_OUT(pad, "LB+RB+Start", "2 段の層");
+
+    // 層を作っただけで離した → 何も出さない。
+    pad.set_button(PAD_RB, true);
+    pad.set_button(PAD_LB, true);
+    pad.set_button(PAD_LB, false);
+    pad.set_button(PAD_RB, false);
+    EXPECT_OUT(pad, "", "層を作って離しただけ");
+
+    // 層のあとの単独押しは元どおり(印が残らない)。
+    pad.set_button(PAD_RB, true);
+    pad.set_button(PAD_RB, false);
+    EXPECT_OUT(pad, "RB", "印は離したら消える");
+
+    // 修飾を握ったまま焦点を失ったら忘れる(戻ってから押した X は単独)。
+    pad.set_button(PAD_LB, true);
+    pad.update(0, false, DELAY);
+    pad.set_button(PAD_X, true);
+    pad.set_button(PAD_LB, false);
+    EXPECT_OUT(pad, "X", "焦点を失うと修飾も忘れる");
+}
+
 int main()
 {
     test_names();
@@ -330,6 +417,8 @@ int main()
     test_release_diagonal();
     test_stick();
     test_trigger_and_buttons();
+    test_slots();
+    test_chords();
     std::printf("%s: %d checks, %d failures\n",
                 failures ? "FAIL" : "PASS", checks, failures);
     return failures ? 1 : 0;
