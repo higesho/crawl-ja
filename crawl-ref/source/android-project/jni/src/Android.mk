@@ -11,6 +11,7 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include \
                     $(LOCAL_PATH)/../sqlite \
                     $(LOCAL_PATH)/../lua/src \
                     $(LOCAL_PATH)/../freetype/include \
+                    $(LOCAL_PATH)/../pcre \
                     $(LOCAL_PATH)/$(CRAWL_PATH) \
                     $(LOCAL_PATH)/$(CRAWL_PATH)/rltiles
 
@@ -23,6 +24,10 @@ LOCAL_SHORT_COMMANDS := true
 
 LOCAL_CFLAGS := $(shell cat $(LOCAL_PATH)/$(CRAWL_PATH)/.android-cflags)
 LOCAL_CXXFLAGS := $(shell cat $(LOCAL_PATH)/$(CRAWL_PATH)/.android-cxxflags)
+# 日本語版: 正規表現は Windows 版と同じ PCRE を使う。Bionic の POSIX 正規表現
+# (regexec)は 0x80 以上のバイト(日本語の UTF-8)を含む文でメッセージの絞り込みを
+# 当てると落ちる(起動直後の mpr で SIGSEGV)。
+LOCAL_CFLAGS += -DREGEX_PCRE
 
 LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
     $(CRAWL_PATH)/ability.cc \
@@ -342,7 +347,7 @@ LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
     $(CRAWL_PATH)/rltiles/tiledef-unrand.cc \
     $(CRAWL_PATH)/version.cc
 
-LOCAL_SHARED_LIBRARIES := SDL2 SDL2_image mikmod smpeg2 SDL2_mixer freetype sqlite lua zlib
+LOCAL_SHARED_LIBRARIES := SDL2 SDL2_image mikmod smpeg2 SDL2_mixer freetype sqlite lua zlib libpcre
 
 LOCAL_LDLIBS := -ldl -lGLESv1_CM -lGLESv2 -llog -landroid
 

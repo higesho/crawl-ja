@@ -19,6 +19,8 @@ public class DungeonCrawlStoneSoup extends SDLActivity {
                 "sqlite",
                 "lua",
                 "zlib",
+                // 日本語版: 正規表現に PCRE を使う(jni/src/Android.mk)
+                "pcre",
                 "main"
         };
     }

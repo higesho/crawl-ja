@@ -146,40 +146,21 @@ public class DCSSLauncher extends AppCompatActivity implements AdapterView.OnIte
         startActivity(intent);
     }
 
-    // 日本語版: 端末に入っている日本語フォントの候補(先に見つかったものを使う)。
+    // 日本語版: APK に同梱した日本語フォント(assets/dat/tiles。fonts-ja/README.txt)。
     // Windows 版の settings/init.txt は C:/Windows/Fonts を指していて Android では
-    // 使えず、見つからないとゲームが起動時に終了するため、実在するものだけを書く。
-    private static final String[] JAPANESE_FONTS = {
-        "/system/fonts/NotoSansCJK-Regular.ttc",
-        "/system/fonts/NotoSansJP-Regular.otf",
-        "/system/fonts/DroidSansJapanese.ttf",
-        "/system/fonts/DroidSansFallbackFull.ttf",
-        "/system/fonts/DroidSansFallback.ttf",
-    };
+    // 使えない(見つからないとゲームが起動時に終了する)。端末の Noto Sans CJK は
+    // 新しい端末では CFF2 形式で、同梱の freetype では読めないので使わない。
+    private static final String JAPANESE_FONT = "BIZUDGothic-Regular.ttf";
 
     // 日本語版: 新しく作る init ファイルの中身。
     private static String japaneseInitText() {
-        String font = null;
-        for (String candidate : JAPANESE_FONTS) {
-            if (new File(candidate).exists()) {
-                font = candidate;
-                break;
-            }
-        }
         StringBuilder text = new StringBuilder();
         text.append("##### 日本語版の設定 #####\n");
-        if (font == null) {
-            text.append("# 端末に日本語のフォントが見つからなかったので英語で表示する。\n");
-            text.append("# 日本語のフォントのファイルを tile_font_*_file に指定してから\n");
-            text.append("# language の行の先頭の # を外すと日本語で表示できる。\n");
-            text.append("# language = ja\n");
-            return text.toString();
-        }
         text.append("# 英語で遊びたいときは language の行の先頭に # を付ける。\n");
         text.append("language = ja\n");
         for (String kind : new String[] {"crt", "msg", "stat", "tip", "lbl"}) {
             text.append("tile_font_").append(kind).append("_file = ")
-                .append(font).append("\n");
+                .append(JAPANESE_FONT).append("\n");
         }
         return text.toString();
     }
