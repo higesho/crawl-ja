@@ -7,10 +7,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.io.File;
+import java.util.Locale;
 
 public class DCSSTextEditor extends DCSSTextBase {
 
     private static final String OPTIONS_GUIDE = "docs/options_guide.txt";
+    // 日本語版: 端末の言語が日本語なら訳を開く(ランチャーの文字列と同じ切り替え)。
+    private static final String OPTIONS_GUIDE_JA = "docs/ja/options_guide.txt";
 
     private File file;
 
@@ -58,7 +61,8 @@ public class DCSSTextEditor extends DCSSTextBase {
     private void onClickHelp(View v) {
         status.setText("");
         Intent intent = new Intent(getBaseContext(), DCSSTextViewer.class);
-        intent.putExtra("asset", OPTIONS_GUIDE);
+        boolean japanese = Locale.getDefault().getLanguage().equals("ja");
+        intent.putExtra("asset", japanese ? OPTIONS_GUIDE_JA : OPTIONS_GUIDE);
         startActivity(intent);
     }
 

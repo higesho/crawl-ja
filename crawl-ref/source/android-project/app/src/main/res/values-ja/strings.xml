@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 日本語版: 端末の言語が日本語のときに使う。values/strings.xml の訳。 -->
+<resources>
+    <string name="app_name">Dungeon Crawl Stone Soup</string>
+    <string name="start_game">ゲームを始める</string>
+    <string name="edit_rc">設定ファイルを編集</string>
+    <string name="morgue">記録ファイル</string>
+    <string name="mods">改造データ</string>
+    <string name="rc_hint">ここに自分用の設定を書く。</string>
+    <string name="help">オプションの説明</string>
+    <string name="open_error">ファイルを開けなかった</string>
+    <string name="save">保存</string>
+    <string name="save_error">ファイルを保存できなかった</string>
+    <string name="ok">OK</string>
+    <string name="cancel">キャンセル</string>
+    <string name="back">戻る</string>
+    <string name="sort_by">並べ替え</string>
+    <string name="download">ダウンロード</string>
+    <string name="download_ok">ダウンロードした</string>
+    <string name="download_error">ダウンロードできなかった</string>
+    <string name="upload">アップロード</string>
+    <string name="upload_confirm">%s を上書きしますか？</string>
+    <string name="upload_ok">アップロードした</string>
+    <string name="upload_error">アップロードできなかった</string>
+    <string name="delete">削除</string>
+    <string name="delete_confirm">%s を削除しますか？</string>
+    <string name="yes">はい</string>
+    <string name="no">いいえ</string>
+    <string name="delete_ok">ファイルを削除した</string>
+    <string name="delete_error">ファイルを削除できなかった</string>
+    <string name="virtual_keyboard">画面のキーボード</string>
+    <string name="extra_keyboard">追加の方向パッド</string>
+    <string name="keyboard_size">キーボードの大きさ</string>
+    <string name="full_screen">全画面</string>
+    <string name="mods_hint">ここでゲームのデータを差し替えられる。
+        追加のフォントは設定ファイルで有効にする必要がある。</string>
+    <string name="tv_warning">注意\n\nCrawl を遊ぶには、キーボード、マウス、タッチ画面の
+        どれかが必要。\n\nマウスかタッチ画面しか無いときは、次の画面で画面のキーボードを
+        有効にすることを勧める。</string>
+    <string-array name="sort_options">
+        <item>名前(昇順)</item>
+        <item>名前(降順)</item>
+        <item>日付(昇順)</item>
+        <item>日付(降順)</item>
+    </string-array>
+    <string-array name="keyboard_options">
+        <item>使わない</item>
+        <item>標準のキーボード</item>
+        <item>透明なキーボード</item>
+        <item>Android のキーボード</item>
+    </string-array>
+    <string-array name="extra_keyboard_options">
+        <item>使わない</item>
+        <item>左上</item>
+        <item>右上</item>
+        <item>左下</item>
+        <item>右下</item>
+    </string-array>
+</resources>

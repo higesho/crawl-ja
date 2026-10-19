@@ -36,12 +36,14 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_21
-        targetCompatibility JavaVersion.VERSION_21
+        // 日本語版: JDK 17 でも組めるように 17 にした(Java のソースは 21 の機能を使っていない)
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     externalNativeBuild {
         ndkBuild {
-            ndkVersion = "28.2.13676358"
+            // 日本語版: 手元の NDK に合わせて -PcrawlNdkVersion=27.2.12479018 などで差し替えられる
+            ndkVersion = project.findProperty("crawlNdkVersion") ?: "28.2.13676358"
             path file('../jni/Android.mk')
         }
     }
