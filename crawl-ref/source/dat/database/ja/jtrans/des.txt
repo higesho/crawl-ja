@@ -745,7 +745,10 @@ You sense a tension in the %s.
 %%%%
 <cyan>You have entered the arena!\nYou will win if you kill everything that spawns (including allies).\nIf it is a boss round, you only need to kill the boss in order to win.\nIf it is a lightning round, you only need to survive!</cyan>
 
-<cyan>あなたは闘技場に入った！\n出現したものをすべて倒せば勝利となる(仲間も含む)。\nボスラウンドでは、ボスを倒しさえすれば勝利となる。\nライトニングラウンドでは、ただ生き残りさえすればよい！</cyan>
+<cyan>あなたは闘技場に入った！
+出現したものをすべて倒せば勝利となる(仲間も含む)。
+ボスラウンドでは、ボスを倒しさえすれば勝利となる。
+ライトニングラウンドでは、ただ生き残りさえすればよい！</cyan>
 %%%%
 # ---- sprint/meat.des(枠の中の文は meat_frame_line が表示幅で中央に寄せる)
 %%%%

@@ -278,5 +278,6 @@ Shopping list: %d items, total cost %d gold pieces
 %%%%
 Travel to: %s\nYou cannot afford this item; travel there anyway? (y/N)
 
-移動先: %s\n今はこの品を買う金がありません。それでも移動しますか？ (y/N)
+移動先: %s
+今はこの品を買う金がありません。それでも移動しますか？ (y/N)
 %%%%

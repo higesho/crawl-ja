@@ -27,7 +27,9 @@ You can find your morgue file in the '%s' directory.
 %%%%
 You can find your morgue file in the \n'%s'\n directory.
 
-キャラクターダンプは\n'%s'\nディレクトリに置いてあります。
+キャラクターダンプは
+'%s'
+ディレクトリに置いてあります。
 %%%%
 [insc]unknown
 
