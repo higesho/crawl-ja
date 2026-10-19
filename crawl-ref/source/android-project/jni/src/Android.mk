@@ -14,6 +14,13 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include \
                     $(LOCAL_PATH)/$(CRAWL_PATH) \
                     $(LOCAL_PATH)/$(CRAWL_PATH)/rltiles
 
+# 日本語版: 文は jtransc("...") で辞書から引いて書式文字列として渡すので、
+# NDK が既定で付ける -Werror=format-security を外す(Windows 版と同じ扱い)。
+LOCAL_DISABLE_FORMAT_STRING_CHECKS := true
+# 日本語版: Windows で組むと、リンクのコマンド行が長さの上限(約 32K 文字)を
+# 超えるので、引数をファイル経由で渡す。
+LOCAL_SHORT_COMMANDS := true
+
 LOCAL_CFLAGS := $(shell cat $(LOCAL_PATH)/$(CRAWL_PATH)/.android-cflags)
 LOCAL_CXXFLAGS := $(shell cat $(LOCAL_PATH)/$(CRAWL_PATH)/.android-cxxflags)
 
