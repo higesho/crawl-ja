@@ -45,6 +45,18 @@ All changes made in this screen were undone.
 
 この画面での変更をすべて取り消した。
 %%%%
+Command for %s: %s
+
+%s に割り当てるコマンド: %s
+%%%%
+Command categories
+
+コマンドの分類
+%%%%
+[<w>Up</w>/<w>Down</w>] choose, [<w>A</w>/<w>Enter</w>] open or assign, [<w>B</w>/<w>Esc</w>] go back
+
+[<w>上</w>/<w>下</w>] で選ぶ、[<w>A</w>/<w>Enter</w>] で開く・割り当てる、[<w>B</w>/<w>Esc</w>] で戻る
+%%%%
 [pad layer]Single press
 
 単独押し

@@ -310,68 +310,80 @@ namespace
         }
     };
 
-    // 2 枚目: その枠に割り当てるコマンドを選ぶ。
-    class PadCommandMenu : public Menu
+    // 選べるコマンドを分類ごとにまとめたもの(表示する名前は訳したもの)。
+    struct pad_choice_group
+    {
+        string name;
+        vector<command_type> commands;
+    };
+
+    // 表の分類に、割り当てられないものを除いて並べる。表に載っていない
+    // コマンドがあれば(本家で増えたときなど)、最後に「その他のコマンド
+    // (内部の名前)」の分類を足す。今は全部載っているので出ない。
+    vector<pad_choice_group> pad_choice_groups()
+    {
+        vector<pad_choice_group> result;
+        vector<bool> listed(CMD_MAX_NORMAL + 1, false);
+        for (const pad_command_group &group : pad_command_groups())
+        {
+            pad_choice_group choice_group;
+            choice_group.name = tagged_jtrans("[pad group]", group.name);
+            for (const pad_command_info &info : group.commands)
+            {
+                if (!gamepad_command_bindable(info.cmd))
+                    continue;
+                listed[info.cmd] = true;
+                choice_group.commands.push_back(info.cmd);
+            }
+            if (!choice_group.commands.empty())
+                result.push_back(choice_group);
+        }
+        pad_choice_group others;
+        others.name = tagged_jtrans("[pad group]", "All other commands");
+        for (int c = CMD_NO_CMD + 1; c <= CMD_MAX_NORMAL; ++c)
+        {
+            const command_type other = static_cast<command_type>(c);
+            if (!listed[c] && gamepad_command_bindable(other))
+                others.commands.push_back(other);
+        }
+        if (!others.commands.empty())
+            result.push_back(others);
+        return result;
+    }
+
+    // コマンドの選択の 2 段目: 1 つの分類の中のコマンド。
+    class PadCommandListMenu : public Menu
     {
     public:
-        enum choice_type { KEEP, SET, RESET };
-
-        PadCommandMenu(pad_button button, int mods)
+        PadCommandListMenu(const string &slot_name,
+                           const pad_choice_group &group, command_type current)
             : Menu(MF_SINGLESELECT | MF_ALLOW_FORMATTING | MF_ARROWS_SELECT
                    | MF_WRAP),
-              choice(KEEP), cmd(CMD_NO_CMD)
+              chosen(false), cmd(CMD_NO_CMD)
         {
-            set_tag("gamepad_command");
+            set_tag("gamepad_command_list");
             action_cycle = Menu::CYCLE_NONE;
             menu_action = Menu::ACT_EXECUTE;
-            const int slot = pad_slot(button, mods);
-            const command_type current = gamepad_bound_command(button, mods);
-            // 今の割り当ては題名と黄色の行で示し、カーソルもそこから始める。
-            set_title(new MenuEntry(
-                make_stringf(jtransc("Command for %s (now: %s)"),
-                             pad_slot_name(button, mods).c_str(),
-                             bind_text(current).c_str()),
-                MEL_TITLE));
-
-            add(make_stringf(jtransc("No command (send the macro key %s)"),
-                             keycode_to_name(pad_keycode(slot)).c_str()),
-                SET, CMD_NO_CMD, current == CMD_NO_CMD);
-            const string configured
-                = bind_text(configured_command(button, mods));
-            add(make_stringf(jtransc("Reset (use the rc file or the default: %s)"),
-                             configured.c_str()),
-                RESET, CMD_NO_CMD, false);
-
-            vector<bool> listed(CMD_MAX_NORMAL + 1, false);
-            for (const pad_command_group &group : pad_command_groups())
+            set_title(new MenuEntry(make_stringf(jtransc("Command for %s: %s"),
+                                                 slot_name.c_str(),
+                                                 group.name.c_str()),
+                                    MEL_TITLE));
+            int current_index = -1;
+            for (const command_type c : group.commands)
             {
-                add_entry(new MenuEntry(tagged_jtrans("[pad group]", group.name),
-                                        MEL_SUBTITLE));
-                for (const pad_command_info &info : group.commands)
+                MenuEntry *me = new pad_choice_entry(command_text(c),
+                    [this, c](const MenuEntry &)
+                    {
+                        chosen = true;
+                        cmd = c;
+                        return false; // 選んだら閉じる
+                    });
+                add_entry(me);
+                if (c == current)
                 {
-                    if (!gamepad_command_bindable(info.cmd))
-                        continue;
-                    listed[info.cmd] = true;
-                    add(command_text(info.cmd), SET, info.cmd,
-                        current == info.cmd);
+                    me->colour = YELLOW; // 今の割り当て
+                    current_index = item_count() - 1;
                 }
-            }
-            // 表に載っていないコマンドがあれば(本家で増えたときなど)、
-            // CMD_ の名前で最後に並べる。今は全部載っているので出ない。
-            bool other_heading = false;
-            for (int c = CMD_NO_CMD + 1; c <= CMD_MAX_NORMAL; ++c)
-            {
-                const command_type other = static_cast<command_type>(c);
-                if (listed[c] || !gamepad_command_bindable(other))
-                    continue;
-                if (!other_heading)
-                {
-                    add_entry(new MenuEntry(tagged_jtrans("[pad group]",
-                                                          "All other commands"),
-                                            MEL_SUBTITLE));
-                    other_heading = true;
-                }
-                add(command_text(other), SET, other, current == other);
             }
             set_more(formatted_string::parse_string(
                 jtrans("[<w>Up</w>/<w>Down</w>] choose, [<w>A</w>/<w>Enter</w>] "
@@ -383,29 +395,104 @@ namespace
                 cycle_hover();
         }
 
+        bool chosen;
+        command_type cmd;
+    };
+
+    // コマンドの選択の 1 段目: 割り当てなし・元に戻す・分類。分類を選ぶと
+    // 2 段目(PadCommandListMenu)が開き、そこでコマンドを選ぶと両方閉じる。
+    // 2 段目を B で閉じたら 1 段目に戻る。
+    class PadCommandMenu : public Menu
+    {
+    public:
+        enum choice_type { KEEP, SET, RESET };
+
+        PadCommandMenu(pad_button button, int mods)
+            : Menu(MF_SINGLESELECT | MF_ALLOW_FORMATTING | MF_ARROWS_SELECT
+                   | MF_WRAP),
+              choice(KEEP), cmd(CMD_NO_CMD), groups(pad_choice_groups())
+        {
+            set_tag("gamepad_command");
+            action_cycle = Menu::CYCLE_NONE;
+            menu_action = Menu::ACT_EXECUTE;
+            const int slot = pad_slot(button, mods);
+            const string slot_name = pad_slot_name(button, mods);
+            const command_type current = gamepad_bound_command(button, mods);
+            // 今の割り当ては題名と黄色の行(それを含む分類)で示し、
+            // カーソルもそこから始める。
+            set_title(new MenuEntry(
+                make_stringf(jtransc("Command for %s (now: %s)"),
+                             slot_name.c_str(), bind_text(current).c_str()),
+                MEL_TITLE));
+
+            int current_index = -1;
+            MenuEntry *none = new pad_choice_entry(
+                make_stringf(jtransc("No command (send the macro key %s)"),
+                             keycode_to_name(pad_keycode(slot)).c_str()),
+                [this](const MenuEntry &)
+                {
+                    choice = SET;
+                    cmd = CMD_NO_CMD;
+                    return false;
+                });
+            add_entry(none);
+            if (current == CMD_NO_CMD)
+            {
+                none->colour = YELLOW;
+                current_index = item_count() - 1;
+            }
+            const string configured
+                = bind_text(configured_command(button, mods));
+            add_entry(new pad_choice_entry(
+                make_stringf(jtransc("Reset (use the rc file or the default: %s)"),
+                             configured.c_str()),
+                [this](const MenuEntry &)
+                {
+                    choice = RESET;
+                    return false;
+                }));
+
+            add_entry(new MenuEntry(jtrans("Command categories"),
+                                    MEL_SUBTITLE));
+            for (size_t i = 0; i < groups.size(); ++i)
+            {
+                const pad_choice_group &group = groups[i];
+                MenuEntry *me = new pad_choice_entry(
+                    make_stringf("%s (%d)", group.name.c_str(),
+                                 static_cast<int>(group.commands.size())),
+                    [this, i, slot_name, current](const MenuEntry &)
+                    {
+                        PadCommandListMenu list(slot_name, groups[i], current);
+                        list.show();
+                        if (!list.chosen)
+                            return true; // B で戻った。分類を選び直す
+                        choice = SET;
+                        cmd = list.cmd;
+                        return false;
+                    });
+                add_entry(me);
+                if (find(group.commands.begin(), group.commands.end(), current)
+                    != group.commands.end())
+                {
+                    me->colour = YELLOW;
+                    current_index = item_count() - 1;
+                }
+            }
+            set_more(formatted_string::parse_string(
+                jtrans("[<w>Up</w>/<w>Down</w>] choose, [<w>A</w>/<w>Enter</w>] "
+                       "open or assign, [<w>B</w>/<w>Esc</w>] go back")));
+            update_menu(true);
+            if (current_index >= 0)
+                set_hovered(current_index);
+            else
+                cycle_hover();
+        }
+
         choice_type choice;
         command_type cmd;
 
     private:
-        void add(const string &text, choice_type what, command_type what_cmd,
-                 bool current)
-        {
-            MenuEntry *me = new pad_choice_entry(text,
-                [this, what, what_cmd](const MenuEntry &)
-                {
-                    choice = what;
-                    cmd = what_cmd;
-                    return false; // 選んだら閉じる
-                });
-            add_entry(me);
-            if (current)
-            {
-                me->colour = YELLOW;
-                current_index = item_count() - 1;
-            }
-        }
-
-        int current_index = -1;
+        vector<pad_choice_group> groups;
     };
 
     // 1 枚目: 枠の一覧。
