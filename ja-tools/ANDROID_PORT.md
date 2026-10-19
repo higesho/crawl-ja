@@ -44,6 +44,14 @@ Android 環境(`C:\Android`。変愚の Android 移植で入れたもの)で組�
 | `local.properties` | Windows | `sdk.dir=C\:/Android/sdk`(make が WSL の HOME で作った分を書き換える。管理外) |
 | APK | Windows | Gradle 8.13(キャッシュ済み)、JDK 17(`C:\Android\jdk17`)、NDK 27.2(`-PcrawlNdkVersion=27.2.12479018`) |
 
+> **罠: 生成ファイル `config.h` を Windows 版と取り合う。**`source/config.h`(`usleep`・`fdatasync`
+> などがあるか)は、WSL の make では Linux 用(全部ある。Android の Bionic と同じ)に、Windows 版の
+> MSBuild では Windows 用(全部無い)に作られる。同じ作業ツリーなので、Windows 版を組んだあとに
+> Android 版を組むと、`syscalls.h` の代わりの `usleep` 宣言が Bionic のものとぶつかって止まる
+> (arm64 で `call to 'usleep' is ambiguous`)。**Windows 版を組んだあとは `config.h` を消して
+> WSL の make をやり直してから** Gradle で組む(逆に、Android のあとに Windows 版を組むときは
+> MSBuild が作り直す)。
+
 本家の設定との差(このフォークで変えたもの):
 
 - `app/build.gradle.in`: Java のソース・バイトコードの版を 21 → 17(JDK 17 で組めるように)。
@@ -62,6 +70,16 @@ $env:PATH = "$env:JAVA_HOME\bin;$env:PATH;C:\Program Files\Git\usr\bin"
 cd crawl-ref\source\android-project
 gradle --no-daemon :app:assembleDebug -PcrawlNdkVersion=27.2.12479018 -Pandroid.injected.build.abi=x86_64
 ```
+
+実機で試す APK(arm64-v8a。端末に直接入れられる通常のデバッグ版):
+
+```powershell
+gradle --no-daemon :app:assembleDebug -PcrawlNdkVersion=27.2.12479018 -PcrawlAbis=arm64-v8a
+```
+
+できる APK は `app/build/outputs/apk/debug/app-debug.apk`(デバッグ鍵で署名)。
+`-PcrawlAbis` は日本語版で足したプロパティ(`app/build.gradle.in`。カンマ区切りで複数可。
+外すと `jni/Application.mk` の `APP_ABI := all` で全部)。
 
 `gradle` はキャッシュ済みの Gradle 8.13(`%USERPROFILE%\.gradle\wrapper\dists\gradle-8.13-bin\...\bin\gradle.bat`)。
 `-Pandroid.injected.build.abi` はエミュレータ用に x86_64 だけを組むため(外すと全 ABI)。
