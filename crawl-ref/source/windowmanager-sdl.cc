@@ -28,6 +28,7 @@
 #include "command.h"
 #include "files.h"
 #include "gamepad.h"
+#include "gamepad-menu.h"
 #include "glwrapper.h"
 #include "libutil.h"
 #include "macro.h"
@@ -457,18 +458,6 @@ static bool _pad_in_command_context()
            && !ui::has_layout();
 }
 
-// 枠に割り当てたコマンド。rc の pad_bind が優先し、無ければ既定(単独押しだけ)。
-static command_type _pad_bound_command(pad_button button, int mods)
-{
-    const auto it = Options.pad_binds.find(pad_slot(button, mods));
-    if (it != Options.pad_binds.end())
-        return static_cast<command_type>(it->second);
-    if (!Options.pad_bind_defaults || mods != 0)
-        return CMD_NO_CMD;
-    const char *name = pad_default_command_name(button);
-    return name ? name_to_command(name) : CMD_NO_CMD;
-}
-
 // メニュー・ポップアップの中か。狙いと階の地図も UI の層だが、そこでは斜めに
 // カーソルを動かせるのでメニューには数えない。
 static bool _pad_in_menu()
@@ -510,7 +499,11 @@ static int _pad_output_to_key(const pad_output &out)
         return out.button == PAD_A ? CK_ENTER : CK_ESCAPE;
     }
 
-    const command_type cmd = _pad_bound_command(out.button, out.mods);
+    // 割り当ての画面が開いている間は、押したボタンの枠を開くために枠のキーを出す。
+    if (gamepad_menu_capturing())
+        return CK_PAD_BASE - pad_slot(out.button, out.mods);
+
+    const command_type cmd = gamepad_bound_command(out.button, out.mods);
     if (cmd != CMD_NO_CMD)
     {
         // キーマップも bindkey も通らない、マウスのクリックと同じ道。

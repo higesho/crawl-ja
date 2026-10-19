@@ -305,6 +305,7 @@ tilesdl.o \
 tiletex.o \
 windowmanager-sdl.o \
 gamepad.o \
+gamepad-menu.o \
 glwrapper-ogl.o \
 fontwrapper-ft.o
 

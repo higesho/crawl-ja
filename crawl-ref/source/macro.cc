@@ -42,6 +42,7 @@
 #include "command.h"
 #ifdef USE_TILE_LOCAL
 # include "gamepad.h"
+# include "gamepad-menu.h"
 #endif
 #include "database.h"
 #include "files.h"
@@ -209,6 +210,14 @@ static int userfunc_getindex(const string &fname)
 
     userfunctions.push_back(fname);
     return userfunctions.size() - 1;
+}
+
+static string get_macro_file();
+
+// マクロのファイルの名前(ゲームパッドの割り当ての保存先を同じ場所にするため)。
+string macro_file_name()
+{
+    return get_macro_file();
 }
 
 // Returns the name of the file that contains macros.
@@ -2059,6 +2068,9 @@ void macro_init()
         _read_macros_from(fn.c_str());
 
     _read_macros_from(get_macro_file().c_str());
+#ifdef USE_TILE_LOCAL
+    gamepad_load_binds();
+#endif
 }
 
 void macro_userfn(const char *keys, const char *regname)

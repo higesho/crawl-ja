@@ -172,6 +172,9 @@
     <ClCompile Include="..\gamepad.cc">
       <Filter>cc</Filter>
     </ClCompile>
+    <ClCompile Include="..\gamepad-menu.cc">
+      <Filter>cc</Filter>
+    </ClCompile>
     <ClCompile Include="..\wcwidth.cc">
       <Filter>cc</Filter>
     </ClCompile>
@@ -2208,6 +2211,9 @@
       <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="..\gamepad.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gamepad-menu.h">
       <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="..\wizard.h">

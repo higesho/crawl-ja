@@ -2418,6 +2418,14 @@ pad_bind = X:CMD_EXPLORE
         macro or keymap: press it in the ~ macro editor, or write for
         example "macros += M \{Pad-LB+X} i". Chords have no default
         bindings, so they are all free for macros.
+        The bindings can also be changed in the game: choose "Gamepad
+        bindings" in the game menu (Back, F1 or ~), then pick a row or just
+        press the button or chord to change. Changes made there are saved
+        to pad_binds.txt next to macro.txt (in the same "pad_bind = ..."
+        format) and take precedence over pad_bind in this file.
+        Keep prompt_menu = true (the tiles default) when playing with a
+        gamepad: with it false, yes/no questions appear in the message area
+        and can't be answered "yes" with the gamepad.
         The default bindings are:
           X      CMD_EXPLORE            Y      CMD_AUTOFIGHT
           LB     CMD_GO_DOWNSTAIRS      RB     CMD_GO_UPSTAIRS

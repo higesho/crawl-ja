@@ -161,6 +161,9 @@ enum command_type
 
     CMD_SHOW_CHARACTER_DUMP,
     CMD_GAME_MENU,
+#ifdef USE_TILE_LOCAL
+    CMD_GAMEPAD_MENU, // ゲームパッドの割り当て(gamepad-menu.cc)
+#endif
 #ifdef TARGET_OS_MACOSX
     CMD_REVEAL_OPTIONS,
 #endif
