@@ -44,14 +44,17 @@ namespace
         vector<pad_command_info> commands;
     };
 
-    // 割り当ての画面で先に並べるコマンド。ここに無いメイン画面のコマンドも、
-    // 最後の「その他のコマンド」に CMD_ の名前で全部並ぶ。
+    // 割り当ての画面に並べるコマンド。メイン画面の割り当てられるコマンドは
+    // 全部ここに名前付きで載せる(名前は `?` のヘルプの訳に合わせた)。
+    // 載っていないものがあれば(本家でコマンドが増えたときなど)、最後の
+    // 「その他のコマンド」に CMD_ の名前で並ぶ。
     const vector<pad_command_group> &pad_command_groups()
     {
         static const vector<pad_command_group> groups =
         {
             { "Movement and exploration", {
                 { CMD_EXPLORE, "Auto-explore" },
+                { CMD_EXPLORE_NO_REST, "Auto-explore without resting" },
                 { CMD_INTERLEVEL_TRAVEL, "Travel to a level or place" },
                 { CMD_GO_DOWNSTAIRS, "Go down stairs" },
                 { CMD_GO_UPSTAIRS, "Go up stairs" },
@@ -61,41 +64,66 @@ namespace
                 { CMD_LOOK_AROUND, "Look around" },
                 { CMD_OPEN_DOOR, "Open a door" },
                 { CMD_CLOSE_DOOR, "Close a door" },
+                { CMD_FIX_WAYPOINT, "Set a waypoint" },
             } },
             { "Combat", {
                 { CMD_AUTOFIGHT, "Auto-fight" },
                 { CMD_AUTOFIGHT_NOMOVE, "Auto-fight without moving" },
+                { CMD_AUTOFIRE, "Fire at the nearest target" },
                 { CMD_PRIMARY_ATTACK, "Primary attack" },
                 { CMD_FIRE, "Fire quivered action" },
                 { CMD_FIRE_ITEM_NO_QUIVER, "Fire or throw an item" },
                 { CMD_QUIVER_ITEM, "Choose quivered action" },
                 { CMD_CYCLE_QUIVER_FORWARD, "Next quivered action" },
+                { CMD_CYCLE_QUIVER_BACKWARD, "Previous quivered action" },
+                { CMD_SWAP_QUIVER_RECENT, "Swap with the last quivered action" },
                 { CMD_CAST_SPELL, "Cast a spell" },
+                { CMD_FORCE_CAST_SPELL, "Cast a spell even without targets" },
                 { CMD_USE_ABILITY, "Use an ability" },
                 { CMD_EVOKE, "Evoke an item" },
+                { CMD_ZAP_WAND, "Zap a wand" },
+                { CMD_SHOUT, "Shout or give orders to allies" },
             } },
             { "Items", {
                 { CMD_DISPLAY_INVENTORY, "Inventory" },
                 { CMD_PICKUP, "Pick up" },
+                { CMD_PICKUP_QUANTITY, "Pick up a chosen number" },
                 { CMD_DROP, "Drop" },
+                { CMD_DROP_LAST, "Drop the last items picked up" },
                 { CMD_QUAFF, "Quaff a potion" },
                 { CMD_READ, "Read a scroll" },
                 { CMD_WIELD_WEAPON, "Wield a weapon" },
+                { CMD_WEAPON_SWAP, "Swap weapons (a and b)" },
+                { CMD_EQUIP, "Equip an item" },
+                { CMD_UNEQUIP, "Unequip an item" },
                 { CMD_WEAR_ARMOUR, "Wear armour" },
                 { CMD_REMOVE_ARMOUR, "Take off armour" },
                 { CMD_WEAR_JEWELLERY, "Put on jewellery" },
                 { CMD_REMOVE_JEWELLERY, "Remove jewellery" },
+                { CMD_MEMORISE_SPELL, "Memorise a spell" },
                 { CMD_INSCRIBE_ITEM, "Inscribe an item" },
+                { CMD_ADJUST_INVENTORY, "Reassign item and spell letters" },
             } },
             { "Information", {
-                { CMD_DISPLAY_CHARACTER_STATUS, "Character overview" },
-                { CMD_RESISTS_SCREEN, "Equipment and resistances" },
+                { CMD_RESISTS_SCREEN, "Character overview" },
+                { CMD_DISPLAY_CHARACTER_STATUS, "Character status" },
                 { CMD_DISPLAY_SKILLS, "Skills" },
                 { CMD_DISPLAY_SPELLS, "Spells" },
                 { CMD_DISPLAY_RELIGION, "Religion" },
                 { CMD_DISPLAY_MUTATIONS, "Mutations" },
+                { CMD_EXPERIENCE_CHECK, "Experience" },
+                { CMD_LIST_ARMOUR, "Worn armour" },
+                { CMD_LIST_JEWELLERY, "Worn jewellery" },
+                { CMD_LIST_GOLD, "Gold" },
+                { CMD_DISPLAY_KNOWN_OBJECTS, "Item knowledge" },
+                { CMD_DISPLAY_RUNES, "Runes collected" },
+                { CMD_INSPECT_FLOOR, "Examine your square" },
+                { CMD_FULL_VIEW, "List what is in view" },
+                { CMD_SHOW_TERRAIN, "Toggle terrain-only view" },
                 { CMD_REPLAY_MESSAGES, "Message history" },
+                { CMD_READ_MESSAGES, "Read messages (online play)" },
                 { CMD_DISPLAY_OVERMAP, "Dungeon overview" },
+                { CMD_ANNOTATE_LEVEL, "Annotate a level" },
                 { CMD_SEARCH_STASHES, "Search for items" },
                 { CMD_LOOKUP_HELP, "Lookup info" },
                 { CMD_DISPLAY_COMMANDS, "Help" },
@@ -103,9 +131,72 @@ namespace
             { "Other", {
                 { CMD_GAME_MENU, "Game menu" },
                 { CMD_MACRO_MENU, "Edit macros" },
+                { CMD_MACRO_ADD, "Quick add macro" },
                 { CMD_GAMEPAD_MENU, "Gamepad bindings" },
                 { CMD_PREV_CMD_AGAIN, "Repeat the last command" },
+                { CMD_REPEAT_CMD, "Repeat the next command several times" },
                 { CMD_TOGGLE_AUTOPICKUP, "Toggle autopickup" },
+                { CMD_TOGGLE_SOUND, "Toggle sound effects" },
+                { CMD_MAKE_NOTE, "Add a note" },
+                { CMD_CHARACTER_DUMP, "Dump character to file" },
+                { CMD_SHOW_CHARACTER_DUMP, "Generate and view character dump" },
+                { CMD_EDIT_PLAYER_TILE, "Edit player tile" },
+                { CMD_ZOOM_IN, "Zoom in" },
+                { CMD_ZOOM_OUT, "Zoom out" },
+                { CMD_REDRAW_SCREEN, "Redraw the screen" },
+                { CMD_CLEAR_MAP, "Clear the level map" },
+            } },
+            { "Saving, quitting and special modes", {
+                { CMD_SAVE_GAME, "Save and quit" },
+                { CMD_SAVE_GAME_NOW, "Save and quit without asking" },
+                { CMD_SUSPEND_GAME, "Suspend the game (console only)" },
+                { CMD_QUIT, "Abandon the character" },
+                { CMD_WIZARD, "Wizard mode" },
+                { CMD_EXPLORE_MODE, "Explore mode" },
+                { CMD_LUA_CONSOLE, "Lua console" },
+            } },
+            { "Moves in a given direction", {
+                { CMD_MOVE_LEFT, "Move left" },
+                { CMD_MOVE_RIGHT, "Move right" },
+                { CMD_MOVE_UP, "Move up" },
+                { CMD_MOVE_DOWN, "Move down" },
+                { CMD_MOVE_UP_LEFT, "Move up-left" },
+                { CMD_MOVE_UP_RIGHT, "Move up-right" },
+                { CMD_MOVE_DOWN_LEFT, "Move down-left" },
+                { CMD_MOVE_DOWN_RIGHT, "Move down-right" },
+                { CMD_RUN_LEFT, "Run left" },
+                { CMD_RUN_RIGHT, "Run right" },
+                { CMD_RUN_UP, "Run up" },
+                { CMD_RUN_DOWN, "Run down" },
+                { CMD_RUN_UP_LEFT, "Run up-left" },
+                { CMD_RUN_UP_RIGHT, "Run up-right" },
+                { CMD_RUN_DOWN_LEFT, "Run down-left" },
+                { CMD_RUN_DOWN_RIGHT, "Run down-right" },
+                { CMD_SAFE_WAIT, "Wait a turn (only when safe)" },
+                { CMD_SAFE_MOVE_LEFT, "Move left (only when safe)" },
+                { CMD_SAFE_MOVE_RIGHT, "Move right (only when safe)" },
+                { CMD_SAFE_MOVE_UP, "Move up (only when safe)" },
+                { CMD_SAFE_MOVE_DOWN, "Move down (only when safe)" },
+                { CMD_SAFE_MOVE_UP_LEFT, "Move up-left (only when safe)" },
+                { CMD_SAFE_MOVE_UP_RIGHT, "Move up-right (only when safe)" },
+                { CMD_SAFE_MOVE_DOWN_LEFT, "Move down-left (only when safe)" },
+                { CMD_SAFE_MOVE_DOWN_RIGHT, "Move down-right (only when safe)" },
+                { CMD_ATTACK_LEFT, "Attack left" },
+                { CMD_ATTACK_RIGHT, "Attack right" },
+                { CMD_ATTACK_UP, "Attack up" },
+                { CMD_ATTACK_DOWN, "Attack down" },
+                { CMD_ATTACK_UP_LEFT, "Attack up-left" },
+                { CMD_ATTACK_UP_RIGHT, "Attack up-right" },
+                { CMD_ATTACK_DOWN_LEFT, "Attack down-left" },
+                { CMD_ATTACK_DOWN_RIGHT, "Attack down-right" },
+                { CMD_CLOSE_DOOR_LEFT, "Close the door to the left" },
+                { CMD_CLOSE_DOOR_RIGHT, "Close the door to the right" },
+                { CMD_CLOSE_DOOR_UP, "Close the door above" },
+                { CMD_CLOSE_DOOR_DOWN, "Close the door below" },
+                { CMD_CLOSE_DOOR_UP_LEFT, "Close the door to the up-left" },
+                { CMD_CLOSE_DOOR_UP_RIGHT, "Close the door to the up-right" },
+                { CMD_CLOSE_DOOR_DOWN_LEFT, "Close the door to the down-left" },
+                { CMD_CLOSE_DOOR_DOWN_RIGHT, "Close the door to the down-right" },
             } },
         };
         return groups;
@@ -265,14 +356,21 @@ namespace
                         current == info.cmd);
                 }
             }
-            add_entry(new MenuEntry(tagged_jtrans("[pad group]",
-                                                  "All other commands"),
-                                    MEL_SUBTITLE));
+            // 表に載っていないコマンドがあれば(本家で増えたときなど)、
+            // CMD_ の名前で最後に並べる。今は全部載っているので出ない。
+            bool other_heading = false;
             for (int c = CMD_NO_CMD + 1; c <= CMD_MAX_NORMAL; ++c)
             {
                 const command_type other = static_cast<command_type>(c);
                 if (listed[c] || !gamepad_command_bindable(other))
                     continue;
+                if (!other_heading)
+                {
+                    add_entry(new MenuEntry(tagged_jtrans("[pad group]",
+                                                          "All other commands"),
+                                            MEL_SUBTITLE));
+                    other_heading = true;
+                }
                 add(command_text(other), SET, other, current == other);
             }
             set_more(formatted_string::parse_string(
