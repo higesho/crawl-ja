@@ -221,11 +221,10 @@ def page(fname: str, title: str, lead: str, body: str, version: str,
 {body}
 </main>
 <footer class="foot"><div class="band">
-  <p>Dungeon Crawl Stone Soup(DCSS)は、公式のチームとその協力者が作り続けている
-     オープンソースのローグライクである(<a href="{UPSTREAM}">本家</a>)。
-     ここはその日本語版({esc(version)})の非公式のスポイラーで、
-     文と数値はすべてゲームの中の説明(ゲーム内の検索 <code>?/</code> と同じもの)から取ってある。
-     タイルの絵は DCSS のもの(CC0)。</p>
+  <p>Dungeon Crawl Stone Soup(DCSS)はオープンソースのローグライクゲームです。\
+本家は<a href="{UPSTREAM}">こちら</a>。このページは日本語版 {esc(version)} の非公式スポイラーで、\
+文章も数値もゲーム内の <code>?/</code> 検索で出てくるものをそのまま使っています。\
+タイル画像も DCSS のもの(CC0)です。</p>
 </div></footer>
 <script src="dcss.js"></script>
 </body>
@@ -233,7 +232,7 @@ def page(fname: str, title: str, lead: str, body: str, version: str,
 """
 
 
-def filter_bar(*selects: str, ph: str = "名前・説明で絞り込む") -> str:
+def filter_bar(*selects: str, ph: str = "名前や説明で検索") -> str:
     return f"""<div class="bar">
   <input type="search" id="q" placeholder="{ph}" autocomplete="off">
   {"".join(selects)}
@@ -381,7 +380,7 @@ def build_monster(data: Data, tiles: Tiles) -> str:
         if "hd" in m:
             hp = m["hp10"] / 10
             nums = (f'<b class="glyph">{esc(m["glyph"])}</b>'
-                    f' HD {m["hd"]}/HP 約 {hp:g}/AC {m["ac"]}/EV {m["ev"]}'
+                    f' HD {m["hd"]}/HP 約{hp:g}/AC {m["ac"]}/EV {m["ev"]}'
                     f'/速度 {m["speed"]}')
             name = m["name_ja"]
             name_en = m["name_en"]
@@ -389,12 +388,12 @@ def build_monster(data: Data, tiles: Tiles) -> str:
             nums = ""
             name = plain(m["title"]) or key
             name_en = key
-        badges = ' <b class="uq">唯一</b>' if m.get("unique") else ""
+        badges = ' <b class="uq">ユニーク</b>' if m.get("unique") else ""
         inner = ""
         if nums:
             inner += f'    <p class="num">{nums}</p>\n'
         if where:
-            inner += f'    <p class="where">出現: {esc(where)}</p>\n'
+            inner += f'    <p class="where">出現：{esc(where)}</p>\n'
         inner += "    " + text_block(m["body"]) + "\n"
         if m.get("quote"):
             inner += "    " + details("引用", text_block(m["quote"], "quote"))
@@ -405,19 +404,18 @@ def build_monster(data: Data, tiles: Tiles) -> str:
     rows.sort(key=lambda r: (r[0], r[1]))
     opts = [(ab, b["short_ja"]) for ab, b in
             sorted(brs_seen.items(), key=lambda x: x[1]["id"])]
-    lead = f"""{len(rows)} 種。だいたい浅い順に並べてある(その種が出る最も浅い階の、
- ダンジョン全体での深さの順)。「出現」は<b>その種が普通に生まれる場所</b>で、
- 特別な部屋(vault)や召喚で出るものは含まない。唯一モンスター(ユニーク)は
- 決まった範囲の階に一体だけ置かれる。数値は種の基準の値で、
- HP は平均、速度は 10 が普通(あなたと同じ)。"""
+    lead = f"""全{len(rows)}種を、出てくる階が浅いものから順に並べています。
+ 「出現」は普通に湧く場所のことで、vault や召喚で出てくる分は入っていません。
+ ユニークは決まった範囲の階のどこかに一体だけ置かれます。
+ 数値はそのモンスターの基本の値です。HP は平均で、速度は10がプレイヤーと同じ速さです。"""
     body = f"""<h1>モンスター</h1>
 <p class="lead">{jp(lead)}</p>
-{filter_bar(select("b", "場所で絞らない", opts))}
+{filter_bar(select("b", "場所：すべて", opts))}
 <div class="list one" id="list">
 {"".join(r[2] for r in rows)}
 </div>"""
     return page("monster.html", "モンスター",
-                "DCSS に出るモンスターの全種と、ゲームの中の説明。",
+                "DCSS のモンスター全種のデータと説明。",
                 body, data.version, wide=True)
 
 
@@ -440,7 +438,7 @@ def build_spell(data: Data, tiles: Tiles) -> str:
         inner = f'    <p class="flags">{tags}</p>\n'
         bks = books_of.get(s["name_en"], [])
         if bks:
-            inner += f'    <p class="where">載っている本: {esc("、".join(bks))}</p>\n'
+            inner += f'    <p class="where">載っている本：{esc("、".join(bks))}</p>\n'
         sbody, squote = split_quote(s["body"])
         inner += "    " + text_block(sbody) + "\n"
         squote = squote or s.get("quote", "")
@@ -453,18 +451,17 @@ def build_spell(data: Data, tiles: Tiles) -> str:
             anchor="s-" + slug(s["name_en"]))))
     rows.sort(key=lambda r: r[0])
     n_player = sum(1 for s in data.lookup["spell"] if s.get("player"))
-    lead = f"""{len(rows)} 個(うちあなたが覚えられるもの {n_player} 個)。
- 覚えられる呪文を先に、レベルの低い順に並べ、モンスターだけが使う呪文はその後にまとめた。
- 威力や射程は、ゲームの中ではあなたの技能と能力値で変わる。ここに出ているのは
- キャラクターのいないときの説明である。"""
+    lead = f"""全{len(rows)}個のうち、プレイヤーが覚えられるのは{n_player}個です。
+ 覚えられる呪文をレベルの低い順に並べ、モンスターしか使わない呪文は最後にまとめました。
+ 威力や射程は、実際のゲームではキャラクターのスキルや能力値によって変わります。"""
     body = f"""<h1>呪文</h1>
 <p class="lead">{jp(lead)}</p>
-{filter_bar(select("b", "系統で絞らない", [(x, x) for x in sorted(schools)]),
-            select("g", "使い手で絞らない", [("p", "あなたが覚えられる"), ("m", "モンスター専用")]))}
+{filter_bar(select("b", "系統：すべて", [(x, x) for x in sorted(schools)]),
+            select("g", "使い手：すべて", [("p", "プレイヤーが覚えられる"), ("m", "モンスター専用")]))}
 <div class="list" id="list">
 {"".join(r[1] for r in rows)}
 </div>"""
-    return page("spell.html", "呪文", "DCSS の呪文の全数と説明。",
+    return page("spell.html", "呪文", "DCSS の呪文すべてのデータと説明。",
                 body, data.version, wide=True)
 
 
@@ -521,21 +518,21 @@ def build_items(data: Data, tiles: Tiles, unrand: bool) -> str:
     quick = "" if unrand else quick_tables(data)
     if unrand:
         title = "固定アーティファクト"
-        lead = f"""{total} 個。名前と力の決まった、一つしかない品(unrandart)。
- ここに書いた性質はゲームの中の説明そのままで、出たときに付く数値はこれと同じになる。"""
+        lead = f"""名前と性能が決まっている一点ものの装備(unrandart)で、全部で{total}個あります。
+ 性能はゲーム内の説明どおりで、実際に拾ったときもこのとおりです。"""
         fname = "artefact.html"
-        desc = "DCSS の固定アーティファクトの全数と説明。"
+        desc = "DCSS の固定アーティファクトすべての説明。"
     else:
         title = "アイテム"
-        lead = f"""{total} 種。種類ごとにまとめた。薬・巻物・ワンドなどの見た目
- (色や文字)はゲームごとに変わるので、ここには載せていない。"""
+        lead = f"""全{total}種を種類ごとに分けて載せています。
+ 薬や巻物、ワンドの見た目(色や模様)はプレイのたびに変わるので載せていません。"""
         fname = "item.html"
-        desc = "DCSS のアイテムの全種と説明。"
+        desc = "DCSS のアイテム全種のデータと説明。"
     body = f"""<h1>{title}</h1>
 <p class="lead">{jp(lead)}</p>
 {jump}
 {quick}
-{filter_bar(select("g", "種類で絞らない", opts))}
+{filter_bar(select("g", "種類：すべて", opts))}
 <div id="list">
 {"".join(secs)}
 </div>"""
@@ -555,15 +552,15 @@ def quick_tables(data: Data) -> str:
         f'<tr><th>{link(it)}</th><td class="t">{esc(it["skill"])}</td>'
         f'<td>{it["dam"]}</td><td>{it["hit"]:+d}</td><td>{it["delay"] / 10:.1f}</td></tr>'
         for it in wpn)
-    wtab = f"""<details class="quick"><summary>武器の早見表({len(wpn)} 種)</summary>
-<div class="scroll"><table class="qt"><thead><tr><th>名前</th><th>技能</th><th>基本ダメージ</th>
+    wtab = f"""<details class="quick"><summary>武器の一覧表({len(wpn)}種)</summary>
+<div class="scroll"><table class="qt"><thead><tr><th>名前</th><th>スキル</th><th>基本ダメージ</th>
 <th>基本命中</th><th>基本所要時間</th></tr></thead><tbody>{rows}</tbody></table></div></details>"""
     arm = sorted((it for it in items if "ac" in it),
                  key=lambda it: (it["evp"] == 0, it["evp"], -it["ac"]))
     rows = "".join(
         f'<tr><th>{link(it)}</th><td>{it["ac"]}</td><td>{-it["evp"] // 10}</td></tr>'
         for it in arm)
-    atab = f"""<details class="quick"><summary>防具の早見表({len(arm)} 種)</summary>
+    atab = f"""<details class="quick"><summary>防具の一覧表({len(arm)}種)</summary>
 <div class="scroll"><table class="qt"><thead><tr><th>名前</th><th>基本防御値</th>
 <th>重さ</th></tr></thead><tbody>{rows}</tbody></table></div></details>"""
     return wtab + atab
@@ -594,31 +591,31 @@ def build_species(data: Data, tiles: Tiles) -> str:
     cards = []
     for s in sp:
         stats = (f'腕力 {s["str"]}/知力 {s["int"]}/器用 {s["dex"]}'
-                 f'/HP 補正 {s["hp"]*10:+d}%/MP 補正 {s["mp"]:+d}'
-                 f'/意志力 経験レベル×{s["wl"]}/大きさ {s["size"]}')
+                 f'/HP補正 {s["hp"]*10:+d}%/MP補正 {s["mp"]:+d}'
+                 f'/意志力 レベル×{s["wl"]}/体格 {s["size"]}')
         ls = "・".join(STAT_JA.get(x, "?") for x in s["level_stats"])
-        grow = f'{s["how_often"]} レベルごとに {ls}' + ("のどれか" if len(s["level_stats"]) > 1 else "")
+        grow = f'{s["how_often"]}レベルごとに{ls}' + ("のどれか" if len(s["level_stats"]) > 1 else "")
         inner = f'    <p class="num">{esc(stats)}</p>\n'
-        inner += f'    <p class="where">能力値の伸び: {esc(grow)}が 1 上がる</p>\n'
+        inner += f'    <p class="where">{esc(grow)}が1上がります</p>\n'
         inner += "    " + text_block(s["desc"], "desc") + "\n"
         if s.get("lore", "").strip():
             inner += "    " + text_block(s["lore"], "desc lore") + "\n"
-        feats =[f'<li><b>経験レベル {m["xl"]}</b> {fmt(m["desc"])}</li>'
-                 if m["xl"] > 1 else f'<li><b>はじめから</b> {fmt(m["desc"])}</li>'
+        feats =[f'<li><b>レベル{m["xl"]}</b> {fmt(m["desc"])}</li>'
+                 if m["xl"] > 1 else f'<li><b>最初から</b> {fmt(m["desc"])}</li>'
                  for m in s["muts"]]
         feats += [f"<li>{fmt(x)}</li>" for x in s["fake_muts"]]
         if feats:
             inner += f'    <ul class="feats">{"".join(feats)}</ul>\n'
         if s["jobs"]:
-            inner += f'    <p class="where">勧められる職業: {esc("、".join(s["jobs"]))}</p>\n'
+            inner += f'    <p class="where">おすすめの職業：{esc("、".join(s["jobs"]))}</p>\n'
         if s.get("quote"):
             inner += "    " + details("引用", text_block(s["quote"], "quote"))
         cards.append(card(tiles.img(s.get("tile")), esc(s["name_ja"]) + en(s["name_en"]), inner,
                           f'{s["name_ja"]} {s["name_en"]} {plain(s["desc"])}',
                           anchor="sp-" + slug(s["name_en"])))
-    lead = f"""選べる {len(sp)} 種族。下の表は技能の<b>適性</b>で、
- +1 ごとに技能が上がりやすく、−1 ごとに上がりにくくなる(×は覚えられない)。
- 「経験値」の列は経験レベルの上がりやすさ。"""
+    lead = f"""選べる種族は{len(sp)}あります。下の表はスキルの適性で、
+ プラスなら上がりやすく、マイナスなら上がりにくくなります。×はそのスキルを使えないという意味です。
+ 「経験値」の列は、レベルの上がりやすさです。"""
     body = f"""<h1>種族</h1>
 <p class="lead">{jp(lead)}</p>
 {table}
@@ -626,7 +623,7 @@ def build_species(data: Data, tiles: Tiles) -> str:
 <div class="list one" id="list">
 {"".join(cards)}
 </div>"""
-    return page("species.html", "種族", "DCSS の選べる種族と、技能の適性の表。",
+    return page("species.html", "種族", "DCSS の種族の特徴と、スキル適性の一覧表。",
                 body, data.version, wide=True)
 
 
@@ -646,36 +643,36 @@ def equip_ja(spec: str, item_names: dict[str, str]) -> str:
 def build_job(data: Data, tiles: Tiles) -> str:
     item_names = {it["key"].lower(): it.get("name_ja") or it["key"]
                   for it in data.lookup["item"]}
-    wchoice = {0: "", 1: "はじめに武器を選ぶ", 2: "はじめに武器を選ぶ(良い品)"}
+    wchoice = {0: "", 1: "武器は開始時に選ぶ", 2: "武器は開始時に選ぶ(上等なもの)"}
     cards = []
     for j in data.d["jobs"]:
         inner = f'    <p class="num">腕力 {j["str"]}/知力 {j["int"]}/器用 {j["dex"]}</p>\n'
         inner += "    " + text_block(j["desc"], "desc") + "\n"
         sk = "、".join(f'{s.get("ja", "選んだ武器")} {s["level"]}' for s in j["skills"])
-        inner += f'    <p class="where">初期技能: {esc(sk)}</p>\n'
+        inner += f'    <p class="where">開始時のスキル：{esc(sk)}</p>\n'
         eq = [equip_ja(x, item_names) for x in j["equipment"]]
         if wchoice.get(j["wchoice"]):
             eq.append(wchoice[j["wchoice"]])
         if eq:
-            inner += f'    <p class="where">装備: {esc("、".join(eq))}</p>\n'
+            inner += f'    <p class="where">持ち物：{esc("、".join(eq))}</p>\n'
         if j["spells"]:
-            inner += f'    <p class="where">呪文: {esc("、".join(j["spells"]))}</p>\n'
+            inner += f'    <p class="where">呪文：{esc("、".join(j["spells"]))}</p>\n'
         if j["species"]:
-            inner += f'    <p class="where">勧められる種族: {esc("、".join(j["species"]))}</p>\n'
+            inner += f'    <p class="where">おすすめの種族：{esc("、".join(j["species"]))}</p>\n'
         if j.get("quote"):
             inner += "    " + details("引用", text_block(j["quote"], "quote"))
         cards.append(card("", esc(j["name_ja"]) + en(j["name_en"]), inner,
                           f'{j["name_ja"]} {j["name_en"]} {plain(j["desc"])}',
                           anchor="j-" + slug(j["name_en"])))
-    lead = f"""選べる {len(cards)} 職業。能力値は種族の値に足される。
- 技能の数字は始めたときの技能レベル。"""
+    lead = f"""選べる職業は{len(cards)}あります。能力値は種族の値に足されます。
+ スキルの横の数字は、ゲーム開始時のスキルレベルです。"""
     body = f"""<h1>職業</h1>
 <p class="lead">{jp(lead)}</p>
 {filter_bar()}
 <div class="list" id="list">
 {"".join(cards)}
 </div>"""
-    return page("job.html", "職業", "DCSS の選べる職業と、初期の技能・装備。",
+    return page("job.html", "職業", "DCSS の職業ごとの開始時のスキルと持ち物。",
                 body, data.version, wide=True)
 
 
@@ -692,15 +689,15 @@ def build_god(data: Data, tiles: Tiles) -> str:
         cards.append(card(tiles.img(g.get("tile")), esc(g["title"]) + en(g["key"]),
                           inner, f'{g["title"]} {g["key"]} ' + plain(" ".join(tabs)),
                           anchor="g-" + slug(g["key"])))
-    lead = f"""{len(cards)} 柱。祭壇で信仰すると、信仰心(piety)に応じて力を授かる。
- ここに出ているのはゲームの中の神の説明(概要・能力・神罰・その他)である。"""
+    lead = f"""神様は{len(cards)}柱います。祭壇で入信すると、信仰心に応じて能力をもらえます。
+ 説明はゲーム内の神様の画面と同じものです。"""
     body = f"""<h1>神</h1>
 <p class="lead">{jp(lead)}</p>
 {filter_bar()}
 <div class="list one" id="list">
 {"".join(cards)}
 </div>"""
-    return page("god.html", "神", "DCSS の神の全柱と、授かる力・神罰。",
+    return page("god.html", "神", "DCSS の神様ごとの能力と神罰。",
                 body, data.version, wide=True)
 
 
@@ -730,21 +727,21 @@ def build_branch(data: Data, tiles: Tiles) -> str:
         for kind, label in ((0, "出るモンスター"), (1, "水の中"), (2, "溶岩の中")):
             if mons[kind]:
                 lst = "、".join(x[2] for x in sorted(mons[kind]))
-                inner += "    " + details(f"{label}({len(mons[kind])} 種)",
+                inner += "    " + details(f"{label}({len(mons[kind])}種)",
                                           f'<p class="mons">{lst}</p>') + "\n"
         cards.append(card(tiles.img(e.get("tile")),
                           esc(b["long_ja"]) + en(b["short_en"]), inner,
                           f'{b["long_ja"]} {b["short_ja"]} {b["short_en"]} {plain(e["body"])}',
                           anchor="b-" + slug(b["short_en"])))
-    lead = """ダンジョン本道と支部の全部。説明・場所・深さはゲームの中のもの。
- 「出るモンスター」は普通に生まれるものの一覧で、括弧の中はその支部の何階に出るか。"""
+    lead = """本道と支部、ポータルの先をすべて載せています。
+ 「出るモンスター」は普通に湧くモンスターの一覧で、カッコの中の数字はその支部の何階に出るかです。"""
     body = f"""<h1>ダンジョン</h1>
 <p class="lead">{jp(lead)}</p>
 {filter_bar()}
 <div class="list one" id="list">
 {"".join(cards)}
 </div>"""
-    return page("branch.html", "ダンジョン", "DCSS のダンジョン本道と支部、出るモンスター。",
+    return page("branch.html", "ダンジョン", "DCSS の本道と支部、それぞれに出るモンスター。",
                 body, data.version, wide=True)
 
 
@@ -769,21 +766,21 @@ def simple_cards(entries: list, tiles: Tiles, prefix: str) -> list[tuple[str, st
 
 def build_mutation(data: Data, tiles: Tiles) -> str:
     rows = simple_cards(data.lookup["mutation"], tiles, "u-")
-    lead = f"""{len(rows)} 個。突然変異は、変異の薬・放射・神などで付いたり消えたりする体の変化で、
- 種族が生まれつき持つものもある。段階のあるものは、段階ごとの説明が並ぶ。"""
+    lead = f"""全{len(rows)}個。突然変異は、変異の薬や汚染、神様の力などで付いたり消えたりします。
+ 種族によっては最初から持っているものもあります。段階があるものは、段階ごとの説明を並べています。"""
     body = f"""<h1>突然変異</h1>
 <p class="lead">{jp(lead)}</p>
 {filter_bar()}
 <div class="list" id="list">
 {"".join(r[1] for r in rows)}
 </div>"""
-    return page("mutation.html", "突然変異", "DCSS の突然変異の全数と説明。",
+    return page("mutation.html", "突然変異", "DCSS の突然変異すべての説明。",
                 body, data.version, wide=True)
 
 
-MISC = [("skill", "技能"), ("ability", "能力"), ("status", "状態"),
+MISC = [("skill", "スキル"), ("ability", "能力"), ("status", "状態"),
         ("passive", "常時の効果"), ("cloud", "雲"), ("feature", "地形"),
-        ("card", "カード"), ("bane", "災い")]
+        ("card", "カード"), ("bane", "災厄")]
 
 
 def build_misc(data: Data, tiles: Tiles) -> str:
@@ -805,62 +802,60 @@ def build_misc(data: Data, tiles: Tiles) -> str:
 </section>""")
     jump = '<p class="jump">' + "".join(
         f'<a href="#g-{g}">{label}</a>' for g, label in opts) + "</p>"
-    lead = """ゲーム内の検索(<code>?/</code>)で引ける残りの項目。技能・能力(神の力や
- 種族の力を含む)・状態・雲・地形・カード(ネメレックスの札)・災い(悪運)。"""
+    lead = """<code>?/</code> 検索で引ける項目のうち、ほかのページに入らなかったものです。
+ 能力には神様や種族の能力も入っています。カードはネメレックスのデッキのカードです。"""
     body = f"""<h1>事典</h1>
 <p class="lead">{jp(lead)}</p>
 {jump}
-{filter_bar(select("g", "種類で絞らない", opts))}
+{filter_bar(select("g", "種類：すべて", opts))}
 <div id="list">
 {"".join(secs)}
 </div>"""
-    return page("misc.html", "事典", "DCSS の技能・能力・状態・雲・地形などの説明。",
+    return page("misc.html", "事典", "DCSS のスキル・能力・状態・雲・地形などの説明。",
                 body, data.version, wide=True)
 
 
 def build_index(data: Data, counts: dict) -> str:
     D = next(b for b in data.branches if b["abbrev"] == "D")
     cards = [
-        ("monster.html", "モンスター", f'{counts["monster"]} 種。出る場所・数値・攻撃・呪文・説明'),
-        ("spell.html", "呪文", f'{counts["spell"]} 個。レベル・系統・載っている本・説明'),
-        ("item.html", "アイテム", f'{counts["item"]} 種。武器・防具・薬・巻物・ワンドなど'),
-        ("artefact.html", "固定アーティファクト", f'{counts["artefact"]} 個。名前と力の決まった品'),
-        ("species.html", "種族", f'{counts["species"]} 種族。技能の適性の表と特徴'),
-        ("job.html", "職業", f'{counts["job"]} 職業。初期の技能・装備・呪文'),
-        ("god.html", "神", f'{counts["god"]} 柱。授かる力と神罰'),
-        ("branch.html", "ダンジョン", f'{counts["branch"]} か所。本道と支部、出るモンスター'),
-        ("mutation.html", "突然変異", f'{counts["mutation"]} 個'),
-        ("misc.html", "事典", "技能・能力・状態・雲・地形・カードほか"),
+        ("monster.html", "モンスター", f'{counts["monster"]}種。出現場所や強さ、攻撃と呪文'),
+        ("spell.html", "呪文", f'{counts["spell"]}個。レベルと系統、どの本に載っているか'),
+        ("item.html", "アイテム", f'{counts["item"]}種。武器と防具は一覧表つき'),
+        ("artefact.html", "固定アーティファクト", f'{counts["artefact"]}個の一点もの'),
+        ("species.html", "種族", f'{counts["species"]}種族。スキル適性の表つき'),
+        ("job.html", "職業", f'{counts["job"]}職業。開始時のスキルと持ち物'),
+        ("god.html", "神", f'{counts["god"]}柱。もらえる能力と神罰'),
+        ("branch.html", "ダンジョン", f'{counts["branch"]}か所。それぞれに出るモンスター'),
+        ("mutation.html", "突然変異", f'{counts["mutation"]}個'),
+        ("misc.html", "事典", "スキル、能力、状態、雲、地形、カードなど"),
     ]
     tiles_html = "".join(f'<a class="t" href="{h}"><b>{t}</b><span>{esc(s)}</span></a>'
                          for h, t, s in cards)
     body = f"""<section class="hero">
   <h1>{BRAND}</h1>
-  <p class="tag">Dungeon Crawl Stone Soup 日本語版の、ゲームの中の説明を全部ならべたもの。<br>
-     モンスター・呪文・アイテム・神・種族・職業・ダンジョンを、日本語で引ける。</p>
+  <p class="tag">Dungeon Crawl Stone Soup 日本語版のゲーム内データをまとめました。<br>
+     モンスターや呪文、アイテム、神様のことを日本語で調べられます。</p>
 </section>
 
 <section class="start">
   <h2>このサイトについて</h2>
-  <ul class="facts">
-    <li><b>文はゲームと同じ</b>——説明はすべて、日本語版のゲームの中で
-        検索(<code>?/</code>)したときに出るものをそのまま取り出してある。
-        数値もゲームのデータから取っていて、手で写したところは無い。</li>
-    <li><b>版</b>——{esc(data.version)}。本家の 0.34 に日本語化を当てたもの。</li>
-    <li><b>勝ち方</b>——ダンジョンの本道({D["levels"]} 階)と支部を潜ってルーンを集め、
-        3 つ以上持ってゾットの領域へ入り、その底にあるゾットのオーブを持って地上へ戻る。</li>
-    <li><b>キャラクターの無いときの説明</b>——ゲームの中では、あなたの技能や装備に合わせて
-        命中率・威力などが書き足される。ここに出ているのは、その書き足しの無い説明である。</li>
-  </ul>
+  <p>載っている説明文は、日本語版のゲームで <code>?/</code> を使って検索したときに出る文章を
+     そのまま抜き出したものです。数値もゲームのデータから直接取っているので、
+     手で写して間違えるということがありません。</p>
+  <p>対象のバージョンは {esc(data.version)}(本家 0.34 に日本語化を当てたもの)です。</p>
+  <p>ゲームの中では、自分のキャラクターのスキルや装備に合わせて命中率やダメージが書き足されますが、
+     ここではキャラクターがいない状態の説明になっています。</p>
+  <p>ゲームの目的は、ダンジョンを潜ってルーンを3つ以上集め、ゾットの領域の一番奥にある
+     ゾットのオーブを持って地上に戻ることです。本道は{D["levels"]}階まであります。</p>
 </section>
 
 <section class="cards">
-  <h2>収めてあるもの</h2>
+  <h2>ページ一覧</h2>
   <div class="tiles">{tiles_html}</div>
 </section>"""
     # 手書きの文の折り返しを詰める(タグの前後の改行は残す)
     body = re.sub(r"(?<=[^>\n])\n\s+(?=[^<\s])", "", body)
-    return page("index.html", "入口", "DCSS 日本語版のゲームの中の説明を全部ならべた非公式のスポイラー。",
+    return page("index.html", "入口", "DCSS 日本語版のゲーム内データをまとめた非公式スポイラー。",
                 body, data.version)
 
 
