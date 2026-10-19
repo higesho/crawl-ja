@@ -45,6 +45,7 @@
 #include "game-options.h"
 #ifdef USE_TILE_LOCAL
 # include "gamepad.h"
+# include "gamepad-menu.h"
 #endif
 #include "ghost.h"
 #include "invent.h"
@@ -3741,7 +3742,8 @@ void game_options::read_pad_bind(const string &field)
             continue;
         }
         // パッドのコマンドはメイン画面でだけ出す(GAMEPAD_DESIGN.md §2.1)。
-        if (context_for_command(cmd) != KMC_DEFAULT)
+        // 内部で使うだけのコマンドも断る。
+        if (!gamepad_command_bindable(cmd))
         {
             report_error(jtransc("Command '%s' can't be bound to a gamepad button"),
                          command_name.c_str());

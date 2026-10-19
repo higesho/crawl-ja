@@ -128,6 +128,9 @@ pad_bind = clear
 
 - 右辺は `ボタン:コマンド名` を `,` で並べる。コマンド名は `bindkey` と同じ
   (keybind.txt / `name_to_command`)。メイン画面のコマンド(`CMD_MAX_NORMAL` まで)だけを受け付ける。
+  そのうち内部で使うだけの `CMD_NO_CMD_DEFAULT`(キーの割り当てを消す目印)・`CMD_MOUSE_MOVE`・
+  `CMD_MOUSE_CLICK`(マウスの処理用)は断る。判定は `gamepad_command_bindable()` 1 か所で、
+  割り当ての画面・rc・pad_binds.txt の読み込みが共通に使う(Windows のタイル版で 131 個)。
 - `none` で割り当てを外す(そのボタンはマクロのキーになる。§4)。`default` でそのボタンを既定に戻す。
 - `pad_bind = clear` で既定の割り当てを全部外す。`pad_bind = default` で全部既定に戻す。
 - A と B(単独押し)は固定で、割り当てられない。

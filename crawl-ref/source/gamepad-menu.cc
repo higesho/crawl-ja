@@ -120,14 +120,6 @@ namespace
         return nullptr;
     }
 
-    // パッドに割り当てられるコマンドか(メイン画面のコマンドだけ。§2.1)。
-    bool pad_command_ok(command_type cmd)
-    {
-        return cmd > CMD_NO_CMD && cmd <= CMD_MAX_NORMAL
-               && context_for_command(cmd) == KMC_DEFAULT
-               && command_to_name(cmd) != "CMD_NO_CMD";
-    }
-
     // 書式付きの文字列に入れるため < を逃がす。
     string escape_tags(const string &s)
     {
@@ -266,7 +258,7 @@ namespace
                                         MEL_SUBTITLE));
                 for (const pad_command_info &info : group.commands)
                 {
-                    if (!pad_command_ok(info.cmd))
+                    if (!gamepad_command_bindable(info.cmd))
                         continue;
                     listed[info.cmd] = true;
                     add(command_text(info.cmd), SET, info.cmd,
@@ -279,7 +271,7 @@ namespace
             for (int c = CMD_NO_CMD + 1; c <= CMD_MAX_NORMAL; ++c)
             {
                 const command_type other = static_cast<command_type>(c);
-                if (listed[c] || !pad_command_ok(other))
+                if (listed[c] || !gamepad_command_bindable(other))
                     continue;
                 add(command_text(other), SET, other, current == other);
             }
@@ -439,6 +431,27 @@ namespace
     };
 }
 
+bool gamepad_command_bindable(command_type cmd)
+{
+    // メイン画面のコマンドだけ(GAMEPAD_DESIGN.md §2.1)。
+    if (cmd <= CMD_NO_CMD || cmd > CMD_MAX_NORMAL
+        || context_for_command(cmd) != KMC_DEFAULT
+        || command_to_name(cmd) == "CMD_NO_CMD")
+    {
+        return false;
+    }
+    switch (cmd)
+    {
+    // メイン画面の範囲にあるが、内部で使うだけのもの。
+    case CMD_NO_CMD_DEFAULT: // キーの割り当てを消すための目印。何もしない
+    case CMD_MOUSE_MOVE:     // マウスの処理用。移動先が決まらない
+    case CMD_MOUSE_CLICK:
+        return false;
+    default:
+        return true;
+    }
+}
+
 command_type gamepad_bound_command(pad_button button, int mods)
 {
     const auto it = _screen_binds.find(pad_slot(button, mods));
@@ -495,7 +508,7 @@ void gamepad_load_binds()
             continue;
         }
         const command_type cmd = name_to_command(uppercase_string(name));
-        if (pad_command_ok(cmd))
+        if (gamepad_command_bindable(cmd))
             _screen_binds[pad_slot(button, mods)] = cmd;
     }
     fclose(f);
