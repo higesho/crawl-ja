@@ -816,7 +816,6 @@ def build_misc(data: Data, tiles: Tiles) -> str:
 
 
 def build_index(data: Data, counts: dict) -> str:
-    D = next(b for b in data.branches if b["abbrev"] == "D")
     cards = [
         ("monster.html", "モンスター", f'{counts["monster"]}種。出現場所や強さ、攻撃と呪文'),
         ("spell.html", "呪文", f'{counts["spell"]}個。レベルと系統、どの本に載っているか'),
@@ -835,18 +834,6 @@ def build_index(data: Data, counts: dict) -> str:
   <h1>{BRAND}</h1>
   <p class="tag">Dungeon Crawl Stone Soup 日本語版のゲーム内データをまとめました。<br>
      モンスターや呪文、アイテム、神様のことを日本語で調べられます。</p>
-</section>
-
-<section class="start">
-  <h2>このサイトについて</h2>
-  <p>載っている説明文は、日本語版のゲームで <code>?/</code> を使って検索したときに出る文章を
-     そのまま抜き出したものです。数値もゲームのデータから直接取っているので、
-     手で写して間違えるということがありません。</p>
-  <p>対象のバージョンは {esc(data.version)}(本家 0.34 に日本語化を当てたもの)です。</p>
-  <p>ゲームの中では、自分のキャラクターのスキルや装備に合わせて命中率やダメージが書き足されますが、
-     ここではキャラクターがいない状態の説明になっています。</p>
-  <p>ゲームの目的は、ダンジョンを潜ってルーンを3つ以上集め、ゾットの領域の一番奥にある
-     ゾットのオーブを持って地上に戻ることです。本道は{D["levels"]}階まであります。</p>
 </section>
 
 <section class="cards">
