@@ -457,17 +457,33 @@ static bool _pad_in_command_context()
            && !ui::has_layout();
 }
 
+// ボタンに割り当てたコマンド。rc の pad_bind が優先し、無ければ既定。
 static command_type _pad_bound_command(pad_button button)
 {
+    const auto it = Options.pad_binds.find(pad_slot(button));
+    if (it != Options.pad_binds.end())
+        return static_cast<command_type>(it->second);
+    if (!Options.pad_bind_defaults)
+        return CMD_NO_CMD;
     const char *name = pad_default_command_name(button);
     return name ? name_to_command(name) : CMD_NO_CMD;
+}
+
+// メニュー・ポップアップの中か。狙いと階の地図も UI の層だが、そこでは斜めに
+// カーソルを動かせるのでメニューには数えない。
+static bool _pad_in_menu()
+{
+    if (!ui::has_layout())
+        return false;
+    const KeymapContext km = ui::current_keymap();
+    return km != KMC_TARGETING && km != KMC_LEVELMAP;
 }
 
 static int _pad_direction_key(int dx, int dy)
 {
     // メニューの中では斜めの Home/PgUp などが「先頭へ」「1 ページ」になって
     // しまうので、縦の成分だけを出す(メニューは縦に並ぶ)。
-    if (dx != 0 && dy != 0 && ui::has_layout())
+    if (dx != 0 && dy != 0 && _pad_in_menu())
         dx = 0;
     // 矢印キーとテンキー(NumLock 無し)と同じキー。
     static const int keys[3][3] =
@@ -523,7 +539,8 @@ static void _pad_log_key(const pad_output &out, int key)
     else
         result = keycode_to_name(key, false);
     fprintf(_pad_log, "%u %s -> %s%s%s\n", SDL_GetTicks(), what.c_str(),
-            result.c_str(), ui::has_layout() ? " [menu]" : "",
+            result.c_str(),
+            _pad_in_menu() ? " [menu]" : ui::has_layout() ? " [ui]" : "",
             _pad_in_command_context() ? " [command]" : "");
     fflush(_pad_log);
 }

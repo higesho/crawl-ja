@@ -3326,6 +3326,11 @@ bool has_layout()
     return ui_root.num_children() > 0;
 }
 
+KeymapContext current_keymap()
+{
+    return ui_root.state.keymap;
+}
+
 NORETURN void restart_layout()
 {
     throw UIRoot::RestartAllocation();

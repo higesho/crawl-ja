@@ -428,6 +428,9 @@ public:
 #ifdef USE_TILE_WEB
     void write_webtiles_options(const string &name);
 #endif
+#ifdef USE_TILE_LOCAL
+    void read_pad_bind(const string &field);
+#endif
     void write_prefs(FILE *f); // should be in superclass
 
 public:
@@ -953,6 +956,13 @@ public:
     int         tile_runrest_rate;
     int         tile_key_repeat_delay;
     int         tile_tooltip_ms;
+#ifdef USE_TILE_LOCAL
+    // ゲームパッドの割り当て(pad_bind。ja-tools/GAMEPAD_DESIGN.md §3)。
+    // 鍵は枠(gamepad.h の pad_slot)、値はコマンド(CMD_NO_CMD = 割り当て無し)。
+    // ここに無い枠は、pad_bind_defaults が真なら既定の割り当てに従う。
+    map<int, int> pad_binds;
+    bool        pad_bind_defaults;
+#endif
 
     bool        tile_show_minihealthbar;
     bool        tile_show_minimagicbar;

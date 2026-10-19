@@ -43,6 +43,9 @@
 #include "explore-stop-options.h"
 #include "files.h"
 #include "game-options.h"
+#ifdef USE_TILE_LOCAL
+# include "gamepad.h"
+#endif
 #include "ghost.h"
 #include "invent.h"
 #include "item-prop.h"
@@ -1583,6 +1586,11 @@ void game_options::reset_options()
     // some option default values set in dat/defaults
 
     set_default_activity_interrupts();
+
+#ifdef USE_TILE_LOCAL
+    pad_binds.clear();
+    pad_bind_defaults = true;
+#endif
 
 #ifdef DEBUG_DIAGNOSTICS
     quiet_debug_messages.reset();
@@ -3665,6 +3673,83 @@ static void _bindkey(string field)
     bind_command_to_key(cmd, key);
 }
 
+#ifdef USE_TILE_LOCAL
+// pad_bind = X:CMD_EXPLORE, RT:none(ja-tools/GAMEPAD_DESIGN.md §3)
+void game_options::read_pad_bind(const string &field)
+{
+    for (const string &entry : split_string(",", field))
+    {
+        const string lower = lowercase_string(entry);
+        if (lower == "clear")
+        {
+            // 既定の割り当ても含めて全部外す。
+            pad_binds.clear();
+            pad_bind_defaults = false;
+            continue;
+        }
+        if (lower == "default")
+        {
+            pad_binds.clear();
+            pad_bind_defaults = true;
+            continue;
+        }
+
+        const size_t colon = entry.find(':');
+        if (colon == string::npos)
+        {
+            report_error(jtransc("Bad pad_bind entry '%s' (expected button:command)"),
+                         entry.c_str());
+            continue;
+        }
+        const string button_name = trimmed_string(entry.substr(0, colon));
+        const string command_name = trimmed_string(entry.substr(colon + 1));
+
+        pad_button button;
+        if (!parse_pad_button(button_name, button))
+        {
+            report_error(jtransc("Unknown gamepad button '%s' in pad_bind"),
+                         button_name.c_str());
+            continue;
+        }
+        // A と B は決定・取消で固定。
+        if (button == PAD_A || button == PAD_B)
+        {
+            report_error(jtransc("The gamepad's %s button can't be rebound"),
+                         pad_button_name(button));
+            continue;
+        }
+        const int slot = pad_slot(button);
+
+        const string command_lower = lowercase_string(command_name);
+        if (command_lower == "none")
+        {
+            // 割り当てを外す(既定も使わない)。
+            pad_binds[slot] = CMD_NO_CMD;
+            continue;
+        }
+        if (command_lower == "default")
+        {
+            pad_binds.erase(slot);
+            continue;
+        }
+        const command_type cmd = name_to_command(uppercase_string(command_name));
+        if (cmd == CMD_NO_CMD)
+        {
+            report_error(jtransc("No command named '%s'"), command_name.c_str());
+            continue;
+        }
+        // パッドのコマンドはメイン画面でだけ出す(GAMEPAD_DESIGN.md §2.1)。
+        if (context_for_command(cmd) != KMC_DEFAULT)
+        {
+            report_error(jtransc("Command '%s' can't be bound to a gamepad button"),
+                         command_name.c_str());
+            continue;
+        }
+        pad_binds[slot] = cmd;
+    }
+}
+#endif
+
 static bool _is_autopickup_ban(pair<text_pattern, bool> entry)
 {
     return !entry.second;
@@ -3962,6 +4047,13 @@ bool base_game_options::read_custom_option(opt_parse_state &, bool)
 bool game_options::read_custom_option(opt_parse_state &state, bool runscripts)
 {
     const string key = state.key; // weak
+#ifdef USE_TILE_LOCAL
+    if (key == "pad_bind")
+    {
+        read_pad_bind(state.raw_field);
+        return true;
+    }
+#endif
     if (key == "autopickup")
     {
         // clear out autopickup

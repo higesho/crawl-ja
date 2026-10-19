@@ -261,6 +261,28 @@ tile_key_repeat_delay = 200
         take action. This option controls this delay, in milliseconds. If it
         is set to 0 key presses will never repeat.
 
+pad_bind = X:CMD_EXPLORE
+        (Local tiles only.) Binds a game command to a game controller
+        button. The value is a comma-separated list of button:command
+        pairs. The buttons are A, B, X, Y, LB, RB, LT, RT, Back, Start, L3
+        and R3. Commands use the same names as bindkey (see keybind.txt);
+        only commands of the main game screen can be used. Write "none"
+        instead of a command to remove a binding, or "default" to restore
+        the default one. "pad_bind = clear" removes all the bindings,
+        including the defaults, and "pad_bind = default" restores all the
+        defaults.
+        The D-pad and the left stick always move (and move the cursor in
+        menus); A is Enter and B is Escape, and these can't be rebound.
+        Commands are only sent while the game is waiting for a command; in
+        menus and prompts only the D-pad, A and B work. Holding a direction
+        repeats after tile_key_repeat_delay.
+        The default bindings are:
+          X      CMD_EXPLORE            Y      CMD_AUTOFIGHT
+          LB     CMD_GO_DOWNSTAIRS      RB     CMD_GO_UPSTAIRS
+          LT     CMD_DISPLAY_INVENTORY  RT     CMD_FIRE
+          Back   CMD_GAME_MENU          Start  CMD_CAST_SPELL
+          L3     CMD_REST               R3     CMD_USE_ABILITY
+
 tile_tooltip_ms = 500
         The number of milliseconds before a tooltip appears when hovering the
         mouse over part of the screen. Setting this option to 0 will

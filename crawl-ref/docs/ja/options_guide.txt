@@ -141,7 +141,7 @@ http://crawl.develz.org/ に挙げられているコミュニティの交流の�
                 tile_level_map_hide_messages, tile_level_map_hide_sidebar,
                 tile_player_tile, tile_weapon_offsets, tile_shield_offsets,
                 tile_grinch, tile_web_mouse_control,
-                tile_web_mobile_input_helper
+                tile_web_mobile_input_helper, pad_bind
 4-  キャラクターダンプ
 4-a     保存
                 dump_on_save
@@ -2235,6 +2235,31 @@ tile_key_repeat_delay = 200
         キーを押し続けたとき、押したキーが繰り返し働きだすまでには間がある。こ
         のオプションはその間をミリ秒で決める。0 にすると、キーの入力は繰り返さ
         れなくなる。
+
+pad_bind = X:CMD_EXPLORE
+        (ローカルのタイル版だけ)ゲームパッドのボタンにゲームのコマンドを割り当
+        てる。値は「ボタン:コマンド」を , で区切って並べたもの。ボタンは A、B、
+        X、Y、LB、RB、LT、RT、Back、Start、L3、R3。コマンドの名前は bindkey と
+        同じ(keybind.txt を参照)で、メインのゲーム画面のコマンドだけが使える。
+        コマンドの代わりに none と書くと割り当てを外し、default と書くとそのボ
+        タンを既定に戻す。pad_bind = clear で既定も含めて全部の割り当てを外し、
+        pad_bind = default で全部を既定に戻す。
+        十字キーと左スティックはいつも移動(メニューの中ではカーソルの移動)で、A
+        は決定(Enter)、B は取消(Esc)に決まっていて変えられない。コマンドを出す
+        のは、ゲームがコマンドを待っているときだけで、メニューや問いの中では十
+        字キーと A、B だけが働く。方向を押し続けると、tile_key_repeat_delay の
+        あとで繰り返す。
+        既定の割り当ては次のとおり:
+          X      CMD_EXPLORE            自動探索
+          Y      CMD_AUTOFIGHT          自動戦闘
+          LB     CMD_GO_DOWNSTAIRS      階段を下りる
+          RB     CMD_GO_UPSTAIRS        階段を上る
+          LT     CMD_DISPLAY_INVENTORY  所持品
+          RT     CMD_FIRE               射撃
+          Back   CMD_GAME_MENU          ゲームメニュー
+          Start  CMD_CAST_SPELL         呪文を唱える
+          L3     CMD_REST               休む・探す
+          R3     CMD_USE_ABILITY        能力を使う
 
 tile_tooltip_ms = 500
         画面のどこかにマウスを重ねてから、ツールチップが出るまでの時間(ミリ

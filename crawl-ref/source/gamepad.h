@@ -48,6 +48,12 @@ enum pad_dpad
     NUM_PAD_DPAD
 };
 
+// 割り当ての枠の番号(Options.pad_binds の鍵)。
+inline int pad_slot(pad_button b)
+{
+    return b;
+}
+
 // rc とログに出す綴り(A, LB, Back ...)。
 const char *pad_button_name(pad_button b);
 // 綴りから読む(大文字小文字は問わない。Select, LS/RS, L1/R1, L2/R2 も読む)。
