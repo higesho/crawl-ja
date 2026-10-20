@@ -5,7 +5,7 @@ r"""訳した wiki の記事を、紹介サイトの dcss/wiki/ のページに�
     python ja-tools\wiki\build_wiki.py --out DIR
 
 読むもの(work/ の下):
-    ja/<名前>.html     訳した本文(TRANSLATING.md の決まりで訳したもの)
+    ../ja/<名前>.html  訳した本文(TRANSLATING.md の決まりで訳したもの)
     raw/<名前>.html    取ってきた元の記事(最終更新日を取る)
     img/               記事の画像(fetch_wiki.py --images)
     ../titles_ja.tsv   記事名の訳(英語<TAB>日本語)。無い記事は用語の表、それも無ければ英語のまま
@@ -27,7 +27,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 WORK = HERE / "work"
-JA = WORK / "ja"
+JA = HERE / "ja"
 RAW = WORK / "raw"
 IMG = WORK / "img"
 OUT = Path(r"C:\Project2\higesho.github.io\dcss\wiki")
