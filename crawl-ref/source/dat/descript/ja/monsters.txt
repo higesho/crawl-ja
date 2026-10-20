@@ -260,7 +260,7 @@ Jessica
 # en:
 #   An evil apprentice sorceress. She entered the dungeon hoping to find a quiet,
 #   secluded place where she could study the darker arts without being disturbed.
-邪悪な魔女実習生だ。彼女は誰にも邪魔されずに暗黒の力の研究に打ち込める、
+邪悪な見習い魔女だ。彼女は誰にも邪魔されずに暗黒の力の研究に打ち込める、
 静かで人目につかない場所を求めてこのダンジョンへとやってきた。
 %%%%
 Jorgrun
