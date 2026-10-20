@@ -1,0 +1,2 @@
+Detect Traps
+罠の感知

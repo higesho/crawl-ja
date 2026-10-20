@@ -1,0 +1,2 @@
+Spell slot flag
+呪文スロットフラグ

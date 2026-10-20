@@ -1,0 +1,2 @@
+Melee spell
+近接攻撃の呪文

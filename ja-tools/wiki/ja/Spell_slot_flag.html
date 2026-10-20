@@ -1,0 +1,59 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.29" title="0.29">0.29</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<p>モンスターの<a href="/Spell" title="Spell">呪文</a>や能力(能力も呪文として作られている)には、どれも 1 つ以上の<b>呪文スロットフラグ</b>がついている。<i>DCSS</i> で出会うモンスターの多くは呪文を唱えるが、その呪文を使える仕組みはさまざまだ。呪文スロットフラグは、どんな手段でその呪文を封じられるかや、ほかのいくつかの性質を決める。
+</p>
+<div id="toc" class="toc"><div class="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Natural_flag"><span class="tocnumber">1</span> <span class="toctext">生来フラグ</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Vocal_flag"><span class="tocnumber">2</span> <span class="toctext">発声フラグ</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Wizard_flag"><span class="tocnumber">3</span> <span class="toctext">魔術フラグ</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Magical_flag"><span class="tocnumber">4</span> <span class="toctext">魔法フラグ</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Priest_flag"><span class="tocnumber">5</span> <span class="toctext">神官フラグ</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Emergency_flag"><span class="tocnumber">6</span> <span class="toctext">緊急フラグ</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Noisy_flag"><span class="tocnumber">7</span> <span class="toctext">騒音フラグ</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Breath_flag"><span class="tocnumber">8</span> <span class="toctext">ブレスフラグ</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Instant_flag"><span class="tocnumber">9</span> <span class="toctext">即時フラグ</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Short_range_flag"><span class="tocnumber">10</span> <span class="toctext">近距離フラグ</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Long_range_flag"><span class="tocnumber">11</span> <span class="toctext">遠距離フラグ</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#History"><span class="tocnumber">12</span> <span class="toctext">変更履歴</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Natural_flag">生来フラグ</span></h2>
+<p>この呪文は<a href="/List_of_dragons" title="List of dragons">ドラゴン</a>のブレスや<a href="/Electric_eel" title="Electric eel">電気ウナギ</a>の電撃のような生まれつきの働きで、本当の意味での呪文ではない。<a href="/Antimagic" title="Antimagic">反魔法</a>、<a href="/Sap_Magic" title="Sap Magic">魔法の阻害</a>、<a href="/Silence" title="Silence">静寂</a>の影響を受けない。
+</p>
+<h2><span class="mw-headline" id="Vocal_flag">発声フラグ</span></h2>
+<p>生来フラグの「呪文」と同じく、魔法ではない生まれつきの能力だが、<a href="/Vault_sentinel" title="Vault sentinel">宝物庫の警告者</a>の<a href="/Warning_Cry" title="Warning Cry">警告の喊声</a>のように、使うには声を出す必要がある。<a href="/Antimagic" title="Antimagic">反魔法</a>や<a href="/Sap_Magic" title="Sap Magic">魔法の阻害</a>の影響は受けないが、<a href="/Silence" title="Silence">静寂状態</a>では使えない。
+</p>
+<h2><span class="mw-headline" id="Wizard_flag">魔術フラグ</span></h2>
+<p>この呪文は唱えるのに呪文の言葉を口にする必要があり、術者が生まれつき持っている力ではない。<a href="/List_of_deep_elves" title="List of deep elves">闇エルフ</a>をはじめ、悪魔でない呪文使いの多くは魔術フラグの呪文を使う。<a href="/Antimagic" title="Antimagic">反魔法</a>のブランドや<a href="/Sap_Magic" title="Sap Magic">魔法の阻害</a>の効果を受け、<a href="/Silence" title="Silence">静寂状態</a>では唱えられない。<a href="/Trog" title="Trog">トログ</a>は、魔術フラグの呪文を持つモンスターを倒すと喜ぶ。
+</p><p>この呪文で呼び出された召喚物は、召喚した者と同じ神を信仰しているとはかぎらない。
+</p>
+<h2><span class="mw-headline" id="Magical_flag">魔法フラグ</span></h2>
+<p>この呪文は、生き物が生まれつき持っている魔法の能力だ。言葉を口にする必要はないが、性質としては魔法である。<a href="/Antimagic" title="Antimagic">反魔法</a>のブランドの影響は受けるが、<a href="/Silence" title="Silence">静寂</a>や<a href="/Sap_Magic" title="Sap Magic">魔法の阻害</a>の影響は受けない。
+</p>
+<h2><span class="mw-headline" id="Priest_flag">神官フラグ</span></h2>
+<p>魔術フラグの呪文に似ているが、魔法の力は術者自身ではなく、より上位の存在から来ている。たとえば<a href="/Spriggan_berserker" title="Spriggan berserker">スプリガンの狂戦士</a>は、<a href="/Trog" title="Trog">トログ</a>に呼びかけて能力を使う。<a href="/Silence" title="Silence">静寂状態</a>では唱えられないが、<a href="/Antimagic" title="Antimagic">反魔法</a>や<a href="/Sap_Magic" title="Sap Magic">魔法の阻害</a>は効かない。
+</p>
+<h2><span class="mw-headline" id="Emergency_flag">緊急フラグ</span></h2>
+<p>このスロットの呪文は、モンスターが明らかに劣勢なとき(プレイヤーと比べて体力がかなり少ないとき)にしか使われない。
+</p>
+<h2><span class="mw-headline" id="Noisy_flag">騒音フラグ</span></h2>
+<p>この呪文は、本来なら音を立てない呪文であっても、唱えると<a href="/Noise" title="Noise">騒音</a>を出す。
+</p>
+<h2><span class="mw-headline" id="Breath_flag">ブレスフラグ</span></h2>
+<p>この呪文を唱えると、術者は 1〜5 ターンのあいだ<a href="/Breath" title="Breath">息切れ</a>の状態になり、そのあいだはほかのブレスフラグの呪文を唱えられない。
+</p>
+<h2><span class="mw-headline" id="Instant_flag">即時フラグ</span></h2>
+<p>この呪文は術者のターンを消費しない。術者は呪文を唱えたあとも、ふつうに移動したり行動したりできる。
+</p>
+<h2><span class="mw-headline" id="Short_range_flag">近距離フラグ</span></h2>
+<p>この呪文は、相手との距離がモンスターの視界の半径の半分より近いときに使える。
+</p>
+<h2><span class="mw-headline" id="Long_range_flag">遠距離フラグ</span></h2>
+<p>この呪文は、相手との距離がモンスターの視界の半径の半分より遠いときに使える。
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.28" title="0.28">0.28</a> で、静寂不可フラグが発声フラグに改名された。</li>
+<li><a href="/0.18" title="0.18">0.18</a> で、悪魔フラグが魔法フラグに統合された。</li>
+<li>これらのフラグは <a href="/0.16" title="0.16">0.16</a> で追加された。これによって、モンスターの呪文と分類、魔法を妨げる効果のあいだの関係がずっとわかりやすくなった。</li></ul>

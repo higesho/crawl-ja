@@ -105,6 +105,8 @@ class Index:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--closure", action="store_true",
+                    help="階層を問わず、取得済みの全記事からたどれる記事を全部取る")
     args = ap.parse_args()
     idx = Index()
     depth: dict[str, int] = {}
@@ -124,6 +126,28 @@ def main() -> None:
         if f not in depth or depth[f] > d:
             depth[f] = d
         return f
+
+    if args.closure:
+        # 取得済みの全記事のリンクをたどり、たどれる記事がなくなるまで取る
+        queue = sorted(p.name for p in RAW.glob("*.html"))
+        seen = set(queue)
+        missing_titles: set[str] = set()
+        while queue:
+            f = queue.pop(0)
+            for t in body_links((RAW / f).read_text(encoding="utf-8")):
+                if args.dry_run:
+                    if not idx.find(t):
+                        missing_titles.add(idx.alias.get(t, t))
+                    continue
+                g = visit(t, 3)
+                if g and g not in seen:
+                    seen.add(g)
+                    queue.append(g)
+        if args.dry_run:
+            print(f"未取得 {len(missing_titles)} 本:", ", ".join(sorted(missing_titles)[:120]))
+        else:
+            print(f"取得済み {len(seen)} 本")
+        return
 
     main_file = visit("Main Page", 0)
     level1 = body_links((RAW / main_file).read_text(encoding="utf-8"))

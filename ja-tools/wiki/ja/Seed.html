@@ -1,0 +1,18 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.28" title="0.28">0.28</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<p><b>シード</b>は 64 ビットの二進数(10 進数でいえば最大 20 桁の数)で、これを使うと、別々のゲームでも同じ<a href="/Item" title="Item">アイテム</a>、<a href="/Monster" title="Monster">モンスター</a>、地形、<a href="/Vault" title="Vault">ヴォールト</a>を備えた同じダンジョンを何度でも生成できる。オンラインかオフラインかを問わず、どのゲームにもゲームのシードが割り当てられる。ゲームはこのシードを使って迷宮の最初の階を生成し、その後プレイヤーが入る階も一つずつ生成していく。このゲームのシードは<a href="/Morgue" title="Morgue">モルグ</a>ファイルのいちばん上に書かれている。ダンジョンの事前生成と組み合わせれば、同じシードからは誰が遊んでもまったく同じダンジョンが生成される。ただし<a href="/The_Abyss" title="The Abyss">アビス</a>と<a href="/Pandemonium" title="Pandemonium">パンデモニウム</a>は例外だ。
+</p>
+<h2><span class="mw-headline" id="Setting_a_game_seed">ゲームのシードの指定</span></h2>
+<p>今のところ、ゲームを始める前にシードを指定する方法は二つある。
+</p>
+<ul><li> オプションファイル(init.txt)で <code>game_seed</code> オプションを設定する。こうすると、メインメニューの「新しくゲームを始める」から始めたゲームはすべて、このシードを使って生成される。</li>
+<li> メインメニューの「シード値を指定して開始」を使う。シードを手で入力するメニューが開く。<code>d</code> を押して今日の日付をシードにしたり、<code>p</code> を押してクリップボードからシードを貼り付けたりもできる。</li></ul>
+<p>シードを指定しただけでも、<a href="/Dungeon" class="mw-redirect" title="Dungeon">迷宮</a>の最初の階はいつも同じになり、おそらく<a href="/Dungeon" class="mw-redirect" title="Dungeon">迷宮</a>の序盤の残りもほとんど同じになる。しかし、<a href="/Shaft" title="Shaft">縦穴</a>に落ちたり、<a href="/Branch" class="mw-redirect" title="Branch">分岐</a>を回る順番を変えたりして階を訪れる順番が違うと、同じシードを使ったほかのゲームとはすぐに食い違ってくることがある。ダンジョンの各階は、その階にはじめて入ったときに生成されるからだ。
+</p><p>なお、ゲームのバージョンが違えば、同じシードでもまったく違う迷宮が生成されることがある。
+</p>
+<h2><span class="mw-headline" id="Dungeon_pregeneration">ダンジョンの事前生成</span></h2>
+<p>ゲーム全体を通してダンジョンの構造を同じにするには、ダンジョンを事前生成しておく必要がある。これはメインメニューの「シード値を指定して開始」から直接選ぶか、オプションファイルで <code>pregen_dungeon = true</code> と設定すればできる。こうすると、ゲームが始まる前に、最初の階だけでなくダンジョン全体が決まった順番で生成される。
+</p><p><a href="/Scroll_of_acquirement" title="Scroll of acquirement">獲得の巻物</a>、<a href="/God" title="God">神</a>の<a href="/Gift" title="Gift">贈り物</a>、<a href="/Xom" title="Xom">ゾム</a>のやることすべてのように、ダンジョンの生成とは別のところにあるランダム性は、前もって決まってはいない。これらで<a href="/Unrand" class="mw-redirect" title="Unrand">固定アーティファクト</a>が生成されると、事前生成していない迷宮全体に、小さいながらも後々まで残る影響が出るかもしれない。
+</p>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li> <a href="/0.23" title="0.23">0.23</a>.1 と <a href="/0.23" title="0.23">0.23</a>.2 より前は、機器やオペレーティングシステムが違うとシードの結果がずれることがあった。シードの安定性はその後のバージョンでもさらに改善された。</li>
+<li> シードとダンジョンの事前生成の機能は <a href="/0.23" title="0.23">0.23</a> で追加された。</li></ul>

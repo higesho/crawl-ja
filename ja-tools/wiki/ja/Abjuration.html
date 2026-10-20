@@ -1,0 +1,124 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.28" title="0.28">0.28</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<div>
+<table class="prettytable" style=" width:18em">
+<tr>
+<th colspan="2"> <a href="/File:Abjuration.png" class="image"><img alt="Abjuration.png" src="/images/5/57/Abjuration.png" width="32" height="32" /></a>&#8195;解放の宣誓
+</th></tr>
+<tr>
+<th align="left"> <a href="/Spell_noise" title="Spell noise">詠唱の騒音</a>
+</th>
+<td> 3
+</td></tr>
+<tr>
+<th align="left"> <a href="/Spell_noise" title="Spell noise">呪文の騒音</a>
+</th>
+<td> 0
+</td></tr>
+
+<tr>
+<th align="left"> 射程
+</th>
+<td> LOS
+</td></tr>
+
+<tr>
+<th align="left"> フラグ
+</th>
+<td> モンスター専用(Monster)
+</td></tr>
+</table></div>
+<table style=" width:auto; text-align:left">
+
+<tr>
+<td>
+</td>
+<td style="width: 100%"> 近くにいる、召喚された敵対的なモンスターすべての残りの存在時間を短くする。
+</td></tr></table>
+<p><b>解放の宣誓</b>はモンスター専用の呪文で、術者の<a href="/Line_of_sight" title="Line of sight">視界</a>にいる、術者に敵対する<a href="/Summon" title="Summon">召喚</a>されたモンスターをすべて消し去ろうとする。効果を受けたモンスターは残りの存在時間が大きく削られ、それが0以下になれば召喚が完全に解ける。
+</p><p>解放の宣誓を唱える敵は次のとおり。
+</p>
+<ul><li> <span class="nhsym clr-cyan">X</span> <a href="/File:Nameless_horror.png" class="image"><img alt="Nameless horror.png" src="/images/f/f4/Nameless_horror.png" width="32" height="32" /></a> <b><a href="/Nameless_horror" title="Nameless horror">名状しがたき恐怖</a></b></li></ul>
+<p>厳密には、この呪文を覚えているのは<a href="/Nameless_horror" title="Nameless horror">名状しがたき恐怖</a>だけだ。ただし、<b>spflag::mons_abjure</b> のフラグが付いた召喚の呪文を覚えているモンスターはすべて、あなたが召喚した仲間を連れていると、33%の確率でその呪文のかわりに解放の宣誓を使う。該当する呪文は次のとおり。
+</p>
+<ul><li><a href="/Haunt" title="Haunt">招霊</a></li>
+<li><a href="/Hellfire_Court" title="Hellfire Court">業火の宮廷</a></li>
+<li><a href="/Infernal_Servant" title="Infernal Servant">地獄の従者</a></li>
+<li><a href="/Monstrous_Menagerie" title="Monstrous Menagerie">怪物園の開場</a></li>
+<li><a href="/Shadow_Creatures" title="Shadow Creatures">影の怪物</a></li>
+<li><a href="/Sheza%27s_Dance" title="Sheza&#39;s Dance">シェザの舞踏</a></li>
+<li><a href="/Sphinx_Sisters" title="Sphinx Sisters">スフィンクスの姉妹</a></li>
+<li><a href="/Summon_Air_Elementals" title="Summon Air Elementals">風の精霊の召喚</a></li>
+<li><a href="/Summon_Demon" title="Summon Demon">デーモンの召喚</a></li>
+<li><a href="/Summon_Dragon" title="Summon Dragon">ドラゴンの召喚</a></li>
+<li><a href="/Summon_Drakes" title="Summon Drakes">ドレイクの召喚</a></li>
+<li><a href="/Summon_Earth_Elementals" title="Summon Earth Elementals">大地の精霊の召喚</a></li>
+<li><a href="/Summon_Emperor_Scorpions" title="Summon Emperor Scorpions">皇帝サソリの召喚</a></li>
+<li><a href="/Summon_Executioners" title="Summon Executioners">処刑の悪魔の召喚</a></li>
+<li><a href="/Summon_Eyeballs" title="Summon Eyeballs">眼球の怪物の召喚</a></li>
+<li><a href="/Summon_Fire_Elementals" title="Summon Fire Elementals">火の精霊の召喚</a></li>
+<li><a href="/Summon_Greater_Demon" title="Summon Greater Demon">上位デーモンの召喚</a></li>
+<li><a href="/Summon_Hell_Sentinel" title="Summon Hell Sentinel">地獄の番人の召喚</a></li>
+<li><a href="/Summon_Holies" title="Summon Holies">神聖なるものの召喚</a></li>
+<li><a href="/Summon_Horrible_Things" title="Summon Horrible Things">おぞましきものの召喚</a></li>
+<li><a href="/Summon_Hydra" title="Summon Hydra">ヒドラの召喚</a></li>
+<li><a href="/Summon_Mana_Viper" title="Summon Mana Viper">マナバイパーの召喚</a></li>
+<li><a href="/Summon_Mushrooms" title="Summon Mushrooms">茸の怪物の召喚</a></li>
+<li><a href="/Summon_Scarabs" title="Summon Scarabs">スカラベの召喚</a></li>
+<li><a href="/Summon_Scorpions" title="Summon Scorpions">蠍の召喚</a></li>
+<li><a href="/Summon_Tzitzimitl" title="Summon Tzitzimitl">ツィツィミトルの召喚</a></li>
+<li><a href="/Summon_Undead" title="Summon Undead">不死者の召喚</a></li>
+<li><a href="/Summon_Vermin" title="Summon Vermin">害虫の召喚</a></li>
+<li><a href="/Summon_Water_Elementals" title="Summon Water Elementals">水の精霊の召喚</a></li></ul>
+<p><br />
+理屈の上では、<a href="/Dread_lich" title="Dread lich">恐怖のリッチ</a>が悪魔を呼ぶかわりに、あなたが召喚した<a href="/Quokka" title="Quokka">クワッカ</a>を消すのに1ターンを使ってくれることもありうる。だが実際には、そんな捨て駒をわざわざ召喚するのは賢くない。相手が失うのはせいぜい1ターンで、それはあなたが呪文を唱えるのに使った時間と同じだ。おまけに、相手の召喚物があなたの囮を片づけてしまえば、相手は1ターンも失わずに済む。
+</p>
+<h2><span class="mw-headline" id="Player_Version">プレイヤー版</span></h2>
+<p>プレイヤーは<a href="/Yara%27s_Violent_Unravelling" title="Yara&#39;s Violent Unravelling">ヤーラの強制魔法解除術</a>で、解放の宣誓に似た効果を使える。この呪文は1体の召喚物の召喚を必ず完全に解き、そのあと爆発を起こして近くの敵にダメージを与える。<a href="/Durable_summon" class="mw-redirect" title="Durable summon">永続召喚</a>されたモンスターには、解放の宣誓もこの呪文も効かない。
+</p>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<div>
+<table class="prettytable" style=" width:18em">
+<tr>
+<th colspan="2"> <a href="/File:Abjuration.png" class="image"><img alt="Abjuration.png" src="/images/5/57/Abjuration.png" width="32" height="32" /></a>&#8195;解放の宣誓
+</th></tr>
+<tr>
+<th align="left"> レベル
+</th>
+<td> 3
+</td></tr>
+<tr>
+<th align="left"> 系統<sup>1</sup>
+</th>
+<td> <a href="/Summonings" title="Summonings">召喚術</a>
+</td></tr>
+
+<tr>
+<th align="left"> 入手元
+</th>
+<td><div>
+<ul><li><a href="/Book_of_Summonings" title="Book of Summonings">召喚術の魔法書</a> </li></ul>
+</div>
+</td></tr>
+<tr>
+<th align="left"> <a href="/Spell_noise" title="Spell noise">詠唱の騒音</a>
+</th>
+<td> 3
+</td></tr>
+<tr>
+<th align="left"> <a href="/Spell_noise" title="Spell noise">呪文の騒音</a>
+</th>
+<td> 0
+</td></tr>
+
+</table></div>
+<table style=" width:auto; text-align:left">
+
+<tr>
+<td>
+</td>
+<td style="width: 100%"> 敵対する召喚されたモンスターを元いた場所へ送り返そうとする呪文だ。送り返せなくても、少なくとも術者のいる場所に留まる時間は短くできる。
+</td></tr></table>
+<ul><li><a href="/0.26" title="0.26">0.26</a> より前は、プレイヤーは<a href="/Aura_of_Abjuration" title="Aura of Abjuration">解放のオーラ</a>を使って解放の宣誓を行うこともできた。</li>
+<li><a href="/0.17" title="0.17">0.17</a> より前の解放の宣誓は、プレイヤーも使えるレベル3の呪文だった。</li>
+<li><a href="/0.14" title="0.14">0.14</a> より前は、召喚を使うモンスターは50%の確率で、召喚するかわりに集団への解放の宣誓を唱えた。</li>
+<li><a href="/0.10" title="0.10">0.10</a> より前の解放の宣誓は、1体ではなく複数のモンスターを対象にしていた。この効果は<a href="/Mass_Abjuration" title="Mass Abjuration">集団への解放の宣誓</a>に引き継がれた。</li></ul>

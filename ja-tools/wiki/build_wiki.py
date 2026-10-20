@@ -278,7 +278,7 @@ def main() -> None:
         encoding="utf-8", newline="\n")
 
     # 入口は訳したトップページ。まだ無ければ記事一覧を入口にする
-    lead = f"""<p class="lead">英語版の DCSS wiki(CrawlWiki)を日本語に訳しています(いま {total} 本)。
+    lead = f"""<p class="lead">英語版の DCSS wiki(CrawlWiki)を日本語に訳しています。
 ゲームの用語は日本語版の訳語に合わせました。下は元の wiki のトップページの訳で、
 訳した記事は日本語のページに、まだ訳していない記事は英語版<span class="untr-mark">(英)</span>につながります。
 <a href="all.html">訳した記事の一覧</a>もあります。</p>"""
