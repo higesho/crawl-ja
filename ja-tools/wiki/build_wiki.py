@@ -171,6 +171,8 @@ def _find_done(title: str, done: dict[str, str]) -> str:
 
 
 def rewrite(body: str, done: dict[str, str], used_imgs: set[str]) -> str:
+    # prepare.py が版の箱を外したときに残る閉じタグ(先頭の </i>)を落とす
+    body = re.sub(r"^\s*</i>\s*", "", body)
     def href(m):
         target = m.group(1)
         if target.startswith("#"):

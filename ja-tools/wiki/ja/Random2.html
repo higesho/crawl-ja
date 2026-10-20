@@ -1,0 +1,5 @@
+<p><b>random2</b> は、Crawl のコードで乱数を選ぶのに使われている関数だ。次のように定義されている。
+</p><p><code>random2(<i>int max</i>)</code>
+</p><p>0 から <i>max-1</i> までの乱数を返す。ダイス表記でいえば <code>1d<i>max</i> - 1</code> にあたる。したがって <b>random2(2)</b> は 0 か 1 を返す。<b>coinflip</b> 関数はまさにこの形で定義されている。
+</p><p><b>random2</b> は、ほかの多くの重要な乱数関数とともに <a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/master/crawl-ref/source/random.cc">random.cc</a> で定義されている。ダメージや数量、性質の計算のほとんどはこの関数を使っているので、ソースを読んでこうした値を調べようとする wiki の編集者は、この関数に慣れておくとよい。
+</p>
