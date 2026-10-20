@@ -134,7 +134,7 @@ scimitar of Flaming Death
 # en:
 #   A scimitar with a mysteriously smoking blade. Occasionally its heat leaks out,
 #   covering opponents in magical flame.
-煙たい！
+刀身から怪しげに煙の立ちのぼるシミターだ。時おりその熱が漏れ出し、敵を魔法の炎で包みこむ。
 %%%%
 eveningstar "Brilliance"
 
@@ -504,7 +504,7 @@ shield of Resistance
 #   by the adherents of an obscure minor faith, who imbued it with the power of
 #   their god. As the god is said to, this shield protects against sword and sling,
 #   frost and flame.
-青銅製の盾だ。
+亀の甲羅にそっくりな青銅製の盾だ。名も知られぬ小さな信仰の信徒たちが作り、自らの神の力を吹き込んだ。その神と同じく、この盾は剣と投石、霜と炎から身を守ってくれるという。
 %%%%
 robe of Folly
 
