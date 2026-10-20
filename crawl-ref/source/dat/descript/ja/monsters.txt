@@ -897,7 +897,7 @@ wyvern
 #   A dragon-like creature with a long, sharply pointed tail. Although smaller and
 #   less formidable than true dragons, it is nonetheless a foe to be reckoned with.
 ドラゴンに似た、長い鋭く尖った尻尾を持つモンスターだ。
-ワイバーンは本物の竜よりは小型で手強さも劣るが、とりもなおさず侮り難い敵である。
+本物のドラゴンよりは小型で手強さも劣るが、それでも侮り難い敵だ。
 %%%%
 yak
 
