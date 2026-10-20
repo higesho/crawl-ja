@@ -142,7 +142,8 @@ def unfinished(f: Path) -> bool:
     sents = _en_sentences(src.read_text(encoding="utf-8"))
     if not sents:
         return False
-    ja = f.read_text(encoding="utf-8")
+    # 属性(title など)は英語のまま残す決まりなので、表示される文字だけで比べる
+    ja = "\n".join(_en_sentences(f.read_text(encoding="utf-8")))
     return sum(1 for s in sents if s in ja) * 2 >= len(sents)
 
 
