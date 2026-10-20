@@ -128,6 +128,8 @@ SRC = WORK / "src"
 
 
 def _en_sentences(text: str) -> list[str]:
+    # <pre> の中(マップの定義やコード)は英語のまま残すので数えない
+    text = re.sub(r"<pre[\s>].*?</pre>", "\n", text, flags=re.S)
     text = html.unescape(re.sub(r"<[^>]+>", "\n", text))
     return [s.strip() for s in text.split("\n")
             if len(s.strip()) >= 30 and len(re.findall(r"[a-z]+ ", s)) >= 4]

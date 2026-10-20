@@ -1,0 +1,2 @@
+Autopickup
+自動拾い

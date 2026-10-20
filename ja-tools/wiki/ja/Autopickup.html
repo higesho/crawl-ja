@@ -1,0 +1,14 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.18" title="0.18">0.18</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<p><b>自動拾い</b>(autopickup)が有効になっていると、<a href="/Line_of_sight" title="Line of sight">視界</a>にモンスターがいないかぎり、あなたのキャラクターは入ったマスにある役に立つアイテムを自動で拾い上げる。自動で拾うアイテムの一覧は <b>\</b> キー(バックスラッシュ)で見られる。一覧をスクロールして対応する文字を押せば、どのアイテムを拾うかを切り替えられる。
+</p><p>自動拾いを使っても、アイテムを拾うのにかかる時間は減らないし、ターン数が得をすることもない点は覚えておこう。ゲームは、一覧にあるアイテムを見つけたら全部拾いたいのだろうと考えて拾っているだけだ。むしろ、役に立たないアイテムを一覧で有効にしたままだと、自動探索のたびにキャラクターがわざわざがらくたを拾いに寄り道するので、ターン数がかさむこともある。もう要らなくなったアイテムは対象から外しておくとよい。
+</p><p>自動拾いの入と切は <b>CTRL</b> + <b>A</b> で切り替えられる。<a href="/Invisible" title="Invisible">透明</a>なモンスターに出くわすと、そのたびに自動拾いはすぐに切れ、手で入れ直すか、その脅威を<i>倒す</i>まで切れたままになる。別の階へ逃げただけでは元に戻らない。
+</p>
+<h2><span class="mw-headline" id="Editing_your_default_autopickup_list">自動拾いの初期設定の一覧を変える</span></h2>
+<p>アイテムを自動拾いの一覧に加えるには、<tt>init.txt</tt> に <tt>autopickup_exceptions</tt> の行を書き足す。たとえば次のようにする。
+</p>
+<pre> autopickup_exceptions = &lt;stone, &lt;artefact
+</pre>
+<p><tt>&lt;</tt> は「含める」指定(当てはまるものを拾う)を表す。アイテムの名前のほかに、上の例の "artefact" や "emergency_item"、"unidentified" など、いくつかの<a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/master/crawl-ref/docs/options_guide.txt">接頭辞</a>でも指定できる。
+</p><p>初期設定では、<tt>autopickup_exceptions.txt</tt> というファイルにこうした例外がいくつも書かれている。「除く」指定は「含める」指定より優先されるので、書いた例外が効かないときは、そのファイルの「除く」指定に当てはまっていないかを確かめよう(<tt>useless_item</tt> があやしい)。
+</p><p>くわしくは、オプションの手引き(options guide)の「<a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/master/crawl-ref/docs/options_guide.txt">Picking up and Dropping</a>」の節を参照。
+</p>

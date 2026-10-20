@@ -101,3 +101,13 @@ Trunk-only(trunk 限定の箱)	trunk 限定: この記事は、テスト中の C
 Blink Range(モンスターの呪文)	視界内退避(Blink Away は瞬間退避。ゲームの辞書で訳し分けた)
 Book of the Tempests(旧魔法書)	天災の魔法書(旧版のゲームの訳。「嵐の魔法書」は今の Book of Storms とぶつかるので使わない)
 rod of shadows / iron rod / rod of ignition(旧ロッド)	影のロッド/鉄のロッド/点火のロッド(wiki の記事の題に合わせる)
+Version unknown(記事冒頭の箱)	バージョン不明: この記事は Crawl の最新の安定版の内容に追いついていないかもしれない。
+THIS ARTICLE WAS WRITTEN FOR AN EARLIER VERSION…(保管ガイド冒頭の注記)	この記事は CRAWL の古い版に向けて書かれたもので、もう当てにはならない。保管庫から外したいなら、今の版に合わせて書き直してほしい。
+Spit Poison(能力・変異)	毒の唾液(ゲームの能力名 [ability]Spit Poison。モンスターの呪文は「毒の唾」)
+Condensation Shield(呪文)	大気の盾(ゲームの呪文名。悪魔の血族・氷の鎧の変異の condensation shield は「凝結の盾」)
+See Invisible(呪文)	透明体の視認(ゲームの呪文名。性質・変異・指輪・装備の特性の see invisible は「霊視」)
+ring of protection from magic(旧指輪)	耐魔法の指輪(旧版のゲームの訳)
+durable summon	永続召喚
+Retired Artwork	使われなくなった絵
+著作権の切れた引用(伝承歌・19 世紀の歌など)	本文を載せる。ゲームの訳(descript/ja/quotes.txt)があればそれを使い、改行は原文に合わせる
+Diary of a Crawler(カテゴリ名)	冒険者の日記

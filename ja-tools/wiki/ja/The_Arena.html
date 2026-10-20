@@ -1,0 +1,12 @@
+<p><i>「Arena」という言葉のほかの意味については<a href="/Arena" title="Arena">Arena</a>を参照。</i>
+</p><p><b>アリーナ</b>(The Arena)は、プレイヤー以外の戦闘員を 2 組指定して戦わせる、自動の対戦モードだ。オフライン版で使える。Crawl の最新版を<a rel="nofollow" class="external text" href="http://crawl.develz.org/wordpress/downloads">ダウンロード</a>してインストールし、メインメニューから「アリーナ」を選べばよい。さっきあなたを殺してゲームを終わらせたあのモンスターに仕返しする、楽しい方法にもなる(たとえば、ロイヤルジェリーを 99 体のパンデモニウムの君主と戦わせて、そいつがくたばるさまを眺めるとか……)。
+</p>
+<h2><span class="mw-headline" id="Monsters">モンスター</span></h2>
+<p>モンスターとその指定項目については、モンスターの作り方の手引き <a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.28.0/crawl-ref/source/dat/database/help.txt#L313">dat/database/help.txt:313</a>(0.28.0)を参照。
+</p><p>いじれるところはたくさんある。<a href="/Smiting" title="Smiting">打擲の一撃</a>しか使わない<a href="/Orc_priest" title="Orc priest">オークの司祭</a>や、<a href="/Orb_of_fire" title="Orb of fire">炎の球体</a>と同じ呪文を(同じ威力で!)使う<a href="/Bat" title="Bat">コウモリ</a>だって作れる。ただし、1 つのチームに入れられるモンスターは 1 種類だけだ。例外は群れやランダムなモンスターを指定したときで、たとえば place:(location) と書くと、その場所に出るモンスターがランダムに選ばれる。
+</p><p><a href="/Dowan" title="Dowan">ドウェン</a>と<a href="/Duvessa" title="Duvessa">デュヴェッサ</a>を出すには、<i>Duvessa band</i> と指定する。各種の<a href="/Serpent_of_Hell" title="Serpent of Hell">地獄のサーペント</a>を出すには、行の頭に <i>arena_place:(location)</i> と書き、location に Geh、Coc、Dis、Tar のどれかを入れる。書かなければ炎の版になる。
+</p>
+<h2><span class="mw-headline" id="Arena_Parameters">アリーナの指定項目</span></h2>
+<p>アリーナの指定項目については、アリーナの手引き(<a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/master/crawl-ref/docs/develop/arena.txt">こちら</a>)と、アリーナのマップの一覧 <a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.28.0/crawl-ref/source/dat/des/builder/arena.des#L1">dat/des/builder/arena.des:1</a>(0.28.0)を参照。
+</p><p>指定項目を変えると、戦いを(ずっと)速く進めたり、アリーナの地形を変えたり、倒しても倒しても湧き続ける戦いにしたりできる。多くの項目は大文字と小文字を区別するので注意。
+</p>
