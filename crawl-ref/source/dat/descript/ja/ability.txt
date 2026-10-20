@@ -30,9 +30,7 @@ Hurl Damnation ability
 #   anyone adjacent, and are not affected by any means of protection, such as armour
 #   or resistances. However, certain creatures, usually those able to invoke
 #   damnation themselves, are entirely unscathed by damnation.
-敵を地獄の業火で爆破する。この不浄な炎の球は着弾とともに炸裂し、
-鎧や耐性などのあらゆる手段の防御の影響を受けない。しかしながら、ある種の、
-主に炎から生まれた、怪物たちは地獄の業火への完全な免疫を持っている。
+指定した敵に天罰を浴びせる。この不浄な力は対象とその隣にいる者すべてを傷つけ、鎧や耐性などのいかなる防御手段の影響も受けない。ただし、一部のモンスター、主に自らも天罰を呼び起こせる者たちは、天罰を受けてもまったく傷つかない。
 %%%%
 Evoke Berserk Rage ability
 
