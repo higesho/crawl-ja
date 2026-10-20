@@ -432,7 +432,7 @@ alligator snapping turtle
 # en:
 #   A particularly large and nasty snapping turtle. Like its smaller relative, it
 #   can reach out and bite from afar.
-とびきり大きく危険なワニガメだ。より小さな同種のモンスターと同様に、
+とびきり大きく危険なカミツキガメだ。より小さな同種のモンスターと同様に、
 遠くから首を伸ばして噛みつくことができる。
 %%%%
 anaconda
