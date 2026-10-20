@@ -1,0 +1,30 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.30" title="0.30">0.30</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<p><b>器用</b>(DEX)は、<a href="/Strength" title="Strength">腕力</a>・<a href="/Intelligence" title="Intelligence">知力</a>と並ぶ、キャラクターの三つの主要な<a href="/Attributes" class="mw-redirect" title="Attributes">能力値</a>のひとつだ。回避を高くしたいなら重要になる。
+</p><p>器用は次のものに影響する。
+</p>
+<ul><li>一部の武器(<a href="/Short_Blades" title="Short Blades">短剣</a>、<a href="/Long_Blades" title="Long Blades">長剣</a>、<a href="/Ranged_Weapons" title="Ranged Weapons">射撃武器</a>)のダメージが上がる。</li>
+<li><a href="/Dodging" title="Dodging">躱し身</a>のスキルが回避にもたらす効果が大きくなる。</li>
+<li>モンスターに<a href="/Stab" class="mw-redirect" title="Stab">急所攻撃</a>を決められる確率が上がる。</li>
+<li><a href="/Shields" title="Shields">盾</a>による <a href="/SH" class="mw-redirect" title="SH">SH</a> の上乗せが少し増える。</li>
+<li><a href="/Stealth" title="Stealth">隠密</a>が少し上がる。</li>
+<li>戦闘での<a href="/To-hit" class="mw-redirect" title="To-hit">命中</a>がほんの少し上がる。</li></ul>
+<p>器用はおおむね役に立つ防御向きの能力値だ。ただし、重い防具を着るキャラクターには腕力のほうが、呪文詠唱に専念するキャラクターには知力のほうが効いてくることが多い。
+</p><p>器用が 0 以下になると、<a href="/Stat_zero" title="Stat zero">能力値ゼロ</a>に苦しむことになる。
+</p>
+<h2><span class="mw-headline" id="Useful_Info">基本情報</span></h2>
+<p>くわしく書くと、器用の効果は次のとおりだ。
+</p>
+<ul><li> 武器のダメージ: 1 ポイントごとにダメージ +2.5%。DEX 10 のときをダメージ 100% とする。</li>
+<li> 躱し身: 躱し身のスキルによる EV の上乗せは <code>0.8 * DEX * Dodging / (20 - size)</code> になる。つまり器用は倍率として働く。</li>
+<li> 急所攻撃: 下位の急所攻撃を決められる確率が +(DEX)% される。</li>
+<li> 隠密: 1 ポイントごとに隠密の値が +3。参考までに、<a href="/Ego#Stealth" title="Ego">隠密</a>のブーツは +50 だ。</li>
+<li> 盾: SH の上乗せは <code>DEX * 38 * (base_SH + 13) / 5200</code>。おおよそ、10 ポイントごとに(盾の基本 SH の 7.3%)+ 0.95 SH になる。</li>
+<li> 命中: 1 ポイントごとに<a href="/To-hit" class="mw-redirect" title="To-hit">命中</a> +0.5。</li></ul>
+<p>腕力や知力と違い、器用には収穫逓減がない。DEX はどの 1 ポイントでも同じだけの効果がある。また、器用の効果は<a href="/Dodging" title="Dodging">躱し身</a>のスキルに比例して大きくなる。躱し身のスキルが 5 なら DEX 5 で EV 0.2 ほどだが、スキル 25 なら DEX 1 で EV 1 になる。
+</p>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.29" title="0.29">0.29</a> より前は、短剣・長剣・<a href="/Ranged_weapons" class="mw-redirect" title="Ranged weapons">射撃武器</a>のダメージは器用ではなく腕力で伸びた。</li>
+<li><a href="/0.28" title="0.28">0.28</a> より前は、器用で<a href="/Auxiliary_attack" title="Auxiliary attack">補助攻撃</a>の発生率が上がった。また、<a href="/Shield" class="mw-redirect" title="Shield">盾</a>の <a href="/SH" class="mw-redirect" title="SH">SH</a> を上げる能力値は DEX だけではなかった。</li>
+<li><a href="/0.27" title="0.27">0.27</a> より前は、器用に逓減があり、DEX が 24 を超えると EV の伸びが鈍った。さらに EV そのものにも逓減があり、EV を 30 より上げるのは難しかった。くわしくは<a href="/Dodging#History" title="Dodging">躱し身</a>と<a href="/Evasion#History" title="Evasion">回避</a>を参照。</li>
+<li><a href="/0.18" title="0.18">0.18</a> より前は、武器の種類ごとに腕力の比重が決まっていて、それによってダメージと命中に器用がどれだけ寄与するかが決まった。今は器用はどの武器でも命中を同じだけ上げ、ダメージには影響しない。</li>
+<li><a href="/0.17" title="0.17">0.17</a> より前は、器用によって<a href="/Door" title="Door">扉</a>が<a href="/Noise" title="Noise">きしむ</a>確率が変わった。</li></ul>

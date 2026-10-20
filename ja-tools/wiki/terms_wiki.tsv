@@ -85,3 +85,6 @@ high-tier / low-tier stab	上位の急所攻撃/下位の急所攻撃
 plain(攻撃の追加効果)	通常
 Wizard Laboratory / Wizlab	魔術師の研究所
 Spellforged Servitor(旧名)	魔火花の従者
+Spit Poison(呪文)	毒の唾
+Divinations(旧系統・旧スキル)	占術(「予見術」は使わない)
+Transmutations / Transmutation(旧系統・旧スキル)	変成術(召喚術・転位術と同じ形。「変成」「変成の魔術」は使わない)

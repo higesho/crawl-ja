@@ -1,0 +1,602 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.28" title="0.28">0.28</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<p><b>呪術</b>は、物やモンスターに(たいていは悪い)影響を与える呪文だ。直接ダメージを与えることはほとんどなく、そのかわりに敵を弱らせる状態異常をかける。多くの効果は<a href="/Willpower" title="Willpower">意志力</a>で抵抗される。意志力は<a href="/Scroll_of_vulnerability" title="Scroll of vulnerability">脆弱の巻物</a>や<a href="/Guile" title="Guile">狡知</a>の<a href="/Orb" title="Orb">オーブ</a>で下げられる。
+</p>
+<div id="toc" class="toc"><div class="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Aptitudes"><span class="tocnumber">1</span> <span class="toctext">スキル適性</span></a></li>
+<li class="toclevel-1"><a href="#Spells"><span class="tocnumber">2</span> <span class="toctext">呪文</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Level_1"><span class="tocnumber">2.1</span> <span class="toctext">レベル 1</span></a></li>
+<li class="toclevel-2"><a href="#Level_2"><span class="tocnumber">2.2</span> <span class="toctext">レベル 2</span></a></li>
+<li class="toclevel-2"><a href="#Level_3"><span class="tocnumber">2.3</span> <span class="toctext">レベル 3</span></a></li>
+<li class="toclevel-2"><a href="#Level_4"><span class="tocnumber">2.4</span> <span class="toctext">レベル 4</span></a></li>
+<li class="toclevel-2"><a href="#Level_5"><span class="tocnumber">2.5</span> <span class="toctext">レベル 5</span></a></li>
+<li class="toclevel-2"><a href="#Level_7"><span class="tocnumber">2.6</span> <span class="toctext">レベル 7</span></a></li>
+<li class="toclevel-2"><a href="#Level_8"><span class="tocnumber">2.7</span> <span class="toctext">レベル 8</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-1"><a href="#Sources"><span class="tocnumber">3</span> <span class="toctext">入手先</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#History"><span class="tocnumber">4</span> <span class="toctext">変更履歴</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#See_Also"><span class="tocnumber">5</span> <span class="toctext">関連項目</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Aptitudes">スキル適性</span></h2>
+<table class="wikitable">
+
+<tr>
+<td><b><a href="/Armataur" title="Armataur">At</a></b>
+</td>
+<td><b><a href="/Barachi" title="Barachi">Ba</a></b>
+</td>
+<td><b><a href="/Coglin" title="Coglin">Co</a></b>
+</td>
+<td><b><a href="/Deep_Elf" title="Deep Elf">DE</a></b>
+</td>
+<td><b><a href="/Demigod" title="Demigod">Dg</a></b>
+</td>
+<td><b><a href="/Demonspawn" title="Demonspawn">Ds</a></b>
+</td>
+<td><b><a href="/Djinni" title="Djinni">Dj</a></b>
+</td>
+<td><b><a href="/Draconian" title="Draconian">Dr</a></b>
+</td>
+<td><b><a href="/Felid" title="Felid">Fe</a></b>
+</td>
+<td><b><a href="/Formicid" title="Formicid">Fo</a></b>
+</td>
+<td><b><a href="/Gale_Centaur" title="Gale Centaur">GC</a></b>
+</td>
+<td><b><a href="/Gargoyle" title="Gargoyle">Gr</a></b>
+</td>
+<td><b><a href="/Gnoll" title="Gnoll">Gn</a></b>
+</td>
+<td><b><a href="/Human" title="Human">Hu</a></b>
+</td>
+<td><b><a href="/Kobold" title="Kobold">Ko</a></b>
+</td>
+<td><b><a href="/Merfolk" title="Merfolk">Mf</a></b>
+</td>
+<td><b><a href="/Minotaur" title="Minotaur">Mi</a></b>
+</td>
+<td><b><a href="/Mountain_Dwarf" title="Mountain Dwarf">MD</a></b>
+</td>
+<td><b><a href="/Mummy" title="Mummy">Mu</a></b>
+</td>
+<td><b><a href="/Naga" title="Naga">Na</a></b>
+</td>
+<td><b><a href="/Octopode" title="Octopode">Op</a></b>
+</td>
+<td><b><a href="/Oni" title="Oni">On</a></b>
+</td>
+<td><b><a href="/Poltergeist" title="Poltergeist">Po</a></b>
+</td>
+<td><b><a href="/Revenant" title="Revenant">Re</a></b>
+</td>
+<td><b><a href="/Spriggan" title="Spriggan">Sp</a></b>
+</td>
+<td><b><a href="/Tengu" title="Tengu">Te</a></b>
+</td>
+<td><b><a href="/Troll" title="Troll">Tr</a></b>
+</td>
+<td><b><a href="/Vine_Stalker" title="Vine Stalker">VS</a></b>
+</td></tr>
+<tr>
+<td> -1
+</td>
+<td> 1
+</td>
+<td> -1
+</td>
+<td> 3
+</td>
+<td> -1
+</td>
+<td> 0
+</td>
+<td> 11
+</td>
+<td> -1
+</td>
+<td> 4
+</td>
+<td> 2
+</td>
+<td> -1
+</td>
+<td> -1
+</td>
+<td> 6
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> -4
+</td>
+<td> 0
+</td>
+<td> -1
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> -1
+</td>
+<td> 4
+</td>
+<td> -2
+</td>
+<td> 2
+</td>
+<td> -3
+</td>
+<td> -4
+</td>
+<td> 0
+</td></tr></table>
+<ul><li> <a href="/Draconian#Purple" title="Draconian">紫ドラコニアン</a>は 1。</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Spells">呪文</span></h2>
+<table class="prettytable">
+<tr>
+<th>アイコン
+</th>
+<th>名前
+</th>
+<th>系統
+</th>
+<th>レベル
+</th>
+<th>威力の<br />上限
+</th>
+<th>射程
+</th>
+<th>騒音
+</th>
+<th>フラグ
+</th>
+<th>魔法書
+</th></tr>
+<tr>
+<th colspan="9" style="text-align:left">
+<h4><span class="mw-headline" id="Level_1">レベル 1</span></h4>
+</th></tr>
+<tr>
+<td><a href="/File:Slow.png" class="image"><img alt="Slow.png" src="/images/f/f5/Slow.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Slow" title="Slow">減速</a>
+</td>
+<td>呪術
+</td>
+<td>1
+</td>
+<td>25
+</td>
+<td>LOS
+</td>
+<td>1
+</td>
+<td>意志力判定(Will check)、方向・対象指定(Dir or target)、射線の確認が必要(Needs tracer)
+</td>
+<td><a href="/Book_of_Debilitation" title="Book of Debilitation">衰弱の魔法書</a>
+</td></tr>
+<tr>
+<th colspan="9" style="text-align:left">
+<h4><span class="mw-headline" id="Level_2">レベル 2</span></h4>
+</th></tr>
+<tr>
+<td><a href="/File:Ensorcelled_hibernation.png" class="image"><img alt="Ensorcelled hibernation.png" src="/images/6/6f/Ensorcelled_hibernation.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Ensorcelled_Hibernation" title="Ensorcelled Hibernation">魔法の眠り</a>
+</td>
+<td>呪術/<a href="/Ice_Magic" title="Ice Magic">氷の魔術</a>
+</td>
+<td>2
+</td>
+<td>50
+</td>
+<td>LOS
+</td>
+<td>0
+</td>
+<td>意志力判定(Will check)、方向・対象指定(Dir or target)、射線の確認が必要(Needs tracer)、自分は対象外(Not self)、無音(Silent)
+</td>
+<td><a href="/Book_of_Burglary" title="Book of Burglary">夜盗の魔法書</a><br /><a href="/Book_of_Dreams" title="Book of Dreams">夢幻の魔法書</a>
+</td></tr>
+<tr>
+<td><a href="/File:Jinxbite.png" class="image"><img alt="Jinxbite.png" src="/images/e/ed/Jinxbite.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Jinxbite" title="Jinxbite">不運の牙</a>
+</td>
+<td>呪術
+</td>
+<td>2
+</td>
+<td>50
+</td>
+<td>
+</td>
+<td>2
+</td>
+<td>自己強化(Selfench)
+</td>
+<td><a href="/Book_of_Misfortune" title="Book of Misfortune">災難の魔法書</a><br /><a href="/Book_of_Party_Tricks" title="Book of Party Tricks">パーティートリックの魔法書</a>
+</td></tr>
+<tr>
+<th colspan="9" style="text-align:left">
+<h4><span class="mw-headline" id="Level_3">レベル 3</span></h4>
+</th></tr>
+<tr>
+<td><a href="/File:Confusing_touch.png" class="image"><img alt="Confusing touch.png" src="/images/9/9b/Confusing_touch.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Confusing_Touch" title="Confusing Touch">混乱の一撃</a>
+</td>
+<td>呪術
+</td>
+<td>3
+</td>
+<td>100
+</td>
+<td>
+</td>
+<td>3
+</td>
+<td>意志力判定(Will check)、自己強化(Selfench)
+</td>
+<td><a href="/Book_of_Debilitation" title="Book of Debilitation">衰弱の魔法書</a><br /><a href="/Book_of_Touch" title="Book of Touch">接触の魔法書</a>
+</td></tr>
+<tr>
+<td><a href="/File:Gloom.png" class="image"><img alt="Gloom.png" src="/images/5/59/Gloom.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Gloom" title="Gloom">薄闇</a>
+</td>
+<td>呪術/<a href="/Necromancy" title="Necromancy">死霊術</a>
+</td>
+<td>3
+</td>
+<td>50
+</td>
+<td>2-3
+</td>
+<td>0
+</td>
+<td>無音(Silent)
+</td>
+<td><a href="/Book_of_the_Senses" title="Book of the Senses">感覚の魔法書</a><br /><a href="/Book_of_Spectacle" title="Book of Spectacle">見世物の魔法書</a>
+</td></tr>
+<tr>
+<td><a href="/File:Inner_flame.png" class="image"><img alt="Inner flame.png" src="/images/3/33/Inner_flame.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Inner_Flame" title="Inner Flame">内なる炎</a>
+</td>
+<td><a href="/Fire_Magic" title="Fire Magic">炎の魔術</a>/呪術
+</td>
+<td>3
+</td>
+<td>100
+</td>
+<td>LOS
+</td>
+<td>3
+</td>
+<td>意志力判定(Will check)、破壊(Destructive)、自分は対象外(Not self)、対象指定(Target)
+</td>
+<td><a href="/Book_of_Flames" title="Book of Flames">炎の魔法書</a><br /><a href="/Book_of_Spontaneous_Combustion" title="Book of Spontaneous Combustion">自然発火の魔法書</a>
+</td></tr>
+<tr>
+<td><a href="/File:Sigil_of_binding.png" class="image"><img alt="Sigil of binding.png" src="/images/2/2c/Sigil_of_binding.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Sigil_of_Binding" title="Sigil of Binding">束縛の印</a>
+</td>
+<td>呪術
+</td>
+<td>3
+</td>
+<td>100
+</td>
+<td>
+</td>
+<td>3
+</td>
+<td>
+</td>
+<td><a href="/Book_of_the_Hunter" title="Book of the Hunter">狩人の魔法書</a><br /><a href="/Treatise_on_Traps" title="Treatise on Traps">罠の論考</a>
+</td></tr>
+<tr>
+<td><a href="/File:Tukima%27s_dance.png" class="image"><img alt="Tukima&#39;s dance.png" src="/images/3/30/Tukima%27s_dance.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Tukima%27s_Dance" title="Tukima&#39;s Dance">ツキマーの舞踏</a>
+</td>
+<td>呪術
+</td>
+<td>3
+</td>
+<td>100
+</td>
+<td>LOS
+</td>
+<td>3
+</td>
+<td>意志力判定(Will check)、方向・対象指定(Dir or target)、射線の確認が必要(Needs tracer)、自分は対象外(Not self)
+</td>
+<td><a href="/Great_Wizards,_Vol._VII" title="Great Wizards, Vol. VII">大魔術師列伝 第七巻</a><br /><a href="/Book_of_Weapons" title="Book of Weapons">武器の魔法書</a>
+</td></tr>
+<tr>
+<th colspan="9" style="text-align:left">
+<h4><span class="mw-headline" id="Level_4">レベル 4</span></h4>
+</th></tr>
+<tr>
+<td><a href="/File:Anguish.png" class="image"><img alt="Anguish.png" src="/images/c/c6/Anguish.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Anguish" title="Anguish">苦悩</a>
+</td>
+<td>呪術/<a href="/Necromancy" title="Necromancy">死霊術</a>
+</td>
+<td>4
+</td>
+<td>200
+</td>
+<td>LOS
+</td>
+<td>4
+</td>
+<td>意志力判定(Will check)、範囲(Area)
+</td>
+<td><a href="/Book_of_Dreams" title="Book of Dreams">夢幻の魔法書</a><br /><a href="/Book_of_Hexes" title="Book of Hexes">呪術の魔法書</a>
+</td></tr>
+<tr>
+<td><a href="/File:Cause_fear.png" class="image"><img alt="Cause fear.png" src="/images/d/d4/Cause_fear.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Cause_Fear" title="Cause Fear">恐慌の喚起</a>
+</td>
+<td>呪術
+</td>
+<td>4
+</td>
+<td>200
+</td>
+<td>LOS
+</td>
+<td>4
+</td>
+<td>意志力判定(Will check)、範囲(Area)
+</td>
+<td><a href="/Book_of_the_Dragon" title="Book of the Dragon">ドラゴンの魔法書</a><br /><a href="/Book_of_Hexes" title="Book of Hexes">呪術の魔法書</a>
+</td></tr>
+<tr>
+<td><a href="/File:Portal_projectile.png" class="image"><img alt="Portal projectile.png" src="/images/5/52/Portal_projectile.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Dimensional_Bullseye" title="Dimensional Bullseye">次元の的</a>
+</td>
+<td>呪術/<a href="/Translocations" title="Translocations">転位術</a>
+</td>
+<td>4
+</td>
+<td>200
+</td>
+<td>LOS
+</td>
+<td>4
+</td>
+<td>自分は対象外(Not self)、遠い相手を優先(Prefer farthest)、対象指定(Target)
+</td>
+<td><a href="/Book_of_the_Hunter" title="Book of the Hunter">狩人の魔法書</a><br /><a href="/Book_of_Weapons" title="Book of Weapons">武器の魔法書</a>
+</td></tr>
+<tr>
+<th colspan="9" style="text-align:left">
+<h4><span class="mw-headline" id="Level_5">レベル 5</span></h4>
+</th></tr>
+<tr>
+<td><a href="/File:Metabolic_englaciation.png" class="image"><img alt="Metabolic englaciation.png" src="/images/0/01/Metabolic_englaciation.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Metabolic_Englaciation" title="Metabolic Englaciation">代謝の凍結</a>
+</td>
+<td>呪術/<a href="/Ice_Magic" title="Ice Magic">氷の魔術</a>
+</td>
+<td>5
+</td>
+<td>200
+</td>
+<td>
+</td>
+<td>5
+</td>
+<td>範囲(Area)
+</td>
+<td><a href="/Book_of_Sloth" title="Book of Sloth">怠惰の魔法書</a><br /><a href="/Book_of_Winter" title="Book of Winter">冬の魔法書</a>
+</td></tr>
+<tr>
+<td><a href="/File:Silence.png" class="image"><img alt="Silence.png" src="/images/7/76/Silence.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Silence" title="Silence">静寂</a>
+</td>
+<td><a href="/Air_Magic" title="Air Magic">風の魔術</a>/呪術
+</td>
+<td>5
+</td>
+<td>200
+</td>
+<td>
+</td>
+<td>0
+</td>
+<td>範囲(Area)、無音(Silent)
+</td>
+<td><a href="/Book_of_the_Moon" title="Book of the Moon">月の魔法書</a><br /><a href="/Book_of_the_Senses" title="Book of the Senses">感覚の魔法書</a>
+</td></tr>
+<tr>
+<td><a href="/File:Summon_mana_viper.png" class="image"><img alt="Summon mana viper.png" src="/images/5/53/Summon_mana_viper.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Summon_Mana_Viper" title="Summon Mana Viper">マナバイパーの召喚</a>
+</td>
+<td>呪術/<a href="/Summonings" title="Summonings">召喚術</a>
+</td>
+<td>5
+</td>
+<td>100
+</td>
+<td>
+</td>
+<td>5
+</td>
+<td>召喚解除可(Mons abjure)
+</td>
+<td><a href="/Book_of_Beasts" title="Book of Beasts">獣の魔法書</a><br /><a href="/Book_of_the_Wilderness" title="Book of the Wilderness">荒野の魔法書</a>
+</td></tr>
+<tr>
+<td><a href="/File:Yara%27s_violent_unravelling.png" class="image"><img alt="Yara&#39;s violent unravelling.png" src="/images/c/c6/Yara%27s_violent_unravelling.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Yara%27s_Violent_Unravelling" title="Yara&#39;s Violent Unravelling">ヤーラの強制魔法解除術</a>
+</td>
+<td><a href="/Alchemy" title="Alchemy">錬金術</a>/呪術
+</td>
+<td>5
+</td>
+<td>200
+</td>
+<td>LOS
+</td>
+<td>15
+</td>
+<td>混沌(Chaotic)、破壊(Destructive)、幽霊に引き継がれない(No ghost)、対象指定(Target)
+</td>
+<td><a href="/Great_Wizards,_Vol._VII" title="Great Wizards, Vol. VII">大魔術師列伝 第七巻</a><br /><a href="/Book_of_Misfortune" title="Book of Misfortune">災難の魔法書</a>
+</td></tr>
+<tr>
+<th colspan="9" style="text-align:left">
+<h4><span class="mw-headline" id="Level_7">レベル 7</span></h4>
+</th></tr>
+<tr>
+<td><a href="/File:Enfeeble.png" class="image"><img alt="Enfeeble.png" src="/images/2/26/Enfeeble.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Enfeeble" title="Enfeeble">衰弱</a>
+</td>
+<td>呪術
+</td>
+<td>7
+</td>
+<td>200
+</td>
+<td>LOS
+</td>
+<td>7
+</td>
+<td>意志力判定(Will check)、方向・対象指定(Dir or target)、射線の確認が必要(Needs tracer)
+</td>
+<td><a href="/Book_of_Hexes" title="Book of Hexes">呪術の魔法書</a><br /><a href="/Book_of_Misfortune" title="Book of Misfortune">災難の魔法書</a>
+</td></tr>
+<tr>
+<td><a href="/File:Sphinx_sisters.png" class="image"><img alt="Sphinx sisters.png" src="/images/2/2b/Sphinx_sisters.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Sphinx_Sisters" title="Sphinx Sisters">スフィンクスの姉妹</a>
+</td>
+<td>呪術/<a href="/Summonings" title="Summonings">召喚術</a>
+</td>
+<td>7
+</td>
+<td>200
+</td>
+<td>
+</td>
+<td>7
+</td>
+<td>召喚解除可(Mons abjure)
+</td>
+<td><a href="/Book_of_Beasts" title="Book of Beasts">獣の魔法書</a><br /><a href="/Book_of_Misfortune" title="Book of Misfortune">災難の魔法書</a>
+</td></tr>
+<tr>
+<th colspan="9" style="text-align:left">
+<h4><span class="mw-headline" id="Level_8">レベル 8</span></h4>
+</th></tr>
+<tr>
+<td><a href="/File:Discord.png" class="image"><img alt="Discord.png" src="/images/d/dd/Discord.png" width="32" height="32" /></a>
+</td>
+<td><a href="/Discord" title="Discord">精神不和</a>
+</td>
+<td>呪術
+</td>
+<td>8
+</td>
+<td>200
+</td>
+<td>
+</td>
+<td>8
+</td>
+<td>意志力判定(Will check)、範囲(Area)、性急(Hasty)
+</td>
+<td><a href="/Book_of_Chaos" title="Book of Chaos">混沌の魔法書</a><br /><a href="/The_Unrestrained_Analects" title="The Unrestrained Analects">奔放なる論集</a>
+</td></tr>
+</table>
+<h2><span class="mw-headline" id="Sources">入手先</span></h2>
+<dl><dt>主な魔法書</dt>
+<dd><b><a href="/Book_of_Hexes" title="Book of Hexes">呪術の魔法書</a></b>: <a href="/Anguish" title="Anguish">苦悩</a>, <a href="/Cause_Fear" title="Cause Fear">恐慌の喚起</a>, <a href="/Enfeeble" title="Enfeeble">衰弱</a></dd>
+<dd><b><a href="/Book_of_Misfortune" title="Book of Misfortune">災難の魔法書</a></b>: <a href="/Jinxbite" title="Jinxbite">不運の牙</a>, <a href="/Yara%27s_Violent_Unravelling" title="Yara&#39;s Violent Unravelling">ヤーラの強制魔法解除術</a>, <a href="/Enfeeble" title="Enfeeble">衰弱</a>, <a href="/Sphinx_Sisters" title="Sphinx Sisters">スフィンクスの姉妹</a></dd>
+<dt>その他の魔法書</dt>
+<dd><b><a href="/Book_of_Beasts" title="Book of Beasts">獣の魔法書</a></b>: <a href="/Summon_Mana_Viper" title="Summon Mana Viper">マナバイパーの召喚</a>, <a href="/Sphinx_Sisters" title="Sphinx Sisters">スフィンクスの姉妹</a></dd>
+<dd><b><a href="/Book_of_Burglary" title="Book of Burglary">夜盗の魔法書</a></b>: <a href="/Ensorcelled_Hibernation" title="Ensorcelled Hibernation">魔法の眠り</a></dd>
+<dd><b><a href="/Book_of_Chaos" title="Book of Chaos">混沌の魔法書</a></b>: <a href="/Discord" title="Discord">精神不和</a></dd>
+<dd><b><a href="/Book_of_Debilitation" title="Book of Debilitation">衰弱の魔法書</a></b>: <a href="/Slow" title="Slow">減速</a>, <a href="/Confusing_Touch" title="Confusing Touch">混乱の一撃</a></dd>
+<dd><b><a href="/Book_of_the_Dragon" title="Book of the Dragon">ドラゴンの魔法書</a></b>: <a href="/Cause_Fear" title="Cause Fear">恐慌の喚起</a></dd>
+<dd><b><a href="/Book_of_Dreams" title="Book of Dreams">夢幻の魔法書</a></b>: <a href="/Ensorcelled_Hibernation" title="Ensorcelled Hibernation">魔法の眠り</a>, <a href="/Anguish" title="Anguish">苦悩</a></dd>
+<dd><b><a href="/Book_of_Flames" title="Book of Flames">炎の魔法書</a></b>: <a href="/Inner_Flame" title="Inner Flame">内なる炎</a></dd>
+<dd><b><a href="/Great_Wizards,_Vol._VII" title="Great Wizards, Vol. VII">大魔術師列伝 第七巻</a></b>: <a href="/Tukima%27s_Dance" title="Tukima&#39;s Dance">ツキマーの舞踏</a>, <a href="/Yara%27s_Violent_Unravelling" title="Yara&#39;s Violent Unravelling">ヤーラの強制魔法解除術</a></dd>
+<dd><b><a href="/Book_of_the_Hunter" title="Book of the Hunter">狩人の魔法書</a></b>: <a href="/Sigil_of_Binding" title="Sigil of Binding">束縛の印</a>, <a href="/Dimensional_Bullseye" title="Dimensional Bullseye">次元の的</a></dd>
+<dd><b><a href="/Book_of_the_Moon" title="Book of the Moon">月の魔法書</a></b>: <a href="/Silence" title="Silence">静寂</a></dd>
+<dd><b><a href="/Book_of_Party_Tricks" title="Book of Party Tricks">パーティートリックの魔法書</a></b>: <a href="/Jinxbite" title="Jinxbite">不運の牙</a></dd>
+<dd><b><a href="/Book_of_the_Senses" title="Book of the Senses">感覚の魔法書</a></b>: <a href="/Silence" title="Silence">静寂</a>, <a href="/Gloom" title="Gloom">薄闇</a></dd>
+<dd><b><a href="/Book_of_Sloth" title="Book of Sloth">怠惰の魔法書</a></b>: <a href="/Metabolic_Englaciation" title="Metabolic Englaciation">代謝の凍結</a></dd>
+<dd><b><a href="/Book_of_Spectacle" title="Book of Spectacle">見世物の魔法書</a></b>: <a href="/Gloom" title="Gloom">薄闇</a></dd>
+<dd><b><a href="/Book_of_Spontaneous_Combustion" title="Book of Spontaneous Combustion">自然発火の魔法書</a></b>: <a href="/Inner_Flame" title="Inner Flame">内なる炎</a></dd>
+<dd><b><a href="/Book_of_Touch" title="Book of Touch">接触の魔法書</a></b>: <a href="/Confusing_Touch" title="Confusing Touch">混乱の一撃</a></dd>
+<dd><b><a href="/Treatise_on_Traps" title="Treatise on Traps">罠の論考</a></b>: <a href="/Sigil_of_Binding" title="Sigil of Binding">束縛の印</a></dd>
+<dd><b><a href="/The_Unrestrained_Analects" title="The Unrestrained Analects">奔放なる論集</a></b>: <a href="/Discord" title="Discord">精神不和</a></dd>
+<dd><b><a href="/Book_of_Weapons" title="Book of Weapons">武器の魔法書</a></b>: <a href="/Tukima%27s_Dance" title="Tukima&#39;s Dance">ツキマーの舞踏</a>, <a href="/Dimensional_Bullseye" title="Dimensional Bullseye">次元の的</a></dd>
+<dd><b><a href="/Book_of_the_Wilderness" title="Book of the Wilderness">荒野の魔法書</a></b>: <a href="/Summon_Mana_Viper" title="Summon Mana Viper">マナバイパーの召喚</a></dd>
+<dd><b><a href="/Book_of_Winter" title="Book of Winter">冬の魔法書</a></b>: <a href="/Metabolic_Englaciation" title="Metabolic Englaciation">代謝の凍結</a></dd></dl>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.28" title="0.28">0.28</a> で<a href="/Enfeeble" title="Enfeeble">衰弱</a>と<a href="/Anguish" title="Anguish">苦悩</a>が追加された。<a href="/Invisibility" title="Invisibility">透明化</a>はモンスター専用になった。</li>
+<li><a href="/0.20" title="0.20">0.20</a> で<a href="/Portal_Projectile" title="Portal Projectile">射出物の転送</a>がこの系統に移り、<a href="/Gell%27s_Gravitas" title="Gell&#39;s Gravitas">ゲルの引力</a>がこの系統から外れた。</li>
+<li><a href="/0.18" title="0.18">0.18</a> で、レベル 5 の呪文<a href="/Yara%27s_Violent_Unravelling" title="Yara&#39;s Violent Unravelling">ヤーラの強制魔法解除術</a>が妨害の魔法書に加わり、この本は<a href="/Book_of_Misfortune" title="Book of Misfortune">災難の魔法書</a>に改名された。</li>
+<li><a href="/0.17" title="0.17">0.17</a> で<a href="/Sure_Blade" title="Sure Blade">確かなる刃</a>と<a href="/Enslavement" title="Enslavement">隷属化</a>が削除された。<a href="/Darkness" title="Darkness">暗闇の喚起</a>はレベル 7 からレベル 6 になった! ゲルの引力はレベル 3 の打擲型の呪文になったが、敵を混乱させなくなった。静寂は<a href="/Book_of_Dreams" title="Book of Dreams">夢幻の魔法書</a>に入った。<a href="/Metabolic_Englaciation" title="Metabolic Englaciation">代謝の凍結</a>はレベル 5 になった。</li>
+<li><a href="/0.16" title="0.16">0.16</a> で<a href="/Gell%27s_Gravitas" title="Gell&#39;s Gravitas">ゲルの引力</a>が追加された。</li>
+<li><a href="/0.14" title="0.14">0.14</a> より前は、<a href="/Book_of_Transfigurations" title="Book of Transfigurations">変容の魔法書</a>に<a href="/Polymorph" title="Polymorph">変化</a>の呪文があった。変化のワンドと似た効果だった。</li>
+<li><a href="/0.8" class="mw-redirect" title="0.8">0.8</a> で、<a href="/Enchantments" title="Enchantments">付呪術</a>の系統が呪術と<a href="/Charms" title="Charms">加護</a>に分けられた。</li></ul>
+<h2><span class="mw-headline" id="See_Also">関連項目</span></h2>
+<ul><li> <a href="/Enchanter" title="Enchanter">呪術師</a></li>
+<li> <a href="/Arcane_Marksman" class="mw-redirect" title="Arcane Marksman">秘術の射手</a></li></ul>
+<center>
+<table class="prettytable" style="text-align: center; width: 60%">
+
+<tr>
+<th colspan="2"> <a href="/Skill" title="Skill">スキル</a>
+</th></tr>
+<tr>
+<th> <a href="/Weapons" class="mw-redirect" title="Weapons">武器</a>
+</th>
+<td> <a href="/Short_Blades" title="Short Blades">短剣</a> • <a href="/Long_Blades" title="Long Blades">長剣</a> • <a href="/Ranged_Weapons" title="Ranged Weapons">射撃武器</a>
+<p><a href="/Axes" title="Axes">斧</a> • <a href="/Maces_%26_Flails" title="Maces &amp; Flails">鈍器</a> • <a href="/Polearms" title="Polearms">長柄武器</a> • <a href="/Staves" title="Staves">棒術</a> • <a href="/Unarmed_Combat" title="Unarmed Combat">徒手格闘</a> • <a href="/Throwing" title="Throwing">投擲</a>
+</p>
+</td></tr>
+<tr>
+<th> 身体
+</th>
+<td> <a href="/Fighting" title="Fighting">戦闘</a> • <a href="/Armour_(skill)" title="Armour (skill)">甲冑</a> • <a href="/Dodging" title="Dodging">躱し身</a> • <a href="/Stealth_(skill)" title="Stealth (skill)">隠密</a> • <a href="/Shields_(skill)" title="Shields (skill)">盾</a>
+</td></tr>
+<tr>
+<th> <a href="/Magic" title="Magic">魔法</a>
+</th>
+<td> <a href="/Spellcasting" title="Spellcasting">呪文詠唱</a> • <a href="/Invocations" title="Invocations">祈祷</a> • <a href="/Evocations" title="Evocations">発動</a> • <a href="/Shapeshifting" title="Shapeshifting">変身術</a>
+</td></tr>
+<tr>
+<th> <a href="/List_of_spells_by_school" title="List of spells by school">呪文の系統</a>
+</th>
+<td> <a href="/Air" class="mw-redirect" title="Air">風の魔術</a> • <a href="/Alchemy" title="Alchemy">錬金術</a> • <a href="/Conjurations" title="Conjurations">妖術</a> • <a href="/Earth" class="mw-redirect" title="Earth">地の魔術</a> • <a href="/Fire_Magic" title="Fire Magic">炎の魔術</a> • <a href="/Forgecraft" title="Forgecraft">鍛造術</a> • <a class="mw-selflink selflink">呪術</a> • <a href="/Ice_Magic" title="Ice Magic">氷の魔術</a> • <a href="/Necromancy" title="Necromancy">死霊術</a> • <a href="/Summoning" class="mw-redirect" title="Summoning">召喚術</a> • <a href="/Translocations" title="Translocations">転位術</a>
+</td></tr>
+</table>
+</center>

@@ -1,0 +1,19 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.30" title="0.30">0.30</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<p><b>腕力</b>(STR)は、<a href="/Dexterity" title="Dexterity">器用</a>・<a href="/Intelligence" title="Intelligence">知力</a>と並ぶ、キャラクターの三つの主要な<a href="/Attributes" class="mw-redirect" title="Attributes">能力値</a>のひとつだ。
+</p><p>腕力は次のものに影響する。
+</p>
+<ul><li>たいていの物理攻撃のダメージが上がる。STR が 10 を 1 ポイント上回るごとにダメージ +2.5%、1 ポイント下回るごとに -2.5% になる。
+<ul><li>腕力で伸びる攻撃は次のとおり。多くの<a href="/Weapon_damage" title="Weapon damage">武器</a>(<a href="/Axes" title="Axes">斧</a>、<a href="/Maces_%26_Flails" title="Maces &amp; Flails">鈍器</a>、<a href="/Polearm" class="mw-redirect" title="Polearm">長柄武器</a>、<a href="/Staves" title="Staves">棒術</a>、<a href="/Throwing" title="Throwing">投擲</a>)、<a href="/Unarmed_Combat" title="Unarmed Combat">徒手格闘</a>、<a href="/Auxiliary_attack" title="Auxiliary attack">補助攻撃</a>、<a href="/Constriction" title="Constriction">締めつけ</a>。</li></ul></li>
+<li><a href="/Body_armour" class="mw-redirect" title="Body armour">胴鎧</a>と<a href="/Shield" class="mw-redirect" title="Shield">盾</a>の両方について、<a href="/Encumbrance" class="mw-redirect" title="Encumbrance">重さ</a>の影響を減らす。これにより<a href="/Ev" class="mw-redirect" title="Ev">回避</a>、呪文の成功率、<a href="/Ranged_weapon" class="mw-redirect" title="Ranged weapon">射撃武器</a>の攻撃速度へのペナルティが軽くなる。</li></ul>
+<p>腕力が高ければ、重い防具や盾を身につけたままでも呪文を唱えたり攻撃をかわしたりしやすくなる。腕力が大きく上がれば(+10 の腕力がついたアーティファクトなど)、近接攻撃のダメージもかなり上がる。とはいえ、<a href="/Dexterity" title="Dexterity">器用</a>による防御面の強化はどんなキャラクターにも役に立つ。
+</p><p>腕力が 0 以下になると、<a href="/Stat_zero" title="Stat zero">能力値ゼロ</a>に苦しむことになる。
+</p>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.30" title="0.30">0.30</a> より前は、腕力は盾の重さに影響しなかった。</li>
+<li><a href="/0.29" title="0.29">0.29</a> より前は、<a href="/Short_Blades" title="Short Blades">短剣</a>、<a href="/Long_Blades" title="Long Blades">長剣</a>、<a href="/Ranged_Weapons" title="Ranged Weapons">射撃武器</a>のダメージは器用ではなく腕力で伸びた。</li>
+<li><a href="/0.28" title="0.28">0.28</a> より前は、腕力で<a href="/Kite_shield" title="Kite shield">カイトシールド</a>と<a href="/Tower_shield" title="Tower shield">タワーシールド</a>の <a href="/SH" class="mw-redirect" title="SH">SH</a> が上がった。<a href="/Auxiliary_attack" title="Auxiliary attack">補助攻撃</a>の発生率も上がった。</li>
+<li><a href="/0.27" title="0.27">0.27</a> より前は、腕力による補正がもっと複雑だった。STR &gt; 10 のときは <code>100 + (<a href="/Random2" title="Random2">random2</a>(STR - 9) * 2)</code>% の倍率がかかり、STR &lt; 10 のときのダメージは <code>100 - (random2(11 - STR) * 3)</code> だった(STR 10 でダメージ 100% なのは今と同じ)。</li>
+<li><a href="/0.20" title="0.20">0.20</a> より前は、多くの変身(<a href="/Statue_Form" class="mw-redirect" title="Statue Form">石像</a>など)に、腕力による追加の伸びがあった。</li>
+<li><a href="/0.18" title="0.18">0.18</a> より前は、武器の種類ごとに腕力の比重が決まっていて、それによってダメージと命中に腕力がどれだけ寄与するかが決まった。今は腕力はどの武器でもダメージを同じだけ上げ、命中には影響しない。</li>
+<li><a href="/0.15" title="0.15">0.15</a> より前は、キャラクターが一度に持ち運べる装備の重さに限りがあり、<a href="/Aum" class="mw-redirect" title="Aum">aum</a> という単位で量っていた。腕力は 1 ポイントごとに持てる量を 25 aum 増やした。また、遠隔戦闘はずっと複雑で、射撃武器の攻撃のディレイを決めるのにも腕力が関わっていた(くわしくは<a href="/Weapon_damage" title="Weapon damage">武器のダメージ</a>と<a href="/Ranged_combat" class="mw-redirect" title="Ranged combat">遠隔戦闘</a>を参照)。</li>
+<li><a href="/0.13" title="0.13">0.13</a> より前は、腕力による武器のダメージの上乗せは今の半分だった。腕力は、今はなくなった防具の EV ペナルティの仕組みにも関わっていた。この仕組みは<a href="/Encumbrance_rating" title="Encumbrance rating">重さ</a>に置き換えられた。</li></ul>

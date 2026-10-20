@@ -1,0 +1,2 @@
+Test spawner
+テスト用スポナー

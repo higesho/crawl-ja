@@ -1,0 +1,2 @@
+Monster generation
+モンスターの発生

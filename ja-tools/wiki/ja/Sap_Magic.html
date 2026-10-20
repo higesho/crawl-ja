@@ -1,0 +1,59 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.31" title="0.31">0.31</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<div>
+<table class="prettytable" style=" width:18em">
+<tr>
+<th colspan="2"> <a href="/File:Sap_magic.png" class="image"><img alt="Sap magic.png" src="/images/5/57/Sap_magic.png" width="32" height="32" /></a>&#8195;魔法の阻害
+</th></tr>
+<tr>
+<th align="left"> <a href="/Spell_noise" title="Spell noise">詠唱の騒音</a>
+</th>
+<td> 5
+</td></tr>
+<tr>
+<th align="left"> <a href="/Spell_noise" title="Spell noise">呪文の騒音</a>
+</th>
+<td> 0
+</td></tr>
+
+<tr>
+<th align="left"> 射程
+</th>
+<td> LOS
+</td></tr>
+
+<tr>
+<th align="left"> フラグ
+</th>
+<td> 方向・対象指定(Dir or target)、モンスター専用(Monster)、射線の確認が必要(Needs tracer)
+</td></tr>
+</table></div>
+<table style=" width:auto; text-align:left">
+
+<tr>
+<td>
+</td>
+<td style="width: 100%"> 指定したモンスターの呪文を唱える能力を損なう。この状態で呪文を唱えると、対象は魔法を使えなくなり、短い間それ以上呪文を唱えられなくなる。
+</td></tr></table>
+<p><b>魔法の阻害</b>はモンスター専用の呪文だ。プレイヤーが受けると、20〜30 ターンのあいだ<span class="nhsym clr-yellow">失率上昇</span>の状態になる。<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup>この状態で呪文を唱えるのに成功すると、3〜5 ターンのあいだ<span class="nhsym">魔法×</span>の状態になる。<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">&#91;2&#93;</a></sup>魔法の阻害を何度も受けると持続時間が延びる(最大 50 ターン)。失率上昇も魔法×も、<a href="/Potion_of_cancellation" title="Potion of cancellation">無力化の薬</a>で治せる。
+</p><p><a href="/Spell_slot_flags#Wizard_flag" class="mw-redirect" title="Spell slot flags">魔術</a>の呪文を使うモンスターも魔法の阻害の影響を受ける。こちらは<a href="/Antimagic" title="Antimagic">魔力阻害</a>のペナルティを受け、呪文を唱えようとして失敗することがある。
+</p><p>魔法の阻害を使ってくる敵は次のとおり。
+</p>
+<ul><li> <span class="nhsym clr-brightcyan">6</span> <a href="/File:Demonspawn_warmonger.png" class="image"><img alt="Demonspawn warmonger.png" src="/images/a/ac/Demonspawn_warmonger.png" width="32" height="32" /></a> <b><a href="/Demonspawn_warmonger" title="Demonspawn warmonger">悪魔の血族の戦争屋</a></b></li></ul>
+<h2><span class="mw-headline" id="Strategy">戦略</span></h2>
+<p>失率上昇の状態になると、状態が切れるか無力化の薬を飲むまで、呪文はおよそ 4 ターンに 1 回しか唱えられなくなる。呪文が主な戦力なら、次のようにしよう。
+</p>
+<ul><li>数ターンおきの 1 回の呪文を、無駄にせず確実に役立てる。<a href="/LOS" class="mw-redirect" title="LOS">視界</a>にいる<a href="/Demonspawn_warmonger" title="Demonspawn warmonger">悪魔の血族の戦争屋</a>をすべて倒すか、すべてから逃げきったら、無力化の薬を飲む。</li>
+<li>それができないなら、状態が切れるまで追ってくる敵から逃げきるための確かな手立てを用意しておく。</li></ul>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.28" title="0.28">0.28</a> より前は、失率上昇の状態だと、呪文を唱えるたびに 50% の確率で呪文の失敗率へのペナルティが上がった。段階は 3 つあった。
+<ul><li><span class="nhsym clr-yellow">魔術－</span>: 呪文の失敗率が 12% 上がる。</li>
+<li><span class="nhsym">魔術－</span>: 呪文の失敗率が 24% 上がる。</li>
+<li><span class="nhsym">魔術－</span>: 呪文の失敗率が 36% 上がる。</li>
+<li>また、この呪文はほかの点では抵抗できないにもかかわらず、唱えても 30% の確率で何の効果もなかった。</li></ul></li></ul>
+<h2><span class="mw-headline" id="References">出典</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.31.0/crawl-ref/source/beam.cc#L3660">beam.cc:3660</a> (0.31.0)</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.31.0/crawl-ref/source/spl-cast.cc#L1018">spl-cast.cc:1018</a> (0.31.0)</span>
+</li>
+</ol></div>
