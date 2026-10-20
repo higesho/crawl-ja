@@ -2,7 +2,7 @@
 
 本家の DCSS 0.34 には Android 版がある(`crawl-ref/source/android-project`、SDL2 + NDK、
 `docs/develop/android.txt`)。このフォークの日本語化を、その Android 版でも使えるようにする。
-作業ブランチは `ja-0.34-android`(ja-0.34 から分岐)。
+作業ブランチ `ja-0.34-android` で進め、2026-10-20 に ja-0.34 へ取り込んだ。
 
 ## 1. 本家の Android 版の作り
 
