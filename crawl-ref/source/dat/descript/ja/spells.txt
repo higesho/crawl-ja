@@ -796,7 +796,7 @@ Summon Minor Demon spell
 
 # en:
 #   Summons between one and three minor (rank 5) demons.
-この呪文は一体から三体の弱い (ランク5の) 悪魔を召喚する。
+この呪文は一体から三体の弱い(5級の)悪魔を召喚する。
 %%%%
 Summon Small Mammal spell
 
