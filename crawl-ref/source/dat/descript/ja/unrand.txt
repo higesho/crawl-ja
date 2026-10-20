@@ -167,7 +167,7 @@ dagger of Chilly Death
 # en:
 #   A dagger made of one huge shard of sapphire. It covers opponents in ice,
 #   slowing down their movement somewhat.
-サファイアでできているダガーだ。
+巨大なサファイアの欠片ひとつから作られたダガーだ。敵を氷で覆い、その動きをいくらか鈍らせる。
 %%%%
 dagger "Morg"
 
@@ -323,7 +323,7 @@ lance "Wyrmbane"
 #   An enchanted lance deadly to all dragonkind. It grows more powerful every time
 #   it inflicts a killing blow on a strong dragon. The more powerful it grows, the
 #   harder it will be to find a worthy opponent.
-強力なドラゴンに致命打を与えるたびに力を増していく魔力を持ったランスだ。
+あらゆるドラゴンに死をもたらす、魔力を持ったランスだ。強力なドラゴンに致命打を与えるたびに力を増していく。
 強力な力を帯びるほど、この槍にふさわしい相手を見つけることが難しくなっていく。
 %%%%
 Spriggan's Knife

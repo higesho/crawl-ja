@@ -155,7 +155,7 @@ Heroism ability
 # en:
 #   Temporarily increases all of your combat skills, both offensive and defensive.
 #   The duration is increased by Invocations skill.
-一時的に隠密スキルを含んだあなたの全ての戦闘スキルを向上する。
+一時的に、攻撃と防御の両面にわたって、あなたの全ての戦闘スキルを向上する。効果の持続時間は祈祷のスキルに応じて延びる。
 %%%%
 Finesse ability
 
