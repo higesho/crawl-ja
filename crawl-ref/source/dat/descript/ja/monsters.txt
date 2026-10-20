@@ -225,7 +225,7 @@ Harold
 #   A middle-aged bounty hunter, anxious to retire after one final job. He hopes to
 #   settle down somewhere and live a quiet life with his family, using the money
 #   from his final bounty: you.
-初老の賞金稼ぎだ。最後の仕事を終わらせたら賞金稼ぎを辞めたいと考えているようだ。
+中年の賞金稼ぎだ。最後の仕事を終わらせたら賞金稼ぎを辞めたいと考えているようだ。
 彼はどこかに根を下ろし、家族と静かに暮らしたいと望んでいる。
 ――最後の賞金首(つまり、あなた)に掛けられた金を使って。
 %%%%
