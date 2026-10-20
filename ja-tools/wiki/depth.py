@@ -31,6 +31,8 @@ sys.path.insert(0, str(HERE))
 from fetch_wiki import file_name, get, url_path  # noqa: E402
 
 VERSION = re.compile(r"^\d+\.\d+$")
+NAMESPACES = {"File", "Image", "Category", "Help", "Special", "Template", "User", "User talk",
+              "Talk", "CrawlWiki", "MediaWiki", "Media"}
 
 
 def heading(raw: str) -> str:
@@ -45,8 +47,9 @@ def body_links(raw: str) -> list[str]:
     out = []
     for h in re.findall(r'<a href="/([^"#?]+)(?:#[^"]*)?"', body):
         t = urllib.parse.unquote(html.unescape(h)).replace("_", " ").strip()
-        # 名前空間つき(Category: File: Help: など)は記事ではないので外す
-        if not t or ":" in t or t.startswith("index.php"):
+        # 名前空間つき(Category: File: Help: など)は記事ではないので外す。
+        # 題に「:」を含む普通の記事(攻略ガイドなど)は残す
+        if not t or t.startswith("index.php") or t.split(":", 1)[0] in NAMESPACES:
             continue
         out.append(t)
     return list(dict.fromkeys(out))
