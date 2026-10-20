@@ -1,0 +1,12 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.32" title="0.32">0.32</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<p><i>Crawl</i> のモンスターはすべて、6 つの基本的な<b>分類</b>(holiness)のどれかに分けられている。<a href="/Category:Holy_holiness" title="Category:Holy holiness">神聖</a>、<a href="/Category:Demonic_holiness" title="Category:Demonic holiness">悪魔</a>、<a href="/Category:Undead_holiness" title="Category:Undead holiness">アンデッド</a>、<a href="/Category:Nonliving_holiness" title="Category:Nonliving holiness">非生物</a>、<a href="/Category:Plant_holiness" title="Category:Plant holiness">植物</a>、<a href="/Category:Natural_holiness" title="Category:Natural holiness">生物</a>の 6 つだ。
+</p><p>同じ分類のモンスターには、いくつか共通する<a href="/Monster_attributes" title="Monster attributes">特性</a>がある。たとえば、植物・アンデッド・非生物はどれも<a href="/Unbreathing" title="Unbreathing">呼吸しない</a>。<a href="/Negative_energy" title="Negative energy">負のエネルギー</a>が効くのは<a href="/Natural" class="mw-redirect" title="Natural">生物</a>と植物のモンスターだけだ。悪魔とアンデッドは自動的に<a href="/Evil" title="Evil">邪悪</a>になる。詳しくはそれぞれのページを見てほしい。
+</p><p><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.30.0/crawl-ref/source/mon-data.h#L37">mon-data.h:37</a> (0.30.0) より:
+</p>
+<pre>MH_HOLY       - 倒すと一部の神の機嫌を損ねる。神罰の武器が効かない。善の神官を含む。
+MH_NATURAL    - 基本のモンスターの種類
+MH_UNDEAD     - 衰弱・苦痛・拷問が効かない。毒に耐性がある。神罰の武器から追加ダメージを受ける
+MH_DEMONIC    - アンデッドに似るが、毒への耐性はなく、地獄送りへの耐性も自動では*付かない*
+MH_NONLIVING  - ゴーレムなどの構造物
+MH_PLANT      - 植物
+</pre>

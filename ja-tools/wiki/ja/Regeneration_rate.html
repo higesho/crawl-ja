@@ -1,0 +1,52 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.32" title="0.32">0.32</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<p><b>回復速度</b>は、キャラクターが <a href="/HP" class="mw-redirect" title="HP">HP</a> を回復する速さのことだ。さまざまなものに左右され、そのほとんどは重ねがけできる。
+</p>
+<div id="toc" class="toc"><div class="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Base_regeneration"><span class="tocnumber">1</span> <span class="toctext">基本の回復速度</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Modifiers"><span class="tocnumber">2</span> <span class="toctext">補正</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Examples"><span class="tocnumber">3</span> <span class="toctext">計算例</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#History"><span class="tocnumber">4</span> <span class="toctext">変更履歴</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">出典</span></a></li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="Base_regeneration">基本の回復速度</span></h3>
+<p>基本の回復速度(base regeneration rate、BRR)は次の式で求める。
+</p>
+<dl><dd><dl><dd><font size="3"><code>20 + MHP / 6</code></font></dd></dl></dd></dl>
+<p>つまり最大 HP が 1 増えるごとに、BRR は 1/6 増える。<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup>
+</p>
+<h3><span class="mw-headline" id="Modifiers">補正</span></h3>
+<p>最終的な回復速度(total regeneration rate、TRR)には、次の補正がこの順にかかる。
+</p>
+<ul><li>Regen+ の性質は 1 つにつき 80 を足す。いくつでも上限なく重ねられる。
+<ul><li><a href="/Artefact" title="Artefact">アーティファクト</a>には Regen+ が付いていることがある。</li>
+<li><a href="/Amulet_of_regeneration" title="Amulet of regeneration">再生の護符</a>で Regen+ が 1 段階つく。</li>
+<li><a href="/Troll_leather_armour" title="Troll leather armour">トロル革の鎧</a>には Regen+ がある。
+<ul><li><a href="/Unrandart" class="mw-redirect" title="Unrandart">固定アーティファクト</a>の<a href="/Moon_troll_leather_armour" title="Moon troll leather armour">月世界のトロルの革鎧</a>は、さらにもう 1 段階つく(合わせて Regen++)。</li></ul></li>
+<li><a href="/Good_mutations#regeneration" title="Good mutations">再生の変異</a>は、レベル 1 つにつき Regen+ を 1 段階足す。</li>
+<li><a href="/Robe_of_Vines" title="Robe of Vines">蔓のローブ</a>は Regen++++ を与える。</li></ul></li>
+<li><a href="/Demonspawn" title="Demonspawn">悪魔の血族</a>の変異<a href="/Demonspawn_mutations#Powered_by_Death" title="Demonspawn mutations">死よりの力</a>は、一時的に最大で 100×レベルの回復ボーナスを足すことがある。さらに倒すと、このボーナスは最大 1000〜1200 まで増えるが、2〜5 ターンごとに 100 ずつ減っていく。</li>
+<li><a href="/Armataur" title="Armataur">アルマタウル</a>は XL 7 になると、<a href="/Rampaging" title="Rampaging">猛進</a>したときに一時的な回復ボーナスを得る。</li>
+<li><a href="/Vampire" title="Vampire">吸血鬼</a>で、血が通っている状態(Alive)なら 20 を足す。</li>
+<li><a href="/Sick" class="mw-redirect" title="Sick">病気</a>のとき、または(<a href="/LOS" class="mw-redirect" title="LOS">視界</a>にモンスターがいる状態で)<a href="/Bad_mutations#Inhibited_Regeneration" title="Bad mutations">再生阻害</a>の変異があるときは、回復速度が 0 になる。</li>
+<li><a href="/Jiyva" title="Jiyva">ジーヴァ</a>は、信仰心の段階に応じて 80〜160 を足す。</li>
+<li><a href="/Trog" title="Trog">トログの御手</a>は 100 を足す。</li></ul>
+<p>最後の 2 つは最後にかかるので、ほかの要因に左右されず、再生阻害があっても回復できる。
+</p><p>1 ターン(10 aut)ごとに、TRR と同じだけの回復ポイントがたまる。回復ポイントが 100 たまると HP が 1 回復し、余ったポイントは次のターンに持ち越される。行動にかかった時間が 10 aut より長かったり短かったりしたときは、かかった時間に合わせて回復量も増減する。
+</p><p>最大 HP が 100 なら、BRR は 36.6 だ。BRR を 50(2 ターンごとに HP が 1 回復)にするには最大 HP が 180、BRR を 100(毎ターン回復)にするには最大 HP が 480 必要になる。回復速度を上げるには、HP を積み上げるより、回復を高めるアイテムや変異のほうがはるかに効率がよい。
+</p>
+<h3><span class="mw-headline" id="Examples">計算例</span></h3>
+<ul><li>最大 HP が 30 なら、BRR は 20 + 30/6 =&gt; 25 だ。回復ポイントが 100 たまって HP が 1 回復するまでに 4 ターンかかる。回復の速さは 4 ターンごとに HP 1 だ。</li></ul>
+<ul><li>最大 HP が 180 なら、BRR は 20 + 180/6 =&gt; 50 だ。回復ポイントが 100 たまって HP が 1 回復するまでに 2 ターンかかる。回復の速さは 2 ターンごとに HP 1 だ。</li></ul>
+<ul><li>上と同じ条件で、さらに<a href="/Troll_leather_armour" title="Troll leather armour">トロル革の鎧</a>を着ていると、回復速度に 80 が足される。TRR は 50+80 =&gt; 130 になる。毎ターン回復ポイントが 100 たまって HP が 1 回復し、30 が余る。回復の速さは毎ターン HP 1 で、それに加えて 3.33 ターンごとにさらに HP が 1 回復する。</li></ul>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.30" title="0.30">0.30</a> より前は、基本の回復速度がもっと遅かった。最大 HP が 60 未満なら <code>MHP / 3</code>、60 以上なら <code>MHP / 6 + 10</code> で、とくにレベルが低いうちはかなり遅かった。</li>
+<li><a href="/0.28" title="0.28">0.28</a> より前は、Regen+ の性質による回復ボーナスは 80 ではなく 100(1 ターンに HP 1.0)だった。</li>
+<li><a href="/0.27" title="0.27">0.27</a> より前は、Regen+ の性質による回復ボーナスは 100 ではなく 40(1 ターンに HP 0.4)だった。</li></ul>
+<h2><span class="mw-headline" id="References">出典</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.32.0/crawl-ref/source/player.cc#L1312">player.cc:1312</a> (0.32.0)</span>
+</li>
+</ol></div>

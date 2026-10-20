@@ -1,0 +1,204 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.32" title="0.32">0.32</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<p>キャラクターの<b>ヒットポイント</b>(<b>HP</b>)は、そのときの体の具合と打たれ強さを表す。表示は X/Y の形で、X が現在の HP、Y が最大値だ。<a href="/Monster" title="Monster">モンスター</a>をはじめ、さまざまなものが現在の HP を減らすが、<a href="/Sick" class="mw-redirect" title="Sick">病気</a>でなければ<a href="/Regeneration_rate" title="Regeneration rate">時間とともに回復する</a>。
+</p>
+<div id="toc" class="toc"><div class="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Damage"><span class="tocnumber">1</span> <span class="toctext">ダメージ</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Regeneration"><span class="tocnumber">2</span> <span class="toctext">回復</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#HP_modifiers"><span class="tocnumber">3</span> <span class="toctext">HP の補正</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Modifying_Max_HP"><span class="tocnumber">4</span> <span class="toctext">最大 HP を変えるもの</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Forms"><span class="tocnumber">4.1</span> <span class="toctext">変身</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Statuses"><span class="tocnumber">4.2</span> <span class="toctext">状態</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Mutations"><span class="tocnumber">4.3</span> <span class="toctext">変異</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Items"><span class="tocnumber">4.4</span> <span class="toctext">アイテム</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Permanent"><span class="tocnumber">4.5</span> <span class="toctext">永続的な変化</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#History"><span class="tocnumber">5</span> <span class="toctext">変更履歴</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Damage">ダメージ</span></h2>
+<p>キャラクターの現在の HP が0以下になると、その時点で<a href="/Death" title="Death">死</a>んでゲームオーバーだ。そうならないよう、戦いの合間に休んだり、<a href="/Potions_of_heal_wounds" class="mw-redirect" title="Potions of heal wounds">怪我の治療の薬</a>や<a href="/Potion_of_curing" title="Potion of curing">治療の薬</a>を飲んだり、もっと変わった<a href="/Healing" title="Healing">回復</a>の手段を使ったりしよう。
+</p><p>「痛っ！ これは本当に痛い！」というメッセージが出たら、よくよく気をつけること。1回の攻撃で最大 HP の50%を超えるダメージを受けたときに出るメッセージだ。
+</p>
+<h2><span class="mw-headline" id="Regeneration">回復</span></h2>
+<p><i>詳しくは<a href="/Regeneration_rate" title="Regeneration rate">回復速度</a></i>
+</p><p><a href="/Sick" class="mw-redirect" title="Sick">病気</a>でも<a href="/Inhibited_Regeneration" title="Inhibited Regeneration">再生阻害</a>の状態でもなければ、キャラクターの HP は時間とともに自然に回復する。
+</p>
+<h2><span class="mw-headline" id="HP_modifiers">HP の補正</span></h2>
+<p><a href="/Dungeon_Crawl" title="Dungeon Crawl">Dungeon Crawl</a> <a href="/Stone_Soup" class="mw-redirect" title="Stone Soup">Stone Soup</a> のゲーム内の資料より。
+</p>
+<table class="wikitable">
+
+<tr>
+<td><b><a href="/Armataur" title="Armataur">At</a></b>
+</td>
+<td><b><a href="/Barachi" title="Barachi">Ba</a></b>
+</td>
+<td><b><a href="/Coglin" title="Coglin">Co</a></b>
+</td>
+<td><b><a href="/Deep_Elf" title="Deep Elf">DE</a></b>
+</td>
+<td><b><a href="/Demigod" title="Demigod">Dg</a></b>
+</td>
+<td><b><a href="/Demonspawn" title="Demonspawn">Ds</a></b>
+</td>
+<td><b><a href="/Djinni" title="Djinni">Dj</a></b>
+</td>
+<td><b><a href="/Draconian" title="Draconian">Dr</a></b>
+</td>
+<td><b><a href="/Felid" title="Felid">Fe</a></b>
+</td>
+<td><b><a href="/Formicid" title="Formicid">Fo</a></b>
+</td>
+<td><b><a href="/Gale_Centaur" title="Gale Centaur">GC</a></b>
+</td>
+<td><b><a href="/Gargoyle" title="Gargoyle">Gr</a></b>
+</td>
+<td><b><a href="/Gnoll" title="Gnoll">Gn</a></b>
+</td>
+<td><b><a href="/Human" title="Human">Hu</a></b>
+</td>
+<td><b><a href="/Kobold" title="Kobold">Ko</a></b>
+</td>
+<td><b><a href="/Merfolk" title="Merfolk">Mf</a></b>
+</td>
+<td><b><a href="/Minotaur" title="Minotaur">Mi</a></b>
+</td>
+<td><b><a href="/Mountain_Dwarf" title="Mountain Dwarf">MD</a></b>
+</td>
+<td><b><a href="/Mummy" title="Mummy">Mu</a></b>
+</td>
+<td><b><a href="/Naga" title="Naga">Na</a></b>
+</td>
+<td><b><a href="/Octopode" title="Octopode">Op</a></b>
+</td>
+<td><b><a href="/Oni" title="Oni">On</a></b>
+</td>
+<td><b><a href="/Poltergeist" title="Poltergeist">Po</a></b>
+</td>
+<td><b><a href="/Revenant" title="Revenant">Re</a></b>
+</td>
+<td><b><a href="/Spriggan" title="Spriggan">Sp</a></b>
+</td>
+<td><b><a href="/Tengu" title="Tengu">Te</a></b>
+</td>
+<td><b><a href="/Troll" title="Troll">Tr</a></b>
+</td>
+<td><b><a href="/Vine_Stalker" title="Vine Stalker">VS</a></b>
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> -2
+</td>
+<td> 1
+</td>
+<td> 0
+</td>
+<td> -1
+</td>
+<td> 1
+</td>
+<td> -3
+</td>
+<td> 0
+</td>
+<td> 1
+</td>
+<td> -2
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> -2
+</td>
+<td> 0
+</td>
+<td> 1
+</td>
+<td> 1
+</td>
+<td> 0
+</td>
+<td> 2
+</td>
+<td> -1
+</td>
+<td> 3
+</td>
+<td> -1
+</td>
+<td> 1
+</td>
+<td> -3
+</td>
+<td> -2
+</td>
+<td> 3
+</td>
+<td> -3
+</td></tr></table>
+<p>1ポイントが最大 HP の10%にあたる。
+</p>
+<h2><span class="mw-headline" id="Modifying_Max_HP">最大 HP を変えるもの</span></h2>
+<h3><span class="mw-headline" id="Forms">変身</span></h3>
+<p>次の変身は最大 HP を変える。
+</p>
+<table class="prettytable">
+<tr>
+<th> 呪文 </th>
+<th> 倍率
+</th></tr>
+<tr>
+<td> <a href="/Serpent_Form" class="mw-redirect" title="Serpent Form">大蛇</a> </td>
+<td> 1.2
+</td></tr>
+<tr>
+<td> <a href="/Statue_Form" class="mw-redirect" title="Statue Form">石像</a> </td>
+<td> 1.3
+</td></tr>
+<tr>
+<td> <a href="/Dragon_Form" class="mw-redirect" title="Dragon Form">竜化</a> </td>
+<td> 1.5
+</td></tr>
+<tr>
+<td> <a href="/Tree_Form" title="Tree Form">樹化</a> </td>
+<td> 1.5
+</td></tr>
+</table>
+<p><a href="/Talisman" title="Talisman">タリスマン</a>で変身していて、変身術のスキルが必要な最低値に届いていないと、HP にペナルティがかかる。ペナルティは <code>1 - (Skill_min - Skill_current)/10</code>(最低 x0.1)だ。
+</p>
+<h3><span class="mw-headline" id="Statuses">状態</span></h3>
+<ul><li><a href="/Berserk" title="Berserk">バーサーク</a>すると、現在の HP と最大 HP が1.5倍になる。<a href="/Hat_of_the_Bear_Spirit" title="Hat of the Bear Spirit">熊狂い</a>なら2倍だ。</li>
+<li><a href="/Drain" class="mw-redirect" title="Drain">衰弱</a>すると、その強さに応じて最大 HP が減る。</li>
+<li><a href="/Elyvilon" title="Elyvilon">エリヴィロン</a>の神秘の活力を使うと、祈祷のスキルに応じて最大 HP が一時的に増える。</li></ul>
+<h3><span class="mw-headline" id="Mutations">変異</span></h3>
+<ul><li><a href="/Robust" title="Robust">強健</a>の<a href="/Mutation" title="Mutation">変異</a>を得ると、段階1つにつき最大 HP が10%増える。<a href="/Frail" title="Frail">虚弱</a>は逆に減らす。</li>
+<li><a href="/Rugged_Brown_Scales" title="Rugged Brown Scales">頑丈な茶色の鱗</a>の変異を得ると、最大 HP が3/5/7%(段階による)増える。</li></ul>
+<h3><span class="mw-headline" id="Items">アイテム</span></h3>
+<ul><li><a href="/Rings_of_the_Octopus_King" class="mw-redirect" title="Rings of the Octopus King">蛸の王の指輪</a>は HP を+2する。</li></ul>
+<h3><span class="mw-headline" id="Permanent">永続的な変化</span></h3>
+<p>最大 HP がずっと変わったままになるのは、ごく限られた場合だけだ。
+</p>
+<ul><li>レベルアップ:
+<ul><li><a href="/Experience" title="Experience">経験</a>レベルが上がる。</li>
+<li><a href="/Fighting" title="Fighting">戦闘</a>のスキルを上げると最大 HP が増える。</li></ul></li>
+<li><a href="/Borgnjor%27s_Revivification" title="Borgnjor&#39;s Revivification">ボーグンジョルの究極治癒</a>を唱えると、呪文の威力に応じて最大 HP が少しずつ永久に減る。</li>
+<li><a href="/Zot_clock" title="Zot clock">ゾットの時計</a>の時間切れになると、最大 HP がその時点の値の16.6%だけ永久に減る。</li></ul>
+<p>計算式は次のとおり。
+</p>
+<pre> Max HP = (Racial Mod.) * (Mutations Mod.) * (Forms Mod.)
+        * (8 + 11*XL/2 + Fighting*XL/14 + (1+Fighting*3)/2)
+</pre>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.29" title="0.29">0.29</a>では、ゾットの時計は HP を永久に減らすのではなく、衰弱させるだけだった。それより前は、時間切れになるとその場で死んだ。</li>
+<li><a href="/0.26" title="0.26">0.26</a>より前は<a href="/Rot" title="Rot">腐敗</a>があり、今の<a href="/Drain" class="mw-redirect" title="Drain">衰弱</a>のように最大 HP を一時的に下げた。ただし、<a href="/Potion_of_heal_wounds" title="Potion of heal wounds">怪我の治療の薬</a>か<a href="/Potion_of_curing" title="Potion of curing">治療の薬</a>で治せた。</li>
+<li><a href="/0.14" title="0.14">0.14</a>より前は、職業もプレイヤーの HP の計算にわずかに影響していた。</li></ul>

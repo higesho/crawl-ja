@@ -1,0 +1,151 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.32" title="0.32">0.32</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>に対応して<b>いない可能性がある</b>。</i></div>
+<div>
+<table class="prettytable">
+
+<tr>
+<th align="left"> 名前
+</th>
+<td> 投げ網
+</td></tr>
+<tr>
+<th align="left"> 射撃武器
+</th>
+<td> <a href="/Throwing" title="Throwing">投擲</a>
+</td></tr>
+<tr>
+<th align="left"> 基本ダメージ
+</th>
+<td> 0
+</td></tr>
+<tr>
+<th align="left"> <a href="/Weapon_speed" title="Weapon speed">基本ディレイ</a>(%)
+</th>
+<td> 10(100%)
+</td></tr>
+<tr>
+<th align="left"> <a href="/Minimum_delay" class="mw-redirect" title="Minimum delay">最小ディレイ</a>
+</th>
+<td> スキル 6 で 7
+</td></tr></table></div>
+<table style=" width:auto; text-align:left">
+
+<tr>
+<td>
+</td>
+<td style="width: 100%"> 縁に重りをつけて縄を編み合わせた網。もとは狩人が獲物を絡め取り、捕らえるために使っていたが、やがて戦場や剣闘士の闘技場でも使われるようになったのは当然の成り行きだ。もがく犠牲者は、生き延びられれば、いずれ網を壊して抜け出せる。
+<hr />
+<p>「おびえたものの顔つき、<br />網の中に座りこんで!」
+</p><p>――エドナ・セント・ヴィンセント・ミレイ「年が老いるとき」(1917年)
+</p>
+</td></tr></table>
+<p><b>投げ網</b>は<a href="/Throwing" title="Throwing">投擲</a>用の道具で、直接のダメージは与えないが、敵を<a href="/Constriction" title="Constriction">絡めとって</a>その<a href="/Ev" class="mw-redirect" title="Ev">回避</a>を下げ、<a href="/Stab" class="mw-redirect" title="Stab">急所攻撃</a>を可能にする。
+</p>
+<div id="toc" class="toc"><div class="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Useful_Info"><span class="tocnumber">1</span> <span class="toctext">基本情報</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Mulching"><span class="tocnumber">1.1</span> <span class="toctext">網が壊れる仕組み</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Sources"><span class="tocnumber">2</span> <span class="toctext">入手元</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Strategy"><span class="tocnumber">3</span> <span class="toctext">戦略</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#History"><span class="tocnumber">4</span> <span class="toctext">変更履歴</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">出典</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Useful_Info">基本情報</span></h2>
+<p>網は敵を絡めとるのに使える。網が当たると、次の効果がある。
+</p>
+<ul><li>対象の <a href="/EV" class="mw-redirect" title="EV">EV</a> が下がる。
+<ul><li>プレイヤーの EV は 2 で割られる。</li>
+<li>モンスターの EV は <code>2 + <a href="/Size" title="Size">体格</a></code> で割られる(極小が 1、小さいが 2、という具合)。</li></ul></li>
+<li>体を使った移動(<a href="/Barachi" title="Barachi">跳躍</a>のような能力も含む)、近接攻撃、<a href="/Ranged_weapon" class="mw-redirect" title="Ranged weapon">射撃武器</a>の使用ができなくなる。</li>
+<li>モンスターは下位の<a href="/Stab" class="mw-redirect" title="Stab">急所攻撃</a>を受けるようになる。</li></ul>
+<p><a href="/Insubstantial" title="Insubstantial">実体のない</a>生き物と<a href="/Amorphous" title="Amorphous">不定形</a>の生き物には網が効かない。<a href="/Unrandart" class="mw-redirect" title="Unrandart">固定アーティファクト</a>の<a href="/Slick_slippers" title="Slick slippers">つるつるのスリッパ</a>を履いたプレイヤーにも効かない。
+</p><p>網にかかった生き物はもがいて抜け出そうとし、そのうち網を壊す。<a href="/Blink" title="Blink">瞬間移動</a>や<a href="/Teleport" class="mw-redirect" title="Teleport">テレポート</a>、一部の能力(<a href="/Ru" title="Ru">ルー</a>の「力の解放」や<a href="/Zin" title="Zin">ジン</a>の「聖域」など)でも網から逃れられる。
+</p><p>ほかの<a href="/Throwing" title="Throwing">投擲</a>用の道具と違い、モンスターの投げ網は無限には出てこない。
+</p>
+<h3><span class="mw-headline" id="Mulching">網が壊れる仕組み</span></h3>
+<p>網にかかった者は、移動や近接攻撃をしようとするともがく。そのうち網が壊れて自由になる。
+</p><p>もがくたびに、網に <code>1d4</code> の「ダメージ」が入る。合計 8 以上のダメージを受けると網は壊れる。<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup><sup id="cite_ref-2" class="reference"><a href="#cite_note-2">&#91;2&#93;</a></sup> 網にかかった者が死んだり、ほかの手段(テレポートなど)で逃れたりした場合は、<code>damage in 9</code> の確率で網が壊れる。<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">&#91;3&#93;</a></sup>
+</p><p><a href="/Apportation" title="Apportation">収拾</a>の呪文を使えば、モンスターにかかったままの網でも回収できる。このとき、モンスターが死んだり逃れたりしたときと同じように網が壊れることがある。自分にかかっている網は収拾できない。
+</p>
+<h2><span class="mw-headline" id="Sources">入手元</span></h2>
+<p><a href="/Gladiator" title="Gladiator">闘士</a>は投げ網をひと山持って始まる。迷宮のあちこちにランダムな拾い物としても落ちている。<a href="/Gnoll_(monster)" title="Gnoll (monster)">ノール</a>や<a href="/List_of_merfolk" title="List of merfolk">水棲の民</a>も持っているが、たいていはまずあなたに投げつけてくる。
+</p><p><a href="/Net_trap" title="Net trap">網の罠</a>は主に<a href="/Zot" class="mw-redirect" title="Zot">ゾットの領域</a>:5 と<a href="/The_Tomb" title="The Tomb">太古の霊廟</a>にあり、あなたの上に網を落としてくることがあるが、この網は回収できない。
+</p>
+<h2><span class="mw-headline" id="Strategy">戦略</span></h2>
+<p>網は、モンスターから逃げるとき、敵に急所攻撃をするとき、危ない戦いで優位に立ちたいときに使える。かなり珍しいので、使いどころはよく考えよう。網も外れることがあるのを忘れずに。
+</p><p>網が効かないモンスターはほとんどいない。<a href="/Pandemonium_lord" title="Pandemonium lord">パンデモニウム</a>や<a href="/Demon#Archdemons" title="Demon">地獄</a>の君主のような「ボス」でさえ網にかけられる。
+</p><p>敵の網にも気をつけよう。迷宮:2 に入るとすぐに、網を持った<a href="/Gnoll_(monster)" title="Gnoll (monster)">ノール</a>が出てくるようになる。網は敵の手にあっても、こちらが使うときと同じくらい厄介だ。ただでさえまずい状況が、網ひとつでさらに危なくなる。
+</p>
+<table class="prettytable" style=" text-align: center">
+<tr>
+<th> 投げ網
+</th></tr>
+<tr>
+<td> <a href="/File:Throwing_net.png" class="image"><img alt="Throwing net.png" src="/images/b/b4/Throwing_net.png" width="32" height="32" /></a>
+</td></tr></table>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.31" title="0.31">0.31</a> より前は、体格が<a href="/Size#Giant" title="Size">巨大</a>な生き物には網が効かなかったが、ジェリーには効いた。</li>
+<li><a href="/0.26" title="0.26">0.26</a> より前は、<a href="/Net_trap" title="Net trap">網の罠</a>が落とした網を回収できた。</li>
+<li><a href="/0.19" title="0.19">0.19</a> より前は、網から逃れる仕組みがもっと複雑だった。網にかかった生き物は、網を引き裂くか、網からすり抜けるかして逃れた。体格が<a href="/Size#Small" title="Size">小さく</a>、<a href="/EV" class="mw-redirect" title="EV">回避</a>が高く、(プレイヤーなら)<a href="/Dexterity" title="Dexterity">器用</a>が高いほど、すり抜けやすかった。逆に、体格が<a href="/Size#Big" title="Size">大きく</a>、<a href="/Strength" title="Strength">腕力の高い</a>生き物や<a href="/Berserk" title="Berserk">バーサーク中</a>の生き物ほど、網を引き裂きやすかった。プレイヤーの場合、近くにいる生き物が緊張感を加え、網から逃れるのも網を壊すのも速くなった。刃物の武器、特に<a href="/Flaming" title="Flaming">火炎</a>や<a href="/Vorpal" title="Vorpal">ヴォーパル</a>の武器や、<a href="/Claws" title="Claws">爪</a>は網を切り裂くのに向いていた。また、混乱した生き物は(プレイヤーも含めて)網の中でもがいても何も起こらないことがあった。</li>
+<li><a href="/0.15" title="0.15">0.15</a> より前は、飛行している生き物は、ふつうの外れる確率とは別に、投げつけられた網を 66.6% の確率でかわした。</li>
+<li><a href="/0.14" title="0.14">0.14</a> より前は、飛行している相手には投げ網がまったく効かなかった。また、投げ網はすぐに壊れるのではなく、凝った劣化の過程を経てから最後にばらばらになった。さらに、投げ網を使えるのは体格が中くらい以上のキャラクターだけだった。</li></ul>
+<h2><span class="mw-headline" id="References">出典</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.30.0/crawl-ref/source/traps.cc#L884">traps.cc:884</a> (0.30.0)</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.30.0/crawl-ref/source/traps.h#L17">traps.h:17</a> (0.30.0)</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.30.0/crawl-ref/source/traps.cc#L949">traps.cc:949</a> (0.30.0)</span>
+</li>
+</ol></div>
+<center>
+<table class="prettytable" style="text-align: center; width: 60%">
+
+<tr>
+<th colspan="2"> <a href="/Weapon" title="Weapon">武器</a>
+</th></tr>
+<tr>
+<th> <a href="/Axes" title="Axes">斧</a>
+</th>
+<td> <a href="/Battleaxe" title="Battleaxe">バトルアックス</a> • <a href="/Broad_axe" title="Broad axe">ブロードアックス</a> • <a href="/Executioner%27s_axe" title="Executioner&#39;s axe">処刑人の斧</a> • <a href="/Hand_axe" title="Hand axe">ハンドアックス</a> • <a href="/War_axe" title="War axe">ウォーアックス</a>
+</td></tr>
+<tr>
+<th> <a href="/Maces_%26_Flails" title="Maces &amp; Flails">鈍器</a>
+</th>
+<td> <a href="/Club" title="Club">棍棒</a> • <a href="/Demon_whip" title="Demon whip">悪魔の鞭</a> • <a href="/Dire_flail" title="Dire flail">大型フレイル</a> • <a href="/Eveningstar" title="Eveningstar">イブニングスター</a> • <a href="/Flail" title="Flail">フレイル</a> • <a href="/Giant_club" title="Giant club">巨大棍棒</a> • <a href="/Giant_spiked_club" title="Giant spiked club">釘つき巨大棍棒</a> • <a href="/Great_mace" title="Great mace">大型メイス</a> • <a href="/Mace" title="Mace">メイス</a>(<a href="/Hammer" title="Hammer">ハンマー</a>) • <a href="/Morningstar" title="Morningstar">モーニングスター</a> • <a href="/Sacred_scourge" title="Sacred scourge">聖なる鞭</a> • <a href="/Whip" title="Whip">鞭</a>
+</td></tr>
+<tr>
+<th> <a href="/Long_Blades" title="Long Blades">長剣</a>
+</th>
+<td> <a href="/Demon_blade" title="Demon blade">悪魔の刃</a> • <a href="/Double_sword" title="Double sword">ダブルソード</a> • <a href="/Eudemon_blade" title="Eudemon blade">悪魔祓いの刃</a> • <a href="/Falchion" title="Falchion">ファルシオン</a> • <a href="/Great_sword" title="Great sword">グレートソード</a> • <a href="/Long_sword" title="Long sword">ロングソード</a> • <a href="/Scimitar" title="Scimitar">シミター</a> • <a href="/Triple_sword" title="Triple sword">トリプルソード</a>
+</td></tr>
+<tr>
+<th> <a href="/Polearms" title="Polearms">長柄武器</a>
+</th>
+<td> <a href="/Bardiche" title="Bardiche">バルディッシュ</a> • <a href="/Demon_trident" title="Demon trident">悪魔の三叉戟</a> • <a href="/Glaive" title="Glaive">グレイブ</a> • <a href="/Halberd" title="Halberd">ハルバード</a>(<a href="/Scythe" title="Scythe">大鎌</a>) • <a href="/Partisan" title="Partisan">パルチザン</a> • <a href="/Spear" title="Spear">スピア</a> • <a href="/Trident" title="Trident">トライデント</a> • <a href="/Trishula" title="Trishula">トリシューラ</a>
+</td></tr>
+<tr>
+<th> <a href="/Ranged_Weapons" title="Ranged Weapons">射撃武器</a>
+</th>
+<td> <a href="/Arbalest" title="Arbalest">アーバレスト</a> • <a href="/Hand_cannon" title="Hand cannon">ハンドキャノン</a> • <a href="/Longbow" title="Longbow">ロングボウ</a> • <a href="/Orcbow" title="Orcbow">オークの弓</a> • <a href="/Shortbow" title="Shortbow">ショートボウ</a> • <a href="/Sling" title="Sling">スリング</a> • <a href="/Triple_crossbow" title="Triple crossbow">トリプルクロスボウ</a>
+</td></tr>
+<tr>
+<th> <a href="/Short_Blades" title="Short Blades">短剣</a>
+</th>
+<td> <a href="/Dagger" title="Dagger">ダガー</a> • <a href="/Quick_blade" title="Quick blade">クイックブレード</a> • <a href="/Rapier" title="Rapier">レイピア</a> • <a href="/Short_sword" title="Short sword">ショートソード</a>
+</td></tr>
+<tr>
+<th> <a href="/Staves" title="Staves">棒術</a>
+</th>
+<td> <a href="/Lajatang" title="Lajatang">ラジャタン</a> • <a href="/Magical_staff" title="Magical staff">魔法の杖</a> • <a href="/Quarterstaff" title="Quarterstaff">六尺棒</a>
+</td></tr>
+<tr>
+<th> <a href="/Throwing" title="Throwing">投擲</a>
+</th>
+<td> <a href="/Boomerang" title="Boomerang">ブーメラン</a> • <a href="/Dart" title="Dart">ダーツ</a> • <a href="/Javelin" title="Javelin">ジャベリン</a> • <a href="/Large_rock" title="Large rock">大岩</a> • <a href="/Stone" title="Stone">石</a> • <a class="mw-selflink selflink">投げ網</a>
+</td></tr></table>
+</center>

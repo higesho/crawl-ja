@@ -124,6 +124,28 @@ def load_titles() -> dict[str, str]:
     return t
 
 
+SRC = WORK / "src"
+
+
+def _en_sentences(text: str) -> list[str]:
+    text = html.unescape(re.sub(r"<[^>]+>", "\n", text))
+    return [s.strip() for s in text.split("\n")
+            if len(s.strip()) >= 30 and len(re.findall(r"[a-z]+ ", s)) >= 4]
+
+
+def unfinished(f: Path) -> bool:
+    """訳しかけの記事か。エージェントは原文を写してから訳していくので、
+    原文の英文が半分以上そのまま残っていれば、まだ訳している途中とみなす。"""
+    src = SRC / f.name
+    if not src.exists():
+        return False
+    sents = _en_sentences(src.read_text(encoding="utf-8"))
+    if not sents:
+        return False
+    ja = f.read_text(encoding="utf-8")
+    return sum(1 for s in sents if s in ja) * 2 >= len(sents)
+
+
 def _find_done(title: str, done: dict[str, str]) -> str:
     """訳済みの記事を引く。wiki のリンクは転送用の別名(大文字小文字・複数形の違い)が
     多いので、それも試す。"""
@@ -172,6 +194,10 @@ def main() -> None:
     titles_ja = load_titles()
     gloss = build_glossary()
     files = sorted(JA.glob("*.html"))
+    skipped = [f for f in files if unfinished(f)]
+    files = [f for f in files if f not in skipped]
+    if skipped:
+        print("訳しかけなので飛ばす:", " ".join(f.stem for f in skipped))
     # 英語の記事名 → 出力のファイル名
     done: dict[str, str] = {}
     meta = []
