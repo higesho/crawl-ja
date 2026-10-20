@@ -2367,7 +2367,7 @@ You are partially covered in iridescent scales. (AC +2)
 %%%%
 You are mostly covered in iridescent scales. (AC +4)
 
-あなたの体は玉虫色の鱗で大部分を覆われている。(AC +4)
+あなたの体の大部分が玉虫色の鱗で覆われている。(AC +4)
 %%%%
 You are completely covered in iridescent scales. (AC +6)
 
