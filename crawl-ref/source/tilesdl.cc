@@ -721,6 +721,22 @@ int TilesFramework::getch_ck()
                 key = handle_mouse(event.mouse_event);
                 break;
 
+            case WME_MOUSEWHEEL:
+                // 日本語版: ダンジョンの上でホイールを回すと拡大・縮小する
+                // (Ctrl+= / Ctrl+- と地図画面の拡大と同じ処理)。ホイールの
+                // 出来事の px/py は位置ではないので、最後に見たマウスの位置で判定する。
+                if (m_region_tile->inside(m_mouse.x, m_mouse.y)
+                    && (m_map_mode_enabled
+                        || mouse_control::current_mode() == MOUSE_MODE_COMMAND
+                        || mouse_control::current_mode() == MOUSE_MODE_TARGET
+                        || mouse_control::current_mode() == MOUSE_MODE_TARGET_DIR
+                        || mouse_control::current_mode() == MOUSE_MODE_TARGET_PATH))
+                {
+                    zoom_dungeon(event.mouse_event.button
+                                 == wm_mouse_event::SCROLL_UP);
+                }
+                break;
+
             case WME_QUIT:
                 crawl_state.seen_hups++;
                 return ESCAPE;
