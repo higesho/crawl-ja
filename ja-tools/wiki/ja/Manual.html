@@ -1,0 +1,46 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.32" title="0.32">0.32</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>に対応して<b>いない可能性がある</b>。</i></div>
+<p><i>Crawl そのものの取扱説明書(manual)については<a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/master/crawl-ref/docs/crawl_manual.rst">このファイル</a>を見てほしい。</i>
+</p>
+<div>
+<table class="prettytable" style=" width:18em">
+
+<tr>
+<th align="left"> 種類
+</th>
+<td> 本
+</td></tr>
+<tr>
+<th align="left"> 名前
+</th>
+<td> [スキル名]の虎の巻
+</td></tr></table>
+</div>
+<table style=" width:auto; text-align:left">
+
+<tr>
+<td>
+</td>
+<td style="width: 100%"> 特定のスキルをより早く習得できるようにする貴重な本だ。
+</td></tr></table>
+<p><a href="/File:Manual_1.png" class="image"><img alt="Manual 1.png" src="/images/4/45/Manual_1.png" width="32" height="32" /></a> <a href="/File:Manual_2.png" class="image"><img alt="Manual 2.png" src="/images/0/02/Manual_2.png" width="32" height="32" /></a>
+</p><p><b>虎の巻</b>は珍しい<a href="/Book" class="mw-redirect" title="Book">本</a>で、あるスキルの<a href="/Aptitude" title="Aptitude">スキル適性</a>に +4 のボーナスを与える。実質的には、そのスキルに入る経験値が2倍になる。違うスキルの虎の巻なら何冊でも同時に読み進められるが、同じスキルの虎の巻が何冊もあるときは1冊ずつ使われる。虎の巻は1冊ごとに 2000〜3000 <a href="/Skill_point" title="Skill point">スキルポイント</a>ぶんの経験値を持って生成され、使い切ると消えてしまう。
+</p>
+<h2><span class="mw-headline" id="Strategy">戦略</span></h2>
+<p>虎の巻は要するに「タダ」でもらえるおまけの経験値だ。虎の巻のあるスキルを訓練しているかぎり、経験値は2倍になる。スキルの上限(レベル27)に達していなければ無駄になることはなく、必ず全量を受け取れる。期限もないので、実際にそのスキルを訓練しはじめるまで好きなだけ待っていてかまわない。
+</p><p>虎の巻を持っている<i>というだけで</i>そのスキルを訓練しなければ、と思い込む必要はない。
+</p>
+<ul><li>虎の巻があっても、そのスキルがキャラクターの役に立つとは限らない。たとえば近接攻撃と重い防具に徹するキャラクターが<a href="/Stealth_(skill)" title="Stealth (skill)">隠密</a>の虎の巻を拾っても、まず使い道はないだろう。</li>
+<li>すぐに訓練しなくてもいい。虎の巻のスキルより、<i>いま</i>上げるべきスキルがほかにあるかもしれない。たとえば呪文使いなら、<a href="/Dodging" title="Dodging">躱し身</a>を訓練する前に、呪文の失敗率をそこそこまで下げておきたいところだ。</li></ul>
+<p>とはいえ、虎の巻が手に入るとかなりうれしい。ふだんなら訓練しなかったスキルに手を出すきっかけにもなるし、もともと訓練していたスキルを伸ばす後押しにもなる。
+</p>
+<h3><span class="mw-headline" id="Settings">設定</span></h3>
+<p>虎の巻を使うなら、<a href="/Rcfile" class="mw-redirect" title="Rcfile">設定ファイル(rcfile)</a>に次の行を足しておくといい。
+</p>
+<pre>force_more_message += finished your manual
+</pre>
+<p>こうしておくと、虎の巻によるスキル適性のボーナスが切れたときに知らせてくれるので、必要なら訓練の優先順位を見直せる。
+</p>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.27" title="0.27">0.27</a> より前は、虎の巻が所持品の枠を占めていた。</li>
+<li><a href="/0.13" title="0.13">0.13</a> より前は、一度に読み進められる虎の巻は1冊だけで、<b>r</b>(読む)で有効・無効を切り替えていた。</li>
+<li><a href="/0.9" class="mw-redirect" title="0.9">0.9</a> より前はスキルの仕組みがまったく違っていたため、虎の巻の働きも大きく異なっていた。経験値プールにためた経験値を、そのスキルを実際に使わずに特定のスキルへ割り振ることができ、何度か使うと塵になって崩れ去った。</li></ul>
