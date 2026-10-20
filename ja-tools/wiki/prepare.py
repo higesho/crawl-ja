@@ -93,6 +93,10 @@ def build_glossary() -> dict:
             key = re.sub(r"\s+(mutation|status|cloud|ability|card|bane|passive)$", "",
                          e["key"], flags=re.I)
             _add(g, en or key, ja, 1)
+            # 地形のキーは「some deep water」「a fountain of …」の形なので冠詞を外しても引く
+            bare = re.sub(r"^(a|an|the|some)\s+", "", key, flags=re.I)
+            if bare != key:
+                _add(g, bare, ja, 1)
     # jtrans の辞書の短い項目
     for f in sorted(JTRANS.glob("*.txt")):
         key = None

@@ -26,7 +26,7 @@ IMG = HERE / "work" / "img"
 TITLES = HERE / "work" / "titles.json"
 BASE = "http://crawl.chaosforge.org/"
 UA = "crawl-ja-translation/0.1 (Japanese translation of CrawlWiki; https://github.com/higesho/crawl-ja)"
-WAIT = 5.0
+WAIT = 3.0
 CATEGORY = "Category:0.34_articles"
 
 _last = 0.0
@@ -56,9 +56,9 @@ def file_name(title: str) -> str:
     return re.sub(r'[\\/:*?"<>|]', "_", title.replace(" ", "_")) + ".html"
 
 
-def list_titles() -> list[str]:
+def list_titles(category: str = CATEGORY) -> list[str]:
     titles: list[str] = []
-    path = CATEGORY
+    path = category
     while path:
         s = get(path)
         part = s[s.find('id="mw-pages"'):]
@@ -68,7 +68,7 @@ def list_titles() -> list[str]:
                    re.findall(r'<li><a href="/[^"]+" title="([^"]+)"', part)]
         m = re.search(r'pagefrom=([^"#&]+)[^"]*"[^>]*>next page', part)
         # 次のページは /index.php を通さない短い形で取る
-        path = f"{CATEGORY}?pagefrom={m.group(1)}" if m else ""
+        path = f"{category}?pagefrom={m.group(1)}" if m else ""
     titles = [t for t in dict.fromkeys(titles) if ":" not in t or t.startswith("Zot:")]
     return titles
 
@@ -76,13 +76,16 @@ def list_titles() -> list[str]:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--list", action="store_true")
+    ap.add_argument("--version", default="0.34",
+                    help="--list で使う版のカテゴリー(0.33 など)。0.34 以外は titles_<版>.json に書く")
     ap.add_argument("--images", action="store_true",
                     help="prepare.py が書いた work/images.txt の画像を取る")
-    ap.add_argument("--all", action="store_true", help="titles.json の記事を全部取る")
+    ap.add_argument("--all", nargs="?", const="titles.json", default=None,
+                    help="記事名の一覧(work/ の下の json)の記事を全部取る")
     ap.add_argument("titles", nargs="*")
     args = ap.parse_args()
     if args.all:
-        args.titles = json.loads(TITLES.read_text(encoding="utf-8"))
+        args.titles = json.loads((HERE / "work" / args.all).read_text(encoding="utf-8"))
     RAW.mkdir(parents=True, exist_ok=True)
     if args.images:
         IMG.mkdir(parents=True, exist_ok=True)
@@ -93,9 +96,11 @@ def main() -> None:
             out.write_bytes(get_bytes(path.lstrip("/")))
             print(f"画像: {out.name}")
     if args.list:
-        t = list_titles()
-        TITLES.write_text(json.dumps(t, ensure_ascii=False, indent=0), encoding="utf-8")
-        print(f"{len(t)} 本")
+        cat = f"Category:{args.version}_articles"
+        t = list_titles(cat)
+        out = TITLES if args.version == "0.34" else HERE / "work" / f"titles_{args.version}.json"
+        out.write_text(json.dumps(t, ensure_ascii=False, indent=0), encoding="utf-8")
+        print(f"{args.version}: {len(t)} 本")
     for title in args.titles:
         out = RAW / file_name(title)
         if out.exists():

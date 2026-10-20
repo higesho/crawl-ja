@@ -1,0 +1,2 @@
+Mutually exclusive
+相互排他

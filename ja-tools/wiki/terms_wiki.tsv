@@ -53,3 +53,25 @@ hit(モンスターの攻撃の種類)	打撃
 tier N demon	N級悪魔
 tier(タリスマン)	第N段階
 attack flavour	攻撃の追加効果
+Tomb	太古の霊廟
+Dungeon branches(案内表)	分岐の一覧
+Medium(体格)	中くらい
+attacks of opportunity	機会攻撃
+penance	懺悔
+Torment(効果・カード)	拷問(耐性の略号は rTorm のまま)
+deep water	深い水脈
+shallow water	浅い水脈
+smite-targeted	打擲型
+divine retribution	神罰
+Jester	道化
+jelly(モンスター)	ジェリー(ジーヴァの文脈のゼリーはゲームの訳どおり)
+Racial Restrictions	種族による制限
+X Form(変身の名前)	ゲームの変身名(jtrans の data-forms.txt の「[form]X」の訳)を使う。例: Dragon→竜化、Death→死霊化、Tree→樹化、Statue→石像、Serpent→大蛇、Flux→流転、Maw→大口、Eel→鰻の手、Aqua→水化、Storm→嵐化、Blade→刃の手、Spider→蜘蛛、Bat→コウモリ。辞書に無いものだけ「〜の形態」
+Acute Vision	霊視(ゲームの変異名)
+potion of porridge	粥の薬
+decaAut / deca-aut	ターン(10 aut。aut はそのまま aut)
+stab / stabbing	急所攻撃(スキル名の Stabbing も同じ)
+Pandemonium lord / Pan lord	パンデモニウムの君主
+Bad Form	不利な変身
+-Move(状態)	移動×(ゲームの状態表示)
+orb of appropriateness	お誂え向きの球体

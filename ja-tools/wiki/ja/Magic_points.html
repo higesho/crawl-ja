@@ -1,0 +1,189 @@
+</i>
+<p><b>マジックポイント</b>(Magic points)または<b>マナポイント</b>(Mana points)は、キャラクターが持っている魔法のエネルギーの量で、ふつうは MP と略す。呪文を唱えるときや、神の力・変異・生まれつきの能力を使うときに消費する。MP が0になっても死にはしないが、能力に使える MP はなくなる。
+</p><p>呪文は一回唱えるごとに <code>(呪文のレベル)</code> だけ MP を使う。ほかの能力にはそれぞれ独自のコストがあり、たいてい一回につき 1〜10 MP だ。
+</p><p>基本の最大 MP は、経験レベル、種族、そして 1. <a href="/Spellcasting" title="Spellcasting">呪文詠唱</a>スキル か 2. <a href="/Invocations" title="Invocations">祈祷</a>スキルの半分 のどちらか(高いほう。MP に対しては呪文詠唱スキルが祈祷の2倍効く)で決まる。<a href="/Ring_of_magical_power" title="Ring of magical power">魔力の指輪</a>や、{MP+} の特性を持つ<a href="/Artefacts" class="mw-redirect" title="Artefacts">アーティファクト</a>などのアイテムで、魔力の蓄えを増やすこともできる。
+</p><p>典型的なキャラクターは 0〜7 MP で始まり(たとえばミノタウロスの戦士なら0、闇エルフの在野の魔術師なら7)、最終的にはその何倍にもなる(レベル20のふつうのキャラクターで 30〜40、アイテムで上乗せすれば 50〜60)。
+</p><p><a href="/Djinn" class="mw-redirect" title="Djinn">ジンニー</a>は MP を使わない。MP を消費する場面ではかわりに HP を消費し、それ以外の MP がからむ仕組みからは一切影響を受けない。
+</p>
+<div id="toc" class="toc"><div class="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Regeneration"><span class="tocnumber">1</span> <span class="toctext">回復</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Strategy"><span class="tocnumber">2</span> <span class="toctext">戦略</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Formula"><span class="tocnumber">3</span> <span class="toctext">計算式</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#MP_modifiers"><span class="tocnumber">4</span> <span class="toctext">MP の補正値</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#History"><span class="tocnumber">5</span> <span class="toctext">変更履歴</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">出典</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Regeneration">回復</span></h2>
+<p>基本の魔力回復速度(BMRR)は <code>7 + MMP/2</code> だ。<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup> <a href="/Mana_Regeneration" title="Mana Regeneration">魔力回復</a>の変異があればこれが2倍になる。そこに次の補正がかかって、最終的な魔力回復速度(TMRR)が決まる。
+</p>
+<ul><li><a href="/Amulet_of_magic_regeneration" title="Amulet of magic regeneration">魔力再生の護符</a>で MP の回復速度 +40。</li>
+<li><a href="/Amulet_of_Vitality" title="Amulet of Vitality">生命力の護符</a>で MP の回復速度 +80。</li>
+<li><a href="/Armataur" title="Armataur">アルマタウル</a>は猛進したとき、一時的に MP の回復速度にボーナスを得る。</li>
+<li><a href="/Jiyva" title="Jiyva">ジーヴァ</a>は信仰心の段階に応じて 40〜80 を上乗せする。</li></ul>
+<p>1ターン(10 <a href="/Aut" class="mw-redirect" title="Aut">aut</a>)ごとに TMRR と同じだけの回復ポイントが貯まる。100 ポイント貯まると MP が1回復し、余ったポイントは次のターンに持ち越される。行動にかかった時間が 10 aut より長かったり短かったりすれば、回復量もその時間に合わせて増減する。
+</p>
+<h2><span class="mw-headline" id="Strategy">戦略</span></h2>
+<p>呪文使いにとって MP はとても大事な能力値だ。序盤から中盤にかけては MP のコストが低く、元の魔力の量も少ないので、魔力の指輪がものすごく役に立つ。ただし MP が 40 を超えるあたりになると、+9 MP のありがたみは薄れていく。
+</p><p>MP を回復する手段:
+</p>
+<ul><li>休む。</li>
+<li>消耗品: <a href="/Potions_of_magic" class="mw-redirect" title="Potions of magic">魔力の薬</a>は魔力をそこそこ回復してくれるが、なかなか手に入らない。<a href="/Potions_of_ambrosia" class="mw-redirect" title="Potions of ambrosia">アンブロシアの薬</a>はしばらくの間 HP と MP を大きく回復させるが、その間ずっと混乱する。混乱を治すとアンブロシアの効果も切れてしまう。</li>
+<li><a href="/Sublimation_of_Blood" title="Sublimation of Blood">血の昇華</a>を唱える。自分の体力と引き換えに MP を回復する(そのための 2 MP は残しておくこと!)。</li>
+<li><a href="/Amulet_of_magic_regeneration" title="Amulet of magic regeneration">魔力再生の護符</a>を着ける。</li>
+<li>神の能力: <a href="/Ru" title="Ru">ルー</a>、<a href="/Sif_Muna" title="Sif Muna">シフ・ムーナ</a>、<a href="/Gozag" class="mw-redirect" title="Gozag">ゴザーグ</a>、<a href="/Nemelex" class="mw-redirect" title="Nemelex">ネメレクス</a>には自分から魔力を回復する手段があり、どれだけ当てにできるかはそれぞれ違う。</li>
+<li>神の常時効果: <a href="/Vehumet" title="Vehumet">ヴェフメット</a>を信仰していると、モンスターを倒したときに MP が回復する。<a href="/The_Shining_One" title="The Shining One">輝けるもの</a>にも似た力があるが、こちらは不浄な敵と悪魔の敵にしか効かない。<a href="/Jiyva" title="Jiyva">ジーヴァ</a>の信者は MP の回復がとても速い。</li>
+<li><a href="/Channeling" title="Channeling">魔力供給</a>のアイテム: <a href="/Energy" title="Energy">活力</a>の<a href="/Orb" title="Orb">オーブ</a>や<a href="/Staff_of_Wucad_Mu" title="Staff of Wucad Mu">ウカド・ムーの杖</a>は、使った MP を払い戻してくれることがあるが、裏目に出ることもある。</li>
+<li><a href="/Vine_Stalker" title="Vine Stalker">歩き蔓</a>なら敵に噛みつく。</li>
+<li><a href="/Demonspawn" title="Demonspawn">悪魔の血族</a>なら<a href="/Mana_Shield" title="Mana Shield">魔力の盾</a>の変異を得られることがあり、MP の回復が速くなる。MP が少ないときはなおさらだ。<a href="/Powered_by_Pain" class="mw-redirect" title="Powered by Pain">苦痛よりの力</a>の変異があれば、ダメージを受けるたびに MP が補充されることがある。両方手に入ることもある。</li></ul>
+<h2><span class="mw-headline" id="Formula">計算式</span></h2>
+<ul><li><code>Highest Skill = max(Spellcasting, Invocations/2)</code></li>
+<li><code>MP = Scale*(min(XL, 23) + Highest Skill + min(8, Highest Skill, XL)/2) + Species Modifier</code></li>
+<li>MP に倍率 (Scale) をかけるもの:
+<ul><li><a href="/Good_mutations#High_MP" title="Good mutations">魔力容量大の変異</a>: 1段階ごとに +10%</li>
+<li><a href="/Bad_mutations#Low_MP" title="Bad mutations">魔力容量小の変異</a>: 1段階ごとに -10%</li>
+<li><a href="/Elyvilon" title="Elyvilon">エリヴィロン</a>の<a href="/Divine_vigour" class="mw-redirect" title="Divine vigour">神秘の活力</a>: 最大 +50%</li></ul></li>
+<li>MP を決まった量だけ増やすもの(倍率をかけたあとに足す):
+<ul><li><a href="/Ring_of_magical_power" title="Ring of magical power">魔力の指輪</a>: 1つにつき +9 MP</li>
+<li>{+MP} の特性を持つ<a href="/Artefact" title="Artefact">アーティファクト</a>: たいてい1つにつき +4〜12。<a href="/Unrand" class="mw-redirect" title="Unrand">固定アーティファクト</a>には例外もある</li></ul></li>
+<li><a href="/Antimagic" title="Antimagic">反魔法</a>の武器を持つと MP が3分の1になる。これはほかのすべての補正のあとにかかる。</li></ul>
+<h2><span class="mw-headline" id="MP_modifiers">MP の補正値</span></h2>
+<p><a href="/Dungeon_Crawl" title="Dungeon Crawl">Dungeon Crawl</a> <a href="/Stone_Soup" class="mw-redirect" title="Stone Soup">Stone Soup</a> のゲーム内の説明より:
+</p>
+<table class="wikitable">
+
+<tr>
+<td><b><a href="/Armataur" title="Armataur">At</a></b>
+</td>
+<td><b><a href="/Barachi" title="Barachi">Ba</a></b>
+</td>
+<td><b><a href="/Coglin" title="Coglin">Co</a></b>
+</td>
+<td><b><a href="/Deep_Elf" title="Deep Elf">DE</a></b>
+</td>
+<td><b><a href="/Demigod" title="Demigod">Dg</a></b>
+</td>
+<td><b><a href="/Demonspawn" title="Demonspawn">Ds</a></b>
+</td>
+<td><b><a href="/Djinni" title="Djinni">Dj</a></b>
+</td>
+<td><b><a href="/Draconian" title="Draconian">Dr</a></b>
+</td>
+<td><b><a href="/Felid" title="Felid">Fe</a></b>
+</td>
+<td><b><a href="/Formicid" title="Formicid">Fo</a></b>
+</td>
+<td><b><a href="/Gale_Centaur" title="Gale Centaur">GC</a></b>
+</td>
+<td><b><a href="/Gargoyle" title="Gargoyle">Gr</a></b>
+</td>
+<td><b><a href="/Gnoll" title="Gnoll">Gn</a></b>
+</td>
+<td><b><a href="/Human" title="Human">Hu</a></b>
+</td>
+<td><b><a href="/Kobold" title="Kobold">Ko</a></b>
+</td>
+<td><b><a href="/Merfolk" title="Merfolk">Mf</a></b>
+</td>
+<td><b><a href="/Minotaur" title="Minotaur">Mi</a></b>
+</td>
+<td><b><a href="/Mountain_Dwarf" title="Mountain Dwarf">MD</a></b>
+</td>
+<td><b><a href="/Mummy" title="Mummy">Mu</a></b>
+</td>
+<td><b><a href="/Naga" title="Naga">Na</a></b>
+</td>
+<td><b><a href="/Octopode" title="Octopode">Op</a></b>
+</td>
+<td><b><a href="/Oni" title="Oni">On</a></b>
+</td>
+<td><b><a href="/Poltergeist" title="Poltergeist">Po</a></b>
+</td>
+<td><b><a href="/Revenant" title="Revenant">Re</a></b>
+</td>
+<td><b><a href="/Spriggan" title="Spriggan">Sp</a></b>
+</td>
+<td><b><a href="/Tengu" title="Tengu">Te</a></b>
+</td>
+<td><b><a href="/Troll" title="Troll">Tr</a></b>
+</td>
+<td><b><a href="/Vine_Stalker" title="Vine Stalker">VS</a></b>
+</td></tr>
+<tr>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> 2
+</td>
+<td> 2
+</td>
+<td> 0
+</td>
+<td> N/A
+</td>
+<td> 0
+</td>
+<td> 1
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> -1
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> 1
+</td>
+<td> 1
+</td>
+<td> 1
+</td>
+<td> -1
+</td>
+<td> 1
+</td></tr></table>
+<p><a href="/Demigod" title="Demigod">神々の末裔</a>はさらに、<a href="/High_MP" title="High MP">魔力容量大</a>の変異を持って始まる。
+</p>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.32" title="0.32">0.32</a> より前は、<a href="/Randarts" class="mw-redirect" title="Randarts">ランダムアーティファクト</a>の MP の特性は必ず +9 か -9 だった。</li>
+<li><a href="/0.26" title="0.26">0.26</a> より前は、<a href="/Evocations" title="Evocations">発動</a>スキルでも最大 MP が増えた。</li>
+<li><a href="/0.17" title="0.17">0.17</a> で MP の計算が簡単になった。それまでの基本の式は次のとおり:</li></ul>
+<pre>XL + Permanent MP + (XL*Species modifier + 1)/3 + (XL*Species modifier + 1)/3 + max(Spellcasting*XL*3/14 + Spellcasting, Invocations*XL/6.5 + Invocations/3, Evocations*XL/6)
+</pre>
+<dl><dd>これに逓減の関数をかけ、MP の上限は 50 だった。種族の適性も、かつては掛け算だったが、今は足し算になっている。</dd></dl>
+<ul><li><a href="/0.14" title="0.14">0.14</a> より前の式は次のとおり:</li></ul>
+<pre>Unscaled MP = XL + Permanent MP + (XL*Species modifier + 1)/3 +
+max(Spellcasting*XL/4, Invocations*XL/6, Evocations*XL/6)
+</pre>
+<dl><dd>ここで <i>Permanent MP </i> は、プレイヤーの職業と種族で決まる定数だった。</dd></dl>
+<h2><span class="mw-headline" id="References">出典</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.34.1/crawl-ref/source/player.cc#L1298">player.cc:1298</a> (0.34.1)</span>
+</li>
+</ol></div>

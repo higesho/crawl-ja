@@ -1,0 +1,113 @@
+</i>
+<p><a class="mw-selflink selflink">呪文失敗の効果</a>は、プレイヤーが呪文の詠唱に失敗したときに起きる。まったく無害なものから、大きなダメージと<a href="/Magic_contamination" title="Magic contamination">魔力汚染</a>をもたらすものまで、呪文の系統、呪文のレベル、失敗の度合いによって重さはさまざまだ。呪文の失敗から身を守りたいなら、<a href="/Spell_success" class="mw-redirect" title="Spell success">呪文の成功率</a>を上げることに力を注ぐといい。そうすれば失敗の頻度も激しさも下がる。また、系統によっては呪文の失敗で属性つきのダメージを受けるので、耐性で軽減できる。
+</p><p>ゲーム内で呪文の失敗率に付く色は、最大 <a href="/HP" class="mw-redirect" title="HP">HP</a> に対して受けうる最大ダメージの割合を表している。この計算は、ダメージに耐性が効かないものとして行われる。失敗の効果に耐性が効く系統や、直接ダメージを与えない系統でも同じだ。
+</p>
+<table class="prettytable">
+<tr>
+<th> 色 </th>
+<th> 失いうる <br />HP </th>
+<th> 警告の <br />説明
+</th></tr>
+<tr>
+<td> <span class="nhsym clr-lightgray">灰色</span> </td>
+<td> なし  </td>
+<td> 安全
+</td></tr>
+<tr>
+<td> <span class="nhsym clr-white">白</span> </td>
+<td> 0% - 10% </td>
+<td> やや危険
+</td></tr>
+<tr>
+<td> <span class="nhsym clr-yellow">黄</span> </td>
+<td> 10% - 30% </td>
+<td> 危険
+</td></tr>
+<tr>
+<td> <span class="nhsym">明るい赤</span> </td>
+<td> 30% - 50% </td>
+<td> かなり危険
+</td></tr>
+<tr>
+<td> <span class="nhsym">赤</span> </td>
+<td> 50% - 70% </td>
+<td> 極めて危険
+</td></tr>
+<tr>
+<td> <span class="nhsym clr-magenta">紫</span> </td>
+<td> 70% - 100% </td>
+<td> 途方もなく危険
+</td></tr>
+</table>
+<p>呪文の説明には、起こりうる失敗の効果が、最大ダメージやダメージの種類も含めてすべて表示される。
+</p>
+<h2><span class="mw-headline" id="Effects">効果</span></h2>
+<p>どの系統の呪文でも、失敗すると呪文のレベルと失敗の度合いに応じて<a href="/Contamination" class="mw-redirect" title="Contamination">魔力汚染</a>が起きる(失敗の度合いは、ほぼ唱えられない呪文なら 1〜99 の範囲になる。成功率が高いほど上限が下がる)。
+</p>
+<blockquote><b>魔力汚染</b>: 2 × (呪文レベル × 呪文レベル × 失敗の度合い + 250) / 5 </blockquote>
+<p>これで魔力汚染が 800 ポイントを超えると、呪文の系統に応じた追加の効果が起きる。呪文が複数の系統に属するなら、そのうち一つがランダムに選ばれる。効果の強さは、呪文のレベルと<a href="/Spell_Success#The_final_step" title="Spell Success">素の失敗率</a>(1〜99 の内部の値で、呪文一覧に表示される失敗率<i>ではない</i>)をもとにダイスで決まる。
+</p>
+<blockquote><b>強さ</b>: (呪文レベル)d(呪文レベル + 素の失敗率) / 9</blockquote>
+<p>ダメージを与える効果では、これがダメージ量になる。状態異常の効果(減速と移動×)では、これが持続ターン数になる。そのほかの効果は表のとおり。
+</p>
+<table class="prettytable">
+<tr>
+<th> 系統</th>
+<th> 効果
+</th></tr>
+<tr>
+<td> <a href="/Air_Magic" title="Air Magic">風の魔術</a> </td>
+<td> <a href="/Electricity" title="Electricity">電撃</a>ダメージ
+</td></tr>
+<tr>
+<td> <a href="/Conjurations" title="Conjurations">妖術</a> </td>
+<td> 耐性の効かないダメージ
+</td></tr>
+<tr>
+<td> <a href="/Earth_Magic" title="Earth Magic">地の魔術</a> </td>
+<td> 破片によるダメージ <br />(AC で 3 回軽減される)
+</td></tr>
+<tr>
+<td> <a href="/Hexes" title="Hexes">呪術</a> </td>
+<td> <a href="/Slow" title="Slow">減速</a>させる
+</td></tr>
+<tr>
+<td> <a href="/Fire_Magic" title="Fire Magic">炎の魔術</a> </td>
+<td> <a href="/Fire" title="Fire">火炎</a>ダメージ
+</td></tr>
+<tr>
+<td> <a href="/Ice_Magic" title="Ice Magic">氷の魔術</a> </td>
+<td> <a href="/Cold" title="Cold">冷気</a>ダメージ
+</td></tr>
+<tr>
+<td> <a href="/Necromancy" title="Necromancy">死霊術</a> </td>
+<td> <a href="/Drain" class="mw-redirect" title="Drain">衰弱</a>ダメージ
+</td></tr>
+<tr>
+<td> <a href="/Alchemy" title="Alchemy">錬金術</a> </td>
+<td> <a href="/Poison" title="Poison">毒</a>ダメージ
+</td></tr>
+<tr>
+<td> <a href="/Summonings" title="Summonings">召喚術</a> </td>
+<td> 長続きする召喚の<a href="/Nameless_horror" title="Nameless horror">名状しがたき恐怖</a><br /><a href="/HD" class="mw-redirect" title="HD">HD</a> = 2 × 強さ / 3
+</td></tr>
+<tr>
+<td> <a href="/Translocations" title="Translocations">転位術</a> </td>
+<td> 移動と、自分からの<a href="/Blink" title="Blink">瞬間移動</a>や<a href="/Teleport" class="mw-redirect" title="Teleport">テレポート</a>ができなくなる(移動× 転位阻害)
+</td></tr>
+<tr>
+<td> <a href="/Forgecraft" title="Forgecraft">鍛造術</a> </td>
+<td> <code>4 + Intensity/4</code> 段階の<a href="/Corrosion" class="mw-redirect" title="Corrosion">腐食</a>
+</td></tr></table>
+<h2><span class="mw-headline" id="See_Also">関連項目</span></h2>
+<ul><li><a href="/Magic_contamination" title="Magic contamination">魔力汚染</a></li></ul>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.31" title="0.31">0.31</a> より前は、<a href="/Transmutations" title="Transmutations">変成</a>と<a href="/Poison_Magic" title="Poison Magic">毒の魔術</a>という呪文の系統があり、それぞれ独自の失敗の効果を持っていた。変成の失敗では魔力汚染が余分に増え(今の魔力汚染の 2 倍に、<code>9 × Miscast Intensity / 1000</code> を足した量)、毒の魔術の失敗では毒を受けた。</li>
+<li><a href="/0.30" title="0.30">0.30</a> だけは、転位術の失敗の効果が「Stuck」という名前だった。新しい移動×の状態は瞬間移動やテレポートを妨げず、移動だけを止める。現在は転位術の呪文に失敗すると移動×と転位阻害がかかり、以前とまったく同じように働く。</li>
+<li><a href="/0.29" title="0.29">0.29</a> より前は、呪術の失敗の効果で、減速がかかる前に使用者の<a href="/Potion_of_cancellation" title="Potion of cancellation">強化が解除</a>された。</li>
+<li><a href="/0.28" title="0.28">0.28</a> より前は、呪文失敗の効果が<a href="/Hell" title="Hell">地獄</a>の神秘の力にも使われていた。</li>
+<li><a href="/0.26" title="0.26">0.26</a> より前は、転位術の失敗で、移動×の代わりに<a href="/Dimension_Anchor" title="Dimension Anchor">次元の碇</a>がかかった。</li>
+<li><a href="/0.25" title="0.25">0.25</a> より前は、呪文失敗の効果の仕組みがかなり複雑で、系統ごとに失敗の重さに応じた 3 種類の効果があった。<a href="/Divine_retribution" title="Divine retribution">神罰</a>など、ほかの多くの仕組みも呪文失敗の効果を使っていた。</li>
+<li><a href="/0.16" title="0.16">0.16</a> で、多くの呪文失敗の効果が大きく作り直された。</li>
+<li><a href="/0.14" title="0.14">0.14</a> より前は、地獄の神秘の力でプレイヤーが麻痺することがあった。</li>
+<li><a href="/0.13" title="0.13">0.13</a> より前は、<a href="/Zot_trap" title="Zot trap">ゾットの罠</a>は決まった効果の一覧を持つ代わりに、重さ 3 のランダムな呪文失敗の効果を起こした。</li></ul>

@@ -1,0 +1,78 @@
+</i>
+<p><b>保証ダメージ軽減(Guaranteed damage reduction、GDR)</b>は、近接戦闘と射撃戦でプレイヤーを守る防御の一層だ。ふだん、命中した攻撃は AC を上限とするランダムな量だけ軽減される。通常の近接攻撃と武器による攻撃に対しては、AC による軽減量の最低値がその攻撃のダメージの GDR% になる。ただし、これが <code>1/2 * AC</code> を超えるときはそちらが上限だ。要するに、GDR は AC の出目が悪かったときの保険である。
+</p>
+<div id="toc" class="toc"><div class="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#What_GDR_Affects"><span class="tocnumber">1</span> <span class="toctext">GDR が効く攻撃</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Calculating_GDR"><span class="tocnumber">2</span> <span class="toctext">GDR の計算</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#GDR_of_Various_AC_Values"><span class="tocnumber">2.1</span> <span class="toctext">AC ごとの GDR</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Damage_Reduction"><span class="tocnumber">3</span> <span class="toctext">ダメージの軽減</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Strategy"><span class="tocnumber">4</span> <span class="toctext">戦略</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#History"><span class="tocnumber">5</span> <span class="toctext">変更履歴</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="What_GDR_Affects">GDR が効く攻撃</span></h2>
+<p>GDR が効くのは物理的なダメージだけで、近接攻撃、<a href="/Reaching" title="Reaching">間合い</a>による攻撃、射撃武器や投擲武器による攻撃に限られる。
+</p><p>呪文や能力には、どんな種類のものにも<i>効かない</i>。ただし、武器や近接攻撃のダメージの式をそのまま使う能力(<a href="/Manifold_Assault" title="Manifold Assault">多重攻撃</a>など)は別だ。したがって、物理的なダメージを与える<a href="/Conjurations" title="Conjurations">妖術</a>の呪文にも GDR は効かない。<a href="/Slug_Dart" title="Slug Dart">蛞蝓の矢</a>や<a href="/Harpoon_Shot" title="Harpoon Shot">銛の射撃</a>のような「物理的」な能力にも効かない。<a href="/Ice_beast" title="Ice beast">氷の獣</a>が近接攻撃に上乗せしてくる冷気のダメージのような、属性つきの近接ダメージにも効かない。
+</p>
+<h2><span class="mw-headline" id="Calculating_GDR">GDR の計算</span></h2>
+<p>GDR は次の式で計算する: <code>GDR% = AC^(1/4) * 16</code>。AC はどんな手段で得たものでも GDR に数えられる。
+</p>
+<h3><span class="mw-headline" id="GDR_of_Various_AC_Values">AC ごとの GDR</span></h3>
+<table class="wikitable">
+<tr>
+<th> 基本 AC </th>
+<th> GDR
+</th></tr>
+<tr>
+<td> 2 (<a href="/Robe" title="Robe">ローブ</a>) </td>
+<td> 19.0%
+</td></tr>
+<tr>
+<td> 6 (<a href="/Scale_mail" title="Scale mail">スケイルメイル</a>) </td>
+<td> 25.0%
+</td></tr>
+<tr>
+<td> 10 (<a href="/Plate_armour" title="Plate armour">プレートアーマー</a>) </td>
+<td> 28.5%
+</td></tr>
+<tr>
+<td> 16 (+2 <a href="/Robe" title="Robe">ローブ</a>、補助防具) </td>
+<td> 32%
+</td></tr>
+<tr>
+<td> 32 (+10 <a href="/Plate_armour" title="Plate armour">プレートアーマー</a>、補助防具) </td>
+<td> 38.1%
+</td></tr>
+<tr>
+<td> 40 (+14 <a href="/Crystal_plate_armour" title="Crystal plate armour">水晶の鎧</a>、補助防具) </td>
+<td>40.2%
+</td></tr>
+<tr>
+<td> 50 </td>
+<td> 42.5%
+</td></tr>
+<tr>
+<td> 100 </td>
+<td> 50.6%
+</td></tr>
+</table>
+<p>補助防具の枠は +2 の<a href="/Helmet" title="Helmet">兜</a>、+2 の<a href="/Cloak" title="Cloak">クローク</a>、+2 の<a href="/Gloves" title="Gloves">手袋</a>、+2 の<a href="/Boots" title="Boots">ブーツ</a>としている。表の割合は小数第 1 位に丸めてある。
+</p>
+<h2><span class="mw-headline" id="Damage_Reduction">ダメージの軽減</span></h2>
+<p>GDR は AC と別に働くダメージ軽減では<b>ない</b>。仮に GDR がとても高くて AC がひどく低くても、たいして役に立たない。実質的には AC の出目の最低保証、つまり<i>保証された</i> AC の出目だ。上限は <code>GDR% * 受けるダメージ</code> と <code>1/2 * AC</code> のうち低いほうになる。
+</p><p>たとえば、GDR が 48% のときに 50 ダメージの攻撃を受けたとする。まず <a href="/AC" class="mw-redirect" title="AC">AC</a> の出目を振る。出目が 1 なら、GDR が軽減量を (50 * .48) = 24 まで引き上げるので、実際に失う HP は 26 になる。一方、出目が 36 なら、保証された軽減量の 24 を上回っているので、GDR は何もしない。
+</p><p>同じ 50 ダメージの攻撃を AC 16、GDR 32% で受けた場合は、AC/2 の上限のほうが効く。期待される (50 * .32) = 16 ではなく、最低でも (16 / 2) = 8 だけダメージが軽減される。
+</p>
+<h2><span class="mw-headline" id="Strategy">戦略</span></h2>
+<p>GDR は <a href="/AC" class="mw-redirect" title="AC">AC</a> に結びついているので、AC を増やす手段はどれも GDR も高める。損得も AC と同じだ。打たれ強くなるために <a href="/EV" class="mw-redirect" title="EV">EV</a> や呪文の使いやすさを犠牲にしてもよいかどうか、ということになる。近接戦闘を避けたいキャラクターは、やはりできるかぎり近接戦闘を避けたほうがよい。とはいえ、AC が安定してダメージを止めてくれるのは、GDR によるところが大きい。
+</p><p>たいていのキャラクターにとって、GDR は敵が与えられる物理ダメージの最大値を少し下げてくれるものだ。
+</p>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.27" title="0.27">0.27</a> より前は、GDR はもっと複雑だった。胴鎧の<a href="/Armour" title="Armour">防具</a>ごとに GDR が決まっていて、実際の AC に関係なく <code>(14 * (Body Armour Base AC - 2)^(1/2))%</code> で計算された。一部の<a href="/Transmutation" class="mw-redirect" title="Transmutation">変身</a>にも決まった GDR があった。<a href="/Gargoyle" title="Gargoyle">ガーゴイル</a>は基本の GDR が高く、胴鎧を着られない<a href="/Draconian" title="Draconian">ドラコニアン</a>には GDR がまったくなかった。詳しくは<a rel="nofollow" class="external text" href="http://crawl.chaosforge.org/index.php?title=Guaranteed_damage_reduction&amp;oldid=52698">この記事の過去の版</a>を参照。</li>
+<li><a href="/0.8" class="mw-redirect" title="0.8">0.8</a> より前は、GDR は <code>(Body Armour Base AC) * (13 + Armour) / 17</code> だった。</li>
+<li><a href="/0.5" class="mw-redirect" title="0.5">0.5</a> より前は、GDR がもっと高かった。</li></ul>
