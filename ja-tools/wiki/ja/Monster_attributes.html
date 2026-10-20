@@ -1,0 +1,28 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.26" title="0.26">0.26</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<p>モンスターはそれぞれ異なる<b>特性</b>(attribute)を持っている。モンスターの振る舞い、戦闘でのしぶとさ、特殊能力、耐性と弱点、全般的な能力値など、ゲーム内でのモンスターの働きは、すべてこの特性で決まる。
+</p><p>個々のモンスターの特性の大部分は、<i>Crawl</i> の<a href="/Source_code" title="Source code">ソースコード</a>の <a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/stone_soup-0.26/crawl-ref/source/mon-data.h">mon-data.h</a> というファイルに、次の形式で収められている。
+</p>
+<pre>1 行目: モンスターの ID、表示する文字、表示する色、名前
+2 行目: モンスターのフラグ
+3 行目: モンスターの耐性フラグ
+4 行目: 経験値の補正、属(genus)、種(species)、分類、意志力
+5 行目: 4 つの攻撃それぞれのダメージ
+6 行目: HD、HP
+7 行目: AC、EV、呪文、死体、叫び声
+8 行目: 知能、生息地、速度、energy_usage
+9 行目: gmon_use の区分、体格、体形
+10 行目: タイル、死体
+</pre>
+<p>ほかにも多くのモンスターの性質が、ソースのあちこちに直接書き込まれている。たとえば<a href="/Negative_energy_resistance" class="mw-redirect" title="Negative energy resistance">負のエネルギーへの耐性</a>は mon-data の「耐性フラグ」には含まれておらず、<a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/stone_soup-0.26/crawl-ref/source/monster.cc">monster.cc</a> にある。
+</p>
+<pre>int monster::res_negative_energy(bool intrinsic_only) const
+{
+    // If you change this, also change get_mons_resists.
+    if (!(holiness() &amp; MH_NATURAL))
+        return 3;
+    [耐性を与えるアイテムなどの追加の判定]
+}
+</pre>
+<p>これは「モンスターが<a href="/Natural" class="mw-redirect" title="Natural">生物</a>でなければ、負のエネルギーへの耐性を 3 段階持つ」という意味だ。
+</p><p>いろいろな特性の説明や、特定の特性を持つモンスターの一覧は、<a href="/Category:Monster_attributes" title="Category:Monster attributes">モンスターの特性のカテゴリ</a>を参照。
+</p>

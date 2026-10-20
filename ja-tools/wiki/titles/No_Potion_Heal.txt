@@ -1,0 +1,2 @@
+No Potion Heal
+薬での回復不可

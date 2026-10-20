@@ -88,3 +88,13 @@ Spellforged Servitor(旧名)	魔火花の従者
 Spit Poison(呪文)	毒の唾
 Divinations(旧系統・旧スキル)	占術(「予見術」は使わない)
 Transmutations / Transmutation(旧系統・旧スキル)	変成術(召喚術・転位術と同じ形。「変成」「変成の魔術」は使わない)
+Antimagic(ブランド・攻撃の追加効果)	反魔法(状態は「魔力阻害」。ステータス欄の「打撃: 反魔法」も反魔法)
+oblivion hound	忘却の猟犬
+doom hound(旧名)	忘却の猟犬(改名を説明する箇所だけ「破滅の猟犬(doom hound)は忘却の猟犬(oblivion hound)に改名」のように英語を添える)
+potion of cure mutation	変異治療の薬
+Abominations / Ablutions / Anathema / Apostates(ジンの法の公理の巻)	『忌まわしきもの』『沐浴』『呪詛』『背教者』
+スプリントのマップ名(Red Sonja、The Violet Keep of Menkaure、The Ten Rune Challenge、Fedhas' Mad Dash、Ziggurat Sprint、Thunderdome、The Pits、Arena of Blood、Linesprint)	英語のまま(ゲームでも英語で表示される)
+This article is about a previous release of Crawl…(版のページ冒頭の箱)	この記事は Crawl の過去のリリースについてのものだ。最新版を含むほかのバージョンについては、Stone Soup のバージョンの一覧を参照。
+Version 0.3x: This article may not be up to date…(記事冒頭の箱)	バージョン 0.3x: この記事は Crawl の最新の安定版の内容に追いついていないかもしれない。
+Obsolete(廃止の箱)	廃止: この記事は、ゲームから削除された要素について書いている。過去の記録として残しているだけだ。
+Trunk-only(trunk 限定の箱)	trunk 限定: この記事は、テスト中の Crawl の機能を扱っている。次のリリースまでに変わる可能性が高く、まるごと削除されることさえある。

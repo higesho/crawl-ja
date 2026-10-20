@@ -1,0 +1,115 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.29" title="0.29">0.29</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div><div>
+<table class="prettytable" style=" width:18em">
+<tr>
+<th colspan="2"> <a href="/File:Searing_ray.png" class="image"><img alt="Searing ray.png" src="/images/d/d8/Searing_ray.png" width="32" height="32" /></a>&#8195;焼灼の光線
+</th></tr>
+<tr>
+<th align="left"> レベル
+</th>
+<td> 2
+</td></tr>
+<tr>
+<th align="left"> 系統<sup>1</sup>
+</th>
+<td> <a href="/Conjurations" title="Conjurations">妖術</a>
+</td></tr>
+
+<tr>
+<th align="left"> 入手元
+</th>
+<td><a href="/Book_of_Conjurations" title="Book of Conjurations">妖術の魔法書</a>
+</td></tr>
+<tr>
+<th align="left"> <a href="/Spell_noise" title="Spell noise">詠唱の騒音</a>
+</th>
+<td> 2
+</td></tr>
+<tr>
+<th align="left"> <a href="/Spell_noise" title="Spell noise">呪文の騒音</a>
+</th>
+<td> 0
+</td></tr>
+
+<tr>
+<th align="left"> 威力の上限
+</th>
+<td> 50
+</td></tr>
+
+<tr>
+<th align="left"> 射程
+</th>
+<td> 4
+</td></tr>
+
+<tr>
+<th align="left"> フラグ
+</th>
+<td> 方向・対象指定(Dir or target)、射線の確認が必要(Needs tracer)
+</td></tr>
+</table></div>
+<table style=" width:auto; text-align:left">
+
+<tr>
+<td>
+</td>
+<td style="width: 100%"> 術者の手から、秘術のエネルギーの光線を途切れることなく放つ。光線は敵を貫く。術者が呪文に集中して魔力を注ぎ続けるかぎり(その場で待機し、ほかの行動を取らないかぎり)、狙った相手が動いても光線はそれを追う。
+</td></tr></table>
+<div>
+<table class="prettytable" style=" width:20em">
+<tr>
+<th colspan="2"> 呪文の詳細
+</th></tr>
+<tr>
+<th align="left"> ダメージの式
+</th>
+<td> <div>
+<p>2d(4.5 + Power/14)
+</p>
+</div>
+</td></tr>
+<tr>
+<th align="left"> 最大ダメージ
+</th>
+<td> 2d8
+</td></tr>
+<tr>
+<th align="left"> <a href="/Spell_power" class="mw-redirect" title="Spell power"> 最大威力</a>
+</th>
+<td> 50
+</td></tr>
+<tr>
+<th align="left"> 射程
+</th>
+<td> 4
+</td></tr>
+<tr>
+<th align="left"> 狙い方
+</th>
+<td>ボルト
+</td></tr>
+<tr>
+<th align="left"> 命中
+</th>
+<td><div>
+<p>11+Power/8
+</p>
+</div>
+</td></tr>
+<tr>
+<th align="left"> 特殊
+</th>
+<td> 詠唱を続ける呪文
+</td></tr></table></div>
+<p><b>焼灼の光線</b>はレベル 2 の<a href="/Conjurations" title="Conjurations">妖術</a>の呪文で、<a href="/Penetration" title="Penetration">貫通</a>するエネルギーの光線を数ターンにわたって放つ。
+</p><p><a href="/Conjurer" title="Conjurer">妖術師</a>は、この呪文を最初から呪文ライブラリに持っている。
+</p>
+<h2><span class="mw-headline" id="Useful_Info">基本情報</span></h2>
+<p>焼灼の光線は<a href="/Channeling_spell" title="Channeling spell">詠唱を続ける呪文</a>だ。一度放つと、術者は<b>光線(Ray)</b>の<a href="/Status_effect" class="mw-redirect" title="Status effect">状態</a>になる。それから 3 ターンのあいだ、<i><a href="/Wait" title="Wait">待機</a></i>(<b>s</b> か <b>.</b>)するたびに焼灼の光線がもう一度放たれ、そのコストは <a href="/MP" class="mw-redirect" title="MP">MP</a> 1 だけだ。つまり「最後まで撃ち切る」と MP は 5 かかる。続けて放つ光線は最初に狙ったモンスターに向かう。その目標が狙えなくなっていたり、地面を狙っていたり(<b>f .</b> で)したときは、前回の光線と同じ道筋を通る。
+</p><p>何かの効果で動かされると(<a href="/Elephant" title="Elephant">象</a>の踏みつけ攻撃、<a href="/Primal_Wave" title="Primal Wave">原初の大波</a>の呪文、意図しない<a href="/Blink" title="Blink">瞬間移動</a>など)、詠唱は途切れる。<a href="/Silence" title="Silence">静寂</a>でも途切れる。<a href="/Paralysis" title="Paralysis">麻痺</a>、<a href="/Confusion" title="Confusion">混乱</a>、<a href="/Sleep" title="Sleep">睡眠</a>、完全な<a href="/Petrification" class="mw-redirect" title="Petrification">石化</a>のあいだは、詠唱が一時的に止まる。
+</p>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.28" title="0.28">0.28</a> より前は、焼灼の光線のダメージは <code>3d(3+Power/12)</code> だった。</li>
+<li><a href="/0.27" title="0.27">0.27</a> で、この呪文を使ったオートファイトが賢くなった。</li>
+<li><a href="/0.25" title="0.25">0.25</a> より前は、光線を重ねるたびに強くなり、<a href="/Penetration" title="Penetration">貫通</a>するのは最後の 1 発だけだった。特定の目標を追うことはできず、いつも同じ道筋を通った。</li>
+<li>焼灼の光線は <a href="/0.13" title="0.13">0.13</a> で追加された。</li></ul>
