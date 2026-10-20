@@ -1464,7 +1464,7 @@ You are covered in thick fur. (AC +2)
 %%%%
 Your thick and shaggy fur keeps you warm. (AC +3, rC+)
 
-あなたの厚く、毛むくじゃらの毛皮はあなたの温もりを保つ。(AC +3, rC+)
+厚く毛むくじゃらの毛皮が、あなたの体を温かく保っている。(AC +3, rC+)
 %%%%
 Fur sprouts all over your body.
 
@@ -1492,7 +1492,7 @@ Your shaggy fur recedes somewhat.
 %%%%
 Your shaggy fur will keep you warm. (AC + 3, rC+)
 
-あなたの毛むくじゃらの毛皮はあなたの温もりを保つだろう。(AC + 3, rC+)
+毛むくじゃらの毛皮が、あなたの体を温かく保ってくれるだろう。(AC + 3, rC+)
 %%%%
 # MUT_HIGH_MAGIC
 high MP
@@ -2001,7 +2001,7 @@ magic link
 %%%%
 When low on magic, you restore magic in place of health.
 
-あなたは魔力が低下した際に、体力を魔力に変換する。
+あなたは魔力が少なくなると、体力の代わりに魔力が回復する。
 %%%%
 You feel your life force and your magical essence meld.
 

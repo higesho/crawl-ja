@@ -836,7 +836,7 @@ titan
 # en:
 #   A huge, bolt-hurling, lightning-limned humanoid. It is unusually large and
 #   powerful, even among giants.
-巨大で、雷の矢を放つ、雷にかたどられた人型生物だ。
+稲妻をまとい、雷の矢を放つ巨大な人型生物だ。
 巨人族の中にあってさえ著しく巨大で力強い。
 %%%%
 toenail golem
