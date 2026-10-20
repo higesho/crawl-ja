@@ -879,8 +879,8 @@ wraith
 # en:
 #   A cloud of black mist surrounding an insubstantial skeletal form. Its eyes burn
 #   bright with unholy malevolence and hunger for life essence, on which it feeds.
-黒い霧をまとう実態の無い骸骨の姿をしている。
-その目は不浄なる悪意と生命力への飢えに赤く輝いている。
+黒い霧をまとう実体の無い骸骨の姿をしている。
+その目は不浄なる悪意と、糧とする生命力への飢えに爛々と輝いている。
 %%%%
 wretched star
 
