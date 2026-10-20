@@ -447,7 +447,7 @@ cloak of Flash
 
 # en:
 #   A cloak that twitches and jerks without any intervention.
-振動しているクロークだ。
+誰も触れていないのに、ぴくぴくと引きつるように動くクロークだ。
 %%%%
 hood of the Assassin
 
@@ -604,7 +604,7 @@ amulet of Cekugob
 #   A strange-looking piece of crystal on an ordinary-looking string, with an odd
 #   selection of powers.
 なんの変哲もない紐で括られたおかしな見た目の水晶の欠片だ。
-これには様々な能力が秘められている。
+妙な取り合わせの能力が秘められている。
 %%%%
 amulet of the Four Winds
 
