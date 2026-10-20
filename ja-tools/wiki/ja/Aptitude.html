@@ -1,0 +1,288 @@
+<p><b>スキル適性</b>(aptitude)は、ある<a href="/Skill" title="Skill">スキル</a>をどれだけ速く伸ばせるかを表す値だ。適性が高いほど、そのスキルを早く覚えられる。適性は<a href="/Species" title="Species">種族</a>で決まり、種族ごとにスキルひとつひとつの適性が別々に定められている。そのため、種族によって向いているスキルと向いていないスキルがある。たとえば<a href="/Deep_Elves" class="mw-redirect" title="Deep Elves">闇エルフ</a>は魔法を覚えやすく、<a href="/Minotaur" title="Minotaur">ミノタウロス</a>は近接戦闘を覚えやすい。種族の適性をうまく活かすことが、ゲームに勝つための鍵になる。
+</p><p>自分の種族の適性は、スキルメニュー(<b>m</b>)を開けばいつでも確かめられる。ゲーム中で <b>?&#160;%</b> を押せば種族と適性の大きな表が見られるし、wiki の各<a href="/Species" title="Species">種族</a>のページでも確認できる。
+</p>
+<div id="toc" class="toc"><div class="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Useful_Info"><span class="tocnumber">1</span> <span class="toctext">基本情報</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Formula"><span class="tocnumber">1.1</span> <span class="toctext">計算式</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Strategy"><span class="tocnumber">2</span> <span class="toctext">戦略</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Trivia"><span class="tocnumber">3</span> <span class="toctext">こぼれ話</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#History"><span class="tocnumber">4</span> <span class="toctext">変更履歴</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Useful_Info">基本情報</span></h2>
+<p>適性は -5 から +11 までの値で表され、0 が基準になる。
+</p><p>適性はほぼ<a href="/Species" title="Species">種族</a>だけで決まり、ゲーム中に変える手段はごくわずかしかない。<a href="/Manual" title="Manual">虎の巻</a>を使うと、読み終えるまで適性が +4 される。また、<a href="/Ru" title="Ru">ルー</a>への犠牲として、自分から適性を下げることもできる。
+</p><p>適性が高いと必要な経験値が少なくて済むので、スキルが速く伸びる。適性ごとに必要な経験値の比を下の表にまとめた。
+</p>
+<table class="wikitable">
+<tr>
+<th>適性
+</th>
+<th>スキルコスト
+</th>
+<th>説明
+</th></tr>
+<tr>
+<td> -5
+</td>
+<td>(238)
+</td>
+<td>絶望的な適性
+</td></tr>
+<tr>
+<td> -4
+</td>
+<td>(200)
+</td>
+<td>ひどく劣る適性
+</td></tr>
+<tr>
+<td> -3
+</td>
+<td>(168)
+</td>
+<td>劣る適性
+</td></tr>
+<tr>
+<td> -2
+</td>
+<td>(141)
+</td>
+<td>悪い適性
+</td></tr>
+<tr>
+<td> -1
+</td>
+<td>(119)
+</td>
+<td>やや不向きな適性
+</td></tr>
+<tr>
+<td> 0
+</td>
+<td>(100)
+</td>
+<td>標準的な適性
+</td></tr>
+<tr>
+<td> +1
+</td>
+<td>(84)
+</td>
+<td>やや向いている適性
+</td></tr>
+<tr>
+<td> +2
+</td>
+<td>(71)
+</td>
+<td>高い適性
+</td></tr>
+<tr>
+<td> +3
+</td>
+<td>(59)
+</td>
+<td>とても高い適性
+</td></tr>
+<tr>
+<td> +4
+</td>
+<td>(50)
+</td>
+<td>抜きん出た適性
+</td></tr>
+<tr>
+<td> +5
+</td>
+<td>(42)
+</td>
+<td>並外れた適性
+</td></tr>
+</table>
+<p>たとえば適性 -5 の種族は、適性 0 の種族の <code>238/100</code> = 2.38 倍の経験値を必要とする。
+</p><p>適性が「NA」となっているのは、その種族がそのスキルをまったく習得できないという意味だ。たとえば<a href="/Felid" title="Felid">フェリッド</a>は<a href="/Armour" title="Armour">防具</a>を着られないので、<a href="/Armour_skill" class="mw-redirect" title="Armour skill">甲冑スキル</a>のレベルは少しも上がらない。
+</p>
+<h3><span class="mw-headline" id="Formula">計算式</span></h3>
+<p>ある種族の適性が <font size="3"><code>n</code></font> なら、そのスキルのレベルをひとつ上げるのに必要な経験値は、適性 0 の種族の <font size="3"><code>2^(-n/4)</code></font> 倍になる。言い換えると、適性が +4 上がるごとに、1レベルあたりの経験値のコストが半分になる。
+</p><p>例: <a href="/Poltergeist" title="Poltergeist">ポルターガイスト</a>の<a href="/Hexes" title="Hexes">呪術</a>の適性は +4、<a href="/Human" title="Human">人間</a>は 0 だ。人間がレベルをひとつ上げるのに 100 の経験値が要るとすると、ポルターガイストが同じレベルを上げるのに要るのは <code>100 * 2^(-4/4)</code>、つまり 50 の経験値になる。
+</p><p>ただし、経験値のコストが半分になってもレベルが2倍になるわけではない。スキルのレベルが上がるごとに必要な経験値も増えていくからだ。人間が呪術のレベル 10 なら、ポルターガイストは 20 ではなく、実際には 14 になる。
+</p>
+<h2><span class="mw-headline" id="Strategy">戦略</span></h2>
+<p>適性には意味があるので、種族の得意な適性は無理のない範囲で活かすべきだ。
+</p><p>とはいえ、適性の影響は大げさに語られがちだ。<i>実際のところ</i>、適性が ±1 違っても大したことはない。適性 -1 でスキルを鍛えても、適性 0 のときとそれほど遅さは変わらない。±2 の差でもなんとかなる。なにしろ<a href="/Mummy" title="Mummy">ミイラ</a>でも勝てるのだから。適性によってスキルのレベルがどう変わるかは、下の表を参照。
+</p>
+<table class="wikitable">
+<tr>
+<th>適性 0
+</th>
+<th>適性 -1
+</th>
+<th>適性 -2
+</th></tr>
+<tr>
+<td>レベル 5
+</td>
+<td>レベル 4.5
+</td>
+<td>レベル 4.12
+</td></tr>
+<tr>
+<td>レベル 10
+</td>
+<td>レベル 9.16
+</td>
+<td>レベル 8.36
+</td></tr>
+<tr>
+<td>レベル 15
+</td>
+<td>レベル 13.8
+</td>
+<td>レベル 12.75
+</td></tr>
+<tr>
+<td>レベル 20
+</td>
+<td>レベル 18.49
+</td>
+<td>レベル 17.08
+</td></tr>
+<tr>
+<td>レベル 27
+</td>
+<td>レベル 25.04
+</td>
+<td>レベル 23.23
+</td></tr></table>
+<p>たいていのスキルでは、たとえばレベル 15 とレベル 13.8 の差は小さい。武器のスキルが 13.8 か 15 かで勝負が決まることはめったにない。
+</p><p>だから、適性が低いというだけでスキルを切り捨てるべきではない。スキルを鍛えるかどうかは、<a href="/Stat" class="mw-redirect" title="Stat">能力値</a>や手持ちの装備・呪文も考えて決めること。たとえば序盤にすばらしい<a href="/Randart" title="Randart">ランダムアーティファクト</a>の<a href="/Demon_blade" title="Demon blade">悪魔の刃</a>を見つけたなら、<a href="/Long_Blades" title="Long Blades">長剣</a>の適性が -2 でも、たぶん使ったほうがいい。
+</p>
+<h2><span class="mw-headline" id="Trivia">こぼれ話</span></h2>
+<p>下の表は、現在プレイできる全種族の適性の平均だ。スキルの鍛え方に制限があるため、<a href="/Gnoll" title="Gnoll">ノール</a>の適性と<a href="/Djinni" title="Djinni">ジンニー</a>の魔法の適性は含めていない。<a href="/Draconian" title="Draconian">ドラコニアン</a>は、色の分かれる前の基本のドラコニアンだけを含めている。
+</p>
+<table class="wikitable">
+<tr>
+<th><a href="/Skill" title="Skill">スキル</a></th>
+<th><a class="mw-selflink selflink">適性</a></th>
+<th><a href="/Skill" title="Skill">スキル</a></th>
+<th><a class="mw-selflink selflink">適性</a></th>
+<th><a href="/Skill" title="Skill">スキル</a></th>
+<th><a class="mw-selflink selflink">適性</a>
+</th></tr>
+<tr>
+<td colspan="2" align="center"><i><b>攻撃</b></i></td>
+<td colspan="2" align="center"><i><b>その他</b></i></td>
+<td colspan="2" align="center"><i><b>魔法</b></i>
+</td></tr>
+<tr>
+<td><a href="/Fighting" title="Fighting">戦闘</a></td>
+<td align="right">0.148</td>
+<td><a href="/Armour" title="Armour">甲冑</a></td>
+<td align="right">-0.478</td>
+<td><a href="/Spellcasting" title="Spellcasting">呪文詠唱</a></td>
+<td align="right">-0.846
+</td></tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="/Dodging" title="Dodging">躱し身</a></td>
+<td align="right">-0.148</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td><a href="/Maces_%26_Flails" title="Maces &amp; Flails">鈍器</a></td>
+<td align="right">-0.654</td>
+<td><a href="/Shields_(skill)" title="Shields (skill)">盾</a></td>
+<td align="right">-0.385</td>
+<td><a href="/Conjurations" title="Conjurations">妖術</a></td>
+<td align="right">-0.731
+</td></tr>
+<tr>
+<td><a href="/Axes" title="Axes">斧</a></td>
+<td align="right">-0.692</td>
+<td><a href="/Stealth_(skill)" title="Stealth (skill)">隠密</a></td>
+<td align="right">1.296</td>
+<td><a href="/Hexes" title="Hexes">呪術</a></td>
+<td align="right">-0.192
+</td></tr>
+<tr>
+<td><a href="/Polearms" title="Polearms">長柄武器</a></td>
+<td align="right">-0.654</td>
+<td></td>
+<td></td>
+<td><a href="/Summonings" title="Summonings">召喚術</a></td>
+<td align="right">-0.577
+</td></tr>
+<tr>
+<td><a href="/Staves" title="Staves">棒術</a></td>
+<td align="right">-0.577</td>
+<td><a href="/Invocations" title="Invocations">祈祷</a></td>
+<td align="right">0.538</td>
+<td><a href="/Necromancy" title="Necromancy">死霊術</a></td>
+<td align="right">-0.423
+</td></tr>
+<tr>
+<td><a href="/Unarmed_Combat" title="Unarmed Combat">徒手格闘</a></td>
+<td align="right">-0.333</td>
+<td><a href="/Evocations" title="Evocations">発動</a></td>
+<td align="right">0.000</td>
+<td><a href="/Forgecraft" title="Forgecraft">鍛造術</a></td>
+<td align="right">-0.654
+</td></tr>
+<tr>
+<td><a href="/Throwing" title="Throwing">投擲</a></td>
+<td align="right">-0.577</td>
+<td><a href="/Shapeshifting" title="Shapeshifting">変身術</a></td>
+<td align="right">-1.167</td>
+<td><a href="/Translocations" title="Translocations">転位術</a></td>
+<td align="right">-0.231
+</td></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="/Alchemy" title="Alchemy">錬金術</a></td>
+<td align="right">-0.231
+</td></tr>
+<tr>
+<td><a href="/Short_Blades" title="Short Blades">短剣</a></td>
+<td align="right">-0.231</td>
+<td></td>
+<td></td>
+<td><a href="/Fire_Magic" title="Fire Magic">炎の魔術</a></td>
+<td align="right">-0.692
+</td></tr>
+<tr>
+<td><a href="/Long_Blades" title="Long Blades">長剣</a></td>
+<td align="right">-0.500</td>
+<td></td>
+<td></td>
+<td><a href="/Ice_Magic" title="Ice Magic">氷の魔術</a></td>
+<td align="right">-0.500
+</td></tr>
+<tr>
+<td><a href="/Ranged_Weapons" title="Ranged Weapons">射撃武器</a></td>
+<td align="right">-0.808</td>
+<td></td>
+<td></td>
+<td><a href="/Air_Magic" title="Air Magic">風の魔術</a></td>
+<td align="right">-0.731
+</td></tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="/Experience" title="Experience">経験値</a></td>
+<td align="right">-0.407</td>
+<td><a href="/Earth_Magic" title="Earth Magic">地の魔術</a></td>
+<td align="right">-0.462
+</td></tr></table>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.7.0" title="0.7.0">0.7.0</a> より前は、上の<i>スキルコスト</i>の表のように、適性は 100(平均)より小さいか大きいかの数値で表されていた。</li></ul>
