@@ -76,7 +76,7 @@
 %%%%
 [spec name]Purple Draconian
 
-紫ドラコニアン
+紫色ドラコニアン
 %%%%
 [spec name]Mottled Draconian
 
