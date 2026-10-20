@@ -194,7 +194,8 @@ NAV = [("index.html", "入口"), ("monster.html", "モンスター"),
        ("spell.html", "呪文"), ("item.html", "アイテム"),
        ("artefact.html", "固定アーティファクト"), ("species.html", "種族"),
        ("job.html", "職業"), ("god.html", "神"), ("branch.html", "ダンジョン"),
-       ("mutation.html", "突然変異"), ("misc.html", "事典")]
+       ("mutation.html", "突然変異"), ("misc.html", "事典"),
+       ("wiki/index.html", "wiki 翻訳")]
 
 
 def page(fname: str, title: str, lead: str, body: str, version: str,
@@ -803,7 +804,7 @@ def build_misc(data: Data, tiles: Tiles) -> str:
     jump = '<p class="jump">' + "".join(
         f'<a href="#g-{g}">{label}</a>' for g, label in opts) + "</p>"
     lead = """<code>?/</code> 検索で引ける項目のうち、ほかのページに入らなかったものです。
- 能力には神様や種族の能力も入っています。カードはネメレックスのデッキのカードです。"""
+ 能力には神様や種族の能力も入っています。カードはネメレクスのデッキのカードです。"""
     body = f"""<h1>事典</h1>
 <p class="lead">{jp(lead)}</p>
 {jump}
