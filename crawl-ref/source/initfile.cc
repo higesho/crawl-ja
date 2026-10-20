@@ -3714,8 +3714,9 @@ void game_options::read_pad_bind(const string &field)
                          button_name.c_str());
             continue;
         }
-        // 単独押しの A と B は決定・取消で固定(同時押しの層では割り当てられる)。
-        if (mods == 0 && (button == PAD_A || button == PAD_B))
+        // 単独押しの A・B(決定・取消)と L3・R3(クリック)は固定
+        // (同時押しの層では割り当てられる)。
+        if (pad_slot_fixed(button, mods))
         {
             report_error(jtransc("The gamepad's %s button can't be rebound"),
                          pad_button_name(button));

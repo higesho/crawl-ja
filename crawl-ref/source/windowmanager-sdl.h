@@ -87,6 +87,9 @@ private:
     void pad_pump_events();
     void pad_update();
     bool pad_take_key(int &key);
+    bool pad_mouse_position(int &x, int &y);
+    void pad_move_cursor(int dx, int dy);
+    bool pad_click(const pad_output &out);
     void pad_open(int device_index);
     void pad_close();
     void pad_forget();

@@ -9,7 +9,9 @@
 
 #include "gamepad.h"
 
+#include <algorithm>
 #include <cctype>
+#include <cmath>
 
 namespace
 {
@@ -34,8 +36,8 @@ namespace
         { PAD_RT,    "RT",    "CMD_FIRE" },              // 射撃
         { PAD_BACK,  "Back",  "CMD_GAME_MENU" },         // ゲームメニュー
         { PAD_START, "Start", "CMD_CAST_SPELL" },        // 呪文を唱える
-        { PAD_L3,    "L3",    "CMD_REST" },              // 休む・探す
-        { PAD_R3,    "R3",    "CMD_USE_ABILITY" },       // 能力を使う
+        { PAD_L3,    "L3",    nullptr },                 // 左クリック(固定)
+        { PAD_R3,    "R3",    nullptr },                 // 右クリック(固定)
     };
 
     // 別名(小文字で比べる)。
@@ -161,6 +163,12 @@ bool parse_pad_slot(const std::string &name, pad_button &button, int &mods)
     return parse_pad_button(rest, button) && pad_slot_valid(button, mods);
 }
 
+bool pad_slot_fixed(pad_button b, int mods)
+{
+    return mods == 0
+           && (b == PAD_A || b == PAD_B || b == PAD_L3 || b == PAD_R3);
+}
+
 const char *pad_default_command_name(pad_button b)
 {
     if (b < 0 || b >= NUM_PAD_BUTTONS)
@@ -247,6 +255,60 @@ void gamepad_state::sync_trigger(int which, int value)
 {
     if (which >= 0 && which <= 1)
         m_trigger_down[which] = value > TRIGGER_DOWN;
+}
+
+void gamepad_state::set_cursor_stick(int axis, int value)
+{
+    if (axis == 0)
+        m_cursor_x = value;
+    else if (axis == 1)
+        m_cursor_y = value;
+}
+
+bool gamepad_state::cursor_active() const
+{
+    const double x = m_cursor_x, y = m_cursor_y;
+    return x * x + y * y > double(CURSOR_DEADZONE) * CURSOR_DEADZONE;
+}
+
+bool gamepad_state::cursor_motion(uint32_t now, bool focused, int &dx, int &dy)
+{
+    dx = 0;
+    dy = 0;
+    if (!focused || !cursor_active())
+    {
+        m_cursor_moving = false;
+        m_cursor_frac_x = 0;
+        m_cursor_frac_y = 0;
+        return false;
+    }
+    if (!m_cursor_moving)
+    {
+        // 倒し始め。時刻だけ覚え、次の刻みから動かす。
+        m_cursor_moving = true;
+        m_cursor_last = now;
+        return false;
+    }
+
+    // 待ちが長引いても(重い処理のあとなど)まとめて大きく飛ばない。
+    const uint32_t dt = std::min<uint32_t>(now - m_cursor_last, 100);
+    m_cursor_last = now;
+
+    const double x = m_cursor_x, y = m_cursor_y;
+    const double mag = std::sqrt(x * x + y * y);
+    const double t = (std::min(mag, 32767.0) - CURSOR_DEADZONE)
+                     / (32767.0 - CURSOR_DEADZONE);
+    // 2 乗の曲線: 浅く倒すと細かく、倒し切ると速く動く。
+    const double speed = CURSOR_MIN_SPEED
+                         + (CURSOR_MAX_SPEED - CURSOR_MIN_SPEED) * t * t;
+    const double step = speed * dt / 1000.0;
+    m_cursor_frac_x += x / mag * step;
+    m_cursor_frac_y += y / mag * step;
+    dx = static_cast<int>(m_cursor_frac_x);
+    dy = static_cast<int>(m_cursor_frac_y);
+    m_cursor_frac_x -= dx;
+    m_cursor_frac_y -= dy;
+    return dx != 0 || dy != 0;
 }
 
 void gamepad_state::current_direction(int &dx, int &dy) const
@@ -390,9 +452,18 @@ int gamepad_state::ms_until_due(uint32_t now) const
         return 0;
     if (m_pending)
         return remaining(now, m_pending_since + COMBINE_MS);
+    int due = -1;
     if ((m_held_dx != 0 || m_held_dy != 0) && m_repeat)
-        return remaining(now, m_next_repeat);
-    return -1;
+        due = remaining(now, m_next_repeat);
+    if (cursor_active())
+    {
+        // 右スティックを倒している間は、刻みごとに起きてカーソルを動かす。
+        const int cursor_due = m_cursor_moving
+            ? remaining(now, m_cursor_last + CURSOR_TICK_MS) : CURSOR_TICK_MS;
+        if (due < 0 || cursor_due < due)
+            due = cursor_due;
+    }
+    return due;
 }
 
 bool gamepad_state::take_output(pad_output &out)
@@ -423,5 +494,10 @@ void gamepad_state::forget()
         m_mod_held[i] = false;
         m_mod_used[i] = false;
     }
+    m_cursor_x = 0;
+    m_cursor_y = 0;
+    m_cursor_moving = false;
+    m_cursor_frac_x = 0;
+    m_cursor_frac_y = 0;
     m_outputs.clear();
 }

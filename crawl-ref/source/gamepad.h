@@ -79,8 +79,12 @@ const char *pad_button_name(pad_button b);
 // 綴りから読む(大文字小文字は問わない。Select, LS/RS, L1/R1, L2/R2 も読む)。
 bool parse_pad_button(const std::string &name, pad_button &out);
 
+// 単独押しで固定の役目を持ち、割り当てられないボタンか。A = 決定、B = 取消、
+// L3 = 左クリック、R3 = 右クリック。同時押しの層(LB+A など)は枠として割り当てられる。
+bool pad_slot_fixed(pad_button b, int mods);
+
 // 既定の割り当て(コマンド名。bindkey と同じ綴り)。無ければ nullptr。
-// A と B は固定(決定・取消)なので nullptr。
+// 単独押しが固定のボタン(A・B・L3・R3)は nullptr。
 const char *pad_default_command_name(pad_button b);
 
 // パッドが出すもの 1 つ。方向か、ボタンの押し。
@@ -105,6 +109,13 @@ public:
     static const int COMBINE_MS = 40;
     // 2 回目以降のリピートの間隔。
     static const int REPEAT_MS = 90;
+    // 右スティックで動かすマウスのカーソル(GAMEPAD_DESIGN.md §2.2)。
+    // 死区は円で取る。倒し切ったときの速さは 1 秒あたりの窓の座標。
+    static const int CURSOR_DEADZONE = 8000;
+    static const int CURSOR_MIN_SPEED = 60;
+    static const int CURSOR_MAX_SPEED = 1400;
+    // 倒している間、カーソルを動かす間隔。
+    static const int CURSOR_TICK_MS = 16;
 
     void set_button(pad_button b, bool down);
     void set_dpad(pad_dpad d, bool down);
@@ -115,6 +126,13 @@ public:
     // トリガの押し下げ状態だけを今の値に合わせる(押したことにはしない)。
     // 焦点が戻った・挿した直後に、握ったままのトリガを押しと数えないために使う。
     void sync_trigger(int which, int value);
+    // 右スティック。axis: 0 = 左右(右が正), 1 = 上下(下が正)。
+    void set_cursor_stick(int axis, int value);
+    /**
+     * 右スティックの倒し方から、前回からのカーソルの移動量を出す。端数は持ち越す。
+     * @return 動かす量が 0 でなければ true。
+     */
+    bool cursor_motion(uint32_t now, bool focused, int &dx, int &dy);
 
     /**
      * 方向の状態を進める。出すべき方向があれば出力の列に積む。
@@ -142,6 +160,12 @@ private:
     bool m_dpad[NUM_PAD_DPAD] = {};
     int m_stick_x = 0, m_stick_y = 0;    // -1/0/1 に丸めたもの
     bool m_trigger_down[2] = {};
+
+    bool cursor_active() const;
+    int m_cursor_x = 0, m_cursor_y = 0;  // 右スティックの生の値
+    bool m_cursor_moving = false;        // 前回 cursor_motion() で動いていたか
+    uint32_t m_cursor_last = 0;          // 前回 cursor_motion() の時刻
+    double m_cursor_frac_x = 0, m_cursor_frac_y = 0; // 1 に満たない端数
 
     int m_held_dx = 0, m_held_dy = 0;    // 最後に出した(押し続けている)向き
     uint32_t m_next_repeat = 0;

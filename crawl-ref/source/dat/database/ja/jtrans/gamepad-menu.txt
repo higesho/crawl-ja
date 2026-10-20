@@ -33,9 +33,9 @@ Undo all changes made in this screen
 
 [<w>上</w>/<w>下</w>] で選ぶ、[<w>A</w>/<w>Enter</w>] で変える、[<w>B</w>/<w>Esc</w>] で閉じる。パッドのボタンや同時押しを押しても、その枠を変えられる。
 %%%%
-A (confirm) and B (cancel) alone are fixed. <yellow>Yellow</yellow> rows were changed here: they are saved to pad_binds.txt and take precedence over pad_bind in the rc file.
+A (confirm), B (cancel), L3 (left click) and R3 (right click) alone are fixed; the right stick moves the mouse cursor. <yellow>Yellow</yellow> rows were changed here: they are saved to pad_binds.txt and take precedence over pad_bind in the rc file.
 
-A(決定)と B(取消)の単独押しは固定。<yellow>黄色</yellow>の行はこの画面で変えたもので、pad_binds.txt に保存され、rc の pad_bind より優先する。
+A(決定)、B(取消)、L3(左クリック)、R3(右クリック)の単独押しは固定。右スティックでマウスのカーソルが動く。<yellow>黄色</yellow>の行はこの画面で変えたもので、pad_binds.txt に保存され、rc の pad_bind より優先する。
 %%%%
 Really undo all changes made in this screen?
 
