@@ -1,0 +1,87 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.31" title="0.31">0.31</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<p><b>視界</b>(Line of sight。よく <b>LOS</b> と略される)は、ダンジョンのうち、あなたから見えている範囲のことだ。ふつうは、視界の中にいるモンスターとしか攻撃し合えない。
+</p>
+<div id="toc" class="toc"><div class="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Useful_Info"><span class="tocnumber">1</span> <span class="toctext">基本情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Strategy"><span class="tocnumber">2</span> <span class="toctext">戦略</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Attacking_Outside_LOS"><span class="tocnumber">2.1</span> <span class="toctext">視界の外を攻撃する</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Being_Attacked_Outside_LOS"><span class="tocnumber">2.2</span> <span class="toctext">視界の外から攻撃される</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#History"><span class="tocnumber">3</span> <span class="toctext">変更履歴</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Changing_LOS"><span class="tocnumber">3.1</span> <span class="toctext">視界を変えるもの</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Useful_Info">基本情報</span></h2>
+<p>ほとんどの種族の標準の視界は半径 7 マス、つまり 15x15 の正方形だ。
+</p><p>次の図は、標準の視界に入るマスと、そのマスまでの距離を表している。
+</p>
+<pre>
+777777777777777
+766666666666667
+765555555555567
+765444444444567
+765433333334567
+765432222234567
+765432111234567
+7654321@1234567
+765432111234567
+765432222234567
+765433333334567
+765444444444567
+765555555555567
+766666666666667
+777777777777777
+</pre>
+<p>視界を広げたり狭めたりする方法はいくつかある。
+</p>
+<ul><li> 影の<a href="/Scarf" title="Scarf">スカーフ</a>は視界を 1 狭める。</li>
+<li> <a href="/Robe_of_Night" title="Robe of Night">闇夜のローブ</a>は視界を 25% 狭める(端数は切り捨て)。</li>
+<li> <a href="/Kobold" title="Kobold">コボルド</a>は<a href="/Nightstalker" title="Nightstalker">闇隠れ</a>を 3 段階持って始まるので、視界が 3 マス狭まって 4 マス(9x9 の正方形)になる。</li>
+<li> <a href="/Barachim" class="mw-redirect" title="Barachim">バラチ</a>は生まれつきの変異で標準の視界が 1 広く、全部で 8 マス(17x17 の正方形)になる。</li></ul>
+<p>視界は「効果の通り道」(line of effect。ダンジョンのうち、あなたが働きかけられる範囲)と似ているが、別のものだ。たいていは同じと考えてかまわないが、見えているのに働きかけられない場所(透明な<a href="/Wall" title="Wall">壁</a>の向こうのマスなど)や、働きかけられるのに見えない場所(曲がり角の先の敵に当たる<a href="/Fireball" title="Fireball">ファイアボール</a>の爆発など)が生じることもある。
+</p>
+<h2><span class="mw-headline" id="Strategy">戦略</span></h2>
+<p>こちらから見えなければ、向こうからも見えない。ごく一部の例外を除いて、<b>あなたが見えていない敵は、あなたを攻撃できない。</b>
+</p><p>敵との間の視界を切る方法はいくつかある。
+</p>
+<ul><li>テレポートや瞬間移動で範囲の外へ出る</li>
+<li><a href="/Door" title="Door">扉</a>を閉める</li>
+<li>曲がり角を曲がる</li>
+<li><a href="/Scroll_of_fog" title="Scroll of fog">煙幕の巻物</a>を読む</li>
+<li><a href="/Stairs" title="Stairs">階段</a>や<a href="/Shaft" title="Shaft">縦穴</a>で別の階へ移る</li>
+<li>相手を<a href="/Zin" title="Zin">収監</a>する、または<a href="/Tomb_card" title="Tomb card">自分</a>を閉じこめる</li>
+<li>相手が追いつけないほど速く逃げる</li></ul>
+<p>視界は正方形なので、ほかの条件が同じなら、斜めに探索したほうが縦横に探索するより多くのマスが見える。<a href="/Abyss" class="mw-redirect" title="Abyss">アビス</a>の出口を探したいときや、<a href="/Human" title="Human">人間</a>の再生のためにできるだけ多くのマスを明らかにしたいときは、斜めに進もう。
+</p>
+<h3><span class="mw-headline" id="Attacking_Outside_LOS">視界の外を攻撃する</span></h3>
+<p>モンスターと同じく、あなたの攻撃もほとんどは視界の外の相手には届かない。たとえば<a href="/Ranged_weapon" class="mw-redirect" title="Ranged weapon">射撃武器</a>は視界の端までしか撃てないし、<a href="/Summon" title="Summon">召喚物</a>は自分か攻撃相手のどちらかが視界の外にいると攻撃できない。あなたが作った<a href="/Cloud" title="Cloud">雲</a>も、視界の外へ出ると消える。ただし例外もいくつかある。以下はその一部だ。
+</p>
+<ul><li>「爆発」型の攻撃の多く: <a href="/Damnation" title="Damnation">天罰</a>、<a href="/Fireball" title="Fireball">ファイアボール</a>、<a href="/Fire_Storm" title="Fire Storm">炎の嵐</a>、<a href="/Iceblast" class="mw-redirect" title="Iceblast">凍てつく吹雪</a>、<a href="/Inner_Flame" title="Inner Flame">内なる炎</a>、<a href="/Lee%27s_Rapid_Deconstruction" title="Lee&#39;s Rapid Deconstruction">リーの瞬間解体術</a>(壁の向こう側には当たらない)、<a href="/Tin_of_tremorstones" title="Tin of tremorstones">震動石の缶</a>。</li>
+<li><a href="/Allied" class="mw-redirect" title="Allied">味方</a>/<a href="/Neutral" class="mw-redirect" title="Neutral">中立</a>のモンスターの一部: <a href="/Charm" class="mw-redirect" title="Charm">魅了</a>したモンスター、<a href="/Gozag" class="mw-redirect" title="Gozag">買収</a>したモンスター、<a href="/Frenzied" class="mw-redirect" title="Frenzied">狂乱</a>したモンスター、<a href="/Tukima%27s_Dance" title="Tukima&#39;s Dance">ツキマーの舞踏</a>で動かした武器、<a href="/Fedhas" class="mw-redirect" title="Fedhas">フェダス</a>の植物のうち召喚されたものでなく、その場から動くもの、<a href="/Kirke" title="Kirke">キルケー</a>の一団の人間。</li>
+<li>継続する効果: <a href="/Poison" title="Poison">毒</a>と<a href="/Sticky_Flame" title="Sticky Flame">焼夷の炎</a>。</li></ul>
+<p>なお、別の階にいる敵を、その階に入らずに攻撃する方法はない。
+</p>
+<h3><span class="mw-headline" id="Being_Attacked_Outside_LOS">視界の外から攻撃される</span></h3>
+<p>視界の中に狙う相手がいなくても、モンスターは次の呪文を唱えられる。
+</p>
+<ul><li><a href="/Dig" title="Dig">掘削</a></li>
+<li><a href="/Major_Healing" title="Major Healing">大いなる癒し</a></li>
+<li><a href="/Minor_Healing" title="Minor Healing">小さな癒し</a></li></ul>
+<p>また、モンスターは自分がプレイヤーの視界の外にいても、あなたの<a href="/Allies" class="mw-redirect" title="Allies">仲間</a>を狙える。モンスターが爆発、範囲攻撃、雲など「残る」タイプの攻撃を使った場合は、それがあなたに当たることもある。
+</p>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.17" title="0.17">0.17</a> より前は、視界は半径およそ 8 の円形だった。全体として見えるマスは少しだけ少なく、斜め方向はずっと狭かった。角度によっては、(8 マスではなく)5 マス先の相手にしか届かなかった。</li></ul>
+<dl><dd>射程も円形で、斜めに撃つと射程が最大で 2 マス縮んだ。たとえば<a href="/Bolt_of_Fire" title="Bolt of Fire">猛火の矢</a>は、縦横には 7 マス、斜めには 5 マス、その中間の方向には 6 マス届いた。基本の射程は、どれも今の版より 1 長かった。</dd></dl>
+<ul><li><a href="/0.7" class="mw-redirect" title="0.7">0.7</a> より前は、能力や呪文の射程は円形ではなく長方形だった。</li></ul>
+<h3><span class="mw-headline" id="Changing_LOS">視界を変えるもの</span></h3>
+<ul><li><a href="/0.26" title="0.26">0.26</a> で、視界を狭める<a href="/Shadows" title="Shadows">影</a>のエゴが加わり、<a href="/Darkness" title="Darkness">暗闇の喚起</a>の呪文がなくなった。また<a href="/Nightstalker" title="Nightstalker">闇隠れ</a>が、<a href="/Demonspawn_mutations" title="Demonspawn mutations">悪魔の血族の変異</a>の候補から<a href="/Kobold" title="Kobold">コボルド</a>の生まれつきの能力に変わった。</li>
+<li><a href="/0.20" title="0.20">0.20</a> で、<a href="/Barachim" class="mw-redirect" title="Barachim">バラチ</a>と、その固有の変異である視界+が加わった。</li>
+<li><a href="/0.19" title="0.19">0.19</a> より前は<a href="/Shadow_card" title="Shadow card">影のカード</a>があり、プレイヤーの視界をさらに狭めるのに使えた。</li>
+<li><a href="/0.18" title="0.18">0.18</a> より前は<a href="/Lantern_of_shadows" title="Lantern of shadows">影のランタン</a>があり、プレイヤーの視界をさらに狭めるのに使えた。</li></ul>

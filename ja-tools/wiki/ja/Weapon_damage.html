@@ -1,0 +1,85 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.31" title="0.31">0.31</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<p>武器のダメージは、武器の基本ダメージに能力値による補正を掛け、さらに武器のスキルと戦闘スキルによる補正を掛けたものだ。殺戮ボーナスと武器の強化値は、そのあとで足される。実際のダメージのうちランダムに決まる部分は4か所ある。1d(基本ダメージ×能力値による補正)、殺戮ボーナス、武器のスキルによる補正、戦闘スキルによる補正だ。
+</p>
+<div id="toc" class="toc"><div class="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Damage_formula"><span class="tocnumber">1</span> <span class="toctext">ダメージの式</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Notes"><span class="tocnumber">2</span> <span class="toctext">注</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Rounding"><span class="tocnumber">2.1</span> <span class="toctext">端数の切り捨て</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#History"><span class="tocnumber">3</span> <span class="toctext">変更履歴</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">出典</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Damage_formula">ダメージの式</span></h2>
+<p><code> Damage = [uniform(Base damage * Stat modifier) * Skill modifier * Fighting modifier + Misc modifiers + uniform(Slaying bonuses)] * final multipliers + (Pre-final-multi damage * Stabbing bonus) - AC damage reduction</code><sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup>
+</p>
+<ul><li><i>最終倍率は急所攻撃ボーナスより後に掛かるが、急所攻撃ボーナスの分にはこの倍率は掛からない。</i></li></ul>
+<p>式の中の <code>uniform(x) = 1d(x+1)-1</code> は略記で、0 から x まで(x を含む)の値をランダムに取ることを表す。
+</p>
+<ul><li><b>基本ダメージ</b>(Base damage):
+<ul><li>素手で戦うとき: 3 + 徒手格闘スキル(今の<a href="/Form" class="mw-redirect" title="Form">変身</a>や爪の変異で変わる。<a href="/Unarmed_combat" class="mw-redirect" title="Unarmed combat">徒手格闘</a>を参照)</li>
+<li>武器を使うとき: その<a href="/Weapon" title="Weapon">武器</a>の基本ダメージ</li>
+<li>投擲武器を使うとき:<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">&#91;2&#93;</a></sup> 投げる飛び道具の基本ダメージ + <a href="/Throwing" title="Throwing">投擲</a>スキル
+<ul><li><a href="/Stone" title="Stone">石</a>を投げるとき: 基本ダメージ + (<a href="/Throwing" title="Throwing">投擲</a>スキル/2)</li></ul></li>
+<li><a href="/Heavy" title="Heavy">重撃</a>のブランドは、武器の基本ダメージに倍率を掛ける。</li></ul></li>
+<li><b>能力値による補正</b>(Stat modifier):<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">&#91;3&#93;</a></sup>
+<ul><li><code>0.75 + (0.025 * <a href="/Stats" title="Stats">Stat</a>)</code>。つまり能力値1につき 2.5% 上がる。</li>
+<li><a href="/Short_Blades" title="Short Blades">短剣</a>、<a href="/Long_Blades" title="Long Blades">長剣</a>、<a href="/Ranged_Weapons" title="Ranged Weapons">射撃武器</a>は<a href="/Dexterity" title="Dexterity">器用</a>を使う。それ以外の武器と徒手格闘は<a href="/Strength" title="Strength">腕力</a>を使う。</li>
+<li>補正には下限があり、能力値が -30 のときの 0.01(1%)より下がらない。</li></ul></li>
+<li><b>スキルによる補正</b>(Skill modifier):
+<ul><li><code>1 + uniform(Weapon <a href="/Skill" title="Skill">skill</a>)/25</code>(Weapon skill は武器のスキル。素手と投擲には掛からない)</li>
+<li>武器や徒手格闘のスキルを上げるもう一つの大きな利点は、<a href="/Attack_delay" class="mw-redirect" title="Attack delay">攻撃の所要時間</a>が短くなることだ。</li></ul></li>
+<li><b>戦闘スキルによる補正</b>(Fighting modifier):
+<ul><li><code>1 + uniform(<a href="/Fighting" title="Fighting">Fighting</a> skill)/30</code>(Fighting skill は戦闘スキル)</li></ul></li>
+<li><b>その他の補正</b>(Misc modifiers):<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">&#91;4&#93;</a></sup>
+<ul><li><a href="/Status_effects#Might" title="Status effects">腕力強化</a>または<a href="/Status_effects#Berserk" title="Status effects">バーサーク</a>: +1d10</li></ul></li>
+<li><b>殺戮ボーナス</b>(Slaying bonuses):
+<ul><li>武器の<a href="/Scroll_of_enchant_weapon" title="Scroll of enchant weapon">強化値</a></li>
+<li><a href="/Slaying#Sources" title="Slaying">殺戮をもたらすもの</a>による加算や減算</li></ul></li>
+<li><b>最終倍率</b>(final multipliers):<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">&#91;5&#93;</a></sup>
+<ul><li><a href="/Cleaving" title="Cleaving">薙ぎ払い</a>で追加で当たった攻撃なら: 0.7 倍<sup id="cite_ref-6" class="reference"><a href="#cite_note-6">&#91;6&#93;</a></sup></li>
+<li><a href="/Statue_Form" class="mw-redirect" title="Statue Form">石像</a>: 1.5 倍</li>
+<li><a href="/Shadow_Form" title="Shadow Form">影化</a>: 0.5 倍</li>
+<li><a href="/Weak" title="Weak">虚弱</a>の<a href="/Status_effect" class="mw-redirect" title="Status effect">状態異常</a>: 0.75 倍</li>
+<li><a href="/Wu_Jian" title="Wu Jian">ウー・ジアン</a>の武術の攻撃と<a href="/Vhi%27s_Electric_Charge" title="Vhi&#39;s Electric Charge">ヴィーの電撃突進</a>によるボーナス</li>
+<li><a href="/Confusing_Touch" title="Confusing Touch">混乱の一撃</a>: 0 になる</li></ul></li>
+<li><b>急所攻撃ボーナス</b>(Stabbing bonus): <a href="/Stabbing" title="Stabbing">急所攻撃</a>を参照。</li>
+<li><b>AC によるダメージの軽減</b>(AC damage reduction): 相手の AC によって、ダメージが <code>uniform(AC)</code> 減る。<a href="/AC" class="mw-redirect" title="AC">AC</a> も参照。</li></ul>
+<h2><span class="mw-headline" id="Notes">注</span></h2>
+<ul><li>武器のダメージを大きく左右するのは、基本ダメージ、武器のスキル(レベル27で平均 +54%)、戦闘スキル(レベル27で平均 +45%)だ。</li></ul>
+<ul><li>スキルが低いうちは、殺戮による命中率の上昇を無視すれば、基本ダメージ1はおよそ殺戮+1に相当する。スキルが上がると倍率が掛かるのは基本ダメージだけなので、基本ダメージの効き目のほうが大きくなる。命中率を無視すれば、基本ダメージ1は殺戮 <code>1 + (average of Stat mod * Skill mod * Fight mod)</code>(能力値の補正×スキルの補正×戦闘の補正の平均)に相当する。</li></ul>
+<ul><li>'<b>i'</b>(所持品)や <b>@</b> コマンドで武器のダメージを見たときの「スキル」によるボーナスは <code>Skill mod * Fighting mod</code>(スキルの補正×戦闘の補正)で、どちらもランダムな値の平均を使っている。</li></ul>
+<ul><li>武器の<a href="/Brand" title="Brand">ブランド</a>(<a href="/Heavy" title="Heavy">重撃</a>を除く)は、式の最後、AC による軽減のあとで適用される。そのため、ブランドで増えたダメージは AC を無視する。</li></ul>
+<dl><dd>つまり端数を考えなければ、<a href="/Flaming" title="Flaming">火炎</a>と<a href="/Freezing" title="Freezing">冷気</a>のブランドは、<a href="/Executioner%27s_axe" title="Executioner&#39;s axe">処刑人の斧</a>につけても<a href="/Quickblade" class="mw-redirect" title="Quickblade">クイックブレード</a>につけても同じだけの効果がある。ただし基本ダメージの低い武器ほど切り捨ての影響が大きいので、ブランドは大きな武器につけたほうがやや有利だ。</dd></dl>
+<h3><span class="mw-headline" id="Rounding">端数の切り捨て</span></h3>
+<p>式の各項は順に計算され、そのたびに整数へ切り捨てられる。この切り捨ては、基本ダメージの低い武器ほど不利に働く。たとえば器用 16、短剣スキル 12 のプレイヤーなら、
+</p>
+<ul><li>殺戮ボーナスがなければ、基本ダメージ 4 の +0 のダガーでは 5 より大きなダメージは出ない。</li>
+<li>同じプレイヤーが基本ダメージ 7 の +0 のレイピアを持てば、最大 11 のダメージを出せる。</li></ul>
+<p>つまり能力値とスキルによるボーナスで、ダガーのダメージは 25%、レイピアのダメージは 57% 増えたことになる。10 <a href="/Aut" class="mw-redirect" title="Aut">aut</a> あたりで見ると、ダガーは最大 10、レイピアは最大 18 のダメージを与える。
+</p>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.29" title="0.29">0.29</a> より前は、すべての武器のダメージが<a href="/Strength" title="Strength">腕力</a>で伸びた。</li>
+<li><a href="/0.27" title="0.27">0.27</a> より前は、腕力による補正がランダムだった。</li>
+<li><a href="/0.18" title="0.18">0.18</a> より前は、武器ごとに腕力と器用を混ぜて使っていた。</li>
+<li><a href="/0.13" title="0.13">0.13</a> より前は、能力値が近接攻撃に与える影響は今の半分だった。</li>
+<li><a href="/0.8" class="mw-redirect" title="0.8">0.8</a> から <a href="/0.13" title="0.13">0.13</a> までは、<a href="/Speed_(brand)" title="Speed (brand)">早業</a>のブランドの近接武器はダメージが 10% 下がった。</li></ul>
+<h2><span class="mw-headline" id="References">出典</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.31.0/crawl-ref/source/attack.cc#L1202">attack.cc:1202</a> (0.31.0)</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">ダーツ、投網、投げた近接武器では、このダメージは加わらない。</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.31.0/crawl-ref/source/fight.cc#L1332">fight.cc:1332</a> (0.31.0)</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.31.0/crawl-ref/source/melee-attack.cc#L1732">melee-attack.cc:1732</a> (0.31.0)</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.31.0/crawl-ref/source/melee-attack.cc#L1735">melee-attack.cc:1735</a> (0.31.0)</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.31.0/crawl-ref/source/melee-attack.cc#L3782">melee-attack.cc:3782</a> (0.31.0)</span>
+</li>
+</ol></div>

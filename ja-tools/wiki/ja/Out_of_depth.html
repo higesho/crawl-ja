@@ -1,0 +1,29 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.30" title="0.30">0.30</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<p><i>もう一つの OOD については<a href="/Orb_of_Destruction" title="Orb of Destruction">破壊の爆裂球</a>を参照。</i>
+</p><p>Crawl では、<b>本来より浅い階に出てくる</b>モンスター(out of depth、略して <b>OOD</b>)がよく生成される。「ふつう」出てくる階よりも上の階に現れたモンスターのことだ。ソースファイル mon-pick-data.h<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup> で各モンスターの基準の階が決められており、それより上の階に出たものは厳密にはすべて OOD になる。ただ、この言葉はふつう、ゲームの進み具合に比べてずっと手ごわい<a href="/Unique" class="mw-redirect" title="Unique">ユニーク</a>以外のモンスター、たとえば迷宮:2 に出た<a href="/Sky_beast" title="Sky beast">雷雲の獣</a>のようなものを指す。
+</p>
+<h2><span class="mw-headline" id="Creation">生成</span></h2>
+<p>ほかのモンスターと同じく、OOD のモンスターも階が生成されるときに置かれる。その「基準の階」には揺らぎがかかり、もとの数値になりやすいものの、上下にずれることもよくある。
+</p><p>また、モンスターの生成には、「ふつう」の規則から外れる特別な場合もいくつかある。
+</p>
+<ul><li>モンスターは「群れ」で出てくることがよくあり、群れには群れの深さがある。オークの司祭は本来迷宮:4 から出てくるが、オークの群れの一員としてなら迷宮:3、ときには迷宮:2 にも出てくる(これはよくあることなので、迷宮:3 の司祭は OOD とみなされないことが多い)。</li>
+<li>モンスターは、あらかじめ作られた<a href="/Vault" title="Vault">ヴォールト</a>に配置されていることもある。たとえば<a href="/Lair" class="mw-redirect" title="Lair">獣の棲み処</a>の入口のヴォールトの一つには<a href="/Death_yak" title="Death yak">人食いヤク</a>がいる。人食いヤクはふつう迷宮には出てこないが、迷宮:8 で出会うにはとても手ごわい敵だ。</li></ul>
+<p>とんでもなく手ごわい一部のモンスターについては、出てこないようにプログラムで保証されている。たとえば<a href="/Water_moccasin" title="Water moccasin">沼マムシ</a>は迷宮:2 には決して出てこない。ただし迷宮:3 には出てくる。
+</p>
+<h2><span class="mw-headline" id="Strategy">戦略</span></h2>
+<p>OOD が一番目立つのは<a href="/The_Dungeon" title="The Dungeon">迷宮</a>だ。迷宮は一番長い分岐で、階ごとにモンスターの強さが上がり、しかも逃げる手段があまりないうちに探索することになる。ほかの分岐でも OOD が問題になることはあるが、迷宮ほどではない。たとえば、たいていのキャラクターにとっては、<a href="/Depths" class="mw-redirect" title="Depths">深層</a>:2 の<a href="/Caustic_shrike" title="Caustic shrike">焼酸の百舌</a>より迷宮:5 の<a href="/Killer_bee" title="Killer bee">殺人蜂</a>のほうが危険だ。もっと先に進むと、「平均より強いモンスター」の役回りは<a href="/Unique" class="mw-redirect" title="Unique">ユニーク</a>が担うようになる。
+</p><p>OOD のモンスターに出会ったら、そのモンスターの説明、特に速度と射程を確かめ、歩いて離れるだけで済むかどうかを判断しよう。
+</p>
+<ul><li>OOD の<a href="/Ogre_(monster)" title="Ogre (monster)">オーガ</a>や<a href="/Hydra" title="Hydra">ヒドラ</a>の近接攻撃は強烈だが、どちらも速度 100% の近接攻撃しかしない敵だ。間に何もなければ、見つけた時点で歩いて離れればいい。そのまま階段を上り、別の階段から降り直せばよい。</li>
+<li>OOD の<a href="/Orc_priest" title="Orc priest">オークの司祭</a>はとても恐ろしいことがある。見えている場所ならどこからでも 17 ダメージの<a href="/Smiting" title="Smiting">打擲の一撃</a>を撃ってくるからだ。それでも、司祭が<a href="/Line_of_sight" title="Line of sight">視界</a>の端にいるなら、やはり歩いて離れられる(モンスターは視界の外には攻撃できず、オークの司祭は足が速くない)。 </li>
+<li>OOD の<a href="/Centaur_(monster)" title="Centaur (monster)">セントール</a>は(<a href="/Spriggan" title="Spriggan">スプリガン</a>を除く)どのプレイヤーよりも速く、<i>しかも</i>遠隔攻撃を持つ。少なくともアイテムを使わずに逃げきることはできない。</li></ul>
+<h3><span class="mw-headline" id="Tips_.26_Tricks">小技</span></h3>
+<ul><li><a href="/Escaping_from_(and_avoiding)_trouble#Options_when_in_immediate_danger" title="Escaping from (and avoiding) trouble">消耗品を使おう</a>! 歩いて離れるだけでは逃げられないときは<i>なおさら</i>だ。</li>
+<li>何をやってもだめなら、その階を飛ばして下へ降りてしまえばいい。なんだかんだで、迷宮:11 や獣の棲み処:1 のほうが、<a href="/Storm_dragon" title="Storm dragon">ストームドラゴン</a>がうろついている迷宮:10 より<i>たぶん</i>安全だ。下の階が危険だったとしても、少なくとも実際に何が待っているかを確かめて、そこから決めることはできる。</li></ul>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.21" title="0.21">0.21</a> より前は、時間経過によるモンスターの生成も OOD のモンスターを生み出す手段になっていた。<a href="/Out-of-depth_timer" title="Out-of-depth timer">OOD タイマー</a>が長く進むほど、こうした手ごわいモンスターが出てきやすくなった。</li></ul>
+<h2><span class="mw-headline" id="References">出典</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.30.1/crawl-ref/source/mon-pick-data.h#L1">mon-pick-data.h:1</a> (0.30.1)</span>
+</li>
+</ol></div>

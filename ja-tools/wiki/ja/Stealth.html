@@ -1,0 +1,100 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.30" title="0.30">0.30</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<p><i>このページでは、能力値としての隠密と、隠密の仕組み全般について説明する。スキルについては<a href="/Stealth_(skill)" title="Stealth (skill)">隠密(スキル)</a>を、防具のエゴの隠密については<a href="/Ego" title="Ego">エゴの一覧</a>を参照。</i>
+</p><p><b>隠密</b>の値は、あなたがどれだけ見つかりにくいかを決める。この値にいちばん直接に効くのは<a href="/Stealth_(skill)" title="Stealth (skill)">隠密スキル</a>だが、ほかにもさまざまな要素が関わってくる。
+</p>
+<div id="toc" class="toc"><div class="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Stealth_Score"><span class="tocnumber">1</span> <span class="toctext">隠密値</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Modifiers"><span class="tocnumber">2</span> <span class="toctext">補正</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Confusion"><span class="tocnumber">2.1</span> <span class="toctext">混乱</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Flat_Modifiers"><span class="tocnumber">2.2</span> <span class="toctext">加算の補正</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Multipliers"><span class="tocnumber">2.3</span> <span class="toctext">倍率</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#In-Game_Display"><span class="tocnumber">2.4</span> <span class="toctext">ゲーム内の表示</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Detection"><span class="tocnumber">3</span> <span class="toctext">発見</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#History"><span class="tocnumber">4</span> <span class="toctext">変更履歴</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">出典</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Stealth_Score">隠密値</span></h2>
+<p>キャラクターの忍びやすさを表すのが隠密値(stealth score)だ。キャラクターはもともと基本の隠密値を持っていて、それがさまざまな外的要因で増減する。
+</p><p>基本の隠密値は次のとおり。<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup>
+</p>
+<blockquote>(3 × <a href="/Dexterity" title="Dexterity">器用</a>) + (隠密スキル × 15)</blockquote>
+<h2><span class="mw-headline" id="Modifiers">補正</span></h2>
+<p>次の補正がこの順にかかる。<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">&#91;2&#93;</a></sup>
+</p>
+<h3><span class="mw-headline" id="Confusion">混乱</span></h3>
+<p>混乱による低下は、ほかのどの補正よりも先にかかる。
+</p>
+<ul><li><a href="/Confused" class="mw-redirect" title="Confused">混乱</a>: x0.33</li></ul>
+<h3><span class="mw-headline" id="Flat_Modifiers">加算の補正</span></h3>
+<p><b>プラス</b>
+</p>
+<ul><li>隠密の<a href="/Ego" title="Ego">エゴ</a>の防具: 1 つにつき +50</li>
+<li>Stlth+ の付いたアーティファクト: Stlth+ 1 つにつき +50</li>
+<li><a href="/Mutations" class="mw-redirect" title="Mutations">変異</a>:
+<ul><li><a href="/Nightstalker" title="Nightstalker">闇隠れ</a>の変異: 1 段階につき +50</li>
+<li><a href="/Camouflage" title="Camouflage">迷彩</a>の変異: 1 段階につき +50</li>
+<li><a href="/Thin_Skeletal_Structure" title="Thin Skeletal Structure">薄い骨格構造</a>の変異: 1 段階につき +50</li>
+<li><a href="/Translucent_Skin" title="Translucent Skin">半透明な体</a>の変異: 段階にかかわらず +50</li></ul></li>
+<li>血が通っていない状態の<a href="/Vampire" title="Vampire">吸血鬼</a>: +100
+<ul><li><a href="/Bat_Form" title="Bat Form">コウモリ化</a>した吸血鬼: +50</li></ul></li>
+<li><a href="/Water" title="Water">水</a>の上にいる<a href="/Merfolk" title="Merfolk">水棲の民</a>/<a href="/Octopode" title="Octopode">オクトポード</a>(<a href="/Flying" class="mw-redirect" title="Flying">飛行中</a>でも): +50</li></ul>
+<p><b>マイナス</b>
+</p>
+<ul><li><a href="/Armour_encumbrance" class="mw-redirect" title="Armour encumbrance">胴体防具の重さ</a>: -2 × (<a href="/Encumbrance_rating" title="Encumbrance rating">重さ</a>)<sup>2</sup> / 3</li>
+<li><a href="/Silence" title="Silence">静寂</a>を放っているとき: -50</li>
+<li>Stlth- の付いたアーティファクト: Stlth- 1 つにつき -50</li></ul>
+<h3><span class="mw-headline" id="Multipliers">倍率</span></h3>
+<p><b>プラス</b>
+</p>
+<ul><li><a href="/Umbra" class="mw-redirect" title="Umbra">影の領域</a>: 発生源によって違い、いちばん隠密が高くなるものが使われる。プレイヤー自身が影の領域の発生源である場合にだけ効く。
+<ul><li><a href="/Ring_of_Shadows" title="Ring of Shadows">影の指輪</a>: ×1.5</li>
+<li><a href="/Dithmenos" title="Dithmenos">ディスメノス</a>: 信仰心によって変わる。×<code>(piety + 200)/200</code> で、最低 ×1、最大 ×2。 </li></ul></li>
+<li><a href="/Shadow_Form" title="Shadow Form">影化</a>: ×2</li></ul>
+<p><b>マイナス</b>
+</p>
+<ul><li><a href="/Backlit" class="mw-redirect" title="Backlit">照らし出されている</a>(<a href="/Corona" title="Corona">照明</a>や<a href="/Halo" class="mw-redirect" title="Halo">光輪</a>など): ×0.40</li>
+<li><a href="/Shallow_water" title="Shallow water">浅い水脈</a>の中にいる(<a href="/Flying" class="mw-redirect" title="Flying">飛行中</a>でも、体格が<a href="/Large" class="mw-redirect" title="Large">大きい</a>のでも、<a href="/Amphibious" title="Amphibious">水陸両生</a>でもない場合): ×0.5</li>
+<li><a href="/Orb_of_Zot" title="Orb of Zot">ゾットのオーブ</a>を持っている: ×0.33</li>
+<li><a href="/Qazlal" class="mw-redirect" title="Qazlal">クァズラル</a>(信仰心 1* 以上): ×<code>(200 - piety) / 170</code>。信仰心は 160 までで頭打ちになる。6* 以上ではおよそ x0.24 の倍率になる。</li></ul>
+<p>次の状態では隠密が 0 になる。
+</p>
+<ul><li><a href="/Berserk" title="Berserk">バーサーク</a></li>
+<li><a href="/Clumsy" class="mw-redirect" title="Clumsy">不器用</a>(Dex=0)</li>
+<li><a href="/Ru#Sacrifices" title="Ru">隠密の犠牲</a></li></ul>
+<p>隠密値が 0 を下回る場合は、0 として扱われる。
+</p>
+<h3><span class="mw-headline" id="In-Game_Display">ゲーム内の表示</span></h3>
+<p>正確な隠密値を表示する方法はないが、<b>%</b> の画面でおおよその値がわかる。'+' 1 つが隠密 50、'*' 1 つが 100、'#' が 150、'!' が 200 にあたる。
+</p>
+<h2><span class="mw-headline" id="Detection">発見</span></h2>
+<p>モンスターはそれぞれ警戒値(Monster Awareness)を持っている。基本の警戒値はどのモンスターも 10 で、次のように補正される。<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">&#91;3&#93;</a></sup>
+</p><p><b>プラスの要素</b>
+</p>
+<ul><li><a href="/Monster_intelligence" title="Monster intelligence">モンスターの知能</a>: 心を持たないなら +0、動物並みなら +8、人間並みなら +12</li>
+<li><a href="/Hit_dice" title="Hit dice">HD</a>: HD 1 につき +1</li>
+<li>眠っておらず、うろついているモンスター: +15</li>
+<li>分類が<a href="/Natural" class="mw-redirect" title="Natural">生物</a>でないモンスター: +10</li></ul>
+<p><b>マイナスの要素</b>
+</p>
+<ul><li><a href="/Ensorcelled_Hibernation" title="Ensorcelled Hibernation">魔法の眠り</a>の効果を受けているモンスター: -10</li>
+<li>プレイヤーが<a href="/Invisible" title="Invisible">透明</a>で、そのモンスターが透明なものを見られない場合: -75</li></ul>
+<p>警戒値が 0 を下回る場合は、0 として扱われる。
+</p><p>あなたが移動や行動をするたびに、あなたの<a href="/Line_of_sight" title="Line of sight">視界</a>にいるすべてのモンスターが、<code>(Awareness + 1) / (Your Stealth)</code> の確率であなたに気づく。行動にかかる時間の長短は関係ない。隠密値が同じなら、<a href="/Naga" title="Naga">ナーガ</a>でも<a href="/Spriggan" title="Spriggan">スプリガン</a>でも、1 回の移動で見つかる確率は同じだ。いったん気づかれると、しばらく相手の視界から外れないかぎり見失ってはもらえない。心を持たない敵は、知能のある敵よりずっと早くあなたを見失う。
+</p>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.27" title="0.27">0.27</a> より前は、泳いでも飛んでもいないときは<a href="/Hooves" title="Hooves">蹄</a>で隠密が少し下がり、<a href="/Translucent_Skin" title="Translucent Skin">半透明な体</a>で上がる隠密も今より少なかった。また、<a href="/Felid" title="Felid">フェリッド</a>は泳いでも飛んでもいないときに隠密が 20 上がったが、泳いでも飛んでもいないときに<a href="/Blade_Hands" class="mw-redirect" title="Blade Hands">刃の手</a>になっていると隠密が 50 下がった。</li></ul>
+<h2><span class="mw-headline" id="References">出典</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.30.1/crawl-ref/source/player.cc#L3063">player.cc:3063</a> (0.30.1)</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.30.1/crawl-ref/source/player.cc#L3067">player.cc:3067</a> (0.30.1)</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.30.1/crawl-ref/source/shout.cc#L287">shout.cc:287</a> (0.30.1)</span>
+</li>
+</ol></div>

@@ -146,9 +146,18 @@ def unfinished(f: Path) -> bool:
     return sum(1 for s in sents if s in ja) * 2 >= len(sents)
 
 
+ALIASES: dict[str, str] = {}
+if (HERE / "aliases.tsv").exists():
+    for _line in (HERE / "aliases.tsv").read_text(encoding="utf-8").splitlines():
+        if "\t" in _line:
+            _k, _v = _line.split("\t", 1)
+            ALIASES[_k] = _v
+
+
 def _find_done(title: str, done: dict[str, str]) -> str:
     """訳済みの記事を引く。wiki のリンクは転送用の別名(大文字小文字・複数形の違い)が
-    多いので、それも試す。"""
+    多いので、それも試す。depth.py が記録した別名(aliases.tsv)も引く。"""
+    title = ALIASES.get(title, title)
     if title in done:
         return done[title]
     low = {k.lower(): v for k, v in done.items()}

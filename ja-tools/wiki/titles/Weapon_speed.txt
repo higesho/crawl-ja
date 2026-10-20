@@ -1,0 +1,2 @@
+Weapon speed
+武器の速度

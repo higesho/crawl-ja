@@ -30,6 +30,8 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--size", type=int, default=16000)
     ap.add_argument("--assign", nargs="*", help="割り振り済みとして記録する記事のファイル名")
+    ap.add_argument("--depth", action="store_true",
+                    help="depth.py が書いた work/depth.tsv の記事(トップから 2 階層まで)だけで組を作る")
     args = ap.parse_args()
     assigned = set(ASSIGNED.read_text(encoding="utf-8").split()) if ASSIGNED.exists() else set()
     if args.assign:
@@ -38,6 +40,10 @@ def main() -> None:
         return
     todo = [(p.name, text_len(p)) for p in sorted(SRC.glob("*.html"))
             if not (JA / p.name).exists() and p.name not in assigned]
+    if args.depth:
+        want = {line.split("\t")[0] for line in
+                (HERE / "work" / "depth.tsv").read_text(encoding="utf-8").splitlines() if line}
+        todo = [x for x in todo if x[0] in want]
     todo.sort(key=lambda x: -x[1])
     batches: list[list] = []
     for name, n in todo:

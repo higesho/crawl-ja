@@ -1,0 +1,72 @@
+<div style=" width: 100%; width: auto"><i><b>バージョン <a href="/0.30" title="0.30">0.30</a></b>: この記事は Crawl の<a href="/0.34" title="0.34">最新の安定版</a>の内容に<b>追いついていないかもしれない</b>。</i></div>
+<table style=" width:auto; text-align:left">
+
+<tr>
+<td>
+</td>
+<td style="width: 100%"> 攻撃した相手を凍えさせ、相手の鎧を貫いたダメージの4分の1の追加ダメージを与える。冷血の生き物を減速させることもある。
+</td></tr></table>
+<p><b>冷気</b>の<a href="/Brand" title="Brand">ブランド</a>の効果は次のとおり。
+</p>
+<ul><li>攻撃に、平均しておよそ +25%(0%〜50%)の<a href="/Cold" title="Cold">冷気</a>ダメージを上乗せする。この上乗せは <a href="/AC" class="mw-redirect" title="AC">AC</a> とすべてのダメージ補正(<a href="/Slaying" title="Slaying">殺戮</a>を含む)を計算したあとにかかる。<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup></li>
+<li>冷気に耐性のない<a href="/Cold-blooded" class="mw-redirect" title="Cold-blooded">冷血</a>のモンスターを<a href="/Slow" title="Slow">減速</a>させる。</li></ul>
+<div id="toc" class="toc"><div class="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Sources"><span class="tocnumber">1</span> <span class="toctext">入手方法</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Strategy"><span class="tocnumber">2</span> <span class="toctext">戦略</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#History"><span class="tocnumber">3</span> <span class="toctext">変更履歴</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">出典</span></a></li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="Sources">入手方法</span></h3>
+<p>冷気の武器は、ふつうに拾える戦利品として見つかるほか、<a href="/Scroll_of_brand_weapon" title="Scroll of brand weapon">魔力の武器の巻物</a>でもつけられる。また、いくつかのモンスターが冷気の武器を持っている。
+</p>
+<ul><li><a href="/Wight" title="Wight">ワイト</a>はよく冷気の武器を持っている。</li>
+<li><a href="/Frost_giant" title="Frost giant">霜の巨人</a>はたいてい冷気の<a href="/Battleaxe" title="Battleaxe">バトルアックス</a>を持って現れる。</li>
+<li><a href="/Fannar" title="Fannar">ファンナール</a>はかならず<a href="/Staff_of_cold" title="Staff of cold">冷気の杖</a>か冷気の<a href="/Quarterstaff" title="Quarterstaff">六尺棒</a>を持っている。</li></ul>
+<h2><span class="mw-headline" id="Strategy">戦略</span></h2>
+<p>冷気は、割合でダメージを増やすブランドのうち、3 ルーンでの勝利まで十分に通用する数少ないもののひとつだ。とくに冷血の生き物によく効き、<a href="/The_Lair" title="The Lair">獣の棲み処</a>の爬虫類や<a href="/Zot" class="mw-redirect" title="Zot">ゾットの領域</a>のドラコニアンもこれに含まれる。<a href="/Flaming" title="Flaming">火炎</a>と違って<a href="/Orbs_of_fire" class="mw-redirect" title="Orbs of fire">炎の球体</a>にも効くので、ゾットの領域:5 ではやや有利だ。
+</p><p>冷気による割合の上乗せは AC で減らされたあとにかかるので、腕力、武器の種類、殺戮、AC のどれを考えても、有利にも不利にもならない。冷気の<a href="/Executioner%27s_axe" title="Executioner&#39;s axe">処刑人の斧</a>も、冷気の<a href="/Quick_blade" title="Quick blade">クイックブレード</a>も、最終的なダメージに同じ +25% の上乗せを受ける。ただクイックブレードは基本ダメージが低いので、<a href="/Electrocution" title="Electrocution">電撃</a>や<a href="/Pain_(brand)" title="Pain (brand)">苦痛</a>のようなブランドのほうが強くなる、というだけだ。
+</p>
+<h2><span class="mw-headline" id="History">変更履歴</span></h2>
+<ul><li><a href="/0.15" title="0.15">0.15</a> より前は、レベル 2 の呪文<a href="/Freezing_Aura" title="Freezing Aura">凍結の武器</a>で、ブランドのない武器に一時的にこのブランドをつけられた。この一時的なブランドは、<a href="/Scroll_of_vorpalise_weapon" title="Scroll of vorpalise weapon">武器研ぎの巻物</a>を読めば永続させられた。</li></ul>
+<h2><span class="mw-headline" id="References">出典</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/crawl/crawl/blob/0.30.1/crawl-ref/source/attack.cc#L1585">attack.cc:1585</a> (0.30.1)<br />正確には、ダメージを与えたとき、冷気は <code>(1d&lt;damage_dealt&gt;/2) + 0.5</code>(端数切り捨て)の冷気ダメージを加える。そのため、冷気の上乗せは 25% より少し大きい。弱い攻撃ほどこの差は目立つ。たとえば 1 ダメージを与えたなら、冷気ダメージはかならず +1 になる(平均 +100%)。</span>
+</li>
+</ol></div>
+<center>
+<table class="prettytable" style="text-align: center; width: 70%">
+
+<tr>
+<th colspan="3"> <a href="/Brand" title="Brand">ブランド</a>
+</th></tr>
+<tr>
+<th rowspan="3"> 近接武器
+</th>
+<th> 汎用
+</th>
+<td> <a href="/Antimagic" title="Antimagic">反魔法</a> • <a href="/Chaos" title="Chaos">混沌</a> • <a href="/Distortion" title="Distortion">歪曲</a>  • <a href="/Draining_(brand)" title="Draining (brand)">掠奪</a> • <a href="/Electrocution" title="Electrocution">電撃</a> • <a href="/Flaming" title="Flaming">火炎</a> • <a class="mw-selflink selflink">冷気</a> • <a href="/Heavy" title="Heavy">重撃</a> • <a href="/Holy_wrath" title="Holy wrath">神罰</a> • <a href="/Pain_(brand)" title="Pain (brand)">苦痛</a> • <a href="/Protection" title="Protection">護り</a> • <a href="/Reaching" title="Reaching">間合い</a> • <a href="/Spectral_(brand)" title="Spectral (brand)">霊体化</a> • <a href="/Speed_(brand)" title="Speed (brand)">早業</a> • <a href="/Vampiric" title="Vampiric">吸血</a> • <a href="/Venom" title="Venom">毒液</a>
+</td></tr>
+<tr>
+<th> 武器種専用
+</th>
+<td><a href="/Devious" title="Devious">狡猾</a> • <a href="/Valour" title="Valour">武勇</a> • <a href="/Concussion" title="Concussion">衝撃</a> • <a href="/Sundering" title="Sundering">断裂</a> • <a href="/Entangling" title="Entangling">絡みつき</a> • <a href="/Rebuke" title="Rebuke">叱責</a>
+</td></tr>
+<tr>
+<th> アーティファクト
+</th>
+<td> <a href="/Curare" title="Curare">クラーレ毒</a> • <a href="/Deathbane" title="Deathbane">死者殺し</a> • <a href="/Dragon_slaying" title="Dragon slaying">竜殺し</a> • <a href="/Reaping" title="Reaping">刈り取り</a> • <a href="/Silver" title="Silver">銀</a>
+</td></tr>
+<tr>
+<th colspan="2"> 射撃武器
+</th>
+<td> <a href="/Antimagic" title="Antimagic">反魔法</a> • <a href="/Draining_(brand)" title="Draining (brand)">掠奪</a> • <a href="/Electrocution" title="Electrocution">電撃</a> • <a href="/Flaming" title="Flaming">火炎</a> • <a class="mw-selflink selflink">冷気</a> • <a href="/Heavy" title="Heavy">重撃</a> • <a href="/Penetration" title="Penetration">貫通</a> • <a href="/Speed_(brand)" title="Speed (brand)">早業</a>
+</td></tr>
+<tr>
+<th colspan="2"> 投擲武器
+</th>
+<td> <a href="/Atropa" title="Atropa">アトロパ毒</a> • <a href="/Curare" title="Curare">クラーレ毒</a> • <a href="/Datura" title="Datura">ダチュラ毒</a> • <a href="/Disjunction_(brand)" title="Disjunction (brand)">分解</a> • <a href="/Poisoned" title="Poisoned">毒</a> • <a href="/Silver" title="Silver">銀</a>
+</td></tr></table>
+</center>
