@@ -49,7 +49,7 @@ Your magical power will grow resistant to disruption.
 # MUT_TOUGH_SKIN
 tough skin
 
-強靱な皮膚
+強靭な皮膚
 %%%%
 You have tough skin. (AC +1)
 
