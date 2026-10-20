@@ -194,7 +194,7 @@ NAV = [("index.html", "入口"), ("monster.html", "モンスター"),
        ("spell.html", "呪文"), ("item.html", "アイテム"),
        ("artefact.html", "固定アーティファクト"), ("species.html", "種族"),
        ("job.html", "職業"), ("god.html", "神"), ("branch.html", "ダンジョン"),
-       ("mutation.html", "突然変異"), ("misc.html", "事典"),
+       ("mutation.html", "変異"), ("misc.html", "事典"),
        ("wiki/index.html", "wiki 翻訳")]
 
 
@@ -655,7 +655,7 @@ def build_job(data: Data, tiles: Tiles) -> str:
         if wchoice.get(j["wchoice"]):
             eq.append(wchoice[j["wchoice"]])
         if eq:
-            inner += f'    <p class="where">持ち物：{esc("、".join(eq))}</p>\n'
+            inner += f'    <p class="where">所持品：{esc("、".join(eq))}</p>\n'
         if j["spells"]:
             inner += f'    <p class="where">呪文：{esc("、".join(j["spells"]))}</p>\n'
         if j["species"]:
@@ -673,7 +673,7 @@ def build_job(data: Data, tiles: Tiles) -> str:
 <div class="list" id="list">
 {"".join(cards)}
 </div>"""
-    return page("job.html", "職業", "DCSS の職業ごとの開始時のスキルと持ち物。",
+    return page("job.html", "職業", "DCSS の職業ごとの開始時のスキルと所持品。",
                 body, data.version, wide=True)
 
 
@@ -734,15 +734,15 @@ def build_branch(data: Data, tiles: Tiles) -> str:
                           esc(b["long_ja"]) + en(b["short_en"]), inner,
                           f'{b["long_ja"]} {b["short_ja"]} {b["short_en"]} {plain(e["body"])}',
                           anchor="b-" + slug(b["short_en"])))
-    lead = """本道と支部、ポータルの先をすべて載せています。
- 「出るモンスター」は普通に湧くモンスターの一覧で、カッコの中の数字はその支部の何階に出るかです。"""
+    lead = """本道と分岐、ポータルの先をすべて載せています。
+ 「出るモンスター」は普通に湧くモンスターの一覧で、カッコの中の数字はその分岐の何階に出るかです。"""
     body = f"""<h1>ダンジョン</h1>
 <p class="lead">{jp(lead)}</p>
 {filter_bar()}
 <div class="list one" id="list">
 {"".join(cards)}
 </div>"""
-    return page("branch.html", "ダンジョン", "DCSS の本道と支部、それぞれに出るモンスター。",
+    return page("branch.html", "ダンジョン", "DCSS の本道と分岐、それぞれに出るモンスター。",
                 body, data.version, wide=True)
 
 
@@ -767,15 +767,15 @@ def simple_cards(entries: list, tiles: Tiles, prefix: str) -> list[tuple[str, st
 
 def build_mutation(data: Data, tiles: Tiles) -> str:
     rows = simple_cards(data.lookup["mutation"], tiles, "u-")
-    lead = f"""全{len(rows)}個。突然変異は、変異の薬や汚染、神様の力などで付いたり消えたりします。
+    lead = f"""全{len(rows)}個。変異は、突然変異の薬や魔力汚染、神様の力などで付いたり消えたりします。
  種族によっては最初から持っているものもあります。段階があるものは、段階ごとの説明を並べています。"""
-    body = f"""<h1>突然変異</h1>
+    body = f"""<h1>変異</h1>
 <p class="lead">{jp(lead)}</p>
 {filter_bar()}
 <div class="list" id="list">
 {"".join(r[1] for r in rows)}
 </div>"""
-    return page("mutation.html", "突然変異", "DCSS の突然変異すべての説明。",
+    return page("mutation.html", "変異", "DCSS の変異すべての説明。",
                 body, data.version, wide=True)
 
 
@@ -823,10 +823,10 @@ def build_index(data: Data, counts: dict) -> str:
         ("item.html", "アイテム", f'{counts["item"]}種。武器と防具は一覧表つき'),
         ("artefact.html", "固定アーティファクト", f'{counts["artefact"]}個の一点もの'),
         ("species.html", "種族", f'{counts["species"]}種族。スキル適性の表つき'),
-        ("job.html", "職業", f'{counts["job"]}職業。開始時のスキルと持ち物'),
+        ("job.html", "職業", f'{counts["job"]}職業。開始時のスキルと所持品'),
         ("god.html", "神", f'{counts["god"]}柱。もらえる能力と神罰'),
         ("branch.html", "ダンジョン", f'{counts["branch"]}か所。それぞれに出るモンスター'),
-        ("mutation.html", "突然変異", f'{counts["mutation"]}個'),
+        ("mutation.html", "変異", f'{counts["mutation"]}個'),
         ("misc.html", "事典", "スキル、能力、状態、雲、地形、カードなど"),
     ]
     tiles_html = "".join(f'<a class="t" href="{h}"><b>{t}</b><span>{esc(s)}</span></a>'
