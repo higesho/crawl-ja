@@ -2301,11 +2301,11 @@ You are surrounded by a mild repulsion field. (EV +2)
 %%%%
 You are surrounded by a moderate repulsion field. (EV +3)
 
-あなたは斥力場に覆われている。(回避 +3)
+あなたは中程度の斥力場に覆われている。(回避 +3)
 %%%%
 You are surrounded by a strong repulsion field. (EV +4, RMsl)
 
-あなたは強力な斥力場に覆われている。(回避 +4, 飛来物防御)
+あなたは強力な斥力場に覆われている。(回避 +4, 飛び道具反発)
 %%%%
 You begin to radiate repulsive energy.
 
