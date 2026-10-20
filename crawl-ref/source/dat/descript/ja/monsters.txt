@@ -2630,7 +2630,7 @@ ironbound thunderhulk
 #   A brutish figure, hastily armoured in scraps of leather and metal to combat
 #   a fearsome intruder. On its back is an antique, arcane 'lightning rod', which
 #   calls down thunder on distant foes, although it cannot hit nearby targets.
-恐るべき侵入者と戦うために、革と金属の切れ端で急ごしらえの鎧をまとった野蛮な姿だ。背中には古めかしい秘術の「避雷針」を背負っており、離れた敵に雷を落とすが、近くの標的には当てられない。
+恐るべき侵入者と戦うために、革と金属の切れ端で急ごしらえの鎧をまとった野蛮な姿だ。背中には古めかしい秘術の「稲妻のロッド」を背負っており、離れた敵に雷を落とすが、近くの標的には当てられない。
 %%%%
 ironbound preserver
 
