@@ -130,11 +130,11 @@ Edmund
 #   none of Sigmund's skills in magic, but makes up for it with his skills in
 #   fighting and a canny head for money. He is eager to prove his superiority by
 #   killing hapless adventurers with his expensive flail and quick wit.
-嫉妬深い、シグムンドの弟だ(正確には九人兄弟の末っ子だ)。
-彼はシグムンドのような魔法の力を全く持っていないが、
-それを戦闘と金儲けの技術で補っている。
-彼は不運な冒険者を彼の持つ高価なフレイルと頭の回転をもって殺害することで、
-彼自身の優位性を証明せんと欲している。
+シグムンドを妬む弟だ(正確には九人兄弟の末っ子)。
+シグムンドのような魔法の才はまるでないが、
+その分を戦いの腕と金勘定の抜け目なさで補っている。
+高価なフレイルと回る頭で哀れな冒険者を仕留め、
+自分のほうが上だと証明したくてたまらないのだ。
 %%%%
 Ereshkigal
 
