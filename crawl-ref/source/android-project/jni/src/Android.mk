@@ -102,6 +102,8 @@ LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
     $(CRAWL_PATH)/format.cc \
     $(CRAWL_PATH)/fprop.cc \
     $(CRAWL_PATH)/game-options.cc \
+    $(CRAWL_PATH)/gamepad.cc \
+    $(CRAWL_PATH)/gamepad-menu.cc \
     $(CRAWL_PATH)/geom2d.cc \
     $(CRAWL_PATH)/ghost.cc \
     $(CRAWL_PATH)/god-abil.cc \

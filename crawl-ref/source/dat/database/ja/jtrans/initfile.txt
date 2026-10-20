@@ -275,3 +275,19 @@ Options error: %s (%s:%d)
 
 オプションエラー: %s (%s:%d)
 %%%%
+Bad pad_bind entry '%s' (expected button:command)
+
+pad_bind の項目が不正: '%s'(「ボタン:コマンド」の形で書く)
+%%%%
+Unknown gamepad button '%s' in pad_bind
+
+pad_bind のゲームパッドのボタン '%s' がわからない
+%%%%
+The gamepad's %s button can't be rebound
+
+ゲームパッドの %s ボタンは割り当てを変えられない
+%%%%
+Command '%s' can't be bound to a gamepad button
+
+コマンド '%s' はゲームパッドのボタンに割り当てられない
+%%%%

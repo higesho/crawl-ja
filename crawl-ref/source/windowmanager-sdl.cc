@@ -25,11 +25,18 @@
 #endif
 
 #include "cio.h"
+#include "command.h"
 #include "files.h"
+#include "gamepad.h"
+#include "gamepad-menu.h"
 #include "glwrapper.h"
 #include "libutil.h"
+#include "macro.h"
 #include "options.h"
+#include "state.h"
+#include "stringutil.h"
 #include "syscalls.h"
+#include "ui.h"
 #include "unicode.h"
 #include "version.h"
 #include "windowmanager.h"
@@ -431,14 +438,423 @@ static void _translate_wheel_event(const SDL_MouseWheelEvent &sdl_event,
     tile_event.py = display_density.apply_game_scale(sdl_event.y);
 }
 
+/////////////////////////////////////////////////////////////////////////////
+// ゲームパッド(ja-tools/GAMEPAD_DESIGN.md)
+//
+// パッドの出来事は gamepad_state(gamepad.cc)で方向と押しに直し、
+// wait_event() がキー 1 つの WME_KEYDOWN として返す。ゲーム側は何も知らない。
+
+// 検査用の台本(CRAWL_PAD_TEST)が流す偽の出来事の機器番号。実機と同じ道を通す。
+static const int PAD_INJECTED_ID = -2;
+
+static FILE *_pad_log = nullptr; // CRAWL_PAD_LOG(出したキーの記録)
+
+// ゲームがメイン画面でコマンドを待っているか。このときだけコマンドを出す
+// (GAMEPAD_DESIGN.md §2.1)。
+static bool _pad_in_command_context()
+{
+    return crawl_state.waiting_for_command
+           && mouse_control::current_mode() == MOUSE_MODE_COMMAND
+           && !ui::has_layout();
+}
+
+// メニュー・ポップアップの中か。狙いと階の地図も UI の層だが、そこでは斜めに
+// カーソルを動かせるのでメニューには数えない。
+static bool _pad_in_menu()
+{
+    if (!ui::has_layout())
+        return false;
+    const KeymapContext km = ui::current_keymap();
+    return km != KMC_TARGETING && km != KMC_LEVELMAP;
+}
+
+static int _pad_direction_key(int dx, int dy)
+{
+    // メニューの中では斜めの Home/PgUp などが「先頭へ」「1 ページ」になって
+    // しまうので、縦の成分だけを出す(メニューは縦に並ぶ)。
+    if (dx != 0 && dy != 0 && _pad_in_menu())
+        dx = 0;
+    // 矢印キーとテンキー(NumLock 無し)と同じキー。
+    static const int keys[3][3] =
+    {
+        { CK_HOME, CK_UP,   CK_PGUP  },
+        { CK_LEFT, 0,       CK_RIGHT },
+        { CK_END,  CK_DOWN, CK_PGDN  },
+    };
+    return keys[dy + 1][dx + 1];
+}
+
+static int _pad_output_to_key(const pad_output &out)
+{
+    if (out.is_direction)
+        return _pad_direction_key(out.dx, out.dy);
+
+    // 単独押しの A と B は決定・取消で固定(同時押しの層の A・B は枠)。
+    if (out.mods == 0 && (out.button == PAD_A || out.button == PAD_B))
+    {
+        // コマンド待ちの画面で Enter/Esc を出すと「そのコマンドは存在しません」が
+        // 出るだけなので何もしない(B で自動探索を止めたあとなど)。
+        if (_pad_in_command_context())
+            return CK_NO_KEY;
+        return out.button == PAD_A ? CK_ENTER : CK_ESCAPE;
+    }
+
+    // 割り当ての画面が開いている間は、押したボタンの枠を開くために枠のキーを出す。
+    if (gamepad_menu_capturing())
+        return CK_PAD_BASE - pad_slot(out.button, out.mods);
+
+    const command_type cmd = gamepad_bound_command(out.button, out.mods);
+    if (cmd != CMD_NO_CMD)
+    {
+        // キーマップも bindkey も通らない、マウスのクリックと同じ道。
+        // コマンドを待っていない場面では何もしない(CK_NO_KEY は読み捨てられる)。
+        return _pad_in_command_context() ? encode_command_as_key(cmd)
+                                         : CK_NO_KEY;
+    }
+    // 割り当ての無い枠は、その枠のキーを出す。マクロ(~ のマクロ編集)や
+    // キーマップのトリガーになる。登録が無ければゲームが無視する。
+    return CK_PAD_BASE - pad_slot(out.button, out.mods);
+}
+
+static void _pad_log_key(const pad_output &out, int key)
+{
+    if (!_pad_log)
+        return;
+    string what = out.is_direction
+        ? make_stringf("dir %d,%d", out.dx, out.dy)
+        : pad_slot_name(out.button, out.mods);
+    string result;
+    if (key == CK_NO_KEY)
+        result = "(none)";
+    else if (-key > CMD_NO_CMD && -key < CMD_MAX_CMD)
+        result = command_to_name(static_cast<command_type>(-key));
+    else
+        result = keycode_to_name(key, false);
+    fprintf(_pad_log, "%u %s -> %s%s%s\n", SDL_GetTicks(), what.c_str(),
+            result.c_str(),
+            _pad_in_menu() ? " [menu]" : ui::has_layout() ? " [ui]" : "",
+            _pad_in_command_context() ? " [command]" : "");
+    fflush(_pad_log);
+}
+
+// 検査用の台本(CRAWL_PAD_TEST)。GAMEPAD_DESIGN.md §6。
+struct pad_script_step
+{
+    uint32_t at;     // 台本の始まりからのミリ秒
+    SDL_Event event;
+};
+
+struct pad_script
+{
+    vector<pad_script_step> steps;
+    size_t next = 0;
+};
+
+static pad_script _pad_test_script;
+
+static bool _pad_script_button(const string &name, SDL_Event &ev, bool down)
+{
+    static const struct { const char *name; SDL_GameControllerButton button; }
+    buttons[] =
+    {
+        { "a", SDL_CONTROLLER_BUTTON_A },
+        { "b", SDL_CONTROLLER_BUTTON_B },
+        { "x", SDL_CONTROLLER_BUTTON_X },
+        { "y", SDL_CONTROLLER_BUTTON_Y },
+        { "lb", SDL_CONTROLLER_BUTTON_LEFTSHOULDER },
+        { "rb", SDL_CONTROLLER_BUTTON_RIGHTSHOULDER },
+        { "back", SDL_CONTROLLER_BUTTON_BACK },
+        { "start", SDL_CONTROLLER_BUTTON_START },
+        { "l3", SDL_CONTROLLER_BUTTON_LEFTSTICK },
+        { "r3", SDL_CONTROLLER_BUTTON_RIGHTSTICK },
+        { "up", SDL_CONTROLLER_BUTTON_DPAD_UP },
+        { "down", SDL_CONTROLLER_BUTTON_DPAD_DOWN },
+        { "left", SDL_CONTROLLER_BUTTON_DPAD_LEFT },
+        { "right", SDL_CONTROLLER_BUTTON_DPAD_RIGHT },
+    };
+    const string lower = lowercase_string(name);
+    for (const auto &b : buttons)
+    {
+        if (lower != b.name)
+            continue;
+        memset(&ev, 0, sizeof(ev));
+        ev.type = down ? SDL_CONTROLLERBUTTONDOWN : SDL_CONTROLLERBUTTONUP;
+        ev.cbutton.which = PAD_INJECTED_ID;
+        ev.cbutton.button = b.button;
+        ev.cbutton.state = down ? SDL_PRESSED : SDL_RELEASED;
+        return true;
+    }
+    // トリガは軸。押す = 32767、離す = 0。
+    if (lower == "lt" || lower == "rt")
+    {
+        memset(&ev, 0, sizeof(ev));
+        ev.type = SDL_CONTROLLERAXISMOTION;
+        ev.caxis.which = PAD_INJECTED_ID;
+        ev.caxis.axis = lower == "lt" ? SDL_CONTROLLER_AXIS_TRIGGERLEFT
+                                      : SDL_CONTROLLER_AXIS_TRIGGERRIGHT;
+        ev.caxis.value = down ? 32767 : 0;
+        return true;
+    }
+    return false;
+}
+
+static void _pad_parse_test_script(const string &text)
+{
+    uint32_t at = 0;
+    for (const string &token : split_string(" ", text))
+    {
+        SDL_Event ev;
+        const size_t eq = token.find('=');
+        if (isadigit(token[0]))
+            at += atoi(token.c_str());
+        else if (eq != string::npos)
+        {
+            // 軸の値: LX=32000 / LY=-32000 / LT=20000 / RT=0
+            static const struct { const char *name; SDL_GameControllerAxis axis; }
+            axes[] =
+            {
+                { "lx", SDL_CONTROLLER_AXIS_LEFTX },
+                { "ly", SDL_CONTROLLER_AXIS_LEFTY },
+                { "lt", SDL_CONTROLLER_AXIS_TRIGGERLEFT },
+                { "rt", SDL_CONTROLLER_AXIS_TRIGGERRIGHT },
+            };
+            const string name = lowercase_string(token.substr(0, eq));
+            for (const auto &a : axes)
+            {
+                if (name != a.name)
+                    continue;
+                memset(&ev, 0, sizeof(ev));
+                ev.type = SDL_CONTROLLERAXISMOTION;
+                ev.caxis.which = PAD_INJECTED_ID;
+                ev.caxis.axis = a.axis;
+                ev.caxis.value = atoi(token.substr(eq + 1).c_str());
+                _pad_test_script.steps.push_back({ at, ev });
+            }
+        }
+        else if (token[0] == '+' || token[0] == '-')
+        {
+            if (_pad_script_button(token.substr(1), ev, token[0] == '+'))
+                _pad_test_script.steps.push_back({ at, ev });
+        }
+        else if (_pad_script_button(token, ev, true))
+        {
+            // 名前だけなら、押して 60ms 後に離す。
+            _pad_test_script.steps.push_back({ at, ev });
+            _pad_script_button(token, ev, false);
+            _pad_test_script.steps.push_back({ at + 60, ev });
+            at += 60;
+        }
+    }
+}
+
+static unsigned int _pad_script_timer(unsigned int interval, void *param)
+{
+    UNUSED(interval);
+    pad_script &script = *static_cast<pad_script *>(param);
+    if (script.next >= script.steps.size())
+        return 0;
+    const uint32_t now_at = script.steps[script.next].at;
+    while (script.next < script.steps.size()
+           && script.steps[script.next].at <= now_at)
+    {
+        SDL_PushEvent(&script.steps[script.next].event);
+        ++script.next;
+    }
+    if (script.next >= script.steps.size())
+        return 0;
+    return max<uint32_t>(1, script.steps[script.next].at - now_at);
+}
+
+void SDLWrapper::pad_open(int device_index)
+{
+    if (m_pad)
+        return; // 1 本だけ持つ(2 本目は無視する)
+    if (!SDL_IsGameController(device_index))
+        return;
+    SDL_GameController *pad = SDL_GameControllerOpen(device_index);
+    if (!pad)
+        return;
+    m_pad = pad;
+    m_pad_id = SDL_JoystickInstanceID(SDL_GameControllerGetJoystick(pad));
+    // 挿した直後は「握ったまま」を走らせない(約束 2)。
+    pad_forget();
+    if (_pad_log)
+    {
+        const char *name = SDL_GameControllerName(pad);
+        fprintf(_pad_log, "%u open %s\n", SDL_GetTicks(), name ? name : "?");
+        fflush(_pad_log);
+    }
+}
+
+void SDLWrapper::pad_close()
+{
+    if (m_pad)
+        SDL_GameControllerClose(m_pad);
+    m_pad = nullptr;
+    m_pad_id = -1;
+    pad_forget();
+}
+
+void SDLWrapper::pad_forget()
+{
+    m_pad_state.forget();
+    // 握ったままのトリガを、焦点が戻った瞬間に押しと数えない。
+    if (m_pad)
+    {
+        m_pad_state.sync_trigger(0, SDL_GameControllerGetAxis(m_pad,
+                                        SDL_CONTROLLER_AXIS_TRIGGERLEFT));
+        m_pad_state.sync_trigger(1, SDL_GameControllerGetAxis(m_pad,
+                                        SDL_CONTROLLER_AXIS_TRIGGERRIGHT));
+    }
+}
+
+// パッドの出来事なら状態機械へ流して true。
+bool SDLWrapper::pad_handle_event(const SDL_Event &event)
+{
+    switch (event.type)
+    {
+    case SDL_CONTROLLERDEVICEADDED:
+        pad_open(event.cdevice.which);
+        return true;
+    case SDL_CONTROLLERDEVICEREMOVED:
+        if (event.cdevice.which == m_pad_id)
+            pad_close();
+        return true;
+    case SDL_CONTROLLERDEVICEREMAPPED:
+        return true;
+    case SDL_CONTROLLERBUTTONDOWN:
+    case SDL_CONTROLLERBUTTONUP:
+    {
+        if (event.cbutton.which != m_pad_id
+            && event.cbutton.which != PAD_INJECTED_ID)
+        {
+            return true; // 開いていない 2 本目のパッド
+        }
+        const bool down = event.type == SDL_CONTROLLERBUTTONDOWN;
+        switch (event.cbutton.button)
+        {
+        case SDL_CONTROLLER_BUTTON_DPAD_UP:
+            m_pad_state.set_dpad(PAD_DPAD_UP, down);
+            return true;
+        case SDL_CONTROLLER_BUTTON_DPAD_DOWN:
+            m_pad_state.set_dpad(PAD_DPAD_DOWN, down);
+            return true;
+        case SDL_CONTROLLER_BUTTON_DPAD_LEFT:
+            m_pad_state.set_dpad(PAD_DPAD_LEFT, down);
+            return true;
+        case SDL_CONTROLLER_BUTTON_DPAD_RIGHT:
+            m_pad_state.set_dpad(PAD_DPAD_RIGHT, down);
+            return true;
+        case SDL_CONTROLLER_BUTTON_A:
+            m_pad_state.set_button(PAD_A, down);
+            return true;
+        case SDL_CONTROLLER_BUTTON_B:
+            m_pad_state.set_button(PAD_B, down);
+            return true;
+        case SDL_CONTROLLER_BUTTON_X:
+            m_pad_state.set_button(PAD_X, down);
+            return true;
+        case SDL_CONTROLLER_BUTTON_Y:
+            m_pad_state.set_button(PAD_Y, down);
+            return true;
+        case SDL_CONTROLLER_BUTTON_LEFTSHOULDER:
+            m_pad_state.set_button(PAD_LB, down);
+            return true;
+        case SDL_CONTROLLER_BUTTON_RIGHTSHOULDER:
+            m_pad_state.set_button(PAD_RB, down);
+            return true;
+        case SDL_CONTROLLER_BUTTON_BACK:
+            m_pad_state.set_button(PAD_BACK, down);
+            return true;
+        case SDL_CONTROLLER_BUTTON_START:
+            m_pad_state.set_button(PAD_START, down);
+            return true;
+        case SDL_CONTROLLER_BUTTON_LEFTSTICK:
+            m_pad_state.set_button(PAD_L3, down);
+            return true;
+        case SDL_CONTROLLER_BUTTON_RIGHTSTICK:
+            m_pad_state.set_button(PAD_R3, down);
+            return true;
+        default:
+            return true; // Guide など知らないボタンは食って捨てる
+        }
+    }
+    case SDL_CONTROLLERAXISMOTION:
+        if (event.caxis.which != m_pad_id
+            && event.caxis.which != PAD_INJECTED_ID)
+        {
+            return true;
+        }
+        switch (event.caxis.axis)
+        {
+        case SDL_CONTROLLER_AXIS_LEFTX:
+            m_pad_state.set_stick(0, event.caxis.value);
+            break;
+        case SDL_CONTROLLER_AXIS_LEFTY:
+            m_pad_state.set_stick(1, event.caxis.value);
+            break;
+        case SDL_CONTROLLER_AXIS_TRIGGERLEFT:
+            m_pad_state.set_trigger(0, event.caxis.value);
+            break;
+        case SDL_CONTROLLER_AXIS_TRIGGERRIGHT:
+            m_pad_state.set_trigger(1, event.caxis.value);
+            break;
+        default:
+            break; // 右スティックは使わない
+        }
+        return true;
+    default:
+        return false;
+    }
+}
+
+// 待ち行列にあるパッドの出来事だけを先に取り出して状態機械へ流す(kbhit 用)。
+void SDLWrapper::pad_pump_events()
+{
+    SDL_Event events[16];
+    int count;
+    while ((count = SDL_PeepEvents(events, ARRAYSZ(events), SDL_GETEVENT,
+                                   SDL_CONTROLLERAXISMOTION,
+                                   SDL_CONTROLLERDEVICEREMAPPED)) > 0)
+    {
+        for (int i = 0; i < count; ++i)
+            pad_handle_event(events[i]);
+    }
+}
+
+void SDLWrapper::pad_update()
+{
+    // 焦点は毎回窓に訊く(約束 1)。
+    const bool focused = m_window
+        && (SDL_GetWindowFlags(m_window) & SDL_WINDOW_INPUT_FOCUS);
+    if (focused && !m_pad_focused)
+        pad_forget(); // 焦点が戻った。握ったままを走らせない(約束 2)
+    m_pad_focused = focused;
+    m_pad_state.update(SDL_GetTicks(), focused,
+                       Options.tile_key_repeat_delay);
+}
+
+bool SDLWrapper::pad_take_key(int &key)
+{
+    pad_output out;
+    if (!m_pad_state.take_output(out))
+        return false;
+    key = _pad_output_to_key(out);
+    _pad_log_key(out, key);
+    return true;
+}
+
 SDLWrapper::SDLWrapper():
-    m_window(nullptr), m_context(nullptr), prev_keycode(0)
+    m_window(nullptr), m_context(nullptr), prev_keycode(0),
+    m_pad(nullptr), m_pad_id(-1), m_pad_focused(false)
 {
     m_cursors.fill(nullptr);
 }
 
 SDLWrapper::~SDLWrapper()
 {
+    if (m_pad)
+        SDL_GameControllerClose(m_pad);
     for (const auto& cursor : m_cursors)
         if (cursor)
             SDL_FreeCursor(cursor);
@@ -456,6 +872,22 @@ int SDLWrapper::init(coord_def *m_windowsz)
     {
         printf("Failed to initialise SDL: %s\n", SDL_GetError());
         return false;
+    }
+
+    // ゲームパッド。起こせなくてもゲームは続ける(パッド無しで今までどおり)。
+    // すでに繋がっているパッドは SDL_CONTROLLERDEVICEADDED で届く。
+    if (SDL_InitSubSystem(SDL_INIT_GAMECONTROLLER) != 0)
+        printf("Failed to initialise game controllers: %s\n", SDL_GetError());
+    if (const char *log = getenv("CRAWL_PAD_LOG"))
+        _pad_log = fopen_u(log, "a");
+    if (const char *script = getenv("CRAWL_PAD_TEST"))
+    {
+        _pad_parse_test_script(script);
+        if (!_pad_test_script.steps.empty())
+        {
+            SDL_AddTimer(max<uint32_t>(1, _pad_test_script.steps[0].at),
+                         _pad_script_timer, &_pad_test_script);
+        }
     }
 
     int cur_display;
@@ -943,8 +1375,41 @@ int SDLWrapper::wait_event(wm_event *event, int timeout)
         // event below.
     }
 
-    if (!SDL_WaitEventTimeout(&sdlevent, timeout))
-        return 0;
+    // パッドの出来事は状態機械へ流し、出すキーがあればそれを返す。方向を
+    // 押している間は、リピートの時刻までに必ず起きるよう待ち時間を縮める。
+    const unsigned int start = SDL_GetTicks();
+    while (true)
+    {
+        pad_update();
+        int padkey;
+        if (pad_take_key(padkey))
+        {
+            event->type = WME_KEYDOWN;
+            event->key.state = 1;
+            event->key.keysym.scancode = 0;
+            event->key.keysym.key_mod = 0;
+            event->key.keysym.unicode = padkey;
+            event->key.keysym.sym = padkey;
+            return 1;
+        }
+
+        int wait = timeout;
+        if (timeout != INT_MAX)
+            wait = max(0, timeout - (int)(SDL_GetTicks() - start));
+        const int due = m_pad_state.ms_until_due(SDL_GetTicks());
+        const bool pad_wakeup = due >= 0 && due < wait;
+        if (pad_wakeup)
+            wait = due;
+
+        if (!SDL_WaitEventTimeout(&sdlevent, wait))
+        {
+            if (pad_wakeup)
+                continue;
+            return 0;
+        }
+        if (!pad_handle_event(sdlevent))
+            break;
+    }
 
     if (sdlevent.type != SDL_TEXTINPUT)
         prev_keycode = 0;
@@ -1126,6 +1591,22 @@ bool SDLWrapper::next_event_is(wm_event_type type)
 
     SDL_Event store;
     SDL_PumpEvents();
+
+    // パッドが出すキーもキー入力として数える(自動探索などを止める kbhit 用)。
+    if (type == WME_KEYDOWN)
+    {
+        pad_pump_events();
+        pad_update();
+        if (m_pad_state.has_output())
+        {
+            if (_pad_log)
+            {
+                fprintf(_pad_log, "%u kbhit\n", SDL_GetTicks());
+                fflush(_pad_log);
+            }
+            return true;
+        }
+    }
 
     // Note: this returns -1 for error.
     int count = SDL_PeepEvents(&store, 1, SDL_PEEKEVENT, event, event);

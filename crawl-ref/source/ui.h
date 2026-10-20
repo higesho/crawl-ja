@@ -1272,6 +1272,8 @@ void pump_events(int wait_event_timeout = INT_MAX);
 void run_layout(shared_ptr<Widget> root, const bool& done,
         shared_ptr<Widget> initial_focus = nullptr);
 bool has_layout();
+// いちばん上の UI の層のキーマップ文脈(ゲームパッドが画面の種類を見分けるのに使う)。
+KeymapContext current_keymap();
 NORETURN void restart_layout();
 int getch(KeymapContext km = KMC_DEFAULT);
 void force_render();

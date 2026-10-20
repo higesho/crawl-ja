@@ -1,0 +1,635 @@
+# gamepad-menu.cc(ゲームパッドの割り当ての画面。ja-tools/GAMEPAD_DESIGN.md §8)
+# [pad command] はコマンドの表示名、[pad group] は分類、[pad layer] は同時押しの層。
+%%%%
+Gamepad bindings
+
+ゲームパッドの割り当て
+%%%%
+(no command: macro key)
+
+(割り当てなし: マクロのキー)
+%%%%
+Command for %s (now: %s)
+
+%s に割り当てるコマンド(今: %s)
+%%%%
+No command (send the macro key %s)
+
+割り当てなし(マクロのキー %s を出す)
+%%%%
+Reset (use the rc file or the default: %s)
+
+元に戻す(rc か既定のまま: %s)
+%%%%
+[<w>Up</w>/<w>Down</w>] choose, [<w>A</w>/<w>Enter</w>] assign, [<w>B</w>/<w>Esc</w>] go back
+
+[<w>上</w>/<w>下</w>] で選ぶ、[<w>A</w>/<w>Enter</w>] で割り当てる、[<w>B</w>/<w>Esc</w>] で戻る
+%%%%
+Undo all changes made in this screen
+
+この画面での変更をすべて取り消す
+%%%%
+[<w>Up</w>/<w>Down</w>] choose, [<w>A</w>/<w>Enter</w>] change, [<w>B</w>/<w>Esc</w>] close. Press a gamepad button or chord to change it.
+
+[<w>上</w>/<w>下</w>] で選ぶ、[<w>A</w>/<w>Enter</w>] で変える、[<w>B</w>/<w>Esc</w>] で閉じる。パッドのボタンや同時押しを押しても、その枠を変えられる。
+%%%%
+A (confirm) and B (cancel) alone are fixed. <yellow>Yellow</yellow> rows were changed here: they are saved to pad_binds.txt and take precedence over pad_bind in the rc file.
+
+A(決定)と B(取消)の単独押しは固定。<yellow>黄色</yellow>の行はこの画面で変えたもので、pad_binds.txt に保存され、rc の pad_bind より優先する。
+%%%%
+Really undo all changes made in this screen?
+
+この画面での変更を本当にすべて取り消す?
+%%%%
+All changes made in this screen were undone.
+
+この画面での変更をすべて取り消した。
+%%%%
+Command for %s: %s
+
+%s に割り当てるコマンド: %s
+%%%%
+Command categories
+
+コマンドの分類
+%%%%
+[<w>Up</w>/<w>Down</w>] choose, [<w>A</w>/<w>Enter</w>] open or assign, [<w>B</w>/<w>Esc</w>] go back
+
+[<w>上</w>/<w>下</w>] で選ぶ、[<w>A</w>/<w>Enter</w>] で開く・割り当てる、[<w>B</w>/<w>Esc</w>] で戻る
+%%%%
+[pad layer]Single press
+
+単独押し
+%%%%
+[pad layer]Holding LB
+
+LB を押しながら
+%%%%
+[pad layer]Holding RB
+
+RB を押しながら
+%%%%
+[pad layer]Holding LB and RB
+
+LB と RB を押しながら
+%%%%
+[pad group]Movement and exploration
+
+移動・探索
+%%%%
+[pad group]Combat
+
+戦闘
+%%%%
+[pad group]Items
+
+アイテム
+%%%%
+[pad group]Information
+
+情報
+%%%%
+[pad group]Other
+
+その他
+%%%%
+[pad group]Saving, quitting and special modes
+
+保存・終了と特別なモード
+%%%%
+[pad group]Moves in a given direction
+
+方向を指定した移動・攻撃
+%%%%
+[pad group]All other commands
+
+その他のコマンド(内部の名前)
+%%%%
+[pad command]Auto-explore
+
+自動探索
+%%%%
+[pad command]Auto-explore without resting
+
+休まずに自動探索
+%%%%
+[pad command]Travel to a level or place
+
+階層間自動移動
+%%%%
+[pad command]Go down stairs
+
+階段を下りる
+%%%%
+[pad command]Go up stairs
+
+階段を上る
+%%%%
+[pad command]Rest and search
+
+休憩して長時間待機する
+%%%%
+[pad command]Wait a turn
+
+1ターン待つ
+%%%%
+[pad command]Level map
+
+階全体のマップ
+%%%%
+[pad command]Look around
+
+周囲を調べる
+%%%%
+[pad command]Open a door
+
+扉を開ける
+%%%%
+[pad command]Close a door
+
+扉を閉める
+%%%%
+[pad command]Set a waypoint
+
+中継地点を指定する
+%%%%
+[pad command]Auto-fight
+
+自動戦闘
+%%%%
+[pad command]Auto-fight without moving
+
+その場で自動戦闘
+%%%%
+[pad command]Fire at the nearest target
+
+いちばん近い相手に撃つ
+%%%%
+[pad command]Primary attack
+
+手に持ったもので攻撃する
+%%%%
+[pad command]Fire quivered action
+
+セットした行動を実行する
+%%%%
+[pad command]Fire or throw an item
+
+アイテムを選んで射撃・投擲する
+%%%%
+[pad command]Choose quivered action
+
+セットする行動を選ぶ
+%%%%
+[pad command]Next quivered action
+
+次の行動をセットする
+%%%%
+[pad command]Previous quivered action
+
+前の行動をセットする
+%%%%
+[pad command]Swap with the last quivered action
+
+直前にセットしていた行動と入れ替える
+%%%%
+[pad command]Cast a spell
+
+呪文を唱える
+%%%%
+[pad command]Cast a spell even without targets
+
+対象がいなくても呪文を唱える
+%%%%
+[pad command]Use an ability
+
+能力を使う
+%%%%
+[pad command]Evoke an item
+
+アイテムを発動する
+%%%%
+[pad command]Zap a wand
+
+ワンドを振る
+%%%%
+[pad command]Shout or give orders to allies
+
+叫ぶ・仲間に指示する
+%%%%
+[pad command]Inventory
+
+所持品
+%%%%
+[pad command]Pick up
+
+拾う
+%%%%
+[pad command]Pick up a chosen number
+
+数を指定して拾う
+%%%%
+[pad command]Drop
+
+置く
+%%%%
+[pad command]Drop the last items picked up
+
+最後に拾ったアイテムを置く
+%%%%
+[pad command]Quaff a potion
+
+薬を飲む
+%%%%
+[pad command]Read a scroll
+
+巻物を読む
+%%%%
+[pad command]Wield a weapon
+
+武器を手に持つ
+%%%%
+[pad command]Swap weapons (a and b)
+
+武器を持ち換える(a と b)
+%%%%
+[pad command]Equip an item
+
+装備する
+%%%%
+[pad command]Unequip an item
+
+装備を外す
+%%%%
+[pad command]Wear armour
+
+防具を着る
+%%%%
+[pad command]Take off armour
+
+防具を脱ぐ
+%%%%
+[pad command]Put on jewellery
+
+装身具を着ける
+%%%%
+[pad command]Remove jewellery
+
+装身具を外す
+%%%%
+[pad command]Memorise a spell
+
+呪文を記憶する
+%%%%
+[pad command]Inscribe an item
+
+アイテムに銘をつける
+%%%%
+[pad command]Reassign item and spell letters
+
+アイテムや呪文の文字を変える
+%%%%
+[pad command]Character overview
+
+キャラクター概要
+%%%%
+[pad command]Character status
+
+キャラクターのステータス
+%%%%
+[pad command]Skills
+
+スキル
+%%%%
+[pad command]Spells
+
+記憶している呪文
+%%%%
+[pad command]Religion
+
+信仰
+%%%%
+[pad command]Mutations
+
+能力と変異
+%%%%
+[pad command]Experience
+
+経験値情報
+%%%%
+[pad command]Worn armour
+
+装備している防具
+%%%%
+[pad command]Worn jewellery
+
+身につけている装身具
+%%%%
+[pad command]Gold
+
+所持金
+%%%%
+[pad command]Item knowledge
+
+既知のアイテム
+%%%%
+[pad command]Runes collected
+
+手にしたルーン
+%%%%
+[pad command]Examine your square
+
+今いる場所を調べる
+%%%%
+[pad command]List what is in view
+
+見えているものの一覧
+%%%%
+[pad command]Toggle terrain-only view
+
+地形だけの表示にする/戻す
+%%%%
+[pad command]Message history
+
+過去のメッセージ
+%%%%
+[pad command]Read messages (online play)
+
+メッセージを読む(オンラインのみ)
+%%%%
+[pad command]Dungeon overview
+
+ダンジョンの概要
+%%%%
+[pad command]Annotate a level
+
+階層に注釈を付ける
+%%%%
+[pad command]Search for items
+
+アイテムを検索する
+%%%%
+[pad command]Lookup info
+
+情報を調べる
+%%%%
+[pad command]Help
+
+ヘルプ
+%%%%
+[pad command]Game menu
+
+ゲームメニュー
+%%%%
+[pad command]Edit macros
+
+マクロを編集する
+%%%%
+[pad command]Quick add macro
+
+マクロを素早く追加する
+%%%%
+[pad command]Gamepad bindings
+
+ゲームパッドの割り当て
+%%%%
+[pad command]Repeat the last command
+
+直前のコマンドを繰り返す
+%%%%
+[pad command]Repeat the next command several times
+
+コマンドを指定した回数繰り返す
+%%%%
+[pad command]Toggle autopickup
+
+自動拾いのオン/オフ
+%%%%
+[pad command]Toggle sound effects
+
+効果音のオン/オフ
+%%%%
+[pad command]Add a note
+
+行動履歴に文を書く
+%%%%
+[pad command]Dump character to file
+
+キャラクターダンプを出力する
+%%%%
+[pad command]Generate and view character dump
+
+キャラクターダンプを作って見る
+%%%%
+[pad command]Edit player tile
+
+プレイヤーのタイルを編集する
+%%%%
+[pad command]Zoom in
+
+拡大する
+%%%%
+[pad command]Zoom out
+
+縮小する
+%%%%
+[pad command]Redraw the screen
+
+画面を再描画する
+%%%%
+[pad command]Clear the level map
+
+階のマップを消去する
+%%%%
+[pad command]Save and quit
+
+保存して終了する
+%%%%
+[pad command]Save and quit without asking
+
+確認せずに保存して終了する
+%%%%
+[pad command]Suspend the game (console only)
+
+ゲームを一時停止する(端末版のみ)
+%%%%
+[pad command]Abandon the character
+
+キャラクターを放棄する
+%%%%
+[pad command]Wizard mode
+
+ウィザードモード
+%%%%
+[pad command]Explore mode
+
+探索モード
+%%%%
+[pad command]Lua console
+
+Lua コンソール
+%%%%
+[pad command]Move left
+
+左へ移動
+%%%%
+[pad command]Move right
+
+右へ移動
+%%%%
+[pad command]Move up
+
+上へ移動
+%%%%
+[pad command]Move down
+
+下へ移動
+%%%%
+[pad command]Move up-left
+
+左上へ移動
+%%%%
+[pad command]Move up-right
+
+右上へ移動
+%%%%
+[pad command]Move down-left
+
+左下へ移動
+%%%%
+[pad command]Move down-right
+
+右下へ移動
+%%%%
+[pad command]Run left
+
+左へ走る
+%%%%
+[pad command]Run right
+
+右へ走る
+%%%%
+[pad command]Run up
+
+上へ走る
+%%%%
+[pad command]Run down
+
+下へ走る
+%%%%
+[pad command]Run up-left
+
+左上へ走る
+%%%%
+[pad command]Run up-right
+
+右上へ走る
+%%%%
+[pad command]Run down-left
+
+左下へ走る
+%%%%
+[pad command]Run down-right
+
+右下へ走る
+%%%%
+[pad command]Wait a turn (only when safe)
+
+1ターン待つ(安全なときだけ)
+%%%%
+[pad command]Move left (only when safe)
+
+左へ移動(安全なときだけ)
+%%%%
+[pad command]Move right (only when safe)
+
+右へ移動(安全なときだけ)
+%%%%
+[pad command]Move up (only when safe)
+
+上へ移動(安全なときだけ)
+%%%%
+[pad command]Move down (only when safe)
+
+下へ移動(安全なときだけ)
+%%%%
+[pad command]Move up-left (only when safe)
+
+左上へ移動(安全なときだけ)
+%%%%
+[pad command]Move up-right (only when safe)
+
+右上へ移動(安全なときだけ)
+%%%%
+[pad command]Move down-left (only when safe)
+
+左下へ移動(安全なときだけ)
+%%%%
+[pad command]Move down-right (only when safe)
+
+右下へ移動(安全なときだけ)
+%%%%
+[pad command]Attack left
+
+左を攻撃
+%%%%
+[pad command]Attack right
+
+右を攻撃
+%%%%
+[pad command]Attack up
+
+上を攻撃
+%%%%
+[pad command]Attack down
+
+下を攻撃
+%%%%
+[pad command]Attack up-left
+
+左上を攻撃
+%%%%
+[pad command]Attack up-right
+
+右上を攻撃
+%%%%
+[pad command]Attack down-left
+
+左下を攻撃
+%%%%
+[pad command]Attack down-right
+
+右下を攻撃
+%%%%
+[pad command]Close the door to the left
+
+左の扉を閉める
+%%%%
+[pad command]Close the door to the right
+
+右の扉を閉める
+%%%%
+[pad command]Close the door above
+
+上の扉を閉める
+%%%%
+[pad command]Close the door below
+
+下の扉を閉める
+%%%%
+[pad command]Close the door to the up-left
+
+左上の扉を閉める
+%%%%
+[pad command]Close the door to the up-right
+
+右上の扉を閉める
+%%%%
+[pad command]Close the door to the down-left
+
+左下の扉を閉める
+%%%%
+[pad command]Close the door to the down-right
+
+右下の扉を閉める
+%%%%

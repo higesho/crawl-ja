@@ -52,6 +52,7 @@ void macro_quick_add();
 void macro_menu();
 void macro_init();
 void macro_save();
+string macro_file_name();
 
 void macro_clear_buffers();
 
