@@ -490,6 +490,7 @@ static int _pad_output_to_key(const pad_output &out)
         return _pad_direction_key(out.dx, out.dy);
 
     // 単独押しの A と B は決定・取消で固定(同時押しの層の A・B は枠)。
+    // 単独押しの L3・R3(クリック)は pad_click() が先に取る。
     if (out.mods == 0 && (out.button == PAD_A || out.button == PAD_B))
     {
         // コマンド待ちの画面で Enter/Esc を出すと「そのコマンドは存在しません」が
@@ -609,12 +610,14 @@ static void _pad_parse_test_script(const string &text)
             at += atoi(token.c_str());
         else if (eq != string::npos)
         {
-            // 軸の値: LX=32000 / LY=-32000 / LT=20000 / RT=0
+            // 軸の値: LX=32000 / LY=-32000 / RX=20000 / LT=20000 / RT=0
             static const struct { const char *name; SDL_GameControllerAxis axis; }
             axes[] =
             {
                 { "lx", SDL_CONTROLLER_AXIS_LEFTX },
                 { "ly", SDL_CONTROLLER_AXIS_LEFTY },
+                { "rx", SDL_CONTROLLER_AXIS_RIGHTX },
+                { "ry", SDL_CONTROLLER_AXIS_RIGHTY },
                 { "lt", SDL_CONTROLLER_AXIS_TRIGGERLEFT },
                 { "rt", SDL_CONTROLLER_AXIS_TRIGGERRIGHT },
             };
@@ -799,8 +802,14 @@ bool SDLWrapper::pad_handle_event(const SDL_Event &event)
         case SDL_CONTROLLER_AXIS_TRIGGERRIGHT:
             m_pad_state.set_trigger(1, event.caxis.value);
             break;
+        case SDL_CONTROLLER_AXIS_RIGHTX:
+            m_pad_state.set_cursor_stick(0, event.caxis.value);
+            break;
+        case SDL_CONTROLLER_AXIS_RIGHTY:
+            m_pad_state.set_cursor_stick(1, event.caxis.value);
+            break;
         default:
-            break; // 右スティックは使わない
+            break;
         }
         return true;
     default:
@@ -832,15 +841,98 @@ void SDLWrapper::pad_update()
     m_pad_focused = focused;
     m_pad_state.update(SDL_GetTicks(), focused,
                        Options.tile_key_repeat_delay);
+    int dx, dy;
+    if (m_pad_state.cursor_motion(SDL_GetTicks(), focused, dx, dy))
+        pad_move_cursor(dx, dy);
 }
 
 bool SDLWrapper::pad_take_key(int &key)
 {
     pad_output out;
-    if (!m_pad_state.take_output(out))
+    while (m_pad_state.take_output(out))
+    {
+        if (pad_click(out))
+            continue; // マウスの出来事として待ち行列に積んだ
+        key = _pad_output_to_key(out);
+        _pad_log_key(out, key);
+        return true;
+    }
+    return false;
+}
+
+// マウスのカーソルの今の位置(窓の座標)。SDL_GetMouseState は窓に届いた
+// 動きの出来事を読むまで古いままなので、OS のカーソルの位置から直接出す。
+bool SDLWrapper::pad_mouse_position(int &x, int &y)
+{
+    if (!m_window)
         return false;
-    key = _pad_output_to_key(out);
-    _pad_log_key(out, key);
+    int gx, gy, wx, wy, w, h;
+    SDL_GetGlobalMouseState(&gx, &gy);
+    SDL_GetWindowPosition(m_window, &wx, &wy);
+    SDL_GetWindowSize(m_window, &w, &h);
+    if (w <= 0 || h <= 0)
+        return false;
+    x = max(0, min(w - 1, gx - wx));
+    y = max(0, min(h - 1, gy - wy));
+    return true;
+}
+
+// 右スティックの分だけマウスのカーソルを動かす(GAMEPAD_DESIGN.md §2.2)。
+// 窓には OS から本物のマウスの動きが届くので、あとはマウスと同じ道を通る。
+void SDLWrapper::pad_move_cursor(int dx, int dy)
+{
+    int x, y, w, h;
+    if (!pad_mouse_position(x, y))
+        return;
+    SDL_GetWindowSize(m_window, &w, &h);
+    const int nx = max(0, min(w - 1, x + dx));
+    const int ny = max(0, min(h - 1, y + dy));
+    if (nx == x && ny == y)
+        return;
+    SDL_WarpMouseInWindow(m_window, nx, ny);
+    if (_pad_log)
+    {
+        fprintf(_pad_log, "%u cursor %d,%d -> %d,%d\n", SDL_GetTicks(),
+                x, y, nx, ny);
+        fflush(_pad_log);
+    }
+}
+
+// 単独押しの L3・R3 はマウスの左・右クリックで固定。カーソルの今の位置で
+// 押して離す出来事を積む。それ以外の押しなら何もせず false。
+bool SDLWrapper::pad_click(const pad_output &out)
+{
+    if (out.is_direction || out.mods != 0
+        || out.button != PAD_L3 && out.button != PAD_R3)
+    {
+        return false;
+    }
+    int x, y;
+    if (!pad_mouse_position(x, y))
+        return true; // 窓が無い。押しは捨てる
+    SDL_Event ev;
+    memset(&ev, 0, sizeof(ev));
+    ev.type = SDL_MOUSEBUTTONDOWN;
+    ev.button.timestamp = SDL_GetTicks();
+    ev.button.windowID = SDL_GetWindowID(m_window);
+    ev.button.button = out.button == PAD_L3 ? SDL_BUTTON_LEFT
+                                            : SDL_BUTTON_RIGHT;
+    ev.button.state = SDL_PRESSED;
+    ev.button.clicks = 1;
+    ev.button.x = x;
+    ev.button.y = y;
+    SDL_PushEvent(&ev);
+    ev.type = SDL_MOUSEBUTTONUP;
+    ev.button.state = SDL_RELEASED;
+    SDL_PushEvent(&ev);
+    if (_pad_log)
+    {
+        fprintf(_pad_log, "%u %s -> %s click %d,%d%s\n", SDL_GetTicks(),
+                pad_button_name(out.button),
+                out.button == PAD_L3 ? "left" : "right", x, y,
+                _pad_in_menu() ? " [menu]" : ui::has_layout() ? " [ui]" : "");
+        fflush(_pad_log);
+    }
     return true;
 }
 

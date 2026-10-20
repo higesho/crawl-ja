@@ -92,6 +92,17 @@ static void test_names()
     }
     CHECK(pad_default_command_name(PAD_A) == nullptr, "A は固定");
     CHECK(pad_default_command_name(PAD_B) == nullptr, "B は固定");
+    CHECK(pad_default_command_name(PAD_L3) == nullptr, "L3 は固定(左クリック)");
+    CHECK(pad_default_command_name(PAD_R3) == nullptr, "R3 は固定(右クリック)");
+    CHECK(pad_slot_fixed(PAD_A, 0) && pad_slot_fixed(PAD_B, 0)
+          && pad_slot_fixed(PAD_L3, 0) && pad_slot_fixed(PAD_R3, 0),
+          "単独押しの A・B・L3・R3 は固定");
+    CHECK(!pad_slot_fixed(PAD_X, 0) && !pad_slot_fixed(PAD_LB, 0),
+          "ほかの単独押しは割り当てられる");
+    CHECK(!pad_slot_fixed(PAD_L3, PAD_MOD_LB)
+          && !pad_slot_fixed(PAD_R3, PAD_MOD_RB)
+          && !pad_slot_fixed(PAD_A, PAD_MOD_LB | PAD_MOD_RB),
+          "同時押しの層の A・B・L3・R3 は割り当てられる");
     CHECK(!std::strcmp(pad_default_command_name(PAD_X), "CMD_EXPLORE"),
           "X の既定は自動探索");
     CHECK(!std::strcmp(pad_default_command_name(PAD_LB), "CMD_GO_DOWNSTAIRS"),
@@ -407,6 +418,72 @@ static void test_chords()
     EXPECT_OUT(pad, "X", "焦点を失うと修飾も忘れる");
 }
 
+static void test_cursor()
+{
+    gamepad_state pad;
+    int dx, dy;
+
+    // 中立・死区の中では動かず、起きる予定も無い。
+    CHECK(!pad.cursor_motion(0, true, dx, dy), "中立では動かない");
+    CHECK(pad.ms_until_due(0) == -1, "中立では起きる予定が無い");
+    pad.set_cursor_stick(0, 5000);
+    pad.set_cursor_stick(1, -5000);
+    CHECK(!pad.cursor_motion(10, true, dx, dy), "死区の中では動かない");
+    CHECK(pad.ms_until_due(10) == -1, "死区の中では起きる予定が無い");
+
+    // 右へ倒し切る。倒し始めは時刻を覚えるだけで、刻みごとに起きる。
+    pad.set_cursor_stick(0, 32767);
+    pad.set_cursor_stick(1, 0);
+    CHECK(!pad.cursor_motion(100, true, dx, dy), "倒し始めはまだ動かない");
+    CHECK(pad.ms_until_due(100) == gamepad_state::CURSOR_TICK_MS,
+          "倒している間は刻みごとに起きる");
+    CHECK(pad.ms_until_due(110) == gamepad_state::CURSOR_TICK_MS - 10,
+          "次の刻みまでの残り");
+    CHECK(pad.cursor_motion(1100, true, dx, dy)
+          && dx == gamepad_state::CURSOR_MAX_SPEED / 10 && dy == 0,
+          "長く待っても 100ms 分しか進まない");
+    CHECK(pad.cursor_motion(1116, true, dx, dy) && dx > 0 && dy == 0,
+          "倒し切ると右へ進む");
+    const int full = dx;
+
+    // 浅く倒すとゆっくり(端数は持ち越すので、何刻みかで合計が出る)。
+    pad.set_cursor_stick(0, 0);
+    CHECK(!pad.cursor_motion(1132, true, dx, dy), "戻したら止まる");
+    pad.set_cursor_stick(1, -12000);
+    pad.cursor_motion(2000, true, dx, dy);
+    int total = 0;
+    for (uint32_t t = 2016; t <= 3000; t += 16)
+    {
+        pad.cursor_motion(t, true, dx, dy);
+        CHECK(dx == 0 && dy <= 0, "上へだけ動く");
+        total += dy;
+    }
+    CHECK(total < 0 && -total < full * 1000 / 16 / 4,
+          "浅く倒すと 1 秒で少しだけ上へ進む");
+
+    // 焦点が無ければ動かず、forget() で倒し方も忘れる。
+    pad.set_cursor_stick(1, -32767);
+    CHECK(!pad.cursor_motion(4000, false, dx, dy), "焦点が無ければ動かない");
+    pad.update(4000, false, DELAY);
+    CHECK(pad.ms_until_due(4000) == -1, "焦点を失うと倒し方も忘れる");
+    CHECK(!pad.cursor_motion(4016, true, dx, dy)
+          && !pad.cursor_motion(4032, true, dx, dy),
+          "忘れたあとは次にスティックが動くまで止まっている");
+
+    // 方向のリピートと重なったときは、早い方に起きる。
+    gamepad_state both;
+    both.set_dpad(PAD_DPAD_RIGHT, false);
+    both.update(0, true, DELAY); // 中立を見せる
+    both.set_dpad(PAD_DPAD_RIGHT, true);
+    both.set_dpad(PAD_DPAD_UP, true);
+    both.update(0, true, DELAY);
+    drain(both);
+    both.set_cursor_stick(0, 32767);
+    both.cursor_motion(0, true, dx, dy);
+    CHECK(both.ms_until_due(0) == gamepad_state::CURSOR_TICK_MS,
+          "リピートの待ちより刻みが早い");
+}
+
 int main()
 {
     test_names();
@@ -419,6 +496,7 @@ int main()
     test_trigger_and_buttons();
     test_slots();
     test_chords();
+    test_cursor();
     std::printf("%s: %d checks, %d failures\n",
                 failures ? "FAIL" : "PASS", checks, failures);
     return failures ? 1 : 0;

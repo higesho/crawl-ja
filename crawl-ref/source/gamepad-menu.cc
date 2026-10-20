@@ -530,8 +530,8 @@ namespace
                     const pad_button button = static_cast<pad_button>(b);
                     if (!pad_slot_valid(button, mods))
                         continue;
-                    // 単独押しの A と B は決定・取消で固定(下の案内に書く)。
-                    if (mods == 0 && (button == PAD_A || button == PAD_B))
+                    // 単独押しの A・B・L3・R3 は固定(下の案内に書く)。
+                    if (pad_slot_fixed(button, mods))
                         continue;
                     const int slot = pad_slot(button, mods);
                     // ホットキーを枠のキーにする: 行の頭に Pad-X と出て、
@@ -566,8 +566,9 @@ namespace
                          "change, [<w>B</w>/<w>Esc</w>] close. Press a gamepad "
                          "button or chord to change it.")
                 + "\n"
-                + jtrans("A (confirm) and B (cancel) alone are fixed. "
-                         "<yellow>Yellow</yellow> rows were changed here: they "
+                + jtrans("A (confirm), B (cancel), L3 (left click) and R3 "
+                         "(right click) alone are fixed; the right stick moves "
+                         "the mouse cursor. <yellow>Yellow</yellow> rows were changed here: they "
                          "are saved to pad_binds.txt and take precedence over "
                          "pad_bind in the rc file.")));
             update_menu(true);
@@ -682,7 +683,7 @@ void gamepad_load_binds()
         pad_button button;
         int mods;
         if (!parse_pad_slot(trimmed_string(line.substr(0, colon)), button, mods)
-            || mods == 0 && (button == PAD_A || button == PAD_B))
+            || pad_slot_fixed(button, mods))
         {
             continue;
         }
