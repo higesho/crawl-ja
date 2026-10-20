@@ -180,7 +180,7 @@
 %%%%
 [spell]Blink Range
 
-瞬間退避
+視界内退避
 %%%%
 [spell]Blink Away
 
