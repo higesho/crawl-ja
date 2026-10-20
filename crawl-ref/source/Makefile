@@ -2125,6 +2125,10 @@ ifneq ($(ANDROID),)
 	mkdir -p android-project/app/src/main/res/drawable
 	$(COPY) dat/tiles/logo.png android-project/app/src/main/res/drawable/logo.png
 	$(COPY) dat/tiles/stone_soup_icon-512x512.png android-project/app/src/main/res/drawable/icon.png
+	# 日本語版: 日本語フォント(BIZ UDゴシック、OFL)とライセンス文を入れる。
+	# 起動画面が作る init ファイルがこのフォントを指す(fonts-ja/README.txt)。
+	$(COPY) fonts-ja/BIZUDGothic-Regular.ttf $(datadir_fp)/dat/tiles/
+	$(COPY) fonts-ja/OFL.txt $(datadir_fp)/docs/license/BIZUDGothic-OFL.txt
 else
 	@echo Please define ANDROID to use this build.
 	@exit 1

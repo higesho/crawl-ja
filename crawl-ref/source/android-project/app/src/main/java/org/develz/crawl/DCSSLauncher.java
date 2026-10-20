@@ -146,11 +146,31 @@ public class DCSSLauncher extends AppCompatActivity implements AdapterView.OnIte
         startActivity(intent);
     }
 
+    // 日本語版: APK に同梱した日本語フォント(assets/dat/tiles。fonts-ja/README.txt)。
+    // Windows 版の settings/init.txt は C:/Windows/Fonts を指していて Android では
+    // 使えない(見つからないとゲームが起動時に終了する)。端末の Noto Sans CJK は
+    // 新しい端末では CFF2 形式で、同梱の freetype では読めないので使わない。
+    private static final String JAPANESE_FONT = "BIZUDGothic-Regular.ttf";
+
+    // 日本語版: 新しく作る init ファイルの中身。
+    private static String japaneseInitText() {
+        StringBuilder text = new StringBuilder();
+        text.append("##### 日本語版の設定 #####\n");
+        text.append("# 英語で遊びたいときは language の行の先頭に # を付ける。\n");
+        text.append("language = ja\n");
+        for (String kind : new String[] {"crt", "msg", "stat", "tip", "lbl"}) {
+            text.append("tile_font_").append(kind).append("_file = ")
+                .append(JAPANESE_FONT).append("\n");
+        }
+        return text.toString();
+    }
+
     // Reset the init file
     private void resetInitFile(boolean force) {
         if (!initFile.exists() || force) {
             try {
                 FileWriter writer = new FileWriter(initFile);
+                writer.write(japaneseInitText());
                 writer.close();
             } catch (IOException e) {
                 Log.e(TAG, "Can't write init file: " + e.getMessage());
