@@ -261,6 +261,46 @@ tile_key_repeat_delay = 200
         take action. This option controls this delay, in milliseconds. If it
         is set to 0 key presses will never repeat.
 
+pad_bind = X:CMD_EXPLORE
+        (Local tiles only.) Binds a game command to a game controller
+        button. The value is a comma-separated list of button:command
+        pairs. The buttons are A, B, X, Y, LB, RB, LT, RT, Back, Start, L3
+        and R3. Commands use the same names as bindkey (see keybind.txt);
+        only commands of the main game screen can be used. Write "none"
+        instead of a command to remove a binding, or "default" to restore
+        the default one. "pad_bind = clear" removes all the bindings,
+        including the defaults, and "pad_bind = default" restores all the
+        defaults.
+        The D-pad and the left stick always move (and move the cursor in
+        menus); A is Enter and B is Escape, and these can't be rebound.
+        Commands are only sent while the game is waiting for a command; in
+        menus and prompts only the D-pad, A and B work. Holding a direction
+        repeats after tile_key_repeat_delay.
+        Holding LB or RB while pressing another button makes a chord, such
+        as LB+X, RB+X or LB+RB+X; chords can be bound like single buttons
+        (for example "pad_bind = LB+X:CMD_QUAFF"). LB and RB on their own
+        act when they are released, if no other button was pressed in the
+        meantime. Inside chords, A and B can be bound too.
+        A button or chord without a command sends its own key code, named
+        Pad-X, Pad-LB+X and so on, which can be used as the trigger of a
+        macro or keymap: press it in the ~ macro editor, or write for
+        example "macros += M \{Pad-LB+X} i". Chords have no default
+        bindings, so they are all free for macros.
+        The bindings can also be changed in the game: choose "Gamepad
+        bindings" in the game menu (Back, F1 or ~), then pick a row or just
+        press the button or chord to change. Changes made there are saved
+        to pad_binds.txt next to macro.txt (in the same "pad_bind = ..."
+        format) and take precedence over pad_bind in this file.
+        Keep prompt_menu = true (the tiles default) when playing with a
+        gamepad: with it false, yes/no questions appear in the message area
+        and can't be answered "yes" with the gamepad.
+        The default bindings are:
+          X      CMD_EXPLORE            Y      CMD_AUTOFIGHT
+          LB     CMD_GO_DOWNSTAIRS      RB     CMD_GO_UPSTAIRS
+          LT     CMD_DISPLAY_INVENTORY  RT     CMD_FIRE
+          Back   CMD_GAME_MENU          Start  CMD_CAST_SPELL
+          L3     CMD_REST               R3     CMD_USE_ABILITY
+
 tile_tooltip_ms = 500
         The number of milliseconds before a tooltip appears when hovering the
         mouse over part of the screen. Setting this option to 0 will

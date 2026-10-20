@@ -40,6 +40,10 @@
 
 #include "cio.h"
 #include "command.h"
+#ifdef USE_TILE_LOCAL
+# include "gamepad.h"
+# include "gamepad-menu.h"
+#endif
 #include "database.h"
 #include "files.h"
 #include "initfile.h"
@@ -208,6 +212,14 @@ static int userfunc_getindex(const string &fname)
     return userfunctions.size() - 1;
 }
 
+static string get_macro_file();
+
+// マクロのファイルの名前(ゲームパッドの割り当ての保存先を同じ場所にするため)。
+string macro_file_name()
+{
+    return get_macro_file();
+}
+
 // Returns the name of the file that contains macros.
 static string get_macro_file()
 {
@@ -264,6 +276,17 @@ static int _name_to_keycode(string s)
     // be done much more elegantly via a map or similar..
     // Does not handle modifier keys besides ctrl (TODO)
     const string lower = lowercase(s);
+#ifdef USE_TILE_LOCAL
+    // ゲームパッドの枠: Pad-X、Pad-LB+X など。
+    if (starts_with(lower, "pad-"))
+    {
+        pad_button button;
+        int mods;
+        if (parse_pad_slot(s.substr(4), button, mods))
+            return CK_PAD_BASE - pad_slot(button, mods);
+        return CK_NO_KEY;
+    }
+#endif
     if (s[0] == '^' && s.size() == 2)
     {
         // ^A = 1, etc.
@@ -1864,6 +1887,15 @@ string keycode_to_name(int keycode, bool shorten)
 
     string prefix = "";
 
+#ifdef USE_TILE_LOCAL
+    if (keycode <= CK_PAD_BASE && keycode >= CK_PAD_LAST)
+    {
+        const string slot = pad_slot_name(CK_PAD_BASE - keycode);
+        if (!slot.empty())
+            return "Pad-" + slot;
+    }
+#endif
+
     // ugh
     if (keycode - CK_CMD_BASE < 256)
     {
@@ -2036,6 +2068,9 @@ void macro_init()
         _read_macros_from(fn.c_str());
 
     _read_macros_from(get_macro_file().c_str());
+#ifdef USE_TILE_LOCAL
+    gamepad_load_binds();
+#endif
 }
 
 void macro_userfn(const char *keys, const char *regname)

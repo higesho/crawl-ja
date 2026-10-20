@@ -141,7 +141,7 @@ http://crawl.develz.org/ に挙げられているコミュニティの交流の�
                 tile_level_map_hide_messages, tile_level_map_hide_sidebar,
                 tile_player_tile, tile_weapon_offsets, tile_shield_offsets,
                 tile_grinch, tile_web_mouse_control,
-                tile_web_mobile_input_helper
+                tile_web_mobile_input_helper, pad_bind
 4-  キャラクターダンプ
 4-a     保存
                 dump_on_save

@@ -89,6 +89,9 @@
 #include "lookup-help.h"
 #include "luaterp.h"
 #include "macro.h"
+#ifdef USE_TILE_LOCAL
+# include "gamepad-menu.h"
+#endif
 #include "makeitem.h"
 #include "map-knowledge.h"
 #include "mapmark.h"
@@ -2085,6 +2088,10 @@ public:
 #endif
         add_entry(new CmdMenuEntry(jtrans("Edit macros"),
             MEL_ITEM, '~', CMD_MACRO_MENU));
+#ifdef USE_TILE_LOCAL
+        add_entry(new CmdMenuEntry(jtrans("Gamepad bindings"),
+            MEL_ITEM, 'P', CMD_GAMEPAD_MENU));
+#endif
         add_entry(new CmdMenuEntry(jtrans("Help and manual"),
             MEL_ITEM, '?', CMD_DISPLAY_COMMANDS));
         add_entry(new CmdMenuEntry(jtrans("Lookup info"),
@@ -2132,6 +2139,9 @@ void process_command(command_type cmd, command_type prev_cmd)
 #ifdef USE_TILE
         // Tiles-specific commands.
     case CMD_EDIT_PLAYER_TILE: tiles.draw_doll_edit(); break;
+#endif
+#ifdef USE_TILE_LOCAL
+    case CMD_GAMEPAD_MENU: gamepad_menu(); break;
 #endif
 
         // Movement and running commands.

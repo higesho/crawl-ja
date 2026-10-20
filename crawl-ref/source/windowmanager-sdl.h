@@ -5,12 +5,15 @@
 
 #include <array>
 
+#include "gamepad.h"
 #include "windowmanager.h"
 
 struct SDL_Surface;
 struct SDL_Window;
 struct SDL_Cursor;
 typedef void* SDL_GLContext;
+struct _SDL_GameController;
+union SDL_Event;
 
 class SDLWrapper : public WindowManager
 {
@@ -78,6 +81,20 @@ private:
     int prev_keycode;
     string m_textinput_queue;
     array<SDL_Cursor*, NUM_MOUSE_CURSORS> m_cursors;
+
+    // ゲームパッド(ja-tools/GAMEPAD_DESIGN.md)
+    bool pad_handle_event(const SDL_Event &event);
+    void pad_pump_events();
+    void pad_update();
+    bool pad_take_key(int &key);
+    void pad_open(int device_index);
+    void pad_close();
+    void pad_forget();
+
+    _SDL_GameController *m_pad;
+    int m_pad_id;          // 開いているパッドの SDL_JoystickID(無ければ -1)
+    bool m_pad_focused;    // 前回見たとき窓が焦点を持っていたか
+    gamepad_state m_pad_state;
 };
 
 #endif // USE_SDL
