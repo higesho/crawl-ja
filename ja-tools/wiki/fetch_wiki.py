@@ -78,8 +78,11 @@ def main() -> None:
     ap.add_argument("--list", action="store_true")
     ap.add_argument("--images", action="store_true",
                     help="prepare.py が書いた work/images.txt の画像を取る")
+    ap.add_argument("--all", action="store_true", help="titles.json の記事を全部取る")
     ap.add_argument("titles", nargs="*")
     args = ap.parse_args()
+    if args.all:
+        args.titles = json.loads(TITLES.read_text(encoding="utf-8"))
     RAW.mkdir(parents=True, exist_ok=True)
     if args.images:
         IMG.mkdir(parents=True, exist_ok=True)

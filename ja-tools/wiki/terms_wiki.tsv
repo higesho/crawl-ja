@@ -1,0 +1,55 @@
+# wiki の翻訳で揃える訳(英語<TAB>訳)。gloss の表より優先する。
+# 前半は ja-tools/CONVENTIONS.md の「揺れやすい用語」、後半は wiki によく出る見出しと語。
+skill	スキル
+branch	分岐
+inventory	所持品
+quiver	セット
+level map	階のマップ
+launcher	射撃武器
+travel	自動移動
+mutation	変異(薬は「突然変異の薬」)
+inscription	銘
+piety	信仰心
+History	変更履歴
+Useful Info	基本情報
+Tips & Tricks	小技
+Strategy	戦略
+References	出典
+See also	関連項目
+See Also	関連項目
+Contents	目次
+Overview	概要
+Main article	詳しくは
+Notes	注
+Trivia	こぼれ話
+miscast effect	呪文失敗の効果
+miscast	呪文の失敗
+gift timeout	贈り物のタイムアウト
+spell success	呪文の成功率
+Mega-Zig	メガジグ
+unrand artefact	固定アーティファクト
+unrandart	固定アーティファクト
+identify / identification	鑑定
+HP / MP	HP / MP(略語のまま。体力・魔力とは書かない)
+Shapeshifter	変身術師
+dexterity	器用
+Slay	殺戮
+stub(書きかけの記事の注記)	このページは書きかけの記事だ。よければ加筆してほしい。
+bad mutation	悪い変異
+good mutation	良い変異
+malmutation	悪性変異
+slaying	殺戮(指輪・状態。ダメージ表示の文脈だけ「殺傷」)
+Antimagic(状態)	魔力阻害
+Dragon Form	竜化
+Might(状態)	腕力強化(薬は「怪力の薬」)
+Weak(状態)	虚弱
+rF / rC / rPois / rElec / rN / rCorr / rMut など	英語の略号のまま(ゲームの説明画面と同じ。耐火などと訳さない)
+vault	ヴォールト
+daze / dazed	眩暈
+Wizard flag	魔術フラグ
+Priest flag	神官フラグ
+Natural flag	生来フラグ
+hit(モンスターの攻撃の種類)	打撃
+tier N demon	N級悪魔
+tier(タリスマン)	第N段階
+attack flavour	攻撃の追加効果

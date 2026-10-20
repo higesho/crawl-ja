@@ -41,7 +41,7 @@ NAV = [("../index.html", "入口"), ("../monster.html", "モンスター"),
        ("../spell.html", "呪文"), ("../item.html", "アイテム"),
        ("../artefact.html", "固定アーティファクト"), ("../species.html", "種族"),
        ("../job.html", "職業"), ("../god.html", "神"), ("../branch.html", "ダンジョン"),
-       ("../mutation.html", "突然変異"), ("../misc.html", "事典"),
+       ("../mutation.html", "変異"), ("../misc.html", "事典"),
        ("index.html", "wiki 翻訳")]
 
 MONTHS = {m: i for i, m in enumerate(
@@ -98,6 +98,12 @@ def load_titles() -> dict[str, str]:
             if "\t" in line:
                 en, ja = line.split("\t", 1)
                 t[en] = ja
+    # 訳した人(エージェント)が記事ごとに書く題の訳(titles/<ファイル名の幹>.txt)。
+    # 1 行目が英語の題、2 行目が訳。titles_ja.tsv が優先
+    for f in sorted((HERE / "titles").glob("*.txt")):
+        lines = f.read_text(encoding="utf-8").strip().splitlines()
+        if len(lines) >= 2 and lines[0] not in t:
+            t[lines[0].strip()] = lines[1].strip()
     return t
 
 
@@ -140,7 +146,13 @@ def main() -> None:
         raw = (RAW / f.name).read_text(encoding="utf-8")
         m = re.search(r'<h1 id="firstHeading"[^>]*>(.*?)</h1>', raw, re.S)
         en = html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip() if m else f.stem
-        ja = titles_ja.get(en) or (gloss.get(en.lower(), ("",))[0]) or en
+        ja = titles_ja.get(en) or (gloss.get(en.lower(), ("",))[0])
+        if not ja:
+            # 「Bane of the X」は災厄の名前(用語表では X → 「Xの災厄」)、
+            # 「名前 (補足)」は補足を外して引く
+            m2 = re.match(r"Bane of (?:the )?(.+)$", en, re.I)
+            key = m2.group(1) if m2 else re.sub(r"\s*\([^)]*\)$", "", en)
+            ja = gloss.get(key.lower(), ("",))[0] or en
         done[en] = f.name
         meta.append((en, ja, f, last_edited(raw)))
 
