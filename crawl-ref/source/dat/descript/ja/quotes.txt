@@ -118,8 +118,8 @@ A one-way gate to the infinite horrors of the Abyss
 #    somewhere else, you must run at least twice as fast as that!”
 #       -Lewis Carroll, _Through the Looking-Glass, and What Alice Found There_,
 #   ch. 2 “The Garden of Live Flowers”. 1871.
-“And if you gaze for long into an abyss, the abyss gazes also into you.”
-    -Friedrich Nietzsche, _Beyond Good and Evil_ , Aphorism 146. 1886.
+「長いあいだ深淵をのぞき込んでいると、深淵もまたこちらをのぞき込む」
+    ――フリードリヒ・ニーチェ『善悪の彼岸』アフォリズム146(1886年)
 
 「『そうね、わたしたちの国では』とアリスは、まだ少し息を切らしながら言った。『こんなふうに長いあいだとても速く走れば、たいていはどこか別の場所に着くものよ』『のろくさい国だこと!』と女王は言った。『いいかい、ここではね、同じ場所にとどまっているだけでも、力のかぎり走らなければならないのさ。どこか別の場所へ行きたければ、少なくともその倍の速さで走らなくてはね!』」
     ――ルイス・キャロル『鏡の国のアリス』第2章「生きた花の庭」(1871年)
