@@ -11,11 +11,23 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include \
                     $(LOCAL_PATH)/../sqlite \
                     $(LOCAL_PATH)/../lua/src \
                     $(LOCAL_PATH)/../freetype/include \
+                    $(LOCAL_PATH)/../pcre \
                     $(LOCAL_PATH)/$(CRAWL_PATH) \
                     $(LOCAL_PATH)/$(CRAWL_PATH)/rltiles
 
+# 日本語版: 文は jtransc("...") で辞書から引いて書式文字列として渡すので、
+# NDK が既定で付ける -Werror=format-security を外す(Windows 版と同じ扱い)。
+LOCAL_DISABLE_FORMAT_STRING_CHECKS := true
+# 日本語版: Windows で組むと、リンクのコマンド行が長さの上限(約 32K 文字)を
+# 超えるので、引数をファイル経由で渡す。
+LOCAL_SHORT_COMMANDS := true
+
 LOCAL_CFLAGS := $(shell cat $(LOCAL_PATH)/$(CRAWL_PATH)/.android-cflags)
 LOCAL_CXXFLAGS := $(shell cat $(LOCAL_PATH)/$(CRAWL_PATH)/.android-cxxflags)
+# 日本語版: 正規表現は Windows 版と同じ PCRE を使う。Bionic の POSIX 正規表現
+# (regexec)は 0x80 以上のバイト(日本語の UTF-8)を含む文でメッセージの絞り込みを
+# 当てると落ちる(起動直後の mpr で SIGSEGV)。
+LOCAL_CFLAGS += -DREGEX_PCRE
 
 LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
     $(CRAWL_PATH)/ability.cc \
@@ -110,6 +122,7 @@ LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
     $(CRAWL_PATH)/item-name.cc \
     $(CRAWL_PATH)/item-prop.cc \
     $(CRAWL_PATH)/items.cc \
+    $(CRAWL_PATH)/japanese.cc \
     $(CRAWL_PATH)/jobs.cc \
     $(CRAWL_PATH)/json.cc \
     $(CRAWL_PATH)/kills.cc \
@@ -334,7 +347,7 @@ LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
     $(CRAWL_PATH)/rltiles/tiledef-unrand.cc \
     $(CRAWL_PATH)/version.cc
 
-LOCAL_SHARED_LIBRARIES := SDL2 SDL2_image mikmod smpeg2 SDL2_mixer freetype sqlite lua zlib
+LOCAL_SHARED_LIBRARIES := SDL2 SDL2_image mikmod smpeg2 SDL2_mixer freetype sqlite lua zlib libpcre
 
 LOCAL_LDLIBS := -ldl -lGLESv1_CM -lGLESv2 -llog -landroid
 

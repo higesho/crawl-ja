@@ -358,9 +358,14 @@ static void _init_jtrans_files()
     if (dir.empty())
         return;
 
+    // get_dir_files_ext は一つずつ dir_exists でディレクトリかを見るが、Android の
+    // assets では AAssetManager_openDir がどのパスにも成功するので、辞書の .txt が
+    // 全部ディレクトリ扱いになって一覧から落ちる。このディレクトリに下位の
+    // ディレクトリは無いので、一覧を拡張子だけで絞る。
     vector<string> files;
-    for (const string &file : get_dir_files_ext(dir, ".txt"))
-        files.push_back(file);
+    for (const string &file : get_dir_files_sorted(dir))
+        if (ends_with(file, ".txt"))
+            files.push_back(file);
     JtransDB.set_input_files(files);
 }
 
