@@ -1,0 +1,2 @@
+Energy randomisation
+エネルギーのランダム化

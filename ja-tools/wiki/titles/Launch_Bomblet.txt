@@ -1,0 +1,2 @@
+Launch Bomblet
+小型爆弾の射出
