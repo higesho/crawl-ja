@@ -910,6 +910,9 @@ static keyfun_action _keyfun_target_input(int &ch)
 {
     if (ch == '-')
         return KEYFUN_BREAK; // reset to 0
+    // 日本語版: 上下・PgUp・PgDn(パッドの十字と LB・RB)で目標値を増減する
+    if (ch == CK_UP || ch == CK_DOWN || ch == CK_PGUP || ch == CK_PGDN)
+        return KEYFUN_BREAK;
     // Use the locale decimal point, because atof (used in read_skill_target)
     // is locale-sensitive, as is the output of printf code.
     // `decimal_point` on the result is guaranteed to be non-empty by the
@@ -946,7 +949,21 @@ int SkillMenu::read_skill_target(skill_type sk)
                                             skill_name_jc(sk)));
     progress->set_tag("skill_target");
 
-    edit_result r = progress->edit(&prefill, _keyfun_target_input);
+    string fill = prefill;
+    edit_result r = progress->edit(&fill, _keyfun_target_input);
+    // 日本語版: 上下で ±1.0、PgUp・PgDn で ±0.1 して、続けて入力させる
+    // (パッドでは数字を打てない。GAMEPAD_DESIGN.md §10)
+    while (r.reader_result == CK_UP || r.reader_result == CK_DOWN
+           || r.reader_result == CK_PGUP || r.reader_result == CK_PGDN)
+    {
+        int value = r.text.empty() ? 0 : (int) round(atof(r.text.c_str()) * 10.0);
+        value += r.reader_result == CK_UP   ?  10
+               : r.reader_result == CK_DOWN ? -10
+               : r.reader_result == CK_PGUP ?   1 : -1;
+        value = max(0, min(270, value));
+        fill = _format_skill_target(value);
+        r = progress->edit(&fill, _keyfun_target_input);
+    }
 
     const char *result_buf = r.text.c_str();
 
@@ -1727,6 +1744,42 @@ void SkillMenu::set_links()
     {
         top_right->set_link_up(bottom_left);
         bottom_right->set_link_down(top_left);
+    }
+
+    // 日本語版: 下の段のボタンとスイッチ(?・=・-・/・|・*・_・!)へも十字で
+    // 行けるようにする(パッドでは文字のキーを押せないため。GAMEPAD_DESIGN.md §10)。
+    // スキルの最後の行から下で下の段の先頭へ、下の段は左右でたどり、上でスキルへ戻る。
+    vector<MenuItem*> bottom;
+    for (MenuItem *item : { static_cast<MenuItem*>(m_help_button),
+                            static_cast<MenuItem*>(m_middle_button),
+                            static_cast<MenuItem*>(m_clear_targets_button) })
+    {
+        if (item && item->is_visible() && item->can_be_highlighted())
+            bottom.push_back(item);
+    }
+    for (auto sw : { SKM_MODE, SKM_DO, SKM_SHOW, SKM_LEVEL, SKM_VIEW })
+    {
+        auto it = m_switches.find(sw);
+        if (it != m_switches.end() && it->second && it->second->is_visible()
+            && it->second->can_be_highlighted())
+        {
+            bottom.push_back(it->second);
+        }
+    }
+    if (bottom.empty() || top_left == nullptr && top_right == nullptr)
+        return;
+    MenuItem *last_left = bottom_left ? bottom_left : bottom_right;
+    MenuItem *last_right = bottom_right ? bottom_right : bottom_left;
+    MenuItem *first_top = top_left ? top_left : top_right;
+    last_left->set_link_down(bottom.front());
+    last_right->set_link_down(bottom.front());
+    first_top->set_link_up(bottom.front());
+    for (size_t i = 0; i < bottom.size(); ++i)
+    {
+        bottom[i]->set_link_up(last_left);
+        bottom[i]->set_link_down(first_top);
+        bottom[i]->set_link_left(bottom[i == 0 ? bottom.size() - 1 : i - 1]);
+        bottom[i]->set_link_right(bottom[(i + 1) % bottom.size()]);
     }
 }
 

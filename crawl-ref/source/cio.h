@@ -323,7 +323,15 @@ enum KEYS
     // コマンドの符号(-2000 台)・マウス(-9999 から)と重ならない範囲。
     CK_PAD_BASE = -5000,
     CK_PAD_LAST = CK_PAD_BASE - 63,
+    // 文字の入力中にパッドの Y が出す、文字を選ぶメニューを開くキー(§10)。
+    CK_PAD_TEXT_PICK = CK_PAD_LAST - 1,
 };
+
+// 日本語版: 文字の入力欄(line_reader・ui::TextEntry)が使われているか
+// (GAMEPAD_DESIGN.md §10)。パッドのボタンを入力向けの役目にするのに使う。
+void text_input_begin();
+void text_input_end();
+bool text_input_active();
 
 class cursor_control
 {

@@ -43,6 +43,7 @@
 #include "notes.h"
 #include "output.h"
 #include "player-save-info.h"
+#include "prompt.h"
 #include "shopping.h"
 #include "skills.h"
 #include "spl-book.h"
@@ -835,6 +836,10 @@ void UIStartupMenu::on_show()
 
         if (key_is_escape(keyn) || keyn == CK_MOUSE_CMD)
         {
+            // 日本語版: Esc(パッドの B)では確かめてから終わる。パッドの B は
+            // 「取消」なので、うっかり押してゲームを閉じないように(GAMEPAD_DESIGN.md §10)
+            if (key_is_escape(keyn) && !yesno(jtransc("Quit the game?"), true, 'n'))
+                return true;
             // End the game
             return done = end_game = true;
         }

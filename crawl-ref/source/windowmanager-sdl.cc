@@ -584,6 +584,16 @@ static int _pad_output_to_key(const pad_output &out)
         return out.button == PAD_A ? CK_ENTER : CK_ESCAPE;
     }
 
+    // 文字の入力欄を使っている間は、Y で文字を選ぶメニュー、X で 1 文字消す
+    // (パッドでは文字のキーを押せない。GAMEPAD_DESIGN.md §10)。
+    if (out.mods == 0 && text_input_active())
+    {
+        if (out.button == PAD_Y)
+            return CK_PAD_TEXT_PICK;
+        if (out.button == PAD_X)
+            return CK_BKSP;
+    }
+
     // 割り当ての画面が開いている間は、押したボタンの枠を開くために枠のキーを出す。
     if (gamepad_menu_capturing())
         return CK_PAD_BASE - pad_slot(out.button, out.mods);

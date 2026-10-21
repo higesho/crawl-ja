@@ -50,9 +50,15 @@ struct prompt_choice
 // (prompt_menu が偽で、メッセージ欄に収まるならメッセージ欄に出す)。
 // 選んだ選択肢の key を返す。取り消したら ESCAPE。
 // init_hover が偽なら、カーソルを置かずに出す(Enter をうっかり押しても選ばれない)。
+// grid が真なら、選択肢を格子に並べる(数が多いとき)。
 int prompt_choose_key(const string &question,
                       const vector<prompt_choice> &choices,
-                      int default_key = 0, bool init_hover = true);
+                      int default_key = 0, bool init_hover = true,
+                      bool grid = false);
+
+// 日本語版: パッドで入力欄に入れる 1 文字を選ぶメニュー(GAMEPAD_DESIGN.md §10)。
+// current は今の入力、last は前に選んだ文字(そこにカーソルを置く)。B で 0。
+int pad_pick_char(const string &current, int last);
 
 // max_qty(日本語版): 1 以上なら、上下キーで 1..max_qty の範囲で数を増減できる。
 int prompt_for_quantity(const char *prompt, int max_qty = 0);

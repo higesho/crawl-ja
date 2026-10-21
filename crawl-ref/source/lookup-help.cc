@@ -1593,11 +1593,15 @@ static string _prompt_for_regex(const LookupType &lookup_type, string &err)
          type_j.c_str(), extra.c_str());
 
     char buf[80];
-    if (msgwin_get_line(prompt, buf, sizeof(buf)) || buf[0] == '\0')
+    if (msgwin_get_line(prompt, buf, sizeof(buf)))
     {
         err = "Okay, then.";
         return "";
     }
+    // 日本語版: 何も入れずに Enter(パッドの A)なら、その種類の全部を一覧にする
+    // (パッドでは名前を打ちにくい。GAMEPAD_DESIGN.md §10)
+    if (buf[0] == '\0')
+        return ".*";
 
     const string regex = strlen(buf) == 1 ? buf : trimmed_string(buf);
     return regex;
