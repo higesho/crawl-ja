@@ -29,6 +29,7 @@
 #include "libutil.h"
 #include "menu.h"
 #include "message.h"
+#include "prompt.h"
 #include "religion.h"
 #include "skills.h"
 #include "spl-util.h"
@@ -1345,6 +1346,15 @@ bool describe_god_with_join(god_type which_god)
 
         if (step == ABANDON)
         {
+            // 日本語版: パッドでは大文字の Y を打てないので、A(Enter)では
+            // はい/いいえのポップアップで訊く(GAMEPAD_DESIGN.md §10)
+            if (keyin == CK_ENTER)
+            {
+                if (yesno(abandon_prompt.c_str(), false, 'n'))
+                    return done = join = true;
+                canned_msg(MSG_OK);
+                return done = true;
+            }
             if (keyin != 'Y' && toupper_safe(keyin) != 'N')
                 yesno_only = true;
             else

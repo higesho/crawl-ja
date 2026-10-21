@@ -111,6 +111,12 @@ namespace ui
 // Like yesno, but requires a full typed answer.
 // Unlike yesno, prompt should have no trailing space.
 // Returns true if the user typed "yes", false if something else or cancel.
+// 日本語版: 「yes」と打たせる確認で、カーソル(パッドの十字)が来たら打ち切る
+static keyfun_action _confirm_keyproc(int &ch)
+{
+    return key_is_cursor(ch) ? KEYFUN_BREAK : KEYFUN_PROCESS;
+}
+
 bool confirm_prompt(const char* require, const char* fmt, ...)
 {
     // 日本語は 1 文字 3 バイトなので、200 バイトから広げている
@@ -123,7 +129,17 @@ bool confirm_prompt(const char* require, const char* fmt, ...)
 
     mprf(MSGCH_PROMPT, jtrans_notrimc("%s (Confirm with \"%s\".) "), buf, require);
 
-    if (cancellable_get_line(buf, sizeof buf))
+    // 日本語版: パッドでは文字を打てないので、カーソルか、何も打たずに Enter
+    // (パッドの A)なら、はい/いいえを 2 回訊く(GAMEPAD_DESIGN.md §10)
+    const string question = buf;
+    const int ret = cancellable_get_line(buf, sizeof buf, nullptr,
+                                         _confirm_keyproc);
+    if (key_is_cursor(ret) || ret == 0 && !buf[0])
+    {
+        return yesno(question.c_str(), false, 'n')
+               && yesno(jtransc("Are you really sure?"), false, 'n');
+    }
+    if (ret)
         return false;
     if (strcasecmp(buf, require) != 0)
         return false;

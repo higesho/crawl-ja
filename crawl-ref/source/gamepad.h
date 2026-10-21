@@ -86,6 +86,8 @@ bool pad_slot_fixed(pad_button b, int mods);
 // 既定の割り当て(コマンド名。bindkey と同じ綴り)。無ければ nullptr。
 // 単独押しが固定のボタン(A・B・L3・R3)は nullptr。
 const char *pad_default_command_name(pad_button b);
+// 枠(単独押し・同時押し)の既定の割り当て。無ければ nullptr。
+const char *pad_default_slot_command_name(pad_button b, int mods);
 
 // パッドが出すもの 1 つ。方向か、ボタンの押し。
 struct pad_output
@@ -93,7 +95,7 @@ struct pad_output
     bool is_direction = false;
     int dx = 0, dy = 0;          // 方向のとき -1..1
     pad_button button = PAD_A;   // 押しのとき
-    int mods = 0;                // 押しのとき、同時押しの修飾(PAD_MOD_*)
+    int mods = 0;                // 同時押しの修飾(PAD_MOD_*)。方向でも付く(握った LB・RB)
 };
 
 class gamepad_state

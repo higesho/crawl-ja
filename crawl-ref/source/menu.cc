@@ -1836,6 +1836,13 @@ bool Menu::process_command(command_type cmd)
     case CMD_MENU_ACCEPT_SELECTION:
         ASSERT(is_set(MF_MULTISELECT));
         get_selected(&sel);
+        // 日本語版: 何も選んでいなければ、カーソルの行を選んで確定する
+        // (パッドの A。GAMEPAD_DESIGN.md §10)
+        if (sel.empty() && last_hovered >= 0)
+        {
+            select_item_index(last_hovered, MENU_SELECT_ALL);
+            get_selected(&sel);
+        }
         ret = sel.empty(); // only exit if there is a selection, otherwise noop
         break;
     case CMD_MENU_SELECT:

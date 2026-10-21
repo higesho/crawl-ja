@@ -277,9 +277,9 @@ namespace
         const auto it = Options.pad_binds.find(pad_slot(button, mods));
         if (it != Options.pad_binds.end())
             return static_cast<command_type>(it->second);
-        if (!Options.pad_bind_defaults || mods != 0)
+        if (!Options.pad_bind_defaults)
             return CMD_NO_CMD;
-        const char *name = pad_default_command_name(button);
+        const char *name = pad_default_slot_command_name(button, mods);
         return name ? name_to_command(name) : CMD_NO_CMD;
     }
 

@@ -2419,8 +2419,19 @@ pad_bind = X:CMD_EXPLORE
         A button or chord without a command sends its own key code, named
         Pad-X, Pad-LB+X and so on, which can be used as the trigger of a
         macro or keymap: press it in the ~ macro editor, or write for
-        example "macros += M \{Pad-LB+X} i". Chords have no default
-        bindings, so they are all free for macros.
+        example "macros += M \{Pad-LB+X} i".
+        LB and RB chords have default bindings for common commands: LB+X
+        rest, RB+X wait, LB+A pick up, RB+A close door, LB+B drop, RB+B
+        message history, LB+Y interlevel travel, RB+Y abilities, LB+LT level
+        map, RB+LT quaff, LB+RT look around, RB+RT read, LB+Start memorise,
+        RB+Start skills, LB+Back character overview, RB+Back dungeon
+        overview. LB+RB chords and chords with L3 or R3 are free for macros.
+        Holding LB or RB while moving acts like Shift or Ctrl with the
+        direction (run, attack without moving). Outside the main screen the
+        buttons have fixed roles: when targeting, LB/RB cycle targets, X
+        describes and RT fires; on the level map, LB/RB find stairs, LT/RT
+        change level and X goes to your position; in menus, X toggles the
+        selection, Y selects all and LB/RB change pages.
         The bindings can also be changed in the game: choose "Gamepad
         bindings" in the game menu (Back, F1 or ~), then pick a row or just
         press the button or chord to change. Changes made there are saved

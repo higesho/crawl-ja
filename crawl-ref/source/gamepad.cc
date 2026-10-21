@@ -163,6 +163,49 @@ bool parse_pad_slot(const std::string &name, pad_button &button, int &mods)
     return parse_pad_button(rest, button) && pad_slot_valid(button, mods);
 }
 
+// 同時押しの既定の割り当て(GAMEPAD_DESIGN.md §4.1)。パッドだけで遊べるよう、
+// 既定の単独押しに無いよく使うコマンドを置く。LB の層は「動く・拾う・見る」、
+// RB の層は「使う・読む・待つ」に寄せた。
+namespace
+{
+    struct pad_chord_default
+    {
+        pad_button button;
+        int mods;
+        const char *command;
+    };
+
+    const pad_chord_default pad_chord_defaults[] =
+    {
+        { PAD_X,     PAD_MOD_LB, "CMD_REST" },                     // 休む・探す
+        { PAD_X,     PAD_MOD_RB, "CMD_WAIT" },                     // 1 ターン待つ
+        { PAD_A,     PAD_MOD_LB, "CMD_PICKUP" },                   // 拾う
+        { PAD_A,     PAD_MOD_RB, "CMD_CLOSE_DOOR" },               // 扉を閉める
+        { PAD_B,     PAD_MOD_LB, "CMD_DROP" },                     // 置く
+        { PAD_B,     PAD_MOD_RB, "CMD_REPLAY_MESSAGES" },          // メッセージの履歴
+        { PAD_Y,     PAD_MOD_LB, "CMD_INTERLEVEL_TRAVEL" },        // 階を指定して旅行(G)
+        { PAD_Y,     PAD_MOD_RB, "CMD_USE_ABILITY" },              // 能力を使う
+        { PAD_LT,    PAD_MOD_LB, "CMD_DISPLAY_MAP" },              // 階の地図(X)
+        { PAD_LT,    PAD_MOD_RB, "CMD_QUAFF" },                    // 薬を飲む
+        { PAD_RT,    PAD_MOD_LB, "CMD_LOOK_AROUND" },              // 見回す(x)
+        { PAD_RT,    PAD_MOD_RB, "CMD_READ" },                     // 巻物を読む
+        { PAD_START, PAD_MOD_LB, "CMD_MEMORISE_SPELL" },           // 呪文を覚える
+        { PAD_START, PAD_MOD_RB, "CMD_DISPLAY_SKILLS" },           // スキル
+        { PAD_BACK,  PAD_MOD_LB, "CMD_DISPLAY_CHARACTER_STATUS" }, // キャラクター概要(%)
+        { PAD_BACK,  PAD_MOD_RB, "CMD_DISPLAY_OVERMAP" },          // ダンジョンの概観
+    };
+}
+
+const char *pad_default_slot_command_name(pad_button b, int mods)
+{
+    if (mods == 0)
+        return pad_default_command_name(b);
+    for (const pad_chord_default &d : pad_chord_defaults)
+        if (d.button == b && d.mods == mods)
+            return d.command;
+    return nullptr;
+}
+
 bool pad_slot_fixed(pad_button b, int mods)
 {
     return mods == 0
@@ -342,6 +385,16 @@ void gamepad_state::queue_direction(int dx, int dy)
     out.is_direction = true;
     out.dx = dx;
     out.dy = dy;
+    // LB・RB を握ったままの方向は Shift・Ctrl+方向になる(走る・その場で攻撃など。
+    // GAMEPAD_DESIGN.md §4.3)。修飾には「使った」印を付ける(離しても階段に入らない)。
+    for (int i = 0; i < 2; ++i)
+    {
+        if (m_mod_held[i])
+        {
+            out.mods |= i == 0 ? PAD_MOD_LB : PAD_MOD_RB;
+            m_mod_used[i] = true;
+        }
+    }
     m_outputs.push_back(out);
 }
 
