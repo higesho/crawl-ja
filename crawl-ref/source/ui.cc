@@ -13,6 +13,7 @@
 #include "ui.h"
 #include "cio.h"
 #include "macro.h"
+#include "prompt.h"
 #include "state.h"
 #include "tileweb.h"
 #include "unicode.h"
@@ -1879,6 +1880,12 @@ TextEntry::TextEntry() : m_line_reader(m_buffer, sizeof(m_buffer))
 #endif
 }
 
+TextEntry::~TextEntry()
+{
+    if (m_counted_input)
+        text_input_end();
+}
+
 void TextEntry::_render()
 {
     const bool has_focus = ui::get_focused_widget() == this;
@@ -2010,9 +2017,18 @@ bool TextEntry::on_event(const Event& event)
     {
     case Event::Type::FocusIn:
     case Event::Type::FocusOut:
-        set_cursor_enabled(event.type() == Event::Type::FocusIn);
+    {
+        const bool in = event.type() == Event::Type::FocusIn;
+        // 日本語版: 入力欄を使っている間は、パッドのボタンを入力向けにする(§10)
+        if (in && !m_counted_input)
+            text_input_begin();
+        else if (!in && m_counted_input)
+            text_input_end();
+        m_counted_input = in;
+        set_cursor_enabled(in);
         _expose();
         return true;
+    }
     case Event::Type::MouseDown:
         // TODO: unfocus if the mouse is clicked outside
         // TODO: move the cursor to the clicked position
@@ -2300,6 +2316,18 @@ int TextEntry::LineReader::process_key(int ch)
         if (history && length)
             history->new_input(buffer);
         return 0;
+
+    case CK_PAD_TEXT_PICK:
+    {
+        // 日本語版: パッドで文字を選んで入れる(GAMEPAD_DESIGN.md §10)
+        int last = 0;
+        while (const int c = pad_pick_char(string(buffer, length), last))
+        {
+            insert_char_at_cursor(c);
+            last = c;
+        }
+        break;
+    }
 
     case CONTROL('K'):
         kill_to_end();

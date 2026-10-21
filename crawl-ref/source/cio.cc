@@ -14,6 +14,7 @@
 #include "message.h"
 #include "options.h"
 #include "output.h"
+#include "prompt.h"
 #include "state.h"
 #include "stringutil.h"
 #include "tiles-build-specific.h"
@@ -697,8 +698,36 @@ int line_reader::read_line(const string &prefill)
  *                      prefill starts selected or not.
  * @return 0 on success, otherwise, the last character read.
  */
+static int _text_input_count = 0;
+
+void text_input_begin()
+{
+    ++_text_input_count;
+}
+
+void text_input_end()
+{
+    if (_text_input_count > 0)
+        --_text_input_count;
+}
+
+bool text_input_active()
+{
+    return _text_input_count > 0;
+}
+
+namespace
+{
+    struct text_input_scope
+    {
+        text_input_scope() { text_input_begin(); }
+        ~text_input_scope() { text_input_end(); }
+    };
+}
+
 int line_reader::read_line(bool clear_previous, bool reset_cursor)
 {
+    text_input_scope input_scope; // 日本語版: パッドの入力向けの役目(§10)
     if (bufsz <= 0)
         return false;
 
@@ -966,6 +995,23 @@ int line_reader::process_key(int ch)
         if (history && length)
             history->new_input(buffer);
         return 0;
+
+    case CK_PAD_TEXT_PICK:
+    {
+        // 日本語版: パッドで文字を選んで入れる(GAMEPAD_DESIGN.md §10)。
+        // B で閉じるまで、選ぶたびに 1 文字ずつ入れる。
+        int last = 0;
+        while (const int c = pad_pick_char(string(buffer, length), last))
+        {
+            insert_char_at_cursor(c);
+            last = c;
+        }
+        cursorto(0);
+        print_segment(0, 0);
+        calc_pos();
+        cursorto(pos);
+        break;
+    }
 
     case CONTROL('K'):
     {

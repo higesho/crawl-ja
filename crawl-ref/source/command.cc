@@ -824,9 +824,17 @@ static void _display_diag()
     fs.show();
 }
 
-static void _add_formatted_help_menu(column_composer &cols)
+// texts(日本語版): 足した文(訳した後)をここにも積む。章を選ぶメニューが使う。
+static void _add_formatted_help_menu_texts(column_composer &cols,
+                                           vector<string> *texts)
 {
-    cols.add_formatted(
+    auto add_text = [&](int col, const string &text, bool separator)
+    {
+        cols.add_formatted(col, text, separator);
+        if (texts)
+            texts->push_back(text);
+    };
+    add_text(
         0,
         jtrans_notrim("<h>Dungeon Crawl Help\n"
         "\n"
@@ -835,16 +843,16 @@ static void _add_formatted_help_menu(column_composer &cols)
         "aspect of Dungeon Crawl.\n"
 
         "<w>?</w>: List of commands\n"
-        "<w>^</w>: Quickstart Guide"));
+        "<w>^</w>: Quickstart Guide"), true);
     if (!crawl_state.game_started)
     {
-        cols.add_formatted(0,
+        add_text(0,
             jtrans_notrim("<darkgrey>:: Browse character notes</darkgrey>\n"
             "<darkgrey>#: Browse character dump</darkgrey>"), false);
     }
     else
     {
-        cols.add_formatted(0,
+        add_text(0,
             jtrans_notrim("<w>:</w>: Browse character notes\n"
             "<w>#</w>: Browse character dump"), false);
     }
@@ -876,10 +884,10 @@ static void _add_formatted_help_menu(column_composer &cols)
         "Toggle keyboard icon controls the\n"
         "virtual keyboard visibility.\n");
 #endif
-    cols.add_formatted(0, help_keys, false);
+    add_text(0, help_keys, false);
 
     // TODO: generate this from the manual somehow
-    cols.add_formatted(
+    add_text(
         1,
         jtrans_notrim("<h>Manual Contents\n\n"
         "<w>*</w>       Table of contents\n"
@@ -902,7 +910,12 @@ static void _add_formatted_help_menu(column_composer &cols)
         "<w>3</w>.      List of Skills\n"
         "<w>4</w>.      List of Keys and Commands\n"
         "<w>5</w>.      Inscriptions\n"
-        "<w>6</w>.      Dungeon sprint modes\n"));
+        "<w>6</w>.      Dungeon sprint modes\n"), true);
+}
+
+static void _add_formatted_help_menu(column_composer &cols)
+{
+    _add_formatted_help_menu_texts(cols, nullptr);
 }
 
 static void _add_formatted_keyhelp(column_composer &cols)
@@ -1422,6 +1435,50 @@ static int _get_help_section(int section, formatted_string &header_out, formatte
     return 0;
 }
 
+// 日本語版: ヘルプの最初の画面の「<w>?</w>: 名前」の行から、章を選ぶメニューを作る
+// (GAMEPAD_DESIGN.md §10)。選んだ章のキーを返す。取り消したら 0。
+static int _choose_help_section()
+{
+    column_composer cols(2, 40);
+    vector<string> texts;
+    _add_formatted_help_menu_texts(cols, &texts);
+    vector<prompt_choice> choices;
+    set<int> seen;
+    for (const string &text : texts)
+    {
+        for (const string &line : split_string("\n", text, false, true))
+        {
+            // 「<w>?</w>: 名前」「<w>A</w>.      名前」の行(灰色の行は選べないので拾わない)
+            if (line.compare(0, 3, "<w>") != 0)
+                continue;
+            const size_t key_end = line.find("</w>");
+            if (key_end == string::npos)
+                continue;
+            const string key_text = line.substr(3, key_end - 3);
+            size_t name_start = key_end + 4;
+            while (name_start < line.size()
+                   && (line[name_start] == ':' || line[name_start] == '.'
+                       || line[name_start] == ' '))
+            {
+                ++name_start;
+            }
+            const string name = trimmed_string(line.substr(name_start));
+
+            int key = 0;
+            if (key_text == "Home")
+                key = CK_HOME;
+            else if (key_text.size() == 1)
+                key = static_cast<unsigned char>(key_text[0]);
+            if (!key || name.empty() || seen.count(key))
+                continue;
+            seen.insert(key);
+            choices.push_back({ key, name, false });
+        }
+    }
+    const int key = prompt_choose_key(jtrans("Dungeon Crawl Help"), choices);
+    return key_is_escape(key) ? 0 : key;
+}
+
 class help_popup : public formatted_scroller
 {
 public:
@@ -1442,6 +1499,15 @@ private:
 
         int scroll, page;
         formatted_string header_text, help_text;
+        // 日本語版: Enter(パッドの A)では、章をカーソルで選ぶメニューを開く
+        // (パッドでは章の文字を押せない。GAMEPAD_DESIGN.md §10)
+        if (ch == CK_ENTER)
+        {
+            const int chosen = _choose_help_section();
+            if (!chosen)
+                return true;
+            return process_key(chosen);
+        }
         switch (key)
         {
             case ':':

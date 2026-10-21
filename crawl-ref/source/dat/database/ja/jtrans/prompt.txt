@@ -10,6 +10,15 @@ Are you really sure?
 
 本当によろしいですか？
 %%%%
+# 日本語版: パッドで入力欄に文字を入れるメニュー(見出しの %s は今の入力)
+Choose a character (B to finish): %s
+
+文字を選ぶ(B で終わる): %s
+%%%%
+(space)
+
+(空白)
+%%%%
 Buggy prompt?
 
 バグったプロンプト？
@@ -55,4 +64,9 @@ Uppercase
 Error!
 
 エラー！
+%%%%
+# 日本語版: 起動画面で Esc(パッドの B)を押したときの確認(startup.cc)
+Quit the game?
+
+ゲームを終了しますか？
 %%%%

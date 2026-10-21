@@ -363,11 +363,13 @@ bool key_is_cursor(int key)
 
 int prompt_choose_key(const string &question,
                       const vector<prompt_choice> &choices,
-                      int default_key, bool init_hover)
+                      int default_key, bool init_hover, bool grid)
 {
     int flags = MF_SINGLESELECT | MF_ARROWS_SELECT | MF_ALLOW_FORMATTING;
     if (init_hover)
         flags |= MF_INIT_HOVER;
+    if (grid)
+        flags |= MF_GRID_LAYOUT;
     PromptMenu menu(flags);
 
     MenuEntry *title = new MenuEntry(question, MEL_TITLE);
@@ -396,6 +398,22 @@ int prompt_choose_key(const string &question,
     if (sel.empty() || sel[0]->hotkeys.empty())
         return ESCAPE;
     return sel[0]->hotkeys[0];
+}
+
+int pad_pick_char(const string &current, int last)
+{
+    static const char chars[] = "abcdefghijklmnopqrstuvwxyz0123456789 -.";
+    vector<prompt_choice> choices;
+    for (const char *c = chars; *c; ++c)
+    {
+        choices.push_back({ static_cast<unsigned char>(*c),
+                            *c == ' ' ? jtrans("(space)") : string(), false });
+    }
+    const int key = prompt_choose_key(
+        make_stringf(jtransc("Choose a character (B to finish): %s"),
+                     current.c_str()),
+        choices, last ? last : 'a', true, true);
+    return key_is_escape(key) ? 0 : key;
 }
 
 /**

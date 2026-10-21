@@ -1095,6 +1095,7 @@ class TextEntry : public Widget
 {
 public:
     TextEntry();
+    ~TextEntry();
     virtual void _render() override;
     virtual SizeReq _get_preferred_size(Direction dim, int prosp_width) override;
     virtual void _allocate_region() override;
@@ -1137,6 +1138,7 @@ protected:
 
     string m_text;
     int m_cursor = 0;
+    bool m_counted_input = false; // 日本語版: text_input_begin() 済み(§10)
     int m_hscroll = 0;
 
     class LineReader
