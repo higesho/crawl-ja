@@ -469,6 +469,79 @@ static bool _pad_in_menu()
     return km != KMC_TARGETING && km != KMC_LEVELMAP;
 }
 
+// 場面(GAMEPAD_DESIGN.md §2.4)。コマンド待ちでないときの、ボタンの固定の役目を決める。
+enum class pad_scene
+{
+    command,    // コマンド待ち(割り当てたコマンドを出す)
+    targeting,  // 狙い・見回す
+    levelmap,   // 階の地図
+    menu,       // メニュー・ポップアップ
+    other,      // メッセージ欄の問い・-more- など
+};
+
+static pad_scene _pad_scene()
+{
+    if (_pad_in_command_context())
+        return pad_scene::command;
+    if (ui::has_layout())
+    {
+        const KeymapContext km = ui::current_keymap();
+        if (km == KMC_TARGETING)
+            return pad_scene::targeting;
+        if (km == KMC_LEVELMAP)
+            return pad_scene::levelmap;
+        return pad_scene::menu;
+    }
+    switch (mouse_control::current_mode())
+    {
+    case MOUSE_MODE_TARGET:
+    case MOUSE_MODE_TARGET_DIR:
+    case MOUSE_MODE_TARGET_PATH:
+        return pad_scene::targeting;
+    default:
+        return pad_scene::other;
+    }
+}
+
+// 場面ごとの、単独押しのボタンの固定の役目(キーボードのキーを出す)。無ければ 0。
+static int _pad_scene_key(pad_scene scene, pad_button b)
+{
+    switch (scene)
+    {
+    case pad_scene::targeting:
+        switch (b)
+        {
+        case PAD_LB: return '-';    // 前の相手
+        case PAD_RB: return '+';    // 次の相手
+        case PAD_X:  return 'v';    // 説明を見る
+        case PAD_Y:  return '!';    // 届かなくても撃つ
+        case PAD_RT: return CK_ENTER; // 撃つ(RT を 2 回で射撃)
+        default:     return 0;
+        }
+    case pad_scene::levelmap:
+        switch (b)
+        {
+        case PAD_LB: return '>';    // 下り階段を探す
+        case PAD_RB: return '<';    // 上り階段を探す
+        case PAD_LT: return '[';    // 前の階
+        case PAD_RT: return ']';    // 次の階
+        case PAD_X:  return '@';    // 自分の位置へ
+        default:     return 0;
+        }
+    case pad_scene::menu:
+        switch (b)
+        {
+        case PAD_X:  return '.';    // 選択の切り替え(複数選択のメニュー)
+        case PAD_Y:  return ',';    // 全部選ぶ
+        case PAD_LB: return CK_PGUP;
+        case PAD_RB: return CK_PGDN;
+        default:     return 0;
+        }
+    default:
+        return 0;
+    }
+}
+
 static int _pad_direction_key(int dx, int dy)
 {
     // メニューの中では斜めの Home/PgUp などが「先頭へ」「1 ページ」になって
@@ -488,7 +561,17 @@ static int _pad_direction_key(int dx, int dy)
 static int _pad_output_to_key(const pad_output &out)
 {
     if (out.is_direction)
-        return _pad_direction_key(out.dx, out.dy);
+    {
+        const int key = _pad_direction_key(out.dx, out.dy);
+        // LB・RB を握ったままの方向は Shift・Ctrl+方向(GAMEPAD_DESIGN.md §4.3)。
+        // ゲームでは走る・その場で攻撃、狙いでは一直線に撃つ、地図では 10 マス跳ぶ。
+        // キーコードは矢印から PgDn まで、Shift・Ctrl の順に同じ並びで続く(cio.h)。
+        if (key && out.mods & PAD_MOD_LB)
+            return key + (CK_SHIFT_UP - CK_UP);
+        if (key && out.mods & PAD_MOD_RB)
+            return key + (CK_CTRL_UP - CK_UP);
+        return key;
+    }
 
     // 単独押しの A と B は決定・取消で固定(同時押しの層の A・B は枠)。
     // 単独押しの L3・R3(クリック)は pad_click() が先に取る。
@@ -504,6 +587,18 @@ static int _pad_output_to_key(const pad_output &out)
     // 割り当ての画面が開いている間は、押したボタンの枠を開くために枠のキーを出す。
     if (gamepad_menu_capturing())
         return CK_PAD_BASE - pad_slot(out.button, out.mods);
+
+    // コマンド待ちでない場面では、単独押しのボタンに場面ごとの固定の役目がある
+    // (狙いの相手の切り替え、地図の階段探し、メニューの選択の切り替えなど)。
+    if (out.mods == 0)
+    {
+        const pad_scene scene = _pad_scene();
+        if (scene != pad_scene::command)
+        {
+            if (const int key = _pad_scene_key(scene, out.button))
+                return key;
+        }
+    }
 
     const command_type cmd = gamepad_bound_command(out.button, out.mods);
     if (cmd != CMD_NO_CMD)

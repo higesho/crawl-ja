@@ -467,6 +467,13 @@ bool InvMenu::process_command(command_type cmd)
         if (cmd == CMD_MENU_ACCEPT_SELECTION)
         {
             get_selected(&sel);
+            // 日本語版: 何も選んでいなければ、カーソルの品物を選んで確定する
+            // (パッドの A。GAMEPAD_DESIGN.md §10)
+            if (sel.empty() && last_hovered >= 0)
+            {
+                select_item_index(last_hovered, MENU_SELECT_ALL);
+                get_selected(&sel);
+            }
             return false;
         }
         else if (cmd == CMD_MENU_EXIT)
@@ -1268,6 +1275,9 @@ vector<SelItem> select_items(const vector<const item_def*> &items,
             new_flags |= MF_SELECT_QTY;
 
         new_flags |= MF_ALLOW_FORMATTING | MF_ARROWS_SELECT;
+        // 日本語版: 最初の品物にカーソルを置いて開く(パッドで、A ですぐ選べる)
+        if (!noselect)
+            new_flags |= MF_INIT_HOVER;
         if (!Options.single_column_item_menus)
             new_flags |= menu.get_flags() & MF_USE_TWO_COLUMNS;
         menu.set_flags(new_flags);
@@ -1537,7 +1547,8 @@ vector<SelItem> prompt_drop_items(const vector<SelItem> &preselected_items)
                       menu_type::drop,
                       OSEL_GEAR,
                       -1,
-                      MF_MULTISELECT | MF_ALLOW_FILTER | MF_SELECT_QTY | MF_PAGED_INVENTORY,
+                      MF_MULTISELECT | MF_ALLOW_FILTER | MF_SELECT_QTY | MF_PAGED_INVENTORY
+                      | MF_INIT_HOVER, // 日本語版: パッドで A ですぐ選べるように
                       _drop_menu_titlefn,
                       &items,
                       &Options.drop_filter,

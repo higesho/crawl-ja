@@ -31,7 +31,11 @@ static std::vector<std::string> drain(gamepad_state &pad)
     {
         char buf[32];
         if (o.is_direction)
-            std::snprintf(buf, sizeof buf, "dir %d,%d", o.dx, o.dy);
+        {
+            std::snprintf(buf, sizeof buf, "%s%sdir %d,%d",
+                          o.mods & PAD_MOD_LB ? "LB+" : "",
+                          o.mods & PAD_MOD_RB ? "RB+" : "", o.dx, o.dy);
+        }
         else
             std::snprintf(buf, sizeof buf, "%s",
                           pad_slot_name(o.button, o.mods).c_str());
@@ -484,6 +488,56 @@ static void test_cursor()
           "リピートの待ちより刻みが早い");
 }
 
+static void test_chord_direction()
+{
+    // LB を握ったままの方向は LB+ 付きで出て、LB を離しても階段(LB 単独)にならない。
+    gamepad_state pad;
+    pad.update(0, true, DELAY); // 中立を見せる
+    pad.set_button(PAD_LB, true);
+    pad.set_stick(0, 30000);
+    pad.update(10, true, DELAY);
+    pad.update(10 + gamepad_state::COMBINE_MS, true, DELAY);
+    EXPECT_OUT(pad, "LB+dir 1,0", "LB を握った方向は LB+ が付く");
+    pad.set_stick(0, 0);
+    pad.update(200, true, DELAY);
+    pad.set_button(PAD_LB, false);
+    EXPECT_OUT(pad, "", "方向に使った LB は離しても単独押しにならない");
+
+    // RB を握ったまま十字の斜め。
+    pad.set_button(PAD_RB, true);
+    pad.set_dpad(PAD_DPAD_UP, true);
+    pad.set_dpad(PAD_DPAD_LEFT, true);
+    pad.update(300, true, DELAY);
+    EXPECT_OUT(pad, "RB+dir -1,-1", "RB を握った斜めは RB+ が付く");
+    pad.set_dpad(PAD_DPAD_UP, false);
+    pad.set_dpad(PAD_DPAD_LEFT, false);
+    pad.update(400, true, DELAY);
+    pad.set_button(PAD_RB, false);
+    EXPECT_OUT(pad, "", "方向に使った RB も単独押しにならない");
+
+    // 修飾なしの方向には何も付かない。
+    pad.set_dpad(PAD_DPAD_DOWN, true);
+    pad.update(500, true, DELAY);
+    pad.update(500 + gamepad_state::COMBINE_MS, true, DELAY);
+    EXPECT_OUT(pad, "dir 0,1", "修飾なしの方向");
+}
+
+static void test_chord_defaults()
+{
+    CHECK(pad_default_slot_command_name(PAD_X, 0) == pad_default_command_name(PAD_X),
+          "単独押しの既定はボタンの既定と同じ");
+    CHECK(!std::strcmp(pad_default_slot_command_name(PAD_X, PAD_MOD_LB), "CMD_REST"),
+          "LB+X の既定は休む");
+    CHECK(!std::strcmp(pad_default_slot_command_name(PAD_A, PAD_MOD_LB), "CMD_PICKUP"),
+          "LB+A の既定は拾う");
+    CHECK(!std::strcmp(pad_default_slot_command_name(PAD_Y, PAD_MOD_RB), "CMD_USE_ABILITY"),
+          "RB+Y の既定は能力");
+    CHECK(pad_default_slot_command_name(PAD_X, PAD_MOD_LB | PAD_MOD_RB) == nullptr,
+          "LB+RB の層には既定が無い");
+    CHECK(pad_default_slot_command_name(PAD_L3, PAD_MOD_LB) == nullptr,
+          "LB+L3 には既定が無い");
+}
+
 int main()
 {
     test_names();
@@ -497,6 +551,8 @@ int main()
     test_slots();
     test_chords();
     test_cursor();
+    test_chord_direction();
+    test_chord_defaults();
     std::printf("%s: %d checks, %d failures\n",
                 failures ? "FAIL" : "PASS", checks, failures);
     return failures ? 1 : 0;
