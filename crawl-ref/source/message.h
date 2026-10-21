@@ -87,7 +87,11 @@ void msgwin_got_input();
 int msgwin_get_line(string prompt,
                     char *buf, int len,
                     input_history *mh = nullptr,
-                    const string &fill = "");
+                    const string &fill = "",
+                    int number_lo = 0, int number_hi = -1);
+// number_lo <= number_hi のとき(日本語版、GAMEPAD_DESIGN.md §10)は数を訊く欄で、
+// 上下キーで ±1、PgUp・PgDn で ±10 だけ、その範囲の中で数を増減する
+// (パッドの十字。上下は入力の履歴に使わない)。
 
 // Do not use this templated function directly. Use the macro below instead.
 template<int> static int msgwin_get_line_autohist_temp(string prompt,

@@ -11,6 +11,7 @@
 #include <sstream>
 
 #include "areas.h"
+#include "cio.h"
 #include "colour.h"
 #include "delay.h"
 #include "english.h"
@@ -1653,10 +1654,78 @@ void msgwin_got_input()
     msgwin.got_input();
 }
 
+// 日本語版: 数を訊く欄の増減(GAMEPAD_DESIGN.md §10)。上下で ±1、PgUp・PgDn で ±10。
+static int _number_step(int key)
+{
+    switch (key)
+    {
+    case CK_UP:   return 1;
+    case CK_DOWN: return -1;
+    case CK_PGUP: return 10;
+    case CK_PGDN: return -10;
+    default:      return 0;
+    }
+}
+
+// 今の文字を数として読み、step だけ動かして lo..hi に収めた文字を返す。
+// 数が無ければ、上げるときは lo、下げるときは hi から始める。
+static string _stepped_number(const string &text, int step, int lo, int hi)
+{
+    const char *start = text.c_str();
+    char *end;
+    long value = strtol(start, &end, 10);
+    if (end == start)
+        value = step > 0 ? lo : hi;
+    else
+        value += step;
+    return to_string(max<long>(lo, min<long>(hi, value)));
+}
+
+namespace
+{
+    // メッセージ欄で数を読む。増減のキーで文字を差し替えて描き直す
+    // (line_reader::process_key の履歴の差し替えと同じ描き方)。
+    class number_line_reader : public line_reader
+    {
+    public:
+        number_line_reader(char *buf, size_t sz, int lo, int hi)
+            : line_reader(buf, sz, get_number_of_cols()), m_lo(lo), m_hi(hi)
+        {
+        }
+
+    protected:
+        int process_key(int ch) override
+        {
+            const int step = _number_step(ch);
+            if (!step)
+                return line_reader::process_key(ch);
+
+            const int olen = strwidth(buffer);
+            const string text = _stepped_number(string(buffer, length), step,
+                                                m_lo, m_hi);
+            length = min<int>(text.size(), bufsz - 1);
+            memcpy(buffer, text.c_str(), length);
+            buffer[length] = 0;
+            cur = buffer + length;
+            calc_pos();
+            cursorto(0);
+            print_segment(0, pos < olen ? olen - pos : 0);
+            calc_pos();
+            cursorto(pos);
+            return -1;
+        }
+
+    private:
+        int m_lo, m_hi;
+    };
+}
+
 int msgwin_get_line(string prompt, char *buf, int len,
-                    input_history *mh, const string &fill)
+                    input_history *mh, const string &fill,
+                    int number_lo, int number_hi)
 {
     bool use_popup = !crawl_state.need_save || ui::has_layout();
+    const bool number = number_lo <= number_hi;
 
     int ret;
     if (use_popup)
@@ -1684,6 +1753,13 @@ int msgwin_get_line(string prompt, char *buf, int len,
 
         popup->on_hotkey_event([&](const ui::KeyEvent& ev) {
             const int lastch = ev.key();
+            if (number && _number_step(lastch))
+            {
+                input->set_text(_stepped_number(input->get_text(),
+                                                _number_step(lastch),
+                                                number_lo, number_hi));
+                return true; // 受け取った(入力欄の履歴には回さない)
+            }
             if (ui::key_exits_popup(lastch, false))
             {
                 ret = CK_ESCAPE; // XX hardcoding
@@ -1714,7 +1790,16 @@ int msgwin_get_line(string prompt, char *buf, int len,
     {
         if (!prompt.empty())
             msgwin_prompt(prompt);
-        ret = cancellable_get_line(buf, len, mh, nullptr, fill);
+        if (number)
+        {
+            flush_prev_message();
+            mouse_control mc(MOUSE_MODE_PROMPT);
+            number_line_reader reader(buf, len, number_lo, number_hi);
+            reader.set_input_history(mh);
+            ret = reader.read_line(fill);
+        }
+        else
+            ret = cancellable_get_line(buf, len, mh, nullptr, fill);
         msgwin_reply(buf);
     }
 

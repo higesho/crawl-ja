@@ -22,10 +22,43 @@ int yesno(const char * str, bool allow_lowercase, int default_answer,
           bool noprompt = false,
           const explicit_keymap *map = nullptr,
           bool allow_popup = true,
-          bool ask_always = false);
+          bool ask_always = false,
+          const char *cursor_popup = nullptr);
+// cursor_popup(日本語版): メッセージ欄や more の行で訊いているときに、カーソル
+// (パッドの十字)が来たら、この文を問いにしてポップアップへ切り替える。
+// str があるときは str を使うので要らない(GAMEPAD_DESIGN.md §10)。
 
-int prompt_for_quantity(const char *prompt);
-int prompt_for_int(const char *prompt, bool nonneg, const string &prefill = "");
+// 日本語版(ja-tools/GAMEPAD_DESIGN.md §10): カーソルを動かすキー(矢印・Home・End・
+// PgUp・PgDn)か。ゲームパッドの十字はこれらを出す。
+bool key_is_cursor(int key);
+
+// 日本語版: 1 文字で答える問いの選択肢。
+struct prompt_choice
+{
+    // C++11 でも { キー, 名前 } と書けるように、構築子を持たせる
+    prompt_choice(int k, const string &l, bool a = true)
+        : key(k), label(l), any_case(a)
+    {
+    }
+
+    int key;        // 選んだときに返すキー(表示にも出る)
+    string label;   // 表示する名前(訳した後の文)
+    bool any_case;  // 英字なら、大文字小文字のどちらで打っても選べる
+};
+
+// 日本語版: メッセージ欄で 1 文字を待っていた問いを、カーソルでも選べるメニューで出す
+// (prompt_menu が偽で、メッセージ欄に収まるならメッセージ欄に出す)。
+// 選んだ選択肢の key を返す。取り消したら ESCAPE。
+// init_hover が偽なら、カーソルを置かずに出す(Enter をうっかり押しても選ばれない)。
+int prompt_choose_key(const string &question,
+                      const vector<prompt_choice> &choices,
+                      int default_key = 0, bool init_hover = true);
+
+// max_qty(日本語版): 1 以上なら、上下キーで 1..max_qty の範囲で数を増減できる。
+int prompt_for_quantity(const char *prompt, int max_qty = 0);
+// lo <= hi(日本語版)なら、上下キーで lo..hi の範囲で数を増減できる。
+int prompt_for_int(const char *prompt, bool nonneg, const string &prefill = "",
+                   int lo = 0, int hi = -1);
 double prompt_for_float(const char* prompt);
 
 char index_to_letter(int the_index);

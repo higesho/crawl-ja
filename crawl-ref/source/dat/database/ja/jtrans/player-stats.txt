@@ -19,6 +19,11 @@ Increase (S)trength, (I)ntelligence, or (D)exterity?
 
 どの能力を伸ばしますか？ (s)腕力 (i)知力 (d)器用さ
 %%%%
+# 日本語版: 能力値の上昇をメニューで訊くときの見出し
+Increase which attribute?
+
+どの能力を伸ばしますか？
+%%%%
 Uppercase letters only, please.
 
 大文字で入力してください。

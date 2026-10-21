@@ -1403,7 +1403,7 @@ bool pickup_single_item(int link, int qty)
                                item->name(DESC_THE, false,
                                           false, false).c_str());
 
-        qty = prompt_for_quantity(prompt.c_str());
+        qty = prompt_for_quantity(prompt.c_str(), item->quantity);
         if (qty == -1)
             qty = item->quantity;
         else if (qty == 0)

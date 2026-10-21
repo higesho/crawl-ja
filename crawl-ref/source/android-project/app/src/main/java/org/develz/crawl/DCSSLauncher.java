@@ -59,6 +59,9 @@ public class DCSSLauncher extends AppCompatActivity implements AdapterView.OnIte
     // Full screen
     private boolean fullScreen;
 
+    // 日本語版: バーチャルパッドを出すか
+    private boolean virtualPad;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -116,6 +119,12 @@ public class DCSSLauncher extends AppCompatActivity implements AdapterView.OnIte
         fullScreenSwitch.setChecked(fullScreen);
         fullScreenSwitch.setOnCheckedChangeListener(this);
 
+        // 日本語版: バーチャルパッド(出すときは画面のキーボードを出さない)
+        virtualPad = preferences.getBoolean("virtual_pad", false);
+        SwitchCompat virtualPadSwitch = findViewById(R.id.virtualPad);
+        virtualPadSwitch.setChecked(virtualPad);
+        virtualPadSwitch.setOnCheckedChangeListener(this);
+
         // Create the init file if needed
         initFile = new File(getExternalFilesDir(null)+INIT_FILE);
         resetInitFile(false);
@@ -143,6 +152,7 @@ public class DCSSLauncher extends AppCompatActivity implements AdapterView.OnIte
         intent.putExtra("extra_keyboard", extraKeyboardOption);
         intent.putExtra("keyboard_size", Math.round(keyboardSizePx));
         intent.putExtra("full_screen", fullScreen);
+        intent.putExtra("virtual_pad", virtualPad);
         startActivity(intent);
     }
 
@@ -235,6 +245,11 @@ public class DCSSLauncher extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        if (compoundButton.getId() == R.id.virtualPad) {
+            virtualPad = b;
+            preferences.edit().putBoolean("virtual_pad", virtualPad).apply();
+            return;
+        }
         fullScreen = b;
         preferences.edit().putBoolean("full_screen", fullScreen).apply();
     }

@@ -135,7 +135,8 @@ bool confirm_prompt(const char* require, const char* fmt, ...)
 //      -- idea borrowed from Nethack
 int yesno(const char *str, bool allow_lowercase, int default_answer, bool clear_after,
            bool interrupt_delays, bool noprompt,
-           const explicit_keymap *map, bool allow_popup, bool ask_always)
+           const explicit_keymap *map, bool allow_popup, bool ask_always,
+           const char *cursor_popup)
 {
     if (interrupt_delays && !crawl_state.is_repeating_cmd())
         interrupt_activity(activity_interrupt::force);
@@ -186,7 +187,7 @@ int yesno(const char *str, bool allow_lowercase, int default_answer, bool clear_
 
     }
 
-    if (use_popup)
+    auto build_popup = [&]()
     {
         MenuEntry * const y_me = new MenuEntry(jtrans("Yes"), MEL_ITEM, 1, 'Y');
         y_me->add_hotkey('y');
@@ -221,7 +222,9 @@ int yesno(const char *str, bool allow_lowercase, int default_answer, bool clear_
                 : (ask_always && default_answer == 'A') ? "Always"
                 : "bugs")));
         }
-    }
+    };
+    if (use_popup)
+        build_popup();
     mouse_control mc(MOUSE_MODE_YESNO);
     while (true)
     {
@@ -254,6 +257,22 @@ int yesno(const char *str, bool allow_lowercase, int default_answer, bool clear_
                     mprf(MSGCH_PROMPT, "%s", prompt.c_str());
 
                 tmp = ui::getch(KMC_CONFIRM);
+                // 日本語版: カーソル(パッドの十字)が来たら、カーソルで選べる
+                // ポップアップに切り替えて訊き直す(GAMEPAD_DESIGN.md §10)
+                if (key_is_cursor(tmp)
+                    && (str && allow_popup || cursor_popup))
+                {
+                    if (!str || !allow_popup)
+                        prompt = make_stringf("%s ", cursor_popup);
+                    use_popup = true;
+                    enter_defaults = false;
+                    pop.f_keyfilter = nullptr;
+                    pop.set_flags(flags | MF_ARROWS_SELECT);
+                    build_popup();
+                    if (clear_after)
+                        clear_messages();
+                    continue;
+                }
                 if (pop.f_keyfilter)
                     tmp = pop.f_keyfilter(tmp);
             }
@@ -308,6 +327,61 @@ int yesno(const char *str, bool allow_lowercase, int default_answer, bool clear_
     }
 }
 
+bool key_is_cursor(int key)
+{
+    switch (key)
+    {
+    case CK_UP:
+    case CK_DOWN:
+    case CK_LEFT:
+    case CK_RIGHT:
+    case CK_HOME:
+    case CK_END:
+    case CK_PGUP:
+    case CK_PGDN:
+        return true;
+    default:
+        return false;
+    }
+}
+
+int prompt_choose_key(const string &question,
+                      const vector<prompt_choice> &choices,
+                      int default_key, bool init_hover)
+{
+    int flags = MF_SINGLESELECT | MF_ARROWS_SELECT | MF_ALLOW_FORMATTING;
+    if (init_hover)
+        flags |= MF_INIT_HOVER;
+    PromptMenu menu(flags);
+
+    MenuEntry *title = new MenuEntry(question, MEL_TITLE);
+    title->wrap_text();
+    menu.set_title(title);
+
+    int hover = -1;
+    for (const prompt_choice &choice : choices)
+    {
+        MenuEntry *me = new MenuEntry(choice.label, MEL_ITEM, 1, choice.key);
+        if (choice.any_case && isaalpha(choice.key))
+        {
+            const int other = isaupper(choice.key) ? toalower(choice.key)
+                                                   : toupper_safe(choice.key);
+            me->add_hotkey(other);
+        }
+        menu.add_entry(me);
+        if (choice.key == default_key)
+            hover = menu.item_count() - 1;
+    }
+    if (hover >= 0)
+        menu.set_hovered(hover);
+
+    menu.show();
+    const vector<MenuEntry *> sel = menu.selected_entries();
+    if (sel.empty() || sel[0]->hotkeys.empty())
+        return ESCAPE;
+    return sel[0]->hotkeys[0];
+}
+
 /**
  * Prompt the user for a quantity of things.
  *
@@ -316,7 +390,7 @@ int yesno(const char *str, bool allow_lowercase, int default_answer, bool clear_
  *         0 if the user escaped;
  *         the number chosen otherwise.
  */
-int prompt_for_quantity(const char *prompt)
+int prompt_for_quantity(const char *prompt, int max_qty)
 {
     msgwin_prompt(prompt);
 
@@ -326,8 +400,16 @@ int prompt_for_quantity(const char *prompt)
     else if (ch == CK_ESCAPE || ch == CK_REDRAW)
         return 0;
 
-    const string prefill = string(1, ch);
-    return prompt_for_int("", false, prefill);
+    // 日本語版: 最初のキーが上下(パッドの十字)なら、1 か最大から数え始める。
+    // ほかの文字でないキー(負の値)は、入力欄に入れない(GAMEPAD_DESIGN.md §10)
+    string prefill;
+    if (max_qty > 0 && (ch == CK_UP || ch == CK_PGUP))
+        prefill = "1";
+    else if (max_qty > 0 && (ch == CK_DOWN || ch == CK_PGDN))
+        prefill = to_string(max_qty);
+    else if (ch > 0)
+        prefill = string(1, ch);
+    return prompt_for_int("", false, prefill, 1, max_qty);
 }
 
 /**
@@ -339,12 +421,13 @@ int prompt_for_quantity(const char *prompt)
  & @param prefill a prefill to use for the message box, if any.
  * @return the chosen number, or the chosen sentinel value.
  */
-int prompt_for_int(const char *prompt, bool nonneg, const string &prefill)
+int prompt_for_int(const char *prompt, bool nonneg, const string &prefill,
+                   int lo, int hi)
 {
     char specs[80];
 
     int getline_ret = msgwin_get_line(prompt, specs, sizeof(specs), nullptr,
-                                            prefill);
+                                            prefill, lo, hi);
 
     if (specs[0] == '\0' || getline_ret == CK_ESCAPE)
         return nonneg ? -1 : 0;

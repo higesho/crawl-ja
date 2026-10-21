@@ -2674,6 +2674,13 @@ static keyfun_action _travel_depth_keyfilter(int &c)
     {
     case '<': case '>': case '?': case '$': case '^':
         return KEYFUN_BREAK;
+    // 日本語版: 上下(パッドの十字)で、1 つ浅い階・深い階へ(GAMEPAD_DESIGN.md §10)
+    case CK_UP:
+        c = '<';
+        return KEYFUN_BREAK;
+    case CK_DOWN:
+        c = '>';
+        return KEYFUN_BREAK;
     case '-':
     case CONTROL('P'): case 'p':
         c = '-';  // Make uniform.

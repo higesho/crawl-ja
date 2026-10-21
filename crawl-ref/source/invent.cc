@@ -1873,7 +1873,12 @@ int prompt_invent_item(const char *prompt,
             flush_prev_message();
 
         if (need_getch)
+        {
             keyin = get_ch();
+            // 日本語版: カーソル(パッドの十字)では一覧を開く(GAMEPAD_DESIGN.md §10)
+            if (key_is_cursor(keyin))
+                keyin = '?';
+        }
 
         need_redraw = false;
         need_prompt = true;

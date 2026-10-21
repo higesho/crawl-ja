@@ -476,29 +476,31 @@ static void _set_allies_withdraw(const coord_def &target)
 /// Prompt the player to issue orders. Returns the key pressed.
 static int _issue_orders_prompt()
 {
-    mprf(MSGCH_PROMPT, jtransc("What are your orders?"));
+    // 日本語版: カーソルでも選べるメニューで訊く(GAMEPAD_DESIGN.md §10)。
+    // 訳文の先頭の「a - 」は、メニューが自分でキーを出すので外す
+    auto label = [](const char *text)
+    {
+        const string t = jtrans(text);
+        const size_t sep = t.find(" - ");
+        return sep == string::npos ? t : t.substr(sep + 3);
+    };
+    vector<prompt_choice> choices;
     if (!you.cannot_speak())
     {
-        const string shout_j = tagged_jtrans("[shout verb]", you.shout_verb(false));
-        mprf(" t - %s", shout_j.c_str());
+        choices.push_back({ 't', tagged_jtrans("[shout verb]",
+                                               you.shout_verb(false)), false });
     }
-
     if (!you.berserk() && !you.confused())
     {
-        // 日本語は表示幅で桁を揃える
-        const string indent(19, ' ');
-        mpr(chop_string(jtrans("Orders for allies:"), 19)
-            + jtrans("a - Attack new target."));
-        mpr(indent + chop_string(jtrans("r - Retreat!"), 25)
-            + jtrans("s - Stop attacking."));
-        mpr(indent + chop_string(jtrans("g - Guard the area."), 25)
-            + jtrans("f - Follow me."));
+        choices.push_back({ 'a', label("a - Attack new target."), false });
+        choices.push_back({ 'r', label("r - Retreat!"), false });
+        choices.push_back({ 's', label("s - Stop attacking."), false });
+        choices.push_back({ 'g', label("g - Guard the area."), false });
+        choices.push_back({ 'f', label("f - Follow me."), false });
     }
-    mpr(" " + jtrans("Anything else - Cancel."));
 
-    flush_prev_message(); // buffer doesn't get flushed otherwise
-
-    const int keyn = get_ch();
+    const int keyn = prompt_choose_key(jtrans("What are your orders?"),
+                                       choices);
     clear_messages();
     return keyn;
 }

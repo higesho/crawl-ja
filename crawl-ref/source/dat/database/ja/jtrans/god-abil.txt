@@ -243,6 +243,11 @@ You need at least %d gold to purchase potions right now!
 
 [%c] - %dゴールド -
 %%%%
+# 日本語版: 上の行をメニューで出すとき(キーはメニューが出す)
+%d gold -
+
+%dゴールド -
+%%%%
 Purchase which effect?
 
 どの効果の薬を購入しますか？
@@ -546,6 +551,11 @@ Yes, %s is definitely a better name.
 Was %s a) male, b) female, or c) neither? (Currently %s.)
 
 祖霊『%s』の性別は？ a) 男性 b) 女性 c) どちらでもない (現在: %s)
+%%%%
+# 日本語版: 上の問いをメニューで出すときの見出し(選択肢はメニューが並べる)
+Was %s male, female, or neither? (Currently %s.)
+
+祖霊『%s』の性別は？ (現在: %s)
 %%%%
 %s was always %s, you're pretty sure.
 

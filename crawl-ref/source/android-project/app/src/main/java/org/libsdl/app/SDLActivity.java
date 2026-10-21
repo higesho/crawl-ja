@@ -31,8 +31,11 @@ import android.content.pm.ActivityInfo;
 import androidx.appcompat.app.AppCompatActivity;
 
 // CRAWL HACK: Custom keyboard
+import org.develz.crawl.DCSSGamepad;
 import org.develz.crawl.DCSSKeyboard;
 import org.develz.crawl.DCSSKeyboardExtra;
+import org.develz.crawl.DCSSVirtualPad;
+import android.hardware.input.InputManager;
 import org.develz.crawl.R;
 
 
@@ -73,6 +76,12 @@ public class SDLActivity extends AppCompatActivity {
     protected static boolean fullScreen;
     protected static View mTextEdit;
     protected static boolean mScreenKeyboardShown;
+    // 日本語版: ゲームパッド(GAMEPAD_DESIGN.md §9)。バーチャルパッドを使うか(起動画面の設定)、
+    // 物理のパッドが繋がっているか。どちらかのときは画面のキーボードを出さない
+    protected static boolean virtualPadOption;
+    protected static boolean mPadConnected;
+    protected static DCSSVirtualPad mVirtualPad;
+    protected static InputManager.InputDeviceListener mPadListener;
     protected static ViewGroup mLayout;
     protected static LinearLayout keyboardsLayout;
     protected static SDLClipboardHandler mClipboardHandler;
@@ -164,6 +173,8 @@ public class SDLActivity extends AppCompatActivity {
         mCurrentNativeState = NativeState.INIT;
         // CRAWL HACK: Custom keyboard
         mScreenKeyboardShown = false;
+        mVirtualPad = null;
+        mPadConnected = false;
     }
 
     // Setup
@@ -237,6 +248,8 @@ public class SDLActivity extends AppCompatActivity {
         Log.i(TAG, "Extra keyboard option: " + keyboardSize);
         fullScreen = intent.getBooleanExtra("full_screen", false);
         Log.i(TAG, "Full screen: " + fullScreen);
+        virtualPadOption = intent.getBooleanExtra("virtual_pad", false);
+        Log.i(TAG, "Virtual pad: " + virtualPadOption);
 
         mLayout = new RelativeLayout(this);
         mLayout.setFitsSystemWindows(true);
@@ -287,6 +300,22 @@ public class SDLActivity extends AppCompatActivity {
         keyLParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         keyboardsLayout.setLayoutParams(keyLParams);
         mLayout.addView(keyboardsLayout);
+
+        // 日本語版: バーチャルパッドはキーボードの上に重ねる(ボタンの外は下へ素通り)
+        mVirtualPad = new DCSSVirtualPad(this);
+        mVirtualPad.setLayoutParams(new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+        mVirtualPad.setVisibility(View.GONE);
+        mLayout.addView(mVirtualPad);
+        // 物理のパッドの抜き差しを見て、キーボードとバーチャルパッドの出し入れを決め直す
+        mPadConnected = DCSSGamepad.isConnected();
+        mPadListener = new InputManager.InputDeviceListener() {
+            @Override public void onInputDeviceAdded(int id) { onPadDevicesChanged(); }
+            @Override public void onInputDeviceRemoved(int id) { onPadDevicesChanged(); }
+            @Override public void onInputDeviceChanged(int id) { onPadDevicesChanged(); }
+        };
+        ((InputManager) getSystemService(Context.INPUT_SERVICE))
+            .registerInputDeviceListener(mPadListener, null);
         setContentView(mLayout);
         // CRAWL HACK: Custom keyboard (END)
 
@@ -377,6 +406,12 @@ public class SDLActivity extends AppCompatActivity {
     protected void onDestroy() {
         Log.v(TAG, "onDestroy()");
 
+        if (mPadListener != null) {
+            ((InputManager) getSystemService(Context.INPUT_SERVICE))
+                .unregisterInputDeviceListener(mPadListener);
+            mPadListener = null;
+        }
+
         if (SDLActivity.mBrokenLibraries) {
            super.onDestroy();
            // Reset everything in case the user re opens the app
@@ -414,6 +449,11 @@ public class SDLActivity extends AppCompatActivity {
 
         if (SDLActivity.mBrokenLibraries) {
            return false;
+        }
+
+        // 日本語版: ゲームパッドのボタンと十字は、画面のキーボードより先に取り分ける
+        if (DCSSGamepad.handleKey(event)) {
+            return true;
         }
 
         int keyCode = event.getKeyCode();
@@ -623,6 +663,16 @@ public class SDLActivity extends AppCompatActivity {
                     } else {
                         mKeyboardExtra.setVisibility(View.GONE);
                     }
+                    // 日本語版: バーチャルパッドは、キーボードを出していないときだけ出す。
+                    // 物理のパッドが繋がっていれば出さない
+                    if (mVirtualPad != null) {
+                        if (virtualPadOption && !mPadConnected && !mScreenKeyboardShown) {
+                            mVirtualPad.setVisibility(View.VISIBLE);
+                        } else {
+                            mVirtualPad.releaseAll();
+                            mVirtualPad.setVisibility(View.GONE);
+                        }
+                    }
                     // Update SDL Surface heigh
                     if (keyboardOption == 1) {
                         ViewGroup.LayoutParams lParams = mSurface.getLayoutParams();
@@ -679,6 +729,37 @@ public class SDLActivity extends AppCompatActivity {
 
     // CRAWL HACK: Used to save game on pause
     public static native void nativeSaveGame();
+    // 日本語版: パッドのボタンと軸を C++ のゲームパッドの処理へ渡す(windowmanager-sdl.cc)。
+    // 値は SDL_GameControllerButton / SDL_GameControllerAxis
+    public static native void nativePadButton(int button, boolean down);
+    public static native void nativePadAxis(int axis, int value);
+
+    // 日本語版: パッドを使う画面か(画面のキーボードを出さない)
+    static boolean padMode() {
+        return virtualPadOption || mPadConnected;
+    }
+
+    // 日本語版: パッドの抜き差し。挿したらキーボードを隠す
+    static void onPadDevicesChanged() {
+        boolean connected = DCSSGamepad.isConnected();
+        if (connected == mPadConnected)
+            return;
+        mPadConnected = connected;
+        if (connected)
+            mScreenKeyboardShown = false;
+        if (mSingleton != null)
+            mSingleton.sendCommand(COMMAND_UPDATE_KEYBOARD_VISIBILITY, null);
+    }
+
+    // 日本語版: パッドの入力が来た(繋がっていると分からない機器でも、使った時点でパッドとみなす)
+    public static void onGamepadUsed() {
+        if (mPadConnected)
+            return;
+        mPadConnected = true;
+        mScreenKeyboardShown = false;
+        if (mSingleton != null)
+            mSingleton.sendCommand(COMMAND_UPDATE_KEYBOARD_VISIBILITY, null);
+    }
 
     /**
      * This method is called by SDL using JNI.
@@ -846,6 +927,12 @@ public class SDLActivity extends AppCompatActivity {
         if (action == 0) { // Hide keyboard
             mScreenKeyboardShown = false;
         } else if (action == 1) { // Show keyboard
+            // 日本語版: パッドを使う画面では、ゲームの始めにキーボードを出さない
+            // (要るときは、ゲームメニューなどからの切り替え(action 2)で出す)
+            if (padMode()) {
+                mSingleton.sendCommand(COMMAND_UPDATE_KEYBOARD_VISIBILITY, null);
+                return mScreenKeyboardShown;
+            }
             mScreenKeyboardShown = true;
         } else if (action == 2) { // Toggle keyboard
             mScreenKeyboardShown = !mScreenKeyboardShown;

@@ -19,6 +19,7 @@
 #include "options.h"
 #include "output.h"
 #include "player.h"
+#include "prompt.h"
 #include "religion.h"
 #include "stat-type.h"
 #include "state.h"
@@ -94,10 +95,6 @@ bool attribute_increase()
              innate_stat(STAT_INT),
              innate_stat(STAT_DEX));
     }
-    mprf(MSGCH_PROMPT, "%s", need_caps
-        ? jtransc("Increase (S)trength, (I)ntelligence, or (D)exterity? ")
-        : tagged_jtransc("[no caps]",
-                  "Increase (s)trength, (i)ntelligence, or (d)exterity? "));
     mouse_control mc(MOUSE_MODE_PROMPT);
 
     bool tried_lua = false;
@@ -115,11 +112,16 @@ bool attribute_increase()
         }
         else
         {
-            while ((keyin = getchm()) == CK_REDRAW)
+            // 日本語版: カーソルでも選べるメニューで訊く(GAMEPAD_DESIGN.md §10)。
+            // 大文字だけを求めるとき(うっかり押し防止)は、カーソルを置かずに出す
+            const vector<prompt_choice> choices =
             {
-                redraw_screen();
-                update_screen();
-            }
+                { 'S', jtrans(stat_desc(STAT_STR, SD_NAME)), !need_caps },
+                { 'I', jtrans(stat_desc(STAT_INT, SD_NAME)), !need_caps },
+                { 'D', jtrans(stat_desc(STAT_DEX, SD_NAME)), !need_caps },
+            };
+            keyin = prompt_choose_key(jtrans("Increase which attribute?"),
+                                      choices, 0, !need_caps);
         }
         tried_lua = true;
 

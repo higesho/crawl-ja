@@ -28,3 +28,32 @@ Adjust (g)ear, (s)pells, (a)bilities, (p)otions, sc(r)olls or e(v)ocables?
 
 (g)装備品 (s)呪文 (a)能力 (p)薬 (r)巻物 (v)発動アイテム のどれをキー割り当て変更しますか？
 %%%%
+# 日本語版: 上の問いをメニューで出すときの見出しと選択肢
+Adjust which?
+
+どれのキー割り当てを変更しますか？
+%%%%
+[adjust]gear
+
+装備品
+%%%%
+[adjust]spells
+
+呪文
+%%%%
+[adjust]abilities
+
+能力
+%%%%
+[adjust]potions
+
+薬
+%%%%
+[adjust]scrolls
+
+巻物
+%%%%
+[adjust]evocables
+
+発動アイテム
+%%%%

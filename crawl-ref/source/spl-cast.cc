@@ -952,6 +952,15 @@ spret cast_a_spell(bool check_range, spell_type spell, dist *_target,
                 }
 
                 keyin = numpad_to_regular(get_ch());
+                // 日本語版: カーソル(パッドの十字)と、唱え直しの無いときの Enter
+                // (パッドの A)では、呪文の一覧を開く(GAMEPAD_DESIGN.md §10)
+                if (key_is_cursor(keyin)
+                    || keyin == CK_ENTER
+                       && (you.last_cast_spell == SPELL_NO_SPELL
+                           || !Options.enable_recast_spell))
+                {
+                    keyin = '?';
+                }
             }
 
             if (keyin == '?' || keyin == '*' || Options.spell_menu)

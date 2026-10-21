@@ -1579,7 +1579,10 @@ void AcquireMenu::init_entries()
         // update the more with a y/n prompt
         update_more();
 
-        if (!yesno(nullptr, true, 'n', false, false, true))
+        // 日本語版: カーソル(パッドの十字)が来たら、はい/いいえのポップアップで訊く
+        const string question = more.tostring();
+        if (!yesno(nullptr, true, 'n', false, false, true, nullptr, true, false,
+                   question.c_str()))
         {
             deselect_all();
             update_more(); // go back to the regular more

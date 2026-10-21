@@ -1221,6 +1221,9 @@ static item_def* _item_swap_prompt(const vector<item_def*>& candidates)
     do
     {
         c = getchm();
+        // 日本語版: カーソルや Enter(パッドの十字・A)では、選ぶメニューを開く
+        if (key_is_cursor(c) || c == CK_ENTER)
+            c = '?';
         for (size_t i = 0; i < slot_chars.size(); i++)
         {
             if (c == slot_chars[i]
@@ -3496,7 +3499,8 @@ void tile_item_pickup(int idx, bool part)
     int quantity = env.item[idx].quantity;
     if (part && quantity > 1)
     {
-        quantity = prompt_for_int(jtrans_notrimc("Pick up how many? "), true);
+        quantity = prompt_for_int(jtrans_notrimc("Pick up how many? "), true,
+                                  "", 1, quantity);
         if (quantity < 1)
         {
             canned_msg(MSG_OK);
@@ -3518,7 +3522,8 @@ void tile_item_drop(int idx, bool partdrop)
     int quantity = you.inv[idx].quantity;
     if (partdrop && quantity > 1)
     {
-        quantity = prompt_for_int(jtrans_notrimc("Drop how many? "), true);
+        quantity = prompt_for_int(jtrans_notrimc("Drop how many? "), true,
+                                  "", 1, quantity);
         if (quantity < 1)
         {
             canned_msg(MSG_OK);

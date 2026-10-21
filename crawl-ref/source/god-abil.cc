@@ -3346,10 +3346,11 @@ bool gozag_potion_petition()
             return false;
 
         clear_messages();
+        // 日本語版: カーソルでも選べるメニューで訊く(GAMEPAD_DESIGN.md §10)
+        vector<prompt_choice> choices;
         for (int i = 0; i < GOZAG_MAX_POTIONS; i++)
         {
-            string line = make_stringf(jtrans_notrimc("  [%c] - %d gold - "),
-                                       i + 'a', prices[i]);
+            string line = make_stringf(jtrans_notrimc("%d gold - "), prices[i]);
             vector<string> pot_names;
             for (const CrawlStoreValue& store : *pots[i])
             {
@@ -3358,10 +3359,10 @@ bool gozag_potion_petition()
             }
             line += comma_separated_line(pot_names.begin(), pot_names.end(),
                                          "、", "、");
-            mpr_nojoin(MSGCH_PLAIN, line);
+            choices.push_back({ 'a' + i, line });
         }
-        mprf(MSGCH_PROMPT, jtransc("Purchase which effect?"));
-        keyin = toalower(get_ch()) - 'a';
+        keyin = toalower(prompt_choose_key(jtrans("Purchase which effect?"),
+                                           choices)) - 'a';
         if (keyin < 0 || keyin > GOZAG_MAX_POTIONS - 1)
             continue;
 
@@ -3553,11 +3554,19 @@ static int _gozag_choose_shop()
         return -1;
 
     clear_messages();
+    // 日本語版: カーソルでも選べるメニューで訊く(GAMEPAD_DESIGN.md §10)。
+    // 説明の先頭の「[a] 」は、メニューが自分でキーを出すので外す
+    vector<prompt_choice> choices;
     for (int i = 0; i < GOZAG_MAX_SHOPS; i++)
-        mpr_nojoin(MSGCH_PLAIN, _describe_gozag_shop(i).c_str());
-
-    mprf(MSGCH_PROMPT, jtransc("Fund which merchant?"));
-    const int shop_index = toalower(get_ch()) - 'a';
+    {
+        string desc = _describe_gozag_shop(i);
+        const size_t key_end = desc.find("] ");
+        if (key_end != string::npos)
+            desc = desc.substr(key_end + 2);
+        choices.push_back({ 'a' + i, trimmed_string(desc) });
+    }
+    const int shop_index = toalower(prompt_choose_key(
+                               jtrans("Fund which merchant?"), choices)) - 'a';
     if (shop_index < 0 || shop_index > GOZAG_MAX_SHOPS - 1)
         return _gozag_choose_shop(); // tail recurse
 
@@ -6275,12 +6284,20 @@ static void _hepliaklqana_choose_gender()
     const string* desc = map_find(gender_map, current_gender);
     ASSERT(desc);
 
-    mprf(MSGCH_PROMPT,
-         jtransc("Was %s a) male, b) female, or c) neither? (Currently %s.)"),
-         hepliaklqana_ally_name().c_str(),
-         tagged_jtransc("[ancestor gender]", *desc));
-
-    int keyin = toalower(get_ch());
+    // 日本語版: カーソルでも選べるメニューで訊く(GAMEPAD_DESIGN.md §10)
+    const vector<prompt_choice> choices =
+    {
+        { 'a', tagged_jtrans("[ancestor gender]", "male") },
+        { 'b', tagged_jtrans("[ancestor gender]", "female") },
+        { 'c', tagged_jtrans("[ancestor gender]", "neither") },
+    };
+    int keyin = toalower(prompt_choose_key(
+        make_stringf(jtransc("Was %s male, female, or neither? (Currently %s.)"),
+                     hepliaklqana_ally_name().c_str(),
+                     tagged_jtransc("[ancestor gender]", *desc)),
+        choices,
+        current_gender == GENDER_MALE ? 'a'
+        : current_gender == GENDER_FEMALE ? 'b' : 'c'));
     if (!isaalpha(keyin))
     {
         canned_msg(MSG_OK);

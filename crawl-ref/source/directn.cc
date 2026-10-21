@@ -1020,8 +1020,10 @@ bool direction_chooser::move_is_ok() const
                     // calling in non-interactive mode
                     if (!moves.interactive)
                         return false;
+                    // 日本語版: カーソル(パッドの十字)が来たらポップアップで訊く
                     return yesno(jtransc("Really target yourself?"), false, 'n',
-                                 true, true, false, nullptr, false);
+                                 true, true, false, nullptr, false, false,
+                                 jtransc("Really target yourself?"));
                 }
             }
 

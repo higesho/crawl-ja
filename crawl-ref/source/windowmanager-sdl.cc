@@ -11,6 +11,7 @@
 # include <SDL.h>
 # include <SDL_image.h>
 # include <android/log.h>
+# include <jni.h>
 # include <SDL_mixer.h>
 #else
 # ifdef TARGET_COMPILER_VC
@@ -650,6 +651,40 @@ static void _pad_parse_test_script(const string &text)
     }
 }
 
+#ifdef __ANDROID__
+// Android の物理のパッドとバーチャルパッド(GAMEPAD_DESIGN.md §9)。Java 側
+// (DCSSGamepad・DCSSVirtualPad)がボタンと軸を渡してくるので、検査用の台本と同じく
+// 偽のパッドの出来事として積む。SDL 2.0.7 は Android のパッドをほとんど認めないため。
+// SDL_PushEvent は別のスレッド(Java の UI スレッド)から呼んでよい。
+extern "C" JNIEXPORT void JNICALL
+Java_org_libsdl_app_SDLActivity_nativePadButton(JNIEnv *env, jclass cls,
+                                                jint button, jboolean down)
+{
+    UNUSED(env, cls);
+    SDL_Event ev;
+    memset(&ev, 0, sizeof(ev));
+    ev.type = down ? SDL_CONTROLLERBUTTONDOWN : SDL_CONTROLLERBUTTONUP;
+    ev.cbutton.which = PAD_INJECTED_ID;
+    ev.cbutton.button = static_cast<Uint8>(button);
+    ev.cbutton.state = down ? SDL_PRESSED : SDL_RELEASED;
+    SDL_PushEvent(&ev);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_org_libsdl_app_SDLActivity_nativePadAxis(JNIEnv *env, jclass cls,
+                                              jint axis, jint value)
+{
+    UNUSED(env, cls);
+    SDL_Event ev;
+    memset(&ev, 0, sizeof(ev));
+    ev.type = SDL_CONTROLLERAXISMOTION;
+    ev.caxis.which = PAD_INJECTED_ID;
+    ev.caxis.axis = static_cast<Uint8>(axis);
+    ev.caxis.value = static_cast<Sint16>(value);
+    SDL_PushEvent(&ev);
+}
+#endif
+
 static unsigned int _pad_script_timer(unsigned int interval, void *param)
 {
     UNUSED(interval);
@@ -864,6 +899,12 @@ bool SDLWrapper::pad_take_key(int &key)
 // 動きの出来事を読むまで古いままなので、OS のカーソルの位置から直接出す。
 bool SDLWrapper::pad_mouse_position(int &x, int &y)
 {
+#ifdef __ANDROID__
+    // Android ではマウスのカーソルを動かせず、位置も取れない。右スティックと
+    // L3・R3 のクリックは何もしない(GAMEPAD_DESIGN.md §2.3)。
+    UNUSED(x, y);
+    return false;
+#else
     if (!m_window)
         return false;
     int gx, gy, wx, wy, w, h;
@@ -875,6 +916,7 @@ bool SDLWrapper::pad_mouse_position(int &x, int &y)
     x = max(0, min(w - 1, gx - wx));
     y = max(0, min(h - 1, gy - wy));
     return true;
+#endif
 }
 
 // 右スティックの分だけマウスのカーソルを動かす(GAMEPAD_DESIGN.md §2.2)。

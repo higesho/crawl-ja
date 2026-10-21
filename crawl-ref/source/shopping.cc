@@ -1289,9 +1289,12 @@ void ShopMenu::purchase_selected()
                too_expensive ? jtransc("This will use your shop voucher.") : "",
                Options.easy_confirm == easy_confirm_type::none ? "Y" : "y",
                col.c_str()) + "\n");
+    const string question = more.tostring();
     more += old_more;
     update_more();
-    if (!yesno(nullptr, true, 'n', false, false, true))
+    // 日本語版: カーソル(パッドの十字)が来たら、はい/いいえのポップアップで訊く
+    if (!yesno(nullptr, true, 'n', false, false, true, nullptr, true, false,
+               question.c_str()))
     {
         more = old_more;
         update_more();

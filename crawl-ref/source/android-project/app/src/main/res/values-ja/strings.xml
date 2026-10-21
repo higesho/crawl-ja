@@ -32,6 +32,7 @@
     <string name="extra_keyboard">追加の方向パッド</string>
     <string name="keyboard_size">キーボードの大きさ</string>
     <string name="full_screen">全画面</string>
+    <string name="virtual_pad">バーチャルパッド</string>
     <string name="mods_hint">ここでゲームのデータを差し替えられる。
         追加のフォントは設定ファイルで有効にする必要がある。</string>
     <string name="tv_warning">注意\n\nCrawl を遊ぶには、キーボード、マウス、タッチ画面の
