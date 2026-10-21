@@ -722,9 +722,11 @@ bool StackFiveMenu::process_key(int keyin)
     if (keyin == CK_ENTER)
     {
         formatted_string old_more = more;
-        set_more(formatted_string::parse_string(
-                jtrans("Are you done? (press y or Y to confirm)")));
-        if (yesno(nullptr, true, 'n', false, false, true))
+        const string question = jtrans("Are you done? (press y or Y to confirm)");
+        set_more(formatted_string::parse_string(question));
+        // 日本語版: カーソル(パッドの十字)が来たら、はい/いいえのポップアップで訊く
+        if (yesno(nullptr, true, 'n', false, false, true, nullptr, true, false,
+                  question.c_str()))
             return false;
         set_more(old_more);
     }
@@ -976,21 +978,19 @@ bool draw_three()
     auto& draws = you.props[NEMELEX_TRIPLE_DRAW_KEY].get_vector();
 
     int selected = -1;
-    bool need_prompt_redraw = true;
     while (true)
     {
-        if (need_prompt_redraw)
+        // 日本語版: カーソルでも選べるメニューで訊く(GAMEPAD_DESIGN.md §10)
+        vector<prompt_choice> choices;
+        for (int i = 0; i < draws.size(); ++i)
         {
-            mpr(jtrans("You draw... (choose one card, ? for their descriptions)"));
-            for (int i = 0; i < draws.size(); ++i)
-            {
-                msg::streams(MSGCH_PROMPT)
-                    << msg::nocap << (static_cast<char>(i + 'a')) << " - "
-                    << _card_name_j((card_type)draws[i].get_int()) << endl;
-            }
-            need_prompt_redraw = false;
+            choices.push_back({ 'a' + i,
+                                _card_name_j((card_type)draws[i].get_int()) });
         }
-        const int keyin = toalower(get_ch());
+        choices.push_back({ '?', tagged_jtrans("[deck]", "describe the cards") });
+        const int keyin = toalower(prompt_choose_key(
+            jtrans("You draw... (choose one card, ? for their descriptions)"),
+            choices));
 
         if (crawl_state.seen_hups)
             return false;
@@ -1000,7 +1000,6 @@ bool draw_three()
             _describe_cards(draws);
             redraw_screen();
             update_screen();
-            need_prompt_redraw = true;
         }
         else if (keyin >= 'a' && keyin < 'a' + draws.size())
         {

@@ -29,10 +29,18 @@ static void _adjust_ability();
 
 void adjust()
 {
-    mprf(MSGCH_PROMPT, jtrans_notrimc("Adjust (g)ear, (s)pells, (a)bilities, "
-                       "(p)otions, sc(r)olls or e(v)ocables? "));
-
-    const int keyin = toalower(get_ch());
+    // 日本語版: カーソルでも選べるメニューで訊く(GAMEPAD_DESIGN.md §10)
+    const vector<prompt_choice> choices =
+    {
+        { 'g', tagged_jtrans("[adjust]", "gear") },
+        { 's', tagged_jtrans("[adjust]", "spells") },
+        { 'a', tagged_jtrans("[adjust]", "abilities") },
+        { 'p', tagged_jtrans("[adjust]", "potions") },
+        { 'r', tagged_jtrans("[adjust]", "scrolls") },
+        { 'v', tagged_jtrans("[adjust]", "evocables") },
+    };
+    const int keyin = toalower(prompt_choose_key(jtrans("Adjust which?"),
+                                                 choices));
 
     if (keyin == 'g' || keyin == 'i')
         adjust_item(OSEL_GEAR);

@@ -31,6 +31,7 @@
     <string name="extra_keyboard">Extra directional pad</string>
     <string name="keyboard_size">Keyboard size</string>
     <string name="full_screen">Full screen</string>
+    <string name="virtual_pad">Virtual gamepad</string>
     <string name="mods_hint">Here you can override game data resources.
         Extra fonts need to be enabled in the init file.</string>
     <string name="tv_warning">WARNING\n\nYou need a keyboard, a mouse or a touch screen in order

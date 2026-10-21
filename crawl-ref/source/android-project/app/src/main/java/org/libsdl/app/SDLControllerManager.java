@@ -393,6 +393,11 @@ class SDLGenericMotionListener_API12 implements View.OnGenericMotionListener {
         int action;
         int source = event.getSource();
 
+        // 日本語版: ゲームパッドの軸は C++ のゲームパッドの処理へ(DCSSGamepad)
+        if (org.develz.crawl.DCSSGamepad.handleMotion(event)) {
+            return true;
+        }
+
         // CRAWL HACK: Fix mousewheel scrolling
         if (event.isFromSource(InputDevice.SOURCE_MOUSE)) {
             source = InputDevice.SOURCE_MOUSE;

@@ -1224,8 +1224,10 @@ static int _prompt_annotate_branch(level_id lid)
         case '\n': case '\r': case '.':
             return ID_HERE;
         case '<':
+        case CK_UP:   // 日本語版: パッドの十字(GAMEPAD_DESIGN.md §10)
             return ID_UP;
         case '>':
+        case CK_DOWN:
             return ID_DOWN;
         case CONTROL('P'):
             {
@@ -1291,7 +1293,7 @@ void do_annotate()
         clear_messages();
         const string prompt = make_stringf(jtransc("What level of %s?"),
                     branch_name_jc(branches[branch].longname)) + " ";
-        depth = prompt_for_int(prompt.c_str(), true);
+        depth = prompt_for_int(prompt.c_str(), true, "", 1, max_depth);
     }
     if (depth > 0 && depth <= max_depth)
     {
