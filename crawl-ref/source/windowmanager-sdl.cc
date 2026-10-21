@@ -897,13 +897,31 @@ bool SDLWrapper::pad_take_key(int &key)
 
 // マウスのカーソルの今の位置(窓の座標)。SDL_GetMouseState は窓に届いた
 // 動きの出来事を読むまで古いままなので、OS のカーソルの位置から直接出す。
+#ifdef __ANDROID__
+// Android には OS のマウスのカーソルが無いので、パッドのカーソルの位置はここで持つ
+// (GAMEPAD_DESIGN.md §9.2)。触れたとき・マウスの出来事が来たときはその位置に合わせ
+// (wait_event)、右スティックでは動きの出来事を自分で積んで動かす。-1 はまだ無い。
+static int _pad_cursor_x = -1, _pad_cursor_y = -1;
+#endif
+
 bool SDLWrapper::pad_mouse_position(int &x, int &y)
 {
 #ifdef __ANDROID__
-    // Android ではマウスのカーソルを動かせず、位置も取れない。右スティックと
-    // L3・R3 のクリックは何もしない(GAMEPAD_DESIGN.md §2.3)。
-    UNUSED(x, y);
-    return false;
+    if (!m_window)
+        return false;
+    int w, h;
+    SDL_GetWindowSize(m_window, &w, &h);
+    if (w <= 0 || h <= 0)
+        return false;
+    if (_pad_cursor_x < 0)
+    {
+        // まだ一度も触れていなければ、画面の真ん中から
+        _pad_cursor_x = w / 2;
+        _pad_cursor_y = h / 2;
+    }
+    x = max(0, min(w - 1, _pad_cursor_x));
+    y = max(0, min(h - 1, _pad_cursor_y));
+    return true;
 #else
     if (!m_window)
         return false;
@@ -931,7 +949,24 @@ void SDLWrapper::pad_move_cursor(int dx, int dy)
     const int ny = max(0, min(h - 1, y + dy));
     if (nx == x && ny == y)
         return;
+#ifdef __ANDROID__
+    // OS のカーソルが無いので、マウスの動きの出来事を自分で積む。位置はすぐ覚える
+    // (積んだ出来事を読む前に次の刻みが来ても、続きから動かすため)。
+    _pad_cursor_x = nx;
+    _pad_cursor_y = ny;
+    SDL_Event ev;
+    memset(&ev, 0, sizeof(ev));
+    ev.type = SDL_MOUSEMOTION;
+    ev.motion.timestamp = SDL_GetTicks();
+    ev.motion.windowID = SDL_GetWindowID(m_window);
+    ev.motion.x = nx;
+    ev.motion.y = ny;
+    ev.motion.xrel = nx - x;
+    ev.motion.yrel = ny - y;
+    SDL_PushEvent(&ev);
+#else
     SDL_WarpMouseInWindow(m_window, nx, ny);
+#endif
     if (_pad_log)
     {
         fprintf(_pad_log, "%u cursor %d,%d -> %d,%d\n", SDL_GetTicks(),
@@ -1544,6 +1579,21 @@ int SDLWrapper::wait_event(wm_event *event, int timeout)
         if (!pad_handle_event(sdlevent))
             break;
     }
+
+#ifdef __ANDROID__
+    // パッドのカーソルを、触れた・マウスの位置に合わせる
+    if (sdlevent.type == SDL_MOUSEMOTION)
+    {
+        _pad_cursor_x = sdlevent.motion.x;
+        _pad_cursor_y = sdlevent.motion.y;
+    }
+    else if (sdlevent.type == SDL_MOUSEBUTTONDOWN
+             || sdlevent.type == SDL_MOUSEBUTTONUP)
+    {
+        _pad_cursor_x = sdlevent.button.x;
+        _pad_cursor_y = sdlevent.button.y;
+    }
+#endif
 
     if (sdlevent.type != SDL_TEXTINPUT)
         prev_keycode = 0;

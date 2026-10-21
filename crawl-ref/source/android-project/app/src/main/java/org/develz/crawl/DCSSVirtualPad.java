@@ -15,8 +15,8 @@ import org.libsdl.app.SDLActivity;
  * (SDLActivity.nativePadButton / nativePadAxis)で C++ のゲームパッドの処理へ渡す。
  *
  * 配置と大きさは、ユーザーの変愚蛮怒 HD2D のバーチャルパッド(hd2d/ui/virtual_pad.cpp の
- * kDefaultsLand / kDefaultsPort。実機で詰めた比率)を借りた。DCSS では右スティックと
- * L3・R3 を使わない(Android ではマウスのカーソルを動かせない)ので、その 3 つは置かない。
+ * kDefaultsLand / kDefaultsPort。実機で詰めた比率)を借りた。右スティックはパッドの
+ * カーソルを動かし、L3・R3 はその位置での左・右クリック(Windows 版と同じ)。
  *
  * ボタンの外に触れたときは、触れたのを受け取らずに下の画面(SDLSurface)へ素通りさせる。
  * 設計は ja-tools/GAMEPAD_DESIGN.md §9。
@@ -26,11 +26,12 @@ public class DCSSVirtualPad extends View {
     // 形: 0 = 円、1 = 角丸の長方形、2 = スティック
     private static final int CIRCLE = 0, RECT = 1, STICK = 2;
 
-    // 並び: A B X Y RB RT LB LT Start Back スティック
+    // 並び: A B X Y RB RT LB LT Start Back 左スティック R3 L3 右スティック
     private static final int A = 0, B = 1, X = 2, Y = 3, RB = 4, RT = 5, LB = 6, LT = 7,
-                             START = 8, BACK = 9, LS = 10, COUNT = 11;
+                             START = 8, BACK = 9, LS = 10, R3 = 11, L3 = 12, RS = 13,
+                             COUNT = 14;
     private static final String[] LABELS =
-        { "A", "B", "X", "Y", "RB", "RT", "LB", "LT", "Start", "Back", "" };
+        { "A", "B", "X", "Y", "RB", "RT", "LB", "LT", "Start", "Back", "", "R3", "L3", "" };
 
     // { 中心 x(幅比), 中心 y(高さ比), 形, 半径か半幅, 半高かつまみの半径 }(大きさは sizeBasis 比)
     private static final float[][] LAND = {
@@ -45,6 +46,9 @@ public class DCSSVirtualPad extends View {
         { 0.504f, 0.870f, RECT, 0.060f, 0.028f },
         { 0.374f, 0.868f, RECT, 0.060f, 0.028f },
         { 0.164f, 0.711f, STICK, 0.262f, 0.100f },
+        { 0.911f, 0.316f, CIRCLE, 0.073f, 0f },
+        { 0.079f, 0.292f, CIRCLE, 0.068f, 0f },
+        { 0.840f, 0.712f, STICK, 0.262f, 0.100f },
     };
     private static final float[][] PORT = {
         { 0.519f, 0.924f, CIRCLE, 0.043f, 0f },
@@ -58,12 +62,18 @@ public class DCSSVirtualPad extends View {
         { 0.500f, 0.672f, RECT, 0.060f, 0.028f },
         { 0.360f, 0.672f, RECT, 0.060f, 0.028f },
         { 0.202f, 0.863f, STICK, 0.136f, 0.073f },
+        { 0.907f, 0.665f, CIRCLE, 0.043f, 0f },
+        { 0.096f, 0.675f, CIRCLE, 0.043f, 0f },
+        { 0.772f, 0.865f, STICK, 0.136f, 0.073f },
     };
     private static final float TUNED_ASPECT = 2.36f, TUNED_ASPECT_PORTRAIT = 1.78f;
 
     // スティックの向き: 半径のこの割合を超えたら入り、下回ったら中立(ヒステリシス)
     private static final float STICK_ENTER = 0.34f, STICK_LEAVE = 0.22f;
     private static final float OCTANT_SIN = 0.38268343f; // sin(22.5°)
+    // 右スティック: 半径のこの割合までは中立。外側は C++ の死区(8000)の外へ写す
+    private static final float RS_DEAD = 0.30f;
+    private static final int CURSOR_DEADZONE = 8000;
 
     private final Paint fill = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint line = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -73,7 +83,7 @@ public class DCSSVirtualPad extends View {
     private final SparseIntArray pointerControl = new SparseIntArray(); // 指 → 掴んだボタン
     private final boolean[] pressed = new boolean[COUNT];
     private int stickDx = 0, stickDy = 0;
-    private float knobX, knobY;
+    private final float[] knobX = new float[COUNT], knobY = new float[COUNT];
 
     public DCSSVirtualPad(Context context) {
         super(context);
@@ -133,6 +143,8 @@ public class DCSSVirtualPad extends View {
         case LB: return DCSSGamepad.BUTTON_LEFTSHOULDER;
         case START: return DCSSGamepad.BUTTON_START;
         case BACK: return DCSSGamepad.BUTTON_BACK;
+        case L3: return DCSSGamepad.BUTTON_LEFTSTICK;
+        case R3: return DCSSGamepad.BUTTON_RIGHTSTICK;
         default: return -1;
         }
     }
@@ -145,7 +157,7 @@ public class DCSSVirtualPad extends View {
             SDLActivity.nativePadAxis(c == LT ? DCSSGamepad.AXIS_TRIGGERLEFT
                                               : DCSSGamepad.AXIS_TRIGGERRIGHT,
                                       down ? 32767 : 0);
-        } else if (c != LS) {
+        } else if (c != LS && c != RS) {
             SDLActivity.nativePadButton(buttonOf(c), down);
         }
     }
@@ -166,14 +178,28 @@ public class DCSSVirtualPad extends View {
         stickDy = dy;
     }
 
-    private void moveStick(float x, float y) {
-        float dx = x - cx(LS), dy = y - cy(LS);
+    private void moveStick(int c, float x, float y) {
+        float dx = x - cx(c), dy = y - cy(c);
         float r = (float) Math.sqrt(dx * dx + dy * dy);
-        float radius = sa(LS);
+        float radius = sa(c);
         // つまみは外周の内側に収める
         float k = r > radius ? radius / r : 1f;
-        knobX = cx(LS) + dx * k;
-        knobY = cy(LS) + dy * k;
+        knobX[c] = cx(c) + dx * k;
+        knobY[c] = cy(c) + dy * k;
+        if (c == RS) {
+            // 右スティックは連続値。死区の外を、C++ の死区の外から倒し切りまでに写す
+            float dead = radius * RS_DEAD;
+            int vx = 0, vy = 0;
+            if (r > dead) {
+                float mag = Math.min((r - dead) / Math.max(radius - dead, 1f), 1f);
+                float v = CURSOR_DEADZONE + mag * (32767 - CURSOR_DEADZONE);
+                vx = Math.round(dx / r * v);
+                vy = Math.round(dy / r * v);
+            }
+            SDLActivity.nativePadAxis(DCSSGamepad.AXIS_RIGHTX, vx);
+            SDLActivity.nativePadAxis(DCSSGamepad.AXIS_RIGHTY, vy);
+            return;
+        }
         if (r >= radius * STICK_ENTER) {
             float nx = dx / r, ny = dy / r;
             setStick(nx > OCTANT_SIN ? 1 : nx < -OCTANT_SIN ? -1 : 0,
@@ -187,6 +213,10 @@ public class DCSSVirtualPad extends View {
         if (c == LS) {
             setStick(0, 0);
             pressed[LS] = false;
+        } else if (c == RS) {
+            SDLActivity.nativePadAxis(DCSSGamepad.AXIS_RIGHTX, 0);
+            SDLActivity.nativePadAxis(DCSSGamepad.AXIS_RIGHTY, 0);
+            pressed[RS] = false;
         } else {
             press(c, false);
         }
@@ -220,9 +250,9 @@ public class DCSSVirtualPad extends View {
                 return action != MotionEvent.ACTION_DOWN;
             }
             pointerControl.put(event.getPointerId(index), c);
-            if (c == LS) {
-                pressed[LS] = true;
-                moveStick(x, y);
+            if (c == LS || c == RS) {
+                pressed[c] = true;
+                moveStick(c, x, y);
             } else {
                 press(c, true);
             }
@@ -231,8 +261,9 @@ public class DCSSVirtualPad extends View {
         case MotionEvent.ACTION_MOVE:
             // 一度掴んだボタンは、指を滑らせても替えない。スティックだけ向きを追う
             for (int i = 0; i < event.getPointerCount(); i++) {
-                if (pointerControl.get(event.getPointerId(i), -1) == LS)
-                    moveStick(event.getX(i), event.getY(i));
+                int c = pointerControl.get(event.getPointerId(i), -1);
+                if (c == LS || c == RS)
+                    moveStick(c, event.getX(i), event.getY(i));
             }
             break;
         case MotionEvent.ACTION_UP:
@@ -274,8 +305,8 @@ public class DCSSVirtualPad extends View {
                 fill.setColor(0x20FFFFFF);
                 canvas.drawCircle(x, y, a, fill);
                 canvas.drawCircle(x, y, a, line);
-                float kx = pressed[LS] ? knobX : x, ky = pressed[LS] ? knobY : y;
-                fill.setColor(pressed[LS] ? 0x80FFFFFF : 0x40FFFFFF);
+                float kx = pressed[c] ? knobX[c] : x, ky = pressed[c] ? knobY[c] : y;
+                fill.setColor(pressed[c] ? 0x80FFFFFF : 0x40FFFFFF);
                 canvas.drawCircle(kx, ky, b, fill);
                 canvas.drawCircle(kx, ky, b, line);
                 continue;
