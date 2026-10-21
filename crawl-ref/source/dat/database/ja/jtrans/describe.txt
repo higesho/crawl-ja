@@ -1684,6 +1684,15 @@ You are here.
 
 (g)その場所へ行く
 %%%%
+# 日本語版: 操作の行の後ろに添える案内と、操作をカーソルで選ぶメニューの見出し
+(Enter to choose from a menu)
+
+(Enter で一覧から選ぶ)
+%%%%
+Do what?
+
+どうしますか？
+%%%%
 It can be found on %s.
 
 これは%sにある。

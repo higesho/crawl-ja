@@ -1490,7 +1490,10 @@ void display_inventory()
         return;
     }
 
-    int flags = MF_SINGLESELECT | MF_ALLOW_FORMATTING | MF_SECONDARY_SCROLL;
+    // 日本語版: 最初の品物にカーソルを置いて開く(パッドで、下を押さずに A で選べる。
+    // GAMEPAD_DESIGN.md §10)
+    int flags = MF_SINGLESELECT | MF_ALLOW_FORMATTING | MF_SECONDARY_SCROLL
+                | MF_INIT_HOVER;
     if (Options.show_paged_inventory)
         flags |= MF_PAGED_INVENTORY;
     else

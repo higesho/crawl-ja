@@ -3236,8 +3236,9 @@ static vector<extra_feature_desc> _get_feature_extra_descs(const coord_def &pos)
     return ret;
 }
 
-static string _feat_action_desc(const vector<command_type>& actions,
-                                                dungeon_feature_type feat)
+// 日本語版: 地形の操作ごとの「(<)go up」(英文。括弧の中がキー)。
+static vector<string> _feat_action_strings(const vector<command_type>& actions,
+                                           dungeon_feature_type feat)
 {
     static const map<command_type, string> act_str =
     {
@@ -3249,27 +3250,41 @@ static string _feat_action_desc(const vector<command_type>& actions,
         { CMD_CLOSE_DOOR,       "(C)lose" },
 
     };
-    return comma_separated_fn(begin(actions), end(actions),
-        [feat] (command_type cmd)
+    vector<string> strs;
+    for (command_type cmd : actions)
+    {
+        if (cmd == CMD_GO_DOWNSTAIRS && feat_is_altar(feat))
+            strs.emplace_back("(>)pray");
+        else if (cmd == CMD_GO_DOWNSTAIRS &&
+            (feat == DNGN_ENTER_SHOP
+                || feat_is_portal(feat)
+                || feat_is_gate(feat)
+                || feat == DNGN_TRANSPORTER))
         {
-            if (cmd == CMD_GO_DOWNSTAIRS && feat_is_altar(feat))
-                return tagged_jtrans("[feat action]", "(>)pray");
-            else if (cmd == CMD_GO_DOWNSTAIRS &&
-                (feat == DNGN_ENTER_SHOP
-                    || feat_is_portal(feat)
-                    || feat_is_gate(feat)
-                    || feat == DNGN_TRANSPORTER))
-            {
-                // XX disable for portals without item? The command still works.
-                return tagged_jtrans("[feat action]", "(>)enter");
-            }
-            else if (cmd == CMD_GO_UPSTAIRS && feat_is_gate(feat))
-                return tagged_jtrans("[feat action]", "(<)exit");
-            else
-                return tagged_jtrans("[feat action]", act_str.at(cmd));
-        },
-        "、または", "、") + "。";
+            // XX disable for portals without item? The command still works.
+            strs.emplace_back("(>)enter");
+        }
+        else if (cmd == CMD_GO_UPSTAIRS && feat_is_gate(feat))
+            strs.emplace_back("(<)exit");
+        else
+            strs.push_back(act_str.at(cmd));
+    }
+    return strs;
 }
+
+static string _feat_action_desc(const vector<command_type>& actions,
+                                                dungeon_feature_type feat)
+{
+    vector<string> strs;
+    for (const string &s : _feat_action_strings(actions, feat))
+        strs.push_back(tagged_jtrans("[feat action]", s));
+    return comma_separated_line(strs.begin(), strs.end(), "、または", "、")
+           + "。 " + jtrans("(Enter to choose from a menu)");
+}
+
+static command_type _choose_action(const vector<command_type>& actions,
+                                   const vector<string>& strs,
+                                   const string &tag);
 
 static vector<command_type> _allowed_feat_actions(const coord_def &pos)
 {
@@ -3689,6 +3704,15 @@ bool describe_feature_wide(const coord_def& pos, bool do_actions)
     // use on_hotkey_event, not on_event, to preempt the scroller key handling
     popup->on_hotkey_event([&](const KeyEvent& ev) {
         int lastch = ev.key();
+        // 日本語版: Enter(パッドの A)では、操作をカーソルで選ぶメニューを開く
+        if (lastch == CK_ENTER && !actions.empty())
+        {
+            action = _choose_action(actions,
+                _feat_action_strings(actions, env.map_knowledge(pos).feat()),
+                "[feat action]");
+            done = action != CMD_NO_CMD;
+            return true;
+        }
         action = _get_action(lastch, actions);
         done = action != CMD_NO_CMD || ui::key_exits_popup(lastch, true);
         return true;
@@ -3842,9 +3866,10 @@ static vector<command_type> _allowed_actions(const item_def& item)
     return actions;
 }
 
-static string _actions_desc(const vector<command_type>& actions)
+// 日本語版: 操作ごとの「(w)ield」(英文。括弧の中がキー)。_actions_desc とカーソルで
+// 選ぶメニュー(_choose_action)が使う。
+static vector<string> _action_strings(const vector<command_type>& actions)
 {
-    // XX code duplication
     static const map<command_type, string> act_str =
     {
         { CMD_WIELD_WEAPON, "(w)ield" },
@@ -3865,16 +3890,56 @@ static string _actions_desc(const vector<command_type>& actions)
         { CMD_MAP_GOTO_TARGET, "(g)o to location" },
     };
     bool push_quiver = false;
-    return comma_separated_fn(begin(actions), end(actions),
-                                [&push_quiver] (command_type cmd)
-                                {
-                                    if (cmd == CMD_QUAFF) // assumes quaff appears first
-                                        push_quiver = true;
-                                    else if (push_quiver && cmd == CMD_QUIVER_ITEM)
-                                        return tagged_jtrans("[item action]", "qui(v)er");
-                                    return tagged_jtrans("[item action]", act_str.at(cmd));
-                                },
-                                "、または", "、") + "。";
+    vector<string> strs;
+    for (command_type cmd : actions)
+    {
+        if (cmd == CMD_QUAFF) // assumes quaff appears first
+            push_quiver = true;
+        else if (push_quiver && cmd == CMD_QUIVER_ITEM)
+        {
+            strs.emplace_back("qui(v)er");
+            continue;
+        }
+        strs.push_back(act_str.at(cmd));
+    }
+    return strs;
+}
+
+static string _actions_desc(const vector<command_type>& actions)
+{
+    vector<string> strs;
+    for (const string &s : _action_strings(actions))
+        strs.push_back(tagged_jtrans("[item action]", s));
+    return comma_separated_line(strs.begin(), strs.end(), "、または", "、")
+           + "。 " + jtrans("(Enter to choose from a menu)");
+}
+
+// 日本語版: 品物・地形の操作をカーソルで選ぶメニュー(GAMEPAD_DESIGN.md §10)。
+// strs は操作ごとの英文(_action_strings など)、tag は訳の印。
+// 選んだ操作を返す。取り消したら CMD_NO_CMD。
+static command_type _choose_action(const vector<command_type>& actions,
+                                   const vector<string>& strs,
+                                   const string &tag)
+{
+    vector<prompt_choice> choices;
+    for (const string &s : strs)
+    {
+        // 英文の括弧の中がキー。訳文からは先頭の「(w)」を外して名前にする
+        const size_t open = s.find('(');
+        if (open == string::npos || open + 2 >= s.size())
+            continue;
+        const int key = s[open + 1];
+        string label = tagged_jtrans(tag, s);
+        const string mark = string("(") + static_cast<char>(key) + ")";
+        const size_t at = label.find(mark);
+        if (at != string::npos)
+            label.erase(at, mark.size());
+        choices.push_back({ key, trimmed_string(label), false });
+    }
+    const int key = prompt_choose_key(jtrans("Do what?"), choices);
+    if (key_is_escape(key))
+        return CMD_NO_CMD;
+    return _get_action(key, actions);
 }
 
 // Take a key and a list of commands and return the command from the list
@@ -4169,6 +4234,18 @@ command_type describe_item_popup(const item_def &item,
     popup->on_keydown_event([&](const KeyEvent& ev) {
         const auto key = ev.key() == '{' ? 'i' : ev.key();
         lastch = key;
+        // 日本語版: Enter(パッドの A)では、操作をカーソルで選ぶメニューを開く
+        if (key == CK_ENTER && !actions.empty())
+        {
+            const command_type chosen = _choose_action(
+                actions, _action_strings(actions), "[item action]");
+            if (chosen != CMD_NO_CMD)
+            {
+                action = chosen;
+                done = true;
+            }
+            return true;
+        }
         action = _get_action(key, actions);
         if (action != CMD_NO_CMD || ui::key_exits_popup(key, true))
             done = true;
