@@ -139,7 +139,7 @@ DCSS は自動探索・移動・休息の最中に `kbhit()`(タイル版は
   同時押しの層の L3・R3(LB+L3 など)は今までどおり割り当てられる枠。
 - 固定かどうかの判定は `pad_slot_fixed()` 1 か所(A・B・L3・R3 の単独押し)で、
   rc・割り当ての画面・pad_binds.txt の読み込みが共通に使う。
-- Android ではカーソルを動かせない(SDL が対応していない)。
+- Android には OS のマウスのカーソルが無いので、位置をゲーム側で持つ(§9.2)。
 
 確認の記録(2026-10-20、§6 の 2 つで。実機のパッドは無い):
 
@@ -362,21 +362,25 @@ Android 版でも、物理のパッドと、画面に重ねるバーチャルパ
     押し続けの繰り返し(`getRepeatCount() > 0`)は捨てる(繰り返しは C++ の状態機械がやる)。
   - 軸は `SDLGenericMotionListener_API12.onGenericMotion` の先頭で。左スティック、
     トリガ(`AXIS_LTRIGGER`/`AXIS_BRAKE`、`AXIS_RTRIGGER`/`AXIS_GAS`)、十字の HAT
-    (`AXIS_HAT_X/Y`。十字のボタンに直す)。変わったときだけ送る。
-  - 右スティックは送らない(Android ではカーソルを動かせない。§2.3)。
+    (`AXIS_HAT_X/Y`。十字のボタンに直す)、右スティック(標準の割り当ての `AXIS_Z`/`AXIS_RZ`。
+    その軸が無い機種は `AXIS_RX`/`AXIS_RY`)。変わったときだけ送る。
 - JNI の `SDLActivity.nativePadButton(button, down)` と `nativePadAxis(axis, value)`
   (値は SDL_GameControllerButton/Axis)で C++ へ渡す。C++(`windowmanager-sdl.cc`)は
   `which = PAD_INJECTED_ID` の SDL の出来事として `SDL_PushEvent` で積むだけ。検査用の台本
   (§6)と同じ道なので、`wait_event` から先は Windows 版と同じになる。
-- Android では、右スティックのカーソルと L3・R3 のクリックは何もしない
-  (`pad_mouse_position` が偽を返す)。
+- 右スティックのカーソルと L3・R3 のクリックは Windows 版と同じに働く。ただし Android には
+  OS のマウスのカーソルが無いので、カーソルの位置は `windowmanager-sdl.cc` が持つ
+  (`_pad_cursor_x/y`)。触れたとき・マウスの出来事が来たときはその位置に合わせ、まだ一度も
+  触れていなければ画面の真ん中から始める。右スティックでは `SDL_WarpMouseInWindow` の代わりに
+  `SDL_MOUSEMOTION` を自分で積む。盤面ではマウスを乗せたときと同じカーソルの枠が出る。
 
 ### 9.3 バーチャルパッド
 
 - Java の View(`DCSSVirtualPad`)を、画面のキーボードの上に重ねる。Canvas で描き、
   ボタンの外に最初の指が触れたときは受け取らずに下の画面へ素通りさせる。
-- 置くのは左スティック(8 方向。十字のボタンとして送る)、A/B/X/Y、LB/RB、LT/RT、
-  Start/Back。右スティックと L3・R3 は置かない。
+- 置くのは左スティック(8 方向。十字のボタンとして送る)、右スティック(連続値。半径の
+  0.30 までは中立で、外側を C++ の死区 8000 から倒し切りまでに写す)、A/B/X/Y、LB/RB、LT/RT、
+  L3/R3、Start/Back。
 - 配置と大きさは変愚蛮怒 HD2D のバーチャルパッド(`hd2d/ui/virtual_pad.cpp` の
   `kDefaultsLand`/`kDefaultsPort`。実機で詰めた比率)を借りた。横長と縦長で別の表。
   スティックの入りと出は半径の 0.34 と 0.22(ヒステリシス)。

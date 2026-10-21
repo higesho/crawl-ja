@@ -36,6 +36,8 @@ public class DCSSGamepad {
     // SDL_GameControllerAxis の値
     public static final int AXIS_LEFTX = 0;
     public static final int AXIS_LEFTY = 1;
+    public static final int AXIS_RIGHTX = 2;
+    public static final int AXIS_RIGHTY = 3;
     public static final int AXIS_TRIGGERLEFT = 4;
     public static final int AXIS_TRIGGERRIGHT = 5;
 
@@ -135,8 +137,8 @@ public class DCSSGamepad {
     }
 
     /**
-     * パッドの軸(左スティック・十字の HAT・トリガ)なら C++ へ渡して true。
-     * 右スティックは送らない(Android ではマウスのカーソルを動かせない。GAMEPAD_DESIGN.md §2.3)。
+     * パッドの軸(左右のスティック・十字の HAT・トリガ)なら C++ へ渡して true。
+     * 右スティックは C++ 側でパッドのカーソルを動かす(GAMEPAD_DESIGN.md §9.2)。
      */
     public static boolean handleMotion(MotionEvent event) {
         if (event.getActionMasked() != MotionEvent.ACTION_MOVE
@@ -146,6 +148,14 @@ public class DCSSGamepad {
         }
         sendAxis(AXIS_LEFTX, scale(event.getAxisValue(MotionEvent.AXIS_X)), false);
         sendAxis(AXIS_LEFTY, scale(event.getAxisValue(MotionEvent.AXIS_Y)), false);
+        // 右スティックは Android の標準の割り当てでは Z・RZ。RX・RY で来る機種もある
+        InputDevice device = event.getDevice();
+        int rx = device.getMotionRange(MotionEvent.AXIS_Z) != null
+                 ? MotionEvent.AXIS_Z : MotionEvent.AXIS_RX;
+        int ry = device.getMotionRange(MotionEvent.AXIS_RZ) != null
+                 ? MotionEvent.AXIS_RZ : MotionEvent.AXIS_RY;
+        sendAxis(AXIS_RIGHTX, scale(event.getAxisValue(rx)), false);
+        sendAxis(AXIS_RIGHTY, scale(event.getAxisValue(ry)), false);
         float lt = Math.max(event.getAxisValue(MotionEvent.AXIS_LTRIGGER),
                             event.getAxisValue(MotionEvent.AXIS_BRAKE));
         float rt = Math.max(event.getAxisValue(MotionEvent.AXIS_RTRIGGER),
