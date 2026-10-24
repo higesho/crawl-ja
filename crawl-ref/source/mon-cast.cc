@@ -9140,7 +9140,14 @@ void mons_cast_noise(monster* mons, const bolt &pbolt,
     else if (pbolt.name.empty())
         beam_name = "INVALID BEAM";
     else
-        beam_name = zap_name_j(pbolt.get_short_name());
+    {
+        // 日本語版: 短い名前はビームの属性名("ice" など)のこともあるので、
+        // [zap] に無ければ [beam name] で引く
+        const string short_name = pbolt.get_short_name();
+        beam_name = jtrans_has_key("[zap]" + short_name)
+                    ? zap_name_j(short_name)
+                    : tagged_jtrans("[beam name]", short_name);
+    }
 
     msg = replace_all(msg, "@beam@", beam_name);
 
