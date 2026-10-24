@@ -1684,15 +1684,6 @@ You are here.
 
 (g)その場所へ行く
 %%%%
-# 日本語版: 操作の行の後ろに添える案内と、操作をカーソルで選ぶメニューの見出し
-(Enter to choose from a menu)
-
-(Enter で一覧から選ぶ)
-%%%%
-Do what?
-
-どうしますか？
-%%%%
 It can be found on %s.
 
 これは%sにある。
@@ -3232,4 +3223,9 @@ Clouds of this kind an adventurer makes will vanish quickly once outside their s
 Clouds of this kind an adventurer makes will vanish almost instantly once outside their sight.
 
 冒険者が作り出したこの種類の雲は、視界の外に出るとほぼ即座に消える。
+%%%%
+# 日本語版: モンスターの説明で、A から呪文を選ぶときの見出し(§10)
+Describe which spell?
+
+どの呪文の説明を見ますか？
 %%%%

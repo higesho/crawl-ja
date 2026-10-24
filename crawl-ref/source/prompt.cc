@@ -400,6 +400,49 @@ int prompt_choose_key(const string &question,
     return sel[0]->hotkeys[0];
 }
 
+action_bar::action_bar(const vector<pair<int, string>> &items)
+    : m_items(items)
+{
+}
+
+string action_bar::text(const string &prefix) const
+{
+    string out = prefix;
+    for (size_t i = 0; i < m_items.size(); ++i)
+    {
+        if (i)
+            out += "  ";
+        // 名前に「<」があっても色の印と取り違えないよう、二重にする
+        const string name = replace_all(m_items[i].second, "<", "<<");
+        if ((int) i == m_cursor)
+            out += "<yellow>[" + name + "]</yellow>";
+        else
+            out += " " + name + " ";
+    }
+    out += "  " + jtrans("(Left/Right to choose, Enter to do it)");
+    return out;
+}
+
+int action_bar::handle_key(int key, int &chosen)
+{
+    if (m_items.empty())
+        return 0;
+    switch (key)
+    {
+    case CK_LEFT:
+        m_cursor = (m_cursor + m_items.size() - 1) % m_items.size();
+        return 1;
+    case CK_RIGHT:
+        m_cursor = (m_cursor + 1) % m_items.size();
+        return 1;
+    case CK_ENTER:
+        chosen = m_items[m_cursor].first;
+        return 2;
+    default:
+        return 0;
+    }
+}
+
 int pad_pick_char(const string &current, int last)
 {
     static const char chars[] = "abcdefghijklmnopqrstuvwxyz0123456789 -.";

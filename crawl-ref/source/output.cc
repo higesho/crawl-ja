@@ -2742,6 +2742,21 @@ public:
 private:
     maybe_bool process_key(int ch) override
     {
+        // 日本語版: Enter(パッドの A)では、装備をカーソルで選んで説明を見る(§10)
+        if (ch == CK_ENTER && !equip_chars.empty())
+        {
+            vector<prompt_choice> choices;
+            for (char c : equip_chars)
+            {
+                choices.push_back({ c, you.inv[letter_to_index(c)].name(
+                                           DESC_PLAIN), false });
+            }
+            const int chosen = prompt_choose_key(jtrans("Describe which item?"),
+                                                 choices);
+            if (key_is_escape(chosen))
+                return true;
+            ch = chosen;
+        }
         if (find(equip_chars.begin(), equip_chars.end(), ch) != equip_chars.end())
         {
             item_def& item = you.inv[letter_to_index(ch)];

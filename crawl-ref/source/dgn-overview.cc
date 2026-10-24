@@ -743,6 +743,22 @@ public:
 protected:
     maybe_bool process_key(int ch) override
     {
+        // 日本語版: Enter(パッドの A)では、下の 4 つの操作をカーソルで選ぶ(§10)
+        if (ch == CK_ENTER)
+        {
+            const vector<prompt_choice> choices =
+            {
+                { 'G', tagged_jtrans("[overview action]", "travel to a level"), false },
+                { '_', tagged_jtrans("[overview action]", "travel to an altar"), false },
+                { '$', tagged_jtrans("[overview action]", "list shops"), false },
+                { '!', tagged_jtrans("[overview action]", "annotate a level"), false },
+            };
+            const int chosen = prompt_choose_key(jtrans("Do what?"), choices);
+            if (key_is_escape(chosen))
+                return true;
+            ch = chosen;
+            m_lastch = chosen;
+        }
         // We handle these after exiting dungeon overview window
         // to prevent menus from stacking on top of each other.
         if (ch == 'G' || ch == '_' || ch == '$' || ch =='!')

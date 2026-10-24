@@ -391,6 +391,22 @@ static bool _reroll_random(newgame_def& ng)
     int c;
     popup->on_keydown_event([&](const KeyEvent& ev) {
         c = ev.key();
+        // 日本語版: カーソル(パッドの十字)と Esc(パッドの B)では、はい・引き直す・
+        // やめるをカーソルで選ばせる(Esc ですぐゲームを終えない。§10)
+        if (key_is_cursor(c) || key_is_escape(c))
+        {
+            const vector<prompt_choice> choices =
+            {
+                { 'y', tagged_jtrans("[random combo]", "play this combination"), false },
+                { 'n', tagged_jtrans("[random combo]", "reroll"), false },
+                { 'q', tagged_jtrans("[random combo]", "quit"), false },
+            };
+            const int chosen = prompt_choose_key(
+                jtrans("Do you want to play this combination?"), choices);
+            if (key_is_escape(chosen))
+                return true;
+            c = chosen;
+        }
         return done = true;
     });
 
@@ -697,6 +713,16 @@ static void _choose_name(newgame_def& ng, newgame_def& choice)
             overwrite_prompt = false;
             if (key == 'Y')
                 return done = true;
+            // 日本語版: パッドでは大文字の Y を打てないので、A(Enter)とカーソルでは
+            // はい/いいえのポップアップで訊く(§10)
+            if (key == CK_ENTER || key_is_cursor(key))
+            {
+                if (yesno(jtransc("You have an existing game under this name; "
+                                  "really overwrite?"), false, 'n'))
+                {
+                    return done = true;
+                }
+            }
         }
         return true;
     });

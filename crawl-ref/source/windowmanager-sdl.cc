@@ -531,10 +531,12 @@ static int _pad_scene_key(pad_scene scene, pad_button b)
     case pad_scene::menu:
         switch (b)
         {
-        case PAD_X:  return '.';    // 選択の切り替え(複数選択のメニュー)
+        case PAD_X:  return CK_PAD_SELECT; // 選択の切り替え(個数のある品物は個数を訊く)
         case PAD_Y:  return ',';    // 全部選ぶ
         case PAD_LB: return CK_PGUP;
         case PAD_RB: return CK_PGDN;
+        case PAD_LT: return '!';    // 表示・モードの切り替え(能力・呪文・品物など)
+        case PAD_RT: return '?';    // 説明・ヘルプ
         default:     return 0;
         }
     default:

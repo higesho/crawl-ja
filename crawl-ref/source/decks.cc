@@ -712,13 +712,26 @@ public:
     // TODO: is there a sensible way to implement hover / mouse support for
     // this?
     StackFiveMenu(CrawlVector& d)
-        : Menu(MF_NOSELECT | MF_UNCANCEL),
+        // 日本語版: カーソルで札を選べるよう、複数選択のメニューにする(§10)
+        : Menu(MF_MULTISELECT | MF_UNCANCEL | MF_ARROWS_SELECT
+               | MF_INIT_HOVER),
         draws(d)
     {};
 };
 
 bool StackFiveMenu::process_key(int keyin)
 {
+    // 日本語版: カーソルの札で X(パッド)・'.'・クリックを押したら、その札の
+    // 数字キーと同じに扱う。全部選ぶ・外すのキーは入れ替えを崩すので受けない。
+    if ((keyin == CK_PAD_SELECT || keyin == '.' || keyin == CK_MOUSE_B1)
+        && last_hovered >= 0
+        && last_hovered < static_cast<int>(draws.size()))
+    {
+        keyin = '1' + last_hovered;
+    }
+    else if (keyin == ',' || keyin == '-' || keyin == '*' || keyin == ';')
+        return true;
+
     if (keyin == CK_ENTER)
     {
         formatted_string old_more = more;

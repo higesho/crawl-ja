@@ -106,6 +106,15 @@
 using namespace ui;
 
 static command_type _get_action(int key, vector<command_type> actions);
+static vector<pair<int, string>> _action_bar_items(const vector<string>& strs,
+                                                   const string &tag);
+// 日本語版: 操作の行の表示(先頭から水色にするため、全体を色の印で囲む)
+static formatted_string _action_bar_text(const action_bar &bar,
+                                         const string &prefix = "")
+{
+    return formatted_string::parse_string("<cyan>" + bar.text(prefix)
+                                          + "</cyan>");
+}
 static void _print_bar(int value, int scale, const string &name,
                        ostringstream &result, int base_value = INT_MAX);
 
@@ -215,8 +224,12 @@ int show_description(const describe_info &inf, const tile_def *tile)
     int lastch;
     popup->on_keydown_event([&](const KeyEvent& ev) {
         lastch = ev.key();
-        if (!inf.quote.empty() && (lastch == '!' || lastch == '^'))
+        // 日本語版: 左右(パッドの十字)でも引用のページへ切り替える(§10)
+        if (!inf.quote.empty() && (lastch == '!' || lastch == '^'
+                                   || lastch == CK_LEFT || lastch == CK_RIGHT))
+        {
             desc_sw->current() = more_sw->current() = 1 - desc_sw->current();
+        }
         else
             done = ui::key_exits_popup(lastch, true);
         return true;
@@ -3272,19 +3285,6 @@ static vector<string> _feat_action_strings(const vector<command_type>& actions,
     return strs;
 }
 
-static string _feat_action_desc(const vector<command_type>& actions,
-                                                dungeon_feature_type feat)
-{
-    vector<string> strs;
-    for (const string &s : _feat_action_strings(actions, feat))
-        strs.push_back(tagged_jtrans("[feat action]", s));
-    return comma_separated_line(strs.begin(), strs.end(), "、または", "、")
-           + "。 " + jtrans("(Enter to choose from a menu)");
-}
-
-static command_type _choose_action(const vector<command_type>& actions,
-                                   const vector<string>& strs,
-                                   const string &tag);
 
 static vector<command_type> _allowed_feat_actions(const coord_def &pos)
 {
@@ -3679,16 +3679,22 @@ bool describe_feature_wide(const coord_def& pos, bool do_actions)
     vector<command_type> actions;
     if (do_actions)
         actions = _allowed_feat_actions(pos);
+    // 日本語版: 操作の行はカーソルで選べる(左右で選び、Enter で行う。§10)
+    action_bar bar(_action_bar_items(
+        _feat_action_strings(actions, env.map_knowledge(pos).feat()),
+        "[feat action]"));
     formatted_string footer_text("", CYAN);
+    shared_ptr<Text> footer;
     if (!actions.empty())
     {
-        const dungeon_feature_type feat = env.map_knowledge(pos).feat();
-        footer_text += formatted_string(_feat_action_desc(actions, feat));
-        auto footer = make_shared<Text>();
+        footer_text = _action_bar_text(bar);
+        footer = make_shared<Text>();
         footer->set_text(footer_text);
+        // 日本語版: 操作の行が長いので、狭い画面では折り返す
+        footer->set_wrap_text(true);
         footer->set_margin_for_crt(1, 0, 0, 0);
         footer->set_margin_for_sdl(20, 0, 0, 0);
-        vbox->add_child(std::move(footer));
+        vbox->add_child(footer);
     }
 
 #ifdef USE_TILE_LOCAL
@@ -3704,12 +3710,17 @@ bool describe_feature_wide(const coord_def& pos, bool do_actions)
     // use on_hotkey_event, not on_event, to preempt the scroller key handling
     popup->on_hotkey_event([&](const KeyEvent& ev) {
         int lastch = ev.key();
-        // 日本語版: Enter(パッドの A)では、操作をカーソルで選ぶメニューを開く
-        if (lastch == CK_ENTER && !actions.empty())
+        // 日本語版: 左右で操作の行のカーソルを動かし、Enter(パッドの A)で行う
+        int chosen = 0;
+        const int bar_result = bar.handle_key(lastch, chosen);
+        if (bar_result == 1)
         {
-            action = _choose_action(actions,
-                _feat_action_strings(actions, env.map_knowledge(pos).feat()),
-                "[feat action]");
+            footer->set_text(_action_bar_text(bar));
+            return true;
+        }
+        if (bar_result == 2)
+        {
+            action = _get_action(chosen, actions);
             done = action != CMD_NO_CMD;
             return true;
         }
@@ -3866,8 +3877,8 @@ static vector<command_type> _allowed_actions(const item_def& item)
     return actions;
 }
 
-// 日本語版: 操作ごとの「(w)ield」(英文。括弧の中がキー)。_actions_desc とカーソルで
-// 選ぶメニュー(_choose_action)が使う。
+// 日本語版: 操作ごとの「(w)ield」(英文。括弧の中がキー)。カーソルで選べる操作の行
+// (_action_bar_items)が使う。
 static vector<string> _action_strings(const vector<command_type>& actions)
 {
     static const map<command_type, string> act_str =
@@ -3905,41 +3916,20 @@ static vector<string> _action_strings(const vector<command_type>& actions)
     return strs;
 }
 
-static string _actions_desc(const vector<command_type>& actions)
+// 日本語版: 操作の英文(「(w)ield」。括弧の中がキー)から、カーソルで選べる操作の行
+// (action_bar)に渡す { キー, 訳した名前 } を作る(GAMEPAD_DESIGN.md §10)。
+static vector<pair<int, string>> _action_bar_items(const vector<string>& strs,
+                                                   const string &tag)
 {
-    vector<string> strs;
-    for (const string &s : _action_strings(actions))
-        strs.push_back(tagged_jtrans("[item action]", s));
-    return comma_separated_line(strs.begin(), strs.end(), "、または", "、")
-           + "。 " + jtrans("(Enter to choose from a menu)");
-}
-
-// 日本語版: 品物・地形の操作をカーソルで選ぶメニュー(GAMEPAD_DESIGN.md §10)。
-// strs は操作ごとの英文(_action_strings など)、tag は訳の印。
-// 選んだ操作を返す。取り消したら CMD_NO_CMD。
-static command_type _choose_action(const vector<command_type>& actions,
-                                   const vector<string>& strs,
-                                   const string &tag)
-{
-    vector<prompt_choice> choices;
+    vector<pair<int, string>> items;
     for (const string &s : strs)
     {
-        // 英文の括弧の中がキー。訳文からは先頭の「(w)」を外して名前にする
         const size_t open = s.find('(');
         if (open == string::npos || open + 2 >= s.size())
             continue;
-        const int key = s[open + 1];
-        string label = tagged_jtrans(tag, s);
-        const string mark = string("(") + static_cast<char>(key) + ")";
-        const size_t at = label.find(mark);
-        if (at != string::npos)
-            label.erase(at, mark.size());
-        choices.push_back({ key, trimmed_string(label), false });
+        items.emplace_back(s[open + 1], tagged_jtrans(tag, s));
     }
-    const int key = prompt_choose_key(jtrans("Do what?"), choices);
-    if (key_is_escape(key))
-        return CMD_NO_CMD;
-    return _get_action(key, actions);
+    return items;
 }
 
 // Take a key and a list of commands and return the command from the list
@@ -4208,17 +4198,27 @@ command_type describe_item_popup(const item_def &item,
     scroller->set_child(text);
     vbox->add_child(scroller);
 
+    // 日本語版: 操作の行はカーソルで選べる(左右で選び、Enter で行う。§10)。
+    // 呪文書などの呪文も並べ、選ぶと呪文の説明を開く。
+    vector<pair<int, string>> bar_items
+        = _action_bar_items(_action_strings(actions), "[item action]");
+    for (const auto &e : map_chars_to_spells(spells))
+        bar_items.emplace_back(e.second, spell_title_j(e.first));
+    action_bar bar(bar_items);
+    const string bar_prefix = spells.empty() ? ""
+                              : jtrans("Select a spell, or ");
     formatted_string footer_text("", CYAN);
-    if (!actions.empty())
+    shared_ptr<Text> footer;
+    if (!bar.empty())
     {
-        if (!spells.empty())
-            footer_text.cprintf("%s", jtransc("Select a spell, or "));
-        footer_text += formatted_string(_actions_desc(actions));
-        auto footer = make_shared<Text>();
+        footer_text = _action_bar_text(bar, bar_prefix);
+        footer = make_shared<Text>();
         footer->set_text(footer_text);
+        // 日本語版: 操作の行が長いので、狭い画面では折り返す
+        footer->set_wrap_text(true);
         footer->set_margin_for_crt(1, 0, 0, 0);
         footer->set_margin_for_sdl(20, 0, 0, 0);
-        vbox->add_child(std::move(footer));
+        vbox->add_child(footer);
     }
 
 #ifdef USE_TILE_LOCAL
@@ -4234,15 +4234,29 @@ command_type describe_item_popup(const item_def &item,
     popup->on_keydown_event([&](const KeyEvent& ev) {
         const auto key = ev.key() == '{' ? 'i' : ev.key();
         lastch = key;
-        // 日本語版: Enter(パッドの A)では、操作をカーソルで選ぶメニューを開く
-        if (key == CK_ENTER && !actions.empty())
+        // 日本語版: 左右で操作の行のカーソルを動かし、Enter(パッドの A)で行う
+        int chosen = 0;
+        const int bar_result = bar.handle_key(key, chosen);
+        if (bar_result == 1)
         {
-            const command_type chosen = _choose_action(
-                actions, _action_strings(actions), "[item action]");
-            if (chosen != CMD_NO_CMD)
+            footer->set_text(_action_bar_text(bar, bar_prefix));
+            return true;
+        }
+        if (bar_result == 2)
+        {
+            action = _get_action(chosen, actions);
+            if (action != CMD_NO_CMD)
             {
-                action = chosen;
                 done = true;
+                return true;
+            }
+            for (const auto &e : map_chars_to_spells(spells))
+            {
+                if (e.second == chosen)
+                {
+                    describe_spell(e.first, nullptr, &item);
+                    done = already_learning_spell();
+                }
             }
             return true;
         }
@@ -7232,13 +7246,31 @@ int describe_monster(const monster_info &mi, const string& /*footer*/)
     popup->on_keydown_event([&](const KeyEvent& ev) {
         const auto key = ev.key();
         lastch = key;
+        // 日本語版: 呪文があれば、Enter(パッドの A)で呪文をカーソルで選んで説明を見る
+        // (§10)。呪文が無ければ今までどおり閉じる。
+        if (key == CK_ENTER && !spells.empty())
+        {
+            vector<prompt_choice> choices;
+            for (const auto &e : map_chars_to_spells(spells))
+                choices.push_back({ e.second, spell_title_j(e.first), false });
+            const int chosen = prompt_choose_key(
+                jtrans("Describe which spell?"), choices);
+            for (const auto &e : map_chars_to_spells(spells))
+                if (e.second == chosen)
+                    describe_spell(e.first, &mi, nullptr);
+            return true;
+        }
         done = ui::key_exits_popup(key, true);
-        if (key == '!')
+        // 日本語版: 左右(パッドの十字)でもページを切り替える(§10)
+        if (key == '!' || key == CK_RIGHT || key == CK_LEFT)
         {
             // Cycle mode (skipping absent ones)
-            int n = (desc_sw->current() + 1);
+            int n = key == CK_LEFT ? desc_sw->current() - 1
+                                   : desc_sw->current() + 1;
             if (n >= num_modes)
                 n = 0;
+            if (n < 0)
+                n = num_modes - 1;
 
             desc_sw->current() = more_sw->current() = n;
 #ifdef USE_TILE_WEB

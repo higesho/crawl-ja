@@ -325,6 +325,8 @@ enum KEYS
     CK_PAD_LAST = CK_PAD_BASE - 63,
     // 文字の入力中にパッドの Y が出す、文字を選ぶメニューを開くキー(§10)。
     CK_PAD_TEXT_PICK = CK_PAD_LAST - 1,
+    // メニューの中でパッドの X が出す、選ぶ・外すキー。個数のある品物は個数を訊く(§10)。
+    CK_PAD_SELECT = CK_PAD_LAST - 2,
 };
 
 // 日本語版: 文字の入力欄(line_reader・ui::TextEntry)が使われているか
@@ -460,7 +462,12 @@ protected:
 class resumable_line_reader : public line_reader
 {
 public:
-    resumable_line_reader(char *buf, size_t sz) : line_reader(buf, sz, sz) { read_line(); };
+    resumable_line_reader(char *buf, size_t sz) : line_reader(buf, sz, sz)
+    {
+        read_line();
+        text_input_begin(); // 日本語版: パッドの入力向けの役目(§10)
+    };
+    ~resumable_line_reader() { text_input_end(); }
     int putkey(int ch) { return process_key_core(ch); };
 protected:
     virtual int getkey() override { return CK_NO_KEY; };

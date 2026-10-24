@@ -61,6 +61,26 @@ int prompt_choose_key(const string &question,
 int pad_pick_char(const string &current, int last);
 
 // max_qty(日本語版): 1 以上なら、上下キーで 1..max_qty の範囲で数を増減できる。
+// 日本語版: ポップアップの下に並ぶ操作の行(「(r)読む、(d)置く…」)を、カーソルで選べるように
+// する部品(GAMEPAD_DESIGN.md §10)。左右(パッドの十字)でカーソルを動かし、Enter(A)で
+// カーソルの操作を選ぶ。選んでいる操作は黄色の [ ] で囲む。文字のキーは今までどおり呼ぶ側で受ける。
+class action_bar
+{
+public:
+    // items: { 操作のキー, 表示する名前(訳した後) }
+    explicit action_bar(const vector<pair<int, string>> &items);
+    bool empty() const { return m_items.empty(); }
+    // 操作の行の文(prefix を頭に付ける)。色の印つき。
+    string text(const string &prefix = "") const;
+    // キーを受ける。0 = 受けない、1 = カーソルが動いた(描き直す)、
+    // 2 = 選んだ(chosen に操作のキーを入れる)。
+    int handle_key(int key, int &chosen);
+
+private:
+    vector<pair<int, string>> m_items;
+    int m_cursor = 0;
+};
+
 int prompt_for_quantity(const char *prompt, int max_qty = 0);
 // lo <= hi(日本語版)なら、上下キーで lo..hi の範囲で数を増減できる。
 int prompt_for_int(const char *prompt, bool nonneg, const string &prefill = "",

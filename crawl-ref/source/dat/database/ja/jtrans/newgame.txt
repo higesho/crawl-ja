@@ -404,3 +404,25 @@ Lesson 5: Gods and Divine Abilities
 
 レッスン5: 神と信仰による恩恵
 %%%%
+# 日本語版: ランダムの組み合わせを、パッドでカーソルから選ぶとき(newgame.cc)
+Do you want to play this combination?
+
+この組み合わせで遊びますか？
+%%%%
+[random combo]play this combination
+
+はい(この組み合わせで遊ぶ)
+%%%%
+[random combo]reroll
+
+引き直す
+%%%%
+[random combo]quit
+
+やめる(ゲームを終える)
+%%%%
+# 日本語版: 名前の上書きをパッドで確かめるとき(newgame.cc)
+You have an existing game under this name; really overwrite?
+
+この名前のゲームがすでにあります。本当に上書きしますか？
+%%%%

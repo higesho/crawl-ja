@@ -1253,9 +1253,11 @@ void describe_god(god_type which_god)
     bool done = false;
     popup->on_keydown_event([&](const KeyEvent& ev) {
         const auto key = ev.key();
-        if (key == '!' || key == '^')
+        // 日本語版: 左右(パッドの十字)でもページを切り替える(§10)
+        if (key == '!' || key == '^' || key == CK_RIGHT || key == CK_LEFT)
         {
-            int n = (desc_sw->current() + 1) % desc_sw->num_children();
+            const int num = desc_sw->num_children();
+            int n = (desc_sw->current() + (key == CK_LEFT ? num - 1 : 1)) % num;
             desc_sw->current() = more_sw->current() = n;
 #ifdef USE_TILE_WEB
                 tiles.json_open_object();
@@ -1337,9 +1339,11 @@ bool describe_god_with_join(god_type which_god)
         // Always handle escape and pane-switching keys the same way
         if (ui::key_exits_popup(keyin, false))
             return done = true;
-        if (keyin == '!' || keyin == '^')
+        // 日本語版: 左右(パッドの十字)でもページを切り替える(§10)
+        if (keyin == '!' || keyin == '^' || keyin == CK_RIGHT || keyin == CK_LEFT)
         {
-            int n = (desc_sw->current() + 1) % desc_sw->num_children();
+            const int num = desc_sw->num_children();
+            int n = (desc_sw->current() + (keyin == CK_LEFT ? num - 1 : 1)) % num;
             desc_sw->current() = n;
 #ifdef USE_TILE_WEB
             tiles.json_open_object();
@@ -1393,6 +1397,9 @@ bool describe_god_with_join(god_type which_god)
 
             step = ABANDON;
         }
+        // 日本語版: パッドの X・Y などの知らないキーでは閉じない(Esc で閉じる。§10)
+        else if (step == SHOW)
+            return true;
         else
             return done = true;
 
