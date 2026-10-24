@@ -330,3 +330,7 @@ no status effects
 
 <w>%s:</w> ルーン %d/%d個: %s
 %%%%
+Describe which item?
+
+どの品物の説明を見ますか？
+%%%%

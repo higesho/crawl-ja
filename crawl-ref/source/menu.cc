@@ -26,6 +26,7 @@
  #include "mon-util.h"
 #endif
 #include "options.h"
+#include "prompt.h"
 #include "player.h"
 #include "player-save-info.h"
 #include "state.h"
@@ -2007,6 +2008,30 @@ bool Menu::process_key(int keyin)
 
     if (f_keyfilter)
         keyin = f_keyfilter(keyin);
+
+    // 日本語版: パッドの X(GAMEPAD_DESIGN.md §10)。複数選択で個数を選べるメニューでは、
+    // まだ選んでいない 2 個以上の品物の個数を、上下で増減する数の問いで訊く
+    // (既定は全部)。ほかは「.」(選ぶ・外す)と同じ。
+    if (keyin == CK_PAD_SELECT)
+    {
+        if (is_set(MF_MULTISELECT) && is_set(MF_SELECT_QTY)
+            && last_hovered >= 0 && last_hovered < (int) items.size())
+        {
+            MenuEntry *me = items[last_hovered];
+            if (me && me->quantity > 1 && me->selected_qty == 0)
+            {
+                const int qty = prompt_for_int(
+                    (make_stringf(jtransc("How many? (1-%d)"), me->quantity)
+                     + " ").c_str(),
+                    true, to_string(me->quantity), 1, me->quantity);
+                if (qty > 0)
+                    select_item_index(last_hovered, min(qty, me->quantity));
+                update_menu(true);
+                return true;
+            }
+        }
+        keyin = '.';
+    }
     keyin = pre_process(keyin);
 
 #ifdef USE_TILE_WEB

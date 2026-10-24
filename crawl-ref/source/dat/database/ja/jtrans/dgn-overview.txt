@@ -95,3 +95,23 @@ That's not a valid depth.
 
 その階層は存在しない。
 %%%%
+Do what?
+
+どうしますか？
+%%%%
+[overview action]travel to a level
+
+階へ旅行する
+%%%%
+[overview action]travel to an altar
+
+祭壇へ旅行する
+%%%%
+[overview action]list shops
+
+店の一覧
+%%%%
+[overview action]annotate a level
+
+階に注釈をつける
+%%%%

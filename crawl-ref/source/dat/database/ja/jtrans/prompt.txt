@@ -70,3 +70,13 @@ Quit the game?
 
 ゲームを終了しますか？
 %%%%
+# 日本語版: ポップアップの下の操作の行に添える案内(prompt.cc の action_bar)
+(Left/Right to choose, Enter to do it)
+
+(←→ で選んで Enter)
+%%%%
+# 日本語版: メニューでパッドの X を押して、品物の個数を訊くとき(menu.cc)
+How many? (1-%d)
+
+いくつ？ (1〜%d)
+%%%%
