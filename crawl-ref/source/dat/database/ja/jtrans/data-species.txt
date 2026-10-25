@@ -1017,3 +1017,20 @@ A small pair of tusks begins to sprout from your jawbone.
 
 あなたの顎の骨から小さな一対の牙が生え始めた。
 %%%%
+# hiscores.cc の _species_name(): 古い版のスコアに残る種族
+[spec name]Hill Dwarf
+
+丘ドワーフ
+%%%%
+[spec name]Ogre-Mage
+
+オーガメイジ
+%%%%
+[spec name]Grey Elf
+
+灰色エルフ
+%%%%
+[spec name]Gnome
+
+ノーム
+%%%%

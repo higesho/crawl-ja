@@ -104,8 +104,8 @@
 - mutation-data.h の分類名 any / good / bad / slime / corrupt(ほぼウィザード用)。
 - abyss.cc の Xom の判定 `who != "a distortion unwield"` と player-equip.cc が渡す
   "unwielding a weapon of distortion" の不一致(本家側。触らない)。
-- teleport.cc の `jtrans(" " + conj_verb(verb) + "!")` は実行時に組み立てるキー
-  (hops! / leaps! / blinks! を手で辞書に入れた)。
+- teleport.cc は `jtrans(" " + verb + "s!")` で引く(hops! / leaps! / blinks! を手で辞書に
+  入れた)。`monster::conj_verb()` は日本語版では訳した動詞を返すので、辞書のキーには使えない。
 - menu.txt にタグなしの短いキー("exit" "select" "page up" "page down")がある。
   衝突したらタグ付きに替える。
 - beam.txt に使わなくなったキー("Really fire at %s%s?%s"、"Really fire in %s direction%s?%s")。
@@ -153,3 +153,18 @@
 - 訳さずに残したもの: オプション名・値・rc の例・Lua、正規表現の例の英文(message_colour など
   日本語版では日本語のメッセージに一致させる旨は説明に添えた)、menu_colour の英語のアイテム名
   (英語名で照合する)。
+
+## 実行時に組み立てるキーの未訳探し(2026-10-25)
+- 静的な検査(`jtools.py check`、`find_unwrapped.py`)では、実行中に作った英語の名前で辞書を
+  引く所の未訳が見えない(例: 吐息の「iceを放った」。`bolt::get_short_name()` が属性名を返し、
+  `[zap]` だけで引いていた)。
+- `ja-tools/untrans/name_funcs.py`(crawl-ref/source で実行): 名前を返す関数の結果で辞書を引いて
+  いる所について、その関数が `return "..."` で返す英語に訳があるかを調べる。"buggy" などの
+  出ないものも出る。
+- 環境変数 `CRAWL_JA_MISSING` にファイル名を入れて起動すると、辞書に無かったキー(英字を含む
+  もの)を 1 回ずつ書き出す(database.cc。`jtrans_has_key` の問い合わせは書かない)。
+- `ja-tools/untrans/arena_sweep.ps1`: 闘技場を `-headless`(画面なし)で各所で回して、上の記録と
+  メッセージを集める。まとめは `arena_summary.py`。モンスターの側(呪文・吐息・台詞・死に方)しか
+  通らないので、プレイヤーの行動は別に確かめる。
+- そのままにしたもの: 武器・防具の銘の略記({flame}、{rPois Dex+4}、{Aegis} など。0.19-ja と同じく
+  英語)、闘技場だけの文(「enters the arena!」「is summoned!」、勝者のモンスター名)。
