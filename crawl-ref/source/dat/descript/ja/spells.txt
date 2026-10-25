@@ -1600,7 +1600,7 @@ Forge Lightning Spire spell
 #   Constructs an immobile lightning spire at a nearby location. This spire
 #   irregularly discharges bolts of electricity at the caster's foes, prioritizing
 #   whichever of them is most distant from it.
-近くの場所に動かない稲妻の渦巻を組み立てる。この渦巻は術者の敵に向けて不規則に電光の矢を放ち、敵のうち自分から最も遠くにいる者を優先して狙う。
+近くの場所に動かない稲妻の尖塔を組み立てる。この尖塔は術者の敵に向けて不規則に電光の矢を放ち、敵のうち自分から最も遠くにいる者を優先して狙う。
 %%%%
 Forge Monarch Bomb spell
 

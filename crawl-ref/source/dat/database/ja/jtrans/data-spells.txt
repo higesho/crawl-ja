@@ -892,7 +892,7 @@
 %%%%
 [spell]Forge Lightning Spire
 
-稲妻の渦巻の鍛造
+稲妻の尖塔の鍛造
 %%%%
 [spell]Forge Blazeheart Golem
 
