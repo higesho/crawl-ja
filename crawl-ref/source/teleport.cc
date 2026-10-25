@@ -70,7 +70,8 @@ bool monster::blink_to(const coord_def& dest, bool quiet, bool jump)
 
     if (!quiet)
     {
-        string message = jtrans(" " + conj_verb(verb) + "!");
+        // 日本語版: conj_verb() は訳した動詞を返すので、辞書は英語の形で引く
+        string message = jtrans(" " + verb + "s!");
         simple_monster_message(*this, message.c_str());
     }
 

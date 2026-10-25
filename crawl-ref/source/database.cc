@@ -1008,6 +1008,35 @@ string jtrans(const char* key, const bool linefeed)
  * @param linefeed trueなら語末に改行を付与する(デフォルトfalse)
  * @returns JtransDBのキー文字列keyに対応する文字列を返す
  */
+// 日本語版: 環境変数 CRAWL_JA_MISSING にファイル名を入れると、辞書に無かった
+// キー(英字を含むもの)を 1 回ずつ書き出す。実行時に組み立てるキーの未訳探し用。
+// jtrans_has_key の問い合わせ(無くて当然のもの)は書かない。
+static bool _jtrans_probing = false;
+
+static void _log_missing_key(const string &key)
+{
+    static FILE *log = nullptr;
+    static bool opened = false;
+    static set<string> seen;
+    if (!opened)
+    {
+        opened = true;
+        if (const char *path = getenv("CRAWL_JA_MISSING"))
+            log = fopen(path, "a");
+    }
+    if (!log || _jtrans_probing)
+        return;
+    if (none_of(key.begin(), key.end(),
+                [](char c) { return isaalpha(c); }))
+    {
+        return;
+    }
+    if (!seen.insert(key).second)
+        return;
+    fprintf(log, "%s\n", key.c_str());
+    fflush(log);
+}
+
 string jtrans(const string &key, const bool linefeed)
 {
     if (key.empty())
@@ -1023,7 +1052,10 @@ string jtrans(const string &key, const bool linefeed)
     string text = _query_database(JtransDB, tmp_key, true, true);
 
     if (text.empty())
+    {
+        _log_missing_key(tmp_key);
         return key;
+    }
     if (trimmed_string(text) == "__NONE")
         return "";
 
@@ -1045,7 +1077,10 @@ bool jtrans_has_key(const string &key)
     if (key.empty())
         return false;
 
-    return jtrans(key) != key;
+    _jtrans_probing = true;
+    const bool found = jtrans(key) != key;
+    _jtrans_probing = false;
+    return found;
 }
 
 /**

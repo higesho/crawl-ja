@@ -1822,3 +1822,20 @@ The @sinners@ stood before Zin, and in that instant...
 
 あなたの%sの速さは元に戻った。
 %%%%
+# _god_blessing_description(): 祝福した武器の記録(「{old name} {blessing description}」)
+blessed by the Shining One
+
+輝けるものに祝福された
+%%%%
+corrupted by Lugonu
+
+ルゴヌに堕落させられた
+%%%%
+bloodied by Kikubaaqudgha
+
+キクバークッグァに血塗られた
+%%%%
+touched by the gods
+
+神々に触れられた
+%%%%

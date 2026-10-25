@@ -327,3 +327,12 @@ Really choose %s?
 
 本当に%sを選びますか？
 %%%%
+# base_type_string() の単数形(「この%sはあなたには全く役に立たない」など)
+[item class]missile
+
+矢弾
+%%%%
+[item class]rune
+
+ルーン
+%%%%

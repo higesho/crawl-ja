@@ -134,3 +134,12 @@
 
 追跡者
 %%%%
+# hiscores.cc の _job_name(): 古い版のスコアに残る職業
+[job]Thief
+
+盗賊
+%%%%
+[job]Paladin
+
+聖騎士
+%%%%

@@ -797,3 +797,44 @@ You now have %d gold.
 
 空気
 %%%%
+# monster::hand_name_en() の「front + 足の名前」で、珍しい形のもの
+[body part]front tail
+
+前の尾
+%%%%
+[body part]front stem
+
+前の茎
+%%%%
+[body part]front stems
+
+前の茎
+%%%%
+[body part]front root
+
+前の根
+%%%%
+[body part]front roots
+
+前の根
+%%%%
+[body part]front underside
+
+体の前の下側
+%%%%
+[body part]front pseudopod
+
+前の仮足
+%%%%
+[body part]front pseudopods
+
+前の仮足
+%%%%
+[body part]front tentacle
+
+前の触手
+%%%%
+[body part]front tentacles
+
+前の触手
+%%%%
