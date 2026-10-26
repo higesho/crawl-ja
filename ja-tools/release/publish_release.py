@@ -10,6 +10,7 @@
 - 配布ファイル 3 つ(tiles-win64.zip・android-arm64.apk・src.zip)を上げる。同じ名前で
   同じ大きさのものがあれば上げ直さない。大きさが違えば消して上げ直す。
 - --publish を付けると、本文をリリース文にそろえてから公開する(latest にする)。
+- --force を付けると、同じ大きさでも全部上げ直す(公開済みの版を差し替えるとき)。
 - 終わったら、添付の大きさが手元と同じことと、公開の状態を表示する。
 """
 import json
@@ -77,6 +78,7 @@ def find_release(tag):
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     publish = '--publish' in sys.argv
+    force = '--force' in sys.argv
     if len(args) != 2:
         sys.exit(__doc__)
     ver, folder = args
@@ -104,7 +106,7 @@ def main():
         fname = os.path.basename(p)
         size = os.path.getsize(p)
         a = assets.get(fname)
-        if a and a['size'] == size and a['state'] == 'uploaded':
+        if a and a['size'] == size and a['state'] == 'uploaded' and not force:
             print(f'  そのまま: {fname} ({size:,} バイト)')
             continue
         if a:
