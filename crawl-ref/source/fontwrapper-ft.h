@@ -158,6 +158,18 @@ protected:
     FT_Face face;
     unsigned char *pixels;
     unsigned int fsize;
+
+    // 日本語: 新しい字をそのつどテクスチャへ書くと、描画の途中で GPU を
+    // 待たせて一覧などがガクつく(日本語は新しい字が多い)。書き込みは
+    // ためておき、テクスチャを bind する直前にまとめて書く。
+    struct PendingGlyph
+    {
+        unsigned int slot;
+        vector<unsigned char> px;
+    };
+    vector<PendingGlyph> m_pending_glyphs;
+    void flush_glyphs();
+    static void _flush_glyphs_cb(void *font);
 };
 
 #endif // USE_FT

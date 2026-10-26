@@ -38,6 +38,11 @@ public:
     unsigned int orig_width() const { return m_orig_width; }
     unsigned int orig_height() const { return m_orig_height; }
 
+    // 日本語版: bind() の直前に呼ぶ(字のテクスチャへの書き込みを、描画の
+    // 直前にまとめて行うため。fontwrapper-ft.cc)
+    void (*before_bind)(void *ctx) = nullptr;
+    void *before_bind_ctx = nullptr;
+
 protected:
     unsigned int m_handle;
     unsigned int m_width;
