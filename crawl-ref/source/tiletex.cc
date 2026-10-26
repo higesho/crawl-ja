@@ -77,6 +77,8 @@ bool GenericTexture::load_texture(unsigned char *pixels, unsigned int new_width,
 
 void GenericTexture::bind() const
 {
+    if (before_bind)
+        before_bind(before_bind_ctx);
     ASSERT(m_handle);
     glmanager->bind_texture(m_handle);
 }

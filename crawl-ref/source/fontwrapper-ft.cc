@@ -75,6 +75,31 @@ FTFontWrapper::FTFontWrapper() :
     fsize(0)
 {
     m_buf = GLShapeBuffer::create(true, true);
+    m_tex.before_bind = &FTFontWrapper::_flush_glyphs_cb;
+    m_tex.before_bind_ctx = this;
+}
+
+void FTFontWrapper::_flush_glyphs_cb(void *font)
+{
+    static_cast<FTFontWrapper *>(font)->flush_glyphs();
+}
+
+void FTFontWrapper::flush_glyphs()
+{
+    if (m_pending_glyphs.empty())
+        return;
+    // load_texture() は bind() を呼ぶので、先に空にしてから書く
+    vector<PendingGlyph> pending;
+    pending.swap(m_pending_glyphs);
+    unwind_bool noscaling(Options.tile_filter_scaling, false);
+    for (PendingGlyph &g : pending)
+    {
+        bool success = m_tex.load_texture(g.px.data(), charsz.x, charsz.y,
+                            MIPMAP_NONE,
+                            (g.slot % GLYPHS_PER_ROWCOL) * charsz.x,
+                            (g.slot / GLYPHS_PER_ROWCOL) * charsz.y);
+        ASSERT(success);
+    }
 }
 
 FTFontWrapper::~FTFontWrapper()
@@ -144,6 +169,7 @@ bool FTFontWrapper::configure_font()
 
     // initialise empty texture of correct size
     unwind_bool noscaling(Options.tile_filter_scaling, false);
+    m_pending_glyphs.clear();
     m_tex.load_texture(nullptr, m_ft_width, m_ft_height, MIPMAP_NONE);
 
     m_glyphs.clear();
@@ -330,12 +356,9 @@ void FTFontWrapper::load_glyph(unsigned int c, char32_t uchar)
                 }
             }
 
-        unwind_bool noscaling(Options.tile_filter_scaling, false);
-        bool success = m_tex.load_texture(pixels, charsz.x, charsz.y,
-                            MIPMAP_NONE,
-                            (c % GLYPHS_PER_ROWCOL) * charsz.x,
-                            (c / GLYPHS_PER_ROWCOL) * charsz.y);
-        ASSERT(success);
+        // 日本語: テクスチャへは描画の直前にまとめて書く(flush_glyphs)
+        m_pending_glyphs.push_back({c, vector<unsigned char>(pixels,
+                                        pixels + 4 * charsz.x * charsz.y)});
     }
 }
 

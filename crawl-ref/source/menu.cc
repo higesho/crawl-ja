@@ -183,6 +183,15 @@ protected:
         formatted_string text;
 #ifdef USE_TILE_LOCAL
         vector<tile_def> tiles;
+        // 日本語版: do_layout() で測った結果。マウス(パッドのカーソル)が
+        // 動くたびに全部の行を測り直すと、品物の多い一覧が重くなるので覚えて
+        // おく。文が変わったら(update_item)measured を落とす。split_w は
+        // 折り返しの高さを測ったときの幅(0 なら未計測)。
+        bool measured;
+        int text_width;
+        int header_width;
+        int split_w;
+        int split_height;
 #endif
         bool heading;
     };
@@ -204,6 +213,8 @@ protected:
     bool m_buffers_dirty = false;
     bool m_draw_tiles;
     FontWrapper *m_font_entry;
+    // 日本語版: 行の幅を測ったときの字の高さ(DPI が変わったら測り直す)
+    int m_measured_char_h = 0;
     ShapeBuffer m_shape_buf;
     LineBuffer m_line_buf, m_div_line_buf;
     FontBuffer m_text_buf;
@@ -362,6 +373,8 @@ void UIMenu::update_item(int index)
 #ifdef USE_TILE_LOCAL
     entry.tiles.clear();
     me->get_tiles(entry.tiles);
+    entry.measured = false;
+    entry.split_w = 0;
 #endif
 }
 
@@ -403,6 +416,13 @@ void UIMenu::do_layout(int mw, int num_columns, bool just_checking)
         row_heights.reserve(m_menu->items.size()+1);
     }
 
+    if (m_font_entry->char_height(false) != m_measured_char_h)
+    {
+        m_measured_char_h = m_font_entry->char_height(false);
+        for (auto &e : item_info)
+            e.measured = false;
+    }
+
     for (size_t i = 0; i < m_menu->items.size(); ++i)
     {
         auto& entry = item_info[i];
@@ -420,7 +440,16 @@ void UIMenu::do_layout(int mw, int num_columns, bool just_checking)
             row_height = 0;
         }
 
-        const int text_width = m_font_entry->string_width(entry.text);
+        if (!entry.measured)
+        {
+            entry.text_width = m_font_entry->string_width(entry.text);
+            entry.header_width = 0;
+            if (!entry.heading && _has_hotkey_prefix(entry.text.tostring()))
+                entry.header_width = m_font_entry->string_width(entry.text.chop(5));
+            entry.split_w = 0;
+            entry.measured = true;
+        }
+        const int text_width = entry.text_width;
 
         if (!just_checking)
             entry.y = height;
@@ -438,8 +467,13 @@ void UIMenu::do_layout(int mw, int num_columns, bool just_checking)
             // wrap titles to two lines if they don't fit
             if (m_draw_tiles && text_width > mw)
             {
-                formatted_string split = m_font_entry->split(entry.text, mw, UINT_MAX);
-                row_height = max(row_height, (int)m_font_entry->string_height(split));
+                if (entry.split_w != mw)
+                {
+                    formatted_string split = m_font_entry->split(entry.text, mw, UINT_MAX);
+                    entry.split_height = m_font_entry->string_height(split);
+                    entry.split_w = mw;
+                }
+                row_height = max(row_height, entry.split_height);
             }
             column = num_columns-1;
         }
@@ -456,24 +490,29 @@ void UIMenu::do_layout(int mw, int num_columns, bool just_checking)
             {
                 if ((text_width > max_column_width-entry.x-pad_right))
                 {
-                    formatted_string text;
-                    // TODO: refactor to use _get_text_preface
-                    if (_has_hotkey_prefix(entry.text.tostring()))
-                    {
-                        formatted_string header = entry.text.chop(5);
-                        text_sx += m_font_entry->string_width(header);
-                        text = entry.text;
-                        // remove hotkeys. As Enne said above, this is a monstrosity.
-                        for (int k = 0; k < 5; k++)
-                            text.del_char();
-                    }
-                    else
-                        text += entry.text;
+                    const bool has_prefix = entry.header_width > 0;
+                    text_sx += entry.header_width;
 
                     int w = max_column_width - text_sx - pad_right;
-                    formatted_string split = m_font_entry->split(text, w, UINT_MAX);
-                    int string_height = m_font_entry->string_height(split);
-                    string_height = min(string_height, text_height*2);
+                    if (entry.split_w != w)
+                    {
+                        formatted_string text;
+                        // TODO: refactor to use _get_text_preface
+                        if (has_prefix)
+                        {
+                            text = entry.text;
+                            // remove hotkeys. As Enne said above, this is a monstrosity.
+                            for (int k = 0; k < 5; k++)
+                                text.del_char();
+                        }
+                        else
+                            text += entry.text;
+
+                        formatted_string split = m_font_entry->split(text, w, UINT_MAX);
+                        entry.split_height = m_font_entry->string_height(split);
+                        entry.split_w = w;
+                    }
+                    int string_height = min(entry.split_height, text_height*2);
                     item_height = max(item_height, string_height);
                 }
             }
@@ -776,7 +815,8 @@ int UIMenuPopup::_calc_columns(int mw) const
     {
         auto& entry = m_menu->m_ui.menu->item_info[i];
         const int text_width = entry.x
-                    + m_menu->m_ui.menu->m_font_entry->string_width(entry.text)
+                    + (entry.measured ? entry.text_width
+                       : m_menu->m_ui.menu->m_font_entry->string_width(entry.text))
                     + m_menu->m_ui.menu->pad_right;
         max_entry_text = max(max_entry_text, text_width);
     }
