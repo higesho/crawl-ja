@@ -307,6 +307,17 @@ public class SDLActivity extends AppCompatActivity {
                 RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
         mVirtualPad.setVisibility(View.GONE);
         mLayout.addView(mVirtualPad);
+        // 回転などで画面の大きさが変わったら、描画とパッドの分け方を決め直す
+        mLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int l, int t, int r, int b,
+                                       int ol, int ot, int or, int ob) {
+                if (r - l != or - ol || b - t != ob - ot)
+                    v.post(new Runnable() {
+                        @Override public void run() { updatePadSplit(); }
+                    });
+            }
+        });
         // 物理のパッドの抜き差しを見て、キーボードとバーチャルパッドの出し入れを決め直す
         mPadConnected = DCSSGamepad.isConnected();
         mPadListener = new InputManager.InputDeviceListener() {
@@ -683,6 +694,7 @@ public class SDLActivity extends AppCompatActivity {
                         }
                         mSurface.setLayoutParams(lParams);
                     }
+                    updatePadSplit();
                 }
                 break;
             }
@@ -737,6 +749,41 @@ public class SDLActivity extends AppCompatActivity {
     // 日本語版: パッドを使う画面か(画面のキーボードを出さない)
     static boolean padMode() {
         return virtualPadOption || mPadConnected;
+    }
+
+    // 日本語版: 縦画面でバーチャルパッドを出しているときは、ゲームの描画を上半分、
+    // パッドを下半分に分ける(重ねない)。横画面とパッドを出していないときは今までどおり
+    // 描画は画面いっぱいで、パッドはその上に重ねる。UI スレッドで呼ぶ
+    static void updatePadSplit() {
+        if (mLayout == null || mSurface == null || mVirtualPad == null)
+            return;
+        // 余白(ステータスバーなどの分。fitsSystemWindows)を除いた高さで分ける
+        final int lw = mLayout.getWidth() - mLayout.getPaddingLeft() - mLayout.getPaddingRight();
+        final int lh = mLayout.getHeight() - mLayout.getPaddingTop() - mLayout.getPaddingBottom();
+        final boolean split = mVirtualPad.getVisibility() == View.VISIBLE
+                              && lh > 0 && lh > lw;
+        final int half = lh / 2;
+
+        RelativeLayout.LayoutParams pad =
+            (RelativeLayout.LayoutParams) mVirtualPad.getLayoutParams();
+        final int padHeight = split ? lh - half : RelativeLayout.LayoutParams.MATCH_PARENT;
+        if (pad.height != padHeight) {
+            pad.height = padHeight;
+            pad.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+            mVirtualPad.setLayoutParams(pad);
+        }
+        mVirtualPad.setHalfScreen(split);
+
+        ViewGroup.LayoutParams sdl = mSurface.getLayoutParams();
+        int surfaceHeight = sdl.height;
+        if (split)
+            surfaceHeight = half;
+        else if (!(keyboardOption == 1 && mScreenKeyboardShown))
+            surfaceHeight = ViewGroup.LayoutParams.MATCH_PARENT;
+        if (sdl.height != surfaceHeight) {
+            sdl.height = surfaceHeight;
+            mSurface.setLayoutParams(sdl);
+        }
     }
 
     // 日本語版: パッドの抜き差し。挿したらキーボードを隠す

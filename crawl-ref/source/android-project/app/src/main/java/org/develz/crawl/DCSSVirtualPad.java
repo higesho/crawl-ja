@@ -93,12 +93,27 @@ public class DCSSVirtualPad extends View {
         text.setFakeBoldText(true);
     }
 
+    // 縦画面で画面の下半分に置かれているか(SDLActivity.updatePadSplit)。そのときは
+    // 画面全体の高さで位置と大きさを決め、上半分ずらして描く(並びと大きさは変えない)
+    private boolean halfScreen = false;
+
+    public void setHalfScreen(boolean half) {
+        if (half != halfScreen) {
+            halfScreen = half;
+            invalidate();
+        }
+    }
+
+    private int fullHeight() {
+        return halfScreen ? getHeight() * 2 : getHeight();
+    }
+
     private boolean portrait() {
-        return getHeight() > getWidth();
+        return fullHeight() > getWidth();
     }
 
     private float sizeBasis() {
-        float w = Math.max(1, getWidth()), h = Math.max(1, getHeight());
+        float w = Math.max(1, getWidth()), h = Math.max(1, fullHeight());
         return portrait() ? Math.min(w, h / TUNED_ASPECT_PORTRAIT)
                           : Math.min(h, w / TUNED_ASPECT);
     }
@@ -108,7 +123,9 @@ public class DCSSVirtualPad extends View {
     }
 
     private float cx(int c) { return spec(c)[0] * getWidth(); }
-    private float cy(int c) { return spec(c)[1] * getHeight(); }
+    private float cy(int c) {
+        return spec(c)[1] * fullHeight() - (halfScreen ? fullHeight() - getHeight() : 0);
+    }
     private float sa(int c) { return spec(c)[3] * sizeBasis(); }
     private float sb(int c) { return spec(c)[4] * sizeBasis(); }
 
